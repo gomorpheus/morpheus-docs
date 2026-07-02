@@ -1,0 +1,382 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Backups/veeam.rst:2
+msgid "Veeam"
+msgstr "Veeam"
+
+#: ../../integration_guides/Backups/veeam.rst:4
+msgid ""
+"Veeam is a backup and replication platform designed to work with popular on-"
+"prem cloud providers, including VMware, Microsoft Hyper-V, and vCloud "
+"Director. |morpheus| integrates with your existing Veeam appliance which can"
+" then be set as the preferred backup solution for any existing Clouds. From "
+"there, easily schedule backup routines during Instance provisioning and "
+"restore Instances when needed. This section discusses the process for "
+"integrating Veeam with |morpheus|, sharing a Veeam integration with multiple"
+" Tenants, setting backup during Instance provisioning, and restoring "
+"Instances from Veeam backup."
+msgstr ""
+"Veeam es un backup y replication platform designed to work con popular on-"
+"prem cloud proveedores, including VMware, Microsoft Hyper-V, y vCloud "
+"Director. |morpheus| integrates con your existente Veeam appliance cual "
+"puede entonces be set as el preferred backup solution para cualquier "
+"existente Clouds. Desde elre, easily schedule backup routines durante "
+"Instance provisioning y restore Instances cuando needed. This sección "
+"discusses el proceso para integrating Veeam con |morpheus|, sharing un Veeam"
+" integration con múltiples Tenants, setting backup durante Instance "
+"provisioning, y restoring Instances desde Veeam backup."
+
+#: ../../integration_guides/Backups/veeam.rst:7
+msgid "Features"
+msgstr "Características"
+
+#: ../../integration_guides/Backups/veeam.rst:9
+msgid "Share one backup provider across multiple Tenants"
+msgstr "Share one backup proveedor across múltiples Tenants"
+
+#: ../../integration_guides/Backups/veeam.rst:10
+msgid ""
+"Apply Veeam integration as the default backup target for compatible clouds"
+msgstr ""
+"Apply Veeam integration as el predeterminado backup destino para compatible "
+"clouds"
+
+#: ../../integration_guides/Backups/veeam.rst:11
+msgid ""
+"Select Veeam integrations as backup provider at Instance provision time"
+msgstr ""
+"Select Veeam integrations as backup proveedor at Instance provision time"
+
+#: ../../integration_guides/Backups/veeam.rst:12
+msgid "Automate backups with |morpheus| Backup Jobs"
+msgstr "Automate backups con |morpheus| Backup Jobs"
+
+#: ../../integration_guides/Backups/veeam.rst:13
+msgid "When needed, easily restore Instance backups"
+msgstr "When needed, easily restore Instance backups"
+
+#: ../../integration_guides/Backups/veeam.rst:16
+msgid "Adding Veeam Integration"
+msgstr "Agregar Veeam integración"
+
+#: ../../integration_guides/Backups/veeam.rst:18
+msgid "Navigate to `Backups > Integrations`"
+msgstr "Navegue un `Backups > Integrations`"
+
+#: ../../integration_guides/Backups/veeam.rst:19
+msgid "Select :guilabel:`+ ADD`"
+msgstr "Select :guilabel:`+ AGREGAR`"
+
+#: ../../integration_guides/Backups/veeam.rst:20
+msgid "Select Veeam"
+msgstr "Select Veeam"
+
+#: ../../integration_guides/Backups/veeam.rst:21
+msgid "Fill in the following:"
+msgstr "Complete el following:"
+
+#: ../../integration_guides/Backups/veeam.rst:23
+msgid "Name"
+msgstr "Name"
+
+#: ../../integration_guides/Backups/veeam.rst:24
+msgid "Friendly name for the integration in |morpheus|"
+msgstr "Friendly nombre para la integración in |morpheus|"
+
+#: ../../integration_guides/Backups/veeam.rst:25
+msgid "Enabled"
+msgstr "Enabled"
+
+#: ../../integration_guides/Backups/veeam.rst:26
+msgid "When marked, this integration will be active and available for use"
+msgstr "When marked, esta integración será be activo y disponible para use"
+
+#: ../../integration_guides/Backups/veeam.rst:27
+msgid "API URL"
+msgstr "API URL"
+
+#: ../../integration_guides/Backups/veeam.rst:28
+msgid ""
+"IP or Hostname of the Veeam Enterprise Manager, must be HTTPS for VEEAM 10"
+msgstr ""
+"IP o Hostname of el Veeam Enterprise Manager, debe be HTTPS para VEEAM 10"
+
+#: ../../integration_guides/Backups/veeam.rst:29
+msgid "Port"
+msgstr "Port"
+
+#: ../../integration_guides/Backups/veeam.rst:30
+msgid ""
+"Port number configured to access the Veeam server, must be 9398 for VEEAM 10"
+msgstr ""
+"Port número configurado to acceso el Veeam server, debe be 9398 para VEEAM "
+"10"
+
+#: ../../integration_guides/Backups/veeam.rst:31
+msgid "Username"
+msgstr "Username"
+
+#: ../../integration_guides/Backups/veeam.rst:32
+msgid "Username for an admin service account in Veeam"
+msgstr "Username para un admin servicio cuenta in Veeam"
+
+#: ../../integration_guides/Backups/veeam.rst:33
+msgid "Password"
+msgstr "Password"
+
+#: ../../integration_guides/Backups/veeam.rst:34
+msgid "Password for Username provided (encrypted in |morpheus|)"
+msgstr "Password para Username provided (encrypted in |morpheus|)"
+
+#: ../../integration_guides/Backups/veeam.rst:40
+msgid "Visibility"
+msgstr "Visibility"
+
+#: ../../integration_guides/Backups/veeam.rst:40
+msgid "Sets Multi-Tenant Visibility"
+msgstr "Sets Multi-Tenant Visibility"
+
+#: ../../integration_guides/Backups/veeam.rst:37
+msgid "Private"
+msgstr "Private"
+
+#: ../../integration_guides/Backups/veeam.rst:38
+msgid "Only available to the Tenant that added the integration"
+msgstr "Only disponible to el Tenant que agregado la integración"
+
+#: ../../integration_guides/Backups/veeam.rst:40
+msgid "Public"
+msgstr "Public"
+
+#: ../../integration_guides/Backups/veeam.rst:40
+msgid "Available to Subtenants (primary tenant option only)"
+msgstr "Available to Subtenants (primario tenant opción solo)"
+
+#: ../../integration_guides/Backups/veeam.rst:42
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`GUARDAR`"
+
+#: ../../integration_guides/Backups/veeam.rst:44
+msgid ""
+"Veeam Backup Enterprise Manager must be installed in order to successfully "
+"integrate |morpheus| with Veeam."
+msgstr ""
+"Veeam Backup Enterprise Manager debe estar instalado para successfully "
+"integrate |morpheus| con Veeam."
+
+#: ../../integration_guides/Backups/veeam.rst:46
+msgid ""
+"Once Veeam service has been integrated with |morpheus|, Veeam server(s) will"
+" be available to select as the backup provider for VMware, Hyper-V, and "
+"vCloud Director cloud integrations (Infrastructure > Clouds > Edit a "
+"compatible Cloud). To enable Veeam backups, select the appropriate Veeam "
+"server as the \"backup provider\" for your cloud integrations as needed. "
+"Failure to do so will result in blank ``Backup Repositories`` and ``Backup "
+"Job Templates`` options when configuring Veeam Backups during provisioning."
+msgstr ""
+"Once Veeam servicio tiene sido integrated con |morpheus|, Veeam server(s) "
+"estará disponible to select as el backup proveedor para VMware, Hyper-V, y "
+"vCloud Director cloud integrations (Infrastructure > Clouds > Edit un "
+"compatible Cloud). To enable Veeam backups, select el apropiado Veeam server"
+" as el \"backup proveedor\" para your cloud integrations según sea "
+"necesario. Failure to do so será resultado in blank ``Backup Repositories`` "
+"y ``Backup Job Templates`` opciones cuando configuring Veeam Backups durante"
+" provisioning."
+
+#: ../../integration_guides/Backups/veeam.rst:49
+msgid "Set Veeam as Cloud Backup Target"
+msgstr "Set Veeam as Cloud Backup Target"
+
+#: ../../integration_guides/Backups/veeam.rst:51
+msgid ""
+"Once the initial integration is made, set this integration as the backup "
+"provider for as many supported Clouds as needed. Veeam integrations are "
+"supported as backup target for VMware, Hyper-V, and vCloud Director Clouds "
+"at this time."
+msgstr ""
+"Once el initial integration es made, set esta integración as el backup "
+"proveedor para as muchos compatible Clouds según sea necesario. Veeam "
+"integrations son compatible as backup destino para VMware, Hyper-V, y vCloud"
+" Director Clouds en este momento."
+
+#: ../../integration_guides/Backups/veeam.rst:53
+msgid "Navigate to Infrastructure > Clouds"
+msgstr "Navegue un Infrastructure > Clouds"
+
+#: ../../integration_guides/Backups/veeam.rst:54
+msgid "Select an existing VMware, Hyper-V, or vCD Cloud"
+msgstr "Select un existente VMware, Hyper-V, o vCD Cloud"
+
+#: ../../integration_guides/Backups/veeam.rst:55
+msgid "Click :guilabel:`EDIT`"
+msgstr "Click :guilabel:`EDITAR`"
+
+#: ../../integration_guides/Backups/veeam.rst:56
+msgid "Expand the Advanced Options section"
+msgstr "Expand el Advanced Options sección"
+
+#: ../../integration_guides/Backups/veeam.rst:57
+msgid "Under \"Backup Provider\", select the relevant Veeam integration"
+msgstr "Under \"Backup Provider\", select el relevante Veeam integration"
+
+#: ../../integration_guides/Backups/veeam.rst:58
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/Backups/veeam.rst:61
+msgid ".. image:: images/integration_guides/veeam/1setProvider.png"
+msgstr ".. image:: images/integration_guides/veeam/1setProvider.png"
+
+#: ../../integration_guides/Backups/veeam.rst:63
+msgid "Configure Backup at Provision Time"
+msgstr "Configure Backup at Provision Time"
+
+#: ../../integration_guides/Backups/veeam.rst:65
+msgid ""
+"When provisioning an Instance into a Cloud where Veeam is set as the backup "
+"provider, Veeam will be selectable as the \"Backup Type\" on the Automation "
+"tab of the provisioning wizard. Expand the Backups section on this tab and "
+"enter the following:"
+msgstr ""
+"When provisioning un Instance en un Cloud donde Veeam es set as el backup "
+"proveedor, Veeam será be selectable as el \"Backup Type\" on el Automation "
+"pestaña of el provisioning wizard. Expand el Backups sección on este pestaña"
+" y enter el following:"
+
+#: ../../integration_guides/Backups/veeam.rst:67
+msgid "**Backup Type:** Select the desired Veeam backup type"
+msgstr "**Backup Type:** Seleccione el desired Veeam backup tipo"
+
+#: ../../integration_guides/Backups/veeam.rst:68
+msgid ""
+"**Repository:** Select a repository synced from the Veeam backup provider "
+"associated with the Cloud"
+msgstr ""
+"**Repository:** Select un repository synced desde el Veeam backup proveedor "
+"asociado con el Cloud"
+
+#: ../../integration_guides/Backups/veeam.rst:69
+msgid ""
+"**Managed Server:** Select a managed server associated with the backup "
+"server selected in the previous step"
+msgstr ""
+"**Managed Server:** Select un managed server asociado con el backup server "
+"seleccionado in el anterior paso"
+
+#: ../../integration_guides/Backups/veeam.rst:70
+msgid ""
+"**Backup Name:** A name for the backup in Morpheus, this field is pre-"
+"populated with the Instance name but can be overwritten"
+msgstr ""
+"**Backup Name:** A nombre para el backup in Morpheus, este campo es pre-"
+"populated con el Instance nombre pero puede be overwritten"
+
+#: ../../integration_guides/Backups/veeam.rst:71
+msgid ""
+"**Backup Job Type:** Clone an existing backup job (Backups > Jobs) or add "
+"this backup to an existing job. A job contains a retention count and backup "
+"frequency schedule and can have as many Instances backing up under it as "
+"needed"
+msgstr ""
+"**Backup Job Type:** Clone un existente backup job (Backups > Jobs) o add "
+"este backup to un existente job. A job contains un retention count y backup "
+"frequency schedule y puede tienen as muchos Instances backing up under it "
+"según sea necesario"
+
+#: ../../integration_guides/Backups/veeam.rst:72
+msgid ""
+"**Backup Job:** Select the job which will be cloned or have a backup added "
+"to it depending on your selection in the prior field"
+msgstr ""
+"**Backup Job:** Seleccione el job cual será be cloned o tienen un backup "
+"agregado to it dependiendo de your selection in el prior campo"
+
+#: ../../integration_guides/Backups/veeam.rst:73
+msgid ""
+"**Job Name:** A name for the new cloned job (if you are cloning and not "
+"creating a new Backup Job)"
+msgstr ""
+"**Job Name:** A nombre para el nuevo cloned job (if you son cloning y no "
+"creating un nuevo Backup Job)"
+
+#: ../../integration_guides/Backups/veeam.rst:76
+msgid ".. image:: images/integration_guides/veeam/2createBackup.png"
+msgstr ".. image:: images/integration_guides/veeam/2createBackup.png"
+
+#: ../../integration_guides/Backups/veeam.rst:78
+msgid "Viewing Backups"
+msgstr "Viewing Backups"
+
+#: ../../integration_guides/Backups/veeam.rst:80
+msgid ""
+"After provisioning, users can review backup details from the Instance detail"
+" page (|ProIns| > Selected Instance > Backups tab). Additionally, backups "
+"can be configured here if this was not done during provision time by "
+"clicking :guilabel:`ADD BACKUP`. Users can also run one-off backups from "
+"this page by opening the ACTIONS menu and clicking Backup. Backups will "
+"still continue to run based on the schedule configured in their job but "
+"additional runs can be made on-demand this way."
+msgstr ""
+"After provisioning, users puede review backup detalles desde el Instance "
+"página de detalles (|ProIns| > Selected Instance > Backups pestaña). "
+"Adicionalmente, backups se puede configurar aquí if este fue no done durante"
+" provision time by clicking :guilabel:`AGREGAR BACKUP`. Users puede también "
+"run one-off backups desde este página by opening el ACTIONS menú y clicking "
+"Backup. Backups será aún continue to run basado en el schedule configurado "
+"in their job pero adicional runs puede be made on-demand este way."
+
+#: ../../integration_guides/Backups/veeam.rst:82
+msgid ""
+"Within the Backups section (Backups > Backups) users can also view all "
+"currently-configured backups and whether or not recent backup runs have "
+"succeeded."
+msgstr ""
+"Within el Backups sección (Backups > Backups) users puede también view todos"
+" actualmente-configurado backups y whether o no recent backup runs tienen "
+"succeeded."
+
+#: ../../integration_guides/Backups/veeam.rst:85
+msgid ".. image:: images/integration_guides/veeam/3viewBackups.png"
+msgstr ".. image:: images/integration_guides/veeam/3viewBackups.png"
+
+#: ../../integration_guides/Backups/veeam.rst:87
+msgid "Restore an Instance from Veeam"
+msgstr "Restore un Instance desde Veeam"
+
+#: ../../integration_guides/Backups/veeam.rst:89
+msgid ""
+"For Instances with current backups, the Backup Results section will be "
+"populated on the Instance detail page (|ProIns| > Selected Instance > Backup"
+" tab). If the Instance needs restored, simply click Actions (within the "
+"Backup Results area, not the main actions menu for the Instance itself) and "
+"then click Restore. The status icon at the top of the Instance detail page "
+"will turn green once this process is finished and the Instance will be fully"
+" restored from your selected backup."
+msgstr ""
+"For Instances con actual backups, el Backup Results sección será be "
+"populated on el Instance página de detalles (|ProIns| > Selected Instance > "
+"Backup pestaña). If el Instance needs restored, simply click Actions (dentro"
+" de el Backup Results area, no el main acciones menú para el Instance "
+"itself) y entonces click Restore. The estado icon en la parte superior of el"
+" Instance página de detalles será turn green once este proceso es finished y"
+" el Instance será be fully restored desde your seleccionado backup."

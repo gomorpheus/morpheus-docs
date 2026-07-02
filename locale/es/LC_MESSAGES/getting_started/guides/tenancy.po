@@ -1,0 +1,1081 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/guides/tenancy.rst:2
+msgid "Tenancy"
+msgstr "Multi-inquilino"
+
+#: ../../getting_started/guides/tenancy.rst:4
+msgid ""
+"|morpheus| appliances may be multi-tenanted, that is, they may contain "
+"multiple isolated environments known as Tenants. Successfully building a "
+"multi-Tenanted |morpheus| environment requires creating and pulling "
+"together multiple constructs. This guide aims to describe the pieces "
+"needed to create functioning Tenants with Users, identity integrations, "
+"Roles, Groups, and whitelabeling. We will also share a Cloud and Library "
+"item from the |mastertenant| which is provisionable from the new "
+"Subtenant."
+msgstr ""
+"|morpheus| appliances puede ser multi-tenanted, that is, they may contain "
+"multiple isolated environments conocido como Tenants. Successfully "
+"building a multi-Tenanted |morpheus| environment requires creating y "
+"pulling together multiple constructs. This guide aims to describe the "
+"pieces needed para crear functioning Tenants con Users, identity "
+"integrations, Roles, Groups, y whitelabeling. We will también share a "
+"Cloud y Library item desde the |mastertenant| which is provisionable desde "
+"the nuevo Subtenant."
+
+#: ../../getting_started/guides/tenancy.rst:6
+msgid ""
+"On installation, a single Tenant is created. This Tenant is often "
+"referred to as the |mastertenant| and has some special properties that "
+"additional created Tenants (known as Subtenants) do not have. Tenants "
+"manage their own workloads, may have their own custom whitelabeling, and "
+"also have their own users and integrations. The |mastertenant| may (or "
+"may not) share down integrations, Library items, Roles, and more but "
+"Subtenants are fully isolated from each other."
+msgstr ""
+"On installation, a single Tenant is created. This Tenant is often referred "
+"to as the |mastertenant| y has some special properties that adicional "
+"created Tenants (known as Subtenants) do not have. Tenants manage their "
+"own workloads, may have their own personalizado whitelabeling, y also have "
+"their own users y integrations. The |mastertenant| may (or may not) share "
+"down integrations, Library items, Roles, y more but Subtenants are fully "
+"isolated desde each other."
+
+#: ../../administration/tenants/tenants.rst:3
+msgid ""
+"The Master Tenant is the default Tenant created during the installation "
+"of |morpheus|"
+msgstr ""
+"The Master Tenant is the default Tenant created durante the installation "
+"of |morpheus|"
+
+#: ../../administration/tenants/tenants.rst:4
+msgid ""
+"All Tenants created after installation are Subtenants. Only one Master "
+"Tenant can exist"
+msgstr ""
+"All Tenants created after installation are Subtenants. Only one Master "
+"Tenant can exist"
+
+#: ../../administration/tenants/tenants.rst:5
+msgid "The Master Tenant creates and controls all Subtenants."
+msgstr "The Master Tenant creates y controls all Subtenants."
+
+#: ../../administration/tenants/tenants.rst:6
+msgid "Tenants are isolated environments with unique users, workloads, and Groups"
+msgstr "Tenants are isolated environments con unique users, workloads, y Groups"
+
+#: ../../administration/tenants/tenants.rst:7
+msgid "The Master Tenant can share or assign its resources to Subtenants"
+msgstr "The Master Tenant can share o assign its resources to Subtenants"
+
+#: ../../administration/tenants/tenants.rst:8
+msgid "Subtenants cannot share their resources with other Tenants"
+msgstr "Subtenants cannot share their resources con other Tenants"
+
+#: ../../administration/tenants/tenants.rst:9
+msgid "Subtenants cannot see resources from other Subtenants"
+msgstr "Subtenants cannot see resources desde other Subtenants"
+
+#: ../../administration/tenants/tenants.rst:10
+msgid ""
+"Subtenants can only access Master Tenant resources that have been set to "
+"Public visibility or specifically assigned to the Subtenant"
+msgstr ""
+"Subtenants can only access Master Tenant resources that han sido set to "
+"Public visibility o specifically assigned to the Subtenant"
+
+#: ../../getting_started/guides/tenancy.rst:13
+msgid "Tenant Roles"
+msgstr "Tenant Roles"
+
+#: ../../getting_started/guides/tenancy.rst:15
+msgid ""
+"Before even creating the Tenant, we need to understand what a Tenant Role"
+" is and ensure that a Tenant Role with correct rights permissions exists."
+" Tenant Roles set the maximum feature permissions levels for any User in "
+"the Subtenant and also give (or revoke) access to Clouds, Library items, "
+"Tasks, Workflows, and other things integrated or created in and shared "
+"from the |mastertenant|. Only |mastertenant| administrators have the "
+"ability to create Tenant Roles."
+msgstr ""
+"Before even creating the Tenant, we necesitan understand what a Tenant "
+"Role is y asegúrese de que a Tenant Role con correct rights permissions "
+"exists. Tenant Roles set the maximum feature permissions levels for "
+"cualquier User in the Subtenant y también give (or revoke) access to "
+"Clouds, Library items, Tasks, Workflows, y otros things integrated o "
+"created in y shared desde the |mastertenant|. Only |mastertenant| "
+"administrators have the ability para crear Tenant Roles."
+
+#: ../../getting_started/guides/tenancy.rst:17
+msgid ""
+"User Roles within the Tenant may be created with lesser permissions than "
+"the Tenant Role allows but we will discuss User Roles further in a later "
+"section."
+msgstr ""
+"User Roles dentro de the Tenant puede ser created con lesser permissions "
+"than the Tenant Role allows pero we will discuss User Roles further in a "
+"later section."
+
+#: ../../getting_started/guides/tenancy.rst:19
+msgid ""
+"In a new environment, the only Tenant Role will be the included \"Tenant "
+"Admin\" Role but this Role is not editable. It's advisable to create your"
+" own Tenant Roles so they may be edited as needed. To get started, we can"
+" create a new Tenant Role and copy from the pre-existing \"Tenant Admin\""
+" Role."
+msgstr ""
+"In un nuevo environment, the only Tenant Role será the included \\\"Tenant "
+"Admin\\\" Role but this Role is not editable. It's advisable crear your "
+"own Tenant Roles so they may be edited as needed. To get started, we can "
+"create un nuevo Tenant Role y copy desde the pre-existing \\\"Tenant "
+"Admin\\\" Role."
+
+#: ../../getting_started/guides/tenancy.rst:21
+msgid "Navigate to |AdmRol|"
+msgstr "Navigate to |AdmRol|"
+
+#: ../../getting_started/guides/tenancy.rst:22
+#: ../../getting_started/guides/tenancy.rst:59
+msgid "Click :guilabel:`+ CREATE ROLE`"
+msgstr "Click :guilabel:`+ CREATE ROLE`"
+
+#: ../../getting_started/guides/tenancy.rst:23
+msgid "Set a NAME, TYPE (Tenant Role), and COPY FROM ROLE (Tenant Admin)"
+msgstr "Set a NAME, TYPE (Tenant Role), y COPY FROM ROLE (Tenant Admin)"
+
+#: ../../getting_started/guides/tenancy.rst:24
+#: ../../getting_started/guides/tenancy.rst:41
+#: ../../getting_started/guides/tenancy.rst:62
+#: ../../getting_started/guides/tenancy.rst:101
+#: ../../getting_started/guides/tenancy.rst:113
+#: ../../getting_started/guides/tenancy.rst:136
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`SAVE CHANGES`"
+
+msgid ".. image:: images/administration/tenants/addTenantRole.png"
+msgstr ".. image:: images/administration/tenants/addTenantRole.png"
+
+#: ../../getting_started/guides/tenancy.rst:29
+msgid ""
+"Once created, click into the new Role and edit feature permissions if you"
+" wish. Remember the Tenant Role is setting the maximum available Role "
+"permissions for each feature that Users within the Tenant can have. We'll"
+" worry about scoping resources to the Subtenant (such as Clouds) in a "
+"later section."
+msgstr ""
+"Once created, click en the nuevo Role y edit feature permissions if you "
+"wish. Remember the Tenant Role está configuradoting the maximum disponible "
+"Role permissions for cada feature that Users dentro de the Tenant can "
+"have. We'll worry about scoping resources to the Subtenant (como Clouds) "
+"in a later section."
+
+#: ../../getting_started/guides/tenancy.rst:31
+msgid "With a Tenant Role created, we can move on to creating the Tenant itself."
+msgstr "With a Tenant Role created, we can move on to creating the Tenant itself."
+
+#: ../../getting_started/guides/tenancy.rst:34
+msgid "Create a Tenant"
+msgstr "Create a Tenant"
+
+#: ../../getting_started/guides/tenancy.rst:36
+msgid "We'll now create a Tenant and apply the Tenant Role we've just created."
+msgstr "We'll now create a Tenant y apply the Tenant Role we've just created."
+
+#: ../../getting_started/guides/tenancy.rst:38
+#: ../../integration_guides/IdentityManagement/active_directory.rst:52
+msgid "Navigate to |AdmTen|"
+msgstr "Navigate to |AdmTen|"
+
+#: ../../getting_started/guides/tenancy.rst:39
+msgid "Click :guilabel:`CREATE TENANT`"
+msgstr "Click :guilabel:`CREATE TENANT`"
+
+#: ../../getting_started/guides/tenancy.rst:40
+msgid "Name your Tenant and set the Tenant Role in the BASE ROLE field"
+msgstr "Name your Tenant y set the Tenant Role in the BASE ROLE field"
+
+#: ../../getting_started/guides/tenancy.rst:43
+msgid ""
+"The NAME and BASE ROLE are the most important settings and the only two "
+"required. See the Tenants section of |morpheus| documentation to learn "
+"more about other settings which may be applied when adding or editing "
+"Tenants."
+msgstr ""
+"The NAME y BASE ROLE are the most important settings y the only two "
+"required. See the Tenants section of |morpheus| documentation to learn "
+"more about other settings which puede ser applied when adding o editing "
+"Tenants."
+
+msgid ".. image:: images/administration/tenants/addTenant.png"
+msgstr ".. image:: images/administration/tenants/addTenant.png"
+
+#: ../../getting_started/guides/tenancy.rst:48
+msgid ""
+"With the Tenant created, the rest of the guide will pertain to "
+"configuring the new Tenant and demonstrating how to provision new "
+"workloads using resources shared down from the |mastertenant|."
+msgstr ""
+"With the Tenant created, the rest of the guide will pertain to configuring "
+"the nuevo Tenant y demonstrating how to provision nuevo workloads using "
+"resources shared down desde the |mastertenant|."
+
+#: ../../getting_started/guides/tenancy.rst:51
+msgid "Users and User Roles"
+msgstr "Users y User Roles"
+
+#: ../../getting_started/guides/tenancy.rst:53
+msgid ""
+"In the prior steps we've created a new Tenant and associated our created "
+"Tenant Role with it. If you click into the new Tenant you'll notice that "
+"there are currently no users so the new Tenant is still unusable. We "
+"could go ahead and create a new User but if this is a new |morpheus| "
+"environment, the new Tenant will not have any User Roles to apply to the "
+"new User we wish to create."
+msgstr ""
+"In the prior steps we've created a nuevo Tenant y associated our created "
+"Tenant Role con it. If you click en the nuevo Tenant you'll notice that "
+"there are actualmente no users so the nuevo Tenant is still unusable. We "
+"could go ahead y create a nuevo User pero if this is a nuevo |morpheus| "
+"environment, the nuevo Tenant no have cualquier User Roles to apply to the "
+"nuevo User we wish para crear."
+
+#: ../../getting_started/guides/tenancy.rst:55
+msgid ""
+"To remedy this problem, we can add a \"Multi-Tenant User Role\" from the "
+"|mastertenant|. This is essentially a Role Template from which a Role is "
+"created and seeded down to each Tenant. Only |mastertenant| "
+"administrators can create Multi-Tenant User Roles. After creation, edits "
+"can be made and permission changes will be filtered down to the child "
+"Role that exists within each Subtenant. However, it's important to know "
+"that should the child Role ever be edited in the Subtenant, the link back"
+" to the Multi-Tenant User Role will be broken and it will become like any"
+" other User Role created in the Subtenant. To prevent this situation, "
+"|mastertenant| administrators can set a \"MULTITENANT LOCKED\" option to "
+"restrict such edits in the Subtenant."
+msgstr ""
+"To remedy this problem, we can add a \"Multi-Tenant User Role\" desde the "
+"|mastertenant|. This is essentially a Role Template desde which a Role is "
+"created y seeded down to cada Tenant. Only |mastertenant| administrators "
+"can create Multi-Tenant User Roles. After creation, edits puede ser made y "
+"permission changes será filtered down to the child Role that exists dentro "
+"de cada Subtenant. Sin embargo, it's important to know that should the "
+"child Role ever be edited in the Subtenant, the link back to the "
+"Multi-Tenant User Role será broken y it serácome like cualquier otros User "
+"Role created in the Subtenant. To prevent this situation, |mastertenant| "
+"administrators can set a \"MULTITENANT LOCKED\" option to restrict such "
+"edits in the Subtenant."
+
+#: ../../getting_started/guides/tenancy.rst:57
+msgid "New Multi-Tenant User Roles are created in |AdmRol|:"
+msgstr "New Multi-Tenant User Roles are created in |AdmRol|:"
+
+#: ../../getting_started/guides/tenancy.rst:60
+msgid "Provide a NAME, TYPE (User Role), COPY FROM ROLE (if desired)"
+msgstr "Provide a NAME, TYPE (User Role), COPY FROM ROLE (if desired)"
+
+#: ../../getting_started/guides/tenancy.rst:61
+msgid "Mark the boxes to set MULTITENANT ROLE and MULTITENANT LOCKED"
+msgstr "Mark the boxes establecer MULTITENANT ROLE y MULTITENANT LOCKED"
+
+#: ../../getting_started/guides/tenancy.rst:64
+msgid ""
+"After saving the Role, it will appear in the |mastertenant| and will also"
+" be seeded down to the Tenant we've already created since it is a Multi-"
+"Tenant User Role. We've also locked the Role so that Subtenant users "
+"cannot edit it and thus unlink it from future permissions edits made in "
+"the |mastertenant|. Keep in mind that no matter what permissions we set, "
+"Users in the Subtenant will not be able to exceed permissions set on the "
+"Tenant Role as discussed in a prior section. If desired, you can click "
+"into this User Role now and edit its permissions to suit your needs."
+msgstr ""
+"After saving the Role, it will appear in the |mastertenant| y will also be "
+"seeded down to the Tenant we've already created since it is a Multi-Tenant "
+"User Role. We've also locked the Role so that Subtenant users cannot edit "
+"it y thus unlink it desde future permissions edits made in the "
+"|mastertenant|. Tenga en cuenta that no matter what permissions we set, "
+"Users in the Subtenant will not be able to exceed permissions set on the "
+"Tenant Role as discussed in a prior section. If desired, you can click en "
+"this User Role now y edit its permissions to suit your needs."
+
+msgid ".. image:: images/administration/tenants/addUserRole.png"
+msgstr ".. image:: images/administration/tenants/addUserRole.png"
+
+#: ../../getting_started/guides/tenancy.rst:69
+msgid ""
+"At this point we're ready to add a User which will make the Tenant "
+"usable. We can create one in the new Tenant by navigating to the Tenant "
+"list page (|AdmTen|) and selecting the Tenant. There are a number of "
+"configurations to make when creating a user but when selecting the User's"
+" Role you should see the previously-created Multi-Tenant User Role."
+msgstr ""
+"At this point we're ready to add a User which will make the Tenant usable. "
+"We can create one en la new Tenant by navigating a la Tenant list page "
+"(|AdmTen|) y selecting the Tenant. There are a number of configurations to "
+"make when creating a user but when selecting the User's Role you should "
+"see the previously-created Multi-Tenant User Role."
+
+msgid ".. image:: images/administration/tenants/addUser.png"
+msgstr ".. image:: images/administration/tenants/addUser.png"
+
+#: ../../getting_started/guides/tenancy.rst:74
+msgid ""
+"After saving the new User, we can make the first test of the new Tenant "
+"by impersonating the User and entering the Tenant. In the list of Users "
+"on the Tenant detail page, click the gear (|gear|) icon at the end of the"
+" User's row and select \"Impersonate.\" You should end up inside the new "
+"Tenant operating as the new user. This can be confirmed by making note of"
+" the updated name given in the upper-right portion of the application "
+"window. To quit impersonating, click on the name and select \"Quit "
+"Impersonating.\""
+msgstr ""
+"After saving el nuevo User, we can make the first test of el nuevo Tenant "
+"by impersonating the User y entering the Tenant. In the list of Users on "
+"the Tenant detail page, click the gear (|gear|) icon at the end of the "
+"User's row y select \"Impersonate.\" You should end up inside el nuevo "
+"Tenant operating as el nuevo user. Esto puede ser confirmed by making note "
+"of the updated name given in the upper-right portion of the application "
+"window. To quit impersonating, click on el nombre y select \"Quit "
+"Impersonating.\""
+
+#: ../../getting_started/guides/tenancy.rst:76
+msgid ""
+"At this point we've created a User manually but it's important to point "
+"out that |morpheus| can also use an existing identity integration, such "
+"as Microsoft Active Directory, to manage User creation and Role "
+"assignment. Expand the section below to see an example use case or "
+"continue on if you'd prefer to administer your Users directly in "
+"|morpheus|. The complete integration guide elsewhere in |morpheus| docs "
+"also includes common Active Directory troubleshooting steps should those "
+"be needed."
+msgstr ""
+"En este punto we've created a User manually but it's important to point "
+"out that |morpheus| can also use an existente identity integration, como "
+"Microsoft Active Directory, gestionar User creation y Role assignment. "
+"Expand the section abajo to see an example use case o continue on if you'd "
+"prefer to administer your Users directly in |morpheus|. The complete "
+"integration guide elsewhere in |morpheus| docs also includes common Active "
+"Directory troubleshooting steps should those be needed."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:14
+msgid ""
+"Active Directory is Microsoft’s primary authentication service. It is "
+"widely used in enterprise organizations and even in Microsoft cloud "
+"services. While Active Directory also supports LDAP protocol support "
+"(which |morpheus| can integrate with as well), |morpheus| includes a "
+"dedicated identity integration type specifically for Active Directory. By"
+" integrating Active Directory, |morpheus| administrators can fully "
+"offload the work of managing the user lifecycle to Active Directory. "
+"Creating new users, applying roles to users, updating basic user data, "
+"disabling users, and more can be handled in Active Directory and "
+"automatically filtered down to |morpheus|. This section includes an "
+"example integration walkthrough as well as additional details on the "
+"integration feature set."
+msgstr ""
+"Active Directory is Microsoft’s primary authentication service. It is "
+"widely used in enterprise organizations y even in Microsoft cloud "
+"services. While Active Directory también supports LDAP protocol support "
+"(which |morpheus| can integrate con as well), |morpheus| includes a "
+"dedicated identity integration type specifically for Active Directory. By "
+"integrating Active Directory, |morpheus| administrators can fully offload "
+"the work of managing el usuario lifecycle to Active Directory. Creating "
+"nuevo users, applying roles para usarrs, updating basic user data, "
+"disabling users, y more puede ser handled in Active Directory y "
+"automatically filtered down to |morpheus|. This section includes an "
+"example integration walkthrough así como adicional details on the "
+"integration feature set."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:16
+msgid ""
+"Caution should be used when integrating more than one Active Directory "
+"identity source with the same |morpheus| Tenant. You must ensure the "
+"users on each identity source are unique users or that the two domains "
+"use different naming conventions for users."
+msgstr ""
+"Caution debería ser used when integrating more than one Active Directory "
+"identity source con the mismo |morpheus| Tenant. You must ensure los "
+"usuarios on cada identity source are unique users o that the two domains "
+"use diferente naming conventions for users."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:21
+msgid ""
+"In |morpheus|, identity sources (if used) are configured per Tenant. In "
+"order to see an identity integration or create a new one, navigate to a "
+"Tenant detail page (|AdmTen| > Selected Tenant) and click "
+":guilabel:`IDENTITY SOURCES`. From this page we can add a new identity "
+"source or click the pencil (|pencil|) icon next to an existing identity "
+"source to view or edit it. Any configured identity source will apply to "
+"just one Tenant and they cannot be shared. One scenario where this is "
+"especially useful is in an MSP appliance where each Tenant is a siloed "
+"environment for a specific customer. The customer's own existing Active "
+"Directory server and groups can be leveraged to build |morpheus| user "
+"accounts with correct role mapping automatically."
+msgstr ""
+"In |morpheus|, identity sources (if used) están configurados per Tenant. "
+"Para see an identity integration o create a nuevo one, navigate to a "
+"Tenant detail page (|AdmTen| > Selected Tenant) y click "
+":guilabel:`IDENTITY SOURCES`. From this page we can add a nuevo identity "
+"source o click the pencil (|pencil|) icon next to an existente identity "
+"source to view o edit it. Any configurado identity source will apply to "
+"just one Tenant y they cannot be shared. One scenario where this is "
+"especially useful is in an MSP appliance where cada Tenant is a siloed "
+"environment for a específico customer. The customer's own existente Active "
+"Directory server y groups puede ser leveraged to build |morpheus| user "
+"accounts con correct role mapping automatically."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:23
+msgid ""
+"When configuring an Active Directory integration in |morpheus|, AD groups"
+" are mapped to |morpheus| roles. When the user logs in for the first "
+"time, |morpheus| adds the new user account with correct name, email "
+"address, and applies one or more roles depending on configuration. Going "
+"forward, |morpheus| will sync down any changes to the user, including any"
+" role changes based on changes to the user's associated AD groups or "
+"updated passwords. Additionally, disabling a user in AD will prevent them"
+" from accessing |morpheus|."
+msgstr ""
+"When configuring an Active Directory integration in |morpheus|, AD groups "
+"are mapped to |morpheus| roles. Cuando el user logs in for the first time, "
+"|morpheus| adds the nuevo user account con correct name, email address, y "
+"applies one o more roles dependiendo de configuration. Going forward, "
+"|morpheus| will sync down cualquier changes to el usuario, including "
+"cualquier role changes basado en changes to el usuario's associated AD "
+"groups o updated passwords. Adicionalmente, disabling a user in AD will "
+"prevent them desde accessing |morpheus|."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:25
+msgid ""
+"|morpheus| will connect over port 389 for non-secure LDAP and port 636 "
+"for secure LDAP. Ensure that |morpheus| is able to talk to the AD server "
+"on the proper port."
+msgstr ""
+"|morpheus| will connect sobre port 389 for non-secure LDAP y port 636 for "
+"secure LDAP. Asegúrese de que |morpheus| is able to talk to the AD server "
+"on the proper port."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:30
+msgid ""
+"In a simple example, we have an Active Directory server which has two "
+"groups relevant to |morpheus|, \"Morpheus Users\" and \"Morpheus "
+"Admins.\" We will configure |morpheus| so that only users in the "
+"\"Morpheus Users\" group can access |morpheus| in any capacity. Users who"
+" are also in the \"Morpheus Admins\" group will take on the System Admin "
+"role in |morpheus|. We'll see later when the integration is configured "
+"how |morpheus| roles can be mapped to AD groups. In the same AD server, I"
+" have two users. John Smith is in groups \"Morpheus Users\" and "
+"\"Morpheus Admins\". John Jones is only in the \"Morpheus Users\" group."
+msgstr ""
+"In a simple example, we have an Active Directory server which has two "
+"groups relevante to |morpheus|, \\\"Morpheus Users\\\" y \\\"Morpheus "
+"Admins.\\\" We will configure |morpheus| so that only users in the "
+"\\\"Morpheus Users\\\" group can access |morpheus| in any capacity. Users "
+"who are also in the \\\"Morpheus Admins\\\" group will take on the System "
+"Admin role in |morpheus|. We'll see later when the integration está "
+"configurado how |morpheus| roles puede ser mapped to AD groups. In the "
+"same AD server, I have two users. John Smith is in groups \\\"Morpheus "
+"Users\\\" y \\\"Morpheus Admins\\\". John Jones is only in the "
+"\\\"Morpheus Users\\\" group."
+
+#: ../../getting_started/guides/tenancy.rst
+msgid ".. image:: images/integration_guides/identity_sources/ad/ad.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/ad.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:34
+msgid ""
+"Knowing the AD scheme and the requirements for |morpheus| user roles, we "
+"can begin the process of creating the integration. Identity integrations "
+"are specific to each Tenant so begin by navigating to the Tenant detail "
+"page (|AdmTen| > Selected Tenant) and clicking :guilabel:`IDENTITY "
+"SOURCES`. On setting the type to \"Active Directory,\" the form will "
+"update with the needed fields. Note the following basic fields:"
+msgstr ""
+"Knowing the AD scheme y the requirements for |morpheus| user roles, we "
+"puede sergin el proceso of creating the integration. Identity integrations "
+"are específico to cada Tenant so begin by navigating to the Tenant detail "
+"page (|AdmTen| > Selected Tenant) y clicking :guilabel:`IDENTITY SOURCES`. "
+"On setting the type to \"Active Directory,\" the form will update con the "
+"needed fields. Note lo siguiente basic fields:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:36
+msgid "**AD SERVER:** The IP address or hostname for the Active Directory Server"
+msgstr "**AD SERVER:** The dirección IP o hostname for the Active Directory Server"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:37
+msgid "**DOMAIN:** The AD domain in which the relevant users and groups reside"
+msgstr "**DOMAIN:** The AD domain in which the relevante users y groups reside"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:38
+msgid ""
+"**BINDING USERNAME:** A server user which has access to relevant objects "
+"on the AD server. In my example, I've used the in-built Administrator "
+"user which is the easiest option. Other users may be used depending on "
+"your organization's IT security policies but the integration with "
+"|morpheus| will not work properly if the user does not have the needed "
+"access"
+msgstr ""
+"**BINDING USERNAME:** A server user which has access to relevant objects "
+"on the AD server. In my example, I've used the in-built Administrator user "
+"which is the easiest option. Other users puede usarse dependiendo de your "
+"organization's IT security policies pero the integration con |morpheus| no "
+"work properly if el usuario does no have the needed access"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:39
+msgid "**BINDING PASSWORD:** The password for the user in the prior field"
+msgstr "**BINDING PASSWORD:** The password para la user en la prior field"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:41
+msgid ""
+"With the basic configurations completed, the remaining configurations "
+"will affect |morpheus| user and role generation. A REQUIRED GROUP is "
+"optional and is a group the user *must* be in to have any |morpheus| "
+"access. Here we require that users be in the \"Morpheus Users\" group. A "
+"DEFAULT ROLE is required and will be assigned to all users regardless of "
+"any additional roles they may be assigned based on their AD group "
+"membership. Beyond that, all other |morpheus| roles will be listed here "
+"and an AD group name can be associated with as many as you required. In "
+"this example, we are giving users in the \"Morpheus Admins\" group the "
+"|morpheus| System Admin role. Though we did not use them, it's worth "
+"pointing out that ENABLE ROLE MAPPING PERMISSION will give administrators"
+" in the Tenant the ability to update the AD role mappings (though they "
+"will not have access to the core integration fields such as AD SERVER, "
+"DOMAIN, or binding user details). MANUAL ROLE ASSIGNMENT allows users to "
+"manually update |morpheus| roles outside of the automatic mappings "
+"created by the AD integration."
+msgstr ""
+"With the basic configurations completed, the remaining configurations will "
+"affect |morpheus| user y role generation. A REQUIRED GROUP es opcional y "
+"is a group el usuario *must* be in to have cualquier |morpheus| access. "
+"Here we require that users be in the \"Morpheus Users\" group. A DEFAULT "
+"ROLE es obligatorio y será assigned to todos users regardless of cualquier "
+"adicional roles they puede ser assigned basado en their AD group "
+"membership. Beyond that, todos otros |morpheus| roles será listed here y "
+"an AD group name puede ser asociado con as muchos as you required. In this "
+"example, we are giving users in the \"Morpheus Admins\" group the "
+"|morpheus| System Admin role. Though we did no use them, it's worth "
+"pointing out that ENABLE ROLE MAPPING PERMISSION will give administrators "
+"in the Tenant the ability para actualizar the AD role mappings (though "
+"they no have access to the core integration fields como AD SERVER, DOMAIN, "
+"o binding user details). MANUAL ROLE ASSIGNMENT permite a los usuarios "
+"manually update |morpheus| roles outside of the automatic mappings created "
+"by the AD integration."
+
+#: ../../getting_started/guides/tenancy.rst
+msgid ".. image:: images/integration_guides/identity_sources/ad/intConfig.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/intConfig.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:45
+msgid ""
+"With the above integration steps completed, users can now log into "
+"|morpheus| and a user account with correct roles will automatically be "
+"created. In our example case, John Smith has logged in and we can see he "
+"is assigned the default role as well as the System Admin role based on "
+"his AD group associations. Going forward, |morpheus| will continue to "
+"sync any changes to these users. For example, |morpheus| roles may be "
+"updated based on changing AD groups or user access may be completely "
+"revoked by disabling the user in AD."
+msgstr ""
+"With the above integration steps completed, users can now log en "
+"|morpheus| y a user account con correct roles will automatically be "
+"created. In our example case, John Smith has logged in y we can see he is "
+"assigned the predeterminado role así como the System Admin role basado en "
+"his AD group associations. Going forward, |morpheus| will continue to sync "
+"cualquier changes to these users. Por ejemplo, |morpheus| roles puede ser "
+"updated basado en changing AD groups o user access puede ser completely "
+"revoked by disabling el usuario in AD."
+
+#: ../../getting_started/guides/tenancy.rst
+msgid ".. image:: images/integration_guides/identity_sources/ad/user.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/user.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:53
+msgid "Select a Tenant"
+msgstr "Select a Tenant"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:54
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr "Select :guilabel:`IDENTITY SOURCES`"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:55
+msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`"
+msgstr "Select :guilabel:`+ ADD IDENTITY SOURCE`"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:56
+msgid "Set the TYPE to \"Active Directory\""
+msgstr "Set the TYPE to \\\"Active Directory\\\""
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:57
+msgid "Populate the following:"
+msgstr "Populate lo siguiente:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:59
+msgid "Name"
+msgstr "Nombre"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:60
+msgid "A friendly name in |morpheus| for the AD integration"
+msgstr "A friendly name in |morpheus| for the AD integration"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:61
+msgid "AD Server"
+msgstr "AD Server"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:62
+msgid "The Hostname or IP address of AD Server"
+msgstr "The Hostname o dirección IP of AD Server"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:63
+msgid "Domain"
+msgstr "Dominio"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:64
+msgid "The AD domain in which the relevant user and group objects reside"
+msgstr "The AD domain in which the relevante user y group objects reside"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:65
+msgid "USE SSL"
+msgstr "USE SSL"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:66
+msgid ""
+"Indicates whether SSL should be used for communication with the AD "
+"server. |morpheus| will connect over port 389 for non-secure LDAP and "
+"port 636 for secure LDAP, ensure |morpheus| can connect to the AD server "
+"over the correct port"
+msgstr ""
+"Indicates whether SSL debería ser used for communication con the AD "
+"server. |morpheus| will connect over port 389 for non-secure LDAP y port "
+"636 for secure LDAP, ensure |morpheus| can connect to the AD server over "
+"the correct port"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:67
+msgid "Binding Username"
+msgstr "Binding Username"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:68
+msgid ""
+"A username for a service account which has access to relevant objects "
+"(users, groups, etc.). For ease, the \"Administrator\" user may be used"
+msgstr ""
+"A username for a service account which has access to relevante objects "
+"(users, groups, etc.). For ease, the \\\"Administrator\\\" user may be "
+"used"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:69
+msgid "Binding Password"
+msgstr "Binding Password"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:70
+msgid "The password for the above account"
+msgstr "The password for the arriba account"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:71
+msgid "Required Group"
+msgstr "Required Group"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:72
+msgid ""
+"The AD group users must be in to have access (optional, see example in "
+"the prior section)"
+msgstr ""
+"The AD group users debe ser in to have access (optional, see example in "
+"the prior section)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:73
+msgid "Default Role"
+msgstr "Default Role"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:74
+msgid ""
+"The default role a user is assigned when they are in the required group "
+"or if no specific group mapping applies to the user (see example in prior"
+" section)"
+msgstr ""
+"The default role a user is assigned when they are en la required group o "
+"if no specific group mapping applies a la user (see example in prior "
+"section)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:75
+msgid "ENABLE ROLE MAPPING PERMISSION"
+msgstr "ENABLE ROLE MAPPING PERMISSION"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:76
+msgid ""
+"When selected, Tenant users with appropriate rights to view and edit "
+"Roles will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"without viewing or potentially editing the basic Identity Source "
+"configuration (AD server, domain, binding user details, etc)"
+msgstr ""
+"When selected, Tenant users con appropriate rights to view y edit Roles "
+"will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"sin viewing o potentially editing the basic Identity Source configuration "
+"(AD server, domain, binding user details, etc)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:78
+msgid "MANUAL ROLE ASSIGNMENT"
+msgstr "MANUAL ROLE ASSIGNMENT"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:78
+msgid ""
+"When selected, administrators can manually edit Roles for users created "
+"through this identity source integration from the user detail page "
+"(|AdmUse| > Selected user)"
+msgstr ""
+"When selected, administrators can manually edit Roles for users created a "
+"través de this identity source integration desde el usuario detail page "
+"(|AdmUse| > Selected user)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:80
+msgid ""
+"For more on Identity Source role mapping permissions, see the `associated"
+" guide <https://support.morpheusdata.com/s/article/How-to-enable-"
+"Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ "
+"in our KnowledgeBase."
+msgstr ""
+"For more on Identity Source role mapping permissions, consulte la "
+"`associated guide <T0>`_ in our KnowledgeBase."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:82
+msgid "Select :guilabel:`SAVE CHANGES`."
+msgstr "Select :guilabel:`SAVE CHANGES`."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:84
+msgid ""
+"Now allowed AD users can login to |morpheus| via their Active Directory "
+"credentials and a User will be automatically generated to |morpheus| with"
+" matching metadata and mapped Role permissions."
+msgstr ""
+"Now allowed AD users can login to |morpheus| via their Active Directory "
+"credentials y a User será automatically generated to |morpheus| con "
+"matching metadata y mapped Role permissions."
+
+#: ../../getting_started/guides/tenancy.rst:85
+msgid "Whitelabeling"
+msgstr "Whitelabeling"
+
+#: ../../getting_started/guides/tenancy.rst:87
+msgid ""
+"|morpheus| allows each Tenant to be customized with its own look and feel"
+" through whitelabeling features. Your organization can replace the stock "
+"|morpheus| logo and color scheme with your own logos and colors. "
+"Whitelabel settings are held in |AdmSetWhi| and are mostly self-"
+"explanatory. Upload logos and set custom hexadecimal colors in each "
+"field. When done, be sure to set the \"Enable Whitelabel\" configuration "
+"and click :guilabel:`SAVE` all the way at the bottom of the page. If "
+"needed, review a more detailed explanation of each `whitelabel setting "
+"<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#whitelabel>`_"
+" in |morpheus| documentation."
+msgstr ""
+"|morpheus| allows cada Tenant to be customized con its own look y feel a "
+"través de whitelabeling features. Your organization can replace the stock "
+"|morpheus| logo y color scheme con your own logos y colors. Whitelabel "
+"settings are held in |AdmSetWhi| y are mostly self-explanatory. Upload "
+"logos y set personalizado hexadecimal colors in cada field. When done, be "
+"sure to set the \"Enable Whitelabel\" configuration y click "
+":guilabel:`SAVE` todos the way at the bottom of la página. If needed, "
+"review a more detailed explanation of cada `whitelabel setting "
+"<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#whitelabel>`_ "
+"in |morpheus| documentation."
+
+#: ../../getting_started/guides/tenancy.rst:90
+msgid ".. image:: images/administration/tenants/whitelabelSettings.png"
+msgstr ".. image:: images/administration/tenants/whitelabelSettings.png"
+
+#: ../../getting_started/guides/tenancy.rst:92
+msgid "Scoping Clouds to Tenants"
+msgstr "Scoping Clouds to Tenants"
+
+#: ../../getting_started/guides/tenancy.rst:94
+msgid ""
+"With the Tenant now created and seeded with a User and Roles, we're ready"
+" to look at how to set up useful provisioning resources. Of course, "
+"Tenants are complete (yet isolated) |morpheus| environments which can "
+"create their own Cloud integrations or utilize integrations with other "
+"third party technologies (assuming they haven't been restricted from "
+"doing so by the Tenant Role). However, |mastertenant| administrators may "
+"also choose to share integrations created in the |mastertenant| down to "
+"Subtenant users."
+msgstr ""
+"With the Tenant now created y seeded con a User y Roles, we're ready to "
+"look at how para configurar useful provisioning resources. Of course, "
+"Tenants are complete (yet isolated) |morpheus| environments which can "
+"create their own Cloud integrations o utilize integrations con otros third "
+"party technologies (assuming they haven't been restricted desde doing so "
+"by the Tenant Role). Sin embargo, |mastertenant| administrators may "
+"también choose to share integrations created in the |mastertenant| down to "
+"Subtenant users."
+
+#: ../../getting_started/guides/tenancy.rst:96
+msgid ""
+"Many constructs in |morpheus| have a \"Visibility\" attribute when viewed"
+" from the |mastertenant|. This attribute controls whether the construct "
+"is \"Private\" (in other words reserved for a selected Tenant) or Public "
+"(available to all Tenants). In our example, we're going to expose an "
+"Amazon AWS Cloud integrated in the |mastertenant| down to our newly-"
+"created Subtenant. To set the Cloud visibility, use the following steps:"
+msgstr ""
+"Many constructs in |morpheus| have a \"Visibility\" attribute when viewed "
+"desde the |mastertenant|. This attribute controls whether the construct is "
+"\"Private\" (in otros words reserved for a selected Tenant) o Public "
+"(available to todos Tenants). In our example, we're going to expose an "
+"Amazon AWS Cloud integrated in the |mastertenant| down to our "
+"newly-created Subtenant. To set the Cloud visibility, use los siguientes "
+"pasos:"
+
+#: ../../getting_started/guides/tenancy.rst:98
+msgid "Navigate to the Clouds list page (|InfClo|)"
+msgstr "Navigate to the Clouds list page (|InfClo|)"
+
+#: ../../getting_started/guides/tenancy.rst:99
+msgid "Edit the Cloud by clicking the pencil icon (|pencil|) in its row"
+msgstr "Edit the Cloud by clicking the pencil icon (|pencil|) in its row"
+
+#: ../../getting_started/guides/tenancy.rst:100
+msgid "Toggle the VISIBILITY attribute to \"Public\""
+msgstr "Toggle the VISIBILITY attribute to \\\"Public\\\""
+
+msgid ".. image:: images/administration/tenants/editCloud.png"
+msgstr ".. image:: images/administration/tenants/editCloud.png"
+
+#: ../../getting_started/guides/tenancy.rst:106
+msgid ""
+"The Cloud is now exposed to the Subtenant but we also need to expose a "
+"Resource Pool (A VPC, in Amazon parlance) for Subtenant users to "
+"provision into. We do this from the Cloud detail page (|InfClo|) > Click "
+"on selected Cloud."
+msgstr ""
+"The Cloud is now exposed to the Subtenant but we also necesita expose a "
+"Resource Pool (A VPC, in Amazon parlance) for Subtenant users aprovisionar "
+"into. We do this desde the Cloud detail page (|InfClo|) > Click on "
+"selected Cloud."
+
+#: ../../getting_started/guides/tenancy.rst:108
+msgid "Select the Resources subtab"
+msgstr "Select the Resources subtab"
+
+#: ../../getting_started/guides/tenancy.rst:109
+msgid "Click ACTIONS next to the selected Resource Pool (VPC)"
+msgstr "Click ACTIONS next to the selected Resource Pool (VPC)"
+
+#: ../../getting_started/guides/tenancy.rst:110
+msgid "Click Edit"
+msgstr "Click Edit"
+
+#: ../../getting_started/guides/tenancy.rst:111
+msgid "Expand the \"Tenant Permissions\" section"
+msgstr "Expand the \\\"Tenant Permissions\\\" section"
+
+#: ../../getting_started/guides/tenancy.rst:112
+msgid ""
+"Set Visibility to Public (alternatively, you could keep the Private "
+"visibility and add the new Tenant in the next field)"
+msgstr ""
+"Set Visibility to Public (alternatively, you could keep the Private "
+"visibility y add the new Tenant en la next field)"
+
+#: ../../getting_started/guides/tenancy.rst:116
+msgid ".. image:: images/administration/tenants/addResourcePool.png"
+msgstr ".. image:: images/administration/tenants/addResourcePool.png"
+
+#: ../../getting_started/guides/tenancy.rst:117
+msgid ""
+"Repeat the same process for Networks and Security Groups, both of which "
+"are contained in the Networks subtab of the Cloud detail page."
+msgstr ""
+"Repeat the same process for Networks y Security Groups, both of which are "
+"contained in the Networks subtab of the Cloud detail page."
+
+#: ../../getting_started/guides/tenancy.rst:120
+msgid "Groups"
+msgstr "Grupos"
+
+#: ../../getting_started/guides/tenancy.rst:122
+msgid ""
+"The last thing to take a look at before Library items and provisioning "
+"are Groups. Groups define which resources a User can access. Group access"
+" is defined by the User Role and many resources have a Group access "
+"component which allows administrators to control User access to things "
+"like Clouds, Networks, Datastores, Resource Pools, Folders and more."
+msgstr ""
+"The last thing to take a look at before Library items y provisioning are "
+"Groups. Groups define which resources a User can access. Group access is "
+"defined by the User Role y many resources have a Group access component "
+"which allows administrators to control User access to things like Clouds, "
+"Networks, Datastores, Resource Pools, Folders y more."
+
+#: ../../getting_started/guides/tenancy.rst:124
+msgid ""
+"Groups exist solely within the Tenant that creates them, they cannot be "
+"shared down from |mastertenant| to Subtenants. In order to create a Group"
+" for our new Tenant, impersonate the User we've created in previous "
+"steps. Once working in the Tenant, use the following steps:"
+msgstr ""
+"Groups exist solely dentro de the Tenant that creates them, they cannot be "
+"shared down desde |mastertenant| to Subtenants. Para create a Group for "
+"our nuevo Tenant, impersonate the User we've created in previous steps. "
+"Once working in the Tenant, use los siguientes pasos:"
+
+#: ../../getting_started/guides/tenancy.rst:126
+msgid "Navigate to |InfGro|"
+msgstr "Navigate to |InfGro|"
+
+#: ../../getting_started/guides/tenancy.rst:127
+msgid "Click :guilabel:`+ CREATE`"
+msgstr "Click :guilabel:`+ CREATE`"
+
+#: ../../getting_started/guides/tenancy.rst:128
+msgid "Set a NAME for the Group and click :guilabel:`SAVE CHANGES`"
+msgstr "Set a NAME for the Group y click :guilabel:`SAVE CHANGES`"
+
+#: ../../getting_started/guides/tenancy.rst:130
+msgid "We'll now add the shared Cloud to the Group:"
+msgstr "We'll now add the shared Cloud to the Group:"
+
+#: ../../getting_started/guides/tenancy.rst:132
+msgid "Click on the name of the Group to access the Group detail page"
+msgstr "Click on the name of the Group acceder the Group detail page"
+
+#: ../../getting_started/guides/tenancy.rst:133
+msgid "Click on the Clouds tab"
+msgstr "Click on the Clouds tab"
+
+#: ../../getting_started/guides/tenancy.rst:134
+#: ../../getting_started/guides/tenancy.rst:149
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ ADD`"
+
+#: ../../getting_started/guides/tenancy.rst:135
+msgid "Use the typeahead field to select the shared Cloud"
+msgstr "Use the typeahead field seleccionar the shared Cloud"
+
+msgid ".. image:: images/administration/tenants/addCloudToGroup.png"
+msgstr ".. image:: images/administration/tenants/addCloudToGroup.png"
+
+#: ../../getting_started/guides/tenancy.rst:141
+msgid ""
+"At this point the basic configuration steps are complete and we will "
+"attempt a provisioning test using built-in Instance Types which are "
+"preinstalled with |morpheus|."
+msgstr ""
+"At this point the basic configuration steps are complete y we will attempt "
+"a provisioning test using built-in Instance Types which are preinstalled "
+"con |morpheus|."
+
+#: ../../getting_started/guides/tenancy.rst:144
+msgid "Provisioning Test"
+msgstr "Provisioning Test"
+
+#: ../../getting_started/guides/tenancy.rst:146
+msgid ""
+"At this point, you can conduct a test by attempting to provision one of "
+"the basic Instance Types shipped with |morpheus| for demonstration "
+"purposes. To test, we'll provision a basic Ubuntu box to our AWS Cloud."
+msgstr ""
+"At this point, you can conduct a test by attempting to provision one of "
+"the basic Instance Types shipped con |morpheus| for demonstration "
+"purposes. To test, we'll provision a basic Ubuntu box to our AWS Cloud."
+
+#: ../../getting_started/guides/tenancy.rst:148
+msgid "Navigate to |ProIns|"
+msgstr "Navigate to |ProIns|"
+
+#: ../../getting_started/guides/tenancy.rst:150
+msgid "Select the Ubuntu Instance Type"
+msgstr "Select the Ubuntu Instance Type"
+
+#: ../../getting_started/guides/tenancy.rst:151
+#: ../../getting_started/guides/tenancy.rst:154
+#: ../../getting_started/guides/tenancy.rst:156
+msgid "Click :guilabel:`NEXT`"
+msgstr "Click :guilabel:`NEXT`"
+
+#: ../../getting_started/guides/tenancy.rst:152
+msgid ""
+"Select the Group and Cloud noting that only resources shared with the "
+"Subtenant are selectable"
+msgstr ""
+"Select the Group y Cloud noting that only resources shared con the "
+"Subtenant are selectable"
+
+#: ../../getting_started/guides/tenancy.rst:153
+msgid "Name the Instance"
+msgstr "Name the Instance"
+
+#: ../../getting_started/guides/tenancy.rst:155
+msgid ""
+"On the CONFIGURE tab, select a Resource Pool, Network, and Security Group"
+" once again noting that only resources shared with the Subtenant are "
+"selectable"
+msgstr ""
+"On the CONFIGURE tab, select a Resource Pool, Network, y Security Group "
+"once again noting that only resources shared con the Subtenant are "
+"selectable"
+
+#: ../../getting_started/guides/tenancy.rst:157
+msgid "Click :guilabel:`NEXT` once again"
+msgstr "Click :guilabel:`NEXT` once again"
+
+#: ../../getting_started/guides/tenancy.rst:158
+msgid "Click :guilabel:`COMPLETE`"
+msgstr "Click :guilabel:`COMPLETE`"
+
+#: ../../getting_started/guides/tenancy.rst:161
+msgid ".. image:: images/administration/tenants/createInstance.png"
+msgstr ".. image:: images/administration/tenants/createInstance.png"
+
+#: ../../getting_started/guides/tenancy.rst:162
+msgid "After a minute or two, the Instance should be fully provisioned."
+msgstr "After a minute o two, the Instance debería ser fully provisioned."
+
+#: ../../getting_started/guides/tenancy.rst:165
+msgid "Exposing Custom Instance Types to Subtenants"
+msgstr "Exposing Custom Instance Types to Subtenants"
+
+#: ../../getting_started/guides/tenancy.rst:167
+msgid ""
+"|mastertenant| administrators can also share custom Library items down to"
+" Subtenants. Do do this, navigate to |LibBlu| and select an Instance "
+"Type. Click the pencil (|pencil|) icon in the row for the selected "
+"Instance Type to edit it. As we've done before, update the VISIBILITY "
+"setting to Public. In addition, ensure the User Role for the Subtenant "
+"User grants access to the selected Instance Type. Once configurations "
+"have been made, conduct a similar test to the previous section. When you "
+"attempt to provision a new Instance, the new Instance Type should be "
+"selectable and the User should be able to provision the custom Instance "
+"Type in the same was as the default Instance Type was provisioned in the "
+"previous step."
+msgstr ""
+"|mastertenant| administrators can también share custom Library items down "
+"to Subtenants. Do do this, navigate to |LibBlu| y select an Instance Type. "
+"Click the pencil (|pencil|) icon in the row for the selected Instance Type "
+"to edit it. As we've done before, update the VISIBILITY setting to Public. "
+"Además, ensure the User Role for the Subtenant User grants access to the "
+"selected Instance Type. Once configurations han sido made, conduct a "
+"similar test to the previous section. When you attempt to provision un "
+"nuevo Instance, el nuevo Instance Type debería ser selectable y the User "
+"debería ser able to provision the custom Instance Type in the same was as "
+"el valor predeterminado Instance Type was provisioned in the previous "
+"step."
+

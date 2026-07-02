@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:11
+msgid ""
+"Teach agents how to silently evaluate whether a work session produced "
+"knowledge worth capturing, and if so, persist it without prompting the "
+"user. This is the \"smart auto-capture\" skill — it only fires when "
+"there's actually something to capture."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:13
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:15
+msgid ""
+"This skill is embedded in the final step of `/deliver`, `/diagnose`, "
+"`/retro`, and `/design`. You don't load it manually — it activates "
+"automatically at the end of these workflows when `knowledge.auto_capture`"
+" is enabled in `hero.json` (default: on)."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:17
+msgid "The decision: capture or skip?"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:19
+msgid ""
+"Before writing anything, evaluate whether the session produced **novel, "
+"reusable knowledge**. Ask yourself:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:21
+msgid "Capture if ANY of these are true:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:22
+msgid ""
+"A technical constraint was discovered that isn't documented (e.g., \"FTS5"
+" can't handle hyphens in MATCH queries\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:23
+msgid ""
+"A design decision was made with trade-offs discussed (e.g., \"chose SSE "
+"over WebSockets for MCP transport\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:24
+msgid ""
+"A pattern was established that future work should follow (e.g., \"all CLI"
+" flags use package-level vars and resetFlags()\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:25
+msgid ""
+"A workaround was needed for a tool/library limitation (e.g., \"Cobra flag"
+" state persists across test runs\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:26
+msgid ""
+"An integration or API behavior was learned empirically (e.g., \"Figma API"
+" can't generate designs, only read them\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:27
+msgid ""
+"A architectural boundary or constraint was established (e.g., \"no new Go"
+" dependencies\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:29
+msgid "Skip if ALL of these are true:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:30
+msgid "The work was straightforward implementation of an existing spec"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:31
+msgid "No surprises or unexpected behavior was encountered"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:32
+msgid "No decisions were made — just execution"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:33
+msgid "The knowledge already exists in `.hero/knowledge/`"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:35
+msgid "When in doubt, skip. Noise in the knowledge base is worse than gaps."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:37
+msgid "How to capture silently"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:39
+msgid "When you determine something is worth capturing:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:41
+msgid "**Don't prompt the user.** Don't ask \"should I save this?\" Just do it."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:42
+msgid "**Classify the learning** into the right knowledge type:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:43
+msgid "Pattern/style → convention (`.hero/knowledge/conventions/<slug>/spec.md`)"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:44
+msgid "Technical choice → decision (`.hero/knowledge/decisions/<slug>/spec.md`)"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:45
+msgid "Hard constraint → rule (`.hero/knowledge/rules/<slug>/spec.md`)"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:46
+msgid "Background info → context (`.hero/knowledge/context/<slug>/spec.md`)"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:47
+msgid "Rough insight → note (`hero note <slug>`)"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:49
+msgid "**Write concisely.** Knowledge entries should be scannable:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:50
+msgid ""
+"Title: clear, specific (not \"Database Notes\" — instead \"SQLite FTS5 "
+"Hyphen Handling\")"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:51
+msgid "Body: 3-10 sentences. What, why, and how to apply it."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:52
+msgid "Tags: 2-4 relevant tags for discoverability"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:54
+msgid ""
+"**Mention it briefly at the end of your response.** One line, not a sales"
+" pitch:"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:55
+msgid "\"Captured convention: sqlite-fts5-hyphen-handling\""
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:56
+msgid "\"Captured decision: sse-over-websockets-mcp-transport\""
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:57
+msgid "Or if nothing: say nothing. Don't announce \"no knowledge captured.\""
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:59
+msgid "**Run `hero index`** after writing to make it searchable."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:61
+msgid "Knowledge entry templates"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:63
+msgid "Convention"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:64
+msgid ""
+"---\n"
+"title: <Pattern Name>\n"
+"type: convention\n"
+"status: active\n"
+"tags: [<tag1>, <tag2>]\n"
+"created: <YYYY-MM-DD>\n"
+"---\n"
+"\n"
+"## Convention\n"
+"\n"
+"<What the pattern is. 1-2 sentences.>\n"
+"\n"
+"## Rationale\n"
+"\n"
+"<Why this pattern exists. What goes wrong without it.>\n"
+"\n"
+"## Examples\n"
+"\n"
+"<Good and bad examples if helpful.>\n"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:86
+msgid "Decision"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:87
+msgid ""
+"---\n"
+"title: <Decision Title>\n"
+"type: decision\n"
+"status: accepted\n"
+"tags: [<tag1>, <tag2>]\n"
+"created: <YYYY-MM-DD>\n"
+"---\n"
+"\n"
+"## Decision\n"
+"\n"
+"<What was decided. 1 sentence.>\n"
+"\n"
+"## Context\n"
+"\n"
+"<What prompted this decision.>\n"
+"\n"
+"## Alternatives Considered\n"
+"\n"
+"<What else was evaluated and why it was rejected.>\n"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:109
+msgid "Rule"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:110
+msgid ""
+"---\n"
+"title: <Rule Name>\n"
+"type: rule\n"
+"status: active\n"
+"tags: [<tag1>, <tag2>]\n"
+"created: <YYYY-MM-DD>\n"
+"---\n"
+"\n"
+"## Rule\n"
+"\n"
+"<The constraint. 1 sentence.>\n"
+"\n"
+"## Rationale\n"
+"\n"
+"<Why this rule exists.>\n"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:128
+msgid "Deduplication"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:130
+msgid ""
+"Before writing, mentally check against existing knowledge. If you recall "
+"that a similar convention or decision already exists from earlier in the "
+"conversation or from reading the knowledge base, don't create a "
+"duplicate. If the existing entry needs updating, update it instead of "
+"creating a new one."
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:132
+msgid "Volume control"
+msgstr ""
+
+#: ../../.opencode/skills/auto-knowledge-capture/SKILL.md:134
+msgid ""
+"A typical session should produce 0-3 knowledge entries. If you find "
+"yourself wanting to write more than 3, you're probably being too "
+"granular. Consolidate related learnings into a single entry."
+msgstr ""
+

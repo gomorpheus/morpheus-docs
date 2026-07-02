@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:14
+msgid "Sphinx i18n Infrastructure Setup"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:16
+msgid "Objective"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:18
+msgid ""
+"Set up the complete Sphinx internationalization infrastructure to support"
+" locale-based documentation builds, starting with Spanish (es) and "
+"designed for multi-locale expansion."
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:20
+msgid "Changes"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:22
+msgid "`conf.py` — Add `locale_dirs`, `gettext_compact`, language selector config"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:23
+msgid "`Makefile` — Add `gettext`, `intl-update`, `intl-build` targets"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:24
+msgid "`requirements.txt` — Add `sphinx-intl`"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:25
+msgid "`locale/es/LC_MESSAGES/` — Create directory structure"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:26
+msgid "`.readthedocs.yml` — Configure multi-language build support"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:28
+msgid "Acceptance Criteria"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:30
+msgid ""
+"`make gettext` successfully extracts .pot files from all 729 source files"
+" (both .rst and .md)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:31
+msgid "`sphinx-intl update -l es` generates .po files in `locale/es/LC_MESSAGES/`"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:32
+msgid ""
+"`make html` with `language=es` builds successfully with untranslated .po "
+"files (falls back to English)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:33
+msgid "myst_parser Markdown files are correctly extracted to .pot format"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:34
+msgid ""
+"`rst_prolog` substitutions are handled (product names remain English, "
+"navigation paths extractable)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:35
+msgid ""
+"Directory structure supports adding additional locales (e.g., "
+"`locale/fr/`, `locale/de/`)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:36
+msgid "Read the Docs configuration supports serving the Spanish build"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:38
+msgid "Notes"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:40
+msgid ""
+"Sphinx 4.2.0 gettext support is mature but myst_parser may need "
+"`myst_gettext_mode` configuration"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:41
+msgid ""
+"The `rst_prolog` has ~250 substitution definitions — test that these "
+"don't generate noise in .pot files"
+msgstr ""
+
+#: ../../.hero/specs/i18n-infrastructure/spec.md:42
+msgid ""
+"Consider whether `gettext_compact = False` (one .pot per source file) or "
+"`True` (one .pot per top-level dir) is better for the AI pipeline"
+msgstr ""
+

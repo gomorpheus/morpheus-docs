@@ -1,0 +1,188 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:11
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:13
+msgid ""
+"Stop the agent from hand-resolving merge conflicts in projected NEXT "
+"files. These files are graph projections — total-rewrite from local state"
+" every Stop hook. Conflict markers in them are noise to be regenerated, "
+"not a diff to be merged thoughtfully."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:18
+msgid "When `<<<<<<<` markers appear in any of:"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:20
+msgid "`.hero/NEXT.md`"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:21
+msgid "`.hero/next/<user>.md`"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:22
+msgid "`.hero/next/<user>.local.md`"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:24
+msgid ""
+"run `hero next checkpoint` immediately. The command regenerates each file"
+" from the local graph, discarding both sides of the conflict cleanly."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:28
+msgid "Why this matters"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:30
+msgid ""
+"`hero next migrate-to-projection` flips `next.projected = true` and ships"
+" a `hero-next` git merge driver registered in `.git/config` by `hero "
+"install`. For clones that have run install, conflicts in these files "
+"never produce markers — the driver regenerates the file on merge "
+"automatically."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:36
+msgid ""
+"For clones that **haven't** run install (fresh checkouts, CI runners, "
+"teammates picking up the repo for the first time), git falls back to the "
+"default merge behavior and writes standard conflict markers. The next "
+"Stop-hook firing of `hero next checkpoint` will catch it and regenerate, "
+"but if an agent gets to the file first and tries to hand-resolve, the "
+"result is wasted effort plus the very brittleness projection exists to "
+"eliminate."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:44
+msgid "What to do"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:46
+msgid "**The instant you see `<<<<<<<` in one of those paths:**"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:48
+msgid "hero next checkpoint\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:52
+msgid "That's it. Don't:"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:54
+msgid "Open the file and pick a side."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:55
+msgid "Run `git checkout --ours` / `--theirs`."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:56
+msgid "Edit the markers out by hand."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:57
+msgid "Try to merge the two halves into a \"best of both\" version."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:59
+msgid ""
+"The file's content isn't a source of truth — the graph is. Re-deriving "
+"from the graph is faster, deterministic, and the correct semantic answer."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:63
+msgid "Verifying"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:65
+msgid "After `hero next checkpoint`:"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:67
+msgid ""
+"grep -l '<<<<<<<\\|=======\\|>>>>>>>' .hero/NEXT.md .hero/next/*.md "
+"2>/dev/null\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:71
+msgid ""
+"Should print nothing. If markers remain, the projection failed (check the"
+" command's stderr) — surface it, don't paper over."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:74
+msgid "When this doesn't apply"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:76
+msgid ""
+"**Conflicts in `.hero/specs/*.md` or `.hero/planning/*.md`.** These are "
+"hand-authored, not projected. Resolve them normally with the usual diff-"
+"merge tools."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:79
+msgid "**Conflicts in `.hero/knowledge/*.md`.** Same — hand-authored."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:80
+msgid ""
+"**Conflicts in `.hero/QUEUE.md`.** Projected, but covered by its own "
+"regen path (`hero queue write`). The same principle applies but the "
+"command differs."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:83
+msgid ""
+"**`next.projected = false`.** Pre-migration repos still use the hand-"
+"authored NEXT.md flow. Normal merge resolution applies."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:86
+msgid "See also"
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:88
+msgid ""
+"`skills/next-handoff-emit/SKILL.md` — the companion skill for *writing* "
+"projection state during normal work."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:90
+msgid ""
+"`hero next migrate-to-projection` — one-shot to flip a repo into "
+"projection mode and capture pre-existing NEXT.md content as graph nodes."
+msgstr ""
+
+#: ../../.opencode/skills/next-merge-recovery/SKILL.md:93
+msgid ""
+"`hero install` — registers the `hero-next` merge driver in `.git/config` "
+"so future merges resolve without markers in the first place."
+msgstr ""
+

@@ -1,0 +1,470 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:4
+msgid "Ansible Tower Job Task"
+msgstr "Ansible Tower Job Tarea"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:9
+msgid ""
+"The Ansible Tower Job Task type integrates |morpheus| automation with "
+"Ansible Tower (Red Hat Ansible Automation Platform). This Task relays "
+"Ansible calls to an Ansible Tower server, executing Job Templates against"
+" |morpheus|-managed Instances and infrastructure."
+msgstr ""
+"El/La Ansible Tower Job Tarea tipo integrates |morpheus| automation con "
+"Ansible Tower (Red Hat Ansible Automation Platform). Este Tarea relays "
+"Ansible calls a un Ansible Tower servidor, executing Job Plantillas against "
+"|morpheus|-managed Instancias y infraestructura."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:11
+msgid "Ansible Tower Jobs are commonly used for:"
+msgstr "Ansible Tower Jobs son commonly used para:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:13
+msgid "Configuration management during Instance provisioning"
+msgstr "Configuration management during Instancia aprovisionamiento"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:14
+msgid "Application deployment workflows"
+msgstr "Application despliegue flujos de trabajo"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:15
+msgid "Compliance enforcement and remediation"
+msgstr "Compliance enforcement y remediation"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:16
+msgid "Operational automation (patching, updates, health checks)"
+msgstr "Operational automation (patching, updates, health checks)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:19
+msgid "Prerequisites"
+msgstr "Prerequisites"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:21
+msgid ""
+"An active Ansible Tower integration configured in |morpheus| "
+"(Administration > Integrations)"
+msgstr ""
+"An active Ansible Tower integraciones configured in |morpheus| "
+"(Administration > Integraciones)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:22
+msgid "Job Templates configured in Ansible Tower"
+msgstr "Job Plantillas configurado en Ansible Tower"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:23
+msgid "Inventories and Groups set up in Ansible Tower"
+msgstr "Inventories y Groups establecer up en Ansible Tower"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:24
+msgid "Network connectivity between |morpheus| and the Ansible Tower server"
+msgstr "Network connectivity entre |morpheus| y el/la Ansible Tower servidor"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:27
+msgid "Configuring an Ansible Tower Integration"
+msgstr "Configuring an Ansible Tower Integraciones"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:29
+msgid "Before creating Ansible Tower Job Tasks, add the integration:"
+msgstr "Before creating Ansible Tower Job Tareas, add the integraciones:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:31
+msgid "Navigate to Administration > Integrations"
+msgstr "Navegue a Administration > Integraciones"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:32
+#: ../../provisioning/automation/ansible_tower_job.rst:48
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Hacer clic :guilabel:`+ ADD`"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:33
+msgid "Select **Ansible Tower** as the integration type"
+msgstr "Select **Ansible Tower** as the integraciones type"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:34
+msgid "Configure:"
+msgstr "Configurar:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:36
+msgid "**NAME:** Descriptive name"
+msgstr "**NAME:** Descriptive nombre"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:37
+msgid "**URL:** Ansible Tower server URL (e.g., ``https://tower.example.com``)"
+msgstr "**URL:** Ansible Tower servidor URL (e.g., ``https://tower.example.com``)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:38
+msgid "**USERNAME:** Tower API username"
+msgstr "**USERNAME:** Tower API username"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:39
+msgid "**PASSWORD:** Tower API password or token"
+msgstr "**PASSWORD:** Tower API password o token"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:40
+msgid "**API VERSION:** Tower API version"
+msgstr "**API VERSION:** Tower API versión"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:42
+msgid "Click :guilabel:`SAVE`"
+msgstr "Hacer clic :guilabel:`SAVE`"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:45
+msgid "Creating an Ansible Tower Job Task"
+msgstr "Creating an Ansible Tower Job Tarea"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:47
+msgid "Navigate to |LibAut| > Tasks"
+msgstr "Navegue a |LibAut| > Tareas"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:49
+msgid "Select **Ansible Tower Job** as the Task Type"
+msgstr "Select **Ansible Tower Job** as the Tarea Type"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:50
+msgid "Configure the Task:"
+msgstr "Configure the Tarea:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:52
+msgid "**NAME:** Descriptive name for the Task"
+msgstr "**NAME:** Descriptive name for the Tarea"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:53
+msgid "**CODE:** Unique code for API, CLI, and variable references"
+msgstr "**CODE:** Unique code para API, CLI, y variable references"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:54
+msgid "**TOWER INTEGRATION:** Select the Ansible Tower integration"
+msgstr "**TOWER INTEGRATION:** Seleccione el Ansible Tower integraciones"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:55
+msgid ""
+"**INVENTORY:** Select an existing Tower Inventory. When bootstrapping an "
+"Instance, |morpheus| adds the Instance to this Inventory."
+msgstr ""
+"**INVENTORY:** Seleccionar un existente Tower Inventory. Cuando "
+"bootstrapping un Instancia, |morpheus| adds el/la Instancia a este "
+"Inventory."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:56
+msgid ""
+"**GROUP:** Enter a Group name. When bootstrapping, |morpheus| adds the "
+"Instance to this Group. If the Group does not exist in Tower, |morpheus| "
+"creates it."
+msgstr ""
+"**GROUP:** Ingresar un Group nombre. Cuando bootstrapping, |morpheus| adds "
+"el/la Instancia a este Group. Si el/la Group hace no exist en Tower, "
+"|morpheus| creates it."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:57
+msgid "**JOB TEMPLATE:** Select the Job Template to execute"
+msgstr "**JOB TEMPLATE:** Seleccione el Job Template to execute"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:58
+msgid ""
+"**SCM OVERRIDE:** (Optional) Specify an SCM branch other than that "
+"configured on the Template"
+msgstr ""
+"**SCM OVERRIDE:** (Optional) Especificar un SCM branch otro than que "
+"configurado en el/la Plantilla"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:59
+msgid "**EXECUTE MODE:** Select the execution scope:"
+msgstr "**EXECUTE MODE:** Seleccione el ejecución scope:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:61
+msgid "**Limit to Instance:** Template executes only on the provisioned Instance"
+msgstr "**Limit to Instancia:** Template executes only on the provisioned Instancia"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:62
+msgid "**Limit to Group:** Template executes on all hosts in the Group"
+msgstr "**Limit to Group:** Plantilla executes en todos hosts en el/la Group"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:63
+msgid "**Run for All:** Template executes on all hosts in the Inventory"
+msgstr "**Run for All:** Plantilla executes en todos hosts en el/la Inventory"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:64
+msgid ""
+"**Skip Execution:** Template execution is skipped (Instance is still "
+"added to Inventory/Group)"
+msgstr ""
+"**Skip Execution:** Template ejecución is skipped (Instancia is still added "
+"to Inventory/Group)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:66
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Hacer clic :guilabel:`SAVE CHANGES`"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:69
+msgid "Execute Modes Explained"
+msgstr "Execute Modes Explained"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:75
+msgid "Mode"
+msgstr "Mode"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:76
+msgid "Behavior"
+msgstr "Behavior"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:77
+msgid "Limit to Instance"
+msgstr "Limit to Instancia"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:78
+msgid ""
+"The Job Template runs with ``--limit`` set to the provisioned Instance "
+"hostname. Only the specific Instance is affected."
+msgstr ""
+"El/La Job Plantilla runs con ``--limit`` establecer a el/la provisioned "
+"Instancia hostname. Solo el/la specific Instancia es affected."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:79
+msgid "Limit to Group"
+msgstr "Limit a Group"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:80
+msgid ""
+"The Job Template runs with ``--limit`` set to the Group name. All hosts "
+"in the Group are affected."
+msgstr ""
+"El/La Job Plantilla runs con ``--limit`` establecer a el/la Group nombre. "
+"Todos hosts en el/la Group son affected."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:81
+msgid "Run for All"
+msgstr "Ejecutar para Todos"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:82
+msgid ""
+"The Job Template runs against the entire Inventory without limits. All "
+"hosts are affected."
+msgstr ""
+"El/La Job Plantilla runs against el/la entire Inventory without limits. "
+"Todos hosts son affected."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:83
+msgid "Skip Execution"
+msgstr "Skip Execution"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:84
+msgid ""
+"The Instance is added to the Inventory and Group but no Job Template is "
+"launched. Useful for registration-only scenarios."
+msgstr ""
+"El/La Instancia es added a el/la Inventory y Group pero no Job Plantilla es "
+"launched. Useful para registration-solo scenarios."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:87
+msgid "Instance Registration"
+msgstr "Instancia Registration"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:89
+msgid "When an Ansible Tower Job Task executes during provisioning:"
+msgstr "When an Ansible Tower Job Tarea executes during aprovisionamiento:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:91
+msgid "|morpheus| adds the Instance to the specified Inventory in Ansible Tower"
+msgstr ""
+"|morpheus| adds the Instancia to the especificado Inventory in Ansible "
+"Tower"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:92
+msgid "The Instance is added to the specified Group (created if needed)"
+msgstr "The Instancia is added to the especificado Group (creado if needed)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:93
+msgid ""
+"Host variables are set based on Instance metadata (IP address, hostname, "
+"etc.)"
+msgstr ""
+"Host variables are set based on Instancia metadata (IP address, hostname, "
+"etc.)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:94
+msgid "The Job Template is launched according to the Execute Mode"
+msgstr "El/La Job Plantilla es launched according a el/la Execute Mode"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:96
+msgid ""
+"This registration persists in Tower, allowing subsequent Tower operations"
+" against the host outside of |morpheus|."
+msgstr ""
+"Este registration persists en Tower, allowing subsequent Tower operations "
+"against el/la host outside de |morpheus|."
+
+#: ../../provisioning/automation/ansible_tower_job.rst:99
+msgid "SCM Override"
+msgstr "SCM Override"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:101
+msgid ""
+"The **SCM OVERRIDE** field allows specifying a different Git branch for "
+"the playbook source:"
+msgstr ""
+"El/La **SCM OVERRIDE** campo permite specifying un different Git branch "
+"para el/la playbook source:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:103
+msgid "Override the branch configured on the Tower Project"
+msgstr "Override el/la branch configurado en el/la Tower Project"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:104
+msgid "Useful for testing playbook changes in development branches"
+msgstr "Useful para testing playbook changes en development branches"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:105
+msgid "Format: branch name (e.g., ``develop``, ``feature/new-config``)"
+msgstr "Format: branch nombre (e.g., ``develop``, ``feature/new-config``)"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:108
+msgid "Using in Workflows"
+msgstr "Using in Flujos de trabajo"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:110
+msgid "Ansible Tower Job Tasks integrate into |morpheus| Workflows:"
+msgstr "Ansible Tower Job Tareas integrate into |morpheus| Flujos de trabajo:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:112
+msgid "**Provisioning Workflows:**"
+msgstr "**Aprovisionamiento Flujos de trabajo:**"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:114
+msgid "Place in the **Post-Provision** phase for initial configuration"
+msgstr "Place in the **Post-Provision** phase for initial configuración"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:115
+msgid "The Instance is fully provisioned and accessible when the Task executes"
+msgstr "The Instancia is fully provisioned and accessible when the Tarea executes"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:116
+msgid "Host is registered in Tower for ongoing management"
+msgstr "Host es registered en Tower para ongoing management"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:118
+msgid "**Operational Workflows:**"
+msgstr "**Operational Flujos de trabajo:**"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:120
+msgid "Execute Tower Job Templates on-demand against existing Instances"
+msgstr "Execute Tower Job Templates on-demand against existente Instancias"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:121
+msgid "Run from Instance Actions menu or scheduled via Jobs"
+msgstr "Run from Instancia Actions menu or scheduled via Jobs"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:123
+msgid "**Task Results:**"
+msgstr "**Tarea Results:**"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:125
+msgid "Tower Job status (success/failure) is relayed back to |morpheus|"
+msgstr "Tower Job estado (success/failure) es relayed back a |morpheus|"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:126
+msgid "Job output is captured in the |morpheus| execution history"
+msgstr "Job output is captured in the |morpheus| ejecución history"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:127
+msgid "Workflow continues or halts based on Tower Job exit status"
+msgstr "Flujo de trabajo continues or halts based on Tower Job exit status"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:130
+msgid "Extra Variables"
+msgstr "Extra Variables"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:132
+msgid "Extra variables can be passed to the Job Template through:"
+msgstr "Extra variables puede ser passed to the Job Template through:"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:134
+msgid "|morpheus| automation variables injected into Tower Job extra_vars"
+msgstr "|morpheus| automation variables injected en Tower Job extra_vars"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:135
+msgid "Custom options passed from the provisioning wizard"
+msgstr "Custom options passed from the aprovisionamiento wizard"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:136
+msgid "Results from prior Tasks in the Workflow"
+msgstr "Resultados desde prior Tareas en el/la Flujo de trabajo"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:139
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:141
+msgid "**Task fails with \"Unable to connect to Tower\":**"
+msgstr "**Tarea fails with \"Unable to connect to Tower\":**"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:143
+msgid "Verify network connectivity between |morpheus| appliance and Tower server"
+msgstr "Verify network connectivity entre |morpheus| appliance y Tower servidor"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:144
+msgid "Check Tower integration credentials"
+msgstr "Check Tower integraciones credentials"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:145
+msgid "Ensure the Tower API URL is correct and accessible"
+msgstr "Ensure el/la Tower API URL es correct y accessible"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:147
+msgid "**Instance not appearing in Tower Inventory:**"
+msgstr "**Instancia not appearing in Tower Inventory:**"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:149
+msgid "Verify the Inventory exists in Tower"
+msgstr "Verify el/la Inventory exists en Tower"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:150
+msgid "Check Tower user permissions for Inventory management"
+msgstr "Check Tower user permisos for Inventory management"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:151
+msgid "Review |morpheus| activity logs for API errors"
+msgstr "Review |morpheus| activity logs para API errores"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:153
+msgid "**Job Template fails:**"
+msgstr "**Job Template fails:**"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:155
+msgid "Check the Tower Job details in the Tower UI for specific error output"
+msgstr ""
+"Verificar el/la Tower Job detalles en el/la Tower UI para specific error "
+"output"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:156
+msgid "Verify the SCM project is synced successfully in Tower"
+msgstr "Verify the SCM project is synced exitosamente in Tower"
+
+#: ../../provisioning/automation/ansible_tower_job.rst:157
+msgid "Ensure the Instance is reachable from Tower for playbook execution"
+msgstr "Ensure the Instancia is reachable from Tower for playbook ejecución"
+

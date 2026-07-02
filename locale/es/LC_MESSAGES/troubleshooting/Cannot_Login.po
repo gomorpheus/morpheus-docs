@@ -1,0 +1,172 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../troubleshooting/Cannot_Login.rst:2
+msgid "Cannot Login"
+msgstr "No se puede iniciar sesión"
+
+#: ../../troubleshooting/Cannot_Login.rst:5
+msgid "Forgot password"
+msgstr "Contraseña olvidada"
+
+#: ../../troubleshooting/Cannot_Login.rst:7
+msgid ""
+"If a user forgets their password, they can use the `FORGOT PASSWORD?` "
+"link on the login page. They can then enter their username or email "
+"address to send a reset password email to the email address defined on "
+"the user."
+msgstr ""
+"Si un usuario olvida su contraseña, puede usar el enlace `FORGOT PASSWORD?` "
+"en la página de inicio de sesión. Luego puede ingresar su nombre de usuario "
+"o dirección de correo electrónico para enviar un correo de restablecimiento "
+"de contraseña a la dirección de correo definida en el usuario."
+
+#: ../../troubleshooting/Cannot_Login.rst:9
+msgid ""
+"If the default or user added SMTP server is not functioning or blocked, a"
+" System Admin user can impersonate that user and update their password."
+msgstr ""
+"Si el servidor SMTP predeterminado o agregado por el usuario no funciona o "
+"está bloqueado, un usuario Administrador del Sistema puede suplantar a ese "
+"usuario y actualizar su contraseña."
+
+#: ../../troubleshooting/Cannot_Login.rst:11
+msgid ""
+"If the System Admin user password needs to be reset and the default or "
+"user added SMTP server is not functioning or blocked, please contact "
+"Morpheus support for assistance."
+msgstr ""
+"Si la contraseña del usuario Administrador del Sistema necesita ser "
+"restablecida y el servidor SMTP predeterminado o agregado por el usuario no "
+"funciona o está bloqueado, contacte al soporte de Morpheus para obtener "
+"asistencia."
+
+#: ../../troubleshooting/Cannot_Login.rst:14
+msgid "Sub-Tenant user cannot login after 3.4.0 upgrade"
+msgstr "El usuario de Sub-Inquilino no puede iniciar sesión después de la actualización 3.4.0"
+
+#: ../../troubleshooting/Cannot_Login.rst:16
+msgid ""
+"|morpheus| v3.4.0 added support for all subtenant users to login via the "
+"main tenant url using subtenant id or subdomain prefix, ie "
+"``tenantId\\username`` or ``subdomain\\username``."
+msgstr ""
+"|morpheus| v3.4.0 agregó soporte para que todos los usuarios de sub-inquilinos "
+"inicien sesión a través de la URL del inquilino principal usando el ID del "
+"sub-inquilino o el prefijo de subdominio, es decir "
+"``tenantId\\username`` o ``subdomain\\username``."
+
+#: ../../troubleshooting/Cannot_Login.rst:18
+msgid ""
+"Tenant subdomains can be defined by editing Tenant settings and updating "
+"the `SUBDOMAIN` field."
+msgstr ""
+"Los subdominios de Inquilino se pueden definir editando la configuración del "
+"Inquilino y actualizando el campo `SUBDOMAIN`."
+
+#: ../../troubleshooting/Cannot_Login.rst:20
+msgid ""
+"Subtenant local users will no longer be able to login from main login url"
+" without using their subtenant id or subdomain prefix."
+msgstr ""
+"Los usuarios locales de sub-inquilinos ya no podrán iniciar sesión desde la "
+"URL de inicio de sesión principal sin usar su ID de sub-inquilino o prefijo "
+"de subdominio."
+
+#: ../../troubleshooting/Cannot_Login.rst:22
+msgid ""
+"The login requirements were added in v3.4.0 to allow subtenant users with"
+" identity source integration generated user accounts to be able to login "
+"to the master tenant, gain API and CLI access, and remove the requirement"
+" for usernames to be unique across all tenants."
+msgstr ""
+"Los requisitos de inicio de sesión se agregaron en v3.4.0 para permitir que "
+"los usuarios de sub-inquilinos con cuentas generadas por integración de "
+"fuente de identidad puedan iniciar sesión en el inquilino maestro, obtener "
+"acceso a la API y CLI, y eliminar el requisito de que los nombres de usuario "
+"sean únicos en todos los inquilinos."
+
+#: ../../troubleshooting/Cannot_Login.rst:24
+msgid ""
+"Previously subtenant users that had local/morpheus generated user "
+"accounts could login to their tenant via the master tenant url, while "
+"subtenant users that had identity source integration generated user "
+"accounts had to use the subtenant specific login url."
+msgstr ""
+"Anteriormente, los usuarios de sub-inquilinos que tenían cuentas de usuario "
+"generadas localmente/por Morpheus podían iniciar sesión en su inquilino a "
+"través de la URL del inquilino maestro, mientras que los usuarios de "
+"sub-inquilinos con cuentas generadas por integración de fuente de identidad "
+"tenían que usar la URL de inicio de sesión específica del sub-inquilino."
+
+#: ../../troubleshooting/Cannot_Login.rst:26
+msgid ""
+"In v3.4.0+ all subtenant users can login via the master tenant url by "
+"specifying their tenant id or subdomain prefix, ``\\``, then username. "
+"Subtenants can still use the tenant specific login url as well."
+msgstr ""
+"En v3.4.0+ todos los usuarios de sub-inquilinos pueden iniciar sesión a "
+"través de la URL del inquilino maestro especificando su ID de inquilino o "
+"prefijo de subdominio, ``\\``, y luego el nombre de usuario. Los "
+"sub-inquilinos también pueden seguir usando la URL de inicio de sesión "
+"específica del inquilino."
+
+#: ../../troubleshooting/Cannot_Login.rst:29
+msgid "Example:"
+msgstr "Ejemplo:"
+
+#: ../../troubleshooting/Cannot_Login.rst:29
+msgid ""
+"I have a username ``subuser`` that belongs to a tenant with the subdomain"
+" ``acme`` and tenant id ``58``. When logging in from the main login url, "
+"I now need to enter in: ``acme\\subuser`` and the password. Alternatively"
+" the tenant ID can be used, ie ``58\\subuser``"
+msgstr ""
+"Tengo un nombre de usuario ``subuser`` que pertenece a un inquilino con el "
+"subdominio ``acme`` e ID de inquilino ``58``. Al iniciar sesión desde la URL "
+"de inicio de sesión principal, ahora necesito ingresar: ``acme\\subuser`` y "
+"la contraseña. Alternativamente se puede usar el ID del inquilino, es decir "
+"``58\\subuser``"
+
+#: ../../troubleshooting/Cannot_Login.rst:32
+msgid "Active Directory user suddenly cannot Login"
+msgstr "El usuario de Active Directory repentinamente no puede iniciar sesión"
+
+#: ../../troubleshooting/Cannot_Login.rst:34
+msgid ""
+"In |morpheus| v3.4.0 and prior, OU changes in Active Directory can "
+"disable logins for AD users who had previously authenticated/have "
+"existing user accounts in |morpheus|. If an Active Directory user cannot "
+"login to |morpheus| after their OU was changed in AD, please contact "
+"Morpheus support for a resolution. The OU association for the user(s) can"
+" also be manually updated in the database. This issue is resolved in "
+"|morpheus| versions 3.4.1 and higher."
+msgstr ""
+"En |morpheus| v3.4.0 y versiones anteriores, los cambios de OU en Active "
+"Directory pueden deshabilitar los inicios de sesión para usuarios de AD que "
+"previamente se habían autenticado/tienen cuentas de usuario existentes en "
+"|morpheus|. Si un usuario de Active Directory no puede iniciar sesión en "
+"|morpheus| después de que su OU fue cambiada en AD, contacte al soporte de "
+"Morpheus para una resolución. La asociación de OU para el/los usuario(s) "
+"también puede actualizarse manualmente en la base de datos. Este problema "
+"está resuelto en las versiones 3.4.1 y superiores de |morpheus|."
+

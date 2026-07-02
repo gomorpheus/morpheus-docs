@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/storage/storage_hosts.rst:2
+msgid "Storage Hosts"
+msgstr "Storage Hosts"
+
+#: ../../infrastructure/storage/storage_hosts.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/storage/storage_hosts.rst:7
+msgid ""
+"Storage Hosts represent the physical or virtual hosts that are connected to "
+"a Storage Server for the purposes of volume presentation and LUN mapping. "
+"When a storage server is integrated into |morpheus| (for example, HPE 3PAR),"
+" the platform automatically syncs and caches the registered hosts and host "
+"sets from the storage array."
+msgstr ""
+"Almacenamiento Hosts represent el physical o virtual hosts ese son conectado"
+" un un Almacenamiento Servidor para el purposes de volumen presentation y "
+"LUN mapping. Cuando un storage servidor es integrated en |morpheus| (por "
+"ejemplo, HPE 3PAR), el plataforma automáticamente sincroniza y caches el "
+"registered hosts y host establece desde el storage array."
+
+#: ../../infrastructure/storage/storage_hosts.rst:9
+msgid ""
+"Storage Hosts are used during datastore creation and volume mapping "
+"operations to determine which hosts should have access to a particular "
+"storage volume or LUN."
+msgstr ""
+"Almacenamiento Hosts son utilizado durante datastore creation y volumen "
+"mapping operaciones a determine cual hosts debería tienen acceso a un "
+"particular storage volumen o LUN."
+
+#: ../../infrastructure/storage/storage_hosts.rst:12
+msgid "Viewing Storage Hosts"
+msgstr "Viewing Storage Hosts"
+
+#: ../../infrastructure/storage/storage_hosts.rst:14
+msgid "Navigate to ``Infrastructure > Storage``"
+msgstr "Navegue un ``Infrastructure > Storage``"
+
+#: ../../infrastructure/storage/storage_hosts.rst:15
+msgid "Select the **SERVERS** tab"
+msgstr "Seleccionar el **SERVERS** pestaña"
+
+#: ../../infrastructure/storage/storage_hosts.rst:16
+msgid "Click the name of a storage server to view its detail page"
+msgstr "Click el nombre de un storage servidor a ver su página de detalles"
+
+#: ../../infrastructure/storage/storage_hosts.rst:17
+msgid "Select the **HOSTS** tab"
+msgstr "Seleccionar el **HOSTS** pestaña"
+
+#: ../../infrastructure/storage/storage_hosts.rst:19
+msgid ""
+"The Hosts tab displays all hosts registered with the storage server, "
+"including:"
+msgstr ""
+"El Hosts pestaña muestra todos hosts registered con el storage servidor, "
+"incluyendo:"
+
+#: ../../infrastructure/storage/storage_hosts.rst:21
+msgid "**Name** — The host name as reported by the storage array."
+msgstr "**Name** — El host nombre como reported por el storage array."
+
+#: ../../infrastructure/storage/storage_hosts.rst:22
+msgid "**OS** — The operating system type of the host (where available)."
+msgstr "**OS** — El sistema operativo tipo del host (donde disponible)."
+
+#: ../../infrastructure/storage/storage_hosts.rst:23
+msgid ""
+"**WWN/IQN** — Fibre Channel World Wide Names or iSCSI Qualified Names "
+"associated with the host."
+msgstr ""
+"**WWN/IQN** — Fibre Channel World Wide Names o iSCSI Qualified Names "
+"asociado con el host."
+
+#: ../../infrastructure/storage/storage_hosts.rst:24
+msgid ""
+"**Host Set** — The host group or host set the host belongs to (if "
+"applicable)."
+msgstr ""
+"**Host Set** — El host group o host establecer el host belongs a (si "
+"corresponde)."
+
+#: ../../infrastructure/storage/storage_hosts.rst:27
+msgid "Host Sets"
+msgstr "Host Sets"
+
+#: ../../infrastructure/storage/storage_hosts.rst:29
+msgid ""
+"Host Sets (also known as Host Groups) are logical groupings of storage hosts"
+" that share common volume access. When volumes are mapped to a Host Set, all"
+" member hosts gain access to the presented LUN."
+msgstr ""
+"Host Sets (también conocido como Host Grupos) son logical groupings de "
+"storage hosts ese share común volumen acceso. Cuando volúmenes son mapeado a"
+" un Host Establecer, todos miembro hosts gain acceso al presented LUN."
+
+#: ../../infrastructure/storage/storage_hosts.rst:31
+msgid ""
+"Host Sets are synced automatically from the storage array and are used "
+"during datastore provisioning to define which group of hosts should see the "
+"new volume."
+msgstr ""
+"Host Sets son sincronizado automáticamente desde el storage array y son "
+"utilizado durante datastore provisioning a define cual group de hosts "
+"debería consulte la nuevo volumen."
+
+#: ../../infrastructure/storage/storage_hosts.rst:33
+msgid ""
+"Storage Hosts and Host Sets are read-only in |morpheus| and are synced from "
+"the external storage server. To add or modify hosts, use the storage array's"
+" native management interface."
+msgstr ""
+"Almacenamiento Hosts y Host Sets son read-solo en |morpheus| y son "
+"sincronizado desde el externo storage servidor. A agregar o modify hosts, "
+"usar el storage array's native gestión interfaz."
+
+#: ../../infrastructure/storage/storage_hosts.rst:36
+msgid "Sync Behavior"
+msgstr "Sync Behavior"
+
+#: ../../infrastructure/storage/storage_hosts.rst:38
+msgid ""
+"When a Storage Server is refreshed (either manually or on schedule), "
+"|morpheus| caches:"
+msgstr ""
+"Cuando un Almacenamiento Servidor es refreshed (cualquiera manualmente o en "
+"schedule), |morpheus| caches:"
+
+#: ../../infrastructure/storage/storage_hosts.rst:40
+msgid "**Hosts** — Individual host registrations on the array"
+msgstr "**Hosts** — Individual host registrations en el array"
+
+#: ../../infrastructure/storage/storage_hosts.rst:41
+msgid "**Host Sets** — Grouped host definitions for multi-host volume access"
+msgstr ""
+"**Host Sets** — Grouped host definitions para multi-host volumen acceso"
+
+#: ../../infrastructure/storage/storage_hosts.rst:43
+msgid ""
+"These cached entries are used by the platform for volume mapping operations "
+"and datastore creation workflows."
+msgstr ""
+"Estos cached entradas son utilizado por el plataforma para volumen mapping "
+"operaciones y datastore creation workflows."

@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Networking/bluecat.rst:2
+msgid "Bluecat"
+msgstr "Bluecat"
+
+#: ../../integration_guides/Networking/bluecat.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/Networking/bluecat.rst:7
+msgid ""
+"|morpheus| integrates with Bluecat IPAM to scope pools to networks for "
+"static IP assignment from Bluecat to your |morpheus| Instances."
+msgstr ""
+"|morpheus| integrates con Bluecat IPAM to scope pools to networks para "
+"static IP assignment desde Bluecat to your |morpheus| Instances."
+
+#: ../../integration_guides/Networking/bluecat.rst:10
+msgid "Adding Bluecat to |morpheus|"
+msgstr "Agregar Bluecat to |morpheus|"
+
+#: ../../integration_guides/Networking/bluecat.rst:12
+msgid "Navigate to ``Infrastructure > Network > Integrations``"
+msgstr "Navegue un ``Infrastructure > Network > Integrations``"
+
+#: ../../integration_guides/Networking/bluecat.rst:13
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ AGREGAR`"
+
+#: ../../integration_guides/Networking/bluecat.rst:14
+msgid "Select `Bluecat`"
+msgstr "Select `Bluecat`"
+
+#: ../../integration_guides/Networking/bluecat.rst:15
+msgid "Enter in the following information"
+msgstr "Enter in la siguiente información"
+
+#: ../../integration_guides/Networking/bluecat.rst:17
+msgid "Name"
+msgstr "Name"
+
+#: ../../integration_guides/Networking/bluecat.rst:18
+msgid "Name of the Bluecat Integration in |morpheus|"
+msgstr "Name of el Bluecat Integration in |morpheus|"
+
+#: ../../integration_guides/Networking/bluecat.rst:19
+msgid "Enabled"
+msgstr "Enabled"
+
+#: ../../integration_guides/Networking/bluecat.rst:20
+msgid "Uncheck to disable sync with the Bluecat endpoint"
+msgstr "Uncheck to disable sync con el Bluecat endpoint"
+
+#: ../../integration_guides/Networking/bluecat.rst:21
+msgid "URL"
+msgstr "URL"
+
+#: ../../integration_guides/Networking/bluecat.rst:22
+msgid "URL of the Bluecat server, ex: ``http://10.30.20.10``"
+msgstr "URL of el Bluecat server, ex: ``http://10.30.20.10``"
+
+#: ../../integration_guides/Networking/bluecat.rst:23
+msgid "Username"
+msgstr "Username"
+
+#: ../../integration_guides/Networking/bluecat.rst:24
+msgid ""
+"Username of Bluecat API User. API and root level propagating read access "
+"required, read/write access required for target Networks and Domains."
+msgstr ""
+"Username of Bluecat API User. API y root level propagating read acceso "
+"requerido, read/write acceso requerido para destino Networks y Domains."
+
+#: ../../integration_guides/Networking/bluecat.rst:25
+msgid "Password"
+msgstr "Password"
+
+#: ../../integration_guides/Networking/bluecat.rst:26
+msgid "Bluecat User password"
+msgstr "Bluecat User contraseña"
+
+#: ../../integration_guides/Networking/bluecat.rst:28
+msgid "Network Filter"
+msgstr "Network Filter"
+
+#: ../../integration_guides/Networking/bluecat.rst:28
+msgid ""
+"Optionally enter a comma-separated list of ``entityIds`` for config(s), "
+"block(s) or network(s) (ex. ``entityId1,entityId2...``) to filter the synced"
+" IP pools, networks and domains"
+msgstr ""
+"Opcionalmente enter un comma-separated lista of ``entityIds`` para "
+"config(s), block(s) o network(s) (ex. ``entityId1,entityId2...``) to filter "
+"el synced IP pools, networks y domains"
+
+#: ../../integration_guides/Networking/bluecat.rst:30
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/Networking/bluecat.rst:32
+msgid ""
+"The Bluecat Integration will be saved, IP pools will sync in and populate "
+"under ``Infrastructure > Network > IP Pools``, and Domains will populate in "
+"``Infrastructure > Network > Domains``. Pools and Domains can also be found "
+"in the Bluecat Integration details page, which can be accessed by clicking "
+"on the name of the added Bluecat Integration in ``Infrastructure > Network >"
+" Services``."
+msgstr ""
+"The Bluecat Integration será be saved, IP pools será sync in y populate "
+"under ``Infrastructure > Network > IP Pools``, y Domains será populate in "
+"``Infrastructure > Network > Domains``. Pools y Domains puede también be "
+"found in el Bluecat Integration detalles página, cual se puede acceder by "
+"clicking on el nombre of el agregado Bluecat Integration in ``Infrastructure"
+" > Network > Services``."
+
+#: ../../integration_guides/Networking/bluecat.rst:34
+msgid ""
+"`Quick Deployments` must be enabled in Bluecat for |morpheus| to create "
+"instantly available DNS records when using Bluecat DNS."
+msgstr ""
+"`Quick Deployments` debe estar habilitado in Bluecat para |morpheus| to "
+"create instantly disponible DNS registros cuando using Bluecat DNS."
+
+#: ../../integration_guides/Networking/bluecat.rst:37
+msgid "Adding IP Pools to Networks"
+msgstr "Agregar IP Pools to Networks"
+
+#: ../../integration_guides/Networking/bluecat.rst:39
+msgid ""
+"|morpheus| can automatically assign the next available Bluecat IP in an "
+"IP/Network Pool and create the corresponding DNS records, as well as remove "
+"the records upon teardown. To enable this, add an Bluecat IP/Network Pool to"
+" the `Network Pool` section on a Network(s)."
+msgstr ""
+"|morpheus| puede automáticamente assign el siguiente disponible Bluecat IP "
+"in un IP/Network Pool y create el corresponding DNS registros, así como "
+"remove el registros sobre teardown. To enable este, add un Bluecat "
+"IP/Network Pool to el `Network Pool` sección on un Network(s)."
+
+#: ../../integration_guides/Networking/bluecat.rst:41
+msgid "Navigate to ``Infrastructure - Network- Networks``"
+msgstr "Navegue un ``Infrastructure - Network- Networks``"
+
+#: ../../integration_guides/Networking/bluecat.rst:42
+msgid "Select a Network name and EDIT, or select `ACTIONS - Edit`"
+msgstr "Select un Network nombre y EDIT, o select `ACTIONS - Edit`"
+
+#: ../../integration_guides/Networking/bluecat.rst:43
+msgid ""
+"In the `NETWORK POOL` section, search for and select the name of the "
+"IP/Network Pool."
+msgstr ""
+"En el `NETWORK POOL` sección, search para y select el nombre of el "
+"IP/Network Pool."
+
+#: ../../integration_guides/Networking/bluecat.rst:45
+msgid "Gateway, DNS and CIDR must be populated for static/pool IP assignment"
+msgstr "Gateway, DNS y CIDR debe be populated para static/pool IP assignment"
+
+#: ../../integration_guides/Networking/bluecat.rst:46
+msgid ""
+"Select `Allow IP Override` to allow selecting between DHCP, Static entry and"
+" Pool Selection at provision time"
+msgstr ""
+"Select `Allow IP Override` to allow selecting entre DHCP, Static entry y "
+"Pool Selection at provision time"
+
+#: ../../integration_guides/Networking/bluecat.rst:47
+msgid ""
+"Deselect DHCP server if a DHCP server will not be used on the network (only "
+"static and/or IP Pool IP assignment)"
+msgstr ""
+"Deselect DHCP server if un DHCP server no be used on la red (solo static y/o"
+" IP Pool IP assignment)"
+
+#: ../../integration_guides/Networking/bluecat.rst:49
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr "Select :guilabel:`GUARDAR CHANGES`"

@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/settings/utilities.rst:1
+msgid ""
+"System administrators have access to a utilities panel with the following "
+"options:"
+msgstr ""
+"System administrators tienen acceso a a utilities panel con lo siguiente "
+"opciones:"
+
+#: ../../administration/settings/utilities.rst:3
+msgid "**Reindex all searchable data:** Execute"
+msgstr "**Reindex all searchable data:** Execute"
+
+#: ../../administration/settings/utilities.rst:4
+msgid "**Toggle Maintenance Mode:** Enable"
+msgstr "**Toggle Maintenance Mode:** Enable"
+
+#: ../../administration/settings/utilities.rst:6
+msgid ""
+"Maintenance mode cleanly places |morpheus| into a state where maintenance "
+"can be performed on the appliance. This drains any active sessions and "
+"queues so an auto-scaling group can scale down. It also drains active "
+"sessions across services. Restarting |morpheus| UI disables maintenance "
+"mode."
+msgstr ""
+"Maintenance mode cleanly places |morpheus| en a state donde maintenance "
+"puede ser performed en el appliance. Este drains cualquier active sessions y"
+" queues so un auto-scaling grupo puede scale down. It también drains active "
+"sessions a través de services. Restarting |morpheus| UI disables maintenance"
+" mode."
+
+#: ../../administration/settings/utilities.rst:8
+msgid ""
+"When using |morpheus| in a Highly Available (HA) environment, it is "
+"important to navigate to a node directly and enable maintenance mode, as "
+"opposed to using the load balancer virtual IP (VIP). A local host entry to "
+"the specific node may be required to ensure the correct node enters "
+"mainteance mode. In fact, it is recommended to use the `analogous API "
+"endpoint "
+"<https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_"
+" to toggle a specific node into maintenance mode to avoid redirects back to "
+"the VIP address."
+msgstr ""
+"Cuando usando |morpheus| en a Highly Disponible (HA) entorno, ello es "
+"important a navegue a a node directly y enable maintenance mode, as opposed "
+"a usando el load balancer virtual IP (VIP). Un local host entry a el "
+"específico node puede be requerido a asegurar el correct node enters "
+"mainteance mode. En fact, ello es recomendado a usar el `analogous API "
+"endpoint "
+"<https://apidocs.morpheusdata.com/reference/setapplianceconfiguraciónmaintenancemode>`_"
+" a toggle a específico node en maintenance mode a avoid redirects back a el "
+"VIP address."
+
+#: ../../administration/settings/utilities.rst:10
+msgid ""
+"A |morpheus| node in maintenance mode can still be accessible through the "
+"load balancer VIP/target group and can queue requests but will not process "
+"anything in queue, while in maintenance mode. A node can be removed/paused "
+"from the load balancer VIP or have VIP health checks implemented, if the "
+"node UI/API will become inaccessible due to maintenance."
+msgstr ""
+"Un |morpheus| node en maintenance mode puede still be accessible a través de"
+" el load balancer VIP/target grupo y puede queue requests pero no process "
+"anything en queue, while en maintenance mode. Un node puede ser "
+"removed/paused desde el load balancer VIP o tienen VIP health checks "
+"implemented, si el node UI/API serácome inaccessible due a maintenance."

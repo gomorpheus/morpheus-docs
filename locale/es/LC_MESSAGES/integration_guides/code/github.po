@@ -1,0 +1,460 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/code/github.rst:4
+msgid "GitHub Integration"
+msgstr "GitHub Integration"
+
+#: ../../integration_guides/code/github.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/code/github.rst:9
+msgid ""
+"|morpheus| provides dedicated GitHub integration that extends the base Git "
+"capabilities with GitHub-specific features including organization browsing, "
+"repository discovery, and GitHub API integration for enhanced code "
+"management workflows."
+msgstr ""
+"|morpheus| provides dedicated GitHub integration que extends el base Git "
+"capabilities con GitHub-específico características including organization "
+"browsing, repository discovery, y GitHub API integration para enhanced code "
+"management workflows."
+
+#: ../../integration_guides/code/github.rst:11
+msgid "GitHub integrations allow |morpheus| to:"
+msgstr "GitHub integrations allow |morpheus| to:"
+
+#: ../../integration_guides/code/github.rst:13
+msgid "Browse GitHub organizations and their repositories"
+msgstr "Browse GitHub organizations y their repositories"
+
+#: ../../integration_guides/code/github.rst:14
+msgid "Pull Task scripts, templates, and configurations from GitHub repos"
+msgstr "Pull Task scripts, templates, y configurations desde GitHub repos"
+
+#: ../../integration_guides/code/github.rst:15
+msgid "Leverage GitHub authentication (personal access tokens, OAuth)"
+msgstr "Leverage GitHub authentication (personal acceso tokens, OAuth)"
+
+#: ../../integration_guides/code/github.rst:16
+msgid "Discover and sync repository contents with branch/tag support"
+msgstr "Discover y sync repository contents con branch/tag support"
+
+#: ../../integration_guides/code/github.rst:19
+msgid "Adding a GitHub Integration"
+msgstr "Agregar GitHub integración"
+
+#: ../../integration_guides/code/github.rst:21
+msgid "To add a GitHub integration:"
+msgstr "To add un GitHub integration:"
+
+#: ../../integration_guides/code/github.rst:23
+msgid "Navigate to |ProCodInt| (Provisioning > Code > Integrations)"
+msgstr "Navegue un |ProCodInt| (Provisioning > Code > Integrations)"
+
+#: ../../integration_guides/code/github.rst:24
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ AGREGAR`"
+
+#: ../../integration_guides/code/github.rst:25
+msgid "Select **GitHub** as the integration type"
+msgstr "Select **GitHub** as la integración tipo"
+
+#: ../../integration_guides/code/github.rst:26
+msgid "Complete the configuration:"
+msgstr "Complete el configuración:"
+
+#: ../../integration_guides/code/github.rst:28
+msgid "**NAME:** Descriptive name for the integration"
+msgstr "**NAME:** Descriptive nombre para la integración"
+
+#: ../../integration_guides/code/github.rst:29
+msgid "**ENABLED:** Toggle to enable/disable"
+msgstr "**ENABLED:** Toggle to enable/disable"
+
+#: ../../integration_guides/code/github.rst:30
+msgid "**GITHUB API URL:** API endpoint URL"
+msgstr "**GITHUB API URL:** API endpoint URL"
+
+#: ../../integration_guides/code/github.rst:32
+msgid "GitHub.com: ``https://api.github.com`` (default)"
+msgstr "GitHub.com: ``https://api.github.com`` (predeterminado)"
+
+#: ../../integration_guides/code/github.rst:33
+msgid "GitHub Enterprise: ``https://github.yourcompany.com/api/v3``"
+msgstr "GitHub Enterprise: ``https://github.yourcompany.com/api/v3``"
+
+#: ../../integration_guides/code/github.rst:35
+msgid "**ACCESS TOKEN:** GitHub Personal Access Token with appropriate scopes"
+msgstr "**ACCESS TOKEN:** GitHub Personal Access Token con apropiado scopes"
+
+#: ../../integration_guides/code/github.rst:36
+msgid "**ORGANIZATION:** (Optional) Default organization to browse"
+msgstr "**ORGANIZATION:** (Optional) Default organization to browse"
+
+#: ../../integration_guides/code/github.rst:38
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`GUARDAR`"
+
+#: ../../integration_guides/code/github.rst:41
+msgid "GitHub Personal Access Token"
+msgstr "GitHub Personal Access Token"
+
+#: ../../integration_guides/code/github.rst:43
+msgid ""
+"A Personal Access Token (PAT) is required for authentication. Generate one "
+"in GitHub:"
+msgstr ""
+"A Personal Access Token (PAT) es requerido para authentication. Generate one"
+" in GitHub:"
+
+#: ../../integration_guides/code/github.rst:45
+msgid ""
+"Navigate to GitHub Settings > Developer Settings > Personal Access Tokens"
+msgstr ""
+"Navegue un GitHub Settings > Developer Settings > Personal Access Tokens"
+
+#: ../../integration_guides/code/github.rst:46
+msgid "Click **Generate new token**"
+msgstr "Click **Generate nuevo token**"
+
+#: ../../integration_guides/code/github.rst:47
+msgid "Required scopes:"
+msgstr "Required scopes:"
+
+#: ../../integration_guides/code/github.rst:49
+msgid ""
+"``repo`` — Full control of private repositories (or ``public_repo`` for "
+"public only)"
+msgstr ""
+"``repo`` — Full control of privado repositories (o ``public_repo`` para "
+"público solo)"
+
+#: ../../integration_guides/code/github.rst:50
+msgid "``read:org`` — Read organization membership (for org browsing)"
+msgstr "``read:org`` — Read organization membership (para org browsing)"
+
+#: ../../integration_guides/code/github.rst:52
+msgid ""
+"Copy the generated token and paste it into the |morpheus| integration "
+"configuration"
+msgstr ""
+"Copy el generated token y paste it en el |morpheus| integration "
+"configuración"
+
+#: ../../integration_guides/code/github.rst:54
+msgid ""
+"For GitHub Enterprise, ensure the token is authorized for the target "
+"organization if SSO is enabled."
+msgstr ""
+"For GitHub Enterprise, ensure el token es authorized para el destino "
+"organization if SSO es habilitado."
+
+#: ../../integration_guides/code/github.rst:57
+msgid "Browsing Organizations"
+msgstr "Browsing Organizations"
+
+#: ../../integration_guides/code/github.rst:59
+msgid "With a GitHub integration configured:"
+msgstr "With un GitHub integration configurado:"
+
+#: ../../integration_guides/code/github.rst:61
+msgid "Navigate to |ProCodRep| (Provisioning > Code > Repositories)"
+msgstr "Navegue un |ProCodRep| (Provisioning > Code > Repositories)"
+
+#: ../../integration_guides/code/github.rst:62
+msgid "The integration shows available organizations"
+msgstr "La integración shows disponible organizations"
+
+#: ../../integration_guides/code/github.rst:63
+msgid "Select an organization to list its repositories"
+msgstr "Select un organization to lista its repositories"
+
+#: ../../integration_guides/code/github.rst:64
+msgid "Select a repository to browse its contents"
+msgstr "Select un repository to browse its contents"
+
+#: ../../integration_guides/code/github.rst:66
+msgid "Repository features:"
+msgstr "Repository características:"
+
+#: ../../integration_guides/code/github.rst:68
+msgid "Browse file trees across branches and tags"
+msgstr "Browse archivo trees across branches y tags"
+
+#: ../../integration_guides/code/github.rst:69
+msgid "View file contents with syntax highlighting"
+msgstr "View archivo contents con syntax highlighting"
+
+#: ../../integration_guides/code/github.rst:70
+msgid "Switch between branches using the branch selector"
+msgstr "Switch entre branches using el branch selector"
+
+#: ../../integration_guides/code/github.rst:71
+msgid "Search repositories by name"
+msgstr "Search repositories by nombre"
+
+#: ../../integration_guides/code/github.rst:74
+msgid "Using GitHub Repositories"
+msgstr "Usar GitHub Repositories"
+
+#: ../../integration_guides/code/github.rst:76
+msgid "GitHub repositories integrate with |morpheus| automation:"
+msgstr "GitHub repositories integrate con |morpheus| automation:"
+
+#: ../../integration_guides/code/github.rst:78
+msgid "**Tasks:**"
+msgstr "**Tasks:**"
+
+#: ../../integration_guides/code/github.rst:80
+msgid "Source scripts from GitHub repositories"
+msgstr "Source scripts desde GitHub repositories"
+
+#: ../../integration_guides/code/github.rst:81
+msgid "Specify repository, file path, and branch/tag"
+msgstr "Specify repository, archivo ruta, y branch/tag"
+
+#: ../../integration_guides/code/github.rst:82
+msgid "Scripts are pulled fresh on each execution"
+msgstr "Scripts son pulled fresh on cada execution"
+
+#: ../../integration_guides/code/github.rst:84
+msgid "**Spec Templates:**"
+msgstr "**Spec Templates:**"
+
+#: ../../integration_guides/code/github.rst:86
+msgid "Store Terraform, Kubernetes, Helm, and other IaC templates in GitHub"
+msgstr "Store Terraform, Kubernetes, Helm, y otro IaC templates in GitHub"
+
+#: ../../integration_guides/code/github.rst:87
+msgid "Reference specific files and branches"
+msgstr "Reference específico archivos y branches"
+
+#: ../../integration_guides/code/github.rst:88
+msgid "Changes in GitHub are automatically reflected"
+msgstr "Changes in GitHub son automáticamente reflected"
+
+#: ../../integration_guides/code/github.rst:90
+msgid "**Blueprints:**"
+msgstr "**Blueprints:**"
+
+#: ../../integration_guides/code/github.rst:92
+msgid "Terraform blueprints can reference GitHub repos for ``.tf`` files"
+msgstr ""
+"Terraform blueprints puede referencia GitHub repos para ``.tf`` archivos"
+
+#: ../../integration_guides/code/github.rst:93
+msgid "Multiple environments via branch-based configuration"
+msgstr "Multiple entornos via branch-based configuración"
+
+#: ../../integration_guides/code/github.rst:94
+msgid "Support for Terraform modules in subdirectories"
+msgstr "Support para Terraform modules in subdirectories"
+
+#: ../../integration_guides/code/github.rst:96
+msgid "**Deployments:**"
+msgstr "**Deployments:**"
+
+#: ../../integration_guides/code/github.rst:98
+msgid "Application code from GitHub repos can be deployed to Instances"
+msgstr "Application code desde GitHub repos puede be deployed to Instances"
+
+#: ../../integration_guides/code/github.rst:99
+msgid "Supports branch/tag selection for deployment versioning"
+msgstr "Supports branch/tag selection para deployment versioning"
+
+#: ../../integration_guides/code/github.rst:102
+msgid "GitHub Enterprise Support"
+msgstr "GitHub Enterprise Support"
+
+#: ../../integration_guides/code/github.rst:104
+msgid "|morpheus| supports GitHub Enterprise Server installations:"
+msgstr "|morpheus| supports GitHub Enterprise Server installations:"
+
+#: ../../integration_guides/code/github.rst:106
+msgid "Custom API URL pointing to your GHE instance"
+msgstr "Custom API URL pointing to your GHE instance"
+
+#: ../../integration_guides/code/github.rst:107
+msgid "Same authentication and browsing capabilities as GitHub.com"
+msgstr "Same authentication y browsing capabilities as GitHub.com"
+
+#: ../../integration_guides/code/github.rst:108
+msgid ""
+"SSL certificate verification (ensure GHE certificate is trusted by "
+"|morpheus| appliance)"
+msgstr ""
+"SSL certificate verification (ensure GHE certificate es trusted by "
+"|morpheus| appliance)"
+
+#: ../../integration_guides/code/github.rst:110
+msgid "To configure for GitHub Enterprise:"
+msgstr "To configure para GitHub Enterprise:"
+
+#: ../../integration_guides/code/github.rst:112
+msgid ""
+"Set the **GITHUB API URL** to your GHE API endpoint (e.g., "
+"``https://github.corp.com/api/v3``)"
+msgstr ""
+"Establezca el **GITHUB API URL** to your GHE API endpoint (e.g., "
+"``https://github.corp.com/api/v3``)"
+
+#: ../../integration_guides/code/github.rst:113
+msgid "Ensure network connectivity between |morpheus| and the GHE server"
+msgstr "Ensure network connectivity entre |morpheus| y el GHE server"
+
+#: ../../integration_guides/code/github.rst:114
+msgid ""
+"If using a self-signed certificate, add the CA certificate to the |morpheus|"
+" trust store"
+msgstr ""
+"If using un self-signed certificate, add el CA certificate to el |morpheus| "
+"trust store"
+
+#: ../../integration_guides/code/github.rst:117
+msgid "Webhook Integration"
+msgstr "Webhook Integration"
+
+#: ../../integration_guides/code/github.rst:119
+msgid ""
+"GitHub webhooks can be configured to notify |morpheus| of repository "
+"changes:"
+msgstr ""
+"GitHub webhooks se puede configurar to notify |morpheus| of repository "
+"cambios:"
+
+#: ../../integration_guides/code/github.rst:121
+msgid "Push events trigger repository synchronization"
+msgstr "Push eventos trigger repository synchronization"
+
+#: ../../integration_guides/code/github.rst:122
+msgid "Enables near-real-time updates for Task scripts and templates"
+msgstr "Enables near-real-time updates para Task scripts y templates"
+
+#: ../../integration_guides/code/github.rst:123
+msgid ""
+"Webhook URL format: ``https://<morpheus-url>/api/code/webhooks/github``"
+msgstr ""
+"Webhook URL formato: ``https://<morpheus-url>/api/code/webhooks/github``"
+
+#: ../../integration_guides/code/github.rst:126
+msgid "Differences from Generic Git"
+msgstr "Differences desde Generic Git"
+
+#: ../../integration_guides/code/github.rst:128
+msgid ""
+"The GitHub-specific integration provides additional capabilities over the "
+"generic Git integration:"
+msgstr ""
+"The GitHub-específico integration provides adicional capabilities over el "
+"generic Git integration:"
+
+#: ../../integration_guides/code/github.rst:134
+msgid "Feature"
+msgstr "Feature"
+
+#: ../../integration_guides/code/github.rst:135
+msgid "Generic Git"
+msgstr "Generic Git"
+
+#: ../../integration_guides/code/github.rst:136
+msgid "GitHub"
+msgstr "GitHub"
+
+#: ../../integration_guides/code/github.rst:137
+msgid "Repository browsing"
+msgstr "Repository browsing"
+
+#: ../../integration_guides/code/github.rst:138
+msgid "Single repo"
+msgstr "Single repo"
+
+#: ../../integration_guides/code/github.rst:139
+msgid "Org-level discovery"
+msgstr "Org-level discovery"
+
+#: ../../integration_guides/code/github.rst:140
+msgid "Authentication"
+msgstr "Authentication"
+
+#: ../../integration_guides/code/github.rst:141
+msgid "User/pass, SSH, token"
+msgstr "User/pass, SSH, token"
+
+#: ../../integration_guides/code/github.rst:142
+msgid "PAT, OAuth, GitHub App"
+msgstr "PAT, OAuth, GitHub App"
+
+#: ../../integration_guides/code/github.rst:143
+msgid "Organization browsing"
+msgstr "Organization browsing"
+
+#: ../../integration_guides/code/github.rst:144
+#: ../../integration_guides/code/github.rst:147
+msgid "No"
+msgstr "No"
+
+#: ../../integration_guides/code/github.rst:145
+#: ../../integration_guides/code/github.rst:148
+msgid "Yes"
+msgstr "Yes"
+
+#: ../../integration_guides/code/github.rst:146
+msgid "Webhook support"
+msgstr "Webhook support"
+
+#: ../../integration_guides/code/github.rst:149
+msgid "API integration"
+msgstr "API integration"
+
+#: ../../integration_guides/code/github.rst:150
+msgid "Git protocol only"
+msgstr "Git protocolo solo"
+
+#: ../../integration_guides/code/github.rst:151
+msgid "GitHub REST API"
+msgstr "GitHub REST API"
+
+#: ../../integration_guides/code/github.rst:154
+msgid "Removing a GitHub Integration"
+msgstr "Eliminar GitHub Integration"
+
+#: ../../integration_guides/code/github.rst:156
+msgid "Navigate to |ProCodInt|"
+msgstr "Navegue un |ProCodInt|"
+
+#: ../../integration_guides/code/github.rst:157
+msgid "Click the trash icon on the GitHub integration row"
+msgstr "Haga clic en el trash icon on el GitHub integration row"
+
+#: ../../integration_guides/code/github.rst:158
+msgid "Confirm deletion"
+msgstr "Confirm deletion"
+
+#: ../../integration_guides/code/github.rst:160
+msgid ""
+"Removing a GitHub integration will break any Tasks, Templates, or Blueprints"
+" sourcing content from its repositories. Migrate references before removal."
+msgstr ""
+"Eliminar GitHub integration will break any Tasks, Templates, or Blueprints "
+"sourcing content from its repositories. Migrate references before removal."

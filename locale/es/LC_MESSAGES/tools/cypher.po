@@ -1,0 +1,578 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/cypher.rst:4
+msgid "Cypher"
+msgstr "Cypher"
+
+#: ../../tools/cypher.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../tools/cypher.rst:9
+msgid ""
+"Cypher at its core is a secure Key/Value store. But what makes cypher "
+"useful is the ability to securely store or generate credentials to "
+"connect to your instances. Not only are these credentials encrypted but "
+"by using a cypher you don't have to burn in connection credentials "
+"between instances into your apps."
+msgstr ""
+"Cypher en su esencia es un almacén seguro de Clave/Valor. Pero lo que "
+"hace útil a Cypher es la capacidad de almacenar o generar de forma "
+"segura credenciales para conectarse a sus instancias. No solo estas "
+"credenciales están cifradas, sino que al usar Cypher no tiene que "
+"incluir credenciales de conexión entre instancias en sus aplicaciones."
+
+#: ../../tools/cypher.rst:11
+msgid ""
+"Cypher keys can be revoked, either through lease timeouts or manually. So"
+" even if somebody were to gain access to your keys you could revoke "
+"access to the keys and generate new ones for your applications."
+msgstr ""
+"Las claves de Cypher pueden revocarse, ya sea mediante tiempos de "
+"expiración de arrendamiento o manualmente. Así que incluso si alguien "
+"obtuviera acceso a sus claves, podría revocar el acceso a las claves y "
+"generar nuevas para sus aplicaciones."
+
+#: ../../tools/cypher.rst:13
+msgid "Keys can have different behaviors depending on the specified mountpoint."
+msgstr ""
+"Las claves pueden tener diferentes comportamientos dependiendo del "
+"punto de montaje especificado."
+
+#: ../../tools/cypher.rst:16
+msgid "Mountpoints"
+msgstr "Puntos de montaje"
+
+#: ../../tools/cypher.rst:18
+msgid "password"
+msgstr "password"
+
+#: ../../tools/cypher.rst:19
+msgid ""
+"Generates a secure password of specified character length in the key "
+"pattern (or 15) with symbols, numbers, upper case, and lower case letters"
+" (i.e. password/15/mypass generates a 15 character password)."
+msgstr ""
+"Genera una contraseña segura de la longitud de caracteres especificada "
+"en el patrón de clave (o 15) con símbolos, números, letras mayúsculas "
+"y minúsculas (es decir, password/15/mypass genera una contraseña de 15 "
+"caracteres)."
+
+#: ../../tools/cypher.rst:20 ../../tools/cypher.rst:69
+msgid "tfvars"
+msgstr "tfvars"
+
+#: ../../tools/cypher.rst:21
+msgid "This is a module to store a tfvars file for terraform app blueprints."
+msgstr ""
+"Este es un módulo para almacenar un archivo tfvars para blueprints de "
+"aplicaciones Terraform."
+
+#: ../../tools/cypher.rst:22
+msgid "secret"
+msgstr "secret"
+
+#: ../../tools/cypher.rst:23
+msgid ""
+"This is the standard secret module that stores a key/value in encrypted "
+"form."
+msgstr ""
+"Este es el módulo secreto estándar que almacena una clave/valor en "
+"forma cifrada."
+
+#: ../../tools/cypher.rst:24
+msgid "uuid"
+msgstr "uuid"
+
+#: ../../tools/cypher.rst:25
+msgid ""
+"Returns a new UUID by key name when requested and stores the generated "
+"UUID by key name for a given lease timeout period."
+msgstr ""
+"Devuelve un nuevo UUID por nombre de clave cuando se solicita y "
+"almacena el UUID generado por nombre de clave durante un período de "
+"tiempo de expiración de arrendamiento dado."
+
+#: ../../tools/cypher.rst:26
+msgid "key"
+msgstr "key"
+
+#: ../../tools/cypher.rst:27
+msgid ""
+"Generates a Base 64 encoded AES Key of specified bit length in the key "
+"pattern (i.e. key/128/mykey generates a 128-bit key)"
+msgstr ""
+"Genera una clave AES codificada en Base 64 de la longitud de bits "
+"especificada en el patrón de clave (es decir, key/128/mykey genera una "
+"clave de 128 bits)"
+
+#: ../../tools/cypher.rst:38
+msgid "vault"
+msgstr "vault"
+
+#: ../../tools/cypher.rst:29
+msgid ""
+"Configures an integration between |morpheus| and a Hashicorp Vault "
+"server. See below for additional configuration instructions."
+msgstr ""
+"Configura una integración entre |morpheus| y un servidor Hashicorp "
+"Vault. Consulte a continuación las instrucciones de configuración "
+"adicionales."
+
+#: ../../tools/cypher.rst:31
+msgid "Key lease times are entered in seconds and default to 32 days (2764800 s)."
+msgstr ""
+"Los tiempos de arrendamiento de claves se ingresan en segundos y "
+"tienen un valor predeterminado de 32 días (2764800 s)."
+
+#: ../../tools/cypher.rst:33
+msgid "Quick Time Reference:"
+msgstr "Referencia rápida de tiempo:"
+
+#: ../../tools/cypher.rst:34
+msgid "Day: 86400"
+msgstr "Día: 86400"
+
+#: ../../tools/cypher.rst:35
+msgid "Week: 604800"
+msgstr "Semana: 604800"
+
+#: ../../tools/cypher.rst:36
+msgid "Month (30 days): 2592000"
+msgstr "Mes (30 días): 2592000"
+
+#: ../../tools/cypher.rst:37
+msgid "Year: 31536000"
+msgstr "Año: 31536000"
+
+#: ../../tools/cypher.rst:41
+msgid "Creating Cypher Keys"
+msgstr "Crear claves de Cypher"
+
+#: ../../tools/cypher.rst:43
+msgid "Navigate to |TooCyp| and select :guilabel:`+ ADD`"
+msgstr "Navegue a |TooCyp| y seleccione :guilabel:`+ ADD`"
+
+#: ../../tools/cypher.rst:44
+msgid "Configure one of the following types of Keys:"
+msgstr "Configure uno de los siguientes tipos de Claves:"
+
+#: ../../tools/cypher.rst:47
+msgid "Password"
+msgstr "Contraseña"
+
+#: ../../tools/cypher.rst:49
+msgid ""
+"A Cypher password generates a secure password of specified character "
+"length in the key pattern (or 15) with symbols, numbers, upper case, and "
+"lower case letters (i.e. password/15/mypass generates a 15 character "
+"password)."
+msgstr ""
+"Una contraseña de Cypher genera una contraseña segura de la longitud "
+"de caracteres especificada en el patrón de clave (o 15) con símbolos, "
+"números, letras mayúsculas y minúsculas (es decir, password/15/mypass "
+"genera una contraseña de 15 caracteres)."
+
+#: ../../tools/cypher.rst:54 ../../tools/cypher.rst:76
+#: ../../tools/cypher.rst:96 ../../tools/cypher.rst:118
+#: ../../tools/cypher.rst:133 ../../tools/cypher.rst:140
+#: ../../tools/cypher.rst:162
+msgid "Key"
+msgstr "Clave"
+
+#: ../../tools/cypher.rst:52
+msgid "Pattern \"password/character_length/key\""
+msgstr "Pattern \"password/character_length/key\""
+
+#: ../../tools/cypher.rst:54
+msgid "Example: password/10/mypassword"
+msgstr "Ejemplo: password/10/mypassword"
+
+#: ../../tools/cypher.rst:57 ../../tools/cypher.rst:79
+#: ../../tools/cypher.rst:99 ../../tools/cypher.rst:121
+#: ../../tools/cypher.rst:143 ../../tools/cypher.rst:165
+msgid "Value"
+msgstr "Valor"
+
+#: ../../tools/cypher.rst:57
+msgid "Leave the Value filed blank for a password, as it will be generated."
+msgstr "Deje el campo Valor en blanco para una contraseña, ya que se generará."
+
+#: ../../tools/cypher.rst:60 ../../tools/cypher.rst:82
+#: ../../tools/cypher.rst:102 ../../tools/cypher.rst:124
+#: ../../tools/cypher.rst:146 ../../tools/cypher.rst:168
+msgid "Lease"
+msgstr "Arrendamiento"
+
+#: ../../tools/cypher.rst:60 ../../tools/cypher.rst:82
+#: ../../tools/cypher.rst:102 ../../tools/cypher.rst:124
+#: ../../tools/cypher.rst:146 ../../tools/cypher.rst:168
+msgid "Enter lease time in seconds (ex. 604800 for one week)"
+msgstr ""
+"Ingrese el tiempo de arrendamiento en segundos (ej. 604800 para una "
+"semana)"
+
+#: ../../tools/cypher.rst:62
+msgid "Save changes and the password will be generated and available for use."
+msgstr ""
+"Guarde los cambios y la contraseña se generará y estará disponible "
+"para su uso."
+
+#: ../../tools/cypher.rst:64
+msgid ""
+"If your user role has Cypher: Decrypt permissions, a \"DECRYPT\" button "
+"will be available in the Cypher section to view the generated password."
+msgstr ""
+"If your user role has Cypher: Decrypt permissions, a \"DECRYPT\" button "
+"será available in the Cypher section to view the generated password."
+
+#: ../../tools/cypher.rst:66
+msgid "To delete the password key, select `Actions > Remove` and confirm."
+msgstr ""
+"Para eliminar la clave de contraseña, seleccione `Actions > Remove` y "
+"confirme."
+
+#: ../../tools/cypher.rst:71
+msgid "A mountpoint to store tfvars files for Terraform App Blueprints."
+msgstr ""
+"Un punto de montaje para almacenar archivos tfvars para Blueprints de "
+"aplicaciones Terraform."
+
+#: ../../tools/cypher.rst:74
+msgid "Pattern \"tfvars/key\""
+msgstr "Pattern \"tfvars/key\""
+
+#: ../../tools/cypher.rst:76
+msgid "Example: tfvars/my-aws-account"
+msgstr "Ejemplo: tfvars/my-aws-account"
+
+#: ../../tools/cypher.rst:79
+msgid "The values for your tfvars file to be encrypted"
+msgstr "Los valores de su archivo tfvars a cifrar"
+
+#: ../../tools/cypher.rst:84
+msgid ""
+"Click :guilabel:`SAVE CHANGES` and the stored values will be available "
+"for use."
+msgstr ""
+"Haga clic en :guilabel:`SAVE CHANGES` y los valores almacenados "
+"estarán disponibles para su uso."
+
+#: ../../tools/cypher.rst:86
+msgid ""
+"You may also see Cloud profiles stored at the tfvars mountpoint. They "
+"will have a key pattern like: "
+"\"tfvars/profile/cloud/$cloudCode/variables\". Terraform Cloud profiles "
+"are created on the Cloud detail page (|InfClo| > selected Cloud) under "
+"the Profiles tab. They allow Terraform apps and specs to be provisioned "
+"across multiple Clouds that require differed tfvars. See the `Cloud "
+"profiles "
+"<https://docs.morpheusdata.com/en/latest/infrastructure/clouds/profiles.html>`_"
+" page for more."
+msgstr ""
+"You may also see Cloud profiles stored at the tfvars mountpoint. They will "
+"have a key pattern like: \"tfvars/profile/cloud/$cloudCode/variables\". "
+"Terraform Cloud profiles are creado on the Cloud detalle página (|InfClo| "
+"> seleccionado Cloud) under the Profiles pestaña. They allow Terraform "
+"apps and specs to be provisioned across multiple Clouds that require "
+"differed tfvars. See the `Cloud profiles "
+"<https://docs.morpheusdata.com/en/latest/infrastructure/clouds/profiles.htm"
+"l>`_ página for more."
+
+#: ../../tools/cypher.rst:89
+msgid "Secret"
+msgstr "Secreto"
+
+#: ../../tools/cypher.rst:91
+msgid ""
+"A Cypher secret is the standard secret module that stores a key/value in "
+"encrypted form."
+msgstr ""
+"Un secreto de Cypher es el módulo secreto estándar que almacena una "
+"clave/valor en forma cifrada."
+
+#: ../../tools/cypher.rst:94
+msgid "Pattern \"secret/key\""
+msgstr "Pattern \"secret/key\""
+
+#: ../../tools/cypher.rst:96
+msgid "EXAMPLE: secret/mysecret"
+msgstr "EJEMPLO: secret/mysecret"
+
+#: ../../tools/cypher.rst:99
+msgid "Add the secret value to be encrypted"
+msgstr "Agregue el valor secreto a cifrar"
+
+#: ../../tools/cypher.rst:104
+msgid "Save changes and the secret will be encrypted and available for use."
+msgstr ""
+"Guarde los cambios y el secreto se cifrará y estará disponible para su "
+"uso."
+
+#: ../../tools/cypher.rst:106
+msgid ""
+"If your |morpheus| user role has Cypher: Decrypt permissions, a "
+"\"DECRYPT\" button will be available in the Cypher section to view the "
+"secret."
+msgstr ""
+"If your |morpheus| user role has Cypher: Decrypt permissions, a "
+"\"DECRYPT\" button será available in the Cypher section to view the secret."
+
+#: ../../tools/cypher.rst:108
+msgid "To delete the secret, select `Actions > Remove` and confirm."
+msgstr "Para eliminar el secreto, seleccione `Actions > Remove` y confirme."
+
+#: ../../tools/cypher.rst:111
+msgid "UUID"
+msgstr "UUID"
+
+#: ../../tools/cypher.rst:113
+msgid ""
+"A Cypher UUID Returns a new UUID by key name when requested and stores "
+"the generated UUID by key name for a given lease timeout period."
+msgstr ""
+"Un UUID de Cypher devuelve un nuevo UUID por nombre de clave cuando se "
+"solicita y almacena el UUID generado por nombre de clave durante un "
+"período de tiempo de expiración de arrendamiento dado."
+
+#: ../../tools/cypher.rst:116
+msgid "Pattern \"uuid/key\""
+msgstr "Pattern \"uuid/key\""
+
+#: ../../tools/cypher.rst:118
+msgid "Example: uuid/myuuid"
+msgstr "Ejemplo: uuid/myuuid"
+
+#: ../../tools/cypher.rst:121
+msgid "Leave the Value filed blank for UUID, as it will be generated."
+msgstr "Deje el campo Valor en blanco para UUID, ya que se generará."
+
+#: ../../tools/cypher.rst:126
+msgid "Save changes and the UUID will be generate and available for use."
+msgstr ""
+"Guarde los cambios y el UUID se generará y estará disponible para su "
+"uso."
+
+#: ../../tools/cypher.rst:128
+msgid ""
+"If your user role has Cypher: Decrypt permissions, a \"DECRYPT\" button "
+"will be available in the Cypher section to view the generate UUID."
+msgstr ""
+"If your user role has Cypher: Decrypt permissions, a \"DECRYPT\" button "
+"será available in the Cypher section to view the generate UUID."
+
+#: ../../tools/cypher.rst:130 ../../tools/cypher.rst:152
+msgid "To delete the UUID, select `Actions > Remove` and confirm."
+msgstr "Para eliminar el UUID, seleccione `Actions > Remove` y confirme."
+
+#: ../../tools/cypher.rst:135
+msgid ""
+"A Cypher Key generates a Base 64 encoded AES Key of specified bit length "
+"in the key pattern (i.e. key/128/mykey generates a 128-bit key)."
+msgstr ""
+"Una Clave de Cypher genera una clave AES codificada en Base 64 de la "
+"longitud de bits especificada en el patrón de clave (es decir, "
+"key/128/mykey genera una clave de 128 bits)."
+
+#: ../../tools/cypher.rst:138
+msgid "Pattern \"key/bit_length/key\""
+msgstr "Pattern \"key/bit_length/key\""
+
+#: ../../tools/cypher.rst:140
+msgid "Example: key/256/mykey"
+msgstr "Ejemplo: key/256/mykey"
+
+#: ../../tools/cypher.rst:143
+msgid "Leave the Value filed blank for key, as it will be generated."
+msgstr "Deje el campo Valor en blanco para la clave, ya que se generará."
+
+#: ../../tools/cypher.rst:148
+msgid "Save changes and the AES Key will be generate and available for use."
+msgstr ""
+"Guarde los cambios y la clave AES se generará y estará disponible para "
+"su uso."
+
+#: ../../tools/cypher.rst:150
+msgid ""
+"If your user role has Cypher: Decrypt permissions, a \"DECRYPT\" button "
+"will be available in the Cypher section to view the generate AES Key."
+msgstr ""
+"If your user role has Cypher: Decrypt permissions, a \"DECRYPT\" button "
+"será available in the Cypher section to view the generate AES Key."
+
+#: ../../tools/cypher.rst:155
+msgid "Vault"
+msgstr "Vault"
+
+#: ../../tools/cypher.rst:157
+msgid ""
+"Use this mountpoint to store Cypher secrets in a Hashicorp Vault server "
+"backend rather than |morpheus|. Additionally, you can call secrets stored"
+" in Vault from this Cypher mountpoint even if they are only saved there "
+"and not listed in the |morpheus| Cypher UI. This requires installation "
+"and configuration of the Hashicorp Vault plugin. See the YouTube video "
+"embedded in this section for more information on adding the plugin, "
+"configuration, and a demonstration of its capabilities."
+msgstr ""
+"Use this mountpoint to store Cypher secrets in a Hashicorp Vault server "
+"backend rather than |morpheus|. Adicionalmente, you can call secrets "
+"stored in Vault from this Cypher mountpoint even if they are only saved "
+"there and not listado en the |morpheus| Cypher UI. This requires "
+"installation and configuration of the Hashicorp Vault plugin. See the "
+"YouTube video embedded in esta sección for more information on adding the "
+"plugin, configuration, and a demonstration of its capabilities."
+
+#: ../../tools/cypher.rst:159
+msgid ""
+"It's recommended that you use a long-lived token as attempts to call "
+"Vault-stored values into Tasks will stop working if the token is no "
+"longer good. In such a case you'd have to obtain a new token, delete the "
+"Cypher entry with the old token, and create a new one to restore "
+"functionality once again. Using a long-lived token will prevent the need "
+"to do this often."
+msgstr ""
+"It's recommended that you use a long-lived token as attempts to call "
+"Vault-stored valores into Tareas will stop working if the token is no "
+"longer good. In such a case you'd have to obtain a new token, delete the "
+"Cypher entry with the old token, and create a new one to restore "
+"functionality once again. Using a long-lived token will prevent the need "
+"to do this often."
+
+#: ../../tools/cypher.rst:162
+msgid ""
+"Pattern \"vault/<engineMount>/<secretPath>/data/<key>\" (ex. "
+"vault/KV2/secret/data/morpheus/lab)"
+msgstr ""
+"Pattern \"vault/<engineMount>/<secretPath>/data/<key>\" (ex. "
+"vault/KV2/secret/data/morpheus/lab)"
+
+#: ../../tools/cypher.rst:165
+#, python-brace-format
+msgid "Enter your key/value pair here in valid JSON (ex. {\"hello\": \"world\"} )"
+msgstr ""
+"Enter your key/valor pair here in valid JSON (ex. {\"hello\": \"world\"} )"
+
+#: ../../tools/cypher.rst:170
+msgid ""
+"Click :guilabel:`SAVE CHANGES`. The example BASH script below onboards "
+"the value stored in Vault from the secret/data/morpheus/lab mountpoint:"
+msgstr ""
+"Haga clic en :guilabel:`SAVE CHANGES`. The example BASH script below "
+"onboards the value stored in Vault from the secret/data/morpheus/lab "
+"mountpoint:"
+
+#: ../../tools/cypher.rst:172
+msgid ""
+"from_vault=\"<%= cypher.read('vault/KV2/secret/data/morpheus/lab') %>\"\n"
+"\n"
+"echo $from_vault"
+msgstr ""
+"from_vault=\"<%= cypher.read('vault/KV2/secret/data/morpheus/lab') "
+"%>\"\n\necho $from_vault"
+
+#: ../../tools/cypher.rst:187
+msgid "Editing Cypher Keys"
+msgstr "Editar claves de Cypher"
+
+#: ../../tools/cypher.rst:189
+msgid ""
+"Cypher key types which accept user-entered values (not generated values) "
+"are editable. To edit, click the \"ACTIONS\" button at the end of the row"
+" for the appropriate Cypher key and then click \"Edit.\" Edit the values "
+"and click :guilabel:`SAVE CHANGES`."
+msgstr ""
+"Cypher key types which accept user-entered values (not generated values) "
+"are editable. Para editar, click the \"ACTIONS\" button at the end of the "
+"row for the appropriate Cypher key and then click \"Edit.\" Edit the "
+"values and haga clic en :guilabel:`SAVE CHANGES`."
+
+#: ../../tools/cypher.rst:192
+msgid "Using Cypher Keys in Scripts"
+msgstr "Usar claves de Cypher en scripts"
+
+#: ../../tools/cypher.rst:194
+msgid "To use a Cypher key in a script, use the following syntax:"
+msgstr "Para usar una clave de Cypher en un script, use la siguiente sintaxis:"
+
+#: ../../tools/cypher.rst:196
+msgid "``<%=cypher.read('var_name')%>``"
+msgstr "``<%=cypher.read('var_name')%>``"
+
+#: ../../tools/cypher.rst:198
+msgid "Example: ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>``"
+msgstr "Ejemplo: ``PASSWORD=<%=cypher.read('secret/myuserpassword')%>``"
+
+#: ../../tools/cypher.rst:200
+msgid ""
+"Cypher also includes an option to read a value from the ``password/*`` "
+"mountpoint or create one if it doesn't already exist. Use the following "
+"syntax:"
+msgstr ""
+"Cypher also includes an option to read a value from the ``password/*`` "
+"mountpoint or create one if it doesn't already exist. Use lo siguiente "
+"syntax:"
+
+#: ../../tools/cypher.rst:202
+msgid "``<%=cypher.readPassword('var_name')%>``"
+msgstr "``<%=cypher.readPassword('var_name')%>``"
+
+#: ../../tools/cypher.rst:204
+msgid "Example: ``PASSWORD=<%=cypher.readPassword('myuserpassword')%>```"
+msgstr "Ejemplo: ``PASSWORD=<%=cypher.readPassword('myuserpassword')%>```"
+
+#: ../../tools/cypher.rst:206
+msgid ""
+"It should be noted that when Cypher keys are created using the "
+"``readPassword`` function, the subsequent reads can only come from the "
+"same user. If another |morpheus| user attempts to run the automation "
+"script containing the ``readPassword`` call, the secret value will not be"
+" read and it's very likely the script will fail. For Tasks and Workflows "
+"that need to be run by multiple users, use a pre-existing Cypher key and "
+"reference it back in the script using ``read`` rather than "
+"``readPassword``."
+msgstr ""
+"It debería ser noted that when Cypher keys are created using the "
+"``readPassword`` function, the subsequent reads can only come from the "
+"same user. If another |morpheus| user attempts to run the automation "
+"script containing the ``readPassword`` call, the secret value will not be "
+"read and it's very likely the script will fail. For Tasks and Workflows "
+"that need to be run by multiple users, use a pre-existing Cypher key and "
+"reference it back in the script using ``read`` rather than "
+"``readPassword``."
+
+#: ../../tools/cypher.rst:208
+msgid ""
+"You can reference the original owner of a workflow so that keys can be "
+"used in a subtenant.  Example "
+"``PASSWORD=<%=cypher.read('secret/myuserpassword')%>`` could be changed "
+"to ``PASSWORD=<%=cypher.read('secret/myuserpassword',true)%>`` within a "
+"library or a workflow and the true means OWNER true.  This will keep that"
+" key in the master tenants cypher store."
+msgstr ""
+"You can reference the original owner of a workflow so that keys puede ser "
+"used in a subtenant.  Example "
+"``PASSWORD=<%=cypher.read('secret/myuserpassword')%>`` could be changed to "
+"``PASSWORD=<%=cypher.read('secret/myuserpassword',true)%>`` within a "
+"library or a workflow and the true means OWNER true.  This will keep that "
+"key in the master tenants cypher store."
+

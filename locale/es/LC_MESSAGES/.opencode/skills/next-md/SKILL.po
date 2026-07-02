@@ -1,0 +1,557 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/next-md/SKILL.md:9
+msgid "⚠ Mode check"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:11
+msgid ""
+"This skill describes the **legacy** workflow where the agent hand- writes"
+" the agent half of `NEXT.md`. If the project has run `hero next migrate-"
+"to-projection` (config: `next.projected: true` in `.hero/hero.json`), "
+"NEXT.md is now graph-projected — anything you write to it gets wiped on "
+"the next Stop hook. Use the [next-handoff-emit](next-handoff-emit.md) "
+"skill instead."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:18
+msgid ""
+"To check: `hero next` — if the file's `updated:` frontmatter timestamp "
+"moves on every Stop hook, projection is on."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:21
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:23
+msgid ""
+"Define the shape of NEXT.md — the single living artifact that lets a "
+"fresh session (or one resuming after compaction) pick up exactly where "
+"the last one left off."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:27
+msgid "NEXT.md is split in two halves:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Half"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Who writes it"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "When"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid ""
+"**Agent half** — Last user ask, Just finished, Next, Blocked on, Tried "
+"and failed, Context"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "The agent"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid ""
+"When the intent shifts, something fails, an approach gets rejected, or "
+"you're about to switch tools"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "**Machine half** — Branch, recent commits, working tree, hot files"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next checkpoint` (run by a host-tool Stop hook)"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Every turn, automatically"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:34
+msgid ""
+"The agent never has to write the machine half. The harness keeps it fresh"
+" on every turn — no agent discipline required. The agent's only job is "
+"the agent half."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:38
+msgid "`.hero/next/<user>.local.md` is machine-state-only"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:40
+msgid ""
+"The gitignored per-machine state file `.hero/next/<user>.local.md` is "
+"**rebuilt wholesale on every checkpoint** — it contains the marker- "
+"bounded machine block and nothing else. **Never hand-edit it. Never write"
+" scratch into it. Anything outside the marker block is wiped on the next "
+"Stop hook** (the first time a wipe happens, the prior hand-content is "
+"backed up once to `<user>.local.md.bak.<timestamp>` so an accidental loss"
+" is recoverable, then discarded on subsequent runs)."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:49
+msgid ""
+"If you want a preserved per-machine briefing the agent doesn't touch, "
+"write to a separately-named file such as `.hero/notes/<user>.md` — no "
+"Hero tool reads or rewrites that path."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:53
+msgid "Modes"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:55
+msgid "Run `hero next path` to get the file path you should write to:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:57
+msgid "**Solo mode** (default): writes `.hero/NEXT.md` — one shared briefing."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:58
+msgid ""
+"**Team mode** (`next.mode: \"team\"` in `hero.json`): writes "
+"`.hero/next/<user>.md` — your personal briefing."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:61
+msgid ""
+"In team mode, also update your one-liner in the shared `.hero/NEXT.md` "
+"roster so teammates see what you're working on."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:64
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:66
+msgid ""
+"**At session start:** read your NEXT file (via `hero next path`) before "
+"doing anything else and surface it to the user."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:68
+msgid ""
+"**During the session:** the agent overwrites the agent half when the "
+"triggers below fire. The Stop hook keeps the machine half fresh; you do "
+"not need to run it manually."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:72
+msgid "Format"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:74
+msgid ""
+"The agent owns everything *above* the `<!-- BEGIN HERO MACHINE STATE -->`"
+" marker. Always overwrite the entire agent half. Never append. Aim for "
+"15-40 lines in the agent half; hard cap 60."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:78
+msgid ""
+"---\n"
+"updated: 2026-04-22T15:30:00Z\n"
+"session: <host-tool>/<model>\n"
+"branch: <git-branch>\n"
+"---\n"
+"\n"
+"## Last user ask\n"
+"<1-3 lines, the user's own words, from their most recent meaningful\n"
+"turn. The single most expensive thing for a fresh session to recover.>\n"
+"\n"
+"## Just finished\n"
+"<What shipped this turn. Commit hash + message if one was made.\n"
+"Note any uncommitted state.>\n"
+"\n"
+"## Next\n"
+"<The concrete next step. One short paragraph plus a runnable pointer.>\n"
+"\n"
+"→ <runnable pointer: a slash command, spec path, or shell command>\n"
+"\n"
+"## Blocked on (omit if clear)\n"
+"<Test failures, build errors, things you got stuck on. Include the\n"
+"actual error message or file/line.>\n"
+"\n"
+"## Tried and failed (omit if N/A)\n"
+"<Approaches that didn't work, so the next session doesn't suggest them\n"
+"again. One line per rejected idea.>\n"
+"\n"
+"## Context to carry forward (omit if nothing meaningful)\n"
+"<Non-obvious decisions, user preferences, open questions. Compaction-\n"
+"survival kit, not a transcript.>\n"
+"\n"
+"## Proposed next ask\n"
+"<One paste-ready sentence the user could say to resume productive\n"
+"work. Phrased as the user would phrase it, not as instructions to\n"
+"the agent. The \"when in doubt, just look it up\" answer for the next\n"
+"session opener.>\n"
+"\n"
+"<!-- BEGIN HERO MACHINE STATE -->\n"
+"[…auto-written, do not touch…]\n"
+"<!-- END HERO MACHINE STATE -->\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:121
+msgid "Section guidance"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:123
+msgid ""
+"**Last user ask** — quote the user's wording. Don't paraphrase. A fresh "
+"session reading this should immediately know what the user wants. If the "
+"last meaningful ask was 3 turns ago and the recent turns have been "
+"conversational, quote that earlier ask."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:127
+msgid ""
+"**Just finished** — one bullet per concrete thing. Skip if you only read "
+"code or had a discussion. The machine half already lists commits and "
+"dirty files; only mention what's *interesting* (e.g. \"shipped X, but "
+"uncommitted because Y\")."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:131
+msgid ""
+"**Next** — concrete next step plus the `→ <pointer>` line. The pointer "
+"must be runnable."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:133
+msgid "**Blocked on** — only if actually stuck. Copy the real error."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:134
+msgid "**Tried and failed** — gold. One line per rejected approach."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:135
+msgid ""
+"**Context to carry forward** — only what isn't derivable from `git log`, "
+"the spec corpus, or the codebase. Skip the heading entirely if empty."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:137
+msgid ""
+"**Proposed next ask** — the user's perspective, paste-ready. One "
+"sentence, no command names, no file paths unless the user would naturally"
+" name them. The bar: a fresh session that pastes this verbatim should "
+"kick off productive work without needing to read the rest of the file. "
+"Think *\"continue with the e2e suite for discovery, same shape as "
+"onboarding\"*, not *\"run scripts/e2e/ discovery.sh\"*. Skip if the next "
+"move genuinely depends on the user's state (e.g. they're about to make a "
+"strategic decision only they can make)."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:147
+msgid "When to update the agent half"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:149
+msgid ""
+"The Stop hook handles the machine half every turn — the auto-half also "
+"auto-summarizes commits + AC status flips since the prior checkpoint, so "
+"most \"what just happened\" is captured for free."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:153
+msgid "The single rule for the agent half:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:155
+msgid ""
+"**Read the file as it stands. Could a fresh session pick up correctly "
+"from this right now? If no, update it. If yes, leave it.**"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:158
+msgid ""
+"Apply this rule before handing back to the user, before invoking another "
+"agent or skill, and any time you're about to claim a piece of work is "
+"done. The bar is *correctness of the handoff*, not \"did anything "
+"change.\""
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:162
+msgid "Concrete failure modes that flip the answer to **no**:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:164
+msgid ""
+"The \"Last user ask\" no longer reflects what the user actually wants "
+"(intent shifted, or the user gave new instructions)."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:166
+msgid ""
+"\"Just finished\" omits a meaningful commit or spec status change a fresh"
+" session would need to know about."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:168
+msgid "\"Next\" points at work that's already done, or doesn't exist anymore."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:169
+msgid ""
+"\"Blocked on\" is silent about a real blocker, or claims one that's been "
+"resolved."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:171
+msgid ""
+"\"Tried and failed\" is missing an approach you just rejected — the next "
+"session would re-suggest it."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:174
+msgid ""
+"If none of those apply, leave the file alone. Conversational turns "
+"(*\"explain this\", \"what would you suggest\"*) almost never flip the "
+"rule."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:177
+msgid ""
+"Don't write a fresh agent half just because commits landed — the machine "
+"half lists those automatically. Update the agent half when the "
+"**narrative** would mislead a fresh session, not when the activity log "
+"grew."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:182
+msgid "Quality bar"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:184
+msgid ""
+"A good NEXT.md is one a fresh session can read and immediately be "
+"productive without asking \"what were we doing?\""
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:187
+msgid "The new session should know:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:189
+msgid "**What the user actually wants** — last user ask, in their words"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:190
+msgid "**What just shipped** — agent half + machine commits"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:191
+msgid "**What's blocked** — actual error messages"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:192
+msgid "**What to do next** — a runnable pointer"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:193
+msgid "**What NOT to try** — approaches already rejected"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:195
+msgid ""
+"If you can't picture a fresh session being productive after reading it, "
+"add detail. If it's becoming a transcript, cut detail."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:198
+msgid ""
+"**Hard cap on agent half: 60 lines. Target: 15-40.** If you need more, "
+"move detail to `.hero/knowledge/notes/` and link it."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:201
+msgid "Shared file (team mode only)"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:203
+msgid "In team mode, `.hero/NEXT.md` is the team's shared file with two roles:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:205
+msgid "1. Roster — always update your line"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:207
+msgid ""
+"## Working on\n"
+"\n"
+"- **chet-bellows**: delivering challenge-diagnosis spec (Apr 23 14:30)\n"
+"- **alice**: fixing auth timeout bug #142 (Apr 23 11:15)\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:214
+msgid "2. Updates — only when something affects others"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:216
+msgid ""
+"## Updates\n"
+"\n"
+"### Apr 23 — chet-bellows\n"
+"Shipped drift detection — `hero drift` is live, affects all spec "
+"workflows.\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:223
+msgid "Most turns don't warrant a team update. If unsure, skip it."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:225
+msgid "What not to do"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:227
+msgid "Don't append history — overwrite the agent half every time."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:228
+msgid ""
+"Don't touch the `<!-- BEGIN HERO MACHINE STATE -->` … `<!-- END … -->` "
+"block. The Stop hook owns it."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:230
+msgid ""
+"Don't write a fresh agent half after every prompt. Only when something in"
+" the trigger list above fired."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:232
+msgid ""
+"Don't include large diffs, code snippets, or full spec contents — point "
+"at the artifact instead."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:234
+msgid ""
+"Don't paraphrase what's already in the spec corpus or the codebase. The "
+"handoff is the *delta* not visible elsewhere."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:236
+msgid ""
+"**Don't hand-edit `.hero/next/<user>.local.md`.** It is rebuilt every "
+"checkpoint and any content you write outside the marker block will be "
+"discarded. Use `.hero/notes/<user>.md` (or any path not under "
+"`.hero/next/`) for preserved per-machine notes."
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:241
+msgid "CLI commands"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Command"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "What it does"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next`"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Show your briefing"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next path`"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Print the file path the agent should write to"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next checkpoint`"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid ""
+"Refresh the machine half (the Stop hook does this automatically; "
+"`/handoff` does it manually)"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next team`"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Show all team members' recent handoffs"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next shared`"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Show the project-level shared NEXT.md"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "`hero next migrate`"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md
+msgid "Move existing .hero/NEXT.md into .hero/next/<user>.md"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:252
+msgid "Configuration"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:254
+msgid "In `hero.json`:"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:256
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"next\": {\n"
+"    \"mode\": \"team\"\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-md/SKILL.md:264
+msgid "Omit entirely or set to `\"solo\"` for the default single-file behavior."
+msgstr ""
+

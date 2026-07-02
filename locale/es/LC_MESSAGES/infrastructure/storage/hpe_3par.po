@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/storage/hpe_3par.rst:2
+msgid "HPE 3PAR / Primera Storage"
+msgstr "HPE 3PAR / Primera Almacenamiento"
+
+#: ../../infrastructure/storage/hpe_3par.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/storage/hpe_3par.rst:7
+msgid ""
+"|morpheus| integrates with HPE 3PAR and Primera storage arrays, providing "
+"synchronized visibility into storage groups (CPGs), volumes, hosts, and host"
+" sets. Once integrated, |morpheus| can create datastores by mapping volumes "
+"to host groups and presenting LUNs automatically."
+msgstr ""
+"|morpheus| integrates con HPE 3PAR y Primera storage arrays, providing "
+"synchronized visibility en storage groups (CPGs), volúmenes, hosts, y host "
+"establece. Once integrated, |morpheus| puede crear datastores por mapping "
+"volúmenes a host groups y presenting LUNs automáticamente."
+
+#: ../../infrastructure/storage/hpe_3par.rst:9
+msgid ""
+"The integration communicates with the 3PAR Web Services API (WSAPI) over "
+"HTTPS."
+msgstr ""
+"El integration communicates con el 3PAR Web Servicios API (WSAPI) sobre "
+"HTTPS."
+
+#: ../../infrastructure/storage/hpe_3par.rst:12
+msgid "Prerequisites"
+msgstr "Requisitos previos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:14
+msgid "HPE 3PAR OS 3.2.1 or later, or HPE Primera OS"
+msgstr "HPE 3PAR OS 3.2.1 o later, o HPE Primera OS"
+
+#: ../../infrastructure/storage/hpe_3par.rst:15
+msgid "WSAPI service enabled on the array (default port: 8008 for HTTPS)"
+msgstr ""
+"WSAPI servicio habilitado en el array (predeterminado puerto: 8008 para "
+"HTTPS)"
+
+#: ../../infrastructure/storage/hpe_3par.rst:16
+msgid "An administrative user account with API access"
+msgstr "Un administrative usuario account con API acceso"
+
+#: ../../infrastructure/storage/hpe_3par.rst:17
+msgid ""
+"Network connectivity from the |morpheus| appliance to the 3PAR WSAPI "
+"endpoint"
+msgstr "Red connectivity desde el |morpheus| appliance al 3PAR WSAPI endpoint"
+
+#: ../../infrastructure/storage/hpe_3par.rst:20
+msgid "Adding an HPE 3PAR Storage Server"
+msgstr "Adding un HPE 3PAR Almacenamiento Servidor"
+
+#: ../../infrastructure/storage/hpe_3par.rst:22
+msgid "Navigate to ``Infrastructure > Storage``"
+msgstr "Navegue un ``Infrastructure > Storage``"
+
+#: ../../infrastructure/storage/hpe_3par.rst:23
+msgid "Select the **SERVERS** tab"
+msgstr "Seleccionar el **SERVERS** pestaña"
+
+#: ../../infrastructure/storage/hpe_3par.rst:24
+#: ../../infrastructure/storage/hpe_3par.rst:70
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ AGREGAR`"
+
+#: ../../infrastructure/storage/hpe_3par.rst:25
+msgid "From the ADD STORAGE SERVER wizard, fill in the following:"
+msgstr "Desde el ADD STORAGE SERVER wizard, fill en el siguiente:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:27
+#: ../../infrastructure/storage/hpe_3par.rst:73
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../infrastructure/storage/hpe_3par.rst:28
+msgid "Name of the Storage Server in |morpheus|."
+msgstr "Nombre del Almacenamiento Servidor en |morpheus|."
+
+#: ../../infrastructure/storage/hpe_3par.rst:29
+msgid "TYPE"
+msgstr "TYPE"
+
+#: ../../infrastructure/storage/hpe_3par.rst:30
+msgid "Select ``3Par``"
+msgstr "Seleccionar ``3Par``"
+
+#: ../../infrastructure/storage/hpe_3par.rst:32
+msgid "URL"
+msgstr "URL"
+
+#: ../../infrastructure/storage/hpe_3par.rst:32
+msgid ""
+"The WSAPI URL of the 3PAR array. Example: ``https://192.168.190.201:8008``"
+msgstr ""
+"El WSAPI URL del 3PAR array. Ejemplo: ``https://192.168.190.201:8008``"
+
+#: ../../infrastructure/storage/hpe_3par.rst:34
+msgid "USERNAME"
+msgstr "USERNAME"
+
+#: ../../infrastructure/storage/hpe_3par.rst:35
+msgid "Administrative user account with API access."
+msgstr "Administrative usuario account con API acceso."
+
+#: ../../infrastructure/storage/hpe_3par.rst:37
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+#: ../../infrastructure/storage/hpe_3par.rst:37
+msgid "Password for the administrative user."
+msgstr "Contraseña para el administrative usuario."
+
+#: ../../infrastructure/storage/hpe_3par.rst:39
+#: ../../infrastructure/storage/hpe_3par.rst:114
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CAMBIOS`"
+
+#: ../../infrastructure/storage/hpe_3par.rst:41
+msgid ""
+"Upon successful connection, |morpheus| will sync the following from the "
+"array:"
+msgstr ""
+"Upon successful conexión, |morpheus| será sync lo siguiente desde el array:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:43
+msgid ""
+"**CPG Groups** — Common Provisioning Groups are displayed under Storage "
+"Groups"
+msgstr ""
+"**CPG Grupos** — Común Aprovisionamiento Grupos son mostrado bajo "
+"Almacenamiento Grupos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:44
+msgid "**Volumes** — Virtual volumes provisioned on the array"
+msgstr "**Volumes** — Virtual volúmenes aprovisionado en el array"
+
+#: ../../infrastructure/storage/hpe_3par.rst:45
+msgid "**Hosts** — Registered hosts with Fibre Channel or iSCSI connectivity"
+msgstr "**Hosts** — Registered hosts con Fibre Channel o iSCSI connectivity"
+
+#: ../../infrastructure/storage/hpe_3par.rst:46
+msgid "**Host Sets** — Logical groupings of hosts for shared volume access"
+msgstr "**Host Sets** — Logical groupings de hosts para shared volumen acceso"
+
+#: ../../infrastructure/storage/hpe_3par.rst:49
+msgid "Synced Data"
+msgstr "Synced Datos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:52
+msgid "CPG Groups"
+msgstr "CPG Groups"
+
+#: ../../infrastructure/storage/hpe_3par.rst:52
+msgid ""
+"Common Provisioning Groups define the underlying disk configuration for "
+"volumes. CPGs are synced and displayed as Storage Groups."
+msgstr ""
+"Común Aprovisionamiento Grupos define el underlying disco configuración para"
+" volúmenes. CPGs son sincronizado y mostrado como Almacenamiento Grupos."
+
+#: ../../infrastructure/storage/hpe_3par.rst:55
+msgid "Volumes"
+msgstr "Volumes"
+
+#: ../../infrastructure/storage/hpe_3par.rst:55
+msgid ""
+"Virtual volumes on the 3PAR array are synced and visible under the storage "
+"server's Volumes tab."
+msgstr ""
+"Virtual volúmenes en el 3PAR array son sincronizado y visible bajo el "
+"storage servidor's Volumes pestaña."
+
+#: ../../infrastructure/storage/hpe_3par.rst:58
+msgid "Hosts"
+msgstr "Hosts"
+
+#: ../../infrastructure/storage/hpe_3par.rst:58
+msgid ""
+"Individual host registrations (with WWN/IQN identifiers) connected to the "
+"array."
+msgstr ""
+"Individual host registrations (con WWN/IQN identifiers) conectado un el "
+"array."
+
+#: ../../infrastructure/storage/hpe_3par.rst:61
+msgid "Host Sets"
+msgstr "Host Sets"
+
+#: ../../infrastructure/storage/hpe_3par.rst:61
+msgid "Groups of hosts that share volume access, used for LUN presentation."
+msgstr ""
+"Grupos de hosts ese share volumen acceso, utilizado para LUN presentation."
+
+#: ../../infrastructure/storage/hpe_3par.rst:64
+msgid "Creating a Datastore"
+msgstr "Creating un Almacén de datos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:66
+msgid ""
+"|morpheus| can create datastores on HPE 3PAR by mapping a volume to a host "
+"group (creating a vLUN). To create a datastore:"
+msgstr ""
+"|morpheus| puede crear datastores en HPE 3PAR por mapping un volumen a un "
+"host group (creating un vLUN). A crear un datastore:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:68
+msgid "Navigate to the 3PAR storage server detail page"
+msgstr "Navegue un el 3PAR storage server detail página"
+
+#: ../../infrastructure/storage/hpe_3par.rst:69
+msgid "Select the **DATASTORES** tab"
+msgstr "Seleccionar el **DATASTORES** pestaña"
+
+#: ../../infrastructure/storage/hpe_3par.rst:71
+msgid "Configure the following fields:"
+msgstr "Configure lo siguiente campos:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:74
+msgid "Name for the new datastore."
+msgstr "Nombre para el nuevo datastore."
+
+#: ../../infrastructure/storage/hpe_3par.rst:75
+msgid "STORAGE GROUP"
+msgstr "STORAGE GROUP"
+
+#: ../../infrastructure/storage/hpe_3par.rst:76
+msgid "Select the CPG (Common Provisioning Group) to provision from."
+msgstr "Seleccionar el CPG (Común Aprovisionamiento Grupo) a provision desde."
+
+#: ../../infrastructure/storage/hpe_3par.rst:77
+msgid "HOST GROUP"
+msgstr "HOST GROUP"
+
+#: ../../infrastructure/storage/hpe_3par.rst:78
+msgid "Select the Host Set to present the volume to."
+msgstr "Seleccionar el Host Establecer a present el volumen a."
+
+#: ../../infrastructure/storage/hpe_3par.rst:80
+msgid "VOLUME"
+msgstr "VOLUME"
+
+#: ../../infrastructure/storage/hpe_3par.rst:80
+msgid "Select or create the volume to map."
+msgstr "Seleccionar o crear el volumen a mapear."
+
+#: ../../infrastructure/storage/hpe_3par.rst:82
+msgid "The following options are available when creating a new volume:"
+msgstr ""
+"Lo siguiente opciones están disponibles cuando creating un nuevo volumen:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:89
+msgid "DISK TYPE"
+msgstr "DISK TYPE"
+
+#: ../../infrastructure/storage/hpe_3par.rst:85
+msgid "The physical disk type for the volume:"
+msgstr "El physical disco tipo para el volumen:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:87
+msgid "**Fibre Channel** — High-performance FC disks"
+msgstr "**Fibre Channel** — Alto-rendimiento FC discos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:88
+msgid "**Near Line** — High-capacity NL-SAS disks"
+msgstr "**Near Line** — Alto-capacidad NL-SAS discos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:89
+msgid "**SSD** — Solid-state drives for maximum performance"
+msgstr "**SSD** — Solid-estado drives para máximo rendimiento"
+
+#: ../../infrastructure/storage/hpe_3par.rst:97
+msgid "RAID TYPE"
+msgstr "RAID TYPE"
+
+#: ../../infrastructure/storage/hpe_3par.rst:92
+msgid "The RAID level for data protection:"
+msgstr "El RAID nivel para datos protection:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:94
+msgid "**Raid 0** — Striping only (no redundancy)"
+msgstr "**Raid 0** — Striping solo (no redundancia)"
+
+#: ../../infrastructure/storage/hpe_3par.rst:95
+msgid "**Raid 1** — Mirroring"
+msgstr "**Raid 1** — Mirroring"
+
+#: ../../infrastructure/storage/hpe_3par.rst:96
+msgid "**Raid 5** — Striping with single parity"
+msgstr "**Raid 5** — Striping con single parity"
+
+#: ../../infrastructure/storage/hpe_3par.rst:97
+msgid "**Raid 6** — Striping with dual parity"
+msgstr "**Raid 6** — Striping con dual parity"
+
+#: ../../infrastructure/storage/hpe_3par.rst:105
+msgid "PROVISIONING TYPE"
+msgstr "PROVISIONING TYPE"
+
+#: ../../infrastructure/storage/hpe_3par.rst:100
+msgid "How space is allocated on the array:"
+msgstr "Cómo space es allocated en el array:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:102
+msgid "**FULL** — Fully provisioned (thick)"
+msgstr "**FULL** — Fully aprovisionado (thick)"
+
+#: ../../infrastructure/storage/hpe_3par.rst:103
+msgid "**TPVV** — Thin Provisioned Virtual Volume"
+msgstr "**TPVV** — Thin Aprovisionado Virtual Volume"
+
+#: ../../infrastructure/storage/hpe_3par.rst:104
+msgid "**SNP** — Snapshot space"
+msgstr "**SNP** — Snapshot space"
+
+#: ../../infrastructure/storage/hpe_3par.rst:105
+msgid "**PEER** — Peer persistence volume"
+msgstr "**PEER** — Peer persistence volumen"
+
+#: ../../infrastructure/storage/hpe_3par.rst:112
+msgid "HA TYPE"
+msgstr "HA TYPE"
+
+#: ../../infrastructure/storage/hpe_3par.rst:108
+msgid "The high-availability layout preference:"
+msgstr "El alto-disponibilidad layout preference:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:110
+msgid "**PORT** — Distribute across ports"
+msgstr "**PORT** — Distribute a través de puertos"
+
+#: ../../infrastructure/storage/hpe_3par.rst:111
+msgid "**CAGE** — Distribute across drive cages"
+msgstr "**CAGE** — Distribute a través de drive cages"
+
+#: ../../infrastructure/storage/hpe_3par.rst:112
+msgid "**MAG** — Distribute across magazines"
+msgstr "**MAG** — Distribute a través de magazines"
+
+#: ../../infrastructure/storage/hpe_3par.rst:116
+msgid ""
+"|morpheus| will create a vLUN (virtual LUN) export on the 3PAR array, "
+"mapping the specified volume to the selected host set with auto-LUN "
+"assignment."
+msgstr ""
+"|morpheus| será crear un vLUN (virtual LUN) export en el 3PAR array, mapping"
+" el specified volumen al seleccionado host establecer con auto-LUN "
+"assignment."
+
+#: ../../infrastructure/storage/hpe_3par.rst:119
+msgid "Refresh and Status"
+msgstr "Refresh y Estado"
+
+#: ../../infrastructure/storage/hpe_3par.rst:121
+msgid ""
+"The 3PAR integration refreshes automatically on a scheduled interval. During"
+" a refresh, |morpheus| will:"
+msgstr ""
+"El 3PAR integration refreshes automáticamente en un scheduled interval. "
+"Durante un refresh, |morpheus| será:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:123
+msgid "Verify API connectivity"
+msgstr "Verificar API connectivity"
+
+#: ../../infrastructure/storage/hpe_3par.rst:124
+msgid "Re-sync CPG groups, volumes, hosts, and host sets"
+msgstr "Re-sync CPG groups, volúmenes, hosts, y host establece"
+
+#: ../../infrastructure/storage/hpe_3par.rst:125
+msgid "Update the storage server status indicator"
+msgstr "Update el storage servidor estado indicator"
+
+#: ../../infrastructure/storage/hpe_3par.rst:127
+msgid "Status indicators:"
+msgstr "Estado indicators:"
+
+#: ../../infrastructure/storage/hpe_3par.rst:129
+msgid "**OK** — Connected and syncing normally"
+msgstr "**OK** — Conectado y syncing normally"
+
+#: ../../infrastructure/storage/hpe_3par.rst:130
+msgid "**Error** — Connection failure or invalid credentials"
+msgstr "**Error** — Conexión fallo o inválido credentials"
+
+#: ../../infrastructure/storage/hpe_3par.rst:131
+msgid "**Offline** — WSAPI endpoint is not reachable"
+msgstr "**Offline** — WSAPI endpoint es no reachable"
+
+#: ../../infrastructure/storage/hpe_3par.rst:133
+msgid ""
+"If an error occurs, a health alarm is raised and displayed on the storage "
+"server."
+msgstr ""
+"Si un error occurs, un health alarm es raised y mostrado en el storage "
+"servidor."
+
+#: ../../infrastructure/storage/hpe_3par.rst:135
+msgid ""
+"The 3PAR integration uses token-based authentication. The API token is "
+"obtained at each sync interval and expires automatically."
+msgstr ""
+"El 3PAR integration usa token-based autenticación. El API token es obtained "
+"en cada sync interval y expires automáticamente."
+
+#: ../../infrastructure/storage/hpe_3par.rst:138
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../infrastructure/storage/hpe_3par.rst:140
+msgid ""
+"**\"Error connecting to 3par\"** — Verify the WSAPI URL is correct and the "
+"port (typically 8008) is accessible from the |morpheus| appliance."
+msgstr ""
+"**\"Error connecting to 3par\"** — Verificar el WSAPI URL es correct y el "
+"puerto (típicamente 8008) es accessible desde el |morpheus| appliance."
+
+#: ../../infrastructure/storage/hpe_3par.rst:141
+msgid ""
+"**\"unauthorized - invalid credentials\"** — Confirm the username and "
+"password have API access on the array."
+msgstr ""
+"**\"unauthorized - invalid credentials\"** — Confirmar el nombre de usuario "
+"y contraseña tienen API acceso en el array."
+
+#: ../../infrastructure/storage/hpe_3par.rst:142
+msgid ""
+"**\"3par not found - invalid host\"** — The WSAPI service may not be running"
+" on the target. Verify using ``https://<array-ip>:8008/api/v1/credentials`` "
+"in a browser."
+msgstr ""
+"**\"3par not found - invalid host\"** — El WSAPI servicio puede no be "
+"ejecutando en el destino. Verificar usando ``https://<array-"
+"ip>:8008/api/v1/credentials`` en un browser."

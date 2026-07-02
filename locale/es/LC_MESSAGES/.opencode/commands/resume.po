@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/resume.md:5
+msgid ""
+"This is the primary mechanism that makes every prompt smarter. Run `hero "
+"resume` (alias: `hero load`) and read the output **before doing anything "
+"else** — it contains the focused, ranked subgraph relevant to this "
+"session: who you are, what's in flight, what just changed, dead ends to "
+"skip, blockers, and files-nearby context."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:11
+msgid "**When to use:**"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:13
+msgid "At the start of every fresh session in a hero-aware repo"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:14
+msgid "After a long pause (>1 hour) where state may have moved"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:15
+msgid "After switching branches or pulling"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:16
+msgid "Whenever you feel like you're missing context"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:17
+msgid ""
+"Whenever the user says \"resume\", \"pick up\", \"continue\", \"where are"
+" we\", \"catch me up\", \"what's going on\""
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:20
+msgid "**Steps:**"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:22
+msgid ""
+"Run `hero resume` (or `hero resume --auto` to bias scoring toward "
+"currently-changed files)."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:24
+msgid ""
+"Read the entire output. Do not summarize it back to the user — it's for "
+"you, the agent. Treat it as system context for everything that follows in"
+" this session."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:27
+msgid ""
+"If a section ends with `_…+N more — hero search <topic> to dig deeper_`, "
+"that's a relief valve. When the user asks something that touches that "
+"area, run `hero search <topic>` to pull more."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:30
+msgid ""
+"If you need to understand WHY something is where it is, run `hero why "
+"<slug>` to traverse the graph backwards."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:32
+msgid ""
+"If the user asks \"what's blocked?\" or \"what should I work on?\", "
+"prefer the resume output's `Blocked on` and `In flight` sections over re-"
+"deriving from scratch by reading files. For a paste-ready list of ready-"
+"to-pick-up specs (each with a kickoff prompt), call `hero_queue` via MCP "
+"or read `.hero/QUEUE.md` directly. The queue is the cold-start surface; "
+"resume is the warm-context surface — they compose."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:39
+msgid ""
+"The first item in `In flight` is usually the right next action. Propose "
+"it directly — don't ask \"what should we work on?\"."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:42
+msgid "**Why this matters:**"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:44
+msgid ""
+"Hero captures every commit, spec, decision, attempt, and cross-repo "
+"dependency over the project's life. The resume output is the digest — "
+"bounded, ranked, fresh — that puts the most-relevant slice into your "
+"context window so the user gets a hot session even on a cold box. Without"
+" it, you're doing the work the digester already did, slower and less "
+"accurately."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:51
+msgid "**If `hero resume` fails or returns nothing:**"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:53
+msgid ""
+"The graph may not be populated yet. Run `hero scan` (or `hero graph "
+"reingest all`) to populate it from the local sources of truth (code, "
+"specs, git log, NEXT.md). Then re-run `hero resume`."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:57
+msgid ""
+"**What to say** (natural-language triggers — agents should auto-route "
+"these to `/resume` without the user having to know the command name):"
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:60
+msgid ""
+"\"resume\", \"let's resume\", \"let's continue\", \"continue\", \"pick up"
+" where we left off\", \"where are we\", \"what's going on\", \"catch me "
+"up\", \"load context\", \"load up\", \"load me up\", \"starting fresh\", "
+"\"fresh session\", \"hot session\", \"warm me up\", \"what should I work "
+"on\", \"what's the status\", \"give me the lay of the land\"."
+msgstr ""
+
+#: ../../.opencode/commands/resume.md:66
+#, python-format
+msgid ""
+"Also: at the start of any new session in this repo, before responding to "
+"the user's first substantive message, run `hero resume` unconditionally. "
+"It's ≥99% useful and never wrong — it costs nothing to fire, and it "
+"prevents the agent from re-deriving context the graph already has."
+msgstr ""
+

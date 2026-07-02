@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/additional/offline.rst:4
+msgid "Offline Installations and Upgrades"
+msgstr "Offline Installations y Upgrades"
+
+#: ../../getting_started/additional/offline.rst:6
+msgid ""
+"For customers that have an appliance behind a firewall/proxy that does "
+"not allow downloads from our Amazon download site, you can add the "
+"supplemental package to add the needed packages the standard Morpheus "
+"installer would have downloaded."
+msgstr ""
+"For customers that have an appliance behind a firewall/proxy that does not "
+"allow downloads desde our Amazon download site, you can add the "
+"supplemental package to add the needed packages the standard Morpheus "
+"installer would have downloaded."
+
+#: ../../getting_started/additional/offline.rst:9
+msgid "Offline Installation Requirements"
+msgstr "Offline Installation Requirements"
+
+#: ../../getting_started/additional/offline.rst:11
+msgid ""
+"NTP should be correctly configured and the server is able to connect to "
+"the NTP server in the ntp.conf file"
+msgstr ""
+"NTP debería ser correctly configured y the server is able to connect a la "
+"NTP server en la ntp.conf file"
+
+#: ../../getting_started/additional/offline.rst:12
+msgid ""
+"The OS package repositories should be configured to use local LAN "
+"repository servers or the server should be able to receive packages from "
+"the configured repositories"
+msgstr ""
+"The OS package repositories debería ser configured to use local LAN "
+"repository servers o the server debería ser able to receive packages desde "
+"la configured repositories"
+
+#: ../../getting_started/additional/offline.rst:13
+msgid ""
+"The standard Morpheus and supplemental packages must be downloaded from "
+"another system and transferred to the Morpheus Appliance server"
+msgstr ""
+"The standard Morpheus y supplemental packages debe ser downloaded desde "
+"another system y transferred to the Morpheus Appliance server"
+
+#: ../../getting_started/additional/offline.rst:14
+msgid "The supplemental package is additive, the full installer is also required"
+msgstr "The supplemental package is additive, the full installer is also required"
+
+#: ../../getting_started/additional/offline.rst:16
+msgid ""
+"The supplemental package is linked 1-to-1 to the appliance release. For "
+"example the supplemental package for 4.2.1-1 should be used with the "
+"appliance package 4.2.1-1"
+msgstr ""
+"The supplemental package is linked 1-to-1 to el appliance release. Por "
+"ejemplo the supplemental package for 4.2.1-1 debería ser used con el "
+"appliance package 4.2.1-1"
+
+#: ../../getting_started/additional/offline.rst:19
+msgid "Offline Install"
+msgstr "Offline Install"
+
+#: ../../getting_started/additional/offline.rst:22
+msgid "Ubuntu/Debian"
+msgstr "Ubuntu/Debian"
+
+#: ../../getting_started/additional/offline.rst:24
+msgid ""
+"Download both the regular Morpheus Appliance package and the Supplemental"
+" packages on to the appliance server:"
+msgstr ""
+"Download both the regular Morpheus Appliance package y the Supplemental "
+"packages on a la appliance server:"
+
+#: ../../getting_started/additional/offline.rst:26
+msgid ""
+"wget http://example_url/morpheus-appliance_version_amd64.deb\n"
+"wget http://example_url/morpheus-appliance-supplemental_version_all.deb"
+msgstr ""
+"wget http://example_url/morpheus-appliance_version_amd64.deb\\nwget "
+"http://example_url/morpheus-appliance-supplemental_version_all.deb"
+
+#: ../../getting_started/additional/offline.rst:31
+#: ../../getting_started/additional/offline.rst:67
+msgid "Install the both the Appliance package AND the Supplemental package."
+msgstr "Install the both the Appliance package AND the Supplemental package."
+
+#: ../../getting_started/additional/offline.rst:33
+msgid ""
+"sudo dpkg -i morpheus-appliance_version_amd64.deb\n"
+"sudo dpkg -i morpheus-appliance-supplemental_version_all.deb"
+msgstr ""
+"sudo dpkg -i morpheus-appliance_version_amd64.deb\\nsudo dpkg -i "
+"morpheus-appliance-supplemental_version_all.deb"
+
+#: ../../getting_started/additional/offline.rst:38
+#: ../../getting_started/additional/offline.rst:74
+msgid ""
+"Set the Morpheus UI appliance url (if needed, hostname will be "
+"automatically set)."
+msgstr ""
+"Set the Morpheus UI appliance url (si es necesario, hostname será "
+"automatically set)."
+
+#: ../../getting_started/additional/offline.rst:40
+msgid ""
+"# edit appliance_url to resolvable url (if not configured correctly by "
+"default)\n"
+"\n"
+"sudo vi /etc/morpheus/morpheus.rb"
+msgstr ""
+"# edit appliance_url to resolvable url (if not configurado correctly por "
+"defecto)\\n\\nsudo vi /etc/morpheus/morpheus.rb"
+
+#: ../../getting_started/additional/offline.rst:46
+#: ../../getting_started/additional/offline.rst:82
+msgid "Reconfigure the appliance to install required packages"
+msgstr "Reconfigure el appliance instalar obligatorio packages"
+
+#: ../../getting_started/additional/offline.rst:48
+#: ../../getting_started/additional/offline.rst:84
+msgid "sudo morpheus-ctl reconfigure"
+msgstr "sudo morpheus-ctl reconfigure"
+
+#: ../../getting_started/additional/offline.rst:52
+#: ../../getting_started/additional/offline.rst:88
+msgid ""
+"The Chef run should complete successfully. There is a small pause when "
+"Chef runs the resource remote_file[package_name] action create while Chef"
+" verifies the checksum. After the reconfigure is complete, the morpheus-"
+"ui will start and be up in a few minutes."
+msgstr ""
+"The Chef run should complete successfully. There is a small pause when "
+"Chef runs the resource remote_file[package_name] action create while Chef "
+"verifies the checksum. After the reconfigure is complete, the morpheus-ui "
+"will start y be up in a few minutes."
+
+#: ../../getting_started/additional/offline.rst:54
+msgid ""
+"Tail the morpheus log file located at /var/log/morpheus/morpheus-"
+"ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look "
+"for the Morpheus ascii logo to know when the morpheus-ui is up."
+msgstr ""
+"Tail the morpheus archivo de registro located at "
+"/var/log/morpheus/morpheus-ui/current con the command ``morpheus-ctl tail "
+"morpheus-ui`` y look for the Morpheus ascii logo to know cuando el "
+"morpheus-ui is up."
+
+#: ../../getting_started/additional/offline.rst:58
+msgid "CentOS/RHEL"
+msgstr "CentOS/RHEL"
+
+#: ../../getting_started/additional/offline.rst:60
+msgid ""
+"Download both the regular Morpheus Appliance package and the matching "
+"Supplemental package on to the Appliance server:"
+msgstr ""
+"Download both the regular Morpheus Appliance package y the matching "
+"Supplemental package on to the Appliance server:"
+
+#: ../../getting_started/additional/offline.rst:62
+msgid ""
+"wget http://example_url/morpheus-appliance_package_url.noarch.rpm\n"
+"wget http://example_url/morpheus-"
+"appliance_package_supplemental_url.noarch.rpm"
+msgstr ""
+"wget http://example_url/morpheus-appliance_package_url.noarch.rpm\\nwget "
+"http://example_url/morpheus-appliance_package_supplemental_url.noarch.rpm"
+
+#: ../../getting_started/additional/offline.rst:69
+msgid ""
+"sudo rpm -i morpheus-appliance_package_url.noarch.rpm\n"
+"sudo rpm -i morpheus-appliance_package_supplemental_url.noarch.rpm"
+msgstr ""
+"sudo rpm -i morpheus-appliance_package_url.noarch.rpm\\nsudo rpm -i "
+"morpheus-appliance_package_supplemental_url.noarch.rpm"
+
+#: ../../getting_started/additional/offline.rst:76
+msgid ""
+"#Edit appliance_url to resolvable url (if not configured correctly by "
+"default)\n"
+"\n"
+"sudo vi /etc/morpheus/morpheus.rb"
+msgstr ""
+"#Edit appliance_url to resolvable url (if not configurado correctly por "
+"defecto)\\n\\nsudo vi /etc/morpheus/morpheus.rb"
+
+#: ../../getting_started/additional/offline.rst:90
+msgid ""
+"Tail the morpheus-ui log file with ``morpheus-ctl tail morpheus-ui`` and "
+"look for the Morpheus ascii logo to know when the morpheus-ui is up."
+msgstr ""
+"Tail the morpheus-ui archivo de registro con ``morpheus-ctl tail "
+"morpheus-ui`` y look for the Morpheus ascii logo to know cuando el "
+"morpheus-ui is up."
+

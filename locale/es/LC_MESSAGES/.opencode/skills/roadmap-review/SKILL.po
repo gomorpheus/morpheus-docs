@@ -1,0 +1,509 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:10
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:12
+msgid ""
+"Define the doctrine the `roadmap-reviewer` agent quotes from when the "
+"user runs `/roadmap-review`. I carry:"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:15
+msgid ""
+"the **Lenses** model (sizing is active in v1; horizons / releases / "
+"sprint-shape are named placeholders the agent **refuses** to act on),"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:17
+msgid "the **prioritization rules** for the active sizing lens,"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:18
+msgid "the **four canonical resolution options** with paste-ready phrasing,"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:19
+msgid "the **stop condition** for a session,"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:20
+msgid "the **session record** format and path."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:22
+msgid ""
+"I am the source of truth for the triage loop. The agent loads me on "
+"invocation and quotes me directly — it does not improvise wording, and it"
+" does not invent resolutions outside the four I name."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:26
+msgid "`hero check` vs `/roadmap-review` (one sentence)"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:28
+msgid ""
+"`hero check` is **workspace hygiene** — a one-shot report of stale specs,"
+" missing fields, convention drift, and warning counts. `/roadmap-review` "
+"is **roadmap shape** — an interactive triage that walks each high-impact "
+"drift, proposes a resolution, and executes the resolution CLI on confirm."
+" Both surface drift; only `/roadmap-review` resolves it."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:35
+msgid ""
+"The agent prompt quotes this verbatim. If a user asks \"which do I run,\""
+" both surface drift — only `/roadmap-review` resolves it."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:38
+msgid "Walk one at a time"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:40
+msgid ""
+"The defining behavior. The agent does not produce a wall of prose or "
+"enumerate all drift at once. It surfaces one finding, proposes one "
+"resolution, accepts the user's answer, executes on confirm, and advances "
+"to the next. No bulk operations. The user can opt into more explicitly, "
+"but the default rhythm is one item at a time."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:46
+msgid ""
+"Punting the keystrokes back to the user (\"now run `hero size foo "
+"large`\") defeats the loop. On confirm the agent **runs the CLI itself** "
+"and surfaces the output before advancing."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:50
+msgid "Lenses"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:52
+msgid ""
+"The extensibility seam. A lens is an analytical perspective the reviewer "
+"applies — sizing today, others tomorrow. Adding a new lens later means "
+"moving its section from Scaffolding to Active and filling in the four "
+"sub-sections (prioritization, resolution options, phrasing, stop "
+"condition). The agent prompt does not change."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:58
+msgid "Active"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:60
+msgid "Sizing"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:62
+msgid ""
+"The only lens implemented in v1. Surfaces drift between declared `size:` "
+"and computed effort, oversized leaves that should `/split`, container "
+"drift, and topical clusters that lack an initiative parent."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:66
+msgid "Prioritization rules"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:68
+msgid "The agent walks findings in this order. It does not re-sort."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:70
+msgid ""
+"**`giant` without `size_ack`** — highest. Month+ specs that haven't been "
+"consciously acknowledged are the loudest shape failure."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:72
+msgid ""
+"**`x-large` features / bugs / enhancements** — multi-week leaf work. "
+"Almost always wants a `/split`."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:74
+msgid ""
+"**Container drift** (epic/initiative declared smaller than the rolled-up "
+"children) — the parent is lying about its scope."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:76
+msgid ""
+"**Multi-spec topical clusters** without an initiative parent — the \"2+ "
+"related orphans\" case. See `spec-composition` for the detection "
+"heuristic and canonical phrasing."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:79
+msgid ""
+"**`large` features / bugs / enhancements** — soft. Surface only if "
+"nothing higher remains."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:82
+msgid ""
+"`giant` initiatives are normal — they belong in the loop only when they "
+"have no children yet (signal that `/compose` hasn't been run)."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:85
+msgid "Resolution options + paste-ready phrasing"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:87
+msgid "Exactly four. Any other resolution is out of spec."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "Resolution"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "When the agent offers it"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "On confirm"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "**Acknowledge**"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "`giant` leaf where the user explicitly wants single-pass delivery"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid ""
+"`hero size --ack giant <slug>` (or write `size_ack: giant` to frontmatter"
+" if the CLI flag doesn't exist yet)"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "**`/compose`**"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "`x-large` / `giant` that should become an initiative with phased children"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid ""
+"Invoke the `/compose` flow against the slug — agent hands off, doesn't "
+"simulate"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "**`/split`**"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "`large` / `x-large` leaf that belongs as 2–3 sibling specs"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "Invoke the `/split` flow against the slug — agent hands off"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "**Re-horizon** *(sizing-lens version: bump declared tier)*"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid ""
+"Drift where declared < computed; user agrees the spec really is the "
+"bigger tier"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md
+msgid "`hero size <slug> <new-tier>`"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:96
+msgid "Quote these scripts verbatim:"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:98
+msgid "**Acknowledge** (for unacknowledged `giant` leaves):"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:99
+msgid ""
+"This `giant` spec is intentional? I can stamp `size_ack: giant` so it "
+"stops asking at design time — mid-delivery checks continue. Confirm?"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:103
+msgid "**`/compose`** (for `x-large` / `giant` that should be an initiative):"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:104
+msgid ""
+"This is `x-large` — recommended path is `/compose` into 3–5 phased "
+"children. Want me to kick that off now?"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:107
+msgid "**`/split`** (for `large` / `x-large` leaves across subsystems):"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:108
+msgid ""
+"This is `large` across two subsystems — `/split` into a pair of sibling "
+"specs. Run it?"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:111
+msgid "**Re-horizon** (for declared < computed drift):"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:112
+msgid "Declared `medium`, computed `large`. Bump to `large`? (Y/n)"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:114
+msgid "Stop condition"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:116
+msgid "A session ends on the first of:"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:118
+msgid ""
+"**No high-impact drift remains** — priorities 1–4 are exhausted. The "
+"agent reports the clean state and exits."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:120
+msgid ""
+"**User halts** — any of \"stop,\" \"enough,\" \"done,\" \"later,\" or "
+"declining a resolution without picking another. The agent does not ask "
+"\"are you sure\"; it accepts and exits."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:123
+msgid ""
+"**Five items resolved in this session** — soft cap to keep momentum. The "
+"agent reports the cap, summarizes what was resolved, and suggests re-"
+"running tomorrow."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:127
+msgid ""
+"The cap lives here, in the skill — tunable without touching the agent "
+"prompt."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:130
+msgid "Scaffolding (not implemented — future work)"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:132
+msgid ""
+"The agent **refuses** to act on these. It does not improvise a triage. "
+"Canonical refusal phrase, substituting the lens name:"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:135
+msgid ""
+"\"<lens>-lens triage isn't implemented yet — that's deferred to future "
+"lens work. I can only act on sizing drift in this version.\""
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:138
+msgid "Horizons"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:140
+msgid "Placeholder. v1 does not act on horizon drift."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:142
+msgid "Releases"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:144
+#: ../../.opencode/skills/roadmap-review/SKILL.md:148
+msgid "Placeholder. Same refusal pattern."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:146
+msgid "Sprint-shape"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:150
+msgid "Session record (knowledge capture)"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:152
+#, python-brace-format
+msgid ""
+"On exit — any reason — the agent writes a short note to `.hero/knowledge"
+"/roadmap-review-sessions/{YYYY-MM-DD}-{HHMM}.md`. This is the dogfood "
+"signal: cadence over time, items resolved per session, what gets "
+"deferred. Sibling spec `roadmap-review-ambient-surfacing` reads these "
+"records to power the \"stop nagging if nothing's changed since the last "
+"triage\" rule, so the `drift_count_at_exit:` frontmatter field is **load-"
+"bearing**, not optional."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:161
+msgid "Format:"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:163
+msgid ""
+"---\n"
+"type: note\n"
+"created: <ISO-8601 timestamp>\n"
+"tags: [roadmap-review, sizing]\n"
+"drift_count_at_exit: <int>\n"
+"---\n"
+"\n"
+"# Roadmap review — <YYYY-MM-DD HH:MM>\n"
+"\n"
+"**Findings surveyed:** N (M sizing-drift, K missing-parent clusters)\n"
+"**Walked:** N\n"
+"**Resolved:** N (X `/split`, Y ack, Z size bump)\n"
+"**Deferred:** N (user said \"later\")\n"
+"**Exit reason:** <user halt | cap reached | exhausted | empty>\n"
+"\n"
+"## Items\n"
+"- `<slug>` (<tier>, <ack-state>) → <what happened>\n"
+"- `<slug>` (declared <tier>, computed <tier>) → <what happened>\n"
+"- `<slug-a>` + `<slug-b>` cluster → <what happened>\n"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:185
+msgid ""
+"`drift_count_at_exit` is the count of remaining sizing-drift findings at "
+"the moment the agent exited (after resolutions applied). Sibling ambient-"
+"surfacing reads it to decide whether to suppress the next 24h nudge. If "
+"the field is missing, the ambient reader treats it as \"count unchanged\""
+" — forward-compatible, but write the field every time."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:191
+msgid "Ambient surfaces"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:193
+msgid ""
+"When this skill's interactive triage isn't actively running, three "
+"ambient surfaces carry the same paste-ready hint pointing here:"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:196
+msgid ""
+"**NEXT.md projection** — a `## Roadmap shape` section appears between `##"
+" Next` and `## Blocked on` when drift surfaces."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:198
+msgid ""
+"**`hero_pulse` / `hero_kickoff` MCP tools** — both responses populate a "
+"`size_drift` field (count + hint) when drift surfaces."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:200
+msgid ""
+"**Delivery-lead pre-flight** — `feature-delivery-lead` and `platform-"
+"delivery-lead` quote the hint verbatim in their handoff output when the "
+"workspace-wide count is non-empty."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:204
+msgid ""
+"All three quote the canonical hint from `internal/sizing/ambient.go` — "
+"they do not compose the string themselves. The noise threshold (active "
+"spec union 7d recency union horizon:now unsized initiatives) and the 24h "
+"stop-nagging rule (suppress while a recent `.hero/knowledge/roadmap-"
+"review-sessions/` record's `drift_count_at_exit:` is still ahead of the "
+"current filtered count) keep the channel from going noisy. Tune via "
+"`hero.json: roadmap.ambient_recency_days` and "
+"`roadmap.stop_nagging_hours`."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:214
+msgid "Cross-skill references"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:216
+msgid ""
+"**`spec-sizing`** — the size ladder, per-type bands, design-time nudges, "
+"and drift-handling rules live there. This skill is the *triage loop* over"
+" that ladder; the ladder itself is not re-litigated here."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:220
+msgid ""
+"**`spec-composition`** — the canonical \"multiple related specs\" "
+"detection heuristic and phrasing. Priority-4 findings (orphan clusters) "
+"quote `spec-composition` for the recommendation script."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:223
+msgid ""
+"**`note-capture`** — session record writes follow the note format defined"
+" there."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:226
+msgid "What the agent must not do"
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:228
+msgid "Improvise a resolution outside the four named above."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:229
+msgid "Bulk-operate. No \"acknowledge all `giant`,\" no \"bump all drift.\""
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:230
+msgid ""
+"Punt CLI keystrokes back to the user. On confirm, the agent runs the CLI "
+"itself."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:232
+msgid "Act on a non-sizing lens. Refuse with the scaffolded phrase above."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:233
+msgid "Write to the tracker. Read-local-only is a hard boundary."
+msgstr ""
+
+#: ../../.opencode/skills/roadmap-review/SKILL.md:234
+msgid ""
+"Re-ask after a halt word. \"stop,\" \"enough,\" \"done,\" \"later\" exit "
+"immediately."
+msgstr ""
+

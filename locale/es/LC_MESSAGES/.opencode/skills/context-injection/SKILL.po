@@ -1,0 +1,387 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/context-injection/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:11
+msgid ""
+"Teach delivery leads how to generate context blocks with the `hero "
+"relevant` command and incorporate them into engineer instructions before "
+"delegating work. Context injection is how agents avoid repeating past "
+"mistakes, violating conventions, and contradicting architectural "
+"decisions."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:13
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:15
+msgid ""
+"Load this skill before the delivery phase of any spec — after the spec is"
+" written and before delegating to an engineer or specialist agent. If "
+"`hero.json` has `auto_context: true`, the workflow handles this "
+"automatically, but delivery leads should still understand the output to "
+"intervene when needed."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:17
+msgid "What context injection is"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:19
+msgid ""
+"Context injection bridges the gap between \"here's what to build\" (the "
+"spec) and \"here's what you need to know about this codebase\" (the "
+"context). Without it, an agent writes code in isolation — unaware of "
+"conventions, past decisions, and known failure modes in the areas it's "
+"touching."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:21
+msgid ""
+"The `hero relevant` command queries the spec corpus index and returns a "
+"structured block of relevant information. The delivery lead pastes this "
+"block into the engineer's instructions alongside the spec."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:23
+msgid "Running hero relevant"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:25
+msgid "From a spec path"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:27
+msgid "hero relevant .hero/planning/features/add-csv-export/spec.md\n"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:31
+msgid ""
+"This parses the spec's Changes section, extracts file paths mentioned in "
+"it, and looks up context for those files. This is the most common usage —"
+" you have a spec and want context for the work it describes."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:33
+msgid "From explicit file paths"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:35
+msgid "hero relevant --files src/api/users.ts src/db/queries/users.sql\n"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:39
+msgid ""
+"Use this when you know the files that will be touched but don't have a "
+"spec, or when the spec's Changes section doesn't mention specific files "
+"yet."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:41
+msgid "Output format"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:43
+msgid "The command returns a markdown block with up to four sections:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:45
+#, python-brace-format
+msgid ""
+"## Context for this work\n"
+"\n"
+"### Conventions to follow\n"
+"- **api-response-format** (scope: src/api/**/*.ts): All API error "
+"responses\n"
+"  use the ApiError class and return { error, code, details }.\n"
+"- **sql-migration-naming** (scope: **/migrations/*.sql): Migration files\n"
+"  use the format YYYYMMDDHHMMSS_description.sql.\n"
+"\n"
+"### API surface (when relevant)\n"
+"If the spec touches API handler files, run `hero_code endpoints` to get "
+"the\n"
+"endpoint-to-handler mapping. Include this when work involves routing,\n"
+"middleware, or request/response changes so the engineer knows the full\n"
+"API surface around the files being modified.\n"
+"\n"
+"### Past work in this area\n"
+"- **add-user-search** (completed): Added full-text search to the users\n"
+"  endpoint. Introduced the SearchQuery type in src/api/types.ts.\n"
+"\n"
+"### Decisions that apply\n"
+"- **use-postgres-fts** (accepted): Use PostgreSQL full-text search rather"
+"\n"
+"  than Elasticsearch for search features under 1M documents.\n"
+"\n"
+"### Known risks\n"
+"- **login-timeout-race** (bug, completed): Race condition in session\n"
+"  handling when concurrent requests hit src/api/auth.ts. Fixed by\n"
+"  adding mutex on session write.\n"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:74
+msgid ""
+"Each entry is a summary — enough to inform the agent without overwhelming"
+" it. The agent can look up the full spec if it needs more detail."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:76
+msgid "Interpreting the sections"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:78
+msgid "Conventions to follow"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:80
+msgid ""
+"These are active convention specs whose scope globs match the files being"
+" touched. The agent must follow these unless the spec explicitly says "
+"otherwise."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:82
+msgid "If a convention is listed, the agent should:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:83
+msgid "Read the convention's full spec if the summary isn't enough"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:84
+msgid "Follow the pattern described in the convention"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:85
+msgid ""
+"Flag any case where following the convention conflicts with the spec's "
+"requirements"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:87
+msgid "Past work in this area"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:89
+msgid ""
+"Completed specs that previously touched the same files. This tells the "
+"agent what was done before, why, and what patterns were established. It "
+"prevents the agent from undoing previous work or introducing "
+"inconsistencies."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:91
+msgid "Use past work to:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:92
+msgid "Understand the design rationale for existing code"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:93
+msgid "Identify patterns the agent should continue following"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:94
+msgid "Spot potential conflicts between the current spec and prior changes"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:96
+msgid "Decisions that apply"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:98
+msgid ""
+"Accepted architectural decision records (ADRs). These are constraints the"
+" agent must respect. An accepted decision means the team deliberately "
+"chose this path — the agent should not revisit the decision unless the "
+"spec explicitly says to."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:100
+msgid "Known risks"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:102
+msgid ""
+"Bug specs whose root causes involved the same files. These are landmines "
+"— the agent needs to know about them to avoid triggering the same "
+"failures."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:104
+msgid "Use known risks to:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:105
+msgid "Add defensive checks in areas with past bugs"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:106
+msgid "Avoid patterns that previously caused failures"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:107
+msgid "Include regression tests for known failure modes"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:109
+msgid "Incorporating context into engineer instructions"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:111
+msgid "When delegating to an engineer agent, structure the handoff as:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:113
+msgid "The spec (what to build)"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:114
+msgid "The context block (what to be aware of)"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:115
+msgid "Any delivery lead commentary (overrides, priorities, sequencing)"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:117
+msgid ""
+"The context block goes between the spec and any additional instructions. "
+"This lets the agent read the spec first, then calibrate its approach "
+"based on context."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:119
+msgid ""
+"Do not strip sections from the context block to save tokens. The block is"
+" already summarized — removing sections creates blind spots. If a section"
+" is genuinely irrelevant, you can add a note saying \"the X section is "
+"not relevant to this task because Y\" rather than removing it."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:121
+msgid "When to override or ignore context"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:123
+msgid "Context is guidance, not law. Override it when:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:125
+msgid ""
+"**The spec intentionally changes a convention.** If the work is to "
+"migrate from one pattern to another, the old convention should not "
+"constrain the new work. Add a note: \"Convention X is being superseded by"
+" this work — do not follow it for new code.\""
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:126
+msgid ""
+"**A past decision is being revisited.** If the spec explicitly "
+"reconsiders an accepted decision, note this and explain why the decision "
+"no longer applies."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:127
+msgid ""
+"**Past work context is stale.** If the referenced past spec is old enough"
+" that the code has changed significantly since, note this so the agent "
+"verifies current state rather than relying on the summary."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:129
+msgid ""
+"Never silently ignore context. If you're overriding something, say so and"
+" explain why. This creates a trail that future context lookups can "
+"surface."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:131
+msgid "Handling conflicting context"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:133
+msgid "When context sections contradict each other or the spec:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:135
+msgid ""
+"**Convention vs. spec requirement**: The spec wins. Add a note that the "
+"convention needs updating after this work lands, or that this is an "
+"intentional exception."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:136
+msgid ""
+"**Past decision vs. new requirement**: Escalate. If the spec didn't "
+"explicitly address the conflict, pause delivery and raise the conflict to"
+" the spec author. The decision may need to be superseded with a new "
+"decision spec."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:137
+msgid ""
+"**Two conventions conflict**: This is a convention-authoring bug. Flag "
+"it. One convention should be updated to exclude the overlapping scope, or"
+" the two should be consolidated."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:138
+msgid ""
+"**Past work vs. known risk**: Both inform the agent. Past work shows what"
+" was done; known risks show what went wrong. They don't conflict — the "
+"agent should use both to inform its approach."
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:140
+msgid "Quality check"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:142
+msgid "Before handing off to the engineer, verify:"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:143
+msgid ""
+"The context block was generated from the correct file paths (not stale or"
+" wrong paths)"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:144
+msgid "No convention listed has been superseded since the last index rebuild"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:145
+msgid "Any overrides are explicitly noted with rationale"
+msgstr ""
+
+#: ../../.opencode/skills/context-injection/SKILL.md:146
+msgid ""
+"The combined spec + context is not so large that it will exceed the "
+"agent's effective context window"
+msgstr ""
+

@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/mock.md:4
+msgid "Route this mockup request to the `ui-designer` agent."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:6
+msgid "Renderer Selection"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:8
+msgid "**Do not derive the renderer yourself.** The CLI does it. Run:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:10
+msgid "hero spec mock detect [--renderer=<flag-if-user-passed-one>]\n"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:14
+msgid "Read the single line of JSON it prints. Fields:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:15
+msgid ""
+"`renderer` — `\"html\"` or `\"swiftui\"`. **Use this value verbatim** — "
+"pass it to `ui-designer` as the chosen renderer."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:16
+msgid "`reason` — one-sentence rationale for the announce step below."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:17
+msgid ""
+"`signals` — what fired (e.g. `\"Package.swift\"`, `\"MyApp.xcodeproj\"`, "
+"`\"12 .swift files at root\"`)."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:18
+msgid "`toolchain_ok` / `toolchain_path` — whether `swiftc` was found."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:19
+msgid "`config_override` — set when `hero.json` `mockups.renderer` won."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:20
+msgid "`explicit_flag` — echoed back when the user passed `--renderer=...`."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:21
+msgid ""
+"`conflict` — non-null when the choice is suspicious (e.g. "
+"`--renderer=html` on a Swift project, or `--renderer=swiftui` with no "
+"`swiftc`)."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:23
+msgid ""
+"If `conflict` is non-null, **halt** — do not proceed to generation. "
+"Surface the conflict message to the user and ask them to confirm:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:25
+#, python-brace-format
+msgid ""
+"Renderer choice conflict.\n"
+"{conflict message from detect output}\n"
+"Confirm one:\n"
+"  [keep flag]    use {explicit_flag} as requested\n"
+"  [use detected] override my flag and use the auto-detected renderer\n"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:33
+msgid "Only proceed once the user picks."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:35
+msgid "Announce step (mandatory, before any generation)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:37
+msgid ""
+"Before delegating to `ui-designer`, emit this one-line announcement as "
+"user-visible output:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:39
+#, python-brace-format
+msgid ""
+"Renderer: {renderer} — reason: {reason} — swiftc: {toolchain_path or "
+"\"unavailable\"}\n"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:43
+msgid ""
+"This is the gate that catches wrong picks in-turn — the user sees the "
+"choice before any files are written. Skipping it is the bug this command "
+"was designed to fix."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:45
+msgid ""
+"For fallback cases (Swift signals present but no `swiftc`), the announce "
+"becomes:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:47
+msgid "Renderer: HTML (SwiftUI unavailable — swiftc not found)\n"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:51
+msgid "Tell the ui-designer which renderer to use and which skill to load:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:52
+#, python-brace-format
+msgid ""
+"**HTML:** Load `html-mockup-generation` skill. Output: "
+"`.hero/mocks/{slug}/index.html`"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:53
+#, python-brace-format
+msgid ""
+"**SwiftUI:** Load `swiftui-mockup-renderer` skill. Output: "
+"`.hero/mocks/{slug}/MockView.swift` + `screenshot.png` + `screenshot-"
+"dark.png` + `index.html` (viewer)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:55
+msgid "Workflow"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:57
+msgid "The ui-designer will:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:58
+msgid "Read the spec (if a slug is provided) or parse the free-text description"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:59
+msgid "Identify the key screens, components, and interactions needed"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:60
+msgid "Generate the mockup using the selected renderer:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:61
+msgid "**HTML:** Self-contained `index.html` with embedded CSS and JS"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:62
+msgid ""
+"**SwiftUI:** `MockView.swift` source → compile → capture PNG screenshots "
+"(light + dark)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:63
+#, python-brace-format
+msgid ""
+"Save to `.hero/mocks/{slug}/` (or `.hero/mocks/_adhoc/{summary-slug}/` "
+"for free-text)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:64
+#, python-brace-format
+msgid ""
+"If a spec slug was provided, append (or update on `--iterate`) a `## "
+"Mockups` entry in the originating spec at "
+"`.hero/planning/features/{slug}/spec.md` or "
+"`.hero/planning/bugs/{slug}/spec.md` (or `.hero/specs/{slug}/spec.md` if "
+"already archived). Entry format:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:65
+#, python-brace-format
+msgid ""
+"HTML: `- [{Name}](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — one-line "
+"description`"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:66
+#, python-brace-format
+msgid ""
+"SwiftUI: `- [{Name}](.hero/mocks/{slug}/screenshot.png) — YYYY-MM-DD — "
+"SwiftUI native render`"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:68
+msgid ""
+"If the user provides `--iterate` feedback, read the existing mockup first"
+" and modify it based on the feedback rather than regenerating from "
+"scratch. On iterate, update the matching `## Mockups` entry's date in "
+"place rather than appending a duplicate."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:70
+msgid "**Output requirements (HTML renderer):**"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:71
+msgid "Single self-contained `index.html` — no external dependencies"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:72
+msgid "Professional, clean design with modern CSS (flexbox/grid)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:73
+msgid "Basic interactivity where appropriate (tabs, modals, dropdowns)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:74
+msgid "Responsive layout (works on mobile and desktop)"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:75
+msgid "HTML comment header with spec slug, date, and description"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:77
+msgid "**Output requirements (SwiftUI renderer):**"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:78
+msgid "Single self-contained `MockView.swift` — no SPM dependencies"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:79
+msgid "Real SwiftUI components, SF Symbols, system colors"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:80
+msgid "Both light and dark mode screenshots captured"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:81
+msgid "Viewer `index.html` wrapping the PNGs with light/dark toggle"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:83
+msgid "**Surface outputs — orchestrator responsibility (READ THIS):**"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:85
+msgid ""
+"The `ui-designer` runs as a subagent. **The subagent's return value is "
+"NOT visible to the user.** When the Agent tool completes, you (the "
+"orchestrator running this command) MUST emit a clickable file inventory "
+"in your *own* user-facing text response — do not assume the subagent's "
+"links reach the user."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:87
+msgid ""
+"To make this reliable, instruct the `ui-designer` (in the prompt you send"
+" it) to terminate its return text with a machine-parseable block:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:89
+#, python-brace-format
+msgid ""
+"<MOCKUP_FILES>\n"
+".hero/mocks/{slug}/index.html|Mockup name|primary\n"
+".hero/mocks/{slug}/screenshot.png|Screenshot — light|image\n"
+".hero/mocks/{slug}/screenshot-dark.png|Screenshot — dark|image\n"
+".hero/mocks/{slug}/MockView.swift|SwiftUI source|source\n"
+".hero/planning/features/{slug}/spec.md|Spec (Mockups section "
+"updated)|spec\n"
+"</MOCKUP_FILES>\n"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:99
+msgid ""
+"Parse that block from the tool result and re-emit it in your final "
+"response as a markdown list of clickable links:"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:101
+#, python-brace-format
+msgid ""
+"**Mockups generated:**\n"
+"- [Mockup name](.hero/mocks/{slug}/index.html) — primary\n"
+"- [Screenshot — light](.hero/mocks/{slug}/screenshot.png)\n"
+"- [Screenshot — dark](.hero/mocks/{slug}/screenshot-dark.png)\n"
+"- [SwiftUI source](.hero/mocks/{slug}/MockView.swift)\n"
+"- [Spec updated](.hero/planning/features/{slug}/spec.md) — `## Mockups` "
+"entry appended\n"
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:110
+msgid ""
+"If the subagent did not return a `<MOCKUP_FILES>` block, fall back to "
+"scanning its response text for `.hero/mocks/...` paths and listing those."
+" Either way, the inventory must appear in YOUR response, not just the "
+"subagent's."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:112
+msgid ""
+"**Spec write-back check:** If a spec slug was provided, verify the "
+"subagent updated the spec's `## Mockups` section. If the inventory does "
+"not include the spec path, read the spec file yourself and append the "
+"entry before finishing."
+msgstr ""
+
+#: ../../.opencode/commands/mock.md:114
+msgid "Request: $ARGUMENTS"
+msgstr ""
+

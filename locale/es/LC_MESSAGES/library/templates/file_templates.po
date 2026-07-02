@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/templates/file_templates.rst:2
+msgid "File Templates"
+msgstr "Plantillas de archivo"
+
+#: ../../library/templates/file_templates.rst:4
+msgid ""
+"File Templates are for generating config files, such as my.cnf, "
+"elasticsearch.yml, morpheus.rb, or any text file. With full config map "
+"variable support, Template Files are dynamically generated during a "
+"Workflow phase or ad hoc via Instance actions."
+msgstr "Las Plantillas de archivo son para generar archivos de configuración, como my.cnf, elasticsearch.yml, morpheus.rb, o cualquier archivo de texto. Con soporte completo de variables de mapa de configuración, los archivos de plantilla se generan dinámicamente durante una fase de Flujo de trabajo o de forma ad hoc a través de acciones de Instancia."
+
+#: ../../library/templates/file_templates.rst:6
+msgid ""
+"File Templates can also be exposed on Instances in the Settings Tab. "
+"Ensure the Instance Type supports settings, and Category is defined in "
+"Advance Options on the Library Template config."
+msgstr "Las Plantillas de archivo también se pueden exponer en las Instancias en la pestaña de Configuración. Asegúrese de que el Tipo de instancia soporte configuraciones y que la Categoría esté definida en las Opciones avanzadas de la configuración de la Plantilla de Biblioteca."
+
+#: ../../library/templates/file_templates.rst:8
+msgid ""
+"|morpheus| variables are supported in Library Templates using ``<%= "
+"variable.var %>`` format"
+msgstr "Las variables de |morpheus| son soportadas en Plantillas de Biblioteca usando el formato ``<%= variable.var %>``"
+
+#: ../../library/templates/file_templates.rst:10
+msgid "Examples:"
+msgstr "Ejemplos:"
+
+#: ../../library/templates/file_templates.rst:12
+msgid "HA Proxy Config (haproxy.cfg)"
+msgstr "Configuración de HA Proxy (haproxy.cfg)"
+
+#: ../../library/templates/file_templates.rst:14
+msgid "FILE NAME: haproxy.cfg"
+msgstr "NOMBRE DE ARCHIVO: haproxy.cfg"
+
+#: ../../library/templates/file_templates.rst:15
+msgid "FILE PATH: /config/haproxy.cfg"
+msgstr "RUTA DE ARCHIVO: /config/haproxy.cfg"
+
+#: ../../library/templates/file_templates.rst:16
+#: ../../library/templates/file_templates.rst:49
+msgid "PHASE: Pre Provision"
+msgstr "FASE: Pre aprovisionamiento"
+
+#: ../../library/templates/file_templates.rst:17
+msgid "TEMPLATE:"
+msgstr "PLANTILLA:"
+
+#: ../../library/templates/file_templates.rst:18
+msgid "SETTING NAME: haproxyConfig"
+msgstr "NOMBRE DE CONFIGURACIÓN: haproxyConfig"
+
+#: ../../library/templates/file_templates.rst:19
+msgid "SETTING CATEGORY: haproxy"
+msgstr "CATEGORÍA DE CONFIGURACIÓN: haproxy"
+
+#: ../../library/templates/file_templates.rst:21
+msgid ""
+"#!/bin/bash\n"
+"\n"
+"global\n"
+" maxconn 256\n"
+" log /dev/log local0 warning\n"
+" log-tag <%=logTag%>\n"
+"\n"
+"defaults\n"
+" mode http\n"
+" timeout connect 5000ms\n"
+" timeout client 50000ms\n"
+" timeout server 50000ms\n"
+" log global\n"
+"\n"
+"frontend http-in\n"
+" bind *:<%=container.externalPort%>\n"
+" default_backend servers\n"
+"\n"
+"backend servers\n"
+" # server server1 127.0.0.1:80 maxconn 32"
+msgstr ""
+"#!/bin/bash\n"
+"\n"
+"global\n"
+" maxconn 256\n"
+" log /dev/log local0 warning\n"
+" log-tag <%=logTag%>\n"
+"\n"
+"defaults\n"
+" mode http\n"
+" timeout connect 5000ms\n"
+" timeout client 50000ms\n"
+" timeout server 50000ms\n"
+" log global\n"
+"\n"
+"frontend http-in\n"
+" bind *:<%=container.externalPort%>\n"
+" default_backend servers\n"
+"\n"
+"backend servers\n"
+" # server server1 127.0.0.1:80 maxconn 32"
+
+#: ../../library/templates/file_templates.rst:45
+msgid "mysql config (mysqld.cnf)"
+msgstr "Configuración de mysql (mysqld.cnf)"
+
+#: ../../library/templates/file_templates.rst:47
+msgid "FILE NAME: mysqld.cnf"
+msgstr "NOMBRE DE ARCHIVO: mysqld.cnf"
+
+#: ../../library/templates/file_templates.rst:48
+msgid "FILE PATH: /config/mysqld.cnf"
+msgstr "RUTA DE ARCHIVO: /config/mysqld.cnf"
+
+#: ../../library/templates/file_templates.rst:51
+msgid ""
+"#!/bin/bash\n"
+"\n"
+"[mysqld]\n"
+"pid-file= /var/run/mysqld/mysqld.pid\n"
+"socket= /var/run/mysqld/mysqld.sock\n"
+"datadir= /var/lib/mysql\n"
+"# Disabling symbolic-links is recommended to prevent assorted security "
+"risks\n"
+"symbolic-links=0\n"
+"explicit_defaults_for_timestamp = 1"
+msgstr ""
+"#!/bin/bash\n"
+"\n"
+"[mysqld]\n"
+"pid-file= /var/run/mysqld/mysqld.pid\n"
+"socket= /var/run/mysqld/mysqld.sock\n"
+"datadir= /var/lib/mysql\n"
+"# Disabling symbolic-links is recommended to prevent assorted security "
+"risks\n"
+"symbolic-links=0\n"
+"explicit_defaults_for_timestamp = 1"

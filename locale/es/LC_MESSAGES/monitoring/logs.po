@@ -1,0 +1,506 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../monitoring/logs.rst:2
+msgid "Logs"
+msgstr "Logs"
+
+#: ../../monitoring/logs.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../monitoring/logs.rst:7
+msgid ""
+"The logging architecture backing |morpheus| uses the latest and greatest "
+"technologies and standards to be able to service large amounts of log "
+"traffic as well as facilitate easy viewing. Utilizing elasticsearch "
+"behind the scenes and buffered log transmission protocols |morpheus| "
+"provides a highly efficient and highly scalable solution for capturing "
+"log data from anything provisioned via the system. By utilizing common "
+"formats (syslog) it is also very easy to forward logs to external third "
+"party log services."
+msgstr ""
+"La arquitectura de registro que respalda a |morpheus| utiliza las "
+"tecnologías y estándares más recientes y avanzados para poder manejar "
+"grandes cantidades de tráfico de logs así como facilitar su visualización. "
+"Utilizando elasticsearch tras bambalinas y protocolos de transmisión de "
+"logs con buffer, |morpheus| proporciona una solución altamente eficiente "
+"y altamente escalable para capturar datos de logs de cualquier cosa "
+"aprovisionada a través del sistema. Al utilizar formatos comunes (syslog) "
+"también es muy fácil reenviar logs a servicios de logs externos de terceros."
+
+#: ../../monitoring/logs.rst:10
+msgid "Configuration"
+msgstr "Configuración"
+
+#: ../../monitoring/logs.rst:12
+msgid ""
+"Logging configuration can be setup in the |AdmSetLog| section. There are "
+"useful settings here, including customizing the retainment policy (7 days"
+" by default). This could be expanded to years for PCI compliance purposes"
+" or other requirements an organization might have."
+msgstr ""
+"La configuración de registro puede establecerse en la sección |AdmSetLog|. "
+"Hay configuraciones útiles aquí, incluyendo la personalización de la "
+"política de retención (7 días por defecto). Esto podría expandirse a años "
+"para propósitos de cumplimiento PCI u otros requisitos que una organización "
+"pueda tener."
+
+#: ../../monitoring/logs.rst:14
+msgid ""
+"When increasing the retainment policy of the logging system, it may be "
+"necessary to scale out the elasticsearch cluster. Please refer to the "
+"relevant information with regards to scaling elasticsearch and advanced "
+"installation options for externalizing the elasticsearch cluster."
+msgstr ""
+"Al aumentar la política de retención del sistema de registro, puede ser "
+"necesario escalar el clúster de elasticsearch. Por favor consulte la "
+"información relevante con respecto al escalado de elasticsearch y las "
+"opciones de instalación avanzada para externalizar el clúster de "
+"elasticsearch."
+
+#: ../../monitoring/logs.rst:16
+msgid ""
+"The Log administration section also provides options for setting custom "
+"syslog forward rules. These rules are applied on each individual host "
+"therefore keeping the |morpheus| appliance itself out of the data plane. "
+"For information on different syslog formatting rules please refer to the "
+"`rsyslog <http://www.rsyslog.com/sending-messages-to-a-remote-syslog-"
+"server/>`_ documentation."
+msgstr ""
+"La sección de administración de Logs también proporciona opciones para "
+"establecer reglas personalizadas de reenvío de syslog. Estas reglas se "
+"aplican en cada host individual, manteniendo así al appliance de |morpheus| "
+"fuera del plano de datos. Para información sobre diferentes reglas de "
+"formato syslog, por favor consulte la documentación de "
+"`rsyslog <http://www.rsyslog.com/sending-messages-to-a-remote-syslog-"
+"server/>`_."
+
+#: ../../monitoring/logs.rst:19
+msgid "Usage"
+msgstr "Uso"
+
+#: ../../monitoring/logs.rst:21
+msgid ""
+"|morpheus| automatically sets up and configures logging for all of the "
+"standard catalog items provisioned through morpheus. This includes both "
+"Docker containers as well as virtual machines. Simply view instance-"
+"specific logs in instance detail via the \"Logs\" tab."
+msgstr ""
+"|morpheus| configura automáticamente el registro para todos los elementos "
+"estándar del catálogo aprovisionados a través de Morpheus. Esto incluye "
+"tanto contenedores Docker como máquinas virtuales. Simplemente vea los "
+"logs específicos de la instancia en el detalle de la instancia a través "
+"de la pestaña \"Logs\"."
+
+#: ../../monitoring/logs.rst:23
+msgid ""
+"There are several filtering capabilities built into the logging UI with "
+"more being added continually. Easily toggle log level filters from the "
+"dropdown or change the date range filter using the handy date filter "
+"component. A chart is also displayed above logs representing the log "
+"counts by level over the selected time range (default last 24 hours). A "
+"handy pattern search is also available with some rather capable features "
+"based on Lucene search syntax."
+msgstr ""
+"Hay varias capacidades de filtrado integradas en la interfaz de logs con "
+"más siendo agregadas continuamente. Alterne fácilmente los filtros de nivel "
+"de log desde el menú desplegable o cambie el filtro de rango de fechas "
+"usando el práctico componente de filtro de fecha. También se muestra un "
+"gráfico sobre los logs que representa los conteos de logs por nivel durante "
+"el rango de tiempo seleccionado (últimas 24 horas por defecto). También "
+"está disponible una práctica búsqueda por patrones con características "
+"bastante capaces basadas en la sintaxis de búsqueda de Lucene."
+
+#: ../../monitoring/logs.rst:25
+msgid ""
+"It may be useful to review the `Lucene search query syntax "
+"<https://lucene.apache.org/core/2_9_4/queryparsersyntax.html>`_ for "
+"powerful use cases."
+msgstr ""
+"Puede ser útil revisar la `sintaxis de consulta de búsqueda de Lucene "
+"<https://lucene.apache.org/core/2_9_4/queryparsersyntax.html>`_ para "
+"casos de uso avanzados."
+
+#: ../../monitoring/logs.rst:27
+msgid ""
+"There are several other places logs can be viewed. Not only can they be "
+"viewed across an application in app detail but also across all instances "
+"in the account. The main level ``Logs`` section provides an ability to "
+"query all logs produced by the system. It is also possible to view host-"
+"specific logs on a docker host by viewing the host detail page via "
+"``Infrastructure``."
+msgstr ""
+"Hay varios otros lugares donde los logs pueden visualizarse. No solo pueden "
+"verse a través de una aplicación en el detalle de la app sino también a "
+"través de todas las instancias en la cuenta. La sección principal de "
+"``Logs`` proporciona la capacidad de consultar todos los logs producidos "
+"por el sistema. También es posible ver logs específicos del host en un "
+"host Docker viendo la página de detalle del host a través de "
+"``Infrastructure``."
+
+#: ../../monitoring/logs.rst:29
+msgid ""
+"New features are on the roadmap for the main logs section including saved"
+" searches, and handy charting dashboards for garnering insights out of "
+"log data."
+msgstr ""
+"Hay nuevas funciones en la hoja de ruta para la sección principal de logs "
+"incluyendo búsquedas guardadas, y prácticos dashboards de gráficos para "
+"obtener información de los datos de logs."
+
+#: ../../monitoring/logs.rst:32
+msgid "Exporting Logs"
+msgstr "Exportar Logs"
+
+#: ../../monitoring/logs.rst:35
+msgid "Log Settings"
+msgstr "Configuración de Logs"
+
+#: ../../monitoring/logs.rst:36
+msgid "There are three main log areas in |morpheus|"
+msgstr "Hay tres áreas principales de logs en |morpheus|"
+
+#: ../../monitoring/logs.rst:38 ../../monitoring/logs.rst:45
+msgid "Agent Logs"
+msgstr "Logs del agente"
+
+#: ../../monitoring/logs.rst:40 ../../monitoring/logs.rst:52
+msgid "|morpheus| Server Logs"
+msgstr "Logs del servidor |morpheus|"
+
+#: ../../monitoring/logs.rst:42
+msgid "Activity / Audit Logs"
+msgstr "Logs de actividad / auditoría"
+
+#: ../../monitoring/logs.rst:47
+msgid ""
+"When Instances are deployed through |morpheus|, the installed Agent "
+"captures application logs and sends them back to the |morpheus| server."
+msgstr ""
+"Cuando las Instancias se despliegan a través de |morpheus|, el Agente "
+"instalado captura los logs de la aplicación y los envía de vuelta al "
+"servidor de |morpheus|."
+
+#: ../../monitoring/logs.rst:49
+msgid ""
+"In most cases, the built-in |morpheus| logging features are sufficient "
+"for tracking and reviewing Agent logs. However, if needed, |morpheus| "
+"supports integration with advanced logging systems. See the `log "
+"integration section "
+"<https://docs.morpheusdata.com/en/latest/logs/logging.html#integrations>`_"
+" above for more information."
+msgstr ""
+"En la mayoría de los casos, las funciones de registro integradas de "
+"|morpheus| son suficientes para rastrear y revisar los logs del Agente. "
+"Sin embargo, si es necesario, |morpheus| soporta integración con sistemas "
+"de registro avanzados. Consulte la `sección de integración de logs "
+"<https://docs.morpheusdata.com/en/latest/logs/logging.html#integrations>`_ "
+"arriba para más información."
+
+#: ../../monitoring/logs.rst:54
+msgid ""
+"The main |morpheus| application log is in ``/var/log/morpheus/morpheus-"
+"ui`` and the latest log file is named current. This log is archived every"
+" 24hrs. There are a number of other log files for the individual "
+"infrastructure components as well."
+msgstr ""
+"El log principal de la aplicación |morpheus| está en "
+"``/var/log/morpheus/morpheus-ui`` y el archivo de log más reciente se "
+"llama current. Este log se archiva cada 24 horas. También hay varios "
+"otros archivos de log para los componentes individuales de infraestructura."
+
+#: ../../monitoring/logs.rst:56
+msgid ""
+"If you wish to export these to an external syslog platform, do the "
+"following:"
+msgstr ""
+"Si desea exportar estos a una plataforma syslog externa, haga lo siguiente:"
+
+#: ../../monitoring/logs.rst:58
+msgid ""
+"Once you have configured your syslog destination (edit rsyslog.conf), "
+"create a morpheus-syslog.conf file in the ``/etc/rsyslog.d`` directory "
+"and add the following entries"
+msgstr ""
+"Una vez que haya configurado su destino syslog (editar rsyslog.conf), "
+"cree un archivo morpheus-syslog.conf en el directorio ``/etc/rsyslog.d`` "
+"y agregue las siguientes entradas"
+
+#: ../../monitoring/logs.rst:60
+msgid ""
+"module(load=\"imfile\" PollingInterval=\"10\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/morpheus-ui/current\" Tag"
+"=\"morpheus-ui\" ReadMode=\"2\" Severity=\"info\" StateFile=\"morpheus-"
+"ui\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/check-server/current\" Tag"
+"=\"check-server\" ReadMode=\"2\" Severity=\"info\" StateFile=\"check-"
+"server\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/guacd/current\" "
+"Tag=\"guacd\" ReadMode=\"2\" Severity=\"info\" StateFile=\"guacd\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/elasticsearch/current\" "
+"Tag=\"elasticsearch\" ReadMode=\"2\" Severity=\"info\" "
+"StateFile=\"elasticsearch\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/mysql/current\" "
+"Tag=\"mysql\" ReadMode=\"2\" Severity=\"info\" StateFile=\"mysql\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/nginx/current\" "
+"Tag=\"nginx\" ReadMode=\"2\" Severity=\"info\" StateFile=\"nginx\")\n"
+"input(type=\"imfile\" File=\"/var/log/morpheus/rabbitmq/current\" "
+"Tag=\"rabbitmq\" ReadMode=\"2\" Severity=\"info\" StateFile=\"rabbitmq\")"
+msgstr ""
+"module(load=\"imfile\" PollingInterval=\"10\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/morpheus-ui/current\" Tag=\"morpheus-ui\" "
+"ReadMode=\"2\" Severity=\"info\" "
+"StateFile=\"morpheus-ui\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/check-server/current\" Tag=\"check-server\" "
+"ReadMode=\"2\" Severity=\"info\" "
+"StateFile=\"check-server\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/guacd/current\" Tag=\"guacd\" ReadMode=\"2\" "
+"Severity=\"info\" StateFile=\"guacd\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/elasticsearch/current\" Tag=\"elasticsearch\" "
+"ReadMode=\"2\" Severity=\"info\" "
+"StateFile=\"elasticsearch\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/mysql/current\" Tag=\"mysql\" ReadMode=\"2\" "
+"Severity=\"info\" StateFile=\"mysql\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/nginx/current\" Tag=\"nginx\" ReadMode=\"2\" "
+"Severity=\"info\" StateFile=\"nginx\")\ninput(type=\"imfile\" "
+"File=\"/var/log/morpheus/rabbitmq/current\" Tag=\"rabbitmq\" "
+"ReadMode=\"2\" Severity=\"info\" StateFile=\"rabbitmq\")"
+
+#: ../../monitoring/logs.rst:71
+msgid "Restart rsyslog"
+msgstr "Reiniciar rsyslog"
+
+#: ../../monitoring/logs.rst:73
+msgid "The log files will now be forwarded to the destination you have defined."
+msgstr "Los archivos de log ahora se reenviarán al destino que haya definido."
+
+#: ../../monitoring/logs.rst:75
+msgid ""
+"This configuration is valid for an 'all-in-one' |morpheus| server. If the"
+" infrastructure components are running on separate servers /clusters, you"
+" will need to create the relevant redirects for the logs on those boxes."
+msgstr ""
+"Esta configuración es válida para un servidor |morpheus| 'todo en uno'. "
+"Si los componentes de infraestructura se están ejecutando en servidores/"
+"clústeres separados, necesitará crear las redirecciones relevantes para "
+"los logs en esas máquinas."
+
+#: ../../monitoring/logs.rst:78
+msgid "Activity Log"
+msgstr "Log de actividad"
+
+#: ../../monitoring/logs.rst:80
+msgid ""
+"The final log type that may require export is the |morpheus| Activity "
+"log. This tracks system changes made by users, for example create and "
+"delete instances etc."
+msgstr ""
+"El tipo de log final que puede requerir exportación es el log de Actividad "
+"de |morpheus|. Este rastrea los cambios del sistema realizados por los "
+"usuarios, por ejemplo crear y eliminar instancias, etc."
+
+#: ../../monitoring/logs.rst:82
+msgid ""
+"To set up CEF/SIEM auditing export, you should edit the following file: "
+"``logback.xml`` located at ``/opt/morpheus/conf/logback.xml``."
+msgstr ""
+"Para configurar la exportación de auditoría CEF/SIEM, debe editar el "
+"siguiente archivo: ``logback.xml`` ubicado en "
+"``/opt/morpheus/conf/logback.xml``."
+
+#: ../../monitoring/logs.rst:84
+msgid ""
+"Add the below appender above or below the other appenders in the "
+"logback.xml configuration file:"
+msgstr ""
+"Agregue el siguiente appender arriba o abajo de los otros appenders en "
+"el archivo de configuración logback.xml:"
+
+#: ../../monitoring/logs.rst:86
+#, python-brace-format, python-format
+msgid ""
+"  <appender name=\"AUDIT\" "
+"class=\"ch.qos.logback.core.rolling.RollingFileAppender\">\n"
+"      <file>/var/log/morpheus/morpheus-ui/audit.log</file>\n"
+"      <rollingPolicy "
+"class=\"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy\">\n"
+"          <fileNamePattern>audit.%d{yyyy-MM-dd}.%i.log</fileNamePattern>\n"
+"            <maxFileSize>50MB</maxFileSize>\n"
+"            <maxHistory>30</maxHistory>\n"
+"      </rollingPolicy>\n"
+"      <encoder>\n"
+"          <pattern>[%d] [%thread] %-5level %logger{15} - %maskedMsg "
+"%n</pattern>\n"
+"      </encoder>\n"
+"  </appender>\n"
+"\n"
+"\n"
+".. note:: ``maxFileSize`` and ``maxHistory`` values can be updated as "
+"needed."
+msgstr ""
+"  <appender name=\"AUDIT\" "
+"class=\"ch.qos.logback.core.rolling.RollingFileAppender\">\n      "
+"<file>/var/log/morpheus/morpheus-ui/audit.log</file>\n      <rollingPolicy "
+"class=\"ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy\">\n     "
+"     <fileNamePattern>audit.%d{yyyy-MM-dd}.%i.log</fileNamePattern>\n      "
+"      <maxFileSize>50MB</maxFileSize>\n            "
+"<maxHistory>30</maxHistory>\n      </rollingPolicy>\n      <encoder>\n     "
+"     <pattern>[%d] [%thread] %-5level %logger{15} - %maskedMsg "
+"%n</pattern>\n      </encoder>\n  </appender>\n\n\n.. note:: "
+"``maxFileSize`` and ``maxHistory`` values can be updated as needed."
+
+#: ../../monitoring/logs.rst:103
+msgid ""
+"Add the below logger above or below the other loggers in the logback.xml "
+"configuration file (make sure it is below, not above, the appender from "
+"the previous step or an error will occur):"
+msgstr ""
+"Agregue el siguiente logger arriba o abajo de los otros loggers en el "
+"archivo de configuración logback.xml (asegúrese de que esté abajo, no "
+"arriba, del appender del paso anterior o ocurrirá un error):"
+
+#: ../../monitoring/logs.rst:105
+msgid ""
+"<logger name=\"com.morpheus.AuditLogService\" level=\"INFO\" "
+"additivity=\"false\">\n"
+"    <appender-ref ref=\"AUDIT\" />\n"
+"</logger>"
+msgstr ""
+"<logger name=\"com.morpheus.AuditLogService\" level=\"INFO\" "
+"additivity=\"false\">\n    <appender-ref ref=\"AUDIT\" />\n</logger>"
+
+#: ../../monitoring/logs.rst:111
+msgid ""
+"Once you have done this, you need to restart the |morpheus| Application "
+"server:"
+msgstr ""
+"Una vez que haya hecho esto, necesita reiniciar el servidor de Aplicación "
+"de |morpheus|:"
+
+#: ../../monitoring/logs.rst:113
+msgid "morpheus-ctl stop morpheus-ui"
+msgstr "morpheus-ctl stop morpheus-ui"
+
+#: ../../monitoring/logs.rst:117
+msgid "Please be aware this will stop the web interface for |morpheus|."
+msgstr "Tenga en cuenta que esto detendrá la interfaz web de |morpheus|."
+
+#: ../../monitoring/logs.rst:119
+msgid ""
+"Once the service has stopped enter the following at the shell prompt to "
+"restart (if the service does not stop, replace stop with graceful-kill "
+"and retry)"
+msgstr ""
+"Una vez que el servicio se haya detenido, ingrese lo siguiente en el "
+"prompt del shell para reiniciar (si el servicio no se detiene, reemplace "
+"stop con graceful-kill y reintente)"
+
+#: ../../monitoring/logs.rst:121
+msgid "morpheus-ctl start morpheus-ui"
+msgstr "morpheus-ctl start morpheus-ui"
+
+#: ../../monitoring/logs.rst:125
+msgid "To know when the UI is up and running you can run the following command"
+msgstr "Para saber cuándo la interfaz está activa y funcionando puede ejecutar el siguiente comando"
+
+#: ../../monitoring/logs.rst:127
+msgid "morpheus-ctl tail morpheus-ui"
+msgstr "morpheus-ctl tail morpheus-ui"
+
+#: ../../monitoring/logs.rst:131
+msgid ""
+"Once you see the ASCI art show up you will be able to log back into the "
+"User Interface. A new audit file will have been created called audit.log "
+"and will found in the default |morpheus| log path which is "
+"``/var/log/morpheus/morpheus-ui/``"
+msgstr ""
+"Una vez que vea aparecer el arte ASCII podrá iniciar sesión nuevamente en "
+"la Interfaz de Usuario. Se habrá creado un nuevo archivo de auditoría "
+"llamado audit.log y se encontrará en la ruta de logs predeterminada de "
+"|morpheus| que es ``/var/log/morpheus/morpheus-ui/``"
+
+#: ../../monitoring/logs.rst:133
+msgid ""
+"This is only an example and other configurations are possible, such as "
+"creating an appender definition for your SIEM audit database product."
+msgstr ""
+"Esto es solo un ejemplo y otras configuraciones son posibles, como crear "
+"una definición de appender para su producto de base de datos de auditoría "
+"SIEM."
+
+#: ../../monitoring/logs.rst:137
+msgid "morpheus-ssl nginx logs"
+msgstr "Logs de morpheus-ssl nginx"
+
+#: ../../monitoring/logs.rst:139
+msgid "Morpheus does not put a logrotate in for Morpheus-ssl access logs"
+msgstr "Morpheus no incluye un logrotate para los logs de acceso de Morpheus-ssl"
+
+#: ../../monitoring/logs.rst:141
+msgid ""
+"svlogd will only rotate the current file, nginx is setup to write the "
+"access logs to separate files and not stdout."
+msgstr ""
+"svlogd solo rotará el archivo actual, nginx está configurado para escribir "
+"los logs de acceso en archivos separados y no en stdout."
+
+#: ../../monitoring/logs.rst:143
+msgid ""
+"Implementation of a log rotate is left up to up to end users for files "
+"outside of the services.  This is done in case end users have a log "
+"management solution."
+msgstr ""
+"La implementación de una rotación de logs queda a cargo de los usuarios "
+"finales para archivos fuera de los servicios. Esto se hace en caso de que "
+"los usuarios finales tengan una solución de gestión de logs."
+
+#: ../../monitoring/logs.rst:146
+msgid ""
+"Below is what a suggested configuration looks like for the file "
+"``/etc/logrotate.d/morpheus-nginx``:"
+msgstr ""
+"A continuación se muestra cómo se ve una configuración sugerida para el "
+"archivo ``/etc/logrotate.d/morpheus-nginx``:"
+
+#: ../../monitoring/logs.rst:148
+#, python-brace-format
+msgid ""
+"/var/log/morpheus/nginx/morpheus*access.log {\n"
+"        daily\n"
+"        rotate 14\n"
+"        compress\n"
+"        delaycompress\n"
+"        missingok\n"
+"        notifempty\n"
+"        create 644 morpheus-app morpheus-app\n"
+"        postrotate\n"
+"                [ ! -f /var/run/morpheus/nginx/nginx.pid ] || kill -USR1 "
+"`cat /var/run/morpheus/nginx/nginx.pid`\n"
+"        endscript\n"
+"}"
+msgstr ""
+"/var/log/morpheus/nginx/morpheus*access.log {\n        daily\n        "
+"rotate 14\n        compress\n        delaycompress\n        missingok\n    "
+"    notifempty\n        create 644 morpheus-app morpheus-app\n        "
+"postrotate\n                [ ! -f /var/run/morpheus/nginx/nginx.pid ] || "
+"kill -USR1 `cat /var/run/morpheus/nginx/nginx.pid`\n        endscript\n}"

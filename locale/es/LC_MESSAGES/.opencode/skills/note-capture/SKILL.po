@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/note-capture/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:11
+msgid ""
+"Teach agents how to capture valuable conversations and thinking as notes "
+"in the Hero knowledge base. Notes are the lowest-friction knowledge type "
+"— no structure required, no status workflow, just timestamped captures of"
+" thinking that gets indexed and searchable."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:13
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:15
+msgid "Load this skill when:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:16
+msgid "A user asks you to \"save this conversation as a note\""
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:17
+msgid ""
+"A user says \"capture this\" or \"remember this\" or \"turn this into a "
+"note\""
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:18
+msgid ""
+"You've had a particularly productive brainstorm or design discussion and "
+"the user wants to preserve it"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:19
+msgid "A debugging session produced valuable insights worth recording"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:20
+msgid "The user is dictating stream-of-consciousness thinking they want preserved"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:22
+msgid "The golden rule"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:24
+msgid ""
+"**Include both sides of the conversation.** The agent's analysis, "
+"reasoning, suggestions, and code examples are often the most valuable "
+"part. Do not strip out your own contributions. Do not aggressively "
+"summarize. Preserve the thinking."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:26
+msgid "How to capture a note"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:28
+msgid "Step 1: Determine the slug"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:30
+msgid "Derive a short kebab-case slug from the topic:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:31
+msgid "`auth-flow-brainstorm`"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:32
+msgid "`redis-vs-postgres-session-store`"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:33
+msgid "`why-we-chose-grpc`"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:34
+msgid "`debugging-memory-leak-april-12`"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:36
+msgid ""
+"If the user doesn't provide a topic, ask: \"What should I title this "
+"note?\""
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:38
+msgid "Step 2: Create the note file"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:40
+msgid "Run:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:41
+msgid "hero note <slug>\n"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:45
+msgid ""
+"This creates `.hero/knowledge/notes/<slug>/spec.md` with minimal "
+"frontmatter."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:47
+msgid "Step 3: Write the full content"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:49
+msgid ""
+"Open the created file and replace the placeholder with the captured "
+"content. Use this structure:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:51
+msgid ""
+"---\n"
+"title: <descriptive title>\n"
+"type: note\n"
+"created: <date>\n"
+"tags: [<relevant>, <tags>]\n"
+"---\n"
+"# <Title>\n"
+"\n"
+"## Context\n"
+"What prompted this conversation. One or two sentences.\n"
+"\n"
+"## Discussion\n"
+"\n"
+"**Human:** <user's message>\n"
+"\n"
+"**Assistant:** <your response>\n"
+"\n"
+"**Human:** <user's follow-up>\n"
+"\n"
+"**Assistant:** <your analysis>\n"
+"\n"
+"(Continue for the full relevant conversation)\n"
+"\n"
+"## Key Takeaways\n"
+"- Bullet point the conclusions, decisions made, or open questions\n"
+"- Include any action items that emerged\n"
+"- Note anything that should become a spec later\n"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:81
+msgid "Step 4: Confirm"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:83
+msgid "Tell the user:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:84
+msgid "Where the note was saved"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:85
+msgid "How many key points were captured"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:86
+msgid "Suggest tagging if they didn't specify tags"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:88
+msgid "What to include vs. exclude"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:90
+msgid "Include"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:91
+msgid "The full back-and-forth dialogue (both sides)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:92
+msgid "Code snippets and examples discussed"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:93
+msgid "Architectural diagrams or data models sketched out"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:94
+msgid "Trade-off analysis and reasoning"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:95
+msgid "Conclusions and decisions reached"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:96
+msgid "Open questions that remain"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:98
+msgid "Exclude"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:99
+msgid "Greetings, pleasantries, and small talk"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:100
+msgid ""
+"Repeated corrections of typos or misunderstandings (just include the "
+"corrected version)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:101
+msgid ""
+"Tool output that's purely mechanical (e.g., full test suite output — "
+"summarize instead)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:102
+msgid "Sensitive information (credentials, tokens, personal data) — redact these"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:104
+msgid "Different capture modes"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:106
+msgid "Full conversation capture"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:107
+msgid ""
+"The user says \"save this whole conversation as a note.\" Capture "
+"everything substantive from the session."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:109
+msgid "Selective capture"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:110
+msgid ""
+"The user says \"save the part about auth as a note.\" Extract only the "
+"relevant portion of the conversation."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:112
+msgid "Live note mode"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:113
+msgid ""
+"The user says \"let's brainstorm about X — capture this as a note when "
+"we're done.\" Continue the conversation normally, then at the end, save "
+"everything discussed about X."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:115
+msgid "Quick thought"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:116
+msgid ""
+"The user says \"note: we should probably add rate limiting to the API.\" "
+"Just run:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:117
+msgid "hero note \"we should probably add rate limiting to the API\"\n"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:120
+msgid "This creates a one-liner note. Fast, minimal friction."
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:122
+msgid "Relationship to other knowledge types"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:124
+msgid "Notes are the entry point for knowledge. Over time, notes may graduate:"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "From"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "To"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "When"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Note about a pattern"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Convention (`/convention`)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "The pattern is worth standardizing"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Note about a decision"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Decision (`/decide`)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "The decision needs formal documentation"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Note about a feature idea"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Spec (`/design`)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "The idea is ready to become actionable work"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Note about a bug pattern"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "Bug spec (`/diagnose`)"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md
+msgid "The pattern needs investigation"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:133
+msgid ""
+"When saving a note, if you notice it's really a decision or convention in"
+" disguise, mention that to the user: \"This looks like it could be a "
+"decision record. Want me to create a `/decide` instead?\""
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:135
+msgid "Notes are searchable"
+msgstr ""
+
+#: ../../.opencode/skills/note-capture/SKILL.md:137
+msgid ""
+"Once saved, notes are indexed by `hero index` and searchable via `hero "
+"search`. The full text is indexed with FTS5 porter stemming, so even "
+"rough notes become findable later."
+msgstr ""
+

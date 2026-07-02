@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/settings/currency.rst:2
+msgid "Currency Settings"
+msgstr "Currency Configuración"
+
+#: ../../administration/settings/currency.rst:4
+msgid ""
+"In |morpheus|, Tenants are separate environments which can be defined as "
+"using currencies that are unique from one Tenant to the next. In addition, "
+"these currencies may be different from the currency in which Price Sets have"
+" been defined. In order to present pricing to Subtenant users in their "
+"designated currency, |morpheus| allows for integration with currency "
+"conversion services \"open exchange rates\" and \"fixer.io\". This article "
+"goes through the process of setting up the integration and how it works to "
+"determine pricing conversions."
+msgstr ""
+"En |morpheus|, Inquilinos son separate entornos que puede ser defined as "
+"usando currencies ese son único desde uno Inquilino a el next. Además, estos"
+" currencies puede be diferente desde el currency en que Precio Sets han sido"
+" defined. Para poder present pricing a Subinquilino usuarios en su "
+"designated currency, |morpheus| permite para integración con currency "
+"conversion services \"open exchange rates\" y \"fixer.io\". Este article "
+"goes a través de el process de setting up el integración y how ello works a "
+"determine pricing conversions."
+
+#: ../../administration/settings/currency.rst:7
+msgid "Integrating With a Currency Exchange Provider"
+msgstr "Integrating Con a Currency Exchange Provider"
+
+#: ../../administration/settings/currency.rst:9
+msgid "Navigate to |AdmSetApp|"
+msgstr "Navegue a |AdmSetApp|"
+
+#: ../../administration/settings/currency.rst:10
+msgid ""
+"Under the Currency Settings heading, make a \"Currency Provider\" selection"
+msgstr ""
+"Under el Currency Configuración heading, make a \"Currency Provider\" "
+"selection"
+
+#: ../../administration/settings/currency.rst:11
+msgid "Enter your \"Provider API Key\""
+msgstr "Enter su \"Provider API Key\""
+
+#: ../../administration/settings/currency.rst:13
+msgid ""
+"The service is now integrated and can be used as described in the next "
+"section."
+msgstr ""
+"El service es now integrated y puede ser usado as described en el next "
+"sección."
+
+#: ../../administration/settings/currency.rst:16
+msgid "Consuming Currency Exchange in |morpheus|"
+msgstr "Consuming Currency Exchange en |morpheus|"
+
+#: ../../administration/settings/currency.rst:18
+msgid ""
+"Currency exchange data is synced from the integrated provider once every 12 "
+"hours. When needed, Morpheus will use this cached data to present currency "
+"conversions rather than hitting the API directly each time. This limits the "
+"total number of API hits and reduces costs."
+msgstr ""
+"Currency exchange data es synced desde el integrated provider once every 12 "
+"hours. Cuando needed, Morpheus va a usar este cached data a present currency"
+" conversions rather than hitting el API directly cada time. Este limits el "
+"total número de API hits y reduces costs."
+
+#: ../../administration/settings/currency.rst:20
+msgid ""
+"Exchanged currency values will be shown under conditions similar to the "
+"following scenario:"
+msgstr ""
+"Exchanged currency valores será shown under conditions similar a lo "
+"siguiente scenario:"
+
+#: ../../administration/settings/currency.rst:22
+msgid ""
+"A user is working in a Subtenant configured for Currency B. The user is "
+"attempting to provision an instance with pricing sets that have only been "
+"defined in Currency A. Morpheus will convert the pricing data from currency "
+"A to Currency B for this user (and all users in this Subtenant) since price "
+"conversion has been enabled."
+msgstr ""
+"Un usuario es working en a Subinquilino configurado para Currency B. El "
+"usuario es attempting a provision un instancia con pricing sets ese tienen "
+"solo been defined en Currency A. Morpheus va a convert el pricing data desde"
+" currency Un a Currency B para este usuario (y todos usuarios en este "
+"Subinquilino) since precio conversion ha sido habilitado."

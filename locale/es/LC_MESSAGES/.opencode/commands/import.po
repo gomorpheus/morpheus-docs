@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/import.md:4
+msgid ""
+"Import issues from the work tracker (Jira, GitHub, Linear) into Hero spec"
+" scaffolds."
+msgstr ""
+
+#: ../../.opencode/commands/import.md:6
+msgid "The argument can be:"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:7
+msgid ""
+"**A preset name** — matches a named filter from hero.json "
+"`import.presets` (e.g. `/import triage`)"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:8
+msgid ""
+"**A raw JQL/filter string** — passed directly as a query (e.g. `/import "
+"type = Bug AND priority = Critical`)"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:9
+msgid "**Empty** — uses the default filter from hero.json `import.filter`"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:11
+msgid "Steps"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:13
+msgid "Parse the argument to determine if it's a preset name or a raw filter:"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:14
+msgid ""
+"If the argument matches a key in `import.presets` in hero.json, use "
+"`--preset`"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:15
+msgid ""
+"If the argument looks like a query (contains `=`, `AND`, `OR`, or field "
+"operators), use `--jql`"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:16
+msgid "If empty, run with defaults"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:18
+msgid "Run the appropriate `hero sync import` command:"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:19
+msgid "Preset: `hero sync import --preset <name>`"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:20
+msgid "Raw JQL: `hero sync import --jql \"<query>\"`"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:21
+msgid "Default: `hero sync import`"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:23
+msgid ""
+"Review the output — report how many issues were imported, skipped, and "
+"any errors"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:25
+msgid ""
+"If an inventory report was generated, read it and summarize the "
+"highlights (critical/high counts, new items)"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:27
+msgid "Preset configuration"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:29
+msgid "Presets are defined in hero.json:"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:31
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"import\": {\n"
+"    \"presets\": {\n"
+"      \"my-bugs\": { \"assignee\": \"alice\", \"issue_type\": \"Bug\" },\n"
+"      \"triage\": { \"assignee\": \"unassigned\", \"priority\": "
+"\"Critical\" },\n"
+"      \"backlog\": { \"status\": \"To Do\", \"order_by\": \"priority "
+"DESC\" }\n"
+"    }\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:43
+msgid ""
+"To list available presets, read the project's hero.json and look under "
+"`import.presets`."
+msgstr ""
+
+#: ../../.opencode/commands/import.md:45
+msgid "Examples"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:47
+msgid ""
+"/import                          # use default filter\n"
+"/import triage                   # use the \"triage\" preset\n"
+"/import my-bugs                  # use the \"my-bugs\" preset\n"
+"/import type = Bug AND status = Open   # raw JQL query\n"
+msgstr ""
+
+#: ../../.opencode/commands/import.md:54
+msgid "$ARGUMENTS"
+msgstr ""
+

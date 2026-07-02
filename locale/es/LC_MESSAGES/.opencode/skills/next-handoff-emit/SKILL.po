@@ -1,0 +1,369 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:11
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:13
+msgid ""
+"Tell the agent when to fire three small CLI calls during normal work, so "
+"the user-graph nodes that drive `.hero/next/<user>.md` and the field-grab"
+" CLI (`hero next suggest`, `hero next ask`, `hero next reflection`) stay "
+"current — *without* writing to a markdown file that the next checkpoint "
+"will clobber."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:19
+msgid ""
+"This skill replaces the \"write the agent half of NEXT.md\" pattern in "
+"[skills/next-md.md](next-md.md) when `next.projected` is true. With "
+"projection on, anything you write into NEXT.md gets wiped on the next "
+"Stop hook. Emit structured events instead."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:24
+msgid "Why emit, not write"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:26
+msgid "NEXT.md is a graph projection. Every Stop hook regenerates it from:"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:27
+msgid ""
+"Recent commits, AC flips, open features, blockers — derived from the "
+"project graph (no agent action needed)."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:29
+msgid ""
+"Last user ask, Suggested next prompt, Session reflections — attributed "
+"user-graph nodes, populated by the three commands below."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:32
+msgid ""
+"If you want something to survive into the next session's NEXT.md, it has "
+"to land as a graph node. The CLI is the one-liner way to do that."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:35
+msgid "The three commands"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:37
+msgid "`hero next ask \"<text>\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:39
+msgid ""
+"Records a `UserAsk` node attributed to the current user. Singleton per "
+"user — the latest supersedes prior. The projection renders this as the "
+"**\"Last user ask\"** section."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:43
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:64
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:89
+msgid "When to fire:"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:44
+msgid ""
+"**Every meaningful user prompt.** Right after the user finishes asking "
+"for something concrete, before you start working on it."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:46
+msgid ""
+"Quote the user's wording when short and direct. Paraphrase to one "
+"sentence when the prompt is long, conversational, or wandering."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:48
+msgid ""
+"Skip when the user is making small talk, asking a clarifying question "
+"about your previous output, or otherwise not directing new work."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:52
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:97
+msgid "Examples:"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:53
+msgid ""
+"hero next ask \"Finish phase 4 of next-as-projection — wire UserHandoffMD"
+" into checkpoint\"\n"
+"hero next ask \"Why does the test fail intermittently on the auth "
+"middleware?\"\n"
+"hero next ask \"Let's try a different approach — instead of refactoring, "
+"just delete the dead branch\"\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:59
+msgid "`hero next suggest \"<text>\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:61
+msgid ""
+"Records a `NextSuggestion` node. Singleton per user. The projection "
+"renders this as **\"Suggested next prompt\"** in the per-user handoff."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:65
+msgid ""
+"**At the end of a meaningful work unit** (commit landed, phase shipped, "
+"blocker hit and parked). Phrase it as *the user's next prompt*, not as "
+"instructions to yourself."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:68
+msgid ""
+"The bar: a fresh session pasting this verbatim should know immediately "
+"what to do."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:71
+msgid "Crucial framing — write in the user's voice:"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "❌ Wrong (agent-instructions voice)"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "✅ Right (user-voice prompt)"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`\"Run hero next migrate-to-projection then ship phase 8\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`\"run the migration and then we gotta do phase 8 right...\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`\"Implement Phase 5 round-trip ingest with idempotency\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`\"let's tackle phase 5 of next-as-projection, the round-trip\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`\"Fix the auth middleware test\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`\"why does the auth middleware test fail intermittently?\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:79
+msgid ""
+"If genuinely no good next prompt exists (e.g. the user is about to make a"
+" strategic decision only they can make), don't emit — leave the field "
+"blank rather than fill it with noise."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:83
+msgid "`hero next reflection \"<text>\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:85
+msgid ""
+"Records a `SessionReflection` node. Multiple co-exist; the projection "
+"shows the most recent N. The projection renders these as **\"Recent "
+"reflections\"**."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:90
+msgid ""
+"**When a non-obvious lesson surfaces** — a constraint nobody told you, a "
+"gotcha you discovered, a surprising data point worth carrying into the "
+"next session."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:93
+msgid "One sentence. Like a sticky note. The lesson, not the action."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:94
+msgid ""
+"Skip mechanical observations — those land in commit messages or the "
+"project graph automatically."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:98
+msgid ""
+"hero next reflection \"config.Load reads from .hero/hero.json, not "
+"project root — silent no-op if you write to the wrong place\"\n"
+"hero next reflection \"merge=ours plus stop-hook regen is cleaner than a "
+"custom merge driver for v1\"\n"
+"hero next reflection \"MCP tool count is 35; README still says 25+\"\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:104
+msgid "Cadence"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:106
+msgid "A normal session looks like:"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "Event"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "Action"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "User sends a prompt that directs new work"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`hero next ask \"...\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "Phase / commit / meaningful unit lands"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`hero next suggest \"...\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "Surprise / lesson / gotcha surfaces"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "`hero next reflection \"...\"`"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "Conversation, clarification, or small question"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "nothing — let it pass"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "End of turn"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md
+msgid "the Stop hook handles the rest"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:116
+msgid ""
+"Aim for **1-2 emits per meaningful turn**. Quality over quantity. A "
+"single high-signal `hero next ask` and `hero next suggest` is better than"
+" five vague ones."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:120
+msgid "What NOT to emit"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:122
+msgid ""
+"Don't fire `hero next ask` for every user message — only when the intent "
+"actually shifts or a new ask arrives."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:124
+msgid ""
+"Don't `hero next suggest` if the next move depends on the user making a "
+"decision only they can make. Leave it empty."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:126
+msgid ""
+"Don't reflect on mechanical observations the graph already captures "
+"(commits, AC status, blockers)."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:128
+msgid ""
+"Don't write to `.hero/NEXT.md` directly when projection is on — it'll be "
+"wiped next turn. Use the commands."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:130
+msgid ""
+"**Don't write scratch into `.hero/next/<user>.local.md`.** That file is "
+"machine-state-only and rebuilt wholesale on every checkpoint — anything "
+"outside the marker block is discarded (with a one-time backup to "
+"`.local.md.bak.<timestamp>` the first time hand-content is detected). For"
+" preserved per-machine notes the agent doesn't touch, use a path like "
+"`.hero/notes/<user>.md`."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:137
+msgid "Reading state"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:139
+msgid "To check what's currently recorded:"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:141
+msgid ""
+"hero next suggest                   # print suggested next prompt\n"
+"hero next ask                       # print last user ask\n"
+"hero next reflection                # print recent reflections\n"
+"hero next                           # full handoff (project + user + "
+"machine)\n"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:148
+msgid ""
+"Add `--json` to any read for scripting; `--copy` to also copy to "
+"clipboard; `--user <slug>` to read someone else's (in team mode)."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:151
+msgid "Cross-machine continuity"
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:153
+msgid ""
+"The `.hero/next/<user>.md` file is the load-bearing artifact for solo-no-"
+"Cloud cross-machine handoff. When you push from one machine and pull on "
+"another, the next `hero scan` (or session-start) ingests the file's "
+"content back into the local graph automatically."
+msgstr ""
+
+#: ../../.opencode/skills/next-handoff-emit/SKILL.md:158
+msgid ""
+"This means the cadence above also gets you cross-machine continuity for "
+"free — emits on home laptop become readable on office desktop after a git"
+" pull, even with no Cloud configured."
+msgstr ""
+

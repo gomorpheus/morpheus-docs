@@ -1,0 +1,370 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:10
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:12
+msgid ""
+"Define the shape of the `## Kickoff` section in `spec.md` — a terse, "
+"model-optimized cold-start prompt the user pastes into a fresh session "
+"when they want to pick this spec back up after a context break."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:16
+msgid "A kickoff prompt is **not** a documentation summary. It's a *prompt*:"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:17
+msgid "60–120 tokens (hard cap 200)."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:18
+msgid ""
+"Tells a fresh model what this spec is, where it stands, where to pick up,"
+" and which 2–5 files to open first."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:20
+msgid ""
+"Aggressive on signal-to-noise. The spec body has the documentation; the "
+"kickoff has only what gets you productive in 30 seconds."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:23
+msgid ""
+"The kickoff is **part of the spec**, not a projection. Skills (`/design`,"
+" `/deliver`, `/diagnose`) write it inline as they author or mutate the "
+"spec. There is no auto-refresh hook. If a kickoff goes stale, the fix is "
+"to re-run the workflow or hand-edit — same as any other spec content."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:28
+msgid "When to write or update me"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:30
+msgid ""
+"**`/design`** — write a fresh `## Kickoff` as part of scaffolding the new"
+" spec, between `## Goal` and `## Problem`."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:32
+msgid ""
+"**`/deliver`** — rewrite `## Kickoff` when the spec's status flips "
+"(planning → delivering, delivering → completed) or when a meaningful "
+"chunk lands. The \"Pick up at:\" line should always reflect *now*, not "
+"\"two commits ago.\""
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:36
+msgid ""
+"**`/diagnose`** — same pattern when bug specs flip from `triaging` → "
+"`delivering`."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:38
+msgid ""
+"**Hand-edit** — anytime the user changes direction or wants to tune the "
+"opener. The spec is source of truth; edit it like any other section."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:42
+msgid ""
+"A kickoff that says *\"pick up at X\"* when X already shipped is "
+"misleading. A kickoff that's still accurate doesn't need refreshing for "
+"refresh's sake."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:45
+msgid "Format"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:47
+msgid ""
+"## Kickoff\n"
+"\n"
+"<1 line: what this spec is, in the user's vocabulary. Avoid jargon\n"
+"the user wouldn't say themselves.>\n"
+"\n"
+"**Status:** <planning|delivering|blocked|in-review> — <last meaningful\n"
+"turn, 1 line>\n"
+"\n"
+"**Pick up at:** <concrete next step, 1–2 lines. Specific enough that\n"
+"a fresh model can act without re-reading the whole spec.>\n"
+"\n"
+"→ <runnable pointer: spec path, slash command, or shell command>\n"
+"\n"
+"**Files:** <2–5 path:line refs the model will need to open first>\n"
+"**Skip:** <1 line of approaches already rejected — only if non-empty>\n"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:65
+msgid ""
+"Sections after `Files:` are omitted entirely when empty. Don't write "
+"`Skip: (none)`; just leave the line out."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:68
+msgid "Section guidance"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:70
+msgid ""
+"**First line (the what)** — phrase as the user would say it aloud, not as"
+" the spec title. Example: *\"Adds `## Kickoff` sections to every spec and"
+" a `hero queue` command for the ranked backlog.\"* — the spec title is "
+"more formal; the kickoff line is the elevator-blurb."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:74
+msgid ""
+"**Status** — one of `planning`, `delivering`, `blocked`, `in-review`. "
+"Append a half-sentence on the *last meaningful turn* — what just happened"
+" that a fresh session needs to know. Don't describe everything done so "
+"far; the spec body has that."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:78
+msgid ""
+"**Pick up at** — the *one specific thing* a fresh session should attempt."
+" Don't list options. If there are forks, pick the highest-leverage next "
+"step and name only that. The user can re-tune the kickoff if they pivot."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:82
+msgid ""
+"**→ pointer** — must be runnable as-is. A spec path "
+"(`.hero/specs/foo/spec.md`), a slash command (`/deliver foo`), or a shell"
+" command. Not a sentence."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:84
+msgid ""
+"**Files** — 2–5 file paths with optional `:line` markers. These are the "
+"files the fresh session will need to open first. Pick load-bearing ones, "
+"not every file in `## Changes`."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:87
+msgid ""
+"**Skip** — gold when present. One line per approach already rejected, so "
+"the next session doesn't re-suggest it. Omit the heading entirely when "
+"there's nothing to skip."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:91
+msgid "Quality bar"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:93
+msgid ""
+"A good kickoff is one a fresh session can paste and immediately be "
+"productive — no follow-up \"what's the spec?\" or \"where are the "
+"files?\" questions."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:97
+msgid "The new session should know after reading it:"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:98
+msgid "**What this spec is** — first line."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:99
+msgid "**Where it stands now** — Status line."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:100
+msgid "**What to attempt next** — Pick up at + → pointer."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:101
+msgid "**Which files matter** — Files line."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:102
+msgid "**What not to try** — Skip line, when present."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:104
+msgid ""
+"If you can't picture a fresh session being productive after pasting the "
+"kickoff, add detail. If it's becoming a transcript of everything done, "
+"cut detail."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:108
+msgid ""
+"**Hard cap on kickoff body: 200 tokens. Target: 60–120.** If it's running"
+" over, the spec body is doing the kickoff's job — point at the spec body "
+"and trim."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:112
+msgid "Worked examples"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:114
+msgid "Good — small spec, mid-delivery"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:116
+msgid ""
+"## Kickoff\n"
+"\n"
+"<!-- drift-test:ignore (illustrative: this kickoff documents a phantom-"
+"command bug — `hero nudge` is intentionally stale) -->\n"
+"Renames stale docs from `hero nudge` to `hero relevant` so file-aware\n"
+"context examples match the current CLI.\n"
+"\n"
+"**Status:** delivering — CLI examples are fixed; MCP docs still need a\n"
+"note that the tool remains named `hero_nudge`.\n"
+"\n"
+"<!-- drift-test:ignore (illustrative: same kickoff example as above) -->\n"
+"**Pick up at:** sweep docs for `hero nudge` and replace user-facing CLI\n"
+"examples with `hero relevant`, while leaving MCP tool names intact.\n"
+"\n"
+"→ `rg \"hero nudge|hero_nudge\" docs README.md GETTING-STARTED.md`\n"
+"\n"
+"**Files:** README.md, GETTING-STARTED.md, docs/cli/search-and-context.md\n"
+"**Skip:** renaming `hero_nudge` in MCP docs — that tool name is still "
+"real.\n"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:136
+msgid "Good — large spec, planning"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:138
+msgid ""
+"## Kickoff\n"
+"\n"
+"Adds `## Kickoff` sections to every spec and a root-level `hero queue`\n"
+"command so the user can see all ready-to-work specs at a glance and\n"
+"copy-paste a session opener for any of them.\n"
+"\n"
+"**Status:** planning — spec just landed, no code yet.\n"
+"\n"
+"**Pick up at:** start with the parser change — add `Pinned bool` to\n"
+"`internal/spec/spec.go` and a `Kickoff()` accessor reading from\n"
+"`Sections[\"kickoff\"]`. Tests next. Bigger work (selector + commands)\n"
+"is Phase 2.\n"
+"\n"
+"→ `.hero/specs/kickoff-prompts-queue/spec.md`\n"
+"\n"
+"**Files:** `internal/spec/spec.go`, `internal/spec/spec_test.go`, `skills"
+"/kickoff-prompt.md`\n"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:157
+msgid "Anti-pattern — bloated, vague"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:159
+msgid ""
+"## Kickoff\n"
+"\n"
+"This spec is about improving developer experience around session\n"
+"continuity by introducing a structured way to capture the essential\n"
+"context needed to resume work after a break. It involves several\n"
+"components including format definitions, command surfaces, integration\n"
+"with existing workflows, and tooling support. We have considered\n"
+"several approaches and settled on a hybrid model that balances\n"
+"flexibility with consistency.\n"
+"\n"
+"**Status:** in progress\n"
+"\n"
+"**Pick up at:** various tasks remain. See spec body for full list.\n"
+"\n"
+"**Files:** see Changes section\n"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:177
+msgid ""
+"What's wrong: prose where pointers should be, no concrete next step, no "
+"file paths, no actionable pointer, lists nothing the user can paste and "
+"act on. The spec body should be doing this work; the kickoff has failed "
+"if it just defers to the body."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:182
+msgid "Composing with related skills"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:184
+msgid ""
+"**`next-md`** — governs the `.hero/NEXT.md` agent half (this turn's "
+"status). Different surface: NEXT.md is the *current session* handoff; the"
+" kickoff is the *cold-start* prompt for any spec in the queue. Both can "
+"co-exist; both have their own format."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:188
+msgid ""
+"**`end-of-turn-recap`** — governs the closing message of the current "
+"turn. When the recap rule's spin-off offer points at a spec, it "
+"references the spec's kickoff (`hero_kickoff <slug>`) rather than "
+"reproducing prompt content inline."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:192
+msgid ""
+"**`hero queue` / `hero list --format kickoff`** — the surfacing layer. "
+"The selector picks ready specs and renders their `## Kickoff` bodies. The"
+" kickoff format is what makes the queue useful."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:196
+msgid "What not to do"
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:198
+msgid "Don't reproduce the spec body. Reference, don't repeat."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:199
+msgid ""
+"Don't list every file in `## Changes`. Pick the 2–5 the fresh session "
+"needs first."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:201
+msgid "Don't write a paragraph where one line works."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:202
+msgid "Don't leave stale kickoffs around. If `Pick up at:` is wrong, fix it."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:203
+msgid ""
+"Don't put commit hashes, branch names, or session-specific runtime state "
+"in the kickoff. That belongs in NEXT.md, not the spec."
+msgstr ""
+
+#: ../../.opencode/skills/kickoff-prompt/SKILL.md:205
+msgid "Don't forget the `→ pointer` line — runnable, not prose."
+msgstr ""
+

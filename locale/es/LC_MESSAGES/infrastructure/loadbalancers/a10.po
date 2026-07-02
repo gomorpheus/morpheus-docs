@@ -1,0 +1,358 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/loadbalancers/a10.rst:2
+msgid "A10 Load Balancers"
+msgstr "A10 Load Balancers"
+
+#: ../../infrastructure/loadbalancers/a10.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/loadbalancers/a10.rst:7
+msgid ""
+"|morpheus| integrates with A10 Networks Thunder and vThunder Application "
+"Delivery Controllers (ADC). The integration supports automated provisioning "
+"of virtual servers, service groups, and HTTP templates with domain-based "
+"routing."
+msgstr ""
+"|morpheus| integrates con A10 Redes Thunder y vThunder Aplicación Delivery "
+"Controllers (ADC). El integration soporta automated provisioning de virtual "
+"servidores, servicio groups, y HTTP templates con domain-based routing."
+
+#: ../../infrastructure/loadbalancers/a10.rst:9
+msgid ""
+"When instances are attached to an A10 load balancer, |morpheus| "
+"automatically:"
+msgstr ""
+"Cuando instances son adjunto un un A10 load balancer, |morpheus| "
+"automáticamente:"
+
+#: ../../infrastructure/loadbalancers/a10.rst:11
+msgid "Creates server entries for each container/VM in the instance"
+msgstr "Crea servidor entradas para cada container/VM en el instance"
+
+#: ../../infrastructure/loadbalancers/a10.rst:12
+msgid "Creates a service group with the appropriate port mappings"
+msgstr "Crea un servicio group con el appropriate puerto mappings"
+
+#: ../../infrastructure/loadbalancers/a10.rst:13
+msgid "Updates the HTTP template with host-based routing rules"
+msgstr "Actualiza el HTTP template con host-based routing reglas"
+
+#: ../../infrastructure/loadbalancers/a10.rst:14
+msgid "Configures SSL certificates (when applicable)"
+msgstr "Configura SSL certificados (cuando applicable)"
+
+#: ../../infrastructure/loadbalancers/a10.rst:17
+msgid "Adding an A10 Load Balancer"
+msgstr "Adding un A10 Balanceador de carga"
+
+#: ../../infrastructure/loadbalancers/a10.rst:19
+msgid "Navigate to ``Infrastructure > Load Balancers``"
+msgstr "Navegue un ``Infrastructure > Load Balancers``"
+
+#: ../../infrastructure/loadbalancers/a10.rst:20
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ AGREGAR`"
+
+#: ../../infrastructure/loadbalancers/a10.rst:21
+msgid "Select **A10**"
+msgstr "Seleccionar **A10**"
+
+#: ../../infrastructure/loadbalancers/a10.rst:22
+msgid "Fill in the following:"
+msgstr "Fill en el siguiente:"
+
+#: ../../infrastructure/loadbalancers/a10.rst:24
+msgid "GROUP"
+msgstr "GROUP"
+
+#: ../../infrastructure/loadbalancers/a10.rst:25
+msgid "Select the Group the Load Balancer will be available for."
+msgstr "Seleccionar el Grupo el Balanceador de carga será be disponible para."
+
+#: ../../infrastructure/loadbalancers/a10.rst:26
+msgid "CLOUD"
+msgstr "CLOUD"
+
+#: ../../infrastructure/loadbalancers/a10.rst:27
+msgid "Select the Cloud the Load Balancer will be available for."
+msgstr "Seleccionar el Nube el Balanceador de carga será be disponible para."
+
+#: ../../infrastructure/loadbalancers/a10.rst:28
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../infrastructure/loadbalancers/a10.rst:29
+msgid "Name of the Load Balancer in |morpheus|."
+msgstr "Nombre del Balanceador de carga en |morpheus|."
+
+#: ../../infrastructure/loadbalancers/a10.rst:30
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#: ../../infrastructure/loadbalancers/a10.rst:31
+msgid "Identifying information displayed on the Load Balancer list page."
+msgstr ""
+"Identifying información mostrado en el Balanceador de carga página de lista."
+
+#: ../../infrastructure/loadbalancers/a10.rst:32
+msgid "VISIBILITY"
+msgstr "VISIBILITY"
+
+#: ../../infrastructure/loadbalancers/a10.rst:33
+msgid ""
+"Define Multi-Tenant visibility. **Public** allows all Tenants to see the "
+"load balancer. **Private** restricts visibility to selected Tenants."
+msgstr ""
+"Define Multi-Inquilino visibility. **Public** permite todos Inquilinos a "
+"consulte la load balancer. **Private** restricts visibility a seleccionado "
+"Inquilinos."
+
+#: ../../infrastructure/loadbalancers/a10.rst:34
+msgid "API HOST"
+msgstr "API HOST"
+
+#: ../../infrastructure/loadbalancers/a10.rst:35
+msgid "IP address or resolvable hostname of the A10 management interface."
+msgstr "IP dirección o resolvable hostname del A10 gestión interfaz."
+
+#: ../../infrastructure/loadbalancers/a10.rst:36
+msgid "API PORT"
+msgstr "API PORT"
+
+#: ../../infrastructure/loadbalancers/a10.rst:37
+msgid "Management API port (typically ``443``)."
+msgstr "Gestión API puerto (típicamente ``443``)."
+
+#: ../../infrastructure/loadbalancers/a10.rst:38
+msgid "USERNAME"
+msgstr "USERNAME"
+
+#: ../../infrastructure/loadbalancers/a10.rst:39
+msgid "API user with administrative privileges."
+msgstr "API usuario con administrative privileges."
+
+#: ../../infrastructure/loadbalancers/a10.rst:40
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+#: ../../infrastructure/loadbalancers/a10.rst:41
+msgid "API user password."
+msgstr "API usuario contraseña."
+
+#: ../../infrastructure/loadbalancers/a10.rst:42
+msgid "INTERNAL IP"
+msgstr "INTERNAL IP"
+
+#: ../../infrastructure/loadbalancers/a10.rst:43
+msgid "The internal VIP address for the load balancer."
+msgstr "El interno VIP dirección para el load balancer."
+
+#: ../../infrastructure/loadbalancers/a10.rst:44
+msgid "PUBLIC IP"
+msgstr "PUBLIC IP"
+
+#: ../../infrastructure/loadbalancers/a10.rst:45
+msgid "The external/public IP address (if applicable)."
+msgstr "El externo/público IP dirección (si corresponde)."
+
+#: ../../infrastructure/loadbalancers/a10.rst:46
+msgid "VIP ADDRESS"
+msgstr "VIP ADDRESS"
+
+#: ../../infrastructure/loadbalancers/a10.rst:47
+msgid "The Virtual IP address for load balancing traffic."
+msgstr "El Virtual IP dirección para balanceo de carga traffic."
+
+#: ../../infrastructure/loadbalancers/a10.rst:49
+msgid "VIP PORT"
+msgstr "VIP PORT"
+
+#: ../../infrastructure/loadbalancers/a10.rst:49
+msgid "The port on which the VIP listens (e.g., ``80``, ``443``)."
+msgstr "El puerto en cual el VIP listens (e.g., ``80``, ``443``)."
+
+#: ../../infrastructure/loadbalancers/a10.rst:51
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CAMBIOS`"
+
+#: ../../infrastructure/loadbalancers/a10.rst:54
+msgid "How A10 Integration Works"
+msgstr "Cómo A10 Integración Works"
+
+#: ../../infrastructure/loadbalancers/a10.rst:56
+msgid ""
+"When an Instance is added to an A10 load balancer, |morpheus| performs the "
+"following operations via the A10 aXAPI:"
+msgstr ""
+"Cuando un Instancia es agregado a un A10 load balancer, |morpheus| performs "
+"lo siguiente operaciones via el A10 aXAPI:"
+
+#: ../../infrastructure/loadbalancers/a10.rst:58
+msgid ""
+"**Server Creation** — For each container in the instance, a server object is"
+" created on the A10 with the container's IP address."
+msgstr ""
+"**Servidor Creation** — Para cada container en el instance, un servidor "
+"object es creado en el A10 con el container's IP dirección."
+
+#: ../../infrastructure/loadbalancers/a10.rst:59
+msgid ""
+"**Service Group Creation** — A service group is created containing all the "
+"servers and their designated ports."
+msgstr ""
+"**Servicio Grupo Creation** — Un servicio group es creado containing todos "
+"el servidores y su designated puertos."
+
+#: ../../infrastructure/loadbalancers/a10.rst:60
+msgid ""
+"**HTTP Template Update** — The virtual server's HTTP template is updated "
+"with host-based routing rules that direct traffic to the correct service "
+"group based on the instance's hostname."
+msgstr ""
+"**HTTP Template Update** — El virtual servidor's HTTP template es "
+"actualizado con host-based routing reglas ese direct traffic al correct "
+"servicio group basado en el instance's hostname."
+
+#: ../../infrastructure/loadbalancers/a10.rst:61
+msgid ""
+"**SSL Configuration** — If SSL is configured for the instance, certificates "
+"and keys are uploaded to the A10 and bound to the virtual server port 443."
+msgstr ""
+"**SSL Configuración** — Si SSL está configurado para el instance, "
+"certificados y claves son uploaded al A10 y bound al virtual servidor puerto"
+" 443."
+
+#: ../../infrastructure/loadbalancers/a10.rst:64
+msgid "Removing an Instance"
+msgstr "Removing un Instancia"
+
+#: ../../infrastructure/loadbalancers/a10.rst:66
+msgid ""
+"When an instance is removed from the A10 load balancer, |morpheus| reverses "
+"the operations:"
+msgstr ""
+"Cuando un instance es eliminado desde el A10 load balancer, |morpheus| "
+"reverses el operaciones:"
+
+#: ../../infrastructure/loadbalancers/a10.rst:68
+msgid "Removes host routing entries from the HTTP template"
+msgstr "Removes host routing entradas desde el HTTP template"
+
+#: ../../infrastructure/loadbalancers/a10.rst:69
+msgid "Deletes the service group"
+msgstr "Deletes el servicio group"
+
+#: ../../infrastructure/loadbalancers/a10.rst:70
+msgid "Removes individual server registrations"
+msgstr "Removes individual servidor registrations"
+
+#: ../../infrastructure/loadbalancers/a10.rst:73
+msgid "Virtual Servers"
+msgstr "Virtual Servers"
+
+#: ../../infrastructure/loadbalancers/a10.rst:75
+msgid ""
+"A10 virtual servers are automatically created when the load balancer "
+"integration is initialized. The virtual server is configured with:"
+msgstr ""
+"A10 virtual servidores son automáticamente creado cuando el load balancer "
+"integration es initialized. El virtual servidor está configurado con:"
+
+#: ../../infrastructure/loadbalancers/a10.rst:77
+msgid "The VIP address and port specified during integration setup"
+msgstr "El VIP address y port specified durante integration setup"
+
+#: ../../infrastructure/loadbalancers/a10.rst:78
+msgid "An HTTP template for host-based routing"
+msgstr "Un HTTP template para host-based routing"
+
+#: ../../infrastructure/loadbalancers/a10.rst:79
+msgid "Ports 80 and 443 with the routing template applied"
+msgstr "Ports 80 y 443 con el routing template applied"
+
+#: ../../infrastructure/loadbalancers/a10.rst:82
+msgid "SSL Certificate Management"
+msgstr "SSL Certificate Management"
+
+#: ../../infrastructure/loadbalancers/a10.rst:84
+msgid ""
+"|morpheus| can automatically manage SSL certificates on A10 load balancers:"
+msgstr ""
+"|morpheus| puede automáticamente manage SSL certificados en A10 load "
+"balancers:"
+
+#: ../../infrastructure/loadbalancers/a10.rst:86
+msgid "Certificates are uploaded as PEM files via the aXAPI"
+msgstr "Certificates son uploaded como PEM archivos via el aXAPI"
+
+#: ../../infrastructure/loadbalancers/a10.rst:87
+msgid "Private keys are uploaded separately"
+msgstr "Privado claves son uploaded separadamente"
+
+#: ../../infrastructure/loadbalancers/a10.rst:88
+msgid "Certificate bindings are applied to port 443 on the virtual server"
+msgstr "Certificate bindings son applied a puerto 443 en el virtual servidor"
+
+#: ../../infrastructure/loadbalancers/a10.rst:89
+msgid ""
+"When instances are removed, their associated certificates are cleaned up"
+msgstr ""
+"Cuando instances son eliminado, su associated certificados son cleaned up"
+
+#: ../../infrastructure/loadbalancers/a10.rst:91
+msgid ""
+"The A10 integration uses the aXAPI v3 interface. Ensure the A10 device is "
+"running ACOS 4.x or later for full compatibility."
+msgstr ""
+"El A10 integration usa el aXAPI v3 interfaz. Asegurar el A10 device está en "
+"ejecución ACOS 4.x o later para completo compatibility."
+
+#: ../../infrastructure/loadbalancers/a10.rst:94
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../infrastructure/loadbalancers/a10.rst:96
+msgid ""
+"**Connection errors** — Verify the API Host and Port are reachable from the "
+"|morpheus| appliance and that the management interface is enabled."
+msgstr ""
+"**Conexión errors** — Verificar el API Host y Port son reachable desde el "
+"|morpheus| appliance y ese el gestión interfaz está habilitado."
+
+#: ../../infrastructure/loadbalancers/a10.rst:97
+msgid ""
+"**Authentication failures** — Confirm the credentials have administrative "
+"(or at minimum, read/write) API access on the A10 device."
+msgstr ""
+"**Autenticación failures** — Confirmar el credentials tienen administrative "
+"(o en mínimo, read/write) API acceso en el A10 device."
+
+#: ../../infrastructure/loadbalancers/a10.rst:98
+msgid ""
+"**SSL upload failures** — Ensure the certificate and key are in valid PEM "
+"format."
+msgstr ""
+"**SSL upload failures** — Asegurar el certificado y clave son en válido PEM "
+"format."

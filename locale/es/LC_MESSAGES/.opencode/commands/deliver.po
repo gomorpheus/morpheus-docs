@@ -1,0 +1,647 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/deliver.md:4
+msgid ""
+"Route this delivery request to the `feature-delivery-lead` agent for "
+"execution."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:6
+msgid ""
+"Be the `feature-delivery-lead` agent. Load the `context-injection` skill "
+"before starting."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:8
+msgid ""
+"**Before starting work**, emit a `hero next ask` capturing what the user "
+"asked for. This preserves session intent across compaction — see the "
+"`next-handoff-emit` skill for the full pattern (ask / suggest / "
+"reflection)."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:12
+msgid "Delivery modes"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:14
+msgid ""
+"Parse the mode from the user's invocation. If no mode is specified, "
+"default to **supervised**."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid "Flag"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid "Behavior"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid "`--supervised` (default)"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid ""
+"Pause at handoffs, surface decisions, ask before destructive actions. "
+"Current behavior."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid "`--autopilot`"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid ""
+"Run to completion without intermediate confirmations. Stop only on test "
+"failure, drift warning, boundary violation, or any non-`DONE` Completion "
+"Ledger item (PARTIAL, SKIPPED, BLOCKED)."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid "`--dry-run`"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md
+msgid ""
+"Run analysis and planning. Produce a delivery plan (file list, agent "
+"assignments, estimated changes) but write NO code."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:23
+msgid "Autopilot mode"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:25
+msgid ""
+"Suppress confirmation prompts during the delivery loop. Check `hero "
+"drift` after implementation, run tests if a runner is configured, "
+"validate the engineer's **Completion Ledger** against the spec, and:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:28
+msgid ""
+"**PARTIAL rows:** loop back to the engineer with instructions to finish "
+"them. Do not halt. Only escalate if a second pass returns PARTIAL on the "
+"same row with a specific written obstacle."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:31
+msgid "**SKIPPED / BLOCKED rows:** halt and surface — these need user judgment."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:32
+msgid "**Test failure / drift warning / boundary violation:** halt and surface."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:34
+msgid ""
+"If `--halt-on` is provided (comma-separated: `drift`, `test`, `boundary`,"
+" `lint`, `ledger`), only halt on those specific conditions."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:37
+msgid ""
+"Persistence rule (`agent-reliability` — \"Persistence on continuous "
+"tasks\") applies: do not yield between phases unless a true blocker "
+"fires. PARTIAL is NOT a blocker — finish the work. SKIPPED and BLOCKED "
+"ARE blockers — halt and surface. \"This is taking a while\" is NOT."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:42
+msgid "Dry-run mode"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:44
+msgid "Produce a plan at `.hero/planning/features/<slug>/plan.md`:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:46
+msgid ""
+"# Delivery plan — <slug>\n"
+"Generated: <timestamp>\n"
+"Mode: dry-run\n"
+"\n"
+"## Tasks (sequenced)\n"
+"1. [specialist] description → target-file (~N lines)\n"
+"2. ...\n"
+"\n"
+"## Risks\n"
+"- boundary checks, drift baseline, potential conflicts\n"
+"\n"
+"## Estimated complexity\n"
+"~N lines, N specialist handoffs, ~N minutes wall time\n"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:62
+msgid "Do NOT write any source files. The plan file is the only output."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:64
+msgid "Batch mode"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:66
+msgid ""
+"If the user asks to fix/deliver multiple specs (e.g. \"fix the researched"
+" bugs\", \"deliver the 5 planned features\"):"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:68
+msgid ""
+"Run `hero search --list --type bug --status planning` (or the appropriate"
+" type/status) to find candidate specs"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:69
+msgid ""
+"Filter to specs that have a `## Suggested Fix Approach` or `## Changes` "
+"section — these are the ones with a plan ready to execute"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:70
+msgid ""
+"Present the list to the user for confirmation: \"Found N specs ready to "
+"deliver: [list]. Proceeding with all of them sequentially.\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:71
+msgid "**Work through them sequentially, one at a time.** Each fix:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:72
+msgid "Read the spec and its fix plan"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:73
+msgid "Implement the fix"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:74
+msgid "Run tests / build to verify"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:75
+msgid ""
+"Require a **Completion Ledger** from the engineer covering every "
+"acceptance criterion and Changes item (see `engineer.md` — \"Closing "
+"output\"). Validate it against the spec."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:76
+msgid "Commit with a message referencing the spec slug and tracker ID"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:77
+msgid ""
+"Only set `status: completed` if the ledger is fully `DONE`. PARTIAL rows "
+"are sent back to the engineer to finish (see \"Validate the Completion "
+"Ledger\" above); SKIPPED / BLOCKED rows halt and surface — do not flip "
+"status without sign-off. `hero spec verify` or the async runner will "
+"auto-archive completed specs to specs/."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:78
+msgid "Post results to tracker if configured"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:79
+msgid "**One commit per fix** — each fix is atomic and independently revertable"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:80
+msgid ""
+"If a fix fails tests or creates problems, skip it, note the issue in the "
+"spec, and move to the next one"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:81
+msgid "At the end, summarize: N fixed, N skipped (with reasons)"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:83
+msgid ""
+"**Do not parallelize fixes** — they may touch overlapping code and create"
+" conflicts. Sequential delivery ensures each fix builds on a clean, "
+"tested codebase."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:85
+msgid "Queue mode"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:87
+msgid ""
+"When the user says \"deliver these while I'm away\", \"queue these up\", "
+"or provides a list of slugs with `--autopilot`:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:90
+msgid "Validate all specs are ready (have Changes section, pass quality gate)"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:91
+msgid "Sort by dependency order using `hero_sequence`"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:92
+msgid ""
+"Show the queue and get one confirmation: \"Will deliver N specs in order:"
+" [list]. Mode: autopilot. I'll halt on test failures, boundary "
+"violations, or non-`DONE` Completion Ledger items.\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:95
+msgid "Execute sequentially using the autopilot flow for each"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:96
+msgid ""
+"Between each spec: run `hero drift`, run tests, validate the Completion "
+"Ledger, commit atomically"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:98
+msgid ""
+"If a spec returns PARTIAL rows: loop the engineer to finish them before "
+"moving on — do not move to the next spec with PARTIAL rows unhandled. If "
+"a spec returns SKIPPED / BLOCKED rows or a test/drift failure: log the "
+"failure, skip the spec (do NOT flip to `completed`), continue with the "
+"next."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:103
+msgid ""
+"At the end: summary of delivered (fully `DONE`), halted (with SKIPPED / "
+"BLOCKED rows for user judgment), and failed (with reasons). PARTIAL "
+"should not appear in the final summary — it should have been resolved in "
+"step 6."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:108
+msgid "Single spec mode"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:110
+msgid ""
+"For a single spec delivery, follow the standard pre-flight and delivery "
+"workflow as the `feature-delivery-lead` agent."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:112
+#, python-brace-format
+msgid ""
+"**Pre-flight — check for mockups.** Before delegating to the engineer, "
+"check whether `.hero/mocks/{slug}/` exists for the spec being delivered. "
+"If it does, list the file paths inside it in the kickoff context handed "
+"to the engineer (e.g. \"Mockups available for this spec: "
+"`.hero/mocks/{slug}/index.html` — read if a visual reference helps.\"). "
+"Don't render or quote the HTML; let the engineer open it if useful. The "
+"same check applies in batch and queue modes — surface mockup paths in the"
+" kickoff for each spec."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:114
+msgid "At the end of the delivery loop:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:116
+msgid ""
+"**Check for drift** — verify the implementation matches the spec. Address"
+" any divergence before moving on."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:118
+msgid ""
+"**Verify and expand test coverage** — confirm every acceptance criterion "
+"has a corresponding test. When fixing a bug, add a regression test that "
+"reproduces the original failure. Look at the code you touched and the "
+"code around it — if adjacent functions or modules lack test coverage, add"
+" tests for them too. Match the project's existing test patterns and "
+"framework. The goal is to leave coverage better than you found it."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:124
+msgid ""
+"**Run the test suite** — make sure everything passes, including the tests"
+" you just wrote and any existing tests for the affected area."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:126
+msgid ""
+"**Link tests to criteria** — connect each new test back to the acceptance"
+" criterion it verifies so regressions are traceable."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:128
+msgid ""
+"**Validate the Completion Ledger** — the engineer's closing artifact (see"
+" `engineer.md` — \"Closing output\") enumerates every acceptance "
+"criterion and every `## Changes` item with a `DONE` / `PARTIAL` / "
+"`SKIPPED` / `BLOCKED` status. Before flipping spec status:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:132
+msgid "Confirm every acceptance criterion and every Changes item has a row."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:133
+msgid ""
+"Cross-check each `DONE` against actual code and test evidence on disk. "
+"Challenge performative `DONE` marks; downgrade rows that lack evidence."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:135
+msgid ""
+"For user-visible behavior, confirm the Exercise-the-feature check is "
+"populated — unit tests alone are not sufficient evidence."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:137
+msgid ""
+"**PARTIAL is not an acceptable end state — finish the work.** PARTIAL "
+"means the engineer ran out of time, energy, or attention, not that the "
+"work is intrinsically un-doable. Do NOT ask the user \"ship as-is or "
+"chase these down?\" — the standing answer is *chase them down*. Send the "
+"ledger back to the engineer with the PARTIAL rows and explicit "
+"instructions to complete them, then re-validate. Only after a second pass"
+" *still* returns PARTIAL on the same row — with a written reason that "
+"names a specific obstacle (not \"minor polish,\" not \"low value\") — may"
+" you surface it to the user. The bar: would a careful engineer reading "
+"this spec next week consider the work finished? If no, keep working."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:148
+msgid ""
+"**SKIPPED and BLOCKED** are legitimate human-judgment escalations. "
+"SKIPPED needs the user's call on scope; BLOCKED names a real external "
+"obstacle. Surface these with the specific row, the engineer's stated "
+"reason, and a concrete recommendation — not an open-ended question."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:152
+msgid ""
+"Do NOT flip to `completed` while any row remains non-`DONE`. In autopilot"
+" mode, PARTIAL re-enters the engineer loop automatically; SKIPPED / "
+"BLOCKED halt the run."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:155
+msgid ""
+"**Cold audit pass** — once the ledger is fully `DONE` (or non-`DONE` rows"
+" have explicit user sign-off), spawn a **fresh** subagent to audit the "
+"delivery before you flip status. This is the second set of eyes the lead "
+"cannot be, because the lead watched the work happen."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:160
+msgid ""
+"Invoke a general-purpose subagent with the `delivery-audit` skill loaded."
+" Hand it ONLY artifacts on disk — no commentary, no framing, no \"this "
+"looks good to me\":"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:163
+msgid "Spec path (absolute)"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:164
+msgid "Diff command (`git diff <base>...HEAD` or equivalent)"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:165
+msgid "The engineer's Completion Ledger, verbatim"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:166
+msgid "Test evidence (paths to test output, exercise notes)"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:168
+msgid "The audit writes a durable report file to disk and returns three blocks:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:170
+msgid ""
+"`<AUDIT_VERDICT>` — verdict (SHIP/HOLD), surface (noteworthy/clean), "
+"confidence, report_path"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:172
+msgid ""
+"`<AUDIT_HEADLINE>` — **always populated**, the delivery receipt: AC "
+"count, audit verdict, report path, then a **New files** table, a "
+"**Modified files** table (each with a one-line description of what each "
+"file does or what changed), and a **Tests** summary"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:176
+msgid ""
+"`<AUDIT_HIGHLIGHTS>` — populated when surface=noteworthy or verdict=HOLD;"
+" 1–5 bullets naming specific concerns"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:179
+msgid "Route based on the verdict:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:181
+msgid ""
+"**HOLD** → do NOT flip to `completed`. Read the highlights and the report"
+" file, route the specific concerns back to the engineer to address, re-"
+"validate the ledger, re-run the audit. **Bounded retry:** if the same row"
+" returns HOLD after 2 engineer passes, stop looping and escalate to the "
+"user with the auditor's concerns and a concrete recommendation. Do not "
+"grind indefinitely — a row that resists two focused passes usually needs "
+"human judgment (the spec was wrong, the approach was wrong, or a "
+"dependency is missing). Surface that, don't paper over it."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:190
+msgid ""
+"**SHIP + noteworthy** → quote the full `<AUDIT_HEADLINE>` (file tables "
+"and all) AND the `<AUDIT_HIGHLIGHTS>` bullets in your final response. "
+"Link to the full report at `report_path`. Proceed to step 7."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:194
+msgid ""
+"**SHIP + clean** → quote the full `<AUDIT_HEADLINE>` (file tables and "
+"all) in your final response. The receipt is earned signal on every "
+"delivery — do NOT collapse it to a one-liner. What you skip on a clean "
+"SHIP is the highlights block (because there's nothing to flag), not the "
+"inventory. Proceed to step 7."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:200
+msgid "**What's always shown vs. conditional:**"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:201
+msgid ""
+"**Always:** the full headline — what landed, file-by-file, plus test "
+"summary. This is the durable delivery receipt the user reads on every "
+"delivery; it's the only scannable record of what changed without diving "
+"into the diff."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:205
+msgid ""
+"**Conditional (only when noteworthy or HOLD):** highlights — downgrades, "
+"soft skips, concerns the auditor wants the user's eyes on."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:208
+msgid ""
+"**Always written to disk, linked from chat:** the full report file for "
+"when the user wants depth (evidence, line numbers, full reasoning)."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:212
+msgid ""
+"The signal-preservation rule is: make **highlights** conditional, not the"
+" inventory. A clean SHIP still gets the full file table — that's the "
+"point of running the audit."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:216
+msgid ""
+"Do not skip this step in supervised mode. The cost is one subagent call; "
+"the value is catching performative `DONE` rows AND producing a durable "
+"delivery record."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:219
+msgid ""
+"**Refresh the kickoff** — when status flips (planning → delivering, "
+"delivering → completed) or after meaningful chunks land, rewrite the "
+"spec's `## Kickoff` section so \"Pick up at:\" reflects *now*, not \"two "
+"commits ago.\" Follow the `kickoff-prompt` skill. After mutating the "
+"spec, run `hero index --if-stale -q` so the new state surfaces in `hero "
+"search` / `hero list` / `hero_*` MCP tools immediately. The pre-commit "
+"hook will refresh `.hero/QUEUE.md` automatically; if you're not "
+"committing right away, run `hero queue write -q` to refresh the snapshot "
+"manually."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:228
+msgid ""
+"**Suggest what's next** — your final response to the user must end with a"
+" concrete \"Next up\" suggestion. Not a list of options to choose from, "
+"not \"let me know what you want to do\" — a single recommended next move,"
+" named specifically. Examples:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:233
+msgid ""
+"\"Next up: deliver `<dep-slug>` — it's the only remaining blocker on "
+"`<parent-slug>`.\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:235
+msgid ""
+"\"Next up: open the PR for this branch (`gh pr create`) and request "
+"review from the team.\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:237
+msgid ""
+"\"Next up: run `/diagnose <bug-slug>` — it's the highest-severity bug in "
+"the queue and touches code adjacent to what we just changed.\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:239
+msgid ""
+"\"Next up: take a break — the active spec list is empty and the queue is "
+"healthy.\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:242
+msgid ""
+"Use `hero_kickoff` or `hero_pulse` to inform the suggestion if you're "
+"uncertain. Always emit the suggestion via the `next-handoff-emit` pattern"
+" so it lands in `.hero/NEXT.md` and the per-user handoff file — that way "
+"the next session resumes with the same recommendation visible from the "
+"first prompt."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:248
+msgid ""
+"When delivery is complete and the Completion Ledger is fully `DONE` (or "
+"non-`DONE` rows have explicit user sign-off), set the spec's `status: "
+"completed` in the frontmatter and run `hero spec verify <slug>` — verify "
+"auto-archives a completed spec to `.hero/specs/<slug>/`, so you don't "
+"need a separate `hero spec complete` step. The async runner does the same"
+" auto-archive at the tail of every successful agent delivery."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:255
+msgid ""
+"Do not hand-write `completed_at:` when you flip the status — `hero spec "
+"verify` stamps the canonical timestamp automatically (RFC 3339 UTC) so "
+"downstream consumers like the Sprint Dashboard read an authoritative "
+"value. Hand-writing the field is harmless (idempotent) but unnecessary."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:260
+msgid ""
+"The Completion Ledger replaces the older \"implementation summary\" "
+"pattern. Soft prose summaries that gloss skipped or partial work are "
+"explicitly out — the ledger is the artifact of record."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:264
+msgid "Spec-to-PR linking"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:266
+msgid ""
+"After completing delivery, if the work was committed on a branch with an "
+"open PR (check with `gh pr view` or equivalent), annotate the PR:"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:269
+msgid ""
+"Add a comment linking back to the spec: \"Delivered from Hero spec: "
+"`<slug>` — <title>\""
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:270
+msgid "If the spec has a `tracker_id`, mention it in the PR description"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:271
+msgid ""
+"If a tracker is configured, use `hero_claim` to update the tracker issue "
+"with the PR link"
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:274
+msgid "This closes the spec→code→PR chain so reviewers can trace requirements."
+msgstr ""
+
+#: ../../.opencode/commands/deliver.md:276
+msgid "Spec or work item: $ARGUMENTS"
+msgstr ""
+

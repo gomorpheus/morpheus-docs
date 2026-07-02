@@ -1,0 +1,1222 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:2
+msgid "OpenSearch Configuration"
+msgstr "OpenSearch Configuration"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:4
+msgid ""
+"Starting with |morpheus| 8.1.0, the embedded search service changes from "
+"Elasticsearch to OpenSearch. All HPE Morpheus VM Essentials Software "
+"versions already use OpenSearch — this change only affects |morpheus| "
+"appliance upgrades. Hewlett Packard Enterprise continues to support both "
+"Elasticsearch and OpenSearch for external clusters."
+msgstr ""
+"Starting con |morpheus| 8.1.0, the embedded search service changes desde "
+"Elasticsearch to OpenSearch. All HPE Morpheus VM Essentials Software "
+"versions already use OpenSearch — this change solo affects |morpheus| "
+"appliance upgrades. Hewlett Packard Enterprise continues to support ambos "
+"Elasticsearch y OpenSearch for externo clusters."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:6
+msgid "During upgrade, the reconfigure process will:"
+msgstr "During upgrade, the reconfigure process will:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:8
+msgid "Automatically disable the old Elasticsearch service"
+msgstr "Automatically disable the old Elasticsearch service"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:9
+msgid "Start OpenSearch in its place"
+msgstr "Start OpenSearch in its place"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:10
+msgid ""
+"Migrate the Elasticsearch PKCS12 CA to PEM format if ``secure_mode`` is "
+"enabled"
+msgstr ""
+"Migrate the Elasticsearch PKCS12 CA to PEM format if ``secure_mode`` está "
+"habilitado"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:12
+msgid ""
+"No changes to ``/etc/morpheus/morpheus.rb`` are required. Existing "
+"``elasticsearch[...]`` settings are bridged to the ``opensearch`` "
+"namespace automatically (see Notes for details on key precedence)."
+msgstr ""
+"No changes to ``/etc/morpheus/morpheus.rb`` son obligatorios. Existing "
+"``elasticsearch[...]`` settings are bridged a la ``opensearch`` namespace "
+"automatically (see Notes for details on key precedence)."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:14
+msgid ""
+"Data (indices) must be migrated separately using ``morpheus-ctl migrate-"
+"elasticsearch`` (see upgrade sections below, or run ``morpheus-ctl "
+"migrate-elasticsearch help`` on an appliance after upgrade for more "
+"info)."
+msgstr ""
+"Data (indices) debe ser migrated separately using ``morpheus-ctl "
+"migrate-elasticsearch`` (see upgrade sections below, o run ``morpheus-ctl "
+"migrate-elasticsearch help`` on an appliance después de upgrade for more "
+"info)."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:17
+msgid "What the Settings Control"
+msgstr "What the Settings Control"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:23
+msgid "Setting"
+msgstr "Setting"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:24
+msgid "opensearch.yml"
+msgstr "opensearch.yml"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:25
+msgid "Purpose"
+msgstr "Purpose"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:26
+msgid "``enable``"
+msgstr "``enable``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:27
+#: ../../getting_started/requirements/opensearch_configuration.rst:48
+#: ../../getting_started/requirements/opensearch_configuration.rst:51
+#: ../../getting_started/requirements/opensearch_configuration.rst:54
+msgid "—"
+msgstr "—"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:28
+msgid ""
+"Enable/disable the embedded OpenSearch service. Set to ``false`` when "
+"using an external cluster. Default ``true``."
+msgstr ""
+"Enable/disable the embedded OpenSearch service. Set to ``false`` when "
+"using an externo cluster. Default ``true``."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:29
+msgid "``es_hosts``"
+msgstr "``es_hosts``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:30
+msgid "``cluster.initial_master_nodes``, ``discovery.seed_hosts``"
+msgstr "``cluster.initial_master_nodes``, ``discovery.seed_hosts``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:31
+msgid ""
+"Cluster membership and discovery. For external clusters, lists the "
+"external hosts."
+msgstr ""
+"Cluster membership y discovery. For externo clusters, lists the externo "
+"hosts."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:32
+msgid "``node_name``"
+msgstr "``node_name``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:33
+msgid "``node.name``"
+msgstr "``node.name``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:34
+msgid "Unique name for this node within the cluster."
+msgstr "Unique name for this node dentro de el clúster."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:35
+msgid "``host``"
+msgstr "``host``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:36
+msgid "``network.host`` or ``network.bind_host``"
+msgstr "``network.host`` o ``network.bind_host``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:37
+msgid ""
+"Interface to bind to. Default ``127.0.0.1``. Set to ``0.0.0.0`` for "
+"cluster use."
+msgstr ""
+"Interface to bind to. Default ``127.0.0.1``. Set to ``0.0.0.0`` for "
+"cluster use."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:38
+msgid "``publish_ip``"
+msgstr "``publish_ip``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:39
+msgid "``network.publish_host``"
+msgstr "``network.publish_host``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:40
+msgid ""
+"The IP other nodes use to reach this node. Falls back to Ohai's "
+"``node['ipaddress']`` if not set."
+msgstr ""
+"The IP other nodes use to reach this node. Falls back to Ohai's "
+"``node['ipaddress']`` if not set."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:41
+msgid "``secure_mode``"
+msgstr "``secure_mode``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:42
+msgid "``plugins.security.disabled: false``, TLS config"
+msgstr "``plugins.security.disabled: false``, TLS config"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:43
+msgid ""
+"Enables TLS on HTTP and transport layers, generates certs, runs "
+"securityadmin.sh."
+msgstr ""
+"Enables TLS on HTTP y transport layers, generates certs, runs "
+"securityadmin.sh."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:44
+msgid "``cluster``"
+msgstr "``cluster``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:45
+msgid "``cluster.name``"
+msgstr "``cluster.name``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:46
+msgid "Cluster name. Defaults to ``morpheus``. Must be the same on all nodes."
+msgstr "Cluster name. Defaults to ``morpheus``. Must be the same on all nodes."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:47
+msgid "``use_tls``"
+msgstr "``use_tls``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:49
+msgid ""
+"Connect to OpenSearch over HTTPS. Automatically set to ``true`` when "
+"``secure_mode`` is enabled on the embedded service. Set manually for "
+"external TLS clusters."
+msgstr ""
+"Connect to OpenSearch over HTTPS. Automatically set to ``true`` when "
+"``secure_mode`` está habilitado on the embedded service. Set manually for "
+"externo TLS clusters."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:50
+msgid "``auth_user``"
+msgstr "``auth_user``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:52
+msgid ""
+"Username for Morpheus to authenticate with OpenSearch. Used for external "
+"clusters. When nil and ``secure_mode`` is enabled, the auto-created "
+"``morpheus`` internal user is used."
+msgstr ""
+"Username for Morpheus to authenticate con OpenSearch. Used for external "
+"clusters. When nil y ``secure_mode`` está habilitado, the auto-created "
+"``morpheus`` internal user is used."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:53
+msgid "``auth_password``"
+msgstr "``auth_password``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:55
+msgid "Password for ``auth_user``. Used for external clusters."
+msgstr "Password for ``auth_user``. Used for externo clusters."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:56
+msgid "``replica_count``"
+msgstr "``replica_count``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:57
+msgid "``numberOfReplicas``"
+msgstr "``numberOfReplicas``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:58
+msgid ""
+"Number of index replicas. Default ``1``. Set to ``0`` for single-node "
+"deployments."
+msgstr ""
+"Number of index replicas. Default ``1``. Set to ``0`` for single-node "
+"deployments."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:59
+msgid "``admin_dn``"
+msgstr "``admin_dn``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:60
+msgid "``plugins.security.authcz.admin_dn``"
+msgstr "``plugins.security.authcz.admin_dn``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:61
+msgid ""
+"Distinguished name for the admin certificate. Defaults to "
+"``O=Morpheus,OU=Ops,CN=<node_name>``."
+msgstr ""
+"Distinguished name for the admin certificate. Defaults to "
+"``O=Morpheus,OU=Ops,CN=<node_name>``."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:62
+msgid "``nodes_dn``"
+msgstr "``nodes_dn``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:63
+msgid "``plugins.security.nodes_dn``"
+msgstr "``plugins.security.nodes_dn``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:64
+msgid ""
+"Distinguished name for trusted node certificates. Defaults to "
+"``O=Morpheus,OU=Ops,CN=<node_name>``."
+msgstr ""
+"Distinguished name for trusted node certificates. Defaults to "
+"``O=Morpheus,OU=Ops,CN=<node_name>``."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:67
+msgid "Ports"
+msgstr "Puertos"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:69
+msgid ""
+"For embedded clusters, ensure the following ports are open between all "
+"cluster nodes:"
+msgstr ""
+"For embedded clusters, ensure lo siguiente ports are open entre all "
+"cluster nodes:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:71
+msgid "**9200** — HTTP (client queries)"
+msgstr "**9200** — HTTP (client queries)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:72
+msgid "**9300** — Transport (inter-node communication and cluster formation)"
+msgstr "**9300** — Transport (inter-node communication y cluster formation)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:75
+msgid "Notes"
+msgstr "Notas"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:77
+msgid ""
+"You can use either ``elasticsearch[...]`` or ``opensearch[...]`` keys in "
+"``morpheus.rb``. The ``elasticsearch`` keys are bridged to ``opensearch``"
+" automatically. If the same key is set under both namespaces, the "
+"``opensearch[...]`` value takes precedence."
+msgstr ""
+"You can use either ``elasticsearch[...]`` o ``opensearch[...]`` keys in "
+"``morpheus.rb``. The ``elasticsearch`` keys are bridged to ``opensearch`` "
+"automatically. If the same key is set under both namespaces, the "
+"``opensearch[...]`` value takes precedence."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:78
+msgid ""
+"The reconfigure strips ``127.0.0.1`` from ``es_hosts`` when more than one"
+" host is present, so you don't need to exclude it."
+msgstr ""
+"The reconfigure strips ``127.0.0.1`` desde ``es_hosts`` when more than one "
+"host is present, so you don't necesita exclude it."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:79
+msgid ""
+"In secure mode, ``admin_dn`` and ``nodes_dn`` default to "
+"``O=Morpheus,OU=Ops,CN=<node_name>`` and are set automatically per node. "
+"These only need to be overridden when using custom certificates (see "
+"below)."
+msgstr ""
+"In secure mode, ``admin_dn`` y ``nodes_dn`` predeterminado to "
+"``O=Morpheus,OU=Ops,CN=<node_name>`` y are set automatically per node. "
+"These only necesita be overridden when using personalizado certificates "
+"(see below)."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:82
+msgid "Custom Certificates (admin_dn and nodes_dn)"
+msgstr "Custom Certificates (admin_dn y nodes_dn)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:84
+msgid ""
+"When using your own certificates instead of the auto-generated ones, set "
+"``admin_dn`` and ``nodes_dn`` to match the subject DN of your "
+"certificates. These values map to ``plugins.security.authcz.admin_dn`` "
+"and ``plugins.security.nodes_dn`` in ``opensearch.yml``."
+msgstr ""
+"When using your own certificates instead of the auto-generated ones, set "
+"``admin_dn`` y ``nodes_dn`` to match the subject DN of your certificates. "
+"These values map to ``plugins.security.authcz.admin_dn`` y "
+"``plugins.security.nodes_dn`` in ``opensearch.yml``."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:86
+msgid ""
+"``admin_dn`` — Identifies the certificate authorized to run "
+"administrative operations (e.g., ``securityadmin.sh``). Only requests "
+"signed by a certificate matching this DN can modify the security index."
+msgstr ""
+"``admin_dn`` — Identifies the certificate authorized to run administrative "
+"operations (e.g., ``securityadmin.sh``). Only requests signed by a "
+"certificate matching this DN can modify the security index."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:87
+msgid ""
+"``nodes_dn`` — Identifies certificates trusted for inter-node transport "
+"communication. Nodes will reject transport connections from certificates "
+"that don't match."
+msgstr ""
+"``nodes_dn`` — Identifies certificates trusted for inter-node transport "
+"communication. Nodes will reject transport connections desde certificates "
+"that don't match."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:89
+msgid "To extract the subject DN from an existing certificate:"
+msgstr "To extract the subject DN desde an existente certificate:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:91
+msgid "openssl x509 -in /path/to/cert.pem -noout -subject -nameopt RFC2253"
+msgstr "openssl x509 -in /path/to/cert.pem -noout -subject -nameopt RFC2253"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:95
+msgid "Set the values in ``/etc/morpheus/morpheus.rb`` on each node:"
+msgstr "Set the values in ``/etc/morpheus/morpheus.rb`` on cada nodo:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:97
+msgid ""
+"opensearch['admin_dn'] = 'CN=admin,OU=MyTeam,O=MyOrg'\n"
+"opensearch['nodes_dn'] = 'CN=node,OU=MyTeam,O=MyOrg'"
+msgstr ""
+"opensearch['admin_dn'] = "
+"'CN=admin,OU=MyTeam,O=MyOrg'\\nopensearch['nodes_dn'] = "
+"'CN=node,OU=MyTeam,O=MyOrg'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:102
+msgid ""
+"If the admin and node certificates share the same DN (common when a "
+"single wildcard or shared cert is used), both values can be set to the "
+"same string. With the default auto-generated certificates, these are set "
+"to ``O=Morpheus,OU=Ops,CN=<node_name>`` per node and do not need to be "
+"configured manually."
+msgstr ""
+"If the admin y node certificates share the same DN (common when a single "
+"wildcard o shared cert is used), both values puede ser set to the same "
+"string. With the predeterminado auto-generated certificates, these are set "
+"to ``O=Morpheus,OU=Ops,CN=<node_name>`` per node y do not necesita be "
+"configurado manually."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:105
+msgid "Setting the Morpheus User Password"
+msgstr "Setting the Morpheus User Password"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:107
+msgid ""
+"When ``secure_mode`` is enabled, reconfigure creates an internal "
+"OpenSearch user named ``morpheus`` that |morpheus| uses to authenticate "
+"with OpenSearch. The password for this user is auto-generated and stored "
+"in ``/etc/morpheus/morpheus-secrets.json`` under the "
+"``elasticsearch.morpheus_password`` key. No manual configuration is "
+"needed in the default case."
+msgstr ""
+"When ``secure_mode`` está habilitado, reconfigure creates an interno "
+"OpenSearch user named ``morpheus`` that |morpheus| uses to authenticate "
+"con OpenSearch. The password for this user is auto-generated y stored in "
+"``/etc/morpheus/morpheus-secrets.json`` under the "
+"``elasticsearch.morpheus_password`` key. No manual configuration is needed "
+"in the predeterminado case."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:109
+msgid ""
+"To set a custom password, add it to ``/etc/morpheus/morpheus.rb`` on each"
+" node:"
+msgstr ""
+"To set a personalizado password, add it to ``/etc/morpheus/morpheus.rb`` "
+"on cada nodo:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:111
+msgid "opensearch['morpheus_password'] = 'my-custom-password'"
+msgstr "opensearch['morpheus_password'] = 'my-custom-password'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:116
+msgid "Encrypting the Password"
+msgstr "Encrypting the Password"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:118
+#, python-brace-format
+msgid ""
+"Passwords in ``morpheus.rb`` can be stored in encrypted form using the "
+"``ENC{...}`` wrapper. During reconfigure, the recipe detects the ``ENC`` "
+"prefix and decrypts the value automatically. Plaintext values are used "
+"as-is."
+msgstr ""
+"Passwords in ``morpheus.rb`` puede ser stored in encrypted form using the "
+"``ENC{...}`` wrapper. During reconfigure, the recipe detects the ``ENC`` "
+"prefix y decrypts the value automatically. Plaintext values are used "
+"as-is."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:120
+msgid "To generate an encrypted string:"
+msgstr "To generate an encrypted string:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:122
+msgid "morpheus-ctl get-crypto-string string 'my-custom-password'"
+msgstr "morpheus-ctl get-crypto-string string 'my-custom-password'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:126
+msgid "This outputs an encrypted value that can be used in ``morpheus.rb``:"
+msgstr "This outputs an encrypted value that puede ser used in ``morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:128
+#, python-brace-format
+msgid "opensearch['morpheus_password'] = 'ENC{aBcDeFgHiJkLmNoPqRsTuVwXyZ...}'"
+msgstr "opensearch['morpheus_password'] = 'ENC{aBcDeFgHiJkLmNoPqRsTuVwXyZ...}'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:132
+msgid ""
+"The encryption uses the appliance's ``encryption_key_suffix`` (from "
+"``/etc/morpheus/morpheus-secrets.json``), so the encrypted value is "
+"specific to that appliance. All nodes in the cluster share the same "
+"secrets file contents, so the same encrypted string works on all nodes."
+msgstr ""
+"The encryption uses the appliance's ``encryption_key_suffix`` (from "
+"``/etc/morpheus/morpheus-secrets.json``), so the encrypted value is "
+"specific to that appliance. All nodes en la cluster share the same secrets "
+"file contents, so the same encrypted string works on all nodes."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:134
+msgid ""
+"Any password setting in ``morpheus.rb`` supports this format (under "
+"either the ``opensearch[...]`` or ``elasticsearch[...]`` namespace), "
+"including ``morpheus_password`` and ``auth_password``. As with other "
+"settings, ``opensearch[...]`` takes precedence over "
+"``elasticsearch[...]`` if both are set."
+msgstr ""
+"Any password setting in ``morpheus.rb`` supports this format (under either "
+"the ``opensearch[...]`` o ``elasticsearch[...]`` namespace), including "
+"``morpheus_password`` y ``auth_password``. As con other settings, "
+"``opensearch[...]`` takes precedence over ``elasticsearch[...]`` if both "
+"are set."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:137
+msgid "Single Node"
+msgstr "Nodo único"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:139
+msgid ""
+"A single-node setup uses the embedded OpenSearch service with default "
+"settings. No ``morpheus.rb`` changes are required unless enabling secure "
+"mode."
+msgstr ""
+"A single-node setup uses the embedded OpenSearch service con default "
+"settings. No ``morpheus.rb`` changes son obligatorios unless enabling "
+"secure mode."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:142
+msgid "Single Node — Fresh Install"
+msgstr "Nodo único — Fresh Install"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:144
+msgid ""
+"The embedded OpenSearch service starts automatically after the initial "
+"reconfigure. No configuration is needed:"
+msgstr ""
+"The embedded OpenSearch service starts automatically after the initial "
+"reconfigure. No configuration is needed:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:146
+#: ../../getting_started/requirements/opensearch_configuration.rst:176
+#: ../../getting_started/requirements/opensearch_configuration.rst:257
+#: ../../getting_started/requirements/opensearch_configuration.rst:284
+#: ../../getting_started/requirements/opensearch_configuration.rst:336
+#: ../../getting_started/requirements/opensearch_configuration.rst:416
+#: ../../getting_started/requirements/opensearch_configuration.rst:440
+msgid "morpheus-ctl reconfigure"
+msgstr "morpheus-ctl reconfigure"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:150
+msgid "To enable secure mode, add to ``/etc/morpheus/morpheus.rb``:"
+msgstr "To enable secure mode, add to ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:152
+msgid "opensearch['secure_mode'] = true"
+msgstr "opensearch['secure_mode'] = true"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:157
+msgid "Single Node — Upgrading from Elasticsearch"
+msgstr "Nodo único — Upgrading desde Elasticsearch"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:159
+#: ../../getting_started/requirements/opensearch_configuration.rst:345
+#: ../../getting_started/requirements/opensearch_configuration.rst:432
+msgid "**Step 1 — Upgrade the Morpheus package**"
+msgstr "**Step 1 — Upgrade the Morpheus package**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:161
+msgid "Install the new |morpheus| package. Do **NOT** run reconfigure yet."
+msgstr "Install el nuevo |morpheus| package. Do **NOT** run reconfigure yet."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:163
+msgid "**Step 2 — Run the migration script**"
+msgstr "**Step 2 — Run the migration script**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:165
+msgid ""
+"For single-node Morpheus appliances, the migration script handles "
+"everything automatically. Run ``sudo morpheus-ctl migrate-"
+"elasticsearch``. This script does the following:"
+msgstr ""
+"For single-node Morpheus appliances, the migration script handles "
+"everything automatically. Run ``sudo morpheus-ctl migrate-elasticsearch``. "
+"This script does lo siguiente:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:167
+msgid ""
+"Start a temporary Elasticsearch instance using the preserved ES "
+"installation"
+msgstr ""
+"Start a temporary Elasticsearch instance using the preserved ES "
+"installation"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:168
+msgid ""
+"Reset voting configuration if needed (for nodes which were previously "
+"part of a cluster)"
+msgstr ""
+"Reset voting configuration si es necesario (for nodes which were "
+"anteriormente part of a cluster)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:169
+msgid "Set replicas to 0 for single-node operation"
+msgstr "Set replicas to 0 for single-node operation"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:170
+msgid "Export all indices to JSON files"
+msgstr "Export all indices to JSON files"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:171
+msgid "Import into OpenSearch"
+msgstr "Import en OpenSearch"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:172
+msgid "Stop the temporary ES cluster"
+msgstr "Stop the temporary ES cluster"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:174
+msgid "**Step 3 — Reconfigure**"
+msgstr "**Step 3 — Reconfigure**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:180
+msgid ""
+"The old Elasticsearch service is disabled automatically (if necessary) "
+"and OpenSearch starts in its place. If ``secure_mode`` was enabled, the "
+"Elasticsearch PKCS12 CA is automatically migrated to PEM format."
+msgstr ""
+"The old Elasticsearch service está deshabilitado automatically (si es "
+"necesario) y OpenSearch starts in its place. If ``secure_mode`` was "
+"enabled, the Elasticsearch PKCS12 CA is automatically migrated to PEM "
+"format."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:183
+msgid "3-Node Embedded Cluster"
+msgstr "3-Node Embedded Cluster"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:186
+msgid "Prerequisites"
+msgstr "Requisitos previos"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:188
+msgid "**Networking**"
+msgstr "**Networking**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:190
+msgid "All 3 nodes must be able to reach each other on:"
+msgstr "All 3 nodes debe ser able to reach each other on:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:192
+msgid "**Port 9200 (TCP)** — HTTP API (client queries, health checks)"
+msgstr "**Port 9200 (TCP)** — HTTP API (client queries, verificaciones de salud)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:193
+msgid ""
+"**Port 9300 (TCP)** — Transport (inter-node communication, cluster "
+"formation, shard replication)"
+msgstr ""
+"**Port 9300 (TCP)** — Transport (inter-node communication, cluster "
+"formation, shard replication)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:195
+msgid ""
+"Each node needs a stable, routable IP address or resolvable hostname that"
+" the other nodes can reach (no NAT between nodes)"
+msgstr ""
+"Cada nodo needs a stable, routable dirección IP o resolvable hostname that "
+"the other nodes can reach (no NAT entre nodes)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:196
+msgid ""
+"Both IP addresses and hostnames are supported in ``es_hosts`` and "
+"``publish_ip``"
+msgstr ""
+"Both direcciones IP y hostnames are soportado in ``es_hosts`` y "
+"``publish_ip``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:198
+msgid "**Configuration**"
+msgstr "**Configuración**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:200
+msgid "Each node must have:"
+msgstr "Cada nodo must have:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:202
+msgid "The same ``es_hosts`` hash listing all 3 nodes"
+msgstr "The same ``es_hosts`` hash listing all 3 nodes"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:203
+msgid "A unique ``node_name``"
+msgstr "A unique ``node_name``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:204
+msgid "A unique ``publish_ip`` matching that node's routable IP"
+msgstr "A unique ``publish_ip`` matching that node's routable IP"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:205
+msgid ""
+"``host`` set to ``0.0.0.0`` (default ``127.0.0.1`` only listens locally "
+"and will not allow cluster formation)"
+msgstr ""
+"``host`` set to ``0.0.0.0`` (default ``127.0.0.1`` only listens locally y "
+"will not allow cluster formation)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:207
+msgid ""
+"All nodes must share the same ``cluster`` name (defaults to ``morpheus`` "
+"— only set this if you need to change it)"
+msgstr ""
+"All nodes must share the same ``cluster`` name (defaults to ``morpheus`` — "
+"only set this if you need to change it)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:209
+msgid "**Secure Mode**"
+msgstr "**Secure Mode**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:211
+msgid ""
+"When ``secure_mode`` is enabled, TLS is used on both HTTP and transport "
+"layers"
+msgstr ""
+"When ``secure_mode`` está habilitado, TLS is used on both HTTP y transport "
+"layers"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:212
+msgid ""
+"All nodes must share the **same root CA** — Node 1 must be reconfigured "
+"first to generate the CA, then the CA files are copied to the remaining "
+"nodes before their first reconfigure"
+msgstr ""
+"All nodes must share the **same root CA** — Node 1 debe ser reconfigured "
+"first to generate the CA, then the CA files are copied a la remaining "
+"nodes before their first reconfigure"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:213
+msgid "Each node auto-generates its own node certificate signed by the shared CA"
+msgstr "Cada nodo auto-generates its own node certificate signed by the shared CA"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:215
+msgid "**Example nodes:**"
+msgstr "**Example nodes:**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:217
+msgid "Node 1: ``10.0.0.1`` (morpheus-1)"
+msgstr "Node 1: ``10.0.0.1`` (morpheus-1)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:218
+msgid "Node 2: ``10.0.0.2`` (morpheus-2)"
+msgstr "Node 2: ``10.0.0.2`` (morpheus-2)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:219
+msgid "Node 3: ``10.0.0.3`` (morpheus-3)"
+msgstr "Node 3: ``10.0.0.3`` (morpheus-3)"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:222
+msgid "Fresh Install — Without Secure Mode"
+msgstr "Fresh Install — Without Secure Mode"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:224
+#: ../../getting_started/requirements/opensearch_configuration.rst:266
+#: ../../getting_started/requirements/opensearch_configuration.rst:397
+msgid ""
+"``elasticsearch[...]`` keys can also be used in place of "
+"``opensearch[...]`` on fresh installs. They are bridged automatically."
+msgstr ""
+"``elasticsearch[...]`` keys can also be used in place of "
+"``opensearch[...]`` on fresh installs. They are bridged automatically."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:226
+msgid "**Node 1** — ``/etc/morpheus/morpheus.rb``:"
+msgstr "**Node 1** — ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:228
+#, python-brace-format
+msgid ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\n"
+"opensearch['node_name'] = 'morpheus-1'\n"
+"opensearch['host'] = '0.0.0.0'\n"
+"opensearch['publish_ip'] = '10.0.0.1'"
+msgstr ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\\nopensearch['node_name'] = "
+"'morpheus-1'\\nopensearch['host'] = '0.0.0.0'\\nopensearch['publish_ip'] = "
+"'10.0.0.1'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:235
+msgid "**Node 2** — ``/etc/morpheus/morpheus.rb``:"
+msgstr "**Node 2** — ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:237
+#, python-brace-format
+msgid ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\n"
+"opensearch['node_name'] = 'morpheus-2'\n"
+"opensearch['host'] = '0.0.0.0'\n"
+"opensearch['publish_ip'] = '10.0.0.2'"
+msgstr ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\\nopensearch['node_name'] = "
+"'morpheus-2'\\nopensearch['host'] = '0.0.0.0'\\nopensearch['publish_ip'] = "
+"'10.0.0.2'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:244
+msgid "**Node 3** — ``/etc/morpheus/morpheus.rb``:"
+msgstr "**Node 3** — ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:246
+#, python-brace-format
+msgid ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\n"
+"opensearch['node_name'] = 'morpheus-3'\n"
+"opensearch['host'] = '0.0.0.0'\n"
+"opensearch['publish_ip'] = '10.0.0.3'"
+msgstr ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\\nopensearch['node_name'] = "
+"'morpheus-3'\\nopensearch['host'] = '0.0.0.0'\\nopensearch['publish_ip'] = "
+"'10.0.0.3'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:253
+msgid "**Apply**"
+msgstr "**Aplicar**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:255
+msgid "Run on all three nodes:"
+msgstr "Run on all three nodes:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:261
+msgid ""
+"Nodes can be reconfigured in any order. The cluster will form once all "
+"nodes are up and can reach each other on ports 9200 and 9300."
+msgstr ""
+"Nodes puede ser reconfigured in any order. The cluster will form once all "
+"nodes are up y can reach each other on ports 9200 y 9300."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:264
+msgid "Fresh Install — With Secure Mode"
+msgstr "Fresh Install — With Secure Mode"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:268
+msgid ""
+"Secure mode enables TLS on both the HTTP and transport layers. Each node "
+"generates its own node certificate, but all nodes must share the **same "
+"root CA** so they trust each other."
+msgstr ""
+"Secure mode enables TLS on both the HTTP y transport layers. Each node "
+"generates its own node certificate, but all nodes must share the **same "
+"root CA** so they trust each other."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:270
+msgid "**Step 1 — Configure and reconfigure Node 1 first**"
+msgstr "**Step 1 — Configure y reconfigure Node 1 first**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:272
+msgid "Node 1 — ``/etc/morpheus/morpheus.rb``:"
+msgstr "Node 1 — ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:274
+#, python-brace-format
+msgid ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\n"
+"opensearch['node_name'] = 'morpheus-1'\n"
+"opensearch['host'] = '0.0.0.0'\n"
+"opensearch['publish_ip'] = '10.0.0.1'\n"
+"opensearch['secure_mode'] = true"
+msgstr ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\\nopensearch['node_name'] = "
+"'morpheus-1'\\nopensearch['host'] = '0.0.0.0'\\nopensearch['publish_ip'] = "
+"'10.0.0.1'\\nopensearch['secure_mode'] = true"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:282
+msgid "Run reconfigure on Node 1:"
+msgstr "Run reconfigure on Node 1:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:288
+msgid "This generates the root CA and node certificate at:"
+msgstr "This generates the root CA y node certificate at:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:290
+msgid "``/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca.pem``"
+msgstr "``/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca.pem``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:291
+msgid "``/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca-key.pem``"
+msgstr "``/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca-key.pem``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:293
+msgid "**Step 2 — Copy the root CA to Nodes 2 and 3**"
+msgstr "**Step 2 — Copy the root CA to Nodes 2 y 3**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:295
+msgid ""
+"Copy both CA files from Node 1 to the same path on Nodes 2 and 3 "
+"**before** running reconfigure on them:"
+msgstr ""
+"Copy both CA files desde Node 1 to the same path on Nodes 2 y 3 **before** "
+"running reconfigure on them:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:297
+msgid ""
+"# From Node 1:\n"
+"scp /opt/morpheus/embedded/opensearch-2.18.0/config/root-ca.pem     "
+"node2:/opt/morpheus/embedded/opensearch-2.18.0/config/\n"
+"scp /opt/morpheus/embedded/opensearch-2.18.0/config/root-ca-key.pem  "
+"node2:/opt/morpheus/embedded/opensearch-2.18.0/config/\n"
+"\n"
+"scp /opt/morpheus/embedded/opensearch-2.18.0/config/root-ca.pem     "
+"node3:/opt/morpheus/embedded/opensearch-2.18.0/config/\n"
+"scp /opt/morpheus/embedded/opensearch-2.18.0/config/root-ca-key.pem  "
+"node3:/opt/morpheus/embedded/opensearch-2.18.0/config/"
+msgstr ""
+"# From Node 1:\\nscp "
+"/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca.pem     "
+"node2:/opt/morpheus/embedded/opensearch-2.18.0/config/\\nscp "
+"/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca-key.pem  "
+"node2:/opt/morpheus/embedded/opensearch-2.18.0/config/\\n\\nscp "
+"/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca.pem     "
+"node3:/opt/morpheus/embedded/opensearch-2.18.0/config/\\nscp "
+"/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca-key.pem  "
+"node3:/opt/morpheus/embedded/opensearch-2.18.0/config/"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:306
+msgid "Set ownership on Nodes 2 and 3:"
+msgstr "Set ownership on Nodes 2 y 3:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:308
+msgid ""
+"chown morpheus-es:morpheus-es "
+"/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca*.pem"
+msgstr ""
+"chown morpheus-es:morpheus-es "
+"/opt/morpheus/embedded/opensearch-2.18.0/config/root-ca*.pem"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:312
+msgid "**Step 3 — Configure and reconfigure Nodes 2 and 3**"
+msgstr "**Step 3 — Configure y reconfigure Nodes 2 y 3**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:314
+msgid "Node 2 — ``/etc/morpheus/morpheus.rb``:"
+msgstr "Node 2 — ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:316
+#, python-brace-format
+msgid ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\n"
+"opensearch['node_name'] = 'morpheus-2'\n"
+"opensearch['host'] = '0.0.0.0'\n"
+"opensearch['publish_ip'] = '10.0.0.2'\n"
+"opensearch['secure_mode'] = true"
+msgstr ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\\nopensearch['node_name'] = "
+"'morpheus-2'\\nopensearch['host'] = '0.0.0.0'\\nopensearch['publish_ip'] = "
+"'10.0.0.2'\\nopensearch['secure_mode'] = true"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:324
+msgid "Node 3 — ``/etc/morpheus/morpheus.rb``:"
+msgstr "Node 3 — ``/etc/morpheus/morpheus.rb``:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:326
+#, python-brace-format
+msgid ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\n"
+"opensearch['node_name'] = 'morpheus-3'\n"
+"opensearch['host'] = '0.0.0.0'\n"
+"opensearch['publish_ip'] = '10.0.0.3'\n"
+"opensearch['secure_mode'] = true"
+msgstr ""
+"opensearch['es_hosts'] = {'10.0.0.1' => 9200, '10.0.0.2' => 9200, "
+"'10.0.0.3' => 9200}\\nopensearch['node_name'] = "
+"'morpheus-3'\\nopensearch['host'] = '0.0.0.0'\\nopensearch['publish_ip'] = "
+"'10.0.0.3'\\nopensearch['secure_mode'] = true"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:334
+msgid "Run reconfigure on Nodes 2 and 3:"
+msgstr "Run reconfigure on Nodes 2 y 3:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:340
+msgid ""
+"Each node will skip CA generation (the files already exist) and generate "
+"its own node certificate signed by the shared CA."
+msgstr ""
+"Cada nodo will skip CA generation (the files already exist) y generate its "
+"own node certificate signed by the shared CA."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:343
+msgid "Upgrading from a 3-Node Elasticsearch Cluster"
+msgstr "Upgrading desde a 3-Node Elasticsearch Cluster"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:347
+msgid ""
+"Install the new Morpheus package on all 3 nodes. Do **not** run "
+"reconfigure yet. The preinstall script preserves the Elasticsearch "
+"installation at ``/var/opt/morpheus/elasticsearch-8.15.5/home/``. The ES "
+"data and binaries are preserved across package install, reconfigure, and "
+"normal operation, thus, the migration export can be run at any time until"
+" the ES data and binaries are removed with the export cleanup option (or "
+"manually removed)."
+msgstr ""
+"Install the nuevo Morpheus package on todos 3 nodes. Do **not** run "
+"reconfigure yet. The preinstall script preserves the Elasticsearch "
+"installation at ``/var/opt/morpheus/elasticsearch-8.15.5/home/``. The ES "
+"data y binaries are preserved across package install, reconfigure, y "
+"normal operation, thus, the migration export puede ser run at cualquier "
+"time until the ES data y binaries are removed con the export cleanup "
+"option (or manually removed)."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:349
+msgid "**Step 2 — Check the ES cluster configuration**"
+msgstr "**Step 2 — Check the ES cluster configuration**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:351
+msgid ""
+"Run ``cat "
+"/var/opt/morpheus/elasticsearch-8.15.5/home/config/elasticsearch.yml`` "
+"and note the ``discovery.seed_hosts`` and "
+"``cluster.initial_master_nodes``. These are the cluster nodes."
+msgstr ""
+"Run ``cat "
+"/var/opt/morpheus/elasticsearch-8.15.5/home/config/elasticsearch.yml`` y "
+"note the ``discovery.seed_hosts`` y ``cluster.initial_master_nodes``. "
+"These are the cluster nodes."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:353
+msgid "**Step 3 — Start Elasticsearch on all nodes**"
+msgstr "**Step 3 — Start Elasticsearch on todos los nodos**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:355
+msgid ""
+"Start ES on each node within 30 seconds of each other. The order does not"
+" matter, they will discover each other:"
+msgstr ""
+"Start ES on each node dentro de 30 seconds of each other. The order does "
+"not matter, they will discover each other:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:357
+msgid ""
+"su -s /bin/bash es-morpheus -c "
+"'ES_JAVA_HOME=/var/opt/morpheus/elasticsearch-8.15.5/home/jdk "
+"/var/opt/morpheus/elasticsearch-8.15.5/home/bin/elasticsearch -d'"
+msgstr ""
+"su -s /bin/bash es-morpheus -c "
+"'ES_JAVA_HOME=/var/opt/morpheus/elasticsearch-8.15.5/home/jdk "
+"/var/opt/morpheus/elasticsearch-8.15.5/home/bin/elasticsearch -d'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:361
+msgid "**Step 4 — Verify cluster health**"
+msgstr "**Step 4 — Verify cluster health**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:363
+#: ../../getting_started/requirements/opensearch_configuration.rst:373
+msgid "From any node:"
+msgstr "From any node:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:365
+msgid "curl http://127.0.0.1:9200/_cluster/health?pretty"
+msgstr "curl http://127.0.0.1:9200/_cluster/health?pretty"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:369
+msgid ""
+"You should see: ``\"status\": \"green\"``, ``\"number_of_nodes\": 3``, "
+"``\"unassigned_shards\": 0``"
+msgstr ""
+"You should see: ``\\\"status\\\": \\\"green\\\"``, "
+"``\\\"number_of_nodes\\\": 3``, ``\\\"unassigned_shards\\\": 0``"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:371
+msgid "**Step 5 — Run the migration export**"
+msgstr "**Step 5 — Run the migration export**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:375
+msgid "sudo morpheus-ctl migrate-elasticsearch"
+msgstr "sudo morpheus-ctl migrate-elasticsearch"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:379
+msgid "The script will detect the running ES cluster and export from it."
+msgstr "The script will detect the running ES cluster y export desde it."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:381
+msgid "**Step 6 — Stop Elasticsearch on all nodes**"
+msgstr "**Step 6 — Stop Elasticsearch on todos los nodos**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:383
+msgid "After the migration completes, on each node:"
+msgstr "After the migration completes, on cada nodo:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:385
+msgid "pkill -f 'elasticsearch-8.15.5'"
+msgstr "pkill -f 'elasticsearch-8.15.5'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:390
+msgid "External Cluster"
+msgstr "External Cluster"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:392
+msgid ""
+"When using an externally managed OpenSearch (or Elasticsearch) cluster, "
+"disable the embedded service and point Morpheus at the external hosts."
+msgstr ""
+"When using an externally gestionado OpenSearch (or Elasticsearch) cluster, "
+"disable the embedded service y point Morpheus at the externo hosts."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:395
+msgid "External Cluster — Fresh Install"
+msgstr "External Cluster — Fresh Install"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:399
+msgid ""
+"Add the following to ``/etc/morpheus/morpheus.rb`` on each Morpheus "
+"appliance node:"
+msgstr ""
+"Add lo siguiente to ``/etc/morpheus/morpheus.rb`` on each Morpheus "
+"appliance node:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:401
+#, python-brace-format
+msgid ""
+"opensearch['enable'] = false\n"
+"opensearch['es_hosts'] = {'os-node1.example.com' => 9200, 'os-"
+"node2.example.com' => 9200, 'os-node3.example.com' => 9200}\n"
+"opensearch['auth_user'] = 'morpheus'\n"
+"opensearch['auth_password'] = 'the-external-cluster-password'"
+msgstr ""
+"opensearch['enable'] = false\\nopensearch['es_hosts'] = "
+"{'os-node1.example.com' => 9200, 'os-node2.example.com' => 9200, "
+"'os-node3.example.com' => 9200}\\nopensearch['auth_user'] = "
+"'morpheus'\\nopensearch['auth_password'] = 'the-external-cluster-password'"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:408
+msgid "If the external cluster uses TLS:"
+msgstr "If the externo cluster uses TLS:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:410
+msgid "opensearch['use_tls'] = true"
+msgstr "opensearch['use_tls'] = true"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:414
+msgid "Then reconfigure:"
+msgstr "Then reconfigure:"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:420
+msgid ""
+"The embedded OpenSearch service will not be started. Morpheus will "
+"connect directly to the external cluster using the provided hosts and "
+"credentials."
+msgstr ""
+"The embedded OpenSearch service will not be started. Morpheus will connect "
+"directly to the externo cluster using the provided hosts y credentials."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:422
+msgid ""
+"``auth_user`` and ``auth_password`` are sent to the external cluster for "
+"authentication. These must match a user configured on the external "
+"cluster."
+msgstr ""
+"``auth_user`` y ``auth_password`` are sent to the externo cluster for "
+"authentication. These must match a user configurado on the externo "
+"cluster."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:423
+#, python-brace-format
+msgid ""
+"``auth_password`` supports the ``ENC{...}`` encrypted format (see "
+"Encrypting the password)."
+msgstr ""
+"``auth_password`` supports the ``ENC{...}`` encrypted format (see "
+"Encrypting the password)."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:424
+msgid ""
+"Do not set ``secure_mode`` — that setting controls the embedded service's"
+" certificate generation and security plugin. For external TLS clusters, "
+"use ``use_tls`` instead."
+msgstr ""
+"Do not set ``secure_mode`` — that setting controls the embedded service's "
+"certificate generation y security plugin. For externo TLS clusters, use "
+"``use_tls`` instead."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:425
+msgid ""
+"``replica_count`` can be adjusted to match the external cluster's "
+"topology (default ``1``)."
+msgstr ""
+"``replica_count`` puede ser adjusted to match the externo cluster's "
+"topology (default ``1``)."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:428
+msgid "Upgrading with an External Cluster"
+msgstr "Upgrading con an External Cluster"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:430
+msgid ""
+"If the existing Morpheus installation was already configured to use an "
+"external Elasticsearch or OpenSearch cluster, the upgrade is "
+"straightforward — no data migration is needed on the appliance side since"
+" the data lives on the external cluster. The external cluster does not "
+"need to be migrated to OpenSearch; Morpheus supports both."
+msgstr ""
+"If the existing Morpheus installation was already configured to use an "
+"external Elasticsearch o OpenSearch cluster, the upgrade is "
+"straightforward — no data migration is needed en la appliance side since "
+"the data lives en la external cluster. The external cluster does not "
+"necesitan ser migrated to OpenSearch; Morpheus supports both."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:434
+msgid "Install the new Morpheus package on each appliance node."
+msgstr "Install el nuevo Morpheus package on each appliance node."
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:436
+msgid "**Step 2 — Reconfigure**"
+msgstr "**Step 2 — Reconfigure**"
+
+#: ../../getting_started/requirements/opensearch_configuration.rst:438
+msgid ""
+"No ``morpheus.rb`` changes are needed. The existing "
+"``elasticsearch[...]`` settings are bridged automatically."
+msgstr ""
+"No ``morpheus.rb`` changes are needed. The existente "
+"``elasticsearch[...]`` settings are bridged automatically."
+

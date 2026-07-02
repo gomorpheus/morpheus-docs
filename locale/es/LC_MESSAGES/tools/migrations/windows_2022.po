@@ -1,0 +1,411 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/migrations/windows_2022.rst:2
+msgid "Windows Migration"
+msgstr "Migración de Windows"
+
+#: ../../tools/migrations/windows_2022.rst:4
+msgid ""
+"Migrating Windows workloads from VMware vCenter to HVM Clusters is fully "
+"supported with automated VirtIO driver injection. The migration system "
+"handles driver installation and disk bus conversion automatically in most"
+" cases."
+msgstr ""
+"La migración de cargas de trabajo Windows desde VMware vCenter a "
+"Clústeres HVM es totalmente compatible con inyección automatizada de "
+"controladores VirtIO. El sistema de migración maneja la instalación de "
+"controladores y la conversión de bus de disco automáticamente en la "
+"mayoría de los casos."
+
+#: ../../tools/migrations/windows_2022.rst:7
+msgid "Automated Driver Injection"
+msgstr "Inyección automatizada de controladores"
+
+#: ../../tools/migrations/windows_2022.rst:9
+msgid ""
+"When a Windows VM is included in a Migration Plan, the system "
+"automatically:"
+msgstr ""
+"Cuando una VM de Windows se incluye en un Plan de Migración, el "
+"sistema automáticamente:"
+
+#: ../../tools/migrations/windows_2022.rst:11
+msgid ""
+"**Installs VirtIO guest tools** on the source VM during the Prepare phase"
+" (via network download of the MSI package)"
+msgstr ""
+"**Installs VirtIO guest tools** en el/la source VM durante the Prepare "
+"phase (via red download de the MSI package)"
+
+#: ../../tools/migrations/windows_2022.rst:12
+msgid ""
+"If network installation fails, **falls back to ISO-based installation** —"
+" the VirtIO ISO is uploaded to the VMware datastore, mounted to the VM, "
+"and drivers are installed via ``msiexec``"
+msgstr ""
+"Si red installation fails, **falls back a ISO-based installation** — el/la "
+"VirtIO ISO es uploaded to the VMware datastore, mounted to the VM, y "
+"drivers son installed via ``msiexec``"
+
+#: ../../tools/migrations/windows_2022.rst:13
+msgid ""
+"**Creates the target VM with temporary SATA disks** so Windows can boot "
+"without VirtIO drivers"
+msgstr ""
+"**Creates el/la target VM con temporary SATA disks** so Windows puede boot "
+"without VirtIO drivers"
+
+#: ../../tools/migrations/windows_2022.rst:14
+msgid ""
+"**Adds a small VirtIO helper disk** that triggers Windows to detect and "
+"load VirtIO drivers from the driver store"
+msgstr ""
+"**Adds a small VirtIO helper disk** que triggers Windows a detect y load "
+"VirtIO drivers desde el/la driver store"
+
+#: ../../tools/migrations/windows_2022.rst:15
+msgid ""
+"**Boots the target VM** and waits for Windows to register the VirtIO "
+"drivers (up to 10 minutes)"
+msgstr ""
+"**Boots el/la target VM** y waits para Windows a register the VirtIO "
+"drivers (up to 10 minutes)"
+
+#: ../../tools/migrations/windows_2022.rst:16
+msgid ""
+"**Shuts down and switches all disks to VirtIO bus** — SCSI disks map to "
+"VirtIO-SCSI, IDE/SATA disks map to VirtIO Block"
+msgstr ""
+"**Shuts down y switches todos disks a VirtIO bus** — SCSI disks map to "
+"VirtIO-SCSI, IDE/SATA disks map to VirtIO Block"
+
+#: ../../tools/migrations/windows_2022.rst:17
+msgid "**Removes the helper disk and ISO volumes**, then starts the final VM"
+msgstr ""
+"**Removes el/la helper disk y ISO volumes**, then starts the final VM"
+
+#: ../../tools/migrations/windows_2022.rst:19
+msgid ""
+"This entire process is handled by the Reconfigure phase and requires no "
+"manual intervention for supported Windows versions."
+msgstr ""
+"Todo este proceso es manejado por la fase de Reconfiguración y no "
+"requiere intervención manual para las versiones de Windows "
+"compatibles."
+
+#: ../../tools/migrations/windows_2022.rst:22
+msgid "Supported Windows Versions"
+msgstr "Versiones de Windows compatibles"
+
+#: ../../tools/migrations/windows_2022.rst:24
+msgid "Windows Server 2016"
+msgstr "Windows Server 2016"
+
+#: ../../tools/migrations/windows_2022.rst:25
+msgid "Windows Server 2019"
+msgstr "Windows Server 2019"
+
+#: ../../tools/migrations/windows_2022.rst:26
+msgid "Windows Server 2022"
+msgstr "Windows Server 2022"
+
+#: ../../tools/migrations/windows_2022.rst:27
+msgid "Windows Server 2025"
+msgstr "Windows Server 2025"
+
+#: ../../tools/migrations/windows_2022.rst:28
+msgid "Windows 10"
+msgstr "Windows 10"
+
+#: ../../tools/migrations/windows_2022.rst:29
+msgid "Windows 11"
+msgstr "Windows 11"
+
+#: ../../tools/migrations/windows_2022.rst:32
+msgid "Manual Preparation (Fallback)"
+msgstr "Preparación manual (respaldo)"
+
+#: ../../tools/migrations/windows_2022.rst:34
+msgid ""
+"In rare cases where automated driver injection fails (e.g., restricted "
+"network access and no VirtIO ISO available in vCenter), you may need to "
+"manually prepare the Windows VM before migration. The steps below cover "
+"manual VirtIO driver injection for a Windows VM running on vCenter."
+msgstr ""
+"In rare cases where automated driver injection fails (e.g., restricted "
+"network access and no VirtIO ISO disponible en vCenter), you may need to "
+"manually prepare the Windows VM before migration. The steps below cover "
+"manual VirtIO driver injection for a Windows VM running on vCenter."
+
+#: ../../tools/migrations/windows_2022.rst:38
+msgid ""
+"Try the automated process first. Manual preparation is only needed if the"
+" migration fails during the Prepare or Reconfigure phases."
+msgstr ""
+"Try el/la automated process first. Manual preparation es solo needed si "
+"the migration fails durante the Prepare o Reconfigure phases."
+
+#: ../../tools/migrations/windows_2022.rst:40
+msgid "Prerequisites for manual preparation:"
+msgstr "Requisitos previos para la preparación manual:"
+
+#: ../../tools/migrations/windows_2022.rst:42
+msgid "The VM is configured with EFI or BIOS boot"
+msgstr "La VM está configurada con arranque EFI o BIOS"
+
+#: ../../tools/migrations/windows_2022.rst:43
+msgid ""
+"The VM has access to the recovery partition (or Windows Recovery "
+"Environment media)"
+msgstr ""
+"The VM has acceso a the recovery partition (or Windows Recovery "
+"Environment media)"
+
+#: ../../tools/migrations/windows_2022.rst:44
+msgid ""
+"The `VirtIO drivers ISO <https://fedorapeople.org/groups/virt/virtio-win"
+"/direct-downloads/latest-virtio/>`_ is available"
+msgstr ""
+"The `VirtIO drivers ISO "
+"<https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-vi"
+"rtio/>`_ está disponible"
+
+#: ../../tools/migrations/windows_2022.rst:46
+msgid "**Step 1: Boot into Windows Recovery Environment**"
+msgstr "**Step 1: Boot en Windows Recovery Environment**"
+
+#: ../../tools/migrations/windows_2022.rst:48
+msgid ""
+"Restart the VM into Windows RE. Select a keyboard layout if prompted, "
+"then choose :menuselection:`Troubleshoot --> Command Prompt`."
+msgstr ""
+"Restart el/la VM en Windows RE. Select a keyboard layout si prompted, then "
+"choose :menuselection:`Troubleshoot --> Command Prompt`."
+
+#: ../../tools/migrations/windows_2022.rst:50
+msgid "**Step 2: Load storage drivers (if disks not visible)**"
+msgstr "**Step 2: Load storage drivers (if disks no visible)**"
+
+#: ../../tools/migrations/windows_2022.rst:52
+msgid "In the Command Prompt, check disk visibility::"
+msgstr "En el Símbolo del sistema, verifique la visibilidad del disco::"
+
+#: ../../tools/migrations/windows_2022.rst:54
+#: ../../tools/migrations/windows_2022.rst:70
+msgid ""
+"diskpart\n"
+"list disk"
+msgstr "diskpart\nlist disk"
+
+msgid "Enter diskpart command line tool and list disks"
+msgstr "Enter diskpart command line tool and lista disks"
+
+msgid ".. image:: images/migrations/windows_diskpart_list.png"
+msgstr ".. image:: images/migrations/windows_diskpart_list.png"
+
+#: ../../tools/migrations/windows_2022.rst:60
+msgid ""
+"If no disks appear, mount VMware Tools from vCenter "
+"(:menuselection:`Actions --> Guest OS --> Install VMware Tools...`), then"
+" load the storage driver::"
+msgstr ""
+"Si no disks appear, mount VMware Tools desde vCenter "
+"(:menuselection:`Actions --> Guest OS --> Install VMware Tools...`), then "
+"load el/la storage driver::"
+
+#: ../../tools/migrations/windows_2022.rst:62
+msgid "list volume"
+msgstr "lista volume"
+
+#: ../../tools/migrations/windows_2022.rst:64
+msgid "Note the CD-ROM drive letter (e.g., \"D\"), then::"
+msgstr "Nota el/la CD-ROM drive letter (e.g., \"D\"), then::"
+
+#: ../../tools/migrations/windows_2022.rst:66
+msgid ""
+"drvload \"D:\\Program Files\\VMware\\VMware "
+"Tools\\Drivers\\pvscsi\\Win10\\amd64\\pvscsi.inf\""
+msgstr ""
+"drvload \"D:\\Program Files\\VMware\\VMware "
+"Tools\\Drivers\\pvscsi\\Win10\\amd64\\pvscsi.inf\""
+
+#: ../../tools/migrations/windows_2022.rst:68
+msgid "Verify disks are now visible::"
+msgstr "Verifique que los discos ahora son visibles::"
+
+msgid "Listing volumes in diskpart"
+msgstr "Listing volumes en diskpart"
+
+msgid ".. image:: images/migrations/windows_list_volumes.png"
+msgstr ".. image:: images/migrations/windows_list_volumes.png"
+
+#: ../../tools/migrations/windows_2022.rst:76
+msgid "Assign drive letters if needed::"
+msgstr "Asigne letras de unidad si es necesario::"
+
+#: ../../tools/migrations/windows_2022.rst:78
+msgid ""
+"list volume\n"
+"select volume 1\n"
+"assign letter=c\n"
+"exit"
+msgstr "list volume\nselect volume 1\nassign letter=c\nexit"
+
+msgid "Assigning a drive letter to a volume"
+msgstr "Assigning a drive letter a a volume"
+
+msgid ".. image:: images/migrations/windows_assign_drive.png"
+msgstr ".. image:: images/migrations/windows_assign_drive.png"
+
+#: ../../tools/migrations/windows_2022.rst:86
+msgid "Unmount VMware Tools from vCenter when done."
+msgstr "Desmonte VMware Tools de vCenter cuando termine."
+
+#: ../../tools/migrations/windows_2022.rst:88
+msgid "**Step 3: Inject VirtIO drivers**"
+msgstr "**Step 3: Inject VirtIO drivers**"
+
+#: ../../tools/migrations/windows_2022.rst:90
+msgid ""
+"Upload the VirtIO ISO to a vCenter datastore or Content Library. Mount it"
+" to the VM via a CD-ROM device. Then inject the storage drivers::"
+msgstr ""
+"Upload el/la VirtIO ISO a a vCenter datastore o Content Library. Mount it "
+"to the VM via a CD-ROM device. Then inject the storage drivers::"
+
+#: ../../tools/migrations/windows_2022.rst:92
+msgid "dism /image:C:\\ /add-driver:D:\\viostor\\2k22\\amd64\\viostor.inf"
+msgstr "dism /image:C:\\ /add-driver:D:\\viostor\\2k22\\amd64\\viostor.inf"
+
+msgid "Installing viostor.inf driver"
+msgstr "Instalando viostor.inf driver"
+
+msgid ".. image:: images/migrations/windows_viostor_install.png"
+msgstr ".. image:: images/migrations/windows_viostor_install.png"
+
+#: ../../tools/migrations/windows_2022.rst:99
+msgid "dism /image:C:\\ /add-driver:D:\\vioscsi\\2k22\\amd64\\vioscsi.inf"
+msgstr "dism /image:C:\\ /add-driver:D:\\vioscsi\\2k22\\amd64\\vioscsi.inf"
+
+msgid "Installing vioscsi.inf driver"
+msgstr "Instalando vioscsi.inf driver"
+
+msgid ".. image:: images/migrations/windows_vioscsi_install.png"
+msgstr ".. image:: images/migrations/windows_vioscsi_install.png"
+
+#: ../../tools/migrations/windows_2022.rst:106
+msgid ""
+"Replace ``2k22`` with the appropriate directory for your Windows version "
+"(e.g., ``2k19``, ``2k16``, ``w10``, ``w11``). Adjust drive letters to "
+"match your environment."
+msgstr ""
+"Replace ``2k22`` con el/la appropriate directory para your Windows version "
+"(e.g., ``2k19``, ``2k16``, ``w10``, ``w11``). Adjust drive letters a match "
+"your environment."
+
+#: ../../tools/migrations/windows_2022.rst:108
+msgid "Close Command Prompt and click **Continue** to boot Windows normally."
+msgstr "Cierre Command Prompt y click **Continue** a boot Windows normally."
+
+#: ../../tools/migrations/windows_2022.rst:110
+msgid "**Step 4: Install VirtIO guest tools**"
+msgstr "**Step 4: Install VirtIO guest tools**"
+
+#: ../../tools/migrations/windows_2022.rst:112
+msgid ""
+"Once logged back into Windows, navigate to the mounted VirtIO ISO and "
+"install:"
+msgstr ""
+"Una vez que haya iniciado sesión nuevamente en Windows, navegue al ISO "
+"VirtIO montado e instale:"
+
+#: ../../tools/migrations/windows_2022.rst:114
+msgid "``virtio-win-gt-x64.msi``"
+msgstr "``virtio-win-gt-x64.msi``"
+
+#: ../../tools/migrations/windows_2022.rst:115
+msgid "``virtio-win-guest-tools.exe``"
+msgstr "``virtio-win-guest-tools.exe``"
+
+#: ../../tools/migrations/windows_2022.rst:117
+msgid ""
+"Keep all default selections. After installation, unmount any ISOs "
+"attached to the VM."
+msgstr ""
+"Mantenga todas las selecciones predeterminadas. Después de la "
+"instalación, desmonte cualquier ISO adjunto a la VM."
+
+#: ../../tools/migrations/windows_2022.rst:119
+msgid "**Step 5: Power down and migrate**"
+msgstr "**Step 5: Power down y migrate**"
+
+#: ../../tools/migrations/windows_2022.rst:121
+msgid ""
+"Shut down the VM and ensure it stays powered off (note that the VMware "
+"Cloud integration may have \"AUTOMATICALLY POWER ON VMS\" enabled — if "
+"so, shut down from the product UI or temporarily disable that setting). "
+"The VM is now ready to be included in a Migration Plan."
+msgstr ""
+"Shut down the VM and ensure it stays powered off (note that the VMware "
+"Cloud integration may have \"AUTOMATICALLY POWER ON VMS\" enabled — if so, "
+"shut down from the product UI or temporarily disable that setting). The VM "
+"is now ready to be incluido en a Migration Plan."
+
+#: ../../tools/migrations/windows_2022.rst:124
+msgid "Post-Migration: VMware Tools Cleanup"
+msgstr "Post-migración: Limpieza de VMware Tools"
+
+#: ../../tools/migrations/windows_2022.rst:126
+msgid ""
+"After migration, VMware Tools remains installed but is non-functional on "
+"HVM. To prevent startup errors:"
+msgstr ""
+"Después de la migración, VMware Tools permanece instalado pero no es "
+"funcional en HVM. Para prevenir errores de inicio:"
+
+#: ../../tools/migrations/windows_2022.rst:128
+msgid ""
+"Navigate to :menuselection:`Settings --> Apps --> Startup` in the Windows"
+" guest and disable **VMware Tools Core Service**"
+msgstr ""
+"Navegue a :menuselection:`Settings --> Apps --> Startup` in the Windows "
+"guest and disable **VMware Tools Core Service**"
+
+msgid "Turning off VMware Tools Core Service at Windows guest startup"
+msgstr "Turning off VMware Tools Core Service en Windows guest startup"
+
+msgid ".. image:: images/migrations/windows_disable_vmtools.png"
+msgstr ".. image:: images/migrations/windows_disable_vmtools.png"
+
+#: ../../tools/migrations/windows_2022.rst:133
+msgid ""
+"Optionally, fully uninstall VMware Tools using Microsoft's `program "
+"removal troubleshooter <https://support.microsoft.com/en-us/topic/fix-"
+"problems-that-block-programs-from-being-installed-or-removed-"
+"cca7d1b6-65a9-3d98-426b-e9f927e1eb4d>`_"
+msgstr ""
+"Optionally, fully uninstall VMware Tools usando Microsoft's `program "
+"removal troubleshooter "
+"<https://support.microsoft.com/en-us/topic/fix-problems-that-block-programs"
+"-from-being-installed-or-removed-cca7d1b6-65a9-3d98-426b-e9f927e1eb4d>`_"
+

@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/migrations/requirements.rst:2
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: ../../tools/migrations/requirements.rst:4
+msgid ""
+"This section covers requirements for successful migrations from VMware "
+"vCenter to HVM Clusters."
+msgstr ""
+"Esta sección cubre los requisitos para migraciones exitosas desde "
+"VMware vCenter a Clústeres HVM."
+
+#: ../../tools/migrations/requirements.rst:7
+msgid "Infrastructure Requirements"
+msgstr "Requisitos de infraestructura"
+
+#: ../../tools/migrations/requirements.rst:9
+msgid ""
+"**HVM Agent version 2.10.0+** — HVM Hosts must be running Agent version "
+"2.10.0 or later. To upgrade, navigate to the host detail page, open the "
+"ACTIONS menu, and select \"Upgrade Agent.\" If unsuccessful, select "
+"\"Download Agent Script\" to download a host-specific shell script for "
+"manual installation."
+msgstr ""
+"**HVM Agent version 2.10.0+** — HVM Hosts debe ser running Agent version "
+"2.10.0 or later. To upgrade, navigate to the host detail page, open the "
+"ACTIONS menu, and select \"Upgrade Agent.\" If unsuccessful, select "
+"\"Download Agent Script\" to download a host-specific shell script for "
+"manual installation."
+
+#: ../../tools/migrations/requirements.rst:10
+msgid ""
+"**Network connectivity** — HVM Hosts must be able to reach ESXi hosts and"
+" vCenter on the source VMware Cloud via the management network (HTTPS, "
+"port 443)."
+msgstr ""
+"**Network connectivity** — HVM Hosts debe ser able to reach ESXi hosts and "
+"vCenter on the source VMware Cloud via the management network (HTTPS, port "
+"443)."
+
+#: ../../tools/migrations/requirements.rst:11
+msgid ""
+"**Source VMs must be running** — The preparation phase requires the "
+"source VM to be powered on. If a VM is powered off, it will be "
+"automatically started during the precheck phase."
+msgstr ""
+"**Source VMs debe ser running** — The preparation phase requires the "
+"source VM to be powered on. If a VM is powered off, it será automatically "
+"started during the precheck phase."
+
+#: ../../tools/migrations/requirements.rst:14
+msgid "Source VM Requirements"
+msgstr "Requisitos de VM de origen"
+
+#: ../../tools/migrations/requirements.rst:16
+msgid ""
+"Source VMs must be capable of having ``qemu-guest-tools`` or ``qemu-"
+"guest-agent`` installed (Linux) or VirtIO guest tools (Windows)"
+msgstr ""
+"Source VMs debe ser capable of having ``qemu-guest-tools`` or "
+"``qemu-guest-agent`` installed (Linux) or VirtIO guest tools (Windows)"
+
+#: ../../tools/migrations/requirements.rst:17
+msgid ""
+"Source VMs **must not** have any attached ISOs or CD-ROMs — detach these "
+"before migration or the transfer will fail"
+msgstr ""
+"Source VMs **must not** tienen cualquier attached ISOs o CD-ROMs — detach "
+"these antes de migration or el/la transfer se fail"
+
+#: ../../tools/migrations/requirements.rst:18
+msgid "RDM (Raw Device Mappings) are not supported"
+msgstr "Los RDM (Raw Device Mappings) no son compatibles"
+
+#: ../../tools/migrations/requirements.rst:19
+msgid ""
+"VirtIO / VirtIO-SCSI storage must be supported by the guest OS kernel "
+"(Linux guests with standard kernels meet this requirement; Windows guests"
+" have drivers injected automatically)"
+msgstr ""
+"VirtIO / VirtIO-SCSI storage debe ser supported by the guest OS kernel "
+"(Linux guests with standard kernels meet this requirement; Windows guests "
+"have drivers injected automatically)"
+
+#: ../../tools/migrations/requirements.rst:22
+msgid "Storage Considerations"
+msgstr "Consideraciones de almacenamiento"
+
+#: ../../tools/migrations/requirements.rst:24
+msgid ""
+"**GFS2 and NFS targets** — Migrations produce thin-provisioned QCOW2 "
+"images, minimizing on-disk footprint"
+msgstr ""
+"**GFS2 y NFS targets** — Migrations produce thin-provisioned QCOW2 images, "
+"minimizing on-disk footprint"
+
+#: ../../tools/migrations/requirements.rst:25
+msgid ""
+"**Block device targets** (local, Ceph RBD) — Migrations write raw format;"
+" ensure the target has sufficient capacity for the full virtual disk size"
+msgstr ""
+"**Block device targets** (local, Ceph RBD) — Migrations write raw format; "
+"ensure el/la target tiene sufficient capacity para the full virtual disk "
+"size"
+
+#: ../../tools/migrations/requirements.rst:26
+msgid ""
+"**Ceph RBD** — RBD images are mapped to local block devices during "
+"transfer and unmapped after completion"
+msgstr ""
+"**Ceph RBD** — RBD images son mapped a local block devices durante "
+"transfer y unmapped después de completion"
+
+#: ../../tools/migrations/requirements.rst:29
+msgid "Recommendations"
+msgstr "Recomendaciones"
+
+#: ../../tools/migrations/requirements.rst:31
+msgid ""
+"Start with a small test migration (1–3 VMs) to validate network "
+"connectivity, storage performance, and guest OS compatibility in your "
+"environment"
+msgstr ""
+"Start con a small test migration (1–3 VMs) a validate red connectivity, "
+"storage performance, y guest OS compatibility en your environment"
+
+#: ../../tools/migrations/requirements.rst:32
+msgid ""
+"Schedule large migrations during maintenance windows — source VMs are "
+"powered down during the transfer phase"
+msgstr ""
+"Schedule large migrations durante maintenance windows — source VMs son "
+"powered down during el/la transfer phase"
+
+#: ../../tools/migrations/requirements.rst:33
+msgid ""
+"Ensure adequate bandwidth between HVM hosts and ESXi hosts — transfer "
+"speed is directly proportional to available network throughput"
+msgstr ""
+"Ensure adequate bandwidth between HVM hosts and ESXi hosts — transfer "
+"speed is directly proportional to disponible network throughput"
+
+#: ../../tools/migrations/requirements.rst:34
+msgid ""
+"For Windows workloads, verify the source VM has internet access or ensure"
+" the VirtIO ISO is available in a vCenter datastore (the automated driver"
+" injection uses network download first, falling back to ISO)"
+msgstr ""
+"For Windows workloads, verify the source VM has internet access or ensure "
+"the VirtIO ISO está disponible in a vCenter datastore (the automated "
+"driver injection uses network download first, falling back to ISO)"
+

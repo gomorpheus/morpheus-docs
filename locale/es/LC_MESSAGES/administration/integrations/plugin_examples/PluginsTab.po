@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:2
+msgid "Instance Tabs"
+msgstr "Instancia Tabs"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:4
+msgid "Customize the UI for your Instances by providing your own tabs."
+msgstr "Customize el UI para su Instancias por providing su own tabs."
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:7
+msgid "Setup"
+msgstr "Setup"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:8
+msgid ""
+"Create a new class that extends "
+"``com.morpheusdata.core.AbstractInstanceTabProvider``. When the Morpheus UI "
+"builds the Instance UI it calls the ``renderTemplate`` method. Below is a "
+"simple example binding the Instance object to the template model."
+msgstr ""
+"Crear a nuevo class ese extends "
+"``com.morpheusdata.core.AbstractInstanceTabProvider``. Cuando el Morpheus UI"
+" builds el Instancia UI ello calls el ``renderTemplate`` method. Below es a "
+"simple ejemplo binding el Instancia object a el template model."
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:10
+#, python-brace-format
+msgid ""
+"@Override\n"
+"HTMLResponse renderTemplate(Instance instance) {\n"
+"  ViewModel<String> model = new ViewModel<String>()\n"
+"  model.object = instance\n"
+"  getRenderer().renderTemplate(\"hbs/instanceTab\", model)\n"
+"}"
+msgstr ""
+"@Override\n"
+"HTMLResponse renderTemplate(Instancia instancia) {\n"
+" ViewModel<String> model = nuevo ViewModel<String>()\n"
+" model.object = instancia\n"
+" getRenderer().renderTemplate(\"hbs/instanciaTab\", model)\n"
+"}"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:20
+msgid ""
+"Use ``MorpheusContext.buildInstanceConfig`` to get more details about your "
+"Instance. See ``com.morpheusdata.model.TaskConfig``"
+msgstr ""
+"Usar ``MorpheusContext.buildInstanceConfig`` a get más detalles acerca de su"
+" Instancia. See ``com.morpheusdata.model.TaskConfig``"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:22
+msgid ""
+"Handlebars <https://github.com/jknack/handlebars.java> is the default "
+"provided template engine. To override this default, implement the "
+"``com.morpheusdata.core.InstanceTabProvider`` interface and then write your "
+"own ``getRenderer()`` method."
+msgstr ""
+"Handlebars <https://github.com/jknack/handlebars.java> es el predeterminado "
+"provided template engine. Un override este predeterminado, implement el "
+"``com.morpheusdata.core.InstanceTabProvider`` interface y then write su own "
+"``getRenderer()`` method."
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:26
+msgid "Templating"
+msgstr "Templating"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:27
+msgid ""
+"See the Views <https://github.com/gomorpheus/morpheus-plugin-"
+"core/blob/master/morpheus-plugin-docs/src/docs/asciidoc/Views.adoc> section "
+"and the documentation for your templating engine for specific syntax."
+msgstr ""
+"Consulte la Views <https://github.com/gomorpheus/morpheus-plugin-"
+"core/blob/master/morpheus-plugin-docs/src/docs/asciidoc/Views.adoc> sección "
+"y el documentation para su templating engine para específico syntax."
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:31
+msgid "Security Policies"
+msgstr "Seguridad Políticas"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:34
+msgid "User Permissions"
+msgstr "Usuario Permisos"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:35
+msgid ""
+"Before a template is rendered in the UI, the ``InstanceTabProvider.show`` "
+"method is called to determine if the current user can view the custom "
+"Instance Tab. For example, you may wish to check that the current ``User`` "
+"has been granted the custom permission defined by your plugin."
+msgstr ""
+"Antes de a template es rendered en el UI, el ``InstanceTabProvider.show`` "
+"method es llamado a determine si el actual usuario puede view el "
+"personalizado Instancia Pestaña. Por ejemplo, usted puede wish a check ese "
+"el actual ``User`` ha sido granted el personalizado permiso defined por su "
+"plugin."
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:37
+msgid ""
+"@Override\n"
+"Boolean show(Instance instance, User user, Account account) {\n"
+"  def show = true\n"
+"  plugin.permissions.each { Permission permission ->\n"
+"    if(user.permissions[permission.code] != permission.availableAccessTypes.last().toString()){\n"
+"      show = false\n"
+"    }\n"
+"  }\n"
+"  return show\n"
+"}"
+msgstr ""
+"@Override\n"
+"Boolean show(Instancia instancia, Usuario usuario, Cuenta cuenta) {\n"
+" def show = true\n"
+" plugin.permisos.cada { Permiso permiso ->\n"
+" si(usuario.permisos[permiso.code] != permiso.availableAccessTypes.last().toString()){\n"
+" show = false\n"
+" }\n"
+" }\n"
+" return show\n"
+"}"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:52
+msgid "Content Security Policy"
+msgstr "Content Seguridad Política"
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:53
+msgid ""
+"If your custom UI needs to include external resources such as scripts, "
+"stylesheets, or frames, you will need to customize the Morpheus ``Content-"
+"Security-Policy`` Header to allow those elements to be loaded in the "
+"browser."
+msgstr ""
+"Si su personalizado UI needs a include external recursos como scripts, "
+"stylesheets, o frames, usted va a need a customize el Morpheus ``Content-"
+"Security-Policy`` Header a permitir esos elements a be loaded en el browser."
+
+#: ../../administration/integrations/plugin_examples/PluginsTab.rst:55
+#, python-brace-format
+msgid ""
+"@Override\n"
+"TabContentSecurityPolicy getContentSecurityPolicy() {\n"
+"  def csp = new TabContentSecurityPolicy()\n"
+"  csp.scriptSrc = '*.jsdelivr.net'\n"
+"  csp.frameSrc = '*.digitalocean.com'\n"
+"  csp.imgSrc = '*.wikimedia.org'\n"
+"  csp.styleSrc = 'https: *.bootstrapcdn.com'\n"
+"  csp\n"
+"}"
+msgstr ""
+"@Override\n"
+"TabContentSeguridadPolítica getContentSeguridadPolítica() {\n"
+" def csp = nuevo TabContentSeguridadPolítica()\n"
+" csp.scriptSrc = '*.jsdelivr.net'\n"
+" csp.frameSrc = '*.digitalocean.com'\n"
+" csp.imgSrc = '*.wikimedia.org'\n"
+" csp.styleSrc = 'https: *.bootstrapcdn.com'\n"
+" csp\n"
+"}"

@@ -1,0 +1,3007 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/identity_sources/identity_sources.rst:2
+msgid "Identity Sources"
+msgstr "Identidad Orígenes"
+
+#: ../../administration/identity_sources/identity_sources.rst:3
+msgid ""
+"|AdmTen| > (Selected Tenant) > Identity Sources |AdmUse| > Identity Sources"
+msgstr ""
+"|AdmTen| > (Selected Inquilino) > Identidad Orígenes |AdmUse| > Identidad "
+"Orígenes"
+
+#: ../../administration/identity_sources/custom_external.rst:5
+#: ../../administration/identity_sources/custom_iam_api.rst:5
+#: ../../administration/identity_sources/identity_sources.rst:7
+#: ../../administration/identity_sources/jumpcloud.rst:5
+#: ../../integration_guides/IdentityManagement/active_directory.rst:15
+#: ../../integration_guides/IdentityManagement/okta.rst:5
+#: ../../integration_guides/IdentityManagement/saml.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../administration/identity_sources/identity_sources.rst:9
+msgid ""
+"|morpheus| can integrate with many of the most common identity source "
+"technologies, such as Active Directory, Okta, and many others. These can be "
+"configured via the :guilabel:`Identity Sources` button on any Tenant detail "
+"page (|AdmTen| > Selected Tenant) or on the Users list page (|AdmUse|). "
+"These integrations map roles within these sign-on tools to equivalent roles "
+"in |morpheus| so at first log in users are assigned the appropriate role."
+msgstr ""
+"|morpheus| puede integrate con muchos de el la mayoría de common identidad "
+"origen technologies, como Active Directory, Okta, y muchos others. Estos se "
+"puede configurar a través de el :guilabel:`Identidad Orígenes` botón en "
+"cualquier Inquilino detalle página (|AdmTen| > Selected Inquilino) o en el "
+"Usuarios lista página (|AdmUse|). Estos integraciones map roles dentro de "
+"estos sign-en tools a equivalent roles en |morpheus| so en first log en "
+"usuarios son asignado el appropriate rol."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:2
+msgid "Active Directory"
+msgstr "Active Directory"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:17
+msgid ""
+"Active Directory is Microsoft’s primary authentication service. It is widely"
+" used in enterprise organizations and even in Microsoft cloud services. "
+"While Active Directory also supports LDAP protocol support (which |morpheus|"
+" can integrate with as well), |morpheus| includes a dedicated identity "
+"integration type specifically for Active Directory. By integrating Active "
+"Directory, |morpheus| administrators can fully offload the work of managing "
+"the user lifecycle to Active Directory. Creating new users, applying roles "
+"to users, updating basic user data, disabling users, and more can be handled"
+" in Active Directory and automatically filtered down to |morpheus|. This "
+"section includes an example integration walkthrough as well as additional "
+"details on the integration feature set."
+msgstr ""
+"Active Directory es Microsoft’s primary autenticación service. Es widely "
+"usado en enterprise organizations y even en Microsoft cloud services. While "
+"Active Directory también supports LDAP protocol soporte (que |morpheus| "
+"puede integrate con as well), |morpheus| incluye a dedicated identidad "
+"integración tipo specifically para Active Directory. Por integrating Active "
+"Directory, |morpheus| administrators puede fully offload el work de managing"
+" el usuario lifecycle a Active Directory. Creando nuevo usuarios, applying "
+"roles a usuarios, updating basic usuario data, disabling usuarios, y más "
+"puede ser handled en Active Directory y automáticamente filtered down a "
+"|morpheus|. Este sección incluye un ejemplo integración walkthrough así como"
+" adicional detalles en el integración característica establecido."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:19
+msgid ""
+"Caution should be used when integrating more than one Active Directory "
+"identity source with the same |morpheus| Tenant. You must ensure the users "
+"on each identity source are unique users or that the two domains use "
+"different naming conventions for users."
+msgstr ""
+"Caution debería ser usado cuando integrating más than uno Active Directory "
+"identidad origen con el mismo |morpheus| Inquilino. You debe asegurar el "
+"usuarios en cada identidad origen son único usuarios o ese el two domains "
+"usar diferente naming conventions para usuarios."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:22
+msgid "How It Works"
+msgstr "How It Works"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:24
+msgid ""
+"In |morpheus|, identity sources (if used) are configured per Tenant. In "
+"order to see an identity integration or create a new one, navigate to a "
+"Tenant detail page (|AdmTen| > Selected Tenant) and click "
+":guilabel:`IDENTITY SOURCES`. From this page we can add a new identity "
+"source or click the pencil (|pencil|) icon next to an existing identity "
+"source to view or edit it. Any configured identity source will apply to just"
+" one Tenant and they cannot be shared. One scenario where this is especially"
+" useful is in an MSP appliance where each Tenant is a siloed environment for"
+" a specific customer. The customer's own existing Active Directory server "
+"and groups can be leveraged to build |morpheus| user accounts with correct "
+"role mapping automatically."
+msgstr ""
+"En |morpheus|, identidad orígenes (si usado) son configurado per Inquilino. "
+"Para poder see un identidad integración o crear a nuevo uno, navegue a a "
+"Inquilino detalle página (|AdmTen| > Selected Inquilino) y click "
+":guilabel:`IDENTITY SOURCES`. Desde este página we puede agregar a nuevo "
+"identidad origen o haga clic en el pencil (|pencil|) icon next a un "
+"existente identidad origen a view o editar ello. Cualquier configurado "
+"identidad origen va a aplicar a just uno Inquilino y ellos no puede ser "
+"shared. Uno scenario donde este es especially useful es en un MSP appliance "
+"donde cada Inquilino es a siloed entorno para a específico customer. El "
+"customer's own existente Active Directory servidor y grupos puede ser "
+"leveraged a build |morpheus| usuario cuentas con correct rol mapping "
+"automáticamente."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:26
+msgid ""
+"When configuring an Active Directory integration in |morpheus|, AD groups "
+"are mapped to |morpheus| roles. When the user logs in for the first time, "
+"|morpheus| adds the new user account with correct name, email address, and "
+"applies one or more roles depending on configuration. Going forward, "
+"|morpheus| will sync down any changes to the user, including any role "
+"changes based on changes to the user's associated AD groups or updated "
+"passwords. Additionally, disabling a user in AD will prevent them from "
+"accessing |morpheus|."
+msgstr ""
+"Cuando configuring un Active Directory integración en |morpheus|, AD grupos "
+"son mapped a |morpheus| roles. Cuando el usuario logs en para el first time,"
+" |morpheus| adds el nuevo usuario cuenta con correct nombre, correo "
+"electrónico address, y se aplica uno o más roles dependiendo de "
+"configuración. Going forward, |morpheus| va a sync down cualquier changes a "
+"el usuario, incluyendo cualquier rol changes basado en changes a el "
+"usuario's associated AD grupos o updated contraseñas. Adicionalmente, "
+"disabling a usuario en AD va a prevent them desde accessing |morpheus|."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:28
+msgid ""
+"|morpheus| will connect over port 389 for non-secure LDAP and port 636 for "
+"secure LDAP. Ensure that |morpheus| is able to talk to the AD server on the "
+"proper port."
+msgstr ""
+"|morpheus| va a connect over port 389 para non-secure LDAP y port 636 para "
+"secure LDAP. Asegurar ese |morpheus| es able a talk a el AD servidor en el "
+"proper port."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:31
+msgid "Example Integration"
+msgstr "Ejemplo Integración"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:33
+msgid ""
+"In a simple example, we have an Active Directory server which has two groups"
+" relevant to |morpheus|, \"Morpheus Users\" and \"Morpheus Admins.\" We will"
+" configure |morpheus| so that only users in the \"Morpheus Users\" group can"
+" access |morpheus| in any capacity. Users who are also in the \"Morpheus "
+"Admins\" group will take on the System Admin role in |morpheus|. We'll see "
+"later when the integration is configured how |morpheus| roles can be mapped "
+"to AD groups. In the same AD server, I have two users. John Smith is in "
+"groups \"Morpheus Users\" and \"Morpheus Admins\". John Jones is only in the"
+" \"Morpheus Users\" group."
+msgstr ""
+"En a simple ejemplo, we tienen un Active Directory servidor que tiene two "
+"grupos relevant a |morpheus|, \"Morpheus Usuarios\" y \"Morpheus Admins.\" "
+"We va a configure |morpheus| so ese solo usuarios en el \"Morpheus "
+"Usuarios\" grupo puede acceso |morpheus| en cualquier capacity. Usuarios "
+"quien son también en el \"Morpheus Admins\" grupo va a take en el System "
+"Admin rol en |morpheus|. We'll see later cuando el integración es "
+"configurado how |morpheus| roles puede ser mapped a AD grupos. En el mismo "
+"AD servidor, I tienen two usuarios. John Smith es en grupos \"Morpheus "
+"Usuarios\" y \"Morpheus Admins\". John Jones es solo en el \"Morpheus "
+"Usuarios\" grupo."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:36
+msgid ".. image:: images/integration_guides/identity_sources/ad/ad.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/ad.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:37
+msgid ""
+"Knowing the AD scheme and the requirements for |morpheus| user roles, we can"
+" begin the process of creating the integration. Identity integrations are "
+"specific to each Tenant so begin by navigating to the Tenant detail page "
+"(|AdmTen| > Selected Tenant) and clicking :guilabel:`IDENTITY SOURCES`. On "
+"setting the type to \"Active Directory,\" the form will update with the "
+"needed fields. Note the following basic fields:"
+msgstr ""
+"Knowing el AD scheme y el requirements para |morpheus| roles de usuario, we "
+"puede sergin el process de creando el integración. Identidad integraciones "
+"son específico a cada Inquilino so begin por navigating a el Inquilino "
+"detalle página (|AdmTen| > Selected Inquilino) y clicking "
+":guilabel:`IDENTITY SOURCES`. En setting el tipo a \"Active Directory,\" el "
+"form va a update con el needed campos. Note lo siguiente basic campos:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:39
+msgid ""
+"**AD SERVER:** The IP address or hostname for the Active Directory Server"
+msgstr ""
+"**AD SERVER:** El IP address o hostname para el Active Directory Servidor"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:40
+msgid ""
+"**DOMAIN:** The AD domain in which the relevant users and groups reside"
+msgstr "**DOMAIN:** El AD domain en que el relevant usuarios y grupos reside"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:41
+msgid ""
+"**BINDING USERNAME:** A server user which has access to relevant objects on "
+"the AD server. In my example, I've used the in-built Administrator user "
+"which is the easiest option. Other users may be used depending on your "
+"organization's IT security policies but the integration with |morpheus| will"
+" not work properly if the user does not have the needed access"
+msgstr ""
+"**BINDING USERNAME:** Un servidor usuario que tiene acceso a relevant "
+"objects en el AD servidor. En my ejemplo, I've usado el en-built "
+"Administrator usuario que es el easiest opción. Otro usuarios puede be usado"
+" dependiendo de su organization's IT seguridad políticas pero el integración"
+" con |morpheus| no work properly si el usuario hace no tienen el needed "
+"acceso"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:42
+msgid "**BINDING PASSWORD:** The password for the user in the prior field"
+msgstr "**BINDING PASSWORD:** El contraseña para el usuario en el prior campo"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:44
+msgid ""
+"With the basic configurations completed, the remaining configurations will "
+"affect |morpheus| user and role generation. A REQUIRED GROUP is optional and"
+" is a group the user *must* be in to have any |morpheus| access. Here we "
+"require that users be in the \"Morpheus Users\" group. A DEFAULT ROLE is "
+"required and will be assigned to all users regardless of any additional "
+"roles they may be assigned based on their AD group membership. Beyond that, "
+"all other |morpheus| roles will be listed here and an AD group name can be "
+"associated with as many as you required. In this example, we are giving "
+"users in the \"Morpheus Admins\" group the |morpheus| System Admin role. "
+"Though we did not use them, it's worth pointing out that ENABLE ROLE MAPPING"
+" PERMISSION will give administrators in the Tenant the ability to update the"
+" AD role mappings (though they will not have access to the core integration "
+"fields such as AD SERVER, DOMAIN, or binding user details). MANUAL ROLE "
+"ASSIGNMENT allows users to manually update |morpheus| roles outside of the "
+"automatic mappings created by the AD integration."
+msgstr ""
+"Con el basic configurations completed, el remaining configurations va a "
+"affect |morpheus| usuario y rol generation. Un REQUIRED GROUP es opcional y "
+"es a grupo el usuario *must* be en a tienen cualquier |morpheus| acceso. "
+"Here we requerir ese usuarios be en el \"Morpheus Usuarios\" grupo. Un "
+"DEFAULT ROLE es obligatorio y será asignado a todos usuarios "
+"independientemente de cualquier adicional roles ellos puede be asignado "
+"basado en su AD grupo membership. Beyond ese, todos otro |morpheus| roles "
+"será listed here y un AD grupo nombre puede ser asociado con as muchos as "
+"usted requerido. En este ejemplo, we son giving usuarios en el \"Morpheus "
+"Admins\" grupo el |morpheus| System Admin rol. Though we did no usar them, "
+"ello's worth pointing out ese ENABLE ROLE MAPPING PERMISSION va a give "
+"administrators en el Inquilino el ability a update el AD rol mappings "
+"(though ellos no tienen acceso a el core integración campos como AD SERVER, "
+"DOMAIN, o binding usuario detalles). MANUAL ROLE ASSIGNMENT permite usuarios"
+" a manually update |morpheus| roles outside de el automatic mappings creado "
+"por el AD integración."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:47
+msgid ".. image:: images/integration_guides/identity_sources/ad/intConfig.png"
+msgstr ""
+".. image:: images/integration_guides/identity_sources/ad/intConfig.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:48
+msgid ""
+"With the above integration steps completed, users can now log into "
+"|morpheus| and a user account with correct roles will automatically be "
+"created. In our example case, John Smith has logged in and we can see he is "
+"assigned the default role as well as the System Admin role based on his AD "
+"group associations. Going forward, |morpheus| will continue to sync any "
+"changes to these users. For example, |morpheus| roles may be updated based "
+"on changing AD groups or user access may be completely revoked by disabling "
+"the user in AD."
+msgstr ""
+"Con el above integración steps completed, usuarios puede now log en "
+"|morpheus| y a usuario cuenta con correct roles va a automáticamente be "
+"creado. En our ejemplo case, John Smith tiene logged en y we puede see he es"
+" asignado el predeterminado rol así como el System Admin rol basado en his "
+"AD grupo associations. Going forward, |morpheus| va a continue a sync "
+"cualquier changes a estos usuarios. Por ejemplo, |morpheus| roles puede be "
+"updated basado en changing AD grupos o usuario acceso puede be completely "
+"revoked por disabling el usuario en AD."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:51
+msgid ".. image:: images/integration_guides/identity_sources/ad/user.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/user.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:53
+msgid "Adding an Active Directory Integration"
+msgstr "Adding un Active Directory Integración"
+
+#: ../../administration/identity_sources/custom_external.rst:12
+#: ../../administration/identity_sources/custom_iam_api.rst:14
+#: ../../administration/identity_sources/jumpcloud.rst:12
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:31
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:99
+#: ../../integration_guides/IdentityManagement/active_directory.rst:55
+#: ../../integration_guides/IdentityManagement/okta.rst:12
+#: ../../integration_guides/IdentityManagement/saml.rst:16
+msgid "Navigate to |AdmTen|"
+msgstr "Navegue a |AdmTen|"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:56
+#: ../../integration_guides/IdentityManagement/okta.rst:13
+msgid "Select a Tenant"
+msgstr "Seleccionar a Inquilino"
+
+#: ../../administration/identity_sources/custom_external.rst:14
+#: ../../administration/identity_sources/custom_iam_api.rst:16
+#: ../../administration/identity_sources/jumpcloud.rst:14
+#: ../../integration_guides/IdentityManagement/active_directory.rst:57
+#: ../../integration_guides/IdentityManagement/okta.rst:14
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr "Seleccionar :guilabel:`IDENTITY SOURCES`"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:58
+msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`"
+msgstr "Seleccionar :guilabel:`+ ADD IDENTITY SOURCE`"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:59
+msgid "Set the TYPE to \"Active Directory\""
+msgstr "Establecido el TYPE a \"Active Directory\""
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:60
+msgid "Populate the following:"
+msgstr "Populate lo siguiente:"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:38
+#: ../../integration_guides/IdentityManagement/active_directory.rst:62
+#: ../../integration_guides/IdentityManagement/okta.rst:19
+msgid "Name"
+msgstr "Nombre"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:63
+msgid "A friendly name in |morpheus| for the AD integration"
+msgstr "Un friendly nombre en |morpheus| para el AD integración"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:64
+msgid "AD Server"
+msgstr "AD Servidor"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:65
+msgid "The Hostname or IP address of AD Server"
+msgstr "El Hostname o IP address de AD Servidor"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:66
+msgid "Domain"
+msgstr "Domain"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:67
+msgid "The AD domain in which the relevant user and group objects reside"
+msgstr "El AD domain en que el relevant usuario y grupo objects reside"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:68
+msgid "USE SSL"
+msgstr "USE SSL"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:69
+msgid ""
+"Indicates whether SSL should be used for communication with the AD server. "
+"|morpheus| will connect over port 389 for non-secure LDAP and port 636 for "
+"secure LDAP, ensure |morpheus| can connect to the AD server over the correct"
+" port"
+msgstr ""
+"Indicates whether SSL debería ser usado para communication con el AD "
+"servidor. |morpheus| va a connect over port 389 para non-secure LDAP y port "
+"636 para secure LDAP, asegurar |morpheus| puede connect a el AD servidor "
+"over el correct port"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:70
+msgid "Binding Username"
+msgstr "Binding Usuarioname"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:71
+msgid ""
+"A username for a service account which has access to relevant objects "
+"(users, groups, etc.). For ease, the \"Administrator\" user may be used"
+msgstr ""
+"Un usuarioname para a service cuenta que tiene acceso a relevant objects "
+"(usuarios, grupos, etc.). Para ease, el \"Administrator\" usuario puede be "
+"usado"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:72
+msgid "Binding Password"
+msgstr "Binding Contraseña"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:73
+msgid "The password for the above account"
+msgstr "El contraseña para el above cuenta"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:74
+#: ../../integration_guides/IdentityManagement/okta.rst:27
+msgid "Required Group"
+msgstr "Requerido Grupo"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:75
+msgid ""
+"The AD group users must be in to have access (optional, see example in the "
+"prior section)"
+msgstr ""
+"El AD grupo usuarios debe ser en a tienen acceso (optional, see ejemplo en "
+"el prior sección)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:76
+#: ../../integration_guides/IdentityManagement/okta.rst:29
+msgid "Default Role"
+msgstr "Predeterminado Rol"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:77
+msgid ""
+"The default role a user is assigned when they are in the required group or "
+"if no specific group mapping applies to the user (see example in prior "
+"section)"
+msgstr ""
+"El predeterminado rol a usuario es asignado cuando ellos son en el requerido"
+" grupo o si no específico grupo mapping se aplica a el usuario (see ejemplo "
+"en prior sección)"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:136
+#: ../../integration_guides/IdentityManagement/active_directory.rst:78
+#: ../../integration_guides/IdentityManagement/okta.rst:31
+#: ../../integration_guides/IdentityManagement/saml.rst:75
+msgid "ENABLE ROLE MAPPING PERMISSION"
+msgstr "ENABLE ROLE MAPPING PERMISSION"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:79
+msgid ""
+"When selected, Tenant users with appropriate rights to view and edit Roles "
+"will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"without viewing or potentially editing the basic Identity Source "
+"configuration (AD server, domain, binding user details, etc)"
+msgstr ""
+"Cuando seleccionado, Inquilino usuarios con appropriate rights a view y "
+"editar Roles va a tienen el ability a establecido rol mapping para el "
+"Identidad Origen integración. Este permite el Inquilino usuario a editar "
+"solo el rol mappings sin viewing o potentially editing el basic Identidad "
+"Origen configuración (AD servidor, domain, binding usuario detalles, etc)"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:139
+#: ../../integration_guides/IdentityManagement/active_directory.rst:81
+#: ../../integration_guides/IdentityManagement/okta.rst:34
+#: ../../integration_guides/IdentityManagement/saml.rst:78
+msgid "MANUAL ROLE ASSIGNMENT"
+msgstr "MANUAL ROLE ASSIGNMENT"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:81
+msgid ""
+"When selected, administrators can manually edit Roles for users created "
+"through this identity source integration from the user detail page (|AdmUse|"
+" > Selected user)"
+msgstr ""
+"Cuando seleccionado, administrators puede manually editar Roles para "
+"usuarios creado a través de este identidad origen integración desde el "
+"usuario detalle página (|AdmUse| > Selected usuario)"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:141
+#: ../../integration_guides/IdentityManagement/active_directory.rst:83
+#: ../../integration_guides/IdentityManagement/okta.rst:36
+#: ../../integration_guides/IdentityManagement/saml.rst:70
+msgid ""
+"For more on Identity Source role mapping permissions, see the `associated "
+"guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-"
+"admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our "
+"KnowledgeBase."
+msgstr ""
+"Para más en Identidad Origen rol mapping permisos, consulte la `associated "
+"guide <https://soporte.morpheusdata.com/s/article/How-a-enable-Subinquilino-"
+"admins-a-editar-Identidad-Origen-rol-mapping?language=en_US>`_ en our "
+"KnowledgeBase."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:85
+msgid "Select :guilabel:`SAVE CHANGES`."
+msgstr "Seleccionar :guilabel:`SAVE CHANGES`."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:87
+msgid ""
+"Now allowed AD users can login to |morpheus| via their Active Directory "
+"credentials and a User will be automatically generated to |morpheus| with "
+"matching metadata and mapped Role permissions."
+msgstr ""
+"Now allowed AD usuarios puede inicio de sesión a |morpheus| a través de su "
+"Active Directory credenciales y a Usuario será automáticamente generated a "
+"|morpheus| con matching metadata y mapped Rol permisos."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:92
+msgid "Troubleshooting"
+msgstr "Troubleshooting"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:94
+msgid ""
+"If you're unable to get the Active Directory integration to work, the "
+"following troubleshooting steps may be useful to ensure your appliance can "
+"talk to the Active Directory server."
+msgstr ""
+"Si usted're unable a get el Active Directory integración a work, lo "
+"siguiente troubleshooting steps puede be useful a asegurar su appliance "
+"puede talk a el Active Directory servidor."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:96
+msgid "Open firewall ports"
+msgstr "Open firewall ports"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:98
+msgid "**Source:** |morpheus| appliance"
+msgstr "**Origen:** |morpheus| appliance"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:100
+msgid "**Destination:** AD server's FQDN or IP address"
+msgstr "**Destination:** AD servidor's FQDN o IP address"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:102
+msgid "**Non-SSL AD integration:** TCP-389"
+msgstr "**Non-SSL AD integration:** TCP-389"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:104
+msgid "**SSL AD integration:** TCP-636"
+msgstr "**SSL AD integration:** TCP-636"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:106
+msgid "Checking open LDAP connections from the |morpheus| appliance"
+msgstr "Checking open LDAP connections desde el |morpheus| appliance"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:108
+msgid "Connect to a |morpheus| appliance box and run the following:"
+msgstr "Connect a a |morpheus| appliance box y run lo siguiente:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:110
+msgid "$ sudo lsof i- | grep :ldap"
+msgstr "$ sudo lsof i- | grep :ldap"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:114
+msgid "Check LDAP connectivity from the |morpheus| appliance"
+msgstr "Check LDAP connectivity desde el |morpheus| appliance"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:116
+msgid ""
+"Connect to a |morpheus| appliance box and run the following. Be sure to "
+"replace the placeholder values in the command with the correct values for "
+"your environment:"
+msgstr ""
+"Connect a a |morpheus| appliance box y run lo siguiente. Be sure a replace "
+"el placeholder valores en el command con el correct valores para su entorno:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:118
+msgid ""
+"$ ldapsearch   -x -h xx.xx.xx.xx -D \"binding-user@acme.com\" -W -b "
+"\"cn=users,dc=acme,dc=com\""
+msgstr ""
+"$ ldapsearch -x -h xx.xx.xx.xx -D \"binding-usuario@acme.com\" -W -b "
+"\"cn=usuarios,dc=acme,dc=com\""
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:122
+msgid ""
+"Run tcpflow from the |morpheus| appliance for non-SSL enabled AD identity "
+"Integrations"
+msgstr ""
+"Run tcpflow desde el |morpheus| appliance para non-SSL habilitado AD "
+"identidad Integraciones"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:124
+msgid ""
+"Use tcpflow from the |morpheus| appliance and then start the identity source"
+" configuration once again. Keep in mind this will only work for AD servers "
+"which are not SSL enabled:"
+msgstr ""
+"Usar tcpflow desde el |morpheus| appliance y then start el identidad origen "
+"configuración once again. Keep en mind este va a solo work para AD "
+"servidores que son no SSL habilitado:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:126
+msgid "$ sudo tcpflow -i any -c -v port 389"
+msgstr "$ sudo tcpflow -i cualquier -c -v port 389"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:130
+msgid "Check the AD and domain controllers event logs"
+msgstr "Check el AD y domain controllers event logs"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:132
+msgid ""
+"Check the event logs for LDAP queries from the |morpheus| appliance to "
+"ensure network connectivity."
+msgstr ""
+"Check el event logs para LDAP queries desde el |morpheus| appliance a "
+"asegurar red connectivity."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:2
+msgid "Azure Active Directory SSO (SAML)"
+msgstr "Azure Active Directory SSO (SAML)"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:4
+msgid ""
+"Azure Active Directory Single Sign-on can be added as a Identity Source in "
+"|morpheus| using the SAML Identity Source Type. The Azure AD SSO "
+"configuration is slightly different than other SAML providers, and this "
+"guide will assist in adding a Azure AD SSO Identity Source."
+msgstr ""
+"Azure Active Directory Single Sign-en puede ser agregado as a Identidad "
+"Origen en |morpheus| usando el SAML Identidad Origen Tipo. El Azure AD SSO "
+"configuración es slightly diferente than otro SAML providers, y este guide "
+"va a assist en adding a Azure AD SSO Identidad Origen."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:8
+msgid "Create Azure Enterprise Application"
+msgstr "Crear Azure Enterprise Application"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:10
+msgid "Login to the `Azure Portal <https://portal.azure.com>`_"
+msgstr "Inicio de sesión a el `Azure Portal <https://portal.azure.com>`_"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:11
+msgid "Navigate to: ``Azure Active Directory > Enterprise Applications``"
+msgstr "Navegue a: ``Azure Active Directory > Enterprise Applications``"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:12
+msgid "Click the ``+ New application`` button at the top"
+msgstr "Haga clic en el ``+ New application`` botón en el top"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:13
+msgid "Click the ``+ Create your own application`` button at the top"
+msgstr "Haga clic en el ``+ Crear su own application`` botón en el top"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:14
+msgid ""
+"Ensure ``Integrate any other application you don't find in the gallery (Non-"
+"gallery)`` is selected and enter a name for the app.  Common examples are:  "
+"``MorpheusSSO``"
+msgstr ""
+"Asegurar ``Integrate any other application usted don't find in the gallery "
+"(Non-gallery)`` es seleccionado y enter a nombre para el app. Common "
+"ejemplos son: ``MorpheusSSO``"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:15
+msgid "Click the ``Create`` button at the bottom and wait for it to complete"
+msgstr ""
+"Haga clic en el ``Crear`` botón en el bottom y wait para ello a complete"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:16
+msgid ""
+"Once created, you'll be in the ``Overview`` of the application created.  "
+"Navigate to the ``Single sign-on`` section from the left pane"
+msgstr ""
+"Once creado, usted'll be en el ``Overview`` de el application creado. "
+"Navegue a el ``Single sign-on`` sección desde el left pane"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:17
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:62
+msgid "Choose ``SAML`` as the Single sign-on method"
+msgstr "Choose ``SAML`` as el Single sign-en method"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:18
+msgid ""
+"Copy both the ``Login URL`` and ``Logout URL`` in Step 4, we'll need these "
+"in some of the next steps"
+msgstr ""
+"Copy both el ``Inicio de sesión URL`` y ``Logout URL`` en Step 4, we'll need"
+" estos en algunos de el next steps"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:19
+msgid ""
+"Before we can continue configuring the application, the configuration needs "
+"to be generated in |morpheus| for more data"
+msgstr ""
+"Antes de we puede continue configuring el application, el configuración "
+"needs a be generated en |morpheus| para más data"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:22
+msgid "Create an Azure AD SAML Integration in |morpheus|"
+msgstr "Crear un Azure AD SAML Integración en |morpheus|"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:24
+msgid ""
+"Azure requires inputting the ``Identifier (Entity ID)`` and ``Reply URL "
+"(Assertion Consumer Service URL)`` in the Azure SSO configuration before it "
+"provides the Endpoints and Certificate necessary to add the Integration into"
+" |morpheus|. In order to get the ``Identifier (Entity ID)`` and ``Reply URL "
+"(Assertion Consumer Service URL)`` to input into Azure SSO configuration, we"
+" need to create a ``Azure AD SAML SSO`` integration in |morpheus| first."
+msgstr ""
+"Azure requiere inputting el ``Identifier (Entity ID)`` y ``Reply URL "
+"(Assertion Consumer Service URL)`` en el Azure SSO configuración antes de "
+"ello proporciona el Endpoints y Certificate necessary a agregar el "
+"Integración en |morpheus|. Para poder get el ``Identifier (Entity ID)`` y "
+"``Reply URL (Assertion Consumer Service URL)`` a entrada en Azure SSO "
+"configuración, we need a crear a ``Azure AD SAML SSO`` integración en "
+"|morpheus| first."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:28
+msgid "To add the integration:"
+msgstr "Un agregar el integración:"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:30
+msgid "Login to |morpheus|"
+msgstr "Inicio de sesión a |morpheus|"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:32
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:100
+msgid "Click a tenant hyperlink"
+msgstr "Click a inquilino hyperlink"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:33
+msgid ""
+"Click the :guilabel:`IDENTITY SOURCES` button in the Tenant detail page"
+msgstr ""
+"Haga clic en el :guilabel:`IDENTITY SOURCES` botón en el Inquilino detalle "
+"página"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:34
+msgid "Click the :guilabel:`+ ADD IDENTITY SOURCE` button"
+msgstr "Haga clic en el :guilabel:`+ ADD IDENTITY SOURCE` botón"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:35
+msgid "Select ``Azure AD SAML SSO`` from the ``TYPE`` dropdown"
+msgstr "Seleccionar ``Azure AD SAML SSO`` desde el ``TYPE`` menú desplegable"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:36
+msgid "Add"
+msgstr "Agregar"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:40
+msgid "(Optional) Description"
+msgstr "(Optional) Description"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:42
+msgid ""
+"Paste the ``Login URL`` copied from Azure into the ``LOGIN REDIRECT URL`` "
+"field"
+msgstr ""
+"Paste el ``Inicio de sesión URL`` copied desde Azure en el ``LOGIN REDIRECT "
+"URL`` campo"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:44
+msgid ""
+"Paste the ``Logout URL`` copied from Azure into the ``SAML LOGOUT REDIRECT "
+"URL`` field"
+msgstr ""
+"Paste el ``Logout URL`` copied desde Azure en el ``SAML LOGOUT REDIRECT "
+"URL`` campo"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:46
+msgid ""
+"This is the minimum information needed for now, which will let us generate "
+"the details needed from |morpheus|.  We'll return to this configuration page"
+" later to enter more information."
+msgstr ""
+"Este es el minimum information needed para now, que va a let us generate el "
+"detalles needed desde |morpheus|. We'll return a este configuración página "
+"later a enter más information."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:47
+msgid "Click the :guilabel:`SAVE CHANGES` button"
+msgstr "Haga clic en el :guilabel:`SAVE CHANGES` botón"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:49
+#: ../../integration_guides/IdentityManagement/saml.rst:56
+msgid ""
+"Setting SAML REQUEST to \"No Signature\" and SAML RESPONSE to \"Do Not "
+"Validate Assertion Signature\" is allowed but not recommended for security "
+"reasons."
+msgstr ""
+"Setting SAML REQUEST a \"No Signature\" y SAML RESPONSE a \"Do No Validate "
+"Assertion Signature\" es allowed pero no recomendado para seguridad reasons."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:51
+msgid ""
+"Upon saving, the `Entity ID` (``Identifier (Entity ID)``) and `SP ACS URL` "
+"(``Reply URL (Assertion Consumer Service URL)``) will be provide in the "
+"Identity Source list view. Copy these for use in Azure SSO configuration."
+msgstr ""
+"Upon saving, el `Entity ID` (``Identifier (Entity ID)``) y `SP ACS URL` "
+"(``Reply URL (Assertion Consumer Service URL)``) será provide en el "
+"Identidad Origen lista view. Copy estos para usar en Azure SSO "
+"configuración."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/saml_setup.png"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:57
+msgid "Configure Azure Enterprise Application"
+msgstr "Configure Azure Enterprise Application"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:59
+msgid ""
+"This guide assumes an Azure AD Enterprise Application has already been "
+"created. Please refer to documentation above, if this has not already been "
+"configured."
+msgstr ""
+"Este guide assumes un Azure AD Enterprise Application tiene already been "
+"creado. Please refer a documentation above, si este tiene no already been "
+"configurado."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:61
+msgid ""
+"Navigate to: ``Azure Active Directory > Enterprise Applications > Single "
+"sign-on``"
+msgstr ""
+"Navegue a: ``Azure Active Directory > Enterprise Applications > Single sign-"
+"on``"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:63
+msgid ""
+"On Step 1 (``Basic SAML Configuration``), click the ``Edit`` button and "
+"enter the following:"
+msgstr ""
+"En Step 1 (``Basic SAML Configuración``), haga clic en el ``Editar`` botón y"
+" enter lo siguiente:"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:66
+msgid "Identifier (Entity ID)"
+msgstr "Identifier (Entity ID)"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:66
+msgid ""
+"Enter the ``Entity ID`` URL from the |morpheus| Identity Source Integration "
+"above"
+msgstr ""
+"Enter el ``Entity ID`` URL desde el |morpheus| Identidad Origen Integración "
+"above"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:69
+msgid "Reply URL (Assertion Consumer Service URL)"
+msgstr "Reply URL (Assertion Consumer Service URL)"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:69
+msgid ""
+"Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration "
+"above"
+msgstr ""
+"Enter el ``SP ACS URL`` desde el |morpheus| Identidad Origen Integración "
+"above"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:74
+msgid "Logout URL"
+msgstr "Logout URL"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:72
+msgid ""
+"Enter the following format:  ``https://yourUrl/login/`` If this is a sub "
+"tenant, the format may instead be the following:  "
+"``https://yourUrl/login/account/1`` The login URL can be found under "
+":guilabel:`IDENTITY SOURCES` in the tenant"
+msgstr ""
+"Enter lo siguiente format: ``https://yourUrl/inicio de sesión/`` Si este es "
+"a sub inquilino, el format puede instead be lo siguiente: "
+"``https://yourUrl/inicio de sesión/cuenta/1`` El inicio de sesión URL se "
+"puede encontrar under :guilabel:`IDENTITY SOURCES` en el inquilino"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:76
+msgid "On Step 2 (``Attributes and Claims``), click the ``Edit`` button"
+msgstr ""
+"En Step 2 (``Attributes and Claims``), haga clic en el ``Editar`` botón"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:77
+msgid "Click the ``Add a group claim`` button at the top"
+msgstr "Haga clic en el ``Agregar a group claim`` botón en el top"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:78
+msgid ""
+"Choose ``All groups`` and ensure ``Group ID`` is selected for the ``Source "
+"attribute`` dropdown"
+msgstr ""
+"Choose ``All groups`` y asegurar ``Group ID`` es seleccionado para el "
+"``Origen attribute`` menú desplegable"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:80
+msgid ""
+"You can also choose ``Security groups``, which ever makes more sense for the"
+" organization"
+msgstr ""
+"You puede también choose ``Security groups``, que ever makes más sense para "
+"el organization"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:82
+msgid ""
+"Close the pane and return to the Enterprise Application in the ``Single "
+"sign-on`` section"
+msgstr ""
+"Close el pane y return a el Enterprise Application en el ``Single sign-on`` "
+"sección"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:83
+msgid ""
+"On Step 3 (``SAML Certificates``), click the ``Download`` link next to "
+"``Certificate (Base64)`` and ``Federation Metadata XML``"
+msgstr ""
+"En Step 3 (``SAML Certificates``), haga clic en el ``Download`` link next a "
+"``Certificate (Base64)`` y ``Federation Metadata XML``"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:85
+msgid ""
+"The files will download, keep them available for later configuation in "
+"|morpheus|"
+msgstr ""
+"El files va a download, keep them disponible para later configuation en "
+"|morpheus|"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:87
+msgid "Navigate to ``Users and Groups`` in the left pane"
+msgstr "Navegue a ``Users and Groups`` en el left pane"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:88
+msgid "Click the ``Add user/group`` button"
+msgstr "Haga clic en el ``Agregar user/group`` botón"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:89
+msgid ""
+"Add Azure groups to this application that will be able to login to "
+"|morpheus|"
+msgstr ""
+"Agregar Azure grupos a este application ese será able a inicio de sesión a "
+"|morpheus|"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:91
+msgid ""
+"Note the object ID for each of these groups, as they will be used later when"
+" configuring |morpheus| to map the group to roles"
+msgstr ""
+"Note el object ID para cada de estos grupos, as ellos será usado later "
+"cuando configuring |morpheus| a map el grupo a roles"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:93
+msgid "Once groups have been added, click the ``Assign`` button at the bottom"
+msgstr ""
+"Once grupos han sido agregado, haga clic en el ``Assign`` botón en el bottom"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:96
+msgid "Configure the Azure AD SAML Integration in |morpheus|"
+msgstr "Configure el Azure AD SAML Integración en |morpheus|"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:98
+msgid "Login to |morpheus| using ``Username and Password``, as usual"
+msgstr ""
+"Inicio de sesión a |morpheus| usando ``Username and Contraseña``, as usual"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:101
+#: ../../integration_guides/IdentityManagement/saml.rst:18
+msgid "Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page"
+msgstr ""
+"Seleccionar :guilabel:`IDENTITY SOURCES` en el Inquilino detalle página"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:102
+msgid "Click the pencil (edit) next to the integration created previously"
+msgstr ""
+"Haga clic en el pencil (editar) next a el integración creado previously"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:103
+msgid "Ensure the ``SAML REQUEST`` field is set to ``Self Signed``"
+msgstr "Asegurar el ``SAML REQUEST`` campo se establece en ``Self Signed``"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:105
+msgid ""
+"A custom RSA signature can be used here if needed, if required by the "
+"orgnaization"
+msgstr ""
+"Un personalizado RSA signature puede ser usado here si needed, si requerido "
+"por el orgnaization"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:107
+msgid ""
+"Ensure the ``SAML RESPONSE`` field is set to ``Validate Assertion "
+"Signature``"
+msgstr ""
+"Asegurar el ``SAML RESPONSE`` campo se establece en ``Validate Assertion "
+"Signature``"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:109
+msgid ""
+"With this setting, if the assertion signature ever changes in the Azure "
+"Enterprise Application, this would need to be updated to match"
+msgstr ""
+"Con este setting, si el assertion signature ever changes en el Azure "
+"Enterprise Application, este would need a be updated a match"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:111
+msgid ""
+"Edit/view the downloaded ``Federation Metadata XML`` (``.xml`` extension) "
+"file from the previous section"
+msgstr ""
+"Editar/view el downloaded ``Federation Metadata XML`` (``.xml`` extension) "
+"file desde el anterior sección"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:113
+msgid ""
+"It is recommended to use ``Microsoft Edge``, or another browser, to view the"
+" contents"
+msgstr ""
+"Es recomendado a usar ``Microsoft Edge``, o another browser, a view el "
+"contents"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:115
+msgid ""
+"In the ``Federation Metadata XML`` file, locate the ``<X509Certificate> "
+"</X509Certificate>`` under the ``<Signature>`` section.  Copy the entire "
+"contents between the ``<X509Certificate>`` and ``</X509Certificate>``, it is"
+" very long"
+msgstr ""
+"En el ``Federation Metadata XML`` file, locate el ``<X509Certificate> "
+"</X509Certificate>`` under el ``<Signature>`` sección. Copy el completo "
+"contents entre el ``<X509Certificate>`` y ``</X509Certificate>``, ello es "
+"very long"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:116
+msgid ""
+"Paste the value copied from the ``Federation Metadata XML`` file into the "
+"``Public Key (Optional)`` box, below the ``SAML RESPONSE`` dropdown"
+msgstr ""
+"Paste el valor copied desde el ``Federation Metadata XML`` file en el "
+"``Público Key (Optional)`` box, below el ``SAML RESPONSE`` menú desplegable"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:119
+msgid "Configure Role Mappings"
+msgstr "Configure Rol Mappings"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:121
+msgid ""
+"Role mappings will map Azure AD Groups to Morpheus Roles. Azure AD users "
+"will be assigned Roles in |morpheus| upon signing in based on their Group "
+"Membership in Azure AD."
+msgstr ""
+"Rol mappings va a map Azure AD Grupos a Morpheus Roles. Azure AD usuarios "
+"será asignado Roles en |morpheus| upon signing en basado en su Grupo "
+"Membership en Azure AD."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:123
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:134
+msgid ""
+"Use an Azure Groups ``Object ID``, not Group name, when entering Role "
+"Mappings. Example: ``7626a4a2-b388-4d9b-a228-72ce9a33bd4b``"
+msgstr ""
+"Usar un Azure Grupos ``Object ID``, no Grupo nombre, cuando entering Rol "
+"Mappings. Ejemplo: ``7626a4a2-b388-4d9b-a228-72ce9a33bd4b``"
+
+#: ../../administration/identity_sources/custom_external.rst:51
+#: ../../administration/identity_sources/jumpcloud.rst:38
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:125
+#: ../../integration_guides/IdentityManagement/saml.rst:61
+msgid "DEFAULT ROLE"
+msgstr "DEFAULT ROLE"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:126
+msgid ""
+"Role a Azure AD user will be assigned by default upon signing in to "
+"|morpheus| using this Identity Source."
+msgstr ""
+"Rol a Azure AD usuario será asignado de forma predeterminada upon signing en"
+" a |morpheus| usando este Identidad Origen."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:127
+msgid "REQUIRED AZURE AD GROUP OBJECT ID"
+msgstr "REQUIRED AZURE AD GROUP OBJECT ID"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:128
+msgid ""
+"Object ID of Azure AD Group a user must be a member of to be authorized to "
+"sign in to |morpheus|. Users not belonging to this Group will not be "
+"authorized to login to |morpheus|. This field is optional, and if left "
+"blank, any user from the Azure AD App will be able to sign in to |morpheus| "
+"and will be assigned the Default Role if no Role Mappings match AD Group "
+"membership."
+msgstr ""
+"Object ID de Azure AD Grupo a usuario debe ser a miembro de a be authorized "
+"a sign en a |morpheus|. Usuarios no belonging a este Grupo no be authorized "
+"a inicio de sesión a |morpheus|. Este campo es opcional, y si left blank, "
+"cualquier usuario desde el Azure AD App será able a sign en a |morpheus| y "
+"será asignado el Predeterminado Rol si no Rol Mappings match AD Grupo "
+"membership."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:129
+msgid "GROUP ASSERTION ATTRIBUTE NAME"
+msgstr "GROUP ASSERTION ATTRIBUTE NAME"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:130
+msgid ""
+"Enter ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`` for"
+" Azure AD SSO"
+msgstr ""
+"Enter ``http://schemas.microsoft.com/ws/2008/06/identidad/claims/groups`` "
+"para Azure AD SSO"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:132
+msgid "Additional Role Mappings"
+msgstr "Additional Rol Mappings"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:132
+msgid ""
+"The existing Roles in |morpheus| will be listed. To map a |morpheus| Role to"
+" an Azure AD Group, enter the Object ID of the desired Azure AD Group in the"
+" `Role Attribute Value` field for the corresponding |morpheus| Role."
+msgstr ""
+"El existente Roles en |morpheus| será listed. Un map a |morpheus| Rol a un "
+"Azure AD Grupo, enter el Object ID de el desired Azure AD Grupo en el `Rol "
+"Attribute Valor` campo para el corresponding |morpheus| Rol."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:137
+#: ../../integration_guides/IdentityManagement/okta.rst:32
+#: ../../integration_guides/IdentityManagement/saml.rst:76
+msgid ""
+"When selected, Tenant users with appropriate rights to view and edit Roles "
+"will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"without viewing or potentially editing the Identity Source configuration."
+msgstr ""
+"Cuando seleccionado, Inquilino usuarios con appropriate rights a view y "
+"editar Roles va a tienen el ability a establecido rol mapping para el "
+"Identidad Origen integración. Este permite el Inquilino usuario a editar "
+"solo el rol mappings sin viewing o potentially editing el Identidad Origen "
+"configuración."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:139
+#: ../../integration_guides/IdentityManagement/okta.rst:34
+#: ../../integration_guides/IdentityManagement/saml.rst:78
+msgid ""
+"When selected, administrators can manually edit Roles for users created "
+"through this identity source integration from the user detail page (|AdmUse|"
+" > Selected user)."
+msgstr ""
+"Cuando seleccionado, administrators puede manually editar Roles para "
+"usuarios creado a través de este identidad origen integración desde el "
+"usuario detalle página (|AdmUse| > Selected usuario)."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:143
+msgid ""
+"Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source"
+" integration will be added. The Identity Source can be edited anytime to "
+"deactivate or change Role Mappings or other values."
+msgstr ""
+"Once populated, seleccionar :guilabel:`SAVE CHANGES` y el SAML identidad "
+"origen integración será agregado. El Identidad Origen puede ser edited "
+"anytime a deactivate o change Rol Mappings o otro valores."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:145
+msgid ""
+"If Role mappings are edited after Azure AD SSO users have signed into "
+"|morpheus|, currently logged in users will need to log out of |morpheus| for"
+" the new Role mappings to take effect, when applicable."
+msgstr ""
+"Si Rol mappings son edited después de Azure AD SSO usuarios tienen signed en"
+" |morpheus|, currently logged en usuarios va a need a log out de |morpheus| "
+"para el nuevo Rol mappings a take effect, cuando applicable."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:147
+msgid ""
+"Under the ``Role Azure Group Mappings`` secton, verify the ``DEFAULT ROLE`` "
+"dropdown has the role in |morpheus| selected that all users will be assigned"
+" by default"
+msgstr ""
+"Under el ``Role Azure Group Mappings`` secton, verify el ``DEFAULT ROLE`` "
+"menú desplegable tiene el rol en |morpheus| seleccionado ese todos usuarios "
+"será asignado de forma predeterminada"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:149
+msgid ""
+"It is recommended that this role contains no permissions, which ensures that"
+" anyone who authenticates gets no access"
+msgstr ""
+"Es recomendado ese este rol contiene no permisos, que ensures ese anyone "
+"quien authenticates gets no acceso"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:151
+msgid ""
+"Under the ``Role Azure Group Mappings`` secton, you will see role names "
+"listed.  Next to these are text boxes with ``Assertion Attribute Mappings`` "
+"inside.  Enter group object IDs from Azure into these text boxes.  This will"
+" map the Azure AD groups to specific roles in Morpheus"
+msgstr ""
+"Under el ``Role Azure Group Mappings`` secton, usted va a see rol nombres "
+"listed. Next a estos son text boxes con ``Assertion Attribute Mappings`` "
+"inside. Enter grupo object IDs desde Azure en estos text boxes. Este va a "
+"map el Azure AD grupos a específico roles en Morpheus"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:152
+msgid "Finally, click ``Save Changes`` at the bottom of the page"
+msgstr "Finally, click ``Save Changes`` en el bottom de el página"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:154
+msgid "Here is an example of the configuration above:"
+msgstr "Here es un ejemplo de el configuración above:"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/saml_setup_complete.png"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:160
+msgid "Azure Group Lookups"
+msgstr "Azure Grupo Lookups"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:162
+msgid ""
+"When a user in azure ad has more that 150 group attributes, Azure does not "
+"include the group claims in the SAML response, and |morpheus| is required to"
+" query Microsoft Graph to obtain the users group attribute values. When "
+"there are users that are members of more that 150 groups, populate the "
+"``Azure Group Lookups`` section in order for those users to be able to use "
+"the Azure AD SAML SSO integration, otherwise no groups will be obtained and "
+"proper role mappings cannot occur."
+msgstr ""
+"Cuando a usuario en azure ad tiene más ese 150 grupo attributes, Azure hace "
+"no include el grupo claims en el SAML response, y |morpheus| es obligatorio "
+"a query Microsoft Graph a obtain el usuarios grupo attribute valores. Cuando"
+" there son usuarios ese son miembros de más ese 150 grupos, populate el "
+"``Azure Group Lookups`` sección en order para esos usuarios a be able a usar"
+" el Azure AD SAML SSO integración, otherwise no grupos será obtained y "
+"proper rol mappings cannot occur."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:164
+msgid "AZURE TENANT ID"
+msgstr "AZURE TENANT ID"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:165
+msgid ""
+"Add Azure AD Tenant ID if user group membership will exceed 150. See "
+":ref:`azure_ids` for information on obtaining an Azure AD Tenant ID"
+msgstr ""
+"Agregar Azure AD Inquilino ID si usuario grupo membership va a exceed 150. "
+"See :ref:`azure_ids` para information en obtaining un Azure AD Inquilino ID"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:166
+msgid "AZURE APP ID"
+msgstr "AZURE APP ID"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:167
+msgid ""
+"Add Azure AD Application (Client) ID if user group membership will exceed "
+"150. See :ref:`azure_ids` for information on obtaining an Azure AD "
+"Application (Client) ID"
+msgstr ""
+"Agregar Azure AD Application (Client) ID si usuario grupo membership va a "
+"exceed 150. See :ref:`azure_ids` para information en obtaining un Azure AD "
+"Application (Client) ID"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:168
+msgid "AZURE APP SECRET"
+msgstr "AZURE APP SECRET"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:169
+msgid ""
+"Add Azure Application (Client) Secret if user group membership will exceed "
+"150. See :ref:`azure_secret` for information on creating an Azure "
+"Application (Client) Secret"
+msgstr ""
+"Agregar Azure Application (Client) Secret si usuario grupo membership va a "
+"exceed 150. See :ref:`azure_secret` para information en creando un Azure "
+"Application (Client) Secret"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:171
+msgid "ROLE LINK ATTRIBUTE NAME"
+msgstr "ROLE LINK ATTRIBUTE NAME"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:171
+msgid ""
+"default: http://schemas.microsoft.com/claims/groups.link. This is not "
+"normally changed."
+msgstr ""
+"predeterminado: http://schemas.microsoft.com/claims/grupos.link. Este es no "
+"normally changed."
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:174
+msgid "Logging Into |morpheus| with Azure AD SAML"
+msgstr "Logging En |morpheus| con Azure AD SAML"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:176
+msgid "Navigate to the |morpheus| URL"
+msgstr "Navegue a el |morpheus| URL"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:177
+msgid ""
+"A new button will appear to allow sign-in using Azure AD SAML, with the same"
+" name as the integration.  Click the button"
+msgstr ""
+"Un nuevo botón va a appear a permitir sign-en usando Azure AD SAML, con el "
+"mismo nombre as el integración. Haga clic en el botón"
+
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/sign_in_page.png"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:182
+msgid "Sign-in with your Microsoft/Azure account"
+msgstr "Sign-en con su Microsoft/Azure cuenta"
+
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/azure_ad_saml/ms_signin.png"
+
+#: ../../integration_guides/IdentityManagement/AzureAD.rst:187
+msgid ""
+"If no local users other than the System Admin have been created, \"USERNAME "
+"AND PASSWORD\" option will not be displayed, only the SAML option."
+msgstr ""
+"Si no local usuarios otro than el System Admin han sido creado, \"USERNAME "
+"AND PASSWORD\" opción no be mostrado, solo el SAML opción."
+
+#: ../../integration_guides/IdentityManagement/okta.rst:2
+msgid "Okta"
+msgstr "Okta"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:7
+msgid ""
+"|morpheus| allows users to integrate an Okta deployment for user management "
+"and authentication. In |morpheus|, identity sources are added on a per-"
+"Tenant basis and Morpheus allows you to map Okta user groups to |morpheus| "
+"user groups. User accounts are automatically created with matching metadata "
+"and role permissions when users are authenticated."
+msgstr ""
+"|morpheus| permite usuarios a integrate un Okta deployment para usuario "
+"gestión y autenticación. En |morpheus|, identidad orígenes son agregado en a"
+" per-Inquilino basis y Morpheus le permite map Okta usuario grupos a "
+"|morpheus| usuario grupos. Usuario cuentas son automáticamente creado con "
+"matching metadata y rol permisos cuando usuarios son authenticated."
+
+#: ../../integration_guides/IdentityManagement/okta.rst:10
+msgid "Adding an Okta Integration"
+msgstr "Adding un Okta Integración"
+
+#: ../../administration/identity_sources/custom_external.rst:15
+#: ../../administration/identity_sources/custom_iam_api.rst:17
+#: ../../administration/identity_sources/jumpcloud.rst:15
+#: ../../integration_guides/IdentityManagement/okta.rst:15
+msgid "Select :guilabel:`+ IDENTITY SOURCE`"
+msgstr "Seleccionar :guilabel:`+ IDENTITY SOURCE`"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:16
+msgid "Choose TYPE: \"Okta\""
+msgstr "Choose TYPE: \"Okta\""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:17
+msgid "Populate the following, then select :guilabel:`SAVE CHANGES`:"
+msgstr "Populate lo siguiente, then seleccionar :guilabel:`SAVE CHANGES`:"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:20
+msgid "Unique name for authentication type"
+msgstr "Único nombre para autenticación tipo"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:21
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:22
+msgid "A description for your new Okta Identity Source"
+msgstr "Un description para su nuevo Okta Identidad Origen"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:23
+msgid "Okta URL"
+msgstr "Okta URL"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:24
+msgid "Your Okta URL"
+msgstr "Su Okta URL"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:25
+msgid "Administrator API Token"
+msgstr "Administrator API Token"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:26
+msgid "Your Okta Administrator API Token"
+msgstr "Su Okta Administrator API Token"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:28
+msgid "The Okta group that users must be in to have access (optional)"
+msgstr "El Okta grupo ese usuarios debe ser en a tienen acceso (optional)"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:30
+msgid ""
+"The default role a user is assigned if no group is listed under an Okta user"
+" that maps within the Morpheus Role Mappings section"
+msgstr ""
+"El predeterminado rol a usuario es asignado si no grupo es listed under un "
+"Okta usuario ese maps dentro de el Morpheus Rol Mappings sección"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:38
+msgid ""
+"Now, allowed Okta users can log into |morpheus| via their Okta credentials "
+"and a user will be automatically generated within |morpheus| with matching "
+"metadata and mapped Role permissions."
+msgstr ""
+"Now, allowed Okta usuarios puede log en |morpheus| a través de su Okta "
+"credenciales y a usuario será automáticamente generated dentro de |morpheus|"
+" con matching metadata y mapped Rol permisos."
+
+#: ../../integration_guides/IdentityManagement/okta.rst:40
+msgid ""
+"If you've created multi-tenant roles, these will also appear here and can be"
+" mapped to Okta user groups allowing you to map users to equivalent user "
+"groups in |morpheus|."
+msgstr ""
+"Si usted've creado multi-rols de inquilino, estos va a también appear here y"
+" puede ser mapped a Okta usuario grupos allowing usted a map usuarios a "
+"equivalent usuario grupos en |morpheus|."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:2
+msgid "OneLogin"
+msgstr "OneLogin"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:4
+msgid ""
+"By integrating OneLogin with |morpheus|, users can access |morpheus| with "
+"their existing credentials set up within the OneLogin platform. "
+"Additionally, administrators can manage user access including Role "
+"assignment and enabling or disabling users from within the OneLogin "
+"platform. As employees are onboarded, change positions, or leave the "
+"company, additional user management within the |morpheus| platform is not "
+"necessary."
+msgstr ""
+"Por integrating OneLogin con |morpheus|, usuarios puede acceso |morpheus| "
+"con su existente credenciales establecido up dentro de el OneLogin platform."
+" Adicionalmente, administrators puede manage usuario acceso incluyendo Rol "
+"assignment y enabling o disabling usuarios desde dentro de el OneLogin "
+"platform. As employees son onboarded, change positions, o leave el company, "
+"adicional usuario gestión dentro de el |morpheus| platform es no necessary."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:7
+msgid "Adding OneLogin Identity Source Integration"
+msgstr "Adding OneLogin Identidad Origen Integración"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:9
+msgid ""
+"To begin, log into OneLogin with an administrator account to gather some "
+"needed pieces of information. From the top menu bar, select Administration. "
+"From the admin panel, click Developers > API Credentials. Click the button "
+"labeled \"New Credential\". Provide a name for the new API credentials and "
+"select \"Manage Users\" as the permissions type. Store the credentials "
+"somewhere they can be retrieved in the next step."
+msgstr ""
+"Un begin, log en OneLogin con un administrator cuenta a gather algunos "
+"needed pieces de information. Desde el top menu bar, seleccionar "
+"Administración. Desde el admin panel, click Developers > API Credenciales. "
+"Haga clic en el botón labeled \"Nuevo Credential\". Provide a nombre para el"
+" nuevo API credenciales y seleccionar \"Manage Usuarios\" as el permisos "
+"tipo. Store el credenciales somewhere ellos puede ser retrieved en el next "
+"step."
+
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/oneLogin/oneLoginKey.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/oneLogin/oneLoginKey.png"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:14
+msgid ""
+"Back in |morpheus|, navigate to the Tenant which will integrate with "
+"OneLogin. Identity providers are integrated on a per-Tenant basis in "
+"|morpheus|. From the selected Tenant, click :guilabel:`IDENTITY SOURCES`. "
+"The list of currently-integrated identity providers is here. Click "
+":guilabel:`+ ADD IDENTITY SOURCE` to start a new integration for OneLogin. "
+"Fill in the fields below:"
+msgstr ""
+"Back en |morpheus|, navegue a el Inquilino que va a integrate con OneLogin. "
+"Identidad providers son integrated en a per-Inquilino basis en |morpheus|. "
+"Desde el seleccionado Inquilino, click :guilabel:`IDENTITY SOURCES`. El "
+"lista de currently-integrated identidad providers es here. Click "
+":guilabel:`+ ADD IDENTITY SOURCE` a start a nuevo integración para OneLogin."
+" Fill en el campos below:"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:16
+msgid "**TYPE:** OneLogin"
+msgstr "**TYPE:** OneLogin"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:17
+msgid "**NAME:** A name for the identity source integration in |morpheus|"
+msgstr ""
+"**NAME:** Un nombre para el identidad origen integración en |morpheus|"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:18
+msgid "**DESCRIPTION:** An optional description for the identity source"
+msgstr "**DESCRIPTION:** Un optional description para el identidad origen"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:19
+msgid ""
+"**ONELOGIN SUBDOMAIN:** The subdomain from your OneLogin portal URL. For "
+"example, \"morpheus-dev\" if your portal is accessed at morpheus-"
+"dev.onelogin.com. Incorrect subdomains will cause login attempts to "
+"|morpheus| to fail"
+msgstr ""
+"**ONELOGIN SUBDOMAIN:** El subdomain desde su OneLogin portal URL. Por "
+"ejemplo, \"morpheus-dev\" si su portal es accessed en morpheus-"
+"dev.onelogin.com. Incorrect subdomains va a cause inicio de sesión attempts "
+"a |morpheus| a fail"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:20
+msgid "**ONELOGIN REGION:** Specify US or EU region"
+msgstr "**ONELOGIN REGION:** Especificar US o EU region"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:21
+msgid ""
+"**API CLIENT SECRET:** OneLogin API client secret which was gathered earlier"
+" in this walkthrough"
+msgstr ""
+"**API CLIENT SECRET:** OneLogin API client secret que fue gathered earlier "
+"en este walkthrough"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:22
+msgid ""
+"**API CLIENT ID:** OneLogin API client ID which was gathered earlier in this"
+" walkthrough"
+msgstr ""
+"**API CLIENT ID:** OneLogin API client ID que fue gathered earlier en este "
+"walkthrough"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:23
+msgid ""
+"**REQUIRED ROLE:** Enter a role which OneLogin users logging into |morpheus|"
+" must have to gain access to |morpheus|"
+msgstr ""
+"**REQUIRED ROLE:** Enter a rol que OneLogin usuarios logging en |morpheus| "
+"debe tienen a gain acceso a |morpheus|"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:24
+msgid ""
+"**DEFAULT ROLE:** The default |morpheus| Role applied to users created from "
+"the OneLogin integration if no other role mapping is specified in other Role"
+" Mappings fields"
+msgstr ""
+"**DEFAULT ROLE:** El predeterminado |morpheus| Rol aplicado a usuarios "
+"creado desde el OneLogin integración si no otro rol mapping es specified en "
+"otro Rol Mappings campos"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:25
+msgid ""
+"**ROLE MAPPINGS:** All existing |morpheus| Roles will be listed with fields "
+"to enter OneLogin Roles to create a mapping. Users with OneLogin roles "
+"matching the role mappings will be assigned the appropriate Role(s) in "
+"|morpheus| when signing in"
+msgstr ""
+"**ROLE MAPPINGS:** Todos existente |morpheus| Roles será listed con campos a"
+" enter OneLogin Roles a crear a mapping. Usuarios con OneLogin roles "
+"matching el rol mappings será asignado el appropriate Rol(s) en |morpheus| "
+"cuando signing en"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:26
+msgid ""
+"**ENABLE ROLE MAPPING PERMISSION:** When selected, Tenant users with "
+"appropriate rights to view and edit Roles will have the ability to set role "
+"mapping for the Identity Source integration. This allows the Tenant user to "
+"edit only the role mappings without viewing or potentially editing the core "
+"integration fields (such as the API keys)"
+msgstr ""
+"**ENABLE ROLE MAPPING PERMISSION:** Cuando seleccionado, Inquilino usuarios "
+"con appropriate rights a view y editar Roles va a tienen el ability a "
+"establecido rol mapping para el Identidad Origen integración. Este permite "
+"el Inquilino usuario a editar solo el rol mappings sin viewing o potentially"
+" editing el core integración campos (como el API keys)"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:27
+msgid ""
+"**MANUAL ROLE ASSIGNMENT:** When selected, administrators can manually edit "
+"Roles for users created through this identity source integration from the "
+"user detail page (|AdmUse| > Selected user)."
+msgstr ""
+"**MANUAL ROLE ASSIGNMENT:** Cuando seleccionado, administrators puede "
+"manually editar Roles para usuarios creado a través de este identidad origen"
+" integración desde el usuario detalle página (|AdmUse| > Selected usuario)."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:29
+msgid ""
+"Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be added."
+msgstr ""
+"Seleccionar :guilabel:`SAVE CHANGES` y el OneLogin Integración será "
+"agregado."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:31
+msgid ""
+"Users can now login to |morpheus| with OneLogin credentials. The first login"
+" will create a user in |morpheus| matching the username, email and password "
+"from OneLogin. If a REQUIRED ROLE is specified in the Identity Source "
+"settings, only users with that Role in OneLogin will be able to login to "
+"|morpheus|."
+msgstr ""
+"Usuarios puede now inicio de sesión a |morpheus| con OneLogin credenciales. "
+"El first inicio de sesión va a crear a usuario en |morpheus| matching el "
+"usuarioname, correo electrónico y contraseña desde OneLogin. Si a REQUIRED "
+"ROLE es specified en el Identidad Origen configuración, solo usuarios con "
+"ese Rol en OneLogin será able a inicio de sesión a |morpheus|."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:33
+msgid ""
+"OneLogin users will not authenticate in |morpheus| if there is an existing "
+"|morpheus| User with matching username or email address."
+msgstr ""
+"OneLogin usuarios no authenticate en |morpheus| si there es un existente "
+"|morpheus| Usuario con matching usuarioname o correo electrónico address."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:35
+msgid ""
+"You can now test the integration by logging in with user credentials which "
+"have been configured in OneLogin. On the first login, a new user will be "
+"created with the same username, email address, and password as contained in "
+"OneLogin. On subsequent logins, |morpheus| will sync with OneLogin to make "
+"sure the user hasn't been disabled or if its Role(s) have changed in "
+"OneLogin which would affect its corresponding Roles in |morpheus|."
+msgstr ""
+"You puede now test el integración por logging en con usuario credenciales "
+"que han sido configurado en OneLogin. En el first inicio de sesión, a nuevo "
+"usuario será creado con el mismo usuarioname, correo electrónico address, y "
+"contraseña as contained en OneLogin. En subsequent logins, |morpheus| va a "
+"sync con OneLogin a make sure el usuario hasn't been deshabilitado o si su "
+"Rol(s) tienen changed en OneLogin que would affect su corresponding Roles en"
+" |morpheus|."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:37
+msgid ""
+"The |morpheus| identity source integration is interacting with the OneLogin "
+"APIs in the list below. This reference may be needed to ensure |morpheus| is"
+" integrating using an API key with sufficient privileges. In a situation "
+"where troubleshooting is needed, first confirm these APIs can be accessed "
+"using the provided key."
+msgstr ""
+"El |morpheus| identidad origen integración es interacting con el OneLogin "
+"APIs en el lista below. Este reference puede be needed a asegurar |morpheus|"
+" es integrating usando un API key con sufficient privileges. En a situation "
+"donde troubleshooting es needed, first confirm estos APIs se puede acceder "
+"usando el provided key."
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:39
+msgid "``/auth/oauth2/token`` - Generate Token"
+msgstr "``/auth/oauth2/token`` - Generate Token"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:40
+msgid "``/api/1/users/$user_id/roles`` - Get Roles"
+msgstr "``/api/1/users/$user_id/roles`` - Get Roles"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:41
+msgid "``/api/1/login/auth`` - Create Session"
+msgstr "``/api/1/inicio de sesión/auth`` - Crear Session"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:42
+msgid "``/api/1/users/$user_id`` - Get User"
+msgstr "``/api/1/users/$user_id`` - Get Usuario"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:43
+msgid "``/api/1/roles/$role_id`` - Get Role"
+msgstr "``/api/1/roles/$role_id`` - Get Rol"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:44
+msgid "``/api/1/roles?name=$role_name`` - Find Role"
+msgstr "``/api/1/roles?nombre=$role_name`` - Find Rol"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:2
+msgid "SAML Integration"
+msgstr "SAML Integración"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:7
+msgid ""
+"The |morpheus| SAML identity source integration allows customers to add user"
+" SSO to |morpheus|, authenticated by external login SAML providers."
+msgstr ""
+"El |morpheus| SAML identidad origen integración permite customers a agregar "
+"usuario SSO a |morpheus|, authenticated por external inicio de sesión SAML "
+"providers."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:10
+msgid ".. image:: images/samlLoginGeneric.png"
+msgstr ".. image:: images/samlLoginGeneric.png"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:12
+msgid "Adding a SAML Integration"
+msgstr "Adding a SAML Integración"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:14
+msgid "To add a SAML integration:"
+msgstr "Un agregar a SAML integración:"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:17
+msgid "Select a tenant."
+msgstr "Seleccionar a inquilino."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:19
+msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`."
+msgstr "Seleccionar :guilabel:`+ ADD IDENTITY SOURCE`."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:20
+msgid "Select `SAML SSO` from the `TYPE` field"
+msgstr "Seleccionar `SAML SSO` desde el `TYPE` campo"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:21
+msgid "Add a Name and optional Description for the SAML integration"
+msgstr "Agregar a Nombre y optional Description para el SAML integración"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:24
+msgid ""
+".. image:: images/integration_guides/identity_sources/saml_sso/saml.png"
+msgstr ""
+".. image:: images/integration_guides/identity_sources/saml_sso/saml.png"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:25
+msgid ""
+"There are 4 sections with fields that need to be populated depending on the "
+"desired configuration:"
+msgstr ""
+"There son 4 sections con campos ese need a be populated dependiendo de el "
+"desired configuración:"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:27
+#: ../../integration_guides/IdentityManagement/saml.rst:33
+msgid "SAML Configuration"
+msgstr "SAML Configuración"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:28
+#: ../../integration_guides/IdentityManagement/saml.rst:59
+msgid "Role Mappings"
+msgstr "Rol Mappings"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:29
+#: ../../integration_guides/IdentityManagement/saml.rst:73
+msgid "Role Options"
+msgstr "Rol Opciones"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:30
+#: ../../integration_guides/IdentityManagement/saml.rst:81
+msgid "Assertion Attribute Mappings"
+msgstr "Assertion Attribute Mappings"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:35
+#: ../../integration_guides/IdentityManagement/saml.rst:100
+msgid "LOGIN REDIRECT URL"
+msgstr "LOGIN REDIRECT URL"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:36
+msgid ""
+"This is the SAML endpoint |morpheus| will redirect to when a user signs into"
+" |morpheus| via SAML"
+msgstr ""
+"Este es el SAML endpoint |morpheus| va a redirect a cuando a usuario signs "
+"en |morpheus| a través de SAML"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:37
+msgid "SAML LOGOUT REDIRECT URL"
+msgstr "SAML LOGOUT REDIRECT URL"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:38
+msgid ""
+"The URL |morpheus| will POST to when a SAML user logs out of |morpheus|"
+msgstr ""
+"El URL |morpheus| va a POST a cuando a SAML usuario logs out de |morpheus|"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:43
+msgid "INCLUDES SAML REQUEST PARAMETER"
+msgstr "INCLUDES SAML REQUEST PARAMETER"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:40
+msgid ""
+"**Yes** (recommended) - the AuthN request will be sent via the ?SAMLRequest="
+" parameter in the URL (GET)"
+msgstr ""
+"**Yes** (recomendado) - el AuthN request será sent a través de el "
+"?SAMLRequest= parameter en el URL (GET)"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:42
+msgid ""
+"**No** - the AuthN request will be submitted in the body of the request "
+"(POST)"
+msgstr ""
+"**No** - el AuthN request será submitted en el body de el request (POST)"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:44
+msgid ""
+"The SAML SP documentation should mention which binding to use but GET is "
+"most common"
+msgstr ""
+"El SAML SP documentation debería mention que binding a usar pero GET es la "
+"mayoría de common"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:49
+msgid "SAML REQUEST"
+msgstr "SAML REQUEST"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:46
+msgid "**No Signature** - No signature is used on the SAML request"
+msgstr "**No Signature** - No signature es usado en el SAML request"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:48
+msgid ""
+"**Self Signed** - A self-signed X.509 Certificate is gentered after clicking"
+" :guilabel:`SAVE CHANGES`. This signature value can be used by the SAML SP "
+"to verify the authenticity of the request"
+msgstr ""
+"**Self Signed** - Un self-signed X.509 Certificate es gentered después de "
+"clicking :guilabel:`SAVE CHANGES`. Este signature valor puede ser usado por "
+"el SAML SP a verify el authenticity de el request"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:50
+msgid ""
+"**Custom RSA Signature** - Import a custom RSA Private Key and respective "
+"X.509 Certificate. This signature value can be used by the SAML SP to verify"
+" the authenticity of the request"
+msgstr ""
+"**Personalizado RSA Signature** - Import a personalizado RSA Private Key y "
+"respective X.509 Certificate. Este signature valor puede ser usado por el "
+"SAML SP a verify el authenticity de el request"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:54
+msgid "SAML RESPONSE"
+msgstr "SAML RESPONSE"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:52
+msgid ""
+"**Do Not Validate Assertion Signature** - The SAML response signature from "
+"the SAML SP will not be validated"
+msgstr ""
+"**Do Not Validate Assertion Signature** - El SAML response signature desde "
+"el SAML SP no be validated"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:54
+msgid ""
+"**Validate Assertion Signature** - The SAML reponse signature from the SAML "
+"SP will be validated.  Enter the SAML SP X.509 certificate in the **Public "
+"Key** field. This must be in PEM format"
+msgstr ""
+"**Validate Assertion Signature** - El SAML reponse signature desde el SAML "
+"SP será validated. Enter el SAML SP X.509 certificate en el **Público Key** "
+"campo. Este debe ser en PEM format"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:62
+msgid "Role any SAML user will be assigned by default"
+msgstr "Rol cualquier SAML usuario será asignado de forma predeterminada"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:63
+msgid "ROLE ATTRIBUTE NAME"
+msgstr "ROLE ATTRIBUTE NAME"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:64
+msgid ""
+"The name of the attribute/assertion field that will map to |morpheus| roles,"
+" such a MemberOf"
+msgstr ""
+"El nombre de el attribute/assertion campo ese va a map a |morpheus| roles, "
+"such a MemberOf"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:65
+msgid "REQUIRED ROLE ATTRIBUTE VALUE"
+msgstr "REQUIRED ROLE ATTRIBUTE VALUE"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:66
+msgid ""
+"Attribute/assertion value that a user must be assigned/a member of to be "
+"authorized, such as group or role in the SAML SP. This is obtained from the "
+"attribute/assertion defined in the ROLE ATTRIBUTE NAME field"
+msgstr ""
+"Attribute/assertion valor ese a usuario debe ser asignado/a miembro de a be "
+"authorized, como grupo o rol en el SAML SP. Este es obtained desde el "
+"attribute/assertion defined en el ROLE ATTRIBUTE NAME campo"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:68
+msgid "<|morpheus| ROLE NAME>"
+msgstr "<|morpheus| ROLE NAME>"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:68
+msgid ""
+"Additional roles that can be mapped to a user, which will add to the DEFAULT"
+" ROLE. Attribute value that a user must be assigned/a member of to be "
+"authorized, such as group or role in the SAML SP. This is obtained from the "
+"attribute/assertion defined in the ROLE ATTRIBUTE NAME field"
+msgstr ""
+"Additional roles ese puede ser mapped a a usuario, que va a agregar a el "
+"DEFAULT ROLE. Attribute valor ese a usuario debe ser asignado/a miembro de a"
+" be authorized, como grupo o rol en el SAML SP. Este es obtained desde el "
+"attribute/assertion defined en el ROLE ATTRIBUTE NAME campo"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:83
+msgid "GIVEN NAME ATTRIBUTE NAME"
+msgstr "GIVEN NAME ATTRIBUTE NAME"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:84
+msgid "SAML SP field value to map to |morpheus| user First Name"
+msgstr "SAML SP campo valor a map a |morpheus| usuario First Nombre"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:85
+msgid "SURNAME ATTRIBUTE NAME"
+msgstr "SURNAME ATTRIBUTE NAME"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:86
+msgid "SAML SP field value to map to |morpheus| user Last Name"
+msgstr "SAML SP campo valor a map a |morpheus| usuario Last Nombre"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:88
+msgid "EMAIL ATTRIBUTE"
+msgstr "EMAIL ATTRIBUTE"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:88
+msgid "SAML SP field value to map to |morpheus| user email address"
+msgstr ""
+"SAML SP campo valor a map a |morpheus| usuario correo electrónico address"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:91
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/saml_sso/saml_assertion_attribute_mappings.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/saml_sso/saml_assertion_attribute_mappings.png"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:92
+msgid ""
+"Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity source"
+" integration will be added."
+msgstr ""
+"Once populated, seleccionar :guilabel:`SAVE CHANGES` y el SAML identidad "
+"origen integración será agregado."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:94
+msgid ""
+"In the :guilabel:`Identity Sources` section, important information for "
+"configuration of the SAML integration is provided. Use the SP ENTITY ID and "
+"SP ACS URL for configuration on the external login SAML provider side."
+msgstr ""
+"En el :guilabel:`Identidad Orígenes` sección, important information para "
+"configuración de el SAML integración es provided. Usar el SP ENTITY ID y SP "
+"ACS URL para configuración en el external inicio de sesión SAML provider "
+"side."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:96
+msgid ""
+"In some cases, the SAML provider may need these values before providing the "
+"LOGIN REDIRECT URL and other values.  When creating the integration, the "
+"NAME and LOGIN REDIRECT URL can contain any values, then selecting SAVE "
+"CHANGES will generate the above values.  The NAME and LOGIN REDIRECT URL can"
+" be edited later, once the SAML configuration is created in the SAML "
+"provider."
+msgstr ""
+"En algunos cases, el SAML provider puede need estos valores antes de "
+"providing el LOGIN REDIRECT URL y otro valores. Cuando creando el "
+"integración, el NAME y LOGIN REDIRECT URL puede contain cualquier valores, "
+"then selecting SAVE CHANGES va a generate el above valores. El NAME y LOGIN "
+"REDIRECT URL puede ser edited later, una vez que el SAML configuración es "
+"creado en el SAML provider."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:98
+msgid "ENTITY ID"
+msgstr "ENTITY ID"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:99
+msgid "SP ACS URL"
+msgstr "SP ACS URL"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:101
+msgid "SP METADATA"
+msgstr "SP METADATA"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:104
+msgid ""
+".. image:: "
+"images/integration_guides/identity_sources/saml_sso/identity_sources_info.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/identity_sources/saml_sso/identity_sources_info.png"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:105
+msgid "Sample Metadata code output:"
+msgstr "Sample Metadata code salida:"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:107
+msgid ""
+"<?xml version=\"1.0\" encoding=\"UTF-8\" "
+"standalone=\"yes\"?><EntityDescriptor "
+"entityID=\"https://someip.com/saml/eDKL60P25\" "
+"xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\"><SPSSODescriptor "
+"AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"true\" "
+"protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"><NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-"
+"format:unspecified</NameIDFormat><AssertionConsumerService index=\"0\" "
+"isDefault=\"true\" Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-"
+"POST\" "
+"Location=\"https://someip.com/externalLogin/callback/eDKL60P25\"/></SPSSODescriptor></EntityDescriptor>"
+msgstr ""
+"<?xml version=\"1.0\" encoding=\"UTF-8\" "
+"standalone=\"yes\"?><EntityDescriptor "
+"entityID=\"https://someip.com/saml/eDKL60P25\" "
+"xmlns=\"urn:oasis:nombres:tc:SAML:2.0:metadata\"><SPSSODescriptor "
+"AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"true\" "
+"protocolSupportEnumeration=\"urn:oasis:nombres:tc:SAML:2.0:protocol\"><NameIDFormat>urn:oasis:nombres:tc:SAML:1.1:nameid-"
+"format:unspecified</NameIDFormat><AssertionConsumerService index=\"0\" "
+"isDefault=\"true\" Binding=\"urn:oasis:nombres:tc:SAML:2.0:bindings:HTTP-"
+"POST\" "
+"Location=\"https://someip.com/externalLogin/callback/eDKL60P25\"/></SPSSODescriptor></EntityDescriptor>"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:111
+msgid ""
+"Different SAML providers will have different field names and requirements. "
+"An Okta SAML Dev environment was used for the example integration in this "
+"article."
+msgstr ""
+"Different SAML providers va a tienen diferente campo nombres y requirements."
+" Un Okta SAML Dev entorno fue usado para el ejemplo integración en este "
+"article."
+
+#: ../../integration_guides/IdentityManagement/saml.rst:114
+msgid "Okta SAML SSO"
+msgstr "Okta SAML SSO"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:116
+msgid "For Okta SAML integration, the following fields are mapped:"
+msgstr "Para Okta SAML integración, lo siguiente campos son mapped:"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:118
+msgid "LOGIN REDIRECT URL : Identity Provider Single Sign-On URL"
+msgstr "LOGIN REDIRECT URL : Identidad Provider Single Sign-En URL"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:119
+msgid "ENTITY ID: Audience URI (SP Entity ID)"
+msgstr "ENTITY ID: Audience URI (SP Entity ID)"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:120
+msgid "SP ACS URL: Single sign on URL"
+msgstr "SP ACS URL: Single sign en URL"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:123
+msgid "Onelogin SAML SSO"
+msgstr "Onelogin SAML SSO"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:125
+msgid "For Onelogin SAML integration, the following fields are mapped:"
+msgstr "Para Onelogin SAML integración, lo siguiente campos son mapped:"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:127
+msgid "LOGIN REDIRECT URL : SAML 2.0 Endpoint (HTTP)"
+msgstr "LOGIN REDIRECT URL : SAML 2.0 Endpoint (HTTP)"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:128
+msgid "SAML LOGOUT REDIRECT URL : SLO Endpoint (HTTP)"
+msgstr "SAML LOGOUT REDIRECT URL : SLO Endpoint (HTTP)"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:129
+msgid "SIGNING PUBLIC KEY : X.509 Certificate"
+msgstr "SIGNING PUBLIC KEY : X.509 Certificate"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:130
+msgid "ENTITY ID: ACS (Consumer) URL Validator"
+msgstr "ENTITY ID: ACS (Consumer) URL Validator"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:131
+msgid "SP ACS URL: ACS (Consumer) URL"
+msgstr "SP ACS URL: ACS (Consumer) URL"
+
+#: ../../administration/identity_sources/jumpcloud.rst:2
+msgid "JumpCloud Identity Source"
+msgstr "JumpNube Identidad Origen"
+
+#: ../../administration/identity_sources/jumpcloud.rst:7
+msgid ""
+"|morpheus| can integrate with JumpCloud as an identity source, allowing "
+"users to authenticate with their JumpCloud credentials. JumpCloud user "
+"attributes and roles can be mapped to |morpheus| roles, providing "
+"centralized identity management through the JumpCloud Directory Platform."
+msgstr ""
+"|morpheus| puede integrate con JumpNube as un identidad origen, allowing "
+"usuarios a authenticate con su JumpNube credenciales. JumpNube usuario "
+"attributes y roles puede ser mapped a |morpheus| roles, providing "
+"centralized identidad gestión a través de el JumpNube Directory Platform."
+
+#: ../../administration/identity_sources/jumpcloud.rst:10
+msgid "Adding a JumpCloud Identity Source"
+msgstr "Adding a JumpNube Identidad Origen"
+
+#: ../../administration/identity_sources/custom_external.rst:13
+#: ../../administration/identity_sources/custom_iam_api.rst:15
+#: ../../administration/identity_sources/jumpcloud.rst:13
+msgid "Select the Tenant to add the Identity Source Integration"
+msgstr "Seleccione el Inquilino a agregar el Identidad Origen Integración"
+
+#: ../../administration/identity_sources/jumpcloud.rst:16
+msgid "Select **JumpCloud** from the TYPE dropdown"
+msgstr "Seleccionar **JumpCloud** desde el TYPE menú desplegable"
+
+#: ../../administration/identity_sources/custom_external.rst:17
+#: ../../administration/identity_sources/custom_iam_api.rst:19
+#: ../../administration/identity_sources/jumpcloud.rst:17
+msgid "Enter the following:"
+msgstr "Enter lo siguiente:"
+
+#: ../../administration/identity_sources/custom_external.rst:20
+#: ../../administration/identity_sources/custom_iam_api.rst:22
+#: ../../administration/identity_sources/jumpcloud.rst:20
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../administration/identity_sources/custom_external.rst:20
+#: ../../administration/identity_sources/custom_iam_api.rst:22
+#: ../../administration/identity_sources/jumpcloud.rst:20
+msgid "A name for this Identity Source integration in |morpheus|."
+msgstr "Un nombre para este Identidad Origen integración en |morpheus|."
+
+#: ../../administration/identity_sources/custom_external.rst:23
+#: ../../administration/identity_sources/custom_iam_api.rst:25
+#: ../../administration/identity_sources/jumpcloud.rst:23
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#: ../../administration/identity_sources/custom_external.rst:23
+#: ../../administration/identity_sources/custom_iam_api.rst:25
+#: ../../administration/identity_sources/jumpcloud.rst:23
+msgid "Optional description of the Identity Source."
+msgstr "Optional description de el Identidad Origen."
+
+#: ../../administration/identity_sources/jumpcloud.rst:26
+msgid "ORGANIZATION ID"
+msgstr "ORGANIZATION ID"
+
+#: ../../administration/identity_sources/jumpcloud.rst:26
+msgid ""
+"The JumpCloud Organization ID. This can be found in the JumpCloud Admin "
+"Console under Settings > General > Organization ID."
+msgstr ""
+"El JumpNube Organization ID. Este se puede encontrar en el JumpNube Admin "
+"Console under Configuración > General > Organization ID."
+
+#: ../../administration/identity_sources/jumpcloud.rst:29
+msgid "BINDING USERNAME"
+msgstr "BINDING USERNAME"
+
+#: ../../administration/identity_sources/jumpcloud.rst:29
+msgid ""
+"A JumpCloud API user or admin account username used for API authentication. "
+"This account is used to validate user credentials and sync group/role data."
+msgstr ""
+"Un JumpNube API usuario o admin cuenta usuarioname usado para API "
+"autenticación. Este cuenta se utiliza para validate usuario credenciales y "
+"sync grupo/rol data."
+
+#: ../../administration/identity_sources/jumpcloud.rst:32
+msgid "BINDING PASSWORD"
+msgstr "BINDING PASSWORD"
+
+#: ../../administration/identity_sources/jumpcloud.rst:32
+msgid "The password or API key for the binding account."
+msgstr "El contraseña o API key para el binding cuenta."
+
+#: ../../administration/identity_sources/custom_external.rst:54
+#: ../../administration/identity_sources/jumpcloud.rst:35
+msgid "REQUIRED ROLE"
+msgstr "REQUIRED ROLE"
+
+#: ../../administration/identity_sources/jumpcloud.rst:35
+msgid ""
+"(Optional) Enter a JumpCloud group name or role. Only JumpCloud users with "
+"this role/group membership will be allowed to authenticate to |morpheus|. "
+"Leave blank to allow all JumpCloud users."
+msgstr ""
+"(Optional) Enter a JumpNube grupo nombre o rol. Solo JumpNube usuarios con "
+"este rol/grupo membership será allowed a authenticate a |morpheus|. Leave "
+"blank a permitir todos JumpNube usuarios."
+
+#: ../../administration/identity_sources/jumpcloud.rst:38
+msgid ""
+"The default |morpheus| Role assigned to users created from this JumpCloud "
+"integration when no other role mapping applies."
+msgstr ""
+"El predeterminado |morpheus| Rol asignado a usuarios creado desde este "
+"JumpNube integración cuando no otro rol mapping se aplica."
+
+#: ../../administration/identity_sources/custom_external.rst:57
+#: ../../administration/identity_sources/jumpcloud.rst:41
+msgid "ROLE MAPPINGS"
+msgstr "ROLE MAPPINGS"
+
+#: ../../administration/identity_sources/jumpcloud.rst:41
+msgid ""
+"Map JumpCloud groups or roles to |morpheus| roles. Each existing |morpheus| "
+"role is listed with a field to enter the corresponding JumpCloud group name."
+" Users with matching JumpCloud group membership will be assigned the mapped "
+"|morpheus| role at login."
+msgstr ""
+"Map JumpNube grupos o roles a |morpheus| roles. Cada existente |morpheus| "
+"rol es listed con a campo a enter el corresponding JumpNube grupo nombre. "
+"Usuarios con matching JumpNube grupo membership será asignado el mapped "
+"|morpheus| rol en inicio de sesión."
+
+#: ../../administration/identity_sources/custom_external.rst:59
+#: ../../administration/identity_sources/custom_iam_api.rst:55
+#: ../../administration/identity_sources/jumpcloud.rst:43
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr "Seleccionar :guilabel:`SAVE CHANGES`"
+
+#: ../../administration/identity_sources/jumpcloud.rst:45
+msgid "The JumpCloud Identity Source integration is now active."
+msgstr "El JumpNube Identidad Origen integración es now active."
+
+#: ../../administration/identity_sources/jumpcloud.rst:48
+msgid "User Authentication"
+msgstr "Usuario Autenticación"
+
+#: ../../administration/identity_sources/jumpcloud.rst:50
+msgid ""
+"Once configured, users can log in to |morpheus| using their JumpCloud "
+"credentials:"
+msgstr ""
+"Once configurado, usuarios puede log en a |morpheus| usando su JumpNube "
+"credenciales:"
+
+#: ../../administration/identity_sources/jumpcloud.rst:52
+msgid ""
+"On first login, a |morpheus| user account is automatically created matching "
+"the JumpCloud username and email"
+msgstr ""
+"En first inicio de sesión, a |morpheus| usuario cuenta es automáticamente "
+"creado matching el JumpNube usuarioname y correo electrónico"
+
+#: ../../administration/identity_sources/jumpcloud.rst:53
+msgid ""
+"Subsequent logins validate credentials against JumpCloud and update role "
+"assignments based on current group membership"
+msgstr ""
+"Subsequent logins validate credenciales against JumpNube y update rol "
+"assignments basado en actual grupo membership"
+
+#: ../../administration/identity_sources/jumpcloud.rst:54
+msgid ""
+"If a REQUIRED ROLE is specified, only users with that JumpCloud group/role "
+"can authenticate"
+msgstr ""
+"Si a REQUIRED ROLE es specified, solo usuarios con ese JumpNube grupo/rol "
+"puede authenticate"
+
+#: ../../administration/identity_sources/jumpcloud.rst:56
+msgid ""
+"JumpCloud users will not authenticate in |morpheus| if there is an existing "
+"|morpheus| user with a matching username or email address that was not "
+"created by this identity source."
+msgstr ""
+"JumpNube usuarios no authenticate en |morpheus| si there es un existente "
+"|morpheus| usuario con a matching usuarioname o correo electrónico address "
+"ese fue no creado por este identidad origen."
+
+#: ../../administration/identity_sources/jumpcloud.rst:59
+msgid "Role Mapping"
+msgstr "Rol Mapping"
+
+#: ../../administration/identity_sources/jumpcloud.rst:61
+msgid ""
+"Role mappings allow granular control over |morpheus| permissions based on "
+"JumpCloud group membership:"
+msgstr ""
+"Rol mappings permitir granular control over |morpheus| permisos basado en "
+"JumpNube grupo membership:"
+
+#: ../../administration/identity_sources/jumpcloud.rst:63
+msgid ""
+"Enter JumpCloud group names in the role mapping fields next to each "
+"|morpheus| role"
+msgstr ""
+"Enter JumpNube grupo nombres en el rol mapping campos next a cada |morpheus|"
+" rol"
+
+#: ../../administration/identity_sources/jumpcloud.rst:64
+msgid ""
+"Users may be assigned multiple |morpheus| roles based on their JumpCloud "
+"group memberships"
+msgstr ""
+"Usuarios puede be asignado múltiples |morpheus| roles basado en su JumpNube "
+"grupo memberships"
+
+#: ../../administration/identity_sources/jumpcloud.rst:65
+msgid ""
+"Role assignments are re-evaluated on each login, reflecting any JumpCloud "
+"group changes"
+msgstr ""
+"Rol assignments son re-evaluated en cada inicio de sesión, reflecting "
+"cualquier JumpNube grupo changes"
+
+#: ../../administration/identity_sources/jumpcloud.rst:66
+msgid ""
+"If no role mapping matches and no Required Role blocks access, the Default "
+"Role is assigned"
+msgstr ""
+"Si no rol mapping matches y no Requerido Rol blocks acceso, el "
+"Predeterminado Rol es asignado"
+
+#: ../../administration/identity_sources/jumpcloud.rst:69
+msgid "Tenant Subdomain Login"
+msgstr "Inquilino Subdomain Inicio de sesión"
+
+#: ../../administration/identity_sources/jumpcloud.rst:71
+msgid ""
+"When an identity source is configured for a Tenant, users can access the "
+"Tenant-specific login URL:"
+msgstr ""
+"Cuando un identidad origen es configurado para a Inquilino, usuarios puede "
+"acceso el Inquilino-específico inicio de sesión URL:"
+
+#: ../../administration/identity_sources/jumpcloud.rst:73
+msgid "The subdomain login URL is shown on the Identity Sources page"
+msgstr ""
+"El subdomain inicio de sesión URL es shown en el Identidad Orígenes página"
+
+#: ../../administration/identity_sources/jumpcloud.rst:74
+msgid ""
+"Users navigating to this URL will be prompted to authenticate via the "
+"configured identity source"
+msgstr ""
+"Usuarios navigating a este URL será prompted a authenticate a través de el "
+"configurado identidad origen"
+
+#: ../../administration/identity_sources/jumpcloud.rst:75
+msgid "This allows direct login without selecting a Tenant first"
+msgstr "Este permite direct inicio de sesión sin selecting a Inquilino first"
+
+#: ../../administration/identity_sources/jumpcloud.rst:78
+msgid "Removing the Integration"
+msgstr "Removing el Integración"
+
+#: ../../administration/identity_sources/jumpcloud.rst:80
+msgid "To remove a JumpCloud identity source:"
+msgstr "Un remove a JumpNube identidad origen:"
+
+#: ../../administration/identity_sources/jumpcloud.rst:82
+msgid "Navigate to |AdmTen| > (Tenant) > Identity Sources"
+msgstr "Navegue a |AdmTen| > (Inquilino) > Identidad Orígenes"
+
+#: ../../administration/identity_sources/jumpcloud.rst:83
+msgid "Click on the JumpCloud identity source"
+msgstr "Haga clic en el JumpNube identidad origen"
+
+#: ../../administration/identity_sources/jumpcloud.rst:84
+msgid "Click :guilabel:`DELETE`"
+msgstr "Click :guilabel:`DELETE`"
+
+#: ../../administration/identity_sources/jumpcloud.rst:85
+msgid "Confirm the deletion"
+msgstr "Confirm el deletion"
+
+#: ../../administration/identity_sources/jumpcloud.rst:87
+msgid ""
+"Removing an identity source does not delete users that were created through "
+"it. Those users will no longer be able to authenticate via JumpCloud but "
+"their |morpheus| accounts remain."
+msgstr ""
+"Removing un identidad origen hace no delete usuarios ese fueron creado a "
+"través de ello. Esos usuarios va a no longer be able a authenticate a través"
+" de JumpNube pero su |morpheus| cuentas remain."
+
+#: ../../administration/identity_sources/custom_external.rst:2
+msgid "Custom External Identity Source"
+msgstr "Personalizado External Identidad Origen"
+
+#: ../../administration/identity_sources/custom_external.rst:7
+msgid ""
+"The Custom External identity source type allows |morpheus| to integrate with"
+" external Single Sign-On (SSO) systems that are not natively supported "
+"through a dedicated identity source type. This integration supports both "
+"interactive (browser redirect) and non-interactive (API-based) "
+"authentication modes with configurable response encryption."
+msgstr ""
+"El Personalizado External identidad origen tipo permite |morpheus| a "
+"integrate con external Single Sign-En (SSO) systems ese son no natively "
+"soportado a través de a dedicated identidad origen tipo. Este integración "
+"supports both interactive (browser redirect) y non-interactive (API-basado) "
+"autenticación modes con configurable response encryption."
+
+#: ../../administration/identity_sources/custom_external.rst:10
+msgid "Adding a Custom External Identity Source"
+msgstr "Adding a Personalizado External Identidad Origen"
+
+#: ../../administration/identity_sources/custom_external.rst:16
+msgid "Select **Custom External** from the TYPE dropdown"
+msgstr "Seleccionar **Personalizado External** desde el TYPE menú desplegable"
+
+#: ../../administration/identity_sources/custom_external.rst:29
+msgid "NONINTERACTIVE"
+msgstr "NONINTERACTIVE"
+
+#: ../../administration/identity_sources/custom_external.rst:26
+msgid "Select the authentication mode:"
+msgstr "Seleccione el autenticación mode:"
+
+#: ../../administration/identity_sources/custom_external.rst:28
+msgid ""
+"**true** — Non-interactive/API mode. The external system authenticates users"
+" without browser redirects. |morpheus| sends credentials directly to the "
+"external system's API."
+msgstr ""
+"**true** — Non-interactive/API mode. El external system authenticates "
+"usuarios sin browser redirects. |morpheus| sends credenciales directly a el "
+"external system's API."
+
+#: ../../administration/identity_sources/custom_external.rst:29
+msgid ""
+"**false** — Interactive mode. Users are redirected to the external login URL"
+" for authentication, then redirected back to |morpheus| with an "
+"authentication response."
+msgstr ""
+"**false** — Interactive mode. Usuarios son redirected a el external inicio "
+"de sesión URL para autenticación, then redirected back a |morpheus| con un "
+"autenticación response."
+
+#: ../../administration/identity_sources/custom_external.rst:32
+msgid "EXTERNAL LOGIN URL"
+msgstr "EXTERNAL LOGIN URL"
+
+#: ../../administration/identity_sources/custom_external.rst:32
+msgid ""
+"(Interactive mode only) The URL to which users are redirected for "
+"authentication. The external SSO system should redirect back to |morpheus| "
+"after successful authentication with the user identity in the response."
+msgstr ""
+"(Interactive mode solo) El URL a que usuarios son redirected para "
+"autenticación. El external SSO system debería redirect back a |morpheus| "
+"después de successful autenticación con el usuario identidad en el response."
+
+#: ../../administration/identity_sources/custom_external.rst:35
+msgid "EXTERNAL LOGOUT URL"
+msgstr "EXTERNAL LOGOUT URL"
+
+#: ../../administration/identity_sources/custom_external.rst:35
+msgid ""
+"(Interactive mode only) The URL to which users are redirected on logout from"
+" |morpheus|. This allows single logout across the SSO environment."
+msgstr ""
+"(Interactive mode solo) El URL a que usuarios son redirected en logout desde"
+" |morpheus|. Este permite single logout a través de el SSO entorno."
+
+#: ../../administration/identity_sources/custom_external.rst:45
+msgid "AUTH RESPONSE ENCRYPTION ALGORITHM"
+msgstr "AUTH RESPONSE ENCRYPTION ALGORITHM"
+
+#: ../../administration/identity_sources/custom_external.rst:38
+msgid ""
+"The encryption algorithm used to decrypt the authentication response from "
+"the external system:"
+msgstr ""
+"El encryption algorithm usado a decrypt el autenticación response desde el "
+"external system:"
+
+#: ../../administration/identity_sources/custom_external.rst:40
+msgid "**NONE** — No encryption; the response is sent in plaintext"
+msgstr "**NONE** — No encryption; el response es sent en plaintext"
+
+#: ../../administration/identity_sources/custom_external.rst:41
+#: ../../administration/identity_sources/custom_iam_api.rst:43
+msgid "**AES** — Advanced Encryption Standard"
+msgstr "**AES** — Advanced Encryption Standard"
+
+#: ../../administration/identity_sources/custom_external.rst:42
+#: ../../administration/identity_sources/custom_iam_api.rst:44
+msgid "**DES** — Data Encryption Standard"
+msgstr "**DES** — Data Encryption Standard"
+
+#: ../../administration/identity_sources/custom_external.rst:43
+#: ../../administration/identity_sources/custom_iam_api.rst:45
+msgid "**DESede** — Triple DES"
+msgstr "**DESede** — Triple DES"
+
+#: ../../administration/identity_sources/custom_external.rst:44
+#: ../../administration/identity_sources/custom_iam_api.rst:46
+msgid "**HmacSHA1** — HMAC with SHA-1"
+msgstr "**HmacSHA1** — HMAC con SHA-1"
+
+#: ../../administration/identity_sources/custom_external.rst:45
+#: ../../administration/identity_sources/custom_iam_api.rst:47
+msgid "**HmacSHA256** — HMAC with SHA-256"
+msgstr "**HmacSHA256** — HMAC con SHA-256"
+
+#: ../../administration/identity_sources/custom_external.rst:48
+#: ../../administration/identity_sources/custom_iam_api.rst:50
+msgid "ENCRYPTION KEY"
+msgstr "ENCRYPTION KEY"
+
+#: ../../administration/identity_sources/custom_external.rst:48
+msgid ""
+"(Required when an encryption algorithm other than NONE is selected) The "
+"shared secret key used to decrypt the authentication response."
+msgstr ""
+"(Requerido cuando un encryption algorithm otro than NONE es seleccionado) El"
+" shared secret key usado a decrypt el autenticación response."
+
+#: ../../administration/identity_sources/custom_external.rst:51
+msgid ""
+"The default |morpheus| Role assigned to users authenticated through this "
+"identity source when no other role mapping applies."
+msgstr ""
+"El predeterminado |morpheus| Rol asignado a usuarios authenticated a través "
+"de este identidad origen cuando no otro rol mapping se aplica."
+
+#: ../../administration/identity_sources/custom_external.rst:54
+msgid ""
+"(Optional) An external role name that users must possess to be allowed "
+"access to |morpheus|. Leave blank to allow all authenticated users."
+msgstr ""
+"(Optional) Un external rol nombre ese usuarios debe possess a be allowed "
+"acceso a |morpheus|. Leave blank a permitir todos authenticated usuarios."
+
+#: ../../administration/identity_sources/custom_external.rst:57
+msgid ""
+"Map external role names to |morpheus| roles. Each existing |morpheus| role "
+"is listed with a field to enter the corresponding external role identifier. "
+"Users whose authentication response includes matching role values are "
+"assigned the mapped |morpheus| role."
+msgstr ""
+"Map external rol nombres a |morpheus| roles. Cada existente |morpheus| rol "
+"es listed con a campo a enter el corresponding external rol identifier. "
+"Usuarios whose autenticación response incluye matching rol valores son "
+"asignado el mapped |morpheus| rol."
+
+#: ../../administration/identity_sources/custom_external.rst:62
+#: ../../administration/identity_sources/custom_iam_api.rst:58
+msgid "Authentication Flow"
+msgstr "Autenticación Flow"
+
+#: ../../administration/identity_sources/custom_external.rst:65
+msgid "Interactive Mode"
+msgstr "Interactive Mode"
+
+#: ../../administration/identity_sources/custom_external.rst:67
+msgid "User navigates to the |morpheus| login page (or Tenant subdomain URL)"
+msgstr ""
+"Usuario navigates a el |morpheus| inicio de sesión página (o Inquilino "
+"subdomain URL)"
+
+#: ../../administration/identity_sources/custom_external.rst:68
+msgid "User is redirected to the configured External Login URL"
+msgstr "Usuario es redirected a el configurado External Inicio de sesión URL"
+
+#: ../../administration/identity_sources/custom_external.rst:69
+msgid "User authenticates with the external SSO system"
+msgstr "Usuario authenticates con el external SSO system"
+
+#: ../../administration/identity_sources/custom_external.rst:70
+msgid ""
+"External system redirects back to |morpheus| with an encrypted (or "
+"plaintext) authentication response containing user identity and role "
+"information"
+msgstr ""
+"External system redirects back a |morpheus| con un encrypted (o plaintext) "
+"autenticación response containing usuario identidad y rol information"
+
+#: ../../administration/identity_sources/custom_external.rst:71
+msgid ""
+"|morpheus| decrypts the response (if encrypted), validates the user, and "
+"creates/updates the local user account"
+msgstr ""
+"|morpheus| decrypts el response (si encrypted), validates el usuario, y "
+"crea/updates el local usuario cuenta"
+
+#: ../../administration/identity_sources/custom_external.rst:72
+msgid "User is logged into |morpheus| with the appropriate role assignments"
+msgstr "Usuario es logged en |morpheus| con el appropriate rol assignments"
+
+#: ../../administration/identity_sources/custom_external.rst:75
+msgid "Non-Interactive Mode"
+msgstr "Non-Interactive Mode"
+
+#: ../../administration/identity_sources/custom_external.rst:77
+#: ../../administration/identity_sources/custom_iam_api.rst:60
+msgid "User enters credentials on the |morpheus| login page"
+msgstr "Usuario enters credenciales en el |morpheus| inicio de sesión página"
+
+#: ../../administration/identity_sources/custom_external.rst:78
+msgid ""
+"|morpheus| sends credentials to the external system's authentication "
+"endpoint"
+msgstr ""
+"|morpheus| sends credenciales a el external system's autenticación endpoint"
+
+#: ../../administration/identity_sources/custom_external.rst:79
+msgid ""
+"External system validates credentials and returns user identity and role "
+"information"
+msgstr ""
+"External system validates credenciales y returns usuario identidad y rol "
+"information"
+
+#: ../../administration/identity_sources/custom_external.rst:80
+msgid "|morpheus| creates/updates the local user account and logs the user in"
+msgstr "|morpheus| crea/updates el local usuario cuenta y logs el usuario en"
+
+#: ../../administration/identity_sources/custom_external.rst:83
+msgid "Response Format"
+msgstr "Response Format"
+
+#: ../../administration/identity_sources/custom_external.rst:85
+msgid ""
+"The external authentication system must return a response that |morpheus| "
+"can parse to extract:"
+msgstr ""
+"El external autenticación system debe return a response ese |morpheus| puede"
+" parse a extract:"
+
+#: ../../administration/identity_sources/custom_external.rst:87
+msgid "**Username** — The unique identifier for the user"
+msgstr "**Username** — El único identifier para el usuario"
+
+#: ../../administration/identity_sources/custom_external.rst:88
+msgid "**Email** — The user's email address"
+msgstr "**Correo electrónico** — El usuario's correo electrónico address"
+
+#: ../../administration/identity_sources/custom_external.rst:89
+msgid "**Roles** — The roles/groups the user belongs to (for role mapping)"
+msgstr "**Roles** — El roles/grupos el usuario belongs a (para rol mapping)"
+
+#: ../../administration/identity_sources/custom_external.rst:91
+msgid ""
+"The exact format depends on the external system implementation. When "
+"encryption is configured, the response payload must be encrypted with the "
+"shared key using the configured algorithm before transmission to |morpheus|."
+msgstr ""
+"El exact format depends en el external system implementation. Cuando "
+"encryption es configurado, el response payload debe ser encrypted con el "
+"shared key usando el configurado algorithm antes de transmission a "
+"|morpheus|."
+
+#: ../../administration/identity_sources/custom_external.rst:94
+#: ../../administration/identity_sources/custom_iam_api.rst:122
+msgid "Security Considerations"
+msgstr "Seguridad Considerations"
+
+#: ../../administration/identity_sources/custom_external.rst:96
+msgid "Always use HTTPS for the External Login URL and External Logout URL"
+msgstr ""
+"Always usar HTTPS para el External Inicio de sesión URL y External Logout "
+"URL"
+
+#: ../../administration/identity_sources/custom_external.rst:97
+msgid ""
+"When using interactive mode, use a strong encryption algorithm (AES or "
+"HmacSHA256) to protect the authentication response in transit"
+msgstr ""
+"Cuando usando interactive mode, usar a strong encryption algorithm (AES o "
+"HmacSHA256) a protect el autenticación response en transit"
+
+#: ../../administration/identity_sources/custom_external.rst:98
+msgid "Store the Encryption Key securely and rotate it periodically"
+msgstr "Store el Encryption Key securely y rotate ello periodically"
+
+#: ../../administration/identity_sources/custom_external.rst:99
+msgid "Use the Required Role field to limit access to authorized users only"
+msgstr "Usar el Requerido Rol campo a limit acceso a authorized usuarios solo"
+
+#: ../../administration/identity_sources/custom_external.rst:100
+msgid ""
+"The unique identity source code is auto-generated and used in the callback "
+"URL—do not modify it after users have authenticated"
+msgstr ""
+"El único identidad origen code es auto-generated y usado en el callback "
+"URL—hacer no modify ello después de usuarios tienen authenticated"
+
+#: ../../administration/identity_sources/custom_external.rst:102
+msgid ""
+"Custom External identity source users will not authenticate in |morpheus| if"
+" there is an existing |morpheus| user with a matching username or email "
+"address that was not created by this identity source."
+msgstr ""
+"Personalizado External identidad origen usuarios no authenticate en "
+"|morpheus| si there es un existente |morpheus| usuario con a matching "
+"usuarioname o correo electrónico address ese fue no creado por este "
+"identidad origen."
+
+#: ../../administration/identity_sources/custom_iam_api.rst:2
+msgid "Custom IAM API Identity Source"
+msgstr "Personalizado IAM API Identidad Origen"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:7
+msgid ""
+"The Custom IAM API identity source allows |morpheus| to authenticate users "
+"against an external Identity and Access Management (IAM) system through a "
+"custom API endpoint. This is useful for organizations with proprietary or "
+"uncommon IAM systems that provide a REST or HTTP-based authentication API."
+msgstr ""
+"El Personalizado IAM API identidad origen permite |morpheus| a authenticate "
+"usuarios against un external Identidad y Acceso Gestión (IAM) system a "
+"través de a personalizado API endpoint. Este es useful para organizations "
+"con proprietary o uncommon IAM systems ese provide a REST o HTTP-basado "
+"autenticación API."
+
+#: ../../administration/identity_sources/custom_iam_api.rst:9
+msgid ""
+"|morpheus| sends user credentials to the configured endpoint and processes "
+"the response to authenticate users and optionally assign roles."
+msgstr ""
+"|morpheus| sends usuario credenciales a el configurado endpoint y processes "
+"el response a authenticate usuarios y optionally assign roles."
+
+#: ../../administration/identity_sources/custom_iam_api.rst:12
+msgid "Adding a Custom IAM API Identity Source"
+msgstr "Adding a Personalizado IAM API Identidad Origen"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:18
+msgid "Select **Custom API** from the TYPE dropdown"
+msgstr "Seleccionar **Personalizado API** desde el TYPE menú desplegable"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:28
+msgid "API ENDPOINT"
+msgstr "API ENDPOINT"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:28
+msgid ""
+"The full URL of the external IAM authentication API endpoint (e.g., "
+"``https://iam.example.com/api/authenticate``)."
+msgstr ""
+"El full URL de el external IAM autenticación API endpoint (e.g., "
+"``https://iam.ejemplo.com/api/authenticate``)."
+
+#: ../../administration/identity_sources/custom_iam_api.rst:37
+msgid "API STYLE"
+msgstr "API STYLE"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:31
+msgid ""
+"The HTTP method and encoding format for sending credentials to the endpoint:"
+msgstr ""
+"El HTTP method y encoding format para sending credenciales a el endpoint:"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:33
+msgid ""
+"**Form URL Encoded [GET]** — Credentials sent as URL query parameters via "
+"GET request"
+msgstr ""
+"**Form URL Encoded [GET]** — Credenciales sent as URL query parameters a "
+"través de GET request"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:34
+msgid ""
+"**Form URL Encoded [POST]** — Credentials sent as form-encoded body via POST"
+" request"
+msgstr ""
+"**Form URL Encoded [POST]** — Credenciales sent as form-encoded body a "
+"través de POST request"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:35
+msgid "**JSON [POST]** — Credentials sent as JSON body via POST request"
+msgstr ""
+"**JSON [POST]** — Credenciales sent as JSON body a través de POST request"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:36
+msgid "**XML [POST]** — Credentials sent as XML body via POST request"
+msgstr ""
+"**XML [POST]** — Credenciales sent as XML body a través de POST request"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:37
+msgid ""
+"**HTTP Basic [GET]** — Credentials sent via HTTP Basic Authentication header"
+" on a GET request"
+msgstr ""
+"**HTTP Basic [GET]** — Credenciales sent a través de HTTP Basic "
+"Autenticación header en a GET request"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:47
+msgid "VALUE ENCRYPTION ALGORITHM"
+msgstr "VALUE ENCRYPTION ALGORITHM"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:40
+msgid ""
+"(Not available for HTTP Basic style) The algorithm used to encrypt "
+"credential values before sending them to the API:"
+msgstr ""
+"(No disponible para HTTP Basic style) El algorithm usado a encrypt "
+"credential valores antes de sending them a el API:"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:42
+msgid "**NONE** — Credentials sent in plaintext (use only with HTTPS)"
+msgstr "**NONE** — Credenciales sent en plaintext (usar solo con HTTPS)"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:50
+msgid ""
+"(Required when an encryption algorithm other than NONE is selected) The "
+"shared secret key used to encrypt credential values before transmission."
+msgstr ""
+"(Requerido cuando un encryption algorithm otro than NONE es seleccionado) El"
+" shared secret key usado a encrypt credential valores antes de transmission."
+
+#: ../../administration/identity_sources/custom_iam_api.rst:53
+msgid "DEFAULT MORPHEUS ROLE"
+msgstr "DEFAULT MORPHEUS ROLE"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:53
+msgid ""
+"The default |morpheus| Role assigned to users authenticated through this "
+"identity source. Select NONE to require explicit role mapping for all users."
+msgstr ""
+"El predeterminado |morpheus| Rol asignado a usuarios authenticated a través "
+"de este identidad origen. Seleccionar NONE a requerir explicit rol mapping "
+"para todos usuarios."
+
+#: ../../administration/identity_sources/custom_iam_api.rst:61
+msgid ""
+"|morpheus| formats the credentials according to the configured API Style"
+msgstr ""
+"|morpheus| formats el credenciales according a el configurado API Style"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:62
+msgid ""
+"If encryption is configured, credential values are encrypted with the shared"
+" key"
+msgstr ""
+"Si encryption es configurado, credential valores son encrypted con el shared"
+" key"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:63
+msgid "|morpheus| sends the request to the configured API Endpoint"
+msgstr "|morpheus| sends el request a el configurado API Endpoint"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:64
+msgid ""
+"The external IAM system validates credentials and returns a success/failure "
+"response"
+msgstr ""
+"El external IAM system validates credenciales y returns a success/failure "
+"response"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:65
+msgid ""
+"On success, |morpheus| creates or updates the local user account and logs "
+"the user in with the Default Role"
+msgstr ""
+"En success, |morpheus| crea o updates el local usuario cuenta y logs el "
+"usuario en con el Predeterminado Rol"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:66
+msgid "On failure, the login is denied with an authentication error"
+msgstr "En failure, el inicio de sesión es denied con un autenticación error"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:69
+msgid "API Response Expectations"
+msgstr "API Response Expectations"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:71
+msgid "The external IAM API endpoint should:"
+msgstr "El external IAM API endpoint debería:"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:73
+msgid "Return an HTTP 200 status code on successful authentication"
+msgstr "Return un HTTP 200 status code en successful autenticación"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:74
+msgid "Return an HTTP 401 or 403 status code on failed authentication"
+msgstr "Return un HTTP 401 o 403 status code en failed autenticación"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:75
+msgid ""
+"Optionally include user attributes (email, display name) in the success "
+"response for user account population"
+msgstr ""
+"Optionally include usuario attributes (correo electrónico, mostrar nombre) "
+"en el success response para usuario cuenta population"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:76
+msgid "Respond within a reasonable timeout (recommended under 10 seconds)"
+msgstr "Respond dentro de a reasonable timeout (recomendado under 10 seconds)"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:79
+msgid "API Style Details"
+msgstr "API Style Detalles"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:81
+msgid "**Form URL Encoded [GET]**"
+msgstr "**Form URL Encoded [GET]**"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:83
+msgid "Sends credentials as query parameters::"
+msgstr "Sends credenciales as query parameters::"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:85
+msgid ""
+"GET https://iam.example.com/api/authenticate?username=user&password=pass"
+msgstr ""
+"GET "
+"https://iam.ejemplo.com/api/authenticate?usuarioname=usuario&contraseña=pass"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:87
+msgid "**Form URL Encoded [POST]**"
+msgstr "**Form URL Encoded [POST]**"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:89
+msgid "Sends credentials as form body::"
+msgstr "Sends credenciales as form body::"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:91
+msgid ""
+"POST https://iam.example.com/api/authenticate\n"
+"Content-Type: application/x-www-form-urlencoded\n"
+"\n"
+"username=user&password=pass"
+msgstr ""
+"POST https://iam.ejemplo.com/api/authenticate\n"
+"Content-Tipo: application/x-www-form-urlencoded\n"
+"\n"
+"usuarioname=usuario&contraseña=pass"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:96
+msgid "**JSON [POST]**"
+msgstr "**JSON [POST]**"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:98
+msgid "Sends credentials as JSON::"
+msgstr "Sends credenciales as JSON::"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:100
+#, python-brace-format
+msgid ""
+"POST https://iam.example.com/api/authenticate\n"
+"Content-Type: application/json\n"
+"\n"
+"{\"username\": \"user\", \"password\": \"pass\"}"
+msgstr ""
+"POST https://iam.ejemplo.com/api/authenticate\n"
+"Content-Tipo: application/json\n"
+"\n"
+"{\"usuarioname\": \"usuario\", \"contraseña\": \"pass\"}"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:105
+msgid "**XML [POST]**"
+msgstr "**XML [POST]**"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:107
+msgid "Sends credentials as XML::"
+msgstr "Sends credenciales as XML::"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:109
+msgid ""
+"POST https://iam.example.com/api/authenticate\n"
+"Content-Type: application/xml\n"
+"\n"
+"<auth><username>user</username><password>pass</password></auth>"
+msgstr ""
+"POST https://iam.ejemplo.com/api/authenticate\n"
+"Content-Tipo: application/xml\n"
+"\n"
+"<auth><usuarioname>usuario</usuarioname><contraseña>pass</contraseña></auth>"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:114
+msgid "**HTTP Basic [GET]**"
+msgstr "**HTTP Basic [GET]**"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:116
+msgid "Sends credentials in the Authorization header::"
+msgstr "Sends credenciales en el Authorization header::"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:118
+msgid ""
+"GET https://iam.example.com/api/authenticate\n"
+"Authorization: Basic dXNlcjpwYXNz"
+msgstr ""
+"GET https://iam.ejemplo.com/api/authenticate\n"
+"Authorization: Basic dXNlcjpwYXNz"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:124
+msgid ""
+"Always use HTTPS for the API Endpoint to protect credentials in transit"
+msgstr ""
+"Always usar HTTPS para el API Endpoint a protect credenciales en transit"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:125
+msgid ""
+"Use value encryption (AES or HmacSHA256) as an additional layer when the API"
+" requires it"
+msgstr ""
+"Usar valor encryption (AES o HmacSHA256) as un adicional layer cuando el API"
+" requiere ello"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:126
+msgid ""
+"HTTP Basic [GET] mode does not support additional value encryption "
+"(credentials are Base64-encoded in the header)"
+msgstr ""
+"HTTP Basic [GET] mode hace no soporte adicional valor encryption "
+"(credenciales son Base64-encoded en el header)"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:127
+msgid "Rotate the encryption key periodically if using value encryption"
+msgstr "Rotate el encryption key periodically si usando valor encryption"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:128
+msgid ""
+"Ensure the external IAM system implements rate limiting and account lockout "
+"to prevent brute-force attacks"
+msgstr ""
+"Asegurar el external IAM system implements rate limiting y cuenta lockout a "
+"prevent brute-force attacks"
+
+#: ../../administration/identity_sources/custom_iam_api.rst:130
+msgid ""
+"Custom IAM API identity source users will not authenticate in |morpheus| if "
+"there is an existing |morpheus| user with a matching username or email "
+"address that was not created by this identity source."
+msgstr ""
+"Personalizado IAM API identidad origen usuarios no authenticate en "
+"|morpheus| si there es un existente |morpheus| usuario con a matching "
+"usuarioname o correo electrónico address ese fue no creado por este "
+"identidad origen."

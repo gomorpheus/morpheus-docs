@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/migrations/plans.rst:2
+msgid "Migration Plans"
+msgstr "Planes de migración"
+
+#: ../../tools/migrations/plans.rst:4
+msgid ""
+"Migration Plans are created and managed from :menuselection:`Tools --> "
+"Migrations`. Plans orchestrate the migration of one or more VMs from "
+"VMware vCenter to an HVM Cluster."
+msgstr ""
+"Los Planes de migración se crean y gestionan desde "
+":menuselection:`Tools --> Migrations`. Los planes orquestan la "
+"migración de una o más VMs desde VMware vCenter a un Clúster HVM."
+
+#: ../../tools/migrations/plans.rst:6
+msgid ""
+"Plans are created in a **Pending** state and require an explicit action "
+"to begin execution. This allows plans to be prepared in advance and run "
+"during scheduled maintenance windows. Completed plans remain on the list "
+"page for review and may be deleted when no longer needed."
+msgstr ""
+"Los planes se crean en estado **Pendiente** y requieren una acción "
+"explícita para iniciar la ejecución. Esto permite que los planes se "
+"preparen con anticipación y se ejecuten durante ventanas de "
+"mantenimiento programadas. Los planes completados permanecen en la "
+"página de lista para revisión y pueden eliminarse cuando ya no sean "
+"necesarios."
+
+#: ../../tools/migrations/plans.rst:9
+msgid "Creating a Migration Plan"
+msgstr "Crear un plan de migración"
+
+#: ../../tools/migrations/plans.rst:11
+msgid ""
+"From the Migrations list page (:menuselection:`Tools --> Migrations`), "
+"click :guilabel:`+ ADD` to start a new plan."
+msgstr ""
+"Desde la página de lista de Migraciones (:menuselection:`Tools --> "
+"Migrations`), haga clic en :guilabel:`+ ADD` para iniciar un nuevo "
+"plan."
+
+msgid "A list of all currently-created Migrations."
+msgstr "A lista of all currently-creado Migrations."
+
+msgid ".. image:: images/migrations/migrations_list.png"
+msgstr ".. image:: images/migrations/migrations_list.png"
+
+#: ../../tools/migrations/plans.rst:16
+msgid "**Step 1: Setup**"
+msgstr "**Step 1: Setup**"
+
+#: ../../tools/migrations/plans.rst:18
+msgid "Configure the basic plan parameters:"
+msgstr "Configure los parámetros básicos del plan:"
+
+#: ../../tools/migrations/plans.rst:20
+msgid ""
+"**NAME** — A descriptive name for the migration (e.g., \"Production Web "
+"Servers - Wave 1\")"
+msgstr ""
+"**NAME** — A descriptive nombre for the migration (e.g., \"Production Web "
+"Servers - Wave 1\")"
+
+#: ../../tools/migrations/plans.rst:21
+msgid "**SOURCE** — The source VMware vCenter Cloud integration"
+msgstr "**SOURCE** — The source VMware vCenter Cloud integración"
+
+#: ../../tools/migrations/plans.rst:22
+msgid "**TARGET** — The destination Cloud containing the HVM Cluster"
+msgstr "**TARGET** — The destination Cloud containing the HVM Clúster"
+
+#: ../../tools/migrations/plans.rst:23
+msgid "**RESOURCE POOL** — The HVM Cluster to receive the migrated VMs"
+msgstr "**RESOURCE POOL** — The HVM Clúster to receive the migrated VMs"
+
+#: ../../tools/migrations/plans.rst:24
+msgid "**GROUP** — The Group which will own the migrated VMs"
+msgstr "**GROUP** — The Group que se own el/la migrated VMs"
+
+#: ../../tools/migrations/plans.rst:26 ../../tools/migrations/plans.rst:38
+#: ../../tools/migrations/plans.rst:53
+msgid "Click :guilabel:`NEXT` when finished."
+msgstr "Haga clic en :guilabel:`NEXT` cuando termine."
+
+msgid "The SETUP tab of the CREATE MIGRATION PLAN modal."
+msgstr "The SETUP pestaña of the CREATE MIGRATION PLAN modal."
+
+msgid ".. image:: images/migrations/migration_plan_setup.png"
+msgstr ".. image:: images/migrations/migration_plan_setup.png"
+
+#: ../../tools/migrations/plans.rst:31
+msgid "**Step 2: Select VMs**"
+msgstr "**Step 2: Select VMs**"
+
+#: ../../tools/migrations/plans.rst:33
+msgid ""
+"Choose VMs from the source VMware Cloud to include in this migration "
+"plan. Selected VMs appear in a list at the bottom of the modal. You may "
+"select as many VMs as needed — all selected VMs will be migrated in "
+"parallel when the plan is executed."
+msgstr ""
+"Choose VMs from the source VMware Cloud to include in this migration plan. "
+"Selected VMs appear in a list at the bottom of the modal. You may select "
+"as many VMs as needed — all selected VMs será migrated in parallel when "
+"the plan is executed."
+
+msgid "Selecting source VMs to migrate from the source VMware Cloud."
+msgstr "Selecting source VMs a migrate desde el/la source VMware Cloud."
+
+msgid ".. image:: images/migrations/migration_select_vms.png"
+msgstr ".. image:: images/migrations/migration_select_vms.png"
+
+#: ../../tools/migrations/plans.rst:40
+msgid "**Step 3: Resource Mapping**"
+msgstr "**Step 3: Resource Mapping**"
+
+#: ../../tools/migrations/plans.rst:42
+msgid "Map source resources to destination resources:"
+msgstr "Mapee los recursos de origen a los recursos de destino:"
+
+#: ../../tools/migrations/plans.rst:44
+msgid ""
+"**Networks** — For each source network detected on the selected VMs, "
+"choose the corresponding destination network on the HVM Cluster"
+msgstr ""
+"**Redes** — For each source network detected on the seleccionado VMs, "
+"choose the corresponding destination network on the HVM Clúster"
+
+#: ../../tools/migrations/plans.rst:45
+msgid ""
+"**Datastores** — For each source datastore, choose the destination "
+"storage location"
+msgstr ""
+"**Datastores** — For cada source datastore, choose el/la destination "
+"storage location"
+
+#: ../../tools/migrations/plans.rst:46
+msgid ""
+"**Credentials** — Optionally provide existing Linux or Windows "
+"credentials for guest access during preparation"
+msgstr ""
+"**Credentials** — Optionally provide existente Linux o Windows credentials "
+"para guest access durante preparation"
+
+#: ../../tools/migrations/plans.rst:47
+msgid ""
+"**Skip Prechecks** — Toggle to skip the precheck phase (not recommended "
+"for first-time migrations)"
+msgstr ""
+"**Skip Prechecks** — Toggle a skip el/la precheck phase (not recommended "
+"para first-time migrations)"
+
+#: ../../tools/migrations/plans.rst:48
+msgid ""
+"**Skip Guest Tools** — Toggle to skip guest tools installation (only if "
+"tools are already installed)"
+msgstr ""
+"**Skip Guest Tools** — Toggle a skip guest tools installation (only si "
+"tools son already installed)"
+
+msgid "Mapping source networks and storage to destination networks and storage."
+msgstr "Mapping source redes y storage a destination networks and storage."
+
+msgid ".. image:: images/migrations/migration_resource_mapping.png"
+msgstr ".. image:: images/migrations/migration_resource_mapping.png"
+
+#: ../../tools/migrations/plans.rst:55
+msgid "**Step 4: Review**"
+msgstr "**Step 4: Review**"
+
+#: ../../tools/migrations/plans.rst:57
+msgid ""
+"Review all selections. Return to any previous tab to make adjustments. "
+"Click :guilabel:`COMPLETE` to save the plan."
+msgstr ""
+"Review all selections. Return to any previous tab to make adjustments. "
+"Haga clic en :guilabel:`COMPLETE` to save the plan."
+
+#: ../../tools/migrations/plans.rst:60
+msgid "Running a Migration Plan"
+msgstr "Ejecutar un plan de migración"
+
+#: ../../tools/migrations/plans.rst:62
+msgid ""
+"After creation, the plan is in **Pending** state on the Migrations list "
+"page. All configuration details are displayed on the plan detail page."
+msgstr ""
+"After creation, the plan is in **Pending** state on the Migrations lista "
+"página. All configuration detalles are displayed on the plan detalle "
+"página."
+
+#: ../../tools/migrations/plans.rst:64
+msgid "To execute the migration, click :guilabel:`RUN`."
+msgstr "Para ejecutar la migración, haga clic en :guilabel:`RUN`."
+
+msgid "The migration detail page showing a migration in a pending state."
+msgstr "The migration detalle página showing a migration in a pending state."
+
+msgid ".. image:: images/migrations/migration_detail_pending.png"
+msgstr ".. image:: images/migrations/migration_detail_pending.png"
+
+#: ../../tools/migrations/plans.rst:71
+msgid ""
+"Running a migration will **power down source VMs** during the transfer "
+"phase. Plan accordingly for service disruption on source workloads."
+msgstr ""
+"Ejecutar una migración **apagará las VMs de origen** durante la fase "
+"de transferencia. Planifique en consecuencia la interrupción del "
+"servicio en las cargas de trabajo de origen."
+
+#: ../../tools/migrations/plans.rst:74
+msgid "Monitoring Progress"
+msgstr "Monitorear el progreso"
+
+#: ../../tools/migrations/plans.rst:76
+msgid "Once running, the plan detail page provides real-time status:"
+msgstr ""
+"Una vez en ejecución, la página de detalle del plan proporciona estado "
+"en tiempo real:"
+
+#: ../../tools/migrations/plans.rst:78
+msgid ""
+"**Summary view** — Shows overall plan status and per-VM progress through "
+"migration phases (Precheck → Prepare → Create → Transfer → Reconfigure → "
+"Finalize)"
+msgstr ""
+"**Summary view** — Shows overall plan status y per-VM progress a través de "
+"migration phases (Precheck → Prepare → Create → Transfer → Reconfigure → "
+"Finalize)"
+
+#: ../../tools/migrations/plans.rst:79
+msgid "**History tab** — Detailed log of all actions taken during the migration"
+msgstr ""
+"**History pestaña** — Detailed log of all actions taken during the "
+"migration"
+
+#: ../../tools/migrations/plans.rst:80
+msgid ""
+"**Destination tab** — Details on VMs that have been successfully migrated"
+" to the HVM Cluster"
+msgstr ""
+"**Destination tab** — Details on VMs that han sido successfully migrated "
+"to the HVM Cluster"
+
+#: ../../tools/migrations/plans.rst:82
+msgid ""
+"Transfer times depend on disk sizes, network bandwidth between HVM hosts "
+"and ESXi, and target storage I/O performance. The system allows up to 48 "
+"hours for individual VM transfers to complete."
+msgstr ""
+"Transfer times depend en disk sizes, red bandwidth entre HVM hosts y ESXi, "
+"and target storage I/O performance. The system permite up a 48 hours para "
+"individual VM transfers to complete."
+
+#: ../../tools/migrations/plans.rst:86
+msgid ""
+"During the Transfer phase, you can monitor the **OVF Export** task in "
+"vCenter for real-time progress on the actual disk transfer and "
+"conversion. This reflects the true data movement from ESXi to the target "
+"HVM host."
+msgstr ""
+"During el/la Transfer phase, you puede monitor the **OVF Export** task en "
+"vCenter para real-time progress en the actual disk transfer y conversion. "
+"This reflects the true data movement desde ESXi a the target HVM host."
+
+#: ../../tools/migrations/plans.rst:89
+msgid "Post-Migration"
+msgstr "Post-migración"
+
+#: ../../tools/migrations/plans.rst:91
+msgid "After a successful migration:"
+msgstr "Después de una migración exitosa:"
+
+#: ../../tools/migrations/plans.rst:93
+msgid ""
+"Migrated VMs are running on the HVM Cluster and managed as standard "
+"instances"
+msgstr ""
+"Las VMs migradas se ejecutan en el Clúster HVM y se gestionan como "
+"instancias estándar"
+
+#: ../../tools/migrations/plans.rst:94
+msgid ""
+"Source VMs remain powered off on VMware (they are not deleted "
+"automatically)"
+msgstr ""
+"Las VMs de origen permanecen apagadas en VMware (no se eliminan "
+"automáticamente)"
+
+#: ../../tools/migrations/plans.rst:95
+msgid ""
+"Network configuration (including static IPs) is preserved on the "
+"destination"
+msgstr ""
+"La configuración de red (incluyendo IPs estáticas) se preserva en el "
+"destino"
+
+#: ../../tools/migrations/plans.rst:96
+msgid "MAC addresses may be preserved depending on plan configuration"
+msgstr ""
+"Las direcciones MAC pueden preservarse dependiendo de la configuración "
+"del plan"
+
+#: ../../tools/migrations/plans.rst:98
+msgid ""
+"Failed VMs can be retried individually from the plan detail page. Plans "
+"that have fully completed can be kept for audit purposes or deleted."
+msgstr ""
+"Las VMs fallidas pueden reintentarse individualmente desde la página "
+"de detalle del plan. Los planes que se han completado totalmente "
+"pueden conservarse para fines de auditoría o eliminarse."
+

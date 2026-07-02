@@ -1,0 +1,486 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:2
+msgid "Host Maintenance & Evacuation"
+msgstr "Host Mantenimiento & Evacuation"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:7
+msgid ""
+"Host maintenance mode allows administrators to take a host offline for "
+"servicing (hardware repair, OS patching, firmware updates) without "
+"triggering unnecessary VM failover. When a host enters maintenance mode, "
+"|morpheus| evacuates VMs to other cluster hosts via live migration before "
+"marking the host offline."
+msgstr ""
+"Host mantenimiento modo permite administrators a tomar un host offline para "
+"servicing (hardware repair, OS patching, firmware actualiza) sin triggering "
+"unnecessary VM conmutación por error. Cuando un host enters mantenimiento "
+"modo, |morpheus| evacuates VMs a otro cluster hosts via live migración antes"
+" de marking el host offline."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:10
+msgid "Entering Maintenance Mode"
+msgstr "Entering Maintenance Modo"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:13
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:86
+msgid "Procedure"
+msgstr "Procedure"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:15
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:88
+msgid "Navigate to ``Infrastructure > Clusters > [Cluster] > Hosts``"
+msgstr "Navegue un ``Infrastructure > Clusters > [Cluster] > Hosts``"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:16
+msgid "Click the actions menu for the target host"
+msgstr "Click el acciones menú para el destino host"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:17
+msgid "Select :guilabel:`Enter Maintenance Mode`"
+msgstr "Seleccionar :guilabel:`Enter Maintenance Mode`"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:18
+msgid "|morpheus| begins the automated evacuation process"
+msgstr "|morpheus| begins el automated evacuation proceso"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:20
+msgid ""
+"Maintenance mode can also be entered from ``Infrastructure > Clusters > "
+"[Cluster] > Hosts > [Host] > Actions > Enter Maintenance Mode``."
+msgstr ""
+"Mantenimiento modo también puede ser entered desde ``Infrastructure > "
+"Clusters > [Cluster] > Hosts > [Host] > Actions > Enter Maintenance Mode``."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:23
+msgid "Automated Evacuation Process"
+msgstr "Automated Evacuation Process"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:25
+msgid "When maintenance mode is initiated, |morpheus| performs the following:"
+msgstr ""
+"Cuando mantenimiento modo es initiated, |morpheus| performs lo siguiente:"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:27
+msgid ""
+"**Capacity validation (dry run)** — Before moving any VMs, |morpheus| "
+"verifies that remaining hosts have sufficient memory to accommodate all VMs."
+" The system ensures no host exceeds 95% projected memory utilization after "
+"receiving migrated VMs. If capacity is insufficient, maintenance mode is "
+"refused with an error."
+msgstr ""
+"**Capacidad validation (dry run)** — Antes de moving cualquier VMs, "
+"|morpheus| verifies ese remaining hosts tienen sufficient memoria a "
+"accommodate todos VMs. El sistema ensures no host exceeds 95% projected "
+"memoria utilization después de receiving migrado VMs. Si capacidad es "
+"insufficient, mantenimiento modo es refused con un error."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:29
+msgid ""
+"**VM iteration** — VMs are processed in descending order by memory "
+"allocation (largest VMs first)."
+msgstr ""
+"**VM iteration** — VMs son processed en descending order por memoria "
+"allocation (largest VMs primero)."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:31
+#, python-format
+msgid ""
+"**Target host selection** — For each VM, |morpheus| selects a target host "
+"with the most available memory that can accommodate the VM without exceeding"
+" 95% utilization."
+msgstr ""
+"**Target host selection** — Para cada VM, |morpheus| selects un destino host"
+" con el más disponible memoria ese puede accommodate el VM sin exceeding 95%"
+" utilization."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:33
+msgid ""
+"**Live migration** — Running VMs on shared storage are live-migrated (no "
+"downtime). Each migration is retried up to 3 times on failure, with a "
+"15-second pause between attempts."
+msgstr ""
+"**Live migración** — Ejecutando VMs en shared storage son live-migrado (no "
+"downtime). Cada migración es retried hasta 3 times en fallo, con un "
+"15-second pause entre attempts."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:35
+msgid ""
+"**Cold migration** — Powered-off VMs are cold-moved (XML definition "
+"relocated)."
+msgstr ""
+"**Cold migración** — Powered-off VMs son cold-moved (XML definition "
+"relocated)."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:37
+msgid ""
+"**Status update** — Once all eligible VMs are evacuated, the host status "
+"changes from ``maintenancing`` to ``maintenance``."
+msgstr ""
+"**Status update** — Once todos eligible VMs son evacuated, el host estado "
+"cambios desde ``maintenancing`` a ``maintenance``."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:40
+msgid "VMs Skipped During Evacuation"
+msgstr "VMs Skipped Durante Evacuation"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:42
+msgid "The following VMs are not moved during maintenance evacuation:"
+msgstr "Lo siguiente VMs son no moved durante mantenimiento evacuation:"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:48
+msgid "VM Type"
+msgstr "VM Tipo"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:49
+msgid "Reason"
+msgstr "Reason"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:50
+msgid "Pinned VMs (system servers with ``pinned`` placement strategy)"
+msgstr "Pinned VMs (sistema servidores con ``pinned`` placement strategy)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:51
+msgid ""
+"These are explicitly bound to the host and cannot be automatically relocated"
+msgstr ""
+"Estos son explicitly bound al host y cannot be automáticamente relocated"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:52
+msgid "Powered-off VMs (when ``movePoweredOff`` is disabled)"
+msgstr "Powered-off VMs (cuando ``movePoweredOff`` está deshabilitado)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:53
+msgid ""
+"Powered-off VMs do not consume runtime resources; moving them is optional"
+msgstr ""
+"Powered-off VMs do no consume runtime recursos; moving them es opcional"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:54
+msgid "VMs with unknown power state"
+msgstr "VMs con unknown power estado"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:55
+msgid "Cannot safely determine migration path"
+msgstr "Cannot safely determine migración ruta"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:56
+msgid "VMs with local storage (while powered on)"
+msgstr "VMs con local storage (mientras powered en)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:57
+msgid "Local storage cannot be live-migrated; VM must be powered off first"
+msgstr "Local storage cannot be live-migrado; VM debe be powered off primero"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:59
+msgid ""
+"If pinned VMs exist on the host, they will remain in place during "
+"maintenance. Ensure these VMs can tolerate the host being serviced, or "
+"manually relocate them before entering maintenance mode."
+msgstr ""
+"Si pinned VMs existir en el host, they será remain en place durante "
+"mantenimiento. Asegurar estos VMs puede tolerate el host being serviced, o "
+"manualmente relocate them antes de entering mantenimiento modo."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:62
+msgid "VMs With Local Storage"
+msgstr "VMs Con Local Storage"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:64
+msgid ""
+"VMs that have volumes on local datastores cannot be live-migrated. These VMs"
+" must be powered off before the host enters maintenance mode. If a running "
+"VM has local storage, maintenance mode will report a failure for that VM and"
+" continue with the remaining VMs."
+msgstr ""
+"VMs ese tienen volúmenes en local datastores cannot be live-migrado. Estos "
+"VMs debe be powered off antes de el host enters mantenimiento modo. Si un "
+"ejecutando VM tiene local storage, mantenimiento modo será report un fallo "
+"para ese VM y continuar con el remaining VMs."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:66
+msgid "To handle VMs with local storage:"
+msgstr "A handle VMs con local storage:"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:68
+msgid "Power off the VM manually before initiating maintenance mode"
+msgstr "Power off el VM manualmente antes de initiating mantenimiento modo"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:69
+msgid ""
+"Or move the VM's storage to a shared datastore before initiating maintenance"
+" mode"
+msgstr ""
+"O mover el VM's storage a un shared datastore antes de initiating "
+"mantenimiento modo"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:72
+msgid "Capacity Requirements"
+msgstr "Capacity Requirements"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:74
+msgid ""
+"Maintenance mode requires that remaining hosts can absorb the workload:"
+msgstr ""
+"Mantenimiento modo requiere ese remaining hosts puede absorb el carga de "
+"trabajo:"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:76
+msgid ""
+"Each target host must have available memory greater than the VM's allocated "
+"memory"
+msgstr ""
+"Cada destino host debe tienen disponible memoria mayor que el VM's allocated"
+" memoria"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:77
+msgid "Projected utilization on the target host must remain below 95%"
+msgstr ""
+"Projected utilization en el destino host debe remain a continuación 95%"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:78
+msgid "If no host has sufficient capacity for a given VM, the operation fails"
+msgstr ""
+"Si no host tiene sufficient capacidad para un given VM, el operación falla"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:80
+msgid ""
+"Plan cluster sizing with N+1 capacity to always allow at least one host to "
+"enter maintenance. See :doc:`capacity_planning` for sizing guidance."
+msgstr ""
+"Plan cluster sizing con N+1 capacidad a siempre permitir al menos one host a"
+" ingresar mantenimiento. Ver :doc:`capacity_planning` para sizing guidance."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:83
+msgid "Exiting Maintenance Mode"
+msgstr "Exiting Maintenance Modo"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:89
+msgid "Click the actions menu for the host in maintenance"
+msgstr "Click el acciones menú para el host en mantenimiento"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:90
+msgid "Select :guilabel:`Exit Maintenance Mode`"
+msgstr "Seleccionar :guilabel:`Exit Maintenance Mode`"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:93
+msgid "What Happens"
+msgstr "Qué Happens"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:95
+msgid "The host status changes from ``maintenance`` to ``provisioned``"
+msgstr "El host estado cambios desde ``maintenance`` a ``provisioned``"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:96
+msgid "The host's maintenance mode flag is cleared"
+msgstr "El host's mantenimiento modo flag es cleared"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:97
+msgid "Stat collection and quorum participation resume immediately"
+msgstr "Stat collection y quorum participation resume immediately"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:98
+msgid "VMs are **not** automatically moved back to the host"
+msgstr "VMs son **not** automáticamente moved back al host"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:100
+msgid ""
+"After exiting maintenance mode, VMs remain on their current hosts. Use "
+"Dynamic Resource Scheduling (DRS) or manual migration to rebalance workloads"
+" if desired."
+msgstr ""
+"Después de exiting mantenimiento modo, VMs remain en su actual hosts. Usar "
+"Dinámico Recurso Scheduling (DRS) o manual migración a rebalance cargas de "
+"trabajo si se desea."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:103
+msgid "Planned vs. Unplanned Host Absence"
+msgstr "Planned vs. Unplanned Host Absence"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:109
+msgid "Aspect"
+msgstr "Aspect"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:110
+msgid "Planned (Maintenance Mode)"
+msgstr "Planned (Mantenimiento Modo)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:111
+msgid "Unplanned (Host Failure)"
+msgstr "Unplanned (Host Fallo)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:112
+msgid "VM evacuation"
+msgstr "VM evacuation"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:113
+msgid "Live migration before host goes offline"
+msgstr "Live migración antes de host goes offline"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:114
+msgid "VMs lost; restarted on surviving hosts after 140s"
+msgstr "VMs lost; reiniciado en surviving hosts después de 140s"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:115
+msgid "Quorum impact"
+msgstr "Quorum impact"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:116
+msgid "Host remains a quorum member (maintenance flag)"
+msgstr "Host remains un quorum miembro (mantenimiento flag)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:117
+msgid "Host becomes unreachable; counted against quorum"
+msgstr "Host becomes unreachable; counted against quorum"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:118
+msgid "Data integrity"
+msgstr "Datos integrity"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:119
+msgid "Clean unmount of shared storage"
+msgstr "Clean unmount de shared storage"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:120
+msgid "Fencing protects storage; DLM coordinates"
+msgstr "Fencing protects storage; DLM coordinates"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:121
+msgid "VM downtime"
+msgstr "VM downtime"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:122
+msgid "Zero (live migration)"
+msgstr "Zero (live migración)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:123
+msgid "140+ seconds (failover timeline)"
+msgstr "140+ seconds (conmutación por error timeline)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:124
+msgid "Recovery"
+msgstr "Recovery"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:125
+msgid "Exit maintenance mode"
+msgstr "Exit mantenimiento modo"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:126
+msgid "Host rejoins automatically on reboot"
+msgstr "Host rejoins automáticamente en reboot"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:129
+msgid "Proper Shutdown Sequence"
+msgstr "Proper Shutdown Sequence"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:131
+msgid "To cleanly shut down a host without triggering failover:"
+msgstr "A cleanly shut down un host sin triggering conmutación por error:"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:133
+msgid "Enter maintenance mode (evacuates VMs)"
+msgstr "Ingresar mantenimiento modo (evacuates VMs)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:134
+msgid "Wait for evacuation to complete (host status shows ``maintenance``)"
+msgstr "Wait para evacuation a completo (host estado muestra ``maintenance``)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:135
+msgid "Power off or reboot the host for servicing"
+msgstr "Power off o reboot el host para servicing"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:137
+msgid ""
+"Do NOT power off a host without first entering maintenance mode. An abrupt "
+"power-off will be interpreted as a host failure, triggering quorum "
+"evaluation and VM failover after 140 seconds."
+msgstr ""
+"Do NOT power off un host sin primero entering mantenimiento modo. Un abrupt "
+"power-off será be interpreted como un host fallo, triggering quorum "
+"evaluation y VM conmutación por error después de 140 seconds."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:140
+msgid "Re-joining After Maintenance"
+msgstr "Re-joining Después de Mantenimiento"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:142
+msgid "When a host boots back up after maintenance:"
+msgstr "Cuando un host boots back up después de mantenimiento:"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:144
+msgid ""
+"The |morpheus| agent starts and reads ``.quorum-nodes`` from "
+"``/opt/morpheus-node``"
+msgstr ""
+"El |morpheus| agent inicia y reads ``.quorum-nodes`` desde ``/opt/morpheus-"
+"node``"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:145
+msgid "The agent resumes peer-to-peer quorum pinging on port 7443"
+msgstr "El agent resumes peer-a-peer quorum pinging en puerto 7443"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:146
+msgid "Other cluster agents detect the returning host as reachable"
+msgstr "Otro cluster agents detect el returning host como reachable"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:147
+msgid "Quorum status updates to include the returning host"
+msgstr "Quorum estado actualiza a incluir el returning host"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:148
+msgid ""
+"The host is available to receive VMs (via DRS, manual migration, or new "
+"provisioning)"
+msgstr ""
+"El host está disponible a recibir VMs (via DRS, manual migración, o nuevo "
+"provisioning)"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:150
+msgid ""
+"If the host was offline for less than 140 seconds and did not enter "
+"maintenance mode, no VM failover occurs. The host simply rejoins the quorum "
+"cycle transparently."
+msgstr ""
+"Si el host fue offline para menos de 140 seconds y did no ingresar "
+"mantenimiento modo, no VM conmutación por error occurs. El host simply "
+"rejoins el quorum cycle transparently."
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:153
+msgid "Maintenance During Cluster Updates"
+msgstr "Maintenance Durante Cluster Updates"
+
+#: ../../infrastructure/clusters/hvm/host_maintenance.rst:155
+msgid ""
+"When performing rolling cluster updates (see :doc:`upgrading`), |morpheus| "
+"automatically enters and exits maintenance mode for each host as part of the"
+" update process. A DRS lock is acquired during maintenance to prevent "
+"resource scheduling from interfering with the update cycle."
+msgstr ""
+"Cuando performing rolling cluster actualiza (ver :doc:`upgrading`), "
+"|morpheus| automáticamente enters y exits mantenimiento modo para cada host "
+"como part del update proceso. Un DRS lock es acquired durante mantenimiento "
+"a prevent recurso scheduling desde interfering con el update cycle."

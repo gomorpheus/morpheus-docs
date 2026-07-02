@@ -1,0 +1,356 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/ai/mcp_servers.rst:4
+msgid "MCP Servers"
+msgstr "Servidores MCP"
+
+#: ../../tools/ai/mcp_servers.rst:6
+msgid ""
+"MCP (Model Context Protocol) Servers are external tool providers that "
+"expose capabilities to AI Agents. When an MCP server is connected, its "
+"tools become available for the AI to invoke during conversations — "
+"enabling the assistant to interact with external systems, databases, "
+"APIs, or custom workflows."
+msgstr ""
+"Los Servidores MCP (Model Context Protocol) son proveedores de "
+"herramientas externos que exponen capacidades a los Agentes de IA. "
+"Cuando un servidor MCP está conectado, sus herramientas están "
+"disponibles para que la IA las invoque durante las conversaciones — "
+"permitiendo al asistente interactuar con sistemas externos, bases de "
+"datos, APIs o flujos de trabajo personalizados."
+
+#: ../../tools/ai/mcp_servers.rst:8
+msgid ""
+"Morpheus includes a **built-in MCP server** that provides tools for "
+"managing Morpheus resources (instances, clouds, clusters, networks, "
+"etc.). External MCP servers extend this with additional capabilities."
+msgstr ""
+"Morpheus incluye un **servidor MCP integrado** que proporciona "
+"herramientas para gestionar recursos de Morpheus (instancias, nubes, "
+"clústeres, redes, etc.). Los servidores MCP externos amplían esto con "
+"capacidades adicionales."
+
+#: ../../tools/ai/mcp_servers.rst:10
+msgid ""
+"Navigate to :menuselection:`Tools --> AI Services --> MCP Servers` to "
+"manage connections."
+msgstr ""
+"Navegue a :menuselection:`Tools --> AI Services --> MCP Servers` para "
+"gestionar conexiones."
+
+#: ../../tools/ai/mcp_servers.rst:13
+msgid "Adding an MCP Server"
+msgstr "Agregar un servidor MCP"
+
+#: ../../tools/ai/mcp_servers.rst:15
+msgid "Click :guilabel:`+ ADD` to connect a new MCP server."
+msgstr "Haga clic en :guilabel:`+ ADD` para conectar un nuevo servidor MCP."
+
+#: ../../tools/ai/mcp_servers.rst:21
+msgid "Field"
+msgstr "Campo"
+
+#: ../../tools/ai/mcp_servers.rst:22 ../../tools/ai/mcp_servers.rst:46
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../tools/ai/mcp_servers.rst:23
+msgid "**Name**"
+msgstr "**Nombre**"
+
+#: ../../tools/ai/mcp_servers.rst:24
+msgid "A unique display name for the server"
+msgstr "Un nombre de visualización único para el servidor"
+
+#: ../../tools/ai/mcp_servers.rst:25
+msgid "**Description**"
+msgstr "**Descripción**"
+
+#: ../../tools/ai/mcp_servers.rst:26
+msgid "Optional description of what tools this server provides"
+msgstr "Descripción opcional de las herramientas que proporciona este servidor"
+
+#: ../../tools/ai/mcp_servers.rst:27
+msgid "**Protocol**"
+msgstr "**Protocolo**"
+
+#: ../../tools/ai/mcp_servers.rst:28
+msgid "Transport protocol for communication (see below)"
+msgstr "Protocolo de transporte para comunicación (ver abajo)"
+
+#: ../../tools/ai/mcp_servers.rst:29
+msgid "**Service URL**"
+msgstr "**URL de servicio**"
+
+#: ../../tools/ai/mcp_servers.rst:30
+msgid ""
+"The connection endpoint — a URL for HTTP protocols, or a command path for"
+" STDIO"
+msgstr ""
+"El connection endpoint — a URL para HTTP protocols, o a command path for "
+"STDIO"
+
+#: ../../tools/ai/mcp_servers.rst:31
+msgid "**Credential**"
+msgstr "**Credencial**"
+
+#: ../../tools/ai/mcp_servers.rst:32
+msgid ""
+"Optional authentication credential (API Key, Bearer Token, or "
+"Username/Password)"
+msgstr ""
+"Optional authentication credential (API Key, Bearer Token, o "
+"Username/Password)"
+
+#: ../../tools/ai/mcp_servers.rst:33
+msgid "**Arguments**"
+msgstr "**Argumentos**"
+
+#: ../../tools/ai/mcp_servers.rst:34
+msgid "For STDIO protocol only: JSON array of command-line arguments"
+msgstr ""
+"Solo para protocolo STDIO: arreglo JSON de argumentos de línea de "
+"comandos"
+
+#: ../../tools/ai/mcp_servers.rst:35
+msgid "**Enabled**"
+msgstr "**Habilitado**"
+
+#: ../../tools/ai/mcp_servers.rst:36
+msgid "Toggle to activate or deactivate the server"
+msgstr "Active o desactive el servidor"
+
+#: ../../tools/ai/mcp_servers.rst:39
+msgid "Protocols"
+msgstr "Protocolos"
+
+#: ../../tools/ai/mcp_servers.rst:45
+msgid "Protocol"
+msgstr "Protocolo"
+
+#: ../../tools/ai/mcp_servers.rst:47
+msgid "**Streamable HTTP** (recommended)"
+msgstr "**Streamable HTTP** (recomendado)"
+
+#: ../../tools/ai/mcp_servers.rst:48
+msgid ""
+"Modern HTTP-based transport with optional SSE streaming. Best for remote"
+"/cloud-hosted MCP servers. Uses a single endpoint URL."
+msgstr ""
+"Modern HTTP-based transport with opcional SSE streaming. Best for "
+"remote/cloud-hosted MCP servers. Uses a single endpoint URL."
+
+#: ../../tools/ai/mcp_servers.rst:49
+msgid "**SSE**"
+msgstr "**SSE**"
+
+#: ../../tools/ai/mcp_servers.rst:50
+msgid ""
+"Legacy HTTP + Server-Sent Events dual-endpoint transport. Supported for "
+"backward compatibility with older MCP server implementations."
+msgstr ""
+"Legacy HTTP + Server-Sent Events dual-endpoint transport. Supported para "
+"backward compatibility con older MCP servidor implementations."
+
+#: ../../tools/ai/mcp_servers.rst:51
+msgid "**STDIO**"
+msgstr "**STDIO**"
+
+#: ../../tools/ai/mcp_servers.rst:52
+msgid ""
+"Local subprocess communication via stdin/stdout. Used for CLI tools or "
+"locally-running MCP servers. The Service URL is the command to execute; "
+"Arguments provides CLI args as a JSON array."
+msgstr ""
+"Local subprocess communication via stdin/stdout. Used para CLI tools o "
+"locally-running MCP servers. The Service URL es el/la command a execute; "
+"Arguments proporciona CLI args como a JSON array."
+
+#: ../../tools/ai/mcp_servers.rst:55
+msgid "Tool Discovery"
+msgstr "Descubrimiento de herramientas"
+
+#: ../../tools/ai/mcp_servers.rst:57
+msgid ""
+"When an MCP server is added or refreshed, Morpheus connects and discovers"
+" available tools by calling the server's ``tools/list`` endpoint. "
+"Discovered tools are cached and displayed with a tool count on the server"
+" listing."
+msgstr ""
+"When an MCP server is added or refreshed, Morpheus connects and discovers "
+"disponible tools by calling the server's ``tools/lista`` endpoint. "
+"Discovered tools are cached and displayed with a tool count on the server "
+"listing."
+
+#: ../../tools/ai/mcp_servers.rst:59
+msgid ""
+"To re-discover tools (e.g., after the server is updated with new "
+"capabilities), click the :guilabel:`Refresh` action on the server."
+msgstr ""
+"To re-discover tools (e.g., after the server is updated with new "
+"capabilities), click el :guilabel:`Refresh` action on the server."
+
+#: ../../tools/ai/mcp_servers.rst:61
+msgid "**Status indicators:**"
+msgstr "**Indicadores de estado:**"
+
+#: ../../tools/ai/mcp_servers.rst:63
+msgid "**OK** — Server is reachable and tools are discovered"
+msgstr "**OK** — El servidor es accesible y las herramientas se descubrieron"
+
+#: ../../tools/ai/mcp_servers.rst:64
+msgid "**Error** — Connection failed (check URL, credentials, and network access)"
+msgstr ""
+"**Error** — La conexión falló (verifique URL, credenciales y acceso de "
+"red)"
+
+#: ../../tools/ai/mcp_servers.rst:65
+msgid "**Unknown** — Discovery has not been attempted"
+msgstr "**Unknown** — No se ha intentado el descubrimiento"
+
+#: ../../tools/ai/mcp_servers.rst:68
+msgid "Built-in Morpheus MCP Server"
+msgstr "Servidor MCP integrado de Morpheus"
+
+#: ../../tools/ai/mcp_servers.rst:70
+#, python-brace-format
+msgid ""
+"Every Morpheus appliance exposes a built-in MCP server at "
+"``{applianceUrl}/api/mcp``. This server:"
+msgstr ""
+"Every Morpheus appliance exposes a built-in MCP servidor en "
+"``{applianceUrl}/api/mcp``. This server:"
+
+#: ../../tools/ai/mcp_servers.rst:72
+msgid "Cannot be deleted or modified"
+msgstr "No puede eliminarse ni modificarse"
+
+#: ../../tools/ai/mcp_servers.rst:73
+msgid ""
+"Provides tools for common Morpheus operations (list instances, check "
+"status, run reports, etc.)"
+msgstr ""
+"Provides tools for common Morpheus operations (lista instancias, check "
+"status, run informes, etc.)"
+
+#: ../../tools/ai/mcp_servers.rst:74
+msgid ""
+"Is automatically included when an AI Agent has **Include Local MCP** "
+"enabled"
+msgstr ""
+"Is automatically included when an AI Agent has **Include Local MCP** "
+"habilitado"
+
+#: ../../tools/ai/mcp_servers.rst:75
+msgid ""
+"Respects the user's existing Morpheus role permissions — the AI can only "
+"access resources the user can access"
+msgstr ""
+"Respects the usuario's existing Morpheus rol permisos — the AI can only "
+"access resources the usuario can access"
+
+#: ../../tools/ai/mcp_servers.rst:78
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: ../../tools/ai/mcp_servers.rst:80
+msgid ""
+"External MCP servers may require authentication. Supported credential "
+"types:"
+msgstr ""
+"External MCP servers may require authentication. Supported credential "
+"tipos:"
+
+#: ../../tools/ai/mcp_servers.rst:82
+msgid ""
+"**API Key** — Sent as a header or query parameter (depending on server "
+"implementation)"
+msgstr ""
+"**API Key** — Sent as a header or query parameter (dependiendo de server "
+"implementation)"
+
+#: ../../tools/ai/mcp_servers.rst:83
+msgid "**Bearer Token** — Sent as ``Authorization: Bearer <token>`` header"
+msgstr ""
+"**Bearer Token** — Sent como ``Authorization: Bearer <token>`` header"
+
+#: ../../tools/ai/mcp_servers.rst:84
+msgid "**Username/Password** — HTTP Basic authentication"
+msgstr "**Username/Password** — HTTP Basic autenticación"
+
+#: ../../tools/ai/mcp_servers.rst:86
+msgid ""
+"Credentials are stored securely and never exposed in the UI after initial"
+" configuration."
+msgstr ""
+"Las credenciales se almacenan de forma segura y nunca se exponen en la "
+"UI después de la configuración inicial."
+
+#: ../../tools/ai/mcp_servers.rst:89
+msgid "Example: Connecting a Remote MCP Server"
+msgstr "Ejemplo: Conectar un servidor MCP remoto"
+
+#: ../../tools/ai/mcp_servers.rst:91
+msgid ""
+"To connect a remote MCP server (e.g., a custom tool server for database "
+"operations):"
+msgstr ""
+"Para connect a remote MCP servidor (e.g., a custom tool server para "
+"database operations):"
+
+#: ../../tools/ai/mcp_servers.rst:93
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Haga clic en :guilabel:`+ ADD`"
+
+#: ../../tools/ai/mcp_servers.rst:94
+msgid "Set **Name**: \"Database Operations\""
+msgstr "Establezca **Name**: \"Database Operations\""
+
+#: ../../tools/ai/mcp_servers.rst:95
+msgid "Set **Protocol**: Streamable HTTP"
+msgstr "Establezca **Protocol**: Streamable HTTP"
+
+#: ../../tools/ai/mcp_servers.rst:96
+msgid "Set **Service URL**: ``https://mcp.internal.example.com/tools``"
+msgstr ""
+"Establezca **Service URL**: ``https://mcp.internal.example.com/tools``"
+
+#: ../../tools/ai/mcp_servers.rst:97
+msgid "Set **Credential**: Select or create a Bearer Token credential"
+msgstr ""
+"Establezca **Credential**: Seleccione o cree una credencial Bearer "
+"Token"
+
+#: ../../tools/ai/mcp_servers.rst:98
+msgid "Click :guilabel:`SAVE`"
+msgstr "Haga clic en :guilabel:`SAVE`"
+
+#: ../../tools/ai/mcp_servers.rst:100
+msgid ""
+"After saving, tool discovery runs automatically. Assign the server to an "
+"AI Agent to make its tools available during conversations."
+msgstr ""
+"Después de guardar, el descubrimiento de herramientas se ejecuta "
+"automáticamente. Asigne el servidor a un Agente de IA para que sus "
+"herramientas estén disponibles durante las conversaciones."
+

@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/maintenance/wars.rst:2
+msgid "Morpheus UI war files"
+msgstr "Morpheus UI war files"
+
+#: ../../getting_started/maintenance/wars.rst:4
+msgid ""
+"Pre-release or patched versions of the |morpheus| UI are sometimes "
+"provided. To deploy the ui war on a |morpheus| Appliance:"
+msgstr ""
+"Pre-release o patched versions of the |morpheus| UI are sometimes "
+"provided. To deploy the ui war on a |morpheus| Appliance:"
+
+#: ../../getting_started/maintenance/wars.rst:6
+msgid "Download the war file to the target appliance"
+msgstr "Download the war file to the target appliance"
+
+#: ../../getting_started/maintenance/wars.rst:8
+msgid "wget https://url/war_file"
+msgstr "wget https://url/war_file"
+
+#: ../../getting_started/maintenance/wars.rst:12
+msgid ""
+"If the war file is provided via a droplr link, ensure a ``+`` is added to"
+" end of droplr url or the file will not download"
+msgstr ""
+"If the war file is provided via a droplr link, ensure a ``+`` is added to "
+"end of droplr url o the file will not download"
+
+#: ../../getting_started/maintenance/wars.rst:14
+msgid "Backup current war file"
+msgstr "Backup actual war file"
+
+#: ../../getting_started/maintenance/wars.rst:16
+#, python-format
+msgid ""
+"sudo mv /opt/morpheus/lib/morpheus/morpheus-ui.war "
+"/opt/morpheus/lib/morpheus/morpheus-ui.bak.`date +\"%m-%d-%Y\"`"
+msgstr ""
+"sudo mv /opt/morpheus/lib/morpheus/morpheus-ui.war "
+"/opt/morpheus/lib/morpheus/morpheus-ui.bak.`date +\\\"%m-%d-%Y\\\"`"
+
+#: ../../getting_started/maintenance/wars.rst:20
+msgid "Move and rename new war file"
+msgstr "Move y rename new war file"
+
+#: ../../getting_started/maintenance/wars.rst:22
+msgid "sudo mv <file> /opt/morpheus/lib/morpheus/morpheus-ui.war"
+msgstr "sudo mv <file> /opt/morpheus/lib/morpheus/morpheus-ui.war"
+
+#: ../../getting_started/maintenance/wars.rst:26
+msgid "Ensure war is owned by ``morpheus-app``"
+msgstr "Ensure war is owned by ``morpheus-app``"
+
+#: ../../getting_started/maintenance/wars.rst:28
+msgid ""
+"sudo chown morpheus-app.morpheus-app /opt/morpheus/lib/morpheus/morpheus-"
+"ui.war"
+msgstr ""
+"sudo chown morpheus-app.morpheus-app "
+"/opt/morpheus/lib/morpheus/morpheus-ui.war"
+
+#: ../../getting_started/maintenance/wars.rst:32
+msgid "Restart the |morpheus| UI"
+msgstr "Restart the |morpheus| UI"
+
+#: ../../getting_started/maintenance/wars.rst:34
+msgid "sudo morpheus-ctl restart morpheus-ui"
+msgstr "sudo morpheus-ctl restart morpheus-ui"
+
+#: ../../getting_started/maintenance/wars.rst:38
+msgid "The new ui war will load on startup!"
+msgstr "The new ui war will load on startup!"
+

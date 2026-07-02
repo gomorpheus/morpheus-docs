@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:11
+msgid ""
+"Teach agents how to use the `hero relevant` command to surface relevant "
+"conventions, past work, and in-flight specs when a developer works "
+"directly without using `/design` or `/deliver`."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:13
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:15
+msgid ""
+"Load this skill when an agent is about to do implementation work that was"
+" not initiated through the spec workflow (no `/design`, no `/deliver`). "
+"This applies most often to the `engineer` agent receiving a direct task."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:17
+msgid "How nudging works"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:19
+msgid ""
+"The `hero relevant` command checks the spec corpus index for context "
+"relevant to the files being touched and returns a message calibrated to "
+"the team's configured nudge level."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:21
+msgid "Nudge levels (configured in hero.json)"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid "Level"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid "Behavior"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid "`off`"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid "No nudge output. Agent works silently."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid "`gentle`"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid ""
+"Short summary: convention names, past spec count, in-flight spec names. "
+"One-liner references with a pointer to `hero relevant` for more detail."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid "`assertive`"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md
+msgid ""
+"Full context block: convention descriptions with paths, past work titles,"
+" in-flight spec warnings, and a recommendation to use `/design`."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:29
+msgid ""
+"The level is set in `hero.json` under `team.nudge_level`. Default is "
+"`gentle`."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:31
+msgid "Running the nudge"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:33
+msgid ""
+"Before writing code for a direct task, identify the files you intend to "
+"change and run:"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:35
+msgid "hero relevant --files src/api/users.ts src/db/queries/users.sql\n"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:39
+msgid "Interpreting the output"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:41
+msgid "**If empty** — no relevant context exists. Proceed normally."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:42
+msgid ""
+"**If conventions are listed** — follow them in your implementation, even "
+"without a spec."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:43
+msgid ""
+"**If past specs are listed** — be aware of prior design decisions. Don't "
+"contradict them without reason."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:44
+msgid ""
+"**If in-flight specs are listed** — warn the developer that someone else "
+"may be working on overlapping files. Suggest coordinating."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:46
+msgid "Presenting the nudge to the developer"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:48
+msgid ""
+"Include the nudge output in your response, clearly separated from your "
+"implementation work. Do not lecture or moralize. The nudge is a factual "
+"summary of what exists in the corpus, not a judgment about how the "
+"developer chose to work."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:50
+msgid "Good:"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:51
+msgid ""
+"## Implementation\n"
+"[your code changes]\n"
+"\n"
+"---\n"
+"Hero found relevant context for the files you're touching:\n"
+"- Convention: api-response-format\n"
+"- 2 past specs touched these files\n"
+"- In-flight spec: add-user-search (delivering)\n"
+"\n"
+"Run `hero relevant --files <paths>` for full details.\n"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:64
+msgid "Bad:"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:65
+msgid "You should have used /design first! Let me show you what you missed...\n"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:69
+msgid "When the developer ignores the nudge"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:71
+msgid ""
+"That's fine. The nudge is advisory. The developer may have good reasons "
+"to skip the spec workflow for small, low-risk changes. Do not re-nudge or"
+" escalate."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:73
+msgid "Relationship to context injection"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:75
+msgid "Nudging is the lightweight complement to context injection:"
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:77
+msgid ""
+"**Context injection** (via `hero relevant`) is the full-power version "
+"used by delivery leads during `/deliver`. It generates a structured block"
+" with conventions, past work, decisions, and known risks."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:78
+msgid ""
+"**Nudging** (via `hero relevant`) is the lightweight version used by "
+"agents working directly. It surfaces the same information in a shorter "
+"format, appropriate for ad-hoc work."
+msgstr ""
+
+#: ../../.opencode/skills/nudge-awareness/SKILL.md:80
+msgid ""
+"If a nudge reveals significant context (many conventions, in-flight "
+"conflicts), the agent should suggest that the developer consider using "
+"`/design` to get full context injection. But this is a suggestion, not a "
+"requirement."
+msgstr ""
+

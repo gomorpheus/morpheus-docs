@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/automation/write_attributes.rst:4
+msgid "Write Attributes Task"
+msgstr "Tarea de escritura de atributos"
+
+#: ../../provisioning/automation/write_attributes.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../provisioning/automation/write_attributes.rst:9
+msgid ""
+"The Write Attributes Task type writes a JSON payload of key-value pairs "
+"to the attributes property of the target resource (Instance, server, or "
+"container). This enables passing data between Tasks and Workflow phases, "
+"storing computed values for later reference, and building dynamic "
+"configuration state during provisioning."
+msgstr ""
+"El/La Write Attributes Tarea tipo writes un JSON payload de key-valor pairs "
+"a el/la attributes property de el/la target recursos (Instancia, servidor, "
+"o container). Este enables passing data entre Tareas y Flujo de trabajo "
+"phases, storing computed valores para later reference, y building dynamic "
+"configuración state durante aprovisionamiento."
+
+#: ../../provisioning/automation/write_attributes.rst:11
+msgid "Write Attributes Tasks are particularly useful for:"
+msgstr "Write Attributes Tareas are particularly useful for:"
+
+#: ../../provisioning/automation/write_attributes.rst:13
+msgid ""
+"Storing values from one Provisioning Workflow phase for use in another "
+"phase"
+msgstr ""
+"Storing values from one Aprovisionamiento Flujo de trabajo phase for use in "
+"another phase"
+
+#: ../../provisioning/automation/write_attributes.rst:14
+msgid "Passing computed configuration between Tasks"
+msgstr "Passing computed configuración between Tareas"
+
+#: ../../provisioning/automation/write_attributes.rst:15
+msgid "Building dynamic metadata that other Tasks or integrations can reference"
+msgstr "Building dynamic metadata that other Tareas or integraciones can reference"
+
+#: ../../provisioning/automation/write_attributes.rst:16
+msgid "Tagging resources with runtime-determined properties"
+msgstr "Tagging recursos with runtime-determined properties"
+
+#: ../../provisioning/automation/write_attributes.rst:19
+msgid "Creating a Write Attributes Task"
+msgstr "Creating a Write Attributes Tarea"
+
+#: ../../provisioning/automation/write_attributes.rst:21
+msgid "Navigate to |LibAut| > Tasks"
+msgstr "Navegue a |LibAut| > Tareas"
+
+#: ../../provisioning/automation/write_attributes.rst:22
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Hacer clic :guilabel:`+ ADD`"
+
+#: ../../provisioning/automation/write_attributes.rst:23
+msgid "Select **Write Attributes** as the Task Type"
+msgstr "Select **Write Attributes** as the Tarea Type"
+
+#: ../../provisioning/automation/write_attributes.rst:24
+msgid "Configure:"
+msgstr "Configurar:"
+
+#: ../../provisioning/automation/write_attributes.rst:26
+msgid "**NAME:** Descriptive name for the task"
+msgstr "**NAME:** Descriptive name for the tarea"
+
+#: ../../provisioning/automation/write_attributes.rst:27
+msgid "**CODE:** Unique code for API, CLI, and variable references"
+msgstr "**CODE:** Unique code para API, CLI, y variable references"
+
+#: ../../provisioning/automation/write_attributes.rst:28
+msgid "**ATTRIBUTES:** JSON payload to write (see formats below)"
+msgstr "**ATTRIBUTES:** JSON payload a write (ver formats abajo)"
+
+#: ../../provisioning/automation/write_attributes.rst:30
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Hacer clic :guilabel:`SAVE CHANGES`"
+
+#: ../../provisioning/automation/write_attributes.rst:33
+msgid "JSON Payload Formats"
+msgstr "JSON Payload Formats"
+
+#: ../../provisioning/automation/write_attributes.rst:36
+msgid "Static Key-Value Pairs"
+msgstr "Static Key-Valor Pairs"
+
+#: ../../provisioning/automation/write_attributes.rst:38
+msgid "Write a fixed set of attributes:"
+msgstr "Write un fixed establecer de attributes:"
+
+#: ../../provisioning/automation/write_attributes.rst:40
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"my_key1\": \"my_value1\",\n"
+"  \"my_key2\": \"my_value2\",\n"
+"  \"environment\": \"production\",\n"
+"  \"version\": \"2.1.0\"\n"
+"}"
+msgstr ""
+"{\n  \"my_key1\": \"my_value1\",\n  \"my_key2\": \"my_value2\",\n  "
+"\"entorno\": \"production\",\n  \"version\": \"2.1.0\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:50
+msgid "Dynamic Values from Prior Task Results"
+msgstr "Dynamic Values from Prior Tarea Results"
+
+#: ../../provisioning/automation/write_attributes.rst:52
+msgid ""
+"Reference outputs from previous Tasks using ``<%= results.taskCode %>`` "
+"syntax. The referenced Task must have its **RESULT TYPE** set to \"Single"
+" Value\":"
+msgstr ""
+"Reference outputs from previous Tareas using ``<%= results.taskCode %>`` "
+"syntax. The referenced Tarea must have its **RESULT TYPE** set to \"Single "
+"Value\":"
+
+#: ../../provisioning/automation/write_attributes.rst:54
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"database_host\": \"<%=results.discoverDb%>\",\n"
+"  \"api_endpoint\": \"<%=results.resolveEndpoint%>\",\n"
+"  \"deployment_id\": \"<%=results.createDeployment%>\"\n"
+"}"
+msgstr ""
+"{\n  \"database_host\": \"<%=resultados.discoverDb%>\",\n  "
+"\"api_endpoint\": \"<%=resultados.resolveEndpoint%>\",\n  "
+"\"deployment_id\": \"<%=resultados.createDeployment%>\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:62
+msgid ""
+"``taskCode`` refers to the **CODE** field value of the Task whose output "
+"you're referencing, not its name."
+msgstr ""
+"``taskCode`` refers to the **CODE** field value of the Tarea whose output "
+"you're referencing, not its name."
+
+#: ../../provisioning/automation/write_attributes.rst:65
+msgid "Dynamic JSON Map from Prior Task"
+msgstr "Dynamic JSON Map from Prior Tarea"
+
+#: ../../provisioning/automation/write_attributes.rst:67
+msgid ""
+"When a prior Task returns a full JSON object (RESULT TYPE set to "
+"\"JSON\"), pass it through using ``encodeAsJSON()``:"
+msgstr ""
+"When a prior Tarea returns a full JSON object (RESULT TYPE set to "
+"\"JSON\"), pass it through using ``encodeAsJSON()``:"
+
+#: ../../provisioning/automation/write_attributes.rst:69
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"instances\": <%=results.taskCode?.encodeAsJSON()%>\n"
+"}"
+msgstr "{\n  \"instancias\": <%=results.taskCode?.encodeAsJSON()%>\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:75
+msgid ""
+"The ``encodeAsJSON()`` method is required for proper JSON serialization. "
+"Without it, the JSON map may not be stored correctly."
+msgstr ""
+"The ``encodeAsJSON()`` method es necesario for proper JSON serialization. "
+"Without it, the JSON map may not be stored correctly."
+
+#: ../../provisioning/automation/write_attributes.rst:78
+msgid "Mixed Static and Dynamic Values"
+msgstr "Mixed Static y Dynamic Valores"
+
+#: ../../provisioning/automation/write_attributes.rst:80
+msgid "Combine static values with dynamic references:"
+msgstr "Combine static valores con dynamic references:"
+
+#: ../../provisioning/automation/write_attributes.rst:82
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"app_name\": \"myapp\",\n"
+"  \"build_number\": \"<%=results.getBuild%>\",\n"
+"  \"deployed_by\": \"<%=instance.createdByUsername%>\",\n"
+"  \"deploy_time\": \"<%=new Date().format('yyyy-MM-dd HH:mm:ss')%>\"\n"
+"}"
+msgstr ""
+"{\n  \"app_name\": \"myapp\",\n  \"build_number\": "
+"\"<%=results.getBuild%>\",\n  \"deployed_by\": "
+"\"<%=instancia.createdByUsername%>\",\n  \"deploy_time\": \"<%=new "
+"Date().format('yyyy-MM-dd HH:mm:ss')%>\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:92
+msgid "Instance Variables"
+msgstr "Instancia Variables"
+
+#: ../../provisioning/automation/write_attributes.rst:94
+msgid "|morpheus| instance variables can be referenced directly:"
+msgstr "|morpheus| instancia variables puede ser referenced directly:"
+
+#: ../../provisioning/automation/write_attributes.rst:96
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"instance_name\": \"<%=instance.name%>\",\n"
+"  \"cloud_name\": \"<%=zone.name%>\",\n"
+"  \"group_name\": \"<%=instance.group.name%>\",\n"
+"  \"ip_address\": \"<%=container.externalIp%>\"\n"
+"}"
+msgstr ""
+"{\n  \"instance_name\": \"<%=instancia.name%>\",\n  \"cloud_name\": "
+"\"<%=zone.name%>\",\n  \"group_name\": \"<%=instancia.group.name%>\",\n  "
+"\"ip_address\": \"<%=container.externalIp%>\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:106
+msgid "Reading Written Attributes"
+msgstr "Reading Written Attributes"
+
+#: ../../provisioning/automation/write_attributes.rst:108
+msgid ""
+"Attributes written by this Task can be accessed in subsequent Tasks and "
+"Workflow phases:"
+msgstr ""
+"Attributes written by this Tarea puede ser accessed in subsequent Tareas "
+"and Flujo de trabajo phases:"
+
+#: ../../provisioning/automation/write_attributes.rst:111
+msgid "In Scripts (Groovy, Python, etc.)"
+msgstr "En Scripts (Groovy, Python, etc.)"
+
+#: ../../provisioning/automation/write_attributes.rst:113
+msgid ""
+"// Access written attributes\n"
+"def myValue = instance.getConfigProperty('my_key1')"
+msgstr ""
+"// Access written attributes\ndef myValue = "
+"instancia.getConfigProperty('my_key1')"
+
+#: ../../provisioning/automation/write_attributes.rst:119
+msgid "In Variable References"
+msgstr "En Variable References"
+
+#: ../../provisioning/automation/write_attributes.rst:121
+msgid "<%=instance.metadata.my_key1%>"
+msgstr "<%=instancia.metadata.my_key1%>"
+
+#: ../../provisioning/automation/write_attributes.rst:126
+msgid "In Subsequent Write Attributes Tasks"
+msgstr "In Subsequent Write Attributes Tareas"
+
+#: ../../provisioning/automation/write_attributes.rst:128
+msgid ""
+"Written attributes accumulate — subsequent Write Attributes Tasks add to "
+"or overwrite existing keys without removing unmentioned keys."
+msgstr ""
+"Written attributes accumulate — subsequent Write Attributes Tareas add to "
+"or overwrite existente keys without removing unmentioned keys."
+
+#: ../../provisioning/automation/write_attributes.rst:131
+msgid "Use Cases"
+msgstr "Usar Cases"
+
+#: ../../provisioning/automation/write_attributes.rst:133
+msgid "**Passing data between Provisioning Workflow phases:**"
+msgstr "**Passing data between Aprovisionamiento Flujo de trabajo phases:**"
+
+#: ../../provisioning/automation/write_attributes.rst:135
+msgid ""
+"The Pre-Provision phase discovers infrastructure details, writes them as "
+"attributes, and the Provision phase reads them for configuration:"
+msgstr ""
+"The Pre-Provision phase discovers infraestructura details, writes them as "
+"attributes, and the Provision phase reads them for configuración:"
+
+#: ../../provisioning/automation/write_attributes.rst:137
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"nfs_mount\": \"<%=results.discoverNfs%>\",\n"
+"  \"subnet_id\": \"<%=results.selectSubnet%>\",\n"
+"  \"security_group\": \"<%=results.assignSg%>\"\n"
+"}"
+msgstr ""
+"{\n  \"nfs_mount\": \"<%=resultados.discoverNfs%>\",\n  \"subnet_id\": "
+"\"<%=resultados.selectSubnet%>\",\n  \"security_group\": "
+"\"<%=resultados.assignSg%>\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:145
+msgid "**Storing deployment metadata:**"
+msgstr "**Storing despliegue metadata:**"
+
+#: ../../provisioning/automation/write_attributes.rst:147
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"last_deploy_version\": \"<%=results.getVersion%>\",\n"
+"  \"last_deploy_date\": \"<%=new Date().format('yyyy-MM-dd')%>\",\n"
+"  \"last_deploy_user\": \"<%=instance.createdByUsername%>\"\n"
+"}"
+msgstr ""
+"{\n  \"last_deploy_version\": \"<%=results.getVersion%>\",\n  "
+"\"last_deploy_date\": \"<%=new Date().format('yyyy-MM-dd')%>\",\n  "
+"\"last_deploy_user\": \"<%=instancia.createdByUsername%>\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:155
+msgid "**Building configuration for downstream automation:**"
+msgstr "**Building configuración for downstream automation:**"
+
+#: ../../provisioning/automation/write_attributes.rst:157
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"monitoring_enabled\": \"true\",\n"
+"  \"alert_channel\": \"#ops-alerts\",\n"
+"  \"backup_schedule\": \"daily\",\n"
+"  \"retention_days\": \"30\"\n"
+"}"
+msgstr ""
+"{\n  \"monitoring_enabled\": \"true\",\n  \"alert_channel\": "
+"\"#ops-alerts\",\n  \"backup_schedule\": \"daily\",\n  \"retention_days\": "
+"\"30\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:167
+msgid "Best Practices"
+msgstr "Mejores prácticas"
+
+#: ../../provisioning/automation/write_attributes.rst:169
+msgid ""
+"**Use descriptive key names:** Keys should clearly indicate their purpose"
+" (e.g., ``database_connection_string`` not ``val1``)"
+msgstr ""
+"**Use descriptive key names:** Keys should clearly indicate their purpose "
+"(e.g., ``database_connection_string`` no ``val1``)"
+
+#: ../../provisioning/automation/write_attributes.rst:170
+msgid ""
+"**Keep payloads focused:** Write only the attributes needed; avoid "
+"dumping entire result sets"
+msgstr ""
+"**Keep payloads focused:** Write solo el/la attributes needed; avoid "
+"dumping entire resultado sets"
+
+#: ../../provisioning/automation/write_attributes.rst:171
+msgid ""
+"**Validate JSON syntax:** Malformed JSON will cause the Task to fail. Use"
+" a JSON validator for complex payloads"
+msgstr ""
+"**Validate JSON syntax:** Malformed JSON will cause the Tarea to fail. Use "
+"a JSON validator for complex payloads"
+
+#: ../../provisioning/automation/write_attributes.rst:172
+msgid ""
+"**Handle null results:** When referencing prior Task results that may be "
+"null, use Groovy's safe navigation operator:"
+msgstr ""
+"**Handle null results:** When referencing prior Tarea results that may be "
+"null, use Groovy's safe navigation operator:"
+
+#: ../../provisioning/automation/write_attributes.rst:174
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"value\": \"<%=results.myTask ?: 'default_value'%>\"\n"
+"}"
+msgstr "{\n  \"valor\": \"<%=resultados.myTask ?: 'default_value'%>\"\n}"
+
+#: ../../provisioning/automation/write_attributes.rst:180
+msgid ""
+"**Document attribute contracts:** When multiple Workflow phases depend on"
+" written attributes, document which keys are expected and their formats"
+msgstr ""
+"**Document attribute contracts:** Cuando multiple Flujo de trabajo phases "
+"depend en written attributes, document cual keys son expected y their "
+"formats"
+

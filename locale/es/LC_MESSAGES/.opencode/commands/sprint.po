@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/sprint.md:4
+msgid "Route this sprint planning request to the `feature-delivery-lead`."
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:6
+msgid "The delivery lead will:"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:7
+msgid "Read the initiative or backlog context provided"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:8
+msgid "If a specific initiative slug is provided, load it and its child specs"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:9
+msgid ""
+"If no initiative is specified, run `hero check` and `hero dashboard` to "
+"understand the current workspace state"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:10
+msgid ""
+"Identify specs that are ready for the next sprint (dependencies met, not "
+"blocked)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:11
+msgid "Suggest a sprint scope based on:"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:12
+msgid "Team capacity (if known from conventions/context)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:13
+msgid "Spec complexity and dependencies"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:14
+msgid "Priority and business impact"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:15
+msgid "For each selected spec, verify it has:"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:16
+msgid "Clear acceptance criteria"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:17
+msgid "A Changes section listing files to modify"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:18
+msgid "An assigned owner (suggest one if unclaimed)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:19
+#, python-brace-format
+msgid ""
+"Produce a sprint plan document as a note in the knowledge base at "
+"`.hero/knowledge/notes/sprint-{date}/spec.md` containing:"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:20
+msgid "Sprint goal (1 sentence)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:21
+msgid "Selected specs with delivery order"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:22
+msgid "Dependency graph (if specs depend on each other)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:23
+msgid "Risk items and blockers"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:24
+msgid "Capacity allocation (which specs go to whom)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:26
+msgid "**Sprint planning principles:**"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:27
+msgid "A sprint should be achievable in 1-2 weeks"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:28
+msgid "Include a mix of high-value features and smaller wins"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:29
+msgid "Don't overcommit — leave 20% buffer for unplanned work"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:30
+msgid "Prioritize specs that unblock other specs"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:31
+msgid "If a spec is too large for a sprint, suggest running `/split` first"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:33
+msgid "Execute mode"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:35
+msgid ""
+"When the user says `/sprint execute <initiative>` or includes "
+"\"execute\", \"run\", or \"go\" in the arguments:"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:38
+msgid ""
+"Load the initiative and list its child specs in dependency order (use "
+"`hero_sequence` to determine optimal order)"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:40
+msgid ""
+"Filter to specs with `status: planning` that have acceptance criteria and"
+" a Changes section — these are ready to deliver"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:42
+msgid ""
+"Show the execution plan to the user: \"Will deliver N specs in order: "
+"[list]. Mode: autopilot. Halting on: test failure, drift warning, "
+"boundary violation.\""
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:45
+msgid ""
+"For each spec in order: a. Run `/deliver <slug> --autopilot` b. After "
+"delivery completes, run `hero drift <slug>` to verify c. If clean: run "
+"`hero spec complete <spec-path>`, log success, move to next d. If "
+"failure/drift/regression: halt, report the issue, ask whether    to skip "
+"and continue or stop the sprint"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:51
+msgid ""
+"At the end, produce a sprint summary: N delivered, N skipped (with "
+"reasons), total time, any specs remaining"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:54
+msgid "**Safety rails:**"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:55
+msgid ""
+"Always show the plan before starting — never auto-execute without "
+"confirmation"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:56
+msgid "Default halt conditions: test failure, boundary violation, drift warning"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:57
+msgid "User can override with `--halt-on drift,test` to be selective"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:58
+msgid "Each spec delivery is atomic — failures don't corrupt prior work"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:59
+msgid "The sprint can be resumed: skipped specs stay at `planning`"
+msgstr ""
+
+#: ../../.opencode/commands/sprint.md:61
+msgid "Initiative or context: $ARGUMENTS"
+msgstr ""
+

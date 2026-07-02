@@ -1,0 +1,366 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/peer.md:4
+msgid ""
+"Front door for cross-repo peering operations. Picks the right interaction"
+" mode (advisory, spec-out, handoff, list, show) from the user's intent "
+"and runs the appropriate CLI command with the trail-discipline flags "
+"filled in."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:9
+msgid ""
+"Before doing anything, **load `skills/cross-repo-peering/SKILL.md`** — "
+"the skill carries the decision tree, the prompt-composition rules, and "
+"the anti-patterns. Don't try to compose a peer call without it."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:13
+msgid "**Steps:**"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:15
+msgid ""
+"Run `hero peer list` first to confirm peers are registered. If empty, "
+"tell the user to register first with `hero admin repos add <alias> "
+"<path>` and stop. Don't try to invoke a peer call against an unregistered"
+" alias."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:20
+msgid "Parse the user's intent into one of five sub-actions:"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "Intent signal"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "Sub-action"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "\"ask <peer>\", \"check with <peer>\", \"what's <peer>'s X\""
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "advisory peer call"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "\"have <peer> design\", \"let <peer> handle the design of\""
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "spec-out peer call"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "\"hand off to <peer>\", \"drop on <peer>'s queue\", \"transfer to <peer>\""
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "async handoff"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "\"pick up\", \"accept\", \"peer finished\""
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "handoff accept"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid ""
+"\"list peers\", \"what peers\", \"show <peer>\", \"what does <peer> "
+"expose\""
+msgstr ""
+
+#: ../../.opencode/commands/peer.md
+msgid "discovery (list / show)"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:30
+msgid ""
+"If two sub-actions are plausible (common between advisory and spec-out; "
+"common between handoff and spec-out), ask one focused clarifying "
+"question. Don't guess."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:34
+msgid "**For advisory peer calls** (`--mode=advisory`):"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:36
+msgid ""
+"Identify the active spec from the session context. If there is one, "
+"attach it: `--related-spec <slug>`."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:38
+msgid ""
+"Draft a `--reason` string from the session context (one sentence, why "
+"this call is happening now). Show it to the user inline before "
+"dispatching."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:41
+msgid ""
+"**Compose the peer-call prompt as a focused brief**, not a paraphrase. "
+"Name the specific artifact, field, or constraint. Read the skill's "
+"\"Composing a good peer-call prompt\" section."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:44
+msgid ""
+"Default budgets (20 turns / 50,000 tokens) are usually fine; only "
+"override if the user asks or the prompt is genuinely huge."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:47
+msgid "Example output to the user before dispatching:"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:49
+msgid ""
+"Calling `hero-cloud` (advisory mode). Reason: \"Need to know the error "
+"envelope shape before changing the renderer in this session.\" Prompt: "
+"\"What's the current shape of the `errors` array in the `/v1/order` POST "
+"response? Any deprecations in flight?\" Related spec: `order-failure-"
+"error-display`."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:55
+msgid "Run this? [y/n]"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:57
+msgid "**For spec-out peer calls** (`--mode=spec-out`):"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:59
+msgid "Same trail discipline (`--related-spec`, `--reason`)."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:60
+msgid ""
+"**Shape the prompt as a `/design` kickoff** — name the work, list "
+"constraints, list out-of-scope, list acceptance shape. The peer's "
+"`/design` flow runs on this verbatim."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:63
+msgid ""
+"Default budget is larger (50 turns / 150,000 tokens). Don't override "
+"unless the spec is genuinely heavyweight."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:65
+msgid ""
+"Confirm with the user before dispatching — spec-out writes a spec on the "
+"peer's side."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:68
+msgid "**For async handoff**:"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:70
+msgid ""
+"Pre-condition: there must be a local spec to hand off. If the user hasn't"
+" named one and the session has an active spec, suggest that one. If "
+"neither, ask which spec to hand off."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:73
+msgid ""
+"The handoff scaffolds a spec on the peer's side based on the local spec's"
+" frontmatter + body. The receiver's title and type can be overridden with"
+" `--title` / `--type` if the peer's conventions want a different shape."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:77
+msgid ""
+"Run: `hero handoff <local-slug> <peer-alias> --reason \"<why>\" --type "
+"<type>`."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:78
+msgid "After the handoff returns, surface to the user:"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:79
+msgid ""
+"The receiver-side slug (may differ from local if there was a collision — "
+"Hero appends `-2`, `-3`, etc.)."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:81
+msgid "The trail entry was written."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:82
+msgid "The local spec's status moved to `handed_off`."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:83
+msgid "The peer's side now owns the next move."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:85
+msgid "**For handoff accept** (when a `handed_back` spec needs picking up):"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:87
+msgid "Run `hero handoff accept <slug>`."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:88
+msgid ""
+"Prompt the user to pick the next status (usually verify the symptom on "
+"the originator's side, then mark complete)."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:91
+msgid "**For discovery** (list / show):"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:93
+msgid "`hero peer list` for the table view."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:94
+msgid ""
+"`hero peer show <alias>` for one peer's manifest contents and in-flight "
+"handoffs."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:96
+msgid "These are read-only; no confirmation needed."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:98
+msgid "**Always surface the result to the user**, not the raw command output."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:100
+msgid ""
+"For advisory: summarize the findings (headline + 2-3 actionable bullets)."
+" Quote excerpts; don't dump the full peer envelope."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:102
+msgid ""
+"For spec-out: confirm the peer-side slug was created and that the local "
+"spec moved to `awaiting_peer`."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:104
+msgid "For handoff: confirm the peer-side slug and the trail."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:105
+msgid "For list/show: render the table or detail block plainly."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:107
+msgid "**Trail discipline checks** — before reporting \"done\":"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:109
+msgid "Did `hero handoff status` show the new entry?"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:110
+msgid "Is the active spec's frontmatter updated (`status:`, trail block)?"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:111
+msgid ""
+"Did the peer's events log get the corresponding event? (You can check "
+"`cat ../<peer-alias>/.hero/events.log | tail -5` if curious.)"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:114
+msgid ""
+"**Common patterns** (these should fire from natural language, not just "
+"slash invocation):"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:117
+msgid "\"Ask hero-cloud about X\" → advisory call"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:118
+msgid "\"Have hero-code design the migration story\" → spec-out"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:119
+msgid "\"Hand off the tracker-fronting spec to hero-cloud\" → async handoff"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:120
+msgid "\"What peers do we have\" → list"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:121
+msgid "\"What does hero-cloud expose\" → show"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:123
+msgid "**What NOT to do:**"
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:125
+msgid ""
+"Don't invoke a peer call to answer a question you can answer locally "
+"(`hero search`, reading the workspace, etc.). Peer calls cost a subagent "
+"spawn."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:128
+msgid ""
+"Don't paraphrase the user's words verbatim as the peer-call prompt. "
+"Compose a structured brief."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:130
+msgid "Don't skip `--related-spec` when one exists in session context."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:131
+msgid ""
+"Don't run `--mode=full` — full-delivery peer call is v2+; not available "
+"in v1. If the user asks, explain and offer spec-out as the closest "
+"available option."
+msgstr ""
+
+#: ../../.opencode/commands/peer.md:135
+msgid ""
+"**What to say:** \"ask peer\", \"ask hero-code about\", \"check with "
+"sibling\", \"have hero-cloud design\", \"hand off to\", \"drop on peer's "
+"queue\", \"transfer to\", \"list peers\", \"what peers do we have\", "
+"\"what does peer expose\", \"pick up the handoff\"."
+msgstr ""
+

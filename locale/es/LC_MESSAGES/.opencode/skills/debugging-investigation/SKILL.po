@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:10
+msgid "Core approach"
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:12
+msgid "Reproduce the problem if feasible."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:13
+msgid "Gather evidence before drawing conclusions."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:14
+msgid "Separate observations, hypotheses, and confirmed root causes."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:15
+msgid "Narrow the failure surface methodically."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:16
+msgid "Prefer the smallest fix that addresses the actual cause."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:18
+msgid "Practical guidance"
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:20
+msgid ""
+"**Ground before you guess.** Before proposing a diagnosis, fix, or "
+"design, enumerate the load-bearing claims it depends on (what specific "
+"code does, what payloads contain, where errors originate, how working "
+"siblings of the same shape behave). Mark each `read` (you've inspected "
+"the actual source in this session) or `assumed`. Read the assumed ones — "
+"or downgrade the proposal to \"still investigating\" — before writing it "
+"down. Output the claim list visibly in your summary. A proposal that "
+"departs structurally from working in-tree siblings of the same shape "
+"(plugin, provider, integration, form, migration, adapter, command) treats"
+" the deviation as the first hypothesis to disprove, not a feature."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:21
+msgid ""
+"Look at logs, tests, stack traces, configuration, recent changes, and "
+"runtime assumptions together."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:22
+msgid ""
+"Pay attention to environment differences, race conditions, stale state, "
+"and boundary failures."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:23
+msgid "When reproduction is incomplete, be explicit about what is inferred."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:24
+msgid ""
+"Trace the complete end-to-end code flow — from user interaction or "
+"trigger through every layer to where the bug manifests. Do not stop at "
+"the immediate method."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:25
+msgid "Read every file in the flow. Do not skim or assume."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:26
+msgid ""
+"Look for secondary defects in the same flow — other bugs that aren't the "
+"reported issue but would cause problems."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:27
+msgid ""
+"Check all code paths that could trigger the issue (different input "
+"formats, config modes, error handling branches)."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:29
+msgid "Investigation report template"
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:31
+msgid ""
+"Use this template when documenting investigation findings. All sections "
+"are required unless explicitly not applicable. Add additional sections "
+"for information that doesn't fit the template."
+msgstr ""
+
+#: ../../.opencode/skills/debugging-investigation/SKILL.md:33
+msgid ""
+"## Summary\n"
+"\n"
+"### Categorization\n"
+"| Attribute | Assessment |\n"
+"|-----------|------------|\n"
+"| **Criticality** | [critical/high/medium/low] — [short explanation] |\n"
+"| **Ease of Fix** | [easy/moderate/hard] — [short explanation] |\n"
+"| **Caused by our codebase?** | [Yes/No] — [short explanation] |\n"
+"| **Needs more research?** | [Yes/No] — [short explanation] |\n"
+"\n"
+"### Background\n"
+"[Simple text description of what this bug is, its complexity, "
+"criticality, and estimated fix effort]\n"
+"\n"
+"### Analysis\n"
+"[Simple description of why it is occurring]\n"
+"\n"
+"### Root Cause\n"
+"[Simple description of the root cause]\n"
+"\n"
+"### Source\n"
+"[Simple description of what code is involved]\n"
+"\n"
+"### Fix Direction\n"
+"[Simple description of what is needed to fix the issue — high level only,"
+" no implementation details]\n"
+"\n"
+"---\n"
+"\n"
+"## Problem Statement\n"
+"[Full research details on the issue and cause. Include reproduction steps"
+" if available. Reference specific error messages, logs, stack traces.]\n"
+"\n"
+"## Environment Details\n"
+"[List any relevant setup, config, or environmental details or factors. If"
+" not applicable, say so.]\n"
+"\n"
+"---\n"
+"\n"
+"## Root Cause Analysis\n"
+"[Full root cause analysis with evidence. Cite specific code, conditions, "
+"and data that prove the root cause. Separate confirmed findings from "
+"hypotheses.]\n"
+"\n"
+"---\n"
+"\n"
+"## Code Flow (End to End)\n"
+"[Numbered list of the complete code flow from the entry point (user "
+"interaction, API call, job trigger) through every layer to where the bug "
+"manifests. Include file paths and line numbers at each step.]\n"
+"\n"
+"1. `path/to/file.ext:NN` — [what happens at this step]\n"
+"2. `path/to/file.ext:NN` — [next step in the flow]\n"
+"3. ...\n"
+"\n"
+"---\n"
+"\n"
+"## Key Files\n"
+"\n"
+"[Group by logical area. Each area gets a table.]\n"
+"\n"
+"### [Area name, e.g., \"API Layer\" or \"Storage Service\"]\n"
+"| File | Lines | Relevance |\n"
+"|------|-------|-----------|\n"
+"| `path/to/file.ext` | NN–MM | [description of relevance] |\n"
+"\n"
+"### [Next area]\n"
+"| File | Lines | Relevance |\n"
+"|------|-------|-----------|\n"
+"| `path/to/file.ext` | NN–MM | [description of relevance] |\n"
+"\n"
+"---\n"
+"\n"
+"## Secondary Defects\n"
+"[Other bugs or concerns discovered during investigation that aren't the "
+"reported issue but exist in the same code flow. If none found, state "
+"\"None identified.\"]\n"
+"\n"
+"---\n"
+"\n"
+"## Notes\n"
+"[Any additional observations, context, or concerns not covered above]\n"
+"\n"
+"---\n"
+"\n"
+"## Recap\n"
+"[2-3 sentence recap of the investigation: what the bug is, what causes "
+"it, and how severe it is]\n"
+msgstr ""
+

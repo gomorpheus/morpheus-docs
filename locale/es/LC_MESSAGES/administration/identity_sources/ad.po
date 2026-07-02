@@ -1,0 +1,185 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/identity_sources/ad.rst:2
+msgid "Active Directory"
+msgstr "Active Directory"
+
+#: ../../administration/identity_sources/ad.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../administration/identity_sources/ad.rst:7
+msgid ""
+"Active Directory is Microsoft’s primary authentication service widely used "
+"in Enterprise organizations and even via Microsoft’s cloud services. While "
+"Active Directory also supports LDAP protocol support (which |morpheus| can "
+"integrate with as well), the main Active Directory integration can also be "
+"utilized. It is even possible to map Active Directory groups to equivalent "
+"Roles within |morpheus| ."
+msgstr ""
+"Active Directory es Microsoft’s primary autenticación service widely usado "
+"en Enterprise organizations y even a través de Microsoft’s cloud services. "
+"While Active Directory también supports LDAP protocol soporte (que "
+"|morpheus| puede integrate con as well), el main Active Directory "
+"integración puede también be utilized. Es even possible a map Active "
+"Directory grupos a equivalent Roles dentro de |morpheus| ."
+
+#: ../../administration/identity_sources/ad.rst:9
+msgid ""
+"To use Active Directory, a valid / trusted SSL certificate must be in place "
+"on the Active Directory services (self signed will not work)."
+msgstr ""
+"Un usar Active Directory, a valid / trusted SSL certificate debe ser en "
+"place en el Active Directory services (self signed no work)."
+
+#: ../../administration/identity_sources/ad.rst:12
+msgid "Adding an Active Directory Integration"
+msgstr "Adding un Active Directory Integración"
+
+#: ../../administration/identity_sources/ad.rst:14
+msgid "Navigate to |AdmTen|"
+msgstr "Navegue a |AdmTen|"
+
+#: ../../administration/identity_sources/ad.rst:15
+msgid "Select a Tenant"
+msgstr "Seleccionar a Inquilino"
+
+#: ../../administration/identity_sources/ad.rst:16
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr "Seleccionar :guilabel:`IDENTITY SOURCES`"
+
+#: ../../administration/identity_sources/ad.rst:17
+msgid "Select :guilabel:`+ IDENTITY SOURCE`"
+msgstr "Seleccionar :guilabel:`+ IDENTITY SOURCE`"
+
+#: ../../administration/identity_sources/ad.rst:18
+msgid "Choose \"Active Directory\""
+msgstr "Choose \"Active Directory\""
+
+#: ../../administration/identity_sources/ad.rst:19
+msgid "Populate the following:"
+msgstr "Populate lo siguiente:"
+
+#: ../../administration/identity_sources/ad.rst:21
+msgid "Name"
+msgstr "Nombre"
+
+#: ../../administration/identity_sources/ad.rst:22
+msgid "Unique name for authentication type."
+msgstr "Único nombre para autenticación tipo."
+
+#: ../../administration/identity_sources/ad.rst:23
+msgid "AD Server"
+msgstr "AD Servidor"
+
+#: ../../administration/identity_sources/ad.rst:24
+msgid "Hostname or IP address of AD Server."
+msgstr "Hostname o IP address de AD Servidor."
+
+#: ../../administration/identity_sources/ad.rst:25
+msgid "Domain"
+msgstr "Domain"
+
+#: ../../administration/identity_sources/ad.rst:26
+msgid "Domain name of AD Domain."
+msgstr "Domain nombre de AD Domain."
+
+#: ../../administration/identity_sources/ad.rst:27
+msgid "Binding Username"
+msgstr "Binding Usuarioname"
+
+#: ../../administration/identity_sources/ad.rst:28
+msgid "Service account username for bind user."
+msgstr "Service cuenta usuarioname para bind usuario."
+
+#: ../../administration/identity_sources/ad.rst:29
+msgid "Binding Password"
+msgstr "Binding Contraseña"
+
+#: ../../administration/identity_sources/ad.rst:30
+msgid "Password for bind service account."
+msgstr "Contraseña para bind service cuenta."
+
+#: ../../administration/identity_sources/ad.rst:31
+msgid "Required Group"
+msgstr "Requerido Grupo"
+
+#: ../../administration/identity_sources/ad.rst:32
+msgid "The AD group users must be in to have access (optional)"
+msgstr "El AD grupo usuarios debe ser en a tienen acceso (optional)"
+
+#: ../../administration/identity_sources/ad.rst:33
+msgid "Include Member Groups"
+msgstr "Include Miembro Grupos"
+
+#: ../../administration/identity_sources/ad.rst:34
+msgid ""
+"When checked, groups nested inside the required group will also be included"
+msgstr ""
+"Cuando checked, grupos nested inside el requerido grupo va a también be "
+"included"
+
+#: ../../administration/identity_sources/ad.rst:35
+msgid "Default Role"
+msgstr "Predeterminado Rol"
+
+#: ../../administration/identity_sources/ad.rst:36
+msgid ""
+"The default role a user is assigned if no group is listed under AD user that"
+" maps under Role Mappings section."
+msgstr ""
+"El predeterminado rol a usuario es asignado si no grupo es listed under AD "
+"usuario ese maps under Rol Mappings sección."
+
+#: ../../administration/identity_sources/ad.rst:38
+msgid "Service Account Holder"
+msgstr "Service Cuenta Holder"
+
+#: ../../administration/identity_sources/ad.rst:38
+msgid ""
+"This is the admin account type in |morpheus| and an AD group can be created "
+"and populated to a user that this role should be assigned. Roles are "
+"assigned dynamically based on group membership."
+msgstr ""
+"Este es el admin cuenta tipo en |morpheus| y un AD grupo puede ser creado y "
+"populated a a usuario ese este rol debería ser asignado. Roles son asignado "
+"dynamically basado en grupo membership."
+
+#: ../../administration/identity_sources/ad.rst:40
+msgid "Select :guilabel:`SAVE CHANGES`."
+msgstr "Seleccionar :guilabel:`SAVE CHANGES`."
+
+#: ../../administration/identity_sources/ad.rst:42
+msgid ""
+"Now allowed AD users can login to |morpheus| via their Active Directory "
+"credentials and a User will be automatically generated to |morpheus| with "
+"matching metadata and mapped Role permissions."
+msgstr ""
+"Now allowed AD usuarios puede inicio de sesión a |morpheus| a través de su "
+"Active Directory credenciales y a Usuario será automáticamente generated a "
+"|morpheus| con matching metadata y mapped Rol permisos."
+
+#: ../../administration/identity_sources/ad.rst:44
+msgid "Only the username is required with password, not the username@domain."
+msgstr ""
+"Solo el usuarioname es obligatorio con contraseña, no el usuarioname@domain."

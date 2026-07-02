@@ -1,0 +1,500 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:2
+msgid "Hyper-V"
+msgstr "Hyper-V"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:4
+msgid ""
+"Hyper-V is the virtualized server computing environment introduced by "
+"Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering and"
+" is a common hypervisor technology in data centers. |morpheus| provides an "
+"avenue to aggregate Hyper-V resources together to allow efficient and "
+"seamless deployment of applications as a virtual machine (VM) or Docker host"
+" in the world of Hyper-V."
+msgstr ""
+"Hyper-V es el virtualized server computing entorno introduced by Microsoft. "
+"Hyper-V es consumed by |morpheus| as un privado cloud offering y es un "
+"common hypervisor technology in datos centers. |morpheus| provides un avenue"
+" to aggregate Hyper-V recursos together to allow efficient y seamless "
+"deployment of applications as un virtual machine (VM) o Docker host in el "
+"world of Hyper-V."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:7
+msgid "Features"
+msgstr "Características"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:9
+msgid "Virtual Machine Provisioning"
+msgstr "Virtual Machine Provisioning"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:10
+msgid "Discovery of Existing Instances"
+msgstr "Discovery of Existing Instances"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:11
+msgid "Containers"
+msgstr "Containers"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:12
+msgid "Backups / Snapshots"
+msgstr "Backups / Snapshots"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:13
+msgid "Resources Groups"
+msgstr "Resources Groups"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:14
+msgid "Migrations"
+msgstr "Migrations"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:15
+msgid "Auto Scaling"
+msgstr "Auto Scaling"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:16
+msgid "Load Balancing"
+msgstr "Load Balancing"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:17
+msgid "Remote Console"
+msgstr "Remote Console"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:18
+msgid "Periodic Synchronization"
+msgstr "Periodic Synchronization"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:19
+msgid "Veeam Integration"
+msgstr "Veeam Integration"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:20
+msgid "Lifecycle Management and Resize"
+msgstr "Lifecycle Management y Resize"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:21
+msgid "Unique Kerberos Authentication"
+msgstr "Unique Kerberos Authentication"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:24
+msgid "Getting Started"
+msgstr "Primeros pasos"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:26
+msgid ""
+"To get started, a few prerequisites must first be met. The Hyper-V host must"
+" be installed with its firewall enabled and it can either be joined to a "
+"domain or standalone. The Hyper-V host must also have the external network "
+"of Hyper-V configured and it can share this network with the management "
+"operating system. A user account that is part of the local administrators "
+"group on the Hyper-V host is also required. This document covers Hyper-V "
+"2008 and Hyper-V 2012."
+msgstr ""
+"To get started, un few prerequisites debe primero be met. The Hyper-V host "
+"debe estar instalado con its firewall habilitado y it puede either be joined"
+" to un domain o standalone. The Hyper-V host debe también tienen el externo "
+"network of Hyper-V configurado y it puede share esta red con el management "
+"operating sistema. A user cuenta que es part of el local administrators "
+"group on el Hyper-V host es también requerido. This document covers Hyper-V "
+"2008 y Hyper-V 2012."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:29
+msgid "Understanding WinRM"
+msgstr "Understanding WinRM"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:31
+msgid ""
+"|morpheus| uses WinRM to communicate to the Hyper-V host for deployment of "
+"the |morpheus| Agent. The |morpheus| Agent allows for the host dashboard to "
+"be populated with information in the form of graphs that cover CPU, Network,"
+" Storage, and memory consumption. Furthermore, this Agent provides logging "
+"and monitoring capabilities."
+msgstr ""
+"|morpheus| uses WinRM to communicate to el Hyper-V host para deployment of "
+"el |morpheus| Agent. The |morpheus| Agent allows para el host dashboard to "
+"be populated con información in el formulario of graphs que cover CPU, "
+"Network, Storage, y memory consumption. Además, este Agent provides logging "
+"y monitoring capabilities."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:33
+msgid ""
+"If Windows Remote Management (WinRM) is not installed and configured, WinRM "
+"scripts do not run and the WinRM command line tool cannot perform data "
+"operations or allow for the |morpheus| Agent to be installed. WinRM uses "
+"HTTP port 5985 or HTTPS port 5986 for communications."
+msgstr ""
+"If Windows Remote Management (WinRM) no es instalado y configurado, WinRM "
+"scripts no run y el WinRM command line tool no puede perform datos "
+"operaciones o allow para el |morpheus| Agent to be instalado. WinRM uses "
+"HTTP puerto 5985 o HTTPS puerto 5986 para communications."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:35
+msgid ""
+"To better understand all of the default settings of WinRM please refer to "
+"the `following page <https://msdn.microsoft.com/en-"
+"us/library/aa384372(v=vs.85).aspx>`_ in Microsoft documentation."
+msgstr ""
+"To better understand todos of el predeterminado configuración of WinRM "
+"please refer to el `following page <https://msdn.microsoft.com/en-"
+"us/library/aa384372(v=vs.85).aspx>`_ in Microsoft documentación."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:38
+msgid "Native Authentication"
+msgstr "Native Authentication"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:40
+msgid "To configure WinRM with default settings (WINRM_NATIVE)"
+msgstr "To configure WinRM con predeterminado configuración (WINRM_NATIVE)"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:42
+msgid "Type the following command at a command prompt:"
+msgstr "Type el following command at un command prompt:"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:44
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:77
+msgid "$ winrm quickconfig"
+msgstr "$ winrm quickconfig"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:48
+msgid ""
+"If you are not running under the local computer Administrator account, you "
+"must either select Run as Administrator from the Start menu or use the "
+"`Runas` command at a command prompt."
+msgstr ""
+"If you no son running under el local computer Administrator cuenta, you debe"
+" either select Run as Administrator desde el Start menú o use el `Runas` "
+"command at un command prompt."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:50
+msgid "When the tool displays ``Make these changes [y/n]?``, type ``y``."
+msgstr "When el tool displays ``Make these changes [y/n]?``, tipo ``y``."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:52
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:85
+msgid "If configuration is successful, the following output is displayed:"
+msgstr "If configuración es exitoso, el following salida es displayed:"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:54
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:87
+msgid ""
+"$ WinRM has been updated for remote management.\n"
+"$ WinRM service type changed to delayed auto start.\n"
+"$ WinRM service started.\n"
+"$ Created a WinRM listener on HTTP://* to accept WS-Man requests to any IP on this machine."
+msgstr ""
+"$ WinRM tiene sido actualizado para remoto management.\n"
+"$ WinRM servicio tipo cambiado to delayed auto start.\n"
+"$ WinRM servicio started.\n"
+"$ Created un WinRM listener on HTTP://* to accept WS-Man requests to cualquier IP on este machine."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:62
+msgid ""
+"Keep the default settings for client and server components of WinRM, or "
+"customize them. By default Kerberos is enabled and if domain authentication "
+"is not being used we want to disable that. Issue the below commands to setup"
+" basic authentication:"
+msgstr ""
+"Keep el predeterminado configuración para client y server componentes of "
+"WinRM, o customize them. By predeterminado Kerberos es habilitado y if "
+"domain authentication no es being used we want to disable que. Issue el a "
+"continuación commands to setup basic authentication:"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:64
+#, python-brace-format
+msgid ""
+"$ winrm set winrm/config/service/Auth '@{Basic=\"true\"}'\n"
+"$ winrm set winrm/config/service '@{AllowUnencrypted=\"true\"}'\n"
+"$ winrm set winrm/config/service/Auth '@{Kerberos=\"false\"}'"
+msgstr ""
+"$ winrm set winrm/config/servicio/Auth '@{Basic=\"true\"}'\n"
+"$ winrm set winrm/config/servicio '@{AllowUnencrypted=\"true\"}'\n"
+"$ winrm set winrm/config/servicio/Auth '@{Kerberos=\"false\"}'"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:71
+msgid "Domain Authentication"
+msgstr "Domain Authentication"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:73
+msgid "To configure WinRM with Domain Authentication (WINRM_INTERNAL)"
+msgstr "To configure WinRM con Domain Authentication (WINRM_INTERNAL)"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:75
+msgid "Type the following command at a command prompt"
+msgstr "Type el following command at un command prompt"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:81
+msgid ""
+"If you are not running under the local computer Administrator account, you "
+"must either select Run as Administrator from the Start menu or use the runas"
+" command at a command prompt."
+msgstr ""
+"If you no son running under el local computer Administrator cuenta, you debe"
+" either select Run as Administrator desde el Start menú o use el runas "
+"command at un command prompt."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:83
+msgid "When the tool displays Make these changes [y/n]?, type y."
+msgstr "When el tool displays Make estos cambios [y/n]?, tipo y."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:95
+msgid ""
+"Keep the default settings for client and server components of WinRM, or "
+"customize them. Issue the below commands to setup domain authentication:"
+msgstr ""
+"Keep el predeterminado configuración para client y server componentes of "
+"WinRM, o customize them. Issue el a continuación commands to setup domain "
+"authentication:"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:97
+#, python-brace-format
+msgid ""
+"$ winrm set winrm/config/service/Auth @{Basic=\"true\"}\n"
+"$ winrm set winrm/config/service @{AllowUnencrypted=\"false\"}\n"
+"$ winrm set winrm/config/service/Auth @{Kerberos=\"true\"}"
+msgstr ""
+"$ winrm set winrm/config/servicio/Auth @{Basic=\"true\"}\n"
+"$ winrm set winrm/config/servicio @{AllowUnencrypted=\"false\"}\n"
+"$ winrm set winrm/config/servicio/Auth @{Kerberos=\"true\"}"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:103
+msgid ""
+"Kerberos authentication will also need to be configured on the |morpheus| "
+"appliance to support Windows domain accounts to access the remote host with "
+"WINRM_INTERNAL connection type."
+msgstr ""
+"Kerberos authentication será también need to be configurado on el |morpheus|"
+" appliance to support Windows domain accounts to acceso el remoto host con "
+"WINRM_INTERNAL conexión tipo."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:105
+msgid "On the |morpheus| appliance the krb5-user package must be installed."
+msgstr "En el |morpheus| appliance el krb5-user package debe estar instalado."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:107
+msgid "For Ubuntu the command is as follows:"
+msgstr "For Ubuntu el command es as follows:"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:109
+msgid "$ sudo apt-get install krb5-user"
+msgstr "$ sudo apt-get install krb5-user"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:113
+msgid "For Centos the command is as follows:"
+msgstr "For Centos el command es as follows:"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:115
+msgid "$ sudo yum install krb5-workstation pam_krb5 -y"
+msgstr "$ sudo yum install krb5-workstation pam_krb5 -y"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:119
+msgid ""
+"Create a file in /etc called krb5.conf and replace the domain name with the "
+"name of the domain to be used. In this case we used |morpheus| .com as the "
+"domain."
+msgstr ""
+"Create un archivo in /etc called krb5.conf y replace el domain nombre con el"
+" nombre of el domain to be used. In este case we used |morpheus| .com as el "
+"domain."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:121
+#, python-brace-format
+msgid ""
+"[libdefaults]\n"
+"        default_realm = |morpheus| .COM\n"
+"            dns_lookup_kdc = true\n"
+"            verify_ap_req_nofail = false\n"
+"        default_tgs_enctypes = rc4-hmac\n"
+"        default_tkt_enctypes = rc4-hmac\n"
+"[realms]\n"
+"        |morpheus| .COM = {\n"
+"                kdc = win-ad.|morpheus| .COM:88\n"
+"                admin_server = win-ad.|morpheus| .COM:749\n"
+"     }\n"
+"[domain_realm]\n"
+"    .|morpheus| .COM = |morpheus| .COM\n"
+"        |morpheus| .COM = |morpheus| .COM\n"
+"[login]\n"
+"     krb4_convert = true\n"
+"     krb4_get_tickets = false"
+msgstr ""
+"[libdefaults]\n"
+"        default_realm = |morpheus| .COM\n"
+"            dns_lookup_kdc = true\n"
+"            verify_ap_req_nofail = false\n"
+"        default_tgs_enctypes = rc4-hmac\n"
+"        default_tkt_enctypes = rc4-hmac\n"
+"[realms]\n"
+"        |morpheus| .COM = {\n"
+"                kdc = win-ad.|morpheus| .COM:88\n"
+"                admin_server = win-ad.|morpheus| .COM:749\n"
+"     }\n"
+"[domain_realm]\n"
+"    .|morpheus| .COM = |morpheus| .COM\n"
+"        |morpheus| .COM = |morpheus| .COM\n"
+"[login]\n"
+"     krb4_convert = true\n"
+"     krb4_get_tickets = false"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:141
+msgid ""
+"After creation of the krb5.conf a keytab file is also required. See below "
+"for instructions on how to create a keytab file. "
+"http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html"
+msgstr ""
+"After creation of el krb5.conf un keytab archivo es también requerido. See a"
+" continuación para instructions on how to create un keytab archivo. "
+"http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:145
+msgid "Adding Hyper-V as a Private Cloud"
+msgstr "Agregar Hyper-V as a Private Cloud"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:147
+msgid ""
+"The Hyper-V host is prepared for |morpheus| to communicate with it via WinRM"
+" so the Hyper-V private cloud is ready to be configured. Create a group and "
+"then create a |morpheus| cloud for Hyper-V. Populated the information as "
+"show in Figure 1: specific for the environment being configured."
+msgstr ""
+"The Hyper-V host es prepared para |morpheus| to communicate con it via WinRM"
+" so el Hyper-V privado cloud es ready to be configurado. Create un grupo y "
+"entonces create un |morpheus| cloud para Hyper-V. Populated el información "
+"as show in Figure 1: específico para el entorno being configurado."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:150
+msgid ".. image:: images/hyperv1_original.png"
+msgstr ".. image:: images/hyperv1_original.png"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:151
+msgid ""
+"The working path, vm path, and disk path should be created on the Hyper-V "
+"host by the Hyper-V administrator. If these paths are not created they will "
+"need to be setup and the Hyper-V settings will need to adjusted to reference"
+" them."
+msgstr ""
+"The working ruta, vm ruta, y disk ruta debería be creado on el Hyper-V host "
+"by el Hyper-V administrator. If estos paths no son creado they será need to "
+"be setup y el Hyper-V configuración será need to adjusted to referencia "
+"them."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:154
+msgid ".. image:: images/hyperv2_original.png"
+msgstr ".. image:: images/hyperv2_original.png"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:156
+msgid "Service Plans"
+msgstr "Planes de servicio"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:158
+msgid ""
+"A default set of Service Plans are created in |morpheus| for the VMware "
+"provisioning engine. These Service Plans can be considered akin to AWS "
+"Flavors or Openstack Flavors. They provide a means to set predefined tiers "
+"on memory, storage, cores, and cpu. Price tables can also be applied to "
+"these so estimated cost per virtual machine can be tracked as well as "
+"pricing for customers. By default, these options are fixed sizes but can be "
+"configured for dynamic sizing. A service plan can be configured to allow a "
+"custom user entry for memory, storage, or cpu. To configure this, simply "
+"edit an existing Service Plan tied to Hyper-V or create a new one. These are"
+" managed from the Admin > Plans & Pricing section."
+msgstr ""
+"A predeterminado set of Service Plans son creado in |morpheus| para el "
+"VMware provisioning engine. These Service Plans puede be considered akin to "
+"AWS Flavors o Openstack Flavors. They provide un means to set predefined "
+"tiers on memory, storage, cores, y cpu. Price tables puede también be "
+"applied to estos so estimated cost per virtual machine puede be tracked así "
+"como pricing para customers. By predeterminado, estos opciones son fixed "
+"sizes pero se puede configurar para dynamic sizing. A servicio plan se puede"
+" configurar to allow un personalizado user entry para memory, storage, o "
+"cpu. To configure este, simply edit un existente Service Plan tied to "
+"Hyper-V o create un nuevo one. These son managed desde el Admin > Plans & "
+"Pricing sección."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:161
+msgid ".. image:: images/hyperv3_original.png"
+msgstr ".. image:: images/hyperv3_original.png"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:163
+msgid "Docker"
+msgstr "Docker"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:165
+msgid ""
+"So far this document has covered how to add the Hyper-V cloud integration "
+"and has enabled users the ability to provision virtual machine-based "
+"instances via the Add Instance catalog under the Provisioning menu. Another "
+"great feature provided by |morpheus| out of the box is the ability to use "
+"Docker containers and even support multiple containers per Docker host. To "
+"do this a Docker Host must first be provisioned into Hyper-V (multiple are "
+"needed when dealing with horizontal scaling scenarios)."
+msgstr ""
+"So far este document tiene covered how to add el Hyper-V cloud integration y"
+" tiene habilitado users el ability to provision virtual machine-based "
+"instances via el Add Instance catalog under el Provisioning menú. Another "
+"great característica provided by |morpheus| out of el box es el ability to "
+"use Docker containers y incluso support múltiples containers per Docker "
+"host. To do este un Docker Host debe primero be provisioned en Hyper-V "
+"(múltiples son needed cuando dealing con horizontal scaling scenarios)."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:167
+msgid ""
+"To provision a Docker Host simply navigate to the Clusters tab of the Cloud "
+"detail page or Infrastructure > Clusters section. From there click "
+":guilabel:`+ ADD CLUSTER` to add a Hyper-V Docker Host. A cluster is created"
+" when adding Docker hosts, even when only one host is needed."
+msgstr ""
+"To provision un Docker Host simply navigate to el Clusters pestaña of el "
+"Cloud página de detalles o Infrastructure > Clusters sección. Desde elre "
+"click :guilabel:`+ AGREGAR CLUSTER` to add un Hyper-V Docker Host. A cluster"
+" es creado cuando adding Docker hosts, incluso cuando solo one host es "
+"needed."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:169
+msgid ""
+"|morpheus| views a Docker host just like any other hypervisor with the "
+"caveat being that it is used for running containerized images instead of "
+"virtualized ones. Once a Docker Host is successfully provisioned a green "
+"checkmark will appear to the right of the host marking it as available for "
+"use. In the event of a failure click into the relevant host that failed and "
+"an error explaining the failure will be displayed in red at the top."
+msgstr ""
+"|morpheus| views un Docker host solo like cualquier otro hypervisor con el "
+"caveat being que it se utiliza para running containerized images en cambio "
+"of virtualized ones. Once un Docker Host es successfully provisioned un "
+"green checkmark será appear to el right of el host marking it as disponible "
+"para use. En el evento of un failure click en el relevante host que fallido "
+"y un error explaining el failure se mostrará in red en la parte superior."
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:171
+msgid ""
+"Some common error scenarios include network connectivity. For a Docker Host "
+"to function properly, it must be able to resolve the |morpheus| appliance "
+"url which can be configured in Admin | Settings. If it is unable to resolve "
+"and negotiate with the appliance than the agent installation will fail and "
+"provisioning instructions will not be able to be issued to the host."
+msgstr ""
+"Some common error scenarios include network connectivity. For un Docker Host"
+" to función properly, it debe be able to resolve el |morpheus| appliance url"
+" cual se puede configurar in Admin | Settings. If it es unable to resolve y "
+"negotiate con el appliance than el agente instalación será fail y "
+"provisioning instructions no be able to be issued to el host."

@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:4
+msgid "Certificate Authorities"
+msgstr "Certificate Authorities"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:9
+msgid ""
+"|morpheus| integrates with external Certificate Authority (CA) services to "
+"automate certificate issuance, renewal, and lifecycle management. CA "
+"integrations are managed from |InfTruSer| (Infrastructure > Trust > "
+"Services)."
+msgstr ""
+"|morpheus| integrates con externo Certificate Authority (CA) servicios a "
+"automate certificado issuance, renewal, y lifecycle gestión. CA integrations"
+" son administrado desde |InfTruSer| (Infraestructura > Trust > Servicios)."
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:11
+msgid ""
+"When a CA integration is active, |morpheus| can request certificates "
+"directly from the CA, eliminating manual CSR submission workflows and "
+"enabling automated certificate provisioning during Instance creation."
+msgstr ""
+"Cuando un CA integration está activo, |morpheus| puede solicitud "
+"certificados directamente desde el CA, eliminating manual CSR submission "
+"workflows y enabling automated certificado provisioning durante Instancia "
+"creation."
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:14
+msgid "Supported CA Integrations"
+msgstr "Supported CA Integrations"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:16
+msgid "|morpheus| supports the following Certificate Authority integrations:"
+msgstr "|morpheus| soporta lo siguiente Certificate Authority integrations:"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:18
+msgid ""
+"**Venafi Trust Protection Platform:** Enterprise certificate lifecycle "
+"management"
+msgstr ""
+"**Venafi Trust Protection Plataforma:** Enterprise certificado lifecycle "
+"gestión"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:19
+msgid ""
+"**Microsoft Active Directory Certificate Services (ADCS):** Windows PKI "
+"infrastructure"
+msgstr ""
+"**Microsoft Active Directory Certificate Services (ADCS):** Windows PKI "
+"infrastructure"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:20
+msgid ""
+"**HashiCorp Vault PKI:** Vault PKI secrets engine for dynamic certificate "
+"generation"
+msgstr ""
+"**HashiCorp Vault PKI:** Vault PKI secrets engine para dinámico certificado "
+"generation"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:21
+msgid ""
+"**Let's Encrypt (ACME):** Free, automated SSL certificates via ACME protocol"
+msgstr ""
+"**Let's Encrypt (ACME):** Free, automated SSL certificados via ACME "
+"protocolo"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:24
+msgid "Adding a CA Integration"
+msgstr "Adding un CA Integración"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:26
+msgid "To add a Certificate Authority integration:"
+msgstr "Para agregar un Certificate Authority integration:"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:28
+#: ../../infrastructure/certificates/certificate_authorities.rst:89
+#: ../../infrastructure/certificates/certificate_authorities.rst:98
+msgid "Navigate to |InfTruSer|"
+msgstr "Navegue un |InfTruSer|"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:29
+#: ../../infrastructure/certificates/certificate_authorities.rst:62
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ AGREGAR`"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:30
+msgid "Select the CA integration type"
+msgstr "Seleccionar el CA integration tipo"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:31
+msgid "Complete the configuration fields (vary by type):"
+msgstr "Completo el configuración campos (vary por tipo):"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:33
+msgid "**Common Fields:**"
+msgstr "**Common Fields:**"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:35
+msgid "**NAME:** A descriptive name for the integration"
+msgstr "**NAME:** Un descriptive nombre para el integration"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:36
+msgid "**ENABLED:** Toggle to enable or disable the integration"
+msgstr "**ENABLED:** Toggle a habilitar o deshabilitar el integration"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:38
+msgid "**Venafi:**"
+msgstr "**Venafi:**"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:40
+msgid "**URL:** Venafi TPP server URL"
+msgstr "**URL:** Venafi TPP servidor URL"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:41
+msgid "**USERNAME:** API username"
+msgstr "**USERNAME:** API nombre de usuario"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:42
+msgid "**PASSWORD:** API password"
+msgstr "**PASSWORD:** API contraseña"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:43
+msgid "**POLICY FOLDER:** Certificate policy folder path"
+msgstr "**POLICY FOLDER:** Certificate política folder ruta"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:45
+msgid "**HashiCorp Vault PKI:**"
+msgstr "**HashiCorp Vault PKI:**"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:47
+msgid "**VAULT URL:** Vault server address"
+msgstr "**VAULT URL:** Vault servidor dirección"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:48
+msgid "**VAULT TOKEN:** Authentication token or AppRole credentials"
+msgstr "**VAULT TOKEN:** Autenticación token o AppRole credentials"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:49
+msgid "**PKI PATH:** Mount path for the PKI engine (e.g., ``pki``)"
+msgstr "**PKI PATH:** Mount ruta para el PKI engine (e.g., ``pki``)"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:50
+msgid "**ROLE:** Vault PKI role name for certificate issuance"
+msgstr "**ROLE:** Vault PKI role nombre para certificado issuance"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:52
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`SAVE`"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:54
+msgid ""
+"Once saved, |morpheus| will validate connectivity to the CA service and "
+"display the integration status."
+msgstr ""
+"Once saved, |morpheus| será validate connectivity al CA servicio y display "
+"el integration estado."
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:57
+msgid "Requesting Certificates from a CA"
+msgstr "Requesting Certificates desde un CA"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:59
+msgid "With an active CA integration, certificates can be requested directly:"
+msgstr ""
+"Con un activo CA integration, certificados puede be requested directamente:"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:61
+msgid "Navigate to |InfTruCer|"
+msgstr "Navegue un |InfTruCer|"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:63
+msgid "Select the certificate type associated with your CA integration"
+msgstr "Seleccionar el certificado tipo asociado con su CA integration"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:64
+msgid "Fill in the certificate subject information:"
+msgstr "Fill en el certificado subject información:"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:66
+msgid "**COMMON NAME:** FQDN for the certificate"
+msgstr "**COMMON NAME:** FQDN para el certificado"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:67
+msgid "**ORGANIZATION / OU / LOCALITY / STATE / COUNTRY:** Subject fields"
+msgstr "**ORGANIZATION / OU / LOCALITY / STATE / COUNTRY:** Subject campos"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:68
+msgid "**KEY SIZE:** Desired key length"
+msgstr "**KEY SIZE:** Desired clave longitud"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:69
+msgid "**CA INTEGRATION:** Select the target CA"
+msgstr "**CA INTEGRATION:** Seleccionar el destino CA"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:71
+msgid "Click :guilabel:`REQUEST CERTIFICATE`"
+msgstr "Click :guilabel:`REQUEST CERTIFICATE`"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:73
+msgid ""
+"|morpheus| submits the request to the CA and, upon approval, stores the "
+"issued certificate automatically."
+msgstr ""
+"|morpheus| submits el solicitud al CA y, upon approval, stores el issued "
+"certificado automáticamente."
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:76
+msgid "Certificate Renewal"
+msgstr "Certificate Renewal"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:78
+msgid ""
+"For certificates issued through CA integrations, |morpheus| tracks "
+"expiration dates and can facilitate renewal:"
+msgstr ""
+"Para certificados issued a través de CA integrations, |morpheus| tracks "
+"expiration dates y puede facilitate renewal:"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:80
+msgid ""
+"Certificates approaching expiration are flagged in the certificate list"
+msgstr ""
+"Certificates approaching expiration son flagged en el certificado lista"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:81
+msgid ""
+"Renewal can be triggered manually by signing the existing CSR again through "
+"the CA integration"
+msgstr ""
+"Renewal puede be triggered manualmente por signing el existente CSR again a "
+"través de el CA integration"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:82
+msgid ""
+"Automated renewal policies depend on the specific CA integration "
+"capabilities"
+msgstr ""
+"Automated renewal políticas depend en el específico CA integration "
+"capabilities"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:85
+msgid "Refreshing CA Data"
+msgstr "Refreshing CA Datos"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:87
+msgid "To refresh certificates and metadata from a CA integration:"
+msgstr "A refresh certificados y metadata desde un CA integration:"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:90
+msgid "Select the CA integration"
+msgstr "Seleccionar el CA integration"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:91
+msgid "Click :guilabel:`REFRESH` from the Actions menu"
+msgstr "Click :guilabel:`REFRESH` desde el Acciones menú"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:93
+msgid ""
+"This synchronizes the latest certificate inventory and status from the "
+"external CA."
+msgstr ""
+"Este synchronizes el latest certificado inventory y estado desde el externo "
+"CA."
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:96
+msgid "Deleting a CA Integration"
+msgstr "Deleting un CA Integración"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:99
+msgid ""
+"Click the trash icon or select :guilabel:`DELETE` from the Actions menu on "
+"the integration row"
+msgstr ""
+"Click el trash ícono o seleccionar :guilabel:`DELETE` desde el Acciones menú"
+" en el integration row"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:100
+msgid "Confirm deletion"
+msgstr "Confirmar deletion"
+
+#: ../../infrastructure/certificates/certificate_authorities.rst:102
+msgid ""
+"Removing a CA integration does not delete certificates that were previously "
+"issued through it. Those certificates remain in |morpheus| until manually "
+"removed."
+msgstr ""
+"Removing un CA integration does no eliminar certificados ese fueron "
+"previamente issued a través de it. Esos certificados remain en |morpheus| "
+"hasta manualmente eliminado."

@@ -1,0 +1,869 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/spec-format/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:11
+msgid ""
+"Define the structure and quality bar for spec documents produced during "
+"`/design` and `/diagnose` workflows. Specs are the handoff artifact "
+"between the design phase and the delivery phase — they must be clear "
+"enough for an engineer agent to follow without getting stuck, and "
+"readable enough for a human to review before and learn from after "
+"execution."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:13
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:15
+msgid ""
+"Load this skill when producing a spec document for any feature, "
+"enhancement, or bug fix. The delivery lead should load this before "
+"writing a spec."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:17
+msgid "General conventions"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:19
+msgid "One spec per work item, saved as `spec.md`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:20
+msgid "Write in plain markdown, no special syntax or RFC keywords"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:21
+msgid "Be concrete — name files, directories, components, functions"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:22
+msgid "The Changes section is the most important section; it must be actionable"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:23
+msgid "Keep each section focused; do not repeat information across sections"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:24
+msgid "If information is unknown or requires investigation, say so explicitly"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:25
+msgid "Link to relevant issues, PRs, or external references when available"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:27
+msgid "File location"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:29
+#, python-brace-format
+msgid ""
+"Feature specs: `{hero_folder}/planning/features/{slug}/spec.md` Bug "
+"specs: `{hero_folder}/planning/bugs/{slug}/spec.md`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:32
+#, python-brace-format
+msgid ""
+"The `{hero_folder}` defaults to `.hero` and is configurable via "
+"`hero.json`."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:34
+#, python-brace-format
+msgid ""
+"The `{slug}` is a short, lowercase, hyphenated identifier derived from "
+"the work item title (e.g., `add-csv-export`, `login-timeout-race`)."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:36
+msgid "Feature spec template"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:38
+#, python-brace-format
+msgid ""
+"# {title}\n"
+"\n"
+"## Context\n"
+"Why this work exists. What prompted it. Links to issues or tickets.\n"
+"Relevant history or prior decisions that affect this work.\n"
+"\n"
+"## Goal\n"
+"What \"done\" looks like. One paragraph, concrete and testable.\n"
+"This is the acceptance criteria in plain language.\n"
+"\n"
+"## Approach\n"
+"Architecture and design decisions. How the feature fits into the existing"
+" system.\n"
+"Key technical choices already made and why.\n"
+"Patterns to follow or avoid.\n"
+"\n"
+"## Changes\n"
+"Ordered list of concrete changes to make. Each item should name specific "
+"files\n"
+"or components and describe what to do clearly enough that an engineer can"
+" execute\n"
+"without additional context.\n"
+"\n"
+"1. {description of first change}\n"
+"   - {specific detail}\n"
+"   - {specific detail}\n"
+"2. {description of second change}\n"
+"   - {specific detail}\n"
+"3. ...\n"
+"\n"
+"## Mockups\n"
+"Optional. Visual mockups produced for this spec. Auto-populated by "
+"`/mock`\n"
+"against the spec slug. Omit this section if no mockup was produced.\n"
+"\n"
+"- [Mockup name](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — what the "
+"mockup shows\n"
+"\n"
+"## Boundaries\n"
+"What is NOT in scope. Adjacent work to explicitly avoid.\n"
+"Things that look related but should be separate work items.\n"
+"\n"
+"## Risks\n"
+"Known risks, edge cases, failure modes to watch for during "
+"implementation.\n"
+"Dependencies on external systems or teams.\n"
+"\n"
+"## Validation\n"
+"How to verify the work is correct. Expected test coverage.\n"
+"Manual verification steps if applicable.\n"
+"Performance or operational checks if relevant.\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:86
+msgid "Bug spec template"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:88
+#, python-brace-format
+msgid ""
+"# {title}\n"
+"\n"
+"## Issue\n"
+"Link to the bug ticket. Reporter. When it was found. Environment details."
+"\n"
+"\n"
+"## Investigation\n"
+"What was found during research. Evidence gathered.\n"
+"Code traces — the end-to-end flow from trigger to failure.\n"
+"Reproduction steps if applicable.\n"
+"Key files and line numbers involved.\n"
+"\n"
+"### Root cause\n"
+"Clear explanation of why the bug occurs. Distinguish between the symptom\n"
+"and the underlying cause.\n"
+"\n"
+"### Severity\n"
+"Impact, frequency, blast radius. Whether there is a workaround.\n"
+"Whether this is caused by our code or an external factor.\n"
+"\n"
+"## Goal\n"
+"What the fix accomplishes. One paragraph.\n"
+"\n"
+"## Changes\n"
+"Ordered fix steps. Same format as feature changes — concrete, actionable,"
+"\n"
+"naming specific files and components.\n"
+"\n"
+"1. {description of first change}\n"
+"   - {specific detail}\n"
+"2. {description of second change}\n"
+"   - {specific detail}\n"
+"3. ...\n"
+"\n"
+"## Mockups\n"
+"Optional. Visual mockups produced for this fix, if any. Auto-populated by"
+"\n"
+"`/mock` against the spec slug. Omit this section if no mockup was "
+"produced.\n"
+"\n"
+"- [Mockup name](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — what the "
+"mockup shows\n"
+"\n"
+"## Boundaries\n"
+"What this fix does NOT attempt to address.\n"
+"Related issues that should be separate work items.\n"
+"\n"
+"## Risks\n"
+"Regression risks. Side effects of the fix.\n"
+"Areas that need careful testing.\n"
+"\n"
+"## Validation\n"
+"How to verify the fix works. Regression test expectations.\n"
+"How to confirm the original issue no longer reproduces.\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:140
+msgid "Mockups section"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:142
+msgid ""
+"When `/mock` produces a visual prototype against a spec slug, it appends "
+"(or updates, on `--iterate`) a `## Mockups` section in the spec body "
+"listing each mockup. This makes the artifact discoverable to humans "
+"reading the spec and to delivery agents reading the spec for context."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:147
+msgid ""
+"**Format.** One entry per mockup, in a top-level `## Mockups` section "
+"placed between `## Changes` and `## Boundaries`:"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:150
+msgid ""
+"## Mockups\n"
+"\n"
+"- [Hero landing page](.hero/mocks/hero-landing-page/index.html) — "
+"2026-05-20 — public homepage with install CTA and feature grid\n"
+"- [Hero landing page — dense variant](.hero/mocks/hero-landing-"
+"page/dense.html) — 2026-05-22 — compressed-density alternative for above-"
+"the-fold\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:157
+msgid "**Rules:**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:159
+msgid "The section is optional — omit it entirely if no mockup was produced."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:160
+msgid "Path is relative to the repo root so the link works in markdown renderers."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:161
+msgid "Date is ISO format (`YYYY-MM-DD`)."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:162
+msgid "Description is one line — what's shown, not why."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:163
+msgid "Multiple mockups per spec are supported as additional list items."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:164
+msgid ""
+"`/mock --iterate` updates the matching entry's date in place rather than "
+"appending a duplicate when the path is unchanged."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:166
+msgid ""
+"Free-text `/mock` calls (no spec slug) do not write back — those mockups "
+"land under `.hero/mocks/_adhoc/` and are not linked to any spec."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:169
+#, python-brace-format
+msgid ""
+"`/deliver` reads `.hero/mocks/{slug}/` directly as a pre-flight step, so "
+"mockups generated before this section was introduced (or dropped in by "
+"hand) are still surfaced to the engineer."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:173
+msgid "Convention spec template"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:175
+#, python-brace-format
+msgid ""
+"---\n"
+"type: convention\n"
+"status: active\n"
+"scope: [glob patterns where this applies]\n"
+"tags: [relevant tags]\n"
+"---\n"
+"# {Convention Name}\n"
+"\n"
+"## Pattern\n"
+"What this convention standardizes. One clear statement.\n"
+"\n"
+"## When to apply\n"
+"The conditions under which this convention must be followed.\n"
+"File types, modules, or situations where it applies.\n"
+"\n"
+"## How\n"
+"The specific implementation pattern to follow, with concrete examples\n"
+"from this codebase.\n"
+"\n"
+"## Examples\n"
+"Real examples from the codebase showing this pattern done correctly.\n"
+"\n"
+"## Anti-patterns\n"
+"Common violations of this convention and why they're problematic.\n"
+"\n"
+"## Exceptions\n"
+"When it's acceptable to deviate from this convention and why.\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:205
+msgid "Decision spec template (ADR)"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:207
+#, python-brace-format
+msgid ""
+"---\n"
+"type: decision\n"
+"status: accepted\n"
+"tags: [relevant tags]\n"
+"relates-to: [related-spec-slugs]\n"
+"---\n"
+"# {Decision Title}\n"
+"\n"
+"## Context\n"
+"The situation and forces that led to this decision.\n"
+"\n"
+"## Options considered\n"
+"Each option with pros, cons, and trade-offs.\n"
+"\n"
+"## Decision\n"
+"What was chosen and why.\n"
+"\n"
+"## Consequences\n"
+"What changes as a result. What becomes easier, what becomes harder.\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:229
+msgid "Initiative spec template"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:231
+#, python-brace-format
+msgid ""
+"---\n"
+"type: initiative\n"
+"status: planning\n"
+"tags: [relevant tags]\n"
+"---\n"
+"# {Initiative Title}\n"
+"\n"
+"## Vision\n"
+"What this initiative achieves when all parts are complete.\n"
+"\n"
+"## Specs\n"
+"Ordered list of child specs, each a separate design/diagnose item.\n"
+"Mark completion status.\n"
+"\n"
+"## Dependencies\n"
+"Cross-spec dependencies and sequencing constraints.\n"
+"\n"
+"## Progress\n"
+"Summary of what's done, what's in flight, what's next.\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:253
+msgid "Frontmatter conventions"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:255
+msgid "All spec types use YAML frontmatter. The following fields are supported:"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Field"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Required"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Applies to"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Description"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`title`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Yes"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "All"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Human-readable title."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`slug`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"Short kebab-case identifier matching the spec's directory name. Stamp "
+"this in frontmatter so it's easy to copy when linking the spec from "
+"another session or prompt."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`type`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Spec type: `feature`, `bug`, `convention`, `decision`, `initiative`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`status`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"Lifecycle state. Work specs: `planning`, `in-review`, `delivering`, "
+"`completed`. Conventions: `draft`, `active`. Decisions: `proposed`, "
+"`accepted`. Any type can be `superseded`."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`scope`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Yes (conventions)"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Convention"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"Array of glob patterns identifying which files this convention applies "
+"to. Used by `hero relevant` to inject relevant conventions."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`tags`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "No"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Array of tags for search and filtering. Use lowercase, hyphenated terms."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`claimed_by`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Work specs"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Who is currently working on this spec. Set via `hero spec claim`."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`completed_at`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"RFC 3339 UTC timestamp recording when `status` flipped to `completed`. "
+"Hero writes this automatically at status-transition time — agents and "
+"humans should not hand-write it. The reader also accepts `completedAt:` "
+"for tolerance, but only `completed_at:` is ever produced. Historical "
+"specs without the field can be backfilled from git history via `hero "
+"admin backfill-completed-at`."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`created`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "ISO 8601 date when the spec was created."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`relates-to`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Array of spec slugs that are related but not dependent."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`depends-on`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Array of spec slugs that must be completed before this spec can proceed."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`supersedes`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"Slug of the spec this one replaces. The superseded spec should have its "
+"status set to `superseded`."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`parent`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Slug of the initiative this spec belongs to."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`child`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Initiatives"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Array of spec slugs that are part of this initiative."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`domain`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"DSKG namespace partition (`engineering`, `pm`, future packs). New specs "
+"scaffolded by `/design` and `/diagnose` emit this from the active "
+"workspace domain. Legacy specs without the field resolve to the workspace"
+" default (`engineering` if no `domain:` is set in `hero.json`)."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`size`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Sized work specs (`feature`, `bug`, `enhancement`, `epic`, `initiative`)"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"Declared effort tier on the shared 6-tier ladder: `trivial`, `small`, "
+"`medium`, `large`, `x-large`, `giant`. Living field — set at design, "
+"updated on scope changes (authoring and mid-delivery). See the `spec-"
+"sizing` skill for the ladder, per-type bands, and the nudge protocol."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`size_ack`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Sized work specs"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid ""
+"One-shot acknowledgement that suppresses the design-time nudge when a "
+"spec stays at a high tier deliberately. Only `giant` is consumed today. "
+"See the `spec-sizing` skill."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:277
+msgid "`size:` — a living field"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:279
+msgid ""
+"Treat `size:` like `status:` — agents are expected to keep it accurate. "
+"Updates happen at design time (`/design` stamps it from the design "
+"conversation), during authoring/refinement (the spec writer bumps it if "
+"scope grows), and mid-delivery (the delivery lead bumps it if reality "
+"outruns the declared tier)."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:285
+msgid "Brief frontmatter example:"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:287
+msgid ""
+"---\n"
+"title: \"Add CSV export\"\n"
+"type: feature\n"
+"status: planning\n"
+"size: medium\n"
+"---\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:296
+msgid ""
+"Don't re-explain the ladder here — the canonical reference is the `spec-"
+"sizing` skill. It carries the 6-tier descriptions, per-type bands, nudge "
+"schedule, and the `size_ack: giant` acknowledgement protocol."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:301
+msgid "Status transitions"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:303
+msgid ""
+"Work specs follow a linear progression: `planning` → `in-review` → "
+"`delivering` → `completed`."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:305
+msgid ""
+"Conventions start as `draft` while being authored and reviewed. They move"
+" to `active` when the team confirms they reflect actual or intended "
+"practice."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:307
+msgid ""
+"Decisions start as `proposed` during discussion. They move to `accepted` "
+"when the decision is finalized."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:309
+msgid ""
+"Any spec can be set to `superseded` when a newer spec replaces it. Always"
+" set the `supersedes` field on the replacement spec to maintain "
+"traceability."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:311
+msgid "Acceptance Criteria and EARS"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:313
+msgid ""
+"Acceptance criteria live in a `## Acceptance Criteria` section as a "
+"bullet list. Hero recognizes five EARS (Easy Approach to Requirements "
+"Syntax) patterns and classifies each bullet automatically; freeform "
+"bullets remain valid for criteria that genuinely don't fit."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Pattern"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Template"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Use when"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "**Event**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`WHEN <trigger> THE SYSTEM SHALL <behavior>`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "A user action or external event produces a specific outcome"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "**State**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`WHILE <state> THE SYSTEM SHALL <behavior>`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "A condition holds for a span of time"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "**Unwanted**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`IF <trigger> THEN THE SYSTEM SHALL <behavior>`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "An error or guard condition must be handled"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "**Optional**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`WHERE <feature> IS ENABLED THE SYSTEM SHALL <behavior>`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "Behavior applies only under a feature flag or opt-in"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "**Ubiquitous**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "`THE SYSTEM SHALL <behavior>`"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md
+msgid "An always-true invariant"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:326
+msgid "Example (from a real feature spec):"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:328
+msgid ""
+"## Acceptance Criteria\n"
+"\n"
+"- WHEN a user submits invalid form data THE SYSTEM SHALL display field-"
+"level validation errors\n"
+"- WHILE a sync is in flight THE SYSTEM SHALL block concurrent sync "
+"attempts\n"
+"- IF the tracker token is missing THEN THE SYSTEM SHALL print a setup "
+"hint and exit non-zero\n"
+"- WHERE auto_capture IS ENABLED THE SYSTEM SHALL persist learnings after "
+"/deliver\n"
+"- THE SYSTEM SHALL log every failed login attempt\n"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:338
+msgid "**Guidelines:**"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:340
+msgid "Keywords are case-insensitive, but uppercase reads best in review."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:341
+msgid "A trailing period is allowed but not required."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:342
+msgid ""
+"Don't force EARS onto criteria where it reads awkwardly — freeform is "
+"fine."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:343
+msgid "Run `hero spec lint <slug>` to see the classification + freeform ratio."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:344
+msgid ""
+"`hero test generate` maps the `Behavior` clause to Playwright assertions,"
+" so concrete identifiers (selectors, URLs, flag names) inside the "
+"behavior produce better autonomous tests than vague phrasing."
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:348
+msgid "Quality bar"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:350
+msgid "A spec is ready for delivery when:"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:351
+msgid "The Goal section is concrete enough to verify completion"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:352
+msgid "The Changes section lists every file or component to touch"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:353
+msgid "Each change item has enough detail to implement without guessing"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:354
+msgid ""
+"Acceptance Criteria use EARS patterns where they fit; freeform ratio is "
+"reasonable for the spec's domain"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:356
+msgid "Boundaries are explicit — the engineer knows what NOT to do"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:357
+msgid "Risks call out anything that could cause the implementation to stall"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:358
+msgid "No section says \"TBD\" or \"to be determined\" without explanation"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:360
+msgid "Posting to trackers"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:362
+msgid "When a tracker is configured in `hero.json`:"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:363
+msgid "Attach the full spec as a comment or file attachment on the issue"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:364
+msgid "Add a brief summary comment with the goal and change count"
+msgstr ""
+
+#: ../../.opencode/skills/spec-format/SKILL.md:365
+msgid "For bugs, include the root cause summary in the comment"
+msgstr ""
+

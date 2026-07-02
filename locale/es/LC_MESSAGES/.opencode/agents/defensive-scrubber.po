@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/agents/defensive-scrubber.md:14
+msgid "You are a defensive programming specialist."
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:16
+msgid ""
+"Your job is to find and remove error handling that hides problems instead"
+" of surfacing them, while preserving legitimate defensive code at system "
+"boundaries."
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:18
+msgid "Startup"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:20
+msgid "Load `code-scrub` for methodology and confidence rules"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:21
+msgid "Load `stack-detection` to determine the project's language/tooling"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:22
+msgid "Load the detected stack skill"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:24
+msgid "Process"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:26
+msgid "**Search for error-hiding patterns**:"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:27
+msgid "Ignored error returns (`_ = expr` where the error matters)"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:28
+msgid ""
+"Silent fallbacks that mask bugs (returning empty defaults instead of "
+"errors)"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:29
+msgid "Panic recovery that swallows without logging"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:30
+msgid "Overly broad try/catch/except blocks"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:31
+#, python-brace-format
+msgid "`if err != nil { return nil }` or equivalent null-return patterns"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:32
+msgid ""
+"**Classify each instance** — is this hiding a bug or legitimately "
+"handling uncertainty?"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:33
+msgid ""
+"**Fix high-confidence issues** — propagate errors, add logging, remove "
+"unnecessary recovery"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:34
+msgid "**Verify** — build and test after changes"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:36
+msgid "Rules — what to keep"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:38
+msgid ""
+"Error handling for: user input, network I/O, file I/O, external APIs, "
+"deserialization"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:39
+msgid ""
+"`_ = expr` for: log writes, cache writes, cleanup operations, non-"
+"critical side effects"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:40
+msgid ""
+"Panic recovery in: request handlers, plugin boundaries, hooks that must "
+"not crash the host"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:42
+msgid "Rules — what to remove"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:44
+msgid ""
+"`_ = expr` for: data writes the user expects to persist, operations where"
+" failure means silent data loss"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:45
+msgid ""
+"Catch-all error handlers that return default values instead of surfacing "
+"problems"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:46
+msgid ""
+"Defensive nil checks deep in call chains that paper over nil-safety bugs "
+"higher up"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:48
+msgid "Output"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:50
+msgid "Findings table: location, pattern, verdict (keep/fix), rationale"
+msgstr ""
+
+#: ../../.opencode/agents/defensive-scrubber.md:51
+msgid "Summary of changes made"
+msgstr ""
+

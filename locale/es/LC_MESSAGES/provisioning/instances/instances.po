@@ -1,0 +1,952 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/instances/instances.rst:2
+msgid "Instances"
+msgstr "Instancias"
+
+#: ../../provisioning/instances/instances.rst:7
+msgid ""
+"Instances are a great starting point for taking advantage of self service"
+" features and spinning up both VMs and containers. In |morpheus| it may "
+"be advisable to cover the definition of a few terms used within the "
+"application so as to reduce confusion. These concepts are also covered in"
+" greater detail in the `Provisioning Concepts "
+"<https://docs.morpheusdata.com/en/latest/provisioning/concepts/concepts.html>`_"
+" section."
+msgstr ""
+"Instancias son un great starting point para taking advantage de self "
+"service features y spinning up both VMs y containers. En |morpheus| it "
+"puede be advisable a cover el/la definition de un few terms used within "
+"el/la aplicación so as a reduce confusion. Estos concepts son also covered "
+"en greater detalle en el/la `Provisioning Concepts "
+"<https://docs.morpheusdata.com/en/latest/provisioning/concepts/concepts.html>`_ "
+"sección."
+
+#: ../../provisioning/instances/instances.rst:9
+msgid "Instance"
+msgstr "Instancia"
+
+#: ../../provisioning/instances/instances.rst:10
+msgid ""
+"A set of containers or virtual machines that can correlate to a single "
+"horizontally-scalable entity or a service suite, like a database. It is "
+"important to note that an Instance can contain one or more containers/VMs"
+" depending on the Instance type and configuration."
+msgstr ""
+"Un establecer de containers o virtual machines que puede correlate a un "
+"single horizontally-scalable entity o un service suite, like un database. "
+"It es important a tenga en cuenta que un Instancia puede contener one o más "
+"containers/VMs depending en el/la Instancia tipo y configuración."
+
+#: ../../provisioning/instances/instances.rst:11
+msgid "Container"
+msgstr "Container"
+
+#: ../../provisioning/instances/instances.rst:12
+msgid "Typically a docker container provisioned via a |morpheus| Docker host."
+msgstr "Typically un docker container provisioned via un |morpheus| Docker host."
+
+#: ../../provisioning/instances/instances.rst:14
+msgid "Virtual Machine"
+msgstr "Virtual Machine"
+
+#: ../../provisioning/instances/instances.rst:14
+msgid "A virtualized compute server provisioned onto various hypervisor hosts."
+msgstr "Un virtualized compute servidor provisioned onto various hypervisor hosts."
+
+#: ../../provisioning/instances/instances.rst:16
+msgid ""
+"The top of the main Instances page shows overall statistics for the "
+"listed Instances, including count, status, and resource utilization. You "
+"can search for Instances by name, or filter by group, instance type, or "
+"category."
+msgstr ""
+"El/La top de el/la main Instancias página shows overall statistics para "
+"el/la listed Instancias, including count, estado, y recursos utilization. "
+"You puede search para Instancias por nombre, o filter por group, instancia "
+"tipo, o category."
+
+#: ../../provisioning/instances/instances.rst:18
+msgid ""
+"Instances listed are determined by group access and role permissions. "
+"When filtered to show Instances of \"All Statuses\", any Instances which "
+"are in a state of pending removal due to a delayed delete policy in place"
+" are not shown under this filter. Instead you must filter for \"Pending "
+"Removal\" to see these Instances and prevent deletion, if desired."
+msgstr ""
+"Instancias listed son determined por group acceso y role permisos. Cuando "
+"filtered a mostrar Instancias de \"Todos Statuses\", cualquier Instancias "
+"cual son en un state de pending removal due a un delayed eliminar policy en "
+"place son no shown bajo este filter. Instead you must filter para \"Pending "
+"Removal\" a ver estos Instancias y prevent deletion, si desired."
+
+#: ../../provisioning/instances/instances.rst:20
+msgid ""
+"The Instance list contains important information about each instance, "
+"including the instance name, environment tag, instance type icon, IP "
+"address and port info, Instance version, the number of virtual machines "
+"or containers in the instance, the group the instance is in, and the "
+"cloud or clouds the instance is in."
+msgstr ""
+"El/La Instancia lista contiene important información acerca de cada "
+"instancia, including el/la instancia nombre, entorno tag, instancia tipo "
+"icon, IP address y port info, Instancia versión, el/la number de virtual "
+"machines o containers en el/la instancia, el/la group el/la instancia es "
+"en, y el/la cloud o clouds el/la instancia es en."
+
+#: ../../provisioning/instances/creating_instances.rst:2
+msgid "Creating Instances"
+msgstr "Crear instancias"
+
+#: ../../provisioning/instances/creating_instances.rst:4
+msgid ""
+"The Instance catalog is the one-stop shop for selecting items to be "
+"provisioned and pieced together. It contains not only basic container and"
+" VM options but also tailored services for SQL databases, NoSQL "
+"databases, cache stores, message busses, web servers, and even full-"
+"fledged apps. The list contains a lot of items to choose from and they "
+"are represented to the user based on what provisioning engines are "
+"enabled and integrated in the |morpheus| environment."
+msgstr ""
+"El/La Instancia catálogo es el/la one-stop shop para selecting elementos a "
+"be provisioned y pieced together. It contiene no solo basic container y VM "
+"opciones pero also tailored services para SQL databases, NoSQL databases, "
+"cache stores, message busses, web servidores, y even full-fledged apps. "
+"El/La lista contiene un lot de elementos a choose desde y they son "
+"represented a el/la usuario based en qué aprovisionamiento engines son "
+"habilitado y integrated en el/la |morpheus| entorno."
+
+#: ../../provisioning/instances/creating_instances.rst:6
+msgid ""
+"To get started, simply click the :guilabel:`+ Add` button in the upper "
+"right of the |ProIns| section. A modal will display allowing the catalog "
+"to be searched. Once an item is selected it is just a matter of following"
+" the steps through the wizard."
+msgstr ""
+"A obtener started, simply haga clic en el :guilabel:`+ Add` botón en el/la "
+"upper right de el/la |ProIns| sección. Un modal será display allowing el/la "
+"catálogo a be searched. Once un elemento es seleccionado it es just un "
+"matter de siguiente el/la steps a través de el/la wizard."
+
+#: ../../provisioning/instances/creating_instances.rst:8
+msgid ""
+"The Instance catalog can be customized via role-based access control "
+"(RBAC) thereby restricting access to non-sanctioned catalog items, as "
+"well as added to via the |Lib| section. It is completely customizable."
+msgstr ""
+"The Instancia catálogo puede ser customized via role-based access control "
+"(RBAC) thereby restricting access to non-sanctioned catálogo items, así "
+"como added to via the |Lib| section. It is completely customizable."
+
+#: ../../provisioning/instances/creating_instances.rst:10
+msgid ""
+"The next step will ask for a Group and Cloud to be selected. The Group is"
+" an abstract representation that can contain multiple cloud integrations."
+" Clouds can be in multiple Groups and Groups are also useful for using "
+"RBAC to restrict provisioning access and set retainment policies. If the "
+"environment is new and these do not yet exist, it may be advisable to "
+"refer to one of our starter guides, such as the guide on getting started "
+"with |morpheus| and `VMware "
+"<https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html>`_."
+" The wizard continues by allowing us to choose a name for the Instance as"
+" well as an environment."
+msgstr ""
+"El/La siguiente step será ask para un Group y Cloud a be seleccionado. "
+"El/La Group es un abstract representation que puede contener multiple cloud "
+"integraciones. Clouds puede ser en multiple Groups y Groups son also useful "
+"para using RBAC a restrict aprovisionamiento acceso y establecer retainment "
+"policies. Si el/la entorno es nuevo y estos hacer no yet exist, it puede be "
+"advisable a refer a one de our starter guides, como el/la guide en getting "
+"started con |morpheus| y `VMware "
+"<https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html>`_. "
+"El/La wizard continues por allowing us a choose un nombre para el/la "
+"Instancia así como un entorno."
+
+#: ../../provisioning/instances/creating_instances.rst:12
+msgid ""
+"Currently the Environment option is mostly useful for presenting the user"
+" with informative metadata around the Instance when coming back to it "
+"later."
+msgstr ""
+"Currently el/la Environment opción es mostly useful para presenting el/la "
+"usuario con informative metadata around el/la Instancia cuando coming back "
+"a it later."
+
+#: ../../provisioning/instances/creating_instances.rst:14
+msgid ""
+"Moving on, it is now time to configure the Instance. Depending on the "
+"Instance Configuration that is chosen, fields will change. This can "
+"include cloud-specific fields (i.e. Datastore for VMware or Network). "
+"There will also be options like setting an initial user account. Some of "
+"these fields are optional and will be represented as such."
+msgstr ""
+"Moving en, it es now time a configurar el/la Instancia. Depending en el/la "
+"Instancia Configuration que es chosen, campos será change. Este puede "
+"incluir cloud-specific campos (i.e. Datastore para VMware o Network). There "
+"será also be opciones like setting un initial usuario account. Some de "
+"estos campos son opcional y será represented as such."
+
+#: ../../provisioning/instances/creating_instances.rst:16
+msgid ""
+"Configuration options provided in this screen are very powerful. An "
+"example is MySQL where a Master/Slave or Master/Master layout can be "
+"selected. These configurations will automatically deploy two MySQL VMs or"
+" containers and link them together to provide replication. These types of"
+" configurations exist for a wide range of Instance types and are "
+"optimized for high performance and scale. It is even possible to "
+"provision entire sharded MongoDB clusters."
+msgstr ""
+"Configuration opciones provided en este screen son very powerful. Un "
+"ejemplo es MySQL donde un Master/Slave o Master/Master layout puede ser "
+"seleccionado. Estos configuraciones será automáticamente deploy two MySQL "
+"VMs o containers y link them together a proporcionar replication. Estos "
+"tipos de configuraciones exist para un wide range de Instancia tipos y son "
+"optimized para high performance y scale. It es even possible a provision "
+"entire sharded MongoDB clústeres."
+
+#: ../../provisioning/instances/creating_instances.rst:18
+msgid ""
+"One last step before the Instance can be provisioned is the Automation "
+"step. This wizard step may or may not appear depending on the "
+"capabilities of the Instance type or previous configurations in the "
+"account. It is here one can easily select a post-provisioning workflow to"
+" run (see more on Tasks and Workflows elsewhere in |morpheus| "
+"documentation), assign a load balancer, or even configure the backup job "
+"that gets created."
+msgstr ""
+"One last step antes de el/la Instancia puede ser provisioned es el/la "
+"Automation step. Este wizard step puede o puede no appear depending en "
+"el/la capabilities de el/la Instancia tipo o previous configuraciones en "
+"el/la account. It es here one puede easily seleccionar un "
+"post-aprovisionamiento flujo de trabajo a ejecutar (ver más en Tareas y "
+"Flujos de trabajo elsewhere en |morpheus| documentación), assign un cargar "
+"balancer, o even configurar el/la backup job que gets creado."
+
+#: ../../provisioning/instances/creating_instances.rst:20
+msgid ""
+"Now that the steps are completed for provisioning the selected Instance "
+"type, simply review your selections and complete. The Instance will "
+"automatically show up in the Instances list and its provisioning state "
+"will be represented. Depending on what was provisioned this step can "
+"range from seconds to minutes (typically a container configuration will "
+"be rather quick if the Instance type has previously been provisioned "
+"before)."
+msgstr ""
+"Now que el/la steps son completed para aprovisionamiento el/la seleccionado "
+"Instancia tipo, simply review your selections y complete. El/La Instancia "
+"será automáticamente mostrar up en el/la Instancias lista y its "
+"aprovisionamiento state será represented. Depending en qué fue provisioned "
+"este step puede range desde seconds a minutes (typically un container "
+"configuración será rather quick si el/la Instancia tipo tiene previamente "
+"been provisioned antes de)."
+
+#: ../../provisioning/instances/creating_instances.rst:23
+msgid "Converting Discovered Resources to Managed Instances"
+msgstr "Converting Discovered Resources to Managed Instancias"
+
+#: ../../provisioning/instances/creating_instances.rst:25
+msgid ""
+"When creating new cloud integrations (or updating existing ones), users "
+"may opt for |morpheus| to onboard any existing resources that currently "
+"reside in the Cloud. For example, these may be virtual machines that "
+"exist on vCenter hosts prior to integration with |morpheus|, EC2 "
+"instances pre-existing on an Amazon AWS account, or virtual machines that"
+" are running on a KVM host. With the Add/Edit Cloud modal open, mark "
+"INVENTORY EXISTING INSTANCES for |morpheus| to automatically onboard "
+"these resources. Not only will |morpheus| inventory these instances at "
+"the time the cloud is integrated (or updated), it will also continue to "
+"poll the target cloud every five minutes (by default) for newly added or "
+"removed servers. Users can see these discovered servers by looking in "
+"|InfCom|. Depending on the type of resource, it may appear on the Virtual"
+" Machines tab, the Containers tab, or another tab. Additionally, we can "
+"see a list of discovered servers on Cloud detail pages (|InfClo| > "
+"Selected Cloud). Just click on the tabs for VMs, Containers or Hosts tab."
+" Discovered resources will be indicated as such whereas containers which "
+"are associated with a managed Instance will be marked as a \"Managed\"."
+msgstr ""
+"Cuando creating nuevo cloud integraciones (o updating existente ones), "
+"usuarios puede opt para |morpheus| a onboard cualquier existente recursos "
+"que actualmente reside en el/la Cloud. Por ejemplo, estos puede be virtual "
+"machines que exist en vCenter hosts prior a integraciones con |morpheus|, "
+"EC2 instancias pre-existente en un Amazon AWS account, o virtual machines "
+"que son running en un KVM host. Con el/la Agregar/Editar Cloud modal abrir, "
+"mark INVENTORY EXISTING INSTANCES para |morpheus| a automáticamente onboard "
+"estos recursos. No solo será |morpheus| inventory estos instancias en el/la "
+"time el/la cloud es integrated (o actualizado), it será also continue a "
+"poll el/la target cloud every five minutes (de forma predeterminada) para "
+"newly added o removed servidores. Usuarios puede ver estos discovered "
+"servidores por looking en |InfCom|. Depending en el/la tipo de recursos, it "
+"puede appear en el/la Virtual Machines pestaña, el/la Containers pestaña, o "
+"another pestaña. Adicionalmente, we puede ver un lista de discovered "
+"servidores en Cloud detalle páginas (|InfClo| > Selected Cloud). Just haga "
+"clic en el/la pestañas para VMs, Containers o Hosts pestaña. Discovered "
+"recursos será indicated as such whereas containers cual son associated con "
+"un managed Instancia será marked as un \"Managed\"."
+
+#: ../../provisioning/instances/creating_instances.rst:27
+msgid ""
+"Additionally, |morpheus| allows users to convert discovered resources "
+"into managed Instances. Begin from the server detail page (|InfComVir| > "
+"selected machine) and from the ACTIONS menu select \"Convert to "
+"Managed\". At this point, we must make a number of selections:"
+msgstr ""
+"Adicionalmente, |morpheus| permite un los usuarios convert discovered "
+"recursos en managed Instancias. Begin desde el/la servidor detalle página "
+"(|InfComVir| > seleccionado machine) y desde el/la ACTIONS menu seleccionar "
+"\"Convert a Managed\". En este point, we must make un number de selections:"
+
+#: ../../provisioning/instances/creating_instances.rst:29
+msgid "Assign to the primary Tenant or one of the Subtenants"
+msgstr "Assign to the primary Inquilino or one of the Subtenants"
+
+#: ../../provisioning/instances/creating_instances.rst:30
+msgid ""
+"Select a Group (this dropdown contains a filtered list of Groups which "
+"the associated Cloud is in)"
+msgstr ""
+"Seleccionar un Group (este dropdown contiene un filtered lista de Groups "
+"cual el/la associated Cloud es en)"
+
+#: ../../provisioning/instances/creating_instances.rst:31
+msgid "Username and password for a seeded account"
+msgstr "Username y password para un seeded account"
+
+#: ../../provisioning/instances/creating_instances.rst:32
+msgid ""
+"Opt to install |morpheus| Agent or not (for more on |morpheus| Agent, "
+"click `here "
+"<https://docs.morpheusdata.com/en/latest/getting_started/functionality/agent/morpheus_agent.html>`_)"
+msgstr ""
+"Opt to install |morpheus| Agent or not (para más on |morpheus| Agent, click "
+"`here "
+"<https://docs.morpheusdata.com/en/latest/getting_started/functionality/agent/morpheus_agent.html>`_)"
+
+#: ../../provisioning/instances/creating_instances.rst:33
+msgid ""
+"Select the Instance Type which should be associated with the new Instance"
+" containing this VM"
+msgstr ""
+"Seleccione el Instancia Type which debería ser associated with the new "
+"Instancia containing this VM"
+
+#: ../../provisioning/instances/creating_instances.rst:34
+msgid ""
+"Select a version number for the Instance (such as 20.04 for a basic "
+"Ubuntu Instance)"
+msgstr ""
+"Select a version number for the Instancia (como 20.04 for a basic Ubuntu "
+"Instancia)"
+
+#: ../../provisioning/instances/creating_instances.rst:35
+msgid "Select a Layout, Instance Types often have multiple Layout configurations"
+msgstr "Select a Layout, Instancia Types often have multiple Layout configuraciones"
+
+#: ../../provisioning/instances/creating_instances.rst:36
+msgid "Identify the operating system"
+msgstr "Identify el/la operating system"
+
+#: ../../provisioning/instances/creating_instances.rst:37
+msgid ""
+"Select a Plan (this dropdown contains a filtered list of plans which "
+"correlate to the size of the VM)"
+msgstr ""
+"Seleccionar un Plan (este dropdown contiene un filtered lista de plans cual "
+"correlate a el/la size de el/la VM)"
+
+#: ../../provisioning/instances/creating_instances.rst:39
+msgid ""
+"Finally, click :guilabel:`EXECUTE`. Once this process is completed, the "
+"server will be indicated as \"Managed\" in the servers list. "
+"Additionally, a new Instance will appear on the Instances List page "
+"(|ProIns|). We can now work with it in the same way we can work with any "
+"other Instance, such as by adding it to an App or expanding the Instance "
+"horizontally with added nodes."
+msgstr ""
+"Finally, hacer clic :guilabel:`EXECUTE`. Once este proceso es completed, "
+"el/la servidor será indicated as \"Managed\" en el/la servidores lista. "
+"Adicionalmente, un nuevo Instancia será appear en el/la Instancias Lista "
+"página (|ProIns|). We puede now work con it en el/la mismo way we puede "
+"work con cualquier otro Instancia, como por adding it a un App o expanding "
+"el/la Instancia horizontally con added nodes."
+
+#: ../../provisioning/instances/instance_details.rst:2
+msgid "Instance Details"
+msgstr "Detalles de la instancia"
+
+#: ../../provisioning/instances/instance_details.rst:4
+msgid ""
+"The instance detail page is where you can view and fully manage an "
+"instance. To get to an instance detail page, navigate to |ProIns|, and "
+"click on an Instance. Please note Instance details and actions will "
+"differ between Instance types and user permissions."
+msgstr ""
+"El/La instancia detalle página es donde you puede ver y fully administrar "
+"un instancia. A obtener a un instancia detalle página, navegue un |ProIns|, "
+"y haga clic en un Instancia. Tenga en cuenta Instancia detalles y acciones "
+"será differ entre Instancia tipos y usuario permisos."
+
+#: ../../provisioning/instances/instance_details.rst:6
+msgid ""
+"There are several sections within an Instance page that provide useful "
+"capabilities to the user."
+msgstr ""
+"There are several sections within an Instancia page that provide useful "
+"capabilities to the user."
+
+#: ../../provisioning/instances/instance_details.rst:9
+msgid ".. image:: images/provisioning/instances/instanceDetail.png"
+msgstr ".. image:: images/provisioning/instances/instanceDetail.png"
+
+#: ../../provisioning/instances/instance_details.rst:13
+msgid "Summary"
+msgstr "Resumen"
+
+#: ../../provisioning/instances/instance_details.rst:11
+msgid "Basic information, stats and status information"
+msgstr "Basic información, stats and status información"
+
+#: ../../provisioning/instances/instance_details.rst:13
+msgid ""
+"**Availability:** The Instance availability is the percentage of time the"
+" Instance is up. When stopping Instances, the option is given to mute "
+"monitoring if you wish for intentional down time not to count against the"
+" availability"
+msgstr ""
+"**Availability:** El/La Instancia availability es el/la percentage de time "
+"el/la Instancia es up. Cuando stopping Instancias, el/la opción es given a "
+"mute monitoring si you wish para intentional down time no a count against "
+"el/la availability"
+
+#: ../../provisioning/instances/instance_details.rst:14
+msgid ""
+"**Response Time:** If listed as \"N/A\" (Not Applicable), the Instance "
+"does not have any Checks set against it or does not have any Checks set "
+"against it that report a response time. Agent Checks, for example, do not"
+" report a response time. Some Checks, such as Docker Checks for Docker "
+"containers, require |morpheus| to ping the container which reports a "
+"response time."
+msgstr ""
+"**Response Time:** Si listed as \"N/Un\" (No Applicable), el/la Instancia "
+"hace no tienen cualquier Checks establecer against it o hace no tienen "
+"cualquier Checks establecer against it que report un response time. Agent "
+"Checks, por ejemplo, hacer no report un response time. Some Checks, como "
+"Docker Checks para Docker containers, requerir |morpheus| a ping el/la "
+"container cual reports un response time."
+
+#: ../../provisioning/instances/instance_details.rst:15
+msgid "Deploy"
+msgstr "Desplegar"
+
+#: ../../provisioning/instances/instance_details.rst:16
+msgid ""
+"Track deployment history for instance types that support deployments or "
+"manually kick off a deployment (only visible for Instance Types that "
+"support deployments)"
+msgstr ""
+"Track despliegue history para instancia tipos que soportar despliegues o "
+"manually kick off un despliegue (solo visible para Instancia Tipos que "
+"soportar despliegues)"
+
+#: ../../provisioning/instances/instance_details.rst:17
+msgid "Settings"
+msgstr "Configuración"
+
+#: ../../provisioning/instances/instance_details.rst:18
+msgid ""
+"Some Instance Types support custom configuration settings (for example, "
+"MySQL presents the my.ini)"
+msgstr ""
+"Some Instancia Types support custom configuración configuración (por "
+"ejemplo, MySQL presents the my.ini)"
+
+#: ../../provisioning/instances/instance_details.rst:19
+msgid "Resources"
+msgstr "Resources"
+
+#: ../../provisioning/instances/instance_details.rst:20
+msgid ""
+"VMs, containers, or other resources associated with the Instance are "
+"listed here. Some Instance Types, such as XaaS Instances, will not have "
+"resources and the tab is not displayed"
+msgstr ""
+"VMs, containers, o otro recursos associated con el/la Instancia son listed "
+"here. Some Instancia Tipos, como XaaS Instancias, será no tienen recursos y "
+"el/la pestaña es no displayed"
+
+#: ../../provisioning/instances/instance_details.rst:25
+msgid "Runtime"
+msgstr "Tiempo de ejecución"
+
+#: ../../provisioning/instances/instance_details.rst:22
+msgid ""
+"View the environment variables presented to the Instances or exported to "
+"the Instances via Apps (more on this in the Apps section). Users may also"
+" see Imported environment variables that may be referenced by the running"
+" Instance."
+msgstr ""
+"Ver el/la entorno variables presented a el/la Instancias o exportado a "
+"el/la Instancias via Apps (más en este en el/la Apps sección). Usuarios "
+"puede also ver Imported entorno variables que puede be referenced por el/la "
+"running Instancia."
+
+#: ../../provisioning/instances/instance_details.rst:24
+msgid ""
+"For Instances that support load balancing and auto scaling, configure "
+"auto scaling thresholds and load balancer settings in the Scale "
+"subsection that pertain to a particular Instance."
+msgstr ""
+"Para Instancias que soportar cargar balancing y auto scaling, configurar "
+"auto scaling thresholds y cargar balancer configuración en el/la Scale "
+"subsection que pertain a un particular Instancia."
+
+#: ../../provisioning/instances/instance_details.rst:26
+msgid ""
+"The software subsection will show any tracked software which is Installed"
+" as part of the provisioning process and is being tracked."
+msgstr ""
+"El/La software subsection será mostrar cualquier tracked software cual es "
+"Installed as part de el/la aprovisionamiento proceso y es being tracked."
+
+#: ../../provisioning/instances/instance_details.rst:27
+msgid "Storage"
+msgstr "Storage"
+
+#: ../../provisioning/instances/instance_details.rst:28
+msgid ""
+"See storage information associated with the Instance including the list "
+"of volumes and controllers which are associated with each machine that "
+"makes up the Instance."
+msgstr ""
+"Ver storage información associated con el/la Instancia including el/la "
+"lista de volumes y controllers cual son associated con cada machine que "
+"makes up el/la Instancia."
+
+#: ../../provisioning/instances/instance_details.rst:29
+msgid "Network"
+msgstr "Red"
+
+#: ../../provisioning/instances/instance_details.rst:30
+msgid ""
+"Useful for configuring network interfaces for your VMs or security groups"
+" which allow access to the Instance."
+msgstr ""
+"Useful para configuring network interfaces para your VMs o security groups "
+"cual permitir acceso a el/la Instancia."
+
+#: ../../provisioning/instances/instance_details.rst:31
+msgid "Monitoring"
+msgstr "Monitoreo"
+
+#: ../../provisioning/instances/instance_details.rst:32
+msgid ""
+"Quick summary of the monitoring system and all checks that were "
+"configured to test the state of the Instance. Stats views (memory, cpu, "
+"etc.) can be zoomed out to a 90-day view if desired (in global settings, "
+"ensure your stats retention setting will support this). Logs and guidance"
+" for the individual Instance are also shown in their respective subtabs."
+msgstr ""
+"Quick summary de el/la monitoring system y todos checks que fueron "
+"configurado a test el/la state de el/la Instancia. Stats views (memory, "
+"cpu, etc.) puede ser zoomed out a un 90-day ver si desired (en global "
+"configuración, ensure your stats retention setting será soportar este). "
+"Logs y guidance para el/la individual Instancia son also shown en their "
+"respective subtabs."
+
+#: ../../provisioning/instances/instance_details.rst:33
+msgid "Backups"
+msgstr "Backups"
+
+#: ../../provisioning/instances/instance_details.rst:34
+msgid ""
+"Quick backup dashboard. Useful for viewing historical backups and "
+"snapshots as well as adding new backup jobs."
+msgstr ""
+"Quick backup dashboard. Useful for viewing historical backups and snapshots "
+"así como adding new backup jobs."
+
+#: ../../provisioning/instances/instance_details.rst:35
+msgid "History"
+msgstr "Historial"
+
+#: ../../provisioning/instances/instance_details.rst:36
+msgid ""
+"See historical information related to automation which has been run "
+"against the Instance. This is useful for examining automation which was "
+"run as part of a phase of a Provisioning Workflow. Users can also drill "
+"into the Workflows to examine individual Tasks, including viewing the "
+"output from these Tasks to confirm success or troubleshoot issues."
+msgstr ""
+"Ver historical información related a automation cual ha sido ejecutar "
+"against el/la Instancia. Este es useful para examining automation cual fue "
+"ejecutar as part de un phase de un Aprovisionamiento Flujo de trabajo. "
+"Usuarios puede also drill en el/la Flujos de trabajo a examine individual "
+"Tareas, including viewing el/la output desde estos Tareas a confirm success "
+"o troubleshoot issues."
+
+#: ../../provisioning/instances/instance_details.rst:37
+msgid "Costing"
+msgstr "Costing"
+
+#: ../../provisioning/instances/instance_details.rst:38
+msgid ""
+"Invoices pertaining to the Instance are displayed here. See the Instance "
+"level or host level invoices along with individual line items. In the "
+"History subtab view historical pricing data to monitor trends. In the "
+"Prices subtab view any prices which have been created and used to build a"
+" metered costing profile for the workload."
+msgstr ""
+"Invoices pertaining a el/la Instancia son displayed here. Ver el/la "
+"Instancia level o host level invoices along con individual line elementos. "
+"En el/la History subtab ver historical pricing data a monitor trends. En "
+"el/la Prices subtab ver cualquier prices cual han sido creado y used a "
+"build un metered costing profile para el/la workload."
+
+#: ../../provisioning/instances/instance_details.rst:39
+msgid "Console"
+msgstr "Consola"
+
+#: ../../provisioning/instances/instance_details.rst:40
+msgid ""
+"Access the Instance or container via a client-less Console supporting "
+"SSH, RDP, VNC, or even hypervisor-level remote consoles."
+msgstr ""
+"Access the Instancia or container via a client-less Console supporting SSH, "
+"RDP, VNC, or even hypervisor-level remote consoles."
+
+#: ../../provisioning/instances/instance_details.rst:42
+msgid "Wiki"
+msgstr "Wiki"
+
+#: ../../provisioning/instances/instance_details.rst:42
+msgid ""
+"View the Wiki page for this Instance or edit the existing Wiki page "
+"(which may currently be blank). The content field supports markdown "
+"formatting, see the main Wiki section of |morpheus| documentation for "
+"additional details."
+msgstr ""
+"Ver el/la Wiki página para este Instancia o editar el/la existente Wiki "
+"página (cual puede actualmente be blank). El/La content campo soporta "
+"markdown formatting, ver el/la main Wiki sección de |morpheus| "
+"documentación para adicional detalles."
+
+#: ../../provisioning/instances/managing_instances.rst:2
+msgid "Managing Instances"
+msgstr "Administrar instancias"
+
+#: ../../provisioning/instances/managing_instances.rst:4
+msgid ""
+"Instance actions allow you to perform numerous management tasks on "
+"instances. The actions available depend on the instance type, hypervisor,"
+" roles permissions, and instance state."
+msgstr ""
+"Instancia acciones permitir you a perform numerous management tareas en "
+"instancias. El/La acciones disponible depend en el/la instancia tipo, "
+"hypervisor, roles permisos, y instancia state."
+
+#: ../../provisioning/instances/managing_instances.rst:6
+msgid "Edit"
+msgstr "Editar"
+
+#: ../../provisioning/instances/managing_instances.rst:7
+msgid ""
+"Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner"
+" for the Instance."
+msgstr ""
+"Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner "
+"for the Instancia."
+
+#: ../../provisioning/instances/managing_instances.rst:9
+msgid "Delete"
+msgstr "Eliminar"
+
+#: ../../provisioning/instances/managing_instances.rst:9
+msgid "Deletes the Instance."
+msgstr "Deletes the Instancia."
+
+#: ../../provisioning/instances/managing_instances.rst:11
+msgid ""
+"Deleting an Instance will delete the actual VM's or Containers and cannot"
+" be undone, unless a Delayed Removal policy has been applied prior to the"
+" Deletion. To delete Instances without deleting associated VM's, delete "
+"the Instances VM record(s) from the Infrastructure section with \"Remove "
+"Infrastructure\" deselected and select \"Remove Associated Instances\" in"
+" the VM delete modal options. This will delete the records in |morpheus| "
+"but leave the infrastructure in place."
+msgstr ""
+"Deleting un Instancia será eliminar el/la actual VM's o Containers y cannot "
+"be undone, unless un Delayed Removal policy ha sido applied prior a el/la "
+"Deletion. A eliminar Instancias without deleting associated VM's, eliminar "
+"el/la Instancias VM record(s) desde el/la Infraestructura sección con "
+"\"Eliminar Infraestructura\" deselected y seleccionar \"Eliminar Associated "
+"Instancias\" en el/la VM eliminar modal opciones. Este será eliminar el/la "
+"records en |morpheus| pero leave el/la infraestructura en place."
+
+#: ../../provisioning/instances/managing_instances.rst:13
+msgid ""
+"You can change the owner of an instance easily by selecting the edit "
+"button and entering a new owner in the corresponding field."
+msgstr ""
+"You puede change el/la owner de un instancia easily por selecting el/la "
+"editar botón y entering un nuevo owner en el/la corresponding campo."
+
+#: ../../provisioning/instances/managing_instances.rst:16
+msgid "Actions"
+msgstr "Acciones"
+
+#: ../../provisioning/instances/managing_instances.rst:18
+msgid "Available options in the Actions dropdown can include:"
+msgstr "Available opciones en el/la Acciones dropdown puede incluir:"
+
+#: ../../provisioning/instances/managing_instances.rst:20
+msgid "Suspend"
+msgstr "Suspend"
+
+#: ../../provisioning/instances/managing_instances.rst:21
+msgid "Puts the VM in a suspended state without shutting down the OS."
+msgstr "Puts el/la VM en un suspended state without shutting down el/la OS."
+
+#: ../../provisioning/instances/managing_instances.rst:22
+msgid "Stop/Start/Restart Service"
+msgstr "Stop/Start/Restart Service"
+
+#: ../../provisioning/instances/managing_instances.rst:23
+msgid "Stops, Starts or Restarts the service associated with the Instance Type."
+msgstr "Stops, Starts or Restarts the service associated with the Instancia Type."
+
+#: ../../provisioning/instances/managing_instances.rst:24
+msgid "Stop/Start/Restart Server"
+msgstr "Stop/Start/Restart Servidor"
+
+#: ../../provisioning/instances/managing_instances.rst:25
+msgid "Stops, Starts or Restarts the Virtual Machine."
+msgstr "Stops, Starts o Restarts el/la Virtual Machine."
+
+#: ../../provisioning/instances/managing_instances.rst:26
+msgid "Import as Image"
+msgstr "Import as Imagen"
+
+#: ../../provisioning/instances/managing_instances.rst:27
+msgid ""
+"Clones and exports VM in its current state to target Storage provider and"
+" adds Virtual Image Record with metadata matching the source Instance's "
+"configuration."
+msgstr ""
+"Clones y exports VM en its current state a target Storage provider y adds "
+"Virtual Imagen Record con metadata matching el/la source Instancia's "
+"configuración."
+
+#: ../../provisioning/instances/managing_instances.rst:28
+msgid "Clone to Image"
+msgstr "Clone a Imagen"
+
+#: ../../provisioning/instances/managing_instances.rst:29
+msgid ""
+"Clones and converts VM in its current state to image in the source Cloud "
+"and adds Virtual Image Record with metadata matching the source "
+"Instance's configuration."
+msgstr ""
+"Clones y converts VM en its current state a imagen en el/la source Cloud y "
+"adds Virtual Imagen Record con metadata matching el/la source Instancia's "
+"configuración."
+
+#: ../../provisioning/instances/managing_instances.rst:30
+msgid "Lock/Unlock Instance"
+msgstr "Lock/Unlock Instancia"
+
+#: ../../provisioning/instances/managing_instances.rst:31
+msgid "A locked instance cannot be deleted until it is unlocked."
+msgstr "A locked instancia cannot be eliminado until it is unlocked."
+
+#: ../../provisioning/instances/managing_instances.rst:32
+msgid "Reconfigure"
+msgstr "Reconfigure"
+
+#: ../../provisioning/instances/managing_instances.rst:33
+msgid ""
+"The Reconfigure action allows service plan, disk, cpu, ram, networks and "
+"storage controller changes. Available options depend on the instance type"
+" and service plan configuration. Some resize actions require an instance "
+"restart."
+msgstr ""
+"El/La Reconfigure acción permite service plan, disk, cpu, ram, networks y "
+"storage controller changes. Available opciones depend en el/la instancia "
+"tipo y service plan configuración. Some resize acciones requerir un "
+"instancia restart."
+
+#: ../../provisioning/instances/managing_instances.rst:34
+msgid "Clone"
+msgstr "Clone"
+
+#: ../../provisioning/instances/managing_instances.rst:35
+msgid "Creates a new Instance from the Instance at its current state."
+msgstr "Creates a new Instancia from the Instancia at its current state."
+
+#: ../../provisioning/instances/managing_instances.rst:36
+msgid "Backup"
+msgstr "Backup"
+
+#: ../../provisioning/instances/managing_instances.rst:37
+msgid ""
+"Immediately executes a backup of the Instance. Only available for "
+"Instances with backups enabled."
+msgstr ""
+"Immediately executes a backup of the Instancia. Only disponible for "
+"Instancias with backups habilitado."
+
+#: ../../provisioning/instances/managing_instances.rst:38
+msgid "Run Workflow"
+msgstr "Run Flujo de trabajo"
+
+#: ../../provisioning/instances/managing_instances.rst:39
+msgid ""
+"Presents workflow options and then immediately runs selected Workflow on "
+"the Instance. Workflows can be created in the |LibAut| section."
+msgstr ""
+"Presents flujo de trabajo options and then immediately runs seleccionado "
+"Flujo de trabajo on the Instancia. Flujos de trabajo puede ser creado in "
+"the |LibAut| section."
+
+#: ../../provisioning/instances/managing_instances.rst:40
+msgid "Run Script"
+msgstr "Ejecutar Script"
+
+#: ../../provisioning/instances/managing_instances.rst:41
+msgid ""
+"Presents Script options and immediately executes selected Script on the "
+"Instance. Scripts can be created in the |Lib| section."
+msgstr ""
+"Presents Script options and immediately executes seleccionado Script on the "
+"Instancia. Scripts puede ser creado in the |Lib| section."
+
+#: ../../provisioning/instances/managing_instances.rst:42
+msgid "Apply Template"
+msgstr "Apply Plantilla"
+
+#: ../../provisioning/instances/managing_instances.rst:43
+msgid ""
+"Presents Template options and immediately applies selected Template to "
+"the Instance. Templates can be created in the |Lib| section."
+msgstr ""
+"Presents Template options and immediately applies seleccionado Template to "
+"the Instancia. Templates puede ser creado in the |Lib| section."
+
+#: ../../provisioning/instances/managing_instances.rst:44
+msgid "Add Node"
+msgstr "Agregar Node"
+
+#: ../../provisioning/instances/managing_instances.rst:45
+msgid ""
+"Adds an additional node to the configuration. Additional options and "
+"configurations are required in the add node wizard depending on instance "
+"configuration and type."
+msgstr ""
+"Adds un adicional node a el/la configuración. Additional opciones y "
+"configuraciones son necesarios en el/la agregar node wizard depending en "
+"instancia configuración y tipo."
+
+#: ../../provisioning/instances/managing_instances.rst:46
+msgid "Eject Disk"
+msgstr "Eject Disk"
+
+#: ../../provisioning/instances/managing_instances.rst:47
+msgid "Ejects attached disk/iso."
+msgstr "Ejects attached disk/iso."
+
+#: ../../provisioning/instances/managing_instances.rst:48
+msgid "Add Slave"
+msgstr "Agregar Slave"
+
+#: ../../provisioning/instances/managing_instances.rst:49
+msgid "Adds a database slave in the Instance."
+msgstr "Adds a database slave in the Instancia."
+
+#: ../../provisioning/instances/managing_instances.rst:50
+msgid "Change Master"
+msgstr "Change Master"
+
+#: ../../provisioning/instances/managing_instances.rst:51
+msgid "Changes the database Master node in an Instance."
+msgstr "Changes el/la database Master node en un Instancia."
+
+#: ../../provisioning/instances/managing_instances.rst:54
+msgid "Clone to Template (VMware)"
+msgstr "Clone a Plantilla (VMware)"
+
+#: ../../provisioning/instances/managing_instances.rst:53
+msgid ""
+"Creates a new VMware Template from the Instance with corresponding "
+"|morpheus| Virtual Image record."
+msgstr ""
+"Creates a new VMware Template from the Instancia with corresponding "
+"|morpheus| Virtual Image record."
+
+#: ../../provisioning/instances/managing_instances.rst:56
+msgid ""
+"Scrolling down in the Actions dropdown may be necessary to see all "
+"options."
+msgstr ""
+"Scrolling down en el/la Acciones dropdown puede be necessary a ver todos "
+"opciones."
+
+#: ../../provisioning/instances/managing_instances.rst:59
+msgid "Performing Instance Actions"
+msgstr "Performing Instancia Actions"
+
+#: ../../provisioning/instances/managing_instances.rst:61
+msgid "Select the Provisioning link in the navigation bar."
+msgstr "Seleccione el Aprovisionamiento link in the navigation bar."
+
+#: ../../provisioning/instances/managing_instances.rst:62
+msgid ""
+"Click the Instance from the list of instances you wish to perform an "
+"action on."
+msgstr ""
+"Haga clic en el Instancia desde el/la lista de instancias you wish a "
+"perform un acción en."
+
+#: ../../provisioning/instances/managing_instances.rst:63
+msgid "Click the Actions drop down button and select an Action."
+msgstr "Haga clic en el Actions drop down button and select an Action."
+
+#: ../../provisioning/instances/managing_instances.rst:68
+msgid "Notes"
+msgstr "Notes"
+
+#: ../../provisioning/instances/managing_instances.rst:70
+msgid ""
+"Every Instance has a Wiki section for adding useful information about the"
+" Instance. Wiki can be added by selecting the Wiki tab button on the "
+"bottom of Instance Detail pages. Instances with associated VMware VM's "
+"will bi-directionally sync |morpheus| Instance Wiki content and VMware VM"
+" Notes. See the :ref:`wiki` Section for more details."
+msgstr ""
+"Every Instancia tiene un Wiki sección para adding useful información acerca "
+"de el/la Instancia. Wiki puede ser added por selecting el/la Wiki pestaña "
+"botón en el/la bottom de Instancia Detalle páginas. Instancias con "
+"associated VMware VM's será bi-directionally sync |morpheus| Instancia Wiki "
+"content y VMware VM Notes. Ver el/la :ref:`wiki` Sección para más detalles."
+
+#: ../../provisioning/instances/managing_instances.rst:72
+msgid "Markdown Syntax is supported in Wikis."
+msgstr "Markdown Syntax is soportado in Wikis."
+

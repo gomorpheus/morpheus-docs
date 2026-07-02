@@ -1,0 +1,451 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:2
+msgid "BMC Remedy/Helix Approval Integration"
+msgstr "BMC Remedy/Helix Approval Integration"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:7
+msgid "ITSM integrations are an Enterprise-only feature."
+msgstr "ITSM integrations son un Enterprise-solo característica."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:10
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:12
+msgid ""
+"|morpheus| integrates with BMC Remedy (and BMC Helix ITSM) to enable "
+"external approval workflows through Remedy Change Requests. When configured,"
+" provisioning and lifecycle actions in |morpheus| can require approval "
+"through Remedy's change management process before execution proceeds."
+msgstr ""
+"|morpheus| integrates con BMC Remedy (y BMC Helix ITSM) to enable externo "
+"approval workflows a través de Remedy Change Requests. Cuando está "
+"configurado, provisioning y lifecycle acciones in |morpheus| puede require "
+"approval a través de Remedy's cambio management proceso antes de execution "
+"proceeds."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:14
+msgid ""
+"This integration creates Change Requests in Remedy when approval is required"
+" and polls Remedy for status updates, automatically progressing or denying "
+"the |morpheus| request based on the Change Request outcome."
+msgstr ""
+"Esta integración creates Change Requests in Remedy cuando approval es "
+"requerido y polls Remedy para estado updates, automáticamente progressing o "
+"denying el |morpheus| solicitud basado en el Change Request outcome."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:17
+msgid "Prerequisites"
+msgstr "Prerrequisitos"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:19
+msgid ""
+"The following must be in place before configuring the Remedy approval "
+"integration:"
+msgstr ""
+"The following debe be in place antes de configuring el Remedy approval "
+"integration:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:21
+msgid ""
+"A running BMC Remedy/Helix ITSM instance accessible from the |morpheus| "
+"appliance over HTTPS"
+msgstr ""
+"A running BMC Remedy/Helix ITSM instance accessible desde el |morpheus| "
+"appliance over HTTPS"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:22
+msgid "A service account in Remedy with the following role permissions:"
+msgstr "A servicio cuenta in Remedy con el following role permisos:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:25
+msgid "BMC Form"
+msgstr "BMC Form"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:25
+msgid "Required BMC Role"
+msgstr "Required BMC Role"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:27
+msgid "CHG:Infrastructure Change"
+msgstr "CHG:Infrastructure Change"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:27
+msgid "Infrastructure Change Master"
+msgstr "Infrastructure Change Master"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:29
+msgid "CTM:People"
+msgstr "CTM:People"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:29
+msgid "Contact People Admin"
+msgstr "Contact People Admin"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:31
+msgid "COM:Company"
+msgstr "COM:Company"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:31
+msgid "Atrium Foundation Admin"
+msgstr "Atrium Foundation Admin"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:33
+msgid "User"
+msgstr "User"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:33
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:35
+msgid "User Administrator"
+msgstr "User Administrator"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:35
+msgid "Group"
+msgstr "Group"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:38
+msgid ""
+"Network connectivity from |morpheus| to the Remedy REST API endpoint "
+"(typically port 8443)"
+msgstr ""
+"Network connectivity desde |morpheus| to el Remedy REST API endpoint "
+"(típicamente puerto 8443)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:41
+msgid "Configuring the Integration"
+msgstr "Configurar la integración"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:43
+msgid "Navigate to |AdmInt|"
+msgstr "Navegue un |AdmInt|"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:44
+msgid "Click :guilabel:`+ NEW INTEGRATION`"
+msgstr "Click :guilabel:`+ NEW INTEGRATION`"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:45
+msgid "Select **Remedy** from the Type dropdown"
+msgstr "Select **Remedy** desde el Type desplegable"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:46
+msgid "Complete the configuration fields:"
+msgstr "Complete el configuración campos:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:49
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:49
+msgid "A friendly name for this integration in |morpheus|."
+msgstr "A friendly nombre para esta integración in |morpheus|."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:52
+msgid "ENABLED"
+msgstr "ENABLED"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:52
+msgid "Leave checked to activate the integration."
+msgstr "Leave checked to activate la integración."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:55
+msgid "HOST"
+msgstr "HOST"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:55
+msgid ""
+"The URL of the Remedy/Helix server (e.g., "
+"``https://remedy.example.com:8443``)"
+msgstr ""
+"The URL of el Remedy/Helix server (e.g., "
+"``https://remedy.example.com:8443``)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:58
+msgid "USER"
+msgstr "USER"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:58
+msgid "The service account username with the required Remedy roles."
+msgstr "The servicio cuenta nombre de usuario con el requerido Remedy roles."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:61
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:61
+msgid "The password for the service account."
+msgstr "The contraseña para el servicio cuenta."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:63
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:65
+msgid ""
+"|morpheus| validates connectivity and syncs available configuration data "
+"from Remedy. This process may take a few minutes."
+msgstr ""
+"|morpheus| validates connectivity y syncs disponible configuración datos "
+"desde Remedy. This proceso puede take un few minutes."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:68
+msgid "Creating Approval Policies with Remedy"
+msgstr "Crear Approval Policies with Remedy"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:70
+msgid ""
+"Once the Remedy integration is configured, it becomes available as an "
+"approval target in provisioning and lifecycle policies:"
+msgstr ""
+"Once el Remedy integration es configurado, it becomes disponible as un "
+"approval destino in provisioning y lifecycle policies:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:72
+msgid "Navigate to the Policies tab for the target Group or Cloud:"
+msgstr "Navegue un el Policies pestaña para el destino Group o Cloud:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:74
+msgid "Infrastructure > Groups > (Group) > Policies"
+msgstr "Infrastructure > Groups > (Group) > Policies"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:75
+msgid "Infrastructure > Clouds > (Cloud) > Policies"
+msgstr "Infrastructure > Clouds > (Cloud) > Policies"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:77
+msgid "Click :guilabel:`+ ADD POLICY`"
+msgstr "Click :guilabel:`+ AGREGAR POLICY`"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:78
+msgid ""
+"Select **Provision Approval** (or **Reconfigure Approval**, **Delete "
+"Approval**, etc.) from the Type dropdown"
+msgstr ""
+"Select **Provision Approval** (o **Reconfigure Approval**, **Delete "
+"Approval**, etc.) desde el Type desplegable"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:79
+msgid ""
+"In the configuration section, select the Remedy integration from the "
+"integration dropdown"
+msgstr ""
+"En el configuración sección, select el Remedy integration desde la "
+"integración desplegable"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:80
+msgid "Configure any additional policy settings (Accounts, etc.)"
+msgstr "Configure cualquier adicional policy configuración (Accounts, etc.)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:81
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`GUARDAR`"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:83
+msgid ""
+"Remedy approval policies may take a moment to save as the policy "
+"configuration is validated against the Remedy integration."
+msgstr ""
+"Remedy approval policies puede take un moment to save as el policy "
+"configuración es validated against el Remedy integration."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:86
+msgid "How Approvals Work"
+msgstr "How Approvals Work"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:88
+msgid "When a user triggers an action covered by a Remedy approval policy:"
+msgstr ""
+"When un usuario triggers un acción covered by un Remedy approval policy:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:90
+msgid ""
+"|morpheus| creates a **Change Request** in Remedy (CHG:Infrastructure Change"
+" form)"
+msgstr ""
+"|morpheus| creates un **Change Request** in Remedy (CHG:Infrastructure "
+"Change formulario)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:91
+msgid "The provisioning request enters a **Pending** state in |morpheus|"
+msgstr "The provisioning solicitud enters un **Pending** state in |morpheus|"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:92
+msgid ""
+"|morpheus| polls the Remedy Change Request for status updates (every 5 "
+"minutes)"
+msgstr ""
+"|morpheus| polls el Remedy Change Request para estado updates (cada 5 "
+"minutes)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:93
+msgid ""
+"When the Change Request is approved in Remedy, |morpheus| automatically "
+"proceeds with the action"
+msgstr ""
+"When el Change Request es approved in Remedy, |morpheus| automáticamente "
+"proceeds con el acción"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:94
+msgid ""
+"When the Change Request is rejected or cancelled in Remedy, |morpheus| "
+"denies the request"
+msgstr ""
+"When el Change Request es rejected o cancelled in Remedy, |morpheus| denies "
+"el solicitud"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:97
+msgid "Change Request Details"
+msgstr "Change Request Details"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:99
+msgid "The Change Request created in Remedy includes:"
+msgstr "The Change Request creado in Remedy includes:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:101
+msgid ""
+"**Summary** — Description of the requested action (provisioning details, "
+"instance type, etc.)"
+msgstr ""
+"**Summary** — Description of el requested acción (provisioning detalles, "
+"instance tipo, etc.)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:102
+msgid ""
+"**Requester** — Mapped from the |morpheus| user who initiated the request"
+msgstr ""
+"**Requester** — Mapped desde el |morpheus| user quien initiated el solicitud"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:103
+msgid "**Company** — Mapped from the Tenant or configured default"
+msgstr "**Company** — Mapped desde el Tenant o configurado predeterminado"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:104
+msgid "**Category/Type** — Configured based on the policy settings"
+msgstr "**Category/Type** — Configured basado en el policy configuración"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:107
+msgid "Managing Approval Requests"
+msgstr "Administrar Approval Requests"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:109
+msgid "Approval requests generated by Remedy policies appear in |OpApp|:"
+msgstr "Approval requests generated by Remedy policies appear in |OpApp|:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:111
+msgid "**Status** — Displays the current Remedy Change Request state"
+msgstr "**Status** — Displays el actual Remedy Change Request state"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:112
+msgid "**External Name** — The Remedy Change Request ID"
+msgstr "**External Name** — The Remedy Change Request ID"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:113
+msgid ""
+"**Type** — Shows \"Remedy\" to distinguish from internal or ServiceNow "
+"approvals"
+msgstr ""
+"**Type** — Shows \"Remedy\" to distinguish desde interno o ServiceNow "
+"approvals"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:115
+msgid "From |morpheus|, administrators can:"
+msgstr "From |morpheus|, administrators puede:"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:117
+msgid "View the current status of pending Remedy approvals"
+msgstr "View el actual estado of pendiente Remedy approvals"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:118
+msgid ""
+"Cancel a pending request (which also updates the Remedy Change Request)"
+msgstr ""
+"Cancel un pendiente solicitud (cual también updates el Remedy Change "
+"Request)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:120
+msgid ""
+"Approval status changes in Remedy may take up to 5 minutes to reflect in "
+"|morpheus| due to the polling interval."
+msgstr ""
+"Approval estado cambios in Remedy puede take up to 5 minutes to reflect in "
+"|morpheus| due to el polling interval."
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:123
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:125
+msgid "**Integration fails to save or connect**"
+msgstr "**Integration fails to save o connect**"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:127
+msgid ""
+"Verify the Host URL is correct and accessible from the |morpheus| appliance"
+msgstr ""
+"Verify el Host URL es correct y accessible desde el |morpheus| appliance"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:128
+msgid ""
+"Ensure the service account has the required roles listed in Prerequisites"
+msgstr ""
+"Ensure el servicio cuenta tiene el requerido roles listed in Prerequisites"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:129
+msgid "Check that the Remedy REST API is enabled on the target server"
+msgstr "Check que el Remedy REST API es habilitado on el destino server"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:131
+msgid "**Change Requests not being created**"
+msgstr "**Change Requests no being creado**"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:133
+msgid "Confirm the integration is Enabled"
+msgstr "Confirm la integración es Enabled"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:134
+msgid "Verify the approval policy is applied to the correct Group or Cloud"
+msgstr "Verify el approval policy es applied to el correct Group o Cloud"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:135
+msgid "Check |morpheus| application logs for Remedy API errors"
+msgstr "Check |morpheus| application logs para Remedy API errores"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:137
+msgid "**Approvals not syncing back**"
+msgstr "**Approvals no syncing back**"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:139
+msgid "Confirm the polling service is active (check Administration > Health)"
+msgstr "Confirm el polling servicio es activo (check Administration > Health)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:140
+msgid ""
+"Verify the Change Request was approved/rejected in Remedy (not just "
+"commented on)"
+msgstr ""
+"Verify el Change Request fue approved/rejected in Remedy (no solo commented "
+"on)"
+
+#: ../../integration_guides/ITSM/bmc_remedy_approvals.rst:141
+msgid "Check that the Remedy service account still has valid credentials"
+msgstr "Check que el Remedy servicio cuenta aún tiene válido credentials"

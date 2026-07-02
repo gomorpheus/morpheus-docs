@@ -1,0 +1,528 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/integrations/workers.rst:2
+msgid "Distributed Workers |advanced-plus|"
+msgstr "Distributed Workers |advanced-plus|"
+
+#: ../../administration/integrations/workers.rst:7
+msgid ""
+"Distributed Workers are an Advanced+ feature, available in HPE Morpheus "
+"Enterprise and Advanced tiers."
+msgstr ""
+"Distributed Workers son un Advanced+ característica, disponible en HPE "
+"Morpheus Enterprise y Advanced tiers."
+
+#: ../../administration/integrations/workers.rst:10
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../administration/integrations/workers.rst:12
+msgid ""
+"The |morpheus| distributed worker is installed using the same package as the"
+" VDI Gateway worker. Organizations which have already deployed VDI "
+"Gateway(s) can use the same worker for both purposes if desired, you'd "
+"simply need to update configuration in ``/etc/morpheus/morpheus-worker.rb`` "
+"and run a reconfigure. When creating a distributed worker or VDI Gateway "
+"object in |morpheus| UI, an API key is generated. Adding one or both types "
+"of API keys to the worker configuration file determines if the worker is "
+"running in VDI gateway and/or distributed worker mode."
+msgstr ""
+"El |morpheus| distributed worker es installed usando el mismo paquete as el "
+"VDI Gateway worker. Organizations que tienen already deployed VDI Gateway(s)"
+" puede usar el mismo worker para both purposes si desired, usted'd simply "
+"need a update configuración en ``/etc/morpheus/morpheus-worker.rb`` y run a "
+"reconfigure. Cuando creando a distributed worker o VDI Gateway object en "
+"|morpheus| UI, un API key es generated. Adding uno o both tipos de API keys "
+"a el worker configuración file determina si el worker es running en VDI "
+"gateway y/o distributed worker mode."
+
+#: ../../administration/integrations/workers.rst:14
+msgid "**Supported Cloud Types**"
+msgstr "**Soportado Cloud Tipos**"
+
+#: ../../administration/integrations/workers.rst:16
+msgid "The following Cloud/Zone types support Distributed Workers"
+msgstr "Lo siguiente Nube/Zone tipos soporte Distributed Workers"
+
+#: ../../administration/integrations/workers.rst:18
+msgid "vmware"
+msgstr "vmware"
+
+#: ../../administration/integrations/workers.rst:19
+msgid "vmwareCloudAws"
+msgstr "vmwareNubeAws"
+
+#: ../../administration/integrations/workers.rst:20
+msgid "nutanix"
+msgstr "nutanix"
+
+#: ../../administration/integrations/workers.rst:21
+msgid "openstack"
+msgstr "openstack"
+
+#: ../../administration/integrations/workers.rst:22
+msgid "xenserver"
+msgstr "xenserver"
+
+#: ../../administration/integrations/workers.rst:23
+msgid "macstadium"
+msgstr "macstadium"
+
+#: ../../administration/integrations/workers.rst:26
+msgid "Installation"
+msgstr "Instalación"
+
+#: ../../administration/integrations/workers.rst:28
+msgid ""
+"A distributed worker VM is installed and configured similarly to a "
+"|morpheus| appliance via ``rpm`` or ``deb`` package."
+msgstr ""
+"Un distributed worker VM es installed y configurado similarly a a |morpheus|"
+" appliance a través de ``rpm`` o ``deb`` paquete."
+
+#: ../../administration/integrations/workers.rst:30
+msgid ""
+"Package URLs for the distributed worker are available at "
+"https://app.morpheushub.com in the downloads section."
+msgstr ""
+"Paquete URLs para el distributed worker están disponibles en "
+"https://app.morpheushub.com en el downloads sección."
+
+#: ../../administration/integrations/workers.rst:32
+msgid ""
+"The distributed worker requires that the |morpheus| appliance has a trusted "
+"SSL certificate.  This can be accomplished by configuring a public trusted "
+"SSL certificate on the |morpheus| appliance (or load balancer) or ensure the"
+" certificate and chain are added to the Java Keystore of the Distributed "
+"Worker to trust the certificate."
+msgstr ""
+"El distributed worker requiere ese el |morpheus| appliance tiene a trusted "
+"SSL certificate. Este puede ser accomplished por configuring a público "
+"trusted SSL certificate en el |morpheus| appliance (o load balancer) o "
+"asegurar el certificate y chain son agregado a el Java Keystore de el "
+"Distributed Worker a trust el certificate."
+
+#: ../../administration/integrations/workers.rst:34
+msgid "**Requirements**"
+msgstr "**Requirements**"
+
+#: ../../administration/integrations/workers.rst:36
+msgid "**Supported Operating Systems**"
+msgstr "**Soportado Operating Systems**"
+
+#: ../../administration/integrations/workers.rst:40
+msgid "OS"
+msgstr "OS"
+
+#: ../../administration/integrations/workers.rst:41
+msgid "Version(s)"
+msgstr "Version(s)"
+
+#: ../../administration/integrations/workers.rst:42
+msgid "Amazon Linux"
+msgstr "Amazon Linux"
+
+#: ../../administration/integrations/workers.rst:43
+msgid "2"
+msgstr "2"
+
+#: ../../administration/integrations/workers.rst:44
+msgid "CentOS"
+msgstr "CentOS"
+
+#: ../../administration/integrations/workers.rst:45
+#: ../../administration/integrations/workers.rst:49
+msgid "7.x, 8.x"
+msgstr "7.x, 8.x"
+
+#: ../../administration/integrations/workers.rst:46
+msgid "Debian"
+msgstr "Debian"
+
+#: ../../administration/integrations/workers.rst:47
+msgid "10, 11"
+msgstr "10, 11"
+
+#: ../../administration/integrations/workers.rst:48
+msgid "RHEL"
+msgstr "RHEL"
+
+#: ../../administration/integrations/workers.rst:50
+msgid "SUSE SLES"
+msgstr "SUSE SLES"
+
+#: ../../administration/integrations/workers.rst:51
+msgid "12"
+msgstr "12"
+
+#: ../../administration/integrations/workers.rst:52
+msgid "Ubuntu"
+msgstr "Ubuntu"
+
+#: ../../administration/integrations/workers.rst:53
+msgid "18.04, 20.04, 22.04"
+msgstr "18.04, 20.04, 22.04"
+
+#: ../../administration/integrations/workers.rst:55
+msgid "**Memory:** 4 GB RAM minimum recommended"
+msgstr "**Memory:** 4 GB RAM minimum recomendado"
+
+#: ../../administration/integrations/workers.rst:56
+msgid ""
+"**Storage:** 10 GB storage minimum recommended. Storage is required for "
+"installation packages and log files"
+msgstr ""
+"**Storage:** 10 GB storage minimum recomendado. Storage es obligatorio para "
+"instalación paquetes y log files"
+
+#: ../../administration/integrations/workers.rst:57
+msgid "**CPU:** 4-core minimum recommended"
+msgstr "**CPU:** 4-core minimum recomendado"
+
+#: ../../administration/integrations/workers.rst:58
+msgid ""
+"Network connectivity **to** the |morpheus| appliance over TCP 443 (HTTPS)"
+msgstr "Red connectivity **to** el |morpheus| appliance over TCP 443 (HTTPS)"
+
+#: ../../administration/integrations/workers.rst:59
+msgid ""
+"Superuser privileges via the ``sudo`` command for the user installing the "
+"|morpheus| worker package"
+msgstr ""
+"Superusuario privileges a través de el ``sudo`` command para el usuario "
+"installing el |morpheus| worker paquete"
+
+#: ../../administration/integrations/workers.rst:60
+msgid ""
+"Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may be"
+" required for RPM distros"
+msgstr ""
+"Acceso a base ``yum`` o ``apt`` repos. Acceso a Optional RPM repos puede be "
+"requerido para RPM distros"
+
+#: ../../administration/integrations/workers.rst:62
+msgid ""
+"In order to proxy VMware vCenter Cloud traffic through a Distributed Worker,"
+" you must have a static public DNS entry for the internal IP address of the "
+"vCenter appliance. If this is not done, everything may appear to be working "
+"properly when configuring the Cloud but problems will arise at provision "
+"time. This is not a |morpheus| limitation but is a limitation of the VMware "
+"SDK client which does not natively support proxies."
+msgstr ""
+"Para poder proxy VMware vCenter Nube traffic a través de a Distributed "
+"Worker, usted debe tienen a static público DNS entry para el internal IP "
+"address de el vCenter appliance. Si este es no done, everything puede appear"
+" a be working properly cuando configuring el Nube pero problems va a arise "
+"en provision time. Este es no a |morpheus| limitation pero es a limitation "
+"de el VMware SDK client que hace no natively soporte proxies."
+
+#: ../../administration/integrations/workers.rst:64
+msgid ""
+"Download the appropriate package from |morpheus| Hub based on your target "
+"Linux distribution and version for installation in a directory of your "
+"choosing. The package can be removed after successful installation."
+msgstr ""
+"Download el appropriate paquete desde |morpheus| Hub basado en su target "
+"Linux distribution y version para instalación en a directory de su choosing."
+" El paquete puede ser removed después de successful instalación."
+
+#: ../../administration/integrations/workers.rst:66
+msgid ""
+"wget https://downloads.morpheusdata.com/path/to/morpheus-"
+"worker-$version.distro"
+msgstr ""
+"wget https://downloads.morpheusdata.com/path/a/morpheus-"
+"worker-$version.distro"
+
+#: ../../administration/integrations/workers.rst:70
+msgid ""
+"Validate the package checksum as compared with the values indicated on Hub. "
+"For example:"
+msgstr ""
+"Validate el paquete checksum as compared con el valores indicated en Hub. "
+"Para ejemplo:"
+
+#: ../../administration/integrations/workers.rst:72
+msgid "sha256sum morpheus-worker-$version.distro"
+msgstr "sha256sum morpheus-worker-$version.distro"
+
+#: ../../administration/integrations/workers.rst:76
+msgid ""
+"Next, install the package using your selected distribution's package "
+"installation command and your preferred options. Example, for RPM:"
+msgstr ""
+"Next, install el paquete usando su seleccionado distribution's paquete "
+"instalación command y su preferred opciones. Ejemplo, para RPM:"
+
+#: ../../administration/integrations/workers.rst:78
+msgid "**rpm**:"
+msgstr "**rpm**:"
+
+#: ../../administration/integrations/workers.rst:80
+msgid ""
+"$ sudo rpm -ihv morpheus-worker-$version.$distro\n"
+"\n"
+"Preparing...                          ################################# [100%]\n"
+"Updating / installing...\n"
+"   1:morpheus-worker-x.x.x-1.$distro    ################################# [100%]\n"
+"Thank you for installing Morpheus Worker!\n"
+"Configure and start the Worker by running the following command:\n"
+"\n"
+"sudo morpheus-worker-ctl reconfigure"
+msgstr ""
+"$ sudo rpm -ihv morpheus-worker-$version.$distro\n"
+"\n"
+"Preparing... ################################# [100%]\n"
+"Updating / installing...\n"
+" 1:morpheus-worker-x.x.x-1.$distro ################################# [100%]\n"
+"Thank usted para installing Morpheus Worker!\n"
+"Configure y start el Worker por running lo siguiente command:\n"
+"\n"
+"sudo morpheus-worker-ctl reconfigure"
+
+#: ../../administration/integrations/workers.rst:93
+msgid "Configuration"
+msgstr "Configuración"
+
+#: ../../administration/integrations/workers.rst:95
+msgid ""
+"With the package installed, we need to add a new distributed worker in "
+"|morpheus| UI. Distributed workers are added in |AdmIntDis|. To create one, "
+"populate the following fields:"
+msgstr ""
+"Con el paquete installed, we need a agregar a nuevo distributed worker en "
+"|morpheus| UI. Distributed workers son agregado en |AdmIntDis|. Un crear "
+"uno, populate lo siguiente campos:"
+
+#: ../../administration/integrations/workers.rst:97
+msgid "**NAME:** A name for the distributed worker in |morpheus|"
+msgstr "**NAME:** Un nombre para el distributed worker en |morpheus|"
+
+#: ../../administration/integrations/workers.rst:98
+msgid "**DESCRIPTION:** An optional description for the distributed worker"
+msgstr "**DESCRIPTION:** Un optional description para el distributed worker"
+
+#: ../../administration/integrations/workers.rst:99
+msgid ""
+"**PROXY HOSTS:** A comma-delimited list of global proxy hosts, any endpoint "
+"listed here will be proxied through the |morpheus| worker. For VMware, you "
+"must list the host addresses for any vCenter you wish to proxy through the "
+"worker. Xen hosts and PowerVC hosts must be listed here as well. Other Cloud"
+" types which are supported by the |morpheus| worker need only have the "
+"worker configured on the Edit Cloud modal (|InfClo| > Selected Cloud > Edit "
+"button)"
+msgstr ""
+"**PROXY HOSTS:** Un comma-delimited lista de global proxy hosts, cualquier "
+"endpoint listed here será proxied a través de el |morpheus| worker. Para "
+"VMware, usted debe lista el host addresses para cualquier vCenter usted wish"
+" a proxy a través de el worker. Xen hosts y PowerVC hosts debe ser listed "
+"here as well. Otro Nube tipos que son soportado por el |morpheus| worker "
+"need solo tienen el worker configurado en el Editar Nube modal (|InfClo| > "
+"Selected Nube > Editar botón)"
+
+#: ../../administration/integrations/workers.rst:100
+msgid "**ENABLED:** When marked, the selected worker is available for use"
+msgstr ""
+"**ENABLED:** Cuando marked, el seleccionado worker está disponible para usar"
+
+#: ../../administration/integrations/workers.rst:102
+msgid ""
+"The proxy host URL entered in the Worker configuration must match the URL "
+"set in the Cloud configuration. That is, if you use the URL in the Cloud "
+"configuration you must also use it in the Worker configuration. The reverse "
+"is also true, if an IP address is used in the Cloud configuration, that "
+"should be used in the Worker configuration as well. There are also "
+"configuration considerations that must be made for proxying vCenter Cloud "
+"traffic through a Distributed Worker. See the \"IMPORTANT\" box in the "
+"\"Requirements\" section for additional details."
+msgstr ""
+"El proxy host URL entered en el Worker configuración debe match el URL "
+"establecido en el Nube configuración. Ese es, si usted usar el URL en el "
+"Nube configuración usted debe también usar ello en el Worker configuración. "
+"El reverse es también true, si un IP address es usado en el Nube "
+"configuración, ese debería ser usado en el Worker configuración as well. "
+"There son también configuración considerations ese debe ser made para "
+"proxying vCenter Nube traffic a través de a Distributed Worker. Consulte la "
+"\"IMPORTANT\" box en el \"Requirements\" sección para adicional detalles."
+
+#: ../../administration/integrations/workers.rst:104
+msgid ""
+"After clicking :guilabel:`SAVE CHANGES`, an API key is generated and "
+"displayed. Make note of this as it will be needed in a later configuration "
+"step."
+msgstr ""
+"Después de clicking :guilabel:`SAVE CHANGES`, un API key es generated y "
+"mostrado. Make note de este as ello será needed en a later configuración "
+"step."
+
+#: ../../administration/integrations/workers.rst:107
+msgid ".. image:: images/worker/createWorker.png"
+msgstr ".. image:: images/worker/createWorker.png"
+
+#: ../../administration/integrations/workers.rst:108
+msgid ""
+"With the worker configured in |morpheus|, the next step is to update "
+"supported Cloud integrations which should be proxied through the worker. "
+"Select the desired Cloud from the Clouds List Page (|InfClo|) and click "
+":guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the Connection "
+"Options section, choose a configured worker from the WORKER dropdown menu. "
+"Click :guilabel:`SAVE CHANGES`."
+msgstr ""
+"Con el worker configurado en |morpheus|, el next step es a update soportado "
+"Nube integraciones que debería ser proxied a través de el worker. Seleccione"
+" el desired Nube desde el Nubes Lista Página (|InfClo|) y click "
+":guilabel:`EDIT` desde el chosen Nube's Detalle Página. Dentro de el "
+"Connection Opciones sección, choose a configurado worker desde el WORKER "
+"menú desplegable menu. Click :guilabel:`SAVE CHANGES`."
+
+msgid ".. image:: images/worker/addWorkerToCloud.png"
+msgstr ".. image:: images/worker/addWorkerToCloud.png"
+
+#: ../../administration/integrations/workers.rst:113
+msgid ""
+"With the API key in hand and configuration complete in |morpheus| UI, head "
+"back to the worker box. Configure the gateway by editing "
+"``/etc/morpheus/morpheus-worker.rb`` and updating the following:"
+msgstr ""
+"Con el API key en hand y configuración complete en |morpheus| UI, head back "
+"a el worker box. Configure el gateway por editing ``/etc/morpheus/morpheus-"
+"worker.rb`` y updating lo siguiente:"
+
+#: ../../administration/integrations/workers.rst:115
+msgid ""
+"worker_url = 'https://gateway_worker_url' # This is the worker URL the Morpheus appliance can resolve and reach on 443\n"
+"worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of Morpheus appliance which the worker can reach on port 443\n"
+"worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from Morpheus Appliance VDI Pools > VDI Gateways configuration. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value\n"
+"worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from Administration > Integrations > Distributed Workers configuration\n"
+"worker['proxy_address'] = 'http://proxy.address:1234' # For environments in which the worker must go through a proxy to communicate with the Morpheus appliance or other resources, configure the address\n"
+"worker['no_proxy'] = 'vcenter.example.com,192.168.xx.xx' # A comma-separated list of resources that should be accessed directly and not through the proxy"
+msgstr ""
+"worker_url = 'https://gateway_worker_url' # Este es el worker URL el Morpheus appliance puede resolve y reach en 443\n"
+"worker['appliance_url'] = 'https://morpheus_appliance_url' # El resolvable URL o IP address de Morpheus appliance que el worker puede reach en port 443\n"
+"worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated desde Morpheus Appliance VDI Pools > VDI Gateways configuración. Para worker solo mode, a valor es still requerido pero puede ser cualquier valor, incluyendo el 'API KEY FOR THIS GATEWAY' predeterminado template valor\n"
+"worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key desde Administración > Integraciones > Distributed Workers configuración\n"
+"worker['proxy_address'] = 'http://proxy.address:1234' # Para entornos en que el worker debe go a través de a proxy a communicate con el Morpheus appliance o otro recursos, configure el address\n"
+"worker['no_proxy'] = 'vcenter.ejemplo.com,192.168.xx.xx' # Un comma-separated lista de recursos ese debería ser accessed directly y no a través de el proxy"
+
+#: ../../administration/integrations/workers.rst:124
+msgid ""
+"By default the worker_url uses the machine's hostname, ie "
+"``https://your_machine_name``. The default ``worker_url`` value can be "
+"changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the "
+"value of ``worker_url``. Additional appliance configuration options are "
+"available below."
+msgstr ""
+"Por predeterminado el worker_url uses el machine's hostname, ie "
+"``https://your_machine_name``. El predeterminado ``worker_url`` valor puede "
+"ser changed por editing ``/etc/morpheus/morpheus-worker.rb`` y changing el "
+"valor de ``worker_url``. Additional appliance configuración opciones están "
+"disponibles below."
+
+#: ../../administration/integrations/workers.rst:126
+msgid ""
+"After all configuration options have been set, run ``sudo morpheus-worker-"
+"ctl reconfigure`` to install and configure the worker, nginx and guacd "
+"services:"
+msgstr ""
+"Después de todos configuración opciones han sido establecido, run ``sudo "
+"morpheus-worker-ctl reconfigure`` a install y configure el worker, nginx y "
+"guacd services:"
+
+#: ../../administration/integrations/workers.rst:128
+msgid "sudo morpheus-worker-ctl reconfigure"
+msgstr "sudo morpheus-worker-ctl reconfigure"
+
+#: ../../administration/integrations/workers.rst:132
+msgid ""
+"The worker reconfigure process will install and configure the worker, nginx "
+"and guacd services and dependencies."
+msgstr ""
+"El worker reconfigure process va a install y configure el worker, nginx y "
+"guacd services y dependencies."
+
+#: ../../administration/integrations/workers.rst:134
+msgid ""
+"If the reconfigure process fails due to a missing dependency, add the repo "
+"that the missing dependency can be found in and run"
+msgstr ""
+"Si el reconfigure process fails due a a missing dependency, agregar el repo "
+"ese el missing dependency se puede encontrar en y run"
+
+#: ../../administration/integrations/workers.rst:136
+msgid ""
+"Configuration options can be updated after the initial reconfigure by "
+"editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-"
+"worker-ctl reconfigure`` again."
+msgstr ""
+"Configuración opciones puede ser updated después de el initial reconfigure "
+"por editing ``/etc/morpheus/morpheus-worker.rb`` y running ``sudo morpheus-"
+"worker-ctl reconfigure`` again."
+
+#: ../../administration/integrations/workers.rst:138
+msgid ""
+"Once the installation is complete the morpheus worker service will "
+"automatically start and open a web socket with the specified |morpheus| "
+"appliance. To monitor the startup process, run ``morpheus-worker-ctl tail`` "
+"to tail the logs of the worker, nginx and guacd services. Individual "
+"services can be tailed by specifying the service, for example ``morpheus-"
+"worker-ctl tail worker``"
+msgstr ""
+"Una vez que el instalación es complete el morpheus worker service va a "
+"automáticamente start y open a web socket con el specified |morpheus| "
+"appliance. Un monitor el startup process, run ``morpheus-worker-ctl tail`` a"
+" tail el logs de el worker, nginx y guacd services. Individual services "
+"puede ser tailed por specifying el service, por ejemplo ``morpheus-worker-"
+"ctl tail worker``"
+
+#: ../../administration/integrations/workers.rst:141
+msgid "Highly-Available (HA) Deployment"
+msgstr "Highly-Disponible (HA) Deployment"
+
+#: ../../administration/integrations/workers.rst:143
+msgid ""
+"If desired, multiple distributed worker nodes may be associated to the same "
+"|morpheus| appliance to eliminate a single point of failure should a "
+"distributed worker node go down. Configure each distributed worker node "
+"using the same worker key (process described in the prior section) and add "
+"redundancy using as many additional workers nodes as needed. When multiple "
+"worker nodes are using the same worker key, proxy calls will always go "
+"through the primary worker node when possible. The primary node is the first"
+" worker node configured using a specific worker key. When necessary, "
+"automatic failover will take place and another active worker node will be "
+"used. While proxy calls will always try to use the primary node when "
+"available, |morpheus| Agent communications can be balanced equally across "
+"worker nodes by placing a VIP in front of your distributed workers."
+msgstr ""
+"Si desired, múltiples distributed worker nodes puede be associated a el "
+"mismo |morpheus| appliance a eliminate a single point de failure debería a "
+"distributed worker node go down. Configure cada distributed worker node "
+"usando el mismo worker key (process described en el prior sección) y agregar"
+" redundancy usando as muchos adicional workers nodes as needed. Cuando "
+"múltiples worker nodes son usando el mismo worker key, proxy calls va a "
+"always go a través de el primary worker node cuando possible. El primary "
+"node es el first worker node configurado usando a específico worker key. "
+"Cuando necessary, automatic failover va a take place y another active worker"
+" node será usado. While proxy calls va a always try a usar el primary node "
+"cuando disponible, |morpheus| Agent communications puede ser balanced "
+"equally a través de worker nodes por placing a VIP en front de su "
+"distributed workers."

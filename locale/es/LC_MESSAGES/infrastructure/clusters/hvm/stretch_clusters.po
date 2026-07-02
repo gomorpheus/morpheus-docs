@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:2
+msgid "Stretch Clusters & Witness Nodes"
+msgstr "Stretch Clústeres & Witness Nodes"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:7
+msgid ""
+"A stretch cluster extends an HVM 1.3 cluster across two physical sites with "
+"a witness node in a third location for tie-breaking arbitration. This "
+"provides site-level fault tolerance while maintaining a single cluster "
+"management domain."
+msgstr ""
+"Un stretch cluster extends un HVM 1.3 cluster a través de two physical sites"
+" con un witness nodo en un third location para tie-breaking arbitration. "
+"Este proporciona site-nivel fault tolerance mientras maintaining un single "
+"cluster gestión domain."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:10
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:16
+msgid "Requirement"
+msgstr "Requirement"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:17
+msgid "Details"
+msgstr "Details"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:18
+msgid "Hosts"
+msgstr "Hosts"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:19
+msgid "Minimum 6 hosts (3 per site)"
+msgstr "Mínimo 6 hosts (3 per site)"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:20
+msgid "Witness"
+msgstr "Witness"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:21
+msgid "1 Distributed Worker deployed in a 3rd site"
+msgstr "1 Distributed Worker desplegado en un 3rd site"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:22
+msgid "Network"
+msgstr "Red"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:23
+msgid ""
+"All hosts must be able to communicate with the witness, the |morpheus| "
+"manager, and each other"
+msgstr ""
+"Todos hosts debe be able a communicate con el witness, el |morpheus| "
+"manager, y cada otro"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:26
+msgid "Witness Deployment"
+msgstr "Witness Deployment"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:28
+msgid ""
+"The witness node is a |morpheus| Distributed Worker deployed at a third "
+"site, independent from both cluster sites."
+msgstr ""
+"El witness nodo es un |morpheus| Distributed Worker desplegado en un third "
+"site, independent desde ambos cluster sites."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:31
+msgid "Creating the Worker Configuration"
+msgstr "Creating el Worker Configuración"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:33
+msgid "Navigate to ``Administration > Integrations > Distributed Workers``"
+msgstr "Navegue un ``Administration > Integrations > Distributed Workers``"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:34
+msgid "Create a new worker configuration"
+msgstr "Crear un nuevo worker configuración"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:35
+msgid "Save the API key provided"
+msgstr "Guardar el API clave proporcionado"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:38
+msgid "Installing the Worker"
+msgstr "Installing el Worker"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:40
+msgid "On the witness host or VM:"
+msgstr "En el witness host o VM:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:42
+msgid "Download the ``morpheus-worker`` package"
+msgstr "Descargar el ``morpheus-worker`` package"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:43
+msgid "Install with ``dpkg``:"
+msgstr "Instalar con ``dpkg``:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:45
+msgid "dpkg -i morpheus-worker_<version>.deb"
+msgstr "dpkg -i morpheus-worker_<versión>.deb"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:49
+msgid "Edit ``/etc/morpheus/morpheus-worker.rb``:"
+msgstr "Editar ``/etc/morpheus/morpheus-worker.rb``:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:51
+msgid ""
+"worker_url = '<URL from worker config>'\n"
+"worker['appliance_url'] = '<Morpheus appliance URL>'\n"
+"worker['apikey'] = '<any value>'\n"
+"worker['worker_key'] = '<API key from worker config>'"
+msgstr ""
+"worker_url = '<URL desde worker config>'\n"
+"worker['appliance_url'] = '<Morpheus appliance URL>'\n"
+"worker['apikey'] = '<cualquier valor>'\n"
+"worker['worker_key'] = '<API clave desde worker config>'"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:58
+msgid "Reconfigure the worker:"
+msgstr "Reconfigure el worker:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:60
+msgid "morpheus-worker-ctl reconfigure"
+msgstr "morpheus-worker-ctl reconfigure"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:64
+msgid "Verify the worker is running:"
+msgstr "Verificar el worker está en ejecución:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:66
+msgid "morpheus-worker-ctl tail worker"
+msgstr "morpheus-worker-ctl tail worker"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:71
+msgid "Cluster Deployment for Stretch"
+msgstr "Cluster Deployment para Stretch"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:73
+msgid ""
+"Do NOT choose a witness during initial cluster creation. The witness must be"
+" added after the cluster is deployed."
+msgstr ""
+"Do NOT elegir un witness durante initial cluster creation. El witness debe "
+"be agregado después de el cluster es desplegado."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:75
+msgid ""
+"Create the HVM cluster normally following the standard process (see "
+":doc:`building_clusters`)"
+msgstr ""
+"Crear el HVM cluster normally siguiente el estándar proceso (ver "
+":doc:`building_clusters`)"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:76
+msgid ""
+"After deployment completes, navigate to ``Infrastructure > Clusters > "
+"[Cluster]``"
+msgstr ""
+"Después de despliegue completa, navigate a ``Infrastructure > Clusters > "
+"[Cluster]``"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:77
+msgid "Click :guilabel:`Edit`"
+msgstr "Click :guilabel:`Editar`"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:78
+msgid "Select the Witness Worker from the dropdown"
+msgstr "Seleccionar el Witness Worker desde el dropdown"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:79
+msgid "Click :guilabel:`Save Changes`"
+msgstr "Click :guilabel:`Guardar cambios`"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:82
+msgid "Adding HPE Clustered Datastore (Shared LUN)"
+msgstr "Adding HPE Clustered Almacén de datos (Shared LUN)"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:84
+msgid ""
+"Adding a Shared LUN to the cluster activates the quorum service. Quorum is "
+"not needed until shared storage is present."
+msgstr ""
+"Adding un Shared LUN al cluster activates el quorum servicio. Quorum es no "
+"necesario hasta shared storage es present."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:86
+msgid ""
+"Monitor host and worker logs for quorum status messages after adding shared "
+"storage."
+msgstr ""
+"Monitor host y worker registros para quorum estado mensajes después de "
+"adding shared storage."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:89
+msgid "Site Group Configuration"
+msgstr "Site Group Configuration"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:91
+msgid ""
+"Site groups define which hosts belong to each physical site for arbitration "
+"decisions."
+msgstr ""
+"Site groups define cual hosts belong a cada physical site para arbitration "
+"decisions."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:93
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Resources > Host / VM "
+"Groups``"
+msgstr ""
+"Navegue un ``Infrastructure > Clusters > [Cluster] > Resources > Host / VM "
+"Groups``"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:94
+msgid "Click :guilabel:`Add`"
+msgstr "Click :guilabel:`Agregar`"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:95
+msgid "Create a Site Group with:"
+msgstr "Crear un Site Grupo con:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:97
+msgid "**Site Name**: A name for the site (e.g., \"Site-A\")"
+msgstr "**Site Name**: Un nombre para el site (e.g., \"Site-Un\")"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:98
+msgid "**Servers**: Select the hosts at this site"
+msgstr "**Servidores**: Seleccionar el hosts en este site"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:100
+msgid "Repeat for the second site"
+msgstr "Repeat para el second site"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:102
+msgid ""
+"Do NOT use ``siteWitness`` as a site group name. This name is reserved for "
+"automatic witness assignment. The witness is automatically assigned to the "
+"``siteWitness`` group when the first site group is created."
+msgstr ""
+"Do NOT usar ``siteWitness`` como un site group nombre. Este nombre es "
+"reserved para automático witness assignment. El witness es automáticamente "
+"asignado un el ``siteWitness`` group cuando el primero site group es creado."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:105
+msgid "Arbitration Behavior"
+msgstr "Arbitration Behavior"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:107
+msgid ""
+"When a site failure occurs, the following arbitration logic is executed:"
+msgstr ""
+"Cuando un site fallo occurs, lo siguiente arbitration logic es executed:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:110
+msgid "Failure Detection"
+msgstr "Fallo Detection"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:112
+msgid ""
+"A site is considered failed when ALL non-witness nodes at that site become "
+"unreachable (60-second timeout)."
+msgstr ""
+"Un site es considered falló cuando ALL non-witness nodos en ese site become "
+"unreachable (60-second timeout)."
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:115
+msgid "Decision Logic"
+msgstr "Decision Logic"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:117
+msgid "The surviving site checks: can I reach the witness?"
+msgstr "El surviving site checks: puede I reach el witness?"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:119
+msgid ""
+"**No** → The surviving site self-fences (cannot confirm it is the correct "
+"winner)"
+msgstr ""
+"**No** → El surviving site self-fences (cannot confirmar it es el correct "
+"winner)"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:120
+msgid "**Yes** → Proceed with arbitration"
+msgstr "**Yes** → Proceed con arbitration"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:122
+msgid ""
+"The alphabetically first site name always wins (deterministic tie-breaking)"
+msgstr ""
+"El alphabetically primero site nombre siempre wins (deterministic tie-"
+"breaking)"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:125
+msgid "Winner Actions"
+msgstr "Winner Acciones"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:127
+msgid "The winning site:"
+msgstr "El winning site:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:129
+msgid "Adjusts Corosync votes to maintain quorum with remaining nodes"
+msgstr "Adjusts Corosync votes a maintain quorum con remaining nodos"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:130
+msgid "Issues ``fence_ack`` for nodes at the failed site"
+msgstr "Issues ``fence_ack`` para nodos en el falló site"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:133
+msgid "Loser Actions"
+msgstr "Loser Acciones"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:135
+msgid "The losing site:"
+msgstr "El losing site:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:137
+msgid "Self-fences (stops DLM and Corosync)"
+msgstr "Self-fences (detiene DLM y Corosync)"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:140
+msgid "Recovery"
+msgstr "Recovery"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:142
+msgid "After the failed site is restored:"
+msgstr "Después de el falló site es restored:"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:144
+msgid "3 consecutive healthy ping cycles (~3 minutes) must pass"
+msgstr "3 consecutive saludable ping cycles (~3 minutes) debe pass"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:145
+msgid "Corosync votes are restored to normal values"
+msgstr "Corosync votes son restored a normal valores"
+
+#: ../../infrastructure/clusters/hvm/stretch_clusters.rst:146
+msgid "Fenced nodes are rebooted and rejoin the cluster"
+msgstr "Fenced nodos son rebooted y rejoin el cluster"

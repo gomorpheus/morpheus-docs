@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/diagnose.md:4
+msgid ""
+"**Before creating any file**, check whether the user is working in a sub-"
+"folder workspace. If so, preserve that workspace's `subproject:` "
+"frontmatter and write the spec under the workspace's `.hero/` root; "
+"otherwise write under the project `.hero/` root."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:6
+msgid ""
+"**Stamp the active domain in frontmatter.** New bug specs MUST emit a "
+"`domain:` field reflecting the workspace's active domain — run `hero "
+"domain` (or read the `domain` key from `.hero/hero.json`; empty means "
+"engineering) and write that value. This keeps bug specs under the correct"
+" DSKG namespace partition."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:8
+msgid "Route this bug investigation to the `debug-investigator` agent."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:10
+msgid ""
+"Pass the bug report and any spec path or tracker ID to the agent. The "
+"`debug-investigator` handles the complete diagnosis workflow: pre-flight "
+"status check, investigation, root cause classification, fix planning, "
+"spec writing, and tracker posting."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:12
+msgid ""
+"**Before starting work**, emit `hero next ask` to capture the bug report "
+"the user pasted in. This preserves session intent across compaction — see"
+" the `next-handoff-emit` skill for the full pattern."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:16
+msgid ""
+"**The agent must write all findings into the spec file on disk.** The "
+"spec file is the deliverable, not chat output."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:18
+msgid ""
+"**Always include a `## Kickoff` section** in the fix spec. Follow the "
+"`kickoff-prompt` skill — the kickoff is a paste-ready cold-start prompt "
+"for picking the fix work back up in a fresh session. Skipping it excludes"
+" the spec from `hero queue` and triggers a `hero check` advisory."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:20
+msgid ""
+"**After writing the fix spec, run `hero index --if-stale -q`** so it "
+"surfaces in `hero search` / `hero list` / MCP tools without anyone "
+"needing to run a manual reindex."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:22
+msgid ""
+"**Before proposing a fix direction**, call `hero_anchor` to check project"
+" tripwires. If any proposed fix would reintroduce a forbidden dependency,"
+" pattern, or tool, eliminate that direction and find an alternative "
+"within project constraints."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:24
+msgid ""
+"If the `debug-investigator` returns with `Needs more research? → Yes`, "
+"that is an acceptable outcome — report it to the user and move on."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:28
+msgid "Batch Mode: Diagnosing Multiple Bugs"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:30
+msgid ""
+"When asked to diagnose multiple bugs (e.g. \"diagnose 10 bugs\", \"work "
+"through the imported bugs\"):"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:32
+msgid ""
+"**Always select from locally imported specs.** Run `hero search --list "
+"--type bug` to see what's available. Apply filters like `--status "
+"planning` or `--since YYYY-MM-DD` to narrow the list. **Never query the "
+"tracker to pick work items.**"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:33
+msgid ""
+"**Filter out closed/completed specs.** Only select specs with an open "
+"status (`planning`, `draft`, `active`). Skip anything marked `completed` "
+"or `superseded`."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:34
+msgid ""
+"**Present the selection to the user** before starting work. Show the list"
+" of bugs you plan to diagnose and get confirmation."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:35
+msgid ""
+"**Default: one at a time.** Run each bug through the `debug-investigator`"
+" agent sequentially. Complete the full diagnosis for one bug — including "
+"writing the spec AND posting to the tracker (Step 8 of the agent) — "
+"before moving to the next."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:37
+msgid "Parallel batch mode"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:39
+msgid ""
+"If the user explicitly asks to run diagnoses in parallel (e.g. \"run each"
+" in an agent\", \"diagnose all of them at once\"), launch multiple Task "
+"agents. **Each agent must follow these rules:**"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:41
+msgid ""
+"**Each agent runs as the `debug-investigator`**. Tell each agent: \"You "
+"are the `debug-investigator`. Load the `debugging-investigation` skill. "
+"Diagnose the bug described in the spec at `<spec-path>`. Write all "
+"findings into the spec file on disk. After writing the spec, post results"
+" to the tracker (see step 6).\""
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:42
+msgid ""
+"**Include the bug context** in each agent's prompt — the spec path, the "
+"tracker ID, and a brief description of the bug. The agent will read the "
+"full spec and any tracker issues."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:43
+msgid ""
+"**Each agent MUST write findings to its spec file on disk.** The spec "
+"file is the deliverable. If the agent only reports findings in its "
+"response without updating the spec file, the diagnosis is incomplete."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:44
+msgid ""
+"**File safety: never delete, move, or rename spec files.** Each agent "
+"works only on its assigned spec. Do not run `hero spec complete`, do not "
+"move files between directories. The only file operation allowed is "
+"editing the assigned spec in-place."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:45
+msgid ""
+"**No cross-agent file access.** Each agent reads and writes only its own "
+"assigned spec."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:46
+msgid ""
+"**Each agent MUST post to the tracker.** If the spec has a `tracker_id` "
+"and a tracker is configured, the agent must run:"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:47
+msgid ""
+"`hero sync attach <tracker_id> <spec-path> <tracker_id>-diagnosis.md` to "
+"upload the diagnosis"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:48
+msgid ""
+"`hero sync comment <tracker_id> \"<summary>\"` to post a brief summary "
+"(root cause, fix location, severity) If the agent skips this step, the "
+"diagnosis is incomplete even if the spec file was written."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:51
+msgid "After all agents complete"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:53
+msgid "Review the results:"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:54
+msgid ""
+"For each bug, verify the spec file still exists on disk and contains "
+"investigation findings"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:55
+msgid ""
+"For each bug with a `tracker_id`, verify the agent posted to the tracker "
+"(check its output for \"Comment posted\" / \"File attached\" "
+"confirmation). Re-run any that missed the posting step."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:56
+msgid ""
+"Report any agents that failed to write to their spec file or post to "
+"tracker — re-run those individually"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:58
+msgid "Provide a summary table:"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "Bug"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "Spec"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "Root Cause"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "Severity"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "Status"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "PROJ-123"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "`.hero/planning/bugs/slug/spec.md`"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "[1-line summary]"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "high"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "diagnosed"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "PROJ-456"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "insufficient info"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "—"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md
+msgid "needs-research"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:67
+msgid "Session Title"
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:69
+msgid ""
+"On the **first interaction**, set a concise session title reflecting the "
+"bug being diagnosed (e.g. \"diagnose: null pointer in cart total\", "
+"\"diagnose: PROJ-456 export timeout\")."
+msgstr ""
+
+#: ../../.opencode/commands/diagnose.md:73
+msgid "Bug report: $ARGUMENTS"
+msgstr ""
+

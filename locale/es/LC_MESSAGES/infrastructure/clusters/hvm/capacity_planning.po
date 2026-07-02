@@ -1,0 +1,630 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:2
+msgid "Capacity Planning"
+msgstr "Capacity Planning"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:4
+msgid ""
+"Proper capacity planning ensures an HVM 1.3 cluster can handle workloads "
+"while maintaining the ability to tolerate host failures and perform "
+"maintenance operations."
+msgstr ""
+"Proper capacidad planning ensures un HVM 1.3 cluster puede handle cargas de "
+"trabajo mientras maintaining el ability a tolerate host failures y perform "
+"mantenimiento operaciones."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:7
+msgid "Memory Math"
+msgstr "Memoria Math"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:9
+msgid "Understanding how memory is allocated in an HVM cluster:"
+msgstr "Understanding cómo memoria es allocated en un HVM cluster:"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:15
+msgid "Component"
+msgstr "Component"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:16
+msgid "Calculation"
+msgstr "Calculation"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:17
+msgid "Total physical memory"
+msgstr "Total physical memoria"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:18
+msgid "Installed RAM on the host"
+msgstr "Installed RAM en el host"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:19
+msgid "System overhead (reserved)"
+msgstr "Sistema overhead (reserved)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:20
+msgid "4 GB per host (reserved for OS, Corosync, DLM, agent, libvirt)"
+msgstr "4 GB per host (reserved para OS, Corosync, DLM, agent, libvirt)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:21
+msgid "Available for VMs"
+msgstr "Disponible para VMs"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:22
+msgid "Total physical memory − 4 GB"
+msgstr "Total physical memoria − 4 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:23
+msgid "Computed max memory"
+msgstr "Computed max memoria"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:24
+msgid "Available memory reported by |morpheus| for VM placement"
+msgstr "Disponible memoria reported por |morpheus| para VM placement"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:26
+msgid ""
+"**Example:** A host with 128 GB RAM has ``128 − 4 = 124 GB`` available for "
+"VMs."
+msgstr ""
+"**Ejemplo:** Un host con 128 GB RAM tiene ``128 − 4 = 124 GB`` disponible "
+"para VMs."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:28
+msgid ""
+"The 4 GB system reservation is set during host provisioning and accounts for"
+" the base operating system, cluster services (Corosync, DLM), the |morpheus|"
+" agent, libvirt overhead, and kernel buffers."
+msgstr ""
+"El 4 GB sistema reservation es establecer durante host provisioning y "
+"accounts para el base sistema operativo, cluster servicios (Corosync, DLM), "
+"el |morpheus| agent, libvirt overhead, y kernel buffers."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:31
+msgid "Memory Utilization Calculation"
+msgstr "Memoria Utilization Calculation"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:33
+msgid "|morpheus| tracks memory at two levels:"
+msgstr "|morpheus| tracks memoria en two niveles:"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:35
+msgid ""
+"**Reserved memory** — Sum of all VM memory allocations on a host (what VMs "
+"*could* use at maximum)"
+msgstr ""
+"**Reserved memory** — Sum de todos VM memoria allocations en un host (qué "
+"VMs *podría* usar en máximo)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:36
+msgid "**Used memory** — Actual memory consumption reported by the host"
+msgstr "**Used memory** — Actual memoria consumption reported por el host"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:38
+msgid ""
+"The capacity system uses ``computedMaxMemory`` (total − reserved system "
+"overhead) as the denominator for utilization calculations."
+msgstr ""
+"El capacidad sistema usa ``computedMaxMemory`` (total − reserved sistema "
+"overhead) como el denominator para utilization calculations."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:41
+msgid "Failover Capacity: N+1 Sizing"
+msgstr "Conmutación por error Capacidad: N+1 Sizing"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:43
+msgid ""
+"N+1 sizing means that if any single host fails, the remaining hosts must "
+"have enough available memory to absorb all VMs from the failed host."
+msgstr ""
+"N+1 sizing means ese si cualquier single host falla, el remaining hosts debe"
+" tienen enough disponible memoria a absorb todos VMs desde el falló host."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:46
+msgid "Formula"
+msgstr "Formula"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:48
+msgid ""
+"Required memory per host = Total VM memory / (N - 1)\n"
+"Available per host must exceed = Largest single host's VM load"
+msgstr ""
+"Requerido memoria per host = Total VM memoria / (N - 1)\n"
+"Disponible per host debe exceed = Largest single host's VM load"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:53
+msgid "Where N is the total number of hosts."
+msgstr "Donde N es el total número de hosts."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:56
+msgid "Sizing Examples"
+msgstr "Sizing Examples"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:62
+msgid "Hosts"
+msgstr "Hosts"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:63
+msgid "RAM Each"
+msgstr "RAM Cada"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:64
+msgid "Available Each"
+msgstr "Disponible Cada"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:65
+msgid "Total Available"
+msgstr "Total Disponible"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:66
+msgid "Usable with N+1"
+msgstr "Usable con N+1"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:67
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:77
+msgid "3"
+msgstr "3"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:68
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:73
+msgid "128 GB"
+msgstr "128 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:69
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:74
+msgid "124 GB"
+msgstr "124 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:70
+msgid "372 GB"
+msgstr "372 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:71
+msgid "248 GB (2 hosts worth)"
+msgstr "248 GB (2 hosts worth)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:72
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:82
+msgid "5"
+msgstr "5"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:75
+msgid "620 GB"
+msgstr "620 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:76
+msgid "496 GB (4 hosts worth)"
+msgstr "496 GB (4 hosts worth)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:78
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:83
+msgid "256 GB"
+msgstr "256 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:79
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:84
+msgid "252 GB"
+msgstr "252 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:80
+msgid "756 GB"
+msgstr "756 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:81
+msgid "504 GB (2 hosts worth)"
+msgstr "504 GB (2 hosts worth)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:85
+msgid "1260 GB"
+msgstr "1260 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:86
+msgid "1008 GB (4 hosts worth)"
+msgstr "1008 GB (4 hosts worth)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:88
+#, python-format
+msgid ""
+"With N+1 sizing, you should never allocate more than ``(N-1)/N`` of total "
+"cluster memory to VMs. For a 3-node cluster, this means keeping 33% of total"
+" capacity free. For a 5-node cluster, 20%."
+msgstr ""
+"Con N+1 sizing, you debería nunca allocate más de ``(N-1)/N`` de total "
+"cluster memoria a VMs. Para un 3-nodo cluster, este means keeping 33% de "
+"total capacidad free. Para un 5-nodo cluster, 20%."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:91
+msgid "Maintenance Capacity"
+msgstr "Maintenance Capacity"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:93
+msgid ""
+"Maintenance mode requires the same capacity headroom as failover — one host "
+"worth of memory must be available across remaining hosts to evacuate VMs "
+"during maintenance."
+msgstr ""
+"Mantenimiento modo requiere el mismo capacidad headroom como conmutación por"
+" error — one host worth de memoria debe be disponible a través de remaining "
+"hosts a evacuate VMs durante mantenimiento."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:99
+msgid "Cluster Size"
+msgstr "Cluster Tamaño"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:100
+msgid "Max Usable Memory (N+1)"
+msgstr "Max Usable Memoria (N+1)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:101
+msgid "Reason"
+msgstr "Reason"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:102
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:198
+msgid "3 hosts"
+msgstr "3 hosts"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:103
+#, python-format
+msgid "66% of total available"
+msgstr "66% de total disponible"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:104
+msgid "1 host's VMs must fit on remaining 2"
+msgstr "1 host's VMs debe fit en remaining 2"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:105
+msgid "4 hosts"
+msgstr "4 hosts"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:106
+#, python-format
+msgid "75% of total available"
+msgstr "75% de total disponible"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:107
+msgid "1 host's VMs must fit on remaining 3"
+msgstr "1 host's VMs debe fit en remaining 3"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:108
+msgid "5 hosts"
+msgstr "5 hosts"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:109
+#, python-format
+msgid "80% of total available"
+msgstr "80% de total disponible"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:110
+msgid "1 host's VMs must fit on remaining 4"
+msgstr "1 host's VMs debe fit en remaining 4"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:112
+#, python-format
+msgid ""
+"|morpheus| enforces a 95% utilization cap on any single host during "
+"maintenance evacuation. Even if the cluster has aggregate capacity, no "
+"individual host will be loaded beyond 95%."
+msgstr ""
+"|morpheus| enforces un 95% utilization cap en cualquier single host durante "
+"mantenimiento evacuation. Incluso si el cluster tiene aggregate capacidad, "
+"no individual host será be loaded beyond 95%."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:115
+msgid "When to Add Hosts"
+msgstr "Cuando a Agregar Hosts"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:117
+msgid "Consider adding hosts to the cluster when:"
+msgstr "Consider adding hosts al cluster cuando:"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:123
+msgid "Trigger"
+msgstr "Trigger"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:124
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:125
+#, python-format
+msgid "Memory utilization > 70% cluster-wide"
+msgstr "Memoria utilization > 70% cluster-wide"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:126
+msgid "Approaching the point where N+1 failover is at risk"
+msgstr "Approaching el punto donde N+1 conmutación por error es en risk"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:127
+msgid "Cannot enter maintenance mode"
+msgstr "Cannot ingresar mantenimiento modo"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:128
+msgid ""
+"Insufficient capacity to evacuate VMs indicates the cluster is too full"
+msgstr ""
+"Insufficient capacidad a evacuate VMs indicates el cluster es too completo"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:129
+#, python-format
+msgid "Single host > 85% utilization"
+msgstr "Single host > 85% utilization"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:130
+msgid "That host's VMs would overload remaining hosts on failure"
+msgstr "Ese host's VMs would overload remaining hosts en fallo"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:131
+msgid "New workload requirements"
+msgstr "Nuevo carga de trabajo requisitos"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:132
+msgid "Planned VM deployments would exceed available capacity"
+msgstr "Planned VM deployments would exceed disponible capacity"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:133
+msgid "Failover testing fails"
+msgstr "Conmutación por error testing falla"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:134
+msgid "Testing shows VMs cannot be redistributed after a simulated failure"
+msgstr ""
+"Testing muestra VMs cannot be redistributed después de un simulated fallo"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:136
+msgid ""
+"Do not wait until the cluster is at capacity to add hosts. Adding hosts "
+"requires network connectivity and provisioning time. Plan ahead based on "
+"growth trends."
+msgstr ""
+"Do no wait hasta el cluster es en capacidad a agregar hosts. Adding hosts "
+"requiere network connectivity y provisioning tiempo. Plan ahead basado en "
+"growth trends."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:139
+msgid "CPU Overcommit Considerations"
+msgstr "CPU Overcommit Considerations"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:141
+msgid "Unlike memory, CPU can be safely overcommitted in most workloads:"
+msgstr ""
+"Unlike memoria, CPU puede be safely overcommitted en más cargas de trabajo:"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:147
+msgid "Ratio"
+msgstr "Ratio"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:148
+msgid "Use Case"
+msgstr "Usar Case"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:149
+msgid "1:1"
+msgstr "1:1"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:150
+msgid "Latency-sensitive workloads, real-time applications"
+msgstr "Latency-sensitive cargas de trabajo, real-tiempo aplicaciones"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:151
+msgid "2:1"
+msgstr "2:1"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:152
+msgid "General purpose workloads, typical enterprise applications"
+msgstr "General purpose cargas de trabajo, typical enterprise aplicaciones"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:153
+msgid "4:1"
+msgstr "4:1"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:154
+msgid "Development/test environments, low-utilization workloads"
+msgstr "Development/probar entornos, bajo-utilization cargas de trabajo"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:155
+msgid "8:1+"
+msgstr "8:1+"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:156
+msgid "Idle or bursty workloads (use with caution)"
+msgstr "Idle o bursty cargas de trabajo (usar con caution)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:158
+msgid "**Key differences from memory:**"
+msgstr "**Key differences from memory:**"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:160
+msgid ""
+"CPU overcommit does not risk data corruption (unlike memory overcommit)"
+msgstr ""
+"CPU overcommit does no risk datos corruption (unlike memoria overcommit)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:161
+msgid ""
+"Over-committed CPUs result in increased scheduling latency, not failures"
+msgstr ""
+"Sobre-committed CPUs resultado en increased scheduling latencia, no failures"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:162
+msgid ""
+"Memory is a hard limit — if a VM's memory is overcommitted and fully "
+"utilized, the host may become unstable"
+msgstr ""
+"Memoria es un hard limit — si un VM's memoria es overcommitted y fully "
+"utilized, el host puede become unstable"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:164
+msgid ""
+"|morpheus| does not overcommit memory by default. VM memory allocations are "
+"treated as reservations. CPU scheduling is managed by the Linux kernel's CFS"
+" scheduler with KVM's virtual CPU mappings."
+msgstr ""
+"|morpheus| does no overcommit memoria por defecto. VM memoria allocations "
+"son treated como reservations. CPU scheduling es administrado por el Linux "
+"kernel's CFS scheduler con KVM's virtual CPU mappings."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:167
+msgid "Storage Capacity Planning"
+msgstr "Storage Capacity Planning"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:169
+msgid "Plan storage capacity considering:"
+msgstr "Plan storage capacidad considering:"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:171
+msgid "**VM disk allocation** — Current storage usage plus growth projections"
+msgstr "**VM disk allocation** — Actual storage usage plus growth projections"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:172
+msgid ""
+"**Heartbeat overhead** — Heartbeat files consume minimal space (~KB per host"
+" per datastore)"
+msgstr ""
+"**Heartbeat overhead** — Heartbeat archivos consume minimal space (~KB per "
+"host per datastore)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:173
+msgid ""
+"**Snapshot space** — VM snapshots can consume significant temporary space"
+msgstr ""
+"**Snapshot space** — VM snapshots puede consume significant temporary space"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:174
+msgid ""
+"**GFS2 journal overhead** — Each host requires a journal entry per datastore"
+" (typically 128 MB per journal)"
+msgstr ""
+"**GFS2 journal overhead** — Cada host requiere un journal entrada per "
+"datastore (típicamente 128 MB per journal)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:176
+msgid ""
+"Recommended free space threshold: **> 20%** on all HPE Clustered Datastores."
+msgstr ""
+"Recommended free space threshold: **> 20%** en todos HPE Clustered Almacenes"
+" de datos."
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:179
+msgid "Capacity Monitoring in |morpheus|"
+msgstr "Capacidad Monitoreo en |morpheus|"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:181
+msgid "Track cluster capacity from the |morpheus| UI:"
+msgstr "Track cluster capacidad desde el |morpheus| UI:"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:183
+msgid ""
+"**Cluster Summary:** ``Infrastructure > Clusters > [Cluster] > Summary`` "
+"shows aggregate memory, CPU, and storage utilization"
+msgstr ""
+"**Clúster Summary:** ``Infrastructure > Clusters > [Cluster] > Summary`` "
+"muestra aggregate memoria, CPU, y storage utilization"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:184
+msgid ""
+"**Host Detail:** Individual host pages show per-host memory and CPU "
+"utilization"
+msgstr ""
+"**Host Detail:** Individual host páginas mostrar per-host memoria y CPU "
+"utilization"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:185
+msgid ""
+"**Datastore Detail:** ``Storage > Datastores > [Datastore]`` shows capacity "
+"and free space"
+msgstr ""
+"**Almacén de datos Detail:** ``Storage > Datastores > [Datastore]`` muestra "
+"capacidad y free space"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:188
+msgid "Sizing Decision Matrix"
+msgstr "Sizing Decision Matrix"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:194
+msgid "Requirement"
+msgstr "Requirement"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:195
+msgid "Minimum"
+msgstr "Mínimo"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:196
+msgid "Recommendation"
+msgstr "Recommendation"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:197
+msgid "Production HA"
+msgstr "Production HA"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:199
+msgid "5 hosts (tolerates 2 failures)"
+msgstr "5 hosts (tolerates 2 failures)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:200
+msgid "Memory per host"
+msgstr "Memoria per host"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:201
+msgid "32 GB"
+msgstr "32 GB"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:202
+msgid "128+ GB for meaningful VM density"
+msgstr "128+ GB para meaningful VM density"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:203
+msgid "Failover capacity"
+msgstr "Conmutación por error capacidad"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:204
+msgid "N+1"
+msgstr "N+1"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:205
+msgid "N+1 with maintenance headroom"
+msgstr "N+1 con mantenimiento headroom"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:206
+msgid "Datastores"
+msgstr "Datastores"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:207
+msgid "1 shared"
+msgstr "1 shared"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:208
+msgid "2+ (heartbeat redundancy)"
+msgstr "2+ (heartbeat redundancia)"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:209
+msgid "Network"
+msgstr "Red"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:210
+msgid "1 path"
+msgstr "1 ruta"
+
+#: ../../infrastructure/clusters/hvm/capacity_planning.rst:211
+msgid "Bonded/redundant network paths"
+msgstr "Bonded/redundant network paths"

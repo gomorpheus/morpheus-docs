@@ -1,0 +1,377 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/networks/networks.rst:2
+msgid "Networks"
+msgstr "Redes"
+
+#: ../../infrastructure/networks/networks.rst:4
+msgid "`Infrastructure > Network > Networks`"
+msgstr "`Infraestructura > Red > Redes`"
+
+#: ../../infrastructure/networks/networks.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/networks/networks.rst:9
+msgid ""
+"The Networks section is for configuring networks across all clouds in "
+"|morpheus|. Existing networks from Clouds added in |morpheus| will auto-"
+"populate in the Networks section."
+msgstr ""
+"El Redes sección es para configuring networks a través de todos clouds en "
+"|morpheus|. Existente networks desde Nubes agregado en |morpheus| será auto-"
+"populate en el Redes sección."
+
+#: ../../infrastructure/networks/networks.rst:11
+msgid ""
+"Networks can be configured for DHCP or Static IP assignment, assigned IP "
+"pools, and configured for visibility and account assignment for multi-"
+"tenancy usage. Inactive Networks are unavailable for provisioning use. In "
+"addition, |morpheus| allows administrators to restrict management of "
+"|morpheus|-created Networks through Role permissions."
+msgstr ""
+"Redes se puede configurar para DHCP o Estático IP assignment, asignado IP "
+"pools, y configurado para visibility y account assignment para multi-tenancy"
+" usage. Inactivo Redes son unavailable para provisioning usar. Además, "
+"|morpheus| permite administrators a restrict gestión de |morpheus|-creado "
+"Redes a través de Rol permisos."
+
+#: ../../infrastructure/networks/networks.rst:14
+msgid "Configuring Networks"
+msgstr "Configuring Networks"
+
+#: ../../infrastructure/networks/networks.rst:17
+msgid "DHCP"
+msgstr "DHCP"
+
+#: ../../infrastructure/networks/networks.rst:19
+msgid "To configure a network for DHCP:"
+msgstr "Para configurar un network para DHCP:"
+
+#: ../../infrastructure/networks/networks.rst:21
+#: ../../infrastructure/networks/networks.rst:40
+msgid "Navigate to `Infrastructure > Network > Networks`"
+msgstr "Navegue un `Infrastructure > Network > Networks`"
+
+#: ../../infrastructure/networks/networks.rst:22
+#: ../../infrastructure/networks/networks.rst:41
+msgid "Search for the target network"
+msgstr "Search para el destino network"
+
+#: ../../infrastructure/networks/networks.rst:23
+#: ../../infrastructure/networks/networks.rst:42
+msgid "Edit the Network by either:"
+msgstr "Editar el Red por cualquiera:"
+
+#: ../../infrastructure/networks/networks.rst:25
+#: ../../infrastructure/networks/networks.rst:44
+msgid "Select `Actions > Edit`"
+msgstr "Seleccionar `Acciones > Editar`"
+
+#: ../../infrastructure/networks/networks.rst:26
+#: ../../infrastructure/networks/networks.rst:45
+msgid "Select the Network, then select `Edit`"
+msgstr "Seleccionar el Red, entonces seleccionar `Editar`"
+
+#: ../../infrastructure/networks/networks.rst:28
+msgid "In the Network Config modal, set the DHCP flag as Active (default)"
+msgstr ""
+"En el Red Config modal, establecer el DHCP flag como Activo (predeterminado)"
+
+#: ../../infrastructure/networks/networks.rst:29
+#: ../../infrastructure/networks/networks.rst:69
+msgid "Save Changes"
+msgstr "Guardar Cambios"
+
+#: ../../infrastructure/networks/networks.rst:31
+msgid ""
+"The DHCP flag tells |morpheus| this network has a DHCP server assigning IP "
+"Addresses to hosts. |morpheus| does not act as the DHCP server, and "
+"provisioning to a network that has the DHCP server flag active in |morpheus|"
+" , but no DHCP server actually on the network will in most cases cause the "
+"instance to not receive an IP address."
+msgstr ""
+"El DHCP flag tells |morpheus| este network tiene un DHCP servidor assigning "
+"IP Addresses a hosts. |morpheus| does no act como el DHCP servidor, y "
+"provisioning a un network ese tiene el DHCP servidor flag activo en "
+"|morpheus| , pero no DHCP servidor actually en el network será en más cases "
+"cause el instance a no recibir un IP dirección."
+
+#: ../../infrastructure/networks/networks.rst:33
+msgid ""
+"When selecting a network with DHCP enabled during provisioning, \"DHCP\" "
+"will populate to the right of the selected network:"
+msgstr ""
+"Cuando selecting un network con DHCP habilitado durante provisioning, "
+"\"DHCP\" será populate al right del seleccionado network:"
+
+#: ../../infrastructure/networks/networks.rst:36
+msgid "Static and IP Pools"
+msgstr "Estático y Pools de IP"
+
+#: ../../infrastructure/networks/networks.rst:38
+msgid "To configure a network for Static IP Assignment:"
+msgstr "Para configurar un network para Estático IP Assignment:"
+
+#: ../../infrastructure/networks/networks.rst:47
+msgid "In the Network Config modal, add the following:"
+msgstr "En el Red Config modal, agregar lo siguiente:"
+
+#: ../../infrastructure/networks/networks.rst:49
+msgid "Gateway"
+msgstr "Gateway"
+
+#: ../../infrastructure/networks/networks.rst:50
+msgid "DNS Primary"
+msgstr "DNS Primario"
+
+#: ../../infrastructure/networks/networks.rst:51
+msgid "DNS Secondary"
+msgstr "DNS Secundario"
+
+#: ../../infrastructure/networks/networks.rst:52
+msgid "CIDR ex 10.10.10.0/22"
+msgstr "CIDR ex 10.10.10.0/22"
+
+#: ../../infrastructure/networks/networks.rst:53
+msgid "VLAN ID (if necessary)"
+msgstr "VLAN ID (si es necesario)"
+
+#: ../../infrastructure/networks/networks.rst:54
+msgid ""
+"Network Pool * Leave as \"choose a pool\" for entering a static IP while "
+"provisioning * Select a Pool to use a pre-configured |morpheus| or IPAM "
+"Integration IP Pool"
+msgstr ""
+"Red Pool * Leave como \"elegir un pool\" para entering un estático IP "
+"mientras provisioning * Seleccionar un Pool a usar un pre-configurado "
+"|morpheus| o IPAM Integración Pool de IP"
+
+#: ../../infrastructure/networks/networks.rst:58
+msgid ""
+"The Permissions settings are used for Multi-Tenant resource configuration"
+msgstr ""
+"El Permisos configuraciones son utilizado para Multi-Inquilino recurso "
+"configuración"
+
+#: ../../infrastructure/networks/networks.rst:60
+msgid ""
+"Leave settings as default if used in a single-tenant environment (only one "
+"Tenant in your |morpheus| appliance)"
+msgstr ""
+"Leave configuraciones como predeterminado si utilizado en un single-tenant "
+"entorno (solo one Inquilino en su |morpheus| appliance)"
+
+#: ../../infrastructure/networks/networks.rst:61
+msgid ""
+"To share this network across all accounts in a multi-tenant environment, "
+"select the Master Tenant and set the Visibility to Public"
+msgstr ""
+"A share este network a través de todos accounts en un multi-tenant entorno, "
+"seleccionar el Master Inquilino y establecer el Visibility a Público"
+
+#: ../../infrastructure/networks/networks.rst:62
+msgid ""
+"To assign this network to be used by only one account in a multi-tenant "
+"environment, select the account and set visibility to Private"
+msgstr ""
+"A assign este network a be utilizado por solo one account en un multi-tenant"
+" entorno, seleccionar el account y establecer visibility a Privado"
+
+#: ../../infrastructure/networks/networks.rst:64
+msgid "Active"
+msgstr "Activo"
+
+#: ../../infrastructure/networks/networks.rst:66
+msgid "Leave as enabled to use this network"
+msgstr "Leave como habilitado a usar este network"
+
+#: ../../infrastructure/networks/networks.rst:67
+msgid ""
+"Disable the active flag to remove this network from available network "
+"options"
+msgstr ""
+"Deshabilitar el activo flag a eliminar este network desde disponible network"
+" opciones"
+
+#: ../../infrastructure/networks/networks.rst:71
+msgid ""
+"When selecting a network with DHCP disabled and no IP Pool assigned during "
+"provisioning, an IP entry field will populate to the right of the selected "
+"network(s):"
+msgstr ""
+"Cuando selecting un network con DHCP deshabilitado y no Pool de IP asignado "
+"durante provisioning, un IP entrada campo será populate al right del "
+"seleccionado network(s):"
+
+#: ../../infrastructure/networks/networks.rst:73
+msgid ""
+"When selecting a network with an IP Pool assigned during provisioning, the "
+"name of the IP pool will populate to the right of the selected network(s). "
+"IP Pools override DHCP."
+msgstr ""
+"Cuando selecting un network con un Pool de IP asignado durante provisioning,"
+" el nombre del IP pool será populate al right del seleccionado network(s). "
+"Pools de IP override DHCP."
+
+#: ../../infrastructure/networks/networks.rst:76
+msgid "Advanced Options (Search Domains)"
+msgstr "Advanced Opciones (Search Dominios)"
+
+#: ../../infrastructure/networks/networks.rst:78
+msgid ""
+"Search domains are appended to DNS searches when a **non** fully qualified "
+"domain name (short name) is queried.  Search domains can be entered as comma"
+" separated values, which will be added to DNS configurations, such as "
+"`/etc/resolv.conf` These domains are injected via cloud-init or other method"
+" chosen for the virtual image."
+msgstr ""
+"Search domains son appended a DNS searches cuando un **non** fully qualified"
+" domain nombre (corto nombre) es queried.  Search domains puede be entered "
+"como comma separated valores, cual será be agregado a DNS configurations, "
+"como `/etc/resolv.conf` Estos domains son injected via cloud-init o otro "
+"método chosen para el imagen virtual."
+
+#: ../../infrastructure/networks/networks.rst:82
+msgid "Group and Tenant Access"
+msgstr "Grupo y Inquilino Acceso"
+
+#: ../../infrastructure/networks/networks.rst:84
+msgid ""
+"Networks can be configured to provide specific Group and Tenant access, if "
+"desired. **Group Access** controls which Groups at provision time will have "
+"access to the Network resource. Only workloads being provisioned to the "
+"selected Groups would have visibility into the Network. Workloads "
+"provisioned to other Groups would not see the Network as an available "
+"selection. **Tenant Permissions** control which Tenants may see the Network."
+" Public visibility allows access to the Network for users in all Tenants "
+"(subject to additional RBAC controls) while Private visibility allows access"
+" only for selected Tenants. Select all that may apply."
+msgstr ""
+"Redes se puede configurar a proporcionar específico Grupo y Inquilino "
+"acceso, si se desea. **Grupo Acceso** controls cual Grupos en provision "
+"tiempo será tienen acceso al Red recurso. Solo cargas de trabajo being "
+"aprovisionado al seleccionado Grupos would tienen visibility en el Red. "
+"Cargas de trabajo aprovisionado a otro Grupos would no consulte la Red como "
+"un disponible selection. **Inquilino Permisos** control cual Inquilinos "
+"puede consulte la Red. Público visibility permite acceso al Red para "
+"usuarios en todos Inquilinos (subject a adicional RBAC controls) mientras "
+"Privado visibility permite acceso solo para seleccionado Inquilinos. "
+"Seleccionar todos ese puede apply."
+
+#: ../../infrastructure/networks/networks.rst:87
+msgid "Guest Console SSH Tunnel"
+msgstr "Guest Console SSH Tunnel"
+
+#: ../../infrastructure/networks/networks.rst:89
+msgid ""
+"In some scenarios, instances that are segregated from the |morpheus| "
+"appliance by port restrictions, or other mechanisms, can cause difficulties "
+"to access the guest console via the |morpheus| web UI. Guest Console SSH "
+"Tunnel settings allow the administrator to configure a jump host's settings "
+"that is dual-homed, accessible by |morpheus| but also resides on the "
+"segregated network. When the guest console is configured with the SSH "
+"protocol, the traffic will be routed to the jump host, which will then relay"
+" to the target instance."
+msgstr ""
+"En algunos scenarios, instances ese son segregated desde el |morpheus| "
+"appliance por puerto restrictions, o otro mechanisms, puede cause "
+"difficulties a acceso el guest console via el |morpheus| web UI. Guest "
+"Console SSH Tunnel configuraciones permitir el administrator a configure un "
+"jump host's configuraciones ese es dual-homed, accessible por |morpheus| "
+"pero también resides en el segregated network. Cuando el guest console está "
+"configurado con el SSH protocolo, el traffic será be routed al jump host, "
+"cual será entonces relay al destino instance."
+
+#: ../../infrastructure/networks/networks.rst:94
+msgid "GUEST CONSOLE JUMP HOST"
+msgstr "GUEST CONSOLE JUMP HOST"
+
+#: ../../infrastructure/networks/networks.rst:94
+msgid "DNS hostname or IP of the jump host to relay the traffic"
+msgstr "DNS hostname o IP del jump host a relay el traffic"
+
+#: ../../infrastructure/networks/networks.rst:97
+msgid "GUEST CONSOLE JUMP PORT"
+msgstr "GUEST CONSOLE JUMP PORT"
+
+#: ../../infrastructure/networks/networks.rst:97
+msgid "Port override, if different than 22 for SSH"
+msgstr "Port override, si diferente than 22 para SSH"
+
+#: ../../infrastructure/networks/networks.rst:100
+msgid "GUEST CONSOLE JUMP USERNAME"
+msgstr "GUEST CONSOLE JUMP USERNAME"
+
+#: ../../infrastructure/networks/networks.rst:100
+msgid "Username used to authenticate to the jump host"
+msgstr "Nombre de usuario utilizado para authenticate al jump host"
+
+#: ../../infrastructure/networks/networks.rst:103
+msgid "GUEST CONSOLE JUMP PASSWORD"
+msgstr "GUEST CONSOLE JUMP PASSWORD"
+
+#: ../../infrastructure/networks/networks.rst:103
+msgid ""
+"Password that is used with the username to autenticate to the jump host"
+msgstr ""
+"Contraseña ese es utilizado con el nombre de usuario a autenticate al jump "
+"host"
+
+#: ../../infrastructure/networks/networks.rst:107
+msgid "GUEST CONSOLE KEYPAIR"
+msgstr "GUEST CONSOLE KEYPAIR"
+
+#: ../../infrastructure/networks/networks.rst:106
+msgid ""
+"Keypair saved in |morpheus| to be used in lieu of, or in addition to, the "
+"password to the jump host, which is associated with the configured username "
+"Keypairs can be imported at: |InfKeyKey|"
+msgstr ""
+"Keypair saved en |morpheus| a be utilizado en lieu de, o además a, el "
+"contraseña al jump host, cual es asociado con el configurado nombre de "
+"usuario Keypairs puede be imported en: |InfKeyKey|"
+
+#: ../../infrastructure/networks/networks.rst:110
+msgid "Subnets"
+msgstr "Subredes"
+
+#: ../../infrastructure/networks/networks.rst:112
+msgid ""
+"Subnet details can be viewed from the `SUBNETS` tab on the detail page of a "
+"specific network. From the `SUBNETS` tab, Morpheus allows the user to search"
+" and edit existing subnets."
+msgstr ""
+"Subred details se puede ver desde el `SUBNETS` pestaña en el página de "
+"detalles de un específico network. Desde el `SUBNETS` pestaña, Morpheus "
+"permite el usuario a search y editar existente subnets."
+
+#: ../../infrastructure/networks/networks.rst:114
+msgid ""
+"In an Azure VNet, you can also create new subnets with the `+ADD` button."
+msgstr ""
+"En un Azure VNet, you puede también crear nuevo subnets con el `+ADD` botón."
+
+#: ../../infrastructure/networks/networks.rst:116
+msgid ".. image:: images/infrastructure/network/create_subnet_421.png"
+msgstr ".. imagen:: imágenes/infrastructure/network/create_subnet_421.png"

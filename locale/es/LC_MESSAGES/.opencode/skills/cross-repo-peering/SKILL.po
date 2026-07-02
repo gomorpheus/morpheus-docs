@@ -1,0 +1,531 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:10
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:12
+msgid ""
+"Teach agents how to use Hero's cross-repo peering protocol — the three-"
+"tier ladder (advisory peer call, spec-out peer call, async handoff) plus "
+"the convention-import fallback — so work that crosses a sibling "
+"workspace's surface gets the protocol's provenance for free."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:14
+msgid ""
+"The full protocol convention lives at `.hero/knowledge/conventions"
+"/peering-protocol.md`. Read it once for depth. This skill is the agent-"
+"facing operational distillation."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:16
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:18
+msgid "Load me when any of these are true:"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:20
+msgid ""
+"The user names a sibling repo by alias (\"ask hero-code\", \"hand off to "
+"hero-cloud\")."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:21
+msgid ""
+"The user describes a question whose answer lives in a sibling's surface "
+"(\"what's their error envelope?\", \"does this break X?\")."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:22
+msgid ""
+"The active spec touches files whose contract is owned by a sibling (see "
+"`hero context` for contract-import surfacing)."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:23
+msgid ""
+"The work being asked for is genuinely a sibling's responsibility and the "
+"user hasn't called it out yet."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:25
+msgid ""
+"Don't load me for purely local work, even if a sibling repo exists in the"
+" workspace's `repos` config."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:27
+msgid "The three-tier ladder"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:29
+msgid ""
+"Pick the **least invasive mode that resolves the work**. Don't escalate "
+"when an advisory call would suffice; don't drop to convention import when"
+" a handoff would close the loop."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Mode"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Writes?"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Pick when"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "**Sync peer call: advisory**"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Nothing"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid ""
+"You need a fact — \"what's X's shape?\", \"is there already an endpoint "
+"for this?\", \"does this break you?\". Peer investigates, returns "
+"findings text, writes nothing on its side."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "**Sync peer call: spec-out**"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Spec on peer"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid ""
+"You realized the work is genuinely the peer's — its conventions should "
+"kick in. Peer's Hero designs the spec natively on its side and returns "
+"the slug; your local spec moves to `awaiting_peer`."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "**Async handoff**"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Spec on peer (scaffolded)"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid ""
+"You already did the investigation; the fix clearly belongs to the peer "
+"and you want it on their queue. Your local spec moves to `handed_off`; "
+"theirs lands as `planning` with `received_from:` provenance."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "**Convention import (fallback)**"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid ""
+"Work legitimately stays in your workspace but must respect the peer's "
+"surface (e.g. a serializer producing a payload they parse). Pull the "
+"peer's peer-surface conventions into context."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:38
+msgid "Full-delivery peer call (peer designs AND delivers) is v2. Not available."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:40
+msgid "Decision tree"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:42
+msgid ""
+"Does the user already know the answer is on the peer's side?\n"
+"├─ Yes, and they did the investigation → ASYNC HANDOFF\n"
+"├─ Yes, but they want peer's conventions to shape the design → SPEC-OUT\n"
+"└─ No, they need to learn something first → ADVISORY\n"
+"\n"
+"Then ask: does the work itself stay on our side once we know the answer?\n"
+"├─ Yes, but it crosses peer's surface → CONVENTION IMPORT (after "
+"advisory)\n"
+"└─ No, it should move → ESCALATE to spec-out or handoff\n"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:53
+msgid ""
+"When the user's intent is genuinely ambiguous between two modes, **ask "
+"one focused clarifying question** rather than guessing. Example: \"Want "
+"hero-cloud to design the migration, or just a quick read on whether this "
+"breaks their schema?\""
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:55
+msgid "Composing a good peer-call prompt"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:57
+msgid ""
+"A peer call spawns a subagent in the peer's workspace with its full Hero "
+"context loaded. Treat it like sending a colleague a focused brief — not "
+"paraphrasing the user verbatim."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:59
+msgid "Required elements"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:61
+msgid ""
+"**The specific question or task** — name the artifact, the field, the "
+"constraint. Bad: \"what about the error format?\" Good: \"What's the "
+"current shape of the `errors` array in the `/v1/order` POST response? Any"
+" deprecations in flight?\""
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:62
+msgid ""
+"**The reason** (`--reason \"...\"`) — what's happening on your side that "
+"prompted the call. Helps the peer subagent triage urgency and rank "
+"against in-flight work."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:63
+msgid ""
+"**The related spec** (`--related-spec <slug>`) — when there's an active "
+"spec driving the call, attach it. The peer's trail and your local handoff"
+" record link to it; cross-repo `hero why` can walk the chain later."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:65
+msgid "Mode flags"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:67
+msgid ""
+"`--mode=advisory` — read-only investigation. Default budget: 20 turns / "
+"50,000 tokens. Use `--budget-turns` / `--budget-tokens` to override."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:68
+msgid ""
+"`--mode=spec-out` — peer designs a spec. Default budget: 50 turns / "
+"150,000 tokens."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:70
+msgid "Prompt shape — advisory mode"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:72
+msgid ""
+"hero peer call <alias> --mode=advisory \\\n"
+"  --related-spec <active-slug> \\\n"
+"  --reason \"Why this call is happening on our side\" \\\n"
+"  \"Specific question. Concrete. Mention the file/symbol/field you care "
+"about.\"\n"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:79
+msgid "Prompt shape — spec-out mode"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:81
+msgid ""
+"hero peer call <alias> --mode=spec-out \\\n"
+"  --related-spec <active-slug> \\\n"
+"  --reason \"Why peer should design this rather than us\" \\\n"
+"  \"Design the [thing]. Constraints: <list>. Out of scope: <list>. "
+"Acceptance shape: <list>.\"\n"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:88
+msgid ""
+"The peer's `/design` flow runs on this prompt. Treat it like a `/design` "
+"kickoff brief — clearer the better."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:90
+msgid "Anti-patterns"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:92
+msgid "Don't:"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:94
+msgid ""
+"**Paraphrase the user's words verbatim** as the peer-call prompt. The "
+"peer's subagent needs a structured question, not a chat fragment. "
+"Translate intent into a specific brief."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:95
+msgid ""
+"**Make a peer call when the answer is in your own workspace.** Check "
+"`hero search` and `hero relevant` first. Peer calls cost a subagent "
+"spawn."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:96
+msgid ""
+"**Skip `--related-spec` when one exists.** The trail breaks; cross-repo "
+"`hero why` can't walk the chain."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:97
+msgid ""
+"**Use spec-out when advisory would resolve it.** Spec-out writes a spec "
+"on the peer's side; advisory writes nothing. Escalate only when the work "
+"genuinely belongs to the peer."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:98
+msgid ""
+"**Use handoff to dump unfinished investigation on the peer.** Handoff is "
+"for *completed* investigations where the fix clearly belongs to the peer."
+" If you haven't found the cause yet, do advisory first."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:99
+msgid ""
+"**Run multiple peer calls when one would do.** Bundle questions in a "
+"single advisory call when they're related."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:100
+msgid ""
+"**Wait synchronously on a handoff** — handoff is async by design. Your "
+"local spec moves to `handed_off`; you continue other work. The status "
+"auto-flips to `handed_back` when peer completes."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:102
+msgid "Async handoff — when and how"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:104
+msgid "Use handoff when:"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:106
+msgid "You've diagnosed the root cause and it's on the peer's side."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:107
+msgid ""
+"The peer should own the fix end-to-end (their conventions, their PR, "
+"their merge)."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:108
+msgid ""
+"You can scope the handoff well enough to scaffold a useful spec on their "
+"side."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:110
+msgid ""
+"hero handoff <local-slug> <peer-alias> \\\n"
+"  --reason \"Symptom in our workspace, root cause in peer's surface\" \\\n"
+"  --type bug\n"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:116
+msgid "Your local spec moves through these states:"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Status"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Meaning"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`handed_off`"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid ""
+"Just dropped on peer's queue. Receiver scaffold landed; trail entry "
+"written."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`awaiting_peer`"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Peer's spec is `delivering`."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`handed_back`"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Peer's spec is `completed`. Verify the symptom is gone on your side."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:124
+msgid ""
+"When the peer completes, status auto-flips on next `hero status` run. To "
+"pick up:"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:126
+msgid "hero handoff accept <slug>\n"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:130
+msgid "Then verify the original symptom resolved before marking your spec done."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:132
+msgid "Convention import — the fallback"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:134
+msgid ""
+"Use when the work legitimately stays on your side but must respect a "
+"peer's surface. Example: a JSON serializer in your workspace producing a "
+"payload the peer parses; you can't escape knowing their schema."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:136
+msgid "hero relevant --peer <alias> --surface http-response\n"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:140
+msgid ""
+"Pulls the peer's peer-surface conventions matching the surface tag into "
+"your active context. Less powerful than a peer call (no investigation, no"
+" new info), but free."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:142
+msgid "Discovery commands"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Need"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Command"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "Which peers are configured here?"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`hero peer list`"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "What's reachable? Manifests current?"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`hero peer list` (output includes status)"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "What does one peer expose?"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`hero peer show <alias>`"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "What's in flight across the boundary?"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md
+msgid "`hero handoff status`"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:151
+msgid ""
+"If `hero peer list` returns empty, peers aren't registered yet. Run `hero"
+" admin repos add <alias> <path>` first (see `CROSS-REPO-PEERING.md`)."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:153
+msgid "Output discipline"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:155
+msgid ""
+"After a peer call returns, **summarize the findings for the user before "
+"acting on them**. The peer's response is a structured block; the user "
+"wants the headline plus the actionable shape, not the raw envelope. Quote"
+" relevant excerpts in your reply; don't dump the full peer response "
+"unless asked."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:157
+msgid ""
+"After a handoff, **confirm the trail wrote** (`hero handoff status` shows"
+" the entry) and tell the user the peer-side slug + which side now owns "
+"the next move. Don't pretend the handoff is the work — it's the start of "
+"work happening elsewhere."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:159
+msgid "Related"
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:161
+msgid ""
+"Convention: `.hero/knowledge/conventions/peering-protocol.md` — the full "
+"protocol with edge cases and v2 directions."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:162
+msgid ""
+"Decision: `.hero/knowledge/decisions/cross-repo-peering-local-first.md` —"
+" why local-first by default."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:163
+msgid ""
+"Setup guide: `CROSS-REPO-PEERING.md` (workspace root) — one-time "
+"registration and config."
+msgstr ""
+
+#: ../../.opencode/skills/cross-repo-peering/SKILL.md:164
+msgid ""
+"Slash command: `/peer` — structured front door for peer call / handoff / "
+"list / show."
+msgstr ""
+

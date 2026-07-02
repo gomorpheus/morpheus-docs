@@ -1,0 +1,485 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/kubernetes/helm.rst:4
+msgid "Helm Chart Provisioning"
+msgstr "Helm Chart Aprovisionamiento"
+
+#: ../../provisioning/kubernetes/helm.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../provisioning/kubernetes/helm.rst:9
+msgid ""
+"|morpheus| provides native Helm chart provisioning support for deploying "
+"applications to Kubernetes clusters. Helm charts are provisioned through "
+"the App (Blueprint) provisioning workflow and are managed via the "
+"``HelmProvisionService``. Helm charts allow users to define, install, and"
+" upgrade complex Kubernetes applications using templated manifests and "
+"configurable values."
+msgstr ""
+"|morpheus| proporciona native Helm chart aprovisionamiento soportar para "
+"deploying aplicaciones a Kubernetes clústeres. Helm charts son provisioned "
+"a través de el/la App (Blueprint) aprovisionamiento flujo de trabajo y son "
+"managed via el/la ``HelmProvisionService``. Helm charts permitir usuarios a "
+"define, instalar, y actualizar complex Kubernetes aplicaciones using "
+"templated manifests y configurable valores."
+
+#: ../../provisioning/kubernetes/helm.rst:11
+msgid ""
+"Helm chart provisioning requires an active Kubernetes cluster managed by "
+"or integrated with |morpheus|. The Helm binary is managed internally by "
+"|morpheus| and does not need to be installed separately."
+msgstr ""
+"Helm chart aprovisionamiento requiere un active Kubernetes clústeres "
+"managed por o integrated con |morpheus|. El/La Helm binary es managed "
+"internally por |morpheus| y hace no need a be installed separately."
+
+#: ../../provisioning/kubernetes/helm.rst:14
+msgid "Prerequisites"
+msgstr "Prerequisites"
+
+#: ../../provisioning/kubernetes/helm.rst:16
+msgid ""
+"A Kubernetes cluster provisioned or imported in |morpheus| (see "
+":ref:`k8s`)"
+msgstr ""
+"A Kubernetes clústeres provisioned or importado in |morpheus| (see "
+":ref:`k8s`)"
+
+#: ../../provisioning/kubernetes/helm.rst:17
+msgid ""
+"A Helm chart stored in a Git repository integration or accessible Helm "
+"repository"
+msgstr ""
+"A Helm chart stored in a Git repositorio integraciones or accessible Helm "
+"repositorio"
+
+#: ../../provisioning/kubernetes/helm.rst:18
+msgid "Role permission ``Provisioning: Apps > Full`` for creating Helm-based Apps"
+msgstr "Role permisos ``Provisioning: Apps > Full`` for creating Helm-based Apps"
+
+#: ../../provisioning/kubernetes/helm.rst:19
+msgid ""
+"Network access from the |morpheus| appliance to the target cluster API "
+"server"
+msgstr ""
+"Network access from the |morpheus| appliance to the target clústeres API "
+"server"
+
+#: ../../provisioning/kubernetes/helm.rst:22
+msgid "Creating a Helm App Blueprint"
+msgstr "Creating un Helm App Blueprint"
+
+#: ../../provisioning/kubernetes/helm.rst:24
+msgid ""
+"Helm charts are provisioned as App-type blueprints in |morpheus|. To "
+"create a Helm blueprint:"
+msgstr ""
+"Helm charts son provisioned as App-tipo blueprints en |morpheus|. A crear "
+"un Helm blueprint:"
+
+#: ../../provisioning/kubernetes/helm.rst:26
+msgid "Navigate to |LibBlu| (Library > Blueprints)"
+msgstr "Navegue a |LibBlu| (Library > Blueprints)"
+
+#: ../../provisioning/kubernetes/helm.rst:27
+#: ../../provisioning/kubernetes/helm.rst:51
+msgid "Select :guilabel:`+ ADD`"
+msgstr "Seleccionar :guilabel:`+ ADD`"
+
+#: ../../provisioning/kubernetes/helm.rst:28
+msgid "Choose **Helm** as the blueprint type"
+msgstr "Choose **Helm** as el/la blueprint tipo"
+
+#: ../../provisioning/kubernetes/helm.rst:29
+msgid "Configure the blueprint:"
+msgstr "Configurar el/la blueprint:"
+
+#: ../../provisioning/kubernetes/helm.rst:31
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../provisioning/kubernetes/helm.rst:32
+msgid "A friendly name for the blueprint"
+msgstr "Un friendly nombre para el/la blueprint"
+
+#: ../../provisioning/kubernetes/helm.rst:33
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#: ../../provisioning/kubernetes/helm.rst:34
+msgid "Optional description"
+msgstr "Optional descripción"
+
+#: ../../provisioning/kubernetes/helm.rst:35
+msgid "CATEGORY"
+msgstr "CATEGORY"
+
+#: ../../provisioning/kubernetes/helm.rst:36
+msgid "Optional category for organization"
+msgstr "Optional category para organization"
+
+#: ../../provisioning/kubernetes/helm.rst:41
+msgid "SOURCE"
+msgstr "SOURCE"
+
+#: ../../provisioning/kubernetes/helm.rst:38
+msgid "Select the source for the Helm chart:"
+msgstr "Seleccione el source for the Helm chart:"
+
+#: ../../provisioning/kubernetes/helm.rst:40
+msgid "**Repository** — Select a Git repository integration containing the chart"
+msgstr ""
+"**Repository** — Select a Git repositorio integraciones containing the "
+"chart"
+
+#: ../../provisioning/kubernetes/helm.rst:41
+msgid ""
+"**Path** — Specify the subdirectory path within the repository to the "
+"chart root (where ``Chart.yaml`` resides)"
+msgstr ""
+"**Path** — Specify the subdirectory path within the repositorio to the "
+"chart root (where ``Chart.yaml`` resides)"
+
+#: ../../provisioning/kubernetes/helm.rst:43
+msgid "Select :guilabel:`SAVE`"
+msgstr "Seleccionar :guilabel:`SAVE`"
+
+#: ../../provisioning/kubernetes/helm.rst:46
+msgid "Provisioning a Helm App"
+msgstr "Aprovisionamiento a Helm App"
+
+#: ../../provisioning/kubernetes/helm.rst:48
+msgid "To provision a Helm chart as an App:"
+msgstr "A provision un Helm chart as un App:"
+
+#: ../../provisioning/kubernetes/helm.rst:50
+msgid "Navigate to ``Provisioning > Apps``"
+msgstr "Navegue a ``Provisioning > Apps``"
+
+#: ../../provisioning/kubernetes/helm.rst:52
+msgid "Choose the Helm blueprint"
+msgstr "Choose el/la Helm blueprint"
+
+#: ../../provisioning/kubernetes/helm.rst:53
+#: ../../provisioning/kubernetes/helm.rst:65
+#: ../../provisioning/kubernetes/helm.rst:73
+msgid "Select :guilabel:`NEXT`"
+msgstr "Seleccionar :guilabel:`NEXT`"
+
+#: ../../provisioning/kubernetes/helm.rst:54
+msgid "Configure the App:"
+msgstr "Configurar el/la App:"
+
+#: ../../provisioning/kubernetes/helm.rst:56
+msgid "APP NAME"
+msgstr "APP NAME"
+
+#: ../../provisioning/kubernetes/helm.rst:57
+msgid "Name for the deployed release. This becomes the Helm release name."
+msgstr "Nombre para el/la deployed release. Este becomes el/la Helm release nombre."
+
+#: ../../provisioning/kubernetes/helm.rst:58
+msgid "GROUP"
+msgstr "GROUP"
+
+#: ../../provisioning/kubernetes/helm.rst:59
+msgid "Select the target Group"
+msgstr "Seleccione el target Group"
+
+#: ../../provisioning/kubernetes/helm.rst:60
+msgid "DEFAULT CLOUD"
+msgstr "DEFAULT CLOUD"
+
+#: ../../provisioning/kubernetes/helm.rst:61
+msgid "Select the Cloud containing the target Kubernetes cluster"
+msgstr "Seleccione el Cloud containing the target Kubernetes clústeres"
+
+#: ../../provisioning/kubernetes/helm.rst:63
+msgid "RESOURCE POOL"
+msgstr "RESOURCE POOL"
+
+#: ../../provisioning/kubernetes/helm.rst:63
+msgid ""
+"Select the Kubernetes namespace for deployment. The namespace dropdown is"
+" populated from available namespaces on the selected cluster."
+msgstr ""
+"Seleccione el Kubernetes namespace para despliegue. El/La namespace "
+"dropdown es populated desde disponible namespaces en el/la seleccionado "
+"clústeres."
+
+#: ../../provisioning/kubernetes/helm.rst:66
+msgid "Configure Helm-specific options:"
+msgstr "Configurar Helm-specific opciones:"
+
+#: ../../provisioning/kubernetes/helm.rst:68
+msgid "TEMPLATE PARAMETERS"
+msgstr "TEMPLATE PARAMETERS"
+
+#: ../../provisioning/kubernetes/helm.rst:69
+msgid ""
+"Override chart values using key-value pairs. These correspond to "
+"``values.yaml`` entries in the chart. Values are passed via ``-f`` flag "
+"to the ``helm install`` command."
+msgstr ""
+"Override chart valores using key-valor pairs. Estos correspond a "
+"``values.yaml`` entries en el/la chart. Valores son passed via ``-f`` flag "
+"a el/la ``helm install`` command."
+
+#: ../../provisioning/kubernetes/helm.rst:71
+msgid "ADDITIONAL HELM ARGS"
+msgstr "ADDITIONAL HELM ARGS"
+
+#: ../../provisioning/kubernetes/helm.rst:71
+msgid ""
+"Specify additional Helm CLI arguments to append to the install command "
+"(e.g., ``--timeout 600s``, ``--wait``, ``--atomic``)."
+msgstr ""
+"Specify adicional Helm CLI arguments to append to the install command "
+"(e.g., ``--timeout 600s``, ``--wait``, ``--atomic``)."
+
+#: ../../provisioning/kubernetes/helm.rst:74
+msgid "Review the configuration and select :guilabel:`COMPLETE`"
+msgstr "Review the configuración and select :guilabel:`COMPLETE`"
+
+#: ../../provisioning/kubernetes/helm.rst:76
+msgid "|morpheus| will:"
+msgstr "|morpheus| será:"
+
+#: ../../provisioning/kubernetes/helm.rst:78
+msgid "Clone the chart from the configured repository"
+msgstr "Clone el/la chart desde el/la configurado repositorio"
+
+#: ../../provisioning/kubernetes/helm.rst:79
+msgid "Run ``helm template`` to preview generated manifests"
+msgstr "Ejecutar ``helm template`` a preview generated manifests"
+
+#: ../../provisioning/kubernetes/helm.rst:80
+msgid ""
+"Execute ``helm install <release-name> --namespace=<namespace> --kube-"
+"apiserver <cluster-api-url>`` with configured values"
+msgstr ""
+"Execute ``helm install <release-name> --namespace=<namespace> "
+"--kube-apiserver <cluster-api-url>`` con configurado valores"
+
+#: ../../provisioning/kubernetes/helm.rst:81
+msgid ""
+"Create corresponding resource records in |morpheus| for deployed "
+"Kubernetes objects"
+msgstr ""
+"Create corresponding recursos records in |morpheus| for deployed Kubernetes "
+"objects"
+
+#: ../../provisioning/kubernetes/helm.rst:84
+msgid "Helm Values and Configuration"
+msgstr "Helm Valores y Configuration"
+
+#: ../../provisioning/kubernetes/helm.rst:87
+msgid "Template Parameters"
+msgstr "Plantilla Parameters"
+
+#: ../../provisioning/kubernetes/helm.rst:89
+msgid ""
+"Template parameters map directly to Helm chart values. When configuring "
+"an App from a Helm blueprint, |morpheus| runs ``helm inspect values`` "
+"against the chart to discover available parameters. Users can override "
+"any value by providing key-value pairs in the configuration step."
+msgstr ""
+"Plantilla parameters map directly a Helm chart valores. Cuando configuring "
+"un App desde un Helm blueprint, |morpheus| runs ``helm inspect values`` "
+"against el/la chart a discover disponible parameters. Usuarios puede "
+"override cualquier valor por providing key-valor pairs en el/la "
+"configuración step."
+
+#: ../../provisioning/kubernetes/helm.rst:91
+msgid ""
+"Values are written to a temporary YAML file and passed to Helm via the "
+"``-f`` flag, ensuring proper handling of complex nested values."
+msgstr ""
+"Valores son written a un temporary YAML archivo y passed a Helm via el/la "
+"``-f`` flag, ensuring proper handling de complex nested valores."
+
+#: ../../provisioning/kubernetes/helm.rst:94
+msgid "Custom Values Files"
+msgstr "Custom Valores Archivos"
+
+#: ../../provisioning/kubernetes/helm.rst:96
+msgid ""
+"For advanced use cases, custom values YAML can be provided directly. This"
+" is particularly useful during :ref:`helm-upgrades` where multiple value "
+"sources may need to be merged."
+msgstr ""
+"Para advanced usar cases, custom valores YAML puede ser provided directly. "
+"Este es particularly useful durante :ref:`helm-upgrades` donde multiple "
+"valor sources puede need a be merged."
+
+#: ../../provisioning/kubernetes/helm.rst:99
+msgid "Additional Helm Arguments"
+msgstr "Additional Helm Arguments"
+
+#: ../../provisioning/kubernetes/helm.rst:101
+msgid ""
+"The **Additional Helm Args** field allows passing arbitrary flags to the "
+"Helm CLI. Common uses include:"
+msgstr ""
+"El/La **Additional Helm Args** campo permite passing arbitrary flags a "
+"el/la Helm CLI. Common uses incluir:"
+
+#: ../../provisioning/kubernetes/helm.rst:103
+msgid "``--timeout 600s`` — Extend timeout for long-running deployments"
+msgstr "``--timeout 600s`` — Extend timeout for long-running despliegues"
+
+#: ../../provisioning/kubernetes/helm.rst:104
+msgid "``--wait`` — Wait for all resources to be ready"
+msgstr "``--wait`` — Wait for all recursos to be ready"
+
+#: ../../provisioning/kubernetes/helm.rst:105
+msgid "``--atomic`` — Roll back on failure"
+msgstr "``--atomic`` — Roll back en failure"
+
+#: ../../provisioning/kubernetes/helm.rst:106
+msgid "``--set key=value`` — Override individual values inline"
+msgstr "``--set key=value`` — Override individual valores inline"
+
+#: ../../provisioning/kubernetes/helm.rst:107
+msgid "``--version 1.2.3`` — Pin a specific chart version"
+msgstr "``--version 1.2.3`` — Pin un specific chart versión"
+
+#: ../../provisioning/kubernetes/helm.rst:109
+msgid ""
+"Use caution with additional arguments. Invalid flags will cause the "
+"deployment to fail."
+msgstr ""
+"Use caution with adicional arguments. Invalid flags will cause the "
+"despliegue to fail."
+
+#: ../../provisioning/kubernetes/helm.rst:112
+msgid "Managing Helm Apps"
+msgstr "Managing Helm Apps"
+
+#: ../../provisioning/kubernetes/helm.rst:114
+msgid ""
+"Once deployed, Helm Apps appear in ``Provisioning > Apps`` with their "
+"associated Kubernetes resources. The App detail page shows:"
+msgstr ""
+"Once deployed, Helm Apps appear in ``Provisioning > Apps`` with their "
+"associated Kubernetes recursos. The App detail page shows:"
+
+#: ../../provisioning/kubernetes/helm.rst:116
+msgid "All deployed Kubernetes resources (Pods, Services, Deployments, etc.)"
+msgstr "All deployed Kubernetes recursos (Pods, Services, Despliegues, etc.)"
+
+#: ../../provisioning/kubernetes/helm.rst:117
+msgid "Current release status"
+msgstr "Current release estado"
+
+#: ../../provisioning/kubernetes/helm.rst:118
+msgid "Helm release history"
+msgstr "Helm release history"
+
+#: ../../provisioning/kubernetes/helm.rst:120
+msgid "Actions available on deployed Helm Apps:"
+msgstr "Actions disponible on deployed Helm Apps:"
+
+#: ../../provisioning/kubernetes/helm.rst:122
+msgid ""
+"**Upgrade** — Apply new values or chart versions (see :ref:`helm-"
+"upgrades`)"
+msgstr ""
+"**Upgrade** — Apply nuevo valores o chart versiones (ver "
+":ref:`helm-upgrades`)"
+
+#: ../../provisioning/kubernetes/helm.rst:123
+msgid ""
+"**Delete** — Runs ``helm uninstall`` to remove the release and all "
+"associated resources"
+msgstr ""
+"**Delete** — Runs ``helm uninstall`` to remove the release and all "
+"associated recursos"
+
+#: ../../provisioning/kubernetes/helm.rst:124
+msgid "**Refresh** — Sync the current state from the cluster"
+msgstr "**Refresh** — Sync the current state from the clústeres"
+
+#: ../../provisioning/kubernetes/helm.rst:127
+msgid "Helm Version Management"
+msgstr "Helm Versión Management"
+
+#: ../../provisioning/kubernetes/helm.rst:129
+msgid ""
+"|morpheus| automatically manages Helm binary versions. The system caches "
+"available Helm releases from the official GitHub repository and selects "
+"the appropriate version based on the target cluster's Kubernetes version."
+" Multiple Helm versions can coexist, ensuring compatibility across "
+"clusters running different Kubernetes versions."
+msgstr ""
+"|morpheus| automáticamente manages Helm binary versiones. El/La system "
+"caches disponible Helm releases desde el/la official GitHub repositorio y "
+"selects el/la appropriate versión based en el/la target clústeres's "
+"Kubernetes versión. Multiple Helm versiones puede coexist, ensuring "
+"compatibility across clústeres running different Kubernetes versiones."
+
+#: ../../provisioning/kubernetes/helm.rst:132
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../provisioning/kubernetes/helm.rst:134
+msgid ""
+"**Chart not found:** Verify the Git repository integration is active and "
+"the path to the chart root is correct"
+msgstr ""
+"**Chart not found:** Verify el/la Git repositorio integraciones es active y "
+"el/la path a el/la chart root es correct"
+
+#: ../../provisioning/kubernetes/helm.rst:135
+msgid ""
+"**Namespace errors:** Ensure the target namespace exists or that the "
+"cluster allows automatic namespace creation"
+msgstr ""
+"**Namespace errors:** Ensure the target namespace exists or that the "
+"clústeres allows automatic namespace creation"
+
+#: ../../provisioning/kubernetes/helm.rst:136
+msgid ""
+"**Timeout errors:** Increase the timeout via Additional Helm Args "
+"(``--timeout``)"
+msgstr ""
+"**Timeout errors:** Increase el/la timeout via Additional Helm Args "
+"(``--timeout``)"
+
+#: ../../provisioning/kubernetes/helm.rst:137
+msgid ""
+"**Permission denied:** Verify the cluster service account has sufficient "
+"RBAC permissions for the resources defined in the chart"
+msgstr ""
+"**Permission denied:** Verify the clústeres service account has sufficient "
+"RBAC permisos for the recursos defined in the chart"
+
+#: ../../provisioning/kubernetes/helm.rst:138
+msgid ""
+"**Values not applied:** Check that template parameter keys match the "
+"chart's ``values.yaml`` structure exactly"
+msgstr ""
+"**Values not applied:** Verificar que plantilla parameter keys match el/la "
+"chart's ``values.yaml`` structure exactly"
+

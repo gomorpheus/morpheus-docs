@@ -15,3 +15,36 @@ python:
 
 formats:
   - htmlzip
+
+# =============================================================================
+# i18n / Multi-language Setup
+# =============================================================================
+#
+# This project supports Spanish (es) documentation via Sphinx gettext/sphinx-intl.
+# Translated .po files live in locale/es/LC_MESSAGES/.
+#
+# To deploy the Spanish build on Read the Docs:
+#
+# 1. Go to the main project (English) → Admin → Translations
+# 2. Create a new translation project (e.g., "morpheus-docs-es")
+# 3. Point it to this same repository and branch
+# 4. In the translation project settings:
+#    - Set Language = "Spanish"
+#    - RTD will automatically pass language=es to Sphinx
+# 5. RTD handles:
+#    - URL routing: /en/latest/ vs /es/latest/
+#    - Flyout language selector on every page
+#    - Independent builds per language
+#
+# To add more locales (fr, de, ja, etc.):
+#   1. Run: sphinx-intl update -p _build/gettext -l <code> -d locale
+#   2. Translate the .po files (use tools/translate/translate_po.py)
+#   3. Create another RTD translation project for that language
+#
+# Local build commands:
+#   make gettext        # Extract .pot files
+#   make intl-update    # Generate/update .po files for configured languages
+#   make html-es        # Build Spanish HTML locally
+#
+# See: https://docs.readthedocs.io/en/stable/localization.html
+# =============================================================================

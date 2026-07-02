@@ -1,0 +1,1875 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/guides/vdi_guide.rst:2
+msgid "Morpheus Virtual Desktops"
+msgstr "Morpheus Escritorio virtuals"
+
+#: ../../getting_started/guides/vdi_guide.rst:5
+msgid "VDI Pools Overview"
+msgstr "VDI Pools Overview"
+
+#: ../../tools/vdi_pools.rst:3
+msgid ""
+"The VDI Pools section of |morpheus| Tools provides a management area for "
+"defining VDI Pools and VDI Apps that a user can consume within the "
+"`Virtual Desktop Persona "
+"<https://docs.morpheusdata.com/en/latest/personas/personas.html#morpheus-"
+"virtual-desktop-environments-beta>`_."
+msgstr ""
+"The VDI Pools section of |morpheus| Tools provides a management area for "
+"defining VDI Pools y VDI Apps that a user can consume dentro de the "
+"`Virtual Desktop Persona "
+"<https://docs.morpheusdata.com/en/latest/personas/personas.html#morpheus-virtual-desktop-environments-beta>`_."
+
+#: ../../tools/vdi_pools.rst:5
+msgid ""
+"Pools can be either persistent or non-persistent and have various "
+"controls pertaining to idle pools and minimum or maximum sizes. The idea "
+"here is to make sure a server is always quickly available to accommodate "
+"user demand."
+msgstr ""
+"Pools puede ser either persistent o non-persistent y have various controls "
+"pertaining to idle pools y minimum o maximum sizes. The idea here is to "
+"asegúrese de a server is always quickly available to accommodate user "
+"demand."
+
+#: ../../tools/vdi_pools.rst:7
+msgid ""
+"|morpheus| leverages its Instance Types concept for provisioning servers "
+"within the VDI Pool. All the options available during Instance "
+"provisioning is available for setting the base server configuration. This"
+" includes Workflows, domain joins, tagging, image selection and more."
+msgstr ""
+"|morpheus| leverages its Instance Types concept for provisioning servers "
+"dentro de the VDI Pool. All the options available durante Instance "
+"provisioning está disponible for setting the base server configuration. "
+"This includes Workflows, domain joins, tagging, image selection y more."
+
+#: ../../tools/vdi_pools.rst:9
+msgid ""
+"A timeout setting can also be applied to release pool allocations from a "
+"user once they have disconnected their session. For non-persistent pools,"
+" a good recommendation is ten minutes whereas, for a persistent pool, a "
+"sensible recommendation would be around one hour."
+msgstr ""
+"A timeout setting can also be applied to release pool allocations desde a "
+"user once they have disconnected their session. For non-persistent pools, "
+"a good recommendation is ten minutes whereas, for a persistent pool, a "
+"sensible recommendation would be around one hour."
+
+#: ../../tools/vdi_pools.rst:11
+msgid ""
+"Pool behavior changes depending on the pool type. In a non-persistent "
+"pool, when a timeout period expires, the VM is destroyed and a new one is"
+" allocated for use. This functionality will change based on the cloud "
+"technology in a future update allowing for potential recycling of the "
+"VMs. In a Persistent pool, when the lease timeout expires, the Instance "
+"will shutdown until the user requests it again in the future. It is "
+"important to note that lease timeouts auto-extend for as long as the user"
+" is logged into or browsing any area of the |morpheus| application. Once "
+"the user closes their browser or logs out of their session, the timeouts "
+"will no longer auto-extend."
+msgstr ""
+"Pool behavior changes dependiendo de the pool type. In a non-persistent "
+"pool, when a timeout period expires, the VM is destroyed y a nuevo one is "
+"allocated for use. This functionality will change basado en la nube "
+"technology in a future update allowing for potential recycling of the VMs. "
+"In a Persistent pool, cuando el lease timeout expires, the Instance will "
+"shutdown until el usuario requests it again in the future. Es importante "
+"tener en cuenta que lease timeouts auto-extend for as long as el usuario "
+"is logged en o browsing cualquier area of the |morpheus| application. Una "
+"vez que el user closes their browser o logs out of their session, the "
+"timeouts will no longer auto-extend."
+
+#: ../../tools/vdi_pools.rst:14
+msgid "Configuring Access to VDI Pools"
+msgstr "Configuring Access to VDI Pools"
+
+#: ../../personas/virtual_desktop.rst:28 ../../tools/vdi_pools.rst:16
+msgid ""
+"Access to the Virtual Desktop Persona and individual VDI pools is handled"
+" through the user Role and, where applicable, Tenant Role. When creating "
+"a new Role, access is restricted to the Virtual Desktop Persona and all "
+"VDI pools by default. To grant access:"
+msgstr ""
+"Access to the Virtual Desktop Persona y individual VDI pools is handled a "
+"través de el usuario Role and, where applicable, Tenant Role. When "
+"creating a nuevo Role, access is restricted to the Virtual Desktop Persona "
+"y todos VDI pools por defecto. To grant access:"
+
+#: ../../personas/virtual_desktop.rst:30 ../../tools/vdi_pools.rst:18
+msgid "Navigate to the Role (|AdmRol| > Selected Role)"
+msgstr "Navigate to the Role (|AdmRol| > Selected Role)"
+
+#: ../../personas/virtual_desktop.rst:31 ../../tools/vdi_pools.rst:19
+msgid "Access the Personas tab"
+msgstr "Access the Personas tab"
+
+#: ../../tools/vdi_pools.rst:20
+msgid ""
+"Toggle the Virtual Desktop permission to \"Full\" or \"None\" (controls "
+"access to the Virtual Desktop Persona view)"
+msgstr ""
+"Toggle the Escritorio virtual permission to \\\"Full\\\" o \\\"None\\\" "
+"(controls access to the Escritorio virtual Persona view)"
+
+#: ../../personas/virtual_desktop.rst:33 ../../tools/vdi_pools.rst:21
+msgid "Access the VDI Pool Access tab"
+msgstr "Access the VDI Pool Access tab"
+
+#: ../../tools/vdi_pools.rst:22
+msgid ""
+"Toggle access to selected VDI pools to \"Full\" or \"None\", you can also"
+" toggle permission on all pools to \"Full\" or \"None\" with the Global "
+"Access selection (controls access to launch virtual desktop instances "
+"from configured pools)"
+msgstr ""
+"Toggle access to selected VDI pools to \"Full\" o \"None\", you can "
+"también toggle permission on all pools to \"Full\" o \"None\" con la "
+"Global Access selection (controls access to launch virtual desktop "
+"instances desde configured pools)"
+
+#: ../../tools/vdi_pools.rst:23
+msgid "Access the Features tab and expand the Provisioning section"
+msgstr "Access the Features tab y expand the Provisioning section"
+
+#: ../../tools/vdi_pools.rst:24
+msgid ""
+"Set \"Remote Console\" permission to Full and \"Remote Console Auto "
+"Login\" permission to Yes (allows user access to VDI sessions)"
+msgstr ""
+"Set \\\"Remote Console\\\" permission to Full y \\\"Remote Console Auto "
+"Login\\\" permission to Yes (allows user access to VDI sessions)"
+
+#: ../../personas/virtual_desktop.rst:35 ../../tools/vdi_pools.rst:25
+msgid "Role changes are saved automatically, there is no need to manually save"
+msgstr "Role changes are saved automatically, there is no necesita manually save"
+
+#: ../../tools/vdi_pools.rst:27
+msgid ""
+"Additionally, users should have a Linux and/or Windows username and "
+"password configured in their user profiles in order for virtual desktop "
+"login to be as seamless as possible. User profiles are accessed by "
+"clicking on the user's name in the upper-right corner of the application "
+"windows and clicking USER SETTINGS. The section to enter Windows and "
+"Linux account credentials is in the right column of the page."
+msgstr ""
+"Adicionalmente, users debería tener a Linux and/or Windows username y "
+"password configurado in their user profiles in order for virtual desktop "
+"login to be as seamless as possible. User profiles are accessed by "
+"clicking on el usuario's name in the upper-right corner of the application "
+"windows y clicking USER SETTINGS. The section to enter Windows y Linux "
+"account credentials is in the right column of la página."
+
+#: ../../tools/vdi_pools.rst:30
+msgid "Creating VDI Templates"
+msgstr "Creating VDI Templates"
+
+#: ../../tools/vdi_pools.rst:32
+msgid ""
+"The following guide focuses on VMware and Windows but is applicable to "
+"most cloud environments. |morpheus| also supports Linux virtual desktops."
+msgstr ""
+"Lo siguiente guide focuses on VMware y Windows but is applicable to most "
+"cloud environments. |morpheus| also supports Linux escritorio virtuals."
+
+#: ../../tools/vdi_pools.rst:34
+msgid ""
+"Create a thin-provisioned VM in the VMware vCenter console. It's "
+"recommended you allocate at least 50 GB of storage, at least 2 vCPU and "
+"at least 8 GB RAM on the template. Smaller VMs can be deployed from this "
+"template later."
+msgstr ""
+"Create a thin-provisioned VM in the VMware vCenter console. It's "
+"recomendado you allocate al menos 50 GB of storage, al menos 2 vCPU y al "
+"menos 8 GB RAM on the template. Smaller VMs puede ser deployed desde this "
+"template later."
+
+#: ../../tools/vdi_pools.rst:35
+msgid ""
+"Install a Windows operating system, there is no need to supply a license "
+"during deployment."
+msgstr ""
+"Install a Windows sistema operativo, there is no necesita supply a license "
+"durante deployment."
+
+#: ../../tools/vdi_pools.rst:36
+msgid "Supply the initial username and password"
+msgstr "Supply the initial username y password"
+
+#: ../../tools/vdi_pools.rst:37
+msgid ""
+"Install any updates, applications or optimizations. See the next section "
+"for recommended optimizations for the most performant virtual desktop "
+"experience"
+msgstr ""
+"Install any updates, applications o optimizations. See the next section "
+"for recommended optimizations para la most performant virtual desktop "
+"experience"
+
+#: ../../tools/vdi_pools.rst:38
+msgid ""
+"Shutdown the VM and convert to a template. Optionally, you can also use "
+"the Linked Clones (VMware) process which is described in a later section"
+msgstr ""
+"Shutdown the VM y convert to a template. Optionally, you can also use the "
+"Linked Clones (VMware) process which is described in a later section"
+
+#: ../../tools/vdi_pools.rst:41
+msgid "Suggested Optimizations"
+msgstr "Suggested Optimizations"
+
+#: ../../tools/vdi_pools.rst:43
+msgid ""
+"Reducing display and input delays is key to providing the best virtual "
+"desktop experience for the user. Consider the following optimizations for"
+" VDI desktops and servers:"
+msgstr ""
+"Reducing display y input delays is key to providing the best virtual "
+"desktop experience for el usuario. Consider lo siguiente optimizations for "
+"VDI desktops y servers:"
+
+#: ../../tools/vdi_pools.rst:45
+msgid "Disable desktop wallpapers"
+msgstr "Disable desktop wallpapers"
+
+#: ../../tools/vdi_pools.rst:46
+msgid "Implement Roaming Profiles"
+msgstr "Implement Roaming Profiles"
+
+#: ../../tools/vdi_pools.rst:47
+msgid "Enforce WDDM remote display driver"
+msgstr "Enforce WDDM remote display driver"
+
+#: ../../tools/vdi_pools.rst:48
+msgid "Re-enable local Administrator"
+msgstr "Re-enable local Administrator"
+
+#: ../../tools/vdi_pools.rst:49
+msgid "Delete the initial created user profile"
+msgstr "Delete the initial created user profile"
+
+#: ../../tools/vdi_pools.rst:50
+msgid "Clean up any unneeded installer packages"
+msgstr "Clean up any unneeded installer packages"
+
+#: ../../tools/vdi_pools.rst:52
+msgid ""
+"Additionally, there are a number of OS optimization tools available on "
+"the Internet which are specific to VDI use cases."
+msgstr ""
+"Adicionalmente, there are a number of OS optimization tools disponible on "
+"the Internet which are específico to VDI use cases."
+
+#: ../../tools/vdi_pools.rst:55
+msgid "Linked Clones"
+msgstr "Linked Clones"
+
+#: ../../tools/vdi_pools.rst:57
+msgid ""
+"Linked Clones are a feature of VMware which references snapshots of a VM "
+"to deploy from. This adds the advantage of quicker clone times and the "
+"ability to more easily share small modifications to a file system. "
+"|morpheus| supports Linked Clones but recommends them for VDI workloads "
+"only."
+msgstr ""
+"Linked Clones are a feature of VMware which references snapshots of a VM "
+"to deploy from. This adds the advantage of quicker clone times y the "
+"ability to more easily share small modifications to a file system. "
+"|morpheus| supports Linked Clones but recommends them for VDI workloads "
+"only."
+
+#: ../../tools/vdi_pools.rst:59
+msgid "Linked Clones are not templates but rather powered down VMs."
+msgstr "Linked Clones are not templates but rather powered down VMs."
+
+#: ../../tools/vdi_pools.rst:61
+msgid ""
+"Locate the VM you desire to have the Linked Clone in |morpheus|. If it's "
+"not currently managed by |morpheus|, navigate to the appropriate Cloud "
+"(Infrastructure > Clouds), find the VM on the \"VMs\" tab, and click "
+"\"Convert to Managed\" from the ACTIONS menu"
+msgstr ""
+"Locate the VM you desire to have the Linked Clone in |morpheus|. If it's "
+"not actualmente gestionado by |morpheus|, navigate to the apropiado Cloud "
+"(Infrastructure > Clouds), find the VM on the \\\"VMs\\\" tab, y click "
+"\\\"Convert to Managed\\\" desde the ACTIONS menu"
+
+#: ../../tools/vdi_pools.rst:62
+msgid ""
+"In the CONVERT TO INSTANCE modal, select \"No Agent Install\" in the "
+"AGENT field"
+msgstr ""
+"In the CONVERT TO INSTANCE modal, select \\\"No Agent Install\\\" in the "
+"AGENT field"
+
+#: ../../tools/vdi_pools.rst:63
+msgid ""
+"If snapshots are already on the VM, these will now be synced by "
+"|morpheus|. If you have not yet created a snapshot, do so in the vCenter "
+"console (and refresh the Cloud integration in |morpheus| afterward) or "
+"from the ACTIONS menu in |morpheus| itself. Be sure to take a snapshot of"
+" a powered-off VM and give the snapshot a name that will be identifiable "
+"for administrators"
+msgstr ""
+"If snapshots are already on the VM, these will now be synced by "
+"|morpheus|. If you have not yet created a snapshot, do so in the vCenter "
+"console (and refresh the Cloud integration in |morpheus| afterward) o "
+"desde the ACTIONS menu in |morpheus| itself. Be sure to take a snapshot of "
+"a powered-off VM y give the snapshot a name that será identifiable for "
+"administrators"
+
+#: ../../tools/vdi_pools.rst:64
+msgid ""
+"From the Instance detail page in |morpheus|, navigate to the Backups tab "
+"to find the snapshot"
+msgstr ""
+"From the Instance detail page in |morpheus|, navigate to the Backups tab "
+"to find the snapshot"
+
+#: ../../tools/vdi_pools.rst:65
+msgid "Select \"More\" and create the Linked Clone"
+msgstr "Select \\\"More\\\" y create the Linked Clone"
+
+#: ../../tools/vdi_pools.rst:66
+msgid ""
+"The Linked Clone will now appear in the |morpheus| Virtual Image "
+"repository (|LibVir|), ready to use with your custom Layouts"
+msgstr ""
+"The Linked Clone will now appear in the |morpheus| Virtual Image "
+"repository (|LibVir|), ready para usar con your personalizado Layouts"
+
+#: ../../tools/vdi_pools.rst:68
+msgid ""
+"You should modify the Virtual Image to \"Force Guest Customization\" "
+"unless you ``sysprep`` your VM at shutdown time"
+msgstr ""
+"You should modify the Virtual Image to \\\"Force Guest Customization\\\" "
+"unless you ``sysprep`` your VM at shutdown time"
+
+#: ../../tools/vdi_pools.rst:71
+msgid "Creating or Editing a VDI Pool"
+msgstr "Creating o Editing a VDI Pool"
+
+#: ../../tools/vdi_pools.rst:73
+msgid ""
+"VDI pools are configured from the Tools menu (VDI Pools selection). The "
+"following information is displayed in the VDI pools list view, bear in "
+"mind some fields may be hidden depending on how you've configured your "
+"VDI pools list view (gear icon):"
+msgstr ""
+"VDI pools están configurados desde the Tools menu (VDI Pools selection). "
+"Lo siguiente information is displayed in the VDI pools list view, bear in "
+"mind algunos fields puede ser hidden dependiendo de how you've configurado "
+"your VDI pools list view (gear icon):"
+
+#: ../../tools/vdi_pools.rst:75
+msgid ""
+"**TYPE:** An icon indicating the machine type associated with the pool. "
+"|morpheus| includes many logos out of the box and also allows users to "
+"set their own custom icons"
+msgstr ""
+"**TYPE:** An icon indicating the machine type asociado cen la pool. "
+"|morpheus| includes many logos out de la box y también permite a los "
+"usuarios set their own custom icons"
+
+#: ../../tools/vdi_pools.rst:76
+msgid "**NAME:** The friendly name given to the VDI pool"
+msgstr "**NAME:** The friendly name given to the VDI pool"
+
+#: ../../tools/vdi_pools.rst:77
+msgid ""
+"**PERSISTENT:** A check mark will appear when the VDI pool is configured "
+"for persistent virtual desktops"
+msgstr ""
+"**PERSISTENT:** A check mark will appear when the VDI pool está "
+"configurado for persistent escritorio virtuals"
+
+#: ../../tools/vdi_pools.rst:78
+msgid ""
+"**ENABLED:** A check mark will appear when the VDI pool is enabled and "
+"visible to users whose Role permissions allow them access"
+msgstr ""
+"**ENABLED:** A check mark will appear when the VDI pool está habilitado y "
+"visible to users whose Role permissions allow them access"
+
+#: ../../tools/vdi_pools.rst:79
+msgid ""
+"**POOL USAGE:** A graph representing the usage of the VDI pool. The total"
+" length of the bar represents the maximum pool size based on the "
+"configuration. Green segments represent available virtual desktops, blue "
+"segments represent reserved virtual desktops, yellow segments represent "
+"virtual desktops which are being prepared, and gray segments represent "
+"additional pool capacity which could be made available depending on how "
+"many virtual desktops are currently reserved and how many idle machines "
+"you've configured the pool to keep available"
+msgstr ""
+"**POOL USAGE:** A graph representing the usage of the VDI pool. The total "
+"length of the bar represents the maximum pool size basado en la "
+"configuración. Green segments represent disponible virtual desktops, blue "
+"segments represent reserved virtual desktops, yellow segments represent "
+"virtual desktops which are being prepared, y gray segments represent "
+"adicional pool capacity which could be made disponible dependiendo de how "
+"muchos virtual desktops are actualmente reserved y how muchos idle "
+"machines you've configurado the pool to keep available"
+
+#: ../../tools/vdi_pools.rst:80
+msgid "**DESCRIPTION:** A description of the virtual desktop type, if provided"
+msgstr "**DESCRIPTION:** A description of the escritorio virtual type, if provided"
+
+#: ../../tools/vdi_pools.rst:83
+msgid ".. image:: images/personas/vdi/vdiPools.png"
+msgstr ".. image:: images/personas/vdi/vdiPools.png"
+
+#: ../../tools/vdi_pools.rst:84
+msgid ""
+"Create a VDI pool by selecting :guilabel:`+ ADD` from the VDI Pools tab "
+"or edit an existing one by clicking on the pencil icon from the "
+"appropriate row. Configure the following, fields containing a vertical "
+"blue bar along the left edge are required:"
+msgstr ""
+"Create a VDI pool by selecting :guilabel:`+ ADD` desde la VDI Pools tab o "
+"edit an existing one by clicking en la pencil icon desde la appropriate "
+"row. Configure the following, fields containing a vertical blue bar along "
+"the left edge son obligatorios:"
+
+#: ../../tools/vdi_pools.rst:86
+msgid "**NAME:** A friendly name for the VDI pool in |morpheus|"
+msgstr "**NAME:** A friendly name for the VDI pool in |morpheus|"
+
+#: ../../tools/vdi_pools.rst:87
+msgid "**DESCRIPTION:** A description of the virtual desktop type"
+msgstr "**DESCRIPTION:** A description of the escritorio virtual type"
+
+#: ../../tools/vdi_pools.rst:88
+msgid ""
+"**MIN IDLE:** The minimum number of virtual desktops that should remain "
+"idle and ready"
+msgstr ""
+"**MIN IDLE:** The minimum number of escritorio virtuals that should remain "
+"idle y ready"
+
+#: ../../tools/vdi_pools.rst:89
+msgid ""
+"**INITIAL POOL SIZE:** The number of virtual desktops that will be "
+"prepared when the pool is created or enabled"
+msgstr ""
+"**INITIAL POOL SIZE:** The number of escritorio virtuals that será "
+"prepared when the pool is created o enabled"
+
+#: ../../tools/vdi_pools.rst:90
+msgid ""
+"**MAX IDLE:** The maximum number of virtual desktops that remain idle and"
+" ready. Machines will be shut down as necessary when this number is "
+"exceeded due to users vacating their machines"
+msgstr ""
+"**MAX IDLE:** The maximum number of escritorio virtuals that remain idle y "
+"ready. Machines será shut down as necessary when this number is exceeded "
+"due to users vacating their machines"
+
+#: ../../tools/vdi_pools.rst:91
+msgid ""
+"**MAX SIZE:** The total number of virtual desktops this pool can have. "
+"Additional users will not be able to access machines once this number is "
+"reached"
+msgstr ""
+"**MAX SIZE:** The total number of escritorio virtuals this pool can have. "
+"Additional users will not be able acceder machines once this number is "
+"reached"
+
+#: ../../tools/vdi_pools.rst:92
+msgid ""
+"**LEASE TIMEOUT (MINUTES):** The user lease time on a virtual desktop "
+"they've reserved. The lease will continue to auto-renew itself as long as"
+" the user is logged into |morpheus|. Once the user has logged out and the"
+" lease timeout period has expired, the machine will be released as "
+"appropriate based on your configuration"
+msgstr ""
+"**LEASE TIMEOUT (MINUTES):** The user lease time on a virtual desktop "
+"they've reserved. The lease will continue to auto-renew itself as long as "
+"the user is logged into |morpheus|. Once the user has logged out y the "
+"lease timeout period has expired, the machine será released as appropriate "
+"basado en your configuration"
+
+#: ../../tools/vdi_pools.rst:93
+msgid ""
+"**PERSISTENT:** Pools with persistent virtual desktops will reserve a "
+"machine for each user in order to preserve settings, installed "
+"applications, work files and more. Machines in persistent pools will be "
+"shut down rather than destroyed when they are no longer in use"
+msgstr ""
+"**PERSISTENT:** Pools con persistent virtual desktops will reserve a "
+"machine for cada user para preserve settings, instalado applications, work "
+"files y more. Machines in persistent pools será shut down rather than "
+"destroyed cuando ely are no longer in use"
+
+#: ../../tools/vdi_pools.rst:94
+msgid ""
+"**RECYCLABLE:** When enabled, the VDI Instance will revert back to a "
+"snapshot and become available once again after the user has logged out "
+"and the VDI session has expired. This behavior will not apply to VDI "
+"pools which are also configured to be persistent because in that "
+"configuration the Instance is merely stopped and saved for the user's "
+"next session. This feature is currently only available for Cloud types "
+"which support snapshot management (VMware, Nutanix, and vCD)"
+msgstr ""
+"**RECYCLABLE:** When enabled, the VDI Instance will revert back to a "
+"snapshot y become available once again after el usuario has logged out y "
+"the VDI session has expired. This behavior will no apply to VDI pools "
+"which are también configured to be persistent because in that "
+"configuration the Instance is merely stopped y saved for el usuario's next "
+"session. This feature is actualmente only available for Cloud types which "
+"support snapshot management (VMware, Nutanix, y vCD)"
+
+#: ../../tools/vdi_pools.rst:95
+msgid ""
+"**ALLOW COPY** Enables or disables the ability for the VDI user to copy "
+"contents from the VDI instance to the local clipboard"
+msgstr ""
+"**ALLOW COPY** Enables o disables the ability for the VDI user to copy "
+"contents desde the VDI instance to the local clipboard"
+
+#: ../../tools/vdi_pools.rst:96
+msgid ""
+"**ALLOW PRINTER** When enabled, users local system printers can be "
+"targeted from the VDI Instance"
+msgstr ""
+"**ALLOW PRINTER** When enabled, users local system printers puede ser "
+"targeted desde the VDI Instance"
+
+#: ../../tools/vdi_pools.rst:97
+msgid ""
+"**ALLOW HYPERVISOR CONSOLE:** When checked, native cloud console will be "
+"enabled (if available) rather than using |morpheus|-native RDP/SSH "
+"capability"
+msgstr ""
+"**ALLOW HYPERVISOR CONSOLE:** When checked, native cloud console será "
+"habilitado (if available) rather than using |morpheus|-native RDP/SSH "
+"capability"
+
+#: ../../tools/vdi_pools.rst:98
+msgid ""
+"**AUTO CREATE LOCAL USER UPON RESERVATION:** When marked, the user "
+"configured in |morpheus| user settings will be created when the machine "
+"is initially accessed. If unchecked or if there is no user configured in "
+"|morpheus| user settings, ensure the machine is joining a domain or there"
+" is a known user on the machine image in order to allow access"
+msgstr ""
+"**AUTO CREATE LOCAL USER UPON RESERVATION:** When marked, el usuario "
+"configurado in |morpheus| user settings se creará cuando el machine is "
+"initially accessed. If unchecked o if there is no user configurado in "
+"|morpheus| user settings, ensure the machine is joining a domain o there "
+"is a known user on the machine image para allow access"
+
+#: ../../tools/vdi_pools.rst:99
+msgid ""
+"**ENABLED:** When marked, the initial pool size will begin to deploy once"
+" the VDI pool is saved. The icon for this desktop environment will also "
+"be presented to Virtual Desktop Persona users"
+msgstr ""
+"**ENABLED:** When marked, the initial pool size serágin desplegar once the "
+"VDI pool is saved. The icon for this desktop environment will also be "
+"presented to Escritorio virtual Persona users"
+
+#: ../../tools/vdi_pools.rst:100
+msgid ""
+"**CONFIGURE:** Click this button to configure the deployment "
+"configuration each system will use. The wizard is identical to the "
+"Instance provisioning wizard meaning all available Instance Types, "
+"Workflows, and more are available to virtual desktop machine creation. "
+"Consult the steps above to see an example VDI image prep walkthrough"
+msgstr ""
+"**CONFIGURE:** Click this button configurar the deployment configuration "
+"each system will use. The wizard is identical to the Instance provisioning "
+"wizard meaning all disponible Instance Types, Workflows, y more are "
+"disponible to escritorio máquina virtual creation. Consult the steps "
+"arriba to see an example VDI image prep walkthrough"
+
+#: ../../tools/vdi_pools.rst:101
+msgid ""
+"**LOGO:** Upload or select a logo to represent the virtual desktop type "
+"to users"
+msgstr ""
+"**LOGO:** Upload o select a logo to represent the escritorio virtual type "
+"to users"
+
+#: ../../tools/vdi_pools.rst:102
+msgid ""
+"**VDI APPS:** Optionally select one or more frequently-used applications "
+"the user can launch directly. Users will also have the option to launch "
+"into the desktop"
+msgstr ""
+"**VDI APPS:** Optionally select one o more frequently-used applications "
+"the user can launch directly. Users will también have the option to launch "
+"ina la desktop"
+
+#: ../../tools/vdi_pools.rst:103
+msgid ""
+"**VDI GATEWAY** Select a configure VDI Gateway for VDI sessions to be "
+"redirected to. VDI sessions will be redirected to the gateway when a "
+"gateway is specified."
+msgstr ""
+"**VDI GATEWAY** Select a configure VDI Gateway for VDI sessions to be "
+"redirected to. VDI sessions será redirected to the gateway when a gateway "
+"is specified."
+
+#: ../../tools/vdi_pools.rst:106
+msgid "**Guest Console SSH Tunnel** (optional)"
+msgstr "**Guest Console SSH Tunnel** (optional)"
+
+#: ../../tools/vdi_pools.rst:106
+msgid ""
+"A Jump Host can be configured for VDI session connections. |morpheus| "
+"will tunnel through the Jump Host when connecting Guest Console sessions "
+"for VDI. This is not applicable for Hypervisor Console connections."
+msgstr ""
+"A Jump Host puede ser configured for VDI session connections. |morpheus| "
+"will tunnel a través de the Jump Host when connecting Guest Console "
+"sessions for VDI. This is not applicable for Hypervisor Console "
+"connections."
+
+#: ../../tools/vdi_pools.rst:108
+msgid ""
+"**GUEST CONSOLE JUMP HOST** Jump Host IP address or hostname used to "
+"connect to the Jump Host for Guest Console sessions to VDI Instances"
+msgstr ""
+"**GUEST CONSOLE JUMP HOST** Jump Host dirección IP o hostname used "
+"conectar to the Jump Host for Guest Console sessions to VDI Instances"
+
+#: ../../tools/vdi_pools.rst:109
+msgid ""
+"**GUEST CONSOLE JUMP USERNAME** Jump Host Username used to connect to the"
+" Jump Host for Guest Console sessions to VDI Instances"
+msgstr ""
+"**GUEST CONSOLE JUMP USERNAME** Jump Host Username used conectar to the "
+"Jump Host for Guest Console sessions to VDI Instances"
+
+#: ../../tools/vdi_pools.rst:110
+msgid ""
+"**GUEST CONSOLE JUMP PORT** Jump Host Port used to connect to the Jump "
+"Host for Guest Console sessions to VDI Instances"
+msgstr ""
+"**GUEST CONSOLE JUMP PORT** Jump Host Port used conectar to the Jump Host "
+"for Guest Console sessions to VDI Instances"
+
+#: ../../tools/vdi_pools.rst:111
+msgid ""
+"**GUEST CONSOLE JUMP PASSWORD** Jump Host Password used to connect to the"
+" Jump Host for Guest Console sessions to VDI Instances (optional if key "
+"specified)"
+msgstr ""
+"**GUEST CONSOLE JUMP PASSWORD** Jump Host Password used conectar to the "
+"Jump Host for Guest Console sessions to VDI Instances (optional if key "
+"specified)"
+
+#: ../../tools/vdi_pools.rst:112
+msgid ""
+"**GUEST CONSOLE KEYPAIR** Jump Host SSH Key used to connect to the Jump "
+"Host for Guest Console sessions to VDI Instances (optional if password "
+"specified)"
+msgstr ""
+"**GUEST CONSOLE KEYPAIR** Jump Host SSH Key used conectar to the Jump Host "
+"for Guest Console sessions to VDI Instances (optional if password "
+"specified)"
+
+#: ../../tools/vdi_pools.rst:114
+msgid ""
+"A Guest Console Keypair included here must be a local keypair, not a "
+"synced keypair."
+msgstr ""
+"A Guest Console Keypair included here debe ser a local keypair, not a "
+"synced keypair."
+
+msgid ".. image:: images/personas/vdi/createVdiPool.png"
+msgstr ".. image:: images/personas/vdi/createVdiPool.png"
+
+#: ../../tools/vdi_pools.rst:122
+msgid "Creating or Editing a VDI Apps"
+msgstr "Creating o Editing a VDI Apps"
+
+#: ../../tools/vdi_pools.rst:124
+msgid ""
+"VDI Apps allow users to launch directly into commonly-used apps rather "
+"than the OS desktop. Currently, VDI Apps only work with RDP Windows "
+"Instances, taking advantage of native Windows Remote Application "
+"functionality. Natively-hosted remote desktop applications can only be "
+"presented from Windows 10 Enterprise and Education. Other versions of "
+"Windows 10 can present remote applications using the procedure below:"
+msgstr ""
+"VDI Apps allow users to launch directly en commonly-used apps rather than "
+"the OS desktop. Actualmente, VDI Apps solo work con RDP Windows Instances, "
+"taking advantage of native Windows Remote Application functionality. "
+"Natively-hosted remote desktop applications can solo be presented desde "
+"Windows 10 Enterprise y Education. Other versions of Windows 10 can "
+"present remote applications using the procedure below:"
+
+#: ../../tools/vdi_pools.rst:126
+msgid "Open the Windows Registry Editor"
+msgstr "Open the Windows Registry Editor"
+
+#: ../../tools/vdi_pools.rst:127
+msgid ""
+"Locate the following entry: "
+"``HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows "
+"NT\\CurrentVersion\\Terminal Server\\TSAppAllowList``"
+msgstr ""
+"Locate lo siguiente entry: "
+"``HKEY_LOCAL_MACHINE\\\\SOFTWARE\\\\Microsoft\\\\Windows "
+"NT\\\\CurrentVersion\\\\Terminal Server\\\\TSAppAllowList``"
+
+#: ../../tools/vdi_pools.rst:128
+msgid ""
+"Navigate to ``fDisabledAllowList`` and set its value to \"1\" in the "
+"right-hand pane"
+msgstr ""
+"Navigate to ``fDisabledAllowList`` y set its value to \\\"1\\\" in the "
+"right-hand pane"
+
+#: ../../tools/vdi_pools.rst:129
+msgid "Add a new key under ``TSAppAllowList`` and name it \"Applications\""
+msgstr "Add un nuevo key under ``TSAppAllowList`` y name it \\\"Applications\\\""
+
+#: ../../tools/vdi_pools.rst:130
+msgid "Add a new key under \"Applications\" using any name you'd like"
+msgstr "Add un nuevo key under \\\"Applications\\\" using any name you'd like"
+
+#: ../../tools/vdi_pools.rst:131
+msgid ""
+"Within this new key, create two new string values, one called \"Name\" "
+"and one called \"Path\""
+msgstr ""
+"Within this new key, create two new string values, one called \\\"Name\\\" "
+"y one called \\\"Path\\\""
+
+#: ../../tools/vdi_pools.rst:132
+msgid ""
+"The string value for \"Name\" should describe the application (ex. "
+"\"Notepad\")"
+msgstr ""
+"The string value for \\\"Name\\\" should describe the application (ex. "
+"\\\"Notepad\\\")"
+
+#: ../../tools/vdi_pools.rst:133
+msgid ""
+"The string value for \"Path\" should be the absolute path to the "
+"executable for that application (ex. "
+"\"C:\\Windows\\System32\\notepad.exe\")"
+msgstr ""
+"The string value for \\\"Path\\\" debería ser the absolute path to the "
+"executable for that application (ex. "
+"\\\"C:\\\\Windows\\\\System32\\\\notepad.exe\\\")"
+
+#: ../../tools/vdi_pools.rst:135
+msgid ""
+"VDI Apps are created by selecting :guilabel:`+ ADD` from the VDI Apps tab"
+" or edit an existing one by clicking on the pencil icon from the "
+"appropriate row. Configure the following, fields containing a vertical "
+"blue bar along the left edge are required:"
+msgstr ""
+"VDI Apps are created by selecting :guilabel:`+ ADD` desde the VDI Apps tab "
+"o edit un existente one by clicking on the pencil icon desde the "
+"appropriate row. Configure lo siguiente, fields containing a vertical blue "
+"bar along the left edge son obligatorios:"
+
+#: ../../tools/vdi_pools.rst:137
+msgid "**NAME:** A friendly name for the VDI App in |morpheus|"
+msgstr "**NAME:** A friendly name for the VDI App in |morpheus|"
+
+#: ../../tools/vdi_pools.rst:138
+msgid "**DESCRIPTION:** A description of the virtual app type"
+msgstr "**DESCRIPTION:** A description of the virtual app type"
+
+#: ../../tools/vdi_pools.rst:139
+msgid ""
+"**LAUNCH PREFIX:** A reference to the remote app registry prepended with "
+"two pipes ( ``||`` ). For example, we might create a registry \"Chrome\" "
+"for a Chrome browser VDI App and the associated launch prefix would be "
+"\"||Chrome\""
+msgstr ""
+"**LAUNCH PREFIX:** A reference a la remote app registry prepended con two "
+"pipes ( ``||`` ). Por ejemplo, we might create a registry \"Chrome\" for a "
+"Chrome browser VDI App y the associated launch prefix would be "
+"\"||Chrome\""
+
+#: ../../tools/vdi_pools.rst:140
+msgid ""
+"**LOGO:** Upload or select a logo to represent the virtual app type to "
+"users"
+msgstr ""
+"**LOGO:** Upload o select a logo to represent the virtual app type to "
+"users"
+
+#: ../../tools/vdi_pools.rst:143
+msgid "VDI Gateways"
+msgstr "VDI Gateways"
+
+#: ../../tools/vdi_pools.rst:145
+msgid ""
+"The |morpheus| Worker is a light weight distributed worker daemon as well"
+" as a scalable VDI Gateway. Currently, the features center around VDI "
+"Gateway but will expand to support full plugin workloads as well as agent"
+" relay capabilities."
+msgstr ""
+"The |morpheus| Worker is a light weight distributed worker daemon así como "
+"a scalable VDI Gateway. Actualmente, the features center around VDI "
+"Gateway but will expand to support full plugin workloads así como agent "
+"relay capabilities."
+
+#: ../../tools/vdi_pools.rst:148
+msgid "Adding VDI Gateways to |morpheus|"
+msgstr "Adding VDI Gateways to |morpheus|"
+
+#: ../../tools/vdi_pools.rst:150
+msgid ""
+"VDI Gateways can be linked to a |morpheus| appliance and then used in VDI"
+" Pool configurations. VDI sessions will be redirected to configured "
+"gateways instead of the |morpheus| appliance when a VDI Gateway is "
+"specified for a VDI Pool."
+msgstr ""
+"VDI Gateways puede ser linked to a |morpheus| appliance y then used in VDI "
+"Pool configurations. VDI sessions será redirected configurard gateways "
+"instead of the |morpheus| appliance when a VDI Gateway is specified for a "
+"VDI Pool."
+
+#: ../../tools/vdi_pools.rst:152
+msgid ""
+"A VDI Gateway is a separate VM or container Instance used to route users "
+"to VDI Instances. The |morpheus| VDI Gateway section is for configuring a"
+" connection to a VDI Gateway, not creating the gateway Instance itself."
+msgstr ""
+"A VDI Gateway is a separate VM o container Instance used to route users to "
+"VDI Instances. The |morpheus| VDI Gateway section is for configuring a "
+"connection to a VDI Gateway, not creating the gateway Instance itself."
+
+#: ../../tools/vdi_pools.rst:154
+msgid ""
+"**NAME** Specify a name for the VDI Gateway in |morpheus|. Note that the "
+"VDI Gateway Name is not used when connecting to the gateway"
+msgstr ""
+"**NAME** Specify a name for the VDI Gateway in |morpheus|. Tenga en cuenta "
+"que the VDI Gateway Name is no used when connecting to the gateway"
+
+#: ../../tools/vdi_pools.rst:155
+msgid ""
+"**DESCRIPTION** Specify a description for the VDI Gateway in |morpheus|. "
+"(optional)"
+msgstr ""
+"**DESCRIPTION** Specify a description for the VDI Gateway in |morpheus|. "
+"(optional)"
+
+#: ../../tools/vdi_pools.rst:156
+msgid ""
+"**GATEWAY URL** The url of the VDI Gateway. This url is used to connect "
+"to the gateway, and should match the the worker url of the VDI Gateway."
+msgstr ""
+"**GATEWAY URL** The url of the VDI Gateway. This url se utiliza para "
+"connect to the gateway, y should match the the worker url of the VDI "
+"Gateway."
+
+#: ../../tools/vdi_pools.rst:158
+msgid ""
+"Upon creation, the VDI Gateway record will produce an ``API KEY``. This "
+"``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on "
+"the API Gateway itself under ``worker['apikey'] = '$API_KEY'``. Once the "
+"gateway object is created you will need to configure it as the default "
+"gateway in |morpheus| global settings (|AdmSetApp|). Scroll down to the "
+"\"Default Console Gateway\" setting and select the gateway object you've "
+"just created. Continue on to the next section to actually install the "
+"gateway and configure it with your API key."
+msgstr ""
+"Upon creation, the VDI Gateway record will produce an ``API KEY``. This "
+"``API KEY`` necesita ser specified in the ``morpheus-worker.rb`` file on "
+"the API Gateway itself under ``worker['apikey'] = '$API_KEY'``. Una vez "
+"que el gateway object is created you necesitará configure it as the "
+"predeterminado gateway in |morpheus| global settings (|AdmSetApp|). Scroll "
+"down to the \"Default Console Gateway\" setting y select the gateway "
+"object you've just created. Continue on to the next section to actually "
+"install the gateway y configure it con your clave API."
+
+#: ../../tools/vdi_pools.rst:161
+msgid "VDI Gateway VM Install"
+msgstr "VDI Gateway VM Install"
+
+#: ../../tools/vdi_pools.rst:163
+msgid ""
+"A VDI Gateway VM is installed and configured similarly to a |morpheus| "
+"appliance via ``rpm`` or ``deb`` package."
+msgstr ""
+"A VDI Gateway VM está instalado y configurado similarly to a |morpheus| "
+"appliance via ``rpm`` o ``deb`` package."
+
+#: ../../tools/vdi_pools.rst:165
+msgid ""
+"VDI Gateway Package URLs are available at https://app.morpheushub.com in "
+"the downloads section."
+msgstr ""
+"VDI Gateway Package URLs are disponible at https://app.morpheushub.com in "
+"the downloads section."
+
+#: ../../tools/vdi_pools.rst:167
+msgid "**Requirements**"
+msgstr "**Requirements**"
+
+#: ../../tools/vdi_pools.rst:169
+msgid "**Supported VDI Gateway Operating Systems**"
+msgstr "**Supported VDI Gateway Sistemas operativos**"
+
+#: ../../tools/vdi_pools.rst:173
+msgid "OS"
+msgstr "SO"
+
+#: ../../tools/vdi_pools.rst:174
+msgid "Version(s)"
+msgstr "Versión(es)"
+
+#: ../../tools/vdi_pools.rst:175
+msgid "Amazon Linux"
+msgstr "Amazon Linux"
+
+#: ../../tools/vdi_pools.rst:176
+msgid "2"
+msgstr "2"
+
+#: ../../tools/vdi_pools.rst:177
+msgid "CentOS"
+msgstr "CentOS"
+
+#: ../../tools/vdi_pools.rst:178 ../../tools/vdi_pools.rst:182
+msgid "7.x, 8.x"
+msgstr "7.x, 8.x"
+
+#: ../../tools/vdi_pools.rst:179
+msgid "Debian"
+msgstr "Debian"
+
+#: ../../tools/vdi_pools.rst:180
+msgid "9, 10, 11"
+msgstr "9, 10, 11"
+
+#: ../../tools/vdi_pools.rst:181
+msgid "RHEL"
+msgstr "RHEL"
+
+#: ../../tools/vdi_pools.rst:183
+msgid "SUSE, SLES"
+msgstr "SUSE, SLES"
+
+#: ../../tools/vdi_pools.rst:184
+msgid "12"
+msgstr "12"
+
+#: ../../tools/vdi_pools.rst:185
+msgid "Ubuntu"
+msgstr "Ubuntu"
+
+#: ../../tools/vdi_pools.rst:186
+msgid "16.04, 18.04, 20.04"
+msgstr "16.04, 18.04, 20.04"
+
+#: ../../tools/vdi_pools.rst:188
+msgid ""
+"**Memory:** 4 GB RAM minimum recommended for default installations "
+"supporting up to 20 concurrent sessions. Add 50 MB RAM per additional "
+"concurrent session"
+msgstr ""
+"**Memory:** 4 GB RAM minimum recomendado for predeterminado installations "
+"supporting hasta 20 concurrent sessions. Add 50 MB RAM per adicional "
+"concurrent session"
+
+#: ../../tools/vdi_pools.rst:189
+msgid ""
+"**Storage:** 10 GB storage minimum recommended. Storage is required for "
+"VDI Gateway Packages and log files"
+msgstr ""
+"**Storage:** 10 GB storage minimum recommended. Storage es obligatorio for "
+"VDI Gateway Packages y archivos de registro"
+
+#: ../../tools/vdi_pools.rst:190
+msgid "**CPU:** 4-core minimum recommended"
+msgstr "**CPU:** 4-core minimum recommended"
+
+#: ../../tools/vdi_pools.rst:191
+msgid ""
+"Network connectivity to and from |morpheus| appliance and from users to "
+"the VDI Gateway over TCP 443 (HTTPS)"
+msgstr ""
+"Network connectivity to y desde |morpheus| appliance y desde users to the "
+"VDI Gateway over TCP 443 (HTTPS)"
+
+#: ../../tools/vdi_pools.rst:192
+msgid ""
+"Superuser privileges via the ``sudo`` command for the user installing the"
+" |morpheus| VDI Gateway package"
+msgstr ""
+"Superuser privileges via the ``sudo`` command para la user installing the "
+"|morpheus| VDI Gateway package"
+
+#: ../../tools/vdi_pools.rst:193
+msgid ""
+"Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may"
+" be required for RPM distros"
+msgstr ""
+"Access to base ``yum`` o ``apt`` repos. Access to Optional RPM repos may "
+"be obligatorio for RPM distros"
+
+#: ../../tools/vdi_pools.rst:195
+msgid ""
+"Download the target distro & version package for installation in a "
+"directory of your choosing. The package can be removed after successful "
+"installation."
+msgstr ""
+"Download the target distro & version package for installation in a "
+"directory of your choosing. The package puede ser removed after successful "
+"installation."
+
+#: ../../tools/vdi_pools.rst:197
+msgid ""
+"wget https://downloads.morpheusdata.com/path/to/morpheus-"
+"worker-$version.distro"
+msgstr ""
+"wget "
+"https://downloads.morpheusdata.com/path/to/morpheus-worker-$version.distro"
+
+#: ../../tools/vdi_pools.rst:201
+msgid "Validate the package checksum matches source checksums. For example:"
+msgstr "Validate el paquete checksum matches source checksums. Por ejemplo:"
+
+#: ../../tools/vdi_pools.rst:203
+msgid "sha256sum morpheus-worker-$version.distro"
+msgstr "sha256sum morpheus-worker-$version.distro"
+
+#: ../../tools/vdi_pools.rst:207
+msgid ""
+"Next install the package using your selected distribution's package "
+"installation command and your preferred opts. Example, for RPM:"
+msgstr ""
+"Next install el paquete using your selected distribution's package "
+"installation command y your preferred opts. Example, for RPM:"
+
+#: ../../tools/vdi_pools.rst:209
+msgid "rpm:"
+msgstr "rpm:"
+
+#: ../../tools/vdi_pools.rst:211
+msgid ""
+"sudo rpm -ihv morpheus-worker-$version.$distro\n"
+"\n"
+"Preparing...                          ################################# "
+"[100%]\n"
+"Updating / installing...\n"
+"   1:morpheus-worker-5.3.1-1.$distro    #################################"
+" [100%]\n"
+"Thank you for installing Morpheus Worker!\n"
+"Configure and start the Worker by running the following command:\n"
+"\n"
+"sudo morpheus-worker-ctl reconfigure"
+msgstr ""
+"sudo rpm -ihv morpheus-worker-$version.$distro\n\nPreparing... "
+"################################# [100%]\nUpdating / installing...\n   "
+"1:morpheus-worker-5.3.1-1.$distro    ################################# "
+"[100%]\nThank you for installing Morpheus Worker!\nConfigure y start the "
+"Worker by running the following command:\n\nsudo morpheus-worker-ctl "
+"reconfigure"
+
+#: ../../tools/vdi_pools.rst:223
+msgid ""
+"Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and"
+" updating the following:"
+msgstr ""
+"Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` y "
+"updating lo siguiente:"
+
+#: ../../tools/vdi_pools.rst:225
+msgid ""
+"worker_url 'https://gateway_worker_url' # This is the gateway URL the "
+"|morpheus| appliance can resolve and reach on 443\n"
+"worker['appliance_url'] = 'https://morpheus_appliance_url' # The "
+"resolvable URL or IP address of |morpheus| appliance which the gateway "
+"can reach on port 443\n"
+"worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key "
+"generated from |morpheus| Appliance VDI Pools > VDI Gateways "
+"configuraiton"
+msgstr ""
+"worker_url 'https://gateway_worker_url' # This is the gateway URL the "
+"|morpheus| appliance can resolve y reach on 443\\nworker['appliance_url'] "
+"= 'https://morpheus_appliance_url' # The resolvable URL o dirección IP of "
+"|morpheus| appliance which the gateway can reach on puerto "
+"443\\nworker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key "
+"generated desde |morpheus| Appliance VDI Pools > VDI Gateways "
+"configuraiton"
+
+#: ../../tools/vdi_pools.rst:231
+msgid ""
+"By default the worker_url uses the machine's hostname, ie "
+"``https://your_machine_name``. The default ``worker_url`` value can be "
+"changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the "
+"value of ``worker_url``. Additional appliance configuration options are "
+"available below."
+msgstr ""
+"Por defecto the worker_url uses the machine's hostname, ie "
+"``https://your_machine_name``. The predeterminado ``worker_url`` value "
+"puede ser changed by editing ``/etc/morpheus/morpheus-worker.rb`` y "
+"changing the value of ``worker_url``. Additional appliance configuration "
+"options are disponible below."
+
+#: ../../tools/vdi_pools.rst:233
+msgid ""
+"After all configuration options have been set, run ``sudo morpheus-"
+"worker-ctl reconfigure`` to install and configure the worker, nginx and "
+"guacd services:"
+msgstr ""
+"After all configuration options han sido set, run ``sudo "
+"morpheus-worker-ctl reconfigure`` instalar y configure the worker, nginx y "
+"guacd services:"
+
+#: ../../tools/vdi_pools.rst:235
+msgid "sudo morpheus-worker-ctl reconfigure"
+msgstr "sudo morpheus-worker-ctl reconfigure"
+
+#: ../../tools/vdi_pools.rst:239
+msgid ""
+"The worker reconfigure process will install and configure the worker, "
+"nginx and guacd services and dependencies."
+msgstr ""
+"The worker reconfigure process will install y configure the worker, nginx "
+"y guacd services y dependencies."
+
+#: ../../tools/vdi_pools.rst:241
+msgid ""
+"Configuration options can be updated after the initial reconfigure by "
+"editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-"
+"worker-ctl reconfigure`` again."
+msgstr ""
+"Configuration options puede ser updated after the initial reconfigure by "
+"editing ``/etc/morpheus/morpheus-worker.rb`` y running ``sudo "
+"morpheus-worker-ctl reconfigure`` again."
+
+#: ../../tools/vdi_pools.rst:243
+msgid ""
+"Once the installation is complete the morpheus worker service will "
+"automatically start and open a web socket with the specified |morpheus| "
+"appliance. To monitor the startup process, run ``morpheus-worker-ctl "
+"tail`` to tail the logs of the worker, nginx and guacd services. "
+"Individual services can be tailed by specifying the service, for example "
+"``morpheus-worker-ctl tail worker``"
+msgstr ""
+"Once la instalación is complete the morpheus worker service will "
+"automatically start y open a web socket con the specified |morpheus| "
+"appliance. To monitor the startup process, run ``morpheus-worker-ctl "
+"tail`` to tail the logs of the worker, nginx y guacd services. Individual "
+"services puede ser tailed by specifying el servicio, por ejemplo "
+"``morpheus-worker-ctl tail worker``"
+
+#: ../../tools/vdi_pools.rst:247
+msgid "VDI Gateway Docker Install"
+msgstr "VDI Gateway Docker Install"
+
+#: ../../tools/vdi_pools.rst:249
+msgid ""
+"To Use VDI Gateway within a Docker container, a few pieces of information"
+" are needed."
+msgstr ""
+"To Use VDI Gateway dentro de a Docker container, a few pieces of "
+"information are needed."
+
+#: ../../tools/vdi_pools.rst:251
+msgid ""
+"Firstly, in |morpheus|, go to **Tools > VDI Pools > VDI Gateways** and "
+"create a new VDI Gateway Record. Be sure to set the HTTPS URL as "
+"|morpheus| will need to be able to redirect the user's browser to that "
+"page. An API Key will be generated. Make note of this as you will need it"
+" later."
+msgstr ""
+"Firstly, in |morpheus|, go to **Tools > VDI Pools > VDI Gateways** y "
+"create a new VDI Gateway Record. Be sure to set the HTTPS URL as "
+"|morpheus| will necesitan ser able to redirect the user's browser to that "
+"page. An API Key será generated. Make note of this as you will need it "
+"later."
+
+#: ../../tools/vdi_pools.rst:253
+msgid "Now Simply run with:"
+msgstr "Now Simply run with:"
+
+#: ../../tools/vdi_pools.rst:255
+msgid ""
+"docker run -d -p 8443:8443  -e MORPHEUS_SELF_SIGNED=true -e "
+"MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheusAppliance.url "
+"morpheusdata/morpheus-worker:latest``"
+msgstr ""
+"docker run -d -p 8443:8443  -e MORPHEUS_SELF_SIGNED=true -e "
+"MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheusAppliance.url "
+"morpheusdata/morpheus-worker:latest``"
+
+#: ../../tools/vdi_pools.rst:259
+msgid ""
+"This will setup an HTTPS self-signed exposed port on 8443 for the vdi "
+"gateway. It is highly recommended to use valid certificates on your VDI "
+"Gateways. It could be terminated at the VIP or a p12 SSL File can be used"
+" and configured for the container."
+msgstr ""
+"This will setup an HTTPS self-signed exposed port on 8443 for the vdi "
+"gateway. It is highly recomendado to use valid certificates on your VDI "
+"Gateways. It could be terminated at the VIP o a p12 SSL File puede ser "
+"used y configurado for the container."
+
+#: ../../tools/vdi_pools.rst:261
+msgid ""
+"If the docker entrypoint detects a file at ``/etc/certs/cert.p12``, SSL "
+"Will be enabled on port 8443 instead. be sure to set environment "
+"variables ``MORPHEUS_SSL_ALIAS`` and ``MORPHEUS_SSL_PASSWORD`` when using"
+" p12 files."
+msgstr ""
+"If the docker entrypoint detects a file at ``/etc/certs/cert.p12``, SSL "
+"Will be habilitado on port 8443 instead. be sure establecer environment "
+"variables ``MORPHEUS_SSL_ALIAS`` y ``MORPHEUS_SSL_PASSWORD`` when using "
+"p12 files."
+
+#: ../../tools/vdi_pools.rst:263
+msgid ""
+"If you wish to run in HTTP mode and SSL terminate at the VIP, you can run"
+" the container like so:"
+msgstr ""
+"If you wish ejecutar in HTTP mode y SSL terminate at the VIP, you can run "
+"the container like so:"
+
+#: ../../tools/vdi_pools.rst:265
+msgid ""
+"docker run -d -p 8080:8080  -e MORPHEUS_SELF_SIGNED=true -e "
+"MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheus.url "
+"morpheusdata/morpheus-worker:latest"
+msgstr ""
+"docker run -d -p 8080:8080  -e MORPHEUS_SELF_SIGNED=true -e "
+"MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheus.url "
+"morpheusdata/morpheus-worker:latest"
+
+#: ../../tools/vdi_pools.rst:270
+msgid "VDI Gateway Helm Chart Installation"
+msgstr "VDI Gateway Helm Chart Installation"
+
+#: ../../tools/vdi_pools.rst:272
+msgid "First, configure the Helm repository:"
+msgstr "First, configure the Helm repository:"
+
+#: ../../tools/vdi_pools.rst:274
+msgid ""
+"helm repo add morpheusdata https://gomorpheus.github.io/helm-charts-"
+"morpheus/"
+msgstr ""
+"helm repo add morpheusdata "
+"https://gomorpheus.github.io/helm-charts-morpheus/"
+
+#: ../../tools/vdi_pools.rst:278
+msgid ""
+"Next, install the |morpheus| worker using ``helm install``. You can "
+"specify each parameter using ``--set key=value[,key=value]`` arguments as"
+" in the following example:"
+msgstr ""
+"Next, install the |morpheus| worker using ``helm install``. You can "
+"specify each parameter using ``--set key=value[,key=value]`` arguments as "
+"in lo siguiente example:"
+
+#: ../../tools/vdi_pools.rst:280
+msgid ""
+"helm install morpheus-worker --set replicaCount=\"1\" morpheusdata"
+"/morpheus-worker"
+msgstr ""
+"helm install morpheus-worker --set replicaCount=\\\"1\\\" "
+"morpheusdata/morpheus-worker"
+
+#: ../../tools/vdi_pools.rst:284
+msgid ""
+"Alternatively, you can create a values YAML file and pass an argument as "
+"in the following example:"
+msgstr ""
+"Alternatively, you can create a values YAML file y pass an argument as in "
+"lo siguiente example:"
+
+#: ../../tools/vdi_pools.rst:286
+msgid "helm install -f values.yaml morpheus-worker morpheusdata/morpheus-worker"
+msgstr "helm install -f values.yaml morpheus-worker morpheusdata/morpheus-worker"
+
+#: ../../tools/vdi_pools.rst:290
+msgid ""
+"Upgrading the workers node(s) is as simple as refreshing the repo and "
+"using ``helm upgrade``:"
+msgstr ""
+"Upgrading the workers node(s) is as simple as refreshing the repo y using "
+"``helm upgrade``:"
+
+#: ../../tools/vdi_pools.rst:292
+msgid ""
+"helm repo update\n"
+"helm upgrade -f values.yaml morpheus-worker morpheusdata/morpheus-worker"
+msgstr ""
+"helm repo update\\nhelm upgrade -f values.yaml morpheus-worker "
+"morpheusdata/morpheus-worker"
+
+#: ../../tools/vdi_pools.rst:297
+msgid "To uninstall, use one of the following:"
+msgstr "To uninstall, use one of lo siguiente:"
+
+#: ../../tools/vdi_pools.rst:299
+msgid "helm uninstall morpheus-worker"
+msgstr "helm uninstall morpheus-worker"
+
+#: ../../tools/vdi_pools.rst:303
+msgid "or"
+msgstr "o"
+
+#: ../../tools/vdi_pools.rst:305
+msgid "helm delete morpheus-worker --purge"
+msgstr "helm delete morpheus-worker --purge"
+
+#: ../../tools/vdi_pools.rst:309
+msgid ""
+"``helm delete`` removes all the Kubernetes components associated with the"
+" chart and deletes the release."
+msgstr ""
+"``helm delete`` removes all the Kubernetes components asociado cen la "
+"chart y deletes the release."
+
+#: ../../tools/vdi_pools.rst:311
+msgid ""
+"The following table lists the configurable parameters of the Sentry chart"
+" and their default values:"
+msgstr ""
+"Lo siguiente table lists the configurable parameters of the Sentry chart y "
+"their predeterminado values:"
+
+#: ../../tools/vdi_pools.rst:317
+msgid "Parameter"
+msgstr "Parameter"
+
+#: ../../tools/vdi_pools.rst:318
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../tools/vdi_pools.rst:319
+msgid "Default"
+msgstr "Predeterminado"
+
+#: ../../tools/vdi_pools.rst:320
+msgid "image.repository"
+msgstr "image.repository"
+
+#: ../../tools/vdi_pools.rst:321
+msgid "Image repository"
+msgstr "Image repository"
+
+#: ../../tools/vdi_pools.rst:322
+msgid "morpheusdata/morpheus-worker"
+msgstr "morpheusdata/morpheus-worker"
+
+#: ../../tools/vdi_pools.rst:323
+msgid "image.tag"
+msgstr "image.tag"
+
+#: ../../tools/vdi_pools.rst:324
+msgid "Image tag. Possible values listed here."
+msgstr "Image tag. Possible values listed here."
+
+#: ../../tools/vdi_pools.rst:325
+msgid "5.3.1-4"
+msgstr "5.3.1-4"
+
+#: ../../tools/vdi_pools.rst:326
+msgid "image.pullPolicy"
+msgstr "image.pullPolicy"
+
+#: ../../tools/vdi_pools.rst:327
+msgid "Image pull policy"
+msgstr "Image pull policy"
+
+#: ../../tools/vdi_pools.rst:328
+msgid "IfNotPresent"
+msgstr "IfNotPresent"
+
+#: ../../tools/vdi_pools.rst:329
+msgid "env.MORPHEUS_KEY"
+msgstr "env.MORPHEUS_KEY"
+
+#: ../../tools/vdi_pools.rst:330
+msgid "API Key for Morpheus Worker"
+msgstr "API Key for Morpheus Worker"
+
+#: ../../tools/vdi_pools.rst:332
+msgid "env.MORPHEUS_URL"
+msgstr "env.MORPHEUS_URL"
+
+#: ../../tools/vdi_pools.rst:333
+msgid "Morpheus FQDN with protocol"
+msgstr "Morpheus FQDN con protocol"
+
+#: ../../tools/vdi_pools.rst:335
+msgid "env.MORPHEUS_SELF_SIGNED"
+msgstr "env.MORPHEUS_SELF_SIGNED"
+
+#: ../../tools/vdi_pools.rst:336
+msgid "Is Morpheus using a Self Signed Certificate"
+msgstr "Is Morpheus using a Self Signed Certificate"
+
+#: ../../tools/vdi_pools.rst:337 ../../tools/vdi_pools.rst:361
+#: ../../tools/vdi_pools.rst:376
+msgid "false"
+msgstr "falso"
+
+#: ../../tools/vdi_pools.rst:338
+msgid "service.type"
+msgstr "service.type"
+
+#: ../../tools/vdi_pools.rst:339
+msgid "Kubernetes service type for the GUI"
+msgstr "Kubernetes service type for the GUI"
+
+#: ../../tools/vdi_pools.rst:340
+msgid "ClusterIP"
+msgstr "ClusterIP"
+
+#: ../../tools/vdi_pools.rst:341
+msgid "service.port"
+msgstr "service.port"
+
+#: ../../tools/vdi_pools.rst:342
+msgid "Kubernetes port where the GUI is exposed"
+msgstr "Kubernetes port where the GUI is exposed"
+
+#: ../../tools/vdi_pools.rst:343
+msgid "8989"
+msgstr "8989"
+
+#: ../../tools/vdi_pools.rst:344
+msgid "livenessProbe.initialDelaySeconds"
+msgstr "livenessProbe.initialDelaySeconds"
+
+#: ../../tools/vdi_pools.rst:345
+msgid "Initial delay (seconds) for liveness monitoring"
+msgstr "Initial delay (seconds) for liveness monitoring"
+
+#: ../../tools/vdi_pools.rst:346 ../../tools/vdi_pools.rst:349
+msgid "5"
+msgstr "5"
+
+#: ../../tools/vdi_pools.rst:347
+msgid "livenessProbe.timeoutSeconds"
+msgstr "livenessProbe.timeoutSeconds"
+
+#: ../../tools/vdi_pools.rst:348
+msgid "Timeout (seconds) before health check considered unhealthy"
+msgstr "Timeout (seconds) antes de verificación de salud considered unhealthy"
+
+#: ../../tools/vdi_pools.rst:350
+msgid "livenessProbe.periodSeconds"
+msgstr "livenessProbe.periodSeconds"
+
+#: ../../tools/vdi_pools.rst:351
+msgid "Poll interval (seconds) between health checks"
+msgstr "Poll interval (seconds) entre verificaciones de salud"
+
+#: ../../tools/vdi_pools.rst:352
+msgid "10"
+msgstr "10"
+
+#: ../../tools/vdi_pools.rst:353
+msgid "livenessProbe.failureThreshold"
+msgstr "livenessProbe.failureThreshold"
+
+#: ../../tools/vdi_pools.rst:354
+msgid "Number of failed polls before restarting service"
+msgstr "Number of failed polls antes de restarting service"
+
+#: ../../tools/vdi_pools.rst:355
+msgid "3"
+msgstr "3"
+
+#: ../../tools/vdi_pools.rst:356
+msgid "replicaCount"
+msgstr "replicaCount"
+
+#: ../../tools/vdi_pools.rst:357
+msgid "Number of Replicas if AutoScaling False"
+msgstr "Number of Replicas if AutoScaling False"
+
+#: ../../tools/vdi_pools.rst:358 ../../tools/vdi_pools.rst:364
+msgid "1"
+msgstr "1"
+
+#: ../../tools/vdi_pools.rst:359
+msgid "autoscaling.enabled"
+msgstr "autoscaling.enabled"
+
+#: ../../tools/vdi_pools.rst:360
+msgid "Enable AutoScaling"
+msgstr "Enable AutoScaling"
+
+#: ../../tools/vdi_pools.rst:362
+msgid "autoscaling.minReplicas"
+msgstr "autoscaling.minReplicas"
+
+#: ../../tools/vdi_pools.rst:363
+msgid "Minimum number of Replicas"
+msgstr "Minimum number of Replicas"
+
+#: ../../tools/vdi_pools.rst:365
+msgid "autoscaling.maxReplicas"
+msgstr "autoscaling.maxReplicas"
+
+#: ../../tools/vdi_pools.rst:366
+msgid "Maximum number of Replicas"
+msgstr "Maximum number of Replicas"
+
+#: ../../tools/vdi_pools.rst:367
+msgid "100"
+msgstr "100"
+
+#: ../../tools/vdi_pools.rst:368
+msgid "autoscaling.targetCPUUtilizationPercentage"
+msgstr "autoscaling.targetCPUUtilizationPercentage"
+
+#: ../../tools/vdi_pools.rst:369
+msgid "CPU Threshold for AutoScaling"
+msgstr "CPU Threshold for AutoScaling"
+
+#: ../../tools/vdi_pools.rst:370
+msgid "80"
+msgstr "80"
+
+#: ../../tools/vdi_pools.rst:371
+msgid "autoscaling.targetMemoryUtilizationPercentage"
+msgstr "autoscaling.targetMemoryUtilizationPercentage"
+
+#: ../../tools/vdi_pools.rst:372
+msgid "Memory Threshold for AutoScaling"
+msgstr "Memory Threshold for AutoScaling"
+
+#: ../../tools/vdi_pools.rst:374
+msgid "ingress.enabled"
+msgstr "ingress.enabled"
+
+#: ../../tools/vdi_pools.rst:375
+msgid "Enables Ingress"
+msgstr "Enables Ingress"
+
+#: ../../tools/vdi_pools.rst:377
+msgid "ingress.annotations"
+msgstr "ingress.annotations"
+
+#: ../../tools/vdi_pools.rst:378
+msgid "Ingress annotations"
+msgstr "Ingress annotations"
+
+#: ../../tools/vdi_pools.rst:379 ../../tools/vdi_pools.rst:391
+#: ../../tools/vdi_pools.rst:394 ../../tools/vdi_pools.rst:400
+#, python-brace-format
+msgid "{}"
+msgstr "{}"
+
+#: ../../tools/vdi_pools.rst:380
+msgid "ingress.path"
+msgstr "ingress.path"
+
+#: ../../tools/vdi_pools.rst:381
+msgid "Ingress path"
+msgstr "Ingress path"
+
+#: ../../tools/vdi_pools.rst:382
+msgid "/"
+msgstr "/"
+
+#: ../../tools/vdi_pools.rst:383
+msgid "ingress.hosts"
+msgstr "ingress.hosts"
+
+#: ../../tools/vdi_pools.rst:384
+msgid "Ingress accepted hostnames"
+msgstr "Ingress accepted hostnames"
+
+#: ../../tools/vdi_pools.rst:385
+msgid "chart-example.local"
+msgstr "chart-example.local"
+
+#: ../../tools/vdi_pools.rst:386
+msgid "ingress.tls"
+msgstr "ingress.tls"
+
+#: ../../tools/vdi_pools.rst:387
+msgid "Ingress TLS configuration"
+msgstr "Ingress TLS configuration"
+
+#: ../../tools/vdi_pools.rst:388 ../../tools/vdi_pools.rst:397
+msgid "[]"
+msgstr "[]"
+
+#: ../../tools/vdi_pools.rst:389
+msgid "resources"
+msgstr "resources"
+
+#: ../../tools/vdi_pools.rst:390
+msgid "CPU/Memory resource requests/limits"
+msgstr "CPU/Memory resource requests/limits"
+
+#: ../../tools/vdi_pools.rst:392
+msgid "nodeSelector"
+msgstr "nodeSelector"
+
+#: ../../tools/vdi_pools.rst:393
+msgid "Node labels for pod assignment"
+msgstr "Node labels for pod assignment"
+
+#: ../../tools/vdi_pools.rst:395
+msgid "tolerations"
+msgstr "tolerations"
+
+#: ../../tools/vdi_pools.rst:396
+msgid "Toleration labels for pod assignment"
+msgstr "Toleration labels for pod assignment"
+
+#: ../../tools/vdi_pools.rst:398
+msgid "affinity"
+msgstr "affinity"
+
+#: ../../tools/vdi_pools.rst:399
+msgid "Affinity settings for pod assignment"
+msgstr "Affinity settings for pod assignment"
+
+#: ../../getting_started/guides/vdi_guide.rst:10
+msgid "Virtual Desktop Persona Overview"
+msgstr "Escritorio virtual Persona Overview"
+
+#: ../../personas/virtual_desktop.rst:3
+msgid ""
+"The Morpheus VDI Persona provides a virtual desktop environment to grant "
+"users access to workstations and applications in a secure manner. Deploy "
+"pools of virtual machines on any supported |morpheus| Cloud for users to "
+"reserve and use! |morpheus| leverages open source client technologies, "
+"such as Apache Guacamole, to provide a performant and secure virtual "
+"desktop client for the end user while wrapping its frontend in a "
+"completely new framework. For information on configuring VDI pools for "
+"consumption in the Virtual Desktop Persona, see the `Tools section "
+"<https://docs.morpheusdata.com/en/latest/tools/vdi_pools.html>`_ of "
+"|morpheus| docs."
+msgstr ""
+"The Morpheus VDI Persona provides a virtual desktop environment to grant "
+"users access to workstations y applications in a secure manner. Deploy "
+"pools of virtual machines on any supported |morpheus| Cloud for users to "
+"reserve y use! |morpheus| leverages open source client technologies, como "
+"Apache Guacamole, to provide a performant y secure virtual desktop client "
+"for the end user while wrapping its frontend in a completely new "
+"framework. For information on configuring VDI pools for consumption in the "
+"Virtual Desktop Persona, see the `Tools section "
+"<https://docs.morpheusdata.com/en/latest/tools/vdi_pools.html>`_ of "
+"|morpheus| docs."
+
+#: ../../personas/virtual_desktop.rst:5
+msgid ""
+"This is not an integration with existing VDI Pool Managers such as VMWare"
+" Horizon, Citrix VDI, or Nutanix XiFrame. It is a standalone |morpheus| "
+"feature."
+msgstr ""
+"This is not an integration con existing VDI Pool Managers como VMWare "
+"Horizon, Citrix VDI, o Nutanix XiFrame. It is a standalone |morpheus| "
+"feature."
+
+#: ../../getting_started/guides/vdi_guide.rst
+msgid ".. image:: images/personas/vdi/vdPersona2.png"
+msgstr ".. image:: images/personas/vdi/vdPersona2.png"
+
+#: ../../personas/virtual_desktop.rst:10
+msgid "Key Features"
+msgstr "Key Features"
+
+#: ../../personas/virtual_desktop.rst:12
+msgid "VDI Pool Management"
+msgstr "VDI Pool Management"
+
+#: ../../personas/virtual_desktop.rst:13
+msgid "Virtual Desktop Persona"
+msgstr "Escritorio virtual Persona"
+
+#: ../../personas/virtual_desktop.rst:14
+msgid "RDP/SSH/VNC Console Support"
+msgstr "RDP/SSH/VNC Console Support"
+
+#: ../../personas/virtual_desktop.rst:15
+msgid "RDP Remote App Support"
+msgstr "RDP Remote App Support"
+
+#: ../../personas/virtual_desktop.rst:16
+msgid "Clipboard Copy/Paste"
+msgstr "Clipboard Copy/Paste"
+
+#: ../../personas/virtual_desktop.rst:17
+msgid "HiDPI Support"
+msgstr "HiDPI Support"
+
+#: ../../personas/virtual_desktop.rst:18
+msgid "Auto Compression Scanning based on User Bandwidth"
+msgstr "Auto Compression Scanning basado en User Bandwidth"
+
+#: ../../personas/virtual_desktop.rst:19
+msgid "Audio Playback (RDP)"
+msgstr "Audio Playback (RDP)"
+
+#: ../../personas/virtual_desktop.rst:20
+msgid "Local Printer (RDP)"
+msgstr "Local Printer (RDP)"
+
+#: ../../personas/virtual_desktop.rst:21
+msgid "Auto-Resize"
+msgstr "Auto-Resize"
+
+#: ../../personas/virtual_desktop.rst:22
+msgid "Auto-Login based on |morpheus| User Settings"
+msgstr "Auto-Login basado en |morpheus| User Settings"
+
+#: ../../personas/virtual_desktop.rst:23
+msgid "Customizable User Background"
+msgstr "Customizable User Background"
+
+#: ../../personas/virtual_desktop.rst:26
+msgid "Configuring Access to the Virtual Desktop Persona"
+msgstr "Configuring Access to the Escritorio virtual Persona"
+
+#: ../../personas/virtual_desktop.rst:32
+msgid "Toggle the Virtual Desktop permission to \"Full\" or \"None\""
+msgstr "Toggle the Escritorio virtual permission to \\\"Full\\\" o \\\"None\\\""
+
+#: ../../personas/virtual_desktop.rst:34
+msgid ""
+"Toggle access to selected VDI pools to \"Full\" or \"None\", you can also"
+" toggle permission on all pools to \"Full\" or \"None\" with the Global "
+"Access selection"
+msgstr ""
+"Toggle access to selected VDI pools to \"Full\" o \"None\", you can "
+"también toggle permission on all pools to \"Full\" o \"None\" con la "
+"Global Access selection"
+
+#: ../../personas/virtual_desktop.rst:38
+msgid "Launching a VDI Instance"
+msgstr "Launching a VDI Instance"
+
+#: ../../personas/virtual_desktop.rst:40
+msgid ""
+"VDI Instances are launched from the Virtual Desktops Persona. Depending "
+"on Role permissions, your account may default to this view or may even "
+"restrict you solely to this view. To access the Virtual Desktops Persona "
+"from the standard view or from another Persona, click on the user's name "
+"in the upper-right corner of the application window. When available, this"
+" dropdown menu will list the standard |morpheus| Persona view as well as "
+"any other Personas the user has permission to access. Click on Virtual "
+"Desktop to access the Virtual Desktop Persona."
+msgstr ""
+"VDI Instances are launched desde the Virtual Desktops Persona. Dependiendo "
+"de Role permissions, your account may predeterminado to this view o may "
+"even restrict you solely to this view. Para acceder a the Virtual Desktops "
+"Persona desde the standard view o desde another Persona, click on el "
+"usuario's name in the upper-right corner of the application window. When "
+"available, this dropdown menu will list the standard |morpheus| Persona "
+"view así como cualquier otros Personas el usuario has permission para "
+"acceder a. Click on Virtual Desktop para acceder a the Virtual Desktop "
+"Persona."
+
+#: ../../personas/virtual_desktop.rst:42
+msgid ""
+"The Virtual Desktop Persona view lists out each of the virtual desktop "
+"types they can access. Click on the desired virtual desktop type to "
+"launch it. If there are virtual apps available for any listed desktop "
+"types, they are presented in a flyout menu alongside a \"desktop\" option"
+" to access the base OS over an individual app. Items categorized as "
+"\"Desktops\" are VDI pools configured in the Tools menu of the Standard "
+"Persona. Items categorized as \"Instances\" are Instances favorited by "
+"the current user in the Standard Persona (if they have access and they "
+"have favorited any Instances). Clicking on an Instance tile offers quick "
+"access to the Instance console."
+msgstr ""
+"The Escritorio virtual Persona view lists out each of the escritorio "
+"virtual types they can access. Click on the desired escritorio virtual "
+"type to launch it. If there are virtual apps disponible for any listed "
+"desktop types, they are presented in a flyout menu alongside a "
+"\\\"desktop\\\" option acceder the base OS over an individual app. Items "
+"categorized as \\\"Desktops\\\" are VDI pools configurado in the Tools "
+"menu of the Standard Persona. Items categorized as \\\"Instances\\\" are "
+"Instances favorited by the actual user in the Standard Persona (if they "
+"have access y they have favorited any Instances). Clicking on an Instance "
+"tile offers quick access to the Instance console."
+
+#: ../../personas/virtual_desktop.rst:44
+msgid ""
+"Virtual Desktops are launched in a pop-up window. Be sure your web "
+"browser is not blocking pop-ups or create an appropriate exception for "
+"|morpheus| virtual desktop pop-ups."
+msgstr ""
+"Escritorio virtuals are launched in a pop-up window. Be sure your web "
+"browser is not blocking pop-ups o create an apropiado exception for "
+"|morpheus| escritorio virtual pop-ups."
+
+#: ../../personas/virtual_desktop.rst:47
+msgid "Changing the Virtual Desktop Persona Background"
+msgstr "Changing the Escritorio virtual Persona Background"
+
+#: ../../personas/virtual_desktop.rst:49
+msgid ""
+"The |morpheus| Virtual Desktop Persona includes default backgrounds for "
+"an elegant look out of the box. If desired, users may change this "
+"background to suit personal taste or organizational branding. This change"
+" is unique to each individual account. At this time, there is no option "
+"for appliance-wide whitelabeling for Virtual Desktop Persona backgrounds."
+msgstr ""
+"The |morpheus| Escritorio virtual Persona includes predeterminado "
+"backgrounds for an elegant look out of the box. If desired, users may "
+"change this background to suit personal taste o organizational branding. "
+"This change is unique to each individual account. At this time, there is "
+"no option for appliance-wide whitelabeling for Escritorio virtual Persona "
+"backgrounds."
+
+#: ../../personas/virtual_desktop.rst:51
+msgid ""
+"Click on the user's name in the far upper-right corner of the application"
+" window"
+msgstr ""
+"Click en la user's name en la far upper-right corner de la application "
+"window"
+
+#: ../../personas/virtual_desktop.rst:52
+msgid "Click USER SETTINGS"
+msgstr "Click USER SETTINGS"
+
+#: ../../personas/virtual_desktop.rst:53
+msgid "The section for \"VDI Settings\" is in the lower-right corner of the page"
+msgstr "The section for \\\"VDI Settings\\\" is in the lower-right corner of the page"
+
+#: ../../personas/virtual_desktop.rst:54
+msgid ""
+"Mark the RESET box and click :guilabel:`SAVE` to reset the Virtual "
+"Desktop Persona to the default background"
+msgstr ""
+"Mark the RESET box y click :guilabel:`SAVE` to reset the Escritorio "
+"virtual Persona to the predeterminado background"
+
+#: ../../personas/virtual_desktop.rst:55
+msgid "Click \"Browse\" and upload a local image to add a custom background"
+msgstr "Click \\\"Browse\\\" y upload a local image to add a personalizado background"
+
+#: ../../personas/virtual_desktop.rst:56
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`SAVE`"
+

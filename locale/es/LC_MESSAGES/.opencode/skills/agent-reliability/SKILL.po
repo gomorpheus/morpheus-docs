@@ -1,0 +1,304 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:11
+msgid ""
+"Provide behavioral guardrails that prevent common AI agent failure modes:"
+" hallucination, scope drift, unverified changes, and cascading errors."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:13
+msgid ""
+"These rules apply to all agents that read or write code. They are "
+"complementary to `implementation-principles` (which covers *what* to "
+"build) — this skill covers *how to stay reliable while building it*."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:15
+msgid "Verification"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:17
+msgid ""
+"**Always verify your work.** After making code changes, run the project's"
+" test suite, linter, or type checker. Do not claim a task is done without"
+" running validation. If no test command is known, say so explicitly."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:18
+msgid ""
+"**Read the file before editing it.** Never edit a file you haven't read "
+"in the current session. Your mental model of the file may be stale or "
+"wrong."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:19
+msgid ""
+"**Re-read your changes after making them.** Before declaring completion, "
+"review the diff of what you changed. Check for typos, missing imports, "
+"accidentally deleted lines, and logic errors."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:20
+msgid ""
+"**Verify the system works before your change.** If feasible, confirm the "
+"build passes or the relevant test passes *before* you start modifying "
+"code. This establishes a baseline so you know your change is what broke "
+"something if it breaks."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:22
+msgid "Honesty and hallucination prevention"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:24
+msgid ""
+"**Do not hallucinate file paths, APIs, or library signatures.** If you're"
+" unsure whether a file exists, read the directory. If you're unsure about"
+" an API, read the source or documentation. Never assume from training "
+"data."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:25
+msgid ""
+"**When you don't know something, say so.** Do not invent plausible-"
+"sounding answers. State what you're uncertain about and what you'd need "
+"to verify."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:26
+msgid ""
+"**Ground before you guess.** Before proposing a diagnosis, fix, or "
+"design, enumerate the load-bearing claims it depends on (what specific "
+"code does, what payloads contain, where errors originate, how working "
+"siblings of the same shape behave). Mark each `read` (you've inspected "
+"the actual source in this session) or `assumed`. Read the assumed ones — "
+"or downgrade the proposal to \"still investigating\" — before writing it "
+"down. Output the claim list visibly in your summary. A proposal that "
+"departs structurally from working in-tree siblings of the same shape "
+"(plugin, provider, integration, form, migration, adapter, command) treats"
+" the deviation as the first hypothesis to disprove, not a feature."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:28
+msgid "Scope discipline"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:30
+msgid ""
+"**One change at a time.** Make a single logical change, verify it works, "
+"then move to the next. Do not batch multiple unrelated changes into one "
+"pass — each introduces unverified complexity."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:31
+msgid ""
+"**If touching more than 10 files, pause and reassess.** Large changesets "
+"are a smell. Either the task is too big (split it), or the approach is "
+"too broad (find a narrower path). Explain why the scope is large before "
+"proceeding."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:32
+msgid ""
+"**Search the codebase before creating new files.** An existing utility, "
+"test helper, or component may already do what you need. Duplication is a "
+"common agent failure mode."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:34
+msgid "Honesty about scope"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:36
+msgid ""
+"The scope-discipline rules above defend against doing *too much*. These "
+"rules defend against doing *too little* — the symmetric failure mode."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:38
+msgid ""
+"**Two-Reading Rule.** When a requirement, acceptance criterion, or `## "
+"Changes` item has two plausible readings — for example, \"implement X\" "
+"could mean \"render the UI for X\" or \"render X and wire it up so X "
+"actually works\" — you must name both readings explicitly and pick the "
+"more thorough one, OR pause and ask. You may NOT silently pick the easier"
+" reading. The default interpretation of any verb that could mean \"show "
+"it\" or \"make it work\" is **make it work.**"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:39
+msgid ""
+"**Two-Reading Rule applies only to materially-different readings.** If "
+"the two readings are functionally equivalent or differ in trivia, don't "
+"perform the naming dance — just proceed. The rule fires when one reading "
+"is materially easier than the other and both are plausible."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:40
+msgid ""
+"**No silent reclassification.** Items in `## Changes` and `## Acceptance "
+"Criteria` are mandatory in-scope work. You may not move them to `## "
+"Boundaries` mid-delivery. If a Changes item turns out to be wrong, "
+"infeasible, or genuinely out of scope, surface it to the delivery lead "
+"and stop — do not silently reframe and move on."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:41
+msgid ""
+"**No soft completion language.** When reporting done, do not gloss "
+"skipped or partial work behind phrases like \"implementation summary\" or"
+" \"covered the main paths.\" Account for every Changes item and every "
+"acceptance criterion explicitly. The engineer's closing artifact is a "
+"**Completion Ledger** — see `engineer.md` for the format."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:43
+msgid "Persistence on continuous tasks"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:45
+msgid ""
+"When the user asks you to do something \"until complete,\" gives you a "
+"multi-step task, or invokes a workflow with more phases to run "
+"(`/deliver` on a multi-phase spec, batch mode, queue mode), **you must "
+"continue until the work is complete, you hit a true blocker, or the user "
+"explicitly interrupts you.**"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:47
+msgid "A **true blocker** is one of:"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:48
+msgid "A tool returned an error you cannot work around."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:49
+msgid "A credential or permission is missing."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:50
+msgid ""
+"The next step requires a decision only the user can make, and that "
+"decision is not already implied by the spec."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:51
+msgid ""
+"You have made two failed attempts at the same approach and need to "
+"reframe (see \"Error recovery\" above — this preserves that rule)."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:53
+msgid "A **true blocker is NOT**:"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:54
+msgid "\"This is taking a while.\""
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:55
+msgid "\"The next step is tedious.\""
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:56
+msgid "\"I want to check before continuing.\""
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:57
+msgid "\"Let me know if you want me to keep going.\""
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:58
+msgid "\"I've done a reasonable chunk — good stopping point.\""
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:60
+msgid ""
+"**Stopping early with \"let me know if you want me to continue\" is a "
+"failure mode, not politeness.** The next message should be the next step,"
+" not a yield. Explicit confirmation steps configured in supervised mode "
+"(e.g. `/deliver --supervised`) are not unilateral yields and are exempt "
+"from this rule — the rule applies to *unilateral* mid-task stops."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:62
+msgid "Error recovery"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:64
+msgid ""
+"**When a fix attempt fails, do not repeat the same approach.** If your "
+"first attempt at fixing a test failure or build error doesn't work, stop "
+"and analyze *why* it failed before trying again. Two failed attempts at "
+"the same approach means the approach is wrong."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:65
+msgid ""
+"**After two failed attempts, reframe the problem.** Step back, re-read "
+"the error and the relevant code, and explain what you've tried and why it"
+" didn't work. Propose a fundamentally different approach before "
+"continuing."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:66
+msgid ""
+"**Do not suppress errors to make tests pass.** If a test fails, fix the "
+"root cause. Do not add try/catch, ignore annotations, or skip directives "
+"to hide failures."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:68
+msgid "Working memory"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:70
+msgid ""
+"**Keep the task definition visible.** If working from a spec, re-read the"
+" relevant section before each sub-task. Do not rely on your memory of "
+"what the spec said."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:71
+msgid ""
+"**When context is long, summarize your plan before executing.** State "
+"what you're about to do in 2-3 sentences. This catches misunderstandings "
+"before they become wrong code."
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:73
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/agent-reliability/SKILL.md:75
+msgid ""
+"This skill is loaded automatically by the `engineer` agent and all "
+"implementation-oriented agents. It should also be used by any agent that "
+"modifies files or runs commands."
+msgstr ""
+

@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:2
+msgid "Single Node Install on RHEL"
+msgstr "Nodo único Install on RHEL"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:4
+msgid ""
+"To get started installing |morpheus| on RHEL/RedHat a few prerequisite "
+"items are required."
+msgstr ""
+"To get started installing |morpheus| on RHEL/RedHat a few prerequisite "
+"items son obligatorios."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:6
+msgid ""
+"Configure firewalld to allow access from users on 443 (Or remove firewall"
+" if not required)."
+msgstr ""
+"Configure firewalld to allow access desde users on 443 (Or remove firewall "
+"if not required)."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:7
+msgid "Make sure the machine is self resolvable to its own hostname."
+msgstr "Asegúrese de the machine is self resolvable to its own hostname."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:8
+msgid ""
+"For RHEL 7.x, the Optional RPMs repo needs to be added for Reconfigure to"
+" succeed. It does not need to be added For RHEL 8.x, as the Optional RPMs"
+" repo is now part of the appstream repo that is enabled by default in "
+"RHEL 8.x."
+msgstr ""
+"For RHEL 7.x, the Optional RPMs repo necesita ser added for Reconfigure to "
+"succeed. It does no necesitan ser added For RHEL 8.x, as the Optional RPMs "
+"repo is now part of the appstream repo that está habilitado por defecto in "
+"RHEL 8.x."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:10
+msgid ""
+"**RHEL 7.x Amazon:** ``yum-config-manager --enable rhel-7-server-rhui-"
+"optional-rpms``"
+msgstr ""
+"**RHEL 7.x Amazon:** ``yum-config-manager --enable "
+"rhel-7-server-rhui-optional-rpms``"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:11
+msgid "**RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``"
+msgstr "**RHEL 7.x:** ``yum-config-manager --enable rhel-7-server-optional-rpms``"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:13
+msgid ""
+"For Amazon users a Redhat subscription is not required if the appropriate"
+" yum REGION repository is added instead as demonstrated above."
+msgstr ""
+"For Amazon users a Redhat subscription no es obligatorio if the apropiado "
+"yum REGION repository is added instead as demonstrated above."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:15
+msgid ""
+"The RedHat Enterprise Linux server needs to be registered and activated "
+"with Redhat subscription. The server optional rpms repo needs to be "
+"enabled as well."
+msgstr ""
+"The RedHat Enterprise Linux server necesita ser registered y activated con "
+"Redhat subscription. The server optional rpms repo necesita ser enabled as "
+"well."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:17
+msgid ""
+"To check if the server has been activated please run the subscription-"
+"manager version. Subscription manager will return the version plus the "
+"python dependency version."
+msgstr ""
+"To check if the server ha sido activated please run the "
+"subscription-manager version. Subscription manager will return the version "
+"plus the python dependency version."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:19
+msgid ""
+"If the server has not been registered and activated then the subscription"
+" manager version will return the below message."
+msgstr ""
+"If the server has not been registered y activated then the subscription "
+"manager version will return the a continuación message."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:21
+msgid ""
+"sudo subscription-manager version\n"
+"server type: This system is currently not registered\n"
+"subscription management server: 0.9.51.24.-1\n"
+"subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7"
+msgstr ""
+"sudo subscription-manager version\\nserver type: This system is "
+"actualmente not registered\\nsubscription management server: "
+"0.9.51.24.-1\\nsubscription-manager: 1.10.14-7.el7 python-rhsm: "
+"1.10.12-2.el7"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:28
+msgid ""
+"When a server has been registered and activated with Redhat the "
+"subscription manager will return the below message."
+msgstr ""
+"When a server ha sido registered y activated con Redhat the subscription "
+"manager will return the below message."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:30
+msgid ""
+"sudo subscription-manager version\n"
+"server type: Red Hat Subscription Management\n"
+"subscription management server: 0.9.51.24-1\n"
+"subscription-manager: 1.10.14-7.el7 python-rhsm: 1.10.12-2.el7"
+msgstr ""
+"sudo subscription-manager version\\nserver type: Red Hat Subscription "
+"Management\\nsubscription management server: "
+"0.9.51.24-1\\nsubscription-manager: 1.10.14-7.el7 python-rhsm: "
+"1.10.12-2.el7"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:37
+msgid ""
+"If the subscription manager re-turns the message ``This system is "
+"currently not registered`` please follow the below steps to register the "
+"server."
+msgstr ""
+"If the subscription manager re-turns the message ``This system is "
+"currently not registered`` please follow the a continuación steps to "
+"register the server."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:39
+msgid ""
+"To register the server you will need to have sudo permissions [Member of "
+"the Wheel group] or root access to the server. You will also need your "
+"Redhat registered email address and password."
+msgstr ""
+"To register el servidor you will necesitan have sudo permissions [Member "
+"of the Wheel group] o root access to el servidor. You will también need "
+"your Redhat registered email address y password."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:41
+msgid "subscription-manager register"
+msgstr "subscription-manager register"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:43
+msgid ""
+"sudo subscription-manager register\n"
+"Username: redhat@example.com\n"
+"Password: . subscription-manager auto --attach"
+msgstr ""
+"sudo subscription-manager register\\nUsername: "
+"redhat@example.com\\nPassword: . subscription-manager auto --attach"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:49
+msgid "This can take a minute to complete"
+msgstr "This can take a minute to complete"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:51
+msgid ""
+"sudo subscription-manager attach --auto\n"
+"\n"
+"Installed Product Current Status: Product Name: Red Hat Enterprise Linux\n"
+"Server Status: Subscribed"
+msgstr ""
+"sudo subscription-manager attach --auto\\n\\nInstalled Product Current "
+"Status: Product Name: Red Hat Enterprise Linux\\nServer Status: Subscribed"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:58
+msgid ""
+"To check to see if the RHEL server has the Red Hat Enterprise Linux 7 "
+"Server - Optional (RPMs) repo enabled please run the following command to"
+" return the repo status."
+msgstr ""
+"To check to see if the RHEL server has the Red Hat Enterprise Linux 7 "
+"Server - Optional (RPMs) repo enabled please run the following command to "
+"return the repo status."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:60
+msgid ""
+"To check the server repos you will need to have sudo permissions [Member "
+"of the Wheel group] or root access to the server."
+msgstr ""
+"To check el servidor repos you will necesitan have sudo permissions "
+"[Member of the Wheel group] o root access to el servidor."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:62
+msgid ""
+"sudo yum repolist all | grep \"rhel-7-server-optional-rpms\" rhel-7"
+"-server-optional-rpms/7Server/x86_64 disabled"
+msgstr ""
+"sudo yum repolist all | grep \\\"rhel-7-server-optional-rpms\\\" "
+"rhel-7-server-optional-rpms/7Server/x86_64 disabled"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:66
+msgid ""
+"If the repo status was returned as disabled then you will need to enable "
+"the repo using the subscription manager like below."
+msgstr ""
+"If the repo status was returned as deshabilitado then you will need "
+"habilitar the repo using the subscription manager like below."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:68
+msgid ""
+"sudo subscription-manager repos --enable rhel-7-server-optional-rpms\n"
+"Repository 'rhel-7-server-optional-rpms' is enabled for this system."
+msgstr ""
+"sudo subscription-manager repos --enable "
+"rhel-7-server-optional-rpms\\nRepository 'rhel-7-server-optional-rpms' "
+"está habilitado for this system."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:73
+msgid ""
+"The message ``Repo 'rhel-7-server-optional-rpms' is enabled for this "
+"system.`` will appear after enabling the repo. This will confirm that the"
+" repo has been enabled."
+msgstr ""
+"The message ``Repo 'rhel-7-server-optional-rpms' is enabled for this "
+"system.`` will appear after enabling the repo. This will confirm then la "
+"repo ha sido enabled."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:75
+msgid ""
+"Next simply download the relevant ``.rpm`` package for installation. This"
+" package can be acquired from morpheushub.com."
+msgstr ""
+"Next simply download the relevante ``.rpm`` package for installation. This "
+"package puede ser acquired desde morpheushub.com."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:77
+msgid ""
+"Use the ``wget`` command to directly download the package to your "
+"appliance server. i.e. ``wget "
+"https://downloads.morpheusdata.com/path/to/package.rpm``"
+msgstr ""
+"Use the ``wget`` command to directly download the package to your "
+"appliance server. i.e. ``wget "
+"https://downloads.morpheusdata.com/path/to/package.rpm``"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:79
+msgid ""
+"Next we must install the package onto the machine and configure the "
+"morpheus services:"
+msgstr ""
+"Next we must install the package ona la machine y configure the morpheus "
+"services:"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:81
+msgid ""
+"sudo rpm -i morpheus-appliance_x.x.x-1_amd64.rpm\n"
+"sudo morpheus-ctl reconfigure"
+msgstr ""
+"sudo rpm -i morpheus-appliance_x.x.x-1_amd64.rpm\\nsudo morpheus-ctl "
+"reconfigure"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:86
+msgid ""
+"Once the installation is complete the web interface will automatically "
+"start up. By default it will be resolvable at "
+"``https://your_machine_name`` and in many cases this may not be "
+"resolvable from your browser. The url can be changed by editing "
+"``/etc/morpheus/morpheus.rb`` and changing the value of "
+"``appliance_url``. After this has been changed simply run:"
+msgstr ""
+"Once la instalación is complete the web interface will automatically start "
+"up. Por defecto it será resolvable at ``https://your_machine_name`` y in "
+"muchos cases this puede no ser resolvable desde your browser. The url "
+"puede cambiarse by editing ``/etc/morpheus/morpheus.rb`` y changing el "
+"valor of ``appliance_url``. After this ha sido changed simply run:"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:88
+msgid ""
+"sudo morpheus-ctl reconfigure\n"
+"sudo morpheus-ctl stop morpheus-ui\n"
+"sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+"sudo morpheus-ctl reconfigure\\nsudo morpheus-ctl stop morpheus-ui\\nsudo "
+"morpheus-ctl start morpheus-ui"
+
+#: ../../getting_started/installation/singleNode/redhat.rst:94
+msgid ""
+"The ``morpheus-ui`` can take 2-3 minutes to startup before it becomes "
+"available."
+msgstr ""
+"The ``morpheus-ui`` can take 2-3 minutes to startup before it becomes "
+"available."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:96
+msgid ""
+"There are additional install settings that can be viewed in the "
+":ref:`additional_options` section."
+msgstr ""
+"There are adicional install settings that puede ser viewed in the "
+":ref:`additional_options` section."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:98
+msgid ""
+"Once the browser is pointed to the appliance a first time setup wizard "
+"will be presented. Please follow the on screen instructions by creating "
+"the master account. From there you will be presented with the license "
+"settings page where a license can be applied for use (if a license is "
+"required you may request one or purchase one by contacting your sales "
+"representative)."
+msgstr ""
+"Una vez que el browser is pointed to el appliance a first time setup "
+"wizard será presented. Please follow the on screen instructions by "
+"creating the master account. From there you será presented con the license "
+"settings page where a license puede ser applied for use (if a license es "
+"obligatorio you may request one o purchase one by contacting your sales "
+"representative)."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:100
+msgid ""
+"More details on setting up infrastructure can be found throughout this "
+"guide."
+msgstr ""
+"More details on setting up infrastructure puede ser found throughout this "
+"guide."
+
+#: ../../getting_started/installation/singleNode/redhat.rst:102
+msgid ""
+"If any issues occur it may be prudent to check the morpheus log for "
+"details at ``/var/log/morpheus/morpheus-ui/current``."
+msgstr ""
+"If any issues occur it puede ser prudent to check the morpheus log for "
+"details at ``/var/log/morpheus/morpheus-ui/current``."
+

@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:11
+msgid "HVM 1.3 Cluster Layouts Documentation"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:13
+msgid "Priority: CRITICAL — Major Architecture Change"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:15
+msgid ""
+"HVM clusters in Morpheus 9.0 replace Pacemaker with an agent-based quorum"
+" system (Corosync + DLM + Morpheus agent QuorumCheckService). GFS2 is "
+"renamed to \"HPE Clustered Datastore (Shared LUN)\". Layout 1.3 "
+"diagnostics no longer use `pcs` commands."
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:17
+msgid "Key Changes from 1.2"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:19
+msgid "**Pacemaker removed** — replaced by Morpheus agent's own quorum/fencing"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:20
+msgid "**GFS2 renamed** — now \"HPE Clustered Datastore (Shared LUN)\" in UI"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:21
+msgid ""
+"**New quorum system** — agent-based with cross-verification, heartbeat "
+"failover"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:22
+msgid ""
+"**Stretch cluster support** — multi-site with witness nodes, "
+"deterministic arbitration"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:23
+msgid "**Layout 1.3** — Ubuntu 24.04, no Pacemaker installed on new clusters"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:24
+msgid ""
+"**Diagnostics** — `pcs` commands replaced by `dlm_tool`, `corosync-"
+"quorumtool`, agent `/quorum` endpoint"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:26
+msgid "Scope"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:28
+msgid "Architecture Overview"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:29
+msgid "Stack components (Corosync, DLM, Morpheus agent)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:30
+msgid "Quorum algorithm (ping, cross-verification, majority)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:31
+msgid "Heartbeat failover system"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:32
+msgid "APD protection"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:33
+msgid "Designated coordinator election"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:34
+msgid "Key timing constants"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:36
+msgid "Building New Clusters"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:37
+msgid "Prerequisites (Ubuntu 24.04, network, storage)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:38
+msgid "Cluster creation wizard workflow"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:39
+msgid "Automated provisioning phases"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:40
+msgid "HPE Clustered Datastore (Shared LUN) setup"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:41
+msgid "Heartbeat datastore configuration"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:42
+msgid "Health verification"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:44
+msgid "Stretch Clusters & Witness Nodes"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:45
+msgid "Witness deployment (Distributed Worker)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:46
+msgid "Site group configuration"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:47
+msgid "Arbitration algorithm (alphabetical, deterministic)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:48
+msgid "Vote adjustment on failure/recovery"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:49
+msgid "Recovery timeline"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:51
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:52
+msgid "Diagnostic commands (replacing pcs)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:53
+msgid "UI navigation for cluster health"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:54
+msgid "Common issues and resolutions"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:55
+msgid "Agent state files reference"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:56
+msgid "Emergency procedures"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:58
+msgid "Failure Scenarios"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:59
+msgid "Single host failure"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:60
+msgid "Storage partition (APD)"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:61
+msgid "Network partition"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:62
+msgid "Stretch site failure"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:63
+msgid "Layout 1.2 → 1.3 upgrade path"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:65
+msgid "Sources"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:67
+msgid "Confluence: https://hpe.atlassian.net/wiki/spaces/MPS/pages/4981096781"
+msgstr ""
+
+#: ../../.hero/planning/initiatives/hvm-13-cluster-docs/spec.md:68
+msgid ""
+"Word doc: Stretched_Cluster_rev2.0.docx (witness deployment, site groups,"
+" quorum verification)"
+msgstr ""
+

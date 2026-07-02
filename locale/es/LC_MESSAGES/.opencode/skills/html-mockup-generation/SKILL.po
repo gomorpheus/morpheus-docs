@@ -1,0 +1,557 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:5
+msgid "HTML Mockup Generation"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:7
+msgid ""
+"Guidelines for generating self-contained HTML mockups that look "
+"professional and are easy to iterate on."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:9
+msgid "Return contract (read first)"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:11
+msgid ""
+"When this skill runs inside a subagent (the usual case via `ui-designer` "
+"or `/mock`), the subagent's narrative return text is **not shown directly"
+" to the user** — the orchestrator surfaces a parseable file list. The "
+"last thing the subagent emits MUST be a `<MOCKUP_FILES>` block listing "
+"every file written:"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:13
+#, python-brace-format
+msgid ""
+"<MOCKUP_FILES>\n"
+".hero/mocks/{slug}/index.html|{Mockup name}|primary\n"
+".hero/planning/features/{slug}/spec.md|Spec (Mockups section "
+"updated)|spec\n"
+"</MOCKUP_FILES>\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:20
+msgid ""
+"One file per line, pipe-separated `path|label|kind`. Include every "
+"variant when generating multiple options in one run. Skip this block and "
+"the user sees no links. See the `ui-designer` agent definition for full "
+"rules."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:22
+msgid "When to use"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:24
+msgid ""
+"Selection is now driven by `hero spec mock detect` (see `hero spec mock "
+"detect --help`). The agent does not decide — the CLI does. This skill is "
+"loaded whenever the detect output's `renderer` field is `\"html\"`, which"
+" fires when no Swift signals are detected, when `--renderer=html` was "
+"explicit, when `hero.json` `mockups.renderer: \"html\"` overrides auto-"
+"detect, or as a fallback when Swift signals are present but `swiftc` is "
+"missing."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:26
+msgid "File Structure"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:28
+#, python-brace-format
+msgid ""
+"<!DOCTYPE html>\n"
+"<!-- Hero Mock: {slug} | Generated: {date} -->\n"
+"<!-- Description: {one-line description} -->\n"
+"<html lang=\"en\">\n"
+"<head>\n"
+"    <meta charset=\"UTF-8\">\n"
+"    <meta name=\"viewport\" content=\"width=device-width, initial-"
+"scale=1.0\">\n"
+"    <title>{Title} — Mock</title>\n"
+"    <style>\n"
+"        /* All CSS here — no external stylesheets */\n"
+"    </style>\n"
+"</head>\n"
+"<body>\n"
+"    <!-- All markup here -->\n"
+"    <script>\n"
+"        /* All JS here — no external scripts */\n"
+"    </script>\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:50
+msgid "CSS Design System"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:52
+msgid ""
+"Use these as defaults. Adjust per-project if the team has brand "
+"guidelines."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:54
+msgid "Colors"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:55
+#, python-brace-format
+msgid ""
+":root {\n"
+"    --bg: #ffffff;\n"
+"    --bg-secondary: #f8f9fa;\n"
+"    --bg-tertiary: #e9ecef;\n"
+"    --text: #212529;\n"
+"    --text-secondary: #6c757d;\n"
+"    --text-muted: #adb5bd;\n"
+"    --border: #dee2e6;\n"
+"    --primary: #4a9eff;\n"
+"    --primary-hover: #3a8eef;\n"
+"    --success: #28a745;\n"
+"    --warning: #ffc107;\n"
+"    --danger: #dc3545;\n"
+"    --info: #17a2b8;\n"
+"    --shadow: 0 1px 3px rgba(0,0,0,0.1);\n"
+"    --shadow-lg: 0 4px 12px rgba(0,0,0,0.15);\n"
+"    --radius: 6px;\n"
+"    --radius-lg: 12px;\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:77
+msgid "Typography"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:78
+#, python-brace-format
+msgid ""
+"body {\n"
+"    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, "
+"sans-serif;\n"
+"    font-size: 14px;\n"
+"    line-height: 1.5;\n"
+"    color: var(--text);\n"
+"    background: var(--bg);\n"
+"    margin: 0;\n"
+"    padding: 0;\n"
+"}\n"
+"\n"
+"h1 { font-size: 24px; font-weight: 600; margin: 0 0 16px; }\n"
+"h2 { font-size: 18px; font-weight: 600; margin: 0 0 12px; }\n"
+"h3 { font-size: 16px; font-weight: 600; margin: 0 0 8px; }\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:94
+msgid "Spacing"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:95
+msgid "Use multiples of 4px: 4, 8, 12, 16, 24, 32, 48, 64."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:97
+msgid "Common Components"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:99
+msgid "**Buttons:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:100
+#, python-brace-format
+msgid ""
+".btn {\n"
+"    display: inline-flex;\n"
+"    align-items: center;\n"
+"    gap: 6px;\n"
+"    padding: 8px 16px;\n"
+"    border-radius: var(--radius);\n"
+"    font-size: 14px;\n"
+"    font-weight: 500;\n"
+"    border: 1px solid var(--border);\n"
+"    background: var(--bg);\n"
+"    color: var(--text);\n"
+"    cursor: pointer;\n"
+"    transition: all 0.15s ease;\n"
+"}\n"
+".btn-primary {\n"
+"    background: var(--primary);\n"
+"    color: white;\n"
+"    border-color: var(--primary);\n"
+"}\n"
+".btn-primary:hover { background: var(--primary-hover); }\n"
+".btn-danger { background: var(--danger); color: white; border-color: "
+"var(--danger); }\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:124
+msgid "**Cards:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:125
+#, python-brace-format
+msgid ""
+".card {\n"
+"    background: var(--bg);\n"
+"    border: 1px solid var(--border);\n"
+"    border-radius: var(--radius-lg);\n"
+"    padding: 24px;\n"
+"    box-shadow: var(--shadow);\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:135
+msgid "**Tables:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:136
+#, python-brace-format
+msgid ""
+"table { width: 100%; border-collapse: collapse; }\n"
+"th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid "
+"var(--border); }\n"
+"th { font-weight: 600; color: var(--text-secondary); font-size: 12px; "
+"text-transform: uppercase; letter-spacing: 0.5px; }\n"
+"tr:hover { background: var(--bg-secondary); }\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:143
+msgid "**Forms:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:144
+#, python-brace-format
+msgid ""
+".form-group { margin-bottom: 16px; }\n"
+".form-label { display: block; font-weight: 500; margin-bottom: 4px; font-"
+"size: 13px; }\n"
+".form-input {\n"
+"    width: 100%;\n"
+"    padding: 8px 12px;\n"
+"    border: 1px solid var(--border);\n"
+"    border-radius: var(--radius);\n"
+"    font-size: 14px;\n"
+"    box-sizing: border-box;\n"
+"}\n"
+".form-input:focus { outline: none; border-color: var(--primary); box-"
+"shadow: 0 0 0 3px rgba(74,158,255,0.15); }\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:158
+msgid "**Badges/Tags:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:159
+#, python-brace-format
+msgid ""
+".badge {\n"
+"    display: inline-block;\n"
+"    padding: 2px 8px;\n"
+"    border-radius: 12px;\n"
+"    font-size: 12px;\n"
+"    font-weight: 500;\n"
+"}\n"
+".badge-success { background: #d4edda; color: #155724; }\n"
+".badge-warning { background: #fff3cd; color: #856404; }\n"
+".badge-danger { background: #f8d7da; color: #721c24; }\n"
+".badge-info { background: #d1ecf1; color: #0c5460; }\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:173
+msgid "Layout Patterns"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:175
+msgid "App Shell (sidebar + content)"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:176
+msgid ""
+"<div style=\"display: flex; min-height: 100vh;\">\n"
+"    <nav style=\"width: 240px; background: var(--bg-secondary); border-"
+"right: 1px solid var(--border); padding: 24px 16px;\">\n"
+"        <!-- sidebar nav -->\n"
+"    </nav>\n"
+"    <main style=\"flex: 1; padding: 32px;\">\n"
+"        <!-- main content -->\n"
+"    </main>\n"
+"</div>\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:187
+msgid "Dashboard Grid"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:188
+msgid ""
+"<div style=\"display: grid; grid-template-columns: repeat(auto-fit, "
+"minmax(280px, 1fr)); gap: 24px;\">\n"
+"    <div class=\"card\"><!-- metric card --></div>\n"
+"    <div class=\"card\"><!-- metric card --></div>\n"
+"    <div class=\"card\"><!-- metric card --></div>\n"
+"</div>\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:196
+msgid "Header with Actions"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:197
+msgid ""
+"<div style=\"display: flex; justify-content: space-between; align-items: "
+"center; margin-bottom: 24px;\">\n"
+"    <div>\n"
+"        <h1>Page Title</h1>\n"
+"        <p style=\"color: var(--text-secondary); margin: 0;\">Brief "
+"description</p>\n"
+"    </div>\n"
+"    <div style=\"display: flex; gap: 8px;\">\n"
+"        <button class=\"btn\">Secondary</button>\n"
+"        <button class=\"btn btn-primary\">Primary Action</button>\n"
+"    </div>\n"
+"</div>\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:210
+msgid "Interactivity Patterns"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:212
+msgid "Keep JS minimal. Common patterns:"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:214
+msgid "**Tab switching:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:215
+msgid ""
+"document.querySelectorAll('[data-tab]').forEach(tab => {\n"
+"    tab.addEventListener('click', () => {\n"
+"        document.querySelectorAll('[data-tab]').forEach(t => "
+"t.classList.remove('active'));\n"
+"        document.querySelectorAll('[data-panel]').forEach(p => "
+"p.style.display = 'none');\n"
+"        tab.classList.add('active');\n"
+"        document.querySelector(`[data-"
+"panel=\"${tab.dataset.tab}\"]`).style.display = 'block';\n"
+"    });\n"
+"});\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:226
+msgid "**Modal toggle:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:227
+#, python-brace-format
+msgid ""
+"function toggleModal(id) {\n"
+"    const modal = document.getElementById(id);\n"
+"    modal.style.display = modal.style.display === 'flex' ? 'none' : "
+"'flex';\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:234
+msgid "**Dropdown:**"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:235
+msgid ""
+"function toggleDropdown(id) {\n"
+"    const dd = document.getElementById(id);\n"
+"    dd.style.display = dd.style.display === 'block' ? 'none' : 'block';\n"
+"}\n"
+"document.addEventListener('click', (e) => {\n"
+"    if (!e.target.closest('.dropdown')) {\n"
+"        document.querySelectorAll('.dropdown-menu').forEach(d => "
+"d.style.display = 'none');\n"
+"    }\n"
+"});\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:247
+msgid "Realistic Data"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:249
+msgid "Use realistic-looking placeholder data:"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:251
+msgid ""
+"Names: \"Sarah Chen\", \"Marcus Johnson\", \"Aisha Patel\" (diverse, "
+"realistic)"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:252
+msgid "Emails: \"sarah.chen@example.com\""
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:253
+msgid "Dates: Use relative dates (\"2 hours ago\", \"Yesterday\", \"Mar 15\")"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:254
+msgid ""
+"Numbers: Use realistic ranges (not round numbers — \"$12,847\" not "
+"\"$10,000\")"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:255
+msgid "Status values: Use the actual statuses from the spec if available"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:257
+msgid "What NOT to Do"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:259
+msgid "Don't use CDN links or external resources"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:260
+msgid "Don't use Lorem Ipsum — write realistic placeholder text"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:261
+msgid ""
+"Don't use icon fonts — use simple inline SVG or Unicode characters (▶ ● ✓"
+" ✕ ⋯ ↓ →)"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:262
+msgid "Don't add complex animations"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:263
+msgid "Don't use canvas or WebGL"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:264
+msgid ""
+"Don't make it pixel-perfect — it's a prototype for discussion, not "
+"production code"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:265
+msgid "Don't include more than 2-3 screens in one file — keep it focused"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:267
+msgid "Spec write-back"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:269
+msgid ""
+"When invoked against a spec slug (not free-text), after saving the "
+"mockup, link it back from the originating spec so delivery agents can "
+"find it."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:271
+msgid "Locate the spec. Try in order:"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:272
+#, python-brace-format
+msgid "`.hero/planning/features/{slug}/spec.md`"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:273
+#, python-brace-format
+msgid "`.hero/planning/bugs/{slug}/spec.md`"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:274
+#, python-brace-format
+msgid "`.hero/specs/{slug}/spec.md` (archive fallback)"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:275
+msgid ""
+"If a `## Mockups` section does not exist, append one near the end of the "
+"spec body. Place it before `## Validation` if that section exists; "
+"otherwise at the end of the file."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:276
+msgid "Add an entry in this format:"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:278
+#, python-brace-format
+msgid ""
+"- [{Mockup name}](.hero/mocks/{slug}/index.html) — YYYY-MM-DD — one-line "
+"description of what the mockup shows\n"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:282
+msgid ""
+"Default the name to a humanized slug (e.g. `Hero landing page`). Use "
+"something more specific when the spec has multiple mockups or iteration "
+"variants (e.g. `Hero landing page — dense variant`)."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:283
+msgid "Use today's date in ISO format."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:284
+msgid "Keep the description to one line — what's shown, not why."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:286
+msgid "Iteration semantics"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:288
+msgid ""
+"On `--iterate`, match the existing entry by path. If the path is "
+"unchanged (the common case — overwriting `index.html`), update the date "
+"in place and rewrite the description only if the iteration meaningfully "
+"changed what's depicted. Don't append a duplicate row. If the iteration "
+"produces a new file (e.g. `dense.html` alongside `index.html`), append a "
+"new entry instead."
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:290
+msgid "Free-text exception"
+msgstr ""
+
+#: ../../.opencode/skills/html-mockup-generation/SKILL.md:292
+#, python-brace-format
+msgid ""
+"When `/mock` is invoked with free-text rather than a spec slug, there is "
+"no spec to write back to. Save the mockup under `.hero/mocks/_adhoc"
+"/{kebab-case-summary}/index.html` and skip the write-back step entirely. "
+"This keeps the `.hero/mocks/` root clean — slug-keyed dirs match real "
+"specs; `_adhoc/` clearly doesn't."
+msgstr ""
+

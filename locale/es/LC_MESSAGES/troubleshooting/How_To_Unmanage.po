@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:2
+msgid "How to un-manage an Instance/VM/Host"
+msgstr "Cómo dejar de administrar una Instancia/VM/Host"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:5
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:7
+msgid ""
+"A managed VM (and associated Instance) needs to be unmanaged and returned"
+" to Discovered type."
+msgstr ""
+"Una VM administrada (y la Instancia asociada) necesita dejar de ser "
+"administrada y volver al tipo Descubierta."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:10
+msgid "Solution"
+msgstr "Solución"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:12
+msgid ""
+"Delete the record from the ``Infrastructure > Compute`` (! not from "
+"Provisioning - Instances) selection with the following configuration in "
+"the Delete modal:"
+msgstr ""
+"Elimine el registro desde ``Infrastructure > Compute`` (¡NO desde "
+"Provisioning - Instances!) con la siguiente configuración en el modal de "
+"Eliminación:"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:14
+#: ../../troubleshooting/How_To_Unmanage.rst:46
+msgid "``Remove Infrastructure`` UNCHECKED"
+msgstr "``Remove Infrastructure`` DESMARCADO"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:15
+#: ../../troubleshooting/How_To_Unmanage.rst:47
+msgid ""
+"``Remove Associated Instances`` Must be checked if the server has an "
+"associated Instance, as deleting the VM but not the Instance would result"
+" in an abandoned Instance thus not allowed."
+msgstr ""
+"``Remove Associated Instances`` Debe estar marcado si el servidor tiene una "
+"Instancia asociada, ya que eliminar la VM pero no la Instancia resultaría "
+"en una Instancia abandonada y por lo tanto no está permitido."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:16
+#: ../../troubleshooting/How_To_Unmanage.rst:48
+msgid "``Force Delete`` UNCHECKED"
+msgstr "``Force Delete`` DESMARCADO"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:18
+msgid ""
+"The most important items to be aware of when \"un-managing\" an "
+"Instance/VM/Host are:"
+msgstr ""
+"Los aspectos más importantes a tener en cuenta al \"dejar de administrar\" "
+"una Instancia/VM/Host son:"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:20
+msgid ""
+"The \"Remove from Infrastructure\" flag when deleting a VM or Host in "
+"|morpheus| determines if the actual VM is deleted from the target "
+"Infrastructure."
+msgstr ""
+"La opción \"Remove from Infrastructure\" al eliminar una VM o Host en "
+"|morpheus| determina si la VM real se elimina de la Infraestructura de "
+"destino."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:22
+msgid ""
+"Checking \"Remove Infrastructure\" means you WANT TO DELETE THE ACTUAL "
+"VM. Typing \"DELETE\" in the confirmation field is required when \"Remove"
+" From Infrastructure\" is enabled."
+msgstr ""
+"Marcar \"Remove Infrastructure\" significa que DESEA ELIMINAR LA VM REAL. "
+"Escribir \"DELETE\" en el campo de confirmación es obligatorio cuando "
+"\"Remove From Infrastructure\" está habilitado."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:23
+msgid ""
+"Unchecking \"Remove Infrastructure\" means you only want to delete the "
+"record in |morpheus| but leave the actual VM untouched."
+msgstr ""
+"Desmarcar \"Remove Infrastructure\" significa que solo desea eliminar el "
+"registro en |morpheus| pero dejar la VM real intacta."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:25
+msgid "Deleting an Instance will always remove Infrastructure."
+msgstr "Eliminar una Instancia siempre eliminará la Infraestructura."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:27
+msgid ""
+"REPEAT: Deleting an Instance from the ``Provisioning`` section will "
+"always remove the VM aka Infrastructure."
+msgstr ""
+"REPETIMOS: Eliminar una Instancia desde la sección ``Provisioning`` siempre "
+"eliminará la VM, es decir, la Infraestructura."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:29
+msgid ""
+"After removing the record from |morpheus|, the VM must be in a Cloud with"
+" Inventory enabled to automatically be re-discovered."
+msgstr ""
+"Después de eliminar el registro de |morpheus|, la VM debe estar en una Nube "
+"con Inventario habilitado para ser redescubierta automáticamente."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:32
+msgid "Process"
+msgstr "Proceso"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:34
+msgid ""
+"Steps to delete a managed VM from |morpheus| and, when necessary, remove "
+"the associated Instance:"
+msgstr ""
+"Pasos para eliminar una VM administrada de |morpheus| y, cuando sea "
+"necesario, eliminar la Instancia asociada:"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:36
+msgid ""
+"Navigate to the VM (not Instance) detail page at ``Infrastructure > "
+"Compute - VMs``"
+msgstr ""
+"Navegue a la página de detalle de la VM (no la Instancia) en "
+"``Infrastructure > Compute - VMs``"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:38
+msgid ""
+"VM's inside an Instance can be navigated to inside the Instance Details "
+"page by selecting the VM in the ``VM's`` seciton on the Instance Details "
+"page."
+msgstr ""
+"Se puede navegar a las VMs dentro de una Instancia desde la página de "
+"Detalles de la Instancia seleccionando la VM en la sección ``VM's`` en la "
+"página de Detalles de la Instancia."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:40
+#: ../../troubleshooting/How_To_Unmanage.rst:52
+msgid "Select :guilabel:`DELETE`"
+msgstr "Seleccione :guilabel:`DELETE`"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:42
+msgid "Configure the DELETE HOST modal with the following settings:"
+msgstr "Configure el modal DELETE HOST con las siguientes opciones:"
+
+#: ../../troubleshooting/How_To_Unmanage.rst
+msgid ".. image:: images/delete_host_modal.png"
+msgstr ".. image:: images/delete_host_modal.png"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:50
+msgid ""
+"If you have to type DELETE that means the ``Remove Infrastructure`` flag "
+"is selected and you are confirming deletion of the actual VM. Ensure "
+"``Remove Infrastructure`` is UNCHECKED when you want to leave the VM "
+"intact!"
+msgstr ""
+"Si tiene que escribir DELETE significa que la opción ``Remove Infrastructure`` "
+"está seleccionada y está confirmando la eliminación de la VM real. ¡Asegúrese "
+"de que ``Remove Infrastructure`` esté DESMARCADO cuando quiera dejar la VM "
+"intacta!"
+
+#: ../../troubleshooting/How_To_Unmanage.rst:54
+msgid ""
+"The VM and associated Insatnce will be removed from |morpheus| but the "
+"actual VM will remain."
+msgstr ""
+"La VM y la Instancia asociada se eliminarán de |morpheus| pero la VM real "
+"permanecerá."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:56
+msgid ""
+"Wait up to 5 min or click :guilabel:`REFRESH` on the associated Clouds "
+"details page to force a cloud sync."
+msgstr ""
+"Espere hasta 5 minutos o haga clic en :guilabel:`REFRESH` en la página de "
+"detalles de la Nube asociada para forzar una sincronización de la nube."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:58
+msgid ""
+"``Inventory`` must be enabled on the associated cloud for the VM to "
+"automatically be re-discovered by |morpheus|."
+msgstr ""
+"``Inventory`` debe estar habilitado en la nube asociada para que la VM sea "
+"redescubierta automáticamente por |morpheus|."
+
+#: ../../troubleshooting/How_To_Unmanage.rst:60
+msgid ""
+"The VM is now back in |morpheus| as discovered/unmanaged. To managed and "
+"create a new Instance from the VM, select :guilabel:`ACTIONS` : Convert "
+"To Managed."
+msgstr ""
+"La VM ahora está de vuelta en |morpheus| como descubierta/no administrada. "
+"Para administrarla y crear una nueva Instancia desde la VM, seleccione "
+":guilabel:`ACTIONS` : Convert To Managed."
+

@@ -1,0 +1,551 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:2
+msgid "VM Lifecycle on Clusters"
+msgstr "VM Lifecycle en Clusters"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:5
+msgid "Live Migration"
+msgstr "Live Migration"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:7
+msgid ""
+"Live migration moves a running VM from one cluster host to another with no "
+"downtime to the guest operating system."
+msgstr ""
+"Live migración moves un ejecutando VM desde one cluster host a another con "
+"no downtime al guest sistema operativo."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:10
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:12
+msgid "The VM must be running (powered on)"
+msgstr "El VM debe be ejecutando (powered en)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:13
+msgid ""
+"The VM's storage must reside on a shared datastore (HPE Clustered Datastore "
+"or NFS). VMs with local storage cannot be live-migrated"
+msgstr ""
+"El VM's storage debe reside en un shared datastore (HPE Clustered Almacén de"
+" datos o NFS). VMs con local storage cannot be live-migrado"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:14
+msgid "No host devices (GPU/USB passthrough) are attached to the VM"
+msgstr "No host devices (GPU/USB passthrough) son adjunto un el VM"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:15
+msgid "The target host must have sufficient available memory"
+msgstr "El destino host debe tienen sufficient disponible memoria"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:16
+msgid "Network connectivity between source and target hosts"
+msgstr "Red connectivity entre origen y destino hosts"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:19
+msgid "Initiating a Live Migration"
+msgstr "Initiating un Live Migración"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:21
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Virtual Machines``"
+msgstr ""
+"Navegue un ``Infrastructure > Clusters > [Cluster] > Virtual Machines``"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:22
+msgid "Select the VM to migrate"
+msgstr "Seleccionar el VM a migrate"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:23
+msgid "Click :guilabel:`Actions` > :guilabel:`Move`"
+msgstr "Click :guilabel:`Acciones` > :guilabel:`Mover`"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:24
+msgid "Select the target host from the available hosts list"
+msgstr "Seleccionar el destino host desde el disponible hosts lista"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:25
+msgid "Confirm the migration"
+msgstr "Confirmar el migración"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:27
+msgid ""
+"|morpheus| automatically determines whether to perform a live or cold "
+"migration based on the VM's current power state and storage configuration."
+msgstr ""
+"|morpheus| automáticamente determines whether a perform un live o cold "
+"migración basado en el VM's actual power estado y storage configuración."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:30
+msgid "What Happens During Live Migration"
+msgstr "Qué Happens Durante Live Migration"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:32
+msgid ""
+"A migration lock is acquired to prevent concurrent migrations of the same VM"
+msgstr ""
+"Un migración lock es acquired a prevent concurrent migrations del mismo VM"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:33
+msgid ""
+"Storage pools are refreshed on the target host to ensure it can access the "
+"VM's disks"
+msgstr ""
+"Almacenamiento pools son refreshed en el destino host a asegurar it puede "
+"acceso el VM's discos"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:34
+msgid ""
+"Network preparation ensures the target host has the correct bridge "
+"configurations"
+msgstr ""
+"Red preparation ensures el destino host tiene el correct bridge "
+"configurations"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:35
+msgid ""
+"The ``virsh migrate`` command executes, transferring the VM's memory state "
+"to the target host"
+msgstr ""
+"El ``virsh migrate`` command executes, transferring el VM's memoria estado "
+"al destino host"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:36
+msgid ""
+"Upon completion, the VM's parent host reference is updated in |morpheus|"
+msgstr ""
+"Upon completion, el VM's parent host reference es actualizado en |morpheus|"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:37
+msgid "The migration lock is released"
+msgstr "El migración lock es released"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:40
+msgid "Migration Options"
+msgstr "Migration Options"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:46
+msgid "Option"
+msgstr "Option"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:47
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:126
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:149
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:48
+msgid "Migration Timeout"
+msgstr "Migration Timeout"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:49
+msgid ""
+"Maximum time allowed for the migration to complete before it is cancelled"
+msgstr ""
+"Máximo tiempo permitido para el migración a completo antes de it es "
+"cancelled"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:50
+msgid "CPU Throttling"
+msgstr "CPU Throttling"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:51
+msgid ""
+"When enabled, throttles the VM's CPU during migration to help convergence "
+"for memory-intensive workloads"
+msgstr ""
+"Cuando está habilitado, throttles el VM's CPU durante migración a help "
+"convergence para memoria-intensive cargas de trabajo"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:54
+msgid "Cold Migration"
+msgstr "Cold Migration"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:56
+msgid ""
+"Cold migration moves a powered-off VM to a different host. This is used "
+"when:"
+msgstr ""
+"Cold migración moves un powered-off VM a un diferente host. Este es "
+"utilizado cuando:"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:58
+msgid "The VM is powered off"
+msgstr "El VM es powered off"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:59
+msgid "The VM has local storage that cannot be live-migrated"
+msgstr "El VM tiene local storage ese cannot be live-migrado"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:60
+msgid "Live migration failed and the VM was subsequently powered off"
+msgstr "Live migración falló y el VM fue subsequently powered off"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:62
+msgid ""
+"For cold migration, the VM's XML definition is relocated and storage volumes"
+" (if local) are copied to the target host."
+msgstr ""
+"Para cold migración, el VM's XML definition es relocated y storage volúmenes"
+" (si local) son copied al destino host."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:65
+msgid "VM Pinning"
+msgstr "VM Pinning"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:67
+msgid ""
+"VM pinning prevents a VM from being automatically migrated by maintenance "
+"mode evacuation or Dynamic Resource Scheduling (DRS). Pinned VMs remain on "
+"their assigned host unless manually moved by an administrator."
+msgstr ""
+"VM pinning prevents un VM desde being automáticamente migrado por "
+"mantenimiento modo evacuation o Dinámico Recurso Scheduling (DRS). Pinned "
+"VMs remain en su asignado host unless manualmente moved por un "
+"administrator."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:70
+msgid "Use Cases"
+msgstr "Usar Cases"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:72
+msgid ""
+"VMs with host-level hardware dependencies (GPU passthrough, USB devices)"
+msgstr ""
+"VMs con host-nivel hardware dependencies (GPU passthrough, USB devices)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:73
+msgid "License-bound VMs that must run on specific hosts"
+msgstr "License-bound VMs ese debe ejecutar en específico hosts"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:74
+msgid "VMs with local storage that cannot be migrated"
+msgstr "VMs con local storage ese cannot be migrado"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:75
+msgid "System VMs (cluster management agents)"
+msgstr "Sistema VMs (cluster gestión agents)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:78
+msgid "Behavior of Pinned VMs"
+msgstr "Behavior de Pinned VMs"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:84
+msgid "Scenario"
+msgstr "Scenario"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:85
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:107
+msgid "Behavior"
+msgstr "Behavior"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:86
+msgid "Maintenance mode"
+msgstr "Mantenimiento modo"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:87
+msgid "Pinned VMs are skipped during evacuation"
+msgstr "Pinned VMs son skipped durante evacuation"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:88
+msgid "DRS rebalancing"
+msgstr "DRS rebalancing"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:89
+msgid "Pinned VMs are excluded from placement calculations"
+msgstr "Pinned VMs son excluded desde placement calculations"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:90
+msgid "Host failure"
+msgstr "Host fallo"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:91
+msgid "Pinned VMs are **not** automatically failed over to another host"
+msgstr "Pinned VMs son **not** automáticamente falló sobre a another host"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:92
+msgid "Manual migration"
+msgstr "Manual migración"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:93
+msgid "Pinned VMs can be manually moved by an administrator"
+msgstr "Pinned VMs puede be manually moved por un administrator"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:95
+msgid ""
+"Pinned VMs on a failed host will not be automatically recovered. If the host"
+" fails, the pinned VM remains offline until the host recovers or an "
+"administrator manually intervenes."
+msgstr ""
+"Pinned VMs en un falló host será no be automáticamente recovered. Si el host"
+" falla, el pinned VM remains offline hasta el host recovers o un "
+"administrator manualmente intervenes."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:98
+msgid "Placement Strategy"
+msgstr "Placement Strategy"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:100
+msgid ""
+"Each VM has a placement strategy that determines how |morpheus| handles its "
+"host assignment:"
+msgstr ""
+"Cada VM tiene un placement strategy ese determines cómo |morpheus| handles "
+"su host assignment:"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:106
+msgid "Strategy"
+msgstr "Strategy"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:108
+msgid "Auto (default)"
+msgstr "Auto (predeterminado)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:109
+msgid ""
+"VM may be moved by DRS, maintenance mode, or failover. The preferred host is"
+" updated when the VM is migrated."
+msgstr ""
+"VM puede be moved por DRS, mantenimiento modo, o conmutación por error. El "
+"preferred host es actualizado cuando el VM es migrado."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:110
+msgid "Pinned"
+msgstr "Pinned"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:111
+msgid ""
+"VM is locked to its current host. Only manual migration by an administrator "
+"can relocate it."
+msgstr ""
+"VM es locked a su actual host. Solo manual migración por un administrator "
+"puede relocate it."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:114
+msgid "Dynamic Resource Scheduling (DRS)"
+msgstr "Dinámico Recurso Scheduling (DRS)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:116
+msgid ""
+"DRS automatically balances VM placement across cluster hosts based on "
+"resource utilization. DRS runs during each cluster sync cycle."
+msgstr ""
+"DRS automáticamente balances VM placement a través de cluster hosts basado "
+"en recurso utilization. DRS ejecuta durante cada cluster sync cycle."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:119
+msgid "Modes"
+msgstr "Modes"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:125
+msgid "Mode"
+msgstr "Modo"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:127
+msgid "Failover Only (default)"
+msgstr "Conmutación por error Solo (predeterminado)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:128
+msgid ""
+"DRS only moves VMs when a host has failed and VMs need to be restarted on "
+"surviving hosts"
+msgstr ""
+"DRS solo moves VMs cuando un host tiene falló y VMs necesita a be reiniciado"
+" en surviving hosts"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:129
+msgid "Dynamic Placement"
+msgstr "Dinámico Placement"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:130
+msgid ""
+"DRS actively rebalances VMs across hosts to distribute memory utilization "
+"evenly"
+msgstr ""
+"DRS actively rebalances VMs a través de hosts a distribute memoria "
+"utilization evenly"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:132
+msgid "DRS respects:"
+msgstr "DRS respects:"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:134
+msgid "VM pinning (pinned VMs are never moved by DRS)"
+msgstr "VM pinning (pinned VMs son nunca moved por DRS)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:135
+msgid "Maintenance mode flags (hosts in maintenance are excluded)"
+msgstr "Mantenimiento modo flags (hosts en mantenimiento son excluded)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:136
+msgid "Host-VM Group affinity and anti-affinity rules"
+msgstr "Host-VM Grupo affinity y anti-affinity reglas"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:137
+msgid "Available memory thresholds"
+msgstr "Disponible memoria thresholds"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:140
+msgid "Host-VM Groups (Affinity/Anti-Affinity)"
+msgstr "Host-VM Grupos (Affinity/Anti-Affinity)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:142
+msgid ""
+"Host-VM Groups define rules that control which hosts a VM may run on. These "
+"are configured at the cluster level and enforced during provisioning, "
+"migration, and DRS operations."
+msgstr ""
+"Host-VM Grupos define reglas ese control cual hosts un VM puede ejecutar en."
+" Estos están configurados en el cluster nivel y enforced durante "
+"provisioning, migración, y DRS operaciones."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:148
+msgid "Group Type"
+msgstr "Group Tipo"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:150
+msgid "Affinity"
+msgstr "Affinity"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:151
+msgid ""
+"VMs in this group should run on the specified hosts. DRS will migrate non-"
+"compliant VMs to the preferred host when it has available capacity."
+msgstr ""
+"VMs en este group debería ejecutar en el specified hosts. DRS será migrate "
+"non-compliant VMs al preferred host cuando it tiene disponible capacidad."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:152
+msgid "Anti-Affinity"
+msgstr "Anti-Affinity"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:153
+msgid ""
+"VMs in this group should NOT run on the same host. Ensures high availability"
+" by distributing replicas."
+msgstr ""
+"VMs en este group debería NOT ejecutar en el mismo host. Ensures alta "
+"disponibilidad por distributing replicas."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:154
+msgid "Site Group"
+msgstr "Site Group"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:155
+msgid ""
+"Groups hosts and VMs by physical site/location. Used in stretch cluster "
+"configurations for site-aware placement."
+msgstr ""
+"Grupos hosts y VMs por physical site/location. Used en stretch cluster "
+"configurations para site-aware placement."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:157
+msgid ""
+"For detailed instructions on creating and managing Host-VM Groups, see "
+":doc:`../host_vm_groups`."
+msgstr ""
+"Para detailed instructions en creating y managing Host-VM Grupos, ver "
+":doc:`../host_vm_groups`."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:160
+msgid "DRS and Affinity Enforcement"
+msgstr "DRS y Affinity Enforcement"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:162
+msgid ""
+"When DRS runs with dynamic placement enabled, it evaluates affinity groups:"
+msgstr ""
+"Cuando DRS ejecuta con dinámico placement habilitado, it evaluates grupos de"
+" afinidad:"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:164
+msgid ""
+"VMs in an **affinity group** that are not on their preferred host are "
+"migrated back (if the preferred host is online and has capacity)"
+msgstr ""
+"VMs en un **grupo de afinidad** ese son no en su preferred host son migrado "
+"back (si el preferred host es online y tiene capacidad)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:165
+msgid ""
+"VMs in an **anti-affinity group** that violate the rule (running on the same"
+" host as another group member) are migrated to separate hosts"
+msgstr ""
+"VMs en un **anti-grupo de afinidad** ese violate el regla (ejecutando en el "
+"mismo host como another group miembro) son migrado a separate hosts"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:167
+msgid ""
+"Affinity rules are best-effort. If enforcing a rule would exceed host "
+"capacity or violate other constraints, the VM remains in its current "
+"location until conditions allow compliance."
+msgstr ""
+"Affinity reglas son best-effort. Si enforcing un regla would exceed host "
+"capacidad o violate otro constraints, el VM remains en su actual location "
+"hasta conditions permitir compliance."
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:170
+msgid "VM Failover Behavior"
+msgstr "VM Failover Behavior"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:172
+msgid ""
+"When a host fails (detected after 140 seconds of missed heartbeat writes), "
+"the Designated Coordinator assigns the failed host's VMs to surviving hosts:"
+msgstr ""
+"Cuando un host falla (detectado después de 140 seconds de missed heartbeat "
+"writes), el Designated Coordinator asigna el falló host's VMs a surviving "
+"hosts:"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:174
+msgid ""
+"VMs are assigned to hosts based on available memory (most available memory "
+"first)"
+msgstr ""
+"VMs son asignado un hosts basado en disponible memoria (más disponible "
+"memoria primero)"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:175
+msgid "Only VMs with ``auto`` placement strategy are failed over"
+msgstr "Solo VMs con ``auto`` placement strategy son falló sobre"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:176
+msgid "Pinned VMs are not automatically restarted"
+msgstr "Pinned VMs son no automatically restarted"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:177
+msgid ""
+"VM XML definitions from the heartbeat directory are used to restart VMs on "
+"their assigned hosts"
+msgstr ""
+"VM XML definitions desde el heartbeat directory se usan para reiniciar VMs "
+"en su asignado hosts"
+
+#: ../../infrastructure/clusters/hvm/vm_operations.rst:179
+msgid ""
+"For detailed failover timelines and scenarios, see :doc:`failure_scenarios`."
+msgstr ""
+"Para detailed conmutación por error timelines y scenarios, ver "
+":doc:`failure_scenarios`."

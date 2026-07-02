@@ -1,0 +1,541 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:2
+msgid "Active Directory"
+msgstr "Active Directory"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:15
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:17
+msgid ""
+"Active Directory is Microsoft’s primary authentication service. It is widely"
+" used in enterprise organizations and even in Microsoft cloud services. "
+"While Active Directory also supports LDAP protocol support (which |morpheus|"
+" can integrate with as well), |morpheus| includes a dedicated identity "
+"integration type specifically for Active Directory. By integrating Active "
+"Directory, |morpheus| administrators can fully offload the work of managing "
+"the user lifecycle to Active Directory. Creating new users, applying roles "
+"to users, updating basic user data, disabling users, and more can be handled"
+" in Active Directory and automatically filtered down to |morpheus|. This "
+"section includes an example integration walkthrough as well as additional "
+"details on the integration feature set."
+msgstr ""
+"Active Directory es Microsoft’s primario authentication servicio. It es "
+"widely used in enterprise organizations y incluso in Microsoft cloud "
+"servicios. While Active Directory también supports LDAP protocolo support "
+"(cual |morpheus| puede integrate con as well), |morpheus| includes un "
+"dedicated identity integration tipo específicamente para Active Directory. "
+"By integrating Active Directory, |morpheus| administrators puede fully "
+"offload el work of managing el usuario lifecycle to Active Directory. "
+"Creating nuevo users, applying roles to users, updating basic user datos, "
+"disabling users, y más puede be handled in Active Directory y "
+"automáticamente filtered down to |morpheus|. This sección includes un "
+"ejemplo integration walkthrough así como adicional detalles on la "
+"integración característica set."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:19
+msgid ""
+"Caution should be used when integrating more than one Active Directory "
+"identity source with the same |morpheus| Tenant. You must ensure the users "
+"on each identity source are unique users or that the two domains use "
+"different naming conventions for users."
+msgstr ""
+"Caution debería be used cuando integrating más than one Active Directory "
+"fuente de identidad con el mismo |morpheus| Tenant. You debe ensure el "
+"usuarios on cada fuente de identidad son unique users o que el two domains "
+"use diferente naming conventions para users."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:22
+msgid "How It Works"
+msgstr "Cómo funciona"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:24
+msgid ""
+"In |morpheus|, identity sources (if used) are configured per Tenant. In "
+"order to see an identity integration or create a new one, navigate to a "
+"Tenant detail page (|AdmTen| > Selected Tenant) and click "
+":guilabel:`IDENTITY SOURCES`. From this page we can add a new identity "
+"source or click the pencil (|pencil|) icon next to an existing identity "
+"source to view or edit it. Any configured identity source will apply to just"
+" one Tenant and they cannot be shared. One scenario where this is especially"
+" useful is in an MSP appliance where each Tenant is a siloed environment for"
+" a specific customer. The customer's own existing Active Directory server "
+"and groups can be leveraged to build |morpheus| user accounts with correct "
+"role mapping automatically."
+msgstr ""
+"In |morpheus|, fuente de identidads (if used) son configurado per Tenant. In"
+" order to see un identity integration o create un nuevo one, navigate to un "
+"Tenant página de detalles (|AdmTen| > Selected Tenant) y click "
+":guilabel:`FUENTES DE IDENTIDAD`. From este página we puede add un nuevo "
+"fuente de identidad o click el pencil (|pencil|) icon siguiente to un "
+"existente fuente de identidad to view o edit it. Any configurado fuente de "
+"identidad será apply to solo one Tenant y they no puede be shared. One "
+"scenario donde este es especially useful es in un MSP appliance donde cada "
+"Tenant es un siloed entorno para un específico customer. The customer's own "
+"existente Active Directory server y groups puede be leveraged to build "
+"|morpheus| user accounts con correct role mapping automáticamente."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:26
+msgid ""
+"When configuring an Active Directory integration in |morpheus|, AD groups "
+"are mapped to |morpheus| roles. When the user logs in for the first time, "
+"|morpheus| adds the new user account with correct name, email address, and "
+"applies one or more roles depending on configuration. Going forward, "
+"|morpheus| will sync down any changes to the user, including any role "
+"changes based on changes to the user's associated AD groups or updated "
+"passwords. Additionally, disabling a user in AD will prevent them from "
+"accessing |morpheus|."
+msgstr ""
+"When configuring un Active Directory integration in |morpheus|, AD groups "
+"son mapped to |morpheus| roles. When el usuario logs in para el primero "
+"time, |morpheus| adds el nuevo user cuenta con correct nombre, email "
+"dirección, y applies one o más roles dependiendo de configuración. Going "
+"forward, |morpheus| será sync down cualquier cambios to el usuario, "
+"including cualquier role cambios basado en cambios to el usuario's "
+"associated AD groups o actualizado passwords. Adicionalmente, disabling un "
+"usuario in AD será prevent them desde accessing |morpheus|."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:28
+msgid ""
+"|morpheus| will connect over port 389 for non-secure LDAP and port 636 for "
+"secure LDAP. Ensure that |morpheus| is able to talk to the AD server on the "
+"proper port."
+msgstr ""
+"|morpheus| será connect over puerto 389 para non-secure LDAP y puerto 636 "
+"para secure LDAP. Asegúrese de que |morpheus| es capaz de talk to el AD "
+"server on el proper puerto."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:31
+msgid "Example Integration"
+msgstr "Example Integration"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:33
+msgid ""
+"In a simple example, we have an Active Directory server which has two groups"
+" relevant to |morpheus|, \"Morpheus Users\" and \"Morpheus Admins.\" We will"
+" configure |morpheus| so that only users in the \"Morpheus Users\" group can"
+" access |morpheus| in any capacity. Users who are also in the \"Morpheus "
+"Admins\" group will take on the System Admin role in |morpheus|. We'll see "
+"later when the integration is configured how |morpheus| roles can be mapped "
+"to AD groups. In the same AD server, I have two users. John Smith is in "
+"groups \"Morpheus Users\" and \"Morpheus Admins\". John Jones is only in the"
+" \"Morpheus Users\" group."
+msgstr ""
+"In un simple ejemplo, we tienen un Active Directory server cual tiene two "
+"groups relevante to |morpheus|, \"Morpheus Users\" y \"Morpheus Admins.\" We"
+" será configure |morpheus| so que solo users in el \"Morpheus Users\" group "
+"puede acceso |morpheus| in cualquier capacity. Users quien son también in el"
+" \"Morpheus Admins\" group será take on el System Admin role in |morpheus|. "
+"We'll see later cuando la integración es configurado how |morpheus| roles "
+"puede be mapped to AD groups. En el mismo AD server, I tienen two users. "
+"John Smith es in groups \"Morpheus Users\" y \"Morpheus Admins\". John Jones"
+" es solo in el \"Morpheus Users\" group."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:36
+msgid ".. image:: images/integration_guides/identity_sources/ad/ad.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/ad.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:37
+msgid ""
+"Knowing the AD scheme and the requirements for |morpheus| user roles, we can"
+" begin the process of creating the integration. Identity integrations are "
+"specific to each Tenant so begin by navigating to the Tenant detail page "
+"(|AdmTen| > Selected Tenant) and clicking :guilabel:`IDENTITY SOURCES`. On "
+"setting the type to \"Active Directory,\" the form will update with the "
+"needed fields. Note the following basic fields:"
+msgstr ""
+"Knowing el AD scheme y el requirements para |morpheus| user roles, we puede "
+"begin el proceso of creating la integración. Identity integrations son "
+"específico to cada Tenant so begin by navigating to el Tenant página de "
+"detalles (|AdmTen| > Selected Tenant) y clicking :guilabel:`FUENTES DE "
+"IDENTIDAD`. On setting el tipo to \"Active Directory,\" el formulario será "
+"update con el needed campos. Note el following basic campos:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:39
+msgid ""
+"**AD SERVER:** The IP address or hostname for the Active Directory Server"
+msgstr ""
+"**AD SERVER:** The IP dirección o hostname para el Active Directory Server"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:40
+msgid ""
+"**DOMAIN:** The AD domain in which the relevant users and groups reside"
+msgstr "**DOMAIN:** The AD domain in cual el relevante users y groups reside"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:41
+msgid ""
+"**BINDING USERNAME:** A server user which has access to relevant objects on "
+"the AD server. In my example, I've used the in-built Administrator user "
+"which is the easiest option. Other users may be used depending on your "
+"organization's IT security policies but the integration with |morpheus| will"
+" not work properly if the user does not have the needed access"
+msgstr ""
+"**BINDING USERNAME:** A server user cual tiene acceso to relevante objetos "
+"on el AD server. In my ejemplo, I've used el in-built Administrator user "
+"cual es el easiest opción. Other users puede be used dependiendo de your "
+"organization's IT security policies pero la integración con |morpheus| no "
+"work properly if el usuario no tienen el needed acceso"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:42
+msgid "**BINDING PASSWORD:** The password for the user in the prior field"
+msgstr ""
+"**BINDING PASSWORD:** The contraseña para el usuario in el prior campo"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:44
+msgid ""
+"With the basic configurations completed, the remaining configurations will "
+"affect |morpheus| user and role generation. A REQUIRED GROUP is optional and"
+" is a group the user *must* be in to have any |morpheus| access. Here we "
+"require that users be in the \"Morpheus Users\" group. A DEFAULT ROLE is "
+"required and will be assigned to all users regardless of any additional "
+"roles they may be assigned based on their AD group membership. Beyond that, "
+"all other |morpheus| roles will be listed here and an AD group name can be "
+"associated with as many as you required. In this example, we are giving "
+"users in the \"Morpheus Admins\" group the |morpheus| System Admin role. "
+"Though we did not use them, it's worth pointing out that ENABLE ROLE MAPPING"
+" PERMISSION will give administrators in the Tenant the ability to update the"
+" AD role mappings (though they will not have access to the core integration "
+"fields such as AD SERVER, DOMAIN, or binding user details). MANUAL ROLE "
+"ASSIGNMENT allows users to manually update |morpheus| roles outside of the "
+"automatic mappings created by the AD integration."
+msgstr ""
+"With el basic configurations completed, el remaining configurations será "
+"affect |morpheus| user y role generation. A REQUIRED GROUP es opcional y es "
+"un grupo el usuario *debe* be in to tienen cualquier |morpheus| acceso. Here"
+" we require que users be in el \"Morpheus Users\" group. A DEFAULT ROLE es "
+"requerido y será be assigned to todos users regardless of cualquier "
+"adicional roles they puede be assigned basado en their AD group membership. "
+"Beyond que, todos otro |morpheus| roles será be listed aquí y un AD group "
+"nombre puede be asociado con as muchos as you requerido. In este ejemplo, we"
+" son giving users in el \"Morpheus Admins\" group el |morpheus| System Admin"
+" role. Though we did no use them, it's worth pointing out que ENABLE ROLE "
+"MAPPING PERMISSION será give administrators in el Tenant el ability to "
+"update el AD role mappings (though they no tienen acceso to el core "
+"integration campos como AD SERVER, DOMAIN, o binding user detalles). MANUAL "
+"ROLE ASSIGNMENT permite un los usuarios manualmente update |morpheus| roles "
+"outside of el automático mappings creado by el AD integration."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:47
+msgid ".. image:: images/integration_guides/identity_sources/ad/intConfig.png"
+msgstr ""
+".. image:: images/integration_guides/identity_sources/ad/intConfig.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:48
+msgid ""
+"With the above integration steps completed, users can now log into "
+"|morpheus| and a user account with correct roles will automatically be "
+"created. In our example case, John Smith has logged in and we can see he is "
+"assigned the default role as well as the System Admin role based on his AD "
+"group associations. Going forward, |morpheus| will continue to sync any "
+"changes to these users. For example, |morpheus| roles may be updated based "
+"on changing AD groups or user access may be completely revoked by disabling "
+"the user in AD."
+msgstr ""
+"With el anterior integration pasos completed, users puede ahora log en "
+"|morpheus| y un usuario cuenta con correct roles será automáticamente be "
+"creado. In our ejemplo case, John Smith tiene logged in y we puede see he es"
+" assigned el predeterminado role así como el System Admin role basado en his"
+" AD group associations. Going forward, |morpheus| será continue to sync "
+"cualquier cambios to estos users. Por ejemplo, |morpheus| roles puede be "
+"actualizado basado en changing AD groups o user acceso puede be completely "
+"revoked by disabling el usuario in AD."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:51
+msgid ".. image:: images/integration_guides/identity_sources/ad/user.png"
+msgstr ".. image:: images/integration_guides/identity_sources/ad/user.png"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:53
+msgid "Adding an Active Directory Integration"
+msgstr "Agregar Active Directory integración"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:55
+msgid "Navigate to |AdmTen|"
+msgstr "Navegue un |AdmTen|"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:56
+msgid "Select a Tenant"
+msgstr "Select un Tenant"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:57
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr "Select :guilabel:`FUENTES DE IDENTIDAD`"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:58
+msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`"
+msgstr "Select :guilabel:`+ ADD IDENTITY SOURCE`"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:59
+msgid "Set the TYPE to \"Active Directory\""
+msgstr "Establezca el TYPE to \"Active Directory\""
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:60
+msgid "Populate the following:"
+msgstr "Populate el following:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:62
+msgid "Name"
+msgstr "Name"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:63
+msgid "A friendly name in |morpheus| for the AD integration"
+msgstr "A friendly nombre in |morpheus| para el AD integration"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:64
+msgid "AD Server"
+msgstr "AD Server"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:65
+msgid "The Hostname or IP address of AD Server"
+msgstr "The Hostname o IP dirección of AD Server"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:66
+msgid "Domain"
+msgstr "Domain"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:67
+msgid "The AD domain in which the relevant user and group objects reside"
+msgstr "The AD domain in cual el relevante user y group objetos reside"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:68
+msgid "USE SSL"
+msgstr "USE SSL"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:69
+msgid ""
+"Indicates whether SSL should be used for communication with the AD server. "
+"|morpheus| will connect over port 389 for non-secure LDAP and port 636 for "
+"secure LDAP, ensure |morpheus| can connect to the AD server over the correct"
+" port"
+msgstr ""
+"Indicates whether SSL debería be used para communication con el AD server. "
+"|morpheus| será connect over puerto 389 para non-secure LDAP y puerto 636 "
+"para secure LDAP, ensure |morpheus| puede connect to el AD server over el "
+"correct puerto"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:70
+msgid "Binding Username"
+msgstr "Binding Username"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:71
+msgid ""
+"A username for a service account which has access to relevant objects "
+"(users, groups, etc.). For ease, the \"Administrator\" user may be used"
+msgstr ""
+"A nombre de usuario para un servicio cuenta cual tiene acceso to relevante "
+"objetos (users, groups, etc.). For ease, el \"Administrator\" user puede be "
+"used"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:72
+msgid "Binding Password"
+msgstr "Binding Password"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:73
+msgid "The password for the above account"
+msgstr "The contraseña para el anterior cuenta"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:74
+msgid "Required Group"
+msgstr "Required Group"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:75
+msgid ""
+"The AD group users must be in to have access (optional, see example in the "
+"prior section)"
+msgstr ""
+"The AD group users debe be in to tienen acceso (opcional, see ejemplo in el "
+"prior sección)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:76
+msgid "Default Role"
+msgstr "Default Role"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:77
+msgid ""
+"The default role a user is assigned when they are in the required group or "
+"if no specific group mapping applies to the user (see example in prior "
+"section)"
+msgstr ""
+"The predeterminado role un usuario es assigned cuando they son in el "
+"requerido group o if no específico group mapping applies to el usuario (see "
+"ejemplo in prior sección)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:78
+msgid "ENABLE ROLE MAPPING PERMISSION"
+msgstr "ENABLE ROLE MAPPING PERMISSION"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:79
+msgid ""
+"When selected, Tenant users with appropriate rights to view and edit Roles "
+"will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"without viewing or potentially editing the basic Identity Source "
+"configuration (AD server, domain, binding user details, etc)"
+msgstr ""
+"When seleccionado, Tenant users con apropiado rights to view y edit Roles "
+"será tienen el ability to set role mapping para el Identity Source "
+"integration. This allows el Tenant user to edit solo el rol mappings sin "
+"viewing o potentially editing el basic Identity Source configuración (AD "
+"server, domain, binding user detalles, etc)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:81
+msgid "MANUAL ROLE ASSIGNMENT"
+msgstr "MANUAL ROLE ASSIGNMENT"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:81
+msgid ""
+"When selected, administrators can manually edit Roles for users created "
+"through this identity source integration from the user detail page (|AdmUse|"
+" > Selected user)"
+msgstr ""
+"When seleccionado, administrators puede manualmente edit Roles para users "
+"creado a través de este fuente de identidad integration desde el usuario "
+"página de detalles (|AdmUse| > Selected user)"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:83
+msgid ""
+"For more on Identity Source role mapping permissions, see the `associated "
+"guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-"
+"admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our "
+"KnowledgeBase."
+msgstr ""
+"For más on Identity Source role mapping permisos, see el `associated guide "
+"<https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-"
+"to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:85
+msgid "Select :guilabel:`SAVE CHANGES`."
+msgstr "Select :guilabel:`GUARDAR CHANGES`."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:87
+msgid ""
+"Now allowed AD users can login to |morpheus| via their Active Directory "
+"credentials and a User will be automatically generated to |morpheus| with "
+"matching metadata and mapped Role permissions."
+msgstr ""
+"Now allowed AD users puede login to |morpheus| via their Active Directory "
+"credentials y un User será be automáticamente generated to |morpheus| con "
+"matching metadata y mapped Role permisos."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:92
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:94
+msgid ""
+"If you're unable to get the Active Directory integration to work, the "
+"following troubleshooting steps may be useful to ensure your appliance can "
+"talk to the Active Directory server."
+msgstr ""
+"If you're unable to get el Active Directory integration to work, el "
+"following troubleshooting pasos puede be useful to ensure your appliance "
+"puede talk to el Active Directory server."
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:96
+msgid "Open firewall ports"
+msgstr "Open firewall ports"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:98
+msgid "**Source:** |morpheus| appliance"
+msgstr "**Source:** |morpheus| appliance"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:100
+msgid "**Destination:** AD server's FQDN or IP address"
+msgstr "**Destination:** AD server's FQDN o IP dirección"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:102
+msgid "**Non-SSL AD integration:** TCP-389"
+msgstr "**Non-SSL AD integration:** TCP-389"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:104
+msgid "**SSL AD integration:** TCP-636"
+msgstr "**SSL AD integration:** TCP-636"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:106
+msgid "Checking open LDAP connections from the |morpheus| appliance"
+msgstr "Checking open LDAP connections desde el |morpheus| appliance"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:108
+msgid "Connect to a |morpheus| appliance box and run the following:"
+msgstr "Connect to un |morpheus| appliance box y run el following:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:110
+msgid "$ sudo lsof i- | grep :ldap"
+msgstr "$ sudo lsof i- | grep :ldap"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:114
+msgid "Check LDAP connectivity from the |morpheus| appliance"
+msgstr "Check LDAP connectivity desde el |morpheus| appliance"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:116
+msgid ""
+"Connect to a |morpheus| appliance box and run the following. Be sure to "
+"replace the placeholder values in the command with the correct values for "
+"your environment:"
+msgstr ""
+"Connect to un |morpheus| appliance box y run el following. Be sure to "
+"replace el placeholder valores in el command con el correct valores para "
+"your entorno:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:118
+msgid ""
+"$ ldapsearch   -x -h xx.xx.xx.xx -D \"binding-user@acme.com\" -W -b "
+"\"cn=users,dc=acme,dc=com\""
+msgstr ""
+"$ ldapsearch   -x -h xx.xx.xx.xx -D \"binding-user@acme.com\" -W -b "
+"\"cn=users,dc=acme,dc=com\""
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:122
+msgid ""
+"Run tcpflow from the |morpheus| appliance for non-SSL enabled AD identity "
+"Integrations"
+msgstr ""
+"Run tcpflow desde el |morpheus| appliance para non-SSL habilitado AD "
+"identity Integrations"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:124
+msgid ""
+"Use tcpflow from the |morpheus| appliance and then start the identity source"
+" configuration once again. Keep in mind this will only work for AD servers "
+"which are not SSL enabled:"
+msgstr ""
+"Use tcpflow desde el |morpheus| appliance y entonces start el fuente de "
+"identidad configuración once again. Tenga en cuenta este será solo work para"
+" AD servers cual no son SSL habilitado:"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:126
+msgid "$ sudo tcpflow -i any -c -v port 389"
+msgstr "$ sudo tcpflow -i cualquier -c -v puerto 389"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:130
+msgid "Check the AD and domain controllers event logs"
+msgstr "Marque la AD y domain controllers evento logs"
+
+#: ../../integration_guides/IdentityManagement/active_directory.rst:132
+msgid ""
+"Check the event logs for LDAP queries from the |morpheus| appliance to "
+"ensure network connectivity."
+msgstr ""
+"Marque la evento logs para LDAP queries desde el |morpheus| appliance to "
+"ensure network connectivity."

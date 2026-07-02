@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:12
+msgid "AI Translation Pipeline"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:14
+msgid "Objective"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:16
+msgid ""
+"Build tooling that translates Sphinx .pot/.po files into Spanish using an"
+" AI model, constrained by the official Morpheus UI glossary to ensure "
+"terminology consistency."
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:18
+msgid "Changes"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:20
+msgid "`tools/translate/` — Translation pipeline script(s)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:21
+msgid ""
+"`tools/translate/glossary.json` — Extracted terminology from "
+"messages_es_ES.properties"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:22
+msgid "`tools/translate/README.md` — Pipeline usage documentation"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:24
+msgid "Acceptance Criteria"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:26
+msgid ""
+"Glossary extracted from `../morpheus-ui/morpheus-ui/grails-"
+"app/i18n/messages_es_ES.properties` into a structured format the pipeline"
+" can reference"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:27
+msgid ""
+"Pipeline reads .pot or untranslated .po files and outputs translated .po "
+"files with populated `msgstr` entries"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:28
+msgid ""
+"RST/Markdown markup in msgid strings is preserved exactly in translated "
+"msgstr (directives, roles, cross-refs, code spans)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:29
+msgid ""
+"Code blocks, CLI commands, API endpoints, and file paths are NOT "
+"translated"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:30
+msgid "Product term \"HPE Morpheus Enterprise\" remains in English"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:31
+msgid ""
+"All Morpheus product terms use official glossary translations (Instance →"
+" Instancia, etc.)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:32
+msgid ""
+"Pipeline supports batching and resumability (can be interrupted and "
+"restarted)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:33
+msgid ""
+"Pipeline produces a translation report: files processed, terms applied, "
+"any warnings"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:34
+msgid "Output .po files pass `msgfmt --check` validation"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:36
+msgid "Design"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:38
+msgid "Glossary Extraction"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:40
+msgid ""
+"Parse `messages_es_ES.properties` to extract key product terms into a "
+"JSON glossary:"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:41
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Instance\": \"Instancia\",\n"
+"  \"Instances\": \"Instancias\",\n"
+"  \"Cloud\": \"Nube\",\n"
+"  \"Clouds\": \"Nubes\",\n"
+"  \"Group\": \"Grupo\",\n"
+"  \"Groups\": \"Grupos\",\n"
+"  \"Workflow\": \"Flujo de trabajo\",\n"
+"  \"Workflows\": \"Flujos de trabajo\",\n"
+"  \"Task\": \"Tarea\",\n"
+"  \"Tasks\": \"Tareas\",\n"
+"  \"Network\": \"Red\",\n"
+"  \"Networks\": \"Redes\",\n"
+"  \"Backup\": \"Backup\",\n"
+"  \"Backups\": \"Backups\",\n"
+"  \"Library\": \"Biblioteca\",\n"
+"  \"Integration\": \"Integración\",\n"
+"  \"Integrations\": \"Integraciones\",\n"
+"  \"Monitoring\": \"Monitoreo\",\n"
+"  \"Provisioning\": \"Aprovisionamiento\",\n"
+"  \"Infrastructure\": \"Infraestructura\",\n"
+"  \"Security\": \"Seguridad\",\n"
+"  \"Administration\": \"Administración\"\n"
+"}\n"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:68
+msgid "Translation Prompt Strategy"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:70
+msgid "For each .po msgid:"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:71
+msgid "Provide the glossary as context"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:72
+msgid ""
+"Instruct: translate to Spanish, preserve all markup/formatting tokens, "
+"use glossary terms exactly"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:73
+msgid "Validate output preserves markup structure before writing"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:75
+msgid "Markup Preservation"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:77
+msgid ""
+"RST roles (`:ref:`, `:doc:`, `:guilabel:`) — keep role syntax, translate "
+"display text only"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:78
+msgid "Inline code (`` `backticks` ``) — do not translate"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:79
+msgid ""
+"Directives (`.. note::`, `.. warning::`) — keep directive name, translate"
+" body"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:80
+msgid "Cross-references — keep target, translate display text if explicit"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:82
+msgid "Notes"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:84
+msgid ""
+"Consider whether to translate one msgid at a time or batch multiple for "
+"efficiency"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:85
+msgid ""
+"The pipeline should be generic enough to rerun for other locales (just "
+"swap glossary + target language)"
+msgstr ""
+
+#: ../../.hero/specs/i18n-ai-translation-pipeline/spec.md:86
+msgid ""
+"Source glossary: `../morpheus-ui/morpheus-ui/grails-"
+"app/i18n/messages_es_ES.properties`"
+msgstr ""
+

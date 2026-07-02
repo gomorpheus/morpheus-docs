@@ -1,0 +1,411 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:2
+msgid "ServiceNow Flows for Approvals"
+msgstr "ServiceNow Flows para Approvals"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:7
+msgid "ITSM integrations are an Enterprise-only feature."
+msgstr "ITSM integrations son un Enterprise-solo característica."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:10
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:12
+msgid ""
+"|morpheus| supports two types of ServiceNow automation for approval "
+"workflows: **Workflows** (legacy) and **Flows** (modern). ServiceNow Flows "
+"are the newer automation engine in ServiceNow (Flow Designer) that provides "
+"a more modern, visual interface compared to traditional ServiceNow "
+"Workflows."
+msgstr ""
+"|morpheus| supports two types of ServiceNow automation para approval "
+"workflows: **Workflows** (legacy) y **Flows** (modern). ServiceNow Flows son"
+" el newer automation engine in ServiceNow (Flow Designer) que provides un "
+"más modern, visual interfaz compared to traditional ServiceNow Workflows."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:14
+msgid ""
+"When configuring approval policies in |morpheus|, you can select either a "
+"synced Workflow or a synced Flow as the approval automation to trigger in "
+"ServiceNow."
+msgstr ""
+"When configuring approval policies in |morpheus|, you puede select either un"
+" synced Workflow o un synced Flow as el approval automation to trigger in "
+"ServiceNow."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:17
+msgid "Workflows vs. Flows"
+msgstr "Workflows vs. Flows"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:23
+msgid "Aspect"
+msgstr "Aspect"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:24
+msgid "Workflows (Legacy)"
+msgstr "Workflows (Legacy)"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:25
+msgid "Flows (Modern)"
+msgstr "Flows (Modern)"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:26
+msgid "ServiceNow Engine"
+msgstr "ServiceNow Engine"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:27
+msgid "Workflow Editor"
+msgstr "Workflow Editor"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:28
+msgid "Flow Designer"
+msgstr "Flow Designer"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:29
+msgid "Recommended For"
+msgstr "Recommended For"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:30
+msgid "Existing implementations"
+msgstr "Existing implementations"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:31
+msgid "New implementations"
+msgstr "New implementations"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:32
+msgid "|morpheus| Config Key"
+msgstr "|morpheus| Config Key"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:33
+msgid "``workflowId``"
+msgstr "``workflowId``"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:34
+msgid "``flowId`` (with ``workflowType: 'flow'``)"
+msgstr "``flowId`` (con ``workflowType: 'flow'``)"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:35
+msgid "ServiceNow Direction"
+msgstr "ServiceNow Direction"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:36
+msgid "Being deprecated by ServiceNow"
+msgstr "Being deprecated by ServiceNow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:37
+msgid "Actively developed by ServiceNow"
+msgstr "Actively developed by ServiceNow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:39
+msgid ""
+"ServiceNow is progressively moving customers from Workflows to Flow "
+"Designer. New approval integrations should use Flows where possible."
+msgstr ""
+"ServiceNow es progressively moving customers desde Workflows to Flow "
+"Designer. New approval integrations debería use Flows donde possible."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:42
+msgid "Prerequisites"
+msgstr "Prerrequisitos"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:44
+msgid ""
+"A ServiceNow integration must be configured in |morpheus| (|AdmInt| > "
+"ServiceNow)"
+msgstr ""
+"A ServiceNow integration debe ser configurado in |morpheus| (|AdmInt| > "
+"ServiceNow)"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:45
+msgid "Flows must be published and active in ServiceNow's Flow Designer"
+msgstr "Flows debe be published y activo in ServiceNow's Flow Designer"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:46
+msgid ""
+"The ServiceNow service account used by |morpheus| must have access to read "
+"Flow definitions"
+msgstr ""
+"The ServiceNow servicio cuenta used by |morpheus| debe tienen acceso to read"
+" Flow definitions"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:47
+msgid "Flows must be designed to handle approval catalog item requests"
+msgstr "Flows debe be designed to handle approval catalog elemento requests"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:50
+msgid "Configuring Flow-Based Approvals"
+msgstr "Configurar Flow-Based Approvals"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:53
+msgid "Step 1: Configure ServiceNow Integration"
+msgstr "Step 1: Configure ServiceNow Integration"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:55
+msgid "If not already configured:"
+msgstr "If no ya configurado:"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:57
+msgid "Navigate to |AdmInt|"
+msgstr "Navegue un |AdmInt|"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:58
+msgid "Click :guilabel:`+ NEW INTEGRATION`"
+msgstr "Click :guilabel:`+ NEW INTEGRATION`"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:59
+msgid "Select **ServiceNow** from the Type dropdown"
+msgstr "Select **ServiceNow** desde el Type desplegable"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:60
+msgid "Enter the Host URL, User, and Password"
+msgstr "Ingrese el Host URL, User, y Password"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:61
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:63
+msgid ""
+"|morpheus| syncs both Workflows and Flows from ServiceNow. This process may "
+"take up to 5 minutes depending on the size of your ServiceNow instance."
+msgstr ""
+"|morpheus| syncs both Workflows y Flows desde ServiceNow. This proceso puede"
+" take up to 5 minutes dependiendo de el tamaño of your ServiceNow instance."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:66
+msgid "Step 2: Create an Approval Policy with Flow"
+msgstr "Step 2: Create un Approval Policy con Flow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:68
+msgid "Navigate to the Policies tab for the target Group or Cloud"
+msgstr "Navegue un el Policies pestaña para el destino Group o Cloud"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:69
+msgid "Click :guilabel:`+ ADD POLICY`"
+msgstr "Click :guilabel:`+ AGREGAR POLICY`"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:70
+msgid "Select an approval policy type (e.g., **Provision Approval**)"
+msgstr "Select un approval policy tipo (e.g., **Provision Approval**)"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:71
+msgid "Select **ServiceNow** as the approval type"
+msgstr "Select **ServiceNow** as el approval tipo"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:72
+msgid "Select the ServiceNow integration"
+msgstr "Seleccione el ServiceNow integration"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:73
+msgid "In the workflow/flow selection dropdown, choose the desired **Flow**"
+msgstr "En el workflow/flow selection desplegable, choose el desired **Flow**"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:75
+msgid ""
+"Flows synced from ServiceNow appear alongside Workflows in the selection "
+"dropdown. They are distinguished by their naming convention from Flow "
+"Designer."
+msgstr ""
+"Flows synced desde ServiceNow appear alongside Workflows in el selection "
+"desplegable. They son distinguished by their naming convention desde Flow "
+"Designer."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:77
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`GUARDAR`"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:80
+msgid "How Flow Approvals Work"
+msgstr "How Flow Approvals Work"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:82
+msgid ""
+"When a user triggers an action covered by a ServiceNow Flow approval policy:"
+msgstr ""
+"When un usuario triggers un acción covered by un ServiceNow Flow approval "
+"policy:"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:84
+msgid ""
+"|morpheus| creates an approval request in ServiceNow, triggering the "
+"configured Flow"
+msgstr ""
+"|morpheus| creates un approval solicitud in ServiceNow, triggering el "
+"configurado Flow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:85
+msgid ""
+"The Flow executes in ServiceNow's Flow Designer engine, which may include:"
+msgstr ""
+"The Flow executes in ServiceNow's Flow Designer engine, cual puede include:"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:87
+msgid "Approval steps with designated approvers"
+msgstr "Approval pasos con designated approvers"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:88
+msgid "Conditional logic based on request attributes"
+msgstr "Conditional logic basado en solicitud atributos"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:89
+msgid "Notifications and escalations"
+msgstr "Notifications y escalations"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:90
+msgid "Integration with other ServiceNow modules"
+msgstr "Integration con otro ServiceNow modules"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:92
+msgid "The provisioning request in |morpheus| enters a **Pending** state"
+msgstr "The provisioning solicitud in |morpheus| enters un **Pending** state"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:93
+msgid ""
+"|morpheus| polls ServiceNow for approval status updates (every 5 minutes)"
+msgstr ""
+"|morpheus| polls ServiceNow para approval estado updates (cada 5 minutes)"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:94
+msgid ""
+"When the Flow reaches an approved/rejected outcome, |morpheus| updates the "
+"request accordingly"
+msgstr ""
+"When el Flow reaches un approved/rejected outcome, |morpheus| updates el "
+"solicitud accordingly"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:97
+msgid "Designing Flows for |morpheus| Approvals"
+msgstr "Designing Flows para |morpheus| Approvals"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:99
+msgid ""
+"When designing Flows in ServiceNow's Flow Designer for use with |morpheus| "
+"approval policies:"
+msgstr ""
+"When designing Flows in ServiceNow's Flow Designer para use con |morpheus| "
+"approval policies:"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:101
+msgid "The Flow should accept a catalog item request as its trigger"
+msgstr "The Flow debería accept un catalog elemento solicitud as its trigger"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:102
+msgid "Include at least one **Approval** action in the Flow"
+msgstr "Include at least one **Approval** acción in el Flow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:103
+msgid "Ensure the Flow sets a clear approved/rejected final state"
+msgstr "Ensure el Flow sets un clear approved/rejected final state"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:104
+msgid "Consider including notification actions for approvers"
+msgstr "Consider including notification acciones para approvers"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:105
+msgid "Test the Flow in ServiceNow before connecting it to |morpheus|"
+msgstr "Test el Flow in ServiceNow antes de connecting it to |morpheus|"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:108
+msgid "Migrating from Workflows to Flows"
+msgstr "Migrating desde Workflows to Flows"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:110
+msgid "To migrate existing approval policies from Workflows to Flows:"
+msgstr "To migrate existente approval policies desde Workflows to Flows:"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:112
+msgid "Create the equivalent Flow in ServiceNow's Flow Designer"
+msgstr "Create el equivalent Flow in ServiceNow's Flow Designer"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:113
+msgid "Test the Flow independently in ServiceNow"
+msgstr "Test el Flow independently in ServiceNow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:114
+msgid "Edit the existing approval policy in |morpheus|"
+msgstr "Edit el existente approval policy in |morpheus|"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:115
+msgid ""
+"Change the selected automation from the legacy Workflow to the new Flow"
+msgstr ""
+"Change el seleccionado automation desde el legacy Workflow to el nuevo Flow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:116
+msgid "Save the policy"
+msgstr "Save el policy"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:118
+msgid ""
+"Pending approvals created under the old Workflow will continue to be managed"
+" by that Workflow. Only new requests after the policy change will use the "
+"Flow."
+msgstr ""
+"Pending approvals creado under el old Workflow será continue to be managed "
+"by que Workflow. Only nuevo requests después de el policy cambio será use el"
+" Flow."
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:121
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:123
+msgid "**Flows not appearing in the selection dropdown**"
+msgstr "**Flows no appearing in el selection desplegable**"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:125
+msgid ""
+"Wait up to 5 minutes after saving the ServiceNow integration for sync to "
+"complete"
+msgstr ""
+"Wait up to 5 minutes después de saving el ServiceNow integration para sync "
+"to completo"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:126
+msgid "Verify the Flow is published and active in ServiceNow"
+msgstr "Verify el Flow es published y activo in ServiceNow"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:127
+msgid "Confirm the service account has read access to Flow definitions"
+msgstr "Confirm el servicio cuenta tiene read acceso to Flow definitions"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:129
+msgid "**Flow approvals not syncing back to |morpheus|**"
+msgstr "**Flow approvals no syncing back to |morpheus|**"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:131
+msgid "Check that the Flow sets a definitive approved/rejected status"
+msgstr "Check que el Flow sets un definitive approved/rejected estado"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:132
+msgid "Verify |morpheus| ServiceNow integration credentials are valid"
+msgstr "Verify |morpheus| ServiceNow integration credentials son válido"
+
+#: ../../integration_guides/ITSM/servicenow_flows.rst:133
+msgid ""
+"Check the 5-minute polling interval—recent changes may not yet be reflected"
+msgstr ""
+"Marque la 5-minute polling interval—recent cambios no puede yet be reflected"

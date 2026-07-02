@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:2
+msgid "Shared Storage"
+msgstr "Almacenamiento compartido"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:4
+msgid ""
+"For configurations with 2 or more Applications Nodes, Shared Storage is "
+"required between the app nodes. Local Storage File Shares will need to be"
+" copied to a shared file system so all assets are available on all App "
+"nodes."
+msgstr ""
+"For configurations con 2 o more Applications Nodes, Shared Storage es "
+"obligatorio entre the app nodes. Local Storage File Shares will necesitan "
+"ser copied to a shared file system so all assets are available on all App "
+"nodes."
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:7
+msgid "Assets"
+msgstr "Assets"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:8
+msgid "White label images"
+msgstr "White label images"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:9
+msgid "Uploaded virtual images"
+msgstr "Uploaded virtual images"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:10
+msgid "Deploy uploads"
+msgstr "Deploy uploads"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:11
+msgid "Ansible Plays"
+msgstr "Ansible Plays"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:12
+msgid "Terraform"
+msgstr "Terraform"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:13
+msgid "Morpheus backups"
+msgstr "Morpheus backups"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
+msgid ""
+"Backups, deployments and virtual image storage locations can be "
+"overridden within the |morpheus|-ui.  You can find more information on "
+"storage here: :ref:`storage`"
+msgstr ""
+"Backups, deployments y virtual image storage locations puede ser "
+"overridden dentro de the |morpheus|-ui. You can find more information on "
+"storage here: :ref:`storage`"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:17
+msgid ""
+"To copy the ``morpheus-ui`` directory to the shared storage follow the "
+"below steps:"
+msgstr ""
+"To copy the ``morpheus-ui`` directory to the almacenamiento compartido "
+"follow the abajo steps:"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:19
+msgid "SSH into the Appliance"
+msgstr "SSH en the Appliance"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:20
+msgid "sudo su (or login as root)"
+msgstr "sudo su (or login as root)"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:21
+msgid "cd into ``/var/opt/morpheus/``"
+msgstr "cd en ``/var/opt/morpheus/``"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:22
+msgid ""
+"Backup morpheus-ui directory by running the command below.  This will "
+"create a new directory in ``/var/opt/morpheus/`` called morpheus-ui-bkp "
+"and copy the contents of morpheus-ui into the new directory"
+msgstr ""
+"Backup morpheus-ui directory by running the command below. This will "
+"create a new directory in ``/var/opt/morpheus/`` called morpheus-ui-bkp y "
+"copy the contents of morpheus-ui ina la new directory"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:24
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
+msgid "cp -r morpheus-ui morpheus-ui-bkp"
+msgstr "cp -r morpheus-ui morpheus-ui-bkp"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:28
+msgid "Move morpheus-ui to your shared storage. Example below:"
+msgstr "Move morpheus-ui to your almacenamiento compartido. Example below:"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:30
+msgid "mv morpheus-ui /nfs/appliance-files/"
+msgstr "mv morpheus-ui /nfs/appliance-files/"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:34
+msgid ""
+"Mount your shared storage volume to ``/var/opt/morpheus/morpheus-ui``. "
+"How you mount it is dependent on what kind of storage it is. If you mount"
+" the volume after the package install, but before the reconfigure, then "
+"you don't need to copy anything to a backup."
+msgstr ""
+"Mount your shared storage volume to ``/var/opt/morpheus/morpheus-ui``. How "
+"you mount it is dependent on what kind of storage it is. If you mount the "
+"volume after the package install, but before the reconfigure, then you "
+"don't need to copy anything to a backup."
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
+msgid ""
+"SSH into the second Appliance and then Backup morpheus-ui directory by "
+"running"
+msgstr "SSH en the second Appliance y then Backup morpheus-ui directory by running"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:42
+msgid "When adding additional nodes you will only need to run step 6 and 7"
+msgstr "When adding adicional nodes you will only necesita run step 6 y 7"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:44
+msgid ""
+"NFS mounts require ``sync`` option when using Ansible integration with "
+"|morpheus| Agent command bus execution enabled."
+msgstr ""
+"NFS mounts require ``sync`` option when using Ansible integration con "
+"|morpheus| Agent command bus execution enabled."
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:46
+msgid ""
+"On each application node, the morpheus-app and morpheus-local user and "
+"group uid/gid should be consistent.  If the uid and/or gid are different "
+"between nodes, when the permissions are applied during a reconfigure, the"
+" permissions can be incorrect for other nodes.  The uid and gid for the "
+"users can be seen by executing:  ``sudo cat /etc/passwd`` and ``sudo cat "
+"/etc/groups``"
+msgstr ""
+"On each application node, the morpheus-app y morpheus-local user y group "
+"uid/gid debería ser consistent.  If the uid and/or gid are different entre "
+"nodes, when the permissions are applied durante a reconfigure, the "
+"permissions puede ser incorrect for other nodes.  The uid y gid for los "
+"usuarios puede ser seen by executing:  ``sudo cat /etc/passwd`` y ``sudo "
+"cat /etc/groups``"
+

@@ -1,0 +1,902 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../operations/invoices.rst:7
+msgid "Invoices"
+msgstr "Facturas"
+
+#: ../../operations/invoices.rst:9
+msgid ""
+"|morpheus| offers highly-granular costing data through invoices. Invoice "
+"views are highly customizable, allowing for nearly unlimited combinations"
+" of output columns and filtering. Invoices are based on monthly periods "
+"and allow you to slice costs in a highly granular way, as well as predict"
+" final monthly costs before the end of the period. As with other "
+"|morpheus| UI pages that support advanced table customization, these "
+"views can be saved to provide easy access to costing views specific to "
+"varying business needs. By default, the invoice list page will show the "
+"last three months' invoices across all clouds and invoice types but the "
+"list can be modified to target differing time periods or resource "
+"groupings. Read on in this section to discover the meaning of various "
+"invoice types and how this tool can be used to create targeted costing "
+"views."
+msgstr ""
+"|morpheus| offers highly-granular costing data through invoices. "
+"Factura views are highly customizable, allowing for nearly unlimited "
+"combinations of output columns and filtering. Facturas are based on "
+"monthly periods and allow you to slice costs in a highly granular way, "
+"as well as predict final monthly costs before the end of the period. As "
+"with other |morpheus| UI pages that support advanced table "
+"customization, these views can be saved to provide easy access to "
+"costing views specific to varying business needs. By default, the "
+"invoice página de lista will show the last three months' invoices "
+"across all clouds and invoice types but the list can be modified to "
+"target differing período de tiempos or resource groupings. Read on in "
+"this section to discover the meaning of various invoice types and how "
+"this tool can be used to create targeted costing views."
+
+#: ../../operations/invoices.rst:12
+msgid "Invoices for Public vs On-Prem Clouds"
+msgstr "Facturas para Nubes públicas vs locales"
+
+#: ../../operations/invoices.rst:14
+msgid ""
+"|morpheus| supports live cost syncing for many public clouds, including "
+"all of the most commonly-used public clouds like Amazon AWS, Microsoft "
+"Azure, and Google Cloud Platform. For these clouds, costing sync is "
+"enabled through the COSTING field on the Add/Edit Cloud modal "
+"(Infrastructure > Clouds > selected Cloud > EDIT button). When live costs"
+" are synced from public clouds, invoices will be generated for this "
+"activity including month-to-date costs, projected monthly totals, "
+"historical cost data, and a lot more which is discussed in the following "
+"sections."
+msgstr ""
+"|morpheus| supports live cost syncing for many public clouds, including "
+"all of the most commonly-used public clouds like Amazon AWS, Microsoft "
+"Azure, and Google Nube Platform. For these clouds, costing sync está "
+"habilitado through the COSTING field on the Add/Edit Nube modal "
+"(Infraestructura > Nubes > selected Nube > EDIT button). When live "
+"costs are synced from public clouds, invoices will be generated for "
+"this activity including del mes hasta la fecha costs, projected monthly "
+"totals, historical cost data, and a lot more which is discussed in the "
+"following sections."
+
+#: ../../operations/invoices.rst:16
+msgid ""
+"Additionally, |morpheus| has implemented a costing service for on-prem "
+"clouds to closely mirror the live costing experience through a public "
+"cloud. As with public clouds, this costing service is enabled for on-prem"
+" clouds through the COSTING field on the Add/Edit Cloud modal "
+"(Infrastructure > Clouds > selected Cloud > EDIT button). Change the "
+"setting to \"Sync Costing\" and save the changes to the cloud "
+"integration. From this point, costs will be aggregated into invoices for "
+"on-prem clouds in the same way as public clouds including complete line "
+"item listings, current costs for the month, month-end projections, and "
+"much more as discussed in the next sections."
+msgstr ""
+"Additionally, |morpheus| has implemented a costing service for local "
+"clouds to closely mirror the live costing experience through a public "
+"cloud. As with public clouds, this costing service está habilitado for "
+"local clouds through the COSTING field on the Add/Edit Nube modal "
+"(Infraestructura > Nubes > selected Nube > EDIT button). Change the "
+"setting to \"Sync Costing\" and save the changes to the cloud "
+"integration. From this point, costs will be aggregated into invoices "
+"for local clouds in the same way as public clouds including complete "
+"partida listings, current costs for the month, fin de mes projections, "
+"and much more as discussed in the next sections."
+
+#: ../../operations/invoices.rst:19
+msgid "Invoice List Page"
+msgstr "Página de lista de Facturas"
+
+#: ../../operations/invoices.rst:21
+msgid ""
+"The invoices list page shows high-level aggregate data on a group of "
+"invoices and allows you to locate a specific invoice for a deeper look. "
+"By default, invoices from the last three months across all clouds and "
+"types are shown here. Depending on settings, this page can automatically "
+"refresh itself so the list of displayed invoices and the aggregate "
+"information on them is up to date."
+msgstr ""
+"The invoices página de lista shows high-level aggregate data on a group "
+"of invoices and allows you to locate a specific invoice for a deeper "
+"look. By default, invoices from the last three months across all clouds "
+"and types are shown here. Depending on settings, this page can "
+"automatically refresh itself so the list of displayed invoices and the "
+"aggregate information on them is up to date."
+
+#: ../../operations/invoices.rst:24
+msgid ".. image:: images/operations/invoices/1listInvoices.png"
+msgstr ".. image:: images/operations/invoices/1listInvoices.png"
+
+#: ../../operations/invoices.rst:26
+msgid "Aggregated Invoice Data"
+msgstr "Datos agregados de Facturas"
+
+#: ../../operations/invoices.rst:28
+msgid ""
+"The following aggregate totals are displayed for all invoices picked up "
+"by set filters:"
+msgstr ""
+"Lo siguiente aggregate totals are displayed for all invoices picked up by "
+"set filters:"
+
+#: ../../operations/invoices.rst:30
+msgid ""
+"**Periods:** The total number of months in the period determined by your "
+"start and end date filters. If no start and end dates are set, a three "
+"month period will be shown. If a one-month period is selected, the name "
+"of that month (ex. Aug 2020) is shown"
+msgstr ""
+"**Periods:** The total number of months in the period determined by your "
+"start and end date filters. If no start and end dates are set, a three "
+"month period será shown. If a one-month period is selected, the name of "
+"that month (ex. Aug 2020) is shown"
+
+#: ../../operations/invoices.rst:31
+msgid ""
+"**Total Invoices:** The total number of invoices captured by current "
+"filters"
+msgstr ""
+"**Total Invoices:** The total number de invoices captured por actual "
+"filters"
+
+#: ../../operations/invoices.rst:32
+msgid ""
+"**MTD Cost:** The combined month-to-date cost for all invoices captured "
+"by current filters"
+msgstr ""
+"**MTD Cost:** The combined del mes hasta la fecha cost for all invoices "
+"captured by current filters"
+
+#: ../../operations/invoices.rst:33
+msgid ""
+"**Total Cost:** The expected total month-end cost for all invoices "
+"captured by current filters"
+msgstr ""
+"**Total Cost:** The expected total fin de mes cost for all invoices "
+"captured by current filters"
+
+#: ../../operations/invoices.rst:36
+msgid "Creating Views"
+msgstr "Creación de vistas"
+
+#: ../../operations/invoices.rst:38
+msgid ""
+"Invoice list views are highly-customizable allowing for virtually "
+"limitless combinations of output columns and filtering. A common set of "
+"output columns is provided in a default view but users can add and remove"
+" columns from a large list of data points and even save multiple views "
+"for easy access to different data sets. Any of your stored views can be "
+"set as the default to be displayed each time the invoices list page is "
+"active."
+msgstr ""
+"Factura list views are highly-customizable allowing for virtually "
+"limitless combinations of output columns and filtering. A common set of "
+"output columns is provided in a default view but users can add and "
+"remove columns from a large list of data points and even save multiple "
+"views for easy access to different data sets. Any of your stored views "
+"can be set as the default to be displayed each time the invoices página "
+"de lista is active."
+
+#: ../../operations/invoices.rst:40
+msgid "To create a new invoices view:"
+msgstr "Para crear una nueva vista de facturas:"
+
+#: ../../operations/invoices.rst:42
+msgid "Click the gear icon (:guilabel:`⚙`)"
+msgstr "Haga clic en el gear icon (:guilabel:`⚙`)"
+
+#: ../../operations/invoices.rst:43
+msgid ""
+"Click on one or more columns from the \"Columns\" list to add or remove "
+"an output field"
+msgstr ""
+"Haga clic en one or more columns from the \"Columns\" list to add or "
+"remove an output field"
+
+#: ../../operations/invoices.rst:44
+msgid "Click \"+ add view\""
+msgstr "Haga clic en \"+ add view\""
+
+#: ../../operations/invoices.rst:45
+msgid "Provide a name and a description value for your new view"
+msgstr "Proporcione un nombre y un valor de descripción para su nueva vista"
+
+#: ../../operations/invoices.rst:46
+msgid ""
+"If desired, mark the box to set the new view as your default view so it "
+"appears automatically each time the invoices list page is accessed"
+msgstr ""
+"If desired, mark the box to set the new view as your default view so it "
+"appears automatically each time the invoices página de lista is accessed"
+
+#: ../../operations/invoices.rst:47
+msgid "Click :guilabel:`SAVE`"
+msgstr "Haga clic en :guilabel:`SAVE`"
+
+#: ../../operations/invoices.rst:50
+msgid ".. image:: images/operations/invoices/2createViews.png"
+msgstr ".. image:: images/operations/invoices/2createViews.png"
+
+#: ../../operations/invoices.rst:52
+msgid "Available Output Columns"
+msgstr "Columnas de salida disponibles"
+
+#: ../../operations/invoices.rst:54
+msgid ""
+"When creating an invoices view, there are many output columns available "
+"to select. Consult the list below for more details on each of the "
+"available columns:"
+msgstr ""
+"When creating an invoices view, there are many output columns disponible "
+"to select. Consult the lista below for more detalles on each of the "
+"disponible columns:"
+
+#: ../../operations/invoices.rst:58
+msgid "**Invoice ID:** The unique ID in |morpheus| for the invoice"
+msgstr "**ID de Factura:** El ID único en |morpheus| para la factura"
+
+#: ../../operations/invoices.rst:59
+msgid ""
+"**Type:** The invoice type; Cloud, Container, Group, Server, Instance, "
+"Resource, User, or Volume"
+msgstr ""
+"**Type:** The invoice type; Nube, Container, Grupo, Server, Instancia, "
+"Resource, Usuario, or Volume"
+
+#: ../../operations/invoices.rst:60
+msgid ""
+"**Ref ID:** An ID for the reference object tied to the invoice (server, "
+"instance, cloud, etc.). Reference IDs are reused across invoice types so "
+"invoices referring to identical Ref IDs may not necessarily refer to the "
+"same reference object"
+msgstr ""
+"**Ref ID:** An ID for the reference object vinculado a the invoice "
+"(server, instance, cloud, etc.). Reference IDs are reused across "
+"invoice types so invoices referring to identical Ref IDs may not "
+"necessarily refer to the same reference object"
+
+#: ../../operations/invoices.rst:61
+msgid ""
+"**Reference:** The name of the reference object (server, cloud, user, "
+"group, etc.) tied to the invoice"
+msgstr ""
+"**Reference:** The name of the reference object (server, cloud, user, "
+"group, etc.) vinculado a the invoice"
+
+#: ../../operations/invoices.rst:62
+msgid ""
+"**Cloud ID:** The internal ID for a Cloud integration in |morpheus|. This"
+" field will be blank unless the invoice references a Cloud"
+msgstr ""
+"**Cloud ID:** The internal ID for a Nube integration in |morpheus|. "
+"This field will be blank unless the invoice references a Nube"
+
+#: ../../operations/invoices.rst:63
+msgid ""
+"**Cloud:** The name for a Cloud integration in |morpheus|. This field "
+"will be blank unless the invoice references a Cloud"
+msgstr ""
+"**Cloud:** The name for a Nube integration in |morpheus|. This field "
+"will be blank unless the invoice references a Nube"
+
+#: ../../operations/invoices.rst:64
+msgid ""
+"**Instance ID:** The internal ID for an Instance in |morpheus|. This "
+"field will be blank unless the invoice references an Instance"
+msgstr ""
+"**Instance ID:** The internal ID for an Instancia in |morpheus|. This "
+"field will be blank unless the invoice references an Instancia"
+
+#: ../../operations/invoices.rst:65
+msgid ""
+"**Instance:** The name for an Instance in |morpheus|. This field will be "
+"blank unless the invoice references an Instance"
+msgstr ""
+"**Instance:** The name for an Instancia in |morpheus|. This field will "
+"be blank unless the invoice references an Instancia"
+
+#: ../../operations/invoices.rst:66
+msgid ""
+"**Server ID:** The internal ID for a server in |morpheus|. This field "
+"will be blank unless the invoice references a server"
+msgstr ""
+"**Server ID:** The internal ID for a server in |morpheus|. This field será "
+"blank unless the invoice references a server"
+
+#: ../../operations/invoices.rst:67
+msgid ""
+"**Server:** The name for a server in |morpheus|. This field will be blank"
+" unless the invoice references a server"
+msgstr ""
+"**Server:** The name for a server in |morpheus|. This field será blank "
+"unless the invoice references a server"
+
+#: ../../operations/invoices.rst:68
+msgid ""
+"**Cluster ID:** The internal ID for a cluster in |morpheus|. This field "
+"will be blank unless the invoice references a cluster"
+msgstr ""
+"**Cluster ID:** The internal ID for a cluster in |morpheus|. This field "
+"será blank unless the invoice references a cluster"
+
+#: ../../operations/invoices.rst:69
+msgid ""
+"**Cluster:** The name for a cluster in |morpheus|. This field will be "
+"blank unless the invoice references a cluster"
+msgstr ""
+"**Cluster:** The name for a cluster in |morpheus|. This field será blank "
+"unless the invoice references a cluster"
+
+#: ../../operations/invoices.rst:70
+msgid ""
+"**Plan ID:** The internal ID for a service plan in |morpheus|. This field"
+" will be populated only for invoices that reference an object which would"
+" be associated with a service plan (server, Instance, container, etc.)."
+msgstr ""
+"**Plan ID:** The internal ID for a plan de servicio in |morpheus|. This "
+"field will be populated only for invoices that reference an object "
+"which would be associated with a plan de servicio (server, Instancia, "
+"container, etc.)."
+
+#: ../../operations/invoices.rst:71
+msgid ""
+"**Plan:** The name for a service plan in |morpheus|. This field will be "
+"populated only for invoices that reference an object which would be "
+"associated with a service plan (server, Instance, container, etc.)."
+msgstr ""
+"**Plan:** The name for a plan de servicio in |morpheus|. This field "
+"will be populated only for invoices that reference an object which "
+"would be associated with a plan de servicio (server, Instancia, "
+"container, etc.)."
+
+#: ../../operations/invoices.rst:72
+msgid ""
+"**Group ID:** The internal ID for a Group in |morpheus|. This field will "
+"be blank unless the invoice references a Group"
+msgstr ""
+"**Group ID:** The internal ID for a Grupo in |morpheus|. This field "
+"will be blank unless the invoice references a Grupo"
+
+#: ../../operations/invoices.rst:73
+msgid ""
+"**Group:** The name for a Group in |morpheus|. This field will be blank "
+"unless the invoice references a Group"
+msgstr ""
+"**Group:** The name for a Grupo in |morpheus|. This field will be blank "
+"unless the invoice references a Grupo"
+
+#: ../../operations/invoices.rst:74
+msgid ""
+"**User ID:** The internal ID for a User in |morpheus|. This field will be"
+" blank unless the invoice references a User."
+msgstr ""
+"**User ID:** The internal ID for a Usuario in |morpheus|. This field "
+"will be blank unless the invoice references a Usuario."
+
+#: ../../operations/invoices.rst:75
+msgid ""
+"**User:** The name for a User in |morpheus|. This field will be blank "
+"unless the invoice references a User."
+msgstr ""
+"**User:** The name for a Usuario in |morpheus|. This field will be "
+"blank unless the invoice references a Usuario."
+
+#: ../../operations/invoices.rst:76
+msgid ""
+"**Tenant ID:** The internal ID for the |morpheus| Tenant which owns the "
+"reference object"
+msgstr ""
+"**Tenant ID:** The internal ID for the |morpheus| Inquilino which owns "
+"the reference object"
+
+#: ../../operations/invoices.rst:77
+msgid ""
+"**Tenant:** The name of the |morpheus| Tenant which owns the reference "
+"object"
+msgstr ""
+"**Tenant:** The name of the |morpheus| Inquilino which owns the "
+"reference object"
+
+#: ../../operations/invoices.rst:78
+msgid "**Period:** The monthly period during which the invoice was generated"
+msgstr ""
+"**Period:** The monthly period durante que el/la invoice was generated"
+
+#: ../../operations/invoices.rst:79
+msgid ""
+"**Interval:** The length of the invoice billing period, currently all "
+"invoices are generated at a one-month interval"
+msgstr ""
+"**Interval:** The length de el/la invoice billing period, actualmente "
+"todos invoices son generated en a one-month interval"
+
+#: ../../operations/invoices.rst:80
+msgid ""
+"**Start Date:** The start date and time for the invoice period, typically"
+" the first of the month at midnight"
+msgstr ""
+"**Start Date:** The start date y time para el/la invoice period, typically "
+"the first de the month en midnight"
+
+#: ../../operations/invoices.rst:81
+msgid ""
+"**End Date:** The end date and time for the invoice period, typically the"
+" last day of the month at midnight"
+msgstr ""
+"**End Date:** The end date y time para el/la invoice period, typically the "
+"last day de the month en midnight"
+
+#: ../../operations/invoices.rst:82
+msgid ""
+"**Ref Start:** The date and time the reference object is created or the "
+"start of the invoicing period if the reference object existed prior to "
+"the start of the invoicing period"
+msgstr ""
+"**Ref Start:** The date and time the reference object is creado or the "
+"start of the invoicing period if the reference object existed prior to the "
+"start of the invoicing period"
+
+#: ../../operations/invoices.rst:83
+msgid ""
+"**Ref End:** The date and time the reference object is decommissioned or "
+"the end of the invoicing period if the reference object still existed at "
+"the end of the period"
+msgstr ""
+"**Ref End:** The date y time el/la reference object es decommissioned o "
+"the end de the invoicing period si the reference object still existed en "
+"the end of the period"
+
+#: ../../operations/invoices.rst:84
+msgid ""
+"**Compute Cost:** The actual compute costs for the invoice (from public "
+"cloud costing API when available or from an on-prem cloud with \"Sync "
+"Costing\" enabled)"
+msgstr ""
+"**Compute Cost:** The actual compute costs for the invoice (from public "
+"cloud costing API when available or from an local cloud with \"Sync "
+"Costing\" enabled)"
+
+#: ../../operations/invoices.rst:85
+msgid ""
+"**Storage Cost:** The actual storage costs for the invoice (from public "
+"cloud costing API when available or from an on-prem cloud with \"Sync "
+"Costing\" enabled)"
+msgstr ""
+"**Storage Cost:** The actual storage costs for the invoice (from public "
+"cloud costing API when available or from an local cloud with \"Sync "
+"Costing\" enabled)"
+
+#: ../../operations/invoices.rst:86
+msgid ""
+"**Network Cost:** The actual network costs for the invoice (from public "
+"cloud costing API when available or from an on-prem cloud with \"Sync "
+"Costing\" enabled)"
+msgstr ""
+"**Network Cost:** The actual network costs for the invoice (from public "
+"cloud costing API when available or from an local cloud with \"Sync "
+"Costing\" enabled)"
+
+#: ../../operations/invoices.rst:87
+msgid ""
+"**Extra Cost:** The actual additional costs for the invoice (from public "
+"cloud costing API when available or from an on-prem cloud with \"Sync "
+"Costing\" enabled)"
+msgstr ""
+"**Extra Cost:** The actual additional costs for the invoice (from "
+"public cloud costing API when available or from an local cloud with "
+"\"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:88
+msgid ""
+"**MTD Cost:** The actual month-to-date costs for the invoice (from public"
+" cloud costing API when available or from an on-prem cloud with \"Sync "
+"Costing\" enabled)"
+msgstr ""
+"**MTD Cost:** The actual del mes hasta la fecha costs for the invoice "
+"(from public cloud costing API when available or from an local cloud "
+"with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:89
+msgid ""
+"**Total Cost:** The actual total costs for the invoice (from public cloud"
+" costing API when available or from an on-prem cloud with \"Sync "
+"Costing\" enabled)"
+msgstr ""
+"**Total Cost:** The actual total costs for the invoice (from public "
+"cloud costing API when available or from an local cloud with \"Sync "
+"Costing\" enabled)"
+
+#: ../../operations/invoices.rst:90
+msgid ""
+"**Metered Compute Cost:** Compute costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an on-prem cloud without \"Sync Costing\" enabled)"
+msgstr ""
+"**Metered Compute Cost:** Compute costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:91
+msgid ""
+"**Metered Storage Cost:** Storage costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an on-prem cloud without \"Sync Costing\" enabled)"
+msgstr ""
+"**Metered Storage Cost:** Storage costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:92
+msgid ""
+"**Metered Network Cost:** Network costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an on-prem cloud without \"Sync Costing\" enabled)"
+msgstr ""
+"**Metered Network Cost:** Red costs determined by |morpheus| usage and "
+"pricing data (when live pricing data is not available, such as with an "
+"local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:93
+msgid ""
+"**Metered Extra Cost:** Additional costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an on-prem cloud without \"Sync Costing\" enabled)"
+msgstr ""
+"**Metered Extra Cost:** Additional costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:94
+msgid ""
+"**Metered MTD Cost:** Month-to-date costs determined by |morpheus| usage "
+"and pricing data (when live pricing data is not available, such as with "
+"an on-prem cloud without \"Sync Costing\" enabled)"
+msgstr ""
+"**Metered MTD Cost:** Del mes hasta la fecha costs determined by "
+"|morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:95
+msgid ""
+"**Metered Total Cost:** Total costs determined by |morpheus| usage and "
+"pricing data (when live pricing data is not available, such as with an "
+"on-prem cloud without \"Sync Costing\" enabled)"
+msgstr ""
+"**Metered Total Cost:** Total costs determined by |morpheus| usage and "
+"pricing data (when live pricing data is not available, such as with an "
+"local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:96
+msgid ""
+"**Compute Price:** The actual compute price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an on-prem "
+"cloud with \"Sync Costing\" enabled)"
+msgstr ""
+"**Compute Price:** The actual compute price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an local "
+"cloud with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:97
+msgid ""
+"**Storage Price:** The actual storage price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an on-prem "
+"cloud with \"Sync Costing\" enabled)"
+msgstr ""
+"**Storage Price:** The actual storage price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an local "
+"cloud with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:98
+msgid ""
+"**Network Price::** The actual network price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an on-prem "
+"cloud with \"Sync Costing\" enabled)"
+msgstr ""
+"**Network Price::** The actual network price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an local "
+"cloud with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:99
+msgid ""
+"**Extra Price:** The actual additional price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an on-prem "
+"cloud with \"Sync Costing\" enabled)"
+msgstr ""
+"**Extra Price:** The actual additional price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an local "
+"cloud with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:100
+msgid ""
+"**MTD Price:** The actual month-to-date price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an on-prem "
+"cloud with \"Sync Costing\" enabled)"
+msgstr ""
+"**MTD Price:** The actual del mes hasta la fecha price (cost plus "
+"markup) for the invoice (from public cloud costing API when available "
+"or from an local cloud with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:101
+msgid ""
+"**Total Price:** The actual total price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an on-prem "
+"cloud with \"Sync Costing\" enabled)"
+msgstr ""
+"**Total Price:** The actual total price (cost plus markup) for the "
+"invoice (from public cloud costing API when available or from an local "
+"cloud with \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:102
+msgid ""
+"**Metered Compute Price:** Compute price (cost plus markup) determined by"
+" |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an on-prem cloud without \"Sync Costing\" "
+"enabled)"
+msgstr ""
+"**Metered Compute Price:** Compute price (cost plus markup) determined "
+"by |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:103
+msgid ""
+"**Metered Storage Price:** Storage price (cost plus markup) determined by"
+" |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an on-prem cloud without \"Sync Costing\" "
+"enabled)"
+msgstr ""
+"**Metered Storage Price:** Storage price (cost plus markup) determined "
+"by |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:104
+msgid ""
+"**Metered Network Price:** Network price (cost plus markup) determined by"
+" |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an on-prem cloud without \"Sync Costing\" "
+"enabled)"
+msgstr ""
+"**Metered Network Price:** Red price (cost plus markup) determined by "
+"|morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:105
+msgid ""
+"**Metered Extra Price:** Additional price (cost plus markup) determined "
+"by |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an on-prem cloud without \"Sync Costing\" "
+"enabled)"
+msgstr ""
+"**Metered Extra Price:** Additional price (cost plus markup) determined "
+"by |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:106
+msgid ""
+"**Metered MTD Price:** Month-to-date price (cost plus markup) determined "
+"by |morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an on-prem cloud without \"Sync Costing\" "
+"enabled)"
+msgstr ""
+"**Metered MTD Price:** Del mes hasta la fecha price (cost plus markup) "
+"determined by |morpheus| usage and pricing data (when live pricing data "
+"is not available, such as with an local cloud without \"Sync Costing\" "
+"enabled)"
+
+#: ../../operations/invoices.rst:107
+msgid ""
+"**Metered Total Price:** Total price (cost plus markup) determined by "
+"|morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an on-prem cloud without \"Sync Costing\" "
+"enabled)"
+msgstr ""
+"**Metered Total Price:** Total price (cost plus markup) determined by "
+"|morpheus| usage and pricing data (when live pricing data is not "
+"available, such as with an local cloud without \"Sync Costing\" enabled)"
+
+#: ../../operations/invoices.rst:108
+msgid ""
+"**Active:** Indicates whether or not the reference object is currently "
+"existing and active"
+msgstr ""
+"**Active:** Indicates whether o no el/la reference object es actualmente "
+"existente y active"
+
+#: ../../operations/invoices.rst:109
+msgid "**Date Created:** The date and time the invoice is created"
+msgstr "**Fecha de creación:** La fecha y hora en que se crea la factura"
+
+#: ../../operations/invoices.rst:110
+msgid "**Last Updated:** The date and time the invoice was last updated"
+msgstr "**Last Updated:** The date and time the invoice was last actualizado"
+
+#: ../../operations/invoices.rst:112
+msgid "|br|"
+msgstr "|br|"
+
+#: ../../operations/invoices.rst:115
+msgid "Invoice Types"
+msgstr "Tipos de Facturas"
+
+#: ../../operations/invoices.rst:117
+msgid ""
+"Invoices can reference any of the |morpheus| workload element types or "
+"resource reference types in the list below. Some invoice types are "
+"broader and may account for resource costs calculated in other narrower "
+"invoice types. For instance, a container-type invoice returns costs for a"
+" single node of an Instance while an Instance-type invoice for the same "
+"period may be including costs for that same single node. The invoices "
+"list view can be filtered to show just one type or all types. Complete "
+"descriptions of each invoice type are included below:"
+msgstr ""
+"Facturas can reference any of the |morpheus| workload element types or "
+"resource reference types in the list below. Some invoice types are "
+"broader and may account for resource costs calculated in other narrower "
+"invoice types. For instance, a container-type invoice returns costs for "
+"a single node of an Instancia while an Instancia-type invoice for the "
+"same period may be including costs for that same single node. The "
+"invoices list view can be filtered to show just one type or all types. "
+"Complete descriptions of each invoice type are included below:"
+
+#: ../../operations/invoices.rst:119
+msgid ""
+"Cloud: In |morpheus|, a Cloud is any connection into a public cloud, "
+"private cloud, hybrid cloud, or bare metal server"
+msgstr ""
+"Nube: In |morpheus|, a Nube is any connection into a public cloud, "
+"private cloud, hybrid cloud, or bare metal server"
+
+#: ../../operations/invoices.rst:120
+msgid ""
+"Container: A single node of a service, in other words, a single node of a"
+" |morpheus| Instance. This could be a virtual machine or Docker container"
+" which is part of a |morpheus|-managed Instance"
+msgstr ""
+"Container: A single node of a service, in other words, a single node of "
+"a |morpheus| Instancia. This could be a virtual machine or Docker "
+"container which is part of a |morpheus|-managed Instancia"
+
+#: ../../operations/invoices.rst:121
+msgid ""
+"Group: In |morpheus|, Groups define which resources a user has access to "
+"through their role. Clouds are added to Groups and users access Clouds to"
+" which their roles give access"
+msgstr ""
+"Grupo: In |morpheus|, Grupos define which resources a user has access "
+"to through their role. Nubes are added to Grupos and users access Nubes "
+"to which their roles give access"
+
+#: ../../operations/invoices.rst:122
+msgid ""
+"Server: A server refers to any individual host, virtual machine, or bare "
+"metal server that is inventoried or managed by |morpheus|. This can "
+"include servers which are parts of |morpheus|-managed Instances or "
+"inventoried servers from integrated Clouds"
+msgstr ""
+"Server: A server refers to any individual host, virtual machine, or "
+"bare metal server that is inventoried or administrado por |morpheus|. "
+"This can include servers which are parts of |morpheus|-managed "
+"Instancias or inventoried servers from integrated Nubes"
+
+#: ../../operations/invoices.rst:123
+msgid ""
+"Instance: A set of containers or virtual machines which correlate to a "
+"single horizontally-scalable entity. This could be a single VM or it "
+"could be many VMs operating as a service"
+msgstr ""
+"Instancia: A set of containers or virtual machines which correlate to a "
+"single horizontally-scalable entity. This could be a single VM or it "
+"could be many VMs operating as a service"
+
+#: ../../operations/invoices.rst:124
+msgid ""
+"Resource: Resource-type invoices are generated when |morpheus| cannot "
+"determine that the referenced costs belong to any of the other resource "
+"reference types in this list"
+msgstr ""
+"Resource: Resource-tipo invoices are generated when |morpheus| cannot "
+"determine that the referenced costs belong to any of the other resource "
+"reference tipos in this lista"
+
+#: ../../operations/invoices.rst:125
+msgid ""
+"User: User-type invoices aggregate the costs of resources owned by a "
+"specific |morpheus| user during the invoicing period"
+msgstr ""
+"Usuario: Usuario-type invoices aggregate the costs of resources owned "
+"by a specific |morpheus| user during the invoicing period"
+
+#: ../../operations/invoices.rst:126
+msgid ""
+"Volume: When possible, costs will be tied to known volumes and a volume-"
+"type invoice is generated as a result"
+msgstr ""
+"Volume: When possible, costs will be vinculado a known volumes and a "
+"volume-type invoice is generated as a result"
+
+#: ../../operations/invoices.rst:129
+msgid "Invoice Detail Page"
+msgstr "Página de detalle de Factura"
+
+#: ../../operations/invoices.rst:132
+msgid "Summary"
+msgstr "Resumen"
+
+#: ../../operations/invoices.rst:134
+msgid ""
+"The summary tab of the invoice detail page displays a great deal of "
+"reference information about the resource identified by the invoice. This "
+"will vary depending on the type of resource. In addition, total and "
+"projected costs are displayed along with cost breakdowns for compute, "
+"storage, network, and other categories. Month-to-date totals and final "
+"month projections are given."
+msgstr ""
+"The summary tab of the invoice página de detalles displays a great deal "
+"of reference information about the resource identified by the invoice. "
+"This will vary depending on the type of resource. In addition, total "
+"and projected costs are displayed along with desgloses de costos for "
+"compute, storage, network, and other categories. Del mes hasta la fecha "
+"totals and final month projections are given."
+
+#: ../../operations/invoices.rst:137
+msgid "History"
+msgstr "Historial"
+
+#: ../../operations/invoices.rst:139
+msgid ""
+"The history tab displays the costs and prices for the associated resource"
+" over time. This tab is especially valuable for resources that have "
+"existed through at least a few invoicing periods to show changes over "
+"time. In addition, cost breakdowns for compute, storage, network, and "
+"other categories are shown for each invoicing period. These costs can be "
+"displayed visually through graphs."
+msgstr ""
+"The history tab displays the costs and prices for the associated "
+"resource over time. This tab is especially valuable for resources that "
+"have existed through at least a few invoicing periods to show changes "
+"over time. In addition, desgloses de costos for compute, storage, "
+"network, and other categories are shown for each invoicing period. "
+"These costs can be displayed visually through graphs."
+
+#: ../../operations/invoices.rst:142
+msgid ".. image:: images/operations/invoices/4invoiceHistory.png"
+msgstr ".. image:: images/operations/invoices/4invoiceHistory.png"
+
+#: ../../operations/invoices.rst:144
+msgid "Line Items"
+msgstr "Partidas"
+
+#: ../../operations/invoices.rst:146
+msgid ""
+"For supported resource types, |morpheus| includes a tab to display all "
+"costing line items. This provides the user with a complete list of line "
+"items that make up the costing totals on the invoice."
+msgstr ""
+"For supported resource types, |morpheus| includes a tab to display all "
+"costing partidas. This provides the user with a complete list of "
+"partidas that make up the costing totals on the invoice."
+
+#: ../../operations/invoices.rst:148
+msgid ".. image:: images/operations/invoices/5invoiceLineItem.png"
+msgstr ".. image:: images/operations/invoices/5invoiceLineItem.png"
+

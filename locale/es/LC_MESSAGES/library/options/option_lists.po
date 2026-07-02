@@ -1,0 +1,1227 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/options/option_lists.rst:2
+msgid "Option Lists"
+msgstr "Listas de opciones"
+
+#: ../../library/options/option_lists.rst:4
+msgid ""
+"Option Lists allow you to give the user more choices during provisioning "
+"to then be passed to scripts and/or automation.  Option Lists, however, "
+"are pre-defined insofar as they are not free-form. They can be manually "
+"entered CSV or JSON, they can be dynamically compiled from REST calls via"
+" GET or POST requests, or populated by LDAP queries."
+msgstr "Las listas de opciones le permiten dar al usuario más opciones durante el aprovisionamiento que luego se pasan a scripts y/o automatización. Las listas de opciones, sin embargo, están predefinidas en la medida en que no son de formato libre. Pueden ser CSV o JSON ingresados manualmente, pueden compilarse dinámicamente desde llamadas REST mediante solicitudes GET o POST, o poblarse mediante consultas LDAP."
+
+msgid ".. image:: images/provisioning/library/newOptionList.png"
+msgstr ".. image:: images/provisioning/library/newOptionList.png"
+
+#: ../../library/options/option_lists.rst:11
+msgid "Generic Option List Fields"
+msgstr "Campos genéricos de lista de opciones"
+
+#: ../../library/options/option_lists.rst:13
+msgid ""
+"The displayed fields in the create/edit Option List modal depend on the "
+"TYPE value selected."
+msgstr "Los campos mostrados en el modal de crear/editar lista de opciones dependen del valor de TIPO seleccionado."
+
+#: ../../library/options/option_lists.rst:15
+msgid "NAME"
+msgstr "NOMBRE"
+
+#: ../../library/options/option_lists.rst:16
+msgid "Name of the Option List"
+msgstr "Nombre de la lista de opciones"
+
+#: ../../library/options/option_lists.rst:17
+msgid "DESCRIPTION"
+msgstr "DESCRIPCIÓN"
+
+#: ../../library/options/option_lists.rst:18
+msgid "Description of the Option List for reference in Option List list view"
+msgstr "Descripción de la lista de opciones para referencia en la vista de lista"
+
+#: ../../library/options/option_lists.rst:23
+msgid "TYPE"
+msgstr "TIPO"
+
+#: ../../library/options/option_lists.rst:20
+msgid "**REST:** REST API call to populate Option List"
+msgstr "**REST:** Llamada a la API REST para poblar la lista de opciones"
+
+#: ../../library/options/option_lists.rst:21
+msgid "**Manual:** Manually entered dataset, CSV or JSON"
+msgstr "**Manual:** Conjunto de datos ingresado manualmente, CSV o JSON"
+
+#: ../../library/options/option_lists.rst:22
+msgid ""
+"**Morpheus API:** Call to internal |morpheus| API to populate the Option "
+"List"
+msgstr "**Morpheus API:** Llamada a la API interna de |morpheus| para poblar la lista de opciones"
+
+#: ../../library/options/option_lists.rst:23
+msgid "**LDAP:** Searches and returns a list of Active Directory objects"
+msgstr "**LDAP:** Busca y devuelve una lista de objetos de Active Directory"
+
+#: ../../library/options/option_lists.rst:24
+msgid ""
+"**Plugin:** Sourced by custom-coded ``DataSetProvider`` plugins. See "
+"`developer documentation <https://developer.morpheusdata.com/docs"
+"#dataset-providers>`_ for additional details"
+msgstr "**Plugin:** Proporcionado por plugins ``DataSetProvider`` codificados de forma personalizada. Consulte la `documentación para desarrolladores <https://developer.morpheusdata.com/docs#dataset-providers>`_ para detalles adicionales"
+
+#: ../../library/options/option_lists.rst:26
+msgid "VISIBILITY"
+msgstr "VISIBILIDAD"
+
+#: ../../library/options/option_lists.rst:26
+msgid ""
+"If the account currently signed in is not in the master tenant, "
+"visibility will automatically change to private"
+msgstr "Si la cuenta actualmente conectada no está en el inquilino maestro, la visibilidad cambiará automáticamente a privada"
+
+#: ../../library/options/option_lists.rst:29
+msgid "Manual Option List Fields"
+msgstr "Campos de lista de opciones manual"
+
+#: ../../library/options/option_lists.rst:35
+msgid "DATASET"
+msgstr "CONJUNTO DE DATOS"
+
+#: ../../library/options/option_lists.rst:32
+msgid ""
+"Appears only for manual Option Lists. Add your CSV or JSON list to this "
+"field"
+msgstr "Aparece solo para listas de opciones manuales. Agregue su lista CSV o JSON a este campo"
+
+#: ../../library/options/option_lists.rst:34
+#, python-brace-format
+msgid ""
+"JSON entries must be formatted like the following example: "
+"``[{\"name\":\"Test\",\"value\":1},{\"name\":\"Testing\",\"value\":2}]``"
+msgstr "JSON entries debe ser formatted like lo siguiente example: ``[{\"name\":\"Test\",\"value\":1},{\"name\":\"Testing\",\"value\":2}]``"
+
+#: ../../library/options/option_lists.rst:38
+msgid "Plugin Option List Fields"
+msgstr "Campos de lista de opciones de plugin"
+
+#: ../../library/options/option_lists.rst:41
+#: ../../library/options/option_lists.rst:125
+msgid "OPTION LIST"
+msgstr "LISTA DE OPCIONES"
+
+#: ../../library/options/option_lists.rst:41
+msgid "Select an Option List made available by a currently-integrated plugins"
+msgstr "Seleccione una lista de opciones proporcionada por un plugin actualmente integrado"
+
+#: ../../library/options/option_lists.rst:44
+msgid "REST Option List Fields"
+msgstr "Campos de lista de opciones REST"
+
+#: ../../library/options/option_lists.rst:46
+msgid "SOURCE URL"
+msgstr "URL DE ORIGEN"
+
+#: ../../library/options/option_lists.rst:47
+msgid ""
+"A REST URL used to fetch list data which is cached in the appliance "
+"database"
+msgstr "Una URL REST utilizada para obtener datos de lista que se almacenan en caché en la base de datos del appliance"
+
+#: ../../library/options/option_lists.rst:48
+msgid "REAL TIME"
+msgstr "TIEMPO REAL"
+
+#: ../../library/options/option_lists.rst:49
+msgid ""
+"When checked, a REST call will be made to update the Option List at the "
+"time its presented to the User"
+msgstr "Cuando está marcado, se realizará una llamada REST para actualizar la lista de opciones en el momento en que se presenta al usuario"
+
+#: ../../library/options/option_lists.rst:50
+msgid "IGNORE SSL ERRORS"
+msgstr "IGNORAR ERRORES SSL"
+
+#: ../../library/options/option_lists.rst:51
+msgid "Do not fail API query for self-signed or invalid certs on REST call target"
+msgstr "Do not fail API query for self-signed or invalid certs on REST call target"
+
+#: ../../library/options/option_lists.rst:52
+msgid "SOURCE METHOD"
+msgstr "MÉTODO DE ORIGEN"
+
+#: ../../library/options/option_lists.rst:53
+msgid "GET or POST"
+msgstr "GET o POST"
+
+#: ../../library/options/option_lists.rst:54
+msgid "SOURCE HEADERS"
+msgstr "ENCABEZADOS DE ORIGEN"
+
+#: ../../library/options/option_lists.rst:55
+msgid "Custom HTTP Headers to include in the source request"
+msgstr "Encabezados HTTP personalizados para incluir en la solicitud de origen"
+
+#: ../../library/options/option_lists.rst:56
+msgid "CREDENTIALS"
+msgstr "CREDENCIALES"
+
+#: ../../library/options/option_lists.rst:57
+msgid ""
+"Use a stored credential set or manually enter credentials to access data "
+"requiring authentication. Currently, only basic auth is supported"
+msgstr "Use un conjunto de credenciales almacenado o ingrese credenciales manualmente para acceder a datos que requieren autenticación. Actualmente, solo se admite la autenticación básica"
+
+#: ../../library/options/option_lists.rst:58
+msgid "INITIAL DATASET"
+msgstr "CONJUNTO DE DATOS INICIAL"
+
+#: ../../library/options/option_lists.rst:59
+msgid ""
+"Create an initial JSON or CSV dataset to be used as the collection for "
+"this option list. It should be a list containing objects with properties "
+"'name' and 'value'"
+msgstr "Cree un conjunto de datos inicial JSON o CSV para usar como la colección de esta lista de opciones. Debe ser una lista que contenga objetos con las propiedades 'name' y 'value'"
+
+#: ../../library/options/option_lists.rst:69
+#: ../../library/options/option_lists.rst:325
+#: ../../library/options/option_lists.rst:445
+msgid "TRANSLATION SCRIPT"
+msgstr "SCRIPT DE TRADUCCIÓN"
+
+#: ../../library/options/option_lists.rst:61
+#: ../../library/options/option_lists.rst:128
+#: ../../library/options/option_lists.rst:445
+msgid ""
+"Create a JS script to translate the result data object into an array "
+"containing objects with properties 'name' and 'value'. The input data is "
+"provided as 'data' and the result should be put on the global variable "
+"'results'."
+msgstr "Cree un script JS para traducir el objeto de datos del resultado en un arreglo que contenga objetos con las propiedades 'name' y 'value'. Los datos de entrada se proporcionan como 'data' y el resultado debe colocarse en la variable global 'results'."
+
+#: ../../library/options/option_lists.rst:63
+#: ../../library/options/option_lists.rst:74
+#: ../../library/options/option_lists.rst:130
+msgid "**Example:**"
+msgstr "**Ejemplo:**"
+
+#: ../../library/options/option_lists.rst:65
+msgid ""
+"for(var x=0;x < data.length; x++) {\n"
+"  results.push({name: data[x].name,value:data[x].id});\n"
+"}"
+msgstr "for(var x=0;x < data.length; x++) {\\n  results.push({name: data[x].name,value:data[x].id});\\n}"
+
+#: ../../library/options/option_lists.rst:121
+#: ../../library/options/option_lists.rst:431
+msgid "REQUEST SCRIPT"
+msgstr "SCRIPT DE SOLICITUD"
+
+#: ../../library/options/option_lists.rst:72
+msgid ""
+"Create a JS script to prepare the request. Return a data object as the "
+"body for a POST request, and return an array containing properties 'name'"
+" and 'value' for a GET request. The input data is provided as 'data' and "
+"the result should be put on the global variable 'results'"
+msgstr "Cree un script JS para preparar la solicitud. Devuelva un objeto de datos como el cuerpo para una solicitud POST, y devuelva un arreglo que contenga propiedades 'name' y 'value' para una solicitud GET. Los datos de entrada se proporcionan como 'data' y el resultado debe colocarse en la variable global 'results'"
+
+#: ../../library/options/option_lists.rst:76
+#, python-brace-format
+msgid "results.push({name: 'userId', value : data.users})"
+msgstr "results.push({name: 'userId', value : data.users})"
+
+#: ../../library/options/option_lists.rst:80
+msgid ""
+"In a GET request (SOURCE METHOD = GET), the value of the results variable"
+" is used to build out the request parameters. Thus, in the example "
+"``results`` value:"
+msgstr "In a GET request (SOURCE METHOD = GET), the value of the results variable se usa para build out the request parameters. Thus, in the example ``results`` value:"
+
+#: ../../library/options/option_lists.rst:82
+#, python-brace-format
+msgid "results=[{name:\"name1\",value: \"value1\"}]"
+msgstr "results=[{name:\\\"name1\\\",value: \\\"value1\\\"}]"
+
+#: ../../library/options/option_lists.rst:86
+msgid "The request would be made to: ``https://<someURL>?name1=value1``."
+msgstr "La solicitud se realizaría a: ``https://<someURL>?name1=value1``."
+
+#: ../../library/options/option_lists.rst:88
+msgid ""
+"In a POST request (SOURCE METHOD = POST), the value of the results "
+"variable is used to build the body of the POST request. Thus, in the "
+"example ``results`` value:"
+msgstr "In a POST request (SOURCE METHOD = POST), the value of the results variable se usa para build the body of the POST request. Thus, in the example ``results`` value:"
+
+#: ../../library/options/option_lists.rst:90
+#, python-brace-format
+msgid ""
+"results=[{name:\"name1\", value:\"value1\"}, {name:\"name2\", "
+"value:\"value2\"}]"
+msgstr "results=[{name:\\\"name1\\\", value:\\\"value1\\\"}, {name:\\\"name2\\\", value:\\\"value2\\\"}]"
+
+#: ../../library/options/option_lists.rst:94
+#: ../../library/options/option_lists.rst:116
+msgid "The following JSON body would be posted to the target URL:"
+msgstr "El siguiente cuerpo JSON se enviaría al URL de destino:"
+
+#: ../../library/options/option_lists.rst:96
+#, python-brace-format
+msgid "{name:\"name1\", value:\"value1\"}, {name:\"name2\", value:\"value2\"}"
+msgstr "{name:\\\"name1\\\", value:\\\"value1\\\"}, {name:\\\"name2\\\", value:\\\"value2\\\"}"
+
+#: ../../library/options/option_lists.rst:100
+msgid ""
+"An alternative method to building the POST request (SOURCE METHOD = "
+"POST), can be seen below.  As well, we can access other **Inputs** that "
+"are available on the same form, when provisioning an Instance or Catalog "
+"Item. As seen below, the other Inputs can be accessed using the ``data`` "
+"variable.  We can access another Input by calling its **Field Name**, "
+"which can be configured when editing the Input in |LibOptInp|.  This "
+"allows using data from other Inputs to be used in this Input's request."
+msgstr "An alternative method to building the POST request (SOURCE METHOD = POST), can be seen below.  As well, we can access other **Inputs** that are available on the same form, when provisioning an Instancia or Catalog Item. As seen below, the other Inputs can be accessed using the ``data`` variable.  We can access another Input by calling its **Field Name**, which puede ser configured when editing the Input in |LibOptInp|.  This allows using data from other Inputs to be used in this Input's request."
+
+#: ../../library/options/option_lists.rst:104
+msgid ""
+"In the example below the Input Field Name we'll access is "
+"``myinputfieldname``, which we can get either the name (visible value for"
+" lists) or value from the item:"
+msgstr "In el/la example abajo el/la Input Field Name we'll access es ``myinputfieldname``, el/la cual we puede/n get either el/la name (visible value para lists) o value desde el/la item:"
+
+#: ../../library/options/option_lists.rst:106
+msgid ""
+"Name variable:  ``data.myinputfieldname`` Value variable:  "
+"``data.myinputfieldname_value``"
+msgstr "Name variable:  ``data.myinputfieldname`` Value variable:  ``data.myinputfieldname_value``"
+
+#: ../../library/options/option_lists.rst:109
+#, python-brace-format
+msgid ""
+"var postBody = {};\n"
+"postBody[\"number\"] = data.myinputfieldname_value;\n"
+"postBody[\"env\"] = \"all\";\n"
+"results = postBody;"
+msgstr "var postBody = {};\\npostBody[\\\"number\\\"] = data.myinputfieldname_value;\\npostBody[\\\"env\\\"] = \\\"all\\\";\\nresults = postBody;"
+
+#: ../../library/options/option_lists.rst:118
+#, python-brace-format
+msgid "{ \"number\": \"123456\", \"env\": \"all\" }"
+msgstr "{ \\\"number\\\": \\\"123456\\\", \\\"env\\\": \\\"all\\\" }"
+
+#: ../../library/options/option_lists.rst:124
+msgid "Morpheus API Option List Fields"
+msgstr "Campos de lista de opciones de Morpheus API"
+
+#: ../../library/options/option_lists.rst:126
+msgid "A list of available object types to return"
+msgstr "Una lista de tipos de objetos disponibles para devolver"
+
+#: ../../library/options/option_lists.rst:132
+msgid ""
+"var i=0;\n"
+"results = [];\n"
+"for(i; i<data.length; i++) {\n"
+"  results.push({name: data[i].name, value: data[i].value});\n"
+"}"
+msgstr "var i=0;\\nresults = [];\\nfor(i; i<data.length; i++) {\\n  results.push({name: data[i].name, value: data[i].value});\\n}"
+
+#: ../../library/options/option_lists.rst:140
+msgid "Translation script inputs:"
+msgstr "Entradas del script de traducción:"
+
+#: ../../library/options/option_lists.rst:142
+#: ../../library/options/option_lists.rst:374
+msgid "**Clouds**"
+msgstr "**Nubes**"
+
+#: ../../library/options/option_lists.rst:144
+#: ../../library/options/option_lists.rst:153
+#: ../../library/options/option_lists.rst:160
+#: ../../library/options/option_lists.rst:167
+#: ../../library/options/option_lists.rst:177
+#: ../../library/options/option_lists.rst:189
+#: ../../library/options/option_lists.rst:194
+#: ../../library/options/option_lists.rst:199
+#: ../../library/options/option_lists.rst:204
+#: ../../library/options/option_lists.rst:218
+#: ../../library/options/option_lists.rst:228
+#: ../../library/options/option_lists.rst:236
+#: ../../library/options/option_lists.rst:241
+#: ../../library/options/option_lists.rst:248
+#: ../../library/options/option_lists.rst:258
+#: ../../library/options/option_lists.rst:271
+#: ../../library/options/option_lists.rst:283
+#: ../../library/options/option_lists.rst:294
+#: ../../library/options/option_lists.rst:307
+#: ../../library/options/option_lists.rst:315
+msgid "``id: <Number>``"
+msgstr "``id: <Number>``"
+
+#: ../../library/options/option_lists.rst:145
+#: ../../library/options/option_lists.rst:178
+#: ../../library/options/option_lists.rst:205
+#: ../../library/options/option_lists.rst:219
+#: ../../library/options/option_lists.rst:249
+#: ../../library/options/option_lists.rst:259
+#: ../../library/options/option_lists.rst:272
+#: ../../library/options/option_lists.rst:284
+#: ../../library/options/option_lists.rst:316
+msgid "``value: <Number>`` // id, convenience"
+msgstr "``value: <Number>`` // id, convenience"
+
+#: ../../library/options/option_lists.rst:146
+#: ../../library/options/option_lists.rst:154
+#: ../../library/options/option_lists.rst:163
+#: ../../library/options/option_lists.rst:169
+#: ../../library/options/option_lists.rst:179
+#: ../../library/options/option_lists.rst:190
+#: ../../library/options/option_lists.rst:195
+#: ../../library/options/option_lists.rst:200
+#: ../../library/options/option_lists.rst:206
+#: ../../library/options/option_lists.rst:222
+#: ../../library/options/option_lists.rst:230
+#: ../../library/options/option_lists.rst:237
+#: ../../library/options/option_lists.rst:242
+#: ../../library/options/option_lists.rst:251
+#: ../../library/options/option_lists.rst:262
+#: ../../library/options/option_lists.rst:274
+#: ../../library/options/option_lists.rst:285
+#: ../../library/options/option_lists.rst:295
+#: ../../library/options/option_lists.rst:308
+#: ../../library/options/option_lists.rst:317
+msgid "``name: <String>``"
+msgstr "``name: <String>``"
+
+#: ../../library/options/option_lists.rst:147
+#: ../../library/options/option_lists.rst:156
+#: ../../library/options/option_lists.rst:162
+#: ../../library/options/option_lists.rst:170
+#: ../../library/options/option_lists.rst:220
+#: ../../library/options/option_lists.rst:229
+#: ../../library/options/option_lists.rst:250
+#: ../../library/options/option_lists.rst:260
+#: ../../library/options/option_lists.rst:273
+msgid "``code: <String>``"
+msgstr "``code: <String>``"
+
+#: ../../library/options/option_lists.rst:148
+#: ../../library/options/option_lists.rst:182
+#: ../../library/options/option_lists.rst:287
+msgid "``description: <String>``"
+msgstr "``description: <String>``"
+
+#: ../../library/options/option_lists.rst:149
+#: ../../library/options/option_lists.rst:265
+msgid "``regionCode: <String>``"
+msgstr "``regionCode: <String>``"
+
+#: ../../library/options/option_lists.rst:150
+#: ../../library/options/option_lists.rst:172
+msgid "``location: <String>``"
+msgstr "``location: <String>``"
+
+#: ../../library/options/option_lists.rst:151
+msgid "``zoneType: <Object>``"
+msgstr "``zoneType: <Object>``"
+
+#: ../../library/options/option_lists.rst:155
+msgid "``cloud: <String>`` // \"public\" or \"private\" value"
+msgstr "``cloud: <String>`` // \\\"public\\\" or \\\"private\\\" value"
+
+#: ../../library/options/option_lists.rst:158
+msgid "**Environments**"
+msgstr "**Entornos**"
+
+#: ../../library/options/option_lists.rst:161
+#: ../../library/options/option_lists.rst:168
+msgid ""
+"``value: <Number>`` // id, convenience attribute to avoid requiring "
+"translation"
+msgstr "``value: <Number>`` // id, convenience attribute to avoid requiring translation"
+
+#: ../../library/options/option_lists.rst:165
+#: ../../library/options/option_lists.rst:402
+msgid "**Groups**"
+msgstr "**Grupos**"
+
+#: ../../library/options/option_lists.rst:171
+msgid "``uuid: <String>``"
+msgstr "``uuid: <String>``"
+
+#: ../../library/options/option_lists.rst:173
+msgid "``datacenterId: <Number>``"
+msgstr "``datacenterId: <Number>``"
+
+#: ../../library/options/option_lists.rst:175
+#: ../../library/options/option_lists.rst:391
+msgid "**Instances**"
+msgstr "**Instancias**"
+
+#: ../../library/options/option_lists.rst:180
+#: ../../library/options/option_lists.rst:286
+msgid "``displayName: <String>``"
+msgstr "``displayName: <String>``"
+
+#: ../../library/options/option_lists.rst:181
+#: ../../library/options/option_lists.rst:208
+#: ../../library/options/option_lists.rst:221
+#: ../../library/options/option_lists.rst:288
+#: ../../library/options/option_lists.rst:319
+msgid "``category: <String>``"
+msgstr "``category: <String>``"
+
+#: ../../library/options/option_lists.rst:183
+msgid "``apiKey: <String>``"
+msgstr "``apiKey: <String>``"
+
+#: ../../library/options/option_lists.rst:184
+#: ../../library/options/option_lists.rst:223
+#: ../../library/options/option_lists.rst:264
+msgid "``status: <String>``"
+msgstr "``status: <String>``"
+
+#: ../../library/options/option_lists.rst:185
+msgid "``hourlyPrice: <Number>``"
+msgstr "``hourlyPrice: <Number>``"
+
+#: ../../library/options/option_lists.rst:186
+msgid "``hourlyCost: <Number>``"
+msgstr "``hourlyCost: <Number>``"
+
+#: ../../library/options/option_lists.rst:187
+msgid "``instanceType: <Object>``"
+msgstr "``instanceType: <Object>``"
+
+#: ../../library/options/option_lists.rst:192
+msgid "``plan: <Object>``"
+msgstr "``plan: <Object>``"
+
+#: ../../library/options/option_lists.rst:197
+msgid "``site: <Object>``"
+msgstr "``site: <Object>``"
+
+#: ../../library/options/option_lists.rst:202
+#: ../../library/options/option_lists.rst:423
+msgid "**Instances Wiki**"
+msgstr "**Wiki de instancias**"
+
+#: ../../library/options/option_lists.rst:207
+#: ../../library/options/option_lists.rst:318
+msgid "``urlName: <String>``"
+msgstr "``urlName: <String>``"
+
+#: ../../library/options/option_lists.rst:209
+msgid "``instanceId: <String>``"
+msgstr "``instanceId: <String>``"
+
+#: ../../library/options/option_lists.rst:210
+#: ../../library/options/option_lists.rst:321
+msgid "``content: <String>``"
+msgstr "``content: <String>``"
+
+#: ../../library/options/option_lists.rst:211
+#: ../../library/options/option_lists.rst:322
+msgid "``contentFormatted: <String>``"
+msgstr "``contentFormatted: <String>``"
+
+#: ../../library/options/option_lists.rst:212
+#: ../../library/options/option_lists.rst:323
+msgid "``format: <String>``"
+msgstr "``format: <String>``"
+
+#: ../../library/options/option_lists.rst:213
+#: ../../library/options/option_lists.rst:324
+msgid "``createdByUsername: <String>``"
+msgstr "``createdByUsername: <String>``"
+
+#: ../../library/options/option_lists.rst:214
+#: ../../library/options/option_lists.rst:325
+msgid "``updatedByUsername: <String>``"
+msgstr "``updatedByUsername: <String>``"
+
+#: ../../library/options/option_lists.rst:216
+#: ../../library/options/option_lists.rst:341
+msgid "**Networks**"
+msgstr "**Redes**"
+
+#: ../../library/options/option_lists.rst:224
+#: ../../library/options/option_lists.rst:277
+msgid "``cloudId: <Number>``"
+msgstr "``cloudId: <Number>``"
+
+#: ../../library/options/option_lists.rst:225
+msgid "``groupId: <Number>``"
+msgstr "``groupId: <Number>``"
+
+#: ../../library/options/option_lists.rst:226
+msgid "``networkType:<Object>``"
+msgstr "``networkType:<Object>``"
+
+#: ../../library/options/option_lists.rst:232
+#: ../../library/options/option_lists.rst:261
+#: ../../library/options/option_lists.rst:276
+msgid "``externalId: <String>``"
+msgstr "``externalId: <String>``"
+
+#: ../../library/options/option_lists.rst:233
+msgid "``externalNetworkType: <String>``"
+msgstr "``externalNetworkType: <String>``"
+
+#: ../../library/options/option_lists.rst:234
+msgid "``networkDomain: <Object>``"
+msgstr "``networkDomain: <Object>``"
+
+#: ../../library/options/option_lists.rst:239
+msgid "``networkPool: <Object>``"
+msgstr "``networkPool: <Object>``"
+
+#: ../../library/options/option_lists.rst:244
+msgid "``createdBy: <String>``"
+msgstr "``createdBy: <String>``"
+
+#: ../../library/options/option_lists.rst:246
+#: ../../library/options/option_lists.rst:355
+msgid "**Plans**"
+msgstr "**Planes**"
+
+#: ../../library/options/option_lists.rst:252
+msgid "``storage: <Integer, bytes>``"
+msgstr "``storage: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:253
+msgid "``memory: <Integer, bytes>``"
+msgstr "``memory: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:254
+msgid "``cores: <Number>``"
+msgstr "``cores: <Number>``"
+
+#: ../../library/options/option_lists.rst:256
+#: ../../library/options/option_lists.rst:362
+msgid "**Resource Pools**"
+msgstr "**Pools de recursos**"
+
+#: ../../library/options/option_lists.rst:263
+msgid "``serverGroupId: <Number>``"
+msgstr "``serverGroupId: <Number>``"
+
+#: ../../library/options/option_lists.rst:266
+msgid "``parentPoolId: <Number>``"
+msgstr "``parentPoolId: <Number>``"
+
+#: ../../library/options/option_lists.rst:267
+msgid "``type: <String>``"
+msgstr "``type: <String>``"
+
+#: ../../library/options/option_lists.rst:269
+#: ../../library/options/option_lists.rst:369
+msgid "**Security Groups**"
+msgstr "**Grupos de seguridad**"
+
+#: ../../library/options/option_lists.rst:275
+msgid "``externalType: <String>``"
+msgstr "``externalType: <String>``"
+
+#: ../../library/options/option_lists.rst:278
+msgid "``scopeMode: <String>``"
+msgstr "``scopeMode: <String>``"
+
+#: ../../library/options/option_lists.rst:279
+msgid "``scopeId: <Number>``"
+msgstr "``scopeId: <Number>``"
+
+#: ../../library/options/option_lists.rst:281
+#: ../../library/options/option_lists.rst:410
+msgid "**Servers**"
+msgstr "**Servidores**"
+
+#: ../../library/options/option_lists.rst:289
+msgid "``osType: <String>``"
+msgstr "``osType: <String>``"
+
+#: ../../library/options/option_lists.rst:290
+msgid "``powerState: <String>``"
+msgstr "``powerState: <String>``"
+
+#: ../../library/options/option_lists.rst:291
+msgid "``lastStats: <String>``"
+msgstr "``lastStats: <String>``"
+
+#: ../../library/options/option_lists.rst:292
+msgid "``zone: <Object>``"
+msgstr "``zone: <Object>``"
+
+#: ../../library/options/option_lists.rst:297
+msgid "``capacityInfo: <Object>``"
+msgstr "``capacityInfo: <Object>``"
+
+#: ../../library/options/option_lists.rst:299
+msgid "``maxStorage: <Integer, bytes>``"
+msgstr "``maxStorage: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:300
+msgid "``maxMemory: <Integer, bytes>``"
+msgstr "``maxMemory: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:301
+msgid "``maxCores: <Number>``"
+msgstr "``maxCores: <Number>``"
+
+#: ../../library/options/option_lists.rst:302
+msgid "``usedMemory: <Integer, bytes>``"
+msgstr "``usedMemory: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:303
+msgid "``usedStorage: <Integer, bytes>``"
+msgstr "``usedStorage: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:305
+msgid "``computeServerType: <Object>``"
+msgstr "``computeServerType: <Object>``"
+
+#: ../../library/options/option_lists.rst:309
+msgid "``nodeType: <String>``"
+msgstr "``nodeType: <String>``"
+
+#: ../../library/options/option_lists.rst:310
+msgid "``vmHypervisor: <String>``"
+msgstr "``vmHypervisor: <String>``"
+
+#: ../../library/options/option_lists.rst:311
+msgid "``containerHypervisor: <String>``"
+msgstr "``containerHypervisor: <String>``"
+
+#: ../../library/options/option_lists.rst:313
+#: ../../library/options/option_lists.rst:428
+msgid "**Servers Wiki**"
+msgstr "**Wiki de servidores**"
+
+#: ../../library/options/option_lists.rst:320
+msgid "``serverId: <String>``"
+msgstr "``serverId: <String>``"
+
+#: ../../library/options/option_lists.rst:328
+msgid ""
+"The request script is used differently for Morpheus API Option List "
+"types. A Morpheus API option list type will use an internal API to return"
+" a list of objects instead of performing HTTP(S) requests to the Morpheus"
+" API. Due to this approach, the results object will not be used to "
+"generate query parameters or a JSON body. The results object will instead"
+" be used to contain a map of accepted key:value pairs that can be used to"
+" filter, sort and order the list of objects that get returned."
+msgstr "The request script is used differently for Morpheus API Lista de opciones types. A Morpheus API option list type will use an internal API to return a list of objects instead of performing HTTP(S) requests to the Morpheus API. Due to this approach, the results object will not be used to generate query parameters or a JSON body. The results object will instead be used to contain a map of accepted key:value pairs that puede ser used to filter, sort and order the list of objects that get returned."
+
+#: ../../library/options/option_lists.rst:330
+msgid "Below is a list of accepted ``key:value`` pairs for each object type:"
+msgstr "Below es un/una list de accepted ``key:value`` pairs para cada object type:"
+
+#: ../../library/options/option_lists.rst:332
+msgid "**Generic options available for all object types**"
+msgstr "**Opciones genéricas disponibles para todos los tipos de objetos**"
+
+#: ../../library/options/option_lists.rst:334
+msgid "``max: <integer>`` // Maximum number of results to return. Default: 25"
+msgstr "``max: <integer>`` // Maximum number of results to return. Default: 25"
+
+#: ../../library/options/option_lists.rst:335
+msgid "``offset: <integer>`` // Offset for returned results. Default: 0"
+msgstr "``offset: <integer>`` // Offset for returned results. Default: 0"
+
+#: ../../library/options/option_lists.rst:336
+msgid "``sort: <string>`` // Field to sort on. Default: 'name'"
+msgstr "``sort: <string>`` // Field to sort on. Default: 'name'"
+
+#: ../../library/options/option_lists.rst:337
+msgid ""
+"``order: <string>`` // Order of returned values. Accepted values: 'asc', "
+"'desc'. Default: 'asc'"
+msgstr "``order: <string>`` // Order of returned values. Accepted values: 'asc', 'desc'. Default: 'asc'"
+
+#: ../../library/options/option_lists.rst:339
+#, python-brace-format
+msgid "**Example:** ``results = {max: 5, order : 'desc'}``"
+msgstr "**Example:** ``results = {max: 5, order : 'desc'}``"
+
+#: ../../library/options/option_lists.rst:343
+#: ../../library/options/option_lists.rst:364
+msgid "``zoneId``"
+msgstr "``zoneId``"
+
+#: ../../library/options/option_lists.rst:344
+#: ../../library/options/option_lists.rst:358
+#: ../../library/options/option_lists.rst:365
+msgid "``siteId``"
+msgstr "``siteId``"
+
+#: ../../library/options/option_lists.rst:345
+#: ../../library/options/option_lists.rst:366
+msgid "``planId``"
+msgstr "``planId``"
+
+#: ../../library/options/option_lists.rst:346
+msgid ""
+"``provisionTypeId: <Number>`` // Id of the provision type (technology), "
+"filters to only networks associated with this provision type"
+msgstr "``provisionTypeId: <Number>`` // Id de el/la provision type (technology), filters a solo networks asociado/asociada con este/esta provision type"
+
+#: ../../library/options/option_lists.rst:347
+msgid ""
+"``layoutId: <Number>`` // Id of an Instance Layout, ignored if "
+"provisionTypeId is supplied, otherwise used to look up the provision type"
+msgstr "``layoutId: <Number>`` // Id de un/una Instancia Layout, ignored si provisionTypeId es supplied, otherwise utilizado/utilizada a look arriba el/la provision type"
+
+#: ../../library/options/option_lists.rst:348
+msgid ""
+"``poolId: <Number>`` // Id of a network pool, filters to only networks "
+"within the specified network pool"
+msgstr "``poolId: <Number>`` // Id of a network pool, filters to only networks within the specified network pool"
+
+#: ../../library/options/option_lists.rst:350
+msgid "**Instance Networks**"
+msgstr "**Redes de instancia**"
+
+#: ../../library/options/option_lists.rst:353
+msgid ""
+"Contains same options for Networks Morpheus API but pre-filtered for "
+"Networks applicable to a selected Instance Type."
+msgstr "Contains same options for Redes Morpheus API but pre-filtered for Redes applicable to a selected Tipo de instancia."
+
+#: ../../library/options/option_lists.rst:353
+#: ../../library/options/option_lists.rst:389
+#: ../../library/options/option_lists.rst:426
+#: ../../library/options/option_lists.rst:431
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and "
+"content"
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content"
+
+#: ../../library/options/option_lists.rst:357
+msgid ""
+"``zoneId`` // Required. In order for plans to be returned and properly "
+"filtered, you must provide a ``zoneId`` and ``siteId`` as well as either "
+"a ``layoutId`` or ``provisionTypeId``"
+msgstr "``zoneId`` // Required. In order for plans to be returned and properly filtered, you must provide a ``zoneId`` and ``siteId`` as well as either a ``layoutId`` or ``provisionTypeId``"
+
+#: ../../library/options/option_lists.rst:359
+msgid "``layoutId``"
+msgstr "``layoutId``"
+
+#: ../../library/options/option_lists.rst:360
+msgid ""
+"``provisionTypeId: <Number>`` // Id of the provision type (technology), "
+"filters to only plans associated with this provision type"
+msgstr "``provisionTypeId: <Number>`` // Id de el/la provision type (technology), filters a solo plans asociado/asociada con este/esta provision type"
+
+#: ../../library/options/option_lists.rst:367
+msgid ""
+"``layoutId: <Number>`` // Id of an Instance Layout, used to get the "
+"associated provision type and filter to that provision type"
+msgstr "``layoutId: <Number>`` // Id de un/una Instancia Layout, utilizado/utilizada a get el/la asociado/asociada provision type y filter a ese/esa provision type"
+
+#: ../../library/options/option_lists.rst:371
+msgid "``zoneId`` // required"
+msgstr "``zoneId`` // required"
+
+#: ../../library/options/option_lists.rst:372
+msgid "``poolId``"
+msgstr "``poolId``"
+
+#: ../../library/options/option_lists.rst:376
+msgid "``zoneId : <integer>``  // Database ID of cloud to return"
+msgstr "``zoneId : <integer>``  // Database ID of cloud to return"
+
+#: ../../library/options/option_lists.rst:377
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where clouds are added."
+" Filters to only clouds added within the specified tenant. Only available"
+" in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde clouds son added. Filters a solo clouds agregado/agregada dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:378
+msgid ""
+"``zoneTypeId : <integer>`` // Database ID of cloud type. Filters to only "
+"clouds with the specified cloud type"
+msgstr "``zoneTypeId : <integer>`` // Database ID de cloud type. Filters a solo clouds con el/la specified cloud type"
+
+#: ../../library/options/option_lists.rst:379
+msgid ""
+"``siteId : <integer>`` // Database ID of group. Filters to only clouds "
+"within the specified group"
+msgstr "``siteId : <integer>`` // Database ID of group. Filters to only clouds within the specified group"
+
+#: ../../library/options/option_lists.rst:380
+msgid ""
+"``tagName : <string>`` // Filters to clouds with servers with tags "
+"containing the tagName"
+msgstr "``tagName : <string>`` // Filters a clouds con servers con tags containing el/la tagName"
+
+#: ../../library/options/option_lists.rst:381
+msgid ""
+"``tagValue : <mixed>`` // Requires tagName. Filters to clouds with "
+"servers that have tags containing the tagName and specified tagValue"
+msgstr "``tagValue : <mixed>`` // Requires tagName. Filters a clouds con servers ese/esa tienen tags containing el/la tagName y specified tagValue"
+
+#: ../../library/options/option_lists.rst:382
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on cloud name and "
+"description"
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on cloud name and description"
+
+#: ../../library/options/option_lists.rst:384
+#, python-brace-format
+msgid "**Example:** ``results = {tenantId: 1, siteId: 1, tagName: \"morpheus\"}``"
+msgstr "**Example:** ``results = {tenantId: 1, siteId: 1, tagName: \"morpheus\"}``"
+
+#: ../../library/options/option_lists.rst:386
+msgid "**Instance Types Clouds**"
+msgstr "**Nubes de tipos de instancia**"
+
+#: ../../library/options/option_lists.rst:389
+msgid ""
+"Contains same options for Clouds Morpheus API type but pre-filtered for "
+"Clouds applicable to a selected Instance Type."
+msgstr "Contains same options for Nubes Morpheus API type but pre-filtered for Nubes applicable to a selected Tipo de instancia."
+
+#: ../../library/options/option_lists.rst:393
+msgid ""
+"``appsId : <integer>`` // Database ID of app to filter by. Returns "
+"instances linked to the app"
+msgstr "``appsId : <integer>`` // Database ID of app to filter by. Returns instances linked to the app"
+
+#: ../../library/options/option_lists.rst:394
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where instances are "
+"located. Filters to only instances within the specified tenant. Only "
+"available in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde instances son located. Filters a solo instances dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:395
+msgid ""
+"``serverId : <integer>`` // Database ID of server. Filters to the "
+"instance that contains the specified server"
+msgstr "``serverId : <integer>`` // Database ID de server. Filters a el/la instance ese/esa contains el/la specified server"
+
+#: ../../library/options/option_lists.rst:396
+msgid ""
+"``tagName : <string>`` // Filters to instances with tags containing the "
+"tagName"
+msgstr "``tagName : <string>`` // Filters a instances con tags containing el/la tagName"
+
+#: ../../library/options/option_lists.rst:397
+msgid ""
+"``tagValue : <mixed>`` // Requires tagName. Filters to instances with "
+"tags containing the tagName and specified tagValue"
+msgstr "``tagValue : <mixed>`` // Requires tagName. Filters a instances con tags containing el/la tagName y specified tagValue"
+
+#: ../../library/options/option_lists.rst:398
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on instance name and "
+"description"
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on instance name and description"
+
+#: ../../library/options/option_lists.rst:400
+#, python-brace-format
+msgid "**Example:** ``results = {tenantId:1, phrase: \"ha\"}``"
+msgstr "**Example:** ``results = {tenantId:1, phrase: \"ha\"}``"
+
+#: ../../library/options/option_lists.rst:404
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where groups are "
+"located. Filters to only groups added within the specified tenant. Only "
+"available in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde groups son located. Filters a solo groups agregado/agregada dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:405
+msgid ""
+"``zoneTypeId : <integer>`` Database ID of cloud type. Filters to only "
+"groups that contain clouds with the specified cloud type"
+msgstr "``zoneTypeId : <integer>`` Database ID de cloud type. Filters a solo groups ese/esa contain clouds con el/la specified cloud type"
+
+#: ../../library/options/option_lists.rst:406
+msgid ""
+"``zoneId : <integer>``  // Database ID of cloud. Filters to only groups "
+"that contain the cloud with the specified ID"
+msgstr "``zoneId : <integer>``  // Database ID de cloud. Filters a solo groups ese/esa contain el/la cloud con el/la specified ID"
+
+#: ../../library/options/option_lists.rst:407
+msgid "``siteId : <integer>`` // Database ID of group to return"
+msgstr "``siteId : <integer>`` // Database ID of group to return"
+
+#: ../../library/options/option_lists.rst:408
+msgid "``phrase : <string>`` // Fuzzy matches phrase on group name and location."
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on group name and location."
+
+#: ../../library/options/option_lists.rst:412
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where servers are "
+"located. Filters to only servers within the specified tenant. Only "
+"available in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde servers son located. Filters a solo servers dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:413
+msgid ""
+"``serverId : <integer>`` // Database ID of server. Filters to the server "
+"specified by the ID"
+msgstr "``serverId : <integer>`` // Database ID de server. Filters a el/la server specified por el/la ID"
+
+#: ../../library/options/option_lists.rst:414
+msgid ""
+"``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers "
+"contained within the specified cloud"
+msgstr "``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers contained within the specified cloud"
+
+#: ../../library/options/option_lists.rst:415
+msgid ""
+"``serverType : <string>`` // Type of server. Accepted values: 'host', "
+"'baremetal', 'vm'"
+msgstr "``serverType : <string>`` // Type of server. Accepted values: 'host', 'baremetal', 'vm'"
+
+#: ../../library/options/option_lists.rst:416
+msgid ""
+"``siteId : <integer>`` // Database ID of group. Filters to only servers "
+"contained within clouds that are added in the specified group"
+msgstr "``siteId : <integer>`` // Database ID de group. Filters a solo servers contained dentro de clouds ese/esa son agregado/agregada en el/la specified group"
+
+#: ../../library/options/option_lists.rst:417
+msgid ""
+"``tagName : <string>`` // Filters to servers with tags containing the "
+"tagName"
+msgstr "``tagName : <string>`` // Filters a servers con tags containing el/la tagName"
+
+#: ../../library/options/option_lists.rst:418
+msgid ""
+"``tagValue : <mixed>`` // Requires tagName. Filters to servers with tags "
+"containing the tagName and specified tagValue"
+msgstr "``tagValue : <mixed>`` // Requires tagName. Filters a servers con tags containing el/la tagName y specified tagValue"
+
+#: ../../library/options/option_lists.rst:419
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on server name and "
+"description."
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on server name and description."
+
+#: ../../library/options/option_lists.rst:421
+#, python-brace-format
+msgid "**Example:** ``results = {max: 50, siteZoneId : 3}``"
+msgstr "**Example:** ``results = {max: 50, siteZoneId : 3}``"
+
+#: ../../library/options/option_lists.rst:426
+msgid "Contains same options for Instances Morpheus API type."
+msgstr "Contains same options for Instancias Morpheus API type."
+
+#: ../../library/options/option_lists.rst:431
+msgid "Contains same options for Servers Morpheus API type."
+msgstr "Contains same options for Servidores Morpheus API type."
+
+#: ../../library/options/option_lists.rst:434
+msgid "LDAP Option List Fields"
+msgstr "Campos de lista de opciones LDAP"
+
+#: ../../library/options/option_lists.rst:436
+msgid "LDAP URL"
+msgstr "URL LDAP"
+
+#: ../../library/options/option_lists.rst:437
+msgid "The URL pointing to the LDAP server"
+msgstr "La URL que apunta al servidor LDAP"
+
+#: ../../library/options/option_lists.rst:438
+msgid "USERNAME"
+msgstr "NOMBRE DE USUARIO"
+
+#: ../../library/options/option_lists.rst:439
+msgid ""
+"The fully qualified username (with @ suffix syntax) for the binding "
+"account"
+msgstr "El nombre de usuario completamente calificado (con sintaxis de sufijo @) para la cuenta de enlace"
+
+#: ../../library/options/option_lists.rst:440
+msgid "PASSWORD"
+msgstr "CONTRASEÑA"
+
+#: ../../library/options/option_lists.rst:441
+msgid "The password for the above account"
+msgstr "La contraseña para la cuenta anterior"
+
+#: ../../library/options/option_lists.rst:442
+msgid "LDAP Query"
+msgstr "Consulta LDAP"
+
+#: ../../library/options/option_lists.rst:443
+msgid ""
+"The LDAP query to pull the appropriate objects. See the next section for "
+"an example use case"
+msgstr "La consulta LDAP para obtener los objetos apropiados. Consulte la siguiente sección para un caso de uso de ejemplo"
+
+#: ../../library/options/option_lists.rst:447
+msgid ""
+"Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` "
+"Inputs. The Input is then set on an Instance Type, Layout, Cluster "
+"Layout, and/or Operational Workflow for input during provisioning or "
+"execution."
+msgstr "Listas de opciones son establecido/establecida en one o multiple ``Select List`` o ``Typeahead`` Inputs. El/La Input es entonces establecido/establecida en un/una Tipo de instancia, Layout, Layout de clúster, and/or Operational Flujo de trabajo para input durante provisioning o execution."
+
+#: ../../library/options/option_lists.rst:451
+msgid "LDAP Query Variables"
+msgstr "Variables de consulta LDAP"
+
+#: ../../library/options/option_lists.rst:453
+msgid ""
+"The current user and dependant parameters are loaded into the query using"
+" the <%=phrase%> syntax."
+msgstr "El/La actual user y dependant parameters son loaded en el/la query using el/la <%=phrase%> syntax."
+
+#: ../../library/options/option_lists.rst:455
+msgid "LDAP Query Variables (Example <%=user.email%>)"
+msgstr "LDAP Query Variables (Example <%=user.email%>)"
+
+#: ../../library/options/option_lists.rst:455
+#, python-brace-format
+msgid ""
+" user {\n"
+"    accountId,\n"
+"    attributes,\n"
+"    displayName,\n"
+"    email,\n"
+"    firstName,\n"
+"    id,\n"
+"    lastName,\n"
+"    linuxUsername,\n"
+"    username,\n"
+"    windowsUsername\n"
+" }\n"
+" customOptions {\n"
+"    fieldName\n"
+" }"
+msgstr "user {\n    accountId,\n    attributes,\n    displayName,\n    email,\n    firstName,\n    id,\n    lastName,\n    linuxUsuarioname,\n    username,\n    windowsUsuarioname\n }\n customOptions {\n    fieldName\n }"
+
+#: ../../library/options/option_lists.rst:475
+msgid "Creating an Option List Based on an LDAP Query"
+msgstr "Crear una lista de opciones basada en una consulta LDAP"
+
+#: ../../library/options/option_lists.rst:477
+msgid ""
+"In Morpheus version 4.2.1 and higher, Option Lists can be populated from "
+"LDAP queries. This gives users the ability to search Active Directory, "
+"capture objects, and present them as custom options where needed."
+msgstr "In Morpheus version 4.2.1 and higher, Listas de opciones puede ser populated from LDAP queries. This gives users the ability to search Active Directory, capture objects, and present them as custom options where needed."
+
+#: ../../library/options/option_lists.rst:479
+msgid ""
+"It's recommended that you connect LDAP-type Option Lists to Typeahead-"
+"type Inputs as the list of returned selections can be very large. This "
+"also allows you to select multiple options from the list, presuming "
+"you've allowed for that when creating the Input."
+msgstr "It's recommended that you connect LDAP-type Listas de opciones to Typeahead-type Inputs as the list of returned selections puede ser very large. This also allows you to select multiple options from the list, presuming you've allowed for that when creating the Input."
+
+#: ../../library/options/option_lists.rst:481
+msgid ""
+"Populating LDAP-type Option Lists requires knowledge of LDAP query "
+"syntax. This guide provides one example and there are many publicly-"
+"available resources for help writing additional queries."
+msgstr "Populating LDAP-type Listas de opciones requires knowledge de LDAP query syntax. Este/Esta guide provides one example y there son muchos/muchas publicly-available resources para help writing additional queries."
+
+#: ../../library/options/option_lists.rst:483
+msgid "Create a new Option List (|LibOptOpt| > ADD)"
+msgstr "Create a new Lista de opciones (|LibOptOpt| > ADD)"
+
+#: ../../library/options/option_lists.rst:485
+msgid "Enter a name for the new LDAP Option List"
+msgstr "Ingrese a name for the new LDAP Lista de opciones"
+
+#: ../../library/options/option_lists.rst:487
+msgid ""
+"Change the Type value to LDAP and the relevant fields will appear as "
+"shown in the screenshot:"
+msgstr "Change el/la Type value a LDAP y el/la relevant fields será/n appear como shown en el/la screenshot:"
+
+#: ../../library/options/option_lists.rst:489
+msgid ""
+"Enter the LDAP URL in the following format (an example is also shown as a"
+" placeholder in the UI form field):"
+msgstr "Ingrese the LDAP URL in the following format (an example is also shown as a placeholder in the UI form field):"
+
+#: ../../library/options/option_lists.rst:491
+msgid "ldap[s]://<hostname>:<port>/<base_dn>"
+msgstr "ldap[s]://<hostname>:<port>/<base_dn>"
+
+#: ../../library/options/option_lists.rst:495
+msgid ""
+"Enter the fully qualified username with @ suffix syntax, such as: "
+"`user@ad.mycompany.com`"
+msgstr "Ingrese the fully qualified username with @ suffix syntax, such as: `user@ad.mycompany.com`"
+
+#: ../../library/options/option_lists.rst:497
+msgid "Enter the account password"
+msgstr "Enter the account password"
+
+#: ../../library/options/option_lists.rst:499
+msgid ""
+"Enter your LDAP query. You can even inject variables into your query "
+"structure to query based on the value the user has entered into the "
+"typeahead field as shown in the example below:"
+msgstr "Ingrese your LDAP query. You can even inject variables into your query structure to query based on the value the user has entered into the typeahead field as shown in the example below:"
+
+#: ../../library/options/option_lists.rst:501
+msgid "(&(objectClass=user)(cn=<%=phrase%>*))"
+msgstr "(&(objectClass=user)(cn=<%=phrase%>*))"
+
+#: ../../library/options/option_lists.rst:505
+msgid ""
+"Finally, enter a translation script which will convert the returned LDAP "
+"object into a list of name:value pairs you can work with in Morpheus. The"
+" example script below shows the user DisplayName and sets the value to "
+"the SAMAccountName:"
+msgstr "Finally, enter un/una translation script el/la cual será/n convert el/la returned LDAP object en un/una list de name:value pairs you puede/n work con en Morpheus. El/La example script abajo shows el/la user DisplayName y sets el/la value a el/la SAMAccountName:"
+
+#: ../../library/options/option_lists.rst:507
+msgid ""
+"for(var x=0;x < data.length ; x++) {\n"
+"\n"
+"  var row = data[x];\n"
+"  var a = {};\n"
+"\n"
+"  if(row.displayName != null) {\n"
+"    a['name'] = row.displayName;\n"
+"\n"
+"  } else {\n"
+"\n"
+"    a['name'] = row.sAMAccountName;\n"
+"\n"
+"  }\n"
+"\n"
+"  a['value'] = row.sAMAccountName;\n"
+"  results.push(a);\n"
+"\n"
+"}"
+msgstr "for(var x=0;x < data.length ; x++) {\\n\\n  var row = data[x];\\n  var a = {};\\n\\n  if(row.displayName != null) {\\n    a['name'] = row.displayName;\\n\\n  } else {\\n\\n    a['name'] = row.sAMAccountName;\\n\\n  }\\n\\n  a['value'] = row.sAMAccountName;\\n  results.push(a);\\n\\n}"
+
+#: ../../library/options/option_lists.rst:528
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Haga clic en :guilabel:`SAVE CHANGES`"
+
+#: ../../library/options/option_lists.rst
+msgid ".. image:: images/provisioning/library/ldap_option_list.png"
+msgstr ".. image:: images/provisioning/library/ldap_option_list.png"
+

@@ -1,0 +1,872 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:5
+msgid "SwiftUI Mockup Renderer"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:7
+msgid ""
+"Generates native SwiftUI source, compiles it with `swiftc`, renders "
+"headlessly via `ImageRenderer`, and captures PNG screenshots in both "
+"light and dark mode. The output is pixel-accurate platform UI — real "
+"system controls, SF Pro typography, correct spacing, vibrancy, and blur."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:9
+msgid "Return contract (read first)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:11
+msgid ""
+"When this skill runs inside a subagent (the usual case via `ui-designer` "
+"or `/mock`), the subagent's narrative return text is **not shown directly"
+" to the user** — the orchestrator surfaces a parseable file list. The "
+"last thing the subagent emits MUST be a `<MOCKUP_FILES>` block listing "
+"every file written:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:13
+#, python-brace-format
+msgid ""
+"<MOCKUP_FILES>\n"
+".hero/mocks/{slug}/screenshot.png|Screenshot — light|image\n"
+".hero/mocks/{slug}/screenshot-dark.png|Screenshot — dark|image\n"
+".hero/mocks/{slug}/MockView.swift|SwiftUI source|source\n"
+".hero/mocks/{slug}/index.html|Viewer page|primary\n"
+".hero/planning/features/{slug}/spec.md|Spec (Mockups section "
+"updated)|spec\n"
+"</MOCKUP_FILES>\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:23
+msgid ""
+"One file per line, pipe-separated `path|label|kind`. Include both light "
+"and dark PNGs even if only one was requested. Skip this block and the "
+"user sees no links. See the `ui-designer` agent definition for full "
+"rules."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:25
+msgid "When to use"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:27
+msgid ""
+"Selection is now driven by `hero spec mock detect` (see `hero spec mock "
+"detect --help`). The agent does not decide — the CLI does. This skill is "
+"loaded whenever the detect output's `renderer` field is `\"swiftui\"`. "
+"Selection drivers (any of):"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:29
+msgid ""
+"Swift stack signals (`.swift`, `Package.swift`, `*.xcodeproj`, "
+"`*.xcworkspace`) anywhere `hero spec mock detect` walks"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:30
+msgid "Explicit `--renderer=swiftui`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:31
+msgid "`hero.json` `mockups.renderer: \"swiftui\"`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:33
+msgid ""
+"**Prerequisites:** macOS with Xcode command-line tools installed "
+"(`swiftc` available on PATH). The CLI gates on this and falls back to "
+"HTML (with explicit announce) when `swiftc` is missing."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:35
+msgid "Source Generation"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:37
+msgid ""
+"Generate a single `MockView.swift` containing all the UI. The file must "
+"be self-contained — no package dependencies, no custom assets, no "
+"external frameworks beyond SwiftUI and AppKit."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:39
+msgid "File Structure"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:41
+msgid ""
+"// Hero Mock: {slug} | Generated: {date}\n"
+"// Description: {one-line description}\n"
+"\n"
+"import SwiftUI\n"
+"import AppKit\n"
+"\n"
+"// MARK: - Mock View\n"
+"\n"
+"struct MockView: View {\n"
+"    // @State properties for interactivity\n"
+"\n"
+"    var body: some View {\n"
+"        // View hierarchy\n"
+"    }\n"
+"}\n"
+"\n"
+"// MARK: - Supporting Views (if needed)\n"
+"\n"
+"// Break complex UIs into smaller structs for readability\n"
+"\n"
+"// MARK: - Capture Entry Point\n"
+"\n"
+"@main\n"
+"struct MockApp {\n"
+"    static func main() {\n"
+"        let args = CommandLine.arguments\n"
+"        let isDark = args.contains(\"--dark\")\n"
+"        let width: CGFloat = 390\n"
+"        let height: CGFloat = 844\n"
+"\n"
+"        // Parse --size if provided\n"
+"        // Parse --scale if provided (default 2)\n"
+"\n"
+"        let view = MockView()\n"
+"            .frame(width: width, height: height)\n"
+"            .environment(\\.colorScheme, isDark ? .dark : .light)\n"
+"\n"
+"        let renderer = ImageRenderer(content: view)\n"
+"        renderer.scale = 2.0\n"
+"\n"
+"        guard let image = renderer.nsImage else {\n"
+"            fputs(\"error: failed to render view\\n\", stderr)\n"
+"            exit(1)\n"
+"        }\n"
+"\n"
+"        guard let tiff = image.tiffRepresentation,\n"
+"              let bitmap = NSBitmapImageRep(data: tiff),\n"
+"              let png = bitmap.representation(using: .png, properties: "
+"[:]) else {\n"
+"            fputs(\"error: failed to encode PNG\\n\", stderr)\n"
+"            exit(1)\n"
+"        }\n"
+"\n"
+"        let outputPath = isDark ? \"screenshot-dark.png\" : "
+"\"screenshot.png\"\n"
+"        do {\n"
+"            try png.write(to: URL(fileURLWithPath: outputPath))\n"
+"        } catch {\n"
+"            fputs(\"error: \\(error.localizedDescription)\\n\", stderr)\n"
+"            exit(1)\n"
+"        }\n"
+"    }\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:105
+msgid ""
+"The `@main` entry point is bundled into the same file. This lets `swiftc`"
+" compile and run it as a single unit with no project file."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:107
+msgid "Design Guidelines"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:109
+msgid "**Use real SwiftUI components:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:110
+msgid "`NavigationStack` / `NavigationSplitView` for navigation"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:111
+msgid "`List`, `Form`, `Section` for scrollable content"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:112
+msgid "`Toggle`, `Picker`, `Slider`, `Stepper` for controls"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:113
+msgid "`Button`, `Menu`, `Link` for actions"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:114
+msgid "`TabView` for tab-based layouts"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:115
+msgid "`TextField`, `TextEditor`, `SecureField` for input"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:116
+msgid "`ProgressView`, `Gauge` for progress"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:117
+msgid "`Label`, `LabeledContent` for labeled items"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:118
+msgid "`GroupBox`, `DisclosureGroup` for grouping"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:120
+msgid "**Icons — use SF Symbols:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:121
+msgid ""
+"Image(systemName: \"gear\")\n"
+"Image(systemName: \"person.circle.fill\")\n"
+"Image(systemName: \"chart.bar.fill\")\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:127
+msgid "Never reference custom image assets. SF Symbols are always available."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:129
+msgid "**Colors — use system semantic colors:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:130
+msgid ""
+"Color.primary          // adapts to light/dark\n"
+"Color.secondary\n"
+"Color.accentColor\n"
+"Color(.systemBackground)\n"
+"Color(.secondarySystemBackground)\n"
+"Color(.tertiarySystemBackground)\n"
+"Color(.separator)\n"
+"Color(.label)\n"
+"Color(.secondaryLabel)\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:142
+msgid "For brand colors, define them inline:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:143
+#, python-brace-format
+msgid ""
+"extension Color {\n"
+"    static let heroPrimary = Color(red: 0.29, green: 0.62, blue: 1.0)\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:149
+msgid "**Typography — use system styles:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:150
+msgid ""
+".font(.largeTitle)\n"
+".font(.title)\n"
+".font(.title2)\n"
+".font(.headline)\n"
+".font(.subheadline)\n"
+".font(.body)\n"
+".font(.callout)\n"
+".font(.caption)\n"
+".font(.footnote)\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:162
+msgid ""
+"**Spacing — use system defaults:** Let SwiftUI handle spacing wherever "
+"possible. Use explicit padding only when needed:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:164
+msgid ""
+".padding()              // system default (16pt)\n"
+".padding(.horizontal)\n"
+".padding(8)\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:170
+msgid "Layout Patterns"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:172
+msgid "**Settings / Form screen:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:173
+msgid ""
+"Form {\n"
+"    Section(\"Account\") {\n"
+"        LabeledContent(\"Name\", value: \"Sarah Chen\")\n"
+"        LabeledContent(\"Email\", value: \"sarah@example.com\")\n"
+"        Toggle(\"Notifications\", isOn: .constant(true))\n"
+"    }\n"
+"    Section(\"Appearance\") {\n"
+"        Picker(\"Theme\", selection: .constant(0)) {\n"
+"            Text(\"System\").tag(0)\n"
+"            Text(\"Light\").tag(1)\n"
+"            Text(\"Dark\").tag(2)\n"
+"        }\n"
+"    }\n"
+"}\n"
+".navigationTitle(\"Settings\")\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:191
+msgid "**List / Master-detail:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:192
+msgid ""
+"NavigationStack {\n"
+"    List {\n"
+"        ForEach(items) { item in\n"
+"            NavigationLink(value: item) {\n"
+"                HStack {\n"
+"                    Image(systemName: item.icon)\n"
+"                    VStack(alignment: .leading) {\n"
+"                        Text(item.title).font(.headline)\n"
+"                        "
+"Text(item.subtitle).font(.caption).foregroundStyle(.secondary)\n"
+"                    }\n"
+"                }\n"
+"            }\n"
+"        }\n"
+"    }\n"
+"    .navigationTitle(\"Items\")\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:211
+msgid "**Dashboard / Metrics:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:212
+#, python-brace-format
+msgid ""
+"ScrollView {\n"
+"    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], "
+"spacing: 16) {\n"
+"        MetricCard(title: \"Revenue\", value: \"$12,847\", icon: "
+"\"dollarsign.circle.fill\", color: .green)\n"
+"        MetricCard(title: \"Users\", value: \"1,284\", icon: "
+"\"person.2.fill\", color: .blue)\n"
+"    }\n"
+"    .padding()\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:222
+msgid "**Tab-based app:**"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:223
+msgid ""
+"TabView {\n"
+"    HomeView()\n"
+"        .tabItem { Label(\"Home\", systemImage: \"house.fill\") }\n"
+"    SearchView()\n"
+"        .tabItem { Label(\"Search\", systemImage: \"magnifyingglass\") }\n"
+"    ProfileView()\n"
+"        .tabItem { Label(\"Profile\", systemImage: \"person.fill\") }\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:234
+msgid "Realistic Data"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:236
+msgid "Same rules as HTML mockups — use realistic-looking placeholder data:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:237
+msgid "Names: \"Sarah Chen\", \"Marcus Johnson\", \"Aisha Patel\""
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:238
+msgid "Emails: \"sarah.chen@example.com\""
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:239
+msgid "Dates: relative where possible (`Date.now.addingTimeInterval(-3600)`)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:240
+msgid "Numbers: realistic ranges (\"$12,847\" not \"$10,000\")"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:241
+msgid "Status values: use actual statuses from the spec if available"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:243
+msgid "What NOT to Do"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:245
+msgid "Don't import external packages (no SPM dependencies)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:246
+msgid "Don't reference custom image assets or asset catalogs"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:247
+msgid "Don't use UIKit types (this renders via AppKit on macOS)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:248
+msgid ""
+"Don't use `@Observable` macro (requires Swift 5.9 macro support — use "
+"`@State` instead)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:249
+msgid "Don't create Xcode projects or Package.swift"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:250
+msgid "Don't use `PreviewProvider` — the capture entry point replaces previews"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:251
+msgid "Don't add complex animations — they don't render in `ImageRenderer`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:252
+msgid "Don't target iOS-only APIs — the code runs on macOS for capture"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:253
+msgid "Don't include more than 2-3 screens in one file"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:255
+msgid "macOS Compatibility Notes"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:257
+msgid ""
+"The mockup renders on macOS via `ImageRenderer` + AppKit, even when "
+"mocking an iOS app. Key adaptations:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:259
+msgid "Use `NavigationStack` (not `NavigationView` deprecated path)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:260
+msgid "Avoid `UIScreen`, `UIDevice`, or any UIKit references"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:261
+msgid "`ImageRenderer` is available on macOS 13+ / Swift 5.7+"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:262
+msgid ""
+"The `.frame(width: 390, height: 844)` constrains the render to iPhone "
+"dimensions"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:263
+msgid ""
+"System controls will render in macOS style — this is acceptable for "
+"mockup purposes. The layout, spacing, and content are what matter."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:265
+msgid "Build and Capture Pipeline"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:267
+msgid "After generating `MockView.swift`, execute this pipeline:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:269
+msgid "Step 1: Verify toolchain"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:270
+#, python-brace-format
+msgid ""
+"which swiftc || { echo \"swiftc not found — falling back to HTML\"; exit "
+"1; }\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:274
+msgid "Step 2: Compile"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:275
+#, python-brace-format
+msgid ""
+"cd .hero/mocks/{slug}\n"
+"swiftc MockView.swift -framework SwiftUI -framework AppKit -o MockApp "
+"2>&1\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:280
+msgid ""
+"If compilation fails, read the error, attempt one auto-fix of the Swift "
+"source, and retry. If the retry also fails, fall back to HTML."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:282
+msgid "Step 3: Capture light mode"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:283
+msgid "./MockApp\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:286
+msgid "Produces `screenshot.png` in the current directory."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:288
+msgid "Step 4: Capture dark mode"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:289
+msgid "./MockApp --dark\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:292
+msgid "Produces `screenshot-dark.png`."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:294
+msgid "Step 5: Clean up binary"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:295
+msgid "rm -f MockApp\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:299
+msgid "Step 6: Generate viewer HTML"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:301
+msgid ""
+"Create an `index.html` that displays both screenshots with a light/dark "
+"toggle and a collapsible source view. This ensures `hero spec mock "
+"--open` and `hero spec mock --serve` keep working."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:303
+msgid ""
+"**The viewer MUST be a single self-contained file.** Do not reference the"
+" PNGs by relative path (`<img src=\"screenshot.png\">`) — a relative path"
+" only resolves when the file is served with its own directory as the web "
+"root (`--open` / `--serve`), and breaks in embedded preview panes that "
+"load the HTML detached from its siblings (via `srcdoc`, a blob URL, or a "
+"different web root). Embed both PNGs as base64 `data:image/png;base64,…` "
+"URIs so there is no path to resolve. This mirrors the `html-mockup-"
+"generation` rule: no external resources, ever."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:305
+msgid "First, base64-encode both screenshots:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:306
+msgid ""
+"LIGHT_B64=$(base64 < screenshot.png | tr -d '\\n')\n"
+"DARK_B64=$(base64 < screenshot-dark.png | tr -d '\\n')\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:310
+#, python-brace-format
+msgid ""
+"Then substitute the values into the template's "
+"`data:image/png;base64,{LIGHT_B64}` / `{DARK_B64}` slots. (If "
+"`swiftui.capture_dark_mode` is off, embed only the light image and drop "
+"the toggle.)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:312
+msgid ""
+"<!DOCTYPE html>\n"
+"<!-- Hero Mock: {slug} | Generated: {date} | Renderer: swiftui -->\n"
+"<html lang=\"en\">\n"
+"<head>\n"
+"    <meta charset=\"UTF-8\">\n"
+"    <title>{Title} — Native Mock</title>\n"
+"    <style>\n"
+"        body { font-family: -apple-system, system-ui, sans-serif; margin:"
+" 0; padding: 32px; background: #f5f5f5; color: #333; }\n"
+"        .header { display: flex; justify-content: space-between; align-"
+"items: center; margin-bottom: 24px; }\n"
+"        h1 { font-size: 20px; font-weight: 600; margin: 0; }\n"
+"        .badge { background: #d4edda; color: #155724; padding: 2px 10px; "
+"border-radius: 12px; font-size: 12px; font-weight: 500; }\n"
+"        .toggle-bar { display: flex; gap: 8px; margin-bottom: 24px; }\n"
+"        .toggle-btn { padding: 6px 16px; border: 1px solid #ddd; border-"
+"radius: 6px; background: #fff; cursor: pointer; font-size: 13px; }\n"
+"        .toggle-btn.active { background: #333; color: #fff; border-color:"
+" #333; }\n"
+"        .screenshot-frame { background: #fff; border-radius: 12px; box-"
+"shadow: 0 2px 12px rgba(0,0,0,0.1); display: inline-block; padding: 16px;"
+" }\n"
+"        .screenshot-frame img { max-width: 100%; height: auto; border-"
+"radius: 8px; }\n"
+"        .source-toggle { margin-top: 32px; cursor: pointer; font-size: "
+"14px; color: #666; }\n"
+"        .source-block { display: none; margin-top: 12px; background: "
+"#1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: "
+"auto; font-size: 13px; line-height: 1.5; }\n"
+"        .source-block pre { margin: 0; white-space: pre; }\n"
+"    </style>\n"
+"</head>\n"
+"<body>\n"
+"    <div class=\"header\">\n"
+"        <h1>{Title}</h1>\n"
+"        <span class=\"badge\">SwiftUI</span>\n"
+"    </div>\n"
+"    <div class=\"toggle-bar\">\n"
+"        <button class=\"toggle-btn active\" "
+"onclick=\"showMode('light')\">Light</button>\n"
+"        <button class=\"toggle-btn\" "
+"onclick=\"showMode('dark')\">Dark</button>\n"
+"    </div>\n"
+"    <div class=\"screenshot-frame\">\n"
+"        <img id=\"screenshot\"\n"
+"             src=\"data:image/png;base64,{LIGHT_B64}\"\n"
+"             data-light=\"data:image/png;base64,{LIGHT_B64}\"\n"
+"             data-dark=\"data:image/png;base64,{DARK_B64}\"\n"
+"             alt=\"Mock screenshot\">\n"
+"    </div>\n"
+"    <div class=\"source-toggle\" onclick=\"toggleSource()\">&#9654; View "
+"SwiftUI source</div>\n"
+"    <div class=\"source-block\" id=\"source\">\n"
+"        <pre><code>/* Source loaded from MockView.swift */</code></pre>\n"
+"    </div>\n"
+"    <script>\n"
+"        function showMode(mode) {\n"
+"            const img = document.getElementById('screenshot');\n"
+"            img.src = mode === 'dark' ? img.dataset.dark : "
+"img.dataset.light;\n"
+"            document.querySelectorAll('.toggle-btn').forEach(b => "
+"b.classList.remove('active'));\n"
+"            event.target.classList.add('active');\n"
+"        }\n"
+"        function toggleSource() {\n"
+"            const el = document.getElementById('source');\n"
+"            const toggle = document.querySelector('.source-toggle');\n"
+"            if (el.style.display === 'block') {\n"
+"                el.style.display = 'none';\n"
+"                toggle.innerHTML = '&#9654; View SwiftUI source';\n"
+"            } else {\n"
+"                el.style.display = 'block';\n"
+"                toggle.innerHTML = '&#9660; Hide SwiftUI source';\n"
+"            }\n"
+"        }\n"
+"    </script>\n"
+"</body>\n"
+"</html>\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:377
+msgid ""
+"Replace the `<code>` block with the actual contents of `MockView.swift` "
+"(HTML-escaped) when generating."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:379
+msgid "Output Manifest"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:381
+msgid "Every SwiftUI mock produces:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "File"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "Purpose"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "`MockView.swift`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "Generated SwiftUI source"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "`screenshot.png`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "Light mode render (@2x)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "`screenshot-dark.png`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "Dark mode render (@2x)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "`index.html`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md
+msgid "Viewer page (wraps PNGs + source)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:390
+msgid "The compiled binary (`MockApp`) is deleted after capture."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:392
+msgid "Configuration"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:394
+msgid "The `mockups` section in `hero.json`:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:396
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"mockups\": {\n"
+"    \"renderer\": \"auto\",\n"
+"    \"swiftui\": {\n"
+"      \"device_frame\": \"iPhone 15 Pro\",\n"
+"      \"size\": \"390x844\",\n"
+"      \"scale\": 2,\n"
+"      \"capture_dark_mode\": true\n"
+"    }\n"
+"  }\n"
+"}\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:410
+msgid "`renderer` — `\"auto\"` (detect from stack), `\"html\"`, or `\"swiftui\"`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:411
+msgid "`swiftui.size` — render dimensions (width x height)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:412
+msgid "`swiftui.scale` — display scale factor (1, 2, or 3)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:413
+msgid "`swiftui.capture_dark_mode` — whether to produce `screenshot-dark.png`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:415
+msgid "Error Recovery"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:417
+msgid ""
+"**`swiftc` not found:** Fall back to HTML. Log: \"SwiftUI renderer "
+"unavailable (swiftc not found), using HTML.\""
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:418
+msgid ""
+"**Compilation error:** Read the compiler error, attempt one auto-fix of "
+"the source, retry. If retry fails, fall back to HTML with the error shown"
+" to the user."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:419
+msgid "**Runtime crash:** Fall back to HTML. Log the crash output."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:420
+msgid ""
+"**Empty screenshot:** Retry with explicit `.frame()`. If still empty, "
+"fall back to HTML."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:422
+msgid "Spec Write-back"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:424
+msgid "Same rules as `html-mockup-generation`:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:426
+msgid ""
+"When invoked against a spec slug, append (or update on `--iterate`) a `##"
+" Mockups` entry in the originating spec. Entry format:"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:427
+#, python-brace-format
+msgid ""
+"- [{Name}](.hero/mocks/{slug}/screenshot.png) — YYYY-MM-DD — SwiftUI "
+"native render\n"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:431
+msgid ""
+"Link to `screenshot.png` rather than `index.html` so the mockup image is "
+"visible directly in spec viewers that support image embedding."
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:433
+msgid "Location priority"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:434
+#, python-brace-format
+msgid "`.hero/planning/features/{slug}/spec.md`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:435
+#, python-brace-format
+msgid "`.hero/planning/bugs/{slug}/spec.md`"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:436
+#, python-brace-format
+msgid "`.hero/specs/{slug}/spec.md` (archive fallback)"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:438
+msgid "Iteration"
+msgstr ""
+
+#: ../../.opencode/skills/swiftui-mockup-renderer/SKILL.md:439
+msgid ""
+"On `--iterate`, update the existing entry's date in place rather than "
+"appending a duplicate."
+msgstr ""
+

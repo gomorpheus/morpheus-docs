@@ -1,0 +1,918 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha.rst:2
+msgid "3 Node HA Install Example"
+msgstr "3 Node HA Install Example"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha.rst:4
+msgid "Distributed App Nodes with Externalized MySQL Database"
+msgstr "Distributed App Nodes con Externalized MySQL Database"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha.rst:6
+msgid ""
+"A common and recommended HA Morpheus deployment consists of three app "
+"nodes using embedded services and an external MySQL DB cluster (minimum "
+"of 3 nodes)."
+msgstr ""
+"A common y recomendado HA Morpheus deployment consists of three app nodes "
+"using embedded services y an externo MySQL DB cluster (minimum of 3 "
+"nodes)."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha.rst:8
+msgid ""
+"HA environments installed without engagement from Morpheus are not "
+"eligible for support. The provided configuration serves as a sample only "
+"and requirements may vary. Please reach out to your account manager to "
+"discuss deploying a HA environment to meet the requirements for support."
+msgstr ""
+"HA environments instalado sin engagement desde Morpheus are not eligible "
+"for support. The provided configuration serves as a sample only y "
+"requirements may vary. Please reach out to your account manager to discuss "
+"deploying a HA environment to meet the requirements for support."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:2
+msgid "Assumptions"
+msgstr "Supuestos"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:4
+msgid "This guide assumes the following:"
+msgstr "This guide assumes lo siguiente:"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:6
+msgid "App nodes can resolve each others short names"
+msgstr "App nodes can resolve each others short names"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:7
+msgid ""
+"All app nodes have access to shared storage mounted at "
+"``/var/opt/morpheus/morpheus-ui``."
+msgstr ""
+"All app nodes have access to almacenamiento compartido mounted at "
+"``/var/opt/morpheus/morpheus-ui``."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:8
+#, python-format
+msgid ""
+"This configuration is designed to tolerate the complete failure of a "
+"single node but not more. Specifically, the Elasticsearch tier requires "
+"MORE than 50% of the nodes to be up and clustered at all times. However, "
+"you can always add more nodes to increase resilience."
+msgstr ""
+"This configuration is designed to tolerate the complete failure of a "
+"single node pero no more. Specifically, the Elasticsearch tier requires "
+"MORE than 50% of los nodos to be up y clustered at all times. Sin embargo, "
+"you can always add more nodes to increase resilience."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:9
+msgid ""
+"You have a load balancer available and configured to distribute traffic "
+"between the app nodes. `Load Balancer Configuration "
+"<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
+"#load-balancer-configuration>`_"
+msgstr ""
+"You have a load balancer available y configured to distribute traffic "
+"entre the app nodes. `Load Balancer Configuration "
+"<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html#load-balancer-configuration>`_"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:2
+msgid "Morpheus 3-Node HA Architecture"
+msgstr "Morpheus 3-Node HA Architecture"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:2
+msgid ".. image:: images/arch/morpheus-3node-arch-2.png"
+msgstr ".. image:: images/arch/morpheus-3node-arch-2.png"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:2
+msgid "Default Paths"
+msgstr "Default Paths"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:4
+msgid ""
+"|morpheus| follows several install location conventions. Below is a list "
+"of the system paths."
+msgstr ""
+"|morpheus| follows several install location conventions. Below is a list "
+"of the system paths."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:6
+msgid ""
+"Altering the default system paths is not supported and may break "
+"functionality."
+msgstr ""
+"Altering the predeterminado system paths no es soportado y may break "
+"functionality."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:8
+msgid "Installation Location: ``/opt/morpheus``"
+msgstr "Installation Location: ``/opt/morpheus``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:9
+msgid "Log Location: ``/var/log/morpheus``"
+msgstr "Log Location: ``/var/log/morpheus``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:11
+msgid "Morpheus-UI: ``/var/log/morpheus/morpheus-ui``"
+msgstr "Morpheus-UI: ``/var/log/morpheus/morpheus-ui``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:12
+msgid "NginX: ``/var/log/morpheus/nginx``"
+msgstr "NginX: ``/var/log/morpheus/nginx``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:13
+msgid "Check Server: ``/var/log/morpheus/check-server``"
+msgstr "Check Server: ``/var/log/morpheus/check-server``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:14
+msgid "Elastic Search: ``/var/log/morpheus/elasticsearch``"
+msgstr "Elastic Search: ``/var/log/morpheus/elasticsearch``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:15
+msgid "RabbitMQ: ``/var/log/morpheus/rabbitmq``"
+msgstr "RabbitMQ: ``/var/log/morpheus/rabbitmq``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:17
+msgid "User-defined install/config: ``/etc/morpheus/morpheus.rb``"
+msgstr "User-defined install/config: ``/etc/morpheus/morpheus.rb``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:2
+msgid "MySQL requirements for Morpheus HA"
+msgstr "MySQL requirements for Morpheus HA"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:3
+msgid "The requirements are as follows:"
+msgstr "The requirements are de la siguiente manera:"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:5
+msgid "MySQL version v8.0.x (minimum of v8.0.32)"
+msgstr "MySQL version v8.0.x (minimum of v8.0.32)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:6
+msgid "MySQL cluster with at least 3 nodes for redundancy."
+msgstr "MySQL cluster con al menos 3 nodes for redundancy."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:7
+msgid "Morpheus application nodes have connectivity to MySQL cluster."
+msgstr "Morpheus application nodes have connectivity to MySQL cluster."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:9
+msgid ""
+"Morpheus does not create primary keys on all tables. If you use a "
+"clustering technology that requires primary keys, you will need to "
+"leverage the invisible primary key option in MySQL 8"
+msgstr ""
+"Morpheus does not create primary keys on all tables. If you use a "
+"clustering technology that requires primary keys, you will necesita "
+"leverage the invisible primary key option in MySQL 8"
+
+#: ../../getting_started/installation/database_configure_generic.rst:2
+msgid "Configure Morpheus Database and User"
+msgstr "Configure Morpheus Database y User"
+
+#: ../../getting_started/installation/database_configure_generic.rst:4
+msgid ""
+"Create the Database you will be using with |morpheus|. Login to mysql "
+"node:"
+msgstr "Create the Database you será using con |morpheus|. Login to mysql node:"
+
+#: ../../getting_started/installation/database_configure_generic.rst:6
+msgid ""
+"[root@node: ~]  mysql -u root -p\n"
+"  # password: `enter root password`\n"
+"\n"
+"mysql> CREATE DATABASE morpheus CHARACTER SET utf8mb4 COLLATE "
+"utf8mb4_general_ci;\n"
+"\n"
+"mysql> show databases;"
+msgstr ""
+"[root@node: ~]  mysql -u root -p\\n  # password: `enter root "
+"password`\\n\\nmysql> CREATE DATABASE morpheus CHARACTER SET utf8mb4 "
+"COLLATE utf8mb4_general_ci;\\n\\nmysql> show databases;"
+
+#: ../../getting_started/installation/database_configure_generic.rst:16
+msgid ""
+"Next create your |morpheus| database user. This is the user the "
+"|morpheus| app nodes will auth with mysql."
+msgstr ""
+"Next create your |morpheus| database user. This is the user the |morpheus| "
+"app nodes will auth con mysql."
+
+#: ../../getting_started/installation/database_configure_generic.rst:18
+msgid "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
+msgstr "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
+
+#: ../../getting_started/installation/database_configure_generic.rst:22
+msgid "Next Grant your new |morpheus| user permissions."
+msgstr "Next Grant your new |morpheus| user permissions."
+
+#: ../../getting_started/installation/database_configure_generic.rst:24
+msgid ""
+"mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheus'@'%' with grant "
+"option;\n"
+"\n"
+"mysql> GRANT SELECT, PROCESS, SHOW DATABASES, RELOAD ON *.* TO "
+"'morpheus'@'%';\n"
+"\n"
+"mysql> FLUSH PRIVILEGES;\n"
+"\n"
+"mysql> exit"
+msgstr ""
+"mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheus'@'%' con grant "
+"option;\\n\\nmysql> GRANT SELECT, PROCESS, SHOW DATABASES, RELOAD ON *.* "
+"TO 'morpheus'@'%';\\n\\nmysql> FLUSH PRIVILEGES;\\n\\nmysql> exit"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:2
+msgid "App Node Installation"
+msgstr "App Node Installation"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:5
+msgid "Requirements"
+msgstr "Requisitos"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:7
+msgid ""
+"Ensure the firewall (or security group) allows |morpheus| ``outbound`` "
+"access to the various backend services:"
+msgstr ""
+"Ensure the firewall (or security group) allows |morpheus| ``outbound`` "
+"access a la various backend services:"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:9
+msgid "mySQL Port to External DB"
+msgstr "mySQL Port to External DB"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:11
+msgid "3306/tcp"
+msgstr "3306/tcp"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:13
+msgid ""
+"Ensure the firewall (or security group) allows |morpheus| ``inbound`` "
+"from agents and users:"
+msgstr ""
+"Ensure el firewall (or security group) allows |morpheus| ``inbound`` desde "
+"agents y users:"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:15
+msgid "HTTPS Port"
+msgstr "HTTPS Port"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:17
+msgid "443/tcp"
+msgstr "443/tcp"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:19
+msgid "RabbitMQ Ports"
+msgstr "RabbitMQ Ports"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:21
+msgid "4369 (epmd - inter node cluster discovery)"
+msgstr "4369 (epmd - inter node cluster discovery)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:23
+msgid "5671 (TLS from nodes to RabbitMQ)"
+msgstr "5671 (TLS desde nodes to RabbitMQ)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:25
+msgid "5672 (non-TLS from nodes to RabbitMQ)"
+msgstr "5672 (non-TLS desde nodes to RabbitMQ)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:27
+msgid "15671 (HTTPS API)"
+msgstr "15671 (HTTPS API)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:29
+msgid "15672 (HTTP API)"
+msgstr "15672 (HTTP API)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:31
+msgid "25672 (inter node cluster communication)"
+msgstr "25672 (inter node cluster communication)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:33
+msgid "61613 (STOMP - non-TLS)"
+msgstr "61613 (STOMP - non-TLS)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:35
+msgid "61614 (STOMP - TLS)"
+msgstr "61614 (STOMP - TLS)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:37
+msgid "Elasticsearch Ports"
+msgstr "Elasticsearch Ports"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:39
+msgid "9200 (API access)"
+msgstr "9200 (API access)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:41
+msgid "9300 (inter node cluster communication)"
+msgstr "9300 (inter node cluster communication)"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:44
+msgid "Installation"
+msgstr "Instalación"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:46
+msgid ""
+"First begin by downloading and installing the requisite |morpheus| "
+"packages to ALL |morpheus| app nodes."
+msgstr ""
+"First begin by downloading y installing the requisite |morpheus| packages "
+"to ALL |morpheus| app nodes."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:48
+msgid ""
+"|morpheus| packages can be found in the Downloads section of the "
+"`Morpheus Hub <https://morpheushub.com/download>`_"
+msgstr ""
+"|morpheus| packages puede ser found in the Downloads section of the "
+"`Morpheus Hub <T1>`_"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:55
+msgid ""
+"[root@node: ~] wget https://example/path/morpheus-appliance-"
+"ver-1.el8.x86_64.rpm\n"
+"[root@node: ~] rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm"
+msgstr ""
+"[root@node: ~] wget "
+"https://example/path/morpheus-appliance-ver-1.el8.x86_64.rpm\\n[root@node: "
+"~] rpm -ihv morpheus-appliance-appliance-ver-1.el8.x86_64.rpm"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:63
+msgid ""
+"[root@node: ~] wget https://example/path/morpheus-"
+"appliance_ver-1.amd64.deb\n"
+"[root@node: ~] dpkg -i morpheus-appliance-appliance_ver-1.amd64.deb"
+msgstr ""
+"[root@node: ~] wget "
+"https://example/path/morpheus-appliance_ver-1.amd64.deb\\n[root@node: ~] "
+"dpkg -i morpheus-appliance-appliance_ver-1.amd64.deb"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:68
+msgid ""
+"Do NOT run reconfigure yet. The |morpheus| configuration file must be "
+"edited prior to the initial reconfigure."
+msgstr ""
+"Do NOT run reconfigure yet. The |morpheus| configuration file debe ser "
+"edited antes de the initial reconfigure."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:70
+msgid ""
+"Next you will need to edit the |morpheus| configuration file "
+"``/etc/morpheus/morpheus.rb`` on each node."
+msgstr ""
+"Next you will need to edit the |morpheus| configuration file "
+"``/etc/morpheus/morpheus.rb`` on each node."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:2
+msgid ""
+"In the configuration below, the UID and GID for the users and groups are "
+"defined for services that will be embedded.  This ensures they are "
+"consistent on all nodes. If they are not consistent, the shared storage "
+"permissions can become out of sync and errors will appear for plugins, "
+"images, etc. If not specified, Morpheus will automatically find available"
+" UIDs/GIDs starting at 999 and work down. Availability of UIDs and GIDs "
+"can be seen by inspecting ``/etc/passwd`` and ``/etc/group`` "
+"respectively.  Change the UIDs and GIDs below based on what is available."
+msgstr ""
+"In la configuración below, the UID y GID for los usuarios y groups are "
+"defined for services that será embedded. This ensures they are consistent "
+"on todos los nodos. If they are no consistent, the shared storage "
+"permissions puede sercome out of sync y errors will appear for plugins, "
+"images, etc. If no specified, Morpheus will automatically find disponible "
+"UIDs/GIDs starting at 999 y work down. Availability of UIDs y GIDs puede "
+"ser seen by inspecting ``/etc/passwd`` y ``/etc/group`` respectively. "
+"Change the UIDs y GIDs below basado en what está disponible."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:8
+msgid ""
+"You can find additional configuration settings `here "
+"<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
+"#advanced-morpheus-rb-settings>`_"
+msgstr "You can find adicional configuration settings `here <T0>`_"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:15
+#, python-brace-format
+msgid ""
+"appliance_url 'https://morpheus.localdomain'\n"
+"elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' "
+"=> 9200, '192.168.104.03' => 9200}\n"
+"elasticsearch['node_name'] = '192.168.104.01'\n"
+"elasticsearch['host'] = '0.0.0.0'\n"
+"rabbitmq['host'] = '0.0.0.0'\n"
+"rabbitmq['nodename'] = 'rabbit@node01'\n"
+"mysql['enable'] = false\n"
+"mysql['host'] = {'127.0.0.1' => 6446}\n"
+"mysql['morpheus_db'] = 'morpheus'\n"
+"mysql['morpheus_db_user'] = 'morpheus'\n"
+"mysql['morpheus_password'] = 'morpheusDbUserPassword'\n"
+"user['uid'] = 899\n"
+"user['gid'] = 899\n"
+"# at the time of this writing, local_user is not valid as an option so "
+"the full entry is needed\n"
+"node.default['morpheus_solo']['local_user']['uid'] = 898\n"
+"node.default['morpheus_solo']['local_user']['gid'] = 898\n"
+"elasticsearch['uid'] = 896\n"
+"elasticsearch['gid'] = 896\n"
+"rabbitmq['uid'] = 895\n"
+"rabbitmq['gid'] = 895\n"
+"guacd['uid'] = 894\n"
+"guacd['gid'] = 894"
+msgstr ""
+"appliance_url 'https://morpheus.localdomain'\\nelasticsearch['es_hosts'] = "
+"{'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => "
+"9200}\\nelasticsearch['node_name'] = "
+"'192.168.104.01'\\nelasticsearch['host'] = '0.0.0.0'\\nrabbitmq['host'] = "
+"'0.0.0.0'\\nrabbitmq['nodename'] = 'rabbit@node01'\\nmysql['enable'] = "
+"false\\nmysql['host'] = {'127.0.0.1' => 6446}\\nmysql['morpheus_db'] = "
+"'morpheus'\\nmysql['morpheus_db_user'] = "
+"'morpheus'\\nmysql['morpheus_password'] = "
+"'morpheusDbUserPassword'\\nuser['uid'] = 899\\nuser['gid'] = 899\\n# at "
+"the time of this writing, local_user is not valid as an option so the full "
+"entry is needed\\nnode.default['morpheus_solo']['local_user']['uid'] = "
+"898\\nnode.default['morpheus_solo']['local_user']['gid'] = "
+"898\\nelasticsearch['uid'] = 896\\nelasticsearch['gid'] = "
+"896\\nrabbitmq['uid'] = 895\\nrabbitmq['gid'] = 895\\nguacd['uid'] = "
+"894\\nguacd['gid'] = 894"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:43
+#, python-brace-format
+msgid ""
+"appliance_url 'https://morpheus.localdomain'\n"
+"elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' "
+"=> 9200, '192.168.104.03' => 9200}\n"
+"elasticsearch['node_name'] = '192.168.104.02'\n"
+"elasticsearch['host'] = '0.0.0.0'\n"
+"rabbitmq['host'] = '0.0.0.0'\n"
+"rabbitmq['nodename'] = 'rabbit@node02'\n"
+"mysql['enable'] = false\n"
+"mysql['host'] = {'127.0.0.1' => 6446}\n"
+"mysql['morpheus_db'] = 'morpheus'\n"
+"mysql['morpheus_db_user'] = 'morpheus'\n"
+"mysql['morpheus_password'] = 'morpheusDbUserPassword'\n"
+"user['uid'] = 899\n"
+"user['gid'] = 899\n"
+"# at the time of this writing, local_user is not valid as an option so "
+"the full entry is needed\n"
+"node.default['morpheus_solo']['local_user']['uid'] = 898\n"
+"node.default['morpheus_solo']['local_user']['gid'] = 898\n"
+"elasticsearch['uid'] = 896\n"
+"elasticsearch['gid'] = 896\n"
+"rabbitmq['uid'] = 895\n"
+"rabbitmq['gid'] = 895\n"
+"guacd['uid'] = 894\n"
+"guacd['gid'] = 894"
+msgstr ""
+"appliance_url 'https://morpheus.localdomain'\\nelasticsearch['es_hosts'] = "
+"{'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => "
+"9200}\\nelasticsearch['node_name'] = "
+"'192.168.104.02'\\nelasticsearch['host'] = '0.0.0.0'\\nrabbitmq['host'] = "
+"'0.0.0.0'\\nrabbitmq['nodename'] = 'rabbit@node02'\\nmysql['enable'] = "
+"false\\nmysql['host'] = {'127.0.0.1' => 6446}\\nmysql['morpheus_db'] = "
+"'morpheus'\\nmysql['morpheus_db_user'] = "
+"'morpheus'\\nmysql['morpheus_password'] = "
+"'morpheusDbUserPassword'\\nuser['uid'] = 899\\nuser['gid'] = 899\\n# at "
+"the time of this writing, local_user is not valid as an option so the full "
+"entry is needed\\nnode.default['morpheus_solo']['local_user']['uid'] = "
+"898\\nnode.default['morpheus_solo']['local_user']['gid'] = "
+"898\\nelasticsearch['uid'] = 896\\nelasticsearch['gid'] = "
+"896\\nrabbitmq['uid'] = 895\\nrabbitmq['gid'] = 895\\nguacd['uid'] = "
+"894\\nguacd['gid'] = 894"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:71
+#, python-brace-format
+msgid ""
+"appliance_url 'https://morpheus.localdomain'\n"
+"elasticsearch['es_hosts'] = {'192.168.104.01' => 9200, '192.168.104.02' "
+"=> 9200, '192.168.104.03' => 9200}\n"
+"elasticsearch['node_name'] = '192.168.104.03'\n"
+"elasticsearch['host'] = '0.0.0.0'\n"
+"rabbitmq['host'] = '0.0.0.0'\n"
+"rabbitmq['nodename'] = 'rabbit@node03'\n"
+"mysql['enable'] = false\n"
+"mysql['host'] = {'127.0.0.1' => 6446}\n"
+"mysql['morpheus_db'] = 'morpheus'\n"
+"mysql['morpheus_db_user'] = 'morpheus'\n"
+"mysql['morpheus_password'] = 'morpheusDbUserPassword'\n"
+"user['uid'] = 899\n"
+"user['gid'] = 899\n"
+"# at the time of this writing, local_user is not valid as an option so "
+"the full entry is needed\n"
+"node.default['morpheus_solo']['local_user']['uid'] = 898\n"
+"node.default['morpheus_solo']['local_user']['gid'] = 898\n"
+"elasticsearch['uid'] = 896\n"
+"elasticsearch['gid'] = 896\n"
+"rabbitmq['uid'] = 895\n"
+"rabbitmq['gid'] = 895\n"
+"guacd['uid'] = 894\n"
+"guacd['gid'] = 894"
+msgstr ""
+"appliance_url 'https://morpheus.localdomain'\\nelasticsearch['es_hosts'] = "
+"{'192.168.104.01' => 9200, '192.168.104.02' => 9200, '192.168.104.03' => "
+"9200}\\nelasticsearch['node_name'] = "
+"'192.168.104.03'\\nelasticsearch['host'] = '0.0.0.0'\\nrabbitmq['host'] = "
+"'0.0.0.0'\\nrabbitmq['nodename'] = 'rabbit@node03'\\nmysql['enable'] = "
+"false\\nmysql['host'] = {'127.0.0.1' => 6446}\\nmysql['morpheus_db'] = "
+"'morpheus'\\nmysql['morpheus_db_user'] = "
+"'morpheus'\\nmysql['morpheus_password'] = "
+"'morpheusDbUserPassword'\\nuser['uid'] = 899\\nuser['gid'] = 899\\n# at "
+"the time of this writing, local_user is not valid as an option so the full "
+"entry is needed\\nnode.default['morpheus_solo']['local_user']['uid'] = "
+"898\\nnode.default['morpheus_solo']['local_user']['gid'] = "
+"898\\nelasticsearch['uid'] = 896\\nelasticsearch['gid'] = "
+"896\\nrabbitmq['uid'] = 895\\nrabbitmq['gid'] = 895\\nguacd['uid'] = "
+"894\\nguacd['gid'] = 894"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:96
+msgid ""
+"The configurations above for ```mysql['host']`` shows a list of hosts, if"
+" the database has multiple endpoints.  Like other options in the "
+"configuration, ``mysql['host']`` can be a single entry, if the database "
+"has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` or "
+"``mysql['host'] = '10.100.10.111'``"
+msgstr ""
+"The configurations anterior for ```mysql['host']`` shows a list of hosts, "
+"if the database has multiple endpoints. Like other options en la "
+"configuration, ``mysql['host']`` puede ser a single entry, if the database "
+"has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` o "
+"``mysql['host'] = '10.100.10.111'``"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:98
+msgid ""
+"The elasticsearch node names set in ``elasticsearch['node_name']`` must "
+"match the host entries in elasticsearch['es_hosts']. ``node_name`` is "
+"used for ``node.name`` and ``es_hosts`` is used for "
+"``cluster.initial_master_nodes`` in the generated elasticsearch.yml "
+"config. Node names that do not match entries in "
+"cluster.initial_master_nodes will cause clustering issues."
+msgstr ""
+"The elasticsearch node names set in ``elasticsearch['node_name']`` must "
+"match the host entries in elasticsearch['es_hosts']. ``node_name`` is used "
+"for ``node.name`` y ``es_hosts`` is used for "
+"``cluster.initial_master_nodes`` en la generated elasticsearch.yml config. "
+"Node names that do not match entries in cluster.initial_master_nodes will "
+"cause clustering issues."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:100
+msgid ""
+"The rabbitmq['node_name'] in the Node 1 example above is "
+"**rabbit@node01**.  The shortname for the server of node01 must be "
+"resolvable by DNS or /etc/hosts of all other hosts, same for node02 and "
+"node03.  FQDNs cannot be used here"
+msgstr ""
+"The rabbitmq['node_name'] in the Node 1 example above is "
+"**rabbit@node01**.  The shortname for el servidor of node01 debe ser "
+"resolvable by DNS o /etc/hosts of all other hosts, same for node02 y "
+"node03.  FQDNs cannot be used here"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:74
+msgid ""
+"Mount shared storage at ``/var/opt/morpheus/morpheus-ui`` on each App "
+"node if you have not already done so. Create the directory if it does not"
+" already exist."
+msgstr ""
+"Mount almacenamiento compartido at ``/var/opt/morpheus/morpheus-ui`` on "
+"each App node if you have not already done so. Create the directory if it "
+"does not already exist."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:76
+msgid "Reconfigure on all nodes"
+msgstr "Reconfigure on todos los nodos"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:83
+msgid "[root@node: ~] morpheus-ctl reconfigure"
+msgstr "[root@node: ~] morpheus-ctl reconfigure"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:87
+msgid ""
+"|morpheus| will come up on all nodes and Elasticsearch will auto-cluster."
+" RabbitMQ will need to be clustered manually after reconfigure completes "
+"on all nodes."
+msgstr ""
+"|morpheus| will come up on all nodes y Elasticsearch will auto-cluster. "
+"RabbitMQ will necesitan ser clustered manually after reconfigure completes "
+"on all nodes."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:2
+msgid "Clustering Embedded RabbitMQ"
+msgstr "Clustering Embedded RabbitMQ"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:4
+msgid ""
+"Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ "
+"clustering (Node 1 for this example). On the nodes that are **NOT** the "
+"SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ."
+msgstr ""
+"Select one of los nodos to be your Source Of Truth (SOT) for RabbitMQ "
+"clustering (Node 1 for this example). On los nodos that are **NOT** the "
+"SOT (Nodes 2 & 3 in this example), begin by stopping the UI y RabbitMQ."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:11
+msgid ""
+"[root@node2 ~] morpheus-ctl stop morpheus-ui\n"
+"[root@node2 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node2 ~] rabbitmqctl stop_app\n"
+"[root@node2 ~] morpheus-ctl stop rabbitmq"
+msgstr ""
+"[root@node2 ~] morpheus-ctl stop morpheus-ui\\n[root@node2 ~] source "
+"/opt/morpheus/embedded/rabbitmq/.profile\\n[root@node2 ~] rabbitmqctl "
+"stop_app\\n[root@node2 ~] morpheus-ctl stop rabbitmq"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:21
+msgid ""
+"[root@node3 ~] morpheus-ctl stop morpheus-ui\n"
+"[root@node3 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node3 ~] rabbitmqctl stop_app\n"
+"[root@node3 ~] morpheus-ctl stop rabbitmq"
+msgstr ""
+"[root@node3 ~] morpheus-ctl stop morpheus-ui\\n[root@node3 ~] source "
+"/opt/morpheus/embedded/rabbitmq/.profile\\n[root@node3 ~] rabbitmqctl "
+"stop_app\\n[root@node3 ~] morpheus-ctl stop rabbitmq"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:29
+msgid "Then on the SOT node, we need to copy the secrets for RabbitMQ."
+msgstr "Then on the SOT node, we necesita copy the secrets for RabbitMQ."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:31
+msgid "Begin by copying secrets from the SOT node to the other nodes."
+msgstr "Begin by copying secrets desde the SOT node to the other nodes."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:38
+#, python-brace-format
+msgid ""
+"root@node1: ~$ cat /etc/morpheus/morpheus-secrets.json\n"
+"\n"
+" \"rabbitmq\": {\n"
+"   \"morpheus_password\": \"***REDACTED***\",\n"
+"   \"queue_user_password\": \"***REDACTED***\",\n"
+"   \"cookie\": \"***REDACTED***\"\n"
+" },"
+msgstr ""
+"root@node1: ~$ cat /etc/morpheus/morpheus-secrets.json\\n\\n "
+"\\\"rabbitmq\\\": {\\n   \\\"morpheus_password\\\": "
+"\\\"***REDACTED***\\\",\\n   \\\"queue_user_password\\\": "
+"\\\"***REDACTED***\\\",\\n   \\\"cookie\\\": \\\"***REDACTED***\\\"\\n },"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:51
+#, python-brace-format
+msgid ""
+"[root@node2 ~] vi /etc/morpheus/morpheus-secrets.json\n"
+"\n"
+"  \"rabbitmq\": {\n"
+"    \"morpheus_password\": \"***node01_morpheus_password***\",\n"
+"    \"queue_user_password\": \"***node01_queue_user_password***\",\n"
+"    \"cookie\": \"***node01_cookie***\"\n"
+"  },"
+msgstr ""
+"[root@node2 ~] vi /etc/morpheus/morpheus-secrets.json\\n\\n  "
+"\\\"rabbitmq\\\": {\\n    \\\"morpheus_password\\\": "
+"\\\"***node01_morpheus_password***\\\",\\n    \\\"queue_user_password\\\": "
+"\\\"***node01_queue_user_password***\\\",\\n    \\\"cookie\\\": "
+"\\\"***node01_cookie***\\\"\\n  },"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:64
+#, python-brace-format
+msgid ""
+"[root@node3 ~] vi /etc/morpheus/morpheus-secrets.json\n"
+"\n"
+"\"rabbitmq\": {\n"
+"  \"morpheus_password\": \"***node01_morpheus_password***\",\n"
+"  \"queue_user_password\": \"***node01_queue_user_password***\",\n"
+"  \"cookie\": \"***node01_cookie***\"\n"
+"},"
+msgstr ""
+"[root@node3 ~] vi "
+"/etc/morpheus/morpheus-secrets.json\\n\\n\\\"rabbitmq\\\": {\\n  "
+"\\\"morpheus_password\\\": \\\"***node01_morpheus_password***\\\",\\n  "
+"\\\"queue_user_password\\\": \\\"***node01_queue_user_password***\\\",\\n  "
+"\\\"cookie\\\": \\\"***node01_cookie***\\\"\\n},"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:74
+msgid "Then copy the erlang.cookie from the SOT node to the other nodes"
+msgstr "Then copy the erlang.cookie desde the SOT node to the other nodes"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:81
+msgid ""
+"root@node1: ~$ cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie\n"
+"\n"
+"# 754363AD864649RD63D28"
+msgstr ""
+"root@node1: ~$ cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie\\n\\n# "
+"754363AD864649RD63D28"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:90
+msgid ""
+"[root@node2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie\n"
+"\n"
+"# node01_erlang_cookie"
+msgstr ""
+"[root@node2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie\\n\\n# "
+"node01_erlang_cookie"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:99
+msgid ""
+"[root@node3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie\n"
+"\n"
+"# node01_erlang_cookie"
+msgstr ""
+"[root@node3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie\\n\\n# "
+"node01_erlang_cookie"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:105
+msgid ""
+"Once the secrets and cookie are copied from node01 to nodes 2 & 3, run a "
+"reconfigure on nodes 2 & 3."
+msgstr ""
+"Once the secrets y cookie are copied desde node01 to nodes 2 & 3, run a "
+"reconfigure on nodes 2 & 3."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:112
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:178
+msgid "[root@node2 ~] morpheus-ctl reconfigure"
+msgstr "[root@node2 ~] morpheus-ctl reconfigure"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:119
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:185
+msgid "[root@node3 ~] morpheus-ctl reconfigure"
+msgstr "[root@node3 ~] morpheus-ctl reconfigure"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:123
+msgid "Next we will join nodes 2 & 3 to the cluster."
+msgstr "Next we will join nodes 2 & 3 to el clúster."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
+msgid "The commands below must be run at root"
+msgstr "The commands abajo debe ser run at root"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:132
+msgid ""
+"[root@node2 ~] morpheus-ctl stop rabbitmq\n"
+"[root@node2 ~] morpheus-ctl start rabbitmq\n"
+"[root@node2 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node2 ~] rabbitmqctl stop_app\n"
+"\n"
+"# Stopping node 'rabbit@node02' ...\n"
+"\n"
+"[root@node2 ~] rabbitmqctl join_cluster rabbit@node01\n"
+"\n"
+"# Clustering node 'rabbit@node02' with 'rabbit@node01' ...\n"
+"\n"
+"[root@node2 ~] rabbitmqctl start_app\n"
+"\n"
+"# Starting node 'rabbit@node02' ..."
+msgstr ""
+"[root@node2 ~] morpheus-ctl stop rabbitmq\\n[root@node2 ~] morpheus-ctl "
+"start rabbitmq\\n[root@node2 ~] source "
+"/opt/morpheus/embedded/rabbitmq/.profile\\n[root@node2 ~] rabbitmqctl "
+"stop_app\\n\\n# Stopping node 'rabbit@node02' ...\\n\\n[root@node2 ~] "
+"rabbitmqctl join_cluster rabbit@node01\\n\\n# Clustering node "
+"'rabbit@node02' con 'rabbit@node01' ...\\n\\n[root@node2 ~] rabbitmqctl "
+"start_app\\n\\n# Starting node 'rabbit@node02' ..."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:152
+msgid ""
+"[root@node3 ~] morpheus-ctl stop rabbitmq\n"
+"[root@node3 ~] morpheus-ctl start rabbitmq\n"
+"[root@node3 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node3 ~] rabbitmqctl stop_app\n"
+"\n"
+"# Stopping node 'rabbit@node03' ...\n"
+"\n"
+"[root@node3 ~] rabbitmqctl join_cluster rabbit@node01\n"
+"\n"
+"# Clustering node 'rabbit@node03' with 'rabbit@node01' ...\n"
+"\n"
+"[root@node3 ~] rabbitmqctl start_app\n"
+"\n"
+"# Starting node 'rabbit@node03' ..."
+msgstr ""
+"[root@node3 ~] morpheus-ctl stop rabbitmq\\n[root@node3 ~] morpheus-ctl "
+"start rabbitmq\\n[root@node3 ~] source "
+"/opt/morpheus/embedded/rabbitmq/.profile\\n[root@node3 ~] rabbitmqctl "
+"stop_app\\n\\n# Stopping node 'rabbit@node03' ...\\n\\n[root@node3 ~] "
+"rabbitmqctl join_cluster rabbit@node01\\n\\n# Clustering node "
+"'rabbit@node03' con 'rabbit@node01' ...\\n\\n[root@node3 ~] rabbitmqctl "
+"start_app\\n\\n# Starting node 'rabbit@node03' ..."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:169
+msgid ""
+"If you receive an error ``unable to connect to epmd (port 4369) on "
+"node01: nxdomain (non-existing domain)`` make sure to add all IPs and "
+"short (non-fqdn) hostnames to the ``/etc/hosts`` file to ensure each node"
+" can resolve the other hostnames."
+msgstr ""
+"If you receive an error ``unable to connect to epmd (port 4369) on node01: "
+"nxdomain (non-existing domain)`` asegúrese de para agregar todos IPs y "
+"short (non-fqdn) hostnames to the ``/etc/hosts`` file to ensure cada nodo "
+"can resolve the otros hostnames."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:171
+msgid "Next reconfigure Nodes 2 & 3"
+msgstr "Next reconfigure Nodes 2 & 3"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:189
+msgid ""
+"The last thing to do is start the |morpheus| UI on the two nodes that are"
+" NOT the SOT node."
+msgstr ""
+"The last thing to do is start the |morpheus| UI on the two nodes that are "
+"NOT the SOT node."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:196
+msgid "[root@node2 ~] morpheus-ctl start morpheus-ui"
+msgstr "[root@node2 ~] morpheus-ctl start morpheus-ui"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:203
+msgid "[root@node3 ~] morpheus-ctl start morpheus-ui"
+msgstr "[root@node3 ~] morpheus-ctl start morpheus-ui"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:208
+msgid ""
+"You will be able to verify that the UI services have restarted properly "
+"by inspecting the logfiles. A standard practice after running a restart "
+"is to tail the UI log file."
+msgstr ""
+"You será able to verify then la UI services have restarted properly by "
+"inspecting the logfiles. A standard practice after running a restart is to "
+"tail the UI log file."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:215
+msgid "[root@node2 ~] morpheus-ctl tail morpheus-ui"
+msgstr "[root@node2 ~] morpheus-ctl tail morpheus-ui"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:222
+msgid "[root@node3 ~] morpheus-ctl tail morpheus-ui"
+msgstr "[root@node3 ~] morpheus-ctl tail morpheus-ui"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:226
+msgid ""
+"The UI should be available once the Morpheus logo is displayed in the "
+"logs. Look for the ascii logo accompanied by the install version and "
+"start time:"
+msgstr ""
+"The UI debería ser disponible once the Morpheus logo is displayed in the "
+"logs. Look for the ascii logo accompanied by the install version y start "
+"time:"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:229
+msgid ""
+"timestamp:    __  ___              __\n"
+"timestamp:   /  |/  /__  _______  / /  ___ __ _____\n"
+"timestamp:  / /|_/ / _ \\/ __/ _ \\/ _ \\/ -_) // (_-<\n"
+"timestamp: /_/  /_/\\___/_/ / .__/_//_/\\__/\\_,_/___/\n"
+"timestamp: ****************************************\n"
+"timestamp:   Version: |morphver|\n"
+"timestamp:   Start Time: xxx xxx xxx 00:00:00 UTC 2024\n"
+"timestamp: ****************************************"
+msgstr ""
+"timestamp:    __  ___              __\\ntimestamp:   /  |/  /__  _______  "
+"/ /  ___ __ _____\\ntimestamp:  / /|_/ / _ \\\\/ __/ _ \\\\/ _ \\\\/ -_) "
+"// (_-<\\ntimestamp: /_/  /_/\\\\___/_/ / "
+".__/_//_/\\\\__/\\\\_,_/___/\\ntimestamp: "
+"****************************************\\ntimestamp:   Version: "
+"|morphver|\\ntimestamp:   Start Time: xxx xxx xxx 00:00:00 UTC "
+"2024\\ntimestamp: ****************************************"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_elastic.rst:2
+msgid "Embedded Elasticsearch"
+msgstr "Embedded Elasticsearch"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_elastic.rst:3
+msgid "Morpheus clusters Elasticsearch automatically."
+msgstr "Morpheus clusters Elasticsearch automatically."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_lb.rst:2
+msgid "Load Balancer"
+msgstr "Balanceador de carga"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_lb.rst:4
+msgid "Configure your load balancer to distribute traffic between the app nodes."
+msgstr "Configure your load balancer to distribute traffic entre the app nodes."
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_lb.rst:6
+msgid ""
+"You can see some examples here: `Load Balancer Configuration "
+"<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
+"#load-balancer-configuration>`_"
+msgstr "You can see some examples here: `Load Balancer Configuration <T0>`_"
+

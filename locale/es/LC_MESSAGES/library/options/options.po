@@ -1,0 +1,2351 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/options/options.rst:2
+msgid "Options"
+msgstr "Opciones"
+
+#: ../../library/options/options.rst:4
+msgid ""
+"Options are user-defined custom inputs that are used throughout "
+"|morpheus|. Depending on the type of Input being created, users may need "
+"to create only an Input, or it might need to be paired with an Option "
+"List. Option Lists are static or dynamic lists of selections that would "
+"be associated with an Input if the user must make choices from a select "
+"list or typeahead field. This section discusses how to create different "
+"types of Inputs depending on the situation and powerful tools the user "
+"can take advantage of, such as dynamically filtered cascading inputs, "
+"logically generated Option Lists called from local or remote sources, and"
+" more."
+msgstr "Options son user-defined custom inputs ese/esa son utilizado/utilizada throughout |morpheus|. Depending en el/la type de Input being created, users puede/n need a create solo un/una Input, o it might need a be paired con un/una Lista de opciones. Listas de opciones son static o dynamic lists de selections ese/esa would be asociado/asociada con un/una Input si el/la user debe/n make choices desde un/una select list o typeahead field. Este/Esta section discusses how a create diferente types de Inputs depending en el/la situation y powerful tools el/la user puede/n take advantage of, such como dynamically filtered cascading inputs, logically generated Listas de opciones called desde local o remote sources, y more."
+
+#: ../../library/options/forms.rst:2
+msgid "Forms"
+msgstr "Formularios"
+
+#: ../../library/options/forms.rst:12
+msgid ""
+"Forms are designed to be used with `Catalog Items "
+"<https://docs.morpheusdata.com/en/latest/library/blueprints/blueprints.html"
+"#catalog-items>`_. Using the provided tools, build forms to provide the "
+"appropriate customization fields for endusers in the Provisioning "
+"Catalog. Catalog Items can also be built using |morpheus| Inputs but "
+"Forms provide unique capabilities that open up additional functionality "
+"and simplify the process. Once a Form is created it is then available to "
+"be associated with a Catalog Item. This section discusses the creation of"
+" Forms, the available options, and how they can be used effectively to "
+"create Catalog Items."
+msgstr "Forms are designed to be used with `Catalog Items <https://docs.morpheusdata.com/en/latest/library/blueprints/blueprints.html#catalog-items>`_. Using the provided tools, build forms to provide the appropriate customization fields for endusers in the Provisioning Catalog. Catalog Items can also be built using |morpheus| Inputs but Forms provide unique capabilities that open up additional functionality and simplify the process. Once a Form is created it is then available to be associated with a Catalog Item. This section discusses the creation of Forms, the available options, and how they puede ser used effectively to create Catalog Items."
+
+#: ../../library/options/forms.rst:15
+msgid "Creating a New Form"
+msgstr "Crear un nuevo formulario"
+
+#: ../../library/options/forms.rst:17
+msgid "To begin a new Form, navigate to |LibOptFor| and click :guilabel:`+ ADD`."
+msgstr "To begin a new Form, navigate to |LibOptFor| and click :guilabel:`+ ADD`."
+
+#: ../../library/options/forms.rst:20
+msgid ".. image:: images/forms/newForm.png"
+msgstr ".. image:: images/forms/newForm.png"
+
+#: ../../library/options/forms.rst:22
+msgid "Adding Field Groups"
+msgstr "Agregar grupos de campos"
+
+#: ../../library/options/forms.rst:24
+msgid ""
+"Field Groups are logical groupings of Input fields on your Form. "
+"Especially with larger forms, they make the Form easier to read and use. "
+"You can even collapse down sections of less commonly needed Inputs to "
+"keep your Forms clean. By default a new Form has no Field Groups but one "
+"can be added by clicking \"+ ADD FIELD GROUP\" in the center of the NEW "
+"FORM modal (which can be seen in the screenshot above). Field Groups can "
+"accept the following options:"
+msgstr "Field Grupos are logical groupings of Input fields on your Form. Especially with larger forms, they make the Form easier to read and use. You can even collapse down sections of less commonly needed Inputs to keep your Forms clean. By default a new Form has no Field Grupos but one can be added by clicking \"+ ADD FIELD GROUP\" in the center of the NEW FORM modal (which puede ser seen in the screenshot above). Field Grupos can accept the following options:"
+
+#: ../../library/options/forms.rst:26
+msgid "**NAME:** The name and label for the Field Group"
+msgstr "**NAME:** El/La name y label para el/la Field Grupo"
+
+#: ../../library/options/forms.rst:27
+msgid "**DESCRIPTION:** And optional description for the Field Group"
+msgstr "**DESCRIPTION:** And opcional description para el/la Field Grupo"
+
+#: ../../library/options/forms.rst:28
+msgid ""
+"**COLLAPSIBLE:** When marked, the user can collapse (hide) or show the "
+"Field Group"
+msgstr "**COLLAPSIBLE:** Cuando marked, el/la user puede/n collapse (hide) o show el/la Field Grupo"
+
+#: ../../library/options/forms.rst:29
+msgid ""
+"**COLLAPSIBLE BY DEFAULT:** If the Field Group is marked collapsible, "
+"this option will appear to make the Field Group shown (unchecked) or "
+"hidden (checked) by default"
+msgstr "**COLLAPSIBLE BY DEFAULT:** Si el/la Field Grupo es marked collapsible, este/esta option será/n appear a make el/la Field Grupo shown (unchecked) o hidden (checked) por default"
+
+#: ../../library/options/forms.rst:30
+msgid ""
+"**VISIBILITY FIELD:** Enter the fieldName of another Input and this Field"
+" Group will appear only when that Input has a value"
+msgstr "**VISIBILITY FIELD:** Enter el/la fieldName de another Input y este/esta Field Grupo será/n appear solo cuando ese/esa Input tiene un/una value"
+
+#: ../../library/options/forms.rst:33
+msgid ".. image:: images/forms/newFieldGroup.png"
+msgstr ".. image:: images/forms/newFieldGroup.png"
+
+#: ../../library/options/forms.rst:35
+msgid "Adding Inputs"
+msgstr "Agregar entradas"
+
+#: ../../library/options/forms.rst:37
+msgid ""
+"Inputs are the Form options themselves and can take various forms, such "
+"as text fields, checkboxes, select lists or other custom forms. Inputs "
+"can be added outside of any created Field Groups or they may be added "
+"within them. Click :guilabel:`+ ADD INPUT` within the desired area "
+"(inside a Field Group or outside of them)."
+msgstr "Inputs are the Form options themselves and can take various forms, such as text fields, checkboxes, select lists or other custom forms. Inputs puede ser added outside of any created Field Grupos or they may be added within them. Click :guilabel:`+ ADD INPUT` within the desired area (inside a Field Grupo or outside of them)."
+
+#: ../../library/options/forms.rst:39
+msgid ""
+"When adding Inputs, you may add any Input (|LibOptInp|) that is pre-"
+"existing to your form. Set \"USE EXISTING\" to \"Yes\" and make the "
+"selection from the \"EXISTING OPTION TYPE\" typeahead field. Once "
+"selected, you'll notice that all other settings cannot be edited. If "
+"needed, edit this Input within the Inputs section (|LibOptInp|)."
+msgstr "When adding Inputs, you may add any Input (|LibOptInp|) that is pre-existing to your form. Set \"USE EXISTING\" to \"Yes\" and make the selection from the \"EXISTING OPTION TYPE\" typeahead field. Once selected, you'll notice that all other settings no puede ser edited. If needed, edit this Input within the Inputs section (|LibOptInp|)."
+
+#: ../../library/options/forms.rst:42
+msgid ".. image:: images/forms/existingInput.png"
+msgstr ".. image:: images/forms/existingInput.png"
+
+#: ../../library/options/forms.rst:43
+msgid ""
+"When adding Inputs, you may also create new Inputs within the Form "
+"builder. Some available types are no different than other Inputs you "
+"might make in the Input section (|LibOptInp|) but other types are unique "
+"to Forms. To create a new Input, set \"USE EXISTING\" to \"No\" and "
+"select the desired type."
+msgstr "Cuando adding Inputs, you may also create new Inputs within the Form builder. Some available types are no different than other Inputs you might make in the Input section (|LibOptInp|) but other types are unique to Forms. To create a new Input, set \"USE EXISTING\" to \"No\" and select the desired type."
+
+#: ../../library/options/forms.rst:45
+msgid ""
+"Input types are organized by categories. Inputs in the basic category are"
+" primarily the same types of Inputs that can be made in the Inputs "
+"section (|LibOptInp|). These include text fields, select lists, checkbox "
+"arrays, numerical inputs, and more. You can read more about the basic "
+"Input types in |morpheus| `Input documentation "
+"<https://docs.morpheusdata.com/en/latest/library/options/options.html#inputs>`_."
+msgstr "Input types are organized by categories. Inputs in the basic category are primarily the same types of Inputs that puede ser made in the Inputs section (|LibOptInp|). These include text fields, select lists, checkbox arrays, numerical inputs, and more. You can read more about the basic Input types in |morpheus| `Input documentation <https://docs.morpheusdata.com/en/latest/library/options/options.html#inputs>`_."
+
+#: ../../library/options/forms.rst:47
+msgid ""
+"Inputs in the Advanced and Provisioning categories are unique to Forms "
+"and require additional explanation. Advanced inputs are similar to basic "
+"but provide some sort of data manipulation capability or have a specific "
+"targeted function. See the list of advanced Input types below:"
+msgstr "Inputs en el/la Advanced y Provisioning categories son unique a Forms y require additional explanation. Advanced inputs son similar a basic but provide algunos/algunas sort de data manipulation capability o tienen un/una específico/específica targeted function. See el/la list de advanced Input types below:"
+
+#: ../../library/options/forms.rst:49
+msgid ""
+"**Byte Size:** Allows numerical disk or storage size values to be given "
+"with selectable units (MB, GB, etc.). When a value is input and the unit "
+"is changed, the same value will be automatically computed into the new "
+"unit amount (1 GB > 1024 MB, for example). Users may select which unit is"
+" initially loaded by default."
+msgstr "**Byte Size:** Allows numerical disk o storage size values a be given con selectable units (MB, GB, etc.). Cuando un/una value es input y el/la unit es changed, el/la mismo/misma value será/n be automatically computed en el/la nuevo/nueva unit amount (1 GB > 1024 MB, para example). Usuarios puede/n select el/la cual unit es initially loaded por default."
+
+#: ../../library/options/forms.rst:50
+msgid ""
+"**Code Editor:** Gives the user a code editor field. Set a language or "
+"markdown format in the \"HIGHLIGHTING\" field to enable automatic syntax "
+"highlighting and spacing for the user. For example, the user could enter "
+"a provisioning shell script for their workload or provide a custom JSON "
+"payload at provision time (complete with syntax highlighting for easy "
+"entry)."
+msgstr "**Code Editor:** Gives el/la user un/una code editor field. Set un/una language o markdown format en el/la \"HIGHLIGHTING\" field a enable automatic syntax highlighting y spacing para el/la user. For example, el/la user could enter un/una provisioning shell script para their workload o provide un/una custom JSON payload en provision time (complete con syntax highlighting para easy entry)."
+
+#: ../../library/options/forms.rst:51
+msgid ""
+"**File Content:** Access file content either locally entered or sourced "
+"from an integrated repository or outside URL"
+msgstr "**File Content:** Access file content either locally entered or sourced from an integrated repository or outside URL"
+
+#: ../../library/options/forms.rst:52
+msgid ""
+"**Icon Picker:** Allows the user to select an icon for their workload at "
+"provision time. The user may select from previously uploaded icons, "
+"upload their own, or use the built-in icon generator tool to create a "
+"unique icon right in the Form"
+msgstr "**Icon Picker:** Allows el/la user a select un/una icon para their workload en provision time. El/La user puede/n select desde previously uploaded icons, upload their own, o use el/la built-in icon generator tool a create un/una unique icon right en el/la Form"
+
+#: ../../library/options/forms.rst:53
+msgid ""
+"**Key Value:** Allows the user to enter as many key/value pairs as they'd"
+" like which can be onboarded into the workload config at provision time"
+msgstr "**Key Value:** Allows the user to enter as many key/value pairs as they'd like which puede ser onboarded into the workload config at provision time"
+
+#: ../../library/options/forms.rst:54
+msgid ""
+"**Text Array:** Allows the user to enter multiple values separated by a "
+"delimiter of your choosing. |morpheus| will parse out the entered values "
+"which can be individually deleted if desired before the form is submitted"
+msgstr "**Text Array:** Allows the user to enter multiple values separated by a delimiter of your choosing. |morpheus| will parse out the entered values which puede ser individually deleted if desired before the form is submitted"
+
+#: ../../library/options/forms.rst:55
+msgid ""
+"**Typeahead:** Similar to Select List, especially for very long lists. "
+"Search for the desired value by typing the first few letters as a search "
+"parameter. Users may also browse the complete list by clicking the "
+"dropdown icon. This Input type can also support multiple selections, if "
+"needed. Associate this type of Input with a pre-defined Option List or "
+"create a new Option List right inside the Form builder"
+msgstr "**Typeahead:** Similar a Select List, especially para very long lists. Search para el/la desired value por typing el/la primer/primera few letters como un/una search parameter. Usuarios puede/n también browse el/la complete list por clicking el/la dropdown icon. Este/Esta Input type puede/n también support multiple selections, si needed. Associate este/esta type de Input con un/una pre-defined Lista de opciones o create un/una nuevo/nueva Lista de opciones right inside el/la Form builder"
+
+#: ../../library/options/forms.rst:58
+msgid ".. image:: images/forms/forms1.png"
+msgstr ".. image:: images/forms/forms1.png"
+
+#: ../../library/options/forms.rst:59
+msgid ""
+"Inputs in the provisioning category are specifically tied to some "
+"provisioning construct in |morpheus| (Groups, Clouds, etc.). They're very"
+" useful for allowing users to select specific provisioning constructs, "
+"such as the Group, Cloud, Layout, or Network they wish to provision, and "
+"can automatically inject the user's selection into the Catalog Item. This"
+" makes for much simpler Catalog Item development as compared to setting "
+"up the configuration using just the Input construct outside of Forms."
+msgstr "Inputs en el/la provisioning category son specifically tied a algunos/algunas provisioning construct en |morpheus| (Grupos, Nubes, etc.). They're very useful para allowing users a select específico/específica provisioning constructs, such como el/la Grupo, Nube, Layout, o Red they wish a provision, y puede/n automatically inject el/la user's selection en el/la Catalog Item. Este/Esta makes para much simpler Catalog Item development como compared a setting arriba el/la configuration using just el/la Input construct outside de Forms."
+
+#: ../../library/options/forms.rst:61
+msgid ""
+"Provisioning Inputs also include relevant reload and filtering behaviors "
+"by default. For example, your Cloud Input field will automatically reload"
+" after making a Group selection or your Layout Input field will "
+"automatically reload after setting a Group, Cloud, and Instance Type. "
+"This makes it very easy to create flexible Catalog Item forms that are "
+"useful across Clouds."
+msgstr "Provisioning Inputs también include relevant reload y filtering behaviors por default. For example, your Nube Input field será/n automatically reload después de making un/una Grupo selection o your Layout Input field será/n automatically reload después de setting un/una Grupo, Nube, y Tipo de instancia. Este/Esta makes it very easy a create flexible Catalog Item forms ese/esa son useful across Nubes."
+
+#: ../../library/options/forms.rst:63
+msgid ""
+"The following provisioning Input types are supported, each with their own"
+" automatic filtering behavior and auto-inject capability into the Catalog"
+" Item spec:"
+msgstr "El/La following provisioning Input types son supported, cada con their own automatic filtering behavior y auto-inject capability en el/la Catalog Item spec:"
+
+#: ../../library/options/forms.rst:65
+msgid "Cloud"
+msgstr "Nube"
+
+#: ../../library/options/forms.rst:66
+msgid "Disks"
+msgstr "Discos"
+
+#: ../../library/options/forms.rst:67
+msgid "Exposed Ports"
+msgstr "Puertos expuestos"
+
+#: ../../library/options/forms.rst:68
+msgid "Group"
+msgstr "Grupo"
+
+#: ../../library/options/forms.rst:69
+msgid "Layout"
+msgstr "Layout"
+
+#: ../../library/options/forms.rst:70
+msgid "Networks"
+msgstr "Redes"
+
+#: ../../library/options/forms.rst:71
+msgid "Plan"
+msgstr "Plan"
+
+#: ../../library/options/forms.rst:72
+msgid "Resource Pool"
+msgstr "Pool de recursos"
+
+#: ../../library/options/forms.rst:73
+msgid "Security Groups"
+msgstr "Grupos de seguridad"
+
+#: ../../library/options/forms.rst:74
+msgid "Tags"
+msgstr "Etiquetas"
+
+#: ../../library/options/forms.rst:75
+msgid "Vmw Folders"
+msgstr "Carpetas Vmw"
+
+#: ../../library/options/forms.rst:78
+msgid ".. image:: images/forms/forms2.png"
+msgstr ".. image:: images/forms/forms2.png"
+
+#: ../../library/options/forms.rst:79
+msgid ""
+"In order for provisioning Inputs to work properly, be sure to properly "
+"set the fields they should filter against. In the screenshot below you "
+"can see for a Resource Pool Input I've set the Group, Cloud, Layout, and "
+"Plan Inputs that it must be filtered against in order to work. Search for"
+" the Field Label of the target Input."
+msgstr "In order para provisioning Inputs a work properly, be sure a properly establecido/establecida el/la fields they debería/n filter against. In el/la screenshot abajo you puede/n see para un/una Resource Pool Input I've establecido/establecida el/la Grupo, Nube, Layout, y Plan Inputs ese/esa it debe/n be filtered against en order a work. Search para el/la Field Label de el/la target Input."
+
+#: ../../library/options/forms.rst:82
+msgid ".. image:: images/forms/poolFilters.png"
+msgstr ".. image:: images/forms/poolFilters.png"
+
+#: ../../library/options/forms.rst:83
+msgid ""
+"Once the type selected, the new Input will have many configuration "
+"options, most of which are the same options available when creating an "
+"Input from the Inputs section though some are new and some are presented "
+"in slightly different ways. The available options depend on the Input "
+"type selected but common options are shown in the expandable section "
+"below:"
+msgstr "Una vez que the type selected, the new Input will have many configuration options, most of which are the same options available when creating an Input from the Inputs section though some are new and some are presented in slightly different ways. The available options depend on the Input type selected but common options are shown in the expandable section below:"
+
+#: ../../library/options/forms.rst:87
+msgid "FIELD LABEL"
+msgstr "ETIQUETA DE CAMPO"
+
+#: ../../library/options/forms.rst:88
+msgid "The name and label of the Input"
+msgstr "El nombre y la etiqueta de la entrada"
+
+#: ../../library/options/forms.rst:89
+msgid "LOCALIZED LABEL"
+msgstr "ETIQUETA LOCALIZADA"
+
+#: ../../library/options/forms.rst:90
+msgid ""
+"If a localization code is selected, this field will have a translated "
+"label relative to the localization language selected for the appliance or"
+" user"
+msgstr "Si se selecciona un código de localización, este campo tendrá una etiqueta traducida relativa al idioma de localización seleccionado para el appliance o el usuario"
+
+#: ../../library/options/forms.rst:92 ../../library/options/option_types.rst:20
+msgid "FIELD NAME"
+msgstr "NOMBRE DE CAMPO"
+
+#: ../../library/options/forms.rst:92
+msgid ""
+"This is the Input fieldName property used to resolve the field value into"
+" code or to refer to this field for creating dynamic relationships with "
+"other Input fields"
+msgstr "Esta es la propiedad fieldName de la entrada utilizada para resolver el valor del campo en código o para referirse a este campo para crear relaciones dinámicas con otros campos de entrada"
+
+#: ../../library/options/forms.rst:94 ../../library/options/option_types.rst:22
+msgid ""
+"Field names should only contain letters, numbers, and hyphen (-), "
+"underscore (_), or dot'.' for separation."
+msgstr "Los nombres de campo solo deben contener letras, números y guión (-), guión bajo (_) o punto '.' como separación."
+
+#: ../../library/options/forms.rst:96 ../../library/options/option_types.rst:64
+msgid "DEFAULT VALUE"
+msgstr "VALOR PREDETERMINADO"
+
+#: ../../library/options/forms.rst:97 ../../library/options/option_types.rst:65
+msgid "Pre-populates field with a default value"
+msgstr "Rellena previamente el campo con un valor predeterminado"
+
+#: ../../library/options/forms.rst:98 ../../library/options/option_types.rst:62
+msgid "PLACEHOLDER"
+msgstr "MARCADOR DE POSICIÓN"
+
+#: ../../library/options/forms.rst:99 ../../library/options/option_types.rst:63
+msgid ""
+"Background text that populates inside a field for adding example values, "
+"does not set a value"
+msgstr "Texto de fondo que se muestra dentro de un campo para agregar valores de ejemplo, no establece un valor"
+
+#: ../../library/options/forms.rst:100
+#: ../../library/options/option_types.rst:66
+msgid "HELP BLOCK"
+msgstr "BLOQUE DE AYUDA"
+
+#: ../../library/options/forms.rst:101
+#: ../../library/options/option_types.rst:67
+msgid ""
+"Helpful text that will appear under your Input field to inform users "
+"about their selection"
+msgstr "Texto de ayuda que aparecerá debajo de su campo de entrada para informar a los usuarios sobre su selección"
+
+#: ../../library/options/forms.rst:102
+msgid "LOCALIZED HELP BLOCK"
+msgstr "BLOQUE DE AYUDA LOCALIZADO"
+
+#: ../../library/options/forms.rst:103
+msgid ""
+"If a localization code is selected, this field will have a translated "
+"help block relative to the localization language selected for the "
+"appliance or user"
+msgstr "Si se selecciona un código de localización, este campo tendrá un bloque de ayuda traducido relativo al idioma de localización seleccionado para el appliance o el usuario"
+
+#: ../../library/options/forms.rst:104
+#: ../../library/options/option_types.rst:68
+msgid "REQUIRED"
+msgstr "REQUERIDO"
+
+#: ../../library/options/forms.rst:105
+#: ../../library/options/option_types.rst:69
+msgid "Prevents User from proceeding without setting value"
+msgstr "Impide que el usuario continúe sin establecer un valor"
+
+#: ../../library/options/forms.rst:106
+#: ../../library/options/option_types.rst:24
+msgid "EXPORT AS TAG"
+msgstr "EXPORTAR COMO ETIQUETA"
+
+#: ../../library/options/forms.rst:107
+#: ../../library/options/option_types.rst:25
+msgid "Creates Tags for fieldName/value (key/value) on Instances"
+msgstr "Crea etiquetas para fieldName/valor (clave/valor) en las instancias"
+
+#: ../../library/options/forms.rst:108
+#: ../../library/options/option_types.rst:38
+msgid "DISPLAY VALUE ON DETAILS"
+msgstr "MOSTRAR VALOR EN DETALLES"
+
+#: ../../library/options/forms.rst:109
+#: ../../library/options/option_types.rst:39
+msgid ""
+"When selected, the Input label and value (label: value) will be visible "
+"in a list of custom options on the Instance detail page"
+msgstr "Cuando se selecciona, la etiqueta y el valor de la entrada (etiqueta: valor) serán visibles en una lista de opciones personalizadas en la página de detalles de la instancia"
+
+#: ../../library/options/forms.rst:110
+msgid "LOCKED"
+msgstr "BLOQUEADO"
+
+#: ../../library/options/forms.rst:111
+msgid ""
+"The Input field is visible but locked from being edited by the user. Any "
+"configured default values will be seen and set on the Instance but the "
+"user may not change the value"
+msgstr "El campo de entrada es visible pero está bloqueado para que el usuario no pueda editarlo. Cualquier valor predeterminado configurado se verá y se establecerá en la instancia, pero el usuario no podrá cambiar el valor"
+
+#: ../../library/options/forms.rst:112
+#: ../../library/options/option_types.rst:26
+msgid "HIDDEN"
+msgstr "OCULTO"
+
+#: ../../library/options/forms.rst:113
+msgid ""
+"Hides the field from view. The field is still active, however, and any "
+"configured default value would still be set"
+msgstr "Oculta el campo de la vista. Sin embargo, el campo sigue activo y cualquier valor predeterminado configurado se establecerá igualmente"
+
+#: ../../library/options/forms.rst:114
+msgid "EXCLUDE FROM SEARCH"
+msgstr "EXCLUIR DE BÚSQUEDA"
+
+#: ../../library/options/forms.rst:115
+msgid ""
+"For Select List and Typeahead Inputs, check to exclude the form data from"
+" being stored as variables (which can be leveraged from an API call when "
+"needed)"
+msgstr "Para entradas de tipo lista de selección y typeahead, marque para excluir los datos del formulario de ser almacenados como variables (que pueden aprovecharse desde una llamada API cuando sea necesario)"
+
+#: ../../library/options/forms.rst:116
+#: ../../library/options/option_types.rst:36
+msgid "EDITABLE"
+msgstr "EDITABLE"
+
+#: ../../library/options/forms.rst:117
+#: ../../library/options/option_types.rst:37
+msgid ""
+"Allow the Input value to be updated when editing an Instance (This "
+"attribute is hidden if SHOW ON EDIT is not selected)"
+msgstr "Permitir que el valor de la entrada se actualice al editar una instancia (este atributo está oculto si MOSTRAR AL EDITAR no está seleccionado)"
+
+#: ../../library/options/forms.rst:118
+#: ../../library/options/option_types.rst:34
+msgid "SHOW ON EDIT"
+msgstr "MOSTRAR AL EDITAR"
+
+#: ../../library/options/forms.rst:119
+#: ../../library/options/option_types.rst:35
+msgid "Display the Input name and value when editing an Instance"
+msgstr "Mostrar el nombre y valor de la entrada al editar una instancia"
+
+#: ../../library/options/forms.rst:120
+msgid "ALLOW MULTIPLE SELECTIONS"
+msgstr "PERMITIR SELECCIONES MÚLTIPLES"
+
+#: ../../library/options/forms.rst:121
+msgid ""
+"For certain Input types which support multiple selections (Select List "
+"and Typeahead, for example), check to allow multiple items to be selected"
+msgstr "Para ciertos tipos de entrada que admiten selecciones múltiples (lista de selección y typeahead, por ejemplo), marque para permitir la selección de múltiples elementos"
+
+#: ../../library/options/forms.rst:122
+#: ../../library/options/option_types.rst:28
+msgid "DEPENDENT FIELD"
+msgstr "CAMPO DEPENDIENTE"
+
+#: ../../library/options/forms.rst:123
+#: ../../library/options/option_types.rst:29
+msgid ""
+"The Field Name value for a field that will reload this Option List to "
+"present a different set of selections. Take a look at the section below "
+"on Cascading Inputs as well as the `associated article "
+"<https://support.morpheusdata.com/s/article/How-to-create-option-"
+"lists?language=en_US>`_ in our KnowledgeBase for documented examples of "
+"this feature"
+msgstr "El valor de nombre de campo para un campo que recargará esta lista de opciones para presentar un conjunto diferente de selecciones. Consulte la sección siguiente sobre entradas en cascada así como el `artículo asociado <https://support.morpheusdata.com/s/article/How-to-create-option-lists?language=en_US>`_ en nuestra base de conocimientos para ejemplos documentados de esta función"
+
+#: ../../library/options/forms.rst:124
+#: ../../library/options/option_types.rst:30
+msgid "VISIBILITY FIELD"
+msgstr "CAMPO DE VISIBILIDAD"
+
+#: ../../library/options/forms.rst:125
+msgid ""
+"A Field Name and selection value that will trigger this field to become "
+"visible. Currently, this only works when the Input is associated with a "
+"Service Catalog Item and viewed from the Service Catalog Persona "
+"perspective. See the section below on the Visibility Field for "
+"instructions on configuring this value"
+msgstr "Un/Una Field Name y selection value ese/esa será/n trigger este/esta field a become visible. Currently, este/esta solo works cuando el/la Input es asociado/asociada con un/una Service Catalog Item y viewed desde el/la Service Catalog Persona perspective. See el/la section abajo en el/la Visibility Field para instructions en configuring este/esta value"
+
+#: ../../library/options/forms.rst:126
+#: ../../library/options/option_types.rst:82
+msgid "VERIFY PATTERN"
+msgstr "PATRÓN DE VERIFICACIÓN"
+
+#: ../../library/options/forms.rst:127
+#: ../../library/options/option_types.rst:73
+msgid ""
+"For Text and Text Area-type Inputs. If desired, enter a regex pattern "
+"string and user entries must match the string to be accepted"
+msgstr "Para entradas de tipo texto y área de texto. Si lo desea, ingrese una cadena de patrón regex y las entradas del usuario deben coincidir con la cadena para ser aceptadas"
+
+#: ../../library/options/forms.rst:128
+#: ../../library/options/option_types.rst:32
+msgid "REQUIRE FIELD"
+msgstr "CAMPO DE REQUISITO"
+
+#: ../../library/options/forms.rst:129
+#: ../../library/options/option_types.rst:33
+msgid "A fieldName that will trigger required attribute of this option"
+msgstr "Un fieldName que activará el atributo de requerido de esta opción"
+
+#: ../../library/options/forms.rst:133
+msgid ""
+"A complete example form making use of provisioning Inputs and Field "
+"Groups is shown below:"
+msgstr "A complete example form making use of provisioning Inputs and Field Groups is shown below:"
+
+#: ../../library/options/forms.rst:136
+msgid ".. image:: images/forms/completeForm.png"
+msgstr ".. image:: images/forms/completeForm.png"
+
+#: ../../library/options/forms.rst:138
+msgid "Using Localized Labels on Form Fields"
+msgstr "Uso de etiquetas localizadas en campos de formulario"
+
+#: ../../library/options/forms.rst:140
+msgid ""
+"In creating a Form Input, you may enter a custom static text label by "
+"setting the FIELD LABEL attribute on the Input. Using this will set a "
+"label for your Form field which will appear the same for all users. "
+"Alternatively, you can set a dynamic text label by selecting an entry "
+"from the LOCALIZED LABEL typeahead field. By setting a Localized Label, "
+"the label will appear differently depending on the user's web browser "
+"language localization setting, the |morpheus| appliance localization "
+"setting (set in the `global settings area "
+"<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html>`_),"
+" or the user's own localization setting from within the `User Settings "
+"section "
+"<https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html>`_."
+" More specific localization settings (such as a user's setting over the "
+"appliance-wide setting) override less specific settings."
+msgstr "In creating un/una Form Input, you puede/n enter un/una custom static text label por setting el/la FIELD LABEL attribute en el/la Input. Using este/esta será/n establecido/establecida un/una label para your Form field el/la cual será/n appear el/la mismo/misma para todos/todas users. Alternatively, you puede/n establecido/establecida un/una dynamic text label por selecting un/una entry desde el/la LOCALIZED LABEL typeahead field. By setting un/una Localized Label, el/la label será/n appear differently depending en el/la user's web browser language localization setting, el/la |morpheus| appliance localization setting (set en el/la `global settings area <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html>`_), o el/la user's own localization setting desde dentro de el/la `Usuario Settings section <https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html>`_. More específico/específica localization settings (such como un/una user's setting over el/la appliance-wide setting) override less específico/específica settings."
+
+#: ../../library/options/forms.rst:142
+msgid ""
+"As an example, I'll create a simple Form which has only a Group-type "
+"Input. Both the Field Label and Localized Label fields have been filled "
+"but the Localized Label takes precedence. Based on the localization "
+"settings for the user creating this Form, we see the label presented in "
+"US English as \"GROUP.\""
+msgstr "As un/una example, I'll create un/una simple Form el/la cual tiene solo un/una Grupo-type Input. Both el/la Field Label y Localized Label fields tienen been filled but el/la Localized Label takes precedence. Based en el/la localization settings para el/la user creating este/esta Form, we see el/la label presented en US English como \"GROUP.\""
+
+#: ../../library/options/forms.rst:145
+msgid ".. image:: images/provisioning/library/formLocalization/buildForm.png"
+msgstr ".. image:: images/provisioning/library/formLocalization/buildForm.png"
+
+#: ../../library/options/forms.rst:146
+msgid ""
+"If we then navigate to provision a Catalog Item based on this Form, we "
+"still see the US English \"GROUP\" field label as this specific user has "
+"a default localization of \"English (United States)\" in its User "
+"Settings menu."
+msgstr "Si we then navigate to provision a Catalog Item based on this Form, we still see the US English \"GROUP\" field label as this specific user has a default localization of \"English (United States)\" in its Usuario Settings menu."
+
+#: ../../library/options/forms.rst:149
+msgid ".. image:: images/provisioning/library/formLocalization/english.png"
+msgstr ".. image:: images/provisioning/library/formLocalization/english.png"
+
+#: ../../library/options/forms.rst:150
+msgid ""
+"However, if we select a different user which has a default localization "
+"of \"French,\" and go to provision the same Catalog Item, the field label"
+" is shown in French."
+msgstr "However, si we select un/una diferente user el/la cual tiene un/una predeterminado/predeterminada localization de \"French,\" y go a provision el/la mismo/misma Catalog Item, el/la field label es shown en French."
+
+#: ../../library/options/forms.rst:153
+msgid ".. image:: images/provisioning/library/formLocalization/french.png"
+msgstr ".. image:: images/provisioning/library/formLocalization/french.png"
+
+#: ../../library/options/forms.rst:154
+msgid ""
+"|morpheus| has several complete language packs and also allows users to "
+"contribute to new or in-progress language packs. If interested in "
+"creating or contributing to UI translations, take a look at `this YouTube"
+" video <https://www.youtube.com/watch?v=oX25kutg8vU>`_."
+msgstr "|morpheus| has several complete language packs and also permite a users to contribute to new or in-progress language packs. If interested in creating or contributing UI translations, take a look at `this YouTube video <https://www.youtube.com/watch?v=oX25kutg8vU>`_."
+
+#: ../../library/options/forms.rst:157
+msgid "Turning Forms into Catalog Items"
+msgstr "Convertir formularios en elementos de catálogo"
+
+#: ../../library/options/forms.rst:159
+msgid ""
+"Once created, Forms can be associated with Catalog Items in the same way "
+"individual Inputs could before Forms were added. Add a new Catalog Items "
+"(or edit an existing one) in |LibBluCat|. For complete details, refer to "
+"documentation on `creating Catalog Items "
+"<https://docs.morpheusdata.com/en/latest/library/blueprints/blueprints.html"
+"#building-catalog-instances>`_."
+msgstr "Once created, Forms puede ser associated with Catalog Items in the same way individual Inputs could before Forms were added. Add a new Catalog Items (or edit an existing one) in |LibBluCat|. For complete details, refer to documentation on `creating Catalog Items <https://docs.morpheusdata.com/en/latest/library/blueprints/blueprints.html#building-catalog-instances>`_."
+
+#: ../../library/options/option_types.rst:2
+msgid "Inputs"
+msgstr "Entradas"
+
+#: ../../library/options/option_types.rst:4
+msgid ""
+"Inputs are custom input fields that can be added to Instance Types and "
+"Layouts, then presented in Instance, App, and Cloning wizards. The "
+"resulting value is available in the Instance config map as "
+"<%=customOptions.fieldName%> or <%=customOptions['fieldName'], the latter"
+" syntax being required in certain situations such as when the field name "
+"contains a hyphen \"-\" (ex. <%=customOption['my-field-name']). The "
+"fieldName and value can also be exported as Tags."
+msgstr "Inputs are custom input fields that puede ser added to Tipos de instancia and Layouts, then presented in Instancia, App, and Cloning wizards. The resulting value is available in the Instancia config map as <%=customOptions.fieldName%> or <%=customOptions['fieldName'], the latter syntax being required in certain situations such as when the field name contains a hyphen \"-\" (ex. <%=customOption['my-field-name']). The fieldName and value can also be exported as Tags."
+
+msgid ".. image:: images/provisioning/library/new_option_type.png"
+msgstr ".. image:: images/provisioning/library/new_option_type.png"
+
+#: ../../library/options/option_types.rst:11
+msgid "Create Input"
+msgstr "Crear entrada"
+
+#: ../../library/options/option_types.rst:13
+msgid "All possible fields listed. Displayed fields depend on ``TYPE`` selection"
+msgstr "Todos los campos posibles listados. Los campos mostrados dependen de la selección de ``TYPE``"
+
+#: ../../library/options/option_lists.rst:15
+#: ../../library/options/option_types.rst:15
+msgid "NAME"
+msgstr "NOMBRE"
+
+#: ../../library/options/option_types.rst:16
+msgid "Name of the Input"
+msgstr "Nombre de la entrada"
+
+#: ../../library/options/option_lists.rst:17
+#: ../../library/options/option_types.rst:17
+msgid "DESCRIPTION"
+msgstr "DESCRIPCIÓN"
+
+#: ../../library/options/option_types.rst:18
+msgid "Description for reference in Input list view"
+msgstr "Descripción para referencia en la vista de lista de entradas"
+
+#: ../../library/options/option_types.rst:20
+msgid "This is the input fieldName property that the value gets assigned to"
+msgstr "Esta es la propiedad fieldName de la entrada a la que se asigna el valor"
+
+#: ../../library/options/option_types.rst:27
+msgid ""
+"When marked, this Input will be hidden from the user but the value will "
+"still be accessible. This allows for alternate Input types to be used as "
+"hidden Inputs than what is possible with \"Hidden\" type Inputs "
+"(described further below). This is also different from Input "
+"\"Visibility\" settings as the values of non-visible Inputs is not "
+"accessible for consumption in automation routines"
+msgstr "Cuando marked, this Input will be hidden from the user but the value will still be accessible. This allows for alternate Input types to be used as hidden Inputs than what is possible with \"Hidden\" type Inputs (described further below). This is also different from Input \"Visibility\" settings as the values of non-visible Inputs is not accessible for consumption in automation routines"
+
+#: ../../library/options/option_types.rst:31
+msgid ""
+"A Field Name and selection value that will trigger this field to become "
+"visible. Currently, this only works when the Input is associated with a "
+"Service Catalog Item and viewed from the Service Catalog Persona "
+"perspective. See the section below on the Visibility Field for "
+"instructions on configuring this value. It should also be noted that when"
+" an Input is not visible, its value is not available for consumption in "
+"automation routines. Use the \"Hidden\" flag (see above) to configure "
+"hidden yet accessible values"
+msgstr "Un/Una Field Name y selection value ese/esa será/n trigger este/esta field a become visible. Currently, este/esta solo works cuando el/la Input es asociado/asociada con un/una Service Catalog Item y viewed desde el/la Service Catalog Persona perspective. See el/la section abajo en el/la Visibility Field para instructions en configuring este/esta value. It debería/n también be noted ese/esa cuando un/una Input es ningún visible, its value es ningún disponible para consumption en automation routines. Use el/la \"Hidden\" flag (see above) a configure hidden yet accessible values"
+
+#: ../../library/options/option_lists.rst:23
+#: ../../library/options/option_types.rst:56
+msgid "TYPE"
+msgstr "TIPO"
+
+#: ../../library/options/option_types.rst:41
+msgid "**Text:** Text Input Field"
+msgstr "**Text:** Campo de entrada de texto"
+
+#: ../../library/options/option_types.rst:43
+msgid ""
+"**Text Area:** A text area input, when selected an additional option "
+"appears to allow the user to configure the default number of visible rows"
+" in the text area"
+msgstr "**Text Area:** Una entrada de área de texto; cuando se selecciona, aparece una opción adicional para permitir al usuario configurar el número predeterminado de filas visibles en el área de texto"
+
+#: ../../library/options/option_types.rst:45
+msgid ""
+"**Select List:** Populated by Option Lists, presents a manual or REST-"
+"populated dropdown list"
+msgstr "**Select List:** Poblado por listas de opciones, presenta una lista desplegable manual o poblada por REST"
+
+#: ../../library/options/option_types.rst:47
+msgid "**Checkbox:** Checkbox for ``on`` or ``off`` values"
+msgstr "**Checkbox:** Casilla de verificación para valores ``on`` u ``off``"
+
+#: ../../library/options/option_types.rst:49
+msgid "**Number:** Input field allowing only numbers"
+msgstr "**Number:** Campo de entrada que permite solo números"
+
+#: ../../library/options/option_types.rst:51
+msgid ""
+"**Typeahead:** Populated by Option Lists: Rather than presenting a "
+"potentially-large dropdown menu, the user can begin typing a selection "
+"into a text field and choose the desired option. Multiple selections can "
+"be allowed with this type by marking the 'ALLOW MULTIPLE SELECTIONS' box"
+msgstr "**Typeahead:** Poblado por listas de opciones: en lugar de presentar un menú desplegable potencialmente grande, el usuario puede comenzar a escribir una selección en un campo de texto y elegir la opción deseada. Se pueden permitir selecciones múltiples con este tipo marcando la casilla 'PERMITIR SELECCIONES MÚLTIPLES'"
+
+#: ../../library/options/option_types.rst:53
+msgid ""
+"**Hidden:** No field will be displayed, but the field name and default "
+"value will be added to the Instance config map for reference"
+msgstr "**Hidden:** No se mostrará ningún campo, pero el nombre del campo y el valor predeterminado se agregarán al mapa de configuración de la instancia como referencia"
+
+#: ../../library/options/option_types.rst:55
+msgid ""
+"**Password:** An input field with suitable encryption for accepting "
+"passwords"
+msgstr "**Password:** Un campo de entrada con cifrado adecuado para aceptar contraseñas"
+
+#: ../../library/options/option_types.rst:57
+msgid ""
+"**Radio List:** Populated by Option Lists, presents a selection of radio "
+"buttons for the provisioning user"
+msgstr "**Radio List:** Poblado por listas de opciones, presenta una selección de botones de radio para el usuario de aprovisionamiento"
+
+#: ../../library/options/option_types.rst:58
+msgid "LABEL"
+msgstr "ETIQUETA"
+
+#: ../../library/options/option_types.rst:59
+msgid ""
+"This is the input label that typically shows to the left of a custom "
+"option"
+msgstr "Esta es la etiqueta de entrada que normalmente se muestra a la izquierda de una opción personalizada"
+
+#: ../../library/options/option_types.rst:60
+msgid "ROWS"
+msgstr "FILAS"
+
+#: ../../library/options/option_types.rst:61
+msgid ""
+"For ``Textarea`` type Option Lists, determines how many text rows will be"
+" given when the Input is presented"
+msgstr "Para listas de opciones de tipo ``Textarea``, determina cuántas filas de texto se darán cuando se presente la entrada"
+
+#: ../../library/options/option_types.rst:70
+msgid "REMOVE NO SELECTION"
+msgstr "ELIMINAR SIN SELECCIÓN"
+
+#: ../../library/options/option_types.rst:71
+msgid ""
+"For Select List-type Inputs. When marked, the Input will default to the "
+"first item in the list rather than to an empty selection. This is "
+"especially useful when only one choice is anticipated to be in the list "
+"as it saves the user from manually making a default selection"
+msgstr "Para entradas de tipo lista de selección. Cuando está marcado, la entrada se establecerá por defecto en el primer elemento de la lista en lugar de una selección vacía. Esto es especialmente útil cuando se anticipa que solo habrá una opción en la lista, ya que evita que el usuario tenga que hacer una selección predeterminada manualmente"
+
+#: ../../library/options/option_types.rst:84
+msgid "DEFAULT CHECKED"
+msgstr "MARCADO POR DEFECTO"
+
+#: ../../library/options/option_types.rst:85
+msgid ""
+"For ``Checkbox`` types, when marked the Checkbox will be checked by "
+"default"
+msgstr "Para tipos ``Checkbox``, cuando está marcado, la casilla de verificación estará marcada por defecto"
+
+#: ../../library/options/option_lists.rst:41
+#: ../../library/options/option_lists.rst:125
+#: ../../library/options/option_types.rst:89
+msgid "OPTION LIST"
+msgstr "LISTA DE OPCIONES"
+
+#: ../../library/options/option_types.rst:87
+msgid ""
+"For ``Select List`` types, select a pre-existing Option List to set "
+"dropdown values"
+msgstr "Para tipos ``Select List``, seleccione una lista de opciones preexistente para establecer los valores del desplegable"
+
+#: ../../library/options/option_types.rst:89
+msgid ""
+"``Select List`` and ``Typeahead`` Inputs require creation and association"
+" of an Option List"
+msgstr "``Select List`` and ``Typeahead`` Inputs require creation and association of an Option List"
+
+#: ../../library/options/option_types.rst:92
+msgid "Cascading Inputs"
+msgstr "Entradas en cascada"
+
+#: ../../library/options/option_types.rst:94
+msgid ""
+"One powerful facet of |morpheus| Inputs is the ability to present users "
+"with different lists of input options based on their selections in other "
+"Inputs within the same wizard or modal. One common example, which is "
+"fully illustrated in this section, is to have a user select:"
+msgstr "One powerful facet de |morpheus| Inputs es el/la ability a present users con diferente lists de input options based en their selections en otro/otra Inputs dentro de el/la mismo/misma wizard o modal. One common example, el/la cual es fully illustrated en este/esta section, es a tienen un/una user select:"
+
+#: ../../library/options/option_types.rst:96
+msgid "The Group they wish to provision into..."
+msgstr "The Group they wish to provision into..."
+
+#: ../../library/options/option_types.rst:97
+msgid ""
+"Then select the target Cloud from a list limited to Clouds which are in "
+"the selected Group..."
+msgstr "Then select el/la target Nube desde un/una list limited a Nubes el/la cual son en el/la seleccionado/seleccionada Grupo..."
+
+#: ../../library/options/option_types.rst:98
+msgid ""
+"Then select the target network from a list limited to networks which are "
+"available to the selected Cloud *and* Group"
+msgstr "Then select el/la target network desde un/una list limited a networks el/la cual son disponible a el/la seleccionado/seleccionada Nube *and* Grupo"
+
+#: ../../library/options/option_types.rst:100
+msgid ""
+"To set this up, we will first configure our Inputs (custom option fields "
+"that can be applied to Instance Types and other |morpheus| constructs) "
+"and Option Lists (dynamic lists of possible choices which can be "
+"associated with Inputs and presented in a dropdown or typeahead format). "
+"Once the custom options are configured, we will associate them with a new"
+" service catalog item and take a look at how the user would interact with"
+" them."
+msgstr "To set this up, we will first configure our Inputs (custom option fields that can be applied to Tipos de instancia and other |morpheus| constructs) and Listas de opciones (dynamic lists of possible choices which puede ser associated with Inputs and presented in a dropdown or typeahead format). Once the custom options are configured, we will associate them with a new service catalog item and take a look at how the user would interact with them."
+
+#: ../../library/options/option_types.rst:103
+msgid "Group Custom Options"
+msgstr "Opciones personalizadas de grupo"
+
+#: ../../library/options/option_types.rst:105
+msgid ""
+"To begin, we will create a new `Option List "
+"<https://docs.morpheusdata.com/en/latest/provisioning/library/library.html"
+"#option-lists>`_ In this case, we will select type of \"Morpheus Api\" "
+"which will populate the list based on a call to the internal |morpheus| "
+"API. Option Lists can also be populated by calls to external REST APIs or"
+" even from static lists that you enter manually. When dynamically "
+"populating Option Lists, whether via |morpheus| API or an external API, "
+"translation and/or request scripts may be needed to prepare the request "
+"or translate the results. More on that as we build out the example."
+msgstr "To begin, we será/n create un/una nuevo/nueva `Lista de opciones <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#option-lists>`_ In este/esta case, we será/n select type de \"Morpheus Api\" el/la cual será/n populate el/la list based en un/una call a el/la internal |morpheus| API. Listas de opciones puede/n también be populated por calls a external REST APIs o even desde static lists ese/esa you enter manually. Cuando dynamically populating Listas de opciones, whether via |morpheus| API o un/una external API, translation and/or request scripts puede/n be needed a prepare el/la request o translate el/la results. More en ese/esa como we build fuera el/la example."
+
+#: ../../library/options/option_types.rst:107
+msgid ""
+"I have called my Option List \"Groups\" and selected \"Groups\" from the "
+"OPTION LIST menu. This simply indicates that Groups are the construct we "
+"want to call into our list from |morpheus| API. In this case, we want to "
+"present a list of all Groups to the user by their name and pass the Group"
+" database ID in the background. Since it is common to create Option Lists"
+" from |morpheus| API where the construct name is displayed to the user "
+"and the ID is passed, we actually do not need to input any translation "
+"scripts in this case. However, I will include a translation script here "
+"which does the same thing simply to provide more clarity to the example. "
+"|morpheus| `Option List documentation "
+"<https://docs.morpheusdata.com/en/latest/library/options/option_lists.html>`_"
+" includes additional details on available translation script inputs and "
+"which are available without translation as a convenience feature."
+msgstr "I tienen called my Lista de opciones \"Grupos\" y seleccionado/seleccionada \"Grupos\" desde el/la OPTION LIST menu. Este/Esta simply indicates ese/esa Grupos son el/la construct we want a call en our list desde |morpheus| API. In este/esta case, we want a present un/una list de todos/todas Grupos a el/la user por their name y pass el/la Grupo database ID en el/la background. Since it es common a create Listas de opciones desde |morpheus| API donde el/la construct name es displayed a el/la user y el/la ID es passed, we actually do ningún need a input cualquier translation scripts en este/esta case. However, I será/n include un/una translation script here el/la cual does el/la mismo/misma thing simply a provide más clarity a el/la example. |morpheus| `Lista de opciones documentation <https://docs.morpheusdata.com/en/latest/library/options/option_lists.html>`_ includes additional details en disponible translation script inputs y el/la cual son disponible sin translation como un/una convenience feature."
+
+#: ../../library/options/option_types.rst:109
+msgid ""
+"for (var x = 0; x < data.length; x++) {\n"
+"  results.push({name: data[x].name, value:data[x].id});\n"
+"}"
+msgstr "for (var x = 0; x < data.length; x++) {\\n  results.push({name: data[x].name, value:data[x].id});\\n}"
+
+#: ../../library/options/option_types.rst:115
+msgid ""
+"After saving the Option List, create the Input that presents the list we "
+"just created. I gave my Input the name of \"Selected Group\", field name "
+"of \"selectedGroup\", and label of \"Group\". For type, choose \"Select "
+"List\" and a new field will appear at the bottom of the modal where we "
+"can select the Option List we just created. With this configuration, the "
+"Input will present as a dropdown list containing the options called from "
+"our Option List."
+msgstr "Después de saving el/la Lista de opciones, create el/la Input ese/esa presents el/la list we just created. I gave my Input el/la name de \"Selected Grupo\", field name de \"selectedGrupo\", y label de \"Grupo\". For type, choose \"Select List\" y un/una nuevo/nueva field será/n appear en el/la bottom de el/la modal donde we puede/n select el/la Lista de opciones we just created. With este/esta configuration, el/la Input será/n present como un/una dropdown list containing el/la options called desde our Lista de opciones."
+
+#: ../../library/options/option_types.rst:118
+msgid "Cloud Custom Options"
+msgstr "Opciones personalizadas de nube"
+
+#: ../../library/options/option_types.rst:120
+msgid ""
+"Adding the Option List and Input for Clouds will be similar to the prior "
+"step with the exception that we will be including a request script which "
+"effectively filters the list of available Clouds to only those associated"
+" with the selected group. Follow the same process to start a new Option "
+"List, I have configured mine as follows:"
+msgstr "Adding el/la Lista de opciones y Input para Nubes será/n be similar a el/la prior step con el/la exception ese/esa we será/n be including un/una request script el/la cual effectively filters el/la list de disponible Nubes a solo esos/esas asociado/asociada con el/la seleccionado/seleccionada group. Follow el/la mismo/misma process a start un/una nuevo/nueva Lista de opciones, I tienen configurado/configurada mine como follows:"
+
+#: ../../library/options/option_types.rst:122
+msgid "**NAME:** Parsed Clouds"
+msgstr "**NAME:** Parsed Nubes"
+
+#: ../../library/options/option_types.rst:123
+#: ../../library/options/option_types.rst:161
+msgid "**TYPE:** Morpheus Api"
+msgstr "**TYPE:** Morpheus Api"
+
+#: ../../library/options/option_types.rst:124
+msgid "**OPTION LIST:** Clouds"
+msgstr "**OPTION LIST:** Nubes"
+
+#: ../../library/options/option_types.rst:126
+msgid ""
+"We also need a request script that loads the ``siteId`` attribute of the "
+"``results`` variable with the Group ID if the user has made a group "
+"selection. Essentially it appends this input as a query parameter to the "
+"API call, calling (for example) ``./api/clouds?siteId=1`` rather than "
+"``.../api/clouds``. It should be similar to the script below. Note that "
+"we are referencing the ``selectedGroup`` field name we created previously"
+" and that a \"site\" is the term for Groups in the |morpheus| database."
+msgstr "We también need un/una request script ese/esa loads el/la ``siteId`` attribute de el/la ``results`` variable con el/la Grupo ID si el/la user tiene made un/una group selection. Essentially it appends este/esta input como un/una query parameter a el/la API call, calling (for example) ``./api/clouds?siteId=1`` rather than ``.../api/clouds``. It debería/n be similar a el/la script below. Note ese/esa we son referencing el/la ``selectedGrupo`` field name we creado/creada previously y ese/esa un/una \"site\" es el/la term para Grupos en el/la |morpheus| database."
+
+#: ../../library/options/option_types.rst:128
+#, python-brace-format
+msgid ""
+"if (input.selectedGroup) {\n"
+"  results.siteId = input.selectedGroup\n"
+"}"
+msgstr "if (input.selectedGroup) {\\n  results.siteId = input.selectedGroup\\n}"
+
+#: ../../library/options/option_types.rst:134
+msgid ""
+"We also need a translation script which will be identical to the one used"
+" previously with the exception that if there is no input on the "
+"``selectedGroups`` field, nothing will be displayed for the Clouds "
+"option."
+msgstr "We también need un/una translation script el/la cual será/n be identical a el/la one utilizado/utilizada previously con el/la exception ese/esa si there es ningún input en el/la ``selectedGrupos`` field, nothing será/n be displayed para el/la Nubes option."
+
+#: ../../library/options/option_types.rst:136
+msgid ""
+"if (input.selectedGroup) {\n"
+"for (var x = 0; x < data.length; x++) {\n"
+"    results.push({name:data[x].name, value:data[x].id});\n"
+"  }\n"
+"}"
+msgstr "if (input.selectedGroup) {\\nfor (var x = 0; x < data.length; x++) {\\n    results.push({name:data[x].name, value:data[x].id});\\n  }\\n}"
+
+#: ../../library/options/option_types.rst:144
+msgid ""
+"We also need to create an Input to house this Option List. This process "
+"will be very similar to creating the previous Input except that we need "
+"to set selectedGroup as the Dependent Field. Setting a dependent field on"
+" an Input will trigger it to reload each time a selection is made in the "
+"indicated option. My configuration is as follows:"
+msgstr "We también need a create un/una Input a house este/esta Lista de opciones. Este/Esta process será/n be very similar a creating el/la anterior Input except ese/esa we need a establecido/establecida selectedGrupo como el/la Dependent Field. Setting un/una dependent field en un/una Input será/n trigger it a reload cada time un/una selection es made en el/la indicated option. My configuration es como follows:"
+
+#: ../../library/options/option_types.rst:146
+msgid "**NAME:** Parsed Cloud"
+msgstr "**NAME:** Parsed Nube"
+
+#: ../../library/options/option_types.rst:147
+msgid "**FIELD NAME:** parsedCloud"
+msgstr "**FIELD NAME:** parsedNube"
+
+#: ../../library/options/option_types.rst:148
+msgid "**DEPENDENT FIELD:** selectedGroup"
+msgstr "**DEPENDENT FIELD:** selectedGrupo"
+
+#: ../../library/options/option_types.rst:149
+#: ../../library/options/option_types.rst:188
+msgid "**TYPE:** Select List"
+msgstr "**TYPE:** Select List"
+
+#: ../../library/options/option_types.rst:150
+msgid "**LABEL:** Cloud"
+msgstr "**LABEL:** Nube"
+
+#: ../../library/options/option_types.rst:151
+msgid "**OPTION LIST:** Parsed Clouds"
+msgstr "**OPTION LIST:** Parsed Nubes"
+
+#: ../../library/options/option_types.rst:153
+msgid "Save your changes once done."
+msgstr "Guarde sus cambios una vez terminado."
+
+#: ../../library/options/option_types.rst:156
+msgid "Network Custom Option"
+msgstr "Opción personalizada de red"
+
+#: ../../library/options/option_types.rst:158
+msgid ""
+"Finally, we will create an Option List/Input pair for network selection. "
+"In this case, it will be dependent on both the Group and Cloud selection."
+" My Option List configuration is below:"
+msgstr "Finally, we será/n create un/una Lista de opciones/Input pair para network selection. In este/esta case, it será/n be dependent en both el/la Grupo y Nube selection. My Lista de opciones configuration es below:"
+
+#: ../../library/options/option_types.rst:160
+#: ../../library/options/option_types.rst:185
+msgid "**NAME:** Parsed Networks"
+msgstr "**NAME:** Parsed Redes"
+
+#: ../../library/options/option_types.rst:162
+msgid "**OPTION LIST:** Networks"
+msgstr "**OPTION LIST:** Redes"
+
+#: ../../library/options/option_types.rst:164
+msgid "**Request Script:**"
+msgstr "**Script de solicitud:**"
+
+#: ../../library/options/option_types.rst:166
+#, python-brace-format
+msgid ""
+"if (input.parsedCloud && input.selectedGroup) {\n"
+"  results.cloudId = input.parsedCloud\n"
+"  results.groupId = input.selectedGroup\n"
+"}"
+msgstr "if (input.parsedCloud && input.selectedGroup) {\\n  results.cloudId = input.parsedCloud\\n  results.groupId = input.selectedGroup\\n}"
+
+#: ../../library/options/option_types.rst:173
+msgid "**Translation Script:**"
+msgstr "**Script de traducción:**"
+
+#: ../../library/options/option_types.rst:175
+msgid ""
+"if (input.parsedCloud && input.selectedGroup) {\n"
+"for (var x = 0; x < data.length; x++) {\n"
+"    results.push({name:data[x].name, value:data[x].id});\n"
+"  }\n"
+"}"
+msgstr "if (input.parsedCloud && input.selectedGroup) {\\nfor (var x = 0; x < data.length; x++) {\\n    results.push({name:data[x].name, value:data[x].id});\\n  }\\n}"
+
+#: ../../library/options/option_types.rst:183
+msgid "The Input is configured as follows:"
+msgstr "La entrada se configura de la siguiente manera:"
+
+#: ../../library/options/option_types.rst:186
+msgid "**FIELD NAME:** parsedNetwork"
+msgstr "**FIELD NAME:** parsedRed"
+
+#: ../../library/options/option_types.rst:187
+msgid "**DEPENDENT FIELD:** parsedCloud"
+msgstr "**DEPENDENT FIELD:** parsedNube"
+
+#: ../../library/options/option_types.rst:189
+msgid "**LABEL:** Network"
+msgstr "**LABEL:** Red"
+
+#: ../../library/options/option_types.rst:190
+msgid "**OPTION LIST:** Parsed Networks"
+msgstr "**OPTION LIST:** Parsed Redes"
+
+#: ../../library/options/option_types.rst:193
+msgid "Setting Custom Options at Provision Time"
+msgstr "Configurar opciones personalizadas en tiempo de aprovisionamiento"
+
+#: ../../library/options/option_types.rst:195
+msgid ""
+"At this point, our dependent options are ready to be applied to custom "
+"Instance Types, Workflows or Service Catalog items as needed. When "
+"creating them, we can select an unlimited number of Inputs from a "
+"typeahead field on the create modal and they will be presented when a "
+"user goes to provision that element or run that Workflow. As an example, "
+"I have created a Service Catalog item that incorporates the three Inputs "
+"we have created. You can see how the dependent fields reload and present "
+"different options based on my selections."
+msgstr "At este/esta point, our dependent options son ready a be applied a custom Tipos de instancia, Flujos de trabajo o Service Catalog items como needed. Cuando creating them, we puede/n select un/una unlimited number de Inputs desde un/una typeahead field en el/la create modal y they será/n be presented cuando un/una user goes a provision ese/esa element o run ese/esa Flujo de trabajo. As un/una example, I tienen creado/creada un/una Service Catalog item ese/esa incorporates el/la three Inputs we tienen created. You puede/n see how el/la dependent fields reload y present diferente options based en my selections."
+
+#: ../../library/options/option_types.rst:198
+msgid ".. image:: images/provisioning/library/cascadingOptionList.gif"
+msgstr ".. image:: images/provisioning/library/cascadingOptionList.gif"
+
+#: ../../library/options/option_types.rst:200
+msgid "Visibility Field"
+msgstr "Campo de visibilidad"
+
+#: ../../library/options/option_types.rst:202
+msgid ""
+"The Input Visibility field allows users to set conditions under which the"
+" Input field is displayed. Visibility field accepts ``fieldName:value`` "
+"or ``fieldName:(regex)``, where \"fieldName\" equals the fieldName of "
+"another Input which will determine the visibility of this Input, and "
+"\"value\" equals the target value of the other Input (or a regex pattern "
+"that matches to the values that meet your desired conditions). You can "
+"simply enter \"fieldName\" when visibility should be triggered when any "
+"value is entered. When the value of the target Input matches the "
+"\"value\" or \"(regex)\" set in the Visibility field, this Input will be "
+"displayed. When the value of the target Input does not match \"value\" or"
+" satisfy the \"(regex)\" set in the Visibility field, this Input will not"
+" be displayed."
+msgstr "The Input Visibility field permite a users to set conditions under which the Input field is displayed. Visibility field accepts ``fieldName:value`` or ``fieldName:(regex)``, where \"fieldName\" equals the fieldName of another Input which will determine the visibility of this Input, and \"value\" equals the target value of the other Input (or a regex pattern that matches the values that meet your desired conditions). You can simply enter \"fieldName\" when visibility should be triggered when any value is entered. When the value of the target Input matches the \"value\" or \"(regex)\" set in the Visibility field, this Input will be displayed. When the value of the target Input does not match \"value\" or satisfy the \"(regex)\" set in the Visibility field, this Input will not be displayed."
+
+#: ../../library/options/option_types.rst:204
+msgid ""
+"Expanding on the simplified example above, we could trigger visibility "
+"based on any one of multiple selections from the same Input by using a "
+"different regular expression, such as ``color:(red|blue|yellow)``. "
+"Additionally, we are not restricted to the conditions of just one Input "
+"to determine visibility as the following would also be valid: "
+"``color:(red|blue|yellow),shape:(square)``. In the previous example, the "
+"Input \"Color\" would have to be set to red, blue, or yellow `OR` the "
+"Input \"Shape\" would have to be set to square in order to trigger "
+"visibility of the Input currently being configured. Prepend the previous "
+"example with ``matchAll::`` in order to require both conditions to be met"
+" rather than one or the other (ex. "
+"``matchAll::color:(red|blue|yellow),shape:(square)``)."
+msgstr "Expanding en el/la simplified example above, we could trigger visibility based en cualquier one de multiple selections desde el/la mismo/misma Input por using un/una diferente regular expression, such como ``color:(red|blue|yellow)``. Additionally, we son ningún restricted a el/la conditions de just one Input a determine visibility como el/la following would también be valid: ``color:(red|blue|yellow),shape:(square)``. In el/la anterior example, el/la Input \"Color\" would tienen a be establecido/establecida a red, blue, o yellow `OR` el/la Input \"Shape\" would tienen a be establecido/establecida a square en order a trigger visibility de el/la Input currently being configured. Prepend el/la anterior example con ``matchAll::`` en order a require both conditions a be met rather than one o el/la otro/otra (ex. ``matchAll::color:(red|blue|yellow),shape:(square)``)."
+
+#: ../../library/options/option_types.rst:207
+msgid "Required Field"
+msgstr "Campo requerido"
+
+#: ../../library/options/option_types.rst:209
+msgid ""
+"The Required field allows for Inputs to be conditionally required. In "
+"this field, enter the Field Name value for another Input and, if that "
+"Input is filled by the user, the current Input will become required. This"
+" feature could also be used in conjunction with the Visibility field "
+"described above in that you may want a field to be required when visible "
+"but not required when hidden. Below is a simple abstract example showing "
+"how the second displayed Input becomes required when the first displayed "
+"Input is filled."
+msgstr "The Required field permite a for Inputs to be conditionally required. In this field, enter the Field Name value for another Input and, if that Input is filled by the user, the current Input will become required. This feature could also be used in conjunction with the Visibility field described above in that you may want a field be required when visible but not required when hidden. Below is a simple abstract example showing how the second displayed Input becomes required when the first displayed Input is filled."
+
+#: ../../internal after library/options/option_types.rst:212 padding
+msgid ".. image:: images/provisioning/library/required.gif"
+msgstr ".. image:: images/provisioning/library/required.gif"
+
+#: ../../library/options/option_lists.rst:2
+msgid "Option Lists"
+msgstr "Listas de opciones"
+
+#: ../../library/options/option_lists.rst:4
+msgid ""
+"Option Lists allow you to give the user more choices during provisioning "
+"to then be passed to scripts and/or automation.  Option Lists, however, "
+"are pre-defined insofar as they are not free-form. They can be manually "
+"entered CSV or JSON, they can be dynamically compiled from REST calls via"
+" GET or POST requests, or populated by LDAP queries."
+msgstr "Las listas de opciones le permiten dar al usuario más opciones durante el aprovisionamiento que luego se pasan a scripts y/o automatización. Las listas de opciones, sin embargo, están predefinidas en la medida en que no son de formato libre. Pueden ser CSV o JSON ingresados manualmente, pueden compilarse dinámicamente desde llamadas REST mediante solicitudes GET o POST, o poblarse mediante consultas LDAP."
+
+msgid ".. image:: images/provisioning/library/newOptionList.png"
+msgstr ".. image:: images/provisioning/library/newOptionList.png"
+
+#: ../../library/options/option_lists.rst:11
+msgid "Generic Option List Fields"
+msgstr "Campos genéricos de lista de opciones"
+
+#: ../../library/options/option_lists.rst:13
+msgid ""
+"The displayed fields in the create/edit Option List modal depend on the "
+"TYPE value selected."
+msgstr "Los campos mostrados en el modal de crear/editar lista de opciones dependen del valor de TIPO seleccionado."
+
+#: ../../library/options/option_lists.rst:16
+msgid "Name of the Option List"
+msgstr "Nombre de la lista de opciones"
+
+#: ../../library/options/option_lists.rst:18
+msgid "Description of the Option List for reference in Option List list view"
+msgstr "Descripción de la lista de opciones para referencia en la vista de lista"
+
+#: ../../library/options/option_lists.rst:20
+msgid "**REST:** REST API call to populate Option List"
+msgstr "**REST:** Llamada a la API REST para poblar la lista de opciones"
+
+#: ../../library/options/option_lists.rst:21
+msgid "**Manual:** Manually entered dataset, CSV or JSON"
+msgstr "**Manual:** Conjunto de datos ingresado manualmente, CSV o JSON"
+
+#: ../../library/options/option_lists.rst:22
+msgid ""
+"**Morpheus API:** Call to internal |morpheus| API to populate the Option "
+"List"
+msgstr "**Morpheus API:** Llamada a la API interna de |morpheus| para poblar la lista de opciones"
+
+#: ../../library/options/option_lists.rst:23
+msgid "**LDAP:** Searches and returns a list of Active Directory objects"
+msgstr "**LDAP:** Busca y devuelve una lista de objetos de Active Directory"
+
+#: ../../library/options/option_lists.rst:24
+msgid ""
+"**Plugin:** Sourced by custom-coded ``DataSetProvider`` plugins. See "
+"`developer documentation <https://developer.morpheusdata.com/docs"
+"#dataset-providers>`_ for additional details"
+msgstr "**Plugin:** Proporcionado por plugins ``DataSetProvider`` codificados de forma personalizada. Consulte la `documentación para desarrolladores <https://developer.morpheusdata.com/docs#dataset-providers>`_ para detalles adicionales"
+
+#: ../../library/options/option_lists.rst:26
+msgid "VISIBILITY"
+msgstr "VISIBILIDAD"
+
+#: ../../library/options/option_lists.rst:26
+msgid ""
+"If the account currently signed in is not in the master tenant, "
+"visibility will automatically change to private"
+msgstr "Si la cuenta actualmente conectada no está en el inquilino maestro, la visibilidad cambiará automáticamente a privada"
+
+#: ../../library/options/option_lists.rst:29
+msgid "Manual Option List Fields"
+msgstr "Campos de lista de opciones manual"
+
+#: ../../library/options/option_lists.rst:35
+msgid "DATASET"
+msgstr "CONJUNTO DE DATOS"
+
+#: ../../library/options/option_lists.rst:32
+msgid ""
+"Appears only for manual Option Lists. Add your CSV or JSON list to this "
+"field"
+msgstr "Aparece solo para listas de opciones manuales. Agregue su lista CSV o JSON a este campo"
+
+#: ../../library/options/option_lists.rst:34
+#, python-brace-format
+msgid ""
+"JSON entries must be formatted like the following example: "
+"``[{\"name\":\"Test\",\"value\":1},{\"name\":\"Testing\",\"value\":2}]``"
+msgstr "JSON entries debe ser formatted like lo siguiente example: ``[{\"name\":\"Test\",\"value\":1},{\"name\":\"Testing\",\"value\":2}]``"
+
+#: ../../library/options/option_lists.rst:38
+msgid "Plugin Option List Fields"
+msgstr "Campos de lista de opciones de plugin"
+
+#: ../../library/options/option_lists.rst:41
+msgid "Select an Option List made available by a currently-integrated plugins"
+msgstr "Seleccione una lista de opciones proporcionada por un plugin actualmente integrado"
+
+#: ../../library/options/option_lists.rst:44
+msgid "REST Option List Fields"
+msgstr "Campos de lista de opciones REST"
+
+#: ../../library/options/option_lists.rst:46
+msgid "SOURCE URL"
+msgstr "URL DE ORIGEN"
+
+#: ../../library/options/option_lists.rst:47
+msgid ""
+"A REST URL used to fetch list data which is cached in the appliance "
+"database"
+msgstr "Una URL REST utilizada para obtener datos de lista que se almacenan en caché en la base de datos del appliance"
+
+#: ../../library/options/option_lists.rst:48
+msgid "REAL TIME"
+msgstr "TIEMPO REAL"
+
+#: ../../library/options/option_lists.rst:49
+msgid ""
+"When checked, a REST call will be made to update the Option List at the "
+"time its presented to the User"
+msgstr "Cuando está marcado, se realizará una llamada REST para actualizar la lista de opciones en el momento en que se presenta al usuario"
+
+#: ../../library/options/option_lists.rst:50
+msgid "IGNORE SSL ERRORS"
+msgstr "IGNORAR ERRORES SSL"
+
+#: ../../library/options/option_lists.rst:51
+msgid "Do not fail API query for self-signed or invalid certs on REST call target"
+msgstr "Do not fail API query for self-signed or invalid certs on REST call target"
+
+#: ../../library/options/option_lists.rst:52
+msgid "SOURCE METHOD"
+msgstr "MÉTODO DE ORIGEN"
+
+#: ../../library/options/option_lists.rst:53
+msgid "GET or POST"
+msgstr "GET o POST"
+
+#: ../../library/options/option_lists.rst:54
+msgid "SOURCE HEADERS"
+msgstr "ENCABEZADOS DE ORIGEN"
+
+#: ../../library/options/option_lists.rst:55
+msgid "Custom HTTP Headers to include in the source request"
+msgstr "Encabezados HTTP personalizados para incluir en la solicitud de origen"
+
+#: ../../library/options/option_lists.rst:56
+msgid "CREDENTIALS"
+msgstr "CREDENCIALES"
+
+#: ../../library/options/option_lists.rst:57
+msgid ""
+"Use a stored credential set or manually enter credentials to access data "
+"requiring authentication. Currently, only basic auth is supported"
+msgstr "Use un conjunto de credenciales almacenado o ingrese credenciales manualmente para acceder a datos que requieren autenticación. Actualmente, solo se admite la autenticación básica"
+
+#: ../../library/options/option_lists.rst:58
+msgid "INITIAL DATASET"
+msgstr "CONJUNTO DE DATOS INICIAL"
+
+#: ../../library/options/option_lists.rst:59
+msgid ""
+"Create an initial JSON or CSV dataset to be used as the collection for "
+"this option list. It should be a list containing objects with properties "
+"'name' and 'value'"
+msgstr "Cree un conjunto de datos inicial JSON o CSV para usar como la colección de esta lista de opciones. Debe ser una lista que contenga objetos con las propiedades 'name' y 'value'"
+
+#: ../../library/options/option_lists.rst:69
+#: ../../library/options/option_lists.rst:325
+#: ../../library/options/option_lists.rst:445
+msgid "TRANSLATION SCRIPT"
+msgstr "SCRIPT DE TRADUCCIÓN"
+
+#: ../../library/options/option_lists.rst:61
+#: ../../library/options/option_lists.rst:128
+#: ../../library/options/option_lists.rst:445
+msgid ""
+"Create a JS script to translate the result data object into an array "
+"containing objects with properties 'name' and 'value'. The input data is "
+"provided as 'data' and the result should be put on the global variable "
+"'results'."
+msgstr "Cree un script JS para traducir el objeto de datos del resultado en un arreglo que contenga objetos con las propiedades 'name' y 'value'. Los datos de entrada se proporcionan como 'data' y el resultado debe colocarse en la variable global 'results'."
+
+#: ../../library/options/option_lists.rst:63
+#: ../../library/options/option_lists.rst:74
+#: ../../library/options/option_lists.rst:130
+msgid "**Example:**"
+msgstr "**Ejemplo:**"
+
+#: ../../library/options/option_lists.rst:65
+msgid ""
+"for(var x=0;x < data.length; x++) {\n"
+"  results.push({name: data[x].name,value:data[x].id});\n"
+"}"
+msgstr "for(var x=0;x < data.length; x++) {\\n  results.push({name: data[x].name,value:data[x].id});\\n}"
+
+#: ../../library/options/option_lists.rst:121
+#: ../../library/options/option_lists.rst:431
+msgid "REQUEST SCRIPT"
+msgstr "SCRIPT DE SOLICITUD"
+
+#: ../../library/options/option_lists.rst:72
+msgid ""
+"Create a JS script to prepare the request. Return a data object as the "
+"body for a POST request, and return an array containing properties 'name'"
+" and 'value' for a GET request. The input data is provided as 'data' and "
+"the result should be put on the global variable 'results'"
+msgstr "Cree un script JS para preparar la solicitud. Devuelva un objeto de datos como el cuerpo para una solicitud POST, y devuelva un arreglo que contenga propiedades 'name' y 'value' para una solicitud GET. Los datos de entrada se proporcionan como 'data' y el resultado debe colocarse en la variable global 'results'"
+
+#: ../../library/options/option_lists.rst:76
+#, python-brace-format
+msgid "results.push({name: 'userId', value : data.users})"
+msgstr "results.push({name: 'userId', value : data.users})"
+
+#: ../../library/options/option_lists.rst:80
+msgid ""
+"In a GET request (SOURCE METHOD = GET), the value of the results variable"
+" is used to build out the request parameters. Thus, in the example "
+"``results`` value:"
+msgstr "In a GET request (SOURCE METHOD = GET), the value of the results variable se usa para build out the request parameters. Thus, in the example ``results`` value:"
+
+#: ../../library/options/option_lists.rst:82
+#, python-brace-format
+msgid "results=[{name:\"name1\",value: \"value1\"}]"
+msgstr "results=[{name:\\\"name1\\\",value: \\\"value1\\\"}]"
+
+#: ../../library/options/option_lists.rst:86
+msgid "The request would be made to: ``https://<someURL>?name1=value1``."
+msgstr "La solicitud se realizaría a: ``https://<someURL>?name1=value1``."
+
+#: ../../library/options/option_lists.rst:88
+msgid ""
+"In a POST request (SOURCE METHOD = POST), the value of the results "
+"variable is used to build the body of the POST request. Thus, in the "
+"example ``results`` value:"
+msgstr "In a POST request (SOURCE METHOD = POST), the value of the results variable se usa para build the body of the POST request. Thus, in the example ``results`` value:"
+
+#: ../../library/options/option_lists.rst:90
+#, python-brace-format
+msgid ""
+"results=[{name:\"name1\", value:\"value1\"}, {name:\"name2\", "
+"value:\"value2\"}]"
+msgstr "results=[{name:\\\"name1\\\", value:\\\"value1\\\"}, {name:\\\"name2\\\", value:\\\"value2\\\"}]"
+
+#: ../../library/options/option_lists.rst:94
+#: ../../library/options/option_lists.rst:116
+msgid "The following JSON body would be posted to the target URL:"
+msgstr "El siguiente cuerpo JSON se enviaría al URL de destino:"
+
+#: ../../library/options/option_lists.rst:96
+#, python-brace-format
+msgid "{name:\"name1\", value:\"value1\"}, {name:\"name2\", value:\"value2\"}"
+msgstr "{name:\\\"name1\\\", value:\\\"value1\\\"}, {name:\\\"name2\\\", value:\\\"value2\\\"}"
+
+#: ../../library/options/option_lists.rst:100
+msgid ""
+"An alternative method to building the POST request (SOURCE METHOD = "
+"POST), can be seen below.  As well, we can access other **Inputs** that "
+"are available on the same form, when provisioning an Instance or Catalog "
+"Item. As seen below, the other Inputs can be accessed using the ``data`` "
+"variable.  We can access another Input by calling its **Field Name**, "
+"which can be configured when editing the Input in |LibOptInp|.  This "
+"allows using data from other Inputs to be used in this Input's request."
+msgstr "An alternative method to building the POST request (SOURCE METHOD = POST), can be seen below.  As well, we can access other **Inputs** that are available on the same form, when provisioning an Instancia or Catalog Item. As seen below, the other Inputs can be accessed using the ``data`` variable.  We can access another Input by calling its **Field Name**, which puede ser configured when editing the Input in |LibOptInp|.  This allows using data from other Inputs to be used in this Input's request."
+
+#: ../../library/options/option_lists.rst:104
+msgid ""
+"In the example below the Input Field Name we'll access is "
+"``myinputfieldname``, which we can get either the name (visible value for"
+" lists) or value from the item:"
+msgstr "In el/la example abajo el/la Input Field Name we'll access es ``myinputfieldname``, el/la cual we puede/n get either el/la name (visible value para lists) o value desde el/la item:"
+
+#: ../../library/options/option_lists.rst:106
+msgid ""
+"Name variable:  ``data.myinputfieldname`` Value variable:  "
+"``data.myinputfieldname_value``"
+msgstr "Name variable:  ``data.myinputfieldname`` Value variable:  ``data.myinputfieldname_value``"
+
+#: ../../library/options/option_lists.rst:109
+#, python-brace-format
+msgid ""
+"var postBody = {};\n"
+"postBody[\"number\"] = data.myinputfieldname_value;\n"
+"postBody[\"env\"] = \"all\";\n"
+"results = postBody;"
+msgstr "var postBody = {};\\npostBody[\\\"number\\\"] = data.myinputfieldname_value;\\npostBody[\\\"env\\\"] = \\\"all\\\";\\nresults = postBody;"
+
+#: ../../library/options/option_lists.rst:118
+#, python-brace-format
+msgid "{ \"number\": \"123456\", \"env\": \"all\" }"
+msgstr "{ \\\"number\\\": \\\"123456\\\", \\\"env\\\": \\\"all\\\" }"
+
+#: ../../library/options/option_lists.rst:124
+msgid "Morpheus API Option List Fields"
+msgstr "Campos de lista de opciones de Morpheus API"
+
+#: ../../library/options/option_lists.rst:126
+msgid "A list of available object types to return"
+msgstr "Una lista de tipos de objetos disponibles para devolver"
+
+#: ../../library/options/option_lists.rst:132
+msgid ""
+"var i=0;\n"
+"results = [];\n"
+"for(i; i<data.length; i++) {\n"
+"  results.push({name: data[i].name, value: data[i].value});\n"
+"}"
+msgstr "var i=0;\\nresults = [];\\nfor(i; i<data.length; i++) {\\n  results.push({name: data[i].name, value: data[i].value});\\n}"
+
+#: ../../library/options/option_lists.rst:140
+msgid "Translation script inputs:"
+msgstr "Entradas del script de traducción:"
+
+#: ../../library/options/option_lists.rst:142
+#: ../../library/options/option_lists.rst:374
+msgid "**Clouds**"
+msgstr "**Nubes**"
+
+#: ../../library/options/option_lists.rst:144
+#: ../../library/options/option_lists.rst:153
+#: ../../library/options/option_lists.rst:160
+#: ../../library/options/option_lists.rst:167
+#: ../../library/options/option_lists.rst:177
+#: ../../library/options/option_lists.rst:189
+#: ../../library/options/option_lists.rst:194
+#: ../../library/options/option_lists.rst:199
+#: ../../library/options/option_lists.rst:204
+#: ../../library/options/option_lists.rst:218
+#: ../../library/options/option_lists.rst:228
+#: ../../library/options/option_lists.rst:236
+#: ../../library/options/option_lists.rst:241
+#: ../../library/options/option_lists.rst:248
+#: ../../library/options/option_lists.rst:258
+#: ../../library/options/option_lists.rst:271
+#: ../../library/options/option_lists.rst:283
+#: ../../library/options/option_lists.rst:294
+#: ../../library/options/option_lists.rst:307
+#: ../../library/options/option_lists.rst:315
+msgid "``id: <Number>``"
+msgstr "``id: <Number>``"
+
+#: ../../library/options/option_lists.rst:145
+#: ../../library/options/option_lists.rst:178
+#: ../../library/options/option_lists.rst:205
+#: ../../library/options/option_lists.rst:219
+#: ../../library/options/option_lists.rst:249
+#: ../../library/options/option_lists.rst:259
+#: ../../library/options/option_lists.rst:272
+#: ../../library/options/option_lists.rst:284
+#: ../../library/options/option_lists.rst:316
+msgid "``value: <Number>`` // id, convenience"
+msgstr "``value: <Number>`` // id, convenience"
+
+#: ../../library/options/option_lists.rst:146
+#: ../../library/options/option_lists.rst:154
+#: ../../library/options/option_lists.rst:163
+#: ../../library/options/option_lists.rst:169
+#: ../../library/options/option_lists.rst:179
+#: ../../library/options/option_lists.rst:190
+#: ../../library/options/option_lists.rst:195
+#: ../../library/options/option_lists.rst:200
+#: ../../library/options/option_lists.rst:206
+#: ../../library/options/option_lists.rst:222
+#: ../../library/options/option_lists.rst:230
+#: ../../library/options/option_lists.rst:237
+#: ../../library/options/option_lists.rst:242
+#: ../../library/options/option_lists.rst:251
+#: ../../library/options/option_lists.rst:262
+#: ../../library/options/option_lists.rst:274
+#: ../../library/options/option_lists.rst:285
+#: ../../library/options/option_lists.rst:295
+#: ../../library/options/option_lists.rst:308
+#: ../../library/options/option_lists.rst:317
+msgid "``name: <String>``"
+msgstr "``name: <String>``"
+
+#: ../../library/options/option_lists.rst:147
+#: ../../library/options/option_lists.rst:156
+#: ../../library/options/option_lists.rst:162
+#: ../../library/options/option_lists.rst:170
+#: ../../library/options/option_lists.rst:220
+#: ../../library/options/option_lists.rst:229
+#: ../../library/options/option_lists.rst:250
+#: ../../library/options/option_lists.rst:260
+#: ../../library/options/option_lists.rst:273
+msgid "``code: <String>``"
+msgstr "``code: <String>``"
+
+#: ../../library/options/option_lists.rst:148
+#: ../../library/options/option_lists.rst:182
+#: ../../library/options/option_lists.rst:287
+msgid "``description: <String>``"
+msgstr "``description: <String>``"
+
+#: ../../library/options/option_lists.rst:149
+#: ../../library/options/option_lists.rst:265
+msgid "``regionCode: <String>``"
+msgstr "``regionCode: <String>``"
+
+#: ../../library/options/option_lists.rst:150
+#: ../../library/options/option_lists.rst:172
+msgid "``location: <String>``"
+msgstr "``location: <String>``"
+
+#: ../../library/options/option_lists.rst:151
+msgid "``zoneType: <Object>``"
+msgstr "``zoneType: <Object>``"
+
+#: ../../library/options/option_lists.rst:155
+msgid "``cloud: <String>`` // \"public\" or \"private\" value"
+msgstr "``cloud: <String>`` // \\\"public\\\" or \\\"private\\\" value"
+
+#: ../../library/options/option_lists.rst:158
+msgid "**Environments**"
+msgstr "**Entornos**"
+
+#: ../../library/options/option_lists.rst:161
+#: ../../library/options/option_lists.rst:168
+msgid ""
+"``value: <Number>`` // id, convenience attribute to avoid requiring "
+"translation"
+msgstr "``value: <Number>`` // id, convenience attribute to avoid requiring translation"
+
+#: ../../library/options/option_lists.rst:165
+#: ../../library/options/option_lists.rst:402
+msgid "**Groups**"
+msgstr "**Grupos**"
+
+#: ../../library/options/option_lists.rst:171
+msgid "``uuid: <String>``"
+msgstr "``uuid: <String>``"
+
+#: ../../library/options/option_lists.rst:173
+msgid "``datacenterId: <Number>``"
+msgstr "``datacenterId: <Number>``"
+
+#: ../../library/options/option_lists.rst:175
+#: ../../library/options/option_lists.rst:391
+msgid "**Instances**"
+msgstr "**Instancias**"
+
+#: ../../library/options/option_lists.rst:180
+#: ../../library/options/option_lists.rst:286
+msgid "``displayName: <String>``"
+msgstr "``displayName: <String>``"
+
+#: ../../library/options/option_lists.rst:181
+#: ../../library/options/option_lists.rst:208
+#: ../../library/options/option_lists.rst:221
+#: ../../library/options/option_lists.rst:288
+#: ../../library/options/option_lists.rst:319
+msgid "``category: <String>``"
+msgstr "``category: <String>``"
+
+#: ../../library/options/option_lists.rst:183
+msgid "``apiKey: <String>``"
+msgstr "``apiKey: <String>``"
+
+#: ../../library/options/option_lists.rst:184
+#: ../../library/options/option_lists.rst:223
+#: ../../library/options/option_lists.rst:264
+msgid "``status: <String>``"
+msgstr "``status: <String>``"
+
+#: ../../library/options/option_lists.rst:185
+msgid "``hourlyPrice: <Number>``"
+msgstr "``hourlyPrice: <Number>``"
+
+#: ../../library/options/option_lists.rst:186
+msgid "``hourlyCost: <Number>``"
+msgstr "``hourlyCost: <Number>``"
+
+#: ../../library/options/option_lists.rst:187
+msgid "``instanceType: <Object>``"
+msgstr "``instanceType: <Object>``"
+
+#: ../../library/options/option_lists.rst:192
+msgid "``plan: <Object>``"
+msgstr "``plan: <Object>``"
+
+#: ../../library/options/option_lists.rst:197
+msgid "``site: <Object>``"
+msgstr "``site: <Object>``"
+
+#: ../../library/options/option_lists.rst:202
+#: ../../library/options/option_lists.rst:423
+msgid "**Instances Wiki**"
+msgstr "**Wiki de instancias**"
+
+#: ../../library/options/option_lists.rst:207
+#: ../../library/options/option_lists.rst:318
+msgid "``urlName: <String>``"
+msgstr "``urlName: <String>``"
+
+#: ../../library/options/option_lists.rst:209
+msgid "``instanceId: <String>``"
+msgstr "``instanceId: <String>``"
+
+#: ../../library/options/option_lists.rst:210
+#: ../../library/options/option_lists.rst:321
+msgid "``content: <String>``"
+msgstr "``content: <String>``"
+
+#: ../../library/options/option_lists.rst:211
+#: ../../library/options/option_lists.rst:322
+msgid "``contentFormatted: <String>``"
+msgstr "``contentFormatted: <String>``"
+
+#: ../../library/options/option_lists.rst:212
+#: ../../library/options/option_lists.rst:323
+msgid "``format: <String>``"
+msgstr "``format: <String>``"
+
+#: ../../library/options/option_lists.rst:213
+#: ../../library/options/option_lists.rst:324
+msgid "``createdByUsername: <String>``"
+msgstr "``createdByUsername: <String>``"
+
+#: ../../library/options/option_lists.rst:214
+#: ../../library/options/option_lists.rst:325
+msgid "``updatedByUsername: <String>``"
+msgstr "``updatedByUsername: <String>``"
+
+#: ../../library/options/option_lists.rst:216
+#: ../../library/options/option_lists.rst:341
+msgid "**Networks**"
+msgstr "**Redes**"
+
+#: ../../library/options/option_lists.rst:224
+#: ../../library/options/option_lists.rst:277
+msgid "``cloudId: <Number>``"
+msgstr "``cloudId: <Number>``"
+
+#: ../../library/options/option_lists.rst:225
+msgid "``groupId: <Number>``"
+msgstr "``groupId: <Number>``"
+
+#: ../../library/options/option_lists.rst:226
+msgid "``networkType:<Object>``"
+msgstr "``networkType:<Object>``"
+
+#: ../../library/options/option_lists.rst:232
+#: ../../library/options/option_lists.rst:261
+#: ../../library/options/option_lists.rst:276
+msgid "``externalId: <String>``"
+msgstr "``externalId: <String>``"
+
+#: ../../library/options/option_lists.rst:233
+msgid "``externalNetworkType: <String>``"
+msgstr "``externalNetworkType: <String>``"
+
+#: ../../library/options/option_lists.rst:234
+msgid "``networkDomain: <Object>``"
+msgstr "``networkDomain: <Object>``"
+
+#: ../../library/options/option_lists.rst:239
+msgid "``networkPool: <Object>``"
+msgstr "``networkPool: <Object>``"
+
+#: ../../library/options/option_lists.rst:244
+msgid "``createdBy: <String>``"
+msgstr "``createdBy: <String>``"
+
+#: ../../library/options/option_lists.rst:246
+#: ../../library/options/option_lists.rst:355
+msgid "**Plans**"
+msgstr "**Planes**"
+
+#: ../../library/options/option_lists.rst:252
+msgid "``storage: <Integer, bytes>``"
+msgstr "``storage: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:253
+msgid "``memory: <Integer, bytes>``"
+msgstr "``memory: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:254
+msgid "``cores: <Number>``"
+msgstr "``cores: <Number>``"
+
+#: ../../library/options/option_lists.rst:256
+#: ../../library/options/option_lists.rst:362
+msgid "**Resource Pools**"
+msgstr "**Pools de recursos**"
+
+#: ../../library/options/option_lists.rst:263
+msgid "``serverGroupId: <Number>``"
+msgstr "``serverGroupId: <Number>``"
+
+#: ../../library/options/option_lists.rst:266
+msgid "``parentPoolId: <Number>``"
+msgstr "``parentPoolId: <Number>``"
+
+#: ../../library/options/option_lists.rst:267
+msgid "``type: <String>``"
+msgstr "``type: <String>``"
+
+#: ../../library/options/option_lists.rst:269
+#: ../../library/options/option_lists.rst:369
+msgid "**Security Groups**"
+msgstr "**Grupos de seguridad**"
+
+#: ../../library/options/option_lists.rst:275
+msgid "``externalType: <String>``"
+msgstr "``externalType: <String>``"
+
+#: ../../library/options/option_lists.rst:278
+msgid "``scopeMode: <String>``"
+msgstr "``scopeMode: <String>``"
+
+#: ../../library/options/option_lists.rst:279
+msgid "``scopeId: <Number>``"
+msgstr "``scopeId: <Number>``"
+
+#: ../../library/options/option_lists.rst:281
+#: ../../library/options/option_lists.rst:410
+msgid "**Servers**"
+msgstr "**Servidores**"
+
+#: ../../library/options/option_lists.rst:289
+msgid "``osType: <String>``"
+msgstr "``osType: <String>``"
+
+#: ../../library/options/option_lists.rst:290
+msgid "``powerState: <String>``"
+msgstr "``powerState: <String>``"
+
+#: ../../library/options/option_lists.rst:291
+msgid "``lastStats: <String>``"
+msgstr "``lastStats: <String>``"
+
+#: ../../library/options/option_lists.rst:292
+msgid "``zone: <Object>``"
+msgstr "``zone: <Object>``"
+
+#: ../../library/options/option_lists.rst:297
+msgid "``capacityInfo: <Object>``"
+msgstr "``capacityInfo: <Object>``"
+
+#: ../../library/options/option_lists.rst:299
+msgid "``maxStorage: <Integer, bytes>``"
+msgstr "``maxStorage: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:300
+msgid "``maxMemory: <Integer, bytes>``"
+msgstr "``maxMemory: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:301
+msgid "``maxCores: <Number>``"
+msgstr "``maxCores: <Number>``"
+
+#: ../../library/options/option_lists.rst:302
+msgid "``usedMemory: <Integer, bytes>``"
+msgstr "``usedMemory: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:303
+msgid "``usedStorage: <Integer, bytes>``"
+msgstr "``usedStorage: <Integer, bytes>``"
+
+#: ../../library/options/option_lists.rst:305
+msgid "``computeServerType: <Object>``"
+msgstr "``computeServerType: <Object>``"
+
+#: ../../library/options/option_lists.rst:309
+msgid "``nodeType: <String>``"
+msgstr "``nodeType: <String>``"
+
+#: ../../library/options/option_lists.rst:310
+msgid "``vmHypervisor: <String>``"
+msgstr "``vmHypervisor: <String>``"
+
+#: ../../library/options/option_lists.rst:311
+msgid "``containerHypervisor: <String>``"
+msgstr "``containerHypervisor: <String>``"
+
+#: ../../library/options/option_lists.rst:313
+#: ../../library/options/option_lists.rst:428
+msgid "**Servers Wiki**"
+msgstr "**Wiki de servidores**"
+
+#: ../../library/options/option_lists.rst:320
+msgid "``serverId: <String>``"
+msgstr "``serverId: <String>``"
+
+#: ../../library/options/option_lists.rst:328
+msgid ""
+"The request script is used differently for Morpheus API Option List "
+"types. A Morpheus API option list type will use an internal API to return"
+" a list of objects instead of performing HTTP(S) requests to the Morpheus"
+" API. Due to this approach, the results object will not be used to "
+"generate query parameters or a JSON body. The results object will instead"
+" be used to contain a map of accepted key:value pairs that can be used to"
+" filter, sort and order the list of objects that get returned."
+msgstr "The request script is used differently for Morpheus API Lista de opciones types. A Morpheus API option list type will use an internal API to return a list of objects instead of performing HTTP(S) requests to the Morpheus API. Due to this approach, the results object will not be used to generate query parameters or a JSON body. The results object will instead be used to contain a map of accepted key:value pairs that puede ser used to filter, sort and order the list of objects that get returned."
+
+#: ../../library/options/option_lists.rst:330
+msgid "Below is a list of accepted ``key:value`` pairs for each object type:"
+msgstr "Below es un/una list de accepted ``key:value`` pairs para cada object type:"
+
+#: ../../library/options/option_lists.rst:332
+msgid "**Generic options available for all object types**"
+msgstr "**Opciones genéricas disponibles para todos los tipos de objetos**"
+
+#: ../../library/options/option_lists.rst:334
+msgid "``max: <integer>`` // Maximum number of results to return. Default: 25"
+msgstr "``max: <integer>`` // Maximum number of results to return. Default: 25"
+
+#: ../../library/options/option_lists.rst:335
+msgid "``offset: <integer>`` // Offset for returned results. Default: 0"
+msgstr "``offset: <integer>`` // Offset for returned results. Default: 0"
+
+#: ../../library/options/option_lists.rst:336
+msgid "``sort: <string>`` // Field to sort on. Default: 'name'"
+msgstr "``sort: <string>`` // Field to sort on. Default: 'name'"
+
+#: ../../library/options/option_lists.rst:337
+msgid ""
+"``order: <string>`` // Order of returned values. Accepted values: 'asc', "
+"'desc'. Default: 'asc'"
+msgstr "``order: <string>`` // Order of returned values. Accepted values: 'asc', 'desc'. Default: 'asc'"
+
+#: ../../library/options/option_lists.rst:339
+#, python-brace-format
+msgid "**Example:** ``results = {max: 5, order : 'desc'}``"
+msgstr "**Example:** ``results = {max: 5, order : 'desc'}``"
+
+#: ../../library/options/option_lists.rst:343
+#: ../../library/options/option_lists.rst:364
+msgid "``zoneId``"
+msgstr "``zoneId``"
+
+#: ../../library/options/option_lists.rst:344
+#: ../../library/options/option_lists.rst:358
+#: ../../library/options/option_lists.rst:365
+msgid "``siteId``"
+msgstr "``siteId``"
+
+#: ../../library/options/option_lists.rst:345
+#: ../../library/options/option_lists.rst:366
+msgid "``planId``"
+msgstr "``planId``"
+
+#: ../../library/options/option_lists.rst:346
+msgid ""
+"``provisionTypeId: <Number>`` // Id of the provision type (technology), "
+"filters to only networks associated with this provision type"
+msgstr "``provisionTypeId: <Number>`` // Id de el/la provision type (technology), filters a solo networks asociado/asociada con este/esta provision type"
+
+#: ../../library/options/option_lists.rst:347
+msgid ""
+"``layoutId: <Number>`` // Id of an Instance Layout, ignored if "
+"provisionTypeId is supplied, otherwise used to look up the provision type"
+msgstr "``layoutId: <Number>`` // Id de un/una Instancia Layout, ignored si provisionTypeId es supplied, otherwise utilizado/utilizada a look arriba el/la provision type"
+
+#: ../../library/options/option_lists.rst:348
+msgid ""
+"``poolId: <Number>`` // Id of a network pool, filters to only networks "
+"within the specified network pool"
+msgstr "``poolId: <Number>`` // Id of a network pool, filters to only networks within the specified network pool"
+
+#: ../../library/options/option_lists.rst:350
+msgid "**Instance Networks**"
+msgstr "**Redes de instancia**"
+
+#: ../../library/options/option_lists.rst:353
+msgid ""
+"Contains same options for Networks Morpheus API but pre-filtered for "
+"Networks applicable to a selected Instance Type."
+msgstr "Contains same options for Redes Morpheus API but pre-filtered for Redes applicable to a selected Tipo de instancia."
+
+#: ../../library/options/option_lists.rst:353
+#: ../../library/options/option_lists.rst:389
+#: ../../library/options/option_lists.rst:426
+#: ../../library/options/option_lists.rst:431
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and "
+"content"
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and content"
+
+#: ../../library/options/option_lists.rst:357
+msgid ""
+"``zoneId`` // Required. In order for plans to be returned and properly "
+"filtered, you must provide a ``zoneId`` and ``siteId`` as well as either "
+"a ``layoutId`` or ``provisionTypeId``"
+msgstr "``zoneId`` // Required. In order for plans to be returned and properly filtered, you must provide a ``zoneId`` and ``siteId`` as well as either a ``layoutId`` or ``provisionTypeId``"
+
+#: ../../library/options/option_lists.rst:359
+msgid "``layoutId``"
+msgstr "``layoutId``"
+
+#: ../../library/options/option_lists.rst:360
+msgid ""
+"``provisionTypeId: <Number>`` // Id of the provision type (technology), "
+"filters to only plans associated with this provision type"
+msgstr "``provisionTypeId: <Number>`` // Id de el/la provision type (technology), filters a solo plans asociado/asociada con este/esta provision type"
+
+#: ../../library/options/option_lists.rst:367
+msgid ""
+"``layoutId: <Number>`` // Id of an Instance Layout, used to get the "
+"associated provision type and filter to that provision type"
+msgstr "``layoutId: <Number>`` // Id de un/una Instancia Layout, utilizado/utilizada a get el/la asociado/asociada provision type y filter a ese/esa provision type"
+
+#: ../../library/options/option_lists.rst:371
+msgid "``zoneId`` // required"
+msgstr "``zoneId`` // required"
+
+#: ../../library/options/option_lists.rst:372
+msgid "``poolId``"
+msgstr "``poolId``"
+
+#: ../../library/options/option_lists.rst:376
+msgid "``zoneId : <integer>``  // Database ID of cloud to return"
+msgstr "``zoneId : <integer>``  // Database ID of cloud to return"
+
+#: ../../library/options/option_lists.rst:377
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where clouds are added."
+" Filters to only clouds added within the specified tenant. Only available"
+" in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde clouds son added. Filters a solo clouds agregado/agregada dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:378
+msgid ""
+"``zoneTypeId : <integer>`` // Database ID of cloud type. Filters to only "
+"clouds with the specified cloud type"
+msgstr "``zoneTypeId : <integer>`` // Database ID de cloud type. Filters a solo clouds con el/la specified cloud type"
+
+#: ../../library/options/option_lists.rst:379
+msgid ""
+"``siteId : <integer>`` // Database ID of group. Filters to only clouds "
+"within the specified group"
+msgstr "``siteId : <integer>`` // Database ID of group. Filters to only clouds within the specified group"
+
+#: ../../library/options/option_lists.rst:380
+msgid ""
+"``tagName : <string>`` // Filters to clouds with servers with tags "
+"containing the tagName"
+msgstr "``tagName : <string>`` // Filters a clouds con servers con tags containing el/la tagName"
+
+#: ../../library/options/option_lists.rst:381
+msgid ""
+"``tagValue : <mixed>`` // Requires tagName. Filters to clouds with "
+"servers that have tags containing the tagName and specified tagValue"
+msgstr "``tagValue : <mixed>`` // Requires tagName. Filters a clouds con servers ese/esa tienen tags containing el/la tagName y specified tagValue"
+
+#: ../../library/options/option_lists.rst:382
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on cloud name and "
+"description"
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on cloud name and description"
+
+#: ../../library/options/option_lists.rst:384
+#, python-brace-format
+msgid "**Example:** ``results = {tenantId: 1, siteId: 1, tagName: \"morpheus\"}``"
+msgstr "**Example:** ``results = {tenantId: 1, siteId: 1, tagName: \"morpheus\"}``"
+
+#: ../../library/options/option_lists.rst:386
+msgid "**Instance Types Clouds**"
+msgstr "**Nubes de tipos de instancia**"
+
+#: ../../library/options/option_lists.rst:389
+msgid ""
+"Contains same options for Clouds Morpheus API type but pre-filtered for "
+"Clouds applicable to a selected Instance Type."
+msgstr "Contains same options for Nubes Morpheus API type but pre-filtered for Nubes applicable to a selected Tipo de instancia."
+
+#: ../../library/options/option_lists.rst:393
+msgid ""
+"``appsId : <integer>`` // Database ID of app to filter by. Returns "
+"instances linked to the app"
+msgstr "``appsId : <integer>`` // Database ID of app to filter by. Returns instances linked to the app"
+
+#: ../../library/options/option_lists.rst:394
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where instances are "
+"located. Filters to only instances within the specified tenant. Only "
+"available in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde instances son located. Filters a solo instances dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:395
+msgid ""
+"``serverId : <integer>`` // Database ID of server. Filters to the "
+"instance that contains the specified server"
+msgstr "``serverId : <integer>`` // Database ID de server. Filters a el/la instance ese/esa contains el/la specified server"
+
+#: ../../library/options/option_lists.rst:396
+msgid ""
+"``tagName : <string>`` // Filters to instances with tags containing the "
+"tagName"
+msgstr "``tagName : <string>`` // Filters a instances con tags containing el/la tagName"
+
+#: ../../library/options/option_lists.rst:397
+msgid ""
+"``tagValue : <mixed>`` // Requires tagName. Filters to instances with "
+"tags containing the tagName and specified tagValue"
+msgstr "``tagValue : <mixed>`` // Requires tagName. Filters a instances con tags containing el/la tagName y specified tagValue"
+
+#: ../../library/options/option_lists.rst:398
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on instance name and "
+"description"
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on instance name and description"
+
+#: ../../library/options/option_lists.rst:400
+#, python-brace-format
+msgid "**Example:** ``results = {tenantId:1, phrase: \"ha\"}``"
+msgstr "**Example:** ``results = {tenantId:1, phrase: \"ha\"}``"
+
+#: ../../library/options/option_lists.rst:404
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where groups are "
+"located. Filters to only groups added within the specified tenant. Only "
+"available in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde groups son located. Filters a solo groups agregado/agregada dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:405
+msgid ""
+"``zoneTypeId : <integer>`` Database ID of cloud type. Filters to only "
+"groups that contain clouds with the specified cloud type"
+msgstr "``zoneTypeId : <integer>`` Database ID de cloud type. Filters a solo groups ese/esa contain clouds con el/la specified cloud type"
+
+#: ../../library/options/option_lists.rst:406
+msgid ""
+"``zoneId : <integer>``  // Database ID of cloud. Filters to only groups "
+"that contain the cloud with the specified ID"
+msgstr "``zoneId : <integer>``  // Database ID de cloud. Filters a solo groups ese/esa contain el/la cloud con el/la specified ID"
+
+#: ../../library/options/option_lists.rst:407
+msgid "``siteId : <integer>`` // Database ID of group to return"
+msgstr "``siteId : <integer>`` // Database ID of group to return"
+
+#: ../../library/options/option_lists.rst:408
+msgid "``phrase : <string>`` // Fuzzy matches phrase on group name and location."
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on group name and location."
+
+#: ../../library/options/option_lists.rst:412
+msgid ""
+"``tenantId : <integer>`` // Database ID of tenant where servers are "
+"located. Filters to only servers within the specified tenant. Only "
+"available in Master Tenant"
+msgstr "``tenantId : <integer>`` // Database ID de tenant donde servers son located. Filters a solo servers dentro de el/la specified tenant. Only disponible en Master Inquilino"
+
+#: ../../library/options/option_lists.rst:413
+msgid ""
+"``serverId : <integer>`` // Database ID of server. Filters to the server "
+"specified by the ID"
+msgstr "``serverId : <integer>`` // Database ID de server. Filters a el/la server specified por el/la ID"
+
+#: ../../library/options/option_lists.rst:414
+msgid ""
+"``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers "
+"contained within the specified cloud"
+msgstr "``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers contained within the specified cloud"
+
+#: ../../library/options/option_lists.rst:415
+msgid ""
+"``serverType : <string>`` // Type of server. Accepted values: 'host', "
+"'baremetal', 'vm'"
+msgstr "``serverType : <string>`` // Type of server. Accepted values: 'host', 'baremetal', 'vm'"
+
+#: ../../library/options/option_lists.rst:416
+msgid ""
+"``siteId : <integer>`` // Database ID of group. Filters to only servers "
+"contained within clouds that are added in the specified group"
+msgstr "``siteId : <integer>`` // Database ID de group. Filters a solo servers contained dentro de clouds ese/esa son agregado/agregada en el/la specified group"
+
+#: ../../library/options/option_lists.rst:417
+msgid ""
+"``tagName : <string>`` // Filters to servers with tags containing the "
+"tagName"
+msgstr "``tagName : <string>`` // Filters a servers con tags containing el/la tagName"
+
+#: ../../library/options/option_lists.rst:418
+msgid ""
+"``tagValue : <mixed>`` // Requires tagName. Filters to servers with tags "
+"containing the tagName and specified tagValue"
+msgstr "``tagValue : <mixed>`` // Requires tagName. Filters a servers con tags containing el/la tagName y specified tagValue"
+
+#: ../../library/options/option_lists.rst:419
+msgid ""
+"``phrase : <string>`` // Fuzzy matches phrase on server name and "
+"description."
+msgstr "``phrase : <string>`` // Fuzzy matches phrase on server name and description."
+
+#: ../../library/options/option_lists.rst:421
+#, python-brace-format
+msgid "**Example:** ``results = {max: 50, siteZoneId : 3}``"
+msgstr "**Example:** ``results = {max: 50, siteZoneId : 3}``"
+
+#: ../../library/options/option_lists.rst:426
+msgid "Contains same options for Instances Morpheus API type."
+msgstr "Contains same options for Instancias Morpheus API type."
+
+#: ../../library/options/option_lists.rst:431
+msgid "Contains same options for Servers Morpheus API type."
+msgstr "Contains same options for Servidores Morpheus API type."
+
+#: ../../library/options/option_lists.rst:434
+msgid "LDAP Option List Fields"
+msgstr "Campos de lista de opciones LDAP"
+
+#: ../../library/options/option_lists.rst:436
+msgid "LDAP URL"
+msgstr "URL LDAP"
+
+#: ../../library/options/option_lists.rst:437
+msgid "The URL pointing to the LDAP server"
+msgstr "La URL que apunta al servidor LDAP"
+
+#: ../../library/options/option_lists.rst:438
+msgid "USERNAME"
+msgstr "NOMBRE DE USUARIO"
+
+#: ../../library/options/option_lists.rst:439
+msgid ""
+"The fully qualified username (with @ suffix syntax) for the binding "
+"account"
+msgstr "El nombre de usuario completamente calificado (con sintaxis de sufijo @) para la cuenta de enlace"
+
+#: ../../library/options/option_lists.rst:440
+msgid "PASSWORD"
+msgstr "CONTRASEÑA"
+
+#: ../../library/options/option_lists.rst:441
+msgid "The password for the above account"
+msgstr "La contraseña para la cuenta anterior"
+
+#: ../../library/options/option_lists.rst:442
+msgid "LDAP Query"
+msgstr "Consulta LDAP"
+
+#: ../../library/options/option_lists.rst:443
+msgid ""
+"The LDAP query to pull the appropriate objects. See the next section for "
+"an example use case"
+msgstr "La consulta LDAP para obtener los objetos apropiados. Consulte la siguiente sección para un caso de uso de ejemplo"
+
+#: ../../library/options/option_lists.rst:447
+msgid ""
+"Option Lists are set on one or multiple ``Select List`` or ``Typeahead`` "
+"Inputs. The Input is then set on an Instance Type, Layout, Cluster "
+"Layout, and/or Operational Workflow for input during provisioning or "
+"execution."
+msgstr "Listas de opciones son establecido/establecida en one o multiple ``Select List`` o ``Typeahead`` Inputs. El/La Input es entonces establecido/establecida en un/una Tipo de instancia, Layout, Layout de clúster, and/or Operational Flujo de trabajo para input durante provisioning o execution."
+
+#: ../../library/options/option_lists.rst:451
+msgid "LDAP Query Variables"
+msgstr "Variables de consulta LDAP"
+
+#: ../../library/options/option_lists.rst:453
+msgid ""
+"The current user and dependant parameters are loaded into the query using"
+" the <%=phrase%> syntax."
+msgstr "El/La actual user y dependant parameters son loaded en el/la query using el/la <%=phrase%> syntax."
+
+#: ../../library/options/option_lists.rst:455
+msgid "LDAP Query Variables (Example <%=user.email%>)"
+msgstr "LDAP Query Variables (Example <%=user.email%>)"
+
+#: ../../library/options/option_lists.rst:455
+#, python-brace-format
+msgid ""
+" user {\n"
+"    accountId,\n"
+"    attributes,\n"
+"    displayName,\n"
+"    email,\n"
+"    firstName,\n"
+"    id,\n"
+"    lastName,\n"
+"    linuxUsername,\n"
+"    username,\n"
+"    windowsUsername\n"
+" }\n"
+" customOptions {\n"
+"    fieldName\n"
+" }"
+msgstr "user {\n    accountId,\n    attributes,\n    displayName,\n    email,\n    firstName,\n    id,\n    lastName,\n    linuxUsuarioname,\n    username,\n    windowsUsuarioname\n }\n customOptions {\n    fieldName\n }"
+
+#: ../../library/options/option_lists.rst:475
+msgid "Creating an Option List Based on an LDAP Query"
+msgstr "Crear una lista de opciones basada en una consulta LDAP"
+
+#: ../../library/options/option_lists.rst:477
+msgid ""
+"In Morpheus version 4.2.1 and higher, Option Lists can be populated from "
+"LDAP queries. This gives users the ability to search Active Directory, "
+"capture objects, and present them as custom options where needed."
+msgstr "In Morpheus version 4.2.1 and higher, Listas de opciones puede ser populated from LDAP queries. This gives users the ability to search Active Directory, capture objects, and present them as custom options where needed."
+
+#: ../../library/options/option_lists.rst:479
+msgid ""
+"It's recommended that you connect LDAP-type Option Lists to Typeahead-"
+"type Inputs as the list of returned selections can be very large. This "
+"also allows you to select multiple options from the list, presuming "
+"you've allowed for that when creating the Input."
+msgstr "It's recommended that you connect LDAP-type Listas de opciones to Typeahead-type Inputs as the list of returned selections puede ser very large. This also allows you to select multiple options from the list, presuming you've allowed for that when creating the Input."
+
+#: ../../library/options/option_lists.rst:481
+msgid ""
+"Populating LDAP-type Option Lists requires knowledge of LDAP query "
+"syntax. This guide provides one example and there are many publicly-"
+"available resources for help writing additional queries."
+msgstr "Populating LDAP-type Listas de opciones requires knowledge de LDAP query syntax. Este/Esta guide provides one example y there son muchos/muchas publicly-available resources para help writing additional queries."
+
+#: ../../library/options/option_lists.rst:483
+msgid "Create a new Option List (|LibOptOpt| > ADD)"
+msgstr "Create a new Lista de opciones (|LibOptOpt| > ADD)"
+
+#: ../../library/options/option_lists.rst:485
+msgid "Enter a name for the new LDAP Option List"
+msgstr "Ingrese a name for the new LDAP Lista de opciones"
+
+#: ../../library/options/option_lists.rst:487
+msgid ""
+"Change the Type value to LDAP and the relevant fields will appear as "
+"shown in the screenshot:"
+msgstr "Change el/la Type value a LDAP y el/la relevant fields será/n appear como shown en el/la screenshot:"
+
+#: ../../library/options/option_lists.rst:489
+msgid ""
+"Enter the LDAP URL in the following format (an example is also shown as a"
+" placeholder in the UI form field):"
+msgstr "Ingrese the LDAP URL in the following format (an example is also shown as a placeholder in the UI form field):"
+
+#: ../../library/options/option_lists.rst:491
+msgid "ldap[s]://<hostname>:<port>/<base_dn>"
+msgstr "ldap[s]://<hostname>:<port>/<base_dn>"
+
+#: ../../library/options/option_lists.rst:495
+msgid ""
+"Enter the fully qualified username with @ suffix syntax, such as: "
+"`user@ad.mycompany.com`"
+msgstr "Ingrese the fully qualified username with @ suffix syntax, such as: `user@ad.mycompany.com`"
+
+#: ../../library/options/option_lists.rst:497
+msgid "Enter the account password"
+msgstr "Enter the account password"
+
+#: ../../library/options/option_lists.rst:499
+msgid ""
+"Enter your LDAP query. You can even inject variables into your query "
+"structure to query based on the value the user has entered into the "
+"typeahead field as shown in the example below:"
+msgstr "Ingrese your LDAP query. You can even inject variables into your query structure to query based on the value the user has entered into the typeahead field as shown in the example below:"
+
+#: ../../library/options/option_lists.rst:501
+msgid "(&(objectClass=user)(cn=<%=phrase%>*))"
+msgstr "(&(objectClass=user)(cn=<%=phrase%>*))"
+
+#: ../../library/options/option_lists.rst:505
+msgid ""
+"Finally, enter a translation script which will convert the returned LDAP "
+"object into a list of name:value pairs you can work with in Morpheus. The"
+" example script below shows the user DisplayName and sets the value to "
+"the SAMAccountName:"
+msgstr "Finally, enter un/una translation script el/la cual será/n convert el/la returned LDAP object en un/una list de name:value pairs you puede/n work con en Morpheus. El/La example script abajo shows el/la user DisplayName y sets el/la value a el/la SAMAccountName:"
+
+#: ../../library/options/option_lists.rst:507
+msgid ""
+"for(var x=0;x < data.length ; x++) {\n"
+"\n"
+"  var row = data[x];\n"
+"  var a = {};\n"
+"\n"
+"  if(row.displayName != null) {\n"
+"    a['name'] = row.displayName;\n"
+"\n"
+"  } else {\n"
+"\n"
+"    a['name'] = row.sAMAccountName;\n"
+"\n"
+"  }\n"
+"\n"
+"  a['value'] = row.sAMAccountName;\n"
+"  results.push(a);\n"
+"\n"
+"}"
+msgstr "for(var x=0;x < data.length ; x++) {\\n\\n  var row = data[x];\\n  var a = {};\\n\\n  if(row.displayName != null) {\\n    a['name'] = row.displayName;\\n\\n  } else {\\n\\n    a['name'] = row.sAMAccountName;\\n\\n  }\\n\\n  a['value'] = row.sAMAccountName;\\n  results.push(a);\\n\\n}"
+
+#: ../../library/options/option_lists.rst:528
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Haga clic en :guilabel:`SAVE CHANGES`"
+
+#: ../../library/options/option_lists.rst
+msgid ".. image:: images/provisioning/library/ldap_option_list.png"
+msgstr ".. image:: images/provisioning/library/ldap_option_list.png"
+

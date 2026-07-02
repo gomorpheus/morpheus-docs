@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/servers/server_migration.rst:2
+msgid "Server Migration"
+msgstr "Server Migration"
+
+#: ../../infrastructure/servers/server_migration.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/servers/server_migration.rst:7
+msgid ""
+"|morpheus| supports migrating virtual machines between hosts, clusters, or "
+"resource pools within a cloud. The migration (also referred to as VM Move) "
+"allows you to relocate a workload to a different compute target without "
+"reprovisioning."
+msgstr ""
+"|morpheus| soporta migrating virtual machines entre hosts, clusters, o "
+"recurso pools dentro de un cloud. El migración (también referred a como VM "
+"Mover) permite you a relocate un carga de trabajo a un diferente compute "
+"destino sin reprovisioning."
+
+#: ../../infrastructure/servers/server_migration.rst:9
+msgid ""
+"Migration is supported for cloud types that provide native VM mobility, such"
+" as VMware vSphere (vMotion), Nutanix AHV, and other hypervisor platforms."
+msgstr ""
+"Migración es soportado para cloud tipos ese proporcionar native VM mobility,"
+" como VMware vSphere (vMotion), Nutanix AHV, y otro hypervisor platforms."
+
+#: ../../infrastructure/servers/server_migration.rst:12
+msgid "Role Requirements"
+msgstr "Role Requirements"
+
+#: ../../infrastructure/servers/server_migration.rst:14
+msgid ""
+"``Infrastructure: Compute`` role permission at **Full** level is required to"
+" perform migrations."
+msgstr ""
+"``Infrastructure: Compute`` permiso de rol en **Full** nivel es requerido a "
+"perform migrations."
+
+#: ../../infrastructure/servers/server_migration.rst:17
+msgid "Migrating a Server"
+msgstr "Migrating un Servidor"
+
+#: ../../infrastructure/servers/server_migration.rst:19
+msgid ""
+"Navigate to ``Infrastructure > Compute > Virtual Machines`` or to the server"
+" detail page"
+msgstr ""
+"Navegue un ``Infrastructure > Compute > Virtual Machines`` o a el server "
+"detail página"
+
+#: ../../infrastructure/servers/server_migration.rst:20
+msgid "Select the target server"
+msgstr "Seleccionar el destino servidor"
+
+#: ../../infrastructure/servers/server_migration.rst:21
+msgid "Click :guilabel:`ACTIONS`"
+msgstr "Click :guilabel:`ACCIONES`"
+
+#: ../../infrastructure/servers/server_migration.rst:22
+msgid "Select **Migrate**"
+msgstr "Seleccionar **Migrate**"
+
+#: ../../infrastructure/servers/server_migration.rst:23
+msgid "In the migration dialog, configure:"
+msgstr "En el migración dialog, configure:"
+
+#: ../../infrastructure/servers/server_migration.rst:25
+msgid "TARGET HOST"
+msgstr "TARGET HOST"
+
+#: ../../infrastructure/servers/server_migration.rst:26
+msgid ""
+"Select the destination hypervisor host. Available hosts are filtered based "
+"on the server's current cloud and compatibility."
+msgstr ""
+"Seleccionar el destino hypervisor host. Disponible hosts son filtered basado"
+" en el servidor's actual cloud y compatibility."
+
+#: ../../infrastructure/servers/server_migration.rst:27
+msgid "TARGET RESOURCE POOL"
+msgstr "TARGET RESOURCE POOL"
+
+#: ../../infrastructure/servers/server_migration.rst:28
+msgid ""
+"Select the destination resource pool or cluster (if applicable). This may be"
+" required for cross-cluster migrations."
+msgstr ""
+"Seleccionar el destino recurso pool o cluster (si corresponde). Este puede "
+"ser requerido para cross-cluster migrations."
+
+#: ../../infrastructure/servers/server_migration.rst:29
+msgid "TARGET DATASTORE"
+msgstr "TARGET DATASTORE"
+
+#: ../../infrastructure/servers/server_migration.rst:30
+msgid ""
+"Select the destination datastore for the VM's storage (for storage "
+"migrations or combined compute+storage moves)."
+msgstr ""
+"Seleccionar el destino datastore para el VM's storage (para storage "
+"migrations o combined compute+storage moves)."
+
+#: ../../infrastructure/servers/server_migration.rst:36
+msgid "PRIORITY"
+msgstr "PRIORITY"
+
+#: ../../infrastructure/servers/server_migration.rst:32
+msgid "Migration priority level (where supported by the hypervisor):"
+msgstr "Migración priority nivel (donde soportado por el hypervisor):"
+
+#: ../../infrastructure/servers/server_migration.rst:34
+msgid "**Low** — Background migration with minimal impact"
+msgstr "**Low** — Background migración con minimal impact"
+
+#: ../../infrastructure/servers/server_migration.rst:35
+msgid "**Normal** — Standard priority"
+msgstr "**Normal** — Estándar priority"
+
+#: ../../infrastructure/servers/server_migration.rst:36
+msgid "**High** — Prioritized migration"
+msgstr "**High** — Prioritized migración"
+
+#: ../../infrastructure/servers/server_migration.rst:38
+msgid "Click :guilabel:`EXECUTE`"
+msgstr "Click :guilabel:`EXECUTE`"
+
+#: ../../infrastructure/servers/server_migration.rst:40
+msgid ""
+"The migration operation runs asynchronously. Progress can be monitored on "
+"the server's History tab."
+msgstr ""
+"El migración operación ejecuta asynchronously. Progress puede be monitored "
+"en el servidor's Historial pestaña."
+
+#: ../../infrastructure/servers/server_migration.rst:43
+msgid "Migration Types"
+msgstr "Migration Tipos"
+
+#: ../../infrastructure/servers/server_migration.rst:46
+msgid "Live Migration (vMotion)"
+msgstr "Live Migración (vMotion)"
+
+#: ../../infrastructure/servers/server_migration.rst:46
+msgid ""
+"The VM is moved while running, with no downtime. Requires shared storage or "
+"storage vMotion capability between source and destination hosts."
+msgstr ""
+"El VM es moved mientras ejecutando, con no downtime. Requiere shared storage"
+" o storage vMotion capability entre origen y destino hosts."
+
+#: ../../infrastructure/servers/server_migration.rst:49
+msgid "Cold Migration"
+msgstr "Cold Migration"
+
+#: ../../infrastructure/servers/server_migration.rst:49
+msgid ""
+"The VM is powered off, moved to the new location, and optionally powered "
+"back on. Used when live migration prerequisites are not met."
+msgstr ""
+"El VM es powered off, moved al nuevo location, y opcionalmente powered back "
+"en. Used cuando live migración requisitos previos son no met."
+
+#: ../../infrastructure/servers/server_migration.rst:52
+msgid "Storage Migration"
+msgstr "Storage Migration"
+
+#: ../../infrastructure/servers/server_migration.rst:52
+msgid ""
+"Only the VM's storage is relocated to a different datastore. The VM remains "
+"on the same host."
+msgstr ""
+"Solo el VM's storage es relocated a un diferente datastore. El VM remains en"
+" el mismo host."
+
+#: ../../infrastructure/servers/server_migration.rst:54
+msgid ""
+"Migration availability and options depend on the underlying cloud type and "
+"hypervisor capabilities. Not all cloud types support all migration modes."
+msgstr ""
+"Migración disponibilidad y opciones depend en el underlying cloud tipo y "
+"hypervisor capabilities. No todos cloud tipos support todos migración modos."
+
+#: ../../infrastructure/servers/server_migration.rst:57
+msgid "Monitoring Migration Status"
+msgstr "Monitoring Migration Estado"
+
+#: ../../infrastructure/servers/server_migration.rst:59
+msgid ""
+"Migration operations appear in the server's **History** tab with status "
+"indicators:"
+msgstr ""
+"Migración operaciones aparecer en el servidor's **History** pestaña con "
+"estado indicators:"
+
+#: ../../infrastructure/servers/server_migration.rst:61
+msgid "**Running** — Migration is in progress"
+msgstr "**Running** — Migración es en progress"
+
+#: ../../infrastructure/servers/server_migration.rst:62
+msgid "**Complete** — Migration finished successfully"
+msgstr "**Complete** — Migración finished exitosamente"
+
+#: ../../infrastructure/servers/server_migration.rst:63
+msgid ""
+"**Failed** — Migration encountered an error (check event details for the "
+"failure reason)"
+msgstr ""
+"**Falló** — Migración encountered un error (verificar evento details para el"
+" fallo reason)"

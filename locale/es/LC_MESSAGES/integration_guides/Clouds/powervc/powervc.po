@@ -1,0 +1,472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:2
+#: ../../integration_guides/Clouds/powervc/powervc.rst:115
+msgid "PowerVC"
+msgstr "PowerVC"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:7
+msgid ""
+"IBM PowerVC (Power Virtualization Center) is a cloud management solution for"
+" IBM Power Systems based on OpenStack. |morpheus| integrates with PowerVC "
+"using its OpenStack-compatible APIs, providing full virtual machine "
+"lifecycle management for Power architecture workloads (AIX, IBM i, Linux on "
+"Power)."
+msgstr ""
+"IBM PowerVC (Power Virtualization Center) es una plataforma de "
+"administración de nube solution para IBM Power Systems basado en OpenStack. "
+"|morpheus| integrates con PowerVC using its OpenStack-compatible APIs, "
+"providing full virtual machine lifecycle management para Power architecture "
+"workloads (AIX, IBM i, Linux on Power)."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:10
+msgid "Features"
+msgstr "Características"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:12
+msgid "Virtual Machine provisioning on IBM Power Systems"
+msgstr "Virtual Machine provisioning on IBM Power Systems"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:13
+msgid "Security Group management"
+msgstr "Security Group management"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:14
+msgid "Network lifecycle management"
+msgstr "Network lifecycle management"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:15
+msgid "Brownfield VM discovery and import"
+msgstr "Brownfield VM discovery y import"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:16
+msgid "Resource pool (Host Group) visibility"
+msgstr "Resource pool (Host Group) visibility"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:17
+msgid "Native plan (flavor) discovery"
+msgstr "Native plan (flavor) discovery"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:18
+msgid "Console access (VNC)"
+msgstr "Console acceso (VNC)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:21
+msgid "Prerequisites"
+msgstr "Prerrequisitos"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:23
+msgid "PowerVC 1.4+ deployed and operational"
+msgstr "PowerVC 1.4+ deployed y operational"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:24
+msgid ""
+"Identity API (Keystone) endpoint accessible from the |morpheus| appliance "
+"over HTTPS (port 5000)"
+msgstr ""
+"Identity API (Keystone) endpoint accessible desde el |morpheus| appliance "
+"over HTTPS (puerto 5000)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:25
+msgid ""
+"A PowerVC user account with sufficient privileges for the target project(s)"
+msgstr ""
+"A PowerVC user cuenta con sufficient privileges para el destino project(s)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:26
+msgid ""
+"Network connectivity from |morpheus| to the PowerVC management interfaces"
+msgstr ""
+"Network connectivity desde |morpheus| to el PowerVC management interfaces"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:29
+msgid "Adding a PowerVC Cloud"
+msgstr "Agregar PowerVC Cloud"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:31
+msgid "Navigate to ``Infrastructure > Clouds``"
+msgstr "Navegue un ``Infrastructure > Clouds``"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:32
+msgid "Select :guilabel:`+ ADD`"
+msgstr "Select :guilabel:`+ AGREGAR`"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:33
+msgid "Choose **PowerVC** from the cloud type list"
+msgstr "Choose **PowerVC** desde la nube tipo lista"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:34
+msgid "Configure the following:"
+msgstr "Configure el following:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:36
+msgid "**Connection Settings**"
+msgstr "**Connection Settings**"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:38
+msgid "IDENTITY API URL"
+msgstr "IDENTITY API URL"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:39
+msgid ""
+"The Keystone identity endpoint URL for PowerVC (e.g., ``https://powervc-"
+"host:5000``)"
+msgstr ""
+"The Keystone identity endpoint URL para PowerVC (e.g., ``https://powervc-"
+"host:5000``)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:44
+msgid "CREDENTIAL"
+msgstr "CREDENTIAL"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:41
+msgid "Select a stored credential or provide local credentials:"
+msgstr "Select un stored credential o provide local credentials:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:43
+msgid "**Username** — PowerVC user with API access"
+msgstr "**Username** — PowerVC user con API acceso"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:44
+msgid "**Password** — PowerVC user password"
+msgstr "**Password** — PowerVC user contraseña"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:47
+msgid "PROJECT"
+msgstr "PROJECT"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:47
+msgid ""
+"Select one or more projects (tenants) to scope the integration. Select "
+"\"All\" to discover resources across all accessible projects. This field "
+"uses typeahead and queries projects from the PowerVC endpoint using the "
+"provided credentials."
+msgstr ""
+"Select one o más projects (tenants) to scope la integración. Select \"All\" "
+"to discover recursos across todos accessible projects. This campo uses "
+"typeahead y queries projects desde el PowerVC endpoint using el provided "
+"credentials."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:49
+msgid "**Discovery Options**"
+msgstr "**Discovery Options**"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:51
+msgid "INVENTORY EXISTING INSTANCES"
+msgstr "INVENTORY EXISTING INSTANCES"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:52
+msgid ""
+"Enable to import existing VMs from PowerVC into |morpheus| as managed or "
+"unmanaged instances"
+msgstr ""
+"Enable to import existente VMs desde PowerVC en |morpheus| as managed o "
+"unmanaged instances"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:54
+msgid "ENABLE HYPERVISOR CONSOLE"
+msgstr "ENABLE HYPERVISOR CONSOLE"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:54
+msgid "Enable VNC console access to VMs through the |morpheus| UI"
+msgstr "Enable VNC console acceso to VMs a través de el |morpheus| UI"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:56
+msgid ""
+"Expand **Advanced Options** for additional settings (API timeout, proxy, "
+"etc.)"
+msgstr ""
+"Expand **Advanced Options** para adicional configuración (API timeout, "
+"proxy, etc.)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:57
+msgid "Select :guilabel:`NEXT` and complete the wizard"
+msgstr "Select :guilabel:`SIGUIENTE` y completo el wizard"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:59
+msgid ""
+"PowerVC uses the same Keystone identity API as OpenStack. The Identity API "
+"URL should point to the Keystone v3 endpoint (typically port 5000)."
+msgstr ""
+"PowerVC uses el mismo Keystone identity API as OpenStack. The Identity API "
+"URL debería point to el Keystone v3 endpoint (típicamente puerto 5000)."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:62
+msgid "Cloud Detail Tabs"
+msgstr "Cloud Detail Tabs"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:64
+msgid "Once added, the PowerVC cloud detail page provides:"
+msgstr "Once agregado, el PowerVC cloud página de detalles provides:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:66
+msgid "**VMs** — All discovered and provisioned virtual machines"
+msgstr "**VMs** — All discovered y provisioned virtual machines"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:67
+msgid "**Hosts** — Power Systems hypervisor hosts"
+msgstr "**Hosts** — Power Systems hypervisor hosts"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:68
+msgid "**Networks** — VLAN and virtual networks configured in PowerVC"
+msgstr "**Networks** — VLAN y virtual networks configurado in PowerVC"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:69
+msgid "**Security Groups** — Security group rules"
+msgstr "**Security Groups** — Security group rules"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:70
+msgid ""
+"**Resource Pools** — Host Groups configured in PowerVC (provisioning "
+"requires a resource pool selection)"
+msgstr ""
+"**Resource Pools** — Host Groups configurado in PowerVC (provisioning "
+"requires un recurso pool selection)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:73
+msgid "Provisioning to PowerVC"
+msgstr "Aprovisionar to PowerVC"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:75
+msgid "When provisioning to a PowerVC cloud:"
+msgstr "When provisioning to un PowerVC cloud:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:77
+msgid "Select a PowerVC cloud as the target"
+msgstr "Select un PowerVC cloud as el destino"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:78
+msgid "Choose from discovered native plans (flavors) or custom service plans"
+msgstr ""
+"Choose desde discovered native plans (flavors) o personalizado servicio "
+"plans"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:79
+msgid "Select a network (PowerVC VLAN)"
+msgstr "Select una red (PowerVC VLAN)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:80
+msgid "Select a resource pool (Host Group)"
+msgstr "Select un recurso pool (Host Group)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:81
+msgid "Choose a virtual image compatible with Power architecture"
+msgstr "Choose un virtual image compatible con Power architecture"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:83
+msgid ""
+"PowerVC uses the ``powervc`` provision type internally. Instance Type "
+"Layouts targeting PowerVC must use this provision type."
+msgstr ""
+"PowerVC uses el ``powervc`` provision tipo internally. Instance Type Layouts"
+" targeting PowerVC debe use este provision tipo."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:86
+msgid "Server Types"
+msgstr "Server Types"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:88
+msgid "PowerVC supports the following server types in |morpheus|:"
+msgstr "PowerVC supports el following server types in |morpheus|:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:90
+msgid "**powervcLinux** — Linux on Power managed instances"
+msgstr "**powervcLinux** — Linux on Power managed instances"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:91
+msgid "**powervcWindows** — Windows on Power managed instances (rare)"
+msgstr "**powervcWindows** — Windows on Power managed instances (rare)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:92
+msgid "**powervcVm** — Generic PowerVC VM (Linux)"
+msgstr "**powervcVm** — Generic PowerVC VM (Linux)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:93
+msgid "**powervcWindowsVm** — Generic PowerVC VM (Windows)"
+msgstr "**powervcWindowsVm** — Generic PowerVC VM (Windows)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:96
+msgid "Network Configuration"
+msgstr "Network Configuration"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:98
+msgid ""
+"PowerVC networks are synced as VLAN network types (``powervcVlan``). "
+"Networks are managed through the integrated network server which supports:"
+msgstr ""
+"PowerVC networks son synced as VLAN network types (``powervcVlan``). "
+"Networks son managed a través de el integrated network server cual supports:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:100
+msgid "Viewing available networks"
+msgstr "Viewing disponible networks"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:101
+msgid "Assigning networks to instances during provisioning"
+msgstr "Assigning networks to instances durante provisioning"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:102
+msgid "Network router management"
+msgstr "Network router management"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:105
+msgid "Differences from Standard OpenStack"
+msgstr "Differences desde Standard OpenStack"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:107
+msgid "While PowerVC is built on OpenStack, several differences exist:"
+msgstr "While PowerVC es built on OpenStack, several differences exist:"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:113
+msgid "Feature"
+msgstr "Feature"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:114
+msgid "OpenStack"
+msgstr "OpenStack"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:116
+msgid "Architecture"
+msgstr "Architecture"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:117
+msgid "x86_64"
+msgstr "x86_64"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:118
+msgid "ppc64le (Power)"
+msgstr "ppc64le (Power)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:119
+msgid "Compute service"
+msgstr "Compute servicio"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:120
+msgid "Nova"
+msgstr "Nova"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:121
+msgid "Nova (Power-optimized)"
+msgstr "Nova (Power-optimized)"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:122
+msgid "Image format"
+msgstr "Image formato"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:123
+msgid "QCOW2, RAW"
+msgstr "QCOW2, RAW"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:124
+msgid "OVA, disk image"
+msgstr "OVA, disk image"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:125
+msgid "Disk mode options"
+msgstr "Disk modo opciones"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:126
+msgid "Local, Ceph"
+msgstr "Local, Ceph"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:127
+msgid "SAN-backed storage"
+msgstr "SAN-backed storage"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:128
+msgid "Costing"
+msgstr "Costing"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:129
+#: ../../integration_guides/Clouds/powervc/powervc.rst:132
+msgid "Available"
+msgstr "Available"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:130
+#: ../../integration_guides/Clouds/powervc/powervc.rst:133
+#: ../../integration_guides/Clouds/powervc/powervc.rst:136
+msgid "Not available"
+msgstr "Not disponible"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:131
+msgid "Functions/Jobs"
+msgstr "Functions/Jobs"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:134
+msgid "Bare Metal"
+msgstr "Bare Metal"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:135
+msgid "Ironic"
+msgstr "Ironic"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:137
+msgid "Distributed Worker"
+msgstr "Distributed Worker"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:138
+#: ../../integration_guides/Clouds/powervc/powervc.rst:139
+msgid "Supported"
+msgstr "Supported"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:142
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:144
+msgid ""
+"**Cannot connect:** Verify the Identity API URL includes the protocol "
+"(``https://``) and correct port (5000). Ensure TLS certificates are valid or"
+" trusted."
+msgstr ""
+"**Cannot connect:** Verify el Identity API URL includes el protocolo "
+"(``https://``) y correct puerto (5000). Ensure TLS certificates son válido o"
+" trusted."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:145
+msgid ""
+"**No projects found:** Check that the user credentials have access to at "
+"least one project in PowerVC."
+msgstr ""
+"**No projects found:** Check que el usuario credentials tienen acceso to at "
+"least one project in PowerVC."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:146
+msgid ""
+"**No images available:** Power architecture images must be uploaded to "
+"PowerVC separately. Standard x86 images are not compatible."
+msgstr ""
+"**No images disponible:** Power architecture images debe be uploaded to "
+"PowerVC separately. Standard x86 images no son compatible."
+
+#: ../../integration_guides/Clouds/powervc/powervc.rst:147
+msgid ""
+"**Provisioning fails:** Verify resource pool (Host Group) has available "
+"capacity and the selected network is properly configured in PowerVC."
+msgstr ""
+"**Provisioning fails:** Verify recurso pool (Host Group) tiene disponible "
+"capacity y el seleccionado network es properly configurado in PowerVC."

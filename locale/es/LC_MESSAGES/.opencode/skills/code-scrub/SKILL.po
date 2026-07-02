@@ -1,0 +1,411 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:12
+msgid "Code Scrub Methodology"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:14
+msgid "Core principle"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:16
+msgid ""
+"Scrubbing improves code quality by **removing waste** — not by adding "
+"abstractions. Every change must make the code simpler, not more complex. "
+"If a fix introduces more indirection than it removes duplication, don't "
+"make it."
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:18
+msgid "Confidence levels"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:20
+msgid "Categorize every finding:"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Level"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Criteria"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Action"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "**High**"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid ""
+"Clearly unused, clearly duplicated, clearly wrong type, clearly "
+"misleading comment. Removal/fix has no behavioral change."
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Implement immediately"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "**Medium**"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid ""
+"Likely an improvement but requires judgment — could affect behavior, "
+"might break an edge case, or the \"right\" fix is debatable."
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Document as recommendation, don't implement"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "**Low**"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Stylistic, cosmetic, or would require significant restructuring."
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Mention in assessment only"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:28
+msgid "Rules for each concern"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:30
+msgid "Deduplication (DRY)"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:31
+msgid ""
+"Only consolidate when the duplicated code is **genuinely the same "
+"concern**, not just similar-looking code that happens to share structure"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:32
+msgid ""
+"Don't extract utilities for code that's duplicated only twice — wait for "
+"three or more"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:33
+msgid ""
+"Don't create \"god util\" packages. Place shared code in the package that"
+" owns the concept"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:34
+msgid ""
+"If consolidation requires adding parameters or flags to handle variant "
+"behavior, it's probably not worth it"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:36
+msgid "Type strengthening"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:37
+#, python-brace-format
+msgid ""
+"`any`/`interface{}` is legitimate for: JSON marshaling, database/sql "
+"args, generic containers, protocol boundaries (MCP, GraphQL)"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:38
+msgid ""
+"Replace with concrete types when: the value is always used as one type, "
+"or the set of types is small and known"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:39
+msgid ""
+"Don't create wrapper types just to avoid `any` — the cure shouldn't be "
+"worse than the disease"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:40
+msgid ""
+"Check that replacement types are actually correct by tracing usage "
+"upstream and downstream"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:42
+msgid "Dead code removal"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:43
+msgid ""
+"Verify with static analysis tools first (`deadcode`, `knip`, tree-shaking"
+" analysis)"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:44
+msgid "Grep for all references before removing exported symbols"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:45
+msgid ""
+"Watch for: reflection, embed directives, interface implementations, build"
+" tags, test helpers"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:46
+msgid "If uncertain, leave it and document"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:48
+msgid "Dependency structure"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:49
+msgid "Go: no circular imports possible, focus on coupling and cohesion"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:50
+msgid "TypeScript/JS: use tools like `madge` to detect cycles"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:51
+msgid "Don't restructure working dependency graphs for cosmetic reasons"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:52
+msgid ""
+"A \"god package\" that wires things together (CLI layer, main, app "
+"bootstrap) is architecturally correct"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:54
+msgid "Defensive programming"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:55
+msgid ""
+"Keep error handling for: user input, network I/O, file I/O, external "
+"APIs, deserialization"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:56
+msgid ""
+"Remove error handling that: swallows errors silently, returns fallback "
+"values that mask bugs, catches panics without logging"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:57
+msgid ""
+"`_ = expr` is fine for: log writes, cache writes, cleanup operations, "
+"non-critical side effects"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:58
+msgid ""
+"`_ = expr` is not fine for: data writes the user expects to persist, "
+"operations where failure means silent data loss"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:60
+msgid "Legacy and fallback code"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:61
+msgid ""
+"Backward compatibility for **user-facing config** is legitimate — don't "
+"remove it without a migration path"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:62
+msgid ""
+"Backward compatibility for **internal data formats** should be removed if"
+" no deployments use the old format"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:63
+msgid ""
+"Comments saying \"deprecated\" or \"legacy\" don't automatically mean the"
+" code should be removed — check if it's still needed"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:64
+msgid ""
+"Feature flags and conditional paths that only have one active branch "
+"should be simplified"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:66
+msgid "Comments"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:67
+msgid ""
+"Remove: narrating comments (\"increment counter\"), section dividers that"
+" add nothing, AI boilerplate, work-in-progress references"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:68
+msgid ""
+"Keep: comments explaining **why** (not what), non-obvious algorithm "
+"explanations, links to specs/tickets, license headers, godoc/JSDoc for "
+"public APIs"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:69
+msgid ""
+"Replace (don't just remove): misleading comments that describe behavior "
+"the code doesn't have"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:71
+msgid "Language-specific tools"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Language"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Dead code"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Dependencies"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Types"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Go"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`deadcode`, `go vet`, manual grep"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`go list -json`, import analysis"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+#, python-brace-format
+msgid "grep for `any`/`interface{}`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "TypeScript"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`knip`, `ts-prune`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`madge`, `dependency-cruiser`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "grep for `any`, `unknown`, `as any`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Python"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`vulture`, `pylint`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`pydeps`, `import-linter`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "grep for `Any`, `# type: ignore`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Java"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "IntelliJ inspections, `spotbugs`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`jdepend`, gradle dependencies"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "grep for `Object`, raw types"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "Rust"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`cargo clippy`, dead_code warnings"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "`cargo tree`"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md
+msgid "rare — compiler enforces"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:81
+msgid "Verification"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:83
+msgid "After every change:"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:84
+msgid "Build must pass"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:85
+msgid "Tests must pass"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:86
+msgid "No new warnings introduced"
+msgstr ""
+
+#: ../../.opencode/skills/code-scrub/SKILL.md:88
+msgid ""
+"If build or tests fail after a change, **revert and document** — don't "
+"fix forward during a scrub."
+msgstr ""
+

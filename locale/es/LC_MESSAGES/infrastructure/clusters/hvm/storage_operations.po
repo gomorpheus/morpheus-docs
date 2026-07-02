@@ -1,0 +1,575 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:2
+msgid "Storage Lifecycle"
+msgstr "Storage Lifecycle"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:4
+msgid ""
+"This section covers Day-2 storage operations on an HVM 1.3 cluster, "
+"including adding and removing datastores, managing iSCSI targets, and "
+"expanding storage capacity."
+msgstr ""
+"Este sección covers Day-2 storage operaciones en un HVM 1.3 cluster, "
+"incluyendo adding y removing datastores, managing iSCSI targets, y expanding"
+" storage capacidad."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:7
+msgid "Adding a New Datastore"
+msgstr "Adding un Nuevo Almacén de datos"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:9
+msgid ""
+"New HPE Clustered Datastores (Shared LUNs) can be added to a running cluster"
+" without downtime."
+msgstr ""
+"Nuevo HPE Clustered Almacenes de datos (Shared LUNs) se puede agregar a un "
+"ejecutando cluster sin downtime."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:12
+msgid "Prerequisites"
+msgstr "Requisitos previos"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:14
+msgid ""
+"A shared storage LUN is provisioned and accessible to all cluster hosts via "
+"iSCSI or Fibre Channel"
+msgstr ""
+"Un shared storage LUN es aprovisionado y accessible a todos cluster hosts "
+"via iSCSI o Fibre Channel"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:15
+msgid ""
+"The iSCSI target for the LUN has been added to the cluster (see `Adding "
+"iSCSI Targets`_ below)"
+msgstr ""
+"El iSCSI destino para el LUN tiene been agregado al cluster (ver `Adding "
+"iSCSI Targets`_ a continuación)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:16
+msgid ""
+"All hosts can see the block device (verify with ``lsblk`` on each host)"
+msgstr ""
+"Todos hosts puede consulte la bloquear device (verificar con ``lsblk`` en "
+"cada host)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:19
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:60
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:96
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:138
+msgid "Procedure"
+msgstr "Procedure"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:21
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:146
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:166
+msgid "Navigate to ``Storage > Datastores``"
+msgstr "Navegue un ``Storage > Datastores``"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:22
+msgid "Click :guilabel:`+ Add`"
+msgstr "Click :guilabel:`+ Agregar`"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:23
+msgid "Select the HPE Clustered Datastore (GFS2) type"
+msgstr "Seleccionar el HPE Clustered Almacén de datos (GFS2) tipo"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:24
+msgid "Configure the datastore:"
+msgstr "Configure el datastore:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:30
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:70
+msgid "Field"
+msgstr "Campo"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:31
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:71
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:198
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:32
+msgid "Name"
+msgstr "Nombre"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:33
+msgid "Descriptive name for the datastore"
+msgstr "Descriptive nombre para el datastore"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:34
+msgid "Cluster"
+msgstr "Clúster"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:35
+msgid "Select the target HVM cluster"
+msgstr "Seleccionar el destino HVM cluster"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:36
+msgid "Block Device"
+msgstr "Bloquear Device"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:37
+msgid "The shared block device path (e.g., ``/dev/mapper/mpathX``)"
+msgstr "El shared bloquear device ruta (e.g., ``/dev/mapper/mpathX``)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:38
+msgid "Heartbeat Target"
+msgstr "Heartbeat Destino"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:39
+msgid "Enable if this datastore should be used for heartbeat writes"
+msgstr ""
+"Habilitar si este datastore debería be utilizado para heartbeat writes"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:41
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:77
+msgid "Click :guilabel:`Save`"
+msgstr "Click :guilabel:`Guardar`"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:44
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:80
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:105
+msgid "What Happens Automatically"
+msgstr "Qué Happens Automatically"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:46
+msgid "When a new HPE Clustered Datastore is created:"
+msgstr "Cuando un nuevo HPE Clustered Almacén de datos es creado:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:48
+msgid ""
+"**GFS2 formatting** — ``mkfs.gfs2`` is run with lock_dlm protocol, 2048 "
+"resource groups, and 32 initial journals, with the lock table tied to the "
+"cluster"
+msgstr ""
+"**GFS2 formatting** — ``mkfs.gfs2`` es ejecutar con lock_dlm protocolo, 2048"
+" recurso groups, y 32 initial journals, con el lock table tied al cluster"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:49
+msgid ""
+"**Journal provisioning** — Journals are added (``gfs2_jadd``) if the initial"
+" journal count is less than the number of hosts"
+msgstr ""
+"**Journal provisioning** — Journals son agregado (``gfs2_jadd``) si el "
+"initial journal cantidad es menos de el número de hosts"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:50
+msgid ""
+"**Mount on all hosts** — The filesystem is mounted on each cluster host. "
+"Mount information is persisted to ``/opt/morpheus-node/.mounts``"
+msgstr ""
+"**Mount on all hosts** — El filesystem es mounted en cada cluster host. "
+"Mount información es persisted a ``/opt/morpheus-node/.mounts``"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:51
+msgid ""
+"**libvirt storage pool** — A virsh storage pool is created on each host, "
+"making the datastore available for VM disk placement"
+msgstr ""
+"**libvirt storage pool** — Un virsh storage pool es creado en cada host, "
+"making el datastore disponible para VM disco placement"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:52
+msgid ""
+"**Lock protocol** — The ``lock_dlm`` protocol coordinates file locking "
+"across all hosts through the existing DLM infrastructure"
+msgstr ""
+"**Lock protocolo** — El ``lock_dlm`` protocolo coordinates archivo locking a"
+" través de todos hosts a través de el existente DLM infrastructure"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:55
+msgid "Adding iSCSI Targets"
+msgstr "Adding iSCSI Targets"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:57
+msgid ""
+"iSCSI targets provide the block device access that underpins HPE Clustered "
+"Datastores."
+msgstr ""
+"iSCSI targets proporcionar el bloquear device acceso ese underpins HPE "
+"Clustered Almacenes de datos."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:62
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:100
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
+msgstr ""
+"Navegue un ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:63
+msgid "Click :guilabel:`Add`"
+msgstr "Click :guilabel:`Agregar`"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:64
+msgid "Enter the iSCSI target details:"
+msgstr "Ingresar el iSCSI destino details:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:72
+msgid "Target IP"
+msgstr "Destino IP"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:73
+msgid "IP address of the iSCSI target portal"
+msgstr "IP dirección del iSCSI destino portal"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:74
+msgid "Target Port"
+msgstr "Destino Port"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:75
+msgid "Port number (default: 3260)"
+msgstr "Port número (predeterminado: 3260)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:82
+msgid "When an iSCSI target is added:"
+msgstr "Cuando un iSCSI destino es agregado:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:84
+msgid ""
+"**Discovery** — ``iscsiadm -m discovery -t st -p \"<IP>:<port>\"`` is run on"
+" all online cluster hosts"
+msgstr ""
+"**Discovery** — ``iscsiadm -m discovery -t st -p \"<IP>:<port>\"`` es "
+"ejecutar en todos online cluster hosts"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:85
+msgid ""
+"**Auto-login** — Sessions are configured for automatic startup and all "
+"available targets are logged in (``iscsiadm -m node --loginall=automatic``)"
+msgstr ""
+"**Auto-login** — Sessions están configurados para automático startup y todos"
+" disponible targets son logged en (``iscsiadm -m node "
+"--loginall=automatic``)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:86
+msgid "**Persistence** — Target connections persist across host reboots"
+msgstr "**Persistence** — Destino conexiones persist a través de host reboots"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:88
+msgid ""
+"iSCSI targets are automatically discovered on all hosts in the cluster, not "
+"just a single host. This ensures all hosts can access the shared storage "
+"simultaneously."
+msgstr ""
+"iSCSI targets son automáticamente discovered en todos hosts en el cluster, "
+"no solo un single host. Este ensures todos hosts puede acceso el shared "
+"storage simultaneously."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:91
+msgid "Removing iSCSI Targets"
+msgstr "Removing iSCSI Targets"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:93
+msgid ""
+"Before removing an iSCSI target, ensure no datastores are using LUNs from "
+"that target. Removing a target with active datastores will cause storage "
+"failures."
+msgstr ""
+"Antes de removing un iSCSI destino, asegurar no datastores son usando LUNs "
+"desde ese destino. Removing un destino con activo datastores será cause "
+"storage failures."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:98
+msgid "Migrate all VMs off datastores using the target's LUNs"
+msgstr "Migrate todos VMs off datastores usando el destino's LUNs"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:99
+msgid ""
+"Remove the datastore from |morpheus| (see `Removing a Datastore`_ below)"
+msgstr ""
+"Eliminar el datastore desde |morpheus| (ver `Removing un Almacén de datos`_ "
+"a continuación)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:101
+msgid "Select the target to remove"
+msgstr "Seleccionar el destino a eliminar"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:102
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:148
+msgid "Click :guilabel:`Remove`"
+msgstr "Click :guilabel:`Eliminar`"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:107
+msgid ""
+"The iSCSI discovery database entry is removed from all online cluster hosts "
+"using ``iscsiadm -m discoverydb -t sendtargets -p \"<IP>:<port>\" -o "
+"delete``."
+msgstr ""
+"El iSCSI discovery base de datos entrada es eliminado desde todos online "
+"cluster hosts usando ``iscsiadm -m discoverydb -t sendtargets -p "
+"\"<IP>:<port>\" -o delete``."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:110
+msgid "Expanding Storage (New LUNs)"
+msgstr "Expanding Almacenamiento (Nuevo LUNs)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:112
+msgid "To add additional capacity to an existing cluster:"
+msgstr "Para agregar adicional capacity a un existente cluster:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:114
+msgid "Provision new LUNs on your storage array"
+msgstr "Provision nuevo LUNs en su storage array"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:115
+msgid "Add iSCSI targets (if new portals) as described above"
+msgstr "Agregar iSCSI targets (si nuevo portals) como se describe arriba"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:116
+msgid "If using existing targets, trigger a rescan:"
+msgstr "Si usando existente targets, trigger un rescan:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:118
+msgid "sudo iscsiadm -m session --rescan"
+msgstr "sudo iscsiadm -m session --rescan"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:122
+msgid "Verify the new LUN is visible on all hosts:"
+msgstr "Verificar el nuevo LUN es visible en todos hosts:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:124
+msgid "sudo multipath -ll"
+msgstr "sudo multipath -ll"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:128
+msgid "Create a new HPE Clustered Datastore using the new block device"
+msgstr ""
+"Crear un nuevo HPE Clustered Almacén de datos usando el nuevo bloquear "
+"device"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:130
+msgid ""
+"Each HPE Clustered Datastore (Shared LUN) maps to a single block device. To "
+"add capacity, create additional datastores rather than expanding existing "
+"GFS2 filesystems."
+msgstr ""
+"Cada HPE Clustered Almacén de datos (Shared LUN) mapea a un single bloquear "
+"device. A agregar capacidad, crear adicional datastores rather than "
+"expanding existente GFS2 filesystems."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:133
+msgid "Removing a Datastore"
+msgstr "Removing un Almacén de datos"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:135
+msgid ""
+"All VMs must be migrated off the datastore before removal. Removing a "
+"datastore with active VMs will result in data loss."
+msgstr ""
+"Todos VMs debe be migrado off el datastore antes de removal. Removing un "
+"datastore con activo VMs será resultado en datos loss."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:140
+msgid "Verify no VMs have disks on the datastore:"
+msgstr "Verificar no VMs tienen discos en el datastore:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:142
+msgid "Navigate to ``Storage > Datastores > [Datastore]``"
+msgstr "Navegue un ``Storage > Datastores > [Datastore]``"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:143
+msgid "Check the :guilabel:`Virtual Machines` tab"
+msgstr "Verificar el :guilabel:`Máquinas virtuales` pestaña"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:145
+msgid "Migrate any remaining VMs to another datastore"
+msgstr "Migrate cualquier remaining VMs a another datastore"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:147
+msgid "Select the datastore to remove"
+msgstr "Seleccionar el datastore a eliminar"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:151
+msgid "What Happens"
+msgstr "Qué Happens"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:153
+msgid "The GFS2 filesystem is unmounted on all cluster hosts"
+msgstr "El GFS2 filesystem es unmounted en todos cluster hosts"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:154
+msgid "The libvirt storage pool is destroyed on all hosts"
+msgstr "El libvirt storage pool es destroyed en todos hosts"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:155
+msgid "Mount information is removed from ``/opt/morpheus-node/.mounts``"
+msgstr "Mount información es eliminado desde ``/opt/morpheus-node/.mounts``"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:156
+msgid "The datastore record is removed from |morpheus|"
+msgstr "El datastore record es eliminado desde |morpheus|"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:159
+msgid "Heartbeat Datastore Configuration"
+msgstr "Heartbeat Datastore Configuration"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:161
+msgid ""
+"The heartbeat datastore is used for host health detection. Each host writes "
+"``hb.properties`` to the heartbeat datastore every 20 seconds, and the "
+"Designated Coordinator monitors these writes to detect host failures."
+msgstr ""
+"El heartbeat datastore se usa para host health detection. Cada host writes "
+"``hb.properties`` al heartbeat datastore cada 20 seconds, y el Designated "
+"Coordinator monitors estos writes a detect host failures."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:164
+msgid "Changing the Heartbeat Datastore"
+msgstr "Changing el Heartbeat Almacén de datos"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:167
+msgid "Edit the desired datastore's properties"
+msgstr "Editar el desired datastore's properties"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:168
+msgid "Enable the :guilabel:`Heartbeat Target` option"
+msgstr "Habilitar el :guilabel:`Heartbeat Target` opción"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:169
+msgid "Save changes"
+msgstr "Guardar cambios"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:171
+msgid ""
+"Only one datastore may be configured as the heartbeat target at a time. If "
+"multiple datastores are marked as heartbeat targets, |morpheus| will "
+"automatically select one (preferring provisioned, non-failing datastores) "
+"and clear the heartbeat flag on the others. An alarm is raised when this "
+"automatic selection occurs."
+msgstr ""
+"Solo one datastore puede be configurado como el heartbeat destino en un "
+"tiempo. Si múltiples datastores son marked como heartbeat targets, "
+"|morpheus| será automáticamente seleccionar one (preferring aprovisionado, "
+"non-failing datastores) y clear el heartbeat flag en el others. Un alarm es "
+"raised cuando este automático selection occurs."
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:174
+msgid "Heartbeat Datastore Best Practices"
+msgstr "Heartbeat Datastore Best Practices"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:176
+msgid "Use a highly reliable datastore as the heartbeat target"
+msgstr "Usar un highly reliable datastore como el heartbeat destino"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:177
+msgid "Ensure the heartbeat datastore is accessible from all cluster hosts"
+msgstr ""
+"Asegurar el heartbeat datastore es accessible desde todos cluster hosts"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:178
+msgid ""
+"If the heartbeat datastore fails, VM failover detection is impaired until a "
+"new heartbeat target is configured"
+msgstr ""
+"Si el heartbeat datastore falla, VM conmutación por error detection es "
+"impaired hasta un nuevo heartbeat destino está configurado"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:179
+msgid ""
+"Monitor the heartbeat datastore's health in the Quorum panel "
+"(``Infrastructure > Clusters > [Cluster] > Summary``)"
+msgstr ""
+"Monitor el heartbeat datastore's health en el Quorum panel (``Infrastructure"
+" > Clusters > [Cluster] > Summary``)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:182
+msgid "Datastore Health Monitoring"
+msgstr "Datastore Health Monitoring"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:184
+msgid "|morpheus| continuously monitors datastore health:"
+msgstr "|morpheus| continuously monitors datastore health:"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:186
+msgid ""
+"**Mount status** — Each host's agent reports mount status (MOUNTED, WARNING,"
+" FAILED)"
+msgstr ""
+"**Mount status** — Cada host's agent reports mount estado (MOUNTED, WARNING,"
+" FAILED)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:187
+msgid ""
+"**GFS2 withdrawal** — If the GFS2 filesystem enters a withdrawn state (due "
+"to journal errors or storage issues), the datastore location status is "
+"updated to ``warning`` or ``failed``"
+msgstr ""
+"**GFS2 withdrawal** — Si el GFS2 filesystem enters un withdrawn estado "
+"(debido un journal errores o storage problemas), el datastore location "
+"estado es actualizado a ``warning`` o ``failed``"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:188
+msgid ""
+"**virsh pool status** — If a libvirt storage pool is missing on a host, "
+"|morpheus| recreates it automatically during the next sync cycle"
+msgstr ""
+"**virsh pool status** — Si un libvirt storage pool es missing en un host, "
+"|morpheus| recreates it automáticamente durante el siguiente sync cycle"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:191
+msgid "Datastore Status Indicators"
+msgstr "Datastore Estado Indicators"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:197
+msgid "Status"
+msgstr "Estado"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:199
+msgid "Provisioned"
+msgstr "Provisioned"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:200
+msgid "Datastore is healthy and operational on all hosts"
+msgstr "Almacén de datos es saludable y operational en todos hosts"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:201
+msgid "Warning"
+msgstr "Warning"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:202
+msgid ""
+"One or more hosts report mount issues; investigate the affected host(s)"
+msgstr ""
+"One o más hosts report mount problemas; investigate el affected host(s)"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:203
+msgid "Failed"
+msgstr "Failed"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:204
+msgid "All hosts report mount failures; datastore is not operational"
+msgstr "Todos hosts report mount failures; datastore es no operational"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:205
+msgid "Provisioning"
+msgstr "Aprovisionamiento"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:206
+msgid "Datastore is being created or mounted"
+msgstr "Almacén de datos es being creado o mounted"
+
+#: ../../infrastructure/clusters/hvm/storage_operations.rst:208
+msgid "For troubleshooting datastore issues, see :doc:`troubleshooting`."
+msgstr ""
+"Para solución de problemas datastore problemas, ver :doc:`troubleshooting`."

@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:2
+msgid "Approvals plugin"
+msgstr "Approvals plugin"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:4
+msgid "Integrate Morpheus with your own ITSM solution"
+msgstr "Integrate Morpheus con su own ITSM solution"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:7
+msgid "Setup"
+msgstr "Setup"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:8
+msgid ""
+"This plugin will enable you to create configuration for several aspects of "
+"Approvals within Morpheus."
+msgstr ""
+"Este plugin va a enable usted a crear configuración para several aspects de "
+"Approvals dentro de Morpheus."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:11
+msgid "Integration"
+msgstr "Integración"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:12
+msgid ""
+"A new Integration Type will be created when this plugin is installed. You "
+"are able to customize the ``OptionType`` for the new Integration using the "
+"``ApprovalProvider.integrationOptionTypes`` method. These ``OptionType`` "
+"will be visible when creating the new Integration in the Morpheus UI "
+"(|AdmInt|)."
+msgstr ""
+"Un nuevo Integración Tipo será creado cuando este plugin es installed. You "
+"son able a customize el ``OptionType`` para el nuevo Integración usando el "
+"``ApprovalProvider.integrationOptionTypes`` method. Estos ``OptionType`` "
+"será visible cuando creando el nuevo Integración en el Morpheus UI "
+"(|AdmInt|)."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:17
+msgid "Policies"
+msgstr "Políticas"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:18
+msgid ""
+"Policies (|AdmPol| in the Morpheus UI) define the conditions in which "
+"approval is required for provisioning. Custom ``OptionType`` can be defined "
+"for Policy creation by implementing the "
+"``ApprovalProvider.policyOptionTypes`` method."
+msgstr ""
+"Políticas (|AdmPol| en el Morpheus UI) define el conditions en que approval "
+"es obligatorio para aprovisionamiento. Personalizado ``OptionType`` puede "
+"ser defined para Política creation por implementing el "
+"``ApprovalProvider.policyOptionTypes`` method."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:22
+msgid "Create Approval"
+msgstr "Crear Approval"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:24
+msgid ""
+"``ApprovalProvider.createApprovalRequest`` is called after a Provision "
+"Request is created. Here is where you can send the request to your ITSM. "
+"Each ``Request`` will have one or more ``RequestReference`` for each "
+"resource associated with the provision request."
+msgstr ""
+"``ApprovalProvider.createApprovalRequest`` es llamado después de a Provision"
+" Request es creado. Here es donde usted puede send el request a su ITSM. "
+"Cada ``Request`` va a tienen uno o más ``RequestReference`` para cada "
+"recurso asociado con el provision request."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:28
+msgid ""
+"It is important that you specify an ``externalId`` in the "
+"``RequestResponse`` and each ``RequestReference`` so that Morpheus can track"
+" the approval status."
+msgstr ""
+"Es important ese usted especificar un ``externalId`` en el "
+"``RequestResponse`` y cada ``RequestReference`` so ese Morpheus puede track "
+"el approval status."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:30
+msgid ""
+"The ``integrationOptionTypes`` you specified are available in the method "
+"argument ``Policy.configMap``"
+msgstr ""
+"El ``integrationOptionTypes`` usted specified están disponibles en el method"
+" argument ``Policy.configMap``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:32
+msgid ""
+"String itsmEndpoint = accountIntegration.configMap?.cm?.plugin?.\"itsm-"
+"endpoint\""
+msgstr ""
+"String itsmEndpoint = accountIntegración.configMap?.cm?.plugin?.\"itsm-"
+"endpoint\""
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:36
+msgid ""
+"and the ``policyOptionTypes`` you specified are available in the method "
+"argument ``AccountIntegration.configMap``."
+msgstr ""
+"y el ``policyOptionTypes`` usted specified están disponibles en el method "
+"argument ``AccountIntegration.configMap``."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:38
+msgid "String myPolicyConfigValue = policy.configMap?.\"my-policy-config-option\""
+msgstr ""
+"String myPolíticaConfigValue = política.configMap?.\"my-política-config-"
+"opción\""
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:43
+msgid "Monitor Approval"
+msgstr "Monitor Approval"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:44
+msgid ""
+"At a regular interval, Morpheus checks for Request approvals. In the "
+"``ApprovalProvider.monitor`` method define your logic for retrieving a list "
+"of approval requests in your ITSM solution."
+msgstr ""
+"En a regular interval, Morpheus checks para Request approvals. En el "
+"``ApprovalProvider.monitor`` method define su logic para retrieving a lista "
+"de approval requests en su ITSM solution."
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:46
+msgid ""
+"Approval ``RequestReference`` should be returned with one of the following "
+"``ApprovalStatus``:"
+msgstr ""
+"Approval ``RequestReference`` debería ser returned con uno de lo siguiente "
+"``ApprovalStatus``:"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:48
+msgid "``requesting``"
+msgstr "``requesting``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:49
+msgid "``requested``"
+msgstr "``requested``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:50
+msgid "``error``"
+msgstr "``error``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:51
+msgid "``approved``"
+msgstr "``approved``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:52
+msgid "``rejected``"
+msgstr "``rejected``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:53
+msgid "``cancelled``"
+msgstr "``cancelled``"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:56
+msgid "Integration Logo"
+msgstr "Integración Logo"
+
+#: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:58
+#, python-brace-format
+msgid ""
+"A custom logo can be used in the Morpheus UI by placing an image at "
+"``src/assets/images/{plugin-code}.png``. Recommended file size is 180 x 60 "
+"px."
+msgstr ""
+"Un personalizado logo puede ser usado en el Morpheus UI por placing un image"
+" en ``src/assets/images/{plugin-code}.png``. Recomendado file size es 180 x "
+"60 px."

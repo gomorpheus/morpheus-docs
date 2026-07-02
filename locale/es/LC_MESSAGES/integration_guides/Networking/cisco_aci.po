@@ -1,0 +1,531 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:4
+msgid "Cisco ACI"
+msgstr "Cisco ACI"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:7
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:9
+msgid ""
+"Cisco Application Centric Infrastructure (ACI) is a software-defined "
+"networking (SDN) solution that provides centralized automation and policy-"
+"driven application profiles. |morpheus| offers a comprehensive integration "
+"with Cisco ACI as both a network and security integration, enabling "
+"inventory of existing ACI configurations and creation of new networking "
+"constructs directly from the |morpheus| UI."
+msgstr ""
+"Cisco Application Centric Infrastructure (ACI) es un software-definido "
+"networking (SDN) solution que provides centralized automation y policy-"
+"driven application profiles. |morpheus| offers un comprehensive integration "
+"con Cisco ACI as both una red y security integration, enabling inventory of "
+"existente ACI configurations y creation of nuevo networking constructs "
+"directly desde el |morpheus| UI."
+
+msgid "ACI summary tab"
+msgstr "ACI resumen pestaña"
+
+msgid ".. image:: images/aci1.png"
+msgstr ".. image:: images/aci1.png"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:14
+msgid "The |morpheus| ACI integration provides management of:"
+msgstr "The |morpheus| ACI integration provides management of:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:16
+#: ../../integration_guides/Networking/cisco_aci.rst:125
+msgid "Tenants"
+msgstr "Tenants"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:17
+msgid "Application Network Profiles (ANPs)"
+msgstr "Application Network Profiles (ANPs)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:18
+msgid "Endpoint Groups (EPGs)"
+msgstr "Endpoint Groups (EPGs)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:19
+#: ../../integration_guides/Networking/cisco_aci.rst:84
+msgid "Contexts (VRFs)"
+msgstr "Contexts (VRFs)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:20
+#: ../../integration_guides/Networking/cisco_aci.rst:133
+msgid "Bridge Domains"
+msgstr "Bridge Domains"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:21
+#: ../../integration_guides/Networking/cisco_aci.rst:87
+#: ../../integration_guides/Networking/cisco_aci.rst:149
+msgid "Filters"
+msgstr "Filters"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:22
+#: ../../integration_guides/Networking/cisco_aci.rst:90
+#: ../../integration_guides/Networking/cisco_aci.rst:141
+msgid "Contracts"
+msgstr "Contracts"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:24
+msgid ""
+"|morpheus| syncs with ACI APIC every 5 minutes. |morpheus| connects to ACI "
+"APIC over port 443."
+msgstr ""
+"|morpheus| syncs con ACI APIC cada 5 minutes. |morpheus| connects to ACI "
+"APIC over puerto 443."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:27
+msgid "Prerequisites"
+msgstr "Prerrequisitos"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:29
+msgid "Before configuring the Cisco ACI integration:"
+msgstr "Antes de configurar el Cisco ACI integration:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:31
+msgid ""
+"A Cisco ACI fabric with APIC controller(s) is operational and accessible "
+"from the |morpheus| appliance"
+msgstr ""
+"A Cisco ACI fabric con APIC controller(s) es operational y accessible desde "
+"el |morpheus| appliance"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:32
+msgid ""
+"An APIC user account with appropriate read/write permissions is available"
+msgstr "An APIC user cuenta con apropiado read/write permisos es disponible"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:33
+msgid ""
+"Network connectivity exists between |morpheus| and the APIC controller on "
+"port 443"
+msgstr ""
+"Network connectivity exists entre |morpheus| y el APIC controller on puerto "
+"443"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:34
+msgid ""
+"(Optional) A VMware vCenter Cloud is configured in |morpheus| for "
+"provisioning into ACI-managed networks"
+msgstr ""
+"(Optional) A VMware vCenter Cloud es configurado in |morpheus| para "
+"provisioning en ACI-managed networks"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:37
+msgid "Add ACI Network Integration"
+msgstr "Add ACI Network Integration"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:39
+msgid "Navigate to ``Infrastructure > Network > Integrations``"
+msgstr "Navegue un ``Infrastructure > Network > Integrations``"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:40
+msgid "Click :guilabel:`+ ADD` > ``Networking`` > ``Cisco ACI``"
+msgstr "Click :guilabel:`+ AGREGAR` > ``Networking`` > ``Cisco ACI``"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:41
+msgid "Complete the following fields:"
+msgstr "Complete los siguientes campos:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:43
+msgid ""
+"ACI Integration name in |morpheus| (this is unique to |morpheus| and not "
+"part of authentication)"
+msgstr ""
+"ACI Integration nombre in |morpheus| (este es unique to |morpheus| y no part"
+" of authentication)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst
+msgid "URL"
+msgstr "URL"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:44
+msgid "ACI fabric URL (e.g., ``https://apicdc.company.com``)"
+msgstr "ACI fabric URL (e.g., ``https://apicdc.company.com``)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst
+msgid "USERNAME"
+msgstr "USERNAME"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:45
+msgid "ACI ``aaaUser`` name attribute"
+msgstr "ACI ``aaaUser`` nombre atributo"
+
+#: ../../integration_guides/Networking/cisco_aci.rst
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:46
+msgid "ACI ``aaaUser`` pwd attribute"
+msgstr "ACI ``aaaUser`` pwd atributo"
+
+#: ../../integration_guides/Networking/cisco_aci.rst
+msgid "TENANT"
+msgstr "TENANT"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:47
+msgid "Populates upon successful authentication; tenant selection is optional"
+msgstr "Populates sobre exitoso authentication; tenant selection es opcional"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:49
+msgid "Click :guilabel:`ADD NETWORK INTEGRATION`"
+msgstr "Click :guilabel:`AGREGAR RED INTEGRATION`"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:52
+msgid "Configure Cloud Network Mode"
+msgstr "Configure Cloud Network Mode"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:54
+msgid ""
+"For the ACI integration to be available during provisioning, it must be "
+"associated with one or more Clouds:"
+msgstr ""
+"For el ACI integration to be disponible durante provisioning, it debe be "
+"asociado con one o más Clouds:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:56
+msgid "Navigate to ``Infrastructure > Clouds``"
+msgstr "Navegue un ``Infrastructure > Clouds``"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:57
+msgid "Select an existing VMware vCenter Cloud"
+msgstr "Select un existente VMware vCenter Cloud"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:58
+msgid "Click :guilabel:`EDIT`"
+msgstr "Click :guilabel:`EDITAR`"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:59
+msgid "Expand the **Advanced Options** section"
+msgstr "Expand el **Advanced Options** sección"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:60
+msgid "Select the ACI integration in the ``NETWORK MODE`` dropdown"
+msgstr "Seleccione el ACI integration in el ``NETWORK MODE`` desplegable"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:61
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:64
+msgid "ACI Integration Detail View"
+msgstr "ACI Integration Detail View"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:66
+msgid ""
+"After adding the integration, clicking on it reveals a detail view with the "
+"following tabs:"
+msgstr ""
+"Después de agregar la integración, clicking on it reveals un vista de "
+"detalles con el following tabs:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:69
+msgid "Summary"
+msgstr "Resumen"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:69
+msgid ""
+"Overview of the ACI integration status, connection health, and high-level "
+"inventory counts."
+msgstr ""
+"Overview of el ACI integration estado, conexión health, y high-level "
+"inventory counts."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:72
+msgid "Scopes (Tenants)"
+msgstr "Scopes (Tenants)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:72
+msgid ""
+"View and manage ACI tenants. Tenants provide top-level organizational "
+"isolation in the ACI fabric."
+msgstr ""
+"View y manage ACI tenants. Tenants provide top-level organizational "
+"isolation in el ACI fabric."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:75
+msgid "Networks (Bridge Domains)"
+msgstr "Networks (Bridge Domains)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:75
+msgid ""
+"Bridge Domains define Layer 2 forwarding domains and are associated with "
+"tenants and subnets."
+msgstr ""
+"Bridge Domains define Layer 2 forwarding domains y son asociado con tenants "
+"y subnets."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:78
+msgid "Application Profiles"
+msgstr "Application Profiles"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:78
+msgid ""
+"ANPs group EPGs that are related to a particular application deployment."
+msgstr ""
+"ANPs group EPGs que son relacionado con un particular application "
+"deployment."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:81
+msgid "Endpoint Groups"
+msgstr "Endpoint Groups"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:81
+msgid ""
+"EPGs are logical groupings of endpoints (VMs, containers, bare-metal "
+"servers) that share the same network and security policies."
+msgstr ""
+"EPGs son logical groupings of endpoints (VMs, containers, bare-metal "
+"servers) que share el mismo network y security policies."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:84
+msgid ""
+"VRFs define unique Layer 3 forwarding and application policy domains within "
+"a tenant."
+msgstr ""
+"VRFs define unique Layer 3 forwarding y application policy domains dentro de"
+" un inquilino."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:87
+msgid ""
+"Filters define the traffic classification criteria (protocol, ports) used in"
+" contracts."
+msgstr ""
+"Filters define el traffic classification criteria (protocolo, ports) used in"
+" contracts."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:90
+msgid ""
+"Contracts define the security policies between EPGs, specifying which "
+"traffic is allowed."
+msgstr ""
+"Contracts define el security policies entre EPGs, specifying cual traffic es"
+" allowed."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:93
+msgid "Instance Provisioning with ACI"
+msgstr "Instance Provisioning con ACI"
+
+msgid "ACI Instance provisioning options"
+msgstr "ACI Instance provisioning opciones"
+
+msgid ".. image:: images/aci2.png"
+msgstr ".. image:: images/aci2.png"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:98
+msgid ""
+"Once ACI is integrated with a Cloud, it becomes available during instance "
+"provisioning:"
+msgstr ""
+"Once ACI es integrated con un Cloud, it becomes disponible durante instance "
+"provisioning:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:100
+msgid ""
+"During provisioning, in the **Configure** section, ACI-specific options "
+"appear"
+msgstr ""
+"During provisioning, in el **Configure** sección, ACI-específico opciones "
+"appear"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:101
+msgid "From the **EPG** dropdown, select an existing EPG or create a new one"
+msgstr ""
+"Desde el **EPG** desplegable, select un existente EPG o create un nuevo one"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:102
+msgid ""
+"From the **ANP** dropdown, select an existing Application Network Profile or"
+" create a new one"
+msgstr ""
+"Desde el **ANP** desplegable, select un existente Application Network "
+"Profile o create un nuevo one"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:103
+msgid ""
+"Under **ACI Security**, search for and select contracts to consume or "
+"provide"
+msgstr ""
+"Under **ACI Security**, search para y select contracts to consume o provide"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:104
+msgid "Complete provisioning"
+msgstr "Complete provisioning"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:106
+msgid ""
+"The provisioned instance will be associated with the selected EPG and have "
+"the specified contracts applied. This can be verified on the instance detail"
+" page or via the REST API and CLI."
+msgstr ""
+"The provisioned instance será be asociado con el seleccionado EPG y tienen "
+"el especificado contracts applied. This puede be verified on la instancia "
+"página de detalles o via el REST API y CLI."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:109
+msgid "Blueprint Configuration"
+msgstr "Blueprint Configuration"
+
+msgid "ACI Blueprint options"
+msgstr "ACI Blueprint opciones"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:114
+msgid "ACI constructs can be defined within App Blueprints:"
+msgstr "ACI constructs puede be definido dentro de App Blueprints:"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:116
+msgid "Define the ANP and EPG for each tier of the application"
+msgstr "Define el ANP y EPG para cada tier of el application"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:117
+msgid ""
+"Variables can be used for EPG and ANP names (useful for templated "
+"deployments)"
+msgstr ""
+"Variables se puede utilizar para EPG y ANP names (useful para templated "
+"deployments)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:118
+msgid "Use blueprints for dev/test isolation from production networks"
+msgstr "Use blueprints para dev/test isolation desde production networks"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:119
+msgid "Support hybrid configurations based on VMM domains in APIC"
+msgstr "Support hybrid configurations basado en VMM domains in APIC"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:122
+msgid "Creating ACI Objects"
+msgstr "Crear ACI Objects"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:127
+msgid "Navigate to the ACI integration detail > **Scopes** tab"
+msgstr "Navegue un el ACI integration detalle > **Scopes** pestaña"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:128
+#: ../../integration_guides/Networking/cisco_aci.rst:136
+#: ../../integration_guides/Networking/cisco_aci.rst:144
+#: ../../integration_guides/Networking/cisco_aci.rst:152
+msgid "Click :guilabel:`+ ADD`"
+msgstr "Click :guilabel:`+ AGREGAR`"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:129
+msgid "Provide the tenant name and optional description"
+msgstr "Proporcione el tenant nombre y opcional descripción"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:130
+#: ../../integration_guides/Networking/cisco_aci.rst:138
+#: ../../integration_guides/Networking/cisco_aci.rst:146
+#: ../../integration_guides/Networking/cisco_aci.rst:154
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`GUARDAR`"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:135
+msgid "Navigate to the ACI integration detail > **Networks** tab"
+msgstr "Navegue un el ACI integration detalle > **Networks** pestaña"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:137
+msgid "Configure the bridge domain name, associated tenant, and subnet"
+msgstr "Configure el bridge domain nombre, associated tenant, y subnet"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:143
+msgid "Navigate to the ACI integration detail > **Contracts** section"
+msgstr "Navegue un el ACI integration detalle > **Contracts** sección"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:145
+msgid "Configure the contract name, scope, subjects, and associated filters"
+msgstr "Configure el contract nombre, scope, subjects, y associated filters"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:151
+msgid "Navigate to the ACI integration detail > **Filters** section"
+msgstr "Navegue un el ACI integration detalle > **Filters** sección"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:153
+msgid "Define the filter entries (protocol, source/destination ports)"
+msgstr "Define el filter entries (protocolo, origen/destination ports)"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:157
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:163
+msgid "Issue"
+msgstr "Issue"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:164
+msgid "Resolution"
+msgstr "Resolution"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:165
+msgid "Integration fails to authenticate"
+msgstr "Integration fails to authenticate"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:166
+msgid ""
+"Verify the APIC URL and credentials. Ensure the user has API access and is "
+"not locked out."
+msgstr ""
+"Verify el APIC URL y credentials. Ensure el usuario tiene API acceso y no es"
+" locked out."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:167
+msgid "Tenants not populating"
+msgstr "Tenants no populating"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:168
+msgid ""
+"Check that the authenticated user has visibility to the desired tenants in "
+"the APIC RBAC configuration."
+msgstr ""
+"Check que el authenticated user tiene visibility to el desired tenants in el"
+" APIC RBAC configuración."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:169
+msgid "EPGs not available during provisioning"
+msgstr "EPGs no disponible durante provisioning"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:170
+msgid ""
+"Ensure the Cloud's NETWORK MODE is set to the ACI integration. Verify the "
+"EPGs exist within a tenant accessible to the integration user."
+msgstr ""
+"Ensure el Cloud's NETWORK MODE es set to el ACI integration. Verify el EPGs "
+"exist dentro de un inquilino accessible to la integración user."
+
+#: ../../integration_guides/Networking/cisco_aci.rst:171
+msgid "Sync appears stale"
+msgstr "Sync appears stale"
+
+#: ../../integration_guides/Networking/cisco_aci.rst:172
+msgid ""
+"The sync job runs every 5 minutes. Force a refresh from the integration "
+"actions menu if needed."
+msgstr ""
+"The sync job runs cada 5 minutes. Force un refresh desde la integración "
+"acciones menú si es necesario."

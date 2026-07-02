@@ -1,0 +1,480 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/code/deployments.rst:4
+msgid "Deployments"
+msgstr "Despliegues"
+
+#: ../../provisioning/code/deployments.rst:6
+msgid ""
+"In v5.3.2+, :menuselection:`Provisioning --> Deployments` has been moved "
+"to :menuselection:`Provisioning --> Code --> Deployments`"
+msgstr ""
+"In v5.3.2+, :menuselection:`Provisioning --> Deployments` ha sido moved to "
+":menuselection:`Provisioning --> Code --> Deployments`"
+
+#: ../../provisioning/code/deployments.rst:8
+msgid ""
+"The deployments section provides very useful PaaS like capabilities when "
+"it comes to deploying applications into the newly provisioned "
+"environment. These can be uploaded directly from the UI, pulled from a "
+"build server, pulled from a public or private Git repository or even via "
+"the API and the various plugins created, such as Jenkins, and Gradle to "
+"support continuous build / integration workflows."
+msgstr ""
+"El/La despliegues sección proporciona very useful PaaS like capabilities "
+"cuando it comes a deploying aplicaciones en el/la newly provisioned "
+"entorno. Estos puede ser uploaded directly desde el/la UI, pulled desde un "
+"build servidor, pulled desde un public o private Git repositorio o even via "
+"el/la API y el/la various plugins creado, como Jenkins, y Gradle a soportar "
+"continuous build / integraciones flujos de trabajo."
+
+#: ../../provisioning/code/deployments.rst:10
+msgid ""
+"A deployment can be considered a set of versions that relate to a "
+"particular project or application being deployed. This allows one to keep"
+" track of a history of versions and easily reuse these deployment "
+"versions across Instances that may exist in different environments. An "
+"example might be to deploy a version from a deployment to a staging "
+"Instance and (once approved) also deployed into production."
+msgstr ""
+"Un despliegue puede ser considered un establecer de versiones que relate a "
+"un particular project o aplicación being deployed. Este permite one a keep "
+"track de un history de versiones y easily reuse estos despliegue versiones "
+"across Instancias que puede exist en different entornos. Un ejemplo might "
+"be a deploy un versión desde un despliegue a un staging Instancia y (once "
+"approved) also deployed en production."
+
+#: ../../provisioning/code/deployments.rst:13
+msgid "Role Permissions"
+msgstr "Permisos de rol"
+
+#: ../../provisioning/code/deployments.rst:15
+msgid ""
+"Access and capabilities for the **Deployments** section is determined by "
+"the following role permissions:"
+msgstr ""
+"Access and capabilities for the **Despliegues** section is determined by "
+"las siguientes role permisos:"
+
+#: ../../provisioning/code/deployments.rst:20
+msgid "Role: Feature Access: ``Provisioning: Code Deployments``"
+msgstr "Rol: Acceso a funciones: ``Provisioning: Code Deployments``"
+
+#: ../../provisioning/code/deployments.rst:18
+msgid "None: Cannot access Provisioning: Code Deployments."
+msgstr "None: No puede acceder a Aprovisionamiento: Despliegues de código."
+
+#: ../../provisioning/code/deployments.rst:19
+msgid ""
+"Read: Can view Code Deployments. Cannot create, delete or edit Code "
+"Deployments."
+msgstr ""
+"Read: Can view Code Despliegues. Cannot create, delete or edit Code "
+"Despliegues."
+
+#: ../../provisioning/code/deployments.rst:20
+msgid "Full: Can create, delete and edit Code Deployments."
+msgstr "Full: Puede crear, eliminar y editar Despliegues de código."
+
+#: ../../provisioning/code/deployments.rst:23
+msgid "Getting Started"
+msgstr "Primeros pasos"
+
+#: ../../provisioning/code/deployments.rst:25
+msgid ""
+"Getting started with deployments is easy. They can vary slightly for the "
+"application stack being deployed but the simplest phase of a deployment "
+"is adding a version and adding the appropriate files to the deployment "
+"archive that are needed for the application to run. This could be a "
+"single file like a `WAR` file for Tomcat, or it could be hundreds of "
+"files for stacks like `Ruby on Rails`."
+msgstr ""
+"Getting started con despliegues es easy. They puede vary slightly para "
+"el/la aplicación stack being deployed pero el/la simplest phase de un "
+"despliegue es adding un versión y adding el/la appropriate archivos a el/la "
+"despliegue archive que son needed para el/la aplicación a ejecutar. Este "
+"could be un single archivo like un `WAR` archivo para Tomcat, o it could be "
+"hundreds de archivos para stacks like `Ruby on Rails`."
+
+#: ../../provisioning/code/deployments.rst:27
+msgid ""
+"There are a few ways to create a deployment. The first is to use the "
+":menuselection:`Provisioning --> Code --> Deployments` section of the "
+"application to create them. Simply add a new deployment and give it a "
+"name representing the application that is being deployed. Once a "
+"deployment is created select the deployment to view its versions (which "
+"will be empty to start). Next, it is time to add a version."
+msgstr ""
+"There son un few ways a crear un despliegue. El/La first es a usar el/la "
+":menuselection:`Provisioning --> Code --> Deployments` sección de el/la "
+"aplicación a crear them. Simply agregar un nuevo despliegue y give it un "
+"nombre representing el/la aplicación que es being deployed. Once un "
+"despliegue es creado seleccione el despliegue a ver its versiones (cual "
+"será empty a start). Siguiente, it es time a agregar un versión."
+
+#: ../../provisioning/code/deployments.rst:29
+msgid ""
+"When adding a version there are several options. There are 3 types "
+"represented by the UI. These include File, Fetch, and Git respectively. A"
+" File deployment allows the user to simply drag their files into the file"
+" explorer presented by the dialog. This file explorer can take single "
+"files or entire file trees (If files exist in subfolders then only the "
+"Chrome browser is supported due to browser limitations at the time of "
+"this writing). This is also the common type that is represented when "
+"files are uploaded via the CLI, or available build tool integration "
+"plugins. Once the files have completed their upload simply save the "
+"version for use."
+msgstr ""
+"Cuando adding un versión there son several opciones. There son 3 tipos "
+"represented por el/la UI. Estos incluir Archivo, Fetch, y Git respectively. "
+"Un Archivo despliegue permite el/la usuario a simply drag their archivos en "
+"el/la archivo explorer presented por el/la dialog. Este archivo explorer "
+"puede take single archivos o entire archivo trees (Si archivos exist en "
+"subfolders entonces solo el/la Chrome browser es soportado due a browser "
+"limitations en el/la time de este writing). Este es also el/la common tipo "
+"que es represented cuando archivos son uploaded via el/la CLI, o disponible "
+"build tool integraciones plugins. Once el/la archivos tienen completed "
+"their upload simply guardar el/la versión para usar."
+
+#: ../../provisioning/code/deployments.rst:32
+#: ../../provisioning/code/deployments.rst:92
+msgid "Git"
+msgstr "Git"
+
+#: ../../provisioning/code/deployments.rst:34
+msgid ""
+"For performing git based deploys |morpheus| supports both public and "
+"private repositories. To utilize a private git repository the add version"
+" dialog will display a public keypair that can be added to the git "
+"service for authentication purposes. Currently this keypair is shared "
+"across the account and not specifically scoped to the user so it may be "
+"advisable to connect this integration to a deployment account in git. "
+"From here either a `ssh` or `https` git url can be entered along with a "
+"git branch or tag name. Once the version is saved, this repository will "
+"be copied down into the deployment archive for use."
+msgstr ""
+"Para performing git based deploys |morpheus| soporta both public y private "
+"repositorios. A utilize un private git repositorio el/la agregar versión "
+"dialog será display un public keypair que puede ser added a el/la git "
+"service para authentication purposes. Currently este keypair es shared "
+"across el/la account y no specifically scoped a el/la usuario so it puede "
+"be advisable a connect este integraciones a un despliegue account en git. "
+"Desde here either un `ssh` o `https` git url puede ser entered along con un "
+"git branch o tag nombre. Once el/la versión es saved, este repositorio será "
+"copied down en el/la despliegue archive para usar."
+
+#: ../../provisioning/code/deployments.rst:37
+#: ../../provisioning/code/deployments.rst:89
+msgid "Fetch"
+msgstr "Fetch"
+
+#: ../../provisioning/code/deployments.rst:39
+msgid ""
+"Fetch based deployments are pretty straightforward. Simply enter a url to"
+" a file representing the deployment. This can be a single file (in which "
+"case it will just be added to the deployment archive singularly) or it "
+"can be a zip file (which will automatically be expanded into the "
+"archive). HTTP Authentication options can also be entered if the url "
+"requires some form of basic authentication scheme for access by the "
+"appliance."
+msgstr ""
+"Fetch based despliegues son pretty straightforward. Simply ingresar a url a "
+"un archivo representing el/la despliegue. Este puede ser un single archivo "
+"(en cual case it será just be added a el/la despliegue archive singularly) "
+"o it puede ser un zip archivo (cual será automáticamente be expanded en "
+"el/la archive). HTTP Authentication opciones puede also be entered si el/la "
+"url requiere some form de basic authentication scheme para acceso por el/la "
+"appliance."
+
+#: ../../provisioning/code/deployments.rst:42
+msgid "Configuring Library Items for Deployments"
+msgstr "Configurar elementos de Biblioteca para Despliegues"
+
+#: ../../provisioning/code/deployments.rst:44
+msgid ""
+"In order to have the UI tools available to utilize Deployments with a "
+"provisioned Instance, the Library items must have certain configurations "
+"set. Once configured correctly, any Instance provisioned from the Library"
+" item would then have access to any of your Deployments."
+msgstr ""
+"Para tienen el/la UI tools disponible a utilize Despliegues con un "
+"provisioned Instancia, el/la Library elementos must tienen certain "
+"configuraciones establecer. Once configurado correctly, cualquier Instancia "
+"provisioned desde el/la Library elemento would entonces tienen acceso a "
+"cualquier de your Despliegues."
+
+#: ../../provisioning/code/deployments.rst:46
+msgid ""
+"First, within the **Instance Type** (|LibBluIns|), ensure the SUPPORT "
+"DEPLOYMENTS attribute is marked. This is off by default so it will need "
+"to be manually enabled on all relevant Instance Types. Next, you'll want "
+"to ensure you have the correct DEPLOY FOLDER configured on **Node Types**"
+" (|LibBluNod|). This is the mount point which will be replaced by the "
+"contents of your Deployments. Finally, you will want the **Provisioning "
+"Workflows** associated with the Library item to have the proper Tasks "
+"configured within its Pre-Deploy and/or Deploy phases. Tasks in the Pre-"
+"Deploy phase are run as soon as the Deployment is triggered from the UI "
+"prior to any other Deploy actions taking place. This could be used, for "
+"example, to extract files from the deploy folder and move them to their "
+"final destinations before the primary deploy actions take place. Tasks in"
+" the Deploy phase are run after the deployment is completed, such as if "
+"you wanted to update configuration files or inject connection details "
+"from the environment after the completion of the deploy process."
+msgstr ""
+"First, within el/la **Instancia Type** (|LibBluIns|), ensure el/la SUPPORT "
+"DEPLOYMENTS attribute es marked. Este es off de forma predeterminada so it "
+"necesitará be manually habilitado en todos relevant Instancia Tipos. "
+"Siguiente, you'll want a ensure you tienen el/la correct DEPLOY FOLDER "
+"configurado en **Tipos de nodo** (|LibBluNod|). Este es el/la mount point "
+"cual será replaced por el/la contents de your Despliegues. Finally, you "
+"será want el/la **Aprovisionamiento Flujos de trabajo** associated con "
+"el/la Library elemento a tienen el/la proper Tareas configurado within its "
+"Pre-Deploy y/o Deploy phases. Tareas en el/la Pre-Deploy phase son ejecutar "
+"as soon as el/la Despliegue es triggered desde el/la UI prior a cualquier "
+"otro Deploy acciones taking place. Este could be used, por ejemplo, a "
+"extract archivos desde el/la deploy folder y mover them a their final "
+"destinations antes de el/la primary deploy acciones take place. Tareas en "
+"el/la Deploy phase son ejecutar después de el/la despliegue es completed, "
+"como si you wanted a actualizar configuración archivos o inject conexión "
+"detalles desde el/la entorno después de el/la completion de el/la deploy "
+"proceso."
+
+#: ../../provisioning/code/deployments.rst:49
+msgid "Deploying to an Instance"
+msgstr "Desplegar en una Instancia"
+
+#: ../../provisioning/code/deployments.rst:51
+msgid ""
+"Now that the Deployment object and Library items are configured, it is "
+"easy to push that deployment out to any Instance provisioned within "
+"|morpheus| by navigating to the specific Instance that it needs deployed "
+"to. On the Instance detail page there is a tab called `Runtime` and "
+"within it another tab labeled `Deploy`. From here simply add a deploy. "
+"The dialog will ask firstly from which deployment the deploy is from (or "
+"allow you to create a new one on the spot), and secondly which version to"
+" deploy (also with the option to add one on the fly). The next step of "
+"the wizard will display any configuration options that might be specific "
+"to the Instance type being deployed to (i.e. `CATALINA_OPTS` for Tomcat "
+"or `Java Command` for java) as well as the file explorer and deployment "
+"type selections for review (or use when creating a new version on the "
+"fly). Fill in the required items then simply hit complete. The deploy "
+"will now be asynchronously sent off to all of the virtual machines or "
+"containers within the Instance in a rolling restart and the deployment "
+"status will be represented."
+msgstr ""
+"Now que el/la Despliegue object y Library elementos son configurado, it es "
+"easy a push que despliegue out a cualquier Instancia provisioned within "
+"|morpheus| por navigating a el/la specific Instancia que it needs deployed "
+"a. En el/la Instancia detalle página there es un pestaña called `Runtime` y "
+"within it another pestaña labeled `Deploy`. Desde here simply agregar un "
+"deploy. El/La dialog será ask firstly desde cual despliegue el/la deploy es "
+"desde (o permitir you a crear un nuevo one en el/la spot), y secondly cual "
+"versión a deploy (also con el/la opción a agregar one en el/la fly). El/La "
+"siguiente step de el/la wizard será display cualquier configuración "
+"opciones que might be specific a el/la Instancia tipo being deployed a "
+"(i.e. `CATALINA_OPTS` para Tomcat o `Java Command` para java) así como "
+"el/la archivo explorer y despliegue tipo selections para review (o usar "
+"cuando creating un nuevo versión en el/la fly). Fill en el/la requerido "
+"elementos entonces simply hit complete. El/La deploy será now be "
+"asynchronously sent off a todos de el/la virtual machines o containers "
+"within el/la Instancia en un rolling restart y el/la despliegue estado será "
+"represented."
+
+#: ../../provisioning/code/deployments.rst:53
+msgid ""
+"When deploying to an Instance, the custom configuration options that were"
+" entered during the previous deployment are automatically carried forward"
+" allowing one to edit them or leave them as is."
+msgstr ""
+"Cuando deploying a un Instancia, el/la custom configuración opciones que "
+"fueron entered durante el/la previous despliegue son automáticamente "
+"carried forward allowing one a editar them o leave them as es."
+
+#: ../../provisioning/code/deployments.rst:56
+msgid "Rolling Backwards and Forwards"
+msgstr "Retroceder y avanzar versiones"
+
+#: ../../provisioning/code/deployments.rst:58
+msgid ""
+"Because of the tracked history of deployments kept within |morpheus|, the"
+" deploy tab of Instance detail makes it easy to choose a previously run "
+"deployment and jump back to it in the event of a failed deployment. The "
+"history will automatically be updated and the configuration, as well as "
+"data from the previous deployment state of the Instance will be restored."
+msgstr ""
+"Because de el/la tracked history de despliegues kept within |morpheus|, "
+"el/la deploy pestaña de Instancia detalle makes it easy a choose un "
+"previamente ejecutar despliegue y jump back a it en el/la event de un "
+"failed despliegue. El/La history será automáticamente be actualizado y "
+"el/la configuración, así como data desde el/la previous despliegue state de "
+"el/la Instancia será restored."
+
+#: ../../provisioning/code/deployments.rst:61
+msgid "Offloading Storage"
+msgstr "Descarga de almacenamiento"
+
+#: ../../provisioning/code/deployments.rst:63
+msgid ""
+"Since a full history of the backup builds are kept in |morpheus|, as the "
+"appliance grows it becomes necessary to change where these are stored. On"
+" a fresh install these are stored on the local appliance in "
+"``/var/opt/morpheus`` or wherever the master account may have changed the"
+" configuration to point to. It is also possible to adjust the deployment "
+"archive store by creating a `Storage Provider` tied to an S3 compatible "
+"object store, Openstack Swift object store, or any other type of "
+"mountpoint provided. This option can be adjusted in |AdmSetPro| once a "
+"storage provider is created within the account."
+msgstr ""
+"Since un full history de el/la backup builds son kept en |morpheus|, as "
+"el/la appliance grows it becomes necessary a change donde estos son stored. "
+"En un fresh instalar estos son stored en el/la local appliance en "
+"``/var/opt/morpheus`` o wherever el/la master account puede tienen changed "
+"el/la configuración a point a. It es also possible a adjust el/la "
+"despliegue archive store por creating un `Storage Provider` tied a un S3 "
+"compatible object store, Openstack Swift object store, o cualquier otro "
+"tipo de mountpoint provided. Este opción puede ser adjusted en |AdmSetPro| "
+"once un storage provider es creado within el/la account."
+
+#: ../../provisioning/code/deployments.rst:66
+msgid "Add Deployment"
+msgstr "Agregar Despliegue"
+
+#: ../../provisioning/code/deployments.rst:68
+#: ../../provisioning/code/deployments.rst:78
+#: ../../provisioning/code/deployments.rst:99
+#: ../../provisioning/code/deployments.rst:109
+msgid "Select the ``Provisioning`` link in the navigation bar."
+msgstr "Seleccione el enlace ``Provisioning`` en la barra de navegación."
+
+#: ../../provisioning/code/deployments.rst:69
+#: ../../provisioning/code/deployments.rst:79
+#: ../../provisioning/code/deployments.rst:100
+#: ../../provisioning/code/deployments.rst:110
+msgid "Select the ``Code`` link in the sub-navigation bar."
+msgstr "Seleccione el enlace ``Code`` en la barra de subnavegación."
+
+#: ../../provisioning/code/deployments.rst:70
+#: ../../provisioning/code/deployments.rst:80
+#: ../../provisioning/code/deployments.rst:101
+#: ../../provisioning/code/deployments.rst:111
+msgid "Select the ``Deployments`` tab."
+msgstr "Seleccione la pestaña ``Deployments``."
+
+#: ../../provisioning/code/deployments.rst:71
+msgid "Click the :guilabel:`+ Add` button."
+msgstr "Haga clic en el botón :guilabel:`+ Add`."
+
+#: ../../provisioning/code/deployments.rst:72
+msgid "Enter a Name for the deployment and a description (optional)"
+msgstr "Ingrese un nombre para el despliegue y una descripción (opcional)"
+
+#: ../../provisioning/code/deployments.rst:73
+#: ../../provisioning/code/deployments.rst:94
+#: ../../provisioning/code/deployments.rst:104
+msgid "Click the :guilabel:`Save Changes` button to save."
+msgstr "Haga clic en el botón :guilabel:`Save Changes` para guardar."
+
+#: ../../provisioning/code/deployments.rst:76
+msgid "Add Version"
+msgstr "Agregar versión"
+
+#: ../../provisioning/code/deployments.rst:81
+msgid "Click the Name of the deployment you would like to add a version to."
+msgstr "Haga clic en el Name of the despliegue you would like to add a version to."
+
+#: ../../provisioning/code/deployments.rst:82
+msgid "Click the :guilabel:`Add Version` button."
+msgstr "Haga clic en el botón :guilabel:`Add Version`."
+
+#: ../../provisioning/code/deployments.rst:83
+msgid "From the Add Version Wizard select the deployment type."
+msgstr "Desde el asistente Agregar versión, seleccione el tipo de despliegue."
+
+#: ../../provisioning/code/deployments.rst:84
+msgid "Input the Version of the deployment."
+msgstr "Ingrese la versión del despliegue."
+
+#: ../../provisioning/code/deployments.rst:85
+msgid "Depending on the type of deployment selected perform one of the following:"
+msgstr ""
+"Depending on the type of despliegue seleccionado perform one of las "
+"siguientes:"
+
+#: ../../provisioning/code/deployments.rst:87
+msgid "Files"
+msgstr "Archivos"
+
+#: ../../provisioning/code/deployments.rst:88
+msgid ""
+"Drag files into the file explorer presented by the dialog. This file "
+"explorer can take single files or entire file trees."
+msgstr ""
+"Drag archivos en el/la archivo explorer presented por el/la dialog. Este "
+"archivo explorer puede take single archivos o entire archivo trees."
+
+#: ../../provisioning/code/deployments.rst:90
+msgid "Enter a url to a file representing the deployment."
+msgstr "Ingrese una URL a un archivo que represente el despliegue."
+
+#: ../../provisioning/code/deployments.rst:92
+msgid ""
+"The add version dialog will display a public key pair that can be added "
+"to the git service for authentication purposes. Either a ssh or https git"
+" url can be entered along with a git branch or tag name."
+msgstr ""
+"El/La agregar versión dialog será display un public key pair que puede ser "
+"added a el/la git service para authentication purposes. Either un ssh o "
+"https git url puede ser entered along con un git branch o tag nombre."
+
+#: ../../provisioning/code/deployments.rst:97
+msgid "Edit Deployment"
+msgstr "Editar Despliegue"
+
+#: ../../provisioning/code/deployments.rst:102
+msgid ""
+"Click the |pencil| icon on the row of the deployment you wish to edit, or"
+" click the Name of the deployment and then the :guilabel:`Edit` button "
+"from the deployment detail page."
+msgstr ""
+"Haga clic en el |pencil| icon en el/la row de el/la despliegue you wish a "
+"editar, o haga clic en el Nombre de el/la despliegue y entonces el/la "
+":guilabel:`Edit` botón desde el/la despliegue detalle página."
+
+#: ../../provisioning/code/deployments.rst:103
+msgid "Modify information as needed"
+msgstr "Modifique la información según sea necesario"
+
+#: ../../provisioning/code/deployments.rst:107
+msgid "Delete Deployment"
+msgstr "Eliminar Despliegue"
+
+#: ../../provisioning/code/deployments.rst:112
+msgid ""
+"Click the |trash| icon on the row of the deployment you wish to delete, "
+"or click the Name of the deployment and then the :redguilabel:`DELETE` "
+"button."
+msgstr ""
+"Haga clic en el |trash| icon en el/la row de el/la despliegue you wish a "
+"eliminar, o haga clic en el Nombre de el/la despliegue y entonces el/la "
+":redguilabel:`DELETE` botón."
+

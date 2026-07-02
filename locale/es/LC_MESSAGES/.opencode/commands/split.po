@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/split.md:4
+msgid "Route this decomposition request to the appropriate delivery lead."
+msgstr ""
+
+#: ../../.opencode/commands/split.md:6
+msgid "Determine whether this is product feature work or platform/migration work:"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:7
+msgid ""
+"Product features, user-facing enhancements → delegate to `feature-"
+"delivery-lead`"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:8
+msgid ""
+"Migrations, refactors, platform changes → delegate to `platform-delivery-"
+"lead`"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:10
+msgid "The delivery lead will:"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:11
+msgid "Read the parent spec thoroughly"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:12
+msgid ""
+"Identify natural boundaries for decomposition (by concern, by layer, by "
+"user flow, by risk)"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:13
+msgid "Create child spec files using the project's spec conventions"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:14
+msgid "Each child spec should:"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:15
+#, python-brace-format
+msgid "Have its own slug (e.g., `{parent}-auth`, `{parent}-api`, `{parent}-ui`)"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:16
+#, python-brace-format
+msgid ""
+"Reference the parent via `relations: [{target: {parent-slug}, kind: "
+"parent}]`"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:17
+msgid ""
+"Be independently deliverable (can be designed, built, and tested on its "
+"own)"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:18
+msgid "Include its own Goal, Changes, and Acceptance Criteria sections"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:19
+msgid "Update the parent spec to:"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:20
+msgid "Add a `## Child Specs` section listing all children"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:21
+#, python-brace-format
+msgid "Add relations: `[{target: {child-slug}, kind: child}]` for each child"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:22
+msgid ""
+"Optionally note the recommended delivery order and dependencies between "
+"children"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:23
+msgid "Keep the parent spec as the initiative/umbrella — do NOT delete it"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:25
+msgid "**Decomposition principles:**"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:26
+msgid "Each child should take no more than 1-2 days to deliver"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:27
+msgid ""
+"Prefer splitting by vertical slice (feature/user flow) over horizontal "
+"slice (layer)"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:28
+msgid "If children have dependencies, note the delivery order"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:29
+msgid ""
+"If a child is still too large, note that it can be split further with "
+"another `/split`"
+msgstr ""
+
+#: ../../.opencode/commands/split.md:31
+msgid "Spec to decompose: $ARGUMENTS"
+msgstr ""
+

@@ -1,0 +1,1209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:2
+msgid "Huawei Cloud"
+msgstr "Huawei Cloud"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:5
+msgid "Features"
+msgstr "Características"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:7
+msgid "Virtual machine provisioning"
+msgstr "Virtual machine provisioning"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:8
+msgid "Backups"
+msgstr "Backups"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:9
+msgid "Brownfield VM management and migration"
+msgstr "Brownfield VM management y migration"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:10
+msgid "Hypervisor remote console"
+msgstr "Hypervisor remoto console"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:11
+msgid "Cloud sync"
+msgstr "Cloud sync"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:12
+msgid "Lifecycle management and resizing"
+msgstr "Lifecycle management y resizing"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:13
+msgid "Network security group creation"
+msgstr "Network security group creation"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:14
+msgid "Network security group management"
+msgstr "Network security group management"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:15
+msgid "Router and network creation"
+msgstr "Router y network creation"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:16
+msgid "Load balancer services"
+msgstr "Load balancer servicios"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:17
+msgid "Docker host management and configuration"
+msgstr "Docker host management y configuración"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:18
+msgid "Floating IP assignment"
+msgstr "Floating IP assignment"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:19
+msgid "Huawei OBS buckets (create, manage, delete, and discovery)"
+msgstr "Huawei OBS buckets (create, manage, delete, y discovery)"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:20
+msgid "Huawei SFS (create, manage, and delete)"
+msgstr "Huawei SFS (create, manage, y delete)"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:23
+msgid "Integrate Huawei Cloud with |morpheus|"
+msgstr "Integrate Huawei Cloud con |morpheus|"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:25
+msgid ""
+"To integrate Huawei Cloud with |morpheus|, we'll gather the following pieces"
+" of information:"
+msgstr ""
+"To integrate Huawei Cloud con |morpheus|, we'll gather el following pieces "
+"of información:"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:27
+msgid "Account Name"
+msgstr "Account Name"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:28
+msgid "Identity (IAM) API URL"
+msgstr "Identity (IAM) API URL"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:29
+msgid "Project"
+msgstr "Project"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:30
+msgid "Username"
+msgstr "Username"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:31
+msgid "Password"
+msgstr "Password"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:33
+msgid ""
+"Begin by logging into your `Huawei Cloud console <https://console-"
+"intl.huaweicloud.com/console>`_. If you're not currently logged in, you will"
+" be prompted to do so. Once on the console page, hover over your username in"
+" the upper-right corner of the application window and select \"My "
+"Credentials\"."
+msgstr ""
+"Begin by logging en your `Huawei Cloud console <https://console-"
+"intl.huaweicloud.com/console>`_. If you're no actualmente logged in, you "
+"será be prompted to do so. Once on el console página, hover over your nombre"
+" de usuario in el upper-right corner of el application ventana y select \"My"
+" Credentials\"."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:36
+msgid ".. image:: images/integration_guides/clouds/huawei/1credentials.png"
+msgstr ".. image:: images/integration_guides/clouds/huawei/1credentials.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:37
+msgid ""
+"From the credentials page, we can gather the Account Name and the Project "
+"Name, record them for later when we provide the integration information to "
+"|morpheus|."
+msgstr ""
+"Desde el credentials página, we puede gather el Account Name y el Project "
+"Name, registro them para later cuando we provide la integración información "
+"to |morpheus|."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:40
+msgid ""
+".. image:: images/integration_guides/clouds/huawei/2account_project.png"
+msgstr ""
+".. image:: images/integration_guides/clouds/huawei/2account_project.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:41
+msgid ""
+"To gather the API endpoint URL, take a look at the complete list of "
+"`endpoints <https://developer.huaweicloud.com/en-us/endpoint>`_. If a "
+"specific endpoint exists for your region, use it. In any other case use the "
+"endpoint for all regions. It will be formatted like this: "
+"https://iam.myhuaweicloud.com/v3."
+msgstr ""
+"To gather el API endpoint URL, take un look at el completo lista of "
+"`endpoints <https://developer.huaweicloud.com/en-us/endpoint>`_. If un "
+"específico endpoint exists para your region, use it. In cualquier otro case "
+"use el endpoint para todos regions. It será be formatted like este: "
+"https://iam.myhuaweicloud.com/v3."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:44
+msgid ""
+".. image:: "
+"images/integration_guides/clouds/huawei/3identity_api_endpoints.png"
+msgstr ""
+".. image:: "
+"images/integration_guides/clouds/huawei/3identity_api_endpoints.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:45
+msgid ""
+"With this information gathered, and presuming you know the credentials for "
+"the service account you wish to use, we can move back into |morpheus|-UI."
+msgstr ""
+"With este información gathered, y presuming you know el credentials para el "
+"servicio cuenta you wish to use, we puede move back en |morpheus|-UI."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:47
+msgid ""
+"Integrating |morpheus| with Huawei Cloud requires a service account that has"
+" programmatic access."
+msgstr ""
+"Integrating |morpheus| con Huawei Cloud requires un servicio cuenta que "
+"tiene programmatic acceso."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:49
+msgid ""
+"Navigate to Infrastructure > Clouds and click :guilabel:`+ ADD`. Scroll to "
+"Huawei Cloud and click :guilabel:`NEXT`. The information we've gathered will"
+" be plugged into the CREATE CLOUD modal. The DOMAIN ID field will accept the"
+" Account Name field we gathered. Your completed CREATE CLOUD modal will look"
+" similar to the one pictured below:"
+msgstr ""
+"Navegue un Infrastructure > Clouds y click :guilabel:`+ AGREGAR`. Scroll to "
+"Huawei Cloud y click :guilabel:`SIGUIENTE`. The información we've gathered "
+"será be plugged en el CREATE CLOUD modal. The DOMAIN ID campo será accept el"
+" Account Name campo we gathered. Your completed CREATE CLOUD modal será look"
+" similar to el one pictured a continuación:"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:52
+msgid ".. image:: images/integration_guides/clouds/huawei/4add_cloud.png"
+msgstr ".. image:: images/integration_guides/clouds/huawei/4add_cloud.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:53
+msgid ""
+"After clicking :guilabel:`NEXT`, add this new Cloud to a Group or create a "
+"new Group. On finalizing the wizard, Huawei Cloud will be integrated into "
+"|morpheus| and ready for provisioning. If you opted to inventory existing "
+"workloads, those will be onboarded shortly."
+msgstr ""
+"After clicking :guilabel:`SIGUIENTE`, add este nuevo Cloud to un Group o "
+"create un nuevo Group. On finalizing el wizard, Huawei Cloud será be "
+"integrated en |morpheus| y ready para provisioning. If you opted to "
+"inventory existente workloads, esos será be onboarded shortly."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:56
+msgid "Add/Edit Huawei Cloud Modal Fields"
+msgstr "Add/Edit Huawei Cloud Modal Fields"
+
+#: ../../integration_guides/Clouds/base_options.rst:1
+msgid "**Cloud Configuration**"
+msgstr "**Cloud Configuration**"
+
+#: ../../integration_guides/Clouds/base_options.rst:3
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../integration_guides/Clouds/base_options.rst:4
+msgid "Name of the Cloud in |morpheus|"
+msgstr "Name of el Cloud in |morpheus|"
+
+#: ../../integration_guides/Clouds/base_options.rst:5
+msgid "CODE"
+msgstr "CODE"
+
+#: ../../integration_guides/Clouds/base_options.rst:6
+msgid "Unique code used for api/cli, automation and policies."
+msgstr "Unique code used para api/cli, automation y policies."
+
+#: ../../integration_guides/Clouds/base_options.rst:7
+msgid "LOCATION"
+msgstr "LOCATION"
+
+#: ../../integration_guides/Clouds/base_options.rst:8
+msgid "Description field for adding notes on the cloud, such as location."
+msgstr "Description campo para adding notes on la nube, como location."
+
+#: ../../integration_guides/Clouds/base_options.rst:9
+msgid "VISIBILITY"
+msgstr "VISIBILITY"
+
+#: ../../integration_guides/Clouds/base_options.rst:10
+msgid ""
+"For setting cloud permissions in a multi-tenant environment. Not applicable "
+"in single tenant environments."
+msgstr ""
+"For setting cloud permisos in un multi-tenant entorno. Not applicable in "
+"único tenant entornos."
+
+#: ../../integration_guides/Clouds/base_options.rst:11
+msgid "TENANT"
+msgstr "TENANT"
+
+#: ../../integration_guides/Clouds/base_options.rst:12
+msgid ""
+"If Visibility is set to Private, select the Tenant the Cloud resources will "
+"assigned to."
+msgstr ""
+"If Visibility es set to Private, select el Tenant el Cloud recursos será "
+"assigned to."
+
+#: ../../integration_guides/Clouds/base_options.rst:13
+msgid "ENABLED"
+msgstr "ENABLED"
+
+#: ../../integration_guides/Clouds/base_options.rst:14
+msgid ""
+"When disabled, automatic Cloud sync is paused and the Cloud will not be "
+"selectable for provisioning."
+msgstr ""
+"When deshabilitado, automático Cloud sync es paused y el Cloud no be "
+"selectable para provisioning."
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid "AUTOMATICALLY POWER ON VMS"
+msgstr "AUTOMATICALLY POWER ON VMS"
+
+#: ../../integration_guides/Clouds/base_options.rst:16
+msgid ""
+"When enabled, |morpheus| will maintain the expected power state of managed "
+"VMs. |morpheus| will power on any managed VMs in the Cloud that have been "
+"shut down for unknown reasons (not powered off by |morpheus|) to ensure "
+"availability of services."
+msgstr ""
+"When habilitado, |morpheus| será maintain el expected power state of managed"
+" VMs. |morpheus| será power on cualquier managed VMs in el Cloud que tienen "
+"sido shut down para unknown reasons (no powered off by |morpheus|) to ensure"
+" availability of servicios."
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid ""
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of managed "
+"VMs should be maintained in |morpheus|. This setting is not applicable to "
+"discovered/unmanaged resources."
+msgstr ""
+"When \"AUTOMATICALLY POWER ON VMS\" es habilitado, el power state of managed"
+" VMs debería be maintained in |morpheus|. This setting no es applicable to "
+"discovered/unmanaged recursos."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:61
+msgid "Details"
+msgstr "Detalles"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:62
+msgid "IDENTITY API URL"
+msgstr "IDENTITY API URL"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:63
+msgid ""
+"The v3 identity endpoint. See the integration steps above for more detail"
+msgstr ""
+"The v3 identity endpoint. See la integración pasos anterior para más detalle"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:64
+msgid "DOMAIN ID"
+msgstr "DOMAIN ID"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:65
+msgid ""
+"The DOMAIN ID field takes the \"Account Name\" as shown on the `Basic "
+"Information page <https://account-"
+"intl.huaweicloud.com/usercenter/?locale=en-us#/userindex/accountInfo>`_ of "
+"the account. See the integration steps above for more detail"
+msgstr ""
+"The DOMAIN ID campo takes el \"Account Name\" as shown on el `Basic "
+"Information page <https://account-"
+"intl.huaweicloud.com/usercenter/?locale=en-us#/userindex/accountInfo>`_ of "
+"el cuenta. See la integración pasos anterior para más detalle"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:66
+msgid "PROJECT"
+msgstr "PROJECT"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:67
+msgid ""
+"The target project name. See the integration steps above for more detail"
+msgstr ""
+"The destino project nombre. See la integración pasos anterior para más "
+"detalle"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:68
+msgid "USERNAME"
+msgstr "USERNAME"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:69
+msgid ""
+"The service account username. See the integration steps above for more "
+"detail"
+msgstr ""
+"The servicio cuenta nombre de usuario. See la integración pasos anterior "
+"para más detalle"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:70
+msgid "PASSWORD"
+msgstr "PASSWORD"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:71
+msgid ""
+"The integration service account password. See the integration steps above "
+"for more detail"
+msgstr ""
+"La integración servicio cuenta contraseña. See la integración pasos anterior"
+" para más detalle"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:72
+msgid "IMAGE FORMAT"
+msgstr "IMAGE FORMAT"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:73
+msgid "Select QCOW2, RAW or VMDK image type"
+msgstr "Select QCOW2, RAW o VMDK image tipo"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:74
+msgid "Image Store"
+msgstr "Image Store"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:75
+msgid ""
+"Set an OBS bucket as a permanent store location for |morpheus| virtual "
+"images. Users are limited to uploading images of 2GB or less in size if an "
+"OBS bucket is not specified here"
+msgstr ""
+"Set un OBS bucket as un permanent store location para |morpheus| virtual "
+"images. Users son limited to uploading images of 2GB o less in tamaño if un "
+"OBS bucket no es especificado aquí"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:76
+msgid "Inventory Existing Instances"
+msgstr "Inventory Existing Instances"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:77
+msgid "Select for |morpheus| to discover and sync existing VMs"
+msgstr "Select para |morpheus| to discover y sync existente VMs"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:79
+msgid "Enable Hypervisor Console"
+msgstr "Enable Hypervisor Console"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:79
+msgid ""
+"Hypervisor console support for openstack currently only supports novnc. Be "
+"sure the novnc proxy is configured properly in your openstack environment."
+msgstr ""
+"Hypervisor console support para openstack actualmente solo supports novnc. "
+"Be sure el novnc proxy es configurado properly in your openstack entorno."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:81
+msgid ""
+"When using the RAW image format, you can bypass the image conversion service"
+" within the cloud leading to quicker performance. Other image formats are "
+"converted to RAW format and back when performing various actions. Using the "
+"RAW format from the start will bypass these conversion steps."
+msgstr ""
+"When using el RAW image formato, you puede bypass el image conversion "
+"servicio dentro de la nube leading to quicker performance. Other image "
+"formats son converted to RAW formato y back cuando performing various "
+"acciones. Using el RAW formato desde el start será bypass estos conversion "
+"pasos."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:1
+msgid "**Advanced Options**"
+msgstr "**Advanced Options**"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:3
+msgid "DOMAIN"
+msgstr "DOMAIN"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:4
+msgid "Specify a default domain for instances provisioned to this Cloud."
+msgstr ""
+"Specify un predeterminado domain para instances provisioned to este Cloud."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:5
+msgid "SCALE PRIORITY"
+msgstr "SCALE PRIORITY"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:6
+msgid ""
+"Only affects Docker Provisioning. Specifies the priority with which an "
+"instance will scale into the cloud. A lower priority number means this cloud"
+" integration will take scale precedence over other cloud integrations in the"
+" group."
+msgstr ""
+"Only affects Docker Provisioning. Specifies el priority con cual una "
+"instancia será scale en la nube. A lower priority número means esta nube "
+"integration será take scale precedence over otro cloud integrations in el "
+"grupo."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:7
+msgid "APPLIANCE URL"
+msgstr "APPLIANCE URL"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:8
+msgid ""
+"Alternate Appliance url for scenarios when the default Appliance URL "
+"(configured in `admin > settings`) is not reachable or resolvable for "
+"Instances provisioned in this cloud. The Appliance URL is used for Agent "
+"install and reporting."
+msgstr ""
+"Alternate Appliance url para scenarios cuando el predeterminado Appliance "
+"URL (configurado in `admin > configuración`) no es reachable o resolvable "
+"para Instances provisioned in esta nube. The Appliance URL se utiliza para "
+"Agent install y reporting."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:9
+msgid "TIME ZONE"
+msgstr "TIME ZONE"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:10
+msgid "Configures the time zone on provisioned VM's if necessary."
+msgstr "Configures el time zone on provisioned VM's si es necesario."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:11
+msgid "DATACENTER ID"
+msgstr "DATACENTER ID"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:12
+msgid ""
+"Used for differentiating pricing among multiple datacenters. Leave blank "
+"unless prices are properly configured."
+msgstr ""
+"Used para differentiating pricing among múltiples datacenters. Leave blank "
+"unless prices son properly configurado."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:13
+msgid "NETWORK MODE"
+msgstr "NETWORK MODE"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:14
+msgid "Unmanaged or select a Network Integration (NSX, ACI etc)"
+msgstr "Unmanaged o select un Network Integration (NSX, ACI etc)"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:15
+msgid "LOCAL FIREWALL"
+msgstr "LOCAL FIREWALL"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:16
+msgid ""
+"On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
+"only)"
+msgstr ""
+"On o Off. Enable to managed Host y VM firewall/IP Table rules (linux solo)"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:17
+msgid "SECURITY SERVER"
+msgstr "SECURITY SERVER"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:18
+msgid ""
+"Security Server setting is for Security Service Integrations such as ACI"
+msgstr ""
+"Security Server setting es para Security Service Integrations como ACI"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:19
+msgid "TRUST PROVIDER"
+msgstr "TRUST PROVIDER"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:20
+msgid "Select Internal (Morpheus) or an existing Trust Provider Integration"
+msgstr "Select Internal (Morpheus) o un existente Trust Provider Integration"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:21
+msgid "STORAGE MODE"
+msgstr "STORAGE MODE"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:22
+msgid "Single Disk, LVM or Clustered"
+msgstr "Single Disk, LVM o Clustered"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:23
+msgid "BACKUP PROVIDER"
+msgstr "BACKUP PROVIDER"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:24
+msgid ""
+"Select a backup provider. Depending on the Cloud type and any currently-"
+"configured backup plugins you may select Internal Backups (Morpheus) or "
+"another configured backup solution"
+msgstr ""
+"Select un backup proveedor. Dependiendo de el Cloud tipo y cualquier "
+"actualmente-configurado backup plugins you puede select Internal Backups "
+"(Morpheus) o another configurado backup solution"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:25
+msgid "REPLICATION PROVIDER"
+msgstr "REPLICATION PROVIDER"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:26
+msgid ""
+"Sets the default Replication Provider for the Cloud. Select an existing "
+"Replication Provider Integration"
+msgstr ""
+"Sets el predeterminado Replication Provider para el Cloud. Select un "
+"existente Replication Provider Integration"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:27
+msgid "GUIDANCE"
+msgstr "GUIDANCE"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:28
+msgid "Enable Guidance recommendations on cloud resources."
+msgstr "Enable Guidance recommendations on cloud recursos."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:29
+msgid "COSTING"
+msgstr "COSTING"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:30
+msgid ""
+"Enable for |morpheus| to sync Costing data from the Cloud provider, when "
+"available. For on-prem Clouds, enabling costing activates a costing service "
+"designed to mirror the live costing experience of public clouds, including "
+"invoicing with line items and real-time cost data (Operations > Costing > "
+"Invoices). If your organization utilizes reserved instances and you want to "
+"pull in related pricing data, some Cloud integrations include the option to "
+"select `Costing and Reservations`. If this is not relevant, select `Costing`"
+" to save money on additional calls to the Cloud provider's costing API."
+msgstr ""
+"Enable para |morpheus| to sync Costing datos desde el Cloud proveedor, "
+"cuando disponible. For on-prem Clouds, enabling costing activates un costing"
+" servicio designed to mirror el live costing experience of público clouds, "
+"including invoicing con line elementos y real-time cost datos (Operations > "
+"Costing > Invoices). If your organization utilizes reserved instances y you "
+"want to pull in related pricing datos, algunos Cloud integrations include el"
+" opción to select `Costing y Reservations`. If este no es relevante, select "
+"`Costing` to save money on adicional calls to el Cloud proveedor's costing "
+"API."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:31
+msgid "DNS INTEGRATION"
+msgstr "DNS INTEGRATION"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:32
+msgid ""
+"Records for instances provisioned in this cloud will be added to selected "
+"DNS integration."
+msgstr ""
+"Records para instances provisioned in esta nube será be agregado to "
+"seleccionado DNS integration."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:33
+msgid "SERVICE REGISTRY"
+msgstr "SERVICE REGISTRY"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:34
+msgid ""
+"Services for instances provisioned in this cloud will be added to selected "
+"Service Registry integration."
+msgstr ""
+"Services para instances provisioned in esta nube será be agregado to "
+"seleccionado Service Registry integration."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:35
+msgid "CONFIG MANAGEMENT"
+msgstr "CONFIG MANAGEMENT"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:36
+msgid ""
+"Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr ""
+"Select un Chef, Ansible o Puppet integration to be used con este Cloud."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:37
+msgid "CMDB"
+msgstr "CMDB"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:38
+msgid "Select CMDB Integration to automatically update selected CMDB."
+msgstr "Select CMDB Integration to automáticamente update seleccionado CMDB."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:39
+msgid "CMDB DISCOVERY"
+msgstr "CMDB DISCOVERY"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:40
+msgid ""
+"When checked, any automatically discovered (unmanaged) servers onboarded "
+"into |morpheus| from this Cloud will also have CMDB records created for "
+"them."
+msgstr ""
+"When checked, cualquier automáticamente discovered (unmanaged) servers "
+"onboarded en |morpheus| desde este Cloud será también tienen CMDB registros "
+"creado para them."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:41
+msgid "CHANGE MANAGEMENT"
+msgstr "CHANGE MANAGEMENT"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:42
+msgid ""
+"Select an existing Change Management Integration to set on the Cloud. ex: "
+"Cherwell"
+msgstr ""
+"Select un existente Change Management Integration to set on el Cloud. ex: "
+"Cherwell"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid "AGENT INSTALL MODE"
+msgstr "AGENT INSTALL MODE"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid ""
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM or "
+"Guest Execution for Agent install."
+msgstr ""
+"SSH / WINRM / Guest Execution: |morpheus| será attempt to use SSH, WINRM o "
+"Guest Execution para Agent install."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:45
+msgid ""
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize "
+"Cloud-Init or Cloudbase-Init for agent install when provisioning images with"
+" Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or "
+"WINRM if cloud-init is not installed on the provisioned image. Morpheus will"
+" also add Agent installation to Windows unattend.xml data when performing "
+"Guest Customizations or utilizing syspreped images."
+msgstr ""
+"Cloud Init / Unattend (cuando disponible): (DEFAULT) |morpheus| será utilize"
+" Cloud-Init o Cloudbase-Init para agent install cuando provisioning images "
+"con Cloud-Init/Cloudbase-Init instalado. |morpheus| será fall back on SSH o "
+"WINRM if cloud-init no es instalado on el provisioned image. Morpheus será "
+"también add Agent instalación to Windows unattend.xml datos cuando "
+"performing Guest Customizations o utilizing syspreped images."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:48
+msgid "VDI GATEWAY"
+msgstr "VDI GATEWAY"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:47
+msgid ""
+"Set a VDI Gateway for outbound communication from the |morpheus| Appliance "
+"to the vdi endpoints. VDI Gateways can be added in ``/tools/vdi/gateways``"
+msgstr ""
+"Set un VDI Gateway para outbound communication desde el |morpheus| Appliance"
+" to el vdi endpoints. VDI Gateways se puede agregar in "
+"``/tools/vdi/gateways``"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:50
+msgid "**CUSTOM LOGOS**"
+msgstr "**CUSTOM LOGOS**"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:52
+msgid ""
+"When integrating a Cloud, it will appear by default throughout the UI with "
+"its standard logo (VMware logo for VMware Clouds, etc.). If desired, you may"
+" upload a custom logo that should appear instead. This might be useful for "
+"MSPs which might not want to reveal the Cloud type underlying its services. "
+"A dark mode version of the logo may also be uploaded if the standard logo "
+"doesn't look right against the |morpheus| dark mode theme. Checking USE "
+"DEFAULT CLOUD LOGOS allows the user to return to the standard logo for the "
+"Cloud type without deleting the custom uploaded logo."
+msgstr ""
+"When integrating un Cloud, it será appear por defecto throughout el UI con "
+"its standard logo (VMware logo para VMware Clouds, etc.). If desired, you "
+"puede upload un personalizado logo que debería appear en cambio. This might "
+"be useful para MSPs cual might no want to reveal el Cloud tipo underlying "
+"its servicios. A dark modo versión of el logo puede también be uploaded if "
+"el standard logo doesn't look right against el |morpheus| dark modo theme. "
+"Checking USE DEFAULT CLOUD LOGOS permite al usuario return to el standard "
+"logo para el Cloud tipo sin deleting el personalizado uploaded logo."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:54
+msgid "**INVENTORY OPTIONS**"
+msgstr "**INVENTORY OPTIONS**"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:56
+msgid ""
+"Inventory options allow you to set a default active or inactive state for "
+"certain discovered resources. The list of available resources to configure "
+"will vary based on the Cloud type and its supported resources. By default, "
+"all possible resources for the Cloud type will be discovered in an active "
+"state. Uncheck the box for some or all resources to discover them in an "
+"inactive state. The list of potential resources that may appear include:"
+msgstr ""
+"Inventory opciones allow you to set un predeterminado activo o inactivo "
+"state para certain discovered recursos. The lista of disponible recursos to "
+"configure será vary basado en el Cloud tipo y its compatible recursos. By "
+"predeterminado, todos possible recursos para el Cloud tipo será be "
+"discovered in un activo state. Desmarque la box para algunos o todos "
+"recursos to discover them in un inactivo state. The lista of potential "
+"recursos que puede appear include:"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:58
+msgid "Service Plans"
+msgstr "Planes de servicio"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:59
+msgid "Resource Pools"
+msgstr "Pools de recursos"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:60
+msgid "Networks"
+msgstr "Networks"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:61
+msgid "Security Groups"
+msgstr "Grupos de seguridad"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:62
+msgid "Datastores"
+msgstr "Almacenes de datos"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:63
+msgid "Folders"
+msgstr "Folders"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:65
+msgid "**Provisioning Command**"
+msgstr "**Provisioning Command**"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:67
+msgid "PROXY"
+msgstr "PROXY"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:68
+msgid ""
+"Set a proxy for inbound communication from Instances to the |morpheus| "
+"Appliance. Proxies can be added in the `Infrastructure > Networks > Proxies`"
+" tab."
+msgstr ""
+"Set un proxy para inbound communication desde Instances to el |morpheus| "
+"Appliance. Proxies se puede agregar in el `Infrastructure > Networks > "
+"Proxies` pestaña."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:69
+msgid "Bypass Proxy for Appliance URL"
+msgstr "Bypass Proxy para Appliance URL"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:70
+msgid ""
+"Enable to bypass proxy settings (if added) for |morpheus| Agent "
+"communication to the Appliance URL."
+msgstr ""
+"Enable to bypass proxy configuración (if agregado) para |morpheus| Agent "
+"communication to el Appliance URL."
+
+#: ../../integration_guides/Clouds/advanced_options.rst:71
+msgid "NO PROXY"
+msgstr "NO PROXY"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:72
+msgid ""
+"Include a list of IP addresses or name servers to exclude from proxy "
+"traversal"
+msgstr ""
+"Include un lista of IP addresses o nombre servers to exclude desde proxy "
+"traversal"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid "USER DATA (LINUX)"
+msgstr "USER DATA (LINUX)"
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid ""
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. "
+"|morpheus| 4.1.1 and later supports all User Data formats. Refer to "
+"https://cloudinit.readthedocs.io/en/latest/topics/format.html for more "
+"information."
+msgstr ""
+"Add cloud-init user datos. |morpheus| 4.1.0 y earlier assumes bash syntax. "
+"|morpheus| 4.1.1 y later supports todos User Data formats. Refer to "
+"https://cloudinit.readthedocs.io/en/latest/topics/format.html para más "
+"información."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:86
+msgid "Huawei Scalable File Service (SFS)"
+msgstr "Huawei Scalable File Service (SFS)"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:88
+msgid ""
+"The |morpheus| integration with Huawei Cloud includes the capability to work"
+" with Huawei Scalable File Service (SFS). SFS is shared file storage hosted "
+"on Huawei Cloud. By integrating |morpheus| with Huawei Cloud you can "
+"discover, create, manage, and delete SFS servers, as well as view and work "
+"with the file shares and files contained therein."
+msgstr ""
+"The |morpheus| integration con Huawei Cloud includes el capability to work "
+"con Huawei Scalable File Service (SFS). SFS es shared archivo storage hosted"
+" on Huawei Cloud. By integrating |morpheus| con Huawei Cloud you puede "
+"discover, create, manage, y delete SFS servers, así como view y work con el "
+"archivo shares y archivos contained therein."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:91
+msgid "SFS Server Discovery and Management"
+msgstr "SFS Server Discovery y Management"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:93
+msgid ""
+"On integrating Huawei Cloud with |morpheus|, SFS servers and file shares are"
+" discovered automatically after a short time. The server(s) can be viewed in"
+" Infrastructure > Storage > Servers. By viewing the server detail page and "
+"clicking :guilabel:`EDIT`, the storage server can be scoped as needed. "
+"Administrators can choose to scope to other Huawei Cloud integrations (if "
+"more than one relevant integration currently exists), select from synced "
+"availability zones, and scope the storage server to specific Tenants if "
+"desired."
+msgstr ""
+"On integrating Huawei Cloud con |morpheus|, SFS servers y archivo shares son"
+" discovered automáticamente después de un short time. El servidor(s) se "
+"puede ver in Infrastructure > Storage > Servers. By viewing el servidor "
+"página de detalles y clicking :guilabel:`EDITAR`, el storage server puede be"
+" scoped según sea necesario. Administrators puede choose to scope to otro "
+"Huawei Cloud integrations (if más than one relevante integration actualmente"
+" exists), select desde synced availability zones, y scope el storage server "
+"to específico Tenants si se desea."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:96
+msgid ".. image:: images/integration_guides/clouds/huawei/sfs/1editServer.png"
+msgstr ""
+".. image:: images/integration_guides/clouds/huawei/sfs/1editServer.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:97
+msgid ""
+"Additionally, Huawei SFS servers can be created from the storage server list"
+" page (Infrastructure > Storage > Servers) directly in |morpheus|. Click "
+":guilabel:`+ ADD` to begin and set the storage server type value to \"Huawei"
+" SFS\". Just like with existing synced SFS servers, those created from "
+"|morpheus| can be scoped as needed."
+msgstr ""
+"Adicionalmente, Huawei SFS servers se puede crear desde el storage server "
+"página de lista (Infrastructure > Storage > Servers) directly in |morpheus|."
+" Click :guilabel:`+ AGREGAR` to begin y set el storage server tipo valor to "
+"\"Huawei SFS\". Just like con existente synced SFS servers, esos creado "
+"desde |morpheus| puede be scoped según sea necesario."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:100
+msgid ".. image:: images/integration_guides/clouds/huawei/sfs/2addServer.png"
+msgstr ".. image:: images/integration_guides/clouds/huawei/sfs/2addServer.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:102
+msgid "SFS File Share Discovery and Management"
+msgstr "SFS File Share Discovery y Management"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:104
+msgid ""
+"Discovered file shares will appear among other file shares synced with "
+"|morpheus| in Infrastructure > Storage > File Shares. Depending on the "
+"number of cloud integrations in your |morpheus| appliance and the number of "
+"cloud integrations available to your user account, this list may be quite "
+"large. Using the search bar on this page, we can narrow down the list to "
+"file shares displayed to those whose names match the search terms."
+msgstr ""
+"Discovered archivo shares será appear among otro archivo shares synced con "
+"|morpheus| in Infrastructure > Storage > File Shares. Dependiendo de el "
+"número of cloud integrations in your |morpheus| appliance y el número of "
+"cloud integrations disponible to your user cuenta, este lista puede be quite"
+" large. Using el search bar en esta página, we puede narrow down el lista to"
+" archivo shares displayed to esos whose names match el search terms."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:107
+msgid ".. image:: images/integration_guides/clouds/huawei/sfs/3shareList.png"
+msgstr ".. image:: images/integration_guides/clouds/huawei/sfs/3shareList.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:108
+msgid ""
+"We can drill into individual file shares by clicking on their hyperlinked "
+"name in the list of all integrated file shares. From the file share detail "
+"page, a list of files will appear on the files tab. Begin the process of "
+"adding a new file by clicking :guilabel:`+ ADD`. The Access tab on the file "
+"shares detail page allows users to view and manage ACL rules."
+msgstr ""
+"We puede drill en individual archivo shares by clicking on their hyperlinked"
+" nombre in el lista of todos integrated archivo shares. Desde el archivo "
+"share página de detalles, un lista of archivos será appear on el archivos "
+"pestaña. Begin el proceso of adding un nuevo archivo by clicking "
+":guilabel:`+ AGREGAR`. The Access pestaña on el archivo shares página de "
+"detalles permite un los usuarios view y manage ACL rules."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:110
+msgid ""
+"A \"Failed to load files from storage provider\" is present when the "
+"|morpheus| appliance doesn't have access to the file share."
+msgstr ""
+"A \"Failed to load archivos desde storage proveedor\" es present cuando el "
+"|morpheus| appliance doesn't tienen acceso to el archivo share."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:112
+msgid ""
+"New Huawei SFS file shares can be created directly in |morpheus|. From the "
+"file shares list page, get started by clicking :guilabel:`+ ADD`. Select the"
+" type \"Huawei SFS Share\". Set the storage service field to a pre-existing "
+"Huawei SFS server. A friendly name for the file share in |morpheus| and "
+"selecting from synced availability zones are required fields."
+msgstr ""
+"New Huawei SFS archivo shares se puede crear directly in |morpheus|. Desde "
+"el archivo shares página de lista, get started by clicking :guilabel:`+ "
+"AGREGAR`. Seleccione el tipo \"Huawei SFS Share\". Establezca el storage "
+"servicio campo to un pre-existente Huawei SFS server. A friendly nombre para"
+" el archivo share in |morpheus| y selecting desde synced availability zones "
+"son requerido campos."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:115
+msgid ".. image:: images/integration_guides/clouds/huawei/sfs/4addShare.png"
+msgstr ".. image:: images/integration_guides/clouds/huawei/sfs/4addShare.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:117
+msgid "Huawei Object Storage Service (OBS)"
+msgstr "Huawei Object Storage Service (OBS)"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:119
+msgid ""
+"The |morpheus| integration with Huawei Cloud also supports Object Storage "
+"Service (OBS). |morpheus| will automatically onboard existing OBS servers "
+"and buckets shortly after completing the cloud integration. Before you can "
+"add a new OBS server from |morpheus|, you must know or generate a key and "
+"secret value from the Huawei console and must provide a Huawei OBS API "
+"endpoint."
+msgstr ""
+"The |morpheus| integration con Huawei Cloud también supports Object Storage "
+"Service (OBS). |morpheus| será automáticamente onboard existente OBS servers"
+" y buckets shortly después de completing la nube integration. Before you "
+"puede add un nuevo OBS server desde |morpheus|, you debe know o generate un "
+"key y secret valor desde el Huawei console y debe provide un Huawei OBS API "
+"endpoint."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:122
+msgid "Generate a Key and Secret"
+msgstr "Generate un Key y Secret"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:124
+msgid ""
+"From the Huawei web console, log into the account used to integrate Huawei "
+"Cloud with |morpheus|. Hover over your account name in the upper-right "
+"corner of the application window and click \"My Credentials\". Select "
+"\"Access Keys\" from the left-hand sidebar. To create a new key, click "
+":guilabel:`+ Create Access Key`. Complete the two-factor authentication "
+"steps in the box that appears."
+msgstr ""
+"Desde el Huawei web console, log en el cuenta used to integrate Huawei Cloud"
+" con |morpheus|. Hover over your cuenta nombre in el upper-right corner of "
+"el application ventana y click \"My Credentials\". Select \"Access Keys\" "
+"desde el left-hand sidebar. To create un nuevo key, click :guilabel:`+ "
+"Create Access Key`. Complete el two-factor authentication pasos in el box "
+"que appears."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:127
+msgid ".. image:: images/integration_guides/clouds/huawei/obs/1createKey.png"
+msgstr ".. image:: images/integration_guides/clouds/huawei/obs/1createKey.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:128
+msgid ""
+"Once the key is generated, download or record the key and store it in a safe"
+" location. The key will not be viewable or available for download again "
+"after this point."
+msgstr ""
+"Once el key es generated, download o registro el key y store it in un safe "
+"location. The key no be viewable o disponible para download again después de"
+" este point."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:131
+msgid "Create OBS Server in |morpheus|"
+msgstr "Create OBS Server in |morpheus|"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:133
+msgid ""
+"With the key and secret value in hand from the previous section, navigate to"
+" Infrastructure > Storage > Servers. Click :guilabel:`+ ADD`. On changing "
+"the server type to Huawei OBS, you will see the fields for the access key "
+"and the secret key. OBS API endpoints can be found in `Huawei endpoint "
+"documentation <https://developer.huaweicloud.com/en-us/endpoint>`_. Include "
+"those three values in the Create Server modal along with a friendly name for"
+" use in |morpheus| UI. Just like with SFS objects, we can choose to scope "
+"the server to all or specific Tenants at this time."
+msgstr ""
+"With el key y secret valor in hand desde el anterior sección, navigate to "
+"Infrastructure > Storage > Servers. Click :guilabel:`+ AGREGAR`. On changing"
+" el servidor tipo to Huawei OBS, you será see el campos para el acceso key y"
+" el secret key. OBS API endpoints se puede encontrar in `Huawei endpoint "
+"documentation <https://developer.huaweicloud.com/en-us/endpoint>`_. Include "
+"esos three valores in el Create Server modal junto con un friendly nombre "
+"para use in |morpheus| UI. Just like con SFS objetos, we puede choose to "
+"scope el servidor to todos o específico Tenants en este momento."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:136
+msgid ""
+".. image:: images/integration_guides/clouds/huawei/obs/2addObsServer.png"
+msgstr ""
+".. image:: images/integration_guides/clouds/huawei/obs/2addObsServer.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:138
+msgid "Create Huawei OBS Bucket"
+msgstr "Create Huawei OBS Bucket"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:140
+msgid ""
+"With an OBS server onboarded or created in |morpheus|, you're able to create"
+" and manage Huawei OBS buckets as needed. To create a new bucket, navigate "
+"to Infrastructure > Storage > Buckets. Click :guilabel:`+ ADD` and select "
+"\"Huawei OBS Bucket\". The following fields are required when creating a "
+"Huawei OBS bucket:"
+msgstr ""
+"With un OBS server onboarded o creado in |morpheus|, you're able to create y"
+" manage Huawei OBS buckets según sea necesario. To create un nuevo bucket, "
+"navigate to Infrastructure > Storage > Buckets. Click :guilabel:`+ AGREGAR` "
+"y select \"Huawei OBS Bucket\". The following campos son requerido cuando "
+"creating un Huawei OBS bucket:"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:142
+msgid "**NAME**: A friendly name for use in |morpheus| UI"
+msgstr "**NAME**: A friendly nombre para use in |morpheus| UI"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:143
+msgid ""
+"**STORAGE SERVICE**: Choose the OBS server to associate the new bucket with"
+msgstr ""
+"**STORAGE SERVICE**: Elija el OBS server to associate el nuevo bucket con"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:144
+msgid ""
+"**BUCKET NAME**: The name of the bucket in Huawei Cloud, this must be unique"
+msgstr ""
+"**BUCKET NAME**: The nombre of el bucket in Huawei Cloud, este debe be "
+"unique"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:145
+msgid ""
+"**STORAGE CLASS**: If needed, view the `discussion of storage classes "
+"<https://support.huaweicloud.com/en-us/eu-west-0-usermanual-obs/en-"
+"us_topic_0050937852.html>`_ in Huawei support documentation"
+msgstr ""
+"**STORAGE CLASS**: If needed, view el `discussion of storage classes "
+"<https://support.huaweicloud.com/en-us/eu-west-0-usermanual-obs/en-"
+"us_topic_0050937852.html>`_ in Huawei support documentación"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:146
+msgid "**BUCKET ACL**: Public Read, Public Read/Write, or Private"
+msgstr "**BUCKET ACL**: Public Read, Public Read/Write, o Private"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:147
+msgid "**BUCKET POLICY**: Public Read, Public Read/Write, or Private"
+msgstr "**BUCKET POLICY**: Public Read, Public Read/Write, o Private"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:148
+msgid "**STORAGE QUOTA**: Set to 0 for no quota"
+msgstr "**STORAGE QUOTA**: Set to 0 para no quota"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:150
+msgid "Once finished, click :guilabel:`SAVE CHANGES`"
+msgstr "Once finished, click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:153
+msgid ""
+".. image:: images/integration_guides/clouds/huawei/obs/3createBucket.png"
+msgstr ""
+".. image:: images/integration_guides/clouds/huawei/obs/3createBucket.png"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:155
+msgid "Network and Router Creation"
+msgstr "Network y Router Creation"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:157
+msgid ""
+"Once a Huawei Cloud is integrated into |morpheus|, new network creation "
+"options become available. When adding a new network (Infrastructure > "
+"Networks > Networks Tab), a new type labeled \"Huawei Private Network\" is "
+"available when clicking :guilabel:`+ADD`. When the user creates this network"
+" construct in |morpheus|, a layer two subnet is created but it's not "
+"connected to a Virtual Private Cloud (VPC). This is by design as an "
+"Internet-routable network is not always desired. Continue on with this "
+"section after creating the network to also create a VPC (router)."
+msgstr ""
+"Once un Huawei Cloud es integrated en |morpheus|, nuevo network creation "
+"opciones become disponible. When adding un nuevo network (Infrastructure > "
+"Networks > Networks Tab), un nuevo tipo labeled \"Huawei Private Network\" "
+"es disponible cuando clicking :guilabel:`+ADD`. When el usuario creates esta"
+" red construct in |morpheus|, un layer two subnet es creado pero it's no "
+"conectado to un Virtual Private Cloud (VPC). This es by design as un "
+"Internet-routable network no es always desired. Continue on con este sección"
+" después de creating la red to también create un VPC (router)."
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:160
+msgid "Create a network"
+msgstr "Create una red"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:162
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:172
+msgid "Navigate to Infrastructure > Networks"
+msgstr "Navegue un Infrastructure > Networks"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:163
+msgid "Click on the Networks tab"
+msgstr "Haga clic en el Networks pestaña"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:164
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:174
+msgid "Click :guilabel:`+ADD`"
+msgstr "Click :guilabel:`+ADD`"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:165
+msgid "Select Huawei Private Network"
+msgstr "Select Huawei Private Network"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:166
+msgid "Complete the modal based on requirements for the new network"
+msgstr "Complete el modal basado en requirements para el nuevo network"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:167
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:177
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr "Click :guilabel:`GUARDAR CHANGES`"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:170
+msgid "Create a router"
+msgstr "Create un router"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:173
+msgid "Click on the Routers tab"
+msgstr "Haga clic en el Routers pestaña"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:175
+msgid "Select Huawei Router"
+msgstr "Select Huawei Router"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:176
+msgid "Complete the modal based on requirements for the new router"
+msgstr "Complete el modal basado en requirements para el nuevo router"
+
+#: ../../integration_guides/Clouds/Huawei/huawei.rst:179
+msgid ""
+"When creating a router, it's helpful to note that the External Network is "
+"the floating IP network that has been assigned to the Huawei project. This "
+"network will grant your Instances their routes out to the Internet. The "
+"Internal Subnet can be a layer two subnet that you may have created in the "
+"previous step. In addition, multiple subnets can be added to the router "
+"(VPC) and the IP address on the subnet would be the router's internal IP "
+"address."
+msgstr ""
+"When creating un router, it's helpful to tenga en cuenta que el External "
+"Network es el floating IP network que tiene sido assigned to el Huawei "
+"project. This network será grant your Instances their routes out to el "
+"Internet. The Internal Subnet puede be un layer two subnet que you puede "
+"tienen creado in el anterior paso. Además, múltiples subnets se puede "
+"agregar to el router (VPC) y el IP dirección on el subnet sería be el "
+"router's interno IP dirección."

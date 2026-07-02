@@ -1,0 +1,264 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/commands/scrub.md:4
+msgid ""
+"Route this scrub request to the appropriate specialist(s) based on what "
+"the user wants cleaned up."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:6
+msgid "Scrub concerns"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:8
+msgid "Each concern maps to a specialist agent:"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "Concern"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "Agent"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "What it does"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`duplication`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`dedup-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid ""
+"Find and consolidate duplicated code, apply DRY where it reduces "
+"complexity"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`types`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`type-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+#, python-brace-format
+msgid ""
+"Consolidate shared types, remove weak types (`any`, `interface{}`, "
+"`unknown`), strengthen typing"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`dead-code`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`deadcode-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid ""
+"Find and remove unused functions, types, constants, imports, and "
+"unreachable code"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`dependencies`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`dependency-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "Untangle circular or overly coupled dependencies, simplify import graphs"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`defensive`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`defensive-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid ""
+"Remove error-swallowing, unnecessary panic recovery, fallback patterns "
+"that hide bugs"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`legacy`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`legacy-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid ""
+"Remove deprecated, backwards-compat, and fallback code paths; make code "
+"singular"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`comments`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`comment-scrubber`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid ""
+"Remove AI slop, narrating comments, stubs, misleading docs; keep only "
+"useful comments"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "`all`"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "all of the above"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md
+msgid "Run every scrub agent sequentially"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:21
+msgid "Routing"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:23
+msgid ""
+"If the user specifies a concern (e.g., `/scrub dead-code`), delegate to "
+"that agent only."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:24
+msgid ""
+"If the user says \"all\" or provides no specific concern, run **all "
+"agents sequentially** in the order listed above."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:25
+msgid ""
+"If the user describes a problem that maps to a concern (e.g., \"there's a"
+" lot of copy-pasted code\"), route to the matching agent."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:26
+msgid ""
+"If ambiguous, ask: \"Which concern do you want to scrub? Options: "
+"duplication, types, dead-code, dependencies, defensive, legacy, comments,"
+" or all.\""
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:28
+msgid "Pre-flight"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:30
+msgid "Before delegating to any agent:"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:32
+msgid "Load the `code-scrub` skill for methodology and rules."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:33
+msgid ""
+"Load `stack-detection` to determine the project's language and tooling, "
+"then load the relevant stack skill."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:34
+msgid ""
+"Ensure `go build ./...` (or equivalent) passes before starting — don't "
+"scrub a broken build."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:36
+msgid "Workflow per agent"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:38
+msgid "Each scrub agent will:"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:39
+msgid "**Research** — systematically scan the codebase for their concern"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:40
+msgid ""
+"**Assess** — write a critical assessment with findings categorized by "
+"confidence (high/medium/low)"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:41
+msgid "**Implement** — apply all high-confidence fixes"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:42
+msgid "**Verify** — run build and tests after changes"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:44
+msgid "Post-scrub"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:46
+msgid "After all requested agents complete:"
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:47
+msgid "Run the full build and test suite one final time."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:48
+msgid ""
+"Summarize: what was found, what was changed, what was left as "
+"recommendations."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:49
+msgid ""
+"If `knowledge.auto_capture` is enabled, capture any novel conventions or "
+"patterns discovered during scrub to `.hero/knowledge/`."
+msgstr ""
+
+#: ../../.opencode/commands/scrub.md:51
+msgid "Scrub request: $ARGUMENTS"
+msgstr ""
+

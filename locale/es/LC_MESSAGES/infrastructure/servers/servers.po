@@ -1,0 +1,601 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/servers/servers.rst:2
+msgid "Server Operations"
+msgstr "Server Operations"
+
+#: ../../infrastructure/servers/servers.rst:4
+msgid ""
+"Advanced server management operations for virtual machines in |morpheus|."
+msgstr ""
+"Advanced servidor gestión operaciones para virtual machines en |morpheus|."
+
+#: ../../infrastructure/servers/server_migration.rst:2
+msgid "Server Migration"
+msgstr "Server Migration"
+
+#: ../../infrastructure/servers/server_devices.rst:5
+#: ../../infrastructure/servers/server_migration.rst:5
+#: ../../infrastructure/servers/server_placement.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/servers/server_migration.rst:7
+msgid ""
+"|morpheus| supports migrating virtual machines between hosts, clusters, or "
+"resource pools within a cloud. The migration (also referred to as VM Move) "
+"allows you to relocate a workload to a different compute target without "
+"reprovisioning."
+msgstr ""
+"|morpheus| soporta migrating virtual machines entre hosts, clusters, o "
+"recurso pools dentro de un cloud. El migración (también referred a como VM "
+"Mover) permite you a relocate un carga de trabajo a un diferente compute "
+"destino sin reprovisioning."
+
+#: ../../infrastructure/servers/server_migration.rst:9
+msgid ""
+"Migration is supported for cloud types that provide native VM mobility, such"
+" as VMware vSphere (vMotion), Nutanix AHV, and other hypervisor platforms."
+msgstr ""
+"Migración es soportado para cloud tipos ese proporcionar native VM mobility,"
+" como VMware vSphere (vMotion), Nutanix AHV, y otro hypervisor platforms."
+
+#: ../../infrastructure/servers/server_devices.rst:10
+#: ../../infrastructure/servers/server_migration.rst:12
+msgid "Role Requirements"
+msgstr "Role Requirements"
+
+#: ../../infrastructure/servers/server_migration.rst:14
+msgid ""
+"``Infrastructure: Compute`` role permission at **Full** level is required to"
+" perform migrations."
+msgstr ""
+"``Infrastructure: Compute`` permiso de rol en **Full** nivel es requerido a "
+"perform migrations."
+
+#: ../../infrastructure/servers/server_migration.rst:17
+msgid "Migrating a Server"
+msgstr "Migrating un Servidor"
+
+#: ../../infrastructure/servers/server_migration.rst:19
+msgid ""
+"Navigate to ``Infrastructure > Compute > Virtual Machines`` or to the server"
+" detail page"
+msgstr ""
+"Navegue un ``Infrastructure > Compute > Virtual Machines`` o a el server "
+"detail página"
+
+#: ../../infrastructure/servers/server_migration.rst:20
+msgid "Select the target server"
+msgstr "Seleccionar el destino servidor"
+
+#: ../../infrastructure/servers/server_devices.rst:30
+#: ../../infrastructure/servers/server_devices.rst:55
+#: ../../infrastructure/servers/server_migration.rst:21
+#: ../../infrastructure/servers/server_placement.rst:32
+msgid "Click :guilabel:`ACTIONS`"
+msgstr "Click :guilabel:`ACCIONES`"
+
+#: ../../infrastructure/servers/server_migration.rst:22
+msgid "Select **Migrate**"
+msgstr "Seleccionar **Migrate**"
+
+#: ../../infrastructure/servers/server_migration.rst:23
+msgid "In the migration dialog, configure:"
+msgstr "En el migración dialog, configure:"
+
+#: ../../infrastructure/servers/server_migration.rst:25
+msgid "TARGET HOST"
+msgstr "TARGET HOST"
+
+#: ../../infrastructure/servers/server_migration.rst:26
+msgid ""
+"Select the destination hypervisor host. Available hosts are filtered based "
+"on the server's current cloud and compatibility."
+msgstr ""
+"Seleccionar el destino hypervisor host. Disponible hosts son filtered basado"
+" en el servidor's actual cloud y compatibility."
+
+#: ../../infrastructure/servers/server_migration.rst:27
+msgid "TARGET RESOURCE POOL"
+msgstr "TARGET RESOURCE POOL"
+
+#: ../../infrastructure/servers/server_migration.rst:28
+msgid ""
+"Select the destination resource pool or cluster (if applicable). This may be"
+" required for cross-cluster migrations."
+msgstr ""
+"Seleccionar el destino recurso pool o cluster (si corresponde). Este puede "
+"ser requerido para cross-cluster migrations."
+
+#: ../../infrastructure/servers/server_migration.rst:29
+msgid "TARGET DATASTORE"
+msgstr "TARGET DATASTORE"
+
+#: ../../infrastructure/servers/server_migration.rst:30
+msgid ""
+"Select the destination datastore for the VM's storage (for storage "
+"migrations or combined compute+storage moves)."
+msgstr ""
+"Seleccionar el destino datastore para el VM's storage (para storage "
+"migrations o combined compute+storage moves)."
+
+#: ../../infrastructure/servers/server_migration.rst:36
+msgid "PRIORITY"
+msgstr "PRIORITY"
+
+#: ../../infrastructure/servers/server_migration.rst:32
+msgid "Migration priority level (where supported by the hypervisor):"
+msgstr "Migración priority nivel (donde soportado por el hypervisor):"
+
+#: ../../infrastructure/servers/server_migration.rst:34
+msgid "**Low** — Background migration with minimal impact"
+msgstr "**Low** — Background migración con minimal impact"
+
+#: ../../infrastructure/servers/server_migration.rst:35
+msgid "**Normal** — Standard priority"
+msgstr "**Normal** — Estándar priority"
+
+#: ../../infrastructure/servers/server_migration.rst:36
+msgid "**High** — Prioritized migration"
+msgstr "**High** — Prioritized migración"
+
+#: ../../infrastructure/servers/server_migration.rst:38
+msgid "Click :guilabel:`EXECUTE`"
+msgstr "Click :guilabel:`EXECUTE`"
+
+#: ../../infrastructure/servers/server_migration.rst:40
+msgid ""
+"The migration operation runs asynchronously. Progress can be monitored on "
+"the server's History tab."
+msgstr ""
+"El migración operación ejecuta asynchronously. Progress puede be monitored "
+"en el servidor's Historial pestaña."
+
+#: ../../infrastructure/servers/server_migration.rst:43
+msgid "Migration Types"
+msgstr "Migration Tipos"
+
+#: ../../infrastructure/servers/server_migration.rst:46
+msgid "Live Migration (vMotion)"
+msgstr "Live Migración (vMotion)"
+
+#: ../../infrastructure/servers/server_migration.rst:46
+msgid ""
+"The VM is moved while running, with no downtime. Requires shared storage or "
+"storage vMotion capability between source and destination hosts."
+msgstr ""
+"El VM es moved mientras ejecutando, con no downtime. Requiere shared storage"
+" o storage vMotion capability entre origen y destino hosts."
+
+#: ../../infrastructure/servers/server_migration.rst:49
+msgid "Cold Migration"
+msgstr "Cold Migration"
+
+#: ../../infrastructure/servers/server_migration.rst:49
+msgid ""
+"The VM is powered off, moved to the new location, and optionally powered "
+"back on. Used when live migration prerequisites are not met."
+msgstr ""
+"El VM es powered off, moved al nuevo location, y opcionalmente powered back "
+"en. Used cuando live migración requisitos previos son no met."
+
+#: ../../infrastructure/servers/server_migration.rst:52
+msgid "Storage Migration"
+msgstr "Storage Migration"
+
+#: ../../infrastructure/servers/server_migration.rst:52
+msgid ""
+"Only the VM's storage is relocated to a different datastore. The VM remains "
+"on the same host."
+msgstr ""
+"Solo el VM's storage es relocated a un diferente datastore. El VM remains en"
+" el mismo host."
+
+#: ../../infrastructure/servers/server_migration.rst:54
+msgid ""
+"Migration availability and options depend on the underlying cloud type and "
+"hypervisor capabilities. Not all cloud types support all migration modes."
+msgstr ""
+"Migración disponibilidad y opciones depend en el underlying cloud tipo y "
+"hypervisor capabilities. No todos cloud tipos support todos migración modos."
+
+#: ../../infrastructure/servers/server_migration.rst:57
+msgid "Monitoring Migration Status"
+msgstr "Monitoring Migration Estado"
+
+#: ../../infrastructure/servers/server_migration.rst:59
+msgid ""
+"Migration operations appear in the server's **History** tab with status "
+"indicators:"
+msgstr ""
+"Migración operaciones aparecer en el servidor's **History** pestaña con "
+"estado indicators:"
+
+#: ../../infrastructure/servers/server_migration.rst:61
+msgid "**Running** — Migration is in progress"
+msgstr "**Running** — Migración es en progress"
+
+#: ../../infrastructure/servers/server_migration.rst:62
+msgid "**Complete** — Migration finished successfully"
+msgstr "**Complete** — Migración finished exitosamente"
+
+#: ../../infrastructure/servers/server_migration.rst:63
+msgid ""
+"**Failed** — Migration encountered an error (check event details for the "
+"failure reason)"
+msgstr ""
+"**Falló** — Migración encountered un error (verificar evento details para el"
+" fallo reason)"
+
+#: ../../infrastructure/servers/server_placement.rst:2
+msgid "Server Placement"
+msgstr "Server Placement"
+
+#: ../../infrastructure/servers/server_placement.rst:7
+msgid ""
+"Server Placement in |morpheus| controls which host, cluster, or resource "
+"pool a virtual machine is assigned to within a cloud. Placement "
+"configuration can be set during provisioning or updated post-provisioning to"
+" optimize resource utilization across the infrastructure."
+msgstr ""
+"Servidor Placement en |morpheus| controls cual host, cluster, o recurso pool"
+" un virtual machine es asignado un dentro de un cloud. Placement "
+"configuración se puede establecer durante provisioning o actualizado post-"
+"provisioning a optimize recurso utilization a través de el infrastructure."
+
+#: ../../infrastructure/servers/server_placement.rst:9
+msgid ""
+"Placement settings work in conjunction with cloud resource pool "
+"configurations and can be influenced by Host-VM Groups (affinity and anti-"
+"affinity rules)."
+msgstr ""
+"Placement configuraciones funcionar en conjunction con cloud recurso pool "
+"configurations y puede be influenced por Host-VM Grupos (affinity y anti-"
+"affinity reglas)."
+
+#: ../../infrastructure/servers/server_placement.rst:12
+msgid "Configuring Placement"
+msgstr "Configuring Placement"
+
+#: ../../infrastructure/servers/server_placement.rst:15
+msgid "During Provisioning"
+msgstr "Durante Provisioning"
+
+#: ../../infrastructure/servers/server_placement.rst:17
+msgid ""
+"When provisioning a new instance, placement is configured in the "
+"**Configure** step:"
+msgstr ""
+"Cuando provisioning un nuevo instance, placement está configurado en el "
+"**Configure** paso:"
+
+#: ../../infrastructure/servers/server_placement.rst:19
+#: ../../infrastructure/servers/server_placement.rst:36
+msgid "CLOUD"
+msgstr "CLOUD"
+
+#: ../../infrastructure/servers/server_placement.rst:20
+msgid "The target cloud determines available placement options."
+msgstr "El destino cloud determines disponible placement opciones."
+
+#: ../../infrastructure/servers/server_placement.rst:21
+#: ../../infrastructure/servers/server_placement.rst:39
+msgid "RESOURCE POOL"
+msgstr "RESOURCE POOL"
+
+#: ../../infrastructure/servers/server_placement.rst:22
+msgid ""
+"Select a resource pool or cluster. This defines the boundary within which "
+"the VM will be placed."
+msgstr ""
+"Seleccionar un recurso pool o cluster. Este define el boundary dentro de "
+"cual el VM será be placed."
+
+#: ../../infrastructure/servers/server_placement.rst:24
+msgid "HOST"
+msgstr "HOST"
+
+#: ../../infrastructure/servers/server_placement.rst:24
+msgid ""
+"(Optional) When manual host selection is enabled, a specific host can be "
+"chosen. If left as auto-select, |morpheus| or the hypervisor will determine "
+"optimal placement."
+msgstr ""
+"(Opcional) Cuando manual host selection está habilitado, un específico host "
+"puede be chosen. Si left como auto-seleccionar, |morpheus| o el hypervisor "
+"será determine optimal placement."
+
+#: ../../infrastructure/servers/server_placement.rst:27
+msgid "Updating Placement Post-Provisioning"
+msgstr "Updating Placement Post-Aprovisionamiento"
+
+#: ../../infrastructure/servers/server_placement.rst:29
+msgid "To change a server's placement after provisioning:"
+msgstr "A cambiar un servidor's placement después de provisioning:"
+
+#: ../../infrastructure/servers/server_devices.rst:17
+#: ../../infrastructure/servers/server_devices.rst:29
+#: ../../infrastructure/servers/server_devices.rst:44
+#: ../../infrastructure/servers/server_devices.rst:54
+#: ../../infrastructure/servers/server_placement.rst:31
+msgid "Navigate to the server detail page"
+msgstr "Navegue un el server detail página"
+
+#: ../../infrastructure/servers/server_placement.rst:33
+msgid "Select **Change Cloud** or **Placement**"
+msgstr "Seleccionar **Change Nube** o **Placement**"
+
+#: ../../infrastructure/servers/server_placement.rst:34
+msgid "Update the placement configuration:"
+msgstr "Update el placement configuración:"
+
+#: ../../infrastructure/servers/server_placement.rst:37
+msgid "The target cloud (for cross-cloud placement changes)."
+msgstr "El destino cloud (para cross-cloud placement cambios)."
+
+#: ../../infrastructure/servers/server_placement.rst:39
+msgid "The destination resource pool or cluster."
+msgstr "El destino recurso pool o cluster."
+
+#: ../../infrastructure/servers/server_devices.rst:37
+#: ../../infrastructure/servers/server_devices.rst:58
+#: ../../infrastructure/servers/server_placement.rst:41
+msgid "Click :guilabel:`SAVE`"
+msgstr "Click :guilabel:`SAVE`"
+
+#: ../../infrastructure/servers/server_placement.rst:43
+msgid ""
+"Changing placement may trigger a migration operation depending on the "
+"hypervisor. See :doc:`server_migration` for details on VM migration."
+msgstr ""
+"Changing placement puede trigger un migración operación dependiendo de el "
+"hypervisor. Ver :doc:`server_migration` para details en VM migración."
+
+#: ../../infrastructure/servers/server_placement.rst:46
+msgid "Automatic Placement"
+msgstr "Automático Placement"
+
+#: ../../infrastructure/servers/server_placement.rst:48
+msgid ""
+"When no specific host is selected, |morpheus| works with the underlying "
+"hypervisor's placement engine:"
+msgstr ""
+"Cuando no específico host es seleccionado, |morpheus| funciona con el "
+"underlying hypervisor's placement engine:"
+
+#: ../../infrastructure/servers/server_placement.rst:50
+msgid ""
+"**VMware DRS** — When DRS is enabled, VMware handles optimal host placement "
+"within a cluster."
+msgstr ""
+"**VMware DRS** — Cuando DRS está habilitado, VMware handles optimal host "
+"placement dentro de un cluster."
+
+#: ../../infrastructure/servers/server_placement.rst:51
+msgid ""
+"**Nutanix ADS** — Acropolis Dynamic Scheduling distributes VMs across hosts."
+msgstr ""
+"**Nutanix ADS** — Acropolis Dinámico Scheduling distributes VMs a través de "
+"hosts."
+
+#: ../../infrastructure/servers/server_placement.rst:52
+msgid ""
+"**KVM/MVM** — |morpheus| selects the host with the most available resources "
+"in the target pool."
+msgstr ""
+"**KVM/MVM** — |morpheus| selects el host con el más disponible recursos en "
+"el destino pool."
+
+#: ../../infrastructure/servers/server_placement.rst:55
+msgid "Host-VM Group Integration"
+msgstr "Host-VM Group Integration"
+
+#: ../../infrastructure/servers/server_placement.rst:57
+msgid ""
+"Server placement can be further controlled through Host-VM Groups, which "
+"define affinity and anti-affinity rules. See "
+":doc:`/infrastructure/clusters/host_vm_groups` for details on configuring "
+"these rules."
+msgstr ""
+"Servidor placement puede be further controlled a través de Host-VM Grupos, "
+"cual define affinity y anti-affinity reglas. Ver "
+":doc:`/infrastructure/clusters/host_vm_groups` para details en configuring "
+"estos reglas."
+
+#: ../../infrastructure/servers/server_devices.rst:2
+msgid "Server Devices"
+msgstr "Server Devices"
+
+#: ../../infrastructure/servers/server_devices.rst:7
+msgid ""
+"Server Devices in |morpheus| represent physical or virtual hardware "
+"peripherals (such as GPUs, PCIe devices, USB devices, or other passthrough "
+"hardware) that can be attached to or detached from virtual machines. Device "
+"management is used for hardware passthrough scenarios where VMs need direct "
+"access to physical devices on the host."
+msgstr ""
+"Servidor Devices en |morpheus| represent physical o virtual hardware "
+"peripherals (como GPUs, PCIe devices, USB devices, o otro passthrough "
+"hardware) ese puede be adjunto un o detached desde virtual machines. Device "
+"gestión se usa para hardware passthrough scenarios donde VMs necesita direct"
+" acceso a physical devices en el host."
+
+#: ../../infrastructure/servers/server_devices.rst:12
+msgid ""
+"``Infrastructure: Compute`` role permission at **Full** level is required to"
+" attach, detach, or assign devices."
+msgstr ""
+"``Infrastructure: Compute`` permiso de rol en **Full** nivel es requerido a "
+"attach, detach, o assign devices."
+
+#: ../../infrastructure/servers/server_devices.rst:15
+msgid "Viewing Devices"
+msgstr "Viewing Devices"
+
+#: ../../infrastructure/servers/server_devices.rst:18
+msgid "Select the **DEVICES** tab (where available)"
+msgstr "Seleccionar el **DEVICES** pestaña (donde disponible)"
+
+#: ../../infrastructure/servers/server_devices.rst:20
+msgid ""
+"The Devices tab displays all hardware devices currently associated with the "
+"server, including:"
+msgstr ""
+"El Devices pestaña muestra todos hardware devices actualmente asociado con "
+"el servidor, incluyendo:"
+
+#: ../../infrastructure/servers/server_devices.rst:22
+msgid "**Name** — Device name or identifier"
+msgstr "**Name** — Device nombre o identifier"
+
+#: ../../infrastructure/servers/server_devices.rst:23
+msgid "**Type** — Device type (GPU, PCIe, USB, etc.)"
+msgstr "**Type** — Device tipo (GPU, PCIe, USB, etc.)"
+
+#: ../../infrastructure/servers/server_devices.rst:24
+msgid "**Status** — Connection status (attached/detached)"
+msgstr "**Status** — Conexión estado (attached/detached)"
+
+#: ../../infrastructure/servers/server_devices.rst:27
+msgid "Attaching a Device"
+msgstr "Attaching un Device"
+
+#: ../../infrastructure/servers/server_devices.rst:31
+msgid "Select **Attach Device**"
+msgstr "Seleccionar **Attach Device**"
+
+#: ../../infrastructure/servers/server_devices.rst:32
+msgid "In the device dialog, configure:"
+msgstr "En el device dialog, configure:"
+
+#: ../../infrastructure/servers/server_devices.rst:35
+msgid "DEVICE"
+msgstr "DEVICE"
+
+#: ../../infrastructure/servers/server_devices.rst:35
+msgid ""
+"Select from available devices on the host. Only unassigned devices "
+"compatible with the VM are shown."
+msgstr ""
+"Seleccionar desde disponible devices en el host. Solo unassigned devices "
+"compatible con el VM son mostrado."
+
+#: ../../infrastructure/servers/server_devices.rst:39
+msgid ""
+"Attaching a device may require the VM to be powered off, depending on the "
+"device type and hypervisor capabilities."
+msgstr ""
+"Attaching un device puede requerir el VM a be powered off, dependiendo de el"
+" device tipo y hypervisor capabilities."
+
+#: ../../infrastructure/servers/server_devices.rst:42
+msgid "Detaching a Device"
+msgstr "Detaching un Device"
+
+#: ../../infrastructure/servers/server_devices.rst:45
+msgid "Select the **DEVICES** tab"
+msgstr "Seleccionar el **DEVICES** pestaña"
+
+#: ../../infrastructure/servers/server_devices.rst:46
+msgid "Click the detach icon next to the device"
+msgstr "Click el detach ícono siguiente al device"
+
+#: ../../infrastructure/servers/server_devices.rst:47
+msgid "Confirm the detachment"
+msgstr "Confirmar el detachment"
+
+#: ../../infrastructure/servers/server_devices.rst:50
+msgid "Assigning a Device to a Server"
+msgstr "Assigning un Device a un Servidor"
+
+#: ../../infrastructure/servers/server_devices.rst:52
+msgid ""
+"For scenarios where a device needs to be pre-assigned to a server (reserving"
+" it for future use):"
+msgstr ""
+"Para scenarios donde un device necesita a be pre-asignado un un servidor "
+"(reserving it para future usar):"
+
+#: ../../infrastructure/servers/server_devices.rst:56
+msgid "Select **Assign Device**"
+msgstr "Seleccionar **Assign Device**"
+
+#: ../../infrastructure/servers/server_devices.rst:57
+msgid "Select the device to assign"
+msgstr "Seleccionar el device a assign"
+
+#: ../../infrastructure/servers/server_devices.rst:60
+msgid ""
+"Assigned devices are reserved for the specified server and will not be "
+"available for other VMs."
+msgstr ""
+"Asignado devices son reserved para el specified servidor y será no be "
+"disponible para otro VMs."
+
+#: ../../infrastructure/servers/server_devices.rst:62
+msgid ""
+"Detaching a device from a running VM may cause application errors if "
+"software inside the VM is actively using the device. Always ensure workloads"
+" are quiesced before detaching passthrough devices."
+msgstr ""
+"Detaching un device desde un ejecutando VM puede cause aplicación errores si"
+" software inside el VM es actively usando el device. Siempre asegurar cargas"
+" de trabajo son quiesced antes de detaching passthrough devices."
+
+#: ../../infrastructure/servers/server_devices.rst:65
+msgid "Supported Device Types"
+msgstr "Supported Device Tipos"
+
+#: ../../infrastructure/servers/server_devices.rst:67
+msgid ""
+"The availability of device management depends on the cloud and hypervisor "
+"type:"
+msgstr ""
+"El disponibilidad de device gestión depends en el cloud y hypervisor tipo:"
+
+#: ../../infrastructure/servers/server_devices.rst:69
+msgid ""
+"**VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices"
+msgstr ""
+"**VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices"
+
+#: ../../infrastructure/servers/server_devices.rst:70
+msgid "**KVM/MVM** — PCI passthrough, GPU passthrough, USB devices"
+msgstr "**KVM/MVM** — PCI passthrough, GPU passthrough, USB devices"
+
+#: ../../infrastructure/servers/server_devices.rst:71
+msgid "**Nutanix AHV** — GPU passthrough devices"
+msgstr "**Nutanix AHV** — GPU passthrough devices"
+
+#: ../../infrastructure/servers/server_devices.rst:73
+msgid ""
+"Device availability is determined by the host's hardware configuration and "
+"the hypervisor's passthrough settings. Devices must be properly configured "
+"for passthrough at the host level before they appear as available in "
+"|morpheus|."
+msgstr ""
+"Device disponibilidad es determined por el host's hardware configuración y "
+"el hypervisor's passthrough configuraciones. Devices debe be correctamente "
+"configurado para passthrough en el host nivel antes de they aparecer como "
+"disponible en |morpheus|."

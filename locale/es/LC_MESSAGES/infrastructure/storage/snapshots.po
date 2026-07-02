@@ -1,0 +1,359 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/storage/snapshots.rst:2
+msgid "Snapshots"
+msgstr "Snapshots"
+
+#: ../../infrastructure/storage/snapshots.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../infrastructure/storage/snapshots.rst:7
+msgid ""
+"Snapshots capture the state of a virtual machine's disk(s) at a specific "
+"point in time, allowing administrators to quickly revert a VM to a previous "
+"state if needed. |morpheus| provides centralized snapshot management across "
+"clouds, supporting creation, reversion, and deletion of snapshots."
+msgstr ""
+"Snapshots capture el estado de un virtual machine's disco(s) en un "
+"específico punto en tiempo, allowing administrators a quickly revert un VM a"
+" un anterior estado si es necesario. |morpheus| proporciona centralized "
+"snapshot gestión a través de clouds, supporting creation, reversion, y "
+"deletion de snapshots."
+
+#: ../../infrastructure/storage/snapshots.rst:9
+msgid ""
+"Snapshots can be managed from the server/instance detail page or from a "
+"centralized snapshots view."
+msgstr ""
+"Snapshots se puede gestionar desde el servidor/instance página de detalles o"
+" desde un centralized snapshots ver."
+
+#: ../../infrastructure/storage/snapshots.rst:12
+msgid "Role Requirements"
+msgstr "Role Requirements"
+
+#: ../../infrastructure/storage/snapshots.rst:14
+msgid ""
+"``Infrastructure: Compute`` role permission at **Full** level is required to"
+" create, revert, or delete snapshots."
+msgstr ""
+"``Infrastructure: Compute`` permiso de rol en **Full** nivel es requerido a "
+"crear, revert, o eliminar snapshots."
+
+#: ../../infrastructure/storage/snapshots.rst:15
+msgid "**Read** access allows viewing existing snapshots."
+msgstr "**Read** acceso permite viewing existente snapshots."
+
+#: ../../infrastructure/storage/snapshots.rst:18
+msgid "Viewing Snapshots"
+msgstr "Viewing Snapshots"
+
+#: ../../infrastructure/storage/snapshots.rst:20
+msgid "From a Server:"
+msgstr "Desde un Servidor:"
+
+#: ../../infrastructure/storage/snapshots.rst:22
+#: ../../infrastructure/storage/snapshots.rst:87
+msgid "Navigate to the server detail page"
+msgstr "Navegue un el server detail página"
+
+#: ../../infrastructure/storage/snapshots.rst:23
+msgid "Select the **SNAPSHOTS** tab"
+msgstr "Seleccionar el **SNAPSHOTS** pestaña"
+
+#: ../../infrastructure/storage/snapshots.rst:25
+msgid "The Snapshots tab displays all snapshots for the server, including:"
+msgstr ""
+"El Snapshots pestaña muestra todos snapshots para el servidor, incluyendo:"
+
+#: ../../infrastructure/storage/snapshots.rst:27
+msgid "**Name** — Snapshot name or description"
+msgstr "**Name** — Snapshot nombre o descripción"
+
+#: ../../infrastructure/storage/snapshots.rst:28
+msgid "**Date Created** — When the snapshot was taken"
+msgstr "**Date Creado** — Cuando el snapshot fue taken"
+
+#: ../../infrastructure/storage/snapshots.rst:29
+msgid "**Size** — Disk space consumed by the snapshot"
+msgstr "**Size** — Disco space consumed por el snapshot"
+
+#: ../../infrastructure/storage/snapshots.rst:30
+msgid "**Status** — Snapshot state (active, creating, deleting)"
+msgstr "**Status** — Snapshot estado (activo, creating, deleting)"
+
+#: ../../infrastructure/storage/snapshots.rst:33
+msgid "Creating a Snapshot"
+msgstr "Creating un Snapshot"
+
+#: ../../infrastructure/storage/snapshots.rst:35
+msgid "Navigate to the server or instance detail page"
+msgstr "Navegue un el server o instance detail página"
+
+#: ../../infrastructure/storage/snapshots.rst:36
+#: ../../infrastructure/storage/snapshots.rst:88
+msgid "Click :guilabel:`ACTIONS`"
+msgstr "Click :guilabel:`ACCIONES`"
+
+#: ../../infrastructure/storage/snapshots.rst:37
+msgid "Select **Snapshot**"
+msgstr "Seleccionar **Snapshot**"
+
+#: ../../infrastructure/storage/snapshots.rst:38
+msgid "In the snapshot dialog, configure:"
+msgstr "En el snapshot dialog, configure:"
+
+#: ../../infrastructure/storage/snapshots.rst:40
+msgid "NAME"
+msgstr "NAME"
+
+#: ../../infrastructure/storage/snapshots.rst:41
+msgid "A descriptive name for the snapshot."
+msgstr "Un descriptive nombre para el snapshot."
+
+#: ../../infrastructure/storage/snapshots.rst:42
+msgid "DESCRIPTION"
+msgstr "DESCRIPTION"
+
+#: ../../infrastructure/storage/snapshots.rst:43
+msgid "Optional notes about the snapshot's purpose or what state it captures."
+msgstr ""
+"Opcional notes acerca de el snapshot's purpose o qué estado it captures."
+
+#: ../../infrastructure/storage/snapshots.rst:44
+msgid "MEMORY"
+msgstr "MEMORY"
+
+#: ../../infrastructure/storage/snapshots.rst:45
+msgid ""
+"(Where supported) Include the VM's memory state in the snapshot. This allows"
+" reverting to the exact running state."
+msgstr ""
+"(Donde soportado) Incluir el VM's memoria estado en el snapshot. Este "
+"permite reverting al exact ejecutando estado."
+
+#: ../../infrastructure/storage/snapshots.rst:47
+msgid "QUIESCE"
+msgstr "QUIESCE"
+
+#: ../../infrastructure/storage/snapshots.rst:47
+msgid ""
+"(Where supported) Quiesce the guest file system before taking the snapshot. "
+"This ensures application-consistent data."
+msgstr ""
+"(Donde soportado) Quiesce el guest sistema de archivos antes de taking el "
+"snapshot. Este ensures aplicación-consistent datos."
+
+#: ../../infrastructure/storage/snapshots.rst:49
+msgid "Click :guilabel:`CREATE`"
+msgstr "Click :guilabel:`CREATE`"
+
+#: ../../infrastructure/storage/snapshots.rst:51
+msgid ""
+"The snapshot operation runs asynchronously. The new snapshot will appear in "
+"the Snapshots tab once complete."
+msgstr ""
+"El snapshot operación ejecuta asynchronously. El nuevo snapshot será "
+"aparecer en el Snapshots pestaña una vez completado."
+
+#: ../../infrastructure/storage/snapshots.rst:54
+msgid "Reverting to a Snapshot"
+msgstr "Reverting a un Snapshot"
+
+#: ../../infrastructure/storage/snapshots.rst:56
+#: ../../infrastructure/storage/snapshots.rst:65
+#: ../../infrastructure/storage/snapshots.rst:76
+msgid "Navigate to the server's **SNAPSHOTS** tab"
+msgstr "Navegue un el server's **SNAPSHOTS** pestaña"
+
+#: ../../infrastructure/storage/snapshots.rst:57
+msgid "Click the revert icon next to the desired snapshot"
+msgstr "Click el revert ícono siguiente al desired snapshot"
+
+#: ../../infrastructure/storage/snapshots.rst:58
+msgid "Confirm the revert operation"
+msgstr "Confirmar el revert operación"
+
+#: ../../infrastructure/storage/snapshots.rst:60
+msgid ""
+"Reverting to a snapshot discards all changes made since the snapshot was "
+"taken. This includes disk writes, configuration changes, and (if memory was "
+"not captured) the running state of applications."
+msgstr ""
+"Reverting a un snapshot discards todos cambios made desde el snapshot fue "
+"taken. Este incluye disco writes, configuración cambios, y (si memoria fue "
+"no captured) el ejecutando estado de aplicaciones."
+
+#: ../../infrastructure/storage/snapshots.rst:63
+msgid "Deleting a Snapshot"
+msgstr "Deleting un Snapshot"
+
+#: ../../infrastructure/storage/snapshots.rst:66
+msgid "Click the delete icon next to the snapshot"
+msgstr "Click el eliminar ícono siguiente al snapshot"
+
+#: ../../infrastructure/storage/snapshots.rst:67
+#: ../../infrastructure/storage/snapshots.rst:78
+msgid "Confirm the deletion"
+msgstr "Confirmar el deletion"
+
+#: ../../infrastructure/storage/snapshots.rst:69
+msgid ""
+"Deleting a snapshot consolidates the snapshot data back into the base disk. "
+"This frees the space consumed by the snapshot delta."
+msgstr ""
+"Deleting un snapshot consolidates el snapshot datos back en el base disco. "
+"Este frees el space consumed por el snapshot delta."
+
+#: ../../infrastructure/storage/snapshots.rst:72
+msgid "Deleting All Snapshots"
+msgstr "Deleting Todos Snapshots"
+
+#: ../../infrastructure/storage/snapshots.rst:74
+msgid "To remove all snapshots for a server:"
+msgstr "Para eliminar todos snapshots para un server:"
+
+#: ../../infrastructure/storage/snapshots.rst:77
+msgid "Click :guilabel:`DELETE ALL`"
+msgstr "Click :guilabel:`DELETE ALL`"
+
+#: ../../infrastructure/storage/snapshots.rst:80
+msgid ""
+"Deleting all snapshots consolidates the entire snapshot chain. This "
+"operation may take time for VMs with large or numerous snapshots."
+msgstr ""
+"Deleting todos snapshots consolidates el entire snapshot chain. Este "
+"operación puede tomar tiempo para VMs con grande o numerous snapshots."
+
+#: ../../infrastructure/storage/snapshots.rst:83
+msgid "Importing Snapshots"
+msgstr "Importing Snapshots"
+
+#: ../../infrastructure/storage/snapshots.rst:85
+msgid "|morpheus| can import existing snapshots from the hypervisor:"
+msgstr "|morpheus| puede import existente snapshots desde el hypervisor:"
+
+#: ../../infrastructure/storage/snapshots.rst:89
+msgid "Select **Import Snapshot**"
+msgstr "Seleccionar **Import Snapshot**"
+
+#: ../../infrastructure/storage/snapshots.rst:90
+msgid "Select the snapshot to import from the hypervisor"
+msgstr "Seleccionar el snapshot a import desde el hypervisor"
+
+#: ../../infrastructure/storage/snapshots.rst:91
+msgid "Click :guilabel:`IMPORT`"
+msgstr "Click :guilabel:`IMPORT`"
+
+#: ../../infrastructure/storage/snapshots.rst:94
+msgid "Snapshot Best Practices"
+msgstr "Snapshot Best Practices"
+
+#: ../../infrastructure/storage/snapshots.rst:96
+msgid ""
+"**Keep snapshots short-lived** — Snapshots consume increasing disk space "
+"over time as the delta grows. Delete snapshots once they are no longer "
+"needed."
+msgstr ""
+"**Keep snapshots short-lived** — Snapshots consume increasing disco space "
+"sobre tiempo como el delta grows. Eliminar snapshots once they son no longer"
+" necesario."
+
+#: ../../infrastructure/storage/snapshots.rst:97
+msgid ""
+"**Don't use as backups** — Snapshots are not a replacement for proper "
+"backups. They reside on the same storage as the VM and are lost if the "
+"storage fails."
+msgstr ""
+"**Don't use as backups** — Snapshots son no un replacement para proper "
+"backups. They reside en el mismo storage como el VM y son lost si el storage"
+" falla."
+
+#: ../../infrastructure/storage/snapshots.rst:98
+msgid ""
+"**Limit chain depth** — Avoid creating deep chains of snapshots (snapshot of"
+" a snapshot). Performance degrades with chain depth."
+msgstr ""
+"**Limit chain depth** — Avoid creating deep chains de snapshots (snapshot de"
+" un snapshot). Rendimiento degrades con chain profundidad."
+
+#: ../../infrastructure/storage/snapshots.rst:99
+msgid ""
+"**Quiesce when possible** — For application consistency, always quiesce the "
+"guest file system before snapshotting databases or transactional workloads."
+msgstr ""
+"**Quiesce when possible** — Para aplicación consistency, siempre quiesce el "
+"guest sistema de archivos antes de snapshotting bases de datos o "
+"transactional cargas de trabajo."
+
+#: ../../infrastructure/storage/snapshots.rst:100
+msgid ""
+"**Archive snapshots** — Configure the default archive store "
+"(``Administration > Settings > Appliance > Archive Store``) if snapshots "
+"need to be stored externally."
+msgstr ""
+"**Archive snapshots** — Configure el predeterminado archive store "
+"(``Administration > Settings > Appliance > Archive Store``) si snapshots "
+"necesita a be stored externally."
+
+#: ../../infrastructure/storage/snapshots.rst:103
+msgid "Supported Cloud Types"
+msgstr "Soportado Nube Tipos"
+
+#: ../../infrastructure/storage/snapshots.rst:105
+msgid "Snapshot support varies by cloud type:"
+msgstr "Snapshot support varies por cloud tipo:"
+
+#: ../../infrastructure/storage/snapshots.rst:107
+msgid ""
+"**VMware vSphere** — Full support including memory snapshots and quiescing"
+msgstr ""
+"**VMware vSphere** — Completo support incluyendo memoria snapshots y "
+"quiescing"
+
+#: ../../infrastructure/storage/snapshots.rst:108
+msgid "**Nutanix AHV** — Snapshot support without memory state"
+msgstr "**Nutanix AHV** — Snapshot support sin memoria estado"
+
+#: ../../infrastructure/storage/snapshots.rst:109
+msgid "**KVM/MVM** — Snapshot support via libvirt/qemu snapshots"
+msgstr "**KVM/MVM** — Snapshot support via libvirt/qemu snapshots"
+
+#: ../../infrastructure/storage/snapshots.rst:110
+msgid "**Azure** — Managed disk snapshots"
+msgstr "**Azure** — Administrado disco snapshots"
+
+#: ../../infrastructure/storage/snapshots.rst:111
+msgid "**AWS** — EBS snapshots (volume-level)"
+msgstr "**AWS** — EBS snapshots (volumen-nivel)"
+
+#: ../../infrastructure/storage/snapshots.rst:113
+msgid ""
+"Some cloud types may not support all snapshot options (e.g., memory "
+"snapshots, quiescing). Unavailable options will be hidden or greyed out in "
+"the dialog."
+msgstr ""
+"Algunos cloud tipos puede no support todos snapshot opciones (e.g., memoria "
+"snapshots, quiescing). Unavailable opciones será be hidden o greyed out en "
+"el dialog."

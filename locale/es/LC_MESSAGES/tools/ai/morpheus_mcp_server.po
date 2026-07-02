@@ -1,0 +1,763 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:4
+msgid "Morpheus MCP Server"
+msgstr "Servidor MCP de Morpheus"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:6
+msgid ""
+"Every HPE Morpheus Enterprise appliance exposes a built-in MCP (Model "
+"Context Protocol) server at ``/api/mcp``. This endpoint allows external "
+"AI tools — such as Claude Desktop, VS Code Copilot, cursor, or custom "
+"automation scripts — to interact with Morpheus using the same tool-"
+"calling interface that powers the built-in AI chat."
+msgstr ""
+"Every HPE Morpheus Enterprise appliance exposes a built-in MCP (Model "
+"Context Protocol) server at ``/api/mcp``. This endpoint allows external AI "
+"tools — como Claude Desktop, VS Code Copilot, cursor, or custom automation "
+"scripts — to interact with Morpheus using the same tool-calling interface "
+"that powers the built-in AI chat."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:8
+msgid ""
+"The MCP server provides access to the full Morpheus API surface through "
+"categorized tools, with dynamic loading to keep initial responses "
+"lightweight. All operations respect the authenticated user's existing "
+"RBAC permissions."
+msgstr ""
+"The MCP server provides acceso a the full Morpheus API surface through "
+"categorized tools, with dynamic loading to keep initial responses "
+"lightweight. All operations respect the authenticated user's existing RBAC "
+"permissions."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:11
+msgid "Endpoint"
+msgstr "Endpoint"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:17
+msgid "Method"
+msgstr "Método"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:18
+msgid "Path"
+msgstr "Ruta"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:19
+msgid "Purpose"
+msgstr "Propósito"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:20
+#: ../../tools/ai/morpheus_mcp_server.rst:32
+msgid "POST"
+msgstr "POST"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:21
+#: ../../tools/ai/morpheus_mcp_server.rst:24
+#: ../../tools/ai/morpheus_mcp_server.rst:27
+msgid "``/api/mcp``"
+msgstr "``/api/mcp``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:22
+msgid "JSON-RPC 2.0 message endpoint (Streamable HTTP transport)"
+msgstr "Endpoint de mensajes JSON-RPC 2.0 (transporte Streamable HTTP)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:23
+#: ../../tools/ai/morpheus_mcp_server.rst:29
+msgid "GET"
+msgstr "GET"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:25
+msgid "SSE stream for server-to-client notifications"
+msgstr "Flujo SSE para notificaciones de servidor a cliente"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:26
+msgid "DELETE"
+msgstr "DELETE"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:28
+msgid "Session termination"
+msgstr "Terminación de sesión"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:30
+msgid "``/api/mcp/sse``"
+msgstr "``/api/mcp/sse``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:31
+msgid "Legacy SSE transport (for older MCP clients)"
+msgstr "Transporte SSE heredado (para clientes MCP antiguos)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:33
+msgid "``/api/mcp/messages``"
+msgstr "``/api/mcp/messages``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:34
+msgid "Legacy SSE message endpoint"
+msgstr "Endpoint de mensajes SSE heredado"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:36
+msgid ""
+"The server implements **MCP protocol version 2025-06-18** with Streamable"
+" HTTP as the primary transport."
+msgstr ""
+"El servidor implements **MCP protocol version 2025-06-18** con Streamable "
+"HTTP como el/la primary transport."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:40
+msgid ""
+"Your Morpheus appliance **must have a valid, signed SSL certificate** "
+"configured for external MCP clients to connect. Self-signed or untrusted "
+"certificates will cause TLS verification failures in MCP clients (Claude "
+"Desktop, VS Code, etc.) that cannot be easily bypassed. See :ref:`SSL "
+"Certificates` for configuration details."
+msgstr ""
+"Your Morpheus appliance **must have a valid, signed SSL certificate** "
+"configured for external MCP clients to connect. Self-signed or untrusted "
+"certificates will cause TLS verification failures in MCP clients (Claude "
+"Desktop, VS Code, etc.) that cannot be easily bypassed. See :ref:`SSL "
+"Certificates` for configuration detalles."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:43
+msgid "Authentication"
+msgstr "Autenticación"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:45
+msgid ""
+"External clients authenticate using the same mechanisms as the Morpheus "
+"REST API:"
+msgstr ""
+"External clients authenticate usando el/la same mechanisms como the "
+"Morpheus REST API:"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:47
+msgid ""
+"**Bearer Token** — ``Authorization: Bearer <your-api-token>`` header "
+"(recommended)"
+msgstr ""
+"**Bearer Token** — ``Authorization: Bearer <your-api-token>`` header "
+"(recommended)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:48
+msgid "**Access Token** — ``?access_token=<token>`` query parameter"
+msgstr "**Access Token** — ``?access_token=<token>`` query parameter"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:49
+msgid ""
+"**Execution Token** — ``Authorization: Execution <token>`` header (for "
+"task/job contexts)"
+msgstr ""
+"**Execution Token** — ``Authorization: Execution <token>`` header (for "
+"task/job contexts)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:51
+msgid ""
+"All tool executions enforce the authenticated user's role permissions. A "
+"user can only access tools and resources their Morpheus role allows."
+msgstr ""
+"All tool executions enforce the authenticated user's role permissions. A "
+"user can only acceso aols and resources their Morpheus role allows."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:54
+msgid "Connecting External Clients"
+msgstr "Conectar clientes externos"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:56
+msgid "**Claude Desktop, Cursor, VS Code, or any MCP-compatible client:**"
+msgstr ""
+"**Claude Desktop, Cursor, VS Code, o cualquier MCP-compatible client:**"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:58
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"mcpServers\": {\n"
+"    \"morpheus\": {\n"
+"      \"url\": \"https://your-morpheus-host/api/mcp\",\n"
+"      \"headers\": {\n"
+"        \"Authorization\": \"Bearer your-api-token-here\"\n"
+"      }\n"
+"    }\n"
+"  }\n"
+"}"
+msgstr ""
+"{\n  \"mcpServers\": {\n    \"morpheus\": {\n      \"url\": "
+"\"https://your-morpheus-host/api/mcp\",\n      \"headers\": {\n        "
+"\"Authorization\": \"Bearer your-api-token-here\"\n      }\n    }\n  }\n}"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:71
+msgid "**Custom scripts (Python, Node, etc.):**"
+msgstr "**Custom scripts (Python, Node, etc.):**"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:73
+msgid ""
+"Any HTTP client that supports the MCP Streamable HTTP transport can "
+"connect. Send a ``POST`` to ``/api/mcp`` with a JSON-RPC 2.0 "
+"``initialize`` message to start a session, then use the returned ``Mcp-"
+"Session-Id`` header on subsequent requests."
+msgstr ""
+"Cualquier HTTP client que soporta el/la MCP Streamable HTTP transport "
+"puede connect. Send a ``POST`` a ``/api/mcp`` con a JSON-RPC 2.0 "
+"``initialize`` message to start a session, then use the returned "
+"``Mcp-Session-Id`` header en subsequent requests."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:76
+msgid "Session Management"
+msgstr "Gestión de sesiones"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:78
+msgid "Sessions are created on successful ``initialize`` handshake"
+msgstr "Sessions are creado on successful ``initialize`` handshake"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:79
+msgid ""
+"The server returns a ``Mcp-Session-Id`` response header — include this on"
+" all subsequent requests"
+msgstr ""
+"El servidor returns a ``Mcp-Session-Id`` response header — include este en "
+"todos subsequent requests"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:80
+msgid "Sessions expire after **1 hour** of inactivity"
+msgstr "Sessions expire después de **1 hour** de inactivity"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:81
+msgid ""
+"Use ``DELETE /api/mcp`` with the session header to explicitly terminate a"
+" session"
+msgstr ""
+"Use ``DELETE /api/mcp`` con el/la session header a explicitly terminate a "
+"session"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:84
+msgid "Dynamic Tool Loading"
+msgstr "Carga dinámica de herramientas"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:86
+msgid ""
+"The MCP server uses **progressive category loading** to keep the initial "
+"tool list manageable for LLMs (max 120 tools per response). On first "
+"connection, clients see:"
+msgstr ""
+"The MCP server uses **progressive category loading** to keep the initial "
+"tool lista manageable for LLMs (max 120 tools per response). On first "
+"connection, clients see:"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:88
+msgid "**Meta-tools** (always available):"
+msgstr "**Meta-tools** (always disponible):"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:90
+msgid "``get_tool_details`` — Get detailed documentation for a specific tool"
+msgstr ""
+"``get_tool_details`` — Get detailed documentation para a específico tool"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:91
+msgid ""
+"``search_external_tools`` — Discover tools from connected external MCP "
+"servers"
+msgstr ""
+"``search_external_tools`` — Discover tools desde connected external MCP "
+"servers"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:92
+msgid ""
+"``load_external_tools`` — Make discovered external tools callable in the "
+"session"
+msgstr ""
+"``load_external_tools`` — Make discovered external tools callable en el/la "
+"session"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:93
+msgid "``get_result_excerpt`` — Retrieve excerpted portions of large results"
+msgstr ""
+"``get_result_excerpt`` — Retrieve excerpted portions de large results"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:94
+msgid "``delegate_to_specialist`` — Route requests to specialist tool categories"
+msgstr ""
+"``delegate_to_specialist`` — Route requests a specialist tool categories"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:96
+msgid "**Category loader tools** (one per category):"
+msgstr "**Category loader tools** (one per category):"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:98
+msgid "``use_instances_tools`` — Load VM/container instance management tools"
+msgstr ""
+"``use_instances_tools`` — Load VM/container instancia management tools"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:99
+msgid "``use_clouds_tools`` — Load cloud integration tools"
+msgstr "``use_clouds_tools`` — Load nube integration tools"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:100
+msgid "``use_networks_tools`` — Load network management tools"
+msgstr "``use_networks_tools`` — Load red management tools"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:101
+msgid "``use_clusters_tools`` — Load cluster management tools"
+msgstr "``use_clusters_tools`` — Load clúster management tools"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:102
+msgid "(and so on for each category)"
+msgstr "(y así sucesivamente para cada categoría)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:104
+msgid ""
+"When an LLM calls a category loader (e.g., ``use_instances_tools``), the "
+"tools for that category become visible in subsequent ``tools/list`` "
+"calls. The server sends a ``notifications/tools/list_changed`` "
+"notification so clients know to re-fetch the tool list."
+msgstr ""
+"When an LLM calls a category loader (e.g., ``use_instances_tools``), the "
+"tools for that category become visible in subsequent ``tools/lista`` "
+"calls. The server sends a ``notifications/tools/list_changed`` "
+"notification so clients know to re-fetch the tool lista."
+
+#: ../../tools/ai/morpheus_mcp_server.rst:107
+msgid "Tool Categories"
+msgstr "Categorías de herramientas"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:109
+msgid "The following tool categories are available (subject to user permissions):"
+msgstr ""
+"Lo siguiente tool categories están disponibles (subject to user "
+"permissions):"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:115
+msgid "Category"
+msgstr "Categoría"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:116
+#: ../../tools/ai/morpheus_mcp_server.rst:192
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:117
+msgid "``instances``"
+msgstr "``instances``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:118
+msgid "VMs, containers, and managed instances"
+msgstr "VMs, contenedores e instancias gestionadas"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:119
+msgid "``containers``"
+msgstr "``containers``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:120
+msgid "Container management within instances"
+msgstr "Gestión de contenedores dentro de instancias"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:121
+msgid "``servers``"
+msgstr "``servers``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:122
+msgid "Bare-metal and virtual host servers"
+msgstr "Servidores bare-metal y hosts virtuales"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:123
+msgid "``clouds``"
+msgstr "``clouds``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:124
+msgid "Cloud integrations (VMware, AWS, Azure, GCP, etc.)"
+msgstr "Integraciones de Nube (VMware, AWS, Azure, GCP, etc.)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:125
+msgid "``clusters``"
+msgstr "``clusters``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:126
+msgid "Kubernetes, Docker Swarm, HVM clusters"
+msgstr "Clústeres Kubernetes, Docker Swarm, HVM"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:127
+msgid "``networks``"
+msgstr "``networks``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:128
+msgid "Networks, routers, firewalls, IP pools, DNS"
+msgstr "Redes, routers, firewalls, pools de IP, DNS"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:129
+msgid "``load-balancers``"
+msgstr "``load-balancers``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:130
+msgid "Load balancers, pools, profiles"
+msgstr "Balanceadores de carga, pools, perfiles"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:131
+msgid "``storage``"
+msgstr "``storage``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:132
+msgid "Storage servers, volumes, buckets"
+msgstr "Servidores de almacenamiento, volúmenes, buckets"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:133
+msgid "``monitoring``"
+msgstr "``monitoring``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:134
+msgid "Checks, incidents, alerts"
+msgstr "Verificaciones, incidentes, alertas"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:135
+msgid "``logs``"
+msgstr "``logs``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:136
+msgid "Log retrieval and search"
+msgstr "Recuperación y búsqueda de logs"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:137
+msgid "``tasks``"
+msgstr "``tasks``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:138
+msgid "Automation tasks"
+msgstr "Tareas de automatización"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:139
+msgid "``jobs``"
+msgstr "``jobs``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:140
+msgid "Scheduled and on-demand jobs"
+msgstr "Trabajos programados y bajo demanda"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:141
+msgid "``provisioning``"
+msgstr "``provisioning``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:142
+msgid "Service plans, virtual images, snapshots"
+msgstr "Planes de servicio, imágenes virtuales, snapshots"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:143
+msgid "``library``"
+msgstr "``library``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:144
+msgid "Instance types, layouts, node types"
+msgstr "Tipos de Instancia, layouts, tipos de nodo"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:145
+msgid "``catalog``"
+msgstr "``catalog``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:146
+msgid "Self-service catalog items"
+msgstr "Elementos de catálogo de autoservicio"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:147
+msgid "``blueprints``"
+msgstr "``blueprints``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:148
+msgid "App blueprints (ARM, CloudFormation, Terraform, Kubernetes)"
+msgstr "Blueprints de aplicación (ARM, CloudFormation, Terraform, Kubernetes)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:149
+msgid "``apps``"
+msgstr "``apps``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:150
+msgid "Multi-tier application deployments"
+msgstr "Implementaciones de aplicaciones multicapa"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:151
+msgid "``admin``"
+msgstr "``admin``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:152
+msgid "Appliance settings, tenants, users"
+msgstr "Configuración del appliance, inquilinos, usuarios"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:153
+msgid "``roles``"
+msgstr "``roles``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:154
+msgid "RBAC role management"
+msgstr "Gestión de roles RBAC"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:155
+msgid "``security``"
+msgstr "``security``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:156
+msgid "Security groups, scan results"
+msgstr "Grupos de seguridad, resultados de escaneo"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:157
+msgid "``credentials``"
+msgstr "``credentials``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:158
+msgid "Credential store management"
+msgstr "Gestión del almacén de credenciales"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:159
+msgid "``policies``"
+msgstr "``policies``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:160
+msgid "Governance policies"
+msgstr "Políticas de gobierno"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:161
+msgid "``backups``"
+msgstr "``backups``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:162
+msgid "Backup jobs and restore operations"
+msgstr "Trabajos de Backup y operaciones de restauración"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:163
+msgid "``billing``"
+msgstr "``billing``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:164
+msgid "Usage and billing"
+msgstr "Uso y facturación"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:165
+msgid "``costing``"
+msgstr "``costing``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:166
+msgid "Invoices, budgets, pricing"
+msgstr "Facturas, presupuestos, precios"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:167
+msgid "``integrations``"
+msgstr "``integrations``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:168
+msgid "Third-party integrations"
+msgstr "Integraciones de terceros"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:169
+msgid "``vdi``"
+msgstr "``vdi``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:170
+msgid "Virtual Desktop Infrastructure"
+msgstr "Infraestructura de escritorio virtual"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:171
+msgid "``reports``"
+msgstr "``reports``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:172
+msgid "Report generation and retrieval"
+msgstr "Generación y recuperación de informes"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:173
+msgid "``guidance``"
+msgstr "``guidance``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:174
+msgid "Optimization recommendations"
+msgstr "Recomendaciones de optimización"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:175
+msgid "``health``"
+msgstr "``health``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:176
+msgid "Appliance health and diagnostics"
+msgstr "Salud y diagnósticos del appliance"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:177
+msgid "``wiki``"
+msgstr "``wiki``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:178
+msgid "Wiki pages"
+msgstr "Páginas wiki"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:179
+msgid "``search``"
+msgstr "``search``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:180
+msgid "Global search"
+msgstr "Búsqueda global"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:183
+msgid "Session Customization Headers"
+msgstr "Encabezados de personalización de sesión"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:185
+msgid ""
+"Control tool visibility and behavior with request headers on the "
+"``initialize`` call:"
+msgstr ""
+"Control tool visibility y behavior con request headers en el/la "
+"``initialize`` call:"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:191
+msgid "Header"
+msgstr "Encabezado"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:193
+msgid "``X-Mcp-Tool-Categories``"
+msgstr "``X-Mcp-Tool-Categories``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:194
+msgid ""
+"Comma-separated category list. Only specified categories are loaded "
+"immediately (bypasses progressive loading). Example: "
+"``instances,clouds,networks``"
+msgstr ""
+"Comma-separated category lista. Only specified categories are loaded "
+"immediately (bypasses progressive loading). Example: "
+"``instancias,clouds,networks``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:195
+msgid "``X-Mcp-External-Server-Ids``"
+msgstr "``X-Mcp-External-Server-Ids``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:196
+msgid "Comma-separated IDs of external MCP servers to include in this session"
+msgstr ""
+"Comma-separated IDs de external MCP servidores a include en este session"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:197
+msgid "``X-Mcp-Include-Local-Tools``"
+msgstr "``X-Mcp-Include-Local-Tools``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:198
+msgid ""
+"Set to ``false`` to hide all built-in Morpheus tools (only external tools"
+" visible)"
+msgstr ""
+"Establezca a ``false`` to hide todos built-in Morpheus tools (only "
+"external tools visible)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:199
+msgid "``X-Mcp-Read-Only-Tools``"
+msgstr "``X-Mcp-Read-Only-Tools``"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:200
+msgid "Set to ``true`` to restrict to read-only/GET operations only"
+msgstr "Establezca a ``true`` to restrict to read-only/GET operations only"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:203
+msgid "Example: Restricting to Infrastructure Tools Only"
+msgstr "Example: Restricting a Infrastructure Tools Only"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:205
+msgid "For a client that should only manage infrastructure:"
+msgstr "Para a client que should solo manage infrastructure:"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:207
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"mcpServers\": {\n"
+"    \"morpheus-infra\": {\n"
+"      \"url\": \"https://your-morpheus-host/api/mcp\",\n"
+"      \"headers\": {\n"
+"        \"Authorization\": \"Bearer your-api-token\",\n"
+"        \"X-Mcp-Tool-Categories\": "
+"\"instances,clouds,clusters,networks,storage\"\n"
+"      }\n"
+"    }\n"
+"  }\n"
+"}"
+msgstr ""
+"{\n  \"mcpServers\": {\n    \"morpheus-infra\": {\n      \"url\": "
+"\"https://your-morpheus-host/api/mcp\",\n      \"headers\": {\n        "
+"\"Authorization\": \"Bearer your-api-token\",\n        "
+"\"X-Mcp-Tool-Categories\": "
+"\"instances,clouds,clusters,networks,storage\"\n      }\n    }\n  }\n}"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:222
+msgid "Example: Read-Only Monitoring Client"
+msgstr "Ejemplo: Read-Only Monitoring Client"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:224
+msgid "For a monitoring dashboard that should never modify resources:"
+msgstr "Para a monitoring dashboard que should never modify resources:"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:226
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"mcpServers\": {\n"
+"    \"morpheus-monitor\": {\n"
+"      \"url\": \"https://your-morpheus-host/api/mcp\",\n"
+"      \"headers\": {\n"
+"        \"Authorization\": \"Bearer your-api-token\",\n"
+"        \"X-Mcp-Tool-Categories\": \"monitoring,logs,health,reports\",\n"
+"        \"X-Mcp-Read-Only-Tools\": \"true\"\n"
+"      }\n"
+"    }\n"
+"  }\n"
+"}"
+msgstr ""
+"{\n  \"mcpServers\": {\n    \"morpheus-monitor\": {\n      \"url\": "
+"\"https://your-morpheus-host/api/mcp\",\n      \"headers\": {\n        "
+"\"Authorization\": \"Bearer your-api-token\",\n        "
+"\"X-Mcp-Tool-Categories\": \"monitoring,logs,health,reports\",\n        "
+"\"X-Mcp-Read-Only-Tools\": \"true\"\n      }\n    }\n  }\n}"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:242
+msgid "Security Considerations"
+msgstr "Consideraciones de seguridad"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:244
+msgid ""
+"All tool calls execute with the authenticated user's permissions — the "
+"MCP server cannot bypass RBAC"
+msgstr ""
+"All tool calls execute with the authenticated usuario's permisos — the MCP "
+"server cannot bypass RBAC"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:245
+msgid ""
+"Write operations in the built-in AI chat require user confirmation; "
+"external MCP clients bypass this (the client's LLM handles confirmation)"
+msgstr ""
+"Write operations in the built-in AI chat require usuario confirmation; "
+"external MCP clients bypass this (the client's LLM handles confirmation)"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:246
+msgid "Use ``X-Mcp-Read-Only-Tools: true`` for untrusted or automated clients"
+msgstr ""
+"Use ``X-Mcp-Read-Only-Tools: true`` para untrusted o automated clients"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:247
+msgid "API tokens used for MCP should be scoped to the minimum required role"
+msgstr ""
+"API tokens used for MCP debería ser scoped to the minimum required role"
+
+#: ../../tools/ai/morpheus_mcp_server.rst:248
+msgid "Sessions are isolated per user — no cross-user data leakage"
+msgstr "Sessions are isolated per usuario — no cross-usuario data leakage"
+

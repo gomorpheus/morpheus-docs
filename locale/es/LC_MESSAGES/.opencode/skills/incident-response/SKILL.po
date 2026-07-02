@@ -1,0 +1,564 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../.opencode/skills/incident-response/SKILL.md:9
+msgid "What I do"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:11
+msgid ""
+"Provide a structured approach to handling production incidents — from "
+"initial triage through resolution and post-mortem. The goal is to "
+"minimize impact, preserve evidence, and prevent recurrence."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:13
+msgid "When to use me"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:15
+msgid ""
+"Load this skill when responding to a production incident, investigating "
+"an ongoing outage, or writing a post-mortem. The debug-investigator "
+"should load this alongside the debugging-investigation skill when the "
+"issue is in a production or production-like environment."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:17
+msgid "Triage workflow"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:19
+msgid ""
+"Triage determines what you do first. Get it wrong and you waste time on "
+"low-impact issues while critical ones burn."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:21
+msgid "Severity assessment"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:23
+msgid ""
+"Assess severity based on impact and urgency, not on how interesting the "
+"bug is."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Severity"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Criteria"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Response time"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "**Critical**"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid ""
+"Service is down, data loss is occurring, or a security breach is active. "
+"Revenue-impacting. All or most users affected."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Immediate. Drop everything."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "**High**"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid ""
+"Major feature is broken or significantly degraded. Large subset of users "
+"affected. Workaround exists but is painful."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Within 1 hour."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "**Medium**"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid ""
+"Feature is impaired but functional. Small subset of users affected. "
+"Reasonable workaround exists."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Within 4 hours."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "**Low**"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Cosmetic issue, minor inconvenience, or edge case. Few users affected."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md
+msgid "Next business day."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:32
+msgid "Impact scope"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:34
+msgid "Determine who and what is affected:"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:35
+msgid ""
+"**User impact**: How many users? Which user segments? Can they work "
+"around it?"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:36
+msgid ""
+"**Data impact**: Is data being corrupted, lost, or exposed? Is the damage"
+" ongoing?"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:37
+msgid ""
+"**Financial impact**: Is revenue being lost? Are SLA commitments being "
+"violated?"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:38
+msgid ""
+"**Blast radius**: Is the issue isolated to one service, or is it "
+"cascading?"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:40
+msgid "Immediate mitigation"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:42
+msgid "Before investigating root cause, stop the bleeding:"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:43
+msgid ""
+"**Revert the last deployment** if the timing correlates and the "
+"deployment is revertible"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:44
+msgid "**Enable a circuit breaker** or feature flag to disable the broken path"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:45
+msgid "**Scale up** if the issue is load-related and more capacity buys time"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:46
+msgid ""
+"**Block the traffic pattern** if a specific request type is causing the "
+"problem"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:47
+msgid "**Failover** to a secondary system if one exists"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:49
+msgid ""
+"Mitigation does not need to be elegant. It needs to be fast. A 5-minute "
+"mitigation that's ugly beats a 2-hour fix that's clean."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:51
+msgid "Evidence gathering"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:53
+msgid ""
+"Gather evidence systematically. Rushing to hypothesize without evidence "
+"leads to wrong conclusions and wasted time."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:55
+msgid "Logs"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:57
+msgid ""
+"Pull logs from the affected service for the incident timeframe. Start "
+"with error-level logs, then expand to warn and info if error logs don't "
+"tell the full story."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:58
+msgid ""
+"Check logs from upstream and downstream services. The root cause may not "
+"be in the service showing symptoms."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:59
+msgid ""
+"Look for log volume anomalies — a sudden spike or drop in log output is "
+"itself a signal."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:61
+msgid "Metrics"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:63
+msgid ""
+"**Error rates**: Compare current error rate to baseline. Identify which "
+"error types spiked."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:64
+msgid ""
+"**Latency**: Check P50, P95, P99. A P99 spike with normal P50 suggests a "
+"subset of requests is affected."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:65
+msgid ""
+"**Throughput**: Is request volume normal? A traffic spike may be the "
+"cause, not the symptom."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:66
+msgid ""
+"**Resource utilization**: CPU, memory, disk I/O, network I/O, connection "
+"pool usage, thread pool usage."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:67
+msgid "**Saturation**: Are any resources at or near capacity?"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:69
+msgid "Traces"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:71
+msgid ""
+"Find traces for failing requests. Follow the trace across service "
+"boundaries to identify where the failure originates."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:72
+msgid ""
+"Compare traces for failing requests against traces for succeeding "
+"requests. What's different?"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:74
+msgid "Deployment timeline"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:76
+msgid ""
+"List all deployments to affected services in the past 24 hours. Include "
+"config changes, infrastructure changes, and dependency updates."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:77
+msgid ""
+"Overlay the deployment timeline on the error rate graph. Correlation "
+"isn't causation, but it's the first thing to check."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:78
+msgid ""
+"Check if any scheduled jobs, cron tasks, or batch processes started "
+"around the incident time."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:80
+msgid "External factors"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:82
+msgid ""
+"Check status pages for cloud providers, CDNs, DNS providers, and third-"
+"party services."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:83
+msgid ""
+"Check for unusual traffic patterns — DDoS, bot activity, or a viral link "
+"driving unexpected load."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:84
+msgid ""
+"Check for certificate expirations, DNS TTL changes, or other "
+"infrastructure events."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:86
+msgid "Communication"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:88
+msgid "Status updates"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:90
+msgid ""
+"Communicate early and often. Silence is worse than \"we're "
+"investigating.\""
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:92
+msgid ""
+"**First update** (within 15 minutes of detection): Acknowledge the issue,"
+" state the impact, say what you're doing. \"We're aware of elevated error"
+" rates on the payments API. Users may see failed transactions. We're "
+"investigating.\""
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:93
+msgid ""
+"**Subsequent updates** (every 30 minutes during active incidents): State "
+"what you've learned, what you've tried, what you're trying next. \"We've "
+"identified the issue as a database connection pool exhaustion. We're "
+"scaling up the connection pool and investigating the root cause.\""
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:94
+msgid ""
+"**Resolution update**: Confirm the issue is resolved, state the root "
+"cause, and commit to a post-mortem. \"The payments API has recovered. "
+"Root cause was a missing index on the transactions table after "
+"yesterday's migration. A post-mortem will follow.\""
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:96
+msgid "Stakeholder notification"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:98
+msgid ""
+"**Engineering leadership**: Notify on Critical and High severity. Include"
+" impact scope and estimated time to resolution if known."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:99
+msgid ""
+"**Product/business stakeholders**: Notify on Critical severity or when "
+"there's customer-facing impact. Use non-technical language focused on "
+"user impact, not technical details."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:100
+msgid ""
+"**Affected teams**: If the incident involves another team's service, "
+"notify them immediately. Don't debug their system in isolation."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:102
+msgid "Mitigation vs fix"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:104
+msgid ""
+"These are different actions with different timelines. Do not conflate "
+"them."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:106
+msgid ""
+"**Mitigation**: Stop the impact. Revert a deploy, toggle a flag, block a "
+"traffic pattern, fail over to a backup. Goal: users stop experiencing the"
+" problem. Timeline: minutes."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:108
+msgid ""
+"**Fix**: Address the root cause so the problem doesn't recur. Write a "
+"patch, fix the configuration, add a missing index. Goal: the system is "
+"healthy without the mitigation in place. Timeline: hours to days."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:110
+msgid ""
+"Always mitigate first. A mitigated incident with an unknown root cause is"
+" far better than an ongoing incident with a known root cause and a fix "
+"that's 2 hours away."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:112
+msgid "After mitigation:"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:113
+msgid "Verify the mitigation is working (error rates returning to baseline)"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:114
+msgid "Investigate root cause with less time pressure"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:115
+msgid "Deploy the fix"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:116
+msgid "Remove the mitigation (if it was a temporary measure like a feature flag)"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:117
+msgid "Verify the system is healthy without the mitigation"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:119
+msgid "Post-mortem format"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:121
+msgid ""
+"Write the post-mortem within 48 hours of resolution, while memory is "
+"fresh. The post-mortem is blameless — it focuses on systemic causes, not "
+"individual mistakes."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:123
+#, python-brace-format
+msgid ""
+"# Post-mortem: {Incident title}\n"
+"\n"
+"## Summary\n"
+"One paragraph: what happened, when, how long, who was affected.\n"
+"\n"
+"## Timeline\n"
+"Chronological sequence of events with timestamps. Include:\n"
+"- When the issue started (or when it's estimated to have started)\n"
+"- When it was detected and how (alert, customer report, manual "
+"observation)\n"
+"- Key investigation steps and findings\n"
+"- When mitigation was applied\n"
+"- When the fix was deployed\n"
+"- When the incident was declared resolved\n"
+"\n"
+"## Impact\n"
+"- Users affected: {count or percentage}\n"
+"- Duration: {time from start to resolution}\n"
+"- Revenue impact: {if applicable}\n"
+"- SLA impact: {if applicable}\n"
+"- Data impact: {if any data was lost or corrupted}\n"
+"\n"
+"## Root cause\n"
+"Clear explanation of why the incident occurred. Distinguish between:\n"
+"- The trigger (what changed that caused the incident to start)\n"
+"- The underlying cause (why the system was vulnerable to that trigger)\n"
+"- Contributing factors (what made detection or resolution slower)\n"
+"\n"
+"## What went well\n"
+"Things that worked during the incident response. Detection speed,\n"
+"mitigation effectiveness, team coordination.\n"
+"\n"
+"## What went poorly\n"
+"Things that didn't work. Slow detection, missing runbooks, unclear\n"
+"ownership, missing monitoring.\n"
+"\n"
+"## Action items\n"
+"Concrete, assigned, time-bound actions to prevent recurrence.\n"
+"\n"
+"| Action | Owner | Priority | Due date |\n"
+"|--------|-------|----------|----------|\n"
+"| {description} | {person/team} | {P0/P1/P2} | {date} |\n"
+"\n"
+"Each action item should address a specific gap identified in the\n"
+"\"what went poorly\" section. Avoid vague items like \"improve "
+"monitoring\"\n"
+"— specify what monitoring to add and what it should alert on.\n"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:171
+msgid "Pattern recognition"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:173
+msgid "When investigating, look for these common patterns:"
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:175
+msgid ""
+"**Deploy-correlated**: Error rate spikes immediately after a deployment. "
+"Check the diff."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:176
+msgid ""
+"**Load-correlated**: Errors increase with traffic. Look for resource "
+"exhaustion, connection pool limits, rate limits, or missing indexes."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:177
+msgid ""
+"**Time-correlated**: Errors start at a specific time regardless of "
+"traffic. Check cron jobs, certificate expirations, DNS TTLs, cache "
+"expirations, or batch processes."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:178
+msgid ""
+"**Data-correlated**: Errors affect specific users, accounts, or data "
+"shapes. Look for data integrity issues, missing records, or edge cases in"
+" input validation."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:179
+msgid ""
+"**Cascade**: One service fails, causing downstream services to fail. Look"
+" for missing timeouts, circuit breakers, or retry amplification."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:180
+msgid ""
+"**Slow bleed**: Error rate increases gradually over hours or days. Look "
+"for memory leaks, connection leaks, disk space, or log rotation failures."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:181
+msgid ""
+"**Intermittent**: Errors come and go without clear pattern. Look for race"
+" conditions, connection pool contention, garbage collection pauses, or "
+"flaky upstream dependencies."
+msgstr ""
+
+#: ../../.opencode/skills/incident-response/SKILL.md:183
+msgid ""
+"Each pattern suggests a different investigation path. Recognizing the "
+"pattern early saves hours of undirected debugging."
+msgstr ""
+

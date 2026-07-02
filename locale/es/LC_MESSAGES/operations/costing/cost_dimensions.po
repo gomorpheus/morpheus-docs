@@ -1,0 +1,258 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../operations/costing/cost_dimensions.rst:2
+msgid "Cost Dimensions"
+msgstr "Dimensiones de costos"
+
+#: ../../operations/costing/cost_dimensions.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../operations/costing/cost_dimensions.rst:7
+msgid ""
+"|morpheus| syncs cost allocation data from cloud providers that support "
+"native cost categorization. This data is stored on invoice line items and"
+" can be used to filter and group costs in the Time Series Cost report."
+msgstr ""
+"|morpheus| syncs cost allocation data from cloud providers that support "
+"native cost categorization. This data is stored on invoice partidas and "
+"can be used to filter and group costs in the Serie temporal Cost report."
+
+#: ../../operations/costing/cost_dimensions.rst:9
+msgid "Three cost dimensions are available:"
+msgstr "Hay tres dimensiones de costos disponibles:"
+
+#: ../../operations/costing/cost_dimensions.rst:11
+msgid ""
+"**Cost Project** — maps to the \"Project\" cost category from the cloud "
+"provider"
+msgstr ""
+"**Proyecto de Costo** — mapea a la categoría de costo \"Project\" del "
+"proveedor de nube"
+
+#: ../../operations/costing/cost_dimensions.rst:12
+msgid "**Cost Team** — maps to the \"Team\" cost category from the cloud provider"
+msgstr ""
+"**Equipo de Costo** — mapea a la categoría de costo \"Team\" del proveedor "
+"de nube"
+
+#: ../../operations/costing/cost_dimensions.rst:13
+msgid ""
+"**Cost Environment** — maps to the \"Environment\" cost category from the"
+" cloud provider"
+msgstr ""
+"**Entorno de Costo** — mapea a la categoría de costo \"Environment\" del "
+"proveedor de nube"
+
+#: ../../operations/costing/cost_dimensions.rst:15
+msgid ""
+"These dimensions are populated automatically during costing sync. There "
+"is no manual configuration of dimension values within |morpheus|—they are"
+" derived entirely from cost category data provided by the cloud."
+msgstr ""
+"These dimensions are populated automatically during costing sync. There is "
+"no manual configuration of dimension values within |morpheus|—they are "
+"derived entirely from cost category data proporcionado por the cloud."
+
+#: ../../operations/costing/cost_dimensions.rst:18
+msgid "Supported Cloud Providers"
+msgstr "Proveedores de Nube soportados"
+
+#: ../../operations/costing/cost_dimensions.rst:20
+msgid "**Amazon Web Services (AWS)**"
+msgstr "**Amazon Web Services (AWS)**"
+
+#: ../../operations/costing/cost_dimensions.rst:22
+msgid ""
+"AWS Cost Categories named \"Project\", \"Team\", and \"Environment\" are "
+"synced into the corresponding |morpheus| cost dimensions during the "
+"costing sync process. To use cost dimensions with AWS:"
+msgstr ""
+"AWS Cost Categories named \"Project\", \"Team\", y \"Environment\" son "
+"synced en el/la corresponding |morpheus| cost dimensions durante the "
+"costing sync process. To use cost dimensions con AWS:"
+
+#: ../../operations/costing/cost_dimensions.rst:24
+msgid ""
+"Configure Cost Categories in the AWS Billing console with category names "
+"``Project``, ``Team``, and/or ``Environment``"
+msgstr ""
+"Configure Cost Categories in the AWS Billing console with category nombres "
+"``Project``, ``Team``, and/or ``Environment``"
+
+#: ../../operations/costing/cost_dimensions.rst:25
+msgid ""
+"Define rules within each Cost Category to assign cost values (e.g., based"
+" on tags, accounts, or services)"
+msgstr ""
+"Define rules within each Cost Category to assign cost valores (e.g., based "
+"on tags, accounts, or services)"
+
+#: ../../operations/costing/cost_dimensions.rst:26
+msgid ""
+"Enable costing sync in |morpheus| (Infrastructure > Clouds > Edit > set "
+"**COSTING** to \"Sync Costing\")"
+msgstr ""
+"Enable costing sync in |morpheus| (Infraestructura > Nubes > Edit > set "
+"**COSTING** to \"Sync Costing\")"
+
+#: ../../operations/costing/cost_dimensions.rst:28
+msgid ""
+"Once synced, the dimension values appear as filter and Group By options "
+"in costing reports."
+msgstr ""
+"Once synced, the dimension values appear as filter and Grupo By options "
+"in costing reports."
+
+#: ../../operations/costing/cost_dimensions.rst:30
+msgid ""
+"Only AWS is currently supported for cost dimension sync. Other cloud "
+"providers do not populate these fields."
+msgstr ""
+"Only AWS is currently supported for cost dimension sync. Other proveedor "
+"de nubes do not populate these fields."
+
+#: ../../operations/costing/cost_dimensions.rst:33
+msgid "Using Cost Dimensions in Reports"
+msgstr "Uso de dimensiones de costos en informes"
+
+#: ../../operations/costing/cost_dimensions.rst:35
+msgid ""
+"Cost dimensions are available as **Group By** options in the Time Series "
+"Cost report. To use them:"
+msgstr ""
+"Cost dimensions are available as **Group By** options in the Serie "
+"temporal Cost report. To use them:"
+
+#: ../../operations/costing/cost_dimensions.rst:37
+msgid "Navigate to |OpRep|"
+msgstr "Navegue a |OpRep|"
+
+#: ../../operations/costing/cost_dimensions.rst:38
+msgid "Run a Time Series Cost report"
+msgstr "Ejecute un informe de costos de serie temporal"
+
+#: ../../operations/costing/cost_dimensions.rst:39
+msgid ""
+"Select **Cost Project**, **Cost Team**, or **Cost Environment** from the "
+"**Group By** dropdown"
+msgstr ""
+"Select **Cost Project**, **Cost Team**, or **Cost Environment** from "
+"the **Group By** menú desplegable"
+
+#: ../../operations/costing/cost_dimensions.rst:40
+msgid ""
+"Optionally use the corresponding filter to limit results to specific "
+"dimension values"
+msgstr ""
+"Optionally use the corresponding filter to limit results to specific "
+"dimension valores"
+
+#: ../../operations/costing/cost_dimensions.rst:42
+msgid ""
+"The full list of Group By options available in the Time Series Cost "
+"report:"
+msgstr ""
+"The full list of Grupo By options available in the Serie temporal Cost "
+"report:"
+
+#: ../../operations/costing/cost_dimensions.rst:44
+msgid "Service"
+msgstr "Servicio"
+
+#: ../../operations/costing/cost_dimensions.rst:45
+msgid "Region"
+msgstr "Región"
+
+#: ../../operations/costing/cost_dimensions.rst:46
+msgid "Cloud"
+msgstr "Nube"
+
+#: ../../operations/costing/cost_dimensions.rst:47
+msgid "Plan"
+msgstr "Plan"
+
+#: ../../operations/costing/cost_dimensions.rst:48
+msgid "Usage Type"
+msgstr "Tipo de uso"
+
+#: ../../operations/costing/cost_dimensions.rst:49
+msgid "Cost Project"
+msgstr "Proyecto de costo"
+
+#: ../../operations/costing/cost_dimensions.rst:50
+msgid "Cost Team"
+msgstr "Equipo de costo"
+
+#: ../../operations/costing/cost_dimensions.rst:51
+msgid "Cost Environment"
+msgstr "Entorno de costo"
+
+#: ../../operations/costing/cost_dimensions.rst:52
+msgid "Item Action"
+msgstr "Acción de elemento"
+
+#: ../../operations/costing/cost_dimensions.rst:53
+msgid "Availability Zone"
+msgstr "Zona de disponibilidad"
+
+#: ../../operations/costing/cost_dimensions.rst:54
+msgid "Platform"
+msgstr "Plataforma"
+
+#: ../../operations/costing/cost_dimensions.rst:55
+msgid "Purchase Option"
+msgstr "Opción de compra"
+
+#: ../../operations/costing/cost_dimensions.rst:56
+msgid "Tenancy"
+msgstr "Tenencia"
+
+#: ../../operations/costing/cost_dimensions.rst:57
+msgid "Database Engine"
+msgstr "Motor de base de datos"
+
+#: ../../operations/costing/cost_dimensions.rst:58
+msgid "Billing Entity"
+msgstr "Entidad de facturación"
+
+#: ../../operations/costing/cost_dimensions.rst:59
+msgid "Seller"
+msgstr "Vendedor"
+
+#: ../../operations/costing/cost_dimensions.rst:60
+msgid "Item Type"
+msgstr "Tipo de elemento"
+
+#: ../../operations/costing/cost_dimensions.rst:61
+msgid "Tag (requires specifying a tag name)"
+msgstr "Etiqueta (requiere especificar un nombre de etiqueta)"
+
+#: ../../operations/costing/cost_dimensions.rst:63
+msgid ""
+"Invoice line items that have no value for a cost dimension are grouped "
+"under \"Undefined\" when filtering or grouping by that dimension."
+msgstr ""
+"Factura partidas that have no value for a cost dimension are grouped "
+"under \"Undefined\" when filtering or grouping by that dimension."
+

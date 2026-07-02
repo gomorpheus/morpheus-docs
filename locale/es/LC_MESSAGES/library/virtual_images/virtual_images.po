@@ -1,0 +1,639 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/virtual_images/virtual_images.rst:2
+msgid "Virtual Images"
+msgstr "Imágenes virtuales"
+
+#: ../../library/virtual_images/virtual_images.rst:5
+msgid "Overview"
+msgstr "Descripción general"
+
+#: ../../library/virtual_images/virtual_images.rst:7
+msgid ""
+"The Virtual Image section displays a list of all images, local and "
+"synced, that are available to deploy. |morpheus| includes a rich catalog "
+"of pre-configured System Images available for every cloud type. User "
+"Images are automatically synced from Cloud Integrations and added to the "
+"Virtual Images section. Images can also be uploaded directly into "
+"|morpheus| via local file or url. Amazon and Azure Marketplace images can"
+" also be added to the Virtual Images Section."
+msgstr "El/La Imagen virtual section displays un/una list de todos/todas images, local y synced, ese/esa son disponible a deploy. |morpheus| includes un/una rich catalog de pre-configured System Images disponible para cada cloud type. Usuario Images son automatically synced desde Nube Integrations y agregado/agregada a el/la Imágenes virtuales section. Images puede/n también be uploaded directly en |morpheus| via local file o url. Amazon y Azure Marketplace images puede/n también be agregado/agregada a el/la Imágenes virtuales Section."
+
+#: ../../library/virtual_images/virtual_images.rst:9
+msgid ""
+"Understanding the process of prepping images for consumption in "
+"|morpheus| is a very important step toward building an effective "
+"|morpheus| environment. In addition to the information contained in this "
+"section on Virtual Images, it may be helpful to see a complete image prep"
+" example walkthrough. Our getting started guide for |morpheus| and VMware"
+" includes `a section on preparing images "
+"<https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html"
+"#prepping-an-image>`_ that may provide a helpful example."
+msgstr "Understanding el/la process de prepping images para consumption en |morpheus| es un/una very important step toward building un/una effective |morpheus| environment. In addition a el/la information contained en este/esta section en Imágenes virtuales, it puede/n be helpful a see un/una complete image prep example walkthrough. Our getting started guide para |morpheus| y VMware includes `a section en preparing images <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html#prepping-an-image>`_ ese/esa puede/n provide un/una helpful example."
+
+#: ../../library/virtual_images/virtual_images.rst:11
+msgid ""
+"|morpheus| includes a wide catalog of system image types as examples to "
+"show how the product can be used and to give users a starting point for "
+"implementing their own library. The included images are not intended to "
+"be production-ready images. |morpheus| always recommends its users create"
+" their own gold images which meet their required specifications."
+msgstr "|morpheus| includes a wide catalog of system image types as examples to show how the product puede ser used and to give users a starting point for implementing their own library. The included images are not intended to be production-ready images. |morpheus| always recommends its users create their own gold images which meet their required specifications."
+
+#: ../../library/virtual_images/virtual_images.rst:13
+msgid ""
+"Invalid Image Settings cause provisioning failures. |morpheus| syncs in "
+"as much meta-data as possible for synced images, but additional "
+"configuration may be needed to ensure successful provisioning."
+msgstr "Invalid Image Settings cause provisioning failures. |morpheus| syncs in as much meta-data as possible for synced images, but additional configuration puede ser needed to ensure successful provisioning."
+
+#: ../../library/virtual_images/virtual_images.rst:15
+msgid ""
+"Cloud-init is enabled by default for all Linux images. If your Linux "
+"image does not have Cloud-init installed, `Cloud-init Enabled` must be "
+"unchecked before provisioning the image or it will fail immediately."
+msgstr "Nube-init es habilitado/habilitada por predeterminado/predeterminada para todos/todas Linux images. Si your Linux image does ningún tienen Nube-init installed, `Nube-init Enabled` debe/n be unchecked antes de provisioning el/la image o it será/n fail immediately."
+
+#: ../../library/virtual_images/virtual_images.rst:18
+msgid "Image Types"
+msgstr "Image Types"
+
+#: ../../library/virtual_images/virtual_images.rst:20
+msgid ""
+"|morpheus| provides a vast *System Image* repo with pre-configured images"
+" for every Cloud. All other images are *User Images*. User images can be "
+"added directly to |morpheus|, or automatically synced from integrated "
+"clouds. It is important to configure synced User Images for metadata, "
+"including specifying the Platform and User Credentials, prior to "
+"provisioning. Provisioning a User Image that has not been configured may "
+"result in failed provisioning."
+msgstr "|morpheus| provides a vast *System Image* repo with pre-configured images for every Nube. All other images are *Usuario Images*. Usuario images puede ser added directly to |morpheus|, or automatically synced from integrated clouds. It is important to configure synced Usuario Images for metadata, including specifying the Platform and Usuario Credentials, prior to provisioning. Provisioning a Usuario Image that has not been configured may result in failed provisioning."
+
+#: ../../library/virtual_images/virtual_images.rst:22
+msgid "Synced User Images need to be configured prior to provisioning."
+msgstr "Synced Usuario Images need to be configured prior to provisioning."
+
+#: ../../library/virtual_images/virtual_images.rst:25
+msgid "Configuring Virtual Images"
+msgstr "Configuring Imágenes virtuales"
+
+#: ../../library/virtual_images/virtual_images.rst:28
+msgid "System Images"
+msgstr "System Images"
+
+#: ../../library/virtual_images/virtual_images.rst:30
+msgid ""
+"System Virtual Images are pre-configured with metadata and have Cloud-"
+"Init or Cloudbase-Init installed. These images are ready to be "
+"provisioned with no configuration necessary, however it is required to "
+"populate |AdmSetPro|, Cloud-Init section, with user data as well as User "
+"Profile(s) users data when creating additional users prior to "
+"provisioning, as the user data from these sections is required when "
+"provisioning System provided Virtual Images."
+msgstr "System Imágenes virtuales son pre-configured con metadata y tienen Nube-Init o Nubebase-Init installed. Estos/Estas images son ready a be provisioned con ningún configuration necessary, however it es requerido/requerida a populate |AdmSetPro|, Nube-Init section, con user data como well como Usuario Profile(s) users data cuando creating additional users prior a provisioning, como el/la user data desde estos/estas sections es requerido/requerida cuando provisioning System provided Imágenes virtuales."
+
+#: ../../library/virtual_images/virtual_images.rst:32
+msgid "System Images settings are not editable."
+msgstr "System Images settings are not editable."
+
+#: ../../library/virtual_images/virtual_images.rst:35
+msgid "User Images"
+msgstr "Usuario Images"
+
+#: ../../library/virtual_images/virtual_images.rst:37
+msgid ""
+"Typically |morpheus| does not have sufficient metatdata to successfully "
+"provision synced User Images. After integrating clouds and User Images "
+"have synced, it is highly recommended to configure the images prior to "
+"provisioning."
+msgstr "Typically |morpheus| does ningún tienen sufficient metatdata a successfully provision synced Usuario Images. Después de integrating clouds y Usuario Images tienen synced, it es highly recommended a configure el/la images prior a provisioning."
+
+#: ../../library/virtual_images/virtual_images.rst:39
+msgid "**To edit and configure an existing Virtual Image:**"
+msgstr "**To edit and configure an existing Imagen virtual:**"
+
+#: ../../library/virtual_images/virtual_images.rst:41
+msgid ""
+"Select the pencil icon at the right of any row on the Virtual Images list"
+" page, or click :guilabel:`EDIT` on a Virtual Image detail page."
+msgstr "Select the pencil icon at the right of any row on the Imágenes virtuales list page, or click :guilabel:`EDIT` on a Imagen virtual detail page."
+
+#: ../../library/virtual_images/virtual_images.rst:42
+msgid "Configure the following on the Image:"
+msgstr "Configure the following on the Image:"
+
+#: ../../library/virtual_images/virtual_images.rst:44
+#: ../../library/virtual_images/virtual_images.rst:125
+msgid "Name"
+msgstr "Nombre"
+
+#: ../../library/virtual_images/virtual_images.rst:45
+#: ../../library/virtual_images/virtual_images.rst:126
+msgid ""
+"Name of the Virtual Image in |morpheus|. This can be changed from the "
+"name of the image, but editing will not change the name of the actual "
+"image"
+msgstr "Name of the Imagen virtual in |morpheus|. This puede ser changed from the name of the image, but editing will not change the name of the actual image"
+
+#: ../../library/virtual_images/virtual_images.rst:46
+#: ../../library/virtual_images/virtual_images.rst:127
+msgid "Operating System"
+msgstr "Sistema operativo"
+
+#: ../../library/virtual_images/virtual_images.rst:47
+#: ../../library/virtual_images/virtual_images.rst:128
+msgid ""
+"Specifies the platform and OS of the image. All Windows images will need "
+"to have the operating system specified on the Virtual Image, as "
+"|morpheus| will assign Linux as the platform for all images without an "
+"operating system specified"
+msgstr "Specifies el/la platform y OS de el/la image. Todos/Todas Windows images será/n need a tienen el/la operating system specified en el/la Imagen virtual, como |morpheus| será/n assign Linux como el/la platform para todos/todas images sin un/una operating system specified"
+
+#: ../../library/virtual_images/virtual_images.rst:48
+#: ../../library/virtual_images/virtual_images.rst:129
+msgid "Minimum Memory"
+msgstr "Memoria mínima"
+
+#: ../../library/virtual_images/virtual_images.rst:49
+#: ../../library/virtual_images/virtual_images.rst:130
+msgid ""
+"The Minimum Memory setting will filter available Service Plan options "
+"during provisioning. Service Plans that do not meet the minimum value set"
+" on the Virtual Image will not be provided as Service Plan choices"
+msgstr "El/La Minimum Memory setting será/n filter disponible Service Plan options durante provisioning. Service Plans ese/esa do ningún meet el/la minimum value establecido/establecida en el/la Imagen virtual será/n ningún be provided como Service Plan choices"
+
+#: ../../library/virtual_images/virtual_images.rst:50
+#: ../../library/virtual_images/virtual_images.rst:131
+msgid "Cloud Init Enabled?"
+msgstr "¿Cloud-Init habilitado?"
+
+#: ../../library/virtual_images/virtual_images.rst:51
+#: ../../library/virtual_images/virtual_images.rst:132
+msgid ""
+"On by default, uncheck for any Image that does not have Cloud-Init or "
+"Cloudbase-Init installed"
+msgstr "On por default, uncheck para cualquier Image ese/esa does ningún tienen Nube-Init o Nubebase-Init installed"
+
+#: ../../library/virtual_images/virtual_images.rst:52
+#: ../../library/virtual_images/virtual_images.rst:133
+msgid "Install Agent?"
+msgstr "¿Instalar agente?"
+
+#: ../../library/virtual_images/virtual_images.rst:53
+#: ../../library/virtual_images/virtual_images.rst:134
+msgid ""
+"On by default, uncheck to skip Agent install. Note this will result in "
+"the loss of utilization statistics, logs, script execution, and "
+"monitoring. (Some utilization stats are still collected for Agent-less "
+"hosts and VMs depending on the cloud)"
+msgstr "On por default, uncheck a skip Agent install. Note este/esta será/n result en el/la loss de utilization statistics, logs, script execution, y monitoring. (Algunos/Algunas utilization stats son still collected para Agent-less hosts y VMs depending en el/la cloud)"
+
+#: ../../library/virtual_images/virtual_images.rst:54
+#: ../../library/virtual_images/virtual_images.rst:135
+msgid "Username"
+msgstr "Nombre de usuario"
+
+#: ../../library/virtual_images/virtual_images.rst:55
+#: ../../library/virtual_images/virtual_images.rst:136
+msgid ""
+"Existing username on the image. This is required for authentication, "
+"unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or"
+" Guest Customizations. If Cloud-Init, Cloudbase-Init or Guest "
+"Customizations are used, credentials are defined in |AdmSetPro| and User "
+"Settings. If credentials are defined on the image and Cloud-Init is "
+"enabled, |morpheus| will add that user during provisioning, so ensure "
+"that user does not already exist on the image (such as ``root``). For "
+"Windows Guest Customizations, |morpheus| will set the Administrator "
+"password to what is defined on the image if Administrator user is "
+"defined. Do not define any other user than Administrator for Windows "
+"Images unless using Cloudbase-init. |morpheus| recommends running Guest "
+"Customizations for all Windows Images, which is required when joining "
+"Domains as the SID will change"
+msgstr "Existing username en el/la image. Este/Esta es requerido/requerida para authentication, unless |morpheus| es able a add user data, Nube-Init, Nubebase-Init o Guest Customizations. Si Nube-Init, Nubebase-Init o Guest Customizations son used, credentials son definido/definida en |AdmSetPro| y Usuario Settings. Si credentials son definido/definida en el/la image y Nube-Init es enabled, |morpheus| será/n add ese/esa user durante provisioning, so ensure ese/esa user does ningún already exist en el/la image (such como ``root``). For Windows Guest Customizations, |morpheus| será/n establecido/establecida el/la Administrator password a what es definido/definida en el/la image si Administrator user es defined. Do ningún define cualquier otro/otra user than Administrator para Windows Images unless using Nubebase-init. |morpheus| recommends running Guest Customizations para todos/todas Windows Images, el/la cual es requerido/requerida cuando joining Domains como el/la SID será/n change"
+
+#: ../../library/virtual_images/virtual_images.rst:56
+#: ../../library/virtual_images/virtual_images.rst:137
+msgid "Password"
+msgstr "Contraseña"
+
+#: ../../library/virtual_images/virtual_images.rst:57
+#: ../../library/virtual_images/virtual_images.rst:138
+msgid "Password for the user on the image if username is populated"
+msgstr "Password para el/la user en el/la image si username es populated"
+
+#: ../../library/virtual_images/virtual_images.rst:58
+#: ../../library/virtual_images/virtual_images.rst:139
+msgid "Bucket"
+msgstr "Bucket"
+
+#: ../../library/virtual_images/virtual_images.rst:59
+#: ../../library/virtual_images/virtual_images.rst:140
+msgid ""
+"Location where the Virtual Image will be stored. Default Virtual Image "
+"Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional "
+"Storage Providers can be configured in ``Infrastructure > Storage``"
+msgstr "Location where the Imagen virtual will be stored. Default Imagen virtual Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers puede ser configured in ``Infrastructure > Storage``"
+
+#: ../../library/virtual_images/virtual_images.rst:60
+#: ../../library/virtual_images/virtual_images.rst:141
+msgid "Cloud-Init User Data"
+msgstr "Nube-Init Usuario Data"
+
+#: ../../library/virtual_images/virtual_images.rst:61
+#: ../../library/virtual_images/virtual_images.rst:142
+msgid ""
+"Accepts what would go in ``runcmd`` and can assume Bash syntax. Example "
+"use: Script to configure satellite registration at provision time"
+msgstr "Accepts what would go in ``runcmd`` and can assume Bash syntax. Example use: Script to configure satellite registration at provision time"
+
+#: ../../library/virtual_images/virtual_images.rst:62
+#: ../../library/virtual_images/virtual_images.rst:143
+msgid "Create Image ID"
+msgstr "Create Image ID"
+
+#: ../../library/virtual_images/virtual_images.rst:63
+#: ../../library/virtual_images/virtual_images.rst:144
+msgid ""
+"Select FILE to browse locally for an image or drop an image file into the"
+" dropzone. Alternatively, select URL to download the image from an "
+"accessible URL. It is recommend to configure the rest of the settings "
+"below prior to uploading the source Image File(s)"
+msgstr "Seleccione FILE to browse locally for an image or drop an image file into the dropzone. Alternatively, select URL to download the image from an accessible URL. It is recommend to configure the rest of the settings below prior to uploading the source Image File(s)"
+
+#: ../../library/virtual_images/virtual_images.rst:64
+#: ../../library/virtual_images/virtual_images.rst:145
+msgid "Permissions"
+msgstr "Permisos"
+
+#: ../../library/virtual_images/virtual_images.rst:65
+#: ../../library/virtual_images/virtual_images.rst:146
+msgid ""
+"Set Tenant permissions in a multi-tenant |morpheus| environment. Select "
+"private visibility and select specific Tenants to which the Virtual Image"
+" will be made available. Select public visibility to share the Virtual "
+"Image with all Tenants"
+msgstr "Establezca Inquilino permissions in a multi-tenant |morpheus| environment. Select private visibility and select specific Inquilinos to which the Imagen virtual will be made available. Select public visibility en share the Imagen virtual with all Inquilinos"
+
+#: ../../library/virtual_images/virtual_images.rst:66
+#: ../../library/virtual_images/virtual_images.rst:147
+msgid "Auto Join Domain?"
+msgstr "¿Unirse automáticamente al dominio?"
+
+#: ../../library/virtual_images/virtual_images.rst:67
+#: ../../library/virtual_images/virtual_images.rst:148
+msgid ""
+"Enable to have Instances provisioned with this image auto-join configured"
+" domains (Windows only, domain controller must be configured in "
+"``Infrastructure > Network`` and the configured domain set on the "
+"provisioned to Cloud or Network)"
+msgstr "Habilite to have Instancias provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in ``Infrastructure > Red`` and the configured domain set on the provisioned to Nube or Red)"
+
+#: ../../library/virtual_images/virtual_images.rst:68
+#: ../../library/virtual_images/virtual_images.rst:149
+msgid "VirtIO Drivers Loaded?"
+msgstr "VirtIO Drivers Loaded?"
+
+#: ../../library/virtual_images/virtual_images.rst:69
+#: ../../library/virtual_images/virtual_images.rst:150
+msgid ""
+"Enable if VirtIO Drivers are installed on the image for provisioning to "
+"KVM-based hypervisors"
+msgstr "Habilite if VirtIO Drivers are installed on the image for provisioning to KVM-based hypervisors"
+
+#: ../../library/virtual_images/virtual_images.rst:70
+#: ../../library/virtual_images/virtual_images.rst:151
+msgid "FIPS Compliant Image?"
+msgstr "FIPS Compliant Image?"
+
+#: ../../library/virtual_images/virtual_images.rst:71
+#: ../../library/virtual_images/virtual_images.rst:152
+msgid ""
+"When selected, |morpheus| will install the FIPS-compliant |morpheus| "
+"Agent package"
+msgstr "Cuando selected, |morpheus| will install the FIPS-compliant |morpheus| Agent package"
+
+#: ../../library/virtual_images/virtual_images.rst:72
+#: ../../library/virtual_images/virtual_images.rst:153
+msgid "VM Tools Installed?"
+msgstr "VM Tools Installed?"
+
+#: ../../library/virtual_images/virtual_images.rst:73
+#: ../../library/virtual_images/virtual_images.rst:154
+msgid ""
+"On by default, uncheck if VMware Tools (including OpenVMTools) are not "
+"installed on the Virtual Image. |morpheus| will skip network wait during "
+"provisioning when deselected"
+msgstr "On por default, uncheck si VMware Tools (including OpenVMTools) son ningún installed en el/la Imagen virtual. |morpheus| será/n skip network wait durante provisioning cuando deselected"
+
+#: ../../library/virtual_images/virtual_images.rst:74
+#: ../../library/virtual_images/virtual_images.rst:155
+msgid "Force Guest Customization?"
+msgstr "Force Guest Customization?"
+
+#: ../../library/virtual_images/virtual_images.rst:75
+#: ../../library/virtual_images/virtual_images.rst:156
+msgid ""
+"VMware only, forces guest customizations to run during provisioning, "
+"typically when provisioning to a DHCP network where guest customizations "
+"would not run by default.  This options requires that VMware Tools is "
+"installed on the image"
+msgstr "VMware only, forces guest customizations a run durante provisioning, typically cuando provisioning a un/una DHCP network donde guest customizations would ningún run por default. Este/Esta options requires ese/esa VMware Tools es installed en el/la image"
+
+#: ../../library/virtual_images/virtual_images.rst:76
+#: ../../library/virtual_images/virtual_images.rst:157
+msgid "Trial Version"
+msgstr "Trial Version"
+
+#: ../../library/virtual_images/virtual_images.rst:77
+#: ../../library/virtual_images/virtual_images.rst:158
+msgid ""
+"Enable to automatically re-arm the expiration on Windows Trial Images "
+"during provisioning"
+msgstr "Enable to automatically re-arm the expiration on Windows Trial Images during provisioning"
+
+#: ../../library/virtual_images/virtual_images.rst:79
+#: ../../library/virtual_images/virtual_images.rst:160
+msgid "Enabled Sysprep?"
+msgstr "Enabled Sysprep?"
+
+#: ../../library/virtual_images/virtual_images.rst:79
+#: ../../library/virtual_images/virtual_images.rst:160
+msgid ""
+"Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, "
+"Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been "
+"sysprepped. If enabled, |morpheus| will inject ``unattend.xml``"
+msgstr "Applicable a multiple Nubes, including VMware vCenter, SCVMM, Nutanix, Hyper-V, KVM, y Google GCP. Enable si el/la Windows Image tiene been sysprepped. Si enabled, |morpheus| será/n inject ``unattend.xml``"
+
+#: ../../library/virtual_images/virtual_images.rst:81
+msgid "Click :guilabel:`Save Changes`"
+msgstr "Haga clic en :guilabel:`Save Changes`"
+
+#: ../../library/virtual_images/virtual_images.rst:83
+msgid ""
+"Cloud-Init is enabled by default on all images. Images without Cloud-Init"
+" or Cloudbase-Init installed must have the ``cloud-init`` flag disabled "
+"on the Virtual Image setting or Provisioning may fail."
+msgstr "Nube-Init es habilitado/habilitada por predeterminado/predeterminada en todos/todas images. Images sin Nube-Init o Nubebase-Init installed debe/n tienen el/la ``cloud-init`` flag deshabilitado/deshabilitada en el/la Imagen virtual setting o Provisioning puede/n fail."
+
+#: ../../library/virtual_images/virtual_images.rst:85
+msgid ""
+"|morpheus| does not validate or restrict image uploads to certain file "
+"types and any type of file may be uploaded as a Virtual Image. For "
+"security purposes, these files are stored in a non-executable state so "
+"users need not worry about potentially dangerous file types being "
+"uploaded (ex. executables)."
+msgstr "|morpheus| does not validate or restrict image uploads to certain file types and any type of file may be uploaded as a Imagen virtual. For security purposes, these files are stored in a non-executable state so users need not worry about potentially dangerous file types being uploaded (ex. executables)."
+
+#: ../../library/virtual_images/virtual_images.rst:88
+msgid "Provisioning Images"
+msgstr "Provisioning Images"
+
+#: ../../library/virtual_images/virtual_images.rst:90
+msgid ""
+"When provisioning a system image, |morpheus| will stream the image from "
+"Amazon S3 to the target Cloud if the image is not local to the Cloud."
+msgstr "Cuando provisioning a system image, |morpheus| will stream the image from Amazon S3 to the target Nube if the image is not local to the Nube."
+
+#: ../../library/virtual_images/virtual_images.rst:92
+msgid ""
+"When using images that already exist in the destination Cloud, such as "
+"synced, marketplace, or previously copied images, no image stream from S3"
+" through the |morpheus| Appliance to the destination cloud will take "
+"place."
+msgstr "Cuando using images that already exist in the destination Nube, such as synced, marketplace, or previously copied images, no image stream from S3 through the |morpheus| Appliance to the destination cloud will take place."
+
+#: ../../library/virtual_images/virtual_images.rst:94
+msgid ""
+"The |morpheus| Appliance must be able to download from Amazon S3 when "
+"provisioning system images."
+msgstr "El/La |morpheus| Appliance debe/n be able a download desde Amazon S3 cuando provisioning system images."
+
+#: ../../library/virtual_images/virtual_images.rst:96
+msgid ""
+"The |morpheus| Appliance must be able reach and resolve the destination "
+"Host when provisioning System Images or uploaded Images for the first "
+"time. This included being able to resolve ESXi host names in VMware "
+"vCenter clouds, and reach the destination ESXi host over port 443."
+msgstr "El/La |morpheus| Appliance debe/n be able reach y resolve el/la destination Host cuando provisioning System Images o uploaded Images para el/la primer/primera time. Este/Esta included being able a resolve ESXi host names en VMware vCenter clouds, y reach el/la destination ESXi host over port 443."
+
+#: ../../library/virtual_images/virtual_images.rst:99
+msgid "Add Virtual Image"
+msgstr "Add Imagen virtual"
+
+#: ../../library/virtual_images/virtual_images.rst:101
+msgid ""
+"Virtual Images can be upload to |morpheus| from local files or URL's. "
+"Amazon and Azure Marketplace metadata can also be added to the Virtual "
+"Images library, enabling the creation of custom catalog Instance Type "
+"from Marketplace images (no image is transferred to |morpheus| when "
+"adding Marketplace images)."
+msgstr "Imágenes virtuales puede ser upload to |morpheus| from local files or URL's. Amazon and Azure Marketplace metadata can also be added to the Imágenes virtuales library, enabling the creation of custom catalog Tipo de instancia from Marketplace images (no image is transferred to |morpheus| when adding Marketplace images)."
+
+#: ../../library/virtual_images/virtual_images.rst:103
+msgid ""
+"Be conscious of your Storage Provider selection. The default Storage "
+"Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-"
+"ui/vms``. Uploading large images to the |morpheus| Appliance when there "
+"is inadequate space will cause upload failures and impact Appliance "
+"functionality. Ensure there is adequate space on your selected Storage "
+"Provider. Additional Storage Provider can be added at `Infrastructure > "
+"Storage`, which can be configured as the default Virtual Image Store or "
+"selected when uploading Images."
+msgstr "Be conscious of your Storage Provider selection. The default Storage Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-ui/vms``. Uploading large images to the |morpheus| Appliance when there is inadequate space will cause upload failures and impact Appliance functionality. Ensure there is adequate space on your selected Storage Provider. Additional Storage Provider can be added at `Infrastructure > Storage`, which puede ser configured as the default Imagen virtual Store or selected when uploading Images."
+
+#: ../../library/virtual_images/virtual_images.rst:105
+msgid "VMware-type OVF Virtual Images do not support mounted ISO uploads"
+msgstr "VMware-type OVF Imágenes virtuales do not support mounted ISO uploads"
+
+#: ../../library/virtual_images/virtual_images.rst:107
+msgid "To Add Virtual Image:"
+msgstr "To Add Imagen virtual:"
+
+#: ../../library/virtual_images/virtual_images.rst:109
+msgid "Select :guilabel:`+ Add` in the Virtual Images page."
+msgstr "Select :guilabel:`+ Add` in the Imágenes virtuales page."
+
+#: ../../library/virtual_images/virtual_images.rst:110
+msgid "Select Image format:"
+msgstr "Select Image format:"
+
+#: ../../library/virtual_images/virtual_images.rst:112
+msgid "Alibaba"
+msgstr "Alibaba"
+
+#: ../../library/virtual_images/virtual_images.rst:113
+msgid "Amazon AMI"
+msgstr "Amazon AMI"
+
+#: ../../library/virtual_images/virtual_images.rst:114
+msgid "Azure Marketplace"
+msgstr "Azure Marketplace"
+
+#: ../../library/virtual_images/virtual_images.rst:115
+msgid "Digital Ocean"
+msgstr "Digital Ocean"
+
+#: ../../library/virtual_images/virtual_images.rst:116
+msgid "ISO"
+msgstr "ISO"
+
+#: ../../library/virtual_images/virtual_images.rst:117
+msgid "PXE Boot"
+msgstr "PXE Boot"
+
+#: ../../library/virtual_images/virtual_images.rst:118
+msgid "QCOW2"
+msgstr "QCOW2"
+
+#: ../../library/virtual_images/virtual_images.rst:119
+msgid "RAW"
+msgstr "RAW"
+
+#: ../../library/virtual_images/virtual_images.rst:120
+msgid "VHD"
+msgstr "VHD"
+
+#: ../../library/virtual_images/virtual_images.rst:121
+msgid "VMware (vmdk/ovf/ova)"
+msgstr "VMware (vmdk/ovf/ova)"
+
+#: ../../library/virtual_images/virtual_images.rst:123
+msgid "Configure the following on the Virtual Image:"
+msgstr "Configure the following on the Imagen virtual:"
+
+#: ../../library/virtual_images/virtual_images.rst:162
+msgid ""
+"Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. "
+"Additional Storage Providers can be configured in `Infrastructure > "
+"Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if "
+"used."
+msgstr "Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional Storage Providers puede ser configured in `Infrastructure > Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if used."
+
+#: ../../library/virtual_images/virtual_images.rst:164
+msgid ""
+"Provisioning will fail if `Cloud init Enabled` is checked and Cloud-Init "
+"is not installed on the Image."
+msgstr "Provisioning será/n fail si `Nube init Enabled` es checked y Nube-Init es ningún installed en el/la Image."
+
+#: ../../library/virtual_images/virtual_images.rst:166
+msgid ""
+"Existing Image credentials are required for Linux Images that are not "
+"Cloud-Init enabled and for Windows Images when Guest Customizations are "
+"not used. Cloud-Init and Windows user settings need to be configured in "
+"|AdmSetPro| when using Cloud-Init or Guest Customizations and new "
+"credentials are not set on the Virtual Image."
+msgstr "Existing Image credentials son requerido/requerida para Linux Images ese/esa son ningún Nube-Init habilitado/habilitada y para Windows Images cuando Guest Customizations son ningún used. Nube-Init y Windows user settings need a be configurado/configurada en |AdmSetPro| cuando using Nube-Init o Guest Customizations y nuevo/nueva credentials son ningún establecido/establecida en el/la Imagen virtual."
+
+#: ../../library/virtual_images/virtual_images.rst:175
+msgid "Upload Image"
+msgstr "Upload Image"
+
+#: ../../library/virtual_images/virtual_images.rst:173
+msgid "Images can be uploaded by File or URL:"
+msgstr "Images puede ser uploaded by File or URL:"
+
+#: ../../library/virtual_images/virtual_images.rst:170
+msgid "*File*"
+msgstr "*File*"
+
+#: ../../library/virtual_images/virtual_images.rst:171
+msgid ""
+"Drag and Drop the image file, or select :guilabel:`Add File` to select "
+"the image file."
+msgstr "Drag and Drop the image file, or select :guilabel:`Add File` to select the image file."
+
+#: ../../library/virtual_images/virtual_images.rst:173
+msgid "*Url*"
+msgstr "*Url*"
+
+#: ../../library/virtual_images/virtual_images.rst:173
+msgid "Select the URL radio button, and enter URL of the Image."
+msgstr "Select the URL radio button, and enter URL of the Image."
+
+#: ../../library/virtual_images/virtual_images.rst:175
+msgid ""
+"The Virtual Image configuration can be saved when using a URL and the "
+"upload will finish in the background. When selecting/drag and dropping a "
+"file, the image files must upload completely before saving the Virtual "
+"Image record or the Image will not be valid."
+msgstr "The Imagen virtual configuration puede ser saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Imagen virtual record or the Image will not be valid."
+
+#: ../../library/virtual_images/virtual_images.rst:177
+msgid "Save Changes."
+msgstr "Save Changes."
+
+#: ../../library/virtual_images/virtual_images.rst:180
+msgid "VMware - VM Templates Copies"
+msgstr "VMware - VM Templates Copies"
+
+#: ../../library/virtual_images/virtual_images.rst:182
+msgid ""
+"In a VMware environment, you may have a single VM template that you use "
+"across different vCenters. Uploading an image to |morpheus|, mentioned in"
+" the Add Virtual Image section, is one method to solve this. "
+"Alternatively, an organization may decide to create a VM template in one "
+"vCenter and then transfer it to other vCenters, which then could be "
+"sync’d into |morpheus|."
+msgstr "In un/una VMware environment, you puede/n tienen un/una single VM template ese/esa you use across diferente vCenters. Uploading un/una image a |morpheus|, mentioned en el/la Add Imagen virtual section, es one method a solve this. Alternatively, un/una organization puede/n decide a create un/una VM template en one vCenter y entonces transfer it a otro/otra vCenters, el/la cual entonces could be sync’d en |morpheus|."
+
+#: ../../library/virtual_images/virtual_images.rst:184
+msgid ""
+"If all the vCenters are added as Clouds into |morpheus| and the templates"
+" are named the same in each vCenter, they will be aggregated under a "
+"single virtual image in |morpheus|. This means that as you deploy to the "
+"various vCenter Clouds in |morpheus| using this virtual image, it will "
+"choose the correct VM template to use based on the Cloud deployed to."
+msgstr "Si all the vCenters are added as Nubes into |morpheus| and the templates are named the same in each vCenter, they will be aggregated under a single virtual image in |morpheus|. This means that as you deploy to the various vCenter Nubes in |morpheus| using this virtual image, it will choose the correct VM template to use based on the Nube deployed to."
+
+#: ../../library/virtual_images/virtual_images.rst:186
+msgid ""
+"This eliminates the need for creating multiple Node Types for each "
+"virtual image if the templates were named differently in each vCenter. "
+"This can reduce the overhead of maintaining multiple Node Types and "
+"reduces user selections. As well, this can reduce the cloning time of VMs"
+" by avoiding network transfers of images between geographic locations, "
+"ensuring the closest VM template is selected."
+msgstr "Este/Esta eliminates el/la need para creating multiple Tipos de nodo para cada virtual image si el/la templates fueron named differently en cada vCenter. Este/Esta puede/n reduce el/la overhead de maintaining multiple Tipos de nodo y reduces user selections. As well, este/esta puede/n reduce el/la cloning time de VMs por avoiding network transfers de images entre geographic locations, ensuring el/la closest VM template es selected."
+
+#: ../../library/virtual_images/virtual_images.rst:188
+msgid ""
+"|morpheus| supports VMware Content Libraries storing VM templates and "
+"syncing into |morpheus|, the same as a template in a folder. "
+"Additionally, the Content Library can be used to house the same template "
+"in multiple libraries. If they have the same name, these templates will "
+"be aggregated under a single virtual image. If the Content Library is "
+"stored on a datastore that the target host/cluster has access to, it will"
+" use that library first, to reduce the cloning time. If the Content "
+"Library is not stored in a datastore accessible by the cluster/host, a "
+"copy of the VM template will be performed to the target host/cluster "
+"instead."
+msgstr "|morpheus| supports VMware Content Libraries storing VM templates and syncing into |morpheus|, the same as a template in a folder. Additionally, the Content Library puede ser used to house the same template in multiple libraries. If they have the same name, these templates will be aggregated under a single virtual image. If the Content Library is stored on a datastore that the target host/cluster has access to, it will use that library first, to reduce the cloning time. If the Content Library is not stored in a datastore accessible by the cluster/host, a copy of the VM template will be performed to the target host/cluster instead."
+
+#: ../../library/virtual_images/virtual_images.rst:190
+msgid ""
+"VM templates are a **Data Center** level object.  The same process above "
+"applies to a single VMware cloud with multiple logical data centers.  It "
+"will not apply to clusters, as a template is not associated with a "
+"cluster, only when it is converted to a VM."
+msgstr "VM templates son un/una **Data Center** level object. El/La mismo/misma process arriba applies a un/una single VMware cloud con multiple logical data centers. It será/n ningún apply a clusters, como un/una template es ningún asociado/asociada con un/una cluster, solo cuando it es converted a un/una VM."
+

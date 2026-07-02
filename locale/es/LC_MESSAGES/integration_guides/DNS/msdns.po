@@ -1,0 +1,1241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/DNS/msdns.rst:2
+msgid "Microsoft DNS"
+msgstr "Microsoft DNS"
+
+#: ../../integration_guides/DNS/msdns.rst:4
+msgid ""
+"The |morpheus| Microsoft DNS integration is developed as an official plugin "
+"separate from the core product. It is easily added and uploaded to any "
+"|morpheus| appliance. Download the plugin from the `official plugin "
+"repository <share.morpheusdata.com>_` and add it to the appliance from the "
+"plugin management UI section (|AdmIntPlu|)."
+msgstr ""
+"The |morpheus| Microsoft DNS integration es developed as un official plugin "
+"separate desde el core product. It es easily agregado y uploaded to "
+"cualquier |morpheus| appliance. Download el plugin desde el `official plugin"
+" repository <share.morpheusdatos.com>_` y add it to el appliance desde el "
+"plugin management UI sección (|AdmIntPlu|)."
+
+#: ../../integration_guides/DNS/msdns.rst:6
+msgid ""
+"The MSDSN integration automates DNS record creation and DNS record cleanup "
+"both manually or automatically during workload provisioning to a configured "
+"Cloud or Group. It should be noted that this integration is typically not "
+"needed when joining a Windows VM to an Active Directory Domain as typically "
+"this automatically creates a DNS record."
+msgstr ""
+"The MSDSN integration automates DNS registro creation y DNS registro cleanup"
+" both manualmente o automáticamente durante workload provisioning to un "
+"configurado Cloud o Group. It debería be noted que esta integración es "
+"típicamente no needed cuando joining un Windows VM to un Active Directory "
+"Domain as típicamente este automáticamente creates un DNS registro."
+
+#: ../../integration_guides/DNS/msdns.rst:9
+msgid "Prepare DNS Server(s)"
+msgstr "Prepare DNS Server(s)"
+
+#: ../../integration_guides/DNS/msdns.rst:11
+msgid ""
+"This section will assume a the DNS server is in an Active Directory "
+"environment and joined to the domain.  The process may be different for "
+"other configurations."
+msgstr ""
+"This sección será assume un el DNS server es in un Active Directory entorno "
+"y joined to el domain.  The proceso puede be diferente para otro "
+"configurations."
+
+#: ../../integration_guides/DNS/msdns.rst:13
+msgid ""
+"The easiest method to prepare DNS server(s) is to use a service account that"
+" is added to the ``DnsAdmins`` and ``Remote Management Users`` groups, "
+"either in Active Directory (if DNS is on domain controllers) or the local "
+"groups of a member server. The ``DnsAdmins`` group will provide permissions "
+"for the service account to make DNS changes, such as creating/deleting A and"
+" PTR records.  The ``Remote Management Users`` group will allow |morpheus| "
+"to connect to the server(s) via WinRM."
+msgstr ""
+"The easiest método to prepare DNS server(s) es to use un servicio cuenta que"
+" es agregado to el ``DnsAdmins`` y ``Remote Management Users`` groups, "
+"either in Active Directory (if DNS es on domain controllers) o el local "
+"groups of un member server. The ``DnsAdmins`` group será provide permisos "
+"para el servicio cuenta to make DNS cambios, como creating/deleting A y PTR "
+"registros.  The ``Remote Management Users`` group será allow |morpheus| to "
+"connect to el servidor(s) via WinRM."
+
+#: ../../integration_guides/DNS/msdns.rst:15
+msgid ""
+"Additionally, ensure firewall rules have been updated if needed to allow "
+"WinRM through.  In some cases, the default WinRM rules allow ``Private`` and"
+" ``Domain`` networks but not ``Public``.  Enable ``Public`` if the network "
+"|morpheus| is connected is considered ``Public``, or disable the firewall if"
+" permitted.  If a jump box is required (discussed below), then ensure the "
+"firewall is configured to allow the jump box to connect to the DNS server "
+"instead."
+msgstr ""
+"Adicionalmente, ensure firewall rules tienen sido actualizado si es "
+"necesario to allow WinRM a través de.  In algunos cases, el predeterminado "
+"WinRM rules allow ``Private`` y ``Domain`` networks pero no ``Public``.  "
+"Enable ``Public`` if la red |morpheus| es conectado es considered "
+"``Public``, o disable el firewall if permitted.  If un jump box es requerido"
+" (discussed a continuación), entonces ensure el firewall es configurado to "
+"allow el jump box to connect to el DNS server en cambio."
+
+#: ../../integration_guides/DNS/msdns.rst:18
+#: ../../integration_guides/DNS/msdns.rst:67
+msgid ""
+"Finally, ``winrm quickconfig`` may need to be run to enable WinRM, if the "
+"server is an older operating system."
+msgstr ""
+"Finally, ``winrm quickconfig`` puede need to be run to enable WinRM, if el "
+"servidor es un older operating sistema."
+
+#: ../../integration_guides/DNS/msdns.rst:21
+msgid "Minimum Permissions"
+msgstr "Minimum Permissions"
+
+#: ../../integration_guides/DNS/msdns.rst:23
+msgid ""
+"Some organizations may require that users cannot be added to the "
+"``DNSAdmin`` group, mentioned previously.  If this is a requirement, the "
+"following process/permissions would be required to ensure |morpheus| can "
+"connect successfully. This process may be required on each DNS server, "
+"depending on the environment.  Note that if |morpheus| adds additional "
+"functionality at a later time, these permissions may need to be updated to "
+"support those features."
+msgstr ""
+"Some organizations puede require que users no puede be agregado to el "
+"``DNSAdmin`` group, mentioned previamente.  If este es un requirement, el "
+"following proceso/permisos sería be requerido to ensure |morpheus| puede "
+"connect successfully. This proceso puede ser requerido on cada DNS server, "
+"dependiendo de el entorno.  Tenga en cuenta que if |morpheus| adds adicional"
+" functionality at un later time, estos permisos puede need to be actualizado"
+" to support esos características."
+
+#: ../../integration_guides/DNS/msdns.rst:26
+msgid "Run ``dnsmgmt.msc``"
+msgstr "Run ``dnsmgmt.msc``"
+
+#: ../../integration_guides/DNS/msdns.rst:27
+msgid "Right-click the DNS server object and choose ``Properties``"
+msgstr "Right-click el DNS server objeto y choose ``Properties``"
+
+#: ../../integration_guides/DNS/msdns.rst:28
+msgid ""
+"Add the service account to the user list and ensure the following "
+"permissions are applied:"
+msgstr ""
+"Add el servicio cuenta to el usuario lista y ensure el following permisos "
+"son applied:"
+
+#: ../../integration_guides/DNS/msdns.rst:30
+msgid "Read"
+msgstr "Read"
+
+#: ../../integration_guides/DNS/msdns.rst:31
+msgid "Create all child objects"
+msgstr "Create todos child objetos"
+
+#: ../../integration_guides/DNS/msdns.rst:32
+msgid "Delete all child objects"
+msgstr "Delete todos child objetos"
+
+#: ../../integration_guides/DNS/msdns.rst:33
+msgid "Run ``wmimgmt.msc``"
+msgstr "Run ``wmimgmt.msc``"
+
+#: ../../integration_guides/DNS/msdns.rst:34
+msgid "Right-click ``WMI Control (Local)`` and choose ``Properties``"
+msgstr "Right-click ``WMI Control (Local)`` y choose ``Properties``"
+
+#: ../../integration_guides/DNS/msdns.rst:35
+msgid "Click the ``Security`` tab"
+msgstr "Haga clic en el ``Security`` pestaña"
+
+#: ../../integration_guides/DNS/msdns.rst:36
+msgid "Set the following permissions for each of the below nodes:"
+msgstr ""
+"Establezca el following permisos para cada of el a continuación nodes:"
+
+#: ../../integration_guides/DNS/msdns.rst:38
+msgid "``CIMV2``"
+msgstr "``CIMV2``"
+
+#: ../../integration_guides/DNS/msdns.rst:39
+msgid "``MicrosoftDNS``"
+msgstr "``MicrosoftDNS``"
+
+#: ../../integration_guides/DNS/msdns.rst:40
+msgid "``Microsoft => Windows => DNS`` (only the DNS node)"
+msgstr "``Microsoft => Windows => DNS`` (solo el DNS node)"
+
+#: ../../integration_guides/DNS/msdns.rst:41
+msgid "Hightlight the node and click the ``Security`` button"
+msgstr "Hightlight el node y click el ``Security`` botón"
+
+#: ../../integration_guides/DNS/msdns.rst:42
+msgid "Click the ``Advanced`` button"
+msgstr "Haga clic en el ``Advanced`` botón"
+
+#: ../../integration_guides/DNS/msdns.rst:43
+msgid "Click the ``Add`` button to add the service account to the list"
+msgstr "Haga clic en el ``Add`` botón to add el servicio cuenta to el lista"
+
+#: ../../integration_guides/DNS/msdns.rst:44
+msgid ""
+"Ensure the ``Applies to`` field is set to ``This namespace and "
+"subnamespaces``"
+msgstr ""
+"Ensure el ``Applies to`` campo es set to ``This namespace and "
+"subnamespaces``"
+
+#: ../../integration_guides/DNS/msdns.rst:45
+msgid "Set the following permissions:"
+msgstr "Establezca el following permisos:"
+
+#: ../../integration_guides/DNS/msdns.rst:47
+msgid "Enable Account"
+msgstr "Enable Account"
+
+#: ../../integration_guides/DNS/msdns.rst:48
+msgid "Remote Enable"
+msgstr "Remote Enable"
+
+#: ../../integration_guides/DNS/msdns.rst:49
+msgid "Execute Methods"
+msgstr "Execute Methods"
+
+#: ../../integration_guides/DNS/msdns.rst:50
+msgid ""
+"Finally, restart Windows Management Instrumentation Service or the server. "
+"This is required for the change in permissions to take place."
+msgstr ""
+"Finally, restart Windows Management Instrumentation Service o el servidor. "
+"This es requerido para el cambio in permisos to take place."
+
+#: ../../integration_guides/DNS/msdns.rst:52
+msgid ""
+"Additional support reference:  "
+"`https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US "
+"<https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US>`_"
+msgstr ""
+"Additional support referencia:  "
+"`https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US "
+"<https://support.morpheusdata.com/s/article/How-to-give-C?language=en_US>`_"
+
+#: ../../integration_guides/DNS/msdns.rst:55
+msgid "(Optional) Prepare Jump Box"
+msgstr "(Optional) Prepare Jump Box"
+
+#: ../../integration_guides/DNS/msdns.rst:57
+msgid ""
+"In some environments, |morpheus| may not be allowed to access the DNS "
+"servers directly, as they may be on segregated networks.  In this case, "
+"|morpheus| can utilize a member server as a \"jump box\" that can access the"
+" DNS servers directly, the jump box will be used to interact with the DNS "
+"server instead.  If this is a requirement, follow the below process to "
+"prepare the jump box."
+msgstr ""
+"In algunos entornos, |morpheus| no puede be allowed to acceso el DNS servers"
+" directly, as they puede be on segregated networks.  In este case, "
+"|morpheus| puede utilize un member server as un \"jump box\" que puede "
+"acceso el DNS servers directly, el jump box se utilizará to interact con el "
+"DNS server en cambio.  If este es un requirement, follow el a continuación "
+"proceso to prepare el jump box."
+
+#: ../../integration_guides/DNS/msdns.rst:59
+msgid ""
+"Add the service account to the ``Remote Management Users`` group of the jump"
+" box, which will allow WinRM to access"
+msgstr ""
+"Add el servicio cuenta to el ``Remote Management Users`` group of el jump "
+"box, cual será allow WinRM to acceso"
+
+#: ../../integration_guides/DNS/msdns.rst:60
+msgid "Verify the firewall allows WinRM from |morpheus|"
+msgstr "Verify el firewall allows WinRM desde |morpheus|"
+
+#: ../../integration_guides/DNS/msdns.rst:61
+msgid "Create or edit the following registry key by running ``regedit``:"
+msgstr "Create o edit el following registry key by running ``regedit``:"
+
+#: ../../integration_guides/DNS/msdns.rst:63
+msgid ""
+"Navigate to: "
+"``HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography\\Protect\\Providers\\df9d8cd0-1501-11d1-8c7a-00c04fc297eb``"
+msgstr ""
+"Navegue un: "
+"``HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography\\Protect\\Providers\\df9d8cd0-1501-11d1-8c7a-00c04fc297eb``"
+
+#: ../../integration_guides/DNS/msdns.rst:64
+msgid "Create or edit ``ProtectionPolicy`` DWORD (32-bit) Value"
+msgstr "Create o edit ``ProtectionPolicy`` DWORD (32-bit) Value"
+
+#: ../../integration_guides/DNS/msdns.rst:65
+msgid "Set ``ProtectionPolicy`` value to ``1``"
+msgstr "Set ``ProtectionPolicy`` valor to ``1``"
+
+#: ../../integration_guides/DNS/msdns.rst:70
+msgid "Adding a Microsoft DNS integration"
+msgstr "Agregar Microsoft DNS integration"
+
+#: ../../integration_guides/DNS/msdns.rst:72
+msgid ""
+"For appliances with the MSDNS plugin installed, the option to create an "
+"integration is available. Navigate to |AdmInt| and click :guilabel:`+ NEW "
+"INTEGRATION` to create a new one."
+msgstr ""
+"For appliances con el MSDNS plugin instalado, el opción to create una "
+"integración es disponible. Navegue un |AdmInt| y click :guilabel:`+ NEW "
+"INTEGRATION` to create un nuevo one."
+
+#: ../../integration_guides/DNS/msdns.rst:74
+msgid "**NAME:** A friendly name for the integration in |morpheus|"
+msgstr "**NAME:** A friendly nombre para la integración in |morpheus|"
+
+#: ../../integration_guides/DNS/msdns.rst:75
+msgid ""
+"**RPC SERVER** Enter the name of the server brokering access to the "
+"Microsoft DNS Services. This is the Windows server |morpheus| will connect "
+"to directly. In most cases, the RPC SERVER will be a Windows domain-joined "
+"server with the DNS Server tools installed. |morpheus| will use this server "
+"to connect and manage DNS"
+msgstr ""
+"**RPC SERVER** Ingrese el nombre of el servidor brokering acceso to el "
+"Microsoft DNS Services. This es el Windows server |morpheus| será connect to"
+" directly. In la mayoría cases, el RPC SERVER será be un Windows domain-"
+"joined server con el DNS Server tools instalado. |morpheus| será use este "
+"servidor to connect y manage DNS"
+
+#: ../../integration_guides/DNS/msdns.rst:76
+msgid ""
+"**RPC PORT:** This configuration is visible if \"USE AGENT FOR RPC\" is "
+"unmarked. The WinRM port number 5985/5986, default is 5985"
+msgstr ""
+"**RPC PORT:** This configuración es visible if \"USE AGENT FOR RPC\" es "
+"unmarked. The WinRM puerto número 5985/5986, predeterminado es 5985"
+
+#: ../../integration_guides/DNS/msdns.rst:77
+msgid ""
+"**USE AGENT FOR RPC:** Select this option to have the plugin use a "
+"configured agent to handle the |morpheus| to Windows RPC connection. The RPC"
+" SERVER should be an Instance (in other words, a managed VM) which is part "
+"of the same |morpheus| environment where the integration is added. The "
+"|morpheus| Agent must also be configured to logon as the DNS Service user "
+"account. In most cases, customers would only use this option when using an "
+"intermediate server to access DNS services"
+msgstr ""
+"**USE AGENT FOR RPC:** Select este opción to tienen el plugin use un "
+"configurado agent to handle el |morpheus| to Windows RPC conexión. The RPC "
+"SERVER debería be un Instance (in otro words, un managed VM) cual es part of"
+" el mismo |morpheus| entorno donde la integración es agregado. The "
+"|morpheus| Agent debe también be configurado to logon as el DNS Service user"
+" cuenta. In la mayoría cases, customers sería solo use este opción cuando "
+"using un intermediate server to acceso DNS servicios"
+
+#: ../../integration_guides/DNS/msdns.rst:78
+msgid ""
+"**CREDENTIALS:** Provide account credentials for a service account. You may "
+"use credentials already stored in |morpheus| or create new Username/Password"
+" credentials"
+msgstr ""
+"**CREDENTIALS:** Provide cuenta credentials para un servicio cuenta. You "
+"puede use credentials ya stored in |morpheus| o create nuevo "
+"Username/Password credentials"
+
+#: ../../integration_guides/DNS/msdns.rst:79
+msgid ""
+"**DNS SERVER:** If the RPC SERVER is not the server hosting DNS Services, "
+"then add the FQDN name of the DNS server here. Leave blank if the RPC SERVER"
+" is also the DNS Server"
+msgstr ""
+"**DNS SERVER:** If el RPC SERVER no es el servidor hosting DNS Services, "
+"entonces add el FQDN nombre of el DNS server aquí. Leave blank if el RPC "
+"SERVER es también el DNS Server"
+
+#: ../../integration_guides/DNS/msdns.rst:80
+msgid ""
+"**ZONE FILTER:** The ZONE FILTER is a comma separated list of glob-style "
+"filters which can be used to specify the zones that |morpheus| will import "
+"and sync. Glob style filters apply to the zone name only and at a domain "
+"level. The ``\\*`` character matches any legal DNS character [a-zA-Z0-9_-] 0"
+" or more times. Wildcarding stops at the . (period), leave blank to import "
+"all forward and reverse zones"
+msgstr ""
+"**ZONE FILTER:** The ZONE FILTER es un comma separated lista of glob-style "
+"filters cual se puede utilizar para specify el zones que |morpheus| será "
+"import y sync. Glob style filters apply to el zone nombre solo y at un "
+"domain level. The ``\\*`` character matches cualquier legal DNS character "
+"[un-zA-Z0-9_-] 0 o más times. Wildcarding stops at el . (period), leave "
+"blank to import todos forward y reverse zones"
+
+#: ../../integration_guides/DNS/msdns.rst:81
+msgid ""
+"**SERVICE TYPE:** This configuration is visible if the DNS SERVER is not "
+"blank. This option informs the plugin how the RPC SERVER should contact the "
+"DNS SERVER. There are 3 supported options: **local** when the RPC SERVER is "
+"the DNS Server (ie when DNS SERVER is blank in which case local is the "
+"default and only option), **wmi** which is used when the RPC SERVER contacts"
+" the DNS Server over WMI (Windows RPC, this is the recommended and default "
+"option when using an intermediate RPC SERVER), and **winrm** which is used "
+"when the RPC SERVER connects to DNS SERVER over a WinRM session (this is not"
+" often used due to WinRM restrictions on domain controllers)"
+msgstr ""
+"**SERVICE TYPE:** This configuración es visible if el DNS SERVER no es "
+"blank. This opción informs el plugin how el RPC SERVER debería contact el "
+"DNS SERVER. There son 3 compatible opciones: **local** cuando el RPC SERVER "
+"es el DNS Server (ie cuando DNS SERVER es blank in cual case local es el "
+"predeterminado y solo opción), **wmi** cual es used cuando el RPC SERVER "
+"contacts el DNS Server over WMI (Windows RPC, este es el recomendado y "
+"predeterminado opción cuando using un intermediate RPC SERVER), y **winrm** "
+"cual es used cuando el RPC SERVER connects to DNS SERVER over un WinRM "
+"session (este no es often used due to WinRM restrictions on domain "
+"controllers)"
+
+#: ../../integration_guides/DNS/msdns.rst:82
+msgid ""
+"**INVENTORY EXISTING:** Have the integration import and sync all DNS records"
+" for the matching Zones. Using this option is not recommended for "
+"installations with large namespaces"
+msgstr ""
+"**INVENTORY EXISTING:** Have la integración import y sync todos DNS "
+"registros para el matching Zones. Using este opción no es recomendado para "
+"installations con large namespaces"
+
+#: ../../integration_guides/DNS/msdns.rst:83
+msgid ""
+"**CREATE POINTERS:** Have DNS create a PTR record when the forward record is"
+" created"
+msgstr ""
+"**CREATE POINTERS:** Have DNS create un PTR registro cuando el forward "
+"registro es creado"
+
+#: ../../integration_guides/DNS/msdns.rst:85
+msgid ""
+"If you're not using an intermediate server, the RPC SERVER will also be the "
+"DNS Server. The |morpheus| Windows Agent should be set to log in using these"
+" credentials."
+msgstr ""
+"If you're no using un intermediate server, el RPC SERVER será también be el "
+"DNS Server. The |morpheus| Windows Agent debería establecerse en log in "
+"using estos credentials."
+
+#: ../../integration_guides/DNS/msdns.rst:88
+msgid "Domains"
+msgstr "Domains"
+
+#: ../../integration_guides/DNS/msdns.rst:90
+msgid ""
+"Once the integration is added, Microsoft DNS Domains will sync and listed "
+"under |InfNetDom|."
+msgstr ""
+"Una vez que la integración está agregado, Microsoft DNS Domains será sync y "
+"listed under |InfNetDom|."
+
+#: ../../integration_guides/DNS/msdns.rst:92
+msgid ""
+"Default Domains can be set on Networks and Clouds, and can be selected when "
+"provisioning. Additional configuration options are available by editing a "
+"domain in |InfNetDom|"
+msgstr ""
+"Default Domains se puede establecer on Networks y Clouds, y puede be "
+"seleccionado cuando provisioning. Additional configuración opciones son "
+"disponible by editing un domain in |InfNetDom|"
+
+#: ../../integration_guides/DNS/msdns.rst:95
+msgid "Configuring Microsoft DNS with Clouds and Groups"
+msgstr "Configurar Microsoft DNS with Clouds and Groups"
+
+#: ../../integration_guides/DNS/msdns.rst:97
+msgid ""
+"DNS Integrations are available in the ``DNS Integration`` dropdown in Cloud "
+"and Group settings. |morpheus| will register Instances with the DNS provider"
+" when provisioned into a Cloud or Group with a DNS Integration added."
+msgstr ""
+"DNS Integrations son disponible in el ``DNS Integration`` desplegable in "
+"Cloud y Group configuración. |morpheus| será register Instances con el DNS "
+"proveedor cuando provisioned en un Cloud o Group con un DNS Integration "
+"agregado."
+
+#: ../../integration_guides/DNS/msdns.rst:100
+msgid "Add DNS Integration to a Cloud"
+msgstr "Add DNS Integration to un Cloud"
+
+#: ../../integration_guides/DNS/msdns.rst:102
+msgid "In ``Infrastructure > Clouds`` edit the target Cloud."
+msgstr "In ``Infrastructure > Clouds`` edit el destino Cloud."
+
+#: ../../integration_guides/DNS/msdns.rst:103
+#: ../../integration_guides/DNS/msdns.rst:112
+msgid "Expand the ``Advanced Options`` section."
+msgstr "Expand el ``Advanced Options`` sección."
+
+#: ../../integration_guides/DNS/msdns.rst:104
+#: ../../integration_guides/DNS/msdns.rst:113
+msgid ""
+"In the ``DNS Integration`` dropdown, select an available DNS Integration."
+msgstr ""
+"En el ``DNS Integration`` desplegable, select un disponible DNS Integration."
+
+#: ../../integration_guides/DNS/msdns.rst:105
+#: ../../integration_guides/DNS/msdns.rst:114
+msgid "Save Changes"
+msgstr "Save Changes"
+
+#: ../../integration_guides/DNS/msdns.rst:108
+msgid "Add DNS Integration to a Group"
+msgstr "Add DNS Integration to un Group"
+
+#: ../../integration_guides/DNS/msdns.rst:110
+msgid "In ``Infrastructure > Groups`` select the target Group."
+msgstr "In ``Infrastructure > Groups`` select el destino Group."
+
+#: ../../integration_guides/DNS/msdns.rst:111
+msgid "Select the ``Edit`` button for the Group"
+msgstr "Seleccione el ``Edit`` botón para el Group"
+
+#: ../../integration_guides/DNS/msdns.rst:116
+msgid ""
+"Instances provisioned into a Cloud or Group with a DNS Integration added "
+"will be registered as instancename.domain with the DNS Provider during "
+"provisioning, and de-registered at teardown."
+msgstr ""
+"Instances provisioned en un Cloud o Group con un DNS Integration agregado "
+"será be registered as instancename.domain con el DNS Provider durante "
+"provisioning, y de-registered at teardown."
+
+#: ../../integration_guides/DNS/msdns.rst:119
+msgid "Using Zone Filters"
+msgstr "Usar Zone Filters"
+
+#: ../../integration_guides/DNS/msdns.rst:121
+msgid "In this example a ZONE FILTER string of"
+msgstr "In este ejemplo un ZONE FILTER string of"
+
+#: ../../integration_guides/DNS/msdns.rst:123
+msgid "``*.morpheus.com, *.10.in-addr.arpa, d*.us.morpheus.com``"
+msgstr "``*.morpheus.com, *.10.in-addr.arpa, d*.us.morpheus.com``"
+
+#: ../../integration_guides/DNS/msdns.rst:125
+msgid "would"
+msgstr "sería"
+
+#: ../../integration_guides/DNS/msdns.rst:127
+msgid ""
+"**IMPORT** ``test.morpheus.com, prod.morpheus.com`` but **NOT** "
+"``mydomain.test.morpheus.com`` which has a 4th level"
+msgstr ""
+"**IMPORT** ``test.morpheus.com, prod.morpheus.com`` pero **NOT** "
+"``mydomain.test.morpheus.com`` cual tiene un 4th level"
+
+#: ../../integration_guides/DNS/msdns.rst:129
+msgid ""
+"**IMPORT** ``32.10.in-addr.arpa, 33.10.in-addr.arpa`` but **NOT** "
+"``12.11.in-addr.arpa`` or ``10.in-addr.arpa`` (which has 3 levels)"
+msgstr ""
+"**IMPORT** ``32.10.in-addr.arpa, 33.10.in-addr.arpa`` pero **NOT** "
+"``12.11.in-addr.arpa`` o ``10.in-addr.arpa`` (cual tiene 3 levels)"
+
+#: ../../integration_guides/DNS/msdns.rst:131
+msgid ""
+"**IMPORT** ``denver.us.morpheus.com`` and ``delaware.us.morpheus.com`` but "
+"**NOT** ``ohio.us.morpheus.com`` (wildcard at 4th level)"
+msgstr ""
+"**IMPORT** ``denver.us.morpheus.com`` y ``delaware.us.morpheus.com`` pero "
+"**NOT** ``ohio.us.morpheus.com`` (wildcard at 4th level)"
+
+#: ../../integration_guides/DNS/msdns.rst:134
+msgid "Improved Integration Validation"
+msgstr "Improved Integration Validation"
+
+#: ../../integration_guides/DNS/msdns.rst:136
+msgid ""
+"Recent versions of this integration have improved the error handling and "
+"validation. RPC connectivity and access to DNS Services is tested at the "
+"time the integration dialog is saved. The dialog will not save unless "
+"validation is passed successfully. The integration dialog will hint where "
+"problems occur but you should check the |morpheus| Health logs "
+"(|AdmHeaMorLog|) to see detailed messages."
+msgstr ""
+"Recent versions of esta integración tienen improved el error handling y "
+"validation. RPC connectivity y acceso to DNS Services es tested at el time "
+"la integración dialog es saved. The dialog no save unless validation es "
+"passed successfully. La integración dialog será hint donde problems occur "
+"pero you debería check el |morpheus| Health logs (|AdmHeaMorLog|) to see "
+"detailed mensajes."
+
+#: ../../integration_guides/DNS/msdns.rst:138
+msgid ""
+"To force the integration to save you can uncheck the ENABLED checkbox. Doing"
+" this disables the validation testing allowing you to save the integration "
+"dialog contents and perform troubleshooting without having to reenter "
+"configurations. When the issue is resolved, edit the integration and set the"
+" integration to ENABLED. Validation will then be performed on the save."
+msgstr ""
+"To force la integración to save you puede uncheck el ENABLED casilla de "
+"verificación. Doing este disables el validation testing allowing you to save"
+" la integración dialog contents y perform troubleshooting sin having to "
+"reenter configurations. When el issue es resolved, edit la integración y set"
+" la integración to ENABLED. Validation será entonces be performed on el "
+"save."
+
+#: ../../integration_guides/DNS/msdns.rst:141
+msgid "Custom Powershell Module Script"
+msgstr "Custom Powershell Module Script"
+
+#: ../../integration_guides/DNS/msdns.rst:143
+msgid ""
+"Recent versions of this integration include a custom Powershell Module "
+"script (.ps1 file) which is maintained by the plugin and transferred to the "
+"RPC SERVER when the integration is added. The Powershell script file "
+"contains functions designed to handle the interface between Morpheus and "
+"DNS. The script uses the standard Windows DNS-Server module (Windows feature"
+" RSAT-DNS-Server). The script file is MD5 checked each time the integration "
+"syncs and the module is refreshed from the plugin if the checksum fails. The"
+" custom script is stored in the **%LOCALAPPDATA%** folder for the "
+"integration service account user."
+msgstr ""
+"Recent versions of esta integración include un personalizado Powershell "
+"Module script (.ps1 archivo) cual es maintained by el plugin y transferred "
+"to el RPC SERVER cuando la integración es agregado. The Powershell script "
+"archivo contains functions designed to handle el interfaz entre Morpheus y "
+"DNS. The script uses el standard Windows DNS-Server module (Windows "
+"característica RSAT-DNS-Server). The script archivo es MD5 checked cada time"
+" la integración syncs y el module es refreshed desde el plugin if el "
+"checksum fails. The personalizado script es stored in el **%LOCALAPPDATA%** "
+"carpeta para la integración servicio cuenta user."
+
+#: ../../integration_guides/DNS/msdns.rst:145
+msgid ""
+"The module contains custom functions designed to interface with the MSDNS "
+"plugin via JSON."
+msgstr ""
+"The module contains personalizado functions designed to interfaz con el "
+"MSDNS plugin via JSON."
+
+#: ../../integration_guides/DNS/msdns.rst:147
+msgid ""
+"Having the Powershell module installed on the RPC SERVER offers some "
+"performance benefits as |morpheus| now can call on the modules functions to "
+"perform tasks"
+msgstr ""
+"Having el Powershell module instalado on el RPC SERVER offers algunos "
+"performance benefits as |morpheus| ahora puede call on el modules functions "
+"to perform tasks"
+
+#: ../../integration_guides/DNS/msdns.rst:148
+msgid ""
+"The Powershell functions test RPC connectivity and DNS service connectivity "
+"on each sync refresh ensuring the integration is healthy"
+msgstr ""
+"The Powershell functions test RPC connectivity y DNS servicio connectivity "
+"on cada sync refresh ensuring la integración es healthy"
+
+#: ../../integration_guides/DNS/msdns.rst:149
+msgid ""
+"The module uses a standard JSON interface between Windows RPC SERVER and "
+"|morpheus|"
+msgstr ""
+"The module uses un standard JSON interfaz entre Windows RPC SERVER y "
+"|morpheus|"
+
+#: ../../integration_guides/DNS/msdns.rst:150
+msgid ""
+"The module overcomes restrictions imposed on |morpheus| WinRM connections "
+"authenticating with NTLM"
+msgstr ""
+"The module overcomes restrictions imposed on |morpheus| WinRM connections "
+"authenticating con NTLM"
+
+#: ../../integration_guides/DNS/msdns.rst:152
+msgid ""
+"For version 2.1.3, the script file is named "
+"``%LOCALAPPDATA%\\morpheusDnsPluginHelper_v32.ps1`` and for version 2.3.3, "
+"the script file is named "
+"``%LOCALAPPDATA%\\morpheusDnsPluginHelper_v34.ps1``. The |morpheus| health "
+"logs will log the status of the |morpheus| Powershell file on each refresh. "
+"For example: ``INFO  c.m.m.MicrosoftDnsPluginHelper - testHelperFileScript -"
+" Checking for valid Helper script fileName: morpheusDnsPluginHelper_v32.ps1 "
+"- MD5: 698d8e6ad0bf7f64d9e9ccac962e4ab1``"
+msgstr ""
+"For versión 2.1.3, el script archivo es named "
+"``%LOCALAPPDATA%\\morpheusDnsPluginHelper_v32.ps1`` y para versión 2.3.3, el"
+" script archivo es named "
+"``%LOCALAPPDATA%\\morpheusDnsPluginHelper_v34.ps1``. The |morpheus| health "
+"logs será log el estado of el |morpheus| Powershell archivo on cada refresh."
+" Por ejemplo: ``INFO  c.m.m.MicrosoftDnsPluginHelper - testHelperFileScript "
+"- Checking for valid Helper script fileName: morpheusDnsPluginHelper_v32.ps1"
+" - MD5: 698d8e6ad0bf7f64d9e9ccac962e4ab1``"
+
+#: ../../integration_guides/DNS/msdns.rst:155
+msgid "Secure credential cache file"
+msgstr "Secure credential cache archivo"
+
+#: ../../integration_guides/DNS/msdns.rst:157
+msgid ""
+"The |morpheus| Powershell functions use a technique where script blocks are "
+"executed with Invoke-Command passing a credential object. This effectively "
+"creates a new session from RPC SERVER using kerberos overcoming the "
+"restrictions imposed by Windows on the original Morpheus NTLM connection. "
+"Credentials are cached using the Windows Data Protection API meaning only "
+"the user account who created the credential can decrypt it and only on the "
+"original Windows server. The credential cache is stored in "
+"``%LOCALAPPDATA%\\S-1-5-21-nnnnnnnnnn-nnnnnnnnnn-nnnnnnnnnn-nnnn-"
+"dnsPlugin.ss`` where ``S-1-5-21-nnnnnnnnnn-nnnnnnnnnn-nnnnnnnnnn-nnnn-"
+"dnsPlugin.ss`` is the Service Account SID."
+msgstr ""
+"The |morpheus| Powershell functions use un technique donde script blocks son"
+" executed con Invoke-Command passing un credential objeto. This effectively "
+"creates un nuevo session desde RPC SERVER using kerberos overcoming el "
+"restrictions imposed by Windows on el original Morpheus NTLM conexión. "
+"Credentials son cached using el Windows Data Protection API meaning solo el "
+"usuario cuenta quien creado el credential puede decrypt it y solo on el "
+"original Windows server. The credential cache es stored in "
+"``%LOCALAPPDATA%\\S-1-5-21-nnnnnnnnnn-nnnnnnnnnn-nnnnnnnnnn-nnnn-"
+"dnsPlugin.ss`` donde ``S-1-5-21-nnnnnnnnnn-nnnnnnnnnn-nnnnnnnnnn-nnnn-"
+"dnsPlugin.ss`` es el Service Account SID."
+
+#: ../../integration_guides/DNS/msdns.rst:159
+msgid ""
+"If \"USE AGENT FOR RPC\" is checked, there is no need to create a new "
+"session since the original session is already Kerberos, however the "
+"credentials are still cached."
+msgstr ""
+"If \"USE AGENT FOR RPC\" es checked, allí es no need to create un nuevo "
+"session desde el original session es ya Kerberos, sin embargo el credentials"
+" son aún cached."
+
+#: ../../integration_guides/DNS/msdns.rst:162
+msgid "Troubleshooting Connections"
+msgstr "Troubleshooting Connections"
+
+#: ../../integration_guides/DNS/msdns.rst:164
+msgid "**Service Account Requirements**"
+msgstr "**Service Account Requirements**"
+
+#: ../../integration_guides/DNS/msdns.rst:166
+msgid ""
+"The service account used to access DNS via the plugin must meet the "
+"following requirements:"
+msgstr ""
+"The servicio cuenta used to acceso DNS via el plugin debe meet los "
+"siguientes requisitos:"
+
+#: ../../integration_guides/DNS/msdns.rst:168
+msgid ""
+"If using an intermediate server as the RPC SERVER, the service account "
+"should be a member of local ``administrators`` group on the RPC SERVER"
+msgstr ""
+"If using un intermediate server as el RPC SERVER, el servicio cuenta debería"
+" be un member of local ``administrators`` group on el RPC SERVER"
+
+#: ../../integration_guides/DNS/msdns.rst:169
+msgid ""
+"If \"USE AGENT FOR RPC\" is checked, the |morpheus| Windows Agent service "
+"must be configured to login as the service account. The service account will"
+" require ``Log on as a Service`` rights in the RPC SERVER local policy"
+msgstr ""
+"If \"USE AGENT FOR RPC\" es checked, el |morpheus| Windows Agent servicio "
+"debe ser configurado to login as el servicio cuenta. The servicio cuenta "
+"será require ``Log on as a Service`` rights in el RPC SERVER local policy"
+
+#: ../../integration_guides/DNS/msdns.rst:170
+msgid ""
+"If not using an intermediate server, the service account must be a member of"
+" ``Remote Management Users`` on the RPC SERVER as a minimum in order to "
+"access the RPC SERVER from |morpheus| via WinRM. Membership of "
+"``administrators`` however, is recommended"
+msgstr ""
+"If no using un intermediate server, el servicio cuenta debe be un member of "
+"``Remote Management Users`` on el RPC SERVER as un mínimo para acceso el RPC"
+" SERVER desde |morpheus| via WinRM. Membership of ``administrators`` sin "
+"embargo, es recomendado"
+
+#: ../../integration_guides/DNS/msdns.rst:171
+msgid ""
+"The service account must be a member of the domain global group ``DNS "
+"Admins``"
+msgstr ""
+"The servicio cuenta debe be un member of el domain global group ``DNS "
+"Admins``"
+
+#: ../../integration_guides/DNS/msdns.rst:172
+msgid ""
+"To Access Microsoft DNS WMI namespaces, the service account must be granted "
+"access to the DNS WMI classes"
+msgstr ""
+"To Access Microsoft DNS WMI namespaces, el servicio cuenta debe be granted "
+"acceso to el DNS WMI classes"
+
+#: ../../integration_guides/DNS/msdns.rst:174
+msgid "**RPC SERVER requirements**"
+msgstr "**RPC SERVER requirements**"
+
+#: ../../integration_guides/DNS/msdns.rst:176
+msgid ""
+"When using an intermediate server as the RPC SERVER, the following "
+"requirements must be met:"
+msgstr ""
+"When using un intermediate server as el RPC SERVER, los siguientes "
+"requisitos debe be met:"
+
+#: ../../integration_guides/DNS/msdns.rst:178
+msgid ""
+"The RPC SERVER must be a Windows Server which is a member of a domain or "
+"forest which is trusted to access the DNS namespace"
+msgstr ""
+"The RPC SERVER debe be un Windows Server cual es un member of un domain o "
+"forest cual es trusted to acceso el DNS namespace"
+
+#: ../../integration_guides/DNS/msdns.rst:179
+msgid ""
+"The RPC SERVER must have the Microsoft Windows feature RSAT-DNS-Server "
+"installed"
+msgstr ""
+"The RPC SERVER debe tienen el Microsoft Windows característica RSAT-DNS-"
+"Server instalado"
+
+#: ../../integration_guides/DNS/msdns.rst:180
+msgid ""
+"If planning to \"USE AGENT FOR RPC\" then the Windows server must have a "
+"|morpheus| Windows Agent installed and this agent must report into the "
+"|morpheus| environment where the DNS Integration is being added or "
+"configured. Ideally, |morpheus| will have deployed the RPC SERVER as an "
+"Instance"
+msgstr ""
+"If planning to \"USE AGENT FOR RPC\" entonces el Windows server debe tienen "
+"un |morpheus| Windows Agent instalado y este agent debe report en el "
+"|morpheus| entorno donde el DNS Integration es being agregado o configurado."
+" Ideally, |morpheus| será tienen deployed el RPC SERVER as un Instance"
+
+#: ../../integration_guides/DNS/msdns.rst:181
+msgid ""
+"If not planning to \"USE AGENT FOR RPC\" then the RPC server must have WinRM"
+" configured and must be reachable over WinRM from the |morpheus| appliance"
+msgstr ""
+"If no planning to \"USE AGENT FOR RPC\" entonces el RPC server debe tienen "
+"WinRM configurado y debe be reachable over WinRM desde el |morpheus| "
+"appliance"
+
+#: ../../integration_guides/DNS/msdns.rst:182
+msgid ""
+"When using an intermediate server to access DNS Services, the computer "
+"account of the RPC SERVER must be configured for delegation ``Trusted for "
+"Delegation to any service (Kerberos only)``. Use Active Directory Users and "
+"Computers, locate the computer account for RPC SERVER. Click properties and "
+"select the Delegation tab and choose the option ``Trust this computer for "
+"delegation to any service (Kerberos only)``"
+msgstr ""
+"When using un intermediate server to acceso DNS Services, el computer cuenta"
+" of el RPC SERVER debe ser configurado para delegation ``Trusted for "
+"Delegation to any service (Kerberos only)``. Use Active Directory Users y "
+"Computers, locate el computer cuenta para RPC SERVER. Click propiedades y "
+"select el Delegation pestaña y choose el opción ``Trust this computer for "
+"delegation to any service (Kerberos only)``"
+
+#: ../../integration_guides/DNS/msdns.rst:185
+msgid "Using the plugin test Service page"
+msgstr "Usar plugin test Service page"
+
+#: ../../integration_guides/DNS/msdns.rst:187
+msgid ""
+"Recent versions of this integration have the ability to run a connection "
+"test via the |morpheus| appliance. Users must have full access to the "
+"Integrations permission to test a Microsoft DNS plugin connection. For "
+"example, to test connectivity to an integration with id value of 5, browse "
+"to the following URL in |morpheus|: "
+"``https://my.morpheus.appliance/plugin/msdns/service?integrationId=5``"
+msgstr ""
+"Recent versions of esta integración tienen el ability to run un conexión "
+"test via el |morpheus| appliance. Users debe tienen full acceso to el "
+"Integrations permiso to test un Microsoft DNS plugin conexión. Por ejemplo, "
+"to test connectivity to una integración con id valor of 5, browse to el "
+"following URL in |morpheus|: "
+"``https://my.morpheus.appliance/plugin/msdns/service?integrationId=5``"
+
+#: ../../integration_guides/DNS/msdns.rst:189
+msgid ""
+"The plugin will run a series of tests using details from the integration "
+"dialog."
+msgstr ""
+"The plugin será run un series of tests using detalles desde la integración "
+"dialog."
+
+#: ../../integration_guides/DNS/msdns.rst:191
+msgid ""
+"Tests can be run even if the integration ENABLED checkbox is unmarked "
+"allowing troubleshooting with the integration offline."
+msgstr ""
+"Tests puede be run incluso if la integración ENABLED casilla de verificación"
+" es unmarked allowing troubleshooting con la integración offline."
+
+#: ../../integration_guides/DNS/msdns.rst:193
+msgid "The results are output in the browser in JSON."
+msgstr "The resultados son salida in el browser in JSON."
+
+#: ../../integration_guides/DNS/msdns.rst:195
+msgid ""
+"In the example below, inspect the ``serviceProfile``. Here, the ``rpcType`` "
+"is \"agent\" so \"USE AGENT FOR RPC\" is checked and the ``serviceType`` is "
+"\"wmi\". The ``rpcSession`` and ``serviceSession`` show the connection "
+"details, logon types and group membership for the RPC and service sessions. "
+"The ``dnsServer`` section shows the FQDN and version of the DNS server and "
+"if populated indicates a successful test (status = 0)."
+msgstr ""
+"En el ejemplo a continuación, inspect el ``serviceProfile``. Here, el "
+"``rpcType`` es \"agent\" so \"USE AGENT FOR RPC\" es checked y el "
+"``serviceType`` es \"wmi\". The ``rpcSession`` y ``serviceSession`` show el "
+"conexión detalles, logon types y group membership para el RPC y servicio "
+"sessions. The ``dnsServer`` sección shows el FQDN y versión of el DNS server"
+" y if populated indicates un exitoso test (estado = 0)."
+
+#: ../../integration_guides/DNS/msdns.rst:197
+msgid ""
+"If the test is unsuccessful, a status code other than 0 is returned and any "
+"error will be listed in the \"Errors\" section"
+msgstr ""
+"If el test es unsuccessful, un estado code otro than 0 es returned y "
+"cualquier error será be listed in el \"Errors\" sección"
+
+#: ../../integration_guides/DNS/msdns.rst:199
+#, python-brace-format
+msgid ""
+"Morpheus Microsoft DNS Integration Service Profile\n"
+"Discovered service profile for Microsoft DNS integration : 5\n"
+"Rpc Connection Status true\n"
+"\n"
+"Successful rpc response from spie-mo-w-3011 via agent: Command completed successfully\n"
+"\n"
+"Errors\n"
+"\n"
+"{\n"
+"\n"
+"}\n"
+"\n"
+"Rpc Output\n"
+"\n"
+"{\n"
+"    \"status\": 0,\n"
+"    \"cmdOut\": {\n"
+"        \"serviceProfile\": {\n"
+"            \"rpcHost\": \"SPIE-MO-W-3011\",\n"
+"            \"rpcType\": \"agent\",\n"
+"            \"serviceHost\": \"ip-c61302.myad.net\",\n"
+"            \"serviceType\": \"wmi\",\n"
+"            \"useCachedCredential\": false\n"
+"        },\n"
+"        \"dnsServer\": {\n"
+"            \"computerName\": \"IP-C61302.myad.net\",\n"
+"            \"version\": \"10.0.17763\"\n"
+"        },\n"
+"        \"rpcSession\": {\n"
+"            \"userId\": \"myad\\\\spsvcdns\",\n"
+"            \"computerName\": \"SPIE-MO-W-3011\",\n"
+"            \"authenticationType\": \"Kerberos\",\n"
+"            \"impersonation\": \"None\",\n"
+"            \"isAdmin\": true,\n"
+"            \"localProfile\": \"C:\\\\Users\\\\spsvcdns\\\\AppData\\\\Local\",\n"
+"            \"tokenGroups\": [\n"
+"                \"myad\\\\Domain Users\",\n"
+"                \"Everyone\",\n"
+"                \"BUILTIN\\\\Users\",\n"
+"                \"BUILTIN\\\\Administrators\",\n"
+"                \"NT AUTHORITY\\\\SERVICE\",\n"
+"                \"CONSOLE LOGON\",\n"
+"                \"NT AUTHORITY\\\\Authenticated Users\",\n"
+"                \"NT AUTHORITY\\\\This Organization\",\n"
+"                \"LOCAL\",\n"
+"                \"Authentication authority asserted identity\",\n"
+"                \"myad\\\\AWS Delegated Domain Name System Administrators\",\n"
+"                \"myad\\\\AWS Delegated Server Administrators\",\n"
+"                \"myad\\\\AWS Delegated Add Workstations To Domain Users\",\n"
+"                \"myad\\\\DnsAdmins\",\n"
+"                \"myad\\\\AWS Delegated Kerberos Delegation Administrators\"\n"
+"            ],\n"
+"            \"isSystem\": false,\n"
+"            \"isService\": true,\n"
+"            \"isNetwork\": false,\n"
+"            \"isBatch\": false,\n"
+"            \"isInteractive\": false,\n"
+"            \"isNtlmToken\": false\n"
+"        },\n"
+"        \"serviceSession\": {\n"
+"            \"userId\": \"myad\\\\spsvcdns\",\n"
+"            \"computerName\": \"SPIE-MO-W-3011\",\n"
+"            \"authenticationType\": \"Kerberos\",\n"
+"            \"impersonation\": \"None\",\n"
+"            \"isAdmin\": true,\n"
+"            \"localProfile\": \"C:\\\\Users\\\\spsvcdns\\\\AppData\\\\Local\",\n"
+"            \"tokenGroups\": [\n"
+"                \"myad\\\\Domain Users\",\n"
+"                \"Everyone\",\n"
+"                \"BUILTIN\\\\Users\",\n"
+"                \"BUILTIN\\\\Administrators\",\n"
+"                \"NT AUTHORITY\\\\SERVICE\",\n"
+"                \"CONSOLE LOGON\",\n"
+"                \"NT AUTHORITY\\\\Authenticated Users\",\n"
+"                \"NT AUTHORITY\\\\This Organization\",\n"
+"                \"LOCAL\",\n"
+"                \"Authentication authority asserted identity\",\n"
+"                \"myad\\\\AWS Delegated Domain Name System Administrators\",\n"
+"                \"myad\\\\AWS Delegated Server Administrators\",\n"
+"                \"myad\\\\AWS Delegated Add Workstations To Domain Users\",\n"
+"                \"myad\\\\DnsAdmins\",\n"
+"                \"myad\\\\AWS Delegated Kerberos Delegation Administrators\"\n"
+"            ],\n"
+"            \"isSystem\": false,\n"
+"            \"isService\": true,\n"
+"            \"isNetwork\": false,\n"
+"            \"isBatch\": false,\n"
+"            \"isInteractive\": false,\n"
+"            \"isNtlmToken\": false\n"
+"        },\n"
+"        \"domainSOAServers\": {\n"
+"            \"nameToQuery\": \"ip-c61302.myad.net\",\n"
+"            \"fqdn\": \"ip-c61302.myad.net\",\n"
+"            \"dcList\": [\n"
+"                {\n"
+"                    \"zone\": \"myad.net\",\n"
+"                    \"dnsServer\": \"ip-c61301.myad.net\"\n"
+"                },\n"
+"                {\n"
+"                    \"zone\": \"myad.net\",\n"
+"                    \"dnsServer\": \"ip-c61302.myad.net\"\n"
+"                }\n"
+"            ]\n"
+"        }\n"
+"    },\n"
+"    \"errOut\": null\n"
+"}"
+msgstr ""
+"Morpheus Microsoft DNS Integration Service Profile\n"
+"Discovered servicio profile para Microsoft DNS integration : 5\n"
+"Rpc Connection Status true\n"
+"\n"
+"Successful rpc respuesta desde spie-mo-w-3011 via agent: Command completed successfully\n"
+"\n"
+"Errors\n"
+"\n"
+"{\n"
+"\n"
+"}\n"
+"\n"
+"Rpc Output\n"
+"\n"
+"{\n"
+"    \"estado\": 0,\n"
+"    \"cmdOut\": {\n"
+"        \"serviceProfile\": {\n"
+"            \"rpcHost\": \"SPIE-MO-W-3011\",\n"
+"            \"rpcType\": \"agent\",\n"
+"            \"serviceHost\": \"ip-c61302.myad.net\",\n"
+"            \"serviceType\": \"wmi\",\n"
+"            \"useCachedCredential\": false\n"
+"        },\n"
+"        \"dnsServer\": {\n"
+"            \"computerName\": \"IP-C61302.myad.net\",\n"
+"            \"versión\": \"10.0.17763\"\n"
+"        },\n"
+"        \"rpcSession\": {\n"
+"            \"userId\": \"myad\\\\spsvcdns\",\n"
+"            \"computerName\": \"SPIE-MO-W-3011\",\n"
+"            \"authenticationType\": \"Kerberos\",\n"
+"            \"impersonation\": \"None\",\n"
+"            \"isAdmin\": true,\n"
+"            \"localProfile\": \"C:\\\\Users\\\\spsvcdns\\\\AppData\\\\Local\",\n"
+"            \"tokenGroups\": [\n"
+"                \"myad\\\\Domain Users\",\n"
+"                \"Everyone\",\n"
+"                \"BUILTIN\\\\Users\",\n"
+"                \"BUILTIN\\\\Administrators\",\n"
+"                \"NT AUTHORITY\\\\SERVICE\",\n"
+"                \"CONSOLE LOGON\",\n"
+"                \"NT AUTHORITY\\\\Authenticated Users\",\n"
+"                \"NT AUTHORITY\\\\This Organization\",\n"
+"                \"LOCAL\",\n"
+"                \"Authentication authority asserted identity\",\n"
+"                \"myad\\\\AWS Delegated Domain Name System Administrators\",\n"
+"                \"myad\\\\AWS Delegated Server Administrators\",\n"
+"                \"myad\\\\AWS Delegated Add Workstations To Domain Users\",\n"
+"                \"myad\\\\DnsAdmins\",\n"
+"                \"myad\\\\AWS Delegated Kerberos Delegation Administrators\"\n"
+"            ],\n"
+"            \"isSystem\": false,\n"
+"            \"isService\": true,\n"
+"            \"isNetwork\": false,\n"
+"            \"isBatch\": false,\n"
+"            \"isInteractive\": false,\n"
+"            \"isNtlmToken\": false\n"
+"        },\n"
+"        \"serviceSession\": {\n"
+"            \"userId\": \"myad\\\\spsvcdns\",\n"
+"            \"computerName\": \"SPIE-MO-W-3011\",\n"
+"            \"authenticationType\": \"Kerberos\",\n"
+"            \"impersonation\": \"None\",\n"
+"            \"isAdmin\": true,\n"
+"            \"localProfile\": \"C:\\\\Users\\\\spsvcdns\\\\AppData\\\\Local\",\n"
+"            \"tokenGroups\": [\n"
+"                \"myad\\\\Domain Users\",\n"
+"                \"Everyone\",\n"
+"                \"BUILTIN\\\\Users\",\n"
+"                \"BUILTIN\\\\Administrators\",\n"
+"                \"NT AUTHORITY\\\\SERVICE\",\n"
+"                \"CONSOLE LOGON\",\n"
+"                \"NT AUTHORITY\\\\Authenticated Users\",\n"
+"                \"NT AUTHORITY\\\\This Organization\",\n"
+"                \"LOCAL\",\n"
+"                \"Authentication authority asserted identity\",\n"
+"                \"myad\\\\AWS Delegated Domain Name System Administrators\",\n"
+"                \"myad\\\\AWS Delegated Server Administrators\",\n"
+"                \"myad\\\\AWS Delegated Add Workstations To Domain Users\",\n"
+"                \"myad\\\\DnsAdmins\",\n"
+"                \"myad\\\\AWS Delegated Kerberos Delegation Administrators\"\n"
+"            ],\n"
+"            \"isSystem\": false,\n"
+"            \"isService\": true,\n"
+"            \"isNetwork\": false,\n"
+"            \"isBatch\": false,\n"
+"            \"isInteractive\": false,\n"
+"            \"isNtlmToken\": false\n"
+"        },\n"
+"        \"domainSOAServers\": {\n"
+"            \"nameToQuery\": \"ip-c61302.myad.net\",\n"
+"            \"fqdn\": \"ip-c61302.myad.net\",\n"
+"            \"dcList\": [\n"
+"                {\n"
+"                    \"zone\": \"myad.net\",\n"
+"                    \"dnsServer\": \"ip-c61301.myad.net\"\n"
+"                },\n"
+"                {\n"
+"                    \"zone\": \"myad.net\",\n"
+"                    \"dnsServer\": \"ip-c61302.myad.net\"\n"
+"                }\n"
+"            ]\n"
+"        }\n"
+"    },\n"
+"    \"errOut\": null\n"
+"}"
+
+#: ../../integration_guides/DNS/msdns.rst:310
+msgid "DNS Record validation and Error Handling"
+msgstr "DNS Record validation y Error Handling"
+
+#: ../../integration_guides/DNS/msdns.rst:312
+msgid ""
+"DNS records are now fully validated before they are created. Only record "
+"types A, AAAA, CNAME and PTR are currently supported"
+msgstr ""
+"DNS registros son ahora fully validated antes de they son creado. Only "
+"registro types A, AAAA, CNAME y PTR son actualmente compatible"
+
+#: ../../integration_guides/DNS/msdns.rst:313
+msgid ""
+"Adding a DNS Record which already exists (ie FQDN and IP address match an "
+"existing record in DNS) would normally return an error (code 9711), this is "
+"masked to a success to prevent |morpheus| aborting the provision"
+msgstr ""
+"Agregar DNS Record which already exists (ie FQDN and IP address match an "
+"existing record in DNS) would normally return an error (code 9711), this is "
+"masked to a success to prevent |morpheus| aborting the provision"
+
+#: ../../integration_guides/DNS/msdns.rst:314
+msgid ""
+"Removing a |morpheus| DNS Record that does not exist in DNS (error 9714) is "
+"also masked to success to have |morpheus| delete its copy"
+msgstr ""
+"Eliminar |morpheus| DNS Record that does not exist in DNS (error 9714) is "
+"also masked to success to have |morpheus| delete its copy"
+
+#: ../../integration_guides/DNS/msdns.rst:315
+msgid ""
+"If a fwd record is created but the PTR record fails (due to missing PTR zone"
+" error 9715), this is also masked to success to prevent |morpheus| aborting "
+"the Provision"
+msgstr ""
+"If un fwd registro es creado pero el PTR registro fails (due to missing PTR "
+"zone error 9715), este es también masked to success to prevent |morpheus| "
+"aborting el Provision"
+
+#: ../../integration_guides/DNS/msdns.rst:316
+msgid "All errors are logged to the |morpheus| health logs (|AdmHeaMorLog|)."
+msgstr "All errores son logged to el |morpheus| health logs (|AdmHeaMorLog|)."
+
+#: ../../integration_guides/DNS/msdns.rst:319
+msgid "AWS Directory Services Support"
+msgstr "AWS Directory Services Support"
+
+#: ../../integration_guides/DNS/msdns.rst:321
+msgid "Support is included for AWS Active Directory service."
+msgstr "Support es incluido para AWS Active Directory servicio."
+
+#: ../../integration_guides/DNS/msdns.rst:323
+msgid ""
+"Access is only possible via a correctly configured intermediate server (RPC "
+"SERVER) hosted in AWS and having the DNS Management Tools installed"
+msgstr ""
+"Access es solo possible via un correctly configurado intermediate server "
+"(RPC SERVER) hosted in AWS y having el DNS Management Tools instalado"
+
+#: ../../integration_guides/DNS/msdns.rst:324
+msgid ""
+"The DNS SERVER must be the fully qualified name of one of the AWS Domain "
+"controllers"
+msgstr ""
+"The DNS SERVER debe be el fully qualified nombre of one of el AWS Domain "
+"controllers"
+
+#: ../../integration_guides/DNS/msdns.rst:325
+msgid ""
+"The Service Account should be a member of AWS Delegated Domain Name System "
+"Administrators, AWS Delegated Kerberos Delegation Administrators and AWS "
+"Delegated Server Administrators (for access to RPC SERVER)"
+msgstr ""
+"The Service Account debería be un member of AWS Delegated Domain Name System"
+" Administrators, AWS Delegated Kerberos Delegation Administrators y AWS "
+"Delegated Server Administrators (para acceso to RPC SERVER)"
+
+#: ../../integration_guides/DNS/msdns.rst:326
+msgid ""
+"The RPC SERVER computer object should be trusted for delegation for all "
+"Kerberos Services on the AWS Directory Service domain controllers. This can "
+"be performed using AD Users and Computers to modify the properties of the "
+"RPC SERVER Computer object. Right click the computer object, select "
+"properties and open the Delegation tab. Select the Radio button ``Trust this"
+" computer for delegation to any service (Kerberos Only)``. Click OK to Save"
+msgstr ""
+"The RPC SERVER computer objeto debería be trusted para delegation para todos"
+" Kerberos Services on el AWS Directory Service domain controllers. This "
+"puede be performed using AD Users y Computers to modify el propiedades of el"
+" RPC SERVER Computer objeto. Right click el computer objeto, select "
+"propiedades y open el Delegation pestaña. Seleccione el Radio botón ``Trust "
+"this computer for delegation to any service (Kerberos Only)``. Click OK to "
+"Save"
+
+#: ../../integration_guides/DNS/msdns.rst:328
+msgid ""
+"It is possible to finely tune the delegation so that the RPC SERVER computer"
+" object can only delegate to specific services if this is required."
+msgstr ""
+"It es possible to finely tune el delegation so que el RPC SERVER computer "
+"objeto puede solo delegate to específico servicios if este es requerido."

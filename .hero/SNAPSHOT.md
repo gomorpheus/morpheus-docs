@@ -1,6 +1,6 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-06-04T18:44:23Z · projected from 51 source nodes_
+_Last refreshed: 2026-07-02T14:00:39Z · projected from 51 source nodes_
 
 ## Surfaces
 
@@ -28,7 +28,7 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Recently completed (last 14 days)
 
-- **(unassigned)** — sprint6-certs-dns-provisioning, sprint5-operations-costing, sprint4-k8s-vdi, sprint3-storage-lb-infra, sprint2-networking-security, sprint1-ai-mcp-docs, migrations-docs-9, docs-troubleshooting, docs-tools, docs-security, docs-release-notes, docs-provisioning
+_Nothing recent._
 
 ## Next up across surfaces
 
@@ -40,6 +40,7 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Open risks & blockers
 
+- **Stale-in-flight (1):** `hvm-13-cluster-docs` (27d).
 - **Unassigned specs (44) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health

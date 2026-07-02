@@ -1,0 +1,593 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:2
+msgid "Nutanix Prism Central"
+msgstr "Nutanix Prism Central"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:4
+msgid ""
+"|morpheus| offers Nutanix Prism Central Cloud integration support through "
+"and official plugin. Adding the plugin to a |morpheus| appliance adds a new "
+"Cloud integration type for Nutanix Prism Central. Download the plugin from "
+"the |morpheus| `Plugin Exchange <https://share.morpheusdata.com/morpheus-"
+"nutanix-prism/about>`_ and upload it to the appliance. Plugins are uploaded "
+"at |AdmIntPlu|. See |morpheus| `plugin documentation "
+"<https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#plugins>`_"
+" for more details on adding plugins."
+msgstr ""
+"|morpheus| offers Nutanix Prism Central Cloud integration support a través "
+"de y official plugin. Adding el plugin to un |morpheus| appliance adds un "
+"nuevo Cloud integration tipo para Nutanix Prism Central. Download el plugin "
+"desde el |morpheus| `Plugin Exchange "
+"<https://share.morpheusdata.com/morpheus-nutanix-prism/about>`_ y upload it "
+"to el appliance. Plugins son uploaded at |AdmIntPlu|. See |morpheus| `plugin"
+" documentation "
+"<https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#plugins>`_"
+" para más detalles on adding plugins."
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:7
+msgid "Features"
+msgstr "Características"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:9
+msgid "Virtual Machine Provisioning"
+msgstr "Virtual Machine Provisioning"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:10
+msgid "Backups / Snapshots"
+msgstr "Backups / Snapshots"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:11
+msgid "Automatic Cloud sync"
+msgstr "Automatic Cloud sync"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:12
+msgid "Project scoping"
+msgstr "Project scoping"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:13
+msgid "Brownfield VM management"
+msgstr "Brownfield VM management"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:14
+msgid "Clone VMs to images"
+msgstr "Clone VMs to images"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:15
+msgid "Host monitoring"
+msgstr "Host monitoring"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:16
+msgid "Datastore management"
+msgstr "Datastore management"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:17
+msgid "Hypervisor Remote Console"
+msgstr "Hypervisor Remote Console"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:18
+msgid "Lifecycle Management and Resize"
+msgstr "Lifecycle Management y Resize"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:21
+msgid "Creating a Minimal Service Account"
+msgstr "Crear Minimal Service Account"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:23
+msgid ""
+"Integrating Nutanix Prism Central with |morpheus| requires the use of a "
+"service account which has sufficient privileges to work with all Nutanix "
+"contructs that |morpheus| touches. If possible, it's recommended to use a "
+"service account with full administrator rights. This is because there is "
+"currently a bug on the Nutanix side that prevents limited roles from working"
+" with backups and snapshots. If you choose to use the minimal role "
+"permissions outlined in this section, those features will not work until the"
+" bug is resolved."
+msgstr ""
+"Integrating Nutanix Prism Central con |morpheus| requires el use of un "
+"servicio cuenta cual tiene sufficient privileges to work con todos Nutanix "
+"contructs que |morpheus| touches. If possible, it's recomendado to use un "
+"servicio cuenta con full administrator rights. This es porque allí es "
+"actualmente un bug on el Nutanix side que prevents limited roles desde "
+"working con backups y snapshots. If you choose to use el minimal role "
+"permisos outlined en esta sección, esos características no work hasta el bug"
+" es resolved."
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:25
+msgid "**Recommended Minimal Service Account**"
+msgstr "**Recommended Minimal Service Account**"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:27
+msgid "The user belongs to the built-in \"Prism Viewer\" role"
+msgstr "El usuario belongs to el built-in \"Prism Viewer\" role"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:28
+msgid ""
+"The user must be added to any Projects that need to be surfaced to the "
+"integration"
+msgstr ""
+"El usuario debe be agregado to cualquier Projects que need to be surfaced to"
+" la integración"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:29
+msgid ""
+"The user must belong to a custom role with the permissions listed in the "
+"expandable section below"
+msgstr ""
+"El usuario debe belong to un personalizado role con el permisos listed in el"
+" expandable sección a continuación"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:33
+msgid "Access Console VM"
+msgstr "Access Console VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:34
+msgid "Allow Cross Cluster VM Migration"
+msgstr "Allow Cross Cluster VM Migration"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:35
+msgid "Allow VM Power Off"
+msgstr "Allow VM Power Off"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:36
+msgid "Allow VM Power On"
+msgstr "Allow VM Power On"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:37
+msgid "Allow VM Reboot"
+msgstr "Allow VM Reboot"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:38
+msgid "Allow VM Reset"
+msgstr "Allow VM Reset"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:39
+msgid "Allow VM Volume Group Connection"
+msgstr "Allow VM Volume Group Connection"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:40
+msgid "Clone VM"
+msgstr "Clone VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:41
+msgid "Copy Image Remote"
+msgstr "Copy Image Remote"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:42
+msgid "Create External Subnet"
+msgstr "Create External Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:43
+msgid "Create Image"
+msgstr "Create Image"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:44
+msgid "Create Layer2 Stretch"
+msgstr "Create Layer2 Stretch"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:45
+msgid "Create Overlay Subnet"
+msgstr "Create Overlay Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:46
+msgid "Create Subnet"
+msgstr "Create Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:47
+msgid "Create VM"
+msgstr "Create VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:48
+msgid "Delete External Subnet"
+msgstr "Delete External Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:49
+msgid "Delete Image"
+msgstr "Delete Image"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:50
+msgid "Delete Layer2 Stretch"
+msgstr "Delete Layer2 Stretch"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:51
+msgid "Delete Subnet"
+msgstr "Delete Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:52
+msgid "Delete VM"
+msgstr "Delete VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:53
+msgid "Delete VM Recovery Point"
+msgstr "Delete VM Recovery Point"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:54
+msgid "Deploy VM Templates"
+msgstr "Deploy VM Templates"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:55
+msgid "Expand VM Disk Size"
+msgstr "Expand VM Disk Size"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:56
+msgid "Export VM"
+msgstr "Export VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:57
+msgid "Mount VM CDROM"
+msgstr "Mount VM CDROM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:58
+msgid "Restore VM Recovery Point"
+msgstr "Restore VM Recovery Point"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:59
+msgid "Revert VM"
+msgstr "Revert VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:60
+msgid "Snapshot VM"
+msgstr "Snapshot VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:61
+msgid "Unmount VM CDROM"
+msgstr "Unmount VM CDROM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:62
+msgid "Update Cluster"
+msgstr "Update Cluster"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:63
+msgid "Update Container Disks"
+msgstr "Update Container Disks"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:64
+msgid "Update External Subnet"
+msgstr "Update External Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:65
+msgid "Update Image"
+msgstr "Update Image"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:66
+msgid "Update Layer2 Stretch"
+msgstr "Update Layer2 Stretch"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:67
+msgid "Update Overlay Subnet"
+msgstr "Update Overlay Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:68
+msgid "Update Subnet"
+msgstr "Update Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:69
+msgid "Update VM"
+msgstr "Update VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:70
+msgid "Update VM Boot Config"
+msgstr "Update VM Boot Config"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:71
+msgid "Update VM Categories"
+msgstr "Update VM Categories"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:72
+msgid "Update VM CPU"
+msgstr "Update VM CPU"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:73
+msgid "Update VM Description"
+msgstr "Update VM Description"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:74
+msgid "Update VM Disk List"
+msgstr "Update VM Disk List"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:75
+msgid "Update VM GPU List"
+msgstr "Update VM GPU List"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:76
+msgid "Update VM Memory"
+msgstr "Update VM Memory"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:77
+msgid "Update VM Memory Overcommit"
+msgstr "Update VM Memory Overcommit"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:78
+msgid "Update VM Name"
+msgstr "Update VM Name"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:79
+msgid "Update VM NGT Config"
+msgstr "Update VM NGT Config"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:80
+msgid "Update VM NIC List"
+msgstr "Update VM NIC List"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:81
+msgid "Update VM Owner"
+msgstr "Update VM Owner"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:82
+msgid "Update VM Power State"
+msgstr "Update VM Power State"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:83
+msgid "Update VM Power State Mechanism"
+msgstr "Update VM Power State Mechanism"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:84
+msgid "Update VM Project"
+msgstr "Update VM Project"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:85
+msgid "Update VM Recovery Point"
+msgstr "Update VM Recovery Point"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:86
+msgid "View Availability Zone"
+msgstr "View Availability Zone"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:87
+msgid "View Category"
+msgstr "View Category"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:88
+msgid "View Cluster"
+msgstr "View Cluster"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:89
+msgid "View Cluster Networking Capabilities"
+msgstr "View Cluster Networking Capabilities"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:90
+msgid "View Container"
+msgstr "View Container"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:91
+msgid "View Container Datastore"
+msgstr "View Container Datastore"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:92
+msgid "View Container Stats"
+msgstr "View Container Stats"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:93
+msgid "View Dashboard"
+msgstr "View Dashboard"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:94
+msgid "View External Subnet"
+msgstr "View External Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:95
+msgid "View Host"
+msgstr "View Host"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:96
+msgid "View Image"
+msgstr "View Image"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:97
+msgid "View Layer2 Stretch"
+msgstr "View Layer2 Stretch"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:98
+msgid "View Layer2 Stretch Related Entities"
+msgstr "View Layer2 Stretch Related Entities"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:99
+msgid "View Marketplace Item"
+msgstr "View Marketplace Item"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:100
+msgid "View Name Category"
+msgstr "View Name Category"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:101
+msgid "View Network Gateway"
+msgstr "View Network Gateway"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:102
+msgid "View Overlay Subnet"
+msgstr "View Overlay Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:103
+msgid "View Project"
+msgstr "View Project"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:104
+msgid "View Storage Pool"
+msgstr "View Storage Pool"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:105
+msgid "View Subnet"
+msgstr "View Subnet"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:106
+msgid "View Value Category"
+msgstr "View Value Category"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:107
+msgid "View vCenter Cluster"
+msgstr "View vCenter Cluster"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:108
+msgid "View vCenter Container"
+msgstr "View vCenter Container"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:109
+msgid "View vCenter Node"
+msgstr "View vCenter Node"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:110
+msgid "View vCenter VM"
+msgstr "View vCenter VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:111
+msgid "View Virtual Switch"
+msgstr "View Virtual Switch"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:112
+msgid "View VM"
+msgstr "View VM"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:113
+msgid "View VM Host Affinity Policy"
+msgstr "View VM Host Affinity Policy"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:114
+msgid "View VM Recovery Point"
+msgstr "View VM Recovery Point"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:115
+msgid "View VM Templates"
+msgstr "View VM Templates"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:116
+msgid "View VPC"
+msgstr "View VPC"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:117
+msgid "View Vpn Connection"
+msgstr "View Vpn Connection"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:121
+msgid ""
+"Due to a current Nutanix bug, non-administrator service accounts will not be"
+" able to utilize backup or snapshot features via |morpheus|. Users who need "
+"these features should integrate using an administrator service account "
+"rather than the minimal user described here."
+msgstr ""
+"Due to un actual Nutanix bug, non-administrator servicio accounts no be able"
+" to utilize backup o snapshot características via |morpheus|. Users quien "
+"need estos características debería integrate using un administrator servicio"
+" cuenta rather than el minimal user described aquí."
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:124
+msgid "Adding a Nutanix Prism Central Cloud"
+msgstr "Agregar Nutanix Prism Central Cloud"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:126
+msgid ""
+"Adding Nutanix Prism Clouds to |morpheus| requires little more than the API "
+"URL and valid username and password credentials for a user with sufficient "
+"access to the resources that should be utilized by |morpheus|. You'll also "
+"need to ensure |morpheus| can reach the NPC appliance at its API URL."
+msgstr ""
+"Agregar Nutanix Prism Clouds to |morpheus| requires little more than the API"
+" URL and valid username and password credentials for a user with sufficient "
+"access to the resources that should be utilized by |morpheus|. You'll also "
+"need to ensure |morpheus| can reach the NPC appliance at its API URL."
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:128
+msgid ""
+"Navigate to |InfClo| and click :guilabel:`+ ADD`. As long as the Nutanix "
+"Prism Central plugin has been added to the appliance and this Cloud type "
+"isn't disabled in global settings (|AdmSet|), NUTANIX PRISM CENTRAL should "
+"be selectable as a Cloud type to add. Select it and click :guilabel:`NEXT`."
+msgstr ""
+"Navegue un |InfClo| y click :guilabel:`+ AGREGAR`. As long as el Nutanix "
+"Prism Central plugin tiene sido agregado to el appliance y este Cloud tipo "
+"isn't deshabilitado in global configuración (|AdmSet|), NUTANIX PRISM "
+"CENTRAL debería be selectable as un Cloud tipo to add. Select it y click "
+":guilabel:`SIGUIENTE`."
+
+msgid ".. image:: images/clouds/npc/pickType.png"
+msgstr ".. image:: images/clouds/npc/pickType.png"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:133
+msgid ""
+"At minimum, it's required to configure the following to add the new cloud:"
+msgstr ""
+"At mínimo, it's requerido to configure el following to add el nuevo cloud:"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:135
+msgid "**NAME:** A friendly name for the new NPC Cloud in |morpheus|"
+msgstr "**NAME:** A friendly nombre para el nuevo NPC Cloud in |morpheus|"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:136
+msgid "**API URL:** API access URL (ex. https://xx.xx.xx.xx:9440)"
+msgstr "**API URL:** API acceso URL (ex. https://xx.xx.xx.xx:9440)"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:137
+msgid ""
+"**USERNAME:** Username for a Nutanix Prism Central service account (see the "
+"previous section for recommendations on service account user role "
+"configuration)"
+msgstr ""
+"**USERNAME:** Username para un Nutanix Prism Central servicio cuenta (see el"
+" anterior sección para recommendations on servicio cuenta user role "
+"configuración)"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:138
+msgid "**PASSWORD:** The password for the service account"
+msgstr "**PASSWORD:** The contraseña para el servicio cuenta"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:139
+msgid ""
+"**VMM API VERSION:** Allows the user to select which VMM API versions their "
+"environment will support as |morpheus| cannot auto-detect this and endpoint "
+"support differs between versions"
+msgstr ""
+"**VMM API VERSION:** Allows el usuario to select cual VMM API versions their"
+" entorno será support as |morpheus| no puede auto-detect este y endpoint "
+"support differs entre versions"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:141
+msgid ""
+"You'll know the API URL and credentials have been entered correctly when the"
+" PROJECTS dropdown becomes populated. You may choose to scope Nutanix Prism "
+"Central Clouds to a specific project or scope the Cloud to all Projects. "
+"Click :guilabel:`NEXT` and select a Group for the Cloud or create a new "
+"Group. Click :guilabel:`NEXT` to reach the review screen and then click "
+":guilabel:`COMPLETE`."
+msgstr ""
+"You'll know el API URL y credentials tienen sido entered correctly cuando el"
+" PROJECTS desplegable becomes populated. You puede choose to scope Nutanix "
+"Prism Central Clouds to un específico project o scope el Cloud to todos "
+"Projects. Click :guilabel:`SIGUIENTE` y select un Group para el Cloud o "
+"create un nuevo Group. Click :guilabel:`SIGUIENTE` to reach el review "
+"pantalla y entonces click :guilabel:`COMPLETE`."
+
+msgid ".. image:: images/clouds/npc/configureCloud1.png"
+msgstr ".. image:: images/clouds/npc/configureCloud1.png"
+
+#: ../../integration_guides/Clouds/prismCentral/prismCentral.rst:146
+msgid ""
+"After completing the wizard, |morpheus| will immediately begin to add the "
+"new Cloud and perform the first Cloud sync. Within a short time, existing "
+"workloads will be discovered and onboarded into |morpheus| UI (if you've "
+"chosen to discover existing workloads). The Cloud is now ready to be used as"
+" a provisioning target or for day-two operations."
+msgstr ""
+"After completing el wizard, |morpheus| será immediately begin to add el "
+"nuevo Cloud y perform el primero Cloud sync. Within un short time, existente"
+" workloads será be discovered y onboarded en |morpheus| UI (if you've chosen"
+" to discover existente workloads). The Cloud es ahora ready to be used as un"
+" provisioning destino o para day-two operaciones."

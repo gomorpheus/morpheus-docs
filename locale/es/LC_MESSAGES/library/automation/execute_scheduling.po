@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/automation/execute_scheduling.rst:2
+msgid "Execute Scheduling"
+msgstr "Programación de ejecución"
+
+#: ../../library/automation/execute_scheduling.rst:4
+msgid ""
+"Execute Scheduling creates time schedules for Jobs, including Task, "
+"Workflow and Backup Jobs. Jobs, which are discussed in greater detail in "
+"`another section "
+"<https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#jobs>`_"
+" of |morpheus| docs, combine either a Task or Workflow with an Execute "
+"Schedule to run the selected Task or Workflow at the needed time. Backup "
+"Jobs are a special type of Job configured in the Backups section which "
+"also use Execute Schedules to time backup runs as needed."
+msgstr "La Programación de ejecución crea programaciones de tiempo para Trabajos, incluyendo Trabajos de Tarea, Flujo de trabajo y Backup. Los Trabajos, que se discuten con mayor detalle en `otra sección <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#jobs>`_ de la documentación de |morpheus|, combinan una Tarea o un Flujo de trabajo con una Programación de ejecución para ejecutar la Tarea o el Flujo de trabajo seleccionado en el momento necesario. Los Trabajos de Backup son un tipo especial de Trabajo configurado en la sección de Backups que también utilizan Programaciones de ejecución para programar las ejecuciones de backup según sea necesario."
+
+#: ../../library/automation/execute_scheduling.rst:6
+msgid ""
+"Schedules use CRON expressions, such as ``0 23 * * 2`` equalling "
+"``Executes every week on Tuesday at 23:00``. CRON expressions can easily "
+"be created by clicking the corresponding translation in the create or "
+"edit Execution Schedule modal below the Schedule field and selecting a "
+"new value."
+msgstr "Las programaciones utilizan expresiones CRON, como ``0 23 * * 2`` que equivale a ``Se ejecuta cada semana el martes a las 23:00``. Las expresiones CRON se pueden crear fácilmente haciendo clic en la traducción correspondiente en el modal de crear o editar Programación de ejecución debajo del campo de Programación y seleccionando un nuevo valor."
+
+#: ../../library/automation/execute_scheduling.rst:8
+msgid ""
+"Execute Schedules CRON expressions should not include seconds or years. "
+"The days of the week should be numbered 1-7, beginning with Monday and "
+"ending with Sunday. SUN-SAT notation may also be used. For more on "
+"writing CRON expressions, many guides are hosted on the Internet "
+"including `this one "
+"<https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm>`_."
+" |morpheus| execution schedules support most cron syntax but certain more"
+" complex expressions may fail to evaluate and the execute schedule will "
+"not save. Additionally, some complex expressions may save and work "
+"correctly while the friendly written evaluation below the SCHEDULE field "
+"is not interpreted correctly. This is due to an issue with the underlying"
+" library used to build this feature and cannot easily be resolved at this"
+" time."
+msgstr "Las expresiones CRON de las Programaciones de ejecución no deben incluir segundos ni años. Los días de la semana deben numerarse del 1 al 7, comenzando con el lunes y terminando con el domingo. También se puede usar la notación SUN-SAT. Para más información sobre cómo escribir expresiones CRON, hay muchas guías disponibles en Internet incluyendo `esta <https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm>`_. Las programaciones de ejecución de |morpheus| soportan la mayoría de la sintaxis cron pero ciertas expresiones más complejas pueden fallar al evaluarse y la programación de ejecución no se guardará. Además, algunas expresiones complejas pueden guardarse y funcionar correctamente mientras que la evaluación amigable escrita debajo del campo PROGRAMACIÓN no se interpreta correctamente. Esto se debe a un problema con la biblioteca subyacente utilizada para construir esta funcionalidad y no puede resolverse fácilmente en este momento."
+
+#: ../../library/automation/execute_scheduling.rst:11
+msgid "Create Execution Schedules"
+msgstr "Crear programaciones de ejecución"
+
+#: ../../library/automation/execute_scheduling.rst:16
+msgid "NAME"
+msgstr "NOMBRE"
+
+#: ../../library/automation/execute_scheduling.rst:14
+msgid "Name of the Execution Schedule"
+msgstr "Nombre de la Programación de ejecución"
+
+#: ../../library/automation/execute_scheduling.rst:16
+msgid ""
+"When assigning Execution Schedules, the name value will appear in the "
+"selection drop-down. Using a name that references the time interval is "
+"often helpful"
+msgstr "Al asignar Programaciones de ejecución, el valor del nombre aparecerá en el menú desplegable de selección. Usar un nombre que haga referencia al intervalo de tiempo suele ser útil"
+
+#: ../../library/automation/execute_scheduling.rst:18
+msgid "DESCRIPTION"
+msgstr "DESCRIPCIÓN"
+
+#: ../../library/automation/execute_scheduling.rst:19
+msgid ""
+"Description of the Execution Schedule for reference in the Execution "
+"Schedules list"
+msgstr "Descripción de la Programación de ejecución para referencia en la lista de Programaciones de ejecución"
+
+#: ../../library/automation/execute_scheduling.rst:20
+msgid "VISIBILITY"
+msgstr "VISIBILIDAD"
+
+#: ../../library/automation/execute_scheduling.rst:21
+msgid ""
+"|mastertenant| administrators may share Execute Schedules with Subtenants"
+" by setting the visibility to Public"
+msgstr "Los administradores de |mastertenant| pueden compartir Programaciones de ejecución con Sub-inquilinos estableciendo la visibilidad en Público"
+
+#: ../../library/automation/execute_scheduling.rst:22
+msgid "TIME ZONE"
+msgstr "ZONA HORARIA"
+
+#: ../../library/automation/execute_scheduling.rst:23
+msgid "The time zone for execution"
+msgstr "La zona horaria para la ejecución"
+
+#: ../../library/automation/execute_scheduling.rst:24
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: ../../library/automation/execute_scheduling.rst:25
+msgid ""
+"Check to enable the schedule. Uncheck to disable all associated "
+"executions and remove the schedule as an option for Jobs in the future"
+msgstr "Marque para habilitar la programación. Desmarque para deshabilitar todas las ejecuciones asociadas y eliminar la programación como opción para Trabajos en el futuro"
+
+#: ../../library/automation/execute_scheduling.rst:26
+msgid "SCHEDULE"
+msgstr "PROGRAMACIÓN"
+
+#: ../../library/automation/execute_scheduling.rst:27
+msgid ""
+"Enter CRON expression for the Execution Schedule, for example ``0 0 * * "
+"*`` equals ``Every day at 00:00``"
+msgstr "Ingrese la expresión CRON para la Programación de ejecución, por ejemplo ``0 0 * * *`` equivale a ``Todos los días a las 00:00``"
+
+#: ../../library/automation/execute_scheduling.rst:28
+msgid "SCHEDULE TRANSLATION"
+msgstr "TRADUCCIÓN DE PROGRAMACIÓN"
+
+#: ../../library/automation/execute_scheduling.rst:29
+msgid ""
+"The entered CRON schedule is translated below the SCHEDULE field. "
+"Highlighted values can be updated by selecting the value, and relevant "
+"options will be presented. The CRON expression will automatically be "
+"updated"
+msgstr "La programación CRON ingresada se traduce debajo del campo PROGRAMACIÓN. Los valores resaltados se pueden actualizar seleccionando el valor, y se presentarán las opciones relevantes. La expresión CRON se actualizará automáticamente"
+
