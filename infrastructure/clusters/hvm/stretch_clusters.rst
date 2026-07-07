@@ -155,7 +155,7 @@ When to Use NFS for Stretch
 
 NFS-backed stretch clusters are appropriate when:
 
-- You already have enterprise NFS infrastructure (e.g., NetApp, Pure Storage, HPE Alletra) with multipath or multi-site replication
+- You already have enterprise NFS infrastructure (e.g., NetApp, Pure Storage, Dell PowerScale) with multipath or multi-site replication
 - You want to avoid the complexity of Corosync/DLM fencing and quorum management
 - Your NFS appliance provides its own high availability (active/passive failover, synchronous replication across sites)
 - You need a simpler operational model with fewer moving parts
@@ -239,7 +239,7 @@ If a full site fails:
 
 #. |morpheus| detects hosts at the failed site as unreachable
 #. If Dynamic Placement is enabled with appropriate aggressiveness, workloads are automatically migrated to surviving hosts
-#. Manual migration can be triggered from ``Infrastructure > Clusters > [Cluster] > [Host] > Actions > Evacuate``
+#. Manual migration can be triggered by placing a host into maintenance mode (``Infrastructure > Servers > [Host] > Actions > Enter Maintenance``). This live-migrates running VMs and moves powered-off VMs to other available hosts in the cluster.
 #. When the failed site recovers, hosts rejoin the cluster and become available for workload placement again
 
 Limitations
