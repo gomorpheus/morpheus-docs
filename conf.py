@@ -46,7 +46,7 @@ rst_prolog = """
 .. |erlang| replace:: 26.2.5.6
 .. |mastertenant| replace:: Master Tenant
 
-.. |morphfirst| replace:: HPE Morpheus Enterprise Software
+.. |morphfirst| replace:: HPE Morpheus Software
 .. |morpheus| replace:: HPE Morpheus Enterprise
 .. |morphues| replace:: HPE Morpheus Enterprise
 .. |morphdat| replace:: Morpheus Data
@@ -284,46 +284,71 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_rtd_theme','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','sphinx_search.extension','notfound.extension','sphinx.ext.autosectionlabel','tier_roles'] #sphinx_tabs
+extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_immaterial','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','notfound.extension','sphinx.ext.autosectionlabel','tier_roles']
 templates_path = ['_templates']
-default_dark_mode = False
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
+html_title = u'Morpheus Documentation'
+
+# Version + locale selectors (POC) — populate the side-nav version dropdown and
+# the header language dropdown. Docs deploy RTD-style at /<lang>/<version>/<page>.
+# `path`/`code` are the URL segments each build is deployed under.
+html_context = {
+    "doc_versions": [
+        {"path": "9.1", "title": "9.1 (latest)"},
+        {"path": "9.0", "title": "9.0"},
+        {"path": "8.0", "title": "8.0"},
+    ],
+    "doc_locales": [
+        {"code": "en", "title": "English"},
+        {"code": "es", "title": "Español"},
+    ],
+}
 copyright = f"{year}, Morpheus Data"
 author = u'Morpheus'
 language = 'en'
 locale_dirs = ['locale/']
 gettext_compact = False
 gettext_additional_targets = ['literal-block', 'image']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store','z_in_progress','.hero','.opencode','locale','diagrams']
+exclude_patterns = ['_build', '_out*', '.venv', 'Thumbs.db', '.DS_Store','z_in_progress','.hero','.opencode','locale','diagrams']
 pygments_style = 'none'
 todo_include_todos = False
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'sphinx_immaterial'
 html_use_opensearch = 'https://docs.morpheusdata.com/en/latest'
 linkcheck_request_headers = {
     "*": {
         "Accept": "text/html,application/atom+xml",
     }
 }
-html_theme_options = {
-'logo_only': True,
-#'flyout_display': 'attached',
-#'version_selector': True,
-#'language_selector': False,
-'sticky_navigation': True,
-'navigation_depth': 5,
-}
-html_logo = "_static/logo.svg"
 html_static_path = ['_static']
 
-html_sidebars = {
-    '**': [
-        'about.html',
-        'navigation.html',
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-        # 'donate.html',
-    ]
+# HPE Graphik + DESIGN.md skin over the sphinx-immaterial baseline. Each file is
+# a focused layer; load order matters (graphik first, dark last).
+html_css_files = [
+    'hpe-graphik.css', 'hpe-pagemap.css', 'hpe-layout.css', 'hpe-header.css',
+    'hpe-footer.css', 'hpe-nav.css', 'hpe-admonitions.css', 'hpe-responsive.css',
+    'hpe-search.css', 'hpe-dark.css',
+]
+html_js_files = ['hpe-nav-fix.js']
+
+# immaterial suppresses Sphinx's classic search page in favour of its own
+# instant/dropdown search. We keep the original RTD behaviour: type -> Enter ->
+# a full "Search Results" page with snippets. _templates/search.html re-renders
+# that page (forced via html_additional_pages) and reuses Sphinx's own stock
+# search engine, whose scripts + a stock-format index are emitted by setup().
+html_additional_pages = {'search': 'search.html'}
+
+html_theme_options = {
+    # Three-way header toggle: light -> dark -> system (follow OS), cycling.
+    # Icons show the current mode; HPE dark values live in hpe-dark.css (slate).
+    'palette': [
+        {'media': '(prefers-color-scheme: light)', 'scheme': 'default',
+         'toggle': {'icon': 'material/weather-sunny', 'name': 'Switch to dark mode'}},
+        {'media': '(prefers-color-scheme: dark)', 'scheme': 'slate',
+         'toggle': {'icon': 'material/weather-night', 'name': 'Switch to system preference'}},
+        {'media': '(prefers-color-scheme)',
+         'toggle': {'icon': 'material/brightness-auto', 'name': 'Switch to light mode'}},
+    ],
 }
 
 html_show_sourcelink = False
@@ -331,14 +356,7 @@ html_show_sphinx = False
 keep_warnings = False
 github_edit_url = False
 
-def setup(app):
-# Disable the GitHub link display
-    app.config.html_context['display_github'] = False
-
-context = {
-    'display_github': False,
-}
-html_favicon = "_static/morpheus_fav_64.ico"
+html_favicon = "_static/hpe-favicon.svg"
 htmlhelp_basename = 'morpheusdocs'
 
 latex_elements = {
@@ -357,12 +375,66 @@ texinfo_documents = [
      author, 'Morpheus', 'Morpheus Documentation',
      'UI Docs'),
 ]
-import sphinx_rtd_theme
-html_theme = "sphinx_rtd_theme"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-
 def setup(app):
-    app.add_css_file('morpheusTheme.css')
+    """Emit a stock-format search index + copy Sphinx's own search scripts.
+
+    sphinx-immaterial monkeypatches the search index into its own instant-search
+    format (``docurls`` with URLs baked in) which stock ``searchtools.js`` can't
+    read. After the build we convert that adapted ``searchindex.js`` back to the
+    classic shape (``docnames`` + ``filenames``) and write it to
+    ``searchindex_classic.js``, which _templates/search.html loads. No-op for
+    builds that already emit a stock-format index.
+
+    immaterial also omits Sphinx's classic search scripts (it ships its own
+    instant search), so we copy ``searchtools/doctools/sphinx_highlight.js``
+    straight from the *installed* Sphinx package into ``_static/`` at build time
+    rather than vendoring frozen copies into the repo — they always match the
+    installed Sphinx version and never appear in the source diff.
+    """
+    import json
+    import os
+    import re
+    import shutil
+
+    import sphinx
+
+    def _emit_classic_searchindex(app, exception):
+        if exception is not None:
+            return
+        src = os.path.join(app.outdir, 'searchindex.js')
+        if not os.path.exists(src):
+            return
+        raw = open(src, encoding='utf-8').read().strip()
+        m = re.match(r'^Search\.setIndex\((.*)\)\s*;?\s*$', raw, re.S)
+        if not m:
+            return
+        try:
+            idx = json.loads(m.group(1))
+        except ValueError:
+            return
+        if 'docurls' not in idx:
+            return  # already stock format — nothing to convert
+        docurls = idx.pop('docurls')
+        idx['docnames'] = [re.sub(r'\.html$', '', u) for u in docurls]
+        idx['filenames'] = list(docurls)  # unused for display; kept parallel
+        dst = os.path.join(app.outdir, 'searchindex_classic.js')
+        with open(dst, 'w', encoding='utf-8') as f:
+            f.write('Search.setIndex(' + json.dumps(idx) + ')')
+
+    def _copy_stock_search_assets(app, exception):
+        if exception is not None:
+            return
+        basic = os.path.join(
+            os.path.dirname(sphinx.__file__), 'themes', 'basic', 'static'
+        )
+        dst_dir = os.path.join(app.outdir, '_static')
+        for name in ('searchtools.js', 'doctools.js', 'sphinx_highlight.js'):
+            src = os.path.join(basic, name)
+            if os.path.exists(src) and os.path.isdir(dst_dir):
+                shutil.copyfile(src, os.path.join(dst_dir, name))
+
+    app.connect('build-finished', _emit_classic_searchindex)
+    app.connect('build-finished', _copy_stock_search_assets)
 
 
 # -- Copy the upgrade table from master -------------------------------------------

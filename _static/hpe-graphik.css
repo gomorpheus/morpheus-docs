@@ -1,0 +1,88 @@
+/* ==========================================================================
+   HPE Graphik for sphinx-immaterial (V2 baseline).
+   Full weight set from HPE's public, CORS-open CDN (font-display: swap).
+   Declaring every weight is REQUIRED so Material's weight-300 headings render
+   as true Graphik Light (not a synthesized/faux-light Regular).
+   We keep immaterial's Roboto sizes/weights untouched — only the family changes.
+   ========================================================================== */
+
+/* -- Roman ---------------------------------------------------------------- */
+@font-face { font-family:'HPE Graphik'; font-weight:300; font-style:normal; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-Light-Web.woff2') format('woff2'); }
+@font-face { font-family:'HPE Graphik'; font-weight:400; font-style:normal; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-Regular-Web.woff2') format('woff2'); }
+@font-face { font-family:'HPE Graphik'; font-weight:500; font-style:normal; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-Medium-Web.woff2') format('woff2'); }
+@font-face { font-family:'HPE Graphik'; font-weight:600; font-style:normal; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-Semibold-Web.woff2') format('woff2'); }
+@font-face { font-family:'HPE Graphik'; font-weight:700; font-style:normal; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-Bold-Web.woff2') format('woff2'); }
+
+/* -- Italic (for emphasis in prose) --------------------------------------- */
+@font-face { font-family:'HPE Graphik'; font-weight:400; font-style:italic; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-RegularItalic-Web.woff2') format('woff2'); }
+@font-face { font-family:'HPE Graphik'; font-weight:500; font-style:italic; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-MediumItalic-Web.woff2') format('woff2'); }
+@font-face { font-family:'HPE Graphik'; font-weight:700; font-style:italic; font-display:swap;
+  src:url('https://h50007.www5.hpe.com/hfws-static/fonts/graphik/HPEGraphik-BoldItalic-Web.woff2') format('woff2'); }
+
+/* -- Point Material's text font at Graphik; keep its Roboto type scale ----- */
+:root {
+  --md-text-font: "HPE Graphik";
+  /* Links — HPE DESIGN.md "text-action" green (nav + content anchors). */
+  --md-typeset-a-color: #006750;
+  /* Interactive accent — immaterial ships an indigo (#526cfe) that bleeds onto
+     nav-link hover/focus and the sidebar scrollbar; point it at HPE green. */
+  --md-accent-fg-color: #006750;
+  /* Section-anchor (headerlink) chain-link glyph, RTD-style. */
+  --hpe-link-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3.9,12C3.9,10.29 5.29,8.9 7,8.9H11V7H7A5,5 0 0,0 2,12A5,5 0 0,0 7,17H11V15.1H7C5.29,15.1 3.9,13.71 3.9,12M8,13H16V11H8V13M17,7H13V8.9H17C18.71,8.9 20.1,10.29 20.1,12C20.1,13.71 18.71,15.1 17,15.1H13V17H17A5,5 0 0,0 22,12A5,5 0 0,0 17,7Z'/%3E%3C/svg%3E");
+}
+
+/* The palette (added for dark mode) writes data-md-color-primary/accent="indigo"
+   onto <body>, whose [data-md-color-*=indigo] rules set the link/accent tokens to
+   indigo at body level — overriding the :root (html) greens above by proximity.
+   Re-assert HPE green at the same body level (loads after the theme bundle → wins
+   in the default/light scheme). Dark scheme overrides these again in hpe-dark.css
+   via a higher-specificity [data-md-color-scheme="slate"][data-md-color-primary]. */
+[data-md-color-primary],
+[data-md-color-accent] {
+  --md-typeset-a-color: #006750;
+  --md-accent-fg-color: #006750;
+}
+
+/* -- Type tuning (overrides to immaterial's scale) ------------------------- */
+.md-typeset h2 {
+  font-size: 1.4em;
+}
+
+/* H1 in the darkest neutral (near-black), not immaterial's muted grey. */
+.md-typeset h1 {
+  color: var(--md-default-fg-color);
+  margin-bottom: 0;
+}
+
+/* Content links — DESIGN.md text-action green, underlined, darker on hover. */
+.md-typeset a:not(.headerlink) {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+.md-typeset a:hover,
+.md-typeset a:focus {
+  color: #004d3c;
+}
+
+/* Section anchor: swap immaterial's ¶ for a chain-link icon (RTD-style). */
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color--lighter);
+  font-size: 0 !important;
+}
+.md-typeset .headerlink::after {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  vertical-align: -3px;
+  background-color: currentColor;
+  -webkit-mask: var(--hpe-link-icon) center / contain no-repeat;
+  mask: var(--hpe-link-icon) center / contain no-repeat;
+}

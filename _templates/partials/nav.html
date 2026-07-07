@@ -1,0 +1,48 @@
+{#- HPE override of sphinx-immaterial's primary-nav partial.
+    Only change vs. upstream: the side-nav title text ("{{ config.site_name }}")
+    is replaced with a documentation version selector when `doc_versions` is
+    defined (via conf.py html_context). Falls back to the site name otherwise. -#}
+{% import "partials/nav-item.html" as item with context %}
+{% set class = "md-nav md-nav--primary" %}
+{% if "navigation.tabs" in features %}
+  {% set class = class ~ " md-nav--lifted" %}
+{% endif %}
+{% if "toc.integrate" in features %}
+  {% set class = class ~ " md-nav--integrated" %}
+{% endif %}
+<nav class="{{ class }}" aria-label="{{ lang.t('nav') }}" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}" title="{{ config.site_name | e }}" class="md-nav__button md-logo" aria-label="{{ config.site_name }}" data-md-component="logo">
+      {% include "partials/logo.html" %}
+    </a>
+    {% if doc_versions %}
+    <span class="hpe-version-row">
+      <span class="hpe-version-row__label">Version:</span>
+      <details class="hpe-version" data-page="{{ pagename }}">
+        <summary class="hpe-version__toggle">
+          <span class="hpe-version__value" data-hpe-version-value>{{ doc_versions[0].title }}</span>
+          <svg class="hpe-version__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </summary>
+        <ul class="hpe-version__menu" role="menu">
+          {% for v in doc_versions %}
+          <li role="none"><a role="menuitem" class="hpe-version__option" data-version="{{ v.path }}" href="#">{{ v.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
+    </span>
+    {% else %}
+    {{ config.site_name }}
+    {% endif %}
+  </label>
+  {% if config.repo_url %}
+    <div class="md-nav__source">
+      {% include "partials/source.html" %}
+    </div>
+  {% endif %}
+  <ul class="md-nav__list" data-md-scrollfix>
+    {% for nav_item in nav %}
+      {% set path = "__nav_" ~ loop.index %}
+      {{ item.render(nav_item, path, 1) }}
+    {% endfor %}
+  </ul>
+</nav>

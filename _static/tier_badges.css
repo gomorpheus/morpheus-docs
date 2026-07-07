@@ -80,21 +80,23 @@ h4 .tier-badge {
     margin-top: 0.5em;
 }
 
-/* Dark mode support (sphinx_rtd_dark_mode) */
-@media (prefers-color-scheme: dark) {
-    .tier-note {
-        background-color: #1a1a2e;
-    }
-    .tier-note-enterprise {
-        background-color: #0a2e24;
-    }
-    .tier-note-advanced {
-        background-color: #0a1e28;
-    }
-    .tier-note-essentials {
-        background-color: #1a0a2e;
-    }
-    .tier-note-header {
-        color: #cccccc;
-    }
+/* Dark mode support — keyed off immaterial's own scheme toggle
+   ([data-md-color-scheme="slate"], set by hpe-dark.css), not the OS
+   `prefers-color-scheme` media query. The old media-query version fired
+   whenever the OS was in dark mode regardless of the site's own light/dark
+   toggle, leaving this block dark even while the docs were set to light. */
+[data-md-color-scheme="slate"] .tier-note {
+    background-color: #1a1a2e;
+}
+[data-md-color-scheme="slate"] .tier-note-enterprise {
+    background-color: #0a2e24;
+}
+[data-md-color-scheme="slate"] .tier-note-advanced {
+    background-color: #0a1e28;
+}
+[data-md-color-scheme="slate"] .tier-note-essentials {
+    background-color: #1a0a2e;
+}
+[data-md-color-scheme="slate"] .tier-note-header {
+    color: #cccccc;
 }

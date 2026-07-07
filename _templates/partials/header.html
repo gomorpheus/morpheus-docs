@@ -1,0 +1,55 @@
+{#- HPE app header — overrides sphinx-immaterial's default header partial.
+    White band + inline HPE logo (currentColor) + app title on the left,
+    search input on the right. Mobile drawer toggle preserved. -#}
+<header class="md-header app-header" data-md-component="header">
+  <nav class="md-header__inner app-header__inner" aria-label="{{ lang.t('header') }}">
+
+    <label class="md-header__button md-icon app-header__drawer" for="__drawer">
+      {% include ".icons/material/menu.svg" %}
+    </label>
+
+    <a class="app-header__brand"
+       href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
+       title="{{ config.site_name | e }}">
+      <svg class="app-header__logo" viewBox="0 0 630 180" stroke-width="36"
+           role="img" aria-label="Hewlett Packard Enterprise">
+        <path fill="none" stroke="currentColor"
+              d="M18 180V0m154 180V0M18 89h137m95 91V0m0 18h102a32 32 0 0 1 0 100H250m222-67V18h158"/>
+        <path fill="none" stroke="#03a883" d="M630 162H472V86h158"/>
+      </svg>
+      <span class="app-header__title">HPE Morpheus Software Documentation</span>
+    </a>
+
+    <div class="app-header__actions">
+      {% if config.theme.palette and not config.theme.palette is mapping %}
+        {% include "partials/palette.html" %}
+      {% endif %}
+      {%- if doc_locales -%}
+      {#- Locale selector (POC): between the theme toggle and search. Option links
+          are completed by JS (current version isn't known at build time). -#}
+      <details class="hpe-locale" data-page="{{ pagename }}">
+        <summary class="hpe-locale__toggle" title="Language" aria-label="Language">
+          <svg class="hpe-locale__globe" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93C7.06 19.44 4 16.08 4 12c0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41C17.92 5.77 20 8.65 20 12c0 2.08-.81 3.98-2.1 5.39z"/></svg>
+          <span class="hpe-locale__value" data-hpe-locale-value>{{ doc_locales[0].title }}</span>
+          <svg class="hpe-locale__caret" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5z"/></svg>
+        </summary>
+        <ul class="hpe-locale__menu" role="menu">
+          {% for loc in doc_locales %}
+          <li role="none"><a role="menuitem" class="hpe-locale__option" data-lang="{{ loc.code }}" href="#">{{ loc.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </details>
+      {%- endif -%}
+      {#- Classic search: plain field -> Enter -> full results page (search.html). -#}
+      <form class="app-header__search-form" action="{{ pathto('search') }}" method="get" role="search">
+        <input class="app-header__search" type="text" name="q"
+               placeholder="Search…" aria-label="Search the docs"
+               autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+      </form>
+    </div>
+
+  </nav>
+</header>
+{% if config.theme.palette and not config.theme.palette is mapping %}
+  {% include "partials/javascripts/palette.html" %}
+{% endif %}

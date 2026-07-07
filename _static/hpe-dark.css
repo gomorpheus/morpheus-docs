@@ -1,0 +1,103 @@
+/* ==========================================================================
+   HPE dark mode — palette values from morpheus-central-ui/DESIGN.md.
+
+   sphinx-immaterial ships a built-in `slate` scheme (the toggle in the header
+   switches <body data-md-color-scheme>). We re-point slate's neutrals to HPE's
+   dark palette and flip the hardcoded chrome (header, footer, admonitions,
+   page-map spine) that doesn't read --md-* tokens.
+
+   DESIGN.md dark overrides:
+     base bg  #1d1f27   surface/front #22252e   text #f7f7f7   border #3e4550
+   Brand green + status colors are kept across modes; the link/action green is
+   brightened (#006750 -> #01a982) to clear WCAG AA on the dark canvas.
+   ========================================================================== */
+
+[data-md-color-scheme="slate"] {
+  /* Neutrals — override immaterial's computed slate greys with HPE values. */
+  --md-default-bg-color: #1d1f27;              /* base canvas */
+  --md-default-bg-color--light: #22252e;       /* front/surface layer */
+  --md-default-bg-color--lighter: #22252e;
+  --md-default-fg-color: #f7f7f7;              /* body text */
+  --md-default-fg-color--light: rgba(247, 247, 247, 0.66);
+  --md-default-fg-color--lighter: rgba(247, 247, 247, 0.34);
+  --md-default-fg-color--lightest: rgba(247, 247, 247, 0.14);
+
+  /* Links / interactive accent — brand green, brightened for contrast.
+     NOTE: immaterial pins these one selector deeper
+     ([data-md-color-scheme=slate][data-md-color-primary=indigo], 0-2-0), so
+     the matching-specificity override lives in the block below, not here. */
+
+  /* Code + inline code surfaces. */
+  --md-code-bg-color: #22252e;
+  --md-code-fg-color: #f7f7f7;
+
+  /* Page-map spine separator (light-mode is a black tint). */
+  --pagemap-spine: rgba(255, 255, 255, 0.20);
+}
+
+/* Link/accent green — needs 0-2-0 to beat immaterial's per-primary slate rule.
+   [data-md-color-primary] (presence) matches whatever primary is active. */
+[data-md-color-scheme="slate"][data-md-color-primary] {
+  --md-typeset-a-color: #01a982;
+  --md-accent-fg-color: #01a982;
+}
+
+/* -- Header — flip the white band to the dark surface --------------------- */
+[data-md-color-scheme="slate"] .app-header {
+  background: #22252e;
+  color: #f7f7f7;
+  border-bottom-color: #3e4550;
+}
+[data-md-color-scheme="slate"] .app-header__brand,
+[data-md-color-scheme="slate"] .app-header__brand:hover,
+[data-md-color-scheme="slate"] .app-header__title,
+[data-md-color-scheme="slate"] .app-header .app-header__drawer {
+  color: #f7f7f7;
+}
+[data-md-color-scheme="slate"] .app-header__search {
+  background: #1d1f27;
+  color: #f7f7f7;
+  border-color: #3e4550;
+}
+
+/* -- Footer — dark surface + border -------------------------------------- */
+[data-md-color-scheme="slate"] .app-footer {
+  background: #22252e;
+  border-top-color: #3e4550;
+}
+
+/* -- Admonitions — swap light pastel fills for subtle dark status tints.
+      Icons + title text already adapt (status SVGs stay; title uses fg token). */
+[data-md-color-scheme="slate"] .md-typeset .admonition {
+  --hpe-adm-bg: #262a33;                       /* unknown / default */
+}
+[data-md-color-scheme="slate"] .md-typeset .admonition.note,
+[data-md-color-scheme="slate"] .md-typeset .admonition.seealso {
+  --hpe-adm-bg: rgba(0, 112, 248, 0.14);       /* info */
+}
+[data-md-color-scheme="slate"] .md-typeset .admonition.important,
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning,
+[data-md-color-scheme="slate"] .md-typeset .admonition.caution,
+[data-md-color-scheme="slate"] .md-typeset .admonition.attention {
+  --hpe-adm-bg: rgba(236, 140, 37, 0.14);      /* warning */
+}
+[data-md-color-scheme="slate"] .md-typeset .admonition.tip,
+[data-md-color-scheme="slate"] .md-typeset .admonition.hint {
+  --hpe-adm-bg: rgba(1, 169, 130, 0.14);       /* success */
+}
+[data-md-color-scheme="slate"] .md-typeset .admonition.danger,
+[data-md-color-scheme="slate"] .md-typeset .admonition.error,
+[data-md-color-scheme="slate"] .md-typeset .admonition.failure {
+  --hpe-adm-bg: rgba(236, 51, 49, 0.14);       /* critical */
+}
+
+/* -- Locale selector (POC) — dark header band --------------------------- */
+[data-md-color-scheme="slate"] .hpe-locale__toggle { color: #f7f7f7; }
+[data-md-color-scheme="slate"] .hpe-locale__toggle:hover,
+[data-md-color-scheme="slate"] .hpe-locale[open] .hpe-locale__toggle { background: #2c303a; }
+[data-md-color-scheme="slate"] .hpe-locale[open] .hpe-locale__toggle { border-color: #3e4550; }
+[data-md-color-scheme="slate"] .hpe-locale__menu { background: #22252e; border-color: #3e4550; }
+[data-md-color-scheme="slate"] .hpe-locale__option { color: #f7f7f7; }
+[data-md-color-scheme="slate"] .hpe-locale__option:hover,
+[data-md-color-scheme="slate"] .hpe-locale__option:focus { background: #2c303a; }
+[data-md-color-scheme="slate"] .hpe-locale__option[aria-current="true"] { color: #14c79a; }
