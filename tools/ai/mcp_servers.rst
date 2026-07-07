@@ -7,7 +7,7 @@ MCP (Model Context Protocol) Servers are external tool providers that expose cap
 
 Morpheus includes a **built-in MCP server** that provides tools for managing Morpheus resources (instances, clouds, clusters, networks, etc.). External MCP servers extend this with additional capabilities.
 
-Navigate to :menuselection:`Tools --> AI Services --> MCP Servers` to manage connections.
+Navigate to |TooAIMCP| to manage connections.
 
 Adding an MCP Server
 ^^^^^^^^^^^^^^^^^^^^

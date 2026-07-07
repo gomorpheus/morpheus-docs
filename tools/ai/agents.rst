@@ -5,7 +5,7 @@ AI Agents
 
 AI Agents define the behavior of the AI chat assistant. Each agent ties together a language model, a system prompt, and a set of tool providers (MCP servers). Multiple agents can be configured per account, with one designated as the default.
 
-Navigate to :menuselection:`Tools --> AI Services --> AI Agents` to manage agents.
+Navigate to |TooAIAge| to manage agents.
 
 Creating an AI Agent
 ^^^^^^^^^^^^^^^^^^^^

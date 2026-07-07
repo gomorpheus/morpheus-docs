@@ -5,7 +5,7 @@ AI Services
 
 HPE Morpheus Enterprise includes an integrated AI assistant that helps operators manage infrastructure through natural language. The AI Services feature connects large language models (LLMs) to Morpheus capabilities via the Model Context Protocol (MCP), enabling conversational access to provisioning, monitoring, reporting, and infrastructure management.
 
-AI Services is accessed from :menuselection:`Tools --> AI Services` and consists of three components:
+AI Services is accessed from |TooAI| and consists of three components:
 
 - **AI Agents** — Configure the AI assistant's behavior, model selection, and tool access
 - **MCP Servers** — Connect external tool providers that extend the AI's capabilities
@@ -50,7 +50,7 @@ AI Services access is controlled by two role permissions:
      - Description
    * - **AI Services** (``services-ai``)
      - None, Read, Full
-     - Controls access to Tools > AI Services configuration. Read = view only; Full = create/edit/delete agents, MCP servers.
+     - Controls access to |TooAI| configuration. Read = view only; Full = create/edit/delete agents, MCP servers.
    * - **AI Agentic Tools** (``services-ai-agentic``)
      - None, Read, Full
      - Controls tool execution. Read = AI can only use read-only/GET tools; Full = AI can execute write/modify operations.

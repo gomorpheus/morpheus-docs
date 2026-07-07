@@ -194,6 +194,10 @@ rst_prolog = """
 .. |TooVDIPoo| replace:: Tools > VDI Pools > VDI Pools
 .. |TooVDIApp| replace:: Tools > VDI Pools > VDI Apps
 .. |TooVDIGat| replace:: Tools > VDI Pools > VDI Gateways
+.. |TooAI| replace:: Tools > AI Services
+.. |TooAIInt| replace:: Tools > AI Services > Integrations
+.. |TooAIMCP| replace:: Tools > AI Services > MCP Servers
+.. |TooAIAge| replace:: Tools > AI Services > Agents
 .. |Adm| replace:: Administration
 .. |AdmTen| replace:: Administration > Tenants
 .. |AdmPla| replace:: Administration > Plans & Pricing

@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-07-07T19:15:33Z · 30 ready specs_
+_Generated: 2026-07-07T19:27:56Z · 31 ready specs_
 
 ## hvm-13-cluster-docs — "HVM 1.3 Cluster Layouts Documentation"
 _initiative · delivering · horizon: now_
@@ -145,6 +145,13 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/proje
 _feature · planning · horizon: next_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/features/docs-merge-advanced-content/spec.md)_
+
+---
+
+## nav-path-variables — Navigation Path Variables
+_convention · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/knowledge/conventions/nav-path-variables/spec.md)_
 
 ---
 

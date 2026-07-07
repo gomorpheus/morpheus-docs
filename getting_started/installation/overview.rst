@@ -10,26 +10,28 @@ Installation Overview
 HPE HVM Deployment (Recommended)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Most customers deploy |morpheus| as a virtual appliance on HVM hosts using the **HPE Morpheus Manager Installer**. This approach:
+For customers using HPE HVM as their hypervisor platform, |morpheus| is deployed as a virtual appliance directly onto an HVM host using the **HPE Morpheus Manager Installer**. This is the fastest and simplest path to a running |morpheus| environment. This approach:
 
 - Takes **15–30 minutes** from start to a running appliance
 - Requires no manual package installation — the installer handles image upload, VM creation, and configuration
 - Deploys a fully self-contained appliance from a QCOW2 image
 - Works entirely over your local network (no internet required)
 
-**To get started:**
+**To get started with HVM deployment:**
 
-1. :doc:`Prepare your HVM host(s) </getting_started/installation/hvm_host_prep>` — Install HVM OS 24.04 and configure networking
-2. :doc:`Run the HPE Morpheus Manager Installer </getting_started/installation/singleNode/hpe_installer>` — Deploy the appliance VM
+1. :doc:`Prepare your HVM host(s) </getting_started/installation/hvm_host_prep>` — Install HVM OS 24.04 on bare-metal servers and configure networking. This is required before running the installer.
+2. :doc:`Deploy Morpheus with the HPE Installer </getting_started/installation/singleNode/hpe_installer>` — Run the graphical installer from your workstation to deploy the |morpheus| appliance VM onto a prepared HVM host.
 
-After the appliance is running, you can add additional HVM hosts to form a cluster from within the |morpheus| UI.
+After the appliance is running, you can add additional HVM hosts to form a cluster from within the |morpheus| UI (|InfClu|).
 
 .. _manual-deploy-path:
 
 Manual Package Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For non-HVM environments, custom architectures, or deployments on existing Linux infrastructure, |morpheus| is also available as standard ``debian`` or ``yum`` packages. The default configuration installs all required services on a single host. |morpheus| can also be configured in a distributed architecture with external services and multiple application hosts for High Availability.
+For environments that do **not** use HPE HVM — such as existing VMware, Hyper-V, cloud VMs, or bare-metal Linux servers — |morpheus| is available as standard ``debian`` or ``yum`` packages installed directly on a supported Linux OS. This method is also used for advanced deployment topologies (distributed services, full HA) where you need granular control over each component.
+
+The default configuration installs all required services on a single host. |morpheus| can also be configured in a distributed architecture with external services and multiple application hosts for High Availability.
 
 All components are installed and configured during the ``morpheus-ctl reconfigure`` command. The config file ``/etc/morpheus/morpheus.rb`` can optionally point the application to external services (distributed configuration).
 

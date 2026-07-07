@@ -5,14 +5,14 @@ LLM Integrations
 
 LLM (Large Language Model) Integrations connect Morpheus to language model providers. These integrations supply the AI reasoning capabilities that power AI Agents.
 
-Navigate to :menuselection:`Tools --> AI Services --> Integrations` to manage connected LLM providers.
+Navigate to |TooAIInt| to manage connected LLM providers.
 
 Adding an LLM Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-LLM integrations are managed from :menuselection:`Tools --> AI Services --> Integrations`:
+LLM integrations are managed from |TooAIInt|:
 
-1. Navigate to :menuselection:`Tools --> AI Services --> Integrations`
+1. Navigate to |TooAIInt|
 2. Click :guilabel:`+ New Integration`
 3. From the :guilabel:`New Integration` dropdown, select a type
 

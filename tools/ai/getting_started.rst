@@ -21,7 +21,7 @@ See :ref:`LLM Integrations <llm-integrations>` for provider-specific configurati
 
 **Step 2: Create an AI Agent**
 
-Navigate to :menuselection:`Tools --> AI Services --> AI Agents` and click :guilabel:`+ ADD`. Configure:
+Navigate to |TooAIAge| and click :guilabel:`+ ADD`. Configure:
 
 - Select the LLM Integration added in Step 1
 - Choose a model (e.g., GPT-4o, Claude 3 Opus)
@@ -47,6 +47,6 @@ Optional: Add External MCP Servers
 
 To extend the AI's capabilities beyond built-in Morpheus operations, add external MCP servers:
 
-Navigate to :menuselection:`Tools --> AI Services --> MCP Servers` and click :guilabel:`+ ADD`. Configure the server URL, protocol, and credentials.
+Navigate to |TooAIMCP| and click :guilabel:`+ ADD`. Configure the server URL, protocol, and credentials.
 
 See :ref:`MCP Servers <mcp-servers>` for details.
