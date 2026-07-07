@@ -1,4 +1,4 @@
-Single Node Install using HPE Morpheus Manager Installer
+Deploying Morpheus with the HPE Installer (Recommended)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The HPE Morpheus Manager Installer is a graphical wizard that deploys Morpheus Enterprise or VM Essentials to an HPE HVM host in minutes. It handles the entire deployment process including image upload, VM creation, network configuration, and post-deployment verification.
