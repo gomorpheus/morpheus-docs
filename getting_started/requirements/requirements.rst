@@ -7,6 +7,10 @@ Requirements
 
 In the simplest configuration |morpheus| needs one Appliance Server. The Appliance Server, by default, contains all the components necessary to orchestrate both VMs and containers. To get started some base requirements are recommended:
 
+.. tip::
+
+   **Deploying on HVM?** If you are deploying |morpheus| using the HPE Morpheus Manager Installer onto HVM hosts, the appliance requirements below are automatically satisfied by the QCOW2 image. For HVM host hardware and network requirements, see :doc:`Preparing HVM Hosts </getting_started/installation/hvm_host_prep>`.
+
 Base Requirements
 -----------------
 
@@ -158,6 +162,10 @@ Communication Data
 ------------------
 
 The following table contains communication information, including frequency and configurability between |morpheus| and its supported technology integrations.
+
+.. tip::
+
+   For a detailed comparison of feature coverage across all supported cloud integrations, including networking, costing, Kubernetes capabilities, and tier classifications, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.
 
 .. list-table:: **Communication Frequency, Ports, and Protocols**
   :widths: auto

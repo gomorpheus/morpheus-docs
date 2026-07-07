@@ -3,20 +3,41 @@
 Installation Overview
 ---------------------
 
-.. important:: |morpheus| v4.2.0 enhanced security configuration restricts incoming appliance connections to TLS v1.2, potentially impacting front-end load balancer monitoring/health checks that support only TLS v1.1 or lower, as well as |morpheus| Agent installations for Windows nodes using .net versions that do not support TLS v1.2. Refer to TLS
+|morpheus| supports two primary deployment methods. Choose the path that fits your environment:
 
-	|morpheus| comes packaged as a ``debian`` or ``yum`` based package. The default configuration installs all required services on a single vm or bare metal Host. Morpheus can be configured in a distributed architecture to use one or multiple external services, and multiple application Hosts can be configured for High Availability configurations.
+.. _hvm-deploy-path:
 
-All components required for Morpheus are installed and configured by default during the Morpheus ``reconfigure`` command. The Morpheus config file, ``morpheus.rb``, can optionally be configured to point the Morpheus App to external services (distributed configuration).
+HPE HVM Deployment (Recommended)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Morpheus can optionally be configured to use external Database, Messaging, and/or Search Tiers. This means instead of installing, for example, MySQL on the same host as the Morpheus App, the Morpheus configuration file (morpheus.rb) is setup to point to an external MySQL host, cluster or service, and MySQL will not be installed or configured on the Appliance Host.
+Most customers deploy |morpheus| as a virtual appliance on HVM hosts using the **HPE Morpheus Manager Installer**. This approach:
 
-Install Packages
-^^^^^^^^^^^^^^^^
+- Takes **15–30 minutes** from start to a running appliance
+- Requires no manual package installation — the installer handles image upload, VM creation, and configuration
+- Deploys a fully self-contained appliance from a QCOW2 image
+- Works entirely over your local network (no internet required)
 
-|morpheus| Release Package urls can be obtained from `https://app.morpheushub.com <https://app.morpheushub.com>`_
+**To get started:**
 
-Configuration Options
+1. :doc:`Prepare your HVM host(s) </getting_started/installation/hvm_host_prep>` — Install HVM OS 24.04 and configure networking
+2. :doc:`Run the HPE Morpheus Manager Installer </getting_started/installation/singleNode/hpe_installer>` — Deploy the appliance VM
+
+After the appliance is running, you can add additional HVM hosts to form a cluster from within the |morpheus| UI.
+
+.. _manual-deploy-path:
+
+Manual Package Installation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For non-HVM environments, custom architectures, or deployments on existing Linux infrastructure, |morpheus| is also available as standard ``debian`` or ``yum`` packages. The default configuration installs all required services on a single host. |morpheus| can also be configured in a distributed architecture with external services and multiple application hosts for High Availability.
+
+All components are installed and configured during the ``morpheus-ctl reconfigure`` command. The config file ``/etc/morpheus/morpheus.rb`` can optionally point the application to external services (distributed configuration).
+
+|morpheus| Release Packages can be obtained from `HPE My Software Center <https://myenterpriselicense.hpe.com/>`_.
+
+.. important:: |morpheus| requires TLS v1.2 for all incoming appliance connections. Ensure front-end load balancers and agents support TLS v1.2 or higher.
+
+Architecture Options
 ^^^^^^^^^^^^^^^^^^^^^
 
 - Single Host (All-In-One/default)
