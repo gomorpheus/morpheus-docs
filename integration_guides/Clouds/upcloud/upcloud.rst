@@ -136,3 +136,32 @@ Provision a |morpheus| provided UpCloud Image
 * UBUNTU
 * WINDOWS
 * GRAILS
+
+Feature Boundaries
+^^^^^^^^^^^^^^^^^^
+
+The UpCloud integration is classified as a **Tier 3 — Essential Provisioning** integration. The following capabilities are not currently supported:
+
+**Networking**
+
+- Network creation or deletion from |morpheus|
+- Security group management
+- IPAM / IP pool management
+- Floating IP assignment
+
+**Costing & Governance**
+
+- Price synchronization or billing integration
+- Invoice generation
+- Right-sizing recommendations
+- Tag synchronization
+- Multitenancy / resource pool scoping
+
+**Other**
+
+- Kubernetes cluster provisioning
+- Brownfield inventory import (periodic sync is supported)
+- Datastore or volume management
+- Third-party backup integrations
+
+For a full feature comparison across all supported clouds, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.

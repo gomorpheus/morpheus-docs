@@ -72,3 +72,33 @@ Add a SCVMM Cloud
 
 
 #. After clicking :guilabel:`NEXT`, the new Cloud can be added to a Group or configured with additional advanced options.
+
+Feature Boundaries
+^^^^^^^^^^^^^^^^^^
+
+The SCVMM integration is classified as a **Tier 2 — Core Cloud Management** integration. The following capabilities are not currently supported:
+
+**Networking**
+
+- Network creation, deletion, or modification from |morpheus| (networks are synced from SCVMM)
+- Native security group management
+- Load balancer integration
+
+.. note:: IPAM / IP Pool assignment is supported via |morpheus| and applied through guest OS configuration (cloud-init or sysprep).
+
+**Costing & Governance**
+
+- Price synchronization or billing integration
+- Right-sizing recommendations
+- Tag synchronization
+- Multitenancy / resource pool scoping per tenant
+
+**Other**
+
+- Linux Guest Customization (Windows guest customization is supported)
+- Kubernetes cluster provisioning
+- Remote console via hypervisor (SSH/RDP console is available)
+- Auto scaling
+- VM migrations between hosts
+
+For a full feature comparison across all supported clouds, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.

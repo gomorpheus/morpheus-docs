@@ -37,5 +37,5 @@ Clouds
   mvm/mvm.rst
 
 
-  .. cloudCoverage/cloudCoverage.rst
+  cloudCoverage/cloudCoverage.rst
   .. centos7template.rst

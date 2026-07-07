@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-07-07T17:38:47Z · 30 ready specs_
+_Generated: 2026-07-07T19:15:33Z · 30 ready specs_
 
 ## hvm-13-cluster-docs — "HVM 1.3 Cluster Layouts Documentation"
 _initiative · delivering · horizon: now_

@@ -173,3 +173,33 @@ GCP Windows Requirements
 .. note:: Some Google provided Windows Images have slow startups that cause the Morpheus Agent service to not start within the default 30 second service startup timeframe, including after initial reboot after sysprep/unattend configuration. This can be adjusted by running ``New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\" -Name "ServicesPipeTimeout" -PropertyType DWORD -Value 180000`` in powershell on the Windows Image.
 
 .. important:: Failure to use a GCP Windows Image that has not been sysprepped using ``GCESysprep`` will cause Agent Installation, Automation, and Console issues as |morpheus| will not be able to set user credentials and authenticate.
+
+Feature Boundaries
+^^^^^^^^^^^^^^^^^^
+
+The GCP integration is classified as a **Tier 2 — Core Cloud Management** integration. The following capabilities are not currently supported:
+
+**Networking**
+
+- Network creation or deletion from |morpheus| (networks and subnets are synced from GCP)
+- Security group management from |morpheus|
+- IPAM / IP pool management
+- Floating/Elastic IP assignment
+- Load balancer creation or management
+
+**Provisioning & Lifecycle**
+
+- VM resize (instances must be recreated)
+- VM clone or image conversion
+- Auto scaling via |morpheus| (use GCP-native autoscaler)
+- VM migrations
+
+**Other**
+
+- Remote console via |morpheus| (use GCP Console or SSH directly)
+- Third-party backup integrations
+- Multitenancy resource isolation
+
+.. note:: GCP costing, right-sizing guidance, and brownfield inventory features are fully supported. For Kubernetes workloads, GKE cluster provisioning is available.
+
+For a full feature comparison across all supported clouds, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.

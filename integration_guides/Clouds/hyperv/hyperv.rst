@@ -169,3 +169,33 @@ To provision a Docker Host simply navigate to the Clusters tab of the Cloud deta
 |morpheus| views a Docker host just like any other hypervisor with the caveat being that it is used for running containerized images instead of virtualized ones. Once a Docker Host is successfully provisioned a green checkmark will appear to the right of the host marking it as available for use. In the event of a failure click into the relevant host that failed and an error explaining the failure will be displayed in red at the top.
 
 Some common error scenarios include network connectivity. For a Docker Host to function properly, it must be able to resolve the |morpheus| appliance url which can be configured in Admin | Settings. If it is unable to resolve and negotiate with the appliance than the agent installation will fail and provisioning instructions will not be able to be issued to the host.
+
+Feature Boundaries
+^^^^^^^^^^^^^^^^^^
+
+The Hyper-V integration is classified as a **Tier 2 — Core Cloud Management** integration. The following capabilities are not currently supported:
+
+**Networking**
+
+- Network creation, deletion, or modification (Hyper-V VMSwitches are synchronized read-only from the host)
+- Native security group or firewall rule management
+- Network server integrations (NSX, ACI, etc.)
+- Distributed virtual switch support
+
+.. note:: Hyper-V networks (VMSwitches) are discovered automatically during cloud synchronization. External and Internal switch types are supported. VLAN tagging and multiple NIC assignment are available at provisioning time, but network infrastructure must be managed directly on the Hyper-V host. IPAM / IP Pool assignment is supported via |morpheus| and applied through guest OS configuration (cloud-init or sysprep).
+
+**Costing & Governance**
+
+- Price synchronization or billing integration
+- Invoice generation
+- Right-sizing recommendations
+- Tag synchronization
+- Multitenancy / resource pool scoping
+
+**Other**
+
+- Kubernetes cluster provisioning (Docker hosts are supported)
+- Image conversion (VMDK, QCOW2, etc.)
+- Clone to image
+
+For a full feature comparison across all supported clouds, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.

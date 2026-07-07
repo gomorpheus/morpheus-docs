@@ -1,12 +1,12 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-07-02T14:00:39Z · projected from 51 source nodes_
+_Last refreshed: 2026-07-07T17:38:47Z · projected from 70 source nodes_
 
 ## Surfaces
 
 | Surface | Stage | Path(s) | Last touched | Driver spec |
 |---|---|---|---|---|
-| (unassigned) | — | — | — | 44 specs without surface |
+| (unassigned) | — | — | — | 63 specs without surface |
 
 _Run `hero snapshot assign` to bucket unassigned specs._
 
@@ -22,13 +22,13 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ### Recently completed initiatives
 
+- **Spanish (es) Documentation Localization** (surface: —) — 18/18 specs done · COMPLETED 2026-07-02
 - **"Sprint 6: Certificates, DNS, SCM & Provisioning Features"** (surface: —) — 0/0 specs done · COMPLETED 2026-06-04
 - **"Sprint 5: Operations, Costing & Approvals"** (surface: —) — 0/0 specs done · COMPLETED 2026-06-04
-- **"Sprint 4: Kubernetes, Containers & VDI"** (surface: —) — 0/0 specs done · COMPLETED 2026-06-04
 
 ## Recently completed (last 14 days)
 
-_Nothing recent._
+- **(unassigned)** — es-validation-qa, docs-i18n-spanish, es-translate-infrastructure, es-translate-integration-guides, es-translate-administration, es-translate-getting-started, es-translate-library, es-translate-provisioning, es-translate-tools, es-translate-operations, es-translate-troubleshooting, es-translate-backups
 
 ## Next up across surfaces
 
@@ -40,12 +40,12 @@ _Nothing recent._
 
 ## Open risks & blockers
 
-- **Stale-in-flight (1):** `hvm-13-cluster-docs` (27d).
-- **Unassigned specs (44) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
+- **Stale-in-flight (1):** `hvm-13-cluster-docs` (33d).
+- **Unassigned specs (63) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
-- Specs covered: 0/44 (0%)
-- Projection generation: 0ms · Source nodes: 51
+- Specs covered: 0/63 (0%)
+- Projection generation: 0ms · Source nodes: 70
 
