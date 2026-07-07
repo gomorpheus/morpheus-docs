@@ -1,0 +1,45 @@
+{#- HPE classic search results page.
+    Restores the original RTD behaviour: type a query, press Enter, get a full
+    "Search Results" page with title links + highlighted-term snippets.
+
+    Extends the immaterial layout so the HPE header / nav / footer stay
+    consistent, but replaces the article body with the stock Sphinx search UI
+    and loads Sphinx's own search engine (searchtools.js) + a stock-format index
+    (searchindex_classic.js, emitted by setup() in conf.py). -#}
+{%- extends "layout.html" %}
+{% set title = _('Search') %}
+
+{% block extrahead %}
+  {# search.html is written at the build root, so the content root is "." #}
+  <script>document.documentElement.setAttribute('data-content_root', './');</script>
+  <meta name="robots" content="noindex" />
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <h1 id="search-documentation">{{ _('Search') }}</h1>
+  <noscript>
+    <div class="admonition warning">
+      <p class="admonition-title">Warning</p>
+      <p>Please enable JavaScript to use the search functionality.</p>
+    </div>
+  </noscript>
+  <form class="hpe-search-page__form" action="" method="get" role="search">
+    <input type="text" name="q" aria-labelledby="search-documentation" value=""
+           placeholder="Search the docs…" autocomplete="off" autocorrect="off"
+           autocapitalize="off" spellcheck="false" />
+    <button type="submit">{{ _('Search') }}</button>
+    <span id="search-progress" style="padding-left: 10px"></span>
+  </form>
+  <div id="search-results"></div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ pathto('_static/documentation_options.js', 1) }}"></script>
+  <script src="{{ pathto('_static/doctools.js', 1) }}"></script>
+  <script src="{{ pathto('_static/sphinx_highlight.js', 1) }}"></script>
+  <script src="{{ pathto('_static/language_data.js', 1) }}"></script>
+  <script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+  <script src="{{ pathto('searchindex_classic.js', 1) }}" defer="defer"></script>
+{% endblock %}

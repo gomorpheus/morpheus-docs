@@ -1,0 +1,136 @@
+/* ============================================================================
+   HPE app header — restyle sphinx-immaterial's top band into the Morpheus
+   Central header: white, 68px, 1px hairline border, no shadow. Markup comes
+   from _templates/partials/header.html.
+   ==========================================================================*/
+
+.md-header.app-header {
+  background: #ffffff;
+  color: #333;
+  border-bottom: 1px solid #d4d8db;   /* hairline, no shadow */
+  box-shadow: none;
+}
+
+.app-header .app-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 68px;
+  max-width: none;
+  margin: 0;
+  padding: 0 21px;
+}
+
+/* left cluster — brand -------------------------------------------------------*/
+.app-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #333;                 /* drives the inline logo's currentColor */
+  text-decoration: none;
+}
+.app-header__brand:hover { color: #333; }
+
+.app-header__logo {
+  height: 20px;
+  width: auto;
+  display: block;
+}
+
+.app-header__title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+/* right cluster — user-controls stand-in ------------------------------------*/
+.app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;           /* push to the right (space-between) */
+}
+
+.app-header__search {
+  height: 34px;
+  width: 260px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d4d8db;
+  border-radius: 6px;
+  outline: none;
+}
+.app-header__search-form { display: flex; margin: 0; }
+.app-header__search:focus { border-color: #03a883; }
+
+/* mobile drawer (hamburger) — dark on white; immaterial hides it on desktop */
+.app-header .app-header__drawer { color: #333; }
+
+/* the band is now 68px tall — realign sticky sidebars + anchor jumps ---------*/
+.md-sidebar { top: 68px; }
+/* Single anchor-offset source of truth: scroll-padding-top on the scroll root
+   (covers fragment nav, headerlink clicks, TOC + search jumps). Neutralise
+   immaterial's own `.md-typeset :target { scroll-margin-top: 3.6rem }` so the
+   two don't stack (they were adding up to ~152px of offset). */
+html { scroll-padding-top: 84px; }
+.md-typeset :target { scroll-margin-top: 0; }
+
+/* ---------------------------------------------------------------------------
+   Locale selector (POC) — header language dropdown, between the theme toggle
+   and the search field. Compact globe + language name + caret; the menu floats
+   (position:fixed, JS-anchored, right-aligned) so the header can't clip it.
+   Colors match the white header band; dark-mode overrides live in hpe-dark.css.
+   ------------------------------------------------------------------------- */
+.hpe-locale { position: relative; display: inline-flex; }
+.hpe-locale__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 34px;
+  padding: 0 8px;
+  color: #333;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.hpe-locale__toggle::-webkit-details-marker { display: none; }
+.hpe-locale__toggle:hover { background: #f1f3f4; }
+.hpe-locale[open] .hpe-locale__toggle { background: #f1f3f4; border-color: #d4d8db; }
+.hpe-locale__globe { width: 16px; height: 16px; fill: currentColor; flex: none; }
+.hpe-locale__caret { width: 14px; height: 14px; fill: currentColor; transition: transform 0.15s ease; }
+.hpe-locale[open] .hpe-locale__caret { transform: rotate(180deg); }
+.hpe-locale__menu {
+  position: fixed;
+  z-index: 11;
+  margin: 0;
+  padding: 4px;
+  min-width: 150px;
+  list-style: none;
+  background: #fff;
+  border: 1px solid #d4d8db;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+.hpe-locale__option {
+  display: block;
+  padding: 7px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.hpe-locale__option:hover,
+.hpe-locale__option:focus { background: #f1f3f4; outline: none; }
+.hpe-locale__option[aria-current="true"] { color: #03a883; font-weight: 700; }

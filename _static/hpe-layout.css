@@ -1,0 +1,41 @@
+/* Full-width layout — lift sphinx-immaterial's 61rem grid cap so the header,
+   content, and footer span the viewport (content keeps its 1.2rem gutters). */
+.md-grid {
+  max-width: none;
+}
+
+/* Drop immaterial's 1.5rem gap above the content/nav flex row. */
+.md-main__inner {
+  margin-top: 0;
+}
+
+/* Breadcrumbs (nested pages) — subtle trail above the H1. */
+.md-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.9rem;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  color: var(--md-default-fg-color--light);
+}
+.md-breadcrumbs__link {
+  color: var(--md-default-fg-color--light);
+  text-decoration: none;
+}
+.md-breadcrumbs__link:hover,
+.md-breadcrumbs__link:focus {
+  color: var(--md-typeset-a-color);
+}
+.md-breadcrumbs__sep {
+  color: var(--md-default-fg-color--lighter);
+}
+.md-breadcrumbs__current {
+  color: var(--md-default-fg-color--light);
+  font-weight: 500;
+}
+/* Keep tier-badge pills out of the breadcrumb trail (page titles carry them). */
+.md-breadcrumbs .tier-badge {
+  display: none;
+}

@@ -1,0 +1,22 @@
+{#-
+  HPE override of sphinx-immaterial's content partial: prepend a breadcrumb
+  trail on nested pages (Sphinx's `parents` is empty on top-level pages), then
+  render the stock content exactly as the theme does.
+-#}
+{% if parents %}
+<nav class="md-breadcrumbs" aria-label="Breadcrumbs">
+  <a class="md-breadcrumbs__link" href="{{ pathto(master_doc) }}">Home</a>
+  <span class="md-breadcrumbs__sep" aria-hidden="true">&rsaquo;</span>
+  {%- for doc in parents %}
+  <a class="md-breadcrumbs__link" href="{{ doc.link|e }}">{{ doc.title }}</a>
+  <span class="md-breadcrumbs__sep" aria-hidden="true">&rsaquo;</span>
+  {%- endfor %}
+  <span class="md-breadcrumbs__current" aria-current="page">{{ title }}</span>
+</nav>
+{% endif %}
+{% include "partials/tags.html" %}
+{% include "partials/actions.html" %}
+{{ page.content }}
+{% include "partials/source-file.html" %}
+{% include "partials/feedback.html" %}
+{% include "partials/comments.html" %}

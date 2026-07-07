@@ -1,0 +1,80 @@
+/* ============================================================================
+   HPE page-map — restyle sphinx-immaterial's secondary ("On this page") TOC.
+
+   immaterial hides the desktop TOC title and, when shown, labels it with the
+   PAGE title (not "Table of contents"); the section links are a flat scroll-spy
+   list. This layer:
+     1. draws a single vertical separator spine, only as tall as the map;
+     2. injects an "On this page" heading (weight 500, not the default fat 700);
+     3. marks the active item with HPE green + a vertical indicator bar that sits
+        on the spine and spans wrapped (multi-line) items.
+   ==========================================================================*/
+
+:root {
+  --hpe-primary: #01a982;
+  --pagemap-spine: rgba(0, 0, 0, 0.20);   /* light-mode separator line */
+  --pagemap-gap: 0.9rem;                   /* gap between spine and labels (~V3) */
+}
+
+.md-sidebar--secondary .md-nav--secondary {
+  position: relative;
+}
+
+/* immaterial still renders a bold "Table of contents" label here — hide it;
+   we inject our own lighter "On this page" heading below. */
+.md-sidebar--secondary .md-nav--secondary > .md-nav__title {
+  display: none;
+}
+
+/* 1) "On this page" heading — injected above the spine so the line starts at
+      the first item (line is only as tall as the map). */
+.md-sidebar--secondary .md-nav--secondary::before {
+  content: "On this page";
+  display: block;
+  margin: 0 0 0.5rem;
+  padding-left: 1.5rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: var(--md-default-fg-color--light);
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23707883'%3E%3Cpath d='M7 5h14v2H7zM7 11h14v2H7zM7 17h14v2H7zM3 5h2v2H3zM3 11h2v2H3zM3 17h2v2H3z'/%3E%3C/svg%3E")
+    no-repeat left 0.1rem / 1rem 1rem;
+}
+
+/* 2) Vertical separator spine on the top-level list only (single spine). */
+.md-sidebar--secondary .md-nav--secondary > .md-nav__list {
+  position: relative;
+  border-left: 1.5px solid var(--pagemap-spine);
+  margin-left: 0.15rem;
+  padding-left: var(--pagemap-gap);
+}
+
+/* neutralise immaterial's per-link indent so the gap == --pagemap-gap, and
+   replace its inter-item margin with symmetric padding so each item owns an
+   even vertical row (the indicator bar then spans padding, not just text). */
+.md-sidebar--secondary .md-nav--secondary .md-nav__item > .md-nav__link {
+  margin-left: 0;
+  margin-top: 0;
+  padding: 0.32rem 0;
+  position: relative;
+}
+
+/* 3) Active item — bold, HPE green, and a green indicator bar on the spine
+      that spans the full (possibly wrapped) label height. */
+.md-sidebar--secondary .md-nav--secondary .md-nav__link--active {
+  color: var(--hpe-primary) !important;
+  font-weight: 600;
+}
+
+.md-sidebar--secondary .md-nav--secondary .md-nav__link--active::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--pagemap-gap) - 2px);
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  border-radius: 1.5px;
+  background: var(--hpe-primary);
+}

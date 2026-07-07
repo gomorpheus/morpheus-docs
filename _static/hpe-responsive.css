@@ -1,0 +1,143 @@
+/* ============================================================================
+   HPE responsive staging — override sphinx-immaterial's single breakpoint so
+   the page-map disappears BEFORE the nav folds, and the nav keeps its native
+   desktop shape right up until it collapses into the drawer:
+
+     >= 85em     : three columns (nav | content | page-map)
+     76.25-85em  : two columns  (nav | content) — page-map hidden; the nav is
+                   still immaterial's native desktop tree, unchanged
+     <  76.25em  : nav folds into the hamburger drawer (flattened to the tree),
+                   page-map already gone
+   ==========================================================================*/
+
+/* 1) Page-map disappears first — hidden ABOVE immaterial's 76.25em nav-fold
+   point, so it never coincides with the nav switching to its mobile DOM.
+   .md-main__inner is display:flex, so content reflows to full width. */
+@media screen and (max-width: 85em) {
+  .md-sidebar--secondary {
+    display: none !important;
+  }
+}
+
+/* 2) Drawer (< 76.25em) — immaterial folds the nav into the hamburger drawer.
+   Flatten its sliding sub-panels into the same inline expand/collapse the
+   desktop tree uses, and drop the per-panel title bars + back-arrows so the
+   drawer reads as the same tree design. */
+@media screen and (max-width: 76.234375em) {
+  /* Flush the drawer to the very top of the page, over the app header, instead
+     of starting below it (hpe-header.css pins .md-sidebar to top:68px for the
+     desktop sticky column; reset it here). Lift it above the header (z:100) and
+     dim the header too via the overlay. Widen it from immaterial's 12.1rem so
+     deeply-nested labels don't wrap so hard — the slide-in hide (left) and the
+     open shift (translateX) are both driven off one --drawer-w so they stay in
+     sync. */
+  .md-sidebar--primary {
+    --drawer-w: min(19rem, 82vw);
+    top: 0;
+    z-index: 200;
+    width: var(--drawer-w);
+    transform: translateX(-100%);
+  }
+  /* Cancel immaterial's [dir=ltr] left:-12.1rem (it hides the old 12.1rem
+     drawer via left, which no longer matches our width) and hide/show purely
+     with a width-independent transform. */
+  [dir="ltr"] .md-sidebar--primary {
+    left: 0;
+  }
+  [data-md-toggle="drawer"]:checked ~ .md-container .md-sidebar--primary {
+    transform: translateX(0);
+  }
+  .md-overlay {
+    z-index: 150;
+  }
+  .md-nav--primary .md-nav {
+    position: static;
+    height: auto;
+    z-index: auto;
+  }
+  .md-nav--primary .md-nav__toggle ~ .md-nav {
+    display: grid;
+    grid-template-rows: minmax(0, 0fr);
+    transform: none;
+    opacity: 0;
+    visibility: collapse;
+    transition: grid-template-rows 0.25s cubic-bezier(0.86, 0, 0.07, 1),
+      opacity 0.25s, visibility 0ms 0.25s;
+  }
+  .md-nav--primary .md-nav__toggle.md-toggle--indeterminate ~ .md-nav,
+  .md-nav--primary .md-nav__toggle:checked ~ .md-nav {
+    grid-template-rows: minmax(0, 1fr);
+    opacity: 1;
+    visibility: visible;
+    transition: grid-template-rows 0.25s cubic-bezier(0.86, 0, 0.07, 1),
+      opacity 0.15s 0.1s, visibility 0ms;
+  }
+  .md-nav--primary .md-nav__toggle ~ .md-nav > .md-nav__list {
+    overflow: hidden;
+  }
+  .md-nav--primary .md-nav__toggle:checked ~ .md-nav > .md-nav__list {
+    overflow: visible;
+  }
+  /* Drop the sliding-panel title bars + back-arrows on the NESTED panels. */
+  .md-nav--primary .md-nav .md-nav__title {
+    display: none !important;
+  }
+  /* Top-level title becomes the drawer header bar. It's a <label for="__drawer">,
+     so the whole bar (and the ✕) already closes the drawer on click. Override
+     immaterial's tall grey mobile title (min-height:5.6rem, line-height:2.4rem,
+     grey bg, 3rem top padding) with a flush 68px bar: "Morpheus Docs" left,
+     a close ✕ right — visually continuous with the app header. */
+  .md-sidebar--primary .md-nav--primary > .md-nav__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto; /* pinned bar — never let a long tree shrink it away */
+    height: 68px;
+    min-height: 0;
+    margin: 0;
+    padding: 0 0.9rem 0 1.1rem;
+    line-height: 1.3;
+    font-size: 0.8rem;
+    background: none;
+    cursor: pointer;
+    border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  }
+  .md-sidebar--primary .md-nav--primary > .md-nav__title::after {
+    content: "\2715"; /* ✕ multiplication X */
+    flex: 0 0 auto;
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--md-default-fg-color--light);
+  }
+  /* Mobile immaterial restyles the tree away from the desktop look: it adds a
+     hairline divider on every item, bumps the item font to 16px, and flattens
+     the indentation. Undo all three so the drawer reads as the desktop tree. */
+  .md-nav--primary .md-nav__item {
+    border-top: none;
+    font-size: inherit; /* back to the 14px the list/container already use */
+  }
+  /* Desktop indents via a 0.6rem padding-left on every nested list, which
+     compounds through nesting (16→28→40…). Mobile zeroes it; restore it. */
+  .md-nav--primary .md-nav__list {
+    padding-left: 0.6rem;
+  }
+  /* Immaterial makes each nav list flex:1 so it fills the full-height drawer
+     (to push a footer down). We have no footer + a fixed 68px title, so the
+     OUTER list is the scroll region: grow:0 keeps it content-height when the
+     tree is short (no big empty block); when the tree is taller than the
+     drawer it shrinks and scrolls internally while the title stays pinned.
+     Nested lists aren't flex children, so their flex is a no-op. */
+  .md-nav--primary > .md-nav__list {
+    flex: 0 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    /* Constant right gutter for wrapped labels — only on the OUTER list so it
+       doesn't compound on nested levels (which would squeeze deep items). */
+    padding-right: 0.6rem;
+  }
+  /* The active page's integrated page-TOC is force-expanded inline, so its
+     toggle chevron is a dangling, misaligned icon — hide it. */
+  .md-nav--primary .md-nav__current-toc > .md-nav__link > .md-nav__icon {
+    display: none;
+  }
+}

@@ -1,0 +1,82 @@
+/* HPE classic search — results page (type -> Enter -> snippets).
+   Styles the stock Sphinx searchtools.js output (#search-results, ul.search)
+   plus the on-page search form. Result title links inherit the HPE green from
+   .md-typeset; term highlights get a soft yellow marker. */
+
+.hpe-search-page__form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 1rem 0 1.5rem;
+}
+.hpe-search-page__form input[type="text"] {
+  flex: 0 1 440px;
+  height: 40px;
+  padding: 0 14px;
+  font: inherit;
+  color: #333;
+  background: #fff;
+  border: 1px solid #d4d8db;
+  border-radius: 6px;
+}
+.hpe-search-page__form input[type="text"]:focus {
+  outline: none;
+  border-color: #03a883;
+  box-shadow: 0 0 0 2px rgba(3, 168, 131, 0.2);
+}
+.hpe-search-page__form button {
+  height: 40px;
+  padding: 0 18px;
+  font: inherit;
+  font-weight: 600;
+  color: #fff;
+  background: #01a982;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.hpe-search-page__form button:hover { background: #018a6b; }
+
+#search-results { margin-top: 1rem; }
+#search-results h2 { margin: 0 0 0.25rem; font-size: 1.1rem; }
+#search-results p.search-summary { margin: 0 0 1rem; color: var(--md-default-fg-color--light, #555); }
+
+ul.search {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+ul.search > li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest, #e4e4e4);
+}
+ul.search > li > a {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+ul.search > li p {
+  margin: 0.35rem 0 0;
+  color: var(--md-default-fg-color--light, #555);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+.highlighted {
+  background: #fff3b0;
+  color: inherit;
+  padding: 0 0.1em;
+  border-radius: 2px;
+}
+
+/* dark mode */
+[data-md-color-scheme="slate"] .hpe-search-page__form input[type="text"] {
+  color: #e6e6e6;
+  background: #1f2529;
+  border-color: #3a4148;
+}
+[data-md-color-scheme="slate"] ul.search > li {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+[data-md-color-scheme="slate"] .highlighted {
+  background: #6b5d1e;
+  color: #fff;
+}

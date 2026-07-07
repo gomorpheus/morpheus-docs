@@ -1,0 +1,89 @@
+/* ============================================================================
+   HPE notification-style admonitions.
+
+   Replace sphinx-immaterial's bordered box + tinted title-bar with the HPE
+   inline-notification pattern: one soft severity-tinted surface, rounded, a
+   filled status shape in a left gutter, a bold title, and the body text
+   hanging beneath it. Severities map to DESIGN.md status tokens:
+
+     note / seealso            -> info    (blue,  circle-i)
+     tip / hint                -> success (green, filled circle)
+     warning/caution/attention -> warning (amber, filled triangle)
+     important                 -> warning (amber)  [tip wins when combined]
+     danger / error / failure  -> critical(red,   filled diamond)
+     generic admonition        -> unknown (grey,  filled square)
+   ==========================================================================*/
+
+.md-typeset .admonition {
+  position: relative;
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: none !important;
+  margin: 1.4em 0;
+  padding: 0.85rem 1rem 0.85rem 2.5rem; /* left gutter holds the status icon */
+  font-size: 0.68rem;
+  /* Defaults = "unknown" (grey square); each type overrides both vars below. */
+  --hpe-adm-bg: #f4f5f5;
+  --hpe-adm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='2.5' y='2.5' width='11' height='11' rx='2' fill='%237d8a92'/%3E%3C/svg%3E");
+  background-color: var(--hpe-adm-bg);
+}
+
+/* Severity shape in the left gutter — top-aligned, spans title + body. */
+.md-typeset .admonition::before {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  top: 0.95rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  background: var(--hpe-adm-icon) center / contain no-repeat;
+}
+
+/* Title — bold, near-black; drop immaterial's tint bar, border and inline icon. */
+.md-typeset .admonition > .admonition-title {
+  background-color: transparent !important;
+  border: none !important;
+  margin: 0 0 0.15rem !important;
+  padding: 0 !important;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+.md-typeset .admonition > .admonition-title::before {
+  display: none !important;
+}
+.md-typeset .admonition > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Severity mapping ---------------------------------------------------- */
+/* Info — blue circle-i */
+.md-typeset .admonition.note,
+.md-typeset .admonition.seealso {
+  --hpe-adm-bg: #e3f1ff;
+  --hpe-adm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.6' fill='none' stroke='%230070f8' stroke-width='1.3'/%3E%3Ccircle cx='8' cy='5.1' r='1' fill='%230070f8'/%3E%3Crect x='7.15' y='7' width='1.7' height='5.2' rx='0.85' fill='%230070f8'/%3E%3C/svg%3E");
+}
+
+/* Warning — amber triangle (important lands here unless it is also a tip) */
+.md-typeset .admonition.important,
+.md-typeset .admonition.warning,
+.md-typeset .admonition.caution,
+.md-typeset .admonition.attention {
+  --hpe-adm-bg: #fff3dd;
+  --hpe-adm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 2.2 L14.5 13.4 L1.5 13.4 Z' fill='%23ec8c25'/%3E%3C/svg%3E");
+}
+
+/* Success — green filled circle. Declared after warning so an
+   `important tip` box (the docs' common combo) resolves to success. */
+.md-typeset .admonition.tip,
+.md-typeset .admonition.hint {
+  --hpe-adm-bg: #d1ffee;
+  --hpe-adm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%2301a982'/%3E%3C/svg%3E");
+}
+
+/* Critical — red filled diamond */
+.md-typeset .admonition.danger,
+.md-typeset .admonition.error,
+.md-typeset .admonition.failure {
+  --hpe-adm-bg: #ffecec;
+  --hpe-adm-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1.5 L14.5 8 L8 14.5 L1.5 8 Z' fill='%23ec3331'/%3E%3C/svg%3E");
+}
