@@ -7,21 +7,21 @@ sys.path.insert(0, os.path.abspath('_ext'))
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_9.0.0-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_9.1.0-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: June 2026
-.. |releasetype| replace:: LTS
+.. |releasedate| replace:: TBD
+.. |releasetype| replace:: Feature
 .. |morphAnnualVer| replace:: v9
-.. |morphbranch| replace:: v9.0
-.. |morphver| replace:: v9.0.0
+.. |morphbranch| replace:: v9.1
+.. |morphver| replace:: v9.1.0
 .. |minUpgradeVer| replace:: v6.0.0
-.. |minRollingUpgradeVer| replace:: v8.1.2
+.. |minRollingUpgradeVer| replace:: v9.0.0
 .. |nonRollingUpgradeVer| replace:: v8.0.4
-.. |previousMorphVer| replace:: v8.1.2
+.. |previousMorphVer| replace:: v9.0.0
 .. |pluginVer| replace:: 1.4.1
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.13
