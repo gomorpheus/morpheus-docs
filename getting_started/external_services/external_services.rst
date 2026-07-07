@@ -12,9 +12,6 @@ These pages are relevant when you choose to run one or more backend services **e
 - **Organizational Requirements** — Policies requiring database or messaging infrastructure to be managed by a dedicated team
 - **Scaling** — Separating resource-intensive services (search, messaging) from the application tier
 
-Service Roles
--------------
-
 .. list-table::
    :header-rows: 1
    :widths: 20 80
