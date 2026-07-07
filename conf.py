@@ -7,34 +7,34 @@ sys.path.insert(0, os.path.abspath('_ext'))
 master_doc = 'index'
 
 latex_documents = [
-    (master_doc, 'morpheus_8.1.2-1.tex', u'Morpheus Documentation',
+    (master_doc, 'morpheus_9.0.0-1.tex', u'Morpheus Documentation',
      u'Morpheus', 'manual'),
 ]
 
 rst_prolog = """
 
-.. |releasedate| replace:: June 13 2025
+.. |releasedate| replace:: June 2026
 .. |releasetype| replace:: LTS
-.. |morphAnnualVer| replace:: v8
-.. |morphbranch| replace:: v8.1
-.. |morphver| replace:: v8.1.2
+.. |morphAnnualVer| replace:: v9
+.. |morphbranch| replace:: v9.0
+.. |morphver| replace:: v9.0.0
 .. |minUpgradeVer| replace:: v6.0.0
-.. |minRollingUpgradeVer| replace:: v8.0.5
+.. |minRollingUpgradeVer| replace:: v8.1.2
 .. |nonRollingUpgradeVer| replace:: v8.0.4
-.. |previousMorphVer| replace:: v8.1.1
-.. |pluginVer| replace:: 1.2.8
+.. |previousMorphVer| replace:: v8.1.2
+.. |pluginVer| replace:: 1.4.1
 .. |workerVer| replace:: 5.4.8+
 .. |rmqbranch| replace:: v3.5-3.13
 .. |rmqver| replace:: v3.13.7
 .. |mysqlbranch| replace:: v8.0
-.. |mysqlver| replace:: v8.0.36
+.. |mysqlver| replace:: v8.0.40
 .. |mysqlverfips| replace:: v8.0.36
 .. |esbranch| replace:: v8.9+
 .. |esver| replace:: v8.15.5
-.. |tcver| replace:: v9.0.104
+.. |tcver| replace:: v9.0.106
 .. |nginxver| replace:: v1.26.2
-.. |nodePackageVer| replace:: 3.2.37
-.. |linuxagentver| replace:: v2.9.8
+.. |nodePackageVer| replace:: 3.3.11
+.. |linuxagentver| replace:: v3.1.0
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.6.1.0
 .. |java| replace:: 17.0.14+7
@@ -365,11 +365,6 @@ def setup(app):
     app.add_css_file('morpheusTheme.css')
 
 
-# -- Copy the upgrade table from master -------------------------------------------
-
-import urllib.request
-from urllib.request import urlretrieve
-
-urlretrieve (
-    "https://github.com/gomorpheus/morpheus-docs/raw/master/release_notes/upgrade_table.rst",
-    "release_notes/upgrade_table2.rst")
+# -- Upgrade table is maintained locally in release_notes/upgrade_table2.rst ---
+# Previously downloaded from gomorpheus/morpheus-docs master on every build.
+# Removed in v9.0.0 as the table is now maintained directly in this repository.

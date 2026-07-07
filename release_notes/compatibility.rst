@@ -9,6 +9,9 @@ When installing and upgrading to |morpheus| |morphver|, refer to the following t
 Breaking Changes
 ================
 
+- 9.0.0: |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and VM node packages from the package-repo when appliance free space is needed.
+- 9.0.0: Plugin API updated to 1.4.1. Plugins built against older Plugin API versions may need to be recompiled for compatibility.
+- 9.0.0: HVM Cluster Layout 1.3 replaces Pacemaker with the |morpheus| Agent as the HA control plane for HPE Clustered Datastores. Existing 1.2 clusters can be upgraded via a one-click process (Infrastructure > Clusters > host > Actions > Update > HVM Cluster 1.3 Upgrade).
 - 7.0.8, 8.0.0: On first ui startup after upgrade, |morpheus| will normalize all IPv6 records within |morpheus|-type pools. There will be a warning in appliance logs warning how many records will be normalized. This takes between 5-15 minutes per 1m records
 - 7.0.8, 8.0.0: Updated the AccountUsage table in the appliance database to accept LONGTEXT data type to prevent data from oversetting the table in specific scenarios. Note that this schema change will take time for databases with large numbers of account usage records
 - 6.3.0: Version 6.3.0 is the first version to require Plugin API 1.0.0+. Small changes will need to be made in order to make plugins created for prior versions of |morpheus| compatible with 6.3.0+. See the `related article in our KnowledgeBase <https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ on the small changes that will need to be made to ensure plugin compatibility
@@ -79,7 +82,7 @@ Services
    * - Plugin API
      - |pluginVer|
      - |pluginVer|
-     -
+     - |checkmark|
    * - Morpheus Worker
      - |workerVer|
      -
@@ -87,12 +90,12 @@ Services
    * - MySQL
      - |mysqlbranch|
      - |mysqlver|
-     -
+     - |checkmark|
    * - MySQL (FIPS)
      - |mysqlbranch|
      - |mysqlverfips|
      -
-   * - Elasticsearch
+   * - OpenSearch
      - |esbranch|
      - |esver|
      -

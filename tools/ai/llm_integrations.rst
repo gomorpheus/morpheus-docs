@@ -3,26 +3,40 @@
 LLM Integrations
 ----------------
 
-LLM (Large Language Model) Integrations connect Morpheus to language model providers. These integrations supply the AI reasoning capabilities that power AI Agents. LLM integrations are **added through Administration > Integrations** and appear as a read-only reference under Tools > AI Services > Integrations.
+LLM (Large Language Model) Integrations connect Morpheus to language model providers. These integrations supply the AI reasoning capabilities that power AI Agents.
 
-Navigate to :menuselection:`Tools --> AI Services --> Integrations` to view connected LLM providers.
+Navigate to :menuselection:`Tools --> AI Services --> Integrations` to manage connected LLM providers.
 
 Adding an LLM Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-LLM integrations are managed from :menuselection:`Administration --> Integrations`:
+LLM integrations are managed from :menuselection:`Tools --> AI Services --> Integrations`:
 
-1. Click :guilabel:`+ ADD`
-2. Select an LLM provider type from the integration type list
-3. Configure provider-specific settings (API key, endpoint, etc.)
-4. Save the integration
+1. Navigate to :menuselection:`Tools --> AI Services --> Integrations`
+2. Click :guilabel:`+ New Integration`
+3. From the :guilabel:`New Integration` dropdown, select a type
+
+   .. note::
+
+      Currently, all integration types consume the same configuration fields.
+
+4. Configure the following fields:
+
+   - :guilabel:`NAME` — A descriptive name for this integration
+   - :guilabel:`ENABLED` — Check to activate the integration
+   - :guilabel:`API ENDPOINT` — The URL for the provider's API endpoint
+   - :guilabel:`CREDENTIALS` — Select **Local Credentials** to paste an API key directly, or select from the secure credential store (e.g., Cypher)
+
+5. Save the integration
 
 After saving, Morpheus automatically discovers available models from the provider and syncs them. These models then appear in the **Model** dropdown when configuring AI Agents.
 
 Supported Providers
 ^^^^^^^^^^^^^^^^^^^
 
-LLM provider support is plugin-based. The following providers are available:
+Morpheus ships with provider integrations pre-installed but more will be added over time. Additionally, new AI integrations can be added to the platform by users through custom plugin development.
+
+The following providers are currently available:
 
 .. list-table::
    :header-rows: 1
@@ -39,7 +53,7 @@ LLM provider support is plugin-based. The following providers are available:
 
 .. note::
 
-   Additional LLM providers can be added through the Morpheus plugin system as they become available.
+   Additional LLM providers can be added through the Morpheus plugin system. See the developer documentation for guidance on creating custom AI integration plugins.
 
 Model Properties
 ^^^^^^^^^^^^^^^^

@@ -106,78 +106,263 @@ When an LLM calls a category loader (e.g., ``use_instances_tools``), the tools f
 Tool Categories
 ^^^^^^^^^^^^^^^
 
-The following tool categories are available (subject to user permissions):
+The following 60 tool categories are available (subject to user permissions):
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 10 70
+
+   * - Category
+     - Tools
+     - Description
+   * - ``networks``
+     - 178
+     - Networks, subnets, routers, DNS, DHCP, IP pools, proxies, firewall rules
+   * - ``clusters``
+     - 115
+     - Kubernetes/Docker clusters, namespaces, pods, volumes, services, datastores
+   * - ``library``
+     - 70
+     - Instance type layouts, container types, option types, spec templates, file templates, scripts
+   * - ``instances``
+     - 61
+     - VM and container instances — CRUD, power actions, snapshots, cloning, resize
+   * - ``admin``
+     - 53
+     - Appliance settings, health, ping, setup, tenants, maintenance mode
+   * - ``load-balancers``
+     - 48
+     - Load balancers, virtual servers, pools, profiles, monitors
+   * - ``monitoring``
+     - 45
+     - Monitoring checks, check groups, check apps, incidents, alerts
+   * - ``clouds``
+     - 44
+     - Cloud integrations, cloud datastores, cloud folders, resource pools, security groups
+   * - ``servers``
+     - 33
+     - Bare-metal hosts, hypervisors, managed servers — CRUD and power actions
+   * - ``provisioning``
+     - 26
+     - Provision types, virtual images, pricing/service plans
+   * - ``storage``
+     - 24
+     - Storage servers, storage volumes, storage buckets, file shares
+   * - ``deployments``
+     - 23
+     - App deployments, deployment versions, deployment files
+   * - ``backups``
+     - 21
+     - Backups, backup results, backup restores, backup settings
+   * - ``vdi``
+     - 20
+     - Virtual desktop pools, VDI gateways, VDI allocations
+   * - ``catalog``
+     - 18
+     - Self-service catalog types, catalog orders, cart items, checkout, inventory
+   * - ``apps``
+     - 17
+     - Morpheus apps (multi-tier), app lifecycle, app security groups, wiki
+   * - ``roles``
+     - 16
+     - Roles and role permissions management
+   * - ``integrations``
+     - 16
+     - Third-party integrations (ITSM, IPAM, DNS, CM, etc.)
+   * - ``groups``
+     - 16
+     - Infrastructure groups, group clouds, group wiki
+   * - ``tasks``
+     - 14
+     - Automation tasks — shell scripts, HTTP, Ansible, Puppet, Chef, etc.
+   * - ``jobs``
+     - 14
+     - Scheduled jobs and job executions
+   * - ``billing``
+     - 14
+     - Billing, invoices, invoice line items
+   * - ``archives``
+     - 14
+     - Archive buckets and archive files
+   * - ``containers``
+     - 12
+     - Container/node actions — start, stop, restart, suspend, attach logs
+   * - ``credentials``
+     - 11
+     - Credential store — CRUD for stored credentials
+   * - ``security``
+     - 10
+     - Security scans and security packages
+   * - ``user-settings``
+     - 9
+     - Current user settings and preferences
+   * - ``power-schedules``
+     - 9
+     - Power schedule policies for automated start/stop
+   * - ``options``
+     - 9
+     - Options API for dynamic form lookups (network options, zone options, etc.)
+   * - ``guidance``
+     - 8
+     - Cost and resource optimization recommendations
+   * - ``logs``
+     - 7
+     - Log search and cluster log retrieval
+   * - ``image-builds``
+     - 7
+     - Image build pipelines and image build executions
+   * - ``blueprints``
+     - 7
+     - Blueprints (app templates) CRUD
+   * - ``wiki``
+     - 6
+     - Wiki pages — server, cloud, group, cluster, instance wiki
+   * - ``user-sources``
+     - 6
+     - Identity sources (LDAP, SAML, etc.)
+   * - ``reports``
+     - 6
+     - Report types, report execution and results
+   * - ``provisioning-licenses``
+     - 6
+     - Software license management and license reservations
+   * - ``policies``
+     - 6
+     - Governance policies
+   * - ``migrations``
+     - 6
+     - Hypervisor console/migration tools
+   * - ``environments``
+     - 6
+     - Environment tags (dev, staging, production, etc.)
+   * - ``whitelabel-settings``
+     - 5
+     - Appliance white-labeling / branding
+   * - ``user-groups``
+     - 5
+     - User groups management
+   * - ``scale-thresholds``
+     - 5
+     - Auto-scale threshold definitions
+   * - ``resource-pools``
+     - 5
+     - Resource pool / compute zone management
+   * - ``prices``
+     - 5
+     - Price definitions for billing
+   * - ``price-sets``
+     - 5
+     - Price set groupings
+   * - ``preseed-scripts``
+     - 5
+     - Preseed/unattend scripts for OS automation
+   * - ``email-templates``
+     - 5
+     - Email notification templates
+   * - ``clients``
+     - 5
+     - OAuth client management
+   * - ``certificates``
+     - 5
+     - SSL certificate management
+   * - ``budgets``
+     - 5
+     - Budget definitions and tracking
+   * - ``boot-scripts``
+     - 5
+     - Boot scripts for bare-metal provisioning
+   * - ``approvals``
+     - 5
+     - Approval requests and approval actions
+   * - ``license``
+     - 4
+     - Morpheus license management
+   * - ``key-pairs``
+     - 4
+     - SSH key pair management
+   * - ``execution``
+     - 3
+     - Execution request / remote command execution
+   * - ``public-archives``
+     - 2
+     - Public archive file links
+   * - ``forgot``
+     - 2
+     - Password reset / forgot password
+   * - ``search``
+     - 1
+     - Global search across all resource types
+   * - ``costing``
+     - \-
+     - Invoices, budgets, pricing, and cost management
+   * - ``health``
+     - \-
+     - Appliance health and diagnostics
+   * - ``network-pools``
+     - \-
+     - IPAM — network pools, pool servers, IP addresses
+
+Common Filter Presets
+^^^^^^^^^^^^^^^^^^^^^
+
+Use the ``X-Mcp-Tool-Categories`` header to load only the categories relevant to your use case. The following presets cover common scenarios:
 
 .. list-table::
    :header-rows: 1
    :widths: 25 75
 
-   * - Category
-     - Description
-   * - ``instances``
-     - VMs, containers, and managed instances
-   * - ``containers``
-     - Container management within instances
-   * - ``servers``
-     - Bare-metal and virtual host servers
-   * - ``clouds``
-     - Cloud integrations (VMware, AWS, Azure, GCP, etc.)
-   * - ``clusters``
-     - Kubernetes, Docker Swarm, HVM clusters
-   * - ``networks``
-     - Networks, routers, firewalls, IP pools, DNS
-   * - ``load-balancers``
-     - Load balancers, pools, profiles
-   * - ``storage``
-     - Storage servers, volumes, buckets
-   * - ``monitoring``
-     - Checks, incidents, alerts
-   * - ``logs``
-     - Log retrieval and search
-   * - ``tasks``
-     - Automation tasks
-   * - ``jobs``
-     - Scheduled and on-demand jobs
-   * - ``provisioning``
-     - Service plans, virtual images, snapshots
-   * - ``library``
-     - Instance types, layouts, node types
-   * - ``catalog``
-     - Self-service catalog items
-   * - ``blueprints``
-     - App blueprints (ARM, CloudFormation, Terraform, Kubernetes)
-   * - ``apps``
-     - Multi-tier application deployments
-   * - ``admin``
-     - Appliance settings, tenants, users
-   * - ``roles``
-     - RBAC role management
-   * - ``security``
-     - Security groups, scan results
-   * - ``credentials``
-     - Credential store management
-   * - ``policies``
-     - Governance policies
-   * - ``backups``
-     - Backup jobs and restore operations
-   * - ``billing``
-     - Usage and billing
-   * - ``costing``
-     - Invoices, budgets, pricing
-   * - ``integrations``
-     - Third-party integrations
-   * - ``vdi``
-     - Virtual Desktop Infrastructure
-   * - ``reports``
-     - Report generation and retrieval
-   * - ``guidance``
-     - Optimization recommendations
-   * - ``health``
-     - Appliance health and diagnostics
-   * - ``wiki``
-     - Wiki pages
-   * - ``search``
-     - Global search
+   * - Use Case
+     - Categories
+   * - VM Operations
+     - ``instances,servers,clouds,networks,monitoring``
+   * - Kubernetes
+     - ``clusters,instances,clouds,networks,storage``
+   * - Service Catalog
+     - ``catalog,provisioning,library,options``
+   * - Networking
+     - ``networks,load-balancers,security,certificates``
+   * - Cost Management
+     - ``billing,budgets,guidance,prices,price-sets``
+   * - Automation
+     - ``tasks,jobs,execution,power-schedules,scale-thresholds``
+   * - Administration
+     - ``admin,roles,user-groups,user-sources,user-settings,license``
+   * - Provisioning
+     - ``instances,clouds,library,options,provisioning,networks,groups,resource-pools``
+   * - Full Operations
+     - ``instances,servers,clouds,clusters,networks,monitoring,tasks,jobs``
+
+Available Tools
+^^^^^^^^^^^^^^^
+
+The MCP server exposes **1112 tools** providing full coverage of the Morpheus REST API. All tool calls execute with the permissions of the authenticated user.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 20 80
+
+   * - Area
+     - Example Tools
+   * - Instances
+     - ``list_instances``, ``get_instance``, ``create_instance``, ``delete_instance``, ``start_instance``, ``stop_instance``, ``restart_instance``, ``resize_instance``, ``snapshot_instance``, ``clone_instance``
+   * - Servers
+     - ``list_servers``, ``get_server``, ``create_server``, ``delete_server``, ``start_server``, ``stop_server``, ``resize_server``
+   * - Clouds
+     - ``list_clouds``, ``get_cloud``, ``create_cloud``, ``delete_cloud``, ``refresh_cloud``
+   * - Clusters
+     - ``list_clusters``, ``get_cluster``, ``create_cluster``, ``delete_cluster``, ``list_cluster_namespaces``, ``list_cluster_pods``
+   * - Networks
+     - ``list_networks``, ``get_network``, ``create_network``, ``delete_network``, ``list_subnets``, ``create_subnet``
+   * - Monitoring
+     - ``list_checks``, ``get_check``, ``create_check``, ``list_incidents``, ``list_alerts``
+   * - Automation
+     - ``list_tasks``, ``get_task``, ``create_task``, ``execute_task``, ``list_jobs``, ``execute_job``
+   * - Catalog
+     - ``list_catalog_items``, ``get_catalog_item``, ``create_catalog_order``, ``checkout_catalog``
+   * - Admin
+     - ``whoami``, ``list_users``, ``get_user``, ``list_accounts``, ``get_appliance_settings``
+   * - Search
+     - ``search``
 
 Session Customization Headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -246,3 +431,256 @@ Security Considerations
 - Use ``X-Mcp-Read-Only-Tools: true`` for untrusted or automated clients
 - API tokens used for MCP should be scoped to the minimum required role
 - Sessions are isolated per user — no cross-user data leakage
+
+Exposing to External MCP Clients
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This section provides step-by-step instructions for connecting external MCP clients to your Morpheus appliance.
+
+Generate a Morpheus API Token
+"""""""""""""""""""""""""""""
+
+To authenticate external MCP clients, you need a Morpheus API token.
+
+**Via the Morpheus UI:**
+
+1. Navigate to **User Settings > API Keys** tab
+2. Click **+ADD**
+3. Provide a descriptive name (e.g., ``mcp-claude-desktop``)
+4. Select the appropriate **Client ID**
+5. Click **Save** and copy the generated key
+
+**Via curl:**
+
+.. code-block:: bash
+
+   curl -X POST "https://your-morpheus-host/oauth/token" \
+     -H "Content-Type: application/x-www-form-urlencoded" \
+     -d "grant_type=password&scope=write&client_id=morph-api&username=YOUR_USER&password=YOUR_PASS"
+
+The response contains an ``access_token`` field that you use as your Bearer token.
+
+Configure GitHub Copilot CLI
+""""""""""""""""""""""""""""
+
+**Option A: Project-level configuration**
+
+Create or edit ``.github/copilot-mcp.json`` in your project root:
+
+.. code-block:: json
+
+   {
+     "mcpServers": {
+       "morpheus": {
+         "type": "http",
+         "url": "https://your-morpheus-host/api/mcp",
+         "headers": {
+           "Authorization": "Bearer YOUR_API_TOKEN"
+         }
+       }
+     }
+   }
+
+**Option B: User-level configuration**
+
+Create or edit ``~/.config/github-copilot/mcp.json``:
+
+.. code-block:: json
+
+   {
+     "mcpServers": {
+       "morpheus": {
+         "type": "http",
+         "url": "https://your-morpheus-host/api/mcp",
+         "headers": {
+           "Authorization": "Bearer YOUR_API_TOKEN"
+         }
+       }
+     }
+   }
+
+Configure Claude Desktop
+""""""""""""""""""""""""
+
+Edit the Claude Desktop configuration file:
+
+- **macOS:** ``~/Library/Application Support/Claude/claude_desktop_config.json``
+- **Windows:** ``%APPDATA%\Claude\claude_desktop_config.json``
+
+.. code-block:: json
+
+   {
+     "mcpServers": {
+       "morpheus": {
+         "type": "http",
+         "url": "https://your-morpheus-host/api/mcp",
+         "headers": {
+           "Authorization": "Bearer YOUR_API_TOKEN"
+         }
+       }
+     }
+   }
+
+Configure OpenCode
+""""""""""""""""""
+
+**Option A: Manual configuration**
+
+Edit ``opencode.json`` in your project root:
+
+.. code-block:: json
+
+   {
+     "mcp": {
+       "morpheus": {
+         "type": "remote",
+         "url": "https://your-morpheus-host/api/mcp",
+         "headers": {
+           "Authorization": "Bearer YOUR_API_TOKEN"
+         }
+       }
+     }
+   }
+
+.. note::
+
+   OpenCode uses ``"type": "remote"`` for HTTP-based MCP servers, rather than ``"type": "http"`` used by other clients.
+
+**Option B: CLI**
+
+Run ``opencode mcp add`` and provide:
+
+- **Name:** ``morpheus``
+- **Type:** ``remote``
+- **URL:** ``https://your-morpheus-host/api/mcp``
+- **Headers:** ``Authorization: Bearer YOUR_API_TOKEN``
+
+Configure Generic MCP Clients
+""""""""""""""""""""""""""""""
+
+**Streamable HTTP (recommended):**
+
+Send a ``POST`` request to ``https://your-morpheus-host/api/mcp`` with:
+
+- Header: ``Authorization: Bearer YOUR_API_TOKEN``
+- Header: ``Content-Type: application/json``
+- Body: JSON-RPC 2.0 messages
+
+**Legacy SSE transport:**
+
+For older MCP clients that require Server-Sent Events:
+
+- **SSE URL:** ``https://your-morpheus-host/api/mcp/sse``
+- **Message URL:** ``https://your-morpheus-host/api/mcp/messages``
+
+Both endpoints require the ``Authorization: Bearer YOUR_API_TOKEN`` header.
+
+.. _ssl-certificates:
+
+SSL/TLS Certificates
+^^^^^^^^^^^^^^^^^^^^
+
+.. important::
+
+   Most MCP clients require a valid, trusted SSL certificate. Self-signed or untrusted certificates will cause TLS verification failures that cannot be easily bypassed in most MCP client implementations.
+
+Using a Trusted Certificate (Recommended)
+""""""""""""""""""""""""""""""""""""""""""
+
+The recommended approach is to configure your Morpheus appliance with a certificate from a trusted Certificate Authority (CA). This ensures all MCP clients can connect without additional configuration.
+
+Self-Signed Certificates
+"""""""""""""""""""""""""
+
+If you must use a self-signed certificate, add it to your operating system's trust store:
+
+**macOS:**
+
+.. code-block:: bash
+
+   sudo security add-trusted-cert -d -r trustRoot \
+     -k /Library/Keychains/System.keychain /path/to/morpheus-cert.pem
+
+**Linux:**
+
+.. code-block:: bash
+
+   sudo cp /path/to/morpheus-cert.pem /usr/local/share/ca-certificates/morpheus.crt
+   sudo update-ca-certificates
+
+**Windows (PowerShell):**
+
+.. code-block:: bash
+
+   Import-Certificate -FilePath "C:\path\to\morpheus-cert.pem" -CertStoreLocation Cert:\LocalMachine\Root
+
+**Node.js-based clients:**
+
+For MCP clients built on Node.js, set the following environment variable:
+
+.. code-block:: bash
+
+   export NODE_EXTRA_CA_CERTS=/path/to/morpheus-cert.pem
+
+Verifying the Connection
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use the following curl commands to verify your MCP server is accessible and responding correctly.
+
+**Initialize a session:**
+
+.. code-block:: bash
+
+   curl -X POST "https://your-morpheus-host/api/mcp" \
+     -H "Authorization: Bearer YOUR_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2025-06-18", "clientInfo": {"name": "curl-test", "version": "1.0"}}}'
+
+**List available tools:**
+
+.. code-block:: bash
+
+   curl -X POST "https://your-morpheus-host/api/mcp" \
+     -H "Authorization: Bearer YOUR_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"jsonrpc": "2.0", "id": 2, "method": "tools/list"}'
+
+**List tools filtered by category:**
+
+.. code-block:: bash
+
+   curl -X POST "https://your-morpheus-host/api/mcp?toolCategories=instances,clouds" \
+     -H "Authorization: Bearer YOUR_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"jsonrpc": "2.0", "id": 2, "method": "tools/list"}'
+
+**Call a tool:**
+
+.. code-block:: bash
+
+   curl -X POST "https://your-morpheus-host/api/mcp" \
+     -H "Authorization: Bearer YOUR_API_TOKEN" \
+     -H "Content-Type: application/json" \
+     -d '{"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "whoami", "arguments": {}}}'
+
+Example Usage
+^^^^^^^^^^^^^
+
+Once an MCP client is configured and connected, you can interact with Morpheus using natural language. Example prompts:
+
+- "List all running instances in my VMware cloud"
+- "What's the health status of the appliance?"
+- "Show me recent failed provisioning processes"
+- "Search for instances named 'web-prod'"
+- "Execute task 42 on instance 100"
+- "Who am I logged in as?"
+- "Create a new Ubuntu instance on my VMware cloud"
+
+Architecture
+^^^^^^^^^^^^
+
+The MCP server acts as an API gateway — tool calls are proxied to the existing Morpheus REST API internally using the caller's Bearer token. This means:
+
+- **All existing permissions are enforced** — the MCP layer does not grant any additional access beyond what the user's role allows
+- **No new service dependencies** — the MCP layer is thin and stateless, running within the Morpheus appliance itself
+- **Full API parity** — every tool maps to a documented REST API endpoint, ensuring consistent behavior between MCP tool calls and direct API usage
