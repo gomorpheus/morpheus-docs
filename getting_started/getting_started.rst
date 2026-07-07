@@ -6,10 +6,10 @@ Getting Started
   :maxdepth: 2
 
   requirements/requirements.rst
-  requirements/opensearch_configuration.rst
   requirements/capacity_planning.rst
   installation/installation.rst
   maintenance/maintenance.rst
   additional/additional_configuration.rst
+  external_services/external_services.rst
   appliance_setup/appliance_setup.rst
   functionality/core.rst
