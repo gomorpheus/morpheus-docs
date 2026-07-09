@@ -15,6 +15,7 @@ HVM 1.3 clusters utilize KVM-based virtualization with Corosync for cluster memb
    building_clusters
    managing_hosts
    host_maintenance
+   virtual_switches
    vm_operations
    storage_operations
    upgrading
