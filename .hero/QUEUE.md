@@ -6,12 +6,495 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-07-07T19:27:56Z · 31 ready specs_
+_Generated: 2026-07-13T13:37:13Z · 100 ready specs_
 
 ## hvm-13-cluster-docs — "HVM 1.3 Cluster Layouts Documentation"
 _initiative · delivering · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/hvm-13-cluster-docs/spec.md)_
+
+---
+
+## docs-910-release-notes — "9.1.0 Release Notes & Documentation Updates"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-release-notes/spec.md)_
+
+---
+
+## docs-910-vnic-connect-disconnect — "9.1.0 Docs: Virtual Network Interface Connect/Disconnect"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vnic-connect-disconnect/spec.md)_
+
+---
+
+## docs-910-vme-update-mechanism — "9.1.0 Docs: VME/Morpheus Enterprise Manager Update Mechanism"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vme-update-mechanism/spec.md)_
+
+---
+
+## docs-910-vme-log-settings — "9.1.0 Docs: VME Log Retention and Settings"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vme-log-settings/spec.md)_
+
+---
+
+## docs-910-vme-bulk-operations — "9.1.0 Docs: VME Bulk Operations"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vme-bulk-operations/spec.md)_
+
+---
+
+## docs-910-vme-additional-metrics — "9.1.0 Docs: Additional Metrics for VME VMs"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vme-additional-metrics/spec.md)_
+
+---
+
+## docs-910-vm-shutdown-options — "9.1.0 Docs: VM Graceful and Ungraceful Shutdown"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vm-shutdown-options/spec.md)_
+
+---
+
+## docs-910-vm-console-hvm — "9.1.0 Docs: VM Console Access from HVM Hosts"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vm-console-hvm/spec.md)_
+
+---
+
+## docs-910-virtswitch-port-groups — "9.1.0 Docs: Virtual Switch Advanced Port Group Management"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-virtswitch-port-groups/spec.md)_
+
+---
+
+## docs-910-virtswitch-networks — "9.1.0 Docs: Virtual Switch Network Add and Reconfigure"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-virtswitch-networks/spec.md)_
+
+---
+
+## docs-910-vgpu-slicing — "9.1.0 Docs: NVIDIA vGPU Slicing"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vgpu-slicing/spec.md)_
+
+---
+
+## docs-910-veeam-hvm — "9.1.0 Docs: Veeam HVM Support"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-veeam-hvm/spec.md)_
+
+---
+
+## docs-910-vdisk-encryption — "9.1.0 Docs: Hypervisor Level vDisk Encryption"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-vdisk-encryption/spec.md)_
+
+---
+
+## docs-910-unified-file-phase2 — "9.1.0 Docs: Unified File Support Phase 2"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-unified-file-phase2/spec.md)_
+
+---
+
+## docs-910-ubs-small-defects — "9.1.0 Docs: UBS Small Defects"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-ubs-small-defects/spec.md)_
+
+---
+
+## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-system-updates/spec.md)_
+
+---
+
+## docs-910-swap-primary-network — "9.1.0 Docs: Swap Primary Network Role in UI"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-swap-primary-network/spec.md)_
+
+---
+
+## docs-910-storage-migration-snapshot-guard — "9.1.0 Docs: Storage Migration Snapshot Guard"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-storage-migration-snapshot-guard/spec.md)_
+
+---
+
+## docs-910-storage-io-control — "9.1.0 Docs: Storage I/O Control"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-storage-io-control/spec.md)_
+
+---
+
+## docs-910-storage-drs — "9.1.0 Docs: Storage DRS-Like Functionality"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-storage-drs/spec.md)_
+
+---
+
+## docs-910-stig-morpheus-fips — "9.1.0 Docs: STIG Hardening Morpheus Manager Phase 2 FIPS"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-stig-morpheus-fips/spec.md)_
+
+---
+
+## docs-910-stig-hvmos-fips — "9.1.0 Docs: STIG Hardening HVMos Phase 2 FIPS"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-stig-hvmos-fips/spec.md)_
+
+---
+
+## docs-910-readonly-appliance-settings — "9.1.0 Docs: Read-Only Access to Appliance Settings"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-readonly-appliance-settings/spec.md)_
+
+---
+
+## docs-910-rdm-disks — "9.1.0 Docs: RDM-Like Disks for HVM VMs"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-rdm-disks/spec.md)_
+
+---
+
+## docs-910-qemu-guest-agent — "9.1.0 Docs: QEMU Guest Agent Integration"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-qemu-guest-agent/spec.md)_
+
+---
+
+## docs-910-plugin-readme — "9.1.0 Docs: Plugin ReadMe Standardization"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-plugin-readme/spec.md)_
+
+---
+
+## docs-910-perf-charts-iops — "9.1.0 Docs: Performance Charts with IOPS and Throughput"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-perf-charts-iops/spec.md)_
+
+---
+
+## docs-910-pco-rollback — "9.1.0 Docs: PCO Rollback After Deployment Failure"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-pco-rollback/spec.md)_
+
+---
+
+## docs-910-pco-phase2 — "9.1.0 Docs: PCO Framework Phase 2"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-pco-phase2/spec.md)_
+
+---
+
+## docs-910-pco-host-management — "9.1.0 Docs: PCO Host Addition & Removal in VMware/VME Clusters"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-pco-host-management/spec.md)_
+
+---
+
+## docs-910-password-management — "9.1.0 Docs: Password Management for iLO, ESXi, Switch"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-password-management/spec.md)_
+
+---
+
+## docs-910-olvm-stateless — "9.1.0 Docs: OLVM Stateless"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-olvm-stateless/spec.md)_
+
+---
+
+## docs-910-native-alerting — "9.1.0 Docs: Native Alerting and Threshold-Based Monitoring"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-native-alerting/spec.md)_
+
+---
+
+## docs-910-morpheus-advanced — "9.1.0 Docs: Morpheus Advanced"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-morpheus-advanced/spec.md)_
+
+---
+
+## docs-910-monitoring-time-ranges — "9.1.0 Docs: Monitoring Tab Time Ranges"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-monitoring-time-ranges/spec.md)_
+
+---
+
+## docs-910-migration-concurrency — "9.1.0 Docs: Live Migration Concurrency in Maintenance Mode"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-migration-concurrency/spec.md)_
+
+---
+
+## docs-910-log-rotation-gui — "9.1.0 Docs: Log Rotation and Retention from GUI"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-log-rotation-gui/spec.md)_
+
+---
+
+## docs-910-linked-clones — "9.1.0 Docs: Linked Clones in HVM"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-linked-clones/spec.md)_
+
+---
+
+## docs-910-legacy-os-support — "9.1.0 Docs: Legacy OS Support Option"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-legacy-os-support/spec.md)_
+
+---
+
+## docs-910-kv-labels — "9.1.0 Docs: Key-Value Pair Labels with Filtering"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-kv-labels/spec.md)_
+
+---
+
+## docs-910-import-existing-system — "9.1.0 Docs: Import an Existing System"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-import-existing-system/spec.md)_
+
+---
+
+## docs-910-hvmcli — "9.1.0 Docs: hvmcli - CLI Tool for HVM"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hvmcli/spec.md)_
+
+---
+
+## docs-910-hvm-ubuntu-2604 — "9.1.0 Docs: HVM Cluster OS Layout Ubuntu/HVM 26.04"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hvm-ubuntu-2604/spec.md)_
+
+---
+
+## docs-910-hvm-network-plugin — "9.1.0 Docs: HVM Network Plugin - Linux-Bridge/virtSwitch"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hvm-network-plugin/spec.md)_
+
+---
+
+## docs-910-hvm-host-backup-restore — "9.1.0 Docs: HVM Host Configuration Backup & Restore"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hvm-host-backup-restore/spec.md)_
+
+---
+
+## docs-910-host-profiles — "9.1.0 Docs: Host Profiles in HPE VM Essentials"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-host-profiles/spec.md)_
+
+---
+
+## docs-910-hks-pco-lite — "9.1.0 Docs: HKS Single Worker Node for PCO Lite"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hks-pco-lite/spec.md)_
+
+---
+
+## docs-910-hks-package-updates — "9.1.0 Docs: HKS Cluster Package Updates and CVE Evaluation"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hks-package-updates/spec.md)_
+
+---
+
+## docs-910-hks-hybrid-layout — "9.1.0 Docs: HKS Hybrid Layout (BMaaS Workers + HVM Masters)"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hks-hybrid-layout/spec.md)_
+
+---
+
+## docs-910-hks-gateway-api — "9.1.0 Docs: HKS NGINX Replacement with Gateway API"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hks-gateway-api/spec.md)_
+
+---
+
+## docs-910-hks-enhancements — "9.1.0 Docs: HKS Enhancements for 9.1.0"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-hks-enhancements/spec.md)_
+
+---
+
+## docs-910-history-prior-90 — "9.1.0 Docs: Morpheus Documentation History - Prior 9.0"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-history-prior-90/spec.md)_
+
+---
+
+## docs-910-gpu-metrics — "9.1.0 Docs: GPU Metrics Observability"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-gpu-metrics/spec.md)_
+
+---
+
+## docs-910-datastore-maintenance-mode — "9.1.0 Docs: Datastore Evacuation / Maintenance Mode"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-datastore-maintenance-mode/spec.md)_
+
+---
+
+## docs-910-cross-cluster-live-migration — "9.1.0 Docs: Cross-Cluster Live Migration"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-cross-cluster-live-migration/spec.md)_
+
+---
+
+## docs-910-cpu-ready-metric — "9.1.0 Docs: CPU Ready Metric in HPE VM Essentials"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-cpu-ready-metric/spec.md)_
+
+---
+
+## docs-910-combined-live-migration — "9.1.0 Docs: Combined Host and Datastore Live Migration"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-combined-live-migration/spec.md)_
+
+---
+
+## docs-910-bmaas-pxe-boot — "9.1.0 Docs: BMaaS PXE/Network Boot Support"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-bmaas-pxe-boot/spec.md)_
+
+---
+
+## docs-910-bmaas-hardening — "9.1.0 Docs: BMaaS 9.1.0 Hardening"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-bmaas-hardening/spec.md)_
+
+---
+
+## docs-910-bm-multi-vlan — "9.1.0 Docs: Bare Metal Multiple Networks with Unmanaged Networking"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-bm-multi-vlan/spec.md)_
+
+---
+
+## docs-910-bfs-brownfield-import — "9.1.0 Docs: BFS Brownfield Import"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-bfs-brownfield-import/spec.md)_
+
+---
+
+## docs-910-aruba-cx-support-bundle — "9.1.0 Docs: Aruba CX Support Bundle"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-aruba-cx-support-bundle/spec.md)_
+
+---
+
+## docs-910-approval-framework — "9.1.0 Docs: Unified & Contextual Approval Framework"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-approval-framework/spec.md)_
+
+---
+
+## docs-910-alletra-replication-phase2 — "9.1.0 Docs: Alletra Replication Phase 2 - Storage Failover"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-alletra-replication-phase2/spec.md)_
+
+---
+
+## docs-910-affinity-rules — "9.1.0 Docs: Affinity Rule Improvements"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-affinity-rules/spec.md)_
+
+---
+
+## docs-910-affinity-placement-view — "9.1.0 Docs: VM Affinity Placement Strategies Centralized View"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-affinity-placement-view/spec.md)_
+
+---
+
+## docs-910-advanced-reconfigure — "9.1.0 Docs: Advanced Deployment Settings in Reconfigure"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-advanced-reconfigure/spec.md)_
+
+---
+
+## docs-910-advanced-list-management — "9.1.0 Docs: Advanced List Management"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-advanced-list-management/spec.md)_
+
+---
+
+## docs-910-action-logging — "9.1.0 Docs: Action Logging in Object History"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/docs-910-action-logging/spec.md)_
 
 ---
 

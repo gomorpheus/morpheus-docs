@@ -232,7 +232,7 @@ Failover Behavior
 Unlike the shared LUN model (which uses Corosync/DLM quorum and active fencing), NFS-based stretch clusters rely on:
 
 - **NFS appliance failover** — The storage layer handles its own HA. When the NFS endpoint fails over, hosts reconnect and I/O resumes.
-- **|morpheus| host monitoring** — |morpheus| detects host unreachability and can trigger workload migration to surviving hosts (via DRS/Dynamic Placement policies).
+- **|morpheus| host monitoring** — |morpheus| detects host unreachability and can trigger workload migration to surviving hosts (via Dynamic Placement policies).
 - **No fencing required** — Since NFS handles locking at the protocol level (NLM/NFSv4 leases), there is no risk of split-brain data corruption that requires active fencing.
 
 If a full site fails:

@@ -1,7 +1,7 @@
 .. _k8s:
 
 Kubernetes Clusters |advanced-plus|
--------------------------------------
+=====================================
 
 .. tier-note:: Advanced, Enterprise
    :exclude: Essentials

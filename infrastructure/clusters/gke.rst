@@ -1,5 +1,5 @@
 GKE Clusters |enterprise-only|
-------------------------------
+==============================
 
 .. tier-note:: Enterprise
    :exclude: Essentials, Advanced

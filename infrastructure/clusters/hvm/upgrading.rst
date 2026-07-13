@@ -72,11 +72,11 @@ For each host in the cluster, the rolling update performs:
 
 #. **Agent upgrade** (if required) — If the host's agent version is below the minimum required version, the agent is upgraded first. |morpheus| waits for the agent to reconnect after the upgrade.
 
-#. **Enter maintenance mode** — VMs are evacuated from the host via live migration (see :doc:`host_maintenance`). A DRS lock is acquired to prevent resource scheduling from interfering.
+#. **Enter maintenance mode** — VMs are evacuated from the host via live migration (see :doc:`host_maintenance`). A Dynamic Placement lock is acquired to prevent resource scheduling from interfering.
 
 #. **Execute update scripts** — Layout-defined scripts run on the host (package updates, configuration changes, etc.)
 
-#. **Exit maintenance mode** — The host returns to normal operation and can receive VMs again. The DRS lock is released.
+#. **Exit maintenance mode** — The host returns to normal operation and can receive VMs again. The Dynamic Placement lock is released.
 
 #. **Proceed to next host** — The process repeats for the next host.
 
@@ -181,7 +181,7 @@ Before performing any cluster upgrade:
    * - ☐
      - Take a backup of critical VM configurations
    * - ☐
-     - Ensure no other maintenance or DRS operations are in progress
+     - Ensure no other maintenance or Dynamic Placement operations are in progress
    * - ☐
      - Verify network connectivity between all hosts (port 7443, SSH)
    * - ☐

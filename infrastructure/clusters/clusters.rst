@@ -1,6 +1,19 @@
 Clusters
 ========
 
+.. toctree::
+   :maxdepth: 2
+
+   /infrastructure/clusters/hvm/hvm
+   /infrastructure/clusters/mvm
+   /infrastructure/clusters/kubernetes
+   /infrastructure/clusters/docker
+   /infrastructure/clusters/eks
+   /infrastructure/clusters/gke
+   /infrastructure/clusters/openshift
+   /infrastructure/clusters/addon_packages
+   /infrastructure/clusters/cluster_updates
+
 Overview
 --------
 
@@ -34,14 +47,8 @@ Requirements
 
 - Morpheus Role permission ``Infrastructure: Clusters > Full`` required for Viewing, Creating, Editing and Deleting Clusters.
 - Morpheus Role permission ``Infrastructure: Clusters > Read`` required for Viewing Cluster list and detail pages.
-
-Cluster Permissions
--------------------
-
-- Cluster Permissions
-    Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
-- Namespace Permissions
-    Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
+- Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
+- Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
 
 .. _clusterLayouts:
 
@@ -259,19 +266,4 @@ Cluster Permissions
   +------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+-------------+-----------------+-----------------+-------------------+
 
 
-.. include:: /infrastructure/clusters/mvm.rst
 
-.. toctree::
-   :hidden:
-   :maxdepth: 2
-
-   /infrastructure/clusters/hvm/hvm
-
-.. include:: /infrastructure/clusters/kubernetes.rst
-.. include:: /infrastructure/clusters/docker.rst
-.. include:: /infrastructure/clusters/eks.rst
-.. include:: /infrastructure/clusters/gke.rst
-.. include:: /infrastructure/clusters/openshift.rst
-.. include:: /infrastructure/clusters/host_vm_groups.rst
-.. include:: /infrastructure/clusters/addon_packages.rst
-.. include:: /infrastructure/clusters/cluster_updates.rst

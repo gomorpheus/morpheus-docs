@@ -206,3 +206,72 @@ Datastore Status Indicators
      - Datastore is being created or mounted
 
 For troubleshooting datastore issues, see :doc:`troubleshooting`.
+
+Raw Device Block Mapping (RDBM)
+-------------------------------
+
+Raw Device Block Mapping (RDBM) allows attaching a raw host block device directly to an HVM virtual machine without an intermediate virtual disk file or clustered filesystem layer. This is analogous to VMware's Raw Device Mapping (RDM) feature and is ideal for performance-sensitive workloads, direct SCSI passthrough, or cluster applications requiring shared storage access.
+
+When an RDBM volume is attached, the system creates a ``<disk type="block" device="disk">`` entry in the VM's libvirt configuration, with the host device path as the source.
+
+Prerequisites
+^^^^^^^^^^^^^
+
+- The raw block device must be visible on the HVM host
+- The device must not be part of an existing datastore or clustered filesystem
+- A stable device path is recommended (e.g., ``/dev/disk/by-id/wwn-0x...``)
+Attaching an RDBM Volume
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to the HVM cluster detail page (|InfClu| > select cluster)
+#. Select the **Storage Volumes** tab
+#. Locate the raw block device volume to attach
+#. Click :guilabel:`Attach` on the volume row
+#. Select the target VM from the prompt
+#. Confirm the attachment
+
+   .. NOTE:: Volumes that are already backing a Datastore are excluded from the available list.
+
+Hot-attach is supported for running VMs without requiring a reboot.
+
+Detaching an RDBM Volume
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+RDBM volumes can be detached from a VM in two ways:
+
+**From the Cluster Storage Volumes tab:**
+
+#. Navigate to the HVM cluster detail page (|InfClu| > select cluster)
+#. Select the **Storage Volumes** tab
+#. Locate the attached RDBM volume
+#. Click :guilabel:`Detach` on the volume row
+#. Confirm the detachment
+
+**From the VM Reconfigure action:**
+
+#. Navigate to the VM detail page
+#. Click the :guilabel:`Actions` dropdown and select :guilabel:`Reconfigure`
+#. Remove the RDBM volume from the disk configuration
+#. Save the reconfiguration
+
+Hot-detach is supported for running VMs without requiring a reboot.
+
+Limitations
+^^^^^^^^^^^
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Limitation
+     - Description
+   * - Host Pinning
+     - VMs with RDBM volumes are pinned to the current host. Dynamic Placement will not migrate these VMs.
+   * - No Cross-Host Migration
+     - Even if the same SAN LUN is visible on multiple hosts, RDBM VMs cannot be live migrated in this release.
+   * - Maintenance Mode
+     - RDBM VMs are skipped during host maintenance mode evacuation with a warning. They must be manually shut down or moved.
+   * - Move Operations Blocked
+     - Placement move and manage operations are blocked for VMs with RDBM volumes, returning a clear error message.
+
+.. NOTE:: Volumes with ``diskType=block`` that **do** have a Datastore association (such as Alletra shared LUNs) remain moveable and are not subject to these limitations. Only raw block devices without a Datastore association are treated as pinned RDBM volumes.

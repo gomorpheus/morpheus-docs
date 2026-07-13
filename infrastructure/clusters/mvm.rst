@@ -1,5 +1,5 @@
-HVM Clusters
-------------
+HVM Clusters (Legacy)
+=====================
 
 An |mvm| cluster is a hypervisor clustering technology utilizing KVM. Beginning with just a few basic Ubuntu boxes, |morpheus| can create a cluster of hypervisor hosts complete with monitoring, failover, easy migration of workloads across the cluster, and zero-downtime maintenance access to hypervisor host nodes. All of this is backed by |morpheus| Tenant capabilities, a highly-granular RBAC and policy engine, and Instance Type library with automation workflows.
 
@@ -442,54 +442,6 @@ All other checkbox-type configurations not mentioned in the above list should be
 At this point all image preparation steps are completed. |morpheus| library items can now be created from this image by adding new Node Types, Layouts, and Instance Types. The complete steps for building a library item go beyond the scope of this particular guide but more detail on that process is available elsewhere in |morpheus| UI documentation. Once the library items are created, new Instances may be provisioned complete with |morpheus| Agent installed.
 
 .. include:: hardware-passthrough.rst
-
-Hypervisor Console Keyboards
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-HVM VMs support guest console access as well as hypervisor console access. For each HVM VM, users can set a keyboard layout configuration which will then be set for use on each session.
-
-.. IMPORTANT:: This feature requires |host| agent version 3.0.3 or greater. Upgrade the host agent from the host detail page for **each** host by expanding the ACTIONS menu and clicking "Upgrade Agent." Alternatively, select "Download Agent Script" to download a script to run against the host manually from a terminal session. These scripts are specific to each host so you must download a script for each host and run the correct script against the correct host.
-
-Currently, the following layouts are supported:
-
-- Dutch (Belgium)
-- French (Belgium)
-- German
-- Italian
-- English (United Kingdom)
-- English (United States)
-- French
-- Spanish
-- German (Switzerland)
-- Finnish
-- French (Switzerland)
-- Icelandic
-- Norwegian
-- Portuguese
-- Danish
-
-**Setting the Keyboard Layout**
-
-#. Navigate to |InfClu|
-#. From the list of Clusters, select the appropriate HVM Cluster
-#. Click on the VMs tab
-#. Click on the hyperlinked "name" value of the appropriate HVM VM
-#. Click :guilabel:`EDIT`
-#. Expand the Advanced Options section
-#. In the KEYBOARD LAYOUT field, select the desired keyboard localization
-#. Click :guilabel:`SAVE CHANGES`
-
-**Using the Configured Keyboard Layout**
-
-#. Navigate to |InfClu|
-#. From the list of Clusters, select the appropriate HVM Cluster
-#. Click on the VMs tab
-#. Click on the hyperlinked "name" value of the appropriate HVM VM
-#. Click on the Console tab
-#. Click on the dropdown labeled :guilabel:`GUEST` and change the selection to :guilabel:`Hypervisor`
-#. Click on the keyboard icon and see the keyboard layout has changed to the selected layout
-
-
 
 ..
   Decommissioning a CEPH-backed Host

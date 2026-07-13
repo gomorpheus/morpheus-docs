@@ -97,7 +97,7 @@ What Happens
 - Stat collection and quorum participation resume immediately
 - VMs are **not** automatically moved back to the host
 
-.. NOTE:: After exiting maintenance mode, VMs remain on their current hosts. Use Dynamic Resource Scheduling (DRS) or manual migration to rebalance workloads if desired.
+.. NOTE:: After exiting maintenance mode, VMs remain on their current hosts. Use Dynamic Placement or manual migration to rebalance workloads if desired.
 
 Planned vs. Unplanned Host Absence
 ------------------------------------
@@ -145,11 +145,11 @@ When a host boots back up after maintenance:
 #. The agent resumes peer-to-peer quorum pinging on port 7443
 #. Other cluster agents detect the returning host as reachable
 #. Quorum status updates to include the returning host
-#. The host is available to receive VMs (via DRS, manual migration, or new provisioning)
+#. The host is available to receive VMs (via Dynamic Placement, manual migration, or new provisioning)
 
 .. NOTE:: If the host was offline for less than 140 seconds and did not enter maintenance mode, no VM failover occurs. The host simply rejoins the quorum cycle transparently.
 
 Maintenance During Cluster Updates
 ------------------------------------
 
-When performing rolling cluster updates (see :doc:`upgrading`), |morpheus| automatically enters and exits maintenance mode for each host as part of the update process. A DRS lock is acquired during maintenance to prevent resource scheduling from interfering with the update cycle.
+When performing rolling cluster updates (see :doc:`upgrading`), |morpheus| automatically enters and exits maintenance mode for each host as part of the update process. A Dynamic Placement lock is acquired during maintenance to prevent resource scheduling from interfering with the update cycle.

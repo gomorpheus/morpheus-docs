@@ -1,6 +1,6 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-07-07T17:38:47Z · projected from 70 source nodes_
+_Last refreshed: 2026-07-13T11:43:36Z · projected from 71 source nodes_
 
 ## Surfaces
 
@@ -40,12 +40,12 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Open risks & blockers
 
-- **Stale-in-flight (1):** `hvm-13-cluster-docs` (33d).
+- **Stale-in-flight (1):** `hvm-13-cluster-docs` (38d).
 - **Unassigned specs (63) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
 - Specs covered: 0/63 (0%)
-- Projection generation: 0ms · Source nodes: 70
+- Projection generation: 0ms · Source nodes: 71
 

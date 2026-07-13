@@ -1,0 +1,106 @@
+.. _Release Notes:
+
+**************************************
+|morphver| |releasetype| Release Notes
+**************************************
+
+- Compatible Plugin API version: |pluginVer|
+- Compatible |morpheus| Worker version: |workerVer|
+- Minimum upgrade versions: Non-rolling: |minUpgradeVer|, Rolling: |minRollingUpgradeVer|
+
+Release Dates
+
+- |morphver| |releasedate|
+
+|
+
+New Features
+============
+
+:HVM & VM Essentials: - Extended HVM Network Plugin to support Linux-Bridge/virtSwitch for decoupled networking management
+                      - Advanced port group management and network add/reconfigure for virtswitch
+                      - Host Profile feature similar to VMware vCenter Host Profiles
+                      - Host Configuration Backup & Restore capability for HVM hosts
+                      - Bulk operations for objects in HPE VM Essentials
+                      - Cross-cluster live migration of VMs across different Morpheus Managers
+                      - Combined live migration of Host and Datastore (compute + storage)
+                      - Increased live migration concurrency during Maintenance Mode
+                      - Connect and disconnect virtual network interfaces
+                      - Graceful and ungraceful shutdown options for VMs
+                      - Expose advanced deployment settings in VM Reconfigure
+                      - Centralized VM Affinity Placement Strategies view and management
+                      - Affinity rule improvements
+                      - Linked clones in HVM
+                      - Datastore Evacuation / Maintenance Mode for automatic VM migration off retiring datastores
+                      - Storage DRS-like functionality for automatic datastore balancing and capacity protection
+                      - Storage I/O Control
+                      - Support for RDM-like disks for HVM VMs
+                      - Forbid storage live migration if VM has snapshots
+                      - Legacy OS support option
+                      - Virtual machine console access from HVM hosts
+                      - Hypervisor-level vDisk Encryption
+                      - CPU Ready-equivalent metric
+                      - Additional VM metrics for parity with VMware
+                      - Key-value pair labels with filtering and search capabilities
+                      - Advanced list management capabilities across VM Essentials Manager
+                      - HVM Cluster OS Layout Ubuntu/HVM 26.04
+                      - Leverage qemu-guest-agent to gather guest OS information
+                      - Actions logged in object History and system logs
+
+:Monitoring & Administration: - Performance charts with IOPS and throughput
+                              - Monitoring tab time ranges for instance and server details
+                              - Native alerting and threshold-based monitoring
+                              - GPU Metrics Observability
+                              - Log rotation and retention period configuration from GUI
+                              - Log retention and settings configuration in VM Essentials
+                              - Read-only access to Appliance Settings
+
+:Storage & Backup: - Unified File Support Phase 2: Morpheus File Shares (create, grow, inventory, security toggles)
+                   - AMP-B10K Replication Phase 2: manage replication operations and storage failover
+                   - Veeam HVM Support
+
+:BMaaS / Bare Metal: - BMaaS 9.1.0 Hardening
+                     - PXE/Network Boot support for BMaaS
+                     - Brownfield import in Boot From SAN (BFS)
+                     - Support for multiple networks (VLANs) with Unmanaged Networking
+
+:HKS / Kubernetes: - Single worker node layout for PCO lite deployments
+                   - HKS enhancements for 9.1.0
+                   - HKS cluster packages update and CVE evaluation
+                   - NGINX Replacement with Gateway API (Phase 1)
+                   - HKS Hybrid Layout (BMaaS workers + HVM masters)
+
+:Security: - STIG control hardening for Morpheus Manager (Phase 2 FIPS)
+           - STIG control hardening for HVMos (Phase 2 FIPS)
+
+:Platform & Orchestration: - Private Cloud Orchestrator (PCO) Framework Phase 2
+                           - PCO Rollback After Deployment Failure
+                           - PCO Support for Host addition and removal in VMware/VME clusters
+                           - Morpheus Advanced tier features
+                           - Unified & Contextual Approval Framework
+                           - System Update Capabilities
+                           - Mechanism to update VME/Morpheus Enterprise Manager
+                           - Swap primary network role in Morpheus UI
+                           - NVIDIA vGPU Slicing
+
+:CLI & Tooling: - hvmcli: CLI tool for HVM host management
+                - Aruba CX Support Bundle
+                - Plugin ReadMe Standardization
+                - Password Management for iLO, ESXi, and Switch credentials
+                - Import existing systems capability
+
+:OLVM: - OLVM Stateless support
+
+Fixes
+=====
+
+.. note:: Bug fixes and regressions addressed in this release will be documented as development is completed. See MORPH-13190 and MORPH-13191 for tracking.
+
+Appliance & Agent Updates
+=========================
+
+:Node Packages: - |morpheus| Node and VM Node packages updated to |nodePackageVer|
+:Linux Agent: - Updated to |linuxagentver|
+:Windows Agent: - |winagentver|
+:macOS Agent: - |macagentver|
+:Plugin API: - Updated to |pluginVer|

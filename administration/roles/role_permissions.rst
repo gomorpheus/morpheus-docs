@@ -110,10 +110,10 @@ Role Mappings
         - This permission is recommended for those responsible for administering |morpheus|, including creating integrations with third-party technologies, specifically Ansible
         -
       * - Admin: Appliance Settings
-        - None, Full
-        - Allows or disallows access to the Appliance and License tabs in |AdmSet|
-        - The Appliance tab in |AdmSet| is where |morpheus| administrators would configure the appliance URL, Tenant and User management, email, proxy, and currency settings. Additionally, defining which Clouds are available for integration within |morpheus| is done on this page. On the License tab information about the current |morpheus| license may be viewed and a new license may be applied when needed.
-        - This permission is recommended to only be assigned to Roles utilized within the Master Tenant. Those responsible for configuring currency, email, and proxy settings for Cloud API access will need this permission.
+        - None, Read, Full
+        - Allows or disallows access to the Appliance, License, and Morpheus Central tabs in |AdmSet|. When set to Read, users can view all settings on these tabs but cannot modify any values (form inputs are disabled and the Save button is hidden). Full access permits both viewing and editing.
+        - The Appliance tab in |AdmSet| is where |morpheus| administrators would configure the appliance URL, Tenant and User management, email, proxy, and currency settings. Additionally, defining which Clouds are available for integration within |morpheus| is done on this page. On the License tab information about the current |morpheus| license may be viewed and a new license may be applied when needed. The Morpheus Central tab displays the connection status and configuration for Morpheus Central registration.
+        - This permission is recommended to only be assigned to Roles utilized within the Master Tenant. Those responsible for configuring currency, email, and proxy settings for Cloud API access will need Full access. The Read level is useful for auditors or operators who need visibility into appliance configuration without the ability to make changes.
         - This permission is recommended to be set to None on the Tenant Role to restrict this access for all Subtenant Users.
       * - Admin: Backup Settings
         - None, Full

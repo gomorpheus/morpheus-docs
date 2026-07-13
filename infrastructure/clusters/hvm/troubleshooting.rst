@@ -26,11 +26,7 @@ Diagnostic Commands
 Corosync
 ^^^^^^^^
 
-Check quorum status:
-
-.. code-block:: bash
-
-   corosync-quorumtool -s
+In HVM 1.3, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for stretch clusters and two-node GFS2 configurations. Corosync's ``Quorate`` state has no impact on cluster operation.
 
 List cluster members:
 
@@ -173,16 +169,23 @@ GFS2 Withdrawn
 #. If remount fails, reboot the affected host
 #. Investigate the cause (storage connectivity, DLM issue) before the host rejoins
 
-Corosync Not Quorate
-^^^^^^^^^^^^^^^^^^^^^
+Corosync Shows Not Quorate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Symptoms:** ``corosync-quorumtool -s`` shows ``Quorate: No``.
 
+**Impact:** In HVM 1.3, this has **no impact** on cluster operation. The |morpheus| Agent manages its own quorum independently of Corosync's quorate state. Corosync is used only to provide a node list to DLM, not for quorum decisions.
+
+**When this occurs:**
+
+- One or more nodes are down or a network partition has occurred
+- This is expected in two-node clusters and stretch cluster configurations where Corosync alone cannot achieve majority quorum
+
 **Resolution:**
 
-- Too many nodes are down or a network partition has occurred
-- Restore failed nodes or repair network connectivity
-- Once a majority of nodes are communicating, quorum will automatically be re-established
+- No action is required for the Corosync quorate state itself
+- Check the |morpheus| Agent quorum endpoint (``curl -k https://localhost:7443/quorum``) to verify the actual cluster quorum status
+- If the Agent quorum also shows issues, investigate network connectivity between hosts and ensure the |morpheus| Agent is running on all nodes
 
 APD Activated
 ^^^^^^^^^^^^^
