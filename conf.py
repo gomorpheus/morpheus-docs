@@ -34,7 +34,7 @@ rst_prolog = """
 .. |tcver| replace:: v9.0.106
 .. |nginxver| replace:: v1.26.2
 .. |nodePackageVer| replace:: 3.3.11
-.. |linuxagentver| replace:: v3.1.0
+.. |linuxagentver| replace:: v3.2.7
 .. |macagentver| replace:: v2.4.0
 .. |winagentver| replace:: v2.6.1.0
 .. |java| replace:: 17.0.14+7
