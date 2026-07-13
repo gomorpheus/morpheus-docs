@@ -6,12 +6,21 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-07-13T18:13:34Z · 100 ready specs_
+_Generated: 2026-07-13T18:26:05Z · 101 ready specs_
 
 ## hvm-13-cluster-docs — "HVM 1.3 Cluster Layouts Documentation"
 _initiative · delivering · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/planning/initiatives/hvm-13-cluster-docs/spec.md)_
+
+---
+
+## docs-lifecycle-policy — "Component Lifecycle & Support Policy Documentation"
+_feature · planning · horizon: now_
+
+You are delivering documentation for the Morpheus platform lifecycle and support policy (MORPH-7920). The goal is to create clear documentation that enterprise customers can use to plan patching, upgrades, and long-term operations.
+
+Start by creating `release_notes/lifecycle.rst` with the release cadence section, then expand `release_notes/compatibility.rst` with the component matrix, then create `release_notes/support_policy.rst`. Cross-reference from existing pages. Check with product management for actual support window durations before publishing EOL dates.
 
 ---
 
