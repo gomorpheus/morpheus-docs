@@ -61,3 +61,108 @@ Supported Configurations
      - BIOS and UEFI
    * - Storage Controllers
      - SCSI → VirtIO-SCSI, IDE/SATA → VirtIO Block (automatic mapping)
+
+Required Permissions
+^^^^^^^^^^^^^^^^^^^^
+
+Users performing migrations require specific RBAC permissions. The table below lists the minimum permissions needed for each type of migration operation.
+
+Bulk Migration (VMware to HVM)
+``````````````````````````````
+
+.. list-table::
+   :widths: 35 20 45
+   :header-rows: 1
+
+   * - Permission
+     - Access Level
+     - Purpose
+   * - Services: Migrations
+     - Full
+     - Create, edit, execute, and manage Migration Plans. Read access allows viewing plans only.
+   * - Infrastructure: Clusters
+     - Full or Group
+     - Access to the target HVM Cluster for VM provisioning
+   * - Infrastructure: Compute
+     - Full or Group
+     - Create and manage server records on the target cluster
+   * - Provisioning: Instances
+     - Full or Group
+     - Create Instance records for migrated VMs
+
+Live Migration (Host-to-Host within a Cluster)
+``````````````````````````````````````````````
+
+.. list-table::
+   :widths: 35 20 45
+   :header-rows: 1
+
+   * - Permission
+     - Access Level
+     - Purpose
+   * - Infrastructure: Manage Placement
+     - Full
+     - Move VMs between hosts, change placement strategy (Auto/Pinned)
+   * - Infrastructure: Clusters
+     - Full or Group
+     - View cluster hosts and VM assignments
+   * - Infrastructure: Compute
+     - Read or higher
+     - View host details and available capacity
+
+Storage Migration (Datastore-to-Datastore)
+``````````````````````````````````````````
+
+.. list-table::
+   :widths: 35 20 45
+   :header-rows: 1
+
+   * - Permission
+     - Access Level
+     - Purpose
+   * - Infrastructure: Manage Placement
+     - Full
+     - Initiate storage migration for VMs
+   * - Infrastructure: Storage
+     - Read or higher
+     - View available datastores and capacity
+   * - Infrastructure: Clusters
+     - Full or Group
+     - Access to the cluster containing the VM
+
+Cross-Cloud Move (Record Migration)
+````````````````````````````````````
+
+.. list-table::
+   :widths: 35 20 45
+   :header-rows: 1
+
+   * - Permission
+     - Access Level
+     - Purpose
+   * - Infrastructure: Move Servers
+     - Full
+     - Move server records between Clouds. This is an administrative record-keeping operation, not a data migration.
+
+Permission Dependencies
+```````````````````````
+
+- **Services: Migrations** requires that the user also has access to both the source Cloud (VMware) and the target Cluster (HVM). Cloud and Group access are controlled via the role's Cloud and Group permission tabs.
+- **Infrastructure: Manage Placement** requires at minimum Read access to Infrastructure: Clusters and Infrastructure: Compute to view available hosts and capacity.
+- Permissions follow the standard |morpheus| RBAC hierarchy: Tenant Role sets maximum permissions, User Role cannot exceed Tenant Role limits.
+
+Recommended Role Examples
+`````````````````````````
+
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Role
+     - Permissions
+   * - VM Operator (limited migration)
+     - Infrastructure: Manage Placement = Full, Infrastructure: Clusters = Group, Infrastructure: Compute = Group. Can live-migrate VMs within assigned clusters only.
+   * - Migration Administrator
+     - Services: Migrations = Full, Infrastructure: Clusters = Full, Infrastructure: Compute = Full, Provisioning: Instances = Full. Can execute bulk migrations across all clusters.
+   * - Read-only Observer
+     - Services: Migrations = Read, Infrastructure: Clusters = Read, Infrastructure: Compute = Read. Can view migration plans and status but cannot execute or modify.
