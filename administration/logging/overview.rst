@@ -62,3 +62,28 @@ Log collection from managed hosts can be disabled globally in |AdmSetMon| using 
 - The |morpheus| Agent stops forwarding logs from managed hosts
 - Existing logs remain searchable until they expire per the retention policy
 - Appliance service logs continue to be written to disk regardless of this setting
+
+Distributed Trace IDs
+---------------------
+
+|morpheus| includes a **trace ID** in all application log entries to correlate operations that span multiple threads, background jobs, or agent interactions. This is essential for troubleshooting complex operations like provisioning, migration, or failover that involve multiple asynchronous steps.
+
+**How it works:**
+
+- Each incoming request or scheduled job is assigned a unique trace ID (W3C traceparent format)
+- The trace ID propagates automatically across thread boundaries, background jobs, parallel tasks, and agent communication
+- All log entries produced during the operation include the same trace ID in the log output
+
+**Using trace IDs for troubleshooting:**
+
+To follow a single operation through the logs, search for the trace ID value. For example, a provisioning operation that triggers cloud sync, network configuration, and agent installation will share the same trace ID across all log entries, even if they execute on different threads or at different times.
+
+When configured in the logback pattern (see :doc:`appliance_logs`), the trace ID appears as the ``traceId`` MDC field:
+
+.. code-block:: text
+
+   2026-07-13 10:15:32.001 [traceId=abc123def456] INFO  c.m.provision.KvmProvisionService - Starting VM provisioning
+   2026-07-13 10:15:32.150 [traceId=abc123def456] INFO  c.m.network.NetworkService - Configuring network for VM
+   2026-07-13 10:15:33.200 [traceId=abc123def456] INFO  c.m.agent.CommandService - Sending agent install command
+
+.. NOTE:: Trace IDs are also passed to the |morpheus| Agent via W3C traceparent headers, allowing end-to-end correlation from the appliance through to host-level operations.
