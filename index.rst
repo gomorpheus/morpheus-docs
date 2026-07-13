@@ -31,6 +31,7 @@
    :caption: Release Notes
 
    release_notes/current.rst
+   release_notes/lifecycle.rst
    release_notes/compatibility.rst
 
 ..
