@@ -17,6 +17,8 @@ of capabilities when it comes to managing customer accounts and users.
   policies/policies.rst
   health/health.rst
   settings/settings.rst
+  logging/logging.rst
+  supportability/supportability.rst
   user_settings/user_settings.rst
 
 ..
