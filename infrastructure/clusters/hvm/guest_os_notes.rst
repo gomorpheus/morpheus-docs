@@ -123,6 +123,43 @@ Before converting a Linux VM to a template:
 General Considerations
 ----------------------
 
+Power Operations & Shutdown Behavior
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When stopping a VM, |morpheus| performs a **graceful-then-force** shutdown sequence:
+
+#. An ACPI power-button signal is sent to the guest OS, giving it the opportunity to perform a clean shutdown (flush buffers, stop services, sync filesystems)
+#. If the guest has not powered off after **10 seconds**, the VM is forcefully terminated
+
+This sequence runs automatically on every Stop Server operation. There is no separate "force only" option at this time — all stops attempt graceful first.
+
+**How ACPI shutdown works with different guest configurations:**
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Guest Configuration
+     - Shutdown Behavior
+   * - QEMU Guest Agent installed
+     - ACPI signal is sent to the guest OS. The guest agent is **not** used for the shutdown signal itself — shutdown is handled by the guest OS responding to the ACPI power button event. However, the guest agent enables other operations like filesystem freeze before snapshots.
+   * - QEMU Guest Agent NOT installed
+     - Same ACPI signal is sent. If the guest OS has ACPI support enabled (all modern operating systems do), it will perform a clean shutdown. No behavioral difference for the stop operation.
+   * - Guest Agent installed but not responding
+     - No impact on shutdown. The ACPI power button signal is delivered at the hypervisor level, independent of the guest agent communication channel.
+   * - Guest OS ignoring ACPI (rare)
+     - The graceful ACPI signal has no effect. After the 10-second timeout, the VM is forcefully terminated. This can occur with some legacy or misconfigured operating systems that do not handle ACPI power button events.
+
+.. NOTE:: The 10-second grace period means that VMs with long-running shutdown scripts (e.g., database flush, service drain) may be forcefully terminated before completing. For workloads requiring longer graceful shutdown times, consider stopping the application services manually before issuing the Stop Server command.
+
+**When the QEMU Guest Agent matters for power-related operations:**
+
+While the guest agent does not affect the Stop Server operation itself, it is used for:
+
+- **Filesystem freeze/thaw** — Before snapshots, the guest agent freezes guest filesystems for consistency
+- **Graceful reboot** — The agent can execute a clean reboot command inside the guest
+- **Guest OS information** — Reporting IP addresses, OS version, and hostname back to |morpheus|
+
 .. list-table::
    :widths: 25 35 35
    :header-rows: 1
