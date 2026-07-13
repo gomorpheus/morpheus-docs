@@ -119,7 +119,7 @@ To add additional capacity to an existing cluster:
 
    - Navigate to the cluster detail page and click :guilabel:`Actions` > :guilabel:`Rescan Storage` to immediately rescan all hosts
 
-   .. TODO:: Confirm Rescan Storage button is available in 9.1.0 UI and update this section accordingly.
+   .. note:: Confirm Rescan Storage button is available in 9.1.0 UI. Update this section when the button ships.
 
    .. NOTE:: |morpheus| also performs an automatic daily storage rescan during the cluster refresh cycle.
 
@@ -232,6 +232,97 @@ How FC Storage Works with GFS2
 #. The device is registered as a virsh storage pool for VM provisioning
 
 .. IMPORTANT:: Device paths in HVM always use WWN-based multipath names (``/dev/mapper/3<wwn>``), never positional names like ``/dev/mapper/mpathX``. Positional names differ across hosts and would cause mount failures on other cluster members.
+
+NVMe over TCP
+--------------
+
+HVM clusters support **NVMe over TCP (NVMe/TCP)** as a storage transport for HPE Clustered Datastores. NVMe/TCP provides significantly lower latency and higher IOPS than iSCSI while using the same standard Ethernet infrastructure — no specialized HBAs or SAN fabric required.
+
+.. NOTE:: NVMe/TCP support was validated in Morpheus 9.0.0 with the removal of Pacemaker. The |morpheus| Agent-based quorum system is fully compatible with NVMe/TCP-backed GFS2 datastores.
+
+Host Requirements
+^^^^^^^^^^^^^^^^^^
+
+Each HVM host must have:
+
+- Linux kernel 5.15+ (included in Ubuntu 24.04 used by HVM 1.3 cluster layout)
+- The ``nvme-tcp`` kernel module loaded
+- The ``nvme-cli`` package installed (for ``nvme connect`` and discovery)
+- Network connectivity to the NVMe/TCP target on the configured port (default: 4420)
+
+Connecting NVMe/TCP Targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+NVMe/TCP targets must be connected on **all cluster hosts** before creating a GFS2 datastore. On each host:
+
+#. Discover available subsystems:
+
+   .. code-block:: bash
+
+      sudo nvme discover -t tcp -a <target-ip> -s <port>
+
+#. Connect to the target subsystem:
+
+   .. code-block:: bash
+
+      sudo nvme connect -t tcp -a <target-ip> -s <port> -n <subsystem-nqn>
+
+#. Verify the NVMe namespace is visible:
+
+   .. code-block:: bash
+
+      sudo nvme list
+
+#. Confirm the block device appears (e.g., ``/dev/nvme0n1``):
+
+   .. code-block:: bash
+
+      lsblk
+
+For **persistent connections** that survive host reboots, create a discovery controller entry or use ``/etc/nvme/discovery.conf``:
+
+.. code-block:: bash
+
+   echo "-t tcp -a <target-ip> -s <port>" | sudo tee -a /etc/nvme/discovery.conf
+   sudo systemctl enable --now nvme-connect@.service
+
+.. NOTE:: Unlike iSCSI, NVMe/TCP does not use multipath device-mapper (``/dev/mapper/``). NVMe namespaces appear as ``/dev/nvmeXnY`` devices. For multipath with multiple paths to the same namespace, use the native NVMe multipath (``/sys/module/nvme_core/parameters/multipath`` set to ``Y``), which presents a single ``/dev/nvmeXnY`` device aggregating all paths.
+
+Creating a GFS2 Datastore on NVMe/TCP
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the NVMe namespace is visible on all cluster hosts:
+
+#. Navigate to the cluster detail page > Storage tab
+#. Click :guilabel:`+ Add` to create a new HPE Clustered Datastore
+#. Select the NVMe block device (e.g., ``/dev/nvme0n1``) as the block device
+#. Complete the datastore creation as normal
+
+GFS2 treats the NVMe namespace identically to any other block device — formatting, mounting, and DLM locking work the same as with iSCSI or FC-backed datastores.
+
+Performance Considerations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Transport
+     - Latency
+     - Infrastructure
+     - Best For
+   * - iSCSI
+     - Higher (~100-200μs)
+     - Standard Ethernet
+     - General workloads, legacy arrays
+   * - Fibre Channel
+     - Low (~50-100μs)
+     - Dedicated SAN fabric + HBAs
+     - Enterprise production, existing FC infrastructure
+   * - NVMe/TCP
+     - Lowest (~30-80μs)
+     - Standard Ethernet (25GbE+ recommended)
+     - Latency-sensitive workloads, all-flash arrays, new deployments
 
 Pluggable Storage Backend
 --------------------------
