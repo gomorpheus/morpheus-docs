@@ -152,6 +152,101 @@ Services
 
 |
 
+Component Version Matrix
+========================
+
+The following table shows the supported component versions for |morpheus| |morphver|.
+
+.. list-table::
+   :widths: 30 25 45
+   :header-rows: 1
+
+   * - Component
+     - Version
+     - Notes
+   * - |morpheus| Manager
+     - |morphver|
+     - Application server, API, and UI
+   * - Plugin API
+     - |pluginVer|
+     - Required for plugin compatibility. Plugins built against older API versions may need recompilation.
+   * - Linux Agent
+     - |linuxagentver|
+     - Backward compatible within Major version (9.x)
+   * - Windows Agent
+     - |winagentver|
+     - Backward compatible within Major version (9.x)
+   * - macOS Agent
+     - |macagentver|
+     - Backward compatible within Major version (9.x)
+   * - Node Packages
+     - |nodePackageVer|
+     - VM and host provisioning packages
+   * - HVM OS 24.04
+     - Ubuntu 24.04 LTS based
+     - Standard HVM host OS for cluster layout 1.3
+   * - HVM OS 26.04
+     - Ubuntu 26.04 LTS based
+     - Required for confidential compute. Introduced in 9.1.0.
+   * - HPE Alletra Block Storage Plugin
+     - 1.14.x
+     - Requires Plugin API 1.4.1+, minimum Manager version 9.0.2
+   * - Embedded MySQL
+     - 8.4.x LTS
+     - Embedded database (or external 8.4.x+)
+   * - Embedded OpenSearch
+     - 2.x
+     - Log indexing and search engine
+   * - Embedded RabbitMQ
+     - 3.12.x
+     - Message queue for internal communication
+
+Manager ↔ HVM OS Compatibility
+-------------------------------
+
+.. list-table::
+   :widths: 25 25 25 25
+   :header-rows: 1
+
+   * - Manager Version
+     - HVM OS 24.04
+     - HVM OS 26.04
+     - Cluster Layout
+   * - 9.0.x
+     - Supported
+     - Not available
+     - 1.2 and 1.3
+   * - 9.1.x
+     - Supported
+     - Supported
+     - 1.3
+   * - 9.2.x (projected)
+     - Supported
+     - Supported
+     - 1.3
+
+Manager ↔ Agent Compatibility
+-------------------------------
+
+The |morpheus| Agent is backward compatible within the same Major version. Agents from any 9.x release will function with any 9.x Manager. Upgrading agents is recommended but not required for patch releases.
+
+.. list-table::
+   :widths: 30 30 40
+   :header-rows: 1
+
+   * - Manager Version
+     - Minimum Agent Version
+     - Recommended Agent Version
+   * - 9.0.x
+     - 3.0.0
+     - 3.1.0
+   * - 9.1.x
+     - 3.0.0
+     - 3.3.0
+
+For complete release lifecycle and support policy information, see :doc:`lifecycle`.
+
+|
 
 Upgrade Paths & Methods
 =======================
