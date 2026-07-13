@@ -161,7 +161,7 @@ Unlike memory, CPU can be safely overcommitted in most workloads:
 - Over-committed CPUs result in increased scheduling latency, not failures
 - Memory is a hard limit — if a VM's memory is overcommitted and fully utilized, the host may become unstable
 
-.. NOTE:: |morpheus| does not overcommit memory by default. VM memory allocations are treated as reservations. CPU scheduling is managed by the Linux kernel's CFS scheduler with KVM's virtual CPU mappings.
+.. NOTE:: |morpheus| does not overcommit memory by default. VM memory allocations are treated as reservations. Memory overcommit can be enabled per host — see :doc:`vm_placement` for details. CPU scheduling is managed by the Linux kernel's CFS scheduler with KVM's virtual CPU mappings.
 
 Storage Capacity Planning
 --------------------------
