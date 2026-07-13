@@ -30,9 +30,9 @@ This work touches multiple doc sections. Proposed locations:
 ### 1. Release Cadence & Versioning (`release_notes/lifecycle.rst` — NEW)
 
 Document for all components:
-- **Manager (Morpheus appliance):** Major (annual), Minor (quarterly), Patch (as needed)
+- **Manager (Morpheus appliance):** Major (annual), Minor (quarterly), Patch (monthly)
 - **HVM ISO / Host OS:** Release frequency, tied to Manager minors
-- **Agent:** Ships with each Manager release, backward compatible N-2
+- **Agent:** Ships with each Manager release, backward compatible within Major
 - **Plugins (Alletra, Aruba CX, etc.):** Independent release cycle, compatibility declared per plugin version
 
 ### 2. Component Compatibility Matrix (`release_notes/compatibility.rst` — EXPAND)
@@ -47,11 +47,18 @@ Expand existing compatibility page with a matrix showing supported combinations 
 ### 3. Support Policy (`release_notes/support_policy.rst` — NEW)
 
 Document:
-- **Support model:** Define which releases are actively supported (e.g., N-1: current + previous minor)
-- **Duration:** Each minor release supported for X months from GA
-- **Security patches:** Available for all supported releases
-- **End-of-support timelines:** Table with projected dates
-- **Extended support:** Whether available and under what terms
+- **Release cadence:**
+  - Major (annual): 9.0, 10.0, etc. — new features, potential breaking changes
+  - Minor (quarterly): 9.0, 9.1, 9.2 — new features, backward compatible
+  - Patch (monthly): 9.0.0, 9.0.1, 9.0.2 — bug fixes, security updates
+  - Example yearly cycle: 9.0.0 → 9.0.1 → 9.0.2 → 9.1.0 → 9.1.1 → 9.1.2 → 9.2.0 → 9.2.1 → ... → 10.0.0
+- **Support model:**
+  - Active support: 1 year from Major GA (full updates — features in minors, bug fixes in patches)
+  - Security/maintenance: 1 additional year after active support ends (security fixes only)
+  - Total lifecycle per Major: 2 years
+  - When a new Major ships (e.g., 10.0), the previous Major (9.x.x) transitions to security/maintenance mode
+- **Security patches:** Available for all releases in active support; critical security fixes only during maintenance year
+- **End-of-support timelines:** Table with projected dates per Major release
 - **Ubuntu OS lifecycle:** Relationship to Ubuntu LTS upstream (24.04 supported until 20xx)
 
 ### 4. Upgrade Policy (expand `release_notes/compatibility.rst` upgrade section + `infrastructure/clusters/hvm/upgrading.rst`)
