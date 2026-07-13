@@ -113,18 +113,17 @@ To add additional capacity to an existing cluster:
 
 #. Provision new LUNs on your storage array
 #. Add iSCSI targets (if new portals) as described above
-#. If using existing targets, trigger a rescan:
+#. Trigger a storage rescan so all hosts discover the new LUN. There are two ways to do this:
 
-   .. code-block:: bash
+   **From the UI:**
 
-      sudo iscsiadm -m session --rescan
+   - Navigate to the cluster detail page and click :guilabel:`Actions` > :guilabel:`Rescan Storage` to immediately rescan all hosts
 
-#. Verify the new LUN is visible on all hosts:
+   .. TODO:: Confirm Rescan Storage button is available in 9.1.0 UI and update this section accordingly.
 
-   .. code-block:: bash
+   .. NOTE:: |morpheus| also performs an automatic daily storage rescan during the cluster refresh cycle.
 
-      sudo multipath -ll
-
+#. Verify the new LUN is visible on the cluster's Storage tab
 #. Create a new HPE Clustered Datastore using the new block device
 
 .. NOTE:: Each HPE Clustered Datastore (Shared LUN) maps to a single block device. To add capacity, create additional datastores rather than expanding existing GFS2 filesystems.
@@ -206,6 +205,89 @@ Datastore Status Indicators
      - Datastore is being created or mounted
 
 For troubleshooting datastore issues, see :doc:`troubleshooting`.
+
+Fibre Channel Configuration
+-----------------------------
+
+HVM clusters support Fibre Channel (FC) as a storage transport for HPE Clustered Datastores in addition to iSCSI. FC provides lower latency and higher throughput than iSCSI and is the preferred choice for production workloads.
+
+Host Requirements
+^^^^^^^^^^^^^^^^^^
+
+Each HVM host that will access FC storage must have:
+
+- One or more Fibre Channel HBA (Host Bus Adapter) ports connected to the SAN fabric
+- Proper zoning configured on the SAN switch to allow the host HBA WWPNs to communicate with the storage array ports
+- ``multipathd`` running (installed automatically during HVM cluster provisioning)
+
+FC targets do not need to be manually added in the |morpheus| UI (unlike iSCSI). When a storage plugin provisions a LUN and exports it to the cluster hosts' WWPNs, the hosts automatically discover the new device after a SCSI rescan.
+
+How FC Storage Works with GFS2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. The storage plugin (e.g., HPE Alletra MP) creates a LUN on the array and exports it to a **host-set** containing the FC WWPNs of all cluster hosts
+#. A SCSI rescan is triggered on each host to discover the new block device
+#. The block device is identified by its **WWN** through multipath — the device path is always ``/dev/mapper/3<volumeWwn>`` (WWN-stable, not positional ``/dev/mapper/mpathX``)
+#. GFS2 filesystem is formatted on the device and mounted on all cluster hosts simultaneously
+#. The device is registered as a virsh storage pool for VM provisioning
+
+.. IMPORTANT:: Device paths in HVM always use WWN-based multipath names (``/dev/mapper/3<wwn>``), never positional names like ``/dev/mapper/mpathX``. Positional names differ across hosts and would cause mount failures on other cluster members.
+
+Pluggable Storage Backend
+--------------------------
+
+The HVM storage layer is **pluggable** — storage array management is handled by dedicated plugins rather than being built into the platform. This allows |morpheus| to support different storage backends without modifications to the core cluster code.
+
+HPE Alletra MP Plugin
+^^^^^^^^^^^^^^^^^^^^^^
+
+The primary storage plugin for HVM clusters is the **HPE Alletra Block Storage** plugin. This plugin manages the full lifecycle of LUNs on HPE Alletra MP arrays:
+
+- Creates and deletes LUNs (volumes) via Alletra REST APIs
+- Exports LUNs to cluster hosts via host-sets (FC WWPNs or iSCSI IQNs)
+- Handles LUN discovery, multipath device resolution, and online resize
+- Supports snapshots, clones, and synchronous replication (remote copy groups)
+- Generates storage-specific support bundle diagnostics
+
+LUN-Per-vDisk Mode
+^^^^^^^^^^^^^^^^^^^
+
+In addition to the standard model where VMs store their virtual disks as files on a GFS2 shared filesystem, the Alletra MP plugin supports a **LUN-per-vDisk** mode where each virtual disk is backed by its own dedicated LUN on the storage array.
+
+**Use cases:**
+
+- Raw Device Mapping (RDM) workloads requiring direct block device access
+- High-performance VMs that need dedicated I/O paths without filesystem overhead
+- Applications that require consistent low-latency storage (databases, real-time analytics)
+
+**How it works:**
+
+- When a VM disk is created with the Alletra storage provider selected, the plugin provisions an individual LUN on the array
+- The LUN is exported to **all hosts in the cluster** (not just the host currently running the VM) to support live migration and failover
+- The block device is attached directly to the VM via its WWN-based multipath path
+
+**Performance limits and considerations:**
+
+.. WARNING:: Limit LUN-per-vDisk usage to approximately **800 vDisks per cluster**. Beyond this threshold, multipath management overhead saturates and storage performance degrades significantly. This limit applies to the total number of LUN-per-vDisk volumes across the entire cluster, regardless of cluster size.
+
+- Because LUNs are exported to all hosts for failover support, the per-cluster limit is independent of the number of hosts — adding more hosts does not increase the maximum
+- Use LUN-per-vDisk selectively for workloads that genuinely require it, not as a default for all VMs
+- Standard GFS2-backed datastores are recommended for the majority of workloads and have no practical per-cluster vDisk limit
+- Monitor the storage array's host-set export count and multipath device count on each host
+
+.. list-table::
+   :widths: 30 35 35
+   :header-rows: 1
+
+   * - Storage Mode
+     - Best For
+     - Considerations
+   * - GFS2 Shared Datastore
+     - General workloads, templates, most VMs
+     - No per-vDisk limit, shared filesystem overhead, standard performance
+   * - LUN-per-vDisk (Alletra)
+     - RDM, high-performance VMs, dedicated I/O
+     - ~800 vDisk cluster limit, higher array management overhead, direct block performance
 
 Raw Device Block Mapping (RDBM)
 -------------------------------
