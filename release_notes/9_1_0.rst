@@ -17,6 +17,8 @@ Release Dates
 New Features
 ============
 
+:Licensing: - Introduced the **Advanced** license tier, expanding the platform to three tiers: VM Essentials, Advanced, and Enterprise. Advanced includes Ansible, Kubernetes (HKS), Workflows, Service Catalog, Personas, and additional automation and integration capabilities. See :doc:`feature_matrix` for the complete tier comparison.
+
 :HVM & VM Essentials: - Virtual Switch management: add, edit, and remove virtual switches with advanced port group management and network reconfiguration directly from the UI
                       - Host Profiles: define and apply standardized host configurations across cluster hosts, similar to VMware vCenter Host Profiles
                       - Host Configuration Backup & Restore: back up HVM host identity and configuration for faster hardware replacement
