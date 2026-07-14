@@ -6,16 +6,28 @@ Snapshots
 Snapshot Consistency Model
 --------------------------
 
-HVM snapshots are **crash-consistent** by default — they capture the disk state at a point in time, equivalent to pulling the power and recovering from the resulting state. They are **not** application-consistent:
+HVM snapshots provide different levels of consistency depending on the storage backend and whether the QEMU Guest Agent is available:
 
-- A filesystem ``sync`` is issued to Linux guests before the snapshot (to flush pending writes)
-- No filesystem freeze (``fsfreeze``) is performed during snapshot creation
-- No memory state is captured — reverting a snapshot requires the VM to be restarted
-- Windows guests skip the ``sync`` command entirely
+**Application-consistent snapshots (QEMU Guest Agent connected):**
 
-.. NOTE:: For application-consistent snapshots (e.g., databases), stop the application or use application-level backup tools before taking the snapshot. The crash-consistent approach is safe for most workloads since modern filesystems (ext4, XFS, NTFS) include journaling that recovers cleanly from crash-consistent state.
+When the QEMU Guest Agent is installed and connected, |morpheus| quiesces the guest filesystem before taking the snapshot:
 
-For array-based snapshots (HPE Alletra), the storage array provides its own consistency guarantees at the block level.
+- **Linux guests:** A ``sync`` command flushes pending I/O, then ``fsfreeze`` is applied to freeze all filesystems before the snapshot
+- **Windows guests:** The ``fsfreeze`` call triggers **Volume Shadow Copy Service (VSS)** inside the guest via the QEMU Guest Agent, which notifies VSS-aware applications (SQL Server, Exchange, Active Directory, etc.) to flush their buffers and enter a consistent state before the snapshot
+
+This provides **application-consistent** snapshots for both Linux and Windows when the guest agent is available.
+
+**Crash-consistent snapshots (no QEMU Guest Agent):**
+
+When the guest agent is not installed or not responding, snapshots are **crash-consistent** — they capture the disk state at a point in time, equivalent to an unexpected power loss:
+
+- No filesystem freeze or application quiescing is performed
+- Modern journaling filesystems (ext4, XFS, NTFS) recover cleanly from crash-consistent state
+- Applications with their own write-ahead logs (databases) can also recover, but uncommitted transactions may be lost
+
+.. NOTE:: |morpheus| logs a warning when a snapshot is taken without the guest agent connected, indicating that the snapshot will be crash-consistent only. For production workloads, ensure the QEMU Guest Agent is installed and running to achieve application-consistent snapshots.
+
+No memory state is captured in any snapshot mode — reverting a snapshot requires the VM to be restarted.
 
 Snapshot Types by Storage Backend
 ----------------------------------
@@ -52,7 +64,18 @@ How File-Based Snapshots Work (GFS2/NFS)
 
 When a snapshot is created on a file-based datastore:
 
-#. A ``sync`` command is issued to the guest (Linux only) to flush pending I/O
+#. If the QEMU Guest Agent is connected:
+
+   - **Linux:** A ``sync`` command flushes pending I/O
+   - **Windows:** Sync is skipped (not a Windows command); VSS quiescing is handled by the ``--quiesce`` flag in the next step
+   - The snapshot is created with the ``--quiesce`` flag, which triggers filesystem freeze (and VSS on Windows) via the guest agent
+
+#. If the QEMU Guest Agent is not connected:
+
+   - No pre-snapshot flush or freeze is performed
+   - A warning is logged indicating the snapshot will be crash-consistent only
+   - The snapshot proceeds without quiescing
+
 #. An external qcow2 overlay is created for each disk using an atomic operation
 #. The VM continues running — writes go to the new overlay file
 #. The original disk image is preserved as read-only at the point-in-time state
@@ -119,10 +142,8 @@ Limitations
      - Description
    * - No memory snapshots
      - Only disk state is captured. The VM must be restarted after a revert. Running applications will not resume from their pre-snapshot state.
-   * - Crash-consistent only
-     - No application-level quiescing is performed during snapshot creation. Use application-level tools for database-consistent backups.
-   * - Windows guests
-     - The ``sync`` flush is skipped for Windows guests. Crash consistency relies on NTFS journal recovery.
+   * - Guest agent required for app consistency
+     - Without the QEMU Guest Agent, snapshots are crash-consistent only. Install and enable the guest agent for application-consistent snapshots with VSS support on Windows.
    * - Mixed storage VMs
      - VMs with disks on different storage backends may have partial snapshots. For example, a VM with one disk on GFS2 and another on Alletra will snapshot each through its respective mechanism.
    * - Concurrent operations
