@@ -56,7 +56,26 @@ Installing HVM OS 24.04
 Post-Install Network Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-HVM OS 24.04 uses **netplan** for network configuration. If you need to adjust networking after installation:
+HVM OS 24.04 uses **netplan** for network configuration. If you need to adjust networking after installation you can either edit **netplan** manually or use the provided **hpe-vm** TUI:
+
+Using the hpe-vm TUI
+""""""""""""""""""""
+
+1. Log in to the HVM host 
+2. Open the *hpe-vm* TUI by running:
+
+   .. code-block:: bash
+
+      sudo hpe-vm
+
+3. Navigate to **Network Configuration** and adjust the settings as needed 
+
+  ..image:: ~/morpheus-docs/images/hpe-vm/hpe-vm.png
+     :alt: hpe-vm TUI
+     :align: center
+
+Using Netplan
+"""""""""""""
 
 1. Navigate to the netplan configuration directory:
 
