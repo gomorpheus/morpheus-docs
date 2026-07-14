@@ -30,9 +30,6 @@ Snapshot Types by Storage Backend
    * - GFS2 / NFS (file-based)
      - External qcow2 overlay
      - Creates a new qcow2 overlay file that captures all writes after the snapshot point. The base image remains unchanged. This is the most common type for HVM clusters.
-   * - LVM (logical volumes)
-     - LVM snapshot
-     - Creates a copy-on-write LVM snapshot volume of the same size as the original.
    * - Ceph RBD
      - RBD snapshot
      - Creates a point-in-time snapshot at the Ceph cluster level.
@@ -88,7 +85,6 @@ Reverting a Snapshot
 #. The disk is rolled back to the snapshot state:
 
    - **File-based:** The overlay is discarded and the base image becomes active
-   - **LVM:** The snapshot is merged back into the original volume
    - **RBD:** The volume is rolled back to the snapshot point
    - **Alletra:** The array reverts the volume set to the snapshot state
 
@@ -107,7 +103,6 @@ Deleting a Snapshot
 **What happens during deletion:**
 
 - **File-based:** The overlay is committed (merged) back into the base image, then removed. This preserves all changes made since the snapshot while freeing the snapshot overhead.
-- **LVM:** The snapshot volume is removed.
 - **RBD:** The RBD snapshot is deleted.
 - **Alletra:** The snapshot set is deleted from the array.
 
@@ -130,8 +125,6 @@ Limitations
      - The ``sync`` flush is skipped for Windows guests. Crash consistency relies on NTFS journal recovery.
    * - Mixed storage VMs
      - VMs with disks on different storage backends may have partial snapshots. For example, a VM with one disk on GFS2 and another on Alletra will snapshot each through its respective mechanism.
-   * - LVM snapshot size
-     - LVM snapshots allocate the same size as the original volume, which can consume significant storage space.
    * - Concurrent operations
      - A VM cannot be snapshotted while a clone operation is in progress.
    * - RDBM/Raw block devices
