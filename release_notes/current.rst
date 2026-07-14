@@ -12,6 +12,8 @@ Release Dates
 
 - |morphver| |releasedate|
 
+.. important:: After upgrading to |morphver|, it is recommended to check for HVM Host agent upgrades as well. To upgrade HVM Host agents, navigate to the detail page for each HVM Host, expand the ACTIONS menu, and click "Upgrade Agent." This process must be undertaken on all HVM Hosts. Alternatively, you may select "Download Agent Script" to download a shell script to handle the upgrade. Connect to the HVM Host over a terminal session and run the downloaded script. The scripts are unique to each HVM Host so you must download all required scripts and run the correct script against the correct HVM Host. Though many do, it is possible that some version upgrade hops will not contain an HVM Host agent upgrade.
+
 |
 
 New Features
