@@ -31,7 +31,6 @@
    :caption: Release Notes
 
    release_notes/current.rst
-   release_notes/9_1_0.rst
    release_notes/9_0_0.rst
    release_notes/feature_matrix.rst
    release_notes/lifecycle.rst
