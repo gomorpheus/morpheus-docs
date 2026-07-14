@@ -63,7 +63,20 @@ New Features
 Fixes
 =====
 
-.. note:: Bug fixes and regressions addressed in this release will be documented as development is completed. See MORPH-13190 and MORPH-13191 for tracking.
+:HVM: - Fixed an issue where Dynamic Placement continuously attempted to move VMs to a memory-exhausted host, causing repeated migration failures
+      - Fixed allocated memory displaying incorrect values after cluster syncs
+      - Fixed network statistic information not displaying in the cluster view
+      - Fixed failure to attach a volume to a VM in certain configurations
+
+:Monitoring: - Fixed old open incidents not being automatically closed when all health checks return 100% healthy
+
+:HKS / Kubernetes: - Fixed HKS cluster provisioning failures in proxy environments
+
+:BMaaS / Bare Metal: - Fixed Bare Metal instance status remaining in "Provisioning" state in multi-node scenarios
+
+:Networking: - Fixed Huawei Private Network option being unavailable when adding networks in a subtenant
+
+.. note:: Additional bug fixes and regressions are being addressed throughout the 9.1.0 development cycle. See MORPH-13190 and MORPH-13191 for ongoing tracking.
 
 Appliance & Agent Updates
 =========================
