@@ -4,8 +4,6 @@
 |morphver| |releasetype| Release Notes
 **************************************
 
-.. warning:: This is a **pre-release** version. Features and fixes listed here are subject to change before the final release.
-
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
 - Minimum upgrade versions: Non-rolling: |minUpgradeVer|, Rolling: |minRollingUpgradeVer|
@@ -19,14 +17,72 @@ Release Dates
 New Features
 ============
 
-.. note:: Features for this release are in development. This section will be updated as features are completed.
+:HVM & VM Essentials: - Virtual Switch management: add, edit, and remove virtual switches with advanced port group management and network reconfiguration directly from the UI
+                      - Host Profiles: define and apply standardized host configurations across cluster hosts, similar to VMware vCenter Host Profiles
+                      - Host Configuration Backup & Restore: back up HVM host identity and configuration for faster hardware replacement
+                      - Bulk operations: trigger actions on multiple VMs or hosts simultaneously (migrate, snapshot, power operations, tag, and more)
+                      - Increased live migration concurrency during Maintenance Mode to reduce maintenance windows for dense environments
+                      - Connect and disconnect virtual network interfaces on running VMs without requiring a full reconfigure, supporting backup recovery and security isolation workflows
+                      - Expose advanced VM deployment settings (TPM, Secure Boot, UEFI, Nested Virtualization) in Reconfigure for Day 2 modifications without rebuilding
+                      - Centralized Affinity Placement management: view and manage VM affinity rules and pinning overrides from a single cluster-level interface
+                      - Linked clones: create space-efficient clones that share a base disk image with the parent VM
+                      - Datastore Evacuation / Maintenance Mode: automatically migrate VMs off a datastore being retired or replaced
+                      - Raw Device Block Mapping (RDBM): attach raw host block devices directly to VMs for performance-sensitive workloads
+                      - Virtual machine console access directly from HVM hosts
+                      - CPU Ready-equivalent metric for monitoring vCPU scheduling contention
+                      - Leverage QEMU Guest Agent to gather guest OS information (IP addresses, OS version, hostname) without network-based access
+                      - VSS-aware application-consistent snapshots: when the QEMU Guest Agent is connected, snapshots trigger Windows Volume Shadow Copy Service for database and application consistency
+                      - vNUMA provisioning: automatic or manual virtual NUMA topology for wide VMs spanning multiple CPU sockets, with Off/Auto/Manual modes
+                      - vCPU Placement: cluster-level CPU affinity management with Unmanaged, Region, and Pinned modes for NUMA-aware workload performance
+                      - Improved audit logging: administrative actions (datastore changes, cluster settings, VM promotions) now recorded in object History for full traceability
+                      - HVM Cluster OS Layout Ubuntu/HVM 26.04 support for confidential compute functions
+
+:Monitoring & Administration: - Monitoring tab time ranges for instance and server details, allowing analysis over configurable periods
+                              - Log rotation and retention period configuration from the GUI
+                              - Read-only access level for Appliance Settings permission, allowing auditors and operators to view configuration without modification rights
+
+:Storage & Backup: - Unified File Support Phase 2: Morpheus File Shares (create, grow, inventory, security toggles)
+
+:BMaaS / Bare Metal: - PXE/Network Boot support: boot Bare Metal hosts via customer PXE infrastructure instead of virtual media, with optional Config ISO for post-deployment automation
+                     - Brownfield import in Boot From SAN (BFS): discover and manage existing BFS-provisioned servers
+                     - Support for multiple networks (VLANs) with Unmanaged Networking on a single physical or bond interface
+
+:HKS / Kubernetes: - NGINX Replacement with Kubernetes Gateway API (Phase 1): Gateway API CRDs (GatewayClass, Gateway, HTTPRoute) replace NGINX Ingress Controller on HVM, VMware, and Bare Metal layouts
+                   - HKS cluster packages updated to latest Kubernetes versions (1.33, 1.34, 1.35) with CVE evaluation
+                   - HKS enhancements for 9.1.0
+
+:Platform & Orchestration: - PCO Support for Host addition and removal within existing VMware/VME clusters
+                           - Unified & Contextual Approval Framework for consistent approval workflows across provisioning operations
+                           - Import existing systems into |morpheus| for management without reprovisioning
+
+:CLI & Tooling: - hvmcli: unified CLI tool for HVM host management including log viewing, VM/node/storage/cluster status, network configuration, and health validation
+                - Aruba CX Support Bundle: collect diagnostic logs from Aruba CX switches as part of the |morpheus| support bundle
+                - Password Management for iLO, ESXi, and Switch credentials via Cypher-backed credential store with multi-device linking and rotation support
+                - Plugin ReadMe Standardization
 
 Fixes
 =====
 
-.. note:: Fixes for this release are in development. This section will be updated as fixes are verified.
+:HVM: - Fixed an issue where Dynamic Placement continuously attempted to move VMs to a memory-exhausted host, causing repeated migration failures
+      - Fixed allocated memory displaying incorrect values after cluster syncs
+      - Fixed network statistic information not displaying in the cluster view
+      - Fixed failure to attach a volume to a VM in certain configurations
+
+:Monitoring: - Fixed old open incidents not being automatically closed when all health checks return 100% healthy
+
+:HKS / Kubernetes: - Fixed HKS cluster provisioning failures in proxy environments
+
+:BMaaS / Bare Metal: - Fixed Bare Metal instance status remaining in "Provisioning" state in multi-node scenarios
+
+:Networking: - Fixed Huawei Private Network option being unavailable when adding networks in a subtenant
+
+.. note:: Additional bug fixes and regressions are being addressed throughout the 9.1.0 development cycle. See MORPH-13190 and MORPH-13191 for ongoing tracking.
 
 Appliance & Agent Updates
 =========================
 
-.. note:: Package and agent version updates will be listed here once finalized for this release.
+:Node Packages: - |morpheus| Node and VM Node packages updated to |nodePackageVer|
+:Linux Agent: - Updated to |linuxagentver|
+:Windows Agent: - |winagentver|
+:macOS Agent: - |macagentver|
+:Plugin API: - Updated to |pluginVer|
