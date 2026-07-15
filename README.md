@@ -22,7 +22,7 @@ $ cd morpheus-docs
 
 Finally, in this stage, you need to set up a new remote that points to the original project so that you can grab any changes and bring them into your local copy. Firstly clock on the link to the original repository – it’s labeled “Forked from” at the top of the GitHub page. This takes you back to the projects main GitHub page, so you can find the “SSH clone URL” and use it to create the new remote, which we’ll call upstream.
 ```
-$ git remote add upstream git@github.com:gomorpheus/morpheus-docs.git
+$ git remote add upstream git@github.com:HewlettPackard/morpheus-docs.git
 ```
 
 You now have two remotes for this project on disk:
