@@ -76,6 +76,96 @@ Dynamic Placement respects:
 - Host-VM Group affinity and anti-affinity rules
 - Available memory thresholds
 
+Configuring Dynamic Placement
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Dynamic Placement settings are configured when editing a cluster:
+
+#. Navigate to |InfClu| and select the cluster
+#. Click :guilabel:`Edit`
+#. Enable the **Dynamic Placement** toggle to activate DRS for the cluster
+#. Set the **Aggressiveness** level to control how actively VMs are rebalanced
+#. Click :guilabel:`Save`
+
+When Dynamic Placement is disabled (the default), the cluster operates in Failover Only mode and no automatic rebalancing occurs.
+
+Aggressiveness Levels
+^^^^^^^^^^^^^^^^^^^^^^
+
+The aggressiveness level controls how readily |morpheus| migrates VMs to rebalance the cluster. Higher aggressiveness results in tighter balancing but more frequent live migrations. Three levels are available:
+
+.. list-table::
+   :widths: 15 85
+   :header-rows: 1
+
+   * - Level
+     - Description
+   * - Conservative (default)
+     - Tolerates significant imbalance before acting. Best for production workloads where minimizing migrations is a priority.
+   * - Moderate
+     - Balances migration frequency against cluster evenness. Suitable for mixed workloads.
+   * - Aggressive
+     - Actively pursues even distribution across hosts. Appropriate for clusters where balanced resource utilization is more important than migration overhead.
+
+Threshold Parameters
+^^^^^^^^^^^^^^^^^^^^^
+
+Each aggressiveness level sets a group of threshold parameters that govern the DRS algorithm:
+
+.. list-table::
+   :widths: 25 15 15 15 50
+   :header-rows: 1
+
+   * - Parameter
+     - Conservative
+     - Moderate
+     - Aggressive
+     - Description
+   * - Imbalance Threshold
+     - 1.5
+     - 1.4
+     - 1.2
+     - A host is considered overloaded when its memory usage exceeds the cluster mean multiplied by this value. At 1.5 (conservative), a host must be 50% above the mean before any migration is considered.
+   * - Target Low Threshold
+     - 0.9
+     - 0.95
+     - 1.0
+     - A destination host is eligible to receive a VM only if its memory and CPU usage are below the cluster mean multiplied by this value. At 0.9 (conservative), the target must be at least 10% below the mean.
+   * - Cooldown Period
+     - 60 min
+     - 30 min
+     - 15 min
+     - Minimum time after a VM has been migrated before it can be moved again. Prevents VMs from bouncing between hosts.
+   * - Max Moves Per Cycle
+     - 2
+     - 3
+     - 5
+     - Maximum number of VM migrations that can occur in a single DRS evaluation cycle (each cluster sync).
+   * - Min Std Dev Improvement
+     - 8%
+     - 5%
+     - 2%
+     - A proposed migration is only executed if it would reduce the cluster's resource utilization standard deviation by at least this percentage. Prevents marginal moves that provide little benefit.
+   * - CV Threshold
+     - 0.08
+     - 0.05
+     - 0.03
+     - The coefficient of variation (standard deviation / mean) for both memory and CPU across all hosts. If the cluster CV is already below this value, DRS skips balancing entirely because the cluster is considered well-balanced.
+
+How the Algorithm Works
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+During each cluster sync cycle, Dynamic Placement evaluates the cluster as follows:
+
+#. **Cluster balance check** — Calculate the coefficient of variation (CV) for memory and CPU across all hosts. If both values are below the CV Threshold, the cluster is considered balanced and no action is taken.
+#. **Identify overloaded hosts** — Hosts whose memory usage exceeds the mean multiplied by the Imbalance Threshold are flagged.
+#. **Select VMs to move** — On each overloaded host, eligible VMs are evaluated for migration. A VM is eligible if it uses the ``Auto`` placement strategy, has no local storage or assigned devices, is powered on, is not in an active backup, is not in an affinity group, and has not been migrated within the cooldown period.
+#. **Select target hosts** — Target hosts must have memory and CPU usage below the mean multiplied by the Target Low Threshold. The move is also validated to ensure it would not push the target host above the Imbalance Threshold.
+#. **Validate improvement** — The algorithm simulates the move and confirms it would reduce the cluster's standard deviation by at least the Min Std Dev Improvement percentage.
+#. **Execute migrations** — Approved moves are executed up to the Max Moves Per Cycle limit.
+
+.. NOTE:: Dynamic Placement uses the overcommit-adjusted memory values when evaluating hosts. See the :ref:`Memory Overcommit` section below for details.
+
 Host-VM Groups (Affinity/Anti-Affinity)
 ----------------------------------------
 
