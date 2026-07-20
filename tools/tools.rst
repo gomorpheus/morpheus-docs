@@ -15,3 +15,4 @@ Tools
   catalog_item_types.rst
   migrations/migrations.rst
   ai/ai.rst
+  hvmcli/hvmcli.rst
