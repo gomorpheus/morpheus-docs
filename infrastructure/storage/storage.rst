@@ -27,5 +27,4 @@ The default Storage path for Virtual Images, Backups, Deployment Archives, Archi
 .. include:: data_stores.rst
 .. include:: servers.rst
 .. include:: storage_hosts.rst
-.. include:: hpe_3par.rst
 .. include:: snapshots.rst

@@ -136,7 +136,7 @@ In this example cluster, each host box consists of:
 Provisioning the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (|InfClu|). Click :guilabel:`+ ADD CLUSTER` and select "|mvm|".
+As mentioned in the previous section, this example is starting with three provisioned Ubuntu 22.04 boxes. I also have a |morpheus|-type Cloud to house the cluster. Begin the cluster creation process from the Clusters list page (:menuselection:`Infrastructure --> Clusters`). Click :guilabel:`+ ADD CLUSTER` and select "|mvm|".
 
 .. image:: /images/infrastructure/clusters/mvm/createHpevmCluster.png
 
@@ -160,7 +160,7 @@ At this point we've kicked off the process for configuring the cluster nodes. Dr
 Provisioning a Workload
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point, the cluster is ready for workloads to be provisioned to it. The system default Ubuntu Instance Type contains a compatible Layout for |mvm| deployment. Add an Instance from the Instances list page (|ProIns|). After selecting the Instance Type, choose a Group that allows for selection of the |morpheus|-type Cloud containing the |mvm| cluster.
+At this point, the cluster is ready for workloads to be provisioned to it. The system default Ubuntu Instance Type contains a compatible Layout for |mvm| deployment. Add an Instance from the Instances list page (:menuselection:`Provisioning --> Instances`). After selecting the Instance Type, choose a Group that allows for selection of the |morpheus|-type Cloud containing the |mvm| cluster.
 
 .. image:: /images/infrastructure/clusters/mvm/groupCloud.png
 
@@ -175,7 +175,7 @@ Review and complete the provisioning wizard. After a short time, the workload sh
 Monitoring the Cluster
 ^^^^^^^^^^^^^^^^^^^^^^
 
-With the server provisioned and a workload running, take a look at the monitoring and actions capabilities on the cluster detail page (|InfClu|, then click on the new |mvm| cluster). View cluster performance and resource usage (Summary and Monitoring tabs), drill into individual hosts (Hosts tab), see individual workloads (VMs tab), and more.
+With the server provisioned and a workload running, take a look at the monitoring and actions capabilities on the cluster detail page (:menuselection:`Infrastructure --> Clusters`, then click on the new |mvm| cluster). View cluster performance and resource usage (Summary and Monitoring tabs), drill into individual hosts (Hosts tab), see individual workloads (VMs tab), and more.
 
 **Moving Workloads Between Hosts**
 
@@ -193,11 +193,11 @@ Within a short time, the workload is moved to the new host.
 
 The process of adding hosts to a pre-existing cluster is very similar to the process of provisioning the cluster initially. The requirements for the new worker node will be identical to the nodes initially added when the cluster was first provisioned. See the earlier sections in this guide for additional details on configuring the worker nodes.
 
-To add the host, begin from the |mvm| Cluster detail page (selected from the list at |InfClu|). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
+To add the host, begin from the |mvm| Cluster detail page (selected from the list at :menuselection:`Infrastructure --> Clusters`). From the Cluster detail page, click :guilabel:`ACTIONS` and select "Add Worker". Configurations required are the same as those given when the cluster was first created. Refer to the section above on "Provisioning the Cluster" for a detailed description of each configuration.
 
 Once |morpheus| has completed its configuration scripts and joined the new worker node to the cluster, it will appear in a ready state within the Hosts tab of the Cluster detail page. When provisioning workloads to this Cluster in the future, the new node will be selectable as a target host for new Instances. It will also be an available target for managing placement of existing VMs running on the cluster.
 
-.. NOTE:: It's useful to confirm all scripts related to creating the new host and joining the new host to the cluster completed successfully. To confirm, navigate to the detail page for the new host (|InfClu| > Selected Cluster > Hosts Tab > Selected Host) and click on the History tab. Confirm all scripts, even those run on the pre-existing hosts, completed successfully as it's possible the new host was added successfully (green status) but failed in joining the cluster. When such a situation occurs it may appear adding the new host was successful though it will not be possible to provision workloads onto it due to not joining the cluster successfully.
+.. NOTE:: It's useful to confirm all scripts related to creating the new host and joining the new host to the cluster completed successfully. To confirm, navigate to the detail page for the new host (:menuselection:`Infrastructure --> Clusters` > Selected Cluster > Hosts Tab > Selected Host) and click on the History tab. Confirm all scripts, even those run on the pre-existing hosts, completed successfully as it's possible the new host was added successfully (green status) but failed in joining the cluster. When such a situation occurs it may appear adding the new host was successful though it will not be possible to provision workloads onto it due to not joining the cluster successfully.
 
 .. image:: /images/infrastructure/clusters/mvm/addHost.png
 
@@ -213,7 +213,7 @@ Once |morpheus| has completed its configuration scripts and joined the new worke
 
 *Viewing Affinity Groups*
 
-Affinity groups are listed on the Resources tab of the |mvm| Cluster detail page (|InfClu|, then select the appropriate |mvm| Cluster). From the ACTIONS menu for each affinity group, they may be edited or deleted. By editing an affinity group, users may view or edit its enabled status (affinity groups which are not enabled will not be acted on).
+Affinity groups are listed on the Resources tab of the |mvm| Cluster detail page (:menuselection:`Infrastructure --> Clusters`, then select the appropriate |mvm| Cluster). From the ACTIONS menu for each affinity group, they may be edited or deleted. By editing an affinity group, users may view or edit its enabled status (affinity groups which are not enabled will not be acted on).
 
 *Adding Affinity Groups*
 
@@ -255,7 +255,7 @@ Multiple physical cores can reside within the same NUMA node. Physical CPU cores
 
 *How to Configure vCPU Placement Settings*
 
-#. Navigate to |InfClu|
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
 #. Select the desired HVM Cluster
 #. From the Cluster detail page, click :guilabel:`Edit`
 #. Within the **vCPU Placement** field, select the desired value
@@ -281,7 +281,7 @@ In order to surface hardware sensor data into the UI, IPMI tool and its dependen
 
 When properly configured, hardware sensor data may be viewed from the host detail page:
 
-#. Navigate to |InfClu|
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
 #. Select the desired HVM cluster
 #. Select the Health subtab
 #. The hardware sensor states and hardware events are shown in the Sensors and Events subtabs
@@ -330,7 +330,7 @@ Image Prep (Windows)
 
 This section will go through the steps to prepare a Windows image which can be successfully provisioned to |mvm| clusters. Additionally, this image can serve as a template from which additional images and |morpheus| Library items can be built. In this example case, we'll start from downloading a Windows Server 2019 ISO directly from the Microsoft download center and go all the way through to creating a new Instance Type in |morpheus| that users can provision on-demand.
 
-With the Windows ISO already downloaded, begin by uploading the ISO as a Virtual Image in |morpheus|. Virtual Images are added in |LibVir|. Click :guilabel:`+ ADD` and then choose "ISO." Before adding the file itself, set the following configurations on the Virtual Image:
+With the Windows ISO already downloaded, begin by uploading the ISO as a Virtual Image in |morpheus|. Virtual Images are added in :menuselection:`Library --> Virtual Images`. Click :guilabel:`+ ADD` and then choose "ISO." Before adding the file itself, set the following configurations on the Virtual Image:
 
 - **NAME:** A name for the Virtual Image in |morpheus|, such as "Windows Server 2019 ISO"
 - **OPERATING SYSTEM:** "windows server 2019"
@@ -343,7 +343,7 @@ With the configurations set, it's time to upload the ISO to |morpheus|. Keep in 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/progress.png
   :width: 50%
 
-Next, we'll provision a VM from the ISO using the built-in |mvm| Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to |ProIns| and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "|mvm|" and click :guilabel:`NEXT`.
+Next, we'll provision a VM from the ISO using the built-in |mvm| Instance Type. Once running, we will configure the VM to any specific requirements and convert it to a template. Navigate to :menuselection:`Provisioning --> Instances` and click :guilabel:`+ ADD`. On the TYPE tab of the Instance provisioning wizard, we select the Instance Type to provision. In this case, select "|mvm|" and click :guilabel:`NEXT`.
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/provisionMvmInstanceType.png
   :width: 50%
@@ -416,7 +416,7 @@ Next, back in Command Prompt, run ``winrm quickconfig`` to configure ``winrm``. 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/sysprepComplete.png
   :width: 50%
 
-We're now done configuring Windows and the console window can be closed. We'll move on to creating a template from the VM we just configured. Begin by opening an SSH session into the |morpheus| appliance server. Confirm ``jq`` is up to date on the appliance box (``apt install jq``). Then, go ahead and stop the running Windows VM. We can do this from the Instance detail page in |morpheus|. Click :guilabel:`ACTIONS` and then "Stop Server." Still on the Instance detail page, click :guilabel:`ACTIONS` and then "Import as Image." This will perform a snapshot and create a new Virtual Image (|LibVir|).
+We're now done configuring Windows and the console window can be closed. We'll move on to creating a template from the VM we just configured. Begin by opening an SSH session into the |morpheus| appliance server. Confirm ``jq`` is up to date on the appliance box (``apt install jq``). Then, go ahead and stop the running Windows VM. We can do this from the Instance detail page in |morpheus|. Click :guilabel:`ACTIONS` and then "Stop Server." Still on the Instance detail page, click :guilabel:`ACTIONS` and then "Import as Image." This will perform a snapshot and create a new Virtual Image (:menuselection:`Library --> Virtual Images`).
 
 .. image:: /images/infrastructure/clusters/mvm/imagePrep/importImage.png
 

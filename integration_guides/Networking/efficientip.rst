@@ -36,7 +36,7 @@ Adding EfficientIP SOLIDserver Integration
 
 The EfficientIP SOLIDserver integration type is a plugin that must be added to |morpheus| before the option to create one will be available. In the future, users will be able to download this and other plugin types from a centralized marketplace. For now, the plugin jar file can be compiled from a public Github repository or can be requested from your account team. See the `Plugins Section <https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#plugins>`_ of |morpheus| documentation for more on the process of uploading the plugin JAR to your appliance.
 
-#. Navigate to |InfNetInt| and click :guilabel:`+ ADD`
+#. Navigate to :menuselection:`Infrastructure --> Network --> Integrations` and click :guilabel:`+ ADD`
 #. Under the IPAM section, select EfficientIP SOLIDserver
 #. Configure the following:
 
@@ -51,7 +51,7 @@ The EfficientIP SOLIDserver integration type is a plugin that must be added to |
 
 #. Click :guilabel:`SAVE CHANGES`
 
-Once saved, |morpheus| will begin to onboard data from EfficientIP. EfficientIP networks are viewable in |InfNetIP| under the IP Pools tab. Depending on EfficientIP configuration, you may see up to two "types" of Network Pools sync from EfficientIP, SOLIDserver Subnet and SOLIDserver Pool. In EfficientIP, "pools" are an optional construct that subdivides subnets. In |morpheus|, both constructs are synced which gives an additional layer of organization when linking Network Pools with Networks (described in the next section) for organizations that use the pools construct. Within a selected IP Pool, host records will also sync and can be viewed in a grid or list layout. DNS Zones are synced under |InfNetDom|. By clicking into the domain, DNS Zone records can be viewed.
+Once saved, |morpheus| will begin to onboard data from EfficientIP. EfficientIP networks are viewable in :menuselection:`Infrastructure --> Network --> IP Pools` under the IP Pools tab. Depending on EfficientIP configuration, you may see up to two "types" of Network Pools sync from EfficientIP, SOLIDserver Subnet and SOLIDserver Pool. In EfficientIP, "pools" are an optional construct that subdivides subnets. In |morpheus|, both constructs are synced which gives an additional layer of organization when linking Network Pools with Networks (described in the next section) for organizations that use the pools construct. Within a selected IP Pool, host records will also sync and can be viewed in a grid or list layout. DNS Zones are synced under :menuselection:`Infrastructure --> Network --> Domains`. By clicking into the domain, DNS Zone records can be viewed.
 
 .. image:: /images/integration_guides/networking/efficientip/pool.png
 
@@ -60,7 +60,7 @@ Adding IP Pools to Networks
 
 At provision time, |morpheus| can automatically assign the next available IP address in an EfficientIP pool and create the corresponding DNS records. |morpheus| can also clean up DNS records and free up IP address space on teardown. In order to enable this functionality, add an EfficientIP IP Pool as the Network Pool for an existing network (or networks).
 
-#. Navigate to |InfNetNet|
+#. Navigate to :menuselection:`Infrastructure --> Network --> Networks`
 #. Select a network to view the network detail page and click :guilabel:`EDIT`
 #. In the typeahead field for NETWORK POOL, search for and select the EfficientIP pool
 #. Click :guilabel:`SAVE CHANGES`
@@ -70,7 +70,7 @@ At provision time, |morpheus| can automatically assign the next available IP add
 Creating Host Records
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Select an EfficientIP Network Pool from |InfNetIP|
+#. Select an EfficientIP Network Pool from :menuselection:`Infrastructure --> Network --> IP Pools`
 #. Select :guilabel:`+ ADD`
 #. Configure the following:
 
@@ -87,7 +87,7 @@ Creating Host Records
 Creating Zone Records
 ^^^^^^^^^^^^^^^^^^^^^
 
-#. Select an EfficientIP zone from the domains list at |InfNetDom|
+#. Select an EfficientIP zone from the domains list at :menuselection:`Infrastructure --> Network --> Domains`
 #. Click :guilabel:`+ ADD` on the Zone Records tab
 #. Configure the following:
 

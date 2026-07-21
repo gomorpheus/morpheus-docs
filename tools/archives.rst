@@ -29,7 +29,7 @@ To add a new Archive, click :guilabel:`+ ADD` from the Archives list page. Confi
 
 - **NAME:** A friendly name for the Archive in |morpheus|
 - **DESCRIPTION:** An optional description for the Archive
-- **BUCKET:** Select an existing bucket or file share to store files in for this Archive. To integrate a new bucket or file share to use for an Archive, navigate to |InfSto|
+- **BUCKET:** Select an existing bucket or file share to store files in for this Archive. To integrate a new bucket or file share to use for an Archive, navigate to :menuselection:`Infrastructure --> Storage`
 - **VISIBILITY:** Public or Private, public Archives are available in all Tenants
 - **TENANTS:** When Archive visibility is set to Private, only the Tenants selected will have access to the Archive
 - **PUBLIC URL:** When marked, |morpheus| will create a public download URL for all files in the Archive

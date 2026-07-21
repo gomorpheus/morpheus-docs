@@ -20,7 +20,7 @@ Personas
 Catalog Item Types
   Controls User access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 Cluster Types
-  Controls user access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| (assuming the Role also has feature access to applicable permissions related to adding Clusters)
+  Controls user access to Cluster types. Only Cluster types allowed for the Role may be added in :menuselection:`Infrastructure --> Clusters` (assuming the Role also has feature access to applicable permissions related to adding Clusters)
 VDI Pools
   Controls User access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
 Workflows
@@ -45,7 +45,7 @@ Personas
 Catalog Item Types
   Controls Tenant access to Catalog Item types within the Service Catalog Persona. Only Catalog Items created in the current Tenant or those created in the Master Tenant and shared with the current Tenant will be available.
 Cluster Types
-  Controls Tenant access to Cluster types. Only Cluster types allowed for the Role may be added in |InfClu| within the associated Tenant
+  Controls Tenant access to Cluster types. Only Cluster types allowed for the Role may be added in :menuselection:`Infrastructure --> Clusters` within the associated Tenant
 VDI Pools
   Controls Tenant access to VDI Pools which are currently configured (|TooVDI|) via the Virtual Desktops Persona view
 Workflows
@@ -135,7 +135,7 @@ Role Mappings
         -
       * - Admin: Environment Settings
         - None, Full
-        - Allows or disallows access to the Environments tab in |AdmSetPro|. When given to a Master Tenant user they may define the visibility of the environment to either private or public.  When given to a Subtenant user the environments are only visible to the subtenant (private).
+        - Allows or disallows access to the Environments tab in :menuselection:`Administration --> Settings --> Provisioning`. When given to a Master Tenant user they may define the visibility of the environment to either private or public.  When given to a Subtenant user the environments are only visible to the subtenant (private).
         - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
         - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
         -
@@ -171,7 +171,7 @@ Role Mappings
         -
       * - Admin: License Settings
         - None, Full
-        - Allows or disallows access to the Licenses tab in |AdmSetPro|. When given to a Master Tenant user they may define specific subtenants in which the licenses may be used.
+        - Allows or disallows access to the Licenses tab in :menuselection:`Administration --> Settings --> Provisioning`. When given to a Master Tenant user they may define specific subtenants in which the licenses may be used.
         - The Licenses tab is where software licenses may be added for tracking in |morpheus|. |morpheus| may then be configured to apply these licenses on provision. Currently, only Windows license types are available.
         - This permission is recommended for those responsible for managing Windows licenses.
         -
@@ -219,7 +219,7 @@ Role Mappings
         -
       * - Admin: Provisioning Settings
         - None, Full
-        - Allows or disallows access to the Settings tab of the |AdmSetPro| page.
+        - Allows or disallows access to the Settings tab of the :menuselection:`Administration --> Settings --> Provisioning` page.
         - The Settings tab is where global provisioning settings are configured. For Master Tenant users, these include allowing Cloud selection, allowing host selection, requiring environment selection, showing pricing, hiding datastore stats on selection, cross-Tenant naming policies, and reusing naming sequence numbers. For both Master Tenant and Subtenant users, defining the deploy archive store, cloud-init setting, the PXE boot root password, and default App Blueprint types are available.
         - This permission is recommended to only be assigned to roles utilized within the Master Tenant.
         -
@@ -300,7 +300,7 @@ Role Mappings
       * - Backups
         - None, View, Read, User, Full
         - Determines access to the Backups secton of |morpheus| UI, including the Summary, Jobs, Backups, and History subpages. The "User" permission allows access only to backup objects the user owns.
-        - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the |LibAut|). On the backups subpage, a list of configured backups is provided and new backups may be created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
+        - The Summary subpage allows the user to see the number of configured backups, the success rate, recent failures, and the size of the backups, as well as, the upcoming and in-progress backups. The Jobs subpage is where backup jobs may be created, cloned, edited or deleted. On create, a name, code (for use within the API), retention count, and schedule are selected (Note: Selectable schedules are defined Execution Schedules which are created in the :menuselection:`Library --> Automation`). On the backups subpage, a list of configured backups is provided and new backups may be created or on-demand backups may be executed. On create, the place where the target exists is selected (Instance, Host, or Provider), the source is selected and a name is defined as well as the selected execution schedule. On the History subpage both the backups and restores tabs are available. Names, statuses, start times, durations and size may be viewed.
         - This permission is recommended for those responsible for performing the backup and restoration of workloads.
         -
       * - Backups: Integrations
@@ -415,7 +415,7 @@ Role Mappings
         -
       * - Infrastructure: Move Servers
         - None, Full
-        - Determines access to the "Change Cloud" action on server detail pages (|InfCom| > Virtual Machines tab > Selected VM > Actions > Change Cloud)
+        - Determines access to the "Change Cloud" action on server detail pages (:menuselection:`Infrastructure --> Compute` > Virtual Machines tab > Selected VM > Actions > Change Cloud)
         - Change Cloud allows server records to be migrated from one Cloud to another. Note that this is not a migration tool but simply allows for upkeep of records in |morpheus|.
         - This permission is recommended for appliance administrators. See other sections of |morpheus| documentation for more information on the use of this feature.
         -
@@ -584,8 +584,8 @@ Role Mappings
         - This permission is recommended to be set to None or Read on the Tenant Role to restrict access for Subtenant users.
       * - Library: Virtual Images (Formerly Provisioning: Virtual Images)
         - None, Read, Full
-        - Determines access to the |LibVir| page.
-        - |LibVir| is where user and system Virtual Images are managed.
+        - Determines access to the :menuselection:`Library --> Virtual Images` page.
+        - :menuselection:`Library --> Virtual Images` is where user and system Virtual Images are managed.
         - This permission is recommended for those who are responsible for image management.
         -
 
@@ -731,7 +731,7 @@ Role Mappings
         -
       * - Networks: Domains
         - None, Read, Group, Full
-        - Determines access to the Domains tab on the |InfNet| page. Domains may be scoped for specific Group access. If the Group-level permission is selected here, users will only have visibility into Domains scoped to Groups they can access.
+        - Determines access to the Domains tab on the :menuselection:`Infrastructure --> Network` page. Domains may be scoped for specific Group access. If the Group-level permission is selected here, users will only have visibility into Domains scoped to Groups they can access.
         - The Domains page is where network domains are managed. Domains are used for setting FQDNs, joining Windows Instances to domains, and creating A-Records with DNS integrations. On create the domain controller and credentials for domain join must be provided.
         - This permission is recommended for those responsible for |morpheus| DNS and domain-join integrations.
         -
@@ -767,31 +767,31 @@ Role Mappings
         -
       * - Networks: Router Firewalls
         - None, Read, Full
-        - Determines access to Firewall tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
+        - Determines access to Firewall tabs on Router Detail pages (:menuselection:`Infrastructure --> Network --> Routers` tab > Selected Router)
         - The Firewall tab is where firewall rules are viewed, created, and managed
         - This permission is recommended for those responsible for managing firewall rules
         -
       * - Networks: Router Interfaces
         - None, Read, Full
-        - Determines access to Interfaces tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
+        - Determines access to Interfaces tabs on Router Detail pages (:menuselection:`Infrastructure --> Network --> Routers` tab > Selected Router)
         - The Interface tab is where router interfaces can be viewed, created and managed
         - This permission is recommended for those responsible for network traffic flow
         -
       * - Networks: Router NAT
         - None, Read, Full
-        - Determines access to the NAT tab on Router Detail pages (|InfNetRou| tab > Selected Router)
+        - Determines access to the NAT tab on Router Detail pages (:menuselection:`Infrastructure --> Network --> Routers` tab > Selected Router)
         - The NAT tab is where NAT rules are viewed, created, and managed
         - This permission is recommended for those responsible for network traffic flow
         -
       * - Networks: Router Redistribution
         - None, Read, Full
-        - Determines access to Route Redistribution tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
+        - Determines access to Route Redistribution tabs on Router Detail pages (:menuselection:`Infrastructure --> Network --> Routers` tab > Selected Router)
         - The Route Redistribution tab is where redistribution rules are viewed, created, and managed
         - This permission is recommended for those responsible for redistribution rules
         -
       * - Networks: Router Routes
         - None, Read, Full
-        - Determines access to Routing tabs on Router Detail pages (|InfNetRou| tab > Selected Router)
+        - Determines access to Routing tabs on Router Detail pages (:menuselection:`Infrastructure --> Network --> Routers` tab > Selected Router)
         - The Routing tab is where routes are viewed, created, and managed
         - This permission is recommended for those responsible for network route management
         -
@@ -926,7 +926,7 @@ Role Mappings
         - Tenant Role Recommendations
       * - Provisioning: Administrator
         - None, Full
-        - When editing an Instance (|ProIns| > selected Instance > EDIT button), this permission determines access to changing the owner of an Instance.
+        - When editing an Instance (:menuselection:`Provisioning --> Instances` > selected Instance > EDIT button), this permission determines access to changing the owner of an Instance.
         - Allows you to change the owning user of an Instance.
         - This permission is recommended for those responsible to ensure all instances are owned by appropriate personnel.
         -
@@ -1022,7 +1022,7 @@ Role Mappings
         -
       * - Provisioning: Instances: List
         - None, User, Full
-        - Controls which Instances are listed on the Instances list page (|ProIns|). When set to "User", only Instances owned by the currently logged in user will be displayed.
+        - Controls which Instances are listed on the Instances list page (:menuselection:`Provisioning --> Instances`). When set to "User", only Instances owned by the currently logged in user will be displayed.
         -
         - This permission is recommended for any user who needs to be able to manage Instances
         -
@@ -1071,7 +1071,7 @@ Role Mappings
       * - Provisioning: Remote Console Auto Login
         - No, Yes
         - This allows or disallows the ability to automatically log into the remote console.
-        - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (|AdmSetPro|), or the Linux or Windows settings defined in User Settings.
+        - |morpheus| will automatically log into the machine using the credentials defined on the VM or Host. The credentials are defined either from the virtual image used, added via cloud-init or VMware Tools using the global cloud-init settings (:menuselection:`Administration --> Settings --> Provisioning`), or the Linux or Windows settings defined in User Settings.
         - This permission is recommended when an organization utilizes |morpheus| to create user accounts on provisioned or managed machines, as well as, allow remote console access.
         -
       * - Provisioning: Service Mesh

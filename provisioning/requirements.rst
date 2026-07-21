@@ -86,11 +86,11 @@ Cloud Init Enabled?
 Install Agent
   On by default, uncheck to skip Agent install. Note this will result in the loss of utilization statistics, logs, script execution, and monitoring. (Some utilization stats are collected for agent-less hosts and vm's from VMware and AWS clouds).
 Username
-  Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init Guest Customizations or Nutanix Sysprep are used, credentials are defined in |AdmSetPro| and User Settings. If credentials are defined on the Image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist in the image (aka ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
+  Existing Username on the Image. This is required for authentication, unless |morpheus| is able to add user data, Cloud-Init, Cloudbase-Init or Guest Customizations. If Cloud-Init, Cloudbase-Init Guest Customizations or Nutanix Sysprep are used, credentials are defined in :menuselection:`Administration --> Settings --> Provisioning` and User Settings. If credentials are defined on the Image and Cloud-Init is enabled, |morpheus| will add that user during provisioning, so ensure that user does not already exist in the image (aka ``root``). For Windows Guest Customizations, |morpheus| will set the Administrator password to what is defined on the image if Administrator user is defined. Do not define any other user than Administrator for Windows Images unless using Cloudbase-init. |morpheus| recommends running Guest Customizations for all Windows Images, which is required when joining Domains as the SID will change.
 Password
   Password for the Existing User on the image if Username is populated.
 Storage Provider
- Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/VMs. Additional Storage Providers can be configured in |InfSto|.
+ Location where the Virtual Image will be stored. Default Virtual Image Storage location is /var/opt/morpheus/morpheus-ui/VMs. Additional Storage Providers can be configured in :menuselection:`Infrastructure --> Storage`.
 Cloud-Init User Data
   Accepts what would go in runcmd and can assume bash syntax. Example use: Script to configure satellite registration at provision time.
 Permissions
@@ -104,7 +104,7 @@ Permissions
       If Visibility is set to Private, specify Tenants the Image will be available for.
 
 Auto Join Domain?
- Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in |InfNet| and the configured domain set on the provisioned to Cloud or Network).
+ Enable to have Instances provisioned with this image auto-join configured domains (Windows only, domain controller must be configured in :menuselection:`Infrastructure --> Network` and the configured domain set on the provisioned to Cloud or Network).
 VirtIO Drivers Loaded?
  Enable if VirtIO Drivers are installed on the image for provisioning to KVM based Hypervisors.
 VM Tools Installed?
@@ -167,7 +167,7 @@ When an instance is provisioned and the agent does not install, verify the follo
 
 * Inbound connectivity access to the |morpheus| Appliance from provisioned VM's and container hosts on port 443 (needed for agent communication)
 
-* Private (non-morpheus provided) vm images/templates must have their credentials entered. These can be entered/edited in the |LibVir| section but clicking the Actions dropdown of an image and selecting Edit.
+* Private (non-morpheus provided) vm images/templates must have their credentials entered. These can be entered/edited in the :menuselection:`Library --> Virtual Images` section but clicking the Actions dropdown of an image and selecting Edit.
 
 .. NOTE:: Administrator user is required for Windows agent install.
 
@@ -182,7 +182,7 @@ Linux Agent
 ```````````
 
 * Port 22 is open for Linux images, and SSH is enabled
-* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the |LibVir| section.
+* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section.
 
 .. image:: /images/provisioning/agent_ssh.gif
 
@@ -191,7 +191,7 @@ Windows Agent
 `````````````
 
 * Port 5985 must be open and WinRM enabled for Windows images.
-* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the |LibVir| section.
+* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section.
 
 .. NOTE:: Administrator user is required for Windows agent install.
 
@@ -199,10 +199,10 @@ VMware tools (vmtools) rpc mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * VMware tools is installed on the template(s)
-* Credentials have been entered on the Image if using uploaded or synced image when Cloud-init or Guest Customizations or Sysprep for Windows are not used. Credentials can be entered on Images in the |LibVir| section.
+* Credentials have been entered on the Image if using uploaded or synced image when Cloud-init or Guest Customizations or Sysprep for Windows are not used. Credentials can be entered on Images in the :menuselection:`Library --> Virtual Images` section.
 
 Cloud-Init agent install mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Cloud-Init is configured in |AdmSetPro| section
+* Cloud-Init is configured in :menuselection:`Administration --> Settings --> Provisioning` section
 * Provisioned image/blueprint has Cloud-Init (linux) or Cloudbase-Init (windows) installed

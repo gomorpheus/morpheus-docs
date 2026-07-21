@@ -29,7 +29,7 @@ If the redirect is still properly, the response should include the following:
 
   0     0 DNAT     tcp  --  *  *   0.0.0.0/0  169.254.169.254  tcp dpt:80 to:192.168.1.156
 
-Next, in |morpheus|, set a default PXE root password. This password is set in |AdmSetPro|. With the default root password set, set up the redirect on the DHCP server. In addition to the DNS and Gateway settings, add Boot Server Host Name which will be the name of the |morpheus| Server and Bootfile Name which should be set to ``pxelinux.0``. If you are using a Linux-based DHCP server, for example on CentOS, the dhcpd.conf configuration will look something like the following:
+Next, in |morpheus|, set a default PXE root password. This password is set in :menuselection:`Administration --> Settings --> Provisioning`. With the default root password set, set up the redirect on the DHCP server. In addition to the DNS and Gateway settings, add Boot Server Host Name which will be the name of the |morpheus| Server and Bootfile Name which should be set to ``pxelinux.0``. If you are using a Linux-based DHCP server, for example on CentOS, the dhcpd.conf configuration will look something like the following:
 
 .. code-block:: bash
 
@@ -42,7 +42,7 @@ Next, in |morpheus|, set a default PXE root password. This password is set in |A
 
 .. NOTE:: Replace the dummy IP address in the example dhcpd.conf file above with your |morpheus| appliance IP address.
 
-Once you have done this, when you boot a PXE-enabled machine on the network, it will be told to access the |morpheus| server and request the ``pxelinux.0`` file. It will do this on port 69, the default for TFTP and will be redirected to 6969 once it hits the |morpheus| server. If successful you will see the "|morpheus| PXE Server" menu when you boot a server. This is the default menu defined in |morpheus| and supports the shipped PXE images supplied with the product. By selecting any of the choices from the "|morpheus| PXE Server menu", the install files should be downloaded and the server configured as per the supplied kickstart files. At this point, back on the |morpheus| appliance, you should see the MAC address for the new server appear in the "Discovered MAC Addresses" tab of the |InfBoo| page.
+Once you have done this, when you boot a PXE-enabled machine on the network, it will be told to access the |morpheus| server and request the ``pxelinux.0`` file. It will do this on port 69, the default for TFTP and will be redirected to 6969 once it hits the |morpheus| server. If successful you will see the "|morpheus| PXE Server" menu when you boot a server. This is the default menu defined in |morpheus| and supports the shipped PXE images supplied with the product. By selecting any of the choices from the "|morpheus| PXE Server menu", the install files should be downloaded and the server configured as per the supplied kickstart files. At this point, back on the |morpheus| appliance, you should see the MAC address for the new server appear in the "Discovered MAC Addresses" tab of the :menuselection:`Infrastructure --> Boot` page.
 
 Troubleshooting
 ---------------

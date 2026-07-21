@@ -25,9 +25,9 @@ Okta URL
 Administrator API Token
   Your Okta Administrator API Token
 Required Group
-  The Okta group that users must be in to have access (optional)
+  The Okta group that users must be in to have access. If left empty, all Okta users who can authenticate will be allowed to log in and a local user account will be created automatically. It is strongly recommended to set this field in enterprise environments to restrict access to authorized users only.
 Default Role
-  The default role a user is assigned if no group is listed under an Okta user that maps within the Morpheus Role Mappings section
+  The default role applied to all users who pass the Required Group check. This role is always assigned in addition to any roles granted through role mappings below.
 ENABLE ROLE MAPPING PERMISSION
   When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the Identity Source configuration.
 MANUAL ROLE ASSIGNMENT

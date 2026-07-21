@@ -36,7 +36,7 @@ The second use case is to add your own Operating System. New Operating Systems c
 .. image:: /images/os/createOsType.png
   :width: 50%
 
-After creating the OS type, any new or existing Virtual Images can be associated to the newly created Operating System (|LibVir|). Once Virtual Images have the Operating System association, you can return to the OS type and complete the association with the Operating System by clicking into the OS type and clicking :guilabel:`+ ADD`.
+After creating the OS type, any new or existing Virtual Images can be associated to the newly created Operating System (:menuselection:`Library --> Virtual Images`). Once Virtual Images have the Operating System association, you can return to the OS type and complete the association with the Operating System by clicking into the OS type and clicking :guilabel:`+ ADD`.
 
 Once you have a custom Operating System loaded with your own gold master images, the OS type can be used with new Node Types going forward. To see how this works, navigate to |LibBluNod| and click :guilabel:`+ ADD`. Change the default technology for a new Node Type from the default "Docker" value to another technology, such as "VMware". Notice that the option is given to associate the Node Type with either a specific image or with an OS type. By selecting an OS type, the Node Type will select the appropriate image at provision time based on technology and/or Cloud filters.
 

@@ -20,8 +20,8 @@ Back in |morpheus|, navigate to the Tenant which will integrate with OneLogin. I
 - **ONELOGIN REGION:** Specify US or EU region
 - **API CLIENT SECRET:** OneLogin API client secret which was gathered earlier in this walkthrough
 - **API CLIENT ID:** OneLogin API client ID which was gathered earlier in this walkthrough
-- **REQUIRED ROLE:** Enter a role which OneLogin users logging into |morpheus| must have to gain access to |morpheus|
-- **DEFAULT ROLE:** The default |morpheus| Role applied to users created from the OneLogin integration if no other role mapping is specified in other Role Mappings fields
+- **REQUIRED ROLE:** Enter a role which OneLogin users logging into |morpheus| must have to gain access to |morpheus|. If left empty, all OneLogin users who can authenticate will be allowed to log in and a local user account will be created automatically. It is strongly recommended to set this field in enterprise environments.
+- **DEFAULT ROLE:** The default |morpheus| Role applied to all users who pass the Required Role check. This role is always assigned in addition to any roles granted through role mappings below.
 - **ROLE MAPPINGS:** All existing |morpheus| Roles will be listed with fields to enter OneLogin Roles to create a mapping. Users with OneLogin roles matching the role mappings will be assigned the appropriate Role(s) in |morpheus| when signing in
 - **ENABLE ROLE MAPPING PERMISSION:** When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the core integration fields (such as the API keys)
 - **MANUAL ROLE ASSIGNMENT:** When selected, administrators can manually edit Roles for users created through this identity source integration from the user detail page (|AdmUse| > Selected user).

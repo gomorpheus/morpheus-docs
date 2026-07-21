@@ -43,7 +43,7 @@ GPU Passthrough Example
 
 In a previous section, a Service Plan was created which consumes a GPU when a VM is provisioned using that Plan. This section shows an example provisioning a workload using that Plan and a GPU-accelerated workload running on the VM. In this example, there is an Nvidia GeForce RTX 3050 connected to one of the |hosts|. By passing the GPU hardware through to a provisioned VM, hardware-accelerated AI workloads can be run on the VM.
 
-Begin by navigating to |ProIns|. The list of all currently-managed Instances is here along with high level information (power state, etc). To begin a new Instance, click :guilabel:`+ ADD`. Choose type |mvm| and click :guilabel:`NEXT`. On the next pane, choose the Group and Cloud in which your desired |cluster| resides, name the Instance, and click :guilabel:`NEXT`.
+Begin by navigating to :menuselection:`Provisioning --> Instances`. The list of all currently-managed Instances is here along with high level information (power state, etc). To begin a new Instance, click :guilabel:`+ ADD`. Choose type |mvm| and click :guilabel:`NEXT`. On the next pane, choose the Group and Cloud in which your desired |cluster| resides, name the Instance, and click :guilabel:`NEXT`.
 
 On the CONFIGURE tab, the main thing to note for this example is the PLAN configuration. This dropdown contains some default Plans that are included with |morpheus| and compatible with the |mvm| provisioning technology (named "1 CPU, 1GB Memory", etc). This dropdown also includes user-created Plans, such as those you've created to consume GPU hardware. In the screenshot below, you can see the "GPU Plan" was selected.
 

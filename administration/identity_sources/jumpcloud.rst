@@ -32,10 +32,10 @@ Adding a JumpCloud Identity Source
      The password or API key for the binding account.
 
    REQUIRED ROLE
-     (Optional) Enter a JumpCloud group name or role. Only JumpCloud users with this role/group membership will be allowed to authenticate to |morpheus|. Leave blank to allow all JumpCloud users.
+     (Optional) Enter a JumpCloud group name or role. Only JumpCloud users with this role/group membership will be allowed to authenticate to |morpheus|. If left empty, all JumpCloud users who can authenticate will be allowed to log in and a local user account is created automatically. It is strongly recommended to set this field in enterprise environments.
 
    DEFAULT ROLE
-     The default |morpheus| Role assigned to users created from this JumpCloud integration when no other role mapping applies.
+     The default |morpheus| Role applied to all users who pass the Required Role check. This role is always assigned in addition to any roles granted through role mappings below.
 
    ROLE MAPPINGS
      Map JumpCloud groups or roles to |morpheus| roles. Each existing |morpheus| role is listed with a field to enter the corresponding JumpCloud group name. Users with matching JumpCloud group membership will be assigned the mapped |morpheus| role at login.

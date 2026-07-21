@@ -19,7 +19,7 @@ Integrating with VMware Clouds
 
 Integration with a VMware Cloud requires the Cloud integration to be pre-existing. If you need to integrate a VMware Cloud first, refer to the `VMware Cloud integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware.html>`_ in |morpheus| UI documentation for full details. If you are creating the VMware Cloud now, bear in mind that you will need to update firewall inbound rules to allow the |morpheus| appliance to connect with VMware. If this step is not done, any attempts to create that Cloud integration will fail. Log into the NSX Cloud web console and click on the Security tab. Within the security tab, go to the Gateway Firewall section and the Management Gateway tab within it. Edit the list of sources for your vCenter inbound rules. The IP address for the |morpheus| appliance should be among the allowed inbound addresses.
 
-To begin a new NSX Cloud integration, navigate to |InfNetInt|. Click :guilabel:`+ ADD` and then click "NSX Cloud". Make the following configurations to create the integration with NSX Cloud:
+To begin a new NSX Cloud integration, navigate to :menuselection:`Infrastructure --> Network --> Integrations`. Click :guilabel:`+ ADD` and then click "NSX Cloud". Make the following configurations to create the integration with NSX Cloud:
 
 - **NAME:** A friendly name for the NSX Cloud integration in |morpheus|
 - **VISIBILITY:** This option is only available from the |mastertenant|. Select "Public" to make the NSX Cloud integration available to all Tenants. Select "Private" to reserve the integration for the |mastertenant|
@@ -32,4 +32,4 @@ Once done, click :guilabel:`ADD NETWORK INTEGRATION`. After a brief moment, the 
 Managing NSX Cloud
 ^^^^^^^^^^^^^^^^^^
 
-With the integration complete, you can now examine the detail section for the new integration. From the network integration list page (|InfNetInt|), select the NSX Cloud integration that was just created. From this section, we can create, manage, and delete DHCP servers and relays, network segments, firewall rules, tier-1 routers, and groups.
+With the integration complete, you can now examine the detail section for the new integration. From the network integration list page (:menuselection:`Infrastructure --> Network --> Integrations`), select the NSX Cloud integration that was just created. From this section, we can create, manage, and delete DHCP servers and relays, network segments, firewall rules, tier-1 routers, and groups.

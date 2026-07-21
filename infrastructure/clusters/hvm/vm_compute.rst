@@ -11,7 +11,7 @@ This feature is especially important for workloads that are sensitive to cross-N
 Enabling vCPU Placement
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to |InfClu| and select the HVM cluster
+#. Navigate to :menuselection:`Infrastructure --> Clusters` and select the HVM cluster
 #. Click :guilabel:`Edit`
 #. In the **Options** section, locate the **Dynamic Placement Mode** field
 #. Select the desired mode:

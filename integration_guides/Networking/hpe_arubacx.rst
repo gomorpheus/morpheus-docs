@@ -128,7 +128,7 @@ Upon save the `ArubaCX Network integration` will be created.
 
 Add ArubaCX Integration to a Cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-#. In |InfClu| select the target Cluster
+#. In :menuselection:`Infrastructure --> Clusters` select the target Cluster
 #. Select the `Edit` icon for the Cluster
 #. In the "Integrations" dropdown, select an available ArubaCX Integration
 #. Save Changes

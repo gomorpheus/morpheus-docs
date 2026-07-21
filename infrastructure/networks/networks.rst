@@ -10,6 +10,91 @@ The Networks section is for configuring networks across all clouds in |morpheus|
 
 Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Inactive Networks are unavailable for provisioning use. In addition, |morpheus| allows administrators to restrict management of |morpheus|-created Networks through Role permissions.
 
+Understanding Networks (VMware to |morpheus|)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For administrators coming from VMware environments, the following analogy table maps familiar VMware networking concepts to their |morpheus| equivalents:
+
+.. list-table::
+   :widths: 30 30 40
+   :header-rows: 1
+
+   * - VMware Concept
+     - |morpheus| Equivalent
+     - Notes
+   * - vSwitch / vDS (Distributed Switch)
+     - Virtual Switch (HVM clusters)
+     - Cluster-level abstraction that manages uplinks, bonds, and traffic types. See :doc:`/infrastructure/clusters/hvm/virtual_switches`.
+   * - Port Group
+     - Network
+     - A named network with VLAN, CIDR, gateway, and DNS settings. VMs are attached to Networks during provisioning.
+   * - VLAN ID (on port group)
+     - VLAN ID (on Network or Virtual Switch segment)
+     - VLAN tagging is set on the Network record or on the Virtual Switch traffic segment.
+   * - VM Network / Management Network
+     - VM Network traffic type (Virtual Switch)
+     - The default Virtual Switch (``virtSwitch0``) carries VM traffic. Additional switches can be created for storage and migration.
+   * - VMkernel adapter (vmk) for storage
+     - Data (NFS) or Data (iSCSI) traffic type
+     - Storage traffic is carried on dedicated Virtual Switch segments with host-level IP addresses assigned.
+   * - VMkernel adapter for vMotion
+     - Live Migration traffic type
+     - Dedicated Virtual Switch segment for live migration traffic between hosts.
+   * - IP Pool (IPAM)
+     - IP Pool (|morpheus| or IPAM integration)
+     - |morpheus| has built-in IP pool management or can integrate with external IPAM (Infoblox, Bluecat, etc.).
+   * - Domain / DNS
+     - Network Domain
+     - Configured under Infrastructure > Network > Domains. Used for DNS suffix and Active Directory domain join.
+
+Creating a New Network
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To create a new network and make it available for VM provisioning:
+
+#. Navigate to ``Infrastructure > Network > Networks``
+#. Click :guilabel:`+ Add`
+#. Select the target Cloud where this network will be used
+#. Configure the network settings:
+
+   .. list-table::
+      :widths: 25 75
+      :header-rows: 1
+
+      * - Field
+        - Description
+      * - Name
+        - Display name for the network (e.g., ``Production-VLAN100``)
+      * - CIDR
+        - Network CIDR notation (e.g., ``10.10.100.0/24``)
+      * - Gateway
+        - Default gateway IP for VMs on this network
+      * - DNS Primary / Secondary
+        - DNS servers for VMs on this network
+      * - VLAN ID
+        - VLAN tag (if applicable). Must match the VLAN configured on the physical switch / Virtual Switch.
+      * - DHCP Server
+        - Enable if a DHCP server is present on this network. When enabled, VMs receive IPs from DHCP rather than |morpheus| IP management.
+      * - Network Pool
+        - Select an IP Pool for static IP assignment. When a pool is assigned, IPs are automatically allocated from the pool during provisioning.
+      * - Domain
+        - Associate a Network Domain for DNS suffix and domain join
+      * - Active
+        - Must be enabled for the network to appear as a provisioning option
+
+#. Configure permissions (Group Access, Tenant Permissions) as needed
+#. Click :guilabel:`Save Changes`
+
+.. tip::
+
+   **Replicating a VMware network:** If you have a VMware port group on VLAN 100 with subnet 10.10.100.0/24 and gateway 10.10.100.1, create a Network in |morpheus| with those same settings. On an HVM cluster, ensure a Virtual Switch exists with a VM Network segment on VLAN 100 to carry this traffic on the physical uplinks.
+
+Synced Networks vs Manually Created Networks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Synced networks** are automatically discovered from integrated Clouds (e.g., VMware port groups, AWS VPCs/subnets). These appear in the Networks list after a Cloud sync and can be edited to add |morpheus|-specific settings (IP pools, domains, permissions).
+- **Manually created networks** are defined directly in |morpheus| and are used when the Cloud does not auto-discover networks (e.g., HVM clusters where networks are defined by Virtual Switch segments) or when you need to create an overlay network definition.
+
 Configuring Networks
 ^^^^^^^^^^^^^^^^^^^^
 
@@ -104,7 +189,7 @@ GUEST CONSOLE JUMP PASSWORD
 
 GUEST CONSOLE KEYPAIR
   Keypair saved in |morpheus| to be used in lieu of, or in addition to, the password to the jump host, which is associated with the configured username
-  Keypairs can be imported at: |InfKeyKey|
+  Keypairs can be imported at: :menuselection:`Infrastructure --> Keys & Certs --> Key Pairs`
 
 Subnets
 ```````

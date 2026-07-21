@@ -35,7 +35,7 @@ Create Power schedules
 Add Power Schedule to Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to |ProIns|
+#. Navigate to :menuselection:`Provisioning --> Instances`
 #. Select an Instance
 #. Select :guilabel:`EDIT`
 #. In the POWER SCHEDULE dropdown, select a Power Schedule.

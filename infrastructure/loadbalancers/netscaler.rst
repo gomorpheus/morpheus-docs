@@ -56,7 +56,7 @@ Add Load Balancer during Provisioning
 `````````````````````````````````````
 In the Instance Provisioning wizard, Load Balancers can be configured in the Automation > Load Balancer section.
 
-#. Navigate to |ProIns|.
+#. Navigate to :menuselection:`Provisioning --> Instances`.
 #. Select :guilabel:`+ ADD`.
 #. Select an Instance Type that supports scaling. (ENABLE SCALING (HORIZONTAL) flagged on Instance Type configuration)
 #. Proceed with Instance configuration to the Automation section.

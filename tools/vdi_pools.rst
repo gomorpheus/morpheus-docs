@@ -66,7 +66,7 @@ Linked Clones are a feature of VMware which references snapshots of a VM to depl
 #. If snapshots are already on the VM, these will now be synced by |morpheus|. If you have not yet created a snapshot, do so in the vCenter console (and refresh the Cloud integration in |morpheus| afterward) or from the ACTIONS menu in |morpheus| itself. Be sure to take a snapshot of a powered-off VM and give the snapshot a name that will be identifiable for administrators
 #. From the Instance detail page in |morpheus|, navigate to the Backups tab to find the snapshot
 #. Select "More" and create the Linked Clone
-#. The Linked Clone will now appear in the |morpheus| Virtual Image repository (|LibVir|), ready to use with your custom Layouts
+#. The Linked Clone will now appear in the |morpheus| Virtual Image repository (:menuselection:`Library --> Virtual Images`), ready to use with your custom Layouts
 
 .. NOTE:: You should modify the Virtual Image to "Force Guest Customization" unless you ``sysprep`` your VM at shutdown time
 

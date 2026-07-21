@@ -95,7 +95,7 @@ Confirm all settings are correct and select `COMPLETE`.
 The UpCloud Cloud will be added, and |morpheus| will perform the initial cloud sync of:
 
 * UpCloud Servers will added as Virtual Machines (if Inventory is enabled)
-* UpCloud Templates (My Templates) will sync and be added to |LibVir|.
+* UpCloud Templates (My Templates) will sync and be added to :menuselection:`Library --> Virtual Images`.
 
 .. NOTE:: The Console tab will only appear for Inventoried Servers if Inventory Level is set to `Full`
 
@@ -112,7 +112,7 @@ Images synced from UpCloud can be provisioned by using:
 * The `UPCLOUD` Instance Type and selecting the Image from the Image dropdown in the configure section when provisioning and Instance, App, or creating an App Blueprint.
 * Creating custom Library Instance Types and selecting a synced Image when creating a Node Type for the custom Instance Type.
 
-.. IMPORTANT:: Synced images should be configured prior to provisioning by editing the Image in the |LibVir| section.
+.. IMPORTANT:: Synced images should be configured prior to provisioning by editing the Image in the :menuselection:`Library --> Virtual Images` section.
 
 Provision a |morpheus| provided UpCloud Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

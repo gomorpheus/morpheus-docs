@@ -9,7 +9,7 @@ The |morpheus| built-in Backup solution provides VM, Container, Host, Database, 
 Initial Backups Setup
 =====================
 
-Global Backup settings (|AdmSetBac|), Storage Providers (|InfSto|) and Execution Schedules (|LibAutExe|) should be configured prior to creating backups. Global backup settings are where scheduled backups can be globally enabled or disabled and certain global backup default settings can be configured. Storage providers include local and remote configured storage locations that can be used as backup targets. Execution schedules are timed intervals at which individual automated backup jobs will run. See the next two sections for full details on global backup settings and configuring execution schedules. See |morpheus| UI `storage documentation <https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_ for more information about configuring local and remote storage targets and/or integrating with third party storage providers.
+Global Backup settings (|AdmSetBac|), Storage Providers (:menuselection:`Infrastructure --> Storage`) and Execution Schedules (|LibAutExe|) should be configured prior to creating backups. Global backup settings are where scheduled backups can be globally enabled or disabled and certain global backup default settings can be configured. Storage providers include local and remote configured storage locations that can be used as backup targets. Execution schedules are timed intervals at which individual automated backup jobs will run. See the next two sections for full details on global backup settings and configuring execution schedules. See |morpheus| UI `storage documentation <https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_ for more information about configuring local and remote storage targets and/or integrating with third party storage providers.
 
 Global Backups Settings
 -----------------------
@@ -23,7 +23,7 @@ Create Backups
 Backup Appliance
   When enabled, a Backup will be created to backup the |morpheus| appliance database. Select the ``Backup`` text link to edit the Appliance Backup Settings and view existing Appliance Backups.
 Default Backup Bucket
-  From this dropdown, select the default storage bucket to be used for future created Backups. If needed, new storage providers can be configured and managed in the |InfSto| section.
+  From this dropdown, select the default storage bucket to be used for future created Backups. If needed, new storage providers can be configured and managed in the :menuselection:`Infrastructure --> Storage` section.
 Default Backup Schedule
   From this dropdown, select a default execution schedule for future created Backups. If needed, new schedules can be configured in |LibAutExe|.
 Backup Retention Count

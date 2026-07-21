@@ -396,7 +396,7 @@ Prerequisites
 Attaching an RDBM Volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to the HVM cluster detail page (|InfClu| > select cluster)
+#. Navigate to the HVM cluster detail page (:menuselection:`Infrastructure --> Clusters` > select cluster)
 #. Select the **Storage Volumes** tab
 #. Locate the raw block device volume to attach
 #. Click :guilabel:`Attach` on the volume row
@@ -414,7 +414,7 @@ RDBM volumes can be detached from a VM in two ways:
 
 **From the Cluster Storage Volumes tab:**
 
-#. Navigate to the HVM cluster detail page (|InfClu| > select cluster)
+#. Navigate to the HVM cluster detail page (:menuselection:`Infrastructure --> Clusters` > select cluster)
 #. Select the **Storage Volumes** tab
 #. Locate the attached RDBM volume
 #. Click :guilabel:`Detach` on the volume row

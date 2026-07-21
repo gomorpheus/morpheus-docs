@@ -1,7 +1,7 @@
 Instance Details
 ----------------
 
-The instance detail page is where you can view and fully manage an instance. To get to an instance detail page, navigate to |ProIns|, and click on an Instance. Please note Instance details and actions will differ between Instance types and user permissions.
+The instance detail page is where you can view and fully manage an instance. To get to an instance detail page, navigate to :menuselection:`Provisioning --> Instances`, and click on an Instance. Please note Instance details and actions will differ between Instance types and user permissions.
 
 There are several sections within an Instance page that provide useful capabilities to the user.
 

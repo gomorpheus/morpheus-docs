@@ -26,7 +26,7 @@ Navigating to Virtual Switches
 
 To access Virtual Switches:
 
-1. Navigate to |InfClu| and select your HVM cluster
+1. Navigate to :menuselection:`Infrastructure --> Clusters` and select your HVM cluster
 2. Click the **Network** tab
 3. Select the **Virtual Switches** sub-tab
 
@@ -326,6 +326,48 @@ VLAN Configuration
 - Use VLANs to segregate different traffic types when they share the same physical uplinks.
 - Ensure the upstream switch ports are configured as trunk ports carrying the required VLAN IDs.
 - Document your VLAN assignments to avoid conflicts and simplify troubleshooting.
+
+When to Use Tagged Bonds (VLAN-Tagged Bond Interfaces)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A **tagged bond** is a bonded interface (two or more NICs) that carries multiple VLAN-tagged traffic types over the same physical link pair. This is the most common production design pattern for HVM clusters.
+
+**Use tagged bonds when:**
+
+- You have limited physical NICs (2–4 per host) but need to separate multiple traffic types (VM, storage, migration)
+- You want link redundancy (bond) AND traffic isolation (VLANs) on the same physical uplinks
+- You are replicating a VMware design where a single vSwitch with multiple port groups (each with a VLAN ID) carried different traffic types
+
+**How it works in Virtual Switch:**
+
+A single Virtual Switch with a bonded uplink (Active-Backup or LACP) can carry multiple traffic types, each on a separate VLAN. For example:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 15 60
+
+   * - Traffic Type
+     - VLAN ID
+     - Description
+   * - VM Network
+     - 100
+     - Guest VM traffic, tagged on VLAN 100
+   * - Data (NFS)
+     - 200
+     - NFS storage traffic to storage array, tagged on VLAN 200
+   * - Live Migration
+     - 300
+     - VM memory transfer during live migration, tagged on VLAN 300
+
+In this design, the upstream physical switch ports must be configured as **trunk ports** allowing VLANs 100, 200, and 300. The bond provides link redundancy; the VLAN tags provide traffic isolation.
+
+**VMware analogy:** This is equivalent to a VMware vSwitch with multiple port groups, each assigned a different VLAN ID, all sharing the same physical uplinks in a NIC team.
+
+**When NOT to use tagged bonds:**
+
+- If you have enough physical NICs to dedicate separate bonds to each traffic type (e.g., 8+ NICs per host), separate Virtual Switches without VLANs are simpler to troubleshoot
+- If your physical switch infrastructure does not support VLAN trunking
+- For iSCSI traffic that requires dedicated non-bonded NICs for multipath (use a separate iSCSI Virtual Switch instead)
 
 MTU Recommendations
 ~~~~~~~~~~~~~~~~~~~

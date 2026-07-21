@@ -90,7 +90,7 @@ Provisioning Your First Instance
 
 At this point, we are ready to provision our first image. As a first instance, we'll provision an Apache web server to our AWS cloud.
 
-Navigate to `|ProIns|`. If any instances are currently provisioned, we will see them listed here. To start a new instance we click the "+ADD" button to pop the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
+Navigate to `:menuselection:`Provisioning --> Instances``. If any instances are currently provisioned, we will see them listed here. To start a new instance we click the "+ADD" button to pop the "CREATE INSTANCE" wizard. We'll scroll down to and select the Apache instance type and click "NEXT".
 
 .. image:: /images/vCenterGuideImages/FirstInstance/1createInstance.png
 
@@ -169,7 +169,7 @@ I've set the following fields on my example layout:
 
 Click "SAVE CHANGES".
 
-At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `|ProIns|` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT".
+At this point we've completed the setup work and can now provision the instance we've created to our specifications. Navigate to `:menuselection:`Provisioning --> Instances`` and click "+ADD". From the search bar we can search for the new instance type we've created. In the example case, we called it "newinstancetype". Click "NEXT".
 
 As before, we can select a group and cloud to provision this new instance. Click "NEXT". On the "CONFIGURE" tab, make note that the layout and plan are already selected because they were configured as part of creating the new instance type. Select a network and click "NEXT". Once again we will also click "NEXT" through the "AUTOMATION" tab. Finally, click "COMPLETE".
 
@@ -202,7 +202,7 @@ We'll first set up the Ansible integration, you can integrate with the sample re
 
 Click "SAVE CHANGES". You'll now see our new Ansible integration listed among any other configured inetegrations. If we click on this new integration to view detail, a green checkmark icon indicates the git repository has been fully synced.
 
-With the Ansible integration set up, we can now create a task that includes our playbook. Go to `|LibAut|`, click "+ADD". We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
+With the Ansible integration set up, we can now create a task that includes our playbook. Go to `:menuselection:`Library --> Automation``, click "+ADD". We'll first set our "TYPE" value to Ansible Playbook so that the correct set of fields appear in the "NEW TASK" wizard. Set the following options:
 
 - **NAME**
 
@@ -212,17 +212,17 @@ With the Ansible integration set up, we can now create a task that includes our 
 
 .. image:: /images/vCenterGuideImages/Automation/3taskConfig.png
 
-Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `|ProIns|` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
+Click "SAVE CHANGES" to save our new task. We can test the new task on our Apache VM now by going to `:menuselection:`Provisioning --> Instances`` and clicking into our VM. From the "ACTIONS" menu select "Run Task". From the "TASK" dropdown menu, select the task we just added and click "EXECUTE".
 
 .. image:: /images/vCenterGuideImages/Automation/4executeTask.png
 
 To see the progress of the task, click on the "HISTORY" tab and click on the (i) button to the right of each entry in the list. In this case, we can also see the results of the task by clicking on the link in the "LOCATION" column of the "VMS" section.
 
-Now that our task is created, we can put it into a workflow. Back in `|LibAut|` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
+Now that our task is created, we can put it into a workflow. Back in `:menuselection:`Library --> Automation`` we will click on the "WORKFLOWS" tab. Click "+ADD" and select Provisioning Workflow. We'll give the new workflow a name and expand the Post Provision section. As we begin to type in the name of the task we've created, it should appear as a selection. Click "SAVE CHANGES".
 
 .. image:: /images/vCenterGuideImages/Automation/5newWorkflow.png
 
-Now that we have a workflow, return to `|ProIns|` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
+Now that we have a workflow, return to `:menuselection:`Provisioning --> Instances`` and begin to provision another Apache instance. More detailed instructions on provisioning a new Apache instance are included earlier in this guide if needed. Now, when you reach the "AUTOMATION" section of the "CREATE INSTANCE" wizard, we have a workflow to select. From the "WORKFLOW" dropdown menu, select the workflow we just created and complete provisioning of the new instance.
 
 .. image:: /images/vCenterGuideImages/Automation/6automationInProvisioning.png
 

@@ -106,7 +106,7 @@ Virtual Images are the link between licenses and provisioning:
 
 - A single Virtual Image can be associated with one license
 - A single license can be associated with multiple Virtual Images
-- Virtual Images are managed in |LibVir| (Library > Virtual Images)
+- Virtual Images are managed in :menuselection:`Library --> Virtual Images` (Library > Virtual Images)
 - Images synced from Clouds are available for license association
 
 To add a Virtual Image to a license:

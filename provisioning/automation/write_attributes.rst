@@ -18,7 +18,7 @@ Write Attributes Tasks are particularly useful for:
 Creating a Write Attributes Task
 ----------------------------------
 
-#. Navigate to |LibAut| > Tasks
+#. Navigate to :menuselection:`Library --> Automation` > Tasks
 #. Click :guilabel:`+ ADD`
 #. Select **Write Attributes** as the Task Type
 #. Configure:

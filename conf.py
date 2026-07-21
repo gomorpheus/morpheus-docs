@@ -47,8 +47,8 @@ rst_prolog = """
 .. |mastertenant| replace:: Master Tenant
 
 .. |morphfirst| replace:: HPE Morpheus Software
-.. |morpheus| replace:: HPE Morpheus Enterprise
-.. |morphues| replace:: HPE Morpheus Enterprise
+.. |morpheus| replace:: HPE Morpheus Software
+.. |morphues| replace:: HPE Morpheus Software
 .. |morphdat| replace:: Morpheus Data
 .. |hpe| replace:: Hewlett Packard Enterprise
 .. |repo_host_url| replace:: https://www.hpe.com/support/hpesc

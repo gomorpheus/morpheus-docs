@@ -38,7 +38,7 @@ Now that the Cohesity backup provider is created, it can be set as the default b
 Backup Options at Provision Time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-With Cohesity set up as the backup provider for a Cloud (or Clouds), additional backup options are made available when provisioning to the Cloud. These configurations are made from the AUTOMATION tab of the provisioning wizard (launched by clicking :guilabel:`+ ADD` from the Instance list page at |ProIns|). From the AUTOMATION tab, expand the "Backups" section. The BACKUP TYPE of "Cohesity Protection Group" should be preselected. Then, make the next two configurations:
+With Cohesity set up as the backup provider for a Cloud (or Clouds), additional backup options are made available when provisioning to the Cloud. These configurations are made from the AUTOMATION tab of the provisioning wizard (launched by clicking :guilabel:`+ ADD` from the Instance list page at :menuselection:`Provisioning --> Instances`). From the AUTOMATION tab, expand the "Backups" section. The BACKUP TYPE of "Cohesity Protection Group" should be preselected. Then, make the next two configurations:
 
 - **BACKUP NAME:** A name for the backup (often named for the Instance associated with the backup)
 - **CLUSTER:** Select the correct Cohesity cluster from the dropdown
@@ -97,7 +97,7 @@ Click :guilabel:`SAVE CHANGES` and the storage server object is created.
 .. image:: /images/integration_guides/backups/cohesity/createStorageServer.png
   :width: 40%
 
-With the storage server created, Cohesity S3 buckets may be created. Buckets are created at |InfStoBuc|. Click :guilabel:`+ ADD` and then Cohesity S3 Bucket. On the NEW BUCKET modal, first select a Cohesity S3 storage server from the STORAGE SERVICE dropdown menu. This will preload other configuration field dropdown menus, such as STORAGE DOMAIN and QOS. From this modal, the bucket can be set as a default backup target or as a default target for Virtual Images or deployment archives. Once finished, click :guilabel:`SAVE CHANGES`
+With the storage server created, Cohesity S3 buckets may be created. Buckets are created at :menuselection:`Infrastructure --> Storage --> Buckets`. Click :guilabel:`+ ADD` and then Cohesity S3 Bucket. On the NEW BUCKET modal, first select a Cohesity S3 storage server from the STORAGE SERVICE dropdown menu. This will preload other configuration field dropdown menus, such as STORAGE DOMAIN and QOS. From this modal, the bucket can be set as a default backup target or as a default target for Virtual Images or deployment archives. Once finished, click :guilabel:`SAVE CHANGES`
 
 .. image:: /images/integration_guides/backups/cohesity/createBucket.png
   :width: 40%

@@ -55,7 +55,7 @@ The following requirements must be met to deploy and configure the `HPE Aruba CX
 Adding `HPE Aruba CX DSS` Network Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to |InfNetInt|
+#. Navigate to :menuselection:`Infrastructure --> Network --> Integrations`
 #. Select :guilabel:`+ Add` > Networking > HPE Aruba CX DSS
 
     .. image:: /images/integration_guides/networking/arubacxdss/addIntegration.png
@@ -87,7 +87,7 @@ Create `HPE ANW DSS Port Group` Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To create an `HPE ANW DSS Port Group` network, follow these steps:
 
-#. Navigate to |InfNetNet|
+#. Navigate to :menuselection:`Infrastructure --> Network --> Networks`
 #. Select :guilabel:`+ Add Network` > HPE ANW DSS Port Group
 
    .. image:: /images/integration_guides/networking/arubacxdss/3.1_add_network.png
@@ -112,7 +112,7 @@ Delete `HPE ANW DSS Port Group` Network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To delete a `HPE ANW DSS Port Group` network, follow these steps:
 
-#. Navigate to |Infrastructure->Network->Networks|
+#. Navigate to :menuselection:`Infrastructure --> Network --> Networks`
 #. Select the network you want to delete from the list.
 #. Click on the delete icon (|trash|) next to the network name.
 
@@ -122,7 +122,7 @@ To delete a `HPE ANW DSS Port Group` network, follow these steps:
 View `HPE Aruba CX DSS` Network Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To view the `HPE Aruba CX DSS` Network integration, follow these steps:
- #. Navigate to |InfNetInt|
+ #. Navigate to :menuselection:`Infrastructure --> Network --> Integrations`
  #. Select the `HPE Aruba CX DSS` integration from the list.
 
     .. image:: /images/integration_guides/networking/arubacxdss/5.1_list_network_integrations.png

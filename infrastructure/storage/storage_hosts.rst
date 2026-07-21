@@ -4,7 +4,7 @@ Storage Hosts
 Overview
 ^^^^^^^^
 
-Storage Hosts represent the physical or virtual hosts that are connected to a Storage Server for the purposes of volume presentation and LUN mapping. When a storage server is integrated into |morpheus| (for example, HPE 3PAR), the platform automatically syncs and caches the registered hosts and host sets from the storage array.
+Storage Hosts represent the physical or virtual hosts that are connected to a Storage Server for the purposes of volume presentation and LUN mapping. When a storage server is integrated into |morpheus| (for example, HPE Alletra MP), the platform automatically syncs and caches the registered hosts and host sets from the storage array.
 
 Storage Hosts are used during datastore creation and volume mapping operations to determine which hosts should have access to a particular storage volume or LUN.
 

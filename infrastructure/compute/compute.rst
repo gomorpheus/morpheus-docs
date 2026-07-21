@@ -48,7 +48,7 @@ Changing Clouds might be necessary, for example, when moving a VM from one vCent
 
 .. NOTE:: For VMware Clouds, Cloud reassignment occurs automatically when a server is migrated from one cluster to another or from one resource pool to another within the same cluster. Following the next Cloud sync, |morpheus| will reflect the migration made in vCenter. In this scenario, you should not try to use the manual change Cloud tools. In fact, you will receive a warning in |morpheus| logs if you attempt to do so.
 
-To change Clouds, navigate to the VM detail page (|InfComVir| > selected VM), click on the ACTIONS menu, and click Change Cloud. You can select the new target Cloud here and optionally select a new VM which the current one should be merged into. The important thing to keep in mind is that this tool is for |morpheus| record keeping only. **It is not a tool which does migration work for you.** See the embedded video below for a demonstration of this feature.
+To change Clouds, navigate to the VM detail page (:menuselection:`Infrastructure --> Compute --> Virtual Machines` > selected VM), click on the ACTIONS menu, and click Change Cloud. You can select the new target Cloud here and optionally select a new VM which the current one should be merged into. The important thing to keep in mind is that this tool is for |morpheus| record keeping only. **It is not a tool which does migration work for you.** See the embedded video below for a demonstration of this feature.
 
 .. raw:: html
 

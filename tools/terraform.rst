@@ -81,7 +81,7 @@ Command output is displayed in real-time and stored in execution history.
 Terraform Settings
 ------------------
 
-Global Terraform settings are configured in |AdmSetPro| (Administration > Settings > Provisioning):
+Global Terraform settings are configured in :menuselection:`Administration --> Settings --> Provisioning` (Administration > Settings > Provisioning):
 
 Terraform Runtime
 ^^^^^^^^^^^^^^^^^

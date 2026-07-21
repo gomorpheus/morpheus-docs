@@ -23,7 +23,7 @@ Terraform configuration is stored as a Spec Template in |morpheus|. You can stor
 
 Spec Templates are added in the |morpheus| Library (|LibTemSpe| tab). We can pull in the template from some type of repository, such as through a Github integration, or write new spec directly into the New Spec Template modal. In most cases, the spec will be pre-existing and pulled in from a version-controlled repository but here I have my Terraform spec entered locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the example below and click :guilabel:`SAVE CHANGES`.
 
-In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraform version number to force that version to be used. This version is only honored if the Terraform Runtime setting (|AdmSetPro|) is set to "auto". When "manual" is selected as the Terraform Runtime setting, |morpheus| will simply use the version installed on the appliance box.
+In the VERSION field at the bottom of the TF Spec Template modal, enter a Terraform version number to force that version to be used. This version is only honored if the Terraform Runtime setting (:menuselection:`Administration --> Settings --> Provisioning`) is set to "auto". When "manual" is selected as the Terraform Runtime setting, |morpheus| will simply use the version installed on the appliance box.
 
 .. TIP:: When declaring variables, keep in mind that |morpheus| expects users to follow Terraform best practices. For example, when a variable type is not defined, it defaults to string. See `Terraform Documentation <https://www.terraform.io/docs/language/values/variables.html>`_ for additional resources on variable declaration.
 
@@ -197,7 +197,7 @@ First, change the TECHNOLOGY value to Terraform and the fields will change to al
 Provisioning
 ^^^^^^^^^^^^
 
-Now, we're ready to provision new infrastructure into AWS using |morpheus| and Terraform. Just like any other Instance Type, we begin from the Instances list page (|ProIns|) and click :guilabel:`+ ADD`. Select the Instance Type we've just created and move on to the GROUP tab of the wizard. Here you'll give the new instance a name and select your Group and Cloud. Once finished, you'll move on to the CONFIGURE tab where we'll see the Inputs we created and associated with the Layout. Once finished with this tab, step through the rest of the wizard to complete the process. You can see the options I've selected for this configuration in the image below.
+Now, we're ready to provision new infrastructure into AWS using |morpheus| and Terraform. Just like any other Instance Type, we begin from the Instances list page (:menuselection:`Provisioning --> Instances`) and click :guilabel:`+ ADD`. Select the Instance Type we've just created and move on to the GROUP tab of the wizard. Here you'll give the new instance a name and select your Group and Cloud. Once finished, you'll move on to the CONFIGURE tab where we'll see the Inputs we created and associated with the Layout. Once finished with this tab, step through the rest of the wizard to complete the process. You can see the options I've selected for this configuration in the image below.
 
 .. image:: /images/integration_guides/terr_inst_guide/11configureTab.png
 

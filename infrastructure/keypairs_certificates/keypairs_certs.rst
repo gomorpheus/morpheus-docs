@@ -170,7 +170,7 @@ Add Existing Key Pair
 
 To generate a existing Key Pair:
 
-#. Navigate to |InfKeyKey|
+#. Navigate to :menuselection:`Infrastructure --> Keys & Certs --> Key Pairs`
 #. On the Key Pairs tab, click :guilabel:`+ ADD` and select "Existing Key Pair"
 #. From the Add Key Pair modal input the following as needed:
 
@@ -186,7 +186,7 @@ Generate Key Pair
 
 To generate a Key Pair:
 
-#. Navigate to |InfKeyKey|
+#. Navigate to :menuselection:`Infrastructure --> Keys & Certs --> Key Pairs`
 #. On the Key Pairs tab, click :guilabel:`+ ADD` and select "Existing Key Pair"
 #. After naming the new key pair, |morpheus| will reveal both the public and private key
 

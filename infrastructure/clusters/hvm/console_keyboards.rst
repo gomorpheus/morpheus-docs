@@ -27,7 +27,7 @@ Supported Keyboard Layouts
 Setting the Keyboard Layout
 ----------------------------
 
-#. Navigate to |InfClu|
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
 #. From the list of Clusters, select the appropriate HVM Cluster
 #. Click on the VMs tab
 #. Click on the hyperlinked "name" value of the appropriate HVM VM
@@ -39,7 +39,7 @@ Setting the Keyboard Layout
 Using the Configured Keyboard Layout
 --------------------------------------
 
-#. Navigate to |InfClu|
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
 #. From the list of Clusters, select the appropriate HVM Cluster
 #. Click on the VMs tab
 #. Click on the hyperlinked "name" value of the appropriate HVM VM

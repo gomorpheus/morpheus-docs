@@ -25,9 +25,9 @@ Adding OneLogin Identity Source Integration
    API CLIENT ID
      OneLogin API Client ID from the Settings - API section in OneLogin portal
    REQUIRED ROLE
-     Enter a role if OneLogin users logging into morpheus must have at least this OneLogin role to gain access to Morpheus.
+      Enter a role if OneLogin users logging into morpheus must have at least this OneLogin role to gain access to Morpheus. If left empty, all OneLogin users who can authenticate will be allowed to log in and a local user account will be created automatically.
    DEFAULT ROLE
-     The default Morpheus Role applied to users created from OneLogin Integration if no other role mapping is specified below
+      The default Morpheus Role applied to all users who pass the Required Role check. This role is always assigned in addition to any roles granted through role mappings below.
    ROLE MAPPINGS
      Existing Morpheus Roles will be listed with fields to enter OneLogin Roles to map to. Users with OneLogin roles matching the role mappings will be assigned the appropriate Role(s) in Morpheus when signing in.
 

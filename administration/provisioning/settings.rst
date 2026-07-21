@@ -6,7 +6,7 @@ Provisioning Settings
 Overview
 --------
 
-Provisioning Settings (|AdmSetPro|) configure global defaults and behaviors for the |morpheus| provisioning engine. These settings control the provisioning wizard experience, default configurations, naming behavior, and infrastructure-as-code settings.
+Provisioning Settings (:menuselection:`Administration --> Settings --> Provisioning`) configure global defaults and behaviors for the |morpheus| provisioning engine. These settings control the provisioning wizard experience, default configurations, naming behavior, and infrastructure-as-code settings.
 
 .. NOTE:: These settings apply appliance-wide (Master Tenant scope) or per-Tenant (Account scope) depending on the specific setting.
 

@@ -36,7 +36,7 @@ Clone
 Backup
   Immediately executes a backup of the Instance. Only available for Instances with backups enabled.
 Run Workflow
-  Presents workflow options and then immediately runs selected Workflow on the Instance. Workflows can be created in the |LibAut| section.
+  Presents workflow options and then immediately runs selected Workflow on the Instance. Workflows can be created in the :menuselection:`Library --> Automation` section.
 Run Script
   Presents Script options and immediately executes selected Script on the Instance. Scripts can be created in the |Lib| section.
 Apply Template

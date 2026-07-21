@@ -46,7 +46,7 @@ The first time you attempt to provision a Terraform App, you may come across an 
 
     |
 
-This likely means you've not yet configured Terraform Settings within |morpheus| global settings. Navigate to |AdmSetPro| and scroll down to the Terraform Settings section. By default, the Terraform Runtime field is set to "Manual". When set this way, |morpheus| will attempt to use Terraform as installed on the appliance box and it may not be currently installed. To have |morpheus| manage the Terraform installation process for you and manage Terraform versioning on a per-App basis, set the Terraform Runtime to "Auto". You should also set the Default Terraform Version field as well. When a version is set on a Terraform Spec Template or Terraform App Blueprint, that version will supersede the default version indicated in global settings.
+This likely means you've not yet configured Terraform Settings within |morpheus| global settings. Navigate to :menuselection:`Administration --> Settings --> Provisioning` and scroll down to the Terraform Settings section. By default, the Terraform Runtime field is set to "Manual". When set this way, |morpheus| will attempt to use Terraform as installed on the appliance box and it may not be currently installed. To have |morpheus| manage the Terraform installation process for you and manage Terraform versioning on a per-App basis, set the Terraform Runtime to "Auto". You should also set the Default Terraform Version field as well. When a version is set on a Terraform Spec Template or Terraform App Blueprint, that version will supersede the default version indicated in global settings.
 
 - .. toggle-header:: :header: **Configured Terraform Runtime Screenshot**
 
@@ -87,7 +87,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             TFVAR SECRET
              Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
-             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
+             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (:menuselection:`Administration --> Settings --> Provisioning`). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
              Specify any valid Terraform command line options |morpheus| should append to its internal "terraform apply" call when the App is provisioned
 
@@ -98,7 +98,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             TFVAR SECRET
              Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
-             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
+             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (:menuselection:`Administration --> Settings --> Provisioning`). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
              Specify any valid Terraform command line options |morpheus| should append to its internal "terraform apply" call when the App is provisioned
 
@@ -109,7 +109,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             TFVAR SECRET
              Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
-             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
+             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (:menuselection:`Administration --> Settings --> Provisioning`). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
              Specify any valid Terraform command line options |morpheus| should append to its internal "terraform apply" call when the App is provisioned.
 
@@ -126,7 +126,7 @@ In order to provision Terraform apps, Terraform App Blueprints must be created f
             TFVAR SECRET
              Select an existing tfvar secret file stored in |morpheus| Cypher service. This list is automatically filtered to show all Cypher entries which are currently stored at the "tfvar/*" Cypher mount point. Note that tfvars already set in any existing Terraform Cloud Profiles will already be available to your App and wouldn't need to be set here.
             VERSION
-             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (|AdmSetPro|). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
+             Specify a version required by your Terraform App (optional). If specified, the given version will supersede the global Terraform version specified in |morpheus| global settings (:menuselection:`Administration --> Settings --> Provisioning`). "Terraform Runtime" must also be set to "auto" in global settings for |morpheus| to manage the Terraform version for you. When set to "manual", |morpheus| will use the Terraform version installed on the appliance box.
             OPTIONS
              Specify any valid Terraform command line options |morpheus| should append to its internal "terraform apply" call when the App is provisioned.
 

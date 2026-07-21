@@ -22,7 +22,7 @@ For customers using HPE HVM as their hypervisor platform, |morpheus| is deployed
 1. :doc:`Prepare your HVM host(s) </getting_started/installation/hvm_host_prep>` — Install HVM OS 24.04 on bare-metal servers and configure networking. This is required before running the installer.
 2. :doc:`Deploy Morpheus with the HPE Installer </getting_started/installation/singleNode/hpe_installer>` — Run the graphical installer from your workstation to deploy the |morpheus| appliance VM onto a prepared HVM host.
 
-After the appliance is running, you can add additional HVM hosts to form a cluster from within the |morpheus| UI (|InfClu|).
+After the appliance is running, you can add additional HVM hosts to form a cluster from within the |morpheus| UI (:menuselection:`Infrastructure --> Clusters`).
 
 .. _manual-deploy-path:
 

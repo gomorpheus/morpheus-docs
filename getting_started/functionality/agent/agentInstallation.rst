@@ -69,7 +69,7 @@ Requirements
 ............
 
 * Port 22 is open for Linux images, and SSH is enabled
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section
 
 WinRM
 `````
@@ -83,7 +83,7 @@ Requirements
 ............
 
 * Port 5985 must be open and WinRM enabled for Windows images
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section
 * Administrator User (SID 500) is required for Windows Agent install
 
 VMware Tools
@@ -98,7 +98,7 @@ Requirements
 ............
 
 * VMware Tools is installed on the template(s)
-* Credentials have been entered on the Image if using an uploaded or synced image when Cloud-init, Guest Customizations, or Sysprep for Windows are not used. Credentials can be entered on Images in the |LibVir| section
+* Credentials have been entered on the Image if using an uploaded or synced image when Cloud-init, Guest Customizations, or Sysprep for Windows are not used. Credentials can be entered on Images in the :menuselection:`Library --> Virtual Images` section
 * Administrator User (SID 500) is required for Windows Agent install.
 
 Cloud-Init
@@ -114,7 +114,7 @@ Requirements
 
 * Cloud-Init is installed on Virtual Image
 * "IS CLOUD INIT ENABLED?" is checked (true) on the |morpheus| Virtual Image record
-* Cloud-Init User is configured in the |AdmSetPro| section
+* Cloud-Init User is configured in the :menuselection:`Administration --> Settings --> Provisioning` section
 
 Cloudbase-init
 ``````````````
@@ -128,7 +128,7 @@ Requirements
 
 * Cloudbase-Init is installed on the Virtual Image
 * "IS CLOUD INIT ENABLED?" is checked (true) on the |morpheus| Virtual Image record
-* Windows Administrator password defined in the |AdmSetPro| section
+* Windows Administrator password defined in the :menuselection:`Administration --> Settings --> Provisioning` section
 
 Windows Unattend
 ````````````````
@@ -142,12 +142,12 @@ Requirements
 ............
 
 VMware
-  - Windows Administrator password defined in the |AdmSetPro| section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
+  - Windows Administrator password defined in the :menuselection:`Administration --> Settings --> Provisioning` section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
   - "FORCE GUEST CUSTOMIZATION?" is checked (true) on the |morpheus| Virtual Image record when using DHCP
   - "IS CLOUD INIT ENABLED?" is unchecked (false) on the |morpheus| Virtual Image record
 
 Nutainx/SCVMM/Openstack
-  - Windows Administrator password defined in the |AdmSetPro| section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
+  - Windows Administrator password defined in the :menuselection:`Administration --> Settings --> Provisioning` section OR Administrator User (SID 500) and valid Windows password are defined on the |morpheus| Virtual Image record
   - "ENABLED SYSPREP?" is checked (true) on the |morpheus| Virtual Image record
   - "IS CLOUD INIT ENABLED?" is unchecked (false) on the |morpheus| Virtual Image record
 
@@ -190,9 +190,9 @@ Agent Install Requirements
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | Cloud-Init installed and flagged on Virtual Image                                        | NO                                       | NO    | NO                                       | YES                                      | YES            | NO       | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Global Cloud-Init user populated in |AdmSetPro|                                          | NO                                       | NO    | NO                                       | YES                                      | NO             | NO       | NO                                       |
+| Global Cloud-Init user populated in :menuselection:`Administration --> Settings --> Provisioning`                                          | NO                                       | NO    | NO                                       | YES                                      | NO             | NO       | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
-| Windows Administrator Password populated in |AdmSetPro|                                  | NO                                       | NO    | NO                                       | NO                                       | YES            | YES      | NO                                       |
+| Windows Administrator Password populated in :menuselection:`Administration --> Settings --> Provisioning`                                  | NO                                       | NO    | NO                                       | NO                                       | YES            | YES      | NO                                       |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+
 | Access to configured YUM or APT repos                                                    | NO but will cause delay in Agent Install | N/A   | NO but will cause delay in Agent Install | NO but will cause delay in Agent Install | N/A            | N/A      | NO but will cause delay in Agent Install |
 +------------------------------------------------------------------------------------------+------------------------------------------+-------+------------------------------------------+------------------------------------------+----------------+----------+------------------------------------------+

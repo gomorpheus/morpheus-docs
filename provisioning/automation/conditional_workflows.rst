@@ -8,7 +8,7 @@ Overview
 
 Conditional Workflow Tasks provide branching logic within |morpheus| Workflows. A Conditional Workflow Task evaluates a JavaScript expression and, based on the result, executes one of two Operational Workflows — enabling dynamic, decision-based automation chains.
 
-This task type is found in |LibAut| (Library > Automation > Tasks) with the type **Conditional Workflow**.
+This task type is found in :menuselection:`Library --> Automation` (Library > Automation > Tasks) with the type **Conditional Workflow**.
 
 How It Works
 ------------
@@ -32,7 +32,7 @@ The Conditional Workflow Task operates on a simple if/else model:
 Creating a Conditional Workflow Task
 -------------------------------------
 
-#. Navigate to |LibAut| > Tasks
+#. Navigate to :menuselection:`Library --> Automation` > Tasks
 #. Click :guilabel:`+ ADD`
 #. Select **Conditional Workflow** as the Task Type
 #. Configure the Task:

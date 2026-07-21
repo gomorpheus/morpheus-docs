@@ -44,7 +44,7 @@ Before creating Ansible Tower Job Tasks, add the integration:
 Creating an Ansible Tower Job Task
 ------------------------------------
 
-#. Navigate to |LibAut| > Tasks
+#. Navigate to :menuselection:`Library --> Automation` > Tasks
 #. Click :guilabel:`+ ADD`
 #. Select **Ansible Tower Job** as the Task Type
 #. Configure the Task:

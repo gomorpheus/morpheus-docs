@@ -19,7 +19,7 @@ Create Cypher
 
 Cypher is a secure key/value store in |morpheus|. Using Cypher, we can securely store passwords and other secret values (such as API keys) which can then be called into automation Tasks and templates. In this case, we need to store two Cypher secrets: The first is for the MySQL root password and the second is for the user which we will use to run SSH commands from the app server to the database server. Refer to the `single-node deployment guide <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html#create-cypher>`_ for details on setting up the first Cypher entry.
 
-Next we need to set up a Cypher for the SSH user so our application node can access the database. A handy trick here is to use the user specified in the |morpheus| global Cloud-Init Setting as this will be automatically created on the Instances when they are provisioned by |morpheus|. To check that the user is set up correctly, in the |morpheus| UI go to |AdmSetPro|. Under the Cloud-Init Settings section, ensure that a username and password is set. After that, simply create a `secret/cloudinit` Cypher entry which stores the password for this user using the same process by which you set up the MySQL root password Cypher entry.
+Next we need to set up a Cypher for the SSH user so our application node can access the database. A handy trick here is to use the user specified in the |morpheus| global Cloud-Init Setting as this will be automatically created on the Instances when they are provisioned by |morpheus|. To check that the user is set up correctly, in the |morpheus| UI go to :menuselection:`Administration --> Settings --> Provisioning`. Under the Cloud-Init Settings section, ensure that a username and password is set. After that, simply create a `secret/cloudinit` Cypher entry which stores the password for this user using the same process by which you set up the MySQL root password Cypher entry.
 
 Create Inputs
 ^^^^^^^^^^^^^
@@ -192,7 +192,7 @@ Click :guilabel:`SAVE CHANGES`
 Create Instance Types for the Database and Application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-At this point we're ready to put our pieces together into custom Instance Types for the database and application. Instance Types can be provisioned individually (|ProIns|) but in this case we want to structure multiple Instance Types into logical tiers in an App Blueprint so they can be provisioned as a |morpheus| App. Each Instance Type will contain a Layout and a Node Type, I'll discuss each construct more fully as it's time to create them.
+At this point we're ready to put our pieces together into custom Instance Types for the database and application. Instance Types can be provisioned individually (:menuselection:`Provisioning --> Instances`) but in this case we want to structure multiple Instance Types into logical tiers in an App Blueprint so they can be provisioned as a |morpheus| App. Each Instance Type will contain a Layout and a Node Type, I'll discuss each construct more fully as it's time to create them.
 
 Navigate to |LibBluIns| and click :guilabel:`+ ADD`. Set the following configurations:
 

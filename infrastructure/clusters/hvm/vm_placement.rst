@@ -55,6 +55,33 @@ Dynamic Placement
 
 Dynamic Placement automatically balances VM placement across cluster hosts based on resource utilization. It runs during each cluster sync cycle.
 
+Failover Behavior (HA)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a host becomes unreachable, |morpheus| detects the failure during the cluster health check and takes the following actions:
+
+#. **Detection** — The host is marked unreachable after failing connectivity checks during a cluster sync cycle.
+#. **VM identification** — All VMs that were running on the failed host are identified.
+#. **Placement evaluation** — For each affected VM with ``Auto`` placement strategy, |morpheus| selects a target host with sufficient available memory and CPU capacity.
+#. **Restart** — VMs are restarted on their assigned target hosts. VMs with ``Pinned`` placement strategy are NOT automatically failed over and remain offline until the original host recovers or an administrator intervenes.
+
+After the original host recovers:
+
+- VMs with **Failover** placement strategy that were moved to a different host are automatically migrated back to their preferred (original) host once it is healthy and has capacity.
+- VMs with **Auto** placement strategy remain on their current host — use Dynamic Placement or manual migration to rebalance if desired.
+
+.. note::
+
+   Failover operates even when Dynamic Placement is disabled (the default "Failover Only" mode). Full DRS rebalancing requires Dynamic Placement to be explicitly enabled.
+
+Affinity Group Enforcement During Failover
+"""""""""""""""""""""""""""""""""""""""""""
+
+During failover, affinity rules are evaluated:
+
+- **Keep Together** — If one VM in a "Keep Together" group is failed over to a new host, other VMs in the group are also migrated to the same host (capacity permitting).
+- **Keep Separate** — VMs in a "Keep Separate" group are placed on different surviving hosts to maintain anti-affinity.
+
 Modes
 ^^^^^
 
@@ -81,7 +108,7 @@ Configuring Dynamic Placement
 
 Dynamic Placement settings are configured when editing a cluster:
 
-#. Navigate to |InfClu| and select the cluster
+#. Navigate to :menuselection:`Infrastructure --> Clusters` and select the cluster
 #. Click :guilabel:`Edit`
 #. Enable the **Dynamic Placement** toggle to activate DRS for the cluster
 #. Set the **Aggressiveness** level to control how actively VMs are rebalanced
@@ -206,7 +233,7 @@ Configuring Memory Overcommit
 
 Memory overcommit is set **per host** from the host detail page:
 
-#. Navigate to the host detail page (|InfClu| > select cluster > Hosts tab > select host)
+#. Navigate to the host detail page (:menuselection:`Infrastructure --> Clusters` > select cluster > Hosts tab > select host)
 #. Click :guilabel:`Edit`
 #. Set the **Overcommit Percent** field to the desired value
 #. Click :guilabel:`Save`

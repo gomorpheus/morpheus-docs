@@ -19,7 +19,7 @@ Add HPE Alletra MP Storage
 
 The first step is to create a storage server in |morpheus|. Once the storage server is added, you can create a datastore and provision Instances. Follow these steps to add a Storage Server:
 
-#. Navigate to |InfSto|
+#. Navigate to :menuselection:`Infrastructure --> Storage`
 #. In the "Servers" tab, Click the :guilabel:`+ ADD` button
 #. From the ADD STORAGE SERVER wizard, input the following:
 
@@ -46,7 +46,7 @@ Create Datastore
 
 Add a `Datastore` to the `Storage Server`.
 
-#. Navigate to |InfClu|
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
 #. Click into the detail page for the cluster where datastore is to be created
 #. Select the "Storage" tab
 #. Under the "Data Stores" sub tab, Click :guilabel:`+ ADD`
@@ -69,9 +69,9 @@ The data store will be added and displayed in the "Datastore" tab. Confirm that 
 Create Instance
 ^^^^^^^^^^^^^^^
 
-Create an Instance with the Datastore.
+Create an Instance using the Alletra MP Datastore. The instance creation process follows the standard |morpheus| provisioning workflow (see :doc:`/provisioning/instances/creating_instances` for general instance creation documentation). The key difference is selecting the Alletra MP datastore for volume storage.
 
-#. Navigate to |ProIns|
+#. Navigate to :menuselection:`Provisioning --> Instances`
 #. In the `Instances` tab, Click the :guilabel:`+ ADD` button
 #. From the ADD INSTANCE wizard input the following:
 
@@ -126,4 +126,4 @@ Create an Instance with the Datastore.
     .. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-review.png
      :width: 50%
 
-The Instance is now provisioned to the new datastore and is viewable within the Instances (|ProIns|) section.
+The Instance is now provisioned to the new datastore and is viewable within the Instances (:menuselection:`Provisioning --> Instances`) section.

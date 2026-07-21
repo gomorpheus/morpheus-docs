@@ -197,7 +197,7 @@ At this point, the configuration steps are completed. As a test, we can order a 
 
 .. image:: /images/xaas_instance/13orderitem.png
 
-If we now head to |ProIns|, we can see a new Instance entry has been created for our Dropbox folder. Note that the Instance is named for our folder name exactly as we configured earlier.
+If we now head to :menuselection:`Provisioning --> Instances`, we can see a new Instance entry has been created for our Dropbox folder. Note that the Instance is named for our folder name exactly as we configured earlier.
 
 .. image:: /images/xaas_instance/14inslist.png
 
@@ -208,7 +208,7 @@ Taking a look in the Dropbox web console, we can also see a folder has been crea
 Managing and Deleting Instances
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Back in |morpheus|, we can take a look at the Instance detail page (|ProIns| > Specific Instance) and perform some Day 2 actions. By clicking :guilabel:`EDIT`, we can update Instance details. When Input values are updated, |morpheus| will automatically trigger reconfigure actions on our Instance. In our case, we've configured it to update the folder name in Dropbox and update the Instance name in |morpheus| for easier identification. As you can see in the screen shot, I'm providing a new folder name value:
+Back in |morpheus|, we can take a look at the Instance detail page (:menuselection:`Provisioning --> Instances` > Specific Instance) and perform some Day 2 actions. By clicking :guilabel:`EDIT`, we can update Instance details. When Input values are updated, |morpheus| will automatically trigger reconfigure actions on our Instance. In our case, we've configured it to update the folder name in Dropbox and update the Instance name in |morpheus| for easier identification. As you can see in the screen shot, I'm providing a new folder name value:
 
 .. image:: /images/xaas_instance/16editins.png
 

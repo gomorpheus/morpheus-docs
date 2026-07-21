@@ -38,6 +38,89 @@ Each VM in a Migration Plan goes through the following phases:
 
 All VMs in a plan are processed in parallel. Plans with many VMs will transfer them simultaneously, limited only by available bandwidth and storage I/O capacity.
 
+Linux Guest Preparation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+During the **Prepare** phase, |morpheus| installs QEMU guest tools and ensures the necessary VirtIO kernel modules are available so the VM can boot successfully on the KVM-based HVM target. The steps performed depend on the Linux distribution family.
+
+Package Installation
+````````````````````
+
+|morpheus| uses the source VM's native package manager to install ``qemu-guest-agent``. The system detects the available package manager and runs the appropriate install command:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 40 30
+
+   * - Distro Family
+     - Install Command
+     - Notes
+   * - RHEL / CentOS / Rocky / AlmaLinux (yum)
+     - ``dracut --force --no-hostonly && yum install -y qemu-guest-agent``
+     - Rebuilds initramfs first to ensure VirtIO drivers are included
+   * - RHEL 8+ / Fedora (dnf)
+     - ``dracut --force --no-hostonly && dnf install -y qemu-guest-agent``
+     - Same as yum but uses dnf package manager
+   * - Ubuntu / Debian
+     - ``apt-get install -y qemu-guest-agent``
+     - VirtIO modules typically already in default initramfs
+   * - SUSE / SLES
+     - ``zypper install -y qemu-guest-tools``
+     - Note: package name is ``qemu-guest-tools`` (not ``qemu-guest-agent``)
+
+The installation is retried up to 3 times with a 30-second pause between attempts if the package manager command fails (e.g., due to transient network issues or locked package databases).
+
+.. important::
+
+   Unlike Windows migrations — where VirtIO drivers are installed from the |morpheus| appliance URL or a bundled ISO (no internet required) — **Linux guest preparation requires access to a package repository**. The source VM must be able to reach either the public internet or an internal yum/apt/zypper mirror during the Prepare phase. If no repository is reachable, the Prepare phase will fail.
+
+   For air-gapped or restricted-network environments, ensure an internal package mirror is configured in the source VM's repository configuration (e.g., ``/etc/yum.repos.d/`` for RHEL-family, ``/etc/apt/sources.list`` for Debian-family) **before** initiating the migration.
+
+VirtIO Kernel Modules
+`````````````````````
+
+After package installation, |morpheus| verifies that the following VirtIO kernel modules are available (loaded or loadable) on the source VM:
+
+- ``virtio_blk`` — VirtIO block device driver (required for disk access on the target)
+- ``virtio_net`` — VirtIO network driver (required for network connectivity on the target)
+- ``virtio_scsi`` — VirtIO SCSI controller driver (used when source disks map to VirtIO-SCSI)
+- ``virtio_pci`` — VirtIO PCI transport (bus-level driver for all VirtIO devices)
+
+These modules are typically included in the default kernel for all supported distributions. If a module is missing, it must be present in the kernel's module tree so it can be included during the initramfs rebuild.
+
+Initramfs Rebuild
+`````````````````
+
+For RHEL-family distributions, the initramfs is rebuilt **before** package installation using ``dracut --force --no-hostonly``. The ``--no-hostonly`` flag ensures that all available kernel modules (including VirtIO drivers) are included in the initramfs regardless of the current running hardware. This is critical because the source VM is running on VMware hardware but must boot on KVM/VirtIO hardware after migration.
+
+For Debian/Ubuntu, VirtIO modules are typically already included in the default initramfs and no explicit rebuild is performed during migration.
+
+For SUSE/SLES, the ``qemu-guest-tools`` package installation handles driver availability through the distribution's standard module inclusion mechanisms.
+
+Network Interface Changes
+`````````````````````````
+
+When a VM moves from VMware (vmxnet3 or E1000 adapters) to HVM (VirtIO-net), network interface names may change. The behavior depends on the guest OS configuration:
+
+- **Predictable naming (default on most modern distros):** Interface names are derived from PCI slot/topology (e.g., ``ens3``, ``enp1s0``). The name will change since the virtual hardware topology differs between VMware and KVM.
+- **Legacy naming (``eth0``, ``eth1``):** If the guest uses legacy naming (via kernel parameter or udev rules), interfaces typically retain their ordinal names.
+
+|morpheus| does not automatically reconfigure network interface bindings (IP addresses, routes, bonding) during migration. Post-migration, verify that network configuration files reference the correct interface names on the target VM.
+
+.. note::
+
+   For RHEL/CentOS 7+ and similar distributions using NetworkManager, connections are often bound by MAC address rather than interface name. Since |morpheus| preserves MAC addresses during migration, these connections typically reconnect automatically.
+
+Bootloader and fstab
+`````````````````````
+
+- **GRUB configuration** — Generally requires no changes. The initramfs rebuild ensures VirtIO drivers are loaded early enough for root device access. If the source VM uses device-path references in GRUB (e.g., ``/dev/sda``), these are mapped to the corresponding VirtIO device paths on the target.
+- **fstab** — Entries using UUID or LABEL references (the default on most modern distributions) require no changes. Entries using device paths (e.g., ``/dev/sda1``) may need to be updated post-migration if the device naming changes.
+
+.. tip::
+
+   Verify that ``/etc/fstab`` uses UUIDs or LABELs (``blkid`` to check) before migration. This avoids potential boot issues on the target related to device path changes.
+
 Supported Configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^
 

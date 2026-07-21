@@ -81,6 +81,51 @@ QEMU & Virtualization
 
 .. WARNING:: Use QEMU Arguments with caution. Invalid arguments can prevent the VM from starting. Consult KVM/QEMU documentation for valid options.
 
+CPU Model (Cluster-Level Setting)
+----------------------------------
+
+The **CPU Model** determines how the host's CPU is presented to guest VMs. This is a **cluster-level** setting configured when creating or editing the cluster, and applies to all VMs in the cluster.
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Mode
+     - Description
+   * - Host Passthrough (default)
+     - Exposes the exact host CPU model and all its features directly to the guest. Provides maximum performance and access to all CPU instructions (AES-NI, AVX-512, etc.). VMs see the real CPU model name.
+   * - Host Model
+     - Uses a CPU model that closely matches the host but is defined by the hypervisor's CPU compatibility library. Provides good performance while allowing limited heterogeneity between cluster hosts.
+   * - Named Model
+     - Specifies an exact CPU model name (e.g., ``Skylake-Server``, ``EPYC``). The guest sees only features defined by that model, regardless of what the host actually supports. Maximum portability.
+
+When to Use Host Passthrough
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Host-passthrough is the preferred and default mode for all HVM clusters.** Because |morpheus| sets the ``migratable`` flag to ``on`` in the libvirt XML, the hypervisor automatically masks incompatible CPU features during live migration. This means host-passthrough works even in clusters with mixed CPU generations — the hypervisor handles compatibility negotiation transparently.
+
+**Benefits:**
+
+- Maximum guest performance — exposes all host CPU extensions (AES-NI, AVX-512, SHA, etc.)
+- VMs see the real CPU model name
+- Live migration still works between hosts with different CPU models (migratable flag handles feature masking)
+- No configuration needed — it is the default
+
+**The only exception** is when nested virtualization is enabled. With nested virtualization, ``migratable`` is set to ``'off'`` because VMX/SVM flags are exposed directly. This means live migration is only supported between hosts with the same CPU model — the hypervisor cannot mask these features during migration.
+
+When to Consider Other CPU Modes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Host-model or named CPU models** are only needed in rare cases:
+
+- You require guaranteed identical CPU feature exposure across all VMs regardless of which host they run on (strict determinism)
+- You need to live-migrate VMs with nested virtualization enabled between hosts with different CPU models (not possible with host-passthrough + nested virt)
+- A specific guest OS or application requires an exact named CPU model string
+
+.. tip::
+
+   For virtually all HVM clusters, **host-passthrough is the correct choice** and requires no configuration. It is the default for good reason — maximum performance with live migration compatibility handled automatically by the migratable flag.
+
 Drivers & Graphics
 ------------------
 

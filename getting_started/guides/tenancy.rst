@@ -145,7 +145,7 @@ Provisioning Test
 
 At this point, you can conduct a test by attempting to provision one of the basic Instance Types shipped with |morpheus| for demonstration purposes. To test, we'll provision a basic Ubuntu box to our AWS Cloud.
 
-#. Navigate to |ProIns|
+#. Navigate to :menuselection:`Provisioning --> Instances`
 #. Click :guilabel:`+ ADD`
 #. Select the Ubuntu Instance Type
 #. Click :guilabel:`NEXT`

@@ -4,14 +4,14 @@ Floating IPs
 Overview
 ^^^^^^^^
 
-|morpheus| supports sync and management of floating IP addresses for OpenStack, Huawei, and OTC Clouds. When these Clouds are integrated and floating IPs are present, |morpheus| will automatically sync them in. Once synced, floating IPs are viewable from their own list page (|InfNetFlo|) and related options are presented during provisioning, teardown, and from Instance detail pages.
+|morpheus| supports sync and management of floating IP addresses for OpenStack, Huawei, and OTC Clouds. When these Clouds are integrated and floating IPs are present, |morpheus| will automatically sync them in. Once synced, floating IPs are viewable from their own list page (:menuselection:`Infrastructure --> Network --> Floating IPs`) and related options are presented during provisioning, teardown, and from Instance detail pages.
 
 .. NOTE:: The Floating IPs tab is present only when supported Clouds are integrated and floating IPs are available. Additional Cloud support is planned for the future.
 
 Floating IPs List Page
 ^^^^^^^^^^^^^^^^^^^^^^
 
-All Floating IPs known to |morpheus| can be viewed on the Floating IPs List Page (|InfNetFlo|). From the Floating IPs list page we can see the following:
+All Floating IPs known to |morpheus| can be viewed on the Floating IPs List Page (:menuselection:`Infrastructure --> Network --> Floating IPs`). From the Floating IPs list page we can see the following:
 
 - **IP ADDRESS**: The address for the floating IP synced from a supported Cloud
 - **CLOUD**: The Cloud integration the floating IP was synced from

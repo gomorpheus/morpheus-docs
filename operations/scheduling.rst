@@ -11,7 +11,7 @@ Execute Schedules
 
 Execute Schedules define time windows during which automated tasks, jobs, and workflows are permitted to run. They act as execution policies that control when automation can execute.
 
-Navigate to |ProAut| > Execute Schedules to manage execute schedule definitions.
+Navigate to :menuselection:`Provisioning --> Automation` > Execute Schedules to manage execute schedule definitions.
 
 Creating an Execute Schedule
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -45,7 +45,7 @@ Power Schedules
 
 Power Schedules automate the start and stop of Instances and Servers based on defined time windows. This is commonly used to shut down non-production environments outside business hours to reduce costs.
 
-Navigate to |ProAut| > Power Schedules to manage power schedule definitions.
+Navigate to :menuselection:`Provisioning --> Automation` > Power Schedules to manage power schedule definitions.
 
 Creating a Power Schedule
 ^^^^^^^^^^^^^^^^^^^^^^^^^

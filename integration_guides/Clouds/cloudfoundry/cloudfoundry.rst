@@ -149,7 +149,7 @@ Seeded and Marketplace Items
 
 |morpheus| automatically seeds MySQL, Redis and RabbitMQ PCF Instance Types, and PCF Marketplace items can also be easily added to the Provisioning Library in the Cloud detail view Marketplace tab. The Marketplace item will be added to the selected Instance Type and available when selecting the Cloud Foundry Cloud during Instance or App Template creation.
 
-#. Navigate to |ProIns| and select an Instance Type with a Cloud Foundry layout (MySQL, Redis and RabbitMQ plus Marketplace additions)
+#. Navigate to :menuselection:`Provisioning --> Instances` and select an Instance Type with a Cloud Foundry layout (MySQL, Redis and RabbitMQ plus Marketplace additions)
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name
@@ -173,7 +173,7 @@ Cloud Foundry App Instance Type
 
 .. NOTE:: Minimal options are outlined below.
 
-#. Navigate to |ProIns| and select the `Cloud Foundry App` Instance Type
+#. Navigate to :menuselection:`Provisioning --> Instances` and select the `Cloud Foundry App` Instance Type
 #. Select :guilabel:`NEXT`
 #. Select a Group and PCF Cloud
 #. Add an Instance Name

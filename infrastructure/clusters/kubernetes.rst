@@ -487,7 +487,7 @@ With those items created, we can gather the API URL and the API token which will
   SECRET_NAME=$(kubectl get secrets | grep ^morpheus | cut -f1 -d ' ')
   kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' | tr -d " "
 
-After finishing those steps, we can now create the external cluster in |morpheus|. Navigate to |InfClu|. Click :guilabel:`+ ADD CLUSTER` and then select "External Kubernetes Cluster". Set the following fields, you will have to advance through the pages of the wizard to see all fields indicated:
+After finishing those steps, we can now create the external cluster in |morpheus|. Navigate to :menuselection:`Infrastructure --> Clusters`. Click :guilabel:`+ ADD CLUSTER` and then select "External Kubernetes Cluster". Set the following fields, you will have to advance through the pages of the wizard to see all fields indicated:
 
 - **GROUP:** A previously created |morpheus| Group
 - **CLOUD:** A previously-integrated Cloud

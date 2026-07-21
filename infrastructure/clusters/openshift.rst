@@ -9,7 +9,7 @@ OpenShift Clusters |enterprise-only|
 Overview
 ^^^^^^^^
 
-The OpenShift integration adds a new Cluster type, which can be added to |morpheus| from the Clusters list page (|InfClu|). Once a pre-existing OpenShift cluster is integrated, |morpheus| can onboard any currently-running virtualized workloads along with the cluster hosts, network objects, storage objects, and virtual images needed to provision additional virtualized workloads.
+The OpenShift integration adds a new Cluster type, which can be added to |morpheus| from the Clusters list page (:menuselection:`Infrastructure --> Clusters`). Once a pre-existing OpenShift cluster is integrated, |morpheus| can onboard any currently-running virtualized workloads along with the cluster hosts, network objects, storage objects, and virtual images needed to provision additional virtualized workloads.
 
 In addition to a new Cluster type, the OpenShift integration adds a new Instance Type to the provisioning wizard, which is used to provision new Instances to any integrated Clusters.
 
@@ -53,7 +53,7 @@ The OpenShift integration is developed as a standalone plugin for |morpheus|, wh
 #. Browse for the plugin JAR or drag and drop it onto the target
 #. Click :guilabel:`Upload`
 
-After a few brief moments, the new plugin will be added. This plugin adds a new Cluster type, which can be added from the Clusters list page (|InfClu|) and also adds a new Instance Type which can be provisioned from the Instance provisioning wizard once a compatible cluster is integrated.
+After a few brief moments, the new plugin will be added. This plugin adds a new Cluster type, which can be added from the Clusters list page (:menuselection:`Infrastructure --> Clusters`) and also adds a new Instance Type which can be provisioned from the Instance provisioning wizard once a compatible cluster is integrated.
 
 Adding OpenShift Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -70,7 +70,7 @@ To onboard an OpenShift cluster, begin by collecting an API token and API URL fr
 
 With the authentication details available, head back to |morpheus| to add a new OpenShift cluster:
 
-#. Navigate to |InfClu|
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
 #. Click :guilabel:`+ Add Cluster`
 #. Select "RED HAT OPENSHIFT CLUSTER" and click :guilabel:`Next`
 #. On the Group tab, select the |morpheus| Group to associate with the cluster and click :guilabel:`Next`
@@ -101,7 +101,7 @@ Provisioning into OpenShift
 
 In addition to adding a new cluster type (as covered in the previous sections), the |morpheus| OpenShift plugin also adds the "OpenShift" Instance Type to the provisioning wizard. Through this, new virtualized Instances can be provisioned to the OpenShift cluster. Use the following steps to provision a new virtual machine into the cluster.
 
-#. Navigate to |ProIns|
+#. Navigate to :menuselection:`Provisioning --> Instances`
 #. Click :guilabel:`+ ADD`
 #. Select OPENSHIFT and click :guilabel:`NEXT`
 #. On the Group tab, select a Group and Cloud. These selections will be filtered to include only Groups which can access Clouds that contain OpenShift clusters

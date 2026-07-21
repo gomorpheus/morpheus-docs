@@ -57,42 +57,6 @@ CREATE VOLUME
 
 At least one Storage Server Integration from `Infrastructure- Storage - Servers` is required to create volumes from `Infrastructure- Storage - Volumes`.
 
-3par
-````
-
-To Add a 3Par Volume:
-
-#. Select the Infrastructure link in the navigation bar.
-#. Select the Storage link in the sub navigation bar.
-#. In the VolumeS tab, Click the :guilabel:`+ ADD` button.
-#. Select `3Par` from the dropdown list
-#. From the CREATE VOLUME Wizard input the following:
-
-   SELECT TYPE
-    STORAGE SERVER
-      Name of the 3par Storage Server added in `Infrastructure- Storage - Servers`
-    GROUP
-     Select Storage Group
-    VOLUME TYPE
-      3Par Volume
-    Click NEXT
-      Select :guilabel:`NEXT`
-   CONFIGURE
-    NAME
-      Name of the Volume
-    VOLUME SIZE
-      Specify size of the Volume (in MB)
-
-    PROVISION TYPE
-      - FULL
-      - TPVV
-      - SNP
-      - PEER
-      - UNKNOWN
-      - TDVV
-    Click COMPLETE
-         Select :guilabel:`COMPLETE`
-
 Dell EMC ECS
 ````````````
 

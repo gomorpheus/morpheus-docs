@@ -47,7 +47,7 @@ Creating Puppet Agent Install Tasks
 
 Puppet Agent Install Tasks automate the process of installing the Puppet Agent, selecting the Puppet environment, and supplying the Puppet Node Name. We can run this Task on-demand as needed for individual Instances or servers or add them to workflows to build a Puppet Agent installation step into larger automation suites.
 
-#. Navigate to |LibAut|
+#. Navigate to :menuselection:`Library --> Automation`
 #. Select the Tasks tab
 #. Click :guilabel:`+ ADD`
 #. From the "Type" field, select Puppet Agent Install

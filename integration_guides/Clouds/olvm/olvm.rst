@@ -48,7 +48,7 @@ Additional tabs on the detail page allow administrators to view a list of hosts 
 Provisioning to the OLVM Cloud
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are multiple ways to consume the new OLVM Cloud as a provisioning target. Adding an OLVM Cloud to |morpheus| adds the OLVM Instance Type to the provisioning wizard. From the Instance list page (|ProIns|), click :guilabel:`+ ADD` and select "OLVM."
+There are multiple ways to consume the new OLVM Cloud as a provisioning target. Adding an OLVM Cloud to |morpheus| adds the OLVM Instance Type to the provisioning wizard. From the Instance list page (:menuselection:`Provisioning --> Instances`), click :guilabel:`+ ADD` and select "OLVM."
 
 .. image:: /images/integration_guides/clouds/olvm/olvmInsType.png
   :width: 50%

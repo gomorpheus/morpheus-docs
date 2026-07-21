@@ -87,9 +87,9 @@ For appliances with the MSDNS plugin installed, the option to create an integrat
 Domains
 ^^^^^^^
 
-Once the integration is added, Microsoft DNS Domains will sync and listed under |InfNetDom|.
+Once the integration is added, Microsoft DNS Domains will sync and listed under :menuselection:`Infrastructure --> Network --> Domains`.
 
-.. NOTE:: Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in |InfNetDom|
+.. NOTE:: Default Domains can be set on Networks and Clouds, and can be selected when provisioning. Additional configuration options are available by editing a domain in :menuselection:`Infrastructure --> Network --> Domains`
 
 Configuring Microsoft DNS with Clouds and Groups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

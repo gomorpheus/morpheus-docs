@@ -49,6 +49,35 @@ With the above integration steps completed, users can now log into |morpheus| an
 
 .. image:: /images/integration_guides/identity_sources/ad/user.png
 
+Restricting Access with Required Group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. IMPORTANT:: If the REQUIRED GROUP field is left empty, **any user who can authenticate against the Active Directory server will be allowed to log in**. A local |morpheus| user account is automatically created for each user upon first login. To restrict access to only authorized users, you must configure the REQUIRED GROUP field.
+
+The REQUIRED GROUP field is the primary mechanism for controlling which AD users are permitted to access |morpheus|. It works as follows:
+
+- **Required Group set:** Only users who are members of the specified AD group can log in. Users who authenticate successfully against AD but are not in the required group are denied access and no local user object is created.
+- **Required Group empty:** All users who can authenticate against the AD server are allowed to log in. This is the default behavior and is typically **not appropriate for enterprise environments**.
+- **Include Member Groups:** When checked, users in groups nested inside the required group are also granted access.
+
+The Required Group acts as a gatekeeper. Role mappings and the Default Role are only applied **after** the Required Group check passes. The interaction between these fields is:
+
+#. User authenticates credentials against AD
+#. |morpheus| checks if the user is in the Required Group (if configured)
+#. If the user is not in the Required Group, login is denied (no user is created)
+#. If the user passes the Required Group check, |morpheus| creates or syncs the user account
+#. The Default Role is applied to the user
+#. Any additional role mappings are applied based on the user's AD group memberships
+
+.. NOTE:: The Default Role is **always** applied to users who pass the Required Group check. It is additive—users receive the Default Role in addition to any roles assigned through role mappings. It is not a fallback that only applies when no other mapping matches.
+
+**Recommended Configuration for Enterprise Environments:**
+
+- Always set a Required Group to prevent unauthorized directory users from accessing |morpheus|
+- Create a dedicated AD group (e.g., "Morpheus Users") and add only authorized users
+- Set the Default Role to the most restrictive role appropriate for general users
+- Use role mappings to assign elevated roles (e.g., System Admin) to users in specific AD groups
+
 Adding an Active Directory Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -72,9 +101,11 @@ Adding an Active Directory Integration
    Binding Password
     The password for the above account
    Required Group
-    The AD group users must be in to have access (optional, see example in the prior section)
+     The AD group users must be in to have access. If left empty, all users who can authenticate against the AD server will be allowed to log in and a local user account will be created automatically. It is strongly recommended to set this field in enterprise environments to restrict access to only authorized users (see the "Restricting Access with Required Group" section above)
+   Include Member Groups
+     When checked, users in groups that are nested inside the required group will also be granted access
    Default Role
-    The default role a user is assigned when they are in the required group or if no specific group mapping applies to the user (see example in prior section)
+     The default role applied to all users who pass the Required Group check. This role is always assigned in addition to any roles granted through the role mappings below. Set this to the most restrictive role appropriate for general users
    ENABLE ROLE MAPPING PERMISSION
     When selected, Tenant users with appropriate rights to view and edit Roles will have the ability to set role mapping for the Identity Source integration. This allows the Tenant user to edit only the role mappings without viewing or potentially editing the basic Identity Source configuration (AD server, domain, binding user details, etc)
    MANUAL ROLE ASSIGNMENT

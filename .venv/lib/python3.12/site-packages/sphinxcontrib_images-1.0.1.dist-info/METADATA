@@ -1,0 +1,103 @@
+Metadata-Version: 2.4
+Name: sphinxcontrib-images
+Version: 1.0.1
+Summary: Sphinx extension for thumbnails
+Author-email: Tomasz Czyż <tomasz.czyz@gmail.com>
+License-Expression: Apache-2.0
+Project-URL: Documentation, https://sphinxcontrib-images.readthedocs.io/
+Project-URL: Download, https://pypi.python.org/pypi/sphinxcontrib-images
+Project-URL: Issues, https://github.com/sphinx-contrib/images/issues
+Project-URL: Repository, https://github.com/sphinx-contrib/images
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Documentation
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: requests<3,>2.2
+Requires-Dist: sphinx>=5.0
+Dynamic: license-file
+
+sphinxcontrib-images
+====================
+
+sphinxcontrib-images (formerly `sphinxcontrib-fancybox
+<https://pypi.python.org/pypi/sphinxcontrib-fancybox>`_).
+
+Easy thumbnails in Sphinx documentation (focused on HTML).
+
+* `Documentation <https://sphinxcontrib-images.readthedocs.io>`_
+* `Repository (GitHub) <https://github.com/sphinx-contrib/images/>`_
+* `PyPI <https://pypi.python.org/pypi/sphinxcontrib-images/>`_
+* `GitHub actions <https://github.com/sphinx-contrib/images/actions/workflows/ci.yml>`_
+
+  .. image:: https://github.com/sphinx-contrib/images/actions/workflows/ci.yml/badge.svg
+     :target: https://github.com/sphinx-contrib/images/actions/workflows/ci.yml
+     :alt: GitHub Actions
+
+Features
+--------
+
+* Show thumbnails instead of full size images inside documentation (HTML).
+* Ability to zoom/enlarge picture using LightBox2 (HTML).
+* Ability to group pictures
+* Download remote pictures and keep it in cache (if requested)
+* Support for other formats (latex, epub, ... - fallback to image directive)
+* Easy to extend (add own backend in only few lines of code)
+
+  * Add other HTML "preview" solution than LightBox2
+  * Add better support to non-HTML outputs
+  * Preprocess images
+
+TODO
+^^^^
+
+* Make proper thumbnails (scale down images)
+
+How to install?
+---------------
+
+Instalation through pip: ::
+
+    pip install sphinxcontrib-images
+
+or through the GitHub: ::
+
+    pip install git+https://github.com/sphinx-contrib/images
+
+Next, you have to add extension to ``conf.py`` in your Sphinx project. ::
+
+    extensions = [
+              …
+              'sphinxcontrib.images',
+              …
+              ]
+
+
+How to use it?
+--------------
+
+Example: ::
+
+    .. thumbnail:: picture.png
+
+
+You can also override the default ``image`` directive provided by Sphinx.
+Check the documentation for all configuration options.
+
+
+Questions and suggestions
+-------------------------
+
+If you have any suggstions, patches, problems - please use
+`GitHub Issues <https://github.com/sphinx-contrib/images/issues>`_.

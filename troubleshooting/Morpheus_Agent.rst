@@ -34,7 +34,7 @@ When an Instance is provisioned and the Agent does not install, verify the follo
 
 * Inbound connectivity access to the |morpheus| appliance from provisioned VMs and container hosts on port 443 (needed for Agent communication)
 
-* Private (non-|morpheus| provided) VM images and templates must have their credentials stored. These can be entered or edited in the |LibVir| section by clicking the Actions dropdown on an image detail page and selecting Edit.
+* Private (non-|morpheus| provided) VM images and templates must have their credentials stored. These can be entered or edited in the :menuselection:`Library --> Virtual Images` section by clicking the Actions dropdown on an image detail page and selecting Edit.
 
 .. NOTE:: Administrator user is required for Windows Agent install.
 
@@ -47,13 +47,13 @@ SSH
 
 * Port 22 is open for Linux images, and SSH is enabled
 
-* Credentials set on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
+* Credentials set on the image if using a custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section
 
 WinRM
 ^^^^^
 
 * Port 5985 must be open and WinRM enabled for Windows images
-* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the |LibVir| section
+* Credentials have been entered on the image if using a custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section
 
 .. NOTE:: Administrator user is required for Windows Agent install.
 
@@ -61,21 +61,21 @@ VMware Tools (vmtools)
 ^^^^^^^^^^^^^^^^^^^^^^
 
 * VMware Tools is installed on the template(s)
-* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the |LibVir| section
+* Credentials have been entered on the image if using custom or synced image. Credentials can be entered on images in the :menuselection:`Library --> Virtual Images` section
 * Sudo privileges required for Linux
 * Administrator User required for Windows (SID 500)
 
 Cloud-Init
 ^^^^^^^^^^
 
-* Cloud-Init settings configured in |AdmSetPro| section
+* Cloud-Init settings configured in :menuselection:`Administration --> Settings --> Provisioning` section
 * Cloud-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
 
 Cloudbase-Init
 ^^^^^^^^^^^^^^
 
-* Windows Administrator Password defined in |AdmSetPro| section
+* Windows Administrator Password defined in :menuselection:`Administration --> Settings --> Provisioning` section
 * Cloudbase-Init installed on Virtual Image
 * ``Cloud-Init`` enabled on Virtual Image config
 * Cloudbase-Init is only required for OpenStack Cloud types
@@ -85,7 +85,7 @@ Cloudbase-Init
 Windows Unattended
 ^^^^^^^^^^^^^^^^^^
 
-* Windows Administrator Password defined in |AdmSetPro| section
+* Windows Administrator Password defined in :menuselection:`Administration --> Settings --> Provisioning` section
 * VMware: ``Force Guest Customizations`` set to forced on Virtual Image config when using DHCP (Static Assignment will already force Guest Customizations)
 * Nutanix & SCVMM: Virtual Image is sysprepped and shutdown, ``Sysprep Enabled`` flagged on Virtual Image config
 
