@@ -21,10 +21,44 @@
    troubleshooting/troubleshooting
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Guides
+   :maxdepth: 2
+   :caption: User Guides
 
-   integration_guides/integration_guides.rst
+   /getting_started/guides/aws_guide.rst
+   /getting_started/guides/vmware_guide.rst
+   /getting_started/guides/azure_guide.rst
+   /getting_started/guides/autoinstall_instance.rst
+   /getting_started/guides/autoinstall_app.rst
+   /getting_started/guides/op_workflows.rst
+   /getting_started/guides/xaas_instance.rst
+   /getting_started/guides/vdi_guide.rst
+   /getting_started/guides/terraform_instances.rst
+   /getting_started/guides/backup_restore.rst
+   /getting_started/guides/tagging_guide.rst
+   /getting_started/guides/cypher_policies.rst
+   /getting_started/guides/groups_roles_perms.rst
+   /getting_started/guides/tenancy.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Integration Guides
+
+   integration_guides/Automation/automation.rst
+   integration_guides/Backups/backups.rst
+   integration_guides/Clouds/clouds.rst
+   integration_guides/Containers/containers.rst
+   integration_guides/code/code.rst
+   integration_guides/Deployments/deployment.rst
+   integration_guides/DNS/DNS.rst
+   integration_guides/IdentityManagement/IdentityManagement.rst
+   integration_guides/ITSM/ITSM.rst
+   integration_guides/LoadBalancers/LoadBalancers.rst
+   integration_guides/Logs/Logs.rst
+   integration_guides/Monitoring/Monitoring.rst
+   integration_guides/Networking/networking.rst
+   integration_guides/storage/storage.rst
+   integration_guides/supportedVersions/supportedVersions.rst
+   integration_guides/trust/trust.rst
 
 .. toctree::
    :maxdepth: 1

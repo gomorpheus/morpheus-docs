@@ -1,12 +1,12 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-07-20T22:49:23Z · projected from 141 source nodes_
+_Last refreshed: 2026-07-21T13:43:50Z · projected from 157 source nodes_
 
 ## Surfaces
 
 | Surface | Stage | Path(s) | Last touched | Driver spec |
 |---|---|---|---|---|
-| (unassigned) | — | — | — | 133 specs without surface |
+| (unassigned) | — | — | — | 149 specs without surface |
 
 _Run `hero snapshot assign` to bucket unassigned specs._
 
@@ -84,7 +84,9 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 - **"9.1.0 Docs: VME/Morpheus Enterprise Manager Update Mechanism"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Virtual Network Interface Connect/Disconnect"** (surface: —) — 0/0 specs done
 - **"Docs Catch-Up: Sync to HPE Public Portal 8.1.2 Content"** (surface: —) — 0/13 specs done
+- **Field Feedback Documentation Improvements** (surface: —) — 1/14 specs done; in flight: docs-cluster-ha-dynamic-placement, docs-fc-storage-connection, docs-host-passthrough-guide, docs-storage-network-interfaces-hvm, docs-tagged-bonds-guide, docs-virtual-image-options-reference, docs-windows-cloud-guest-customization, docs-windows-domain-join-guide, docs-windows-migration-conflict-resolution
 - **"Documentation Gap Analysis & Sprint Plan (9.0.0)"** (surface: —) — 0/0 specs done
+- **Migrations Overview: Linux Driver Injection Details** (surface: —) — 0/0 specs done
 - **"HVM 1.3 Cluster Layouts Documentation"** (surface: —) — 0/0 specs done
 - **"HPE Morpheus Enterprise Documentation Site"** (surface: —) — 14/14 specs done
 - **"Unified Docs: Merge VM Essentials & Enterprise Portals for 8.1.2"** (surface: —) — 0/6 specs done
@@ -97,24 +99,24 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Recently completed (last 14 days)
 
-_Nothing recent._
+- **(unassigned)** — docs-hvm-essentials-parity
 
 ## Next up across surfaces
 
-1. **(unassigned)** — `hvm-13-cluster-docs` (1, delivering)
-2. **(unassigned)** — `catchup-administration` (high, planning)
-3. **(unassigned)** — `catchup-getting-started` (high, planning)
-4. **(unassigned)** — `catchup-infrastructure` (high, planning)
-5. **(unassigned)** — `catchup-integration-guides` (high, planning)
+1. **(unassigned)** — `docs-cluster-ha-dynamic-placement` (—, delivering)
+2. **(unassigned)** — `docs-fc-storage-connection` (—, delivering)
+3. **(unassigned)** — `docs-field-feedback-improvements` (—, delivering)
+4. **(unassigned)** — `docs-host-passthrough-guide` (—, delivering)
+5. **(unassigned)** — `docs-migrations-linux-drivers` (—, delivering)
 
 ## Open risks & blockers
 
 - **Stale-in-flight (1):** `hvm-13-cluster-docs` (46d).
-- **Unassigned specs (133) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
+- **Unassigned specs (149) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
-- Specs covered: 0/133 (0%)
-- Projection generation: 0ms · Source nodes: 141
+- Specs covered: 0/149 (0%)
+- Projection generation: 0ms · Source nodes: 157
 
