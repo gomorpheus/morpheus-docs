@@ -6,40 +6,12 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-07-21T15:08:42Z · 116 ready specs_
-
-## docs-storage-network-interfaces-hvm — Storage Network Interfaces for HVM
-_feature · delivering · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-storage-network-interfaces-hvm/spec.md)_
-
----
-
-## docs-fc-storage-connection — FC Storage Connection
-_feature · delivering · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-fc-storage-connection/spec.md)_
-
----
+_Generated: 2026-07-21T16:35:08Z · 116 ready specs_
 
 ## docs-windows-migration-conflict-resolution — Windows VM Migration Conflict Resolution
 _feature · delivering · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-windows-migration-conflict-resolution/spec.md)_
-
----
-
-## docs-virtual-image-options-reference — Virtual Image Options Reference
-_feature · delivering · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-virtual-image-options-reference/spec.md)_
-
----
-
-## docs-windows-cloud-guest-customization — Windows Cloud Guest Customization
-_feature · delivering · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-windows-cloud-guest-customization/spec.md)_
 
 ---
 
@@ -50,17 +22,17 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/proje
 
 ---
 
-## docs-host-passthrough-guide — Host CPU Passthrough Guide
+## docs-windows-cloud-guest-customization — Windows Cloud Guest Customization
 _feature · delivering · horizon: now_
 
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-host-passthrough-guide/spec.md)_
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-windows-cloud-guest-customization/spec.md)_
 
 ---
 
-## docs-cluster-ha-dynamic-placement — Cluster HA & Dynamic Placement Details
+## docs-virtual-image-options-reference — Virtual Image Options Reference
 _feature · delivering · horizon: now_
 
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-cluster-ha-dynamic-placement/spec.md)_
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-virtual-image-options-reference/spec.md)_
 
 ---
 
@@ -71,10 +43,10 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/proje
 
 ---
 
-## docs-field-feedback-improvements — Field Feedback Documentation Improvements
-_initiative · delivering · horizon: now_
+## docs-storage-network-interfaces-hvm — Storage Network Interfaces for HVM
+_feature · delivering · horizon: now_
 
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-field-feedback-improvements/spec.md)_
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-storage-network-interfaces-hvm/spec.md)_
 
 ---
 
@@ -82,6 +54,34 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/proje
 _initiative · delivering · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-migrations-linux-drivers/spec.md)_
+
+---
+
+## docs-host-passthrough-guide — Host CPU Passthrough Guide
+_feature · delivering · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-host-passthrough-guide/spec.md)_
+
+---
+
+## docs-field-feedback-improvements — Field Feedback Documentation Improvements
+_initiative · delivering · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-field-feedback-improvements/spec.md)_
+
+---
+
+## docs-fc-storage-connection — FC Storage Connection
+_feature · delivering · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-fc-storage-connection/spec.md)_
+
+---
+
+## docs-cluster-ha-dynamic-placement — Cluster HA & Dynamic Placement Details
+_feature · delivering · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-cluster-ha-dynamic-placement/spec.md)_
 
 ---
 
@@ -99,17 +99,17 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/proje
 
 ---
 
-## docs-alletra-creating-instances-merge — Alletra MP Creating Instances Merge
-_feature · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-alletra-creating-instances-merge/spec.md)_
-
----
-
 ## docs-infrastructure-networking-overhaul — Infrastructure Networking Overhaul
 _feature · planning · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-infrastructure-networking-overhaul/spec.md)_
+
+---
+
+## docs-alletra-creating-instances-merge — Alletra MP Creating Instances Merge
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/projects/hpe/morpheus-docs/.hero/specs/docs-alletra-creating-instances-merge/spec.md)_
 
 ---
 
