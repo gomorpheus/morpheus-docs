@@ -9,7 +9,7 @@ To get started, simply click the :guilabel:`+ Add` button in the upper right of 
 
 .. NOTE:: For storage-specific provisioning workflows, see the integration guide for your storage platform. For example, :doc:`/integration_guides/storage/hpe-alletra-mp` includes a walkthrough of creating Instances on HPE Alletra MP datastores.
 
-The next step will ask for a Group and Cloud to be selected. The Group is an abstract representation that can contain multiple cloud integrations. Clouds can be in multiple Groups and Groups are also useful for using RBAC to restrict provisioning access and set retainment policies. If the environment is new and these do not yet exist, it may be advisable to refer to one of our starter guides, such as the guide on getting started with |morpheus| and `VMware <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html>`_. The wizard continues by allowing us to choose a name for the Instance as well as an environment.
+The next step will ask for a Group and Cloud to be selected. The Group is an abstract representation that can contain multiple cloud integrations. Clouds can be in multiple Groups and Groups are also useful for using RBAC to restrict provisioning access and set retainment policies. If the environment is new and these do not yet exist, it may be advisable to refer to one of our starter guides, such as the :doc:`/getting_started/guides/vmware_guide` guide. The wizard continues by allowing us to choose a name for the Instance as well as an environment.
 
 .. NOTE:: Currently the Environment option is mostly useful for presenting the user with informative metadata around the Instance when coming back to it later.
 
@@ -31,7 +31,7 @@ Additionally, |morpheus| allows users to convert discovered resources into manag
 - Assign to the primary Tenant or one of the Subtenants
 - Select a Group (this dropdown contains a filtered list of Groups which the associated Cloud is in)
 - Username and password for a seeded account
-- Opt to install |morpheus| Agent or not (for more on |morpheus| Agent, click `here <https://docs.morpheusdata.com/en/latest/getting_started/functionality/agent/morpheus_agent.html>`_)
+- Opt to install |morpheus| Agent or not (:doc:`/getting_started/functionality/agent/features`)
 - Select the Instance Type which should be associated with the new Instance containing this VM
 - Select a version number for the Instance (such as 20.04 for a basic Ubuntu Instance)
 - Select a Layout, Instance Types often have multiple Layout configurations

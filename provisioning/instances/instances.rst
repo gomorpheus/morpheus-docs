@@ -4,7 +4,7 @@ Instances
 ..
   .. container:: left-col
 
-Instances are a great starting point for taking advantage of self service features and spinning up both VMs and containers. In |morpheus| it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion. These concepts are also covered in greater detail in the `Provisioning Concepts <https://docs.morpheusdata.com/en/latest/provisioning/concepts/concepts.html>`_ section.
+Instances are a great starting point for taking advantage of self service features and spinning up both VMs and containers. In |morpheus| it may be advisable to cover the definition of a few terms used within the application so as to reduce confusion. These concepts are also covered in greater detail in the :doc:`/provisioning/concepts/concepts` section.
 
 Instance
   A set of containers or virtual machines that can correlate to a single horizontally-scalable entity or a service suite, like a database. It is important to note that an Instance can contain one or more containers/VMs depending on the Instance type and configuration.
