@@ -1,6 +1,6 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-07-21T13:43:50Z · projected from 157 source nodes_
+_Last refreshed: 2026-07-21T16:35:09Z · projected from 157 source nodes_
 
 ## Surfaces
 
@@ -118,5 +118,5 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
 - Specs covered: 0/149 (0%)
-- Projection generation: 0ms · Source nodes: 157
+- Projection generation: 1ms · Source nodes: 157
 
