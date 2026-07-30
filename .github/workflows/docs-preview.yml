@@ -1,0 +1,160 @@
+# Builds the English and Spanish docs on every push to the active release
+# branch and publishes them to GitHub Pages.
+#
+# This is a review preview for writers and reviewers, not a customer surface --
+# published documentation lives on the HPE support portal. robots.txt and a
+# noindex meta tag keep this build out of search results.
+name: Publish docs preview
+
+on:
+  push:
+    branches:
+      - 'dev-*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Pages allows one in-flight deployment. Queue rather than cancel, so a run is
+# never interrupted midway through publishing.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  # Project Pages sites are served under /<repo>/.
+  SITE_PREFIX: /morpheus-docs
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      publish: ${{ steps.check.outputs.publish }}
+      version: ${{ steps.check.outputs.version }}
+    steps:
+      - name: Publish only the newest release branch
+        id: check
+        run: |
+          set -euo pipefail
+          branch="$GITHUB_REF_NAME"
+          # The site holds one release at a time, so a push to an older
+          # maintenance branch must not overwrite the current preview.
+          # The numeric filter stops a stray dev-next from outranking a real
+          # release; sort -V keeps 9.10 above 9.2 where a plain sort would not.
+          newest=$(git ls-remote --heads "$GITHUB_SERVER_URL/$GITHUB_REPOSITORY" 'refs/heads/dev-*' \
+            | sed 's|.*refs/heads/||' \
+            | grep -E '^dev-[0-9]+(\.[0-9]+)*$' \
+            | sort -V | tail -1)
+          echo "pushed=$branch newest=$newest"
+          # The version is derived from the branch name, so cutting dev-9.2
+          # needs no change to this workflow.
+          echo "version=${branch#dev-}" >> "$GITHUB_OUTPUT"
+          if [ "$branch" = "$newest" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::$branch is not the newest release branch ($newest); skipping publish"
+          fi
+
+  publish:
+    needs: gate
+    if: needs.gate.outputs.publish == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      VERSION: ${{ needs.gate.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # .venv/ and _build/ are listed in .gitignore but were committed
+          # before those rules existed, so they are still tracked and add
+          # ~19.5k files this build has no use for.
+          sparse-checkout: |
+            /*
+            !/.venv
+            !/_build
+          sparse-checkout-cone-mode: false
+
+      - uses: actions/setup-python@v5
+        with:
+          # Matches the Read the Docs build in .readthedocs.yml.
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install Sphinx stack
+        run: |
+          set -euo pipefail
+          python -m pip install -q --upgrade pip
+          python -m pip install -q -r requirements.txt
+
+      - name: Build English and Spanish
+        run: |
+          set -euo pipefail
+          make html SPHINXOPTS="-E -q"
+          make html-es SPHINXOPTS="-E -q"
+
+      - name: Assemble site
+        run: |
+          set -euo pipefail
+          site=_site
+          mkdir -p "$site/en/$VERSION" "$site/es/$VERSION"
+          cp -R _build/html/. "$site/en/$VERSION/"
+          cp -R _build/es/html/. "$site/es/$VERSION/"
+
+          # Without .nojekyll, Pages runs Jekyll, which silently drops every
+          # underscore-prefixed directory -- including _static and _images.
+          touch "$site/.nojekyll"
+
+          # A preview of unreleased documentation should not compete with the
+          # customer docs in search results.
+          printf 'User-agent: *\nDisallow: /\n' > "$site/robots.txt"
+
+          # Relative redirect, so the landing page works at any mount point.
+          printf '<!doctype html><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=en/%s/">\n' \
+            "$VERSION" > "$site/index.html"
+          # The 404 document is served for arbitrary paths, so its redirect
+          # has to be absolute.
+          printf '<!doctype html><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=%s/en/%s/">\n' \
+            "$SITE_PREFIX" "$VERSION" > "$site/404.html"
+
+          # sphinx-notfound-page rewrites the 404 page's asset links to
+          # notfound_urls_prefix (default /en/latest/) as ROOT-ABSOLUTE paths.
+          # They are the only non-relative asset paths Sphinx emits, and that
+          # prefix does not exist here, so the 404 page renders unstyled unless
+          # they are repointed.
+          for lang in en es; do
+            f="$site/$lang/$VERSION/404.html"
+            [ -f "$f" ] && sed -i "s|\"/en/latest/|\"$SITE_PREFIX/$lang/$VERSION/|g" "$f"
+          done
+
+          echo "$GITHUB_REF_NAME $GITHUB_SHA" > "$site/.published-sha"
+
+      - name: Check the site fits the Pages size limit
+        run: |
+          set -euo pipefail
+          kb=$(du -sk _site | cut -f1)
+          echo "site size: $((kb / 1024)) MB"
+          # Pages refuses to publish a site over 1 GB. Fail here with a clear
+          # message rather than in a half-completed deployment.
+          [ "$kb" -lt 1000000 ] || { echo "site exceeds the 1 GB Pages limit"; exit 1; }
+
+      - name: Check for unrewritten root-absolute asset links
+        run: |
+          set -euo pipefail
+          if grep -rlE '(href|src)="/en/latest/' _site --include='*.html' | head -1 | grep -q .; then
+            echo "root-absolute /en/latest/ asset links remain; they will 404"
+            exit 1
+          fi
+          echo "asset links OK"
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -288,7 +288,7 @@ rst_prolog = """
 
 
 year = datetime.datetime.now().date().strftime("%Y")
-extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx_immaterial','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','notfound.extension','sphinx.ext.autosectionlabel','tier_roles']
+extensions = ['myst_parser','sphinx.ext.autosectionlabel','sphinx.ext.todo','sphinx_immaterial','sphinx_tabs.tabs','sphinxcontrib.contentui','sphinxcontrib.images','notfound.extension','tier_roles']
 templates_path = ['_templates']
 source_suffix = ['.rst', '.md']
 project = u'Morpheus Docs'
