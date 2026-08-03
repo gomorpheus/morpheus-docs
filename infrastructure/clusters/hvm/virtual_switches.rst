@@ -128,6 +128,8 @@ You can select multiple traffic types for a single Virtual Switch. When combinin
 Virtual Switch Prerequisites
 ````````````````````````````
 
+.. important:: Virtual Switches require **Cluster Layout 2.0** and **HVM OS Ubuntu 26.04+**. Clusters running earlier layout versions or HVM OS Ubuntu 24.04 do not support Virtual Switches.
+
 Before creating a Virtual Switch, ensure the following:
 
 - **Physical NICs are cabled and up** on each host that will participate in the Virtual Switch.

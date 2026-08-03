@@ -244,3 +244,101 @@ Click **What went wrong** (or **Hide details**) to expand error details showing 
    :alt: HPE Morpheus Installer - Viewing deployment logs
 
 .. tip:: Host-side logs are also available at ``/var/log/hvmcli/`` on the HVM host for additional troubleshooting.
+
+Large Image Uploads and Timeout
+```````````````````````````````
+
+The installer UI has a **60-minute timeout** for the image upload step. For very large QCOW2 images or slow network connections, the upload may exceed this limit.
+
+**Pre-staging the image manually:**
+
+If you anticipate the upload will take longer than 60 minutes, you can manually transfer the QCOW2 image to the host beforehand. The installer uploads images to:
+
+.. code-block:: text
+
+   /var/lib/libvirt/images/
+
+To have the installer skip the upload and discover a pre-existing image on the host, place the file at:
+
+.. code-block:: bash
+
+   /var/lib/libvirt/images/<filename>.qcow2
+
+The installer checks the file size using ``stat -c '%s' /var/lib/libvirt/images/<filename>`` — if the file exists and has the same size as the local source file, the upload step is skipped automatically.
+
+**Example — manually uploading via SCP:**
+
+.. code-block:: bash
+
+   scp hpe-vm-essentials-9.1.0-1.qcow2 ubuntu@<hvm-host>:/var/lib/libvirt/images/
+
+.. note:: Ensure the filename on the host matches exactly what the installer expects (i.e., the same filename you selected in the QCOW2 Image field). The size comparison must also match — do not rename or truncate the file.
+
+Installer Data Locations
+````````````````````````
+
+The HPE Morpheus Manager Installer stores configuration, logs, and state data locally on the workstation. If you need to start fresh (e.g., clear saved settings, reset SSH trust, or troubleshoot a corrupted state), you can delete these files.
+
+**macOS:**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - Path
+     - Contents
+   * - ``~/Library/Application Support/Morpheus Manager Installer/``
+     - Configuration and state files (see below)
+   * - ``~/Library/Logs/Morpheus Manager Installer/``
+     - Application log files (daily rotation, 10 MB max per file)
+
+**Windows:**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - Path
+     - Contents
+   * - ``%APPDATA%\Morpheus Manager Installer\``
+     - Configuration and state files (see below)
+   * - ``%APPDATA%\Morpheus Manager Installer\logs\``
+     - Application log files (daily rotation, 10 MB max per file)
+
+**Stored Files:**
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 70
+
+   * - File
+     - Purpose
+   * - ``session-config.json``
+     - Saves the last-used deployment settings (SSH host, IP, network config, VM size, etc.) so they are pre-populated on next launch. Passwords are **not** stored.
+   * - ``cluster-config.json``
+     - Saves cluster wizard settings (cluster name, datastore config). Secrets are redacted before persisting.
+   * - ``cluster-state.json``
+     - Tracks whether the last cluster deployment succeeded (used for resume/retry logic).
+   * - ``known_hosts.json``
+     - Stores SSH host fingerprints for HVM hosts you have connected to. Used to detect host key changes (similar to ``~/.ssh/known_hosts``).
+   * - ``known_certs.json``
+     - Stores trusted TLS certificate fingerprints for Morpheus appliances with self-signed or untrusted certificates.
+
+**Resetting the Installer:**
+
+To completely reset the installer to a clean state:
+
+**macOS:**
+
+.. code-block:: bash
+
+   rm -rf ~/Library/Application\ Support/Morpheus\ Manager\ Installer/
+   rm -rf ~/Library/Logs/Morpheus\ Manager\ Installer/
+
+**Windows (PowerShell):**
+
+.. code-block:: powershell
+
+   Remove-Item -Recurse -Force "$env:APPDATA\Morpheus Manager Installer"
+
+.. tip:: If you are only experiencing SSH host key warnings (e.g., after re-imaging a host), you can delete just ``known_hosts.json`` rather than resetting everything.

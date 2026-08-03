@@ -16,3 +16,4 @@ Tools
   migrations/migrations.rst
   ai/ai.rst
   hvmcli/hvmcli.rst
+  hpe_vm/hpe_vm.rst

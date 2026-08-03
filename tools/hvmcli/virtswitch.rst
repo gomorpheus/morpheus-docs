@@ -5,6 +5,8 @@ Manage Virtual Switches on the HVM host. Virtual Switches abstract host-level ne
 
 .. danger:: Direct use of ``hvmcli virtswitch`` commands can disrupt host networking and cause loss of connectivity. It is **highly recommended** to manage Virtual Switches through the Morpheus UI (Infrastructure > Clusters > Network > Virtual Switches) instead. Only use these CLI commands when directed by HPE support or when the Morpheus UI is unavailable.
 
+.. important:: The ``virtswitch`` namespace is only available on **HVM OS Ubuntu 26.04+** with **Cluster Layout 2.0**. On HVM OS Ubuntu 24.04, this namespace is hidden and unavailable.
+
 Commands
 ````````
 
