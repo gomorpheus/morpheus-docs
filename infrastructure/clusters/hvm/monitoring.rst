@@ -1,7 +1,7 @@
 Monitoring & Health Baselines
 ==============================
 
-This section describes what a healthy HVM 1.3 cluster looks like, key metrics to monitor, and recommended alert thresholds.
+This section describes what a healthy layout 1.3 or 2.0 HVM cluster looks like, key metrics to monitor, and recommended alert thresholds.
 
 What Healthy Looks Like
 -------------------------

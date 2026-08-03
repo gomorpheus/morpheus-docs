@@ -1,12 +1,12 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-07-23T00:50:15Z · projected from 157 source nodes_
+_Last refreshed: 2026-07-30T14:47:11Z · projected from 160 source nodes_
 
 ## Surfaces
 
 | Surface | Stage | Path(s) | Last touched | Driver spec |
 |---|---|---|---|---|
-| (unassigned) | — | — | — | 149 specs without surface |
+| (unassigned) | — | — | — | 152 specs without surface |
 
 _Run `hero snapshot assign` to bucket unassigned specs._
 
@@ -86,6 +86,7 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 - **"Docs Catch-Up: Sync to HPE Public Portal 8.1.2 Content"** (surface: —) — 0/13 specs done
 - **Field Feedback Documentation Improvements** (surface: —) — 1/14 specs done; in flight: docs-cluster-ha-dynamic-placement, docs-fc-storage-connection, docs-host-passthrough-guide, docs-storage-network-interfaces-hvm, docs-tagged-bonds-guide, docs-virtual-image-options-reference, docs-windows-cloud-guest-customization, docs-windows-domain-join-guide, docs-windows-migration-conflict-resolution
 - **"Documentation Gap Analysis & Sprint Plan (9.0.0)"** (surface: —) — 0/0 specs done
+- **"License Socket Consumption Documentation"** (surface: —) — 0/2 specs done
 - **Migrations Overview: Linux Driver Injection Details** (surface: —) — 0/0 specs done
 - **"HVM 1.3 Cluster Layouts Documentation"** (surface: —) — 0/0 specs done
 - **"HPE Morpheus Enterprise Documentation Site"** (surface: —) — 14/14 specs done
@@ -111,12 +112,13 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Open risks & blockers
 
-- **Stale-in-flight (1):** `hvm-13-cluster-docs` (48d).
-- **Unassigned specs (149) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
+- **Blocked specs (1):** `docs-license-consumption-examples` (waits on docs-license-consumption-reference).
+- **Stale-in-flight (1):** `hvm-13-cluster-docs` (55d).
+- **Unassigned specs (152) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
-- Specs covered: 0/149 (0%)
-- Projection generation: 0ms · Source nodes: 157
+- Specs covered: 0/152 (0%)
+- Projection generation: 0ms · Source nodes: 160
 

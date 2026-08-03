@@ -1,7 +1,7 @@
 Storage Lifecycle
 =================
 
-This section covers Day-2 storage operations on an HVM 1.3 cluster, including adding and removing datastores, managing iSCSI targets, and expanding storage capacity.
+This section covers Day-2 storage operations on layout 1.3 and 2.0 HVM clusters, including adding and removing datastores, managing iSCSI targets, and expanding storage capacity.
 
 Adding a New Datastore
 -----------------------
@@ -245,7 +245,7 @@ Host Requirements
 
 Each HVM host must have:
 
-- Linux kernel 5.15+ (included in Ubuntu 24.04 used by HVM 1.3 cluster layout)
+- Linux kernel 5.15+ (included in the HVM OS versions used by layouts 1.3 and 2.0)
 - The ``nvme-tcp`` kernel module loaded
 - The ``nvme-cli`` package installed (for ``nvme connect`` and discovery)
 - Network connectivity to the NVMe/TCP target on the configured port (default: 4420)

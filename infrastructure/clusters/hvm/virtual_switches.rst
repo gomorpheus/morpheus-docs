@@ -3,10 +3,12 @@ Virtual Switches
 
 .. versionadded:: 9.1
 
+.. important:: Virtual Switches are supported on HVM layout 2.0 with HVM OS 26.04. Legacy and layout 1.3 clusters use OVS networking; see :doc:`hvm_networks`.
+
 Virtual Switch Overview
 ```````````````````````
 
-A Virtual Switch is a cluster-level networking abstraction that simplifies host network configuration across all HVM compute nodes. Rather than manually configuring bridges, bonds, and VLANs on each host via CLI, Virtual Switches allow administrators to define network intent once and have it applied consistently across the entire cluster.
+A Virtual Switch is a cluster-level networking abstraction that simplifies host network configuration across layout 2.0 HVM compute nodes. Rather than manually configuring bridges, bonds, and VLANs on each host via CLI, Virtual Switches allow administrators to define network intent once and have it applied consistently across the entire cluster.
 
 Virtual Switches manage:
 
@@ -16,7 +18,7 @@ Virtual Switches manage:
 - **VLAN handling** — Tagging traffic for network segmentation
 - **IP addressing** — Assigning host-level IPs for storage and migration networks
 
-Each HVM cluster supports up to **8 Virtual Switches**. A default Virtual Switch named ``virtSwitch0`` is created automatically during cluster provisioning and handles VM network traffic.
+Each layout 2.0 HVM cluster supports up to **8 Virtual Switches**. A default Virtual Switch named ``virtSwitch0`` is created automatically during cluster provisioning and handles VM network traffic.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_list.png
    :alt: Virtual Switches list view

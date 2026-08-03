@@ -4,7 +4,9 @@ Adding and Removing Hosts
 Adding a Host to an Existing Cluster
 -------------------------------------
 
-Hosts can be added to an existing HVM 1.3 cluster to increase compute capacity or improve failure tolerance.
+Hosts can be added to an existing HVM cluster to increase compute capacity or improve failure tolerance.
+
+.. note:: The agent quorum, Corosync, DLM, and GFS2 details on this page apply to layouts 1.3 and 2.0. See :doc:`/infrastructure/clusters/mvm` for Legacy host management.
 
 Prerequisites
 ^^^^^^^^^^^^^
@@ -27,9 +29,9 @@ Procedure
 What Happens Automatically
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a host is added to an existing HVM 1.3 cluster, |morpheus| performs the following automated operations:
+When a host is added to a layout 1.3 or 2.0 cluster, |morpheus| performs the following automated operations:
 
-#. **Package installation and host preparation** — The same provisioning phases run as during initial cluster creation (KVM, Corosync, DLM, OVS networking, firewall, libvirt)
+#. **Package installation and host preparation** — The same provisioning phases run as during initial cluster creation (KVM, Corosync, DLM, layout-specific networking, firewall, libvirt)
 
 #. **Corosync authkey distribution** — The cluster's Corosync authentication key is retrieved from Cypher and installed on the new host
 
@@ -100,7 +102,7 @@ After the new host is provisioned:
 Removing a Host from an Existing Cluster
 ------------------------------------------
 
-Hosts can be removed from an HVM 1.3 cluster when decommissioning hardware, reducing cluster size, or replacing failed nodes.
+Hosts can be removed from an HVM cluster when decommissioning hardware, reducing cluster size, or replacing failed nodes.
 
 .. WARNING:: Removing a host reduces the cluster's failure tolerance. Ensure the remaining cluster size still meets your availability requirements before proceeding.
 
@@ -125,7 +127,7 @@ Procedure
 What Happens Automatically
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a host is removed from an HVM 1.3 cluster, |morpheus| performs the following:
+When a host is removed from a layout 1.3 or 2.0 cluster, |morpheus| performs the following:
 
 #. **GFS2 unmount** — All HPE Clustered Datastores (GFS2 filesystems) are unmounted on the departing host
 

@@ -1,7 +1,7 @@
 Failure Scenarios
 =================
 
-This section documents the expected behavior and timelines for common failure scenarios in an HVM 1.3 cluster.
+This section documents the expected behavior and timelines for common failure scenarios in layout 1.3 and 2.0 HVM clusters.
 
 Scenario 1: Single Host Failure
 --------------------------------

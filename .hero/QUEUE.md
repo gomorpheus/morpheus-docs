@@ -6,7 +6,14 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-07-30T14:47:10Z · 118 ready specs_
+_Generated: 2026-08-03T13:51:08Z · 122 ready specs_
+
+## hvm-13-cluster-docs — "Unified HVM Cluster Documentation"
+_initiative · delivering · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/morpheus-docs/.hero/planning/initiatives/hvm-13-cluster-docs/spec.md)_
+
+---
 
 ## docs-windows-migration-conflict-resolution — Windows VM Migration Conflict Resolution
 _feature · delivering · horizon: now_
@@ -85,10 +92,63 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/m
 
 ---
 
-## hvm-13-cluster-docs — "HVM 1.3 Cluster Layouts Documentation"
-_initiative · delivering · horizon: now_
+## docs-hvm-multidisk-qcow2 — "HVM Multi-Disk QCOW2 Virtual Image Documentation"
+_initiative · in-review · horizon: now_
 
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/morpheus-docs/.hero/planning/initiatives/hvm-13-cluster-docs/spec.md)_
+Documents the `metadata.json` manifest needed to upload multi-disk QCOW2 images for HVM/KVM.
+
+**Status:** in-review - canonical upload and HVM/KVM discovery guidance is implemented and validated.
+
+**Pick up at:** complete Virtual Image and HVM engineering review, focusing on field terminology and metadata-last recovery guidance.
+
+→ `.hero/planning/initiatives/docs-hvm-multidisk-qcow2/spec.md`
+
+**Files:** `library/virtual_images/virtual_images.rst`, `integration_guides/Clouds/mvm/mvm.rst`, `infrastructure/clusters/mvm.rst`, `../morpheus-ui/morpheus-core/grails-app/services/com/morpheus/VirtualImageService.groovy`
+
+---
+
+## docs-qcow2-multidisk-upload — "Multi-Disk QCOW2 Virtual Image Upload"
+_feature · in-review · horizon: now_
+
+Adds the missing `metadata.json` schema and upload order for multi-disk QCOW2 Virtual Images.
+
+**Status:** in-review - canonical schema, workflow, and troubleshooting are implemented and validated.
+
+**Pick up at:** review schema terminology with Virtual Image engineering and approve for completion.
+
+→ `.hero/planning/features/docs-qcow2-multidisk-upload/spec.md`
+
+**Files:** `library/virtual_images/virtual_images.rst`, `../morpheus-ui/morpheus-core/grails-app/services/com/morpheus/VirtualImageService.groovy`, `../morpheus-ui/clouds/mvm/grails-app/services/com/morpheus/provision/KvmProvisionService.groovy`
+
+---
+
+## docs-distributed-worker-guide — "Distributed Worker Deployment and Use-Case Documentation"
+_initiative · in-review · horizon: now_
+
+Builds one source-backed guide for Worker proxy, console/VDI gateway, container, and HVM witness roles.
+
+**Status:** in-review - capability, deployment, and witness guidance is implemented and validated.
+
+**Pick up at:** complete cross-functional review, focusing on witness assignment timing, supported package platforms, and combined-role security guidance.
+
+→ `.hero/planning/initiatives/docs-distributed-worker-guide/spec.md`
+
+**Files:** `administration/integrations/workers.rst`, `infrastructure/vdi/gateways.rst`, `infrastructure/clusters/hvm/stretch_clusters.rst`, `../morpheus-worker/docker-run-worker.sh`, `../morpheus-ui/morpheus-core/grails-app/services/com/morpheus/StatsService.groovy`
+
+---
+
+## docs-distributed-worker-capabilities — "Distributed Worker Capability and Registration Model"
+_feature · in-review · horizon: now_
+
+Explains every Worker role and which registration, key, URL, and assignment enables it.
+
+**Status:** in-review - role and registration guidance is implemented and validated.
+
+**Pick up at:** review capability terminology and combined-role operational guidance, then approve for completion.
+
+→ `.hero/planning/features/docs-distributed-worker-capabilities/spec.md`
+
+**Files:** `administration/integrations/workers.rst`, `infrastructure/vdi/gateways.rst`, `administration/settings/appliance.rst`, `../morpheus-ui/morpheus-ui/grails-app/controllers/com/morpheus/TerminalController.groovy`
 
 ---
 

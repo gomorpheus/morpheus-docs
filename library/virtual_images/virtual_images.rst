@@ -138,6 +138,101 @@ To Add Virtual Image:
 
 .. NOTE:: Existing Image credentials are required for Linux Images that are not Cloud-Init enabled and for Windows Images when Guest Customizations are not used. Cloud-Init and Windows user settings need to be configured in :menuselection:`Administration --> Settings --> Provisioning` when using Cloud-Init or Guest Customizations and new credentials are not set on the Virtual Image.
 
+.. _multi-disk-qcow2-images-for-hvm-kvm:
+
+Multi-Disk QCOW2 Images for HVM/KVM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+HVM/KVM supports Virtual Images containing multiple QCOW2 disks. Upload every QCOW2 file and a JSON manifest named exactly ``metadata.json`` as files on the same Virtual Image. The manifest maps each QCOW2 file to its guest device, disk size, and order.
+
+Without ``metadata.json``, |morpheus| treats a QCOW2 Virtual Image as a single-disk image even when multiple QCOW2 files have been uploaded.
+
+The following example defines a 50 GiB boot disk and a 100 GiB data disk:
+
+.. code-block:: json
+
+   {
+     "disks": [
+       {
+         "file": "root.qcow2",
+         "capacity": 53687091200,
+         "guestDeviceName": "vda",
+         "position": 0,
+         "name": "root",
+         "boot": true
+       },
+       {
+         "file": "data.qcow2",
+         "capacity": 107374182400,
+         "guestDeviceName": "vdb",
+         "position": 1,
+         "name": "data"
+       }
+     ]
+   }
+
+.. list-table:: Multi-disk QCOW2 metadata fields
+   :widths: 24 14 62
+   :header-rows: 1
+
+   * - Field
+     - Required
+     - Description
+   * - ``disks``
+     - Yes
+     - Top-level array containing one object for each uploaded disk.
+   * - ``file``
+     - Yes
+     - Exact, unique filename of the uploaded QCOW2 file, including the ``.qcow2`` extension. Filename matching is case-insensitive.
+   * - ``capacity``
+     - Recommended
+     - Virtual disk capacity in bytes. Convert GiB to bytes with ``GiB × 1073741824``. For example, 50 GiB is ``53687091200`` bytes.
+   * - ``guestDeviceName``
+     - Recommended
+     - Device name presented to the guest, such as ``vda`` for the root disk and ``vdb`` for the first data disk.
+   * - ``position``
+     - Recommended
+     - Zero-based disk order. Use unique, sequential values beginning with ``0``.
+   * - ``name``
+     - No
+     - Descriptive source-disk label, such as ``root`` or ``data``. The displayed image-volume name can be derived from the Virtual Image name instead.
+   * - ``boot``
+     - No
+     - Set to ``true`` on the boot disk. If no disk is marked as bootable, |morpheus| selects the first disk after sorting.
+   * - ``unitNumber``
+     - No
+     - Unit number on a referenced storage controller. Omit for a basic VirtIO disk set.
+   * - ``storageController``
+     - No
+     - Controller reference used when a specific imported controller topology must be preserved. It requires a matching object in a top-level ``storageControllers`` array. Omit both for a basic VirtIO disk set.
+
+Disk records are sorted by controller bus number, unit number, and then ``position``. For a basic manifest without controller fields, ``position`` determines the order. Use distinct filenames, positions, and guest device names to avoid ambiguous mappings.
+
+Only ``disks`` and a resolvable ``file`` value are strictly needed for file discovery, but include the recommended fields shown above so |morpheus| can build predictable disk capacities, devices, and ordering.
+
+To upload a multi-disk QCOW2 image:
+
+#. Navigate to |LibVir| and click :guilabel:`+ ADD`.
+#. Select :guilabel:`QCOW2` as the image format.
+#. Configure the Virtual Image, including Operating System, Cloud-Init, Agent, credentials, VirtIO, and guest tools settings as appropriate for the image.
+#. Select **File** upload. Multi-disk upload requires adding multiple files to the same Virtual Image.
+#. Upload every referenced ``.qcow2`` file and wait for each upload to complete.
+#. Upload ``metadata.json`` last. Uploading the manifest triggers disk-map processing, so all referenced disk files must already be present.
+#. Confirm the file list contains ``metadata.json`` and every filename referenced by its ``disks`` array.
+#. Save the Virtual Image and wait for its status to become Active.
+#. Open the Virtual Image details and verify that every disk is present with the expected capacity, device order, and root disk before provisioning.
+
+.. IMPORTANT:: Do not upload ``metadata.json`` before the QCOW2 files. If the manifest is processed while referenced files are missing, the resulting disk records can be incomplete. Remove and re-upload the manifest after all disk files are present, or recreate the Virtual Image if the stored volume map is incorrect.
+
+Troubleshooting multi-disk uploads:
+
+- **Only one disk is shown:** Confirm the file is named exactly ``metadata.json``, contains a top-level ``disks`` array, and was uploaded after all QCOW2 files.
+- **A disk is missing:** Confirm its ``file`` value exactly matches a unique uploaded filename and includes the ``.qcow2`` extension.
+- **Disk capacity is wrong:** Confirm ``capacity`` is in bytes rather than GiB. Multiply GiB by ``1073741824``.
+- **Wrong disk boots:** Set ``boot`` to ``true`` on the intended root disk and ensure its ordering fields do not conflict with another disk.
+- **Device order is wrong:** Use sequential ``position`` values and matching ``guestDeviceName`` values such as ``vda``, ``vdb``, and ``vdc``.
+- **Manifest is ignored or the image remains invalid:** Validate the file as JSON, ensure there are no comments or trailing commas, and upload the corrected manifest after the disk files.
+
 Virtual Image Options — Cloud Applicability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

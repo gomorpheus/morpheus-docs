@@ -3,6 +3,8 @@ Upgrading Clusters
 
 This section covers upgrade procedures for HVM clusters, including layout upgrades, appliance version upgrades, and agent package updates.
 
+.. important:: A layout upgrade and an HVM OS update are separate operations. Layout 1.3 uses HVM OS/Ubuntu 24.04; layout 2.0 uses HVM OS 26.04. The supported layouts run in parallel. Do not change a cluster's layout or HVM OS outside a documented product workflow.
+
 Layout 1.2 → 1.3 Upgrade
 --------------------------
 
@@ -63,7 +65,7 @@ Post-Upgrade: Corosync Authkey
 Rolling Cluster Updates
 ------------------------
 
-HVM 1.3 clusters support rolling updates where each host is updated one at a time without cluster downtime.
+Layouts 1.3 and 2.0 support rolling updates where each host is updated one at a time without cluster downtime.
 
 Update Process (Per Host)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

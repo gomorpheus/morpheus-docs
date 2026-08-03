@@ -3,6 +3,8 @@ HVM Networks
 
 .. versionadded:: 9.0
 
+.. important:: This page documents OVS networking for Legacy and layout 1.3 clusters. Layout 2.0 uses Linux bridge-based Virtual Switches; see :doc:`virtual_switches`.
+
 Overview
 ````````
 
@@ -28,7 +30,7 @@ General Requirements
 ~~~~~~~~~~~~~~~~~~~~
 
 - The |morpheus| appliance must run version 9.0.0 or later
-- A pre-existing HVM cluster must be available
+- A pre-existing Legacy or layout 1.3 HVM cluster must be available
 - All cluster hosts must be reachable from the |morpheus| appliance
 - Open vSwitch (OVS) must be installed and running on each host
 - Deploy the plugin only on an HVM KVM-based cluster

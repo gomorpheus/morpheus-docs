@@ -21,12 +21,12 @@ The Quorum panel displays:
 Diagnostic Commands
 -------------------
 
-.. NOTE:: HVM 1.3 does not use Pacemaker or ``pcs`` commands. Use the commands below for all cluster diagnostics.
+.. NOTE:: Layouts 1.3 and 2.0 do not use Pacemaker or ``pcs`` commands. Use the commands below for these layouts. Legacy clusters use the Pacemaker diagnostics in :doc:`/infrastructure/clusters/mvm`.
 
 Corosync
 ^^^^^^^^
 
-In HVM 1.3, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for stretch clusters and two-node GFS2 configurations. Corosync's ``Quorate`` state has no impact on cluster operation.
+In layouts 1.3 and 2.0, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for stretch clusters and two-node GFS2 configurations. Corosync's ``Quorate`` state has no impact on cluster operation.
 
 List cluster members:
 
@@ -174,7 +174,7 @@ Corosync Shows Not Quorate
 
 **Symptoms:** ``corosync-quorumtool -s`` shows ``Quorate: No``.
 
-**Impact:** In HVM 1.3, this has **no impact** on cluster operation. The |morpheus| Agent manages its own quorum independently of Corosync's quorate state. Corosync is used only to provide a node list to DLM, not for quorum decisions.
+**Impact:** In layouts 1.3 and 2.0, this has **no impact** on cluster operation. The |morpheus| Agent manages its own quorum independently of Corosync's quorate state. Corosync is used only to provide a node list to DLM, not for quorum decisions.
 
 **When this occurs:**
 

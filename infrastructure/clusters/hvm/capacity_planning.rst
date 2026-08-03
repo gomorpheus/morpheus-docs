@@ -1,7 +1,7 @@
 Capacity Planning
 =================
 
-Proper capacity planning ensures an HVM 1.3 cluster can handle workloads while maintaining the ability to tolerate host failures and perform maintenance operations.
+Proper capacity planning ensures an HVM cluster can handle workloads while maintaining the ability to tolerate host failures and perform maintenance operations.
 
 Memory Math
 -----------

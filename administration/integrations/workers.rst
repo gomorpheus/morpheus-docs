@@ -9,7 +9,36 @@ Distributed Workers |advanced-plus|
 Overview
 ^^^^^^^^
 
-The |morpheus| distributed worker is installed using the same package as the VDI Gateway worker. Organizations which have already deployed VDI Gateway(s) can use the same worker for both purposes if desired, you'd simply need to update configuration in ``/etc/morpheus/morpheus-worker.rb`` and run a reconfigure. When creating a distributed worker or VDI Gateway object in |morpheus| UI, an API key is generated. Adding one or both types of API keys to the worker configuration file determines if the worker is running in VDI gateway and/or distributed worker mode.
+The |morpheus| Worker is a separately deployed service that can proxy Cloud and Agent traffic, route console and VDI sessions, and act as a quorum witness for supported HVM clusters. A single Worker runtime can provide more than one capability, but each capability uses a specific registration and key in |morpheus|.
+
+.. list-table:: Worker capabilities and configuration
+   :widths: 18 22 18 42
+   :header-rows: 1
+
+   * - Capability
+     - Registration
+     - Worker configuration
+     - Assignment and traffic path
+   * - Cloud API proxy and Agent relay
+     - Distributed Worker in |AdmIntDis|
+     - ``worker['worker_key']``
+     - Select the Worker on a supported Cloud. The Worker opens an outbound connection to the |morpheus| appliance and relays traffic to resources it can reach.
+   * - Console gateway
+     - VDI Gateway in |TooVDIGat|
+     - ``worker['apikey']``
+     - Select the gateway on a Network, Cloud, or as Default Console Gateway in |AdmSetApp|. Browser console traffic is redirected to the gateway.
+   * - VDI gateway
+     - VDI Gateway in |TooVDIGat|
+     - ``worker['apikey']``
+     - Assign the gateway to a VDI Pool. User desktop sessions for that Pool are redirected to the gateway.
+   * - HVM quorum witness
+     - Distributed Worker in |AdmIntDis|
+     - ``worker['worker_key']`` and a reachable Worker URL
+     - Select the Worker as the cluster witness. Cluster Hosts contact the Worker URL for quorum arbitration.
+
+The gateway API key and Distributed Worker key are independent. Configure only ``worker['worker_key']`` for Distributed Worker and witness use, only ``worker['apikey']`` for console and VDI gateway use, or both keys to enable combined roles on one runtime. A console gateway is not a separate runtime mode; it is a VDI Gateway registration selected for console routing.
+
+Use separate Worker deployments when gateway sessions, Cloud proxy traffic, and quorum witness traffic require different network zones, independent maintenance windows, fault isolation, or capacity scaling. If roles are combined, the Worker URL, certificates, firewall rules, and availability design must satisfy every enabled role.
 
 **Supported Cloud Types**
 
@@ -56,6 +85,8 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
 - **Storage:** 10 GB storage minimum recommended. Storage is required for installation packages and log files
 - **CPU:** 4-core minimum recommended
 - Network connectivity **to** the |morpheus| appliance over TCP 443 (HTTPS)
+- Inbound connectivity from browsers when the Worker is used as a console or VDI gateway
+- Inbound connectivity from every participating HVM Host when the Worker is used as a witness
 - Superuser privileges via the ``sudo`` command for the user installing the |morpheus| worker package
 - Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may be required for RPM distros
 
@@ -112,16 +143,34 @@ With the worker configured in |morpheus|, the next step is to update supported C
 
 With the API key in hand and configuration complete in |morpheus| UI, head back to the worker box. Configure the gateway by editing ``/etc/morpheus/morpheus-worker.rb`` and updating the following:
 
+**Distributed Worker or witness only:**
+
    .. code-block:: rb
 
-       worker_url = 'https://gateway_worker_url' # This is the worker URL the Morpheus appliance can resolve and reach on 443
+       worker_url = 'https://worker.example.com'
+       worker['appliance_url'] = 'https://morpheus.example.com'
+       worker['worker_key'] = 'DISTRIBUTED WORKER KEY'
+
+**Console or VDI gateway only:**
+
+   .. code-block:: rb
+
+       worker_url = 'https://worker.example.com'
+       worker['appliance_url'] = 'https://morpheus.example.com'
+       worker['apikey'] = 'VDI GATEWAY API KEY'
+
+**Combined Distributed Worker and gateway roles:**
+
+   .. code-block:: rb
+
+       worker_url = 'https://worker.example.com' # URL used to reach this Worker
        worker['appliance_url'] = 'https://morpheus_appliance_url' # The resolvable URL or IP address of Morpheus appliance which the worker can reach on port 443
-       worker['apikey'] = 'API KEY FOR THIS GATEWAY' # VDI Gateway API Key generated from Morpheus Appliance VDI Pools > VDI Gateways configuration. For worker only mode, a value is still required but can be any value, including the 'API KEY FOR THIS GATEWAY' default template value
+       worker['apikey'] = 'VDI GATEWAY API KEY'
        worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API Key from Administration > Integrations > Distributed Workers configuration
        worker['proxy_address'] = 'http://proxy.address:1234' # For environments in which the worker must go through a proxy to communicate with the Morpheus appliance or other resources, configure the address
        worker['no_proxy'] = 'vcenter.example.com,192.168.xx.xx' # A comma-separated list of resources that should be accessed directly and not through the proxy
 
-.. NOTE:: By default the worker_url uses the machine's hostname, ie ``https://your_machine_name``. The default ``worker_url`` value can be changed by editing ``/etc/morpheus/morpheus-worker.rb`` and changing the value of ``worker_url``. Additional appliance configuration options are available below.
+.. NOTE:: ``worker_url`` identifies the Worker service. ``worker['appliance_url']`` identifies the |morpheus| appliance. Do not interchange them. By default, ``worker_url`` uses the Worker's hostname. For gateway or witness use, set it to a stable URL that every required client can resolve, reach, and trust.
 
 After all configuration options have been set, run ``sudo morpheus-worker-ctl reconfigure`` to install and configure the worker, nginx and guacd services:
 
@@ -136,6 +185,127 @@ The worker reconfigure process will install and configure the worker, nginx and 
 .. NOTE:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-worker-ctl reconfigure`` again.
 
 Once the installation is complete the morpheus worker service will automatically start and open a web socket with the specified |morpheus| appliance. To monitor the startup process, run ``morpheus-worker-ctl tail`` to tail the logs of the worker, nginx and guacd services. Individual services can be tailed by specifying the service, for example ``morpheus-worker-ctl tail worker``
+
+Verify package service health before assigning traffic:
+
+.. code-block:: bash
+
+   sudo morpheus-worker-ctl status
+   sudo morpheus-worker-ctl tail worker
+
+Container Installation
+^^^^^^^^^^^^^^^^^^^^^^
+
+The Worker is also published as the `morpheusdata/morpheus-worker <https://hub.docker.com/r/morpheusdata/morpheus-worker>`_ container image. Use a version tag approved for the |morpheus| Manager release. Do not use ``latest`` for production because it can point to a different product version. The examples below use the confirmed ``9.0.2`` tag; replace it when deploying with another supported Manager release. During Docker Hub maintenance, a valid tag may temporarily be absent from the web or API tag listing.
+
+The image exposes HTTP on port 8080 and HTTPS on port 8443. The following variables configure its roles:
+
+.. list-table:: Worker container environment variables
+   :widths: 28 18 54
+   :header-rows: 1
+
+   * - Variable
+     - Required
+     - Purpose
+   * - ``MORPHEUS_URL``
+     - Yes
+     - URL of the |morpheus| appliance that the Worker connects to.
+   * - ``MORPHEUS_WORKER_KEY``
+     - For Distributed Worker or witness roles
+     - API key generated by the Distributed Worker record in |AdmIntDis|.
+   * - ``MORPHEUS_KEY``
+     - For console or VDI gateway roles
+     - API key generated by the VDI Gateway record in |TooVDIGat|. Omit it for Worker-only deployments.
+   * - ``MORPHEUS_SELF_SIGNED``
+     - No
+     - Set to ``true`` to generate a self-signed HTTPS listener for testing. Use a trusted certificate or terminate TLS at a trusted load balancer in production.
+   * - ``MORPHEUS_SSL_ALIAS`` and ``MORPHEUS_SSL_PASSWORD``
+     - With PKCS#12 TLS
+     - Alias and password for ``/etc/certs/cert.p12`` mounted into the container.
+   * - ``https_proxy``
+     - No
+     - Outbound HTTPS proxy used by the Worker's HTTP client.
+
+Set ``WORKER_IMAGE_TAG`` to the approved tag before running these examples:
+
+.. code-block:: bash
+
+   export WORKER_IMAGE_TAG=9.0.2
+
+**Distributed Worker only:**
+
+.. code-block:: bash
+
+   docker run -d --name morpheus-worker \
+     -p 8080:8080 \
+     -e MORPHEUS_URL=https://morpheus.example.com \
+     -e MORPHEUS_WORKER_KEY=<distributed-worker-key> \
+     morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}
+
+A witness also uses ``MORPHEUS_WORKER_KEY``, but it must publish a trusted endpoint reachable from every participating Host. Use the production HTTPS example below for a witness container.
+
+**Console or VDI gateway only with a test self-signed listener:**
+
+.. code-block:: bash
+
+   docker run -d --name morpheus-worker \
+     -p 8443:8443 \
+     -e MORPHEUS_URL=https://morpheus.example.com \
+     -e MORPHEUS_KEY=<vdi-gateway-key> \
+     -e MORPHEUS_SELF_SIGNED=true \
+     morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}
+
+**Combined Distributed Worker and gateway roles:**
+
+.. code-block:: bash
+
+   docker run -d --name morpheus-worker \
+     -p 8443:8443 \
+     -e MORPHEUS_URL=https://morpheus.example.com \
+     -e MORPHEUS_WORKER_KEY=<distributed-worker-key> \
+     -e MORPHEUS_KEY=<vdi-gateway-key> \
+     -e MORPHEUS_SELF_SIGNED=true \
+     morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}
+
+For production HTTPS or witness use, mount a PKCS#12 certificate and omit ``MORPHEUS_SELF_SIGNED``:
+
+.. code-block:: bash
+
+   docker run -d --name morpheus-worker \
+     -p 8443:8443 \
+     -v /secure/path/cert.p12:/etc/certs/cert.p12:ro \
+     -e MORPHEUS_URL=https://morpheus.example.com \
+     -e MORPHEUS_WORKER_KEY=<distributed-worker-key> \
+     -e MORPHEUS_SSL_ALIAS=<certificate-alias> \
+     -e MORPHEUS_SSL_PASSWORD=<certificate-password> \
+     morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}
+
+After startup, verify that the container is running and healthy, that the configured Worker or gateway appears active in |morpheus|, and that clients for each enabled role can reach the published URL:
+
+.. code-block:: bash
+
+   docker ps --filter name=morpheus-worker
+   docker inspect --format '{{.State.Health.Status}}' morpheus-worker
+   docker logs morpheus-worker
+
+The image health check verifies the bundled Guacamole service. Also validate the |morpheus| registration and the end-to-end traffic path for each enabled role. Upgrade by validating a new release-compatible tag, recreating the container with the same registration keys and certificate configuration, and repeating the role-specific checks.
+
+Witness Configuration
+^^^^^^^^^^^^^^^^^^^^^
+
+A Distributed Worker can provide quorum witness services for HVM 1.3 or later clusters using an HPE Shared File System (GFS2) datastore. This includes two-node GFS2 clusters and stretch clusters with site groups.
+
+The **Worker URL** on the Distributed Worker record is mandatory for witness use. |morpheus| uses this value to construct the ``witnessUrl`` sent to each cluster Host. Every participating Host must be able to resolve the URL, route to the Worker listener, and trust its TLS certificate. The Worker's outbound connection to the |morpheus| appliance does not prove that Hosts can reach the witness.
+
+Before assigning a witness:
+
+#. Create the Distributed Worker record in |AdmIntDis| and set **Worker URL** to the stable client-facing URL for the Worker.
+#. Configure the runtime with the record's ``worker_key`` or ``MORPHEUS_WORKER_KEY``.
+#. Verify that the Worker shows as active in |morpheus|.
+#. From every cluster Host, resolve the Worker URL and make an HTTPS connection to it. A successful TLS connection or HTTP response confirms the path; do not disable certificate validation in production.
+#. Ensure firewalls and load balancers preserve the witness path and do not require interactive authentication.
+
+For cluster assignment and quorum validation, see :doc:`/infrastructure/clusters/hvm/stretch_clusters`.
 
 Highly-Available (HA) Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

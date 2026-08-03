@@ -4,7 +4,7 @@ Building New HVM Clusters
 Prerequisites
 -------------
 
-Before creating an HVM 1.3 cluster, ensure the following requirements are met:
+Before creating an HVM cluster, identify the target layout and ensure the following requirements are met:
 
 .. list-table::
    :widths: 30 70
@@ -13,7 +13,7 @@ Before creating an HVM 1.3 cluster, ensure the following requirements are met:
    * - Requirement
      - Details
    * - Operating System
-     - Ubuntu 24.04 LTS (HPE's HVM OS recommended)
+     - HVM OS/Ubuntu 24.04 for layout 1.3; HVM OS 26.04 for layout 2.0
    * - Minimum Hosts
      - 3 hosts for a single-site cluster
    * - CPU
@@ -35,7 +35,7 @@ Cluster Creation
 #. Navigate to ``Infrastructure > Clusters``
 #. Click :guilabel:`+ Add Cluster`
 #. Select **HVM** as the cluster type
-#. Select the **HVM 1.3** layout
+#. Select the required layout: **HVM 1.3** for HVM OS/Ubuntu 24.04 or **HVM 2.0** for HVM OS 26.04
 #. Complete the following fields:
 
    .. list-table::
@@ -91,13 +91,15 @@ Installs required packages on all hosts:
 - jq
 - nfs-common
 
-Phase 2: OVS Networking
+Phase 2: Host Networking
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configures Open vSwitch networking:
+Configures the networking model for the selected layout:
 
-- Creates bridges for management, compute, and overlay networks
-- Configures libvirt Management network
+- **Layout 1.3:** Creates OVS bridges for management, compute, and overlay networks and configures the libvirt Management network
+- **Layout 2.0:** Creates the default Virtual Switch and applies Linux bridge networking through ``hvmcli``
+
+See :doc:`hvm_networks` for layout 1.3 networking or :doc:`virtual_switches` for layout 2.0 networking.
 
 Phase 3: Host Preparation
 ^^^^^^^^^^^^^^^^^^^^^^^^^

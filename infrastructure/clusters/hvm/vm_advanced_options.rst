@@ -138,7 +138,7 @@ Drivers & Graphics
      - Description
    * - Attach VirtIO Drivers
      - Off
-     - Attaches a VirtIO drivers ISO to the VM as a secondary CD-ROM device. Enable this when provisioning Windows guests from an ISO to install VirtIO storage and network drivers during OS setup. See the HVM Clusters (Legacy) guide for a detailed Windows image preparation walkthrough. *Provision only.*
+     - Attaches a VirtIO drivers ISO to the VM as a secondary CD-ROM device. Enable this when provisioning Windows guests from an ISO to install VirtIO storage and network drivers during OS setup. See :doc:`guest_os_notes` for the installation procedure. *Provision only.*
    * - Disable Emulated Graphics
      - Off
      - Disables the emulated video/graphics adapter. Use this for headless VMs that do not require console access, such as dedicated appliances or GPU-passthrough workloads where the physical GPU provides the display.

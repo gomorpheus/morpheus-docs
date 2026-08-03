@@ -57,7 +57,7 @@ The HVM OS is released **quarterly** alongside each Minor Manager release. It is
      - Standard HVM host OS for cluster layout 1.3
    * - 26.04
      - Ubuntu 26.04 LTS
-     - Required for confidential compute functions. Introduced in |morpheus| 9.1.0.
+     - Standard HVM host OS for cluster layout 2.0. Required for confidential compute functions. Introduced in |morpheus| 9.1.0.
 
 **HVM OS updates between releases:**
 
@@ -69,7 +69,7 @@ HPE maintains controlled Apt mirrors that deliver quarterly security and kernel 
 
 Updates available through the HPE Apt mirrors have been validated against the current |morpheus| release. No additional compatibility verification is required when using the official mirrors.
 
-**Compatibility:** HVM OS versions are compatible with Manager releases within the same Major version. For example, HVM OS 24.04 and 26.04 are both compatible with all 9.x Manager releases.
+**Compatibility:** HVM OS compatibility depends on both the Manager release and cluster layout. HVM OS 24.04 is used by layout 1.3 and HVM OS 26.04 is used by layout 2.0. See :doc:`compatibility` for the supported combinations.
 
 Agent
 ^^^^^^
@@ -168,15 +168,15 @@ Rolling vs Non-Rolling Upgrades
 HVM Cluster Layout Upgrades
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-HVM cluster layout upgrades (e.g., 1.2 → 1.3) are a **separate operation** from Manager upgrades. A layout upgrade updates the cluster's architecture (quorum system, datastore management, etc.) and is performed via the cluster detail page after the Manager has been upgraded. See :doc:`/infrastructure/clusters/hvm/upgrading` for the detailed procedure.
+HVM cluster layout upgrades are a **separate operation** from Manager upgrades. Layout 1.2 can be upgraded to 1.3 using the supported cluster action. Layouts 1.3 and 2.0 are maintained in parallel; no in-place transition between them is documented. See :doc:`/infrastructure/clusters/hvm/upgrading` for supported procedures.
 
 HVM OS Upgrades
 ^^^^^^^^^^^^^^^^
 
-HVM host OS upgrades (e.g., 24.04 → 26.04) are performed per-host using the host maintenance workflow:
+HVM host OS updates within the same layout are performed per-host using the host maintenance workflow:
 
 #. Place the host in maintenance mode (VMs evacuate to other hosts)
 #. Perform the OS upgrade
 #. Exit maintenance mode
 
-This can be done as a rolling operation across cluster hosts with no VM downtime.
+This can be done as a rolling operation across cluster hosts with no VM downtime. Do not change a layout 1.3 Host from HVM OS 24.04 to HVM OS 26.04 as an operating-system update; HVM OS 26.04 is paired with layout 2.0.
