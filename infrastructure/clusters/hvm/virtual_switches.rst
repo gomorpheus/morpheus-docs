@@ -16,7 +16,38 @@ Virtual Switches manage:
 - **VLAN handling** — Tagging traffic for network segmentation
 - **IP addressing** — Assigning host-level IPs for storage and migration networks
 
-Each HVM cluster supports up to **8 Virtual Switches**. A default Virtual Switch named ``virtSwitch0`` is created automatically during cluster provisioning and handles VM network traffic.
+Each HVM cluster supports up to **8 Virtual Switches**. A default Virtual Switch named ``vs0`` is created automatically during cluster provisioning and handles VM network traffic.
+
+Default Virtual Switch Behavior (vs0 — General)
+````````````````````````````````````````````````
+
+When a cluster is provisioned, a default Virtual Switch called ``vs0`` (type: **General**) is created on the management interface. Understanding its default behavior is critical before adding additional segments:
+
+**Default traffic on the management interface:**
+
+- **Live Migration** traffic flows over the management interface by default, even if no explicit Live Migration segment has been created. A dedicated Live Migration segment is only required when you want to isolate migration traffic onto a separate VLAN or subnet.
+- **Data storage traffic** (NFS and iSCSI) can also flow over the management interface through ``vs0`` by default. Creating dedicated Data segments is recommended for performance and isolation in production environments.
+
+**Adding segments to vs0:**
+
+When you edit ``vs0`` to add **Data (General)** and/or **Live Migration** segments on the same Virtual Switch as the management interface, VLAN tagging is required:
+
+- Adding **Data (General)** requires a VLAN tag and a dedicated IP subnet for storage traffic.
+- Adding **Live Migration** requires a VLAN tag and a dedicated IP subnet for migration traffic.
+- If both are added to the same Virtual Switch, each must have its **own VLAN and subnet**.
+
+**Splitting Data and Live Migration onto different networks:**
+
+When both **Data (General)** and **Live Migration** are selected on the same Virtual Switch, a checkbox appears: *"Data (General) and Live Migration are on different networks"*. When enabled:
+
+- Two separate VLAN tags are required (one for Data, one for Live Migration)
+- Two separate IP subnets must be configured
+- This provides full isolation between storage and migration traffic while sharing the same physical uplinks
+
+.. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_add_split_option.png
+   :alt: Option to put Data (General) and Live Migration on different networks
+
+**Key constraint:** Only **one Live Migration interface** is supported per cluster. If you configure Live Migration on a Virtual Switch, no other Virtual Switch in the same cluster can carry Live Migration traffic.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_list.png
    :alt: Virtual Switches list view
@@ -52,7 +83,7 @@ The available traffic types are:
    * - **VM Network**
      - Virtual machine network connectivity. Uses a VLAN-aware Linux bridge for VM-to-network communication.
      - Required for VMs to communicate with external networks
-   * - **Data (NFS)**
+   * - **Data (General)**
      - NFS storage network for shared datastores. Supports bonding for redundancy and throughput.
      - Connecting hosts to NFS-based shared storage
    * - **Live Migration**
@@ -82,9 +113,9 @@ Multiple traffic types can be combined on a single Virtual Switch, subject to th
    * - VM Network
      - Yes
      - Yes
-     - Live Migration, Data (NFS)
+     - Live Migration, Data (General)
      - Default Virtual Switch type
-   * - Data (NFS)
+   * - Data (General)
      - Yes
      - Yes
      - VM Network, Live Migration
@@ -92,7 +123,7 @@ Multiple traffic types can be combined on a single Virtual Switch, subject to th
    * - Live Migration
      - Yes
      - Yes
-     - VM Network, Data (NFS)
+     - VM Network, Data (General)
      - Cannot share with iSCSI
    * - Data (iSCSI)
      - **No**
@@ -109,21 +140,21 @@ Multiple traffic types can be combined on a single Virtual Switch, subject to th
 
    - **iSCSI** requires a dedicated Virtual Switch with a single NIC per host. Bonding is not supported because redundancy is provided by iSCSI multipath at the protocol level.
    - **SDN** requires its own dedicated Virtual Switch and cannot coexist with other traffic types.
-   - **Data (NFS) and Live Migration** can optionally be split onto different networks (separate IP ranges) even when on the same Virtual Switch.
+   - **Data (General) and Live Migration** can optionally be split onto different networks (separate IP ranges) even when on the same Virtual Switch.
 
 Combining Traffic Types
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 You can select multiple traffic types for a single Virtual Switch. When combining types, the wizard adapts:
 
-- Selecting **VM Network + Data (NFS) + Live Migration** enables a 5-step wizard (Select Type → Configure → IPv4 Settings → Port Settings → Review).
-- When both **Data (NFS)** and **Live Migration** are selected, a checkbox appears: *"Data (NFS) and Live Migration are on different networks"*. Enabling this allows you to assign separate IP ranges to each traffic type.
+- Selecting **VM Network + Data (General) + Live Migration** enables a 5-step wizard (Select Type → Configure → IPv4 Settings → Port Settings → Review).
+- When both **Data (General)** and **Live Migration** are selected, a checkbox appears: *"Data (General) and Live Migration are on different networks"*. Enabling this allows you to assign separate IP ranges to each traffic type.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_add_multi_type.png
    :alt: Multiple traffic types selected with checkmarks
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_add_split_option.png
-   :alt: Option to put Data (NFS) and Live Migration on different networks
+   :alt: Option to put Data (General) and Live Migration on different networks
 
 Virtual Switch Prerequisites
 ````````````````````````````
@@ -152,7 +183,7 @@ Step 1: Select Type
 
 .. note:: The Virtual Switch name is limited to 12 characters because it is used to derive the underlying Linux bridge name (name + ``-br`` suffix), which must fit within the Linux 15-character interface name limit.
 
-.. tip:: The default ``virtSwitch0`` created during cluster provisioning can be renamed and edited, but it should not be deleted unless an alternative VM Network Virtual Switch is in place. At least one Virtual Switch with the VM Network traffic type must exist for VMs to have network connectivity.
+.. tip:: The default ``vs0`` created during cluster provisioning can be renamed and edited, but it should not be deleted unless an alternative VM Network Virtual Switch is in place. At least one Virtual Switch with the VM Network traffic type must exist for VMs to have network connectivity.
 
 Step 2: Configure
 ~~~~~~~~~~~~~~~~~
@@ -218,16 +249,18 @@ Step 3: IPv4 Settings
 Configure IP addressing for traffic types that require host-level IPs (Data and Live Migration networks). VM Network traffic does not require host IPs since VMs get their own addresses.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_ipv4_settings.png
-   :alt: IPv4 Settings with Data (NFS) and Live Migration on different networks
+   :alt: IPv4 Settings with Data (General) and Live Migration on different networks
 
 For each traffic type requiring IP configuration:
 
 - **Start IP Address** — The first IP in the range to assign to hosts. Each host in the cluster receives the next sequential IP.
 - **Subnet Mask** — Network subnet mask (e.g., ``255.255.255.0``)
 - **Default Gateway** — Gateway for this traffic network
+
+.. note:: Gateways specified for Data (General), Live Migration, and iSCSI segments are stored as **metadata only** within the Virtual Switch configuration. They are **not** applied to the host routing table. Only the **Management Gateway** (configured during cluster provisioning) is actively used for routing. These gateway values are retained for documentation and future reference purposes.
 - **Auto Apply to Servers** — When enabled, the IP addresses are automatically distributed and applied to all current cluster hosts
 
-When **Data (NFS) and Live Migration are on different networks**, separate IP configuration sections appear for each traffic type, allowing you to place them on different subnets.
+When **Data (General) and Live Migration are on different networks**, separate IP configuration sections appear for each traffic type, allowing you to place them on different subnets.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_ipv4_single_type.png
    :alt: IPv4 Settings for a single traffic type
@@ -251,7 +284,7 @@ Configure VLAN tagging and MTU settings.
   - **1500** — Standard MTU (default)
   - **9000** — Jumbo frames (recommended for storage and migration networks)
 
-.. tip:: Use jumbo frames (MTU 9000) for Data (NFS), Data (iSCSI), and Live Migration traffic types to improve throughput and reduce CPU overhead. Ensure all network infrastructure (switches, routers) between hosts supports the configured MTU.
+.. tip:: Use jumbo frames (MTU 9000) for Data (General), Data (iSCSI), and Live Migration traffic types to improve throughput and reduce CPU overhead. Ensure all network infrastructure (switches, routers) between hosts supports the configured MTU.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_port_settings_single.png
    :alt: Port Settings for a single traffic type
@@ -299,7 +332,7 @@ Click the delete icon (trash) next to a Virtual Switch to remove it. A confirmat
 
    - You cannot delete a Virtual Switch that has active VMs or networks attached to it.
    - Deleting a Virtual Switch removes all associated host networking configuration (bridges, bonds, VLANs) from every node in the cluster.
-   - The default ``virtSwitch0`` should not be deleted unless you have an alternative VM network configured.
+   - The default ``vs0`` should not be deleted unless you have an alternative VM network configured.
 
 Virtual Switch Best Practices
 `````````````````````````````
@@ -313,7 +346,7 @@ Network Design
   - 2 NICs (bonded) for VM Network
   - 2 NICs (bonded) for Data/Live Migration
 
-- **If only 2 NICs are available**, you can combine VM Network + Data (NFS) + Live Migration on a single bonded Virtual Switch. Use VLANs to segregate traffic logically.
+- **If only 2 NICs are available**, you can combine VM Network + Data (General) + Live Migration on a single bonded Virtual Switch. Use VLANs to segregate traffic logically.
 
 Bond Mode Selection
 ~~~~~~~~~~~~~~~~~~~
@@ -354,7 +387,7 @@ A single Virtual Switch with a bonded uplink (Active-Backup or LACP) can carry m
    * - VM Network
      - 100
      - Guest VM traffic, tagged on VLAN 100
-   * - Data (NFS)
+   * - Data (General)
      - 200
      - NFS storage traffic to storage array, tagged on VLAN 200
    * - Live Migration
@@ -375,7 +408,7 @@ MTU Recommendations
 ~~~~~~~~~~~~~~~~~~~
 
 - **VM Network**: Standard MTU (1500) is usually sufficient.
-- **Data (NFS)**: Jumbo frames (9000) recommended for throughput.
+- **Data (General)**: Jumbo frames (9000) recommended for throughput.
 - **Data (iSCSI)**: Jumbo frames (9000) recommended for throughput.
 - **Live Migration**: Jumbo frames (9000) recommended to reduce migration time.
 - **SDN**: Match your SDN controller requirements.
@@ -392,6 +425,8 @@ Virtual Switch Limitations
 - **SDN** Virtual Switches cannot share uplinks with other traffic types.
 - Bond mode changes on an active Virtual Switch may cause brief connectivity interruption.
 - All hosts in the cluster must have the selected uplink NIC(s) available. When using **Uniform uplinks**, ensure consistent NIC naming across hosts. When using **Set uplink NICs per host**, each host must have its individually assigned NIC(s) available.
+- Only **one Live Migration interface** is allowed per cluster. You cannot configure Live Migration on multiple Virtual Switches.
+- When adding **Data (General)** or **Live Migration** segments to the management Virtual Switch (``vs0``), VLAN tagging is required for each segment.
 
 Virtual Switch Troubleshooting
 ``````````````````````````````
