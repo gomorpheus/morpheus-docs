@@ -3,6 +3,37 @@ HVM Clusters
 
 HVM clusters provide KVM-based virtualization, centralized lifecycle management, workload placement, shared storage, monitoring, migration, and high availability. This guide covers every supported HVM cluster layout. Use the layout matrix to identify the operating system, networking model, and management tools that apply to a cluster.
 
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   architecture
+   building_clusters
+   managing_hosts
+   host_maintenance
+   virtual_switches
+   hvm_networks
+   vm_migration
+   vm_placement
+   host_vm_groups
+   vm_compute
+   vm_advanced_options
+   /infrastructure/clusters/hardware-passthrough
+   guest_os_notes
+   snapshots
+   storage_operations
+   upgrading
+   monitoring
+   alarms
+   maximums
+   capacity_planning
+   two_node_clusters
+   stretch_clusters
+   console_keyboards
+   troubleshooting
+   failure_scenarios
+   /infrastructure/clusters/mvm
+
 Supported Layouts
 -----------------
 
@@ -44,32 +75,3 @@ Unless a section contains a layout notice, it applies to layouts 1.3 and 2.0. Le
 - For layout 2.0 networking, see :doc:`virtual_switches`.
 - For layout 2.0 host commands, see :doc:`/tools/hvmcli/hvmcli`.
 - For layout and HVM OS upgrades, see :doc:`upgrading`.
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
-   architecture
-   building_clusters
-   managing_hosts
-   host_maintenance
-   virtual_switches
-   hvm_networks
-   vm_migration
-   vm_placement
-   host_vm_groups
-   vm_compute
-   vm_advanced_options
-   /infrastructure/clusters/hardware-passthrough
-   guest_os_notes
-   snapshots
-   storage_operations
-   upgrading
-   monitoring
-   alarms
-   capacity_planning
-   stretch_clusters
-   console_keyboards
-   troubleshooting
-   failure_scenarios
-   /infrastructure/clusters/mvm

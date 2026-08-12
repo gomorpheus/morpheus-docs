@@ -42,6 +42,18 @@ When an Instance is provisioned and the Agent does not install, verify the follo
 
 * DNS is not configured and the node cannot resolve the appliance. If DNS cannot be configured, the IP address of the |morpheus| appliance can be used as the main or Cloud appliance
 
+Endpoint Security Interference
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+EDR, antivirus, application control, and host firewall products can interrupt different stages of Agent setup. A blocked download or script affects delivery; a denied package manager or file write affects installation; a quarantined ``morphd`` process affects startup; and a denied outbound HTTPS/WSS session affects registration and ongoing communication. An Agent upgrade can encounter the same controls again even when the previous version was permitted.
+
+#. Record the failed stage, timestamp, installation output, and the relevant entry from ``/var/log/morpheus/morpheus-ui/current``. On the target, collect Agent logs from ``/var/log/morpheus-node`` and the security product's prevention or quarantine event.
+#. Confirm DNS resolution and TCP 443 connectivity to the configured Appliance URL. If these checks succeed but the Agent cannot connect, have the security team inspect TLS/websocket filtering and process-specific network policy.
+#. Correlate the event with ``morphd``, the ``morpheus-node-runsvdir`` service, ``/opt/morpheus-node``, ``/etc/morpheus/morpheus-node.yaml``, and ``/var/log/morpheus-node``. Permit only the exact package, process, path, action, or destination shown to be blocked, using the security vendor's approved allowlisting mechanism.
+#. Retry the failed installation or upgrade and verify that the Agent starts, reconnects, and reports in |morpheus|. Preserve the evidence if the targeted rule does not resolve the failure.
+
+Do not prescribe a permanent exclusion for the entire Agent directory, all scripts, all child processes, or all traffic. If temporary security-control disablement is the only available diagnostic, obtain security-policy approval, isolate the test to the affected host and shortest practical interval, re-enable protection immediately, and verify both Agent health and security-control health. Escalate with the collected evidence rather than leaving protection disabled.
+
 SSH
 ^^^
 

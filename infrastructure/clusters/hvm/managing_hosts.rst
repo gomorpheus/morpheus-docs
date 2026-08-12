@@ -99,6 +99,8 @@ After the new host is provisioned:
 
       dlm_tool status -v
 
+#. Compare physical-interface inventory with ``sudo hvmcli interfaces list --filter ethernet``. If an interface was added to the host after enrollment, follow the Netplan and UI refresh procedure in :ref:`hvm-host-prep` before assigning it to a Virtual Switch.
+
 Removing a Host from an Existing Cluster
 ------------------------------------------
 
@@ -111,9 +113,11 @@ Prerequisites
 
 Before removing a host:
 
-- Ensure the resulting cluster will still have quorum (at minimum 3 nodes for a single-site cluster)
+- Confirm the cluster layout and ensure the resulting cluster will still have quorum (at minimum 3 nodes for a single-site cluster)
+- Confirm the Quorum panel reports ACHIEVED, all surviving hosts are reachable, lockspaces are healthy, and shared datastores are mounted with healthy paths
 - Evacuate all VMs from the host using maintenance mode (see :doc:`host_maintenance`)
 - Verify no VMs are pinned to the host that cannot be moved
+- Confirm no local or raw-device VM remains on the host and that remaining hosts have the required VM networks and storage access
 
 Procedure
 ^^^^^^^^^
@@ -121,8 +125,9 @@ Procedure
 #. Place the host in maintenance mode to evacuate VMs (see :doc:`host_maintenance`)
 #. Navigate to ``Infrastructure > Clusters > [Cluster] > Hosts``
 #. Select the host to remove
-#. Click :guilabel:`Remove` or :guilabel:`Delete`
+#. Click :guilabel:`Remove`
 #. Confirm the removal
+#. Wait for the removal operation to finish; do not manually edit Corosync or Agent quorum files
 
 What Happens Automatically
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -174,8 +179,18 @@ Handling Offline Host Removal
 
 If the host to be removed is offline (powered off or unreachable):
 
-- |morpheus| will perform the Corosync configuration update and quorum list update on the remaining online hosts only
-- The departing host does not need to be reachable for removal to succeed
-- If no other hosts are online, |morpheus| will retry the removal for up to one hour before raising an alarm
+- First confirm the host is powered off or otherwise cannot access shared storage. If isolation cannot be proven, do not remove it; contact HPE Support
+- Use the same UI :guilabel:`Remove` action. On layout 1.3 and later, |morpheus| removes the node from the Corosync ring using surviving online hosts and updates Agent quorum membership
+- If the departing node is still active in the Corosync ring, or the updated Corosync configuration cannot be written consistently to all survivors, |morpheus| aborts the reload and raises an alarm rather than risk partitioning the ring
+- If no other hosts are online, cleanup cannot proceed and |morpheus| raises an **Unable to remove host** alarm
 
-.. NOTE:: After removing a failed host, the remaining cluster will automatically recalculate quorum based on the new member count. VMs that were running on the removed host will have already been failed over (if the host was offline for longer than 140 seconds).
+Do not publish or use direct host-shell removal commands as a substitute for this workflow. If the UI operation raises an alarm or cannot establish a safe ring departure, retain the host record and contact HPE Support.
+
+Post-removal Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Confirm the host no longer appears in the cluster Hosts list
+#. Confirm the Quorum panel reports ACHIEVED with the new member count and no removed host under down, fenced, or unclean members
+#. Confirm Corosync and DLM list only the remaining members and lockspaces are healthy
+#. Confirm every shared datastore is mounted and healthy on every remaining host
+#. Confirm evacuated or failed-over VMs run once, on hosts with their required networks and storage

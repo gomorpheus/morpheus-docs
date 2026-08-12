@@ -2,10 +2,11 @@
 title: "Unified HVM Cluster Documentation"
 slug: hvm-13-cluster-docs
 type: initiative
-status: delivering
+status: completed
 horizon: now
 tags: [hvm, clusters, layouts, consolidation]
 priority: 1
+completed_at: 2026-08-03T13:51:51Z
 ---
 
 # Unified HVM Cluster Documentation

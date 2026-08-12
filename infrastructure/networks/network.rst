@@ -1,6 +1,8 @@
 Network
 =======
 
+For the Networks API's match-all Label query format, see :ref:`networks_all_labels`.
+
 .. toctree::
    :maxdepth: 2
 

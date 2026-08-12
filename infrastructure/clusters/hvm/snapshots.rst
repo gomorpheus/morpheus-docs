@@ -53,9 +53,11 @@ Taking a Snapshot
 -----------------
 
 #. Navigate to the VM detail page
-#. Click :guilabel:`Actions` > :guilabel:`Snapshot`
+#. Click :guilabel:`Actions` > :guilabel:`Create Snapshot`
 #. Enter a name for the snapshot
 #. Click :guilabel:`Create`
+
+The Instance action is labeled :guilabel:`Create Snapshot` in current navigation. It appears only for snapshot-capable layouts and users with **Snapshots: Full** permission. See :doc:`/provisioning/instances/managing_instances` for action availability.
 
 For VMs with multiple disks, all disks are snapshotted atomically (when supported by the storage backend). CD-ROM volumes are excluded from snapshots.
 
@@ -130,6 +132,13 @@ Deleting a Snapshot
 - **Alletra:** The snapshot set is deleted from the array.
 
 .. NOTE:: For file-based snapshots, deletion involves a block-commit operation that merges the overlay into the base image. This is an I/O-intensive operation and may take time for large disks.
+
+Image Import Behavior
+---------------------
+
+Existing snapshots are supported when importing an HVM VM as a Virtual Image. For file-based storage, |morpheus| copies and merges the active qcow2 backing chain into a temporary export disk. This operation does not delete or merge the VM's existing snapshots. Other supported storage backends create a temporary export snapshot using their datastore implementation.
+
+The resulting Virtual Image must contain both ``metadata.json`` and every referenced disk artifact. A metadata-only result is an incomplete import, not evidence that existing snapshots must be deleted. Preserve the source VM and snapshots and see :doc:`/library/virtual_images/virtual_images` for verification and escalation guidance.
 
 Limitations
 -----------

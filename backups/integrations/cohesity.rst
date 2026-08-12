@@ -5,6 +5,13 @@ Cohesity
 
 This section discusses the process for integrating Cohesity with |morpheus|, setting backup options during Instance provisioning, restoring Instances from Cohesity backup, and using Cohesity S3 storage.
 
+Supported Clouds
+^^^^^^^^^^^^^^^^
+
+The Cloud types supported for Cohesity **backup** are not established in the bundled integration metadata. Confirm the Cloud type with the Cohesity plugin release notes or HPE Support before selecting Cohesity as a Cloud backup provider.
+
+Cohesity S3 is a separate storage capability. It provides storage servers and buckets for supported storage uses; its availability does not establish that Cohesity backup supports the same Cloud type.
+
 Adding the Integration
 ^^^^^^^^^^^^^^^^^^^^^^
 

@@ -26,6 +26,15 @@ Requirements
 - Morpheus Role permission ``Infrastructure: Clusters > Full`` required for Viewing, Creating, Editing and Deleting Clusters.
 - Morpheus Role permission ``Infrastructure: Clusters > Read`` required for Viewing Cluster list and detail pages.
 
+For HKS networking and planned node service, see :doc:`hks_kube_vip` and :doc:`hks_node_maintenance`.
+
+CNCF Conformance Claim
+^^^^^^^^^^^^^^^^^^^^^^
+
+This documentation does not bundle an official CNCF conformance record that identifies an HKS product name, Kubernetes version, certification status, and validity period. It therefore makes no claim that HKS generally, or every HKS-provisioned Kubernetes version, is CNCF Certified Kubernetes.
+
+Certification is version-specific. Confirm a claim only against the `CNCF Certified Kubernetes product list <https://www.cncf.io/training/certification/software-conformance/>`_ and its linked conformance record. If the exact HKS offering and version are not present, contact HPE before representing the deployment as certified. Kubernetes API compatibility or a successful conformance test run is not, by itself, a published CNCF certification.
+
 Creating Kubernetes Clusters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -385,6 +394,8 @@ The upper section also includes the ACTIONS menu which includes the following fu
 - **VIEW KUBE CONFIG:** Displays the cluster configuration
 - **RUN WORKLOAD:** Run deployments, stateful sets, daemon sets, or jobs and target them to a specific namespace
 - **UPGRADE CLUSTER:** Upgrade the cluster to a higher version of Kubernetes
+
+  .. important:: For HKS 8.1.0, 8.1.1, and 8.1.2 clusters upgrading to Kubernetes v1.35.x or later, remove the deprecated ``--pod-infra-container-image`` flag from ``/var/lib/kubelet/kubeadm-flags.env`` on every control-plane and worker node. Leaving the flag in place causes the upgrade to fail. Current upgrade scripts remove this flag as part of the node upgrade; verify it is absent if an upgrade is interrupted or uses older scripts. This note records the requirement for those historical release lines on the current canonical HKS page because separate versioned source pages are not present in this documentation set.
 - **ADD KUBERNETES WORKER:** Launches a wizard which allows users to configure a new worker for the cluster
 
 Additional monitoring and control panes are located within tabs, some of which contain subtabs.

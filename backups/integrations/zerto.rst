@@ -6,6 +6,13 @@ Overview
 
 By integrating |morpheus| and Zerto, |morpheus| will automatically bring in your pre-existing Zerto replication groups as well as allow you to create and edit replication groups from within |morpheus| UI. Additionally, the Zerto integration can be set as the replication provider to existing compatible Clouds (such as VMware vCenter Clouds) to allow new workloads to be added to replication groups. If needed, new replication groups can also be created at provision time with the newly provisioned VMs added to them. The Zerto integration detail page also provides summary details for the integration as well as listing out replications and replication sites which are available to use with replication groups.
 
+.. important:: This guide does not establish Zerto disaster recovery support for HVM. No HVM/Zerto interoperability evidence, version scope, failover procedure, or failback procedure is bundled with this documentation. See :doc:`/integration_guides/Backups/zerto` for the canonical integration boundary and verify any proposed HVM design with HPE and Zerto.
+
+Supported Clouds
+^^^^^^^^^^^^^^^^
+
+Zerto is a **replication** integration, not a backup provider. The exact Cloud compatibility list is not established in the bundled integration metadata. VMware vCenter is the documented example, but an example is not a support matrix; confirm the Cloud type with the Zerto integration release notes or HPE Support before configuring it as a replication provider.
+
 Adding a Zerto Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

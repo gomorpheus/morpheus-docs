@@ -40,7 +40,7 @@ Firmware & Boot
      - Passes the physical host's SMBIOS/DMI data directly into the guest VM instead of using emulated values. When disabled (default), the guest sees the virtualized identity (manufacturer "Morpheus", product "MVM", and a generated serial number). When enabled, the guest sees the actual physical server's SMBIOS data (manufacturer, product name, serial number, BIOS version, etc.) as if it were running directly on the hardware. This is required for software that validates hardware identity through SMBIOS, such as certain enterprise licenses tied to physical serial numbers or hardware-aware monitoring agents.
    * - Network Boot
      - Off
-     - Enables PXE/network boot for the VM. When enabled, the VM can boot from a network interface, which is useful for customers with established PXE-based deployment automation workflows.
+     - Enables PXE/network boot for the VM. When enabled, the primary network interface is boot order 1; the root disk and any attached ISO devices follow it in boot order. The selected VM network must reach the DHCP/PXE services used by your environment.
    * - Boot to BIOS/UEFI
      - Off
      - When enabled, the VM boots directly into the BIOS/UEFI firmware setup menu on every restart until this option is disabled. Useful for troubleshooting boot issues or changing firmware settings. *Reconfigure only.*
@@ -74,7 +74,7 @@ QEMU & Virtualization
      - Description
    * - QEMU Arguments
      - (empty)
-     - Custom QEMU command-line arguments passed directly to the hypervisor process. Use this for advanced tuning or enabling features not exposed through the standard options.
+     - Custom QEMU command-line arguments stored on the HVM VM and tokenized into individual arguments when the libvirt/QEMU definition is generated. Available during provisioning and reconfiguration. Use only arguments validated for the QEMU version on the HVM hosts.
    * - Enable Nested Virtualization
      - Off
      - Exposes VMX/SVM CPU flags to the guest, allowing it to run its own hypervisor inside the VM. Required for use cases such as running Docker with hardware virtualization, nested KVM, or Hyper-V inside a VM. *Provision only.*
@@ -99,32 +99,27 @@ The **CPU Model** determines how the host's CPU is presented to guest VMs. This 
    * - Named Model
      - Specifies an exact CPU model name (e.g., ``Skylake-Server``, ``EPYC``). The guest sees only features defined by that model, regardless of what the host actually supports. Maximum portability.
 
-When to Use Host Passthrough
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+CPU Compatibility and Migration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Host-passthrough is the preferred and default mode for all HVM clusters.** Because |morpheus| sets the ``migratable`` flag to ``on`` in the libvirt XML, the hypervisor automatically masks incompatible CPU features during live migration. This means host-passthrough works even in clusters with mixed CPU generations — the hypervisor handles compatibility negotiation transparently.
+The default is **Host Passthrough**. For a VM without nested virtualization, |morpheus| marks this CPU definition as migratable. This flag does not establish that every pair of different physical CPU models is compatible; validate live migration between every host model admitted to the cluster.
 
-**Benefits:**
+A **Named Model** is emitted with exact model matching. Select a model that every source and destination host supports. The product implementation does not automatically select a universal "lowest" CPU model, so do not infer a model from processor age or marketing generation alone.
 
-- Maximum guest performance — exposes all host CPU extensions (AES-NI, AVX-512, SHA, etc.)
-- VMs see the real CPU model name
-- Live migration still works between hosts with different CPU models (migratable flag handles feature masking)
-- No configuration needed — it is the default
+When nested virtualization is enabled with Host Passthrough, |morpheus| marks the CPU non-migratable so VMX/SVM features remain exposed. Treat that VM as ineligible for live migration.
 
-**The only exception** is when nested virtualization is enabled. With nested virtualization, ``migratable`` is set to ``'off'`` because VMX/SVM flags are exposed directly. This means live migration is only supported between hosts with the same CPU model — the hypervisor cannot mask these features during migration.
+See :doc:`vm_migration` for the mixed-host preflight checks.
 
-When to Consider Other CPU Modes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ISO and Network Installation
+----------------------------
 
-**Host-model or named CPU models** are only needed in rare cases:
+For an interactive ISO installation, add an ISO Virtual Image as described in :doc:`/library/virtual_images/virtual_images`, provision the HVM VM from that image, and complete the guest installer from the console. After installation, eject the installation media and restart the VM so it boots from its installed disk.
 
-- You require guaranteed identical CPU feature exposure across all VMs regardless of which host they run on (strict determinism)
-- You need to live-migrate VMs with nested virtualization enabled between hosts with different CPU models (not possible with host-passthrough + nested virt)
-- A specific guest OS or application requires an exact named CPU model string
+For PXE/network installation, enable **Network Boot** and select a primary VM network that can reach the environment's DHCP and PXE services. The primary NIC is placed first in the boot order. After installation, disable **Network Boot** through :guilabel:`Actions` > :guilabel:`Reconfigure`; the root disk then returns to boot order 1.
 
-.. tip::
+.. important::
 
-   For virtually all HVM clusters, **host-passthrough is the correct choice** and requires no configuration. It is the default for good reason — maximum performance with live migration compatibility handled automatically by the migratable flag.
+   VM network boot consumes an existing PXE service from a virtual NIC. It is not the |morpheus| bare-metal discovery and provisioning workflow documented under :doc:`/infrastructure/pxeboot/pxeboot`.
 
 Drivers & Graphics
 ------------------

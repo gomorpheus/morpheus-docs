@@ -1,5 +1,5 @@
 Capacity and Planning
-====================
+=====================
 
 There are many different architectures |morpheus| can be deployed as.  However, the most common architectures are an All-In-One (AIO) single node and a 3-Node Highly Available (HA) cluster. These architectures can have many variables to determine the capacity of each node, as each users' environment will be different.  Example factors that determine the capacity are:
 
@@ -21,35 +21,30 @@ Although there are many factors that can contribute to the capacity planning, ev
      - Memory (GB) per node
      - Local Storage (GB) per node
      - Shared Storage (NFS)
-     - Supported WLEs
    * - AIO
      - 4
      - 16
      - 200
      - N/A
-     - 5,000
    * - AIO
      - 4
      - 32
      - 400
      - N/A
-     - 10,000
    * - 3-Node HA
      - 4
      - 16
      - 400
      - 50
-     - 10,000
    * - 3-Node HA
      - 8
      - 32
      - 400
      - 50
-     - 20,000
 
-In the above recommendations, an AIO can support ~5,000 WLEs with agents installed at the base requirements.  Due to ease of installation and maintenance, an AIO architecture should be strongly considered for environments that will manage less than a few thousand WLEs.  Consider the significantly increased complexity of multi-node architectures and opt for an AIO appliance unless there is a specific compelling reason (such as high capacity needs or a zero downtime requirement) to select anything else.  However, the AIO architecture cannot tolerate failure and will be unavailable during upgrades, unlike the 3-Node HA, which is the likely choice for ensuring zero downtime upgrades and high availability.  A 3-Node HA architecture *could* support ~15,000 WLEs with agents installed (3 x 5,000) at the base requirements but it is best to consider the possible loss of a node, which would be an effective support of ~10,000 WLEs with agents installed (2 x 5,000).
+The table provides initial resource recommendations, not fixed workload or object limits. Actual capacity depends on managed VMs and systems, Agent use, Clouds, integrations, automation concurrency, active users, retention, and workload behavior. Due to ease of installation and maintenance, strongly consider an AIO architecture unless high availability, zero-downtime upgrades, or workload-specific sizing requires a multi-node architecture. An AIO architecture cannot tolerate failure and is unavailable during upgrades; a 3-Node HA architecture provides redundancy and supports zero-downtime upgrades when properly designed.
 
-In the case of both the AIO and 3-Node HA architectures, |morpheus| nodes can be **scaled up** to a maximum of 32GB of memory, which can support more WLEs per node.  Adding more CPU or memory is possible, without adding additional nodes. Also, in the case of the 3-Node HA architecture, |morpheus| can be **scaled out**, which can support additional WLEs per node added and provides additional redundancy, whereas the AIO configuration cannot add additional nodes.  The 3-Node HA architecture should always have an odd number of nodes for quorum.
+Both AIO and 3-Node HA nodes can be **scaled up** by adding CPU or memory. A 3-Node HA architecture can also be **scaled out** to add capacity and redundancy, whereas an AIO configuration cannot add application nodes. The 3-Node HA architecture should always have an odd number of nodes for quorum. For VME Manager limits and values that HPE has not published, see :doc:`HPE VM Essentials Maximums </infrastructure/clusters/hvm/maximums>`.
 
 .. IMPORTANT:: Customer architectures and requirements will vary.  Please contact your account manager if you wish to deploy or transition to a HA environment, which can help right-size the environment
 

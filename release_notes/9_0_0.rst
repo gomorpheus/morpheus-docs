@@ -64,7 +64,7 @@ New Features
 Fixes
 =====
 
-:Platform Updates: - Embedded MySQL updated to 8.4.x LTS; non-embedded support extended to 8.4.x or above
+:Platform Updates: - Embedded MySQL updated to 8.4.8; external MySQL configuration includes the 8.4 LTS family, subject to release-specific certification of the external version and service variant
 
 :Agent: - Fixed storage reporting errors on older Linux distributions and systems using btrfs subvolumes that resulted in zero or inflated storage usage values
 
@@ -74,7 +74,7 @@ Fixes
 :HVM: - Fixed an issue where virtual machines on a data network with a 9000 MTU could not communicate using jumbo packets until the network interface was manually reset
       - The system now automatically enforces a single active heartbeat datastore per HVM Cluster to prevent failover ambiguity and quorum conflicts
       - Fixed a keyboard mapping issue that prevented the AltGr key from functioning correctly when using the console on HVM-based virtual machines
-      - Creating HVM Active/Passive Bond mii-polling-rate, up-delay, and down-delay configurations now applied automatically during provisioning
+      - Automatic MII polling-rate, up-delay, and down-delay defaults for HVM Active/Passive bonds are not guaranteed in 9.0 because the original provisioning change was reverted. Inspect the effective bond configuration and configure required values explicitly through tooling supported by the installed HVM release; values can vary by release and networking backend
 
 Appliance & Agent Updates
 =========================

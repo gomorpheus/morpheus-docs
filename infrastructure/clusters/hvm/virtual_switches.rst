@@ -133,10 +133,12 @@ Virtual Switch Prerequisites
 Before creating a Virtual Switch, ensure the following:
 
 - **Physical NICs are cabled and up** on each host that will participate in the Virtual Switch.
-- **Upstream switch ports are configured** for the desired mode (access/trunk, VLAN IDs, LACP if using Balance RR).
+- **Upstream switch ports are configured** for the desired mode (access/trunk, VLAN IDs, and LACP when using 802.3ad).
 - **Consistent NIC naming** across hosts if using uniform uplinks, or identify per-host NIC names in advance.
 - **MTU support end-to-end** — All devices in the network path (switches, routers, storage arrays) must support the configured MTU (especially 9000 for jumbo frames).
 - **iSCSI multipath** should be configured at the OS/protocol layer if using iSCSI storage.
+
+If a newly installed physical NIC is not available for selection, first add and safely validate it in Netplan, use ``sudo hvmcli interfaces list --filter ethernet`` to confirm host discovery, and refresh the cluster in the UI. See :ref:`hvm-host-prep` for the guarded procedure. Do not use a mutating ``hvmcli virtswitch`` command merely to make an OS interface appear in inventory.
 
 Adding a Virtual Switch
 ```````````````````````
@@ -176,13 +178,15 @@ Select how multiple NICs are aggregated:
      - Single NIC per host. No redundancy at the link level. Maximum 1 NIC per host.
    * - **Active Backup**
      - One NIC active, one standby. Automatic failover if the active link fails. No switch-side configuration required.
-   * - **Balance RR (LACP)**
-     - Both NICs active with round-robin load balancing across links. The host bond uses ``balance-rr`` mode and requires **LACP (802.3ad) configuration on the upstream physical switch** to coordinate the link aggregation.
+   * - **LACP (802.3ad)**
+     - Both NICs participate in an 802.3ad bond. The connected upstream switch ports must belong to the same compatible LACP group.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_configure_bond_modes.png
    :alt: Bond mode dropdown showing available options
 
-.. warning:: When using **Balance RR (LACP)**, ensure that the upstream physical switch ports are configured for LACP. Mismatched configurations will cause connectivity loss.
+.. warning:: When using **LACP (802.3ad)**, configure the upstream physical switch ports for the same LACP group before applying the Virtual Switch. Mismatched configurations can cause connectivity loss.
+
+.. important:: Do not assume that an Active Backup bond receives universal MII polling, up-delay, or down-delay values automatically. These settings can vary by HVM release and networking backend, and automatic defaults are not guaranteed. Before carrying production traffic, inspect the effective bond configuration on each host and configure the required values explicitly through tooling supported by that HVM release. Use the product UI or ``hvmcli`` capabilities documented for the installed release; do not copy unverified values from another release or backend.
 
 **Uplink NICs**
 
@@ -249,9 +253,9 @@ Configure VLAN tagging and MTU settings.
 - **Global MTU** — Maximum Transmission Unit size for all interfaces in this Virtual Switch. Options:
 
   - **1500** — Standard MTU (default)
-  - **9000** — Jumbo frames (recommended for storage and migration networks)
+  - **9000** — Jumbo frames, when required by the network design
 
-.. tip:: Use jumbo frames (MTU 9000) for Data (NFS), Data (iSCSI), and Live Migration traffic types to improve throughput and reduce CPU overhead. Ensure all network infrastructure (switches, routers) between hosts supports the configured MTU.
+.. important:: Select MTU 9000 only when the complete path—including host interfaces, switches, routers, and storage endpoints—has been configured and validated for jumbo frames. Otherwise retain the default MTU 1500. The MTU is optional in the product configuration; 9000 is not a universal HVM requirement.
 
 .. image:: /images/infrastructure/clusters/hvm/virtual_switches/vs_port_settings_single.png
    :alt: Port Settings for a single traffic type
@@ -319,7 +323,7 @@ Bond Mode Selection
 ~~~~~~~~~~~~~~~~~~~
 
 - **Active Backup** is recommended for most environments. It provides simple redundancy with no switch-side configuration required.
-- **Balance RR (LACP)** provides higher aggregate throughput but requires LACP configuration on the upstream physical switch. Use this when bandwidth is critical (e.g., high-throughput NFS storage networks).
+- **LACP (802.3ad)** uses both links and requires a matching LACP group on the upstream physical switch. Validate the bond and failover before carrying production traffic.
 - **No Bonding** is appropriate for non-critical traffic or environments with limited NIC availability. Not recommended for production VM networks.
 
 VLAN Configuration
@@ -375,9 +379,9 @@ MTU Recommendations
 ~~~~~~~~~~~~~~~~~~~
 
 - **VM Network**: Standard MTU (1500) is usually sufficient.
-- **Data (NFS)**: Jumbo frames (9000) recommended for throughput.
-- **Data (iSCSI)**: Jumbo frames (9000) recommended for throughput.
-- **Live Migration**: Jumbo frames (9000) recommended to reduce migration time.
+- **Data (NFS)**: Use the MTU required by the end-to-end storage network design.
+- **Data (iSCSI)**: Use the MTU required by the end-to-end storage network design.
+- **Live Migration**: Use a consistent MTU across the complete migration path.
 - **SDN**: Match your SDN controller requirements.
 
 .. important:: All devices in the network path (host NICs, switches, routers, storage arrays) must support the configured MTU. A mismatch will cause packet fragmentation or drops.
@@ -395,6 +399,24 @@ Virtual Switch Limitations
 
 Virtual Switch Troubleshooting
 ``````````````````````````````
+
+.. _hvm_virtual_switch_read_only_verification:
+
+Read-only Host Verification
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the UI to change Virtual Switch configuration. On a layout 2.0 host, the following ``hvmcli`` commands are read-only and can be used to compare host state with the cluster's **Network** tab:
+
+.. code-block:: bash
+
+   sudo hvmcli virtswitch list
+   sudo hvmcli virtswitch show --virtswitch-name <virtual-switch-name>
+   sudo hvmcli virtswitch status --virtswitch-name <virtual-switch-name> --json
+   sudo hvmcli network list
+
+Names, interfaces, addresses, and status values vary by cluster. The detailed view reports the managed uplink, bond mode, MTU, traffic segments, and optional VLAN IDs. An untagged segment has no VLAN ID. Do not use ``create``, ``edit``, ``add-segment``, ``delete-segment``, or ``delete`` as diagnostic commands; they mutate host networking.
+
+For an Active Backup bond, also inspect the effective host-side bond configuration for MII polling, up-delay, and down-delay. The read-only Virtual Switch output does not establish that any particular values were applied. If the supported UI or ``hvmcli`` version does not expose these settings, use the release-specific supported inspection and configuration procedure supplied by HPE Support before placing the bond in service.
 
 Virtual Switch Not Applying
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

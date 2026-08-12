@@ -361,6 +361,10 @@ Task Configuration
     - **RESULT TYPE:** Single Value, Key/Value Pairs, or JSON
     - **SCRIPT:** Javascript contents to execute
 
+    JavaScript Tasks execute in-process on the |morpheus| application node that handles the Task, using the bundled GraalJS Community runtime. They are not Node.js processes and do not provide Node.js modules or package management. Host access is restricted to list, map, and array values supplied in the Task bindings; do not rely on arbitrary Java class access.
+
+    The bundled GraalJS dependency can change with a |morpheus| release (the current product source pins GraalJS 25.0.3). Treat the appliance release, rather than the host operating system's ``node`` command, as the runtime boundary. Before an upgrade, test required language features in a non-production JavaScript Task on the target release. There is no separate supported command for replacing or upgrading this embedded interpreter.
+
 - .. toggle-header:: :header: **jRuby Script**
 
     |jruby|

@@ -335,6 +335,10 @@ Platform Features & Governance
      - |yes|
      - |yes|
    * - Distributed Worker
+     - |yes|
+     - |yes|
+     - |yes|
+   * - VDI Gateway
      - |no|
      - |yes|
      - |yes|

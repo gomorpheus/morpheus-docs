@@ -1,15 +1,12 @@
-Distributed Workers |advanced-plus|
---------------------------------------
-
-.. tier-note:: Advanced, Enterprise
-   :exclude: Essentials
-
-   Distributed Workers are an Advanced+ feature, available in HPE Morpheus Enterprise and Advanced tiers.
+Distributed Workers
+-------------------
 
 Overview
 ^^^^^^^^
 
 The |morpheus| Worker is a separately deployed service that can proxy Cloud and Agent traffic, route console and VDI sessions, and act as a quorum witness for supported HVM clusters. A single Worker runtime can provide more than one capability, but each capability uses a specific registration and key in |morpheus|.
+
+Distributed Workers, including Workers used as HVM quorum witnesses, are available in VM Essentials, Advanced, and Enterprise. The VDI Gateway use case requires an Advanced or Enterprise license.
 
 .. list-table:: Worker capabilities and configuration
    :widths: 18 22 18 42
@@ -42,7 +39,7 @@ Use separate Worker deployments when gateway sessions, Cloud proxy traffic, and 
 
 **Supported Cloud Types**
 
-The following Cloud/Zone types support Distributed Workers
+The following Cloud/Zone types have established Distributed Worker Cloud API proxy and Agent relay support:
 
 - vmware
 - vmwareCloudAws
@@ -50,6 +47,12 @@ The following Cloud/Zone types support Distributed Workers
 - openstack
 - xenserver
 - macstadium
+
+HVM, SCVMM, and Hyper-V are not listed as supported Cloud proxy types because that capability is not established by the Worker implementation or package policy. Do not infer Cloud proxy support from another Worker role. In particular:
+
+- An HVM appliance image based on Ubuntu 24.04 is available beginning with |morpheus| 8.0.6, but an image on which a Worker can run does not qualify HVM as a proxied Cloud type or Ubuntu 24.04 as a supported Worker package platform.
+- A Distributed Worker can serve as an HVM quorum witness beginning with |morpheus| 9.0. Witness traffic is a cluster quorum role, not HVM Cloud API proxy support.
+- SCVMM and Hyper-V integration compatibility does not establish Distributed Worker proxy support for those Cloud types.
 
 Installation
 ^^^^^^^^^^^^
@@ -80,6 +83,8 @@ A distributed worker VM is installed and configured similarly to a |morpheus| ap
      - 12
    * - Ubuntu
      - 18.04, 20.04, 22.04
+
+.. NOTE:: Ubuntu 24.04 package support for a directly installed Distributed Worker is not established by the available package policy and is therefore not listed. The Worker container has its own Alpine-based runtime; this does not establish a supported Ubuntu 24.04 host combination. Use only a release-approved package or container deployment.
 
 - **Memory:** 4 GB RAM minimum recommended
 - **Storage:** 10 GB storage minimum recommended. Storage is required for installation packages and log files
@@ -293,7 +298,7 @@ The image health check verifies the bundled Guacamole service. Also validate the
 Witness Configuration
 ^^^^^^^^^^^^^^^^^^^^^
 
-A Distributed Worker can provide quorum witness services for HVM 1.3 or later clusters using an HPE Shared File System (GFS2) datastore. This includes two-node GFS2 clusters and stretch clusters with site groups.
+A Distributed Worker can provide quorum witness services for HVM 1.3 or later clusters using an HPE Shared File System (GFS2) datastore. This includes two-node GFS2 clusters and stretch clusters with site groups. For the complete two-node topology, deployment order, validation, failure behavior, and limitations, see :doc:`/infrastructure/clusters/hvm/two_node_clusters`.
 
 The **Worker URL** on the Distributed Worker record is mandatory for witness use. |morpheus| uses this value to construct the ``witnessUrl`` sent to each cluster Host. Every participating Host must be able to resolve the URL, route to the Worker listener, and trust its TLS certificate. The Worker's outbound connection to the |morpheus| appliance does not prove that Hosts can reach the witness.
 

@@ -3,7 +3,7 @@ HVM Networks
 
 .. versionadded:: 9.0
 
-.. important:: This page documents OVS networking for Legacy and layout 1.3 clusters. Layout 2.0 uses Linux bridge-based Virtual Switches; see :doc:`virtual_switches`.
+.. important:: This page documents legacy UI/plugin network constructs for Legacy and layout 1.3 clusters. They do not have a stable one-to-one mapping to layout 2.0 ``hvmcli`` objects. Layout 2.0 uses Linux bridge-based Virtual Switches; see :ref:`hvm_virtual_switch_read_only_verification`.
 
 Overview
 ````````
@@ -20,6 +20,13 @@ Key capabilities:
 - Automatically provision or delete network configurations whenever a host is added to or removed from a cluster
 - Detect and repair configuration drift using idempotent synchronization on every refresh cycle
 - Discover existing libvirt networks and OVS configurations on hosts
+
+Design and Ownership Boundaries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+|morpheus| applies the selected HVM network configuration; it does not design the customer's physical topology. Customers remain responsible for switch configuration, VLAN allocation, IP addressing, routing, DNS, MTU consistency, bandwidth, redundancy, and security policy. Confirm the same uplink, VLAN, and MTU intent on every cluster host before attaching workloads.
+
+Use a dedicated storage or migration path when the workload and failure analysis requires isolation or predictable bandwidth. Sharing an uplink is a design choice, not a product guarantee. Jumbo frames improve nothing unless every endpoint and intermediate switch supports the same MTU; validate end to end before changing a production path. For layout 2.0 topology choices, start with the checklist in :ref:`hvm-host-prep` and use :doc:`virtual_switches`.
 
 Prerequisites
 `````````````
@@ -205,6 +212,8 @@ An HVM Overlay Network uses VXLAN tunneling to provide isolation for east-west V
 
 The system deploys a dedicated OVS bridge for each overlay network on every host and configures a VXLAN tunnel endpoint on a designated host interface.
 
+Before creation, verify that every participating host has the selected tunnel interface, that tunnel-endpoint addresses are mutually reachable through the underlay, and that the underlay MTU can carry the additional VXLAN encapsulation without fragmentation. VNI values must be unique within the applicable VXLAN domain. These requirements apply to the legacy/layout 1.3 plugin described on this page; layout 2.0 uses the Virtual Switch model and must not be configured from this workflow.
+
 .. note::
 
    The HVM Overlay Network does not use the same OVS Bridge Domain virtual switch as Standard Networks. Instead, the system creates a dedicated OVS bridge for each Overlay Network on every host, ensuring complete isolation from other networks.
@@ -230,7 +239,7 @@ An HVM Data Network creates a Linux VLAN interface on each host and maps it to a
 
    - You can apply MTU changes only to stopped VMs
    - Ensure to stop and start each VM after changing the MTU
-   - Configure the MTU inside the guest VM interface: ``ip link set <iface> mtu 9000``
+   - Configure the same MTU inside the guest only when the complete network path is designed and validated for that frame size
 
 1. Navigate to :menuselection:`Infrastructure --> Network --> Networks`
 2. Select :guilabel:`+ Add` > **HVM Data Network**
@@ -241,7 +250,7 @@ An HVM Data Network creates a Linux VLAN interface on each host and maps it to a
    - **Resource Pool** — Select the cluster resource pool
    - **VLAN ID** — The VLAN for the data network
    - **Host Interface** — The host interface for the VLAN sub-interface
-   - **MTU** — Maximum transmission unit (for example, ``9000`` for jumbo frames)
+   - **MTU** — Maximum transmission unit. Use ``9000`` only for a validated end-to-end jumbo-frame path; otherwise use the network's standard MTU
 
 4. Click :guilabel:`Save`
 
@@ -338,6 +347,8 @@ Deleting an HVM network removes the network definition from all hosts in the clu
 4. Confirm the deletion when prompted
 
 The system removes the libvirt network definition and its port group from all hosts in the cluster. For Standard Networks, it removes trunk VLAN IDs automatically along with the port group without requiring separate cleanup. The system also updates the Aruba CX switch configuration for the removed VLAN IDs through the Generic Integration.
+
+For an Overlay Network, deletion also removes its dedicated OVS bridge and VXLAN configuration from participating hosts. Move or disconnect every VM first and verify no workload depends on the VNI; deleting the network removes connectivity and does not migrate attached workloads.
 
 Viewing Network Status
 ``````````````````````

@@ -3,6 +3,22 @@ Appliance Security & Hardening
 
 This section covers security considerations for the |morpheus| appliance installation, including database encryption, key rotation, and hardening recommendations.
 
+Compliance and Control Boundaries
+---------------------------------
+
+This guidance is not a statement that the VME Manager or every HVM Host image is certified against a CIS Benchmark, DISA STIG, or another compliance framework. No benchmark name/version, assessment report, automated remediation profile, compliance dashboard, or centralized host-firewall policy is bundled as evidence for such a claim in this documentation.
+
+The customer owns selection of the applicable control framework, operating-system baseline, network policy, identity controls, vulnerability management, evidence collection, and exception process. Validate controls against the exact Manager release, HVM OS release, cluster layout, and enabled integrations. Where a contract requires a certification or attestation, obtain the current artifact from HPE rather than treating these recommendations as an attestation.
+
+The product exposes security-related capabilities, but capability is not certification:
+
+- Manager TLS, authentication, RBAC, encrypted credential storage, and audit/activity data can contribute to a customer control implementation.
+- HVM host firewall policy remains environment- and image-specific; see :ref:`hvm-host-prep` and validate every required cluster communication before enforcement.
+- FIPS-related packages or modes must be evaluated for the exact release and cryptographic boundary. Enabling a FIPS mode does not by itself make the complete deployment compliant.
+- No shipped evidence in this guide establishes integrated Manager orchestration of host firewall rules, automated CIS/STIG scanning, compliance scoring, or automatic remediation.
+
+Apply hardening first in a non-production environment. Record the previous configuration and maintain console access or another tested recovery path. If a control interrupts Manager, Agent quorum, Corosync, storage, migration, or workload networking, restore the approved configuration and investigate before continuing.
+
 Database Encryption
 -------------------
 

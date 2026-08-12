@@ -3,6 +3,14 @@ Commvault
 
 |morpheus| integrates with Commvault for selection as a Cloud backup target. Compatible Clouds include VMware and OpenStack. |morpheus| integrates with your existing Commvault appliance, which can then be set as the preferred backup solution for any existing Clouds. From there, easily schedule backup routines during Instance provisioning and restore Instances when needed. This section discusses the process for integrating Commvault with |morpheus|, sharing a Commvault integration with multiple Tenants, setting backup during Instance provisioning, and restoring Instances from backup.
 
+Supported Clouds
+^^^^^^^^^^^^^^^^
+
+Commvault backup is supported for:
+
+- VMware
+- OpenStack
+
 Features
 ^^^^^^^^
 

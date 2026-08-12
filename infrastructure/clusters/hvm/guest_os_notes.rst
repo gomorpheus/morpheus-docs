@@ -3,6 +3,8 @@ Guest Operating System Notes
 
 This page covers OS-specific considerations, recommendations, and behaviors when running virtual machines on HVM clusters.
 
+The HVM controls referenced on this page are selected from **Advanced Options** on the Configure step during provisioning. See :doc:`vm_advanced_options` for field availability and reconfiguration behavior.
+
 Windows Guests
 --------------
 
@@ -68,6 +70,31 @@ Agent Communication
 #. **WinRM** (fallback) — requires network connectivity and WinRM to be enabled in the guest
 
 Ensure WinRM is configured with ``winrm quickconfig`` and set to automatic startup in your Windows templates.
+
+Diagnosing Inter-Host Network Throughput
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Do not use a nominal 10 Gb NIC speed as a throughput guarantee for a Windows VM. End-to-end results depend on the guest driver and CPU, VM sizing, host load, Virtual Switch and bond configuration, MTU, and every physical link in the path.
+
+Before changing Windows settings:
+
+#. Confirm the VirtIO network driver is installed and current for the supported guest image.
+#. Test in both directions with a dedicated throughput tool and multiple streams; record latency, retransmits, guest CPU, and host CPU during the test.
+#. Compare same-host and different-host VM results to isolate the virtual/guest path from the physical uplinks.
+#. Verify negotiated physical link speed, bond state, switch counters, VLANs, and end-to-end MTU. Resolve drops, errors, or MTU mismatch first.
+#. Record the Windows version, VirtIO driver version, HVM release, VM vCPU/memory, test command, and topology so results are repeatable.
+
+As a bounded diagnostic, an administrator can inspect RSS and TCP auto-tuning from an elevated PowerShell session:
+
+.. code-block:: powershell
+
+   Get-NetAdapterRss
+   Get-NetAdapterAdvancedProperty -Name "<adapter>"
+   netsh int tcp show global
+
+If RSS is disabled and the installed VirtIO driver supports it, test enabling RSS on the specific adapter with ``Enable-NetAdapterRss -Name "<adapter>"`` and repeat the same benchmark. Revert with ``Disable-NetAdapterRss -Name "<adapter>"`` if throughput, CPU use, or stability regresses.
+
+Do not disable checksum or large-send offload, or add ``MaxUserPort`` and ``TcpTimedWaitDelay`` registry values, as a general HVM optimization. Those changes affect guest-wide networking and should be used only for a measured workload under Microsoft and HPE Support direction, with the original adapter and registry values recorded for rollback.
 
 Linux Guests
 ------------

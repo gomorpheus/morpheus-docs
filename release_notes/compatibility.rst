@@ -260,6 +260,8 @@ The following table shows supported version upgrade paths and methods.
 Integrations
 ============
 
-.. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
+The table below is the canonical integration-version matrix for this documentation release. It records versions with an established support or test statement; it does not imply support for an unlisted integration or version. A blank or broad product-family entry must not be used as a certification statement. Contact HPE Support when a planned integration version is not listed.
+
+This matrix answers **which external product versions are qualified**. It does not describe which operations an integration implements. For provisioning, networking, lifecycle, costing, and governance coverage by Cloud type, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.
 
 .. include:: /release_notes/compatibility_table.rst

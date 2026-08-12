@@ -87,6 +87,18 @@ When using VNC Hypervisor Console, the |morpheus| Appliance connects directly to
 
 Unlike SSH and RDP, valid credentials do not need to be set on the VM or Host records in |morpheus| for VNC hypervisor console connections. An IP address is also not required on the VM or Host for VNC hypervisor console connections. |morpheus| will be able to connect to the VM or Host as soon as the ``Host (Hypervisor)`` record is set, which can be viewed in the Info section on the VM or Host detail page.
 
+Encrypted or vTPM VMware VM
+```````````````````````````
+
+If hypervisor console works for ordinary VMware VMs but fails for a Windows 11 VM with vTPM or another encrypted VM, verify the vCenter role inherited by that VM. MORPH-6016 reported that adding **Cryptographic operations > Clone, Direct Access, and Migrate** (API privilege reported as ``AccessMigrate``) to the dedicated |morpheus| role restored access. The report did not prove that all three are individually required by console access; Clone and Migrate also correspond to their named encrypted-VM lifecycle operations.
+
+#. Confirm the Cloud uses Hypervisor Console and that appliance-to-ESXi DNS and TCP 443 requirements above are met.
+#. In vCenter, confirm the integration user receives the intended dedicated role on the affected VM through the expected inventory assignment and propagation.
+#. Compare the role with :doc:`/integration_guides/Clouds/vmware/permissions`. Add only the approved cryptographic privileges at the smallest required scope.
+#. Reopen the console, then test any required clone and migration operations independently. Review vCenter tasks/events and |morpheus| logs for a specific authorization denial.
+
+Do not grant vCenter Administrator as a workaround. If the organization cannot grant the reported set or the failure remains, retain the denied privilege/task evidence and escalate to the VMware integration owner or HPE Support.
+
 .. NOTE::
    - Auto-login is not supported for Hypervisor Console. Auto-login role settings do not apply to console connecting when using Hypervisor Console. Please note Hypervisor Console sessions persist on the ESXi host and once a user manually logs in to the VM they will continue to be logged in, even if the console tab/window in |morpheus| is closed, until they manually log out.
    - Copy and Paste and Text selection in Linux terminals is not supported when using VNC (VMware Hypervisor Console).

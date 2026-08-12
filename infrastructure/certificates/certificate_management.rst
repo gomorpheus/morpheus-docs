@@ -99,6 +99,8 @@ Certificates stored in |morpheus| can be applied in various contexts:
 - **Provisioning:** Applied during Instance provisioning for SSL-enabled services
 - **Integrations:** Authentication with external services requiring client certificates
 
+Certificates uploaded in this section are application objects and are not the same as certificate authorities trusted by the appliance JVM. To trust the CA of an outbound integration endpoint, follow :doc:`/getting_started/additional/ssl-import`. That procedure includes the required ``morpheus-ui`` restart; reconfigure updates the truststores but does not restart the running UI JVM.
+
 Editing Certificates
 --------------------
 

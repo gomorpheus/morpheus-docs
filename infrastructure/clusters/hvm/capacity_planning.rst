@@ -175,6 +175,8 @@ Plan storage capacity considering:
 
 Recommended free space threshold: **> 20%** on all HPE Clustered Datastores.
 
+Prefer adding another datastore before an existing datastore reaches the threshold. If operational constraints require an in-place LUN/GFS2 increase, use the single canonical, Support-gated procedure in :doc:`storage_operations`; do not treat array expansion alone as filesystem growth.
+
 Capacity Monitoring in |morpheus|
 -----------------------------------
 

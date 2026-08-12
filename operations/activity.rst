@@ -1,17 +1,16 @@
 Activity
 ========
 
-The Activity section displays a recent activity report for Auditing. |morpheus| defines an activity as any major action performed on an instance or server, such as, but not limited to adding a server, deleting a server, provisioning an instance, deleting an instance, creating a backup, etc… This view can be searched and filtered by type, user, and date range.
+The Operations > Activity page contains Activity, Alarms, and History views. The ``Operations: Activity`` Role permission with Read access is required for Activity and History. Alarms use the separate ``Operations: Alarms`` permission.
 
 Activity
 --------
 
-There are four types of activities that are displayed in the Activity Reports:
+The current Activity filter offers these event types:
 
 - Backup
 - Provisioning
 - Alert
-- Permissions
 
 
 **To View a Recent Activity report:**
@@ -19,7 +18,7 @@ There are four types of activities that are displayed in the Activity Reports:
 #. Select the ``Operations`` link in the navigation bar.
 #. Select ``Activity`` in the sub navigation bar.
 
-Recent activity is displayed in order from recent to oldest. This view can be searched and filtered by type, user, and date range.
+Recent activity is displayed from newest to oldest. Search text is matched against activity entries. Filters are available for type and user, with preset date ranges for the last hour, last 24 hours, today, yesterday, last seven days, and last month. Users whose Provisioning permission is scoped to ``User`` are restricted to their own activity; other results are also limited by accessible Groups. In the Master Tenant, a Tenant filter is available.
 
 **Review**
 
@@ -40,17 +39,8 @@ The `ALARMS` section shows Operation notifications from Cloud and other Service 
 History
 -------
 
-The `HISTORY` section shows Process History from Instances and Apps processes. This is an aggregate view of the ``History`` tab in Instance and App details pages.
+The `HISTORY` section shows process history from Instances, servers, and Apps. This is an aggregate view of the ``History`` tabs on resource detail pages. It defaults to the last seven days, supports text and date-range filtering, and only returns resources the user can view. Processes for deleted resources created by the current user can remain visible.
 
 Processes can be expanded to view all process steps and process history detail including output and errors.
 
 Access to `HISTORY` is given by the ``Operations:Activity`` Role permission.
-
-..
-
-  Morpheus Logs
-  -------------
-
-  The Logs displayed in ``Administration - Health - Morpheus Logs`` are from ``/var/log/morpheus/morpheus-ui/current``. These logs show all ui activity and are useful for troubleshooting and auditing.
-
-  .. NOTE:: Stack traces in ``Administration - Health - Morpheus Logs`` are filtered for |morpheus| services. Complete stack traces can be found in ``/var/log/morpheus/morpheus-ui/current``.

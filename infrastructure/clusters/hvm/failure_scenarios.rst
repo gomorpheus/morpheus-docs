@@ -30,6 +30,8 @@ Timeline
 
 **Recovery:** Automatic. Fix the underlying host issue and the node will rejoin on reboot.
 
+If the host remains Offline (Unclean) or fenced, use the evidence, isolation, reboot, and validation workflow in :doc:`troubleshooting`. Do not use Pacemaker cleanup commands on layouts 1.3 or 2.0.
+
 Scenario 2: Storage Partition (APD)
 ------------------------------------
 
@@ -111,6 +113,11 @@ Timeline
 
 **Recovery:** Automatic. After the failed site is restored, 3 consecutive healthy cycles (~3 minutes) must pass. Votes are restored, fenced nodes reboot and rejoin. Redistribute VMs across sites after recovery.
 
+Two-Node Cluster Failures
+-------------------------
+
+A two-Host GFS2 cluster uses a Distributed Worker witness as its third quorum vote. One Host can remain operational after the other Host fails only while the witness remains reachable. If the witness fails while both Hosts are healthy, the cluster retains two of three votes but loses Host-failure tolerance until the witness returns. See :doc:`two_node_clusters` for the complete failure and maintenance matrix.
+
 Scenario 5: Single Node Reboot
 -------------------------------
 
@@ -160,9 +167,11 @@ Run the following commands to confirm the upgrade completed successfully:
 
 Confirm:
 
-- Corosync shows ``Quorate: Yes``
+- Corosync lists all expected compute Hosts
 - DLM shows all nodes with ``member=1``
 - Agent ``/quorum`` endpoint returns healthy status with all nodes ONLINE
+
+.. NOTE:: Corosync's ``Quorate`` value does not determine Agent quorum for layout 1.3 or later and may be ``No`` in a healthy two-node or stretch configuration.
 
 .. NOTE:: After upgrading, ``pcs`` commands are no longer available or applicable. Use the diagnostic commands listed in :doc:`troubleshooting` for all cluster operations.
 
@@ -189,8 +198,8 @@ Recovery Matrix
      - Automatic
      - Site restores; redistribute VMs after recovery
    * - DLM stuck
-     - Automatic/Manual
-     - Agent auto-issues ``fence_ack``; manual if agent fails
+     - Automatic/Support
+     - Agent manages fence acknowledgement; contact HPE Support if it remains blocked after isolation is verified
    * - GFS2 withdrawn
      - Manual
      - Unmount/remount or reboot affected host

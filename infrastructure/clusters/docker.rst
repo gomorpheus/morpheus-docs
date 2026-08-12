@@ -3,6 +3,11 @@ Docker Clusters
 
 Provisions a new Docker Cluster managed by Morpheus.
 
+Docker Data Volume
+------------------
+
+Docker host layouts can expose a configurable data volume in addition to the operating system volume. Configure the volumes required by the selected layout and target Cloud in the provisioning wizard. A separate Docker-data disk is not a universal prerequisite; do not add one unless the selected layout or your storage design requires it.
+
 To create a new Docker Cluster:
 
 #. Navigate to ``Infrastructure > Clusters``
@@ -34,7 +39,7 @@ To create a new Docker Cluster:
    PLAN
     Select plan for Docker Host
    VOLUMES
-    Configure volumes for Docker Host
+     Configure volumes for Docker Host. The available operating system and data-volume options depend on the selected layout and Cloud
    NETWORKS
     Select the network for Docker Master & Worker VM's
    NUMBER OF HOSTS

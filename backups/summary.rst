@@ -3,6 +3,8 @@ Summary
 
 The Backups Summary section shows the following metrics:
 
+Open this view from :menuselection:`Backups --> Summary`. Use :menuselection:`Backups --> Jobs` for scheduled definitions and :menuselection:`Backups --> History` for execution and restore results.
+
 * Number of Configured Backups trend
 * Backup Success Rate
 * Number of Completed Backups

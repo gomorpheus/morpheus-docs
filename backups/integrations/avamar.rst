@@ -3,6 +3,13 @@ Avamar
 
 |morpheus| integrates with an existing Avamar appliance which can then be set as the preferred backup solution for any compatible Clouds. From there, easily schedule backup routines during Instance provisioning and restore Instances when needed. This section discusses the process for integrating Avamar with |morpheus|. Once the integration is complete, when editing or adding compatible Clouds, set the Avamar integration as the backup provider for the Cloud. At provision time, set Avamar backup configurations for the workload. When necessary, restore Instances from Avamar backup.
 
+Supported Clouds
+^^^^^^^^^^^^^^^^
+
+Avamar backup is supported for:
+
+- VMware
+
 .. important:: Avamar API must be installed on Avamar server (not installed by default)
 
 Features

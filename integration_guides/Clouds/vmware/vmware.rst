@@ -25,6 +25,8 @@ Features
 * Lifecycle Management and Resize
 * Metadata tag sync
 
+For Windows 11 VMs with vTPM or other encrypted VMs, review the task-scoped **Cryptographic operations** guidance in `VMware Permissions`_ before enabling hypervisor console, clone, or migration workflows.
+
 On top of all these features, |morpheus| also adds additional features to VMware that do not exist out of the box to make it easier to manage in multitenant environments as well as hybrid cloud environments:
 
 * Cloud-Init Support
@@ -33,6 +35,8 @@ On top of all these features, |morpheus| also adds additional features to VMware
 * Multitenancy resource allocation
 * Virtual Image management (Blueprints)
 * Auto-scaling and recovery
+
+VMware administrators adopting VM Essentials can use :doc:`/getting_started/guides/vmware_to_vme` to find the corresponding workflow for common inventory, provisioning, placement, networking, lifecycle, migration, console, and backup tasks.
 
 .. include:: /integration_guides/Clouds/vmware/getting_started.rst
 .. include:: /integration_guides/Clouds/vmware/docker.rst

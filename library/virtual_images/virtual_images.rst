@@ -128,7 +128,16 @@ To Add Virtual Image:
       *Url*
        Select the URL radio button, and enter URL of the Image.
 
-    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
+    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the import will finish in the background. When selecting or dragging and dropping a file, the browser upload must complete before saving the Virtual Image record or the Image will not be valid.
+
+    Choose the source method based on where the image is available:
+
+    - Use **File** when the image is on your workstation. Keep the browser session connected until the file upload completes.
+    - Use **URL** when the image is available from an HTTP or HTTPS endpoint that the |morpheus| Appliance can resolve and reach. The appliance retrieves the image after the record is saved, so the browser does not carry the image data.
+
+    Transfer duration depends on image size, the path between the source and the appliance, available bandwidth, and the selected Storage Provider. URL import can avoid a slow workstation, VPN, or browser path, but it does not guarantee a faster transfer. Use only a trusted endpoint and verify the image checksum against its publisher-provided value before use.
+
+    If an import appears stalled, do not create a second Virtual Image immediately. Check the Virtual Image status, available capacity on the selected Storage Provider, appliance reachability to a URL source, and any proxy or TLS errors in the appliance logs. Retry only after confirming the first transfer has failed.
 
 5. Save Changes.
 
@@ -321,16 +330,16 @@ Not all Virtual Image settings apply to all cloud types. The following matrix cl
 
    **ISO image types** — When uploading ISO images (used for manual OS installations or boot media), disable both **Cloud Init Enabled** and **Enabled Sysprep**. ISO-based images are typically booted interactively for OS installation and do not use cloud-init or sysprep-based guest customization. Leaving these options enabled on an ISO image will cause provisioning failures or unexpected behavior.
 
-4. Upload Image
-    Images can be uploaded by File or URL:
-      *File*
-       Drag and Drop the image file, or select :guilabel:`Add File` to select the image file.
-      *Url*
-       Select the URL radio button, and enter URL of the Image.
+   For HVM, provision the VM from the ISO, complete the installer through the VM console, eject the ISO media, and restart the VM from its installed disk. For the related HVM boot controls and the separate network-boot path, see :doc:`/infrastructure/clusters/hvm/vm_advanced_options`.
 
-    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
+Import an HVM Instance as an Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-5. Save Changes.
+Before selecting :guilabel:`Actions` > :guilabel:`Import as Image` for an HVM VM installed from ISO, verify that the guest boots from its installed disk and eject the installation ISO. The import excludes ISO volumes and exports the installed disks.
+
+Existing file-based snapshots do not need to be deleted before import. When a disk has a qcow2 backing chain, |morpheus| copies and merges the chain into a temporary export disk without modifying the VM's existing snapshots. Other supported storage backends create their own temporary export snapshot.
+
+After the import finishes, verify that the resulting Virtual Image contains ``metadata.json`` and every disk file referenced by the manifest. A Virtual Image record or metadata file without the referenced disk files is incomplete, even if its status is Active. Leave the source VM and snapshots unchanged and contact Support with the HVM version, storage backend, snapshot list, and import process output. Deleting an existing snapshot is not a required import step and should not be used as an import workaround.
 
 VMware - VM Templates Copies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

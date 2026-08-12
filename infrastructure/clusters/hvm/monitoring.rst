@@ -127,7 +127,7 @@ Host-Level Metrics
      - Sustained > 90% impacts VM performance
    * - Cluster member status
      - ``online``
-     - ``offline``, ``fenced``, ``unclean`` require action
+     - ``offline``, ``fenced``, ``unclean`` require the layout-aware recovery in :doc:`troubleshooting`
 
 Cluster-Level Metrics
 ^^^^^^^^^^^^^^^^^^^^^^

@@ -31,7 +31,7 @@ Network
 Monitoring
   Quick summary of the monitoring system and all checks that were configured to test the state of the Instance. Stats views (memory, cpu, etc.) can be zoomed out to a 90-day view if desired (in global settings, ensure your stats retention setting will support this). Logs and guidance for the individual Instance are also shown in their respective subtabs.
 Backups
-  Quick backup dashboard. Useful for viewing historical backups and snapshots as well as adding new backup jobs.
+  Quick backup dashboard. Useful for viewing historical backups and snapshots as well as adding new backup jobs. For layouts that support snapshots, users with **Snapshots: Full** permission can start one from :guilabel:`Actions` > :guilabel:`Create Snapshot`; see :doc:`managing_instances`.
 History
   See historical information related to automation which has been run against the Instance. This is useful for examining automation which was run as part of a phase of a Provisioning Workflow. Users can also drill into the Workflows to examine individual Tasks, including viewing the output from these Tasks to confirm success or troubleshoot issues.
 Costing

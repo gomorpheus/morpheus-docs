@@ -6,6 +6,9 @@ Clusters
 
    /infrastructure/clusters/hvm/hvm
    /infrastructure/clusters/kubernetes
+   /infrastructure/clusters/hks_offline_provisioning
+   /infrastructure/clusters/hks_kube_vip
+   /infrastructure/clusters/hks_node_maintenance
    /infrastructure/clusters/docker
    /infrastructure/clusters/eks
    /infrastructure/clusters/gke
@@ -48,6 +51,8 @@ Requirements
 - Morpheus Role permission ``Infrastructure: Clusters > Read`` required for Viewing Cluster list and detail pages.
 - Each Cluster has Group, Tenant and Service Plan access permissions settings ("MORE" > Permissions on the Clusters list page).
 - Individual Namespaces also have Group, Tenant and Service Plan access permissions settings
+
+For HVM cluster permission semantics and their effect on provisioning choices, see :ref:`hvm-cluster-permissions`.
 
 .. _clusterLayouts:
 
@@ -263,5 +268,3 @@ Requirements
   +------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+-------------+-----------------+-----------------+-------------------+
   | Xen Docker Host                                            | This will provision a single docker host vm in xen                                   | docker-xen-ubuntu-16.04-single                             | 1            | 16.04       | n/a         | n/a             | n/a             | n/a               |
   +------------------------------------------------------------+--------------------------------------------------------------------------------------+------------------------------------------------------------+--------------+-------------+-------------+-----------------+-----------------+-------------------+
-
-

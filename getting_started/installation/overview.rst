@@ -15,7 +15,7 @@ For customers using HPE HVM as their hypervisor platform, |morpheus| is deployed
 - Takes **15–30 minutes** from start to a running appliance
 - Requires no manual package installation — the installer handles image upload, VM creation, and configuration
 - Deploys a fully self-contained appliance from a QCOW2 image
-- Works entirely over your local network (no internet required)
+- Can deploy a local QCOW2 image entirely over the local network without internet access
 
 **To get started with HVM deployment:**
 
@@ -23,6 +23,8 @@ For customers using HPE HVM as their hypervisor platform, |morpheus| is deployed
 2. :doc:`Deploy Morpheus with the HPE Installer </getting_started/installation/singleNode/hpe_installer>` — Run the graphical installer from your workstation to deploy the |morpheus| appliance VM onto a prepared HVM host.
 
 After the appliance is running, you can add additional HVM hosts to form a cluster from within the |morpheus| UI (:menuselection:`Infrastructure --> Clusters`).
+
+Local deployment and ongoing maintenance have different connectivity requirements. The Manager's Ubuntu base OS still requires an HPE-approved APT source for security and package updates. For connected and air-gapped options, see :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`.
 
 .. _manual-deploy-path:
 
@@ -47,7 +49,7 @@ Architecture Options
 - Single Hosts with Distributed Service(s)
    Transactional Database, Non-Transactional Database, and/or Message tiers are externalized, with the remaining services on a single host. The reconfigure process installs all services not set to false in ``/etc/morpheus/morpheus.rb``
 - Clustered Hosts with Distributed Transactional Database (3-Node HA)
-   Application, Message and Non-Transactional tiers are installed and clustered on three or more hosts, with all three hosts pointing to externalized database tier. The reconfigure process installs all services except mySQL.
+   Application, Message, and Non-Transactional tiers are installed and clustered on three or more application hosts. The Transactional Database Tier remains outside the application hosts, and every application host is configured to use the same external MySQL cluster or supported service. Reconfigure does not install MySQL on the application hosts in this topology.
 - App Host(s) with Distributed Services (Full HA)
    Application tier is installed on one or more hosts. All UI hosts point to externalized Transactional Database, Non-Transactional Database, and Message Tiers. The reconfigure process installs only Application services.
 

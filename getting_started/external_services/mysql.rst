@@ -12,9 +12,10 @@ MySQL is the transactional database for |morpheus|, storing all operational data
 Supported Versions
 ^^^^^^^^^^^^^^^^^^
 
-- **MySQL 8.0.x** (embedded default: |mysqlver|)
-- **MySQL 8.4.x LTS** (supported for external clusters in |morphver|+)
+- **MySQL 8.4.8** (embedded in |morpheus| 9.0.0)
 - **MySQL 8.0.x FIPS** (|mysqlverfips|)
+
+The appliance supports configuration of an external MySQL service, including the 8.4 LTS family. Configuration support does not by itself certify every MySQL patch, managed-service variant, later major version, or innovation release. Confirm the certified external versions in the compatibility information for the specific |morpheus| release before installation or upgrade; ``8.4 or greater`` is not an unconditional compatibility statement.
 
 .. important::
 
@@ -88,7 +89,7 @@ Traditional MySQL replication with multiple writable masters:
 
 Cloud-managed MySQL services (RDS, Azure Database, Cloud SQL) handle replication, failover, and backups automatically. Ensure:
 
-- The service supports MySQL 8.0+ or 8.4.x
+- The exact service variant and MySQL 8.4.x patch are certified for the installed |morpheus| release
 - ``utf8mb4`` character set is available
 - The |morpheus| appliance nodes can reach the service endpoint on port 3306
 - The service allows the ``GRANT`` permissions listed above

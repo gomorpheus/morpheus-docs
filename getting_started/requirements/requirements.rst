@@ -31,9 +31,16 @@ Base Requirements
 - Internet Connectivity (optional)
    - Access to ``https://www.hpe.com/support/hpesc``, ``https://share.morpheusdata.com``, and ``https://d2u3hdjdxt56gx.cloudfront.net`` (the share.morpheusdata.com cloudfront domain that share package requests will redirect to) over port 443 required on app nodes when reconfiguring to download embedded packages and plugins.
    - Access to ``https://morpheus-images.morpheusdata.com``, ``https://registry.morpheusdata.com``, and ``https://playbooks.morpheusdata.com`` To download |morpheus|' system images and playbooks.
-   - Offline installation requires installing the supplemental package in addition to the regular installation package. Local yum/apt repo access still required for offline installations.
+   - Offline installation requires installing the supplemental package in addition to the regular installation package. Local yum/apt repo access is still required for offline package installations.
 
-.. NOTE:: Access to ``yum`` and ``apt`` repos is still required for offline installations.
+.. NOTE:: Access to ``yum`` and ``apt`` repositories is still required for offline package installations. A local QCOW2 deployment does not remove the need to maintain the Manager's Ubuntu base OS. Air-gapped Manager appliances require an internal repository containing the HPE-validated update set; see :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`.
+
+Central Service and Remote Data Access (optional)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When the applicable Central Service or Remote Data Access feature is enabled, allow outbound HTTPS from the appliance or its configured on-premises proxy to ``midway.ext.hpe.com`` on TCP 443. This is the only customer-facing endpoint established by the evidence maintained with this documentation.
+
+Do not allow-list proposed regional tunnel hostnames based on this page. Their protocol, customer-facing stability, region selection, and release scope are not proven here. Obtain the current endpoint registry from HPE for the exact enabled service before adding any other destination. This optional egress is not required for a baseline appliance that does not use the feature.
 
 -  VM and Host Agent Install (optional)
     - Inbound connectivity access from provisioned VMs and container hosts on port 443 (Agent install and communication). Port 80 may be required for older ``apt`` distros.
@@ -342,7 +349,7 @@ The following table contains communication information, including frequency and 
   * - Private Cloud Integration
     - Server Pull
     - Cisco UCS Manager
-    - Data synchronization
+    - Data synchronization; the appliance must resolve and reach the configured UCS Manager API endpoint over its configured HTTP or HTTPS port
     - 5 Minutes
     - No
   * - Private Cloud Integration

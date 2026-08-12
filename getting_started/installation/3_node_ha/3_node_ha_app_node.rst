@@ -71,7 +71,7 @@ Installation
 
    .. include:: /getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst
 
-#. Mount shared storage at ``/var/opt/morpheus/morpheus-ui`` on each App node if you have not already done so. Create the directory if it does not already exist.
+#. Mount shared storage at ``/var/opt/morpheus/morpheus-ui`` on each App node if you have not already done so. Create the directory if it does not already exist. For an existing appliance with files on local storage, do not mount an empty target over the source; follow :doc:`/getting_started/installation/distributed/HA_Shared_Storage` and obtain the release-specific migration sequence from HPE Support.
 
 #. Reconfigure on all nodes
 

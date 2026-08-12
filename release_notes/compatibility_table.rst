@@ -39,14 +39,17 @@
     - 10.4.2 or higher
     -
   * - Infoblox
-    - Latest Versions Supported
-    -
+    - Per Infoblox plugin release
+    - Obtain the officially-developed plugin from the Morpheus Plugin Catalog (Marketplace). See the version-specific release notes for historical plugin version statements; these do not imply broad compatibility across all Infoblox or |morpheus| versions.
   * - Kubernetes
     - 1.21+
     -
   * - Microsoft Hyper-V
     - 2012R2, 2016, 2019, 2022, 2025
     -
+  * - MySQL (external)
+    - See release-specific certification
+    - |morpheus| 9.0.0 embeds MySQL 8.4.8 and supports external MySQL configuration, including the 8.4 LTS family. This entry does not certify every external patch, managed-service variant, later major version, or innovation release.
   * - Nutanix AOS
     - For |morpheus| version 6.3.4 and higher, Nutanix AOS version 6.5.3.7+ is required. See the `Nutanix Compatibility and Interoperability table <https://portal.nutanix.com/page/documents/compatibility-interoperability-matrix/software?partnerName=Morpheus%20Data&solutionType=all&componentVersion=all&hypervisor=all&validationType=all>`_ for additional information
     - In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation will not function due to PC Image Management.
@@ -91,7 +94,7 @@
     -
   * - XenServer
     - 7.x
-    -
+    - This is the previously published qualified value. XCP-ng 8.2.x/8.2.1 has not been approved for this matrix; testing in progress is not a support certification.
   * - Zerto
     - 10
     -

@@ -8,7 +8,9 @@ The installer is available on the HVM ISO file in two versions:
 - **macOS**: ``Morpheus_Manager_Installer-x64-<version>.dmg``
 - **Windows**: ``Morpheus_Manager_Installer-x64-<version>.zip``
 
-.. note:: The deployment process typically takes 15–30 minutes depending on image size and network speed. No internet access is required — the installer works entirely over your local network.
+.. note:: Deployment duration depends on image size, source method, network throughput, host storage, and first-boot processing. Use the phase and log output described below to judge progress rather than relying on a fixed duration.
+
+.. important:: A local QCOW2 deployment does not require internet access, but the deployed Manager's Ubuntu base OS still requires an HPE-approved APT source for ongoing updates. Before production use, plan either approved repository access or an internal mirror. See :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`.
 
 Prerequisites and Assumptions
 `````````````````````````````
@@ -20,7 +22,7 @@ Before using the installer, ensure the following:
 - You have HTTPS access (port 443) to the HVM host for post-deployment verification
 - The SSH user has sudo privileges to run ``virsh``, ``hvmcli``, and manage HVM resources
 - You have the HPE VM Essentials QCOW2 image ready (available on the HVM ISO or as an HTTP URL)
-- You know the network configuration details (IP address, netmask, gateway, and DNS) for the Morpheus VM
+- You know the network configuration details for the Morpheus VM. The **Netmask** value must use dotted-decimal notation (for example, ``255.255.224.0``), not a CIDR prefix or address such as ``/19`` or ``172.16.32.0/19``
 
 Starting the Installer
 ``````````````````````
@@ -92,12 +94,14 @@ Configure the static network settings for the Morpheus appliance VM. This is the
    :alt: HPE Morpheus Installer - VM Network configuration
 
 - **IP Address** — Static IP address for the Morpheus VM
-- **Netmask** — Subnet mask (e.g., ``255.255.252.0``)
+- **Netmask** — Subnet mask in dotted-decimal notation (for example, ``255.255.252.0``). Do not enter CIDR notation (for example, ``/22`` or ``192.168.0.0/22``)
 - **Gateway** — Default gateway for the VM
 - **DNS Servers** — One or more DNS servers (click the **x** to remove entries, or add more as needed)
 - **Appliance URL (optional)** — Custom URL for accessing the Morpheus appliance (e.g., ``https://morpheus.example.com``)
 
 Click **Next** to proceed.
+
+.. warning:: The Manager installer can accept a CIDR-formatted Netmask without rejecting the field, but the Manager deployment can subsequently fail. Return to VM Network configuration and enter the equivalent dotted-decimal mask before retrying. This differs from HVM host and ``hvmcli`` address inputs that are documented with CIDR notation.
 
 Step 4: Host Network
 ````````````````````
@@ -143,8 +147,12 @@ Configure the Morpheus appliance virtual machine settings.
   - Medium
   - Large
 
+Choose a profile based on the expected managed hosts, VMs, total objects, enabled integrations, and workload. The profiles do not establish a fixed number of HVM clusters that a Manager can manage. For published limits and guidance on values that are not published, see :doc:`HPE VM Essentials Maximums </infrastructure/clusters/hvm/maximums>`. Contact HPE for a workload-specific sizing review before committing to a large deployment.
+
 - **QCOW2 Image** — Path to the HPE VM Essentials QCOW2 image. Use the **Browse** button to locate the file on the ISO volume (e.g., ``hpe-vm-essentials-9.0.0-1.qcow2.gz``), or enter an HTTP URL
 - **Expected SHA256 Checksum (optional)** — If provided, the local image file's SHA256 will be verified before upload
+
+For a local path, the workstation remains in the image-transfer path until upload completes. For a URL, the target host must be able to resolve and reach the source. URL use can avoid a slow workstation or VPN path, but it does not guarantee a shorter transfer. Use a trusted source and provide the publisher's SHA256 checksum when available.
 
 **Appliance First-Boot Configuration:**
 

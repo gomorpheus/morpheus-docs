@@ -3,6 +3,8 @@ network
 
 List virtual networks and run connectivity tests.
 
+For layout 2.0 Virtual Switch verification, use ``network list`` together with the read-only ``hvmcli virtswitch list``, ``show``, and ``status`` commands described in :doc:`virtswitch`. VLAN IDs and MTU values are optional; an untagged traffic segment has no VLAN ID.
+
 Commands
 ````````
 

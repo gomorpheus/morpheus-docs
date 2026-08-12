@@ -52,6 +52,8 @@ Add ServiceNow Integration
 
 #. Save Changes
 
+If the ServiceNow endpoint uses a CA that the appliance does not already trust, import the CA on every application node by following :doc:`/getting_started/additional/ssl-import`. The procedure includes reconfigure, JRE truststore verification, and the required ``morpheus-ui`` restart. Do not use **Ignore Cert Verify** as a permanent substitute for installing a trusted chain.
+
 .. important:: |morpheus| supports integration with single-domain and multi-domain ServiceNow appliances. In multi-domain installations, a selected ServiceNow company can be mapped to a selected |morpheus| Tenant for purposes of exposing |morpheus| Library items only to users within a certain company. In this configuration, ServiceNow integrations should be added in each relevant |morpheus| Tenant. Further setup steps for exposing |morpheus| library items to ServiceNow are included in a later section below.
 
 Configuring ServiceNow for OAuth 2.0 Authentication

@@ -3,6 +3,8 @@ Overview
 
 The Environments section is where you create and manage your environment labels, which are available in the `Environment` dropdown during Instance or App provisioning. An Instance's environment label can be changed by editing the Instance.
 
+An Environment is an ``InstanceContextType`` record containing a code, name, description, display order, Tenant, visibility, and active state. Selecting one stores its context on the Instance or App. This supports categorization, display, filtering, automation variables, and naming-policy expressions; it is not itself a placement rule, lifecycle action, or RBAC boundary. Use Groups/Clouds and Policies for placement or lifecycle behavior and Roles/resource permissions for access segmentation. Provisioning Settings can require users to select an Environment, but that requirement does not change what the selected value authorizes.
+
 Creating Environments
 `````````````````````
 

@@ -3,6 +3,8 @@ SSL Self-signed Certificate Regeneration
 
 When Morpheus is deployed it generates a 10 year self-signed non-trusted SSL certificate.  Below details the process to regenerate this certificate and key.
 
+This procedure replaces the certificate presented by the appliance through NGINX. It does not add a certificate authority for outbound integrations. For an integration trust failure, use :doc:`/getting_started/additional/ssl-import`; reconfigure imports the CA, and ``morpheus-ui`` must then be restarted so the running JVM loads the updated truststore.
+
 Replacing both the certificate and private key
 ----------------------------------------------
 

@@ -136,7 +136,7 @@ Role Mappings
       * - Admin: Environment Settings
         - None, Full
         - Allows or disallows access to the Environments tab in :menuselection:`Administration --> Settings --> Provisioning`. When given to a Master Tenant user they may define the visibility of the environment to either private or public.  When given to a Subtenant user the environments are only visible to the subtenant (private).
-        - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set.
+        - The Environments tab is where named environments such as development or production are created and given a description as well as a code for use within the API. A display order and visibility is also set. This permission governs administration of Environment records; selecting an Environment on an Instance is not an RBAC grant.
         - This permission is recommended for those responsible for defining environments that will be available to select at provision time whether they are the Master Tenant or Subtenant users.
         -
       * - Admin: Export/Import
@@ -829,7 +829,7 @@ Role Mappings
       * - Operations: Activity
         - None, Read
         - Determines access to the Activity and History tabs on the Operations > Activity page.
-        - The Activity page displays four types of recent activities: Provisioning, Alerts, Backups, and Permissions.
+        - The Activity filter displays Provisioning, Alert, and Backup event types. Results may also be constrained by the user's Provisioning and Group access.
         - This permission is recommended for those responsible to monitor or view activities and their statuses within |morpheus|.
         -
       * - Operations: Alarms
@@ -1120,8 +1120,8 @@ Role Mappings
         - Tenant Role Recommendations
       * - Snapshots
         - None, Read, Full
-        - Determines access to the "Create Snapshot" function in the Actions menu on an Instance detail page (Provisoning > Instances > selected Instance).
-        - If utilizing a VMware Cloud, the ability to create snapshots is available on the Instance detail page (Provisoning > Instances > selected Instance).
+        - Determines access to the "Create Snapshot" function in the Actions menu on an Instance detail page (Provisioning > Instances > selected Instance).
+        - Full permission allows snapshot creation when the selected Instance layout supports snapshots. Read permission can expose snapshot results on the Backups tab but does not expose the create action.
         - This permission is recommended for Instance owners who should be allowed to take snapshots.
         -
       * - Snapshots: Linked Clone

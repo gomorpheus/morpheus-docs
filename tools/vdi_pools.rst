@@ -145,6 +145,11 @@ VDI Apps are created by selecting :guilabel:`+ ADD` from the VDI Apps tab or edi
 VDI Gateways
 ------------
 
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   The VDI Gateway use case requires an Advanced or Enterprise license. Distributed Workers used for other supported use cases, including HVM quorum witnesses, are also available in VM Essentials.
+
 The |morpheus| Worker can route VDI desktop sessions through a controlled network path. The same Worker runtime can also route Instance and Host consoles or operate as a Distributed Worker when the corresponding registrations and keys are configured.
 
 Adding VDI Gateways to |morpheus|

@@ -6,6 +6,8 @@ Overview
 
 A stretch cluster extends a layout 1.3 or 2.0 HVM cluster across two physical sites with a witness node in a third location for tie-breaking arbitration. This provides site-level fault tolerance while maintaining a single cluster management domain.
 
+This page covers multi-site stretch clusters with site groups. For a two-Host, single-site GFS2 cluster using a quorum-only witness, see :doc:`two_node_clusters`.
+
 Requirements
 ------------
 
@@ -90,19 +92,6 @@ Cluster Deployment for Stretch
 #. Click :guilabel:`Save Changes`
 
 When site groups exist, |morpheus| represents the selected Worker as the ``siteWitness`` quorum member. Do not create this group manually.
-
-Two-Node HPE Shared File System Witness
----------------------------------------
-
-An HVM 1.3 or later cluster with two Hosts and an HPE Shared File System (GFS2) datastore requires an external Distributed Worker witness to maintain an independent quorum vote. Unlike a stretch cluster, this topology does not use site groups, so the witness is represented as a witness-only quorum member without a site name.
-
-#. Deploy and register the Worker using `Witness Deployment`_. The Worker can run on a Host or VM outside the two-node cluster failure domain.
-#. Verify that both cluster Hosts can resolve, reach, and trust the Worker URL.
-#. Deploy the HVM cluster and add the HPE Shared File System datastore.
-#. Edit the cluster and select the Distributed Worker in the **Witness** field.
-#. Save the cluster and verify the witness in the Quorum panel.
-
-The Manager sends quorum information for HVM 1.3 or later when a GFS2 datastore is present. A connected Worker does not appear as an active quorum witness until the shared datastore activates the agent-based quorum workflow.
 
 Adding HPE Clustered Datastore (Shared LUN)
 --------------------------------------------

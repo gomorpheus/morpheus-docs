@@ -5,6 +5,8 @@ This section covers upgrade procedures for HVM clusters, including layout upgrad
 
 .. important:: A layout upgrade and an HVM OS update are separate operations. Layout 1.3 uses HVM OS/Ubuntu 24.04; layout 2.0 uses HVM OS 26.04. The supported layouts run in parallel. Do not change a cluster's layout or HVM OS outside a documented product workflow.
 
+.. warning:: The rolling update described here is an orchestrated cluster operation that runs the update and rollback scripts supplied by the selected HVM layout. It is not approval to perform an arbitrary Ubuntu release upgrade, replace package sources, or run general-purpose base-OS upgrade commands on an HVM host. No supported in-place base-OS transition outside a released cluster update is documented. If the required target OS is not offered by a product workflow, stop and contact Support for an approved migration or host-replacement plan; do not derive one from generic Ubuntu guidance.
+
 Layout 1.2 → 1.3 Upgrade
 --------------------------
 
@@ -51,6 +53,8 @@ Upgrade Process
 ^^^^^^^^^^^^^^^^
 
 The layout upgrade is performed as part of a cluster update operation. During the upgrade:
+
+.. IMPORTANT:: The released HVM 1.2-to-1.3 update definitions require |morpheus| Agent 3.2.7 or later on each Host. This minimum applies to this layout transition only; it is not a general Agent requirement for every VME Manager upgrade or every HVM update. The cluster update upgrades an older Host Agent before running the transition scripts and stops if the Agent cannot reconnect at the required version.
 
 #. Pacemaker services are disabled and removed
 #. The |morpheus| agent's QuorumCheckService activates

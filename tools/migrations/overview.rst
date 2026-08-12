@@ -17,7 +17,7 @@ Migration Architecture
 Migrations use an **agent-pull** architecture. The Morpheus Agent running on the destination HVM host connects directly to the source VMware environment over HTTPS and streams disk data using VMware's HttpNfcLease export API. This means:
 
 - **No intermediate storage is required** — disk data flows directly from ESXi to the target HVM host
-- **HVM hosts must have network access to ESXi hosts and vCenter** on the source VMware Cloud via the management network
+- **HVM hosts must resolve ESXi FQDNs and have network access to ESXi hosts and vCenter** on the source VMware Cloud via the management network; see :doc:`requirements` for the separate name-resolution and connectivity checks
 - **Disk format conversion happens in-flight** — VMDK data is decompressed and written as QCOW2 (thin-provisioned) or raw format depending on the target datastore
 
 .. note::

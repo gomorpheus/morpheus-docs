@@ -26,6 +26,7 @@
 
    /getting_started/guides/aws_guide.rst
    /getting_started/guides/vmware_guide.rst
+   /getting_started/guides/vmware_to_vme.rst
    /getting_started/guides/azure_guide.rst
    /getting_started/guides/autoinstall_instance.rst
    /getting_started/guides/autoinstall_app.rst
@@ -66,6 +67,7 @@
 
    release_notes/current.rst
    release_notes/9_0_0.rst
+   release_notes/8_1_0.rst
    release_notes/feature_matrix.rst
    release_notes/lifecycle.rst
    release_notes/compatibility.rst

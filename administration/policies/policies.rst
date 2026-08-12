@@ -63,9 +63,9 @@ Max Snapshots
 Max Storage
   Sets the max number of total of Storage combined for Instances in the Group or Cloud the Policy is added to, includes the option to include or exclude container resources in the Policy.
 Max Virtual Servers
-  Sets the maximum number of virtual servers within the policy scope
+  Sets the maximum number of load balancer virtual servers within the policy scope. This quota is evaluated by load balancer services; it is not a count of provisioned compute VMs.
 Max VMs
-  Sets the max number of Virtual Machines for the Group or Cloud the Policy is added to.
+  Sets the maximum number of managed compute Virtual Machines for the Group or Cloud the Policy is added to. Provisioning is rejected when adding another VM would exceed the applicable quota.
 Message of the Day (MOTD)
   Message of the Day"" Policy for displaying Alerts in |morpheus|. Configurable as a pop-up or full-page notification with Info, Warning and Critical message types.
 
@@ -239,7 +239,7 @@ NAME PATTERN
   Cloud codes and Group codes are fields found in their respective configuration panes.
 
 AUTO RESOLVE CONFLICTS
-  |morpheus| will automatically resolve naming conflicts by appending a sequential -number to the name when enabled.
+  When enabled, |morpheus| may resolve a generated-name collision by appending a sequential number. When disabled, the naming policy does not alter a conflicting generated name; the downstream uniqueness validation/provider determines whether provisioning fails. This option does not guarantee that every provider-side naming restriction can be repaired.
 
 Shutdown Policies
 ^^^^^^^^^^^^^^^^^

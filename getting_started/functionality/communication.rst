@@ -6,7 +6,9 @@ The following page contains communication information between the |morpheus| app
 Communication Frequency and Configurability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following table contains communication information, including frequency and configurability between |morpheus| and its supported technology integrations.
+The following table describes communication categories, frequency, and configurability between |morpheus| and integrated technologies. The named check rows describe network behavior that may be used by monitoring checks; they are not an inventory of currently shipped Instance Types, Layouts, or automatically created checks. Confirm the check types available in the current release under :menuselection:`Monitoring --> Checks --> + Add` before using a row for deployment planning.
+
+Older service-specific Instance Types and Layouts were disabled beginning with |morpheus| 6.0. Existing workloads may still retain those records. A communication row is therefore not evidence that a corresponding system Instance Type is available for new provisioning.
 
 .. list-table:: **Communication Frequency and Configurability**
   :widths: auto
@@ -582,6 +584,8 @@ The following table contains communication information, including frequency and 
     - Secure Web Socket
     - Persistent
     - No
+
+.. _ports-and-protocols:
 
 Ports and Protocols
 ^^^^^^^^^^^^^^^^^^^

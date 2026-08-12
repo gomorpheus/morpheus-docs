@@ -67,6 +67,8 @@ REQUIRED ROLE ATTRIBUTE VALUE
 <|morpheus| ROLE NAME>
   Additional roles that can be mapped to a user, which will add to the DEFAULT ROLE. Attribute value that a user must be assigned/a member of to be authorized, such as group or role in the SAML SP. This is obtained from the attribute/assertion defined in the ROLE ATTRIBUTE NAME field
 
+.. IMPORTANT:: Role mapping compares each value supplied for ROLE ATTRIBUTE NAME with a configured mapping using exact value equality. A single assertion value containing comma- or space-separated role names is not split and will not match multiple mappings. To assign multiple mapped Roles, configure the identity provider to emit multiple values for the same SAML attribute, one exact value per mapping. This preserves the provider's group model but may require changing its assertion configuration. The Default Role remains additive.
+
 .. NOTE:: For more on Identity Source role mapping permissions, see the `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in our KnowledgeBase.
 
 Role Options

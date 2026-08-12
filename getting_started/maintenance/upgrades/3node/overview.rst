@@ -1,7 +1,7 @@
 3-Node HA Upgrade
 ^^^^^^^^^^^^^^^^^
 
-3-Node HA Appliances represent 3 App nodes with local RabbitMQ and Elasticsearch services clustered across the app nodes, and an external MySQL cluster.
+Current 3-Node HA appliances use three application nodes with RabbitMQ and Elasticsearch services clustered across those nodes. The Transactional Database Tier remains outside the application nodes; all three application nodes use the same external MySQL cluster or supported MySQL service. Do not convert this topology to co-located MySQL as part of an upgrade.
 
 |morpheus| Packages
 ```````````````````

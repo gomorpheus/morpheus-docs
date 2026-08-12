@@ -15,6 +15,15 @@ Supported Versions
 - **RabbitMQ |rmqbranch|** (embedded default: |rmqver|)
 - **Erlang |erlang|** (must be compatible with your RabbitMQ version)
 
+Password changes for appliance-managed RabbitMQ
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Changing ``rabbitmq['queue_user_password']`` or the corresponding value in ``morpheus-secrets.json`` and running ``morpheus-ctl reconfigure`` does **not** rotate the password of an existing RabbitMQ user. The appliance recipe creates a missing user, but it does not change the password when that user already exists. Updating only the broker or only the application configuration creates a credential mismatch and can interrupt application and agent messaging.
+
+There is currently no supported self-service password-rotation procedure for the appliance-managed RabbitMQ ``queue_user``. Do not use a sequence that combines ``rabbitmqctl change_password``, direct edits to ``morpheus-secrets.json``, and reconfigure unless HPE Support supplies a procedure for the exact topology and release. Contact HPE Support to coordinate the broker and application credential change, validation, recovery plan, and the ordering of every application node.
+
+For external RabbitMQ, rotate credentials using the external service owner's process and coordinate the matching |morpheus| connection change with HPE Support. Never place a real password in documentation, command transcripts, or support artifacts.
+
 When to Externalize
 ^^^^^^^^^^^^^^^^^^^
 

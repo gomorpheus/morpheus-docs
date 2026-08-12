@@ -14,32 +14,24 @@ Assets
 
 .. TIP:: Backups, deployments and virtual image storage locations can be overridden within the |morpheus|-ui.  You can find more information on storage here: :ref:`storage`
 
-To copy the ``morpheus-ui`` directory to the shared storage follow the below steps:
+Moving existing appliance files to shared storage
+````````````````````````````````````````````````````````````
 
-1. SSH into the Appliance
-2. sudo su (or login as root)
-3. cd into ``/var/opt/morpheus/``
-4. Backup morpheus-ui directory by running the command below.  This will create a new directory in ``/var/opt/morpheus/`` called morpheus-ui-bkp and copy the contents of morpheus-ui into the new directory
+Moving the Manager VM between HVM hosts or datastores is a hypervisor VM migration. It does **not** move the appliance files under ``/var/opt/morpheus/morpheus-ui`` to shared application storage. The procedure below concerns appliance files only.
 
-   .. code-block:: bash
+Use a maintenance window. The application is unavailable while all application nodes are stopped. The exact shared-storage type, mount options, copy tool, ownership, and rollback sequence depend on the appliance release and storage platform. HPE does not publish one generic shell sequence for an existing VM Essentials Manager because an incomplete copy or mounting an empty target over the source can make appliance assets unavailable.
 
-    cp -r morpheus-ui morpheus-ui-bkp
+#. Confirm why the move is required. A single-node Manager does not gain application availability merely by moving this directory. If the goal is recovery from loss of the HVM host, first use the decision tree in :ref:`vme-manager-host-recovery`.
+#. Open an HPE Support case with the Manager version, topology, current filesystem and usage, proposed storage type, mount endpoint and options, and maintenance window. Obtain a release-specific migration and rollback plan before changing the mount.
+#. Create and verify all three recovery artifacts described in :doc:`/getting_started/guides/backup_restore`: an appliance database backup, a filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, and protected copies of appliance configuration and secrets. Keep the backups outside the Manager VM and outside the target being changed.
+#. Validate the target from every future application node: capacity, latency, name resolution, permissions, stable boot-time mounting, and the same numeric UID/GID for ``morpheus-app`` and ``morpheus-local``. For NFS, include the ``sync`` requirement below.
+#. Stop ``morpheus-ui`` on **every** application node as directed by the approved plan. Verify no node can write to the source before the final copy.
+#. Follow the approved copy and mount sequence. Preserve ownership, permissions, links, timestamps, sparse files, and all hidden content. Mount the target at ``/var/opt/morpheus/morpheus-ui``; do not change application paths to point at an arbitrary staging directory.
+#. Before startup, have the coordinator compare source and target content and verify ownership from every application node. Do not delete or repurpose the source.
+#. Start one application node as directed. Verify the UI, uploaded virtual images, deployment archives, Ansible content, Terraform content, white-label assets, and appliance backup destination. Then start and verify remaining nodes one at a time.
+#. Retain the source and verified backups for the rollback period in the approved plan.
 
-5. Move morpheus-ui to your shared storage. Example below:
-
-   .. code-block:: bash
-
-      mv morpheus-ui /nfs/appliance-files/
-
-6. Mount your shared storage volume to ``/var/opt/morpheus/morpheus-ui``. How you mount it is dependent on what kind of storage it is. If you mount the volume after the package install, but before the reconfigure, then you don't need to copy anything to a backup.
-
-7. SSH into the second Appliance and then Backup morpheus-ui directory by running
-
-   .. code-block:: bash
-
-      cp -r morpheus-ui morpheus-ui-bkp
-
-.. TIP:: When adding additional nodes you will only need to run step 6 and 7
+Stop and contact HPE Support if the target mounts differently between nodes, UID/GID values differ, the final copy cannot be proven quiescent and complete, startup writes to the old location, or any asset is missing. Roll back by stopping all application nodes and restoring the original mount/source according to the approved plan; do not merge two independently modified copies.
 
 .. important:: NFS mounts require ``sync`` option when using Ansible integration with |morpheus| Agent command bus execution enabled.
 

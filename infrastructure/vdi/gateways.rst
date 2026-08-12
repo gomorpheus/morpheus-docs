@@ -3,6 +3,11 @@
 VDI Gateways
 =============
 
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   VDI Gateways require an Advanced or Enterprise license. Distributed Workers used for other supported use cases, including HVM quorum witnesses, are also available in VM Essentials.
+
 Overview
 --------
 

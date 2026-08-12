@@ -8,6 +8,8 @@ In many situations,companies deploy virtual machines in proxy restricted environ
 
 To get started with Proxies, it may first be important to configure the |morpheus| appliance itself to have access to proxy communication for downloading service catalog images. To configure this, visit the |AdmSet| page where a section labeled "Proxy Settings" is located. Fill in the relevant connection info needed to utilize the proxy. It may also be advised to ensure that the Linux environment's ``http_proxy``, ``https_proxy``, and ``no_proxy`` are set appropriately.
 
+For optional Central Service or Remote Data Access connectivity, use the canonical endpoint requirement in :doc:`/getting_started/requirements/requirements`. Do not copy proposed tunnel hostnames into proxy rules unless HPE has supplied the current endpoint registry for the enabled service and release.
+
 Defining Proxies
 ^^^^^^^^^^^^^^^^
 Proxies can be used in a few different contexts and optionally scoped to specific networks with which one may be provisioning into or on a cloud integration as a whole. To configure a Proxy for use by the provisioning engines within |morpheus| we must go to ``Infrastructure > Networks > Proxies``. Here we can create records representing connection information for various proxies. This includes the host ip address, proxy port, and any credentials (if necessary) needed to utilize the proxy. Now that these proxies are defined we can use them in various contexts.
@@ -15,7 +17,7 @@ Proxies can be used in a few different contexts and optionally scoped to specifi
 Cloud Communication
 ^^^^^^^^^^^^^^^^^^^
 
-When morpheus needs to connect to various cloud APIs to issue provisioning commands or to sync in existing environments, we need to ensure that those api endpoints are accessible by the appliance. In some cases the appliance may be behind a proxy when it comes to public cloud access like Azure and AWS. To configure the cloud integration to utilize a proxy, when adding or editing a cloud there is a setting called "API Proxy" under "Advanced Options". This is where the proxy of choice can be selected to instruct the Provisioning engine how to communicate with the public cloud. Simply adjust this setting and the cloud should start being able to receive/issue instructions.
+When |morpheus| needs to connect to cloud APIs to issue provisioning commands or sync existing environments, those API endpoints must be accessible by the appliance. In some cases, the appliance may be behind a proxy for public Cloud access such as Azure or AWS. After defining a Proxy, add or edit a compatible Cloud and select it under ``Connection Options > API Proxy``. The Connection Options section appears when at least one Proxy or Distributed Worker is available to the Tenant. The API Proxy controls communication between |morpheus| and the Cloud API; it does not configure proxy settings inside provisioned workloads.
 
 Provisioning with Proxies
 ^^^^^^^^^^^^^^^^^^^^^^^^^

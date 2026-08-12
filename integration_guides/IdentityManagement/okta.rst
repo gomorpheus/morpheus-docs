@@ -37,4 +37,6 @@ MANUAL ROLE ASSIGNMENT
 
 Now, allowed Okta users can log into |morpheus| via their Okta credentials and a user will be automatically generated within |morpheus| with matching metadata and mapped Role permissions.
 
+For Okta applications using the SAML SSO identity-source type, each configured Role mapping is compared with one complete SAML attribute value. Comma- or space-separated role names inside a single value are not parsed. Emit the group/role attribute as a multi-value SAML attribute, with one exact value for each desired mapping. This limitation applies to SAML attribute mapping; it does not mean that every Okta identity-source mapping mechanism is limited to one Role.
+
 .. NOTE:: If you've created multi-tenant roles, these will also appear here and can be mapped to Okta user groups allowing you to map users to equivalent user groups in |morpheus|.
