@@ -183,18 +183,7 @@ Adding iSCSI Targets
 Creating the Datastore
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Storage > Datastores``
-#. Create a new datastore with the GFS2 type
-
-|morpheus| automatically handles:
-
-- Formatting with ``mkfs.gfs2``
-- Adding journal entries for each host (``gfs2_jadd``)
-- Mounting on all cluster hosts
-- Creating the libvirt storage pool
-- Configuring the lock protocol (``lock_dlm``) with a lock table tied to the cluster
-
-.. NOTE:: Mount information is persisted to ``/opt/morpheus-node/.mounts`` on each host.
+Create the HPE Clustered Datastore from :menuselection:`Infrastructure --> Storage --> Data Stores` or from the HVM Cluster's :guilabel:`Datastores` tab. See :doc:`storage_operations` for the canonical prerequisites, fields, resulting cluster operations, verification, and storage lifecycle procedures.
 
 Configuring Heartbeat Datastore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

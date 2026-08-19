@@ -57,18 +57,11 @@ Additionally, there are a number of OS optimization tools available on the Inter
 Linked Clones
 ^^^^^^^^^^^^^
 
-Linked Clones are a feature of VMware which references snapshots of a VM to deploy from. This adds the advantage of quicker clone times and the ability to more easily share small modifications to a file system. |morpheus| supports Linked Clones but recommends them for VDI workloads only.
+VMware and HVM/KVM linked clone Virtual Images reference a VM snapshot instead of copying the complete source disk. This can reduce the time and storage required to maintain ready VDI capacity. The source VM and snapshot remain dependencies and must be retained.
 
-.. NOTE:: Linked Clones are not templates but rather powered down VMs.
+Prepare and generalize the Windows or Linux guest before taking the snapshot. Then create the linked clone from the Instance :guilabel:`Backups` tab using :guilabel:`More` > :guilabel:`Create Linked Clone`. The resulting record appears under :menuselection:`Library --> Virtual Images` and can be selected in the VDI pool's provisioning configuration.
 
-#. Locate the VM you desire to have the Linked Clone in |morpheus|. If it's not currently managed by |morpheus|, navigate to the appropriate Cloud (Infrastructure > Clouds), find the VM on the "VMs" tab, and click "Convert to Managed" from the ACTIONS menu
-#. In the CONVERT TO INSTANCE modal, select "No Agent Install" in the AGENT field
-#. If snapshots are already on the VM, these will now be synced by |morpheus|. If you have not yet created a snapshot, do so in the vCenter console (and refresh the Cloud integration in |morpheus| afterward) or from the ACTIONS menu in |morpheus| itself. Be sure to take a snapshot of a powered-off VM and give the snapshot a name that will be identifiable for administrators
-#. From the Instance detail page in |morpheus|, navigate to the Backups tab to find the snapshot
-#. Select "More" and create the Linked Clone
-#. The Linked Clone will now appear in the |morpheus| Virtual Image repository (:menuselection:`Library --> Virtual Images`), ready to use with your custom Layouts
-
-.. NOTE:: You should modify the Virtual Image to "Force Guest Customization" unless you ``sysprep`` your VM at shutdown time
+See the **Creating Linked Clone Images** section in :doc:`/infrastructure/storage/storage` for the complete procedure, guest preparation commands, required permission, and VMware and HVM limitations.
 
 Creating or Editing a VDI Pool
 ------------------------------

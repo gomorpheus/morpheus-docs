@@ -13,7 +13,7 @@ Overview
 Role Requirements
 ^^^^^^^^^^^^^^^^^
 
-There are two Role permissions for the `Infrastructure > Storage` section: `Infrastructure: Storage` and `Infrastructure: Storage Browser`. `Infrastructure: Storage` give Full, Read or No access to the `Infrastructure > Storage` sections, while `Infrastructure: Storage Browser` is specific to `Buckets` and `Files Shares`. Full `Infrastructure: Storage Browser` permissions allows `Buckets` and `Files Shares` to be browsed and files and folders to be added, downloaded and deleted from the `Buckets` and `Files Shares`. Read `Infrastructure: Storage Browser` permissions allows `Buckets` and `Files Shares` to be browsed only.
+There are two Role permissions for the `Infrastructure > Storage` section: `Infrastructure: Storage` and `Infrastructure: Storage Browser`. `Infrastructure: Storage` gives Full, Read, or No access to the `Infrastructure > Storage` sections. `Infrastructure: Storage Browser` controls file access for Buckets, File Shares, and supported HVM file-based Data Stores. Full `Infrastructure: Storage Browser` permission allows upload and deletion when the user also has Full access to the corresponding storage resource. Read permission allows browsing and download when the user also has at least Read access to that resource.
 
 Default Storage
 ^^^^^^^^^^^^^^^

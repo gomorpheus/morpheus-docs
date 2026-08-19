@@ -21,6 +21,15 @@ Image Types
 
 .. IMPORTANT:: Synced User Images need to be configured prior to provisioning.
 
+Linked Clone Images
+^^^^^^^^^^^^^^^^^^^
+
+A linked clone Virtual Image is a record backed by a snapshot of an existing VMware or HVM/KVM VM. Provisioning from it creates a small writable disk that shares the snapshot's base data, reducing deployment time and initial storage consumption. It is not an independent copy of the source disk.
+
+Linked clone images are created from an Instance's :guilabel:`Backups` tab, not from the Virtual Images page. Prepare the guest, create a snapshot, and select :guilabel:`More` > :guilabel:`Create Linked Clone` for that snapshot. See the **Creating Linked Clone Images** section in :doc:`/infrastructure/storage/storage` for the complete workflow and platform constraints.
+
+After creation, edit the record in :menuselection:`Library --> Virtual Images` and verify the inherited operating system, cloud-init or Sysprep, guest customization, agent, credentials, and permissions. Keep the source VM and backing snapshot for as long as the image or provisioned linked-clone VMs are needed.
+
 Configuring Virtual Images
 --------------------------
 

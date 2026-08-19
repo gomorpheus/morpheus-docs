@@ -140,6 +140,21 @@ Existing snapshots are supported when importing an HVM VM as a Virtual Image. Fo
 
 The resulting Virtual Image must contain both ``metadata.json`` and every referenced disk artifact. A metadata-only result is an incomplete import, not evidence that existing snapshots must be deleted. Preserve the source VM and snapshots and see :doc:`/library/virtual_images/virtual_images` for verification and escalation guidance.
 
+Linked Clone Images
+-------------------
+
+HVM snapshots can be registered as linked clone Virtual Images for rapid, space-efficient VM provisioning. The provisioned VM writes to an overlay while the selected snapshot remains its shared backing disk. This is different from importing the VM as an independent Virtual Image.
+
+Create and manage linked clone images from the Instance :guilabel:`Backups` tab. See the **Creating Linked Clone Images** section in :doc:`/infrastructure/storage/storage` for the complete workflow, Windows and Linux guest preparation, permissions, and dependency guidance.
+
+On HVM, observe these additional constraints:
+
+- Linked clones require a file-based datastore and QCOW2 disks. LUN-per-vDisk storage, including HPE Alletra datastore types, does not support linked clones.
+- A linked clone on local storage is pinned to the source hypervisor and cannot be migrated to another host.
+- Storage migration is not supported because the overlay depends on the snapshot backing file in its original datastore.
+- The source VM and backing snapshot cannot be deleted while active linked-clone VMs depend on them.
+- When shared storage is used, eligible host placement can use the shared backing file, but the source snapshot must remain available.
+
 Limitations
 -----------
 

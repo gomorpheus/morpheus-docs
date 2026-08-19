@@ -177,6 +177,8 @@ Recommended free space threshold: **> 20%** on all HPE Clustered Datastores.
 
 Prefer adding another datastore before an existing datastore reaches the threshold. If operational constraints require an in-place LUN/GFS2 increase, use the single canonical, Support-gated procedure in :doc:`storage_operations`; do not treat array expansion alone as filesystem growth.
 
+For multiple shared file-based datastores, an HVM Datastore Group can select a member during provisioning and optionally rebalance eligible VM disks when a member exceeds the configured utilization threshold. See :doc:`storage_operations`.
+
 Capacity Monitoring in |morpheus|
 -----------------------------------
 

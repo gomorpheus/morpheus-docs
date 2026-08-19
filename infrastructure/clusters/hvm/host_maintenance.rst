@@ -6,6 +6,8 @@ Overview
 
 Host maintenance mode allows administrators to take a host offline for servicing (hardware repair, OS patching, firmware updates) without triggering unnecessary VM failover. When a host enters maintenance mode, |morpheus| evacuates VMs to other cluster hosts via live migration before marking the host offline.
 
+This procedure evacuates a Host. To evacuate VM disks from a datastore that is being serviced or retired, use datastore maintenance mode in :doc:`storage_operations`.
+
 Entering Maintenance Mode
 --------------------------
 

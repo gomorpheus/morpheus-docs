@@ -15,7 +15,11 @@ LANGUAGES     = es
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile gettext intl-update intl-build html-es
+.PHONY: help Makefile build gettext intl-update intl-build html-es
+
+# Project-standard build target
+build:
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 # Extract translatable strings into .pot files
 gettext:

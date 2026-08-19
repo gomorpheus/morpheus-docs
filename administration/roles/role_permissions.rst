@@ -457,8 +457,8 @@ Role Mappings
         - This permission is recommended to be set to None on the Tenant Role to restrict access to Subtentant users.
       * - Infrastructure: Storage Browser
         - None, Read, Full
-        - Determines file browsing access to buckets and file shares on the Buckets and File Shares tabs of the Infrastructure > Storage page.
-        - The Storage Browser permission allows users who also have appropriate Infrastructure: Storage permission to browse, add files and folders, download, and delete from the buckets and file shares.
+        - Determines file browsing access to buckets, file shares, and supported HVM file-based data stores on the Infrastructure > Storage page and HVM datastore detail pages.
+        - The Storage Browser permission works with Infrastructure: Storage permission. Read allows browsing and download; Full allows upload and deletion when the user also has Full access to the storage resource. Cluster-scoped datastore access additionally requires the corresponding Infrastructure: Clusters permission.
         - This permission is recommended for those who need to browse storage.
         -
       * - Infrastructure: Trust Integrations

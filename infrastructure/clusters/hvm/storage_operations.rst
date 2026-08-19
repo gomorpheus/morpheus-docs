@@ -3,12 +3,133 @@ Storage Lifecycle
 
 This section covers Day-2 storage operations on layout 1.3 and 2.0 HVM clusters, including adding and removing datastores, managing iSCSI targets, and expanding storage capacity.
 
+Datastore Groups
+----------------
+
+Datastore Groups provide automated storage placement and optional Storage DRS rebalancing for HVM clusters. A Datastore Group is a logical datastore type that contains multiple shared, file-based datastores. It does not create another filesystem or libvirt storage pool.
+
+Supported Members
+^^^^^^^^^^^^^^^^^
+
+A Datastore Group can contain these HVM datastore types:
+
+- **NFS Datastore**
+- **HPE Clustered Datastore (Shared LUN)**, which provides a shared GFS2 filesystem
+
+Members must be active datastores in the same HVM cluster. Local datastores, LUN-per-vDisk datastores, inactive datastores, nested Datastore Groups, and datastores already assigned to another group are not offered for selection.
+
+.. important::
+
+   Datastore Groups and the Storage DRS behavior described here are specific to HVM clusters. Do not use this procedure for other cluster or Cloud types.
+
+Service Provider Storage Tiers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+MSPs and service providers can use Datastore Groups to present storage service tiers without exposing the underlying datastore inventory. For example, create groups named **Gold**, **Premium**, or **Standard**, and assign datastores with the corresponding media, performance, protection, or operational characteristics.
+
+Grant a Tenant or Group access to the Datastore Group while withholding access to its member datastores. The consumer selects the service-tier group during provisioning, and |morpheus| can still resolve that group to an eligible member datastore. The consumer does not need direct permission to each member selected behind the group.
+
+To prevent datastore capacity from appearing in provisioning selectors, enable **Hide Datastore Stats On Selection** under :menuselection:`Administration --> Settings --> Provisioning`. Without this setting, users may see capacity information for datastore choices they are permitted to select.
+
+.. note::
+
+   A tier name is an administrative service definition, not an automatic quality-of-service guarantee. Keep each group's members operationally equivalent for the advertised tier, and enforce any IOPS, throughput, availability, encryption, or data-protection commitments through the underlying storage platform and service policy. Datastore Group placement uses capacity utilization; it does not benchmark media or validate service-level performance.
+
+Creating a Datastore Group
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users require **Infrastructure: Clusters** and **Infrastructure: Storage** permissions at the **Full** level.
+
+#. Navigate to :menuselection:`Infrastructure --> Clusters` and open the HVM cluster.
+#. Select the :guilabel:`Datastores` tab.
+#. Click :guilabel:`Add`.
+#. Enter a :guilabel:`Name` and select :guilabel:`Datastore Group` as the :guilabel:`Type`.
+#. Configure the group:
+
+   .. list-table::
+      :widths: 25 75
+      :header-rows: 1
+
+      * - Field
+        - Description
+      * - Member Datastores
+        - Select one or more eligible shared file-based datastores in this HVM cluster. A member can belong to only one Datastore Group.
+      * - Space Threshold (%)
+        - Utilization that marks a member as over threshold for Storage DRS evaluation. The allowed range is 70–95%; the default is 85%. A member must be strictly above the threshold before it is treated as overutilized.
+      * - Automation Level
+        - **Fully Automated** queues eligible storage migrations. **No Automation (recommendations only)** creates recommendations without moving disks. The default is **Fully Automated**.
+
+#. Save the Datastore Group.
+
+#. If the group is a consumer-facing storage tier, edit its datastore permissions to grant the intended Groups or Tenants access. Keep the member datastores private when their names and capacity should remain hidden.
+
+The group reports aggregate capacity and free space from its members. The datastore type cannot be changed after creation. Edit the group to change its members, threshold, or active state.
+
+Provisioning with a Datastore Group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Select the Datastore Group as the datastore for a VM disk during provisioning. Before creating the disk, |morpheus| resolves the logical group to an active, online member that allows provisioning and has enough capacity.
+
+Within the selected group, |morpheus| chooses the member with the lowest projected utilization after placing the disk. This normally favors the least-full member, which can differ from the datastore with the greatest number of free bytes when members have different capacities. The selected member's capacity is reserved while provisioning proceeds so concurrent requests do not all select the same free space.
+
+The configured **Space Threshold (%)** does not reject initial placement. It controls post-provision Storage DRS evaluation. Initial placement can use a member above that threshold if the requested disk still fits.
+
+When :guilabel:`Auto - Cluster` is available and selected instead of a named group, |morpheus| evaluates accessible Datastore Groups in the HVM cluster. It resolves the best member in each group, then selects the resulting member with the greatest free space.
+
+Automatic Storage Rebalancing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Storage DRS runs after a successful HVM cluster refresh. It evaluates each Datastore Group whose status is provisioned or warning:
+
+#. Members strictly above the configured threshold are treated as sources.
+#. |morpheus| identifies eligible VM disks that can be moved away from each source.
+#. A target must have enough capacity and remain at or below the threshold after receiving the disk.
+#. The target closest to the group's overall utilization is preferred.
+#. With **Fully Automated**, persistent imbalance queues storage migrations. With **No Automation**, |morpheus| creates a Storage DRS recommendation instead.
+
+Automatic mode requires the same source datastore to remain a migration candidate across consecutive evaluation cycles before migrations are queued. This avoids moving disks because of a single transient capacity reading. Only one Storage DRS cycle runs for an HVM cluster at a time, and a group is skipped while a member contains a VM already being resized.
+
+Eligible Disks and Limitations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Storage DRS considers only active, provisioned VM disks with reported usage. It excludes:
+
+- Disks with snapshots
+- Multi-attach or shared disks
+- CD-ROM and ISO volumes
+- Volumes without a positive size or reported usage
+- Volumes that are already participating in a resize operation
+
+Storage DRS moves individual eligible disks rather than entire datastores. Each migration is executed through the VM resize workflow and is visible as a separate process.
+
+.. warning::
+
+   Before placing a member datastore into maintenance, remove it from the Datastore Group or disable provisioning on it. Member-level placement and Storage DRS eligibility do not currently exclude a datastore solely because its maintenance status changed.
+
+Monitor every member's capacity and health independently. A Datastore Group is not a storage-redundancy mechanism and does not replace array protection, backups, multipathing, datastore maintenance procedures, or capacity planning.
+
 Storage Design Boundaries
 -------------------------
 
 |morpheus| manages supported datastore and host operations but does not replace storage-array design. Customers remain responsible for array sizing, LUN presentation, zoning, target configuration, multipath policy, network loss/latency analysis, data protection, and vendor interoperability. Present shared block storage consistently to every cluster host and verify stable device identity and all expected paths before datastore creation or returning a host to service.
 
 For Ethernet storage, separate traffic or provide sufficient redundant capacity when the failure analysis requires predictable storage behavior. Configure jumbo frames only across a validated end-to-end path. For Fibre Channel and iSCSI, test loss of each individual path and confirm the multipath device remains available. A successfully discovered device is not evidence that the design is redundant or adequately sized.
+
+Datastore Details and File Explorer
+-----------------------------------
+
+Open an HVM datastore from either :menuselection:`Infrastructure --> Storage --> Data Stores` or the HVM Cluster's :guilabel:`Datastores` tab. The detail page provides Summary, Volumes, Virtual Machines, History, and, when supported, Files tabs. Use the Volumes and Virtual Machines tabs to assess placement before maintenance, migration, or removal.
+
+The :guilabel:`Files` tab provides Datastore Explorer for shared, file-based HVM datastores with a configured path, principally NFS and HPE Clustered Datastores (GFS2). It requires an online HVM Host that can access the datastore.
+
+- **Read access** — With **Infrastructure: Storage** and **Infrastructure: Storage Browser** set to **Read**, users can navigate directories, search the current directory, and download files.
+- **Full access** — With both permissions set to **Full**, users can also upload files and recursively delete files or directories. Cluster-scoped access additionally requires **Infrastructure: Clusters** permission, and write operations require datastore ownership.
+
+Datastore Explorer does not create empty directories or rename, move, copy, or edit files. It is not available for local, block, RBD, LUN-per-vDisk, or cloud-scoped datastores. Upload and delete are blocked during datastore maintenance; browsing and download remain available.
+
+.. warning::
+
+   Datastore Explorer operates directly on the shared filesystem. Do not modify or delete VM disks, snapshot backing files, image artifacts, heartbeat data, active process files, or unknown datastore content. Use supported VM, snapshot, and datastore actions for managed artifacts.
 
 Adding a New Datastore
 -----------------------
@@ -25,9 +146,9 @@ Prerequisites
 Procedure
 ^^^^^^^^^
 
-#. Navigate to ``Storage > Datastores``
-#. Click :guilabel:`+ Add`
-#. Select the HPE Clustered Datastore (GFS2) type
+#. Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores` and click :guilabel:`Add`. Alternatively, open the HVM Cluster's :guilabel:`Datastores` tab and click :guilabel:`Add`.
+#. Select :guilabel:`HPE Clustered Datastore (Shared LUN)` as the type.
+#. When using the global Data Stores page, select the Cloud and target HVM Cluster.
 #. Configure the datastore:
 
    .. list-table::
@@ -41,7 +162,7 @@ Procedure
       * - Cluster
         - Select the target HVM cluster
       * - Block Device
-        - The shared block device path (e.g., ``/dev/mapper/mpathX``)
+        - The stable shared block device path. For multipath storage, use the WWN-based path, such as ``/dev/mapper/3<wwn>``; do not use a positional ``mpathX`` name.
       * - Heartbeat Target
         - Enable if this datastore should be used for heartbeat writes
 
@@ -120,16 +241,7 @@ To add additional capacity to an existing cluster:
 
 #. Provision new LUNs on your storage array
 #. Add iSCSI targets (if new portals) as described above
-#. Trigger a storage rescan so all hosts discover the new LUN. There are two ways to do this:
-
-   **From the UI:**
-
-   - Navigate to the cluster detail page and click :guilabel:`Actions` > :guilabel:`Rescan Storage` to immediately rescan all hosts
-
-   .. note:: Confirm Rescan Storage button is available in 9.1.0 UI. Update this section when the button ships.
-
-   .. NOTE:: |morpheus| also performs an automatic daily storage rescan during the cluster refresh cycle.
-
+#. Rescan storage on every HVM Host using the storage-vendor and HVM-release-approved procedure. Morpheus 9.1.0 does not expose a datastore-level :guilabel:`Grow Filesystem` action.
 #. Verify the new LUN is visible on the cluster's Storage tab
 #. Create a new HPE Clustered Datastore using the new block device
 
@@ -139,6 +251,8 @@ Growing an Existing GFS2 Datastore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use this procedure only for an HPE Clustered Datastore whose storage array supports online LUN expansion and after HPE Support or the storage owner confirms the exact HVM release, transport, device stack, and commands. The operation crosses the array/LUN, every host's paths, the shared block device, and GFS2. A size mismatch or use of the wrong device can affect every VM on the datastore.
+
+Morpheus 9.1.0 does not provide a UI or API action to grow a datastore filesystem. Expanding the backing LUN does not automatically increase the mounted GFS2 filesystem. The :guilabel:`Grow Filesystem` workflow tracked by MORPH-15316 is planned for Morpheus 9.2.0 and must not be assumed available in 9.1.0.
 
 .. warning:: Create and verify workload/application backups before the maintenance window. A VM snapshot on the datastore being grown is not an independent backup. Pause provisioning, migration, snapshots, backups, and other storage-changing jobs. Use one named coordinator; do not run the grow command concurrently from multiple hosts.
 
@@ -171,21 +285,70 @@ Coordinated growth sequence
 
 Stop without repeating commands if a rescan loses paths, multipath retains the old size, hosts report different sizes, ``gfs2_grow`` returns an error, GFS2 withdraws, or the UI capacity does not agree with ``df`` after refresh. Preserve command output and logs and contact HPE Support. Do not use ``fsck.gfs2``, recreate the filesystem, unmount it cluster-wide, or attempt to shrink the LUN as an improvised recovery.
 
+Datastore Maintenance and Evacuation
+------------------------------------
+
+Datastore maintenance mode prevents new provisioning and evacuates eligible VM volumes before a datastore is retired, replaced, or serviced. This is separate from Host maintenance mode; see :doc:`host_maintenance` for evacuating an HVM Host.
+
+Prerequisites
+^^^^^^^^^^^^^
+
+- **Infrastructure: Clusters** and **Infrastructure: Storage** permissions at the **Full** level
+- Healthy source and destination storage with sufficient capacity
+- No conflicting VM resize or storage migration operations
+- Removal of VM snapshots for workloads that must be migrated
+- A verified backup and recovery plan appropriate for the workloads
+
+If the datastore is a member of a Datastore Group, remove it from the group or disable provisioning before maintenance. A member's maintenance state alone does not currently remove it from Datastore Group placement or Storage DRS target selection.
+
+Enter Maintenance Mode
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Navigate to :menuselection:`Infrastructure --> Clusters`, open the HVM Cluster, select :guilabel:`Datastores`, and open the datastore.
+#. Click :guilabel:`Enter Maintenance`.
+#. Review the listed VMs and snapshot warnings.
+#. To send all movable VM volumes to one datastore, select it under :guilabel:`Target Datastore`. Leave the field blank to allow |morpheus| to choose destinations automatically.
+#. Click :guilabel:`Confirm`. If snapshots are reported, the confirmation changes to :guilabel:`Proceed Anyway`; those snapshot-bearing VMs are still skipped rather than forcibly migrated.
+
+With an explicit target, |morpheus| validates that it is in the same HVM Cluster, active, online, available for provisioning, outside maintenance, and large enough for the movable volumes. A Datastore Group cannot be selected as the maintenance target.
+
+With no explicit target, |morpheus| evaluates active, online datastores of the same type in the HVM Cluster. It places the largest VM storage sets first and can distribute different VMs across different targets. A target must remain below the automatic evacuation utilization limit after placement. If an otherwise movable VM cannot be assigned, maintenance entry stops before migration begins.
+
+Migration Behavior
+^^^^^^^^^^^^^^^^^^
+
+Maintenance enters an **Entering** state and queues asynchronous storage migrations through the standard VM resize workflow. It later reaches **Maintenance**, or returns to **Available** if a fatal planning or execution failure prevents entry.
+
+VMs with snapshots cannot be storage-migrated and are reported as skipped. A powered-off VM on local-only storage is also unmovable. Orphaned, infrastructure-owned, multi-attach, raw, or provider-specific volumes can have additional restrictions. Maintenance can complete with a warning when some VMs cannot migrate; review the datastore's Virtual Machines and Volumes tabs and the related processes before treating evacuation as complete.
+
+There is no user-facing cancellation action after maintenance evacuation has been submitted. Do not retry or issue conflicting resize operations while migrations are active.
+
+Leave Maintenance Mode
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. Confirm that maintenance work is complete and the datastore is healthy and accessible from every expected HVM Host.
+#. Open the cluster-scoped datastore detail page.
+#. Click :guilabel:`Leave Maintenance`.
+#. Confirm the operation.
+
+The datastore transitions through **Exiting** and returns to **Available**, which re-enables provisioning. Leaving maintenance does not automatically move VMs back to the datastore.
+
 Removing a Datastore
 ---------------------
 
-.. WARNING:: All VMs must be migrated off the datastore before removal. Removing a datastore with active VMs will result in data loss.
+.. WARNING:: All managed VM volumes must be evacuated and all remaining files or infrastructure volumes accounted for before removal. Removing a datastore with active or required data can cause data loss.
 
 Procedure
 ^^^^^^^^^
 
 #. Verify no VMs have disks on the datastore:
 
-   - Navigate to ``Storage > Datastores > [Datastore]``
+   - Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores`, then open the datastore
    - Check the :guilabel:`Virtual Machines` tab
+   - Check the :guilabel:`Volumes` tab and, for file-based datastores, inspect :guilabel:`Files` without modifying managed artifacts
 
-#. Migrate any remaining VMs to another datastore
-#. Navigate to ``Storage > Datastores``
+#. Use datastore maintenance mode to evacuate eligible VMs, then resolve every skipped or unmovable workload.
+#. Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores`
 #. Select the datastore to remove
 #. Click :guilabel:`Remove`
 

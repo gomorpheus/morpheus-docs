@@ -74,4 +74,6 @@ Unless a section contains a layout notice, it applies to layouts 1.3 and 2.0. Le
 - For OVS networking on Legacy and layout 1.3 clusters, see :doc:`hvm_networks`.
 - For layout 2.0 networking, see :doc:`virtual_switches`.
 - For layout 2.0 host commands, see :doc:`/tools/hvmcli/hvmcli`.
+- For datastore creation, Datastore Groups, file browsing, maintenance, and capacity operations, see :doc:`storage_operations`.
+- For VM snapshots and creating linked clone Virtual Images, see :doc:`snapshots`.
 - For layout and HVM OS upgrades, see :doc:`upgrading`.

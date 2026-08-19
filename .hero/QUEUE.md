@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-08-12T15:33:00Z · 122 ready specs_
+_Generated: 2026-08-19T15:55:34Z · 121 ready specs_
 
 ## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
 _initiative · delivering · horizon: now_
@@ -363,13 +363,6 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 
 ---
 
-## docs-910-storage-drs — "9.1.0 Docs: Storage DRS-Like Functionality"
-_initiative · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-storage-drs/spec.md)_
-
----
-
 ## docs-910-stig-morpheus-fips — "9.1.0 Docs: STIG Hardening Morpheus Manager Phase 2 FIPS"
 _initiative · planning · horizon: now_
 
@@ -489,13 +482,6 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 
 ---
 
-## docs-910-linked-clones — "9.1.0 Docs: Linked Clones in HVM"
-_initiative · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-linked-clones/spec.md)_
-
----
-
 ## docs-910-legacy-os-support — "9.1.0 Docs: Legacy OS Support Option"
 _initiative · planning · horizon: now_
 
@@ -598,13 +584,6 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 _initiative · planning · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-gpu-metrics/spec.md)_
-
----
-
-## docs-910-datastore-maintenance-mode — "9.1.0 Docs: Datastore Evacuation / Maintenance Mode"
-_initiative · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-datastore-maintenance-mode/spec.md)_
 
 ---
 
@@ -836,6 +815,34 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 _feature · planning · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/catchup-administration/spec.md)_
+
+---
+
+## docs-multitenancy-guide — "Multi-Tenancy Documentation"
+_initiative · planning · horizon: next_
+
+Audit and document supported multi-tenancy hierarchy behavior without inferring N-level support from the Parent Tenant field.
+
+**Status:** planning - current coverage is known; product behavior and limits require verification.
+
+**Pick up at:** start `docs-multitenancy-hierarchy`, establish the supported topology and depth, then use that model for the inheritance and administration children.
+
+-> `.hero/planning/initiatives/docs-multitenancy-guide/spec.md`
+
+**Files:** `administration/tenants/tenants.rst`, `administration/tenants/configuring_multi_tenancy.rst`, `getting_started/guides/tenancy.rst`, `administration/roles/`
+
+**Skip:** do not describe nesting as unlimited or recursively inherited until verified, and do not use broad resource visibility as a tenant-branch filter.
+
+---
+
+## docs-multitenancy-hierarchy — "Tenant Hierarchy and Supported Nesting"
+_feature · planning · horizon: next_
+
+Determine the actual supported tenant hierarchy before rewriting the conceptual model.
+
+**Pick up at:** reconcile recursive `PermissionService` ancestry checks with direct-child Tenant controller, dataset, user-management, and impersonation paths; then record confirmed depth and per-operation limits before editing docs.
+
+-> `.hero/planning/features/docs-multitenancy-hierarchy/spec.md`
 
 ---
 
