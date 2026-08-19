@@ -74,6 +74,32 @@ All commands support ``--json`` output for automation and integration with other
 - ``messages``: Empty on success, contains error description on failure.
 - ``data``: The command-specific response payload.
 
+Namespace Availability
+``````````````````````
+
+Not all namespaces are available on every HVM version:
+
+.. list-table::
+   :header-rows: 1
+   :widths: 25 35 40
+
+   * - Namespace
+     - HVM OS (Ubuntu 24.04)
+     - HVM OS (Ubuntu 26.04+)
+   * - ``virtswitch``
+     - Hidden
+     - Available
+   * - ``deploy``
+     - Hidden
+     - Available
+   * - ``tui``
+     - Hidden
+     - Available
+
+All other namespaces are available on both versions.
+
+.. note:: The ``virtswitch`` namespace also requires **Cluster Layout 2.0**. It is not available on clusters using earlier layout versions regardless of HVM OS version.
+
 Namespaces
 ``````````
 
