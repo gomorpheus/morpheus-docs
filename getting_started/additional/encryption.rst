@@ -5,12 +5,16 @@ By default, Morpheus encrypts sensitive data in the Database using AES encryptio
 
 Passwords and other strings in |morpheus| Appliance configuration files can be set to an encrypted string using the |morpheus| crypto utility to generate ENC strings and then using ``ENC(string)`` as the value in the configuration file.
 
+For database operations, ``.mysql.morpheus_password`` in ``morpheus-secrets.json`` is the generated embedded MySQL application-user password. External database connection values and customized database names are configured under ``mysql`` in ``/etc/morpheus/morpheus.rb``; do not substitute an embedded secret for an external-service credential.
+
 Additionally a custom Encryption Key Suffix can be set in the morpheus.rb configuration file. This suffix will be combined with a system string to generate a SHA-256 hash, which is used to generate the AES encryption key.
 
 Generate ENC Strings for morpheus-secrets.json
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 System generated passwords are set in ``/etc/morpheus/morpheus-secrets.json``. These entries can be updated to ENC strings with the following steps:
+
+.. warning:: Converting an existing value to its encrypted representation is different from changing the underlying service credential. In particular, do not use this procedure to rotate the appliance-managed RabbitMQ ``queue_user`` password. See :doc:`/getting_started/external_services/rabbitmq` for the supported limitation.
 
 #. On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string migrate`` which will output ENC() strings for the passwords in morpheus-secrets.json
 #. Update the desired password strings in the ``morpheus-secrets.json`` config file with the matching ENC() string.

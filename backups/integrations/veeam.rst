@@ -1,7 +1,17 @@
 Veeam
 -----
 
-Veeam is a backup and replication platform designed to work with popular on-prem cloud providers, including VMware, Microsoft Hyper-V, and vCloud Director. |morpheus| integrates with your existing Veeam appliance which can then be set as the preferred backup solution for any existing Clouds. From there, easily schedule backup routines during Instance provisioning and restore Instances when needed. This section discusses the process for integrating Veeam with |morpheus|, sharing a Veeam integration with multiple Tenants, setting backup during Instance provisioning, and restoring Instances from Veeam backup.
+Veeam is a backup and replication platform designed to work with popular on-prem cloud providers. |morpheus| integrates with your existing Veeam appliance which can then be set as the preferred backup solution for compatible Clouds. From there, easily schedule backup routines during Instance provisioning and restore Instances when needed. This section discusses the process for integrating Veeam with |morpheus|, sharing a Veeam integration with multiple Tenants, setting backup during Instance provisioning, and restoring Instances from Veeam backup.
+
+Supported Clouds
+^^^^^^^^^^^^^^^^
+
+Veeam backup is supported for:
+
+- VMware
+- Microsoft Hyper-V
+- Microsoft SCVMM
+- vCloud Director
 
 Features
 ^^^^^^^^
@@ -39,15 +49,15 @@ Adding Veeam Integration
 
 .. note:: Veeam Backup Enterprise Manager must be installed in order to successfully integrate |morpheus| with Veeam.
 
-.. important:: Once Veeam service has been integrated with |morpheus|, Veeam server(s) will be available to select as the backup provider for VMware, Hyper-V, and vCloud Director cloud integrations (:menuselection:`Infrastructure --> Clouds` > Edit a compatible Cloud). To enable Veeam backups, select the appropriate Veeam server as the "backup provider" for your cloud integrations as needed. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning.
+.. important:: Once Veeam service has been integrated with |morpheus|, Veeam server(s) will be available to select as the backup provider for VMware, Hyper-V, SCVMM, and vCloud Director cloud integrations (:menuselection:`Infrastructure --> Clouds` > Edit a compatible Cloud). To enable Veeam backups, select the appropriate Veeam server as the "backup provider" for your cloud integrations as needed. Failure to do so will result in blank ``Backup Repositories`` and ``Backup Job Templates`` options when configuring Veeam Backups during provisioning.
 
 Set Veeam as Cloud Backup Target
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the initial integration is made, set this integration as the backup provider for as many supported Clouds as needed. Veeam integrations are supported as backup target for VMware, Hyper-V, and vCloud Director Clouds at this time.
+Once the initial integration is made, set this integration as the backup provider for as many supported Clouds as needed. Veeam integrations are supported as backup targets for VMware, Hyper-V, SCVMM, and vCloud Director Clouds.
 
 #. Navigate to :menuselection:`Infrastructure --> Clouds`
-#. Select an existing VMware, Hyper-V, or vCD Cloud
+#. Select an existing VMware, Hyper-V, SCVMM, or vCD Cloud
 #. Click :guilabel:`EDIT`
 #. Expand the Advanced Options section
 #. Under "Backup Provider", select the relevant Veeam integration

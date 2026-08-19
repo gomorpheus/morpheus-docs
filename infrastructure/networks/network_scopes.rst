@@ -10,6 +10,8 @@ Overview
 
 Scopes define network service boundaries within a network server integration. Scopes can be used to segment and organize network resources, providing logical isolation for different environments, tenants, or applications. |morpheus| supports creating, editing, and managing scopes on network integrations that expose this capability.
 
+Scopes are distinct from Network Labels. To filter Network records that contain every requested Label through the Networks API, see :ref:`networks_all_labels`.
+
 .. NOTE:: The Scopes tab is available on network server integrations that support this feature (``hasScopes`` flag). The tab title may vary based on the integration type.
 
 Viewing Scopes

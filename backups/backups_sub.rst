@@ -3,6 +3,8 @@ Backups
 
 In the |BacBac| section, currently-configured Backups can be viewed and managed, and new Instance, Host and Provider backups be configured. Backups must be tied to a Backup Job, which holds the retention count and the schedule on which the backup should automatically be run. You can create a new Job at the same time as the backup is created or you can create the job ahead of time and associate any new backups to the existing job.
 
+Use :menuselection:`Backups --> Jobs` to review or manage those scheduling and retention definitions. Use :menuselection:`Backups --> History` to review backup execution and restore results.
+
 .. NOTE:: Role permissions for Backups determine which backups will be accessible to the individual user.
 
 Create an Instance Backup

@@ -5,11 +5,13 @@ Offline Installations and Upgrades
 
 For customers that have an appliance behind a firewall/proxy that does not allow downloads from our Amazon download site, you can add the supplemental package to add the needed packages the standard Morpheus installer would have downloaded.
 
+This page covers offline installation and application-package upgrades for the |morpheus| appliance. It does not supply Ubuntu base-OS updates for the HPE Morpheus Manager QCOW2 image. For restricted-network and fully disconnected APT repository models, see :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`. Offline HKS cluster provisioning uses a separate image-server workflow; see :doc:`/infrastructure/clusters/hks_offline_provisioning`.
+
 Offline Installation Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - NTP should be correctly configured and the server is able to connect to the NTP server in the ntp.conf file
-- The OS package repositories should be configured to use local LAN repository servers or the server should be able to receive packages from the configured repositories
+- The OS package repositories should be configured to use local LAN repository servers or the server should be able to receive packages from the configured repositories. For a Manager QCOW2 appliance, expose only the update content validated by HPE for the installed release.
 - The standard Morpheus and supplemental packages must be downloaded from another system and transferred to the Morpheus Appliance server
 - The supplemental package is additive, the full installer is also required
 

@@ -1,29 +1,21 @@
 Import Trusted Certificates
 ---------------------------
 
-.. IMPORTANT:: The following applies to upgrades after modifying the java keystore.
-
-Steps to import trusted certificates to |morpheus| after an upgrade.
+Use this procedure to add a certificate authority that the |morpheus| application must trust, such as the CA for a ServiceNow endpoint. Reconfigure imports certificates from the trusted-certificate directory into both the appliance OpenSSL trust path and the embedded JRE truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, so the UI must be restarted to load the updated JRE truststore.
 
 #. Obtain the full SSL certificate chain in PEM format.
 
 #. Copy them to each appliance and place them in the ``/etc/morpheus/ssl/trusted_certs`` directory.
 
-#. Run morpheus-ctl reconfigure on each appliance, note you don’t need to stop Morpheus before you run this.
+#. Run ``morpheus-ctl reconfigure`` on the appliance. Reconfigure can run while the UI is active.
 
-#. Run the following command as root:
+#. Verify that each certificate is present in the embedded JRE truststore. Reconfigure uses the certificate filename as its alias:
 
-    .. code-block:: bash
+   .. code-block:: bash
 
-        export PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH
+      /opt/morpheus/embedded/java/jre/bin/keytool -list -cacerts -storepass changeit -alias root_ca.pem
 
-#. Run the following command for each certificate in the chain, adjusting the file and alias name as needed. Answer yes for the root certificate when asked it you want to trust it.
-
-    .. code-block:: bash
-
-       /opt/morpheus/embedded/java/jre/bin/keytool -import -keystore /opt/morpheus/embedded/java/jre/lib/security/cacerts -trustcacerts -file /etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -storepass changeit
-
-#. Verify by running:
+#. Verify the remote endpoint and chain with the appliance OpenSSL client, replacing the host and port:
 
     .. code-block:: bash
 
@@ -53,4 +45,12 @@ Steps to import trusted certificates to |morpheus| after an upgrade.
 
 #. If the certificates are installed correctly you should see ``Verify return code: 0 (ok)``.  If they were not installed correctly then you will see a return similar to: ``Verify return code: 21 (unable to verify the first certificate)``
 
-#. Repeat for all App Nodes
+#. Restart the UI so its JVM loads the updated truststore:
+
+   .. code-block:: bash
+
+      morpheus-ctl restart morpheus-ui
+
+#. Repeat the copy, reconfigure, truststore verification, and UI restart on every application node. In an HA deployment, process one application node at a time and confirm it is healthy before proceeding to the next node.
+
+#. Retry the integration without disabling certificate verification. A successful connection confirms that the application JVM trusts the endpoint; ``openssl`` success alone does not verify the trust state of the already-running JVM.

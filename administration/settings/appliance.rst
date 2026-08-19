@@ -29,7 +29,7 @@ Disable SSH Password Authentication
 Default Appliance Locale
   Sets the default language and region for all users on the |morpheus| appliance. Users with individual language preferences may also override this selection on their User Settings page
 Default Console Gateway
-  Select a configured |morpheus| Worker as a console gateway or VDI gateway. For more on installation and configuration of a gateway, see the `VDI Gateways section <https://docs.morpheusdata.com/en/latest/tools/vdi_pools.html#vdi-gateways>`_ of |morpheus| documentation.
+  Select a configured VDI Gateway to route Instance and Host console sessions. The gateway can use the same Worker runtime as a Distributed Worker, but it requires a VDI Gateway registration and API key. See :doc:`/administration/integrations/workers` and :ref:`vdi-gateways`.
 Max Option List Size
   Sets a maximum size for Option Lists (such as those sourced from REST calls to a remote server) to preserve appliance performance in the event that a very large payload is inadvertently accessed. The entered number is multiplied by 1000 (for example, entering "1" results in a maximum list size of 1000).
 Dashboards to Display

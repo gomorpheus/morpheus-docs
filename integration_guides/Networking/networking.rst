@@ -1,6 +1,8 @@
 Networking Integrations
 =======================
 
+Router creation fields and the HVM **VM Network (OVS)** type are documented in :doc:`/infrastructure/networks/routers`. Router types supplied by the integrations below have provider-specific capabilities and fields.
+
 .. toctree::
 
    infoblox.rst

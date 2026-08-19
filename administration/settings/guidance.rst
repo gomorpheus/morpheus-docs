@@ -3,6 +3,8 @@ Overview
 
 |morpheus| guidance is an important tool that makes recommendations for resource and cost optimization. It analyzes CPU, memory, and storage activities over time to make intelligent recommendations on sizing and power state. These recommendations can free up resources and save organizations significant amounts of money over time. Out of the box, |morpheus| is configured for sensible thresholds used in making these recommendations but they can be edited here if needed.
 
+.. NOTE:: These thresholds evaluate managed workload metrics over time to produce resize recommendations. They do not control the instantaneous appliance memory warnings shown under Administration > Health. See :doc:`/administration/health/health` for those formulas and thresholds.
+
 Power Settings
 ^^^^^^^^^^^^^^
 

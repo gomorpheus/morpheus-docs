@@ -1,6 +1,12 @@
 Morpheus Agent OS Support
 -------------------------
 
+.. IMPORTANT:: RHEL 6 is not supported for standard |morpheus| Agent installation. The minimum supported RHEL version is not established by the bundled package metadata; an OS-recognition row must not be treated as a support promise.
+
+.. IMPORTANT:: RHEL 10 Agent installation is supported beginning with |morpheus| 8.0.8. This is an Agent support statement and does not describe the operating systems supported for the |morpheus| appliance. No different RHEL 10 floor is established here for later release lines.
+
+.. WARNING:: The table below is the operating-system recognition catalog used by |morpheus|. It is not a current package support or lifecycle matrix. In particular, a recognized OS code or an **Install Agent?** value of ``1`` does not prove that a package is published for the current release. General 32-bit Linux support is not established by current bundled package metadata. Historical Debian and Ubuntu recognition rows likewise do not establish current support; consult release history for removals and the target release's package policy for current availability. Use a package published for the target architecture and release, and treat an OS/version not listed in that policy as not listed as supported rather than inferring compatibility from this catalog.
+
 .. list-table::
    :widths: auto
    :header-rows: 1
@@ -437,42 +443,6 @@ Morpheus Agent OS Support
      - other
      - other
      - 0
-   * - redhat
-     - 32
-     - redhat
-     - redhat
-     - rhel
-     - all
-     - linux
-     - redhat
-     - 1
-   * - redhat 6
-     - 32
-     - redhat
-     - redhat.6
-     - rhel
-     - 6
-     - linux
-     - redhat
-     - 1
-   * - redhat 6 64-bit
-     - 64
-     - redhat
-     - redhat.6.64
-     - rhel
-     - 6
-     - linux
-     - redhat
-     - 1
-   * - redhat 64-bit
-     - 64
-     - redhat
-     - redhat.64
-     - rhel
-     - all
-     - linux
-     - redhat
-     - 1
    * - redhat 7
      - 32
      - redhat

@@ -19,6 +19,11 @@ Morpheus allows for additional advanced customizations for system managed servic
   bitcan['backup_directory'] = '/var/opt/morpheus/bitcan/backups'
   bitcan['working_directory'] = '/var/opt/morpheus/bitcan/working'
 
+  firewall['enabled'] = true
+    # When true, reconfigure runs the appliance firewall recipe. On RHEL 7 and later, that recipe disables firewalld and enables appliance-managed iptables.
+  firewall['ipv4'] = true
+    # When the firewall recipe is enabled, generate and apply the appliance IPv4 rules. Set firewall['enabled'] = false as well to retain a customer-managed firewall.
+
   elasticsearch['auth_password'] = 'xxxxxxxxxxxxxxxx'
   elasticsearch['auth_user'] = 'morpheus-es-user'
   elasticsearch['enable'] = true

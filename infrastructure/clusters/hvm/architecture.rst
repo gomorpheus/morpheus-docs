@@ -4,12 +4,14 @@ Architecture
 Overview
 --------
 
-The HVM 1.3 cluster layout introduces a fundamentally new high-availability architecture for |morpheus| hypervisor clusters. The previous Pacemaker-based resource management has been replaced with the |morpheus| agent's QuorumCheckService, providing tighter integration with the |morpheus| platform and simplified operations.
+Layouts 1.3 and 2.0 use the |morpheus| Agent's QuorumCheckService for high availability. This architecture replaces the Pacemaker-based resource management used by Legacy layouts, providing tighter integration with the |morpheus| platform and simplified operations.
+
+.. note:: This page applies to layouts 1.3 and 2.0. For the Pacemaker architecture used by Legacy layouts, see :doc:`/infrastructure/clusters/mvm`.
 
 Component Stack
 ^^^^^^^^^^^^^^^
 
-The HVM 1.3 cluster relies on three core components:
+Layouts 1.3 and 2.0 rely on three core components:
 
 - **Corosync**: Cluster membership and messaging layer
 - **DLM (Distributed Lock Manager)**: Coordinates file locks for the HPE Clustered Datastore (GFS2) filesystem

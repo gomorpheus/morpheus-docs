@@ -58,6 +58,8 @@ The following VMs are not moved during maintenance evacuation:
 
 .. WARNING:: If pinned VMs exist on the host, they will remain in place during maintenance. Ensure these VMs can tolerate the host being serviced, or manually relocate them before entering maintenance mode.
 
+For permanent decommissioning, maintenance mode is only the evacuation step. Complete the supported cluster removal and post-removal health checks in :doc:`managing_hosts`.
+
 VMs With Local Storage
 ^^^^^^^^^^^^^^^^^^^^^^^
 

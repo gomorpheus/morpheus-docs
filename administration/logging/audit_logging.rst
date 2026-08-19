@@ -199,7 +199,7 @@ Viewing Audit Logs
 
 **From the UI:**
 
-Navigate to |AdmAct| to view, search, and filter audit events. The Activity page shows:
+Navigate to :menuselection:`Operations --> Activity` to view and filter recent product activity. See :doc:`/operations/activity` for the current filters, permission requirements, and the distinction between Activity, Alarms, and process History.
 
 - Timestamp
 - User

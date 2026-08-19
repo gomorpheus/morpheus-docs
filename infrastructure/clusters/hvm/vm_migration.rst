@@ -14,6 +14,15 @@ Requirements
 - No host devices (GPU/USB passthrough) are attached to the VM
 - The target host must have sufficient available memory
 - Network connectivity between source and target hosts
+- The VM CPU definition must be supported by both hosts. Named CPU models use exact matching; choose a named model supported by every host on which the VM can run
+- VMs using Host Passthrough with nested virtualization enabled are non-migratable
+
+Mixed CPU Hosts
+^^^^^^^^^^^^^^^
+
+Before admitting different CPU models to one cluster, configure one exact named CPU model that is supported by every source and destination host, then test a live migration in both directions. Configure the model while creating or editing the cluster using the **CPU Architecture/Model** field. Compatibility is based on that exact common model, not a universal rule to select the processor marketed as "lowest" or oldest.
+
+Do not assume that |morpheus| automatically selects the lowest processor generation. Host Passthrough's migratable setting is not a guarantee that arbitrary physical CPU combinations can live-migrate. If both directions have not been validated, use homogeneous hosts or keep affected VMs on a compatible host set.
 
 Initiating a Live Migration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

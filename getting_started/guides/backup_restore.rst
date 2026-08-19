@@ -3,7 +3,17 @@ Backing Up and Restoring |morpheus| Appliance
 
 |morpheus| includes built-in tools for backing up managed Instances as well as the appliance itself. Use this guide to configure a location and schedule for backing up your |morpheus| appliance. This guide also includes steps for restoring or migrating your appliance from the created backup. The steps are the same whether your appliance is deployed in a single node or distributed architecture.
 
-The built-in |morpheus| appliance backup functionality backs up the MySql data. In addition to the database, it's advisable to back up your shared storage (at ``/var/opt/morpheus/morpheus-ui``) and the morpheus.rb configuration file.
+The built-in |morpheus| appliance backup functionality backs up the MySQL data. It is not a complete Manager recovery set.
+
+.. _vme-manager-recovery-set:
+
+For Manager recovery, keep the following together and outside the Manager VM and its HVM host:
+
+- A recently verified appliance database backup
+- A filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, including ownership and permissions
+- Protected copies of ``/etc/morpheus/morpheus.rb``, ``/etc/morpheus/morpheus-secrets.json``, certificates, and the deployment record (appliance version, hostname, IP, DNS, gateway, and storage mappings)
+
+Protect the secrets file as credential material. Test recovery on the same appliance version and document the recovery point and recovery time achieved by the test.
 
 .. note:: The destination |morpheus| appliance must be running the same version as that which the backup was taken from.
 
@@ -60,30 +70,39 @@ At this point, your appliance will be automatically backed up on the schedule yo
 Restoring an Appliance from Backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. _vme-manager-host-recovery:
+
+VME Manager host-failure decision tree
+``````````````````````````````````````
+
+First isolate the failed HVM host so that it cannot run another copy of the Manager VM. Starting two copies with the same identity or disks can corrupt data and disrupt integrations. Then select the recovery path:
+
+#. **The Manager VM and all of its disks are intact on storage accessible to another healthy host:** use the supported HVM VM registration, migration, or recovery workflow for the applicable cluster layout. This relocates the complete VM; it is not an appliance database restore. Preserve the VM identity, MAC addresses, and storage attachments. Start only one copy and validate it using the checklist below.
+#. **The VM is unavailable, but the complete recovery set survives:** deploy a replacement Manager at the **same version as the backup**, preserve or deliberately update its DNS/IP identity, and contact HPE Support for the topology-specific database and appliance-file restore sequence. Do not attach the old and replacement Manager to production simultaneously.
+#. **Only a database backup survives:** stop. A database backup does not contain all files, configuration, secrets, certificates, or uploaded assets needed to reproduce the appliance. Contact HPE Support to determine what can be recovered and which integrations and credentials must be rebuilt.
+#. **No viable VM or recovery set survives:** deploy a new Manager and re-onboard resources under an HPE Support recovery plan. Do not copy database tables, edit appliance identity directly, or reuse unknown disks in an attempt to reconstruct the failed appliance.
+
+Before any recovery, record the failed host and storage state, fence or power off the original host, protect surviving disks from writes, and take snapshots or storage-level copies where supported. Stop and contact HPE Support if host isolation is uncertain, a disk is inconsistent, the replacement version differs, the database topology is unknown, or DNS/certificate/identity changes are required.
+
+After starting the recovered Manager, verify the appliance URL and certificate, administrator login, service health, database connectivity, UI assets and uploaded images, HVM cluster/host connectivity, inventory refresh, console access, integrations, automation credentials, and the next appliance backup. Do not discard the failed VM or recovery artifacts until this validation and an agreed rollback period are complete.
+
 Begin by ensuring the Morpheus UI service is stopped on all of the application servers:
 
 .. code-block:: bash
 
  [root@app-server-new ~] morpheus-ctl stop morpheus-ui
 
-To access the MySQL shell we will need the password for the Morpheus DB user. We can find this in the morpheus-secrets file:
+For an embedded database using the default generated credentials, retrieve the exact MySQL application-user key without printing unrelated secrets:
 
 .. code-block:: bash
 
- [root@app-server-old ~] cat /etc/morpheus/morpheus-secrets.json | grep morpheus_password
- "morpheus_password": "451e122cr5d122asw3de5e1b", <---- this one
- "morpheus_password": "9b5vdj4de5awf87d",
+ [root@app-server-old ~] jq -r '.mysql.morpheus_password' /etc/morpheus/morpheus-secrets.json
 
-Make note of the first ``morpheus_password`` value as indicated above.
+For an external database or a customized database name, host, user, or password, use the effective ``mysql`` configuration in ``/etc/morpheus/morpheus.rb`` instead. Values in ``morpheus-secrets.json`` describe generated embedded-service secrets and must not be assumed to describe an external service.
 
-Copy the SQL database backup from the backup bucket or file share to an appliance node at ``/tmp/morpheus_backup.sql``. Then, you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the morpheus user when prompted:
+Copy the SQL database backup from the backup bucket or file share to a secured location on an appliance node. The previously documented direct ``mysql`` restore command is not a supported general restore procedure: appliance dumps can contain database-level statements, and the correct connection target, privileges, schema name, topology sequence, and validation depend on the deployment. Contact HPE Support for the restore command and recovery plan for the source and target appliance versions and database topology. Do not start the UI until Support's restore validation is complete.
 
-.. code-block:: bash
-
-  [root@app-server-new ~] /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 127.0.0.1 morpheus -p < /tmp/morpheus_backup.sql
-  Enter password:
-
-The data from the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
+When the validated restore is complete, start the UI on each application server as directed by the recovery plan:
 
 .. code-block:: bash
 

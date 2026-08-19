@@ -8,6 +8,10 @@ Overview
 
 |morpheus| provides a simple-to-use Bare Metal boot capability based on PXE. When a server boots and is redirected to the |morpheus| server for the installation files, they can be configured to be simply passed an OS or Hypervisor (in which case |morpheus| will see them as Bare Metal servers with no further detail) or they can be brought on as Virtual Machines or Docker Hosts. Installation of the |morpheus| Agent can also be done during the initial configuration stage.
 
+.. important::
+
+   This page describes the |morpheus| **bare-metal** PXE service. An HVM VM can instead boot from an existing PXE environment by enabling **Network Boot** on the VM. That setting places the VM's primary virtual NIC first in its boot order; it does not enroll the VM in the bare-metal workflow on this page. See :doc:`/infrastructure/clusters/hvm/vm_advanced_options`.
+
 Prerequisites
 -------------
 

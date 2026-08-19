@@ -4,6 +4,10 @@ XCP-ng
 Add an XCP-ng Cloud
 ^^^^^^^^^^^^^^^^^^^^
 
+.. important::
+
+   The current compatibility matrix retains XenServer 7.x as the previously published qualified value. XCP-ng 8.2.x, including 8.2.1, is not approved by the evidence bundled with this documentation. Do not treat testing activity as a support statement. Verify a planned XCP-ng release with HPE Support before deployment.
+
 #. Navigate to ``Infrastructure > Clouds``
 #. Select :guilabel:`+ CREATE CLOUD`, select XCP-ng, and then click :guilabel:`Next`.
 #. Enter the following into the Create Cloud modal:

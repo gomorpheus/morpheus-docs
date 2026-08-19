@@ -10,6 +10,19 @@ The Networks section is for configuring networks across all clouds in |morpheus|
 
 Networks can be configured for DHCP or Static IP assignment, assigned IP pools, and configured for visibility and account assignment for multi-tenancy usage. Inactive Networks are unavailable for provisioning use. In addition, |morpheus| allows administrators to restrict management of |morpheus|-created Networks through Role permissions.
 
+.. _networks_all_labels:
+
+Filtering Networks by all Labels through the API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Networks API ``allLabels`` filter matches Networks that have every supplied Label. Supply the query key once for each Label; do not combine multiple Labels into one comma- or space-separated value.
+
+.. code-block:: text
+
+   GET /api/networks?allLabels=ENV.NIT&allLabels=SERVICE.LNX_AP_WLS
+
+URL-encode Label values when they contain reserved characters. Repeated parameters are collected as separate values and the label service joins once per value, so the result contains only Networks matching all values. By contrast, ``labels``/``label`` uses match-any behavior.
+
 Understanding Networks (VMware to |morpheus|)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -94,6 +107,8 @@ Synced Networks vs Manually Created Networks
 
 - **Synced networks** are automatically discovered from integrated Clouds (e.g., VMware port groups, AWS VPCs/subnets). These appear in the Networks list after a Cloud sync and can be edited to add |morpheus|-specific settings (IP pools, domains, permissions).
 - **Manually created networks** are defined directly in |morpheus| and are used when the Cloud does not auto-discover networks (e.g., HVM clusters where networks are defined by Virtual Switch segments) or when you need to create an overlay network definition.
+
+For the legacy/layout 1.3 **HVM Overlay Network** fields, VXLAN behavior, prerequisites, and deletion impact, use :doc:`/infrastructure/clusters/hvm/hvm_networks`. Do not apply that plugin workflow to layout 2.0 Virtual Switches.
 
 Configuring Networks
 ^^^^^^^^^^^^^^^^^^^^

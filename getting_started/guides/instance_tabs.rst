@@ -232,7 +232,7 @@ The RBAC permissions associated with a user can be used to determine the visibil
 Manage Visibility by Instance Environment Setting
 `````````````````````````````````````````````````
 
-The |morpheus| environment that an Instance or virtual machine belongs to can be used to determine the visibility of the DataDog plugin tab.
+The Environment context stored on an Instance or virtual machine can be used by custom plugin logic to determine visibility of the DataDog plugin tab. This example is application logic in the plugin; an Environment is metadata and does not create a native |morpheus| RBAC boundary.
 
 .. code-block::
 

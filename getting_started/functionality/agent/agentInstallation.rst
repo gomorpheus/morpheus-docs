@@ -5,6 +5,8 @@ There are many methods to install the |morpheus| Agent on supported targets. All
 
 .. important:: All Agent installation methods require the Target (VM or Host) to resolve and reach the appliance URL over port 443. In addition to the main Appliance URL (in |AdmSet|), additional Appliance URLs can be set per cloud in the Advanced Options section of the Create/Edit Cloud modal. When this field is populated, it will override the main Appliance URL for anything provisioned into that Cloud.
 
+.. important:: Endpoint detection and response (EDR), antivirus, application control, or host firewall policy can block the installation script, package installation, Agent process startup, outbound reachability, websocket communication, or a later Agent upgrade. Before installation, ask the security team to permit the HPE-published package or appliance-provided script and the specific Agent paths, processes, and appliance destination required by policy. Do not create broad filesystem, process, or network exclusions. If a policy block is suspected, preserve the security-product event, Agent/install output, and appliance log entry and follow the **Endpoint Security Interference** guidance included below.
+
 Basic Installation Steps
 ^^^^^^^^^^^^^^^^^^^^^^^^
 #. An Agent installation method is used to get the install script onto the target VM or Host

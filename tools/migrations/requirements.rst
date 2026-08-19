@@ -7,7 +7,8 @@ Infrastructure Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **HVM Agent version 2.10.0+** — HVM Hosts must be running Agent version 2.10.0 or later. To upgrade, navigate to the host detail page, open the ACTIONS menu, and select "Upgrade Agent." If unsuccessful, select "Download Agent Script" to download a host-specific shell script for manual installation.
-- **Network connectivity** — HVM Hosts must be able to reach ESXi hosts and vCenter on the source VMware Cloud via the management network (HTTPS, port 443).
+- **Name resolution** — If the ESXi hosts are registered in vCenter by fully qualified domain name (FQDN), every participating HVM Host must be able to resolve each ESXi FQDN. From each HVM Host, run ``getent hosts <esxi-fqdn>`` for every source ESXi host. Correct the DNS or host records before migration if a name does not resolve.
+- **Network connectivity** — Separately from name resolution, HVM Hosts must be able to reach ESXi hosts and vCenter on the source VMware Cloud via the management network (HTTPS, port 443).
 - **Source VMs must be running** — The preparation phase requires the source VM to be powered on. If a VM is powered off, it will be automatically started during the precheck phase.
 
 Source VM Requirements

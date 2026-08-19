@@ -1,7 +1,7 @@
 Capacity Planning
 =================
 
-Proper capacity planning ensures an HVM 1.3 cluster can handle workloads while maintaining the ability to tolerate host failures and perform maintenance operations.
+Proper capacity planning ensures an HVM cluster can handle workloads while maintaining the ability to tolerate host failures and perform maintenance operations.
 
 Memory Math
 -----------
@@ -174,6 +174,8 @@ Plan storage capacity considering:
 - **GFS2 journal overhead** — Each host requires a journal entry per datastore (typically 128 MB per journal)
 
 Recommended free space threshold: **> 20%** on all HPE Clustered Datastores.
+
+Prefer adding another datastore before an existing datastore reaches the threshold. If operational constraints require an in-place LUN/GFS2 increase, use the single canonical, Support-gated procedure in :doc:`storage_operations`; do not treat array expansion alone as filesystem growth.
 
 Capacity Monitoring in |morpheus|
 -----------------------------------

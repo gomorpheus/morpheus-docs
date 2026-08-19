@@ -1,7 +1,7 @@
 HPE-VM
 ------
 
-.. deprecated::
+.. deprecated:: 9.1
    ``hpe-vm`` is available only on **HVM OS Ubuntu 24.04**. It is deprecated and replaced by ``hvmcli`` and the HPE Morpheus Manager Installer in HVM OS Ubuntu 26.04+.
 
 .. toctree::

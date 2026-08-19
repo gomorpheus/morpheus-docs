@@ -1,6 +1,8 @@
 Configure Morpheus Database and User
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+External MySQL configuration is supported, including the 8.4 LTS family. Confirm the formally certified version and service variant for the installed |morpheus| release, and review :doc:`/getting_started/external_services/mysql` before creating the schema. ``8.4 or greater`` is not an unconditional support statement.
+
 #. Create the Database you will be using with |morpheus|. Login to mysql node:
    
    .. code-block:: bash

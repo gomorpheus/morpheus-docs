@@ -187,7 +187,7 @@ The following table shows the supported component versions for |morpheus| |morph
      - Standard HVM host OS for cluster layout 1.3
    * - HVM OS 26.04
      - Ubuntu 26.04 LTS based
-     - Required for confidential compute. Introduced in 9.1.0.
+     - Standard HVM host OS for cluster layout 2.0. Required for confidential compute. Introduced in 9.1.0.
    * - HPE Alletra Block Storage Plugin
      - 1.14.x
      - Requires Plugin API 1.4.1+, minimum Manager version 9.0.2
@@ -219,11 +219,11 @@ Manager ↔ HVM OS Compatibility
    * - 9.1.x
      - Supported
      - Supported
-     - 1.3
+     - 1.3 on HVM OS 24.04; 2.0 on HVM OS 26.04
    * - 9.2.x (projected)
      - Supported
      - Supported
-     - 1.3
+     - 1.3 on HVM OS 24.04; 2.0 on HVM OS 26.04
 
 Manager ↔ Agent Compatibility
 -------------------------------
@@ -260,6 +260,8 @@ The following table shows supported version upgrade paths and methods.
 Integrations
 ============
 
-.. note:: Current iterations of Amazon AWS, Microsoft Azure, Google Cloud Platform, Digital Ocean, OpenTelekom Cloud, IBM Bluemix, Softlayer and UpCloud are all supported.
+The table below is the canonical integration-version matrix for this documentation release. It records versions with an established support or test statement; it does not imply support for an unlisted integration or version. A blank or broad product-family entry must not be used as a certification statement. Contact HPE Support when a planned integration version is not listed.
+
+This matrix answers **which external product versions are qualified**. It does not describe which operations an integration implements. For provisioning, networking, lifecycle, costing, and governance coverage by Cloud type, see :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`.
 
 .. include:: /release_notes/compatibility_table.rst

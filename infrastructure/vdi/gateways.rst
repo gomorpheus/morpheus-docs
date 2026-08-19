@@ -3,12 +3,17 @@
 VDI Gateways
 =============
 
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   VDI Gateways require an Advanced or Enterprise license. Distributed Workers used for other supported use cases, including HVM quorum witnesses, are also available in VM Essentials.
+
 Overview
 --------
 
 VDI Gateways provide a secure connection point between end users and VDI desktop sessions. A gateway acts as a proxy, routing VDI traffic through a controlled network path. This is essential for environments where VDI desktops reside on isolated networks not directly accessible to end users.
 
-VDI Gateways are managed from ``Tools > VDI Pools > Gateways`` tab.
+VDI Gateways are managed from |TooVDIGat|.
 
 .. NOTE:: VDI Gateways require the ``services-vdi-pools`` Role permission (Read or Full).
 
@@ -28,11 +33,14 @@ This architecture enables:
 - **Security** — All VDI traffic routes through a controlled proxy with API key authentication
 - **Geographic distribution** — Place gateways closer to users for reduced latency
 
+The same VDI Gateway registration can also route Instance and Host consoles. Assign it on a Network or Cloud, or select it as the Default Console Gateway in |AdmSetApp|. VDI desktop routing is separate: assign the gateway to a VDI Pool in |TooVDIPoo|. Both uses authenticate the Worker runtime with the VDI Gateway API key.
+
+The same runtime can additionally act as a Distributed Worker when configured with a Distributed Worker key. See :doc:`/administration/integrations/workers` for the role and key matrix and canonical package and container deployment instructions.
+
 Creating a VDI Gateway
 -----------------------
 
-#. Navigate to ``Tools > VDI Pools``
-#. Select the **Gateways** tab
+#. Navigate to |TooVDIGat|
 #. Click :guilabel:`+ ADD`
 #. Configure:
 
@@ -52,7 +60,7 @@ Upon creation, |morpheus| generates an **API Key** for the gateway. This key is 
 Editing a VDI Gateway
 ----------------------
 
-#. Navigate to ``Tools > VDI Pools > Gateways``
+#. Navigate to |TooVDIGat|
 #. Click the gateway name or select the edit action
 #. Modify the name, description, or gateway URL
 #. Click :guilabel:`SAVE`
@@ -62,7 +70,7 @@ Editing a VDI Gateway
 Deleting a VDI Gateway
 -----------------------
 
-#. Navigate to ``Tools > VDI Pools > Gateways``
+#. Navigate to |TooVDIGat|
 #. Select the gateway to delete
 #. Click :guilabel:`DELETE`
 #. Confirm deletion
@@ -74,7 +82,7 @@ Assigning Gateways to Pools
 
 VDI Gateways are assigned at the Pool level:
 
-#. Navigate to ``Tools > VDI Pools``
+#. Navigate to |TooVDIPoo|
 #. Edit or create a VDI Pool
 #. In the pool configuration, select the desired **Gateway** from the dropdown
 #. Save the pool
@@ -131,6 +139,8 @@ Configuration requirements:
    - Inbound from users (typically 443 or 8443)
    - Outbound to VDI desktops (RDP 3389, VNC 5900+)
    - Outbound to |morpheus| appliance (443)
+
+For current package and `morpheusdata/morpheus-worker <https://hub.docker.com/r/morpheusdata/morpheus-worker>`_ container procedures, TLS options, environment variables, combined-role configuration, logs, and upgrades, see :doc:`/administration/integrations/workers`.
 
 API Reference
 --------------

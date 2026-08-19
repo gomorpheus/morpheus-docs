@@ -6,6 +6,19 @@ The |morpheus| built-in Backup solution provides VM, Container, Host, Database, 
 
 |morpheus| also integrates with external services to automate availability with other providers.
 
+Backup Navigation
+=================
+
+The Backups menu exposes the following views when permitted by the user's Role:
+
+- **Summary:** Backup health and activity metrics.
+- **Jobs:** Scheduled backup definitions, including their schedules and retention settings.
+- **Backups:** Configured backup sources and targets.
+- **History:** Backup execution and restore results used to review successful and failed activity.
+- **Integrations:** Configured third-party backup providers. Visibility of this item requires Backup Services permission.
+
+Role permissions determine whether backup data and integrations are visible. If an expected item is absent, verify the user's Backups and Backup Services permissions.
+
 Initial Backups Setup
 =====================
 
@@ -102,6 +115,8 @@ Backup Types displayed will be filtered by available options per selected Instan
 * Container Backup
 * VM Backup
 * Object Storage Backup
+
+.. NOTE:: **LVM Migration** is a deprecated, single-logical-volume migration implementation and is distinct from migration-plan disk conversion. For current SCSI mapping, LVM prerequisites, and verification guidance, see :doc:`../infrastructure/servers/server_migration`.
 
 
 .. include:: summary.rst

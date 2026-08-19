@@ -74,6 +74,7 @@ To Create Tenants:
    - Name
    - Description (optional)
    - Subdomain
+   - Parent Tenant: Required for a Subtenant. It selects the Tenant directly above the new Tenant in the hierarchy and determines which Tenant owns it. The field is available to a Master Tenant administrator during creation; it is disabled when editing an existing Tenant. The current Tenant is used as the initial parent, so the field is not an optional “no parent” choice for Subtenants.
    - Base Role
    - Currency
 

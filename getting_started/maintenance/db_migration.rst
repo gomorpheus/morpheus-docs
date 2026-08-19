@@ -9,15 +9,13 @@ To begin this, stop the Morpheus UI on your original Morpheus server:
 
  [root@app-server-old ~] morpheus-ctl stop morpheus-ui
 
-Once this is done you can safely export. To access the MySQL shell we will need the password for the Morpheus DB user. We can find this in the morpheus-secrets file:
+Once this is done you can safely export. For an embedded database using generated credentials, retrieve the exact MySQL application-user key without printing unrelated secrets:
 
 .. code-block:: bash
 
-  [root@app-server-old ~] cat /etc/morpheus/morpheus-secrets.json | grep morpheus_password
-  "morpheus_password": "451e122cr5d122asw3de5e1b", <---------------this one
-  "morpheus_password": "9b5vdj4de5awf87d",
+  [root@app-server-old ~] jq -r '.mysql.morpheus_password' /etc/morpheus/morpheus-secrets.json
 
-Take note of the first ``morpheus_password`` as it will be used to invoke a dump. Morpheus provides embedded binaries for this task. Invoke it via the embedded path and specify the host. In this example we are using the morpheus database on the MySQL listening on localhost. Enter the password copied from the previous step when prompted:
+For an external database or customized connection, obtain the database name, host, user, and password from the effective ``mysql`` configuration in ``/etc/morpheus/morpheus.rb``. Do not use generated values from ``morpheus-secrets.json`` for an external service. Morpheus provides embedded client binaries, but the following example applies only to the default local database and schema. Enter the password when prompted:
 
 .. code-block:: bash
 
@@ -33,14 +31,9 @@ Once the file is in place it can be imported into the backend. Begin by ensuring
 
  [root@app-server-new ~] morpheus-ctl stop morpheus-ui
 
-Then you can import the MySQL dump into the target database using the embedded MySQL binaries, specifying the database host, and entering the password for the morpheus user when prompted:
+The previously documented direct ``mysql`` import command is not a supported general migration procedure. Stateful dumps may contain database-level statements, and the correct target, privileges, topology sequence, and post-import checks vary with custom schema names and external databases. Contact HPE Support for a migration and rollback plan validated for both appliance versions and database topologies. Keep every application UI stopped until the import has been validated.
 
-.. code-block:: bash
-
-  [root@app-server-new ~] /opt/morpheus/embedded/mysql/bin/mysql -u morpheus -h 127.0.0.1 morpheus -p < /tmp/morpheus_backup.sql
-  Enter password:
-
-The data from the old appliance is now replicated on the new appliance. Simply start the UI to complete the process:
+After validation, start the UI on each application server as directed by the migration plan:
 
 .. code-block:: bash
 

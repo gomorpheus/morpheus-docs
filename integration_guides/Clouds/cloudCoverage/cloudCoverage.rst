@@ -8,6 +8,13 @@ Overview
 
 This page classifies supported clouds into three tiers based on the breadth of |morpheus| management capabilities available, and provides a detailed feature matrix for evaluating cloud-specific functionality.
 
+This feature matrix is not a version certification matrix. Use :ref:`compatibility` for qualified external-product versions. Products and operating models that are absent from both references do not gain a support claim by similarity to a listed hypervisor.
+
+SimpliVity Boundary
+-------------------
+
+No SimpliVity-specific Cloud integration or documented eight-node multi-session management contract is included in this documentation. In particular, this guide does not publish supported concurrent-session counts, sequencing, recovery behavior, or an eight-node SVT qualification. Manage the underlying VMware environment only within the documented VMware vCenter integration boundary, and manage SimpliVity-specific lifecycle operations with HPE SimpliVity tools and guidance. Contact HPE for the current interoperability statement before using an eight-node or multi-session design.
+
 .. tip::
 
    The tier classification reflects |morpheus| integration depth, not the quality of the underlying cloud platform. A Tier 2 cloud may be the ideal choice for your environment depending on your workload requirements.

@@ -4,7 +4,7 @@ Building New HVM Clusters
 Prerequisites
 -------------
 
-Before creating an HVM 1.3 cluster, ensure the following requirements are met:
+Before creating an HVM cluster, identify the target layout and ensure the following requirements are met:
 
 .. list-table::
    :widths: 30 70
@@ -13,9 +13,9 @@ Before creating an HVM 1.3 cluster, ensure the following requirements are met:
    * - Requirement
      - Details
    * - Operating System
-     - Ubuntu 24.04 LTS (HPE's HVM OS recommended)
+     - HVM OS/Ubuntu 24.04 for layout 1.3; HVM OS 26.04 for layout 2.0
    * - Minimum Hosts
-     - 3 hosts for a single-site cluster
+     - 3 Hosts for a standard single-site cluster; 2 Hosts are supported with an external Distributed Worker witness when using an HPE Shared File System (GFS2) datastore (see :doc:`two_node_clusters`)
    * - CPU
      - Hardware virtualization enabled (VT-x/AMD-V)
    * - Memory
@@ -35,7 +35,7 @@ Cluster Creation
 #. Navigate to ``Infrastructure > Clusters``
 #. Click :guilabel:`+ Add Cluster`
 #. Select **HVM** as the cluster type
-#. Select the **HVM 1.3** layout
+#. Select the required layout: **HVM 1.3** for HVM OS/Ubuntu 24.04 or **HVM 2.0** for HVM OS 26.04
 #. Complete the following fields:
 
    .. list-table::
@@ -61,15 +61,28 @@ Cluster Creation
       * - Compute Network Name
         - Network name for compute traffic
       * - Overlay Network Name
-        - Network name for overlay traffic
+        - Legacy/layout 1.3 underlay/tunnel network name used by the HVM networking plugin. Verify tunnel-interface reachability and MTU; layout 2.0 uses Virtual Switch networking instead
       * - Compute VLANs
         - VLAN IDs for compute networks
       * - CPU Architecture/Model
         - Processor architecture selection
       * - Witness
-        - Witness node selection (for stretch clusters)
+        - Distributed Worker witness for a two-node GFS2 cluster or stretch cluster. Configure it after cluster creation using the applicable witness procedure
 
 #. Click :guilabel:`Complete` to begin automated provisioning
+
+.. _hvm-cluster-permissions:
+
+Cluster Permissions and Provisioning Impact
+-------------------------------------------
+
+From the Clusters list, open :guilabel:`More` > :guilabel:`Permissions` for a cluster to scope where that cluster can be used:
+
+- **Groups** control which Infrastructure Groups can use the cluster as a provisioning target. A user also needs role access to the Group and the relevant provisioning features.
+- **Service Plans** limit the plans that can be selected when provisioning to the cluster. For example, selecting only a ``1 CPU, 2 GB`` plan means other plans are not offered after this cluster is selected, subject to the selected Instance layout and image requirements.
+- **Default** retains the product's default permission behavior rather than creating an explicit Group or Service Plan allow-list. It does not mean that this cluster is the preferred provisioning target and does not override role, layout, image, or capacity filtering. Use an explicit selection when the cluster must be restricted.
+
+Permission changes affect subsequent wizard choices. They do not resize, move, or otherwise alter existing VMs. After changing permissions, test with a non-administrator role: start an Instance deployment, select the intended Group and HVM target, and confirm that only the allowed clusters and Service Plans are shown. If an expected plan is absent, also check that the plan is active, uses the HVM/KVM provision type, and satisfies the selected layout and Virtual Image minimums.
 
 Automated Provisioning Phases
 -----------------------------
@@ -91,13 +104,17 @@ Installs required packages on all hosts:
 - jq
 - nfs-common
 
-Phase 2: OVS Networking
+Phase 2: Host Networking
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configures Open vSwitch networking:
+Configures the networking model for the selected layout:
 
-- Creates bridges for management, compute, and overlay networks
-- Configures libvirt Management network
+- **Layout 1.3:** Creates OVS bridges for management, compute, and overlay networks and configures the libvirt Management network
+- **Layout 2.0:** Creates the default Virtual Switch and applies Linux bridge networking through ``hvmcli``
+
+See :doc:`hvm_networks` for layout 1.3 networking or :doc:`virtual_switches` for layout 2.0 networking.
+
+For layout 2.0, complete the scenario checklist in :doc:`/getting_started/installation/hvm_host_prep` before creating Virtual Switches. VLAN IDs are optional: use explicit VLAN IDs with an upstream trunk for a decoupled design without native VLANs, or leave a segment untagged only when the upstream port is intentionally configured for that traffic.
 
 Phase 3: Host Preparation
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -185,7 +202,7 @@ Configuring Heartbeat Datastore
 #. Edit the shared datastore properties
 #. Enable the :guilabel:`Heartbeat Target` option
 
-.. IMPORTANT:: It is recommended to configure 2 or more datastores as heartbeat targets for redundancy. Heartbeat writes occur to ALL configured datastores simultaneously. A host is considered online if its heartbeat is current on ANY configured datastore.
+.. IMPORTANT:: Configure one reliable GFS2 datastore as the heartbeat target. If that datastore becomes unhealthy, restore it or select another healthy GFS2 datastore before relying on automatic VM recovery.
 
 Verification
 ------------
@@ -196,9 +213,9 @@ After cluster creation, verify the cluster is healthy:
 
 .. code-block:: bash
 
-   corosync-quorumtool -s
+   corosync-quorumtool -l
 
-Confirm the output shows ``Quorate: Yes``.
+Confirm all expected compute Hosts are listed. Corosync provides membership to DLM but does not decide Agent quorum for layouts 1.3 and 2.0. Do not use the Corosync ``Quorate`` value as the HVM health decision, especially for two-node and stretch topologies.
 
 **DLM status:**
 
@@ -223,6 +240,8 @@ Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` panel a
 - All nodes: ONLINE
 - Coordinator: assigned
 - Lockspaces: OK
+
+For a two-node GFS2 cluster, also confirm the Distributed Worker witness is listed and reachable. See :doc:`two_node_clusters`.
 
 Cluster Sizing
 --------------

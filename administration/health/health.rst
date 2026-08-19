@@ -18,19 +18,66 @@ The |morpheus| Health section provides an overview of the health of your |Morphe
 Health Levels
 ^^^^^^^^^^^^^
 
-Health levels provide a live representation of the current memory and CPU load on the appliance. Bear in mind that in an HA appliance, this data will be specific to the appliance node you happen to be accessing. By default, |morpheus| does not include any endpoint or UI tool which can show you the currently used app node. However, a plugin has been developed which can surface this information if needed. See `this thread <https://discuss.morpheusdata.com/t/custom-ping-endpoint-via-morpheus-plugin/389>`_ in the |morpheus| official forums for additional details about accessing and using the plugin.
+Health levels provide a live representation of the current memory and CPU load on the appliance. In an HA appliance, this data is specific to the application node serving the request. The base product does not identify that node on this page. Use load-balancer access logs and appliance logs to correlate a request with an application node; do not depend on an unmaintained forum plugin for this operational decision.
 
   - **Morpheus CPU:** Instantaneous amount of CPU capacity in use by |morpheus| processes
   - **System CPU:** Instantaneous amount of CPU capacity in use by all processes
-  - **Morpheus Memory:** Instantaneous amount of system memory currently in use by |morpheus| processes (see the Knowledge Base article linked in the TIP box below for more information on how |morpheus| claims and manages available memory)
+  - **Morpheus Memory:** JVM maximum heap for the |morpheus| application process on the application node serving the page (see the metric definitions below)
   - **System Memory:** Instantaneous amount of total system memory currently claimed (this is commonly a high percentage, see the TIP box below)
   - **Used Swap:** Instantaneous amount of total available system swap in use
   - **Storage:** The instantaneous percentage utilization of the filesystem mounted at "/"
 
-.. TIP:: It's common to see a high percentage of system memory being used `due to the way Morpheus allocates and manages memory <https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-memory-it-uses?language=en_US>`_. If |morpheus| is performing well, high system memory use is not necessarily an indicator that any action needs to be taken.
+.. TIP:: High system-memory utilization alone does not establish appliance pressure because operating-system usage includes caches and processes outside the application JVM. Use the metric definitions and warning guidance below. If warnings persist with degraded behavior, collect a support bundle and open a case through the `HPE Support Center <https://www.hpe.com/support/hpesc>`_.
 
 Additional System Health Indices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Memory metric definitions
+`````````````````````````
+
+.. list-table::
+   :header-rows: 1
+   :widths: 23 32 45
+
+   * - Displayed metric
+     - Current calculation
+     - Scope and interpretation
+   * - Morpheus Memory
+     - JVM maximum memory (``Runtime.maxMemory``)
+     - Upper heap limit for the |morpheus| application process on the application node serving the page.
+   * - Morpheus Used Memory
+     - JVM total memory minus JVM free memory
+     - Heap currently committed to the JVM and occupied. This is not total resident memory for every appliance service.
+   * - Morpheus Free Memory
+     - ``Runtime.freeMemory``
+     - Free space inside the currently committed JVM heap, not all memory available before the heap reaches its maximum.
+   * - Morpheus Memory Usage
+     - Morpheus Used Memory / JVM total memory × 100
+     - Percentage of the currently committed heap, not of Morpheus Memory (the maximum heap).
+   * - System Memory
+     - Operating-system total physical memory
+     - Host or container-visible physical-memory scope for the current application node.
+   * - System Used Memory
+     - System Memory minus System Free Memory
+     - Includes the OS, caches, and all visible processes.
+   * - System Free Memory
+     - Operating-system free physical memory
+     - Does not represent JVM free heap.
+   * - System Memory Usage
+     - (System Memory - System Free Memory) / System Memory × 100
+     - Whole node/container-visible usage.
+   * - System Swap / Free Swap
+     - OS total swap / OS free swap
+     - Swap visible to the current node.
+
+The values do not form one arithmetic breakdown: JVM ``totalMemory`` is committed heap, JVM ``maxMemory`` is a limit, and system values include other processes and caches. They are sampled when health data is loaded. In HA deployments, each application node has its own JVM and system sample; compare the node that raised the warning rather than adding values across nodes.
+
+Memory warning decisions
+````````````````````````
+
+The current health implementation reports a warning when used swap is greater than 60% of total swap. If that test is not met, it reports a warning when Morpheus Used Memory is greater than 95% of the JVM's currently committed total memory. These tests are ordered; the displayed message identifies the first matched condition. A collection error produces an error state rather than a utilization warning.
+
+Treat an isolated high value as a point-in-time signal. Check whether the warning persists, review application performance and garbage-collection behavior, and collect a support bundle before changing memory limits. For sustained swap pressure, investigate host/container memory pressure and competing processes. For sustained Morpheus heap pressure with degraded behavior, engage support to review sizing before increasing the application memory limit. Health thresholds are appliance alarms and are unrelated to workload resize Guidance thresholds.
 
 CPU
   - Processor Count

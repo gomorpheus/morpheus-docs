@@ -128,7 +128,16 @@ To Add Virtual Image:
       *Url*
        Select the URL radio button, and enter URL of the Image.
 
-    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
+    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the import will finish in the background. When selecting or dragging and dropping a file, the browser upload must complete before saving the Virtual Image record or the Image will not be valid.
+
+    Choose the source method based on where the image is available:
+
+    - Use **File** when the image is on your workstation. Keep the browser session connected until the file upload completes.
+    - Use **URL** when the image is available from an HTTP or HTTPS endpoint that the |morpheus| Appliance can resolve and reach. The appliance retrieves the image after the record is saved, so the browser does not carry the image data.
+
+    Transfer duration depends on image size, the path between the source and the appliance, available bandwidth, and the selected Storage Provider. URL import can avoid a slow workstation, VPN, or browser path, but it does not guarantee a faster transfer. Use only a trusted endpoint and verify the image checksum against its publisher-provided value before use.
+
+    If an import appears stalled, do not create a second Virtual Image immediately. Check the Virtual Image status, available capacity on the selected Storage Provider, appliance reachability to a URL source, and any proxy or TLS errors in the appliance logs. Retry only after confirming the first transfer has failed.
 
 5. Save Changes.
 
@@ -137,6 +146,101 @@ To Add Virtual Image:
 .. WARNING:: Provisioning will fail if `Cloud init Enabled` is checked and Cloud-Init is not installed on the Image.
 
 .. NOTE:: Existing Image credentials are required for Linux Images that are not Cloud-Init enabled and for Windows Images when Guest Customizations are not used. Cloud-Init and Windows user settings need to be configured in :menuselection:`Administration --> Settings --> Provisioning` when using Cloud-Init or Guest Customizations and new credentials are not set on the Virtual Image.
+
+.. _multi-disk-qcow2-images-for-hvm-kvm:
+
+Multi-Disk QCOW2 Images for HVM/KVM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+HVM/KVM supports Virtual Images containing multiple QCOW2 disks. Upload every QCOW2 file and a JSON manifest named exactly ``metadata.json`` as files on the same Virtual Image. The manifest maps each QCOW2 file to its guest device, disk size, and order.
+
+Without ``metadata.json``, |morpheus| treats a QCOW2 Virtual Image as a single-disk image even when multiple QCOW2 files have been uploaded.
+
+The following example defines a 50 GiB boot disk and a 100 GiB data disk:
+
+.. code-block:: json
+
+   {
+     "disks": [
+       {
+         "file": "root.qcow2",
+         "capacity": 53687091200,
+         "guestDeviceName": "vda",
+         "position": 0,
+         "name": "root",
+         "boot": true
+       },
+       {
+         "file": "data.qcow2",
+         "capacity": 107374182400,
+         "guestDeviceName": "vdb",
+         "position": 1,
+         "name": "data"
+       }
+     ]
+   }
+
+.. list-table:: Multi-disk QCOW2 metadata fields
+   :widths: 24 14 62
+   :header-rows: 1
+
+   * - Field
+     - Required
+     - Description
+   * - ``disks``
+     - Yes
+     - Top-level array containing one object for each uploaded disk.
+   * - ``file``
+     - Yes
+     - Exact, unique filename of the uploaded QCOW2 file, including the ``.qcow2`` extension. Filename matching is case-insensitive.
+   * - ``capacity``
+     - Recommended
+     - Virtual disk capacity in bytes. Convert GiB to bytes with ``GiB × 1073741824``. For example, 50 GiB is ``53687091200`` bytes.
+   * - ``guestDeviceName``
+     - Recommended
+     - Device name presented to the guest, such as ``vda`` for the root disk and ``vdb`` for the first data disk.
+   * - ``position``
+     - Recommended
+     - Zero-based disk order. Use unique, sequential values beginning with ``0``.
+   * - ``name``
+     - No
+     - Descriptive source-disk label, such as ``root`` or ``data``. The displayed image-volume name can be derived from the Virtual Image name instead.
+   * - ``boot``
+     - No
+     - Set to ``true`` on the boot disk. If no disk is marked as bootable, |morpheus| selects the first disk after sorting.
+   * - ``unitNumber``
+     - No
+     - Unit number on a referenced storage controller. Omit for a basic VirtIO disk set.
+   * - ``storageController``
+     - No
+     - Controller reference used when a specific imported controller topology must be preserved. It requires a matching object in a top-level ``storageControllers`` array. Omit both for a basic VirtIO disk set.
+
+Disk records are sorted by controller bus number, unit number, and then ``position``. For a basic manifest without controller fields, ``position`` determines the order. Use distinct filenames, positions, and guest device names to avoid ambiguous mappings.
+
+Only ``disks`` and a resolvable ``file`` value are strictly needed for file discovery, but include the recommended fields shown above so |morpheus| can build predictable disk capacities, devices, and ordering.
+
+To upload a multi-disk QCOW2 image:
+
+#. Navigate to |LibVir| and click :guilabel:`+ ADD`.
+#. Select :guilabel:`QCOW2` as the image format.
+#. Configure the Virtual Image, including Operating System, Cloud-Init, Agent, credentials, VirtIO, and guest tools settings as appropriate for the image.
+#. Select **File** upload. Multi-disk upload requires adding multiple files to the same Virtual Image.
+#. Upload every referenced ``.qcow2`` file and wait for each upload to complete.
+#. Upload ``metadata.json`` last. Uploading the manifest triggers disk-map processing, so all referenced disk files must already be present.
+#. Confirm the file list contains ``metadata.json`` and every filename referenced by its ``disks`` array.
+#. Save the Virtual Image and wait for its status to become Active.
+#. Open the Virtual Image details and verify that every disk is present with the expected capacity, device order, and root disk before provisioning.
+
+.. IMPORTANT:: Do not upload ``metadata.json`` before the QCOW2 files. If the manifest is processed while referenced files are missing, the resulting disk records can be incomplete. Remove and re-upload the manifest after all disk files are present, or recreate the Virtual Image if the stored volume map is incorrect.
+
+Troubleshooting multi-disk uploads:
+
+- **Only one disk is shown:** Confirm the file is named exactly ``metadata.json``, contains a top-level ``disks`` array, and was uploaded after all QCOW2 files.
+- **A disk is missing:** Confirm its ``file`` value exactly matches a unique uploaded filename and includes the ``.qcow2`` extension.
+- **Disk capacity is wrong:** Confirm ``capacity`` is in bytes rather than GiB. Multiply GiB by ``1073741824``.
+- **Wrong disk boots:** Set ``boot`` to ``true`` on the intended root disk and ensure its ordering fields do not conflict with another disk.
+- **Device order is wrong:** Use sequential ``position`` values and matching ``guestDeviceName`` values such as ``vda``, ``vdb``, and ``vdc``.
+- **Manifest is ignored or the image remains invalid:** Validate the file as JSON, ensure there are no comments or trailing commas, and upload the corrected manifest after the disk files.
 
 Virtual Image Options — Cloud Applicability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -226,16 +330,16 @@ Not all Virtual Image settings apply to all cloud types. The following matrix cl
 
    **ISO image types** — When uploading ISO images (used for manual OS installations or boot media), disable both **Cloud Init Enabled** and **Enabled Sysprep**. ISO-based images are typically booted interactively for OS installation and do not use cloud-init or sysprep-based guest customization. Leaving these options enabled on an ISO image will cause provisioning failures or unexpected behavior.
 
-4. Upload Image
-    Images can be uploaded by File or URL:
-      *File*
-       Drag and Drop the image file, or select :guilabel:`Add File` to select the image file.
-      *Url*
-       Select the URL radio button, and enter URL of the Image.
+   For HVM, provision the VM from the ISO, complete the installer through the VM console, eject the ISO media, and restart the VM from its installed disk. For the related HVM boot controls and the separate network-boot path, see :doc:`/infrastructure/clusters/hvm/vm_advanced_options`.
 
-    .. NOTE:: The Virtual Image configuration can be saved when using a URL and the upload will finish in the background. When selecting/drag and dropping a file, the image files must upload completely before saving the Virtual Image record or the Image will not be valid.
+Import an HVM Instance as an Image
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-5. Save Changes.
+Before selecting :guilabel:`Actions` > :guilabel:`Import as Image` for an HVM VM installed from ISO, verify that the guest boots from its installed disk and eject the installation ISO. The import excludes ISO volumes and exports the installed disks.
+
+Existing file-based snapshots do not need to be deleted before import. When a disk has a qcow2 backing chain, |morpheus| copies and merges the chain into a temporary export disk without modifying the VM's existing snapshots. Other supported storage backends create their own temporary export snapshot.
+
+After the import finishes, verify that the resulting Virtual Image contains ``metadata.json`` and every disk file referenced by the manifest. A Virtual Image record or metadata file without the referenced disk files is incomplete, even if its status is Active. Leave the source VM and snapshots unchanged and contact Support with the HVM version, storage backend, snapshot list, and import process output. Deleting an existing snapshot is not a required import step and should not be used as an import workaround.
 
 VMware - VM Templates Copies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

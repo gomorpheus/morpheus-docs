@@ -3,6 +3,13 @@ Rubrik
 
 The embedded |morpheus| Rubrik Backup integration allows syncing, creation, and management of Rubrik Backups for vCenter Clouds. New Rubrik integrations are created in :menuselection:`Backups --> Integrations` and, once created, can be set as the backup provider for existing vCenter Clouds. The latest versions of the Rubrik plugin support Rubrik CDM as well as Rubrik RSC (Rubrik Cloud Security). From a |morpheus| standpoint, the primary difference between the two is in how they are authenticated. CDM-based integrations are created with API key authentication whereas RSC-based integrations are created with a client ID and client secret. Once the integration is created, the feature set as used through |morpheus| is identical.
 
+Supported Clouds
+^^^^^^^^^^^^^^^^
+
+Rubrik backup is supported for:
+
+- VMware
+
 Features
 ^^^^^^^^
 

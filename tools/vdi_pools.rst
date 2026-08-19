@@ -145,20 +145,33 @@ VDI Apps are created by selecting :guilabel:`+ ADD` from the VDI Apps tab or edi
 VDI Gateways
 ------------
 
-The |morpheus| Worker is a light weight distributed worker daemon as well as a scalable VDI Gateway. Currently, the features center around VDI Gateway but will expand to support full plugin workloads as well as agent relay capabilities.
+.. tier-note:: Advanced, Enterprise
+   :exclude: Essentials
+
+   The VDI Gateway use case requires an Advanced or Enterprise license. Distributed Workers used for other supported use cases, including HVM quorum witnesses, are also available in VM Essentials.
+
+The |morpheus| Worker can route VDI desktop sessions through a controlled network path. The same Worker runtime can also route Instance and Host consoles or operate as a Distributed Worker when the corresponding registrations and keys are configured.
 
 Adding VDI Gateways to |morpheus|
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-VDI Gateways can be linked to a |morpheus| appliance and then used in VDI Pool configurations. VDI sessions will be redirected to configured gateways instead of the |morpheus| appliance when a VDI Gateway is specified for a VDI Pool.
+VDI Gateways can be linked to a |morpheus| appliance and then used in VDI Pool configurations. VDI sessions are redirected to a configured gateway when it is assigned to a VDI Pool.
 
 .. NOTE:: A VDI Gateway is a separate VM or container Instance used to route users to VDI Instances. The |morpheus| VDI Gateway section is for configuring a connection to a VDI Gateway, not creating the gateway Instance itself.
 
 - **NAME** Specify a name for the VDI Gateway in |morpheus|. Note that the VDI Gateway Name is not used when connecting to the gateway
 - **DESCRIPTION** Specify a description for the VDI Gateway in |morpheus|. (optional)
-- **GATEWAY URL** The url of the VDI Gateway. This url is used to connect to the gateway, and should match the the worker url of the VDI Gateway.
+- **GATEWAY URL** The URL of the VDI Gateway. End-user browsers must be able to resolve, reach, and trust this URL.
 
-Upon creation, the VDI Gateway record will produce an ``API KEY``. This ``API KEY`` needs to be specified in the ``morpheus-worker.rb`` file on the API Gateway itself under ``worker['apikey'] = '$API_KEY'``. Once the gateway object is created you will need to configure it as the default gateway in |morpheus| global settings (|AdmSetApp|). Scroll down to the "Default Console Gateway" setting and select the gateway object you've just created. Continue on to the next section to actually install the gateway and configure it with your API key.
+Upon creation, the VDI Gateway record produces an ``API KEY``. Configure this key as ``worker['apikey']`` for a package installation or ``MORPHEUS_KEY`` for a container installation.
+
+#. Install and configure the Worker runtime using the package or container procedure in :doc:`/administration/integrations/workers`.
+#. Edit or create the VDI Pool in |TooVDIPoo| and select the gateway.
+#. Start a test desktop session and confirm the browser connects to the Gateway URL.
+
+To use the same gateway for Instance and Host consoles, select it on a Network or Cloud, or as **Default Console Gateway** in |AdmSetApp|. Console gateway assignment is independent from VDI Pool assignment.
+
+.. IMPORTANT:: The package, Docker, and Helm examples below are retained for historical releases. For current installation, TLS, environment variable, version tag, HA, and upgrade guidance, use :doc:`/administration/integrations/workers`. In particular, pin the `morpheusdata/morpheus-worker <https://hub.docker.com/r/morpheusdata/morpheus-worker>`_ image to a release-approved tag such as ``9.0.2`` rather than ``latest``.
 
 VDI Gateway VM Install
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -257,7 +270,7 @@ Now Simply run with:
 
 .. code-block:: bash
 
-  docker run -d -p 8443:8443  -e MORPHEUS_SELF_SIGNED=true -e MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheusAppliance.url morpheusdata/morpheus-worker:latest``
+  docker run -d -p 8443:8443 -e MORPHEUS_SELF_SIGNED=true -e MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheusAppliance.url morpheusdata/morpheus-worker:9.0.2
 
 This will setup an HTTPS self-signed exposed port on 8443 for the vdi gateway. It is highly recommended to use valid certificates on your VDI Gateways. It could be terminated at the VIP or a p12 SSL File can be used and configured for the container.
 
@@ -267,7 +280,7 @@ If you wish to run in HTTP mode and SSL terminate at the VIP, you can run the co
 
 .. code-block:: bash
 
-  docker run -d -p 8080:8080  -e MORPHEUS_SELF_SIGNED=true -e MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheus.url morpheusdata/morpheus-worker:latest
+  docker run -d -p 8080:8080 -e MORPHEUS_KEY=[apiKey] -e MORPHEUS_URL=https://my.morpheus.url morpheusdata/morpheus-worker:9.0.2
 
 VDI Gateway Helm Chart Installation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

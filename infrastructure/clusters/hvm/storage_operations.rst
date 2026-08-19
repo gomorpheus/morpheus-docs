@@ -1,7 +1,14 @@
 Storage Lifecycle
 =================
 
-This section covers Day-2 storage operations on an HVM 1.3 cluster, including adding and removing datastores, managing iSCSI targets, and expanding storage capacity.
+This section covers Day-2 storage operations on layout 1.3 and 2.0 HVM clusters, including adding and removing datastores, managing iSCSI targets, and expanding storage capacity.
+
+Storage Design Boundaries
+-------------------------
+
+|morpheus| manages supported datastore and host operations but does not replace storage-array design. Customers remain responsible for array sizing, LUN presentation, zoning, target configuration, multipath policy, network loss/latency analysis, data protection, and vendor interoperability. Present shared block storage consistently to every cluster host and verify stable device identity and all expected paths before datastore creation or returning a host to service.
+
+For Ethernet storage, separate traffic or provide sufficient redundant capacity when the failure analysis requires predictable storage behavior. Configure jumbo frames only across a validated end-to-end path. For Fibre Channel and iSCSI, test loss of each individual path and confirm the multipath device remains available. A successfully discovered device is not evidence that the design is redundant or adequately sized.
 
 Adding a New Datastore
 -----------------------
@@ -106,8 +113,8 @@ What Happens Automatically
 
 The iSCSI discovery database entry is removed from all online cluster hosts using ``iscsiadm -m discoverydb -t sendtargets -p "<IP>:<port>" -o delete``.
 
-Expanding Storage (New LUNs)
------------------------------
+Expanding Storage Capacity
+--------------------------
 
 To add additional capacity to an existing cluster:
 
@@ -126,7 +133,43 @@ To add additional capacity to an existing cluster:
 #. Verify the new LUN is visible on the cluster's Storage tab
 #. Create a new HPE Clustered Datastore using the new block device
 
-.. NOTE:: Each HPE Clustered Datastore (Shared LUN) maps to a single block device. To add capacity, create additional datastores rather than expanding existing GFS2 filesystems.
+Adding a new datastore is the lower-risk way to add capacity because it does not change the block device beneath an existing clustered filesystem.
+
+Growing an Existing GFS2 Datastore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use this procedure only for an HPE Clustered Datastore whose storage array supports online LUN expansion and after HPE Support or the storage owner confirms the exact HVM release, transport, device stack, and commands. The operation crosses the array/LUN, every host's paths, the shared block device, and GFS2. A size mismatch or use of the wrong device can affect every VM on the datastore.
+
+.. warning:: Create and verify workload/application backups before the maintenance window. A VM snapshot on the datastore being grown is not an independent backup. Pause provisioning, migration, snapshots, backups, and other storage-changing jobs. Use one named coordinator; do not run the grow command concurrently from multiple hosts.
+
+Preflight and stop conditions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Record the datastore name, mount point, filesystem ID, stable WWN-based multipath device, current array/LUN size, ``lsblk`` size, and ``df`` size. Confirm the device is the same on every host and is not a partition, LVM logical volume, or raw VM disk unless the approved runbook explicitly covers that stack.
+#. Confirm cluster quorum, DLM lockspaces, datastore mounts, and all storage paths are healthy. Resolve withdrawn GFS2, failed paths, duplicate WWNs, or inconsistent device mappings before proceeding.
+#. Confirm the array expansion is non-destructive, cannot shrink the LUN, preserves the LUN identity/WWN and host-set exports, and is visible to all cluster hosts. Take the array backup or recovery point required by the storage owner.
+#. Schedule a maintenance window and identify a rollback/stop plan. LUN expansion and ``gfs2_grow`` are forward-only operations; restoring the previous size is not a normal rollback.
+
+Stop and contact HPE Support before changing storage if the stable device cannot be proven, any host reports a different size or path set, the device stack includes an undocumented partition/LVM layer, the filesystem is withdrawn, or backups are not verified.
+
+Coordinated growth sequence
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. From the array, expand the existing LUN without changing its WWN or exports. Do not create a new LUN and present it under the old device identity.
+#. Rescan SCSI/FC or iSCSI on **every** cluster host using the storage-vendor and HVM-release-approved method. Verify every host sees the new underlying path size.
+#. Resize or reload the multipath map using the approved method. Verify the same WWN-based ``/dev/mapper/3<wwn>`` device reports the new size on every host and all expected paths remain active. Do not run ``gfs2_grow`` while hosts disagree.
+#. If—and only if—the approved device stack contains a partition or LVM layer, extend that layer using its approved procedure and verify the resulting GFS2 block device on every host. Do not infer a partition/LVM command from the device name.
+#. On the single designated coordinator host, confirm the intended GFS2 filesystem is mounted, then run the filesystem grow against the **mount point**:
+
+   .. code-block:: bash
+
+      sudo gfs2_grow <gfs2-mount-point>
+
+   Do not run ``gfs2_grow`` on the raw block-device path or from multiple hosts.
+#. Verify the new filesystem size with ``df -hT <gfs2-mount-point>`` on every host. Confirm the datastore remains mounted and not withdrawn, DLM and quorum remain healthy, multipath retains all expected paths, and the |morpheus| datastore capacity updates after cluster refresh.
+#. Resume paused jobs in stages and monitor kernel, DLM, Agent, and storage-array events.
+
+Stop without repeating commands if a rescan loses paths, multipath retains the old size, hosts report different sizes, ``gfs2_grow`` returns an error, GFS2 withdraws, or the UI capacity does not agree with ``df`` after refresh. Preserve command output and logs and contact HPE Support. Do not use ``fsck.gfs2``, recreate the filesystem, unmount it cluster-wide, or attempt to shrink the LUN as an improvised recovery.
 
 Removing a Datastore
 ---------------------
@@ -220,6 +263,17 @@ Each HVM host that will access FC storage must have:
 - Proper zoning configured on the SAN switch to allow the host HBA WWPNs to communicate with the storage array ports
 - ``multipathd`` running (installed automatically during HVM cluster provisioning)
 
+On layout 2.0 hosts, verify multipath before creating a datastore and after any path change:
+
+.. code-block:: bash
+
+   sudo hvmcli storage multipath validate
+   sudo hvmcli storage multipath status
+   sudo hvmcli storage fc --list
+   sudo hvmcli storage fc --multipath
+
+For iSCSI, use ``sudo hvmcli storage iscsi --list`` and ``sudo hvmcli storage iscsi --multipath``. A healthy device reports its expected paths as active with no failed path. During a single-path failure, the multipath device and its WWN-based mapper name must remain available through another active path. If the multipath device disappears or all paths fail, stop datastore creation or host return-to-service and restore storage connectivity.
+
 FC targets do not need to be manually added in the |morpheus| UI (unlike iSCSI). When a storage plugin provisions a LUN and exports it to the cluster hosts' WWPNs, the hosts automatically discover the new device after a SCSI rescan.
 
 How FC Storage Works with GFS2
@@ -245,7 +299,7 @@ Host Requirements
 
 Each HVM host must have:
 
-- Linux kernel 5.15+ (included in Ubuntu 24.04 used by HVM 1.3 cluster layout)
+- Linux kernel 5.15+ (included in the HVM OS versions used by layouts 1.3 and 2.0)
 - The ``nvme-tcp`` kernel module loaded
 - The ``nvme-cli`` package installed (for ``nvme connect`` and discovery)
 - Network connectivity to the NVMe/TCP target on the configured port (default: 4420)
@@ -393,6 +447,7 @@ Prerequisites
 - The raw block device must be visible on the HVM host
 - The device must not be part of an existing datastore or clustered filesystem
 - A stable device path is recommended (e.g., ``/dev/disk/by-id/wwn-0x...``)
+
 Attaching an RDBM Volume
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 

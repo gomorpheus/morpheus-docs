@@ -82,6 +82,13 @@ MVM Cloud supports two Instance Types:
 
 Both use the same underlying ``kvmContainerService`` for provisioning.
 
+Virtual Images
+^^^^^^^^^^^^^^
+
+MVM/HVM provisioning supports QCOW2 and RAW Virtual Images. A multi-disk QCOW2 image requires one QCOW2 file per disk and a file named ``metadata.json`` on the same Virtual Image. The manifest maps filenames to disk capacities, guest device names, ordering, and the boot disk. Upload the QCOW2 files before the manifest.
+
+See :ref:`multi-disk-qcow2-images-for-hvm-kvm` for the manifest schema and upload procedure.
+
 Provisioning
 ^^^^^^^^^^^^^
 
@@ -165,6 +172,8 @@ Troubleshooting
 
 - **Host not connecting:** Verify SSH connectivity and that the user has sudo access. Check that libvirt is running on the host.
 - **No images available:** Ensure virtual images have been uploaded or synced. Images must be in a KVM-compatible format (QCOW2, RAW).
+- **Only one disk or missing data disks:** Confirm the multi-disk QCOW2 image includes a valid ``metadata.json`` file and that each manifest filename matches an uploaded QCOW2 file.
+- **Wrong disk size or boot disk:** Confirm capacities are expressed in bytes, disk positions are unique, and the intended root disk has ``boot`` set to ``true``.
 - **Provisioning fails:** Check available capacity on the target host. Verify storage pools have free space.
 - **Network errors:** Confirm bridge interfaces exist on the hypervisor host and match the configured network names.
 - **Console not working:** Ensure VNC/SPICE ports (5900+) are accessible from the |morpheus| appliance to the hypervisor host.

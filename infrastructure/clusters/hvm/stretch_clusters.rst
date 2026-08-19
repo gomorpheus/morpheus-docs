@@ -4,7 +4,9 @@ Stretch Clusters & Witness Nodes
 Overview
 --------
 
-A stretch cluster extends an HVM 1.3 cluster across two physical sites with a witness node in a third location for tie-breaking arbitration. This provides site-level fault tolerance while maintaining a single cluster management domain.
+A stretch cluster extends a layout 1.3 or 2.0 HVM cluster across two physical sites with a witness node in a third location for tie-breaking arbitration. This provides site-level fault tolerance while maintaining a single cluster management domain.
+
+This page covers multi-site stretch clusters with site groups. For a two-Host, single-site GFS2 cluster using a quorum-only witness, see :doc:`two_node_clusters`.
 
 Requirements
 ------------
@@ -27,11 +29,14 @@ Witness Deployment
 
 The witness node is a |morpheus| Distributed Worker deployed at a third site, independent from both cluster sites.
 
+.. IMPORTANT:: The **Worker URL** on the Distributed Worker record must be a stable URL that every Host in both sites can resolve, reach, and trust. This is the base URL |morpheus| uses to generate the ``witnessUrl`` sent to the Hosts. The Worker's outbound connection to the |morpheus| appliance is not sufficient for witness operation.
+
 Creating the Worker Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Administration > Integrations > Distributed Workers``
+#. Navigate to |AdmIntDis|
 #. Create a new worker configuration
+#. Set **Worker URL** to the HTTPS URL exposed by the Worker at the third site
 #. Save the API key provided
 
 Installing the Worker
@@ -50,9 +55,8 @@ On the witness host or VM:
 
    .. code-block:: ruby
 
-      worker_url = '<URL from worker config>'
+      worker_url = '<Worker URL from the Distributed Worker record>'
       worker['appliance_url'] = '<Morpheus appliance URL>'
-      worker['apikey'] = '<any value>'
       worker['worker_key'] = '<API key from worker config>'
 
 #. Reconfigure the worker:
@@ -67,16 +71,27 @@ On the witness host or VM:
 
       morpheus-worker-ctl tail worker
 
+#. From every cluster Host, verify DNS resolution and TLS connectivity to the Worker URL. For example:
+
+   .. code-block:: bash
+
+      getent hosts witness.example.com
+      curl --head https://witness.example.com
+
+   An HTTP error response still confirms the network and TLS path when the base URL has no page. Do not use ``--insecure`` for production validation; certificate trust is part of the witness requirement.
+
 Cluster Deployment for Stretch
 ------------------------------
 
 .. IMPORTANT:: Do NOT choose a witness during initial cluster creation. The witness must be added after the cluster is deployed.
 
 #. Create the HVM cluster normally following the standard process (see :doc:`building_clusters`)
-#. After deployment completes, navigate to ``Infrastructure > Clusters > [Cluster]``
+#. After deployment completes, navigate to |InfClu| and select the cluster
 #. Click :guilabel:`Edit`
 #. Select the Witness Worker from the dropdown
 #. Click :guilabel:`Save Changes`
+
+When site groups exist, |morpheus| represents the selected Worker as the ``siteWitness`` quorum member. Do not create this group manually.
 
 Adding HPE Clustered Datastore (Shared LUN)
 --------------------------------------------
@@ -85,12 +100,31 @@ Adding a Shared LUN to the cluster activates the quorum service. Quorum is not n
 
 .. NOTE:: Monitor host and worker logs for quorum status messages after adding shared storage.
 
+Witness Validation and Troubleshooting
+--------------------------------------
+
+After assigning the witness and adding GFS2 shared storage:
+
+#. Confirm that the Distributed Worker is active in |AdmIntDis|.
+#. Open the cluster Quorum panel and confirm that the witness is listed as reachable.
+#. From every Host, repeat DNS and TLS checks against the configured Worker URL.
+#. Review ``morpheus-worker-ctl tail worker`` on a package installation or ``docker logs morpheus-worker`` for a container installation.
+#. Review the |morpheus| Agent logs on each Host for quorum and witness connection errors.
+
+Common failures include:
+
+- **Worker active but witness unreachable:** The Worker can reach the Manager, but Hosts cannot reach the Worker URL. Correct DNS, routing, firewall, load-balancer, or certificate trust.
+- **Witness absent from quorum:** Confirm the cluster has an HPE Shared File System (GFS2) datastore and the Worker is selected in the cluster Witness field.
+- **Certificate error:** Install a certificate trusted by every Host or correct the certificate chain served by the Worker or load balancer.
+- **Wrong URL:** Set the Distributed Worker record's Worker URL to the client-facing Worker endpoint, not the |morpheus| appliance URL.
+- **Stretch assignment conflict:** Add the witness after cluster deployment and do not manually create a ``siteWitness`` group.
+
 Site Group Configuration
 ------------------------
 
 Site groups define which hosts belong to each physical site for arbitration decisions.
 
-#. Navigate to ``Infrastructure > Clusters > [Cluster] > Resources > Host / VM Groups``
+#. Navigate to the cluster's Resources > Host / VM Groups tab
 #. Click :guilabel:`Add`
 #. Create a Site Group with:
 

@@ -1,7 +1,7 @@
 Monitoring & Health Baselines
 ==============================
 
-This section describes what a healthy HVM 1.3 cluster looks like, key metrics to monitor, and recommended alert thresholds.
+This section describes what a healthy layout 1.3 or 2.0 HVM cluster looks like, key metrics to monitor, and recommended alert thresholds.
 
 What Healthy Looks Like
 -------------------------
@@ -127,7 +127,7 @@ Host-Level Metrics
      - Sustained > 90% impacts VM performance
    * - Cluster member status
      - ``online``
-     - ``offline``, ``fenced``, ``unclean`` require action
+     - ``offline``, ``fenced``, ``unclean`` require the layout-aware recovery in :doc:`troubleshooting`
 
 Cluster-Level Metrics
 ^^^^^^^^^^^^^^^^^^^^^^

@@ -1,20 +1,27 @@
 ---
-title: "HVM 1.3 Cluster Layouts Documentation"
+title: "Unified HVM Cluster Documentation"
 slug: hvm-13-cluster-docs
 type: initiative
-status: delivering
+status: completed
 horizon: now
-tags: [9.0.0, hvm, clusters, pacemaker-removal]
+tags: [hvm, clusters, layouts, consolidation]
 priority: 1
+completed_at: 2026-08-03T13:51:51Z
 ---
 
-# HVM 1.3 Cluster Layouts Documentation
+# Unified HVM Cluster Documentation
 
-## Priority: CRITICAL — Major Architecture Change
+## Priority: CRITICAL - Consolidate Supported Layouts
 
-HVM clusters in Morpheus 9.0 replace Pacemaker with an agent-based quorum system (Corosync + DLM + Morpheus agent QuorumCheckService). GFS2 is renamed to "HPE Clustered Datastore (Shared LUN)". Layout 1.3 diagnostics no longer use `pcs` commands.
+Maintain one canonical HVM cluster guide for all supported layouts. Shared workflows must be documented once, with an authoritative support matrix and notices at the procedures that differ by layout.
 
-## Key Changes from 1.2
+## Supported Layouts
+
+- **Legacy (1.2 and earlier)** - Ubuntu 22.04, Pacemaker, and Open vSwitch (OVS)
+- **1.3** - HVM OS/Ubuntu 24.04, agent-based quorum, and OVS networking
+- **2.0** - HVM OS 26.04, agent-based quorum, Virtual Switch networking, and `hvmcli`
+
+## Key Changes from Legacy Layouts
 
 - **Pacemaker removed** — replaced by Morpheus agent's own quorum/fencing
 - **GFS2 renamed** — now "HPE Clustered Datastore (Shared LUN)" in UI
@@ -25,6 +32,14 @@ HVM clusters in Morpheus 9.0 replace Pacemaker with an agent-based quorum system
 
 ## Scope
 
+### Documentation Structure
+- One HVM cluster landing page and topic tree
+- One layout and operating-system support matrix
+- Shared architecture, lifecycle, VM, storage, placement, and monitoring procedures
+- Scoped notices for layout-specific behavior
+- A supported legacy appendix for operations that do not apply to current layouts
+- Links to the standalone `hvmcli` command reference rather than duplicated command documentation
+
 ### Architecture Overview
 - Stack components (Corosync, DLM, Morpheus agent)
 - Quorum algorithm (ping, cross-verification, majority)
@@ -34,7 +49,7 @@ HVM clusters in Morpheus 9.0 replace Pacemaker with an agent-based quorum system
 - Key timing constants
 
 ### Building New Clusters
-- Prerequisites (Ubuntu 24.04, network, storage)
+- Prerequisites by layout and HVM OS version
 - Cluster creation wizard workflow
 - Automated provisioning phases
 - HPE Clustered Datastore (Shared LUN) setup
@@ -54,6 +69,11 @@ HVM clusters in Morpheus 9.0 replace Pacemaker with an agent-based quorum system
 - Common issues and resolutions
 - Agent state files reference
 - Emergency procedures
+
+### Networking
+- OVS workflows for Legacy and layout 1.3
+- Virtual Switch workflows for layout 2.0
+- Migration considerations between networking models
 
 ### Failure Scenarios
 - Single host failure

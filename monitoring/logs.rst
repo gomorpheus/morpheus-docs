@@ -9,7 +9,7 @@ The logging architecture backing |morpheus| uses the latest and greatest technol
 Configuration
 ^^^^^^^^^^^^^
 
-Logging configuration can be setup in the |AdmSetLog| section. There are useful settings here, including customizing the retainment policy (7 days by default). This could be expanded to years for PCI compliance purposes or other requirements an organization might have.
+Logging configuration is under :menuselection:`Administration --> Settings --> Monitoring --> Logging Settings`. Settings include enabling log collection, the minimum Agent log level, and the availability/retention time frame.
 
 .. NOTE:: When increasing the retainment policy of the logging system, it may be necessary to scale out the elasticsearch cluster. Please refer to the relevant information with regards to scaling elasticsearch and advanced installation options for externalizing the elasticsearch cluster.
 
@@ -128,7 +128,7 @@ The final log type that may require export is the |morpheus| Activity log. This 
 
       morpheus-ctl tail morpheus-ui
 
-   Once you see the ASCI art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
+   Once you see the ASCII art show up you will be able to log back into the User Interface. A new audit file will have been created called audit.log and will found in the default |morpheus| log path which is ``/var/log/morpheus/morpheus-ui/``
 
 This is only an example and other configurations are possible, such as creating an appender definition for your SIEM audit database product.
 

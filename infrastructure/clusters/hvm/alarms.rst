@@ -95,7 +95,7 @@ Operational Alarms
      - Description
    * - Unable to Remove Host
      - Warning
-     - A host removal operation failed. Manual intervention may be required to complete the removal.
+     - A host removal operation could not safely complete. Follow :doc:`managing_hosts`; do not manually edit cluster membership, and contact HPE Support if safe isolation or ring departure cannot be established.
 
 Default Thresholds
 ------------------

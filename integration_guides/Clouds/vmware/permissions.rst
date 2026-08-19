@@ -17,8 +17,19 @@ The next step is to create a Role (Menu > |AdmRol|). You can edit an existing Ro
 Privileges
 ``````````
 
+.. important:: Build the role for the operations enabled in your environment and assign it only at the inventory objects where those operations are required. Do not grant Administrator to troubleshoot a single VM. vTPM and encrypted-VM operations can require privileges that an unencrypted-VM test never exercises.
+
 Content Library
   * All Content Library privileges
+
+Cryptographic operations for encrypted or vTPM VMs
+  * Clone
+  * Direct Access
+  * Migrate
+
+The names above correspond to the vCenter **Cryptographic operations** privileges reported in MORPH-6016 as ``Clone``, ``Direct``, and ``AccessMigrate``. The report established that adding the set restored hypervisor-console access for a discovered Windows 11 vTPM VM; it did not isolate which individual privilege the console session consumed. Treat the set as a reported requirement for workflows that include console access, clone, or migration of encrypted/vTPM VMs, not as a requirement for every unencrypted VM.
+
+Apply these privileges to the dedicated |morpheus| integration role at the smallest vCenter inventory scope containing the affected encrypted/vTPM VMs, with propagation only where child objects require it. Verify the role assignment inherited by the affected VM and test console, clone, and migration separately. If policy cannot permit the complete set, use vCenter task/event and |morpheus| logs to identify the denied operation and have the VMware/security owner approve the minimum privilege; do not broaden the role to Administrator.
 
 Datastore/Datastore Cluster
   * Allocate Space

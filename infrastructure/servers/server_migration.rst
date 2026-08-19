@@ -61,3 +61,14 @@ Migration operations appear in the server's **History** tab with status indicato
 - **Running** — Migration is in progress
 - **Complete** — Migration finished successfully
 - **Failed** — Migration encountered an error (check event details for the failure reason)
+
+VME Migration: LVM and Source SCSI Disks
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Before migrating a VM that uses Linux LVM, record the source physical volumes, volume groups, logical volumes, mount points, boot volume, and the controller and unit number for every virtual disk. Confirm that all required source disks are included in the migration plan and mapped to destination datastores with at least the source capacity. The guest must be able to load the destination storage driver and discover every volume required for boot and application data.
+
+The migration planner preserves source controller bus and unit mappings where they are available. When a source VM has any SCSI-backed volume, the HVM destination uses a VirtIO-SCSI controller for the post-conversion disk mapping; otherwise it uses VirtIO Block. Windows migrations that install guest tools boot initially from SATA while VirtIO drivers are registered, then stop the destination VM and move its disks to the selected paravirtual controller. Do not manually change controller mappings while that migration is running.
+
+The legacy **LVM Migration** backup type is a separate, deprecated workflow. Its implementation requires SSH and sudo access to source and destination, ``lvm2`` and ``pv``, an explicitly selected source logical-volume device, enough free space in the source volume group for an LVM snapshot, a writable destination data device, and key-based transfer connectivity from source to destination. It copies a single selected logical-volume snapshot and is not evidence that arbitrary multi-PV, thin-pool, encrypted, clustered, or nested LVM layouts are supported.
+
+After migration, verify that the destination boots from the expected controller, every expected disk is present at the intended bus/unit mapping, all volume groups and logical volumes activate, filesystems mount, and application data is accessible. If discovery does not match the recorded source layout, stop validation and retain the source VM; do not invent device-renaming or bootloader repair steps.

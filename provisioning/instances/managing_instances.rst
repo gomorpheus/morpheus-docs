@@ -35,6 +35,8 @@ Clone
   Creates a new Instance from the Instance at its current state.
 Backup
   Immediately executes a backup of the Instance. Only available for Instances with backups enabled.
+Create Snapshot
+  Creates a point-in-time snapshot when the selected Instance layout supports snapshots. The action is shown only when the Instance is not pending removal and the user has **Snapshots: Full** permission; it is disabled while the Instance is busy. Enter a snapshot name and optional description, submit the action, and monitor the resulting process. View completed snapshots on the Instance **Backups** tab. Storage behavior and consistency depend on the provider; for HVM, see :doc:`../../infrastructure/clusters/hvm/snapshots`.
 Run Workflow
   Presents workflow options and then immediately runs selected Workflow on the Instance. Workflows can be created in the :menuselection:`Library --> Automation` section.
 Run Script

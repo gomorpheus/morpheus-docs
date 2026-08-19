@@ -28,4 +28,5 @@ From this view, users can manage permissions for any data store synced from inte
 - **Groups:** Select "all" Groups or select specific Groups which should have access to the data store
 - **Tenants:** Primary Tenant users can opt to make the data store available to all Tenants (public visibility) or to selected Tenants (private visibility with specific Tenants selected). Subtenant users will only be able to make data stores visible to their own Tenant
 - **Active:** When marked, the data store is active and available for provisioning
+- **Image Target:** Marks the Data Store as a default image-storage target when its Data Store type supports image targets. If no Bucket, File Share, or capable Data Store is selected as the image target, uploaded images are stored locally on the appliance and available storage may be limited. Only one target should be selected for the intended Tenant scope.
 - Click :guilabel:`SAVE CHANGES` 

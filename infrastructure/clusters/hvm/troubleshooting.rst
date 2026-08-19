@@ -21,12 +21,12 @@ The Quorum panel displays:
 Diagnostic Commands
 -------------------
 
-.. NOTE:: HVM 1.3 does not use Pacemaker or ``pcs`` commands. Use the commands below for all cluster diagnostics.
+.. NOTE:: Layouts 1.3 and 2.0 do not use Pacemaker or ``pcs`` commands. Use the commands below for these layouts. Legacy clusters use the Pacemaker diagnostics in :doc:`/infrastructure/clusters/mvm`.
 
 Corosync
 ^^^^^^^^
 
-In HVM 1.3, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for stretch clusters and two-node GFS2 configurations. Corosync's ``Quorate`` state has no impact on cluster operation.
+In layouts 1.3 and 2.0, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for stretch clusters and two-node GFS2 configurations. Corosync's ``Quorate`` state has no impact on cluster operation.
 
 List cluster members:
 
@@ -55,11 +55,7 @@ List DLM lockspaces:
 
    dlm_tool ls
 
-Manually acknowledge a fence (use with caution):
-
-.. code-block:: bash
-
-   dlm_tool fence_ack <node_id>
+Fence acknowledgement is managed by the |morpheus| Agent. Do not acknowledge a fence manually unless HPE Support has verified host isolation and directs the operation.
 
 Agent Quorum
 ^^^^^^^^^^^^
@@ -109,6 +105,20 @@ Check for hanging mounts:
 
    ps -aux | grep mount
 
+Multipath
+^^^^^^^^^
+
+For layout 2.0, collect read-only storage state with:
+
+.. code-block:: bash
+
+   sudo hvmcli storage multipath validate
+   sudo hvmcli storage multipath status
+   sudo hvmcli storage fc --multipath
+   sudo hvmcli storage iscsi --multipath
+
+Confirm the expected WWN-based device is present and at least one path remains active. Do not create a datastore or return a host to service while all paths are failed. See :doc:`storage_operations` for the canonical multipath and stable-device guidance.
+
 Log Files
 ^^^^^^^^^
 
@@ -130,6 +140,30 @@ Log Files
 Common Issues
 -------------
 
+HVM OS Installer Media or Disk Error
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If HVM OS installation reports a checksum, storage, or unknown error, preserve evidence before changing the host:
+
+#. Record the complete error and installation stage, and collect the installer logs.
+#. Verify the ISO checksum against the value published for that release. If it differs, obtain the ISO again from HPE and recreate or remount the installation media.
+#. Check management-controller virtual-media events and network reachability when the ISO is mounted by URL.
+#. Run the server and storage-controller hardware diagnostics. Confirm the intended OS disk and RAID or HBA configuration are healthy and supported.
+#. Confirm that required data on every candidate disk is backed up and recoverable.
+
+Disk erasure is a destructive troubleshooting step, not a routine installation prerequisite and not a general checksum fix. Consider it only when media integrity and hardware checks pass, the selected installation disk contains an unwanted prior layout, and HPE Support or the server/storage owner directs reinitialization. Use the hardware vendor's documented erase or logical-drive recreation procedure. Verify disk identifiers before proceeding; erasing or recreating a logical drive permanently removes its partitions and data. Afterward, rerun hardware diagnostics and restart installation with verified media.
+
+If the error persists, stop repeated installation or erase attempts and provide HPE Support with the ISO checksum, host model and firmware, storage-controller configuration and diagnostics, media method, exact error, and installer logs.
+
+Legacy ``hpe-vm console`` Exit or Save Prompt
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Current HVM hosts use ``hvmcli`` commands and the |morpheus| Virtual Switch workflow for supported host configuration. Use the legacy interactive ``hpe-vm console`` only when the documentation for the installed HVM OS release or HPE Support explicitly directs it; do not repeat network or time-zone configuration solely because installation is complete.
+
+When using a legacy console, distinguish **Save** from **Apply**. After editing networking, accept the disconnect warning only when you have alternate console access, apply the change, and verify the resulting address and connectivity before exiting. If an exit dialog still reports unsaved changes, cancel the exit and verify whether the change was applied rather than assuming that **Save** made it active or choosing to discard it.
+
+If the terminal colors or cursor placement remain incorrect after leaving the legacy full-screen console, run ``reset``. If ``reset`` is unavailable, run ``clear`` to redraw the screen; reconnect the terminal if display state remains incorrect. These commands repair terminal display state and do not apply network configuration.
+
 Node Unreachable
 ^^^^^^^^^^^^^^^^
 
@@ -142,6 +176,25 @@ Node Unreachable
 #. Confirm port 7443 is open and accessible
 #. Check agent logs for connectivity errors
 
+Offline, Fenced, or Unclean Node
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First identify the cluster layout. For layouts 1.3 and 2.0, use the Quorum panel and Agent quorum endpoint—not ``pcs``—to record quorum, reachable nodes, ``fenced``, ``waitFencing``, lockspaces, and datastore status. Also collect Corosync membership, DLM status, GFS2 mounts, storage-path health, and agent/kernel logs before taking action.
+
+Before recovery, verify why the host lost membership and confirm it cannot concurrently access shared storage from an isolated network path. Restore the failed management, quorum, or storage path before allowing the host to rejoin.
+
+For layouts 1.3 and 2.0, reboot the fenced or unclean host. The Agent re-enters its quorum cycle after boot. Do not issue ``pcs resource cleanup`` or manually acknowledge a DLM fence as a general unclean-state recovery step.
+
+After reboot, confirm all of the following before placing workloads on the host:
+
+- The host is ONLINE and the Agent quorum endpoint reports the expected membership and quorum state
+- Corosync and DLM list the expected members and no lockspace is waiting on fencing
+- Every expected GFS2 datastore is mounted and not withdrawn
+- FC or iSCSI multipath reports the expected active paths
+- VMs are not duplicated between the recovered host and failover hosts
+
+If the host cannot be isolated, storage paths remain ambiguous, quorum is not achieved, a lockspace remains blocked, or the host does not rejoin cleanly after reboot, stop and contact HPE Support. Legacy layouts use the separate Pacemaker procedures in :doc:`/infrastructure/clusters/mvm`.
+
 DLM Wait Fencing
 ^^^^^^^^^^^^^^^^^
 
@@ -150,13 +203,7 @@ DLM Wait Fencing
 **Resolution:**
 
 - The |morpheus| agent should automatically issue ``fence_ack`` after confirming the fenced node cannot access storage
-- If automatic fencing is not resolving:
-
-  .. code-block:: bash
-
-     dlm_tool fence_ack <node_id>
-
-.. WARNING:: Only issue a manual ``fence_ack`` if you have confirmed the target node can no longer access shared storage. Incorrect use can lead to data corruption.
+- If automatic fencing is not resolving, retain the collected quorum, DLM, storage, and Agent evidence and contact HPE Support. Do not bypass fencing while host isolation is uncertain.
 
 GFS2 Withdrawn
 ^^^^^^^^^^^^^^
@@ -169,12 +216,17 @@ GFS2 Withdrawn
 #. If remount fails, reboot the affected host
 #. Investigate the cause (storage connectivity, DLM issue) before the host rejoins
 
+GFS2 Capacity Does Not Increase After LUN Expansion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Array capacity, host path capacity, the multipath map, any intermediate block layer, and the GFS2 filesystem are separate layers. Do not rerun grow commands until each host reports the same stable WWN device and size. Collect array/LUN identity, ``lsblk``, multipath status, active mounts, ``df -hT``, DLM/quorum state, and kernel logs, then follow the coordinated procedure and stop points in :doc:`storage_operations`. Never recreate or shrink the filesystem to correct a size mismatch.
+
 Corosync Shows Not Quorate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Symptoms:** ``corosync-quorumtool -s`` shows ``Quorate: No``.
 
-**Impact:** In HVM 1.3, this has **no impact** on cluster operation. The |morpheus| Agent manages its own quorum independently of Corosync's quorate state. Corosync is used only to provide a node list to DLM, not for quorum decisions.
+**Impact:** In layouts 1.3 and 2.0, this has **no impact** on cluster operation. The |morpheus| Agent manages its own quorum independently of Corosync's quorate state. Corosync is used only to provide a node list to DLM, not for quorum decisions.
 
 **When this occurs:**
 
@@ -214,6 +266,8 @@ Emergency Procedures
 
 .. WARNING:: Emergency procedures should only be used when automated recovery has failed. Incorrect use can lead to data loss or split-brain conditions.
 
+For a failed host that must be permanently removed, use the UI workflow and stop conditions in :doc:`managing_hosts`. Do not substitute shell-level cluster removal commands.
+
 Force Rejoin a Fenced Node
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -222,11 +276,7 @@ Reboot the fenced node. Upon boot, the agent will re-enter the quorum cycle and 
 Clear Stuck DLM
 ^^^^^^^^^^^^^^^
 
-.. code-block:: bash
-
-   dlm_tool fence_ack <node_id>
-
-.. IMPORTANT:: Only use this command if you have confirmed the target node cannot access shared storage. This tells DLM the node is safely fenced.
+Do not clear DLM fencing manually as a general recovery procedure. If the Agent does not resolve the fence after the failed host is demonstrably isolated, contact HPE Support with the collected quorum, DLM, storage-path, and Agent evidence.
 
 Force Restart Cluster Services
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
