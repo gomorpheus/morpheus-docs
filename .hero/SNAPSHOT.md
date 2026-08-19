@@ -1,12 +1,12 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-08-03T13:51:08Z · projected from 167 source nodes_
+_Last refreshed: 2026-08-19T15:56:25Z · projected from 273 source nodes_
 
 ## Surfaces
 
 | Surface | Stage | Path(s) | Last touched | Driver spec |
 |---|---|---|---|---|
-| (unassigned) | — | — | — | 159 specs without surface |
+| (unassigned) | — | — | — | 265 specs without surface |
 
 _Run `hero snapshot assign` to bucket unassigned specs._
 
@@ -29,7 +29,6 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 - **"9.1.0 Docs: Combined Host and Datastore Live Migration"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: CPU Ready Metric in HPE VM Essentials"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Cross-Cluster Live Migration"** (surface: —) — 0/0 specs done
-- **"9.1.0 Docs: Datastore Evacuation / Maintenance Mode"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: GPU Metrics Observability"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Morpheus Documentation History - Prior 9.0"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: HKS Enhancements for 9.1.0"** (surface: —) — 0/0 specs done
@@ -45,7 +44,6 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 - **"9.1.0 Docs: Import an Existing System"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Key-Value Pair Labels with Filtering"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Legacy OS Support Option"** (surface: —) — 0/0 specs done
-- **"9.1.0 Docs: Linked Clones in HVM"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Log Rotation and Retention from GUI"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Live Migration Concurrency in Maintenance Mode"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Monitoring Tab Time Ranges"** (surface: —) — 0/0 specs done
@@ -64,11 +62,10 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 - **"9.1.0 Release Notes & Documentation Updates"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: STIG Hardening HVMos Phase 2 FIPS"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: STIG Hardening Morpheus Manager Phase 2 FIPS"** (surface: —) — 0/0 specs done
-- **"9.1.0 Docs: Storage DRS-Like Functionality"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Storage I/O Control"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Storage Migration Snapshot Guard"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Swap Primary Network Role in UI"** (surface: —) — 0/0 specs done
-- **"9.1.0 Docs: Morpheus Core System Update Capabilities"** (surface: —) — 0/0 specs done
+- **"9.1.0 Docs: Morpheus Core System Update Capabilities"** (surface: —) — 0/1 specs done
 - **"9.1.0 Docs: UBS Small Defects"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Unified File Support Phase 2"** (surface: —) — 0/0 specs done
 - **"9.1.0 Docs: Hypervisor Level vDisk Encryption"** (surface: —) — 0/0 specs done
@@ -90,36 +87,37 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 - **"HVM Multi-Disk QCOW2 Virtual Image Documentation"** (surface: —) — 0/2 specs done
 - **"License Socket Consumption Documentation"** (surface: —) — 0/2 specs done
 - **Migrations Overview: Linux Driver Injection Details** (surface: —) — 0/0 specs done
-- **"Unified HVM Cluster Documentation"** (surface: —) — 0/0 specs done
+- **"Multi-Tenancy Documentation"** (surface: —) — 0/3 specs done
 - **"HPE Morpheus Enterprise Documentation Site"** (surface: —) — 14/14 specs done
 - **"Unified Docs: Merge VM Essentials & Enterprise Portals for 8.1.2"** (surface: —) — 0/6 specs done
 
 ### Recently completed initiatives
 
-- **Spanish (es) Documentation Localization** (surface: —) — 18/18 specs done · COMPLETED 2026-07-02
-- **"Sprint 6: Certificates, DNS, SCM & Provisioning Features"** (surface: —) — 0/0 specs done · COMPLETED 2026-06-04
-- **"Sprint 5: Operations, Costing & Approvals"** (surface: —) — 0/0 specs done · COMPLETED 2026-06-04
+- **"9.1.0 Docs: Datastore Evacuation / Maintenance Mode"** (surface: —) — 0/0 specs done · COMPLETED 2026-08-19
+- **"9.1.0 Docs: Storage DRS-Like Functionality"** (surface: —) — 0/0 specs done · COMPLETED 2026-08-19
+- **"9.1.0 Docs: Linked Clones for VMware and HVM"** (surface: —) — 0/0 specs done · COMPLETED 2026-08-19
 
 ## Recently completed (last 14 days)
 
-- **(unassigned)** — docs-hvm-essentials-parity
+- **(unassigned)** — docs-910-datastore-maintenance-mode, docs-910-storage-drs, docs-910-linked-clones
 
 ## Next up across surfaces
 
-1. **(unassigned)** — `docs-cluster-ha-dynamic-placement` (—, delivering)
-2. **(unassigned)** — `docs-fc-storage-connection` (—, delivering)
-3. **(unassigned)** — `docs-field-feedback-improvements` (—, delivering)
-4. **(unassigned)** — `docs-host-passthrough-guide` (—, delivering)
-5. **(unassigned)** — `docs-migrations-linux-drivers` (—, delivering)
+1. **(unassigned)** — `docs-910-system-updates` (2, delivering)
+2. **(unassigned)** — `docs-cluster-ha-dynamic-placement` (—, delivering)
+3. **(unassigned)** — `docs-fc-storage-connection` (—, delivering)
+4. **(unassigned)** — `docs-field-feedback-improvements` (—, delivering)
+5. **(unassigned)** — `docs-host-passthrough-guide` (—, delivering)
 
 ## Open risks & blockers
 
-- **Blocked specs (4):** `docs-distributed-worker-deployment` (waits on docs-distributed-worker-capabilities); `docs-distributed-worker-witness` (waits on docs-distributed-worker-capabilities, docs-distributed-worker-deployment); `docs-hvm-qcow2-image-guidance` (waits on docs-qcow2-multidisk-upload); `docs-license-consumption-examples` (waits on docs-license-consumption-reference).
-- **Unassigned specs (159) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
+- **Blocked specs (6):** `docs-distributed-worker-deployment` (waits on docs-distributed-worker-capabilities); `docs-distributed-worker-witness` (waits on docs-distributed-worker-capabilities, docs-distributed-worker-deployment); `docs-hvm-qcow2-image-guidance` (waits on docs-qcow2-multidisk-upload); `docs-license-consumption-examples` (waits on docs-license-consumption-reference); `docs-multitenancy-administration-limitations` (waits on docs-multitenancy-hierarchy); `docs-multitenancy-resource-inheritance` (waits on docs-multitenancy-hierarchy).
+- **Stale-in-flight (11):** `docs-cluster-ha-dynamic-placement` (28d), `docs-fc-storage-connection` (28d), `docs-field-feedback-improvements` (28d), `docs-host-passthrough-guide` (28d), `docs-migrations-linux-drivers` (28d), `docs-storage-network-interfaces-hvm` (28d), `docs-tagged-bonds-guide` (28d), `docs-virtual-image-options-reference` (28d), `docs-windows-cloud-guest-customization` (28d), `docs-windows-domain-join-guide` (28d), `docs-windows-migration-conflict-resolution` (28d).
+- **Unassigned specs (265) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
-- Specs covered: 0/159 (0%)
-- Projection generation: 0ms · Source nodes: 167
+- Specs covered: 0/265 (0%)
+- Projection generation: 0ms · Source nodes: 273
 
