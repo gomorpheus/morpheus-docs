@@ -62,7 +62,7 @@ When a host becomes unreachable, |morpheus| detects the failure during the clust
 
 #. **Detection** — The host is marked unreachable after failing connectivity checks during a cluster sync cycle.
 #. **VM identification** — All VMs that were running on the failed host are identified.
-#. **Placement evaluation** — For each affected VM with ``Auto`` placement strategy, |morpheus| selects a target host with sufficient available memory and CPU capacity.
+#. **Placement evaluation** — For each affected VM with ``Auto`` placement strategy, |morpheus| selects a target host with sufficient available memory capacity.
 #. **Restart** — VMs are restarted on their assigned target hosts. VMs with ``Pinned`` placement strategy are NOT automatically failed over and remain offline until the original host recovers or an administrator intervenes.
 
 After the original host recovers:
@@ -157,7 +157,7 @@ Each aggressiveness level sets a group of threshold parameters that govern the D
      - 0.9
      - 0.95
      - 1.0
-     - A destination host is eligible to receive a VM only if its memory and CPU usage are below the cluster mean multiplied by this value. At 0.9 (conservative), the target must be at least 10% below the mean.
+     - A destination host is eligible to receive a VM only if its memory usage is below the cluster mean multiplied by this value. At 0.9 (conservative), the target must be at least 10% below the mean.
    * - Cooldown Period
      - 60 min
      - 30 min
@@ -177,17 +177,17 @@ Each aggressiveness level sets a group of threshold parameters that govern the D
      - 0.08
      - 0.05
      - 0.03
-     - The coefficient of variation (standard deviation / mean) for both memory and CPU across all hosts. If the cluster CV is already below this value, DRS skips balancing entirely because the cluster is considered well-balanced.
+     - The coefficient of variation (standard deviation / mean) for memory across all hosts. If the cluster CV is already below this value, DRS skips balancing entirely because the cluster is considered well-balanced.
 
 How the Algorithm Works
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 During each cluster sync cycle, Dynamic Placement evaluates the cluster as follows:
 
-#. **Cluster balance check** — Calculate the coefficient of variation (CV) for memory and CPU across all hosts. If both values are below the CV Threshold, the cluster is considered balanced and no action is taken.
+#. **Cluster balance check** — Calculate the coefficient of variation (CV) for memory across all hosts. If the value is below the CV Threshold, the cluster is considered balanced and no action is taken.
 #. **Identify overloaded hosts** — Hosts whose memory usage exceeds the mean multiplied by the Imbalance Threshold are flagged.
 #. **Select VMs to move** — On each overloaded host, eligible VMs are evaluated for migration. A VM is eligible if it uses the ``Auto`` placement strategy, has no local storage or assigned devices, is powered on, is not in an active backup, is not in an affinity group, and has not been migrated within the cooldown period.
-#. **Select target hosts** — Target hosts must have memory and CPU usage below the mean multiplied by the Target Low Threshold. The move is also validated to ensure it would not push the target host above the Imbalance Threshold.
+#. **Select target hosts** — Target hosts must have memory usage below the mean multiplied by the Target Low Threshold. The move is also validated to ensure it would not push the target host above the Imbalance Threshold.
 #. **Validate improvement** — The algorithm simulates the move and confirms it would reduce the cluster's standard deviation by at least the Min Std Dev Improvement percentage.
 #. **Execute migrations** — Approved moves are executed up to the Max Moves Per Cycle limit.
 
