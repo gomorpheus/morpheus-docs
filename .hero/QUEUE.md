@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-08-19T15:58:48Z · 121 ready specs_
+_Generated: 2026-08-25T12:41:16Z · 120 ready specs_
 
 ## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
 _initiative · delivering · horizon: now_
@@ -207,6 +207,13 @@ Adds the missing appliance socket-consumption reference to the License page.
 
 ---
 
+## docs-910-vgpu-slicing — "9.1.0 Docs: NVIDIA vGPU Slicing"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-vgpu-slicing/spec.md)_
+
+---
+
 ## docs-security-server-clarification — Security Server Section Clarification
 _feature · planning · horizon: now_
 
@@ -279,13 +286,6 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 
 ---
 
-## docs-910-vm-shutdown-options — "9.1.0 Docs: VM Graceful and Ungraceful Shutdown"
-_initiative · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-vm-shutdown-options/spec.md)_
-
----
-
 ## docs-910-vm-console-hvm — "9.1.0 Docs: VM Console Access from HVM Hosts"
 _initiative · planning · horizon: now_
 
@@ -304,13 +304,6 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 _initiative · planning · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-virtswitch-networks/spec.md)_
-
----
-
-## docs-910-vgpu-slicing — "9.1.0 Docs: NVIDIA vGPU Slicing"
-_initiative · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-vgpu-slicing/spec.md)_
 
 ---
 

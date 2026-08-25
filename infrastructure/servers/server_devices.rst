@@ -67,7 +67,7 @@ Supported Device Types
 The availability of device management depends on the cloud and hypervisor type:
 
 - **VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices
-- **KVM/MVM** — PCI passthrough, GPU passthrough, USB devices
+- **HVM/KVM** — PCI passthrough, USB devices, whole-GPU passthrough, and NVIDIA SR-IOV vGPU profiles. See :doc:`/infrastructure/clusters/hvm/nvidia_vgpu` for vGPU prerequisites and lifecycle constraints
 - **Nutanix AHV** — GPU passthrough devices
 
 .. NOTE:: Device availability is determined by the host's hardware configuration and the hypervisor's passthrough settings. Devices must be properly configured for passthrough at the host level before they appear as available in |morpheus|.

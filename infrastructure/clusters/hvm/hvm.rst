@@ -19,6 +19,7 @@ HVM clusters provide KVM-based virtualization, centralized lifecycle management,
    vm_compute
    vm_advanced_options
    /infrastructure/clusters/hardware-passthrough
+   nvidia_vgpu
    guest_os_notes
    snapshots
    storage_operations
@@ -74,6 +75,7 @@ Unless a section contains a layout notice, it applies to layouts 1.3 and 2.0. Le
 - For OVS networking on Legacy and layout 1.3 clusters, see :doc:`hvm_networks`.
 - For layout 2.0 networking, see :doc:`virtual_switches`.
 - For layout 2.0 host commands, see :doc:`/tools/hvmcli/hvmcli`.
+- For NVIDIA SR-IOV vGPU profiles, Host preparation, Service Plans, and guest licensing, see :doc:`nvidia_vgpu`.
 - For datastore creation, Datastore Groups, file browsing, maintenance, and capacity operations, see :doc:`storage_operations`.
 - For VM snapshots and creating linked clone Virtual Images, see :doc:`snapshots`.
 - For layout and HVM OS upgrades, see :doc:`upgrading`.

@@ -22,7 +22,7 @@ Suspend
 Stop/Start/Restart Service
   Stops, Starts or Restarts the service associated with the Instance Type.
 Stop/Start/Restart Server
-  Stops, Starts or Restarts the Virtual Machine.
+  Stops, Starts, or Restarts the Virtual Machine. For HVM/KVM and other provision types that support enhanced shutdown, Stop Server opens a shutdown-type selector. **Graceful Shutdown** is the default and allows the guest operating system to shut down cleanly. **Force Stop (immediate power-off)** bypasses the guest shutdown process and should be used only when the VM is unresponsive. HVM graceful shutdown waits up to five minutes and leaves the VM running if the guest does not stop; it does not automatically force power-off. The selector also supports bulk Instance and VM stops.
 Import as Image
   Clones and exports VM in its current state to target Storage provider and adds Virtual Image Record with metadata matching the source Instance's configuration.
 Clone to Image

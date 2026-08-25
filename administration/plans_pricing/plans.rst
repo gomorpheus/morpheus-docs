@@ -6,7 +6,7 @@ Plans & Pricing
 Overview
 --------
 
-Service Plans determine the amount of compute resources available to each Instance. When provisioning new Instances from |morpheus|, a plan is selected which determines the number of CPU cores, amount of memory and the amount of storage available to the associated machines. Additionally, when converting discovered instances in integrated clouds to |morpheus|-managed Instances, the user selects a plan which best fits the instance as it is currently configured. When Instances are reconfigured, a new plan may be selected which redefines the compute resources which should be available to the Instance.
+Service Plans determine the amount of compute resources available to each Instance. When provisioning new Instances from |morpheus|, a plan is selected which determines the number of CPU cores, amount of memory, amount of storage, and, for supported provision types, GPU resources available to the associated machines. Additionally, when converting discovered instances in integrated clouds to |morpheus|-managed Instances, the user selects a plan which best fits the instance as it is currently configured. When Instances are reconfigured, a new plan may be selected which redefines the compute resources which should be available to the Instance.
 
 Plans can be as specific or open-ended as the user would like, restricting the user to the resources defined in the plan or allowing the user to increase those amounts at provision time. Price sets are associated with plans, which is how |morpheus| can compute cost values even for Instances running in private, on-prem Clouds.
 
@@ -52,6 +52,8 @@ Service Plan Configuration
 - **CUSTOM CORES RANGE:** The minimum and maximum allowed amount of virtual CPU cores for the Plan when CUSTOM CORES is enabled for the Plan
 - **SOCKETS:** The minimum and maximum allowed sockets range for the Plan when CUSTOM CORES is enabled for the Plan
 - **CORES PER SOCKET:** The minimum and maximum allowed cores per socket for the Plan when CUSTOM CORES is enabled for the Plan
+- **GPU COUNT:** For GPU-capable provision types, the number of GPU devices required by each VM. The selected GPU Type applies uniformly to every device in this count
+- **GPU TYPE:** A grouped typeahead picker that determines GPU selection scope. **Any GPU** accepts any assignable GPU unit. A bold, top-level row selects a physical GPU type for whole-device passthrough (Device Type scope). An indented row beneath a physical GPU type selects an NVIDIA vGPU Segment Type for pre-created VF assignment (Segment Type scope). A Plan cannot combine a physical type and a Segment Type. See :doc:`/infrastructure/clusters/hvm/nvidia_vgpu` for details
 - **PRICE SETS:** In the Price Sets tab, associate Price Sets with the Plan. See :ref:`Adding Price Sets to Plans`
 
 .. TIP:: Custom Range storage and memory values units (GB/MB) are inherited from the :STORAGE:: and :MEMORY:: GB/MB settings in the same Plan. For example, if :STORAGE: is configured for for 40 GB, a custom range for Storage would also be in GB.
@@ -68,6 +70,8 @@ Price Sets can be added to the Plan at creation time so often it makes sense to 
 #. Configure details for the Plan on the General tab, the configuration options will depend on the Plan type. See the section above for a detailed description of each configuration option available for Service Plans
 #. On the Price Sets tab, associate all relevant Price Sets with the Plan. The desired Price Sets must already exist. If needed, you may save the Plan at this point and come back to associate Price Sets later
 #. Click :guilabel:`SAVE CHANGES`
+
+For HVM NVIDIA vGPU plans, create the required VFs and Segment Types on eligible Hosts before exposing the Plan. The Plan can remain selectable when capacity is unavailable, but provisioning fails if the Cluster cannot reserve the requested count of matching devices. See :doc:`/infrastructure/clusters/hvm/nvidia_vgpu`.
 
 .. _Adding Price Sets to Plans:
 

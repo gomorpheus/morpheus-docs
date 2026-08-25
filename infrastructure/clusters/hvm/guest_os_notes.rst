@@ -153,12 +153,18 @@ General Considerations
 Power Operations & Shutdown Behavior
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When stopping a VM, |morpheus| performs a **graceful-then-force** shutdown sequence:
+HVM/KVM VMs support separate graceful and forced stop operations. From an Instance or VM detail page, select :guilabel:`Stop Server` or :guilabel:`Stop`, then choose the shutdown type:
 
-#. An ACPI power-button signal is sent to the guest OS, giving it the opportunity to perform a clean shutdown (flush buffers, stop services, sync filesystems)
-#. If the guest has not powered off after **10 seconds**, the VM is forcefully terminated
+- **Graceful Shutdown** — The default. Sends an ACPI power-button signal and waits up to five minutes for the guest to report that it is shut off.
+- **Force Stop (immediate power-off)** — Immediately powers off the VM without notifying the guest operating system.
 
-This sequence runs automatically on every Stop Server operation. There is no separate "force only" option at this time — all stops attempt graceful first.
+If a graceful shutdown reaches the five-minute timeout, |morpheus| leaves the VM running and reports the timeout. It does not automatically change to a forced stop. Resolve the guest shutdown issue or submit a separate :guilabel:`Force Stop (immediate power-off)` request.
+
+.. warning::
+
+   Force Stop is equivalent to removing power from a physical server. The guest cannot flush filesystem writes, stop applications, or complete database transactions. Use it only when the VM is unresponsive or a clean shutdown cannot be completed, and follow the workload's recovery and consistency procedures afterward.
+
+The same shutdown-type selector is used for one or multiple selected HVM/KVM Instances or VMs. Graceful shutdown remains selected by default. Instance stops also offer :guilabel:`Mute Monitoring` for planned downtime. The selected shutdown type is recorded in activity and audit history; forced stops are identified as force operations.
 
 **How ACPI shutdown works with different guest configurations:**
 
@@ -175,13 +181,13 @@ This sequence runs automatically on every Stop Server operation. There is no sep
    * - Guest Agent installed but not responding
      - No impact on shutdown. The ACPI power button signal is delivered at the hypervisor level, independent of the guest agent communication channel.
    * - Guest OS ignoring ACPI (rare)
-     - The graceful ACPI signal has no effect. After the 10-second timeout, the VM is forcefully terminated. This can occur with some legacy or misconfigured operating systems that do not handle ACPI power button events.
+     - The graceful ACPI signal has no effect. After the five-minute timeout, the VM remains running. Correct the guest ACPI configuration or explicitly select Force Stop if immediate power-off is operationally acceptable.
 
-.. NOTE:: The 10-second grace period means that VMs with long-running shutdown scripts (e.g., database flush, service drain) may be forcefully terminated before completing. For workloads requiring longer graceful shutdown times, consider stopping the application services manually before issuing the Stop Server command.
+.. NOTE:: Graceful shutdown does not depend on the QEMU Guest Agent. Modern Linux and Windows guests normally handle the hypervisor ACPI power-button signal directly. For workloads with lengthy shutdown scripts, application drains, or database flushes, stop the application cleanly before issuing Stop Server and verify that it completes within the five-minute window.
 
 **When the QEMU Guest Agent matters for power-related operations:**
 
-While the guest agent does not affect the Stop Server operation itself, it is used for:
+While the guest agent does not affect the graceful or forced Stop Server operation itself, it is used for:
 
 - **Filesystem freeze/thaw** — Before snapshots, the guest agent freezes guest filesystems for consistency
 - **Graceful reboot** — The agent can execute a clean reboot command inside the guest
