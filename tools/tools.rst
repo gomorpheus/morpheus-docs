@@ -17,3 +17,4 @@ Tools
   ai/ai.rst
   hvmcli/hvmcli.rst
   hpe_vm/hpe_vm.rst
+  host_console/host_console.rst

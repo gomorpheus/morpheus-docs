@@ -47,3 +47,13 @@
   font-family: inherit;
   font-size: 0.95em;
 }
+
+/* The theme spaces the element AFTER a data table (table.data + *) but never
+   gives a table its own top margin, and a standalone .. image:: renders as a
+   bare inline <img> with no bottom margin. An image placed directly before a
+   table therefore sits flush against it. Restore the theme's 1.5em gap for
+   that one adjacency (image -> table). */
+.md-typeset img + table.data,
+.md-typeset img + .md-typeset__table {
+  margin-top: 1.5em;
+}
