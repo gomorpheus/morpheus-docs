@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-08-26T13:30:50Z · 127 ready specs_
+_Generated: 2026-08-26T13:39:50Z · 126 ready specs_
 
 ## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
 _initiative · delivering · horizon: now_
@@ -239,13 +239,6 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 _feature · planning · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-linked-clones-hvm/spec.md)_
-
----
-
-## docs-910-datastore-explorer — "9.1.0 Docs: Datastore Explorer"
-_feature · planning · horizon: now_
-
-_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-datastore-explorer/spec.md)_
 
 ---
 

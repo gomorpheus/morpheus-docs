@@ -2,7 +2,7 @@
 title: "9.1.0 Docs: Datastore Explorer"
 slug: docs-910-datastore-explorer
 type: feature
-status: planning
+status: completed
 horizon: now
 tags: [9.1.0, docs]
 priority: 1
