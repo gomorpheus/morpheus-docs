@@ -1,0 +1,2953 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/blueprints/blueprints.rst:2
+msgid "Blueprints"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:7
+msgid ""
+"The Blueprints section is used to compose provisioning catalogs. The "
+"Blueprints section is composed of:"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:9
+msgid "Instance Types"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:10
+#: ../../library/blueprints/layouts.rst:2
+msgid "Layouts"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:11
+#: ../../library/blueprints/node_types.rst:2
+msgid "Node Types"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:12
+msgid "App Blueprints"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:13
+msgid "Catalog Items"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:14
+#: ../../library/blueprints/clusterLayouts.rst:2
+msgid "Cluster Layouts"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:16
+msgid ""
+"Additionally, items from Options and Templates sections are incorporated "
+"to call in custom options for users, IaaS spec files, scripts, and more. "
+"See Options and Templates within |morpheus| Library for more information "
+"on creating or sourcing the items below from version control. In some "
+"cases, they may need to be pre-existing for the most efficient creation "
+"of Blueprints."
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:18
+#: ../../library/blueprints/instance_types.rst:38
+#: ../../library/blueprints/layouts.rst:71
+msgid "Inputs"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:19
+msgid "Option Lists"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:20
+#: ../../library/blueprints/node_types.rst:44
+msgid "File Templates"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:21
+#: ../../library/blueprints/node_types.rst:41
+msgid "Scripts"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:22
+msgid "Spec Templates"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:25
+msgid "Blueprint Development Overview"
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:27
+msgid ""
+"When provisioning, the User selects an INSTANCE TYPE from the "
+"provisioning wizard. At this stage, we can present custom INPUTS to the "
+"User which alter deployment in ways the administrator predetermines. "
+"Based on the selected Cloud technology and Version, the User is presented"
+" with applicable LAYOUTS selections. LAYOUTS can take advantage of "
+"Workflows which automate Tasks and can utilize a wide range of DevOps "
+"automation technologies. One or more NODE TYPES is associated with the "
+"LAYOUT. NODE TYPES are the bridge between LAYOUTS and Images. NODE TYPES "
+"can also take advantage of File Templates for custom configuration and "
+"Scripts which can be queued to run at any stage of the Instance "
+"lifecycle."
+msgstr ""
+
+#: ../../library/blueprints/blueprints.rst:29
+msgid ".. image:: /images/provisioning/library/library_item_transparent.png"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:2
+msgid "Instance Types |advanced-plus|"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:7
+msgid ""
+"Custom Instance Types are an Advanced+ feature, available in HPE Morpheus"
+" Enterprise and Advanced tiers."
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:9
+msgid ""
+"Adding an Instance Type creates a new Library item category. Multiple "
+"Layouts can be added to an Instance Type and these Layouts can have "
+"different Nodes attached. The Instance provisioning wizard will present "
+"the Layout options compatible with the selected Cloud. If Cloud selection"
+" is turned off, all Layouts will be presented for all Cloud types "
+"accessible by the User."
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:11
+msgid ".. image:: /images/provisioning/library/instanceType.png"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:13
+#: ../../library/blueprints/layouts.rst:51
+#: ../../library/blueprints/node_types.rst:11
+msgid "Name"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:14
+msgid "Name of the Instance Type in the provisioning Library"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:15
+msgid "Code"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:16
+msgid "A useful shortcode for provisioning naming schemes and export reference"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:17
+#: ../../library/blueprints/layouts.rst:55
+msgid "Description"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:18
+msgid ""
+"The description of the Instance Type shown in the Provisioning Library. "
+"(255 characters max)"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:19
+#: ../../library/blueprints/node_types.rst:21
+msgid "Category"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:20
+msgid "For filtering in Instance sections and provisioning wizard"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:22
+msgid "Web"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:23
+msgid "SQL"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:24
+msgid "NoSQL"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:25
+msgid "Apps"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:26
+msgid "Network"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:27
+msgid "Messaging"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:28
+msgid "Cache"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:29
+msgid "OS"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:30
+msgid "Cloud"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:31
+msgid "Utility"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:33
+msgid "Icon"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:34
+msgid ""
+"An identifiable icon to display in-line with your Instance Type in the "
+"provisioning wizard (Suggested dimensions: 150 x 51)"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:35
+msgid "Visibility"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:36
+msgid "Private: Only accessible by assigned Accounts/Tenants"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:37
+msgid "Public: Accessible by all Accounts/Tenants"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:39
+msgid ""
+"Custom options presented to the user at provision time, Inputs are also "
+"created and stored in Morpheus Library"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:40
+#: ../../library/blueprints/layouts.rst:75
+msgid "Price Sets"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:41
+msgid ""
+"Associate a Price Set with the Instance Type, Price sets are created in "
+"|AdmPlaSet|. Price Sets which are added to Instance Types become additive"
+" with any pricing which may apply on the Service Plan. For example, a "
+"\"fixed\" Price Set of $1000/month has been associated with the Instance "
+"Type. If this Instance Type is provisioned to an Amazon AWS Cloud, the "
+"additional fixed price would be computed along with any Price which is "
+"pre-existing on the AWS Service Plan"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:52
+msgid "Environment Prefix"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:53
+msgid ""
+"Used for exportable environment variables when tying Instance Types "
+"together in App contexts. If not specified, a name will be generated"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:54
+#: ../../library/blueprints/layouts.rst:69
+#: ../../library/blueprints/node_types.rst:19
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:55
+msgid ""
+"Name and value pairs for environment variables to be loaded on "
+"initialization"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:56
+msgid "Enable Settings"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:57
+msgid ""
+"Allows for attachment of modifiable file templates to Node Types in a "
+"settings tab of the Instance after deployment"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:58
+#: ../../library/blueprints/layouts.rst:67
+msgid "Enable Scaling (Horizontal)"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:59
+msgid "Enables load balancer assignment and auto-scaling features"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:60
+msgid "Support Deployments"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:61
+msgid ""
+"Enables deployment features (Requires a data volume be configured on each"
+" version. Files will be copied into this location)"
+msgstr ""
+
+#: ../../library/blueprints/instance_types.rst:63
+msgid ""
+"Upon saving, this Instance Type will be available in the provisioning "
+"catalog, per User Role access. However, we still need to add Layouts to "
+"the Instance Type, and prior to creating a Layout, we will add a Node "
+"Type."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:4
+msgid ""
+"Layouts are attached to Instance Types. A Layout can only be attached to "
+"a single Instance Type and a single Technology. An Instance Type can have"
+" one or many Layouts attached to it, allowing for a single Instance Type "
+"to work with any Technology type. Node Types are added to Layouts. A "
+"Layout can have one or many node types attached to it. Node types can be "
+"shared across Layouts of matching Technology types."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:6
+#: ../../library/blueprints/node_types.rst:89
+msgid "Important"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:6
+msgid ""
+"Once an Instance Type is defined on a Layout and saved, the Instance Type"
+" setting and Technology selections on the Layout cannot be changed."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:9
+msgid "Layout List View"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:11
+msgid ""
+"The default page for Layouts is the Layout list view. Select :guilabel:`+"
+" ADD` to create a new Layout. Layouts can also be created from an "
+"Instance Type detail page."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:13
+msgid "The following fields are displayed for each Layout:"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:15
+msgid ""
+"**INSTANCE TYPE:** Select the Instance Type to associate with the Layout."
+" This attribute is automatically set and not shown when creating the "
+"Layout from an Instance Type detail page"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:16
+msgid "**NAME:** Links to the Layout detail page"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:17
+msgid "**VERSION**"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:18
+msgid ""
+"**DISPLAY ORDER:** Determines the Layout display order in the "
+"provisioning wizard when adding an Instance of the associated Instance "
+"Type"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:19
+msgid "**DESCRIPTION**"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:8
+#: ../../library/blueprints/layouts.rst:21
+#: ../../library/blueprints/layouts.rst:29
+#: ../../library/blueprints/layouts.rst:49
+#: ../../library/blueprints/node_types.rst:29
+#: ../../library/blueprints/node_types.rst:87
+#: ../../library/blueprints/self-service.rst:11
+#: ../../library/blueprints/self-service.rst:27
+#: ../../library/blueprints/self-service.rst:60
+#: ../../library/blueprints/self-service.rst:251
+#: ../../library/blueprints/self-service.rst:297
+#: ../../library/blueprints/self-service.rst:311
+msgid "Note"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:21
+msgid ""
+"The order of Layouts given when an Instance Type is being provisioned is "
+"in high-to-low order of the Layout Display Order property. Bear in mind "
+"this is reversed from how Service Plans are ordered, which is in low-to-"
+"high order based on the Display Order value."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:23
+msgid "The Actions menu in each row reveals the following options:"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:25
+msgid ""
+"**Permissions:** Scope the Layout to Group(s) to narrow the list of "
+"available groups for a chosen Instance Type at provision time"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:26
+msgid "**Edit:** Edit the Layout"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:27
+msgid "**Delete:** Delete the Layout"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:29
+msgid "A Layout that is in use cannot be deleted."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:31
+msgid "Available Filters:"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:33
+msgid "**Technology:** Display Layouts by selected Cloud technology"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:34
+msgid "**Instance Type:** Display Layouts by the associated Instance Type"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:37
+msgid "Layout Detail View"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:39
+msgid ""
+"The Layout Detail view shows details on the Layout including Name, Short "
+"Name, Version, and Category. It also lists all associated Node Types."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:41
+msgid ""
+"Select a Layout Name from the list page or Instance Type detail page to "
+"get to a Layout detail page."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:44
+msgid "Layout Configuration Options"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:46
+msgid "Instance Type"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:47
+msgid ""
+"Select the Instance Type to add to the new Layout. Custom Instance Types "
+"must already be created and one Layout cannot be added to multiple "
+"instance types. The Instance Type also cannot be changed after creation."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:49
+msgid "Layouts cannot be added to Morpheus pre-defined Instance Types"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:52
+msgid ""
+"The name the Layout presents as in the Configuration Options dropdown of "
+"the provisioning wizard"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:53
+#: ../../library/blueprints/node_types.rst:15
+msgid "Version"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:54
+msgid ""
+"The version number or name for the Layout. Layouts in an Instance Type "
+"with the same version will all show under the Configuration Options "
+"dropdown when that version is selected while provisioning"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:56
+msgid "Description of the Layout, viewable on the Layout list view"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:57
+msgid "Creatable"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:58
+msgid ""
+"When checked, this Layout will be selectable at provision time for the "
+"associated Instance Type (assuming the Layout is otherwise compatible "
+"with provisioning conditions). Instance Types with no Creatable Layouts "
+"will not be selectable from the provisioning wizard"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:59
+#: ../../library/blueprints/node_types.rst:17
+msgid "Technology"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:60
+msgid ""
+"Technology determines which Cloud this layout will be available for and "
+"which Node Types can be added to it"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:61
+msgid "Minimum Memory"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:62
+msgid ""
+"Defines the minimum amount of memory required for this Layout. Only "
+"Service Plans that meet the defined memory minimum will be available "
+"during provisioning when this Layout is selected. Custom memory values "
+"must also meet this minimum. Entering a minimum memory value of zero (the"
+" default value) indicates no minimum. This minimum memory value will "
+"override any Virtual Image minimum memory requirements"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:63
+msgid "Workflow"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:64
+msgid ""
+"Select a Workflow which will be associated as the Provisioning Workflow "
+"for Instances provisioned using this Layout. If a Workflow is defined, it"
+" is not shown to the user at provision time and will be run in addition "
+"to any Workflows set on the Instance Type, in Workflows Policies, defined"
+" in App Blueprints, or selected manually at provision time."
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:65
+msgid "Supports Convert to Managed"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:66
+msgid ""
+"Enabled to allow users to select this layout when converting a Discovered"
+" workload to Managed"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:68
+msgid "Enables Instances with this layout to use scaling features"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:70
+msgid "Custom environment variables to be added to the Instance when provisioned"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:72
+msgid ""
+"Search for and select one or multiple Inputs to add to the Layout. Inputs"
+" (except for Hidden Inputs) will appear in Provisioning, App, Blueprint, "
+"and Cloning wizards when this layout is selected"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:73
+msgid "Nodes"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:74
+msgid ""
+"Single or multiple nodes can be added to a Layout by searching for and "
+"selecting the Node(s)"
+msgstr ""
+
+#: ../../library/blueprints/layouts.rst:76
+msgid ""
+"Associate a Price Set with the Layout, Price Sets are created in "
+"|AdmPlaSet|. Price Sets which are added to Layouts become additive with "
+"any pricing which may apply on the Service Plan. For example, a \"fixed\""
+" Price Set of $1000/month has been associated with the Layout. If this "
+"Layout is provisioned to an Amazon AWS Cloud, the additional fixed price "
+"would be computed along with any Price which is pre-existing on the AWS "
+"Service Plan"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:4
+msgid "Node Types are the link between Images and Layouts."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:7
+msgid "Node Type Configuration Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:9
+msgid "The following fields are for all Technology types:"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:12
+msgid "Name of the Node Type in |morpheus|"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:13
+msgid "Short Name"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:14
+msgid ""
+"The short name is a lowercase name with no spaces used for display in "
+"your container list"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:16
+msgid "Version for the Node Type. Examples: 7.5, 2012 R2, latest"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:18
+msgid ""
+"Select associated Technology. This will filter the available "
+"configuration options, images and which Layouts the Node Type can be "
+"added to"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:20
+msgid "Add pre-set environment variables to the Node Type"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:22
+msgid ""
+"Node Types of differing categories within the same Layout can have "
+"differing sizing"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:25
+msgid "Technology-Specific Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:27
+msgid ""
+"The Options fields will change depending on the Technology option "
+"selected. For VM provisioning technology options, select an image from "
+"the VM Image dropdown. This list is populated from the |morpheus| Virtual"
+" Images section and will include images uploaded into |morpheus| as well "
+"as synced images from added clouds."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:29
+msgid ""
+"Amazon and Azure Marketplace Images can be added in the Virtual Images "
+"section for use as Node Types in custom library items."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:32
+msgid "Docker Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:34
+msgid ""
+"For Docker, type in the name and version of the Docker Image, then select"
+" the integrated registry."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:36
+msgid "Service Ports"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:37
+msgid ""
+"To open ports on the node, enter the name and port to expose. The Load "
+"Balancer HTTP, HTTPS, or TCP setting is required when attaching to Load "
+"Balancers."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:39
+msgid ""
+"Defining an Exposed port will also create a hyperlink(s) on the container"
+" location (IP) in the VM or Container section of the associated Instance "
+"detail page."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:42
+msgid ""
+"Search for and select one or multiple scripts to be executed when the "
+"Node Type is provisioned"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:45
+msgid ""
+"Search for and select one or multiple File Templates to be written when "
+"the Node Type is provisioned"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:47
+msgid "Example port configuration:"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:49
+msgid ".. image:: /images/provisioning/library/node_ports.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:52
+msgid "VMware Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:54
+msgid ""
+"|morpheus| supports VMware-specific configurations related to Node Types "
+"targeted for VMware vCenter Clouds. Setting the TECHNOLOGY field on the "
+"Node Type to \"VMware\" reveals these fields."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:56
+msgid "**vApp Properties**"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:58
+msgid ""
+"Some VMware images may expect the user to provide values for vApp "
+"properties related to server configuration. |morpheus| allows the user to"
+" set values for vApp properties on the Node Type, which can be static "
+"values or even |morpheus| variables such as if we wanted to provide the "
+"next available IP address from a |morpheus| IP pool or source a password "
+"from |morpheus| Cypher. Consider the following example workflow for "
+"examining an OVA image, uploading it to |morpheus| as a Virtual Image, "
+"and setting vApp properties on the Node Type."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:60
+msgid ""
+"If you have an OVA that doesn't have the properties laid out in a visible"
+" format, you can unzip it and inspect the OVF file to help set the vApp "
+"properties in |morpheus|. For example, take a look at the screenshot "
+"below from an OVF file associated with an F5 image. There are four vApp "
+"properties I wish to set related to network and user configuration. The "
+"``userConfigurable`` property should be toggled to ``true`` for any that "
+"may be set to ``false``. The key is identified by the ``key`` property "
+"and, if desired, default values can be set via the ``value`` property. "
+"Save any changes to the OVF file."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:62
+msgid ".. image:: /images/provisioning/library/vappProps/vappOvf.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:64
+msgid ""
+"With changes saved, the image can be uploaded to |morpheus| as a Virtual "
+"Image from which we can create and configure a Node Type. Below you can "
+"see the Virtual Image uploaded and revealed on the Virtual Images list "
+"page."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:66
+msgid ".. image:: /images/provisioning/library/vappProps/vappVirtualImage.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:68
+msgid ""
+"Next, create a new Node Type. After setting the TECHNOLOGY value to "
+"\"VMware\" the fields related to vApp Property configuration will be "
+"revealed. Select the uploaded Virtual Image as the \"VM IMAGE\" and set "
+"the key/value pairs in VAPP PROPERTIES. In this case, I've dynamically "
+"loaded the values using |morpheus| variables."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:70
+msgid ".. image:: /images/provisioning/library/vappProps/vappNodeType.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:73
+msgid ""
+"The rest of the process is the same as building out any other |morpheus| "
+"library item. House the Node Type within a Layout and the Layout within "
+"an Instance Type. It should then be provisionable as any other Instance "
+"Type."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:75
+msgid "**Extra Options**"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:77
+msgid ""
+"When VMware Technology Type is selected, EXTRA OPTIONS will be available "
+"in the VMware VM Options section. These allow defining Advance vmx-file "
+"parameters during provisioning."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:79
+msgid "Some Example include:"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:81
+msgid ""
+"tools.setinfo.sizeLimit : 1048576\n"
+"vmci0.unrestricted : FALSE\n"
+"isolation.tools.diskWiper.disable : TRUE"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:87
+msgid ""
+"Not all parameters can be set using extra config parameters. A sample "
+"reference list can be found at http://www.sanbarrow.com/vmx/vmx-"
+"advanced.html#vmx"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:89
+msgid ""
+"Use caution when setting Extra Options. Malformed config files can break "
+"provisioning. Troubleshooting issues related to Extra Options defined are"
+" beyond the scope of |morpheus| product support."
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:2
+msgid "App Blueprints |enterprise-only|"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:7
+msgid "App Blueprints (including Terraform and ARM) are Enterprise-only features."
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:9
+msgid ""
+"App Blueprints support a vast array of providers and configurations with "
+"programmatic markup or Infrastructure as Code capabilities. Blueprints "
+"configs can be manually added or scoped to a git repo. |morpheus| "
+"blueprints allows for full automation configuration, locked fields, "
+"tiered boots, and linked tiers with exported evars. All blueprints have "
+"permission settings for controlling group and tenant access."
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:11
+msgid "App Blueprint Types"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:12
+msgid "|morpheus|"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:13
+msgid "Terraform"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:14
+msgid "ARM (Azure)"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:15
+msgid "CloudFormation (AWS)"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:16
+msgid "Kubernetes"
+msgstr ""
+
+#: ../../library/blueprints/appBlueprints.rst:17
+msgid "Helm"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:2
+msgid "Catalog Items |advanced-plus|"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:7
+msgid ""
+"The Service Catalog is an Advanced+ feature, available in HPE Morpheus "
+"Enterprise and Advanced tiers."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:9
+msgid ""
+"The Self Service catalog (|LibBluCat|) is where administrators can create"
+" easily-deployable items for consumption by users operating under the "
+"\"Service Catalog\" Persona in |morpheus|. Catalog items can be fully-"
+"configured |morpheus| Instances or Blueprints, complete with user input "
+"through |morpheus| Inputs, automation Workflows, and more. The catalog "
+"items are presented in a simplified interface for ease of deployment "
+"without sacrificing configurability for administrators. All available "
+"catalog items are built in the Self Service area and users will see "
+"relevant items in their catalogs based on Role permissions."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:11
+msgid ""
+"For more on Personas and using the Service Catalog persona, see the "
+"Personas sections of our documentation."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:13
+msgid ""
+"Access is granted to the Self Service section through the Library: "
+"Catalog Items Role permission. Users with Read rights can view the "
+"catalog while users with full rights can create and edit catalog items. "
+"Users without any rights to Self Service will not be able to access the "
+"page at all."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:15
+msgid ""
+"Additionally, a user's Role determines access to the standard and/or "
+"service catalog persona and which service catalog items are available for"
+" a user under the service catalog persona. See the Roles section of "
+"|morpheus| documentation for more information on administering Roles."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:18
+msgid "Viewing the Self Service Catalog"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:20
+msgid ""
+"The complete Self Service catalog can be viewed by clicking on Catalog "
+"from the Provisioning menu. The complete list of items available for the "
+"Self Service catalog are shown here but users working in the Service "
+"Catalog Persona will see only those allowed based on their user role. In "
+"addition to the name and type of each catalog item, we can also see a "
+"description and whether not the catalog item is featured or active. "
+"Featured items are given special visibility in the Service Catalog "
+"Persona and inactive items will not appear as provisioning options."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:22
+msgid ".. image:: /images/tools/self_service/catalogList.png"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:25
+msgid "Building Catalog Instances"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:27
+#: ../../library/blueprints/self-service.rst:60
+#: ../../library/blueprints/self-service.rst:251
+#: ../../library/blueprints/self-service.rst:311
+msgid ""
+"API usage for Catalog Items with Forms is not yet supported. If planning "
+"to use the API or CLI to order Catalog Items you should not use Forms on "
+"Catalog Items until it is supported."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:29
+msgid ""
+"An Instance in |morpheus| is a set of one or more containers or virtual "
+"machines that correlate to a single, horizontally-scalable entity or "
+"service suite. From the Self Service section, we can pre-configure "
+"|morpheus| Instances and present them to users viewing the Service "
+"Catalog Persona for one-click deployment."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:31
+msgid ""
+"From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. "
+"From the dropdown menu, select Instance. The modal window will appear to "
+"configure and add a new catalog Instance."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:33
+msgid ".. image:: /images/tools/self_service/createInstance.png"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:35
+#: ../../library/blueprints/self-service.rst:257
+#: ../../library/blueprints/self-service.rst:315
+msgid "Configure the following:"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:37
+#: ../../library/blueprints/self-service.rst:259
+#: ../../library/blueprints/self-service.rst:317
+msgid "**NAME:** A friendly name for the catalog item in |morpheus|"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:38
+#: ../../library/blueprints/self-service.rst:260
+#: ../../library/blueprints/self-service.rst:318
+msgid ""
+"**CODE:** An optional shortcode for coded naming schemes or programmatic "
+"reference"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:39
+#: ../../library/blueprints/self-service.rst:261
+#: ../../library/blueprints/self-service.rst:319
+msgid "**DESCRIPTION:** An optional description identifying the catalog item"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:40
+#: ../../library/blueprints/self-service.rst:262
+#: ../../library/blueprints/self-service.rst:320
+msgid ""
+"**CATEGORY:** Select an existing category or enter a new one. When "
+"provisioning from the catelog, items can be filtered by category"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:41
+#: ../../library/blueprints/self-service.rst:264
+msgid ""
+"**ENABLED:** When checked, this catalog item will be available for "
+"provisioning"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:42
+#: ../../library/blueprints/self-service.rst:263
+#: ../../library/blueprints/self-service.rst:321
+msgid ""
+"**LABELS:** A comma-separated list of descriptive strings which can be "
+"used to categorize the Catalog Item. The Catalog Items list view page can"
+" be filtered by labels to make them easier to find"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:43
+msgid ""
+"**ENABLED:** When marked, this Catalog Item will be available from the "
+"provisioning Catalog view"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:44
+#: ../../library/blueprints/self-service.rst:265
+#: ../../library/blueprints/self-service.rst:323
+msgid ""
+"**DISABLE AUTO PRICE:** When marked, price estimates are no longer "
+"refreshed with every field change at the time this Catalog Item is "
+"ordered. For some workloads with heavy Configuration-phase Tasks this may"
+" improve performance of the order page"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:45
+#: ../../library/blueprints/self-service.rst:266
+#: ../../library/blueprints/self-service.rst:324
+msgid ""
+"**FEATURED:** When checked, this catalog item will be given special "
+"visibility in the Service Catalog Persona view"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:46
+#: ../../library/blueprints/self-service.rst:267
+msgid ""
+"**ALLOW QUANTITY:** When checked, an additional field is added to the "
+"order page allowing users to order multiple copies. If this option is "
+"enabled, ensure your configuration supports that flexibility (such as "
+"when IP or load balancer details are specified)"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:47
+#: ../../library/blueprints/self-service.rst:268
+msgid ""
+"**MAX QUANTITY:** When the ALLOW QUANTITY configuration is used, an "
+"additional MAX QUANTITY configuration is available which sets an upper "
+"limit on the quantity that may be executed"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:48
+#: ../../library/blueprints/self-service.rst:269
+#: ../../library/blueprints/self-service.rst:325
+msgid ""
+"**VISIBILITY:** Set to private to keep the catalog item available only to"
+" users in the current Tenant. Master Tenant administrators may set "
+"catalog items to public to make them viewable and usable by Subtenant "
+"users"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:49
+#: ../../library/blueprints/self-service.rst:270
+#: ../../library/blueprints/self-service.rst:326
+msgid "**LOGO:** Select or upload a logo to be associated with this catalog item"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:50
+#: ../../library/blueprints/self-service.rst:271
+#: ../../library/blueprints/self-service.rst:327
+msgid ""
+"**DARK LOGO:** If desired, set an alternate logo for use when the dark "
+"theme is applied to the |morpheus| appliance"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:51
+msgid ""
+"**CONFIG:** Enter, view, or edit Instance config here. Click "
+":guilabel:`CONFIGURE` to build a base configuration through the "
+"|morpheus| Instance wizard. After configuration through the Instance "
+"wizard, you may need to overwrite some static values in the Instance JSON"
+" body with calls to custom Input values. This allows your users to easily"
+" set the Instance Plan, Group, name, tags, or anything else they may need"
+" to control. Dynamic inputs are passed with the following syntax: \"<%= "
+"customOptions.fieldName %>\" where fieldName is the Field Name value set "
+"on the Input"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:52
+msgid ""
+"**CONTENT:** Optionally include documentation content for this Catalog "
+"Item. Markdown-formatted text is accepted and displayed appropriately "
+"when the item is ordered from the Service Catalog. A new Catalog Item-"
+"type Wiki entry will also be added containing this information"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:53
+#: ../../library/blueprints/self-service.rst:299
+#: ../../library/blueprints/self-service.rst:332
+msgid ""
+"**FORM TYPE:** Choose whether a Form or individual Inputs should be used "
+"to set the user options at provisioning time. See `Forms documentation "
+"<https://docs.morpheusdata.com/en/latest/library/options/options.html#forms>`_"
+" for complete details on creating Forms."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:54
+#: ../../library/blueprints/self-service.rst:300
+#: ../../library/blueprints/self-service.rst:333
+msgid ""
+"**FORM:** If the Form Type of \"Form\" is selected, choose the pre-"
+"existing Form which should be associated with the Catalog Item"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:55
+#: ../../library/blueprints/self-service.rst:301
+#: ../../library/blueprints/self-service.rst:334
+msgid ""
+"**INPUTS:** If the Form Type of \"Inputs\" is selected, choose the pre-"
+"existing Inputs which should be associated with the Catalog Item"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:58
+msgid "Using Forms with Catalog Items"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:62
+msgid ""
+"Using Forms provides a number of advantages over using Inputs. Once the "
+"Form is selected, |morpheus| helpfully provides a sidebar which contains "
+"all variables that can be consumed in the Instance config from the Form:"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:64
+msgid ".. image:: /images/forms/catalogSidebar.png"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:66
+msgid ""
+"Many Form Inputs are designed to auto-inject themselves into the Instance"
+" config, you can see in the screenshot above that \"AUTO INJECT\" is "
+"checked. For variables that auto-inject, you do not need to override any "
+"static configuration with a variable call in order to consume that form "
+"value. In most cases, you should leave auto-inject turned on but the "
+"option is available to disable it for more advanced situations such as if"
+" you wanted to code custom logic into the variable call."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:68
+msgid ""
+"Other types of Form Inputs do not auto-inject and, for these, you must "
+"override any static configuration in the Instance config with a variable "
+"call. For these situations, |morpheus| helpfully provides the results of "
+"all variables so you can be sure you're injecting the proper call. Click "
+"on the question mark (?) button immediately to the right of the \"FORM "
+"VARIABLES\" header to see a list of available variables and an example "
+"resolved variable. Variable tiles may be dragged from the sidebar into "
+"the CONFIG text area and a properly-formatted variable call will be "
+"inserted."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:70
+msgid ".. image:: /images/forms/optionTypeHelp.png"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:72
+msgid ""
+"As an example, see the configuration for an Ubuntu server in the "
+"expandable section below. You'll notice in the configuration that a "
+"VMware Cloud, a specific Group, a specific Plan, and other static "
+"configurations are set. Since the Group, Cloud, Plan and other variables "
+"are able to be automatically injected, the user may select a different "
+"Group, Cloud, Plan, etc. from the form at provision time. The creator of "
+"the Catalog Item does not need to override those static configurations "
+"with variable calls."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:76
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"hostName\": \"${userInitials}-${cloudCode}-${type}-${sequence}\",\n"
+"  \"metadata\": \"<%=customOptions.targetTags%>\",\n"
+"  \"backup\": {\n"
+"    \"backupRepository\": 40,\n"
+"    \"veeamManagedServer\": \"\",\n"
+"    \"jobSchedule\": 2,\n"
+"    \"createBackup\": true,\n"
+"    \"jobAction\": \"new\",\n"
+"    \"jobRetentionCount\": \"3\",\n"
+"    \"providerBackupType\": 12,\n"
+"    \"target\": 37006\n"
+"  },\n"
+"  \"instance\": {\n"
+"    \"userGroup\": {\n"
+"      \"id\": \"\"\n"
+"    },\n"
+"    \"tags\": \"Forms,Test\"\n"
+"  },\n"
+"  \"defaultExpandAdvanced\": false,\n"
+"  \"volumes\": [\n"
+"    {\n"
+"      \"maxIOPS\": null,\n"
+"      \"displayOrder\": 0,\n"
+"      \"unitNumber\": \"0\",\n"
+"      \"minStorage\": 5368709120,\n"
+"      \"configurableIOPS\": false,\n"
+"      \"uuid\": \"a6781cc1-31ca-406b-aea0-e33ea1a18b7f\",\n"
+"      \"controllerMountPoint\": \"2200223:0:4:0\",\n"
+"      \"internalId\": \"[ESXi-DC2-QA-LUN01] Morpheus Ubuntu 22.04 "
+"20230307/Morpheus Ubuntu 22.04 20230307.vmdk\",\n"
+"      \"id\": 5255832,\n"
+"      \"datastoreId\": \"autoCluster\",\n"
+"      \"maxStorage\": 26843545600,\n"
+"      \"volumeCustomizable\": true,\n"
+"      \"readonlyName\": false,\n"
+"      \"controllerId\": 2200223,\n"
+"      \"externalId\": \"2000\",\n"
+"      \"virtualImageId\": 1418543,\n"
+"      \"vId\": 1418543,\n"
+"      \"size\": 25,\n"
+"      \"name\": \"root\",\n"
+"      \"planResizable\": true,\n"
+"      \"rootVolume\": true,\n"
+"      \"storageType\": 1,\n"
+"      \"typeId\": 1,\n"
+"      \"resizeable\": true,\n"
+"      \"uniqueId\": null\n"
+"    }\n"
+"  ],\n"
+"  \"type\": \"ubuntu\",\n"
+"  \"ports\": [\n"
+"    {\n"
+"      \"code\": \"ubuntu.22\",\n"
+"      \"visible\": true,\n"
+"      \"internalPort\": 22,\n"
+"      \"loadBalancePort\": null,\n"
+"      \"loadBalanceProtocol\": null,\n"
+"      \"sortOrder\": 1,\n"
+"      \"name\": \"SSH\",\n"
+"      \"id\": 7,\n"
+"      \"shortName\": \"ssh\",\n"
+"      \"externalPort\": 22,\n"
+"      \"loadBalance\": false\n"
+"    }\n"
+"  ],\n"
+"  \"version\": \"22.04\",\n"
+"  \"hideLock\": true,\n"
+"  \"cloud\": {\n"
+"    \"name\": \"QA VMware\",\n"
+"    \"id\": 26324\n"
+"  },\n"
+"  \"layout\": {\n"
+"    \"code\": \"vmware-ubuntu-22.04-single\",\n"
+"    \"id\": 2608414\n"
+"  },\n"
+"  \"showScale\": false,\n"
+"  \"environment\": \"2\",\n"
+"  \"networkInterfaces\": [\n"
+"    {\n"
+"      \"ipMode\": \"\",\n"
+"      \"primaryInterface\": true,\n"
+"      \"showNetworkPoolLabel\": true,\n"
+"      \"showNetworkDhcpLabel\": false,\n"
+"      \"network\": {\n"
+"        \"idName\": \"VLAN0002 - Internal Server\",\n"
+"        \"pool\": {\n"
+"          \"name\": \"10.32.20.0 /22\",\n"
+"          \"id\": 18823\n"
+"        },\n"
+"        \"id\": \"network-173431\",\n"
+"        \"hasPool\": false\n"
+"      },\n"
+"      \"networkInterfaceTypeId\": 4,\n"
+"      \"networkInterfaceTypeIdName\": \"VMXNET 3\"\n"
+"    }\n"
+"  ],\n"
+"  \"copies\": 1,\n"
+"  \"loadBalancer\": [],\n"
+"  \"name\": \"${userInitials}-${cloudCode}-${type}-${sequence}\",\n"
+"  \"storageControllers\": [\n"
+"    {\n"
+"      \"editable\": false,\n"
+"      \"typeName\": \"IDE\",\n"
+"      \"maxDevices\": 2,\n"
+"      \"displayOrder\": 0,\n"
+"      \"active\": true,\n"
+"      \"unitNumber\": null,\n"
+"      \"reservedUnitNumber\": -1,\n"
+"      \"busNumber\": \"0\",\n"
+"      \"removable\": false,\n"
+"      \"name\": \"IDE 0\",\n"
+"      \"typeId\": 2,\n"
+"      \"id\": 1729031,\n"
+"      \"category\": \"ide\"\n"
+"    },\n"
+"    {\n"
+"      \"editable\": false,\n"
+"      \"typeName\": \"IDE\",\n"
+"      \"maxDevices\": 2,\n"
+"      \"displayOrder\": 1,\n"
+"      \"active\": true,\n"
+"      \"unitNumber\": null,\n"
+"      \"reservedUnitNumber\": -1,\n"
+"      \"busNumber\": \"1\",\n"
+"      \"removable\": false,\n"
+"      \"name\": \"IDE 1\",\n"
+"      \"typeId\": 2,\n"
+"      \"id\": 1729032,\n"
+"      \"category\": \"ide\"\n"
+"    },\n"
+"    {\n"
+"      \"editable\": false,\n"
+"      \"typeName\": \"SCSI LSI Logic Parallel\",\n"
+"      \"maxDevices\": 15,\n"
+"      \"displayOrder\": 2,\n"
+"      \"active\": true,\n"
+"      \"unitNumber\": null,\n"
+"      \"reservedUnitNumber\": 7,\n"
+"      \"busNumber\": \"0\",\n"
+"      \"removable\": false,\n"
+"      \"name\": \"SCSI 0\",\n"
+"      \"typeId\": 4,\n"
+"      \"id\": 1729030,\n"
+"      \"category\": \"scsi\"\n"
+"    }\n"
+"  ],\n"
+"  \"config\": {\n"
+"    \"poolProviderType\": null,\n"
+"    \"isVpcSelectable\": true,\n"
+"    \"smbiosAssetTag\": null,\n"
+"    \"isEC2\": false,\n"
+"    \"resourcePoolId\": \"pool-139625\",\n"
+"    \"hostId\": null,\n"
+"    \"createUser\": true,\n"
+"    \"nestedVirtualization\": null,\n"
+"    \"vmwareFolderId\": \"group-v80\",\n"
+"    \"noAgent\": false\n"
+"  },\n"
+"  \"plan\": {\n"
+"    \"code\": \"vm-8192\",\n"
+"    \"id\": 149\n"
+"  },\n"
+"  \"group\": {\n"
+"    \"name\": \"All Clouds\",\n"
+"    \"id\": \"2\"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:246
+#: ../../library/blueprints/self-service.rst:305
+#: ../../library/blueprints/self-service.rst:338
+msgid "Once done, click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:249
+msgid "Building Catalog Blueprints"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:253
+msgid ""
+"|morpheus| Blueprints allow for full multi-tier application deployment. "
+"In the Self Service catalog, user can create catalog items based on pre-"
+"existing App Blueprints. If new Blueprints need to be created for the "
+"Service Catalog, see other sections of |morpheus| docs on building App "
+"Blueprints of various supported types. Just like with catalog Instances, "
+"we can pre-configure Blueprints and present them to users viewing the "
+"Service Catalog Persona view for easy, one-click deployment."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:255
+msgid ""
+"From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. "
+"From the dropdown menu, select Blueprint. The modal window will appear to"
+" configure and add a new catalog Blueprint."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:272
+msgid ""
+"**CONFIGURE:** Click :guilabel:`CONFIGURE` to use the familiar App "
+"provisioning wizard to tie Blueprint and App deployment configuration to "
+"the Catalog Item"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:273
+msgid ""
+"**APP SPEC:** Inject App spec here for any fields required to provision "
+"an App from your Blueprint. You may also inject any overrides to the "
+"existing Blueprint spec that are desired. App Spec configuration must be "
+"YAML, a simple example that names the App and sets the Group and Cloud is"
+" included below:"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:275
+msgid ""
+"#Example App Spec\n"
+"\n"
+"name: '<%= customOption.appName %>'\n"
+"group:\n"
+"  name: Dev Group\n"
+"environment: Dev\n"
+"tiers:\n"
+"  Web:\n"
+"    instances:\n"
+"      - instance:\n"
+"          type: nginx\n"
+"          cloud: Dev AWS\n"
+"  App:\n"
+"    instances:\n"
+"      - instance:\n"
+"          type: apache\n"
+"          cloud: Dev AWS"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:295
+#: ../../library/blueprints/self-service.rst:331
+msgid ""
+"**CONTENT:** Optionally include documentation content for this Catalog "
+"Item. Markdown-formatted text is accepted and displayed appropriately "
+"when the item is ordered from the Service Catalog. A new Catalog Item-"
+"type Wiki entry will also be added containing this information."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:297
+msgid ""
+"App spec custom option variables should be single quoted in YAML: "
+"``cloud: '<%= customOption.cloud %>'``. Additionally, not all variables "
+"are available here as many are unknown until provisioning. Users may use "
+"any custom Input values (customOption) as well as name or hostname values"
+" which are resolved as part of naming policy evaluation."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:303
+#: ../../library/blueprints/self-service.rst:336
+msgid "Tip"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:303
+#: ../../library/blueprints/self-service.rst:336
+msgid ""
+"There are a number of advantages to using Forms over Inputs. See the "
+"section above on using Forms with Catalog Items for a complete "
+"description on how they are used and the advantages to using them."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:309
+msgid "Building Catalog Workflows"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:313
+msgid ""
+"From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. "
+"From the dropdown menu, select Workflow. The modal window will appear to "
+"configure and add a new catalog Workflow."
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:322
+msgid ""
+"**ENABLED:** When checked, this Workflow item will be available for "
+"selection in the Service Catalog"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:328
+msgid ""
+"**WORKFLOW:** Select an existing Workflow to be associated with this "
+"Catalog Item, new Workflows are created in :menuselection:`Library --> "
+"Automation`"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:329
+msgid ""
+"**CONTEXT:** Optionally restrict users to a specific target context, "
+"Instance, Server, or None"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:330
+msgid ""
+"**CONFIG:** Enter an optional custom config JSON body. See `Workflows "
+"documentation "
+"<https://docs.morpheusdata.com/en/latest/library/automation/workflows.html"
+"#allow-custom-config>`_ for a formatting example"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:341
+msgid "Editing and Deleting from the Self Service Catalog"
+msgstr ""
+
+#: ../../library/blueprints/self-service.rst:343
+msgid ""
+"Once created, Service Catalog items can be edited or deleted from the "
+"Catalog Items list view (|LibBluCat|). Click the pencil icon in the "
+"relevant row to edit the Service Catalog item or the trash can icon to "
+"delete it. Alternatively, Service Catalog items can be made inactive to "
+"remove them as provisioning options rather than deleting them."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:4
+msgid ""
+"|morpheus| includes many different types of Cluster Layouts out-of-the-"
+"box which support a number of provisioning technologies. Many of these "
+"|morpheus|-provided Cluster Layouts may also be cloned for use in "
+"creating custom layouts. Edit or delete user-created Cluster Layouts "
+"using the pencil (|pencil|) or trash can (|trash|) icons next to the "
+"desired layout on the Cluster Layouts list page. See the next section for"
+" an"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:6
+msgid ".. image:: /images/provisioning/library/clusterLayouts.png"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:8
+msgid ""
+"|morpheus| now syncs available (non-preview) AKS k8s versions daily. "
+"Existing synced versions that are no longer supported by Azure are "
+"automatically disabled. The table below includes available AKS versions "
+"at time of |morphver| release."
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:2
+msgid "NAME"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:2
+msgid "CODE"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:2
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:4
+msgid "Kubernetes 1.20.7 Cluster AKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:4
+msgid "kubernetes-azure-aks-1.20.7"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:4
+#: ../../library/blueprints/system_cluster_layouts.rst:6
+#: ../../library/blueprints/system_cluster_layouts.rst:8
+#: ../../library/blueprints/system_cluster_layouts.rst:10
+#: ../../library/blueprints/system_cluster_layouts.rst:12
+#: ../../library/blueprints/system_cluster_layouts.rst:14
+msgid "This provisions a single kubernetes master in Azure"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:6
+msgid "Kubernetes 1.20.5 Cluster AKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:6
+msgid "kubernetes-azure-aks-1.20.5"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:8
+msgid "Kubernetes 1.19.11 Cluster AKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:8
+msgid "kubernetes-azure-aks-1.19.11"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:10
+msgid "Kubernetes 1.19.9 Cluster AKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:10
+msgid "kubernetes-azure-aks-1.19.9"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:12
+msgid "Kubernetes 1.18.19 Cluster AKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:12
+msgid "kubernetes-azure-aks-1.18.19"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:14
+msgid "Kubernetes 1.18.17 Cluster AKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:14
+msgid "kubernetes-azure-aks-1.18.17"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:16
+#: ../../library/blueprints/system_cluster_layouts.rst:18
+#: ../../library/blueprints/system_cluster_layouts.rst:20
+#: ../../library/blueprints/system_cluster_layouts.rst:22
+#: ../../library/blueprints/system_cluster_layouts.rst:24
+#: ../../library/blueprints/system_cluster_layouts.rst:28
+#: ../../library/blueprints/system_cluster_layouts.rst:30
+#: ../../library/blueprints/system_cluster_layouts.rst:32
+#: ../../library/blueprints/system_cluster_layouts.rst:34
+#: ../../library/blueprints/system_cluster_layouts.rst:36
+#: ../../library/blueprints/system_cluster_layouts.rst:42
+#: ../../library/blueprints/system_cluster_layouts.rst:44
+msgid "MKS Kubernetes 1.20 Cluster on Ubuntu 18.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:16
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-xen-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:16
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in xen"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:18
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-scvmm-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:18
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in scvmm"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:20
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-opentelekom-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:20
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in opentelekom"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:22
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-nutanix-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:22
+#: ../../library/blueprints/system_cluster_layouts.rst:34
+#: ../../library/blueprints/system_cluster_layouts.rst:36
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:24
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-morpheus-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:24
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in manual"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:26
+msgid "External Kubernetes 1.20"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:26
+msgid "kubernetes-external-1.20"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:26
+msgid "Connect to an external kubernetes cluster."
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:28
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-hyperv-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:28
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in hyperv"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:30
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-huawei-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:30
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in Huawei"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:32
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-openstack-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:32
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in Openstack"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:34
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-google-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:36
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-amazon-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:38
+msgid "Copy of MKS Kubernetes 1.20 Cluster on Ubuntu 18.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:38
+msgid "ffc21dc1-feb7-4c02-ae90-204fd080c23d"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:38
+#: ../../library/blueprints/system_cluster_layouts.rst:42
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in vmware"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:40
+msgid "Docker Cluster on Ubuntu 18.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:40
+msgid "docker-ubuntu-18.04.2-fusion-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:40
+msgid "provision a docker cluster on ubuntu 18.04 in fusion"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:42
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-vmware-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:44
+msgid "kubernetes-1.20.2-ubuntu-18.04.5-fusion-amd64-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:44
+msgid "provision a kubernetes 1.20 cluster on ubuntu 18.04 in fusion"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:46
+msgid "Kubernetes 1.17 Cluster EKS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:46
+msgid "kubernetes-amazon-eks-1.17"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:46
+#: ../../library/blueprints/system_cluster_layouts.rst:92
+#: ../../library/blueprints/system_cluster_layouts.rst:94
+msgid ""
+"This will provision a single kubernetes master in amazon with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:48
+#: ../../library/blueprints/system_cluster_layouts.rst:56
+#: ../../library/blueprints/system_cluster_layouts.rst:76
+#: ../../library/blueprints/system_cluster_layouts.rst:150
+msgid "Kubernetes 1.17 HA Cluster on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:48
+msgid "kubernetes-1.17-xen-ubuntu-16.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:48
+#: ../../library/blueprints/system_cluster_layouts.rst:50
+msgid ""
+"This will provision a single kubernetes master in xen with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:50
+#: ../../library/blueprints/system_cluster_layouts.rst:58
+#: ../../library/blueprints/system_cluster_layouts.rst:78
+#: ../../library/blueprints/system_cluster_layouts.rst:152
+msgid "Kubernetes 1.17 Cluster on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:50
+msgid "kubernetes-xen-1.17-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:52
+#: ../../library/blueprints/system_cluster_layouts.rst:62
+#: ../../library/blueprints/system_cluster_layouts.rst:68
+#: ../../library/blueprints/system_cluster_layouts.rst:72
+#: ../../library/blueprints/system_cluster_layouts.rst:80
+#: ../../library/blueprints/system_cluster_layouts.rst:84
+#: ../../library/blueprints/system_cluster_layouts.rst:88
+#: ../../library/blueprints/system_cluster_layouts.rst:92
+#: ../../library/blueprints/system_cluster_layouts.rst:98
+msgid "Kubernetes 1.17 HA Cluster on Ubuntu 18.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:52
+msgid "kubernetes-scvmm-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:52
+#: ../../library/blueprints/system_cluster_layouts.rst:54
+msgid ""
+"This will provision a single kubernetes master in scvmm with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:54
+#: ../../library/blueprints/system_cluster_layouts.rst:60
+#: ../../library/blueprints/system_cluster_layouts.rst:70
+#: ../../library/blueprints/system_cluster_layouts.rst:74
+#: ../../library/blueprints/system_cluster_layouts.rst:82
+#: ../../library/blueprints/system_cluster_layouts.rst:86
+#: ../../library/blueprints/system_cluster_layouts.rst:90
+#: ../../library/blueprints/system_cluster_layouts.rst:94
+#: ../../library/blueprints/system_cluster_layouts.rst:96
+#: ../../library/blueprints/system_cluster_layouts.rst:100
+#: ../../library/blueprints/system_cluster_layouts.rst:104
+msgid "Kubernetes 1.17 Cluster on Ubuntu 18.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:54
+msgid "kubernetes-scvmm-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:56
+msgid "kubernetes-openstack-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:56
+#: ../../library/blueprints/system_cluster_layouts.rst:58
+msgid ""
+"This will provision a single kubernetes master in openstack with weave "
+"and openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:58
+msgid "kubernetes-openstack-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:60
+msgid "kubernetes-opentelekom-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:60
+msgid ""
+"This will provision a single kubernetes master in opentelekom with weave "
+"and openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:62
+msgid "kubernetes-nutanix-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:62
+msgid ""
+"This will provision a single kubernetes master in nutanix with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:64
+msgid "Kubernetes 1.17 HA Cluster on Linux, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:64
+msgid "kubernetes-1.17-morpheus-linux-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:64
+#: ../../library/blueprints/system_cluster_layouts.rst:180
+msgid "This will provision a kubernetes cluster with weave and openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:66
+msgid "Kubernetes 1.17 Cluster on Linux, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:66
+msgid "kubernetes-1.17-morpheus-linux-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:66
+#: ../../library/blueprints/system_cluster_layouts.rst:182
+msgid "This will provision a single kubernetes master with weave and openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:68
+msgid "kubernetes-hyperv-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:68
+#: ../../library/blueprints/system_cluster_layouts.rst:70
+msgid ""
+"This will provision a single kubernetes master in hyperv with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:70
+msgid "kubernetes-hyperv-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:72
+msgid "kubernetes-huawei-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:72
+#: ../../library/blueprints/system_cluster_layouts.rst:74
+msgid ""
+"This will provision a single kubernetes master in huawei with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:74
+msgid "kubernetes-huawei-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:76
+msgid "kubernetes-google-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:76
+#: ../../library/blueprints/system_cluster_layouts.rst:78
+msgid ""
+"This will provision a single kubernetes master in google with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:78
+msgid "kubernetes-google-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:80
+msgid "kubernetes-esxi-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:80
+#: ../../library/blueprints/system_cluster_layouts.rst:82
+msgid ""
+"This will provision a single kubernetes master in esxi with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:82
+msgid "kubernetes-esxi-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:84
+msgid "kubernetes-digitalOcean-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:84
+#: ../../library/blueprints/system_cluster_layouts.rst:86
+msgid ""
+"This will provision a single kubernetes master in digitalOcean with weave"
+" and openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:86
+msgid "kubernetes-digitalOcean-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:88
+msgid "kubernetes-azure-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:88
+#: ../../library/blueprints/system_cluster_layouts.rst:90
+msgid ""
+"This will provision a single kubernetes master in azure with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:90
+msgid "kubernetes-azure-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:92
+msgid "kubernetes-amazon-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:94
+msgid "kubernetes-amazon-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:96
+msgid "kubernetes-alibaba-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:96
+msgid ""
+"This will provision a single kubernetes master in alibaba with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:98
+msgid "kubernetes-vmware-ubuntu-18.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:98
+#: ../../library/blueprints/system_cluster_layouts.rst:100
+#: ../../library/blueprints/system_cluster_layouts.rst:102
+msgid ""
+"This will provision a single kubernetes master in vmware with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:100
+msgid "kubernetes-vmware-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:102
+msgid "Copy of Kubernetes 1.14 Cluster on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:102
+msgid "6441b891-a61d-4f0b-a7ff-19c81d2ffd51"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:104
+msgid "kubernetes-1.17-fusion-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:104
+#: ../../library/blueprints/system_cluster_layouts.rst:106
+#: ../../library/blueprints/system_cluster_layouts.rst:108
+#: ../../library/blueprints/system_cluster_layouts.rst:196
+#: ../../library/blueprints/system_cluster_layouts.rst:198
+msgid ""
+"This will provision a single kubernetes master in fusion with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:106
+msgid "Kubernetes 1.16 Cluster on Ubuntu 18.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:106
+msgid "kubernetes-1.16-fusion-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:108
+msgid "Kubernetes 1.15 Cluster on Ubuntu 18.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:108
+msgid "kubernetes-1.15-fusion-ubuntu-18.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:110
+msgid "External Kubernetes 1.17 Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:110
+msgid "kubernetes-external-1.17"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:110
+#: ../../library/blueprints/system_cluster_layouts.rst:112
+#: ../../library/blueprints/system_cluster_layouts.rst:114
+#: ../../library/blueprints/system_cluster_layouts.rst:116
+msgid "This will allow access to an external kubernetes cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:112
+msgid "External Kubernetes 1.16 Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:112
+msgid "kubernetes-external-1.16"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:114
+msgid "External Kubernetes 1.15 Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:114
+msgid "kubernetes-external-1.15"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:116
+msgid "External Kubernetes 1.14 Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:116
+msgid "kubernetes-external-1.14"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:118
+#: ../../library/blueprints/system_cluster_layouts.rst:132
+msgid "KVM on Ubuntu 16.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:118
+msgid "kvm-vmware-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:118
+#: ../../library/blueprints/system_cluster_layouts.rst:142
+msgid "This will provision a single kvm host vm in vmware"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:120
+msgid "Morpheus KVM and Container Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:120
+msgid "morpheus-kvm-combo-cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:120
+msgid "This will add a KVM and container host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:122
+msgid "VMware Docker CentOS 7.5"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:122
+msgid "docker-vmware-centos-7.5-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:122
+#: ../../library/blueprints/system_cluster_layouts.rst:194
+msgid "This will provision a single docker host vm in vmware"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:124
+msgid "Oracle Cloud Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:124
+msgid "docker-oraclecloud-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:124
+msgid "This will provision a single docker host vm in oraclecloud"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:126
+msgid "Morpheus Kubernetes Manual Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:126
+msgid "morpheus-kubernetes-manual-cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:126
+msgid "This will create a kubernetes manual (self-managed) cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:128
+msgid "Alibaba Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:128
+msgid "docker-alibaba-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:128
+msgid "This will provision a single docker host vm in alibaba"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:130
+msgid "SCVMM Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:130
+msgid "docker-scvmm-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:130
+msgid "This will provision a single docker host vm in scvmm"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:132
+msgid "kvm-fusion-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:132
+#: ../../library/blueprints/system_cluster_layouts.rst:144
+msgid "This will provision a single kvm host vm in fusion"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:134
+msgid "UpCloud Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:134
+msgid "docker-upcloud-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:134
+msgid "This will provision a single docker host vm in upcloud"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:136
+msgid "Morpheus KVM Ubuntu Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:136
+msgid "morpheus-kvm-ubuntu-cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:136
+msgid "This will add a KVM Ubuntu host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:138
+msgid "Morpheus KVM CentOS Cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:138
+msgid "morpheus-kvm-centos-cluster"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:138
+msgid "This will add a KVM CentOS host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:140
+msgid "Azure Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:140
+msgid "docker-azure-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:140
+msgid "This will provision a single docker host vm in azure"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:142
+#: ../../library/blueprints/system_cluster_layouts.rst:144
+msgid "KVM on CentOS 7.5"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:142
+msgid "kvm-vmware-centos-7.5-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:144
+msgid "kvm-fusion-centos-7.5-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:146
+#: ../../library/blueprints/system_cluster_layouts.rst:156
+#: ../../library/blueprints/system_cluster_layouts.rst:196
+msgid "Kubernetes 1.14 HA Cluster on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:146
+msgid "kubernetes-bluemix-ubuntu-16.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:146
+#: ../../library/blueprints/system_cluster_layouts.rst:148
+msgid ""
+"This will provision a single kubernetes master in bluemix with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:148
+#: ../../library/blueprints/system_cluster_layouts.rst:158
+#: ../../library/blueprints/system_cluster_layouts.rst:198
+msgid "Kubernetes 1.14 Cluster on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:148
+msgid "kubernetes-bluemix-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:150
+msgid "kubernetes-vcd-ubuntu-16.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:150
+#: ../../library/blueprints/system_cluster_layouts.rst:152
+msgid ""
+"This will provision a single kubernetes master in vcd with weave and "
+"openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:152
+msgid "kubernetes-vcd-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:154
+msgid "VCD Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:154
+msgid "docker-vcd-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:154
+msgid "This will provision a single docker host vm in vcd"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:156
+msgid "kubernetes-softlayer-ubuntu-16.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:156
+#: ../../library/blueprints/system_cluster_layouts.rst:158
+msgid ""
+"This will provision a single kubernetes master in softlayer with weave "
+"and openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:158
+msgid "kubernetes-softlayer-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:160
+msgid "SoftLayer Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:160
+msgid "docker-softlayer-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:160
+msgid "This will provision a single docker host vm in softlayer"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:162
+msgid "Open Telekom Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:162
+msgid "docker-opentelekom-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:162
+msgid "This will provision a single docker host vm in opentelekom"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:164
+msgid "Huawei Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:164
+msgid "docker-huawei-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:164
+msgid "This will provision a single docker host vm in huawei"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:166
+msgid "Google Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:166
+msgid "docker-google-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:166
+msgid "This will provision a single docker host vm in google"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:168
+msgid "ESXi Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:168
+msgid "docker-esxi-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:168
+msgid "This will provision a single docker host vm in esxi"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:170
+msgid "IBM Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:170
+msgid "docker-bluemix-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:170
+msgid "This will provision a single docker host vm in bluemix"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:172
+msgid "Xen Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:172
+msgid "docker-xen-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:172
+msgid "This will provision a single docker host vm in xen"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:174
+msgid "Digital Ocean Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:174
+msgid "docker-digitalOcean-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:174
+msgid "This will provision a single docker host vm in digitalOcean"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:176
+msgid "Hyper-V Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:176
+msgid "docker-hyperv-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:176
+msgid "This will provision a single docker host vm in hyperv"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:178
+msgid "Docker on Linux"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:178
+msgid "manual-linux-docker-morpheus-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:178
+msgid "This will add a single docker host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:180
+msgid "Kubernetes Cluster 1.14 on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:180
+msgid "kubernetes-morpheus-ubuntu-16.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:182
+msgid "Kubernetes 1.14 on Ubuntu 16.04, Weave, OpenEBS"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:182
+msgid "kubernetes-morpheus-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:184
+msgid "Docker on Bare Metal"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:184
+msgid "docker-morpheus-metal-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:184
+#: ../../library/blueprints/system_cluster_layouts.rst:186
+msgid "This will provision a single docker host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:186
+#: ../../library/blueprints/system_cluster_layouts.rst:200
+msgid "Docker on Ubuntu 16.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:186
+msgid "docker-morpheus-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:188
+msgid "Amazon Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:188
+msgid "docker-amazon-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:188
+msgid "This will provision a single docker host vm in amazon"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:190
+msgid "OpenStack Docker Host"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:190
+msgid "docker-openstack-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:190
+msgid "This will provision a single docker host vm in openstack"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:192
+msgid "Nutanix Docker Ubuntu 16.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:192
+msgid "docker-nutanix-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:192
+msgid "This will provision a single docker host vm in nutanix"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:194
+msgid "VMware Docker Ubuntu 16.04"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:194
+msgid "docker-vmware-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:196
+msgid "kubernetes-fusion-ubuntu-16.04-cluster-weave-openebs"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:198
+msgid "kubernetes-fusion-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:200
+msgid "docker-fusion-ubuntu-16.04-single"
+msgstr ""
+
+#: ../../library/blueprints/system_cluster_layouts.rst:200
+msgid "This will provision a single docker host vm in fusion"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:15
+msgid "Creating Custom Cluster Layouts"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:17
+msgid ""
+"Custer Layouts can be built for an infinite number of use cases and "
+"targeting a wide range of configurations or provisioning technologies. "
+"However, it still may help to see an example Cluster Layout created. In "
+"this section, we'll create an example Cluster Layout which provisions a "
+"Kubernetes Cluster to a VMware vCenter Cloud containing a master node and"
+" three worker nodes. We'll build out two Node Types to embed in the "
+"Cluster, one master and one worker. Within the Node Types, we will embed "
+"Script Templates needed to configure the nodes as they are provisioned "
+"and allow the workers to join the cluster. Script Templates can be "
+"configured to execute at various phases of the lifecycle of the node, "
+"similar to a Provisioning Workflow, so |morpheus| can orchestrate the "
+"whole process."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:20
+msgid "Creating Script Templates"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:22
+msgid ""
+"We'll first start by creating the necessary Script Templates. In this "
+"example, I'll use a generic prep script that both the master and worker "
+"nodes will utilize and then I'll create three additional scripts (two for"
+" the master node and one for the worker nodes) to accomplish various "
+"Kubernetes cluster setup tasks (``kubeadm init``, creating Role Bindings,"
+" joining workers to the cluster, etc.). I'll briefly describe each here "
+"and step through the process of creating the Script Template objects in "
+"|morpheus|."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:24
+msgid ""
+"To begin a new Script Template, navigate to |LibTemScr| and click "
+":guilabel:`+ ADD`. All of the scripts used in this example will be "
+"\"Bash\" type, run as user \"root\" and with SUDO marked."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:26
+msgid ""
+"The first script to add will be a prep script that both the master and "
+"worker nodes will use. This script turns swap off, installs "
+"``containerd``, runs updates, sets network config, and installs "
+"``kubelet``, ``kubeadm``, and ``kubectl``. Set this script to run in the "
+"PreProvision phase. The complete script, named \"k8sprep\" in my example "
+"can be viewed below:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:30
+#, python-brace-format
+msgid ""
+"function wait_for_dpkg() {\n"
+"  FRONT_END_LOCK_FILE=/var/lib/dpkg/lock-frontend\n"
+"  DPKG_LOCK_FILE=/var/lib/apt/lists/lock\n"
+"\n"
+"  echo \"checking for dpkq lock existence...\"\n"
+"  if [ -e \"$DPKG_LOCK_FILE\" ]; then\n"
+"    while fuser $DPKG_LOCK_FILE >/dev/null 2>&1 ; do\n"
+"      echo \"Waiting for lock $DPKG_LOCK_FILE...\"\n"
+"      sleep 1\n"
+"    done\n"
+"  fi\n"
+"  echo \"checking for dpkq lock-frontend existence...\"\n"
+"  if [ -e \"$FRONT_END_LOCK_FILE\" ]; then\n"
+"    while fuser $FRONT_END_LOCK_FILE >/dev/null 2>&1 ; do\n"
+"      echo \"Waiting for lock $FRONT_END_LOCK_FILE...\"\n"
+"      sleep 1\n"
+"    done\n"
+"    echo \"force removing lock $FRONT_END_LOCK_FILE\"\n"
+"    sudo rm $FRONT_END_LOCK_FILE\n"
+"    sleep 5\n"
+"  fi\n"
+"}\n"
+"  # Swap must be turned off see https://kubernetes.io/docs/setup"
+"/production-environment/tools/kubeadm/install-kubeadm/\n"
+"sudo swapoff -a ; sudo sed -i '/ swap / s/^/#/' /etc/fstab\n"
+"  # Install containerd packages from Debian sse: "
+"https://docs.docker.com/engine/install/ubuntu/\n"
+"wait_for_dpkg\n"
+"sudo apt-get update\n"
+"sudo apt-get install ca-certificates curl gnupg lsb-release -y\n"
+"sudo mkdir -m 0755 -p /etc/apt/keyrings\n"
+"sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg "
+"--dearmor -o /etc/apt/keyrings/docker.gpg\n"
+"sudo mkdir -m 0755 -p /etc/apt/keyrings\n"
+"sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg "
+"--dearmor -o /etc/apt/keyrings/docker.gpgsudo\n"
+"echo   \"deb [arch=$(dpkg --print-architecture) signed-"
+"by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu"
+" \\\n"
+"$(lsb_release -cs) stable\" | sudo tee "
+"/etc/apt/sources.list.d/docker.list > /dev/null\n"
+"sudo apt-get update\n"
+"  # the Docker documentation advises to install the whole Docker runtime "
+"environment but containerd.io is sufficient\n"
+"sudo apt-get install containerd.io -y\n"
+"  # Prepare the necessary network config see: "
+"https://kubernetes.io/docs/setup/production-environment/container-"
+"runtimes/\n"
+"sudo cat <<EOF | sudo tee /etc/modules-load.d/k8s.conf\n"
+"overlay\n"
+"br_netfilter\n"
+"EOF\n"
+"sudo modprobe overlay\n"
+"sudo modprobe br_netfilter\n"
+"sudo cat <<EOF | sudo tee /etc/sysctl.d/k8s.conf\n"
+"net.bridge.bridge-nf-call-iptables  = 1\n"
+"net.bridge.bridge-nf-call-ip6tables = 1\n"
+"net.ipv4.ip_forward                 = 1\n"
+"EOF\n"
+"  # Apply sysctl params without reboot\n"
+"sudo sysctl --system\n"
+"  # Install kubeadm follwing the K8s documentation: "
+"https://kubernetes.io/docs/setup/production-environment/tools/kubeadm"
+"/install-kubeadm/\n"
+"sudo apt-get install -y apt-transport-https ca-certificates curl\n"
+"sudo curl -fsSL  https://packages.cloud.google.com/apt/doc/apt-"
+"key.gpg|sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/k8s.gpg\n"
+"sudo echo \"deb https://apt.kubernetes.io/ kubernetes-xenial main\" | "
+"sudo tee /etc/apt/sources.list.d/kubernetes.list\n"
+"sudo apt-get update\n"
+"sudo apt-get -y install -y kubelet=1.26.1-00 kubeadm=1.26.1-00 "
+"kubectl=1.26.1-00\n"
+"\n"
+"sudo apt-mark hold kubelet kubeadm kubectl\n"
+"  # see https://github.com/etcd-io/etcd/issues/13670\n"
+"cat << EOF | sudo tee /etc/containerd/config.toml\n"
+"version = 2\n"
+"  [plugins]\n"
+"  [plugins.\"io.containerd.grpc.v1.cri\"]\n"
+"   [plugins.\"io.containerd.grpc.v1.cri\".containerd]\n"
+"      [plugins.\"io.containerd.grpc.v1.cri\".containerd.runtimes]\n"
+"        [plugins.\"io.containerd.grpc.v1.cri\".containerd.runtimes.runc]\n"
+"          runtime_type = \"io.containerd.runc.v2\"\n"
+"          "
+"[plugins.\"io.containerd.grpc.v1.cri\".containerd.runtimes.runc.options]"
+"\n"
+"            SystemdCgroup = true\n"
+"EOF\n"
+"sudo systemctl restart containerd"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:105
+msgid ""
+"Next we'll add a script called \"kubeadm-init\" in this example which "
+"will create and configure some working directories, set the ``kubeadm`` "
+"config yaml, and run ``kubeadm init``. Set this script to run in the "
+"PreProvision phase as well. The complete script can be viewed below:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:109
+msgid ""
+"mkdir -p <%=morpheus.morpheusHome%>/kube\n"
+"mkdir -p <%=morpheus.morpheusHome%>/kube/working\n"
+"mkdir -p <%=morpheus.morpheusHome%>/.kube\n"
+"sudo chown <%=morpheus.morpheusUser%>:<%=morpheus.morpheusUser%> "
+"<%=morpheus.morpheusHome%>/kube\n"
+"sudo chown <%=morpheus.morpheusUser%>:<%=morpheus.morpheusUser%> "
+"<%=morpheus.morpheusHome%>/kube/working\n"
+"cat <<EOF | sudo tee <%=morpheus.morpheusHome%>/kube/working/kubeadm-"
+"config.yaml\n"
+"# kubeadm-config.yaml\n"
+"kind: ClusterConfiguration\n"
+"apiVersion: kubeadm.k8s.io/v1beta3\n"
+"kubernetesVersion: v1.26.1\n"
+"networking:\n"
+"  serviceSubnet: \"10.96.0.0/16\"\n"
+"  podSubnet: \"10.244.0.0/24\"\n"
+"  dnsDomain: \"cluster.local\"\n"
+"apiServer:\n"
+"  extraArgs:\n"
+"    authorization-mode: \"Node,RBAC\"\n"
+"clusterName: \"example-cluster\"\n"
+"---\n"
+"kind: KubeletConfiguration\n"
+"apiVersion: kubelet.config.k8s.io/v1beta1\n"
+"cgroupDriver: systemd\n"
+"EOF\n"
+"sudo kubeadm init --config <%=morpheus.morpheusHome%>/kube/working"
+"/kubeadm-config.yaml\n"
+"sudo cp -i /etc/kubernetes/admin.conf "
+"<%=morpheus.morpheusHome%>/.kube/config &&\n"
+"sudo chown <%=morpheus.morpheusUser%>:<%=morpheus.morpheusUser%> "
+"<%=morpheus.morpheusHome%>/.kube/config"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:138
+msgid ""
+"Lastly, we'll add a setup script for the Kubernetes master node called "
+"\"k8s-master-setup\" for this example. This script creates the service "
+"account and role bindings. Set this script to run in the PostProvision "
+"phase and view the complete script below:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:142
+msgid ""
+"#create a service account\n"
+"cd <%=morpheus.morpheusHome%>\n"
+"#kubectl -n kube-system create sa morpheus\n"
+"kubectl create sa morpheus\n"
+"cat <<EOF | tee <%=morpheus.morpheusHome%>/kube/morpheus-sa.yaml\n"
+"apiVersion: v1\n"
+"kind: Secret\n"
+"metadata:\n"
+"  name: morpheus-token\n"
+"  annotations:\n"
+"    kubernetes.io/service-account.name: morpheus\n"
+"type: kubernetes.io/service-account-token\n"
+"EOF\n"
+"kubectl create clusterrolebinding serviceaccounts-cluster-admin "
+"--clusterrole=cluster-admin --group=system:serviceaccounts\n"
+"kubectl create -f <%=morpheus.morpheusHome%>/kube/morpheus-sa.yaml\n"
+"kubectl apply -f "
+"https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:161
+msgid ""
+"The three scripts we've just created will prepare the master node for our"
+" cluster. We now need an additional script that will prepare the worker "
+"nodes and join them to the cluster. The worker nodes will also use the "
+"\"k8s-prep\" script we added in the very first step which you'll see in "
+"the next step when we create the node types."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:163
+msgid ""
+"Add a fourth script which I've called \"k8s-join\" for this example. This"
+" script takes advantage of a special ``joinCommand`` variable as you'll "
+"see when you view the full script. If you want to see exactly what this "
+"does later, you can create a new Bash script Task that echoes out that "
+"variable and run it against an existing Kubernetes worker node VM (``echo"
+" \"<%=morpheus.kubernetes.joinCommand%>\"``). Set this script to run in "
+"the PostProvision phase and view the full script below:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:167
+msgid "sudo <%=morpheus.kubernetes.joinCommand%>"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:171
+msgid ""
+"This completes the needed Script Templates which we will set on two new "
+"Node Types in the next step. Continue on to the next section."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:174
+msgid "Creating Node Types"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:176
+msgid ""
+"With the Script Templates created we now need to make two new Node Types,"
+" one for the master node and one for the worker nodes. In this example "
+"case, we don't need to add a new Virtual Image because we can use one of "
+"the preinstalled system images for Ubuntu on VMware vCenter which will "
+"work fine. Node Types are created in |LibBluNod|. Once there, click "
+":guilabel:`+ ADD`. Within the modal for the new Node Type, configure the "
+"following:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:178
+msgid ""
+"**NAME:** Provide a name for the Node Type, can be anything to denote "
+"this is the master node"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:179
+#: ../../library/blueprints/clusterLayouts.rst:190
+msgid "**SHORT NAME:** A shortened version of the name without any spaces"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:180
+#: ../../library/blueprints/clusterLayouts.rst:191
+msgid ""
+"**VERSION:** The version number you wish to apply for this particular "
+"Node Type which is useful if you iterate on your Node Types at any point"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:181
+#: ../../library/blueprints/clusterLayouts.rst:192
+msgid ""
+"**TECHNOLOGY:** For this example case, VMware. Once set, additional "
+"options will appear"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:182
+#: ../../library/blueprints/clusterLayouts.rst:193
+msgid "**VM IMAGE:** A pre-installed Ubuntu system image will work"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:183
+msgid ""
+"**SCRIPTS:** Using the typeahead field, set the \"k8sprep\", \"kubeadm-"
+"init\" and \"k8s-master-setup\" Script Templates (you may have called "
+"them something different)"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:185
+msgid "Finally, click :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:187
+msgid ""
+"Repeat the process to create a second Node Type. The second time around, "
+"use the following configurations:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:189
+msgid ""
+"**NAME:** Provide a name for the Node Type, can be anything to denote "
+"this is the worker node"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:194
+msgid ""
+"**SCRIPTS:** Using the typeahead field, set the \"k8sprep\" and \"k8s-"
+"join\" Script Templates (you may have called them something different)"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:196
+msgid ""
+"Once done, click :guilabel:`SAVE CHANGES` to save the second Node Type. "
+"With the pieces in place, we are now ready to create the Cluster Layout "
+"object itself. Continue on to the next section."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:199
+msgid "Creating a Cluster Layout"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:201
+msgid ""
+"At this point we can create the Cluster Layout object in |morpheus| and "
+"attach the Node Types we've just created (which themselves have our "
+"Script Templates applied). Cluster Layouts are created in |LibBluClu|. "
+"Click :guilabel:`+ ADD` and configure the following:"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:203
+msgid ""
+"**NAME:** Provide a name for the Cluster Layout, can be anything to "
+"denote this is a Kubernetes cluster"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:204
+msgid ""
+"**VERSION:** The version number you wish to apply to this Cluster Layout "
+"which is useful if you later iterate on this Cluster Layout"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:205
+msgid "**CLUSTER TYPE:** Kubernetes Cluster"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:206
+msgid "**TECHNOLOGY:** VMware"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:207
+msgid "**MINIMUM MEMORY:** 4096 MB"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:208
+msgid ""
+"**INPUTS:** Use the typeahead field to add configured Inputs to the "
+"Cluster Layout"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:209
+msgid ""
+"**MASTER NODES:** Use the typeahead field to find the Kubernetes master "
+"Node Type we just created"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:210
+msgid ""
+"**WORKER NODES:** Use the typeahead field to find the Kubernetes worker "
+"Node Type we just created. Set the \"Count\" value to three (3) since we "
+"wish to have three worker nodes in this cluster"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:211
+msgid ""
+"**CLUSTER PACKAGES:** Use the typeahead field to add configued Cluster "
+"Packages to the Cluster Layout. Cluster Packages are created in the "
+"`Templates section "
+"<https://docs.morpheusdata.com/en/latest/library/templates/templates.html>`_"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:212
+msgid ""
+"**SPEC TEMPLATES:** Use the typeahead field to add Spec Templates to the "
+"Cluster Layout"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:214
+msgid "Click :guilabel:`SAVE CHANGES` to save the Cluster Layout."
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:217
+msgid "Testing and Wrap-Up"
+msgstr ""
+
+#: ../../library/blueprints/clusterLayouts.rst:219
+msgid ""
+"At this point we are finished and we have a viable Kubernetes cluster "
+"that we can deploy with just one click. To add a new managed cluster to "
+"this |morpheus| environment, navigate to :menuselection:`Infrastructure "
+"--> Clusters`. To provision a cluster from the layout we just created, "
+"click :guilabel:`+ ADD CLUSTER` and select \"Kubernetes Cluster\" from "
+"the dropdown menu. Make the appropriate selections to target the new "
+"cluster to an existing VMware vCenter Cloud and complete the wizard. Once"
+" complete, the new cluster will be visible on your clusters list page and"
+" from there you can drill into the detail page to view relevant details "
+"about the cluster including monitoring metrics, current workloads, and "
+"more."
+msgstr ""
+

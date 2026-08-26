@@ -1,0 +1,597 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/storage/snapshots.rst:2
+msgid "Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:7
+msgid ""
+"Snapshots capture the state of a virtual machine's disk(s) at a specific "
+"point in time, allowing administrators to quickly revert a VM to a "
+"previous state if needed. |morpheus| provides centralized snapshot "
+"management across clouds, supporting creation, reversion, and deletion of"
+" snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:9
+msgid ""
+"Snapshots can be managed from the server/instance detail page or from a "
+"centralized snapshots view."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:12
+msgid "Role Requirements"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:14
+msgid ""
+"``Infrastructure: Compute`` role permission at **Full** level is required"
+" to create, revert, or delete snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:15
+msgid "**Read** access allows viewing existing snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:18
+msgid "Viewing Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:20
+msgid "From a Server:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:22
+#: ../../infrastructure/storage/snapshots.rst:87
+msgid "Navigate to the server detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:23
+msgid "Select the **SNAPSHOTS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:25
+msgid "The Snapshots tab displays all snapshots for the server, including:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:27
+msgid "**Name** — Snapshot name or description"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:28
+msgid "**Date Created** — When the snapshot was taken"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:29
+msgid "**Size** — Disk space consumed by the snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:30
+msgid "**Status** — Snapshot state (active, creating, deleting)"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:33
+msgid "Creating a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:35
+msgid "Navigate to the server or instance detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:36
+#: ../../infrastructure/storage/snapshots.rst:88
+msgid "Click :guilabel:`ACTIONS`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:37
+msgid "Select **Snapshot**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:38
+msgid "In the snapshot dialog, configure:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:40
+msgid "NAME"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:41
+msgid "A descriptive name for the snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:42
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:43
+msgid "Optional notes about the snapshot's purpose or what state it captures."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:44
+msgid "MEMORY"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:45
+msgid ""
+"(Where supported) Include the VM's memory state in the snapshot. This "
+"allows reverting to the exact running state."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:46
+msgid "QUIESCE"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:47
+msgid ""
+"(Where supported) Quiesce the guest file system before taking the "
+"snapshot. This ensures application-consistent data."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:49
+msgid "Click :guilabel:`CREATE`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:51
+msgid ""
+"The snapshot operation runs asynchronously. The new snapshot will appear "
+"in the Snapshots tab once complete."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:54
+msgid "Reverting to a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:56
+#: ../../infrastructure/storage/snapshots.rst:65
+#: ../../infrastructure/storage/snapshots.rst:76
+msgid "Navigate to the server's **SNAPSHOTS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:57
+msgid "Click the revert icon next to the desired snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:58
+msgid "Confirm the revert operation"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:60
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:60
+msgid ""
+"Reverting to a snapshot discards all changes made since the snapshot was "
+"taken. This includes disk writes, configuration changes, and (if memory "
+"was not captured) the running state of applications."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:63
+msgid "Deleting a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:66
+msgid "Click the delete icon next to the snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:67
+#: ../../infrastructure/storage/snapshots.rst:78
+msgid "Confirm the deletion"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:69
+msgid ""
+"Deleting a snapshot consolidates the snapshot data back into the base "
+"disk. This frees the space consumed by the snapshot delta."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:72
+msgid "Deleting All Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:74
+msgid "To remove all snapshots for a server:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:77
+msgid "Click :guilabel:`DELETE ALL`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:80
+#: ../../infrastructure/storage/snapshots.rst:196
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:80
+msgid ""
+"Deleting all snapshots consolidates the entire snapshot chain. This "
+"operation may take time for VMs with large or numerous snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:83
+msgid "Importing Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:85
+msgid "|morpheus| can import existing snapshots from the hypervisor:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:89
+msgid "Select **Import Snapshot**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:90
+msgid "Select the snapshot to import from the hypervisor"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:91
+msgid "Click :guilabel:`IMPORT`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:94
+msgid "Creating Linked Clone Images"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:96
+msgid ""
+"VMware and HVM/KVM snapshots can be registered as linked clone Virtual "
+"Images. A linked clone uses the selected snapshot as a shared backing "
+"disk instead of copying the complete source disk. This reduces "
+"provisioning time and initial storage consumption, but creates a "
+"dependency on the source VM and snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:98
+msgid ""
+"Prepare the guest before taking the snapshot. Otherwise, every VM "
+"provisioned from the linked clone can inherit the source hostname, "
+"machine identity, SSH host keys, network rules, or Windows system "
+"identity. Complete the guest preparation steps below before creating the "
+"snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:100
+msgid "Prepare and shut down the source VM."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:101
+msgid ""
+"On the Instance detail page, select :guilabel:`Actions` > "
+":guilabel:`Create Snapshot`."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:102
+msgid "Enter a recognizable name and create the snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:103
+msgid "Select the Instance :guilabel:`Backups` tab."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:104
+msgid ""
+"Locate the completed snapshot, select :guilabel:`More`, and then select "
+":guilabel:`Create Linked Clone`."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:105
+msgid "Confirm the operation."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:106
+msgid ""
+"Navigate to :menuselection:`Library --> Virtual Images` and open the "
+"Virtual Image whose name matches the snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:107
+msgid ""
+"Verify its operating system, guest customization, cloud-init or Sysprep, "
+"agent, credentials, and tenant permissions before using it in an Instance"
+" Type or provisioning workflow."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:109
+msgid ""
+"The :guilabel:`Create Linked Clone` action appears only for supported "
+"provision types and users with **Snapshots: Linked Clone** permission set"
+" to **Full**. Creating it registers a Virtual Image record; it does not "
+"create a VM. VMs are created when that Virtual Image is selected during "
+"provisioning."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:111
+msgid "**Guest Preparation**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:113
+msgid ""
+"Complete application installation, patching, and configuration before "
+"generalizing the guest. Do not start the source VM again between "
+"generalization and snapshot creation."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:115
+msgid "**Windows**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:117
+msgid ""
+"Use Sysprep to remove the source system identity and start OOBE on the "
+"first boot of each provisioned VM:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:119
+msgid ""
+"& \"$env:SystemRoot\\System32\\Sysprep\\sysprep.exe\" /generalize /oobe "
+"/shutdown"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:123
+msgid ""
+"After Sysprep shuts down the VM, leave it powered off and create the "
+"snapshot. On the resulting Virtual Image, enable **Sysprep**. For "
+"platform-specific customization behavior, including VMware **Force Guest "
+"Customization**, see "
+":doc:`/provisioning/windows_cloud_guest_customization`."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:125
+msgid "**Linux**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:127
+msgid ""
+"For a cloud-init-enabled Linux guest, clear instance state and "
+"identifiers before shutdown. The exact files vary by distribution; the "
+"following is appropriate for current Ubuntu images:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:129
+msgid ""
+"sudo cloud-init clean --logs --machine-id\n"
+"sudo rm -f /etc/ssh/ssh_host_*\n"
+"sudo rm -f /etc/udev/rules.d/70-persistent-net.rules\n"
+"sudo truncate -s 0 /etc/machine-id\n"
+"sudo poweroff"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:137
+msgid ""
+"If ``/var/lib/dbus/machine-id`` is a regular file rather than a symbolic "
+"link to ``/etc/machine-id``, remove or empty it according to the "
+"distribution's image-preparation guidance. Remove only persistent udev "
+"rules created for the source VM; do not remove distribution-supplied "
+"rules. Verify that cloud-init is installed and enabled, then leave "
+"**Cloud Init Enabled** selected on the resulting Virtual Image."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:139
+msgid "**Dependencies and Limitations**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:141
+msgid ""
+"Do not treat a linked clone as an independent image. The source VM and "
+"selected snapshot remain part of its backing chain."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:142
+msgid ""
+"Do not delete the backing snapshot or source VM while linked-clone VMs "
+"depend on them. HVM blocks these operations when it detects active "
+"dependents."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:143
+msgid ""
+"VMware linked clone images are primarily intended for rapid provisioning "
+"such as VDI pools and cannot be resized."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:144
+msgid ""
+"HVM linked clones require a file-based datastore and QCOW2 disks. LUN-"
+"per-vDisk storage, including HPE Alletra datastore types, does not "
+"support linked clones."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:145
+msgid ""
+"HVM linked clones on local storage are pinned to the source hypervisor. "
+"Host migration is not supported. HVM storage migration is not supported "
+"because the overlay depends on the original snapshot backing file."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:146
+msgid ""
+"Shared HVM storage avoids local-host pinning, but the backing snapshot "
+"must remain available in its original datastore."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:147
+msgid ""
+"Changes made to the source VM after the snapshot are not included. To "
+"publish an updated image, prepare the source again, create a new "
+"snapshot, and create a new linked clone Virtual Image."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:148
+msgid ""
+"Snapshot chains add storage and performance dependencies. Keep chains "
+"shallow and monitor the source datastore's capacity and health."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:150
+msgid "**API**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:152
+msgid "Create a linked clone Virtual Image via the API:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:154
+#, python-brace-format
+msgid "``PUT /api/instances/{instanceId}/linked-clone/{snapshotId}``"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:155
+#, python-brace-format
+msgid "``PUT /api/servers/{serverId}/linked-clone/{snapshotId}``"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:157
+msgid ""
+"These endpoints register the snapshot as a linked clone Virtual Image. "
+"Provisioning a VM from the image then creates the thin overlay "
+"automatically."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:160
+msgid "Snapshot Best Practices"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:162
+msgid ""
+"**Keep snapshots short-lived** — Snapshots consume increasing disk space "
+"over time as the delta grows. Delete snapshots once they are no longer "
+"needed."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:163
+msgid ""
+"**Don't use as backups** — Snapshots are not a replacement for proper "
+"backups. They reside on the same storage as the VM and are lost if the "
+"storage fails."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:164
+msgid ""
+"**Limit chain depth** — Avoid creating deep chains of snapshots (snapshot"
+" of a snapshot). Performance degrades with chain depth."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:165
+msgid ""
+"**Quiesce when possible** — For application consistency, always quiesce "
+"the guest file system before snapshotting databases or transactional "
+"workloads."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:166
+msgid ""
+"**Archive snapshots** — Configure the default archive store "
+"(``Administration > Settings > Appliance > Archive Store``) if snapshots "
+"need to be stored externally."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:169
+msgid "Supported Cloud Types"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:171
+msgid ""
+"Snapshot support is available on more cloud types than linked clone "
+"Virtual Image creation. Linked clone creation is supported only for "
+"VMware vSphere and HVM/KVM."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:177
+msgid "Cloud Type"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:178
+msgid "Snapshot Support"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:179
+msgid "Linked Clone Virtual Images"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:180
+msgid "VMware vSphere"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:181
+msgid "Full support including memory snapshots and quiescing"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:182
+msgid "**Supported**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:183
+msgid "HVM/KVM"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:184
+msgid "Libvirt/QEMU snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:185
+msgid ""
+"**Supported on file-based datastores with QCOW2 disks only**; not "
+"supported on LUN-per-vDisk storage such as HPE Alletra"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:186
+msgid "Nutanix AHV"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:187
+msgid "Snapshots without memory state"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:188
+#: ../../infrastructure/storage/snapshots.rst:191
+#: ../../infrastructure/storage/snapshots.rst:194
+msgid "Not supported"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:189
+msgid "Azure"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:190
+msgid "Managed disk snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:192
+msgid "AWS"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:193
+msgid "EBS snapshots at the volume level"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:196
+msgid ""
+"Some cloud types may not support all snapshot options (e.g., memory "
+"snapshots, quiescing). Unavailable options will be hidden or greyed out "
+"in the dialog."
+msgstr ""
+

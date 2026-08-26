@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:2
@@ -29,12 +29,13 @@ msgid "Prerequisites"
 msgstr "Requisitos previos"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:7
+#, fuzzy
 msgid ""
-"Before creating an HVM 1.3 cluster, ensure the following requirements are "
-"met:"
+"Before creating an HVM cluster, identify the target layout and ensure the"
+" following requirements are met:"
 msgstr ""
-"Antes de creating un HVM 1.3 cluster, asegurar lo siguiente requisitos son "
-"met:"
+"Antes de creating un HVM 1.3 cluster, asegurar lo siguiente requisitos "
+"son met:"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:13
 msgid "Requirement"
@@ -49,16 +50,19 @@ msgid "Operating System"
 msgstr "Operating Sistema"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:16
-msgid "Ubuntu 24.04 LTS (HPE's HVM OS recommended)"
-msgstr "Ubuntu 24.04 LTS (HPE's HVM OS recommended)"
+msgid "HVM OS/Ubuntu 24.04 for layout 1.3; HVM OS 26.04 for layout 2.0"
+msgstr ""
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:17
 msgid "Minimum Hosts"
 msgstr "Mínimo Hosts"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:18
-msgid "3 hosts for a single-site cluster"
-msgstr "3 hosts para un single-site cluster"
+msgid ""
+"3 Hosts for a standard single-site cluster; 2 Hosts are supported with an"
+" external Distributed Worker witness when using an HPE Shared File System"
+" (GFS2) datastore (see :doc:`two_node_clusters`)"
+msgstr ""
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:19
 msgid "CPU"
@@ -125,8 +129,10 @@ msgid "Select **HVM** as the cluster type"
 msgstr "Seleccionar **HVM** como el cluster tipo"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:38
-msgid "Select the **HVM 1.3** layout"
-msgstr "Seleccionar el **HVM 1.3** layout"
+msgid ""
+"Select the required layout: **HVM 1.3** for HVM OS/Ubuntu 24.04 or **HVM "
+"2.0** for HVM OS 26.04"
+msgstr ""
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:39
 msgid "Complete the following fields:"
@@ -209,8 +215,11 @@ msgid "Overlay Network Name"
 msgstr "Overlay Network Nombre"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:64
-msgid "Network name for overlay traffic"
-msgstr "Red nombre para overlay traffic"
+msgid ""
+"Legacy/layout 1.3 underlay/tunnel network name used by the HVM networking"
+" plugin. Verify tunnel-interface reachability and MTU; layout 2.0 uses "
+"Virtual Switch networking instead"
+msgstr ""
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:65
 msgid "Compute VLANs"
@@ -233,18 +242,66 @@ msgid "Witness"
 msgstr "Witness"
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:70
-msgid "Witness node selection (for stretch clusters)"
-msgstr "Witness nodo selection (para stretch clusters)"
+msgid ""
+"Distributed Worker witness for a two-node GFS2 cluster or stretch "
+"cluster. Configure it after cluster creation using the applicable witness"
+" procedure"
+msgstr ""
 
 #: ../../infrastructure/clusters/hvm/building_clusters.rst:72
 msgid "Click :guilabel:`Complete` to begin automated provisioning"
 msgstr "Click :guilabel:`Complete` a begin automated provisioning"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:75
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:77
+msgid "Cluster Permissions and Provisioning Impact"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:79
+msgid ""
+"From the Clusters list, open :guilabel:`More` > :guilabel:`Permissions` "
+"for a cluster to scope where that cluster can be used:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:81
+msgid ""
+"**Groups** control which Infrastructure Groups can use the cluster as a "
+"provisioning target. A user also needs role access to the Group and the "
+"relevant provisioning features."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:82
+msgid ""
+"**Service Plans** limit the plans that can be selected when provisioning "
+"to the cluster. For example, selecting only a ``1 CPU, 2 GB`` plan means "
+"other plans are not offered after this cluster is selected, subject to "
+"the selected Instance layout and image requirements."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:83
+msgid ""
+"**Default** retains the product's default permission behavior rather than"
+" creating an explicit Group or Service Plan allow-list. It does not mean "
+"that this cluster is the preferred provisioning target and does not "
+"override role, layout, image, or capacity filtering. Use an explicit "
+"selection when the cluster must be restricted."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:85
+msgid ""
+"Permission changes affect subsequent wizard choices. They do not resize, "
+"move, or otherwise alter existing VMs. After changing permissions, test "
+"with a non-administrator role: start an Instance deployment, select the "
+"intended Group and HVM target, and confirm that only the allowed clusters"
+" and Service Plans are shown. If an expected plan is absent, also check "
+"that the plan is active, uses the HVM/KVM provision type, and satisfies "
+"the selected layout and Virtual Image minimums."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:88
 msgid "Automated Provisioning Phases"
 msgstr "Automated Provisioning Phases"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:77
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:90
 msgid ""
 "Once cluster creation is initiated, |morpheus| executes the following "
 "automated phases:"
@@ -252,217 +309,241 @@ msgstr ""
 "Once cluster creation es initiated, |morpheus| executes lo siguiente "
 "automated phases:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:80
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:93
 msgid "Phase 1: Package Installation"
 msgstr "Phase 1: Package Installation"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:82
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:95
 msgid "Installs required packages on all hosts:"
 msgstr "Instala requerido packages en todos hosts:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:84
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:97
 msgid "KVM/QEMU"
 msgstr "KVM/QEMU"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:85
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:98
 msgid "libvirt"
 msgstr "libvirt"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:86
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:99
 msgid "Corosync"
 msgstr "Corosync"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:87
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:100
 msgid "DLM"
 msgstr "DLM"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:88
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:101
 msgid "GFS2 utilities"
 msgstr "GFS2 utilities"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:89
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:102
 msgid "Ceph libraries"
 msgstr "Ceph libraries"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:90
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:103
 msgid "swtpm"
 msgstr "swtpm"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:91
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:104
 msgid "jq"
 msgstr "jq"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:92
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:105
 msgid "nfs-common"
 msgstr "nfs-común"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:95
-msgid "Phase 2: OVS Networking"
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:108
+#, fuzzy
+msgid "Phase 2: Host Networking"
 msgstr "Phase 2: OVS Networking"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:97
-msgid "Configures Open vSwitch networking:"
-msgstr "Configures Abrir vSwitch networking:"
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:110
+msgid "Configures the networking model for the selected layout:"
+msgstr ""
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:99
-msgid "Creates bridges for management, compute, and overlay networks"
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:112
+#, fuzzy
+msgid ""
+"**Layout 1.3:** Creates OVS bridges for management, compute, and overlay "
+"networks and configures the libvirt Management network"
 msgstr "Crea bridges para gestión, compute, y overlay networks"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:100
-msgid "Configures libvirt Management network"
-msgstr "Configura libvirt Gestión network"
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:113
+msgid ""
+"**Layout 2.0:** Creates the default Virtual Switch and applies Linux "
+"bridge networking through ``hvmcli``"
+msgstr ""
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:103
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:115
+msgid ""
+"See :doc:`hvm_networks` for layout 1.3 networking or "
+":doc:`virtual_switches` for layout 2.0 networking."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:117
+msgid ""
+"For layout 2.0, complete the scenario checklist in "
+":doc:`/getting_started/installation/hvm_host_prep` before creating "
+"Virtual Switches. VLAN IDs are optional: use explicit VLAN IDs with an "
+"upstream trunk for a decoupled design without native VLANs, or leave a "
+"segment untagged only when the upstream port is intentionally configured "
+"for that traffic."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:120
 msgid "Phase 3: Host Preparation"
 msgstr "Phase 3: Host Preparation"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:105
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:122
 msgid "Prepares each host for cluster operation:"
 msgstr "Prepares cada host para cluster operación:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:107
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:124
 msgid "Firewall configuration"
 msgstr "Firewall configuración"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:108
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:125
 msgid "libvirt configuration"
 msgstr "libvirt configuración"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:109
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:126
 msgid "IOMMU enablement"
 msgstr "IOMMU enablement"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:110
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:127
 msgid "Hugepages configuration"
 msgstr "Hugepages configuración"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:111
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:128
 msgid "Workqueue tuning"
 msgstr "Workqueue tuning"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:112
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:129
 msgid "Directory structure creation"
 msgstr "Directory structure creation"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:115
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:132
 msgid "Phase 4: Cluster Services"
 msgstr "Phase 4: Clúster Servicios"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:117
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:134
 msgid "Establishes cluster communication and coordination:"
 msgstr "Establishes cluster communication y coordination:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:119
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:136
 msgid "SSH key generation and distribution via Cypher"
 msgstr "SSH clave generation y distribution via Cypher"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:120
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:137
 msgid "Corosync authkey generation and distribution via Cypher"
 msgstr "Corosync authkey generation y distribution via Cypher"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:121
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:138
 msgid "Corosync configuration with knet transport"
 msgstr "Corosync configuración con knet transport"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:122
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:139
 msgid "DLM configuration with fencing enabled"
 msgstr "DLM configuración con fencing habilitado"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:123
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:140
 msgid "Service ordering and startup (corosync → DLM)"
 msgstr "Servicio ordering y startup (corosync → DLM)"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:126
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:143
 msgid "Phase 5: iSCSI/Storage"
 msgstr "Phase 5: iSCSI/Almacenamiento"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:128
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:145
 msgid "Configures storage connectivity:"
 msgstr "Configures storage connectivity:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:130
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:147
 msgid "iSCSI initiator name assignment"
 msgstr "iSCSI initiator nombre assignment"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:131
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:148
 msgid "Multipath configuration"
 msgstr "Multipath configuración"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:132
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:149
 msgid "OOM protection for storage services"
 msgstr "OOM protection para storage servicios"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:135
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:152
 msgid "Phase 6: Storage Pools"
 msgstr "Phase 6: Almacenamiento Pools"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:137
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:154
 msgid "Creates local storage pools:"
 msgstr "Crea local storage pools:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:139
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:156
 msgid "Cloud-init ISO pool"
 msgstr "Nube-init ISO pool"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:140
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:157
 msgid "Local storage pool"
 msgstr "Local storage pool"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:143
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:160
 msgid "Phase 7: Quorum Activation"
 msgstr "Phase 7: Quorum Activation"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:145
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:162
 msgid "Activates the agent-based quorum system:"
 msgstr "Activates el agent-based quorum sistema:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:147
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:164
 msgid "Server sends quorumInfo to all agents"
 msgstr "Servidor sends quorumInfo a todos agents"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:148
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:165
 msgid "Agents persist cluster member data to ``.quorum-nodes``"
 msgstr "Agents persist cluster miembro datos a ``.quorum-nodes``"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:149
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:166
 msgid "Agents begin peer-to-peer quorum pinging"
 msgstr "Agents begin peer-a-peer quorum pinging"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:152
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:169
 msgid "HPE Clustered Datastore (Shared LUN) Setup"
 msgstr "HPE Clustered Almacén de datos (Shared LUN) Setup"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:154
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:171
 msgid ""
-"The HPE Clustered Datastore (GFS2) provides shared storage accessible by all"
-" cluster hosts simultaneously."
+"The HPE Clustered Datastore (GFS2) provides shared storage accessible by "
+"all cluster hosts simultaneously."
 msgstr ""
 "El HPE Clustered Almacén de datos (GFS2) proporciona shared storage "
 "accessible por todos cluster hosts simultaneously."
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:157
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:174
 msgid "Adding iSCSI Targets"
 msgstr "Adding iSCSI Targets"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:159
-msgid ""
-"Navigate to ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
-msgstr ""
-"Navegue un ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:176
+msgid "Navigate to ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
+msgstr "Navegue un ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:160
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:177
 msgid "Click :guilabel:`Add`"
 msgstr "Click :guilabel:`Agregar`"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:161
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:178
 msgid "Enter the Target IP and Port (default: 3260)"
 msgstr "Ingresar el Destino IP y Port (predeterminado: 3260)"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:162
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:179
 msgid "Save the configuration"
 msgstr "Guardar el configuración"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:164
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:181
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:181
 msgid ""
 "iSCSI targets are auto-discovered and auto-logged-in on all hosts in the "
 "cluster."
@@ -470,103 +551,72 @@ msgstr ""
 "iSCSI targets son auto-discovered y auto-logged-en en todos hosts en el "
 "cluster."
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:167
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:184
 msgid "Creating the Datastore"
 msgstr "Creating el Almacén de datos"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:169
-msgid "Navigate to ``Storage > Datastores``"
-msgstr "Navegue un ``Storage > Datastores``"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:170
-msgid "Create a new datastore with the GFS2 type"
-msgstr "Crear un nuevo datastore con el GFS2 tipo"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:172
-msgid "|morpheus| automatically handles:"
-msgstr "|morpheus| automáticamente handles:"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:174
-msgid "Formatting with ``mkfs.gfs2``"
-msgstr "Formatting con ``mkfs.gfs2``"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:175
-msgid "Adding journal entries for each host (``gfs2_jadd``)"
-msgstr "Adding journal entradas para cada host (``gfs2_jadd``)"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:176
-msgid "Mounting on all cluster hosts"
-msgstr "Mounting en todos cluster hosts"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:177
-msgid "Creating the libvirt storage pool"
-msgstr "Creating el libvirt storage pool"
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:178
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:186
 msgid ""
-"Configuring the lock protocol (``lock_dlm``) with a lock table tied to the "
-"cluster"
+"Create the HPE Clustered Datastore from :menuselection:`Infrastructure "
+"--> Storage --> Data Stores` or from the HVM Cluster's "
+":guilabel:`Datastores` tab. See :doc:`storage_operations` for the "
+"canonical prerequisites, fields, resulting cluster operations, "
+"verification, and storage lifecycle procedures."
 msgstr ""
-"Configuring el lock protocolo (``lock_dlm``) con un lock table tied al "
-"cluster"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:180
-msgid ""
-"Mount information is persisted to ``/opt/morpheus-node/.mounts`` on each "
-"host."
-msgstr ""
-"Mount información es persisted a ``/opt/morpheus-node/.mounts`` en cada "
-"host."
-
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:183
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:189
 msgid "Configuring Heartbeat Datastore"
 msgstr "Configuring Heartbeat Datastore"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:185
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:191
 msgid "Edit the shared datastore properties"
 msgstr "Editar el shared datastore properties"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:186
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:192
 msgid "Enable the :guilabel:`Heartbeat Target` option"
 msgstr "Habilitar el :guilabel:`Heartbeat Target` opción"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:188
-msgid ""
-"It is recommended to configure 2 or more datastores as heartbeat targets for"
-" redundancy. Heartbeat writes occur to ALL configured datastores "
-"simultaneously. A host is considered online if its heartbeat is current on "
-"ANY configured datastore."
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:194
+msgid "Important"
 msgstr ""
-"It es recomendado a configure 2 o más datastores como heartbeat targets para"
-" redundancia. Heartbeat writes occur a ALL configurado datastores "
-"simultaneously. Un host es considered online si su heartbeat es actual en "
-"ANY configurado datastore."
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:191
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:194
+msgid ""
+"Configure one reliable GFS2 datastore as the heartbeat target. If that "
+"datastore becomes unhealthy, restore it or select another healthy GFS2 "
+"datastore before relying on automatic VM recovery."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:197
 msgid "Verification"
 msgstr "Verification"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:193
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:199
 msgid "After cluster creation, verify the cluster is healthy:"
 msgstr "Después de cluster creation, verificar el cluster es saludable:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:195
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:201
 msgid "**Corosync membership:**"
 msgstr "**Corosync membership:**"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:197
-msgid "corosync-quorumtool -s"
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:203
+#, fuzzy
+msgid "corosync-quorumtool -l"
 msgstr "corosync-quorumtool -s"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:201
-msgid "Confirm the output shows ``Quorate: Yes``."
-msgstr "Confirmar el salida muestra ``Quorate: Yes``."
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:207
+msgid ""
+"Confirm all expected compute Hosts are listed. Corosync provides "
+"membership to DLM but does not decide Agent quorum for layouts 1.3 and "
+"2.0. Do not use the Corosync ``Quorate`` value as the HVM health "
+"decision, especially for two-node and stretch topologies."
+msgstr ""
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:203
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:209
 msgid "**DLM status:**"
 msgstr "**DLM status:**"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:205
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:211
 msgid ""
 "systemctl is-active dlm\n"
 "dlm_tool status -v"
@@ -574,23 +624,23 @@ msgstr ""
 "systemctl es-activo dlm\n"
 "dlm_tool estado -v"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:210
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:216
 msgid "Confirm all nodes show ``member=1``."
 msgstr "Confirmar todos nodos mostrar ``member=1``."
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:212
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:218
 msgid "**Agent quorum:**"
 msgstr "**Agent quorum:**"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:214
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:220
 msgid "curl -k https://localhost:7443/quorum"
 msgstr "curl -k https://localhost:7443/quorum"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:218
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:224
 msgid "**UI verification:**"
 msgstr "**UI verification:**"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:220
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:226
 msgid ""
 "Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
 "panel and confirm:"
@@ -598,58 +648,143 @@ msgstr ""
 "Navegue un ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
 "panel y confirmar:"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:222
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:228
 msgid "Quorum status: ACHIEVED"
 msgstr "Quorum estado: ACHIEVED"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:223
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:229
 msgid "All nodes: ONLINE"
 msgstr "Todos nodos: ONLINE"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:224
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:230
 msgid "Coordinator: assigned"
 msgstr "Coordinator: asignado"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:225
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:231
 msgid "Lockspaces: OK"
 msgstr "Lockspaces: OK"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:228
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:233
+msgid ""
+"For a two-node GFS2 cluster, also confirm the Distributed Worker witness "
+"is listed and reachable. See :doc:`two_node_clusters`."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:236
 msgid "Cluster Sizing"
 msgstr "Cluster Sizing"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:234
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:242
 msgid "Hosts"
 msgstr "Hosts"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:235
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:243
 msgid "Failure Tolerance"
 msgstr "Fallo Tolerance"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:236
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:244
 msgid "Use Case"
 msgstr "Usar Case"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:237
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:245
 msgid "3"
 msgstr "3"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:238
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:246
 msgid "Tolerates 1 host failure"
 msgstr "Tolerates 1 host fallo"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:239
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:247
 msgid "Minimum production cluster"
 msgstr "Mínimo production cluster"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:240
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:248
 msgid "5"
 msgstr "5"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:241
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:249
 msgid "Tolerates 2 host failures"
 msgstr "Tolerates 2 host failures"
 
-#: ../../infrastructure/clusters/hvm/building_clusters.rst:242
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:250
 msgid "Recommended for higher availability"
 msgstr "Recommended para higher disponibilidad"
+
+#~ msgid "Ubuntu 24.04 LTS (HPE's HVM OS recommended)"
+#~ msgstr "Ubuntu 24.04 LTS (HPE's HVM OS recommended)"
+
+#~ msgid "3 hosts for a single-site cluster"
+#~ msgstr "3 hosts para un single-site cluster"
+
+#~ msgid "Select the **HVM 1.3** layout"
+#~ msgstr "Seleccionar el **HVM 1.3** layout"
+
+#~ msgid "Network name for overlay traffic"
+#~ msgstr "Red nombre para overlay traffic"
+
+#~ msgid "Witness node selection (for stretch clusters)"
+#~ msgstr "Witness nodo selection (para stretch clusters)"
+
+#~ msgid "Configures Open vSwitch networking:"
+#~ msgstr "Configures Abrir vSwitch networking:"
+
+#~ msgid "Configures libvirt Management network"
+#~ msgstr "Configura libvirt Gestión network"
+
+#~ msgid "Navigate to ``Storage > Datastores``"
+#~ msgstr "Navegue un ``Storage > Datastores``"
+
+#~ msgid "Create a new datastore with the GFS2 type"
+#~ msgstr "Crear un nuevo datastore con el GFS2 tipo"
+
+#~ msgid "|morpheus| automatically handles:"
+#~ msgstr "|morpheus| automáticamente handles:"
+
+#~ msgid "Formatting with ``mkfs.gfs2``"
+#~ msgstr "Formatting con ``mkfs.gfs2``"
+
+#~ msgid "Adding journal entries for each host (``gfs2_jadd``)"
+#~ msgstr "Adding journal entradas para cada host (``gfs2_jadd``)"
+
+#~ msgid "Mounting on all cluster hosts"
+#~ msgstr "Mounting en todos cluster hosts"
+
+#~ msgid "Creating the libvirt storage pool"
+#~ msgstr "Creating el libvirt storage pool"
+
+#~ msgid ""
+#~ "Configuring the lock protocol (``lock_dlm``)"
+#~ " with a lock table tied to the"
+#~ " cluster"
+#~ msgstr ""
+#~ "Configuring el lock protocolo (``lock_dlm``)"
+#~ " con un lock table tied al "
+#~ "cluster"
+
+#~ msgid ""
+#~ "Mount information is persisted to ``/opt"
+#~ "/morpheus-node/.mounts`` on each host."
+#~ msgstr ""
+#~ "Mount información es persisted a ``/opt"
+#~ "/morpheus-node/.mounts`` en cada host."
+
+#~ msgid ""
+#~ "It is recommended to configure 2 "
+#~ "or more datastores as heartbeat targets"
+#~ " for redundancy. Heartbeat writes occur "
+#~ "to ALL configured datastores simultaneously."
+#~ " A host is considered online if "
+#~ "its heartbeat is current on ANY "
+#~ "configured datastore."
+#~ msgstr ""
+#~ "It es recomendado a configure 2 o"
+#~ " más datastores como heartbeat targets "
+#~ "para redundancia. Heartbeat writes occur "
+#~ "a ALL configurado datastores simultaneously."
+#~ " Un host es considered online si "
+#~ "su heartbeat es actual en ANY "
+#~ "configurado datastore."
+
+#~ msgid "Confirm the output shows ``Quorate: Yes``."
+#~ msgstr "Confirmar el salida muestra ``Quorate: Yes``."
+

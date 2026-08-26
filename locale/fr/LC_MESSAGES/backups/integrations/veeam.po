@@ -1,0 +1,324 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../backups/integrations/veeam.rst:2
+msgid "Veeam"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:4
+msgid ""
+"Veeam is a backup and replication platform designed to work with popular "
+"on-prem cloud providers. |morpheus| integrates with your existing Veeam "
+"appliance which can then be set as the preferred backup solution for "
+"compatible Clouds. From there, easily schedule backup routines during "
+"Instance provisioning and restore Instances when needed. This section "
+"discusses the process for integrating Veeam with |morpheus|, sharing a "
+"Veeam integration with multiple Tenants, setting backup during Instance "
+"provisioning, and restoring Instances from Veeam backup."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:7
+msgid "Supported Clouds"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:9
+msgid "Veeam backup is supported for:"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:11
+msgid "VMware"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:12
+msgid "Microsoft Hyper-V"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:13
+msgid "Microsoft SCVMM"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:14
+msgid "vCloud Director"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:17
+msgid "Features"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:19
+msgid "Share one backup provider across multiple Tenants"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:20
+msgid "Apply Veeam integration as the default backup target for compatible clouds"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:21
+msgid "Select Veeam integrations as backup provider at Instance provision time"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:22
+msgid "Automate backups with |morpheus| Backup Jobs"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:23
+msgid "When needed, easily restore Instance backups"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:26
+msgid "Adding Veeam Integration"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:28
+msgid "Navigate to :menuselection:`Backups --> Integrations`"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:29
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:30
+msgid "Select Veeam"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:31
+msgid "Fill in the following:"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:33
+msgid "Name"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:34
+msgid "Friendly name for the integration in |morpheus|"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:35
+msgid "Enabled"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:36
+msgid "When marked, this integration will be active and available for use"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:37
+msgid "API URL"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:38
+msgid "IP or Hostname of the Veeam Enterprise Manager, must be HTTPS for VEEAM 10"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:39
+msgid "Port"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:40
+msgid ""
+"Port number configured to access the Veeam server, must be 9398 for VEEAM"
+" 10"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:41
+msgid "Username"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:42
+msgid "Username for an admin service account in Veeam"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:43
+msgid "Password"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:44
+msgid "Password for Username provided (encrypted in |morpheus|)"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:45
+msgid "Visibility"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:46
+msgid ""
+"Sets Multi-Tenant Visibility. Private: Only available to the Tenant that "
+"added the integration. Public: Available to Subtenants (primary tenant "
+"option only)."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:48
+msgid "Click :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:50
+msgid "Note"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:50
+msgid ""
+"Veeam Backup Enterprise Manager must be installed in order to "
+"successfully integrate |morpheus| with Veeam."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:52
+msgid "Important"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:52
+msgid ""
+"Once Veeam service has been integrated with |morpheus|, Veeam server(s) "
+"will be available to select as the backup provider for VMware, Hyper-V, "
+"SCVMM, and vCloud Director cloud integrations "
+"(:menuselection:`Infrastructure --> Clouds` > Edit a compatible Cloud). "
+"To enable Veeam backups, select the appropriate Veeam server as the "
+"\"backup provider\" for your cloud integrations as needed. Failure to do "
+"so will result in blank ``Backup Repositories`` and ``Backup Job "
+"Templates`` options when configuring Veeam Backups during provisioning."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:55
+msgid "Set Veeam as Cloud Backup Target"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:57
+msgid ""
+"Once the initial integration is made, set this integration as the backup "
+"provider for as many supported Clouds as needed. Veeam integrations are "
+"supported as backup targets for VMware, Hyper-V, SCVMM, and vCloud "
+"Director Clouds."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:59
+msgid "Navigate to :menuselection:`Infrastructure --> Clouds`"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:60
+msgid "Select an existing VMware, Hyper-V, SCVMM, or vCD Cloud"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:61
+msgid "Click :guilabel:`EDIT`"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:62
+msgid "Expand the Advanced Options section"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:63
+msgid "Under \"Backup Provider\", select the relevant Veeam integration"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:64
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:67
+msgid "Configure Backup at Provision Time"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:69
+msgid ""
+"When provisioning an Instance into a Cloud where Veeam is set as the "
+"backup provider, Veeam will be selectable as the \"Backup Type\" on the "
+"Automation tab of the provisioning wizard. Expand the Backups section on "
+"this tab and enter the following:"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:71
+msgid "**Backup Type:** Select the desired Veeam backup type"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:72
+msgid ""
+"**Repository:** Select a repository synced from the Veeam backup provider"
+" associated with the Cloud"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:73
+msgid ""
+"**Managed Server:** Select a managed server associated with the backup "
+"server selected in the previous step"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:74
+msgid ""
+"**Backup Name:** A name for the backup in Morpheus, this field is pre-"
+"populated with the Instance name but can be overwritten"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:75
+msgid ""
+"**Backup Job Type:** Clone an existing backup job "
+"(:menuselection:`Backups --> Jobs`) or add this backup to an existing "
+"job. A job contains a retention count and backup frequency schedule and "
+"can have as many Instances backing up under it as needed"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:76
+msgid ""
+"**Backup Job:** Select the job which will be cloned or have a backup "
+"added to it depending on your selection in the prior field"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:77
+msgid ""
+"**Job Name:** A name for the new cloned job (if you are cloning and not "
+"creating a new Backup Job)"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:80
+msgid "Viewing Backups"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:82
+msgid ""
+"After provisioning, users can review backup details from the Instance "
+"detail page (:menuselection:`Provisioning --> Instances` > Selected "
+"Instance > Backups tab). Additionally, backups can be configured here if "
+"this was not done during provision time by clicking :guilabel:`ADD "
+"BACKUP`. Users can also run one-off backups from this page by opening the"
+" ACTIONS menu and clicking Backup."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:84
+msgid ""
+"Within the Backups section (:menuselection:`Backups --> Backups`) users "
+"can also view all currently-configured backups and whether or not recent "
+"backup runs have succeeded."
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:87
+msgid "Restore an Instance from Veeam"
+msgstr ""
+
+#: ../../backups/integrations/veeam.rst:89
+msgid ""
+"For Instances with current backups, the Backup Results section will be "
+"populated on the Instance detail page (:menuselection:`Provisioning --> "
+"Instances` > Selected Instance > Backup tab). If the Instance needs "
+"restored, simply click Actions (within the Backup Results area, not the "
+"main actions menu for the Instance itself) and then click Restore. The "
+"status icon at the top of the Instance detail page will turn green once "
+"this process is finished and the Instance will be fully restored from "
+"your selected backup."
+msgstr ""
+

@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/functionality/agent/overview.rst:2
+msgid "Overview"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:4
+msgid ""
+"The |morpheus| Agent is an important and powerful facet of |morpheus| as "
+"an orchestration tool.  Though it is not required, which is one unique "
+"capability of our platform versus some of our competitors, it is "
+"recommended for use as it brings many benefits.  Not only does it provide"
+" statistics for the guest operating system and resource utilization, it "
+"also brings along with it monitoring and log aggregation capabilities.  "
+"After an initial brownfield discovery, Users can decide to convert "
+"unmanaged VMs to managed."
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:6
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:7
+msgid ""
+"**Agent installation is not required to manage an Instance.**  If you "
+"don't have the Agent installed, we make every effort to aggregate stats. "
+"These will vary based on the Cloud and can be more limited or less "
+"accurate without utilizing |morpheus| Agent."
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:9
+msgid ""
+"The |morpheus| Agent does not listen on an inbound management port. It "
+"initiates an outbound HTTPS/WSS connection to the configured |morpheus| "
+"appliance on TCP 443. The persistent connection carries inventory, "
+"statistics, monitoring and log data to the appliance and carries Manager-"
+"requested actions back to the workload. This design removes the need for "
+"the Manager to initiate SSH or WinRM sessions after installation, but it "
+"is not a read-only telemetry channel."
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:12
+msgid "Agent Security Boundary"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:14
+msgid ""
+"Treat control of the |morpheus| Manager and an Agent's API key as a "
+"remote-shell-equivalent trust boundary. An authorized Manager action can "
+"ask the Agent to execute a command, write or transfer files, and perform "
+"workload-management operations. On Linux, the Agent runs as the "
+"``morpheus-node`` service account and uses configured ``sudo`` "
+"permissions for privileged operations. HVM Host Agents have additional "
+"privileged storage, virtualization, fencing, mount, and reboot "
+"responsibilities. Apply least privilege to |morpheus| roles, protect "
+"Agent keys and Manager administrator access, and review activity/audit "
+"records for administrative actions."
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:16
+msgid ""
+"The principal Linux locations and processes to include in host monitoring"
+" are:"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:18
+msgid "``/opt/morpheus-node`` for Agent binaries and runtime files"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:19
+msgid "``/etc/morpheus/morpheus-node.yaml`` for Agent configuration"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:20
+msgid "``/var/log/morpheus-node`` for Agent logs"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:21
+msgid "``morphd``, supervised by the ``morpheus-node-runsvdir`` service"
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:23
+msgid ""
+"The Agent's ``verifyPeer`` configuration controls certificate-chain "
+"verification for its outbound connection. When ``verifyPeer`` is "
+"``true``, the appliance endpoint must present a certificate trusted by "
+"the Agent host. When it is absent or ``false``, the Agent runtime does "
+"not validate the peer certificate chain. Use a trusted appliance "
+"certificate and enable peer verification where required by organizational"
+" policy; test certificate trust before enforcing the setting broadly."
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:25
+msgid ""
+"Agent packages and scripts must come from the configured |morpheus| "
+"appliance or an HPE-published package source for the applicable release. "
+"Package availability is release-, OS-, and architecture-specific; "
+"successful execution on an unlisted platform does not establish support. "
+"Upgrade Agents through the Manager's **Upgrade Agent** action or a newly "
+"downloaded, resource-specific Agent script, and verify that the Agent "
+"reconnects and reports the expected version."
+msgstr ""
+
+#: ../../getting_started/functionality/agent/overview.rst:27
+msgid ""
+"Customer security controls should allow only the required Manager-to-"
+"Agent administration and Agent-to-Manager path. Monitor changes under the"
+" Agent paths, restrict who can request Agent actions, protect backups "
+"containing Agent configuration, and investigate unexpected Agent command "
+"or file activity as privileged remote administration."
+msgstr ""
+

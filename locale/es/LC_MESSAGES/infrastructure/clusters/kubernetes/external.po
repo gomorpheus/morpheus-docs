@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:4
@@ -29,8 +29,7 @@ msgid "Overview"
 msgstr "Descripción general"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:9
-msgid ""
-"|morpheus| supports two primary modes of Kubernetes cluster management:"
+msgid "|morpheus| supports two primary modes of Kubernetes cluster management:"
 msgstr "|morpheus| soporta two primario modos de Kubernetes cluster gestión:"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:11
@@ -38,13 +37,14 @@ msgid ""
 "**Provisioned Clusters** — Kubernetes clusters provisioned directly by "
 "|morpheus| using MKS (Morpheus Kubernetes Service) layouts"
 msgstr ""
-"**Aprovisionado Clústeres** — Kubernetes clusters aprovisionado directamente"
-" por |morpheus| usando MKS (Morpheus Kubernetes Servicio) layouts"
+"**Aprovisionado Clústeres** — Kubernetes clusters aprovisionado "
+"directamente por |morpheus| usando MKS (Morpheus Kubernetes Servicio) "
+"layouts"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:12
 msgid ""
-"**External Clusters** — Pre-existing Kubernetes clusters provisioned outside"
-" of |morpheus| and imported for management"
+"**External Clusters** — Pre-existing Kubernetes clusters provisioned "
+"outside of |morpheus| and imported for management"
 msgstr ""
 "**External Clústeres** — Pre-existente Kubernetes clusters aprovisionado "
 "outside de |morpheus| y imported para gestión"
@@ -54,8 +54,8 @@ msgid ""
 "This guide covers the differences between these approaches, the import "
 "process for external clusters, and the feature parity between the two."
 msgstr ""
-"Este guide covers el differences entre estos approaches, el import proceso "
-"para externo clusters, y el función parity entre el two."
+"Este guide covers el differences entre estos approaches, el import "
+"proceso para externo clusters, y el función parity entre el two."
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:17
 msgid "Provisioned vs External Clusters"
@@ -259,8 +259,12 @@ msgid "**API URL** — Retrieve the cluster API server URL:"
 msgstr "**API URL** — Retrieve el cluster API servidor URL:"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:91
-msgid "kubectl config view --minify | grep server | cut -f 2- -d \":\" | tr -d \" \""
-msgstr "kubectl config ver --minify | grep server | cut -f 2- -d \":\" | tr -d \" \""
+msgid ""
+"kubectl config view --minify | grep server | cut -f 2- -d \":\" | tr -d "
+"\" \""
+msgstr ""
+"kubectl config ver --minify | grep server | cut -f 2- -d \":\" | tr -d \""
+" \""
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:95
 msgid "**API Token** — Retrieve the service account token:"
@@ -269,16 +273,22 @@ msgstr "**API Token** — Retrieve el servicio account token:"
 #: ../../infrastructure/clusters/kubernetes/external.rst:97
 msgid ""
 "SECRET_NAME=$(kubectl get secrets | grep ^morpheus | cut -f1 -d ' ')\n"
-"kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' | tr -d \" \""
+"kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' |"
+" tr -d \" \""
 msgstr ""
 "SECRET_NAME=$(kubectl obtener secrets | grep ^morpheus | cut -f1 -d ' ')\n"
-"kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' | tr -d \" \""
+"kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' |"
+" tr -d \" \""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:102
+msgid "Note"
+msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:102
 msgid ""
 "For Kubernetes 1.24+, tokens are no longer auto-created for service "
-"accounts. Use ``kubectl create token morpheus`` or create a long-lived token"
-" Secret manually."
+"accounts. Use ``kubectl create token morpheus`` or create a long-lived "
+"token Secret manually."
 msgstr ""
 "Para Kubernetes 1.24+, tokens son no longer auto-creado para servicio "
 "accounts. Usar ``kubectl create token morpheus`` o crear un largo-lived "
@@ -286,9 +296,9 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:104
 msgid ""
-"**Kube Config** (alternative) — Export the kubeconfig YAML for the cluster."
-msgstr ""
-"**Kube Config** (alternative) — Export el kubeconfig YAML para el cluster."
+"**Kube Config** (alternative) — Export the kubeconfig YAML for the "
+"cluster."
+msgstr "**Kube Config** (alternative) — Export el kubeconfig YAML para el cluster."
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:107
 msgid "Import Process"
@@ -320,10 +330,11 @@ msgstr "CLOUD"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:116
 msgid ""
-"Select a previously-integrated Cloud (or any Cloud for general association)"
-msgstr ""
-"Seleccionar un previamente-integrated Nube (o cualquier Nube para general "
+"Select a previously-integrated Cloud (or any Cloud for general "
 "association)"
+msgstr ""
+"Seleccionar un previamente-integrated Nube (o cualquier Nube para general"
+" association)"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:117
 msgid "CLUSTER NAME"
@@ -365,7 +376,7 @@ msgstr "API TOKEN"
 msgid "The service account token (from prerequisites)"
 msgstr "El servicio account token (desde requisitos previos)"
 
-#: ../../infrastructure/clusters/kubernetes/external.rst:128
+#: ../../infrastructure/clusters/kubernetes/external.rst:127
 msgid "KUBE CONFIG"
 msgstr "KUBE CONFIG"
 
@@ -382,8 +393,8 @@ msgid ""
 "|morpheus| will validate connectivity, sync namespaces, workloads, and "
 "storage, and begin ongoing monitoring."
 msgstr ""
-"|morpheus| será validate connectivity, sync espacios de nombres, cargas de "
-"trabajo, y storage, y begin ongoing monitoring."
+"|morpheus| será validate connectivity, sync espacios de nombres, cargas "
+"de trabajo, y storage, y begin ongoing monitoring."
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:135
 msgid "Authentication Methods"
@@ -395,24 +406,24 @@ msgstr "Externo clusters support two autenticación métodos:"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:139
 msgid ""
-"**API Token** — A bearer token from a Kubernetes service account. Simpler "
-"but requires manual rotation."
+"**API Token** — A bearer token from a Kubernetes service account. Simpler"
+" but requires manual rotation."
 msgstr ""
 "**API Token** — Un bearer token desde un Kubernetes servicio account. "
 "Simpler pero requiere manual rotation."
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:140
 msgid ""
-"**Kube Config** — Full kubeconfig YAML supporting certificate-based auth, "
-"OIDC, and other authentication providers."
+"**Kube Config** — Full kubeconfig YAML supporting certificate-based auth,"
+" OIDC, and other authentication providers."
 msgstr ""
 "**Kube Config** — Completo kubeconfig YAML supporting certificado-based "
 "auth, OIDC, y otro autenticación providers."
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:142
 msgid ""
-"At least one of API Token or Kube Config is required. If both are provided, "
-"the API Token takes precedence."
+"At least one of API Token or Kube Config is required. If both are "
+"provided, the API Token takes precedence."
 msgstr ""
 "Al menos one de API Token o Kube Config es requerido. Si ambos son "
 "proporcionado, el API Token toma precedence."
@@ -427,11 +438,11 @@ msgstr "Once imported, externo clusters support:"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:149
 msgid ""
-"**Workload visibility** — All Pods, Deployments, Services, etc. are synced "
-"and viewable"
+"**Workload visibility** — All Pods, Deployments, Services, etc. are "
+"synced and viewable"
 msgstr ""
-"**Carga de trabajo visibility** — Todos Pods, Deployments, Servicios, etc. "
-"son sincronizado y viewable"
+"**Carga de trabajo visibility** — Todos Pods, Deployments, Servicios, "
+"etc. son sincronizado y viewable"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:150
 msgid "**Namespace management** — Create, view, and manage namespaces"
@@ -487,8 +498,8 @@ msgstr "Usar Cases para Externo Clusters"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:169
 msgid ""
-"**OpenShift integration** — Import managed OpenShift clusters for workload "
-"deployment"
+"**OpenShift integration** — Import managed OpenShift clusters for "
+"workload deployment"
 msgstr ""
 "**OpenShift integration** — Import administrado OpenShift clusters para "
 "carga de trabajo despliegue"
@@ -498,30 +509,28 @@ msgid ""
 "**EKS/GKE/AKS brought externally** — Import cloud-managed clusters not "
 "provisioned through |morpheus|"
 msgstr ""
-"**EKS/GKE/AKS brought externally** — Import cloud-administrado clusters no "
-"aprovisionado a través de |morpheus|"
+"**EKS/GKE/AKS brought externally** — Import cloud-administrado clusters "
+"no aprovisionado a través de |morpheus|"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:171
 msgid ""
-"**On-premises clusters** — Import clusters built with kubeadm, Rancher, or "
-"other tools"
+"**On-premises clusters** — Import clusters built with kubeadm, Rancher, "
+"or other tools"
 msgstr ""
 "**Local clusters** — Import clusters built con kubeadm, Rancher, o otro "
 "tools"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:172
-msgid ""
-"**Development clusters** — Import minikube or kind clusters for testing"
-msgstr ""
-"**Development clusters** — Import minikube o kind clusters para testing"
+msgid "**Development clusters** — Import minikube or kind clusters for testing"
+msgstr "**Development clusters** — Import minikube o kind clusters para testing"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:173
 msgid ""
-"**Multi-cluster management** — Centralize visibility across heterogeneous "
-"Kubernetes environments"
+"**Multi-cluster management** — Centralize visibility across heterogeneous"
+" Kubernetes environments"
 msgstr ""
-"**Multi-cluster gestión** — Centralize visibility a través de heterogeneous "
-"Kubernetes entornos"
+"**Multi-cluster gestión** — Centralize visibility a través de "
+"heterogeneous Kubernetes entornos"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:176
 msgid "Troubleshooting"
@@ -529,32 +538,33 @@ msgstr "Solución de problemas"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:178
 msgid ""
-"**Connection refused:** Verify the API URL is accessible from the |morpheus|"
-" appliance over port 6443"
+"**Connection refused:** Verify the API URL is accessible from the "
+"|morpheus| appliance over port 6443"
 msgstr ""
-"**Conexión refused:** Verificar el API URL es accessible desde el |morpheus|"
-" appliance sobre puerto 6443"
+"**Conexión refused:** Verificar el API URL es accessible desde el "
+"|morpheus| appliance sobre puerto 6443"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:179
 msgid ""
-"**Unauthorized:** Ensure the API token or kubeconfig credentials are valid "
-"and have cluster-admin permissions"
+"**Unauthorized:** Ensure the API token or kubeconfig credentials are "
+"valid and have cluster-admin permissions"
 msgstr ""
-"**Unauthorized:** Asegurar el API token o kubeconfig credentials son válido "
-"y tienen cluster-admin permisos"
+"**Unauthorized:** Asegurar el API token o kubeconfig credentials son "
+"válido y tienen cluster-admin permisos"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:180
 msgid ""
-"**Partial sync:** Some resources may not appear if the service account lacks"
-" list permissions on specific resource types"
+"**Partial sync:** Some resources may not appear if the service account "
+"lacks list permissions on specific resource types"
 msgstr ""
-"**Partial sync:** Algunos recursos puede no aparecer si el servicio account "
-"lacks lista permisos en específico recurso tipos"
+"**Partial sync:** Algunos recursos puede no aparecer si el servicio "
+"account lacks lista permisos en específico recurso tipos"
 
 #: ../../infrastructure/clusters/kubernetes/external.rst:181
 msgid ""
-"**Namespace not visible:** The service account must have cluster-level list "
-"permissions (not just namespace-scoped)"
+"**Namespace not visible:** The service account must have cluster-level "
+"list permissions (not just namespace-scoped)"
 msgstr ""
 "**Namespace not visible:** El servicio account debe tienen cluster-nivel "
 "lista permisos (no solo espacio de nombres-scoped)"
+

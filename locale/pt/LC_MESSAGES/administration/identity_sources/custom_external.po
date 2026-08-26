@@ -1,0 +1,337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/identity_sources/custom_external.rst:2
+msgid "Custom External Identity Source"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:7
+msgid ""
+"The Custom External identity source type allows |morpheus| to integrate "
+"with external Single Sign-On (SSO) systems that are not natively "
+"supported through a dedicated identity source type. This integration "
+"supports both interactive (browser redirect) and non-interactive (API-"
+"based) authentication modes with configurable response encryption."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:10
+msgid "Adding a Custom External Identity Source"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:12
+msgid "Navigate to |AdmTen|"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:13
+msgid "Select the Tenant to add the Identity Source Integration"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:14
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:15
+msgid "Select :guilabel:`+ IDENTITY SOURCE`"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:16
+msgid "Select **Custom External** from the TYPE dropdown"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:17
+msgid "Enter the following:"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:19
+msgid "NAME"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:20
+msgid "A name for this Identity Source integration in |morpheus|."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:22
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:23
+msgid "Optional description of the Identity Source."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:25
+msgid "NONINTERACTIVE"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:26
+msgid "Select the authentication mode:"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:28
+msgid ""
+"**true** — Non-interactive/API mode. The external system authenticates "
+"users without browser redirects. |morpheus| sends credentials directly to"
+" the external system's API."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:29
+msgid ""
+"**false** — Interactive mode. Users are redirected to the external login "
+"URL for authentication, then redirected back to |morpheus| with an "
+"authentication response."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:31
+msgid "EXTERNAL LOGIN URL"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:32
+msgid ""
+"(Interactive mode only) The URL to which users are redirected for "
+"authentication. The external SSO system should redirect back to "
+"|morpheus| after successful authentication with the user identity in the "
+"response."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:34
+msgid "EXTERNAL LOGOUT URL"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:35
+msgid ""
+"(Interactive mode only) The URL to which users are redirected on logout "
+"from |morpheus|. This allows single logout across the SSO environment."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:37
+msgid "AUTH RESPONSE ENCRYPTION ALGORITHM"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:38
+msgid ""
+"The encryption algorithm used to decrypt the authentication response from"
+" the external system:"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:40
+msgid "**NONE** — No encryption; the response is sent in plaintext"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:41
+msgid "**AES** — Advanced Encryption Standard"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:42
+msgid "**DES** — Data Encryption Standard"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:43
+msgid "**DESede** — Triple DES"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:44
+msgid "**HmacSHA1** — HMAC with SHA-1"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:45
+msgid "**HmacSHA256** — HMAC with SHA-256"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:47
+msgid "ENCRYPTION KEY"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:48
+msgid ""
+"(Required when an encryption algorithm other than NONE is selected) The "
+"shared secret key used to decrypt the authentication response."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:50
+msgid "DEFAULT ROLE"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:51
+msgid ""
+"The default |morpheus| Role assigned to users authenticated through this "
+"identity source when no other role mapping applies."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:53
+msgid "REQUIRED ROLE"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:54
+msgid ""
+"(Optional) An external role name that users must possess to be allowed "
+"access to |morpheus|. Leave blank to allow all authenticated users."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:56
+msgid "ROLE MAPPINGS"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:57
+msgid ""
+"Map external role names to |morpheus| roles. Each existing |morpheus| "
+"role is listed with a field to enter the corresponding external role "
+"identifier. Users whose authentication response includes matching role "
+"values are assigned the mapped |morpheus| role."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:59
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:62
+msgid "Authentication Flow"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:65
+msgid "Interactive Mode"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:67
+msgid "User navigates to the |morpheus| login page (or Tenant subdomain URL)"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:68
+msgid "User is redirected to the configured External Login URL"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:69
+msgid "User authenticates with the external SSO system"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:70
+msgid ""
+"External system redirects back to |morpheus| with an encrypted (or "
+"plaintext) authentication response containing user identity and role "
+"information"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:71
+msgid ""
+"|morpheus| decrypts the response (if encrypted), validates the user, and "
+"creates/updates the local user account"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:72
+msgid "User is logged into |morpheus| with the appropriate role assignments"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:75
+msgid "Non-Interactive Mode"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:77
+msgid "User enters credentials on the |morpheus| login page"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:78
+msgid ""
+"|morpheus| sends credentials to the external system's authentication "
+"endpoint"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:79
+msgid ""
+"External system validates credentials and returns user identity and role "
+"information"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:80
+msgid "|morpheus| creates/updates the local user account and logs the user in"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:83
+msgid "Response Format"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:85
+msgid ""
+"The external authentication system must return a response that |morpheus|"
+" can parse to extract:"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:87
+msgid "**Username** — The unique identifier for the user"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:88
+msgid "**Email** — The user's email address"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:89
+msgid "**Roles** — The roles/groups the user belongs to (for role mapping)"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:91
+msgid ""
+"The exact format depends on the external system implementation. When "
+"encryption is configured, the response payload must be encrypted with the"
+" shared key using the configured algorithm before transmission to "
+"|morpheus|."
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:94
+msgid "Security Considerations"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:96
+msgid "Always use HTTPS for the External Login URL and External Logout URL"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:97
+msgid ""
+"When using interactive mode, use a strong encryption algorithm (AES or "
+"HmacSHA256) to protect the authentication response in transit"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:98
+msgid "Store the Encryption Key securely and rotate it periodically"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:99
+msgid "Use the Required Role field to limit access to authorized users only"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:100
+msgid ""
+"The unique identity source code is auto-generated and used in the "
+"callback URL—do not modify it after users have authenticated"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:102
+msgid "Important"
+msgstr ""
+
+#: ../../administration/identity_sources/custom_external.rst:102
+msgid ""
+"Custom External identity source users will not authenticate in |morpheus|"
+" if there is an existing |morpheus| user with a matching username or "
+"email address that was not created by this identity source."
+msgstr ""
+

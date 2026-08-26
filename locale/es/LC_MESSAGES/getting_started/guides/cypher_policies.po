@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -36,9 +36,9 @@ msgstr ""
 "|morpheus| allows administrators to set robust Cypher policies, which "
 "determine global, role, and/or específico user access para configurard "
 "Cypher secret mount points. A number of considerations debería ser made "
-"when deploying Cypher Access policies, including how user role permissions "
-"will interact con the policy y how conflicts entre overlapping policies "
-"are resolved."
+"when deploying Cypher Access policies, including how user role "
+"permissions will interact con the policy y how conflicts entre "
+"overlapping policies are resolved."
 
 #: ../../administration/policies/cypherpolicies.rst:7
 msgid "Role Permissions"
@@ -61,10 +61,11 @@ msgstr ""
 "Role under \"Tools: Cypher\". The Role permission debería ser set basado "
 "en the highest level of access to cualquier one individual Cypher entry "
 "needed for the específico Role. Por ejemplo, if the Role needs no access "
-"to cualquier Cypher entries, set the feature permission to \"None\" y hide "
-"the Cypher UI desde the Role completely. Alternatively, if the Role "
+"to cualquier Cypher entries, set the feature permission to \"None\" y "
+"hide the Cypher UI desde the Role completely. Alternatively, if the Role "
 "necesita use y decrypt even one Cypher entry, set the feature permission "
-"to \"Full Decrypt\". The complete set of disponible permissions are below:"
+"to \"Full Decrypt\". The complete set of disponible permissions are "
+"below:"
 
 #: ../../administration/policies/cypherpolicies.rst:11
 msgid "**NONE:** Cypher UI hidden"
@@ -114,7 +115,9 @@ msgstr ""
 "Access\" y the relevant configuration options será displayed. Además del "
 "type, enter a name for the Policy in the top section."
 
-msgid ".. image:: images/administration/policies/polname.png"
+#: ../../administration/policies/cypherpolicies.rst:22
+#, fuzzy
+msgid ".. image:: /images/administration/policies/polname.png"
 msgstr ".. image:: images/administration/policies/polname.png"
 
 #: ../../administration/policies/cypherpolicies.rst:25
@@ -159,7 +162,9 @@ msgstr "**UPDATE:** Edit Cypher entries on the indicated path"
 msgid "**DELETE:** Delete entries on the indicated path"
 msgstr "**DELETE:** Delete entries on the indicated path"
 
-msgid ".. image:: images/administration/policies/polconfig.png"
+#: ../../administration/policies/cypherpolicies.rst:35
+#, fuzzy
+msgid ".. image:: /images/administration/policies/polconfig.png"
 msgstr ".. image:: images/administration/policies/polconfig.png"
 
 #: ../../administration/policies/cypherpolicies.rst:38
@@ -172,14 +177,20 @@ msgid ""
 "entries which are relevant to their own department."
 msgstr ""
 "Finalmente, set the scope for the Policy. Cypher Access Policies support "
-"Global, Role, y User scope. Por ejemplo, you may want to block off sets of "
-"Cypher entries for various departments dentro de your organization. If you "
-"have existente Roles in |morpheus| for cada department, you can set up "
-"Role-scoped Policies to ensure they can solo list, use, y add Cypher "
+"Global, Role, y User scope. Por ejemplo, you may want to block off sets "
+"of Cypher entries for various departments dentro de your organization. If"
+" you have existente Roles in |morpheus| for cada department, you can set "
+"up Role-scoped Policies to ensure they can solo list, use, y add Cypher "
 "entries which are relevant to their own department."
 
-msgid ".. image:: images/administration/policies/polfilter.png"
+#: ../../administration/policies/cypherpolicies.rst:40
+#, fuzzy
+msgid ".. image:: /images/administration/policies/polfilter.png"
 msgstr ".. image:: images/administration/policies/polfilter.png"
+
+#: ../../administration/policies/cypherpolicies.rst:43
+msgid "Important"
+msgstr ""
 
 #: ../../administration/policies/cypherpolicies.rst:43
 msgid ""
@@ -196,16 +207,16 @@ msgid ""
 "would be granted the rights in the Role-scoped Policy."
 msgstr ""
 "When Cypher Access Policies conflict, the Policy con the longest path "
-"string length (typically the la mayoría de specific) takes precedence. Por "
-"ejemplo, a Policy giving LIST y READ access to \"secret/aws/.*\" would be "
-"superseded by a Policy giving NO access to \"secret/aws/my-secret-key\". "
-"In such a case, el usuario would see everything at the \"secret/aws/.*\" "
-"path except the one indicated in the more específico Policy. When Policies "
-"targeting the mismo path differ solo in their scope, lo siguiente scope "
-"precedence is applied: Role > User > Global. Por ejemplo, if a Role-scoped "
-"Policy targeting \".*\" grants LIST y READ while a User-scoped Policy "
-"targeting the mismo path grants LIST, el usuario would be granted the "
-"rights in the Role-scoped Policy."
+"string length (typically the la mayoría de specific) takes precedence. "
+"Por ejemplo, a Policy giving LIST y READ access to \"secret/aws/.*\" "
+"would be superseded by a Policy giving NO access to \"secret/aws/my-"
+"secret-key\". In such a case, el usuario would see everything at the "
+"\"secret/aws/.*\" path except the one indicated in the more específico "
+"Policy. When Policies targeting the mismo path differ solo in their "
+"scope, lo siguiente scope precedence is applied: Role > User > Global. "
+"Por ejemplo, if a Role-scoped Policy targeting \".*\" grants LIST y READ "
+"while a User-scoped Policy targeting the mismo path grants LIST, el "
+"usuario would be granted the rights in the Role-scoped Policy."
 
 #: ../../administration/policies/cypherpolicies.rst:46
 msgid "Cloud Profiles"
@@ -226,18 +237,18 @@ msgid ""
 "\"Admin: Profiles\", \"Infrastructure: Clouds\", and Cloud/Group access "
 "must be used to restrict access via Cloud detail pages."
 msgstr ""
-"Terraform Cloud Profiles are created on cada Cloud detail page (|InfClo| > "
-"Selected Cloud > Profiles Tab), encrypted in Cypher, y create a Cypher "
-"entry that is visible ambos on the Profile tab of the Cloud detail page y "
-"in Cypher. When added to a Cloud they create a Cypher entry at path "
-"tfvars/profile/cloud/$cloudCode/variables. If a Cloud profile Cypher entry "
-"is restricted by a Cypher Access policy, it será (or no be) "
+"Terraform Cloud Profiles are created on cada Cloud detail page (|InfClo| "
+"> Selected Cloud > Profiles Tab), encrypted in Cypher, y create a Cypher "
+"entry that is visible ambos on the Profile tab of the Cloud detail page y"
+" in Cypher. When added to a Cloud they create a Cypher entry at path "
+"tfvars/profile/cloud/$cloudCode/variables. If a Cloud profile Cypher "
+"entry is restricted by a Cypher Access policy, it será (or no be) "
 "listable/readable/deletable as dictated by the Policy pero still será "
 "viewable desde the Cloud detail page if el usuario has sufficient "
 "permissions. Restricting o granting access to Cloud profiles via Policy "
-"does no affect access on the Cloud. Other Role permissions, como \"Admin: "
-"Profiles\", \"Infrastructure: Clouds\", y Cloud/Group access debe ser used "
-"to restrict access via Cloud detail pages."
+"does no affect access on the Cloud. Other Role permissions, como \"Admin:"
+" Profiles\", \"Infrastructure: Clouds\", y Cloud/Group access debe ser "
+"used to restrict access via Cloud detail pages."
 
 #: ../../administration/policies/cypherpolicies.rst:51
 msgid "Example Policy"
@@ -251,12 +262,13 @@ msgid ""
 "I don't want either of these departments to access any of those."
 msgstr ""
 "In my example organization, I have one department that needs access to "
-"AWS-related secrets y another department that needs access to "
-"Azure-related secrets. There are many other secrets stored in my appliance "
-"but I don't want either of these departments acceder any of those."
+"AWS-related secrets y another department that needs access to Azure-"
+"related secrets. There are many other secrets stored in my appliance but "
+"I don't want either of these departments acceder any of those."
 
-#: ../../administration/policies/cypherpolicies.rst:56
-msgid ".. image:: images/administration/policies/cypherlist.png"
+#: ../../administration/policies/cypherpolicies.rst:55
+#, fuzzy
+msgid ".. image:: /images/administration/policies/cypherlist.png"
 msgstr ".. image:: images/administration/policies/cypherlist.png"
 
 #: ../../administration/policies/cypherpolicies.rst:57
@@ -267,14 +279,15 @@ msgid ""
 "Policy with the more specific path will supersede the more generic Policy"
 " that includes a wildcard."
 msgstr ""
-"For the first department, I've set up a Policy that allows them to list y "
-"read (including use y decryption rights) AWS secrets. A second Policy "
+"For the first department, I've set up a Policy that allows them to list y"
+" read (including use y decryption rights) AWS secrets. A second Policy "
 "specifically excludes them desde seeing one específico entry. The Policy "
 "con the more específico path will supersede the more generic Policy that "
 "includes a wildcard."
 
-#: ../../administration/policies/cypherpolicies.rst:60
-msgid ".. image:: images/administration/policies/pollist.png"
+#: ../../administration/policies/cypherpolicies.rst:59
+#, fuzzy
+msgid ".. image:: /images/administration/policies/pollist.png"
 msgstr ".. image:: images/administration/policies/pollist.png"
 
 #: ../../administration/policies/cypherpolicies.rst:61
@@ -282,11 +295,12 @@ msgid ""
 "By impersonating the user, we see they indeed have access to just the two"
 " desired Cypher entries."
 msgstr ""
-"By impersonating the user, we see they indeed have access to just the two "
-"desired Cypher entries."
+"By impersonating the user, we see they indeed have access to just the two"
+" desired Cypher entries."
 
-#: ../../administration/policies/cypherpolicies.rst:64
-msgid ".. image:: images/administration/policies/user1cypher.png"
+#: ../../administration/policies/cypherpolicies.rst:63
+#, fuzzy
+msgid ".. image:: /images/administration/policies/user1cypher.png"
 msgstr ".. image:: images/administration/policies/user1cypher.png"
 
 #: ../../administration/policies/cypherpolicies.rst:65
@@ -294,11 +308,12 @@ msgid ""
 "For the second department, I have set up a Policy that allows them to "
 "list and read (including use and decryption rights) Azure secrets."
 msgstr ""
-"For the second department, I have set up a Policy that allows them to list "
-"y read (including use y decryption rights) Azure secrets."
+"For the second department, I have set up a Policy that allows them to "
+"list y read (including use y decryption rights) Azure secrets."
 
-#: ../../administration/policies/cypherpolicies.rst:68
-msgid ".. image:: images/administration/policies/cypherlist2.png"
+#: ../../administration/policies/cypherpolicies.rst:67
+#, fuzzy
+msgid ".. image:: /images/administration/policies/cypherlist2.png"
 msgstr ".. image:: images/administration/policies/cypherlist2.png"
 
 #: ../../administration/policies/cypherpolicies.rst:69
@@ -306,10 +321,11 @@ msgid ""
 "By impersonating the user once again, we see they indeed have access only"
 " to Azure entries."
 msgstr ""
-"By impersonating the user once again, we see they indeed have access only "
-"to Azure entries."
+"By impersonating the user once again, we see they indeed have access only"
+" to Azure entries."
 
-#: ../../internal administration/policies/cypherpolicies.rst:72 after padding
-msgid ".. image:: images/administration/policies/user2cypher.png"
+#: ../../administration/policies/cypherpolicies.rst:71
+#, fuzzy
+msgid ".. image:: /images/administration/policies/user2cypher.png"
 msgstr ".. image:: images/administration/policies/user2cypher.png"
 

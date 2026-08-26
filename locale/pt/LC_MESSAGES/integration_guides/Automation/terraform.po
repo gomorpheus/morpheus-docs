@@ -1,0 +1,1241 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Automation/terraform.rst:2
+msgid "Terraform"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:5
+msgid "Requirements"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:8
+msgid "Role Access"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:10
+msgid ""
+"In order to see the Terraform App Blueprint type option and create "
+"Terraform App Blueprints in |LibBluApp|, the |morpheus| user must have "
+"Role permissions for `Provisioning: Blueprints - Terraform` set to "
+"`Full`."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:12
+#: ../../integration_guides/Automation/terraform.rst:150
+msgid ""
+"In order to provision Terraform Apps in |ProApp|, the Morpheus user must "
+"have Role permissions for `Provisioning: Blueprints - Terraform` set to "
+"`Provision` or `Full`."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:14
+msgid ""
+"Existing Terraform Blueprints must be added before they can be "
+"provisioned from |ProApp|."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:16
+msgid ""
+"In order to provision Terraform Apps, the user must have Role permissions"
+" for `Provisioning: Apps` set to `Full`."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:19
+msgid "Github/Git Repo"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:21
+msgid ""
+"To use .tf files from a Git repo, a Git or Github integration needs to be"
+" configured in |AdmInt|. If one is not configured, .tf or .tf.json files "
+"can be manually drafted in |morpheus| and added to Terraform App "
+"Blueprints but they could not be sourced from version control "
+"repositories."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:24
+msgid "Supported App Provisioning Targets"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:26
+msgid "VMware"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:27
+msgid "Amazon AWS"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:28
+msgid "Microsoft Azure"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:29
+msgid "Google Cloud Platform (GCP)"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:30
+msgid "Oracle Cloud"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:159
+#: ../../integration_guides/Automation/terraform.rst:32
+#: ../../integration_guides/Automation/terraform.rst:68
+#: ../../integration_guides/Automation/terraform.rst:148
+#: ../../integration_guides/Automation/terraform.rst:150
+#: ../../integration_guides/Automation/terraform.rst:180
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:32
+msgid "Additional clouds are planned for later releases."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:35
+msgid "Terraform Installation"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:37
+msgid ""
+"The first time you attempt to provision a Terraform App, you may come "
+"across an error indicating that Terraform is not installed:"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:39
+msgid "bash: line 1: terraform: command not found"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:45
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/terraform/1commandNotFound.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:49
+msgid ""
+"This likely means you've not yet configured Terraform Settings within "
+"|morpheus| global settings. Navigate to :menuselection:`Administration "
+"--> Settings --> Provisioning` and scroll down to the Terraform Settings "
+"section. By default, the Terraform Runtime field is set to \"Manual\". "
+"When set this way, |morpheus| will attempt to use Terraform as installed "
+"on the appliance box and it may not be currently installed. To have "
+"|morpheus| manage the Terraform installation process for you and manage "
+"Terraform versioning on a per-App basis, set the Terraform Runtime to "
+"\"Auto\". You should also set the Default Terraform Version field as "
+"well. When a version is set on a Terraform Spec Template or Terraform App"
+" Blueprint, that version will supersede the default version indicated in "
+"global settings."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:53
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/terraform/2configuredTfRuntime.png"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:19
+#: ../../integration_guides/Automation/terraform.rst:57
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:57
+msgid ""
+"|morpheus| appliances which do not have access to the Internet will need "
+"to leave Terraform Runtime settings on \"Manual\" and ensure Terraform is"
+" installed appropriately on the appliance. Install Terraform in the "
+"/usr/sbin/terraform directory and make sure it's owned by the morpheus-"
+"local user."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:60
+msgid "Creating Terraform App Blueprints"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:62
+msgid ""
+"In order to provision Terraform apps, Terraform App Blueprints must be "
+"created first."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:64
+msgid "Navigate to |LibBluApp|"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:65
+#: ../../integration_guides/Automation/terraform.rst:153
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:66
+msgid "Name the Blueprint and select `Terraform` type."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:68
+msgid ""
+"In order to see the Terraform Blueprint type option, the |morpheus| user "
+"must have Role permissions for `Provisioning: Blueprints - Terraform` set"
+" to `Full`."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:70
+#: ../../integration_guides/Automation/terraform.rst:155
+#: ../../integration_guides/Automation/terraform.rst:157
+#: ../../integration_guides/Automation/terraform.rst:186
+msgid "Select :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:71
+msgid "Configure the following:"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:73
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:74
+msgid "Friendly name for the App Blueprint in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:75
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:76
+msgid "Description for your App Blueprint shown in the Apps list (optional)"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:77
+msgid "CATEGORY"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:78
+msgid "A category for your App (optional)"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:79
+msgid "IMAGE"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:80
+msgid ""
+"Add reference icon for your App Blueprint to make it more identifiable at"
+" provision time (optional)"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:81
+msgid ""
+"CONFIG TYPE (select Terraform Specs, Terraform (.tf), Terraform.json, or "
+"Git Repository)"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:85
+#: ../../integration_guides/Automation/terraform.rst:96
+msgid "CONFIG"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:86
+msgid ""
+"Draft or paste in .tf content in the config text area. Variables will be "
+"presented as input fields during App provisioning, or auto-populated with"
+" matching values if contained in a selected TFVAR Secret file added to "
+"the Cypher service."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:87
+#: ../../integration_guides/Automation/terraform.rst:98
+#: ../../integration_guides/Automation/terraform.rst:109
+#: ../../integration_guides/Automation/terraform.rst:126
+msgid "TFVAR SECRET"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:88
+#: ../../integration_guides/Automation/terraform.rst:99
+#: ../../integration_guides/Automation/terraform.rst:110
+#: ../../integration_guides/Automation/terraform.rst:127
+msgid ""
+"Select an existing tfvar secret file stored in |morpheus| Cypher service."
+" This list is automatically filtered to show all Cypher entries which are"
+" currently stored at the \"tfvar/*\" Cypher mount point. Note that tfvars"
+" already set in any existing Terraform Cloud Profiles will already be "
+"available to your App and wouldn't need to be set here."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:89
+#: ../../integration_guides/Automation/terraform.rst:100
+#: ../../integration_guides/Automation/terraform.rst:111
+#: ../../integration_guides/Automation/terraform.rst:128
+msgid "VERSION"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:90
+#: ../../integration_guides/Automation/terraform.rst:101
+#: ../../integration_guides/Automation/terraform.rst:112
+#: ../../integration_guides/Automation/terraform.rst:129
+msgid ""
+"Specify a version required by your Terraform App (optional). If "
+"specified, the given version will supersede the global Terraform version "
+"specified in |morpheus| global settings (:menuselection:`Administration "
+"--> Settings --> Provisioning`). \"Terraform Runtime\" must also be set "
+"to \"auto\" in global settings for |morpheus| to manage the Terraform "
+"version for you. When set to \"manual\", |morpheus| will use the "
+"Terraform version installed on the appliance box."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:91
+#: ../../integration_guides/Automation/terraform.rst:102
+#: ../../integration_guides/Automation/terraform.rst:113
+#: ../../integration_guides/Automation/terraform.rst:130
+msgid "OPTIONS"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:92
+#: ../../integration_guides/Automation/terraform.rst:103
+msgid ""
+"Specify any valid Terraform command line options |morpheus| should append"
+" to its internal \"terraform apply\" call when the App is provisioned"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:97
+msgid ""
+"Draft or paste in .tf.json content in the config text area. Variables "
+"will be presented as input fields during App provisioning, or auto-"
+"populated with matching values if contained in a selected TFVAR Secret "
+"file added to the Cypher service."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:107
+msgid "SPEC TEMPLATE"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:108
+msgid ""
+"Using the typeahead field, select all Terraform-type Spec Templates which"
+" make up your App. Variables will be presented as input fields during App"
+" provisioning, or auto-populated with matching values if contained in a "
+"selected TFVAR Secret file added to the Cypher service."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:114
+#: ../../integration_guides/Automation/terraform.rst:131
+msgid ""
+"Specify any valid Terraform command line options |morpheus| should append"
+" to its internal \"terraform apply\" call when the App is provisioned."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:118
+msgid "SCM INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:119
+msgid ""
+"Select a Github or Git integration that has been added in |AdmInt| and "
+"which contains relevant .tf files. Integrations must be pre-existing "
+"prior to creating the App Blueprint."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:120
+msgid "Repository"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:121
+msgid ""
+"Select a repository which contains relevant .tf files from the Github or "
+"Git integration selected in the prior step."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:122
+msgid "BRANCH OR TAG"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:123
+msgid ""
+"Select the Git branch containing the desired version of .tf files for the"
+" App. \"master\" is chosen by default if no value is entered."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:124
+msgid "WORKING PATH"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:125
+msgid ""
+"Enter the repo path for the .tf file(s). ``./`` is default if no value is"
+" entered."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:134
+msgid "Select :guilabel:`COMPLETE`"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:136
+msgid ""
+"|morpheus| will scan the blueprint to check for validity and will surface"
+" any errors which need correcting before the App Blueprint can be saved. "
+"Your Terraform App is ready to be provisioned from |ProApp|."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:139
+msgid "Cloud Profiles"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:3
+msgid ""
+"Access to **Profiles** tab is determined by the following role "
+"permissions:"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:5
+msgid "Role: Feature Access: ``Admin: Profiles``"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:6
+msgid "None: Cannot access Profiles tab or create/view/edit/delete profiles"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:7
+msgid ""
+"Read: Can access Profiles tab, can view profiles, cannot "
+"create/edit/delete profiles"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:8
+msgid "Full: Can access Profiles tab, can create/view/edit/delete profiles"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:11
+msgid "Terraform Profiles"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:13
+msgid ""
+"Terraform Profiles allow creation of Cloud-associated tfvars secrets, "
+"allowing tf apps and specs to be provisioned across multiple clouds that "
+"required different tfvars."
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:14
+msgid ""
+"Target Cloud Terraform Profiles are automatically mapped to tf apps/specs"
+" during provisioning, no manual scoping is required."
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:15
+msgid ""
+"Terraform Profiles are encrypted in Cypher and creating a profile creates"
+" a Cypher entry with key `tfvars/profile/cloud/$cloudCode/variables``"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:16
+msgid "Terraform Profiles can be edited after creation"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:17
+msgid ""
+"Terraform Profiles are limited to one per Cloud, once one is created for "
+"the Cloud the option to create a Terraform Profile is no longer present. "
+"Edit the existing Terraform Profile to make changes at that point"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:19
+msgid ""
+"Since |morpheus| mounts Terraform Profiles in Cypher using a mount point "
+"which contains the Cloud code value, any Clouds which have the same code "
+"will share a Terraform Profile. Create or edit Clouds to have a unique "
+"code value if they should have a unique Terraform Profile. It's also "
+"important to understand that |morpheus| does not require Clouds have a "
+"code at creation time. When Clouds are created without a code, |morpheus|"
+" applies a generic non-unique code based on the Cloud type (\"amazon\" "
+"for AWS Clouds, as an example). This sets up a potential situation where "
+"all Clouds of the same type have the same generic Cloud code and thus "
+"share a Terraform Profile. To avoid this situation, enter a Cloud code "
+"value at creation time or edit existing Clouds to have a unique code."
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:22
+msgid "Create a Terraform Profile"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:24
+msgid "Navigate to |InfClo| and select a Cloud"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:25
+msgid "Select the \"Profiles\" tab"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:26
+msgid "Select :guilabel:`+ ADD PROFILE`"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:27
+msgid "Select Terraform Profile Type"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:28
+msgid "Enter tfvars in the `Terraform Profile Variables` field"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:30
+msgid "example Terraform Profile Variables"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:32
+msgid ""
+"access_key=\"****acccessKey****\"\n"
+"secret_key=\"********secretKey**********\"\n"
+"region=\"us-west-1\""
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:39
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../infrastructure/clouds/profiles.rst:41
+msgid ""
+"Now, when provisioning a Terraform Instance or App to the Cloud the "
+"profile was created in, the tfvars in the profile become available to "
+"Terraform. It is not necessary to manually tie this tfvars files to your "
+"App Blueprint, these tfvars will automatically be available to Terraform "
+"whenever you provision an App to this cloud."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:146
+msgid "Provisioning Terraform Apps"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:148
+msgid ""
+"Terraform App Blueprints must be added to |LibBluApp| before they can be "
+"provisioned. At least one Terraform App Blueprint must exist before "
+"Terraform Apps can be provisioned from |ProApp|."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:152
+msgid "Navigate to |ProApp|"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:154
+msgid "Choose an existing Terraform App Blueprint"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:156
+msgid ""
+"Enter a NAME for the App and select the Group, Default Cloud and "
+"Environment (optional)"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:158
+msgid "Configure the following sections:"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:162
+msgid "BACKEND TYPE"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:163
+msgid ""
+"Internal is the default selection and the most secure choice. This sends "
+"the Terraform state back to the appliance via HTTP loopback to be stored "
+"in the appliance database. Users may also select Local which will write "
+"Terraform state to the local filesystem first before being stored in the "
+"database and removed from the local filesystem. If unsure, use the "
+"default Internal value. **Backend Type selection is currently only "
+"available for Terraform Apps. Selecting Backend Type for Terraform "
+"Instance Types is a planned future feature addition.**"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:164
+msgid "VALIDATE PLAN"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:165
+msgid ""
+"Marked by default. When unmarked, |morpheus| will not perform its typical"
+" validation to ensure the Terraform spec is valid. Typically users would "
+"only unmark this box if onboarding an existing App with Initial State "
+"(see Advanced Options configuration below)."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:166
+msgid "RUN APPLY"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:167
+msgid ""
+"Marked by default. When unmarked, |morpheus| will not apply the plan at "
+"completion of the App wizard. Typically users would only unmark this box "
+"if onboarding an existing App with Initial State (see Advanced Options "
+"configuration below)."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:171
+msgid ""
+"Populate any required or optional variables here. Variables whose values "
+"are stored in an associated tfvars file sourced from |morpheus| Cypher "
+"are masked from the user. Variables stored in any Terraform Cloud Profile"
+" associated with the selected Cloud also are automatically masked. Other "
+"variables will be presented in the Terraform Variables section for user "
+"entry and any configured default values on the Terraform spec will be "
+"pre-loaded."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:175
+msgid "REFRESH MODE"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:176
+msgid ""
+"Set an interval at which |morpheus| should automatically check the App "
+"for drift from the Terraform spec. If set to Manual, |morpheus| will "
+"never perform automatic checks and the user must do so when desired. The "
+"results of drift checks are reported on the App detail page and users may"
+" apply the plan at any time to bring the App back into alignment with the"
+" Terraform spec."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:177
+msgid "INITIAL STATE"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:178
+msgid ""
+"Paste in existing Terraform state to onboard an existing Terraform App "
+"for |morpheus| management. Though the field is small, it will accept "
+"large, multiline Terraform state. When creating an App from existing "
+"state, users may want to skip plan validation or may not want to apply "
+"right away. Opt out of these functions by unmarking the corresponding box"
+" in the App Settings section."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:180
+msgid ""
+"Terraform state import is a new feature. At this time, some state file "
+"components may break the import process. This feature is being iterated "
+"on rapidly to increase coverage to as many application types and "
+"conditions as possible."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:184
+msgid ""
+"Review the Terraform App components here, including any providers "
+"invoked, variables surfaced from the App spec, resources to be created, "
+"and .tf files utilized. There is no user input to be entered into this "
+"section."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:187
+msgid ""
+"|morpheus| will now validate the App (unless the user has opted out of "
+"this check) and surface any errors which would cause provisioning issues."
+" If all is well, click :guilabel:`COMPLETE`"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:25
+#: ../../integration_guides/Automation/terraform.rst:189
+#: ../../integration_guides/Automation/terraform.rst:200
+#: ../../integration_guides/Automation/terraform.rst:226
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:189
+msgid ""
+"Review the App in the Terraform Preview section. If any config data needs"
+" to be edited, select the `RAW` tab, edit the config, and then select the"
+" `BUILDER` tab once again. The config changes from the RAW edit will be "
+"updated in the preview section for further review. Permanent edits can be"
+" made by editing the App Blueprint, pushing .tf changes to your code "
+"repository, or Terraform Spec Templates (depending on how the .tf files "
+"are sourced for your App Blueprint)."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:191
+msgid "The Terraform App will begin to provision."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:193
+msgid ""
+"Once provisioning is completed, note the State tab in the App details "
+"page (|ProApp| > select the App). This tab contains subsections related "
+"to state management which is discussed in greater detail in the next "
+"section."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:196
+msgid "Terraform App State Management"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:198
+msgid ""
+"State management is handled from the State Tab of the Terraform App "
+"detail page (|ProApp| > selected App). With the tab selected, the "
+"Terraform command field will be present regardless of the selected "
+"subsection. Use this field to send Terraform commands to your apps just "
+"like using Terraform from the command line. Press return on the keyboard "
+"or click on the \"play\" button to the right of the text field to execute"
+" the commmand."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:200
+msgid ""
+"\"terraform\" is automatically entered for each command as printed along "
+"the left edge of the text field. Thus, you don't need to enter "
+"\"terraform\" with each command sent. Entering \"state\" or \"plan\" is "
+"equal to entering \"terraform state\" or \"terraform plan\" from the "
+"command line."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:202
+msgid ".. image:: /images/integration_guides/automation/terraform/appDetail.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:204
+msgid ""
+"When Terraform commands are executed against the application, |morpheus| "
+"provides progress bars and command output in the UI. Command output is "
+"shown underneath the Terraform command field. Users can dismiss "
+"individual output windows by clicking the \"x\" button in the upper-right"
+" of each window. All command output can be dismissed by clicking the blue"
+" \"x\" button to the right of the command field itself."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:206
+msgid ""
+"Within the ACTIONS reside four selections: Refresh State, Apply State, "
+"Edit Inputs, and Edit STATE. Selecting Refresh State is equivalent to "
+"using the \"terraform plan\" command from the command line. This will "
+"read the existing state of any existing objects which are part of the App"
+" and compare their current configuration against the prior state. Any "
+"differences will be noted in the output. If differences are discovered, "
+"the App is considered to be in a \"drift\" state. This drift status is "
+"shown in the UI when the user is viewing the \"State\" subsection (which "
+"is described in greater detail in the next section). The output of the "
+"Refresh State command, including detailed information about changes "
+"Terraform would make to App objects to in order to realign them with the "
+"App spec are shown in the UI."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:208
+msgid ".. image:: /images/integration_guides/automation/terraform/planOutput.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:210
+msgid ""
+"The Apply State selection brings up a modal which allows the user to view"
+" the App spec once again. This includes being able to view and edit "
+"Terraform variables if needed. After making any needed edits, click "
+":guilabel:`NEXT` and |morpheus| will validate the App once again, just "
+"like it did at provision time. On the next tab of the wizard, |morpheus| "
+"will show the user and planned changes that would be executed if the user"
+" completes the modal. An output will be shown as if \"terraform plan\" "
+"were run from the command line. Make note of any App objects which would "
+"be created, altered, or destroyed if the actions are accepted as "
+"|morpheus| would immediately take them if desired. When ready, click "
+":guilabel:`COMPLETE`. This will execute all planned changes as if the "
+"user had run \"terraform apply -auto-approve\" from a terminal session."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:212
+msgid ""
+"Edit Inputs allows for editing of Input values without going through the "
+"process of applying state. Edit State displays the state in a large text "
+"area for direct editing."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:215
+msgid "State Subsection"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:217
+msgid ""
+"The State Subsection shows the current drift state of the App. This "
+"includes when |morpheus| has last checked for drift and whether the App "
+"is currently in a \"Drift\" or \"No Drift\" state. If the App is "
+"currently in a Drift state, users can select Refresh State from the "
+"ACTIONS menu to identify which objects and attributes have deviated from "
+"the App configuration."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:219
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/terraform/stateSubsection.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:222
+msgid "Specs Subsection"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:224
+msgid ""
+"The Specs Subsection will show the user all |morpheus| Spec Templates "
+"(|LibTemSpe|) which make up the App. Users may even edit Spec Template "
+"config directly from this view by clicking the Edit (pencil) icon to the "
+"right of each Spec Template listed."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:226
+msgid ""
+"Editing a Spec Template here will detach it from the source object, "
+"essentially making it a brand new object that exists only here. All "
+"future updates to that Spec Template would have to be made here going "
+"forward. In most cases, it's advisable to edit the Spec Template directly"
+" at the source. For example, if this Spec Template were sourced from an "
+"integrated version control repository (ex. Github), it's likely the best "
+"option to make a new commit into your repository and then let Terraform "
+"handle the process of bringing your App in line with the new "
+"specifications."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:228
+msgid ".. image:: /images/integration_guides/automation/terraform/editSpec.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:231
+msgid "Plan Subsection"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:233
+msgid ""
+"This section displays the output of the most recent \"terraform plan\" "
+"run against your App. This will either indicate that your infrastructure "
+"(App) matches the configuration or it will indicate that a drift of some "
+"sort has taken place."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:236
+msgid "Input Subsection"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:238
+msgid ""
+"This section lists all Terraform inputs, such as variables, which are "
+"relevant to the App. Variable values are shown unless they are flagged as"
+" sensitive in your configuration. All variables sourced from a |morpheus|"
+" Cypher tfvars mount will automatically be masked."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:241
+msgid "Output Subsection"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:243
+msgid "This section lists all configured Terraform output."
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:246
+msgid "Terraform Instance Type Example"
+msgstr ""
+
+#: ../../integration_guides/Automation/terraform.rst:248
+msgid ""
+"Terraform Spec can also be used within the |morpheus| Instance Type "
+"construct in addition to App Blueprints and Apps. Expand the section "
+"below to see a complete end-to-end example of a Terraform Instance Type "
+"from drafting new Spec Templates through to provisioning."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:3
+msgid ""
+"`Terraform <https://www.terraform.io/intro/index.html>`_ is a common tool"
+" that allows IT administrators to map out infrastructure as code in "
+"configuration files and supports all of the popular providers used in the"
+" modern datacenter. Once configured, Terraform will plan, deploy, and "
+"manage the infrastructure as needed. Configuration files can be brought "
+"under version control so teams can easily make changes to environments. "
+"Infrastructure can also be monitored for drift and corrective action can "
+"easily be taken."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:5
+msgid ""
+"|morpheus| allows users to on-board or even draft Terraform spec "
+"directly. With the configuration on-board, we can begin to piece together"
+" infrastructure constructs into the |morpheus| Library as Layouts and "
+"Instance Types. With the Library items staged, users can deploy new "
+"infrastructure directly into the selected providers. Once deployed, "
+"infrastructure can be monitored for drift from within |morpheus| UI. When"
+" needed, we can plan and take corrective action easily from the detail "
+"page of a |morpheus| Terraform Instance."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:7
+msgid ""
+"In this section, we've discussed a high-level overview of Terraform and "
+"working with Terraform in the |morpheus| context. In the next section, "
+"we'll actually onboard Terraform spec, create Library items, and deploy "
+"real infrastructure to AWS with |morpheus|."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:12
+msgid ""
+"In this example, we're going to deploy a VPC and three subnets to AWS "
+"using Terraform and |morpheus|. I've created Spec Templates to onboard "
+"``.tf`` configuration files which handle the AWS provider (with assume "
+"role for account flexibility), VPC creation, subnet creation, and "
+"variable injection."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:14
+msgid ""
+"We'll onboard the Terraform configuration files as modular Spec "
+"Templates, create new Instance Types with custom Layouts for the "
+"|morpheus| Library, and set up Inputs to inject variable values at "
+"provision time. Once deployed, we'll take a look at the new "
+"infrastructure in |morpheus| and go over the management capabilities for "
+"the new environment."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:19
+msgid ""
+"Terraform configuration is stored as a Spec Template in |morpheus|. You "
+"can store your configuration as one monolithic file for each Instance "
+"Type you intend to create or you can create individual Spec Templates for"
+" modular pieces which can be reused across multiple Instance Types. When "
+"added to the Layout later, we'll be able to include as many Spec "
+"Templates as we wish which enables us to reuse smaller modular pieces if "
+"desired."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:21
+msgid ""
+"Spec Templates are added in the |morpheus| Library (|LibTemSpe| tab). We "
+"can pull in the template from some type of repository, such as through a "
+"Github integration, or write new spec directly into the New Spec Template"
+" modal. In most cases, the spec will be pre-existing and pulled in from a"
+" version-controlled repository but here I have my Terraform spec entered "
+"locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the"
+" example below and click :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:23
+msgid ""
+"In the VERSION field at the bottom of the TF Spec Template modal, enter a"
+" Terraform version number to force that version to be used. This version "
+"is only honored if the Terraform Runtime setting "
+"(:menuselection:`Administration --> Settings --> Provisioning`) is set to"
+" \"auto\". When \"manual\" is selected as the Terraform Runtime setting, "
+"|morpheus| will simply use the version installed on the appliance box."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:25
+msgid ""
+"When declaring variables, keep in mind that |morpheus| expects users to "
+"follow Terraform best practices. For example, when a variable type is not"
+" defined, it defaults to string. See `Terraform Documentation "
+"<https://www.terraform.io/docs/language/values/variables.html>`_ for "
+"additional resources on variable declaration."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:27
+msgid ".. image:: /images/integration_guides/terr_inst_guide/1newSpec.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:31
+msgid ""
+"# This spec template creates AWS subnets based on the count requested "
+"utilizing the vpc cidr provided in var.vpc_cidr variable\n"
+"\n"
+"locals {\n"
+"  bitCount = "
+"sum([tonumber(local.subnet_options.cidrMask),-tonumber(split(\"/\",var.vpc_cidr)[1])])"
+"\n"
+"}\n"
+"\n"
+"resource \"aws_subnet\" \"main\" {\n"
+"    count = tonumber(var.subnetCount)\n"
+"    vpc_id     = aws_vpc.main.id\n"
+"    cidr_block = cidrsubnet(var.vpc_cidr, local.bitCount, count.index)\n"
+"\n"
+"    tags = merge(\n"
+"        local.default_tags,\n"
+"        {\n"
+"        Name = \"${var.vpc_name}-subnet-0${count.index}\"\n"
+"        }\n"
+"    )\n"
+"}\n"
+"\n"
+"output \"aws_subnet\" {\n"
+"  value = aws_subnet.main\n"
+"  sensitive = true\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:59
+#, python-brace-format
+msgid ""
+"variable \"access_key\" {\n"
+"  type        = string\n"
+"}\n"
+"\n"
+"variable \"secret_key\" {\n"
+"  type        = string\n"
+"}\n"
+"\n"
+"variable \"subnetCount\" {\n"
+"  type = number\n"
+"  default = \"<%=customOptions.subnetCount%>\"\n"
+"}\n"
+"\n"
+"variable \"sensitive_thing\" {\n"
+"  type = string\n"
+"  default = \"this_var_is_sensitive\"\n"
+"  sensitive = true\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:82
+msgid ""
+"terraform {\n"
+"  required_providers {\n"
+"    aws = {\n"
+"      source = \"hashicorp/aws\"\n"
+"      version = \">= 3.35.0\"\n"
+"    }\n"
+"  }\n"
+"}\n"
+"\n"
+"provider \"aws\" {\n"
+"  region     = local.vpc_options.region\n"
+"  access_key = var.access_key\n"
+"  secret_key = var.secret_key\n"
+"\n"
+"  assume_role {\n"
+"    # The role ARN within Account B to AssumeRole into.\n"
+"    role_arn = "
+"\"arn:aws:iam::${local.vpc_options.aws_account}:role/OrganizationAccountAccessRole\""
+"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:106
+msgid ""
+"locals {\n"
+"  #  Common tags to be assigned to all resources\n"
+"  default_tags = {\n"
+"    Owner    = \"<%=username%>\"\n"
+"    Group = \"<%=groupName%>\"\n"
+"    Management_Tool = \"Terraform\"\n"
+"    Management_Platform = \"Morpheus\"\n"
+"  }\n"
+"\n"
+"  subnet_options = {\n"
+"    cidrMask = \"<%=customOptions.cidrMask%>\"\n"
+"    subnetCount = \"<%=customOptions.subnetCount%>\"\n"
+"  }\n"
+"  vpc_options = {\n"
+"    region = \"<%=customOptions.awsRegion%>\"\n"
+"    aws_account = \"<%=customOptions.awsAccount%>\"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:129
+msgid ""
+"variable \"vpc_cidr\" {\n"
+"  type        = string\n"
+"  description = \"CIDR for the the VPC\"\n"
+"  default = \"172.16.0.0/24\"\n"
+"}\n"
+"\n"
+"variable \"vpc_name\" {\n"
+"  type        = string\n"
+"  description = \"Name for the VPC\"\n"
+"  default = \"durka\"\n"
+"}\n"
+"\n"
+"resource \"aws_vpc\" \"main\" {\n"
+"    cidr_block = var.vpc_cidr\n"
+"\n"
+" tags = merge(\n"
+"    local.default_tags,\n"
+"    {\n"
+"      Name = var.vpc_name\n"
+"    }\n"
+"  )\n"
+"}\n"
+"\n"
+"output \"aws_vpc\" {\n"
+"  value = aws_vpc.main\n"
+"  sensitive = true\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:159
+msgid ""
+"In the AWS Terraform Locals example Spec Template above, pre-provision "
+"variables are used. Note the use of `pre-provision "
+"<https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=variables"
+"#pre-provision-vars>`_ variables to store the value for Owner and Group, "
+"among other things. See the variables section of |morpheus| documentation"
+" (linked in the prior sentence) for a listing of other possible pre-"
+"provision variables and a complete map of variables which can be resolved"
+" after provisioning has completed."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:164
+msgid ""
+"In order to create the Layout later in the guide, I need to create four "
+"Inputs so the user can make certain selections at provision time. I wrote"
+" my Terraform Configuration with this flexibility in mind so that the "
+"same Instance Type can be reused in different scenarios. In this "
+"particular case, I'm populating the Inputs with manual Option Lists but "
+"they can also be populated through REST calls or calls to the |morpheus| "
+"API when needed."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:166
+msgid ""
+"Option Lists are created in the Library (|Lib|) under the Option Lists "
+"tab. These are lists of items which will be used to create dropdown "
+"selections at provision time. Click :guilabel:`+ ADD`, complete the "
+"fields as I've done in the example below and click :guilabel:`SAVE "
+"CHANGES`. I've created one each for the AWS account selection, region "
+"selection, and CIDR mask input."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:168
+msgid ".. image:: /images/integration_guides/terr_inst_guide/7optionList.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:171
+msgid ""
+"Inputs are also created in the Library under the Inputs tab. In this "
+"case, I'm creating four Inputs. Three of them will display as dropdown "
+"selections and will be tied to one of the Option Lists we just made. The "
+"other will be a simple text input where the user can indicate the total "
+"number of subnets that should be created. Click :guilabel:`+ ADD`, "
+"complete the fields as I've done in the example below and click "
+":guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:173
+msgid ".. image:: /images/integration_guides/terr_inst_guide/8optionType.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:179
+msgid ""
+"At this point we're ready to create a new Instance Type. We'll give the "
+"Instance Type a name, which users will use to identify the Instance Type "
+"from the list in the provisioning wizard. We don't need to set much else "
+"in this case, most of the pieces we've created in previous steps will be "
+"associated with the Layout that we create next. The Layout will also be "
+"tied to the Instance Type we're creating now. Instance Types are also "
+"created in the Library (|Lib|) under the Instance Types tab. Click "
+":guilabel:`+ ADD`, complete the fields as I've done in the example below "
+"and click :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:181
+msgid ".. image:: /images/integration_guides/terr_inst_guide/9instanceType.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:187
+msgid ""
+"The Layout will bring together everything we've made to this point, the "
+"Spec Templates, Inputs and the Instance Type. We can add a new one from "
+"the Instance Type detail page (|LibBluIns| > Selected Instance Type) by "
+"clicking :guilabel:`+ ADD LAYOUT`. We can also create one from the "
+"Layouts section (|LibBluLay|) by clicking :guilabel:`+ ADD`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:189
+msgid ""
+"First, change the TECHNOLOGY value to Terraform and the fields will "
+"change to allow proper configuration. Next, provide a name for your "
+"Layout. If you're creating the Layout through the Layout tab rather than "
+"from the Instance Type detail page, you'll need to identify the Instance "
+"Type the Layout goes with. Using the typeahead fields at bottom of the "
+"modal window, add our four Inputs and our five Spec Templates to the "
+"Layout. Finally, point the layout to a TFVAR SECRET from |morpheus| "
+"Cypher if needed. You can see a screenshot of my Layout configuration "
+"below"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:191
+msgid ".. image:: /images/integration_guides/terr_inst_guide/10Layout.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:197
+msgid ""
+"Now, we're ready to provision new infrastructure into AWS using "
+"|morpheus| and Terraform. Just like any other Instance Type, we begin "
+"from the Instances list page (:menuselection:`Provisioning --> "
+"Instances`) and click :guilabel:`+ ADD`. Select the Instance Type we've "
+"just created and move on to the GROUP tab of the wizard. Here you'll give"
+" the new instance a name and select your Group and Cloud. Once finished, "
+"you'll move on to the CONFIGURE tab where we'll see the Inputs we created"
+" and associated with the Layout. Once finished with this tab, step "
+"through the rest of the wizard to complete the process. You can see the "
+"options I've selected for this configuration in the image below."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:199
+msgid ".. image:: /images/integration_guides/terr_inst_guide/11configureTab.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:204
+msgid ""
+"After completing the wizard, from the History tab of the Instance detail "
+"page users can review the Terraform plan being executed and see the "
+"output while the resources are still being provisioned."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:206
+msgid ".. image:: /images/integration_guides/terr_inst_guide/12historyTab.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:208
+msgid ""
+"Once the provisioning process is complete, head to the State tab. Here we"
+" can see and link through to the associated Spec Templates. If needed, "
+"you can also edit the configuration spec by clicking on the pencil icon "
+"at the end of the row for any listed Spec Template."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:210
+msgid ""
+"By clicking :guilabel:`APPLY STATE`, the user can once again see the "
+"Input selections which were presented during the initial provisioning and"
+" make changes when needed. After making changes and clicking "
+":guilabel:`NEXT`, |morpheus| will show the plan output no different than "
+"if you'd run ``terraform plan``. On clicking :guilabel:`COMPLETE`, the "
+"plan will be executed as if you'd run ``terraform apply``. Back on the "
+"State tab you will see the output from the Apply process as well as an "
+"indicator of the success or failure of the operation."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:212
+msgid ".. image:: /images/integration_guides/terr_inst_guide/13stateTab.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:214
+msgid ""
+"|morpheus| will also regularly check for drift from the Terraform "
+"configuration. On the State tab near the top is a \"Drift Status\" "
+"indicator. This will either show Drift or No Drift depending on the "
+"situation. |morpheus| will automatically check for drift every few "
+"minutes but you can perform a manual check at any time by clicking "
+":guilabel:`REFRESH STATE`. Drift can be corrected when needed by "
+"reapplying state (:guilabel:`APPLY STATE` button)."
+msgstr ""
+

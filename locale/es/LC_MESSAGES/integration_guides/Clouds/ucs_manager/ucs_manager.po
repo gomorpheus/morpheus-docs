@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:2
@@ -32,31 +32,84 @@ msgstr "Descripción general"
 msgid ""
 "The |morpheus| UCS Manager Integration enables UCS M B and C Chassis "
 "Inventory, VM and Container Host Bare Metal Provisioning, PXE boot with "
-"IPMI, Storage Profile, SAN Connection Profile, Server Pool, BIOS Profile, "
-"Boot Profile, Maintenance Profile, UUID Pool and Disk Group Profile sync."
+"IPMI, Storage Profile, SAN Connection Profile, Server Pool, BIOS Profile,"
+" Boot Profile, Maintenance Profile, UUID Pool and Disk Group Profile "
+"sync."
 msgstr ""
 "The |morpheus| UCS Manager Integration enables UCS M B y C Chassis "
-"Inventory, VM y Container Host Bare Metal Provisioning, PXE boot con IPMI, "
-"Storage Profile, SAN Connection Profile, Server Pool, BIOS Profile, Boot "
-"Profile, Maintenance Profile, UUID Pool y Disk Group Profile sync."
+"Inventory, VM y Container Host Bare Metal Provisioning, PXE boot con "
+"IPMI, Storage Profile, SAN Connection Profile, Server Pool, BIOS Profile,"
+" Boot Profile, Maintenance Profile, UUID Pool y Disk Group Profile sync."
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:10
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:9
+msgid ""
+"This integration automates the UCS capabilities described below; it is "
+"not a general UCS administration interface. Create and validate the "
+"required organizations, pools, policies, network paths, and installation "
+"sources in UCS Manager before relying on them from |morpheus|. The exact "
+"UCS privileges are determined by those objects and the organization's UCS"
+" security policy; use a dedicated account with sufficient read access for"
+" inventory and write access for Service Profile provisioning rather than "
+"assuming a built-in |morpheus| role."
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:12
+msgid "Features"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:14
+msgid ""
+"Validate and onboard a UCS Manager endpoint using an existing UCS "
+"organization or a new organization created for |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:15
+msgid ""
+"Synchronize organizations, chassis, blades, cartridges, cartridge "
+"servers, networks, boot and BIOS policies, maintenance policies, UUID "
+"pools, SAN connection policies, disk group policies, storage profiles, "
+"and server pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:16
+msgid "Provision bare-metal hosts with UCS Service Profiles and PXE boot mappings"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:17
+msgid ""
+"Onboard inventoried UCS servers for management and return managed servers"
+" to unmanaged inventory"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:18
+msgid ""
+"Import UCS faults as |morpheus| operation notifications associated with "
+"the matching zone, chassis, or server when a match is available"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:19
+msgid ""
+"Calculate UCS usage with the system **Custom UCS Price Set**, which "
+"contains memory, CPU, core, and storage component prices"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:22
 msgid "Adding UCS Manager Cloud"
 msgstr "Agregar UCS Manager Cloud"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:12
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:24
 msgid "Navigate to ``Infrastructure > Clouds``"
 msgstr "Navegue un ``Infrastructure > Clouds``"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:13
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:25
 msgid "Select :guilabel:`+ ADD`"
 msgstr "Select :guilabel:`+ AGREGAR`"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:14
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:26
 msgid "Select **UCS MANAGER** from the Clouds list"
 msgstr "Select **UCS MANAGER** desde el Clouds lista"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:15
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:27
 msgid "Populate the following:"
 msgstr "Populate el following:"
 
@@ -94,8 +147,8 @@ msgstr "VISIBILITY"
 
 #: ../../integration_guides/Clouds/base_options.rst:10
 msgid ""
-"For setting cloud permissions in a multi-tenant environment. Not applicable "
-"in single tenant environments."
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
 msgstr ""
 "For setting cloud permisos in un multi-tenant entorno. Not applicable in "
 "único tenant entornos."
@@ -106,8 +159,8 @@ msgstr "TENANT"
 
 #: ../../integration_guides/Clouds/base_options.rst:12
 msgid ""
-"If Visibility is set to Private, select the Tenant the Cloud resources will "
-"assigned to."
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
 msgstr ""
 "If Visibility es set to Private, select el Tenant el Cloud recursos será "
 "assigned to."
@@ -124,129 +177,197 @@ msgstr ""
 "When deshabilitado, automático Cloud sync es paused y el Cloud no be "
 "selectable para provisioning."
 
-#: ../../integration_guides/Clouds/base_options.rst:18
+#: ../../integration_guides/Clouds/base_options.rst:15
 msgid "AUTOMATICALLY POWER ON VMS"
 msgstr "AUTOMATICALLY POWER ON VMS"
 
 #: ../../integration_guides/Clouds/base_options.rst:16
 msgid ""
-"When enabled, |morpheus| will maintain the expected power state of managed "
-"VMs. |morpheus| will power on any managed VMs in the Cloud that have been "
-"shut down for unknown reasons (not powered off by |morpheus|) to ensure "
-"availability of services."
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
 msgstr ""
-"When habilitado, |morpheus| será maintain el expected power state of managed"
-" VMs. |morpheus| será power on cualquier managed VMs in el Cloud que tienen "
-"sido shut down para unknown reasons (no powered off by |morpheus|) to ensure"
-" availability of servicios."
+"When habilitado, |morpheus| será maintain el expected power state of "
+"managed VMs. |morpheus| será power on cualquier managed VMs in el Cloud "
+"que tienen sido shut down para unknown reasons (no powered off by "
+"|morpheus|) to ensure availability of servicios."
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid "Note"
+msgstr ""
 
 #: ../../integration_guides/Clouds/base_options.rst:18
 msgid ""
-"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of managed "
-"VMs should be maintained in |morpheus|. This setting is not applicable to "
-"discovered/unmanaged resources."
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
 msgstr ""
-"When \"AUTOMATICALLY POWER ON VMS\" es habilitado, el power state of managed"
-" VMs debería be maintained in |morpheus|. This setting no es applicable to "
-"discovered/unmanaged recursos."
+"When \"AUTOMATICALLY POWER ON VMS\" es habilitado, el power state of "
+"managed VMs debería be maintained in |morpheus|. This setting no es "
+"applicable to discovered/unmanaged recursos."
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:19
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:31
 msgid "**Details**"
 msgstr "**Details**"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:22
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:34
 msgid "UCS MANAGER"
 msgstr "UCS MANAGER"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:23
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:35
 msgid "IP or hostname of UCS Manager"
 msgstr "IP o hostname of UCS Manager"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:24
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:36
 msgid "USERNAME"
 msgstr "USERNAME"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:25
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:37
 msgid "UCS Manager User"
 msgstr "UCS Manager User"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:26
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:38
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:27
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:39
 msgid "UCS Manager Password"
 msgstr "UCS Manager Password"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:31
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:40
 msgid "ORGANIZATION"
 msgstr "ORGANIZATION"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:29
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:41
 msgid "EXISTING (select)"
 msgstr "EXISTING (select)"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:31
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:42
 msgid "NEW (create)"
 msgstr "NEW (create)"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:31
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:43
 msgid "ORG NAME"
 msgstr "ORG NAME"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:32
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:44
 msgid "Enter name for the new Organization"
 msgstr "Enter nombre para el nuevo Organization"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:33
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:45
 msgid "SERVER PREFIX"
 msgstr "SERVER PREFIX"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:34
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:46
 msgid "String provisioned servers will be prefixed with"
 msgstr "String provisioned servers será be prefixed con"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:36
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:47
 msgid "DATA DISK MODE"
 msgstr "DATA DISK MODE"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:36
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:48
 msgid "LVM data disk"
 msgstr "LVM datos disk"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:37
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:49
 msgid "Single Disk"
 msgstr "Single Disk"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:39
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:50
 msgid "DATA VOLUME"
 msgstr "DATA VOLUME"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:39
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:51
 msgid "Defaults to ``/dev/sdb`` * Check to enable SOFTWARE RAID"
 msgstr "Defaults to ``/dev/sdb`` * Check to enable SOFTWARE RAID"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:42
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:53
 msgid "NET INTERFACE"
 msgstr "NET INTERFACE"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:42
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:54
 msgid "Defaults to eth0"
 msgstr "Defaults to eth0"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:44
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:46
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:56
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:58
 msgid "Select :guilabel:`NEXT`"
 msgstr "Select :guilabel:`SIGUIENTE`"
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:45
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:57
 msgid ""
-"Select an existing or create a new Group to add the Cloud to. The Cloud can "
-"be added to additional Groups in a Groups `Clouds` tab."
+"Select an existing or create a new Group to add the Cloud to. The Cloud "
+"can be added to additional Groups in a Groups `Clouds` tab."
 msgstr ""
-"Select un existente o create un nuevo Group to add el Cloud to. The Cloud se"
-" puede agregar to adicional Groups in un Groups `Clouds` pestaña."
+"Select un existente o create un nuevo Group to add el Cloud to. The Cloud"
+" se puede agregar to adicional Groups in un Groups `Clouds` pestaña."
 
-#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:47
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:59
 msgid "Review and then Select :guilabel:`COMPLETE`"
 msgstr "Review y entonces Select :guilabel:`COMPLETE`"
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:61
+msgid ""
+"After creation, |morpheus| tests connectivity and credentials. A "
+"successful refresh sets the Cloud status to OK and synchronizes the "
+"inventory listed above. Invalid credentials set an error status; an "
+"unreachable endpoint sets the Cloud offline. Use the Cloud refresh action"
+" after changing inventory in UCS Manager."
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:64
+msgid "Bare-metal Provisioning and Lifecycle"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:66
+msgid ""
+"Provisioning selects an available synchronized UCS server, creates or "
+"reuses a Service Profile template, creates PXE boot mappings for the "
+"selected image, and creates the UCS Service Profile. Before provisioning,"
+" confirm the selected organization, server pool, policies, MAC/UUID "
+"pools, PXE image, network path, and Kickstart source are available to the"
+" target server. A failure to create the Service Profile marks the server "
+"failed; review the provisioning process before retrying."
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:68
+msgid ""
+"Synchronized unmanaged servers can be selected for |morpheus| management."
+" Returning a managed UCS server to unmanaged inventory removes it from "
+"its |morpheus|-managed server pool, clears managed network addressing, "
+"and restores its UCS server inventory type. Confirm that no workload "
+"depends on the server before removing it from management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:71
+msgid "Faults and Costing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:73
+msgid ""
+"Each Cloud refresh imports active UCS faults into |morpheus| "
+"notifications, maps UCS severity and acknowledgement state, and "
+"associates a fault with a matching server or chassis when possible. "
+"Faults no longer returned by UCS are marked inactive. See "
+":doc:`/operations/alarms` for notification and alarm handling."
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:75
+msgid ""
+"UCS Clouds use the **Custom UCS Price Set** and its memory, CPU, core, "
+"and storage component prices. Configure component prices using the "
+"pricing guidance in :doc:`/administration/plans_pricing/prices` before "
+"relying on cost totals."
+msgstr ""
+
+#: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:77
+msgid ""
+"The integration does not replace UCS Manager for object creation outside "
+"the provisioning operations described here, UCS fault remediation, or "
+"Cisco-side recovery. If a refresh or Service Profile operation fails, "
+"preserve the failed process and UCS fault details and reconcile the UCS "
+"object state before retrying."
+msgstr ""
+

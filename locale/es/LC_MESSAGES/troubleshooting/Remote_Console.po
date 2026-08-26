@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -33,8 +33,8 @@ msgid ""
 msgstr ""
 "|morpheus| tiene una Consola Remota incorporada para Instancias, Hosts, "
 "Máquinas Virtuales y Bare Metal. La siguiente información revisa la "
-"Configuración de Roles, Protocolos y Requisitos necesarios para configurar "
-"y solucionar problemas de acceso a la Consola Remota."
+"Configuración de Roles, Protocolos y Requisitos necesarios para "
+"configurar y solucionar problemas de acceso a la Consola Remota."
 
 #: ../../troubleshooting/Remote_Console.rst:7
 msgid "Role Settings"
@@ -51,7 +51,7 @@ msgstr ""
 "prompt de inicio de sesión o el usuario inicia sesión automáticamente al "
 "usar la Consola."
 
-#: ../../troubleshooting/Remote_Console.rst:16
+#: ../../troubleshooting/Remote_Console.rst:11
 msgid "Remote Console (None, Provisioned, Full)"
 msgstr "Consola remota (None, Provisioned, Full)"
 
@@ -72,8 +72,8 @@ msgid ""
 "The user will only have remote console access for Instances they "
 "provisioned."
 msgstr ""
-"El usuario solo tendrá acceso a la consola remota para las Instancias que "
-"aprovisionó."
+"El usuario solo tendrá acceso a la consola remota para las Instancias que"
+" aprovisionó."
 
 #: ../../troubleshooting/Remote_Console.rst:16
 msgid "Full"
@@ -87,7 +87,7 @@ msgstr ""
 "El usuario tendrá acceso a la consola remota para todas las instancias a "
 "las que tenga acceso."
 
-#: ../../troubleshooting/Remote_Console.rst:22
+#: ../../troubleshooting/Remote_Console.rst:18
 msgid "Remote Console: Auto Login (No, Yes)"
 msgstr "Consola remota: Auto Login (No, Yes)"
 
@@ -100,11 +100,11 @@ msgid ""
 "A login prompt will be present in the console for Linux platforms, and "
 "the main login screen will present for Windows platforms."
 msgstr ""
-"Se presentará un prompt de inicio de sesión en la consola para plataformas "
-"Linux, y la pantalla principal de inicio de sesión se presentará para "
-"plataformas Windows."
+"Se presentará un prompt de inicio de sesión en la consola para "
+"plataformas Linux, y la pantalla principal de inicio de sesión se "
+"presentará para plataformas Windows."
 
-#: ../../troubleshooting/Remote_Console.rst:22
+#: ../../troubleshooting/Remote_Console.rst:21
 msgid "Yes"
 msgstr "Sí"
 
@@ -120,16 +120,26 @@ msgid ""
 "converting to managed. These credentials can be changed by editing the "
 "underlying VM or Host of the Instance."
 msgstr ""
-"|morpheus| iniciará sesión automáticamente en la consola remota usando las "
-"credenciales definidas en la VM o Host. Para Instancias aprovisionadas, "
-"las credenciales se definen ya sea desde las credenciales definidas en la "
-"Imagen Virtual utilizada, agregadas a través de cloud-init o VMware Tools "
-"usando la configuración global de cloud-init (Administration - "
-"Provisioning) o la configuración de Linux o Windows definida en User "
-"Settings. Para Instancias creadas al convertir una VM o Host a "
-"administrado, las credenciales se ingresan al convertir a administrado. "
-"Estas credenciales pueden cambiarse editando la VM o Host subyacente de la "
-"Instancia."
+"|morpheus| iniciará sesión automáticamente en la consola remota usando "
+"las credenciales definidas en la VM o Host. Para Instancias "
+"aprovisionadas, las credenciales se definen ya sea desde las credenciales"
+" definidas en la Imagen Virtual utilizada, agregadas a través de cloud-"
+"init o VMware Tools usando la configuración global de cloud-init "
+"(Administration - Provisioning) o la configuración de Linux o Windows "
+"definida en User Settings. Para Instancias creadas al convertir una VM o "
+"Host a administrado, las credenciales se ingresan al convertir a "
+"administrado. Estas credenciales pueden cambiarse editando la VM o Host "
+"subyacente de la Instancia."
+
+#: ../../troubleshooting/Remote_Console.rst:24
+#: ../../troubleshooting/Remote_Console.rst:38
+#: ../../troubleshooting/Remote_Console.rst:70
+#: ../../troubleshooting/Remote_Console.rst:86
+#: ../../troubleshooting/Remote_Console.rst:102
+#: ../../troubleshooting/Remote_Console.rst:111
+#, fuzzy
+msgid "Note"
+msgstr "None"
 
 #: ../../troubleshooting/Remote_Console.rst:24
 msgid ""
@@ -144,12 +154,13 @@ msgid ""
 msgstr ""
 "Si las credenciales definidas en la VM o Host no son válidas, y la "
 "configuración de Rol ``Remote Console: Auto Login`` está establecida en "
-"``Yes``, la consola no podrá conectarse y no se presentará ninguna ventana "
-"de consola ni prompt de inicio de sesión. Las credenciales en la VM o Host "
-"subyacente deben editarse o la configuración de Rol ``Remote Console: Auto "
-"Login`` puede establecerse en ``No`` para que se presente un prompt de "
-"inicio de sesión en la consola. Las credenciales no pueden cambiarse desde "
-"la vista de Instancia, solo en la vista de VM o Host de Infraestructura."
+"``Yes``, la consola no podrá conectarse y no se presentará ninguna "
+"ventana de consola ni prompt de inicio de sesión. Las credenciales en la "
+"VM o Host subyacente deben editarse o la configuración de Rol ``Remote "
+"Console: Auto Login`` puede establecerse en ``No`` para que se presente "
+"un prompt de inicio de sesión en la consola. Las credenciales no pueden "
+"cambiarse desde la vista de Instancia, solo en la vista de VM o Host de "
+"Infraestructura."
 
 #: ../../troubleshooting/Remote_Console.rst:27
 msgid "Protocols"
@@ -160,8 +171,8 @@ msgid ""
 "Platform Type and Cloud Settings determines the protocol and port used "
 "for Remote Console connections."
 msgstr ""
-"El Tipo de Plataforma y la Configuración de Nube determinan el protocolo y "
-"puerto utilizados para las conexiones de Consola Remota."
+"El Tipo de Plataforma y la Configuración de Nube determinan el protocolo "
+"y puerto utilizados para las conexiones de Consola Remota."
 
 #: ../../troubleshooting/Remote_Console.rst:31
 #: ../../troubleshooting/Remote_Console.rst:41
@@ -189,7 +200,7 @@ msgstr ""
 "El protocolo RDP (Remote Desktop) se utilizará para tipos de plataforma "
 "Windows a través del puerto 3389 por defecto."
 
-#: ../../troubleshooting/Remote_Console.rst:36
+#: ../../troubleshooting/Remote_Console.rst:35
 msgid "VNC"
 msgstr "VNC"
 
@@ -199,10 +210,10 @@ msgid ""
 "``Hypervisor Console`` option enabled in cloud settings. VNC connection "
 "are made directly to the Hypervisor Host over port 443."
 msgstr ""
-"El protocolo VNC se utilizará para todos los tipos de plataforma en Nubes "
-"con la opción ``Hypervisor Console`` habilitada en la configuración de la "
-"nube. Las conexiones VNC se realizan directamente al Host del Hipervisor a "
-"través del puerto 443."
+"El protocolo VNC se utilizará para todos los tipos de plataforma en Nubes"
+" con la opción ``Hypervisor Console`` habilitada en la configuración de "
+"la nube. Las conexiones VNC se realizan directamente al Host del "
+"Hipervisor a través del puerto 443."
 
 #: ../../troubleshooting/Remote_Console.rst:38
 msgid ""
@@ -245,9 +256,9 @@ msgid ""
 "Port 22 incoming open on the target VM or Host firewalls and security "
 "groups from the |morpheus| Appliance (not from the users IP address)"
 msgstr ""
-"Puerto 22 entrante abierto en los firewalls y grupos de seguridad de la VM "
-"o Host de destino desde el Appliance de |morpheus| (no desde la dirección "
-"IP del usuario)"
+"Puerto 22 entrante abierto en los firewalls y grupos de seguridad de la "
+"VM o Host de destino desde el Appliance de |morpheus| (no desde la "
+"dirección IP del usuario)"
 
 #: ../../troubleshooting/Remote_Console.rst:51
 #: ../../troubleshooting/Remote_Console.rst:66
@@ -255,15 +266,15 @@ msgid ""
 "An IP address defined on the VM or Host record that is routable from the "
 "|morpheus| Appliance."
 msgstr ""
-"Una dirección IP definida en el registro de la VM o Host que sea enrutable "
-"desde el Appliance de |morpheus|."
+"Una dirección IP definida en el registro de la VM o Host que sea "
+"enrutable desde el Appliance de |morpheus|."
 
 #: ../../troubleshooting/Remote_Console.rst:52
 #: ../../troubleshooting/Remote_Console.rst:67
 msgid "Valid credentials defined on the VM or Host record in the RPC host field."
 msgstr ""
-"Credenciales válidas definidas en el registro de la VM o Host en el campo "
-"de host RPC."
+"Credenciales válidas definidas en el registro de la VM o Host en el campo"
+" de host RPC."
 
 #: ../../troubleshooting/Remote_Console.rst:53
 #: ../../troubleshooting/Remote_Console.rst:68
@@ -272,8 +283,8 @@ msgid ""
 "User provisioned the instance, or `Full` if the user did not provision "
 "the instance."
 msgstr ""
-"Permisos de Rol de `Remote Console` establecidos en `Provisioned` o `Full` "
-"si el Usuario aprovisionó la instancia, o `Full` si el usuario no "
+"Permisos de Rol de `Remote Console` establecidos en `Provisioned` o "
+"`Full` si el Usuario aprovisionó la instancia, o `Full` si el usuario no "
 "aprovisionó la instancia."
 
 #: ../../troubleshooting/Remote_Console.rst:58
@@ -318,8 +329,8 @@ msgid ""
 "Port 3389 incoming open on the target VM or Host firewalls and security "
 "groups from the |morpheus| Appliance (not from the users IP address)"
 msgstr ""
-"Puerto 3389 entrante abierto en los firewalls y grupos de seguridad de la "
-"VM o Host de destino desde el Appliance de |morpheus| (no desde la "
+"Puerto 3389 entrante abierto en los firewalls y grupos de seguridad de la"
+" VM o Host de destino desde el Appliance de |morpheus| (no desde la "
 "dirección IP del usuario)"
 
 #: ../../troubleshooting/Remote_Console.rst:70
@@ -331,10 +342,10 @@ msgid ""
 "connect."
 msgstr ""
 "Si `Remote Console: Auto Login` está establecido en `No` en los permisos "
-"de Rol del usuario, `Allow connections only from computers running Remote "
-"Desktop with Network Level Authentication` en la configuración de `Windows "
-"System Properties > Remote` debe estar DESHABILITADO para que la Consola "
-"Remota se conecte."
+"de Rol del usuario, `Allow connections only from computers running Remote"
+" Desktop with Network Level Authentication` en la configuración de "
+"`Windows System Properties > Remote` debe estar DESHABILITADO para que la"
+" Consola Remota se conecte."
 
 #: ../../troubleshooting/Remote_Console.rst:74
 msgid "VNC (VMware Hypervisor Console)"
@@ -355,7 +366,8 @@ msgid ""
 "directly to the host the VM is on, not directly to the VM."
 msgstr ""
 "Al usar la Consola de Hipervisor VNC, el Appliance de |morpheus| se "
-"conecta directamente al host en el que está la VM, no directamente a la VM."
+"conecta directamente al host en el que está la VM, no directamente a la "
+"VM."
 
 #: ../../troubleshooting/Remote_Console.rst:80
 msgid ""
@@ -370,8 +382,8 @@ msgid ""
 "The |morpheus| Appliance must have network access to the host the VM is "
 "on over 443."
 msgstr ""
-"El Appliance de |morpheus| debe tener acceso de red al host en el que está "
-"la VM a través del puerto 443."
+"El Appliance de |morpheus| debe tener acceso de red al host en el que "
+"está la VM a través del puerto 443."
 
 #: ../../troubleshooting/Remote_Console.rst:84
 msgid "The |morpheus| Appliance must be able to resolve the hypervisor hostnames."
@@ -396,14 +408,66 @@ msgid ""
 "soon as the ``Host (Hypervisor)`` record is set, which can be viewed in "
 "the Info section on the VM or Host detail page."
 msgstr ""
-"A diferencia de SSH y RDP, no es necesario establecer credenciales válidas "
-"en los registros de VM o Host en |morpheus| para conexiones de consola de "
-"hipervisor VNC. Tampoco se requiere una dirección IP en la VM o Host para "
-"conexiones de consola de hipervisor VNC. |morpheus| podrá conectarse a la "
-"VM o Host tan pronto como se establezca el registro ``Host (Hypervisor)``, "
-"que puede verse en la sección Info en la página de detalle de la VM o Host."
+"A diferencia de SSH y RDP, no es necesario establecer credenciales "
+"válidas en los registros de VM o Host en |morpheus| para conexiones de "
+"consola de hipervisor VNC. Tampoco se requiere una dirección IP en la VM "
+"o Host para conexiones de consola de hipervisor VNC. |morpheus| podrá "
+"conectarse a la VM o Host tan pronto como se establezca el registro "
+"``Host (Hypervisor)``, que puede verse en la sección Info en la página de"
+" detalle de la VM o Host."
 
 #: ../../troubleshooting/Remote_Console.rst:91
+msgid "Encrypted or vTPM VMware VM"
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:93
+msgid ""
+"If hypervisor console works for ordinary VMware VMs but fails for a "
+"Windows 11 VM with vTPM or another encrypted VM, verify the vCenter role "
+"inherited by that VM. MORPH-6016 reported that adding **Cryptographic "
+"operations > Clone, Direct Access, and Migrate** (API privilege reported "
+"as ``AccessMigrate``) to the dedicated |morpheus| role restored access. "
+"The report did not prove that all three are individually required by "
+"console access; Clone and Migrate also correspond to their named "
+"encrypted-VM lifecycle operations."
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:95
+msgid ""
+"Confirm the Cloud uses Hypervisor Console and that appliance-to-ESXi DNS "
+"and TCP 443 requirements above are met."
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:96
+msgid ""
+"In vCenter, confirm the integration user receives the intended dedicated "
+"role on the affected VM through the expected inventory assignment and "
+"propagation."
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:97
+msgid ""
+"Compare the role with "
+":doc:`/integration_guides/Clouds/vmware/permissions`. Add only the "
+"approved cryptographic privileges at the smallest required scope."
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:98
+msgid ""
+"Reopen the console, then test any required clone and migration operations"
+" independently. Review vCenter tasks/events and |morpheus| logs for a "
+"specific authorization denial."
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:100
+msgid ""
+"Do not grant vCenter Administrator as a workaround. If the organization "
+"cannot grant the reported set or the failure remains, retain the denied "
+"privilege/task evidence and escalate to the VMware integration owner or "
+"HPE Support."
+msgstr ""
+
+#: ../../troubleshooting/Remote_Console.rst:103
 msgid ""
 "Auto-login is not supported for Hypervisor Console. Auto-login role "
 "settings do not apply to console connecting when using Hypervisor "
@@ -415,12 +479,12 @@ msgstr ""
 "El inicio de sesión automático no es compatible con la Consola de "
 "Hipervisor. La configuración de rol de inicio de sesión automático no se "
 "aplica a la conexión de consola cuando se usa la Consola de Hipervisor. "
-"Tenga en cuenta que las sesiones de Consola de Hipervisor persisten en el "
-"host ESXi y una vez que un usuario inicia sesión manualmente en la VM, "
+"Tenga en cuenta que las sesiones de Consola de Hipervisor persisten en el"
+" host ESXi y una vez que un usuario inicia sesión manualmente en la VM, "
 "continuará con la sesión iniciada, incluso si la pestaña/ventana de "
 "consola en |morpheus| se cierra, hasta que cierre sesión manualmente."
 
-#: ../../troubleshooting/Remote_Console.rst:92
+#: ../../troubleshooting/Remote_Console.rst:104
 msgid ""
 "Copy and Paste and Text selection in Linux terminals is not supported "
 "when using VNC (VMware Hypervisor Console)."
@@ -428,79 +492,81 @@ msgstr ""
 "Copiar y Pegar y la selección de Texto en terminales Linux no es "
 "compatible cuando se usa VNC (Consola de Hipervisor VMware)."
 
-#: ../../troubleshooting/Remote_Console.rst:93
+#: ../../troubleshooting/Remote_Console.rst:105
 msgid ""
 "In |morpheus| versions 3.2.0 and higher, a newer Guacamole version is "
 "installed that is not compatible with MacOS Platform Types over VNC."
 msgstr ""
-"En las versiones 3.2.0 y superiores de |morpheus|, se instala una versión "
-"más nueva de Guacamole que no es compatible con los Tipos de Plataforma "
+"En las versiones 3.2.0 y superiores de |morpheus|, se instala una versión"
+" más nueva de Guacamole que no es compatible con los Tipos de Plataforma "
 "MacOS a través de VNC."
 
-#: ../../troubleshooting/Remote_Console.rst:97
+#: ../../troubleshooting/Remote_Console.rst:109
 msgid "Copy and Paste"
 msgstr "Copiar y pegar"
 
-#: ../../troubleshooting/Remote_Console.rst:99
+#: ../../troubleshooting/Remote_Console.rst:111
 msgid ""
 "Copy and Paste for Text is supported for SSH and RDP protocols only. Use "
 "of this functionality requires the Role permission of \"VDI: Copy/Paste\""
 " set to Full."
 msgstr ""
-"Copiar y Pegar para Texto es compatible solo con los protocolos SSH y RDP. "
-"El uso de esta funcionalidad requiere el permiso de Rol de \"VDI: "
+"Copiar y Pegar para Texto es compatible solo con los protocolos SSH y "
+"RDP. El uso de esta funcionalidad requiere el permiso de Rol de \"VDI: "
 "Copy/Paste\" establecido en Full."
 
-#: ../../troubleshooting/Remote_Console.rst:101
+#: ../../troubleshooting/Remote_Console.rst:113
 msgid "To Copy text from the console:"
 msgstr "Para copiar texto de la consola:"
 
-#: ../../troubleshooting/Remote_Console.rst:103
+#: ../../troubleshooting/Remote_Console.rst:115
 msgid "Select text in the Console window."
 msgstr "Seleccione texto en la ventana de la Consola."
 
-#: ../../troubleshooting/Remote_Console.rst:104
+#: ../../troubleshooting/Remote_Console.rst:116
 msgid "Click the COPY button at the top of the Console window."
-msgstr "Haga clic en el botón COPY en la parte superior de la ventana de la Consola."
+msgstr ""
+"Haga clic en el botón COPY en la parte superior de la ventana de la "
+"Consola."
 
-#: ../../troubleshooting/Remote_Console.rst:105
+#: ../../troubleshooting/Remote_Console.rst:117
 msgid "The selected text is copied to the users clipboard."
 msgstr "El texto seleccionado se copia al portapapeles del usuario."
 
-#: ../../troubleshooting/Remote_Console.rst:107
+#: ../../troubleshooting/Remote_Console.rst:119
 msgid "To Paste text into console:"
 msgstr "Para pegar texto en la consola:"
 
-#: ../../troubleshooting/Remote_Console.rst:109
+#: ../../troubleshooting/Remote_Console.rst:121
 msgid "Copy text on the local computer to you clipboard"
 msgstr "Copie texto en la computadora local a su portapapeles"
 
-#: ../../troubleshooting/Remote_Console.rst:110
+#: ../../troubleshooting/Remote_Console.rst:122
 msgid ""
 "Right click into the \"Paste Text Here\" field at the top of the Console "
 "window. The field will the display \"Text Copied, Use Console to Paste.\""
 msgstr ""
-"Haga clic derecho en el campo \"Paste Text Here\" en la parte superior de "
-"la ventana de la Consola. El campo mostrará \"Text Copied, Use Console to "
-"Paste.\""
+"Haga clic derecho en el campo \"Paste Text Here\" en la parte superior de"
+" la ventana de la Consola. El campo mostrará \"Text Copied, Use Console "
+"to Paste.\""
 
-#: ../../troubleshooting/Remote_Console.rst:111
+#: ../../troubleshooting/Remote_Console.rst:123
 msgid "Right click into the console window."
 msgstr "Haga clic derecho en la ventana de la consola."
 
-#: ../../troubleshooting/Remote_Console.rst:112
+#: ../../troubleshooting/Remote_Console.rst:124
 msgid "The text is pasted into the VM."
 msgstr "El texto se pega en la VM."
 
-#: ../../troubleshooting/Remote_Console.rst:115
+#: ../../troubleshooting/Remote_Console.rst:127
 msgid "Guacamole"
 msgstr "Guacamole"
 
-#: ../../troubleshooting/Remote_Console.rst:118
+#: ../../troubleshooting/Remote_Console.rst:130
 msgid "Overview"
 msgstr "Descripción general"
 
-#: ../../troubleshooting/Remote_Console.rst:120
+#: ../../troubleshooting/Remote_Console.rst:132
 msgid ""
 "|morpheus| uses Apache Guacamole, a clientless remote console. Guacamole "
 "is installed on the |morpheus| Appliance during the initial reconfigure. "
@@ -509,27 +575,28 @@ msgid ""
 "is installed. The 0.9.14 version is required for VNC Hypervisor Console "
 "functionality on ESXi v6.5 and later."
 msgstr ""
-"|morpheus| usa Apache Guacamole, una consola remota sin cliente. Guacamole "
-"se instala en el Appliance de |morpheus| durante la reconfiguración "
-"inicial. En las versiones 3.2.0 y superiores de |morpheus|, Guacamole "
-"0.9.14 se instala automáticamente. En versiones de |morpheus| anteriores a "
-"3.2.0, se instala 0.9.9. La versión 0.9.14 es requerida para la "
-"funcionalidad de Consola de Hipervisor VNC en ESXi v6.5 y posterior."
+"|morpheus| usa Apache Guacamole, una consola remota sin cliente. "
+"Guacamole se instala en el Appliance de |morpheus| durante la "
+"reconfiguración inicial. En las versiones 3.2.0 y superiores de "
+"|morpheus|, Guacamole 0.9.14 se instala automáticamente. En versiones de "
+"|morpheus| anteriores a 3.2.0, se instala 0.9.9. La versión 0.9.14 es "
+"requerida para la funcionalidad de Consola de Hipervisor VNC en ESXi v6.5"
+" y posterior."
 
-#: ../../troubleshooting/Remote_Console.rst:122
+#: ../../troubleshooting/Remote_Console.rst:134
 msgid ""
 "The Guacamole proxy daemon, guacd, is used for all Remote Console "
 "connections and must be running for Remote Console functionality."
 msgstr ""
 "El daemon proxy de Guacamole, guacd, se usa para todas las conexiones de "
-"Consola Remota y debe estar ejecutándose para la funcionalidad de Consola "
-"Remota."
+"Consola Remota y debe estar ejecutándose para la funcionalidad de Consola"
+" Remota."
 
-#: ../../troubleshooting/Remote_Console.rst:125
+#: ../../troubleshooting/Remote_Console.rst:137
 msgid "Troubleshooting guacd"
 msgstr "Solución de problemas de guacd"
 
-#: ../../troubleshooting/Remote_Console.rst:127
+#: ../../troubleshooting/Remote_Console.rst:139
 msgid ""
 "If all console connections are not functioning, the Guacamole proxy "
 "daemon (guacd) process may not be running or have a stuck process "
@@ -548,57 +615,57 @@ msgstr ""
 "comandos pueden usarse en el Appliance de |morpheus| para restaurar la "
 "funcionalidad de consola."
 
-#: ../../troubleshooting/Remote_Console.rst:129
+#: ../../troubleshooting/Remote_Console.rst:141
 msgid "``morpheus-ctl status``"
 msgstr "``morpheus-ctl status``"
 
-#: ../../troubleshooting/Remote_Console.rst:130
+#: ../../troubleshooting/Remote_Console.rst:142
 msgid ""
 "Lists all local |morpheus| services including guacd and their states. If "
 "guacd is stopped, it will need to be started again for Remote Console to "
 "function."
 msgstr ""
 "Lista todos los servicios locales de |morpheus| incluyendo guacd y sus "
-"estados. Si guacd está detenido, necesitará iniciarse nuevamente para que "
-"la Consola Remota funcione."
+"estados. Si guacd está detenido, necesitará iniciarse nuevamente para que"
+" la Consola Remota funcione."
 
-#: ../../troubleshooting/Remote_Console.rst:131
+#: ../../troubleshooting/Remote_Console.rst:143
 msgid "``morpheus-ctl start guacd``"
 msgstr "``morpheus-ctl start guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:132
+#: ../../troubleshooting/Remote_Console.rst:144
 msgid "Starts the guacd process"
 msgstr "Inicia el proceso guacd"
 
-#: ../../troubleshooting/Remote_Console.rst:133
+#: ../../troubleshooting/Remote_Console.rst:145
 msgid "``morpheus-ctl stop guacd``"
 msgstr "``morpheus-ctl stop guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:134
+#: ../../troubleshooting/Remote_Console.rst:146
 msgid "Stops the guacd process"
 msgstr "Detiene el proceso guacd"
 
-#: ../../troubleshooting/Remote_Console.rst:135
+#: ../../troubleshooting/Remote_Console.rst:147
 msgid "``morpheus-ctl kill guacd``"
 msgstr "``morpheus-ctl kill guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:136
+#: ../../troubleshooting/Remote_Console.rst:148
 msgid "Forcefully kills the guacd process"
 msgstr "Fuerza la terminación del proceso guacd"
 
-#: ../../troubleshooting/Remote_Console.rst:137
+#: ../../troubleshooting/Remote_Console.rst:149
 msgid "``morpheus-ctl restarts guacd``"
 msgstr "``morpheus-ctl restarts guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:138
+#: ../../troubleshooting/Remote_Console.rst:150
 msgid "Restarts the guacd process"
 msgstr "Reinicia el proceso guacd"
 
-#: ../../troubleshooting/Remote_Console.rst:140
+#: ../../troubleshooting/Remote_Console.rst:151
 msgid "``morpheus-ctl tail guacd``"
 msgstr "``morpheus-ctl tail guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:140
+#: ../../troubleshooting/Remote_Console.rst:152
 msgid ""
 "Tails the guacd current and state logs, located by default at "
 "``/var/log/morpheus/guacd/``. This log is useful when troubleshooting "
@@ -611,20 +678,20 @@ msgstr ""
 "guacamole, y para determinar el protocolo utilizado para la conexión de "
 "Consola Remota."
 
-#: ../../troubleshooting/Remote_Console.rst:142
+#: ../../troubleshooting/Remote_Console.rst:154
 msgid ""
 "If guacd continues to stop even after being started, or if guacd is "
 "running and no properly configured console connections are functioning, "
 "there may be a stuck guacd or multiple guacd processes running, which "
 "will need to killed and guacd started again."
 msgstr ""
-"Si guacd continúa deteniéndose incluso después de ser iniciado, o si guacd "
-"está ejecutándose y ninguna conexión de consola configurada correctamente "
-"está funcionando, puede haber un proceso guacd atascado o múltiples "
-"procesos guacd ejecutándose, que necesitarán ser terminados y guacd "
-"iniciado nuevamente."
+"Si guacd continúa deteniéndose incluso después de ser iniciado, o si "
+"guacd está ejecutándose y ninguna conexión de consola configurada "
+"correctamente está funcionando, puede haber un proceso guacd atascado o "
+"múltiples procesos guacd ejecutándose, que necesitarán ser terminados y "
+"guacd iniciado nuevamente."
 
-#: ../../troubleshooting/Remote_Console.rst:144
+#: ../../troubleshooting/Remote_Console.rst:156
 msgid ""
 "To kill all guacd processes on the |morpheus| Appliance and start guacd "
 "again:"
@@ -632,11 +699,11 @@ msgstr ""
 "Para terminar todos los procesos guacd en el Appliance de |morpheus| e "
 "iniciar guacd nuevamente:"
 
-#: ../../troubleshooting/Remote_Console.rst:146
+#: ../../troubleshooting/Remote_Console.rst:158
 msgid "Kill the morpheus gaucd proccess: ``morpheus-ctl kill guacd``"
 msgstr "Terminar el proceso guacd de morpheus: ``morpheus-ctl kill guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:147
+#: ../../troubleshooting/Remote_Console.rst:159
 msgid ""
 "Grep for all running guacd processes: ``sudo ps -aux | grep guacd`` and "
 "note the guacd pid(s) (minus the process from the grep)"
@@ -644,7 +711,7 @@ msgstr ""
 "Buscar todos los procesos guacd en ejecución: ``sudo ps -aux | grep "
 "guacd`` y anotar el/los pid(s) de guacd (menos el proceso del grep)"
 
-#: ../../troubleshooting/Remote_Console.rst:148
+#: ../../troubleshooting/Remote_Console.rst:160
 msgid ""
 "Kill all running guacd processes: ``kill -9 pid`` replacing `pid` with "
 "the pid(s) of the target processes"
@@ -652,38 +719,39 @@ msgstr ""
 "Terminar todos los procesos guacd en ejecución: ``kill -9 pid`` "
 "reemplazando `pid` con el/los pid(s) de los procesos objetivo"
 
-#: ../../troubleshooting/Remote_Console.rst:149
+#: ../../troubleshooting/Remote_Console.rst:161
 msgid "Start guacd again: ``morpheus-ctl start guacd``"
 msgstr "Inicie guacd nuevamente: ``morpheus-ctl start guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:150
+#: ../../troubleshooting/Remote_Console.rst:162
 msgid ""
 "Tail the guacd logs to verify guacd is started and listening: ``morpheus-"
 "ctl tail guacd`` The log output will resemble below when guacd is "
 "properly running:"
 msgstr ""
 "Visualizar los logs de guacd para verificar que guacd está iniciado y "
-"escuchando: ``morpheus-ctl tail guacd`` La salida del log se parecerá a lo "
-"siguiente cuando guacd está ejecutándose correctamente:"
+"escuchando: ``morpheus-ctl tail guacd`` La salida del log se parecerá a "
+"lo siguiente cuando guacd está ejecutándose correctamente:"
 
-#: ../../troubleshooting/Remote_Console.rst:152
+#: ../../troubleshooting/Remote_Console.rst:164
 msgid ""
 "guacd[16899]: INFO:       Guacamole proxy daemon (guacd) version 0.9.14 "
 "started\n"
 "guacd[16899]: INFO:       Listening on host 127.0.0.1, port 4822"
 msgstr ""
 "guacd[16899]: INFO:       Guacamole proxy daemon (guacd) version 0.9.14 "
-"started\nguacd[16899]: INFO:       Listening on host 127.0.0.1, port 4822"
+"started\n"
+"guacd[16899]: INFO:       Listening on host 127.0.0.1, port 4822"
 
-#: ../../troubleshooting/Remote_Console.rst:157
+#: ../../troubleshooting/Remote_Console.rst:169
 msgid ""
 "Additional information in the guacd logs appears when |morpheus| is "
 "making a console connection. A successful conneciton will resemble:"
 msgstr ""
-"Información adicional aparece en los logs de guacd cuando |morpheus| está "
-"realizando una conexión de consola. Una conexión exitosa se parecerá a:"
+"Información adicional aparece en los logs de guacd cuando |morpheus| está"
+" realizando una conexión de consola. Una conexión exitosa se parecerá a:"
 
-#: ../../troubleshooting/Remote_Console.rst:159
+#: ../../troubleshooting/Remote_Console.rst:171
 msgid ""
 "guacd[24725]: INFO: Creating new client for protocol \"ssh\"\n"
 "guacd[24725]: INFO: Connection ID is \"$24f67856-f050-4a17-83eb-"
@@ -696,21 +764,22 @@ msgid ""
 "guacd[24743]: INFO: Auth key successfully imported.\n"
 "guacd[24743]: INFO: SSH connection successful."
 msgstr ""
-"guacd[24725]: INFO: Creating new client for protocol "
-"\"ssh\"\nguacd[24725]: INFO: Connection ID is "
-"\"$24f67856-f050-4a17-83eb-9101g0cd8869\"\nguacd[24743]: INFO: Current "
-"locale does not use UTF-8. Some characters may not render "
-"correctly.\nguacd[24743]: INFO: User "
-"\"@63102f19-eff4-412e-b1f9-718405f55782\" joined connection "
-"\"$24f67856-f050-4a17-83eb-9101g0cd8869\" (1 users now "
-"present)\nguacd[24743]: INFO: Auth key successfully "
-"imported.\nguacd[24743]: INFO: SSH connection successful."
+"guacd[24725]: INFO: Creating new client for protocol \"ssh\"\n"
+"guacd[24725]: INFO: Connection ID is \"$24f67856-f050-4a17-83eb-"
+"9101g0cd8869\"\n"
+"guacd[24743]: INFO: Current locale does not use UTF-8. Some characters "
+"may not render correctly.\n"
+"guacd[24743]: INFO: User \"@63102f19-eff4-412e-b1f9-718405f55782\" joined"
+" connection \"$24f67856-f050-4a17-83eb-9101g0cd8869\" (1 users now "
+"present)\n"
+"guacd[24743]: INFO: Auth key successfully imported.\n"
+"guacd[24743]: INFO: SSH connection successful."
 
-#: ../../troubleshooting/Remote_Console.rst:169
+#: ../../troubleshooting/Remote_Console.rst:181
 msgid "Guacamole Version"
 msgstr "Versión de Guacamole"
 
-#: ../../troubleshooting/Remote_Console.rst:171
+#: ../../troubleshooting/Remote_Console.rst:183
 msgid ""
 "In |morpheus| versions 3.2.0 and higher, Guacamole version 0.9.14 is "
 "automatically installed. On |morpheus| versions older than 3.2.0, 0.9.9 "
@@ -719,10 +788,10 @@ msgid ""
 msgstr ""
 "En las versiones 3.2.0 y superiores de |morpheus|, la versión 0.9.14 de "
 "Guacamole se instala automáticamente. En versiones de |morpheus| "
-"anteriores a 3.2.0, se instala 0.9.9. La versión 0.9.14 es requerida para "
-"la funcionalidad de Consola de Hipervisor VNC en ESXi v6.5 y posterior."
+"anteriores a 3.2.0, se instala 0.9.9. La versión 0.9.14 es requerida para"
+" la funcionalidad de Consola de Hipervisor VNC en ESXi v6.5 y posterior."
 
-#: ../../troubleshooting/Remote_Console.rst:173
+#: ../../troubleshooting/Remote_Console.rst:185
 msgid ""
 "Note Guacamole version 0.9.14 is not compatible with MacOS Platform Types"
 " over VNC on ESXi v6.0 or prior (6.5 is supported). If necessary, the "
@@ -733,20 +802,21 @@ msgstr ""
 "compatible). Si es necesario, la versión de guacamole puede revertirse a "
 "0.9.9."
 
-#: ../../troubleshooting/Remote_Console.rst:175
+#: ../../troubleshooting/Remote_Console.rst:187
 msgid "To revert the guacamole version from 0.9.14 to 0.9.9."
 msgstr "Para revertir la versión de guacamole de 0.9.14 a 0.9.9."
 
-#: ../../troubleshooting/Remote_Console.rst:177
+#: ../../troubleshooting/Remote_Console.rst:189
 msgid "Kill guacd - ``morpheus-ctl kill guacd``"
 msgstr "Terminar guacd - ``morpheus-ctl kill guacd``"
 
-#: ../../troubleshooting/Remote_Console.rst:178
+#: ../../troubleshooting/Remote_Console.rst:190
 msgid "Check if any guacd processes are still running ``ps -aux | grep guac``"
 msgstr ""
-"Verifique si algún proceso guacd sigue ejecutándose ``ps -aux | grep guac``"
+"Verifique si algún proceso guacd sigue ejecutándose ``ps -aux | grep "
+"guac``"
 
-#: ../../troubleshooting/Remote_Console.rst:179
+#: ../../troubleshooting/Remote_Console.rst:191
 msgid ""
 "If so, kill the processes ``kill -9 pid`` with id being the actual "
 "process id, like 16101."
@@ -754,19 +824,19 @@ msgstr ""
 "Si es así, termine los procesos ``kill -9 pid`` siendo id el id real del "
 "proceso, como 16101."
 
-#: ../../troubleshooting/Remote_Console.rst:180
+#: ../../troubleshooting/Remote_Console.rst:192
 msgid ""
 "Go to the guac 0.9.9 directory: ``cd /var/opt/morpheus/guacamole-"
 "server-0.9.9``"
 msgstr ""
-"Vaya al directorio de guac 0.9.9: ``cd "
-"/var/opt/morpheus/guacamole-server-0.9.9``"
+"Vaya al directorio de guac 0.9.9: ``cd /var/opt/morpheus/guacamole-"
+"server-0.9.9``"
 
-#: ../../troubleshooting/Remote_Console.rst:181
+#: ../../troubleshooting/Remote_Console.rst:193
 msgid "Run: ``make install``"
 msgstr "Ejecute: ``make install``"
 
-#: ../../troubleshooting/Remote_Console.rst:182
+#: ../../troubleshooting/Remote_Console.rst:194
 msgid "Start guacd: ``morpheus-ctl start guacd``"
 msgstr "Iniciar guacd: ``morpheus-ctl start guacd``"
 

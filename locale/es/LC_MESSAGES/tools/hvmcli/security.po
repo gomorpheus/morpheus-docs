@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hvmcli/security.rst:2
+msgid "security"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:4
+msgid "Security compliance operations including FIPS 140 mode management."
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:7
+msgid "Commands"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:13
+msgid "Command"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:15
+msgid "``fips``"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:16
+msgid "Manage FIPS 140 mode (enable, disable, status)"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:19
+msgid "security fips"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:21
+msgid ""
+"Manage Federal Information Processing Standards (FIPS) 140 compliance "
+"mode."
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:23
+msgid "**Check FIPS status:**"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:25
+msgid "sudo hvmcli security fips status"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:29
+msgid ""
+"FIPS Status\n"
+"───────────────────────────────────\n"
+"  Kernel FIPS mode:    ❌ DISABLED\n"
+"  FIPS kernel package: not installed\n"
+"  GRUB fips=1:         not configured\n"
+"\n"
+"  Packages:\n"
+"    ✗ ubuntu-fips — not-installed\n"
+"    ✗ linux-fips — not-installed\n"
+"    ✗ fips-initramfs — not-installed"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:42
+msgid "sudo hvmcli security fips status --json"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:46
+msgid "**Enable FIPS mode (dry run):**"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:48
+msgid "Preview what changes would be made without applying them:"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:50
+msgid "sudo hvmcli security fips enable --dry-run"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:54
+msgid "**Enable FIPS mode:**"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:56
+msgid ""
+"sudo hvmcli security fips enable --force\n"
+"sudo hvmcli security fips enable --force --reboot"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:61 ../../tools/hvmcli/security.rst:79
+msgid "Options:"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:63 ../../tools/hvmcli/security.rst:81
+msgid "``--force`` — Skip confirmation prompts"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:64
+msgid ""
+"``--reboot`` — Automatically reboot the node after enabling FIPS "
+"(required for kernel-level FIPS activation)"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:65 ../../tools/hvmcli/security.rst:83
+msgid "``--dry-run`` — Preview changes without applying"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:67
+msgid "**Disable FIPS mode (dry run):**"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:69
+msgid "sudo hvmcli security fips disable --dry-run"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:73
+msgid "**Disable FIPS mode:**"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:75
+msgid "sudo hvmcli security fips disable --force --reboot"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:82
+msgid "``--reboot`` — Automatically reboot after disabling FIPS"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:85
+msgid "Important"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:85
+msgid ""
+"Enabling or disabling FIPS mode requires a reboot for the kernel FIPS "
+"mode to take effect. Use ``--reboot`` to handle this automatically, or "
+"plan a manual reboot."
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:87
+msgid "Note"
+msgstr ""
+
+#: ../../tools/hvmcli/security.rst:87
+msgid ""
+"FIPS 140 mode enforces the use of FIPS-validated cryptographic modules "
+"for all system-level encryption operations. This is required for "
+"compliance with certain government and regulatory standards."
+msgstr ""
+

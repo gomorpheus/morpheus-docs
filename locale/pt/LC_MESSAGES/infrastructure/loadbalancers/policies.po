@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/loadbalancers/policies.rst:4
+msgid "Load Balancer Policies and Rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:9
+msgid ""
+"Load Balancer Policies define traffic management rules that control how "
+"requests are routed, redirected, or modified by the load balancer. "
+"Policies contain one or more rules, and each rule can match on specific "
+"conditions (such as URI path, hostname, or header values) and perform "
+"actions (such as forwarding to a pool, redirecting, or rewriting)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:11
+msgid ""
+"Policy management is available for load balancer types that support "
+"policy-based routing (such as F5 BIG-IP and NSX-T)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:14
+msgid "Role Requirements"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:16
+msgid ""
+"``Infrastructure: Load Balancers`` role permission at **Full** level is "
+"required to create, edit, or delete policies and rules."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:17
+msgid ""
+"``Infrastructure: Load Balancers`` role permission at **Read** level "
+"allows viewing policies and rules only."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:20
+msgid "Viewing Policies"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:22
+#: ../../infrastructure/loadbalancers/policies.rst:35
+msgid "Navigate to ``Infrastructure > Load Balancers``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:23
+msgid "Click the name of a Load Balancer to view its detail page"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:24
+#: ../../infrastructure/loadbalancers/policies.rst:37
+#: ../../infrastructure/loadbalancers/policies.rst:54
+#: ../../infrastructure/loadbalancers/policies.rst:69
+msgid "Select the **POLICIES** tab"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:26
+msgid ""
+"The Policies tab lists all policies configured for the load balancer, "
+"including:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:28
+msgid "**Name** — Policy name"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:29
+msgid "**Description** — Policy description"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:30
+msgid "**Rules** — Number of rules defined within the policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:33
+msgid "Creating a Policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:36
+msgid "Click the name of a Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:38
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:39
+msgid "Configure the policy fields:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:41
+#: ../../infrastructure/loadbalancers/policies.rst:79
+msgid "NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:42
+msgid "A descriptive name for the policy."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:43
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:44
+msgid "Optional description of the policy's purpose."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:46
+#: ../../infrastructure/loadbalancers/policies.rst:98
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:46
+msgid ""
+"Additional fields are displayed based on the load balancer type. These "
+"are defined by the provider's policy option types."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:48
+#: ../../infrastructure/loadbalancers/policies.rst:100
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:51
+msgid "Deleting a Policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:53
+#: ../../infrastructure/loadbalancers/policies.rst:68
+msgid "Navigate to the Load Balancer detail page"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:55
+msgid "Click the delete icon next to the policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:56
+#: ../../infrastructure/loadbalancers/policies.rst:107
+msgid "Confirm the deletion"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:58
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:58
+msgid ""
+"Deleting a policy that is currently assigned to a virtual server may "
+"disrupt traffic routing. Ensure no active virtual servers reference the "
+"policy before removing it."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:61
+msgid "Policy Rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:63
+msgid ""
+"Each policy contains one or more rules that define match conditions and "
+"actions. Rules are evaluated in order and the first matching rule's "
+"action is applied."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:66
+msgid "Viewing Rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:70
+msgid "Click the name of a policy to expand its rules list"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:73
+msgid "Creating a Rule"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:75
+#: ../../infrastructure/loadbalancers/policies.rst:105
+msgid "Navigate to the Policy detail view"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:76
+msgid "Click :guilabel:`+ ADD RULE`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:77
+msgid "Configure the rule fields:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:80
+msgid "A descriptive name for the rule."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:81
+msgid "MATCH CONDITIONS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:82
+msgid ""
+"Define the criteria that must be met for the rule to apply. Conditions "
+"vary by load balancer type and may include:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:84
+msgid "**URI Path** — Match on request URI path (e.g., ``/api/*``)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:85
+msgid "**Hostname** — Match on the Host header value"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:86
+msgid "**HTTP Method** — Match on GET, POST, PUT, etc."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:87
+msgid "**Header** — Match on a specific HTTP header value"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:88
+msgid "**Source IP** — Match on client source IP address or range"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:90
+msgid "ACTIONS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:91
+msgid "Define what happens when the rule matches:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:93
+msgid "**Forward to Pool** — Send traffic to a specific backend pool"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:94
+msgid "**Redirect** — Return an HTTP redirect response"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:95
+msgid "**Reject** — Return a rejection response"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:96
+msgid "**Rewrite** — Modify the request URI or headers before forwarding"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:98
+msgid ""
+"Available match conditions and actions depend on the load balancer type "
+"and are defined by the provider's policy rule option types."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:103
+msgid "Deleting a Rule"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:106
+msgid "Click the delete icon next to the rule"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:110
+msgid "Using Policies with Virtual Servers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:112
+msgid ""
+"When creating or editing a Virtual Server, policies can be selected from "
+"the **POLICIES** field. The available policies are filtered to those "
+"belonging to the same load balancer. Policies are evaluated in the order "
+"they are assigned to the virtual server."
+msgstr ""
+

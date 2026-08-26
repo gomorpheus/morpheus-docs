@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:2
+msgid "SSL Certificates"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:4
+msgid ""
+"By default |morpheus| generates a Self-Signed SSL Certificate. The Self-"
+"Signed SSL Certificate can be replaced with a Trusted CA Signed SSL "
+"Certificate."
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:7
+msgid "Trusted CA Signed SSL Certificate Implementation"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:9
+msgid ""
+"If you don't already have your certificate, run an OpenSSL command to "
+"generate an SSL certificate request (.csr) and private key (.key). If you"
+" need help formatting the command, `DigiCert provides a helpful tool "
+"<https://www.digicert.com/easy-csr/openssl.htm>`_"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:11
+msgid ""
+"Submit your certificate request (.csr) and await approval of the request "
+"and return of the certificate (.crt)"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:13
+msgid ""
+"Copy the private key and certificate to "
+"``/etc/morpheus/ssl/your_fqdn_name.key`` and "
+"``/etc/morpheus/ssl/your_fqdn_name.crt`` respectively"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:17
+msgid ""
+"# Extract the private key\n"
+"openssl pkcs12 -in example.pfx -nocerts -nodes -out priv.key\n"
+"# Extract the public key\n"
+"openssl pkcs12 -in example.pfx -clcerts -nokeys -out pub.crt\n"
+"# Extract the CA cert chain\n"
+"openssl pkcs12 -in example.pfx -cacerts -nokeys -chain -out ca.crt"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:28
+msgid ""
+"# Extract the private key\n"
+"openssl x509 -outform der -in your-cert.pem -out your-cert.key\n"
+"# Extract the public key\n"
+"openssl x509 -outform der -in your-cert.pem -out your-cert.key"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:35
+msgid ""
+"Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the "
+"following entries:"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:37
+msgid ""
+"nginx['ssl_certificate'] = 'path to the certificate file'\n"
+"nginx['ssl_server_key'] = 'path to the server key file'"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:42
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:42
+msgid ""
+"Both files should be owned by root and only readable by root, also if the"
+" server certificate is signed by an intermediate then you should include "
+"the signing chain inside the certificate file. The key file needs to be "
+"decrypted for Morpheus to install it properly."
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:44
+msgid "Next simply reconfigure the appliance and restart nginx:"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:46
+msgid ""
+"sudo morpheus-ctl reconfigure\n"
+"sudo morpheus-ctl restart nginx"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:52
+msgid "Self-Signed SSL Certificate Regeneration"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:54
+msgid ""
+"When Morpheus is deployed it generates a 10 year Self-Signed SSL "
+"Certificate.  Below details the process to regenerate the Certificate and"
+" Key files."
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:57
+msgid "Regenerate both the Certificate and Key"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:59
+msgid "Delete the certificate and key files in ``/etc/morpheus/ssl/``."
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:60
+#: ../../getting_started/additional/morpheusSslCerts.rst:67
+msgid "Run Reconfigure ``morpheus-ctl reconfigure``."
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:61
+#: ../../getting_started/additional/morpheusSslCerts.rst:68
+msgid "Restart NGINX ``morpheus-ctl restart nginx``."
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:64
+msgid "Regenerate only the Certificate"
+msgstr ""
+
+#: ../../getting_started/additional/morpheusSslCerts.rst:66
+msgid "Delete the certificate file in ``/etc/morpheus/ssl/``."
+msgstr ""
+

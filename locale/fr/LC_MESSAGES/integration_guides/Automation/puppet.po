@@ -1,0 +1,201 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Automation/puppet.rst:2
+msgid "Puppet |advanced-plus|"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:7
+msgid ""
+"The Puppet integration is an Advanced+ feature, available in HPE Morpheus"
+" Enterprise and Advanced tiers."
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:9
+msgid ""
+"Each |morpheus| Puppet integration ties to a specific Puppet Master and "
+"makes it easy to install the Puppet Agent onto target Instances and "
+"Servers. Once integrated, we can trigger the agent installation by "
+"creating Puppet Agent Install Tasks through |morpheus| automation or at "
+"provision time when spinning up instances in Clouds associated with a "
+"Puppet integration."
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:12
+msgid "Add Puppet Integration"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:14
+msgid "Navigate to |AdmInt|"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:15
+msgid "Click :guilabel:`+ NEW INEGRATION`"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:16
+msgid "Select Integration type \"Puppet\""
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:17
+msgid "Populate the following fields"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:19
+msgid "Name: A friendly name for this Puppet integration in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:20
+msgid ""
+"Enabled: When marked, this Puppet integration will be available to users "
+"at provision time and when creating Tasks"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:21
+msgid ""
+"Puppet Master (Hostname): The resolvable DNS name to the Puppet Master, "
+"communicating on port 443 by default"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:22
+msgid "Allow Immediate Execution: Yes or No (See additional details below)"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:24
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:26
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/puppet/new_puppet_integration.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:30
+msgid "Allow Immediate Execution"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:32
+msgid ""
+"When adding or editing a Puppet integration, users have the option to "
+"\"Allow Immediate Execution\". Using this feature will connect to the "
+"Puppet Master after the Puppet Agent is installed and force configuration"
+" application immediately. This is an optional convenience feature, if "
+"it's not used, the Puppet Master will still apply configuration to the "
+"node on its own schedule. Using this feature requires supplying SSH "
+"credentials. If you do not wish to provide SSH credentials to |morpheus| "
+"select \"No\" to opt out of this feature and they do not need to be "
+"provided."
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:35
+msgid "Associating a Puppet Integration with a Cloud"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:37
+msgid ""
+"By associating a Puppet Integration with a Cloud, users are able to "
+"automatically install the Puppet Agent, select a Puppet environment, and "
+"supply a Puppet Node Name at provision time. The integration association "
+"is made when adding or editing a Cloud integration in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:39
+msgid "Navigate to Infrastructure > Clouds"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:40
+msgid ""
+"Identify the Cloud to associate with Puppet and edit it by clicking on "
+"the pencil icon at the right end of the row"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:41
+msgid "In the EDIT CLOUD modal, expand the Advanced Options section"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:42
+msgid "In the CONFIG MANAGEMENT dropdown, choose the Puppet integration"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:43
+msgid "Save changes to the Cloud integration"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:46
+msgid "Creating Puppet Agent Install Tasks"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:48
+msgid ""
+"Puppet Agent Install Tasks automate the process of installing the Puppet "
+"Agent, selecting the Puppet environment, and supplying the Puppet Node "
+"Name. We can run this Task on-demand as needed for individual Instances "
+"or servers or add them to workflows to build a Puppet Agent installation "
+"step into larger automation suites."
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:50
+msgid "Navigate to :menuselection:`Library --> Automation`"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:51
+msgid "Select the Tasks tab"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:52
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:53
+msgid "From the \"Type\" field, select Puppet Agent Install"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:54
+msgid ""
+"Complete the fields as needed to target a specific Puppet Master and to "
+"identify Puppet environment and node names"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:55
+msgid "Save changes"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:57
+msgid ".. image:: /images/integration_guides/automation/puppet/puppet_task.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:60
+msgid "Installing Puppet Agent at Provision Time"
+msgstr ""
+
+#: ../../integration_guides/Automation/puppet.rst:62
+msgid ""
+"With a Puppet integration associated with a Cloud (as described above), "
+"users can opt to install the Puppet Agent at provision time. When "
+"provisioning into an associated Cloud, a new \"Puppet\" section will "
+"appear on the CONFIGURE tab of the provisioning wizard. Here users can "
+"select a specific Puppet Master, select the Puppet environment, and "
+"select a Puppet node name. During provisioning, the Puppet Agent will be "
+"automatically installed and configured for the selected Master."
+msgstr ""
+

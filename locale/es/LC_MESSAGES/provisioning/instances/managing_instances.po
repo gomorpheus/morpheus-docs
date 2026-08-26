@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -43,16 +43,20 @@ msgid ""
 "Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner"
 " for the Instance."
 msgstr ""
-"Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner "
-"for the Instancia."
+"Edit the Name, Description, Environment, Group, Metadata, Tags, and Owner"
+" for the Instancia."
 
-#: ../../provisioning/instances/managing_instances.rst:9
+#: ../../provisioning/instances/managing_instances.rst:8
 msgid "Delete"
 msgstr "Eliminar"
 
 #: ../../provisioning/instances/managing_instances.rst:9
 msgid "Deletes the Instance."
 msgstr "Deletes the Instancia."
+
+#: ../../provisioning/instances/managing_instances.rst:11
+msgid "Important"
+msgstr ""
 
 #: ../../provisioning/instances/managing_instances.rst:11
 msgid ""
@@ -64,13 +68,20 @@ msgid ""
 " the VM delete modal options. This will delete the records in |morpheus| "
 "but leave the infrastructure in place."
 msgstr ""
-"Deleting un Instancia será eliminar el/la actual VM's o Containers y cannot "
-"be undone, unless un Delayed Removal policy ha sido applied prior a el/la "
-"Deletion. A eliminar Instancias without deleting associated VM's, eliminar "
-"el/la Instancias VM record(s) desde el/la Infraestructura sección con "
-"\"Eliminar Infraestructura\" deselected y seleccionar \"Eliminar Associated "
-"Instancias\" en el/la VM eliminar modal opciones. Este será eliminar el/la "
-"records en |morpheus| pero leave el/la infraestructura en place."
+"Deleting un Instancia será eliminar el/la actual VM's o Containers y "
+"cannot be undone, unless un Delayed Removal policy ha sido applied prior "
+"a el/la Deletion. A eliminar Instancias without deleting associated VM's,"
+" eliminar el/la Instancias VM record(s) desde el/la Infraestructura "
+"sección con \"Eliminar Infraestructura\" deselected y seleccionar "
+"\"Eliminar Associated Instancias\" en el/la VM eliminar modal opciones. "
+"Este será eliminar el/la records en |morpheus| pero leave el/la "
+"infraestructura en place."
+
+#: ../../provisioning/instances/managing_instances.rst:13
+#: ../../provisioning/instances/managing_instances.rst:58
+#: ../../provisioning/instances/managing_instances.rst:74
+msgid "Tip"
+msgstr ""
 
 #: ../../provisioning/instances/managing_instances.rst:13
 msgid ""
@@ -109,8 +120,17 @@ msgid "Stop/Start/Restart Server"
 msgstr "Stop/Start/Restart Servidor"
 
 #: ../../provisioning/instances/managing_instances.rst:25
-msgid "Stops, Starts or Restarts the Virtual Machine."
-msgstr "Stops, Starts o Restarts el/la Virtual Machine."
+msgid ""
+"Stops, Starts, or Restarts the Virtual Machine. For HVM/KVM and other "
+"provision types that support enhanced shutdown, Stop Server opens a "
+"shutdown-type selector. **Graceful Shutdown** is the default and allows "
+"the guest operating system to shut down cleanly. **Force Stop (immediate "
+"power-off)** bypasses the guest shutdown process and should be used only "
+"when the VM is unresponsive. HVM graceful shutdown waits up to five "
+"minutes and leaves the VM running if the guest does not stop; it does not"
+" automatically force power-off. The selector also supports bulk Instance "
+"and VM stops."
+msgstr ""
 
 #: ../../provisioning/instances/managing_instances.rst:26
 msgid "Import as Image"
@@ -122,8 +142,8 @@ msgid ""
 " adds Virtual Image Record with metadata matching the source Instance's "
 "configuration."
 msgstr ""
-"Clones y exports VM en its current state a target Storage provider y adds "
-"Virtual Imagen Record con metadata matching el/la source Instancia's "
+"Clones y exports VM en its current state a target Storage provider y adds"
+" Virtual Imagen Record con metadata matching el/la source Instancia's "
 "configuración."
 
 #: ../../provisioning/instances/managing_instances.rst:28
@@ -136,9 +156,9 @@ msgid ""
 "and adds Virtual Image Record with metadata matching the source "
 "Instance's configuration."
 msgstr ""
-"Clones y converts VM en its current state a imagen en el/la source Cloud y "
-"adds Virtual Imagen Record con metadata matching el/la source Instancia's "
-"configuración."
+"Clones y converts VM en its current state a imagen en el/la source Cloud "
+"y adds Virtual Imagen Record con metadata matching el/la source "
+"Instancia's configuración."
 
 #: ../../provisioning/instances/managing_instances.rst:30
 msgid "Lock/Unlock Instance"
@@ -159,9 +179,9 @@ msgid ""
 " and service plan configuration. Some resize actions require an instance "
 "restart."
 msgstr ""
-"El/La Reconfigure acción permite service plan, disk, cpu, ram, networks y "
-"storage controller changes. Available opciones depend en el/la instancia "
-"tipo y service plan configuración. Some resize acciones requerir un "
+"El/La Reconfigure acción permite service plan, disk, cpu, ram, networks y"
+" storage controller changes. Available opciones depend en el/la instancia"
+" tipo y service plan configuración. Some resize acciones requerir un "
 "instancia restart."
 
 #: ../../provisioning/instances/managing_instances.rst:34
@@ -185,47 +205,65 @@ msgstr ""
 "Instancias with backups habilitado."
 
 #: ../../provisioning/instances/managing_instances.rst:38
-msgid "Run Workflow"
-msgstr "Run Flujo de trabajo"
+msgid "Create Snapshot"
+msgstr ""
 
 #: ../../provisioning/instances/managing_instances.rst:39
 msgid ""
+"Creates a point-in-time snapshot when the selected Instance layout "
+"supports snapshots. The action is shown only when the Instance is not "
+"pending removal and the user has **Snapshots: Full** permission; it is "
+"disabled while the Instance is busy. Enter a snapshot name and optional "
+"description, submit the action, and monitor the resulting process. View "
+"completed snapshots on the Instance **Backups** tab. Storage behavior and"
+" consistency depend on the provider; for HVM, see "
+":doc:`../../infrastructure/clusters/hvm/snapshots`."
+msgstr ""
+
+#: ../../provisioning/instances/managing_instances.rst:40
+msgid "Run Workflow"
+msgstr "Run Flujo de trabajo"
+
+#: ../../provisioning/instances/managing_instances.rst:41
+#, fuzzy
+msgid ""
 "Presents workflow options and then immediately runs selected Workflow on "
-"the Instance. Workflows can be created in the |LibAut| section."
+"the Instance. Workflows can be created in the :menuselection:`Library -->"
+" Automation` section."
 msgstr ""
 "Presents flujo de trabajo options and then immediately runs seleccionado "
 "Flujo de trabajo on the Instancia. Flujos de trabajo puede ser creado in "
 "the |LibAut| section."
 
-#: ../../provisioning/instances/managing_instances.rst:40
+#: ../../provisioning/instances/managing_instances.rst:42
 msgid "Run Script"
 msgstr "Ejecutar Script"
 
-#: ../../provisioning/instances/managing_instances.rst:41
+#: ../../provisioning/instances/managing_instances.rst:43
 msgid ""
 "Presents Script options and immediately executes selected Script on the "
 "Instance. Scripts can be created in the |Lib| section."
 msgstr ""
-"Presents Script options and immediately executes seleccionado Script on the "
-"Instancia. Scripts puede ser creado in the |Lib| section."
+"Presents Script options and immediately executes seleccionado Script on "
+"the Instancia. Scripts puede ser creado in the |Lib| section."
 
-#: ../../provisioning/instances/managing_instances.rst:42
+#: ../../provisioning/instances/managing_instances.rst:44
 msgid "Apply Template"
 msgstr "Apply Plantilla"
 
-#: ../../provisioning/instances/managing_instances.rst:43
+#: ../../provisioning/instances/managing_instances.rst:45
 msgid ""
 "Presents Template options and immediately applies selected Template to "
 "the Instance. Templates can be created in the |Lib| section."
 msgstr ""
-"Presents Template options and immediately applies seleccionado Template to "
-"the Instancia. Templates puede ser creado in the |Lib| section."
+"Presents Template options and immediately applies seleccionado Template "
+"to the Instancia. Templates puede ser creado in the |Lib| section."
 
-#: ../../provisioning/instances/managing_instances.rst:44
+#: ../../provisioning/instances/managing_instances.rst:46
 msgid "Add Node"
 msgstr "Agregar Node"
 
-#: ../../provisioning/instances/managing_instances.rst:45
+#: ../../provisioning/instances/managing_instances.rst:47
 msgid ""
 "Adds an additional node to the configuration. Additional options and "
 "configurations are required in the add node wizard depending on instance "
@@ -235,27 +273,27 @@ msgstr ""
 "configuraciones son necesarios en el/la agregar node wizard depending en "
 "instancia configuración y tipo."
 
-#: ../../provisioning/instances/managing_instances.rst:46
+#: ../../provisioning/instances/managing_instances.rst:48
 msgid "Eject Disk"
 msgstr "Eject Disk"
 
-#: ../../provisioning/instances/managing_instances.rst:47
+#: ../../provisioning/instances/managing_instances.rst:49
 msgid "Ejects attached disk/iso."
 msgstr "Ejects attached disk/iso."
 
-#: ../../provisioning/instances/managing_instances.rst:48
+#: ../../provisioning/instances/managing_instances.rst:50
 msgid "Add Slave"
 msgstr "Agregar Slave"
 
-#: ../../provisioning/instances/managing_instances.rst:49
+#: ../../provisioning/instances/managing_instances.rst:51
 msgid "Adds a database slave in the Instance."
 msgstr "Adds a database slave in the Instancia."
 
-#: ../../provisioning/instances/managing_instances.rst:50
+#: ../../provisioning/instances/managing_instances.rst:52
 msgid "Change Master"
 msgstr "Change Master"
 
-#: ../../provisioning/instances/managing_instances.rst:51
+#: ../../provisioning/instances/managing_instances.rst:53
 msgid "Changes the database Master node in an Instance."
 msgstr "Changes el/la database Master node en un Instancia."
 
@@ -263,7 +301,7 @@ msgstr "Changes el/la database Master node en un Instancia."
 msgid "Clone to Template (VMware)"
 msgstr "Clone a Plantilla (VMware)"
 
-#: ../../provisioning/instances/managing_instances.rst:53
+#: ../../provisioning/instances/managing_instances.rst:55
 msgid ""
 "Creates a new VMware Template from the Instance with corresponding "
 "|morpheus| Virtual Image record."
@@ -271,7 +309,7 @@ msgstr ""
 "Creates a new VMware Template from the Instancia with corresponding "
 "|morpheus| Virtual Image record."
 
-#: ../../provisioning/instances/managing_instances.rst:56
+#: ../../provisioning/instances/managing_instances.rst:58
 msgid ""
 "Scrolling down in the Actions dropdown may be necessary to see all "
 "options."
@@ -279,15 +317,15 @@ msgstr ""
 "Scrolling down en el/la Acciones dropdown puede be necessary a ver todos "
 "opciones."
 
-#: ../../provisioning/instances/managing_instances.rst:59
+#: ../../provisioning/instances/managing_instances.rst:61
 msgid "Performing Instance Actions"
 msgstr "Performing Instancia Actions"
 
-#: ../../provisioning/instances/managing_instances.rst:61
+#: ../../provisioning/instances/managing_instances.rst:63
 msgid "Select the Provisioning link in the navigation bar."
 msgstr "Seleccione el Aprovisionamiento link in the navigation bar."
 
-#: ../../provisioning/instances/managing_instances.rst:62
+#: ../../provisioning/instances/managing_instances.rst:64
 msgid ""
 "Click the Instance from the list of instances you wish to perform an "
 "action on."
@@ -295,15 +333,15 @@ msgstr ""
 "Haga clic en el Instancia desde el/la lista de instancias you wish a "
 "perform un acción en."
 
-#: ../../provisioning/instances/managing_instances.rst:63
+#: ../../provisioning/instances/managing_instances.rst:65
 msgid "Click the Actions drop down button and select an Action."
 msgstr "Haga clic en el Actions drop down button and select an Action."
 
-#: ../../provisioning/instances/managing_instances.rst:68
+#: ../../provisioning/instances/managing_instances.rst:70
 msgid "Notes"
 msgstr "Notes"
 
-#: ../../provisioning/instances/managing_instances.rst:70
+#: ../../provisioning/instances/managing_instances.rst:72
 msgid ""
 "Every Instance has a Wiki section for adding useful information about the"
 " Instance. Wiki can be added by selecting the Wiki tab button on the "
@@ -311,13 +349,17 @@ msgid ""
 "will bi-directionally sync |morpheus| Instance Wiki content and VMware VM"
 " Notes. See the :ref:`wiki` Section for more details."
 msgstr ""
-"Every Instancia tiene un Wiki sección para adding useful información acerca "
-"de el/la Instancia. Wiki puede ser added por selecting el/la Wiki pestaña "
-"botón en el/la bottom de Instancia Detalle páginas. Instancias con "
-"associated VMware VM's será bi-directionally sync |morpheus| Instancia Wiki "
-"content y VMware VM Notes. Ver el/la :ref:`wiki` Sección para más detalles."
+"Every Instancia tiene un Wiki sección para adding useful información "
+"acerca de el/la Instancia. Wiki puede ser added por selecting el/la Wiki "
+"pestaña botón en el/la bottom de Instancia Detalle páginas. Instancias "
+"con associated VMware VM's será bi-directionally sync |morpheus| "
+"Instancia Wiki content y VMware VM Notes. Ver el/la :ref:`wiki` Sección "
+"para más detalles."
 
-#: ../../provisioning/instances/managing_instances.rst:72
+#: ../../provisioning/instances/managing_instances.rst:74
 msgid "Markdown Syntax is supported in Wikis."
 msgstr "Markdown Syntax is soportado in Wikis."
+
+#~ msgid "Stops, Starts or Restarts the Virtual Machine."
+#~ msgstr "Stops, Starts o Restarts el/la Virtual Machine."
 

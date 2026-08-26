@@ -1,0 +1,311 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/settings/logs.rst:2
+msgid "Logging Settings"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:7
+msgid ""
+"Open these settings at :menuselection:`Administration --> Settings --> "
+"Monitoring --> Logging Settings`."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:9
+msgid ""
+"|morpheus| contains a built-in logging solution that aggregates logs from"
+" hosts and services. Logs are displayed, searchable, and filterable in "
+"the Instance, App, Host and global Logs (|MonLog|) sections. Logs can "
+"also be forwarded using Syslog forward rules to any external solution "
+"that supports Syslogs."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:11
+msgid ""
+"The logs displayed in the Instance, App, Host and overall Logs (|MonLog|)"
+" sections are only from managed VMs and Hosts that have the |morpheus| "
+"Agent installed. |morpheus| Agent will watch ``/var/logs`` for any .log "
+"file and report them back accordingly. Containerized Instances can be "
+"configured to show additional logs by configuring the LOG FOLDER in the "
+"Library NODE TYPE. Logs from any .log file in the specified folder will "
+"be forwarded by the |morpheus| Agent to the |morpheus| appliance or "
+"forwarded with Syslog forward rules."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:13
+msgid "Note"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:13
+msgid ""
+"The `Logs` section does not contain |morpheus| appliance logs, which can "
+"be found in `/var/log/morpheus/` and in |AdmHea|."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:15
+msgid ""
+"Logs are stored in ElasticSearch and retention can be set by adjusting "
+"the Availability Time Frame in the |AdmSetMon| section. Logging can also "
+"be disabled with a simple toggle switch just above the Availability Time "
+"Frame configuration."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:17
+msgid ".. image:: /images/administration/settings/logSettings.png"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:20
+msgid "Advanced Options"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:22
+msgid ""
+"Expand :guilabel:`Advanced Options` beneath the standard logging settings"
+" to access Agent Log Throttle and Agent Log Deduplication controls."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:25
+msgid "Agent Log Throttle Policy"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:27
+msgid ""
+"The Agent Log Throttle Policy protects the |morpheus| appliance from "
+"being overwhelmed when a single server agent sends logs at an excessive "
+"rate. When a server's cumulative log volume exceeds a configurable "
+"ceiling, |morpheus| can raise an alarm, actively disable logging on the "
+"offending server, or both. All settings default to **Off** on new "
+"installations."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:33
+msgid "Setting"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:34
+msgid "Description"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:35
+msgid "Default"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:36
+msgid "Constraints"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:37
+msgid "Policy"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:38
+msgid ""
+"Controls the throttle response. **Off** performs no throttling. "
+"**Monitor** raises an alarm but continues storing logs. **Enforce** "
+"disables logging on the server and drops subsequent log batches."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:39
+msgid "Off"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:41
+msgid "Threshold"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:42
+msgid ""
+"Maximum log volume allowed per minute before a breach is triggered "
+"(KB/min)."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:43
+msgid "2048"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:44
+msgid "Minimum 100"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:45
+msgid "Window"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:46
+msgid ""
+"Rolling time window used to measure cumulative log volume. The effective "
+"ceiling is ``threshold × window``."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:47
+msgid "30 minutes"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:48
+msgid "5–60 minutes"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:49
+msgid "Auto Re-enable"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:50
+msgid ""
+"When enabled, automatically re-enables logging on enforced servers and "
+"clears alarms after the cooldown period. When disabled, manual re-"
+"enablement is required."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:51
+msgid "On"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:53
+msgid "Cooldown"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:54
+msgid ""
+"Time to wait after a breach before re-enabling logging or clearing "
+"alarms. Resets if the server re-breaches."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:55
+msgid "60 minutes"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:56
+msgid "Must be ≥ Window"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:58
+msgid ""
+"**How the ceiling is calculated:** The effective byte ceiling for a "
+"window is ``threshold (KB/min) × window (minutes) × 1024``. With defaults"
+" (2048 KB/min, 30-minute window), the ceiling is approximately 60 MB per "
+"30-minute window."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:60
+msgid ""
+"**Monitor mode:** Log volume is tracked per server in a rolling window. "
+"When a server exceeds the ceiling, an alarm is raised on "
+":menuselection:`Operations --> Alarms` with category "
+"``log.throttle.monitor``. Logs continue to be stored. If auto re-enable "
+"is on, the alarm is cleared after the cooldown period elapses without a "
+"new breach."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:62
+msgid ""
+"**Enforce mode:** Same volume tracking as Monitor. When breached, logging"
+" is disabled on the server (``enable_logs = false``), subsequent log "
+"batches are dropped at the WebSocket layer, and the agent is commanded to"
+" stop transmitting. An alarm with category ``log.throttle.enforce`` is "
+"raised. If auto re-enable is on, a background job re-enables logging "
+"after the cooldown period. If auto re-enable is off, an administrator "
+"must manually re-enable logging on the server."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:64
+msgid ""
+"**Per-server override:** Individual servers can override the global "
+"policy via :menuselection:`Infrastructure --> Compute --> [Server] --> "
+"Edit --> Log Throttle Policy`. The per-server policy takes precedence "
+"over the global setting. Threshold, window, and cooldown values always "
+"use the global configuration."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:66
+msgid ""
+"**Alarms:** Log throttle alarms appear on :menuselection:`Operations --> "
+"Alarms` and can be acknowledged from that page or from the server detail "
+"page. Alarms include the server name, cloud, and breach details."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:69
+msgid "Agent Log Deduplication"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:71
+msgid ""
+"When enabled, |morpheus| suppresses duplicate agent log messages per "
+"server within a rolling 30-second window. Only the first occurrence of "
+"each unique message is stored; repeats are discarded until the window "
+"resets. When the window resets, a summary entry records how many "
+"duplicates were suppressed."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:73
+msgid ""
+"This setting addresses scenarios where a single server floods identical "
+"syslog messages (for example, a repeated error condition) that can "
+"contribute to Elasticsearch pressure and queue exhaustion."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:75
+msgid ""
+"A per-server signature cap of 100 unique messages bounds memory usage "
+"during the deduplication window."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:78
+msgid "API"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:80
+msgid ""
+"Log throttle and deduplication settings are available via the log "
+"settings API:"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:82
+msgid ""
+"``GET /api/log-settings`` — Returns current throttle and deduplication "
+"settings."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:83
+msgid "``PUT /api/log-settings`` — Update settings."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:85
+msgid ""
+"Fields: ``logThrottlePolicy``, ``logThrottleThreshold``, "
+"``logThrottleWindow``, ``logThrottleAutoReEnable``, "
+"``logThrottleCooldown``, ``logDeduplication``."
+msgstr ""
+
+#: ../../administration/settings/logs.rst:87
+msgid "To query log throttle alarms across all tenants (master tenant only):"
+msgstr ""
+
+#: ../../administration/settings/logs.rst:89
+msgid ""
+"morpheus health alarms --query category=\"log.throttle\" --query "
+"global=true"
+msgstr ""
+

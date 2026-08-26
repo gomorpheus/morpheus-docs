@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/certificates/private_keys.rst:4
+msgid "Private Key Management"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:9
+msgid ""
+"|morpheus| securely stores and manages private keys associated with "
+"SSL/TLS certificates. Private keys are encrypted at rest and access is "
+"controlled through role-based permissions. This section covers best "
+"practices and operational procedures for key management within "
+"|morpheus|."
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:12
+msgid "Key Storage Security"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:14
+msgid ""
+"All private keys stored in |morpheus| are protected by multiple layers of"
+" security:"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:16
+msgid ""
+"**Encryption at Rest:** Keys are stored using AES-256 encryption in the "
+"|morpheus| database"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:17
+msgid ""
+"**Access Control:** Only users with the appropriate role permissions can "
+"view or manage certificates containing private keys"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:18
+msgid ""
+"**Masked Display:** Private keys are never displayed in plain text in the"
+" UI after upload"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:19
+msgid ""
+"**Audit Trail:** Key access and modifications are logged in the "
+"|morpheus| activity feed"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:22
+msgid "Supported Key Types"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:24
+msgid "|morpheus| supports the following private key formats:"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:26
+msgid "**RSA:** 2048-bit and 4096-bit RSA keys (most common)"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:27
+msgid "**ECDSA:** Elliptic Curve keys (P-256, P-384, P-521)"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:28
+msgid ""
+"**PEM Format:** Base64-encoded DER format enclosed in ``-----BEGIN "
+"PRIVATE KEY-----`` / ``-----END PRIVATE KEY-----`` headers"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:31
+msgid "Key Passphrases"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:33
+msgid "|morpheus| supports passphrase-protected private keys:"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:35
+msgid ""
+"When uploading a key with a passphrase, enter the passphrase in the **KEY"
+" PASSPHRASE** field"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:36
+msgid "The passphrase is stored encrypted alongside the key"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:37
+msgid ""
+"|morpheus| automatically decrypts the key when needed for operations "
+"(e.g., SSL termination)"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:39
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:39
+msgid ""
+"It is recommended to use passphrase-protected keys for an additional "
+"layer of security, particularly when keys are shared across multiple "
+"systems."
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:42
+msgid "Uploading Private Keys"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:44
+msgid "Private keys are uploaded as part of a certificate record:"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:46
+msgid "Navigate to |InfTruCer|"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:47
+msgid "Click :guilabel:`+ ADD` or edit an existing certificate"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:48
+msgid ""
+"In the **PRIVATE KEY (PEM)** field, paste the full PEM-encoded private "
+"key content"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:49
+msgid ""
+"If the key is passphrase-protected, enter the passphrase in the **KEY "
+"PASSPHRASE** field"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:50
+msgid "Click :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:53
+msgid "Key Rotation"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:55
+msgid "To rotate a private key (e.g., for security compliance):"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:57
+msgid ""
+"Generate a new key pair and obtain a new certificate signed with the new "
+"key"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:58
+msgid "Edit the existing certificate record in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:59
+msgid "Replace the certificate content and private key with the new values"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:60
+msgid "Save the updated record"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:61
+msgid "Verify services using the certificate continue to function correctly"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:63
+msgid "Tip"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:63
+msgid ""
+"For zero-downtime key rotation on load balancers, add the new certificate"
+" as a separate entry first, update the load balancer configuration to use"
+" the new certificate, then remove the old entry."
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:66
+msgid "Key Export Restrictions"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:68
+msgid ""
+"By design, |morpheus| does not provide a mechanism to export or download "
+"private keys once uploaded. This is a security measure to prevent "
+"unauthorized key extraction. If a private key is needed outside of "
+"|morpheus|, it must be retrieved from the original source or regenerated."
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:71
+msgid "SSH Key Pairs"
+msgstr ""
+
+#: ../../infrastructure/certificates/private_keys.rst:73
+msgid ""
+"SSH key pairs for server authentication are managed separately in the "
+"**Key Pairs** section of Infrastructure > Trust. See the Key Pairs "
+"documentation for details on managing SSH keys used during provisioning."
+msgstr ""
+

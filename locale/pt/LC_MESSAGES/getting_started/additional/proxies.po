@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/additional/proxies.rst:2
+msgid "Proxies"
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:7
+msgid ""
+"In many situations,companies deploy virtual machines in proxy restricted "
+"environments for things such as PCI Compliance, or just general security."
+" As a result of this |morpheus| provides out of the box support for proxy"
+" connectivity. Proxy authentication support is also provided with both "
+"Basic Authentication capabilities as well as NTLM for Windows Proxy "
+"environments. |morpheus| is even able to configure virtual machines it "
+"provisions to utilize these proxies by setting up the operating systems "
+"proxy settings directly (restricted to cloud-init based Linux platforms "
+"for now, but can also be done on windows based platforms in a different "
+"manner)."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:9
+msgid ""
+"To get started with Proxies, it may first be important to configure the "
+"|morpheus| appliance itself to have access to proxy communication for "
+"downloading service catalog images. To configure this, visit the |AdmSet|"
+" page where a section labeled \"Proxy Settings\" is located. Fill in the "
+"relevant connection info needed to utilize the proxy. It may also be "
+"advised to ensure that the Linux environment's ``http_proxy``, "
+"``https_proxy``, and ``no_proxy`` are set appropriately."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:11
+msgid ""
+"For optional Central Service or Remote Data Access connectivity, use the "
+"canonical endpoint requirement in "
+":doc:`/getting_started/requirements/requirements`. Do not copy proposed "
+"tunnel hostnames into proxy rules unless HPE has supplied the current "
+"endpoint registry for the enabled service and release."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:14
+msgid "Defining Proxies"
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:15
+msgid ""
+"Proxies can be used in a few different contexts and optionally scoped to "
+"specific networks with which one may be provisioning into or on a cloud "
+"integration as a whole. To configure a Proxy for use by the provisioning "
+"engines within |morpheus| we must go to ``Infrastructure > Networks > "
+"Proxies``. Here we can create records representing connection information"
+" for various proxies. This includes the host ip address, proxy port, and "
+"any credentials (if necessary) needed to utilize the proxy. Now that "
+"these proxies are defined we can use them in various contexts."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:18
+msgid "Cloud Communication"
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:20
+msgid ""
+"When |morpheus| needs to connect to cloud APIs to issue provisioning "
+"commands or sync existing environments, those API endpoints must be "
+"accessible by the appliance. In some cases, the appliance may be behind a"
+" proxy for public Cloud access such as Azure or AWS. After defining a "
+"Proxy, add or edit a compatible Cloud and select it under ``Connection "
+"Options > API Proxy``. The Connection Options section appears when at "
+"least one Proxy or Distributed Worker is available to the Tenant. The API"
+" Proxy controls communication between |morpheus| and the Cloud API; it "
+"does not configure proxy settings inside provisioned workloads."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:23
+msgid "Provisioning with Proxies"
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:25
+msgid ""
+"Proxy configurations can vary from operating system to operating system "
+"and in some cases it is necessary for these to be configured in the "
+"blueprints as a prerequisite. In other cases it can also be configured "
+"automatically. Mostly with the use of cloud-init (which all of our out of"
+" the box service catalog utilizes on all clouds). When editing/creating a"
+" cloud there is a setting for \"Provisioning Proxy\" in \"Provisioning "
+"Options\". If this proxy is set, |morpheus| will automatically apply "
+"these proxy settings to the guest operating system."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:27
+msgid ""
+"Overriding proxy settings can also be done on the Network record. "
+"Networks (or subnets) can be configured in ``Infrastructure > Networks`` "
+"or on the Networks tab of the relevant Cloud detail page. Here, a proxy "
+"can also be assigned as well as additional options like the ``No Proxy`` "
+"rules for proxy exceptions."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:30
+msgid "Docker"
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:32
+msgid ""
+"When provisioning Docker based hosts within a Proxy environment it is up "
+"to the user to configure the docker host proxy configuration manually. "
+"There are workflows that can be configured via the Automation engine to "
+"make this automatic when creating docker based hosts. Please see "
+"documentation on Docker and proxies for specific information."
+msgstr ""
+
+#: ../../getting_started/additional/proxies.rst:34
+msgid ""
+"Proxy setups can vary widely from company to company, and it may be "
+"advised to contact support for help configuring morpheus to work in the "
+"proxy environment."
+msgstr ""
+

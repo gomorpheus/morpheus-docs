@@ -1,0 +1,287 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/identity_sources/jumpcloud.rst:2
+msgid "JumpCloud Identity Source"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:7
+msgid ""
+"|morpheus| can integrate with JumpCloud as an identity source, allowing "
+"users to authenticate with their JumpCloud credentials. JumpCloud user "
+"attributes and roles can be mapped to |morpheus| roles, providing "
+"centralized identity management through the JumpCloud Directory Platform."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:10
+msgid "Adding a JumpCloud Identity Source"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:12
+msgid "Navigate to |AdmTen|"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:13
+msgid "Select the Tenant to add the Identity Source Integration"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:14
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:15
+msgid "Select :guilabel:`+ IDENTITY SOURCE`"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:16
+msgid "Select **JumpCloud** from the TYPE dropdown"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:17
+msgid "Enter the following:"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:19
+msgid "NAME"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:20
+msgid "A name for this Identity Source integration in |morpheus|."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:22
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:23
+msgid "Optional description of the Identity Source."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:25
+msgid "ORGANIZATION ID"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:26
+msgid ""
+"The JumpCloud Organization ID. This can be found in the JumpCloud Admin "
+"Console under Settings > General > Organization ID."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:28
+msgid "BINDING USERNAME"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:29
+msgid ""
+"A JumpCloud API user or admin account username used for API "
+"authentication. This account is used to validate user credentials and "
+"sync group/role data."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:31
+msgid "BINDING PASSWORD"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:32
+msgid "The password or API key for the binding account."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:34
+msgid "REQUIRED ROLE"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:35
+msgid ""
+"(Optional) Enter a JumpCloud group name or role. Only JumpCloud users "
+"with this role/group membership will be allowed to authenticate to "
+"|morpheus|. If left empty, all JumpCloud users who can authenticate will "
+"be allowed to log in and a local user account is created automatically. "
+"It is strongly recommended to set this field in enterprise environments."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:37
+msgid "DEFAULT ROLE"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:38
+msgid ""
+"The default |morpheus| Role applied to all users who pass the Required "
+"Role check. This role is always assigned in addition to any roles granted"
+" through role mappings below."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:40
+msgid "ROLE MAPPINGS"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:41
+msgid ""
+"Map JumpCloud groups or roles to |morpheus| roles. Each existing "
+"|morpheus| role is listed with a field to enter the corresponding "
+"JumpCloud group name. Users with matching JumpCloud group membership will"
+" be assigned the mapped |morpheus| role at login."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:43
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:45
+msgid "The JumpCloud Identity Source integration is now active."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:48
+msgid "User Authentication"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:50
+msgid ""
+"Once configured, users can log in to |morpheus| using their JumpCloud "
+"credentials:"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:52
+msgid ""
+"On first login, a |morpheus| user account is automatically created "
+"matching the JumpCloud username and email"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:53
+msgid ""
+"Subsequent logins validate credentials against JumpCloud and update role "
+"assignments based on current group membership"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:54
+msgid ""
+"If a REQUIRED ROLE is specified, only users with that JumpCloud "
+"group/role can authenticate"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:56
+msgid "Important"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:56
+msgid ""
+"JumpCloud users will not authenticate in |morpheus| if there is an "
+"existing |morpheus| user with a matching username or email address that "
+"was not created by this identity source."
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:59
+msgid "Role Mapping"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:61
+msgid ""
+"Role mappings allow granular control over |morpheus| permissions based on"
+" JumpCloud group membership:"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:63
+msgid ""
+"Enter JumpCloud group names in the role mapping fields next to each "
+"|morpheus| role"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:64
+msgid ""
+"Users may be assigned multiple |morpheus| roles based on their JumpCloud "
+"group memberships"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:65
+msgid ""
+"Role assignments are re-evaluated on each login, reflecting any JumpCloud"
+" group changes"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:66
+msgid ""
+"If no role mapping matches and no Required Role blocks access, the "
+"Default Role is assigned"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:69
+msgid "Tenant Subdomain Login"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:71
+msgid ""
+"When an identity source is configured for a Tenant, users can access the "
+"Tenant-specific login URL:"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:73
+msgid "The subdomain login URL is shown on the Identity Sources page"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:74
+msgid ""
+"Users navigating to this URL will be prompted to authenticate via the "
+"configured identity source"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:75
+msgid "This allows direct login without selecting a Tenant first"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:78
+msgid "Removing the Integration"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:80
+msgid "To remove a JumpCloud identity source:"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:82
+msgid "Navigate to |AdmTen| > (Tenant) > Identity Sources"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:83
+msgid "Click on the JumpCloud identity source"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:84
+msgid "Click :guilabel:`DELETE`"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:85
+msgid "Confirm the deletion"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:87
+msgid "Warning"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:87
+msgid ""
+"Removing an identity source does not delete users that were created "
+"through it. Those users will no longer be able to authenticate via "
+"JumpCloud but their |morpheus| accounts remain."
+msgstr ""
+

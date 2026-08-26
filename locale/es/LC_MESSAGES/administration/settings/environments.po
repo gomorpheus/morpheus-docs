@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../administration/settings/environments.rst:2
@@ -27,85 +27,104 @@ msgstr "Descripción general"
 #: ../../administration/settings/environments.rst:4
 msgid ""
 "The Environments section is where you create and manage your environment "
-"labels, which are available in the `Environment` dropdown during Instance or"
-" App provisioning. An Instance's environment label can be changed by editing"
-" the Instance."
+"labels, which are available in the `Environment` dropdown during Instance"
+" or App provisioning. An Instance's environment label can be changed by "
+"editing the Instance."
 msgstr ""
 "El Entornos sección es donde usted crear y manage su entorno labels, que "
-"están disponibles en el `Entorno` menú desplegable durante Instancia o App "
-"aprovisionamiento. Un Instancia's entorno label puede ser changed por "
-"editing el Instancia."
+"están disponibles en el `Entorno` menú desplegable durante Instancia o "
+"App aprovisionamiento. Un Instancia's entorno label puede ser changed por"
+" editing el Instancia."
 
-#: ../../administration/settings/environments.rst:7
+#: ../../administration/settings/environments.rst:6
+msgid ""
+"An Environment is an ``InstanceContextType`` record containing a code, "
+"name, description, display order, Tenant, visibility, and active state. "
+"Selecting one stores its context on the Instance or App. This supports "
+"categorization, display, filtering, automation variables, and naming-"
+"policy expressions; it is not itself a placement rule, lifecycle action, "
+"or RBAC boundary. Use Groups/Clouds and Policies for placement or "
+"lifecycle behavior and Roles/resource permissions for access "
+"segmentation. Provisioning Settings can require users to select an "
+"Environment, but that requirement does not change what the selected value"
+" authorizes."
+msgstr ""
+
+#: ../../administration/settings/environments.rst:9
 msgid "Creating Environments"
 msgstr "Creando Entornos"
 
-#: ../../administration/settings/environments.rst:9
+#: ../../administration/settings/environments.rst:11
 msgid "Select `+ Create Environment`"
 msgstr "Seleccionar `+ Crear Entorno`"
 
-#: ../../administration/settings/environments.rst:10
+#: ../../administration/settings/environments.rst:12
 msgid "Populate the following for the New Environment:"
 msgstr "Populate lo siguiente para el Nuevo Entorno:"
 
-#: ../../administration/settings/environments.rst:12
+#: ../../administration/settings/environments.rst:14
 msgid "Name"
 msgstr "Nombre"
 
-#: ../../administration/settings/environments.rst:13
+#: ../../administration/settings/environments.rst:15
 msgid "The friendly name for the environment in |morpheus|"
 msgstr "El friendly nombre para el entorno en |morpheus|"
 
-#: ../../administration/settings/environments.rst:14
+#: ../../administration/settings/environments.rst:16
 msgid "Code"
 msgstr "Code"
 
-#: ../../administration/settings/environments.rst:15
+#: ../../administration/settings/environments.rst:17
 msgid "Shortcode used for API and CLI"
 msgstr "Shortcode usado para API y CLI"
 
-#: ../../administration/settings/environments.rst:16
+#: ../../administration/settings/environments.rst:18
 msgid "Description"
 msgstr "Descripción"
 
-#: ../../administration/settings/environments.rst:17
+#: ../../administration/settings/environments.rst:19
 msgid "Environment description displayed on the Environments list page"
 msgstr "Entorno description mostrado en el Entornos lista página"
 
-#: ../../administration/settings/environments.rst:18
+#: ../../administration/settings/environments.rst:20
 msgid "Display Order"
 msgstr "Mostrar Order"
 
-#: ../../administration/settings/environments.rst:19
+#: ../../administration/settings/environments.rst:21
 msgid ""
-"The order in which environments are presented when provisioning, a value of "
-"\"0\" will position the environment at the top of the list"
+"The order in which environments are presented when provisioning, a value "
+"of \"0\" will position the environment at the top of the list"
 msgstr ""
-"El order en que entornos son presented cuando aprovisionamiento, a valor de "
-"\"0\" va a position el entorno en el top de el lista"
+"El order en que entornos son presented cuando aprovisionamiento, a valor "
+"de \"0\" va a position el entorno en el top de el lista"
 
 #: ../../administration/settings/environments.rst:22
 msgid "Visibility"
 msgstr "Visibilidad"
 
-#: ../../administration/settings/environments.rst:21
+#: ../../administration/settings/environments.rst:23
 msgid "*Private*: Available only in the Tenant the environment is created in"
 msgstr "*Private*: Disponible solo en el Inquilino el entorno es creado en"
 
-#: ../../administration/settings/environments.rst:22
+#: ../../administration/settings/environments.rst:24
 msgid ""
 "*Public*: Available for all Tenants. Public is only applicable for "
 "environments created in the the Master Tenant."
 msgstr ""
-"*Público*: Disponible para todos Inquilinos. Público es solo applicable para"
-" entornos creado en el el Inquilino maestro."
+"*Público*: Disponible para todos Inquilinos. Público es solo applicable "
+"para entornos creado en el el Inquilino maestro."
 
-#: ../../administration/settings/environments.rst:24
-msgid ""
-"User-created environments can be edited, hidden, or removed from the Actions"
-" menu on the environments list page. |morpheus|-default environments can "
-"only be hidden from users during provisioning."
+#: ../../administration/settings/environments.rst:26
+msgid "Note"
 msgstr ""
-"Usuario-creado entornos puede ser edited, hidden, o removed desde el Actions"
-" menu en el entornos lista página. |morpheus|-predeterminado entornos puede "
-"solo be hidden desde usuarios durante aprovisionamiento."
+
+#: ../../administration/settings/environments.rst:26
+msgid ""
+"User-created environments can be edited, hidden, or removed from the "
+"Actions menu on the environments list page. |morpheus|-default "
+"environments can only be hidden from users during provisioning."
+msgstr ""
+"Usuario-creado entornos puede ser edited, hidden, o removed desde el "
+"Actions menu en el entornos lista página. |morpheus|-predeterminado "
+"entornos puede solo be hidden desde usuarios durante aprovisionamiento."
+

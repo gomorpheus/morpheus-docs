@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:2
+msgid "Azure Scale Sets"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:4
+msgid ""
+"Auto-scaling Azure instances can be done with the native Morpheus scaling"
+" service or Azure Scale Sets. When using Azure Scale Sets, Morpheus will "
+"configure the scale sets and thresholds, but Azure will be responsible "
+"for scaling the instances. The Instances nodes that are added and removed"
+" by Azure will be synced in by Morpheus as the instance scales up and "
+"down."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:6
+#: ../../integration_guides/Clouds/azure/scalesets.rst:29
+#: ../../integration_guides/Clouds/azure/scalesets.rst:51
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:6
+msgid "Instances can only be added to Azure Scale Sets at provision time."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:9
+msgid "Adding an Instance to a Scale Set"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:11
+msgid "In ``Provisioning - Instances`` select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:12
+msgid ""
+"Select an Instance Type that has scaling enabled (Advanced section when "
+"editing an Instance Type in `Provisioning - Library`)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:13
+msgid "Configure the Instance as desired"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:14
+msgid ""
+"In the `AUTOMATION` section under `Scale - Scale Type` select `Azure "
+"Scale Set`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:15
+msgid ""
+"Select a default Threshold. Threshold pre-sets can be added in "
+"`Provisioning - Automation- Scale Thresholds` (requires Instances - "
+"Thresholds permission)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:17
+msgid ".. image:: /images/clouds/azure/azure_scale_sets1.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:19
+msgid "Complete the instance configuration and provision the instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:21
+msgid ""
+"A Virtual Machine scale set will be created in Azure with the selected "
+"threshold and min/max node settings."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:24
+msgid "Create Threshold Presets"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:27
+msgid "In ``Provisioning - Automation`` select the `SCALE THRESHOLDS` tab"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:29
+msgid ""
+"Access to the SCALE THRESHOLDS section requires `Instances - Thresholds` "
+"Role permissions."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:31
+msgid ".. image:: /images/provisioning/scalethresholds.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:32
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:33
+msgid "Configure Threshold settings."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:35
+msgid ".. image:: /images/provisioning/scalethresholds1.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:37
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:39
+msgid ""
+"The new Threshold will be available for selection in the SCALE section "
+"during provisioning or when configuring an App Blueprint."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:43
+msgid "Edit Thresholds on an Instance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:45
+msgid "In ``Provisioning - Instances`` select the target Instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:46
+msgid "Select the `SCALE` tab below the VM's section"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:47
+msgid "In the `THRESHOLDS` section of the SCALE tab, click :guilabel:`EDIT`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:48
+msgid "Update the threshold settings."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:49
+msgid "Select :guilabel:`APPLY`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure/scalesets.rst:51
+msgid ""
+"Morpheus will sync in changes to a scale sets threshold settings if the "
+"settings are edited in Azure."
+msgstr ""
+

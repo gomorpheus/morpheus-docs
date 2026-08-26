@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -35,7 +35,13 @@ msgid ""
 "results are stored on the ``results`` variable. Since results are "
 "available to all Tasks, we can use results from any or all prior Tasks so"
 " long as they are executed within the same provision phase."
-msgstr "Using Tarea results, el/la output desde cualquier preceding Tareas dentro de el/la mismo/misma Flujo de trabajo phase es disponible a be called en additional Tareas. El/La results son stored en el/la ``results`` variable. Since results son disponible a todos/todas Tareas, we puede/n use results desde cualquier o todos/todas prior Tareas so long como they son executed dentro de el/la mismo/misma provision phase."
+msgstr ""
+"Using Tarea results, el/la output desde cualquier preceding Tareas dentro"
+" de el/la mismo/misma Flujo de trabajo phase es disponible a be called en"
+" additional Tareas. El/La results son stored en el/la ``results`` "
+"variable. Since results son disponible a todos/todas Tareas, we puede/n "
+"use results desde cualquier o todos/todas prior Tareas so long como they "
+"son executed dentro de el/la mismo/misma provision phase."
 
 #: ../../library/automation/tasks/taskResults.rst:10
 msgid ""
@@ -50,7 +56,18 @@ msgid ""
 "<https://docs.morpheusdata.com/en/latest/library/automation/tasks/taskResults.html"
 "#results-types>`_ to see how script results are processed in various "
 "example cases."
-msgstr "In script type tasks, if a RESULT TYPE is set, |morpheus| will store the output on the ``results`` variable. It's important to understand that the result type indicates the format of the Tarea output |morpheus| should expect. |morpheus| will parse that output into a Groovy map which puede ser retrieved and further parsed by resolving the ``results`` variable. If the RESULT TYPE is incorrectly set, |morpheus| may not be able to store the Tarea results correctly. Jump to the section on `Script Config Examples <https://docs.morpheusdata.com/en/latest/library/automation/tasks/taskResults.html#results-types>`_ to see how script results are processed in various example cases."
+msgstr ""
+"In script type tasks, if a RESULT TYPE is set, |morpheus| will store the "
+"output on the ``results`` variable. It's important to understand that the"
+" result type indicates the format of the Tarea output |morpheus| should "
+"expect. |morpheus| will parse that output into a Groovy map which puede "
+"ser retrieved and further parsed by resolving the ``results`` variable. "
+"If the RESULT TYPE is incorrectly set, |morpheus| may not be able to "
+"store the Tarea results correctly. Jump to the section on `Script Config "
+"Examples "
+"<https://docs.morpheusdata.com/en/latest/library/automation/tasks/taskResults.html"
+"#results-types>`_ to see how script results are processed in various "
+"example cases."
 
 #: ../../library/automation/tasks/taskResults.rst:13
 msgid "Results Types"
@@ -65,7 +82,9 @@ msgstr "Valor único"
 msgid ""
 "Entire task output is stored in ``<%=results.taskCode%>`` or "
 "``<%=results[\"Task Name\"]%>`` variable."
-msgstr "Entire task output is stored in ``<%=results.taskCode%>`` or ``<%=results[\"Tarea Name\"]%>`` variable."
+msgstr ""
+"Entire task output is stored in ``<%=results.taskCode%>`` or "
+"``<%=results[\"Tarea Name\"]%>`` variable."
 
 #: ../../library/automation/tasks/taskResults.rst:17
 #: ../../library/automation/tasks/taskResults.rst:72
@@ -78,10 +97,14 @@ msgid ""
 "with ``<%=results.taskCode%>`` or ``<%=results[\"Task Name\"]%>`` "
 "variable (output inside ``[]``). Individual Values are available with "
 "``<%=results.taskCode.key%>`` variables."
-msgstr "Expects ``key=value,key=value`` output. Entire task output es disponible con ``<%=results.taskCode%>`` o ``<%=results[\"Tarea Name\"]%>`` variable (output inside ``[]``). Individual Values son disponible con ``<%=results.taskCode.key%>`` variables."
+msgstr ""
+"Expects ``key=value,key=value`` output. Entire task output es disponible "
+"con ``<%=results.taskCode%>`` o ``<%=results[\"Tarea Name\"]%>`` variable"
+" (output inside ``[]``). Individual Values son disponible con "
+"``<%=results.taskCode.key%>`` variables."
 
 #: ../../library/automation/tasks/taskResults.rst
-#: ../../library/automation/tasks/taskResults.rst:20
+#: ../../library/automation/tasks/taskResults.rst:19
 #: ../../library/automation/tasks/taskResults.rst:95
 msgid "JSON"
 msgstr "JSON"
@@ -92,7 +115,16 @@ msgid ""
 " is available with ``<%=results.taskCode%>`` or ``<%=results[\"Task "
 "Name\"]%>`` variable (output inside ``[]``). Individual Values are "
 "available with ``<%=results.taskCode.key%>`` variables."
-msgstr "Expects ``key:value,key:value`` json formatted output. Entire task output es disponible con ``<%=results.taskCode%>`` o ``<%=results[\"Tarea Name\"]%>`` variable (output inside ``[]``). Individual Values son disponible con ``<%=results.taskCode.key%>`` variables."
+msgstr ""
+"Expects ``key:value,key:value`` json formatted output. Entire task output"
+" es disponible con ``<%=results.taskCode%>`` o ``<%=results[\"Tarea "
+"Name\"]%>`` variable (output inside ``[]``). Individual Values son "
+"disponible con ``<%=results.taskCode.key%>`` variables."
+
+#: ../../library/automation/tasks/taskResults.rst:22
+#: ../../library/automation/tasks/taskResults.rst:24
+msgid "Important"
+msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst:22
 msgid ""
@@ -100,11 +132,18 @@ msgid ""
 "line. Ensure formatting is correct for the appropriate result type. For "
 "example, if Results Type is ``json`` and the output is not fully json "
 "compatible, the result would not return properly."
-msgstr "El/La entire output de un/una script es treated como results, ningún just el/la último/última line. Ensure formatting es correct para el/la appropriate result type. For example, si Results Type es ``json`` y el/la output es ningún fully json compatible, el/la result would ningún return properly."
+msgstr ""
+"El/La entire output de un/una script es treated como results, ningún just"
+" el/la último/última line. Ensure formatting es correct para el/la "
+"appropriate result type. For example, si Results Type es ``json`` y el/la"
+" output es ningún fully json compatible, el/la result would ningún return"
+" properly."
 
 #: ../../library/automation/tasks/taskResults.rst:24
 msgid "Task results are not supported for Library Script task types"
-msgstr "Tarea results son ningún soportado/soportada para Library Script task types"
+msgstr ""
+"Tarea results son ningún soportado/soportada para Library Script task "
+"types"
 
 #: ../../library/automation/tasks/taskResults.rst:27
 msgid "Script Config Examples"
@@ -114,10 +153,10 @@ msgstr "Script Config Examples"
 msgid "Single Value using Task Code"
 msgstr "Single Value using Tarea Code"
 
-#: ../../library/automation/tasks/taskResults.rst:34
-#: ../../library/automation/tasks/taskResults.rst:54
-#: ../../library/automation/tasks/taskResults.rst:73
-#: ../../library/automation/tasks/taskResults.rst:96
+#: ../../library/automation/tasks/taskResults.rst:30
+#: ../../library/automation/tasks/taskResults.rst:47
+#: ../../library/automation/tasks/taskResults.rst:66
+#: ../../library/automation/tasks/taskResults.rst:89
 msgid "Source Task Config"
 msgstr "Source Tarea Config"
 
@@ -141,7 +180,7 @@ msgstr "SCRIPT: ``echo \"string value\"``"
 msgid "Source Task Output: ``string value``"
 msgstr "Source Tarea Output: ``string value``"
 
-#: ../../library/automation/tasks/taskResults.rst:42
+#: ../../library/automation/tasks/taskResults.rst:38
 msgid "Results Task Config (using task code in variable)"
 msgstr "Results Tarea Config (using task code in variable)"
 
@@ -215,7 +254,7 @@ msgstr "Source Tarea Output"
 msgid "``string value``"
 msgstr "``string value``"
 
-#: ../../library/automation/tasks/taskResults.rst:63
+#: ../../library/automation/tasks/taskResults.rst:58
 msgid "Results Task using task name in variable"
 msgstr "Results Tarea using task name in variable"
 
@@ -224,7 +263,7 @@ msgstr "Results Tarea using task name in variable"
 #: ../../library/automation/tasks/taskResults.rst:83
 #: ../../library/automation/tasks/taskResults.rst:101
 #: ../../library/automation/tasks/taskResults.rst:106
-#: ../../library/automation/tasks/taskResults.rst:120
+#: ../../library/automation/tasks/taskResults.rst:112
 msgid "Results Task Script"
 msgstr "Results Tarea Script"
 
@@ -232,12 +271,12 @@ msgstr "Results Tarea Script"
 msgid "``echo \"task name: <%=results[\"Var Code\"]%>\"``"
 msgstr "``echo \\\"task name: <%=results[\\\"Var Code\\\"]%>\\\"``"
 
-#: ../../library/automation/tasks/taskResults.rst:63
+#: ../../library/automation/tasks/taskResults.rst:61
 #: ../../library/automation/tasks/taskResults.rst:80
-#: ../../library/automation/tasks/taskResults.rst:86
+#: ../../library/automation/tasks/taskResults.rst:85
 #: ../../library/automation/tasks/taskResults.rst:103
-#: ../../library/automation/tasks/taskResults.rst:109
-#: ../../library/automation/tasks/taskResults.rst:130
+#: ../../library/automation/tasks/taskResults.rst:108
+#: ../../library/automation/tasks/taskResults.rst:122
 msgid "Results Task Output"
 msgstr "Results Tarea Output"
 
@@ -265,8 +304,8 @@ msgstr "``echo \\\"flash=bang,ping=pong\\\"``"
 msgid "``flash=bang,ping=pong``"
 msgstr "``flash=bang,ping=pong``"
 
-#: ../../library/automation/tasks/taskResults.rst:80
-#: ../../library/automation/tasks/taskResults.rst:103
+#: ../../library/automation/tasks/taskResults.rst:77
+#: ../../library/automation/tasks/taskResults.rst:100
 msgid "Results Task for all results"
 msgstr "Results Tarea for all results"
 
@@ -278,7 +317,7 @@ msgstr "``echo \\\"keyval: <%=results.keyvalExample%>\\\"``"
 msgid "``keyval: [flash:bang, ping:pong]``"
 msgstr "``keyval: [flash:bang, ping:pong]``"
 
-#: ../../library/automation/tasks/taskResults.rst:86
+#: ../../library/automation/tasks/taskResults.rst:82
 msgid "Results Task for a single value)"
 msgstr "Results Tarea for a single value)"
 
@@ -301,7 +340,9 @@ msgstr "jsonExample"
 #: ../../library/automation/tasks/taskResults.rst:97
 #, python-brace-format
 msgid "``echo \"{\\\"ping\\\":\\\"pong\\\",\\\"flash\\\":\\\"bang\\\"}\"``"
-msgstr "``echo \\\"{\\\\\\\"ping\\\\\\\":\\\\\\\"pong\\\\\\\",\\\\\\\"flash\\\\\\\":\\\\\\\"bang\\\\\\\"}\\\"``"
+msgstr ""
+"``echo "
+"\\\"{\\\\\\\"ping\\\\\\\":\\\\\\\"pong\\\\\\\",\\\\\\\"flash\\\\\\\":\\\\\\\"bang\\\\\\\"}\\\"``"
 
 #: ../../library/automation/tasks/taskResults.rst:99
 #, python-brace-format
@@ -316,7 +357,7 @@ msgstr "``echo \\\"json: <%=results.jsonExample%>\\\"``"
 msgid "``json: [ping:pong, flash:bang]``"
 msgstr "``json: [ping:pong, flash:bang]``"
 
-#: ../../library/automation/tasks/taskResults.rst:109
+#: ../../library/automation/tasks/taskResults.rst:105
 msgid "Results Task for a single value"
 msgstr "Results Tarea for a single value"
 
@@ -340,7 +381,13 @@ msgid ""
 "echo \"keyval value: <%=results.keyval.flash%>\"\n"
 "echo \"json: <%=results.jsonExample%>\"\n"
 "echo \"json value: <%=results.jsonExample.ping%>\""
-msgstr "echo \"single: <%=results.singleExample%>\"\necho \"task name: <%=results[\"Var Code\"]%>\"\necho \"keyval: <%=results.keyvalExample%>\"\necho \"keyval value: <%=results.keyval.flash%>\"\necho \"json: <%=results.jsonExample%>\"\necho \"json value: <%=results.jsonExample.ping%>\""
+msgstr ""
+"echo \"single: <%=results.singleExample%>\"\n"
+"echo \"task name: <%=results[\"Var Code\"]%>\"\n"
+"echo \"keyval: <%=results.keyvalExample%>\"\n"
+"echo \"keyval value: <%=results.keyval.flash%>\"\n"
+"echo \"json: <%=results.jsonExample%>\"\n"
+"echo \"json value: <%=results.jsonExample.ping%>\""
 
 #: ../../library/automation/tasks/taskResults.rst:123
 msgid ""
@@ -350,7 +397,13 @@ msgid ""
 "keyval value: bang\n"
 "json: [ping:pong, flash:bang]\n"
 "json value: pong"
-msgstr "single: string value\ntask name: string value\nkeyval: [flash:bang, ping:pong]\nkeyval value: bang\njson: [ping:pong, flash:bang]\njson value: pong"
+msgstr ""
+"single: string value\n"
+"task name: string value\n"
+"keyval: [flash:bang, ping:pong]\n"
+"keyval value: bang\n"
+"json: [ping:pong, flash:bang]\n"
+"json value: pong"
 
 #: ../../library/automation/tasks/taskResults.rst:133
 msgid "Workflow Config"
@@ -362,11 +415,17 @@ msgid ""
 " the results will be available to all tasks in the same phase of the "
 "workflow via the ``<%=results.variables%>`` during the workflow "
 "execution."
-msgstr "Agregue one or multiple tasks with Results Type configured to a workflow, and the results will be available a all tasks in the same phase of the workflow via the ``<%=results.variables%>`` during the workflow execution."
+msgstr ""
+"Agregue one or multiple tasks with Results Type configured to a workflow,"
+" and the results will be available a all tasks in the same phase of the "
+"workflow via the ``<%=results.variables%>`` during the workflow "
+"execution."
 
 #: ../../library/automation/tasks/taskResults.rst:137
 msgid "Task Results are only available to tasks in the same workflow phase"
-msgstr "Tarea Results son solo disponible a tasks en el/la mismo/misma workflow phase"
+msgstr ""
+"Tarea Results son solo disponible a tasks en el/la mismo/misma workflow "
+"phase"
 
 #: ../../library/automation/tasks/taskResults.rst:138
 msgid "Task Results are only available during workflow execution"

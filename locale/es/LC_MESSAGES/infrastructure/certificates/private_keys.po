@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/certificates/private_keys.rst:4
@@ -30,15 +30,17 @@ msgstr "Descripción general"
 
 #: ../../infrastructure/certificates/private_keys.rst:9
 msgid ""
-"|morpheus| securely stores and manages private keys associated with SSL/TLS "
-"certificates. Private keys are encrypted at rest and access is controlled "
-"through role-based permissions. This section covers best practices and "
-"operational procedures for key management within |morpheus|."
+"|morpheus| securely stores and manages private keys associated with "
+"SSL/TLS certificates. Private keys are encrypted at rest and access is "
+"controlled through role-based permissions. This section covers best "
+"practices and operational procedures for key management within "
+"|morpheus|."
 msgstr ""
-"|morpheus| securely stores y gestiona privado claves asociado con SSL/TLS "
-"certificados. Privado claves son encrypted en rest y acceso es controlled a "
-"través de role-based permisos. Este sección covers mejores prácticas y "
-"operational procedures para clave gestión dentro de |morpheus|."
+"|morpheus| securely stores y gestiona privado claves asociado con SSL/TLS"
+" certificados. Privado claves son encrypted en rest y acceso es "
+"controlled a través de role-based permisos. Este sección covers mejores "
+"prácticas y operational procedures para clave gestión dentro de "
+"|morpheus|."
 
 #: ../../infrastructure/certificates/private_keys.rst:12
 msgid "Key Storage Security"
@@ -46,43 +48,43 @@ msgstr "Clave Storage Security"
 
 #: ../../infrastructure/certificates/private_keys.rst:14
 msgid ""
-"All private keys stored in |morpheus| are protected by multiple layers of "
-"security:"
+"All private keys stored in |morpheus| are protected by multiple layers of"
+" security:"
 msgstr ""
-"Todos privado claves stored en |morpheus| son protected por múltiples layers"
-" de security:"
+"Todos privado claves stored en |morpheus| son protected por múltiples "
+"layers de security:"
 
 #: ../../infrastructure/certificates/private_keys.rst:16
 msgid ""
 "**Encryption at Rest:** Keys are stored using AES-256 encryption in the "
 "|morpheus| database"
 msgstr ""
-"**Cifrado at Rest:** Keys son stored usando AES-256 cifrado en el |morpheus|"
-" base de datos"
+"**Cifrado at Rest:** Keys son stored usando AES-256 cifrado en el "
+"|morpheus| base de datos"
 
 #: ../../infrastructure/certificates/private_keys.rst:17
 msgid ""
 "**Access Control:** Only users with the appropriate role permissions can "
 "view or manage certificates containing private keys"
 msgstr ""
-"**Acceso Control:** Solo usuarios con el appropriate permisos de rol puede "
-"ver o manage certificados containing privado claves"
+"**Acceso Control:** Solo usuarios con el appropriate permisos de rol "
+"puede ver o manage certificados containing privado claves"
 
 #: ../../infrastructure/certificates/private_keys.rst:18
 msgid ""
-"**Masked Display:** Private keys are never displayed in plain text in the UI"
-" after upload"
+"**Masked Display:** Private keys are never displayed in plain text in the"
+" UI after upload"
 msgstr ""
-"**Masked Display:** Privado claves son nunca mostrado en plain text en el UI"
-" después de cargar"
+"**Masked Display:** Privado claves son nunca mostrado en plain text en el"
+" UI después de cargar"
 
 #: ../../infrastructure/certificates/private_keys.rst:19
 msgid ""
-"**Audit Trail:** Key access and modifications are logged in the |morpheus| "
-"activity feed"
+"**Audit Trail:** Key access and modifications are logged in the "
+"|morpheus| activity feed"
 msgstr ""
-"**Audit Trail:** Clave acceso y modifications son logged en el |morpheus| "
-"activity feed"
+"**Audit Trail:** Clave acceso y modifications son logged en el |morpheus|"
+" activity feed"
 
 #: ../../infrastructure/certificates/private_keys.rst:22
 msgid "Supported Key Types"
@@ -102,11 +104,11 @@ msgstr "**ECDSA:** Elliptic Curve claves (P-256, P-384, P-521)"
 
 #: ../../infrastructure/certificates/private_keys.rst:28
 msgid ""
-"**PEM Format:** Base64-encoded DER format enclosed in ``-----BEGIN PRIVATE "
-"KEY-----`` / ``-----END PRIVATE KEY-----`` headers"
+"**PEM Format:** Base64-encoded DER format enclosed in ``-----BEGIN "
+"PRIVATE KEY-----`` / ``-----END PRIVATE KEY-----`` headers"
 msgstr ""
-"**PEM Format:** Base64-encoded DER format enclosed en ``-----BEGIN PRIVATE "
-"KEY-----`` / ``-----END PRIVATE KEY-----`` headers"
+"**PEM Format:** Base64-encoded DER format enclosed en ``-----BEGIN "
+"PRIVATE KEY-----`` / ``-----END PRIVATE KEY-----`` headers"
 
 #: ../../infrastructure/certificates/private_keys.rst:31
 msgid "Key Passphrases"
@@ -118,11 +120,11 @@ msgstr "|morpheus| soporta passphrase-protected privado claves:"
 
 #: ../../infrastructure/certificates/private_keys.rst:35
 msgid ""
-"When uploading a key with a passphrase, enter the passphrase in the **KEY "
-"PASSPHRASE** field"
+"When uploading a key with a passphrase, enter the passphrase in the **KEY"
+" PASSPHRASE** field"
 msgstr ""
-"Cuando uploading un clave con un passphrase, ingresar el passphrase en el "
-"**KEY PASSPHRASE** campo"
+"Cuando uploading un clave con un passphrase, ingresar el passphrase en el"
+" **KEY PASSPHRASE** campo"
 
 #: ../../infrastructure/certificates/private_keys.rst:36
 msgid "The passphrase is stored encrypted alongside the key"
@@ -130,20 +132,25 @@ msgstr "El passphrase es stored encrypted alongside el clave"
 
 #: ../../infrastructure/certificates/private_keys.rst:37
 msgid ""
-"|morpheus| automatically decrypts the key when needed for operations (e.g., "
-"SSL termination)"
+"|morpheus| automatically decrypts the key when needed for operations "
+"(e.g., SSL termination)"
 msgstr ""
 "|morpheus| automáticamente decrypts el clave cuando necesario para "
 "operaciones (e.g., SSL termination)"
 
 #: ../../infrastructure/certificates/private_keys.rst:39
-msgid ""
-"It is recommended to use passphrase-protected keys for an additional layer "
-"of security, particularly when keys are shared across multiple systems."
+msgid "Note"
 msgstr ""
-"It es recomendado a usar passphrase-protected claves para un adicional layer"
-" de security, particularly cuando claves son shared a través de múltiples "
-"sistemas."
+
+#: ../../infrastructure/certificates/private_keys.rst:39
+msgid ""
+"It is recommended to use passphrase-protected keys for an additional "
+"layer of security, particularly when keys are shared across multiple "
+"systems."
+msgstr ""
+"It es recomendado a usar passphrase-protected claves para un adicional "
+"layer de security, particularly cuando claves son shared a través de "
+"múltiples sistemas."
 
 #: ../../infrastructure/certificates/private_keys.rst:42
 msgid "Uploading Private Keys"
@@ -163,8 +170,8 @@ msgstr "Click :guilabel:`+ AGREGAR` o editar un existente certificado"
 
 #: ../../infrastructure/certificates/private_keys.rst:48
 msgid ""
-"In the **PRIVATE KEY (PEM)** field, paste the full PEM-encoded private key "
-"content"
+"In the **PRIVATE KEY (PEM)** field, paste the full PEM-encoded private "
+"key content"
 msgstr ""
 "En el **PRIVATE KEY (PEM)** campo, paste el completo PEM-encoded privado "
 "clave content"
@@ -191,7 +198,8 @@ msgstr "A rotate un privado clave (e.g., para security compliance):"
 
 #: ../../infrastructure/certificates/private_keys.rst:57
 msgid ""
-"Generate a new key pair and obtain a new certificate signed with the new key"
+"Generate a new key pair and obtain a new certificate signed with the new "
+"key"
 msgstr ""
 "Generate un nuevo clave pair y obtain un nuevo certificado signed con el "
 "nuevo clave"
@@ -210,14 +218,17 @@ msgstr "Guardar el actualizado record"
 
 #: ../../infrastructure/certificates/private_keys.rst:61
 msgid "Verify services using the certificate continue to function correctly"
+msgstr "Verificar servicios usando el certificado continuar a function correctly"
+
+#: ../../infrastructure/certificates/private_keys.rst:63
+msgid "Tip"
 msgstr ""
-"Verificar servicios usando el certificado continuar a function correctly"
 
 #: ../../infrastructure/certificates/private_keys.rst:63
 msgid ""
-"For zero-downtime key rotation on load balancers, add the new certificate as"
-" a separate entry first, update the load balancer configuration to use the "
-"new certificate, then remove the old entry."
+"For zero-downtime key rotation on load balancers, add the new certificate"
+" as a separate entry first, update the load balancer configuration to use"
+" the new certificate, then remove the old entry."
 msgstr ""
 "Para zero-downtime clave rotation en load balancers, agregar el nuevo "
 "certificado como un separate entrada primero, update el load balancer "
@@ -247,11 +258,12 @@ msgstr "SSH Clave Pairs"
 
 #: ../../infrastructure/certificates/private_keys.rst:73
 msgid ""
-"SSH key pairs for server authentication are managed separately in the **Key "
-"Pairs** section of Infrastructure > Trust. See the Key Pairs documentation "
-"for details on managing SSH keys used during provisioning."
+"SSH key pairs for server authentication are managed separately in the "
+"**Key Pairs** section of Infrastructure > Trust. See the Key Pairs "
+"documentation for details on managing SSH keys used during provisioning."
 msgstr ""
-"SSH clave pairs para servidor autenticación son administrado separadamente "
-"en el **Pares de claves** sección de Infraestructura > Trust. Consulte la "
-"Pares de claves documentación para details en managing SSH claves utilizado "
-"durante provisioning."
+"SSH clave pairs para servidor autenticación son administrado "
+"separadamente en el **Pares de claves** sección de Infraestructura > "
+"Trust. Consulte la Pares de claves documentación para details en managing"
+" SSH claves utilizado durante provisioning."
+

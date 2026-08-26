@@ -1,0 +1,1820 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:2
+msgid "AWS |enterprise-only|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:7
+msgid "Public cloud integrations including AWS are Enterprise-only features."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:10
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:12
+msgid ""
+"AWS is the Amazon public cloud, offering a full range of services and "
+"features across the globe in various datacenters. AWS provides businesses"
+" with a flexible, highly scalable, and low-cost way to deliver a variety "
+"of services using open standard technologies as well as proprietary "
+"solutions. This section of documentation will help you get |morpheus| and"
+" AWS connected to utilize the features below:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:15
+msgid "Features"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:17
+msgid "Instance, Service, Infrastructure Provisioning & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:18
+msgid "EKS Cluster Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:19
+msgid "|morpheus| Kubernetes, Docker & KVM Cluster Creation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:20
+msgid "ELB Classic Load Balancer Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:21
+msgid "ELB Application Load Balancer (ALB) Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:22
+msgid "Security Group Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:23
+msgid "Security Group Rule Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:24
+msgid "Network Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:25
+msgid "VPC Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:26
+msgid "CloudFormation Provisioning & Resource Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:27
+msgid "Terraform Provisioning & Resource Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:28
+msgid "Pricing & Costing Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:29
+msgid "MetaData Tag Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:30
+msgid "S3 Bucket Creation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:31
+msgid "Route53 Automation & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:32
+msgid "IAM Profile Synchronization and Assignment"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:33
+msgid "RDS Support"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:34
+msgid "Backups / Snapshots"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:35
+msgid "Migrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:36
+msgid "Auto Scaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:37
+msgid "Remote Console (SSH & RDP)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:38
+msgid "Lifecycle Management and Resize"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:39
+msgid "Restore from Snapshots"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:40
+msgid "Elastic IP Assignment"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:41
+msgid "Network Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:42
+msgid "Enhanced Invoice Costing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:46
+msgid "Requirements"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:48
+msgid "AWS IAM Security Credentials"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:49
+msgid ""
+"Access Key Secret Key Sufficient User Privileges (see MinimumIAMPolicies_"
+" section for more info)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:52
+msgid ""
+"Security Group Configuration for Agent Install, Script Execution, and "
+"Remote Console Access"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:53
+msgid ""
+"Typical Inbound ports open from |morpheus| Appliance: 22, 5985, 3389 (22 "
+"& 3389 required for Console. 22 & 5985 required for agent-less comms)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:54
+msgid ""
+"Typical Outbound to |morpheus| Appliance: 443 (Required for Agent install"
+" & comms)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:56
+#: ../../integration_guides/Clouds/aws/amazon.rst:93
+#: ../../integration_guides/Clouds/aws/amazon.rst:129
+#: ../../integration_guides/Clouds/aws/amazon.rst:136
+#: ../../integration_guides/Clouds/aws/amazon.rst:166
+#: ../../integration_guides/Clouds/aws/amazon.rst:319
+#: ../../integration_guides/Clouds/aws/amazon.rst:333
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:56
+msgid ""
+"These are required for |morpheus| agent install, communication, and "
+"remote console access for windows and linux. Other configurations, such "
+"as docker instances, will need the appropriate ports opened as well. "
+"Cloud-init Agent Install mode does not require incoming access for port "
+"22."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:58
+msgid "Network(s)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:59
+msgid ""
+"IP assignment required for Agent install, Script Execution, and Console "
+"if the |morpheus| Appliance is not able to communicate with AWS instances"
+" private ip's."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:62
+msgid "Adding an AWS Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:64
+msgid "Navigate to `Infrastructure > Clouds`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:65
+msgid "Select `+ Create Cloud`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:66
+msgid "Select AWS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:67
+msgid "Enter the following:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:1
+msgid "**Cloud Configuration**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:3
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:4
+msgid "Name of the Cloud in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:5
+msgid "CODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:6
+msgid "Unique code used for api/cli, automation and policies."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:7
+msgid "LOCATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:8
+msgid "Description field for adding notes on the cloud, such as location."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:9
+msgid "VISIBILITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:10
+msgid ""
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:11
+msgid "TENANT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:12
+msgid ""
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:13
+msgid "ENABLED"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:14
+msgid ""
+"When disabled, automatic Cloud sync is paused and the Cloud will not be "
+"selectable for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:15
+msgid "AUTOMATICALLY POWER ON VMS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:16
+msgid ""
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid ""
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:72
+msgid "Details"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:73
+msgid "REGION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:74
+msgid ""
+"Select AWS Region for the Cloud. AWS Clouds may also be scoped to all "
+"regions."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:75
+msgid "ACCESS KEY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:76
+msgid "Access Key ID from AWS IAM User Security Credentials."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:77
+msgid "SECRET KEY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:78
+msgid "Secret Access Key associated with the Access Key ID."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:79
+msgid "USE HOST IAM CREDENTIALS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:80
+msgid "Check to use use Host IAM Credentials"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:81
+msgid "ROLE ARN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:82
+msgid ""
+"Supports security token service (STS) to AssumeRole by entering an AWS "
+"Role ARN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:83
+msgid "EXTERNAL ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:84
+msgid "When required to AssumeRole, included the needed External ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:85
+msgid "INVENTORY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:86
+msgid "Basic"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:87
+msgid ""
+"|morpheus| will sync information on all EC2 Instances in the selected VPC"
+" the IAM user has access to, including Name, IP Addresses, Platform Type,"
+" Power Status, and overall resources sizing for Storage, CPU and RAM, "
+"every 5 minutes. Inventoried EC2 Instances will appear as Unmanaged VM's."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:88
+msgid "Full"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:89
+msgid ""
+"In addition to the information synced from Basic Inventory level, "
+"|morpheus| will gather Resource Utilization metrics for Memory, Storage "
+"and CPU utilization per VM."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:90
+msgid "Off"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:91
+msgid "Existing EC2 Instances will not be inventoried"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:93
+msgid ""
+"Cloud Watch must be configured in AWS for |morpheus| to collect Memory "
+"and Storage utilization metrics on inventoried EC2 instances."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:95
+msgid "USE VPC"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:96
+msgid ""
+"Specify if the target account is using EC2-VPC or EC2-Classic Platform. "
+"In almost all cases, VPC should be selected, and then select the target "
+"VPC from the synced available VPC's list, or `All` VPC's."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:98
+msgid ""
+"The AWS cloud is ready to be added to a group and saved. Additional "
+"configuration options available:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:100
+msgid "IMAGE TRANSFER STORE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:101
+msgid "S3 bucket for Image transfers, required for migrations into AWS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:102
+msgid "EBS ENCRYPTION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:103
+msgid "Enable or disable encryption of EBS Volumes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:104
+msgid "COSTING KEY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:105
+msgid "For Gov Cloud pricing only, key for standard managing cost account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:106
+msgid "COSTING SECRET"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:107
+msgid "For Gov Cloud pricing only, secret for standard managing cost account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:1
+msgid "**Advanced Options**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:3
+msgid "DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:4
+msgid "Specify a default domain for instances provisioned to this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:5
+msgid "SCALE PRIORITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:6
+msgid ""
+"Only affects Docker Provisioning. Specifies the priority with which an "
+"instance will scale into the cloud. A lower priority number means this "
+"cloud integration will take scale precedence over other cloud "
+"integrations in the group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:7
+msgid "APPLIANCE URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:8
+msgid ""
+"Alternate Appliance url for scenarios when the default Appliance URL "
+"(configured in `admin > settings`) is not reachable or resolvable for "
+"Instances provisioned in this cloud. The Appliance URL is used for Agent "
+"install and reporting."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:9
+msgid "TIME ZONE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:10
+msgid "Configures the time zone on provisioned VM's if necessary."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:11
+msgid "DATACENTER ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:12
+msgid ""
+"Used for differentiating pricing among multiple datacenters. Leave blank "
+"unless prices are properly configured."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:13
+msgid "NETWORK MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:14
+msgid "Unmanaged or select a Network Integration (NSX, ACI etc)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:15
+msgid "LOCAL FIREWALL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:16
+msgid ""
+"On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
+"only)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:17
+msgid "SECURITY SERVER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:18
+msgid "Security Server setting is for Security Service Integrations such as ACI"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:19
+msgid "TRUST PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:20
+msgid "Select Internal (Morpheus) or an existing Trust Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:21
+msgid "STORAGE MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:22
+msgid "Single Disk, LVM or Clustered"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:23
+msgid "BACKUP PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:24
+msgid ""
+"Select a backup provider. Depending on the Cloud type and any currently-"
+"configured backup plugins you may select Internal Backups (Morpheus) or "
+"another configured backup solution"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:25
+msgid "REPLICATION PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:26
+msgid ""
+"Sets the default Replication Provider for the Cloud. Select an existing "
+"Replication Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:27
+msgid "GUIDANCE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:28
+msgid "Enable Guidance recommendations on cloud resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:29
+msgid "COSTING"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:30
+msgid ""
+"Enable for |morpheus| to sync Costing data from the Cloud provider, when "
+"available. For on-prem Clouds, enabling costing activates a costing "
+"service designed to mirror the live costing experience of public clouds, "
+"including invoicing with line items and real-time cost data (Operations >"
+" Costing > Invoices). If your organization utilizes reserved instances "
+"and you want to pull in related pricing data, some Cloud integrations "
+"include the option to select `Costing and Reservations`. If this is not "
+"relevant, select `Costing` to save money on additional calls to the Cloud"
+" provider's costing API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:31
+msgid "DNS INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:32
+msgid ""
+"Records for instances provisioned in this cloud will be added to selected"
+" DNS integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:33
+msgid "SERVICE REGISTRY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:34
+msgid ""
+"Services for instances provisioned in this cloud will be added to "
+"selected Service Registry integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:35
+msgid "CONFIG MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:36
+msgid "Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:37
+msgid "CMDB"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:38
+msgid "Select CMDB Integration to automatically update selected CMDB."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:39
+msgid "CMDB DISCOVERY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:40
+msgid ""
+"When checked, any automatically discovered (unmanaged) servers onboarded "
+"into |morpheus| from this Cloud will also have CMDB records created for "
+"them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:41
+msgid "CHANGE MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:42
+msgid ""
+"Select an existing Change Management Integration to set on the Cloud. ex:"
+" Cherwell"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:43
+msgid "AGENT INSTALL MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid ""
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM "
+"or Guest Execution for Agent install."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:45
+msgid ""
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize"
+" Cloud-Init or Cloudbase-Init for agent install when provisioning images "
+"with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on "
+"SSH or WINRM if cloud-init is not installed on the provisioned image. "
+"Morpheus will also add Agent installation to Windows unattend.xml data "
+"when performing Guest Customizations or utilizing syspreped images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:46
+msgid "VDI GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:47
+msgid ""
+"Set a VDI Gateway for outbound communication from the |morpheus| "
+"Appliance to the vdi endpoints. VDI Gateways can be added in "
+"``/tools/vdi/gateways``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:50
+msgid "**CUSTOM LOGOS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:52
+msgid ""
+"When integrating a Cloud, it will appear by default throughout the UI "
+"with its standard logo (VMware logo for VMware Clouds, etc.). If desired,"
+" you may upload a custom logo that should appear instead. This might be "
+"useful for MSPs which might not want to reveal the Cloud type underlying "
+"its services. A dark mode version of the logo may also be uploaded if the"
+" standard logo doesn't look right against the |morpheus| dark mode theme."
+" Checking USE DEFAULT CLOUD LOGOS allows the user to return to the "
+"standard logo for the Cloud type without deleting the custom uploaded "
+"logo."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:54
+msgid "**INVENTORY OPTIONS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:56
+msgid ""
+"Inventory options allow you to set a default active or inactive state for"
+" certain discovered resources. The list of available resources to "
+"configure will vary based on the Cloud type and its supported resources. "
+"By default, all possible resources for the Cloud type will be discovered "
+"in an active state. Uncheck the box for some or all resources to discover"
+" them in an inactive state. The list of potential resources that may "
+"appear include:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:58
+msgid "Service Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:59
+msgid "Resource Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:60
+msgid "Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:61
+msgid "Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:62
+msgid "Datastores"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:63
+msgid "Folders"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:65
+msgid "**Provisioning Command**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:67
+msgid "PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:68
+msgid ""
+"Set a proxy for inbound communication from Instances to the |morpheus| "
+"Appliance. Proxies can be added in the `Infrastructure > Networks > "
+"Proxies` tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:69
+msgid "Bypass Proxy for Appliance URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:70
+msgid ""
+"Enable to bypass proxy settings (if added) for |morpheus| Agent "
+"communication to the Appliance URL."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:71
+msgid "NO PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:72
+msgid ""
+"Include a list of IP addresses or name servers to exclude from proxy "
+"traversal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:73
+msgid "USER DATA (LINUX)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid ""
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash "
+"syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more"
+" information."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:111
+msgid "KMS KEY ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:112
+msgid ""
+"For specify an AWS KMS key for encrypting EBS Volumes when volume "
+"encryption is enabled"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:115
+msgid "Provisioning and Keypairs"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:117
+msgid ""
+"During provisioning, users do not need to create or select a keypair as "
+"you would do when provisioning directly from the AWS console. If needed, "
+"|morpheus| will create an AWS keypair without input from the user. In the"
+" AWS console and in the |morpheus| Keypairs Section "
+"(:menuselection:`Infrastructure --> Keys & Certs --> Key Pairs`) you will"
+" see these keypairs listed. |morpheus| will also inventory other keypairs"
+" which are created in your integrated AWS clouds and these will be listed"
+" out in the |morpheus| Keypairs section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:119
+msgid ""
+"These created keypairs are not accessible to the user as you do not see "
+"them at creation time and they are encrypted as stored in the |morpheus| "
+"database. To have access to the Instance after provisioning, the user "
+"should have his or her user created during provisioning. This is done by "
+"creating a Linux user in |morpheus| `User Settings "
+"<https://docs.morpheusdata.com/en/latest/administration/user_settings/user_settings.html"
+"#linux-settings>`_ and associating a keypair with the user. If you don't "
+"currently have a keypair to use, |morpheus| can generate one for you in "
+"the Keypairs section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:121
+msgid ".. image:: /images/infrastructure/clouds/aws/userKeypair.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:123
+msgid ""
+"With your user set in |morpheus| User Settings, ensure that your user is "
+"being created during Instance provisioning. On the CONFIGURE tab of the "
+"Instance provisioning wizard, mark the \"CREATE YOUR USER\" box. This is "
+"normally checked by default if a user is configured in |morpheus| User "
+"Settings but you can confirm that here."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:125
+msgid ".. image:: /images/infrastructure/clouds/aws/createUser.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:127
+msgid ""
+"It's worth noting that adding your user to the provisioned workload does "
+"not replace the keypair used by |morpheus| during provisioning. Instead "
+"it adds the public key for your user to the authorized keys file on the "
+"workload which allows you to access it. You can confirm this by catting "
+"out the authorized key file on any of your |morpheus|-provisioned "
+"workloads (~/.ssh/authorized_keys). You will at least see two keys, one "
+"for the |morpheus| service user and one for your own user."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:129
+msgid ""
+"In general it should not cause problems if |morpheus|-generated keypairs "
+"are deleted from the AWS console or from the |morpheus| keypairs section."
+" You would not lose console access to the VM. If needed, however, "
+"|morpheus| will create more keypairs and there is currently no "
+"functionality to automatically remove these keypairs. They can be safely "
+"ignored, generally speaking there is no need to manually delete them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:132
+msgid "Enhanced Invoice Costing Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:134
+msgid ""
+"AWS cloud integrations in |morpheus| will sync highly-granular costing "
+"data through the use of AWS Costing & Utilization Reports (CUR). If "
+"desired, users can turn on costing in the |morpheus| Cloud configuration "
+"without linking a CUR to use AWS Cost Explorer instead. |morpheus| "
+"version 4.2.3 also simplified the way CUR reports can be selected or "
+"created in order to sync costing data. The section below discusses "
+"setting up enhanced costing through CUR reports both in 4.2.3 and "
+"versions prior. For additional details on setting up costing with AWS "
+"GovCloud, see the next section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:136
+msgid ""
+"Even with a costing report configured in the Cloud integration as "
+"described below, the COSTING value must also be set to \"Costing and "
+"Reservations\" in order for enhanced invoice data to be brought into "
+"|morpheus|. Confirm this setting by editing the Amazon Cloud integration,"
+" and checking the COSTING value in the Advanced Options panel before "
+"continuing."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:143
+msgid ""
+"In |morpheus| 4.2.3+, edit the Amazon cloud integration or create a new "
+"Amazon Cloud to get started. On the Create/Edit Cloud modal, open the "
+"advanced options section. The relevant fields for configuring invoice "
+"costing are shown below:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:145
+msgid ".. image:: /images/clouds/aws/invoiceCosting/0billingFields.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:147
+msgid ""
+"In the example case above, a new report and a new S3 bucket are created "
+"but |morpheus| will also sync in buckets and reports that meet the "
+"required parameters if they already exist. For reports to be synced they "
+"must meet the requirements listed below:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:149
+msgid "Hourly time granularity"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:150
+msgid "Include resource IDs"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:151
+msgid "GZIP compression"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:152
+msgid "CSV format"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:154
+msgid ""
+"If you don't currently have a report meeting those criteria, you can "
+"create one by selecting \"New Report\" from the REPORT NAME dropdown "
+"menu. A new S3 bucket can be created in similar fashion if needed. You "
+"may also want to review the section below on configuration for |morpheus|"
+" 4.2.2 and below to note policies that will be applied to your selected "
+"bucket and Cost Explorer permissions required for the AWS cloud user "
+"associated with the |morpheus| Cloud integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:156
+msgid ""
+"In the end, the following fields must be filled in order to complete the "
+"process:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:158
+#: ../../integration_guides/Clouds/aws/amazon.rst:325
+msgid "**COSTING BUCKET:** The S3 bucket name"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:159
+#: ../../integration_guides/Clouds/aws/amazon.rst:326
+msgid "**COSTING REGION:** The region the bucket was created in"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:160
+#: ../../integration_guides/Clouds/aws/amazon.rst:327
+msgid ""
+"**COSTING FOLDER:** This is the report path prefix if you configured one "
+"earlier"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:161
+#: ../../integration_guides/Clouds/aws/amazon.rst:328
+msgid "**COSTING REPORT NAME:** The name given to your CUR report"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:162
+#: ../../integration_guides/Clouds/aws/amazon.rst:329
+msgid ""
+"**COSTING KEY:** If the IAM user for this AWS cloud integration does not "
+"have access to the S3 bucket with the CUR data, enter the AWS Key ID for "
+"an IAM user with access"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:163
+#: ../../integration_guides/Clouds/aws/amazon.rst:330
+msgid ""
+"**COSTING SECRET:** If the IAM user for this AWS cloud integration does "
+"not have access to the S3 bucket with the CUR data, enter the AWS Secret "
+"Key for the IAM account whose Key ID you entered in the previous field"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:164
+#: ../../integration_guides/Clouds/aws/amazon.rst:331
+msgid ""
+"**LINKED ACCOUNT ID:** If the IAM user for this AWS cloud integration "
+"does not have access to the S3 bucket with the CUR data, enter the AWS "
+"account number that the IAM user from the above step resides in"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:166
+#: ../../integration_guides/Clouds/aws/amazon.rst:333
+msgid ""
+"If the AWS cloud account is a GovCloud account, enter the COSTING KEY, "
+"COSTING SECRET, and LINKED ACCOUNT ID for the master commercial account "
+"your GovCloud account is associated with."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:168
+msgid ""
+"Using the |morpheus| interface to create a CUR, and optionally a new S3 "
+"bucket, the IAM user requires permissions in AWS to be successful.  By "
+"default, only the root user will have access to billing (including CUR), "
+"but billing can be enabled for IAM users following Amazon's documentation"
+" for `Activating IAM Access "
+"<https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/control-"
+"access-billing.html>`_.  Once IAM access is activated, policies need to "
+"be assigned to the user being configured on the cloud in |morpheus|.  If "
+"the user is an administrator of the AWS account, no additional policies "
+"are needed.  Below are some example policies needed for different "
+"scenarios:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:175
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Version\": \"2012-10-17\",\n"
+"  \"Statement\": [\n"
+"      {\n"
+"          \"Effect\": \"Allow\",\n"
+"          \"Action\": [\n"
+"              \"s3:PutBucketPolicy\",\n"
+"              \"s3:CreateBucket\",\n"
+"              \"s3:ListBucket\",\n"
+"              \"s3:GetBucketPolicy\",\n"
+"              \"cur:DescribeReportDefinitions\",\n"
+"              \"cur:PutReportDefinition\"\n"
+"          ],\n"
+"          \"Resource\": \"*\"\n"
+"      }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:198
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Version\": \"2012-10-17\",\n"
+"  \"Statement\": [\n"
+"      {\n"
+"          \"Effect\": \"Allow\",\n"
+"          \"Action\": [\n"
+"              \"s3:ListBucket\",\n"
+"              \"s3:GetBucketPolicy\",\n"
+"              \"cur:DescribeReportDefinitions\",\n"
+"              \"cur:PutReportDefinition\"\n"
+"          ],\n"
+"          \"Resource\": \"*\"\n"
+"      }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:219
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Version\": \"2012-10-17\",\n"
+"  \"Statement\": [\n"
+"      {\n"
+"          \"Effect\": \"Allow\",\n"
+"          \"Action\": [\n"
+"              \"cur:DescribeReportDefinitions\"\n"
+"          ],\n"
+"          \"Resource\": \"*\"\n"
+"      }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:234
+#: ../../integration_guides/Clouds/aws/amazon.rst:339
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:234
+msgid ""
+"The user configured on the cloud will need access to the objects in the "
+"S3 bucket configured on the CUR.  If creating the CUR via the |morpheus| "
+"UI, this should be done automatically.  If an existing CUR report or "
+"existing S3 bucket was selected, ensure the user has permissions to "
+"access the objects in the configured S3 bucket.  Alternatively, the "
+"**COSTING KEY** and **COSTING SECRET** can be used to configure a "
+"different user that has access to the S3 bucket."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:240
+msgid ""
+"Begin by logging into the `AWS Billing Console "
+"<https://console.aws.amazon.com/billing/home?#/>`_, then click "
+":guilabel:`Create report`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:242
+msgid ".. image:: /images/clouds/aws/invoiceCosting/1billingConsole.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:244
+msgid ""
+"Include a name for your report and mark the box to \"Include resource "
+"IDs\". |morpheus| uses these resource IDs to map costs to various "
+"resources. Click :guilabel:`Next`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:246
+msgid ".. image:: /images/clouds/aws/invoiceCosting/2reportConfig.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:248
+msgid ""
+"On the following page, begin by identifying an S3 bucket to house "
+"reports. Click :guilabel:`Configure` near the top of the page and select "
+"an existing bucket or create a new one."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:250
+msgid ".. image:: /images/clouds/aws/invoiceCosting/4chooseBucket.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:252
+msgid ""
+"After identifying the bucket, you must mark the box to accept the default"
+" policy being applied to the bucket. Click :guilabel:`Save`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:254
+msgid ".. image:: /images/clouds/aws/invoiceCosting/5confirmPolicy.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:256
+msgid "The default policy applied to the bucket is below:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:258
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Version\": \"2008-10-17\",\n"
+"  \"Id\": \"SomeID\",\n"
+"  \"Statement\": [\n"
+"    {\n"
+"      \"Sid\": \"SomeStmtID\",\n"
+"      \"Effect\": \"Allow\",\n"
+"      \"Principal\": {\n"
+"        \"Service\": \"billingreports.amazonaws.com\"\n"
+"      },\n"
+"      \"Action\": [\n"
+"        \"s3:GetBucketAcl\",\n"
+"        \"s3:GetBucketPolicy\"\n"
+"      ],\n"
+"      \"Resource\": \"arn:aws:s3:::bucket-name\"\n"
+"    },\n"
+"    {\n"
+"      \"Sid\": \"SomeStmtID\",\n"
+"      \"Effect\": \"Allow\",\n"
+"      \"Principal\": {\n"
+"        \"Service\": \"billingreports.amazonaws.com\"\n"
+"      },\n"
+"      \"Action\": [\n"
+"        \"s3:PutObject\"\n"
+"      ],\n"
+"      \"Resource\": \"arn:aws:s3:::bucket-name/*\"\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:290
+msgid ""
+"After choosing a bucket, accepting the default policy, and saving the "
+"change, you're brought back to the report delivery page. By default, CUR "
+"reports are saved to a folder at the path ``my-report-name/date-folder``."
+" If this bucket already contains CUR reports, you may want to specify a "
+"prefix path in the \"Report path prefix\" field. Outside of this field, "
+"use the default values as shown in the screenshot below, then click "
+":guilabel:`Next`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:292
+msgid ".. image:: /images/clouds/aws/invoiceCosting/6completeDelivery.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:294
+msgid ""
+"On the following page, make your final review and click :guilabel:`Review"
+" and Complete`. Following this, you will see your newly configured report"
+" in the list of CUR report(s)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:296
+msgid ""
+"In addition, the AWS cloud user associated with the integration in "
+"|morpheus| needs IAM policy permission to access Cost Explorer. Attach a "
+"policy like the one below to this cloud user:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:298
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Version\": \"2012-10-17\",\n"
+"  \"Id\": \"SomeID\",\n"
+"  \"Statement\": [\n"
+"    {\n"
+"      \"Sid\": \"SomeStmtID\",\n"
+"      \"Effect\": \"Allow\",\n"
+"      \"Action\": [\n"
+"        \"ce:DescribeReportDefinitions\",\n"
+"        \"ce:DescribeCostCategoryDefinition\",\n"
+"        \"ce:ListCostCategoryDefinitions\"\n"
+"      ],\n"
+"      \"Resource\": [\n"
+"        \"*\"\n"
+"      ]\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:319
+msgid ""
+"If the Cost Explorer permissions are granted at the master account level,"
+" the user will see all costs for each member account; if granted at the "
+"member account, only the costs for that member account are available."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:321
+msgid ""
+"With the AWS console configuration steps complete, we can move back into "
+"|morpheus|. Keep in mind it is only necessary to set up one AWS cloud for"
+" Costing since we process all records in the CUR report."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:323
+msgid ""
+"Once back in |morpheus|, add or edit the relevant AWS cloud integration "
+"(Infrastructure > Clouds > :guilabel:`+ ADD` OR click the pencil icon in "
+"the row for the chosen AWS integration). Expand the Advanced Options "
+"drawer and complete the following fields:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:335
+msgid ".. image:: /images/clouds/aws/invoiceCosting/7morphConfig.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:337
+msgid "Save changes to your cloud integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:339
+msgid ""
+"It may take as long as one hour for |morpheus| to process the next CUR "
+"report."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:342
+msgid "Global (Costing Aggregator Only) (v5.5.1+)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:344
+msgid ""
+"Costing can be created for specific clouds individually, following the "
+"steps previously mentioned.  If the same account is added multiple times,"
+" using different regions, the same CUR file is available to be selected "
+"(if the configured user has access).  However, this can become a tedious "
+"process in needing to configure the CUR on each cloud added to "
+"|morpheus|.  However, |morpheus| has a region of `Global (Costing "
+"Aggregator Only)`, which can be chosen at the time of adding a cloud.  "
+"This region is not designed for deploying workloads, it is here primarily"
+" for syncing costs.  This means that the AWS account added as a cloud in "
+"|morpheus| as a Global region can sync the cost for all the other regions"
+" of the same account added as clouds into |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:348
+msgid ""
+"When using AWS Organizations, if the AWS account added as a global region"
+" is the management account (formerly known as master account) and "
+"consolidated billing is enabled, costs for **all** accounts can be sync'd"
+" using the Global region.  This means when any AWS and/or regions in the "
+"organization are added as clouds in |morpheus|, the appropriate costs are"
+" applied to them automatically.  It does require that **Costing** is "
+"enabled on the cloud to see the costs but a Costing Report does not need "
+"to be chosen. This enables the use of one cloud added as Global to sync "
+"all costs and apply to all AWS clouds added in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:352
+msgid ""
+"Additionally, some costs in AWS are not region specific, for example the "
+"`Global` and `No Region` regions.  These costs do not apply to the "
+"regions of the clouds added in |morpheus|.  With the Global region added "
+"as a cloud in |morpheus|, you would be able to see these costs that are "
+"applicable to your accounts."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:356
+msgid "Costing and AWS GovCloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:358
+msgid ""
+"AWS GovCloud delivers Amazon public cloud infrastructure and features in "
+"a way that complies with U.S. government standards for security. GovCloud"
+" accounts are applied for and must be associated with a pre-existing "
+"standard AWS account and the usage and billing data for the GovCloud "
+"account is rolled up into that of the standard AWS account. For that "
+"reason, Amazon recommends creating a new standard account solely to house"
+" the GovCloud account if usage and billing must be tracked separately."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:360
+msgid ""
+"Since GovCloud accounts do not have access to billing data directly, "
+"|morpheus| must be able to access it through the associated standard "
+"account. You could do this by creating the |morpheus| cloud integration "
+"through the standard account itself or by integrating the GovCloud "
+"account and supplying an Access Key and Secret Key for the standard "
+"account when configuring costing. When needed, add the additional "
+"credentials for the standard commercial account as described below:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:362
+msgid "Add a new AWS Cloud or edit an existing one"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:363
+msgid "Expand the Advanced Options section"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:364
+msgid ""
+"Complete the following fields in addition to other required fields needed"
+" to set up costing as described in the previous section:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:366
+msgid ""
+"**COSTING KEY:** The AWS Key ID for an IAM user with sufficient access "
+"who is associated with the standard commercial account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:367
+msgid ""
+"**COSTING SECRET:** The AWS Secret Key for an IAM user with sufficient "
+"access who is associated with the standard commercial account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:368
+msgid ""
+"**LINKED ACCOUNT ID:** The AWS account number for the standard commercial"
+" account in which the IAM user referenced in the prior bullets resides"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:370
+msgid "Save the changes to the AWS Cloud integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:372
+msgid ""
+"When credentials are configured correctly, you will be able to select an "
+"existing Costing and Usage Report (CUR) from the appropriate S3 bucket if"
+" it already exists. If not, you can create one directly from the add/edit"
+" AWS Cloud modal in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:374
+msgid ".. image:: /images/clouds/aws/invoiceCosting/8govcloudCosting.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:378
+msgid "AWS Reserved Instances and Savings Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:380
+msgid ""
+"Amazon AWS public cloud offers Reserved Instances (RI) and Savings Plans,"
+" which allow organizations with consistent use patterns to reduce cloud "
+"spend significantly. |morpheus| analyzes AWS cloud usage and spend, which"
+" allows it to make intelligent recommendations that can lead to "
+"significant savings. This data can be reviewed in the Reservation "
+"Recommendations and Savings Plan Recommendations tables on any AWS Cloud "
+"detail page (Infrastructure > Clouds > Selected Amazon Cloud)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:382
+#, python-format
+msgid ""
+"Savings Plans potentially offer greater than 70% savings in exchange for "
+"a commitment to consistent usage levels for a 1- or 3-year term. "
+"|morpheus| provides Savings Plan guidance based on learned analytics; "
+"allowing you to analyze Savings Plans based on different term commitments"
+" and upfront costs to choose the best savings plan."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:384
+msgid ".. image:: /images/integration_guides/clouds/aws/savingsPlan.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:386
+msgid ""
+"Reserved Instances (RI) provide a discounted hourly rate and optional "
+"capacity reservation for EC2 instances. AWS billing automatically applies"
+" your RI-discounted rate when the attributes of EC2 instance usage match "
+"attributes of an active RI. |morpheus| provides RI guidance based on "
+"learned analytics."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:388
+msgid ".. image:: /images/integration_guides/clouds/aws/ri.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:390
+msgid ""
+"To retrieve Reserved Instances and Savings Plans data, the user "
+"configured on the cloud will require access to **Cost Explorer**.  Below "
+"is an example IAM policy with Cost Explorer access:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/amazon.rst:395
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Version\": \"2012-10-17\",\n"
+"  \"Statement\": [\n"
+"      {\n"
+"          \"Effect\": \"Allow\",\n"
+"          \"Action\": [\n"
+"              \"ce:*\"\n"
+"          ],\n"
+"          \"Resource\": \"*\"\n"
+"      }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:4
+msgid "AWS IAM Permissions"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:6
+msgid "Below are the AWS IAM Permissions required for |morpheus| services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:9
+msgid "autoscaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:11
+msgid ""
+"\"autoscaling:AttachInstances\",\n"
+"\"autoscaling:AttachLoadBalancerTargetGroups\",\n"
+"\"autoscaling:CreateAutoScalingGroup\",\n"
+"\"autoscaling:DeleteAutoScalingGroup\",\n"
+"\"autoscaling:DeleteLaunchConfiguration\",\n"
+"\"autoscaling:DeletePolicy\",\n"
+"\"autoscaling:DescribeAutoScalingGroups\",\n"
+"\"autoscaling:DescribeLaunchConfigurations\",\n"
+"\"autoscaling:DescribeLoadBalancers\",\n"
+"\"autoscaling:DescribePolicies\",\n"
+"\"autoscaling:DetachInstances\",\n"
+"\"autoscaling:PutScalingPolicy\",\n"
+"\"autoscaling:UpdateAutoScalingGroup\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:28
+msgid "cloudformation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:29
+msgid ""
+"\"cloudformation:CreateStack\",\n"
+"\"cloudformation:DeleteStack\",\n"
+"\"cloudformation:DescribeStackEvents\",\n"
+"\"cloudformation:DescribeStackResources\",\n"
+"\"cloudformation:DescribeStacks\",\n"
+"\"cloudformation:GetTemplate\",\n"
+"\"cloudformation:UpdateStack\",\n"
+"\"cloudformation:ValidateTemplate\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:41
+msgid "cloudwatch"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:42
+msgid ""
+"\"cloudwatch:DeleteAlarms\",\n"
+"\"cloudwatch:DescribeAlarms\",\n"
+"\"cloudwatch:GetMetricStatistics\",\n"
+"\"cloudwatch:PutMetricAlarm\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:50
+msgid "costexplorer"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:51
+msgid "\"ce:*\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:56
+msgid "Cost and Usage Reports"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:57
+msgid ""
+"\"cur:DescribeReportDefinitions\",\n"
+"\"cur:PutReportDefinition\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:63
+msgid "ec2"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:64
+msgid ""
+"\"ec2:AllocateAddress\",\n"
+"\"ec2:AssignPrivateIpAddresses\",\n"
+"\"ec2:AssociateAddress\",\n"
+"\"ec2:AttachInternetGateway\",\n"
+"\"ec2:AttachNetworkInterface\",\n"
+"\"ec2:AttachVolume\",\n"
+"\"ec2:AuthorizeSecurityGroupEgress\",\n"
+"\"ec2:AuthorizeSecurityGroupIngress\",\n"
+"\"ec2:CancelExportTask\",\n"
+"\"ec2:CancelImportTask\",\n"
+"\"ec2:CopyImage\",\n"
+"\"ec2:CopySnapshot\",\n"
+"\"ec2:CreateEgressOnlyInternetGateway\",\n"
+"\"ec2:CreateImage\",\n"
+"\"ec2:CreateInstanceExportTask\",\n"
+"\"ec2:CreateInternetGateway\",\n"
+"\"ec2:CreateKeyPair\",\n"
+"\"ec2:CreateNatGateway\",\n"
+"\"ec2:CreateNetworkAcl\",\n"
+"\"ec2:CreateNetworkAclEntry\",\n"
+"\"ec2:CreateNetworkInterface\",\n"
+"\"ec2:CreateRoute\",\n"
+"\"ec2:CreateSecurityGroup\",\n"
+"\"ec2:CreateSnapshot\",\n"
+"\"ec2:CreateSubnet\",\n"
+"\"ec2:CreateTags\",\n"
+"\"ec2:CreateVolume\",\n"
+"\"ec2:CreateVpc\",\n"
+"\"ec2:DeleteEgressOnlyInternetGateway\",\n"
+"\"ec2:DeleteInternetGateway\",\n"
+"\"ec2:DeleteKeyPair\",\n"
+"\"ec2:DeleteNatGateway\",\n"
+"\"ec2:DeleteNetworkAcl\",\n"
+"\"ec2:DeleteNetworkAclEntry\",\n"
+"\"ec2:DeleteNetworkInterface\",\n"
+"\"ec2:DeleteRoute\",\n"
+"\"ec2:DeleteSecurityGroup\",\n"
+"\"ec2:DeleteSnapshot\",\n"
+"\"ec2:DeleteSubnet\",\n"
+"\"ec2:DeleteTags\",\n"
+"\"ec2:DeleteVolume\",\n"
+"\"ec2:DeleteVpc\",\n"
+"\"ec2:DeregisterImage\",\n"
+"\"ec2:DescribeAccountAttributes\",\n"
+"\"ec2:DescribeAddresses\",\n"
+"\"ec2:DescribeAvailabilityZones\",\n"
+"\"ec2:DescribeClassicLinkInstances\",\n"
+"\"ec2:DescribeClientVpnConnections\",\n"
+"\"ec2:DescribeClientVpnEndpoints\",\n"
+"\"ec2:DescribeConversionTasks\",\n"
+"\"ec2:DescribeEgressOnlyInternetGateways\",\n"
+"\"ec2:DescribeExportTasks\",\n"
+"\"ec2:DescribeImageAttribute\",\n"
+"\"ec2:DescribeImages\",\n"
+"\"ec2:DescribeImportImageTasks\",\n"
+"\"ec2:DescribeImportSnapshotTasks\",\n"
+"\"ec2:DescribeInstances\",\n"
+"\"ec2:DescribeInstanceStatus\",\n"
+"\"ec2:DescribeInstanceTypes\",\n"
+"\"ec2:DescribeInternetGateways\",\n"
+"\"ec2:DescribeKeyPairs\",\n"
+"\"ec2:DescribeNatGateways\",\n"
+"\"ec2:DescribeNetworkAcls\",\n"
+"\"ec2:DescribeNetworkInterfaceAttribute\",\n"
+"\"ec2:DescribeNetworkInterfaces\",\n"
+"\"ec2:DescribeRegions\",\n"
+"\"ec2:DescribeRouteTables\",\n"
+"\"ec2:DescribeSecurityGroupReferences\",\n"
+"\"ec2:DescribeSecurityGroups\",\n"
+"\"ec2:DescribeSnapshotAttribute\",\n"
+"\"ec2:DescribeSnapshots\",\n"
+"\"ec2:DescribeStaleSecurityGroups\",\n"
+"\"ec2:DescribeSubnets\",\n"
+"\"ec2:DescribeTags\",\n"
+"\"ec2:DescribeTransitGateways\",\n"
+"\"ec2:DescribeTransitGatewayVpcAttachments\",\n"
+"\"ec2:DescribeVolumeAttribute\",\n"
+"\"ec2:DescribeVolumes\",\n"
+"\"ec2:DescribeVolumeStatus\",\n"
+"\"ec2:DescribeVpcAttribute\",\n"
+"\"ec2:DescribeVpcClassicLink\",\n"
+"\"ec2:DescribeVpcClassicLinkDnsSupport\",\n"
+"\"ec2:DescribeVpcEndpoints\",\n"
+"\"ec2:DescribeVpcEndpointServices\",\n"
+"\"ec2:DescribeVpcPeeringConnections\",\n"
+"\"ec2:DescribeVpcs\",\n"
+"\"ec2:DescribeVpnGateways\",\n"
+"\"ec2:DetachInternetGateway\",\n"
+"\"ec2:DetachNetworkInterface\",\n"
+"\"ec2:DetachVolume\",\n"
+"\"ec2:DisassociateAddress\",\n"
+"\"ec2:GetPasswordData\",\n"
+"\"ec2:ImportImage\",\n"
+"\"ec2:ImportInstance\",\n"
+"\"ec2:ImportKeyPair\",\n"
+"\"ec2:ImportSnapshot\",\n"
+"\"ec2:ImportVolume\",\n"
+"\"ec2:ModifyImageAttribute\",\n"
+"\"ec2:ModifyInstanceAttribute\",\n"
+"\"ec2:ModifyNetworkInterfaceAttribute\",\n"
+"\"ec2:ModifySnapshotAttribute\",\n"
+"\"ec2:ModifySubnetAttribute\",\n"
+"\"ec2:ModifyVolumeAttribute\",\n"
+"\"ec2:RebootInstances\",\n"
+"\"ec2:RegisterImage\",\n"
+"\"ec2:ReleaseAddress\",\n"
+"\"ec2:ReplaceNetworkAclAssociation\",\n"
+"\"ec2:ReplaceNetworkAclEntry\",\n"
+"\"ec2:ResetImageAttribute\",\n"
+"\"ec2:ResetInstanceAttribute\",\n"
+"\"ec2:ResetNetworkInterfaceAttribute\",\n"
+"\"ec2:ResetSnapshotAttribute\",\n"
+"\"ec2:RevokeSecurityGroupEgress\",\n"
+"\"ec2:RevokeSecurityGroupIngress\",\n"
+"\"ec2:RunInstances\",\n"
+"\"ec2:StartInstances\",\n"
+"\"ec2:StopInstances\",\n"
+"\"ec2:TerminateInstances\",\n"
+"\"ec2:UnassignPrivateIpAddresses\",\n"
+"\"ec2:UpdateSecurityGroupRuleDescriptionsEgress\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:188
+msgid "eks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:189
+msgid "\"eks:*\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:194
+msgid "elasticloadbalancing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:195
+msgid ""
+"\"elasticloadbalancing:AddTags\",\n"
+"\"elasticloadbalancing:ApplySecurityGroupsToLoadBalancer\",\n"
+"\"elasticloadbalancing:AttachLoadBalancerToSubnets\",\n"
+"\"elasticloadbalancing:CreateListener\",\n"
+"\"elasticloadbalancing:CreateLoadBalancer\",\n"
+"\"elasticloadbalancing:CreateRule\",\n"
+"\"elasticloadbalancing:CreateTargetGroup\",\n"
+"\"elasticloadbalancing:DeleteListener\",\n"
+"\"elasticloadbalancing:DeleteLoadBalancer\",\n"
+"\"elasticloadbalancing:DeleteRule\",\n"
+"\"elasticloadbalancing:DeleteTargetGroup\",\n"
+"\"elasticloadbalancing:DescribeLoadBalancers\",\n"
+"\"elasticloadbalancing:DescribeRules\",\n"
+"\"elasticloadbalancing:DescribeTargetGroups\",\n"
+"\"elasticloadbalancing:ModifyListener\",\n"
+"\"elasticloadbalancing:ModifyTargetGroupAttributes\",\n"
+"\"elasticloadbalancing:RegisterTargets\",\n"
+"\"elasticloadbalancing:SetSecurityGroups\",\n"
+"\"elasticloadbalancing:SetSubnets\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:218
+msgid "elasticsearch"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:219
+msgid ""
+"\"es:DescribeElasticsearchDomains\",\n"
+"\"es:ListDomainNames\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:225
+msgid "iam"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:226
+msgid ""
+"\"iam:ListGroups\",\n"
+"\"iam:ListInstanceProfiles\",\n"
+"\"iam:ListRoles\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:233
+msgid "kms"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:234
+msgid ""
+"\"kms:Decrypt\",\n"
+"\"kms:GenerateDataKey\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:240
+msgid "rds"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:241
+msgid ""
+"\"rds:AddRoleToDBCluster\",\n"
+"\"rds:AddTagsToResource\",\n"
+"\"rds:ApplyPendingMaintenanceAction\",\n"
+"\"rds:AuthorizeDBSecurityGroupIngress\",\n"
+"\"rds:CopyDBClusterSnapshot\",\n"
+"\"rds:CopyDBParameterGroup\",\n"
+"\"rds:CopyDBSnapshot\",\n"
+"\"rds:CreateDBCluster\",\n"
+"\"rds:CreateDBClusterSnapshot\",\n"
+"\"rds:CreateDBInstance\",\n"
+"\"rds:CreateDBInstanceReadReplica\",\n"
+"\"rds:CreateDBSecurityGroup\",\n"
+"\"rds:CreateDBSnapshot\",\n"
+"\"rds:DeleteDBCluster\",\n"
+"\"rds:DeleteDBInstance\",\n"
+"\"rds:DeleteDBSecurityGroup\",\n"
+"\"rds:DeleteDBSnapshot\",\n"
+"\"rds:DescribeAccountAttributes\",\n"
+"\"rds:DescribeCertificates\",\n"
+"\"rds:DescribeDBClusterParameterGroups\",\n"
+"\"rds:DescribeDBClusterParameters\",\n"
+"\"rds:DescribeDBClusters\",\n"
+"\"rds:DescribeDBClusterSnapshotAttributes\",\n"
+"\"rds:DescribeDBClusterSnapshots\",\n"
+"\"rds:DescribeDBEngineVersions\",\n"
+"\"rds:DescribeDBInstances\",\n"
+"\"rds:DescribeDBLogFiles\",\n"
+"\"rds:DescribeDBParameterGroups\",\n"
+"\"rds:DescribeDBParameters\",\n"
+"\"rds:DescribeDBSecurityGroups\",\n"
+"\"rds:DescribeDBSnapshotAttributes\",\n"
+"\"rds:DescribeDBSnapshots\",\n"
+"\"rds:DescribeDBSubnetGroups\",\n"
+"\"rds:DescribeEngineDefaultClusterParameters\",\n"
+"\"rds:DescribeEngineDefaultParameters\",\n"
+"\"rds:DescribeEventCategories\",\n"
+"\"rds:DescribeEvents\",\n"
+"\"rds:DescribeOptionGroupOptions\",\n"
+"\"rds:DescribeOptionGroups\",\n"
+"\"rds:DescribeOrderableDBInstanceOptions\",\n"
+"\"rds:ListTagsForResource\",\n"
+"\"rds:ModifyDBCluster\",\n"
+"\"rds:ModifyDBClusterParameterGroup\",\n"
+"\"rds:ModifyDBClusterSnapshotAttribute\",\n"
+"\"rds:ModifyDBInstance\",\n"
+"\"rds:ModifyDBParameterGroup\",\n"
+"\"rds:ModifyDBSnapshotAttribute\",\n"
+"\"rds:PromoteReadReplica\",\n"
+"\"rds:RebootDBInstance\",\n"
+"\"rds:RemoveTagsFromResource\",\n"
+"\"rds:RestoreDBClusterFromSnapshot\",\n"
+"\"rds:RestoreDBClusterToPointInTime\",\n"
+"\"rds:RestoreDBInstanceFromDBSnapshot\",\n"
+"\"rds:RestoreDBInstanceToPointInTime\",\n"
+"\"rds:RevokeDBSecurityGroupIngress\",\n"
+"\"rds:StartDBInstance\",\n"
+"\"rds:StopDBInstance\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:302
+msgid "route53"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:303
+msgid ""
+"\"route53:ChangeResourceRecordSets\",\n"
+"\"route53:GetHostedZone\",\n"
+"\"route53:ListHostedZones\",\n"
+"\"route53:ListResourceRecordSets\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:311
+msgid "s3"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:312
+msgid ""
+"\"s3:AbortMultipartUpload\",\n"
+"\"s3:CreateBucket\",\n"
+"\"s3:DeleteBucket\",\n"
+"\"s3:DeleteObject\",\n"
+"\"s3:DeleteObjectVersion\",\n"
+"\"s3:GetBucketLocation\",\n"
+"\"s3:GetBucketPolicy\",\n"
+"\"s3:GetObject\",\n"
+"\"s3:GetObjectVersion\",\n"
+"\"s3:ListAllMyBuckets\",\n"
+"\"s3:ListBucket\",\n"
+"\"s3:ListBucketMultipartUploads\",\n"
+"\"s3:ListBucketVersions\",\n"
+"\"s3:ListMultipartUploadParts\",\n"
+"\"s3:PutBucketPolicy\",\n"
+"\"s3:PutObject\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:332
+msgid "Systems Manager"
+msgstr ""
+
+#: ../../integration_guides/Clouds/aws/iampolicies.rst:333
+msgid "\"ssm:GetParameters\","
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -21,42 +21,46 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../index.rst:6
-msgid "HPE Morpheus Enterprise"
+msgid "HPE Morpheus"
 msgstr ""
 
 #: ../../index.rst:23
-msgid "Guides"
+msgid "User Guides"
 msgstr ""
 
-#: ../../index.rst:29
+#: ../../index.rst:43
+msgid "Integration Guides"
+msgstr ""
+
+#: ../../index.rst:64
 msgid "Release Notes"
 msgstr ""
 
-#: ../../index.rst:43
+#: ../../index.rst:82
 msgid "API Documentation"
 msgstr ""
 
-#: ../../index.rst:43
+#: ../../index.rst:82
 msgid "CLI Documentation"
 msgstr ""
 
-#: ../../index.rst:43
+#: ../../index.rst:82
 msgid "Morpheus API & CLI"
 msgstr ""
 
-#: ../../index.rst:50
+#: ../../index.rst:89
 msgid "Developer Zone"
 msgstr ""
 
-#: ../../index.rst:50
+#: ../../index.rst:89
 msgid "Support KnowledgeBase"
 msgstr ""
 
-#: ../../index.rst:50
+#: ../../index.rst:89
 msgid "White Papers"
 msgstr ""
 
-#: ../../index.rst:50
+#: ../../index.rst:89
 msgid "Resource Center"
 msgstr ""
 
@@ -78,194 +82,580 @@ msgstr ""
 
 #: ../../release_notes/current.rst:9
 msgid ""
-"Minimum upgrade versions: Non-rolling: |minUpgradeVer| (Rolling upgrades "
-"not supported for 8.0.4)"
+"Minimum upgrade versions: Non-rolling: |minUpgradeVer|, Rolling: "
+"|minRollingUpgradeVer|"
 msgstr ""
 
-#: ../../release_notes/current.rst:13
+#: ../../release_notes/current.rst:11
 msgid "Release Dates"
 msgstr ""
 
-#: ../../release_notes/current.rst:15
+#: ../../release_notes/current.rst:13
 msgid "|morphver| |releasedate|"
 msgstr ""
 
-#: ../../release_notes/current.rst:22
+#: ../../release_notes/current.rst:15
+msgid "Important"
+msgstr ""
+
+#: ../../release_notes/current.rst:15
+msgid ""
+"After upgrading to |morphver|, it is recommended to check for HVM Host "
+"agent upgrades as well. To upgrade HVM Host agents, navigate to the "
+"detail page for each HVM Host, expand the ACTIONS menu, and click "
+"\"Upgrade Agent.\" This process must be undertaken on all HVM Hosts. "
+"Alternatively, you may select \"Download Agent Script\" to download a "
+"shell script to handle the upgrade. Connect to the HVM Host over a "
+"terminal session and run the downloaded script. The scripts are unique to"
+" each HVM Host so you must download all required scripts and run the "
+"correct script against the correct HVM Host. Though many do, it is "
+"possible that some version upgrade hops will not contain an HVM Host "
+"agent upgrade."
+msgstr ""
+
+#: ../../release_notes/current.rst:20
 msgid "New Features"
 msgstr ""
 
 #: ../../release_notes/current.rst
-msgid "Instances"
+msgid "Licensing"
+msgstr ""
+
+#: ../../release_notes/current.rst:22
+msgid ""
+"Introduced the **Advanced** license tier, expanding the platform to three"
+" tiers: VM Essentials, Advanced, and Enterprise. Advanced includes "
+"Ansible, Kubernetes (HKS), Workflows, Service Catalog, Personas, and "
+"additional automation and integration capabilities. See "
+":doc:`feature_matrix` for the complete tier comparison."
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "HVM & VM Essentials"
 msgstr ""
 
 #: ../../release_notes/current.rst:24
 msgid ""
-"The Instances list page now includes an optional Date Created field and "
-"is sortable by this field"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "VMware"
+"Virtual Switch management: add, edit, and remove virtual switches with "
+"advanced port group management and network reconfiguration directly from "
+"the UI"
 msgstr ""
 
 #: ../../release_notes/current.rst:25
 msgid ""
-"Added the option to select a memory snapshot when creating a snapshot of "
-"an Instance running in a VMware Cloud"
+"NVIDIA vGPU slicing: create SR-IOV vGPU profiles on supported HVM Hosts "
+"and bind physical GPU types or vGPU Segment Types to Service Plans"
+msgstr ""
+
+#: ../../release_notes/current.rst:26
+msgid ""
+"Host Profiles: define and apply standardized host configurations across "
+"cluster hosts, similar to VMware vCenter Host Profiles"
+msgstr ""
+
+#: ../../release_notes/current.rst:27
+msgid ""
+"Host Configuration Backup & Restore: back up HVM host identity and "
+"configuration for faster hardware replacement"
+msgstr ""
+
+#: ../../release_notes/current.rst:28
+msgid ""
+"Bulk operations: trigger actions on multiple VMs or hosts simultaneously "
+"(migrate, snapshot, power operations, tag, and more)"
+msgstr ""
+
+#: ../../release_notes/current.rst:29
+msgid ""
+"Increased live migration concurrency during Maintenance Mode to reduce "
+"maintenance windows for dense environments"
+msgstr ""
+
+#: ../../release_notes/current.rst:30
+msgid ""
+"Connect and disconnect virtual network interfaces on running VMs without "
+"requiring a full reconfigure, supporting backup recovery and security "
+"isolation workflows"
+msgstr ""
+
+#: ../../release_notes/current.rst:31
+msgid ""
+"Expose advanced VM deployment settings (TPM, Secure Boot, UEFI, Nested "
+"Virtualization) in Reconfigure for Day 2 modifications without rebuilding"
+msgstr ""
+
+#: ../../release_notes/current.rst:32
+msgid ""
+"Centralized Affinity Placement management: view and manage VM affinity "
+"rules and pinning overrides from a single cluster-level interface"
+msgstr ""
+
+#: ../../release_notes/current.rst:33
+msgid ""
+"Linked clones: create space-efficient clones that share a base disk image"
+" with the parent VM"
+msgstr ""
+
+#: ../../release_notes/current.rst:34
+msgid ""
+"Datastore Evacuation / Maintenance Mode: automatically migrate VMs off a "
+"datastore being retired or replaced"
+msgstr ""
+
+#: ../../release_notes/current.rst:35
+msgid ""
+"Raw Device Block Mapping (RDBM): attach raw host block devices directly "
+"to VMs for performance-sensitive workloads"
+msgstr ""
+
+#: ../../release_notes/current.rst:36
+msgid "Virtual machine console access directly from HVM hosts"
+msgstr ""
+
+#: ../../release_notes/current.rst:37
+msgid "CPU Ready-equivalent metric for monitoring vCPU scheduling contention"
+msgstr ""
+
+#: ../../release_notes/current.rst:38
+msgid ""
+"Leverage QEMU Guest Agent to gather guest OS information (IP addresses, "
+"OS version, hostname) without network-based access"
+msgstr ""
+
+#: ../../release_notes/current.rst:39
+msgid ""
+"VSS-aware application-consistent snapshots: when the QEMU Guest Agent is "
+"connected, snapshots trigger Windows Volume Shadow Copy Service for "
+"database and application consistency"
+msgstr ""
+
+#: ../../release_notes/current.rst:40
+msgid ""
+"vNUMA provisioning: automatic or manual virtual NUMA topology for wide "
+"VMs spanning multiple CPU sockets, with Off/Auto/Manual modes"
+msgstr ""
+
+#: ../../release_notes/current.rst:41
+msgid ""
+"vCPU Placement: cluster-level CPU affinity management with Unmanaged, "
+"Region, and Pinned modes for NUMA-aware workload performance"
+msgstr ""
+
+#: ../../release_notes/current.rst:42
+msgid ""
+"Improved audit logging: administrative actions (datastore changes, "
+"cluster settings, VM promotions) now recorded in object History for full "
+"traceability"
+msgstr ""
+
+#: ../../release_notes/current.rst:43
+msgid ""
+"HVM Cluster OS Layout Ubuntu/HVM 26.04 support for confidential compute "
+"functions"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "Monitoring & Administration"
+msgstr ""
+
+#: ../../release_notes/current.rst:45
+msgid ""
+"Monitoring tab time ranges for instance and server details, allowing "
+"analysis over configurable periods"
+msgstr ""
+
+#: ../../release_notes/current.rst:46
+msgid "Log rotation and retention period configuration from the GUI"
+msgstr ""
+
+#: ../../release_notes/current.rst:47
+msgid ""
+"Read-only access level for Appliance Settings permission, allowing "
+"auditors and operators to view configuration without modification rights"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "Storage & Backup"
+msgstr ""
+
+#: ../../release_notes/current.rst:49
+msgid ""
+"Unified File Support Phase 2: Morpheus File Shares (create, grow, "
+"inventory, security toggles)"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "BMaaS / Bare Metal"
+msgstr ""
+
+#: ../../release_notes/current.rst:51
+msgid ""
+"PXE/Network Boot support: boot Bare Metal hosts via customer PXE "
+"infrastructure instead of virtual media, with optional Config ISO for "
+"post-deployment automation"
+msgstr ""
+
+#: ../../release_notes/current.rst:52
+msgid ""
+"Brownfield import in Boot From SAN (BFS): discover and manage existing "
+"BFS-provisioned servers"
+msgstr ""
+
+#: ../../release_notes/current.rst:53
+msgid ""
+"Support for multiple networks (VLANs) with Unmanaged Networking on a "
+"single physical or bond interface"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "HKS / Kubernetes"
+msgstr ""
+
+#: ../../release_notes/current.rst:55
+msgid ""
+"NGINX Replacement with Kubernetes Gateway API (Phase 1): Gateway API CRDs"
+" (GatewayClass, Gateway, HTTPRoute) replace NGINX Ingress Controller on "
+"HVM, VMware, and Bare Metal layouts"
+msgstr ""
+
+#: ../../release_notes/current.rst:56
+msgid ""
+"HKS cluster packages updated to latest Kubernetes versions (1.33, 1.34, "
+"1.35) with CVE evaluation"
+msgstr ""
+
+#: ../../release_notes/current.rst:57
+msgid "HKS enhancements for 9.1.0"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "Platform & Orchestration"
+msgstr ""
+
+#: ../../release_notes/current.rst:59
+msgid ""
+"PCO Support for Host addition and removal within existing VMware/VME "
+"clusters"
+msgstr ""
+
+#: ../../release_notes/current.rst:60
+msgid ""
+"Unified & Contextual Approval Framework for consistent approval workflows"
+" across provisioning operations"
+msgstr ""
+
+#: ../../release_notes/current.rst:61
+msgid ""
+"Import existing systems into |morpheus| for management without "
+"reprovisioning"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "CLI & Tooling"
+msgstr ""
+
+#: ../../release_notes/current.rst:63
+msgid ""
+"hvmcli: unified CLI tool for HVM host management including log viewing, "
+"VM/node/storage/cluster status, network configuration, and health "
+"validation"
+msgstr ""
+
+#: ../../release_notes/current.rst:64
+msgid ""
+"Aruba CX Support Bundle: collect diagnostic logs from Aruba CX switches "
+"as part of the |morpheus| support bundle"
+msgstr ""
+
+#: ../../release_notes/current.rst:65
+msgid ""
+"Password Management for iLO, ESXi, and Switch credentials via Cypher-"
+"backed credential store with multi-device linking and rotation support"
+msgstr ""
+
+#: ../../release_notes/current.rst:66
+msgid "Plugin ReadMe Standardization"
+msgstr ""
+
+#: ../../release_notes/current.rst:69
+msgid "Fixes"
 msgstr ""
 
 #: ../../release_notes/current.rst
 msgid "HVM"
 msgstr ""
 
-#: ../../release_notes/current.rst:26
+#: ../../release_notes/current.rst:71
 msgid ""
-"Users can now opt out of moving powered-off VMs to other hosts when "
-"placing a host into maintenance mode"
+"Fixed an issue where Dynamic Placement continuously attempted to move VMs"
+" to a memory-exhausted host, causing repeated migration failures"
 msgstr ""
 
-#: ../../release_notes/current.rst:29
-msgid "Fixes"
+#: ../../release_notes/current.rst:72
+msgid "Fixed allocated memory displaying incorrect values after cluster syncs"
+msgstr ""
+
+#: ../../release_notes/current.rst:73
+msgid "Fixed network statistic information not displaying in the cluster view"
+msgstr ""
+
+#: ../../release_notes/current.rst:74
+msgid "Fixed failure to attach a volume to a VM in certain configurations"
 msgstr ""
 
 #: ../../release_notes/current.rst
-msgid "API & CLI"
+msgid "Monitoring"
 msgstr ""
 
-#: ../../release_notes/current.rst:31
+#: ../../release_notes/current.rst:76
+#, python-format
 msgid ""
-"Attempts to delete Workflows via |morpheus| API while they are associated"
-" with a Layout now fail more gracefully"
+"Fixed old open incidents not being automatically closed when all health "
+"checks return 100% healthy"
 msgstr ""
 
-#: ../../release_notes/current.rst:32
+#: ../../release_notes/current.rst:78
+msgid "Fixed HKS cluster provisioning failures in proxy environments"
+msgstr ""
+
+#: ../../release_notes/current.rst:80
 msgid ""
-"Subtenant users are no longer able to view Service Plans via API which "
-"are privately scoped to the |mastertenant|"
+"Fixed Bare Metal instance status remaining in \"Provisioning\" state in "
+"multi-node scenarios"
 msgstr ""
 
 #: ../../release_notes/current.rst
-msgid "Automation"
+msgid "Networking"
 msgstr ""
 
-#: ../../release_notes/current.rst:33
+#: ../../release_notes/current.rst:82
 msgid ""
-"Tasks selected manually to run during Instance provisioning will no "
-"longer cause other Workflows to run if they happen to have the same ID "
-"value"
+"Fixed Huawei Private Network option being unavailable when adding "
+"networks in a subtenant"
 msgstr ""
 
-#: ../../release_notes/current.rst
-msgid "Backups"
+#: ../../release_notes/current.rst:84
+msgid "Note"
 msgstr ""
 
-#: ../../release_notes/current.rst:34
+#: ../../release_notes/current.rst:84
 msgid ""
-"Attempts to backup HVM Instances having mixed storage volumes (ex. local "
-"storage and Alletra storage) no longer fail"
+"Additional bug fixes and regressions are being addressed throughout the "
+"9.1.0 development cycle. See MORPH-13190 and MORPH-13191 for ongoing "
+"tracking."
 msgstr ""
 
-#: ../../release_notes/current.rst:35
-msgid ""
-"Snapshotting HVM Instances having mixed storage volumes (ex. local "
-"storage and Alletra storage) will no longer fail"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Clone"
-msgstr ""
-
-#: ../../release_notes/current.rst:36
-msgid ""
-"Clone creation no longer fails for HVM Instances having mixed storage "
-"volumes (ex. local storage and Alletra storage)"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Clusters"
-msgstr ""
-
-#: ../../release_notes/current.rst:37
-msgid ""
-"The datastores list within a Cluster detail page (Storage tab) can now "
-"show more than 25 datastores"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Costing"
-msgstr ""
-
-#: ../../release_notes/current.rst:38
-msgid ""
-"Fixed cloud cost comparisons in the Instance provisioning wizard not "
-"displaying comparisons against comparable workloads in Azure"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "OpenStack"
-msgstr ""
-
-#: ../../release_notes/current.rst:39
-msgid ""
-"Removed the ability to reconfigure networks for OpenStack workloads as it"
-" did not work as expected. To change network, remove the interface and "
-"re-add it, which is consistent with the same process in the OpenStack "
-"console"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Option Lists"
-msgstr ""
-
-#: ../../release_notes/current.rst:40
-msgid ""
-"Fixed an issue where select list items which are very long could overflow"
-" and obscure other UI controls (delete buttons, etc)"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Security"
-msgstr ""
-
-#: ../../release_notes/current.rst:41
-msgid ""
-"Subtenant users can no longer see which other Tenants a Service Plan is "
-"assigned to in API responses"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Storage"
-msgstr ""
-
-#: ../../release_notes/current.rst:42
-msgid "Fixed adding storage buckets not honoring \"No Proxy\" configurations"
-msgstr ""
-
-#: ../../release_notes/current.rst:43
-msgid ""
-"Fixed the |morpheus| footer not extending the entire page width on "
-"storage bucket detail pages"
-msgstr ""
-
-#: ../../release_notes/current.rst
-msgid "Terraform"
-msgstr ""
-
-#: ../../release_notes/current.rst:44
-msgid ""
-"Fixed Post-Provision phase Tasks also being executed in the Provision "
-"phase for Terraform Instances"
-msgstr ""
-
-#: ../../release_notes/current.rst:47
+#: ../../release_notes/current.rst:87
 msgid "Appliance & Agent Updates"
 msgstr ""
 
 #: ../../release_notes/current.rst
-msgid "VM Node Packages"
+msgid "Node Packages"
 msgstr ""
 
-#: ../../release_notes/current.rst:49
-msgid "i386 node/vm-node/agent packages have been removed."
+#: ../../release_notes/current.rst:89
+msgid "|morpheus| Node and VM Node packages updated to |nodePackageVer|"
 msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "Linux Agent"
+msgstr ""
+
+#: ../../release_notes/current.rst:90
+msgid "Updated to |linuxagentver|"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "Windows Agent"
+msgstr ""
+
+#: ../../release_notes/current.rst:91
+msgid "|winagentver|"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "macOS Agent"
+msgstr ""
+
+#: ../../release_notes/current.rst:92
+msgid "|macagentver|"
+msgstr ""
+
+#: ../../release_notes/current.rst
+msgid "Plugin API"
+msgstr ""
+
+#: ../../release_notes/current.rst:93
+msgid "Updated to |pluginVer|"
+msgstr ""
+
+#~ msgid "HPE Morpheus Enterprise"
+#~ msgstr ""
+
+#~ msgid "Guides"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Minimum upgrade versions: Non-rolling: "
+#~ "|minUpgradeVer| (Rolling upgrades not "
+#~ "supported for 8.0.4)"
+#~ msgstr ""
+
+#~ msgid "Instances"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The Instances list page now includes "
+#~ "an optional Date Created field and "
+#~ "is sortable by this field"
+#~ msgstr ""
+
+#~ msgid "VMware"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Added the option to select a "
+#~ "memory snapshot when creating a snapshot"
+#~ " of an Instance running in a "
+#~ "VMware Cloud"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Users can now opt out of moving"
+#~ " powered-off VMs to other hosts "
+#~ "when placing a host into maintenance "
+#~ "mode"
+#~ msgstr ""
+
+#~ msgid "API & CLI"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Attempts to delete Workflows via "
+#~ "|morpheus| API while they are associated"
+#~ " with a Layout now fail more "
+#~ "gracefully"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Subtenant users are no longer able "
+#~ "to view Service Plans via API "
+#~ "which are privately scoped to the "
+#~ "|mastertenant|"
+#~ msgstr ""
+
+#~ msgid "Automation"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Tasks selected manually to run during"
+#~ " Instance provisioning will no longer "
+#~ "cause other Workflows to run if "
+#~ "they happen to have the same ID"
+#~ " value"
+#~ msgstr ""
+
+#~ msgid "Backups"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Attempts to backup HVM Instances having"
+#~ " mixed storage volumes (ex. local "
+#~ "storage and Alletra storage) no longer"
+#~ " fail"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Snapshotting HVM Instances having mixed "
+#~ "storage volumes (ex. local storage and"
+#~ " Alletra storage) will no longer fail"
+#~ msgstr ""
+
+#~ msgid "Clone"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Clone creation no longer fails for "
+#~ "HVM Instances having mixed storage "
+#~ "volumes (ex. local storage and Alletra"
+#~ " storage)"
+#~ msgstr ""
+
+#~ msgid "Clusters"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The datastores list within a Cluster "
+#~ "detail page (Storage tab) can now "
+#~ "show more than 25 datastores"
+#~ msgstr ""
+
+#~ msgid "Costing"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fixed cloud cost comparisons in the "
+#~ "Instance provisioning wizard not displaying"
+#~ " comparisons against comparable workloads "
+#~ "in Azure"
+#~ msgstr ""
+
+#~ msgid "OpenStack"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Removed the ability to reconfigure "
+#~ "networks for OpenStack workloads as it"
+#~ " did not work as expected. To "
+#~ "change network, remove the interface and"
+#~ " re-add it, which is consistent "
+#~ "with the same process in the "
+#~ "OpenStack console"
+#~ msgstr ""
+
+#~ msgid "Option Lists"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fixed an issue where select list "
+#~ "items which are very long could "
+#~ "overflow and obscure other UI controls"
+#~ " (delete buttons, etc)"
+#~ msgstr ""
+
+#~ msgid "Security"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Subtenant users can no longer see "
+#~ "which other Tenants a Service Plan "
+#~ "is assigned to in API responses"
+#~ msgstr ""
+
+#~ msgid "Storage"
+#~ msgstr ""
+
+#~ msgid "Fixed adding storage buckets not honoring \"No Proxy\" configurations"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fixed the |morpheus| footer not "
+#~ "extending the entire page width on "
+#~ "storage bucket detail pages"
+#~ msgstr ""
+
+#~ msgid "Terraform"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Fixed Post-Provision phase Tasks also"
+#~ " being executed in the Provision "
+#~ "phase for Terraform Instances"
+#~ msgstr ""
+
+#~ msgid "VM Node Packages"
+#~ msgstr ""
+
+#~ msgid "i386 node/vm-node/agent packages have been removed."
+#~ msgstr ""
 

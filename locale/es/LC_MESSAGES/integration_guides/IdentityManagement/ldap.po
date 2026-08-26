@@ -1,0 +1,199 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:2
+msgid "LDAP"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:7
+msgid ""
+"The LDAP identity source authenticates users against an LDAP directory "
+"and creates or updates the corresponding |morpheus| user at login. "
+"Identity sources are configured per Tenant under |AdmTen| > selected "
+"Tenant > :guilabel:`IDENTITY SOURCES`."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:9
+msgid ""
+"Before configuring the source, obtain a directory URL, a least-privilege "
+"bind account, the user distinguished-name (DN) pattern, user attribute "
+"names, and the DNs of any groups used to restrict access or map Roles. "
+"The appliance must be able to reach the directory endpoint. Use an "
+"``ldaps://`` URL and a certificate issued for the directory hostname "
+"whenever the directory supports TLS. Do not place production credentials "
+"in examples, tickets, or screenshots."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:12
+msgid "Adding an LDAP Identity Source"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:14
+msgid "Navigate to |AdmTen| and select a Tenant."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:15
+msgid ""
+"Select :guilabel:`IDENTITY SOURCES`, then :guilabel:`+ ADD IDENTITY "
+"SOURCE`."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:16
+msgid "Select ``LDAP`` and configure the following fields:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:18
+msgid "URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:19
+msgid ""
+"LDAP endpoint, including the scheme and port, for example "
+"``ldaps://ldap.example.com:636``."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:20
+msgid "Binding Username"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:21
+msgid ""
+"DN or username for an account that can read the required users, "
+"attributes, and groups."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:22
+msgid "Binding Password"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:23
+msgid "Password for the binding account. The value is stored as a secured field."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:24
+msgid "User DN Expression"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:25
+msgid ""
+"Template used to construct the authenticating user's DN. ``$username`` is"
+" replaced with the supplied login name, for example "
+"``uid=$username,ou=people,dc=example,dc=com``."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:26
+msgid "Required Group DN"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:27
+msgid ""
+"Optional group DN that a user must match before login is authorized. "
+"Leaving it empty removes this group gate; successful directory "
+"authentication can then create or synchronize a user."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:28
+msgid "LDAP Attribute Names"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:29
+msgid ""
+"Attribute names used to read the username, common name, first name, last "
+"name, email, group members, and user group memberships. The "
+"implementation defaults to ``uid``, ``cn``, ``givenName``, ``sn``, "
+"``mail``, ``uniqueMember``, and ``memberOf`` respectively when a value is"
+" not supplied."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:31
+msgid ""
+"Set the Default Role and map additional |morpheus| Roles to LDAP group "
+"DNs. At login, group membership is tested against the configured user "
+"membership attribute (and then ``uniqueMemberOf``). Each matching mapping"
+" adds its Role; the Default Role is also assigned. With Manual Role "
+"Assignment disabled, these identity-source Roles are recalculated on "
+"login."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:32
+msgid ""
+"Save the source. Saving validates the URL, bind credentials, user DN "
+"expression, Required Group DN, and mapped group DNs."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:35
+msgid "Testing and troubleshooting"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:37
+msgid ""
+"Test with a non-administrative directory user that is in the required and"
+" mapped groups, then with a user outside the Required Group. Confirm the "
+"resulting local profile attributes and Roles. If saving or login fails:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:39
+msgid ""
+"Verify DNS, routing, and the LDAP/LDAPS port from every appliance "
+"application node."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:40
+msgid ""
+"Verify the bind account can read the generated user DN and every "
+"configured group DN."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:41
+msgid ""
+"Check that the User DN Expression produces the user's exact DN and that "
+"attribute names match the directory schema."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:42
+msgid ""
+"Confirm group mapping values are full DNs and match the values returned "
+"by the user's membership attribute."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:43
+msgid ""
+"For LDAPS, verify the endpoint hostname and certificate chain. Do not "
+"bypass certificate checks in external diagnostic clients or replace LDAPS"
+" with clear-text LDAP as a production workaround."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:45
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/ldap.rst:45
+msgid ""
+"The fields and defaults above describe the current LDAP implementation. "
+"Directory schemas vary; use the attribute names and DN syntax returned by"
+" your directory rather than assuming Active Directory conventions."
+msgstr ""
+

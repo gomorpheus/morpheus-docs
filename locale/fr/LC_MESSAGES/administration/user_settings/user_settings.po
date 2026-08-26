@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/user_settings/user_settings.rst:4
+#: ../../administration/user_settings/user_settings.rst:12
+msgid "User Settings"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:5
+msgid ""
+"User settings are accessed by clicking on your display name in the far "
+"upper-right corner of the application window. In this dropdown menu, "
+"click on the \"USER SETTINGS\" link."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:8
+msgid "User Photo"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:9
+msgid ""
+"Upload a custom image for your user avatar that is displayed in the top "
+"header and user administration sections. **Suggested Photo Dimensions: "
+"128 x 128**"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:13
+msgid ""
+"The fields included in this section are described below. By entering any "
+"new values in these fields and clicking :guilabel:`SAVE`, the existing "
+"value will be overwritten."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:15
+msgid ""
+"**Theme:** Choose from a selection of themes including default and dark "
+"mode themes. The Theme setting is not available when Whitelabeling is "
+"enabled on the current Tenant"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:16
+msgid "**Username:** Your |morpheus| username"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:17
+msgid ""
+"**First Name:** Your first name (together with Last Name makes up your "
+"display name)"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:18
+msgid ""
+"**Last Name:** Your last name (together with First Name makes up your "
+"display name)"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:19
+msgid "**Email:** Your email address"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:20
+msgid ""
+"**Password:** Enter a value and save changes to update your password. The"
+" value in the Confirm field below must match"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:21
+msgid "**Confirm:** Confirm the new password you've entered"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:22
+msgid ""
+"**RECEIEVE NOTIFICATIONS** Determines if provisioning notifications are "
+"emailed to this User"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:24
+msgid ".. image:: /images/administration/settings/user_settings500.png"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:27
+msgid "2 Factor Authentication"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:29
+msgid ""
+"|morpheus| supports two-factor authentication (2FA) for local user "
+"accounts as well as those authenticating through Active Directory and "
+"LDAP identity sources. Authentication is handled through a 2FA app such "
+"as Authy or Google Authenticator. Other common methods for handling 2FA, "
+"such as through email or SMS text message are not currently supported. "
+"Two-factor authentication is handled on a per-user basis through the User"
+" Settings section. There is not currently a way for an administrator to "
+"enforce the use of two-factor authentication appliance-wide."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:32
+msgid "Setting Up Two-Factor Authentication"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:34
+msgid ""
+"When two-factor authentication isn't yet set up, this section contains a "
+"single button: :guilabel:`ENABLE 2FA`. To get started, click this button "
+"and |morpheus| will prompt for your password. After entering the "
+"password, you'll be shown a QR code which can be scanned into your "
+"authenticator application of choice. Once the QR code is shown, 2FA is "
+"active and the supplemental code will need to be entered each time the "
+"user logs in."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:36
+msgid ".. image:: /images/administration/settings/2fa_qr.png"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:38
+msgid ""
+"On subsequent login attempts, the user will be prompted to enter a 2FA "
+"code after successful entry of the username and password. Retrieve this "
+"code from the 2FA app you set up in the prior section and enter it to "
+"complete the login process."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:44
+msgid "Disabling Two-Factor Authentication"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:46
+msgid ""
+"When two-factor authentication is set up, this section contains two "
+"buttons: :guilabel:`DISABLE 2FA` and :guilabel:`GET 2FA CODE`. To "
+"generate a new QR code and configure an authenticator app, click "
+":guilabel:`GET 2FA CODE`. Once you generate a new QR code, the old one is"
+" no longer valid. At that point you must reconfigure your authenticator "
+"app or you will not be able to access your account on the next login "
+"attempt. Generating a new QR code requires your password."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:48
+msgid ""
+"To disable 2FA, click :guilabel:`DISABLE 2FA`. This action does not "
+"require a password."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:51
+msgid "Handling User Lock-Out"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:53
+msgid ""
+"If a user loses the device they've configured for authentication or if "
+"they cannot proceed through 2FA login for any other reason, an "
+"administrator should impersonate the user's account, reset their "
+"password, disable 2FA, then share the new temporary password with the "
+"user. At that point, the user can login, reset their password to "
+"something more secure, and re-enable 2FA (if desired)."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:56
+msgid "Preferences"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:57
+msgid "**Default Group:** Sets the default Group selection when provisioning"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:58
+msgid "**Default Cloud:** Sets the default Cloud selection when provisioning"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:59
+msgid "**Default Persona:** Sets the default Persona used when logging in"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:60
+msgid ""
+"**Default Locale:** Sets the user's preferred language and region, this "
+"setting will override the global locale for the individual user"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:62
+msgid ""
+".. image:: "
+"/images/administration/settings/user_settings_preferences_500.png"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:65
+msgid "Linux Settings"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:66
+msgid ""
+"When provisioning a Linux-based resource and opting to have your user "
+"created during the provisioning process, the credentials entered in this "
+"section will be used to seed that user into the provisioned resource."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:68
+msgid "**Username:** The username that will be used with your Linux user"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:69
+msgid ""
+"**Password:** The password that will be used with your Linux user "
+"(optional if specifying key)"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:70
+#: ../../administration/user_settings/user_settings.rst:84
+msgid ""
+"**Confirm:** Confirm your entered password. These must match in order for"
+" the new password value to be saved"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:71
+msgid ""
+"**SSH Key:** Select a pre-existing SSH key pair object in Morpheus. "
+"Required of not specifying password and creating your user during "
+"provisioning, or required if ssh password authentication has been "
+"disabled."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:73
+#: ../../administration/user_settings/user_settings.rst:86
+msgid "Warning"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:73
+msgid ""
+"If your users Linux Settings password and/or key are not defined, and "
+"'Create User\" is enabled during provisioning (default), a random "
+"password will be generated but not exposed and you will not be able to "
+"login with your user."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:76
+msgid ".. image:: /images/administration/settings/user_settings_linux_500.png"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:79
+msgid "Windows Settings"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:80
+msgid ""
+"When provisioning a Windows-based resource and opting to have your user "
+"created during the provisioning process, the credentials entered in this "
+"section will be used to seed that user into the provisioned resource."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:82
+msgid "**Username:** The username that will be used with your Windows accounts"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:83
+msgid "**Password:** The password that will be used with your Windows accounts"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:86
+msgid ""
+"If your users Windows Settings password is not defined, and 'Create "
+"User\" is enabled during provisioning (default), a random password will "
+"be generated but not exposed and you will not be able to login with your "
+"user."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:88
+msgid ".. image:: /images/administration/settings/user_settings_windows_500.png"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:93
+msgid "API Access"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:94
+msgid ""
+"Click the :guilabel:`API Access` button to expand the \"API ACCESS\" "
+"modal. In this modal you can generate or refresh access tokens that can "
+"be used with Morpheus API and Morpheus CLI."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:96
+msgid ""
+"If no token yet exists for a particular \"CLIENT ID\", click "
+":guilabel:`ACTIONS` and then Generate. If a token has expired, we can "
+"also regenerate that token by clicking :guilabel:`ACTIONS` and then "
+"Regenerate. After regenerating a particular token, you would need to "
+"ensure any scripts using those tokens are updated."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:98
+msgid ""
+"If needed, Primary Tenant administrators may configure the expiration "
+"periods for existing clients or create new clients from |morpheus| global"
+" settings (|AdmSetCli|). See :ref:`client configuration documentation "
+"<clients>` for more details."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:100
+msgid ""
+"**morph-api:** Used for |morpheus| API access and should be the default "
+"token-type used"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:101
+msgid "**morph-cli:** Used for |morpheus| CLI access"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:102
+msgid ""
+"**morph-automation:** Used by the internal Task engine and by jRuby-type "
+"Tasks to make API calls. It shouldn't be used externally for other types "
+"of access or in external automation. It is surfaced in the UI so users "
+"can see if a token exists and can clear it when necessary"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:103
+msgid ""
+"**morph-customer:** This token is available for legacy implementations "
+"and was previously recommended for custom API access (similar to the "
+"morph-api token). It's not recommended for use but is still available to "
+"maintain support for legacy custom automation which may still be in use "
+"on customer sites"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:105
+msgid ""
+"After navigating away from the User Settings page, the complete access "
+"and refresh tokens will be masked from view. If these are lost or "
+"compromised, you can eliminate a token completely by clicking "
+":guilabel:`ACTIONS` and then Clear. If you need to generate a new token "
+"for the same Client ID, click :guilabel:`ACTIONS` and then Regenerate."
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:107
+msgid ".. image:: /images/administration/settings/user-tokens.png"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:110
+msgid "Note"
+msgstr ""
+
+#: ../../administration/user_settings/user_settings.rst:110
+msgid ""
+"Access Tokens are only displayed/available after generation. Copy new "
+"Tokens and store appropriately before navigating from ``/user-settings``,"
+" they will not be displayed again."
+msgstr ""
+

@@ -1,0 +1,1337 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/policies/policies.rst:4
+msgid "Policies |enterprise-only|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:9
+msgid "The Compliance and Policy Engine is an Enterprise-only feature."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:12
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:14
+msgid ""
+"Policies add governance, ease of use, cost-savings, and auditing features"
+" to |morpheus|. |morpheus| enables end users to create Policies scoped to"
+" Users, Roles, Groups, Clouds, Tenants, Networks, Plans, and Global "
+"scoping to give Admins full control and governance over their "
+"environments. The available scoping will vary from one Policy type to "
+"another. See the section below for information on each Policy type and "
+"guides for more complex Policy implementation."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:17
+#: ../../administration/policies/policies.rst:168
+msgid "Policy Types"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:19
+msgid "Approve Delete"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:20
+msgid ""
+"Sets an approval requirement for deleting Instances or Apps within the "
+"Policy scope. When setting the Policy, users have the option of using "
+"Morpheus Approvals or an Approval Integration such a ServiceNow. On "
+"delete request, Instances will be shut down and only deleted if approved."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:21
+msgid "Approve Provision"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:22
+msgid ""
+"Sets an approval requirement for provisioning Instances or Apps within "
+"the Policy scope. When setting the Policy, users have the option of using"
+" Morpheus Approvals or an Approval Integration such a ServiceNow."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:23
+msgid "Approve Reconfigure"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:24
+msgid ""
+"Sets an approval requirement for reconfiguring Instances and servers "
+"within the Policy scope. When setting the Policy, users have the option "
+"of using Morpheus Approvals or an Approval Integration such a ServiceNow."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:25
+msgid "Approve Workflow Execute"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:26
+msgid ""
+"If enabled, when Workflows are executed on workloads within the Policy "
+"scope, an Approval is generated. This could apply when a Workflow is "
+"executed from the Workflows list page or from the detail page for an "
+"Instance or server. Approvals can be targeted to |morpheus| internal "
+"Approvals or targeted to a third-party integration (such as ServiceNow). "
+"The Workflow will not begin to execute until after the approval is "
+"granted."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:27
+msgid "Backup Creation"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:28
+msgid ""
+"Disable or enable the ability to create a backup when provisioning an "
+"instance."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:29
+msgid "Backup Targets"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:30
+msgid ""
+"A master account can determine storage provider options for backups with "
+"Backup Targets policies."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:31
+msgid "Budget"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:32
+msgid ""
+"Sets a maximum total combined price for all instances in the Group, "
+"Cloud, Tenant or owned by the User this policy is applied to."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:33
+msgid "Cluster Resource Name"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:34
+#, python-brace-format
+msgid ""
+"The name of Cluster hosts (master and workers) when creating Kubernetes, "
+"Docker and KVM Clusters. Pre-populates a fixed or editable Resource Name "
+"value for the cluster using ${variable} naming patterns and/or text, "
+"including ${sequence} numbering. Toggle whether sequence numbers are "
+"reusable (after the resource using them is destroyed) by enabling `Reuse "
+"Naming Sequence Numbers "
+"<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_"
+" in |AdmSet|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:35
+msgid "Cypher Access"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:36
+msgid ""
+"Granularly set LIST, READ, WRITE, and DELETE access to arbitrary Cypher "
+"secret paths scoped globally or to specific Roles and Users. See the "
+"section below for a guide to establishing a Cypher access policy."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:37
+msgid "Delayed Delete"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:38
+msgid ""
+"Delayed Delete Policies allow for soft deletion of Instances and Apps. "
+"Instead of deleting immediately, Instances and Apps with a Delayed Delete"
+" policy applied will be shutdown upon deletion request and hidden by "
+"default from the UI. The Instance/App will then be in ``Pending Removal``"
+" status. In order to see Instances pending deletion on the Instances list"
+" page (:menuselection:`Provisioning --> Instances`), you must filter for "
+"\"Pending Removal\" status. These Instances will not show when filtered "
+"for \"All Statuses\""
+msgstr ""
+
+#: ../../administration/policies/policies.rst:39
+msgid "Expiration"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:40
+msgid ""
+"Sets an expiration timeframe in days after which the Instance will be "
+"deleted. Extensions can be auto-approved or require approval immediately "
+"or after x amount of auto-extensions using Morpheus Approvals or an "
+"Approval Integration. See |morpheus| `Knowledge Base "
+"<https://support.morpheusdata.com/s/article/How-to-create-an-"
+"extensions>`_ for more information about Expiration policies"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:41
+msgid "File Share Storage Quota"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:42
+msgid ""
+"Sets a Storage Quota for File Share usage (in GB) to scoped User, Role, "
+"Tenant or Global."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:43
+msgid "Hostname"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:44
+#, python-brace-format
+msgid ""
+"The ``hostname`` or ``computer name`` which is set in the OS and DNS. On "
+"some platforms, hostnames are restricted by length, spaces, and/or "
+"special characters. Pre-populates a fixed or editable name for "
+"hostnames/machine names using ${variable} naming patterns and/or text, "
+"including ${sequence} numbering. Toggle whether sequence numbers are "
+"reusable (after the resource using them is destroyed) by enabling `Reuse "
+"Naming Sequence Numbers "
+"<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_"
+" in |AdmSet|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:45
+msgid "Instance Name"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:46
+#, python-brace-format
+msgid ""
+"Pre-populates a fixed or editable name for Instance Names using "
+"${variable} naming patterns and/or text, including ${sequence} numbering."
+" Toggle whether sequence numbers are reusable (after the resource using "
+"them is destroyed) by enabling `Reuse Naming Sequence Numbers "
+"<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#provisioning>`_"
+" in |AdmSet|. Note that it's not recommended administrators include "
+"\">\", \"<\", \"%\", \"$\", or \"=\" in naming policies"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:47
+msgid "Instance Networks"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:48
+msgid ""
+"When an Instance is provisioned within the scope of the Policy (Group or "
+"Cloud scoping is supported), the network selected on the Policy is "
+"automatically set and locked in the provisioning wizard to force "
+"provisioning onto the selected network."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:49
+#: ../../administration/policies/policies.rst:304
+msgid "Max Containers"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:50
+msgid ""
+"Sets the max number of Containers for the Group or Cloud the Policy is "
+"added to."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:51
+#: ../../administration/policies/policies.rst:306
+msgid "Max Cores"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:52
+msgid ""
+"Sets the max number of total of Cores combined for Instances in the Group"
+" or Cloud the Policy is added to, includes the option to include or "
+"exclude container resources in the Policy."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:53
+#: ../../administration/policies/policies.rst:308
+msgid "Max Hosts"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:54
+msgid ""
+"Sets the max number of total Hosts in the Group or Cloud the Policy is "
+"added to."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:55
+msgid "Max Load Balancer Pools"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:56
+msgid "Sets the max number of load balancer pools within the policy scope"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:57
+#: ../../administration/policies/policies.rst:310
+msgid "Max Memory"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:58
+msgid ""
+"Sets the max number of total of RAM combined for Instances in the Group "
+"or Cloud the Policy is added to, includes the option to include or "
+"exclude container resources in the Policy."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:59
+msgid "Max Pool Members"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:60
+msgid "Sets the maximum number of members in a load balancer pool"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:61
+msgid "Max Snapshots"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:62
+msgid ""
+"Set the maximum number of Snapshots that may be stored for each Instance "
+"or VM within the scope. Once the limit is met, |morpheus| will warn the "
+"user when attempting to create more snapshots until the number is reduced"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:63
+#: ../../administration/policies/policies.rst:312
+msgid "Max Storage"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:64
+msgid ""
+"Sets the max number of total of Storage combined for Instances in the "
+"Group or Cloud the Policy is added to, includes the option to include or "
+"exclude container resources in the Policy."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:65
+msgid "Max Virtual Servers"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:66
+msgid ""
+"Sets the maximum number of load balancer virtual servers within the "
+"policy scope. This quota is evaluated by load balancer services; it is "
+"not a count of provisioned compute VMs."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:67
+#: ../../administration/policies/policies.rst:314
+msgid "Max VMs"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:68
+msgid ""
+"Sets the maximum number of managed compute Virtual Machines for the Group"
+" or Cloud the Policy is added to. Provisioning is rejected when adding "
+"another VM would exceed the applicable quota."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:69
+msgid "Message of the Day (MOTD)"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:70
+msgid ""
+"Message of the Day\"\" Policy for displaying Alerts in |morpheus|. "
+"Configurable as a pop-up or full-page notification with Info, Warning and"
+" Critical message types."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:72
+#: ../../administration/policies/policies.rst:89
+#: ../../administration/policies/policies.rst:146
+#: ../../administration/policies/policies.rst:158
+#: ../../administration/policies/policies.rst:198
+#: ../../administration/policies/policies.rst:267
+#: ../../administration/policies/policies.rst:281
+msgid "Note"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:72
+msgid ""
+"Requires role permission: ``Admin: Message Of the Day`` set to \"Full\" "
+"to create and manage MOTD Policies."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:74
+msgid "Network Quota"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:75
+msgid ""
+"Limits the number of networks that can be created within the policy's "
+"scope"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:76
+msgid "Object Storage Quota"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:77
+msgid ""
+"Sets a Storage Quota for Object Storage usage (in GB) to scoped User, "
+"Role, Tenant or Global."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:78
+msgid "Power Scheduling"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:79
+msgid ""
+"Adds a Power Schedule for the Instances in a Group or Cloud. Power "
+"Schedules can be created in |LibAutPow|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:80
+msgid "Router Quota"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:81
+msgid "Limits the number of routers that can be created within the policy's scope"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:82
+msgid "Shutdown"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:83
+msgid ""
+"Sets a shutdown timeframe in days upon provision after which the Instance"
+" will be stopped. Extensions can be auto-approved or require approval "
+"immediately or after x amount of auto-extensions using Morpheus Approvals"
+" or an Approval Integration."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:84
+msgid "Storage Server Storage Quota"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:85
+msgid ""
+"Sets a Storage Quota for selected Storage Server (in GB), applied "
+"Globally or per specified Tenants."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:86
+msgid "Tags"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:87
+msgid ""
+"Requires the user to add compliant Tags at provision time, this can be "
+"enforced on a strict or passive basis"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:89
+msgid ""
+"Tag scanning and enforcement is currently only available for Azure, "
+"Amazon, Google, and VMware clouds. For a more comprehensive guide on "
+"implementing Tag Policies, see the associated article in our "
+"`KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-work-"
+"with-cloud-tagging-policies?language=en_US>`_."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:91
+#: ../../administration/policies/policies.rst:320
+#: ../../administration/policies/policies.rst:327
+msgid "User Creation"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:92
+msgid ""
+"Controls the \"CREATE YOUR USER\" flag in the User Config options during "
+"provisioning do be always disabled, always enabled, enabled by default, "
+"or disabled by default."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:93
+msgid "User Group Creation"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:94
+msgid ""
+"Forces User Creation of members in the selected User Group during "
+"Provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:95
+msgid "Workflow"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:96
+msgid ""
+"Workloads provisioned within the scope of the Policy will have the "
+"indicated Workflow applied and the Tasks executed within the proper phase"
+" of the Instance lifecycle"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:100
+msgid "Creating Policies"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:102
+msgid "Policies can be created in three different locations."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:104
+msgid "|AdmPol|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:105
+msgid "``Infrastructure > Groups > Group > Policies``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:106
+msgid "``Infrastructure > Clouds > Cloud > Policies``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:108
+msgid "Policies can be disabled and re-enabled at anytime."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:43
+#: ../../administration/policies/policies.rst:110
+msgid "Important"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:110
+msgid ""
+"Precedence is applied to matching or conflicting Policies in the "
+"following order: Cloud > Group > Role > User > Global."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:113
+msgid "To create a Global Policy:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:115
+#: ../../administration/policies/policies.rst:125
+#: ../../administration/policies/policies.rst:134
+msgid "Navigate to |AdmPol|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:116
+#: ../../administration/policies/policies.rst:126
+#: ../../administration/policies/policies.rst:135
+msgid ""
+"Select :guilabel:`+ ADD Policy` and choose from the available policy "
+"types."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:117
+#: ../../administration/policies/policies.rst:127
+#: ../../administration/policies/policies.rst:136
+#: ../../administration/policies/policies.rst:152
+msgid "Refer to Policy Type sections below for Configuration options."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:118
+msgid "Under Filter next to scope select :guilabel:`Global`"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:119
+#: ../../administration/policies/policies.rst:129
+#: ../../administration/policies/policies.rst:141
+#: ../../administration/policies/policies.rst:153
+#: ../../administration/policies/policies.rst:165
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:123
+msgid "To create a Policy for a User:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:128
+msgid ""
+"Under filter next to scope select :guilabel:`User` a drop down menu will "
+"appear below allowing you to select a user"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:132
+msgid "To create a Policy for a Role:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:137
+msgid ""
+"Under filter next to scope select :guilabel:`Role` a drop down menu will "
+"appear below allowing you to select a Role"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:138
+msgid "For ``APPLY INDIVIDUALLY TO EACH USER IN ROLE``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:139
+msgid "Select for Max Resource/Quota Policies to be calculated per user"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:140
+msgid ""
+"Leave unselected to calculate by total usage of all users within that "
+"Role."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:144
+msgid "To create a Policy for a Cloud:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:146
+msgid ""
+"Resource Limitation Policies apply to all Instances in the Cloud the "
+"Policy is added to. Approval, Naming, Power, Shutdown and Expiration "
+"Policies apply to Instances created or moved into the Group after the "
+"Policy is enabled."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:148
+msgid "Navigate to ``Infrastructure > Clouds``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:149
+msgid ""
+"Select a Cloud by clicking on the name of the Cloud to go to the Cloud "
+"Detail page."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:150
+msgid "Select the ``POLICIES`` tab in the Cloud Detail page."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:151
+#: ../../administration/policies/policies.rst:163
+msgid "Select :guilabel:`+ ADD` and choose from the available policy types."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:156
+msgid "To create a Policy for a Group:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:158
+msgid ""
+"Resource Limitation Policies apply to all Instances in the Group the "
+"Policy is added to. Approval, Naming, Power, Shutdown and Expiration "
+"Policies apply to Instances created after the Policy is enabled."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:160
+msgid "Navigate to ``Infrastructure > Groups``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:161
+msgid ""
+"Select a Group by clicking on the name of the Group to go to the Group "
+"Detail page."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:162
+msgid "Select the ``POLICIES`` tab in the Group Detail page."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:164
+msgid "Refer to Policy Types sections below for Configuration options."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:2
+msgid "Cypher Policies"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:4
+msgid ""
+"|morpheus| allows administrators to set robust Cypher policies, which "
+"determine global, role, and/or specific user access to configured Cypher "
+"secret mount points. A number of considerations should be made when "
+"deploying Cypher Access policies, including how user role permissions "
+"will interact with the policy and how conflicts between overlapping "
+"policies are resolved."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:7
+msgid "Role Permissions"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:9
+msgid ""
+"User Role permissions (|AdmRol|) greatly affect Cypher access. Cypher "
+"access Role permissions are set from the Features tab of the selected "
+"Role under \"Tools: Cypher\". The Role permission should be set based on "
+"the highest level of access to any one individual Cypher entry needed for"
+" the specific Role. For example, if the Role needs no access to any "
+"Cypher entries, set the feature permission to \"None\" and hide the "
+"Cypher UI from the Role completely. Alternatively, if the Role needs to "
+"use and decrypt even one Cypher entry, set the feature permission to "
+"\"Full Decrypt\". The complete set of available permissions are below:"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:11
+msgid "**NONE:** Cypher UI hidden"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:12
+msgid "**READ:** Cypher UI present, entries can be listed"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:13
+msgid ""
+"**USER:** Cypher UI present, user sees and can use their own entries, "
+"user can create new entries"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:14
+msgid ""
+"**FULL:** Cypher UI present, user sees and can use all entries, user can "
+"create new entries, user cannot decrypt any entries"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:15
+msgid ""
+"**FULL DECRYPT:** Full access to Cypher features including the ability to"
+" decrypt secrets"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:18
+msgid "Cypher Access Policies"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:20
+msgid ""
+"Like other Policy types, Cypher Access Policies are created in |AdmPol|. "
+"Click :guilabel:`+ ADD POLICY` to create new. Set the type to \"Cypher "
+"Access\" and the relevant configuration options will be displayed. In "
+"addition to the type, enter a name for the Policy in the top section."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:22
+msgid ".. image:: /images/administration/policies/polname.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:25
+msgid ""
+"In the next section, enter the key path to which the Policy will apply. "
+"In addition to static entries that point to one specific Cypher entry, "
+"this field supports pattern matching with regex. For example, enter "
+"\".*\" to refer to all Cypher entries or \"secret/.*\" to refer to all "
+"entries under the secret mount point."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:27
+msgid ""
+"In addition to the path, set the privileges users in the Policy scope "
+"should have on the indicated path."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:29
+msgid "**LIST:** See the entries on the indicated path listed in the Cypher UI"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:30
+msgid "**READ:** Decrypt the entries on the indicated path"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:31
+msgid "**WRITE:** Add new entries on the indicated path"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:32
+msgid "**UPDATE:** Edit Cypher entries on the indicated path"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:33
+msgid "**DELETE:** Delete entries on the indicated path"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:35
+msgid ".. image:: /images/administration/policies/polconfig.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:38
+msgid ""
+"Finally, set the scope for the Policy. Cypher Access Policies support "
+"Global, Role, and User scope. For example, you may want to block off sets"
+" of Cypher entries for various departments within your organization. If "
+"you have existing Roles in |morpheus| for each department, you can set up"
+" Role-scoped Policies to ensure they can only list, use, and add Cypher "
+"entries which are relevant to their own department."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:40
+msgid ".. image:: /images/administration/policies/polfilter.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:43
+msgid ""
+"When Cypher Access Policies conflict, the Policy with the longest path "
+"string length (typically the most specific) takes precedence. For "
+"example, a Policy giving LIST and READ access to \"secret/aws/.*\" would "
+"be superseded by a Policy giving NO access to \"secret/aws/my-secret-"
+"key\". In such a case, the user would see everything at the "
+"\"secret/aws/.*\" path except the one indicated in the more specific "
+"Policy. When Policies targeting the same path differ only in their scope,"
+" the following scope precedence is applied: Role > User > Global. For "
+"example, if a Role-scoped Policy targeting \".*\" grants LIST and READ "
+"while a User-scoped Policy targeting the same path grants LIST, the user "
+"would be granted the rights in the Role-scoped Policy."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:46
+msgid "Cloud Profiles"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:48
+msgid ""
+"Terraform Cloud Profiles are created on each Cloud detail page (|InfClo| "
+"> Selected Cloud > Profiles Tab), encrypted in Cypher, and create a "
+"Cypher entry that is visible both on the Profile tab of the Cloud detail "
+"page and in Cypher. When added to a Cloud they create a Cypher entry at "
+"path tfvars/profile/cloud/$cloudCode/variables. If a Cloud profile Cypher"
+" entry is restricted by a Cypher Access policy, it will be (or will not "
+"be) listable/readable/deletable as dictated by the Policy but still will "
+"be viewable from the Cloud detail page if the user has sufficient "
+"permissions. Restricting or granting access to Cloud profiles via Policy "
+"does not affect access on the Cloud. Other Role permissions, such as "
+"\"Admin: Profiles\", \"Infrastructure: Clouds\", and Cloud/Group access "
+"must be used to restrict access via Cloud detail pages."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:51
+msgid "Example Policy"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:53
+msgid ""
+"In my example organization, I have one department that needs access to "
+"AWS-related secrets and another department that needs access to Azure-"
+"related secrets. There are many other secrets stored in my appliance but "
+"I don't want either of these departments to access any of those."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:55
+msgid ".. image:: /images/administration/policies/cypherlist.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:57
+msgid ""
+"For the first department, I've set up a Policy that allows them to list "
+"and read (including use and decryption rights) AWS secrets. A second "
+"Policy specifically excludes them from seeing one specific entry. The "
+"Policy with the more specific path will supersede the more generic Policy"
+" that includes a wildcard."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:59
+msgid ".. image:: /images/administration/policies/pollist.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:61
+msgid ""
+"By impersonating the user, we see they indeed have access to just the two"
+" desired Cypher entries."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:63
+msgid ".. image:: /images/administration/policies/user1cypher.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:65
+msgid ""
+"For the second department, I have set up a Policy that allows them to "
+"list and read (including use and decryption rights) Azure secrets."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:67
+msgid ".. image:: /images/administration/policies/cypherlist2.png"
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:69
+msgid ""
+"By impersonating the user once again, we see they indeed have access only"
+" to Azure entries."
+msgstr ""
+
+#: ../../administration/policies/cypherpolicies.rst:71
+msgid ".. image:: /images/administration/policies/user2cypher.png"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:173
+msgid "Expiration Policies"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:175
+msgid ""
+"Expiration policies set an expiration timeframe for any instance "
+"provisioned into the cloud, role, group or by the user the policy is "
+"added to. When an instance expires, it is terminated and deleted."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:177
+msgid "Configuration options for expiration policies:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:179
+msgid "Expiration Type"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:180
+msgid "User Configurable- expiration timeframe is editable during provisioning"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:181
+msgid "Fixed Expiration- user cannot change expiration timeframe"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:183
+#: ../../administration/policies/policies.rst:256
+msgid "Expiration Days"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:184
+msgid ""
+"Configures the number of days the instance is allowed to exist before "
+"being removed."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:185
+#: ../../administration/policies/policies.rst:258
+msgid "Renewal Days"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:186
+msgid ""
+"If the instance is renewed, this is the number of days by which the "
+"expiration date is increased."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:187
+#: ../../administration/policies/policies.rst:260
+msgid "Notification Days"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:188
+msgid ""
+"This allows an email notice to be sent out X days before the instance is "
+"set to expire."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:189
+#: ../../administration/policies/policies.rst:262
+msgid "Notification Message"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:190
+#, python-brace-format
+msgid ""
+"Customizable message for notification emails. The default message is "
+"``Instance ${instance?.name} is set to expire on "
+"${instance?.expireDate}``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:191
+#: ../../administration/policies/policies.rst:264
+msgid "Auto Approve Extensions"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:192
+#: ../../administration/policies/policies.rst:265
+msgid ""
+"Enable this to auto-approve extension requests, bypassing approval "
+"workflows."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:194
+msgid ""
+"Instances with expirations show the time until expiration in the instance"
+" detail pane. Instances with active expiration policies can be extended "
+"by selecting the EXTEND NOW button in the instance detail pane. The "
+"extension length is set in the policy by the RENEWAL DAYS field."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:196
+msgid ""
+"Expirations can also be added to any instance during provisioning by "
+"entering the number of days in the EXPIRATION DAYS field in the Lifecycle"
+" section of the automation section of the provisioning wizard. Expiration"
+" can be added to any instance even if no policies have been created."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:198
+#: ../../administration/policies/policies.rst:267
+msgid ""
+"Expiration and Shutdown Policies will be enforced on Instances created "
+"when converting a discovered host to managed."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:201
+msgid "Instance and Host Names"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:203
+#, python-brace-format
+msgid ""
+"Naming Policies will populate a fixed or editable name for instances, "
+"hosts and hostnames. The Name Pattern field uses ${variable} string "
+"interpolation."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:205
+msgid "NAMING TYPE"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:206
+#: ../../administration/policies/policies.rst:252
+msgid "User Configurable"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:207
+msgid ""
+"Naming pattern will pre-populate during provisioning but can be edited by"
+" the user."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:208
+msgid "Fixed Name"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:209
+msgid ""
+"Naming pattern will pre-populate during provisioning and cannot be "
+"changed."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:211
+msgid "NAME PATTERN"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:212
+#, python-brace-format
+msgid ""
+"The Name Pattern field uses Static text and/or ``${variable}`` string "
+"interpolation, such as ``morpheus${cloudCode}${type}${sequence+3000}``"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:214
+#, python-brace-format
+msgid ""
+"An example Instance Name Policy using a naming pattern with User "
+"Initials, Cloud Code, Instance Type, and a sequential number starting at "
+"3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, "
+"resulting in an Instance Name of **md-vmwd3-centos-3001** for the first "
+"instance, followed by **md-vmwd3-centos-3002** and so on."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:216
+msgid "Commonly used variables for naming patterns include:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:218
+#, python-brace-format
+msgid ""
+"${groupName}\n"
+"${groupCode}\n"
+"${cloudName}\n"
+"${cloudCode}\n"
+"${type}\n"
+"${accountId}\n"
+"${account}\n"
+"${accountType}\n"
+"${platform}\n"
+"${platform == 'windows' ? 'w':'l'} # results in `w` for Windows platforms"
+" and `l` for Linux Platforms\n"
+"${userId}\n"
+"${username}\n"
+"${userInitials}\n"
+"${provisionType}\n"
+"${instance.instanceContext} # Environment Code\n"
+"${sequence} # results in 1\n"
+"${sequence+100} # results in 101\n"
+"${sequence.toString().padLeft(5,'0')} #results in 00001"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:239
+msgid ""
+"Cloud codes and Group codes are fields found in their respective "
+"configuration panes."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:241
+msgid "AUTO RESOLVE CONFLICTS"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:242
+msgid ""
+"When enabled, |morpheus| may resolve a generated-name collision by "
+"appending a sequential number. When disabled, the naming policy does not "
+"alter a conflicting generated name; the downstream uniqueness "
+"validation/provider determines whether provisioning fails. This option "
+"does not guarantee that every provider-side naming restriction can be "
+"repaired."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:245
+msgid "Shutdown Policies"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:247
+msgid ""
+"Shutdown policies dictate the number of days an instance is allowed to "
+"run before it is shut down. Shutdown is consistent across cloud types "
+"i.e.: in VMware, a VM is powered off. In AWS, an instance is stopped. "
+"Etc."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:249
+msgid "Configuration options for shutdown policies:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:251
+msgid "Shutdown Type"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:253
+msgid "Shutdown timeframe is editable during provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:254
+msgid "Fixed Expiration"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:255
+msgid "User cannot change shutdown timeframe during provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:257
+msgid ""
+"Configures the number of days the instance is allowed to exist before "
+"being shut down."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:259
+msgid ""
+"If the instance is renewed, this is the number of days by which the "
+"shutdown date is increased."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:261
+msgid ""
+"This allows an email notice to be sent out X days before the instance is "
+"set to shut down."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:263
+msgid "Customizable message for notification email."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:270
+msgid "Provision Approval"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:272
+msgid ""
+"|morpheus| Provision Approvals enable an approval workflow via internal "
+"|morpheus| approval or via ServiceNow workflow. If a ServiceNow "
+"integration is present, the ServiceNow option is enabled. The Approval "
+"workflow to be selected is dynamically created by querying the ServiceNow"
+" Workflow table in the integrated ServiceNow instance."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:274
+msgid ""
+"This ServiceNow approval integration enables users to use the |morpheus| "
+"Self-Service provisioning portal to provision new instances and still "
+"respect the required ServiceNow business approval workflow."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:277
+msgid "Power Schedules"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:279
+msgid ""
+"Power Schedules set daily times to shutdown and startup instances. Power "
+"schedule can be created and managed in |LibAutPow|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:281
+msgid ""
+"Power Schedule Policies will apply to Instances created in a Group or "
+"Cloud after the Policy is enabled, and will not apply to pre-existing "
+"Instances."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:283
+msgid "Configuration options for Power Schedule Policies:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:285
+#: ../../administration/policies/policies.rst:328
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:286
+msgid "Add details about your Policy for reference in the Policies tab."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:287
+#: ../../administration/policies/policies.rst:330
+msgid "Enabled"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:288
+msgid ""
+"Policies can be edited and disabled or enabled at any time. Disabling a "
+"Power Schedule Policy will prevent the Power Schedule from running on the"
+" Groups Instances until re-enabled."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:289
+#: ../../administration/policies/policies.rst:332
+msgid "ENFORCEMENT TYPE"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:290
+msgid ""
+"User Configurable: Power Schedule choice is editable by User during "
+"provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:291
+msgid ""
+"Fixed Schedule: User cannot change Power Schedule setting during "
+"provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:292
+msgid "POWER SCHEDULE"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:293
+msgid ""
+"Select Power Schedule to use in the Policy. Power schedule can be added "
+"in |LibAutPow|"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:294
+#: ../../administration/policies/policies.rst:316
+#: ../../administration/policies/policies.rst:337
+msgid "TENANTS"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:295
+#: ../../administration/policies/policies.rst:317
+#: ../../administration/policies/policies.rst:338
+msgid ""
+"Leave blank for the Policy to apply to all Tenants, or search for and "
+"select Tenants to enforce the Policy on specific Tenants."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:298
+msgid "Max Resources"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:300
+msgid ""
+"Max Resource policies allow setting quotas for Clouds, Groups, Roles or "
+"Users for maximum amount of Memory, Storage, Cores, Hosts, VM's, or "
+"Containers that can be created in the Cloud, Group, Role or by the User "
+"the Policy is assigned to."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:302
+msgid "Configuration options for Max Resources Policies:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:305
+msgid ""
+"Sets the maximum combined total of Containers in Instances per Policy "
+"Scope."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:307
+msgid "Sets the maximum combined total of Cores in Instances per Policy Scope."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:309
+msgid "Sets the maximum total of Hosts per Policy Scope."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:311
+msgid ""
+"Sets the maximum combined total of RAM (capacity) for Instances per "
+"Policy Scope."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:313
+msgid ""
+"Sets the maximum combined total of Storage (capacity) for Instances per "
+"Policy Scope."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:315
+msgid "Sets the maximum total of managed Virtual Machines per Policy Scope."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:322
+msgid ""
+"The User Creation policy controls the \"CREATE YOUR USER\" flag in the "
+"User Config options during provisioning do be always disabled, always "
+"enabled, enabled by default, or disabled by default."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:324
+msgid "Configuration options for User Creation Policies:"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:326
+msgid "TYPE"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:329
+msgid "Description to identify the policy config"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:331
+msgid "Policies enforcement can be disabled or enabled at any time."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:333
+msgid ""
+"User Configurable: User Creation choice is editable by User during "
+"provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:334
+msgid "Fixed: User cannot change User Creation setting during provisioning."
+msgstr ""
+
+#: ../../administration/policies/policies.rst:335
+msgid "CREATE USER"
+msgstr ""
+
+#: ../../administration/policies/policies.rst:336
+msgid ""
+"Check to allow or force user creation. Uncheck to disable by default or "
+"force no user creation."
+msgstr ""
+

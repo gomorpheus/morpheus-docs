@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/loadbalancers/policies.rst:4
@@ -31,21 +31,21 @@ msgstr "Descripción general"
 #: ../../infrastructure/loadbalancers/policies.rst:9
 msgid ""
 "Load Balancer Policies define traffic management rules that control how "
-"requests are routed, redirected, or modified by the load balancer. Policies "
-"contain one or more rules, and each rule can match on specific conditions "
-"(such as URI path, hostname, or header values) and perform actions (such as "
-"forwarding to a pool, redirecting, or rewriting)."
+"requests are routed, redirected, or modified by the load balancer. "
+"Policies contain one or more rules, and each rule can match on specific "
+"conditions (such as URI path, hostname, or header values) and perform "
+"actions (such as forwarding to a pool, redirecting, or rewriting)."
 msgstr ""
-"Balanceador de carga Policies define traffic gestión reglas ese control cómo"
-" solicitudes son routed, redirected, o modified por el load balancer. "
-"Policies contener one o más reglas, y cada regla puede match en específico "
-"conditions (como URI ruta, hostname, o header valores) y perform acciones "
-"(como forwarding a un pool, redirecting, o rewriting)."
+"Balanceador de carga Policies define traffic gestión reglas ese control "
+"cómo solicitudes son routed, redirected, o modified por el load balancer."
+" Policies contener one o más reglas, y cada regla puede match en "
+"específico conditions (como URI ruta, hostname, o header valores) y "
+"perform acciones (como forwarding a un pool, redirecting, o rewriting)."
 
 #: ../../infrastructure/loadbalancers/policies.rst:11
 msgid ""
-"Policy management is available for load balancer types that support policy-"
-"based routing (such as F5 BIG-IP and NSX-T)."
+"Policy management is available for load balancer types that support "
+"policy-based routing (such as F5 BIG-IP and NSX-T)."
 msgstr ""
 "Policy gestión está disponible para load balancer tipos ese support "
 "política-based routing (como F5 BIG-IP y NSX-T)."
@@ -64,11 +64,11 @@ msgstr ""
 
 #: ../../infrastructure/loadbalancers/policies.rst:17
 msgid ""
-"``Infrastructure: Load Balancers`` role permission at **Read** level allows "
-"viewing policies and rules only."
+"``Infrastructure: Load Balancers`` role permission at **Read** level "
+"allows viewing policies and rules only."
 msgstr ""
-"``Infrastructure: Load Balancers`` permiso de rol en **Read** nivel permite "
-"viewing políticas y reglas solo."
+"``Infrastructure: Load Balancers`` permiso de rol en **Read** nivel "
+"permite viewing políticas y reglas solo."
 
 #: ../../infrastructure/loadbalancers/policies.rst:20
 msgid "Viewing Policies"
@@ -81,8 +81,7 @@ msgstr "Navegue un ``Infrastructure > Load Balancers``"
 
 #: ../../infrastructure/loadbalancers/policies.rst:23
 msgid "Click the name of a Load Balancer to view its detail page"
-msgstr ""
-"Click el nombre de un Balanceador de carga a ver su página de detalles"
+msgstr "Click el nombre de un Balanceador de carga a ver su página de detalles"
 
 #: ../../infrastructure/loadbalancers/policies.rst:24
 #: ../../infrastructure/loadbalancers/policies.rst:37
@@ -96,8 +95,8 @@ msgid ""
 "The Policies tab lists all policies configured for the load balancer, "
 "including:"
 msgstr ""
-"El Policies pestaña lists todos políticas configurado para el load balancer,"
-" incluyendo:"
+"El Policies pestaña lists todos políticas configurado para el load "
+"balancer, incluyendo:"
 
 #: ../../infrastructure/loadbalancers/policies.rst:28
 msgid "**Name** — Policy name"
@@ -136,7 +135,7 @@ msgstr "NAME"
 msgid "A descriptive name for the policy."
 msgstr "Un descriptive nombre para el política."
 
-#: ../../infrastructure/loadbalancers/policies.rst:44
+#: ../../infrastructure/loadbalancers/policies.rst:43
 msgid "DESCRIPTION"
 msgstr "DESCRIPTION"
 
@@ -145,9 +144,14 @@ msgid "Optional description of the policy's purpose."
 msgstr "Opcional descripción del política's purpose."
 
 #: ../../infrastructure/loadbalancers/policies.rst:46
+#: ../../infrastructure/loadbalancers/policies.rst:98
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:46
 msgid ""
-"Additional fields are displayed based on the load balancer type. These are "
-"defined by the provider's policy option types."
+"Additional fields are displayed based on the load balancer type. These "
+"are defined by the provider's policy option types."
 msgstr ""
 "Adicional campos son mostrado basado en el load balancer tipo. Estos son "
 "definido por el provider's política opción tipos."
@@ -176,10 +180,14 @@ msgid "Confirm the deletion"
 msgstr "Confirmar el deletion"
 
 #: ../../infrastructure/loadbalancers/policies.rst:58
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:58
 msgid ""
-"Deleting a policy that is currently assigned to a virtual server may disrupt"
-" traffic routing. Ensure no active virtual servers reference the policy "
-"before removing it."
+"Deleting a policy that is currently assigned to a virtual server may "
+"disrupt traffic routing. Ensure no active virtual servers reference the "
+"policy before removing it."
 msgstr ""
 "Deleting un política ese es actualmente asignado un un virtual servidor "
 "puede disrupt traffic routing. Asegurar no activo virtual servidores "
@@ -192,12 +200,12 @@ msgstr "Policy Rules"
 #: ../../infrastructure/loadbalancers/policies.rst:63
 msgid ""
 "Each policy contains one or more rules that define match conditions and "
-"actions. Rules are evaluated in order and the first matching rule's action "
-"is applied."
+"actions. Rules are evaluated in order and the first matching rule's "
+"action is applied."
 msgstr ""
 "Cada política contiene one o más reglas ese define match conditions y "
-"acciones. Rules son evaluated en order y el primero matching regla's acción "
-"es applied."
+"acciones. Rules son evaluated en order y el primero matching regla's "
+"acción es applied."
 
 #: ../../infrastructure/loadbalancers/policies.rst:66
 msgid "Viewing Rules"
@@ -228,17 +236,17 @@ msgstr "Configure el regla campos:"
 msgid "A descriptive name for the rule."
 msgstr "Un descriptive nombre para el regla."
 
-#: ../../infrastructure/loadbalancers/policies.rst:88
+#: ../../infrastructure/loadbalancers/policies.rst:81
 msgid "MATCH CONDITIONS"
 msgstr "MATCH CONDITIONS"
 
 #: ../../infrastructure/loadbalancers/policies.rst:82
 msgid ""
-"Define the criteria that must be met for the rule to apply. Conditions vary "
-"by load balancer type and may include:"
+"Define the criteria that must be met for the rule to apply. Conditions "
+"vary by load balancer type and may include:"
 msgstr ""
-"Define el criteria ese debe be met para el regla a apply. Conditions vary "
-"por load balancer tipo y puede incluir:"
+"Define el criteria ese debe be met para el regla a apply. Conditions vary"
+" por load balancer tipo y puede incluir:"
 
 #: ../../infrastructure/loadbalancers/policies.rst:84
 msgid "**URI Path** — Match on request URI path (e.g., ``/api/*``)"
@@ -260,7 +268,7 @@ msgstr "**Header** — Match en un específico HTTP header valor"
 msgid "**Source IP** — Match on client source IP address or range"
 msgstr "**Source IP** — Match en cliente origen IP dirección o range"
 
-#: ../../infrastructure/loadbalancers/policies.rst:96
+#: ../../infrastructure/loadbalancers/policies.rst:90
 msgid "ACTIONS"
 msgstr "ACTIONS"
 
@@ -286,11 +294,11 @@ msgstr "**Rewrite** — Modify el solicitud URI o headers antes de forwarding"
 
 #: ../../infrastructure/loadbalancers/policies.rst:98
 msgid ""
-"Available match conditions and actions depend on the load balancer type and "
-"are defined by the provider's policy rule option types."
+"Available match conditions and actions depend on the load balancer type "
+"and are defined by the provider's policy rule option types."
 msgstr ""
-"Disponible match conditions y acciones depend en el load balancer tipo y son"
-" definido por el provider's política regla opción tipos."
+"Disponible match conditions y acciones depend en el load balancer tipo y "
+"son definido por el provider's política regla opción tipos."
 
 #: ../../infrastructure/loadbalancers/policies.rst:103
 msgid "Deleting a Rule"
@@ -306,12 +314,13 @@ msgstr "Usando Policies con Virtual Servers"
 
 #: ../../infrastructure/loadbalancers/policies.rst:112
 msgid ""
-"When creating or editing a Virtual Server, policies can be selected from the"
-" **POLICIES** field. The available policies are filtered to those belonging "
-"to the same load balancer. Policies are evaluated in the order they are "
-"assigned to the virtual server."
+"When creating or editing a Virtual Server, policies can be selected from "
+"the **POLICIES** field. The available policies are filtered to those "
+"belonging to the same load balancer. Policies are evaluated in the order "
+"they are assigned to the virtual server."
 msgstr ""
 "Cuando creating o editing un Virtual Servidor, políticas se puede "
 "seleccionar desde el **POLICIES** campo. El disponible políticas son "
-"filtered a esos belonging al mismo load balancer. Policies son evaluated en "
-"el order they son asignado un el virtual servidor."
+"filtered a esos belonging al mismo load balancer. Policies son evaluated "
+"en el order they son asignado un el virtual servidor."
+

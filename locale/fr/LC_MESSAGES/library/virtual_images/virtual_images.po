@@ -1,0 +1,1214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/virtual_images/virtual_images.rst:2
+msgid "Virtual Images"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:7
+msgid ""
+"The Virtual Image section displays a list of all images, local and "
+"synced, that are available to deploy. |morpheus| includes a rich catalog "
+"of pre-configured System Images available for every cloud type. User "
+"Images are automatically synced from Cloud Integrations and added to the "
+"Virtual Images section. Images can also be uploaded directly into "
+"|morpheus| via local file or url. Amazon and Azure Marketplace images can"
+" also be added to the Virtual Images Section."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:9
+msgid ""
+"Understanding the process of prepping images for consumption in "
+"|morpheus| is a very important step toward building an effective "
+"|morpheus| environment. In addition to the information contained in this "
+"section on Virtual Images, it may be helpful to see a complete image prep"
+" example walkthrough. Our getting started guide for |morpheus| and VMware"
+" includes `a section on preparing images "
+"<https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html"
+"#prepping-an-image>`_ that may provide a helpful example."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:11
+msgid "Tip"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:11
+msgid ""
+"|morpheus| includes a wide catalog of system image types as examples to "
+"show how the product can be used and to give users a starting point for "
+"implementing their own library. The included images are not intended to "
+"be production-ready images. |morpheus| always recommends its users create"
+" their own gold images which meet their required specifications."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:13
+#: ../../library/virtual_images/virtual_images.rst:22
+#: ../../library/virtual_images/virtual_images.rst:92
+#: ../../library/virtual_images/virtual_images.rst:243
+#: ../../library/virtual_images/virtual_images.rst:334
+msgid "Important"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:13
+msgid ""
+"Invalid Image Settings cause provisioning failures. |morpheus| syncs in "
+"as much meta-data as possible for synced images, but additional "
+"configuration may be needed to ensure successful provisioning."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:15
+#: ../../library/virtual_images/virtual_images.rst:110
+#: ../../library/virtual_images/virtual_images.rst:155
+msgid "Warning"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:15
+msgid ""
+"Cloud-init is enabled by default for all Linux images. If your Linux "
+"image does not have Cloud-init installed, `Cloud-init Enabled` must be "
+"unchecked before provisioning the image or it will fail immediately."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:18
+msgid "Image Types"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:20
+msgid ""
+"|morpheus| provides a vast *System Image* repo with pre-configured images"
+" for every Cloud. All other images are *User Images*. User images can be "
+"added directly to |morpheus|, or automatically synced from integrated "
+"clouds. It is important to configure synced User Images for metadata, "
+"including specifying the Platform and User Credentials, prior to "
+"provisioning. Provisioning a User Image that has not been configured may "
+"result in failed provisioning."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:22
+msgid "Synced User Images need to be configured prior to provisioning."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:25
+msgid "Linked Clone Images"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:27
+msgid ""
+"A linked clone Virtual Image is a record backed by a snapshot of an "
+"existing VMware or HVM/KVM VM. Provisioning from it creates a small "
+"writable disk that shares the snapshot's base data, reducing deployment "
+"time and initial storage consumption. It is not an independent copy of "
+"the source disk."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:29
+msgid ""
+"Linked clone images are created from an Instance's :guilabel:`Backups` "
+"tab, not from the Virtual Images page. Prepare the guest, create a "
+"snapshot, and select :guilabel:`More` > :guilabel:`Create Linked Clone` "
+"for that snapshot. See the **Creating Linked Clone Images** section in "
+":doc:`/infrastructure/storage/storage` for the complete workflow and "
+"platform constraints."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:31
+msgid ""
+"After creation, edit the record in :menuselection:`Library --> Virtual "
+"Images` and verify the inherited operating system, cloud-init or Sysprep,"
+" guest customization, agent, credentials, and permissions. Keep the "
+"source VM and backing snapshot for as long as the image or provisioned "
+"linked-clone VMs are needed."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:34
+msgid "Configuring Virtual Images"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:37
+msgid "System Images"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:39
+msgid ""
+"System Virtual Images are pre-configured with metadata and have Cloud-"
+"Init or Cloudbase-Init installed. These images are ready to be "
+"provisioned with no configuration necessary, however it is required to "
+"populate :menuselection:`Administration --> Settings --> Provisioning`, "
+"Cloud-Init section, with user data as well as User Profile(s) users data "
+"when creating additional users prior to provisioning, as the user data "
+"from these sections is required when provisioning System provided Virtual"
+" Images."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:41
+#: ../../library/virtual_images/virtual_images.rst:90
+#: ../../library/virtual_images/virtual_images.rst:101
+#: ../../library/virtual_images/virtual_images.rst:103
+#: ../../library/virtual_images/virtual_images.rst:112
+#: ../../library/virtual_images/virtual_images.rst:140
+#: ../../library/virtual_images/virtual_images.rst:153
+#: ../../library/virtual_images/virtual_images.rst:157
+#: ../../library/virtual_images/virtual_images.rst:338
+#: ../../library/virtual_images/virtual_images.rst:364
+msgid "Note"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:41
+msgid "System Images settings are not editable."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:44
+msgid "User Images"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:46
+msgid ""
+"Typically |morpheus| does not have sufficient metatdata to successfully "
+"provision synced User Images. After integrating clouds and User Images "
+"have synced, it is highly recommended to configure the images prior to "
+"provisioning."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:48
+msgid "**To edit and configure an existing Virtual Image:**"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:50
+msgid ""
+"Select the pencil icon at the right of any row on the Virtual Images list"
+" page, or click :guilabel:`EDIT` on a Virtual Image detail page."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:51
+msgid "Configure the following on the Image:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:53
+msgid "Name"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:54
+msgid ""
+"Name of the Virtual Image in |morpheus|. This can be changed from the "
+"name of the image, but editing will not change the name of the actual "
+"image"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:55
+msgid "Operating System"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:56
+msgid ""
+"Specifies the platform and OS of the image. All Windows images will need "
+"to have the operating system specified on the Virtual Image, as "
+"|morpheus| will assign Linux as the platform for all images without an "
+"operating system specified"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:57
+msgid "Minimum Memory"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:58
+msgid ""
+"The Minimum Memory setting will filter available Service Plan options "
+"during provisioning. Service Plans that do not meet the minimum value set"
+" on the Virtual Image will not be provided as Service Plan choices"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:59
+msgid "Cloud Init Enabled?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:60
+msgid ""
+"On by default, uncheck for any Image that does not have Cloud-Init "
+"installed"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:61
+msgid "Install Agent?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:62
+msgid ""
+"On by default, uncheck to skip Agent install. Note this will result in "
+"the loss of utilization statistics, logs, script execution, and "
+"monitoring. (Some utilization stats are still collected for Agent-less "
+"hosts and VMs depending on the cloud)"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:63
+msgid "Username"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:64
+msgid ""
+"Existing username on the image for authentication. Can be left blank if "
+"global default credentials are configured in "
+":menuselection:`Administration --> Settings --> Provisioning` (separate "
+"defaults exist for Linux and Windows). If Cloud-Init or Guest "
+"Customizations are used, credentials from :menuselection:`Administration "
+"--> Settings --> Provisioning` and User Settings are applied. If "
+"credentials are defined on the image and Cloud-Init is enabled, "
+"|morpheus| will add that user during provisioning, so ensure that user "
+"does not already exist on the image (such as ``root``). For Windows, do "
+"not define any user other than Administrator. |morpheus| recommends "
+"running Guest Customizations for all Windows Images, which is required "
+"when joining Domains as the SID will change."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:65
+msgid "Password"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:66
+msgid ""
+"Password for the user on the image if username is populated. Can be left "
+"blank if global defaults are set in :menuselection:`Administration --> "
+"Settings --> Provisioning`."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:67
+msgid "Bucket"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:68
+msgid ""
+"Location where the Virtual Image will be stored. Default Virtual Image "
+"Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional "
+"Storage Providers can be configured in ``Infrastructure > Storage``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:69
+msgid "Cloud-Init User Data"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:70
+msgid ""
+"Accepts what would go in ``runcmd`` and can assume Bash syntax. Example "
+"use: Script to configure satellite registration at provision time"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:71
+msgid "Permissions"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:72
+msgid ""
+"Set Tenant permissions in a multi-tenant |morpheus| environment. Select "
+"private visibility and select specific Tenants to which the Virtual Image"
+" will be made available. Select public visibility to share the Virtual "
+"Image with all Tenants"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:73
+msgid "Auto Join Domain?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:74
+msgid ""
+"Enable to have Instances provisioned with this image auto-join configured"
+" domains (Windows only, domain controller must be configured in "
+"``Infrastructure > Network`` and the configured domain set on the "
+"provisioned to Cloud or Network)"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:75
+msgid "VirtIO Drivers Loaded?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:76
+msgid ""
+"Enable if VirtIO Drivers are installed on the image for provisioning to "
+"KVM-based hypervisors"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:77
+msgid "FIPS Compliant Image?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:78
+msgid ""
+"When selected, |morpheus| will install the FIPS-compliant |morpheus| "
+"Agent package"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:79
+msgid "VM Tools Installed?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:80
+msgid ""
+"On by default, uncheck if guest tools are not installed on the Virtual "
+"Image (VMware Tools for VMware, QEMU Guest Agent for HVM). |morpheus| "
+"will skip network wait during provisioning when deselected"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:81
+msgid "Force Guest Customization?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:82
+msgid ""
+"Forces guest customizations to run during provisioning. On VMware/VME, "
+"transfers unattend via VMware Tools and reboots. On HVM, injects unattend"
+" via the guest agent. Requires guest tools to be installed on the image."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:83
+#: ../../library/virtual_images/virtual_images.rst:319
+msgid "Trial Version"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:84
+msgid ""
+"Enable to automatically re-arm the expiration on Windows Trial Images "
+"during provisioning"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:85
+msgid "Enabled Sysprep?"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:86
+msgid ""
+"Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, "
+"Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been "
+"sysprepped. If enabled, |morpheus| will inject ``unattend.xml``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:88
+msgid "Click :guilabel:`Save Changes`"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:90
+msgid ""
+"Cloud-Init is enabled by default on all images. Images without Cloud-Init"
+" installed must have the ``cloud-init`` flag disabled on the Virtual "
+"Image setting or Provisioning may fail."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:92
+msgid ""
+"|morpheus| does not validate or restrict image uploads to certain file "
+"types and any type of file may be uploaded as a Virtual Image. For "
+"security purposes, these files are stored in a non-executable state so "
+"users need not worry about potentially dangerous file types being "
+"uploaded (ex. executables)."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:95
+msgid "Provisioning Images"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:97
+msgid ""
+"When provisioning a system image, |morpheus| will stream the image from "
+"Amazon S3 to the target Cloud if the image is not local to the Cloud."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:99
+msgid ""
+"When using images that already exist in the destination Cloud, such as "
+"synced, marketplace, or previously copied images, no image stream from S3"
+" through the |morpheus| Appliance to the destination cloud will take "
+"place."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:101
+msgid ""
+"The |morpheus| Appliance must be able to download from Amazon S3 when "
+"provisioning system images."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:103
+msgid ""
+"The |morpheus| Appliance must be able reach and resolve the destination "
+"Host when provisioning System Images or uploaded Images for the first "
+"time. This included being able to resolve ESXi host names in VMware "
+"vCenter clouds, and reach the destination ESXi host over port 443."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:106
+msgid "Add Virtual Image"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:108
+msgid ""
+"Virtual Images can be upload to |morpheus| from local files or URL's. "
+"Amazon and Azure Marketplace metadata can also be added to the Virtual "
+"Images library, enabling the creation of custom catalog Instance Type "
+"from Marketplace images (no image is transferred to |morpheus| when "
+"adding Marketplace images)."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:110
+msgid ""
+"Be conscious of your Storage Provider selection. The default Storage "
+"Provider is the |morpheus| Appliance at ``/var/opt/morpheus/morpheus-"
+"ui/vms``. Uploading large images to the |morpheus| Appliance when there "
+"is inadequate space will cause upload failures and impact Appliance "
+"functionality. Ensure there is adequate space on your selected Storage "
+"Provider. Additional Storage Provider can be added at `Infrastructure > "
+"Storage`, which can be configured as the default Virtual Image Store or "
+"selected when uploading Images."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:112
+msgid "VMware-type OVF Virtual Images do not support mounted ISO uploads"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:114
+msgid "To Add Virtual Image:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:116
+msgid "Select :guilabel:`+ Add` in the Virtual Images page."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:117
+msgid "Select Image format:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:119
+msgid "Alibaba"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:120
+msgid "Amazon AMI"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:121
+msgid "Azure Marketplace"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:122
+msgid "Digital Ocean"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:123
+msgid "ISO"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:124
+msgid "PXE Boot"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:125
+msgid "QCOW2"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:126
+msgid "RAW"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:127
+msgid "VHD"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:128
+msgid "VMware (vmdk/ovf/ova)"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:130
+msgid ""
+"Configure the Virtual Image settings (see `Configuring Virtual Images`_ "
+"above for a description of each option)."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:132
+msgid "Upload Image"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:134
+msgid "Images can be uploaded by File or URL:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:135
+msgid "*File*"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:136
+msgid ""
+"Drag and Drop the image file, or select :guilabel:`Add File` to select "
+"the image file."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:137
+msgid "*Url*"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:138
+msgid "Select the URL radio button, and enter URL of the Image."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:140
+msgid ""
+"The Virtual Image configuration can be saved when using a URL and the "
+"import will finish in the background. When selecting or dragging and "
+"dropping a file, the browser upload must complete before saving the "
+"Virtual Image record or the Image will not be valid."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:142
+msgid "Choose the source method based on where the image is available:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:144
+msgid ""
+"Use **File** when the image is on your workstation. Keep the browser "
+"session connected until the file upload completes."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:145
+msgid ""
+"Use **URL** when the image is available from an HTTP or HTTPS endpoint "
+"that the |morpheus| Appliance can resolve and reach. The appliance "
+"retrieves the image after the record is saved, so the browser does not "
+"carry the image data."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:147
+msgid ""
+"Transfer duration depends on image size, the path between the source and "
+"the appliance, available bandwidth, and the selected Storage Provider. "
+"URL import can avoid a slow workstation, VPN, or browser path, but it "
+"does not guarantee a faster transfer. Use only a trusted endpoint and "
+"verify the image checksum against its publisher-provided value before "
+"use."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:149
+msgid ""
+"If an import appears stalled, do not create a second Virtual Image "
+"immediately. Check the Virtual Image status, available capacity on the "
+"selected Storage Provider, appliance reachability to a URL source, and "
+"any proxy or TLS errors in the appliance logs. Retry only after "
+"confirming the first transfer has failed."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:151
+msgid "Save Changes."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:153
+msgid ""
+"Default Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. "
+"Additional Storage Providers can be configured in `Infrastructure > "
+"Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if "
+"used."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:155
+msgid ""
+"Provisioning will fail if `Cloud init Enabled` is checked and Cloud-Init "
+"is not installed on the Image."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:157
+msgid ""
+"Existing Image credentials are required for Linux Images that are not "
+"Cloud-Init enabled and for Windows Images when Guest Customizations are "
+"not used. Cloud-Init and Windows user settings need to be configured in "
+":menuselection:`Administration --> Settings --> Provisioning` when using "
+"Cloud-Init or Guest Customizations and new credentials are not set on the"
+" Virtual Image."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:162
+msgid "Multi-Disk QCOW2 Images for HVM/KVM"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:164
+msgid ""
+"HVM/KVM supports Virtual Images containing multiple QCOW2 disks. Upload "
+"every QCOW2 file and a JSON manifest named exactly ``metadata.json`` as "
+"files on the same Virtual Image. The manifest maps each QCOW2 file to its"
+" guest device, disk size, and order."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:166
+msgid ""
+"Without ``metadata.json``, |morpheus| treats a QCOW2 Virtual Image as a "
+"single-disk image even when multiple QCOW2 files have been uploaded."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:168
+msgid "The following example defines a 50 GiB boot disk and a 100 GiB data disk:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:170
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"disks\": [\n"
+"    {\n"
+"      \"file\": \"root.qcow2\",\n"
+"      \"capacity\": 53687091200,\n"
+"      \"guestDeviceName\": \"vda\",\n"
+"      \"position\": 0,\n"
+"      \"name\": \"root\",\n"
+"      \"boot\": true\n"
+"    },\n"
+"    {\n"
+"      \"file\": \"data.qcow2\",\n"
+"      \"capacity\": 107374182400,\n"
+"      \"guestDeviceName\": \"vdb\",\n"
+"      \"position\": 1,\n"
+"      \"name\": \"data\"\n"
+"    }\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:192
+msgid "Multi-disk QCOW2 metadata fields"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:196
+msgid "Field"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:197
+msgid "Required"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:198
+msgid "Description"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:199
+msgid "``disks``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:200
+#: ../../library/virtual_images/virtual_images.rst:203
+#: ../../library/virtual_images/virtual_images.rst:271
+#: ../../library/virtual_images/virtual_images.rst:272
+#: ../../library/virtual_images/virtual_images.rst:273
+#: ../../library/virtual_images/virtual_images.rst:274
+#: ../../library/virtual_images/virtual_images.rst:275
+#: ../../library/virtual_images/virtual_images.rst:278
+#: ../../library/virtual_images/virtual_images.rst:279
+#: ../../library/virtual_images/virtual_images.rst:280
+#: ../../library/virtual_images/virtual_images.rst:281
+#: ../../library/virtual_images/virtual_images.rst:282
+#: ../../library/virtual_images/virtual_images.rst:306
+#: ../../library/virtual_images/virtual_images.rst:307
+#: ../../library/virtual_images/virtual_images.rst:310
+#: ../../library/virtual_images/virtual_images.rst:313
+#: ../../library/virtual_images/virtual_images.rst:314
+#: ../../library/virtual_images/virtual_images.rst:317
+#: ../../library/virtual_images/virtual_images.rst:320
+#: ../../library/virtual_images/virtual_images.rst:321
+#: ../../library/virtual_images/virtual_images.rst:324
+#: ../../library/virtual_images/virtual_images.rst:327
+#: ../../library/virtual_images/virtual_images.rst:328
+#: ../../library/virtual_images/virtual_images.rst:329
+#: ../../library/virtual_images/virtual_images.rst:330
+#: ../../library/virtual_images/virtual_images.rst:331
+msgid "Yes"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:201
+msgid "Top-level array containing one object for each uploaded disk."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:202
+msgid "``file``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:204
+msgid ""
+"Exact, unique filename of the uploaded QCOW2 file, including the "
+"``.qcow2`` extension. Filename matching is case-insensitive."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:205
+msgid "``capacity``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:206
+#: ../../library/virtual_images/virtual_images.rst:209
+#: ../../library/virtual_images/virtual_images.rst:212
+msgid "Recommended"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:207
+msgid ""
+"Virtual disk capacity in bytes. Convert GiB to bytes with ``GiB × "
+"1073741824``. For example, 50 GiB is ``53687091200`` bytes."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:208
+msgid "``guestDeviceName``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:210
+msgid ""
+"Device name presented to the guest, such as ``vda`` for the root disk and"
+" ``vdb`` for the first data disk."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:211
+msgid "``position``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:213
+msgid "Zero-based disk order. Use unique, sequential values beginning with ``0``."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:214
+msgid "``name``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:215
+#: ../../library/virtual_images/virtual_images.rst:218
+#: ../../library/virtual_images/virtual_images.rst:221
+#: ../../library/virtual_images/virtual_images.rst:224
+msgid "No"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:216
+msgid ""
+"Descriptive source-disk label, such as ``root`` or ``data``. The "
+"displayed image-volume name can be derived from the Virtual Image name "
+"instead."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:217
+msgid "``boot``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:219
+msgid ""
+"Set to ``true`` on the boot disk. If no disk is marked as bootable, "
+"|morpheus| selects the first disk after sorting."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:220
+msgid "``unitNumber``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:222
+msgid ""
+"Unit number on a referenced storage controller. Omit for a basic VirtIO "
+"disk set."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:223
+msgid "``storageController``"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:225
+msgid ""
+"Controller reference used when a specific imported controller topology "
+"must be preserved. It requires a matching object in a top-level "
+"``storageControllers`` array. Omit both for a basic VirtIO disk set."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:227
+msgid ""
+"Disk records are sorted by controller bus number, unit number, and then "
+"``position``. For a basic manifest without controller fields, "
+"``position`` determines the order. Use distinct filenames, positions, and"
+" guest device names to avoid ambiguous mappings."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:229
+msgid ""
+"Only ``disks`` and a resolvable ``file`` value are strictly needed for "
+"file discovery, but include the recommended fields shown above so "
+"|morpheus| can build predictable disk capacities, devices, and ordering."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:231
+msgid "To upload a multi-disk QCOW2 image:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:233
+msgid "Navigate to |LibVir| and click :guilabel:`+ ADD`."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:234
+msgid "Select :guilabel:`QCOW2` as the image format."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:235
+msgid ""
+"Configure the Virtual Image, including Operating System, Cloud-Init, "
+"Agent, credentials, VirtIO, and guest tools settings as appropriate for "
+"the image."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:236
+msgid ""
+"Select **File** upload. Multi-disk upload requires adding multiple files "
+"to the same Virtual Image."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:237
+msgid ""
+"Upload every referenced ``.qcow2`` file and wait for each upload to "
+"complete."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:238
+msgid ""
+"Upload ``metadata.json`` last. Uploading the manifest triggers disk-map "
+"processing, so all referenced disk files must already be present."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:239
+msgid ""
+"Confirm the file list contains ``metadata.json`` and every filename "
+"referenced by its ``disks`` array."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:240
+msgid "Save the Virtual Image and wait for its status to become Active."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:241
+msgid ""
+"Open the Virtual Image details and verify that every disk is present with"
+" the expected capacity, device order, and root disk before provisioning."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:243
+msgid ""
+"Do not upload ``metadata.json`` before the QCOW2 files. If the manifest "
+"is processed while referenced files are missing, the resulting disk "
+"records can be incomplete. Remove and re-upload the manifest after all "
+"disk files are present, or recreate the Virtual Image if the stored "
+"volume map is incorrect."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:245
+msgid "Troubleshooting multi-disk uploads:"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:247
+msgid ""
+"**Only one disk is shown:** Confirm the file is named exactly "
+"``metadata.json``, contains a top-level ``disks`` array, and was uploaded"
+" after all QCOW2 files."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:248
+msgid ""
+"**A disk is missing:** Confirm its ``file`` value exactly matches a "
+"unique uploaded filename and includes the ``.qcow2`` extension."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:249
+msgid ""
+"**Disk capacity is wrong:** Confirm ``capacity`` is in bytes rather than "
+"GiB. Multiply GiB by ``1073741824``."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:250
+msgid ""
+"**Wrong disk boots:** Set ``boot`` to ``true`` on the intended root disk "
+"and ensure its ordering fields do not conflict with another disk."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:251
+msgid ""
+"**Device order is wrong:** Use sequential ``position`` values and "
+"matching ``guestDeviceName`` values such as ``vda``, ``vdb``, and "
+"``vdc``."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:252
+msgid ""
+"**Manifest is ignored or the image remains invalid:** Validate the file "
+"as JSON, ensure there are no comments or trailing commas, and upload the "
+"corrected manifest after the disk files."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:255
+msgid "Virtual Image Options — Cloud Applicability"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:257
+msgid ""
+"Not all Virtual Image settings apply to all cloud types. The following "
+"matrix clarifies which options have an effect depending on the target "
+"cloud. Options marked as having no effect are ignored during provisioning"
+" to that cloud type."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:263
+msgid "Option"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:264
+msgid "HVM (KVM)"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:265
+msgid "VMware / VME"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:266
+msgid "AWS"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:267
+msgid "Azure"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:268
+msgid "Nutanix"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:269
+msgid "Notes"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:270
+msgid "Cloud Init Enabled"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:276
+msgid "Must be unchecked if cloud-init is not installed on the image"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:277
+msgid "Install Agent"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:283
+msgid "Universal — works on all clouds"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:284
+msgid "Force Guest Customization"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:285
+#: ../../library/virtual_images/virtual_images.rst:286
+#: ../../library/virtual_images/virtual_images.rst:292
+#: ../../library/virtual_images/virtual_images.rst:299
+#: ../../library/virtual_images/virtual_images.rst:300
+msgid "**Yes**"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:287
+#: ../../library/virtual_images/virtual_images.rst:288
+#: ../../library/virtual_images/virtual_images.rst:289
+#: ../../library/virtual_images/virtual_images.rst:293
+#: ../../library/virtual_images/virtual_images.rst:294
+#: ../../library/virtual_images/virtual_images.rst:295
+#: ../../library/virtual_images/virtual_images.rst:296
+#: ../../library/virtual_images/virtual_images.rst:301
+#: ../../library/virtual_images/virtual_images.rst:302
+#: ../../library/virtual_images/virtual_images.rst:303
+#: ../../library/virtual_images/virtual_images.rst:308
+#: ../../library/virtual_images/virtual_images.rst:309
+#: ../../library/virtual_images/virtual_images.rst:315
+#: ../../library/virtual_images/virtual_images.rst:316
+#: ../../library/virtual_images/virtual_images.rst:322
+#: ../../library/virtual_images/virtual_images.rst:323
+msgid "No effect"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:290
+msgid ""
+"Triggers guest customization during provisioning. On VMware/VME, "
+"transfers unattend via VMware Tools and reboots. On HVM, injects unattend"
+" and triggers customization via the guest agent."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:291
+msgid "VirtIO Drivers Loaded"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:297
+msgid ""
+"HVM/KVM only. When unchecked, |morpheus| uses IDE/SATA bus instead of "
+"VirtIO."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:298
+msgid "VM Tools Installed"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:304
+msgid ""
+"Indicates guest tools are present (VMware Tools for VMware, QEMU Guest "
+"Agent for HVM). When unchecked, |morpheus| skips network wait during "
+"provisioning."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:305
+msgid "Enabled Sysprep"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:311
+msgid ""
+"Windows images. |morpheus| injects unattend.xml when enabled. Works on "
+"VMware, HVM, Nutanix, SCVMM, Hyper-V, GCP."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:312
+msgid "Auto Join Domain"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:318
+msgid "Windows only. Requires Network Domain with Domain Controller configured."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:325
+msgid "Windows trial re-arm. Applicable to any on-prem cloud."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:326
+msgid "FIPS Compliant Image"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:332
+msgid "Universal — controls which Agent package is installed."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:336
+msgid ""
+"The most common source of confusion is **Force Guest Customization** — "
+"this setting works on VMware/VME (via VMware Tools) and HVM (via the "
+"guest agent). On public clouds (AWS, Azure), customization is handled by "
+"the cloud provider's metadata service and this setting has no effect."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:340
+msgid ""
+"**ISO image types** — When uploading ISO images (used for manual OS "
+"installations or boot media), disable both **Cloud Init Enabled** and "
+"**Enabled Sysprep**. ISO-based images are typically booted interactively "
+"for OS installation and do not use cloud-init or sysprep-based guest "
+"customization. Leaving these options enabled on an ISO image will cause "
+"provisioning failures or unexpected behavior."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:342
+msgid ""
+"For HVM, provision the VM from the ISO, complete the installer through "
+"the VM console, eject the ISO media, and restart the VM from its "
+"installed disk. For the related HVM boot controls and the separate "
+"network-boot path, see "
+":doc:`/infrastructure/clusters/hvm/vm_advanced_options`."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:345
+msgid "Import an HVM Instance as an Image"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:347
+msgid ""
+"Before selecting :guilabel:`Actions` > :guilabel:`Import as Image` for an"
+" HVM VM installed from ISO, verify that the guest boots from its "
+"installed disk and eject the installation ISO. The import excludes ISO "
+"volumes and exports the installed disks."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:349
+msgid ""
+"Existing file-based snapshots do not need to be deleted before import. "
+"When a disk has a qcow2 backing chain, |morpheus| copies and merges the "
+"chain into a temporary export disk without modifying the VM's existing "
+"snapshots. Other supported storage backends create their own temporary "
+"export snapshot."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:351
+msgid ""
+"After the import finishes, verify that the resulting Virtual Image "
+"contains ``metadata.json`` and every disk file referenced by the "
+"manifest. A Virtual Image record or metadata file without the referenced "
+"disk files is incomplete, even if its status is Active. Leave the source "
+"VM and snapshots unchanged and contact Support with the HVM version, "
+"storage backend, snapshot list, and import process output. Deleting an "
+"existing snapshot is not a required import step and should not be used as"
+" an import workaround."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:354
+msgid "VMware - VM Templates Copies"
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:356
+msgid ""
+"In a VMware environment, you may have a single VM template that you use "
+"across different vCenters. Uploading an image to |morpheus|, mentioned in"
+" the Add Virtual Image section, is one method to solve this. "
+"Alternatively, an organization may decide to create a VM template in one "
+"vCenter and then transfer it to other vCenters, which then could be "
+"sync’d into |morpheus|."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:358
+msgid ""
+"If all the vCenters are added as Clouds into |morpheus| and the templates"
+" are named the same in each vCenter, they will be aggregated under a "
+"single virtual image in |morpheus|. This means that as you deploy to the "
+"various vCenter Clouds in |morpheus| using this virtual image, it will "
+"choose the correct VM template to use based on the Cloud deployed to."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:360
+msgid ""
+"This eliminates the need for creating multiple Node Types for each "
+"virtual image if the templates were named differently in each vCenter. "
+"This can reduce the overhead of maintaining multiple Node Types and "
+"reduces user selections. As well, this can reduce the cloning time of VMs"
+" by avoiding network transfers of images between geographic locations, "
+"ensuring the closest VM template is selected."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:362
+msgid ""
+"|morpheus| supports VMware Content Libraries storing VM templates and "
+"syncing into |morpheus|, the same as a template in a folder. "
+"Additionally, the Content Library can be used to house the same template "
+"in multiple libraries. If they have the same name, these templates will "
+"be aggregated under a single virtual image. If the Content Library is "
+"stored on a datastore that the target host/cluster has access to, it will"
+" use that library first, to reduce the cloning time. If the Content "
+"Library is not stored in a datastore accessible by the cluster/host, a "
+"copy of the VM template will be performed to the target host/cluster "
+"instead."
+msgstr ""
+
+#: ../../library/virtual_images/virtual_images.rst:364
+msgid ""
+"VM templates are a **Data Center** level object.  The same process above "
+"applies to a single VMware cloud with multiple logical data centers.  It "
+"will not apply to clusters, as a template is not associated with a "
+"cluster, only when it is converted to a VM."
+msgstr ""
+

@@ -1,0 +1,430 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/IdentityManagement/saml.rst:2
+msgid "SAML Integration"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:7
+msgid ""
+"The |morpheus| SAML identity source integration allows customers to add "
+"user SSO to |morpheus|, authenticated by external login SAML providers."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:9
+msgid ".. image:: /images/samlLoginGeneric.png"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:12
+msgid "Adding a SAML Integration"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:14
+msgid "To add a SAML integration:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:16
+msgid "Navigate to |AdmTen|"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:17
+msgid "Select a tenant."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:18
+msgid "Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:19
+msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:20
+msgid "Select `SAML SSO` from the `TYPE` field"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:21
+msgid "Add a Name and optional Description for the SAML integration"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:23
+msgid ".. image:: /images/integration_guides/identity_sources/saml_sso/saml.png"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:25
+msgid ""
+"There are 4 sections with fields that need to be populated depending on "
+"the desired configuration:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:27
+#: ../../integration_guides/IdentityManagement/saml.rst:33
+msgid "SAML Configuration"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:28
+#: ../../integration_guides/IdentityManagement/saml.rst:59
+msgid "Role Mappings"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:29
+#: ../../integration_guides/IdentityManagement/saml.rst:75
+msgid "Role Options"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:30
+#: ../../integration_guides/IdentityManagement/saml.rst:83
+msgid "Assertion Attribute Mappings"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:35
+#: ../../integration_guides/IdentityManagement/saml.rst:102
+msgid "LOGIN REDIRECT URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:36
+msgid ""
+"This is the SAML endpoint |morpheus| will redirect to when a user signs "
+"into |morpheus| via SAML"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:37
+msgid "SAML LOGOUT REDIRECT URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:38
+msgid "The URL |morpheus| will POST to when a SAML user logs out of |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:39
+msgid "INCLUDES SAML REQUEST PARAMETER"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:40
+msgid ""
+"**Yes** (recommended) - the AuthN request will be sent via the "
+"?SAMLRequest= parameter in the URL (GET)"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:42
+msgid ""
+"**No** - the AuthN request will be submitted in the body of the request "
+"(POST)"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:44
+#: ../../integration_guides/IdentityManagement/saml.rst:72
+#: ../../integration_guides/IdentityManagement/saml.rst:98
+#: ../../integration_guides/IdentityManagement/saml.rst:113
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:44
+msgid ""
+"The SAML SP documentation should mention which binding to use but GET is "
+"most common"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:45
+msgid "SAML REQUEST"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:46
+msgid "**No Signature** - No signature is used on the SAML request"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:48
+msgid ""
+"**Self Signed** - A self-signed X.509 Certificate is gentered after "
+"clicking :guilabel:`SAVE CHANGES`. This signature value can be used by "
+"the SAML SP to verify the authenticity of the request"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:50
+msgid ""
+"**Custom RSA Signature** - Import a custom RSA Private Key and respective"
+" X.509 Certificate. This signature value can be used by the SAML SP to "
+"verify the authenticity of the request"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:51
+msgid "SAML RESPONSE"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:52
+msgid ""
+"**Do Not Validate Assertion Signature** - The SAML response signature "
+"from the SAML SP will not be validated"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:54
+msgid ""
+"**Validate Assertion Signature** - The SAML reponse signature from the "
+"SAML SP will be validated.  Enter the SAML SP X.509 certificate in the "
+"**Public Key** field. This must be in PEM format"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:56
+#: ../../integration_guides/IdentityManagement/saml.rst:70
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:56
+msgid ""
+"Setting SAML REQUEST to \"No Signature\" and SAML RESPONSE to \"Do Not "
+"Validate Assertion Signature\" is allowed but not recommended for "
+"security reasons."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:61
+msgid "DEFAULT ROLE"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:62
+msgid "Role any SAML user will be assigned by default"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:63
+msgid "ROLE ATTRIBUTE NAME"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:64
+msgid ""
+"The name of the attribute/assertion field that will map to |morpheus| "
+"roles, such a MemberOf"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:65
+msgid "REQUIRED ROLE ATTRIBUTE VALUE"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:66
+msgid ""
+"Attribute/assertion value that a user must be assigned/a member of to be "
+"authorized, such as group or role in the SAML SP. This is obtained from "
+"the attribute/assertion defined in the ROLE ATTRIBUTE NAME field"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:67
+msgid "<|morpheus| ROLE NAME>"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:68
+msgid ""
+"Additional roles that can be mapped to a user, which will add to the "
+"DEFAULT ROLE. Attribute value that a user must be assigned/a member of to"
+" be authorized, such as group or role in the SAML SP. This is obtained "
+"from the attribute/assertion defined in the ROLE ATTRIBUTE NAME field"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:70
+msgid ""
+"Role mapping compares each value supplied for ROLE ATTRIBUTE NAME with a "
+"configured mapping using exact value equality. A single assertion value "
+"containing comma- or space-separated role names is not split and will not"
+" match multiple mappings. To assign multiple mapped Roles, configure the "
+"identity provider to emit multiple values for the same SAML attribute, "
+"one exact value per mapping. This preserves the provider's group model "
+"but may require changing its assertion configuration. The Default Role "
+"remains additive."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:72
+msgid ""
+"For more on Identity Source role mapping permissions, see the `associated"
+" guide <https://support.morpheusdata.com/s/article/How-to-enable-"
+"Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ "
+"in our KnowledgeBase."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:77
+msgid "ENABLE ROLE MAPPING PERMISSION"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:78
+msgid ""
+"When selected, Tenant users with appropriate rights to view and edit "
+"Roles will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"without viewing or potentially editing the Identity Source configuration."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:79
+msgid "MANUAL ROLE ASSIGNMENT"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:80
+msgid ""
+"When selected, administrators can manually edit Roles for users created "
+"through this identity source integration from the user detail page "
+"(|AdmUse| > Selected user)."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:85
+msgid "GIVEN NAME ATTRIBUTE NAME"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:86
+msgid "SAML SP field value to map to |morpheus| user First Name"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:87
+msgid "SURNAME ATTRIBUTE NAME"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:88
+msgid "SAML SP field value to map to |morpheus| user Last Name"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:89
+msgid "EMAIL ATTRIBUTE"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:90
+msgid "SAML SP field value to map to |morpheus| user email address"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:92
+msgid ""
+".. image:: "
+"/images/integration_guides/identity_sources/saml_sso/saml_assertion_attribute_mappings.png"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:94
+msgid ""
+"Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity "
+"source integration will be added."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:96
+msgid ""
+"In the :guilabel:`Identity Sources` section, important information for "
+"configuration of the SAML integration is provided. Use the SP ENTITY ID "
+"and SP ACS URL for configuration on the external login SAML provider "
+"side."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:98
+msgid ""
+"In some cases, the SAML provider may need these values before providing "
+"the LOGIN REDIRECT URL and other values.  When creating the integration, "
+"the NAME and LOGIN REDIRECT URL can contain any values, then selecting "
+"SAVE CHANGES will generate the above values.  The NAME and LOGIN REDIRECT"
+" URL can be edited later, once the SAML configuration is created in the "
+"SAML provider."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:100
+msgid "ENTITY ID"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:101
+msgid "SP ACS URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:103
+msgid "SP METADATA"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:105
+msgid ""
+".. image:: "
+"/images/integration_guides/identity_sources/saml_sso/identity_sources_info.png"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:107
+msgid "Sample Metadata code output:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:109
+msgid ""
+"<?xml version=\"1.0\" encoding=\"UTF-8\" "
+"standalone=\"yes\"?><EntityDescriptor "
+"entityID=\"https://someip.com/saml/eDKL60P25\" "
+"xmlns=\"urn:oasis:names:tc:SAML:2.0:metadata\"><SPSSODescriptor "
+"AuthnRequestsSigned=\"false\" WantAssertionsSigned=\"true\" "
+"protocolSupportEnumeration=\"urn:oasis:names:tc:SAML:2.0:protocol\"><NameIDFormat>urn:oasis:names:tc:SAML:1.1"
+":nameid-format:unspecified</NameIDFormat><AssertionConsumerService "
+"index=\"0\" isDefault=\"true\" "
+"Binding=\"urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST\" "
+"Location=\"https://someip.com/externalLogin/callback/eDKL60P25\"/></SPSSODescriptor></EntityDescriptor>"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:113
+msgid ""
+"Different SAML providers will have different field names and "
+"requirements. An Okta SAML Dev environment was used for the example "
+"integration in this article."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:116
+msgid "Okta SAML SSO"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:118
+msgid "For Okta SAML integration, the following fields are mapped:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:120
+msgid "LOGIN REDIRECT URL : Identity Provider Single Sign-On URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:121
+msgid "ENTITY ID: Audience URI (SP Entity ID)"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:122
+msgid "SP ACS URL: Single sign on URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:125
+msgid "Onelogin SAML SSO"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:127
+msgid "For Onelogin SAML integration, the following fields are mapped:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:129
+msgid "LOGIN REDIRECT URL : SAML 2.0 Endpoint (HTTP)"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:130
+msgid "SAML LOGOUT REDIRECT URL : SLO Endpoint (HTTP)"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:131
+msgid "SIGNING PUBLIC KEY : X.509 Certificate"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:132
+msgid "ENTITY ID: ACS (Consumer) URL Validator"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/saml.rst:133
+msgid "SP ACS URL: ACS (Consumer) URL"
+msgstr ""
+

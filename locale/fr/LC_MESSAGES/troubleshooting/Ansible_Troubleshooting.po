@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:2
+msgid "Ansible Troubleshooting"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:4
+msgid ""
+"When a workflow is executed manually, the Ansible run output is available"
+" in the Instance History tab. Select the ``i`` bubble next to the Ansible"
+" task to see the output. You can also see the run output in UI logs at "
+"``/var/log/morpheus/morpheus-ui/current​``. These can be tailed by "
+"running ``morpheus-ctl tail morpheus-ui``."
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:7
+msgid "Verify Ansible is installed on the |morpheus| Appliance"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:9
+msgid ""
+"Ansible should be automatically installed but certain OS or network "
+"conditions can prevent the automated install. You can confirm "
+"installation by running ``ansible --version`` in the |morpheus| "
+"appliance, or by viewing the Ansible integration details page (|AdmInt| >"
+" Select Ansible Integration). We also see it in the Ansible tab of a "
+"Group or Cloud scoped to Ansible, just run ``--version`` as ansible is "
+"already included in the command."
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:12
+msgid "If Ansible is not installed"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:14
+msgid ""
+"Follow these instructions to install, or use your preferred installation "
+"method"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:16
+msgid "Ubuntu:"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:18
+msgid ""
+"sudo apt-get install software-properties-common\n"
+"sudo apt-add-repository ppa:ansible/ansible\n"
+"sudo apt-get update\n"
+"sudo apt-get install ansible python-requests"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:25
+msgid "CentOS:"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:27
+msgid ""
+"sudo yum install epel-release\n"
+"sudo yum install ansible python-requests"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:32
+msgid "Then create the working Ansible directory for Morpheus:"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:34
+msgid ""
+"sudo mkdir /opt/morpheus/.ansible\n"
+"sudo chown morpheus-app.morpheus-app /opt/morpheus/.ansible"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:41
+msgid "Validate Git repo authorization and the configured paths"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:43
+msgid ""
+"The public and private SSH keys need to be added to the |morpheus| "
+"appliance via ``Infrastructure > Keys & Certs`` and the public key needs "
+"to be added to the Git repo via user settings. If both are set up "
+"correctly, you will see the playbooks and roles populate in the Ansible "
+"Integration details page."
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:45
+msgid ""
+"The Git Ref field on playbook tasks is to specify a different git branch "
+"than default. It can be left to use the default branch. If your playbooks"
+" are in a different branch you can add the brach name in the Git Ref "
+"field."
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:47
+msgid ""
+"When running a playbook that is in a workflow, the additional playbooks "
+"fields do not need to be populated, they are for running a different "
+"playbook than the one set in the Ansible task in the Workflow, or using a"
+" different Git Ref."
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:49
+msgid "Note"
+msgstr ""
+
+#: ../../troubleshooting/Ansible_Troubleshooting.rst:51
+msgid ""
+"If you are manually running Workflows with Ansible tasks on existing "
+"Instances through ``Actions > Run Workflow​`` and not seeing results, set"
+" the Provision Phase on the Ansible task to Provision​ as there may be "
+"issues with executing tasks on other phases when executing manually."
+msgstr ""
+

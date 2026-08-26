@@ -1,0 +1,2009 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/requirements/requirements.rst:4
+msgid "Requirements"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:6
+msgid ""
+"|morphfirst| is a software-based appliance installation capable of "
+"orchestrating many clouds and hypervisors. Before an installation is "
+"started it is important to understand some of the base requirements."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:8
+msgid ""
+"In the simplest configuration |morpheus| needs one Appliance Server. The "
+"Appliance Server, by default, contains all the components necessary to "
+"orchestrate both VMs and containers. To get started some base "
+"requirements are recommended:"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:10
+#: ../../getting_started/requirements/requirements.rst:173
+msgid "Tip"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:12
+msgid ""
+"**Deploying on HVM?** If you are deploying |morpheus| using the HPE "
+"Morpheus Manager Installer onto HVM hosts, the appliance requirements "
+"below are automatically satisfied by the QCOW2 image. For HVM host "
+"hardware and network requirements, see :doc:`Preparing HVM Hosts "
+"</getting_started/installation/hvm_host_prep>`."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:15
+msgid "Base Requirements"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:1
+msgid "**Supported Appliance Operating Systems**"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:5
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "OS"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:6
+msgid "Version(s)"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:7
+msgid "Notes"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:8
+msgid "Amazon Linux"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:9
+msgid "2"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:11
+msgid "Debian"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:12
+msgid "|debianVersions|"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:14
+msgid "RHEL"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:15
+msgid "|rhelVersions|"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:17
+msgid "Oracle Enterprise Linux (OEL)"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:18
+msgid "|oelVersions|"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:20
+msgid "SUSE SLES"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:21
+msgid "|suseVersions|"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:23
+msgid "Ubuntu"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:24
+msgid "|ubuntuVersions|"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:25
+msgid ""
+"14.04 is no longer supported for Appliance OS.  Note: 14.04 is still "
+"supported by the |morpheus| Agent."
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:26
+msgid "Rocky"
+msgstr ""
+
+#: ../../getting_started/requirements/applianceOsTable.rst:27
+msgid "8, 9"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:19
+msgid ""
+"**Memory:** `16 GB recommended "
+"<https://support.morpheusdata.com/s/article/How-does-Morpheus-manage-the-"
+"memory-it-uses?language=en_US>`_ for default installations. 8 GB minimum "
+"required with 4 GB+ available storage swap space"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:20
+msgid "**Storage:** 200 GB storage minimum (see Storage Considerations below)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:21
+msgid ""
+"**CPU:** 4-core, 1.4 GHz (or better), 64-bit CPU recommended for all-in-"
+"one systems. For a distributed-tier installation, it's recommended each "
+"tier have 2-core, 1.4 GHz (or better), 64-bit CPU"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:22
+msgid "Network connectivity from your users to the appliance over TCP 443 (HTTPS)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:23
+msgid ""
+"Superuser privileges via the ``sudo`` command for the user installing the"
+" |morpheus| appliance package"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:24
+msgid ""
+"|morpheus| service nodes must be configured to use accurate NTP servers. "
+"A service node may be an app node, database node, RabbitMQ, or "
+"Elasticsearch node (see |morpheus| system architecture details further on"
+" in the installation section for more details)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:25
+msgid "Required repository access:"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:26
+msgid ""
+"Prior to installing the |morpheus| Appliance you will need to ensure that"
+" the target server or virtual machine has access to the base YUM/DNF or "
+"APT repositories"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:27
+msgid ""
+"A RHEL 8 server requires the ``codeready`` (codeready-builder-for-"
+"rhel-8-x86_64-rpms) repository be enabled and accessible"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:28
+msgid ""
+"A RHEL 7 server requires access to Optional RPMs repo. The repository "
+"need to be enabled and accessible"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:29
+msgid "An appliance license is required for any operations involving provisioning"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:30
+msgid ""
+"Current major web browsers supporting modern standards, such as Google "
+"Chrome, Mozilla Firefox, Apple Safari, and Microsoft Edge are supported"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:31
+msgid "Internet Connectivity (optional)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:32
+msgid ""
+"Access to ``https://www.hpe.com/support/hpesc``, "
+"``https://share.morpheusdata.com``, and "
+"``https://d2u3hdjdxt56gx.cloudfront.net`` (the share.morpheusdata.com "
+"cloudfront domain that share package requests will redirect to) over port"
+" 443 required on app nodes when reconfiguring to download embedded "
+"packages and plugins."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:33
+msgid ""
+"Access to ``https://morpheus-images.morpheusdata.com``, "
+"``https://registry.morpheusdata.com``, and "
+"``https://playbooks.morpheusdata.com`` To download |morpheus|' system "
+"images and playbooks."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:34
+msgid ""
+"Offline installation requires installing the supplemental package in "
+"addition to the regular installation package. Local yum/apt repo access "
+"is still required for offline package installations."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:36
+#: ../../getting_started/requirements/requirements.rst:90
+#: ../../getting_started/requirements/requirements.rst:783
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:36
+msgid ""
+"Access to ``yum`` and ``apt`` repositories is still required for offline "
+"package installations. A local QCOW2 deployment does not remove the need "
+"to maintain the Manager's Ubuntu base OS. Air-gapped Manager appliances "
+"require an internal repository containing the HPE-validated update set; "
+"see :doc:`Morpheus Manager Base OS Updates "
+"</getting_started/maintenance/manager_os_updates>`."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:39
+msgid "Central Service and Remote Data Access (optional)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:41
+msgid ""
+"When the applicable Central Service or Remote Data Access feature is "
+"enabled, allow outbound HTTPS from the appliance or its configured on-"
+"premises proxy to ``midway.ext.hpe.com`` on TCP 443. This is the only "
+"customer-facing endpoint established by the evidence maintained with this"
+" documentation."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:43
+msgid ""
+"Do not allow-list proposed regional tunnel hostnames based on this page. "
+"Their protocol, customer-facing stability, region selection, and release "
+"scope are not proven here. Obtain the current endpoint registry from HPE "
+"for the exact enabled service before adding any other destination. This "
+"optional egress is not required for a baseline appliance that does not "
+"use the feature."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:45
+msgid "VM and Host Agent Install (optional)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:46
+msgid ""
+"Inbound connectivity access from provisioned VMs and container hosts on "
+"port 443 (Agent install and communication). Port 80 may be required for "
+"older ``apt`` distros."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:48
+msgid ""
+"An Appliance URL that is accessible/resolvable to all managed hosts. It "
+"is necessary for all hosts that are managed by |morpheus| to be able to "
+"communicate with the appliance server ip on port 443. This URL is "
+"configured under |AdmSet|."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:51
+msgid "Storage Considerations"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:53
+msgid ""
+"Upon initial installation |morpheus| takes up less than 10 GB of space, "
+"however |morpheus| Services, Virtual Images, Backups, Logs, stats, and "
+"user-uploaded and imported data require adequate space on the |morpheus| "
+"Appliance(s) based on appliance configuration and activity. |morpheus| "
+"recommends at least 200 GB as a general figure to start from but storage "
+"needs will vary dramatically based on each specific use case. In some "
+"cases, significantly more space will be needed."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:55
+#: ../../getting_started/requirements/requirements.rst:751
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:55
+msgid ""
+"It is the customer's responsibility to ensure adequate storage space per "
+"configuration and use case. The appliance should be properly monitored to"
+" ensure it does not run low on disk space."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:58
+msgid "Default Paths"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:60
+msgid "``/opt/morpheus``"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:61
+msgid "Morpheus Application and Services Files"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:62
+msgid "``/var/opt/morpheus``"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:63
+msgid ""
+"User, Application and Services Data, including default config "
+"Elasticsearch, RabbitMQ and Database data, default Virtual Image path, "
+"and working directory for Backups"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:64
+msgid "``/var/opt/morpheus/morpheus-ui`` (HA Installations Only)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:65
+msgid ""
+"In an HA Installation, a NFS share is required and mounted to this "
+"location.  Virtual Images, Plugins, and other shared files are stored at "
+"this path to be accessible for all nodes"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:66
+msgid "``/home``"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:67
+msgid "Morpheus service account home data, such as configuration files"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:68
+msgid "``/var/log``"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:69
+msgid "Morpheus Service logs"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:70
+msgid "``/tmp``"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:71
+msgid "Storage for any temp files created by Morpheus or the operating system"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:81
+msgid "Images"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:83
+msgid ""
+"Virtual Images can be uploaded to |morpheus| Storage Providers for use "
+"across Clouds. By default when no Storage Provider has been added, images"
+" will write to ``/var/opt/morpheus/morpheus-ui/vms``. Please ensure "
+"adequate space when uploading Images using local file paths."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:86
+msgid "Backups"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:88
+msgid ""
+"|morpheus| can offload snapshots when performing backups to local or "
+"other Storage Providers. By default when no Storage Provider has been "
+"added, backups will write to ``/var/opt/morpheus/bitcan/backups/``. When "
+"using none NFS Storage providers, the backup file(s) must be written to "
+"``/var/opt/morpheus/bitcan/working/`` before they can be zipped, sent to "
+"the destination Storage provider such as S3, and removed from "
+"``/var/opt/morpheus/bitcan/working/``. Please ensure adequate space in "
+"``/var/opt/morpheus/bitcan/`` when offloading Backups."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:90
+msgid ""
+"The backup /working and /backups paths are configurable in morpheus.rb "
+"with `bitcan['working_directory'] = '$path'` and "
+"`bitcan['backup_directory'] = '/tmp'`"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:93
+msgid "VM Logs and Stats"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:95
+#, python-format
+msgid ""
+"When using |morpheus| with a locally-installed Elasticsearch "
+"configuration, VM, Container, Host and Appliance logs and stats are are "
+"stored in Elasticsearch. Please ensure adequate space in ``/var``, "
+"specifically ``/var/opt/morpheus/elasticsearch`` in relation to the "
+"number of Instances reporting logs, log frequency, and log retention "
+"count. With partition space at 85% filled or higher (by default), "
+"Elasticsearch will enter an unhealthy state and the |morpheus| appliance "
+"will not function properly."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:98
+msgid "|morpheus| Services Logs"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:100
+msgid ""
+"Logs for services local to the |morpheus| Appliance, such as the Morpheus"
+" UI, elasticsearch, rabbitmq, mysql, nginx and guacd are written to "
+"``/var/log/morpheus/``. Current logs are rotated nightly, zipped, and "
+"files older than 30 days are automatically removed. Misconfigured "
+"services, ports and permissions can cause excessive log file sizes."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:103
+msgid "Network Connectivity"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:105
+msgid ""
+"|morpheus| primarily operates via communication with its Agent that is "
+"installed on all managed VMs or docker hosts. This is a lightweight agent"
+" responsible for aggregating logs and stats and sending them back to the "
+"client with minimal network traffic overhead. It also is capable of "
+"processing instructions related to provisioning and deployments "
+"instigated by the appliance server."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:107
+msgid ""
+"The |morpheus| Agent exists for both Linux and Windows-based platforms "
+"and opens NO ports on the guest operating system. Instead it makes an "
+"outbound SSL (HTTPS/WSS) connection to the appliance server. This is what"
+" is known as the ``appliance url`` during configuration (in |AdmSet|). "
+"When the Agent is started it automatically makes this connection and "
+"securely authenticates. Therefore, it is necessary for all VMs and docker"
+" based hosts that are managed by |morpheus| to be able to reach the "
+"appliance server IP on port 443."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:110
+msgid ""
+"|morpheus| has numerous methods to execute Agent installation, including "
+"zero open port methods."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:113
+msgid "Components"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:115
+msgid ""
+"The Appliance Server automatically installs several components for the "
+"operation of |morpheus|. This includes:"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:117
+msgid "RabbitMQ (Messaging)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:118
+msgid "MySQL (Logistical Data store)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:119
+msgid "Elasticsearch (Logs / Metrics store)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:120
+msgid "Tomcat (|morpheus| Application)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:121
+msgid "Nginx (Web frontend)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:122
+msgid "Guacamole (Remote console service for clientless remote console)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:123
+msgid "Check Server (Monitoring Agent for custom checks added via UI)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:125
+msgid ""
+"All of these are installed in an isolated way using chef zero to "
+"``/opt/morpheus``. It is also important to note these services can be "
+"offloaded to separate servers or clusters as desired. For details check "
+"the installation section and high availability."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:129
+#: ../../getting_started/requirements/requirements.rst:133
+msgid "Common Ports & Requirements"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:131
+msgid ""
+"The following chart is useful for troubleshooting Agent install, Static "
+"IP assignment, Remote Console connectivity, and Image transfers."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Feature"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Method"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Source"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+#: ../../getting_started/requirements/requirements.rst:183
+msgid "Destination"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Port"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Requirement"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Agent Communication"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "All"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Node"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Appliance"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "443"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "DNS Resolution from node to appliance url"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Agent Install"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Linux"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "80"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Used for appliance yum and apt repos"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "SSH"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "22"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Virtual Images configured"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "SSH Enabled on Virtual Image"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "WinRM"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Windows"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "5985"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid ""
+"Not required for agent installation in VMware vCenter and vCloud Director"
+" type clouds. Otherwise, access from |morpheus| App Nodes to Instance "
+"Node on 5985"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "WinRM Enabled on Virtual Image(`winrm quickconfig`)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Cloud-init"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Cloud-init installed on template/image"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid ""
+"Cloud-init settings populated in User Settings or in `Administration > "
+"Settings > Provisioning`"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Agent install mode set to Cloud-Init in Cloud Settings"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Cloudbase-init"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Cloudbase-init installed on template/image"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "VMtools"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "VMtools installed on template"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid ""
+"Cloud-init settings populated in Morpheus user settings or in "
+"`Administration > Settings > Provisioning` when using Static IP’s"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Existing User credentials entered on Virtual Image when using DHCP"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "RPC mode set to VMtools in VMware cloud settings."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Static IP Assignment & IP Pools"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Cloud-Init"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid ""
+"Network configured in Morpheus (Gateway, Primary and Secondary DNS, CIDR "
+"populated, DHCP disabled)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Cloud-init/Cloudbase-init installed on template/image"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid ""
+"Cloud-init settings populated in Morpheus user settings or in "
+"`Administration > Settings > Provisioning`"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "VMware Tools"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "VMtools installed on Template/Virtual Image"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Remote Console"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "ssh enabled on node"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "user/password set on VM or Host in Morpheus"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "RDP"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "3389"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "RDP Enabled on node"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Hypervisor Console"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Hypervisor Hosts"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Hypervisor host names resolvable by morpheus appliance"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Morpheus Catalog Image Download"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "AWS S3"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Available space at ``/var/opt/morpheus/``"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Image Transfer"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Stream"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:1
+msgid "Datastore"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst
+msgid "Hypervisor Host Names resolvable by Morpheus Appliance"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:169
+msgid "Communication Data"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:171
+msgid ""
+"The following table contains communication information, including "
+"frequency and configurability between |morpheus| and its supported "
+"technology integrations."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:175
+msgid ""
+"For a detailed comparison of feature coverage across all supported cloud "
+"integrations, including networking, costing, Kubernetes capabilities, and"
+" tier classifications, see "
+":doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:177
+msgid "**Communication Frequency, Ports, and Protocols**"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:181
+msgid "﻿Source"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:182
+msgid "Push/Pull"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:184
+msgid "Description"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:185
+msgid "Default Interval"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:186
+msgid "Configurable Internal"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:187
+msgid "Cloud Foundry App Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:188
+#: ../../getting_started/requirements/requirements.rst:194
+#: ../../getting_started/requirements/requirements.rst:200
+#: ../../getting_started/requirements/requirements.rst:206
+#: ../../getting_started/requirements/requirements.rst:212
+#: ../../getting_started/requirements/requirements.rst:218
+#: ../../getting_started/requirements/requirements.rst:224
+#: ../../getting_started/requirements/requirements.rst:236
+#: ../../getting_started/requirements/requirements.rst:242
+#: ../../getting_started/requirements/requirements.rst:248
+#: ../../getting_started/requirements/requirements.rst:254
+#: ../../getting_started/requirements/requirements.rst:260
+#: ../../getting_started/requirements/requirements.rst:266
+#: ../../getting_started/requirements/requirements.rst:278
+#: ../../getting_started/requirements/requirements.rst:284
+#: ../../getting_started/requirements/requirements.rst:290
+#: ../../getting_started/requirements/requirements.rst:296
+#: ../../getting_started/requirements/requirements.rst:302
+#: ../../getting_started/requirements/requirements.rst:308
+#: ../../getting_started/requirements/requirements.rst:314
+#: ../../getting_started/requirements/requirements.rst:320
+#: ../../getting_started/requirements/requirements.rst:326
+#: ../../getting_started/requirements/requirements.rst:332
+#: ../../getting_started/requirements/requirements.rst:338
+#: ../../getting_started/requirements/requirements.rst:344
+#: ../../getting_started/requirements/requirements.rst:350
+#: ../../getting_started/requirements/requirements.rst:356
+#: ../../getting_started/requirements/requirements.rst:362
+#: ../../getting_started/requirements/requirements.rst:368
+#: ../../getting_started/requirements/requirements.rst:374
+#: ../../getting_started/requirements/requirements.rst:380
+#: ../../getting_started/requirements/requirements.rst:386
+#: ../../getting_started/requirements/requirements.rst:392
+#: ../../getting_started/requirements/requirements.rst:398
+#: ../../getting_started/requirements/requirements.rst:404
+#: ../../getting_started/requirements/requirements.rst:410
+#: ../../getting_started/requirements/requirements.rst:416
+#: ../../getting_started/requirements/requirements.rst:422
+#: ../../getting_started/requirements/requirements.rst:428
+#: ../../getting_started/requirements/requirements.rst:434
+#: ../../getting_started/requirements/requirements.rst:440
+#: ../../getting_started/requirements/requirements.rst:446
+#: ../../getting_started/requirements/requirements.rst:452
+#: ../../getting_started/requirements/requirements.rst:458
+#: ../../getting_started/requirements/requirements.rst:470
+#: ../../getting_started/requirements/requirements.rst:476
+#: ../../getting_started/requirements/requirements.rst:482
+#: ../../getting_started/requirements/requirements.rst:494
+#: ../../getting_started/requirements/requirements.rst:500
+#: ../../getting_started/requirements/requirements.rst:506
+#: ../../getting_started/requirements/requirements.rst:512
+#: ../../getting_started/requirements/requirements.rst:518
+#: ../../getting_started/requirements/requirements.rst:524
+#: ../../getting_started/requirements/requirements.rst:530
+#: ../../getting_started/requirements/requirements.rst:536
+#: ../../getting_started/requirements/requirements.rst:548
+#: ../../getting_started/requirements/requirements.rst:554
+#: ../../getting_started/requirements/requirements.rst:560
+#: ../../getting_started/requirements/requirements.rst:566
+#: ../../getting_started/requirements/requirements.rst:572
+#: ../../getting_started/requirements/requirements.rst:578
+#: ../../getting_started/requirements/requirements.rst:584
+#: ../../getting_started/requirements/requirements.rst:590
+#: ../../getting_started/requirements/requirements.rst:596
+#: ../../getting_started/requirements/requirements.rst:602
+#: ../../getting_started/requirements/requirements.rst:608
+#: ../../getting_started/requirements/requirements.rst:614
+#: ../../getting_started/requirements/requirements.rst:620
+#: ../../getting_started/requirements/requirements.rst:626
+#: ../../getting_started/requirements/requirements.rst:632
+#: ../../getting_started/requirements/requirements.rst:638
+#: ../../getting_started/requirements/requirements.rst:644
+#: ../../getting_started/requirements/requirements.rst:650
+#: ../../getting_started/requirements/requirements.rst:656
+#: ../../getting_started/requirements/requirements.rst:662
+#: ../../getting_started/requirements/requirements.rst:668
+#: ../../getting_started/requirements/requirements.rst:680
+#: ../../getting_started/requirements/requirements.rst:698
+#: ../../getting_started/requirements/requirements.rst:704
+#: ../../getting_started/requirements/requirements.rst:710
+#: ../../getting_started/requirements/requirements.rst:716
+#: ../../getting_started/requirements/requirements.rst:722
+#: ../../getting_started/requirements/requirements.rst:728
+#: ../../getting_started/requirements/requirements.rst:734
+msgid "Server Pull"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:189
+msgid "Cloud Foundry Applications that exist within Morpheus"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:190
+msgid ""
+"Automatically created during provisioning if using the related system "
+"node/container type in order to inspect the running state. May be "
+"manually created but must be a machine that exists in Morpheus."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:191
+#: ../../getting_started/requirements/requirements.rst:197
+#: ../../getting_started/requirements/requirements.rst:203
+#: ../../getting_started/requirements/requirements.rst:209
+#: ../../getting_started/requirements/requirements.rst:215
+#: ../../getting_started/requirements/requirements.rst:221
+#: ../../getting_started/requirements/requirements.rst:227
+#: ../../getting_started/requirements/requirements.rst:239
+#: ../../getting_started/requirements/requirements.rst:245
+#: ../../getting_started/requirements/requirements.rst:251
+#: ../../getting_started/requirements/requirements.rst:257
+#: ../../getting_started/requirements/requirements.rst:263
+#: ../../getting_started/requirements/requirements.rst:269
+#: ../../getting_started/requirements/requirements.rst:275
+msgid "5 Minutes with 30 second recheck on failure."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:192
+#: ../../getting_started/requirements/requirements.rst:198
+#: ../../getting_started/requirements/requirements.rst:204
+#: ../../getting_started/requirements/requirements.rst:210
+#: ../../getting_started/requirements/requirements.rst:216
+#: ../../getting_started/requirements/requirements.rst:222
+#: ../../getting_started/requirements/requirements.rst:228
+#: ../../getting_started/requirements/requirements.rst:240
+#: ../../getting_started/requirements/requirements.rst:246
+#: ../../getting_started/requirements/requirements.rst:252
+#: ../../getting_started/requirements/requirements.rst:258
+#: ../../getting_started/requirements/requirements.rst:264
+#: ../../getting_started/requirements/requirements.rst:270
+#: ../../getting_started/requirements/requirements.rst:276
+msgid ""
+"Range of 1 minute to 3 hours of selectable intervals. Additionally, the "
+"default interval may be globally altered."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:193
+msgid "Docker Container Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:195
+msgid "Docker containers that exist within Morpheus"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:196
+msgid ""
+"If no other check types apply, automatically created during provisioning "
+"if using the related system container type, in order to inspect the "
+"running state. May be manually created but must be a machine that exists "
+"in Morpheus."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:199
+msgid "Elastic Search Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:201
+msgid "Elastic Search application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:202
+#: ../../getting_started/requirements/requirements.rst:208
+#: ../../getting_started/requirements/requirements.rst:214
+#: ../../getting_started/requirements/requirements.rst:220
+#: ../../getting_started/requirements/requirements.rst:226
+#: ../../getting_started/requirements/requirements.rst:238
+#: ../../getting_started/requirements/requirements.rst:244
+#: ../../getting_started/requirements/requirements.rst:250
+#: ../../getting_started/requirements/requirements.rst:256
+#: ../../getting_started/requirements/requirements.rst:262
+#: ../../getting_started/requirements/requirements.rst:274
+msgid ""
+"Automatically created during provisioning if using the related system "
+"node/container type in order to inspect the running state. May be "
+"manually created but does not need to exist in Morpheus."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:205
+msgid "Microsoft SQL Server Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:207
+msgid "Microsoft SQL application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:211
+msgid "Mongo Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:213
+msgid "Mongo DB application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:217
+msgid "MySQL Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:219
+msgid "MySQL application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:223
+msgid "Postgres Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:225
+msgid "Postgres application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:229
+msgid "Push API Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:230
+msgid "Client Push"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:231
+msgid "Morpheus API"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:232
+msgid ""
+"External system push notifications to Morpheus for the purpose of "
+"ensuring the notifications are received."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:233
+#: ../../getting_started/requirements/requirements.rst:281
+#: ../../getting_started/requirements/requirements.rst:287
+#: ../../getting_started/requirements/requirements.rst:293
+#: ../../getting_started/requirements/requirements.rst:299
+#: ../../getting_started/requirements/requirements.rst:305
+#: ../../getting_started/requirements/requirements.rst:311
+#: ../../getting_started/requirements/requirements.rst:317
+#: ../../getting_started/requirements/requirements.rst:323
+#: ../../getting_started/requirements/requirements.rst:329
+#: ../../getting_started/requirements/requirements.rst:335
+#: ../../getting_started/requirements/requirements.rst:341
+#: ../../getting_started/requirements/requirements.rst:347
+#: ../../getting_started/requirements/requirements.rst:353
+#: ../../getting_started/requirements/requirements.rst:359
+#: ../../getting_started/requirements/requirements.rst:365
+#: ../../getting_started/requirements/requirements.rst:371
+#: ../../getting_started/requirements/requirements.rst:377
+#: ../../getting_started/requirements/requirements.rst:383
+#: ../../getting_started/requirements/requirements.rst:389
+#: ../../getting_started/requirements/requirements.rst:395
+#: ../../getting_started/requirements/requirements.rst:401
+#: ../../getting_started/requirements/requirements.rst:407
+#: ../../getting_started/requirements/requirements.rst:413
+#: ../../getting_started/requirements/requirements.rst:419
+#: ../../getting_started/requirements/requirements.rst:425
+#: ../../getting_started/requirements/requirements.rst:431
+#: ../../getting_started/requirements/requirements.rst:437
+#: ../../getting_started/requirements/requirements.rst:443
+#: ../../getting_started/requirements/requirements.rst:449
+#: ../../getting_started/requirements/requirements.rst:455
+#: ../../getting_started/requirements/requirements.rst:461
+#: ../../getting_started/requirements/requirements.rst:539
+#: ../../getting_started/requirements/requirements.rst:551
+#: ../../getting_started/requirements/requirements.rst:641
+msgid "5 Minutes"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:234
+msgid ""
+"Range of 1 minute to 3 hours of selectable intervals. Additionally, the "
+"default interval may be globally altered.  This is dependent on the "
+"external source and triggers an error after two missed intervals."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:235
+msgid "Rabbit MQ Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:237
+msgid "Rabbit MQ application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:241
+msgid "Redis Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:243
+msgid "Redis application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:247
+msgid "Riak Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:249
+msgid "Riak application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:253
+msgid "SNMP Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:255
+msgid "SNMP"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:259
+msgid "Socket Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:261
+msgid "Web Socket"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:265
+msgid "Virtual Machine Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:267
+msgid "Virtual Machine that exists within Morpheus"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:268
+msgid ""
+"If no other check types apply, automatically created during provisioning "
+"if using the related system node type, in order to inspect the running "
+"state. May be manually created."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:271
+msgid "Web Check"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:272
+msgid "Server Pull (GET) or Server Push (POST)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:273
+msgid "Web application"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:277
+#: ../../getting_started/requirements/requirements.rst:283
+#: ../../getting_started/requirements/requirements.rst:289
+#: ../../getting_started/requirements/requirements.rst:295
+#: ../../getting_started/requirements/requirements.rst:301
+#: ../../getting_started/requirements/requirements.rst:307
+#: ../../getting_started/requirements/requirements.rst:313
+#: ../../getting_started/requirements/requirements.rst:319
+#: ../../getting_started/requirements/requirements.rst:325
+#: ../../getting_started/requirements/requirements.rst:331
+#: ../../getting_started/requirements/requirements.rst:337
+#: ../../getting_started/requirements/requirements.rst:343
+msgid "Public Cloud Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:279
+msgid "Alibaba Cloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:280
+#: ../../getting_started/requirements/requirements.rst:286
+#: ../../getting_started/requirements/requirements.rst:292
+#: ../../getting_started/requirements/requirements.rst:298
+#: ../../getting_started/requirements/requirements.rst:304
+#: ../../getting_started/requirements/requirements.rst:310
+#: ../../getting_started/requirements/requirements.rst:316
+#: ../../getting_started/requirements/requirements.rst:322
+#: ../../getting_started/requirements/requirements.rst:328
+#: ../../getting_started/requirements/requirements.rst:334
+#: ../../getting_started/requirements/requirements.rst:340
+#: ../../getting_started/requirements/requirements.rst:346
+#: ../../getting_started/requirements/requirements.rst:358
+#: ../../getting_started/requirements/requirements.rst:364
+#: ../../getting_started/requirements/requirements.rst:370
+#: ../../getting_started/requirements/requirements.rst:376
+#: ../../getting_started/requirements/requirements.rst:382
+#: ../../getting_started/requirements/requirements.rst:388
+#: ../../getting_started/requirements/requirements.rst:394
+#: ../../getting_started/requirements/requirements.rst:400
+#: ../../getting_started/requirements/requirements.rst:406
+#: ../../getting_started/requirements/requirements.rst:412
+#: ../../getting_started/requirements/requirements.rst:418
+#: ../../getting_started/requirements/requirements.rst:424
+#: ../../getting_started/requirements/requirements.rst:430
+#: ../../getting_started/requirements/requirements.rst:436
+#: ../../getting_started/requirements/requirements.rst:442
+#: ../../getting_started/requirements/requirements.rst:448
+#: ../../getting_started/requirements/requirements.rst:454
+#: ../../getting_started/requirements/requirements.rst:460
+#: ../../getting_started/requirements/requirements.rst:472
+#: ../../getting_started/requirements/requirements.rst:478
+#: ../../getting_started/requirements/requirements.rst:484
+#: ../../getting_started/requirements/requirements.rst:496
+#: ../../getting_started/requirements/requirements.rst:532
+#: ../../getting_started/requirements/requirements.rst:538
+#: ../../getting_started/requirements/requirements.rst:550
+#: ../../getting_started/requirements/requirements.rst:562
+#: ../../getting_started/requirements/requirements.rst:568
+#: ../../getting_started/requirements/requirements.rst:574
+#: ../../getting_started/requirements/requirements.rst:646
+#: ../../getting_started/requirements/requirements.rst:652
+#: ../../getting_started/requirements/requirements.rst:658
+#: ../../getting_started/requirements/requirements.rst:664
+#: ../../getting_started/requirements/requirements.rst:670
+#: ../../getting_started/requirements/requirements.rst:682
+#: ../../getting_started/requirements/requirements.rst:700
+#: ../../getting_started/requirements/requirements.rst:706
+#: ../../getting_started/requirements/requirements.rst:712
+msgid "Data synchronization"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:282
+#: ../../getting_started/requirements/requirements.rst:288
+#: ../../getting_started/requirements/requirements.rst:294
+#: ../../getting_started/requirements/requirements.rst:300
+#: ../../getting_started/requirements/requirements.rst:306
+#: ../../getting_started/requirements/requirements.rst:312
+#: ../../getting_started/requirements/requirements.rst:318
+#: ../../getting_started/requirements/requirements.rst:324
+#: ../../getting_started/requirements/requirements.rst:330
+#: ../../getting_started/requirements/requirements.rst:336
+#: ../../getting_started/requirements/requirements.rst:342
+#: ../../getting_started/requirements/requirements.rst:348
+#: ../../getting_started/requirements/requirements.rst:354
+#: ../../getting_started/requirements/requirements.rst:360
+#: ../../getting_started/requirements/requirements.rst:366
+#: ../../getting_started/requirements/requirements.rst:372
+#: ../../getting_started/requirements/requirements.rst:378
+#: ../../getting_started/requirements/requirements.rst:384
+#: ../../getting_started/requirements/requirements.rst:390
+#: ../../getting_started/requirements/requirements.rst:396
+#: ../../getting_started/requirements/requirements.rst:402
+#: ../../getting_started/requirements/requirements.rst:408
+#: ../../getting_started/requirements/requirements.rst:414
+#: ../../getting_started/requirements/requirements.rst:420
+#: ../../getting_started/requirements/requirements.rst:426
+#: ../../getting_started/requirements/requirements.rst:432
+#: ../../getting_started/requirements/requirements.rst:438
+#: ../../getting_started/requirements/requirements.rst:444
+#: ../../getting_started/requirements/requirements.rst:450
+#: ../../getting_started/requirements/requirements.rst:456
+#: ../../getting_started/requirements/requirements.rst:462
+#: ../../getting_started/requirements/requirements.rst:468
+#: ../../getting_started/requirements/requirements.rst:474
+#: ../../getting_started/requirements/requirements.rst:480
+#: ../../getting_started/requirements/requirements.rst:486
+#: ../../getting_started/requirements/requirements.rst:492
+#: ../../getting_started/requirements/requirements.rst:498
+#: ../../getting_started/requirements/requirements.rst:504
+#: ../../getting_started/requirements/requirements.rst:510
+#: ../../getting_started/requirements/requirements.rst:516
+#: ../../getting_started/requirements/requirements.rst:522
+#: ../../getting_started/requirements/requirements.rst:528
+#: ../../getting_started/requirements/requirements.rst:534
+#: ../../getting_started/requirements/requirements.rst:540
+#: ../../getting_started/requirements/requirements.rst:546
+#: ../../getting_started/requirements/requirements.rst:552
+#: ../../getting_started/requirements/requirements.rst:558
+#: ../../getting_started/requirements/requirements.rst:564
+#: ../../getting_started/requirements/requirements.rst:570
+#: ../../getting_started/requirements/requirements.rst:576
+#: ../../getting_started/requirements/requirements.rst:582
+#: ../../getting_started/requirements/requirements.rst:588
+#: ../../getting_started/requirements/requirements.rst:594
+#: ../../getting_started/requirements/requirements.rst:600
+#: ../../getting_started/requirements/requirements.rst:606
+#: ../../getting_started/requirements/requirements.rst:612
+#: ../../getting_started/requirements/requirements.rst:624
+#: ../../getting_started/requirements/requirements.rst:636
+#: ../../getting_started/requirements/requirements.rst:642
+#: ../../getting_started/requirements/requirements.rst:648
+#: ../../getting_started/requirements/requirements.rst:654
+#: ../../getting_started/requirements/requirements.rst:660
+#: ../../getting_started/requirements/requirements.rst:666
+#: ../../getting_started/requirements/requirements.rst:672
+#: ../../getting_started/requirements/requirements.rst:678
+#: ../../getting_started/requirements/requirements.rst:690
+#: ../../getting_started/requirements/requirements.rst:696
+#: ../../getting_started/requirements/requirements.rst:702
+#: ../../getting_started/requirements/requirements.rst:708
+#: ../../getting_started/requirements/requirements.rst:714
+#: ../../getting_started/requirements/requirements.rst:720
+#: ../../getting_started/requirements/requirements.rst:726
+#: ../../getting_started/requirements/requirements.rst:732
+#: ../../getting_started/requirements/requirements.rst:738
+#: ../../getting_started/requirements/requirements.rst:744
+msgid "No"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:285
+msgid "Amazon AWS"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:291
+msgid "Amazon AWS GovCloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:297
+msgid "DigitalOcean"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:303
+msgid "Google Cloud Platform"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:309
+msgid "Huawei Cloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:315
+msgid "IBM Cloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:321
+msgid "Microsoft Azure"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:327
+msgid "Open Telekom Cloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:333
+msgid "Oracle Public Cloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:339
+msgid "UpCloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:345
+msgid "VMware on AWS"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:349
+#: ../../getting_started/requirements/requirements.rst:355
+#: ../../getting_started/requirements/requirements.rst:361
+#: ../../getting_started/requirements/requirements.rst:367
+#: ../../getting_started/requirements/requirements.rst:373
+#: ../../getting_started/requirements/requirements.rst:379
+#: ../../getting_started/requirements/requirements.rst:385
+#: ../../getting_started/requirements/requirements.rst:391
+#: ../../getting_started/requirements/requirements.rst:397
+#: ../../getting_started/requirements/requirements.rst:403
+#: ../../getting_started/requirements/requirements.rst:409
+#: ../../getting_started/requirements/requirements.rst:415
+#: ../../getting_started/requirements/requirements.rst:421
+#: ../../getting_started/requirements/requirements.rst:427
+#: ../../getting_started/requirements/requirements.rst:433
+#: ../../getting_started/requirements/requirements.rst:439
+#: ../../getting_started/requirements/requirements.rst:445
+#: ../../getting_started/requirements/requirements.rst:451
+#: ../../getting_started/requirements/requirements.rst:457
+msgid "Private Cloud Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:351
+msgid "Cisco UCS Manager"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:352
+msgid ""
+"Data synchronization; the appliance must resolve and reach the configured"
+" UCS Manager API endpoint over its configured HTTP or HTTPS port"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:357
+msgid "Dell EMC"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:363
+msgid "HPE"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:369
+msgid "HPE OneView"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:375
+msgid "KVM"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:381
+msgid "MacStadium"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:387
+msgid "Microsoft Azure Stack"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:393
+msgid "Microsoft Hyper-V"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:399
+msgid "Microsoft SCVMM"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:405
+msgid "Nutanix Acropolis"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:411
+msgid "Openstack"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:417
+msgid "Oracle VM"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:423
+msgid "Pivotal Cloud Foundry"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:429
+msgid "Supermicro"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:435
+msgid "Vmware vCloud Director"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:441
+msgid "Vmware ESXi"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:447
+msgid "VMware Fusion"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:453
+msgid "VMware vCenter"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:459
+msgid "Xen Server"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:463
+#: ../../getting_started/requirements/requirements.rst:469
+#: ../../getting_started/requirements/requirements.rst:475
+#: ../../getting_started/requirements/requirements.rst:481
+#: ../../getting_started/requirements/requirements.rst:487
+#: ../../getting_started/requirements/requirements.rst:493
+msgid "Automation Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:465
+msgid "Ansible"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:467
+#: ../../getting_started/requirements/requirements.rst:491
+#: ../../getting_started/requirements/requirements.rst:545
+#: ../../getting_started/requirements/requirements.rst:677
+#: ../../getting_started/requirements/requirements.rst:689
+#: ../../getting_started/requirements/requirements.rst:695
+msgid "N/A"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:471
+msgid "Ansible Tower"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:473
+#: ../../getting_started/requirements/requirements.rst:479
+#: ../../getting_started/requirements/requirements.rst:485
+#: ../../getting_started/requirements/requirements.rst:497
+#: ../../getting_started/requirements/requirements.rst:647
+#: ../../getting_started/requirements/requirements.rst:653
+#: ../../getting_started/requirements/requirements.rst:659
+#: ../../getting_started/requirements/requirements.rst:665
+#: ../../getting_started/requirements/requirements.rst:671
+#: ../../getting_started/requirements/requirements.rst:701
+#: ../../getting_started/requirements/requirements.rst:707
+#: ../../getting_started/requirements/requirements.rst:713
+#: ../../getting_started/requirements/requirements.rst:719
+#: ../../getting_started/requirements/requirements.rst:725
+#: ../../getting_started/requirements/requirements.rst:731
+#: ../../getting_started/requirements/requirements.rst:737
+msgid "10 Minutes"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:477
+msgid "Chef"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:483
+msgid "Puppet"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:489
+msgid "Terraform"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:495
+msgid "vRealize Orchestrator"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:499
+#: ../../getting_started/requirements/requirements.rst:505
+#: ../../getting_started/requirements/requirements.rst:511
+#: ../../getting_started/requirements/requirements.rst:517
+#: ../../getting_started/requirements/requirements.rst:523
+msgid "Backup Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:501
+msgid "Commvault"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:502
+#: ../../getting_started/requirements/requirements.rst:508
+#: ../../getting_started/requirements/requirements.rst:514
+#: ../../getting_started/requirements/requirements.rst:520
+#: ../../getting_started/requirements/requirements.rst:526
+msgid "Scheduled backup execution (1 Minute), Backup provider refresh (1 hour)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:503
+#: ../../getting_started/requirements/requirements.rst:509
+#: ../../getting_started/requirements/requirements.rst:515
+#: ../../getting_started/requirements/requirements.rst:521
+#: ../../getting_started/requirements/requirements.rst:527
+msgid "1 Minute; 1 Hour"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:507
+msgid "Veeam"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:513
+msgid "Rubrik"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:519
+msgid "Zerto"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:525
+msgid "Avamar"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:529
+msgid "Build Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:531
+msgid "Jenkins"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:533
+msgid "10 minutes"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:535
+#: ../../getting_started/requirements/requirements.rst:541
+#: ../../getting_started/requirements/requirements.rst:547
+msgid "Container Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:537
+msgid "Docker"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:543
+msgid "Docker Registry"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:544
+#: ../../getting_started/requirements/requirements.rst:676
+#: ../../getting_started/requirements/requirements.rst:688
+#: ../../getting_started/requirements/requirements.rst:694
+msgid "On-demand"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:549
+msgid "Kubernetes"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:553
+msgid "Deployment Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:555
+msgid "Git/Github"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:556
+msgid "Syncing latest version of Git-tracked repos"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:557
+msgid "On-demand when using a file or repository for Morpheus functions"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:559
+#: ../../getting_started/requirements/requirements.rst:565
+#: ../../getting_started/requirements/requirements.rst:571
+msgid "DNS Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:561
+msgid "AWS Route53"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:563
+#: ../../getting_started/requirements/requirements.rst:569
+#: ../../getting_started/requirements/requirements.rst:575
+msgid "10 minute"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:567
+msgid "Microsoft DNS"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:573
+msgid "PowerDNS"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:577
+#: ../../getting_started/requirements/requirements.rst:583
+#: ../../getting_started/requirements/requirements.rst:589
+#: ../../getting_started/requirements/requirements.rst:595
+#: ../../getting_started/requirements/requirements.rst:601
+#: ../../getting_started/requirements/requirements.rst:607
+msgid "Identity Management Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:579
+msgid "Microsoft AD"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:580
+#: ../../getting_started/requirements/requirements.rst:586
+#: ../../getting_started/requirements/requirements.rst:592
+#: ../../getting_started/requirements/requirements.rst:598
+#: ../../getting_started/requirements/requirements.rst:604
+#: ../../getting_started/requirements/requirements.rst:610
+msgid "User Role and Group Sync"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:581
+#: ../../getting_started/requirements/requirements.rst:587
+#: ../../getting_started/requirements/requirements.rst:593
+#: ../../getting_started/requirements/requirements.rst:599
+#: ../../getting_started/requirements/requirements.rst:605
+#: ../../getting_started/requirements/requirements.rst:611
+msgid "N/A, On login"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:585
+msgid "OneLogin"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:591
+msgid "Okta"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:597
+msgid "Jump Cloud"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:603
+msgid "LDAP"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:609
+msgid "SAML"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:613
+#: ../../getting_started/requirements/requirements.rst:619
+#: ../../getting_started/requirements/requirements.rst:625
+#: ../../getting_started/requirements/requirements.rst:631
+msgid "IPAM Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:615
+msgid "Infoblox"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:616
+#: ../../getting_started/requirements/requirements.rst:622
+#: ../../getting_started/requirements/requirements.rst:628
+#: ../../getting_started/requirements/requirements.rst:634
+msgid "Refresh network pool servers (1 Hour)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:617
+#: ../../getting_started/requirements/requirements.rst:623
+#: ../../getting_started/requirements/requirements.rst:629
+#: ../../getting_started/requirements/requirements.rst:635
+msgid "1 Hour"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:618
+#: ../../getting_started/requirements/requirements.rst:630
+msgid "Yes (Variable Throttle Rate)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:621
+msgid "phpIPAM"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:627
+msgid "Bluecat"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:633
+msgid "SolarWinds"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:637
+#: ../../getting_started/requirements/requirements.rst:643
+#: ../../getting_started/requirements/requirements.rst:649
+msgid "ITSM Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:639
+#: ../../getting_started/requirements/requirements.rst:681
+msgid "ServiceNow"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:640
+msgid "Approval sync"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:645
+msgid "Cherwell"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:651
+msgid "Remedy"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:655
+#: ../../getting_started/requirements/requirements.rst:661
+#: ../../getting_started/requirements/requirements.rst:667
+msgid "Load Balancer Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:657
+msgid "AzureLB"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:663
+msgid "F5 BigIP"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:669
+msgid "Citrix NetScaler"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:673
+msgid "Logging Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:675
+msgid "Syslog"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:679
+#: ../../getting_started/requirements/requirements.rst:685
+#: ../../getting_started/requirements/requirements.rst:691
+msgid "Monitoring Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:683
+msgid "Depends on check configuration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:684
+msgid "Yes (part of check configuration)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:687
+msgid "AppDynamics"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:693
+msgid "NewRelic"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:697
+#: ../../getting_started/requirements/requirements.rst:703
+#: ../../getting_started/requirements/requirements.rst:709
+msgid "Network Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:699
+msgid "NSX"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:705
+msgid "Cisco ACI"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:711
+msgid "Unisys Stealth"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:715
+#: ../../getting_started/requirements/requirements.rst:721
+#: ../../getting_started/requirements/requirements.rst:727
+#: ../../getting_started/requirements/requirements.rst:733
+msgid "Storage Integration"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:717
+msgid "3Par"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:718
+#: ../../getting_started/requirements/requirements.rst:724
+#: ../../getting_started/requirements/requirements.rst:730
+#: ../../getting_started/requirements/requirements.rst:736
+msgid "Updating storage metadata"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:723
+msgid "Azure Storage"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:729
+msgid "Dell ECS"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:735
+msgid "Isilon"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:739
+msgid "Morpheus Agent"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:740
+msgid "Agent Pull"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:741
+msgid "Application Tier"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:742
+msgid "Secure Web Socket"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:743
+msgid "Persistent"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:747
+msgid "SELinux"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:749
+msgid ""
+"If not required by organizational policy, we recommend setting SELinux to"
+" \"Permissive\" or \"Disabled\" modes to prevent any unnecessary "
+"security-related issues. |morpheus| versions 3.6.0 and higher do support "
+"\"Enforcing\" mode if it is required by your organization due to IT "
+"policies. Set the mode appropriately prior to running the |morpheus| "
+"installer and it will make the required changes based on your chosen "
+"SELinux context."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:751
+msgid ""
+"Setting SELinux to \"Enforcing\" mode requires policies to be configured "
+"correctly in order for the |morpheus| appliance to function correctly."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:754
+msgid "Supported Locales"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:756
+msgid "Morpheus supports a number of different UI locales, including:"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:758
+msgid "English"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:759
+msgid "French"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:760
+msgid "German"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:761
+msgid "Spanish"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:762
+msgid "Chinese (Simplified)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:763
+msgid "Portuguese (Brazil)"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:764
+msgid "Korean"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:765
+msgid "Italian"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:767
+msgid ""
+"The full list of supported locales can be viewed within the Morpheus UI "
+"via the \"Default Appliance Locale\" select list within Administration "
+"Settings."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:770
+msgid "Switching Locales"
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:772
+msgid ""
+"The language of text in the Morpheus UI can be changed by telling the "
+"Morpheus server which locale to use. A Locale is made up of a language "
+"code and a country code. For example \"en_US\" is the code for US "
+"English, whilst \"en_GB\" is the code for British English. When using the"
+" Morpheus UI software through a client, the Morpheus UI software server "
+"will send the UI text back to the client using the appropriate static "
+"Language Pack. All translations returned via Morpheus "
+"Internationalization have been made and approved prior to the Morpheus UI"
+" version release."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:774
+msgid ""
+"**Via Locale Settings in the Morpheus UI:** An application wide default "
+"locale can be configured within the Master Tenant under Administration ->"
+" Settings -> Default Appliance Locale. An individual Morpheus user can "
+"configure a preferred locale within their user settings. Using a locale "
+"setting is the preferred method for switching the Morpheus UI language."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:777
+msgid ""
+"**Via the Accept-Language HTTP header:** The Accept-Language request HTTP"
+" header advertises which languages the client is able to understand, and "
+"which locale variant is preferred. Most browsers will by default send a "
+"“Accept-Language” HTTP header when visiting websites. The value of "
+"Accept-Language will match the configured preference of the browser’s "
+"user language/locale settings. The Morpheus UI will automatically detect "
+"the Accept-Language header and return the UI text from the corresponding "
+"Language Pack where possible. If there is no matching Language Pack the "
+"English US language pack is displayed in the UI. If an application locale"
+" or user locale setting has been configured in the Morpheus UI, then this"
+" will override the user’s browser preferences."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:780
+msgid ""
+"**Via the “lang” query parameter:** Morpheus has the capability to switch"
+" locales by passing a parameter called “lang” to the Morpheus UI request."
+" For example, “operations/dashboard?lang=de” will switch the locale "
+"preference to German. Morpheus will automatically switch the user’s "
+"locale and store it in a cookie so subsequent requests will have the new "
+"header. If a user is unauthenticated then the user’s locale will be "
+"reset. To switch a locale back to English pass “?lang=en” as a query "
+"parameterin the Morpheus UI request."
+msgstr ""
+
+#: ../../getting_started/requirements/requirements.rst:783
+msgid ""
+"Many of Morpheus' language packs are generated by our clients. For that "
+"reason, we cannot guarantee accuracy and completeness of the translation."
+" As new UI elements are added, existing language sets may not have "
+"immediate updates to keep pace with application changes. If you would "
+"like to contribute to a new or existing language pack, contact your "
+"account team or Morpheus support. Contributed content will be included "
+"within the next application version."
+msgstr ""
+

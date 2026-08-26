@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -23,6 +23,10 @@ msgstr ""
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:4
 msgid "Single Node/AIO Appliance Upgrades"
 msgstr "Nodo único/AIO Appliance Upgrades"
+
+#: ../../getting_started/maintenance/upgrades/single/singlenode.rst:6
+msgid "Important"
+msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:6
 msgid ""
@@ -46,6 +50,11 @@ msgstr "Debian / Ubuntu"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:13
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:34
+msgid "Warning"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/single/singlenode.rst:13
+#: ../../getting_started/maintenance/upgrades/single/singlenode.rst:34
 msgid ""
 "|morpheus| |morphver| contains new node and VM node packages that require"
 " 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus"
@@ -53,10 +62,10 @@ msgid ""
 "reconfigure to clean old node and vm node packages from the package-repo "
 "when room is needed."
 msgstr ""
-"|morpheus| |morphver| contains nuevo node y VM node packages that require "
-"3.5GB of storage. It is safe para ejecutar ``sudo rm -Rf "
-"/var/opt/morpheus/package-repos/*`` after |morphver| package installation "
-"y before reconfigure to clean old node y vm node packages desde el "
+"|morpheus| |morphver| contains nuevo node y VM node packages that require"
+" 3.5GB of storage. It is safe para ejecutar ``sudo rm -Rf "
+"/var/opt/morpheus/package-repos/*`` after |morphver| package installation"
+" y before reconfigure to clean old node y vm node packages desde el "
 "paquete-repo when room is needed."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:15
@@ -66,8 +75,8 @@ msgid ""
 "stop the morpheus-ui, install the new deb package, then reconfigure."
 msgstr ""
 "To upgrade Morpheus running on Ubuntu/Debian, download new deb package "
-"desde My HPE Software Center y transfer it to your application node, stop "
-"the morpheus-ui, install the new deb package, then reconfigure."
+"desde My HPE Software Center y transfer it to your application node, stop"
+" the morpheus-ui, install the new deb package, then reconfigure."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:17
 msgid ""
@@ -75,8 +84,8 @@ msgid ""
 "sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
 "sudo morpheus-ctl reconfigure"
 msgstr ""
-"sudo morpheus-ctl stop morpheus-ui\\nsudo dpkg -i "
-"morpheus-appliance_x.x.x-1_amd64.deb\\nsudo morpheus-ctl reconfigure"
+"sudo morpheus-ctl stop morpheus-ui\\nsudo dpkg -i morpheus-"
+"appliance_x.x.x-1_amd64.deb\\nsudo morpheus-ctl reconfigure"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:23
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:44
@@ -91,6 +100,11 @@ msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:25
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:46
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/single/singlenode.rst:25
+#: ../../getting_started/maintenance/upgrades/single/singlenode.rst:46
 msgid ""
 "Services will be stopped during package installation and started during "
 "the reconfigure process, including the morpheus-ui service. If the "
@@ -101,12 +115,12 @@ msgid ""
 "if successful."
 msgstr ""
 "Services será stopped durante package installation y started durante the "
-"reconfigure process, including the morpheus-ui service. If the reconfigure "
-"process is interrupted o fails, the morpheus-ui service may necesita be "
-"manually started o restarted. In certain situations if another service "
-"hangs on starting durante reconfigure, run ``systemctl restart "
-"morpheus-runsvdir`` then reconfigure y restart ``morpheus-ui`` if "
-"successful."
+"reconfigure process, including the morpheus-ui service. If the "
+"reconfigure process is interrupted o fails, the morpheus-ui service may "
+"necesita be manually started o restarted. In certain situations if "
+"another service hangs on starting durante reconfigure, run ``systemctl "
+"restart morpheus-runsvdir`` then reconfigure y restart ``morpheus-ui`` if"
+" successful."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:27
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:48
@@ -126,8 +140,8 @@ msgid ""
 msgstr ""
 "To upgrade Morpheus running on CentOS, RHEL, Amazon o SLES, download the "
 "upgrade package desde My HPE Software Center, transfer it to your "
-"application node, stop the morpheus-ui, install the new rpm package, then "
-"reconfigure:"
+"application node, stop the morpheus-ui, install the new rpm package, then"
+" reconfigure:"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:38
 msgid ""
@@ -135,6 +149,6 @@ msgid ""
 "sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm\n"
 "sudo morpheus-ctl reconfigure"
 msgstr ""
-"sudo morpheus-ctl stop morpheus-ui\\nsudo rpm -Uhv "
-"morpheus-appliance-x.x.x-x.x86_64.rpm\\nsudo morpheus-ctl reconfigure"
+"sudo morpheus-ctl stop morpheus-ui\\nsudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\\nsudo morpheus-ctl reconfigure"
 

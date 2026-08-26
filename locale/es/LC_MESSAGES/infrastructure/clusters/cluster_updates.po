@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:2
@@ -30,23 +30,24 @@ msgstr "Descripción general"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:7
 msgid ""
-"Cluster Updates allow administrators to apply software updates, patches, and"
-" configuration changes to cluster nodes in a controlled manner. The update "
-"workflow orchestrates rolling updates across cluster members to minimize "
-"downtime and ensure cluster stability throughout the process."
+"Cluster Updates allow administrators to apply software updates, patches, "
+"and configuration changes to cluster nodes in a controlled manner. The "
+"update workflow orchestrates rolling updates across cluster members to "
+"minimize downtime and ensure cluster stability throughout the process."
 msgstr ""
 "Clúster Actualiza permitir administrators a apply software actualiza, "
-"patches, y configuración cambios a cluster nodos en un controlled manner. El"
-" update workflow orchestrates rolling actualiza a través de cluster miembros"
-" a minimize downtime y asegurar cluster stability throughout el proceso."
+"patches, y configuración cambios a cluster nodos en un controlled manner."
+" El update workflow orchestrates rolling actualiza a través de cluster "
+"miembros a minimize downtime y asegurar cluster stability throughout el "
+"proceso."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:9
 msgid ""
 "Cluster updates are supported for Kubernetes clusters, MVM clusters, and "
 "Docker clusters managed by |morpheus|."
 msgstr ""
-"Clúster actualiza son soportados para Kubernetes clusters, MVM clusters, y "
-"Docker clusters administrado por |morpheus|."
+"Clúster actualiza son soportados para Kubernetes clusters, MVM clusters, "
+"y Docker clusters administrado por |morpheus|."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:12
 msgid "Update Workflow"
@@ -61,32 +62,32 @@ msgid ""
 "**Preparation** — |morpheus| evaluates the cluster state and determines "
 "which nodes need updates."
 msgstr ""
-"**Preparation** — |morpheus| evaluates el cluster estado y determines cual "
-"nodos necesita actualiza."
+"**Preparation** — |morpheus| evaluates el cluster estado y determines "
+"cual nodos necesita actualiza."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:17
 msgid ""
-"**Cordon** — Worker nodes are cordoned (marked as unschedulable) to prevent "
-"new workloads from being placed on them."
+"**Cordon** — Worker nodes are cordoned (marked as unschedulable) to "
+"prevent new workloads from being placed on them."
 msgstr ""
-"**Cordon** — Worker nodos son cordoned (marked como unschedulable) a prevent"
-" nuevo cargas de trabajo desde being placed en them."
+"**Cordon** — Worker nodos son cordoned (marked como unschedulable) a "
+"prevent nuevo cargas de trabajo desde being placed en them."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:18
 msgid ""
-"**Drain** — Existing workloads are gracefully evicted from the node being "
-"updated."
+"**Drain** — Existing workloads are gracefully evicted from the node being"
+" updated."
 msgstr ""
-"**Drain** — Existente cargas de trabajo son gracefully evicted desde el nodo"
-" being actualizado."
+"**Drain** — Existente cargas de trabajo son gracefully evicted desde el "
+"nodo being actualizado."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:19
 msgid ""
 "**Update** — The update is applied to the node (OS patches, Kubernetes "
 "version upgrade, package updates, etc.)."
 msgstr ""
-"**Update** — El update es applied al nodo (OS patches, Kubernetes versión "
-"actualización, package actualiza, etc.)."
+"**Update** — El update es applied al nodo (OS patches, Kubernetes versión"
+" actualización, package actualiza, etc.)."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:20
 msgid "**Verify** — The node's health is verified after the update."
@@ -102,8 +103,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/cluster_updates.rst:22
 msgid "**Next Node** — The process repeats for the next node in the cluster."
-msgstr ""
-"**Next Node** — El proceso repeats para el siguiente nodo en el cluster."
+msgstr "**Next Node** — El proceso repeats para el siguiente nodo en el cluster."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:24
 msgid ""
@@ -137,7 +137,7 @@ msgstr "Seleccionar **Update**"
 msgid "Review the update details:"
 msgstr "Review el update details:"
 
-#: ../../infrastructure/clusters/cluster_updates.rst:40
+#: ../../infrastructure/clusters/cluster_updates.rst:35
 msgid "UPDATE TYPE"
 msgstr "UPDATE TYPE"
 
@@ -146,8 +146,7 @@ msgid "The type of update to apply:"
 msgstr "El tipo de update a apply:"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:38
-msgid ""
-"**Kubernetes Version** — Upgrade Kubernetes components to a new version"
+msgid "**Kubernetes Version** — Upgrade Kubernetes components to a new version"
 msgstr ""
 "**Kubernetes Version** — Actualización Kubernetes components a un nuevo "
 "versión"
@@ -168,7 +167,7 @@ msgstr "TARGET VERSION"
 msgid "The target version to update to (for version upgrades)."
 msgstr "El destino versión a update a (para versión actualizaciones)."
 
-#: ../../infrastructure/clusters/cluster_updates.rst:49
+#: ../../infrastructure/clusters/cluster_updates.rst:44
 msgid "NODES"
 msgstr "NODES"
 
@@ -198,8 +197,7 @@ msgstr "Monitoring Update Progress"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:56
 msgid "Update progress can be monitored from the cluster's **History** tab:"
-msgstr ""
-"Update progress puede be monitored desde el cluster's **History** pestaña:"
+msgstr "Update progress puede be monitored desde el cluster's **History** pestaña:"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:58
 msgid "Each node update appears as a separate history entry"
@@ -212,8 +210,8 @@ msgstr "Estado indicators mostrar: Queued, Ejecutando, Completo, o Falló"
 #: ../../infrastructure/clusters/cluster_updates.rst:60
 msgid "Detailed logs are available by clicking on individual history entries"
 msgstr ""
-"Detailed registros están disponibles por clicking en individual historial "
-"entradas"
+"Detailed registros están disponibles por clicking en individual historial"
+" entradas"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:63
 msgid "Update Status Values"
@@ -244,6 +242,11 @@ msgid "**Cancelled** — Update was cancelled by an administrator"
 msgstr "**Cancelled** — Update fue cancelled por un administrator"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:71
+#, fuzzy
+msgid "Note"
+msgstr "NODES"
+
+#: ../../infrastructure/clusters/cluster_updates.rst:71
 msgid ""
 "If a node update fails, the rolling update process pauses to allow "
 "investigation. The remaining nodes are not updated until the failure is "
@@ -259,32 +262,32 @@ msgstr "Best Practices"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:76
 msgid ""
-"**Test in non-production first** — Apply updates to development or staging "
-"clusters before production."
+"**Test in non-production first** — Apply updates to development or "
+"staging clusters before production."
 msgstr ""
-"**Test in non-production first** — Apply actualiza a development o staging "
-"clusters antes de production."
+"**Test in non-production first** — Apply actualiza a development o "
+"staging clusters antes de production."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:77
 msgid ""
-"**Review release notes** — Check for breaking changes in the target version "
-"before upgrading."
+"**Review release notes** — Check for breaking changes in the target "
+"version before upgrading."
 msgstr ""
 "**Review release notes** — Verificar para breaking cambios en el destino "
 "versión antes de upgrading."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:78
 msgid ""
-"**Ensure backup** — Take a cluster backup or snapshot before applying major "
-"updates."
+"**Ensure backup** — Take a cluster backup or snapshot before applying "
+"major updates."
 msgstr ""
 "**Ensure backup** — Take un cluster backup o snapshot antes de applying "
 "major actualiza."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:79
 msgid ""
-"**Monitor capacity** — Ensure the cluster has sufficient capacity to handle "
-"workloads during the rolling update (when nodes are temporarily "
+"**Monitor capacity** — Ensure the cluster has sufficient capacity to "
+"handle workloads during the rolling update (when nodes are temporarily "
 "unavailable)."
 msgstr ""
 "**Monitor capacidad** — Asegurar el cluster tiene sufficient capacidad a "
@@ -293,11 +296,15 @@ msgstr ""
 
 #: ../../infrastructure/clusters/cluster_updates.rst:80
 msgid ""
-"**Schedule maintenance windows** — For production clusters, schedule updates"
-" during low-traffic periods."
+"**Schedule maintenance windows** — For production clusters, schedule "
+"updates during low-traffic periods."
 msgstr ""
 "**Schedule mantenimiento windows** — Para production clusters, schedule "
 "actualiza durante bajo-traffic periods."
+
+#: ../../infrastructure/clusters/cluster_updates.rst:82
+msgid "Warning"
+msgstr ""
 
 #: ../../infrastructure/clusters/cluster_updates.rst:82
 msgid ""
@@ -306,5 +313,6 @@ msgid ""
 "applying updates."
 msgstr ""
 "Clúster actualiza cannot be easily rolled back. Asegurar you tienen un "
-"recuperación plan (como cluster backups o el ability a rebuild nodos) antes "
-"de applying actualiza."
+"recuperación plan (como cluster backups o el ability a rebuild nodos) "
+"antes de applying actualiza."
+

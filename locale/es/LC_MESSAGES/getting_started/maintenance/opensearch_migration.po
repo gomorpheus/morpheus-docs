@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:4
+msgid "Migrating from Elasticsearch to OpenSearch"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:6
+msgid ""
+"Starting with |morpheus| 8.1.0, the embedded search service changed from "
+"Elasticsearch to OpenSearch. This migration only affects appliances "
+"upgrading from earlier versions — fresh installations and HVM deployments"
+" already use OpenSearch."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:8
+msgid "During upgrade, the reconfigure process will:"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:10
+msgid "Automatically disable the old Elasticsearch service"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:11
+msgid "Start OpenSearch in its place"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:12
+msgid ""
+"Migrate the Elasticsearch PKCS12 CA to PEM format if ``secure_mode`` is "
+"enabled"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:14
+msgid ""
+"No changes to ``/etc/morpheus/morpheus.rb`` are required. Existing "
+"``elasticsearch[...]`` settings are bridged to the ``opensearch`` "
+"namespace automatically."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:16
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:18
+msgid ""
+"Data (indices) must be migrated separately using ``morpheus-ctl migrate-"
+"elasticsearch``. Run ``morpheus-ctl migrate-elasticsearch help`` on an "
+"appliance after upgrade for full usage information."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:21
+msgid "Single Node — Upgrading from Elasticsearch"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:23
+#: ../../getting_started/maintenance/opensearch_migration.rst:55
+#: ../../getting_started/maintenance/opensearch_migration.rst:114
+msgid "**Step 1 — Upgrade the Morpheus package**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:25
+msgid "Install the new |morpheus| package. Do **NOT** run reconfigure yet."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:27
+msgid "**Step 2 — Run the migration script**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:29
+msgid ""
+"For single-node appliances, the migration script handles everything "
+"automatically:"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:31
+#: ../../getting_started/maintenance/opensearch_migration.rst:89
+msgid "sudo morpheus-ctl migrate-elasticsearch"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:35
+msgid "This script does the following:"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:37
+msgid ""
+"Starts a temporary Elasticsearch instance using the preserved ES "
+"installation"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:38
+msgid ""
+"Resets voting configuration if needed (for nodes which were previously "
+"part of a cluster)"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:39
+msgid "Sets replicas to 0 for single-node operation"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:40
+msgid "Exports all indices to JSON files"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:41
+msgid "Imports into OpenSearch"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:42
+msgid "Stops the temporary ES cluster"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:44
+msgid "**Step 3 — Reconfigure**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:46
+#: ../../getting_started/maintenance/opensearch_migration.rst:105
+#: ../../getting_started/maintenance/opensearch_migration.rst:122
+msgid "morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:50
+msgid ""
+"The old Elasticsearch service is disabled automatically and OpenSearch "
+"starts in its place. If ``secure_mode`` was enabled, the Elasticsearch "
+"PKCS12 CA is automatically migrated to PEM format."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:53
+msgid "3-Node Cluster — Upgrading from Elasticsearch"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:57
+msgid ""
+"Install the new |morpheus| package on all 3 nodes. Do **not** run "
+"reconfigure yet. The preinstall script preserves the Elasticsearch "
+"installation at ``/var/opt/morpheus/elasticsearch-8.15.5/home/``. The ES "
+"data and binaries are preserved across package install, reconfigure, and "
+"normal operation — the migration export can be run at any time until the "
+"ES data is removed."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:59
+msgid "**Step 2 — Check the ES cluster configuration**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:61
+msgid ""
+"Run the following and note the ``discovery.seed_hosts`` and "
+"``cluster.initial_master_nodes``:"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:63
+msgid "cat /var/opt/morpheus/elasticsearch-8.15.5/home/config/elasticsearch.yml"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:67
+msgid "**Step 3 — Start Elasticsearch on all nodes**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:69
+msgid ""
+"Start ES on each node within 30 seconds of each other (order does not "
+"matter):"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:71
+msgid ""
+"su -s /bin/bash es-morpheus -c "
+"'ES_JAVA_HOME=/var/opt/morpheus/elasticsearch-8.15.5/home/jdk "
+"/var/opt/morpheus/elasticsearch-8.15.5/home/bin/elasticsearch -d'"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:75
+msgid "**Step 4 — Verify cluster health**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:77
+#: ../../getting_started/maintenance/opensearch_migration.rst:87
+msgid "From any node:"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:79
+msgid "curl http://127.0.0.1:9200/_cluster/health?pretty"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:83
+msgid ""
+"You should see: ``\"status\": \"green\"``, ``\"number_of_nodes\": 3``, "
+"``\"unassigned_shards\": 0``"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:85
+msgid "**Step 5 — Run the migration export**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:93
+msgid "The script will detect the running ES cluster and export from it."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:95
+msgid "**Step 6 — Stop Elasticsearch on all nodes**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:97
+msgid "After the migration completes, on each node:"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:99
+msgid "pkill -f 'elasticsearch-8.15.5'"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:103
+msgid "**Step 7 — Reconfigure all nodes**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:110
+msgid "External Cluster — Upgrading"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:112
+msgid ""
+"If the existing |morpheus| installation was already configured to use an "
+"external Elasticsearch or OpenSearch cluster, the upgrade is "
+"straightforward — no data migration is needed on the appliance side since"
+" the data lives on the external cluster. The external cluster does not "
+"need to be migrated to OpenSearch; |morpheus| supports both."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:116
+msgid "Install the new |morpheus| package on each appliance node."
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:118
+msgid "**Step 2 — Reconfigure**"
+msgstr ""
+
+#: ../../getting_started/maintenance/opensearch_migration.rst:120
+msgid ""
+"No ``morpheus.rb`` changes are needed. The existing "
+"``elasticsearch[...]`` settings are bridged automatically."
+msgstr ""
+

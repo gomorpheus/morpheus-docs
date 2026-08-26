@@ -1,0 +1,271 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/installation/distributed/overview.rst:4
+msgid "HA Installation Overview"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:6
+msgid ""
+"|morpheus| provides a wide array of options when it comes to deployment "
+"architectures. It can start as a simple one machine instance where all "
+"services run on the same machine, or it can be split off into individual "
+"services per machine and configured in a high availability (HA) "
+"configuration, either in the same region or cross-region. Naturally, high"
+" availability can grow more complicated, depending on the configuration "
+"you want to do and this article will cover the basic concepts of the "
+"|morpheus| HA architecture that can be used in a wide array of "
+"configurations."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:8
+msgid ""
+"There are four primary tiers of services represented within the "
+"|morpheus| appliance. They are the Application Tier, Transactional "
+"Database Tier, Non-Transactional Database Tier, and Messaging Tier. Each "
+"of these tiers have their own recommendations for High availability "
+"deployments."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:10
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:10
+msgid ""
+"This is a sample configuration only. Customer configurations and "
+"requirements will vary.  Please contact your account manager if you wish "
+"to deploy or transition to a HA environment."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:13
+msgid "Application Tier"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:14
+msgid ""
+"The application tier is easily installed with the same apt or yum "
+"repository package that |morpheus| is normally distributed with. Advanced"
+" configuration allows for the additional tiers to be skipped and leave "
+"only the “stateless” services that need run. These stateless services "
+"include Nginx and Tomcat.  They can be configured across all regions and "
+"placed behind a central load-balancer or geo-based load balancer.  They "
+"typically connect to all other tiers as none of the other tiers talk to "
+"each other besides through the central application tier. One final piece "
+"when it comes to setting up the Application tier is shared storage, which"
+" is necessary when it comes to maintaining deployment archives, virtual "
+"image catalogs, backups, etc. These can be externalized to an object "
+"storage service such as Amazon S3 or Openstack Swiftstack as well. "
+"Alternatively, a simple NFS cluster can also be used to handle the shared"
+" storage structure.  Alternatively, supported (Platform as a Service) "
+"PaaS offerings can be used that provide a NFS compatible shared storage, "
+"eliminating the need to manage the underlying infrastructure."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:17
+msgid "Transactional Database Tier"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:18
+msgid ""
+"The Transactional Database tier consists of a MySQL compatible database. "
+"It is recommended that a lockable clustered configuration be used, such "
+"as a Galera cluster, which can also provide high availability.  "
+"Alternatively, supported PaaS offerings can be used that provide a mySQL "
+"compatible database, eliminating the need to manage the underlying "
+"infrastructure."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:21
+msgid "Non-Transactional Database Tier"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:22
+msgid ""
+"The Non-Transactional tier consists of an Elasticsearch cluster. Elastic "
+"Search is used for log aggregation data and temporal aggregation data "
+"(essentially stats, metrics, and logs). This enables for a high write "
+"throughput at scale. ElasticSearch is a Clustered database meaning all "
+"nodes no matter the region need to be connected to each other over what "
+"they call a “Transport” protocol. It is fairly simple to get setup as all"
+" nodes are identical. It is also a java based system and does require a "
+"sizable chunk of memory for larger data sets.  Alternatively, supported "
+"PaaS offerings can be used that provide an Elasticsearch compatible "
+"deployment, eliminating the need to manage the underlying infrastructure."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:25
+msgid "Messaging Tier"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:26
+msgid ""
+"The Messaging tier is an AMQP based tier along with STOMP Protocol (used "
+"for agent communication). The primary model recommended is to use "
+"RabbitMQ for queue services. RabbitMQ is also a cluster-based queuing "
+"system and needs at least 3 instances for HA configurations. This is due "
+"to elections in the failover scenarios RabbitMQ can manage. If doing a "
+"cross-region HA RabbitMQ cluster it is recommended to have at least 3 "
+"Rabbit queue clusters per region. Typically to handle HA a RabbitMQ "
+"cluster should be placed between a load balancer and the front-end "
+"application server to handle cross host connections.  Alternatively, "
+"supported PaaS offerings can be used that provide a RabbitMQ compatible "
+"deployment, eliminating the need to manage the underlying infrastructure."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:29
+msgid "HA Installation Architectures"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:31
+msgid "3-Node HA (Recommended)"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:32
+msgid ""
+"In the current 3-Node HA architecture, the Application, Messaging, and "
+"Non-Transactional Database tiers are deployed across the three |morpheus|"
+" application nodes. The Transactional Database Tier is not installed on "
+"those nodes. Configure all three application nodes to use the same "
+"external MySQL cluster or supported MySQL service. This external database"
+" is a required part of the 3-Node HA topology, not an optional co-located"
+" tier."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:34
+msgid "Distributed HA"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/overview.rst:35
+msgid ""
+"In this architecture, the tiers do not need to reside on the same "
+"machines, each can be hosted by a supported cluster or PaaS offering.  "
+"This provides flexibility and reuse of already existing technologies such"
+" as RabbitMQ or Elasticsearch.  Each tier should be architected to "
+"provide HA following the vendor's documentation, to ensure no downtime "
+"for the |morpheus| Application Tier."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:2
+msgid "Supported PaaS Offerings"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:4
+msgid ""
+"The Morpheus Application Tier can be deployed to any public or private "
+"cloud.  Morpheus has underlying technologies that support the Application"
+" Tier, which can be automatically installed and embedded on the "
+"applications nodes. Alternatively, the services can be provided "
+"externally and not be embedded.  Many cloud providers have Platform as a "
+"Service (PaaS) offerings of these underlying technologies but some are "
+"not native or don't provide the performance required. Below is a list of "
+"PaaS offerings that are supported to be used for Morpheus:"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:8
+msgid "**PaaS Offering Support**"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:12
+msgid "Cloud"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:13
+msgid "Messaging (RabbitMQ)"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:14
+msgid "Log (Elasticsearch)"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:15
+msgid "Database (mySQL)"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:16
+msgid "Shared Storage (NFS)"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:17
+msgid "AWS"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:18
+msgid "Amazon MQ"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:19
+msgid "Amazon OpenSearch"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:20
+msgid "Amazon Aurora"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:21
+msgid "Elastic File System"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:22
+msgid "GCP"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:23
+#: ../../getting_started/installation/distributed/supported_paas.rst:24
+#: ../../getting_started/installation/distributed/supported_paas.rst:28
+#: ../../getting_started/installation/distributed/supported_paas.rst:29
+#: ../../getting_started/installation/distributed/supported_paas.rst:30
+#: ../../getting_started/installation/distributed/supported_paas.rst:33
+#: ../../getting_started/installation/distributed/supported_paas.rst:34
+#: ../../getting_started/installation/distributed/supported_paas.rst:35
+#: ../../getting_started/installation/distributed/supported_paas.rst:36
+#: ../../getting_started/installation/distributed/supported_paas.rst:38
+#: ../../getting_started/installation/distributed/supported_paas.rst:39
+#: ../../getting_started/installation/distributed/supported_paas.rst:40
+#: ../../getting_started/installation/distributed/supported_paas.rst:41
+msgid "N/A"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:25
+msgid "mySQL Instance"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:26
+msgid "Cloud Filestore"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:27
+msgid "Azure"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:31
+msgid "Storage Account"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:32
+msgid "OCI"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/supported_paas.rst:37
+msgid "Alibaba"
+msgstr ""
+

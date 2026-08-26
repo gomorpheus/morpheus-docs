@@ -1,0 +1,518 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:2
+msgid "Ansible Tower"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:7
+msgid ""
+"|morpheus| supports Ansible Tower for configuration management.  "
+"|morpheus| accomplishes this by integrating with an existing instance "
+"running Ansible Tower (AT) 3.3.0-1 and earlier. The username and password"
+" required for integration can be a user with admin access or a user with "
+"project admin access"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:9
+msgid ""
+"|morpheus| will import the current Inventory, Templates, Hosts, Groups "
+"and Projects. In the integration view it will add a Job tab which will "
+"have information of all the jobs executed from |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:11
+#: ../../integration_guides/Automation/AnsibleTower.rst:101
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:11
+msgid ""
+"This integration will not import data of the jobs which are not executed "
+"from |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:14
+msgid "Add Ansible Tower Integration"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:16
+msgid "Navigate to |AdmInt| and select :guilabel:`+ New Integration`"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:17
+msgid "Select Integration Type \"Ansible Tower\""
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:18
+msgid "Populate the following fields:"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:20
+msgid "Name: Name of the Ansible Tower Integration in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:21
+msgid "Enabled: To disable the integration, uncheck this option"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:22
+msgid "Ansible Tower URL: An HTTPS or HTTP Ansible Tower URL"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:23
+msgid "Username: The user |morpheus| would use to communicate with Ansible Tower"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:24
+msgid "Password: Enter the password. Password is encrypted and saved in DB"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:25
+msgid ""
+"API Version: This drop down has one option (``v2``) for now but may have "
+"others in future"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:27
+#: ../../integration_guides/Automation/AnsibleTower.rst:39
+#: ../../integration_guides/Automation/AnsibleTower.rst:50
+msgid "Save Changes"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:29
+msgid ""
+"Once you have completed this section and saved your changes you can set "
+"up a Cloud or Group to utilize this integration."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:32
+msgid "Scope Ansible Tower Integration to a Cloud"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:33
+msgid ""
+"All instances provisioned in this cloud will have the Ansible Tower "
+"config option during provisioning. See below the Provisioning Options for"
+" more details about the options."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:35
+msgid "Navigate to `Infrastructure > Clouds`"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:36
+msgid "Edit the target Cloud"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:37
+#: ../../integration_guides/Automation/AnsibleTower.rst:48
+msgid "Expand the `Advanced Options` section"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:38
+#: ../../integration_guides/Automation/AnsibleTower.rst:49
+msgid "In the `Config Management` dropdown, select the Ansible Tower Integration."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:43
+msgid "Scope Ansible Tower Integration to a Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:44
+msgid ""
+"All instances provisioned in this Group will have the Ansible Tower "
+"config option during provisioning in any cloud part of the Group. See "
+"below the Provisioning Options for more details about the options."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:46
+msgid "Navigate to `Infrastructure > Groups`"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:47
+msgid "Edit the target Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:53
+msgid "Provisioning Options"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:55
+msgid ""
+"When provisioning Instances into a Cloud or Group with a Ansible Tower "
+"Integration added, an `Ansible Tower` section will appear in the Config "
+"section of the provisioning wizard. By default, Ansible Tower is enabled,"
+" but can be disabled by expanding the `Ansible Tower` section and "
+"unchecking `Enable Ansible Tower`."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:57
+msgid "Ansible Integration Provisioning options:"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:59
+msgid "Enable Ansible Tower"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:60
+msgid "Select to bootstrap"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:61
+#: ../../integration_guides/Automation/AnsibleTower.rst:111
+#: ../../integration_guides/Automation/AnsibleTower.rst:132
+msgid "Inventory"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:62
+msgid ""
+"A list of Inventory available in Ansible Tower will appear in the drop "
+"down. Select an existing inventory. The instance will be added to the "
+"inventory selected."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:63
+msgid "Ansible Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:64
+msgid ""
+"Enter the name of a new or an existing Group in the inventory selected "
+"above."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:65
+msgid "Template"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:66
+msgid ""
+"Select an existing template or select the option 'Create New Template'. "
+"If 'Create New Template' is selected below fields will appear and are "
+"mandatory"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:67
+msgid "Template Name"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:68
+msgid "Enter the template name"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:69
+msgid "Project"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:70
+msgid "Select an existing project from the drop down options"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:71
+msgid "Playbook"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:72
+msgid ""
+"Select a playbook from the dropdown to be associated with the template. "
+"Note: |morpheus| doesn't store a local copy of the playbooks visible in "
+"Ansible Tower. SCM or local path for playbooks should be maintained in "
+"Ansible Tower."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:73
+#: ../../integration_guides/Automation/AnsibleTower.rst:114
+msgid "Execute Mode"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:74
+msgid "Select one of the options from the dropdown"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:75
+msgid "Limit to instance"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:76
+msgid "This will execute the template on the instance provisioned."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:77
+msgid "Limit to Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:78
+msgid ""
+"This will execute the template on all hosts attached to the group entered"
+" in the 'Ansible Group' field."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:79
+msgid "Run for all"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:80
+msgid "This will execute the template on all hosts in the inventory"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:81
+msgid "Skip execution"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:82
+msgid "This will skip the execution of the template on the instance provisioned."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:85
+msgid "Scoping Ansible Tower Jobs to Tenant-Default Inventories"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:87
+msgid ""
+"Users in the Primary Tenant have an additional Inventory execution option"
+" when creating Ansible Tower Job-type Tasks. When making a selection in "
+"the Inventory field, \"Use Tenant Default\" may be selected rather than a"
+" specific Inventory. This is because Ansible Tower Jobs created in the "
+"Primary Tenant may be shared publicly to other Tenants through public "
+"Workflows or when associated with public Library items."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:89
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/ansibleTower/ansibleTowerInventory.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:92
+msgid ""
+"When this option is selected and the Task is run in a Subtenant, it will "
+"automatically be run against the default Inventory which is configured "
+"for the Subtenant. The next section includes steps for associating "
+"Tenants and default Inventories."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:94
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:94
+msgid ""
+"An Ansible Tower Job configured to run against a Tenant-default Inventory"
+" will fail when run by a user whose Tenant does not have a default "
+"Inventory set."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:97
+msgid "Setting Default Inventories for Tenants"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:99
+msgid ""
+"When creating or editing Ansible Tower integrations, navigate to the "
+"Inventory tab to view all Inventories synced from the selected "
+"integration. Click \"Permissions\" inside the \"MORE\" action menu at the"
+" end of a row for the selected Invetory. Within the PERMISSIONS modal, "
+"there is a single typeahead field where a Tenant can be selected. Once "
+"the Tenant is selected, click :guilabel:`SAVE CHANGES`. Now back on the "
+"Inventory list view, you'll see the default Tenant which is associated "
+"with each Inventory."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:101
+msgid ""
+"Tenants may only be associated with one Inventory, though an Inventory "
+"can have multiple Tenant associations. If a Tenant is selected to be "
+"associated with a new Inventory, its association with a previous "
+"Inventory will automatically be removed."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:103
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/ansibleTower/inventoryList.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:107
+msgid "Ansible Tower Configuration"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:109
+msgid ""
+"When using an Ansible Tower task type or associating the Ansible Tower "
+"integration with a cloud/group, there are a few options that can be "
+"configured:"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:112
+#: ../../integration_guides/Automation/AnsibleTower.rst:125
+msgid "Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:113
+msgid "Job Template"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:117
+msgid "Prompt at Launch"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:119
+msgid ""
+"Some options used to configure your deployments have the related option "
+"of **Prompt at Launch** in Ansible Tower, which should be enabled on the "
+"template to be chosen in the **Job Template** field.  If **Prompt at "
+"Launch** is not enabled, the values configured on the template in Ansible"
+" Tower will be used instead. **Prompt at Launch** can be seen below on "
+"the **Inventory** and **Limit** fields:"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:122
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/ansibleTower/ansibleTowerPromptAtLaunch.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:127
+msgid ""
+"The **Group** field is optional but a group can be entered into the field"
+" to associate the host to, in the target inventory.  If the group is "
+"existing, then the instance will be associated as a host to that group.  "
+"If the group does not exist, the group will be created and the instance "
+"will be associated as a host to that group."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:129
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/ansibleTower/ansibleTowerGroups.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:134
+msgid ""
+"When provisioning on a cloud with a configured Ansible Tower integration "
+"or using an Ansible Tower task type against an instance, the instance "
+"will be added as a host to the inventory chosen in the **Inventory** "
+"field.  As mentioned, if specified, these instance will be associated "
+"with groups in the inventory as well. When using an inventory that syncs "
+"from a project, the instance will still be added as a host in the "
+"inventory, in addition to the sync'd inventory.  This means that Ansible "
+"Tower will aggregate the manually added hosts from |morpheus| with the "
+"sync'd project inventory. However, if the **Overwrite** option is enabled"
+" on the source for the project that contains the inventory, any hosts "
+"added by |morpheus| **will be overwritten**.  In some cases, a separate "
+"|morpheus| inventory may be desired, if **Overwrite** is required on your"
+" sources."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:138
+msgid ""
+".. image:: "
+"/images/integration_guides/automation/ansibleTower/ansibleTowerOverwrite.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:141
+msgid "Passing extra_vars to Ansible Tower Job"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:143
+msgid ""
+"When provisioning or when running Ansible Tower Jobs as |morpheus| Tasks,"
+" you may pass the ``extra_vars`` stack to the Tower Job. First, ensure "
+"the Job Template has extra variables \"Prompt on Launch\" enabled as "
+"shown below:"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:145
+msgid ".. image:: /images/automation/towerExtraVars.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:147
+msgid "The sample Playbook below is associated with the Tower Job Template."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:149
+msgid ""
+"---\n"
+"- hosts: all\n"
+"vars:\n"
+"  Opensource_Team: \"Customer\"\n"
+"tasks:\n"
+"- name: Print Hello World\n"
+"  debug:\n"
+"    msg:\n"
+"    - \"Hello World {{ Opensource_Team }}. Here are Morpheus extra_vars: "
+"{{ morpheus }}\""
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:161
+msgid ""
+"After executing the Tower Job, we can see the variable stack surfaced "
+"into the results as defined in the Playbook:"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:163
+msgid ".. image:: /images/automation/towerResults.png"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:166
+msgid "Use Case"
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:168
+msgid ""
+"You have Job template(s) in Ansible Tower to do post build config after "
+"the OS is deployed. The playbook with roles and tasks to do post build "
+"will add specific users and groups, install required packages, remove "
+"packages, disable services, change config for ntp, resolv, hosts etc. You"
+" want to add the instance to an existing Group/Inventory in Tower."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:170
+msgid ""
+"You can achieve this by adding the Ansible Tower Integration and then "
+"scope it to a Cloud or Group. While provisioning an instance, in the "
+"config stage you have the Ansible Tower section with option to select the"
+" post build job template, select the Inventory and provide an existing "
+"Group Name or if the Group doesn't exist Morpheus will create it and "
+"submit for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:172
+msgid ""
+"Morpheus will provision the instance, once it is in the finalize state "
+"where the instance has an ip and has completed domain join if required, "
+"added user(s) or User Groups if specified then |morpheus| will add the "
+"instance to the inventory and Group and run the Template which will do "
+"all the post build of the server."
+msgstr ""
+
+#: ../../integration_guides/Automation/AnsibleTower.rst:174
+msgid ""
+"The output of the post build template execution can be see under Instance"
+" history."
+msgstr ""
+

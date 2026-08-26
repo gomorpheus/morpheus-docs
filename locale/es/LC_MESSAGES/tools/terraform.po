@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -36,10 +36,10 @@ msgid ""
 "managed infrastructure within |morpheus|."
 msgstr ""
 "|morpheus| proporciona integración con Terraform tanto como motor de "
-"aprovisionamiento como herramienta de gestión. Las funciones de "
-"Terraform a nivel de herramientas se centran en la gestión de estado, "
-"detección de desfase y comandos operacionales para la infraestructura "
-"gestionada con Terraform dentro de |morpheus|."
+"aprovisionamiento como herramienta de gestión. Las funciones de Terraform"
+" a nivel de herramientas se centran en la gestión de estado, detección de"
+" desfase y comandos operacionales para la infraestructura gestionada con "
+"Terraform dentro de |morpheus|."
 
 #: ../../tools/terraform.rst:11
 msgid ""
@@ -47,10 +47,9 @@ msgid ""
 "detail pages for resources provisioned using Terraform blueprints or "
 "Terraform Instance Types."
 msgstr ""
-"El estado y las operaciones de Terraform son accesibles desde las "
-"páginas de detalle de Aplicación e Instancia para recursos "
-"aprovisionados usando blueprints de Terraform o Tipos de Instancia de "
-"Terraform."
+"El estado y las operaciones de Terraform son accesibles desde las páginas"
+" de detalle de Aplicación e Instancia para recursos aprovisionados usando"
+" blueprints de Terraform o Tipos de Instancia de Terraform."
 
 #: ../../tools/terraform.rst:14
 msgid "Terraform State Management"
@@ -71,8 +70,8 @@ msgstr "Almacenamiento de estado"
 #: ../../tools/terraform.rst:21
 msgid "Terraform state is stored within |morpheus| (no external backend required)"
 msgstr ""
-"El estado de Terraform se almacena dentro de |morpheus| (no se "
-"requiere backend externo)"
+"El estado de Terraform se almacena dentro de |morpheus| (no se requiere "
+"backend externo)"
 
 #: ../../tools/terraform.rst:22
 msgid "State is encrypted at rest in the |morpheus| database"
@@ -85,8 +84,8 @@ msgstr "Se mantiene el versionado de estado para capacidad de reversión"
 #: ../../tools/terraform.rst:24
 msgid "State can be viewed and edited from the App or Instance detail page"
 msgstr ""
-"El estado puede verse y editarse desde la página de detalle de "
-"Aplicación o Instancia"
+"El estado puede verse y editarse desde la página de detalle de Aplicación"
+" o Instancia"
 
 #: ../../tools/terraform.rst:27
 msgid "Viewing State"
@@ -113,14 +112,18 @@ msgid "Editing State"
 msgstr "Editar estado"
 
 #: ../../tools/terraform.rst:38
+msgid "Warning"
+msgstr ""
+
+#: ../../tools/terraform.rst:38
 msgid ""
 "Editing Terraform state directly is an advanced operation that can cause "
 "infrastructure inconsistencies. Only modify state when necessary (e.g., "
 "importing existing resources, removing orphaned entries)."
 msgstr ""
-"Editing Terraform state directly es un advanced operation que puede cause "
-"infrastructure inconsistencies. Only modify state cuando necessary (e.g., "
-"importing existente resources, removing orphaned entries)."
+"Editing Terraform state directly es un advanced operation que puede cause"
+" infrastructure inconsistencies. Only modify state cuando necessary "
+"(e.g., importing existente resources, removing orphaned entries)."
 
 #: ../../tools/terraform.rst:40
 msgid "To edit state:"
@@ -147,8 +150,8 @@ msgid ""
 "Role permission **Provisioning: State** with ``Full`` access is required "
 "for state editing."
 msgstr ""
-"Se requiere el permiso de rol **Provisioning: State** con acceso "
-"``Full`` para la edición de estado."
+"Se requiere el permiso de rol **Provisioning: State** con acceso ``Full``"
+" para la edición de estado."
 
 #: ../../tools/terraform.rst:50
 msgid "Drift Detection"
@@ -167,14 +170,12 @@ msgid ""
 "Drift is identified by running ``terraform plan`` against the current "
 "state"
 msgstr ""
-"El desfase se identifica ejecutando ``terraform plan`` contra el "
-"estado actual"
+"El desfase se identifica ejecutando ``terraform plan`` contra el estado "
+"actual"
 
 #: ../../tools/terraform.rst:55
 msgid "Resources that have changed outside of Terraform management are flagged"
-msgstr ""
-"Los recursos que han cambiado fuera de la gestión de Terraform se "
-"marcan"
+msgstr "Los recursos que han cambiado fuera de la gestión de Terraform se marcan"
 
 #: ../../tools/terraform.rst:56
 msgid ""
@@ -191,8 +192,8 @@ msgstr "Ejecutar comandos de Terraform"
 #: ../../tools/terraform.rst:61
 msgid "From the App or Instance detail page, Terraform commands can be executed:"
 msgstr ""
-"Desde la página de detalle de Aplicación o Instancia, se pueden "
-"ejecutar comandos de Terraform:"
+"Desde la página de detalle de Aplicación o Instancia, se pueden ejecutar "
+"comandos de Terraform:"
 
 #: ../../tools/terraform.rst:64
 msgid "Open the **Console** or **Terraform** tab"
@@ -241,6 +242,10 @@ msgstr ""
 "historial de ejecución."
 
 #: ../../tools/terraform.rst:79
+msgid "Note"
+msgstr ""
+
+#: ../../tools/terraform.rst:79
 msgid ""
 "Terraform commands are prefixed with ``terraform`` automatically. Enter "
 "only the subcommand (e.g., ``plan`` not ``terraform plan``)."
@@ -253,9 +258,11 @@ msgid "Terraform Settings"
 msgstr "Configuración de Terraform"
 
 #: ../../tools/terraform.rst:84
+#, fuzzy
 msgid ""
-"Global Terraform settings are configured in |AdmSetPro| (Administration >"
-" Settings > Provisioning):"
+"Global Terraform settings are configured in "
+":menuselection:`Administration --> Settings --> Provisioning` "
+"(Administration > Settings > Provisioning):"
 msgstr ""
 "Global Terraform settings están configurados in |AdmSetPro| "
 "(Administration > Settings > Provisioning):"
@@ -275,8 +282,8 @@ msgstr ""
 #: ../../tools/terraform.rst:90
 msgid "This sets the default Terraform version used for new deployments"
 msgstr ""
-"Esto establece la versión predeterminada de Terraform usada para "
-"nuevos despliegues"
+"Esto establece la versión predeterminada de Terraform usada para nuevos "
+"despliegues"
 
 #: ../../tools/terraform.rst:91
 msgid ""
@@ -299,8 +306,8 @@ msgid ""
 "Remote backends (S3, Azure Blob, GCS, Consul) can be configured in the "
 "Terraform configuration files"
 msgstr ""
-"Remote backends (S3, Azure Blob, GCS, Consul) puede ser configured in the "
-"Terraform configuration files"
+"Remote backends (S3, Azure Blob, GCS, Consul) puede ser configured in the"
+" Terraform configuration files"
 
 #: ../../tools/terraform.rst:100
 msgid "Terraform Providers"
@@ -314,8 +321,9 @@ msgid ""
 "block."
 msgstr ""
 "|morpheus| supports all Terraform providers disponible en the Terraform "
-"Registry. Provider plugins are downloaded automatically during ``terraform "
-"init`` based on the configuration's ``required_providers`` block."
+"Registry. Provider plugins are downloaded automatically during "
+"``terraform init`` based on the configuration's ``required_providers`` "
+"block."
 
 #: ../../tools/terraform.rst:105
 msgid "Terraform Variables"
@@ -344,8 +352,8 @@ msgstr ""
 #: ../../tools/terraform.rst:111
 msgid "**Input variables:** User-supplied values at execution time"
 msgstr ""
-"**Variables de entrada:** Valores proporcionados por el usuario en "
-"tiempo de ejecución"
+"**Variables de entrada:** Valores proporcionados por el usuario en tiempo"
+" de ejecución"
 
 #: ../../tools/terraform.rst:112
 msgid "**Environment variables:** ``TF_VAR_*`` environment variables"
@@ -361,8 +369,7 @@ msgstr "Navegue a |TooCyp| (Tools > Cypher)"
 
 #: ../../tools/terraform.rst:117
 msgid "Create a key with the ``tfvars`` mount point: ``tfvars/myapp/variables``"
-msgstr ""
-"Cree a key con el/la ``tfvars`` mount point: ``tfvars/myapp/variables``"
+msgstr "Cree a key con el/la ``tfvars`` mount point: ``tfvars/myapp/variables``"
 
 #: ../../tools/terraform.rst:118
 msgid "Store the tfvars content as the value"
@@ -381,20 +388,20 @@ msgid ""
 "Terraform workspaces allow managing multiple environments with a single "
 "configuration:"
 msgstr ""
-"Terraform workspaces permite managing múltiples environments con a single "
-"configuration:"
+"Terraform workspaces permite managing múltiples environments con a single"
+" configuration:"
 
 #: ../../tools/terraform.rst:126
 msgid "|morpheus| tracks the active workspace for each Terraform deployment"
 msgstr ""
-"|morpheus| rastrea el espacio de trabajo activo para cada despliegue "
-"de Terraform"
+"|morpheus| rastrea el espacio de trabajo activo para cada despliegue de "
+"Terraform"
 
 #: ../../tools/terraform.rst:127
 msgid "Workspace selection can be part of the provisioning configuration"
 msgstr ""
-"La selección de espacio de trabajo puede ser parte de la configuración "
-"de aprovisionamiento"
+"La selección de espacio de trabajo puede ser parte de la configuración de"
+" aprovisionamiento"
 
 #: ../../tools/terraform.rst:128
 msgid "State is maintained per-workspace"

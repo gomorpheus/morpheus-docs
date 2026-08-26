@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:2
+msgid "Known Limitations and Operational Considerations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:8
+msgid "S.No"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:9
+msgid "Topic"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:10
+msgid "Description"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:11
+msgid "Impact"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:12
+msgid "Applicability"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:13
+msgid "Operational Guidance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:14
+msgid "1"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:15
+msgid ""
+"SATA Controller Initialization Delay During Importing HPE ProLiant Bare "
+"Metal Servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:16
+msgid ""
+"During the bare-metal server import and hardware discovery process, if a "
+"server has one or more SATA controllers with no attached SATA disks, the "
+"system waits a minimum of 5 minutes per SATA controllerbefore "
+"continuing.The wait time is cumulative and applies to each SATA "
+"controller detected without attached disks.This behavior occurs during "
+"the initial hardware probing phase, before the server becomes available "
+"for provisioning in Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:17
+msgid ""
+"Increased time to complete bare-metal server discovery, import, and "
+"provisioning.Delay proportional to the number of SATA controllers present"
+" without disks.No impact once the server import process has completed.No "
+"impact when SATA controllers have SATA disks attached."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:18
+msgid ""
+"This condition is typically observed in lab or evaluationenvironments "
+"where SATA controllers may be present but not populated with "
+"disks.Standard production deployments are not expected to include unused "
+"SATA controllers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:19
+msgid ""
+"Disabling an Embedded SATA Controller (HPE ProLiant)Reboot the "
+"server.PressF9to enterSystem Utilities.Navigate to:System "
+"Configuration→BIOS/Platform Configuration (RBSU)→PCIe Device "
+"Configuration.Foreachembedded SATA controller that is not in use:Select "
+"the controller (for example, Embedded SATA Controller #1).Change theSATA "
+"Device DisablefromAutotoDisabled.Press F12 to save the changes and exit, "
+"followed by reboot."
+msgstr ""
+

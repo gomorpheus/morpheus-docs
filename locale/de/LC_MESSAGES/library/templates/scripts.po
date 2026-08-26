@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/templates/scripts.rst:2
+msgid "Script Templates"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:4
+msgid ""
+"Scripts are bash and Powershell scripts that can be attached to Node "
+"Types to always execute at the selected phase when that Node Type is "
+"provisioned, added to Workflows as Library Script Tasks, and/or executed "
+"ad-hoc on Instances."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:7
+msgid "Creating Scripts"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:9
+msgid "Navigate to |LibTemScr|"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:10
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:11
+msgid "Enter the Following:"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:13
+msgid "NAME"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:14
+msgid "Name of the Script in |morpheus|"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:15
+msgid "SCRIPT TYPE"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:16
+msgid "Bash"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:17
+msgid "Powershell"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:18
+msgid "PHASE"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:19
+msgid ""
+"Select which phase the Script will execute when attached to a Node Type. "
+"When a script is attached to a Node Type, it will execute according to "
+"the selcted phase:"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:21
+msgid "Start Service"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:22
+msgid "Any time the Instance action ``Start Service`` is executed"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:23
+msgid "Stop Service"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:24
+msgid "Any time the Instance action ``Stop Service`` is executed"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:25
+msgid "Pre-Provision"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:26
+msgid ""
+"Containers: Script will execute against the container host before the "
+"container is provisioned"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:27
+msgid ""
+"Virtual Machines: Script will execute before any provision phase Scripts "
+"or Tasks"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:28
+msgid "Provision"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:29
+msgid ""
+"Script will execute once per new Instance node during the provision "
+"Phase. Provisioning will not be considered complete until all scripts and"
+" tasks in the provisioning phase are completed"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:31
+#: ../../library/templates/scripts.rst:47
+msgid "Note"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:31
+msgid ""
+"Any Script or Task set to the provision phase will be included in the "
+"total provision time and impact success/warn/failure provisioning status "
+"messages. As an example, your VM could be up and running but if your "
+"Script is in the provision phase and fails, provisioning will be marked "
+"as a failure."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:33
+msgid "Post-Provision"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:34
+msgid ""
+"Script will execute once per new Instance node after the provision phase "
+"is completed. Scripts and Tasks in the Post-Provision phase will show "
+"execution status and history, but are not considered part of the "
+"provision and do not impact provisioning status."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:35
+msgid "Pre-Deploy"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:36
+msgid ""
+"Script will execute on target Instance any time a deployment is run "
+"against the Instance. The Script will run prior to the deployment file(s)"
+" being written"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:37
+msgid "Deploy"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:38
+msgid ""
+"Script will execute on target Instance any time a deployment is run "
+"against the Instance. The script will run after the deployment file(s) "
+"are written"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:39
+msgid "Reconfigure"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:40
+msgid ""
+"Script will execute on target Instance any time a reconfigure is executed"
+" against the Instance."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:41
+msgid "Teardown"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:42
+msgid ""
+"Script will execute on target Instance upon Instance deletion. Script "
+"will execute against target Instance prior to the deletion/removal of "
+"resources."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:44
+msgid "SCRIPT"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:45
+msgid "Enter Bash or Powershell script."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:47
+msgid ""
+"|morpheus| variables are supported in Library Scripts using ``<%= "
+"variable.var %>`` format"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:49
+msgid "RUN AS USER"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:50
+msgid ""
+"By default Scripts are execute as ``morpheus-node``. To execute as "
+"another User, populate ``RUN AS USER`` and ensure proper user permissions"
+" & group access"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:51
+msgid "SUDO"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:52
+msgid "Flag ``SUDO`` if sudo is required to execute the Script"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:55
+msgid ""
+"To attach Scripts and templates that have been added to the Library to a "
+"Node Type, start typing the name and then select the script(s) and/or "
+"template(s)."
+msgstr ""
+
+#: ../../library/templates/scripts.rst:57
+msgid "Multiple scripts and templates can be added to a Node Type"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:58
+msgid "Scripts and Templates can be added/shared among multiple Node Types"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:59
+msgid "The execution phase can be set for Scripts in the Scripts section"
+msgstr ""
+
+#: ../../library/templates/scripts.rst:60
+msgid ""
+"Search will populate Scripts or Templates containing the characters "
+"entered anywhere in their name, not just the first letter(s) of the name"
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -38,11 +38,15 @@ msgid ""
 "configurable values."
 msgstr ""
 "|morpheus| proporciona native Helm chart aprovisionamiento soportar para "
-"deploying aplicaciones a Kubernetes clústeres. Helm charts son provisioned "
-"a través de el/la App (Blueprint) aprovisionamiento flujo de trabajo y son "
-"managed via el/la ``HelmProvisionService``. Helm charts permitir usuarios a "
-"define, instalar, y actualizar complex Kubernetes aplicaciones using "
-"templated manifests y configurable valores."
+"deploying aplicaciones a Kubernetes clústeres. Helm charts son "
+"provisioned a través de el/la App (Blueprint) aprovisionamiento flujo de "
+"trabajo y son managed via el/la ``HelmProvisionService``. Helm charts "
+"permitir usuarios a define, instalar, y actualizar complex Kubernetes "
+"aplicaciones using templated manifests y configurable valores."
+
+#: ../../provisioning/kubernetes/helm.rst:11
+msgid "Note"
+msgstr ""
 
 #: ../../provisioning/kubernetes/helm.rst:11
 msgid ""
@@ -71,8 +75,8 @@ msgid ""
 "A Helm chart stored in a Git repository integration or accessible Helm "
 "repository"
 msgstr ""
-"A Helm chart stored in a Git repositorio integraciones or accessible Helm "
-"repositorio"
+"A Helm chart stored in a Git repositorio integraciones or accessible Helm"
+" repositorio"
 
 #: ../../provisioning/kubernetes/helm.rst:18
 msgid "Role permission ``Provisioning: Apps > Full`` for creating Helm-based Apps"
@@ -95,8 +99,8 @@ msgid ""
 "Helm charts are provisioned as App-type blueprints in |morpheus|. To "
 "create a Helm blueprint:"
 msgstr ""
-"Helm charts son provisioned as App-tipo blueprints en |morpheus|. A crear "
-"un Helm blueprint:"
+"Helm charts son provisioned as App-tipo blueprints en |morpheus|. A crear"
+" un Helm blueprint:"
 
 #: ../../provisioning/kubernetes/helm.rst:26
 msgid "Navigate to |LibBlu| (Library > Blueprints)"
@@ -139,7 +143,7 @@ msgstr "CATEGORY"
 msgid "Optional category for organization"
 msgstr "Optional category para organization"
 
-#: ../../provisioning/kubernetes/helm.rst:41
+#: ../../provisioning/kubernetes/helm.rst:37
 msgid "SOURCE"
 msgstr "SOURCE"
 
@@ -197,7 +201,9 @@ msgstr "APP NAME"
 
 #: ../../provisioning/kubernetes/helm.rst:57
 msgid "Name for the deployed release. This becomes the Helm release name."
-msgstr "Nombre para el/la deployed release. Este becomes el/la Helm release nombre."
+msgstr ""
+"Nombre para el/la deployed release. Este becomes el/la Helm release "
+"nombre."
 
 #: ../../provisioning/kubernetes/helm.rst:58
 msgid "GROUP"
@@ -215,7 +221,7 @@ msgstr "DEFAULT CLOUD"
 msgid "Select the Cloud containing the target Kubernetes cluster"
 msgstr "Seleccione el Cloud containing the target Kubernetes clústeres"
 
-#: ../../provisioning/kubernetes/helm.rst:63
+#: ../../provisioning/kubernetes/helm.rst:62
 msgid "RESOURCE POOL"
 msgstr "RESOURCE POOL"
 
@@ -243,10 +249,10 @@ msgid ""
 "to the ``helm install`` command."
 msgstr ""
 "Override chart valores using key-valor pairs. Estos correspond a "
-"``values.yaml`` entries en el/la chart. Valores son passed via ``-f`` flag "
-"a el/la ``helm install`` command."
+"``values.yaml`` entries en el/la chart. Valores son passed via ``-f`` "
+"flag a el/la ``helm install`` command."
 
-#: ../../provisioning/kubernetes/helm.rst:71
+#: ../../provisioning/kubernetes/helm.rst:70
 msgid "ADDITIONAL HELM ARGS"
 msgstr "ADDITIONAL HELM ARGS"
 
@@ -279,16 +285,16 @@ msgid ""
 "Execute ``helm install <release-name> --namespace=<namespace> --kube-"
 "apiserver <cluster-api-url>`` with configured values"
 msgstr ""
-"Execute ``helm install <release-name> --namespace=<namespace> "
-"--kube-apiserver <cluster-api-url>`` con configurado valores"
+"Execute ``helm install <release-name> --namespace=<namespace> --kube-"
+"apiserver <cluster-api-url>`` con configurado valores"
 
 #: ../../provisioning/kubernetes/helm.rst:81
 msgid ""
 "Create corresponding resource records in |morpheus| for deployed "
 "Kubernetes objects"
 msgstr ""
-"Create corresponding recursos records in |morpheus| for deployed Kubernetes "
-"objects"
+"Create corresponding recursos records in |morpheus| for deployed "
+"Kubernetes objects"
 
 #: ../../provisioning/kubernetes/helm.rst:84
 msgid "Helm Values and Configuration"
@@ -305,19 +311,19 @@ msgid ""
 "against the chart to discover available parameters. Users can override "
 "any value by providing key-value pairs in the configuration step."
 msgstr ""
-"Plantilla parameters map directly a Helm chart valores. Cuando configuring "
-"un App desde un Helm blueprint, |morpheus| runs ``helm inspect values`` "
-"against el/la chart a discover disponible parameters. Usuarios puede "
-"override cualquier valor por providing key-valor pairs en el/la "
-"configuración step."
+"Plantilla parameters map directly a Helm chart valores. Cuando "
+"configuring un App desde un Helm blueprint, |morpheus| runs ``helm "
+"inspect values`` against el/la chart a discover disponible parameters. "
+"Usuarios puede override cualquier valor por providing key-valor pairs en "
+"el/la configuración step."
 
 #: ../../provisioning/kubernetes/helm.rst:91
 msgid ""
 "Values are written to a temporary YAML file and passed to Helm via the "
 "``-f`` flag, ensuring proper handling of complex nested values."
 msgstr ""
-"Valores son written a un temporary YAML archivo y passed a Helm via el/la "
-"``-f`` flag, ensuring proper handling de complex nested valores."
+"Valores son written a un temporary YAML archivo y passed a Helm via el/la"
+" ``-f`` flag, ensuring proper handling de complex nested valores."
 
 #: ../../provisioning/kubernetes/helm.rst:94
 msgid "Custom Values Files"
@@ -329,9 +335,9 @@ msgid ""
 " is particularly useful during :ref:`helm-upgrades` where multiple value "
 "sources may need to be merged."
 msgstr ""
-"Para advanced usar cases, custom valores YAML puede ser provided directly. "
-"Este es particularly useful durante :ref:`helm-upgrades` donde multiple "
-"valor sources puede need a be merged."
+"Para advanced usar cases, custom valores YAML puede ser provided "
+"directly. Este es particularly useful durante :ref:`helm-upgrades` donde "
+"multiple valor sources puede need a be merged."
 
 #: ../../provisioning/kubernetes/helm.rst:99
 msgid "Additional Helm Arguments"
@@ -364,6 +370,10 @@ msgstr "``--set key=value`` — Override individual valores inline"
 #: ../../provisioning/kubernetes/helm.rst:107
 msgid "``--version 1.2.3`` — Pin a specific chart version"
 msgstr "``--version 1.2.3`` — Pin un specific chart versión"
+
+#: ../../provisioning/kubernetes/helm.rst:109
+msgid "Warning"
+msgstr ""
 
 #: ../../provisioning/kubernetes/helm.rst:109
 msgid ""
@@ -406,8 +416,8 @@ msgid ""
 "**Upgrade** — Apply new values or chart versions (see :ref:`helm-"
 "upgrades`)"
 msgstr ""
-"**Upgrade** — Apply nuevo valores o chart versiones (ver "
-":ref:`helm-upgrades`)"
+"**Upgrade** — Apply nuevo valores o chart versiones (ver :ref:`helm-"
+"upgrades`)"
 
 #: ../../provisioning/kubernetes/helm.rst:123
 msgid ""
@@ -434,8 +444,8 @@ msgid ""
 "clusters running different Kubernetes versions."
 msgstr ""
 "|morpheus| automáticamente manages Helm binary versiones. El/La system "
-"caches disponible Helm releases desde el/la official GitHub repositorio y "
-"selects el/la appropriate versión based en el/la target clústeres's "
+"caches disponible Helm releases desde el/la official GitHub repositorio y"
+" selects el/la appropriate versión based en el/la target clústeres's "
 "Kubernetes versión. Multiple Helm versiones puede coexist, ensuring "
 "compatibility across clústeres running different Kubernetes versiones."
 
@@ -448,8 +458,8 @@ msgid ""
 "**Chart not found:** Verify the Git repository integration is active and "
 "the path to the chart root is correct"
 msgstr ""
-"**Chart not found:** Verify el/la Git repositorio integraciones es active y "
-"el/la path a el/la chart root es correct"
+"**Chart not found:** Verify el/la Git repositorio integraciones es active"
+" y el/la path a el/la chart root es correct"
 
 #: ../../provisioning/kubernetes/helm.rst:135
 msgid ""
@@ -472,14 +482,14 @@ msgid ""
 "**Permission denied:** Verify the cluster service account has sufficient "
 "RBAC permissions for the resources defined in the chart"
 msgstr ""
-"**Permission denied:** Verify the clústeres service account has sufficient "
-"RBAC permisos for the recursos defined in the chart"
+"**Permission denied:** Verify the clústeres service account has "
+"sufficient RBAC permisos for the recursos defined in the chart"
 
 #: ../../provisioning/kubernetes/helm.rst:138
 msgid ""
 "**Values not applied:** Check that template parameter keys match the "
 "chart's ``values.yaml`` structure exactly"
 msgstr ""
-"**Values not applied:** Verificar que plantilla parameter keys match el/la "
-"chart's ``values.yaml`` structure exactly"
+"**Values not applied:** Verificar que plantilla parameter keys match "
+"el/la chart's ``values.yaml`` structure exactly"
 

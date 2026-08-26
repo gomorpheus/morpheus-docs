@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/additional/encryption.rst:2
+msgid "Data Encryption"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:4
+msgid ""
+"By default, Morpheus encrypts sensitive data in the Database using AES "
+"encryption mode with GCM. Passwords and other strings in |morpheus| "
+"Appliance configuration files such as ``morpheus-secrets.json`` and "
+"``morpheus.rb`` are in plain text as they are only accessible by root."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:6
+msgid ""
+"Passwords and other strings in |morpheus| Appliance configuration files "
+"can be set to an encrypted string using the |morpheus| crypto utility to "
+"generate ENC strings and then using ``ENC(string)`` as the value in the "
+"configuration file."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:8
+msgid ""
+"For database operations, ``.mysql.morpheus_password`` in ``morpheus-"
+"secrets.json`` is the generated embedded MySQL application-user password."
+" External database connection values and customized database names are "
+"configured under ``mysql`` in ``/etc/morpheus/morpheus.rb``; do not "
+"substitute an embedded secret for an external-service credential."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:10
+msgid ""
+"Additionally a custom Encryption Key Suffix can be set in the morpheus.rb"
+" configuration file. This suffix will be combined with a system string to"
+" generate a SHA-256 hash, which is used to generate the AES encryption "
+"key."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:13
+msgid "Generate ENC Strings for morpheus-secrets.json"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:15
+msgid ""
+"System generated passwords are set in ``/etc/morpheus/morpheus-"
+"secrets.json``. These entries can be updated to ENC strings with the "
+"following steps:"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:17
+msgid "Warning"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:17
+msgid ""
+"Converting an existing value to its encrypted representation is different"
+" from changing the underlying service credential. In particular, do not "
+"use this procedure to rotate the appliance-managed RabbitMQ "
+"``queue_user`` password. See "
+":doc:`/getting_started/external_services/rabbitmq` for the supported "
+"limitation."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:19
+msgid ""
+"On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string "
+"migrate`` which will output ENC() strings for the passwords in morpheus-"
+"secrets.json"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:20
+msgid ""
+"Update the desired password strings in the ``morpheus-secrets.json`` "
+"config file with the matching ENC() string."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:21
+msgid "Save ``morpheus-secrets.json``"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:22
+#: ../../getting_started/additional/encryption.rst:43
+#: ../../getting_started/additional/encryption.rst:58
+msgid "Run ``morpheus-ctl reconfigure``"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:25
+msgid "Generate ENC Strings for custom morpheus.rb entries"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:27
+msgid ""
+"ENC() strings can be generated for sensitive data set in morpheus.rb, "
+"such as the password to an external service."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:29
+msgid "To generate ENC(0) strings for morpheus.rb entries:"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:31
+msgid ""
+"On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string string "
+"$clear_text '$suffix'`` which will output strings for the passwords in "
+"morpheus-secrets.json"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:33
+msgid "Replace ``$clear_text`` with the string to be encrypted"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:34
+msgid ""
+"If a suffix is defined in morpheus.rb (as described in the next section),"
+" replace ``$suffix`` with your suffix."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:36
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:36
+msgid ""
+"It is advisable to disable bash history logging by running ``unset "
+"HISTFILE`` before running the morphesu-ctl get-crypto-string command and "
+"then ``set HISTFILE=$HOME/.bash_history`` to reenable."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:38
+msgid ""
+"Update the desired password strings in the ``morpheus.rb`` config file "
+"with the matching string output, using ``ENC($output)`` format"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:40
+msgid ""
+"Example: ``mysql['morpheus_password'] = "
+"'ENC($ZI5DnaO0quhxKe$kDFD+U2ZeJUuYiNC$F1+czPNyo+3lAdq7V0gcrWwHnkINYqr13cUGrDVyog==)'``"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:42
+msgid "Save ``morpheus.rb``"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:46
+msgid "Encrypted Key Suffix"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:48
+msgid ""
+"A custom Encryption Key Suffix can be set in the morpheus.rb "
+"configuration file. This suffix will be combined with a system string to "
+"generate a SHA-256 Hash, which is used in the generation of the system "
+"AES encryption key."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:50
+#: ../../getting_started/additional/encryption.rst:56
+msgid "Danger"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:50
+msgid ""
+"Setting a custom Encryption Key Suffix affects all data encrypted by "
+"|morpheus|, including database and cypher data. Encryption Key Suffix is "
+"required in the event data needs to be migrated or recovered. Once the "
+"Encryption Key Suffix is set, data cannot be recovered without it. Store "
+"any Encryption Key Suffix externally where it can be referenced for "
+"future scenarios."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:52
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:52
+msgid ""
+"The Encryption Key Suffix cannot be changed or removed after being set. "
+"Changing or removing an existing Encryption Key Suffix will prevent data "
+"access. If an existing suffix is altered in the morpheus.rb file, it must"
+" be restore to its original value."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:54
+msgid ""
+"Add ``app['encryption_key_suffix'] = '$suffix'`` to "
+"``/etc/morpheus/morpheus.rb``, replacing ``$suffix`` with your suffix."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:56
+msgid ""
+"Once an Encryption Key Suffix is set and applied via reconfigure, it "
+"cannot be altered or removed and data cannot be migrated or recovered "
+"without it."
+msgstr ""
+
+#: ../../getting_started/additional/encryption.rst:60
+msgid ""
+"Reconfigure will generate a new encryption key using the suffix and set "
+"(ENC) values for the service password in application.yml"
+msgstr ""
+

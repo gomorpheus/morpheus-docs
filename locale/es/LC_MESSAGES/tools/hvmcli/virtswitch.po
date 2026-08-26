@@ -1,0 +1,532 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hvmcli/virtswitch.rst:2
+msgid "virtswitch"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:4
+msgid ""
+"Manage Virtual Switches on the HVM host. Virtual Switches abstract host-"
+"level networking (bonds, bridges, VLANs) into a simple management model."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:6
+msgid "Danger"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:6
+msgid ""
+"Direct use of ``hvmcli virtswitch`` commands can disrupt host networking "
+"and cause loss of connectivity. It is **highly recommended** to manage "
+"Virtual Switches through the Morpheus UI (Infrastructure > Clusters > "
+"Network > Virtual Switches) instead. Only use these CLI commands when "
+"directed by HPE support or when the Morpheus UI is unavailable."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:8
+msgid "Important"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:8
+msgid ""
+"The ``virtswitch`` namespace is only available on **HVM OS Ubuntu "
+"26.04+** with **Cluster Layout 2.0**. On HVM OS Ubuntu 24.04, this "
+"namespace is hidden and unavailable."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:11
+msgid "Commands"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:17
+msgid "Command"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:18
+msgid "Description"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:19
+msgid "``list``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:20
+msgid "List managed Virtual Switch configurations"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:21
+msgid "``list-route``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:22
+msgid "List Virtual Switch routes and default route mappings"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:23
+msgid "``create``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:24
+msgid "Create a new Virtual Switch"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:25
+msgid "``import``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:26
+msgid "Import an existing network interface into a managed Virtual Switch"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:27
+msgid "``edit``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:28
+msgid "Edit Virtual Switch configuration"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:29
+msgid "``add-segment``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:30
+msgid "Add a VLAN segment to an existing Virtual Switch"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:31
+msgid "``edit-segment``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:32
+msgid "Edit a segment or manage static routes"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:33
+msgid "``delete-segment``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:34
+msgid "Delete a VLAN segment from a Virtual Switch"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:35
+msgid "``delete``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:36
+msgid "Delete a Virtual Switch and its associated metadata"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:37
+msgid "``rename``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:38
+msgid "Rename a Virtual Switch (metadata only)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:39
+msgid "``export``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:40
+msgid "Export Virtual Switch config as YAML or JSON"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:41
+msgid "``show``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:42
+msgid "Show detailed Virtual Switch view"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:43
+msgid "``status``"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:44
+msgid "Show real-time operational status"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:47
+msgid "virtswitch list"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:49
+msgid "List all managed Virtual Switches on the host."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:51
+msgid "sudo hvmcli virtswitch list"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:55
+msgid "Use ``--filter`` to show specific Virtual Switch types:"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:57
+msgid ""
+"sudo hvmcli virtswitch list --filter general\n"
+"sudo hvmcli virtswitch list --filter data\n"
+"sudo hvmcli virtswitch list --filter sdn"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:64
+msgid "virtswitch list-route"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:66
+msgid "List routes and default route mappings for managed Virtual Switches."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:68
+msgid "sudo hvmcli virtswitch list-route"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:73
+msgid "virtswitch create"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:75
+msgid ""
+"Create a new Virtual Switch with specified uplinks and traffic "
+"configuration."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:77
+msgid ""
+"sudo hvmcli virtswitch create \\\n"
+"  --virtswitch-name virtSwitch0 \\\n"
+"  --type general \\\n"
+"  --uplink-name eth0 \\\n"
+"  --traffic-type management \\\n"
+"  --ip 10.0.0.10 \\\n"
+"  --netmask 24 \\\n"
+"  --gateway 10.0.0.1"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:88
+msgid "**Create with bonded uplinks:**"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:90
+msgid ""
+"sudo hvmcli virtswitch create \\\n"
+"  --virtswitch-name virtSwitch0 \\\n"
+"  --type general \\\n"
+"  --uplink-name eth0,eth1 \\\n"
+"  --uplink-mode active-backup"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:98 ../../tools/hvmcli/virtswitch.rst:131
+#: ../../tools/hvmcli/virtswitch.rst:152 ../../tools/hvmcli/virtswitch.rst:174
+#: ../../tools/hvmcli/virtswitch.rst:191 ../../tools/hvmcli/virtswitch.rst:205
+#: ../../tools/hvmcli/virtswitch.rst:221 ../../tools/hvmcli/virtswitch.rst:236
+msgid "Options:"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:100
+msgid ""
+"``--virtswitch-name <name>`` — Name for the Virtual Switch (max 12 "
+"characters)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:101
+msgid "``--type <general|iscsi|sdn>`` — Virtual Switch type"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:102
+msgid "``--uplink-name <nic>[,<nic>]`` — Physical NIC(s) to use as uplinks"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:103
+msgid ""
+"``--uplink-mode <active-backup|802.3ad>`` — Bond mode when using two "
+"uplinks"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:104
+msgid ""
+"``--traffic-type <management|vm|data-nfs|live-migration|iscsi|sdn>`` — "
+"Traffic type for the segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:105
+msgid "``--ip <address>`` — IP address for the host interface"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:106 ../../tools/hvmcli/virtswitch.rst:158
+msgid "``--netmask <prefix>`` — Subnet mask or prefix length"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:107
+msgid "``--gateway <address>`` — Default gateway"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:108
+msgid "``--mtu <1500|9000>`` — MTU size"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:109
+msgid "``--vlan-id <2-4094>`` — VLAN ID for tagged traffic"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:112
+msgid "virtswitch import"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:114
+msgid ""
+"Import an existing network interface (e.g., a pre-configured bridge) into"
+" a managed Virtual Switch."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:116
+msgid "sudo hvmcli virtswitch import --interface br-mgmt"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:120
+msgid ""
+"This is used during cluster creation to adopt existing management bridges"
+" without disrupting connectivity."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:123
+msgid "virtswitch edit"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:125
+msgid "Edit an existing Virtual Switch configuration."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:127
+msgid ""
+"sudo hvmcli virtswitch edit --virtswitch-name virtSwitch0 --mtu 9000 "
+"--force"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:133
+msgid ""
+"``--virtswitch-name <name>`` — Name of the Virtual Switch to edit "
+"(required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:134
+msgid "``--mtu <1500|9000>`` — New MTU value"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:135
+msgid "``--uplink-mode <active-backup|802.3ad>`` — Change bond mode"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:136 ../../tools/hvmcli/virtswitch.rst:178
+#: ../../tools/hvmcli/virtswitch.rst:208
+msgid "``--force`` — Skip confirmation prompts"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:139
+msgid "virtswitch add-segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:141
+msgid "Add a VLAN segment to an existing general or iSCSI Virtual Switch."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:143
+msgid ""
+"sudo hvmcli virtswitch add-segment \\\n"
+"  --virtswitch-name virtSwitch0 \\\n"
+"  --vlan-id 100 \\\n"
+"  --traffic-type data-nfs \\\n"
+"  --ip 172.16.0.10 \\\n"
+"  --netmask 24"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:154 ../../tools/hvmcli/virtswitch.rst:176
+#: ../../tools/hvmcli/virtswitch.rst:193
+msgid "``--virtswitch-name <name>`` — Target Virtual Switch (required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:155
+msgid "``--vlan-id <2-4094>`` — VLAN ID for the segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:156
+msgid "``--traffic-type <data-nfs|live-migration|iscsi|sdn>`` — Traffic type"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:157
+msgid "``--ip <address>`` — IP address for this segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:159
+msgid "``--gateway <address>`` — Gateway for this segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:162
+msgid "virtswitch edit-segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:164
+msgid "Edit a segment or manage static routes on an existing Virtual Switch."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:166
+msgid ""
+"sudo hvmcli virtswitch edit-segment \\\n"
+"  --virtswitch-name virtSwitch0 \\\n"
+"  --traffic-type data-nfs \\\n"
+"  --ip 172.16.0.20 \\\n"
+"  --force"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:177
+msgid "``--traffic-type <type>`` — Traffic type of the segment to edit (required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:181
+msgid "virtswitch delete-segment"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:183
+msgid "Remove a VLAN segment from a Virtual Switch."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:185
+msgid ""
+"sudo hvmcli virtswitch delete-segment \\\n"
+"  --virtswitch-name virtSwitch0 \\\n"
+"  --traffic-type data-nfs"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:194
+msgid ""
+"``--traffic-type <type>`` — Traffic type of the segment to delete "
+"(required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:197
+msgid "virtswitch delete"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:199
+msgid "Delete a Virtual Switch and all associated host networking configuration."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:201
+msgid "sudo hvmcli virtswitch delete --virtswitch-name virtSwitch0 --force"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:207
+msgid "``--virtswitch-name <name>`` — Virtual Switch to delete (required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:210
+msgid "Warning"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:210
+msgid ""
+"Deleting a Virtual Switch removes all associated bridges, bonds, and VLAN"
+" configurations from the host."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:213
+msgid "virtswitch rename"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:215
+msgid ""
+"Rename a Virtual Switch. This only updates metadata — no network changes "
+"are applied."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:217
+msgid ""
+"sudo hvmcli virtswitch rename --virtswitch-name virtSwitch0 --new-name "
+"mySwitch"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:223
+msgid "``--virtswitch-name <name>`` — Current Virtual Switch name (required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:224
+msgid "``--new-name <name>`` — New name (max 12 characters, required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:227
+msgid "virtswitch export"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:229
+msgid "Export a Virtual Switch configuration as YAML or JSON."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:231
+msgid ""
+"sudo hvmcli virtswitch export --virtswitch-name virtSwitch0 --format json"
+"\n"
+"sudo hvmcli virtswitch export --virtswitch-name virtSwitch0 --format yaml"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:238
+msgid "``--virtswitch-name <name>`` — Virtual Switch to export (required)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:239
+msgid "``--format <yaml|json>`` — Output format (default: yaml)"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:242
+msgid "virtswitch show"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:244
+msgid ""
+"Show a detailed view of a Virtual Switch including segments, uplinks, and"
+" bridge information."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:246
+msgid "sudo hvmcli virtswitch show --virtswitch-name virtSwitch0"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:251
+msgid "virtswitch status"
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:253
+msgid ""
+"Show real-time operational status of Virtual Switches including link "
+"state and sync status."
+msgstr ""
+
+#: ../../tools/hvmcli/virtswitch.rst:255
+msgid ""
+"sudo hvmcli virtswitch status\n"
+"sudo hvmcli virtswitch status --virtswitch-name virtSwitch0 --json"
+msgstr ""
+

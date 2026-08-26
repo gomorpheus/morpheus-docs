@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -35,174 +35,233 @@ msgid ""
 " Backups can be restored over current Instances or as new Instances, and "
 "downloaded or deleted from |morpheus|."
 msgstr ""
-"La solución de Backup integrada de |morpheus| proporciona capacidades de Backup, Instantánea "
-"y Replicación para VM, Contenedor, Host, Base de datos, Archivo, Directorio, Volumen "
-"y Proveedor de almacenamiento. Los Backups pueden configurarse automáticamente "
-"durante el aprovisionamiento o crearse manualmente en cualquier momento. Los Trabajos de Backup con "
-"Programaciones de Ejecución personalizadas y conteos de retención pueden crearse y usarse "
-"en todos los entornos junto con los Proveedores de almacenamiento configurados."
-" Los Backups pueden restaurarse sobre Instancias actuales o como nuevas Instancias, y "
-"descargarse o eliminarse de |morpheus|."
+"La solución de Backup integrada de |morpheus| proporciona capacidades de "
+"Backup, Instantánea y Replicación para VM, Contenedor, Host, Base de "
+"datos, Archivo, Directorio, Volumen y Proveedor de almacenamiento. Los "
+"Backups pueden configurarse automáticamente durante el aprovisionamiento "
+"o crearse manualmente en cualquier momento. Los Trabajos de Backup con "
+"Programaciones de Ejecución personalizadas y conteos de retención pueden "
+"crearse y usarse en todos los entornos junto con los Proveedores de "
+"almacenamiento configurados. Los Backups pueden restaurarse sobre "
+"Instancias actuales o como nuevas Instancias, y descargarse o eliminarse "
+"de |morpheus|."
 
 #: ../../backups/backups.rst:7
 msgid ""
 "|morpheus| also integrates with external services to automate "
 "availability with other providers."
 msgstr ""
-"|morpheus| también se integra con servicios externos para automatizar "
-"la disponibilidad con otros proveedores."
+"|morpheus| también se integra con servicios externos para automatizar la "
+"disponibilidad con otros proveedores."
 
 #: ../../backups/backups.rst:10
-msgid "Initial Backups Setup"
-msgstr "Configuración inicial de Backups"
+#, fuzzy
+msgid "Backup Navigation"
+msgstr "Appliance de Backup"
 
 #: ../../backups/backups.rst:12
 msgid ""
-"Global Backup settings (|AdmSetBac|), Storage Providers (|InfSto|) and "
-"Execution Schedules (|LibAutExe|) should be configured prior to creating "
-"backups. Global backup settings are where scheduled backups can be "
-"globally enabled or disabled and certain global backup default settings "
-"can be configured. Storage providers include local and remote configured "
-"storage locations that can be used as backup targets. Execution schedules"
-" are timed intervals at which individual automated backup jobs will run. "
-"See the next two sections for full details on global backup settings and "
+"The Backups menu exposes the following views when permitted by the user's"
+" Role:"
+msgstr ""
+
+#: ../../backups/backups.rst:14
+msgid "**Summary:** Backup health and activity metrics."
+msgstr ""
+
+#: ../../backups/backups.rst:15
+msgid ""
+"**Jobs:** Scheduled backup definitions, including their schedules and "
+"retention settings."
+msgstr ""
+
+#: ../../backups/backups.rst:16
+msgid "**Backups:** Configured backup sources and targets."
+msgstr ""
+
+#: ../../backups/backups.rst:17
+msgid ""
+"**History:** Backup execution and restore results used to review "
+"successful and failed activity."
+msgstr ""
+
+#: ../../backups/backups.rst:18
+msgid ""
+"**Integrations:** Configured third-party backup providers. Visibility of "
+"this item requires Backup Services permission."
+msgstr ""
+
+#: ../../backups/backups.rst:20
+msgid ""
+"Role permissions determine whether backup data and integrations are "
+"visible. If an expected item is absent, verify the user's Backups and "
+"Backup Services permissions."
+msgstr ""
+
+#: ../../backups/backups.rst:23
+msgid "Initial Backups Setup"
+msgstr "Configuración inicial de Backups"
+
+#: ../../backups/backups.rst:25
+#, fuzzy
+msgid ""
+"Global Backup settings (|AdmSetBac|), Storage Providers "
+"(:menuselection:`Infrastructure --> Storage`) and Execution Schedules "
+"(|LibAutExe|) should be configured prior to creating backups. Global "
+"backup settings are where scheduled backups can be globally enabled or "
+"disabled and certain global backup default settings can be configured. "
+"Storage providers include local and remote configured storage locations "
+"that can be used as backup targets. Execution schedules are timed "
+"intervals at which individual automated backup jobs will run. See the "
+"next two sections for full details on global backup settings and "
 "configuring execution schedules. See |morpheus| UI `storage documentation"
 " "
 "<https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_"
 " for more information about configuring local and remote storage targets "
 "and/or integrating with third party storage providers."
 msgstr ""
-"La configuración global de Backup (|AdmSetBac|), los Proveedores de almacenamiento (|InfSto|) y "
-"las Programaciones de Ejecución (|LibAutExe|) deben configurarse antes de crear "
-"backups. La configuración global de backup es donde los backups programados pueden "
-"habilitarse o deshabilitarse globalmente y donde se pueden configurar ciertos valores predeterminados "
-"globales de backup. Los proveedores de almacenamiento incluyen ubicaciones de almacenamiento locales y remotas "
-"configuradas que pueden usarse como destinos de backup. Las programaciones de ejecución"
-" son intervalos de tiempo en los que se ejecutarán los trabajos de backup automatizados individuales. "
-"Consulte las dos secciones siguientes para obtener detalles completos sobre la configuración global de backup y "
-"la configuración de programaciones de ejecución. Consulte la `documentación de almacenamiento"
-" "
+"La configuración global de Backup (|AdmSetBac|), los Proveedores de "
+"almacenamiento (|InfSto|) y las Programaciones de Ejecución (|LibAutExe|)"
+" deben configurarse antes de crear backups. La configuración global de "
+"backup es donde los backups programados pueden habilitarse o "
+"deshabilitarse globalmente y donde se pueden configurar ciertos valores "
+"predeterminados globales de backup. Los proveedores de almacenamiento "
+"incluyen ubicaciones de almacenamiento locales y remotas configuradas que"
+" pueden usarse como destinos de backup. Las programaciones de ejecución "
+"son intervalos de tiempo en los que se ejecutarán los trabajos de backup "
+"automatizados individuales. Consulte las dos secciones siguientes para "
+"obtener detalles completos sobre la configuración global de backup y la "
+"configuración de programaciones de ejecución. Consulte la `documentación "
+"de almacenamiento "
 "<https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_"
-" de la interfaz de |morpheus| para más información sobre la configuración de destinos de almacenamiento locales y remotos "
-"y/o la integración con proveedores de almacenamiento de terceros."
+" de la interfaz de |morpheus| para más información sobre la configuración"
+" de destinos de almacenamiento locales y remotos y/o la integración con "
+"proveedores de almacenamiento de terceros."
 
-#: ../../backups/backups.rst:15
+#: ../../backups/backups.rst:28
 msgid "Global Backups Settings"
 msgstr "Configuración global de Backups"
 
-#: ../../backups/backups.rst:17
+#: ../../backups/backups.rst:30
 msgid "|morpheus| Backups can be enabled under |AdmSetBac|."
 msgstr "Los Backups de |morpheus| pueden habilitarse en |AdmSetBac|."
 
-#: ../../backups/backups.rst:19
+#: ../../backups/backups.rst:32
 msgid "Scheduled Backups"
 msgstr "Backups programados"
 
-#: ../../backups/backups.rst:20
+#: ../../backups/backups.rst:33
 msgid ""
 "When enabled, configured Backups will automatically run on their "
 "configured schedules. If disabled, backups need to be manually run."
 msgstr ""
-"Cuando está habilitado, los Backups configurados se ejecutarán automáticamente en sus "
-"programaciones configuradas. Si está deshabilitado, los backups deben ejecutarse manualmente."
+"Cuando está habilitado, los Backups configurados se ejecutarán "
+"automáticamente en sus programaciones configuradas. Si está "
+"deshabilitado, los backups deben ejecutarse manualmente."
 
-#: ../../backups/backups.rst:21
+#: ../../backups/backups.rst:34
 msgid "Create Backups"
 msgstr "Crear Backups"
 
-#: ../../backups/backups.rst:22
+#: ../../backups/backups.rst:35
 msgid ""
 "When enabled, |morpheus| will automatically configure backup jobs for "
 "Instances at provision time."
 msgstr ""
-"Cuando está habilitado, |morpheus| configurará automáticamente trabajos de backup para "
-"las Instancias en el momento del aprovisionamiento."
+"Cuando está habilitado, |morpheus| configurará automáticamente trabajos "
+"de backup para las Instancias en el momento del aprovisionamiento."
 
-#: ../../backups/backups.rst:23
+#: ../../backups/backups.rst:36
 msgid "Backup Appliance"
 msgstr "Appliance de Backup"
 
-#: ../../backups/backups.rst:24
+#: ../../backups/backups.rst:37
 msgid ""
 "When enabled, a Backup will be created to backup the |morpheus| appliance"
 " database. Select the ``Backup`` text link to edit the Appliance Backup "
 "Settings and view existing Appliance Backups."
 msgstr ""
-"Cuando está habilitado, se creará un Backup para respaldar la base de datos del appliance"
-" de |morpheus|. Seleccione el enlace de texto ``Backup`` para editar la configuración de "
-"Backup del Appliance y ver los Backups del Appliance existentes."
+"Cuando está habilitado, se creará un Backup para respaldar la base de "
+"datos del appliance de |morpheus|. Seleccione el enlace de texto "
+"``Backup`` para editar la configuración de Backup del Appliance y ver los"
+" Backups del Appliance existentes."
 
-#: ../../backups/backups.rst:25
+#: ../../backups/backups.rst:38
 msgid "Default Backup Bucket"
 msgstr "Bucket de Backup predeterminado"
 
-#: ../../backups/backups.rst:26
+#: ../../backups/backups.rst:39
+#, fuzzy
 msgid ""
 "From this dropdown, select the default storage bucket to be used for "
 "future created Backups. If needed, new storage providers can be "
-"configured and managed in the |InfSto| section."
+"configured and managed in the :menuselection:`Infrastructure --> Storage`"
+" section."
 msgstr ""
-"Desde este menú desplegable, seleccione el bucket de almacenamiento predeterminado que se usará para "
-"los Backups creados en el futuro. Si es necesario, se pueden configurar y gestionar nuevos "
-"proveedores de almacenamiento en la sección |InfSto|."
+"Desde este menú desplegable, seleccione el bucket de almacenamiento "
+"predeterminado que se usará para los Backups creados en el futuro. Si es "
+"necesario, se pueden configurar y gestionar nuevos proveedores de "
+"almacenamiento en la sección |InfSto|."
 
-#: ../../backups/backups.rst:27
+#: ../../backups/backups.rst:40
 msgid "Default Backup Schedule"
 msgstr "Programación de Backup predeterminada"
 
-#: ../../backups/backups.rst:28
+#: ../../backups/backups.rst:41
 msgid ""
 "From this dropdown, select a default execution schedule for future "
 "created Backups. If needed, new schedules can be configured in "
 "|LibAutExe|."
 msgstr ""
-"Desde este menú desplegable, seleccione una programación de ejecución predeterminada para los "
-"Backups creados en el futuro. Si es necesario, se pueden configurar nuevas programaciones en "
-"|LibAutExe|."
+"Desde este menú desplegable, seleccione una programación de ejecución "
+"predeterminada para los Backups creados en el futuro. Si es necesario, se"
+" pueden configurar nuevas programaciones en |LibAutExe|."
 
-#: ../../backups/backups.rst:29
+#: ../../backups/backups.rst:42
 msgid "Backup Retention Count"
 msgstr "Conteo de retención de Backup"
 
-#: ../../backups/backups.rst:30
+#: ../../backups/backups.rst:43
 msgid "The default maximum number of successful backups to retain."
 msgstr "El número máximo predeterminado de backups exitosos a retener."
 
-#: ../../backups/backups.rst:31
+#: ../../backups/backups.rst:44
 msgid "Default Synthetic Full Backup Enabled"
 msgstr "Backup completo sintético predeterminado habilitado"
 
-#: ../../backups/backups.rst:32
+#: ../../backups/backups.rst:45
 msgid ""
 "When enabled, supported workload types will have periodic full synthetic "
 "backups scheduled by default in addition to any typical backups (full "
 "backup followed by incremental backups) that may also be scheduled."
 msgstr ""
-"Cuando está habilitado, los tipos de carga de trabajo compatibles tendrán backups "
-"completos sintéticos periódicos programados de forma predeterminada, además de cualquier backup típico (backup "
-"completo seguido de backups incrementales) que también pueda estar programado."
+"Cuando está habilitado, los tipos de carga de trabajo compatibles tendrán"
+" backups completos sintéticos periódicos programados de forma "
+"predeterminada, además de cualquier backup típico (backup completo "
+"seguido de backups incrementales) que también pueda estar programado."
 
-#: ../../backups/backups.rst:34
+#: ../../backups/backups.rst:46
 msgid "Default Synthetic Full Backups Schedule"
 msgstr "Programación predeterminada de Backups completos sintéticos"
 
-#: ../../backups/backups.rst:34
+#: ../../backups/backups.rst:47
 msgid ""
 "From this dropdown, select a default execution schedule for future full "
 "synthetic backups. In general, this should be at a longer internal than "
 "incremental backups that are also scheduled. If needed, new schedules can"
 " be configured in |LibAutExe|."
 msgstr ""
-"Desde este menú desplegable, seleccione una programación de ejecución predeterminada para futuros backups "
-"completos sintéticos. En general, esto debería ser en un intervalo más largo que "
-"los backups incrementales que también están programados. Si es necesario, se pueden"
-" configurar nuevas programaciones en |LibAutExe|."
+"Desde este menú desplegable, seleccione una programación de ejecución "
+"predeterminada para futuros backups completos sintéticos. En general, "
+"esto debería ser en un intervalo más largo que los backups incrementales "
+"que también están programados. Si es necesario, se pueden configurar "
+"nuevas programaciones en |LibAutExe|."
 
-#: ../../backups/backups.rst:37
+#: ../../backups/backups.rst:50
 msgid "Execution Schedules"
 msgstr "Programaciones de ejecución"
 
-#: ../../backups/backups.rst:39
+#: ../../backups/backups.rst:52
 msgid ""
 "Backup Execution Schedules can be configured and managed in |LibAutExe|. "
 "An execution schedule stores only the interval at which some execution "
@@ -213,46 +272,54 @@ msgid ""
 "Default Backup Schedule set in |AdmSetBac| will be selected when creating"
 " a backup job and not specifying an execution schedule."
 msgstr ""
-"Las Programaciones de Ejecución de Backup pueden configurarse y gestionarse en |LibAutExe|. "
-"Una programación de ejecución almacena solo el intervalo en el que alguna ejecución "
-"debe realizarse y pueden aplicarse tanto a backups como a scripts de automatización. "
-"Para crear un nuevo trabajo de backup con esta programación, navegue a `Backups > "
-"Backups` y haga clic en \"+ADD\". En el paso final de la creación del trabajo de backup"
-" podemos seleccionar cualquiera de nuestras programaciones de ejecución creadas. La "
-"Programación de Backup predeterminada configurada en |AdmSetBac| se seleccionará al crear"
-" un trabajo de backup sin especificar una programación de ejecución."
+"Las Programaciones de Ejecución de Backup pueden configurarse y "
+"gestionarse en |LibAutExe|. Una programación de ejecución almacena solo "
+"el intervalo en el que alguna ejecución debe realizarse y pueden "
+"aplicarse tanto a backups como a scripts de automatización. Para crear un"
+" nuevo trabajo de backup con esta programación, navegue a `Backups > "
+"Backups` y haga clic en \"+ADD\". En el paso final de la creación del "
+"trabajo de backup podemos seleccionar cualquiera de nuestras "
+"programaciones de ejecución creadas. La Programación de Backup "
+"predeterminada configurada en |AdmSetBac| se seleccionará al crear un "
+"trabajo de backup sin especificar una programación de ejecución."
 
-#: ../../backups/backups.rst:43
+#: ../../backups/backups.rst:56
 msgid "Configuring Backups during Provisioning"
 msgstr "Configuración de Backups durante el aprovisionamiento"
 
-#: ../../backups/backups.rst:45
+#: ../../backups/backups.rst:58
 msgid ""
 "When Backups are enabled, Backup options are presented in the AUTOMATION "
 "tab of the provisioning wizard. Note that your default backup bucket and "
 "default backup schedule will be set according to your global backup "
 "settings as mentioned in the previous sections."
 msgstr ""
-"Cuando los Backups están habilitados, las opciones de Backup se presentan en la pestaña "
-"AUTOMATIZACIÓN del asistente de aprovisionamiento. Tenga en cuenta que su bucket de backup "
-"predeterminado y su programación de backup predeterminada se configurarán según su configuración "
-"global de backup como se mencionó en las secciones anteriores."
+"Cuando los Backups están habilitados, las opciones de Backup se presentan"
+" en la pestaña AUTOMATIZACIÓN del asistente de aprovisionamiento. Tenga "
+"en cuenta que su bucket de backup predeterminado y su programación de "
+"backup predeterminada se configurarán según su configuración global de "
+"backup como se mencionó en las secciones anteriores."
 
-#: ../../backups/backups.rst:47
+#: ../../backups/backups.rst:60 ../../backups/backups.rst:119
+#: ../../backups/backups_sub.rst:8 ../../backups/backups_sub.rst:46
+msgid "Note"
+msgstr ""
+
+#: ../../backups/backups.rst:60
 msgid ""
 "The Backup options presented in the Automation tab can be disabled using "
 "a \"Create Backup\" Policy. See "
 ":doc:`../administration/policies/policies`"
 msgstr ""
-"Las opciones de Backup presentadas en la pestaña Automatización pueden deshabilitarse usando "
-"una Política de \"Crear Backup\". Consulte "
+"Las opciones de Backup presentadas en la pestaña Automatización pueden "
+"deshabilitarse usando una Política de \"Crear Backup\". Consulte "
 ":doc:`../administration/policies/policies`"
 
-#: ../../backups/backups.rst:49
+#: ../../backups/backups.rst:62
 msgid "BACKUP TYPE"
 msgstr "TIPO DE BACKUP"
 
-#: ../../backups/backups.rst:50
+#: ../../backups/backups.rst:63
 msgid ""
 "Select the type for the Backup. Backup Types displayed will be filtered "
 "by available options for the selected Instance Layout"
@@ -260,47 +327,51 @@ msgstr ""
 "Seleccione el tipo de Backup. Los Tipos de Backup mostrados se filtrarán "
 "por las opciones disponibles para el Layout de Instancia seleccionado"
 
-#: ../../backups/backups.rst:51
+#: ../../backups/backups.rst:64
 msgid "BACKUP NAME"
 msgstr "NOMBRE DEL BACKUP"
 
-#: ../../backups/backups.rst:52 ../../backups/backups.rst:58
+#: ../../backups/backups.rst:65 ../../backups/backups.rst:71
 msgid "Defaults to the Instance name"
 msgstr "Se establece por defecto con el nombre de la Instancia"
 
-#: ../../backups/backups.rst:53
+#: ../../backups/backups.rst:66
 msgid "BACKUP TARGET"
 msgstr "DESTINO DEL BACKUP"
 
-#: ../../backups/backups.rst:54
+#: ../../backups/backups.rst:67
 msgid "Select the Storage Provider target for the Backup (when applicable)"
-msgstr "Seleccione el Proveedor de almacenamiento de destino para el Backup (cuando corresponda)"
+msgstr ""
+"Seleccione el Proveedor de almacenamiento de destino para el Backup "
+"(cuando corresponda)"
 
-#: ../../backups/backups.rst:55
+#: ../../backups/backups.rst:68
 msgid "BACKUP JOB TYPE"
 msgstr "TIPO DE TRABAJO DE BACKUP"
 
-#: ../../backups/backups.rst:56
+#: ../../backups/backups.rst:69
 msgid "Create a new job, clone an existing job, or Add to existing job"
-msgstr "Crear un nuevo trabajo, clonar un trabajo existente, o Agregar a un trabajo existente"
+msgstr ""
+"Crear un nuevo trabajo, clonar un trabajo existente, o Agregar a un "
+"trabajo existente"
 
-#: ../../backups/backups.rst:57
+#: ../../backups/backups.rst:70
 msgid "JOB NAME"
 msgstr "NOMBRE DEL TRABAJO"
 
-#: ../../backups/backups.rst:59
+#: ../../backups/backups.rst:72
 msgid "RETENTION COUNT"
 msgstr "CONTEO DE RETENCIÓN"
 
-#: ../../backups/backups.rst:60
+#: ../../backups/backups.rst:73
 msgid "Maximum number of successful backups to retain"
 msgstr "Número máximo de backups exitosos a retener"
 
-#: ../../backups/backups.rst:61
+#: ../../backups/backups.rst:74
 msgid "BACKUP SCHEDULE"
 msgstr "PROGRAMACIÓN DE BACKUP"
 
-#: ../../backups/backups.rst:62
+#: ../../backups/backups.rst:75
 msgid ""
 "Select the schedule for the backup job from the list of existing "
 "execution schedules"
@@ -308,33 +379,35 @@ msgstr ""
 "Seleccione la programación para el trabajo de backup de la lista de "
 "programaciones de ejecución existentes"
 
-#: ../../backups/backups.rst:63
+#: ../../backups/backups.rst:76
 msgid ""
 "SYNTHETIC FULL (Currently only available for KVM VM Snapshot-type "
 "backups, such as those used with |hvm| Instances. More Layout types are "
 "expected to support synthetic full backups in the future)"
 msgstr ""
-"COMPLETO SINTÉTICO (Actualmente solo disponible para backups tipo Instantánea de VM KVM, "
-"como los utilizados con Instancias |hvm|. Se espera que más tipos de Layout "
-"soporten backups completos sintéticos en el futuro)"
+"COMPLETO SINTÉTICO (Actualmente solo disponible para backups tipo "
+"Instantánea de VM KVM, como los utilizados con Instancias |hvm|. Se "
+"espera que más tipos de Layout soporten backups completos sintéticos en "
+"el futuro)"
 
-#: ../../backups/backups.rst:64
+#: ../../backups/backups.rst:77
 msgid ""
 "When checked, an additional schedule is configured for the backup job "
 "during which a synthetic full backup will be taken. In general, this "
 "should be on a longer time period than that at which standard backups "
 "(full backup followed by incremental backups) are configured"
 msgstr ""
-"Cuando se marca, se configura una programación adicional para el trabajo de backup "
-"durante la cual se realizará un backup completo sintético. En general, esto "
-"debería ser en un período de tiempo más largo que aquel en el que los backups estándar "
-"(backup completo seguido de backups incrementales) están configurados"
+"Cuando se marca, se configura una programación adicional para el trabajo "
+"de backup durante la cual se realizará un backup completo sintético. En "
+"general, esto debería ser en un período de tiempo más largo que aquel en "
+"el que los backups estándar (backup completo seguido de backups "
+"incrementales) están configurados"
 
-#: ../../backups/backups.rst:66
+#: ../../backups/backups.rst:78
 msgid "SYNTHETIC FULL SCHEDULE"
 msgstr "PROGRAMACIÓN DE COMPLETO SINTÉTICO"
 
-#: ../../backups/backups.rst:66
+#: ../../backups/backups.rst:79
 msgid ""
 "Select the schedule for the backup job on which synthetic full backups "
 "should be taken"
@@ -342,151 +415,159 @@ msgstr ""
 "Seleccione la programación para el trabajo de backup en la cual deben "
 "realizarse los backups completos sintéticos"
 
-#: ../../backups/backups.rst:68
+#: ../../backups/backups.rst:81
 msgid ""
 "Backup Types displayed will be filtered by available options per selected"
 " Instance Layout. Many backup job types are supported including (but not "
 "limited to):"
 msgstr ""
-"Los Tipos de Backup mostrados se filtrarán por las opciones disponibles según el"
-" Layout de Instancia seleccionado. Se soportan muchos tipos de trabajos de backup incluyendo (pero no "
-"limitado a):"
+"Los Tipos de Backup mostrados se filtrarán por las opciones disponibles "
+"según el Layout de Instancia seleccionado. Se soportan muchos tipos de "
+"trabajos de backup incluyendo (pero no limitado a):"
 
-#: ../../backups/backups.rst:70
+#: ../../backups/backups.rst:83
 msgid "File Backup"
 msgstr "Backup de archivo"
 
-#: ../../backups/backups.rst:71
+#: ../../backups/backups.rst:84
 msgid "Directory Backup"
 msgstr "Backup de directorio"
 
-#: ../../backups/backups.rst:72
+#: ../../backups/backups.rst:85
 msgid "MySQL"
 msgstr "MySQL"
 
-#: ../../backups/backups.rst:73
+#: ../../backups/backups.rst:86
 msgid "MongoDB"
 msgstr "MongoDB"
 
-#: ../../backups/backups.rst:74
+#: ../../backups/backups.rst:87
 msgid "LVM Snapshot"
 msgstr "Instantánea LVM"
 
-#: ../../backups/backups.rst:75
+#: ../../backups/backups.rst:88
 msgid "LVM Image"
 msgstr "Imagen LVM"
 
-#: ../../backups/backups.rst:76
+#: ../../backups/backups.rst:89
 msgid "LVM Migration"
 msgstr "Migración LVM"
 
-#: ../../backups/backups.rst:77
+#: ../../backups/backups.rst:90
 msgid "Windows Migration"
 msgstr "Migración Windows"
 
-#: ../../backups/backups.rst:78
+#: ../../backups/backups.rst:91
 msgid "Postgres"
 msgstr "Postgres"
 
-#: ../../backups/backups.rst:79
+#: ../../backups/backups.rst:92
 msgid "Tar Directory Backup"
 msgstr "Backup de directorio Tar"
 
-#: ../../backups/backups.rst:80
+#: ../../backups/backups.rst:93
 msgid "Amazon VM Snapshot"
 msgstr "Instantánea de VM Amazon"
 
-#: ../../backups/backups.rst:81 ../../backups/backups.rst:95
+#: ../../backups/backups.rst:94 ../../backups/backups.rst:108
 msgid "VMWare VM Snapshot"
 msgstr "Instantánea de VM VMWare"
 
-#: ../../backups/backups.rst:82
+#: ../../backups/backups.rst:95
 msgid "Fusion VM Snapshot"
 msgstr "Instantánea de VM Fusion"
 
-#: ../../backups/backups.rst:83
+#: ../../backups/backups.rst:96
 msgid "Xen VM Snapshot"
 msgstr "Instantánea de VM Xen"
 
-#: ../../backups/backups.rst:84
+#: ../../backups/backups.rst:97
 msgid "Veeam VMWare VM Backup"
 msgstr "Backup de VM VMWare Veeam"
 
-#: ../../backups/backups.rst:85
+#: ../../backups/backups.rst:98
 msgid "Veeam Hyper-V VM Backup"
 msgstr "Backup de VM Hyper-V Veeam"
 
-#: ../../backups/backups.rst:86
+#: ../../backups/backups.rst:99
 msgid "Google VM Snapshot"
 msgstr "Instantánea de VM Google"
 
-#: ../../backups/backups.rst:87
+#: ../../backups/backups.rst:100
 msgid "Commvault File/Directory Backup"
 msgstr "Backup de archivo/directorio Commvault"
 
-#: ../../backups/backups.rst:88
+#: ../../backups/backups.rst:101
 msgid "Azure VM Snapshot"
 msgstr "Instantánea de VM Azure"
 
-#: ../../backups/backups.rst:89
+#: ../../backups/backups.rst:102
 msgid "Morpheus Appliance"
 msgstr "Morpheus Appliance"
 
-#: ../../backups/backups.rst:90
+#: ../../backups/backups.rst:103
 msgid "Openstack VM Snapshot"
 msgstr "Instantánea de VM Openstack"
 
-#: ../../backups/backups.rst:91
+#: ../../backups/backups.rst:104
 msgid "DigitalOcean VM Snapshot"
 msgstr "Instantánea de VM DigitalOcean"
 
-#: ../../backups/backups.rst:92
+#: ../../backups/backups.rst:105
 msgid "Nutanix VM Snapshot"
 msgstr "Instantánea de VM Nutanix"
 
-#: ../../backups/backups.rst:93
+#: ../../backups/backups.rst:106
 msgid "Softlayer VM Snapshot"
 msgstr "Instantánea de VM Softlayer"
 
-#: ../../backups/backups.rst:94
+#: ../../backups/backups.rst:107
 msgid "Hyper-V VM Snapshot"
 msgstr "Instantánea de VM Hyper-V"
 
-#: ../../backups/backups.rst:96
+#: ../../backups/backups.rst:109
 msgid "SCVMM VM Snapshot"
 msgstr "Instantánea de VM SCVMM"
 
-#: ../../backups/backups.rst:97
+#: ../../backups/backups.rst:110
 msgid "UpCloud VM Snapshot"
 msgstr "Instantánea de VM UpCloud"
 
-#: ../../backups/backups.rst:98
+#: ../../backups/backups.rst:111
 msgid "Bluemix VM Snapshot"
 msgstr "Instantánea de VM Bluemix"
 
-#: ../../backups/backups.rst:99
+#: ../../backups/backups.rst:112
 msgid "Alibaba VM Snapshot"
 msgstr "Instantánea de VM Alibaba"
 
-#: ../../backups/backups.rst:100
+#: ../../backups/backups.rst:113
 msgid "Oracle Cloud VM Snapshot"
 msgstr "Instantánea de VM Oracle Cloud"
 
-#: ../../backups/backups.rst:101
+#: ../../backups/backups.rst:114
 msgid "KVM VM Snapshot"
 msgstr "Instantánea de VM KVM"
 
-#: ../../backups/backups.rst:102
+#: ../../backups/backups.rst:115
 msgid "Container Backup"
 msgstr "Backup de contenedor"
 
-#: ../../backups/backups.rst:103
+#: ../../backups/backups.rst:116
 msgid "VM Backup"
 msgstr "Backup de VM"
 
-#: ../../backups/backups.rst:104
+#: ../../backups/backups.rst:117
 msgid "Object Storage Backup"
 msgstr "Backup de almacenamiento de objetos"
+
+#: ../../backups/backups.rst:119
+msgid ""
+"**LVM Migration** is a deprecated, single-logical-volume migration "
+"implementation and is distinct from migration-plan disk conversion. For "
+"current SCSI mapping, LVM prerequisites, and verification guidance, see "
+":doc:`../infrastructure/servers/server_migration`."
+msgstr ""
 
 #: ../../backups/summary.rst:2
 msgid "Summary"
@@ -497,39 +578,47 @@ msgid "The Backups Summary section shows the following metrics:"
 msgstr "La sección de Resumen de Backups muestra las siguientes métricas:"
 
 #: ../../backups/summary.rst:6
+msgid ""
+"Open this view from :menuselection:`Backups --> Summary`. Use "
+":menuselection:`Backups --> Jobs` for scheduled definitions and "
+":menuselection:`Backups --> History` for execution and restore results."
+msgstr ""
+
+#: ../../backups/summary.rst:8
 msgid "Number of Configured Backups trend"
 msgstr "Tendencia del número de Backups configurados"
 
-#: ../../backups/summary.rst:7
+#: ../../backups/summary.rst:9
 msgid "Backup Success Rate"
 msgstr "Tasa de éxito de Backup"
 
-#: ../../backups/summary.rst:8
+#: ../../backups/summary.rst:10
 msgid "Number of Completed Backups"
 msgstr "Número de Backups completados"
 
-#: ../../backups/summary.rst:9
+#: ../../backups/summary.rst:11
 msgid "Number of Failed Backups"
 msgstr "Número de Backups fallidos"
 
-#: ../../backups/summary.rst:10
+#: ../../backups/summary.rst:12
 msgid "Total Size of Backups (MB) trend"
 msgstr "Tendencia del tamaño total de Backups (MB)"
 
-#: ../../backups/summary.rst:11
+#: ../../backups/summary.rst:13
 msgid "Upcoming and In Progress Backups"
 msgstr "Backups próximos y en progreso"
 
-#: ../../backups/summary.rst:13
+#: ../../backups/summary.rst:15
 msgid ""
 "If a User's Role permission for Backups is set to `User`, the user will "
 "only see metrics for backups they own."
 msgstr ""
-"Si el permiso de Rol de un usuario para Backups está configurado como `User`, "
-"el usuario solo verá métricas de los backups que posee."
+"Si el permiso de Rol de un usuario para Backups está configurado como "
+"`User`, el usuario solo verá métricas de los backups que posee."
 
-#: ../../internal after backups/summary.rst:16 padding
-msgid ".. image:: images/backups/backupSummary.png"
+#: ../../backups/summary.rst:17
+#, fuzzy
+msgid ".. image:: /images/backups/backupSummary.png"
 msgstr ".. image:: images/backups/backupSummary.png"
 
 #: ../../backups/backups_sub.rst:4
@@ -542,15 +631,22 @@ msgid ""
 "create the job ahead of time and associate any new backups to the "
 "existing job."
 msgstr ""
-"En la sección |BacBac|, los Backups configurados actualmente pueden verse y "
-"gestionarse, y se pueden configurar nuevos backups de Instancia, Host y Proveedor. "
-"Los Backups deben estar vinculados a un Trabajo de Backup, que contiene el conteo de retención y"
-" la programación en la que el backup debe ejecutarse automáticamente. Puede "
-"crear un nuevo Trabajo al mismo tiempo que se crea el backup o puede "
-"crear el trabajo con anticipación y asociar cualquier nuevo backup al "
-"trabajo existente."
+"En la sección |BacBac|, los Backups configurados actualmente pueden verse"
+" y gestionarse, y se pueden configurar nuevos backups de Instancia, Host "
+"y Proveedor. Los Backups deben estar vinculados a un Trabajo de Backup, "
+"que contiene el conteo de retención y la programación en la que el backup"
+" debe ejecutarse automáticamente. Puede crear un nuevo Trabajo al mismo "
+"tiempo que se crea el backup o puede crear el trabajo con anticipación y "
+"asociar cualquier nuevo backup al trabajo existente."
 
 #: ../../backups/backups_sub.rst:6
+msgid ""
+"Use :menuselection:`Backups --> Jobs` to review or manage those "
+"scheduling and retention definitions. Use :menuselection:`Backups --> "
+"History` to review backup execution and restore results."
+msgstr ""
+
+#: ../../backups/backups_sub.rst:8
 msgid ""
 "Role permissions for Backups determine which backups will be accessible "
 "to the individual user."
@@ -558,103 +654,103 @@ msgstr ""
 "Los permisos de Rol para Backups determinan qué backups serán accesibles "
 "para el usuario individual."
 
-#: ../../backups/backups_sub.rst:9
+#: ../../backups/backups_sub.rst:11
 msgid "Create an Instance Backup"
 msgstr "Crear un Backup de Instancia"
 
-#: ../../backups/backups_sub.rst:11
+#: ../../backups/backups_sub.rst:13
 msgid "To create Instance backup:"
 msgstr "Para crear un backup de Instancia:"
 
-#: ../../backups/backups_sub.rst:13
+#: ../../backups/backups_sub.rst:15
 msgid "Navigate to |BacBac|"
 msgstr "Navegue a |BacBac|"
 
-#: ../../backups/backups_sub.rst:14
+#: ../../backups/backups_sub.rst:16
 msgid "Click :guilabel:`+ ADD`"
 msgstr "Haga clic en :guilabel:`+ AGREGAR`"
 
-#: ../../backups/backups_sub.rst:15
+#: ../../backups/backups_sub.rst:17
 msgid ""
 "From the Create Backup Wizard select the radio button for Instance, then "
 "click :guilabel:`NEXT`"
 msgstr ""
-"Desde el Asistente de Creación de Backup, seleccione el botón de radio para Instancia, luego "
-"haga clic en :guilabel:`SIGUIENTE`"
+"Desde el Asistente de Creación de Backup, seleccione el botón de radio "
+"para Instancia, luego haga clic en :guilabel:`SIGUIENTE`"
 
-#: ../../backups/backups_sub.rst:16
+#: ../../backups/backups_sub.rst:18
 msgid "Input the following:"
 msgstr "Ingrese lo siguiente:"
 
-#: ../../backups/backups_sub.rst:18
+#: ../../backups/backups_sub.rst:20
 msgid "Instance"
 msgstr "Instancia"
 
-#: ../../backups/backups_sub.rst:19
+#: ../../backups/backups_sub.rst:21
 msgid "Select an Instance to backup from the typeahead menu"
 msgstr "Seleccione una Instancia para respaldar desde el menú de autocompletado"
 
-#: ../../backups/backups_sub.rst:21
+#: ../../backups/backups_sub.rst:22
 msgid "Name"
 msgstr "Nombre"
 
-#: ../../backups/backups_sub.rst:21
+#: ../../backups/backups_sub.rst:23
 msgid "Enter a name for the backup job being created"
 msgstr "Ingrese un nombre para el trabajo de backup que se está creando"
 
-#: ../../backups/backups_sub.rst:23
+#: ../../backups/backups_sub.rst:25
 msgid "Click :guilabel:`NEXT`"
 msgstr "Haga clic en :guilabel:`SIGUIENTE`"
 
-#: ../../backups/backups_sub.rst:24
+#: ../../backups/backups_sub.rst:26
 msgid ""
 "Depending on the Instance Type selected in the previous step, enter "
 "additional details. These can include a specific container, backup type, "
 "database name, username and password, or a number of other things "
 "depending on the Instance Type"
 msgstr ""
-"Dependiendo del Tipo de Instancia seleccionado en el paso anterior, ingrese "
-"detalles adicionales. Estos pueden incluir un contenedor específico, tipo de backup, "
-"nombre de base de datos, nombre de usuario y contraseña, u otras opciones "
-"dependiendo del Tipo de Instancia"
+"Dependiendo del Tipo de Instancia seleccionado en el paso anterior, "
+"ingrese detalles adicionales. Estos pueden incluir un contenedor "
+"específico, tipo de backup, nombre de base de datos, nombre de usuario y "
+"contraseña, u otras opciones dependiendo del Tipo de Instancia"
 
-#: ../../backups/backups_sub.rst:25
+#: ../../backups/backups_sub.rst:27
 msgid "Configure the storage bucket and retention details:"
 msgstr "Configure el bucket de almacenamiento y los detalles de retención:"
 
-#: ../../backups/backups_sub.rst:27
+#: ../../backups/backups_sub.rst:29
 msgid "Storage"
 msgstr "Almacenamiento"
 
-#: ../../backups/backups_sub.rst:28
+#: ../../backups/backups_sub.rst:30
 msgid "Select a configured storage bucket as the backup target"
 msgstr "Seleccione un bucket de almacenamiento configurado como destino del backup"
 
-#: ../../backups/backups_sub.rst:29
+#: ../../backups/backups_sub.rst:31
 msgid "Backup Job Type"
 msgstr "Tipo de Trabajo de Backup"
 
-#: ../../backups/backups_sub.rst:30
+#: ../../backups/backups_sub.rst:32
 msgid ""
 "Create a new backup job, add this backup to an existing job, or clone an "
 "existing job to handle this backup"
 msgstr ""
-"Cree un nuevo trabajo de backup, agregue este backup a un trabajo existente, o clone un "
-"trabajo existente para manejar este backup"
+"Cree un nuevo trabajo de backup, agregue este backup a un trabajo "
+"existente, o clone un trabajo existente para manejar este backup"
 
-#: ../../backups/backups_sub.rst:31
+#: ../../backups/backups_sub.rst:33
 msgid "Job Name"
 msgstr "Nombre del Trabajo"
 
-#: ../../backups/backups_sub.rst:32
+#: ../../backups/backups_sub.rst:34
 msgid "If creating a new job, enter a name for the job"
 msgstr "Si está creando un nuevo trabajo, ingrese un nombre para el trabajo"
 
-#: ../../backups/backups_sub.rst:33
+#: ../../backups/backups_sub.rst:35
 msgid "Retention Count"
 msgstr "Conteo de retención"
 
-#: ../../backups/backups_sub.rst:34
+#: ../../backups/backups_sub.rst:36
 msgid ""
 "If creating a new job, enter the number of backups which should be "
 "simultaneously retained"
@@ -662,49 +758,50 @@ msgstr ""
 "Si está creando un nuevo trabajo, ingrese el número de backups que deben "
 "retenerse simultáneamente"
 
-#: ../../backups/backups_sub.rst:35
+#: ../../backups/backups_sub.rst:37
 msgid "Schedule"
 msgstr "Programación"
 
-#: ../../backups/backups_sub.rst:36
+#: ../../backups/backups_sub.rst:38
 msgid ""
 "If creating a new job, select an execution schedule of which to run the "
 "backup"
 msgstr ""
-"Si está creando un nuevo trabajo, seleccione una programación de ejecución para ejecutar el "
-"backup"
+"Si está creando un nuevo trabajo, seleccione una programación de "
+"ejecución para ejecutar el backup"
 
-#: ../../backups/backups_sub.rst:37
+#: ../../backups/backups_sub.rst:39
 msgid "Synthetic Full"
 msgstr "Completo sintético"
 
-#: ../../backups/backups_sub.rst:38
+#: ../../backups/backups_sub.rst:40
 msgid ""
 "When the backup is targeting an |hvm| Instance, check this box to "
 "schedule synthetic full backups in addition to the normal full and "
 "incremental backups"
 msgstr ""
-"Cuando el backup está dirigido a una Instancia |hvm|, marque esta casilla para "
-"programar backups completos sintéticos además de los backups completos e "
-"incrementales normales"
+"Cuando el backup está dirigido a una Instancia |hvm|, marque esta casilla"
+" para programar backups completos sintéticos además de los backups "
+"completos e incrementales normales"
 
-#: ../../backups/backups_sub.rst:40
+#: ../../backups/backups_sub.rst:41
 msgid "Synthetic Full Schedule"
 msgstr "Programación de Completo sintético"
 
-#: ../../backups/backups_sub.rst:40
+#: ../../backups/backups_sub.rst:42
 msgid ""
 "If synthetic full backups are enabled, select an execution schedule on "
 "which to run the synthetic full backups"
 msgstr ""
-"Si los backups completos sintéticos están habilitados, seleccione una programación de ejecución en "
-"la cual ejecutar los backups completos sintéticos"
+"Si los backups completos sintéticos están habilitados, seleccione una "
+"programación de ejecución en la cual ejecutar los backups completos "
+"sintéticos"
 
-#: ../../backups/backups_sub.rst:42
+#: ../../backups/backups_sub.rst:44
 msgid "Click :guilabel:`COMPLETE`."
 msgstr "Haga clic en :guilabel:`COMPLETAR`."
 
-#: ../../backups/backups_sub.rst:44
+#: ../../backups/backups_sub.rst:46
 msgid ""
 "On VMware Cloud types, |morpheus| will merge and consolidate the "
 "snapshots held against a VM before exporting the OVF to the storage "
@@ -712,14 +809,19 @@ msgid ""
 "of the VM state."
 msgstr ""
 "En tipos de Nube VMware, |morpheus| fusionará y consolidará las "
-"instantáneas mantenidas contra una VM antes de exportar el OVF a la ubicación de "
-"almacenamiento o recurso compartido. Esto es para que |morpheus| tenga una copia completa y consistente "
-"del estado de la VM."
+"instantáneas mantenidas contra una VM antes de exportar el OVF a la "
+"ubicación de almacenamiento o recurso compartido. Esto es para que "
+"|morpheus| tenga una copia completa y consistente del estado de la VM."
 
-#: ../../backups/backups_sub.rst:46
+#: ../../backups/backups_sub.rst:48
+msgid "Tip"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:48
 msgid ""
 "To edit an existing backup, click on the hyperlinked name of the backup "
 "job from the list of backups at |BacBac|."
 msgstr ""
-"Para editar un backup existente, haga clic en el nombre con hipervínculo del trabajo "
-"de backup desde la lista de backups en |BacBac|."
+"Para editar un backup existente, haga clic en el nombre con hipervínculo "
+"del trabajo de backup desde la lista de backups en |BacBac|."
+

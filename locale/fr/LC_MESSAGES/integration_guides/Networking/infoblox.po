@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Networking/infoblox.rst:2
+msgid "Infoblox"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:5
+msgid "Features"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:7
+msgid "Network Pools synchronization"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:8
+msgid "DNS Zone & Zone record synchronization"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:9
+msgid "Host Record synchronization"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:10
+msgid "Total & Free IP status bar for networks"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:11
+msgid ""
+"Network Grid and List view with IP Status and records, date and user "
+"tracking"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:12
+msgid ""
+"Automatic and manual IP Reservations, DNS A/PTR record creation and "
+"deletion"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:13
+msgid ""
+"Use script variables like <%= variableX %> for evaluation of the key data"
+" in extended attributes"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:16
+msgid "Adding Infoblox Integration"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:18
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:18
+msgid ""
+"Making full use of the |morpheus| Infoblox integration requires "
+"credentials for an Infoblox user account with API access granted, access "
+"to list the pools and zones you wish to work with, and rights to create "
+"and destroy records. See Infoblox documentation for more information on "
+"user rights administration in that product."
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:20
+msgid "Navigate to ``Infrastructure - Network - Integrations``"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:21
+msgid "Select :guilabel:`+ ADD` > IPAM > Infoblox"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:22
+msgid "Enter the following:"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:24
+msgid ""
+".. image:: "
+"/images/infrastructure/network/infoblox/infoblox_settings_new.png"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:26
+#: ../../integration_guides/Networking/infoblox.rst:121
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:27
+msgid "Name of the Integration in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:28
+msgid "Enabled"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:29
+msgid "Deselect to disable the Integration"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:30
+msgid "URL"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:31
+msgid "Infoblox wapi url. Example: https://yourInfobloxHost/wapi/v2.10.5"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:33
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:33
+msgid ""
+"The target Infoblox host wapi version can be referenced at "
+"https://yourInfobloxHost/wapidoc/"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:35
+msgid "USERNAME"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:36
+msgid "Infoblox user username"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:37
+msgid "PASSWORD"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:38
+msgid "Infoblox user password"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:39
+msgid "THROTTLE RATE"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:40
+msgid "In milliseconds (ms)"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:41
+msgid "DISABLE SSL SNI VERIFICATION"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:42
+msgid "Leave selected to disable SSL SNI Verification"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:43
+msgid "INVENTORY EXISTING"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:44
+msgid "Mark this option to inventory existing network pools from Infoblox"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:45
+msgid "NETWORK FILTER"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:46
+msgid ""
+"Filter which networks are synced into |morpheus|. Example: Network "
+"Filter: ``network_view=default&*Building=work``"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:47
+msgid "ZONE FILTER"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:48
+msgid "Filter terms for Zone Records"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:49
+msgid "TENANT MATCH ATTRIBUTE"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:50
+msgid ""
+"This can be set to the name of the extended attribute in Infoblox where "
+"|morpheus| will check for the id of a morpheus tenant.  This allows for "
+"setting the tenant’s |morpheus| id to an extended attribute field on a "
+"network view or network in Infoblox, and when the network or view is "
+"discovered by morpheus, it will be auto assigned to the right tenant."
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:51
+msgid "IP MODE"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:52
+msgid "Static IPs or DHCP Reservations"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:53
+msgid "EXTRA ATTRIBUTES"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:54
+msgid ""
+"Accepts a JSON input of custom attributes that can be saved on host "
+"records in Infoblox. These Must be first defined as extra attributes in "
+"Infoblox and values can be injected for the user creating the record and "
+"the date of assignment. The available injectable attributes are: "
+"`userId`, `username`, and `dateCreated`."
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:56
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"Date Assigned\":\"<%=dateCreated%>\",\n"
+"  \"Requestor\":\"<%=username%>\",\n"
+"  \"Request Number\":\"<%=userId%>\"\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:64
+#: ../../integration_guides/Networking/infoblox.rst:89
+#: ../../integration_guides/Networking/infoblox.rst:110
+#: ../../integration_guides/Networking/infoblox.rst:130
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:66
+msgid ""
+"Upon save the Infoblox IPAM integration will be created and the following"
+" will sync:"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:68
+msgid ""
+"Infoblox networks will be synced in and populate in the `Infrastructure -"
+" Network - IP Pools` tab and in the Infoblox detail page under the "
+"`NETWORK POOLS` tab"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:70
+msgid ""
+"Host Records will sync and populate in the Network Pool detail view "
+"(select an IP Pool name to view)"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:72
+msgid ""
+"DNS Zones will sync and populate under `Infrastructure - Network - "
+"Domains` and in the Infoblox detail page under the `HOSTS` tab"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:74
+msgid "DNS Zone Records will sync and populate"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:77
+msgid "Adding IP Pools to Networks"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:79
+msgid ""
+"|morpheus| can automatically assign the next available Infoblox IP in an "
+"IP/Network Pool and create the corresponding DNS records, as well as "
+"remove the records upon teardown. To enable this, add an Infoblox "
+"IP/Network Pool to the `Network Pool` section on a Network(s)."
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:81
+msgid "Navigate to `Infrastructure > Network > Networks`"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:82
+msgid "Select a Network name and click :guilabel:`EDIT`"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:83
+msgid ""
+"In the `NETWORK POOL` section, search for and select the name of the "
+"IP/Network Pool."
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:85
+msgid "Gateway, DNS and CIDR must be populated for static/pool IP assignment"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:86
+msgid ""
+"Select `Allow IP Override` to allow selecting between DHCP, Static entry "
+"and Pool Selection at provision time (if desired)"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:87
+msgid ""
+"Deselect DHCP server if a DHCP server will not be used on the network "
+"(only static and/or IP Pool IP assignment)"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:93
+msgid "Creating Host Records"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:95
+msgid ""
+"Select a Network Pool from `Infrastructure > Network > IP Pools` or "
+"`Infrastructure > Network > Services > Infoblox`"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:96
+#: ../../integration_guides/Networking/infoblox.rst:116
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:97
+#: ../../integration_guides/Networking/infoblox.rst:117
+msgid "Enter the following"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:99
+msgid ""
+".. image:: "
+"/images/infrastructure/network/infoblox/infoblox_addhostrecord.png"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:101
+msgid "HOSTNAME"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:102
+msgid "Hostname for the record"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:103
+msgid "IP ADDRESS"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:104
+msgid "IP address for the Host Record"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:105
+msgid "DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:106
+msgid "Select an Infoblox Zone"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:107
+msgid "Create DNS Records"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:108
+msgid "Select to create DNS A and PTR Records in Infoblox"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:113
+msgid "Creating Zone Records"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:115
+msgid ""
+"Select a Domain from `Infrastructure > Network > Domains` or "
+"`Infrastructure > Network > Services > Infoblox > Zones`"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:119
+msgid ""
+".. image:: "
+"/images/infrastructure/network/infoblox/infoblox_addzonerecord.png"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:122
+msgid "Name for the record, such as Hostname"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:123
+msgid "Type"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:124
+msgid "A, AAAA, CNAME, MX, NS, PTR, SOA, or TXT"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:125
+msgid "CONTENT"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:126
+msgid "Content of the record, such as IP or A Record"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:127
+msgid "TTL"
+msgstr ""
+
+#: ../../integration_guides/Networking/infoblox.rst:128
+msgid "Time To Live value"
+msgstr ""
+

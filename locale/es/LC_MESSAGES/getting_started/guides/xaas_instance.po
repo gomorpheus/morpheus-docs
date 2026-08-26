@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -34,11 +34,11 @@ msgid ""
 "can also be tied into service plans to track costs or bill customers."
 msgstr ""
 "|morpheus| version 5.4.2 y higher includes the ability to build y "
-"provision XaaS Instance Types. Estos son non-VM backed Layouts which allow "
-"users to represent anything as an Instance. This includes the ability to "
-"utilize Provisioning Workflows to manage all phases of the Instance "
-"lifecycles consistently y automatically. XaaS Instance Types can también "
-"be tied into service plans to track costs o bill customers."
+"provision XaaS Instance Types. Estos son non-VM backed Layouts which "
+"allow users to represent anything as an Instance. This includes the "
+"ability to utilize Provisioning Workflows to manage all phases of the "
+"Instance lifecycles consistently y automatically. XaaS Instance Types can"
+" también be tied into service plans to track costs o bill customers."
 
 #: ../../getting_started/guides/xaas_instance.rst:6
 msgid ""
@@ -51,14 +51,14 @@ msgid ""
 "value on the Instance. Finally, when the Instance is deleted, the folder "
 "is deleted from Dropbox as well."
 msgstr ""
-"In this específico example, we will create an XaaS Instance Type to manage "
-"the lifecycle of folders dentro de a Dropbox account. Users será able to "
-"visit the |morpheus| Catalog y have the folder created by entering a name "
-"for the folder y clicking a single button. We'll see how cada folder is "
-"entonces represented as an Instance. With the Instance standing, users "
-"será able para actualizar the folder name by simply editing a "
-"personalizado value on the Instance. Finalmente, cuando el Instance is "
-"deleted, the folder is deleted desde Dropbox as well."
+"In this específico example, we will create an XaaS Instance Type to "
+"manage the lifecycle of folders dentro de a Dropbox account. Users será "
+"able to visit the |morpheus| Catalog y have the folder created by "
+"entering a name for the folder y clicking a single button. We'll see how "
+"cada folder is entonces represented as an Instance. With the Instance "
+"standing, users será able para actualizar the folder name by simply "
+"editing a personalizado value on the Instance. Finalmente, cuando el "
+"Instance is deleted, the folder is deleted desde Dropbox as well."
 
 #: ../../getting_started/guides/xaas_instance.rst:8
 msgid "In this guide, we'll use the following |morpheus| constructs:"
@@ -97,6 +97,10 @@ msgid "Instances"
 msgstr "Instancias"
 
 #: ../../getting_started/guides/xaas_instance.rst:19
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/guides/xaas_instance.rst:19
 msgid ""
 "XaaS Instances are associated with |morpheus|-type Clouds. |morpheus| "
 "Clouds are generic cloud wrappers that can be used to contain manually-"
@@ -104,11 +108,11 @@ msgid ""
 "guide we will go through the process of creating a |morpheus|-type Cloud "
 "which can be used to hold your XaaS resources."
 msgstr ""
-"XaaS Instances are asociado con |morpheus|-type Clouds. |morpheus| Clouds "
-"are generic cloud wrappers that puede usarse para contain manually-managed "
-"servers, VMs, y (in this case) non-VM based resources. In this guide we "
-"will go a través de el proceso of creating a |morpheus|-type Cloud which "
-"puede usarse para hold your XaaS resources."
+"XaaS Instances are asociado con |morpheus|-type Clouds. |morpheus| Clouds"
+" are generic cloud wrappers that puede usarse para contain manually-"
+"managed servers, VMs, y (in this case) non-VM based resources. In this "
+"guide we will go a través de el proceso of creating a |morpheus|-type "
+"Cloud which puede usarse para hold your XaaS resources."
 
 #: ../../getting_started/guides/xaas_instance.rst:22
 msgid "Create Cypher"
@@ -128,8 +132,8 @@ msgstr ""
 "Cypher is a secure key/value store in |morpheus|. Using Cypher, we can "
 "securely store passwords y other secret values (como API keys) which can "
 "then be called into automation Tasks y templates. Here we will store the "
-"Dropbox API token as a Cypher entry. Creating Dropbox developer accounts y "
-"obtaining API keys goes beyond the scope of this guide but Dropbox "
+"Dropbox API token as a Cypher entry. Creating Dropbox developer accounts "
+"y obtaining API keys goes beyond the scope of this guide but Dropbox "
 "developer tools are well-documented if you want to try this out for "
 "yourself. En la |morpheus| UI, go to |TooCyp| y click :guilabel:`+ ADD`."
 
@@ -140,10 +144,10 @@ msgid ""
 "to enter some known value which can be securely accessed later. Enter the"
 " following:"
 msgstr ""
-"There are a number of different types of Cypher keys, which are useful in "
-"different contexts. Here we'll use the \\\"secret\\\" type which allows us "
-"to enter some known value which puede ser securely accessed later. Enter "
-"lo siguiente:"
+"There are a number of different types of Cypher keys, which are useful in"
+" different contexts. Here we'll use the \\\"secret\\\" type which allows "
+"us to enter some known value which puede ser securely accessed later. "
+"Enter lo siguiente:"
 
 #: ../../getting_started/guides/xaas_instance.rst:28
 msgid "**KEY:** secret/dropboxtoken"
@@ -165,8 +169,9 @@ msgstr "**LEASE:** 0 (Lease time is given in seconds, con \"0\" being unlimited)
 msgid "Click :guilabel:`SAVE CHANGES`"
 msgstr "Click :guilabel:`SAVE CHANGES`"
 
-#: ../../getting_started/guides/xaas_instance.rst:35
-msgid ".. image:: images/xaas_instance/1cypher.png"
+#: ../../getting_started/guides/xaas_instance.rst:34
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/1cypher.png"
 msgstr ".. image:: images/xaas_instance/1cypher.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:36
@@ -197,20 +202,23 @@ msgid ""
 " your naming if you will use many |morpheus|-type Clouds to manage other "
 "types of resources."
 msgstr ""
-"XaaS Instances are asociado con |morpheus|-type Clouds. |morpheus| Clouds "
-"are generic cloud wrappers that puede ser used to contain manually-managed "
-"servers, VMs, y (en este caso) non-VM based resources. For this example, "
-"I'm creating a Cloud just to organize Dropbox folders. Navigate to "
-"|InfClo| y click :guilabel:`+ ADD`. The only required steps to create the "
-"Cloud are to give it a name y associate it con a Group. I've given mine a "
-"generic name but you could opt to be more targeted con your naming if you "
-"will use many |morpheus|-type Clouds to manage other types of resources."
+"XaaS Instances are asociado con |morpheus|-type Clouds. |morpheus| Clouds"
+" are generic cloud wrappers that puede ser used to contain manually-"
+"managed servers, VMs, y (en este caso) non-VM based resources. For this "
+"example, I'm creating a Cloud just to organize Dropbox folders. Navigate "
+"to |InfClo| y click :guilabel:`+ ADD`. The only required steps to create "
+"the Cloud are to give it a name y associate it con a Group. I've given "
+"mine a generic name but you could opt to be more targeted con your naming"
+" if you will use many |morpheus|-type Clouds to manage other types of "
+"resources."
 
 #: ../../getting_started/guides/xaas_instance.rst:49
 msgid "**NAME:** MorphCloud"
 msgstr "**NAME:** MorphCloud"
 
-msgid ".. image:: images/xaas_instance/1cloud.png"
+#: ../../getting_started/guides/xaas_instance.rst:51
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/1cloud.png"
 msgstr ".. image:: images/xaas_instance/1cloud.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:55
@@ -295,7 +303,9 @@ msgstr ""
 msgid "Once done, click :guilabel:`SAVE CHANGES`"
 msgstr "Once done, click :guilabel:`SAVE CHANGES`"
 
-msgid ".. image:: images/xaas_instance/2input.png"
+#: ../../getting_started/guides/xaas_instance.rst:70
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/2input.png"
 msgstr ".. image:: images/xaas_instance/2input.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:73
@@ -344,15 +354,15 @@ msgid ""
 "when your code changes."
 msgstr ""
 "Tasks, in |morpheus|, are individual automation scripts. They puede ser "
-"pieced together en Workflows (as we'll see later) crear more comprehensive "
-"automation packages. They puede ser written in a number of different "
-"languages (including BASH, Powershell, Python, Javascript, y more) o to "
-"accomplish específico functions like restarting a server o sending an "
-"email notification. En este caso, I'll write the Task configuration "
-"directly en the |morpheus| Tasks. Sin embargo, Tasks can also be sourced "
-"directly desde integrated version control repositories (like Github) so "
-"you never have to copy y paste code o make manual updates when your code "
-"changes."
+"pieced together en Workflows (as we'll see later) crear more "
+"comprehensive automation packages. They puede ser written in a number of "
+"different languages (including BASH, Powershell, Python, Javascript, y "
+"more) o to accomplish específico functions like restarting a server o "
+"sending an email notification. En este caso, I'll write the Task "
+"configuration directly en the |morpheus| Tasks. Sin embargo, Tasks can "
+"also be sourced directly desde integrated version control repositories "
+"(like Github) so you never have to copy y paste code o make manual "
+"updates when your code changes."
 
 #: ../../getting_started/guides/xaas_instance.rst:89
 msgid ""
@@ -365,15 +375,16 @@ msgid ""
 "types as well."
 msgstr ""
 "For this example, we need para crear four Tasks. One para crear the "
-"folder, one to rename the folder, one to rename the |morpheus| Instance, y "
-"one to delete the folder. I've used Python Tasks to interact con the "
+"folder, one to rename the folder, one to rename the |morpheus| Instance, "
+"y one to delete the folder. I've used Python Tasks to interact con the "
 "Dropbox Python SDK. I won't go en how to write the individual Tasks here "
 "pero the Python SDK is well-documented if you want to try things out for "
-"yourself. The mismo functions could be carried out using otros Task types "
-"as well."
+"yourself. The mismo functions could be carried out using otros Task types"
+" as well."
 
-#: ../../getting_started/guides/xaas_instance.rst:92
-msgid ".. image:: images/xaas_instance/3tasks.png"
+#: ../../getting_started/guides/xaas_instance.rst:91
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/3tasks.png"
 msgstr ".. image:: images/xaas_instance/3tasks.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:93
@@ -426,10 +437,11 @@ msgstr ""
 "**COMMAND ARGUMENTS:** Optional command line arguments for the Python "
 "script. In my case, I'm passing the Dropbox API token desde Cypher as a "
 "command line argument (as seen in the screenshot) y consuming it in my "
-"code using the *sys* module, which is part of the Python standard library. "
-"There are other ways to consume Cypher secrets in Python scripts as well, "
-"which are laid out in a `Knowledge Base article "
-"<https://support.morpheusdata.com/s/article/How-to-use-stored-cypher-secrets-in-python-task?language=en_US>`_"
+"code using the *sys* module, which is part of the Python standard "
+"library. There are other ways to consume Cypher secrets in Python scripts"
+" as well, which are laid out in a `Knowledge Base article "
+"<https://support.morpheusdata.com/s/article/How-to-use-stored-cypher-"
+"secrets-in-python-task?language=en_US>`_"
 
 #: ../../getting_started/guides/xaas_instance.rst:101
 msgid ""
@@ -439,8 +451,9 @@ msgstr ""
 "**ADDITIONAL PACKAGES:** List packages used which are not part of the "
 "standard Python library"
 
-#: ../../getting_started/guides/xaas_instance.rst:106
-msgid ".. image:: images/xaas_instance/5createtask.png"
+#: ../../getting_started/guides/xaas_instance.rst:105
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/5createtask.png"
 msgstr ".. image:: images/xaas_instance/5createtask.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:107
@@ -449,19 +462,23 @@ msgid ""
 "expand the sections below to see screenshots of the Task config, if "
 "desired:"
 msgstr ""
-"The process for creating the remaining three Tasks is very similar, expand "
-"the sections abajo to see screenshots of the Task config, if desired:"
+"The process for creating the remaining three Tasks is very similar, "
+"expand the sections abajo to see screenshots of the Task config, if "
+"desired:"
 
-#: ../../getting_started/guides/xaas_instance.rst
-msgid ".. image:: images/xaas_instance/6deletetask.png"
+#: ../../getting_started/guides/xaas_instance.rst:111
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/6deletetask.png"
 msgstr ".. image:: images/xaas_instance/6deletetask.png"
 
-#: ../../getting_started/guides/xaas_instance.rst
-msgid ".. image:: images/xaas_instance/7renametask.png"
+#: ../../getting_started/guides/xaas_instance.rst:115
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/7renametask.png"
 msgstr ".. image:: images/xaas_instance/7renametask.png"
 
-#: ../../getting_started/guides/xaas_instance.rst
-msgid ".. image:: images/xaas_instance/8resetinstancetask.png"
+#: ../../getting_started/guides/xaas_instance.rst:119
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/8resetinstancetask.png"
 msgstr ".. image:: images/xaas_instance/8resetinstancetask.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:122
@@ -481,14 +498,14 @@ msgid ""
 "following to occurring during the Instance lifecycle:"
 msgstr ""
 "|morpheus| Workflows pull multiple Tasks together into a logical group. "
-"There are two types of Workflows: Operational y Provisioning. We won't use "
-"any Operational Workflows here but these Workflows puede ser run on-demand "
-"as needed o set to run on a recurring time schedule (like a cronjob). "
-"Provisioning Workflows are asociado con an Instance at provision time y "
-"will automatically run the appropriate Tasks when the Instance reaches "
-"certain phases of its lifecycle, como durante provisioning, teardown, "
-"startup, o shutdown. In our case, we need the following to occurring "
-"durante the Instance lifecycle:"
+"There are two types of Workflows: Operational y Provisioning. We won't "
+"use any Operational Workflows here but these Workflows puede ser run on-"
+"demand as needed o set to run on a recurring time schedule (like a "
+"cronjob). Provisioning Workflows are asociado con an Instance at "
+"provision time y will automatically run the appropriate Tasks when the "
+"Instance reaches certain phases of its lifecycle, como durante "
+"provisioning, teardown, startup, o shutdown. In our case, we need the "
+"following to occurring durante the Instance lifecycle:"
 
 #: ../../getting_started/guides/xaas_instance.rst:126
 msgid "At the provisioning phase, we want a folder to be created"
@@ -499,8 +516,8 @@ msgid ""
 "At the reconfigure phase (when the Instance is edited), we want the "
 "folder to be renamed and the Instance name to be updated"
 msgstr ""
-"At the reconfigure phase (when the Instance is edited), we want the folder "
-"to be renamed y the Instance name to be updated"
+"At the reconfigure phase (when the Instance is edited), we want the "
+"folder to be renamed y the Instance name to be updated"
 
 #: ../../getting_started/guides/xaas_instance.rst:128
 msgid ""
@@ -537,14 +554,16 @@ msgid ""
 "**TASKS - Reconfigure:** Dropbox - Rename Folder; Dropbox - Reset "
 "Instance Name"
 msgstr ""
-"**TASKS - Reconfigure:** Dropbox - Rename Folder; Dropbox - Reset Instance "
-"Name"
+"**TASKS - Reconfigure:** Dropbox - Rename Folder; Dropbox - Reset "
+"Instance Name"
 
 #: ../../getting_started/guides/xaas_instance.rst:136
 msgid "**TASKS - Teardown:** Dropbox - Delete Folder"
 msgstr "**TASKS - Teardown:** Dropbox - Delete Folder"
 
-msgid ".. image:: images/xaas_instance/9workflow.png"
+#: ../../getting_started/guides/xaas_instance.rst:140
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/9workflow.png"
 msgstr ".. image:: images/xaas_instance/9workflow.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:144
@@ -558,8 +577,8 @@ msgid ""
 "this, we'll create a catalog item that our users can order in a later "
 "step."
 msgstr ""
-"With the Workflow y Inputs complete, we're ready to put them all together "
-"en a personalizado Instance Type for our |morpheus| Library. From this, "
+"With the Workflow y Inputs complete, we're ready to put them all together"
+" en a personalizado Instance Type for our |morpheus| Library. From this, "
 "we'll create a catalog item that our users can order in a later step."
 
 #: ../../getting_started/guides/xaas_instance.rst:148
@@ -584,15 +603,17 @@ msgid ""
 " Dropbox logo icon for easier identification of this Instance Type at "
 "provision time"
 msgstr ""
-"**ICON:** If desired, search the file system on your local computer for a "
-"Dropbox logo icon for easier identification of this Instance Type at "
+"**ICON:** If desired, search the file system on your local computer for a"
+" Dropbox logo icon for easier identification of this Instance Type at "
 "provision time"
 
 #: ../../getting_started/guides/xaas_instance.rst:154
 msgid "**ENVIRONMENT PREFIX:** XAAS"
 msgstr "**ENVIRONMENT PREFIX:** XAAS"
 
-msgid ".. image:: images/xaas_instance/10instype.png"
+#: ../../getting_started/guides/xaas_instance.rst:156
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/10instype.png"
 msgstr ".. image:: images/xaas_instance/10instype.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:159
@@ -615,11 +636,11 @@ msgid ""
 msgstr ""
 "After creating the Instance Type, click en it y entonces click "
 ":guilabel:`+ ADD LAYOUT` desde the Instance Type Detail Page. A Layout "
-"specifies the technology the Instance will run on, in this case Workflow. "
-"It's possible to have multiple Layouts asociado con an Instance Type which "
-"puede ser selected dependiendo de the chosen Cloud el usuario might be "
-"provisioning on (when dealing con VM-based Instance Types). Configure the "
-"Layout de la siguiente manera:"
+"specifies the technology the Instance will run on, in this case Workflow."
+" It's possible to have multiple Layouts asociado con an Instance Type "
+"which puede ser selected dependiendo de the chosen Cloud el usuario might"
+" be provisioning on (when dealing con VM-based Instance Types). Configure"
+" the Layout de la siguiente manera:"
 
 #: ../../getting_started/guides/xaas_instance.rst:167
 msgid "**VERSION:** Latest"
@@ -644,8 +665,8 @@ msgid ""
 "automatically have our chosen Tasks run during specific Instance "
 "lifecycle phases"
 msgstr ""
-"**WORKFLOW:** Select the Workflow we've just created, \"XaaS - Dropbox\". "
-"By selecting this, all Instances provisioned con this Layout will "
+"**WORKFLOW:** Select the Workflow we've just created, \"XaaS - Dropbox\"."
+" By selecting this, all Instances provisioned con this Layout will "
 "automatically have our chosen Tasks run durante specific Instance "
 "lifecycle phases"
 
@@ -654,10 +675,12 @@ msgid ""
 "**INPUTS:** Search and find the two custom Inputs we created earlier, "
 "\"DropBox Folder Name\" and \"DropBox Folder New Name\""
 msgstr ""
-"**INPUTS:** Search y find the two personalizado Inputs we created earlier, "
-"\\\"DropBox Folder Name\\\" y \\\"DropBox Folder New Name\\\""
+"**INPUTS:** Search y find the two personalizado Inputs we created "
+"earlier, \\\"DropBox Folder Name\\\" y \\\"DropBox Folder New Name\\\""
 
-msgid ".. image:: images/xaas_instance/11layout.png"
+#: ../../getting_started/guides/xaas_instance.rst:173
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/11layout.png"
 msgstr ".. image:: images/xaas_instance/11layout.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:177
@@ -674,13 +697,13 @@ msgid ""
 "Type that was made in the previous sections. Navigate to |LibBluCat| and "
 "click :guilabel:`+ ADD`, then Instance. Configure the following:"
 msgstr ""
-"Catalog Items offer a simplified provisioning process. Administrators can "
-"create Catalog Items using existing Instance Types, App Blueprints, o "
+"Catalog Items offer a simplified provisioning process. Administrators can"
+" create Catalog Items using existing Instance Types, App Blueprints, o "
 "Workflows. Most o all of the provisioning options puede ser pre-selected "
-"leaving fewer decisions hasta el usuario y allowing them to easily create "
-"what they need. En este caso, we'll create one basado en the Instance Type "
-"that was made in the previous sections. Navigate to |LibBluCat| y click "
-":guilabel:`+ ADD`, then Instance. Configure lo siguiente:"
+"leaving fewer decisions hasta el usuario y allowing them to easily create"
+" what they need. En este caso, we'll create one basado en the Instance "
+"Type that was made in the previous sections. Navigate to |LibBluCat| y "
+"click :guilabel:`+ ADD`, then Instance. Configure lo siguiente:"
 
 #: ../../getting_started/guides/xaas_instance.rst:181
 msgid "**NAME:** XaaS - Dropbox Folder"
@@ -715,16 +738,16 @@ msgid ""
 "our Workflow on the \"AUTOMATION TAB\" since we already have it on our "
 "Layout. Finally, click :guilabel:`COMPLETE`."
 msgstr ""
-"Then, click :guilabel:`CONFIGURATION WIZARD`. On the \"TYPE\" tab, search "
-"for the Instance Type we created y click :guilabel:`NEXT`. On the "
+"Then, click :guilabel:`CONFIGURATION WIZARD`. On the \"TYPE\" tab, search"
+" for the Instance Type we created y click :guilabel:`NEXT`. On the "
 "\"Group\" tab, select the |morpheus|-type Cloud y enter any name (we'll "
 "override this name value later so it's dynamic basado en user input). "
-"Click :guilabel:`NEXT`. On the \"CONFIGURE\" tab, the Layout y Plan fields "
-"should default to acceptable values. Enter anything for the \"Dropbox "
-"Folder Name\", we will también update this to be dynamic in the next step. "
-"Click a través de the final two tabs, there's no necesitan attach our "
-"Workflow on the \"AUTOMATION TAB\" since we already have it on our Layout. "
-"Finalmente, click :guilabel:`COMPLETE`."
+"Click :guilabel:`NEXT`. On the \"CONFIGURE\" tab, the Layout y Plan "
+"fields should default to acceptable values. Enter anything for the "
+"\"Dropbox Folder Name\", we will también update this to be dynamic in the"
+" next step. Click a través de the final two tabs, there's no necesitan "
+"attach our Workflow on the \"AUTOMATION TAB\" since we already have it on"
+" our Layout. Finalmente, click :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/xaas_instance.rst:187
 msgid ""
@@ -735,12 +758,13 @@ msgid ""
 "below:"
 msgstr ""
 "Once finished, you'll see the JSON configuration map para la Instance "
-"loaded ina la \"CONFIG\" field. Update the \"dbfoldername\" Input value y "
-"the Instance name value to dynamically take en la user-entered value en la "
-"\"Dropbox Folder Name\" field as I've done in my screenshot below:"
+"loaded ina la \"CONFIG\" field. Update the \"dbfoldername\" Input value y"
+" the Instance name value to dynamically take en la user-entered value en "
+"la \"Dropbox Folder Name\" field as I've done in my screenshot below:"
 
-#: ../../getting_started/guides/xaas_instance.rst:190
-msgid ".. image:: images/xaas_instance/12catitem.png"
+#: ../../getting_started/guides/xaas_instance.rst:189
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/12catitem.png"
 msgstr ".. image:: images/xaas_instance/12catitem.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:191
@@ -750,8 +774,8 @@ msgid ""
 "to order their folder. Then, click :guilabel:`SAVE CHANGES`"
 msgstr ""
 "Near the bottom of the modal window, search for y attach the \\\"DropBox "
-"Folder Name\\\" Input. This será the only input our users necesita make to "
-"order their folder. Then, click :guilabel:`SAVE CHANGES`"
+"Folder Name\\\" Input. This será the only input our users necesita make "
+"to order their folder. Then, click :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/xaas_instance.rst:194
 msgid "Ordering Catalog Item"
@@ -769,22 +793,26 @@ msgstr ""
 "click \"Order\" on our \"XaaS - Dropbox Folder\" item. We need solo "
 "provide a name for our folder y click \"Order Now\"."
 
-#: ../../getting_started/guides/xaas_instance.rst:199
-msgid ".. image:: images/xaas_instance/13orderitem.png"
+#: ../../getting_started/guides/xaas_instance.rst:198
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/13orderitem.png"
 msgstr ".. image:: images/xaas_instance/13orderitem.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:200
+#, fuzzy
 msgid ""
-"If we now head to |ProIns|, we can see a new Instance entry has been "
-"created for our Dropbox folder. Note that the Instance is named for our "
-"folder name exactly as we configured earlier."
+"If we now head to :menuselection:`Provisioning --> Instances`, we can see"
+" a new Instance entry has been created for our Dropbox folder. Note that "
+"the Instance is named for our folder name exactly as we configured "
+"earlier."
 msgstr ""
 "If we now head to |ProIns|, we can see a new Instance entry ha sido "
-"created for our Dropbox folder. Tenga en cuenta que the Instance is named "
-"for our folder name exactly as we configured earlier."
+"created for our Dropbox folder. Tenga en cuenta que the Instance is named"
+" for our folder name exactly as we configured earlier."
 
-#: ../../getting_started/guides/xaas_instance.rst:203
-msgid ".. image:: images/xaas_instance/14inslist.png"
+#: ../../getting_started/guides/xaas_instance.rst:202
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/14inslist.png"
 msgstr ".. image:: images/xaas_instance/14inslist.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:204
@@ -792,11 +820,12 @@ msgid ""
 "Taking a look in the Dropbox web console, we can also see a folder has "
 "been created just as we'd expect."
 msgstr ""
-"Taking a look in the Dropbox web console, we can also see a folder ha sido "
-"created just as we'd expect."
+"Taking a look in the Dropbox web console, we can also see a folder ha "
+"sido created just as we'd expect."
 
-#: ../../getting_started/guides/xaas_instance.rst:207
-msgid ".. image:: images/xaas_instance/15dbcreate.png"
+#: ../../getting_started/guides/xaas_instance.rst:206
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/15dbcreate.png"
 msgstr ".. image:: images/xaas_instance/15dbcreate.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:209
@@ -804,27 +833,29 @@ msgid "Managing and Deleting Instances"
 msgstr "Managing y Deleting Instances"
 
 #: ../../getting_started/guides/xaas_instance.rst:211
+#, fuzzy
 msgid ""
 "Back in |morpheus|, we can take a look at the Instance detail page "
-"(|ProIns| > Specific Instance) and perform some Day 2 actions. By "
-"clicking :guilabel:`EDIT`, we can update Instance details. When Input "
-"values are updated, |morpheus| will automatically trigger reconfigure "
-"actions on our Instance. In our case, we've configured it to update the "
-"folder name in Dropbox and update the Instance name in |morpheus| for "
-"easier identification. As you can see in the screen shot, I'm providing a"
-" new folder name value:"
+"(:menuselection:`Provisioning --> Instances` > Specific Instance) and "
+"perform some Day 2 actions. By clicking :guilabel:`EDIT`, we can update "
+"Instance details. When Input values are updated, |morpheus| will "
+"automatically trigger reconfigure actions on our Instance. In our case, "
+"we've configured it to update the folder name in Dropbox and update the "
+"Instance name in |morpheus| for easier identification. As you can see in "
+"the screen shot, I'm providing a new folder name value:"
 msgstr ""
 "Back in |morpheus|, we can take a look at the Instance detail page "
 "(|ProIns| > Specific Instance) y perform some Day 2 actions. By clicking "
 ":guilabel:`EDIT`, we can update Instance details. When Input values are "
-"updated, |morpheus| will automatically trigger reconfigure actions on our "
-"Instance. In our case, we've configurado it actualizar the folder name in "
-"Dropbox y update the Instance name in |morpheus| for easier "
-"identification. As you can see in the screen shot, I'm providing un nuevo "
-"folder name value:"
+"updated, |morpheus| will automatically trigger reconfigure actions on our"
+" Instance. In our case, we've configurado it actualizar the folder name "
+"in Dropbox y update the Instance name in |morpheus| for easier "
+"identification. As you can see in the screen shot, I'm providing un nuevo"
+" folder name value:"
 
-#: ../../getting_started/guides/xaas_instance.rst:214
-msgid ".. image:: images/xaas_instance/16editins.png"
+#: ../../getting_started/guides/xaas_instance.rst:213
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/16editins.png"
 msgstr ".. image:: images/xaas_instance/16editins.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:215
@@ -835,12 +866,14 @@ msgstr ""
 "As expected, our Instance name is updated y the folder is renamed on the "
 "Dropbox side:"
 
-#: ../../getting_started/guides/xaas_instance.rst:218
-msgid ".. image:: images/xaas_instance/17insdetail.png"
+#: ../../getting_started/guides/xaas_instance.rst:217
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/17insdetail.png"
 msgstr ".. image:: images/xaas_instance/17insdetail.png"
 
-#: ../../getting_started/guides/xaas_instance.rst:220
-msgid ".. image:: images/xaas_instance/18dbupdate.png"
+#: ../../getting_started/guides/xaas_instance.rst:219
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/18dbupdate.png"
 msgstr ".. image:: images/xaas_instance/18dbupdate.png"
 
 #: ../../getting_started/guides/xaas_instance.rst:221
@@ -849,11 +882,12 @@ msgid ""
 "Instance object out of |morpheus| and triggering our Teardown-phase "
 "action which deletes the folder from Dropbox:"
 msgstr ""
-"Finalmente, I'll delete the Instance. This has the effect of deleting the "
-"Instance object out of |morpheus| y triggering our Teardown-phase action "
-"which deletes the folder desde Dropbox:"
+"Finalmente, I'll delete the Instance. This has the effect of deleting the"
+" Instance object out of |morpheus| y triggering our Teardown-phase action"
+" which deletes the folder desde Dropbox:"
 
 #: ../../getting_started/guides/xaas_instance.rst:223
-msgid ".. image:: images/xaas_instance/19dbdelete.png"
+#, fuzzy
+msgid ".. image:: /images/xaas_instance/19dbdelete.png"
 msgstr ".. image:: images/xaas_instance/19dbdelete.png"
 

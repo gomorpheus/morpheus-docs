@@ -1,0 +1,256 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:2
+msgid "How to create vCloud Director templates for Morpheus"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:5
+msgid "To create a Windows Template"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:7
+msgid ""
+"Create a new machine in VMware vCenter and install a base version of your"
+" preferred Windows build."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:9
+msgid "Apply any service packs / updates to the operating system."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:10
+msgid ""
+"Set the Network location to Private the below PowerShell will set the "
+"location."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:12
+msgid ""
+"Get-NetConnectionProfile | Set-NetconnectionProfile -NetworkCategory "
+"private"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:16
+msgid "Configure WinRM to allow remote management and open the firewall."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:18
+msgid ""
+"To do this, under local computer Administrator, open a command prompt and"
+" run ``winrm quickconfig``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:20
+msgid "Install VMware tools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:21
+msgid "Install .Net at least 4.5"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:22
+msgid "Enable remote PowerShell this can be done in PowerShell."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:24
+msgid "Enable-PSremoting"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:28
+msgid "Shutdown the virtual machine and convert to a template."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:30
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:81
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:30
+msgid "Do not run sysprep"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:34
+msgid "To create a Linux Centos template"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:36
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:50
+msgid ""
+"Create a new machine in VMware vCenter and install a base version of your"
+" preferred Linux distro build. If you are using cloud init as part of "
+"your image you will need to ensure your virtual machine has a cdrom."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:38
+msgid ""
+"Before installing the operating system setup a single ``ext`` or ``xfs`` "
+"partition without a swap disk (This is so that growpart can extend the "
+"disk. growpart currently does not support lvm)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:39
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:53
+msgid ""
+"Install the distro and apply any updates to the operating system and "
+"security updates"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:40
+msgid "Install cloud-init using command ``yum install cloud-init``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:41
+msgid ""
+"Install cloud-utils-growpart using command ``yum install cloud-utils-"
+"growpart``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:42
+msgid "Install vmware tools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:43
+msgid "Install git by running ``yum install git``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:44
+msgid "epel-release"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:45
+msgid "selinux set to permissive (enforced can cause problems with cloud-init)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:48
+msgid "To create a Linux Ubuntu template"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:52
+msgid ""
+"Before installing the operating system setup a single ``ext`` partition "
+"without a swap disk (This is so that growpart can extend the disk. "
+"growpart currently does not support lvm)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:54
+msgid "Ensure you have set a root password"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:55
+msgid "Install cloud-init by running ``sudo apt install cloud-init``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:56
+msgid "Install cloud-utils-growpart ``sudo apt install cloud-utils``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:57
+msgid "Install desired hypervisor drivers (Virto, Open-VM Tools)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:58
+msgid "Install git by running ``sudo apt install git``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:59
+msgid ""
+"As Debian 9 includes network manager ensure this is disabled. Change the "
+"below file"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:61
+msgid "/etc/NetworkManager/NetworkManager.conf"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:65
+msgid "to the following:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:67
+msgid "managed=false"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:73
+#, python-format
+msgid ""
+"We also recommend disabling network manager and setting the network "
+"adapter to eth0 rather than the automatically assigned name. See a more "
+"detailed guide on VMware image prep `here "
+"<https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware_templates.html?highlight=vmware%20image%20prep#creating-a"
+"-centos-rhel-7-image>`_."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:75
+msgid ""
+"To import your template into vCloud director you will need to login as "
+"either an administrator or organisation administrator."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:77
+msgid ""
+"Once logged into vCloud director you will then need select ``Manage "
+"Organizations`` and then select your organization."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:79
+msgid ""
+"From within the organisation click on ``Catalogues`` > select an existing"
+" catalogue or create a new catalogue."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:82
+msgid ""
+"Please note once you connect |morpheus| to your vCD environment, it will "
+"create a catalogue called Auto |morpheus|. This is a working catalogue "
+"and is ignored by |morpheus| when searching for images, so any images in "
+"the catalogue will not be synced into |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:84
+msgid ""
+"Open the catalogue and select the import template from vCenter and then "
+"browse the data stores for your templates. Select your template and the "
+"type in a new name and description then check the copy template into "
+"vCloud director."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:86
+msgid ""
+"Once you click ok the import process will begin. When the import has "
+"completed the template will appear in |morpheus| within "
+":menuselection:`Library --> Virtual Images`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:88
+msgid ""
+"If the image does not appear within the virtual images you may need to "
+"use the filters to filter the virtual images by the vmware ( vmdk / ovf /"
+" ova) type."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vCloudDirector/creatingvcloud.rst:90
+msgid ""
+"You may also need to refresh the cloud. To do this go to ``Infrastructure"
+" > Clouds`` >       select the vCloud Director cloud > select Refresh."
+msgstr ""
+

@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hvmcli/software.rst:2
+msgid "software"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:4
+msgid "Inspect installed software packages and manage OS updates."
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:7
+msgid "Commands"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:13
+msgid "Command"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:15
+msgid "``list``"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:16
+msgid "List installed versions for qemu, libvirt, kernel, and hvmcli"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:17
+msgid "``update``"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:18
+msgid "Manage package and OS updates"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:21
+msgid "software list"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:23
+msgid "Show installed versions of key HVM components."
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:25
+msgid "sudo hvmcli software list"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:30
+msgid "software update"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:32
+msgid ""
+"Manage OS and package updates with pre-checks, rollback support, and "
+"history tracking."
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:34
+msgid "**List available updates:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:36
+msgid "sudo hvmcli software update list"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:40
+msgid "**Run pre-check before updating:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:42
+msgid ""
+"sudo hvmcli software update precheck\n"
+"sudo hvmcli software update precheck --interactive"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:47
+msgid "**Check pre-check status:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:49
+msgid "sudo hvmcli software update precheck status"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:53
+msgid "**Perform OS update:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:55
+msgid ""
+"sudo hvmcli software update os\n"
+"sudo hvmcli software update os --force\n"
+"sudo hvmcli software update os --interactive"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:61 ../../tools/hvmcli/software.rst:80
+#: ../../tools/hvmcli/software.rst:92 ../../tools/hvmcli/software.rst:102
+msgid "Options:"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:63
+msgid "``--force`` — Skip confirmation and proceed with update"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:64
+msgid "``--interactive`` — Run in interactive mode with progress display"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:66
+msgid "**Check update status:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:68
+msgid "sudo hvmcli software update status"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:72
+msgid "**View update history:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:74
+msgid ""
+"sudo hvmcli software update history\n"
+"sudo hvmcli software update history --count 5\n"
+"sudo hvmcli software update history --id 2026-04-07T12-15-25Z"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:82
+msgid "``--count <n>`` — Limit to last N entries"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:83
+msgid "``--id <timestamp>`` — Show details for a specific update"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:85
+msgid "**Rollback an update:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:87
+msgid ""
+"sudo hvmcli software update rollback --dry-run\n"
+"sudo hvmcli software update rollback"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:94
+msgid "``--dry-run`` — Preview what would be rolled back without making changes"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:96
+msgid "**Install a specific package:**"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:98
+msgid "sudo hvmcli software update package install --file /tmp/package.deb"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:104
+msgid "``--file <path>`` — Path to the .deb package file to install"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:106
+msgid "Important"
+msgstr ""
+
+#: ../../tools/hvmcli/software.rst:106
+msgid ""
+"Always run ``precheck`` before performing an OS update. The pre-check "
+"validates that the host is in a safe state for updates (no running VMs, "
+"cluster quorum intact, sufficient disk space)."
+msgstr ""
+

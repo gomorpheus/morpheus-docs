@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:4
+msgid "Route Redistribution"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:6
+msgid ""
+"``Infrastructure > Network > Routers > (select Router) > Route "
+"Redistribution``"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:11
+msgid ""
+"Route redistribution allows routes learned through one routing protocol "
+"to be advertised via another. This is essential in environments that run "
+"multiple routing protocols (e.g., redistributing static routes or OSPF "
+"routes into BGP). |morpheus| supports managing route redistribution "
+"configurations on router types that expose this capability."
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:13
+#: ../../infrastructure/networks/routers/route_redistributions.rst:32
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:13
+msgid ""
+"The Route Redistribution tab is available on router types that support "
+"redistribution (``hasRouteRedistribution`` flag). NSX Edge Gateways are "
+"the primary router type with route redistribution support in |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:16
+msgid "Viewing Route Redistributions"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:18
+#: ../../infrastructure/networks/routers/route_redistributions.rst:26
+#: ../../infrastructure/networks/routers/route_redistributions.rst:39
+#: ../../infrastructure/networks/routers/route_redistributions.rst:49
+msgid "Navigate to ``Infrastructure > Network > Routers``"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:19
+#: ../../infrastructure/networks/routers/route_redistributions.rst:27
+#: ../../infrastructure/networks/routers/route_redistributions.rst:40
+#: ../../infrastructure/networks/routers/route_redistributions.rst:50
+msgid "Click on the target router to access the detail view"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:20
+#: ../../infrastructure/networks/routers/route_redistributions.rst:28
+#: ../../infrastructure/networks/routers/route_redistributions.rst:41
+#: ../../infrastructure/networks/routers/route_redistributions.rst:51
+msgid "Click the **Route Redistribution** tab"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:21
+msgid ""
+"The list view displays configured redistribution rules with their source "
+"protocol, destination, and status"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:24
+msgid "Adding a Route Redistribution Rule"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:29
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:30
+msgid "Complete the configuration fields (fields vary by router type):"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:32
+msgid ""
+"The available fields depend on the router type's "
+"``routeRedistributionOptionTypes``. Common fields include source "
+"protocol, route map, and metric settings."
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:34
+#: ../../infrastructure/networks/routers/route_redistributions.rst:44
+msgid "Click :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:37
+msgid "Editing a Route Redistribution Rule"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:42
+msgid "Click the pencil (edit) icon for the target redistribution rule"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:43
+msgid "Modify the desired fields"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:47
+msgid "Deleting a Route Redistribution Rule"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:52
+msgid "Click the delete icon for the target redistribution rule"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:53
+msgid "Confirm the deletion when prompted"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:55
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:55
+msgid ""
+"Removing a route redistribution rule will stop the advertisement of those"
+" routes into the target protocol. This may cause reachability issues for "
+"networks that depend on the redistributed routes."
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:58
+msgid "Common Redistribution Scenarios"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:64
+msgid "Scenario"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:65
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:66
+msgid "Static to BGP"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:67
+msgid "Advertise statically configured routes to BGP peers"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:68
+msgid "Connected to OSPF"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:69
+msgid "Advertise directly connected networks into OSPF"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:70
+msgid "OSPF to BGP"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:71
+msgid "Advertise OSPF-learned routes to external BGP peers"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:72
+msgid "Static to OSPF"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:73
+msgid "Include static routes in OSPF link-state advertisements"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:76
+msgid "Required Role Permissions"
+msgstr ""
+
+#: ../../infrastructure/networks/routers/route_redistributions.rst:78
+msgid ""
+"Access to route redistribution management requires the ``Infrastructure: "
+"Network Router Redistribution`` permission (``infrastructure-network-"
+"router-redistribution``) with ``read`` or ``full`` access."
+msgstr ""
+

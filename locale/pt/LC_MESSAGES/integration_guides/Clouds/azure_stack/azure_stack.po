@@ -1,0 +1,935 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:2
+msgid "Azure Stack"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:7
+msgid ""
+"Azure Stack is Microsoft's Azure Cloud for on-premises environments. "
+"Azure Stack contains the core Azure services, allowing organizations to "
+"take advantage of Azure's offerings with the security, compliance, and "
+"financial benefits of hosting it in their own data-centers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:9
+msgid "Virtual Machine Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:10
+msgid "Backups / Snapshots"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:11
+msgid "Resource Group Sync & Selection"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:12
+msgid "Network Sync & Selection"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:13
+msgid "Security Group Sync & Selection"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:14
+msgid "Storage Account Sync & Selection"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:15
+msgid "Marketplace Search and Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:16
+msgid "Remote Console"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:17
+msgid "Periodic Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:18
+msgid "Lifecycle Management and Resize"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:19
+msgid "Availability Set Support"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:20
+msgid "Azure Load Balancers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:21
+msgid "Azure Storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:22
+msgid "Docker Host Provisioning & Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:23
+msgid "Service Plan Sync"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:24
+msgid "Pricing Sync with markup options"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:25
+msgid "Cost Estimator"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:27
+msgid ""
+"Combine these features with public Azure and |morpheus| can provide a "
+"single pane of glass and self service portal for managing instances "
+"scattered across both Azure offerings."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:30
+msgid "Requirements"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:33
+msgid "Azure Stack Accessibility"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:35
+msgid ""
+"By default, the Azure Stack management url's are not accessible from an "
+"external network. Port mappings and DNS must be configured for "
+"communication between the |morpheus| Appliance and Azure Stack."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:37
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:37
+msgid ""
+"In order to communicate with Azure Stack, |morpheus| must be able to "
+"reach the internal Azure Stack network. The Azure Stack Portal needs to "
+"be exposed to the |morpheus| Appliances' network with corresponding "
+"entries added to DNS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:39
+msgid ""
+"One option to expose the Internal Azure Stack network to the |morpheus| "
+"Appliances network is to use the ``Expose-AzureStackPortal.ps1`` "
+"powershell script from https://gallery.technet.microsoft.com/scriptcenter"
+"/Expose-the-Azure-Stack-7ef68b19. An Azure Stack Port Mapping Tool is "
+"also available."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:41
+msgid "Below is a sample output from the script for reference:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:43
+msgid ""
+"[Admin Portal] Created port mappings on 10.30.23.120 to 192.168.102.8\n"
+"[Admin Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 12646"
+" 12647 12648 12649 12650 12495 13026 12499\n"
+"[Admin Portal] DNS: 10.30.23.120 - adminportal.local.azurestack.external "
+"adminmanagement.local.azurestack.external\n"
+"\n"
+"[Tenant Portal] Created port mappings on 10.30.23.121 to 192.168.102.10\n"
+"[Tenant Portal] Ports: 13011 30015 13001 13010 13021 13020 443 13003 "
+"12646 12647 12648 12649 12650 12495 13026 12499\n"
+"[Tenant Portal] DNS: 10.30.23.121 - portal.local.azurestack.external "
+"management.local.azurestack.external\n"
+"\n"
+"[Blob Storage] Created port mappings on 10.30.23.122 to 192.168.102.4\n"
+"[Blob Storage] Ports: 80 443\n"
+"[Blob Storage] DNS: 10.30.23.122  *.blob.local.azurestack.external\n"
+"\n"
+"VERBOSE: DNS delegation/forwarding is optional, change the DNS records on"
+" MAS-DC01 manually (dnsmgmt.msc from Host).\n"
+"[DNS Delegation] Created port mappings on 10.30.23.120 to 192.168.200.224"
+"\n"
+"[DNS Delegation] Ports: 53 (TCP/UDP)\n"
+"[DNS Delegation] DNS: local.azurestack.external NS 10.30.23.120\n"
+"[DNS Delegation] Change records on MAS-DC01 manually `if` you plan to use"
+" DNS forwarding.\n"
+"[DNS Delegation] Change records back to the original internal IPs before "
+"running this script again.\n"
+"\n"
+"VERBOSE: App Service detected and external IPs specified, creating "
+"mappings.\n"
+"[App Service API] Created port mappings on 10.30.23.123 to 192.168.102.17"
+"\n"
+"[App Service API] Ports: 443\n"
+"[App Service API] DNS: 10.30.23.123  "
+"api.appservice.local.azurestack.external\n"
+"[App Service Apps] Created port mappings on 10.30.23.124 to "
+"192.168.102.15\n"
+"[App Service Apps] Ports: 80 443 21 990\n"
+"[App Service Apps] DNS: 10.30.23.124  "
+"*.appservice.local.azurestack.external"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:73
+msgid "Azure Stack Resources"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:75
+msgid ""
+"The following resources need to be created and configured inside Azure "
+"Stack for successful provisioning:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:77
+msgid "Resource Group(s)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:78
+msgid "Virtual Network(s)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:79
+msgid "Storage Account(s)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:80
+msgid "Network Security Group(s)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:82
+msgid "Inbound ports open from |morpheus| Appliance: 22, 5985, 3389"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:83
+msgid "Outbound ports open to |morpheus| Appliance: 80, 443"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:85
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:136
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:147
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:85
+msgid ""
+"Proper Network and Network Security Group configuration is required for "
+"|morpheus| agent install, communication, and remote console access. Other"
+" configurations, such as docker instances, will need the appropriate "
+"ports opened as well."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:88
+msgid "Required Credentials & Permissions"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:90
+msgid ""
+"Credentials to integrate |morpheus| with Azure Stack are located in both "
+"the public Azure Portal and the Private Azure Stack Portal. The Azure "
+"Active Directory Application used must be an owner of the Azure Stack "
+"subscription."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:92
+msgid "Azure Portal:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:93
+msgid "Azure Active Directory Application Credentials"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:94
+msgid "Directory ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:95
+msgid "Management URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:96
+msgid "Identity Resource URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:97
+msgid "Application ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:98
+msgid "Key Value"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:100
+msgid "Azure Stack Portal:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:101
+msgid "Azure Stack Subscription ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:102
+msgid ""
+"Active Directory App from Azure portal added as owner of the Azure Stack "
+"Subscription in Azure Stack."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:106
+msgid "Adding an Azure Stack Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:109
+msgid "Configure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:111
+msgid ""
+"In the |morpheus| UI, navigate to ``Infrastructure > Clouds`` and Select "
+":guilabel:`+ CREATE CLOUD`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:112
+msgid ""
+"Select *AZURE STACK (PRIVATE)* from the Clouds list and select "
+":guilabel:`NEXT`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:113
+msgid "In the Configure section, enter:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:1
+msgid "**Cloud Configuration**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:3
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:4
+msgid "Name of the Cloud in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:5
+msgid "CODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:6
+msgid "Unique code used for api/cli, automation and policies."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:7
+msgid "LOCATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:8
+msgid "Description field for adding notes on the cloud, such as location."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:9
+msgid "VISIBILITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:10
+msgid ""
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:11
+msgid "TENANT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:12
+msgid ""
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:13
+msgid "ENABLED"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:14
+msgid ""
+"When disabled, automatic Cloud sync is paused and the Cloud will not be "
+"selectable for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:15
+msgid "AUTOMATICALLY POWER ON VMS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:16
+msgid ""
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid ""
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:117
+msgid "**Details**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:119
+msgid "IDENTITY URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:120
+msgid "https://login.microsoftonline.com"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:121
+msgid "MANAGEMENT URL*"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:122
+msgid ""
+"Azure AD Azure Stack Administrator app or Microsoft Azure Stack "
+"Administrator app url. Example: "
+"https://adminmanagement.local.azurestack.external/"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:123
+msgid "IDENTITY RESOURCE URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:124
+msgid ""
+"Azure AD Azure Stack Administrator App ID URI Example: "
+"https://adminmanagement.xxxxxxx.onmicrosoft.com/4a80e607-4259-4ac6-83e2-2fabeaf2eh83"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:125
+msgid "BASE DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:126
+msgid ""
+"This should match the base domain in your Management url. Example: "
+"local.azurestack.external"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:127
+msgid "SUBSCRIPTION ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:128
+msgid ""
+"Subscription ID from Azure Stack portal (this is different from the "
+"Subscription ID in you Azure portal used when configuring Azure Stack)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:129
+msgid "TENANT ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:130
+msgid "This is the Directory ID from the Azure AD directory"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:131
+msgid "CLIENT ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:132
+msgid ""
+"Application ID of Azure AD app with Azure Stack permissions granted, and "
+"has been added as an owner of the Azure Stack subscription (in the Azure "
+"Stack portal)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:133
+msgid "CLIENT SECRET"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:134
+msgid "Key Value of Application ID used above"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:136
+msgid ""
+"Once all credentials are entered and validated, the Location and Resource"
+" Group fields will populate."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:138
+msgid "Location"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:139
+msgid ""
+"Select an Azure Stack region for the cloud to scope to. This typically "
+"will be \"local\"."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:140
+msgid "Resource Group"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:141
+msgid ""
+"Select All or a single Resource Group to scope the cloud to. Selecting a "
+"single Resource Group will only sync resources in that Resource Group and"
+" disable Resource Group selection during provisioning. All will sync all "
+"resources and allow specifying the Resource Group during provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:142
+msgid "Inventory Existing Instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:143
+msgid ""
+"If enabled, existing Virtual Machines will be inventoried and appear as "
+"unmanaged Virtual Machines in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:145
+msgid ""
+"The Azure Stack cloud is ready to be added to a group and saved. "
+"Additional configuration options available:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:147
+msgid "All fields and options can be edited after the Cloud is created."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:1
+msgid "**Advanced Options**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:3
+msgid "DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:4
+msgid "Specify a default domain for instances provisioned to this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:5
+msgid "SCALE PRIORITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:6
+msgid ""
+"Only affects Docker Provisioning. Specifies the priority with which an "
+"instance will scale into the cloud. A lower priority number means this "
+"cloud integration will take scale precedence over other cloud "
+"integrations in the group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:7
+msgid "APPLIANCE URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:8
+msgid ""
+"Alternate Appliance url for scenarios when the default Appliance URL "
+"(configured in `admin > settings`) is not reachable or resolvable for "
+"Instances provisioned in this cloud. The Appliance URL is used for Agent "
+"install and reporting."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:9
+msgid "TIME ZONE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:10
+msgid "Configures the time zone on provisioned VM's if necessary."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:11
+msgid "DATACENTER ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:12
+msgid ""
+"Used for differentiating pricing among multiple datacenters. Leave blank "
+"unless prices are properly configured."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:13
+msgid "NETWORK MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:14
+msgid "Unmanaged or select a Network Integration (NSX, ACI etc)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:15
+msgid "LOCAL FIREWALL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:16
+msgid ""
+"On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
+"only)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:17
+msgid "SECURITY SERVER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:18
+msgid "Security Server setting is for Security Service Integrations such as ACI"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:19
+msgid "TRUST PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:20
+msgid "Select Internal (Morpheus) or an existing Trust Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:21
+msgid "STORAGE MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:22
+msgid "Single Disk, LVM or Clustered"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:23
+msgid "BACKUP PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:24
+msgid ""
+"Select a backup provider. Depending on the Cloud type and any currently-"
+"configured backup plugins you may select Internal Backups (Morpheus) or "
+"another configured backup solution"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:25
+msgid "REPLICATION PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:26
+msgid ""
+"Sets the default Replication Provider for the Cloud. Select an existing "
+"Replication Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:27
+msgid "GUIDANCE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:28
+msgid "Enable Guidance recommendations on cloud resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:29
+msgid "COSTING"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:30
+msgid ""
+"Enable for |morpheus| to sync Costing data from the Cloud provider, when "
+"available. For on-prem Clouds, enabling costing activates a costing "
+"service designed to mirror the live costing experience of public clouds, "
+"including invoicing with line items and real-time cost data (Operations >"
+" Costing > Invoices). If your organization utilizes reserved instances "
+"and you want to pull in related pricing data, some Cloud integrations "
+"include the option to select `Costing and Reservations`. If this is not "
+"relevant, select `Costing` to save money on additional calls to the Cloud"
+" provider's costing API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:31
+msgid "DNS INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:32
+msgid ""
+"Records for instances provisioned in this cloud will be added to selected"
+" DNS integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:33
+msgid "SERVICE REGISTRY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:34
+msgid ""
+"Services for instances provisioned in this cloud will be added to "
+"selected Service Registry integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:35
+msgid "CONFIG MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:36
+msgid "Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:37
+msgid "CMDB"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:38
+msgid "Select CMDB Integration to automatically update selected CMDB."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:39
+msgid "CMDB DISCOVERY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:40
+msgid ""
+"When checked, any automatically discovered (unmanaged) servers onboarded "
+"into |morpheus| from this Cloud will also have CMDB records created for "
+"them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:41
+msgid "CHANGE MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:42
+msgid ""
+"Select an existing Change Management Integration to set on the Cloud. ex:"
+" Cherwell"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:43
+msgid "AGENT INSTALL MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid ""
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM "
+"or Guest Execution for Agent install."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:45
+msgid ""
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize"
+" Cloud-Init or Cloudbase-Init for agent install when provisioning images "
+"with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on "
+"SSH or WINRM if cloud-init is not installed on the provisioned image. "
+"Morpheus will also add Agent installation to Windows unattend.xml data "
+"when performing Guest Customizations or utilizing syspreped images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:46
+msgid "VDI GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:47
+msgid ""
+"Set a VDI Gateway for outbound communication from the |morpheus| "
+"Appliance to the vdi endpoints. VDI Gateways can be added in "
+"``/tools/vdi/gateways``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:50
+msgid "**CUSTOM LOGOS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:52
+msgid ""
+"When integrating a Cloud, it will appear by default throughout the UI "
+"with its standard logo (VMware logo for VMware Clouds, etc.). If desired,"
+" you may upload a custom logo that should appear instead. This might be "
+"useful for MSPs which might not want to reveal the Cloud type underlying "
+"its services. A dark mode version of the logo may also be uploaded if the"
+" standard logo doesn't look right against the |morpheus| dark mode theme."
+" Checking USE DEFAULT CLOUD LOGOS allows the user to return to the "
+"standard logo for the Cloud type without deleting the custom uploaded "
+"logo."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:54
+msgid "**INVENTORY OPTIONS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:56
+msgid ""
+"Inventory options allow you to set a default active or inactive state for"
+" certain discovered resources. The list of available resources to "
+"configure will vary based on the Cloud type and its supported resources. "
+"By default, all possible resources for the Cloud type will be discovered "
+"in an active state. Uncheck the box for some or all resources to discover"
+" them in an inactive state. The list of potential resources that may "
+"appear include:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:58
+msgid "Service Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:59
+msgid "Resource Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:60
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:163
+msgid "Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:61
+msgid "Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:62
+msgid "Datastores"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:63
+msgid "Folders"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:65
+msgid "**Provisioning Command**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:67
+msgid "PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:68
+msgid ""
+"Set a proxy for inbound communication from Instances to the |morpheus| "
+"Appliance. Proxies can be added in the `Infrastructure > Networks > "
+"Proxies` tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:69
+msgid "Bypass Proxy for Appliance URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:70
+msgid ""
+"Enable to bypass proxy settings (if added) for |morpheus| Agent "
+"communication to the Appliance URL."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:71
+msgid "NO PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:72
+msgid ""
+"Include a list of IP addresses or name servers to exclude from proxy "
+"traversal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:73
+msgid "USER DATA (LINUX)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid ""
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash "
+"syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more"
+" information."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:151
+msgid "Once all options are configured, select NEXT to add the cloud to a Group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:153
+msgid "GROUP"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:154
+msgid ""
+"A Group must be specified or created for the new Cloud to be added to. "
+"Clouds can be added to additional Groups or removed from Groups after "
+"being created."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:155
+msgid "USE EXISTING"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:156
+msgid "Add the new Cloud to an exiting Group in |morpheus| ."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:157
+msgid "CREATE NEW"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:158
+msgid "Creates a new Group in |morpheus| and adds the Cloud to the Group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:160
+msgid ""
+"Confirm all settings are correct and select COMPLETE. The Azure Stack "
+"Cloud will be added, and |morpheus| will perform the initial cloud sync "
+"of:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:162
+msgid "Virtual Machines (if Inventory Existing Instances is enabled)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:164
+msgid "Virtual Images/Blueprints"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:165
+msgid "Network Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:166
+msgid "Storage Accounts"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:167
+msgid "Marketplace Catalog"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:168
+msgid "Availability Sets"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:170
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/Clouds/azure_stack/azure_stack.rst:170
+msgid ""
+"Synced Networks can be configured or deactivated from the Networks "
+"section in this Clouds detail page, or in the `Infrastructure > Networks`"
+" section."
+msgstr ""
+

@@ -1,0 +1,692 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:2
+msgid "Troubleshooting & Diagnostics"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:5
+msgid "Quick Health Check (UI)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:7
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
+"panel."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:9
+msgid "The Quorum panel displays:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:11
+msgid "Quorum status (ACHIEVED / LOST)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:12
+msgid "Total nodes / reachable / online / offline count"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:13
+msgid "Fenced node count"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:14
+msgid "Designated Coordinator"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:15
+msgid "Down hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:16
+msgid "Lockspaces status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:17
+msgid "Configured datastores"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:18
+msgid "Witness status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:19
+msgid "Site information"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:22
+msgid "Diagnostic Commands"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:24
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:24
+msgid ""
+"Layouts 1.3 and 2.0 do not use Pacemaker or ``pcs`` commands. Use the "
+"commands below for these layouts. Legacy clusters use the Pacemaker "
+"diagnostics in :doc:`/infrastructure/clusters/mvm`."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:27
+msgid "Corosync"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:29
+msgid ""
+"In layouts 1.3 and 2.0, Corosync provides the node membership list to DLM"
+" but is **not** used for quorum decisions. The |morpheus| Agent runs its "
+"own quorum system (via the ``morphd`` QuorumCheckService), which is how "
+"split quorum is achieved for stretch clusters and two-node GFS2 "
+"configurations. Corosync's ``Quorate`` state has no impact on cluster "
+"operation."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:31
+msgid "List cluster members:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:33
+msgid "corosync-quorumtool -l"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:37
+msgid "Query Corosync configuration map:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:39
+msgid "corosync-cmapctl"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:44
+msgid "DLM"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:46
+msgid "Check DLM status (verbose):"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:48
+msgid "dlm_tool status -v"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:52
+msgid "List DLM lockspaces:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:54
+msgid "dlm_tool ls"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:58
+msgid ""
+"Fence acknowledgement is managed by the |morpheus| Agent. Do not "
+"acknowledge a fence manually unless HPE Support has verified host "
+"isolation and directs the operation."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:61
+msgid "Agent Quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:63
+msgid "Query the agent quorum endpoint (returns JSON):"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:65
+msgid "curl -k https://localhost:7443/quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:69
+msgid "View cluster member configuration:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:71
+msgid "cat /opt/morpheus-node/.quorum-nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:75
+msgid "View heartbeat configuration:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:77
+msgid "cat /opt/morpheus-node/.hb"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:81
+msgid "View mounted datastores:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:83
+msgid "cat /opt/morpheus-node/.mounts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:88
+msgid "GFS2 Filesystem"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:90
+msgid "Check active GFS2 mounts:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:92
+msgid "mount | grep gfs2"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:96
+msgid "Check for GFS2 withdrawal:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:98
+msgid "cat /sys/fs/gfs2/*/withdraw"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:102
+msgid "Check for hanging mounts:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:104
+msgid "ps -aux | grep mount"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:109
+msgid "Multipath"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:111
+msgid "For layout 2.0, collect read-only storage state with:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:113
+msgid ""
+"sudo hvmcli storage multipath validate\n"
+"sudo hvmcli storage multipath status\n"
+"sudo hvmcli storage fc --multipath\n"
+"sudo hvmcli storage iscsi --multipath"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:120
+msgid ""
+"Confirm the expected WWN-based device is present and at least one path "
+"remains active. Do not create a datastore or return a host to service "
+"while all paths are failed. See :doc:`storage_operations` for the "
+"canonical multipath and stable-device guidance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:123
+msgid "Log Files"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:129
+msgid "Log Location"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:130
+msgid "Contents"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:131
+msgid "``/var/log/dlm_controld/dlm_controld.log``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:132
+msgid "DLM control daemon log"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:133
+msgid "``/var/log/kern.log``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:134
+msgid "Kernel messages (GFS2/DLM events)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:135
+msgid "``journalctl -u dlm``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:136
+msgid "DLM systemd journal"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:137
+msgid "``dmesg``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:138
+msgid "Kernel ring buffer (recent events)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:141
+msgid "Common Issues"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:144
+msgid "HVM OS Installer Media or Disk Error"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:146
+msgid ""
+"If HVM OS installation reports a checksum, storage, or unknown error, "
+"preserve evidence before changing the host:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:148
+msgid ""
+"Record the complete error and installation stage, and collect the "
+"installer logs."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:149
+msgid ""
+"Verify the ISO checksum against the value published for that release. If "
+"it differs, obtain the ISO again from HPE and recreate or remount the "
+"installation media."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:150
+msgid ""
+"Check management-controller virtual-media events and network reachability"
+" when the ISO is mounted by URL."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:151
+msgid ""
+"Run the server and storage-controller hardware diagnostics. Confirm the "
+"intended OS disk and RAID or HBA configuration are healthy and supported."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:152
+msgid ""
+"Confirm that required data on every candidate disk is backed up and "
+"recoverable."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:154
+msgid ""
+"Disk erasure is a destructive troubleshooting step, not a routine "
+"installation prerequisite and not a general checksum fix. Consider it "
+"only when media integrity and hardware checks pass, the selected "
+"installation disk contains an unwanted prior layout, and HPE Support or "
+"the server/storage owner directs reinitialization. Use the hardware "
+"vendor's documented erase or logical-drive recreation procedure. Verify "
+"disk identifiers before proceeding; erasing or recreating a logical drive"
+" permanently removes its partitions and data. Afterward, rerun hardware "
+"diagnostics and restart installation with verified media."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:156
+msgid ""
+"If the error persists, stop repeated installation or erase attempts and "
+"provide HPE Support with the ISO checksum, host model and firmware, "
+"storage-controller configuration and diagnostics, media method, exact "
+"error, and installer logs."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:159
+msgid "Legacy ``hpe-vm console`` Exit or Save Prompt"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:161
+msgid ""
+"Current HVM hosts use ``hvmcli`` commands and the |morpheus| Virtual "
+"Switch workflow for supported host configuration. Use the legacy "
+"interactive ``hpe-vm console`` only when the documentation for the "
+"installed HVM OS release or HPE Support explicitly directs it; do not "
+"repeat network or time-zone configuration solely because installation is "
+"complete."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:163
+msgid ""
+"When using a legacy console, distinguish **Save** from **Apply**. After "
+"editing networking, accept the disconnect warning only when you have "
+"alternate console access, apply the change, and verify the resulting "
+"address and connectivity before exiting. If an exit dialog still reports "
+"unsaved changes, cancel the exit and verify whether the change was "
+"applied rather than assuming that **Save** made it active or choosing to "
+"discard it."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:165
+msgid ""
+"If the terminal colors or cursor placement remain incorrect after leaving"
+" the legacy full-screen console, run ``reset``. If ``reset`` is "
+"unavailable, run ``clear`` to redraw the screen; reconnect the terminal "
+"if display state remains incorrect. These commands repair terminal "
+"display state and do not apply network configuration."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:168
+msgid "Node Unreachable"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:170
+msgid "**Symptoms:** Node shows as OFFLINE in the Quorum panel."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:172
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:203
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:213
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:236
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:247
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:258
+msgid "**Resolution:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:174
+msgid "Verify the |morpheus| agent is running on the affected host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:175
+msgid "Check network connectivity between hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:176
+msgid "Confirm port 7443 is open and accessible"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:177
+msgid "Check agent logs for connectivity errors"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:180
+msgid "Offline, Fenced, or Unclean Node"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:182
+msgid ""
+"First identify the cluster layout. For layouts 1.3 and 2.0, use the "
+"Quorum panel and Agent quorum endpoint—not ``pcs``—to record quorum, "
+"reachable nodes, ``fenced``, ``waitFencing``, lockspaces, and datastore "
+"status. Also collect Corosync membership, DLM status, GFS2 mounts, "
+"storage-path health, and agent/kernel logs before taking action."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:184
+msgid ""
+"Before recovery, verify why the host lost membership and confirm it "
+"cannot concurrently access shared storage from an isolated network path. "
+"Restore the failed management, quorum, or storage path before allowing "
+"the host to rejoin."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:186
+msgid ""
+"For layouts 1.3 and 2.0, reboot the fenced or unclean host. The Agent re-"
+"enters its quorum cycle after boot. Do not issue ``pcs resource cleanup``"
+" or manually acknowledge a DLM fence as a general unclean-state recovery "
+"step."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:188
+msgid ""
+"After reboot, confirm all of the following before placing workloads on "
+"the host:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:190
+msgid ""
+"The host is ONLINE and the Agent quorum endpoint reports the expected "
+"membership and quorum state"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:191
+msgid ""
+"Corosync and DLM list the expected members and no lockspace is waiting on"
+" fencing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:192
+msgid "Every expected GFS2 datastore is mounted and not withdrawn"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:193
+msgid "FC or iSCSI multipath reports the expected active paths"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:194
+msgid "VMs are not duplicated between the recovered host and failover hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:196
+msgid ""
+"If the host cannot be isolated, storage paths remain ambiguous, quorum is"
+" not achieved, a lockspace remains blocked, or the host does not rejoin "
+"cleanly after reboot, stop and contact HPE Support. Legacy layouts use "
+"the separate Pacemaker procedures in :doc:`/infrastructure/clusters/mvm`."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:199
+msgid "DLM Wait Fencing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:201
+msgid "**Symptoms:** DLM operations stall, waiting for fence acknowledgement."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:205
+msgid ""
+"The |morpheus| agent should automatically issue ``fence_ack`` after "
+"confirming the fenced node cannot access storage"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:206
+msgid ""
+"If automatic fencing is not resolving, retain the collected quorum, DLM, "
+"storage, and Agent evidence and contact HPE Support. Do not bypass "
+"fencing while host isolation is uncertain."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:209
+msgid "GFS2 Withdrawn"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:211
+msgid "**Symptoms:** GFS2 filesystem enters withdrawn state, I/O operations fail."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:215
+msgid "Attempt to unmount and remount the filesystem"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:216
+msgid "If remount fails, reboot the affected host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:217
+msgid ""
+"Investigate the cause (storage connectivity, DLM issue) before the host "
+"rejoins"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:220
+msgid "GFS2 Capacity Does Not Increase After LUN Expansion"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:222
+msgid ""
+"Array capacity, host path capacity, the multipath map, any intermediate "
+"block layer, and the GFS2 filesystem are separate layers. Do not rerun "
+"grow commands until each host reports the same stable WWN device and "
+"size. Collect array/LUN identity, ``lsblk``, multipath status, active "
+"mounts, ``df -hT``, DLM/quorum state, and kernel logs, then follow the "
+"coordinated procedure and stop points in :doc:`storage_operations`. Never"
+" recreate or shrink the filesystem to correct a size mismatch."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:225
+msgid "Corosync Shows Not Quorate"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:227
+msgid "**Symptoms:** ``corosync-quorumtool -s`` shows ``Quorate: No``."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:229
+msgid ""
+"**Impact:** In layouts 1.3 and 2.0, this has **no impact** on cluster "
+"operation. The |morpheus| Agent manages its own quorum independently of "
+"Corosync's quorate state. Corosync is used only to provide a node list to"
+" DLM, not for quorum decisions."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:231
+msgid "**When this occurs:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:233
+msgid "One or more nodes are down or a network partition has occurred"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:234
+msgid ""
+"This is expected in two-node clusters and stretch cluster configurations "
+"where Corosync alone cannot achieve majority quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:238
+msgid "No action is required for the Corosync quorate state itself"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:239
+msgid ""
+"Check the |morpheus| Agent quorum endpoint (``curl -k "
+"https://localhost:7443/quorum``) to verify the actual cluster quorum "
+"status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:240
+msgid ""
+"If the Agent quorum also shows issues, investigate network connectivity "
+"between hosts and ensure the |morpheus| Agent is running on all nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:243
+msgid "APD Activated"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:245
+msgid "**Symptoms:** VMs on shared storage have been shut down automatically."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:249
+msgid "Restore storage connectivity to the affected host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:250
+msgid "Restart the affected VMs once storage is confirmed healthy"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:251
+msgid "Investigate the root cause of the storage path failure"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:254
+msgid "Agent Not Sending Quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:256
+msgid ""
+"**Symptoms:** Agent is running but quorum data is not being sent or "
+"received."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:260
+msgid ""
+"Check ``/opt/morpheus-node/.quorum-nodes`` exists and contains valid "
+"cluster member data"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:261
+msgid "Verify agent connectivity to other cluster hosts on port 7443"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:262
+msgid ""
+"Restart the agent if configuration is correct but quorum is not "
+"functioning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:265
+msgid "Emergency Procedures"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:267
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:289
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:267
+msgid ""
+"Emergency procedures should only be used when automated recovery has "
+"failed. Incorrect use can lead to data loss or split-brain conditions."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:269
+msgid ""
+"For a failed host that must be permanently removed, use the UI workflow "
+"and stop conditions in :doc:`managing_hosts`. Do not substitute shell-"
+"level cluster removal commands."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:272
+msgid "Force Rejoin a Fenced Node"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:274
+msgid ""
+"Reboot the fenced node. Upon boot, the agent will re-enter the quorum "
+"cycle and rejoin the cluster when healthy."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:277
+msgid "Clear Stuck DLM"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:279
+msgid ""
+"Do not clear DLM fencing manually as a general recovery procedure. If the"
+" Agent does not resolve the fence after the failed host is demonstrably "
+"isolated, contact HPE Support with the collected quorum, DLM, storage-"
+"path, and Agent evidence."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:282
+msgid "Force Restart Cluster Services"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:284
+msgid ""
+"systemctl restart corosync\n"
+"systemctl restart dlm"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/troubleshooting.rst:289
+msgid ""
+"Use extreme caution restarting cluster services in production. This will "
+"temporarily disrupt cluster communication and may trigger fencing of the "
+"restarted node."
+msgstr ""
+

@@ -1,0 +1,302 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/logging/overview.rst:2
+msgid "Logging Overview"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:4
+msgid ""
+"|morpheus| provides a comprehensive logging system that captures, "
+"aggregates, and forwards logs from the appliance, managed hosts, and "
+"virtual machines."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:7
+msgid "Log Sources"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:13
+msgid "Source"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:14
+msgid "Location"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:15
+msgid "Description"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:16
+msgid "Application Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:17
+#: ../../administration/logging/overview.rst:23
+msgid "``/var/log/morpheus/morpheus-ui/``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:18
+msgid ""
+"|morpheus| application server logs (Tomcat/Grails). Includes API "
+"requests, provisioning operations, and application errors."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:19
+msgid "Audit Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:20
+msgid "Application database + UI"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:21
+msgid ""
+"User actions, login events, and configuration changes. Viewable in "
+"|AdmAct|."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:22
+msgid "API Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:24
+msgid ""
+"REST API request/response logging (when enabled via logback "
+"configuration)."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:25
+msgid "Nginx Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:26
+msgid "``/var/log/morpheus/nginx/``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:27
+msgid "Web server access and error logs for the appliance reverse proxy."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:28
+msgid "MySQL Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:29
+msgid "``/var/log/morpheus/mysql/``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:30
+msgid ""
+"Database server logs (embedded MySQL). Not present when using an external"
+" database."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:31
+msgid "RabbitMQ Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:32
+msgid "``/var/log/morpheus/rabbitmq/``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:33
+msgid "Message queue logs. Not present when using an external RabbitMQ cluster."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:34
+msgid "OpenSearch Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:35
+msgid "``/var/log/morpheus/opensearch/``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:36
+msgid "Search and log indexing engine logs."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:37
+msgid "Agent Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:38
+msgid "Managed hosts: ``/var/log/morpheus/morpheus-node/``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:39
+msgid "|morpheus| Agent logs on managed Linux hosts and HVM hypervisors."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:40
+msgid "Host/VM Logs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:41
+msgid "Managed hosts: ``/var/log/*.log``"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:42
+msgid ""
+"Application and system logs collected by the |morpheus| Agent from "
+"managed VMs and hosts."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:45
+msgid "Log Storage"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:47
+msgid ""
+"Logs collected from managed hosts and VMs are stored in **OpenSearch** on"
+" the appliance. These logs are searchable and viewable in the following "
+"locations:"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:49
+msgid "**Instance Logs** — Logs tab on an Instance detail page"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:50
+msgid "**Host Logs** — Logs tab on a Host detail page"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:51
+msgid "**Global Logs** — |MonLog| for cross-instance log search"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:53
+msgid ""
+"Log retention is controlled by the **Availability Time Frame** setting in"
+" |AdmSetMon|. Logs older than the configured retention period are "
+"automatically purged."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:55
+#: ../../administration/logging/overview.rst:89
+msgid "Note"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:55
+msgid ""
+"Appliance service logs (MySQL, RabbitMQ, OpenSearch, Nginx) are stored on"
+" the local filesystem and are not indexed in OpenSearch. Use the "
+"appliance log configuration to manage rotation and retention for these "
+"logs. See :doc:`appliance_logs` for details."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:58
+msgid "Disabling Logging"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:60
+msgid ""
+"Log collection from managed hosts can be disabled globally in |AdmSetMon|"
+" using the logging toggle. When disabled:"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:62
+msgid "The |morpheus| Agent stops forwarding logs from managed hosts"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:63
+msgid "Existing logs remain searchable until they expire per the retention policy"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:64
+msgid ""
+"Appliance service logs continue to be written to disk regardless of this "
+"setting"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:67
+msgid "Distributed Trace IDs"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:69
+msgid ""
+"|morpheus| includes a **trace ID** in all application log entries to "
+"correlate operations that span multiple threads, background jobs, or "
+"agent interactions. This is essential for troubleshooting complex "
+"operations like provisioning, migration, or failover that involve "
+"multiple asynchronous steps."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:71
+msgid "**How it works:**"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:73
+msgid ""
+"Each incoming request or scheduled job is assigned a unique trace ID (W3C"
+" traceparent format)"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:74
+msgid ""
+"The trace ID propagates automatically across thread boundaries, "
+"background jobs, parallel tasks, and agent communication"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:75
+msgid ""
+"All log entries produced during the operation include the same trace ID "
+"in the log output"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:77
+msgid "**Using trace IDs for troubleshooting:**"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:79
+msgid ""
+"To follow a single operation through the logs, search for the trace ID "
+"value. For example, a provisioning operation that triggers cloud sync, "
+"network configuration, and agent installation will share the same trace "
+"ID across all log entries, even if they execute on different threads or "
+"at different times."
+msgstr ""
+
+#: ../../administration/logging/overview.rst:81
+msgid ""
+"When configured in the logback pattern (see :doc:`appliance_logs`), the "
+"trace ID appears as the ``traceId`` MDC field:"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:83
+msgid ""
+"2026-07-13 10:15:32.001 [traceId=abc123def456] INFO  "
+"c.m.provision.KvmProvisionService - Starting VM provisioning\n"
+"2026-07-13 10:15:32.150 [traceId=abc123def456] INFO  "
+"c.m.network.NetworkService - Configuring network for VM\n"
+"2026-07-13 10:15:33.200 [traceId=abc123def456] INFO  "
+"c.m.agent.CommandService - Sending agent install command"
+msgstr ""
+
+#: ../../administration/logging/overview.rst:89
+msgid ""
+"Trace IDs are also passed to the |morpheus| Agent via W3C traceparent "
+"headers, allowing end-to-end correlation from the appliance through to "
+"host-level operations."
+msgstr ""
+

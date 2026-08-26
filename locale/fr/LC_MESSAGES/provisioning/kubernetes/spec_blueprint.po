@@ -1,0 +1,520 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:4
+msgid "Kubernetes Spec Blueprint"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:9
+msgid ""
+"The Kubernetes Spec blueprint type allows deploying raw Kubernetes YAML "
+"manifests as |morpheus| Apps. Unlike Helm charts which use templating, "
+"Kubernetes Spec blueprints deploy standard Kubernetes resource "
+"definitions directly. This is managed by the "
+"``KubernetesAppTemplateService``."
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:11
+msgid "Kubernetes Spec blueprints support:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:13
+msgid "Single or multi-document YAML manifests"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:14
+msgid "Any Kubernetes resource type (Deployments, Services, ConfigMaps, etc.)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:15
+msgid "Git repository integration for manifest storage"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:16
+msgid "Template parameter substitution"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:17
+msgid "Preview of resources before deployment"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:20
+msgid "Creating a Kubernetes Spec Blueprint"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:22
+msgid "Navigate to |LibBlu| (Library > Blueprints)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:23
+#: ../../provisioning/kubernetes/spec_blueprint.rst:90
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:24
+msgid "Choose **Kubernetes Spec** as the blueprint type"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:25
+#: ../../provisioning/kubernetes/spec_blueprint.rst:93
+msgid "Configure:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:27
+msgid "NAME"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:28
+msgid "Friendly name for the blueprint"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:29
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:30
+msgid "Optional description"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:31
+msgid "CATEGORY"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:32
+msgid "Optional category for organization"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:33
+msgid "SOURCE"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:34
+msgid "Select the source for the Kubernetes manifests:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:36
+msgid "**Repository** — Git repository containing YAML files"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:37
+msgid "**Path** — Subdirectory within the repository containing the manifests"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:38
+msgid "**Spec** — Paste YAML directly into the blueprint configuration"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:40
+msgid "CONFIG TYPE"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:41
+msgid "Format of the specification: ``yaml`` (default)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:43
+msgid "Select :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:46
+msgid "Manifest Structure"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:48
+msgid ""
+"Kubernetes Spec blueprints accept standard Kubernetes YAML. Multi-"
+"resource manifests are separated by ``---``:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:50
+msgid ""
+"apiVersion: apps/v1\n"
+"kind: Deployment\n"
+"metadata:\n"
+"  name: nginx-deployment\n"
+"  labels:\n"
+"    app: nginx\n"
+"spec:\n"
+"  replicas: 3\n"
+"  selector:\n"
+"    matchLabels:\n"
+"      app: nginx\n"
+"  template:\n"
+"    metadata:\n"
+"      labels:\n"
+"        app: nginx\n"
+"    spec:\n"
+"      containers:\n"
+"      - name: nginx\n"
+"        image: nginx:1.21\n"
+"        ports:\n"
+"        - containerPort: 80\n"
+"---\n"
+"apiVersion: v1\n"
+"kind: Service\n"
+"metadata:\n"
+"  name: nginx-service\n"
+"spec:\n"
+"  selector:\n"
+"    app: nginx\n"
+"  ports:\n"
+"  - port: 80\n"
+"    targetPort: 80\n"
+"  type: LoadBalancer"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:87
+msgid "Provisioning a Kubernetes Spec App"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:89
+msgid "Navigate to ``Provisioning > Apps``"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:91
+msgid "Choose the Kubernetes Spec blueprint"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:92
+#: ../../provisioning/kubernetes/spec_blueprint.rst:104
+msgid "Select :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:95
+msgid "APP NAME"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:96
+msgid "Name for the deployed application"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:97
+msgid "GROUP"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:98
+msgid "Target Group"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:99
+msgid "DEFAULT CLOUD"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:100
+msgid "Cloud containing the target cluster"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:101
+msgid "RESOURCE POOL"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:102
+msgid "Kubernetes namespace for deployment"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:105
+msgid "Configure any template parameters if defined"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:106
+msgid "Review the preview showing detected resources"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:107
+msgid "Select :guilabel:`COMPLETE`"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:110
+msgid "Resource Mapping"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:112
+msgid ""
+"When deploying a Kubernetes Spec blueprint, |morpheus| parses the YAML "
+"and creates corresponding resource records for each Kubernetes object. "
+"This enables:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:114
+msgid "Individual resource tracking in the App detail view"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:115
+msgid "Status monitoring per resource"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:116
+msgid "Lifecycle management (delete individual resources or the entire App)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:117
+msgid "Resource counts and relationship visualization"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:119
+msgid "Supported resource types that are mapped include:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:121
+msgid "Deployments"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:122
+msgid "StatefulSets"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:123
+msgid "DaemonSets"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:124
+msgid "Services"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:125
+msgid "ConfigMaps"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:126
+msgid "Secrets"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:127
+msgid "PersistentVolumeClaims"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:128
+msgid "Ingresses"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:129
+msgid "Jobs"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:130
+msgid "CronJobs"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:131
+msgid "ServiceAccounts"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:132
+msgid "Roles and RoleBindings"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:135
+msgid "Preview and Validation"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:137
+msgid ""
+"Before deployment, |morpheus| provides a preview of the resources that "
+"will be created:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:139
+msgid "File list from the repository (if using Git source)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:140
+msgid "Resource types and names parsed from the YAML"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:141
+msgid "Namespace assignment validation"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:143
+msgid "This allows operators to verify the deployment before committing."
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:146
+msgid "Git Repository Integration"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:148
+msgid "When using a Git repository as the source:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:150
+msgid "|morpheus| clones the repository at deployment time"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:151
+msgid ""
+"The specified path within the repo is scanned for ``.yaml`` and ``.yml`` "
+"files"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:152
+msgid "All YAML files in the path are combined and deployed as a single App"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:153
+msgid "Changes to the repository require redeployment (not auto-synced)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:156
+msgid "Managing Deployed Apps"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:158
+msgid "Deployed Kubernetes Spec Apps support:"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:160
+msgid "**View resources** — See all created Kubernetes objects and their status"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:161
+msgid "**Delete** — Remove all resources created by the App from the cluster"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:162
+msgid "**Refresh** — Sync current state from the cluster"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:165
+msgid "Kubernetes Spec vs Helm"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:171
+msgid "Aspect"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:172
+msgid "Kubernetes Spec"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:173
+msgid "Helm"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:174
+msgid "Templating"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:175
+msgid "None (raw YAML)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:176
+msgid "Full Go template engine"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:177
+msgid "Values/Parameters"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:178
+msgid "Limited substitution"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:179
+msgid "Full values.yaml support"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:180
+msgid "Versioning"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:181
+msgid "Via Git commits"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:182
+msgid "Chart versions + release history"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:183
+msgid "Upgrade workflow"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:184
+msgid "Redeploy"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:185
+msgid "``helm upgrade`` with history"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:186
+msgid "Rollback"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:187
+msgid "Redeploy previous version"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:188
+msgid "``helm rollback`` to revision"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:189
+msgid "Complexity"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:190
+msgid "Low — standard YAML"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:191
+msgid "Medium — requires chart structure"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:192
+msgid "Dependencies"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:193
+msgid "Manual"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:194
+msgid "Chart dependencies (subcharts)"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:195
+msgid "Best for"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:196
+msgid "Simple deployments, learning"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:197
+msgid "Complex apps, repeated deployments"
+msgstr ""
+
+#: ../../provisioning/kubernetes/spec_blueprint.rst:199
+msgid ""
+"Choose Kubernetes Spec blueprints for straightforward deployments with "
+"standard YAML manifests. Use Helm blueprints for applications requiring "
+"parameterization, complex dependency management, or upgrade/rollback "
+"workflows."
+msgstr ""
+

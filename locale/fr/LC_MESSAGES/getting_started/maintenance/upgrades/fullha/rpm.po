@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:2
+msgid "Full HA RPM Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:4
+msgid ""
+"The following covers upgrading the |morpheus| App nodes in Full HA "
+"Architecture configurations to |morphver|."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:6
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:11
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:57
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:106
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:6
+msgid ""
+"The following is only for Full HA Architecture configurations, where "
+"MySQL, Elasticsearch and RabbitMQ services are external to the App nodes."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:9
+msgid "|nonRollingUpgradeVer| or lower -> |morphver| Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:11
+msgid ""
+"It is important to stop the morpheus-ui service on all app nodes prior to"
+" upgrade. Failure to do so will result in a flood of log errors due to "
+"previous message serialization conflict. The messages will eventually "
+"expire and the logs will clear."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:13
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:66
+msgid "Warning"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:13
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:66
+msgid ""
+"|morpheus| |morphver| contains new node and VM node packages that require"
+" 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus"
+"/package-repos/*`` after |morphver| package installation and before "
+"reconfigure to clean old node and vm node packages from the package-repo "
+"when room is needed."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:15
+msgid ""
+"Starting with App Node 3, on **All** App Nodes, stop the morpheus-ui "
+"services via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout,"
+" run ``morpheus-ctl graceful-kill morpheus-ui``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:17
+msgid "[root@app-server-3 ~]# morpheus-ctl stop morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:21
+msgid "[root@app-server-2 ~]# morpheus-ctl stop morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:25
+msgid "[root@app-server-1 ~]# morpheus-ctl stop morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:29
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:68
+msgid ""
+"Upgrade the RPM package on App Node 1, then run a Reconfigure on App Node"
+" 1"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:31
+msgid ""
+"[root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-1 ~]# sudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:37
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:64
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:37
+msgid ""
+"All services will automatically be stopped and started during the "
+"reconfigure process. After the reconfigure has succeeded, tail the ui "
+"service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:39
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:80
+msgid ""
+"Once App Node 1 upgrade has completed and the ui is available, upgrade "
+"the RPM package on App Node 2, then run a Reconfigure on App Node 2."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:41
+msgid ""
+"[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-2 ~]# sudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:47
+msgid ""
+"Then upgrade the RPM package on App Node 3, then run a Reconfigure on App"
+" Node 3"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:49
+msgid ""
+"[root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-3 ~]# sudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:55
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:104
+msgid ""
+"The upgrade is complete and the |morpheus|-ui services should be running "
+"with clustered Elasticsearch and RabbitMQ services across the 3 nodes."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:57
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:106
+msgid ""
+"If reconfigure after a rpm package upgrade stalls or hangs on starting a "
+"local service it is possible the ``morpheus-runsvdir`` service did not "
+"start or a process it was managing was manually shutdown or killed. To "
+"resolve, run ``systemctl stop morpheus-runsvdir`` then ``systemctl start "
+"morpheus-runsvdir``, then run reconfigure again, ``morpheus-ctl "
+"reconfigure``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:62
+msgid "|minRollingUpgradeVer| -> |morphver| Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:64
+msgid ""
+"Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| "
+"only."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:70
+msgid ""
+"[root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-1 ~]# sudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl reconfigure\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:78
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:90
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:102
+msgid ""
+"After the reconfigure has succeeded, tail the ui service to watch ui "
+"startup logs with ``morpheus-ctl tail morpheus-ui``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:82
+msgid ""
+"[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-2 ~]# sudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl stop morpheus-ui\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl reconfigure\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:92
+msgid ""
+"Once App Node 2 upgrade has completed and the u is available, upgrade the"
+" RPM package on App Node 3, then run a Reconfigure on App Node 3"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/fullha/rpm.rst:94
+msgid ""
+"[root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-3 ~]# sudo rpm -Uhv morpheus-"
+"appliance-x.x.x-x.x86_64.rpm\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl stop morpheus-ui\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl reconfigure\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+

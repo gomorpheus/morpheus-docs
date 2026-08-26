@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:4
+msgid "Elasticsearch 7.x Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:6
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:16
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:20
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:22
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:6
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:20
+msgid ""
+"This is an example Elasticsearch Upgrade for reference only, and is not "
+"indicative of the upgrade procedure for every "
+"environment/user/customer/configuration. This example assumes CentOS "
+"hosts and will result in loss of existing Elasticsearch data and is the "
+"fastest upgrade path. Data retention is possible through alternate "
+"upgrade paths. Refer to `Elasticsearch Upgrade Documentation "
+"<https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-"
+"upgrade.html>`_ before upgrading to v4.1.2 if your Appliance's "
+"Elasticsearch service is external."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:10
+msgid ""
+"|morpheus| v4.1.2+ requires Elasticsearch 7.x. Earlier versions of "
+"|morpheus| ran against Elasticsearch v5.x. The Elasticsearch version for "
+"Appliance configurations with the default local Elasticsearch target will"
+" automatically be upgraded and no manual upgrade is required."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:12
+msgid ""
+"For Appliance configurations with an existing external Elasticsearch "
+"service, an upgrade of Elasticsearch to v7.x is required to upgrade "
+"|morpheus| to v4.1.2+. |morpheus| can be pointed to a new Elasticsearch "
+"7.x service as an alternate to upgrading an existing cluster."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:14
+msgid ""
+"Elasticsearch 7.x upgrade is really a new install, as by default no data "
+"will be retained. Please refer to Elasticsearch documentation if backing "
+"up and restoring your 5.x Elasticsearch |morpheus| data is required. For "
+"most users, the log and stat data stored in Elasticsearch is not critical"
+" and the 5.x Elasticsearch data backup and restoration is not necessary."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:16
+msgid ""
+"Elasticsearch 7.x configuration and paths are not the same as v5.x. "
+"Please pay attention to the elasticsearch.yml config changes and ensure "
+"proper permissions on specified paths."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:19
+msgid "Install Elasticsearch 7.x"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:22
+msgid ""
+"Upgrading from v5.x directly to 7.x requires all nodes in a Cluster to be"
+" stopped. The |morpheus| ui should be stopped prior to the cluster "
+"upgrade."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:25
+msgid "Stop Elasticsearch on all nodes in the Cluster"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:27
+msgid "sudo -i service elasticsearch stop"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:31
+msgid "On each ES node run the following to install Elasticsearch."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:33
+msgid "rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:37
+msgid ""
+"wget "
+"https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.6.2-x86_64.rpm"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:41
+msgid "sudo rpm -Uhv elasticsearch-7.6.2-x86_64.rpm"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:45
+msgid "If necessary, update permissions for the specified log and data paths"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:47
+msgid ""
+"sudo chown -R elasticsearch:elasticsearch /var/log/elasticsearch/\n"
+"sudo chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:52
+msgid ""
+"Edit ``/etc/elasticsearch/elasticsearch.yml`` and update each nodes "
+"configurations accordingly. Please note several attributes differ in 7.x "
+"from 5.x."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:54
+msgid ""
+"sudo vi /etc/elasticsearch/elasticsearch.yml\n"
+"\n"
+"      #Sample elasticsearch.yml config. Adjusting values in "
+"elasticsearch.yml for each node in the cluster.\n"
+"      #Note: Sample only, user configurations and requirements will vary."
+"\n"
+"\n"
+"      node.name: \"es-node-01\" ##unique name of this node\n"
+"      network.host: 10.30.22.152 ##ip of this node\n"
+"      http.port: 9200\n"
+"      discovery.seed_hosts: "
+"[\"10.30.22.152\",\"10.30.22.153\",\"10.30.22.154\"] ## add all cluster "
+"node ip's\n"
+"      cluster.initial_master_nodes: "
+"[\"10.30.22.152\",\"10.30.22.153\",\"10.30.22.154\"] ## add all cluster "
+"node ip's\n"
+"      path.logs: /var/log/elasticsearch ## Or your preferred location.\n"
+"      path.data: /usr/share/elasticsearch/ ## Or your preferred location."
+"\n"
+"      discovery.zen.minimum_master_nodes: 2"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:70
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:95
+msgid "Save elasticsearch.yml"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:71
+msgid "Start Elasticsearch on each node."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:73
+msgid "sudo service elasticsearch start"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:77
+msgid ""
+"Once all nodes have joined the cluster, update "
+"``/etc/elasticsearch/elasticsearch.yml`` and uncomment "
+"``discovery.zen.minimum_master_nodes: 2``:"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:79
+msgid ""
+"sudo vi /etc/elasticsearch/elasticsearch.yml\n"
+"\n"
+"      #Sample elasticsearch.yml config. Adjusting values in "
+"elasticsearch.yml for each node in the cluster.\n"
+"      #Note: Sample only, user configurations and requirements will vary."
+"\n"
+"\n"
+"      node.name: \"es-node-01\" ##unique name of this node\n"
+"      network.host: 10.30.22.152 ##ip of this node\n"
+"      http.port: 9200\n"
+"      discovery.seed_hosts: "
+"[\"10.30.22.152\",\"10.30.22.153\",\"10.30.22.154\"] ## add all cluster "
+"node ip's\n"
+"      cluster.initial_master_nodes: "
+"[\"10.30.22.152\",\"10.30.22.153\",\"10.30.22.154\"] ## add all cluster "
+"node ip's\n"
+"      path.logs: /var/log/elasticsearch ## Ensure permissions on "
+"specified path\n"
+"      path.data: /usr/share/elasticsearch ## Ensure permissions on "
+"specified path\n"
+"      discovery.zen.minimum_master_nodes: 2"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:97
+msgid ""
+"Restart Ealsticsearch service, one node at a time (2 nodes are now "
+"required to be running in the cluster at any give time)"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:99
+msgid "sudo service elasticsearch restart"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:103
+msgid "Verify cluster health"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:105
+msgid ""
+"curl http://localhost:9200/_cluster/health\n"
+"\n"
+"or\n"
+"\n"
+"curl http://node_ip:9200/_cluster/health"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/esupgrade.rst:113
+msgid ""
+"Once the cluster status is green, |morpheus| can be upgraded to v4.1.2+. "
+"No configuration or port changes in morpheus.rb on the appliance nodes "
+"are required."
+msgstr ""
+

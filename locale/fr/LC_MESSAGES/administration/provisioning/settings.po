@@ -1,0 +1,362 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/provisioning/settings.rst:4
+msgid "Provisioning Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:9
+msgid ""
+"Provisioning Settings (:menuselection:`Administration --> Settings --> "
+"Provisioning`) configure global defaults and behaviors for the |morpheus|"
+" provisioning engine. These settings control the provisioning wizard "
+"experience, default configurations, naming behavior, and infrastructure-"
+"as-code settings."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:11
+#: ../../administration/provisioning/settings.rst:57
+msgid "Note"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:11
+msgid ""
+"These settings apply appliance-wide (Master Tenant scope) or per-Tenant "
+"(Account scope) depending on the specific setting."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:14
+msgid "Role Permissions"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:16
+msgid ""
+"**Administration: Provisioning Settings** with ``Full`` access is "
+"required to modify provisioning settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:19
+msgid "General Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:21
+msgid "Allow Cloud Selection"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:22
+msgid ""
+"When enabled, the Cloud selection dropdown is displayed in the "
+"provisioning wizard. When disabled, the default Cloud is used "
+"automatically."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:24
+msgid "Allow Host Selection"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:25
+msgid ""
+"When enabled, the Host selection dropdown is shown during provisioning. "
+"When disabled, host selection is handled automatically by |morpheus| "
+"placement logic."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:27
+msgid "Require Environment Selection"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:28
+msgid ""
+"When enabled, users must select an Environment (e.g., Development, "
+"Staging, Production) during provisioning. Environments are configured in "
+"|ProEnv|."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:30
+msgid "Show Pricing"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:31
+msgid ""
+"Controls visibility of pricing estimates in the provisioning wizard and "
+"on Instance/Host detail pages."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:33
+msgid "Hide Datastore Stats On Selection"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:34
+msgid ""
+"When enabled, datastore utilization statistics and size information are "
+"hidden in provisioning and app wizards."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:36
+msgid "Cross-Tenant Naming Policies"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:37
+msgid ""
+"When enabled, the ``sequence`` value in naming policies applies globally "
+"across all Tenants rather than per-Tenant. This prevents naming "
+"collisions in shared infrastructure."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:39
+msgid "Reuse Naming Sequence Numbers"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:40
+msgid ""
+"When enabled, sequence numbers are recycled when Instances are removed. "
+"When disabled, |morpheus| tracks all issued sequence numbers and always "
+"uses the next available number, preventing name reuse."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:42
+msgid "Deployment Archive Store"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:43
+msgid ""
+"Sets the default Storage Provider for storing deployment archives. "
+"Storage Providers are configured in Infrastructure > Storage."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:46
+msgid "Cloud-Init Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:48
+msgid ""
+"|morpheus| can inject global users during provisioning. This requires "
+"Cloud-Init (Linux), Cloudbase-Init (Windows), or VMware Tools on the "
+"provisioned images."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:51
+msgid "Linux"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:53
+msgid "**USERNAME:** Default user added to Linux Instances during provisioning"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:54
+msgid "**PASSWORD:** Password for the Linux user"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:55
+msgid ""
+"**KEYPAIR:** SSH key pair added for the Linux user (select from "
+"Infrastructure > Trust > Key Pairs)"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:57
+msgid ""
+"Either a password, key pair, or both can be configured. Key pairs are "
+"managed in Infrastructure > Trust."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:60
+msgid "Windows Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:62
+msgid ""
+"**ADMINISTRATOR PASSWORD:** Default password set for the Windows "
+"Administrator account during provisioning"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:65
+msgid "PXE Boot Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:67
+msgid ""
+"**DEFAULT ROOT PASSWORD:** Password set for root during PXE boot "
+"provisioning"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:70
+msgid "App Blueprint Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:72
+msgid "Sets the default Blueprint Type selected when creating new Apps:"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:74
+msgid "Morpheus"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:75
+msgid "ARM Template"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:76
+msgid "CloudFormation"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:77
+msgid "Terraform"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:78
+msgid "Kubernetes Spec"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:79
+msgid "Helm Chart"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:82
+msgid "Terraform Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:84
+msgid "Terraform Runtime"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:85
+msgid ""
+"Selects the default Terraform runtime version for new deployments. "
+"Available versions depend on the |morpheus| appliance version."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:87
+msgid "Terraform Log Level"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:88
+msgid "Sets the verbosity of Terraform execution logs:"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:90
+msgid "**Default:** Standard output"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:91
+msgid "**Debug:** Detailed debug logging"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:92
+msgid "**Trace:** Maximum verbosity (warning: produces large output)"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:95
+msgid "Ordering and Display"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:97
+msgid ""
+"|morpheus| allows configuration of which provisioning features are "
+"visible in the navigation:"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:99
+msgid "Enable Instances"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:100
+msgid "Show/hide the Instances section in Provisioning navigation."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:102
+msgid "Enable Apps"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:103
+msgid "Show/hide the Apps section in Provisioning navigation."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:105
+msgid "Enable Catalog"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:106
+msgid "Show/hide the Self-Service Catalog section."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:108
+msgid ""
+"These toggles allow administrators to tailor the |morpheus| experience to"
+" their organization's provisioning workflow — for example, hiding direct "
+"Instance provisioning in favor of catalog-based self-service."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:111
+msgid "Saving Settings"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:113
+msgid "After modifying any provisioning settings:"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:115
+msgid "Click :guilabel:`SAVE` at the bottom of the settings page"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:116
+msgid "A confirmation message indicates successful save"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:118
+msgid ""
+"Settings take effect immediately for subsequent provisioning operations. "
+"Existing Instances are not affected by settings changes."
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:121
+msgid "API"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:123
+msgid "Provisioning settings can be managed via the API:"
+msgstr ""
+
+#: ../../administration/provisioning/settings.rst:125
+#, python-brace-format
+msgid ""
+"# Get provisioning settings\n"
+"curl \"$MORPHEUS_API_URL/api/provisioning-settings\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\"\n"
+"\n"
+"# Update provisioning settings\n"
+"curl -X PUT \"$MORPHEUS_API_URL/api/provisioning-settings\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\n"
+"    \"provisioningSettings\": {\n"
+"      \"allowZoneSelection\": true,\n"
+"      \"requireEnvironments\": false,\n"
+"      \"showPricing\": true,\n"
+"      \"reusePlatformSequence\": false\n"
+"    }\n"
+"  }'"
+msgstr ""
+

@@ -1,0 +1,225 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:2
+msgid "3-Node HA Debian / Ubuntu Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:3
+msgid ""
+"The following covers upgrading the |morpheus| App nodes in 3 Node HA "
+"configurations to |morphver|."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:5
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:19
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:72
+msgid "Warning"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:5
+msgid "As a best practice, always backup your database prior to any upgrade."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:7
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:63
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:113
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:7
+msgid "The following is only for \"3 Node HA\" Architecture configurations."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:10
+msgid "|morpheus| Packages"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:11
+msgid ""
+"|morpheus| Release Package urls can be obtained from "
+"`https://app.morpheushub.com <https://app.morpheushub.com>`_"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:14
+msgid "|nonRollingUpgradeVer| or lower -> |morphver| Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:19
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:72
+msgid ""
+"|morpheus| |morphver| contains new node and VM node packages that require"
+" 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus"
+"/package-repos/*`` after |morphver| package installation and before "
+"reconfigure to clean old node and vm node packages from the package-repo "
+"when room is needed."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:21
+msgid ""
+"Starting with Node 3, on **All** App Nodes, stop the morpheus-ui services"
+" via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout, run "
+"``morpheus-ctl graceful-kill morpheus-ui``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:23
+msgid "[root@app-server-3 ~]# morpheus-ctl stop morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:27
+msgid "[root@app-server-2 ~]# morpheus-ctl stop morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:31
+msgid "[root@app-server-1 ~]# morpheus-ctl stop morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:35
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:74
+msgid "Upgrade the deb package on Node 1, then run a Reconfigure on Node 1"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:37
+msgid ""
+"[root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\n"
+"[root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:43
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:70
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:43
+msgid ""
+"All services will automatically be stopped and started during the "
+"reconfigure process. After the reconfigure has succeeded, tail the ui "
+"service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:45
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:86
+msgid ""
+"Once Node 1 upgrade has completed and the ui is available, upgrade the "
+"deb package on Node 2, then run a Reconfigure on Node 2."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:47
+msgid ""
+"[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\n"
+"[root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:53
+msgid "Then upgrade the deb package on Node 3, and run a Reconfigure on Node 3"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:55
+msgid ""
+"[root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\n"
+"[root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:61
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:111
+msgid ""
+"The upgrade is complete and the |morpheus|-ui services should be running "
+"with clustered Elasticsearch and RabbitMQ services across the 3 nodes."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:63
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:113
+msgid ""
+"If reconfigure after a rpm package upgrade stalls or hangs on starting a "
+"service (mysql, rabbitmq, elasticsearch ...) it is possible the "
+"``morpheus-runsvdir`` service did not start or a process it was managing "
+"was manually shutdown or killed. To resolve, run ``systemctl stop "
+"morpheus-runsvdir`` then ``systemctl start morpheus-runsvdir``, then run "
+"reconfigure again, ``morpheus-ctl reconfigure``."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:68
+msgid "|minRollingUpgradeVer| or higher -> |morphver| Upgrade"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:70
+msgid ""
+"Rolling upgrades are supported for |minRollingUpgradeVer| or higher -> "
+"|morphver| only."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:76
+msgid ""
+"[root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\n"
+"[root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl reconfigure\n"
+"[root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:84
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:96
+msgid ""
+"After the reconfigure has succeeded, tail the ui service to watch ui "
+"startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is "
+"started, proceed to the next node."
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:88
+msgid ""
+"[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\n"
+"[root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl stop morpheus-ui\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl reconfigure\n"
+"[root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:98
+msgid ""
+"Once Node 2 upgrade has completed and the ui is available, upgrade the "
+"deb package on Node 3, and run a Reconfigure on Node 3"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:100
+msgid ""
+"[root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\n"
+"[root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl stop morpheus-ui\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl reconfigure\n"
+"[root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:109
+msgid ""
+"After the reconfigure has succeeded, tail the ui service to watch ui "
+"startup logs with ``morpheus-ctl tail morpheus-ui``."
+msgstr ""
+

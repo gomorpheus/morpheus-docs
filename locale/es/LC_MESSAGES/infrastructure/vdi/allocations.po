@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/vdi/allocations.rst:4
@@ -31,24 +31,24 @@ msgstr "Descripción general"
 #: ../../infrastructure/vdi/allocations.rst:9
 msgid ""
 "VDI Allocations represent the assignment of a VDI Pool instance to a "
-"specific user. When a user requests a virtual desktop session, |morpheus| "
-"creates an allocation that binds an available Instance from the pool to that"
-" user for the duration of their session (non-persistent pools) or "
+"specific user. When a user requests a virtual desktop session, |morpheus|"
+" creates an allocation that binds an available Instance from the pool to "
+"that user for the duration of their session (non-persistent pools) or "
 "indefinitely (persistent pools)."
 msgstr ""
 "VDI Allocations represent el assignment de un VDI Pool instance a un "
 "específico usuario. Cuando un usuario solicitudes un escritorio virtual "
 "session, |morpheus| crea un allocation ese binds un disponible Instancia "
-"desde el pool a ese usuario para el duration de su session (non-persistente "
-"pools) o indefinitely (persistente pools)."
+"desde el pool a ese usuario para el duration de su session (non-"
+"persistente pools) o indefinitely (persistente pools)."
 
 #: ../../infrastructure/vdi/allocations.rst:11
 msgid ""
-"Allocations are managed automatically by |morpheus| but can be monitored and"
-" manually managed by administrators."
+"Allocations are managed automatically by |morpheus| but can be monitored "
+"and manually managed by administrators."
 msgstr ""
-"Allocations son administrado automáticamente por |morpheus| pero puede be "
-"monitored y manualmente administrado por administrators."
+"Allocations son administrado automáticamente por |morpheus| pero puede be"
+" monitored y manualmente administrado por administrators."
 
 #: ../../infrastructure/vdi/allocations.rst:14
 msgid "Allocation Lifecycle"
@@ -193,8 +193,7 @@ msgstr ""
 
 #: ../../infrastructure/vdi/allocations.rst:61
 msgid "A new Instance is provisioned to maintain the pool's minimum size"
-msgstr ""
-"Un nuevo Instancia es aprovisionado a maintain el pool's mínimo tamaño"
+msgstr "Un nuevo Instancia es aprovisionado a maintain el pool's mínimo tamaño"
 
 #: ../../infrastructure/vdi/allocations.rst:62
 msgid "User data is not preserved between sessions"
@@ -250,8 +249,7 @@ msgstr "Seleccionar un pool"
 
 #: ../../infrastructure/vdi/allocations.rst:82
 msgid "View the Allocations tab showing all current allocations for that pool"
-msgstr ""
-"Ver el Allocations pestaña showing todos actual allocations para ese pool"
+msgstr "Ver el Allocations pestaña showing todos actual allocations para ese pool"
 
 #: ../../infrastructure/vdi/allocations.rst:85
 msgid "Via API"
@@ -259,7 +257,8 @@ msgstr "Via API"
 
 #: ../../infrastructure/vdi/allocations.rst:87
 msgid ""
-"``GET /api/vdi-allocations`` returns all allocations with filtering support:"
+"``GET /api/vdi-allocations`` returns all allocations with filtering "
+"support:"
 msgstr ""
 "``GET /api/vdi-allocations`` devuelve todos allocations con filtering "
 "support:"
@@ -309,8 +308,7 @@ msgid "**Recyclable** — Whether the allocation can be recycled (reused)"
 msgstr "**Recyclable** — Whether el allocation puede be recycled (reused)"
 
 #: ../../infrastructure/vdi/allocations.rst:104
-msgid ""
-"**Release Date** — When the allocation will be released (after timeout)"
+msgid "**Release Date** — When the allocation will be released (after timeout)"
 msgstr ""
 "**Release Date** — Cuando el allocation será be released (después de "
 "timeout)"
@@ -332,34 +330,38 @@ msgid ""
 "The lease timeout controls when allocations are released after user "
 "disconnect:"
 msgstr ""
-"El lease timeout controls cuando allocations son released después de usuario"
-" disconnect:"
+"El lease timeout controls cuando allocations son released después de "
+"usuario disconnect:"
 
 #: ../../infrastructure/vdi/allocations.rst:113
 msgid ""
-"**Non-persistent pools:** Recommended timeout of ~10 minutes. After expiry, "
-"the VM is destroyed."
+"**Non-persistent pools:** Recommended timeout of ~10 minutes. After "
+"expiry, the VM is destroyed."
 msgstr ""
 "**Non-persistent pools:** Recommended timeout de ~10 minutes. Después de "
 "expiry, el VM es destroyed."
 
 #: ../../infrastructure/vdi/allocations.rst:114
 msgid ""
-"**Persistent pools:** Recommended timeout of ~1 hour. After expiry, the VM "
-"is shut down."
+"**Persistent pools:** Recommended timeout of ~1 hour. After expiry, the "
+"VM is shut down."
 msgstr ""
-"**Persistent pools:** Recommended timeout de ~1 hour. Después de expiry, el "
-"VM es shut down."
+"**Persistent pools:** Recommended timeout de ~1 hour. Después de expiry, "
+"el VM es shut down."
+
+#: ../../infrastructure/vdi/allocations.rst:116
+msgid "Important"
+msgstr ""
 
 #: ../../infrastructure/vdi/allocations.rst:116
 msgid ""
 "Lease timeouts auto-extend for as long as the user is logged into or "
-"browsing any area of the |morpheus| application. Once the user closes their "
-"browser or logs out, timeouts stop auto-extending."
+"browsing any area of the |morpheus| application. Once the user closes "
+"their browser or logs out, timeouts stop auto-extending."
 msgstr ""
-"Lease timeouts auto-extend para como largo como el usuario es logged en o "
-"browsing cualquier area del |morpheus| aplicación. Once el usuario closes su"
-" browser o registros out, timeouts detener auto-extending."
+"Lease timeouts auto-extend para como largo como el usuario es logged en o"
+" browsing cualquier area del |morpheus| aplicación. Once el usuario "
+"closes su browser o registros out, timeouts detener auto-extending."
 
 #: ../../infrastructure/vdi/allocations.rst:119
 msgid "Pool Sizing and Allocations"
@@ -371,12 +373,12 @@ msgstr "Allocations interact con pool sizing parámetros:"
 
 #: ../../infrastructure/vdi/allocations.rst:123
 msgid ""
-"**Minimum Idle** — Minimum number of available (unassigned) allocations to "
-"maintain. |morpheus| proactively provisions instances to meet this "
+"**Minimum Idle** — Minimum number of available (unassigned) allocations "
+"to maintain. |morpheus| proactively provisions instances to meet this "
 "threshold."
 msgstr ""
-"**Minimum Idle** — Mínimo número de disponible (unassigned) allocations a "
-"maintain. |morpheus| proactively aprovisiona instances a meet este "
+"**Minimum Idle** — Mínimo número de disponible (unassigned) allocations a"
+" maintain. |morpheus| proactively aprovisiona instances a meet este "
 "threshold."
 
 #: ../../infrastructure/vdi/allocations.rst:124
@@ -384,8 +386,8 @@ msgid ""
 "**Initial Pool Size** — Number of instances provisioned when the pool is "
 "created."
 msgstr ""
-"**Initial Pool Size** — Número de instances aprovisionado cuando el pool es "
-"creado."
+"**Initial Pool Size** — Número de instances aprovisionado cuando el pool "
+"es creado."
 
 #: ../../infrastructure/vdi/allocations.rst:125
 msgid ""
@@ -397,13 +399,13 @@ msgstr ""
 
 #: ../../infrastructure/vdi/allocations.rst:127
 msgid ""
-"When an allocation is released (non-persistent), the pool controller checks "
-"if the available count has dropped below the minimum idle threshold and "
-"provisions replacements."
+"When an allocation is released (non-persistent), the pool controller "
+"checks if the available count has dropped below the minimum idle "
+"threshold and provisions replacements."
 msgstr ""
 "Cuando un allocation es released (non-persistente), el pool controller "
-"checks si el disponible cantidad tiene dropped a continuación el mínimo idle"
-" threshold y aprovisiona replacements."
+"checks si el disponible cantidad tiene dropped a continuación el mínimo "
+"idle threshold y aprovisiona replacements."
 
 #: ../../infrastructure/vdi/allocations.rst:130
 msgid "Managing Allocations"
@@ -470,11 +472,10 @@ msgstr ""
 "usuario's local account en el VDI desktop. Este ensures:"
 
 #: ../../infrastructure/vdi/allocations.rst:156
-msgid ""
-"Windows domain credentials or local accounts are configured on first use"
+msgid "Windows domain credentials or local accounts are configured on first use"
 msgstr ""
-"Windows domain credentials o local accounts están configurados en primero "
-"usar"
+"Windows domain credentials o local accounts están configurados en primero"
+" usar"
 
 #: ../../infrastructure/vdi/allocations.rst:157
 msgid "Subsequent sessions reuse the existing local account"
@@ -491,12 +492,12 @@ msgstr "Solución de problemas"
 #: ../../infrastructure/vdi/allocations.rst:163
 msgid ""
 "**Allocation stuck in \"preparing\":** Check the Instance provisioning "
-"status in ``Provisioning > Instances``. The underlying VM may have failed to"
-" provision."
+"status in ``Provisioning > Instances``. The underlying VM may have failed"
+" to provision."
 msgstr ""
-"**Allocation stuck in \"preparing\":** Verificar el Instancia provisioning "
-"estado en ``Provisioning > Instances``. El underlying VM puede tienen falló "
-"a provision."
+"**Allocation stuck in \"preparing\":** Verificar el Instancia "
+"provisioning estado en ``Provisioning > Instances``. El underlying VM "
+"puede tienen falló a provision."
 
 #: ../../infrastructure/vdi/allocations.rst:164
 msgid ""
@@ -516,17 +517,20 @@ msgstr ""
 
 #: ../../infrastructure/vdi/allocations.rst:166
 msgid ""
-"**User cannot connect:** Verify the allocation status is \"reserved\" and "
-"the Instance is powered on. Check Guacamole connectivity."
+"**User cannot connect:** Verify the allocation status is \"reserved\" and"
+" the Instance is powered on. Check Guacamole connectivity."
 msgstr ""
-"**Usuario cannot connect:** Verificar el allocation estado es \"reserved\" y"
-" el Instancia es powered en. Verificar Guacamole connectivity."
+"**Usuario cannot connect:** Verificar el allocation estado es "
+"\"reserved\" y el Instancia es powered en. Verificar Guacamole "
+"connectivity."
 
 #: ../../infrastructure/vdi/allocations.rst:167
 msgid ""
-"**Persistent allocation not preserving data:** Ensure the pool type is set "
-"to Persistent and the Instance is shutting down (not being destroyed)."
+"**Persistent allocation not preserving data:** Ensure the pool type is "
+"set to Persistent and the Instance is shutting down (not being "
+"destroyed)."
 msgstr ""
 "**Persistent allocation not preserving data:** Asegurar el pool tipo es "
 "establecer a Persistente y el Instancia es shutting down (no being "
 "destroyed)."
+

@@ -1,0 +1,361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/preseed_scripts.rst:4
+msgid "Preseed/Kickstart Scripts"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:9
+msgid ""
+"Preseed Scripts (|TooPre|) manage Kickstart and Preseed configuration "
+"files for automated operating system installation during bare-metal and "
+"image build workflows. These scripts provide the unattended installation "
+"answers that configure partitioning, networking, packages, and post-"
+"installation steps."
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:11
+msgid ""
+"Preseed scripts are served over HTTP by the |morpheus| appliance and "
+"referenced from boot scripts or image build configurations."
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:13
+msgid "Note"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:13
+msgid ""
+"Preseed files are publicly accessible by filename via HTTP URL. The "
+"filename serves as the access identifier. A future enhancement may add "
+"temporary URL support for provisioning-phase-only access."
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:16
+msgid "Role Permissions"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:18
+msgid "Access to Preseed Scripts is controlled by the following role permission:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:20
+msgid "**Tools: Image Builder** — ``None``, ``Read``, or ``Full``"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:22
+msgid "**None:** Cannot access Preseed Scripts"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:23
+msgid "**Read:** Can view preseed scripts"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:24
+msgid "**Full:** Can create, edit, and delete preseed scripts"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:27
+msgid "Viewing Preseed Scripts"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:29
+msgid "Navigate to |TooPre| (Tools > Preseed Scripts)"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:30
+msgid "The list displays all preseed scripts with:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:32
+msgid "**File Name:** The script filename (must be unique)"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:33
+msgid "**Description:** Script description"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:34
+msgid "**Created By:** User who created the script"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:37
+msgid "Creating a Preseed Script"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:39 ../../tools/preseed_scripts.rst:150
+#: ../../tools/preseed_scripts.rst:158
+msgid "Navigate to |TooPre|"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:40
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:41
+msgid "Complete the form:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:43
+msgid ""
+"**FILE NAME:** Unique filename for the script (e.g., ``centos9-ks.cfg``, "
+"``ubuntu-22.04.seed``). This determines the URL where the script is "
+"served."
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:44
+msgid "**DESCRIPTION:** Optional description"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:45
+msgid "**CONTENT:** The preseed or kickstart file content"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:47 ../../tools/preseed_scripts.rst:153
+msgid "Click :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:50
+msgid "Kickstart Format (RHEL/CentOS/Rocky)"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:52
+msgid "Kickstart files automate Red Hat-based installations:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:54
+#, python-format
+msgid ""
+"# System authorization\n"
+"auth --enableshadow --passalgo=sha512\n"
+"\n"
+"# Installation source\n"
+"url --url=\"http://mirror.example.com/centos/9-stream/BaseOS/x86_64/os/\""
+"\n"
+"\n"
+"# Disk partitioning\n"
+"clearpart --all --initlabel\n"
+"autopart --type=lvm\n"
+"\n"
+"# Network\n"
+"network --bootproto=dhcp --device=eth0 --onboot=on\n"
+"\n"
+"# Root password (encrypted)\n"
+"rootpw --iscrypted $6$rounds=656000$...\n"
+"\n"
+"# Timezone\n"
+"timezone America/New_York --utc\n"
+"\n"
+"# Packages\n"
+"%packages\n"
+"@^minimal-environment\n"
+"open-vm-tools\n"
+"curl\n"
+"%end\n"
+"\n"
+"# Post-installation\n"
+"%post\n"
+"# Install Morpheus Agent\n"
+"curl -k https://<%=morpheus.applianceUrl%>/api/server-"
+"script/agentInstall?type=centos | bash\n"
+"%end"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:89
+msgid "Preseed Format (Debian/Ubuntu)"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:91
+msgid "Preseed files automate Debian-based installations:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:93
+msgid ""
+"# Locale and keyboard\n"
+"d-i debian-installer/locale string en_US.UTF-8\n"
+"d-i keyboard-configuration/xkb-keymap select us\n"
+"\n"
+"# Network\n"
+"d-i netcfg/choose_interface select auto\n"
+"d-i netcfg/get_hostname string unassigned-hostname\n"
+"\n"
+"# Mirror\n"
+"d-i mirror/country string manual\n"
+"d-i mirror/http/hostname string archive.ubuntu.com\n"
+"d-i mirror/http/directory string /ubuntu\n"
+"\n"
+"# Partitioning\n"
+"d-i partman-auto/method string lvm\n"
+"d-i partman-auto/choose_recipe select atomic\n"
+"d-i partman/confirm_write_new_label boolean true\n"
+"d-i partman/confirm boolean true\n"
+"\n"
+"# User account\n"
+"d-i passwd/root-login boolean true\n"
+"d-i passwd/root-password-crypted password $6$rounds=656000$...\n"
+"\n"
+"# Packages\n"
+"tasksel tasksel/first multiselect standard\n"
+"d-i pkgsel/include string openssh-server open-vm-tools curl\n"
+"\n"
+"# Post-install\n"
+"d-i preseed/late_command string \\\n"
+"  in-target curl -k https://<%=morpheus.applianceUrl%>/api/server-"
+"script/agentInstall?type=ubuntu | in-target bash\n"
+"\n"
+"# Finish\n"
+"d-i finish-install/reboot_in_progress note"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:130
+msgid "Using Morpheus Variables"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:132
+msgid "Preseed and Kickstart scripts support |morpheus| variable injection:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:134
+msgid ""
+"# Reference Morpheus appliance URL\n"
+"<%=morpheus.applianceUrl%>\n"
+"\n"
+"# Reference PXE root password from settings\n"
+"rootpw --iscrypted <%=morpheus.pxeRootPassword%>\n"
+"\n"
+"# Reference custom variables\n"
+"<%=customOptions.myVar%>"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:145
+msgid ""
+"Variables are resolved at serve-time when the installing system requests "
+"the preseed file."
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:148
+msgid "Editing a Preseed Script"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:151
+msgid "Click the pencil icon on the script row"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:152
+msgid "Modify the content or metadata"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:156
+msgid "Deleting a Preseed Script"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:159
+msgid "Click the trash icon on the script row"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:160
+msgid "Confirm deletion"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:163
+msgid "Integration with Boot Process"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:165
+msgid "Preseed scripts are referenced from Boot Scripts in the kernel parameters:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:167
+msgid "**Kickstart:**"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:169
+#, python-brace-format
+msgid ""
+"imgargs vmlinuz inst.ks=http://${morpheus-"
+"appliance}/preseed/centos9-ks.cfg"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:173
+msgid "**Preseed:**"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:175
+#, python-brace-format
+msgid ""
+"imgargs vmlinuz auto=true url=http://${morpheus-"
+"appliance}/preseed/ubuntu-22.04.seed"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:179
+msgid "The workflow is:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:181
+msgid "Boot script loads kernel and initrd"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:182
+msgid "Kernel parameters point to the preseed/kickstart URL on |morpheus|"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:183
+msgid "The installer downloads and processes the preseed/kickstart file"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:184
+msgid "Installation proceeds unattended with the configured answers"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:187
+msgid "API"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:189
+msgid "Preseed scripts can be managed via the |morpheus| API:"
+msgstr ""
+
+#: ../../tools/preseed_scripts.rst:191
+#, python-brace-format
+msgid ""
+"# List preseed scripts\n"
+"curl \"$MORPHEUS_API_URL/api/preseed-scripts\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\"\n"
+"\n"
+"# Create a preseed script\n"
+"curl -X POST \"$MORPHEUS_API_URL/api/preseed-scripts\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\n"
+"    \"preseedScript\": {\n"
+"      \"fileName\": \"ubuntu-22.04.seed\",\n"
+"      \"description\": \"Ubuntu 22.04 preseed for production\",\n"
+"      \"content\": \"d-i debian-installer/locale string "
+"en_US.UTF-8\\n...\"\n"
+"    }\n"
+"  }'"
+msgstr ""
+

@@ -1,0 +1,904 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/integrations/workers.rst:2
+msgid "Distributed Workers"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:7
+msgid ""
+"The |morpheus| Worker is a separately deployed service that can proxy "
+"Cloud and Agent traffic, route console and VDI sessions, and act as a "
+"quorum witness for supported HVM clusters. A single Worker runtime can "
+"provide more than one capability, but each capability uses a specific "
+"registration and key in |morpheus|."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:9
+msgid ""
+"Distributed Workers, including Workers used as HVM quorum witnesses, are "
+"available in VM Essentials, Advanced, and Enterprise. The VDI Gateway use"
+" case requires an Advanced or Enterprise license."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:11
+msgid "Worker capabilities and configuration"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:15
+msgid "Capability"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:16
+msgid "Registration"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:17
+msgid "Worker configuration"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:18
+msgid "Assignment and traffic path"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:19
+msgid "Cloud API proxy and Agent relay"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:20
+#: ../../administration/integrations/workers.rst:32
+msgid "Distributed Worker in |AdmIntDis|"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:21
+msgid "``worker['worker_key']``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:22
+msgid ""
+"Select the Worker on a supported Cloud. The Worker opens an outbound "
+"connection to the |morpheus| appliance and relays traffic to resources it"
+" can reach."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:23
+msgid "Console gateway"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:24
+#: ../../administration/integrations/workers.rst:28
+msgid "VDI Gateway in |TooVDIGat|"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:25
+#: ../../administration/integrations/workers.rst:29
+msgid "``worker['apikey']``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:26
+msgid ""
+"Select the gateway on a Network, Cloud, or as Default Console Gateway in "
+"|AdmSetApp|. Browser console traffic is redirected to the gateway."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:27
+msgid "VDI gateway"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:30
+msgid ""
+"Assign the gateway to a VDI Pool. User desktop sessions for that Pool are"
+" redirected to the gateway."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:31
+msgid "HVM quorum witness"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:33
+msgid "``worker['worker_key']`` and a reachable Worker URL"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:34
+msgid ""
+"Select the Worker as the cluster witness. Cluster Hosts contact the "
+"Worker URL for quorum arbitration."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:36
+msgid ""
+"The gateway API key and Distributed Worker key are independent. Configure"
+" only ``worker['worker_key']`` for Distributed Worker and witness use, "
+"only ``worker['apikey']`` for console and VDI gateway use, or both keys "
+"to enable combined roles on one runtime. A console gateway is not a "
+"separate runtime mode; it is a VDI Gateway registration selected for "
+"console routing."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:38
+msgid ""
+"Use separate Worker deployments when gateway sessions, Cloud proxy "
+"traffic, and quorum witness traffic require different network zones, "
+"independent maintenance windows, fault isolation, or capacity scaling. If"
+" roles are combined, the Worker URL, certificates, firewall rules, and "
+"availability design must satisfy every enabled role."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:40
+msgid "**Supported Cloud Types**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:42
+msgid ""
+"The following Cloud/Zone types have established Distributed Worker Cloud "
+"API proxy and Agent relay support:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:44
+msgid "vmware"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:45
+msgid "vmwareCloudAws"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:46
+msgid "nutanix"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:47
+msgid "openstack"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:48
+msgid "xenserver"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:49
+msgid "macstadium"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:51
+msgid ""
+"HVM, SCVMM, and Hyper-V are not listed as supported Cloud proxy types "
+"because that capability is not established by the Worker implementation "
+"or package policy. Do not infer Cloud proxy support from another Worker "
+"role. In particular:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:53
+msgid ""
+"An HVM appliance image based on Ubuntu 24.04 is available beginning with "
+"|morpheus| 8.0.6, but an image on which a Worker can run does not qualify"
+" HVM as a proxied Cloud type or Ubuntu 24.04 as a supported Worker "
+"package platform."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:54
+msgid ""
+"A Distributed Worker can serve as an HVM quorum witness beginning with "
+"|morpheus| 9.0. Witness traffic is a cluster quorum role, not HVM Cloud "
+"API proxy support."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:55
+msgid ""
+"SCVMM and Hyper-V integration compatibility does not establish "
+"Distributed Worker proxy support for those Cloud types."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:58
+msgid "Installation"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:60
+msgid ""
+"A distributed worker VM is installed and configured similarly to a "
+"|morpheus| appliance via ``rpm`` or ``deb`` package."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:62
+#: ../../administration/integrations/workers.rst:64
+#: ../../administration/integrations/workers.rst:87
+#: ../../administration/integrations/workers.rst:178
+#: ../../administration/integrations/workers.rst:190
+msgid "Note"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:62
+msgid ""
+"Package URLs for the distributed worker are available at "
+"https://app.morpheushub.com in the downloads section."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:64
+msgid ""
+"The distributed worker requires that the |morpheus| appliance has a "
+"trusted SSL certificate.  This can be accomplished by configuring a "
+"public trusted SSL certificate on the |morpheus| appliance (or load "
+"balancer) or ensure the certificate and chain are added to the Java "
+"Keystore of the Distributed Worker to trust the certificate."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:66
+msgid "**Requirements**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:68
+msgid "**Supported Operating Systems**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:72
+msgid "OS"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:73
+msgid "Version(s)"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:74
+msgid "Amazon Linux"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:75
+msgid "2"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:76
+msgid "CentOS"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:77
+#: ../../administration/integrations/workers.rst:81
+msgid "7.x, 8.x"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:78
+msgid "Debian"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:79
+msgid "10, 11"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:80
+msgid "RHEL"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:82
+msgid "SUSE SLES"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:83
+msgid "12"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:84
+msgid "Ubuntu"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:85
+msgid "18.04, 20.04, 22.04"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:87
+msgid ""
+"Ubuntu 24.04 package support for a directly installed Distributed Worker "
+"is not established by the available package policy and is therefore not "
+"listed. The Worker container has its own Alpine-based runtime; this does "
+"not establish a supported Ubuntu 24.04 host combination. Use only a "
+"release-approved package or container deployment."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:89
+msgid "**Memory:** 4 GB RAM minimum recommended"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:90
+msgid ""
+"**Storage:** 10 GB storage minimum recommended. Storage is required for "
+"installation packages and log files"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:91
+msgid "**CPU:** 4-core minimum recommended"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:92
+msgid "Network connectivity **to** the |morpheus| appliance over TCP 443 (HTTPS)"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:93
+msgid ""
+"Inbound connectivity from browsers when the Worker is used as a console "
+"or VDI gateway"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:94
+msgid ""
+"Inbound connectivity from every participating HVM Host when the Worker is"
+" used as a witness"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:95
+msgid ""
+"Superuser privileges via the ``sudo`` command for the user installing the"
+" |morpheus| worker package"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:96
+msgid ""
+"Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may"
+" be required for RPM distros"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:98
+#: ../../administration/integrations/workers.rst:138
+msgid "Important"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:98
+msgid ""
+"In order to proxy VMware vCenter Cloud traffic through a Distributed "
+"Worker, you must have a static public DNS entry for the internal IP "
+"address of the vCenter appliance. If this is not done, everything may "
+"appear to be working properly when configuring the Cloud but problems "
+"will arise at provision time. This is not a |morpheus| limitation but is "
+"a limitation of the VMware SDK client which does not natively support "
+"proxies."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:100
+msgid ""
+"Download the appropriate package from |morpheus| Hub based on your target"
+" Linux distribution and version for installation in a directory of your "
+"choosing. The package can be removed after successful installation."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:102
+msgid ""
+"wget https://downloads.morpheusdata.com/path/to/morpheus-"
+"worker-$version.distro"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:106
+msgid ""
+"Validate the package checksum as compared with the values indicated on "
+"Hub. For example:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:108
+msgid "sha256sum morpheus-worker-$version.distro"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:112
+msgid ""
+"Next, install the package using your selected distribution's package "
+"installation command and your preferred options. Example, for RPM:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:114
+msgid "**rpm**:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:116
+msgid ""
+"$ sudo rpm -ihv morpheus-worker-$version.$distro\n"
+"\n"
+"Preparing...                          ################################# "
+"[100%]\n"
+"Updating / installing...\n"
+"   1:morpheus-worker-x.x.x-1.$distro    #################################"
+" [100%]\n"
+"Thank you for installing Morpheus Worker!\n"
+"Configure and start the Worker by running the following command:\n"
+"\n"
+"sudo morpheus-worker-ctl reconfigure"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:129
+msgid "Configuration"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:131
+msgid ""
+"With the package installed, we need to add a new distributed worker in "
+"|morpheus| UI. Distributed workers are added in |AdmIntDis|. To create "
+"one, populate the following fields:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:133
+msgid "**NAME:** A name for the distributed worker in |morpheus|"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:134
+msgid "**DESCRIPTION:** An optional description for the distributed worker"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:135
+msgid ""
+"**PROXY HOSTS:** A comma-delimited list of global proxy hosts, any "
+"endpoint listed here will be proxied through the |morpheus| worker. For "
+"VMware, you must list the host addresses for any vCenter you wish to "
+"proxy through the worker. Xen hosts and PowerVC hosts must be listed here"
+" as well. Other Cloud types which are supported by the |morpheus| worker "
+"need only have the worker configured on the Edit Cloud modal (|InfClo| > "
+"Selected Cloud > Edit button)"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:136
+msgid "**ENABLED:** When marked, the selected worker is available for use"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:138
+msgid ""
+"The proxy host URL entered in the Worker configuration must match the URL"
+" set in the Cloud configuration. That is, if you use the URL in the Cloud"
+" configuration you must also use it in the Worker configuration. The "
+"reverse is also true, if an IP address is used in the Cloud "
+"configuration, that should be used in the Worker configuration as well. "
+"There are also configuration considerations that must be made for "
+"proxying vCenter Cloud traffic through a Distributed Worker. See the "
+"\"IMPORTANT\" box in the \"Requirements\" section for additional details."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:140
+msgid ""
+"After clicking :guilabel:`SAVE CHANGES`, an API key is generated and "
+"displayed. Make note of this as it will be needed in a later "
+"configuration step."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:142
+msgid ".. image:: /images/worker/createWorker.png"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:144
+msgid ""
+"With the worker configured in |morpheus|, the next step is to update "
+"supported Cloud integrations which should be proxied through the worker. "
+"Select the desired Cloud from the Clouds List Page (|InfClo|) and click "
+":guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the "
+"Connection Options section, choose a configured worker from the WORKER "
+"dropdown menu. Click :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:146
+msgid ".. image:: /images/worker/addWorkerToCloud.png"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:149
+msgid ""
+"With the API key in hand and configuration complete in |morpheus| UI, "
+"head back to the worker box. Configure the gateway by editing "
+"``/etc/morpheus/morpheus-worker.rb`` and updating the following:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:151
+msgid "**Distributed Worker or witness only:**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:153
+msgid ""
+"worker_url = 'https://worker.example.com'\n"
+"worker['appliance_url'] = 'https://morpheus.example.com'\n"
+"worker['worker_key'] = 'DISTRIBUTED WORKER KEY'"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:159
+msgid "**Console or VDI gateway only:**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:161
+msgid ""
+"worker_url = 'https://worker.example.com'\n"
+"worker['appliance_url'] = 'https://morpheus.example.com'\n"
+"worker['apikey'] = 'VDI GATEWAY API KEY'"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:167
+#: ../../administration/integrations/workers.rst:263
+msgid "**Combined Distributed Worker and gateway roles:**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:169
+msgid ""
+"worker_url = 'https://worker.example.com' # URL used to reach this Worker"
+"\n"
+"worker['appliance_url'] = 'https://morpheus_appliance_url' # The "
+"resolvable URL or IP address of Morpheus appliance which the worker can "
+"reach on port 443\n"
+"worker['apikey'] = 'VDI GATEWAY API KEY'\n"
+"worker['worker_key'] = 'DISTRIBUTED WORKER KEY' # Distributed Worker API "
+"Key from Administration > Integrations > Distributed Workers "
+"configuration\n"
+"worker['proxy_address'] = 'http://proxy.address:1234' # For environments "
+"in which the worker must go through a proxy to communicate with the "
+"Morpheus appliance or other resources, configure the address\n"
+"worker['no_proxy'] = 'vcenter.example.com,192.168.xx.xx' # A comma-"
+"separated list of resources that should be accessed directly and not "
+"through the proxy"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:178
+msgid ""
+"``worker_url`` identifies the Worker service. ``worker['appliance_url']``"
+" identifies the |morpheus| appliance. Do not interchange them. By "
+"default, ``worker_url`` uses the Worker's hostname. For gateway or "
+"witness use, set it to a stable URL that every required client can "
+"resolve, reach, and trust."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:180
+msgid ""
+"After all configuration options have been set, run ``sudo morpheus-"
+"worker-ctl reconfigure`` to install and configure the worker, nginx and "
+"guacd services:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:182
+msgid "sudo morpheus-worker-ctl reconfigure"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:186
+msgid ""
+"The worker reconfigure process will install and configure the worker, "
+"nginx and guacd services and dependencies."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:188
+msgid "Tip"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:188
+msgid ""
+"If the reconfigure process fails due to a missing dependency, add the "
+"repo that the missing dependency can be found in and run"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:190
+msgid ""
+"Configuration options can be updated after the initial reconfigure by "
+"editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-"
+"worker-ctl reconfigure`` again."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:192
+msgid ""
+"Once the installation is complete the morpheus worker service will "
+"automatically start and open a web socket with the specified |morpheus| "
+"appliance. To monitor the startup process, run ``morpheus-worker-ctl "
+"tail`` to tail the logs of the worker, nginx and guacd services. "
+"Individual services can be tailed by specifying the service, for example "
+"``morpheus-worker-ctl tail worker``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:194
+msgid "Verify package service health before assigning traffic:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:196
+msgid ""
+"sudo morpheus-worker-ctl status\n"
+"sudo morpheus-worker-ctl tail worker"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:202
+msgid "Container Installation"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:204
+msgid ""
+"The Worker is also published as the `morpheusdata/morpheus-worker "
+"<https://hub.docker.com/r/morpheusdata/morpheus-worker>`_ container "
+"image. Use a version tag approved for the |morpheus| Manager release. Do "
+"not use ``latest`` for production because it can point to a different "
+"product version. The examples below use the confirmed ``9.0.2`` tag; "
+"replace it when deploying with another supported Manager release. During "
+"Docker Hub maintenance, a valid tag may temporarily be absent from the "
+"web or API tag listing."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:206
+msgid ""
+"The image exposes HTTP on port 8080 and HTTPS on port 8443. The following"
+" variables configure its roles:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:208
+msgid "Worker container environment variables"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:212
+msgid "Variable"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:213
+msgid "Required"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:214
+msgid "Purpose"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:215
+msgid "``MORPHEUS_URL``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:216
+msgid "Yes"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:217
+msgid "URL of the |morpheus| appliance that the Worker connects to."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:218
+msgid "``MORPHEUS_WORKER_KEY``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:219
+msgid "For Distributed Worker or witness roles"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:220
+msgid "API key generated by the Distributed Worker record in |AdmIntDis|."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:221
+msgid "``MORPHEUS_KEY``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:222
+msgid "For console or VDI gateway roles"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:223
+msgid ""
+"API key generated by the VDI Gateway record in |TooVDIGat|. Omit it for "
+"Worker-only deployments."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:224
+msgid "``MORPHEUS_SELF_SIGNED``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:225
+#: ../../administration/integrations/workers.rst:231
+msgid "No"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:226
+msgid ""
+"Set to ``true`` to generate a self-signed HTTPS listener for testing. Use"
+" a trusted certificate or terminate TLS at a trusted load balancer in "
+"production."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:227
+msgid "``MORPHEUS_SSL_ALIAS`` and ``MORPHEUS_SSL_PASSWORD``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:228
+msgid "With PKCS#12 TLS"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:229
+msgid "Alias and password for ``/etc/certs/cert.p12`` mounted into the container."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:230
+msgid "``https_proxy``"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:232
+msgid "Outbound HTTPS proxy used by the Worker's HTTP client."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:234
+msgid ""
+"Set ``WORKER_IMAGE_TAG`` to the approved tag before running these "
+"examples:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:236
+msgid "export WORKER_IMAGE_TAG=9.0.2"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:240
+msgid "**Distributed Worker only:**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:242
+#, python-brace-format
+msgid ""
+"docker run -d --name morpheus-worker \\\n"
+"  -p 8080:8080 \\\n"
+"  -e MORPHEUS_URL=https://morpheus.example.com \\\n"
+"  -e MORPHEUS_WORKER_KEY=<distributed-worker-key> \\\n"
+"  morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:250
+msgid ""
+"A witness also uses ``MORPHEUS_WORKER_KEY``, but it must publish a "
+"trusted endpoint reachable from every participating Host. Use the "
+"production HTTPS example below for a witness container."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:252
+msgid "**Console or VDI gateway only with a test self-signed listener:**"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:254
+#, python-brace-format
+msgid ""
+"docker run -d --name morpheus-worker \\\n"
+"  -p 8443:8443 \\\n"
+"  -e MORPHEUS_URL=https://morpheus.example.com \\\n"
+"  -e MORPHEUS_KEY=<vdi-gateway-key> \\\n"
+"  -e MORPHEUS_SELF_SIGNED=true \\\n"
+"  morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:265
+#, python-brace-format
+msgid ""
+"docker run -d --name morpheus-worker \\\n"
+"  -p 8443:8443 \\\n"
+"  -e MORPHEUS_URL=https://morpheus.example.com \\\n"
+"  -e MORPHEUS_WORKER_KEY=<distributed-worker-key> \\\n"
+"  -e MORPHEUS_KEY=<vdi-gateway-key> \\\n"
+"  -e MORPHEUS_SELF_SIGNED=true \\\n"
+"  morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:275
+msgid ""
+"For production HTTPS or witness use, mount a PKCS#12 certificate and omit"
+" ``MORPHEUS_SELF_SIGNED``:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:277
+#, python-brace-format
+msgid ""
+"docker run -d --name morpheus-worker \\\n"
+"  -p 8443:8443 \\\n"
+"  -v /secure/path/cert.p12:/etc/certs/cert.p12:ro \\\n"
+"  -e MORPHEUS_URL=https://morpheus.example.com \\\n"
+"  -e MORPHEUS_WORKER_KEY=<distributed-worker-key> \\\n"
+"  -e MORPHEUS_SSL_ALIAS=<certificate-alias> \\\n"
+"  -e MORPHEUS_SSL_PASSWORD=<certificate-password> \\\n"
+"  morpheusdata/morpheus-worker:${WORKER_IMAGE_TAG}"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:288
+msgid ""
+"After startup, verify that the container is running and healthy, that the"
+" configured Worker or gateway appears active in |morpheus|, and that "
+"clients for each enabled role can reach the published URL:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:290
+msgid ""
+"docker ps --filter name=morpheus-worker\n"
+"docker inspect --format '{{.State.Health.Status}}' morpheus-worker\n"
+"docker logs morpheus-worker"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:296
+msgid ""
+"The image health check verifies the bundled Guacamole service. Also "
+"validate the |morpheus| registration and the end-to-end traffic path for "
+"each enabled role. Upgrade by validating a new release-compatible tag, "
+"recreating the container with the same registration keys and certificate "
+"configuration, and repeating the role-specific checks."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:299
+msgid "Witness Configuration"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:301
+msgid ""
+"A Distributed Worker can provide quorum witness services for HVM 1.3 or "
+"later clusters using an HPE Shared File System (GFS2) datastore. This "
+"includes two-node GFS2 clusters and stretch clusters with site groups. "
+"For the complete two-node topology, deployment order, validation, failure"
+" behavior, and limitations, see "
+":doc:`/infrastructure/clusters/hvm/two_node_clusters`."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:303
+msgid ""
+"The **Worker URL** on the Distributed Worker record is mandatory for "
+"witness use. |morpheus| uses this value to construct the ``witnessUrl`` "
+"sent to each cluster Host. Every participating Host must be able to "
+"resolve the URL, route to the Worker listener, and trust its TLS "
+"certificate. The Worker's outbound connection to the |morpheus| appliance"
+" does not prove that Hosts can reach the witness."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:305
+msgid "Before assigning a witness:"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:307
+msgid ""
+"Create the Distributed Worker record in |AdmIntDis| and set **Worker "
+"URL** to the stable client-facing URL for the Worker."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:308
+msgid ""
+"Configure the runtime with the record's ``worker_key`` or "
+"``MORPHEUS_WORKER_KEY``."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:309
+msgid "Verify that the Worker shows as active in |morpheus|."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:310
+msgid ""
+"From every cluster Host, resolve the Worker URL and make an HTTPS "
+"connection to it. A successful TLS connection or HTTP response confirms "
+"the path; do not disable certificate validation in production."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:311
+msgid ""
+"Ensure firewalls and load balancers preserve the witness path and do not "
+"require interactive authentication."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:313
+msgid ""
+"For cluster assignment and quorum validation, see "
+":doc:`/infrastructure/clusters/hvm/stretch_clusters`."
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:316
+msgid "Highly-Available (HA) Deployment"
+msgstr ""
+
+#: ../../administration/integrations/workers.rst:318
+msgid ""
+"If desired, multiple distributed worker nodes may be associated to the "
+"same |morpheus| appliance to eliminate a single point of failure should a"
+" distributed worker node go down. Configure each distributed worker node "
+"using the same worker key (process described in the prior section) and "
+"add redundancy using as many additional workers nodes as needed. When "
+"multiple worker nodes are using the same worker key, proxy calls will "
+"always go through the primary worker node when possible. The primary node"
+" is the first worker node configured using a specific worker key. When "
+"necessary, automatic failover will take place and another active worker "
+"node will be used. While proxy calls will always try to use the primary "
+"node when available, |morpheus| Agent communications can be balanced "
+"equally across worker nodes by placing a VIP in front of your distributed"
+" workers."
+msgstr ""
+

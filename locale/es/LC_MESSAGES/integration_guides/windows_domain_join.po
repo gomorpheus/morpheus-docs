@@ -1,0 +1,440 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/windows_domain_join.rst:2
+msgid "Windows VM Domain Join"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:4
+msgid ""
+"This guide covers the end-to-end workflow for deploying Windows VMs on "
+"HVM clusters with automatic Active Directory domain join. The process "
+"uses |morpheus| guest customization to join the domain during initial VM "
+"provisioning without manual intervention."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:7
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:9
+msgid "Before configuring automatic domain join, ensure:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:11
+msgid ""
+"An Active Directory domain controller is reachable from the provisioned "
+"VM's network"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:12
+msgid ""
+"DNS on the target network can resolve the domain name (the VM must be "
+"able to find the DC via DNS)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:13
+msgid ""
+"A **service account** with permissions to join computers to the domain "
+"(and optionally create computer objects in a specific OU)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:14
+msgid "A Network Domain is configured in |morpheus| (see below)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:15
+msgid "The Windows virtual image uses sysprep-based customization"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:18
+msgid "Configuring the Network Domain"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:20
+msgid ""
+"Network Domains in |morpheus| define the Active Directory domain and "
+"credentials used for automatic domain join."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:22
+msgid "Navigate to :menuselection:`Infrastructure --> Network --> Domains`"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:23
+msgid "Click :guilabel:`+ Add`"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:24
+msgid "Configure the domain:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:30
+msgid "Field"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:31
+msgid "Description"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:32
+msgid "Name"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:33
+msgid "Display name for this domain configuration"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:34
+msgid "Domain Name"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:35
+msgid "The FQDN of the Active Directory domain (e.g., ``corp.example.com``)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:36
+msgid "Domain Controller"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:37
+msgid "Enable to use this domain for automatic domain join during provisioning"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:38
+msgid "Username"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:39
+msgid ""
+"Domain join service account in ``DOMAIN\\username`` or "
+"``username@domain.com`` format"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:40
+msgid "Password"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:41
+msgid "Password for the service account"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:42
+msgid "OU Path"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:43
+msgid ""
+"(Optional) Distinguished Name of the OU where computer objects are "
+"created (e.g., ``OU=Servers,OU=HVM,DC=corp,DC=example,DC=com``)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:44
+msgid "DC Server"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:45
+msgid ""
+"(Optional) Specific domain controller hostname or IP. If blank, the VM "
+"will locate a DC via DNS SRV records."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:47
+#: ../../integration_guides/windows_domain_join.rst:57
+msgid "Click :guilabel:`Save`"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:50
+msgid "Associating Domain with a Network"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:52
+msgid ""
+"The Network Domain must be associated with the network(s) where Windows "
+"VMs will be provisioned:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:54
+msgid "Navigate to :menuselection:`Infrastructure --> Network --> Networks`"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:55
+msgid "Edit the target network"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:56
+msgid "In the **Domain** field, select the Network Domain configured above"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:59
+msgid ""
+"When a VM is provisioned on a network that has a Domain with **Domain "
+"Controller** enabled, |morpheus| automatically performs domain join "
+"during guest customization."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:62
+msgid "Windows Image Requirements"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:64
+msgid ""
+"The Windows virtual image must support guest customization. Prepare the "
+"image using sysprep with **Force Guest Customization** enabled:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:66
+msgid "Prepare the Windows template (install updates, VirtIO drivers, etc.)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:67
+msgid "Run sysprep with ``/generalize /oobe /shutdown``"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:68
+msgid "Upload as a Virtual Image in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:69
+msgid "Enable **Is Force Customization** on the Virtual Image settings"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:72
+msgid "Domain Join Trigger"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:74
+msgid ""
+"Domain join is triggered based on the **Network Domain** selection. The "
+"domain can be assigned at multiple levels, with more specific settings "
+"taking precedence:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:76
+msgid ""
+"**At the Cloud level** — A default Network Domain can be set on the Cloud"
+" configuration. This applies to all VMs provisioned into that Cloud "
+"unless overridden at a more specific level."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:77
+msgid ""
+"**At the Network level** — A Network Domain can be associated with a "
+"specific network. VMs provisioned onto that network inherit the domain "
+"assignment."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:78
+msgid ""
+"**At the VM level during provisioning** — The domain can be explicitly "
+"selected or overridden per-VM in the provisioning wizard, regardless of "
+"Cloud or Network defaults."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:80
+msgid ""
+"The most specific assignment wins: VM-level overrides Network-level, "
+"which overrides Cloud-level."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:82
+msgid ""
+"The domain selection determines which AD domain, credentials, OU, and DC "
+"server are used for the join operation."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:85
+msgid "How Domain Join Works"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:87
+msgid ""
+"When a Windows VM is provisioned with a Network Domain that has **Domain "
+"Controller** enabled:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:89
+msgid ""
+"|morpheus| provisions the VM and waits for the guest agent to become "
+"responsive"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:90
+msgid "The guest customization sets the hostname (from the Instance name)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:91
+msgid "|morpheus| executes a domain join script via the guest agent:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:93
+msgid "Decodes the domain credentials"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:94
+msgid "Creates a PSCredential object"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:95
+msgid ""
+"Runs ``Add-Computer`` with the domain name, credentials, OU path, and "
+"optionally a specific DC server"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:96
+msgid "Renames the computer to the configured hostname"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:98
+msgid "The VM reboots to complete domain join"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:99
+msgid "|morpheus| verifies the join was successful"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:101
+msgid ""
+"The join operation retries up to 3 times for transient AD errors "
+"(replication delays, temporary DC unavailability)."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:104
+msgid "Provisioning a Domain-Joined VM"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:106
+msgid ""
+"Navigate to :menuselection:`Provisioning --> Instances` and click "
+":guilabel:`+ Add`"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:107
+msgid "Select a Windows Instance Type"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:108
+msgid "On the CONFIGURE tab:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:110
+msgid "Select a network that has the domain association"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:111
+msgid ""
+"The domain join will happen automatically — no additional configuration "
+"is needed"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:113
+msgid "Complete the provisioning wizard"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:115
+msgid ""
+"After provisioning, the VM will appear as a computer object in Active "
+"Directory in the configured OU."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:118
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:121
+msgid "Domain Join Fails — \"Cannot contact domain controller\""
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:123
+msgid ""
+"Verify DNS resolution on the VM's network. The VM must resolve the AD "
+"domain name to a DC IP."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:124
+msgid ""
+"If using a specific DC Server in the domain config, ensure the VM can "
+"reach that IP on port 389 (LDAP) and 88 (Kerberos)."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:125
+msgid "Check that no firewall rules block the VM from communicating with the DC."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:128
+msgid "Domain Join Fails — \"Access denied\""
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:130
+msgid ""
+"Verify the service account credentials in the Network Domain "
+"configuration."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:131
+msgid ""
+"Ensure the service account has \"Join computers to the domain\" "
+"permission."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:132
+msgid ""
+"If using a specific OU, verify the account has \"Create Computer "
+"Objects\" permission in that OU."
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:135
+msgid "Hostname Not Applied After Join"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:137
+msgid ""
+"In rare cases, the domain join succeeds but the hostname rename does not "
+"take effect on the first attempt. |morpheus| will retry ``Rename-"
+"Computer`` separately. If the hostname still does not match after "
+"provisioning, verify:"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:139
+msgid "The computer name does not exceed 15 characters (NetBIOS limit)"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:140
+msgid "No conflicting computer object with the same name exists in AD"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:143
+msgid "VM Joins But Shows \"Unknown\" in AD Sites"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:145
+msgid ""
+"Ensure AD Sites and Services has a subnet entry that covers the VM's IP "
+"range"
+msgstr ""
+
+#: ../../integration_guides/windows_domain_join.rst:146
+msgid ""
+"The VM will be associated with the correct site on next group policy "
+"refresh"
+msgstr ""
+

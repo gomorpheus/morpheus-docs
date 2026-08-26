@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hvmcli/hardware.rst:2
+msgid "hardware"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:4
+msgid "Inspect host hardware inventory and platform telemetry."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:7
+msgid "Commands"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:13
+msgid "Command"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:15
+msgid "``cpu``"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:16
+msgid "Show CPU topology, model, cores, and threads"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:17
+msgid "``memory``"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:18
+msgid "Show memory modules, total capacity, and speed"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:19
+msgid "``pci``"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:20
+msgid "List PCI devices (network adapters, GPUs, storage controllers)"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:21
+msgid "``bootvolume``"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:22
+msgid "Show boot volume details and mount points"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:23
+msgid "``ipmi``"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:24
+msgid "Show IPMI/BMC sensor readings (requires ipmitool)"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:27
+msgid "hardware cpu"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:29
+msgid "Display CPU architecture, topology, and virtualization details."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:31
+msgid "sudo hvmcli hardware cpu list"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:35
+msgid ""
+"Architecture           x86_64\n"
+"  CPU(s)                 64\n"
+"  Thread(s) per core     2\n"
+"  Core(s) per socket     16\n"
+"  Socket(s)              2\n"
+"  Model Name             AMD EPYC 9334 32-Core Processor\n"
+"  Vendor ID              AuthenticAMD\n"
+"  Virtualization         AMD-V\n"
+"  Logical CPU Threads    64\n"
+"  Hyperthreading Active  yes\n"
+"  Physical CPU Cores     32"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:50
+msgid "hardware memory"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:52
+msgid "Display memory capacity, usage, NUMA, and HugePages information."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:54
+msgid "sudo hvmcli hardware memory list"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:58
+msgid ""
+"Physical Memory   512.00 GiB\n"
+"Reliable Memory   512.00 GiB\n"
+"NUMA Node Count   2\n"
+"Total Memory      512.00 GiB\n"
+"Used Memory       128.50 GiB\n"
+"Available Memory  383.50 GiB\n"
+"Free Memory       256.00 GiB\n"
+"Swap Total        4.00 GiB\n"
+"Swap Free         4.00 GiB\n"
+"HugePages Total   0\n"
+"HugePages Free    0\n"
+"HugePage Size     2.00 MiB"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:74
+msgid "hardware pci"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:76
+msgid ""
+"List all PCI devices including network adapters, GPUs, and storage "
+"controllers."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:78
+msgid "sudo hvmcli hardware pci list"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:82
+msgid ""
+"Slot     Class                    Device"
+"                                               Vendor:Device\n"
+"-------  -----------------------  "
+"---------------------------------------------------  -------------\n"
+"03:00.0  Ethernet controller      Mellanox ConnectX-6 Dx 25GbE Dual Port "
+"SFP28         15b3:101d\n"
+"04:00.0  Ethernet controller      Mellanox ConnectX-6 Dx 25GbE Dual Port "
+"SFP28         15b3:101d\n"
+"41:00.0  RAID bus controller      HPE Smart Array P408i-a SR Gen10"
+"                     9005:028f\n"
+"..."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:92
+msgid "hardware bootvolume"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:94
+msgid "Show boot volume details including disk type, filesystem, and size."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:96
+msgid "sudo hvmcli hardware bootvolume list"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:100
+msgid ""
+"Root Device             /dev/ubuntu--vg-ubuntu--lv\n"
+"Boot Device Identifier  /dev/sda2\n"
+"Boot Device Type        part\n"
+"Root Filesystem         ext4\n"
+"Root Type               lvm\n"
+"Root Size               480G\n"
+"Boot Device             /dev/sda2\n"
+"Boot Filesystem         ext4\n"
+"Boot Size               2G\n"
+"Boot Disk               /dev/sda\n"
+"Boot Disk Size          480G\n"
+"Boot Disk Model         MO000480JWTBR\n"
+"Boot Disk Serial        PHYG123456\n"
+"Boot Disk Transport     sata\n"
+"Boot Disk Rotational    no\n"
+"Boot Disk Read-Only     no"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:120
+msgid "hardware ipmi"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:122
+msgid "Show IPMI/BMC sensor readings for platform telemetry."
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:124
+msgid "sudo hvmcli hardware ipmi"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:128
+msgid "Note"
+msgstr ""
+
+#: ../../tools/hvmcli/hardware.rst:128
+msgid ""
+"Requires ``ipmitool`` to be installed on the host. Only available on "
+"physical servers with a BMC/iLO."
+msgstr ""
+

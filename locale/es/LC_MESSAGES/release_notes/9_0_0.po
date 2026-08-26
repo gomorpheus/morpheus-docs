@@ -1,0 +1,456 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../release_notes/9_0_0.rst:5
+msgid "v9.0.0 Feature Release Notes"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:7
+msgid "Compatible Plugin API version: |pluginVer|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:8
+msgid "Compatible |morpheus| Worker version: |workerVer|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:9
+msgid ""
+"Minimum upgrade versions: Non-rolling: |minUpgradeVer|, Rolling: "
+"|minRollingUpgradeVer|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:11
+msgid "Release Dates"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:13
+msgid "|morphver| |releasedate|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:15
+msgid "Important"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:15
+msgid ""
+"After upgrading to |morphver|, it is recommended to check for HVM Host "
+"agent upgrades as well. To upgrade HVM Host agents, navigate to the "
+"detail page for each HVM Host, expand the ACTIONS menu, and click "
+"\"Upgrade Agent.\" This process must be undertaken on all HVM Hosts. "
+"Alternatively, you may select \"Download Agent Script\" to download a "
+"shell script to handle the upgrade. Connect to the HVM Host over a "
+"terminal session and run the downloaded script. The scripts are unique to"
+" each HVM Host so you must download all required scripts and run the "
+"correct script against the correct HVM Host. Though many do, it is "
+"possible that some version upgrade hops will not contain an HVM Host "
+"agent upgrade."
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:20
+msgid "New Features"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Alletra MP Plugin"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:22
+msgid ""
+"For complete update details, see the HPE Storage Integration Pack for VM "
+"Essentials Release Notes"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "AI and Automation"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:24
+msgid ""
+"Introduced a \"Read-only mode\" for AI agents and a corresponding RBAC "
+"permission that restricts agents to data retrieval only, preventing them "
+"from performing any modification or \"agentic\" actions"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:25
+msgid ""
+"Added a new management interface under Tools > AI Services for creating "
+"and configuring AI Agents, including model selection and MCP server "
+"assignments"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:26
+msgid ""
+"Added a management interface for Model Context Protocol (MCP) servers, "
+"allowing users to connect external tool providers to AI agents via STDIO "
+"or HTTP protocols"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:27
+msgid ""
+"Introduced a provider abstraction layer that supports integrating "
+"external LLM services like OpenAI and GitHub Copilot for use within the "
+"|morpheus| AI framework"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:28
+msgid ""
+"Enhanced AI Integration framework for LLM and MCP providers. Endpoints "
+"enable execution through Agent Tasks"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:29
+msgid ""
+"MCP Server Support for the enablement of AI assistants (including GitHub "
+"Copilot CLI and Claude Desktop) through a built-in MCP server exposing "
+"the |morpheus| REST API. Supports Streamable HTTP and legacy SSE "
+"transports"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:30
+msgid ""
+"Private Cloud system initialization wizard to streamline onboarding and "
+"provide an extensible plugin-compliant framework"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "API & CLI"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:32
+msgid ""
+"Reintroduced and improved API token management with a dedicated API Keys "
+"tab in User Settings"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:33
+msgid ""
+"Support for multiple auth tokens per user, enabling parallel operations "
+"across large federated deployments"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Aruba CX"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:35
+msgid ""
+"VLAN IDs specified in trunk ranges are now automatically configured on "
+"Aruba CX switches if they do not already exist, simplifying large-scale "
+"network provisioning"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:36
+msgid ""
+"Standard networks now support hybrid and trunk-only modes, allowing "
+"multiple tagged VLANs to be carried over a single interface with "
+"corresponding automatic switch configuration"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:37
+msgid "Security Groups integration for the ArubaCxDss network plugin"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "HVM"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:39
+msgid ""
+"|morpheus| |morphver| includes a new cluster layout for HVM Clusters, "
+"version 1.3, which succeeds version 1.2. The primary difference in "
+"cluster layout 1.3 is the replacement of Pacemaker as the resource "
+"manager for GFS2 datastores (now known as HPE Clustered Datastores). "
+"Rather than Pacemaker observing the reported state of Corosync and making"
+" fencing decisions, the |morpheus| Agent becomes the high-availability "
+"control plane, providing even greater reliability for HPE Clustered "
+"Datastores in HVM Clusters"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:40
+msgid ""
+"One-click upgrade to take existing 1.2 HVM Clusters to cluster layout "
+"version 1.3. For more information about upgrading HVM Clusters, see "
+"Cluster Layout Upgrade in the |morpheus| user manual"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:41
+msgid ""
+"Added a type-ahead \"Search servers\" field and a general search field to"
+" the Backups History page to allow users to filter backup records by "
+"specific virtual machines or servers"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:42
+msgid ""
+"Users can now modify advanced virtual machine options after deployment, "
+"including UEFI/BIOS firmware toggles, Secure Boot, and a new \"Boot to "
+"BIOS\" flag with a configurable timeout for troubleshooting"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:43
+msgid ""
+"Enhanced the Dynamic Placement system with adjustable aggressiveness "
+"profiles (Conservative, Moderate, Aggressive) and migration cooldowns to "
+"better balance cluster resources based on memory utilization"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:44
+msgid ""
+"Automated the injection of VirtIO drivers during bulk migrations from "
+"VMware to HVM, eliminating the need for manual driver preparation on "
+"Windows virtual machines"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:45
+msgid ""
+"Stretched Cluster Support spanning multiple logical sites as a single "
+"cluster for both uniform and non-uniform configurations. Live Migration "
+"is supported for VMs enabled with Secure Boot"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:46
+msgid ""
+"Guest OS Encryption (vTPM/SecureBoot) automated recovery from backup for "
+"VMs using BitLocker/vTPM"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:47
+msgid "Memory Overallocation on HVM clusters"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:48
+msgid "Support for Two-Node GFS2 clusters using an external quorum witness"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:49
+msgid "Shared vDisks to assign vDisks to multiple guest VMs simultaneously"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:50
+msgid ""
+"Allow VMs to boot via PXE/network boot for customers with established "
+"deployment automation workflows"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:51
+msgid "Enable BIOS Asset Tag Configuration for VMs at creation and Day 2"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:52
+msgid ""
+"Support audit logging and traceability in morphd for tracking of user "
+"identity for libvirt and virsh actions"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:53
+msgid ""
+"SR-IOV network type to enable VMs to have direct, near wire-speed access "
+"to physical network adapters"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:54
+msgid ""
+"Trunk VLAN Support for standard networks. Support for multiple VLAN "
+"traffic on a single interface (access, hybrid and trunk-only modes)"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:55
+msgid ""
+"HVM Network Plugin for standard, private, data, and overlay. Enable "
+"decoupled networking management through dedicated plugin via the Network "
+"Provider framework"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Packaging"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:57
+msgid ""
+"|morpheus| appliance deb/rpm packages contain all files, agents, plugins,"
+" and dependencies. Supplemental packages are no longer required for "
+"installation or upgrades"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "User Interface"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:59
+msgid "Added React UI for modernized navigation framework and administration"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Supportability"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:61
+msgid ""
+"End-to-end supportability, including support bundle generation, "
+"environment telemetry, health metrics, operational runbooks, and RBAC-"
+"controlled access"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:62
+msgid ""
+"Host Hardware Sensor Metrics Enhancements for improved metrics based on "
+"feedback"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:65
+msgid "Fixes"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Platform Updates"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:67
+msgid ""
+"Embedded MySQL updated to 8.4.8; external MySQL configuration includes "
+"the 8.4 LTS family, subject to release-specific certification of the "
+"external version and service variant"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Agent"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:69
+msgid ""
+"Fixed storage reporting errors on older Linux distributions and systems "
+"using btrfs subvolumes that resulted in zero or inflated storage usage "
+"values"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:71
+msgid ""
+"Fixed an issue where the API and CLI did not correctly return all "
+"associated resource pools for networks assigned to multiple pools"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:72
+msgid ""
+"Updated the default API token expiration for system clients (morph-api, "
+"morph-cli, and morph-customer) to 30 days to improve security posture"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:74
+msgid ""
+"Fixed an issue where virtual machines on a data network with a 9000 MTU "
+"could not communicate using jumbo packets until the network interface was"
+" manually reset"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:75
+msgid ""
+"The system now automatically enforces a single active heartbeat datastore"
+" per HVM Cluster to prevent failover ambiguity and quorum conflicts"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:76
+msgid ""
+"Fixed a keyboard mapping issue that prevented the AltGr key from "
+"functioning correctly when using the console on HVM-based virtual "
+"machines"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:77
+msgid ""
+"Automatic MII polling-rate, up-delay, and down-delay defaults for HVM "
+"Active/Passive bonds are not guaranteed in 9.0 because the original "
+"provisioning change was reverted. Inspect the effective bond "
+"configuration and configure required values explicitly through tooling "
+"supported by the installed HVM release; values can vary by release and "
+"networking backend"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:80
+msgid "Appliance & Agent Updates"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Node Packages"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:82
+msgid ""
+"|morpheus| Node and VM Node packages updated to |nodePackageVer|. "
+"Requires 3.5GB of storage for new packages. Run ``sudo rm -Rf "
+"/var/opt/morpheus/package-repos/*`` after package installation and before"
+" reconfigure to reclaim space from old packages if needed"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Linux Agent"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:83
+msgid "Updated to |linuxagentver|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Windows Agent"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:84
+msgid "|winagentver| (no changes from |previousMorphVer|)"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "macOS Agent"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:85
+msgid "|macagentver| (no changes from |previousMorphVer|)"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "MySQL"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:86
+msgid "Embedded MySQL updated to 8.4.x LTS"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Tomcat"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:87
+msgid "Updated to |tcver|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst
+msgid "Plugin API"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:88
+msgid "Updated to |pluginVer|"
+msgstr ""
+
+#: ../../release_notes/9_0_0.rst:89
+msgid ""
+"Supplemental packages are no longer required. All agents, plugins, and "
+"dependencies are included in the main deb/rpm package"
+msgstr ""
+

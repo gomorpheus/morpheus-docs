@@ -1,0 +1,521 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:4
+msgid "External Kubernetes Clusters"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:9
+msgid "|morpheus| supports two primary modes of Kubernetes cluster management:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:11
+msgid ""
+"**Provisioned Clusters** — Kubernetes clusters provisioned directly by "
+"|morpheus| using MKS (Morpheus Kubernetes Service) layouts"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:12
+msgid ""
+"**External Clusters** — Pre-existing Kubernetes clusters provisioned "
+"outside of |morpheus| and imported for management"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:14
+msgid ""
+"This guide covers the differences between these approaches, the import "
+"process for external clusters, and the feature parity between the two."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:17
+msgid "Provisioned vs External Clusters"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:23
+msgid "Feature"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:24
+msgid "Provisioned (MKS)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:25
+msgid "External"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:26
+msgid "Cluster lifecycle"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:27
+msgid "Full (create, scale, upgrade, destroy)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:28
+msgid "Monitor and consume only"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:29
+msgid "Node management"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:30
+msgid "Add/remove workers, resize"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:31
+msgid "View only"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:32
+msgid "Agent installation"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:33
+msgid "Automatic on all nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:34
+msgid "Not required"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:35
+msgid "Storage runtime"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:36
+msgid "Configured via layout (OpenEBS, Rook)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:37
+msgid "Uses existing storage provisioners"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:38
+msgid "Network runtime"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:39
+msgid "Configured via layout (Calico, Weave)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:40
+msgid "Uses existing CNI"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:41
+msgid "Kubernetes version"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:42
+msgid "Controlled by layout version"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:43
+msgid "Determined by external cluster"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:44
+msgid "Workload deployment"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:45
+#: ../../infrastructure/clusters/kubernetes/external.rst:46
+msgid "Full support"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:47
+msgid "Monitoring"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:48
+msgid "Full (nodes + workloads)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:49
+msgid "Workloads + API-level metrics"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:50
+msgid "kubectl access"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:51
+#: ../../infrastructure/clusters/kubernetes/external.rst:52
+msgid "Yes (Control tab)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:53
+msgid "Namespace management"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:54
+#: ../../infrastructure/clusters/kubernetes/external.rst:55
+msgid "Full CRUD"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:56
+msgid "Helm/Spec deployment"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:57
+#: ../../infrastructure/clusters/kubernetes/external.rst:58
+#: ../../infrastructure/clusters/kubernetes/external.rst:60
+msgid "Yes"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:59
+msgid "RBAC management"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:61
+msgid "Yes (requires sufficient permissions)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:62
+msgid "Upgrade cluster"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:63
+msgid "Yes (via ACTIONS menu)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:64
+msgid "No (managed externally)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:67
+msgid "Importing an External Cluster"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:70
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:72
+msgid "Before importing an external cluster, prepare the following:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:74
+msgid ""
+"**Service Account** — Create a service account with cluster-admin "
+"privileges:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:76
+msgid "kubectl create serviceaccount morpheus"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:80
+msgid "**Cluster Role Binding** — Bind the service account to cluster-admin:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:82
+msgid ""
+"kubectl create clusterrolebinding morpheus-admin \\\n"
+"  --clusterrole=cluster-admin \\\n"
+"  --serviceaccount=default:morpheus \\\n"
+"  --namespace=default"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:89
+msgid "**API URL** — Retrieve the cluster API server URL:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:91
+msgid ""
+"kubectl config view --minify | grep server | cut -f 2- -d \":\" | tr -d "
+"\" \""
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:95
+msgid "**API Token** — Retrieve the service account token:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:97
+msgid ""
+"SECRET_NAME=$(kubectl get secrets | grep ^morpheus | cut -f1 -d ' ')\n"
+"kubectl describe secret $SECRET_NAME | grep -E '^token' | cut -f2 -d':' |"
+" tr -d \" \""
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:102
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:102
+msgid ""
+"For Kubernetes 1.24+, tokens are no longer auto-created for service "
+"accounts. Use ``kubectl create token morpheus`` or create a long-lived "
+"token Secret manually."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:104
+msgid ""
+"**Kube Config** (alternative) — Export the kubeconfig YAML for the "
+"cluster."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:107
+msgid "Import Process"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:109
+msgid "Navigate to ``Infrastructure > Clusters``"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:110
+msgid "Select :guilabel:`+ ADD CLUSTER`"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:111
+msgid "Choose **External Kubernetes Cluster**"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:112
+msgid "Select a Group and click :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:113
+msgid "Configure:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:115
+msgid "CLOUD"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:116
+msgid ""
+"Select a previously-integrated Cloud (or any Cloud for general "
+"association)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:117
+msgid "CLUSTER NAME"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:118
+msgid "Friendly name for the cluster in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:119
+msgid "RESOURCE NAME"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:120
+msgid "Prefix for Kubernetes hosts shown in |morpheus| UI"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:121
+msgid "LAYOUT"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:122
+msgid "Select an External Kubernetes layout matching the cluster version"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:123
+msgid "API URL"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:124
+msgid "The cluster API server URL (from prerequisites)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:125
+msgid "API TOKEN"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:126
+msgid "The service account token (from prerequisites)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:127
+msgid "KUBE CONFIG"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:128
+msgid "Alternatively, paste the full kubeconfig YAML"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:130
+msgid "Complete the wizard"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:132
+msgid ""
+"|morpheus| will validate connectivity, sync namespaces, workloads, and "
+"storage, and begin ongoing monitoring."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:135
+msgid "Authentication Methods"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:137
+msgid "External clusters support two authentication methods:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:139
+msgid ""
+"**API Token** — A bearer token from a Kubernetes service account. Simpler"
+" but requires manual rotation."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:140
+msgid ""
+"**Kube Config** — Full kubeconfig YAML supporting certificate-based auth,"
+" OIDC, and other authentication providers."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:142
+msgid ""
+"At least one of API Token or Kube Config is required. If both are "
+"provided, the API Token takes precedence."
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:145
+msgid "Post-Import Capabilities"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:147
+msgid "Once imported, external clusters support:"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:149
+msgid ""
+"**Workload visibility** — All Pods, Deployments, Services, etc. are "
+"synced and viewable"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:150
+msgid "**Namespace management** — Create, view, and manage namespaces"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:151
+msgid "**kubectl access** — Execute commands from the Control tab"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:152
+msgid "**App deployment** — Deploy Helm charts and Kubernetes Spec blueprints"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:153
+msgid "**Storage management** — View and manage PVs, PVCs, and StorageClasses"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:154
+msgid "**RBAC** — View and manage roles, role bindings, and service accounts"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:155
+msgid "**Monitoring** — Events and logs are collected and viewable"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:158
+msgid "Limitations of External Clusters"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:160
+msgid "Cannot add or remove worker nodes through |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:161
+msgid "Cannot upgrade the Kubernetes version through |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:162
+msgid "No agent-based host metrics (CPU, memory at the node level)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:163
+msgid "Cannot manage the underlying infrastructure (VMs, networks)"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:164
+msgid "Cluster provisioning logs are not available"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:167
+msgid "Use Cases for External Clusters"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:169
+msgid ""
+"**OpenShift integration** — Import managed OpenShift clusters for "
+"workload deployment"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:170
+msgid ""
+"**EKS/GKE/AKS brought externally** — Import cloud-managed clusters not "
+"provisioned through |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:171
+msgid ""
+"**On-premises clusters** — Import clusters built with kubeadm, Rancher, "
+"or other tools"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:172
+msgid "**Development clusters** — Import minikube or kind clusters for testing"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:173
+msgid ""
+"**Multi-cluster management** — Centralize visibility across heterogeneous"
+" Kubernetes environments"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:176
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:178
+msgid ""
+"**Connection refused:** Verify the API URL is accessible from the "
+"|morpheus| appliance over port 6443"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:179
+msgid ""
+"**Unauthorized:** Ensure the API token or kubeconfig credentials are "
+"valid and have cluster-admin permissions"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:180
+msgid ""
+"**Partial sync:** Some resources may not appear if the service account "
+"lacks list permissions on specific resource types"
+msgstr ""
+
+#: ../../infrastructure/clusters/kubernetes/external.rst:181
+msgid ""
+"**Namespace not visible:** The service account must have cluster-level "
+"list permissions (not just namespace-scoped)"
+msgstr ""
+

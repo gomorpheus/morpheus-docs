@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/image_builder.rst:2
+msgid "Image Builder"
+msgstr ""
+
+#: ../../tools/image_builder.rst:4
+msgid ""
+"The Morpheus Image Builder tool creates vmdk, qcow2, vhd and raw Images "
+"from scratch. The Image Builder creates a blank VM in VMware, attaches an"
+" os iso, executes a boot script on the VM at startup via VNC which calls "
+"a preseed script which runs the unattended os installation and "
+"configuration. Morpheus then executes an ova export of the completed vmdk"
+" to target Storage provider, and converts the image to all other "
+"specified formats. The new Virtual Image records are automatically added "
+"to Morpheus and the Images are then available for use."
+msgstr ""
+
+#: ../../tools/image_builder.rst:7
+msgid "Requirements"
+msgstr ""
+
+#: ../../tools/image_builder.rst:9
+msgid ""
+"DHCP must be enabled on the network specified for the VM in Morpheus, and"
+" network settings configured for DHCP in Morpheus"
+msgstr ""
+
+#: ../../tools/image_builder.rst:10
+msgid ""
+"The blank VM must get network configuration via DHCP upon boot. Static IP"
+" assignment is not possible."
+msgstr ""
+
+#: ../../tools/image_builder.rst:11
+msgid "Hypervisor Console must be enabled on the Target Cloud"
+msgstr ""
+
+#: ../../tools/image_builder.rst:12
+msgid "Morpheus utilizes VNC to pass the boot script to the VM."
+msgstr ""
+
+#: ../../tools/image_builder.rst:13
+msgid "VM must be able to reach and resolve the Morpheus appliance url over 443"
+msgstr ""
+
+#: ../../tools/image_builder.rst:14
+msgid "The boot script calls to the Morpheus appliance to get the preseed script."
+msgstr ""
+
+#: ../../tools/image_builder.rst:15
+msgid "Valid Linux iso set for the Virtual Image. Windows is not supported."
+msgstr ""
+
+#: ../../tools/image_builder.rst:16
+msgid "The iso can exist in the target cloud or uploaded to Morpheus"
+msgstr ""
+
+#: ../../tools/image_builder.rst:18 ../../tools/image_builder.rst:36
+msgid "Note"
+msgstr ""
+
+#: ../../tools/image_builder.rst:18
+msgid "``cloud-init enabled`` must be disabled on the iso Virtual Image settings."
+msgstr ""
+
+#: ../../tools/image_builder.rst:20
+msgid "Access to target ESXi host(s) over 443 and ESXi hostname dns resolution"
+msgstr ""
+
+#: ../../tools/image_builder.rst:21
+msgid ""
+"Same requirement as Hypervisor Console and Image upload/download to/from "
+"vCenter."
+msgstr ""
+
+#: ../../tools/image_builder.rst:22
+msgid "Valid Boot Script"
+msgstr ""
+
+#: ../../tools/image_builder.rst:23
+msgid "Valid Pre-seed script"
+msgstr ""
+
+#: ../../tools/image_builder.rst:24
+msgid "Valid Storage Provider configure for ova export of generated image."
+msgstr ""
+
+#: ../../tools/image_builder.rst:27
+msgid "Sample Scripts"
+msgstr ""
+
+#: ../../tools/image_builder.rst:30
+msgid "Sample Boot Script"
+msgstr ""
+
+#: ../../tools/image_builder.rst:32
+msgid "<wait5><tab> text ks=<%=preseedUrl%><enter>"
+msgstr ""
+
+#: ../../tools/image_builder.rst:36
+msgid ""
+"``<%=preseedUrl%>`` is a Morpheus variable that will populate with the "
+"Morpheus appliance url."
+msgstr ""
+
+#: ../../tools/image_builder.rst:39
+msgid "Sample Preseed Script"
+msgstr ""
+
+#: ../../tools/image_builder.rst:41
+#, python-format
+msgid ""
+"# CentOS 7.x kickstart file - ks.cfg\n"
+"#\n"
+"# For more information on kickstart syntax and commands, refer to the\n"
+"# CentOS Installation Guide:\n"
+"# https://access.redhat.com/documentation/en-"
+"US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/sect-kickstart-"
+"syntax.html\n"
+"#\n"
+"# For testing, you can fire up a local http server temporarily.\n"
+"# cd to the directory where this ks.cfg file resides and run the "
+"following:\n"
+"#    $ python -m SimpleHTTPServer\n"
+"# You don't have to restart the server every time you make changes.  "
+"Python\n"
+"# will reload the file from disk every time.  As long as you save your "
+"changes\n"
+"# they will be reflected in the next HTTP download.  Then to test with\n"
+"# a PXE boot server, enter the following on the PXE boot prompt:\n"
+"#    > linux text ks=http://<your_ip>:8000/ks.cfg\n"
+"\n"
+"# Required settings\n"
+"lang en_US.UTF-8\n"
+"keyboard us\n"
+"rootpw password\n"
+"authconfig --enableshadow --enablemd5\n"
+"timezone UTC\n"
+"\n"
+"# Optional settings\n"
+"install\n"
+"cdrom\n"
+"user --name=cloud-user --plaintext --password password\n"
+"unsupported_hardware\n"
+"network --bootproto=dhcp\n"
+"firewall --disabled\n"
+"selinux --permissive\n"
+"bootloader --location=mbr --append=\"biosdevname=0 net.ifnames=0\"\n"
+"text\n"
+"skipx\n"
+"zerombr\n"
+"clearpart --all --initlabel\n"
+"autopart --type=plain\n"
+"firstboot --disabled\n"
+"reboot\n"
+"\n"
+"%packages --nobase --ignoremissing --excludedocs\n"
+"openssh-clients\n"
+"# Prerequisites for installing VMware Tools guest additions.\n"
+"# Put in kickstart to ensure first version installed is from install "
+"disk,\n"
+"# not latest from a mirror.\n"
+"kernel-headers\n"
+"kernel-devel\n"
+"gcc\n"
+"make\n"
+"perl\n"
+"curl\n"
+"wget\n"
+"bzip2\n"
+"dkms\n"
+"patch\n"
+"net-tools\n"
+"git\n"
+"# Core selinux dependencies installed on 7.x, no need to specify\n"
+"# Other stuff\n"
+"sudo\n"
+"nfs-utils\n"
+"open-vm-tools\n"
+"-fprintd-pam\n"
+"-intltool\n"
+"-biosdevname\n"
+"\n"
+"# unnecessary firmware\n"
+"-aic94xx-firmware\n"
+"-atmel-firmware\n"
+"-b43-openfwwf\n"
+"-bfa-firmware\n"
+"-ipw*-firmware\n"
+"-irqbalance\n"
+"-ivtv-firmware\n"
+"-iwl*-firmware\n"
+"-libertas-usb8388-firmware\n"
+"-ql*-firmware\n"
+"-rt61pci-firmware\n"
+"-rt73usb-firmware\n"
+"-xorg-x11-drv-ati-firmware\n"
+"-zd1211-firmware\n"
+"%end\n"
+"\n"
+"%post\n"
+"# configure vagrant user in sudoers\n"
+"echo \"%cloud-user ALL=(ALL) NOPASSWD: ALL\" >> /etc/sudoers.d/cloud-user"
+"\n"
+"chmod 0440 /etc/sudoers.d/cloud-user\n"
+"cp /etc/sudoers /etc/sudoers.orig\n"
+"sed -i \"s/^\\(.*requiretty\\)$/#\\1/\" /etc/sudoers\n"
+"# keep proxy settings through sudo\n"
+"echo 'Defaults env_keep += \"HTTP_PROXY HTTPS_PROXY FTP_PROXY RSYNC_PROXY"
+" NO_PROXY\"' >> /etc/sudoers\n"
+"%end"
+msgstr ""
+

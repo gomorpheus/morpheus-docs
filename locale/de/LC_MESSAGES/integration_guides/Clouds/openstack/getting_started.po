@@ -1,0 +1,856 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:2
+msgid "Getting Started"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:4
+msgid ""
+"OpenStack Clouds are very easy to integrate with |morpheus|. First, go to"
+" the ``Infrastructure > Clouds`` section and click :guilabel:`+ ADD`. "
+"Select OpenStack to begin the integration process, most branded flavors "
+"of OpenStack will work with this Cloud selection as well."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:6
+msgid "Warning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:6
+msgid "Support for OpenStack v2 Identity API has been removed in v5.3.3"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:1
+msgid "**Cloud Configuration**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:3
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:4
+msgid "Name of the Cloud in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:5
+msgid "CODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:6
+msgid "Unique code used for api/cli, automation and policies."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:7
+msgid "LOCATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:8
+msgid "Description field for adding notes on the cloud, such as location."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:9
+msgid "VISIBILITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:10
+msgid ""
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:11
+msgid "TENANT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:12
+msgid ""
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:13
+msgid "ENABLED"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:14
+msgid ""
+"When disabled, automatic Cloud sync is paused and the Cloud will not be "
+"selectable for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:15
+msgid "AUTOMATICALLY POWER ON VMS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:16
+msgid ""
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:36
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:108
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid ""
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:11
+msgid "Details"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:13
+msgid "IDENTITY API URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:14
+msgid "v3 Identity endpoint."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:15
+msgid "DOMAIN ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:16
+msgid ""
+"For `Default` domains, Default can be used. For other domain the Domain "
+"ID must be entered, not the Domain Name."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:17
+msgid "PROJECT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:18
+msgid ""
+"Enter the target project or leave this field blank to integrate all "
+"projects"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:19
+msgid "USERNAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:20
+msgid "Service Username"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:21
+msgid "PASSWORD"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:22
+msgid "Service user password"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:23
+msgid "OS VERSION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:24
+msgid ""
+"Select Openstack Version. |morpheus| supports the latest versions of "
+"OpenStack, select the latest version available if your current version is"
+" not shown."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:25
+msgid "IMAGE FORMAT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:26
+msgid "Select QCOW2, RAW or VMDK Image Type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:27
+msgid "LB TYPE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:28
+msgid "Select LB Type for Openstack LB syncing and creation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:29
+msgid "Inventory Existing Instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:30
+msgid "Select for |morpheus| to discover and sync existing VM's"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:31
+msgid "Enable Hypervisor Console"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:32
+msgid ""
+"Hypervisor console support for openstack currently only supports novnc. "
+"Be sure the novnc proxy is configured properly in your openstack "
+"environment. When disabled |morpheus| will use ssh and rdp for console "
+"conneciton (vm/host credentials required)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:1
+msgid "**Advanced Options**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:3
+msgid "DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:4
+msgid "Specify a default domain for instances provisioned to this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:5
+msgid "SCALE PRIORITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:6
+msgid ""
+"Only affects Docker Provisioning. Specifies the priority with which an "
+"instance will scale into the cloud. A lower priority number means this "
+"cloud integration will take scale precedence over other cloud "
+"integrations in the group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:7
+msgid "APPLIANCE URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:8
+msgid ""
+"Alternate Appliance url for scenarios when the default Appliance URL "
+"(configured in `admin > settings`) is not reachable or resolvable for "
+"Instances provisioned in this cloud. The Appliance URL is used for Agent "
+"install and reporting."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:9
+msgid "TIME ZONE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:10
+msgid "Configures the time zone on provisioned VM's if necessary."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:11
+msgid "DATACENTER ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:12
+msgid ""
+"Used for differentiating pricing among multiple datacenters. Leave blank "
+"unless prices are properly configured."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:13
+msgid "NETWORK MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:14
+msgid "Unmanaged or select a Network Integration (NSX, ACI etc)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:15
+msgid "LOCAL FIREWALL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:16
+msgid ""
+"On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
+"only)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:17
+msgid "SECURITY SERVER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:18
+msgid "Security Server setting is for Security Service Integrations such as ACI"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:19
+msgid "TRUST PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:20
+msgid "Select Internal (Morpheus) or an existing Trust Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:21
+msgid "STORAGE MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:22
+msgid "Single Disk, LVM or Clustered"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:23
+msgid "BACKUP PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:24
+msgid ""
+"Select a backup provider. Depending on the Cloud type and any currently-"
+"configured backup plugins you may select Internal Backups (Morpheus) or "
+"another configured backup solution"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:25
+msgid "REPLICATION PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:26
+msgid ""
+"Sets the default Replication Provider for the Cloud. Select an existing "
+"Replication Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:27
+msgid "GUIDANCE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:28
+msgid "Enable Guidance recommendations on cloud resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:29
+msgid "COSTING"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:30
+msgid ""
+"Enable for |morpheus| to sync Costing data from the Cloud provider, when "
+"available. For on-prem Clouds, enabling costing activates a costing "
+"service designed to mirror the live costing experience of public clouds, "
+"including invoicing with line items and real-time cost data (Operations >"
+" Costing > Invoices). If your organization utilizes reserved instances "
+"and you want to pull in related pricing data, some Cloud integrations "
+"include the option to select `Costing and Reservations`. If this is not "
+"relevant, select `Costing` to save money on additional calls to the Cloud"
+" provider's costing API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:31
+msgid "DNS INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:32
+msgid ""
+"Records for instances provisioned in this cloud will be added to selected"
+" DNS integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:33
+msgid "SERVICE REGISTRY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:34
+msgid ""
+"Services for instances provisioned in this cloud will be added to "
+"selected Service Registry integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:35
+msgid "CONFIG MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:36
+msgid "Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:37
+msgid "CMDB"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:38
+msgid "Select CMDB Integration to automatically update selected CMDB."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:39
+msgid "CMDB DISCOVERY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:40
+msgid ""
+"When checked, any automatically discovered (unmanaged) servers onboarded "
+"into |morpheus| from this Cloud will also have CMDB records created for "
+"them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:41
+msgid "CHANGE MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:42
+msgid ""
+"Select an existing Change Management Integration to set on the Cloud. ex:"
+" Cherwell"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:43
+msgid "AGENT INSTALL MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid ""
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM "
+"or Guest Execution for Agent install."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:45
+msgid ""
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize"
+" Cloud-Init or Cloudbase-Init for agent install when provisioning images "
+"with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on "
+"SSH or WINRM if cloud-init is not installed on the provisioned image. "
+"Morpheus will also add Agent installation to Windows unattend.xml data "
+"when performing Guest Customizations or utilizing syspreped images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:46
+msgid "VDI GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:47
+msgid ""
+"Set a VDI Gateway for outbound communication from the |morpheus| "
+"Appliance to the vdi endpoints. VDI Gateways can be added in "
+"``/tools/vdi/gateways``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:50
+msgid "**CUSTOM LOGOS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:52
+msgid ""
+"When integrating a Cloud, it will appear by default throughout the UI "
+"with its standard logo (VMware logo for VMware Clouds, etc.). If desired,"
+" you may upload a custom logo that should appear instead. This might be "
+"useful for MSPs which might not want to reveal the Cloud type underlying "
+"its services. A dark mode version of the logo may also be uploaded if the"
+" standard logo doesn't look right against the |morpheus| dark mode theme."
+" Checking USE DEFAULT CLOUD LOGOS allows the user to return to the "
+"standard logo for the Cloud type without deleting the custom uploaded "
+"logo."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:54
+msgid "**INVENTORY OPTIONS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:56
+msgid ""
+"Inventory options allow you to set a default active or inactive state for"
+" certain discovered resources. The list of available resources to "
+"configure will vary based on the Cloud type and its supported resources. "
+"By default, all possible resources for the Cloud type will be discovered "
+"in an active state. Uncheck the box for some or all resources to discover"
+" them in an inactive state. The list of potential resources that may "
+"appear include:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:58
+msgid "Service Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:59
+msgid "Resource Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:60
+msgid "Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:61
+msgid "Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:62
+msgid "Datastores"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:63
+msgid "Folders"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:65
+msgid "**Provisioning Command**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:67
+msgid "PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:68
+msgid ""
+"Set a proxy for inbound communication from Instances to the |morpheus| "
+"Appliance. Proxies can be added in the `Infrastructure > Networks > "
+"Proxies` tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:69
+msgid "Bypass Proxy for Appliance URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:70
+msgid ""
+"Enable to bypass proxy settings (if added) for |morpheus| Agent "
+"communication to the Appliance URL."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:71
+msgid "NO PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:72
+msgid ""
+"Include a list of IP addresses or name servers to exclude from proxy "
+"traversal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:73
+msgid "USER DATA (LINUX)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid ""
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash "
+"syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more"
+" information."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:36
+msgid ""
+"v5.3.3 adds openstack project management which requires additional "
+"permissions in openstack:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:38
+msgid ""
+"identity:list_domain_roles\n"
+"identity:list_role_assignments\n"
+"identity:list_roles\n"
+"identity:list_projects\n"
+"identity:create_project\n"
+"identity:update_project\n"
+"identity:delete_project\n"
+"identity:create_grant\n"
+"identity:revoke_grant"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:50
+msgid ""
+"Most of the information in the dialog can be acquired from the Openstack "
+"dashboard. under ``Project > Access & Security > API Access``. The API "
+"URL that is needed is the one tied to `Identity`. The Domain and Project "
+"inputs typically correlate to the multitenant domain setup within "
+"Openstack (sometimes just left at default) as well as the project name "
+"given to instances. |morpheus| allows multiple integrations to the same "
+"Openstack cluster to be scoped to various domains and projects as needed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:52
+msgid ""
+"The remaining options help |morpheus| determine which API capabilities "
+"exist in the selected Openstack environment. Hence the need for the "
+"Openstack version and image format. If a newer Openstack cluster is being"
+" used then exists in the dropdown, simply select the most recent version "
+"in the dropdown and this should function sufficiently until the new "
+"version is added."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:54
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:54
+msgid ""
+"Some Openstack environments do not support QCOW2 and force RAW image "
+"formats (like Metapod). This is due to some network overhead in Ceph "
+"created by using QCOW2. |morpheus| keeps two copies of Openstack image "
+"templates for this exact purpose."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:56
+msgid ""
+"Saving this cloud integration should perform a verification step and "
+"close upon successful completion."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:59
+msgid "Existing Instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:61
+msgid ""
+"|morpheus| provides several features regarding pulling in existing "
+"virtual machines and servers in an environment. Most cloud options "
+"contain a checkbox titled '*Inventory Existing Instances*'. When this "
+"option is selected, all VMs found within the specified scope of the cloud"
+" integration will be scanned periodically and Virtual Machines will be "
+"synced into |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:63
+msgid ""
+"By default these virtual machines are considered 'unmanaged' and do not "
+"appear in the :menuselection:`Provisioning --> Instances` area but rather"
+" :menuselection:`Infrastructure --> Compute --> Virtual Machines`. "
+"However, a few features are provided with regards to unmanaged instances."
+" They can be assigned to various accounts if using a multitenant master "
+"account, however it may be best suited to instead assign the 'Resource "
+"Pool' to an account and optionally move all servers with regards to that "
+"pool (more on this later)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:65
+msgid ""
+"A server can also be made into a managed server. During this process "
+"remote access is requested and an agent install is performed on the guest"
+" operating system. This allows for guest operations regarding log "
+"acquisition and stats. If the agent install fails, a server will still be"
+" marked as managed and an Instance will be created in `Provisioning`, "
+"however certain features will not function. This includes stats "
+"collection and logs."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:68
+msgid "Service Ports"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:70
+msgid ""
+"|morpheus| consumes the following OpenStack service ports by default as "
+"part of its cloud integration. If your OpenStack implementation has been "
+"configured to use alternate service ports, these can be overwritten in "
+"the Cloud configuration under the Service Endpoints section when adding "
+"or editing the Cloud integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:72
+msgid ""
+".. image:: "
+"/images/integration_guides/clouds/openstack/serviceEndpoints.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:76
+msgid "Default Service Ports"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:78
+msgid "Identity: 5000"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:79
+msgid "Compute: 8774"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:80
+msgid "Image: 9292"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:81
+msgid "Key Manager: 9311"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:82
+msgid "Network: 9696"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:83
+msgid "Volume API v3: 8776 v3"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:84
+msgid "Manila: 8786"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:87
+msgid "OpenStack Scalable File Service (SFS)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:89
+msgid ""
+"The |morpheus| integration with Openstack Cloud includes the capability "
+"to work with Openstack Scalable File Service (SFS). SFS is shared file "
+"storage hosted on Openstack Cloud. By integrating |morpheus| with "
+"Openstack you can discover, create, manage, and delete SFS servers, as "
+"well as view and work with the file shares and files contained therein."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:92
+msgid "SFS Server Discovery and Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:94
+msgid ""
+"On integrating Openstack Cloud with |morpheus|, SFS servers and file "
+"shares are discovered automatically after a short time. The server(s) can"
+" be viewed in Infrastructure > Storage > Servers. By viewing the server "
+"detail page and clicking :guilabel:`EDIT`, the storage server can be "
+"scoped as needed. Administrators can choose to scope to other Openstack "
+"Cloud integrations (if more than one relevant integration currently "
+"exists), select from synced availability zones, and scope the storage "
+"server to specific Tenants if desired."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:96
+msgid ""
+"Additionally, Openstack SFS servers can be created from the storage "
+"server list page (Infrastructure > Storage > Servers) directly in "
+"|morpheus|. Click :guilabel:`+ADD` to begin and set the storage server "
+"type value to \"Openstack SFS\". Just like with existing synced SFS "
+"servers, those created from |morpheus| can be scoped as needed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:98
+msgid ".. image:: /images/integration_guides/clouds/openstack/addSfs.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:102
+msgid "SFS File Share Discovery and Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:104
+msgid ""
+"Discovered file shares will appear among other file shares synced with "
+"|morpheus| in Infrastructure > Storage > File Shares. Depending on the "
+"number of cloud integrations in your |morpheus| appliance and the number "
+"of cloud integrations available to your user account, this list may be "
+"quite large. Using the search bar on this page, we can narrow down the "
+"list to only file shares whose names match the search terms."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:106
+msgid ""
+"We can drill into individual file shares by clicking on the hyperlinked "
+"name in the list of all integrated file shares. From the file share "
+"detail page, a list of files will appear on the files tab. Begin the "
+"process of adding a new file by clicking :guilabel:`+ADD`. The Access tab"
+" on the file shares detail page allows users to view and manage ACL "
+"rules."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:108
+msgid ""
+"\"Failed to load files from storage provider\" is present when the "
+"|morpheus| appliance doesn't have access to the file share."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:110
+msgid ""
+"New Openstack SFS file shares can also be created directly in |morpheus|."
+" From the file shares list page, get started by clicking "
+":guilabel:`+ADD`. Select the type \"Openstack SFS Share\". Set the "
+"storage service field to a pre-existing Openstack SFS server. Setting a "
+"friendly name for the file share in |morpheus| and selecting from synced "
+"availability zones is required."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:113
+msgid "Network and Router Creation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:115
+msgid ""
+"Once an OpenStack Cloud is integrated into |morpheus|, new network "
+"creation options become available. When adding a new network "
+"(Infrastructure > Networks > Networks Tab), a new type labeled "
+"\"OpenStack Private Network\" is available when clicking "
+":guilabel:`+ADD`. When the user creates this network construct in "
+"|morpheus|, a layer two subnet is created but it's not connected to a "
+"Virtual Private Cloud (VPC). This is by design as an Internet-routable "
+"network is not always desired. Continue on with this section after "
+"creating the network to also create a VPC (router)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:118
+msgid "Create a network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:120
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:130
+msgid "Navigate to Infrastructure > Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:121
+msgid "Click on the Networks tab"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:122
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:132
+msgid "Click :guilabel:`+ADD`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:123
+msgid "Select OpenStack Private Network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:124
+msgid "Complete the modal based on requirements for the new network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:125
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:135
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:128
+msgid "Create a router"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:131
+msgid "Click on the Routers tab"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:133
+msgid "Select OpenStack Router"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:134
+msgid "Complete the modal based on requirements for the new router"
+msgstr ""
+
+#: ../../integration_guides/Clouds/openstack/getting_started.rst:137
+msgid ""
+"When creating a router, it's helpful to note that the External Network is"
+" the floating IP network that has been assigned to the OpenStack project."
+" This network will grant your Instances their routes out to the Internet."
+" The Internal Subnet can be a layer two subnet that you may have created "
+"in the previous step. In addition, multiple subnets can be added to the "
+"router (VPC) and the IP address on the subnet would be the router's "
+"internal IP address."
+msgstr ""
+

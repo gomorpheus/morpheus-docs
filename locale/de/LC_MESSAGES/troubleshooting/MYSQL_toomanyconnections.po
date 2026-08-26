@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:2
+msgid "MySQL Too many connections error"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:4
+msgid "If you see the following error in the |morpheus| UI logs:"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:6
+msgid ""
+"SqlExceptionHelper - Data source rejected establishment of connection,  "
+"message from server: \"Too many connections\""
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:10
+msgid ""
+"it means the number connections between |morpheus| application and mysql "
+"have reached the `max_connections` limit set in mysql (default is 151), "
+"or the `max_active` setting, which limits the number of connections on "
+"the |morpheus| end (default is 150), and the limit needs to be raised, "
+"either in |morpheus| or mysql, or both depending on the number of "
+"connections and configuration."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:12
+msgid "Note"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:12
+msgid ""
+"The `max_connections` setting in mysql and the maximum used connections "
+"between an app node and mysql can be viewed in the |morpheus| ui in the "
+"`Administration - Health` section under Database."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:14
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:16
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:34
+msgid "Important"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:14
+msgid ""
+"In Single |morpheus| app node configurations, the ``max_active`` setting "
+"on the app node must be less than the ``max_connections`` setting in "
+"mysql."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:16
+msgid ""
+"In HA configurations, the ``max_active`` setting is per app node, and the"
+" ``max_connections`` setting in mysql must be greater than all app nodes "
+"``max_active`` values combined, ie ``(max_active`` * "
+"$number_of_app_nodes) <= max_connections``."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:19
+msgid "|morpheus| ``max_active`` setting"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:21
+msgid ""
+"Edit ``/etc/morpheus/morpheus.rb`` and add ``mysql[‘max_active’] = "
+"$value`` replacing ``$value`` with desired desired number of maximum "
+"connections allowed by |morpheus| to mysql. For example, to set "
+"max_active at 150:"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:23
+msgid "mysql[‘max_active’] = 150"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:27
+msgid ""
+"Replacing 100 with the desired number of maximum connections allowed by "
+"|morpheus| to mysql."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:29
+msgid ""
+"Run ``morpheus-ctl reconfigure`` for the setting to be applied. "
+"Reconfigure will not restart the ui unless additional ram has been added "
+"to the appliance host since the previous reconfigure. To edit the "
+"max_active without a reconfigure, update the ``max_active`` setting in "
+"``/opt/morpheus/conf/application.yml``. Please note the default setting "
+"of 150 will be applied upon the next reconfigure unless ``max_active`` is"
+" defined as instructed above in the ``morpheus.rb`` file."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:32
+msgid "mysql ``max_connections`` setting"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:34
+msgid ""
+"Customers are responsible for configuring and maintaining external "
+"databases used by |morpheus|. This explains how to set the "
+"``max_connections`` setting, but the value for the setting needs to be "
+"established by a customers qualified db admin."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:36
+msgid "In mysql prompt,"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:38
+msgid "run ``mysql> SET GLOBAL max_connections = $value;``"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:40
+msgid ""
+"This will immediately write the variable, however it is only a temporary "
+"setting that will be overwritten upon restart of the mysql service."
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:42
+msgid ""
+"To persist the ``max_connections`` setting, edit my.cnf, and add "
+"``max_connections = $value`` replacing ``$value`` with desired value, ie "
+"to set max_connections at 300 in in my.cnf, add:"
+msgstr ""
+
+#: ../../troubleshooting/MYSQL_toomanyconnections.rst:44
+msgid "max_connections = 300"
+msgstr ""
+

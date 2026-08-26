@@ -1,0 +1,3117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/storage/storage.rst:4
+msgid "Storage"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:140
+#: ../../infrastructure/storage/buckets.rst:178
+#: ../../infrastructure/storage/file_shares.rst:275
+#: ../../infrastructure/storage/file_shares.rst:277
+#: ../../infrastructure/storage/file_shares.rst:334
+#: ../../infrastructure/storage/file_shares.rst:336
+#: ../../infrastructure/storage/servers.rst:57
+#: ../../infrastructure/storage/share_access.rst:48
+#: ../../infrastructure/storage/snapshots.rst:80
+#: ../../infrastructure/storage/snapshots.rst:196
+#: ../../infrastructure/storage/storage.rst:6
+#: ../../infrastructure/storage/storage_hosts.rst:33
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/storage/storage.rst:6
+msgid ""
+"In v3.5.2 STORAGE PROVIDERS has been split out into BUCKETS and FILE "
+"SHARES sections."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:5
+#: ../../infrastructure/storage/snapshots.rst:5
+#: ../../infrastructure/storage/storage.rst:9
+#: ../../infrastructure/storage/storage_hosts.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/storage/storage.rst:11
+msgid ""
+"`Infrastructure > Storage` is for adding and managing Storage Buckets, "
+"File Shares, Volumes, Data Stores and Storage Servers for use with other "
+"Services in |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:12
+#: ../../infrastructure/storage/snapshots.rst:12
+#: ../../infrastructure/storage/storage.rst:14
+msgid "Role Requirements"
+msgstr ""
+
+#: ../../infrastructure/storage/storage.rst:16
+msgid ""
+"There are two Role permissions for the `Infrastructure > Storage` "
+"section: `Infrastructure: Storage` and `Infrastructure: Storage Browser`."
+" `Infrastructure: Storage` gives Full, Read, or No access to the "
+"`Infrastructure > Storage` sections. `Infrastructure: Storage Browser` "
+"controls file access for Buckets, File Shares, and supported HVM file-"
+"based Data Stores. Full `Infrastructure: Storage Browser` permission "
+"allows upload and deletion when the user also has Full access to the "
+"corresponding storage resource. Read permission allows browsing and "
+"download when the user also has at least Read access to that resource."
+msgstr ""
+
+#: ../../infrastructure/storage/storage.rst:19
+msgid "Default Storage"
+msgstr ""
+
+#: ../../infrastructure/storage/storage.rst:21
+msgid ""
+"The default Storage path for Virtual Images, Backups, Deployment "
+"Archives, Archive Service, and Archived Snapshots is `var/opt/morpheus"
+"/morpheus-ui/`. Its is recommended to add Storage Buckets and File Shares"
+" for these targets in the `Infrastructure > Storage` section to avoid "
+"running out of disk space on the |morpheus| Appliance."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:2
+msgid "Storage Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:4
+msgid ""
+"Storage Buckets are for Backup, Archives, Deployment and Virtual Images "
+"storage targets. Buckets can be browsed and files and folders can be "
+"uploaded, downloaded or deleted from the Bucket section. Retention "
+"Policies can be set on Storage Buckets for files to be deleted or backed "
+"up to another bucket after a set amount of time."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:7
+msgid "Supported Bucket Types"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:9
+msgid "Alibaba"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:10
+msgid "Amazon S3"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:11
+msgid "Google Cloud Storage"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:12
+msgid "Openstack Swift"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:13
+msgid "Rackspace CDN"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:16
+msgid "Alibaba Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:18
+msgid "To Add an Alibaba Storage Bucket:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:20
+#: ../../infrastructure/storage/buckets.rst:81
+#: ../../infrastructure/storage/buckets.rst:182
+#: ../../infrastructure/storage/buckets.rst:244
+#: ../../infrastructure/storage/buckets.rst:305
+#: ../../infrastructure/storage/file_shares.rst:22
+#: ../../infrastructure/storage/file_shares.rst:78
+#: ../../infrastructure/storage/file_shares.rst:139
+#: ../../infrastructure/storage/file_shares.rst:209
+#: ../../infrastructure/storage/file_shares.rst:281
+#: ../../infrastructure/storage/file_shares.rst:340
+#: ../../infrastructure/storage/servers.rst:10
+#: ../../infrastructure/storage/servers.rst:34
+#: ../../infrastructure/storage/servers.rst:66
+#: ../../infrastructure/storage/volumes.rst:65
+#: ../../infrastructure/storage/volumes.rst:94
+msgid "Select the Infrastructure link in the navigation bar."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:21
+#: ../../infrastructure/storage/buckets.rst:82
+#: ../../infrastructure/storage/buckets.rst:183
+#: ../../infrastructure/storage/buckets.rst:245
+#: ../../infrastructure/storage/buckets.rst:306
+#: ../../infrastructure/storage/file_shares.rst:23
+#: ../../infrastructure/storage/file_shares.rst:79
+#: ../../infrastructure/storage/file_shares.rst:140
+#: ../../infrastructure/storage/file_shares.rst:210
+#: ../../infrastructure/storage/file_shares.rst:282
+#: ../../infrastructure/storage/file_shares.rst:341
+#: ../../infrastructure/storage/servers.rst:11
+#: ../../infrastructure/storage/servers.rst:35
+#: ../../infrastructure/storage/servers.rst:67
+#: ../../infrastructure/storage/volumes.rst:66
+#: ../../infrastructure/storage/volumes.rst:95
+msgid "Select the Storage link in the sub navigation bar."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:22
+#: ../../infrastructure/storage/buckets.rst:83
+#: ../../infrastructure/storage/buckets.rst:184
+#: ../../infrastructure/storage/buckets.rst:246
+#: ../../infrastructure/storage/buckets.rst:307
+msgid "In the BUCKETS tab, Click the :guilabel:`+ ADD` button."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:23
+msgid "Select `Alibaba` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:24
+#: ../../infrastructure/storage/buckets.rst:85
+#: ../../infrastructure/storage/buckets.rst:148
+#: ../../infrastructure/storage/buckets.rst:186
+#: ../../infrastructure/storage/buckets.rst:248
+#: ../../infrastructure/storage/buckets.rst:309
+msgid "From the NEW BUCKET Wizard input the following:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:26
+#: ../../infrastructure/storage/buckets.rst:87
+#: ../../infrastructure/storage/buckets.rst:150
+#: ../../infrastructure/storage/buckets.rst:188
+#: ../../infrastructure/storage/buckets.rst:250
+#: ../../infrastructure/storage/buckets.rst:311
+#: ../../infrastructure/storage/file_shares.rst:28
+#: ../../infrastructure/storage/file_shares.rst:84
+#: ../../infrastructure/storage/file_shares.rst:145
+#: ../../infrastructure/storage/file_shares.rst:215
+#: ../../infrastructure/storage/file_shares.rst:287
+#: ../../infrastructure/storage/file_shares.rst:346
+#: ../../infrastructure/storage/servers.rst:15
+#: ../../infrastructure/storage/servers.rst:39
+#: ../../infrastructure/storage/servers.rst:71
+#: ../../infrastructure/storage/share_access.rst:37
+#: ../../infrastructure/storage/snapshots.rst:40
+#: ../../infrastructure/storage/volumes.rst:83
+#: ../../infrastructure/storage/volumes.rst:110
+msgid "NAME"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:27
+#: ../../infrastructure/storage/buckets.rst:88
+#: ../../infrastructure/storage/buckets.rst:189
+#: ../../infrastructure/storage/buckets.rst:251
+#: ../../infrastructure/storage/buckets.rst:312
+msgid "Name of the Bucket in |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:28
+#: ../../infrastructure/storage/buckets.rst:89
+msgid "ACCESS KEY"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:29
+msgid "Alibaba Access Key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:30
+#: ../../infrastructure/storage/buckets.rst:91
+#: ../../infrastructure/storage/buckets.rst:196
+#: ../../infrastructure/storage/file_shares.rst:154
+msgid "SECRET KEY"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:31
+msgid "Alibaba Secret Key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:32
+#: ../../infrastructure/storage/buckets.rst:317
+msgid "REGION"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:33
+msgid "Enter Alibaba Region for the Bucket"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:34
+#: ../../infrastructure/storage/buckets.rst:93
+#: ../../infrastructure/storage/buckets.rst:156
+#: ../../infrastructure/storage/buckets.rst:192
+#: ../../infrastructure/storage/buckets.rst:256
+#: ../../infrastructure/storage/buckets.rst:319
+msgid "BUCKET NAME"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:35
+msgid ""
+"Enter existing Alibaba Bucket name, or to add a new Bucket enter a new "
+"name and select `Create Bucket`."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:36
+#: ../../infrastructure/storage/buckets.rst:260
+#: ../../infrastructure/storage/buckets.rst:321
+msgid "Create Bucket"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:37
+msgid ""
+"Enable if the Bucket entered in BUCKET NAME does not exist and needs to "
+"be created."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:38
+#: ../../infrastructure/storage/buckets.rst:99
+#: ../../infrastructure/storage/buckets.rst:202
+#: ../../infrastructure/storage/buckets.rst:262
+#: ../../infrastructure/storage/buckets.rst:323
+#: ../../infrastructure/storage/file_shares.rst:96
+#: ../../infrastructure/storage/file_shares.rst:166
+#: ../../infrastructure/storage/file_shares.rst:232
+#: ../../infrastructure/storage/file_shares.rst:294
+#: ../../infrastructure/storage/file_shares.rst:352
+msgid "Default Backup Target"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:39
+#: ../../infrastructure/storage/buckets.rst:100
+msgid ""
+"Sets this Bucket as the default backup target when creating Backups. If "
+"selected the option to update existing Backup configuration to use this "
+"Bucket will be presented."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:40
+#: ../../infrastructure/storage/buckets.rst:101
+#: ../../infrastructure/storage/buckets.rst:204
+#: ../../infrastructure/storage/buckets.rst:264
+#: ../../infrastructure/storage/buckets.rst:325
+#: ../../infrastructure/storage/file_shares.rst:98
+#: ../../infrastructure/storage/file_shares.rst:168
+#: ../../infrastructure/storage/file_shares.rst:234
+#: ../../infrastructure/storage/file_shares.rst:296
+#: ../../infrastructure/storage/file_shares.rst:354
+msgid "Archive Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:41
+#: ../../infrastructure/storage/buckets.rst:102
+#: ../../infrastructure/storage/buckets.rst:205
+#: ../../infrastructure/storage/buckets.rst:265
+#: ../../infrastructure/storage/buckets.rst:326
+msgid ""
+"Enabled to export VM snapshots to this Bucket when creating VMware "
+"Backups, after which the snapshot will be removed from the target "
+"hypervisor."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:42
+#: ../../infrastructure/storage/buckets.rst:103
+#: ../../infrastructure/storage/buckets.rst:206
+#: ../../infrastructure/storage/buckets.rst:266
+#: ../../infrastructure/storage/buckets.rst:327
+#: ../../infrastructure/storage/file_shares.rst:100
+#: ../../infrastructure/storage/file_shares.rst:170
+#: ../../infrastructure/storage/file_shares.rst:236
+#: ../../infrastructure/storage/file_shares.rst:298
+#: ../../infrastructure/storage/file_shares.rst:356
+msgid "Default Deployment Archive Target"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:43
+#: ../../infrastructure/storage/buckets.rst:104
+msgid ""
+"Sets this bucket as the default storage target when uploading Deployment "
+"files in the `Deployments` section."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:44
+#: ../../infrastructure/storage/buckets.rst:105
+#: ../../infrastructure/storage/buckets.rst:208
+#: ../../infrastructure/storage/buckets.rst:268
+#: ../../infrastructure/storage/buckets.rst:329
+#: ../../infrastructure/storage/file_shares.rst:102
+#: ../../infrastructure/storage/file_shares.rst:172
+#: ../../infrastructure/storage/file_shares.rst:238
+#: ../../infrastructure/storage/file_shares.rst:300
+#: ../../infrastructure/storage/file_shares.rst:358
+msgid "Default Virtual Image Store"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:45
+#: ../../infrastructure/storage/buckets.rst:106
+#: ../../infrastructure/storage/buckets.rst:209
+#: ../../infrastructure/storage/buckets.rst:269
+#: ../../infrastructure/storage/buckets.rst:330
+msgid ""
+"Sets this bucket as the default storage target when uploading Virtual "
+"Images from the `Virtual Images` section, importing Images from Instance "
+"Actions, creating Images with the `Image Builder` and when creating new "
+"images from `Migrations`."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:47
+#: ../../infrastructure/storage/buckets.rst:108
+#: ../../infrastructure/storage/buckets.rst:172
+#: ../../infrastructure/storage/buckets.rst:211
+#: ../../infrastructure/storage/buckets.rst:271
+#: ../../infrastructure/storage/buckets.rst:332
+#: ../../infrastructure/storage/file_shares.rst:45
+#: ../../infrastructure/storage/file_shares.rst:105
+#: ../../infrastructure/storage/file_shares.rst:175
+#: ../../infrastructure/storage/file_shares.rst:241
+#: ../../infrastructure/storage/file_shares.rst:303
+#: ../../infrastructure/storage/file_shares.rst:361
+msgid "RETENTION POLICY"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:48
+#: ../../infrastructure/storage/buckets.rst:109
+#: ../../infrastructure/storage/buckets.rst:212
+#: ../../infrastructure/storage/buckets.rst:272
+#: ../../infrastructure/storage/buckets.rst:333
+#: ../../infrastructure/storage/file_shares.rst:46
+#: ../../infrastructure/storage/file_shares.rst:106
+#: ../../infrastructure/storage/file_shares.rst:176
+#: ../../infrastructure/storage/file_shares.rst:242
+#: ../../infrastructure/storage/file_shares.rst:304
+#: ../../infrastructure/storage/file_shares.rst:362
+msgid "None"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:49
+#: ../../infrastructure/storage/buckets.rst:110
+#: ../../infrastructure/storage/buckets.rst:213
+#: ../../infrastructure/storage/buckets.rst:273
+#: ../../infrastructure/storage/buckets.rst:334
+msgid "Files in the Bucket will not be automatically deleted or backed up."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:50
+#: ../../infrastructure/storage/buckets.rst:111
+#: ../../infrastructure/storage/buckets.rst:214
+#: ../../infrastructure/storage/buckets.rst:274
+#: ../../infrastructure/storage/buckets.rst:335
+#: ../../infrastructure/storage/file_shares.rst:48
+#: ../../infrastructure/storage/file_shares.rst:108
+#: ../../infrastructure/storage/file_shares.rst:178
+#: ../../infrastructure/storage/file_shares.rst:244
+#: ../../infrastructure/storage/file_shares.rst:306
+#: ../../infrastructure/storage/file_shares.rst:364
+msgid "Backup Old Files"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:51
+#: ../../infrastructure/storage/buckets.rst:112
+#: ../../infrastructure/storage/buckets.rst:215
+#: ../../infrastructure/storage/buckets.rst:275
+#: ../../infrastructure/storage/buckets.rst:336
+msgid ""
+"This option will backup files after a set amount of time and remove them "
+"from the bucket."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:52
+#: ../../infrastructure/storage/buckets.rst:58
+#: ../../infrastructure/storage/buckets.rst:113
+#: ../../infrastructure/storage/buckets.rst:119
+#: ../../infrastructure/storage/buckets.rst:216
+#: ../../infrastructure/storage/buckets.rst:222
+#: ../../infrastructure/storage/buckets.rst:276
+#: ../../infrastructure/storage/buckets.rst:282
+#: ../../infrastructure/storage/buckets.rst:337
+#: ../../infrastructure/storage/buckets.rst:343
+#: ../../infrastructure/storage/file_shares.rst:50
+#: ../../infrastructure/storage/file_shares.rst:56
+#: ../../infrastructure/storage/file_shares.rst:110
+#: ../../infrastructure/storage/file_shares.rst:116
+#: ../../infrastructure/storage/file_shares.rst:180
+#: ../../infrastructure/storage/file_shares.rst:186
+#: ../../infrastructure/storage/file_shares.rst:246
+#: ../../infrastructure/storage/file_shares.rst:252
+#: ../../infrastructure/storage/file_shares.rst:308
+#: ../../infrastructure/storage/file_shares.rst:314
+#: ../../infrastructure/storage/file_shares.rst:366
+#: ../../infrastructure/storage/file_shares.rst:372
+msgid "DAYS OLD"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:53
+#: ../../infrastructure/storage/buckets.rst:114
+#: ../../infrastructure/storage/buckets.rst:217
+#: ../../infrastructure/storage/buckets.rst:277
+#: ../../infrastructure/storage/buckets.rst:338
+msgid ""
+"Files older than the set number of days will be automatically backed up "
+"to the selected Backup Bucket."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:54
+#: ../../infrastructure/storage/buckets.rst:115
+#: ../../infrastructure/storage/buckets.rst:218
+#: ../../infrastructure/storage/buckets.rst:278
+#: ../../infrastructure/storage/buckets.rst:339
+#: ../../infrastructure/storage/file_shares.rst:52
+msgid "BACKUP BUCKET"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:55
+#: ../../infrastructure/storage/buckets.rst:116
+#: ../../infrastructure/storage/buckets.rst:219
+#: ../../infrastructure/storage/buckets.rst:279
+#: ../../infrastructure/storage/buckets.rst:340
+msgid "Search for and then select the Bucket the files will be backed up to."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:56
+#: ../../infrastructure/storage/buckets.rst:117
+#: ../../infrastructure/storage/buckets.rst:220
+#: ../../infrastructure/storage/buckets.rst:280
+#: ../../infrastructure/storage/buckets.rst:341
+#: ../../infrastructure/storage/file_shares.rst:54
+#: ../../infrastructure/storage/file_shares.rst:114
+#: ../../infrastructure/storage/file_shares.rst:184
+#: ../../infrastructure/storage/file_shares.rst:250
+#: ../../infrastructure/storage/file_shares.rst:312
+#: ../../infrastructure/storage/file_shares.rst:370
+msgid "DELETE OLD FILES"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:57
+#: ../../infrastructure/storage/buckets.rst:118
+#: ../../infrastructure/storage/buckets.rst:221
+#: ../../infrastructure/storage/buckets.rst:281
+#: ../../infrastructure/storage/buckets.rst:342
+msgid "This option will delete files from this bucket after a set amount of days."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:59
+#: ../../infrastructure/storage/buckets.rst:120
+#: ../../infrastructure/storage/buckets.rst:223
+#: ../../infrastructure/storage/buckets.rst:283
+#: ../../infrastructure/storage/buckets.rst:344
+msgid ""
+"Files older than the set number of days will be automatically deleted "
+"from the Bucket."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:61
+#: ../../infrastructure/storage/buckets.rst:122
+#: ../../infrastructure/storage/buckets.rst:225
+#: ../../infrastructure/storage/buckets.rst:285
+#: ../../infrastructure/storage/buckets.rst:346
+#: ../../infrastructure/storage/file_shares.rst:59
+#: ../../infrastructure/storage/file_shares.rst:119
+#: ../../infrastructure/storage/file_shares.rst:189
+#: ../../infrastructure/storage/file_shares.rst:255
+#: ../../infrastructure/storage/file_shares.rst:317
+#: ../../infrastructure/storage/file_shares.rst:375
+#: ../../infrastructure/storage/servers.rst:27
+#: ../../infrastructure/storage/servers.rst:59
+#: ../../infrastructure/storage/servers.rst:90
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:63
+#: ../../infrastructure/storage/buckets.rst:124
+#: ../../infrastructure/storage/buckets.rst:227
+#: ../../infrastructure/storage/buckets.rst:287
+#: ../../infrastructure/storage/buckets.rst:348
+msgid "The Bucket will be created and displayed in the Buckets tab."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:65
+#: ../../infrastructure/storage/buckets.rst:126
+#: ../../infrastructure/storage/buckets.rst:229
+#: ../../infrastructure/storage/buckets.rst:289
+#: ../../infrastructure/storage/buckets.rst:350
+msgid ""
+"To browse, upload, download, or delete files from this Bucket, select the"
+" name of the Bucket."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:67
+#: ../../infrastructure/storage/buckets.rst:128
+#: ../../infrastructure/storage/buckets.rst:231
+#: ../../infrastructure/storage/buckets.rst:291
+#: ../../infrastructure/storage/buckets.rst:352
+msgid ""
+"To edit the Bucket, select the edit icon or select the name of the Bucket"
+" and select :guilabel:`ACTIONS - EDIT`."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:69
+#: ../../infrastructure/storage/buckets.rst:73
+#: ../../infrastructure/storage/buckets.rst:130
+#: ../../infrastructure/storage/buckets.rst:134
+#: ../../infrastructure/storage/buckets.rst:233
+#: ../../infrastructure/storage/buckets.rst:237
+#: ../../infrastructure/storage/buckets.rst:293
+#: ../../infrastructure/storage/buckets.rst:297
+#: ../../infrastructure/storage/buckets.rst:354
+#: ../../infrastructure/storage/buckets.rst:358
+#: ../../infrastructure/storage/data_stores.rst:53
+#: ../../infrastructure/storage/file_shares.rst:67
+#: ../../infrastructure/storage/file_shares.rst:71
+#: ../../infrastructure/storage/file_shares.rst:127
+#: ../../infrastructure/storage/file_shares.rst:131
+#: ../../infrastructure/storage/file_shares.rst:197
+#: ../../infrastructure/storage/file_shares.rst:201
+#: ../../infrastructure/storage/file_shares.rst:263
+#: ../../infrastructure/storage/file_shares.rst:267
+#: ../../infrastructure/storage/file_shares.rst:325
+#: ../../infrastructure/storage/file_shares.rst:329
+#: ../../infrastructure/storage/file_shares.rst:383
+#: ../../infrastructure/storage/file_shares.rst:387
+#: ../../infrastructure/storage/share_access.rst:69
+#: ../../infrastructure/storage/snapshots.rst:60
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:69
+#: ../../infrastructure/storage/buckets.rst:130
+#: ../../infrastructure/storage/buckets.rst:233
+#: ../../infrastructure/storage/buckets.rst:293
+#: ../../infrastructure/storage/buckets.rst:354
+msgid ""
+"Repointing a bucket that is in use may cause loss of file references. "
+"Ensure data is mirrored first."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:71
+#: ../../infrastructure/storage/buckets.rst:132
+#: ../../infrastructure/storage/buckets.rst:235
+#: ../../infrastructure/storage/buckets.rst:295
+#: ../../infrastructure/storage/buckets.rst:356
+msgid ""
+"To delete a Bucket, select the trash icon or select the name of the "
+"Bucket and select :guilabel:`DELETE`."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:73
+#: ../../infrastructure/storage/buckets.rst:134
+#: ../../infrastructure/storage/buckets.rst:237
+#: ../../infrastructure/storage/buckets.rst:297
+#: ../../infrastructure/storage/buckets.rst:358
+msgid ""
+"When deleting a Bucket, all Deployment Versions and Backups associated "
+"with the Bucket will be deleted."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:77
+msgid "Amazon S3 Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:79
+msgid "To Add an Amazon S3 Storage Bucket:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:84
+msgid "Select `Amazon S3` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:90
+msgid "AWS IAM Access Key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:92
+msgid "AWS IAM Secret Key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:94
+msgid ""
+"Enter existing S3 Bucket name, or to add a new Bucket enter a new name "
+"and select `Create Bucket`."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:95
+#: ../../infrastructure/storage/file_shares.rst:36
+msgid "CREATE BUCKET"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:96
+msgid ""
+"Enable if the Bucket entered in BUCKET NAME does not exist and needs to "
+"be created. If enabled, select an AWS Region to create the Bucket in."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:97
+msgid "ENDPOINT URL"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:98
+msgid ""
+"Optional endpoint URL if pointing to an object store other than amazon "
+"that mimics the Amazon S3 APIs."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:138
+msgid "Google Cloud Storage Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:140
+msgid ""
+"Google Cloud Storage Buckets are associated with an existing GCP Cloud "
+"integration. Ensure the GCP Cloud integration is pre-existing before "
+"attempting to create a new Google Cloud Storage Bucket. On the initial "
+"integration and subsequent cloud syncs, Google Cloud Storage Buckets are "
+"automatically onboarded and updated."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:142
+msgid "To add a Google Cloud Storage Bucket:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:144
+msgid "Select the Infrastructure link in the navigation bar"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:145
+msgid "Select the Storage link in the sub-navigation bar"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:146
+msgid "In the BUCKETS tab, Click the :guilabel:`+ ADD` button"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:147
+msgid "Select `Google Cloud Storage` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:151
+msgid "A friendly name for the bucket in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:152
+#: ../../infrastructure/storage/buckets.rst:190
+#: ../../infrastructure/storage/file_shares.rst:147
+#: ../../infrastructure/storage/file_shares.rst:217
+msgid "STORAGE SERVICE"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:153
+msgid "Select the GCP cloud integration this bucket should be created in"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:154
+msgid "PROJECT ID"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:155
+msgid ""
+"Select the Project to create the group under, Projects are a GCP-specific"
+" concept and are logical grouping for your resources. Select any existing"
+" project associated with your selected GCP cloud integration"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:157
+msgid "The name for the bucket resource on the GCP side"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:158
+msgid "LOCATION TYPE"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:159
+msgid ""
+"Select Region, Dual-Region, or Multi-Region. Buckets with a Region "
+"location type will be stored in one GCP region, such as \"us-east1 (South"
+" Carolina)\". Dual-Region and Multi-Region data is stored in two (or "
+"more, in the case of multi-region) GCP regions separated by a significant"
+" physical distance. Dual-Region and Multi-Region data is geo-redundant "
+"across the multiple selected regions"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:160
+msgid "LOCATION"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:161
+msgid ""
+"A selected GCP region (or regions, in the case of dual and multi-location"
+" data) where the data will be stored"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:162
+msgid "STORAGE CLASS"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:163
+msgid ""
+"Select Standard, Nearline, Coldline, or Archive. The appropriate storage "
+"class will depend on how frequently the bucket data is accessed and how "
+"long the type of data in the bucket is expected to be stored. More "
+"information on storage classes can be found in `GCP Documentation "
+"<https://cloud.google.com/storage/docs/storage-classes#descriptions>`_"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:164
+msgid "ACTIVE"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:165
+msgid "When marked, the bucket is available for use in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:166
+#: ../../infrastructure/storage/file_shares.rst:38
+msgid "DEFAULT BACKUP TARGET"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:167
+msgid ""
+"Sets the bucket as the default storage option when creating backups at "
+"provision time or in the Backups section of |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:168
+#: ../../infrastructure/storage/file_shares.rst:40
+msgid "DEFAULT DEPLOYMENT ARCHIVE TARGET"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:169
+msgid ""
+"Sets this Bucket as the default storage target when uploading deployment "
+"files in the `Deployments` section"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:170
+#: ../../infrastructure/storage/file_shares.rst:42
+msgid "DEFAULT VIRTUAL IMAGE STORE"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:171
+msgid ""
+"Sets this bucket as the default storage target when uploading virtual "
+"images from the `Virtual Images` section, importing images from Instance "
+"actions, creating images with the `Image Builder`, and when creating new "
+"images from `Migrations`"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:173
+msgid ""
+"Select None and the files in this bucket will never be deleted or backed "
+"up by |morpheus|. When selecting 'Backup Old Files', |morpheus| will "
+"backup files into another selected bucket once they reach a certain "
+"number of days old. When selecting 'Delete Old Files', |morpheus| will "
+"delete any files that reach a certain number of days old"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:176
+msgid "Dell EMC ECS Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:178
+msgid ""
+"A Dell EMC ECS Storage Server must be configured in `Infrastructure - "
+"Storage - Servers` prior to adding a Dell EMC ECS Bucket."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:180
+msgid "To Add a Dell EMC ECS Storage Bucket:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:185
+msgid "Select `Dell EMC ECS Bucket` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:191
+#: ../../infrastructure/storage/file_shares.rst:148
+msgid ""
+"Select existing Dell EMC ECS Storage Server (configured in "
+"`Infrastructure - Storage - Servers`)"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:193
+msgid "Enter a name for the new Dell EMC ECS bucket."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:194
+#: ../../infrastructure/storage/file_shares.rst:152
+msgid "USER"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:195
+#: ../../infrastructure/storage/file_shares.rst:153
+msgid "Dell EMC ECS User"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:197
+#: ../../infrastructure/storage/file_shares.rst:155
+msgid "Dell EMC ECS Secret key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:198
+#: ../../infrastructure/storage/file_shares.rst:162
+#: ../../infrastructure/storage/file_shares.rst:228
+msgid "NAMESPACE"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:199
+msgid "Select Dell EMC ECS Namespace for the Bucket"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:200
+#: ../../infrastructure/storage/file_shares.rst:164
+#: ../../infrastructure/storage/file_shares.rst:230
+msgid "STORAGE GROUP"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:201
+msgid "Select a Dell EMC ECS Storage Group"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:203
+#: ../../infrastructure/storage/buckets.rst:263
+#: ../../infrastructure/storage/buckets.rst:324
+msgid ""
+"Sets this bucket as the default backup target when creating Backups. If "
+"selected the option to update existing Backup configuration to use this "
+"Bucket will be presented."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:207
+#: ../../infrastructure/storage/buckets.rst:267
+#: ../../infrastructure/storage/buckets.rst:328
+msgid ""
+"Sets this Bucket as the default storage target when uploading Deployment "
+"files in the `Deployments` section."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:240
+msgid "Openstack Swift Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:242
+msgid "To Add an Azure Storage Bucket:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:247
+msgid "Select `Openstack Swift` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:252
+#: ../../infrastructure/storage/buckets.rst:313
+#: ../../infrastructure/storage/file_shares.rst:89
+#: ../../infrastructure/storage/servers.rst:22
+#: ../../infrastructure/storage/servers.rst:49
+#: ../../infrastructure/storage/servers.rst:78
+msgid "USERNAME"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:253
+msgid "Openstack Swift Username"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:254
+#: ../../infrastructure/storage/buckets.rst:315
+msgid "API KEY"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:255
+msgid "Openstack Swift API Key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:257
+msgid ""
+"Enter existing Openstack Swift Bucket name, or to add a new Bucket enter "
+"a new name and select `Create Bucket` below."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:258
+msgid "IDENTITY URL"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:259
+msgid "Openstack Swift Identity URL"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:261
+#: ../../infrastructure/storage/buckets.rst:322
+msgid ""
+"Enable if the name entered in BUCKET NAME does not exist and needs to be "
+"created."
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:301
+msgid "Rackspace CDN Buckets"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:303
+msgid "To Add a Rackspace CDN Bucket:"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:308
+msgid "Select `Rackspace CDN` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:314
+msgid "Rackspace CDN Username"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:316
+msgid "Rackspace CDN API Key"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:318
+msgid "Enter Rackspace CDN Region"
+msgstr ""
+
+#: ../../infrastructure/storage/buckets.rst:320
+msgid ""
+"Enter existing Rackspace CDN Bucket name, or to add a new Bucket enter a "
+"new name and select `Create Bucket` below."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:2
+msgid "File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:4
+msgid ""
+"File Shares are for Backup, Archives, Deployment and Virtual Images "
+"storage targets. File Shares can be browsed and files and folders can be "
+"uploaded, downloaded or deleted from the File Shares section. Retention "
+"Policies can be set on Storage File Shares for files to be deleted or "
+"backed up to another File Share after a set amount of time."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:7
+msgid "Supported File Share Types"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:9
+#: ../../infrastructure/storage/snapshots.rst:189
+msgid "Azure"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:10
+msgid "CIFS (Samba Windows File Sharing)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:11
+msgid "Dell EMC ECS Share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:12
+msgid "Dell EMC Isilon Share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:13
+msgid "Local Storage"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:14
+msgid "NFSv3"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:18
+msgid "Azure File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:20
+msgid "To Add an Azure File Share:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:24
+#: ../../infrastructure/storage/file_shares.rst:80
+#: ../../infrastructure/storage/file_shares.rst:141
+#: ../../infrastructure/storage/file_shares.rst:211
+#: ../../infrastructure/storage/file_shares.rst:283
+#: ../../infrastructure/storage/file_shares.rst:342
+msgid "In the FILE SHARES tab, Click the :guilabel:`+ ADD` button."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:25
+msgid "Select `Azure` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:26
+#: ../../infrastructure/storage/file_shares.rst:82
+#: ../../infrastructure/storage/file_shares.rst:143
+#: ../../infrastructure/storage/file_shares.rst:213
+#: ../../infrastructure/storage/file_shares.rst:285
+#: ../../infrastructure/storage/file_shares.rst:344
+msgid "From the NEW FILE SHARE Wizard input the following:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:29
+msgid "Name for the file share in |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:30
+msgid "STORAGE ACCOUNT"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:31
+msgid "Name of the Storage Account in Azure for the file share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:32
+msgid "STORAGE KEY"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:33
+msgid "Storage Key provided from Azure"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:34
+msgid "SHARE NAME"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:35
+msgid ""
+"Enter existing Azure Storage Share name or, to add a new Share, enter a "
+"new name and mark the `Create Bucket` box below"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:37
+msgid ""
+"Mark if the share entered in SHARE NAME does not exist and needs to be "
+"created"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:39
+msgid ""
+"Sets this file share as the default backup target when creating Backups. "
+"If selected, the option to UPDATE EXISTING BACKUPS will appear. Mark to "
+"update existing backups to this file share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:41
+msgid ""
+"Sets this file share as the default storage target when creating "
+"deployment archives"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:43
+msgid ""
+"Sets this file share as the default storage target when uploading Virtual"
+" Images from the `Virtual Images` section or when importing Images from "
+"Instance Actions"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:47
+msgid "Files in the share will not be automatically deleted or backed up"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:49
+msgid ""
+"This option will backup files after a set amount of time and remove them "
+"from the file share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:51
+msgid ""
+"Files older than the set number of days will be automatically backed up "
+"to the selected Backup target"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:53
+msgid "Search for and then select the desired backup bucket"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:55
+msgid "This option will delete files from this share after a set amount of days"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:57
+msgid ""
+"Files older than the set number of days will be automatically deleted "
+"from the share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:61
+msgid "The file share will be created and displayed in the file shares tab."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:63
+msgid ""
+"To browse, upload, download, or delete files from this file share, select"
+" the name of the share from the File Shares tab."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:65
+msgid ""
+"To edit the file share, select the edit icon or select the name of the "
+"share and select :guilabel:`ACTIONS - EDIT`."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:67
+msgid ""
+"Re-pointing a file share that is in use may cause loss of file "
+"references. Ensure data is mirrored first."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:69
+msgid ""
+"To delete a file share, select the trash icon or select the name of the "
+"file share and click :guilabel:`DELETE`."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:71
+msgid ""
+"When deleting a file share, all Deployment versions and Backups "
+"associated with the file share will be deleted."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:74
+msgid "CIFS File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:76
+msgid "To Add a CIFS File Share:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:81
+msgid "Select `CIFS (Samba Windows File Sharing)` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:85
+#: ../../infrastructure/storage/file_shares.rst:146
+#: ../../infrastructure/storage/file_shares.rst:216
+#: ../../infrastructure/storage/file_shares.rst:288
+#: ../../infrastructure/storage/file_shares.rst:347
+msgid "Name of the File Share in |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:86
+#: ../../infrastructure/storage/file_shares.rst:348
+msgid "HOST"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:87
+msgid "Enter host IP or resolvable hostname"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:88
+msgid "Example: ``192.168.200.210``"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:90
+msgid "CIFS Share Username"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:91
+#: ../../infrastructure/storage/servers.rst:24
+#: ../../infrastructure/storage/servers.rst:51
+#: ../../infrastructure/storage/servers.rst:80
+msgid "PASSWORD"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:92
+msgid "CIFS Share User Password"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:93
+#: ../../infrastructure/storage/file_shares.rst:149
+#: ../../infrastructure/storage/file_shares.rst:219
+msgid "SHARE PATH"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:94
+msgid "Enter CIFS Share Path"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:95
+msgid "Example: ``cifs``"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:97
+#: ../../infrastructure/storage/file_shares.rst:167
+#: ../../infrastructure/storage/file_shares.rst:233
+#: ../../infrastructure/storage/file_shares.rst:295
+#: ../../infrastructure/storage/file_shares.rst:353
+msgid ""
+"Sets this File Share as the default backup target when creating Backups. "
+"If selected the option to update existing Backup configuration to use "
+"this File Share will be presented."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:99
+#: ../../infrastructure/storage/file_shares.rst:169
+#: ../../infrastructure/storage/file_shares.rst:235
+#: ../../infrastructure/storage/file_shares.rst:297
+#: ../../infrastructure/storage/file_shares.rst:355
+msgid ""
+"Enabled to export VM snapshots to this File Share when creating VMware "
+"Backups, after which the snapshot will be removed from the source Cloud."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:101
+#: ../../infrastructure/storage/file_shares.rst:171
+#: ../../infrastructure/storage/file_shares.rst:237
+#: ../../infrastructure/storage/file_shares.rst:299
+#: ../../infrastructure/storage/file_shares.rst:357
+msgid ""
+"Sets this File Share as the default storage target when uploading "
+"Deployment files in the `Deployments` section."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:103
+#: ../../infrastructure/storage/file_shares.rst:173
+#: ../../infrastructure/storage/file_shares.rst:239
+#: ../../infrastructure/storage/file_shares.rst:301
+#: ../../infrastructure/storage/file_shares.rst:359
+msgid ""
+"Sets this File Share as the default storage target when uploading Virtual"
+" Images from the `Virtual Images` section, importing Images from Instance"
+" Actions, creating Images with the `Image Builder` and when creating new "
+"images from `Migrations`."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:107
+#: ../../infrastructure/storage/file_shares.rst:177
+#: ../../infrastructure/storage/file_shares.rst:243
+#: ../../infrastructure/storage/file_shares.rst:305
+#: ../../infrastructure/storage/file_shares.rst:363
+msgid "Files in the File Share will not be automatically deleted or backed up."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:109
+#: ../../infrastructure/storage/file_shares.rst:179
+#: ../../infrastructure/storage/file_shares.rst:245
+#: ../../infrastructure/storage/file_shares.rst:307
+#: ../../infrastructure/storage/file_shares.rst:365
+msgid ""
+"This option will backup files after a set amount if time and remove them "
+"from the File Share."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:111
+#: ../../infrastructure/storage/file_shares.rst:181
+#: ../../infrastructure/storage/file_shares.rst:247
+#: ../../infrastructure/storage/file_shares.rst:309
+#: ../../infrastructure/storage/file_shares.rst:367
+msgid ""
+"Files older than the set number of days will be automatically backed up "
+"to the selected Backup File Share."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:112
+#: ../../infrastructure/storage/file_shares.rst:182
+#: ../../infrastructure/storage/file_shares.rst:248
+#: ../../infrastructure/storage/file_shares.rst:310
+#: ../../infrastructure/storage/file_shares.rst:368
+msgid "BACKUP File Share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:113
+#: ../../infrastructure/storage/file_shares.rst:183
+#: ../../infrastructure/storage/file_shares.rst:249
+#: ../../infrastructure/storage/file_shares.rst:311
+#: ../../infrastructure/storage/file_shares.rst:369
+msgid "Search for and select the File Share the files will be backed up to."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:115
+#: ../../infrastructure/storage/file_shares.rst:185
+#: ../../infrastructure/storage/file_shares.rst:251
+#: ../../infrastructure/storage/file_shares.rst:313
+#: ../../infrastructure/storage/file_shares.rst:371
+msgid ""
+"This option will delete files from this File Share after a set amount of "
+"days."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:117
+#: ../../infrastructure/storage/file_shares.rst:187
+#: ../../infrastructure/storage/file_shares.rst:253
+#: ../../infrastructure/storage/file_shares.rst:315
+#: ../../infrastructure/storage/file_shares.rst:373
+msgid ""
+"Files older than the set number of days will be automatically deleted "
+"from the File Share."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:121
+#: ../../infrastructure/storage/file_shares.rst:191
+#: ../../infrastructure/storage/file_shares.rst:257
+#: ../../infrastructure/storage/file_shares.rst:319
+#: ../../infrastructure/storage/file_shares.rst:377
+msgid "The File Share will be created and displayed in the File Shares tab."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:123
+#: ../../infrastructure/storage/file_shares.rst:193
+#: ../../infrastructure/storage/file_shares.rst:259
+#: ../../infrastructure/storage/file_shares.rst:321
+#: ../../infrastructure/storage/file_shares.rst:379
+msgid ""
+"To browse, upload, download, or delete files from this File Share, select"
+" the name of the File Share."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:125
+#: ../../infrastructure/storage/file_shares.rst:195
+#: ../../infrastructure/storage/file_shares.rst:261
+#: ../../infrastructure/storage/file_shares.rst:323
+#: ../../infrastructure/storage/file_shares.rst:381
+msgid ""
+"To edit the File Share, select the edit icon or select the name of the "
+"File Share and select :guilabel:`ACTIONS - EDIT`."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:127
+#: ../../infrastructure/storage/file_shares.rst:197
+#: ../../infrastructure/storage/file_shares.rst:263
+#: ../../infrastructure/storage/file_shares.rst:325
+#: ../../infrastructure/storage/file_shares.rst:383
+msgid ""
+"Repointing a File Share that is in use may cause loss of file references."
+" Ensure data is mirrored first."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:129
+#: ../../infrastructure/storage/file_shares.rst:199
+#: ../../infrastructure/storage/file_shares.rst:265
+#: ../../infrastructure/storage/file_shares.rst:327
+#: ../../infrastructure/storage/file_shares.rst:385
+msgid ""
+"To delete a File Share, select the trash icon or select the name of the "
+"File Share and select :guilabel:`DELETE`."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:131
+#: ../../infrastructure/storage/file_shares.rst:201
+#: ../../infrastructure/storage/file_shares.rst:267
+#: ../../infrastructure/storage/file_shares.rst:329
+#: ../../infrastructure/storage/file_shares.rst:387
+msgid ""
+"When deleting a File Share, all Deployment Versions and Backups "
+"associated with the File Share will be deleted."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:135
+msgid "Dell EMC ECS File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:137
+msgid "To Add a Dell EMC ECS File Share:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:142
+msgid "Select `Dell EMC ECS Share` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:150
+msgid "Enter Dell EMC ECS Share Path"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:151
+#: ../../infrastructure/storage/file_shares.rst:221
+msgid "Example: ``ecs-file-share-1``"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:156
+#: ../../infrastructure/storage/file_shares.rst:222
+msgid "Volume Size"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:157
+#: ../../infrastructure/storage/file_shares.rst:223
+msgid "Specify volume size for the File Share (in MB)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:158
+#: ../../infrastructure/storage/file_shares.rst:224
+msgid "Allowed IP's"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:159
+#: ../../infrastructure/storage/file_shares.rst:225
+#: ../../infrastructure/storage/volumes.rst:113
+msgid "Specify IP Addresses to limit accessibility to the File Share"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:160
+#: ../../infrastructure/storage/file_shares.rst:226
+#: ../../infrastructure/storage/volumes.rst:114
+msgid "Leave blank for open access"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:161
+#: ../../infrastructure/storage/file_shares.rst:227
+#: ../../infrastructure/storage/volumes.rst:115
+msgid ""
+"Click the ``+`` symbol to the right of the first ALLOWED IPS field to add"
+" multiple IP's"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:163
+msgid "Select Dell EMC ECS Namespace (synced)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:165
+msgid "Select Dell EMC ECS Storage Group (synced)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:205
+msgid "Dell EMC Isilon File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:207
+msgid "To Add a Dell EMC Isilon File Share:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:212
+msgid "Select `Dell EMC Isilon Share` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:218
+msgid ""
+"Select existing Dell EMC Isilon Storage Server (configured in "
+"`Infrastructure - Storage - Servers`)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:220
+msgid "Enter Dell EMC Isilon Share Path"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:229
+msgid "Select Dell EMC Isilon Namespace (synced)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:231
+msgid "Select Dell EMC Isilon Storage Group (synced)"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:271
+msgid "Local Storage File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:273
+#: ../../infrastructure/storage/file_shares.rst:293
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:273
+msgid ""
+"Local Storage refers to local to the |morpheus| Appliance and the path "
+"must be owned by `morpheus-app`. Please be conscious of storage space. "
+"High Availability configurations require Local Storage File Shares paths "
+"to be shared storage paths between the font end |morpheus| Appliances."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:275
+msgid ""
+"To change the owner of a file path to be used as a Local Storage File "
+"Share, run ``chown morpheus-app.morpheus-app /path`` on the |morpheus| "
+"Appliance."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:277
+msgid "|morpheus| will validate path and ownership of the File Share Path."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:279
+msgid "To Add a Local Storage File Share:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:284
+msgid "Select `Local Storage Share` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:289
+msgid "STORAGE PATH"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:290
+#: ../../infrastructure/storage/file_shares.rst:349
+msgid "Enter the File Share path on the local |morpheus| Appliance."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:291
+msgid "Example: ``/var/opt/morpheus/morpheus-ui/vms/virtual-images``"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:293
+msgid ""
+"High Availability configurations require Local Storage File Shares paths "
+"to be shared storage paths between the font end |morpheus| Appliances."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:332
+msgid "NFSv3 File Shares"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:334
+msgid ""
+"Configure access to the NFS folder on the NFS Provider prior to adding "
+"the NFSv3 File Share."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:336
+msgid ""
+"Upon save |morpheus| will create a persistent mount owned by ``morpheus-"
+"app.morpheus-app`` on the |morpheus| Appliance for the NFSv3 File Share. "
+"The |morpheus| appliance will require access to the following ports in "
+"order to mount the share: 111, 54302, 20048, 2049, 46666, 42955, 875. "
+"With some storage solutions, you may need to enable insecure, "
+"unprivileged ports, or allow non-root on the export before |morpheus| is "
+"able to successfully mount the share."
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:338
+msgid "To Add a NFSv3 File Share:"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:343
+msgid "Select `NFSv3` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:350
+msgid "EXPORT FOLDER"
+msgstr ""
+
+#: ../../infrastructure/storage/file_shares.rst:351
+msgid "Enter the NFSv3 Folder"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:2
+msgid "Share Access Control"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:7
+msgid ""
+"Share Access controls allow administrators to manage host-level access "
+"rules for File Shares associated with storage servers. Access rules "
+"define which hosts or IP addresses can connect to a file share and what "
+"level of access they are granted (e.g., read-only, read/write)."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:9
+msgid ""
+"Share Access rules are specific to File Shares that are backed by a "
+"Storage Server integration (such as Dell EMC Isilon or other NAS "
+"platforms). The available access rule options are determined by the "
+"storage server type."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:14
+msgid ""
+"``Infrastructure: Storage`` role permission at **Full** level is required"
+" to create, edit, or delete access rules."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:15
+msgid ""
+"``Infrastructure: Storage`` role permission at **Read** level allows "
+"viewing access rules only."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:18
+msgid "Viewing Share Access Rules"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:20
+#: ../../infrastructure/storage/share_access.rst:30
+#: ../../infrastructure/storage/storage_hosts.rst:14
+msgid "Navigate to ``Infrastructure > Storage``"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:21
+#: ../../infrastructure/storage/share_access.rst:31
+msgid "Select the **FILE SHARES** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:22
+msgid "Click the name of the File Share to view its detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:23
+#: ../../infrastructure/storage/share_access.rst:33
+#: ../../infrastructure/storage/share_access.rst:56
+#: ../../infrastructure/storage/share_access.rst:65
+msgid "Select the **ACCESS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:25
+msgid ""
+"The Access tab displays all configured access rules for the file share, "
+"including the rule name, access level, and associated host or IP address."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:28
+msgid "Adding an Access Rule"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:32
+msgid "Click the name of the File Share"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:34
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:35
+msgid "Fill in the required fields:"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:38
+msgid "A descriptive name for the access rule."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:39
+msgid "HOST / IP"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:40
+msgid ""
+"The host name or IP address to grant access to. The available fields "
+"depend on the storage server type."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:41
+msgid "ACCESS LEVEL"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:42
+msgid ""
+"The level of access to grant to the host. Options depend on the storage "
+"provider and may include:"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:44
+msgid "**Read Only** — The host can read data from the share but cannot write."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:45
+msgid "**Read/Write** — The host can both read and write data to the share."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:46
+msgid ""
+"**Root** — The host has full root-level access (where supported by the "
+"provider)."
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:48
+msgid ""
+"Additional configuration fields may appear depending on the underlying "
+"storage server type. These are defined by the provider's share access "
+"option types."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:68
+#: ../../infrastructure/storage/share_access.rst:50
+#: ../../infrastructure/storage/share_access.rst:59
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:53
+msgid "Editing an Access Rule"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:55
+#: ../../infrastructure/storage/share_access.rst:64
+msgid "Navigate to the File Share detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:57
+msgid "Click the edit icon (pencil) next to the access rule"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:58
+msgid "Modify the desired fields"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:62
+msgid "Deleting an Access Rule"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:66
+msgid "Click the delete icon (trash) next to the access rule"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:67
+#: ../../infrastructure/storage/snapshots.rst:67
+#: ../../infrastructure/storage/snapshots.rst:78
+msgid "Confirm the deletion"
+msgstr ""
+
+#: ../../infrastructure/storage/share_access.rst:69
+msgid ""
+"Removing an access rule immediately revokes the host's ability to connect"
+" to the file share. Ensure no active workloads depend on the access "
+"before removing."
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:2
+msgid "Volumes"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:4
+msgid ""
+"Volumes sync or created in |morpheus| can be viewed in `Infrastructure- "
+"Storage - Volumes`. Volumes can be added for Storage Servers integrated "
+"with |morpheus| in the `Infrastructure- Storage - Servers` section."
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:7
+msgid "Volumes Types"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:9
+msgid "The available Volume Types list and filterable by are:"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:11
+msgid "3Par Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:12
+msgid "Alibaba Cloud SSD"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:13
+msgid "Alibaba Efficiency Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:14
+msgid "Alibaba Cloud Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:15
+msgid "AWS gp2"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:16
+msgid "AWS io1"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:17
+msgid "AWS sc1"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:18
+msgid "AWS st1"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:19
+msgid "Azure Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:20
+msgid "Azure Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:21
+msgid "Bluemix Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:22
+#: ../../infrastructure/storage/volumes.rst:23
+msgid "Bluemix SAN"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:24
+msgid "CD ROM"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:25
+msgid "DO Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:26
+msgid "ECS Block Storage"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:27
+msgid "ECS Object Storage"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:28
+msgid "ECS Shared File System"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:29
+msgid "Floppy Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:30
+msgid "Google Standard"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:31
+msgid "HP Enclosure Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:32
+msgid "Oracle iSCSI"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:33
+#: ../../infrastructure/storage/volumes.rst:106
+msgid "Isilon NFS Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:34
+msgid "Nutanix IDE"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:35
+msgid "Nutanix SATA"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:36
+msgid "Nutanix SCSI"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:37
+msgid "Open Telekom Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:38
+msgid "Openstack Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:39
+msgid "Openstack Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:40
+msgid "Oracle Block Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:41
+msgid "Oracle Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:42
+msgid "Oracle Virtual Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:43
+msgid "SCVMM Datastore"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:44
+msgid "Softlayer Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:45
+#: ../../infrastructure/storage/volumes.rst:46
+msgid "Softlayer SAN"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:47
+msgid "Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:48
+msgid "UpCloud Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:49
+msgid "UpCloud MaxIOPS"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:50
+#: ../../infrastructure/storage/volumes.rst:51
+msgid "NULL"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:52
+msgid "VMWare Datastore"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:53
+msgid "VMWare Disk"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:56
+msgid "CREATE VOLUME"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:58
+msgid ""
+"At least one Storage Server Integration from `Infrastructure- Storage - "
+"Servers` is required to create volumes from `Infrastructure- Storage - "
+"Volumes`."
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:61
+msgid "Dell EMC ECS"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:63
+#: ../../infrastructure/storage/volumes.rst:92
+msgid "To Add a Dell EMC ECS Volume:"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:67
+#: ../../infrastructure/storage/volumes.rst:96
+msgid "In the VolumeS tab, Click the :guilabel:`+ ADD` button."
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:68
+msgid "Select `Dell EMC ECS` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:69
+#: ../../infrastructure/storage/volumes.rst:98
+msgid "From the CREATE VOLUME Wizard input the following:"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:71
+#: ../../infrastructure/storage/volumes.rst:100
+msgid "SELECT TYPE"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:72
+#: ../../infrastructure/storage/volumes.rst:101
+msgid "STORAGE SERVER"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:73
+msgid ""
+"Name of the DELL EMC ECS Storage Server added in `Infrastructure- Storage"
+" - Servers`"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:74
+#: ../../infrastructure/storage/volumes.rst:103
+msgid "GROUP"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:75
+#: ../../infrastructure/storage/volumes.rst:104
+msgid "Select Storage Group"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:76
+#: ../../infrastructure/storage/volumes.rst:105
+msgid "VOLUME TYPE"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:77
+msgid "ECS Block Storage ECS Object Storage ECS Shared File System"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:80
+#: ../../infrastructure/storage/volumes.rst:107
+msgid "Click NEXT"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:81
+#: ../../infrastructure/storage/volumes.rst:108
+msgid "Select :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:82
+#: ../../infrastructure/storage/volumes.rst:109
+msgid "CONFIGURE"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:84
+#: ../../infrastructure/storage/volumes.rst:111
+msgid "Name of the Volume"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:85
+#: ../../infrastructure/storage/volumes.rst:118
+msgid "Click COMPLETE"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:86
+#: ../../infrastructure/storage/volumes.rst:119
+msgid "Select :guilabel:`COMPLETE`"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:90
+msgid "Dell EMC Isilon"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:97
+msgid "Select `Dell EMC Isilon` from the dropdown list"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:102
+msgid ""
+"Name of the Dell EMC Isilon Storage Server added in `Infrastructure- "
+"Storage - Servers`"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:112
+msgid "ALLOWED IP's"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:116
+msgid "VOLUME SIZE"
+msgstr ""
+
+#: ../../infrastructure/storage/volumes.rst:117
+msgid "Specify size of the Volume (in MB)"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:2
+msgid "Data Stores"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:4
+msgid ""
+"Data Stores are logical divisions of underlying storage disk. "
+"Organizations may use them to divide and track cloud resources by team or"
+" department. When integrating certain Cloud types, |morpheus| will "
+"onboard existing data stores and administrators can then make them "
+"available to Groups or Tenants as needed. Supported datastore types can "
+"also be created directly from |morpheus|. At provision time, when "
+"applicable based on Cloud and Layout, users can select the data store "
+"they wish to provision to."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:6
+msgid ""
+"Here within the Data Store view in the storage section, users can see a "
+"list of data stores for each Cloud. In the row for each Cloud, the "
+"storage type, associated Cloud, and permissions information are shown."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:9
+msgid "Create Data Stores"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:11
+msgid ""
+"The available Data Store types depend on the selected Cloud, configured "
+"storage integrations, and supported Cluster type. HVM cluster datastores "
+"can be created here or from the HVM Cluster's :guilabel:`Datastores` tab."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:13
+msgid "Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores`."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:14
+msgid "Click :guilabel:`Add`."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:15
+msgid "Enter a :guilabel:`Name` and select the :guilabel:`Type`."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:16
+msgid "Select the :guilabel:`Cloud`."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:17
+msgid ""
+"For an HVM cluster datastore, select the :guilabel:`Cluster`. This field "
+"requires **Infrastructure: Clusters** permission at the **Full** level "
+"and only lists Clusters that support the selected Data Store type."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:18
+msgid ""
+"Complete the type-specific fields. For example, an HPE Clustered "
+"Datastore requires its shared block device; a Datastore Group requires "
+"member datastores and placement settings."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:19
+msgid ""
+"Configure :guilabel:`Group Access` and :guilabel:`Tenant Permissions` as "
+"needed."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:20
+msgid "Save the Data Store."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:22
+msgid "HVM supports creating these built-in types from this page:"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:24
+msgid "**Directory Datastore (Local)**"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:25
+msgid "**NFS Datastore**"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:26
+msgid "**HPE Clustered Datastore (Shared LUN)**"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:27
+msgid "**Datastore Group**"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:29
+msgid ""
+"Storage plugins can provide additional types. See "
+":doc:`/infrastructure/clusters/hvm/storage_operations` for HVM "
+"prerequisites, shared-storage creation, Datastore Groups, and operational"
+" guidance."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:31
+msgid ""
+"For Cloud types that do not expose a creatable datastore type, create the"
+" datastore in the target platform and refresh the Cloud integration to "
+"synchronize it into |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:34
+msgid "Datastore Details and Explorer"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:36
+msgid ""
+"Select a Data Store name to open its detail page. The available tabs "
+"include:"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:38
+msgid ""
+"**Summary** — Capacity, free space, type, Cloud, and other datastore "
+"metadata"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:39
+msgid ""
+"**Volumes** — Virtual disks stored on the datastore and their associated "
+"VM where applicable"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:40
+msgid "**Virtual Machines** — VMs with one or more volumes on the datastore"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:41
+msgid "**History** — Recorded datastore configuration and lifecycle events"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:42
+msgid "**Files** — Datastore Explorer for supported HVM shared file datastores"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:44
+msgid ""
+"The :guilabel:`Files` tab is currently available for HVM shared, file-"
+"based datastores such as NFS and HPE Clustered Datastores (GFS2). Local, "
+"block, LUN-per-vDisk, RBD, and cloud-scoped datastores do not expose the "
+"file browser. An online HVM Host with access to the datastore is "
+"required."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:46
+msgid ""
+"From :guilabel:`Files`, users can search the current directory, navigate "
+"into directories, upload and download files, and delete files or "
+"directories. Empty directories cannot be created directly, and files "
+"cannot be renamed, moved, copied, or edited in place."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:48
+msgid "Permissions are cumulative:"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:50
+msgid ""
+"**Infrastructure: Storage** set to **Read** and **Infrastructure: Storage"
+" Browser** set to **Read** allow file listing and download."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:51
+msgid ""
+"Both permissions set to **Full** allow upload and deletion. Cluster-"
+"scoped access additionally requires **Infrastructure: Clusters** "
+"permission, and write operations require ownership of the datastore."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:55
+msgid ""
+"Deleting a directory recursively removes its contents. Confirm that no VM"
+" disk, image, active process, or required datastore artifact is in the "
+"selected path. Upload and delete operations are blocked while the "
+"datastore is in maintenance mode; browsing and download remain available."
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:58
+msgid "Manage Permissions"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:60
+msgid ""
+"From this view, users can manage permissions for any data store synced "
+"from integrated Clouds. This includes setting which Groups have access to"
+" the data store, and which Tenants have access. To edit data store "
+"permissions:"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:62
+msgid "Navigate to Infrastructure > Storage > Data Stores"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:63
+msgid "Click ACTIONS > Edit"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:64
+msgid ""
+"**Groups:** Select \"all\" Groups or select specific Groups which should "
+"have access to the data store"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:65
+msgid ""
+"**Tenants:** Primary Tenant users can opt to make the data store "
+"available to all Tenants (public visibility) or to selected Tenants "
+"(private visibility with specific Tenants selected). Subtenant users will"
+" only be able to make data stores visible to their own Tenant"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:66
+msgid ""
+"**Active:** When marked, the data store is active and available for "
+"provisioning"
+msgstr ""
+
+#: ../../infrastructure/storage/data_stores.rst:67
+msgid ""
+"**Image Target:** Marks the Data Store as a default image-storage target "
+"when its Data Store type supports image targets. If no Bucket, File "
+"Share, or capable Data Store is selected as the image target, uploaded "
+"images are stored locally on the appliance and available storage may be "
+"limited. Only one target should be selected for the intended Tenant "
+"scope."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:2
+msgid "Servers"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:5
+msgid "Add Storage Server"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:8
+msgid "Adding 3Par Storage Server"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:12
+#: ../../infrastructure/storage/servers.rst:36
+#: ../../infrastructure/storage/servers.rst:68
+msgid "In the SERVERS tab, Click the :guilabel:`+ ADD` button."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:13
+#: ../../infrastructure/storage/servers.rst:37
+#: ../../infrastructure/storage/servers.rst:69
+msgid "From the ADD STORAGE SERVER wizard input the following:"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:16
+#: ../../infrastructure/storage/servers.rst:40
+#: ../../infrastructure/storage/servers.rst:72
+msgid "Name of the Storage Server in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:17
+#: ../../infrastructure/storage/servers.rst:41
+#: ../../infrastructure/storage/servers.rst:73
+msgid "TYPE"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:18
+msgid "Select `3Par`"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:19
+#: ../../infrastructure/storage/servers.rst:43
+#: ../../infrastructure/storage/servers.rst:75
+msgid "URL"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:20
+msgid "URL Of 3Par Server Example : `https://192.168.190.201:8008`"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:23
+#: ../../infrastructure/storage/servers.rst:50
+#: ../../infrastructure/storage/servers.rst:79
+msgid "Add your administrative user account."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:25
+#: ../../infrastructure/storage/servers.rst:52
+#: ../../infrastructure/storage/servers.rst:81
+msgid "Add your administrative password."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:29
+msgid ""
+"The 3Par Storage Server will be added and displayed in the Buckets tab. "
+"Buckets, Files Shares and Storage Groups will be synced in."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:32
+msgid "Adding Dell EMC ECS Storage Server"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:42
+msgid "Select `Dell EMC ECS`"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:44
+msgid "URL Of DELL EMC ECS Server"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:45
+msgid "Example : `https://192.168.190.200:4443`"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:47
+msgid "Tip"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:47
+msgid ""
+"The port 4443 is the api port for ECS api. This may be different "
+"depending on your configuration"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:53
+msgid "S3 SERVICE URL (Optional)"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:54
+msgid "Add your S3 service url Example: http://192.168.190.220:9020"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:57
+msgid "S3 SERVICE URL is not required if you are not planning on using ECS S3."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:61
+msgid ""
+"The Dell EMC ECS Storage Server will be added and displayed in the "
+"Buckets tab. Buckets, Files Shares and Storage Groups will be synced in."
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:64
+msgid "Adding Dell EMC Isilon Storage Server"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:74
+msgid "Select `Dell EMC Isilon`"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:76
+msgid "URL Of Dell EMC Isilon Server Example : `https://192.168.190.202:8080`"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:82
+msgid "PROVISION USER"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:83
+msgid "Select Provision User"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:84
+msgid "PROVISION GROUP"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:85
+msgid "Select Provision Group"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:86
+msgid "ROOT PATH"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:87
+msgid "Enter Root Path"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:88
+msgid "Example : ``\\``"
+msgstr ""
+
+#: ../../infrastructure/storage/servers.rst:92
+msgid ""
+"The Dell EMC Isilon Storage Server will be added and displayed in the "
+"Buckets tab. Buckets, Files Shares and Storage Groups will be synced in."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:2
+msgid "Storage Hosts"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:7
+msgid ""
+"Storage Hosts represent the physical or virtual hosts that are connected "
+"to a Storage Server for the purposes of volume presentation and LUN "
+"mapping. When a storage server is integrated into |morpheus| (for "
+"example, HPE Alletra MP), the platform automatically syncs and caches the"
+" registered hosts and host sets from the storage array."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:9
+msgid ""
+"Storage Hosts are used during datastore creation and volume mapping "
+"operations to determine which hosts should have access to a particular "
+"storage volume or LUN."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:12
+msgid "Viewing Storage Hosts"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:15
+msgid "Select the **SERVERS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:16
+msgid "Click the name of a storage server to view its detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:17
+msgid "Select the **HOSTS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:19
+msgid ""
+"The Hosts tab displays all hosts registered with the storage server, "
+"including:"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:21
+msgid "**Name** — The host name as reported by the storage array."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:22
+msgid "**OS** — The operating system type of the host (where available)."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:23
+msgid ""
+"**WWN/IQN** — Fibre Channel World Wide Names or iSCSI Qualified Names "
+"associated with the host."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:24
+msgid ""
+"**Host Set** — The host group or host set the host belongs to (if "
+"applicable)."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:27
+msgid "Host Sets"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:29
+msgid ""
+"Host Sets (also known as Host Groups) are logical groupings of storage "
+"hosts that share common volume access. When volumes are mapped to a Host "
+"Set, all member hosts gain access to the presented LUN."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:31
+msgid ""
+"Host Sets are synced automatically from the storage array and are used "
+"during datastore provisioning to define which group of hosts should see "
+"the new volume."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:33
+msgid ""
+"Storage Hosts and Host Sets are read-only in |morpheus| and are synced "
+"from the external storage server. To add or modify hosts, use the storage"
+" array's native management interface."
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:36
+msgid "Sync Behavior"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:38
+msgid ""
+"When a Storage Server is refreshed (either manually or on schedule), "
+"|morpheus| caches:"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:40
+msgid "**Hosts** — Individual host registrations on the array"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:41
+msgid "**Host Sets** — Grouped host definitions for multi-host volume access"
+msgstr ""
+
+#: ../../infrastructure/storage/storage_hosts.rst:43
+msgid ""
+"These cached entries are used by the platform for volume mapping "
+"operations and datastore creation workflows."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:2
+msgid "Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:7
+msgid ""
+"Snapshots capture the state of a virtual machine's disk(s) at a specific "
+"point in time, allowing administrators to quickly revert a VM to a "
+"previous state if needed. |morpheus| provides centralized snapshot "
+"management across clouds, supporting creation, reversion, and deletion of"
+" snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:9
+msgid ""
+"Snapshots can be managed from the server/instance detail page or from a "
+"centralized snapshots view."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:14
+msgid ""
+"``Infrastructure: Compute`` role permission at **Full** level is required"
+" to create, revert, or delete snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:15
+msgid "**Read** access allows viewing existing snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:18
+msgid "Viewing Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:20
+msgid "From a Server:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:22
+#: ../../infrastructure/storage/snapshots.rst:87
+msgid "Navigate to the server detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:23
+msgid "Select the **SNAPSHOTS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:25
+msgid "The Snapshots tab displays all snapshots for the server, including:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:27
+msgid "**Name** — Snapshot name or description"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:28
+msgid "**Date Created** — When the snapshot was taken"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:29
+msgid "**Size** — Disk space consumed by the snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:30
+msgid "**Status** — Snapshot state (active, creating, deleting)"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:33
+msgid "Creating a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:35
+msgid "Navigate to the server or instance detail page"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:36
+#: ../../infrastructure/storage/snapshots.rst:88
+msgid "Click :guilabel:`ACTIONS`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:37
+msgid "Select **Snapshot**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:38
+msgid "In the snapshot dialog, configure:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:41
+msgid "A descriptive name for the snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:42
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:43
+msgid "Optional notes about the snapshot's purpose or what state it captures."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:44
+msgid "MEMORY"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:45
+msgid ""
+"(Where supported) Include the VM's memory state in the snapshot. This "
+"allows reverting to the exact running state."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:46
+msgid "QUIESCE"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:47
+msgid ""
+"(Where supported) Quiesce the guest file system before taking the "
+"snapshot. This ensures application-consistent data."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:49
+msgid "Click :guilabel:`CREATE`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:51
+msgid ""
+"The snapshot operation runs asynchronously. The new snapshot will appear "
+"in the Snapshots tab once complete."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:54
+msgid "Reverting to a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:56
+#: ../../infrastructure/storage/snapshots.rst:65
+#: ../../infrastructure/storage/snapshots.rst:76
+msgid "Navigate to the server's **SNAPSHOTS** tab"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:57
+msgid "Click the revert icon next to the desired snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:58
+msgid "Confirm the revert operation"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:60
+msgid ""
+"Reverting to a snapshot discards all changes made since the snapshot was "
+"taken. This includes disk writes, configuration changes, and (if memory "
+"was not captured) the running state of applications."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:63
+msgid "Deleting a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:66
+msgid "Click the delete icon next to the snapshot"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:69
+msgid ""
+"Deleting a snapshot consolidates the snapshot data back into the base "
+"disk. This frees the space consumed by the snapshot delta."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:72
+msgid "Deleting All Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:74
+msgid "To remove all snapshots for a server:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:77
+msgid "Click :guilabel:`DELETE ALL`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:80
+msgid ""
+"Deleting all snapshots consolidates the entire snapshot chain. This "
+"operation may take time for VMs with large or numerous snapshots."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:83
+msgid "Importing Snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:85
+msgid "|morpheus| can import existing snapshots from the hypervisor:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:89
+msgid "Select **Import Snapshot**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:90
+msgid "Select the snapshot to import from the hypervisor"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:91
+msgid "Click :guilabel:`IMPORT`"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:94
+msgid "Creating Linked Clone Images"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:96
+msgid ""
+"VMware and HVM/KVM snapshots can be registered as linked clone Virtual "
+"Images. A linked clone uses the selected snapshot as a shared backing "
+"disk instead of copying the complete source disk. This reduces "
+"provisioning time and initial storage consumption, but creates a "
+"dependency on the source VM and snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:98
+msgid ""
+"Prepare the guest before taking the snapshot. Otherwise, every VM "
+"provisioned from the linked clone can inherit the source hostname, "
+"machine identity, SSH host keys, network rules, or Windows system "
+"identity. Complete the guest preparation steps below before creating the "
+"snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:100
+msgid "Prepare and shut down the source VM."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:101
+msgid ""
+"On the Instance detail page, select :guilabel:`Actions` > "
+":guilabel:`Create Snapshot`."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:102
+msgid "Enter a recognizable name and create the snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:103
+msgid "Select the Instance :guilabel:`Backups` tab."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:104
+msgid ""
+"Locate the completed snapshot, select :guilabel:`More`, and then select "
+":guilabel:`Create Linked Clone`."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:105
+msgid "Confirm the operation."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:106
+msgid ""
+"Navigate to :menuselection:`Library --> Virtual Images` and open the "
+"Virtual Image whose name matches the snapshot."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:107
+msgid ""
+"Verify its operating system, guest customization, cloud-init or Sysprep, "
+"agent, credentials, and tenant permissions before using it in an Instance"
+" Type or provisioning workflow."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:109
+msgid ""
+"The :guilabel:`Create Linked Clone` action appears only for supported "
+"provision types and users with **Snapshots: Linked Clone** permission set"
+" to **Full**. Creating it registers a Virtual Image record; it does not "
+"create a VM. VMs are created when that Virtual Image is selected during "
+"provisioning."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:111
+msgid "**Guest Preparation**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:113
+msgid ""
+"Complete application installation, patching, and configuration before "
+"generalizing the guest. Do not start the source VM again between "
+"generalization and snapshot creation."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:115
+msgid "**Windows**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:117
+msgid ""
+"Use Sysprep to remove the source system identity and start OOBE on the "
+"first boot of each provisioned VM:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:119
+msgid ""
+"& \"$env:SystemRoot\\System32\\Sysprep\\sysprep.exe\" /generalize /oobe "
+"/shutdown"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:123
+msgid ""
+"After Sysprep shuts down the VM, leave it powered off and create the "
+"snapshot. On the resulting Virtual Image, enable **Sysprep**. For "
+"platform-specific customization behavior, including VMware **Force Guest "
+"Customization**, see "
+":doc:`/provisioning/windows_cloud_guest_customization`."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:125
+msgid "**Linux**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:127
+msgid ""
+"For a cloud-init-enabled Linux guest, clear instance state and "
+"identifiers before shutdown. The exact files vary by distribution; the "
+"following is appropriate for current Ubuntu images:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:129
+msgid ""
+"sudo cloud-init clean --logs --machine-id\n"
+"sudo rm -f /etc/ssh/ssh_host_*\n"
+"sudo rm -f /etc/udev/rules.d/70-persistent-net.rules\n"
+"sudo truncate -s 0 /etc/machine-id\n"
+"sudo poweroff"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:137
+msgid ""
+"If ``/var/lib/dbus/machine-id`` is a regular file rather than a symbolic "
+"link to ``/etc/machine-id``, remove or empty it according to the "
+"distribution's image-preparation guidance. Remove only persistent udev "
+"rules created for the source VM; do not remove distribution-supplied "
+"rules. Verify that cloud-init is installed and enabled, then leave "
+"**Cloud Init Enabled** selected on the resulting Virtual Image."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:139
+msgid "**Dependencies and Limitations**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:141
+msgid ""
+"Do not treat a linked clone as an independent image. The source VM and "
+"selected snapshot remain part of its backing chain."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:142
+msgid ""
+"Do not delete the backing snapshot or source VM while linked-clone VMs "
+"depend on them. HVM blocks these operations when it detects active "
+"dependents."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:143
+msgid ""
+"VMware linked clone images are primarily intended for rapid provisioning "
+"such as VDI pools and cannot be resized."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:144
+msgid ""
+"HVM linked clones require a file-based datastore and QCOW2 disks. LUN-"
+"per-vDisk storage, including HPE Alletra datastore types, does not "
+"support linked clones."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:145
+msgid ""
+"HVM linked clones on local storage are pinned to the source hypervisor. "
+"Host migration is not supported. HVM storage migration is not supported "
+"because the overlay depends on the original snapshot backing file."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:146
+msgid ""
+"Shared HVM storage avoids local-host pinning, but the backing snapshot "
+"must remain available in its original datastore."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:147
+msgid ""
+"Changes made to the source VM after the snapshot are not included. To "
+"publish an updated image, prepare the source again, create a new "
+"snapshot, and create a new linked clone Virtual Image."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:148
+msgid ""
+"Snapshot chains add storage and performance dependencies. Keep chains "
+"shallow and monitor the source datastore's capacity and health."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:150
+msgid "**API**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:152
+msgid "Create a linked clone Virtual Image via the API:"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:154
+#, python-brace-format
+msgid "``PUT /api/instances/{instanceId}/linked-clone/{snapshotId}``"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:155
+#, python-brace-format
+msgid "``PUT /api/servers/{serverId}/linked-clone/{snapshotId}``"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:157
+msgid ""
+"These endpoints register the snapshot as a linked clone Virtual Image. "
+"Provisioning a VM from the image then creates the thin overlay "
+"automatically."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:160
+msgid "Snapshot Best Practices"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:162
+msgid ""
+"**Keep snapshots short-lived** — Snapshots consume increasing disk space "
+"over time as the delta grows. Delete snapshots once they are no longer "
+"needed."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:163
+msgid ""
+"**Don't use as backups** — Snapshots are not a replacement for proper "
+"backups. They reside on the same storage as the VM and are lost if the "
+"storage fails."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:164
+msgid ""
+"**Limit chain depth** — Avoid creating deep chains of snapshots (snapshot"
+" of a snapshot). Performance degrades with chain depth."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:165
+msgid ""
+"**Quiesce when possible** — For application consistency, always quiesce "
+"the guest file system before snapshotting databases or transactional "
+"workloads."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:166
+msgid ""
+"**Archive snapshots** — Configure the default archive store "
+"(``Administration > Settings > Appliance > Archive Store``) if snapshots "
+"need to be stored externally."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:169
+msgid "Supported Cloud Types"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:171
+msgid ""
+"Snapshot support is available on more cloud types than linked clone "
+"Virtual Image creation. Linked clone creation is supported only for "
+"VMware vSphere and HVM/KVM."
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:177
+msgid "Cloud Type"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:178
+msgid "Snapshot Support"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:179
+msgid "Linked Clone Virtual Images"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:180
+msgid "VMware vSphere"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:181
+msgid "Full support including memory snapshots and quiescing"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:182
+msgid "**Supported**"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:183
+msgid "HVM/KVM"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:184
+msgid "Libvirt/QEMU snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:185
+msgid ""
+"**Supported on file-based datastores with QCOW2 disks only**; not "
+"supported on LUN-per-vDisk storage such as HPE Alletra"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:186
+msgid "Nutanix AHV"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:187
+msgid "Snapshots without memory state"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:188
+#: ../../infrastructure/storage/snapshots.rst:191
+#: ../../infrastructure/storage/snapshots.rst:194
+msgid "Not supported"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:190
+msgid "Managed disk snapshots"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:192
+msgid "AWS"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:193
+msgid "EBS snapshots at the volume level"
+msgstr ""
+
+#: ../../infrastructure/storage/snapshots.rst:196
+msgid ""
+"Some cloud types may not support all snapshot options (e.g., memory "
+"snapshots, quiescing). Unavailable options will be hidden or greyed out "
+"in the dialog."
+msgstr ""
+

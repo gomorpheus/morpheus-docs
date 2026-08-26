@@ -1,0 +1,303 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/translate/README.md:1
+msgid "AI Translation Pipeline"
+msgstr ""
+
+#: ../../tools/translate/README.md:3
+msgid ""
+"Translates Sphinx documentation `.po` files into target languages using "
+"AI models, constrained by the official Morpheus UI glossary for "
+"terminology consistency."
+msgstr ""
+
+#: ../../tools/translate/README.md:5
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../tools/translate/README.md:7
+msgid "pip3 install openai anthropic sphinx-intl\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:11
+msgid "Set your API key:"
+msgstr ""
+
+#: ../../tools/translate/README.md:12
+msgid ""
+"export OPENAI_API_KEY=sk-...\n"
+"# or\n"
+"export ANTHROPIC_API_KEY=sk-ant-...\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:18
+msgid "Workflow"
+msgstr ""
+
+#: ../../tools/translate/README.md:20
+msgid "1. Extract glossary from UI translations"
+msgstr ""
+
+#: ../../tools/translate/README.md:22
+msgid "python3 tools/translate/extract_glossary.py\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:26
+msgid ""
+"This parses `../morpheus-ui/morpheus-ui/grails-"
+"app/i18n/messages_es_ES.properties` and outputs "
+"`tools/translate/glossary.json` with 4,000+ term mappings."
+msgstr ""
+
+#: ../../tools/translate/README.md:28
+msgid "2. Extract translatable strings (if not done)"
+msgstr ""
+
+#: ../../tools/translate/README.md:30
+msgid ""
+"make gettext\n"
+"make intl-update\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:35
+msgid "3. Translate a section"
+msgstr ""
+
+#: ../../tools/translate/README.md:37
+msgid ""
+"# Dry run to see what would be translated\n"
+"python3 tools/translate/translate_po.py "
+"locale/es/LC_MESSAGES/getting_started --dry-run\n"
+"\n"
+"# Translate a single file\n"
+"python3 tools/translate/translate_po.py "
+"locale/es/LC_MESSAGES/getting_started/getting_started.po -v\n"
+"\n"
+"# Translate an entire section\n"
+"python3 tools/translate/translate_po.py "
+"locale/es/LC_MESSAGES/getting_started -v --report "
+"report_getting_started.json\n"
+"\n"
+"# Translate all Spanish locale files\n"
+"python3 tools/translate/translate_po.py locale/es/LC_MESSAGES -v --report"
+" report_full.json\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:51
+msgid "4. Build the translated docs"
+msgstr ""
+
+#: ../../tools/translate/README.md:53
+msgid "make html-es\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:57
+msgid "Options"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Flag"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Description"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--lang LANG`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Target language (default: `es`)"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--glossary PATH`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Path to glossary JSON"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--model MODEL`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "AI model: `gpt-4o` (default), `claude-sonnet-4-20250514`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--batch-size N`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Entries per API call (default: 20)"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--dry-run`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Preview without making API calls"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--resume`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Skip already-translated entries (default: on)"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--no-resume`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Re-translate all entries"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--report PATH`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Write JSON report to file"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--verbose` / `-v`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Detailed progress output"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "`--section NAME`"
+msgstr ""
+
+#: ../../tools/translate/README.md
+msgid "Translate only one section subdirectory"
+msgstr ""
+
+#: ../../tools/translate/README.md:72
+msgid "Multi-locale Support"
+msgstr ""
+
+#: ../../tools/translate/README.md:74
+msgid "To add a new language:"
+msgstr ""
+
+#: ../../tools/translate/README.md:76
+msgid ""
+"# 1. Generate .po files for the new locale\n"
+"sphinx-intl update -p _build/gettext -l fr -d locale\n"
+"\n"
+"# 2. Extract glossary for the new language (if UI translations exist)\n"
+"python3 tools/translate/extract_glossary.py "
+"path/to/messages_fr.properties\n"
+"\n"
+"# 3. Translate\n"
+"python3 tools/translate/translate_po.py locale/fr/LC_MESSAGES --lang fr "
+"--glossary tools/translate/glossary_fr.json -v\n"
+msgstr ""
+
+#: ../../tools/translate/README.md:87
+msgid "Glossary"
+msgstr ""
+
+#: ../../tools/translate/README.md:89
+msgid ""
+"The glossary (`glossary.json`) is extracted from the Morpheus UI i18n "
+"properties file and ensures product terms match the UI exactly:"
+msgstr ""
+
+#: ../../tools/translate/README.md:91
+msgid "Instance → Instancia"
+msgstr ""
+
+#: ../../tools/translate/README.md:92
+msgid "Cloud → Nube"
+msgstr ""
+
+#: ../../tools/translate/README.md:93
+msgid "Workflow → Flujo de trabajo"
+msgstr ""
+
+#: ../../tools/translate/README.md:94
+msgid "Infrastructure → Infraestructura"
+msgstr ""
+
+#: ../../tools/translate/README.md:95
+msgid "etc."
+msgstr ""
+
+#: ../../tools/translate/README.md:97
+msgid "How It Works"
+msgstr ""
+
+#: ../../tools/translate/README.md:99
+msgid "Parses `.po` files to find untranslated `msgid` entries"
+msgstr ""
+
+#: ../../tools/translate/README.md:100
+msgid "Batches entries (default: 20 per API call)"
+msgstr ""
+
+#: ../../tools/translate/README.md:101
+msgid "Builds a prompt with relevant glossary terms + markup preservation rules"
+msgstr ""
+
+#: ../../tools/translate/README.md:102
+msgid "Calls the AI model for translation"
+msgstr ""
+
+#: ../../tools/translate/README.md:103
+msgid "Writes translated `msgstr` values back to the `.po` file"
+msgstr ""
+
+#: ../../tools/translate/README.md:104
+msgid "Supports resume — re-running won't re-translate already-translated entries"
+msgstr ""
+
+#: ../../tools/translate/README.md:106
+msgid "Validation"
+msgstr ""
+
+#: ../../tools/translate/README.md:108
+msgid "After translation, validate with:"
+msgstr ""
+
+#: ../../tools/translate/README.md:110
+#, python-brace-format
+msgid ""
+"# Check .po file syntax\n"
+"find locale/es -name \"*.po\" -exec msgfmt --check {} \\;\n"
+"\n"
+"# Build and check for warnings\n"
+"make html-es\n"
+msgstr ""
+

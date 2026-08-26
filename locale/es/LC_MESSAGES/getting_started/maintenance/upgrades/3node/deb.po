@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -33,8 +33,20 @@ msgstr ""
 "configurations to |morphver|."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:5
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:19
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:72
+msgid "Warning"
+msgstr ""
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:5
 msgid "As a best practice, always backup your database prior to any upgrade."
 msgstr "As a best practice, always backup your database prior to any upgrade."
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:7
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:63
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:113
+msgid "Important"
+msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:7
 msgid "The following is only for \"3 Node HA\" Architecture configurations."
@@ -48,7 +60,9 @@ msgstr "|morpheus| Packages"
 msgid ""
 "|morpheus| Release Package urls can be obtained from "
 "`https://app.morpheushub.com <https://app.morpheushub.com>`_"
-msgstr "Las URLs de paquetes de versiones de |morpheus| pueden obtenerse en `https://app.morpheushub.com <https://app.morpheushub.com>`_"
+msgstr ""
+"Las URLs de paquetes de versiones de |morpheus| pueden obtenerse en "
+"`https://app.morpheushub.com <https://app.morpheushub.com>`_"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:14
 msgid "|nonRollingUpgradeVer| or lower -> |morphver| Upgrade"
@@ -63,10 +77,10 @@ msgid ""
 "reconfigure to clean old node and vm node packages from the package-repo "
 "when room is needed."
 msgstr ""
-"|morpheus| |morphver| contains nuevo node y VM node packages that require "
-"3.5GB of storage. It is safe para ejecutar ``sudo rm -Rf "
-"/var/opt/morpheus/package-repos/*`` after |morphver| package installation "
-"y before reconfigure to clean old node y vm node packages desde el "
+"|morpheus| |morphver| contains nuevo node y VM node packages that require"
+" 3.5GB of storage. It is safe para ejecutar ``sudo rm -Rf "
+"/var/opt/morpheus/package-repos/*`` after |morphver| package installation"
+" y before reconfigure to clean old node y vm node packages desde el "
 "paquete-repo when room is needed."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:21
@@ -103,10 +117,15 @@ msgid ""
 "[root@app-server-1 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
 "[root@app-server-1 ~]# sudo morpheus-ctl reconfigure"
 msgstr ""
-"[root@app-server-1 ~]# sudo wget "
-"https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\\n[root@app-server-1 "
-"~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-1 "
-"~]# sudo morpheus-ctl reconfigure"
+"[root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\\n[root@app-server-1 ~]# sudo dpkg -i "
+"morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-1 ~]# sudo "
+"morpheus-ctl reconfigure"
+
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:43
+#: ../../getting_started/maintenance/upgrades/3node/deb.rst:70
+msgid "Note"
+msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:43
 msgid ""
@@ -134,10 +153,10 @@ msgid ""
 "[root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
 "[root@app-server-2 ~]# sudo morpheus-ctl reconfigure"
 msgstr ""
-"[root@app-server-2 ~]# sudo wget "
-"https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\\n[root@app-server-2 "
-"~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-2 "
-"~]# sudo morpheus-ctl reconfigure"
+"[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\\n[root@app-server-2 ~]# sudo dpkg -i "
+"morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-2 ~]# sudo "
+"morpheus-ctl reconfigure"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:53
 msgid "Then upgrade the deb package on Node 3, and run a Reconfigure on Node 3"
@@ -150,10 +169,10 @@ msgid ""
 "[root@app-server-3 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n"
 "[root@app-server-3 ~]# sudo morpheus-ctl reconfigure"
 msgstr ""
-"[root@app-server-3 ~]# sudo wget "
-"https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\\n[root@app-server-3 "
-"~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-3 "
-"~]# sudo morpheus-ctl reconfigure"
+"[root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\\n[root@app-server-3 ~]# sudo dpkg -i "
+"morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-3 ~]# sudo "
+"morpheus-ctl reconfigure"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:61
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:111
@@ -202,12 +221,11 @@ msgid ""
 "[root@app-server-1 ~]# sudo morpheus-ctl reconfigure\n"
 "[root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui"
 msgstr ""
-"[root@app-server-1 ~]# sudo wget "
-"https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\\n[root@app-server-1 "
-"~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-1 "
-"~]# sudo morpheus-ctl stop morpheus-ui\\n[root@app-server-1 ~]# sudo "
-"morpheus-ctl reconfigure\\n[root@app-server-1 ~]# sudo morpheus-ctl start "
-"morpheus-ui"
+"[root@app-server-1 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\\n[root@app-server-1 ~]# sudo dpkg -i "
+"morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-1 ~]# sudo "
+"morpheus-ctl stop morpheus-ui\\n[root@app-server-1 ~]# sudo morpheus-ctl "
+"reconfigure\\n[root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:84
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:96
@@ -229,12 +247,11 @@ msgid ""
 "[root@app-server-2 ~]# sudo morpheus-ctl reconfigure\n"
 "[root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui"
 msgstr ""
-"[root@app-server-2 ~]# sudo wget "
-"https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\\n[root@app-server-2 "
-"~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-2 "
-"~]# sudo morpheus-ctl stop morpheus-ui\\n[root@app-server-2 ~]# sudo "
-"morpheus-ctl reconfigure\\n[root@app-server-2 ~]# sudo morpheus-ctl start "
-"morpheus-ui"
+"[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\\n[root@app-server-2 ~]# sudo dpkg -i "
+"morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-2 ~]# sudo "
+"morpheus-ctl stop morpheus-ui\\n[root@app-server-2 ~]# sudo morpheus-ctl "
+"reconfigure\\n[root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:98
 msgid ""
@@ -253,12 +270,11 @@ msgid ""
 "[root@app-server-3 ~]# sudo morpheus-ctl reconfigure\n"
 "[root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui"
 msgstr ""
-"[root@app-server-3 ~]# sudo wget "
-"https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\\n[root@app-server-3 "
-"~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-3 "
-"~]# sudo morpheus-ctl stop morpheus-ui\\n[root@app-server-3 ~]# sudo "
-"morpheus-ctl reconfigure\\n[root@app-server-3 ~]# sudo morpheus-ctl start "
-"morpheus-ui"
+"[root@app-server-3 ~]# sudo wget https://packageUrl.morpheus-"
+"appliance_x.x.x-x_amd64.deb\\n[root@app-server-3 ~]# sudo dpkg -i "
+"morpheus-appliance_x.x.x-1_amd64.deb\\n[root@app-server-3 ~]# sudo "
+"morpheus-ctl stop morpheus-ui\\n[root@app-server-3 ~]# sudo morpheus-ctl "
+"reconfigure\\n[root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:109
 msgid ""

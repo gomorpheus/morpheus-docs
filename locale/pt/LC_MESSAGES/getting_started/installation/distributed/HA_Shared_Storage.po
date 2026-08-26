@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:2
+msgid "Shared Storage"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:4
+msgid ""
+"For configurations with 2 or more Applications Nodes, Shared Storage is "
+"required between the app nodes. Local Storage File Shares will need to be"
+" copied to a shared file system so all assets are available on all App "
+"nodes."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:7
+msgid "Assets"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:8
+msgid "White label images"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:9
+msgid "Uploaded virtual images"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:10
+msgid "Deploy uploads"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:11
+msgid "Ansible Plays"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:12
+msgid "Terraform"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:13
+msgid "Morpheus backups"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
+msgid "Tip"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
+msgid ""
+"Backups, deployments and virtual image storage locations can be "
+"overridden within the |morpheus|-ui.  You can find more information on "
+"storage here: :ref:`storage`"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:18
+msgid "Moving existing appliance files to shared storage"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:20
+msgid ""
+"Moving the Manager VM between HVM hosts or datastores is a hypervisor VM "
+"migration. It does **not** move the appliance files under "
+"``/var/opt/morpheus/morpheus-ui`` to shared application storage. The "
+"procedure below concerns appliance files only."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:22
+msgid ""
+"Use a maintenance window. The application is unavailable while all "
+"application nodes are stopped. The exact shared-storage type, mount "
+"options, copy tool, ownership, and rollback sequence depend on the "
+"appliance release and storage platform. HPE does not publish one generic "
+"shell sequence for an existing VM Essentials Manager because an "
+"incomplete copy or mounting an empty target over the source can make "
+"appliance assets unavailable."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:24
+msgid ""
+"Confirm why the move is required. A single-node Manager does not gain "
+"application availability merely by moving this directory. If the goal is "
+"recovery from loss of the HVM host, first use the decision tree in :ref"
+":`vme-manager-host-recovery`."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:25
+msgid ""
+"Open an HPE Support case with the Manager version, topology, current "
+"filesystem and usage, proposed storage type, mount endpoint and options, "
+"and maintenance window. Obtain a release-specific migration and rollback "
+"plan before changing the mount."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:26
+msgid ""
+"Create and verify all three recovery artifacts described in "
+":doc:`/getting_started/guides/backup_restore`: an appliance database "
+"backup, a filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, "
+"and protected copies of appliance configuration and secrets. Keep the "
+"backups outside the Manager VM and outside the target being changed."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:27
+msgid ""
+"Validate the target from every future application node: capacity, "
+"latency, name resolution, permissions, stable boot-time mounting, and the"
+" same numeric UID/GID for ``morpheus-app`` and ``morpheus-local``. For "
+"NFS, include the ``sync`` requirement below."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:28
+msgid ""
+"Stop ``morpheus-ui`` on **every** application node as directed by the "
+"approved plan. Verify no node can write to the source before the final "
+"copy."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:29
+msgid ""
+"Follow the approved copy and mount sequence. Preserve ownership, "
+"permissions, links, timestamps, sparse files, and all hidden content. "
+"Mount the target at ``/var/opt/morpheus/morpheus-ui``; do not change "
+"application paths to point at an arbitrary staging directory."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:30
+msgid ""
+"Before startup, have the coordinator compare source and target content "
+"and verify ownership from every application node. Do not delete or "
+"repurpose the source."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:31
+msgid ""
+"Start one application node as directed. Verify the UI, uploaded virtual "
+"images, deployment archives, Ansible content, Terraform content, white-"
+"label assets, and appliance backup destination. Then start and verify "
+"remaining nodes one at a time."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:32
+msgid ""
+"Retain the source and verified backups for the rollback period in the "
+"approved plan."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:34
+msgid ""
+"Stop and contact HPE Support if the target mounts differently between "
+"nodes, UID/GID values differ, the final copy cannot be proven quiescent "
+"and complete, startup writes to the old location, or any asset is "
+"missing. Roll back by stopping all application nodes and restoring the "
+"original mount/source according to the approved plan; do not merge two "
+"independently modified copies."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
+msgid ""
+"NFS mounts require ``sync`` option when using Ansible integration with "
+"|morpheus| Agent command bus execution enabled."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
+msgid ""
+"On each application node, the morpheus-app and morpheus-local user and "
+"group uid/gid should be consistent.  If the uid and/or gid are different "
+"between nodes, when the permissions are applied during a reconfigure, the"
+" permissions can be incorrect for other nodes.  The uid and gid for the "
+"users can be seen by executing:  ``sudo cat /etc/passwd`` and ``sudo cat "
+"/etc/groups``"
+msgstr ""
+

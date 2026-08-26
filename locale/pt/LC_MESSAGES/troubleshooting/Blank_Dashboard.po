@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../troubleshooting/Blank_Dashboard.rst:2
+msgid "Blank Dashboard"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:4
+msgid "Problem"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:5
+msgid "A blank dashboard or 500 error after installing morpheus"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:7
+#: ../../troubleshooting/Blank_Dashboard.rst:37
+msgid "Note"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:7
+msgid ""
+"A blank or 500 error on just the dashboard is different than the entire "
+"morpheus-ui not loading. Please see UI note loading article for "
+"troubleshooting the ui not loading after an upgrade."
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:9
+msgid "Cause"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:10
+msgid ""
+"Elasticsearch restarting prior to being fully bootstrapped during the "
+"initial install."
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:12
+msgid "Solution"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:13
+msgid ""
+"To fix, purge elasticsearch by running the following on the |morpheus| "
+"Appliance:"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:15
+msgid ""
+"curl -XDELETE http://localhost:9200/*\n"
+"morpheus-ctl restart elasticsearch\n"
+"morpheus-ctl restart morpheus-ui"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:21
+msgid "Another option is:"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:23
+msgid ""
+"sudo rm –rf /var/opt/|morpheus| /elasticsearch/data/morpheus\n"
+"morpheus-ctl restart elasticsearch\n"
+"morpheus-ctl restart morpheus-ui"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:29
+msgid "If you get a term/timeout on ui restart, run"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:31
+msgid ""
+"morpheus-ctl kill morpheus-ui\n"
+"morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../troubleshooting/Blank_Dashboard.rst:37
+msgid ""
+"The morpheus-ui may take a few minutes to load and be available after "
+"being restarted"
+msgstr ""
+

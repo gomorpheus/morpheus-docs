@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../operations/analytics/convertible_ri.rst:2
+msgid "Amazon Convertible RI Analytics"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:7
+msgid "Analytics dashboards are an Advanced+ feature."
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:10
+msgid "Overview"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:12
+msgid ""
+"The Amazon Convertible RI (Reserved Instance) Analytics dashboard helps "
+"administrators optimize their AWS Reserved Instance portfolio by "
+"identifying underutilized convertible reservations and recommending "
+"conversions to better match current workload demands."
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:14
+msgid ""
+"Convertible RIs allow you to exchange one reservation for another with "
+"different instance attributes (family, OS, tenancy, payment option), "
+"making them ideal for dynamic workloads. This dashboard analyzes current "
+"RI utilization and suggests conversion opportunities."
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:16
+msgid ""
+"Navigate to Operations > Analytics and select **Amazon Convertible RI "
+"Analysis** from the analytics type list."
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:19
+msgid "Filters"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:21
+msgid "CLOUD"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:22
+msgid ""
+"Select a specific AWS Cloud integration with costing enabled. Only AWS "
+"clouds with costing sync active are available in this dropdown."
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:25
+msgid "Dashboard Output"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:28
+msgid "Conversion Recommendations"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:30
+msgid ""
+"When |morpheus| identifies convertible RI capacity that could be better "
+"utilized through conversion, a recommendations table is displayed with "
+"the following columns:"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:32
+msgid ""
+"**Name** — The current RI type/family that has excess or insufficient "
+"capacity"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:33
+msgid ""
+"**Units Needed** — The number of normalized units of capacity required to"
+" meet current demand"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:34
+msgid "**Convert Plan** — The recommended RI type to convert to"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:35
+msgid "**Convert Units** — The number of normalized units that would be converted"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:37
+msgid ""
+"If no conversion source is available for a shortage, the dashboard "
+"recommends purchasing new reservations to cover the gap."
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:40
+msgid "Underutilized Items"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:42
+msgid "A second table displays convertible RIs that are currently underutilized:"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:44
+msgid "**Name** — The RI type/family"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:45
+msgid "**Current Units** — The current normalized unit allocation"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:46
+msgid ""
+"**Units After Conversions** — The projected unit count after recommended "
+"conversions are applied"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:49
+msgid "Interpreting Results"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:51
+msgid ""
+"**Units Needed > 0** indicates demand exceeds current RI capacity for "
+"that type; consider converting excess capacity from other types or "
+"purchasing new reservations"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:52
+msgid ""
+"**Units After Conversions < Current Units** indicates that some capacity "
+"from this RI type is recommended for conversion to other types with "
+"higher demand"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:53
+msgid ""
+"An empty recommendations table indicates the current convertible RI "
+"portfolio is optimally aligned with workload demand"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:56
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:58
+msgid ""
+"An Amazon AWS Cloud integration must be configured (Infrastructure > "
+"Clouds)"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:59
+msgid "**Costing** must be set to \"Sync Costing\" on the AWS Cloud configuration"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:60
+msgid "The AWS account must have active Convertible Reserved Instances"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:61
+msgid ""
+"The IAM credentials used for the integration must have "
+"``ce:GetReservationUtilization`` and ``ce:GetReservationCoverage`` "
+"permissions"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:63
+msgid "Note"
+msgstr ""
+
+#: ../../operations/analytics/convertible_ri.rst:63
+msgid ""
+"RI analytics data is synced from AWS Cost Explorer. There may be up to a "
+"24-hour delay between AWS console data and |morpheus| analytics."
+msgstr ""
+

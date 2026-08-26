@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -26,27 +26,15 @@ msgstr "Actividad"
 
 #: ../../operations/activity.rst:4
 msgid ""
-"The Activity section displays a recent activity report for Auditing. "
-"|morpheus| defines an activity as any major action performed on an "
-"instance or server, such as, but not limited to adding a server, deleting"
-" a server, provisioning an instance, deleting an instance, creating a "
-"backup, etc… This view can be searched and filtered by type, user, and "
-"date range."
+"The Operations > Activity page contains Activity, Alarms, and History "
+"views. The ``Operations: Activity`` Role permission with Read access is "
+"required for Activity and History. Alarms use the separate ``Operations: "
+"Alarms`` permission."
 msgstr ""
-"La sección de Actividad muestra un informe de actividad reciente para "
-"auditoría. |morpheus| define una actividad como cualquier acción "
-"importante realizada en una instancia o servidor, como, entre otras, "
-"agregar un servidor, eliminar un servidor, aprovisionar una instancia, "
-"eliminar una instancia, crear un backup, etc. Esta vista se puede "
-"buscar y filtrar por tipo, usuario y rango de fechas."
 
 #: ../../operations/activity.rst:9
-msgid ""
-"There are four types of activities that are displayed in the Activity "
-"Reports:"
+msgid "The current Activity filter offers these event types:"
 msgstr ""
-"Hay cuatro tipos de actividades que se muestran en los Informes de "
-"Actividad:"
 
 #: ../../operations/activity.rst:11
 msgid "Backup"
@@ -60,45 +48,46 @@ msgstr "Aprovisionamiento"
 msgid "Alert"
 msgstr "Alerta"
 
-#: ../../operations/activity.rst:14
-msgid "Permissions"
-msgstr "Permisos"
-
-#: ../../operations/activity.rst:17
+#: ../../operations/activity.rst:16
 msgid "**To View a Recent Activity report:**"
 msgstr "**Para ver un informe de Actividad reciente:**"
 
-#: ../../operations/activity.rst:19
+#: ../../operations/activity.rst:18
 msgid "Select the ``Operations`` link in the navigation bar."
 msgstr "Seleccione el enlace ``Operations`` en la barra de navegación."
 
-#: ../../operations/activity.rst:20
+#: ../../operations/activity.rst:19
 msgid "Select ``Activity`` in the sub navigation bar."
 msgstr "Seleccione ``Activity`` en la barra de subnavegación."
 
-#: ../../operations/activity.rst:22
+#: ../../operations/activity.rst:21
 msgid ""
-"Recent activity is displayed in order from recent to oldest. This view "
-"can be searched and filtered by type, user, and date range."
+"Recent activity is displayed from newest to oldest. Search text is "
+"matched against activity entries. Filters are available for type and "
+"user, with preset date ranges for the last hour, last 24 hours, today, "
+"yesterday, last seven days, and last month. Users whose Provisioning "
+"permission is scoped to ``User`` are restricted to their own activity; "
+"other results are also limited by accessible Groups. In the Master "
+"Tenant, a Tenant filter is available."
 msgstr ""
-"La actividad reciente se muestra en orden de la más reciente a la más "
-"antigua. Esta vista se puede buscar y filtrar por tipo, usuario y "
-"rango de fechas."
 
-#: ../../operations/activity.rst:24
+#: ../../operations/activity.rst:23
 msgid "**Review**"
 msgstr "**Revisión**"
 
-#: ../../operations/activity.rst:26
+#: ../../operations/activity.rst:25
 msgid ""
 "To review the item the activity occurred on, click the name of the "
 "activity and it will go to a new page and display that item."
 msgstr ""
-"Para revisar el elemento en el que ocurrió la actividad, haga clic en "
-"el nombre de la actividad e irá a una nueva página y mostrará ese "
-"elemento."
+"Para revisar el elemento en el que ocurrió la actividad, haga clic en el "
+"nombre de la actividad e irá a una nueva página y mostrará ese elemento."
 
-#: ../../operations/activity.rst:28
+#: ../../operations/activity.rst:27
+msgid "Note"
+msgstr ""
+
+#: ../../operations/activity.rst:27
 msgid ""
 "Deleted activities are displayed as an alert and do not contain a link to"
 " the event item. If the activity is not a deletion event we provide a "
@@ -106,56 +95,55 @@ msgid ""
 "Delete activity alerts are shown for Instances, servers, Clouds, Groups, "
 "and Monitoring Checks."
 msgstr ""
-"Las actividades eliminadas se muestran como una alerta y no contienen "
-"un enlace al elemento del evento. Si la actividad no es un evento de "
-"eliminación, proporcionamos un enlace en el nombre de la actividad "
-"para ir al elemento en el que ocurrió la actividad. Las alertas de "
-"actividad de eliminación se muestran para Instancias, servidores, "
-"Nubes, Grupos y verificaciones de Monitoreo."
+"Las actividades eliminadas se muestran como una alerta y no contienen un "
+"enlace al elemento del evento. Si la actividad no es un evento de "
+"eliminación, proporcionamos un enlace en el nombre de la actividad para "
+"ir al elemento en el que ocurrió la actividad. Las alertas de actividad "
+"de eliminación se muestran para Instancias, servidores, Nubes, Grupos y "
+"verificaciones de Monitoreo."
 
-#: ../../operations/activity.rst:30
+#: ../../operations/activity.rst:29
 msgid "**To Filter:**"
 msgstr "**Para filtrar:**"
 
-#: ../../operations/activity.rst:32
+#: ../../operations/activity.rst:31
 msgid "Click the filter drop down of type of filter you want to apply."
 msgstr "Haga clic en el menú desplegable del tipo de filtro que desea aplicar."
 
-#: ../../operations/activity.rst:33
+#: ../../operations/activity.rst:32
 msgid "Select the appropriate filter."
 msgstr "Seleccione el filtro apropiado."
 
-#: ../../operations/activity.rst:36
+#: ../../operations/activity.rst:35
 msgid "Alarms"
 msgstr "Alarmas"
 
-#: ../../operations/activity.rst:38
+#: ../../operations/activity.rst:37
 msgid ""
 "The `ALARMS` section shows Operation notifications from Cloud and other "
 "Service Integrations. Cloud and other Service Integration Alarms are not "
 "generated by |morpheus| but synced and displayed for visibility in "
 "|morpheus|."
 msgstr ""
-"La sección `ALARMS` muestra notificaciones de Operaciones de Nube y "
-"otras integraciones de servicios. Las alarmas de Nube y otras "
-"integraciones de servicios no son generadas por |morpheus| sino "
-"sincronizadas y mostradas para visibilidad en |morpheus|."
+"La sección `ALARMS` muestra notificaciones de Operaciones de Nube y otras"
+" integraciones de servicios. Las alarmas de Nube y otras integraciones de"
+" servicios no son generadas por |morpheus| sino sincronizadas y mostradas"
+" para visibilidad en |morpheus|."
 
-#: ../../operations/activity.rst:41
+#: ../../operations/activity.rst:40
 msgid "History"
 msgstr "Historial"
 
-#: ../../operations/activity.rst:43
+#: ../../operations/activity.rst:42
 msgid ""
-"The `HISTORY` section shows Process History from Instances and Apps "
-"processes. This is an aggregate view of the ``History`` tab in Instance "
-"and App details pages."
+"The `HISTORY` section shows process history from Instances, servers, and "
+"Apps. This is an aggregate view of the ``History`` tabs on resource "
+"detail pages. It defaults to the last seven days, supports text and date-"
+"range filtering, and only returns resources the user can view. Processes "
+"for deleted resources created by the current user can remain visible."
 msgstr ""
-"La sección `HISTORY` muestra el Historial de procesos de Instancias y "
-"aplicaciones. Esta es una vista agregada de la pestaña ``History`` en "
-"las páginas de detalles de Instancias y aplicaciones."
 
-#: ../../operations/activity.rst:45
+#: ../../operations/activity.rst:44
 msgid ""
 "Processes can be expanded to view all process steps and process history "
 "detail including output and errors."
@@ -163,7 +151,7 @@ msgstr ""
 "Los procesos se pueden expandir para ver todos los pasos del proceso y "
 "los detalles del historial del proceso, incluyendo salida y errores."
 
-#: ../../operations/activity.rst:47
+#: ../../operations/activity.rst:46
 msgid ""
 "Access to `HISTORY` is given by the ``Operations:Activity`` Role "
 "permission."
@@ -171,24 +159,95 @@ msgstr ""
 "El acceso a `HISTORY` se otorga mediante el permiso de Rol "
 "``Operations:Activity``."
 
-#: ../../operations/activity.rst:54
-msgid ""
-"The Logs displayed in ``Administration - Health - Morpheus Logs`` are "
-"from ``/var/log/morpheus/morpheus-ui/current``. These logs show all ui "
-"activity and are useful for troubleshooting and auditing."
-msgstr ""
-"Los registros mostrados en ``Administration - Health - Morpheus Logs`` "
-"son de ``/var/log/morpheus/morpheus-ui/current``. Estos registros "
-"muestran toda la actividad de la interfaz y son útiles para la "
-"resolución de problemas y auditoría."
+#~ msgid ""
+#~ "The Activity section displays a recent"
+#~ " activity report for Auditing. |morpheus|"
+#~ " defines an activity as any major "
+#~ "action performed on an instance or "
+#~ "server, such as, but not limited "
+#~ "to adding a server, deleting a "
+#~ "server, provisioning an instance, deleting "
+#~ "an instance, creating a backup, etc… "
+#~ "This view can be searched and "
+#~ "filtered by type, user, and date "
+#~ "range."
+#~ msgstr ""
+#~ "La sección de Actividad muestra un "
+#~ "informe de actividad reciente para "
+#~ "auditoría. |morpheus| define una actividad "
+#~ "como cualquier acción importante realizada "
+#~ "en una instancia o servidor, como, "
+#~ "entre otras, agregar un servidor, "
+#~ "eliminar un servidor, aprovisionar una "
+#~ "instancia, eliminar una instancia, crear "
+#~ "un backup, etc. Esta vista se "
+#~ "puede buscar y filtrar por tipo, "
+#~ "usuario y rango de fechas."
 
-#: ../../operations/activity.rst:56
-msgid ""
-"Stack traces in ``Administration - Health - Morpheus Logs`` are filtered "
-"for |morpheus| services. Complete stack traces can be found in "
-"``/var/log/morpheus/morpheus-ui/current``."
-msgstr ""
-"Los stack traces en ``Administration - Health - Morpheus Logs`` están "
-"filtrados para servicios de |morpheus|. Los stack traces completos se "
-"pueden encontrar en ``/var/log/morpheus/morpheus-ui/current``."
+#~ msgid ""
+#~ "There are four types of activities "
+#~ "that are displayed in the Activity "
+#~ "Reports:"
+#~ msgstr ""
+#~ "Hay cuatro tipos de actividades que "
+#~ "se muestran en los Informes de "
+#~ "Actividad:"
+
+#~ msgid "Permissions"
+#~ msgstr "Permisos"
+
+#~ msgid ""
+#~ "Recent activity is displayed in order"
+#~ " from recent to oldest. This view "
+#~ "can be searched and filtered by "
+#~ "type, user, and date range."
+#~ msgstr ""
+#~ "La actividad reciente se muestra en "
+#~ "orden de la más reciente a la "
+#~ "más antigua. Esta vista se puede "
+#~ "buscar y filtrar por tipo, usuario "
+#~ "y rango de fechas."
+
+#~ msgid ""
+#~ "The `HISTORY` section shows Process "
+#~ "History from Instances and Apps "
+#~ "processes. This is an aggregate view "
+#~ "of the ``History`` tab in Instance "
+#~ "and App details pages."
+#~ msgstr ""
+#~ "La sección `HISTORY` muestra el "
+#~ "Historial de procesos de Instancias y"
+#~ " aplicaciones. Esta es una vista "
+#~ "agregada de la pestaña ``History`` en"
+#~ " las páginas de detalles de "
+#~ "Instancias y aplicaciones."
+
+#~ msgid ""
+#~ "The Logs displayed in ``Administration -"
+#~ " Health - Morpheus Logs`` are from"
+#~ " ``/var/log/morpheus/morpheus-ui/current``. These "
+#~ "logs show all ui activity and are"
+#~ " useful for troubleshooting and auditing."
+#~ msgstr ""
+#~ "Los registros mostrados en ``Administration"
+#~ " - Health - Morpheus Logs`` son "
+#~ "de ``/var/log/morpheus/morpheus-ui/current``. Estos"
+#~ " registros muestran toda la actividad "
+#~ "de la interfaz y son útiles para"
+#~ " la resolución de problemas y "
+#~ "auditoría."
+
+#~ msgid ""
+#~ "Stack traces in ``Administration - "
+#~ "Health - Morpheus Logs`` are filtered"
+#~ " for |morpheus| services. Complete stack"
+#~ " traces can be found in "
+#~ "``/var/log/morpheus/morpheus-ui/current``."
+#~ msgstr ""
+#~ "Los stack traces en ``Administration -"
+#~ " Health - Morpheus Logs`` están "
+#~ "filtrados para servicios de |morpheus|. "
+#~ "Los stack traces completos se pueden "
+#~ "encontrar en ``/var/log/morpheus/morpheus-"
+#~ "ui/current``."
 

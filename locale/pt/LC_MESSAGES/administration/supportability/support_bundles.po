@@ -1,0 +1,468 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/supportability/support_bundles.rst:2
+msgid "Support Bundles"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:4
+msgid ""
+"Support bundles collect diagnostic information from the |morpheus| "
+"appliance and managed infrastructure to assist with troubleshooting and "
+"support case resolution. Bundles are generated on-demand or automatically"
+" and can be downloaded locally or delivered directly to HPE Support."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:6
+msgid ""
+"Navigate to :menuselection:`Administration --> Health --> Support "
+"Bundles` to view, generate, download, or delete support bundles."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:8
+#: ../../administration/supportability/support_bundles.rst:46
+msgid "Note"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:8
+msgid ""
+"Support bundles are available only to master tenant users with System "
+"Admin role. The ``Admin: Support Bundles`` permission gates read and full"
+" access."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:11
+msgid "Generating a Support Bundle"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:13
+msgid ""
+"Navigate to :menuselection:`Administration --> Health --> Support "
+"Bundles`."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:14
+msgid "Click :guilabel:`Generate New Support Bundle`."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:15
+msgid "Enter a :guilabel:`Name` for the bundle."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:16
+msgid ""
+"Set the :guilabel:`Log Range Start` and :guilabel:`Log Range End` to "
+"define the time window for log collection."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:17
+msgid ""
+"In the :guilabel:`Components` section, select one or more categories and "
+"content types to include. Resource-backed content types allow selecting "
+"specific resources (for example, a specific cloud or storage server)."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:18
+msgid "Click :guilabel:`Generate`."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:20
+msgid ""
+"The bundle is created asynchronously. Status progresses from **Pending** "
+"through **In Progress** to **Completed** or **Failed**. Large bundles may"
+" take several minutes depending on the number of components and log "
+"volume. An in-progress bundle can be cancelled from the list page."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:23
+msgid "Bundle Content Categories"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:29
+msgid "Category"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:30
+msgid "Contents"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:31
+msgid "Appliance"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:32
+msgid ""
+"Application logs (morpheus-ui, check-server, guacd, mysql, nginx, "
+"opensearch), appliance configuration (sanitized), health metrics (CPU, "
+"memory, storage, database, elastic, queues, threads), system information "
+"(OS, kernel, hardware, network)"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:33
+msgid "Clouds"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:34
+msgid "Cloud integration diagnostics for selected clouds"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:35
+msgid "Clusters"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:36
+msgid ""
+"HVM cluster health, host status, quorum state, and cluster-level "
+"diagnostics"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:37
+msgid "Networking"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:38
+msgid ""
+"Network server diagnostics (including Aruba CX switch bundle when "
+"configured)"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:39
+msgid "Servers"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:40
+msgid "Compute server diagnostics for selected managed servers"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:41
+msgid "Storage"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:42
+msgid ""
+"Storage server diagnostics. For HPE Alletra MP storage servers: triggers "
+"telemetry bundle generation on the array. If call-home is not enabled, "
+"downloads the resulting bundle; if call-home is enabled, triggers "
+"generation only (data already sent separately)"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:44
+msgid ""
+"Each category can expose multiple content types. Resource-backed content "
+"types allow selecting specific instances of that resource (for example, a"
+" particular storage server or cloud integration). A failure collecting "
+"one component does not block the overall bundle."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:46
+msgid ""
+"Support bundles never include customer VM data, stored credentials (these"
+" are encrypted at rest), or tenant-specific business data. Only "
+"infrastructure diagnostic information is collected."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:49
+msgid "Health Metrics Included"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:51
+msgid "The health summary collected in the bundle includes:"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:53
+msgid ""
+"**CPU:** Processor count, process uptime, Morpheus CPU usage, system CPU "
+"usage, system load average"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:54
+msgid ""
+"**Memory:** Morpheus memory (total, used, free, usage %), system memory, "
+"swap"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:55
+msgid ""
+"**Storage:** Filesystem details (used, free, total, percent utilization, "
+"mount points)"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:56
+msgid ""
+"**Database (MySQL):** Version, connection statistics, thread statistics, "
+"performance metrics (slow queries, temp tables), InnoDB statistics"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:57
+msgid ""
+"**OpenSearch:** Cluster status, node count, shard information, per-node "
+"heap/memory/CPU, index health"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:58
+msgid ""
+"**Queues (RabbitMQ):** Queue count, busy/error queues, per-queue message "
+"counts"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:59
+msgid "**Threads:** Total count, busy, running, blocked, per-thread details"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:61
+msgid "This health data is written as a JSON file within the support bundle."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:64
+msgid "HPE Support Integration"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:66
+msgid ""
+"Configure HPE Support integration at :menuselection:`Administration --> "
+"Settings --> Support`."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:72
+msgid "Setting"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:73
+#: ../../administration/supportability/support_bundles.rst:115
+msgid "Description"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:74
+msgid "Daily Support Bundle"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:75
+msgid ""
+"When enabled, automatically generates a support bundle once daily and "
+"delivers it to HPE Support"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:76
+msgid "Send to HPE"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:77
+msgid ""
+"When enabled, completed bundles are converted to CMB format and delivered"
+" to HPE via the RDA (Remote Data Access) agent"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:78
+msgid "Remote Support Access"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:79
+msgid ""
+"Enables HPE Support remote access to the appliance for diagnostics "
+"(requires Send to HPE enabled)"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:80
+msgid "Default Storage Bucket"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:81
+msgid "Select the storage bucket where bundles are archived"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:83
+msgid ""
+"The :guilabel:`Appliance Nodes` table on the Support settings page shows "
+"each node's hostname, RDA connection status (connected, disconnected, or "
+"not configured), and **Station ID**. The Station ID uniquely identifies "
+"the appliance to HPE Support."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:85
+msgid "When **Send to HPE** is enabled:"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:87
+msgid ""
+"Completed bundles are packaged and pushed to the local RDA agent for "
+"delivery"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:88
+msgid ""
+"Delivery status is tracked per bundle: In Progress, Delivered, Failed, or"
+" Superseded"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:89
+msgid ""
+"The list and detail views show delivery status when HPE delivery is "
+"enabled"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:91
+msgid ""
+"When **Send to HPE** is disabled, bundles remain on the appliance for "
+"manual download and submission to support."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:94
+msgid "Managing Support Bundles"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:96
+msgid ""
+"Previously-generated bundles are listed on the Support Bundles tab with "
+"columns for Name, Status, Started At, Completed At, Size, and Log Range. "
+"From each bundle's actions:"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:98
+msgid "**Download** — Download the bundle archive to your local machine"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:99
+msgid "**Delete** — Remove the bundle from the appliance"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:100
+msgid "**Cancel** — Stop an in-progress bundle generation"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:102
+msgid ""
+"Support bundles are stored on the appliance filesystem. In space-"
+"constrained environments, delete old bundles after they have been "
+"submitted to support."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:105
+msgid "API"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:107
+msgid "Support bundle operations are available via the REST API:"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:113
+msgid "Method"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:114
+msgid "Endpoint"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:116
+#: ../../administration/supportability/support_bundles.rst:119
+#: ../../administration/supportability/support_bundles.rst:128
+msgid "GET"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:117
+#: ../../administration/supportability/support_bundles.rst:123
+msgid "``/api/support-bundles``"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:118
+msgid "List all support bundles"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:120
+#: ../../administration/supportability/support_bundles.rst:126
+msgid "``/api/support-bundles/:id``"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:121
+msgid "Show bundle details"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:122
+#: ../../administration/supportability/support_bundles.rst:131
+msgid "POST"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:124
+msgid "Generate a new support bundle"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:125
+msgid "DELETE"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:127
+msgid "Delete a bundle"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:129
+msgid "``/api/support-bundles/:id/download``"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:130
+msgid "Download the bundle archive"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:132
+msgid "``/api/support-bundles/:id/cancel``"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:133
+msgid "Cancel an in-progress bundle"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:136
+msgid "Automated Collection"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:138
+msgid ""
+"When daily support bundle generation is enabled in Support settings, "
+"|morpheus| automatically generates and (if configured) delivers a bundle "
+"to HPE Support once per day. This includes standard health metrics, "
+"configuration diagnostics, and log data from the configured default time "
+"window."
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:140
+msgid ""
+"|morpheus| also collects anonymized environment telemetry for proactive "
+"support purposes when HPE Support integration is enabled. This telemetry "
+"includes:"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:142
+msgid "Appliance version and license information"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:143
+msgid "Cluster node counts and high-level resource utilization"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:144
+msgid "Feature usage statistics (anonymized)"
+msgstr ""
+
+#: ../../administration/supportability/support_bundles.rst:146
+msgid ""
+"This data does not include any customer content, credentials, or "
+"personally identifiable information."
+msgstr ""
+

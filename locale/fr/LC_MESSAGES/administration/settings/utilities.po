@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/settings/utilities.rst:1
+msgid ""
+"System administrators have access to a utilities panel with the following"
+" options:"
+msgstr ""
+
+#: ../../administration/settings/utilities.rst:3
+msgid "**Reindex all searchable data:** Execute"
+msgstr ""
+
+#: ../../administration/settings/utilities.rst:4
+msgid "**Toggle Maintenance Mode:** Enable"
+msgstr ""
+
+#: ../../administration/settings/utilities.rst:6
+#: ../../administration/settings/utilities.rst:8
+msgid "Note"
+msgstr ""
+
+#: ../../administration/settings/utilities.rst:6
+msgid ""
+"Maintenance mode cleanly places |morpheus| into a state where maintenance"
+" can be performed on the appliance. This drains any active sessions and "
+"queues so an auto-scaling group can scale down. It also drains active "
+"sessions across services. Restarting |morpheus| UI disables maintenance "
+"mode."
+msgstr ""
+
+#: ../../administration/settings/utilities.rst:8
+msgid ""
+"When using |morpheus| in a Highly Available (HA) environment, it is "
+"important to navigate to a node directly and enable maintenance mode, as "
+"opposed to using the load balancer virtual IP (VIP). A local host entry "
+"to the specific node may be required to ensure the correct node enters "
+"mainteance mode. In fact, it is recommended to use the `analogous API "
+"endpoint "
+"<https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_"
+" to toggle a specific node into maintenance mode to avoid redirects back "
+"to the VIP address."
+msgstr ""
+
+#: ../../administration/settings/utilities.rst:10
+msgid ""
+"A |morpheus| node in maintenance mode can still be accessible through the"
+" load balancer VIP/target group and can queue requests but will not "
+"process anything in queue, while in maintenance mode. A node can be "
+"removed/paused from the load balancer VIP or have VIP health checks "
+"implemented, if the node UI/API will become inaccessible due to "
+"maintenance."
+msgstr ""
+

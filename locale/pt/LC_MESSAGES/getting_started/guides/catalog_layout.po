@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/guides/catalog_layout.rst:2
+msgid "Getting Started with Custom Catalog Layouts"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:4
+msgid ""
+"The |morpheus| plugin architecture is a library which allows users to "
+"extend functionality in several categories, including new Cloud "
+"providers, Task types, UI views, custom reports, and more. In this guide,"
+" we will take a look at developing a custom Provisioning Catalog layout "
+"and adding it to |morpheus| UI. This custom layout will have an "
+"additional link which displays a modal containing example automation "
+"code. The example highlights using external JavaScript and CSS to "
+"customize the catalog item. Complete developer documentation including "
+"the full API documentation and links to Github repositories containing "
+"complete code examples are available in the `Developer Portal "
+"<https://developer.morpheusdata.com/>`_."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:6
+msgid ""
+"Custom plugin development requires programming experience but this guide "
+"is designed to break down the required steps into a digestible process "
+"that users can quickly run with. |morpheus| plugins are written in Java "
+"or Groovy, our example here will be written in Groovy. Support for "
+"additional languages is planned but not yet available at the time of this"
+" writing. If you're not an experienced Java or Groovy developer, it may "
+"help to clone an `example code repository <https://github.com/gomorpheus"
+"/morpheus-plugin-core/tree/master/samples/morpheus-reports-plugin>`_ "
+"which we link to in our developer portal. An additional example, which "
+"this guide is based on, is `here <https://github.com/martezr/morpheus-"
+"datadog-instance-tab-plugin>`_. You can read the example code and tweak "
+"it to suit your needs using the guidance in this document."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:8
+msgid ""
+"Before you begin, ensure you have the following installed in your "
+"development environment:"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:10
+msgid "Gradle 6.5 or later"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:11
+msgid "Java 8 or 11"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:14
+msgid "Developing the Plugin"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:16
+msgid ""
+"The first thing we'll do is create a new directory to house the project. "
+"You’ll ultimately end up with a file structure typical of Java or Groovy "
+"projects, looking something like this:"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:18
+msgid ""
+"./\n"
+".gitignore\n"
+"build.gradle\n"
+"src/main/groovy/\n"
+"src/main/resources/renderer/hbs/\n"
+"src/test/groovy/\n"
+"src/assets/images/\n"
+"src/assets/javascript/\n"
+"src/assets/stylesheets/"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:30
+msgid ""
+"Configure the .gitignore file to ignore the build/ directory which will "
+"appear after performing the first build. Project packages live within "
+"src/main/groovy and contain source files ending in .groovy. View "
+"resources are stored in the src/main/resources subfolder and vary "
+"depending on the view renderer of choice. Static assets, like icons or "
+"custom javascript, live within the src/assets folder."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:33
+msgid "Creating the build.gradle file"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:35
+msgid ""
+"Gradle is the build tool used to compile |morpheus| plugins so "
+"build.gradle is required. An example build file is given below but some "
+"useful values to call out are as follows:"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:37
+msgid "Group: The package group in Java, typically your reverse DNS name"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:38
+msgid ""
+"Version: The version number for your plugin. This will be displayed in "
+"the Plugins section of |morpheus| UI for reference when later versions of"
+" your plugin are developed"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:39
+msgid ""
+"Plugin-class: This will vary based on the plugin type being developed but"
+" for a custom layout, use "
+"``com.morpheusdata.cataloglayout.CatalogLayoutPlugin``"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:41
+msgid ""
+"plugins {\n"
+"    id \"com.bertramlabs.asset-pipeline\" version \"3.3.2\"\n"
+"    id \"com.github.johnrengelman.plugin-shadow\" version \"2.0.3\"\n"
+"}\n"
+"\n"
+"apply plugin: 'java'\n"
+"apply plugin: 'groovy'\n"
+"apply plugin: 'maven-publish'\n"
+"\n"
+"group = 'com.morpheusdata'\n"
+"version = '0.0.1'\n"
+"\n"
+"sourceCompatibility = '1.8'\n"
+"targetCompatibility = '1.8'\n"
+"\n"
+"ext.isReleaseVersion = !version.endsWith(\"SNAPSHOT\")\n"
+"\n"
+"repositories {\n"
+"    mavenCentral()\n"
+"}\n"
+"\n"
+"dependencies {\n"
+"    compileOnly 'com.morpheusdata:morpheus-plugin-api:0.12.0'\n"
+"    compileOnly 'org.codehaus.groovy:groovy-all:2.5.6'\n"
+"    compileOnly 'io.reactivex.rxjava2:rxjava:2.2.0'\n"
+"    compileOnly \"org.slf4j:slf4j-api:1.7.26\"\n"
+"    compileOnly \"org.slf4j:slf4j-parent:1.7.26\"\n"
+"}\n"
+"\n"
+"jar {\n"
+"    manifest {\n"
+"        attributes(\n"
+"          'Plugin-Class': "
+"'com.morpheusdata.cataloglayout.CatalogLayoutPlugin',\n"
+"            'Plugin-Version': archiveVersion.get() // Get version defined"
+" in gradle\n"
+"        )\n"
+"    }\n"
+"}\n"
+"\n"
+"tasks.assemble.dependsOn tasks.shadowJar"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:84
+msgid "Creating the Plugin Class"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:86
+msgid ""
+"Next, create a plugin class which handles registration of the new catalog"
+" layout, sets a name and description, and targets the appropriate catalog"
+" layout provider class which we’ll go over in the next section."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:88
+msgid ""
+"package com.morpheusdata.cataloglayout\n"
+"\n"
+"import com.morpheusdata.core.Plugin\n"
+"import com.morpheusdata.model.Permission\n"
+"import com.morpheusdata.views.HandlebarsRenderer\n"
+"import com.morpheusdata.views.ViewModel\n"
+"import com.morpheusdata.web.Dispatcher\n"
+"import com.morpheusdata.model.OptionType\n"
+"\n"
+"class CatalogLayoutPlugin extends Plugin {\n"
+"\n"
+"  @Override\n"
+"  String getCode() {\n"
+"    return 'example-catalog-layout-plugin'\n"
+"  }\n"
+"\n"
+"  @Override\n"
+"  void initialize() {\n"
+"    BasicCatalogLayoutProvider basicCatalogLayoutProvider = new "
+"BasicCatalogLayoutProvider(this, morpheus)\n"
+"    this.pluginProviders.put(basicCatalogLayoutProvider.code, "
+"basicCatalogLayoutProvider)\n"
+"    this.setName(\"Example Catalog Layout Plugin\")\n"
+"    this.setDescription(\"Example plugin for customizing self-service "
+"catalog items\")\n"
+"    this.setAuthor(\"Martez Reed\")\n"
+"    this.setSourceCodeLocationUrl(\"https://github.com/martezr/morpheus-"
+"example-catalog-layout-plugin\")\n"
+"    this.setIssueTrackerUrl(\"https://github.com/martezr/morpheus-"
+"example-catalog-layout-plugin/issues\")\n"
+"    this.setPermissions([Permission.build('Example Catalog Layout"
+"','example-catalog-view', [Permission.AccessType.none, "
+"Permission.AccessType.full])])\n"
+"        }\n"
+"  @Override\n"
+"  void onDestroy() {}\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:122
+msgid "Creating the Report Provider Class"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:124
+msgid ""
+"The catalog layout provider class contains the code which will fetch and "
+"compile the targeted data so it can be rendered in the report view. An "
+"example report provider is reproduced below with comments to increase "
+"readability of the code."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:126
+msgid ""
+"package com.morpheusdata.cataloglayout\n"
+"\n"
+"import com.morpheusdata.core.AbstractCatalogItemLayoutProvider\n"
+"import com.morpheusdata.core.MorpheusContext\n"
+"import com.morpheusdata.core.Plugin\n"
+"import com.morpheusdata.model.Account\n"
+"import com.morpheusdata.model.CatalogItemType\n"
+"import com.morpheusdata.model.TaskConfig\n"
+"import com.morpheusdata.model.ContentSecurityPolicy\n"
+"import com.morpheusdata.model.User\n"
+"import com.morpheusdata.views.HTMLResponse\n"
+"import com.morpheusdata.views.ViewModel\n"
+"\n"
+"class BasicCatalogLayoutProvider extends "
+"AbstractCatalogItemLayoutProvider {\n"
+"  Plugin plugin\n"
+"  MorpheusContext morpheus\n"
+"\n"
+"  String code = 'basic-catalog-layout'\n"
+"  String name = 'Basic Catalog Layout'\n"
+"\n"
+"  BasicCatalogLayoutProvider(Plugin plugin, MorpheusContext context) {\n"
+"    this.plugin = plugin\n"
+"    this.morpheus = context\n"
+"  }\n"
+"\n"
+"  @Override\n"
+"  HTMLResponse renderTemplate(CatalogItemType catalogItemType, User user)"
+" {\n"
+"    ViewModel<CatalogItemType> model = new ViewModel<>()\n"
+"\n"
+"        // Create a payload to pass to the HTML template\n"
+"    def HashMap<String, String> catalogItemPayload = new HashMap<String, "
+"String>();\n"
+"\n"
+"        // Add the catalog item to the payload object\n"
+"    catalogItemPayload.put(\"catalogItem\", catalogItemType)\n"
+"\n"
+"        // Fetch the web nonce to align with the content security policy "
+"(CSP)\n"
+"    // to enable the execution of the JavaScript script and add\n"
+"    // it to the payload object used by the HTML template\n"
+"    def webnonce = morpheus.getWebRequest().getNonceToken()\n"
+"    catalogItemPayload.put(\"webnonce\",webnonce)\n"
+"\n"
+"    model.object = catalogItemPayload\n"
+"    getRenderer().renderTemplate(\"hbs/basicCatalogItem\", model)\n"
+"  }\n"
+"\n"
+"  @Override\n"
+"  ContentSecurityPolicy getContentSecurityPolicy() {\n"
+"    def csp = new ContentSecurityPolicy()\n"
+"    csp\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:181
+msgid "Create the Custom Layout View"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:183
+msgid ""
+"By default, custom plugin views are handled by a Handlebars template "
+"provider to populate HTML sections with your own content. Though it can "
+"be overridden, we’ll use the default template provider for this example. "
+"There is more information on view rendering in the |morpheus| Developer "
+"Portal."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:186
+msgid "Build the JAR"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:188
+msgid ""
+"With the code written, use gradle to build the JAR which we can upload to"
+" |morpheus| so the report can be viewed. To do so, change directory into "
+"the location of the directory created earlier to hold your custom catalog"
+" layout code."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:190
+msgid "cd path/to/your/directory"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:194
+msgid "Run gradle to build a new version of the plugin."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:196
+msgid "gradle shadowJar"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:200
+msgid ""
+"Once the build process has completed, locate the JAR in the build/libs "
+"directory."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:203
+msgid "Install and Configure the UI Plugin"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:205
+msgid ""
+"Custom plugins are added to |morpheus| through the Plugins tab in the "
+"Integrations section of the Morpheus UI."
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:207
+msgid "Navigate to |AdmIntPlu| and click CHOOSE FILE"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:208
+msgid "Browse for the JAR file and upload it to |morpheus|"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:209
+msgid ""
+"The new plugin will be added next to any other custom plugins that may "
+"have been developed for your appliance"
+msgstr ""
+
+#: ../../getting_started/guides/catalog_layout.rst:211
+msgid ""
+"Now, when specific catalog items are selected, they will contain our "
+"custom link with example automation code."
+msgstr ""
+

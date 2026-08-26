@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:4
@@ -26,9 +26,11 @@ msgstr "DHCP Relays"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:6
 msgid ""
-"``Infrastructure > Network > Integrations > (select Network Server) > DHCP``"
+"``Infrastructure > Network > Integrations > (select Network Server) > "
+"DHCP``"
 msgstr ""
-"``Infrastructure > Network > Integrations > (select Network Server) > DHCP``"
+"``Infrastructure > Network > Integrations > (select Network Server) > "
+"DHCP``"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:9
 msgid "Overview"
@@ -36,18 +38,24 @@ msgstr "Descripción general"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:11
 msgid ""
-"DHCP Relays forward DHCP requests from clients on one network segment to a "
-"DHCP server on another segment. This eliminates the need for a DHCP server "
-"on every subnet while still allowing clients to receive dynamic IP address "
-"assignments. |morpheus| supports creating, editing, and deleting DHCP relays"
-" within supported network server integrations such as VMware NSX-T."
+"DHCP Relays forward DHCP requests from clients on one network segment to "
+"a DHCP server on another segment. This eliminates the need for a DHCP "
+"server on every subnet while still allowing clients to receive dynamic IP"
+" address assignments. |morpheus| supports creating, editing, and deleting"
+" DHCP relays within supported network server integrations such as VMware "
+"NSX-T."
 msgstr ""
-"DHCP Relays forward DHCP solicitudes desde clientes en one network segment a"
-" un DHCP servidor en another segment. Este eliminates el necesita para un "
-"DHCP servidor en cada subnet mientras todavía allowing clientes a recibir "
-"dinámico IP dirección assignments. |morpheus| soporta creating, editing, y "
-"deleting DHCP relays dentro de soportado network servidor integrations como "
-"VMware NSX-T."
+"DHCP Relays forward DHCP solicitudes desde clientes en one network "
+"segment a un DHCP servidor en another segment. Este eliminates el "
+"necesita para un DHCP servidor en cada subnet mientras todavía allowing "
+"clientes a recibir dinámico IP dirección assignments. |morpheus| soporta "
+"creating, editing, y deleting DHCP relays dentro de soportado network "
+"servidor integrations como VMware NSX-T."
+
+#: ../../infrastructure/networks/dhcp_relays.rst:13
+#: ../../infrastructure/networks/dhcp_relays.rst:35
+msgid "Note"
+msgstr ""
 
 #: ../../infrastructure/networks/dhcp_relays.rst:13
 msgid ""
@@ -123,11 +131,11 @@ msgstr "El IP direcciones del DHCP servidor(s) a relay solicitudes a"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:35
 msgid ""
-"Additional fields may appear based on the network integration type and its "
-"configured option types."
+"Additional fields may appear based on the network integration type and "
+"its configured option types."
 msgstr ""
-"Adicional campos puede aparecer basado en el network integration tipo y su "
-"configurado opción tipos."
+"Adicional campos puede aparecer basado en el network integration tipo y "
+"su configurado opción tipos."
 
 #: ../../infrastructure/networks/dhcp_relays.rst:37
 #: ../../infrastructure/networks/dhcp_relays.rst:47
@@ -159,14 +167,18 @@ msgid "Confirm the deletion when prompted"
 msgstr "Confirmar el deletion cuando prompted"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:58
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/networks/dhcp_relays.rst:58
 msgid ""
 "Deleting a DHCP relay will remove the relay from both |morpheus| and the "
-"upstream integration. Clients on segments served by this relay will lose the"
-" ability to obtain DHCP leases."
+"upstream integration. Clients on segments served by this relay will lose "
+"the ability to obtain DHCP leases."
 msgstr ""
-"Deleting un DHCP relay será eliminar el relay desde ambos |morpheus| y el "
-"upstream integration. Clientes en segments served por este relay será lose "
-"el ability a obtain DHCP leases."
+"Deleting un DHCP relay será eliminar el relay desde ambos |morpheus| y el"
+" upstream integration. Clientes en segments served por este relay será "
+"lose el ability a obtain DHCP leases."
 
 #: ../../infrastructure/networks/dhcp_relays.rst:61
 msgid "API"
@@ -177,13 +189,12 @@ msgid ""
 "DHCP relays are managed through the |morpheus| API at the following "
 "endpoints:"
 msgstr ""
-"DHCP relays son administrado a través de el |morpheus| API en el siguiente "
-"endpoints:"
+"DHCP relays son administrado a través de el |morpheus| API en el "
+"siguiente endpoints:"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:65
 msgid "``GET /api/networks/servers/:serverId/dhcp-relays`` — List DHCP relays"
-msgstr ""
-"``GET /api/networks/servers/:serverId/dhcp-relays`` — List DHCP relays"
+msgstr "``GET /api/networks/servers/:serverId/dhcp-relays`` — List DHCP relays"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:66
 msgid ""
@@ -194,10 +205,8 @@ msgstr ""
 "específico DHCP relay"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:67
-msgid ""
-"``POST /api/networks/servers/:serverId/dhcp-relays`` — Create a DHCP relay"
-msgstr ""
-"``POST /api/networks/servers/:serverId/dhcp-relays`` — Crear un DHCP relay"
+msgid "``POST /api/networks/servers/:serverId/dhcp-relays`` — Create a DHCP relay"
+msgstr "``POST /api/networks/servers/:serverId/dhcp-relays`` — Crear un DHCP relay"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:68
 msgid ""
@@ -209,8 +218,8 @@ msgstr ""
 
 #: ../../infrastructure/networks/dhcp_relays.rst:69
 msgid ""
-"``DELETE /api/networks/servers/:serverId/dhcp-relays/:id`` — Delete a DHCP "
-"relay"
+"``DELETE /api/networks/servers/:serverId/dhcp-relays/:id`` — Delete a "
+"DHCP relay"
 msgstr ""
 "``DELETE /api/networks/servers/:serverId/dhcp-relays/:id`` — Eliminar un "
 "DHCP relay"
@@ -221,10 +230,11 @@ msgstr "Requerido Role Permissions"
 
 #: ../../infrastructure/networks/dhcp_relays.rst:74
 msgid ""
-"Access to DHCP relay management requires the ``Infrastructure: Network DHCP "
-"Relay`` permission (``infrastructure-network-dhcp-relay``) with ``read`` or "
-"``full`` access."
+"Access to DHCP relay management requires the ``Infrastructure: Network "
+"DHCP Relay`` permission (``infrastructure-network-dhcp-relay``) with "
+"``read`` or ``full`` access."
 msgstr ""
 "Acceso a DHCP relay gestión requiere el ``Infrastructure: Network DHCP "
 "Relay`` permiso (``infrastructure-network-dhcp-relay``) con ``read`` o "
 "``full`` acceso."
+

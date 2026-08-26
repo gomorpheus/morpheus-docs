@@ -1,0 +1,1060 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:4
+msgid "ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:9
+msgid ""
+"IT Service Management (ITSM) is an important area of focus for many "
+"organizations. Organizations invested in ServiceNow as an ITSM provider "
+"will find that |morpheus| integrates tightly with some of the most-used "
+"features. After integrating ServiceNow with |morpheus|, both environments"
+" can be used interchangeably and the results are synced to both places. "
+"This guide walks administrators through the process of integrating "
+"ServiceNow with |morpheus| and how |morpheus| can be used to effectively "
+"leverage the best of ServiceNow."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:11
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:11
+msgid ""
+"The ServiceNow integration guide is also available as a `PDF download "
+"<https://www2.morpheusdata.com/Whitepaper-ServiceNow>`_, which includes "
+"additional example use cases and screenshots."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:13
+#: ../../integration_guides/ITSM/ServiceNow.rst:57
+#: ../../integration_guides/ITSM/ServiceNow.rst:242
+#: ../../integration_guides/ITSM/ServiceNow.rst:244
+#: ../../integration_guides/ITSM/ServiceNow.rst:264
+#: ../../integration_guides/ITSM/ServiceNow.rst:302
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:13
+msgid ""
+"Only one |morpheus| appliance should be integrated with a single "
+"ServiceNow instance at any given time. Integrating multiple appliances "
+"with the same ServiceNow instance can cause issues with sharing "
+"|morpheus| Catalog Items through to ServiceNow for ordering from the "
+"ServiceNow console. Additional details on Catalog Item sharing are "
+"included in this guide."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:16
+msgid "Add ServiceNow Integration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:18
+#: ../../integration_guides/ITSM/ServiceNow.rst:320
+msgid "Navigate to |AdmInt|"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:19
+msgid "Select :guilabel:`+ NEW INTEGRATION`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:20
+msgid "Select \"ServiceNow\" from the dropdown list"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:21
+msgid "Add the following:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:23
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:24
+msgid "A friendly name to describe the ServiceNow integration in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:25
+msgid "ENABLED"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:26
+msgid ""
+"Check \"Enabled\" to allow consumption of this ServiceNow integration in "
+"|morpheus|."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:27
+msgid "SERVICENOW HOST"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:28
+msgid ""
+"URL of the ServiceNow instance (ex: https://your.instance.service-"
+"now.com), keep in mind you can create multiple ServiceNow integrations in"
+" |morpheus| if needed."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:29
+msgid "API PROXY"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:30
+msgid ""
+"If necessary, select a configured proxy (:menuselection:`Infrastructure "
+"--> Network --> Proxies`) to route traffic through to the ServiceNow API."
+" If a proxy is not configured here, ServiceNow API traffic will be routed"
+" through the global proxy if one is configured on the appliance."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:31
+msgid "CREDENTIALS"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:32
+msgid ""
+"Supply credentials for a user in ServiceNow that is able to access the "
+"REST interface and create/update/delete incidents, requests, requested "
+"items, item options, catalog items, workflows, etc. The list of necessary"
+" roles includes ``x_moda_morpheus_ca.integration`` (available if the "
+"|morpheus| ServiceNow plugin is installed from the ServiceNow Store), "
+"``catalog_admin``, ``itil``, ``rest_service``, ``web_service_admin`` and "
+"``import_transformer``."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:34
+msgid ""
+"|morpheus| supports simple and OAuth 2.0 authentication with ServiceNow. "
+"See the next section for additional details on configuring the ServiceNow"
+" appliance for OAuth 2.0 authentication if you intend to use it. When "
+"supplying credentials to |morpheus| users may opt to integrate with a "
+"saved set of username and password credentials, a saved set of OAuth 2.0 "
+"credentials, a new set of username and password credentials (not saved), "
+"or a new set of credentials (OAuth 2.0 or username/password) which will "
+"also be saved to the |morpheus| credential store for later use. Once the "
+"credential type is selected, the fields in the modal will adjust to "
+"correspond to the chosen credential type. Once again, see the next "
+"section for more details on configuring OAuth 2.0 authentication."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:35
+msgid "CMDB CUSTOM MAPPING"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:36
+msgid ""
+"If needed, administrators can opt to populate a specific field in the "
+"ServiceNow table and such mapping is identified here with a JSON code "
+"snippet. Below is an example that populates the ``object_id`` field in "
+"the CM database with the |morpheus| instance name and two other field "
+"examples:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:38
+#, python-brace-format
+msgid ""
+"{\n"
+"\"object_id\":\"<%=instance.name%>\",\n"
+"\"SN_field_id2\":\"<%=morph.varname2%>\",\n"
+"\"SN_field_id3\":\"<%=morph.varname3%>\"\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:46
+msgid "CMDB CLASS MAPPING"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:47
+msgid ""
+"Define the mapping between |morpheus| server types and ServiceNow CI "
+"classes. Select a |morpheus| server type from the dropdown menu and a new"
+" field will appear in the list. Enter a ServiceNow CI class into the text"
+" field to create the association"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:48
+msgid "DEFAULT CMDB BUSINESS CLASS"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:49
+msgid ""
+"Allows the user to define the table CMDB records are written to if they "
+"prefer this over |morpheus| default. By default, |morpheus| writes to the"
+" ``cmdb_ci_vm_instance`` table."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:50
+msgid "CMDB MODE"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:51
+msgid ""
+"Choose \"Table Based\" or \"Identification & Reconciliation API\". "
+"Selecting \"Table Based\" will utilize the older Table-based API mode for"
+" CMDB sync. Organizations utilizing IRE should select \"Identification & "
+"Reconciliation API\"."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:53
+#: ../../integration_guides/ITSM/ServiceNow.rst:157
+#: ../../integration_guides/ITSM/ServiceNow.rst:183
+msgid "Save Changes"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:55
+msgid ""
+"If the ServiceNow endpoint uses a CA that the appliance does not already "
+"trust, import the CA on every application node by following "
+":doc:`/getting_started/additional/ssl-import`. The procedure includes "
+"reconfigure, JRE truststore verification, and the required ``morpheus-"
+"ui`` restart. Do not use **Ignore Cert Verify** as a permanent substitute"
+" for installing a trusted chain."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:57
+msgid ""
+"|morpheus| supports integration with single-domain and multi-domain "
+"ServiceNow appliances. In multi-domain installations, a selected "
+"ServiceNow company can be mapped to a selected |morpheus| Tenant for "
+"purposes of exposing |morpheus| Library items only to users within a "
+"certain company. In this configuration, ServiceNow integrations should be"
+" added in each relevant |morpheus| Tenant. Further setup steps for "
+"exposing |morpheus| library items to ServiceNow are included in a later "
+"section below."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:60
+msgid "Configuring ServiceNow for OAuth 2.0 Authentication"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:62
+msgid ""
+"Before configuring |morpheus| to use OAuth 2.0 authentication with "
+"ServiceNow, ensure your ServiceNow appliance is configured correctly. "
+"OAuth must be set up and activated, you must also create a new endpoint "
+"for the client. See the following relevant parts of ServiceNow "
+"documentation to properly configure your appliance:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:64
+msgid ""
+"`Set up OAuth <https://docs.servicenow.com/bundle/rome-platform-"
+"security/page/administer/security/task/t_SettingUpOAuth.html>`_"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:65
+msgid ""
+"`Create a new application endpoint <https://docs.servicenow.com/bundle"
+"/rome-platform-"
+"security/page/administer/security/task/t_CreateEndpointforExternalClients.html>`_"
+" for |morpheus| to access the ServiceNow instance"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:67
+msgid ""
+"With ServiceNow correctly configured, we can integrate ServiceNow using "
+"either a stored OAuth 2.0 credential set or we can create one on the fly "
+"during integration. When creating one on the fly |morpheus| will save it "
+"as a stored credential set for later use. Whether storing one ahead "
+"(|InfTruCre|) or storing one at integration time, configure your "
+"credentials as follows. Note that all fields are required for a "
+"ServiceNow Integration unless specifically mentioned otherwise:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:69
+#: ../../integration_guides/ITSM/ServiceNow.rst:136
+#: ../../integration_guides/ITSM/ServiceNow.rst:162
+#: ../../integration_guides/ITSM/ServiceNow.rst:201
+#: ../../integration_guides/ITSM/ServiceNow.rst:236
+#: ../../integration_guides/ITSM/ServiceNow.rst:330
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:69
+msgid ""
+"Some of the fields below may not be present if creating an OAuth "
+"credential set on the fly as opposed to the |InfTru| section of "
+"|morpheus|."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:71
+msgid ""
+"**CREDENTIAL STORE:** Select \"Internal\" or (if present) an external "
+"Cypher store"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:72
+msgid "**NAME:** A name for the stored credential set in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:73
+msgid "**DESCRIPTION:** An optional description for the credential set"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:74
+msgid ""
+"**ENABLED:** If enabled, this credential set will be selectable for "
+"creating various integrations in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:75
+msgid "**GRANT TYPE:** Use \"Password Credentials\""
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:76
+msgid ""
+"**ACCESS TOKEN URL:** Should be the appliance domain with the path of "
+"\"/oauth_token.do\". For example, \"https://mydomain.service-"
+"now.com/oauth_token.do\""
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:77
+msgid ""
+"**CLIENT ID:** The client ID (potentially auto-generated) set when the "
+"endpoint was created in ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:78
+msgid ""
+"**CLIENT SECRET:** The client secret set when the endpoint was created in"
+" ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:79
+msgid ""
+"**USERNAME:** The username for a ServiceNow service account, note the "
+"required permissions this user must have in the section above"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:80
+msgid "**PASSWORD:** The password for the ServiceNow account"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:81
+msgid "**SCOPE:** Left empty"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:82
+msgid "**CLIENT AUTHENTICATION:** Use \"Send client credentials in body\""
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:84
+msgid ""
+"If storing these credentials for later use, click :guilabel:`ADD "
+"CREDENTIALS`. If creating this credential set on the fly at the time of "
+"integration, complete the rest of the new integration modal as discussed "
+"in the prior section."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:86
+msgid ".. image:: /images/integration_guides/itsm/servicenow/oauthcreds.png"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:89
+msgid "ServiceNow Configuration Management Database (CMDB)"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:91
+msgid ""
+"ServiceNow CMDB is central to maintaining a complete record of IT "
+"infrastructure at many organizations. The |morpheus| ServiceNow "
+"integration can create and update configuration item (CIs) records as new"
+" services are provisioned or existing services are reconfigured. Once a "
+"ServiceNow integration is set as the CMDB for a Cloud or Group, CI "
+"records are created and managed by |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:94
+msgid "Setting a CMDB on a Group"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:96
+msgid ""
+"When adding or editing a |morpheus| Group, any active ServiceNow "
+"integration can be set as the CMDB."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:98
+msgid "Navigate to Infrastructure > Groups"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:99
+msgid "Select an existing Group name from the list"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:100
+#: ../../integration_guides/ITSM/ServiceNow.rst:113
+msgid "Click :guilabel:`EDIT`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:101
+#: ../../integration_guides/ITSM/ServiceNow.rst:114
+msgid ""
+"Under \"Advanced Options\", select an active ServiceNow integration from "
+"the CMDB dropdown menu"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:102
+msgid ""
+"If desired, select \"CMDB DISCOVERY\" to create CMDB CI records for "
+"discovered (unmanaged) servers that |morpheus| automatically onboards to "
+"this Group"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:104
+msgid ""
+"This setting is also available when creating a Group. Rather than "
+"selecting an existing Group in step two above, click :guilabel:`+ CREATE`"
+" to make a new Group."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:107
+msgid "Setting a CMDB on a Cloud"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:109
+msgid ""
+"When adding or editing a |morpheus| Cloud, any active ServiceNow "
+"integration can be set as the CMDB."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:111
+msgid "Navigate to Infrastructure > Clouds"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:112
+msgid "Select an existing Cloud name from the list"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:115
+msgid ""
+"If desired, select \"CMDB DISCOVERY\" to create CMDB CI records for "
+"discovered (unmanaged) servers that |morpheus| automatically onboards to "
+"this Cloud"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:117
+msgid ""
+"This setting is also available when creating a Cloud. Rather than "
+"selecting an existing Cloud in step two above, click :guilabel:`+ ADD` to"
+" make a new Cloud."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:120
+msgid "Provisioning and CI Records"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:122
+msgid ""
+"With a ServiceNow instance integrated with |morpheus| and the instance "
+"set as the CMDB for a |morpheus| Group or Cloud, we will see CI records "
+"created as new resources are provisioned to the Cloud or Group in "
+"|morpheus|. After the provisioning process has completed, a CI record "
+"should exist with a name value equal to the Instance name in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:124
+msgid ""
+"Provisioned and active Instances in |morpheus| will have CI records with "
+"an \"On\" state in ServiceNow. After they are deleted in |morpheus|, the "
+"state value will be rolled to \"Terminated\" in ServiceNow as expected."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:126
+msgid ""
+"|morpheus| will also populate a number of additional fields in ServiceNow"
+" including IP address, FQDN and more. Custom views can be created in "
+"ServiceNow to expose these fields."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:129
+msgid "ServiceNow Approval Policies"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:131
+msgid ""
+"|morpheus| offers its own approval engine out of the box, but some "
+"organizations prefer ServiceNow to be their final approval authority. "
+"With a ServiceNow instance integrated with |morpheus|, administrators can"
+" create provision approval policies and tie them to an active ServiceNow "
+"integration. With the policy in place, any new provisioning within the "
+"policy scope (Global, Group, Cloud, User, or Role) is sent to ServiceNow "
+"for approval before provisioning will go ahead in |morpheus|. Approvals "
+"are synced between the two applications every minute."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:134
+msgid "Add ServiceNow Provision Approval Policy to a Cloud"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:136
+msgid ""
+"Any Instance provisioned into a Cloud with an approval policy enabled "
+"will not proceed without the required approval."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:138
+msgid "To add a ServiceNow Approval policy to a Cloud:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:140
+msgid "Navigate to ``Infrastructure > Clouds``"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:141
+msgid "Select a Cloud by clicking on the desired Cloud name link"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:142
+#: ../../integration_guides/ITSM/ServiceNow.rst:168
+msgid "Select the POLICIES tab"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:143
+#: ../../integration_guides/ITSM/ServiceNow.rst:169
+msgid "Click :guilabel:`+ ADD POLICY`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:144
+msgid "Select ``Provision Approval`` from the type dropdown"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:145
+#: ../../integration_guides/ITSM/ServiceNow.rst:171
+msgid "Optionally enter a description for the Policy"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:146
+#: ../../integration_guides/ITSM/ServiceNow.rst:172
+msgid "Configure the following:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:148
+#: ../../integration_guides/ITSM/ServiceNow.rst:174
+msgid "APPROVAL INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:149
+#: ../../integration_guides/ITSM/ServiceNow.rst:175
+msgid ""
+"Select the ServiceNow Integration already configured in |AdmInt| to use "
+"for the approval policy."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:151
+#: ../../integration_guides/ITSM/ServiceNow.rst:177
+msgid "WORKFLOW"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:152
+#: ../../integration_guides/ITSM/ServiceNow.rst:178
+msgid ""
+"Select the ServiceNow workflow for the approval in ServiceNow (if "
+"desired). These workflows are configured and synced in from the "
+"ServiceNow Integration."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:154
+#: ../../integration_guides/ITSM/ServiceNow.rst:180
+msgid "TENANTS (if applicable)"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:155
+#: ../../integration_guides/ITSM/ServiceNow.rst:181
+msgid ""
+"Only required for multi-tenant permission scoping. For the policy to "
+"apply to a Subtenant, type the name of the tenant(s) and select the "
+"Tenant(s) from the typeahead list."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:160
+msgid "Add ServiceNow Provision Approval Policy to a Group"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:162
+msgid ""
+"Any Instance provisioned into a Group with an approval policy enabled "
+"will not proceed without the required approval."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:164
+msgid "To add a ServiceNow Approval policy to a Group:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:166
+msgid "Navigate to ``Infrastructure > Groups``"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:167
+msgid "Select a Group by clicking on the Group name"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:170
+msgid "Select ``Provision Approval``"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:186
+msgid "Using ServiceNow Approval Policies"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:188
+msgid ""
+"Any Instance provisioned into a Cloud or Group with an approval policy "
+"enabled will be in a PENDING state until the request is approved."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:190
+msgid ""
+"Instances pending a ServiceNow approval will show \"Waiting for "
+"Approval\" with the Requested Item number and Request number, ex: "
+"``Waiting for Approval [RITM0010002 - REQ0010002]``."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:192
+msgid ""
+"ServiceNow approval requests are displayed in ``Operations > Approvals``."
+" Instances pending a ServiceNow approval must be approved in ServiceNow "
+"for provisioning to initiate. Approval requests from a ServiceNow "
+"approval policy cannot be approved in |morpheus|, only approvals "
+"originating from |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:194
+msgid ""
+"ServiceNow approval requests are displayed in |morpheus| under "
+"``Operations > Approvals``. Pending ServiceNow approval requests can be "
+"cancelled in |morpheus| by selecting the request and then selecting "
+"``ACTIONS > Cancel``."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:196
+msgid ""
+"Once a pending ServiceNow approval request is approved in ServiceNow, the"
+" Instance(s) will begin to provision in |morpheus| within one minute of "
+"being approved in ServiceNow."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:199
+msgid "ServiceNow Monitoring Integration Settings"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:201
+msgid ""
+"A ServiceNow integration must be already configured in |AdmInt| to enable"
+" ServiceNow monitoring."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:203
+msgid ""
+"The ServiceNow monitoring integration is enabled and configured in "
+"|AdmSetMon|. As long as the \"Enabled\" switch is activated, |morpheus| "
+"will report monitoring data to ServiceNow. Configuration selections are "
+"described below:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:205
+msgid "Enabled"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:206
+msgid "Enables the ServiceNow monitoring integration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:207
+msgid "Integration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:208
+msgid "Select from an existing ServiceNow integration in `|AdmInt|`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:209
+msgid "New Incident Action"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:210
+msgid "The ServiceNow action to take when a |morpheus| incident is created"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:211
+msgid "Close Incident Action"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:212
+msgid "The Service Now action to take when a |morpheus| incident is closed"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:214
+msgid "Incident Severity Mapping"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:219
+msgid "|morpheus| Severity"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:219
+msgid "ServiceNow Impact"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:221
+msgid "Info"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:221
+#: ../../integration_guides/ITSM/ServiceNow.rst:222
+#: ../../integration_guides/ITSM/ServiceNow.rst:223
+msgid "Low/Medium/High"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:222
+msgid "Warning"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:223
+msgid "Critical"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:226
+msgid "Once finished working with configuration, click :guilabel:`APPLY`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:228
+msgid ""
+".. image:: "
+"/images/integration_guides/itsm/servicenow/3monitoringConfig.png"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:232
+msgid "ServiceNow Service Catalog Integration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:234
+msgid ""
+"In addition to integrating with key ServiceNow features, |morpheus| "
+"offers a free plugin directly from the ServiceNow Store. Once the plugin "
+"is installed, |morpheus| Self-Service Catalog Items can be presented as "
+"provisioning options in the ServiceNow catalog for ordering."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:236
+msgid ""
+"Surfacing Catalog Items made with Forms to ServiceNow is not yet "
+"supported. If planning to use ServiceNow to order Catalog Items you "
+"should not use Forms on any Catalog Items until it is supported."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:238
+msgid ""
+"The |morpheus| plugin supports integration with ServiceNow whether it’s "
+"configured for a single tenant or for multiple domains. When both "
+"|morpheus| and ServiceNow are configured for multiple Tenants, we can "
+"create ServiceNow integrations in any relevant |morpheus| Tenant and map "
+"those to specific companies in ServiceNow. Any exposed library items "
+"would only be shared with users in the relevant ServiceNow company. The "
+"|morpheus| plugin will automatically detect whether the *ServiceNow "
+"Domain Support–Domain Extensions Installer plugin* has been installed and"
+" respond accordingly. Additionally, the *User Criteria Scoped API plugin*"
+" must also be enabled on the ServiceNow instance for multi-tenant use."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:240
+msgid ""
+"Depending on the scenario, setup steps for the |morpheus| plugin will be "
+"slightly different. Setup steps for both single and domain-separated "
+"ServiceNow environments are included below."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:242
+msgid ""
+"A valid SSL Certificate is required on the |morpheus| Appliance for the "
+"ServiceNow plugin to be able to communicate with the appliance."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:244
+msgid ""
+"As described below, the |morpheus| ServiceNow plugin requires the use of "
+"a |morpheus| service account to integrate back with the |morpheus| "
+"appliance. Some symbol characters, specifically \"%\" and \"&\" are valid"
+" for use in |morpheus| account passwords but aren't passed correctly when"
+" ServiceNow makes its API calls to |morpheus|. It is best not to use "
+"these characters in the password for |morpheus| accounts which may be "
+"used in the ServiceNow plugin to interface back with |morpheus|. "
+"Authentication errors will occur and the plugin will not work. This is a "
+"ServiceNow issue which |morpheus| has no control over."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:247
+msgid "Single-Domain ServiceNow Configuration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:249
+#: ../../integration_guides/ITSM/ServiceNow.rst:283
+msgid ""
+"Install the |morpheus| plugin from the ServiceNow store, refer to the "
+"`Morpheus Data plugin for ServiceNow "
+"<https://store.servicenow.com/appStoreAttachments.do?sys_id=73029271dbbd6450087656a8dc961995>`_"
+" installation instructions for additional help with the installation "
+"steps"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:250
+msgid "Navigate to |morpheus| Catalog > Properties"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:251
+#: ../../integration_guides/ITSM/ServiceNow.rst:285
+msgid "Set the following properties:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:253
+#: ../../integration_guides/ITSM/ServiceNow.rst:297
+msgid "MID Server"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:254
+msgid "If desired, specify the name of an existing MID server"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:255
+#: ../../integration_guides/ITSM/ServiceNow.rst:287
+msgid "|morpheus| Appliance Endpoint"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:256
+#: ../../integration_guides/ITSM/ServiceNow.rst:288
+msgid "The full URL to your |morpheus| appliance"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:257
+#: ../../integration_guides/ITSM/ServiceNow.rst:291
+msgid "Username"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:258
+msgid "|morpheus| user that the plugin will connect as to the |morpheus| API"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:259
+#: ../../integration_guides/ITSM/ServiceNow.rst:293
+msgid "Password"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:260
+msgid "Password to the above |morpheus| account"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:261
+#: ../../integration_guides/ITSM/ServiceNow.rst:299
+msgid "|morpheus| Manage Workflows?"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:262
+#: ../../integration_guides/ITSM/ServiceNow.rst:300
+msgid ""
+"Indicate whether |morpheus| should manage workflows. If this option is "
+"checked, |morpheus| will overwrite the workflow and set it to \"Morpheus "
+"(Internal) Catalog Item Provision Instance\" on sync"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:264
+#: ../../integration_guides/ITSM/ServiceNow.rst:302
+msgid ""
+"The |morpheus| service account integrated with the plugin interacts with "
+"the |morpheus| appliance through |morpheus| API and must have the "
+"appropriate Role permissions to complete all provisioning requests from "
+"the ServiceNow plugin. Often it's easiest to make a service account with "
+"full administrator rights to avoid failed provisioning. If you'd prefer "
+"to create a minimal service account for security reasons, ensure the Role"
+" for the service account User has the following permissions:"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:266
+#: ../../integration_guides/ITSM/ServiceNow.rst:304
+msgid "Personas: Standard: Full"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:267
+#: ../../integration_guides/ITSM/ServiceNow.rst:305
+msgid "Personas: Service Catalog: Full"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:268
+#: ../../integration_guides/ITSM/ServiceNow.rst:306
+msgid "Features: Provisioning: Instances: Full"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:269
+#: ../../integration_guides/ITSM/ServiceNow.rst:307
+msgid "Features: Provisioning: Apps: Full"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:270
+#: ../../integration_guides/ITSM/ServiceNow.rst:308
+msgid ""
+"Groups: Full rights to all Groups containing Clouds you will expose to "
+"ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:271
+#: ../../integration_guides/ITSM/ServiceNow.rst:309
+msgid ""
+"Instance Types: Full rights to all Instance Types you will expose to "
+"ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:272
+#: ../../integration_guides/ITSM/ServiceNow.rst:310
+msgid "Blueprints: Full rights to all Blueprints you will expose to ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:273
+#: ../../integration_guides/ITSM/ServiceNow.rst:311
+msgid ""
+"Catalog Item Types: Full rights to all Catalog Item Types you will expose"
+" to ServiceNow"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:275
+#: ../../integration_guides/ITSM/ServiceNow.rst:313
+msgid ""
+"Users created from SAML Identity Sources cannot authenticate with the "
+"|morpheus| API and cannot be used for the ServiceNow plugin."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:277
+msgid ""
+".. image:: "
+"/images/integration_guides/itsm/servicenow/4servicenowProperties.png"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:281
+msgid "Multi-Domain ServiceNow Configuration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:284
+msgid "Navigate to |morpheus| Catalog > Multi-Tenant Credentials"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:289
+msgid "|morpheus| Tenant ID"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:290
+msgid "The integer database ID for the selected Tenant"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:292
+msgid ""
+"|morpheus| user that the plugin will connect as to the |morpheus| API. "
+"This user must exist within the |morpheus| Tenant being linked to the "
+"chosen ServiceNow company"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:294
+msgid "The password for the above user"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:295
+msgid "ServiceNow Company"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:296
+msgid ""
+"Select a company from the list to link with the Tenant whose ID was "
+"entered above"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:298
+msgid ""
+"If desired, specify the name of an existing MID server. Note that "
+"configuring a multi-domain MID server requires the "
+"``glide.ecc.enable_multidomain_mid`` property in ``sys_properties.list`` "
+"be set to ``true`` prior to creating the MID server in the global domain."
+" This allows the MID server to explore any domain for which it has the "
+"credentials. The ServiceNow user (which the MID server authenticates "
+"with) must be in the global domain as well. For more, see `this section "
+"of ServiceNow documentation <https://docs.servicenow.com/bundle/rome-"
+"servicenow-platform/page/product/mid-"
+"server/concept/c_MIDServerDomainSeparation.html>`_."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:316
+msgid "Adding to ServiceNow Catalog"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:318
+msgid ""
+"Once the ServiceNow plugin is installed and configured, Service Catalog "
+"items can be exposed to the ServiceNow catalog from |morpheus|. Follow "
+"the guide below to expose |morpheus| Clouds, Library Items, and "
+"Blueprints to users in the ServiceNow catalog."
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:321
+msgid "Select the relevant ServiceNow integration"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:322
+msgid ""
+"Within the \"EXPOSED CATALOG ITEMS\" section is a list of currently-"
+"exposed Service Catalog items"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:323
+msgid "To expose a new item, click :guilabel:`+ ADD CATALOG ITEM`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:324
+msgid ""
+"Select an available item from the dropdown menu and click :guilabel:`SAVE"
+" CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:325
+msgid "Back in ServiceNow, access the |morpheus| plugin from the Service Catalog"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:326
+msgid ""
+"Exposed |morpheus| Service Catalog items are visible here for ServiceNow "
+"users with sufficient role permissions"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:328
+msgid ""
+".. image:: "
+"/images/integration_guides/itsm/servicenow/addCatalogItemNew.png"
+msgstr ""
+
+#: ../../integration_guides/ITSM/ServiceNow.rst:330
+msgid ""
+"When exposing an Operational Workflow-based Catalog Item, ensure the "
+"CONTEXT configuration on the Catalog Item is set to \"none\" or the "
+"Catalog Item will not be exposed to ServiceNow."
+msgstr ""
+

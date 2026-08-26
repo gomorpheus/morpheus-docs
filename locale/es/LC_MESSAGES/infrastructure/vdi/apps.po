@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/vdi/apps.rst:4
@@ -30,29 +30,33 @@ msgstr "Descripción general"
 
 #: ../../infrastructure/vdi/apps.rst:9
 msgid ""
-"VDI Applications (VDI Apps) are shortcut applications that can be used to "
-"launch an RDP session for Windows VDI Desktops into a particular "
+"VDI Applications (VDI Apps) are shortcut applications that can be used to"
+" launch an RDP session for Windows VDI Desktops into a particular "
 "application. They leverage Guacamole's remote-app property to open a "
 "specific application rather than a full desktop session."
 msgstr ""
-"VDI Aplicaciones (VDI Apps) son shortcut aplicaciones ese se puede usar a "
-"launch un RDP session para Windows VDI Desktops en un particular aplicación."
-" They leverage Guacamole's remoto-app property a abrir un específico "
-"aplicación rather than un completo desktop session."
+"VDI Aplicaciones (VDI Apps) son shortcut aplicaciones ese se puede usar a"
+" launch un RDP session para Windows VDI Desktops en un particular "
+"aplicación. They leverage Guacamole's remoto-app property a abrir un "
+"específico aplicación rather than un completo desktop session."
 
 #: ../../infrastructure/vdi/apps.rst:11
 msgid ""
-"VDI Apps are managed from ``Tools > VDI Pools > Apps`` tab and are consumed "
-"by users within the Virtual Desktop Persona."
+"VDI Apps are managed from ``Tools > VDI Pools > Apps`` tab and are "
+"consumed by users within the Virtual Desktop Persona."
 msgstr ""
-"VDI Apps son administrado desde ``Tools > VDI Pools > Apps`` pestaña y son "
-"consumed por usuarios dentro de el Escritorio virtual Persona."
+"VDI Apps son administrado desde ``Tools > VDI Pools > Apps`` pestaña y "
+"son consumed por usuarios dentro de el Escritorio virtual Persona."
+
+#: ../../infrastructure/vdi/apps.rst:13
+msgid "Note"
+msgstr ""
 
 #: ../../infrastructure/vdi/apps.rst:13
 msgid ""
-"VDI Apps require the ``services-vdi-pools`` Role permission (Read or Full)."
-msgstr ""
-"VDI Apps requerir el ``services-vdi-pools`` Rol permiso (Read o Completo)."
+"VDI Apps require the ``services-vdi-pools`` Role permission (Read or "
+"Full)."
+msgstr "VDI Apps requerir el ``services-vdi-pools`` Rol permiso (Read o Completo)."
 
 #: ../../infrastructure/vdi/apps.rst:16
 msgid "Creating a VDI App"
@@ -80,8 +84,8 @@ msgstr "NAME"
 
 #: ../../infrastructure/vdi/apps.rst:24
 msgid ""
-"Display name for the application (shown to end users in the Virtual Desktop "
-"Persona)"
+"Display name for the application (shown to end users in the Virtual "
+"Desktop Persona)"
 msgstr ""
 "Display nombre para el aplicación (mostrado a usuarios finales en el "
 "Escritorio virtual Persona)"
@@ -94,17 +98,17 @@ msgstr "DESCRIPTION"
 msgid "Optional description of the application"
 msgstr "Opcional descripción del aplicación"
 
-#: ../../infrastructure/vdi/apps.rst:36
+#: ../../infrastructure/vdi/apps.rst:27
 msgid "LAUNCH PREFIX"
 msgstr "LAUNCH PREFIX"
 
 #: ../../infrastructure/vdi/apps.rst:28
 msgid ""
-"The RemoteApp program identifier. This **must** start with ``||`` followed "
-"by the application executable name."
+"The RemoteApp program identifier. This **must** start with ``||`` "
+"followed by the application executable name."
 msgstr ""
-"El RemoteApp program identifier. Este **must** iniciar con ``||`` followed "
-"por el aplicación executable nombre."
+"El RemoteApp program identifier. Este **must** iniciar con ``||`` "
+"followed por el aplicación executable nombre."
 
 #: ../../infrastructure/vdi/apps.rst:30
 msgid "Examples:"
@@ -130,33 +134,37 @@ msgstr "``||excel`` — Launches Microsoft Excel"
 msgid "``||chrome`` — Launches Google Chrome"
 msgstr "``||chrome`` — Launches Google Chrome"
 
-#: ../../infrastructure/vdi/apps.rst:39
+#: ../../infrastructure/vdi/apps.rst:38
 msgid "LOGO"
 msgstr "LOGO"
 
 #: ../../infrastructure/vdi/apps.rst:39
 msgid ""
-"Upload a custom icon for the application. Supported formats: PNG, JPEG, SVG."
-" The image is displayed at multiple resolutions (20x20, 42x42, 84x84 for "
-"HiDPI)."
+"Upload a custom icon for the application. Supported formats: PNG, JPEG, "
+"SVG. The image is displayed at multiple resolutions (20x20, 42x42, 84x84 "
+"for HiDPI)."
 msgstr ""
-"Cargar un personalizado ícono para el aplicación. Soportado formats: PNG, "
-"JPEG, SVG. El imagen es mostrado en múltiples resolutions (20x20, 42x42, "
-"84x84 para HiDPI)."
+"Cargar un personalizado ícono para el aplicación. Soportado formats: PNG,"
+" JPEG, SVG. El imagen es mostrado en múltiples resolutions (20x20, 42x42,"
+" 84x84 para HiDPI)."
 
 #: ../../infrastructure/vdi/apps.rst:41 ../../infrastructure/vdi/apps.rst:51
 msgid "Click :guilabel:`SAVE`"
 msgstr "Click :guilabel:`SAVE`"
 
 #: ../../infrastructure/vdi/apps.rst:43
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/vdi/apps.rst:43
 msgid ""
 "The Launch Prefix must begin with ``||`` (double pipe). This is the "
-"RemoteApp protocol prefix required by Guacamole. Entries without this prefix"
-" will fail validation."
+"RemoteApp protocol prefix required by Guacamole. Entries without this "
+"prefix will fail validation."
 msgstr ""
-"El Launch Prefix debe begin con ``||`` (double pipe). Este es el RemoteApp "
-"protocolo prefix requerido por Guacamole. Entries sin este prefix será fail "
-"validation."
+"El Launch Prefix debe begin con ``||`` (double pipe). Este es el "
+"RemoteApp protocolo prefix requerido por Guacamole. Entries sin este "
+"prefix será fail validation."
 
 #: ../../infrastructure/vdi/apps.rst:46
 msgid "Editing a VDI App"
@@ -196,13 +204,11 @@ msgstr "Usando VDI Apps"
 
 #: ../../infrastructure/vdi/apps.rst:64
 msgid "End users access VDI Apps through the Virtual Desktop Persona:"
-msgstr ""
-"End usuarios acceso VDI Apps a través de el Escritorio virtual Persona:"
+msgstr "End usuarios acceso VDI Apps a través de el Escritorio virtual Persona:"
 
 #: ../../infrastructure/vdi/apps.rst:66
 msgid "User logs into |morpheus| and switches to the Virtual Desktop Persona"
-msgstr ""
-"Usuario registros en |morpheus| y switches al Escritorio virtual Persona"
+msgstr "Usuario registros en |morpheus| y switches al Escritorio virtual Persona"
 
 #: ../../infrastructure/vdi/apps.rst:67
 msgid "Available VDI Apps are displayed with their configured icons"
@@ -213,15 +219,16 @@ msgid ""
 "Clicking an App icon launches an RDP session directly into the specified "
 "application"
 msgstr ""
-"Clicking un App ícono launches un RDP session directamente en el specified "
-"aplicación"
+"Clicking un App ícono launches un RDP session directamente en el "
+"specified aplicación"
 
 #: ../../infrastructure/vdi/apps.rst:69
 msgid ""
 "The session connects to an available VDI Pool allocation and opens the "
 "RemoteApp"
 msgstr ""
-"El session conecta a un disponible VDI Pool allocation y opens el RemoteApp"
+"El session conecta a un disponible VDI Pool allocation y opens el "
+"RemoteApp"
 
 #: ../../infrastructure/vdi/apps.rst:71
 msgid "VDI Apps work in conjunction with VDI Pools:"
@@ -274,10 +281,12 @@ msgstr "A register un aplicación como un RemoteApp en Windows Servidor:"
 #: ../../infrastructure/vdi/apps.rst:88
 msgid ""
 "# Add a RemoteApp program\n"
-"New-RDRemoteApp -CollectionName \"VDI\" -DisplayName \"Notepad\" -FilePath \"C:\\Windows\\notepad.exe\""
+"New-RDRemoteApp -CollectionName \"VDI\" -DisplayName \"Notepad\" "
+"-FilePath \"C:\\Windows\\notepad.exe\""
 msgstr ""
 "# Agregar un RemoteApp program\n"
-"Nuevo-RDRemoteApp -CollectionName \"VDI\" -DisplayName \"Notepad\" -FilePath \"C:\\Windows\\notepad.exe\""
+"Nuevo-RDRemoteApp -CollectionName \"VDI\" -DisplayName \"Notepad\" "
+"-FilePath \"C:\\Windows\\notepad.exe\""
 
 #: ../../infrastructure/vdi/apps.rst:93
 msgid "For Windows 10/11 desktops, configure via Group Policy or registry:"
@@ -318,3 +327,4 @@ msgstr "``PUT /api/vdi-apps/:id`` — Update un VDI App"
 #: ../../infrastructure/vdi/apps.rst:108
 msgid "``DELETE /api/vdi-apps/:id`` — Delete a VDI App"
 msgstr "``DELETE /api/vdi-apps/:id`` — Eliminar un VDI App"
+

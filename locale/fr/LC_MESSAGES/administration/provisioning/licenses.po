@@ -1,0 +1,368 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/provisioning/licenses.rst:4
+msgid "Software Licenses"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:9
+msgid ""
+"The Software Licenses section (|AdmSetLic|) enables automated application"
+" of license keys to Instances during provisioning. This is primarily used"
+" for Windows license management but supports any software requiring key-"
+"based activation."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:11
+msgid ""
+"When a license is associated with a Virtual Image, |morpheus| "
+"automatically applies the license key to any Instance provisioned using "
+"that image, streamlining license management across your infrastructure."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:14
+msgid "Role Permissions"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:16
+msgid ""
+"**Administration: Settings** with ``Full`` access is required to manage "
+"software licenses"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:19
+msgid "Creating Licenses"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:21
+msgid "To create a new software license:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:23
+msgid "Navigate to |AdmSetLic| (Administration > Settings > Software Licenses)"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:24
+msgid "Click :guilabel:`+ CREATE LICENSE`"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:25
+msgid "Complete the form:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:27
+msgid "**LICENSE TYPE:** Select the license type:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:29
+msgid "Windows"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:31
+msgid "**NAME:** A descriptive name for the license in |morpheus|"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:32
+msgid "**LICENSE KEY:** The software license key"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:33
+msgid ""
+"**ORG NAME:** Organization name associated with the license (if "
+"applicable)"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:34
+msgid "**FULL NAME:** Full name associated with the license (if applicable)"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:35
+msgid "**VERSION:** The software version this license applies to"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:36
+msgid "**COPIES:** Number of copies/seats available on the license"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:37
+msgid ""
+"**DESCRIPTION:** Description displayed in the license list for "
+"identification"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:38
+msgid ""
+"**VIRTUAL IMAGES:** Search for and select Virtual Images to associate "
+"with this license. When Instances are provisioned from these images, the "
+"license is automatically applied."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:39
+msgid ""
+"**TENANT PERMISSIONS:** Select one or more Tenants that can use this "
+"license. Leave empty for Master Tenant only."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:41
+#: ../../administration/provisioning/licenses.rst:88
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:44
+msgid "Provisioning with Licenses"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:46
+msgid ""
+"When a Virtual Image is associated with a license, |morpheus| "
+"automatically handles license application during provisioning:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:48
+msgid ""
+"**Instance Type Provisioning:** If an Instance Type's Node Type uses a "
+"licensed Virtual Image, the license is applied"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:49
+msgid ""
+"**Generic Cloud Instances:** If a licensed Virtual Image is selected "
+"during provisioning (VMware, AWS, Nutanix, OpenStack, etc.), the license "
+"is applied"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:50
+msgid ""
+"**Multi-Tenant:** Only Tenants specified in the license's Tenant "
+"Permissions can use the license"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:52
+msgid ""
+"The license key is injected during the provisioning process, typically "
+"through:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:54
+msgid "Windows unattend.xml for Windows KMS/MAK keys"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:55
+msgid "Cloud-init user data for Linux license activation"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:56
+msgid "Custom automation Tasks triggered during provisioning"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:59
+msgid "License Tracking"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:61
+msgid "The license list displays:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:63
+msgid "**Name:** License name"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:64
+msgid "**License Type:** Type of license"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:65
+msgid "**Version:** Software version"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:66
+msgid "**Copies:** Total available copies"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:67
+msgid "**Applied:** Number of copies currently in use"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:68
+msgid "**Virtual Images:** Count of associated images"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:69
+msgid "**Tenants:** Tenants with access"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:71
+msgid ""
+"|morpheus| tracks the number of applied copies against the total "
+"available. When all copies are consumed, additional provisioning with "
+"that license may be restricted depending on the license type "
+"configuration."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:74
+msgid "Managing Licenses"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:77
+msgid "Editing a License"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:79
+#: ../../administration/provisioning/licenses.rst:95
+msgid "Navigate to |AdmSetLic|"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:80
+#: ../../administration/provisioning/licenses.rst:96
+msgid "Click :guilabel:`ACTIONS` on the license row"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:81
+msgid "Select :guilabel:`Edit`"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:82
+msgid "Modify the editable fields:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:84
+msgid "Name, Version, Copies, Description"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:85
+msgid "Virtual Images (add/remove associations)"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:86
+msgid "Tenant Permissions"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:90
+#: ../../administration/provisioning/licenses.rst:100
+msgid "Note"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:90
+msgid ""
+"License Type, License Key, Org Name, and Full Name cannot be modified "
+"after creation. To change these values, delete and recreate the license."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:93
+msgid "Deleting a License"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:97
+msgid "Select :guilabel:`Delete`"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:98
+msgid "Confirm deletion"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:100
+msgid ""
+"Deleting a license does not deactivate software on existing Instances. It"
+" only prevents future automatic application during provisioning."
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:103
+msgid "Virtual Image Association"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:105
+msgid "Virtual Images are the link between licenses and provisioning:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:107
+msgid "A single Virtual Image can be associated with one license"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:108
+msgid "A single license can be associated with multiple Virtual Images"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:109
+msgid ""
+"Virtual Images are managed in :menuselection:`Library --> Virtual Images`"
+" (Library > Virtual Images)"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:110
+msgid "Images synced from Clouds are available for license association"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:112
+msgid "To add a Virtual Image to a license:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:114
+msgid "Edit the license"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:115
+msgid "In the **VIRTUAL IMAGES** field, search by name"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:116
+msgid "Select the image from the results"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:117
+msgid "Save the license"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:120
+msgid "API"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:122
+msgid "Licenses can be managed via the |morpheus| API:"
+msgstr ""
+
+#: ../../administration/provisioning/licenses.rst:124
+#, python-brace-format
+msgid ""
+"# List licenses\n"
+"curl \"$MORPHEUS_API_URL/api/provisioning-licenses\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\"\n"
+"\n"
+"# Create a license\n"
+"curl -X POST \"$MORPHEUS_API_URL/api/provisioning-licenses\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\n"
+"    \"license\": {\n"
+"      \"licenseType\": \"win\",\n"
+"      \"name\": \"Windows Server 2022 Datacenter\",\n"
+"      \"licenseKey\": \"XXXXX-XXXXX-XXXXX-XXXXX-XXXXX\",\n"
+"      \"licenseVersion\": \"2022\",\n"
+"      \"copies\": 50,\n"
+"      \"description\": \"Datacenter license for production\"\n"
+"    }\n"
+"  }'"
+msgstr ""
+

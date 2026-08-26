@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/settings/backup_settings.rst:2
+msgid "Backup Settings"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:4
+msgid ""
+"The Backup settings page allows you enable or disable scheduled backups, "
+"select a default backup bucket, and administer global settings related to"
+" backups. Changes to global settings only affect new backups going "
+"forward and do not affect existing backups."
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:6
+msgid "Note"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:6
+msgid ""
+"Appliance backups are subject to a two-hour time limit to complete the "
+"backup. Automated backup attempts will be abandoned and will fail once "
+"this time limit is exceeded."
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:8
+msgid "Important"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:8
+msgid ""
+"Appliances with an HA architecture containing multiple app nodes must "
+"ensure all nodes can access stored backups. By default, if no \"Default "
+"Backup Bucket\" configuration is made, backups are stored in "
+"``/var/opt/morpheus/bitcan``. If this path is local to the app nodes, all"
+" other app nodes would not be able to reach the backups. In such a case, "
+"one solution would be to create an NFS share for the ``bitcan`` directory"
+" for all app nodes. Another solution would be to make a \"Default Backup "
+"Bucket\" configuration selection, which all nodes would then use for "
+"backup storage and retrieval."
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:11
+msgid "|morpheus| Backup Settings"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:13
+msgid "Scheduled Backups"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:14
+msgid "Enable automatic scheduled backups for provisioned instances"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:16
+msgid "Create Backups"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:17
+msgid ""
+"When enabled, |morpheus| will automatically configure instances for "
+"manual or scheduled backups"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:19
+msgid "Backup Appliance"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:20
+msgid ""
+"When enabled, a backup will be created for the |morpheus| appliance "
+"database. Select the ``Backup`` text link to view or edit settings "
+"related to the appliance backup"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:22
+msgid "Default Backup Bucket"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:23
+msgid ""
+"Select an existing bucket as the default for future backup runs. Click "
+"the ``Infrastructure Storage`` text link to add a new storage bucket to "
+"|morpheus| if needed"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:25
+msgid "Default Backup Schedule"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:26
+msgid ""
+"Choose a default schedule interval for automated backups. The available "
+"selections in this dropdown menu are Execution Schedules defined in "
+"|LibAutExe|"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:28
+msgid "Default Backup Retention"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:29
+msgid ""
+"Choose the default number of backups to be retained for automated "
+"Instance and appliance backup jobs"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:31
+msgid "Default Synthetic Full Backup enabled"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:32
+msgid ""
+"When enabled, full synthetic backups will be on by default in addition to"
+" standard backups for supported workload types"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:34
+msgid "Default Synthetic Full Backup Schedule"
+msgstr ""
+
+#: ../../administration/settings/backup_settings.rst:35
+msgid ""
+"Choose a default schedule interval for full synthetic backups. The "
+"available selections in this dropdown menu are Execution Schedules "
+"defined in |LibAutExe|"
+msgstr ""
+

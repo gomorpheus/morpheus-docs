@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/settings/appliance.rst:2
+msgid "Appliance Settings"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:4
+msgid "Appliance URL"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:5
+msgid ""
+"The default URL used for Agent install and Agent functionality. All "
+"Instances and Hosts must be able to resolve and reach this URL over 443 "
+"for successful agent install and communication."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:7
+msgid "Note"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:7
+msgid ""
+"Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud >"
+" Advanced Options` section."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:9
+msgid "Internal Appliance URL (PXE)"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:10
+msgid ""
+"For PXE-Boot your appliance needs to be routable directly with minimal "
+"NAT masquerading. This allows one to override the default appliance url "
+"endpoint for use by the PXE Server. If this is unset, the default "
+"appliance url will be used instead."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:11
+msgid "API Allowed Origins"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:12
+msgid ""
+"A CORS-related field which specifies the origins that are allowed to "
+"access the |morpheus| API. For example, if you were designing a web "
+"application which needed to make AJAX calls to |morpheus| API. The "
+"origins should be specified here. By default, all origins are allowed. "
+"When this field is filled, an exclusive whitelist of allowed origins is "
+"established."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:13
+msgid "Cloud Sync Interval"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:14
+msgid ""
+"Data is refreshed through cloud integrations at the interval specified "
+"here in seconds, the default value is 300 seconds (five minutes). "
+"Appliances managing a very large number of clouds may be adversely "
+"affected by setting this value too low."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:15
+msgid "Usage Retainment"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:16
+msgid ""
+"Determines how many days to keep account usage (metered costing data) "
+"records. Retainment period is not set by default. Usage records will "
+"remain indefinitely if Usage Retainment is not set. Note this does not "
+"affect generated Invoice records."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:17
+msgid "Incident Retainment"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:18
+msgid ""
+"Enter the number of days |morpheus| should keep incident records in the "
+"database. In general, this setting can be left alone but in certain cases"
+" may need to be adjusted as very large incident database tables can "
+"affect the stability of the application."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:19
+msgid "Stats Retainment"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:20
+msgid ""
+"Select 30, 60 or 90 days period for stats retainment. Selecting a larger "
+"period gives the ability to analyze stats, such as Instance metrics, over"
+" a longer period of time. For example, in the Monitoring tab of an "
+"Instance detail page, users can select a 60 or 90-day analysis period if "
+"the stats have been retained that long"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:21
+msgid "Denied Hosts"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:22
+msgid ""
+"A comma-delimited list of IP addresses and/or hostnames which should not "
+"be allowed sources for HTTP Tasks or REST-populated Option Lists."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:23
+msgid "Approved Hosts"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:24
+msgid ""
+"A comma-delimited list of IP addresses and/or hostnames which are the "
+"only approved sources for HTTP Tasks or REST-populated Option Lists. By "
+"entering any values here, all others are automatically denied."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:25
+msgid "Enable SSL Verification of Agent (Communications)"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:26
+msgid ""
+"Enabling SSL Verification of Agent Communications requires a valid "
+"Certificate be installed on the Appliance."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:27
+msgid "Disable SSH Password Authentication"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:28
+msgid ""
+"Only allow ssh login using SSH keys. When true, SSH Password "
+"Authentication will not be enabled for VM's and Hosts provisioned after "
+"the setting is enabled."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:29
+msgid "Default Appliance Locale"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:30
+msgid ""
+"Sets the default language and region for all users on the |morpheus| "
+"appliance. Users with individual language preferences may also override "
+"this selection on their User Settings page"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:31
+msgid "Default Console Gateway"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:32
+msgid ""
+"Select a configured VDI Gateway to route Instance and Host console "
+"sessions. The gateway can use the same Worker runtime as a Distributed "
+"Worker, but it requires a VDI Gateway registration and API key. See "
+":doc:`/administration/integrations/workers` and :ref:`vdi-gateways`."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:33
+msgid "Max Option List Size"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:34
+msgid ""
+"Sets a maximum size for Option Lists (such as those sourced from REST "
+"calls to a remote server) to preserve appliance performance in the event "
+"that a very large payload is inadvertently accessed. The entered number "
+"is multiplied by 1000 (for example, entering \"1\" results in a maximum "
+"list size of 1000)."
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:35
+msgid "Dashboards to Display"
+msgstr ""
+
+#: ../../administration/settings/appliance.rst:36
+msgid ""
+"A typeahead field which will show all Dashboards available to the "
+"appliance from Dashboard-type plugins. Select all desired Dashboards and "
+"they will be displayed in the order set. Dashboards can be dragged up and"
+" down the list to set the order correctly."
+msgstr ""
+

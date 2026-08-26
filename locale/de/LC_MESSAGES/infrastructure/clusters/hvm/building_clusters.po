@@ -1,0 +1,696 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:2
+msgid "Building New HVM Clusters"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:5
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:7
+msgid ""
+"Before creating an HVM cluster, identify the target layout and ensure the"
+" following requirements are met:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:13
+msgid "Requirement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:14
+msgid "Details"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:15
+msgid "Operating System"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:16
+msgid "HVM OS/Ubuntu 24.04 for layout 1.3; HVM OS 26.04 for layout 2.0"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:17
+msgid "Minimum Hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:18
+msgid ""
+"3 Hosts for a standard single-site cluster; 2 Hosts are supported with an"
+" external Distributed Worker witness when using an HPE Shared File System"
+" (GFS2) datastore (see :doc:`two_node_clusters`)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:19
+msgid "CPU"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:20
+msgid "Hardware virtualization enabled (VT-x/AMD-V)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:21
+msgid "Memory"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:22
+msgid "32 GB RAM minimum (4 GB reserved for system)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:23
+msgid "Access"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:24
+msgid "Root SSH or passwordless sudo"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:25
+msgid "Network"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:26
+msgid "Static IP on management interface"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:27
+msgid "Firewall"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:28
+msgid "Port 7443 open between all hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:29
+msgid "Storage"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:30
+msgid "Shared storage (iSCSI, FC) accessible by all hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:33
+msgid "Cluster Creation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:35
+msgid "Navigate to ``Infrastructure > Clusters``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:36
+msgid "Click :guilabel:`+ Add Cluster`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:37
+msgid "Select **HVM** as the cluster type"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:38
+msgid ""
+"Select the required layout: **HVM 1.3** for HVM OS/Ubuntu 24.04 or **HVM "
+"2.0** for HVM OS 26.04"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:39
+msgid "Complete the following fields:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:45
+msgid "Field"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:46
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:47
+msgid "SSH Hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:48
+msgid "Comma-separated IP addresses of all hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:49
+msgid "SSH Port"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:50
+msgid "SSH port (default: 22)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:51
+msgid "Username"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:52
+msgid "SSH username with root or sudo access"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:53
+msgid "Password/Key"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:54
+msgid "Authentication credential"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:55
+msgid "Data Device"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:56
+msgid "Data device path (HCI only)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:57
+msgid "Management Network Name"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:58
+msgid "Network name for management traffic"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:59
+msgid "Storage Network Name"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:60
+msgid "Network name for storage traffic"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:61
+msgid "Compute Network Name"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:62
+msgid "Network name for compute traffic"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:63
+msgid "Overlay Network Name"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:64
+msgid ""
+"Legacy/layout 1.3 underlay/tunnel network name used by the HVM networking"
+" plugin. Verify tunnel-interface reachability and MTU; layout 2.0 uses "
+"Virtual Switch networking instead"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:65
+msgid "Compute VLANs"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:66
+msgid "VLAN IDs for compute networks"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:67
+msgid "CPU Architecture/Model"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:68
+msgid "Processor architecture selection"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:69
+msgid "Witness"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:70
+msgid ""
+"Distributed Worker witness for a two-node GFS2 cluster or stretch "
+"cluster. Configure it after cluster creation using the applicable witness"
+" procedure"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:72
+msgid "Click :guilabel:`Complete` to begin automated provisioning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:77
+msgid "Cluster Permissions and Provisioning Impact"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:79
+msgid ""
+"From the Clusters list, open :guilabel:`More` > :guilabel:`Permissions` "
+"for a cluster to scope where that cluster can be used:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:81
+msgid ""
+"**Groups** control which Infrastructure Groups can use the cluster as a "
+"provisioning target. A user also needs role access to the Group and the "
+"relevant provisioning features."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:82
+msgid ""
+"**Service Plans** limit the plans that can be selected when provisioning "
+"to the cluster. For example, selecting only a ``1 CPU, 2 GB`` plan means "
+"other plans are not offered after this cluster is selected, subject to "
+"the selected Instance layout and image requirements."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:83
+msgid ""
+"**Default** retains the product's default permission behavior rather than"
+" creating an explicit Group or Service Plan allow-list. It does not mean "
+"that this cluster is the preferred provisioning target and does not "
+"override role, layout, image, or capacity filtering. Use an explicit "
+"selection when the cluster must be restricted."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:85
+msgid ""
+"Permission changes affect subsequent wizard choices. They do not resize, "
+"move, or otherwise alter existing VMs. After changing permissions, test "
+"with a non-administrator role: start an Instance deployment, select the "
+"intended Group and HVM target, and confirm that only the allowed clusters"
+" and Service Plans are shown. If an expected plan is absent, also check "
+"that the plan is active, uses the HVM/KVM provision type, and satisfies "
+"the selected layout and Virtual Image minimums."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:88
+msgid "Automated Provisioning Phases"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:90
+msgid ""
+"Once cluster creation is initiated, |morpheus| executes the following "
+"automated phases:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:93
+msgid "Phase 1: Package Installation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:95
+msgid "Installs required packages on all hosts:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:97
+msgid "KVM/QEMU"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:98
+msgid "libvirt"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:99
+msgid "Corosync"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:100
+msgid "DLM"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:101
+msgid "GFS2 utilities"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:102
+msgid "Ceph libraries"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:103
+msgid "swtpm"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:104
+msgid "jq"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:105
+msgid "nfs-common"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:108
+msgid "Phase 2: Host Networking"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:110
+msgid "Configures the networking model for the selected layout:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:112
+msgid ""
+"**Layout 1.3:** Creates OVS bridges for management, compute, and overlay "
+"networks and configures the libvirt Management network"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:113
+msgid ""
+"**Layout 2.0:** Creates the default Virtual Switch and applies Linux "
+"bridge networking through ``hvmcli``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:115
+msgid ""
+"See :doc:`hvm_networks` for layout 1.3 networking or "
+":doc:`virtual_switches` for layout 2.0 networking."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:117
+msgid ""
+"For layout 2.0, complete the scenario checklist in "
+":doc:`/getting_started/installation/hvm_host_prep` before creating "
+"Virtual Switches. VLAN IDs are optional: use explicit VLAN IDs with an "
+"upstream trunk for a decoupled design without native VLANs, or leave a "
+"segment untagged only when the upstream port is intentionally configured "
+"for that traffic."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:120
+msgid "Phase 3: Host Preparation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:122
+msgid "Prepares each host for cluster operation:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:124
+msgid "Firewall configuration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:125
+msgid "libvirt configuration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:126
+msgid "IOMMU enablement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:127
+msgid "Hugepages configuration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:128
+msgid "Workqueue tuning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:129
+msgid "Directory structure creation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:132
+msgid "Phase 4: Cluster Services"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:134
+msgid "Establishes cluster communication and coordination:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:136
+msgid "SSH key generation and distribution via Cypher"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:137
+msgid "Corosync authkey generation and distribution via Cypher"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:138
+msgid "Corosync configuration with knet transport"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:139
+msgid "DLM configuration with fencing enabled"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:140
+msgid "Service ordering and startup (corosync → DLM)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:143
+msgid "Phase 5: iSCSI/Storage"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:145
+msgid "Configures storage connectivity:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:147
+msgid "iSCSI initiator name assignment"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:148
+msgid "Multipath configuration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:149
+msgid "OOM protection for storage services"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:152
+msgid "Phase 6: Storage Pools"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:154
+msgid "Creates local storage pools:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:156
+msgid "Cloud-init ISO pool"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:157
+msgid "Local storage pool"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:160
+msgid "Phase 7: Quorum Activation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:162
+msgid "Activates the agent-based quorum system:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:164
+msgid "Server sends quorumInfo to all agents"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:165
+msgid "Agents persist cluster member data to ``.quorum-nodes``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:166
+msgid "Agents begin peer-to-peer quorum pinging"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:169
+msgid "HPE Clustered Datastore (Shared LUN) Setup"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:171
+msgid ""
+"The HPE Clustered Datastore (GFS2) provides shared storage accessible by "
+"all cluster hosts simultaneously."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:174
+msgid "Adding iSCSI Targets"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:176
+msgid "Navigate to ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:177
+msgid "Click :guilabel:`Add`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:178
+msgid "Enter the Target IP and Port (default: 3260)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:179
+msgid "Save the configuration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:181
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:181
+msgid ""
+"iSCSI targets are auto-discovered and auto-logged-in on all hosts in the "
+"cluster."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:184
+msgid "Creating the Datastore"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:186
+msgid ""
+"Create the HPE Clustered Datastore from :menuselection:`Infrastructure "
+"--> Storage --> Data Stores` or from the HVM Cluster's "
+":guilabel:`Datastores` tab. See :doc:`storage_operations` for the "
+"canonical prerequisites, fields, resulting cluster operations, "
+"verification, and storage lifecycle procedures."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:189
+msgid "Configuring Heartbeat Datastore"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:191
+msgid "Edit the shared datastore properties"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:192
+msgid "Enable the :guilabel:`Heartbeat Target` option"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:194
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:194
+msgid ""
+"Configure one reliable GFS2 datastore as the heartbeat target. If that "
+"datastore becomes unhealthy, restore it or select another healthy GFS2 "
+"datastore before relying on automatic VM recovery."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:197
+msgid "Verification"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:199
+msgid "After cluster creation, verify the cluster is healthy:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:201
+msgid "**Corosync membership:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:203
+msgid "corosync-quorumtool -l"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:207
+msgid ""
+"Confirm all expected compute Hosts are listed. Corosync provides "
+"membership to DLM but does not decide Agent quorum for layouts 1.3 and "
+"2.0. Do not use the Corosync ``Quorate`` value as the HVM health "
+"decision, especially for two-node and stretch topologies."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:209
+msgid "**DLM status:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:211
+msgid ""
+"systemctl is-active dlm\n"
+"dlm_tool status -v"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:216
+msgid "Confirm all nodes show ``member=1``."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:218
+msgid "**Agent quorum:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:220
+msgid "curl -k https://localhost:7443/quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:224
+msgid "**UI verification:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:226
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
+"panel and confirm:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:228
+msgid "Quorum status: ACHIEVED"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:229
+msgid "All nodes: ONLINE"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:230
+msgid "Coordinator: assigned"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:231
+msgid "Lockspaces: OK"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:233
+msgid ""
+"For a two-node GFS2 cluster, also confirm the Distributed Worker witness "
+"is listed and reachable. See :doc:`two_node_clusters`."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:236
+msgid "Cluster Sizing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:242
+msgid "Hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:243
+msgid "Failure Tolerance"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:244
+msgid "Use Case"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:245
+msgid "3"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:246
+msgid "Tolerates 1 host failure"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:247
+msgid "Minimum production cluster"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:248
+msgid "5"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:249
+msgid "Tolerates 2 host failures"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/building_clusters.rst:250
+msgid "Recommended for higher availability"
+msgstr ""
+

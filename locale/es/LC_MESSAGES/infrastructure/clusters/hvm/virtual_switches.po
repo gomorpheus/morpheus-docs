@@ -1,0 +1,1755 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:2
+msgid "Virtual Switches"
+msgstr "Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:6
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:141
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:220
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:291
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:325
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:420
+msgid "Important"
+msgstr "Importante"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:6
+msgid ""
+"Virtual Switches are supported on HVM layout 2.0 with HVM OS 26.04. "
+"Legacy and layout 1.3 clusters use OVS networking; see "
+":doc:`hvm_networks`."
+msgstr ""
+"Los Switches Virtuales son compatibles con el diseño 2.0 de HVM con HVM OS 26.04. "
+"Los clústeres heredados y de diseño 1.3 utilizan redes OVS; consulte "
+":doc:`hvm_networks`."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:9
+msgid "Virtual Switch Overview"
+msgstr "Descripción general de los Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:11
+msgid ""
+"A Virtual Switch is a cluster-level networking abstraction that "
+"simplifies host network configuration across layout 2.0 HVM compute "
+"nodes. Rather than manually configuring bridges, bonds, and VLANs on each"
+" host via CLI, Virtual Switches allow administrators to define network "
+"intent once and have it applied consistently across the entire cluster."
+msgstr ""
+"Un Switch Virtual es una abstracción de red a nivel de clúster que "
+"simplifica la configuración de red del host en los nodos de cómputo HVM de diseño 2.0. "
+"En lugar de configurar manualmente bridges, bonds y VLANs en cada "
+"host a través de CLI, los Switches Virtuales permiten a los administradores definir la "
+"intención de red una vez y aplicarla de manera consistente en todo el clúster."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:13
+msgid "Virtual Switches manage:"
+msgstr "Los Switches Virtuales gestionan:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:15
+msgid "**Uplink selection** — Which physical NICs carry traffic"
+msgstr "**Selección de uplink** — Qué NICs físicas transportan el tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:16
+msgid "**Bond creation** — Aggregating multiple NICs for redundancy or throughput"
+msgstr "**Creación de bonds** — Agregación de múltiples NICs para redundancia o rendimiento"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:17
+msgid "**Traffic separation** — Isolating VM, storage, migration, and SDN traffic"
+msgstr "**Separación de tráfico** — Aislamiento del tráfico de VM, almacenamiento, migración y SDN"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:18
+msgid "**VLAN handling** — Tagging traffic for network segmentation"
+msgstr "**Gestión de VLAN** — Etiquetado de tráfico para segmentación de red"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:19
+msgid ""
+"**IP addressing** — Assigning host-level IPs for storage and migration "
+"networks"
+msgstr ""
+"**Direccionamiento IP** — Asignación de IPs a nivel de host para redes de almacenamiento y migración"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:21
+msgid ""
+"Each layout 2.0 HVM cluster supports up to **8 Virtual Switches**. A "
+"default Virtual Switch named ``vs0`` is created automatically during "
+"cluster provisioning and handles VM network traffic."
+msgstr ""
+"Cada clúster HVM de diseño 2.0 soporta hasta **8 Switches Virtuales**. Un "
+"Switch Virtual predeterminado llamado ``vs0`` se crea automáticamente durante "
+"el aprovisionamiento del clúster y gestiona el tráfico de red de VM."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:23
+msgid "Virtual Switches list view"
+msgstr "Vista de lista de Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:23
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_list.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_list.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:27
+msgid "Default Virtual Switch Behavior (vs0 — General)"
+msgstr "Comportamiento predeterminado del Switch Virtual (vs0 — General)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:29
+msgid ""
+"When a cluster is provisioned, a default Virtual Switch called ``vs0`` "
+"(type: **General**) is created on the management interface. Understanding"
+" its default behavior is critical before adding additional segments:"
+msgstr ""
+"Cuando se aprovisiona un clúster, se crea un Switch Virtual predeterminado llamado ``vs0`` "
+"(tipo: **General**) en la interfaz de gestión. Comprender "
+"su comportamiento predeterminado es fundamental antes de agregar segmentos adicionales:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:31
+msgid "**Default traffic on the management interface:**"
+msgstr "**Tráfico predeterminado en la interfaz de gestión:**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:33
+msgid ""
+"**Live Migration** traffic flows over the management interface by "
+"default, even if no explicit Live Migration segment has been created. A "
+"dedicated Live Migration segment is only required when you want to "
+"isolate migration traffic onto a separate VLAN or subnet."
+msgstr ""
+"El tráfico de **Live Migration** fluye a través de la interfaz de gestión de forma "
+"predeterminada, incluso si no se ha creado un segmento explícito de Live Migration. Un "
+"segmento dedicado de Live Migration solo es necesario cuando se desea "
+"aislar el tráfico de migración en una VLAN o subred separada."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:34
+msgid ""
+"**Data storage traffic** (NFS and iSCSI) can also flow over the "
+"management interface through ``vs0`` by default. Creating dedicated Data "
+"segments is recommended for performance and isolation in production "
+"environments."
+msgstr ""
+"El **tráfico de almacenamiento de datos** (NFS e iSCSI) también puede fluir a través de la "
+"interfaz de gestión mediante ``vs0`` de forma predeterminada. Se recomienda crear segmentos "
+"de datos dedicados para el rendimiento y el aislamiento en entornos de producción."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:36
+msgid "**Adding segments to vs0:**"
+msgstr "**Agregar segmentos a vs0:**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:38
+msgid ""
+"When you edit ``vs0`` to add **Data (General)** and/or **Live Migration**"
+" segments on the same Virtual Switch as the management interface, VLAN "
+"tagging is required:"
+msgstr ""
+"Cuando edita ``vs0`` para agregar segmentos de **Data (General)** y/o **Live Migration**"
+" en el mismo Switch Virtual que la interfaz de gestión, se requiere el "
+"etiquetado de VLAN:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:40
+msgid ""
+"Adding **Data (General)** requires a VLAN tag and a dedicated IP subnet "
+"for storage traffic."
+msgstr ""
+"Agregar **Data (General)** requiere una etiqueta VLAN y una subred IP dedicada "
+"para el tráfico de almacenamiento."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:41
+msgid ""
+"Adding **Live Migration** requires a VLAN tag and a dedicated IP subnet "
+"for migration traffic."
+msgstr ""
+"Agregar **Live Migration** requiere una etiqueta VLAN y una subred IP dedicada "
+"para el tráfico de migración."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:42
+msgid ""
+"If both are added to the same Virtual Switch, each must have its **own "
+"VLAN and subnet**."
+msgstr ""
+"Si ambos se agregan al mismo Switch Virtual, cada uno debe tener su **propia "
+"VLAN y subred**."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:44
+msgid "**Splitting Data and Live Migration onto different networks:**"
+msgstr "**Separar Data y Live Migration en redes diferentes:**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:46
+msgid ""
+"When both **Data (General)** and **Live Migration** are selected on the "
+"same Virtual Switch, a checkbox appears: *\"Data (General) and Live "
+"Migration are on different networks\"*. When enabled:"
+msgstr ""
+"Cuando se seleccionan tanto **Data (General)** como **Live Migration** en el "
+"mismo Switch Virtual, aparece una casilla de verificación: *\"Data (General) and Live "
+"Migration are on different networks\"*. Cuando se habilita:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:48
+msgid "Two separate VLAN tags are required (one for Data, one for Live Migration)"
+msgstr "Se requieren dos etiquetas VLAN separadas (una para Data, una para Live Migration)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:49
+msgid "Two separate IP subnets must be configured"
+msgstr "Se deben configurar dos subredes IP separadas"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:50
+msgid ""
+"This provides full isolation between storage and migration traffic while "
+"sharing the same physical uplinks"
+msgstr ""
+"Esto proporciona aislamiento completo entre el tráfico de almacenamiento y migración mientras "
+"se comparten los mismos uplinks físicos"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:52
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:158
+msgid "Option to put Data (General) and Live Migration on different networks"
+msgstr "Opción para colocar Data (General) y Live Migration en redes diferentes"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:52
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:158
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_add_split_option.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_add_split_option.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:55
+msgid ""
+"**Key constraint:** Only **one Live Migration interface** is supported "
+"per cluster. If you configure Live Migration on a Virtual Switch, no "
+"other Virtual Switch in the same cluster can carry Live Migration "
+"traffic."
+msgstr ""
+"**Restricción clave:** Solo se admite **una interfaz de Live Migration** "
+"por clúster. Si configura Live Migration en un Switch Virtual, ningún "
+"otro Switch Virtual en el mismo clúster puede transportar tráfico de Live Migration."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:58
+msgid "Navigating to Virtual Switches"
+msgstr "Navegación a los Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:60
+msgid "To access Virtual Switches:"
+msgstr "Para acceder a los Switches Virtuales:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:62
+msgid ""
+"Navigate to :menuselection:`Infrastructure --> Clusters` and select your "
+"HVM cluster"
+msgstr ""
+"Navegue a :menuselection:`Infrastructure --> Clusters` y seleccione su "
+"clúster HVM"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:63
+msgid "Click the **Network** tab"
+msgstr "Haga clic en la pestaña **Network**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:64
+msgid "Select the **Virtual Switches** sub-tab"
+msgstr "Seleccione la sub-pestaña **Virtual Switches**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:66
+msgid ""
+"The list view displays all Virtual Switches with their name, number of "
+"interfaces, and number of associated networks. From here you can add, "
+"edit, or delete Virtual Switches."
+msgstr ""
+"La vista de lista muestra todos los Switches Virtuales con su nombre, número de "
+"interfaces y número de redes asociadas. Desde aquí puede agregar, "
+"editar o eliminar Switches Virtuales."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:69
+msgid "Traffic Types"
+msgstr "Tipos de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:71
+msgid ""
+"Each Virtual Switch carries one or more traffic types that define what "
+"kind of network communication flows through it. When creating a Virtual "
+"Switch, you select which traffic types it will handle."
+msgstr ""
+"Cada Switch Virtual transporta uno o más tipos de tráfico que definen qué "
+"tipo de comunicación de red fluye a través de él. Al crear un Switch "
+"Virtual, selecciona qué tipos de tráfico gestionará."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:73
+msgid "Add Virtual Switch - Select traffic type"
+msgstr "Agregar Switch Virtual - Seleccionar tipo de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:73
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_add_select_type.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_add_select_type.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:76
+msgid "The available traffic types are:"
+msgstr "Los tipos de tráfico disponibles son:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:82
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:110
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:388
+msgid "Traffic Type"
+msgstr "Tipo de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:83
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:207
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:390
+msgid "Description"
+msgstr "Descripción"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:84
+msgid "Use Case"
+msgstr "Caso de uso"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:85
+msgid "**VM Network**"
+msgstr "**Red de VM**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:86
+msgid ""
+"Virtual machine network connectivity. Uses a VLAN-aware Linux bridge for "
+"VM-to-network communication."
+msgstr ""
+"Conectividad de red de máquinas virtuales. Utiliza un bridge Linux compatible con VLAN para "
+"la comunicación de VM a red."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:87
+msgid "Required for VMs to communicate with external networks"
+msgstr "Necesario para que las VMs se comuniquen con redes externas"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:88
+msgid "**Data (General)**"
+msgstr "**Data (General)**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:89
+msgid ""
+"NFS storage network for shared datastores. Supports bonding for "
+"redundancy and throughput."
+msgstr ""
+"Red de almacenamiento NFS para almacenes de datos compartidos. Soporta bonding para "
+"redundancia y rendimiento."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:90
+msgid "Connecting hosts to NFS-based shared storage"
+msgstr "Conexión de hosts a almacenamiento compartido basado en NFS"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:91
+msgid "**Live Migration**"
+msgstr "**Live Migration**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:92
+msgid ""
+"Dedicated network for live migrating VMs between hosts with minimal "
+"downtime."
+msgstr ""
+"Red dedicada para la migración en vivo de VMs entre hosts con un tiempo de inactividad mínimo."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:93
+msgid "Enabling live VM migration across cluster hosts"
+msgstr "Habilitar la migración en vivo de VMs entre los hosts del clúster"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:94
+msgid "**Data (iSCSI)**"
+msgstr "**Data (iSCSI)**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:95
+msgid ""
+"iSCSI storage network. Uses a single interface (no bonding) to support "
+"multipath I/O."
+msgstr ""
+"Red de almacenamiento iSCSI. Utiliza una sola interfaz (sin bonding) para soportar "
+"multipath I/O."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:96
+msgid "Connecting hosts to iSCSI SAN storage"
+msgstr "Conexión de hosts a almacenamiento SAN iSCSI"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:97
+msgid "**SDN**"
+msgstr "**SDN**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:98
+msgid ""
+"Software-defined networking. Dedicated pathway for SDN control and data "
+"plane traffic."
+msgstr ""
+"Redes definidas por software. Ruta dedicada para el tráfico del plano de control y datos SDN."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:99
+msgid "Environments using SDN controllers (e.g., CN2)"
+msgstr "Entornos que utilizan controladores SDN (por ejemplo, CN2)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:102
+msgid "Traffic Type Combination Rules"
+msgstr "Reglas de combinación de tipos de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:104
+msgid ""
+"Multiple traffic types can be combined on a single Virtual Switch, "
+"subject to the following rules:"
+msgstr ""
+"Se pueden combinar múltiples tipos de tráfico en un solo Switch Virtual, "
+"sujeto a las siguientes reglas:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:111
+msgid "Bonding"
+msgstr "Bonding"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:112
+msgid "Single NIC"
+msgstr "NIC única"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:113
+msgid "Can Share With"
+msgstr "Puede compartir con"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:114
+msgid "Notes"
+msgstr "Notas"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:115
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:391
+msgid "VM Network"
+msgstr "Red de VM"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:116
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:117
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:121
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:122
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:126
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:127
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:132
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:136
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:137
+msgid "Yes"
+msgstr "Sí"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:118
+msgid "Live Migration, Data (General)"
+msgstr "Live Migration, Data (General)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:119
+msgid "Default Virtual Switch type"
+msgstr "Tipo de Switch Virtual predeterminado"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:120
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:394
+msgid "Data (General)"
+msgstr "Data (General)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:123
+msgid "VM Network, Live Migration"
+msgstr "Red de VM, Live Migration"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:124
+msgid "Supports bonds for throughput"
+msgstr "Soporta bonds para rendimiento"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:125
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:397
+msgid "Live Migration"
+msgstr "Live Migration"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:128
+msgid "VM Network, Data (General)"
+msgstr "Red de VM, Data (General)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:129
+msgid "Cannot share with iSCSI"
+msgstr "No puede compartir con iSCSI"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:130
+msgid "Data (iSCSI)"
+msgstr "Data (iSCSI)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:131
+msgid "**No**"
+msgstr "**No**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:133
+msgid "Cannot share with other data types"
+msgstr "No puede compartir con otros tipos de datos"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:134
+msgid "Single NIC enforced for multipath"
+msgstr "NIC única obligatoria para multipath"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:135
+msgid "SDN"
+msgstr "SDN"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:138
+msgid "Cannot share with other types"
+msgstr "No puede compartir con otros tipos"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:139
+msgid "Requires dedicated Virtual Switch"
+msgstr "Requiere un Switch Virtual dedicado"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:143
+msgid ""
+"**iSCSI** requires a dedicated Virtual Switch with a single NIC per host."
+" Bonding is not supported because redundancy is provided by iSCSI "
+"multipath at the protocol level."
+msgstr ""
+"**iSCSI** requiere un Switch Virtual dedicado con una sola NIC por host."
+" El bonding no es compatible porque la redundancia es proporcionada por el "
+"multipath iSCSI a nivel de protocolo."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:144
+msgid ""
+"**SDN** requires its own dedicated Virtual Switch and cannot coexist with"
+" other traffic types."
+msgstr ""
+"**SDN** requiere su propio Switch Virtual dedicado y no puede coexistir con"
+" otros tipos de tráfico."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:145
+msgid ""
+"**Data (General) and Live Migration** can optionally be split onto "
+"different networks (separate IP ranges) even when on the same Virtual "
+"Switch."
+msgstr ""
+"**Data (General) y Live Migration** pueden opcionalmente separarse en "
+"redes diferentes (rangos de IP separados) incluso cuando están en el mismo Switch "
+"Virtual."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:148
+msgid "Combining Traffic Types"
+msgstr "Combinación de tipos de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:150
+msgid ""
+"You can select multiple traffic types for a single Virtual Switch. When "
+"combining types, the wizard adapts:"
+msgstr ""
+"Puede seleccionar múltiples tipos de tráfico para un solo Switch Virtual. Al "
+"combinar tipos, el asistente se adapta:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:152
+msgid ""
+"Selecting **VM Network + Data (General) + Live Migration** enables a "
+"5-step wizard (Select Type → Configure → IPv4 Settings → Port Settings → "
+"Review)."
+msgstr ""
+"Seleccionar **VM Network + Data (General) + Live Migration** habilita un "
+"asistente de 5 pasos (Seleccionar tipo → Configurar → Configuración IPv4 → Configuración de puertos → "
+"Revisión)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:153
+msgid ""
+"When both **Data (General)** and **Live Migration** are selected, a "
+"checkbox appears: *\"Data (General) and Live Migration are on different "
+"networks\"*. Enabling this allows you to assign separate IP ranges to "
+"each traffic type."
+msgstr ""
+"Cuando se seleccionan tanto **Data (General)** como **Live Migration**, aparece "
+"una casilla de verificación: *\"Data (General) and Live Migration are on different "
+"networks\"*. Habilitarla le permite asignar rangos de IP separados a "
+"cada tipo de tráfico."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:155
+msgid "Multiple traffic types selected with checkmarks"
+msgstr "Múltiples tipos de tráfico seleccionados con marcas de verificación"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:155
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_add_multi_type.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_add_multi_type.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:162
+msgid "Virtual Switch Prerequisites"
+msgstr "Requisitos previos del Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:164
+msgid "Before creating a Virtual Switch, ensure the following:"
+msgstr "Antes de crear un Switch Virtual, asegúrese de lo siguiente:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:166
+msgid ""
+"**Physical NICs are cabled and up** on each host that will participate in"
+" the Virtual Switch."
+msgstr ""
+"**Las NICs físicas están cableadas y activas** en cada host que participará en"
+" el Switch Virtual."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:167
+msgid ""
+"**Upstream switch ports are configured** for the desired mode "
+"(access/trunk, VLAN IDs, and LACP when using 802.3ad)."
+msgstr ""
+"**Los puertos del switch upstream están configurados** para el modo deseado "
+"(acceso/trunk, IDs de VLAN y LACP cuando se usa 802.3ad)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:168
+msgid ""
+"**Consistent NIC naming** across hosts if using uniform uplinks, or "
+"identify per-host NIC names in advance."
+msgstr ""
+"**Nombres de NIC consistentes** entre hosts si se utilizan uplinks uniformes, o "
+"identifique los nombres de NIC por host con anticipación."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:169
+msgid ""
+"**MTU support end-to-end** — All devices in the network path (switches, "
+"routers, storage arrays) must support the configured MTU (especially 9000"
+" for jumbo frames)."
+msgstr ""
+"**Soporte de MTU de extremo a extremo** — Todos los dispositivos en la ruta de red (switches, "
+"routers, matrices de almacenamiento) deben soportar el MTU configurado (especialmente 9000"
+" para tramas jumbo)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:170
+msgid ""
+"**iSCSI multipath** should be configured at the OS/protocol layer if "
+"using iSCSI storage."
+msgstr ""
+"**iSCSI multipath** debe configurarse en la capa de OS/protocolo si "
+"se utiliza almacenamiento iSCSI."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:172
+msgid ""
+"If a newly installed physical NIC is not available for selection, first "
+"add and safely validate it in Netplan, use ``sudo hvmcli interfaces list "
+"--filter ethernet`` to confirm host discovery, and refresh the cluster in"
+" the UI. See :ref:`hvm-host-prep` for the guarded procedure. Do not use a"
+" mutating ``hvmcli virtswitch`` command merely to make an OS interface "
+"appear in inventory."
+msgstr ""
+"Si una NIC física recién instalada no está disponible para selección, primero "
+"agréguela y valídela de forma segura en Netplan, use ``sudo hvmcli interfaces list "
+"--filter ethernet`` para confirmar el descubrimiento del host, y actualice el clúster en"
+" la interfaz de usuario. Consulte :ref:`hvm-host-prep` para el procedimiento guiado. No use un"
+" comando ``hvmcli virtswitch`` que modifique el estado simplemente para hacer que una interfaz del SO "
+"aparezca en el inventario."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:175
+msgid "Adding a Virtual Switch"
+msgstr "Agregar un Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:177
+msgid ""
+"Click **Add Virtual Switch** to launch the creation wizard. The wizard "
+"guides you through the following steps:"
+msgstr ""
+"Haga clic en **Add Virtual Switch** para iniciar el asistente de creación. El asistente "
+"le guía a través de los siguientes pasos:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:180
+msgid "Step 1: Select Type"
+msgstr "Paso 1: Seleccionar tipo"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:182
+msgid "Enter a **Name** for the Virtual Switch (maximum 12 characters)"
+msgstr "Ingrese un **Name** para el Switch Virtual (máximo 12 caracteres)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:183
+msgid "Select one or more **traffic types** for this Virtual Switch"
+msgstr "Seleccione uno o más **tipos de tráfico** para este Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:184
+msgid "Click **Next**"
+msgstr "Haga clic en **Next**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:186
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:265
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:284
+msgid "Note"
+msgstr "Nota"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:186
+msgid ""
+"The Virtual Switch name is limited to 12 characters because it is used to"
+" derive the underlying Linux bridge name (name + ``-br`` suffix), which "
+"must fit within the Linux 15-character interface name limit."
+msgstr ""
+"El nombre del Switch Virtual está limitado a 12 caracteres porque se utiliza para"
+" derivar el nombre del bridge Linux subyacente (nombre + sufijo ``-br``), que "
+"debe caber dentro del límite de 15 caracteres para nombres de interfaz de Linux."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:188
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:236
+msgid "Tip"
+msgstr "Consejo"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:188
+msgid ""
+"The default ``vs0`` created during cluster provisioning can be renamed "
+"and edited, but it should not be deleted unless an alternative VM Network"
+" Virtual Switch is in place. At least one Virtual Switch with the VM "
+"Network traffic type must exist for VMs to have network connectivity."
+msgstr ""
+"El ``vs0`` predeterminado creado durante el aprovisionamiento del clúster puede renombrarse "
+"y editarse, pero no debe eliminarse a menos que exista un Switch Virtual de Red de VM"
+" alternativo. Debe existir al menos un Switch Virtual con el tipo de tráfico "
+"Red de VM para que las VMs tengan conectividad de red."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:191
+msgid "Step 2: Configure"
+msgstr "Paso 2: Configurar"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:193
+msgid "Configure the physical uplinks and bond mode for the Virtual Switch."
+msgstr "Configure los uplinks físicos y el modo de bond para el Switch Virtual."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:195
+msgid "Configure step - Uniform uplinks with No Bonding"
+msgstr "Paso de configuración - Uplinks uniformes sin bonding"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:195
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:228
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_uniform.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_uniform.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:198
+msgid "**Bond Mode**"
+msgstr "**Modo de bond**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:200
+msgid "Select how multiple NICs are aggregated:"
+msgstr "Seleccione cómo se agregan múltiples NICs:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:206
+msgid "Bond Mode"
+msgstr "Modo de bond"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:208
+msgid "**No Bonding**"
+msgstr "**Sin bonding**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:209
+msgid ""
+"Single NIC per host. No redundancy at the link level. Maximum 1 NIC per "
+"host."
+msgstr ""
+"NIC única por host. Sin redundancia a nivel de enlace. Máximo 1 NIC por "
+"host."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:210
+msgid "**Active Backup**"
+msgstr "**Active Backup**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:211
+msgid ""
+"One NIC active, one standby. Automatic failover if the active link fails."
+" No switch-side configuration required."
+msgstr ""
+"Una NIC activa, una en espera. Conmutación por error automática si el enlace activo falla."
+" No se requiere configuración en el switch."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:212
+msgid "**LACP (802.3ad)**"
+msgstr "**LACP (802.3ad)**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:213
+msgid ""
+"Both NICs participate in an 802.3ad bond. The connected upstream switch "
+"ports must belong to the same compatible LACP group."
+msgstr ""
+"Ambas NICs participan en un bond 802.3ad. Los puertos del switch upstream conectados "
+"deben pertenecer al mismo grupo LACP compatible."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:215
+msgid "Bond mode dropdown showing available options"
+msgstr "Menú desplegable de modo de bond mostrando las opciones disponibles"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:215
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_bond_modes.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_bond_modes.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:218
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:335
+msgid "Warning"
+msgstr "Advertencia"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:218
+msgid ""
+"When using **LACP (802.3ad)**, configure the upstream physical switch "
+"ports for the same LACP group before applying the Virtual Switch. "
+"Mismatched configurations can cause connectivity loss."
+msgstr ""
+"Al usar **LACP (802.3ad)**, configure los puertos del switch físico upstream "
+"para el mismo grupo LACP antes de aplicar el Switch Virtual. "
+"Las configuraciones no coincidentes pueden causar pérdida de conectividad."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:220
+msgid ""
+"Do not assume that an Active Backup bond receives universal MII polling, "
+"up-delay, or down-delay values automatically. These settings can vary by "
+"HVM release and networking backend, and automatic defaults are not "
+"guaranteed. Before carrying production traffic, inspect the effective "
+"bond configuration on each host and configure the required values "
+"explicitly through tooling supported by that HVM release. Use the product"
+" UI or ``hvmcli`` capabilities documented for the installed release; do "
+"not copy unverified values from another release or backend."
+msgstr ""
+"No asuma que un bond Active Backup recibe valores universales de sondeo MII, "
+"up-delay o down-delay automáticamente. Estos ajustes pueden variar según "
+"la versión de HVM y el backend de red, y los valores predeterminados automáticos no están "
+"garantizados. Antes de transportar tráfico de producción, inspeccione la configuración "
+"efectiva del bond en cada host y configure los valores requeridos "
+"explícitamente a través de las herramientas soportadas por esa versión de HVM. Use la interfaz "
+"de usuario del producto o las capacidades de ``hvmcli`` documentadas para la versión instalada; no "
+"copie valores no verificados de otra versión o backend."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:222
+msgid "**Uplink NICs**"
+msgstr "**NICs de uplink**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:224
+msgid "Choose how physical NICs are assigned to hosts:"
+msgstr "Elija cómo se asignan las NICs físicas a los hosts:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:226
+msgid ""
+"**Uniform uplinks (all hosts)** — The same NIC(s) are used across all "
+"hosts. Select from the available interfaces shown as green-tagged "
+"buttons."
+msgstr ""
+"**Uplinks uniformes (todos los hosts)** — Se utilizan las mismas NICs en todos "
+"los hosts. Seleccione de las interfaces disponibles mostradas como botones "
+"con etiqueta verde."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:228
+msgid "Uniform uplink selection"
+msgstr "Selección de uplink uniforme"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:231
+msgid ""
+"**Set uplink NICs per host** — Different NICs can be selected for each "
+"individual host. This is useful when hosts have heterogeneous NIC naming "
+"or hardware configurations."
+msgstr ""
+"**Establecer NICs de uplink por host** — Se pueden seleccionar diferentes NICs para cada "
+"host individual. Esto es útil cuando los hosts tienen nombres de NIC heterogéneos "
+"o configuraciones de hardware diferentes."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:233
+msgid "Per-host uplink selection"
+msgstr "Selección de uplink por host"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:233
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_per_host.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_per_host.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:236
+msgid ""
+"Use **Set uplink NICs per host** when servers in the cluster have "
+"different NIC names (e.g., different hardware generations with different "
+"PCIe slot assignments)."
+msgstr ""
+"Use **Set uplink NICs per host** cuando los servidores del clúster tienen "
+"diferentes nombres de NIC (por ejemplo, diferentes generaciones de hardware con diferentes "
+"asignaciones de ranuras PCIe)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:238
+msgid "**iSCSI Configuration**"
+msgstr "**Configuración de iSCSI**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:240
+msgid ""
+"When **Data (iSCSI)** is the selected traffic type, the configure step "
+"enforces specific constraints:"
+msgstr ""
+"Cuando **Data (iSCSI)** es el tipo de tráfico seleccionado, el paso de configuración "
+"aplica restricciones específicas:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:242
+msgid "Bond mode is locked to **No Bonding**"
+msgstr "El modo de bond está bloqueado en **No Bonding**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:243
+msgid "Maximum **1 NIC** per host"
+msgstr "Máximo **1 NIC** por host"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:245
+msgid ""
+"This is because iSCSI relies on multipath I/O at the protocol layer for "
+"redundancy, not link-layer bonding."
+msgstr ""
+"Esto se debe a que iSCSI depende de multipath I/O en la capa de protocolo para "
+"la redundancia, no del bonding a nivel de enlace."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:247
+msgid "iSCSI configuration showing single interface constraint"
+msgstr "Configuración de iSCSI mostrando la restricción de interfaz única"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:247
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_iscsi.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_configure_iscsi.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:251
+msgid "Step 3: IPv4 Settings"
+msgstr "Paso 3: Configuración IPv4"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:253
+msgid ""
+"Configure IP addressing for traffic types that require host-level IPs "
+"(Data and Live Migration networks). VM Network traffic does not require "
+"host IPs since VMs get their own addresses."
+msgstr ""
+"Configure el direccionamiento IP para los tipos de tráfico que requieren IPs a nivel de host "
+"(redes de Data y Live Migration). El tráfico de Red de VM no requiere "
+"IPs de host ya que las VMs obtienen sus propias direcciones."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:255
+msgid "IPv4 Settings with Data (General) and Live Migration on different networks"
+msgstr "Configuración IPv4 con Data (General) y Live Migration en redes diferentes"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:255
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_ipv4_settings.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_ipv4_settings.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:258
+msgid "For each traffic type requiring IP configuration:"
+msgstr "Para cada tipo de tráfico que requiere configuración de IP:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:260
+msgid ""
+"**Start IP Address** — The first IP in the range to assign to hosts. Each"
+" host in the cluster receives the next sequential IP."
+msgstr ""
+"**Start IP Address** — La primera IP del rango a asignar a los hosts. Cada"
+" host del clúster recibe la siguiente IP secuencial."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:261
+msgid "**Subnet Mask** — Network subnet mask (e.g., ``255.255.255.0``)"
+msgstr "**Subnet Mask** — Máscara de subred de la red (por ejemplo, ``255.255.255.0``)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:262
+msgid "**Default Gateway** — Gateway for this traffic network"
+msgstr "**Default Gateway** — Puerta de enlace para esta red de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:263
+msgid ""
+"**Auto Apply to Servers** — When enabled, the IP addresses are "
+"automatically distributed and applied to all current cluster hosts"
+msgstr ""
+"**Auto Apply to Servers** — Cuando está habilitado, las direcciones IP se "
+"distribuyen y aplican automáticamente a todos los hosts actuales del clúster"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:265
+msgid ""
+"Gateways specified for Data (General), Live Migration, and iSCSI segments"
+" are stored as **metadata only** within the Virtual Switch configuration."
+" They are **not** applied to the host routing table. Only the "
+"**Management Gateway** (configured during cluster provisioning) is "
+"actively used for routing. These gateway values are retained for "
+"documentation and future reference purposes."
+msgstr ""
+"Las puertas de enlace especificadas para los segmentos Data (General), Live Migration e iSCSI"
+" se almacenan solo como **metadatos** dentro de la configuración del Switch Virtual."
+" **No** se aplican a la tabla de enrutamiento del host. Solo la "
+"**puerta de enlace de gestión** (configurada durante el aprovisionamiento del clúster) se "
+"utiliza activamente para el enrutamiento. Estos valores de puerta de enlace se conservan con fines "
+"de documentación y referencia futura."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:267
+msgid ""
+"When **Data (General) and Live Migration are on different networks**, "
+"separate IP configuration sections appear for each traffic type, allowing"
+" you to place them on different subnets."
+msgstr ""
+"Cuando **Data (General) y Live Migration están en redes diferentes**, "
+"aparecen secciones de configuración de IP separadas para cada tipo de tráfico, lo que le permite"
+" ubicarlos en subredes diferentes."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:269
+msgid "IPv4 Settings for a single traffic type"
+msgstr "Configuración IPv4 para un solo tipo de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:269
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_ipv4_single_type.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_ipv4_single_type.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:272
+msgid ""
+"**Switch to Advanced Mode** — Enables per-host IP assignment for "
+"scenarios where automatic sequential allocation is not appropriate."
+msgstr ""
+"**Switch to Advanced Mode** — Habilita la asignación de IP por host para "
+"escenarios donde la asignación secuencial automática no es apropiada."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:275
+msgid "Step 4: Port Settings"
+msgstr "Paso 4: Configuración de puertos"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:277
+msgid "Configure VLAN tagging and MTU settings."
+msgstr "Configure el etiquetado de VLAN y los ajustes de MTU."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:279
+msgid "Port Settings with VLAN ID and MTU"
+msgstr "Configuración de puertos con ID de VLAN y MTU"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:279
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_port_settings.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_port_settings.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:282
+msgid ""
+"**VLAN ID per Traffic Type** — Optional VLAN tag (2–4094) applied to the "
+"traffic. When set, traffic is tagged with this VLAN ID on the physical "
+"uplink. Leave empty for untagged (native VLAN) traffic. VLAN 1 is "
+"reserved and cannot be specified."
+msgstr ""
+"**VLAN ID per Traffic Type** — Etiqueta VLAN opcional (2–4094) aplicada al "
+"tráfico. Cuando se establece, el tráfico se etiqueta con este ID de VLAN en el "
+"uplink físico. Deje vacío para tráfico sin etiquetar (VLAN nativa). La VLAN 1 está "
+"reservada y no se puede especificar."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:284
+msgid ""
+"When a VLAN ID is configured, the upstream physical switch ports must be "
+"configured as trunk ports that allow the specified VLAN(s). Omitting the "
+"VLAN ID means the traffic is sent untagged on the native VLAN of the "
+"switch port."
+msgstr ""
+"Cuando se configura un ID de VLAN, los puertos del switch físico upstream deben "
+"configurarse como puertos trunk que permitan las VLANs especificadas. Omitir el "
+"ID de VLAN significa que el tráfico se envía sin etiquetar en la VLAN nativa del "
+"puerto del switch."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:286
+msgid ""
+"**Global MTU** — Maximum Transmission Unit size for all interfaces in "
+"this Virtual Switch. Options:"
+msgstr ""
+"**Global MTU** — Tamaño de la Unidad Máxima de Transmisión para todas las interfaces en "
+"este Switch Virtual. Opciones:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:288
+msgid "**1500** — Standard MTU (default)"
+msgstr "**1500** — MTU estándar (predeterminado)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:289
+msgid "**9000** — Jumbo frames, when required by the network design"
+msgstr "**9000** — Tramas jumbo, cuando lo requiere el diseño de red"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:291
+msgid ""
+"Select MTU 9000 only when the complete path—including host interfaces, "
+"switches, routers, and storage endpoints—has been configured and "
+"validated for jumbo frames. Otherwise retain the default MTU 1500. The "
+"MTU is optional in the product configuration; 9000 is not a universal HVM"
+" requirement."
+msgstr ""
+"Seleccione MTU 9000 solo cuando la ruta completa—incluyendo interfaces de host, "
+"switches, routers y endpoints de almacenamiento—haya sido configurada y "
+"validada para tramas jumbo. De lo contrario, mantenga el MTU predeterminado 1500. El "
+"MTU es opcional en la configuración del producto; 9000 no es un requisito universal de HVM."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:293
+msgid "Port Settings for a single traffic type"
+msgstr "Configuración de puertos para un solo tipo de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:293
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_port_settings_single.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_port_settings_single.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:297
+msgid "Step 5: Review"
+msgstr "Paso 5: Revisión"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:299
+msgid "Review the complete Virtual Switch configuration before applying."
+msgstr "Revise la configuración completa del Switch Virtual antes de aplicar."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:301
+msgid "Review step showing complete configuration summary"
+msgstr "Paso de revisión mostrando el resumen completo de configuración"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:301
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_review.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_review.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:304
+msgid "The review displays:"
+msgstr "La revisión muestra:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:306
+msgid "**Name** — Virtual Switch name"
+msgstr "**Name** — Nombre del Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:307
+msgid "**Traffic Types** — Selected traffic types"
+msgstr "**Traffic Types** — Tipos de tráfico seleccionados"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:308
+msgid "**Bond Mode** — Bond configuration"
+msgstr "**Bond Mode** — Configuración de bond"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:309
+msgid "**Uplink NICs** — Per-host NIC assignments"
+msgstr "**Uplink NICs** — Asignaciones de NIC por host"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:311
+msgid ""
+"Click **Finish** to create the Virtual Switch. The configuration is "
+"applied to all hosts in the cluster."
+msgstr ""
+"Haga clic en **Finish** para crear el Switch Virtual. La configuración se "
+"aplica a todos los hosts del clúster."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:314
+msgid "Editing a Virtual Switch"
+msgstr "Editar un Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:316
+msgid ""
+"Click the edit icon (pencil) next to a Virtual Switch to modify its "
+"configuration. You can change:"
+msgstr ""
+"Haga clic en el icono de edición (lápiz) junto a un Switch Virtual para modificar su "
+"configuración. Puede cambiar:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:318
+msgid "Uplink NICs (add/remove interfaces)"
+msgstr "NICs de uplink (agregar/eliminar interfaces)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:319
+msgid "Bond mode"
+msgstr "Modo de bond"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:320
+msgid "VLAN tags"
+msgstr "Etiquetas VLAN"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:321
+msgid "MTU settings"
+msgstr "Ajustes de MTU"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:322
+msgid "IP addresses"
+msgstr "Direcciones IP"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:323
+msgid "Traffic types"
+msgstr "Tipos de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:325
+msgid ""
+"Editing a Virtual Switch that is actively carrying traffic may cause a "
+"brief network interruption as the new configuration is applied across "
+"hosts. Specifically, changing uplinks, bond mode, MTU, or VLAN settings "
+"will temporarily disrupt traffic on the affected networks. Plan these "
+"changes during a maintenance window for production environments."
+msgstr ""
+"Editar un Switch Virtual que está transportando tráfico activamente puede causar una "
+"breve interrupción de red mientras la nueva configuración se aplica en todos los "
+"hosts. Específicamente, cambiar uplinks, modo de bond, MTU o configuración de VLAN "
+"interrumpirá temporalmente el tráfico en las redes afectadas. Planifique estos "
+"cambios durante una ventana de mantenimiento para entornos de producción."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:328
+msgid "Deleting a Virtual Switch"
+msgstr "Eliminar un Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:330
+msgid ""
+"Click the delete icon (trash) next to a Virtual Switch to remove it. A "
+"confirmation dialog appears before the deletion proceeds."
+msgstr ""
+"Haga clic en el icono de eliminación (papelera) junto a un Switch Virtual para eliminarlo. "
+"Aparece un diálogo de confirmación antes de que proceda la eliminación."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:332
+msgid "Delete Virtual Switch confirmation dialog"
+msgstr "Diálogo de confirmación para eliminar Switch Virtual"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:332
+msgid ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_delete_confirm.png"
+msgstr ""
+".. image:: "
+"/images/infrastructure/clusters/hvm/virtual_switches/vs_delete_confirm.png"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:337
+msgid ""
+"You cannot delete a Virtual Switch that has active VMs or networks "
+"attached to it."
+msgstr ""
+"No puede eliminar un Switch Virtual que tenga VMs o redes activas "
+"asociadas."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:338
+msgid ""
+"Deleting a Virtual Switch removes all associated host networking "
+"configuration (bridges, bonds, VLANs) from every node in the cluster."
+msgstr ""
+"Eliminar un Switch Virtual elimina toda la configuración de red del host "
+"asociada (bridges, bonds, VLANs) de cada nodo del clúster."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:339
+msgid ""
+"The default ``vs0`` should not be deleted unless you have an alternative "
+"VM network configured."
+msgstr ""
+"El ``vs0`` predeterminado no debe eliminarse a menos que tenga una red de VM "
+"alternativa configurada."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:342
+msgid "Virtual Switch Best Practices"
+msgstr "Mejores prácticas de Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:345
+msgid "Network Design"
+msgstr "Diseño de red"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:347
+msgid ""
+"**Separate traffic types for production environments.** Use dedicated "
+"Virtual Switches for VM, storage, and migration traffic to avoid "
+"contention and simplify troubleshooting."
+msgstr ""
+"**Separe los tipos de tráfico para entornos de producción.** Use Switches "
+"Virtuales dedicados para el tráfico de VM, almacenamiento y migración para evitar "
+"contención y simplificar la resolución de problemas."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:348
+msgid "**Use at least 4 NICs per host** for proper traffic segregation:"
+msgstr "**Use al menos 4 NICs por host** para una segregación adecuada del tráfico:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:350
+msgid "2 NICs (bonded) for VM Network"
+msgstr "2 NICs (en bond) para Red de VM"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:351
+msgid "2 NICs (bonded) for Data/Live Migration"
+msgstr "2 NICs (en bond) para Data/Live Migration"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:353
+msgid ""
+"**If only 2 NICs are available**, you can combine VM Network + Data "
+"(General) + Live Migration on a single bonded Virtual Switch. Use VLANs "
+"to segregate traffic logically."
+msgstr ""
+"**Si solo hay 2 NICs disponibles**, puede combinar Red de VM + Data "
+"(General) + Live Migration en un solo Switch Virtual con bond. Use VLANs "
+"para segregar el tráfico lógicamente."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:356
+msgid "Bond Mode Selection"
+msgstr "Selección del modo de bond"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:358
+msgid ""
+"**Active Backup** is recommended for most environments. It provides "
+"simple redundancy with no switch-side configuration required."
+msgstr ""
+"**Active Backup** se recomienda para la mayoría de los entornos. Proporciona "
+"redundancia simple sin necesidad de configuración en el switch."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:359
+msgid ""
+"**LACP (802.3ad)** uses both links and requires a matching LACP group on "
+"the upstream physical switch. Validate the bond and failover before "
+"carrying production traffic."
+msgstr ""
+"**LACP (802.3ad)** utiliza ambos enlaces y requiere un grupo LACP coincidente en "
+"el switch físico upstream. Valide el bond y la conmutación por error antes de "
+"transportar tráfico de producción."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:360
+msgid ""
+"**No Bonding** is appropriate for non-critical traffic or environments "
+"with limited NIC availability. Not recommended for production VM "
+"networks."
+msgstr ""
+"**Sin bonding** es apropiado para tráfico no crítico o entornos "
+"con disponibilidad limitada de NICs. No se recomienda para redes de VM de producción."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:363
+msgid "VLAN Configuration"
+msgstr "Configuración de VLAN"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:365
+msgid ""
+"Use VLANs to segregate different traffic types when they share the same "
+"physical uplinks."
+msgstr ""
+"Use VLANs para segregar diferentes tipos de tráfico cuando comparten los mismos "
+"uplinks físicos."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:366
+msgid ""
+"Ensure the upstream switch ports are configured as trunk ports carrying "
+"the required VLAN IDs."
+msgstr ""
+"Asegúrese de que los puertos del switch upstream estén configurados como puertos trunk que transporten "
+"los IDs de VLAN requeridos."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:367
+msgid ""
+"Document your VLAN assignments to avoid conflicts and simplify "
+"troubleshooting."
+msgstr ""
+"Documente sus asignaciones de VLAN para evitar conflictos y simplificar "
+"la resolución de problemas."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:370
+msgid "When to Use Tagged Bonds (VLAN-Tagged Bond Interfaces)"
+msgstr "Cuándo usar bonds etiquetados (Interfaces de bond con etiqueta VLAN)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:372
+msgid ""
+"A **tagged bond** is a bonded interface (two or more NICs) that carries "
+"multiple VLAN-tagged traffic types over the same physical link pair. This"
+" is the most common production design pattern for HVM clusters."
+msgstr ""
+"Un **bond etiquetado** es una interfaz en bond (dos o más NICs) que transporta "
+"múltiples tipos de tráfico con etiqueta VLAN sobre el mismo par de enlaces físicos. Este"
+" es el patrón de diseño de producción más común para clústeres HVM."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:374
+msgid "**Use tagged bonds when:**"
+msgstr "**Use bonds etiquetados cuando:**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:376
+msgid ""
+"You have limited physical NICs (2–4 per host) but need to separate "
+"multiple traffic types (VM, storage, migration)"
+msgstr ""
+"Tiene NICs físicas limitadas (2–4 por host) pero necesita separar "
+"múltiples tipos de tráfico (VM, almacenamiento, migración)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:377
+msgid ""
+"You want link redundancy (bond) AND traffic isolation (VLANs) on the same"
+" physical uplinks"
+msgstr ""
+"Desea redundancia de enlace (bond) Y aislamiento de tráfico (VLANs) en los mismos"
+" uplinks físicos"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:378
+msgid ""
+"You are replicating a VMware design where a single vSwitch with multiple "
+"port groups (each with a VLAN ID) carried different traffic types"
+msgstr ""
+"Está replicando un diseño de VMware donde un solo vSwitch con múltiples "
+"grupos de puertos (cada uno con un ID de VLAN) transportaba diferentes tipos de tráfico"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:380
+msgid "**How it works in Virtual Switch:**"
+msgstr "**Cómo funciona en el Switch Virtual:**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:382
+msgid ""
+"A single Virtual Switch with a bonded uplink (Active-Backup or LACP) can "
+"carry multiple traffic types, each on a separate VLAN. For example:"
+msgstr ""
+"Un solo Switch Virtual con un uplink en bond (Active-Backup o LACP) puede "
+"transportar múltiples tipos de tráfico, cada uno en una VLAN separada. Por ejemplo:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:389
+msgid "VLAN ID"
+msgstr "ID de VLAN"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:392
+msgid "100"
+msgstr "100"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:393
+msgid "Guest VM traffic, tagged on VLAN 100"
+msgstr "Tráfico de VM invitada, etiquetado en VLAN 100"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:395
+msgid "200"
+msgstr "200"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:396
+msgid "NFS storage traffic to storage array, tagged on VLAN 200"
+msgstr "Tráfico de almacenamiento NFS hacia la matriz de almacenamiento, etiquetado en VLAN 200"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:398
+msgid "300"
+msgstr "300"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:399
+msgid "VM memory transfer during live migration, tagged on VLAN 300"
+msgstr "Transferencia de memoria de VM durante la migración en vivo, etiquetado en VLAN 300"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:401
+msgid ""
+"In this design, the upstream physical switch ports must be configured as "
+"**trunk ports** allowing VLANs 100, 200, and 300. The bond provides link "
+"redundancy; the VLAN tags provide traffic isolation."
+msgstr ""
+"En este diseño, los puertos del switch físico upstream deben configurarse como "
+"**puertos trunk** que permitan las VLANs 100, 200 y 300. El bond proporciona redundancia "
+"de enlace; las etiquetas VLAN proporcionan aislamiento de tráfico."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:403
+msgid ""
+"**VMware analogy:** This is equivalent to a VMware vSwitch with multiple "
+"port groups, each assigned a different VLAN ID, all sharing the same "
+"physical uplinks in a NIC team."
+msgstr ""
+"**Analogía con VMware:** Esto es equivalente a un vSwitch de VMware con múltiples "
+"grupos de puertos, cada uno asignado a un ID de VLAN diferente, todos compartiendo los mismos "
+"uplinks físicos en un equipo de NIC."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:405
+msgid "**When NOT to use tagged bonds:**"
+msgstr "**Cuándo NO usar bonds etiquetados:**"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:407
+msgid ""
+"If you have enough physical NICs to dedicate separate bonds to each "
+"traffic type (e.g., 8+ NICs per host), separate Virtual Switches without "
+"VLANs are simpler to troubleshoot"
+msgstr ""
+"Si tiene suficientes NICs físicas para dedicar bonds separados a cada "
+"tipo de tráfico (por ejemplo, 8+ NICs por host), los Switches Virtuales separados sin "
+"VLANs son más fáciles de diagnosticar"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:408
+msgid "If your physical switch infrastructure does not support VLAN trunking"
+msgstr "Si su infraestructura de switches físicos no soporta trunking de VLAN"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:409
+msgid ""
+"For iSCSI traffic that requires dedicated non-bonded NICs for multipath "
+"(use a separate iSCSI Virtual Switch instead)"
+msgstr ""
+"Para tráfico iSCSI que requiere NICs dedicadas sin bond para multipath "
+"(use un Switch Virtual iSCSI separado en su lugar)"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:412
+msgid "MTU Recommendations"
+msgstr "Recomendaciones de MTU"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:414
+msgid "**VM Network**: Standard MTU (1500) is usually sufficient."
+msgstr "**Red de VM**: El MTU estándar (1500) suele ser suficiente."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:415
+msgid ""
+"**Data (General)**: Use the MTU required by the end-to-end storage "
+"network design."
+msgstr ""
+"**Data (General)**: Use el MTU requerido por el diseño de red de almacenamiento "
+"de extremo a extremo."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:416
+msgid ""
+"**Data (iSCSI)**: Use the MTU required by the end-to-end storage network "
+"design."
+msgstr ""
+"**Data (iSCSI)**: Use el MTU requerido por el diseño de red de almacenamiento "
+"de extremo a extremo."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:417
+msgid ""
+"**Live Migration**: Use a consistent MTU across the complete migration "
+"path."
+msgstr ""
+"**Live Migration**: Use un MTU consistente en toda la ruta de migración."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:418
+msgid "**SDN**: Match your SDN controller requirements."
+msgstr "**SDN**: Coincida con los requisitos de su controlador SDN."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:420
+msgid ""
+"All devices in the network path (host NICs, switches, routers, storage "
+"arrays) must support the configured MTU. A mismatch will cause packet "
+"fragmentation or drops."
+msgstr ""
+"Todos los dispositivos en la ruta de red (NICs del host, switches, routers, matrices "
+"de almacenamiento) deben soportar el MTU configurado. Una discrepancia causará "
+"fragmentación o pérdida de paquetes."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:423
+msgid "Virtual Switch Limitations"
+msgstr "Limitaciones de los Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:425
+msgid "Maximum **8 Virtual Switches** per cluster."
+msgstr "Máximo **8 Switches Virtuales** por clúster."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:426
+msgid "Virtual Switch names are limited to **12 characters**."
+msgstr "Los nombres de los Switches Virtuales están limitados a **12 caracteres**."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:427
+msgid "Each Virtual Switch supports **1 or 2 uplink NICs** per host."
+msgstr "Cada Switch Virtual soporta **1 o 2 NICs de uplink** por host."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:428
+msgid ""
+"**iSCSI** Virtual Switches are limited to a single NIC (no bonding) — "
+"multipath is handled at the protocol layer."
+msgstr ""
+"Los Switches Virtuales **iSCSI** están limitados a una sola NIC (sin bonding) — "
+"el multipath se gestiona en la capa de protocolo."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:429
+msgid "**SDN** Virtual Switches cannot share uplinks with other traffic types."
+msgstr "Los Switches Virtuales **SDN** no pueden compartir uplinks con otros tipos de tráfico."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:430
+msgid ""
+"Bond mode changes on an active Virtual Switch may cause brief "
+"connectivity interruption."
+msgstr ""
+"Los cambios de modo de bond en un Switch Virtual activo pueden causar una breve "
+"interrupción de conectividad."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:431
+msgid ""
+"All hosts in the cluster must have the selected uplink NIC(s) available. "
+"When using **Uniform uplinks**, ensure consistent NIC naming across "
+"hosts. When using **Set uplink NICs per host**, each host must have its "
+"individually assigned NIC(s) available."
+msgstr ""
+"Todos los hosts del clúster deben tener las NICs de uplink seleccionadas disponibles. "
+"Al usar **Uniform uplinks**, asegúrese de que los nombres de NIC sean consistentes entre "
+"los hosts. Al usar **Set uplink NICs per host**, cada host debe tener sus "
+"NICs asignadas individualmente disponibles."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:432
+msgid ""
+"Only **one Live Migration interface** is allowed per cluster. You cannot "
+"configure Live Migration on multiple Virtual Switches."
+msgstr ""
+"Solo se permite **una interfaz de Live Migration** por clúster. No puede "
+"configurar Live Migration en múltiples Switches Virtuales."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:433
+msgid ""
+"When adding **Data (General)** or **Live Migration** segments to the "
+"management Virtual Switch (``vs0``), VLAN tagging is required for each "
+"segment."
+msgstr ""
+"Al agregar segmentos de **Data (General)** o **Live Migration** al "
+"Switch Virtual de gestión (``vs0``), se requiere el etiquetado de VLAN para cada "
+"segmento."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:436
+msgid "Virtual Switch Troubleshooting"
+msgstr "Resolución de problemas de Switches Virtuales"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:441
+msgid "Read-only Host Verification"
+msgstr "Verificación de host de solo lectura"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:443
+msgid ""
+"Use the UI to change Virtual Switch configuration. On a layout 2.0 host, "
+"the following ``hvmcli`` commands are read-only and can be used to "
+"compare host state with the cluster's **Network** tab:"
+msgstr ""
+"Use la interfaz de usuario para cambiar la configuración del Switch Virtual. En un host de diseño 2.0, "
+"los siguientes comandos de ``hvmcli`` son de solo lectura y pueden usarse para "
+"comparar el estado del host con la pestaña **Network** del clúster:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:445
+msgid ""
+"sudo hvmcli virtswitch list\n"
+"sudo hvmcli virtswitch show --virtswitch-name <virtual-switch-name>\n"
+"sudo hvmcli virtswitch status --virtswitch-name <virtual-switch-name> "
+"--json\n"
+"sudo hvmcli network list"
+msgstr ""
+"sudo hvmcli virtswitch list\n"
+"sudo hvmcli virtswitch show --virtswitch-name <virtual-switch-name>\n"
+"sudo hvmcli virtswitch status --virtswitch-name <virtual-switch-name> "
+"--json\n"
+"sudo hvmcli network list"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:452
+msgid ""
+"Names, interfaces, addresses, and status values vary by cluster. The "
+"detailed view reports the managed uplink, bond mode, MTU, traffic "
+"segments, and optional VLAN IDs. An untagged segment has no VLAN ID. Do "
+"not use ``create``, ``edit``, ``add-segment``, ``delete-segment``, or "
+"``delete`` as diagnostic commands; they mutate host networking."
+msgstr ""
+"Los nombres, interfaces, direcciones y valores de estado varían según el clúster. La "
+"vista detallada informa el uplink gestionado, modo de bond, MTU, segmentos de tráfico "
+"e IDs de VLAN opcionales. Un segmento sin etiquetar no tiene ID de VLAN. No "
+"use ``create``, ``edit``, ``add-segment``, ``delete-segment`` o "
+"``delete`` como comandos de diagnóstico; estos modifican la configuración de red del host."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:454
+msgid ""
+"For an Active Backup bond, also inspect the effective host-side bond "
+"configuration for MII polling, up-delay, and down-delay. The read-only "
+"Virtual Switch output does not establish that any particular values were "
+"applied. If the supported UI or ``hvmcli`` version does not expose these "
+"settings, use the release-specific supported inspection and configuration"
+" procedure supplied by HPE Support before placing the bond in service."
+msgstr ""
+"Para un bond Active Backup, también inspeccione la configuración efectiva del bond "
+"en el lado del host para sondeo MII, up-delay y down-delay. La salida de solo lectura "
+"del Switch Virtual no establece que se hayan aplicado valores particulares. "
+"Si la versión soportada de la interfaz de usuario o ``hvmcli`` no expone estos "
+"ajustes, use el procedimiento de inspección y configuración específico de la versión "
+"proporcionado por el soporte de HPE antes de poner el bond en servicio."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:457
+msgid "Virtual Switch Not Applying"
+msgstr "El Switch Virtual no se aplica"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:459
+msgid "If a Virtual Switch fails to apply to a host:"
+msgstr "Si un Switch Virtual no se aplica a un host:"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:461
+msgid ""
+"Check host connectivity from the cluster — ensure the host is reachable "
+"and the Morpheus agent is running."
+msgstr ""
+"Verifique la conectividad del host desde el clúster — asegúrese de que el host sea accesible "
+"y que el agente de Morpheus esté en ejecución."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:462
+msgid ""
+"Review ``/var/log/hvmcli/`` on the affected host for detailed error "
+"messages."
+msgstr ""
+"Revise ``/var/log/hvmcli/`` en el host afectado para mensajes de error detallados."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:463
+msgid "Verify the selected uplink NICs exist and are up on the host."
+msgstr "Verifique que las NICs de uplink seleccionadas existan y estén activas en el host."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:464
+msgid ""
+"Check that no conflicting network configuration exists in "
+"``/etc/netplan/``."
+msgstr ""
+"Verifique que no exista una configuración de red en conflicto en "
+"``/etc/netplan/``."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:467
+msgid "LACP Bond Not Working"
+msgstr "El bond LACP no funciona"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:469
+msgid "Verify that LACP is configured on the upstream physical switch ports."
+msgstr "Verifique que LACP esté configurado en los puertos del switch físico upstream."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:470
+msgid "Ensure both switch and host are using the same LACP mode (802.3ad)."
+msgstr "Asegúrese de que tanto el switch como el host estén usando el mismo modo LACP (802.3ad)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:471
+msgid ""
+"Check that both uplink NICs have physical link (green LED or ``ip link "
+"show`` state UP)."
+msgstr ""
+"Verifique que ambas NICs de uplink tengan enlace físico (LED verde o estado UP en ``ip link "
+"show``)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:474
+msgid "VM Network Connectivity Issues"
+msgstr "Problemas de conectividad de red de VM"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:476
+msgid ""
+"Verify the Virtual Switch bridge is up: check ``ip link show`` on the "
+"host for the bridge device (``<name>-br``)."
+msgstr ""
+"Verifique que el bridge del Switch Virtual esté activo: compruebe ``ip link show`` en el "
+"host para el dispositivo bridge (``<name>-br``)."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:477
+msgid ""
+"If using VLANs, confirm the upstream switch trunk port carries the "
+"configured VLAN."
+msgstr ""
+"Si usa VLANs, confirme que el puerto trunk del switch upstream transporta la "
+"VLAN configurada."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:478
+msgid ""
+"Check that libvirt network is active: ``virsh net-list`` should show the "
+"Virtual Switch network as active."
+msgstr ""
+"Verifique que la red de libvirt esté activa: ``virsh net-list`` debería mostrar la "
+"red del Switch Virtual como activa."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:481
+msgid "Storage Network Unreachable"
+msgstr "Red de almacenamiento inaccesible"
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:483
+msgid "Verify the IP was correctly assigned to the host interface."
+msgstr "Verifique que la IP fue asignada correctamente a la interfaz del host."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:484
+msgid ""
+"Check that the storage array or NFS server is on the same subnet or "
+"reachable via the configured gateway."
+msgstr ""
+"Verifique que la matriz de almacenamiento o el servidor NFS esté en la misma subred o "
+"sea accesible a través de la puerta de enlace configurada."
+
+#: ../../infrastructure/clusters/hvm/virtual_switches.rst:485
+msgid "For iSCSI, verify multipath is configured correctly at the OS level."
+msgstr "Para iSCSI, verifique que el multipath esté configurado correctamente a nivel del SO."

@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:2
+msgid "OneLogin"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:4
+msgid ""
+"By integrating OneLogin with |morpheus|, users can access |morpheus| with"
+" their existing credentials set up within the OneLogin platform. "
+"Additionally, administrators can manage user access including Role "
+"assignment and enabling or disabling users from within the OneLogin "
+"platform. As employees are onboarded, change positions, or leave the "
+"company, additional user management within the |morpheus| platform is not"
+" necessary."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:7
+msgid "Adding OneLogin Identity Source Integration"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:9
+msgid ""
+"To begin, log into OneLogin with an administrator account to gather some "
+"needed pieces of information. From the top menu bar, select "
+"Administration. From the admin panel, click Developers > API Credentials."
+" Click the button labeled \"New Credential\". Provide a name for the new "
+"API credentials and select \"Manage Users\" as the permissions type. "
+"Store the credentials somewhere they can be retrieved in the next step."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:11
+msgid ""
+".. image:: "
+"/images/integration_guides/identity_sources/oneLogin/oneLoginKey.png"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:14
+msgid ""
+"Back in |morpheus|, navigate to the Tenant which will integrate with "
+"OneLogin. Identity providers are integrated on a per-Tenant basis in "
+"|morpheus|. From the selected Tenant, click :guilabel:`IDENTITY SOURCES`."
+" The list of currently-integrated identity providers is here. Click "
+":guilabel:`+ ADD IDENTITY SOURCE` to start a new integration for "
+"OneLogin. Fill in the fields below:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:16
+msgid "**TYPE:** OneLogin"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:17
+msgid "**NAME:** A name for the identity source integration in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:18
+msgid "**DESCRIPTION:** An optional description for the identity source"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:19
+msgid ""
+"**ONELOGIN SUBDOMAIN:** The subdomain from your OneLogin portal URL. For "
+"example, \"morpheus-dev\" if your portal is accessed at morpheus-"
+"dev.onelogin.com. Incorrect subdomains will cause login attempts to "
+"|morpheus| to fail"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:20
+msgid "**ONELOGIN REGION:** Specify US or EU region"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:21
+msgid ""
+"**API CLIENT SECRET:** OneLogin API client secret which was gathered "
+"earlier in this walkthrough"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:22
+msgid ""
+"**API CLIENT ID:** OneLogin API client ID which was gathered earlier in "
+"this walkthrough"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:23
+msgid ""
+"**REQUIRED ROLE:** Enter a role which OneLogin users logging into "
+"|morpheus| must have to gain access to |morpheus|. If left empty, all "
+"OneLogin users who can authenticate will be allowed to log in and a local"
+" user account will be created automatically. It is strongly recommended "
+"to set this field in enterprise environments."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:24
+msgid ""
+"**DEFAULT ROLE:** The default |morpheus| Role applied to all users who "
+"pass the Required Role check. This role is always assigned in addition to"
+" any roles granted through role mappings below."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:25
+msgid ""
+"**ROLE MAPPINGS:** All existing |morpheus| Roles will be listed with "
+"fields to enter OneLogin Roles to create a mapping. Users with OneLogin "
+"roles matching the role mappings will be assigned the appropriate Role(s)"
+" in |morpheus| when signing in"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:26
+msgid ""
+"**ENABLE ROLE MAPPING PERMISSION:** When selected, Tenant users with "
+"appropriate rights to view and edit Roles will have the ability to set "
+"role mapping for the Identity Source integration. This allows the Tenant "
+"user to edit only the role mappings without viewing or potentially "
+"editing the core integration fields (such as the API keys)"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:27
+msgid ""
+"**MANUAL ROLE ASSIGNMENT:** When selected, administrators can manually "
+"edit Roles for users created through this identity source integration "
+"from the user detail page (|AdmUse| > Selected user)."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:29
+msgid ""
+"Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be "
+"added."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:31
+msgid ""
+"Users can now login to |morpheus| with OneLogin credentials. The first "
+"login will create a user in |morpheus| matching the username, email and "
+"password from OneLogin. If a REQUIRED ROLE is specified in the Identity "
+"Source settings, only users with that Role in OneLogin will be able to "
+"login to |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:33
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:33
+msgid ""
+"OneLogin users will not authenticate in |morpheus| if there is an "
+"existing |morpheus| User with matching username or email address."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:35
+msgid ""
+"You can now test the integration by logging in with user credentials "
+"which have been configured in OneLogin. On the first login, a new user "
+"will be created with the same username, email address, and password as "
+"contained in OneLogin. On subsequent logins, |morpheus| will sync with "
+"OneLogin to make sure the user hasn't been disabled or if its Role(s) "
+"have changed in OneLogin which would affect its corresponding Roles in "
+"|morpheus|."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:37
+msgid ""
+"The |morpheus| identity source integration is interacting with the "
+"OneLogin APIs in the list below. This reference may be needed to ensure "
+"|morpheus| is integrating using an API key with sufficient privileges. In"
+" a situation where troubleshooting is needed, first confirm these APIs "
+"can be accessed using the provided key."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:39
+msgid "``/auth/oauth2/token`` - Generate Token"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:40
+msgid "``/api/1/users/$user_id/roles`` - Get Roles"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:41
+msgid "``/api/1/login/auth`` - Create Session"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:42
+msgid "``/api/1/users/$user_id`` - Get User"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:43
+msgid "``/api/1/roles/$role_id`` - Get Role"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/onelogin.rst:44
+msgid "``/api/1/roles?name=$role_name`` - Find Role"
+msgstr ""
+

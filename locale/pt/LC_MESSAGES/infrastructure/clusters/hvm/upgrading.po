@@ -1,0 +1,629 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:2
+msgid "Upgrading Clusters"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:4
+msgid ""
+"This section covers upgrade procedures for HVM clusters, including layout"
+" upgrades, appliance version upgrades, and agent package updates."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:6
+#: ../../infrastructure/clusters/hvm/upgrading.rst:41
+#: ../../infrastructure/clusters/hvm/upgrading.rst:57
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:6
+msgid ""
+"A layout upgrade and an HVM OS update are separate operations. Layout 1.3"
+" uses HVM OS/Ubuntu 24.04; layout 2.0 uses HVM OS 26.04. The supported "
+"layouts run in parallel. Do not change a cluster's layout or HVM OS "
+"outside a documented product workflow."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:8
+#: ../../infrastructure/clusters/hvm/upgrading.rst:111
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:8
+msgid ""
+"The rolling update described here is an orchestrated cluster operation "
+"that runs the update and rollback scripts supplied by the selected HVM "
+"layout. It is not approval to perform an arbitrary Ubuntu release "
+"upgrade, replace package sources, or run general-purpose base-OS upgrade "
+"commands on an HVM host. No supported in-place base-OS transition outside"
+" a released cluster update is documented. If the required target OS is "
+"not offered by a product workflow, stop and contact Support for an "
+"approved migration or host-replacement plan; do not derive one from "
+"generic Ubuntu guidance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:11
+msgid "Layout 1.2 → 1.3 Upgrade"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:13
+msgid ""
+"The HVM 1.3 layout replaces the Pacemaker-based high availability stack "
+"with the |morpheus| agent's QuorumCheckService. Clusters running layout "
+"1.2 can be upgraded to 1.3."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:16
+msgid "What Changes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:22
+msgid "Component"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:23
+msgid "Layout 1.2"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:24
+msgid "Layout 1.3"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:25
+msgid "Quorum/HA management"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:26
+msgid "Pacemaker + Corosync"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:27
+msgid "|morpheus| Agent (QuorumCheckService) + Corosync"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:28
+msgid "Fencing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:29
+msgid "STONITH via Pacemaker"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:30
+msgid "Agent-based fence_ack via DLM"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:31
+msgid "Resource management"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:32
+msgid "Pacemaker resource agents"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:33
+msgid "Agent-managed mounts and health checks"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:34
+msgid "Failure detection"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:35
+msgid "Pacemaker node monitoring"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:36
+msgid "Peer-to-peer quorum pinging + heartbeat writes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:37
+msgid "Cluster commands"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:38
+msgid "``pcs`` CLI"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:39
+msgid "``corosync-quorumtool``, ``dlm_tool``, agent ``/quorum`` endpoint"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:41
+msgid ""
+"After upgrading to layout 1.3, ``pcs`` commands are no longer available "
+"or applicable. Use the diagnostic commands listed in "
+":doc:`troubleshooting` for all cluster operations."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:44
+msgid "What Is Preserved"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:46
+msgid ""
+"**Corosync** — Continues to provide cluster membership and messaging "
+"(shared between both layouts)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:47
+msgid ""
+"**DLM** — Continues to coordinate filesystem locks (shared between both "
+"layouts)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:48
+msgid ""
+"**HPE Clustered Datastores** — GFS2 filesystems remain mounted and "
+"operational"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:49
+msgid "**VMs** — All running VMs continue without interruption"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:50
+msgid "**iSCSI connectivity** — Storage paths are unaffected"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:53
+msgid "Upgrade Process"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:55
+msgid ""
+"The layout upgrade is performed as part of a cluster update operation. "
+"During the upgrade:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:57
+msgid ""
+"The released HVM 1.2-to-1.3 update definitions require |morpheus| Agent "
+"3.2.7 or later on each Host. This minimum applies to this layout "
+"transition only; it is not a general Agent requirement for every VME "
+"Manager upgrade or every HVM update. The cluster update upgrades an older"
+" Host Agent before running the transition scripts and stops if the Agent "
+"cannot reconnect at the required version."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:59
+msgid "Pacemaker services are disabled and removed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:60
+msgid "The |morpheus| agent's QuorumCheckService activates"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:61
+msgid "Quorum info is sent to all agents"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:62
+msgid "Agents begin peer-to-peer quorum pinging"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:65
+msgid "Post-Upgrade: Corosync Authkey"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:67
+#: ../../infrastructure/clusters/hvm/upgrading.rst:136
+#: ../../infrastructure/clusters/hvm/upgrading.rst:168
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:67
+msgid ""
+"For clusters upgraded from 1.2 to 1.3, the Corosync authkey may not be "
+"stored in Cypher (since 1.2 clusters managed authkey distribution via "
+"Pacemaker). |morpheus| automatically detects this condition and "
+"retroactively stores the authkey from an online host. This ensures that "
+"future add-worker operations can distribute the authkey to new hosts."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:70
+msgid "Rolling Cluster Updates"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:72
+msgid ""
+"Layouts 1.3 and 2.0 support rolling updates where each host is updated "
+"one at a time without cluster downtime."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:75
+msgid "Update Process (Per Host)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:77
+msgid "For each host in the cluster, the rolling update performs:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:79
+msgid ""
+"**Agent upgrade** (if required) — If the host's agent version is below "
+"the minimum required version, the agent is upgraded first. |morpheus| "
+"waits for the agent to reconnect after the upgrade."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:81
+msgid ""
+"**Enter maintenance mode** — VMs are evacuated from the host via live "
+"migration (see :doc:`host_maintenance`). A Dynamic Placement lock is "
+"acquired to prevent resource scheduling from interfering."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:83
+msgid ""
+"**Execute update scripts** — Layout-defined scripts run on the host "
+"(package updates, configuration changes, etc.)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:85
+msgid ""
+"**Exit maintenance mode** — The host returns to normal operation and can "
+"receive VMs again. The Dynamic Placement lock is released."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:87
+msgid "**Proceed to next host** — The process repeats for the next host."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:89
+msgid "After all hosts complete the update phase:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:91
+msgid ""
+"**Post-update scripts** — Any scripts designated as ``postUpdate`` phase "
+"run on each host."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:94
+msgid "Failure Handling"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:100
+msgid "Scenario"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:101
+msgid "Behavior"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:102
+msgid "Agent upgrade fails"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:103
+msgid "Update stops for that host; error is reported"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:104
+msgid "Maintenance mode fails (insufficient capacity)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:105
+msgid "Update stops for that host; VMs remain in place"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:106
+msgid "Update script fails"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:107
+msgid "Rollback scripts run on the failed host and all previously succeeded hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:108
+msgid "Agent does not reconnect after upgrade"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:109
+msgid "Update stops; timeout error is reported"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:111
+msgid ""
+"Only one cluster update operation can run at a time. Attempting to start "
+"a second update while one is in progress will be rejected."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:114
+msgid "Rollback Support"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:116
+msgid ""
+"If the cluster layout defines rollback scripts, they are executed in "
+"reverse order on:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:118
+msgid "The host where the failure occurred"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:119
+msgid "All hosts that previously completed the update phase successfully"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:121
+msgid "This restores the cluster to its pre-update state."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:124
+msgid "Morpheus Appliance Upgrades"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:126
+msgid "When upgrading the |morpheus| appliance itself:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:129
+msgid "Pre-Upgrade Considerations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:131
+msgid ""
+"Active HVM clusters will continue to operate during the appliance upgrade"
+" (agents are self-sustaining)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:132
+msgid "Quorum decisions are made by agents independently of the appliance"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:133
+msgid "Heartbeat writes continue regardless of appliance connectivity"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:134
+msgid "VM failover will still work during appliance downtime"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:136
+msgid ""
+"The |morpheus| agent's QuorumCheckService operates autonomously. Cluster "
+"quorum, heartbeat monitoring, and failover continue even if the "
+"|morpheus| appliance is offline for maintenance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:139
+#: ../../infrastructure/clusters/hvm/upgrading.rst:197
+msgid "Post-Upgrade Verification"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:141
+msgid "After upgrading the |morpheus| appliance:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:143
+msgid "Navigate to ``Infrastructure > Clusters``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:144
+msgid "Verify all clusters show their expected state"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:145
+msgid "Check the Quorum panel for each cluster — confirm ACHIEVED status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:146
+msgid "Verify agent connectivity (all hosts show recent ``lastAgentUpdate``)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:149
+msgid "Agent Package Updates"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:151
+msgid ""
+"The |morpheus| agent on each cluster host can be updated independently of"
+" cluster layout updates."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:154
+msgid "Automatic Agent Upgrades"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:156
+msgid ""
+"During rolling cluster updates, if a host's agent version is below the "
+"``minAgentVersion`` required by the update definition, the agent is "
+"upgraded automatically before update scripts execute."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:158
+msgid "The automatic agent upgrade:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:160
+msgid "Triggers the agent upgrade on the host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:161
+msgid "Waits for the agent to disconnect and reconnect"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:162
+msgid "Verifies the new agent version meets requirements"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:163
+msgid "Proceeds with the update only after successful agent reconnection"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:166
+msgid "Manual Agent Upgrades"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:168
+msgid ""
+"Manual agent upgrades are typically not required. The rolling cluster "
+"update process handles agent upgrades automatically when needed."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:171
+msgid "Pre-Upgrade Checklist"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:173
+msgid "Before performing any cluster upgrade:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:179
+#: ../../infrastructure/clusters/hvm/upgrading.rst:181
+#: ../../infrastructure/clusters/hvm/upgrading.rst:183
+#: ../../infrastructure/clusters/hvm/upgrading.rst:185
+#: ../../infrastructure/clusters/hvm/upgrading.rst:187
+#: ../../infrastructure/clusters/hvm/upgrading.rst:189
+#: ../../infrastructure/clusters/hvm/upgrading.rst:191
+#: ../../infrastructure/clusters/hvm/upgrading.rst:193
+msgid "☐"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:180
+msgid "Verify cluster health: Quorum ACHIEVED, all nodes ONLINE, no fenced nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:182
+msgid ""
+"Confirm N+1 capacity: remaining hosts can absorb workloads during rolling"
+" maintenance"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:184
+msgid "Check for pinned VMs that may block maintenance mode"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:186
+msgid ""
+"Verify shared storage health: all datastores PROVISIONED, no withdrawn "
+"filesystems"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:188
+msgid "Take a backup of critical VM configurations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:190
+msgid ""
+"Ensure no other maintenance or Dynamic Placement operations are in "
+"progress"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:192
+msgid "Verify network connectivity between all hosts (port 7443, SSH)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:194
+msgid "Review the upgrade release notes for any known issues"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:199
+msgid "After completing a cluster upgrade:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:201
+msgid "**Quorum health:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:203
+msgid "curl -k https://localhost:7443/quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:207
+msgid "Confirm quorum is ACHIEVED with all nodes ONLINE."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:209
+msgid "**Corosync membership:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:211
+msgid "corosync-quorumtool -s"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:215
+msgid "Confirm ``Quorate: Yes`` and all expected nodes are listed."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:217
+msgid "**DLM status:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:219
+msgid "dlm_tool status -v"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:223
+msgid "Confirm all nodes show ``member=1``."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:225
+msgid "**Datastore mounts:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:227
+msgid "mount | grep gfs2"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:231
+msgid "Confirm all expected HPE Clustered Datastores are mounted."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:233
+msgid "**UI verification:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:235
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
+"panel and confirm:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:237
+msgid "Quorum status: ACHIEVED"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:238
+msgid "All nodes: ONLINE"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:239
+msgid "Coordinator: assigned"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:240
+msgid "Lockspaces: OK"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:242
+msgid "**VM health:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/upgrading.rst:244
+msgid "Verify all VMs are running and accessible after the upgrade completes."
+msgstr ""
+

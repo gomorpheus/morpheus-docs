@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -35,14 +35,16 @@ msgid ""
 "utilize storage features, integrate a Cohesity S3 storage server and then"
 " create a Cohesity S3 storage bucket."
 msgstr ""
-"|morpheus| se integra con Cohesity para su selección como destino de backup de Nube "
-"para tipos de Nube compatibles y para agregar servidores de almacenamiento Cohesity S3 "
-"y buckets de almacenamiento. |morpheus| se integra con su appliance "
-"Cohesity existente, que luego puede configurarse como la solución de backup predeterminada "
-"para cualquier Nube existente. Desde allí, programe fácilmente rutinas de backup "
-"durante el aprovisionamiento de Instancias y restaure Instancias cuando sea necesario. Para "
-"utilizar las funciones de almacenamiento, integre un servidor de almacenamiento Cohesity S3 y luego"
-" cree un bucket de almacenamiento Cohesity S3."
+"|morpheus| se integra con Cohesity para su selección como destino de "
+"backup de Nube para tipos de Nube compatibles y para agregar servidores "
+"de almacenamiento Cohesity S3 y buckets de almacenamiento. |morpheus| se "
+"integra con su appliance Cohesity existente, que luego puede configurarse"
+" como la solución de backup predeterminada para cualquier Nube existente."
+" Desde allí, programe fácilmente rutinas de backup durante el "
+"aprovisionamiento de Instancias y restaure Instancias cuando sea "
+"necesario. Para utilizar las funciones de almacenamiento, integre un "
+"servidor de almacenamiento Cohesity S3 y luego cree un bucket de "
+"almacenamiento Cohesity S3."
 
 #: ../../backups/integrations/cohesity.rst:6
 msgid ""
@@ -50,15 +52,35 @@ msgid ""
 "|morpheus|, setting backup options during Instance provisioning, "
 "restoring Instances from Cohesity backup, and using Cohesity S3 storage."
 msgstr ""
-"Esta sección describe el proceso para integrar Cohesity con "
-"|morpheus|, configurar opciones de backup durante el aprovisionamiento de Instancias, "
-"restaurar Instancias desde backup de Cohesity y usar almacenamiento Cohesity S3."
+"Esta sección describe el proceso para integrar Cohesity con |morpheus|, "
+"configurar opciones de backup durante el aprovisionamiento de Instancias,"
+" restaurar Instancias desde backup de Cohesity y usar almacenamiento "
+"Cohesity S3."
 
 #: ../../backups/integrations/cohesity.rst:9
+msgid "Supported Clouds"
+msgstr ""
+
+#: ../../backups/integrations/cohesity.rst:11
+msgid ""
+"The Cloud types supported for Cohesity **backup** are not established in "
+"the bundled integration metadata. Confirm the Cloud type with the "
+"Cohesity plugin release notes or HPE Support before selecting Cohesity as"
+" a Cloud backup provider."
+msgstr ""
+
+#: ../../backups/integrations/cohesity.rst:13
+msgid ""
+"Cohesity S3 is a separate storage capability. It provides storage servers"
+" and buckets for supported storage uses; its availability does not "
+"establish that Cohesity backup supports the same Cloud type."
+msgstr ""
+
+#: ../../backups/integrations/cohesity.rst:16
 msgid "Adding the Integration"
 msgstr "Agregar la integración"
 
-#: ../../backups/integrations/cohesity.rst:11
+#: ../../backups/integrations/cohesity.rst:18
 msgid ""
 "Cohesity integrations are added in the backup integrations area of the UI"
 " (:menuselection:`Backups --> Integrations`). If a Cohesity integration "
@@ -68,41 +90,46 @@ msgid ""
 "repository which includes the Cohesity plugin, see the plugin section of "
 "this documentation."
 msgstr ""
-"Las integraciones de Cohesity se agregan en el área de integraciones de backup de la interfaz"
-" (:menuselection:`Backups --> Integraciones`). Si una integración de Cohesity "
-"no es una opción, debe descargar y agregar el plugin de Cohesity al "
-"appliance de |morpheus|. Para información adicional sobre cómo agregar un plugin, "
-"incluyendo cómo acceder al repositorio mantenido por Hewlett Packard Enterprise "
-"que incluye el plugin de Cohesity, consulte la sección de plugins de "
-"esta documentación."
+"Las integraciones de Cohesity se agregan en el área de integraciones de "
+"backup de la interfaz (:menuselection:`Backups --> Integraciones`). Si "
+"una integración de Cohesity no es una opción, debe descargar y agregar el"
+" plugin de Cohesity al appliance de |morpheus|. Para información "
+"adicional sobre cómo agregar un plugin, incluyendo cómo acceder al "
+"repositorio mantenido por Hewlett Packard Enterprise que incluye el "
+"plugin de Cohesity, consulte la sección de plugins de esta documentación."
 
-#: ../../backups/integrations/cohesity.rst:13
+#: ../../backups/integrations/cohesity.rst:20
 msgid ""
 "With the Cohesity plugin installed, navigate to :menuselection:`Backups "
 "--> Integrations` to add a new Cohesity integration. Click :guilabel:`+ "
 "ADD` and a modal appears for creating a new Cohesity backup provider."
 msgstr ""
 "Con el plugin de Cohesity instalado, navegue a :menuselection:`Backups "
-"--> Integraciones` para agregar una nueva integración de Cohesity. Haga clic en :guilabel:`+ "
-"AGREGAR` y aparecerá un modal para crear un nuevo proveedor de backup Cohesity."
+"--> Integraciones` para agregar una nueva integración de Cohesity. Haga "
+"clic en :guilabel:`+ AGREGAR` y aparecerá un modal para crear un nuevo "
+"proveedor de backup Cohesity."
 
-#: ../../backups/integrations/cohesity.rst:15
+#: ../../backups/integrations/cohesity.rst:22
 msgid "Provide the following information:"
 msgstr "Proporcione la siguiente información:"
 
-#: ../../backups/integrations/cohesity.rst:17
+#: ../../backups/integrations/cohesity.rst:24
 msgid "**NAME:** A name for the Cohesity provider in |morpheus| UI"
-msgstr "**NOMBRE:** Un nombre para el proveedor Cohesity en la interfaz de |morpheus|"
+msgstr ""
+"**NOMBRE:** Un nombre para el proveedor Cohesity en la interfaz de "
+"|morpheus|"
 
-#: ../../backups/integrations/cohesity.rst:18
+#: ../../backups/integrations/cohesity.rst:25
 msgid "**ENABLED:** When marked, the Cohesity provider will be available for use"
-msgstr "**HABILITADO:** Cuando se marca, el proveedor Cohesity estará disponible para uso"
+msgstr ""
+"**HABILITADO:** Cuando se marca, el proveedor Cohesity estará disponible "
+"para uso"
 
-#: ../../backups/integrations/cohesity.rst:19
+#: ../../backups/integrations/cohesity.rst:26
 msgid "**HOST:** Enter the host name"
 msgstr "**HOST:** Ingrese el nombre de host"
 
-#: ../../backups/integrations/cohesity.rst:20
+#: ../../backups/integrations/cohesity.rst:27
 msgid ""
 "**CREDENTIALS:** An API key is required for authentication. Select "
 "\"Local Credentials\" to enter the API key directly into this modal. "
@@ -112,53 +139,54 @@ msgid ""
 "secret store, you may also choose it here rather than directly entering "
 "the key into this modal"
 msgstr ""
-"**CREDENCIALES:** Se requiere una clave API para la autenticación. Seleccione "
-"\"Local Credentials\" para ingresar la clave API directamente en este modal. "
-"Seleccione \"api key\" bajo el encabezado \"New Credentials\" para ingresar la clave"
-" API directamente en este modal y guardarla en un almacén secreto seguro elegido"
-" para uso posterior. Si una clave API ya se ha almacenado en un almacén "
-"secreto integrado, también puede elegirla aquí en lugar de ingresar directamente "
-"la clave en este modal"
+"**CREDENCIALES:** Se requiere una clave API para la autenticación. "
+"Seleccione \"Local Credentials\" para ingresar la clave API directamente "
+"en este modal. Seleccione \"api key\" bajo el encabezado \"New "
+"Credentials\" para ingresar la clave API directamente en este modal y "
+"guardarla en un almacén secreto seguro elegido para uso posterior. Si una"
+" clave API ya se ha almacenado en un almacén secreto integrado, también "
+"puede elegirla aquí en lugar de ingresar directamente la clave en este "
+"modal"
 
-#: ../../backups/integrations/cohesity.rst:21
+#: ../../backups/integrations/cohesity.rst:28
 msgid ""
 "**SECRET STORE:** Optional and only visible if you've opted in the "
 "CREDENTIALS field to securely store your entered API key"
 msgstr ""
-"**ALMACÉN SECRETO:** Opcional y solo visible si ha optado en el "
-"campo CREDENCIALES por almacenar de forma segura su clave API ingresada"
+"**ALMACÉN SECRETO:** Opcional y solo visible si ha optado en el campo "
+"CREDENCIALES por almacenar de forma segura su clave API ingresada"
 
-#: ../../backups/integrations/cohesity.rst:22
+#: ../../backups/integrations/cohesity.rst:29
 msgid ""
 "**API KEY:** Only visible if authenticating through local credentials "
 "(that is, you haven't selected a saved API key from the CREDENTIALS "
 "field). Enter the API key"
 msgstr ""
-"**CLAVE API:** Solo visible si se autentica a través de credenciales locales "
-"(es decir, no ha seleccionado una clave API guardada del campo "
+"**CLAVE API:** Solo visible si se autentica a través de credenciales "
+"locales (es decir, no ha seleccionado una clave API guardada del campo "
 "CREDENCIALES). Ingrese la clave API"
 
-#: ../../backups/integrations/cohesity.rst:23
+#: ../../backups/integrations/cohesity.rst:30
 msgid ""
 "**VISIBILITY:** Cohesity integrations with private visibility are "
 "consumable only by the Tenant in which the integration is created"
 msgstr ""
-"**VISIBILIDAD:** Las integraciones de Cohesity con visibilidad privada son "
-"consumibles solo por el Inquilino en el cual se creó la integración"
+"**VISIBILIDAD:** Las integraciones de Cohesity con visibilidad privada "
+"son consumibles solo por el Inquilino en el cual se creó la integración"
 
-#: ../../backups/integrations/cohesity.rst:25
+#: ../../backups/integrations/cohesity.rst:32
 msgid ""
 "When finished, click :guilabel:`SAVE`. The new Cohesity backup provider "
 "should be successfully created."
 msgstr ""
-"Cuando termine, haga clic en :guilabel:`GUARDAR`. El nuevo proveedor de backup Cohesity "
-"debería crearse exitosamente."
+"Cuando termine, haga clic en :guilabel:`GUARDAR`. El nuevo proveedor de "
+"backup Cohesity debería crearse exitosamente."
 
-#: ../../backups/integrations/cohesity.rst:28
+#: ../../backups/integrations/cohesity.rst:35
 msgid "Setting the Cloud Backup Provider"
 msgstr "Configurar el proveedor de Backup de Nube"
 
-#: ../../backups/integrations/cohesity.rst:30
+#: ../../backups/integrations/cohesity.rst:37
 msgid ""
 "Now that the Cohesity backup provider is created, it can be set as the "
 "default backup provider for supported Cloud types. To set this "
@@ -168,19 +196,20 @@ msgid ""
 "BACKUP PROVIDER configuration. Set the Cohesity provider as the backup "
 "provider for the Cloud and click :guilabel:`SAVE CHANGES`."
 msgstr ""
-"Ahora que el proveedor de backup Cohesity está creado, puede configurarse como el "
-"proveedor de backup predeterminado para tipos de Nube compatibles. Para establecer esta "
-"configuración en una Nube, navegue a la página de lista de Nubes "
-"(:menuselection:`Infraestructura --> Nubes`) y edite una Nube compatible "
-"(icono de lápiz). Expanda la sección \"Opciones avanzadas\" y localice la "
-"configuración de PROVEEDOR DE BACKUP. Configure el proveedor Cohesity como proveedor de "
-"backup para la Nube y haga clic en :guilabel:`GUARDAR CAMBIOS`."
+"Ahora que el proveedor de backup Cohesity está creado, puede configurarse"
+" como el proveedor de backup predeterminado para tipos de Nube "
+"compatibles. Para establecer esta configuración en una Nube, navegue a la"
+" página de lista de Nubes (:menuselection:`Infraestructura --> Nubes`) y "
+"edite una Nube compatible (icono de lápiz). Expanda la sección \"Opciones"
+" avanzadas\" y localice la configuración de PROVEEDOR DE BACKUP. "
+"Configure el proveedor Cohesity como proveedor de backup para la Nube y "
+"haga clic en :guilabel:`GUARDAR CAMBIOS`."
 
-#: ../../backups/integrations/cohesity.rst:33
+#: ../../backups/integrations/cohesity.rst:40
 msgid "Backup Options at Provision Time"
 msgstr "Opciones de Backup en el momento del aprovisionamiento"
 
-#: ../../backups/integrations/cohesity.rst:35
+#: ../../backups/integrations/cohesity.rst:42
 msgid ""
 "With Cohesity set up as the backup provider for a Cloud (or Clouds), "
 "additional backup options are made available when provisioning to the "
@@ -191,30 +220,31 @@ msgid ""
 "\"Cohesity Protection Group\" should be preselected. Then, make the next "
 "two configurations:"
 msgstr ""
-"Con Cohesity configurado como proveedor de backup para una Nube (o Nubes), "
-"opciones de backup adicionales están disponibles al aprovisionar en la "
-"Nube. Estas configuraciones se realizan desde la pestaña AUTOMATIZACIÓN del "
-"asistente de aprovisionamiento (iniciado haciendo clic en :guilabel:`+ AGREGAR` desde la "
-"página de lista de Instancias en :menuselection:`Aprovisionamiento --> Instancias`). Desde "
-"la pestaña AUTOMATIZACIÓN, expanda la sección \"Backups\". El TIPO DE BACKUP de "
-"\"Cohesity Protection Group\" debería estar preseleccionado. Luego, realice las siguientes "
-"dos configuraciones:"
+"Con Cohesity configurado como proveedor de backup para una Nube (o "
+"Nubes), opciones de backup adicionales están disponibles al aprovisionar "
+"en la Nube. Estas configuraciones se realizan desde la pestaña "
+"AUTOMATIZACIÓN del asistente de aprovisionamiento (iniciado haciendo clic"
+" en :guilabel:`+ AGREGAR` desde la página de lista de Instancias en "
+":menuselection:`Aprovisionamiento --> Instancias`). Desde la pestaña "
+"AUTOMATIZACIÓN, expanda la sección \"Backups\". El TIPO DE BACKUP de "
+"\"Cohesity Protection Group\" debería estar preseleccionado. Luego, "
+"realice las siguientes dos configuraciones:"
 
-#: ../../backups/integrations/cohesity.rst:37
+#: ../../backups/integrations/cohesity.rst:44
 msgid ""
 "**BACKUP NAME:** A name for the backup (often named for the Instance "
 "associated with the backup)"
 msgstr ""
-"**NOMBRE DEL BACKUP:** Un nombre para el backup (frecuentemente nombrado según la Instancia "
-"asociada con el backup)"
+"**NOMBRE DEL BACKUP:** Un nombre para el backup (frecuentemente nombrado "
+"según la Instancia asociada con el backup)"
 
-#: ../../backups/integrations/cohesity.rst:38
-#: ../../backups/integrations/cohesity.rst:54
+#: ../../backups/integrations/cohesity.rst:45
+#: ../../backups/integrations/cohesity.rst:61
 msgid "**CLUSTER:** Select the correct Cohesity cluster from the dropdown"
 msgstr "**CLÚSTER:** Seleccione el clúster Cohesity correcto del menú desplegable"
 
-#: ../../backups/integrations/cohesity.rst:40
-#: ../../backups/integrations/cohesity.rst:56
+#: ../../backups/integrations/cohesity.rst:47
+#: ../../backups/integrations/cohesity.rst:63
 msgid ""
 "As a final selection, choose whether or not to create a new Protection "
 "Group. If \"No\" is selected, a dropdown menu appears which allows "
@@ -226,38 +256,39 @@ msgstr ""
 "seleccionar un Grupo de Protección existente. Si se selecciona \"Sí\", "
 "aparecen campos de configuración adicionales:"
 
-#: ../../backups/integrations/cohesity.rst:42
-#: ../../backups/integrations/cohesity.rst:58
+#: ../../backups/integrations/cohesity.rst:49
+#: ../../backups/integrations/cohesity.rst:65
 msgid "**PROTECTION GROUP NAME:** A name for the Protection Group"
 msgstr "**NOMBRE DEL GRUPO DE PROTECCIÓN:** Un nombre para el Grupo de Protección"
 
-#: ../../backups/integrations/cohesity.rst:43
-#: ../../backups/integrations/cohesity.rst:59
+#: ../../backups/integrations/cohesity.rst:50
+#: ../../backups/integrations/cohesity.rst:66
 msgid "**POLICY ID:** Select the required Policy from the dropdown menu"
 msgstr "**ID DE POLÍTICA:** Seleccione la Política requerida del menú desplegable"
 
-#: ../../backups/integrations/cohesity.rst:44
-#: ../../backups/integrations/cohesity.rst:60
+#: ../../backups/integrations/cohesity.rst:51
+#: ../../backups/integrations/cohesity.rst:67
 msgid ""
 "**STORAGE DOMAIN:** Select the correct Storage Domain from the dropdown "
 "menu"
 msgstr ""
-"**DOMINIO DE ALMACENAMIENTO:** Seleccione el Dominio de almacenamiento correcto del menú "
-"desplegable"
+"**DOMINIO DE ALMACENAMIENTO:** Seleccione el Dominio de almacenamiento "
+"correcto del menú desplegable"
 
-#: ../../backups/integrations/cohesity.rst:46
+#: ../../backups/integrations/cohesity.rst:53
 msgid ""
 "Once these configurations are provided, complete the provisioning wizard "
 "and the configured backup options are applied to the new Instance."
 msgstr ""
-"Una vez proporcionadas estas configuraciones, complete el asistente de aprovisionamiento "
-"y las opciones de backup configuradas se aplicarán a la nueva Instancia."
+"Una vez proporcionadas estas configuraciones, complete el asistente de "
+"aprovisionamiento y las opciones de backup configuradas se aplicarán a la"
+" nueva Instancia."
 
-#: ../../backups/integrations/cohesity.rst:49
+#: ../../backups/integrations/cohesity.rst:56
 msgid "Creating Backups for Existing Instances"
 msgstr "Crear Backups para Instancias existentes"
 
-#: ../../backups/integrations/cohesity.rst:51
+#: ../../backups/integrations/cohesity.rst:58
 msgid ""
 "In addition to creating Backups at provision time, Cohesity backups can "
 "be configured for existing Instances. Start from the Backups list page "
@@ -269,28 +300,32 @@ msgid ""
 ":guilabel:`NEXT`. From the INFO tab, the following configurations are "
 "made:"
 msgstr ""
-"Además de crear Backups en el momento del aprovisionamiento, los backups de Cohesity pueden "
-"configurarse para Instancias existentes. Comience desde la página de lista de Backups "
-"(:menuselection:`Backups --> Backups`) y haga clic en :guilabel:`+ AGREGAR`. Cuando "
-"aparezca el modal CREAR BACKUP, seleccione \"Instance\" de la pestaña SELECCIONAR "
-"ORIGEN y haga clic en :guilabel:`SIGUIENTE`. Desde la pestaña NOMBRE/TIPO use el "
+"Además de crear Backups en el momento del aprovisionamiento, los backups "
+"de Cohesity pueden configurarse para Instancias existentes. Comience "
+"desde la página de lista de Backups (:menuselection:`Backups --> "
+"Backups`) y haga clic en :guilabel:`+ AGREGAR`. Cuando aparezca el modal "
+"CREAR BACKUP, seleccione \"Instance\" de la pestaña SELECCIONAR ORIGEN y "
+"haga clic en :guilabel:`SIGUIENTE`. Desde la pestaña NOMBRE/TIPO use el "
 "campo INSTANCIA, que es un campo de autocompletado, para buscar una "
-"Instancia compatible. En el campo NOMBRE, ingrese un nombre para el nuevo Backup y haga clic en "
-":guilabel:`SIGUIENTE`. Desde la pestaña INFO, se realizan las siguientes configuraciones:"
+"Instancia compatible. En el campo NOMBRE, ingrese un nombre para el nuevo"
+" Backup y haga clic en :guilabel:`SIGUIENTE`. Desde la pestaña INFO, se "
+"realizan las siguientes configuraciones:"
 
-#: ../../backups/integrations/cohesity.rst:53
+#: ../../backups/integrations/cohesity.rst:60
 msgid "**BACKUP TYPE:** Cohesity Protection Group"
 msgstr "**TIPO DE BACKUP:** Cohesity Protection Group"
 
-#: ../../backups/integrations/cohesity.rst:62
+#: ../../backups/integrations/cohesity.rst:69
 msgid "On clicking :guilabel:`COMPLETE`, the new Backup is successfully created."
-msgstr "Al hacer clic en :guilabel:`COMPLETAR`, el nuevo Backup se crea exitosamente."
+msgstr ""
+"Al hacer clic en :guilabel:`COMPLETAR`, el nuevo Backup se crea "
+"exitosamente."
 
-#: ../../backups/integrations/cohesity.rst:65
+#: ../../backups/integrations/cohesity.rst:72
 msgid "Restoring from Cohesity Backups"
 msgstr "Restaurar desde Backups de Cohesity"
 
-#: ../../backups/integrations/cohesity.rst:67
+#: ../../backups/integrations/cohesity.rst:74
 msgid ""
 "To restore an Instance from a Cohesity backup, begin at the Backups list "
 "page (:menuselection:`Backups --> Backups`). From the list of Backups, "
@@ -300,67 +335,72 @@ msgid ""
 "are available) and click ACTIONS > Restore. The Instance will be "
 "successfully restored from backup."
 msgstr ""
-"Para restaurar una Instancia desde un backup de Cohesity, comience en la página de lista "
-"de Backups (:menuselection:`Backups --> Backups`). Desde la lista de Backups, "
-"haga clic en el backup deseado asegurándose de hacer clic en el nombre del Backup y no "
-"en el nombre de un Trabajo de Backup. En la página de detalle del Backup, observe la sección "
-"ARCHIVOS DE BACKUP. Identifique el punto de restauración correcto (si hay más de uno "
+"Para restaurar una Instancia desde un backup de Cohesity, comience en la "
+"página de lista de Backups (:menuselection:`Backups --> Backups`). Desde "
+"la lista de Backups, haga clic en el backup deseado asegurándose de hacer"
+" clic en el nombre del Backup y no en el nombre de un Trabajo de Backup. "
+"En la página de detalle del Backup, observe la sección ARCHIVOS DE "
+"BACKUP. Identifique el punto de restauración correcto (si hay más de uno "
 "disponible) y haga clic en ACCIONES > Restaurar. La Instancia se "
 "restaurará exitosamente desde el backup."
 
-#: ../../backups/integrations/cohesity.rst:70
+#: ../../backups/integrations/cohesity.rst:77
 msgid "Using Cohesity S3"
 msgstr "Usar Cohesity S3"
 
-#: ../../backups/integrations/cohesity.rst:72
+#: ../../backups/integrations/cohesity.rst:79
 msgid ""
 "To work with Cohesity S3, start by creating a Cohesity storage server "
 "object in |morpheus|. To do so, navigate to "
 ":menuselection:`Infrastructure --> Storage --> Servers` and click "
 ":guilabel:`+ ADD`. Make the following configurations:"
 msgstr ""
-"Para trabajar con Cohesity S3, comience creando un objeto de servidor de almacenamiento "
-"Cohesity en |morpheus|. Para hacerlo, navegue a "
-":menuselection:`Infraestructura --> Almacenamiento --> Servidores` y haga clic en "
-":guilabel:`+ AGREGAR`. Realice las siguientes configuraciones:"
+"Para trabajar con Cohesity S3, comience creando un objeto de servidor de "
+"almacenamiento Cohesity en |morpheus|. Para hacerlo, navegue a "
+":menuselection:`Infraestructura --> Almacenamiento --> Servidores` y haga"
+" clic en :guilabel:`+ AGREGAR`. Realice las siguientes configuraciones:"
 
-#: ../../backups/integrations/cohesity.rst:74
+#: ../../backups/integrations/cohesity.rst:81
 msgid "**NAME:** A name for the storage server object in |morpheus|"
-msgstr "**NOMBRE:** Un nombre para el objeto de servidor de almacenamiento en |morpheus|"
+msgstr ""
+"**NOMBRE:** Un nombre para el objeto de servidor de almacenamiento en "
+"|morpheus|"
 
-#: ../../backups/integrations/cohesity.rst:75
+#: ../../backups/integrations/cohesity.rst:82
 msgid "**DESCRIPTION:** An optional description field"
 msgstr "**DESCRIPCIÓN:** Un campo de descripción opcional"
 
-#: ../../backups/integrations/cohesity.rst:76
+#: ../../backups/integrations/cohesity.rst:83
 msgid ""
 "**ENABLED:** When marked, the storage server object is available for "
 "consumption in |morpheus|"
 msgstr ""
-"**HABILITADO:** Cuando se marca, el objeto de servidor de almacenamiento está disponible para "
-"consumo en |morpheus|"
+"**HABILITADO:** Cuando se marca, el objeto de servidor de almacenamiento "
+"está disponible para consumo en |morpheus|"
 
-#: ../../backups/integrations/cohesity.rst:77
+#: ../../backups/integrations/cohesity.rst:84
 msgid ""
 "**TYPE:** Cohesity S3. When this type is selected, the required "
 "configuration fields appear"
 msgstr ""
-"**TIPO:** Cohesity S3. Cuando se selecciona este tipo, aparecen los campos de "
-"configuración requeridos"
+"**TIPO:** Cohesity S3. Cuando se selecciona este tipo, aparecen los "
+"campos de configuración requeridos"
 
-#: ../../backups/integrations/cohesity.rst:78
+#: ../../backups/integrations/cohesity.rst:85
 msgid "**ENDPOINT:** The endpoint of the cluster"
 msgstr "**ENDPOINT:** El endpoint del clúster"
 
-#: ../../backups/integrations/cohesity.rst:79
+#: ../../backups/integrations/cohesity.rst:86
 msgid "**API KEY:** A valid API key for authentication"
 msgstr "**CLAVE API:** Una clave API válida para autenticación"
 
-#: ../../backups/integrations/cohesity.rst:81
+#: ../../backups/integrations/cohesity.rst:88
 msgid "Click :guilabel:`SAVE CHANGES` and the storage server object is created."
-msgstr "Haga clic en :guilabel:`GUARDAR CAMBIOS` y se creará el objeto de servidor de almacenamiento."
+msgstr ""
+"Haga clic en :guilabel:`GUARDAR CAMBIOS` y se creará el objeto de "
+"servidor de almacenamiento."
 
-#: ../../backups/integrations/cohesity.rst:83
+#: ../../backups/integrations/cohesity.rst:90
 msgid ""
 "With the storage server created, Cohesity S3 buckets may be created. "
 "Buckets are created at :menuselection:`Infrastructure --> Storage --> "
@@ -372,12 +412,14 @@ msgid ""
 "Virtual Images or deployment archives. Once finished, click "
 ":guilabel:`SAVE CHANGES`."
 msgstr ""
-"Con el servidor de almacenamiento creado, se pueden crear buckets de Cohesity S3. "
-"Los buckets se crean en :menuselection:`Infraestructura --> Almacenamiento --> "
-"Buckets`. Haga clic en :guilabel:`+ AGREGAR` y luego en Cohesity S3 Bucket. En el modal"
-" NUEVO BUCKET, primero seleccione un servidor de almacenamiento Cohesity S3 del menú desplegable"
-" SERVICIO DE ALMACENAMIENTO. Esto precargará otros menús desplegables de campos de "
-"configuración, como DOMINIO DE ALMACENAMIENTO y QOS. Desde este modal, el "
-"bucket puede configurarse como destino de backup predeterminado o como destino predeterminado para "
-"Imágenes Virtuales o archivos de despliegue. Cuando termine, haga clic en "
-":guilabel:`GUARDAR CAMBIOS`."
+"Con el servidor de almacenamiento creado, se pueden crear buckets de "
+"Cohesity S3. Los buckets se crean en :menuselection:`Infraestructura --> "
+"Almacenamiento --> Buckets`. Haga clic en :guilabel:`+ AGREGAR` y luego "
+"en Cohesity S3 Bucket. En el modal NUEVO BUCKET, primero seleccione un "
+"servidor de almacenamiento Cohesity S3 del menú desplegable SERVICIO DE "
+"ALMACENAMIENTO. Esto precargará otros menús desplegables de campos de "
+"configuración, como DOMINIO DE ALMACENAMIENTO y QOS. Desde este modal, el"
+" bucket puede configurarse como destino de backup predeterminado o como "
+"destino predeterminado para Imágenes Virtuales o archivos de despliegue. "
+"Cuando termine, haga clic en :guilabel:`GUARDAR CAMBIOS`."
+

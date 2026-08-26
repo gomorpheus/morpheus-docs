@@ -1,0 +1,2217 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/loadbalancers/lb.rst:2
+#: ../../infrastructure/loadbalancers/lb.rst:19
+#: ../../infrastructure/loadbalancers/lb.rst:29
+msgid "Load Balancers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:4
+msgid "``Infrastructure > Load Balancers``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:5
+#: ../../infrastructure/loadbalancers/avi.rst:5
+#: ../../infrastructure/loadbalancers/lb.rst:7
+#: ../../infrastructure/loadbalancers/policies.rst:7
+#: ../../infrastructure/loadbalancers/profiles.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:9
+msgid ""
+"|morpheus| can provision VM or Container HaProxy Load Balancers, Amazon "
+"Elastic and Application Load Balancers, Azure Load Balancers, and "
+"integrates with several external Load Balancers, including F5, Citrix, "
+"and AVI."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:11
+msgid ""
+"Once created or integrated, Load Balancers are available as an option to "
+"be added during provision time or post-provisioning."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:13
+msgid ""
+"Once a Load Balancer is added to an instance, you can manually scale or "
+"configure auto-scaling based on thresholds or schedules, and burst across"
+" clouds with cloud priority."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:17
+msgid "In the Load Balancers page there are two sections:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:20
+msgid "View or edit existing Load Balancers, add new Load Balancers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:73
+#: ../../infrastructure/loadbalancers/f5.rst:45
+#: ../../infrastructure/loadbalancers/lb.rst:21
+msgid "Virtual Servers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:22
+msgid "View and link to Instances that are attached to load balancers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:24
+msgid "**Group and Tenant Access**"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:26
+msgid ""
+"Load balancers can be configured to provide specific Group and Tenant "
+"access, if desired. **Group Access** controls which Groups at provision "
+"time will have access to the load balancer resource. Only workloads being"
+" provisioned to the selected Groups would have visibility to the load "
+"balancer. Workloads provisioned to other Groups would not see the load "
+"balancer as an available selection. **Tenant Permissions** control which "
+"Tenants may see the load balancer. Public visibility allows access to the"
+" load balancer for users in all Tenants (subject to additional RBAC "
+"controls) while Private visibility allows access only for selected "
+"Tenants. Select all that may apply."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:31
+msgid ""
+"The Load Balancers tab list currently available Load Balancers, which you"
+" can select, edit or delete, and is where you can create new or integrate"
+" with external Load Balancers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:34
+msgid "Add a new Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:36
+msgid ""
+"Select + LOAD BALANCER, chose an option, and fill in the required "
+"information:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:38
+#: ../../infrastructure/loadbalancers/lb.rst:131
+msgid "Amazon ALB"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:39
+msgid "Scheme"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:72
+#: ../../infrastructure/loadbalancers/lb.rst:40
+msgid "Internal"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:41
+msgid "Internet-Facing"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:42
+msgid ""
+"Amazon Subnets (Select + to add additional) * Specify the subnets to "
+"enable for your load balancer. You can specify only one subnet per "
+"Availability Zone. You must specify subnets from at least two "
+"Availability Zones to increase the availability of your load balancer."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:45
+msgid "Amazon Security Groups (Select + to add additional)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:47
+msgid "AVI"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:48
+#: ../../infrastructure/loadbalancers/lb.rst:63
+#: ../../infrastructure/loadbalancers/lb.rst:69
+msgid "API Host"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:49
+#: ../../infrastructure/loadbalancers/lb.rst:64
+#: ../../infrastructure/loadbalancers/lb.rst:70
+msgid "API Port"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:50
+#: ../../infrastructure/loadbalancers/lb.rst:65
+#: ../../infrastructure/loadbalancers/lb.rst:71
+msgid "Username"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:51
+#: ../../infrastructure/loadbalancers/lb.rst:66
+#: ../../infrastructure/loadbalancers/lb.rst:72
+msgid "Password"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:52
+msgid "Internal IP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:53
+msgid "Public IP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:54
+msgid "VIP Address"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:55
+msgid "VIP Port"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:57
+#: ../../infrastructure/loadbalancers/lb.rst:132
+msgid "Azure Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:58
+#: ../../infrastructure/loadbalancers/lb.rst:84
+msgid "Cloud"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:59
+msgid "Resource Group * Populated from cloud selection"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:62
+#: ../../infrastructure/loadbalancers/netscaler.rst:2
+msgid "Citrix NetScaler"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:68
+msgid "F5 BigIP (v11.4+)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:73
+msgid "Management URL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:75
+msgid "FortiADC"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:34
+#: ../../infrastructure/loadbalancers/avi.rst:27
+#: ../../infrastructure/loadbalancers/f5.rst:24
+#: ../../infrastructure/loadbalancers/lb.rst:76
+msgid "API HOST"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:36
+#: ../../infrastructure/loadbalancers/avi.rst:29
+#: ../../infrastructure/loadbalancers/f5.rst:26
+#: ../../infrastructure/loadbalancers/lb.rst:77
+msgid "API PORT"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:38
+#: ../../infrastructure/loadbalancers/avi.rst:31
+#: ../../infrastructure/loadbalancers/f5.rst:28
+#: ../../infrastructure/loadbalancers/lb.rst:78
+msgid "USERNAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:40
+#: ../../infrastructure/loadbalancers/avi.rst:33
+#: ../../infrastructure/loadbalancers/f5.rst:30
+#: ../../infrastructure/loadbalancers/lb.rst:79
+msgid "PASSWORD"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:80
+msgid "INTERFACE (synced on auth)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:82
+msgid ""
+"HaProxy Container (Internal, will create a HaProxy container, must have "
+"available docker host to provision to)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:83
+msgid "Group"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:85
+#: ../../infrastructure/loadbalancers/lb.rst:92
+msgid "Name"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:86
+#: ../../infrastructure/loadbalancers/lb.rst:93
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:87
+msgid "Plan * Select the size of HaProxy container to be provisioned"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:90
+msgid "NSX Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:91
+#: ../../infrastructure/loadbalancers/lb.rst:136
+msgid "NSX"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:61
+#: ../../infrastructure/loadbalancers/lb.rst:94
+msgid "Enabled"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:95
+msgid "Admin State"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:96
+msgid "Size"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:97
+msgid "Tier-1 Gateways"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:98
+msgid "Log Level"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:107
+msgid ""
+"Upon saving your new Load Balancer will be added to the Load Balancers "
+"list and available in the Load Balancer dropdown in the Provisioning "
+"Wizard Automation Section for Instance Types that have scaling enabled."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:110
+msgid "Load Balancer Detail Pages"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:112
+msgid ""
+"In the main Load Balancer page, select an existing Load Balancer to go to"
+" that Load Balancers Details Page, which lists Stats, Settings, Actions "
+"and Virtual Servers for that load balancer."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:115
+msgid "Orchestrating Load Balancers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:117
+msgid ""
+"A large part of application orchestration and automation involves tying "
+"various web services and backend services into different load balancer "
+"configurations. If the automation tool is unable to communicate or "
+"integrate with this aspect of your infrastructure, a lot of gaps will be "
+"created in the full orchestrated flow of application deployment. This is "
+"why Morpheus provides deep integration with load balancers and explicit "
+"definitions with catalog items as to how they are connected to "
+"provisioned instances. Some of the functionality includes:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:119
+msgid "Public Cloud Load Balancer Support"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:120
+msgid "Private Cloud Load Balancer Support"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:121
+msgid "Port Type definitions (Profiles like HTTP/HTTPS or UDP)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:122
+msgid "SSL Certificate Management and SSL Certificate Upload"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:123
+msgid "SSL Passthrough or Forced Redirect"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:125
+msgid ""
+"Not only does Morpheus have an ability to provision HAProxy based load "
+"balancer containers for easy consumption in development environments, but"
+" also has direct tie ins with several Load Balancer Types:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:127
+msgid "F5 BigIP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:128
+msgid "Netscaler"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:129
+msgid "NSX Advanced Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:130
+msgid "Amazon ELB"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:133
+msgid "Fortinet"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:134
+msgid "Openstack Octavia"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:135
+msgid "HA Proxy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:138
+msgid ""
+"Morpheus exposes configuration options during provisioning of an Instance"
+" relevant and common to each supported LB Integration. In some cases, "
+"Morpheus also provides direct management and sync support for VIP "
+"configurations on the various Load Balancers (such as F5, and NSX "
+"Advanced Load Balancer), However in a day to day orchestrated workflow "
+"this would not be the ideal means by which a user should consume load "
+"balancer services."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:140
+msgid ""
+"By tying the Load Balancer associations into the provisioning of "
+"instances and the definition of the instance catalog item, the lifecycle "
+"of the VIP can more easily be maintained throughout the lifecycle of "
+"whatever application may be deployed."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:143
+msgid "Setting up an Instance for Load Balancer Consumption"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:145
+msgid ""
+"Several of the provided Morpheus instance types are ready to go with load"
+" balancer orchestration out of the box (Apache, Nginx, Tomcat, Node.js, "
+"etc). It is also fairly easy to extend existing generic instance types "
+"during provisioning to be tied to load balancers or to set up said "
+"catalog items in advanced for such functionality."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:147
+msgid ""
+"When creating a custom Instance Type (in |Lib|), one can define a list of"
+" exposed ports that the node type within the instance exposes.  When "
+"defining these exposed ports it prompts for a Name, Port Number, and LB "
+"Type. The LB Type is what enables load-balancer functionality. This can "
+"either be HTTP,HTTPS, or TCP. This specification helps build the correct "
+"profile for the VIP as well as setup the appropriate types of Health "
+"Monitors within the target load balancer integration."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:149
+msgid ""
+"Now, when a user consumes this custom instance type (either through "
+"single instance provisioning or full application blueprint provisioning),"
+" a section appears in the Automation phase of provisioning. Each port "
+"that is defined that exposes a load-balancer gets a dropdown to choose "
+"which load balancer integration attach to the exposed port and various "
+"prompts become available."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:151
+msgid ""
+"These prompts control features ranging from target VIP Address to "
+"selecting an SSL Certificate to be applied to the VIP. These SSL "
+"Certificates will even go so far as to create SSL Profiles in "
+"integrations for things like an F5 automatically for the application."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:153
+msgid ""
+"Once the instance is provisioned, as part of the final phase, the load "
+"balancer configuration will be applied and maintained on the instance. "
+"This association can be manipulated after the fact via the \"Scale\" tab "
+"found on the Instance Detail page."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/lb.rst:155
+msgid ""
+"Another benefit to associating load-balancers this way is that the pool "
+"members are automatically maintained during scaling events, either via "
+"auto-scaling thresholds or manual node additions / removals."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:2
+msgid "F5 Load Balancers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:5
+msgid "Add F5 Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:7
+msgid "To add a F5 Load Balancer Integration:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:9
+#: ../../infrastructure/loadbalancers/f5.rst:52
+#: ../../infrastructure/loadbalancers/netscaler.rst:10
+msgid "Navigate to `Infrastructure > Load Balancers`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:10
+#: ../../infrastructure/loadbalancers/netscaler.rst:11
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:11
+msgid "Select `F5 BigIP`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:22
+#: ../../infrastructure/loadbalancers/avi.rst:15
+#: ../../infrastructure/loadbalancers/f5.rst:12
+#: ../../infrastructure/loadbalancers/f5.rst:55
+#: ../../infrastructure/loadbalancers/netscaler.rst:13
+#: ../../infrastructure/loadbalancers/netscaler.rst:63
+msgid "Fill in the following:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:24
+#: ../../infrastructure/loadbalancers/avi.rst:17
+#: ../../infrastructure/loadbalancers/f5.rst:14
+msgid "GROUP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:15
+msgid "Select the Group the Load Balancer will be available for"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:26
+#: ../../infrastructure/loadbalancers/avi.rst:19
+#: ../../infrastructure/loadbalancers/f5.rst:16
+msgid "CLOUD"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:17
+msgid "Select the Cloud the Load Balancer will be available for"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:28
+#: ../../infrastructure/loadbalancers/avi.rst:21
+#: ../../infrastructure/loadbalancers/f5.rst:18
+#: ../../infrastructure/loadbalancers/f5.rst:57
+#: ../../infrastructure/loadbalancers/f5.rst:116
+#: ../../infrastructure/loadbalancers/f5.rst:141
+#: ../../infrastructure/loadbalancers/f5.rst:162
+#: ../../infrastructure/loadbalancers/policies.rst:41
+#: ../../infrastructure/loadbalancers/policies.rst:79
+#: ../../infrastructure/loadbalancers/profiles.rst:42
+msgid "NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:19
+msgid "Name of the Load Balancer in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:30
+#: ../../infrastructure/loadbalancers/avi.rst:23
+#: ../../infrastructure/loadbalancers/f5.rst:20
+#: ../../infrastructure/loadbalancers/f5.rst:59
+#: ../../infrastructure/loadbalancers/f5.rst:118
+#: ../../infrastructure/loadbalancers/f5.rst:143
+#: ../../infrastructure/loadbalancers/f5.rst:164
+#: ../../infrastructure/loadbalancers/netscaler.rst:21
+#: ../../infrastructure/loadbalancers/policies.rst:43
+#: ../../infrastructure/loadbalancers/profiles.rst:44
+msgid "DESCRIPTION"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:31
+#: ../../infrastructure/loadbalancers/avi.rst:24
+#: ../../infrastructure/loadbalancers/f5.rst:21
+#: ../../infrastructure/loadbalancers/netscaler.rst:22
+msgid "Identifying information displayed on the Load Balancer list page."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:32
+#: ../../infrastructure/loadbalancers/avi.rst:25
+#: ../../infrastructure/loadbalancers/f5.rst:22
+#: ../../infrastructure/loadbalancers/netscaler.rst:23
+msgid "VISIBILITY"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:23
+msgid "Define Multi-Tenant permissions"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:25
+msgid "IP or resolvable hostname url."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:27
+msgid "Typically ``8443``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:29
+msgid "API user"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:31
+msgid "API user password"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:32
+msgid "MANAGEMENT URL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:33
+msgid "Example: ``https://10.30.20.31:8443/xui/``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:35
+msgid "Advanced Options (optional)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:36
+#: ../../infrastructure/loadbalancers/netscaler.rst:39
+msgid "VIRTUAL NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:37
+msgid "POOL NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:38
+#: ../../infrastructure/loadbalancers/netscaler.rst:45
+msgid "SERVER NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:40
+msgid "Save Changes"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:42
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:42
+msgid ""
+"The F5 API handles SSL certificate installation by downloading the "
+"certificate from a URL the user provides. |morpheus| provides the "
+"\"Appliance URL\" configured in global settings (|AdmSetApp|) to satisfy "
+"that requirement. Make sure you have configured a valid URL in this field"
+" and that F5 can reach it."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:47
+msgid ""
+"Instances attached to an F5 will be listed in the Virtual servers tab. "
+"Virtual servers can also be manually added in this section."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:50
+msgid "Add Virtual Server"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:53
+msgid "Select F5 Integration name to drill into the detail page"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:54
+msgid "Select :guilabel:`+ ADD` in the VIRTUAL SERVERS tab"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:58
+msgid "Name of the Virtual Server in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:60
+msgid "Description of the Virtual Server in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:62
+msgid ""
+"Uncheck to keep the configuration but disable F5 availability in "
+"|morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:63
+msgid "VIP TYPE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:64
+msgid "Standard"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:65
+msgid "Forwarding (Layer 2)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:66
+msgid "Forwarding (IP)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:67
+msgid "Performance (HTTP)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:68
+msgid "Performance (Layer 4)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:69
+msgid "Stateless"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:70
+msgid "Reject"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:71
+msgid "DHCP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:73
+msgid "Message Routing"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:74
+#: ../../infrastructure/loadbalancers/netscaler.rst:71
+msgid "VIP HOSTNAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:75
+msgid "Enter Hostname of the VIP (optional)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:46
+#: ../../infrastructure/loadbalancers/avi.rst:39
+#: ../../infrastructure/loadbalancers/f5.rst:76
+#: ../../infrastructure/loadbalancers/netscaler.rst:65
+msgid "VIP ADDRESS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:77
+msgid "Enter IP address for the VIP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:48
+#: ../../infrastructure/loadbalancers/avi.rst:41
+#: ../../infrastructure/loadbalancers/f5.rst:78
+#: ../../infrastructure/loadbalancers/netscaler.rst:68
+msgid "VIP PORT"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:79
+msgid "Enter post used for the VIP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:80
+msgid "SOURCE ADDRESS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:81
+msgid "Enter Virtual Server source address"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:82
+msgid "PROTOCOL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:83
+msgid "tcp, udp, or sctp"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:84
+msgid "PROFILES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:85
+msgid "Search for and select from available PROFILES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:86
+msgid "POLICIES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:87
+msgid "Search for and select from available POLICIES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:88
+msgid "IRULES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:89
+msgid "Search for and select from available RUEL SCRIPTS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:90
+msgid "PERSISTENCE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:91
+msgid "cookie"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:92
+msgid "dest-addr"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:93
+msgid "global-settings"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:94
+msgid "hash"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:95
+msgid "msrdp"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:96
+msgid "sip"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:97
+msgid "source-addr"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:98
+msgid "ssl"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:99
+msgid "universal"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:100
+msgid "DEFAULT POOL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:101
+msgid "Select from available POOLS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:103
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:106
+msgid "Policies"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:108
+msgid ""
+"Policies will be synced and listed in the Policies tab. These policies "
+"will be available options when creating Virtual Servers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:53
+#: ../../infrastructure/loadbalancers/f5.rst:111
+msgid "Pools"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:114
+msgid "Create Pool"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:117
+msgid "Name of the POOL in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:119
+msgid "Description of the POOL in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:120
+#: ../../infrastructure/loadbalancers/netscaler.rst:76
+msgid "BALANCE MODE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:121
+#: ../../infrastructure/loadbalancers/netscaler.rst:79
+msgid "Round Robin"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:122
+#: ../../infrastructure/loadbalancers/netscaler.rst:78
+msgid "Least Connections"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:123
+#: ../../infrastructure/loadbalancers/f5.rst:170
+msgid "SERVICE PORT"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:124
+msgid "Specify SERVICE PORT for the POOL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:125
+msgid "MEMBERS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:126
+msgid "Search for and select from available NODES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:127
+msgid "MONITORS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:128
+msgid "Search for and select from available Monitors"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:89
+#: ../../infrastructure/loadbalancers/f5.rst:131
+msgid "Profiles"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:133
+msgid ""
+"SSL Profiles are synced and and will be created when an SSL Certificate "
+"is assigned in the Load balancer section when provisioning or editing a "
+"Load balancer on an Instance."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:136
+msgid "Monitors"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:139
+msgid "Create Monitor"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:142
+msgid "Name of the MONITOR in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:144
+msgid "Description of the MONITOR in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:145
+msgid "PARENT MONITOR"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:146
+#: ../../infrastructure/loadbalancers/f5.rst:169
+msgid "Select from available MONITORS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:147
+msgid "DESTINATION"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:148
+msgid "Specify Destination, such a ``*:443``. Default is ``*:*``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:149
+msgid "INTERVAL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:150
+msgid "Specify Monitor Interval. Default is ``5``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:151
+msgid "TIMEOUT"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:152
+msgid "Specify Monitor Timeout. Default is ``15``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:153
+msgid "MONITOR CONFIG"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:154
+msgid "Enter monitor config."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:157
+msgid "Nodes"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:160
+msgid "Create Node"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:163
+msgid "Name of the NODE in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:165
+msgid "Description of the NODE in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:166
+msgid "ADDRESS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:167
+msgid "Enter node address"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:168
+msgid "MONITOR"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:171
+msgid "Specify SERVICE PORT for the NODE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:174
+msgid "Rule Scripts"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/f5.rst:176
+msgid ""
+"Rule Scripts will be synced and listed in the RULE SCRIPTS tab. These "
+"rules will be available options when creating Virtual Servers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:4
+msgid ".. image:: /images/infrastructure/lbs/netScaler-logo.png"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:7
+msgid "Add NetScaler Integration"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:8
+msgid "To add a NetScaler Load Balancer Integration:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:12
+msgid "Select `Citrix NetScaler`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:15
+msgid "GROUP *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:25
+#: ../../infrastructure/loadbalancers/avi.rst:18
+#: ../../infrastructure/loadbalancers/netscaler.rst:16
+msgid "Select the Group the Load Balancer will be available for."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:17
+msgid "CLOUD *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:27
+#: ../../infrastructure/loadbalancers/avi.rst:20
+#: ../../infrastructure/loadbalancers/netscaler.rst:18
+msgid "Select the Cloud the Load Balancer will be available for."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:19
+msgid "NAME *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:29
+#: ../../infrastructure/loadbalancers/avi.rst:22
+#: ../../infrastructure/loadbalancers/netscaler.rst:20
+msgid "Name of the Load Balancer in |morpheus|."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:24
+msgid "Define Tenant Visibility"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:25
+msgid "Public: Available to all Tenants."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:26
+msgid "Private: Only available to specified Tenant."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:27
+msgid "Tenant"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:28
+msgid ""
+"If Visibility is set to private, define the Tenant the Load Balancer will"
+" be available in."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:29
+msgid "API URL  *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:30
+msgid "URL of the NetScaler API"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:31
+msgid "Example: http://10.30.21.55"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:32
+msgid "API PORT  *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:33
+msgid "NetScaler API port"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:34
+#: ../../infrastructure/loadbalancers/netscaler.rst:70
+msgid "Example: 80"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:35
+msgid "USERNAME *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:36
+msgid "NetScaler service account username"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:37
+msgid "PASSWORD *"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:38
+msgid "NetScaler service account password"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:40
+msgid "Naming Pattern for new NetScaler Virtual Servers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:41
+#, python-brace-format
+msgid "If blank, defaults to ``morph_lb_${loadBalancer.id}``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:42
+msgid "SERVICE NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:43
+msgid "Naming Pattern for new NetScaler Services"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:44
+#, python-brace-format
+msgid "If blank, defaults to ``morph_service_${container.id}``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:46
+msgid "Naming Pattern for new NetScaler Servers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:47
+#, python-brace-format
+msgid "If blank, defaults to ``morph_server_${server.id}``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:50
+msgid "Add Load Balancer to Instance"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:51
+msgid ""
+"Load Balancers can be added to Instances during Provisioning or to "
+"existing Instances. For Load Balancer settings to appear during "
+"provisioning, or for the scale tab to be available on an Instance, the "
+"instances Node Type must have a LB port defined."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:91
+#: ../../infrastructure/loadbalancers/avi.rst:104
+#: ../../infrastructure/loadbalancers/netscaler.rst:53
+#: ../../infrastructure/loadbalancers/policies.rst:46
+#: ../../infrastructure/loadbalancers/policies.rst:98
+#: ../../infrastructure/loadbalancers/profiles.rst:62
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:53
+msgid ""
+"For Load Balancer settings to appear during provisioning, or for the "
+"scale tab to be available on an Instance, the instances Node Type must "
+"have a LB port defined."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:56
+msgid "Add Load Balancer during Provisioning"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:57
+msgid ""
+"In the Instance Provisioning wizard, Load Balancers can be configured in "
+"the Automation > Load Balancer section."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:59
+msgid "Navigate to :menuselection:`Provisioning --> Instances`."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:60
+msgid "Select :guilabel:`+ ADD`."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:61
+msgid ""
+"Select an Instance Type that supports scaling. (ENABLE SCALING "
+"(HORIZONTAL) flagged on Instance Type configuration)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:62
+msgid "Proceed with Instance configuration to the Automation section."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:66
+msgid "Define IP Address for the Virtual Server"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:67
+msgid "Example: 10.30.23.191"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:69
+msgid "Define port for the Virtual Server"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:72
+msgid "Define hostname that will resolve to the VIP IP."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:73
+msgid "Example: jwDemoHaApp59.den.example.com"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:74
+msgid "VIRTUAL SERVICE NAME"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:75
+#, python-brace-format
+msgid "Define name for the Virtual Service. Defaults to ``${instance.name}``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:77
+msgid "Specify balance mode for the VIP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:80
+msgid "STICKY MODE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:81
+msgid "Specify sticky session options for the VIP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:82
+msgid "Source IP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:83
+msgid "Cookie"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:84
+msgid "SHARED VIP ADDRESS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:85
+msgid "Select if VIP is shared, then enter DIRECT VIP ADDRESS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:86
+msgid "SSL CERT"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:87
+msgid "SSL Certificate that will be applied to the VIP."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:88
+msgid "No SSL"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:89
+msgid ""
+"Select existing Certificate from ``Infrastructure > Keys & Certs`` or "
+"from a Trust Provider Integration."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:90
+msgid "USE EXTERNAL ADDRESS FOR BACKEND NODES"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:91
+msgid ""
+"Select if traffic from LB to Backend Nodes needs to be sent to the "
+"External Addresses, or leave deselected to use Internal Addresses for "
+"Backed Nodes."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:93
+msgid "Optionally configure auto-scaling configuration in the ``Scale`` section"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:94
+msgid "Select :guilabel:`NEXT` and provision the Instance."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/netscaler.rst:96
+msgid ""
+"After all nodes in the Instance are provisioned, the LB configuration "
+"will be added to the Instance and Virtual Servers, Services and Servers "
+"will be created and configured on the NetScaler. The Load Balancer "
+"settings and status will be visible in the Instance details page LOAD "
+"BALANCER section, with additional details, links, and configurations "
+"options available in the ``SCALE`` tab."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:2
+msgid "A10 Load Balancers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:7
+msgid ""
+"|morpheus| integrates with A10 Networks Thunder and vThunder Application "
+"Delivery Controllers (ADC). The integration supports automated "
+"provisioning of virtual servers, service groups, and HTTP templates with "
+"domain-based routing."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:9
+msgid ""
+"When instances are attached to an A10 load balancer, |morpheus| "
+"automatically:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:11
+msgid "Creates server entries for each container/VM in the instance"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:12
+msgid "Creates a service group with the appropriate port mappings"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:13
+msgid "Updates the HTTP template with host-based routing rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:14
+msgid "Configures SSL certificates (when applicable)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:17
+msgid "Adding an A10 Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:19
+#: ../../infrastructure/loadbalancers/avi.rst:12
+#: ../../infrastructure/loadbalancers/policies.rst:22
+#: ../../infrastructure/loadbalancers/policies.rst:35
+#: ../../infrastructure/loadbalancers/profiles.rst:22
+#: ../../infrastructure/loadbalancers/profiles.rst:36
+msgid "Navigate to ``Infrastructure > Load Balancers``"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:20
+#: ../../infrastructure/loadbalancers/avi.rst:13
+#: ../../infrastructure/loadbalancers/policies.rst:38
+#: ../../infrastructure/loadbalancers/profiles.rst:39
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:21
+msgid "Select **A10**"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:33
+msgid ""
+"Define Multi-Tenant visibility. **Public** allows all Tenants to see the "
+"load balancer. **Private** restricts visibility to selected Tenants."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:35
+msgid "IP address or resolvable hostname of the A10 management interface."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:37
+msgid "Management API port (typically ``443``)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:39
+msgid "API user with administrative privileges."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:41
+msgid "API user password."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:42
+#: ../../infrastructure/loadbalancers/avi.rst:35
+msgid "INTERNAL IP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:43
+msgid "The internal VIP address for the load balancer."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:44
+#: ../../infrastructure/loadbalancers/avi.rst:37
+msgid "PUBLIC IP"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:45
+#: ../../infrastructure/loadbalancers/avi.rst:38
+msgid "The external/public IP address (if applicable)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:47
+msgid "The Virtual IP address for load balancing traffic."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:49
+msgid "The port on which the VIP listens (e.g., ``80``, ``443``)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:51
+#: ../../infrastructure/loadbalancers/avi.rst:44
+#: ../../infrastructure/loadbalancers/policies.rst:48
+#: ../../infrastructure/loadbalancers/policies.rst:100
+#: ../../infrastructure/loadbalancers/profiles.rst:64
+#: ../../infrastructure/loadbalancers/profiles.rst:73
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:54
+msgid "How A10 Integration Works"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:56
+msgid ""
+"When an Instance is added to an A10 load balancer, |morpheus| performs "
+"the following operations via the A10 aXAPI:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:58
+msgid ""
+"**Server Creation** — For each container in the instance, a server object"
+" is created on the A10 with the container's IP address."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:59
+msgid ""
+"**Service Group Creation** — A service group is created containing all "
+"the servers and their designated ports."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:60
+msgid ""
+"**HTTP Template Update** — The virtual server's HTTP template is updated "
+"with host-based routing rules that direct traffic to the correct service "
+"group based on the instance's hostname."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:61
+msgid ""
+"**SSL Configuration** — If SSL is configured for the instance, "
+"certificates and keys are uploaded to the A10 and bound to the virtual "
+"server port 443."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:64
+msgid "Removing an Instance"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:66
+msgid ""
+"When an instance is removed from the A10 load balancer, |morpheus| "
+"reverses the operations:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:68
+msgid "Removes host routing entries from the HTTP template"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:69
+msgid "Deletes the service group"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:70
+msgid "Removes individual server registrations"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:75
+msgid ""
+"A10 virtual servers are automatically created when the load balancer "
+"integration is initialized. The virtual server is configured with:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:77
+msgid "The VIP address and port specified during integration setup"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:78
+msgid "An HTTP template for host-based routing"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:79
+msgid "Ports 80 and 443 with the routing template applied"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:82
+msgid "SSL Certificate Management"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:84
+msgid ""
+"|morpheus| can automatically manage SSL certificates on A10 load "
+"balancers:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:86
+msgid "Certificates are uploaded as PEM files via the aXAPI"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:87
+msgid "Private keys are uploaded separately"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:88
+msgid "Certificate bindings are applied to port 443 on the virtual server"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:89
+msgid "When instances are removed, their associated certificates are cleaned up"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:91
+msgid ""
+"The A10 integration uses the aXAPI v3 interface. Ensure the A10 device is"
+" running ACOS 4.x or later for full compatibility."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:94
+#: ../../infrastructure/loadbalancers/avi.rst:107
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:96
+msgid ""
+"**Connection errors** — Verify the API Host and Port are reachable from "
+"the |morpheus| appliance and that the management interface is enabled."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:97
+msgid ""
+"**Authentication failures** — Confirm the credentials have administrative"
+" (or at minimum, read/write) API access on the A10 device."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/a10.rst:98
+msgid ""
+"**SSL upload failures** — Ensure the certificate and key are in valid PEM"
+" format."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:2
+msgid "Avi Networks (NSX ALB) Load Balancers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:7
+msgid ""
+"|morpheus| integrates with Avi Networks (now VMware NSX Advanced Load "
+"Balancer) to provide application delivery services. The integration syncs"
+" virtual services, pools, SSL profiles, health monitors, and cloud "
+"configurations from the Avi Controller."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:10
+msgid "Adding an Avi Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:14
+msgid "Select **AVI**"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:26
+msgid ""
+"Define Multi-Tenant visibility. **Public** allows all Tenants to see the "
+"load balancer. **Private** restricts to selected Tenants."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:28
+msgid "IP address or FQDN of the Avi Controller."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:30
+msgid "Controller API port (default: ``443``)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:32
+msgid "Avi Controller user with appropriate privileges."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:34
+msgid "Password for the Avi Controller user."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:36
+msgid "The internal VIP address."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:40
+msgid "Virtual IP address for load balancing."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:42
+msgid "Port the VIP listens on (e.g., ``80``, ``443``)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:46
+msgid ""
+"Once connected, |morpheus| will validate the credentials and begin "
+"syncing data from the Avi Controller."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:49
+msgid "Synced Resources"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:51
+msgid ""
+"After successful integration, |morpheus| periodically syncs the following"
+" from the Avi Controller:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:54
+msgid "Backend server pools with their members and health status."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:56
+msgid "Virtual Services"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:57
+msgid ""
+"Virtual server configurations including VIP addresses, ports, and pool "
+"assignments."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:59
+msgid "SSL Profiles"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:60
+msgid ""
+"TLS/SSL profiles configured on the Avi Controller for certificate "
+"management."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:62
+msgid "Health Monitors"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:63
+msgid ""
+"Health check configurations used by pools to verify backend server "
+"availability."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:65
+msgid "Clouds"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:66
+msgid ""
+"Avi Cloud configurations that define the infrastructure environment "
+"(e.g., VMware, AWS, Azure, OpenStack)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:69
+msgid "Virtual Servers Tab"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:71
+msgid ""
+"The Virtual Servers tab on the Avi load balancer detail page displays all"
+" virtual services synced from the controller. Each entry shows:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:73
+msgid "**Name** — Virtual service name"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:74
+msgid "**VIP Address** — The IP address and port the service listens on"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:75
+msgid "**Pool** — The associated backend pool"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:76
+msgid "**Status** — Operational status (enabled/disabled)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:79
+msgid "Pools Tab"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:81
+msgid "The Pools tab displays backend server pools:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:83
+msgid "**Name** — Pool name"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:84
+msgid "**Members** — Number of backend servers in the pool"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:85
+msgid "**Health Monitor** — The health check applied to pool members"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:86
+msgid "**Status** — Pool operational status"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:91
+msgid ""
+"Avi SSL profiles are synced and available for selection when configuring "
+"virtual servers. See :ref:`lb_profiles` for general profile management."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:94
+msgid "Status and Monitoring"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:96
+msgid "|morpheus| monitors the Avi Controller connectivity and updates status:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:98
+msgid "**OK** — Connected and syncing normally"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:99
+msgid "**Error** — Connection or authentication failure"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:100
+msgid "**Offline** — Avi Controller API is not reachable"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:102
+msgid "A health alarm is raised when connectivity issues are detected."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:104
+msgid ""
+"The Avi integration uses session-based authentication with automatic "
+"token refresh. Ensure the configured user account does not have password "
+"expiration policies that would interrupt sync operations."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:109
+msgid ""
+"**\"error connecting to avi\"** — Verify the API Host is reachable on the"
+" specified port from the |morpheus| appliance."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:110
+msgid ""
+"**\"unauthorized - invalid credentials\"** — Confirm the username and "
+"password are valid on the Avi Controller."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:111
+msgid ""
+"**\"avi not found - invalid host\"** — The specified URL may not point to"
+" an Avi Controller. Verify the endpoint."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/avi.rst:112
+msgid ""
+"**Sync not updating** — Check that the Avi Controller is online and the "
+"configured user has read permissions on all required objects."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:4
+msgid "Load Balancer Profiles"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:9
+msgid ""
+"Load Balancer Profiles define SSL/TLS and protocol handling "
+"configurations that can be applied to virtual servers. Profiles allow you"
+" to manage SSL certificate bindings, cipher suites, and protocol settings"
+" in a reusable configuration that can be referenced by multiple virtual "
+"servers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:11
+msgid ""
+"Profile management is available for load balancer types that support "
+"profile configurations (such as F5 BIG-IP, Avi/NSX ALB, and NSX-T)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:14
+#: ../../infrastructure/loadbalancers/profiles.rst:14
+msgid "Role Requirements"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:16
+msgid ""
+"``Infrastructure: Load Balancers`` role permission at **Full** level is "
+"required to create, edit, or delete profiles."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:17
+msgid ""
+"``Infrastructure: Load Balancers`` role permission at **Read** level "
+"allows viewing profiles only."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:20
+msgid "Viewing Profiles"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:23
+#: ../../infrastructure/loadbalancers/profiles.rst:23
+msgid "Click the name of a Load Balancer to view its detail page"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:24
+#: ../../infrastructure/loadbalancers/profiles.rst:38
+#: ../../infrastructure/loadbalancers/profiles.rst:70
+#: ../../infrastructure/loadbalancers/profiles.rst:79
+msgid "Select the **PROFILES** tab"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:26
+msgid ""
+"The Profiles tab lists all profiles configured for the load balancer, "
+"including:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:28
+msgid "**Name** — Profile name"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:29
+msgid "**Description** — Profile description"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:30
+msgid "**Type** — The profile type (e.g., Client SSL, Server SSL, HTTP)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:31
+msgid "**Service Type** — The protocol or service the profile applies to"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:34
+msgid "Creating a Profile"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:36
+#: ../../infrastructure/loadbalancers/profiles.rst:37
+msgid "Click the name of a Load Balancer"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:40
+msgid "Configure the profile fields:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:43
+msgid "A descriptive name for the profile."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:45
+msgid "Optional description of the profile's purpose."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:46
+msgid "SERVICE TYPE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:47
+msgid ""
+"The type of profile to create. Available options depend on the load "
+"balancer type and may include:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:49
+msgid "**Client SSL** — Manages SSL/TLS termination for client-facing connections"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:50
+msgid "**Server SSL** — Manages SSL/TLS for backend server connections"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:51
+msgid "**HTTP** — HTTP protocol handling options"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:52
+msgid "**TCP** — TCP connection management"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:53
+msgid "**UDP** — UDP protocol options"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:54
+msgid "**Persistence** — Session persistence configuration"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:55
+msgid "**Cookie Persistence** — Cookie-based session affinity"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:57
+msgid "CLIENT SSL CERTIFICATE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:58
+msgid ""
+"Select one or more client SSL certificates from the certificate store. "
+"Certificates must be previously uploaded under ``Infrastructure > "
+"Certificates``."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:59
+msgid "SERVER SSL CERTIFICATE"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:60
+msgid "Select one or more server SSL certificates for backend connections."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:62
+msgid ""
+"Additional fields are displayed based on the load balancer type and the "
+"selected service type. These are defined by the provider's profile option"
+" types."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:67
+msgid "Editing a Profile"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:53
+#: ../../infrastructure/loadbalancers/policies.rst:68
+#: ../../infrastructure/loadbalancers/profiles.rst:69
+#: ../../infrastructure/loadbalancers/profiles.rst:78
+msgid "Navigate to the Load Balancer detail page"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:71
+msgid "Click the edit icon next to the profile"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:72
+msgid "Modify the desired fields"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:76
+msgid "Deleting a Profile"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:80
+msgid "Click the delete icon next to the profile"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:56
+#: ../../infrastructure/loadbalancers/policies.rst:107
+#: ../../infrastructure/loadbalancers/profiles.rst:81
+msgid "Confirm the deletion"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:58
+#: ../../infrastructure/loadbalancers/profiles.rst:83
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:83
+msgid ""
+"Deleting a profile that is currently assigned to a virtual server may "
+"disrupt traffic. Ensure no active virtual servers reference the profile "
+"before removing it."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:86
+msgid "Using Profiles with Virtual Servers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:88
+msgid ""
+"When creating or editing a Virtual Server, profiles can be selected from "
+"the **PROFILES** field. Multiple profiles can be applied to a single "
+"virtual server. The available profiles are filtered to those belonging to"
+" the same load balancer."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/profiles.rst:90
+msgid ""
+"See the F5 documentation section for details on how profiles are applied "
+"to F5 virtual servers."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:4
+msgid "Load Balancer Policies and Rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:9
+msgid ""
+"Load Balancer Policies define traffic management rules that control how "
+"requests are routed, redirected, or modified by the load balancer. "
+"Policies contain one or more rules, and each rule can match on specific "
+"conditions (such as URI path, hostname, or header values) and perform "
+"actions (such as forwarding to a pool, redirecting, or rewriting)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:11
+msgid ""
+"Policy management is available for load balancer types that support "
+"policy-based routing (such as F5 BIG-IP and NSX-T)."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:16
+msgid ""
+"``Infrastructure: Load Balancers`` role permission at **Full** level is "
+"required to create, edit, or delete policies and rules."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:17
+msgid ""
+"``Infrastructure: Load Balancers`` role permission at **Read** level "
+"allows viewing policies and rules only."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:20
+msgid "Viewing Policies"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:24
+#: ../../infrastructure/loadbalancers/policies.rst:37
+#: ../../infrastructure/loadbalancers/policies.rst:54
+#: ../../infrastructure/loadbalancers/policies.rst:69
+msgid "Select the **POLICIES** tab"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:26
+msgid ""
+"The Policies tab lists all policies configured for the load balancer, "
+"including:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:28
+msgid "**Name** — Policy name"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:29
+msgid "**Description** — Policy description"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:30
+msgid "**Rules** — Number of rules defined within the policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:33
+msgid "Creating a Policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:39
+msgid "Configure the policy fields:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:42
+msgid "A descriptive name for the policy."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:44
+msgid "Optional description of the policy's purpose."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:46
+msgid ""
+"Additional fields are displayed based on the load balancer type. These "
+"are defined by the provider's policy option types."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:51
+msgid "Deleting a Policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:55
+msgid "Click the delete icon next to the policy"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:58
+msgid ""
+"Deleting a policy that is currently assigned to a virtual server may "
+"disrupt traffic routing. Ensure no active virtual servers reference the "
+"policy before removing it."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:61
+msgid "Policy Rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:63
+msgid ""
+"Each policy contains one or more rules that define match conditions and "
+"actions. Rules are evaluated in order and the first matching rule's "
+"action is applied."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:66
+msgid "Viewing Rules"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:70
+msgid "Click the name of a policy to expand its rules list"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:73
+msgid "Creating a Rule"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:75
+#: ../../infrastructure/loadbalancers/policies.rst:105
+msgid "Navigate to the Policy detail view"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:76
+msgid "Click :guilabel:`+ ADD RULE`"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:77
+msgid "Configure the rule fields:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:80
+msgid "A descriptive name for the rule."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:81
+msgid "MATCH CONDITIONS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:82
+msgid ""
+"Define the criteria that must be met for the rule to apply. Conditions "
+"vary by load balancer type and may include:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:84
+msgid "**URI Path** — Match on request URI path (e.g., ``/api/*``)"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:85
+msgid "**Hostname** — Match on the Host header value"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:86
+msgid "**HTTP Method** — Match on GET, POST, PUT, etc."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:87
+msgid "**Header** — Match on a specific HTTP header value"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:88
+msgid "**Source IP** — Match on client source IP address or range"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:90
+msgid "ACTIONS"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:91
+msgid "Define what happens when the rule matches:"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:93
+msgid "**Forward to Pool** — Send traffic to a specific backend pool"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:94
+msgid "**Redirect** — Return an HTTP redirect response"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:95
+msgid "**Reject** — Return a rejection response"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:96
+msgid "**Rewrite** — Modify the request URI or headers before forwarding"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:98
+msgid ""
+"Available match conditions and actions depend on the load balancer type "
+"and are defined by the provider's policy rule option types."
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:103
+msgid "Deleting a Rule"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:106
+msgid "Click the delete icon next to the rule"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:110
+msgid "Using Policies with Virtual Servers"
+msgstr ""
+
+#: ../../infrastructure/loadbalancers/policies.rst:112
+msgid ""
+"When creating or editing a Virtual Server, policies can be selected from "
+"the **POLICIES** field. The available policies are filtered to those "
+"belonging to the same load balancer. Policies are evaluated in the order "
+"they are assigned to the virtual server."
+msgstr ""
+

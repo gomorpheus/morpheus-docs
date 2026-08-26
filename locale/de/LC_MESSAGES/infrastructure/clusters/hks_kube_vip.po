@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:2
+msgid "HKS kube-vip"
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:4
+msgid ""
+"HKS can use the product-managed **Kube VIP** load balancer to provide a "
+"virtual IP address for a Kubernetes cluster. Kube VIP is available for "
+"Kubernetes Cluster layouts using VMware, vCloud Director, Xen, manual, "
+"KVM, and standard provision types."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:7
+msgid "Prerequisites and Configuration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:9
+msgid "Select Kube VIP as the cluster load balancer and provide either:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:11
+msgid ""
+"A **VIP Pool** from which |morpheus| acquires an address. The address "
+"must be accessible from every cluster node."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:12
+msgid "A **VIP Address** that is unused and routable on the node network."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:14
+msgid ""
+"|morpheus| owns kube-vip configuration. During node configuration, it "
+"selects the appropriate master or worker script and writes the generated "
+"configuration to the node. Master nodes run kube-vip as a static Pod with"
+" leader election. Do not edit the generated ``/etc/kubernetes/manifests"
+"/kube-vip.yaml`` file; later |morpheus| operations can replace local "
+"changes."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:17
+msgid "Verification and Troubleshooting"
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:19
+msgid ""
+"Confirm the cluster load balancer shows Kube VIP and the expected virtual"
+" IP."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:20
+msgid ""
+"From a system on the node network, verify that the virtual IP is "
+"reachable."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:21
+msgid ""
+"On each control-plane node, inspect the ``kube-system`` namespace and "
+"confirm its ``kube-vip-<node>`` Pod is running."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:22
+msgid ""
+"Verify the generated static Pod manifest references the expected image "
+"and virtual IP without modifying it."
+msgstr ""
+
+#: ../../infrastructure/clusters/hks_kube_vip.rst:24
+msgid ""
+"If the virtual IP is unavailable, verify that it is unused, belongs to a "
+"network reachable by all nodes, and is not blocked by network policy or "
+"switching configuration. Review the cluster provisioning process output "
+"for the Kube VIP node-configuration step. On a multi-control-plane "
+"cluster, loss of the leader should cause another kube-vip Pod to acquire "
+"leadership; verify the virtual IP remains reachable before returning the "
+"cluster to service."
+msgstr ""
+

@@ -1,0 +1,361 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:2
+msgid "HPE Alletra MP Storage"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:5
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:7
+msgid ""
+"All HPE Alletra MP Storage iSCSI ports are reachable from each of the "
+"cluster hosts"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:8
+msgid ""
+"The ``multipath.conf`` settings on each node should be configured as "
+"follows:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:10
+#, python-brace-format
+msgid ""
+"defaults {\n"
+"    find_multipaths yes\n"
+"    user_friendly_names no\n"
+"}"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:18
+msgid "Add HPE Alletra MP Storage"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:20
+msgid ""
+"The first step is to create a storage server in |morpheus|. Once the "
+"storage server is added, you can create a datastore and provision "
+"Instances. Follow these steps to add a Storage Server:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:22
+msgid "Navigate to :menuselection:`Infrastructure --> Storage`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:23
+msgid "In the \"Servers\" tab, Click the :guilabel:`+ ADD` button"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:24
+msgid "From the ADD STORAGE SERVER wizard, input the following:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:26
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:55
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:90
+msgid "NAME:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:27
+msgid "Name of the storage server in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:28
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:57
+msgid "TYPE:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:29
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:58
+msgid "Select \"HPE Alletra MP\""
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:30
+msgid "URL:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:31
+msgid ""
+"URL of HPE Alletra MP Storage (ex. ``https://storage-system.example.com``"
+" or ``https://192.1.2.3:1234``)"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:32
+msgid "USERNAME:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:33
+msgid "Add your administrative user account"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:34
+msgid "PASSWORD:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:35
+msgid "Add your administrative user account password"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:37
+msgid "Select :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:39
+msgid ""
+".. image:: /images/infrastructure/Storage/hpe-alletra-mp/add-storage-"
+"server.png"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:42
+msgid "The `Storage Server` will be added and displayed in the `Datastore` tab."
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:45
+msgid "Create Datastore"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:47
+msgid "Add a `Datastore` to the `Storage Server`."
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:49
+msgid "Navigate to :menuselection:`Infrastructure --> Clusters`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:50
+msgid ""
+"Click into the detail page for the cluster where datastore is to be "
+"created"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:51
+msgid "Select the \"Storage\" tab"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:52
+msgid "Under the \"Data Stores\" sub tab, Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:53
+msgid "From the ADD DATASTORE wizard, input the following:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:56
+msgid "Name of the datastore in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:59
+msgid "STORAGE SERVER:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:60
+msgid "Select the Storage Server created using the steps in the previous section"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:62
+msgid "Select :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:64
+msgid ""
+".. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-"
+"datastore.png"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:67
+msgid ""
+"The data store will be added and displayed in the \"Datastore\" tab. "
+"Confirm that its status is healthy."
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:70
+msgid "Create Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:72
+msgid ""
+"Create an Instance using the Alletra MP Datastore. The instance creation "
+"process follows the standard |morpheus| provisioning workflow (see "
+":doc:`/provisioning/instances/creating_instances` for general instance "
+"creation documentation). The key difference is selecting the Alletra MP "
+"datastore for volume storage."
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:74
+msgid "Navigate to :menuselection:`Provisioning --> Instances`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:75
+msgid "In the `Instances` tab, Click the :guilabel:`+ ADD` button"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:76
+msgid "From the ADD INSTANCE wizard input the following:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:78
+msgid "From the TYPE section: Select \"|hvm|\""
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:79
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:93
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:120
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:122
+msgid "Click :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:81
+msgid ""
+".. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-"
+"type.png"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:84
+msgid "From the GROUP tab, input the following:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:86
+msgid "GROUP:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:87
+msgid "Select the Group for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:88
+msgid "CLOUD:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:89
+msgid "Select the Cloud for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:91
+msgid "Name for the Instance in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:95
+msgid ""
+".. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-"
+"group.png"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:98
+msgid "From the CONFIGURE tab, input the following:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:100
+msgid "LAYOUT:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:101
+msgid "Select the Layout for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:102
+msgid "PLAN:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:103
+msgid "Select the Plan for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:104
+msgid "RESOURCE POOL:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:105
+msgid "Select the Resource Pool (Cluster) for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:106
+msgid "VOLUMES:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:107
+msgid ""
+"Add one or more Volumes to the Instance. Select the datastore created in "
+"the previous section"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:108
+msgid "NETWORK:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:109
+msgid "Add Networks to the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:110
+msgid "IMAGE:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:111
+msgid "Select the Image for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:112
+msgid "HOST:"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:113
+msgid "Select the cluster host for the Instance"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:115
+msgid "Other configurations may be added as needed."
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:117
+msgid ""
+".. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-"
+"configure.png"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:121
+msgid "Add Automation Tasks, if needed"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:123
+msgid "Review the Instance configuration"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:124
+msgid "Click :guilabel:`COMPLETE`"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:126
+msgid ""
+".. image:: /images/infrastructure/Storage/hpe-alletra-mp/create-instance-"
+"review.png"
+msgstr ""
+
+#: ../../integration_guides/storage/hpe-alletra-mp.rst:129
+msgid ""
+"The Instance is now provisioned to the new datastore and is viewable "
+"within the Instances (:menuselection:`Provisioning --> Instances`) "
+"section."
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -26,11 +26,20 @@ msgstr "Configure Morpheus Database y User"
 
 #: ../../getting_started/installation/database_configure_generic.rst:4
 msgid ""
+"External MySQL configuration is supported, including the 8.4 LTS family. "
+"Confirm the formally certified version and service variant for the "
+"installed |morpheus| release, and review "
+":doc:`/getting_started/external_services/mysql` before creating the "
+"schema. ``8.4 or greater`` is not an unconditional support statement."
+msgstr ""
+
+#: ../../getting_started/installation/database_configure_generic.rst:6
+msgid ""
 "Create the Database you will be using with |morpheus|. Login to mysql "
 "node:"
 msgstr "Create the Database you será using con |morpheus|. Login to mysql node:"
 
-#: ../../getting_started/installation/database_configure_generic.rst:6
+#: ../../getting_started/installation/database_configure_generic.rst:8
 msgid ""
 "[root@node: ~]  mysql -u root -p\n"
 "  # password: `enter root password`\n"
@@ -44,23 +53,23 @@ msgstr ""
 "password`\\n\\nmysql> CREATE DATABASE morpheus CHARACTER SET utf8mb4 "
 "COLLATE utf8mb4_general_ci;\\n\\nmysql> show databases;"
 
-#: ../../getting_started/installation/database_configure_generic.rst:16
+#: ../../getting_started/installation/database_configure_generic.rst:18
 msgid ""
 "Next create your |morpheus| database user. This is the user the "
 "|morpheus| app nodes will auth with mysql."
 msgstr ""
-"Next create your |morpheus| database user. This is the user the |morpheus| "
-"app nodes will auth con mysql."
+"Next create your |morpheus| database user. This is the user the "
+"|morpheus| app nodes will auth con mysql."
 
-#: ../../getting_started/installation/database_configure_generic.rst:18
+#: ../../getting_started/installation/database_configure_generic.rst:20
 msgid "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
 msgstr "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
 
-#: ../../getting_started/installation/database_configure_generic.rst:22
+#: ../../getting_started/installation/database_configure_generic.rst:24
 msgid "Next Grant your new |morpheus| user permissions."
 msgstr "Next Grant your new |morpheus| user permissions."
 
-#: ../../getting_started/installation/database_configure_generic.rst:24
+#: ../../getting_started/installation/database_configure_generic.rst:26
 msgid ""
 "mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheus'@'%' with grant "
 "option;\n"

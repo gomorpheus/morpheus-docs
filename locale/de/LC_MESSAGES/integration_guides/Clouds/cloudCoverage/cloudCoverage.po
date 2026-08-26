@@ -1,0 +1,804 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:2
+msgid "Cloud Integration Coverage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:7
+msgid ""
+"|morpheus| supports over 25 cloud integrations spanning public, private, "
+"and hybrid environments. The depth of feature coverage varies by cloud "
+"type depending on the maturity of the integration and the capabilities "
+"exposed by the underlying platform API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:9
+msgid ""
+"This page classifies supported clouds into three tiers based on the "
+"breadth of |morpheus| management capabilities available, and provides a "
+"detailed feature matrix for evaluating cloud-specific functionality."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:11
+msgid ""
+"This feature matrix is not a version certification matrix. Use "
+":ref:`compatibility` for qualified external-product versions. Products "
+"and operating models that are absent from both references do not gain a "
+"support claim by similarity to a listed hypervisor."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:14
+msgid "SimpliVity Boundary"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:16
+msgid ""
+"No SimpliVity-specific Cloud integration or documented eight-node multi-"
+"session management contract is included in this documentation. In "
+"particular, this guide does not publish supported concurrent-session "
+"counts, sequencing, recovery behavior, or an eight-node SVT "
+"qualification. Manage the underlying VMware environment only within the "
+"documented VMware vCenter integration boundary, and manage SimpliVity-"
+"specific lifecycle operations with HPE SimpliVity tools and guidance. "
+"Contact HPE for the current interoperability statement before using an "
+"eight-node or multi-session design."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:18
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:20
+msgid ""
+"The tier classification reflects |morpheus| integration depth, not the "
+"quality of the underlying cloud platform. A Tier 2 cloud may be the ideal"
+" choice for your environment depending on your workload requirements."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:23
+msgid "Cloud Tier Classification"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:26
+msgid "Tier 1 |---| Full Lifecycle Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:28
+msgid ""
+"Tier 1 clouds offer the deepest |morpheus| integration with comprehensive"
+" lifecycle management across provisioning, networking, security, costing,"
+" containers, and governance. These integrations support full CRUD "
+"operations on cloud resources, bi-directional synchronization, and "
+"advanced features such as Kubernetes orchestration, native load "
+"balancing, and multitenancy."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:34
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:54
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:90
+msgid "Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:35
+msgid "Key Differentiators"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:36
+msgid "**HVM (HPE VM)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:37
+msgid ""
+"KVM hypervisor management, bridge/VLAN/OVS network CRUD, storage "
+"profiles, HA clustering, live migration, brownfield, auto-scaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:38
+msgid "**Amazon Web Services (AWS)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:39
+msgid ""
+"VPC/Network CRUD, Security Groups, EKS, ELB/ALB, CloudFormation, "
+"Terraform, Route53, IAM, RDS, costing with reservations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:40
+msgid "**Microsoft Azure (Public)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:41
+msgid ""
+"Network/Subnet CRUD, Security Groups, AKS, ARM Blueprints, Scale Sets, "
+"Azure LB, Storage, Marketplace, costing with reservations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:42
+msgid "**VMware vCenter**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:43
+msgid ""
+"Distributed Switches, DRS Clusters, Affinity Groups, NSX/NSX-T "
+"integration, image conversion, brownfield migrations, multitenancy"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:46
+msgid "Tier 2 |---| Core Cloud Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:48
+msgid ""
+"Tier 2 clouds provide solid provisioning, brownfield discovery, and "
+"backup capabilities with partial networking and costing support. Network "
+"management may be limited to read-only synchronization or basic "
+"operations. These integrations cover the most common day-to-day "
+"operations but may lack advanced network lifecycle management, native "
+"security groups, or full billing integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:55
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:91
+msgid "Notes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:56
+msgid "**Google Cloud Platform (GCP)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:57
+msgid ""
+"Provisioning, snapshots, brownfield, costing, right-sizing. Limited "
+"network lifecycle management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:58
+msgid "**OpenStack**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:59
+msgid ""
+"Security groups, floating IPs, network lifecycle, LBaaS, Manila file "
+"services, brownfield."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:60
+msgid "**Nutanix Prism Element**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:61
+msgid ""
+"Brownfield, Kubernetes, costing, migrations, auto scaling. Delivered as "
+"external plugin."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:62
+msgid "**Nutanix Prism Central**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:63
+msgid ""
+"Project scoping, brownfield, snapshots, cloud sync. Delivered as external"
+" plugin."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:64
+msgid "**Hyper-V**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:65
+msgid ""
+"VM provisioning, discovery, Veeam integration. Networks are sync-only (no"
+" create/delete). No native security groups."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:66
+msgid "**SCVMM**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:67
+msgid ""
+"Similar to Hyper-V with System Center integration. Limited network "
+"management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:68
+msgid "**VMware vCloud Director (VCD)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:69
+msgid "vApp support, brownfield, IP pools, multi-NIC, Kubernetes/Docker."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:70
+msgid "**Open Telekom Cloud (OTC)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:71
+msgid "OpenStack-based. Security groups, routers, floating IPs, LB, OBS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:72
+msgid "**Huawei Cloud**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:73
+msgid "OpenStack-based. Security groups, routers, floating IPs, LB, OBS, SFS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:74
+msgid "**Oracle Public Cloud**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:75
+msgid "VM provisioning, brownfield. Limited networking and costing."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:76
+msgid "**PowerVC**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:77
+msgid "Power Systems provisioning. Security groups, networks, brownfield."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:78
+msgid "**OLVM (Oracle Linux Virtualization Manager)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:79
+msgid "VM provisioning, brownfield, snapshots, host monitoring, console."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:82
+msgid "Tier 3 |---| Essential Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:84
+msgid ""
+"Tier 3 clouds support basic virtual machine provisioning and instance "
+"discovery. They are suitable for straightforward compute workloads but "
+"lack advanced management features such as network CRUD, costing, native "
+"security groups, or Kubernetes orchestration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:92
+msgid "**UpCloud**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:93
+msgid ""
+"VM provisioning, cloud-init, backups, periodic sync. No costing, no "
+"security groups."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:94
+msgid "**DigitalOcean**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:95
+msgid "Basic VM provisioning and cloud-init. Delivered as external plugin."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:96
+msgid "**Alibaba Cloud**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:97
+msgid ""
+"Brownfield, security groups, Docker/Kubernetes, tag sync. Limited "
+"lifecycle management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:98
+msgid "**XCP-ng**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:99
+msgid ""
+"VM provisioning, backups. No guest customization, no costing. Delivered "
+"as external plugin."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:100
+msgid "**Oracle VM (OVM)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:101
+msgid "Basic VM provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:102
+msgid "**VMware ESXi (Standalone)**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:103
+msgid "Single-host VM provisioning without vCenter management features."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:104
+msgid "**MacStadium**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:105
+msgid "macOS VM provisioning on dedicated Mac infrastructure."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:106
+msgid "**Canonical MaaS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:107
+msgid "Bare metal provisioning via MaaS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:108
+msgid "**Azure Stack**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:109
+msgid "Azure-compatible private cloud. Subset of Azure public capabilities."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:111
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:124
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:316
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:113
+msgid ""
+"Clouds marked \"Delivered as external plugin\" are installed separately "
+"from the |morpheus| appliance. They can be found on the `Morpheus "
+"Marketplace <https://share.morpheusdata.com>`_ and installed via "
+"|AdmIntPlu|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:116
+msgid "Feature Matrix"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:118
+msgid ""
+"The following matrix shows feature availability across all actively "
+"supported cloud integrations. Each cell indicates the level of support:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:120
+msgid ""
+"|checkmark| **Full** |---| Feature is fully supported with create, read, "
+"update, and delete operations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:121
+msgid ""
+"|partial| **Partial** |---| Feature is available but with limited "
+"operations (e.g. read-only sync, no CRUD)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:122
+msgid "|dash| |---| Feature is not supported for this cloud type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:126
+msgid ""
+"Feature availability may also depend on your |morpheus| license tier "
+"(Essentials, Advanced, or Enterprise). See "
+":doc:`/administration/settings/enabled_cloud` for license-based cloud "
+"availability."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:129
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:310
+msgid "Provisioning & Lifecycle"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "VM Provision"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Custom Sizing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Resize"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Clone/Convert"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Auto Scaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Migrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "AWS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "|checkmark|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "|partial|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Azure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "|dash|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "VMware vCenter"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "HVM"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "GCP"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "OpenStack"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Nutanix PE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Nutanix PC"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Hyper-V"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "SCVMM"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "VCD"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "OTC"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Huawei"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Oracle Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "PowerVC"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "OLVM"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "UpCloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:339
+msgid "DigitalOcean"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Alibaba"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:340
+msgid "XCP-ng"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "ESXi"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:158
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:313
+msgid "Networking"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Network Sync"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Network CRUD"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "IPAM / IP Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Floating/Elastic IPs"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Load Balancers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "N/A"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "|partial| :sup:`1`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "|partial| :sup:`2`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:186
+msgid ":sup:`1` Network creation via NSX/NSX-T integration only"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:187
+msgid ":sup:`2` Security groups via NSX/NSX-T or Cisco ACI integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:190
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:318
+msgid "Storage & Backups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Datastore Sync"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Volume Mgmt"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Snapshots"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Morpheus Backups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Third-Party Backup"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:219
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:321
+msgid "Costing & Governance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Metering/Usage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Price Sync"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Invoicing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Reservations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Right-Sizing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Tag Sync"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Sub-Account Scoping"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "|checkmark| :sup:`3`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:247
+msgid ""
+":sup:`3` Includes cloud-native recommendations in addition to |morpheus| "
+"guidance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:250
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:324
+msgid "Containers & Kubernetes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Native K8s (EKS/AKS/GKE)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Morpheus K8s Clusters"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Docker Hosts"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Brownfield K8s"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:279
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:327
+msgid "Brownfield & Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "VM Discovery"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Periodic Sync"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Remote Console"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:1
+msgid "Inventory Import"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:308
+msgid "Understanding the Matrix"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:311
+msgid ""
+"Covers the ability to create, resize, clone, and migrate virtual "
+"machines. Tier 1 clouds support the full range of lifecycle operations. "
+"Tier 3 clouds typically support creation and basic resize only."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:314
+msgid ""
+"Covers network discovery, CRUD operations (create/update/delete networks "
+"and subnets), security group management, IP address management (IPAM), "
+"and load balancer integration. This is often the most significant "
+"differentiator between tiers. Tier 1 clouds support full network "
+"lifecycle; Tier 2 clouds may only sync existing networks; Tier 3 clouds "
+"provide basic network selection at provisioning time."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:316
+msgid ""
+"**IPAM / IP Pools** is largely a |morpheus| platform-level capability. "
+"When a network has pool assignment enabled, |morpheus| leases an IP from "
+"the configured pool and injects it into the guest OS via cloud-init "
+"(Linux), sysprep/cloudbase-init (Windows), or VMware/SCVMM guest "
+"customization. This means most on-premises clouds (VMware, Hyper-V, "
+"SCVMM, KVM/HVM, OpenStack, VCD) support IP pool assignment regardless of "
+"whether the underlying hypervisor has native IPAM. The \"Floating/Elastic"
+" IPs\" column refers to cloud-provider-native floating IP concepts (AWS "
+"Elastic IP, OpenStack Floating IP, etc.) and is marked N/A for clouds "
+"where this concept does not exist."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:319
+msgid ""
+"Covers datastore synchronization, volume management, snapshot support, "
+"and backup integrations (both native |morpheus| backups and third-party "
+"solutions like Veeam or Commvault)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:322
+msgid ""
+"**Metering/Usage** is a |morpheus| platform capability that tracks "
+"resource consumption (CPU, memory, storage) across all synced VMs "
+"regardless of cloud type. **Price Sync** and **Invoicing** apply to "
+"public clouds where pricing data is available via API. **Reservations** "
+"tracks cloud-provider reservation commitments (AWS Reserved Instances, "
+"Azure Reservations). **Right-Sizing** recommendations are generated by "
+"|morpheus| guidance for all clouds based on usage patterns; public clouds"
+" additionally feed cloud-native recommendations. **Tag Sync** is bi-"
+"directional tag synchronization with cloud-provider tag/label systems "
+"(N/A for platforms without a tag API). **Sub-Account Scoping** refers to "
+"the ability to scope a |morpheus| cloud integration to a specific cloud-"
+"provider sub-account, project, or subscription (e.g. AWS accounts, Azure "
+"subscriptions, GCP projects, OpenStack projects, vCloud Director Orgs)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:325
+msgid ""
+"Covers native managed Kubernetes services (EKS, AKS, GKE), "
+"|morpheus|-provisioned Kubernetes clusters, Docker host deployment, and "
+"brownfield Kubernetes cluster import."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:328
+msgid ""
+"Covers the ability to discover and import existing cloud resources, "
+"periodic synchronization of cloud state, remote console access, and "
+"inventory management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:331
+msgid "Plugin-Based Clouds"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:333
+msgid ""
+"Several cloud integrations are delivered as installable plugins rather "
+"than being bundled with the |morpheus| appliance. Plugin-based clouds "
+"offer the same management capabilities but are installed separately and "
+"may follow an independent release cadence."
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:335
+msgid "Current plugin-based clouds include:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:337
+msgid "Nutanix Prism Element"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:338
+msgid "Nutanix Prism Central"
+msgstr ""
+
+#: ../../integration_guides/Clouds/cloudCoverage/cloudCoverage.rst:342
+msgid ""
+"Plugins are available on the `Morpheus Marketplace "
+"<https://share.morpheusdata.com>`_ and can be installed via |AdmIntPlu|."
+msgstr ""
+

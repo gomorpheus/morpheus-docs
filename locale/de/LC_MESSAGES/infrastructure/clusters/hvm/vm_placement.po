@@ -1,0 +1,806 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:2
+msgid "VM Placement & Scheduling"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:5
+msgid "VM Pinning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:7
+msgid ""
+"VM pinning prevents a VM from being automatically migrated by maintenance"
+" mode evacuation or Dynamic Placement. Pinned VMs remain on their "
+"assigned host unless manually moved by an administrator."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:10
+msgid "Use Cases"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:12
+msgid "VMs with host-level hardware dependencies (GPU passthrough, USB devices)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:13
+msgid "License-bound VMs that must run on specific hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:14
+msgid "VMs with local storage that cannot be migrated"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:15
+msgid "System VMs (cluster management agents)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:18
+msgid "Behavior of Pinned VMs"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:24
+msgid "Scenario"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:25
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:47
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:246
+msgid "Behavior"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:26
+msgid "Maintenance mode"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:27
+msgid "Pinned VMs are skipped during evacuation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:28
+msgid "Dynamic Placement rebalancing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:29
+msgid "Pinned VMs are excluded from placement calculations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:30
+msgid "Host failure"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:31
+msgid "Pinned VMs are **not** automatically failed over to another host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:32
+msgid "Manual migration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:33
+msgid "Pinned VMs can be manually moved by an administrator"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:35
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:270
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:35
+msgid ""
+"Pinned VMs on a failed host will not be automatically recovered. If the "
+"host fails, the pinned VM remains offline until the host recovers or an "
+"administrator manually intervenes."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:38
+msgid "Placement Strategy"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:40
+msgid ""
+"Each VM has a placement strategy that determines how |morpheus| handles "
+"its host assignment:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:46
+msgid "Strategy"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:48
+msgid "Auto (default)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:49
+msgid ""
+"VM may be moved by Dynamic Placement, maintenance mode, or failover. The "
+"preferred host is updated when the VM is migrated."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:50
+msgid "Pinned"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:51
+msgid ""
+"VM is locked to its current host. Only manual migration by an "
+"administrator can relocate it."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:54
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:96
+msgid "Dynamic Placement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:56
+msgid ""
+"Dynamic Placement automatically balances VM placement across cluster "
+"hosts based on resource utilization. It runs during each cluster sync "
+"cycle."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:59
+msgid "Failover Behavior (HA)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:61
+msgid ""
+"When a host becomes unreachable, |morpheus| detects the failure during "
+"the cluster health check and takes the following actions:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:63
+msgid ""
+"**Detection** — The host is marked unreachable after failing connectivity"
+" checks during a cluster sync cycle."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:64
+msgid ""
+"**VM identification** — All VMs that were running on the failed host are "
+"identified."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:65
+msgid ""
+"**Placement evaluation** — For each affected VM with ``Auto`` placement "
+"strategy, |morpheus| selects a target host with sufficient available "
+"memory and CPU capacity."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:66
+msgid ""
+"**Restart** — VMs are restarted on their assigned target hosts. VMs with "
+"``Pinned`` placement strategy are NOT automatically failed over and "
+"remain offline until the original host recovers or an administrator "
+"intervenes."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:68
+msgid "After the original host recovers:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:70
+msgid ""
+"VMs with **Failover** placement strategy that were moved to a different "
+"host are automatically migrated back to their preferred (original) host "
+"once it is healthy and has capacity."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:71
+msgid ""
+"VMs with **Auto** placement strategy remain on their current host — use "
+"Dynamic Placement or manual migration to rebalance if desired."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:73
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:194
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:224
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:75
+msgid ""
+"Failover operates even when Dynamic Placement is disabled (the default "
+"\"Failover Only\" mode). Full DRS rebalancing requires Dynamic Placement "
+"to be explicitly enabled."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:78
+msgid "Affinity Group Enforcement During Failover"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:80
+msgid "During failover, affinity rules are evaluated:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:82
+msgid ""
+"**Keep Together** — If one VM in a \"Keep Together\" group is failed over"
+" to a new host, other VMs in the group are also migrated to the same host"
+" (capacity permitting)."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:83
+msgid ""
+"**Keep Separate** — VMs in a \"Keep Separate\" group are placed on "
+"different surviving hosts to maintain anti-affinity."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:86
+msgid "Modes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:92
+msgid "Mode"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:93
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:129
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:150
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:206
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:94
+msgid "Failover Only (default)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:95
+msgid ""
+"Dynamic Placement only moves VMs when a host has failed and VMs need to "
+"be restarted on surviving hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:97
+msgid ""
+"Actively rebalances VMs across hosts to distribute memory utilization "
+"evenly"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:99
+msgid "Dynamic Placement respects:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:101
+msgid "VM pinning (pinned VMs are never moved)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:102
+msgid "Maintenance mode flags (hosts in maintenance are excluded)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:103
+msgid "Host-VM Group affinity and anti-affinity rules"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:104
+msgid "Available memory thresholds"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:107
+msgid "Configuring Dynamic Placement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:109
+msgid "Dynamic Placement settings are configured when editing a cluster:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:111
+msgid ""
+"Navigate to :menuselection:`Infrastructure --> Clusters` and select the "
+"cluster"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:112
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:237
+msgid "Click :guilabel:`Edit`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:113
+msgid "Enable the **Dynamic Placement** toggle to activate DRS for the cluster"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:114
+msgid ""
+"Set the **Aggressiveness** level to control how actively VMs are "
+"rebalanced"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:115
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:239
+msgid "Click :guilabel:`Save`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:117
+msgid ""
+"When Dynamic Placement is disabled (the default), the cluster operates in"
+" Failover Only mode and no automatic rebalancing occurs."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:120
+msgid "Aggressiveness Levels"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:122
+msgid ""
+"The aggressiveness level controls how readily |morpheus| migrates VMs to "
+"rebalance the cluster. Higher aggressiveness results in tighter balancing"
+" but more frequent live migrations. Three levels are available:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:128
+msgid "Level"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:130
+msgid "Conservative (default)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:131
+msgid ""
+"Tolerates significant imbalance before acting. Best for production "
+"workloads where minimizing migrations is a priority."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:132
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:148
+msgid "Moderate"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:133
+msgid ""
+"Balances migration frequency against cluster evenness. Suitable for mixed"
+" workloads."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:134
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:149
+msgid "Aggressive"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:135
+msgid ""
+"Actively pursues even distribution across hosts. Appropriate for clusters"
+" where balanced resource utilization is more important than migration "
+"overhead."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:138
+msgid "Threshold Parameters"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:140
+msgid ""
+"Each aggressiveness level sets a group of threshold parameters that "
+"govern the DRS algorithm:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:146
+msgid "Parameter"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:147
+msgid "Conservative"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:151
+msgid "Imbalance Threshold"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:152
+msgid "1.5"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:153
+msgid "1.4"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:154
+msgid "1.2"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:155
+msgid ""
+"A host is considered overloaded when its memory usage exceeds the cluster"
+" mean multiplied by this value. At 1.5 (conservative), a host must be 50%"
+" above the mean before any migration is considered."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:156
+msgid "Target Low Threshold"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:157
+msgid "0.9"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:158
+msgid "0.95"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:159
+msgid "1.0"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:160
+msgid ""
+"A destination host is eligible to receive a VM only if its memory and CPU"
+" usage are below the cluster mean multiplied by this value. At 0.9 "
+"(conservative), the target must be at least 10% below the mean."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:161
+msgid "Cooldown Period"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:162
+msgid "60 min"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:163
+msgid "30 min"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:164
+msgid "15 min"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:165
+msgid ""
+"Minimum time after a VM has been migrated before it can be moved again. "
+"Prevents VMs from bouncing between hosts."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:166
+msgid "Max Moves Per Cycle"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:167
+msgid "2"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:168
+msgid "3"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:169
+msgid "5"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:170
+msgid ""
+"Maximum number of VM migrations that can occur in a single DRS evaluation"
+" cycle (each cluster sync)."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:171
+msgid "Min Std Dev Improvement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:172
+msgid "8%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:173
+msgid "5%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:174
+msgid "2%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:175
+msgid ""
+"A proposed migration is only executed if it would reduce the cluster's "
+"resource utilization standard deviation by at least this percentage. "
+"Prevents marginal moves that provide little benefit."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:176
+msgid "CV Threshold"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:177
+msgid "0.08"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:178
+msgid "0.05"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:179
+msgid "0.03"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:180
+msgid ""
+"The coefficient of variation (standard deviation / mean) for both memory "
+"and CPU across all hosts. If the cluster CV is already below this value, "
+"DRS skips balancing entirely because the cluster is considered well-"
+"balanced."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:183
+msgid "How the Algorithm Works"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:185
+msgid ""
+"During each cluster sync cycle, Dynamic Placement evaluates the cluster "
+"as follows:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:187
+msgid ""
+"**Cluster balance check** — Calculate the coefficient of variation (CV) "
+"for memory and CPU across all hosts. If both values are below the CV "
+"Threshold, the cluster is considered balanced and no action is taken."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:188
+msgid ""
+"**Identify overloaded hosts** — Hosts whose memory usage exceeds the mean"
+" multiplied by the Imbalance Threshold are flagged."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:189
+msgid ""
+"**Select VMs to move** — On each overloaded host, eligible VMs are "
+"evaluated for migration. A VM is eligible if it uses the ``Auto`` "
+"placement strategy, has no local storage or assigned devices, is powered "
+"on, is not in an active backup, is not in an affinity group, and has not "
+"been migrated within the cooldown period."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:190
+msgid ""
+"**Select target hosts** — Target hosts must have memory and CPU usage "
+"below the mean multiplied by the Target Low Threshold. The move is also "
+"validated to ensure it would not push the target host above the Imbalance"
+" Threshold."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:191
+msgid ""
+"**Validate improvement** — The algorithm simulates the move and confirms "
+"it would reduce the cluster's standard deviation by at least the Min Std "
+"Dev Improvement percentage."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:192
+msgid ""
+"**Execute migrations** — Approved moves are executed up to the Max Moves "
+"Per Cycle limit."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:194
+msgid ""
+"Dynamic Placement uses the overcommit-adjusted memory values when "
+"evaluating hosts. See the :ref:`Memory Overcommit` section below for "
+"details."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:197
+msgid "Host-VM Groups (Affinity/Anti-Affinity)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:199
+msgid ""
+"Host-VM Groups define rules that control which hosts a VM may run on. "
+"These are configured at the cluster level and enforced during "
+"provisioning, migration, and Dynamic Placement operations."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:205
+msgid "Group Type"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:207
+msgid "Affinity"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:208
+msgid ""
+"VMs in this group should run on the specified hosts. Dynamic Placement "
+"will migrate non-compliant VMs to the preferred host when it has "
+"available capacity."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:209
+msgid "Anti-Affinity"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:210
+msgid ""
+"VMs in this group should NOT run on the same host. Ensures high "
+"availability by distributing replicas."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:211
+msgid "Site Group"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:212
+msgid ""
+"Groups hosts and VMs by physical site/location. Used in stretch cluster "
+"configurations for site-aware placement."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:214
+msgid ""
+"For detailed instructions on creating and managing Host-VM Groups, see "
+":doc:`host_vm_groups`."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:217
+msgid "Dynamic Placement and Affinity Enforcement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:219
+msgid ""
+"When Dynamic Placement runs with dynamic placement enabled, it evaluates "
+"affinity groups:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:221
+msgid ""
+"VMs in an **affinity group** that are not on their preferred host are "
+"migrated back (if the preferred host is online and has capacity)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:222
+msgid ""
+"VMs in an **anti-affinity group** that violate the rule (running on the "
+"same host as another group member) are migrated to separate hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:224
+msgid ""
+"Affinity rules are best-effort. If enforcing a rule would exceed host "
+"capacity or violate other constraints, the VM remains in its current "
+"location until conditions allow compliance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:227
+msgid "Memory Overcommit"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:229
+msgid ""
+"By default, |morpheus| treats VM memory allocations as hard reservations "
+"— a VM can only be placed on a host with enough free physical memory to "
+"fully back the allocation. Memory overcommit allows you to allocate more "
+"memory to VMs than the host physically has available, under the "
+"assumption that not all VMs will use their full allocation "
+"simultaneously."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:232
+msgid "Configuring Memory Overcommit"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:234
+msgid "Memory overcommit is set **per host** from the host detail page:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:236
+msgid ""
+"Navigate to the host detail page (:menuselection:`Infrastructure --> "
+"Clusters` > select cluster > Hosts tab > select host)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:238
+msgid "Set the **Overcommit Percent** field to the desired value"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:245
+msgid "Value"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:247
+msgid "100 (default)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:248
+msgid ""
+"No overcommit. VMs can only be placed if the host has enough physical "
+"memory for the full allocation."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:249
+msgid "150"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:250
+#, python-format
+msgid ""
+"The host advertises 150% of its physical memory as available for VM "
+"placement. A host with 128 GB of RAM would allow up to 192 GB of total VM"
+" memory allocations."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:251
+msgid "200"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:252
+#, python-format
+msgid ""
+"The host advertises 200% of its physical memory. A 128 GB host would "
+"allow up to 256 GB of total VM allocations."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:255
+msgid "How Overcommit Affects Placement"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:257
+msgid ""
+"When |morpheus| selects a host for a new VM, it calculates available "
+"memory as:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:259
+msgid ""
+"``available = (host physical memory × overcommit percent) - reserved "
+"memory - allocated VM memory``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:261
+msgid ""
+"A host is only eligible for placement if this calculated available memory"
+" exceeds the new VM's memory requirement. This means overcommit expands "
+"the pool of eligible hosts but does not bypass the placement check "
+"entirely."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:263
+msgid ""
+"Dynamic Placement also uses the overcommit-adjusted memory when "
+"evaluating rebalancing decisions."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:266
+msgid "Overcommit Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:268
+msgid ""
+"When the total allocated VM memory on a host exceeds the host's physical "
+"memory capacity (adjusted by the overcommit percent), |morpheus| raises a"
+" **Host Memory Over-Committed** alarm. This alarm indicates that the host"
+" is approaching or has exceeded its overcommit threshold and may "
+"experience performance degradation if VMs simultaneously consume their "
+"full allocations."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_placement.rst:270
+msgid ""
+"Memory overcommit can lead to performance and stability issues if "
+"overused. When VMs on an overcommitted host simultaneously consume their "
+"full memory allocations, the host may experience severe memory pressure, "
+"swapping, or out-of-memory conditions. Consider adding swap partitions to"
+" hosts with overcommit enabled and monitor memory utilization closely."
+msgstr ""
+

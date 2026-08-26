@@ -9,13 +9,13 @@ SPHINXPROJ    = jwtest
 SOURCEDIR     = .
 BUILDDIR      = _build
 LOCALEDIR     = locale
-LANGUAGES     = es
+LANGUAGES     = es pt fr de
 
 # Put it first so that "make" without argument is like "make help".
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-.PHONY: help Makefile build gettext intl-update intl-build html-es
+.PHONY: help Makefile build gettext intl-update intl-build html-es html-pt html-fr html-de
 
 # Project-standard build target
 build:
@@ -39,6 +39,18 @@ intl-build:
 # Shortcut: build Spanish HTML
 html-es:
 	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)/es" $(SPHINXOPTS) -D language=es $(O)
+
+# Shortcut: build Portuguese HTML
+html-pt:
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)/pt" $(SPHINXOPTS) -D language=pt $(O)
+
+# Shortcut: build French HTML
+html-fr:
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)/fr" $(SPHINXOPTS) -D language=fr $(O)
+
+# Shortcut: build German HTML
+html-de:
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)/de" $(SPHINXOPTS) -D language=de $(O)
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).

@@ -1,0 +1,728 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:2
+msgid "Monitoring & Health Baselines"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:4
+msgid ""
+"This section describes what a healthy layout 1.3 or 2.0 HVM cluster looks"
+" like, key metrics to monitor, and recommended alert thresholds."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:7
+msgid "What Healthy Looks Like"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:10
+msgid "Quorum Panel (UI)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:12
+msgid ""
+"Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
+"to view the cluster health panel."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:14
+msgid "A healthy cluster displays:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:20
+msgid "Indicator"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:21
+msgid "Expected Value"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:22
+msgid "Quorum Status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:23
+#: ../../infrastructure/clusters/hvm/monitoring.rst:143
+msgid "ACHIEVED"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:24
+msgid "Total Nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:25
+msgid "Matches your configured cluster size"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:26
+msgid "Reachable Nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:27
+#: ../../infrastructure/clusters/hvm/monitoring.rst:146
+msgid "Equals total nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:28
+msgid "Online Nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:29
+msgid "All nodes show ONLINE member status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:30
+msgid "Fenced Nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:31
+msgid "0"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:32
+msgid "Down Hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:33
+msgid "Empty / None"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:34
+msgid "Designated Coordinator"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:35
+msgid "One host assigned"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:36
+msgid "Lockspaces"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:37
+msgid "OK (no waiting on fencing)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:38
+msgid "Datastores"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:39
+#: ../../infrastructure/clusters/hvm/monitoring.rst:155
+msgid "All PROVISIONED"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:40
+msgid "Witness (stretch clusters)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:41
+msgid "Connected"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:44
+msgid "Agent Quorum Endpoint"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:46
+msgid "Query the agent's quorum status from any cluster host:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:48
+msgid "curl -k https://localhost:7443/quorum"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:52
+msgid "A healthy response includes:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:54
+msgid "``quorumAchieved: true``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:55
+msgid "``fenced: false``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:56
+msgid "``waitFencing: false``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:57
+msgid "``reachableNodes`` equals ``totalNodes``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:58
+msgid "All nodes in the ``nodes`` array show as reachable"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:59
+msgid "``corosyncActive: true``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:60
+msgid "``dlmActive: true``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:61
+msgid "``corosyncQuorate: true``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:64
+msgid "Corosync Health"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:66
+msgid "corosync-quorumtool -s"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:70
+msgid "Expected output includes:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:72
+msgid "``Quorate: Yes``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:73
+msgid "``Votes`` for each node equals 1"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:74
+msgid "``Total votes`` matches the cluster size"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:77
+msgid "DLM Health"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:79
+msgid "dlm_tool status -v"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:83
+msgid "Expected output shows:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:85
+msgid "All nodes with ``member=1``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:86
+msgid "No nodes waiting on fencing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:89
+msgid "GFS2 Mounts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:91
+msgid "mount | grep gfs2"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:95
+msgid ""
+"All expected HPE Clustered Datastores should be mounted. Verify no "
+"filesystems are in a withdrawn state:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:97
+msgid "cat /sys/fs/gfs2/*/withdraw"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:101
+msgid ""
+"Expected output: ``0`` for all filesystems (``1`` indicates a withdrawn "
+"filesystem)."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:104
+msgid "Key Metrics to Monitor"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:107
+msgid "Host-Level Metrics"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:113
+#: ../../infrastructure/clusters/hvm/monitoring.rst:139
+#: ../../infrastructure/clusters/hvm/monitoring.rst:165
+msgid "Metric"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:114
+#: ../../infrastructure/clusters/hvm/monitoring.rst:140
+#: ../../infrastructure/clusters/hvm/monitoring.rst:166
+msgid "Healthy Range"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:115
+#: ../../infrastructure/clusters/hvm/monitoring.rst:141
+#: ../../infrastructure/clusters/hvm/monitoring.rst:167
+msgid "Concern Threshold"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:116
+msgid "Agent last update"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:117
+msgid "Within 2 minutes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:118
+msgid "> 2 minutes indicates agent or network issue"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:119
+msgid "Host power state"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:120
+msgid "``on``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:121
+msgid "``off`` or ``unknown`` requires investigation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:122
+msgid "Memory utilization"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:123
+#, python-format
+msgid "< 85% of computed max"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:124
+#, python-format
+msgid "> 90% risks inability to evacuate during maintenance"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:125
+#: ../../infrastructure/clusters/hvm/monitoring.rst:201
+msgid "CPU utilization"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:126
+msgid "Varies by workload"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:127
+#, python-format
+msgid "Sustained > 90% impacts VM performance"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:128
+msgid "Cluster member status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:129
+msgid "``online``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:130
+msgid ""
+"``offline``, ``fenced``, ``unclean`` require the layout-aware recovery in"
+" :doc:`troubleshooting`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:133
+msgid "Cluster-Level Metrics"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:142
+msgid "Quorum status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:144
+msgid "LOST requires immediate attention"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:145
+msgid "Reachable nodes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:147
+msgid "Any difference indicates a node issue"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:148
+msgid "Heartbeat currency"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:149
+msgid "All hosts writing within 20s interval"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:150
+msgid "> 60s since last write indicates an issue"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:151
+msgid "DLM lockspaces"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:152
+msgid "Active, no fencing waits"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:153
+msgid "Wait fencing state blocks I/O operations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:154
+msgid "Datastore status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:156
+msgid "WARNING or FAILED requires investigation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:159
+msgid "Storage Metrics"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:168
+msgid "Datastore free space"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:169
+#, python-format
+msgid "> 20% free"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:170
+#, python-format
+msgid "< 15% risks provisioning failures"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:171
+msgid "GFS2 withdraw status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:172
+msgid "0 (not withdrawn)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:173
+msgid "1 requires unmount/remount or reboot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:174
+msgid "iSCSI session status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:175
+msgid "Active on all hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:176
+msgid "Lost sessions trigger APD protection"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:177
+msgid "Multipath status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:178
+msgid "All paths active"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:179
+msgid "Degraded paths risk APD on further failures"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:182
+msgid "Integration with Morpheus Monitoring"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:185
+msgid "Cluster Health Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:187
+msgid "|morpheus| automatically generates alarms for critical cluster events:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:189
+msgid ""
+"**Multiple heartbeat datastores detected** — When more than one datastore"
+" is marked as heartbeat target, an alarm is raised and the system auto-"
+"selects one"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:190
+msgid ""
+"**Host removal failure** — When a host cannot be cleanly removed due to "
+"no available online hypervisors"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:191
+msgid ""
+"**Cluster member status changes** — Host transitions to offline, fenced, "
+"or unclean states"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:193
+msgid "These alarms appear in ``Operations > Health > Alarms``."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:196
+msgid "Cluster Summary Dashboard"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:198
+msgid ""
+"The cluster summary (``Infrastructure > Clusters > [Cluster] > Summary``)"
+" provides an at-a-glance view of:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:200
+msgid "Total/used/reserved memory across all hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:202
+msgid "Storage capacity and usage"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:203
+msgid "VM count"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:204
+msgid "Host status breakdown (online, maintenance, warning, offline)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:207
+msgid "Recommended Alert Thresholds"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:209
+msgid ""
+"Configure the following monitoring alerts for proactive cluster "
+"management:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:215
+msgid "Alert"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:216
+msgid "Threshold"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:217
+msgid "Action"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:218
+msgid "Quorum lost"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:219
+msgid "Immediate"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:220
+msgid "Investigate host/network failures; potential data risk"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:221
+msgid "Node unreachable"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:222
+msgid "> 60 seconds"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:223
+msgid "Check host connectivity, agent status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:224
+msgid "Host memory > 90%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:225
+msgid "Sustained 5 min"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:226
+msgid "Consider migrating VMs or adding hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:227
+msgid "Datastore free < 15%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:228
+#: ../../infrastructure/clusters/hvm/monitoring.rst:240
+msgid "Sustained"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:229
+msgid "Add storage capacity or migrate VMs"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:230
+msgid "GFS2 withdrawn"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:231
+#: ../../infrastructure/clusters/hvm/monitoring.rst:234
+msgid "Any occurrence"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:232
+msgid "Unmount/remount or reboot affected host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:233
+msgid "APD activated"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:235
+msgid "Investigate storage connectivity immediately"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:236
+msgid "DLM wait fencing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:237
+msgid "> 30 seconds"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:238
+msgid "Check if agent is issuing fence_ack; manual intervention may be needed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:239
+msgid "Agent last update > 5 min"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:241
+msgid "Agent may be down; check agent service on host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:244
+msgid "Log Monitoring"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:246
+msgid "Key log files to monitor for cluster health:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:252
+msgid "Log"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:253
+msgid "What to Watch For"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:254
+msgid "``/var/log/dlm_controld/dlm_controld.log``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:255
+msgid "Fence events, member changes, lockspace errors"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:256
+msgid "``journalctl -u corosync``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:257
+msgid "Membership changes, quorum state transitions"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:258
+msgid "``/var/log/kern.log``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:259
+msgid "GFS2 withdraw events, DLM kernel messages"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:260
+msgid "Agent logs"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:261
+msgid "Quorum check results, heartbeat write failures, failover events"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:264
+msgid "Expected Log Messages (Healthy)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:266
+msgid "During normal operation, you should see:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:268
+msgid "Periodic quorum check messages (every 20 seconds)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:269
+msgid "Heartbeat write confirmations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:270
+msgid "DLM lockspace activity during storage I/O"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:271
+msgid "Corosync membership stable (no join/leave events)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:274
+msgid "Warning Log Messages"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:276
+msgid "Investigate immediately if you see:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:278
+msgid "``gfs2: fsid=*: withdrawing``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:279
+msgid "DLM fence wait messages"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:280
+msgid "Corosync membership changes (unexpected joins/leaves)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:281
+msgid "Agent quorum state changes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/monitoring.rst:282
+msgid "APD threshold reached messages"
+msgstr ""
+

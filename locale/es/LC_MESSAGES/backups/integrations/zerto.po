@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -42,51 +42,79 @@ msgid ""
 "replications and replication sites which are available to use with "
 "replication groups."
 msgstr ""
-"Al integrar |morpheus| y Zerto, |morpheus| traerá automáticamente "
-"sus grupos de replicación Zerto preexistentes además de permitirle "
-"crear y editar grupos de replicación desde la interfaz de |morpheus|. "
-"Adicionalmente, la integración de Zerto puede configurarse como el proveedor de "
-"replicación para Nubes compatibles existentes (como Nubes VMware vCenter) para"
-" permitir que se agreguen nuevas cargas de trabajo a grupos de replicación. Si es necesario, "
-"también se pueden crear nuevos grupos de replicación en el momento del aprovisionamiento con las VMs "
-"recién aprovisionadas agregadas a ellos. La página de detalle de la integración de Zerto también "
-"proporciona detalles resumidos de la integración así como la lista de "
-"replicaciones y sitios de replicación que están disponibles para usar con "
-"grupos de replicación."
+"Al integrar |morpheus| y Zerto, |morpheus| traerá automáticamente sus "
+"grupos de replicación Zerto preexistentes además de permitirle crear y "
+"editar grupos de replicación desde la interfaz de |morpheus|. "
+"Adicionalmente, la integración de Zerto puede configurarse como el "
+"proveedor de replicación para Nubes compatibles existentes (como Nubes "
+"VMware vCenter) para permitir que se agreguen nuevas cargas de trabajo a "
+"grupos de replicación. Si es necesario, también se pueden crear nuevos "
+"grupos de replicación en el momento del aprovisionamiento con las VMs "
+"recién aprovisionadas agregadas a ellos. La página de detalle de la "
+"integración de Zerto también proporciona detalles resumidos de la "
+"integración así como la lista de replicaciones y sitios de replicación "
+"que están disponibles para usar con grupos de replicación."
 
-#: ../../backups/integrations/zerto.rst:10
+#: ../../backups/integrations/zerto.rst:9
+msgid "Important"
+msgstr ""
+
+#: ../../backups/integrations/zerto.rst:9
+msgid ""
+"This guide does not establish Zerto disaster recovery support for HVM. No"
+" HVM/Zerto interoperability evidence, version scope, failover procedure, "
+"or failback procedure is bundled with this documentation. See "
+":doc:`/integration_guides/Backups/zerto` for the canonical integration "
+"boundary and verify any proposed HVM design with HPE and Zerto."
+msgstr ""
+
+#: ../../backups/integrations/zerto.rst:12
+msgid "Supported Clouds"
+msgstr ""
+
+#: ../../backups/integrations/zerto.rst:14
+msgid ""
+"Zerto is a **replication** integration, not a backup provider. The exact "
+"Cloud compatibility list is not established in the bundled integration "
+"metadata. VMware vCenter is the documented example, but an example is not"
+" a support matrix; confirm the Cloud type with the Zerto integration "
+"release notes or HPE Support before configuring it as a replication "
+"provider."
+msgstr ""
+
+#: ../../backups/integrations/zerto.rst:17
 msgid "Adding a Zerto Integration"
 msgstr "Agregar una integración de Zerto"
 
-#: ../../backups/integrations/zerto.rst:12
+#: ../../backups/integrations/zerto.rst:19
 msgid "Navigate to :menuselection:`Backups --> Integrations`"
 msgstr "Navegue a :menuselection:`Backups --> Integraciones`"
 
-#: ../../backups/integrations/zerto.rst:13
+#: ../../backups/integrations/zerto.rst:20
 msgid "Select :guilabel:`+ ADD`"
 msgstr "Seleccione :guilabel:`+ AGREGAR`"
 
-#: ../../backups/integrations/zerto.rst:14
+#: ../../backups/integrations/zerto.rst:21
 msgid "Select Zerto"
 msgstr "Seleccione Zerto"
 
-#: ../../backups/integrations/zerto.rst:15
+#: ../../backups/integrations/zerto.rst:22
 msgid "Fill in the following:"
 msgstr "Complete lo siguiente:"
 
-#: ../../backups/integrations/zerto.rst:17
+#: ../../backups/integrations/zerto.rst:24
 msgid "Name"
 msgstr "Nombre"
 
-#: ../../backups/integrations/zerto.rst:18
+#: ../../backups/integrations/zerto.rst:25
 msgid "A friendly name for the integration in |morpheus|"
 msgstr "Un nombre descriptivo para la integración en |morpheus|"
 
-#: ../../backups/integrations/zerto.rst:19
+#: ../../backups/integrations/zerto.rst:26
 msgid "Enabled"
 msgstr "Habilitado"
 
-#: ../../backups/integrations/zerto.rst:20
+#: ../../backups/integrations/zerto.rst:27
 msgid ""
 "When marked, the integration is enabled and made available for "
 "consumption in |morpheus|"
@@ -94,11 +122,11 @@ msgstr ""
 "Cuando se marca, la integración se habilita y se pone disponible para "
 "consumo en |morpheus|"
 
-#: ../../backups/integrations/zerto.rst:21
+#: ../../backups/integrations/zerto.rst:28
 msgid "API URL"
 msgstr "URL de API"
 
-#: ../../backups/integrations/zerto.rst:22
+#: ../../backups/integrations/zerto.rst:29
 msgid ""
 "API URL for the Zerto Virtual Manager (ex. ``API URL: "
 "https://xx.xx.xx.xx:9669``)"
@@ -106,43 +134,48 @@ msgstr ""
 "URL de API para el Zerto Virtual Manager (ej. ``API URL: "
 "https://xx.xx.xx.xx:9669``)"
 
-#: ../../backups/integrations/zerto.rst:23
+#: ../../backups/integrations/zerto.rst:30
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: ../../backups/integrations/zerto.rst:24
+#: ../../backups/integrations/zerto.rst:31
 msgid "Username for an admin Zerto service account"
 msgstr "Nombre de usuario para una cuenta de servicio administrador de Zerto"
 
-#: ../../backups/integrations/zerto.rst:25
+#: ../../backups/integrations/zerto.rst:32
 msgid "Password"
 msgstr "Contraseña"
 
-#: ../../backups/integrations/zerto.rst:26
+#: ../../backups/integrations/zerto.rst:33
 msgid "Password for the provided user (encrypted in |morpheus|)."
 msgstr "Contraseña para el usuario proporcionado (encriptada en |morpheus|)."
 
-#: ../../backups/integrations/zerto.rst:28
+#: ../../backups/integrations/zerto.rst:34
 msgid "Visibility"
 msgstr "Visibilidad"
 
-#: ../../backups/integrations/zerto.rst:28
+#: ../../backups/integrations/zerto.rst:35
 msgid ""
 "Sets Multi-Tenant Visibility. Private: Restricts integration access to "
 "users in the current Tenant (subject to additional RBAC settings). "
 "Public: The integration is accessible to all Tenants (option available to"
 " Master Tenant users only)."
 msgstr ""
-"Establece la Visibilidad Multi-Inquilino. Privado: Restringe el acceso a la integración a "
-"los usuarios del Inquilino actual (sujeto a configuraciones RBAC adicionales). "
-"Público: La integración es accesible para todos los Inquilinos (opción disponible solo"
-" para usuarios del Inquilino Maestro)."
+"Establece la Visibilidad Multi-Inquilino. Privado: Restringe el acceso a "
+"la integración a los usuarios del Inquilino actual (sujeto a "
+"configuraciones RBAC adicionales). Público: La integración es accesible "
+"para todos los Inquilinos (opción disponible solo para usuarios del "
+"Inquilino Maestro)."
 
-#: ../../backups/integrations/zerto.rst:30
+#: ../../backups/integrations/zerto.rst:37
 msgid "Once complete, click :guilabel:`SAVE`"
 msgstr "Una vez completado, haga clic en :guilabel:`GUARDAR`"
 
-#: ../../backups/integrations/zerto.rst:32
+#: ../../backups/integrations/zerto.rst:39
+msgid "Note"
+msgstr ""
+
+#: ../../backups/integrations/zerto.rst:39
 msgid ""
 "In addition to manually entering username and password credentials in "
 "this modal, users also have the option to use a stored username/password "
@@ -150,27 +183,29 @@ msgid ""
 "later use in the |morpheus| secure credential store. See the CREDENTIALS "
 "configuration in the add/edit integration modal for all of these options."
 msgstr ""
-"Además de ingresar manualmente las credenciales de nombre de usuario y contraseña en "
-"este modal, los usuarios también tienen la opción de usar un conjunto de credenciales "
-"de nombre de usuario/contraseña almacenado, o ingresar credenciales manualmente y almacenarlas para "
-"uso posterior en el almacén seguro de credenciales de |morpheus|. Consulte la configuración de "
-"CREDENCIALES en el modal de agregar/editar integración para todas estas opciones."
+"Además de ingresar manualmente las credenciales de nombre de usuario y "
+"contraseña en este modal, los usuarios también tienen la opción de usar "
+"un conjunto de credenciales de nombre de usuario/contraseña almacenado, o"
+" ingresar credenciales manualmente y almacenarlas para uso posterior en "
+"el almacén seguro de credenciales de |morpheus|. Consulte la "
+"configuración de CREDENCIALES en el modal de agregar/editar integración "
+"para todas estas opciones."
 
-#: ../../backups/integrations/zerto.rst:34
+#: ../../backups/integrations/zerto.rst:41
 msgid ""
 "Once the integration is created, you can click into the integration "
 "detail page to see existing replication groups, summary data, and other "
 "information about replications and replication sites."
 msgstr ""
-"Una vez creada la integración, puede hacer clic en la página de detalle de la "
-"integración para ver los grupos de replicación existentes, datos resumidos y otra "
-"información sobre replicaciones y sitios de replicación."
+"Una vez creada la integración, puede hacer clic en la página de detalle "
+"de la integración para ver los grupos de replicación existentes, datos "
+"resumidos y otra información sobre replicaciones y sitios de replicación."
 
-#: ../../backups/integrations/zerto.rst:37
+#: ../../backups/integrations/zerto.rst:44
 msgid "Setting a Replication Provider"
 msgstr "Configurar un proveedor de replicación"
 
-#: ../../backups/integrations/zerto.rst:39
+#: ../../backups/integrations/zerto.rst:46
 msgid ""
 "With the integration created, Zerto can be added as the replication "
 "provider for compatible Clouds. Edit an existing Cloud (click the "
@@ -180,13 +215,13 @@ msgid ""
 "changes."
 msgstr ""
 "Con la integración creada, Zerto puede agregarse como proveedor de "
-"replicación para Nubes compatibles. Edite una Nube existente (haga clic en el "
-"botón :guilabel:`EDITAR` desde la página de detalle de la Nube) y expanda la "
-"sección de Opciones avanzadas. En el menú desplegable para Proveedor de replicación, "
-"seleccione la integración de Zerto. Finalmente, guarde la Nube para confirmar los "
-"cambios."
+"replicación para Nubes compatibles. Edite una Nube existente (haga clic "
+"en el botón :guilabel:`EDITAR` desde la página de detalle de la Nube) y "
+"expanda la sección de Opciones avanzadas. En el menú desplegable para "
+"Proveedor de replicación, seleccione la integración de Zerto. Finalmente,"
+" guarde la Nube para confirmar los cambios."
 
-#: ../../backups/integrations/zerto.rst:41
+#: ../../backups/integrations/zerto.rst:48
 msgid ""
 "With the Cloud and the Zerto integration associated, you will now see "
 "additional replication options at provision time. When provisioning to "
@@ -196,10 +231,12 @@ msgid ""
 "Additionally, you may also create a brand new replication group from "
 "within the provisioning wizard itself if a new group is needed."
 msgstr ""
-"Con la Nube y la integración de Zerto asociadas, ahora verá "
-"opciones de replicación adicionales en el momento del aprovisionamiento. Al aprovisionar en "
-"la Nube asociada en el futuro, expanda la sección de Replicación desde "
-"la pestaña AUTOMATIZACIÓN del asistente de aprovisionamiento. Aquí tiene la "
-"opción de agregar VMs recién aprovisionadas a un grupo de replicación existente. "
-"Adicionalmente, también puede crear un grupo de replicación completamente nuevo desde "
-"el mismo asistente de aprovisionamiento si se necesita un nuevo grupo."
+"Con la Nube y la integración de Zerto asociadas, ahora verá opciones de "
+"replicación adicionales en el momento del aprovisionamiento. Al "
+"aprovisionar en la Nube asociada en el futuro, expanda la sección de "
+"Replicación desde la pestaña AUTOMATIZACIÓN del asistente de "
+"aprovisionamiento. Aquí tiene la opción de agregar VMs recién "
+"aprovisionadas a un grupo de replicación existente. Adicionalmente, "
+"también puede crear un grupo de replicación completamente nuevo desde el "
+"mismo asistente de aprovisionamiento si se necesita un nuevo grupo."
+

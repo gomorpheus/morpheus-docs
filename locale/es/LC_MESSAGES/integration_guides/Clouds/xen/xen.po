@@ -9,38 +9,53 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../integration_guides/Clouds/xen/xen.rst:2
-msgid "Xen Server"
-msgstr "Xen Server"
+msgid "XCP-ng"
+msgstr ""
 
 #: ../../integration_guides/Clouds/xen/xen.rst:5
-msgid "Add a Xen Server Cloud"
+#, fuzzy
+msgid "Add an XCP-ng Cloud"
 msgstr "Add un Xen Server Cloud"
 
 #: ../../integration_guides/Clouds/xen/xen.rst:7
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:9
+msgid ""
+"The current compatibility matrix retains XenServer 7.x as the previously "
+"published qualified value. XCP-ng 8.2.x, including 8.2.1, is not approved"
+" by the evidence bundled with this documentation. Do not treat testing "
+"activity as a support statement. Verify a planned XCP-ng release with HPE"
+" Support before deployment."
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:11
 msgid "Navigate to ``Infrastructure > Clouds``"
 msgstr "Navegue un ``Infrastructure > Clouds``"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:8
+#: ../../integration_guides/Clouds/xen/xen.rst:12
+#, fuzzy
 msgid ""
-"Select :guilabel:`+ CREATE CLOUD`, select Xen, and then click "
+"Select :guilabel:`+ CREATE CLOUD`, select XCP-ng, and then click "
 ":guilabel:`Next`."
 msgstr ""
 "Select :guilabel:`+ CREATE CLOUD`, select Xen, y entonces click "
 ":guilabel:`Siguiente`."
 
-#: ../../integration_guides/Clouds/xen/xen.rst:9
+#: ../../integration_guides/Clouds/xen/xen.rst:13
 msgid "Enter the following into the Create Cloud modal:"
 msgstr "Ingrese el following en el Create Cloud modal:"
 
@@ -78,8 +93,8 @@ msgstr "VISIBILITY"
 
 #: ../../integration_guides/Clouds/base_options.rst:10
 msgid ""
-"For setting cloud permissions in a multi-tenant environment. Not applicable "
-"in single tenant environments."
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
 msgstr ""
 "For setting cloud permisos in un multi-tenant entorno. Not applicable in "
 "único tenant entornos."
@@ -90,8 +105,8 @@ msgstr "TENANT"
 
 #: ../../integration_guides/Clouds/base_options.rst:12
 msgid ""
-"If Visibility is set to Private, select the Tenant the Cloud resources will "
-"assigned to."
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
 msgstr ""
 "If Visibility es set to Private, select el Tenant el Cloud recursos será "
 "assigned to."
@@ -108,87 +123,96 @@ msgstr ""
 "When deshabilitado, automático Cloud sync es paused y el Cloud no be "
 "selectable para provisioning."
 
-#: ../../integration_guides/Clouds/base_options.rst:18
+#: ../../integration_guides/Clouds/base_options.rst:15
 msgid "AUTOMATICALLY POWER ON VMS"
 msgstr "AUTOMATICALLY POWER ON VMS"
 
 #: ../../integration_guides/Clouds/base_options.rst:16
 msgid ""
-"When enabled, |morpheus| will maintain the expected power state of managed "
-"VMs. |morpheus| will power on any managed VMs in the Cloud that have been "
-"shut down for unknown reasons (not powered off by |morpheus|) to ensure "
-"availability of services."
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
 msgstr ""
-"When habilitado, |morpheus| será maintain el expected power state of managed"
-" VMs. |morpheus| será power on cualquier managed VMs in el Cloud que tienen "
-"sido shut down para unknown reasons (no powered off by |morpheus|) to ensure"
-" availability of servicios."
+"When habilitado, |morpheus| será maintain el expected power state of "
+"managed VMs. |morpheus| será power on cualquier managed VMs in el Cloud "
+"que tienen sido shut down para unknown reasons (no powered off by "
+"|morpheus|) to ensure availability of servicios."
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+#: ../../integration_guides/Clouds/xen/xen.rst:66
+msgid "Note"
+msgstr ""
 
 #: ../../integration_guides/Clouds/base_options.rst:18
 msgid ""
-"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of managed "
-"VMs should be maintained in |morpheus|. This setting is not applicable to "
-"discovered/unmanaged resources."
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
 msgstr ""
-"When \"AUTOMATICALLY POWER ON VMS\" es habilitado, el power state of managed"
-" VMs debería be maintained in |morpheus|. This setting no es applicable to "
-"discovered/unmanaged recursos."
+"When \"AUTOMATICALLY POWER ON VMS\" es habilitado, el power state of "
+"managed VMs debería be maintained in |morpheus|. This setting no es "
+"applicable to discovered/unmanaged recursos."
 
-#: ../../integration_guides/Clouds/xen/xen.rst:13
+#: ../../integration_guides/Clouds/xen/xen.rst:17
 msgid "**Details**"
 msgstr "**Details**"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:15
+#: ../../integration_guides/Clouds/xen/xen.rst:19
 msgid "API URL"
 msgstr "API URL"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:16
-msgid "IP or URL of Xen Host. ex: `xenserver.domain.com`"
+#: ../../integration_guides/Clouds/xen/xen.rst:20
+#, fuzzy
+msgid "IP or URL of XCP-ng Host. ex: `xcpng.domain.com`"
 msgstr "IP o URL of Xen Host. ex: `xenserver.domain.com`"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:17
+#: ../../integration_guides/Clouds/xen/xen.rst:21
 msgid "CUSTOM PORT"
 msgstr "CUSTOM PORT"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:18
-msgid "Port for non standard xen server clouds"
+#: ../../integration_guides/Clouds/xen/xen.rst:22
+#, fuzzy
+msgid "Port for non standard XCP-ng clouds"
 msgstr "Port para non standard xen server clouds"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:19
+#: ../../integration_guides/Clouds/xen/xen.rst:23
 msgid "USERNAME"
 msgstr "USERNAME"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:20
-msgid "Xen Host Username"
+#: ../../integration_guides/Clouds/xen/xen.rst:24
+#, fuzzy
+msgid "XCP-ng Host Username"
 msgstr "Xen Host Username"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:21
+#: ../../integration_guides/Clouds/xen/xen.rst:25
 msgid "PASSWORD"
 msgstr "PASSWORD"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:22
-msgid "Xen Host Password"
+#: ../../integration_guides/Clouds/xen/xen.rst:26
+#, fuzzy
+msgid "XCP-ng Host Password"
 msgstr "Xen Host Password"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:24
+#: ../../integration_guides/Clouds/xen/xen.rst:27
 msgid "Inventory Existing Instances"
 msgstr "Inventory Existing Instances"
 
-#: ../../integration_guides/Clouds/xen/xen.rst:24
+#: ../../integration_guides/Clouds/xen/xen.rst:28
 msgid ""
 "If enabled, existing Virtual Machines will be inventoried and appear as "
 "unmanaged Virtual Machines in |morpheus| ."
 msgstr ""
-"If habilitado, existente Virtual Machines será be inventoried y appear as "
-"unmanaged Virtual Machines in |morpheus| ."
+"If habilitado, existente Virtual Machines será be inventoried y appear as"
+" unmanaged Virtual Machines in |morpheus| ."
 
-#: ../../integration_guides/Clouds/xen/xen.rst:26
+#: ../../integration_guides/Clouds/xen/xen.rst:30
 msgid ""
-"The Cloud can now be added to a Group or configured with additional Advanced"
-" options."
+"The Cloud can now be added to a Group or configured with additional "
+"Advanced options."
 msgstr ""
-"The Cloud puede ahora be agregado to un Group o configurado con adicional "
-"Advanced opciones."
+"The Cloud puede ahora be agregado to un Group o configurado con adicional"
+" Advanced opciones."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:1
 msgid "**Advanced Options**"
@@ -200,8 +224,7 @@ msgstr "DOMAIN"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:4
 msgid "Specify a default domain for instances provisioned to this Cloud."
-msgstr ""
-"Specify un predeterminado domain para instances provisioned to este Cloud."
+msgstr "Specify un predeterminado domain para instances provisioned to este Cloud."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:5
 msgid "SCALE PRIORITY"
@@ -210,14 +233,14 @@ msgstr "SCALE PRIORITY"
 #: ../../integration_guides/Clouds/advanced_options.rst:6
 msgid ""
 "Only affects Docker Provisioning. Specifies the priority with which an "
-"instance will scale into the cloud. A lower priority number means this cloud"
-" integration will take scale precedence over other cloud integrations in the"
-" group."
+"instance will scale into the cloud. A lower priority number means this "
+"cloud integration will take scale precedence over other cloud "
+"integrations in the group."
 msgstr ""
 "Only affects Docker Provisioning. Specifies el priority con cual una "
 "instancia será scale en la nube. A lower priority número means esta nube "
-"integration será take scale precedence over otro cloud integrations in el "
-"grupo."
+"integration será take scale precedence over otro cloud integrations in el"
+" grupo."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:7
 msgid "APPLIANCE URL"
@@ -230,10 +253,10 @@ msgid ""
 "Instances provisioned in this cloud. The Appliance URL is used for Agent "
 "install and reporting."
 msgstr ""
-"Alternate Appliance url para scenarios cuando el predeterminado Appliance "
-"URL (configurado in `admin > configuración`) no es reachable o resolvable "
-"para Instances provisioned in esta nube. The Appliance URL se utiliza para "
-"Agent install y reporting."
+"Alternate Appliance url para scenarios cuando el predeterminado Appliance"
+" URL (configurado in `admin > configuración`) no es reachable o "
+"resolvable para Instances provisioned in esta nube. The Appliance URL se "
+"utiliza para Agent install y reporting."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:9
 msgid "TIME ZONE"
@@ -252,8 +275,8 @@ msgid ""
 "Used for differentiating pricing among multiple datacenters. Leave blank "
 "unless prices are properly configured."
 msgstr ""
-"Used para differentiating pricing among múltiples datacenters. Leave blank "
-"unless prices son properly configurado."
+"Used para differentiating pricing among múltiples datacenters. Leave "
+"blank unless prices son properly configurado."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:13
 msgid "NETWORK MODE"
@@ -271,18 +294,15 @@ msgstr "LOCAL FIREWALL"
 msgid ""
 "On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
 "only)"
-msgstr ""
-"On o Off. Enable to managed Host y VM firewall/IP Table rules (linux solo)"
+msgstr "On o Off. Enable to managed Host y VM firewall/IP Table rules (linux solo)"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:17
 msgid "SECURITY SERVER"
 msgstr "SECURITY SERVER"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:18
-msgid ""
-"Security Server setting is for Security Service Integrations such as ACI"
-msgstr ""
-"Security Server setting es para Security Service Integrations como ACI"
+msgid "Security Server setting is for Security Service Integrations such as ACI"
+msgstr "Security Server setting es para Security Service Integrations como ACI"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:19
 msgid "TRUST PROVIDER"
@@ -341,23 +361,24 @@ msgstr "COSTING"
 #: ../../integration_guides/Clouds/advanced_options.rst:30
 msgid ""
 "Enable for |morpheus| to sync Costing data from the Cloud provider, when "
-"available. For on-prem Clouds, enabling costing activates a costing service "
-"designed to mirror the live costing experience of public clouds, including "
-"invoicing with line items and real-time cost data (Operations > Costing > "
-"Invoices). If your organization utilizes reserved instances and you want to "
-"pull in related pricing data, some Cloud integrations include the option to "
-"select `Costing and Reservations`. If this is not relevant, select `Costing`"
-" to save money on additional calls to the Cloud provider's costing API."
+"available. For on-prem Clouds, enabling costing activates a costing "
+"service designed to mirror the live costing experience of public clouds, "
+"including invoicing with line items and real-time cost data (Operations >"
+" Costing > Invoices). If your organization utilizes reserved instances "
+"and you want to pull in related pricing data, some Cloud integrations "
+"include the option to select `Costing and Reservations`. If this is not "
+"relevant, select `Costing` to save money on additional calls to the Cloud"
+" provider's costing API."
 msgstr ""
 "Enable para |morpheus| to sync Costing datos desde el Cloud proveedor, "
-"cuando disponible. For on-prem Clouds, enabling costing activates un costing"
-" servicio designed to mirror el live costing experience of público clouds, "
-"including invoicing con line elementos y real-time cost datos (Operations > "
-"Costing > Invoices). If your organization utilizes reserved instances y you "
-"want to pull in related pricing datos, algunos Cloud integrations include el"
-" opción to select `Costing y Reservations`. If este no es relevante, select "
-"`Costing` to save money on adicional calls to el Cloud proveedor's costing "
-"API."
+"cuando disponible. For on-prem Clouds, enabling costing activates un "
+"costing servicio designed to mirror el live costing experience of público"
+" clouds, including invoicing con line elementos y real-time cost datos "
+"(Operations > Costing > Invoices). If your organization utilizes reserved"
+" instances y you want to pull in related pricing datos, algunos Cloud "
+"integrations include el opción to select `Costing y Reservations`. If "
+"este no es relevante, select `Costing` to save money on adicional calls "
+"to el Cloud proveedor's costing API."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:31
 msgid "DNS INTEGRATION"
@@ -365,8 +386,8 @@ msgstr "DNS INTEGRATION"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:32
 msgid ""
-"Records for instances provisioned in this cloud will be added to selected "
-"DNS integration."
+"Records for instances provisioned in this cloud will be added to selected"
+" DNS integration."
 msgstr ""
 "Records para instances provisioned in esta nube será be agregado to "
 "seleccionado DNS integration."
@@ -377,8 +398,8 @@ msgstr "SERVICE REGISTRY"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:34
 msgid ""
-"Services for instances provisioned in this cloud will be added to selected "
-"Service Registry integration."
+"Services for instances provisioned in this cloud will be added to "
+"selected Service Registry integration."
 msgstr ""
 "Services para instances provisioned in esta nube será be agregado to "
 "seleccionado Service Registry integration."
@@ -388,10 +409,8 @@ msgid "CONFIG MANAGEMENT"
 msgstr "CONFIG MANAGEMENT"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:36
-msgid ""
-"Select a Chef, Ansible or Puppet integration to be used with this Cloud."
-msgstr ""
-"Select un Chef, Ansible o Puppet integration to be used con este Cloud."
+msgid "Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr "Select un Chef, Ansible o Puppet integration to be used con este Cloud."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:37
 msgid "CMDB"
@@ -412,8 +431,8 @@ msgid ""
 "them."
 msgstr ""
 "When checked, cualquier automáticamente discovered (unmanaged) servers "
-"onboarded en |morpheus| desde este Cloud será también tienen CMDB registros "
-"creado para them."
+"onboarded en |morpheus| desde este Cloud será también tienen CMDB "
+"registros creado para them."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:41
 msgid "CHANGE MANAGEMENT"
@@ -421,51 +440,53 @@ msgstr "CHANGE MANAGEMENT"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:42
 msgid ""
-"Select an existing Change Management Integration to set on the Cloud. ex: "
-"Cherwell"
+"Select an existing Change Management Integration to set on the Cloud. ex:"
+" Cherwell"
 msgstr ""
-"Select un existente Change Management Integration to set on el Cloud. ex: "
-"Cherwell"
+"Select un existente Change Management Integration to set on el Cloud. ex:"
+" Cherwell"
 
-#: ../../integration_guides/Clouds/advanced_options.rst:44
+#: ../../integration_guides/Clouds/advanced_options.rst:43
 msgid "AGENT INSTALL MODE"
 msgstr "AGENT INSTALL MODE"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:44
 msgid ""
-"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM or "
-"Guest Execution for Agent install."
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM "
+"or Guest Execution for Agent install."
 msgstr ""
-"SSH / WINRM / Guest Execution: |morpheus| será attempt to use SSH, WINRM o "
-"Guest Execution para Agent install."
+"SSH / WINRM / Guest Execution: |morpheus| será attempt to use SSH, WINRM "
+"o Guest Execution para Agent install."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:45
 msgid ""
-"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize "
-"Cloud-Init or Cloudbase-Init for agent install when provisioning images with"
-" Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on SSH or "
-"WINRM if cloud-init is not installed on the provisioned image. Morpheus will"
-" also add Agent installation to Windows unattend.xml data when performing "
-"Guest Customizations or utilizing syspreped images."
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize"
+" Cloud-Init or Cloudbase-Init for agent install when provisioning images "
+"with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on "
+"SSH or WINRM if cloud-init is not installed on the provisioned image. "
+"Morpheus will also add Agent installation to Windows unattend.xml data "
+"when performing Guest Customizations or utilizing syspreped images."
 msgstr ""
-"Cloud Init / Unattend (cuando disponible): (DEFAULT) |morpheus| será utilize"
-" Cloud-Init o Cloudbase-Init para agent install cuando provisioning images "
-"con Cloud-Init/Cloudbase-Init instalado. |morpheus| será fall back on SSH o "
-"WINRM if cloud-init no es instalado on el provisioned image. Morpheus será "
-"también add Agent instalación to Windows unattend.xml datos cuando "
-"performing Guest Customizations o utilizing syspreped images."
+"Cloud Init / Unattend (cuando disponible): (DEFAULT) |morpheus| será "
+"utilize Cloud-Init o Cloudbase-Init para agent install cuando "
+"provisioning images con Cloud-Init/Cloudbase-Init instalado. |morpheus| "
+"será fall back on SSH o WINRM if cloud-init no es instalado on el "
+"provisioned image. Morpheus será también add Agent instalación to Windows"
+" unattend.xml datos cuando performing Guest Customizations o utilizing "
+"syspreped images."
 
-#: ../../integration_guides/Clouds/advanced_options.rst:48
+#: ../../integration_guides/Clouds/advanced_options.rst:46
 msgid "VDI GATEWAY"
 msgstr "VDI GATEWAY"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:47
 msgid ""
-"Set a VDI Gateway for outbound communication from the |morpheus| Appliance "
-"to the vdi endpoints. VDI Gateways can be added in ``/tools/vdi/gateways``"
+"Set a VDI Gateway for outbound communication from the |morpheus| "
+"Appliance to the vdi endpoints. VDI Gateways can be added in "
+"``/tools/vdi/gateways``"
 msgstr ""
-"Set un VDI Gateway para outbound communication desde el |morpheus| Appliance"
-" to el vdi endpoints. VDI Gateways se puede agregar in "
+"Set un VDI Gateway para outbound communication desde el |morpheus| "
+"Appliance to el vdi endpoints. VDI Gateways se puede agregar in "
 "``/tools/vdi/gateways``"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:50
@@ -474,23 +495,25 @@ msgstr "**CUSTOM LOGOS**"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:52
 msgid ""
-"When integrating a Cloud, it will appear by default throughout the UI with "
-"its standard logo (VMware logo for VMware Clouds, etc.). If desired, you may"
-" upload a custom logo that should appear instead. This might be useful for "
-"MSPs which might not want to reveal the Cloud type underlying its services. "
-"A dark mode version of the logo may also be uploaded if the standard logo "
-"doesn't look right against the |morpheus| dark mode theme. Checking USE "
-"DEFAULT CLOUD LOGOS allows the user to return to the standard logo for the "
-"Cloud type without deleting the custom uploaded logo."
+"When integrating a Cloud, it will appear by default throughout the UI "
+"with its standard logo (VMware logo for VMware Clouds, etc.). If desired,"
+" you may upload a custom logo that should appear instead. This might be "
+"useful for MSPs which might not want to reveal the Cloud type underlying "
+"its services. A dark mode version of the logo may also be uploaded if the"
+" standard logo doesn't look right against the |morpheus| dark mode theme."
+" Checking USE DEFAULT CLOUD LOGOS allows the user to return to the "
+"standard logo for the Cloud type without deleting the custom uploaded "
+"logo."
 msgstr ""
-"When integrating un Cloud, it será appear por defecto throughout el UI con "
-"its standard logo (VMware logo para VMware Clouds, etc.). If desired, you "
-"puede upload un personalizado logo que debería appear en cambio. This might "
-"be useful para MSPs cual might no want to reveal el Cloud tipo underlying "
-"its servicios. A dark modo versión of el logo puede también be uploaded if "
-"el standard logo doesn't look right against el |morpheus| dark modo theme. "
-"Checking USE DEFAULT CLOUD LOGOS permite al usuario return to el standard "
-"logo para el Cloud tipo sin deleting el personalizado uploaded logo."
+"When integrating un Cloud, it será appear por defecto throughout el UI "
+"con its standard logo (VMware logo para VMware Clouds, etc.). If desired,"
+" you puede upload un personalizado logo que debería appear en cambio. "
+"This might be useful para MSPs cual might no want to reveal el Cloud tipo"
+" underlying its servicios. A dark modo versión of el logo puede también "
+"be uploaded if el standard logo doesn't look right against el |morpheus| "
+"dark modo theme. Checking USE DEFAULT CLOUD LOGOS permite al usuario "
+"return to el standard logo para el Cloud tipo sin deleting el "
+"personalizado uploaded logo."
 
 #: ../../integration_guides/Clouds/advanced_options.rst:54
 msgid "**INVENTORY OPTIONS**"
@@ -498,17 +521,18 @@ msgstr "**INVENTORY OPTIONS**"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:56
 msgid ""
-"Inventory options allow you to set a default active or inactive state for "
-"certain discovered resources. The list of available resources to configure "
-"will vary based on the Cloud type and its supported resources. By default, "
-"all possible resources for the Cloud type will be discovered in an active "
-"state. Uncheck the box for some or all resources to discover them in an "
-"inactive state. The list of potential resources that may appear include:"
+"Inventory options allow you to set a default active or inactive state for"
+" certain discovered resources. The list of available resources to "
+"configure will vary based on the Cloud type and its supported resources. "
+"By default, all possible resources for the Cloud type will be discovered "
+"in an active state. Uncheck the box for some or all resources to discover"
+" them in an inactive state. The list of potential resources that may "
+"appear include:"
 msgstr ""
 "Inventory opciones allow you to set un predeterminado activo o inactivo "
-"state para certain discovered recursos. The lista of disponible recursos to "
-"configure será vary basado en el Cloud tipo y its compatible recursos. By "
-"predeterminado, todos possible recursos para el Cloud tipo será be "
+"state para certain discovered recursos. The lista of disponible recursos "
+"to configure será vary basado en el Cloud tipo y its compatible recursos."
+" By predeterminado, todos possible recursos para el Cloud tipo será be "
 "discovered in un activo state. Desmarque la box para algunos o todos "
 "recursos to discover them in un inactivo state. The lista of potential "
 "recursos que puede appear include:"
@@ -548,8 +572,8 @@ msgstr "PROXY"
 #: ../../integration_guides/Clouds/advanced_options.rst:68
 msgid ""
 "Set a proxy for inbound communication from Instances to the |morpheus| "
-"Appliance. Proxies can be added in the `Infrastructure > Networks > Proxies`"
-" tab."
+"Appliance. Proxies can be added in the `Infrastructure > Networks > "
+"Proxies` tab."
 msgstr ""
 "Set un proxy para inbound communication desde Instances to el |morpheus| "
 "Appliance. Proxies se puede agregar in el `Infrastructure > Networks > "
@@ -579,18 +603,129 @@ msgstr ""
 "Include un lista of IP addresses o nombre servers to exclude desde proxy "
 "traversal"
 
-#: ../../integration_guides/Clouds/advanced_options.rst:74
+#: ../../integration_guides/Clouds/advanced_options.rst:73
 msgid "USER DATA (LINUX)"
 msgstr "USER DATA (LINUX)"
 
 #: ../../integration_guides/Clouds/advanced_options.rst:74
 msgid ""
-"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash syntax. "
-"|morpheus| 4.1.1 and later supports all User Data formats. Refer to "
-"https://cloudinit.readthedocs.io/en/latest/topics/format.html for more "
-"information."
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash "
+"syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more"
+" information."
 msgstr ""
-"Add cloud-init user datos. |morpheus| 4.1.0 y earlier assumes bash syntax. "
-"|morpheus| 4.1.1 y later supports todos User Data formats. Refer to "
-"https://cloudinit.readthedocs.io/en/latest/topics/format.html para más "
-"información."
+"Add cloud-init user datos. |morpheus| 4.1.0 y earlier assumes bash "
+"syntax. |morpheus| 4.1.1 y later supports todos User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html para más"
+" información."
+
+#: ../../integration_guides/Clouds/xen/xen.rst:35
+msgid "Feature Boundaries"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:37
+msgid ""
+"The XCP-ng integration is classified as a **Tier 3 — Essential "
+"Provisioning** integration. The following capabilities are not currently "
+"supported:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:39
+#, fuzzy
+msgid "**Networking**"
+msgstr "Networks"
+
+#: ../../integration_guides/Clouds/xen/xen.rst:41
+msgid "Network creation or deletion from |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:42
+#, fuzzy
+msgid "Security group management"
+msgstr "Grupos de seguridad"
+
+#: ../../integration_guides/Clouds/xen/xen.rst:43
+msgid "IPAM / IP pool management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:44
+#, fuzzy
+msgid "Load balancer integration"
+msgstr "DNS INTEGRATION"
+
+#: ../../integration_guides/Clouds/xen/xen.rst:46
+#, fuzzy
+msgid "**Provisioning & Lifecycle**"
+msgstr "**Provisioning Command**"
+
+#: ../../integration_guides/Clouds/xen/xen.rst:48
+msgid ""
+"Guest customization (cloud-init is supported but Windows guest "
+"customization is not)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:49
+msgid "Auto scaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:50
+#, fuzzy
+msgid "VM migrations"
+msgstr "DNS INTEGRATION"
+
+#: ../../integration_guides/Clouds/xen/xen.rst:51
+msgid "Clone to image"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:53
+msgid "**Costing & Governance**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:55
+msgid "Price synchronization or billing integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:56
+msgid "Costing or right-sizing recommendations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:57
+msgid "Tag synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:58
+msgid "Multitenancy / resource pool scoping"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:60
+msgid "**Other**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:62
+#, fuzzy
+msgid "Remote console via |morpheus|"
+msgstr "Name of el Cloud in |morpheus|"
+
+#: ../../integration_guides/Clouds/xen/xen.rst:63
+msgid "Kubernetes or Docker host provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:64
+msgid "Third-party backup integrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:66
+msgid ""
+"XCP-ng is delivered as an external plugin. It can be installed from the "
+"`Morpheus Marketplace <https://share.morpheusdata.com>`_ via |AdmIntPlu|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/xen/xen.rst:68
+msgid ""
+"For a full feature comparison across all supported clouds, see "
+":doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
+msgstr ""
+
+#~ msgid "Xen Server"
+#~ msgstr "Xen Server"
+

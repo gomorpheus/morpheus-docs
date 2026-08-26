@@ -1,0 +1,445 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:2
+msgid "Cluster Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:4
+msgid ""
+"|morpheus| continuously monitors HVM cluster health and raises alarms "
+"when thresholds are exceeded or critical conditions are detected. Alarms "
+"appear in the cluster detail page and in the Operations > Health section."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:6
+msgid ""
+"Alarms are evaluated every **5 minutes** during the cluster sync cycle. "
+"Threshold-based alarms use a **sustained average** over a configurable "
+"time window (default: 15 minutes) to avoid alerting on brief spikes."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:9
+msgid "Alarm Types"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:12
+msgid "Host Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:18
+#: ../../infrastructure/clusters/hvm/alarms.rst:50
+#: ../../infrastructure/clusters/hvm/alarms.rst:70
+#: ../../infrastructure/clusters/hvm/alarms.rst:93
+msgid "Alarm"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:19
+#: ../../infrastructure/clusters/hvm/alarms.rst:51
+#: ../../infrastructure/clusters/hvm/alarms.rst:71
+#: ../../infrastructure/clusters/hvm/alarms.rst:94
+msgid "Severity"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:20
+#: ../../infrastructure/clusters/hvm/alarms.rst:52
+#: ../../infrastructure/clusters/hvm/alarms.rst:72
+#: ../../infrastructure/clusters/hvm/alarms.rst:95
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:21
+msgid "Host CPU Usage Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:22
+#: ../../infrastructure/clusters/hvm/alarms.rst:28
+#: ../../infrastructure/clusters/hvm/alarms.rst:34
+#: ../../infrastructure/clusters/hvm/alarms.rst:40
+#: ../../infrastructure/clusters/hvm/alarms.rst:54
+#: ../../infrastructure/clusters/hvm/alarms.rst:74
+#: ../../infrastructure/clusters/hvm/alarms.rst:80
+#: ../../infrastructure/clusters/hvm/alarms.rst:97
+#: ../../infrastructure/clusters/hvm/alarms.rst:108
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:23
+msgid ""
+"Host CPU usage is averaging above the warning threshold (default: 85%) "
+"over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:24
+msgid "Host CPU Usage Critical"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:25
+#: ../../infrastructure/clusters/hvm/alarms.rst:31
+#: ../../infrastructure/clusters/hvm/alarms.rst:57
+#: ../../infrastructure/clusters/hvm/alarms.rst:77
+#: ../../infrastructure/clusters/hvm/alarms.rst:83
+#: ../../infrastructure/clusters/hvm/alarms.rst:109
+msgid "Critical"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:26
+msgid ""
+"Host CPU usage is averaging above the critical threshold (default: 95%) "
+"over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:27
+msgid "Host Memory Usage Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:29
+msgid ""
+"Host memory usage is averaging above the warning threshold (default: 90%)"
+" over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:30
+msgid "Host Memory Usage Critical"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:32
+msgid ""
+"Host memory usage is averaging above the critical threshold (default: "
+"95%) over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:33
+msgid "Host Memory Over-Committed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:35
+msgid ""
+"Total allocated VM memory exceeds the host's physical memory capacity "
+"(adjusted by overcommit percent). See :doc:`vm_placement` for overcommit "
+"configuration."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:36
+msgid "Host Unreachable"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:37
+#: ../../infrastructure/clusters/hvm/alarms.rst:60
+msgid "Error"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:38
+msgid ""
+"Host has not reported in over 5 minutes and may be offline or "
+"experiencing network issues"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:39
+msgid "Multiple Heartbeat Datastores Detected"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:41
+msgid ""
+"More than one datastore was configured as a heartbeat datastore. The "
+"system has auto-selected one. Review the Datastores tab to verify the "
+"selection."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:44
+msgid "Datastore Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:53
+msgid "Datastore Usage Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:55
+msgid "Datastore capacity usage exceeds the warning threshold (default: 80%)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:56
+msgid "Datastore Usage Critical"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:58
+msgid "Datastore capacity usage exceeds the critical threshold (default: 90%)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:59
+msgid "Datastore Offline"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:61
+msgid "Datastore is offline and not accessible from any host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:64
+msgid "VM Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:73
+msgid "VM CPU Usage Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:75
+msgid ""
+"VM CPU usage is averaging above the warning threshold (default: 85%) over"
+" the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:76
+msgid "VM CPU Usage Critical"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:78
+msgid ""
+"VM CPU usage is averaging above the critical threshold (default: 95%) "
+"over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:79
+msgid "VM Memory Usage Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:81
+msgid ""
+"VM memory usage is averaging above the warning threshold (default: 90%) "
+"over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:82
+msgid "VM Memory Usage Critical"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:84
+msgid ""
+"VM memory usage is averaging above the critical threshold (default: 95%) "
+"over the monitoring window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:87
+msgid "Operational Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:96
+msgid "Unable to Remove Host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:98
+msgid ""
+"A host removal operation could not safely complete. Follow "
+":doc:`managing_hosts`; do not manually edit cluster membership, and "
+"contact HPE Support if safe isolation or ring departure cannot be "
+"established."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:101
+msgid "Default Thresholds"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:107
+msgid "Metric"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:110
+msgid "Notes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:111
+msgid "Host CPU"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:112
+#: ../../infrastructure/clusters/hvm/alarms.rst:128
+msgid "85%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:113
+#: ../../infrastructure/clusters/hvm/alarms.rst:117
+#: ../../infrastructure/clusters/hvm/alarms.rst:129
+#: ../../infrastructure/clusters/hvm/alarms.rst:133
+msgid "95%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:114
+#: ../../infrastructure/clusters/hvm/alarms.rst:118
+#: ../../infrastructure/clusters/hvm/alarms.rst:130
+#: ../../infrastructure/clusters/hvm/alarms.rst:134
+msgid "Sustained average over window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:115
+msgid "Host Memory"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:116
+#: ../../infrastructure/clusters/hvm/alarms.rst:125
+#: ../../infrastructure/clusters/hvm/alarms.rst:132
+msgid "90%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:119
+msgid "Host Overcommit"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:120
+msgid "100%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:121
+msgid "—"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:122
+msgid "Total allocated vs physical capacity"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:123
+msgid "Datastore Usage"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:124
+msgid "80%"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:126
+msgid "Real-time capacity check"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:127
+msgid "VM CPU"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:131
+msgid "VM Memory"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:137
+msgid "Alarm Behavior"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:140
+msgid "Monitoring Window"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:142
+msgid ""
+"Threshold-based alarms (CPU, memory) use a rolling time window (default: "
+"**15 minutes**) of averaged metrics from OpenSearch. This prevents short "
+"spikes from triggering false alarms."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:145
+msgid "Clear Margin"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:147
+msgid ""
+"Alarms automatically clear when the metric drops below the threshold "
+"minus a **clear margin** (default: 10 percentage points). For example, a "
+"CPU warning alarm triggered at 85% will clear when usage drops below 75%."
+" This hysteresis prevents alarm flapping."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:150
+msgid "Idempotent Evaluation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:152
+msgid ""
+"The alarm system is idempotent — if an alarm is already active, re-"
+"evaluating the same condition does not create duplicate alarms. "
+"Similarly, clearing an already-cleared alarm is a no-op."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:155
+msgid "Customizing Thresholds"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:157
+msgid ""
+"Alarm thresholds can be overridden at the **cluster level** through the "
+"cluster configuration. Custom thresholds are merged with the defaults — "
+"you only need to specify the values you want to change."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:159
+msgid ""
+"Datastore-level threshold overrides are also supported, allowing "
+"different capacity warning levels for different datastores within the "
+"same cluster."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:161
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:161
+msgid ""
+"Alarms can be disabled entirely for a cluster by setting ``enabled: "
+"false`` in the alarm thresholds configuration."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:164
+msgid "Viewing and Acknowledging Alarms"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:166
+msgid "Alarms are visible in:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:168
+msgid ""
+"**Cluster detail page** — Summary panel shows active alarm count and "
+"status"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:169
+msgid ""
+"**Operations > Health** — Global view of all active alarms across the "
+"appliance"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:171
+msgid "To acknowledge an alarm:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:173
+msgid "Navigate to the alarm in Operations > Health"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:174
+msgid "Click the alarm to view details"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:175
+msgid "Click :guilabel:`Acknowledge` to mark it as seen"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/alarms.rst:177
+msgid ""
+"Acknowledged alarms remain visible but no longer contribute to the "
+"cluster's overall health status indicator. Alarms automatically clear "
+"when the underlying condition resolves."
+msgstr ""
+

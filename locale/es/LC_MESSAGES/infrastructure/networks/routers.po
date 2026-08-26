@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/networks/routers.rst:2
@@ -32,12 +32,13 @@ msgstr "Descripción general"
 msgid ""
 "Routers can be viewed, created, and managed from the Routers tab of the "
 "Infrastructure > Networks page. |morpheus| supports the creation of the "
-"following router types depending on networks that are currently configured:"
+"following router types depending on networks that are currently "
+"configured:"
 msgstr ""
 "Enrutadores se puede ver, creado, y administrado desde el Enrutadores "
-"pestaña del Infraestructura > Redes página. |morpheus| soporta el creation "
-"del siguiente router tipos dependiendo de networks ese son actualmente "
-"configurado:"
+"pestaña del Infraestructura > Redes página. |morpheus| soporta el "
+"creation del siguiente router tipos dependiendo de networks ese son "
+"actualmente configurado:"
 
 #: ../../infrastructure/networks/routers.rst:9
 msgid "Amazon Internet Gateway"
@@ -79,48 +80,203 @@ msgstr "NSX Tier1 Gateway"
 msgid "Open Telekom Router"
 msgstr "Abrir Telekom Router"
 
-#: ../../infrastructure/networks/routers.rst:21
+#: ../../infrastructure/networks/routers.rst:19
+#: ../../infrastructure/networks/routers.rst:35
+msgid "VM Network (OVS)"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:22
 msgid "Create New Router"
 msgstr "Crear Nuevo Router"
 
-#: ../../infrastructure/networks/routers.rst:23
-#: ../../infrastructure/networks/routers.rst:31
-#: ../../infrastructure/networks/routers.rst:38
+#: ../../infrastructure/networks/routers.rst:24
+#: ../../infrastructure/networks/routers.rst:76
+#: ../../infrastructure/networks/routers.rst:83
 msgid "Navigate to Infrastructure > Networks > Routers tab"
 msgstr "Navegue un Infrastructure > Networks > Routers pestaña"
 
-#: ../../infrastructure/networks/routers.rst:24
+#: ../../infrastructure/networks/routers.rst:25
 msgid "Click :guilabel:`+ ADD`"
 msgstr "Click :guilabel:`+ AGREGAR`"
 
-#: ../../infrastructure/networks/routers.rst:25
+#: ../../infrastructure/networks/routers.rst:26
 msgid "Select the router type and complete the fields on the resulting modal"
 msgstr "Seleccionar el router tipo y completo el campos en el resulting modal"
 
-#: ../../infrastructure/networks/routers.rst:26
+#: ../../infrastructure/networks/routers.rst:27
 msgid "Once complete, click :guilabel:`ADD NETWORK ROUTER`"
 msgstr "Una vez completado, click :guilabel:`ADD NETWORK ROUTER`"
 
-#: ../../infrastructure/networks/routers.rst:29
+#: ../../infrastructure/networks/routers.rst:30
+msgid "Common Fields"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:32
+msgid ""
+"The first field is **Router Type**. The remaining fields are supplied by "
+"that router provider, so a field shown for one type must not be assumed "
+"to apply to another. Common provider fields include a router **Name**, "
+"enabled state, Cloud or network integration, and integration-specific "
+"location or gateway selections."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:37
+msgid ""
+"**VM Network (OVS)** is the UI label for the ``openVSwitch`` type. "
+"Despite appearing in the Routers list, it defines an Open vSwitch "
+"bridging domain for an HVM cluster; it does not provide gateway, NAT, "
+"firewall, DHCP, BGP, or static-routing functions."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:39
+msgid "VM Network (OVS) creation fields"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:43
+msgid "Field"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:44
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:45
+msgid "Name"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:46
+msgid "Required display name for the OVS network definition."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:47
+msgid "Cluster"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:48
+msgid ""
+"Required HVM cluster on which the OVS bridge or overlay is configured. "
+"Only eligible clusters are offered."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:49
+msgid "Enable Overlay"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:50
+msgid ""
+"Selects an overlay network across cluster hosts. When clear, configure a "
+"bridge and port instead."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:51
+msgid "OVS Bridge Name"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:52
+msgid ""
+"Existing bridge on the selected cluster for a non-overlay network. Select"
+" the create option to expose **New OVS Bridge Name**."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:53
+msgid "New OVS Bridge Name"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:54
+msgid ""
+"Required name when creating a bridge rather than selecting an existing "
+"one."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:55
+msgid "Port Name"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:56
+msgid ""
+"Required host network interface attached to a newly created non-overlay "
+"bridge."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:57
+msgid "Overlay Net Interface"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:58
+msgid ""
+"Required cluster interface carrying overlay traffic when **Enable "
+"Overlay** is selected."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:59
+msgid "Overlay Net Port"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:60
+msgid "Required UDP overlay port. The current form defaults to ``4789``."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:61
+msgid "Overlay ID"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:62
+msgid "Required overlay network identifier."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:63
+msgid "CIDR"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:64
+msgid "Required overlay address range in CIDR notation."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:66
+msgid ""
+"The OVS type and these fields are HVM-cluster scoped. Other router types "
+"expose provider-specific fields and capabilities; compare the form in the"
+" running release with the corresponding integration guide before creating"
+" or changing them."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:69
+msgid "Provider-specific Router Fields"
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:71
+msgid ""
+"The bundled documentation metadata does not establish a release-"
+"independent field inventory for the NSX, OpenStack, Open Telekom, and "
+"other integration-supplied Router forms. Their visible fields depend on "
+"the selected integration, provider inventory, permissions, and product "
+"release. The running Create Router form is authoritative for field "
+"availability; a field or Router type absent from that form is not "
+"documented as supported for that provider. Do not reuse the VM Network "
+"(OVS) meanings for another Router type."
+msgstr ""
+
+#: ../../infrastructure/networks/routers.rst:74
 msgid "Editing Existing Routers"
 msgstr "Editing Existente Routers"
 
-#: ../../infrastructure/networks/routers.rst:32
+#: ../../infrastructure/networks/routers.rst:77
 msgid "Click on the pencil icon for the appropriate router"
 msgstr "Click en el pencil ícono para el appropriate router"
 
-#: ../../infrastructure/networks/routers.rst:33
+#: ../../infrastructure/networks/routers.rst:78
 msgid "After editing router fields, click :guilabel:`SAVE`"
 msgstr "Después de editing router campos, click :guilabel:`SAVE`"
 
-#: ../../infrastructure/networks/routers.rst:36
+#: ../../infrastructure/networks/routers.rst:81
 msgid "Deleting Existing Routers"
 msgstr "Deleting Existente Routers"
 
-#: ../../infrastructure/networks/routers.rst:39
+#: ../../infrastructure/networks/routers.rst:84
 msgid "Click on the trash can icon for the appropriate router"
 msgstr "Click en el trash puede ícono para el appropriate router"
 
-#: ../../infrastructure/networks/routers.rst:40
+#: ../../infrastructure/networks/routers.rst:85
 msgid "Acknowledge the pop-up banner ensuring you wish to delete the router"
 msgstr "Acknowledge el pop-up banner ensuring you wish a eliminar el router"
+

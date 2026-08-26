@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:2
+msgid "Advanced"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:4
+msgid ""
+"There are several advanced features provided within |morpheus| that can "
+"leverage some cool aspects of VMware. One of these features is Remote "
+"Console support directly to the hypervisor. To enable this feature a few "
+"prerequisites must be met. First, the |morpheus| appliance must have "
+"network access to the ESXi hosts within VCenter. Secondly, firewall "
+"settings need to be adjusted on each ESXi host. This can be done in "
+"VSphere under firewall configuration on the host. Simply check the "
+"`gdbserver` option, which will open up the necessary ports (starting at "
+"5900 range)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:6
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:6
+msgid "Hypervisor Console for vCenter 6.5 requires |morpheus| v3.2.0+"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:8
+msgid ""
+"Now that the ESXi hosts are ready to utilize remote console, simply edit "
+"the cloud in |morpheus| via ``Infrastructure > Clouds``. Check the option"
+" that says `Enable Hypervisor Console`. It is important to note that "
+"currently this functionality only works for newly provisioned vm's "
+"provisioned directly via |morpheus|. This should change soon however."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:10
+msgid ""
+"It is also possible to import vm snapshots for backup or conversion "
+"purposes from VCenter and also an ESXi host. However, this does require "
+"that the ESXi host license has an enterprise level license as it will not"
+" allow the appliance to download a virtual image if it is not a paid "
+"VMware license."
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:13
+msgid "Device Type Selection"
+msgstr ""
+
+#: ../../integration_guides/Clouds/vmware/advanced.rst:15
+msgid ""
+"The VMware Cloud advanced configuration contains separate "
+":guilabel:`Enable Storage Type Selection` and :guilabel:`Enable Network "
+"Type Selection` settings. Enable the applicable setting when users must "
+"choose from the storage or network interface types exposed by the VMware "
+"provisioning provider. When disabled, the corresponding selector is not "
+"presented and the configured/default type is used. These settings are "
+"verified for VMware Clouds only; do not infer the same controls for HVM "
+"or another Cloud type."
+msgstr ""
+

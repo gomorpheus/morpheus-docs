@@ -1,0 +1,459 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/code/import_export.rst:4
+msgid "Import and Export"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:6
+msgid ""
+"Onboarded Git repositories can be configured as either import or export "
+"targets for a |morpheus| appliance. This means that many created "
+"|morpheus| constructs, such as Tasks, Library Items, and others, can be "
+"backed up to an integrated Git repository as code. This backup can take "
+"place on an automatic schedule (syncs every four hours) or can be "
+"triggered manually after changes are made. Users can back up all "
+"supported constructs within the appliance to a single repository or use "
+"Labels to back up only selected items. Exported constructs can also be "
+"imported into target appliances. This is useful for sharing items between"
+" two |morpheus| environments, such as from a development appliance to a "
+"production appliance."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:8
+#: ../../provisioning/code/import_export.rst:18
+#: ../../provisioning/code/import_export.rst:48
+msgid "Note"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:8
+msgid ""
+"The use of this feature requires an integrated Git repository. Please see"
+" our integration guide for Github or other Git integrations if you've not"
+" yet integrated your code repositories. While |morpheus| can onboard and "
+"work with both public and private code repositories, it is strongly "
+"recommended that you use private repositories for exporting your "
+"|morpheus| constructs as code."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:10
+msgid "Supported Constructs:"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:12
+#: ../../provisioning/code/import_export.rst:117
+msgid "Tasks"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:13
+msgid "Workflows"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:14
+msgid "Spec Templates"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:15
+msgid "Library Items"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:16
+#: ../../provisioning/code/import_export.rst:110
+msgid "Forms"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:18
+msgid ""
+"When exporting all supported constructs |morpheus| will export more than "
+"just the above types, however, only the above types are exportable as "
+"individual resources. This list may expand in the future as additional "
+"constructs become supported by future updates."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:21
+msgid "Role Permissions"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:23
+msgid ""
+"Access and capabilities for the Import/Export feature set is determined "
+"by the following role permissions:"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:25
+msgid "Role: Feature Access: ``Admin: Export/Import``"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:26
+msgid ""
+"None: Cannot access the edit button on the Code List Page "
+"(:menuselection:`Provisioning --> Code`) to set Import/Export settings or"
+" see Import/Export actions on the Code Repository Detail Page"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:27
+msgid ""
+"Full: Code repositories can be edited to set Import/Export configurations"
+" and Import/Export actions can be viewed and used on Code Repository "
+"Detail Pages"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:30
+msgid "Import/Export Settings"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:32
+msgid ""
+"Code repositories are set to allow import, export or both from the Code "
+"Repositories List Page (:menuselection:`Provisioning --> Code`). Click "
+"the edit button (✎) to the right of the selected repository to edit its "
+"import/export settings. When editing a code repository for import and "
+"export, set the following configurations:"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:34
+msgid "ENABLED"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:35
+msgid ""
+"When marked, routine syncs will take place between |morpheus| and this "
+"repository. This includes all file syncs and not just actions related to "
+"import and export."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:37
+msgid "IMPORT/EXPORT"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:38
+msgid ""
+"Set \"Auto export all\" to automatically export once every four hours, "
+"\"Manual export\" to enable this repository for manual exports on demand,"
+" \"Manual import\" to enable this repository for manual imports on "
+"demand, \"Import/Export\" to enable both manual imports and exports on "
+"demand."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:40
+msgid "PATH"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:41
+msgid ""
+"The path within the repository where |morpheus| should import from or "
+"export to."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:43
+msgid "EXPORT LABEL FILTER"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:44
+msgid ""
+"Enter a Label and |morpheus| will export or import only constructs which "
+"include the Label into the repository. This must be a single Label, it "
+"cannot be a list of multiple Labels."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:46
+msgid ""
+"Once you've configured the code repository, click :guilabel:`SAVE "
+"CHANGES`."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:48
+msgid ""
+"Code repositories must have at least one file in them in order to export "
+"|morpheus| constructs as code. This can be as simple as a README file, "
+"they just cannot be empty."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:51
+msgid "Exporting"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:53
+msgid ""
+"After a repository is configured to allow export (see previous section), "
+"it may perform periodic automatic refreshes or the user may need to "
+"refresh the repository on demand (depending on settings). To manually "
+"initiate an export, drill into the Repository Detail page, click "
+":guilabel:`ACTIONS`, and click \"Export All Resources\"."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:55
+msgid ""
+"Any new or updated constructs will be refreshed within the repository at "
+"the path your repository is configured to export into. Bear in mind that,"
+" even if you've configured |morpheus| to export only constructs "
+"categorized with a specific Label, any required dependencies would also "
+"be exported. For example, if you've labeled a Workflow to be exported, "
+"|morpheus| will also export the dependency Tasks so the Workflow will be "
+"functional. A similar behavior applies for exported Library Items which "
+"may have a number of dependencies."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:57
+msgid ""
+"|morpheus| items are exported as scribe files. These are HCL-formatted "
+"representations of the construct as code. They include static attributes "
+"representative of the attributes set on the construct itself or they may "
+"use UUIDs to refer to other constructs or integrations. It shouldn't be "
+"necessary to view or edit them unless you're curious."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:60
+msgid "Importing"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:62
+msgid ""
+"After |morpheus| constructs have been exported as code, they can be "
+"pulled down into other appliances which have the same repositories "
+"integrated. Items can be imported ad-hoc from the file browser within a "
+"Code Repository Detail page. Click on the gear (⚙) dropdown to the right "
+"of any scribe file that may exist in your repository. For example, an "
+"individual Task can be imported into the destination appliance."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:64
+msgid ""
+"In addition to importing one-off items, code repositories may also be "
+"configured for import so that many items can be imported at once. The "
+"same configurations can be made for import as export, including a "
+"specific path within the repository to import from and whether only "
+"specific Label groups should be targeted. Triggering a larger scale "
+"import for a whole repository is done from the Code Repository Detail "
+"Page. Click the :guilabel:`ACTIONS` button and then click \"Import All "
+"Resources\"."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:66
+msgid ""
+"Once the import has been initiated, |morpheus| will check to see if a new"
+" item will be created, if an existing item would be updated, if no action"
+" could be taken due to a conflict, or if no changes would result. This "
+"information is presented to the user who may then decide if the import "
+"action should go ahead."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:68
+#: ../../provisioning/code/import_export.rst:70
+msgid "Important"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:68
+msgid ""
+"Care has been taken with |morpheus| Import/Export to ensure that existing"
+" work cannot be wiped out by an import action. For example, if a Task "
+"with a name identical to a pre-existing Task would try to be imported, "
+"|morpheus| will require the naming conflict be resolved before the import"
+" can take place. In fact, |morpheus| Import can only create new items or "
+"overwrite items created by import. It cannot overwrite anything user-"
+"created or anything pre-seeded with the system at install. Additionally, "
+"import cannot be scheduled automatically. Users must initiate all "
+"imports."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:70
+msgid ""
+"Importing resources which rely on existing integrations or sensitive "
+"values will require some additional configuration on the destination "
+"appliance. For example, importing a Task which references code in a "
+"separate repository which is not integrated on the target appliance will "
+"be imported with reference to the missing integration. This integration "
+"would need to be added before the Task could be used. Another example "
+"scenario would be a Task which references a secret value held in "
+"|morpheus| Cypher. Once again, the Task would be imported and the "
+"required Cypher references would need to be made within the destination "
+"appliance before the Task could be used."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:73
+msgid "Checking Imported Items Prior to Use"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:75
+msgid ""
+"As mentioned in the previous section, not every imported item will "
+"immediately be available for use. This is primarily due to the target "
+"appliance lacking an integration (for example, an Ansible Tower "
+"integration required for an imported Task) or a securely stored secret "
+"string (for example, a Task that calls a secret string stored in "
+"|morpheus| Cypher). |morpheus| will still import these resources but this"
+" section discusses some manual changes that may have to be made to "
+"imported items in order for them to be usable. |morpheus| will attempt to"
+" export all dependent resources (for example, the needed Tasks if a "
+"Workflow is exported) but imported items should still be checked and "
+"manually supplemented under certain conditions outlined below."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:77
+msgid ""
+"When exporting, remember that |morpheus| cannot export to a completely "
+"empty repository. Any file (such as a README) needs to exist first. Items"
+" deleted from |morpheus| but previously exported to your repository will "
+"continue to exist in the repository. If you wish to delete them from any "
+"future imports, you must manually delete them from the repo. Finally, "
+"bear in mind that export functionality will only export items which are "
+"owned by the Tenant in which the export is created. |morpheus| does not "
+"currently support exporting items which are shared to the tenant from the"
+" Master Tenant."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:80
+msgid "Protected Fields and User Credentials"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:82
+msgid ""
+"Protected information and secret values are not exported. When importing "
+"any resources which rely on protected information, the user will need to "
+"manually update the resource on the target appliance. Examples include "
+"anything authenticated using a stored credential set (from the "
+":menuselection:`Infrastructure --> Trust --> Credentials` section), "
+"anything with a password field (such as HTTP Tasks or REST-based Option "
+"Lists accessing password-protected information), Chef Task Data Bag Keys,"
+" and more. Anything configured with a password or other protected field "
+"will need to be edited on the importing appliance and updated to have the"
+" protected information needed to function."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:85
+msgid "Integrations"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:87
+msgid ""
+"When an imported Task requires an integration that does not exist on the "
+"appliance, an integration will be created with the same name. The "
+"integration credentials will not be established, nor will any other "
+"configuration fields outside of the name. Users will need to update the "
+"integration configuration to make it functional in order for the imported"
+" Task to function."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:90
+msgid "SSH Keys"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:92
+msgid ""
+"SSH Keys are not set on imported resources, such as Tasks configured to "
+"be executed on a remote host. Users will need to add a valid key to the "
+"importing appliance and update the Task to use that SSH Key."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:95
+msgid "Ansible Tower Tasks"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:97
+msgid ""
+"Following import, \"Inventory\" and \"Job Template\" fields will need to "
+"be configured on Ansible Tower Tasks."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:100
+msgid "vRealize Orchestrator Tasks"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:102
+msgid ""
+"Following import, \"Inventory\" and \"Job Template\" fields will need to "
+"be configured on vRO Tasks."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:105
+msgid "Option Lists"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:107
+msgid ""
+"Option lists need to be edited and saved prior to use in order to load "
+"any initial data sets that have been configured on the Option List."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:112
+msgid ""
+"Input defaults that are ID-based will require manual correction after "
+"import. For example, if you have a Group Input which defaults to "
+"GroupName:A(ID:2), when imported it will still be based off an ID value "
+"of 2. It's highly likely that in the importing environment, a different "
+"Group will have an ID value of 2. A manual change to the correct ID value"
+" is required in the destination environment. Bear in mind that if you re-"
+"import a Form, you will also undo any manual changes you've made in the "
+"importing environment. Thus, if you update all defaults after importing, "
+"and then import once again, these manual default changes will be wiped "
+"out."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:114
+msgid ""
+"Additionally, when Forms are using existing Inputs, those Inputs will be "
+"exported and imported for use in the destination environment. On import, "
+"|morpheus| will add the needed Inputs unless the destination environment "
+"already has an Input with the same CODE value. This could give the "
+"appearance of creating duplicate Inputs if the destination environment "
+"happens to have an Input with the same name but a different code value. "
+"Users may wish to rename Inputs in the event they end up with more than "
+"one having the same name."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:119
+msgid ""
+"The user must ensure the presence of any dependency required by a Task. "
+"One example would be any Cypher keys being called by the Task. Add any "
+"required Cypher entries with identical keys or add compatible Cypher keys"
+" and update the Task configuration to utilize the updated Cypher "
+"mountpoints. Cypher is just one example, any other dependency required by"
+" the Task must be present. |morpheus| does not parse the Task "
+"configuration to determine which dependencies are or are not present or "
+"required."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:122
+msgid "Icons and Images"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:124
+msgid ""
+"Icons which are set up on imported Instance Types will need to be "
+"manually uploaded to the appliance after import. They are not brought "
+"over as part of the import/export process."
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:127
+msgid "Virtual Images"
+msgstr ""
+
+#: ../../provisioning/code/import_export.rst:129
+msgid ""
+"When importing Node Types, the associated Virtual Image is mapped by its "
+"\"Code\" value. It is expected that a Virtual Image with the correct "
+"\"Code\" value already exists on the target appliance. If not, the Node "
+"Type will be imported without any Virtual Image attached. The user will "
+"then need to edit the Node Type and associate it with a compatible "
+"Virtual Image in order to become usable."
+msgstr ""
+

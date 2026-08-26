@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -36,11 +36,11 @@ msgid ""
 msgstr ""
 "As you get started, it's vital to understand constructs como Clouds y "
 "Groups as they are implemented in |morpheus|. Deploying an effective "
-"strategy for dividing organizational resources y people groups under these "
-"constructs will ensure all parties have convenient access to the resources "
-"they need. Map actualmente-existing strategies for splitting resources y "
-"controlling costs en |morpheus| y your teams will have access only to "
-"resources allocated to their department."
+"strategy for dividing organizational resources y people groups under "
+"these constructs will ensure all parties have convenient access to the "
+"resources they need. Map actualmente-existing strategies for splitting "
+"resources y controlling costs en |morpheus| y your teams will have access"
+" only to resources allocated to their department."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:6
 msgid ""
@@ -52,12 +52,13 @@ msgid ""
 msgstr ""
 "This guide discusses the constructs of Clouds, Groups, Roles, Users, y "
 "Policies while también presenting an example use case for allocating "
-"resources y distributing access under these umbrellas. We'll end up con a "
-"permissions structure represented por la diagram a continuación y step a "
-"través de each part de la implementation process."
+"resources y distributing access under these umbrellas. We'll end up con a"
+" permissions structure represented por la diagram a continuación y step a"
+" través de each part de la implementation process."
 
-#: ../../getting_started/guides/groups_roles_perms.rst:9
-msgid ".. image:: images/integration_guides/perms_guide/0permsDiagram.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:8
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/0permsDiagram.png"
 msgstr ".. image:: images/integration_guides/perms_guide/0permsDiagram.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:11
@@ -71,9 +72,9 @@ msgid ""
 "about Clouds in |morpheus| Docs `here "
 "<https://docs.morpheusdata.com/en/latest/infrastructure/clouds/clouds.html>`_."
 msgstr ""
-"Clouds have broad meaning in |morpheus| y puede ser integrations en public "
-"clouds, private clouds, o bare metal servers. You can read more about "
-"Clouds in |morpheus| Docs `here <T2>`_."
+"Clouds have broad meaning in |morpheus| y puede ser integrations en "
+"public clouds, private clouds, o bare metal servers. You can read more "
+"about Clouds in |morpheus| Docs `here <T2>`_."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:15
 msgid ""
@@ -94,18 +95,20 @@ msgstr ""
 "In our example case, the organization has an Azure account y three "
 "separate departmental projects consolidated under separate resource "
 "groups. The |morpheus| integration con Azure public cloud permite a los "
-"usuarios scope the Cloud to one específico resource group, if desired. We "
-"will do so in this case because it will allow us to restrict our users to "
-"the appropriate Azure resource groups in a later step. In the screenshot "
-"below, note how I am scoping the |morpheus| Azure Cloud to a específico "
-"resource group when adding o editing the Cloud. This process será repeated "
-"two adicional times para crear the three |morpheus| Clouds we need. "
-"Complete details on integrating |morpheus| con Azure public cloud are "
-"`here "
-"<https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/azure/azure.html>`_ "
-"in |morpheus| Docs."
+"usuarios scope the Cloud to one específico resource group, if desired. We"
+" will do so in this case because it will allow us to restrict our users "
+"to the appropriate Azure resource groups in a later step. In the "
+"screenshot below, note how I am scoping the |morpheus| Azure Cloud to a "
+"específico resource group when adding o editing the Cloud. This process "
+"será repeated two adicional times para crear the three |morpheus| Clouds "
+"we need. Complete details on integrating |morpheus| con Azure public "
+"cloud are `here "
+"<https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/azure/azure.html>`_"
+" in |morpheus| Docs."
 
-msgid ".. image:: images/integration_guides/perms_guide/1configCloud.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:17
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/1configCloud.png"
 msgstr ".. image:: images/integration_guides/perms_guide/1configCloud.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:21
@@ -123,9 +126,9 @@ msgid ""
 " assigned Roles."
 msgstr ""
 "`Groups "
-"<https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html>`_ "
-"in |morpheus| allow administrators to determine which Clouds their users "
-"have access to. Part of defining a Role, which we'll see in the next "
+"<https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html>`_"
+" in |morpheus| allow administrators to determine which Clouds their users"
+" have access to. Part of defining a Role, which we'll see in the next "
 "section, is selecting which Groups are asociado con the Role. One o "
 "multiple Clouds are added to cada Group y passed para usarrs a través de "
 "their assigned Roles."
@@ -145,11 +148,12 @@ msgstr ""
 "on the Group detail page (Infrastructure > Groups > Specific Group). In "
 "the example case diagrammed above, one Cloud (Azure cloud account scoped "
 "to a específico resource group) is asociado con cada Group pero often "
-"Groups will contain muchos Clouds. In the screenshot below, I am adding an "
-"Azure Cloud to a Group that is actualmente empty."
+"Groups will contain muchos Clouds. In the screenshot below, I am adding "
+"an Azure Cloud to a Group that is actualmente empty."
 
-#: ../../getting_started/guides/groups_roles_perms.rst:28
-msgid ".. image:: images/integration_guides/perms_guide/2addCloudToGroup.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:27
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/2addCloudToGroup.png"
 msgstr ".. image:: images/integration_guides/perms_guide/2addCloudToGroup.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:30
@@ -194,8 +198,9 @@ msgstr ""
 "will have all feature permissions set to \"None\" como se muestra a "
 "continuación meaning we can skip directly to the Group Access tab."
 
-#: ../../getting_started/guides/groups_roles_perms.rst:37
-msgid ".. image:: images/integration_guides/perms_guide/3roleFeatureAccess.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:36
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/3roleFeatureAccess.png"
 msgstr ".. image:: images/integration_guides/perms_guide/3roleFeatureAccess.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:38
@@ -206,14 +211,15 @@ msgid ""
 "easily control Group access for each user by applying one or more of our "
 "Group Roles to their user which we will do in the next section."
 msgstr ""
-"On the Group Access tab, I will toggle the Global Access setting to Custom "
-"y give access only to one Group as shown in the next image. By doing this "
-"for each of our Groups created in the last section, we can easily control "
-"Group access for each user by applying one o more of our Group Roles to "
-"their user which we will do in the next section."
+"On the Group Access tab, I will toggle the Global Access setting to "
+"Custom y give access only to one Group as shown in the next image. By "
+"doing this for each of our Groups created in the last section, we can "
+"easily control Group access for each user by applying one o more of our "
+"Group Roles to their user which we will do in the next section."
 
-#: ../../getting_started/guides/groups_roles_perms.rst:41
-msgid ".. image:: images/integration_guides/perms_guide/4roleGroupAccess.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:40
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/4roleGroupAccess.png"
 msgstr ".. image:: images/integration_guides/perms_guide/4roleGroupAccess.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:42
@@ -231,10 +237,10 @@ msgstr ""
 "which will control our feature access. Por ejemplo, we might have highly "
 "permissive feature access for administrators y more restrictive ones for "
 "developers o otros users who have específico responsibilities requiring "
-"access to just a few específico areas of the UI. These adicional Roles are "
-"created in the mismo way as the Group Roles we just created pero todos "
-"Group access será set to \"None\" y the appropriate feature access se "
-"configurará on the \"Feature Access\" tab."
+"access to just a few específico areas of the UI. These adicional Roles "
+"are created in the mismo way as the Group Roles we just created pero "
+"todos Group access será set to \"None\" y the appropriate feature access "
+"se configurará on the \"Feature Access\" tab."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:45
 msgid "Users"
@@ -258,7 +264,9 @@ msgstr ""
 "feature access needed for this user to carry out his o her "
 "responsibilities."
 
-msgid ".. image:: images/integration_guides/perms_guide/5newUser.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:49
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/5newUser.png"
 msgstr ".. image:: images/integration_guides/perms_guide/5newUser.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:53
@@ -276,9 +284,9 @@ msgid ""
 " this guide."
 msgstr ""
 "One final consideration for this example case is policy application. "
-"|morpheus| enables administrators to place fine-grained governance scoped "
-"to específico users, Roles, Groups, Clouds, Tenants, o globally. You can "
-"read more about policies in |morpheus| docs `here <T2>`_ but we will "
+"|morpheus| enables administrators to place fine-grained governance scoped"
+" to específico users, Roles, Groups, Clouds, Tenants, o globally. You can"
+" read more about policies in |morpheus| docs `here <T2>`_ but we will "
 "also create some that apply to the example case discussed in this guide."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:57
@@ -290,12 +298,14 @@ msgid ""
 "above."
 msgstr ""
 "Policies are created desde the Administration menu in the Policies "
-"section. In the screenshot below, I've created un nuevo policy y chosen to "
-"scope it to a Group. En este caso, I'm creating a maximum VMs policy but "
-"there are many other types which are listed in our documentation linked "
-"above."
+"section. In the screenshot below, I've created un nuevo policy y chosen "
+"to scope it to a Group. En este caso, I'm creating a maximum VMs policy "
+"but there are many other types which are listed in our documentation "
+"linked above."
 
-msgid ".. image:: images/integration_guides/perms_guide/6policies.png"
+#: ../../getting_started/guides/groups_roles_perms.rst:59
+#, fuzzy
+msgid ".. image:: /images/integration_guides/perms_guide/6policies.png"
 msgstr ".. image:: images/integration_guides/perms_guide/6policies.png"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:63
@@ -313,10 +323,10 @@ msgid ""
 "presented here can be expanded to suit the needs of large-scale "
 "enterprise."
 msgstr ""
-"At this point, we've completed implementation of the access structure. As "
-"new users are added, we can easily give them the Group y feature access "
-"they need. We can también easily add o edit the policies that are in place "
-"o add new Clouds y distribute access to existing users. The key is "
+"At this point, we've completed implementation of the access structure. As"
+" new users are added, we can easily give them the Group y feature access "
+"they need. We can también easily add o edit the policies that are in "
+"place o add new Clouds y distribute access to existing users. The key is "
 "understanding the relationship entre the |morpheus| constructs discussed "
 "in this guide. Armed con that understanding, the example case presented "
 "here puede ser expanded to suit the needs of large-scale enterprise."

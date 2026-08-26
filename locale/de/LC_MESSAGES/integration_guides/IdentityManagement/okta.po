@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/IdentityManagement/okta.rst:2
+msgid "Okta"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:7
+msgid ""
+"|morpheus| allows users to integrate an Okta deployment for user "
+"management and authentication. In |morpheus|, identity sources are added "
+"on a per-Tenant basis and Morpheus allows you to map Okta user groups to "
+"|morpheus| user groups. User accounts are automatically created with "
+"matching metadata and role permissions when users are authenticated."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:10
+msgid "Adding an Okta Integration"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:12
+msgid "Navigate to |AdmTen|"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:13
+msgid "Select a Tenant"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:14
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:15
+msgid "Select :guilabel:`+ IDENTITY SOURCE`"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:16
+msgid "Choose TYPE: \"Okta\""
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:17
+msgid "Populate the following, then select :guilabel:`SAVE CHANGES`:"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:19
+msgid "Name"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:20
+msgid "Unique name for authentication type"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:21
+msgid "Description"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:22
+msgid "A description for your new Okta Identity Source"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:23
+msgid "Okta URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:24
+msgid "Your Okta URL"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:25
+msgid "Administrator API Token"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:26
+msgid "Your Okta Administrator API Token"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:27
+msgid "Required Group"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:28
+msgid ""
+"The Okta group that users must be in to have access. If left empty, all "
+"Okta users who can authenticate will be allowed to log in and a local "
+"user account will be created automatically. It is strongly recommended to"
+" set this field in enterprise environments to restrict access to "
+"authorized users only."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:29
+msgid "Default Role"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:30
+msgid ""
+"The default role applied to all users who pass the Required Group check. "
+"This role is always assigned in addition to any roles granted through "
+"role mappings below."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:31
+msgid "ENABLE ROLE MAPPING PERMISSION"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:32
+msgid ""
+"When selected, Tenant users with appropriate rights to view and edit "
+"Roles will have the ability to set role mapping for the Identity Source "
+"integration. This allows the Tenant user to edit only the role mappings "
+"without viewing or potentially editing the Identity Source configuration."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:33
+msgid "MANUAL ROLE ASSIGNMENT"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:34
+msgid ""
+"When selected, administrators can manually edit Roles for users created "
+"through this identity source integration from the user detail page "
+"(|AdmUse| > Selected user)."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:36
+#: ../../integration_guides/IdentityManagement/okta.rst:42
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:36
+msgid ""
+"For more on Identity Source role mapping permissions, see the `associated"
+" guide <https://support.morpheusdata.com/s/article/How-to-enable-"
+"Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ "
+"in our KnowledgeBase."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:38
+msgid ""
+"Now, allowed Okta users can log into |morpheus| via their Okta "
+"credentials and a user will be automatically generated within |morpheus| "
+"with matching metadata and mapped Role permissions."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:40
+msgid ""
+"For Okta applications using the SAML SSO identity-source type, each "
+"configured Role mapping is compared with one complete SAML attribute "
+"value. Comma- or space-separated role names inside a single value are not"
+" parsed. Emit the group/role attribute as a multi-value SAML attribute, "
+"with one exact value for each desired mapping. This limitation applies to"
+" SAML attribute mapping; it does not mean that every Okta identity-source"
+" mapping mechanism is limited to one Role."
+msgstr ""
+
+#: ../../integration_guides/IdentityManagement/okta.rst:42
+msgid ""
+"If you've created multi-tenant roles, these will also appear here and can"
+" be mapped to Okta user groups allowing you to map users to equivalent "
+"user groups in |morpheus|."
+msgstr ""
+

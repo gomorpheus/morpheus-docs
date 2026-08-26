@@ -1,0 +1,576 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:2
+msgid "VM Migration & Failover"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:5
+msgid "Live Migration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:7
+msgid ""
+"Live migration moves a running VM from one cluster host to another with "
+"no downtime to the guest operating system."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:10
+msgid "Requirements"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:12
+msgid "The VM must be running (powered on)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:13
+msgid ""
+"The VM's storage must reside on a shared datastore (HPE Clustered "
+"Datastore or NFS). VMs with local storage cannot be live-migrated"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:14
+msgid "No host devices (GPU/USB passthrough) are attached to the VM"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:15
+msgid "The target host must have sufficient available memory"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:16
+msgid "Network connectivity between source and target hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:17
+msgid ""
+"The VM CPU definition must be supported by both hosts. Named CPU models "
+"use exact matching; choose a named model supported by every host on which"
+" the VM can run"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:18
+msgid ""
+"VMs using Host Passthrough with nested virtualization enabled are non-"
+"migratable"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:21
+msgid "Mixed CPU Hosts"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:23
+msgid ""
+"Before admitting different CPU models to one cluster, configure one exact"
+" named CPU model that is supported by every source and destination host, "
+"then test a live migration in both directions. Configure the model while "
+"creating or editing the cluster using the **CPU Architecture/Model** "
+"field. Compatibility is based on that exact common model, not a universal"
+" rule to select the processor marketed as \"lowest\" or oldest."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:25
+msgid ""
+"Do not assume that |morpheus| automatically selects the lowest processor "
+"generation. Host Passthrough's migratable setting is not a guarantee that"
+" arbitrary physical CPU combinations can live-migrate. If both directions"
+" have not been validated, use homogeneous hosts or keep affected VMs on a"
+" compatible host set."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:28
+msgid "Initiating a Live Migration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:30
+msgid "Navigate to ``Infrastructure > Clusters > [Cluster] > Virtual Machines``"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:31
+msgid "Select the VM to migrate"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:32
+msgid "Click :guilabel:`Actions` > :guilabel:`Move`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:33
+msgid "Select the target host from the available hosts list"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:34
+msgid "Confirm the migration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:36
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:104
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:181
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:36
+msgid ""
+"|morpheus| automatically determines whether to perform a live or cold "
+"migration based on the VM's current power state and storage "
+"configuration."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:39
+msgid "What Happens During Live Migration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:41
+msgid ""
+"A migration lock is acquired to prevent concurrent migrations of the same"
+" VM"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:42
+msgid ""
+"Storage pools are refreshed on the target host to ensure it can access "
+"the VM's disks"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:43
+msgid ""
+"Network preparation ensures the target host has the correct bridge "
+"configurations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:44
+msgid ""
+"The migration executes, transferring the VM's memory state to the target "
+"host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:45
+msgid "Upon completion, the VM's parent host reference is updated in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:46
+msgid "The migration lock is released"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:49
+msgid "Migration Options"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:55
+msgid "Option"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:56
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:57
+msgid "Migration Timeout"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:58
+msgid "Maximum time allowed for the migration to complete before it is cancelled"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:59
+msgid "CPU Throttling"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:60
+msgid ""
+"When enabled, throttles the VM's CPU during migration to help convergence"
+" for memory-intensive workloads"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:63
+msgid "Cold Migration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:65
+msgid ""
+"Cold migration moves a powered-off VM to a different host. This is used "
+"when:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:67
+msgid "The VM is powered off"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:68
+msgid "The VM has local storage that cannot be live-migrated"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:69
+msgid "Live migration failed and the VM was subsequently powered off"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:71
+msgid ""
+"For cold migration, the VM's definition is relocated and storage volumes "
+"(if local) are copied to the target host."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:74
+msgid "VM Failover & Heartbeat System"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:76
+msgid ""
+"HVM clusters use a heartbeat-based failure detection and automatic VM "
+"recovery system managed by the |morpheus| Agent on each host. This system"
+" operates independently of Corosync quorum (see :doc:`troubleshooting` "
+"for details on why Corosync quorate state does not affect cluster "
+"operation)."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:79
+msgid "Heartbeat Datastores"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:81
+msgid ""
+"Each host in the cluster writes periodic heartbeat files to shared "
+"storage. These files serve two purposes: they prove the host is alive and"
+" they store the VM definitions needed to recover workloads after a host "
+"failure."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:83
+msgid "**What is written:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:85
+msgid ""
+"A ``hb.properties`` file containing the host's hostname, timestamp, "
+"memory usage, and IP addresses"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:86
+msgid "A libvirt domain XML file for each running VM on the host"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:88
+msgid "**Where heartbeats are stored:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:90
+msgid ""
+"Heartbeat data is written to all configured heartbeat datastore paths for"
+" redundancy. The folder structure uses a hash of the agent's API key to "
+"identify each host."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:92
+msgid "**Write interval:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:94
+msgid ""
+"Heartbeat files are written every **20 seconds** by default. The interval"
+" is configurable from the |morpheus| appliance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:97
+msgid "Host Failure Detection"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:99
+msgid ""
+"The |morpheus| Agent on each host reads heartbeat files from all other "
+"hosts in the cluster. A host is considered **offline** when:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:101
+msgid ""
+"Its heartbeat timestamp is stale for **7 consecutive check cycles** "
+"(approximately 140 seconds at the default 20-second interval)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:102
+msgid "AND a direct HTTPS ping to the host on port 7443 has also failed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:104
+msgid ""
+"During stretch cluster arbitration, the detection threshold is extended "
+"to **10 check cycles** (approximately 200 seconds) to avoid premature "
+"failover during storage freezes caused by DLM fencing."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:106
+msgid ""
+"The host with the lowest identifier hash among all online hosts is "
+"automatically elected as the **recovery coordinator**. This election is "
+"deterministic — all nodes independently compute the same coordinator."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:109
+msgid "Failover Sequence"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:111
+msgid ""
+"When the recovery coordinator detects a host failure, the following "
+"sequence occurs:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:113
+msgid "**Phase 1 — VM Assignment:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:115
+msgid ""
+"The coordinator reads the VM domain XML files from the failed host's "
+"heartbeat folder"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:116
+msgid "For each VM:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:118
+msgid "**Pinned VMs are skipped** — they are not automatically recovered"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:119
+msgid ""
+"**VMs with local-only storage are skipped** — they cannot be recovered "
+"without shared storage"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:120
+msgid ""
+"The online host with the **most available free memory** that can "
+"accommodate the VM is selected as the target"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:122
+msgid ""
+"The coordinator copies each VM's definition to the target host's recovery"
+" folder on the heartbeat datastore"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:123
+msgid ""
+"Memory tracking is updated after each assignment to prevent over-"
+"committing during batch recovery"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:125
+msgid "**Phase 2 — Cleanup on Failed Host:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:127
+msgid ""
+"The coordinator attempts to reach the failed host via SSH and terminate "
+"any remaining VM processes"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:128
+msgid ""
+"The |morpheus| appliance is notified of the failover via the "
+"``/app/failoverWorkloadPrepare`` message"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:130
+msgid "**Phase 3 — VM Recovery on Target Hosts:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:132
+msgid "Each host checks its own recovery folder for VM definitions to start"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:133
+msgid "Before starting a VM, the host verifies:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:135
+msgid "All shared disk files referenced by the VM are accessible"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:136
+msgid ""
+"The VM is not already running on another host (confirmed over 3 "
+"consecutive checks to prevent duplicate starts)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:138
+msgid ""
+"The VM is defined and started, with up to **12 retry attempts** (10 "
+"seconds apart) if the initial start fails"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:139
+msgid ""
+"If the VM uses a software TPM (vTPM), the TPM state is restored from "
+"shared storage before startup"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:140
+msgid ""
+"The |morpheus| appliance is notified via the "
+"``/app/failoverWorkloadStart`` message"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:142
+msgid "**Phase 4 — Failed Host Recovery:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:144
+msgid ""
+"When the failed host comes back online, it reads its failover record, "
+"confirms each VM is running elsewhere, and removes the local VM "
+"definitions to prevent conflicts."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:147
+msgid "APD (All Paths Down) Protection"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:149
+msgid ""
+"If a host loses connectivity to **all** heartbeat datastore paths, it "
+"enters All Paths Down (APD) protection mode:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:151
+msgid ""
+"An isolation failure counter increments each cycle where writes fail on "
+"all paths"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:152
+msgid ""
+"After **6 consecutive failures** (approximately 2 minutes), the host "
+"**destroys all running VMs** to protect shared storage from data "
+"corruption"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:153
+msgid ""
+"During stretch cluster arbitration, the threshold is extended to **9 "
+"consecutive failures**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:154
+msgid "Pinned VMs and VMs using local-only storage are exempt from APD shutdown"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:156
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:156
+msgid ""
+"APD protection is a last-resort safety mechanism. When triggered, all "
+"non-exempt VMs on the isolated host are forcefully terminated to prevent "
+"split-brain storage access. Investigate and resolve storage connectivity "
+"issues immediately."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:159
+msgid "Agent Startup Recovery"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:161
+msgid ""
+"When the |morpheus| Agent starts (for example, after a host reboot), it "
+"enters a recovery mode for the first several minutes:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:163
+msgid ""
+"The agent checks its own heartbeat folder for VM definitions that are not"
+" currently running"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:164
+msgid ""
+"It attempts to auto-start these VMs (handling the host-reboot scenario "
+"where VMs were running before the reboot)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:165
+msgid ""
+"VMs with inaccessible disks are deferred to the recovery folder for later"
+" retry"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:168
+msgid "DLM Fencing Integration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:170
+msgid ""
+"HVM clusters use GFS2 with the Distributed Lock Manager (DLM) for shared "
+"storage. When a host leaves the cluster, DLM enters a \"wait fencing\" "
+"state that freezes all GFS2 I/O cluster-wide until the departed host is "
+"confirmed safely fenced."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:172
+msgid "The |morpheus| Agent handles DLM fencing automatically:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:174
+msgid ""
+"The agent detects that a peer host is unreachable via its connectivity "
+"checks (every 20 seconds)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:175
+msgid ""
+"Once confirmed unreachable, the agent issues a DLM fence acknowledgement "
+"to release the storage freeze"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:176
+msgid ""
+"A fast-path mechanism can issue the fence acknowledgement within **~20 "
+"seconds** for single-host failures, minimizing GFS2 freeze duration"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:177
+msgid ""
+"For safety, the agent confirms a rebooted host has actually restarted "
+"(via boot ID comparison) before acknowledging the fence, preventing "
+"split-brain scenarios"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:179
+msgid ""
+"When a host **loses quorum** (cannot reach a majority of peers), it self-"
+"fences by rebooting to ensure it cannot access shared storage while "
+"isolated."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:181
+msgid ""
+"During maintenance mode, self-fencing withdraws from GFS2 lockspaces and "
+"stops cluster services instead of rebooting, keeping the host available "
+"for administrator access."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/vm_migration.rst:183
+msgid ""
+"For detailed failover timelines and scenarios, see "
+":doc:`failure_scenarios`."
+msgstr ""
+

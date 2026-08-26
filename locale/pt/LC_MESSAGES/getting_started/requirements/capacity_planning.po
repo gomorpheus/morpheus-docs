@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/requirements/capacity_planning.rst:2
+msgid "Capacity and Planning"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:4
+msgid ""
+"There are many different architectures |morpheus| can be deployed as.  "
+"However, the most common architectures are an All-In-One (AIO) single "
+"node and a 3-Node Highly Available (HA) cluster. These architectures can "
+"have many variables to determine the capacity of each node, as each "
+"users' environment will be different.  Example factors that determine the"
+" capacity are:"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:6
+msgid ""
+"Number of virtual machines (VMs)/systems/instances that |morpheus| will "
+"manage, also know as Workload Elements (WLEs)"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:7
+msgid "If the WLEs will have agents installed"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:8
+msgid "The number of clouds added to |morpheus|"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:9
+msgid "The technologies used, such as: Kubernetes, Terraform, ARM, etc."
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:10
+msgid "The number of concurrent worflows"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:11
+msgid "Number of active users"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:13
+msgid ""
+"Although there are many factors that can contribute to the capacity "
+"planning, even outside the list above, below are recommended initial "
+"specifications."
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:15
+msgid "**Recommendations**"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:19
+msgid "Architecture"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:20
+msgid "# of CPUs per node"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:21
+msgid "Memory (GB) per node"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:22
+msgid "Local Storage (GB) per node"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:23
+msgid "Shared Storage (NFS)"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:24
+#: ../../getting_started/requirements/capacity_planning.rst:29
+msgid "AIO"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:25
+#: ../../getting_started/requirements/capacity_planning.rst:30
+#: ../../getting_started/requirements/capacity_planning.rst:35
+msgid "4"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:26
+#: ../../getting_started/requirements/capacity_planning.rst:36
+msgid "16"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:27
+msgid "200"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:28
+#: ../../getting_started/requirements/capacity_planning.rst:33
+msgid "N/A"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:31
+#: ../../getting_started/requirements/capacity_planning.rst:41
+msgid "32"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:32
+#: ../../getting_started/requirements/capacity_planning.rst:37
+#: ../../getting_started/requirements/capacity_planning.rst:42
+msgid "400"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:34
+#: ../../getting_started/requirements/capacity_planning.rst:39
+msgid "3-Node HA"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:38
+#: ../../getting_started/requirements/capacity_planning.rst:43
+msgid "50"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:40
+msgid "8"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:45
+msgid ""
+"The table provides initial resource recommendations, not fixed workload "
+"or object limits. Actual capacity depends on managed VMs and systems, "
+"Agent use, Clouds, integrations, automation concurrency, active users, "
+"retention, and workload behavior. Due to ease of installation and "
+"maintenance, strongly consider an AIO architecture unless high "
+"availability, zero-downtime upgrades, or workload-specific sizing "
+"requires a multi-node architecture. An AIO architecture cannot tolerate "
+"failure and is unavailable during upgrades; a 3-Node HA architecture "
+"provides redundancy and supports zero-downtime upgrades when properly "
+"designed."
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:47
+msgid ""
+"Both AIO and 3-Node HA nodes can be **scaled up** by adding CPU or "
+"memory. A 3-Node HA architecture can also be **scaled out** to add "
+"capacity and redundancy, whereas an AIO configuration cannot add "
+"application nodes. The 3-Node HA architecture should always have an odd "
+"number of nodes for quorum. For VME Manager limits and values that HPE "
+"has not published, see :doc:`HPE VM Essentials Maximums "
+"</infrastructure/clusters/hvm/maximums>`."
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:49
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:49
+msgid ""
+"Customer architectures and requirements will vary.  Please contact your "
+"account manager if you wish to deploy or transition to a HA environment, "
+"which can help right-size the environment"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:51
+msgid "Additional information around the various architectures can be found here:"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:53
+msgid ":ref:`installation-overview`"
+msgstr ""
+
+#: ../../getting_started/requirements/capacity_planning.rst:55
+msgid ":ref:`distributed-overview`"
+msgstr ""
+

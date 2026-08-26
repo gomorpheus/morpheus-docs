@@ -1,0 +1,1079 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/google/google.rst:4
+msgid "Google Cloud Platform (GCP) |enterprise-only|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:9
+msgid "Public cloud integrations including GCP are Enterprise-only features."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:12
+msgid "Integration Features"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:13
+msgid "Provisioning Virtual Machines"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:14
+msgid "Network tagging"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:15
+msgid "Private and Local Images"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:16
+msgid "Google VM Snapshots"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:17
+msgid "Brownfield Inventory"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:18
+msgid "Costing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:19
+msgid "Right-sizing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:20
+msgid "Shared Network Support"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:25
+msgid "Requirements for Integration with |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:27
+msgid ""
+"To integrate |morpheus| with Google Cloud Platform, you will need the "
+"following. APIs are enabled in \"APIs & Services\" and must be enabled "
+"for all projects or the selected project (depending on your GCP Cloud "
+"integration settings). The next section contains more detailed steps for "
+"enabling API in the GCP web console."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:29
+msgid "The Compute Engine API enabled"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:30
+msgid "The Cloud Resource Manager API enabled"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:31
+msgid "The Cloud Billing API"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:32
+msgid "The Identity and Access Management (IAM) API enabled"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:33
+msgid "The BigQuery API enabled"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:34
+msgid "The BigQuery Data Transfer API enabled"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:35
+msgid "The Kubernetes Engine API enabled (required to provision GKE clusters)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:36
+msgid ""
+"Credentials for an IAM service account with Owner or Compute Admin role "
+"permissions"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:37
+msgid "The private key and client email for the service account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:39
+msgid ""
+"This integration guide goes through the process of configuring your "
+"account and obtaining the information necessary to integrate with "
+"|morpheus|. Continue to the next section for a detailed look at enabling "
+"the APIs mentioned above."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:42
+msgid "Enabling the Required APIs"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:44
+msgid ""
+"In order to take full advantage of the |morpheus| integration with Google"
+" Cloud, a number of APIs must be enabled within the GCP web console. It's"
+" recommended that you enable all of the APIs listed in the preceding "
+"section regardless of the |morpheus| feature set you intend to use. This "
+"will ensure you do not run into problems down the road stemming from a "
+"lack of access which may take time to diagnose."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:46
+msgid ""
+"Log into the Google Cloud web console and navigate to the APIs and "
+"Services page. You may find this in the Quick access area of the welcome "
+"page or you can search for it as shown in the screenshot below."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:48
+msgid ".. image:: /images/integration_guides/clouds/gcp/apis.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:50
+msgid ""
+"From the APIs and Services page, a list of enabled APIs and some details "
+"about your usage are shown. To enable new APIs, click :guilabel:`+ ENABLE"
+" APIS & SERVICES` near the top of the window. Now on the API library "
+"page, search for the API you wish to enable. Here I've searched for the "
+"Kubernetes Engine API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:52
+msgid ".. image:: /images/integration_guides/clouds/gcp/apisearch.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:54
+msgid ""
+"From the search results, click on the API you wish to enable to view its "
+"detail page. Click :guilabel:`ENABLE`. Once successfully enabled, the "
+"button will change to a :guilabel:`MANAGE` button. It may take a few "
+"moments for the API to be fully enabled. You may also be prompted to "
+"enable the Cloud Billing API or create an association with a Billing "
+"Account when enabling APIs. Go ahead and do so if prompted."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:56
+msgid ".. image:: /images/integration_guides/clouds/gcp/apienable.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:58
+msgid ""
+"Repeat this process until all required APIs (listed in the previous "
+"section) are enabled."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:61
+msgid "Creating a Service Account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:63
+msgid ""
+"From anywhere in the GCP web console, search for \"service accounts\" in "
+"the global search bar at the top of the window"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:64
+msgid "Click on the Service Accounts page (within the IAM & Admin stack)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:65
+msgid ""
+"A list of existing service accounts within the selected Project is shown "
+"(if any)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:66
+msgid "To create a new one, click :guilabel:`+ CREATE SERVICE ACCOUNT`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:68
+msgid ".. image:: /images/integration_guides/clouds/gcp/3create_service_acct.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:70
+msgid "Enter at least a name for your new service and click CREATE AND CONTINUE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:72
+msgid ".. image:: /images/integration_guides/clouds/gcp/4config_service_acct.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:74
+msgid ""
+"After creating the service account, you'll be prompted to set a role for "
+"the account. In order to fully integrate with |morpheus|, you must use an"
+" account in the Owner role or the Compute Admin role"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:75
+msgid "Click CONTINUE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:77
+msgid ".. image:: /images/integration_guides/clouds/gcp/5service_acct_role.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:79
+msgid ""
+"Following creation of the service account, you'll be taken back to the "
+"list of existing service accounts"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:82
+msgid "Generating Keys and Integrating with |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:84
+msgid ""
+"From the list of service accounts, click the ellipsis button (...) to the"
+" right of a selected account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:85
+msgid "Click \"Manage Keys\""
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:87
+msgid ".. image:: /images/integration_guides/clouds/gcp/6create_key.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:89
+msgid "On the Keys page, click \"Add Key\" and then \"Create New Key\""
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:90
+msgid "Select JSON format and click CREATE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:91
+msgid ""
+"A JSON-formatted document will be downloaded, this document contains the "
+"Project ID, private key, and client email values needed to complete the "
+"integration process in the next step"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:94
+msgid "Add a GCP Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+#: ../../integration_guides/Clouds/google/google.rst:96
+#: ../../integration_guides/Clouds/google/google.rst:173
+#: ../../integration_guides/Clouds/google/google.rst:203
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:96
+msgid ""
+"The JSON-formatted document downloaded when creating a key for your "
+"service account contains all of the required values for completing the "
+"integration. Consult the above section on generating keys if needed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:98
+msgid "Navigate to |InfClo|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:99
+msgid ""
+"Select :guilabel:`+ CREATE CLOUD`, select Google Cloud, and then click "
+":guilabel:`NEXT`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:100
+msgid "Enter the following into the Create Cloud modal:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:1
+msgid "**Cloud Configuration**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:3
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:4
+msgid "Name of the Cloud in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:5
+msgid "CODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:6
+msgid "Unique code used for api/cli, automation and policies."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:7
+msgid "LOCATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:8
+msgid "Description field for adding notes on the cloud, such as location."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:9
+msgid "VISIBILITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:10
+msgid ""
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:11
+msgid "TENANT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:12
+msgid ""
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:13
+msgid "ENABLED"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:14
+msgid ""
+"When disabled, automatic Cloud sync is paused and the Cloud will not be "
+"selectable for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:15
+msgid "AUTOMATICALLY POWER ON VMS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:16
+msgid ""
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid ""
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:104
+msgid "**Details**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:106
+msgid "PRIVATE KEY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:107
+msgid ""
+"The service account private key. Paste in the entire value between (but "
+"not including) the quotation marks in your downloaded JSON document, "
+"formatted like the following example: ``-----BEGIN PRIVATE "
+"KEY-----(your_key)-----END PRIVATE KEY-----``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:108
+msgid "CLIENT EMAIL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:109
+msgid ""
+"The service account client email, ex: "
+"`morpheus@morpheus.iam.gserviceaccount.com`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:110
+msgid "PROJECT ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:111
+msgid ""
+"Projects will auto-populate upon successful entry of the private key and "
+"client email. You can opt to scope the GCP integration to a single "
+"Project or select \"All\" to instead select the Project from the Resource"
+" Pool dropdown at provision time"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:112
+msgid "REGION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:113
+msgid ""
+"Regions will auto-populate upon successful entry of the private key and "
+"client email. Select the appropriate region for this Cloud, if "
+"applicable. You can also opt to scope the GCP integration to all regions "
+"to allow users to select from any region at provision time"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:114
+msgid "INVENTORY EXISTING INSTANCES"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:115
+msgid ""
+"If checked, existing GCP resources will be inventoried and appear as "
+"unmanaged virtual machines in |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:117
+msgid ""
+"If advanced options are not needed, click :guilabel:`NEXT` to advance to "
+"the Group selection page. Otherwise, continue on with this guide and "
+"review advanced or provisioning options."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:1
+msgid "**Advanced Options**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:3
+msgid "DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:4
+msgid "Specify a default domain for instances provisioned to this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:5
+msgid "SCALE PRIORITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:6
+msgid ""
+"Only affects Docker Provisioning. Specifies the priority with which an "
+"instance will scale into the cloud. A lower priority number means this "
+"cloud integration will take scale precedence over other cloud "
+"integrations in the group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:7
+msgid "APPLIANCE URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:8
+msgid ""
+"Alternate Appliance url for scenarios when the default Appliance URL "
+"(configured in `admin > settings`) is not reachable or resolvable for "
+"Instances provisioned in this cloud. The Appliance URL is used for Agent "
+"install and reporting."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:9
+msgid "TIME ZONE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:10
+msgid "Configures the time zone on provisioned VM's if necessary."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:11
+msgid "DATACENTER ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:12
+msgid ""
+"Used for differentiating pricing among multiple datacenters. Leave blank "
+"unless prices are properly configured."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:13
+msgid "NETWORK MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:14
+msgid "Unmanaged or select a Network Integration (NSX, ACI etc)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:15
+msgid "LOCAL FIREWALL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:16
+msgid ""
+"On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
+"only)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:17
+msgid "SECURITY SERVER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:18
+msgid "Security Server setting is for Security Service Integrations such as ACI"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:19
+msgid "TRUST PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:20
+msgid "Select Internal (Morpheus) or an existing Trust Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:21
+msgid "STORAGE MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:22
+msgid "Single Disk, LVM or Clustered"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:23
+msgid "BACKUP PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:24
+msgid ""
+"Select a backup provider. Depending on the Cloud type and any currently-"
+"configured backup plugins you may select Internal Backups (Morpheus) or "
+"another configured backup solution"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:25
+msgid "REPLICATION PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:26
+msgid ""
+"Sets the default Replication Provider for the Cloud. Select an existing "
+"Replication Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:27
+msgid "GUIDANCE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:28
+msgid "Enable Guidance recommendations on cloud resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:29
+msgid "COSTING"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:30
+msgid ""
+"Enable for |morpheus| to sync Costing data from the Cloud provider, when "
+"available. For on-prem Clouds, enabling costing activates a costing "
+"service designed to mirror the live costing experience of public clouds, "
+"including invoicing with line items and real-time cost data (Operations >"
+" Costing > Invoices). If your organization utilizes reserved instances "
+"and you want to pull in related pricing data, some Cloud integrations "
+"include the option to select `Costing and Reservations`. If this is not "
+"relevant, select `Costing` to save money on additional calls to the Cloud"
+" provider's costing API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:31
+msgid "DNS INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:32
+msgid ""
+"Records for instances provisioned in this cloud will be added to selected"
+" DNS integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:33
+msgid "SERVICE REGISTRY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:34
+msgid ""
+"Services for instances provisioned in this cloud will be added to "
+"selected Service Registry integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:35
+msgid "CONFIG MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:36
+msgid "Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:37
+msgid "CMDB"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:38
+msgid "Select CMDB Integration to automatically update selected CMDB."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:39
+msgid "CMDB DISCOVERY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:40
+msgid ""
+"When checked, any automatically discovered (unmanaged) servers onboarded "
+"into |morpheus| from this Cloud will also have CMDB records created for "
+"them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:41
+msgid "CHANGE MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:42
+msgid ""
+"Select an existing Change Management Integration to set on the Cloud. ex:"
+" Cherwell"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:43
+msgid "AGENT INSTALL MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid ""
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM "
+"or Guest Execution for Agent install."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:45
+msgid ""
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize"
+" Cloud-Init or Cloudbase-Init for agent install when provisioning images "
+"with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on "
+"SSH or WINRM if cloud-init is not installed on the provisioned image. "
+"Morpheus will also add Agent installation to Windows unattend.xml data "
+"when performing Guest Customizations or utilizing syspreped images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:46
+msgid "VDI GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:47
+msgid ""
+"Set a VDI Gateway for outbound communication from the |morpheus| "
+"Appliance to the vdi endpoints. VDI Gateways can be added in "
+"``/tools/vdi/gateways``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:50
+msgid "**CUSTOM LOGOS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:52
+msgid ""
+"When integrating a Cloud, it will appear by default throughout the UI "
+"with its standard logo (VMware logo for VMware Clouds, etc.). If desired,"
+" you may upload a custom logo that should appear instead. This might be "
+"useful for MSPs which might not want to reveal the Cloud type underlying "
+"its services. A dark mode version of the logo may also be uploaded if the"
+" standard logo doesn't look right against the |morpheus| dark mode theme."
+" Checking USE DEFAULT CLOUD LOGOS allows the user to return to the "
+"standard logo for the Cloud type without deleting the custom uploaded "
+"logo."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:54
+msgid "**INVENTORY OPTIONS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:56
+msgid ""
+"Inventory options allow you to set a default active or inactive state for"
+" certain discovered resources. The list of available resources to "
+"configure will vary based on the Cloud type and its supported resources. "
+"By default, all possible resources for the Cloud type will be discovered "
+"in an active state. Uncheck the box for some or all resources to discover"
+" them in an inactive state. The list of potential resources that may "
+"appear include:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:58
+msgid "Service Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:59
+msgid "Resource Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:60
+msgid "Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:61
+msgid "Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:62
+msgid "Datastores"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:63
+msgid "Folders"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:65
+msgid "**Provisioning Command**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:67
+msgid "PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:68
+msgid ""
+"Set a proxy for inbound communication from Instances to the |morpheus| "
+"Appliance. Proxies can be added in the `Infrastructure > Networks > "
+"Proxies` tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:69
+msgid "Bypass Proxy for Appliance URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:70
+msgid ""
+"Enable to bypass proxy settings (if added) for |morpheus| Agent "
+"communication to the Appliance URL."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:71
+msgid "NO PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:72
+msgid ""
+"Include a list of IP addresses or name servers to exclude from proxy "
+"traversal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:73
+msgid "USER DATA (LINUX)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid ""
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash "
+"syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more"
+" information."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:121
+msgid ""
+"After reviewing all options, click :guilabel:`NEXT` to advance to the "
+"Group selection page. Following Group selection, click "
+":guilabel:`COMPLETE` to finish the integration process. If you've opted "
+"to inventory existing Instances, they will be viewable in |morpheus| "
+"shortly. At this point, you are ready to provision new resources in "
+"Google Cloud Platform as needed!"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:123
+#: ../../integration_guides/Clouds/google/google.rst:175
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:123
+msgid ""
+"If you experience difficulties adding a GCP Cloud, review the above guide"
+" and ensure you've met all requirements for completing the integration. "
+"For example, if the Compute Engine API is not enabled, |morpheus| will "
+"not accept credentials entered on the Create Cloud modal. If you "
+"repeatedly run into problems completing the integration process, review "
+"the above guide in its entirely and double check that each step is "
+"completed and your account meets all configuration requirements."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:126
+msgid "Create a GCP Project"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:128
+msgid ""
+"On initial integration, |morpheus| will sync Projects and allow you to "
+"scope the integration to a specific Project or to scope the integration "
+"to all Projects. As time goes on, additional Projects are continually "
+"synced and can be managed from within the Resources tab on the Cloud "
+"detail page (Infrastructure > Clouds > Selected GCP Cloud). Within the "
+"Resources tab, users can edit some Project settings as well as delete "
+"Projects if needed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:130
+msgid "To create a new GCP Project:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:132
+msgid "Click :guilabel:`+ ADD RESOURCE POOL`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:133
+msgid "Enter a name value for the new Project"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:134
+msgid ""
+"Mark the \"DEFAULT\" box if you'd prefer newly provisioned Instances "
+"default to the new Project"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:135
+msgid "Enter a Project ID and ensure it meets the listed validation requirements"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:136
+msgid ""
+"Set a Parent value if the new Project should exist underneath a parent "
+"organization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:137
+msgid "Finally, select a billing account"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:138
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:140
+msgid ""
+"After a few minutes, the new Project will be ready on the GCP side and "
+"|morpheus| will be ready to provision new resources into it."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:143
+msgid "Enabling Live Costing for GCP"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:145
+msgid ""
+"GCP costing is done at the Billing Account level. Each Billing Account "
+"can be linked to one or more GCP Projects. All projects which are linked "
+"to the Billing Account will have their costing data available to "
+"|morpheus| but if the GCP Cloud has been scoped to only one Project, "
+"|morpheus| will ingest costing data only for that Project. Users can view"
+" the Billing Account linked to a particular project by clicking on the "
+"hamburger menu (main menu button in the far upper-left of the console "
+"window) and selecting billing. A pop-up window will give users the option"
+" to navigate to the Billing Account which is linked to the currently-"
+"selected Project."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:147
+msgid ".. image:: /images/integration_guides/clouds/gcp/costing1.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:149
+msgid ""
+"Within the Billing Account, Standard Usage Cost must be enabled for "
+"|morpheus| to access costing data. From the page for the appropriate "
+"Billing Account, click on Billing Export and then click \"Edit Settings\""
+" under the \"Standard usage cost heading\". Specify a project and create "
+"a dataset or specify an existing one. In doing this, you're specifying a "
+"location for the dataset *which will be for the entire billing account "
+"and not just for the Project the dataset resides in.*"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:151
+msgid ".. image:: /images/integration_guides/clouds/gcp/costing2.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:153
+msgid ""
+"With configuration in the GCP console completed, we can now enable cost "
+"onboarding from the |morpheus| side. Add or edit an existing GCP Cloud "
+"(|InfClo|). Within the Advanced Options section, note the COSTING PROJECT"
+" and COSTING DATASET fields. When selecting a Project, associated "
+"datasets (if any) will automatically be loaded into the dropdown in the "
+"next field for selection. Additionally, the COSTING field should be set "
+"to \"Sync Costing\" rather than \"Off\". Recall from the previous "
+"paragraph that this is merely pointing to the Project that houses the "
+"appropriate dataset. If your GCP Cloud in |morpheus| is configured for "
+"all Projects, all costing data will be consumed for the Projects linked "
+"to the associated Billing Account (assuming those Projects have billing "
+"enabled). If the GCP Cloud in |morpheus| is scoped to just one Project, "
+"only billing data for that Project will be onboarded. For this reason, "
+"the selected Costing Project can be (but is not necessarily) the Project "
+"to which the |morpheus| Cloud is scoped."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:155
+msgid ".. image:: /images/integration_guides/clouds/gcp/costing3.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:161
+msgid "Windows Images"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:163
+msgid ""
+"|morpheus| can add custom metatdata that will be injected into the "
+"unattend conf by GCP during provisioning. This is required for "
+"customizations including setting the Windows Administrator password "
+"during provisioning. GCP Windows Images must be syspreped using the "
+"``GCESysprep`` command prior to image creation, and must have platform/os"
+" set on the Virtul Image record in |morpheus| after image sync for "
+"successful customization and Agent Installation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:166
+msgid "GCP Windows Requirements"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:168
+msgid ""
+"GCP Windows Images must be syspreped using the ``GCESysprep`` command "
+"prior to Image creation in GCP. Refer to `Googles \"creating-windows-os-"
+"image\" doc <https://cloud.google.com/compute/docs/instances/windows"
+"/creating-windows-os-image>`_."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:169
+msgid ""
+"Once the Image is synced into Morpheus, the Platform (Windows, Windows "
+"2016 etc) must be set on the |morpheus| Virtual Image record, otherwise "
+"linux is assumed and the metadata will not be generated correctly."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:170
+msgid ""
+"The Global Windows \"Administrator\" password must be set in |morpheus| "
+"under ``/admin/provisioning/settings`` > Windows Settings > Administrator"
+" Password, or Administrator and password defined on the |morpheus| "
+"Virtual Image record."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:171
+msgid ""
+"Be aware the unattend configuration during startup after sysprep delays "
+"causes a reboot and a prolonged finalization process during provisioning,"
+" and console/rdp may not be available during this time as windows is "
+"configuring."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:173
+msgid ""
+"Some Google provided Windows Images have slow startups that cause the "
+"Morpheus Agent service to not start within the default 30 second service "
+"startup timeframe, including after initial reboot after sysprep/unattend "
+"configuration. This can be adjusted by running ``New-ItemProperty -Path "
+"\"HKLM:\\SYSTEM\\CurrentControlSet\\Control\\\" -Name "
+"\"ServicesPipeTimeout\" -PropertyType DWORD -Value 180000`` in powershell"
+" on the Windows Image."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:175
+msgid ""
+"Failure to use a GCP Windows Image that has not been sysprepped using "
+"``GCESysprep`` will cause Agent Installation, Automation, and Console "
+"issues as |morpheus| will not be able to set user credentials and "
+"authenticate."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:178
+msgid "Feature Boundaries"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:180
+msgid ""
+"The GCP integration is classified as a **Tier 2 — Core Cloud Management**"
+" integration. The following capabilities are not currently supported:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:182
+msgid "**Networking**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:184
+msgid ""
+"Network creation or deletion from |morpheus| (networks and subnets are "
+"synced from GCP)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:185
+msgid "Security group management from |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:186
+msgid "IPAM / IP pool management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:187
+msgid "Floating/Elastic IP assignment"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:188
+msgid "Load balancer creation or management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:190
+msgid "**Provisioning & Lifecycle**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:192
+msgid "VM resize (instances must be recreated)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:193
+msgid "VM clone or image conversion"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:194
+msgid "Auto scaling via |morpheus| (use GCP-native autoscaler)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:195
+msgid "VM migrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:197
+msgid "**Other**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:199
+msgid "Remote console via |morpheus| (use GCP Console or SSH directly)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:200
+msgid "Third-party backup integrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:201
+msgid "Multitenancy resource isolation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:203
+msgid ""
+"GCP costing, right-sizing guidance, and brownfield inventory features are"
+" fully supported. For Kubernetes workloads, GKE cluster provisioning is "
+"available."
+msgstr ""
+
+#: ../../integration_guides/Clouds/google/google.rst:205
+msgid ""
+"For a full feature comparison across all supported clouds, see "
+":doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
+msgstr ""
+

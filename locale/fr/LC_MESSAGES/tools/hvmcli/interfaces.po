@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hvmcli/interfaces.rst:2
+msgid "interfaces"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:4
+msgid "List network interfaces and manage SR-IOV virtual functions."
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:7
+msgid "Commands"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:13
+msgid "Command"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:15
+msgid "``list``"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:16
+msgid "List network interfaces with optional filtering"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:17
+msgid "``vf``"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:18
+msgid "Manage SR-IOV virtual functions (list, create, delete, set)"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:21
+msgid "interfaces list"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:23
+msgid "List all network interfaces on the host. By default shows all interfaces."
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:25
+msgid "sudo hvmcli interfaces list"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:29
+msgid ""
+"Interface  Type      MAC                Speed    Link  Driver       "
+"Firmware  SR-IOV         Max VFs  Configured VFs  Manufacturer  LLDP\n"
+"---------  --------  -----------------  -------  ----  ----------   "
+"--------  -------------  -------  --------------  ------------  ----\n"
+"ens1f0np0  Ethernet  b4:96:91:a0:12:34  25Gbps   up    mlx5_core   22.39"
+"     supported      64       0               Mellanox      sw1/Eth1/1\n"
+"ens2f0np0  Ethernet  b4:96:91:a0:12:35  25Gbps   up    mlx5_core   22.39"
+"     supported      64       0               Mellanox      sw1/Eth1/2\n"
+"enp3s0     Ethernet  52:54:00:86:9e:12  -        up    virtio_net  -"
+"         not supported  0        0               Red Hat       -"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:37
+msgid "Use ``--filter`` to show specific interface types:"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:39
+msgid ""
+"sudo hvmcli interfaces list --filter ethernet\n"
+"sudo hvmcli interfaces list --filter fc\n"
+"sudo hvmcli interfaces list --filter network\n"
+"sudo hvmcli interfaces list --filter data\n"
+"sudo hvmcli interfaces list --filter sdn"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:47
+msgid "Filter options:"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:49
+msgid "``ethernet`` — Physical Ethernet interfaces only"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:50
+msgid "``fc`` — Fibre Channel HBAs only"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:51
+msgid "``network`` — Interfaces that are part of a Virtual Switch network"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:52
+msgid "``general`` — General purpose interfaces"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:53
+msgid "``data`` — Data network interfaces"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:54
+msgid "``sdn`` — SDN network interfaces"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:57
+msgid "interfaces vf"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:59
+msgid "Manage SR-IOV Virtual Functions (VFs) on supported interfaces."
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:61
+msgid "**List VFs on an interface:**"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:63
+msgid "sudo hvmcli interfaces vf list --interface ens1f0np0"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:67
+msgid "**Create VFs on an interface:**"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:69
+msgid "sudo hvmcli interfaces vf create --interface ens1f0np0 --count 4"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:73
+msgid "**Delete VFs from an interface:**"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:75
+msgid "sudo hvmcli interfaces vf delete --interface ens1f0np0"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:79
+msgid "**Set VF properties:**"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:81
+msgid ""
+"sudo hvmcli interfaces vf set --interface ens1f0np0 --vf 0 --mac "
+"00:11:22:33:44:55"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:85
+msgid "Note"
+msgstr ""
+
+#: ../../tools/hvmcli/interfaces.rst:85
+msgid ""
+"SR-IOV must be enabled in the BIOS and the NIC must support virtual "
+"functions. Use ``hvmcli interfaces list`` to check SR-IOV support status."
+msgstr ""
+

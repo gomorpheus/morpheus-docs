@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Automation/chef.rst:2
+msgid "Chef |advanced-plus|"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:7
+msgid ""
+"The Chef integration is an Advanced+ feature, available in HPE Morpheus "
+"Enterprise and Advanced tiers."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:10
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:12
+msgid ""
+"|morpheus| integrates with one or multiple Chef servers to be used for "
+"bootstrapping while provisioning or as tasks in workflows in the "
+"Automation section. These workflows can then be run during provisioning "
+"in the provisioning wizard Automation pane, or on an existing Instance by"
+" selecting Run Workflows from the Actions menu on the Instance detail "
+"page. Workflows can also be added to Instances in the blueprint and app "
+"sections."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:16
+msgid "Add Chef Integration"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:18
+msgid "Navigate to |AdmInt| and select `+ New Integration`"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:19
+msgid "Select Integration Type \"Chef\""
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:20
+msgid "Populate the following fields:"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:22
+msgid "Name: Name of the Chef Integration in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:23
+msgid ""
+"Chef Endpoint: url of chef server api endpoint in https://api.example.com"
+" format. Do not add /organization/xxxx here, which is populated in the "
+"Chef Organization field"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:24
+msgid ""
+"Chef Version: 12.3.0 by default, can be changed to use a different/more "
+"recent version of chef"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:25
+msgid "Chef Organization: Chef Server Organization"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:26
+msgid "Chef User: Chef Server User"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:27
+msgid ""
+"User Private Key: The private key of the user with access to this chef "
+"server"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:28
+msgid "Organization Validator: Validator key for the organization"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:30
+#: ../../integration_guides/Automation/chef.rst:43
+#: ../../integration_guides/Automation/chef.rst:52
+msgid "Save Changes"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:32
+msgid ""
+"The added Chef Integration is now available for use in |morpheus|. The "
+"Chef Integration can be added to Clouds or Groups to auto-bootstrap nodes"
+" and specify Environment, Node ID, Runlist, Attributes and Tags when "
+"creating instances. The Chef integration can also be selected in the Chef"
+" Server dropdown when creating a Chef Bootstrap-type Task."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:34
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:34
+msgid ""
+"Integrating Chef with |morpheus| enables a user to bootstrap a node using"
+" Chef Bootstrap-type Tasks or Chef associations with Clouds or "
+"infrastructure Groups. It does not enable users to update run-lists on "
+"the Chef server for nodes which have already been bootstrapped."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:37
+msgid "Scope Chef Integration to a Cloud"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:39
+msgid "Navigate to `Infrastructure > Clouds`"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:40
+msgid "Edit the target Cloud"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:41
+#: ../../integration_guides/Automation/chef.rst:50
+msgid "Expand the `Advanced Options` section"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:42
+#: ../../integration_guides/Automation/chef.rst:51
+msgid "In the `Config Management` dropdown, select the Chef Integration."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:46
+msgid "Scope Chef Integration to a Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:48
+msgid "Navigate to `Infrastructure > Groups`"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:49
+msgid "Edit the target Group"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:55
+msgid "Provisioning Options"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:57
+msgid ""
+"When provisioning Instances into a Cloud or Group with a Chef Integration"
+" added, a `Chef` section will appear in the Config section of the "
+"provisioning wizard. By default, Chef is enabled, but can be disabled by "
+"expanding the `Chef` section and unchecking `Enable Chef`."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:59
+msgid "Chef Integration Provisioning options:"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:61
+msgid "Enable Chef"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:62
+msgid "Select to bootstrap"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:63
+msgid "Chef Environment"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:64
+msgid "Populate Chef environment, or leave as `_default`"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:65
+msgid "Chef Node ID"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:66
+msgid "Defaults to instance name, configurable."
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:67
+msgid "Chef Runlist"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:68
+msgid "Add Runlist"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:69
+msgid "CHEF ATTRIBUTES"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:70
+msgid "Add Chef Attributes"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:71
+msgid "CHEF TAGS"
+msgstr ""
+
+#: ../../integration_guides/Automation/chef.rst:72
+msgid "Add Chef tags"
+msgstr ""
+

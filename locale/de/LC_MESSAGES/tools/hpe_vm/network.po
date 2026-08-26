@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hpe_vm/network.rst:2
+msgid "Configure Network"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:4
+msgid ""
+"The **Configure Network** menu option provides a graphical editor for the"
+" host's netplan configuration. It allows you to manage network "
+"interfaces, bonds, VLANs, and bridges without manually editing YAML "
+"files."
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:7
+msgid "How It Works"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:9
+msgid "Reads the current netplan configuration and network device status"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:10
+msgid "Displays devices in a table with their type, name, addresses, and status"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:11
+msgid "Supports adding, editing, and removing network devices"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:12
+msgid "Generates and previews the resulting netplan YAML before applying"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:15
+msgid "Supported Device Types"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:17
+msgid "The editor supports all device types defined in netplan:"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:19
+msgid "**Ethernet** — Physical network interfaces"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:20
+msgid "**Bond** — Link aggregation (active-backup, balance-rr, 802.3ad/LACP)"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:21
+msgid "**VLAN** — 802.1Q tagged interfaces"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:22
+msgid "**Bridge** — Linux bridge devices"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:25
+msgid "Workflow"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:27
+msgid "Select **Configure Network** from the main menu"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:28
+msgid "The current network devices are listed in a table"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:29
+msgid "Use the buttons to:"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:31
+msgid "**Add** — Create a new device definition"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:32
+msgid "**Edit** — Modify the selected device"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:33
+msgid "**Remove** — Delete a device definition"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:34
+msgid "**Preview** — View the generated netplan YAML"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:36
+msgid "When ready, select **Save** to apply changes"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:39
+msgid "Applying Changes"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:41
+msgid "When you save:"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:43
+msgid "The existing netplan YAML is backed up"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:44
+msgid "A new configuration is written to ``/etc/netplan/60-mvm.yaml``"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:45
+msgid "``netplan apply`` is executed to activate the changes"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:46
+msgid ""
+"If the network becomes unreachable, an automatic rollback restores the "
+"previous configuration"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:48
+msgid "Warning"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:48
+msgid ""
+"Network configuration changes can cause loss of connectivity. Ensure you "
+"have physical or iLO console access before modifying network settings."
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:51
+msgid "Validation"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:53
+msgid "IP addresses must be in CIDR notation (e.g., ``192.168.1.10/24``)"
+msgstr ""
+
+#: ../../tools/hpe_vm/network.rst:54
+msgid ""
+"Device names must reference existing physical interfaces or previously "
+"defined virtual devices"
+msgstr ""
+

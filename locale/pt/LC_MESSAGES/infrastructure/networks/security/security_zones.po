@@ -1,0 +1,215 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/networks/security/security_zones.rst:4
+msgid "Security Zones"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:6
+msgid "``Infrastructure > Network > Integrations > (select Security Server)``"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:11
+msgid ""
+"Security zones define logical boundaries within a network security "
+"integration that segment traffic and enforce security policies at zone "
+"boundaries. Zones are a fundamental concept in firewall architectures "
+"where traffic is classified based on its zone membership and policies are"
+" applied at inter-zone boundaries."
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:13
+msgid ""
+"In |morpheus|, security zones are synced from supported security "
+"integrations and can be referenced when configuring firewall rules, "
+"security groups, and provisioning workflows."
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:16
+msgid "Zone Concepts"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:22
+msgid "Concept"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:24
+msgid "Trust Level"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:25
+msgid ""
+"Zones typically have an associated trust level (e.g., trusted, untrusted,"
+" DMZ) that influences default policy behavior"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:26
+msgid "Inter-zone Policy"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:27
+msgid ""
+"Traffic moving between zones is subject to security policies; traffic "
+"within a zone may be implicitly permitted"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:28
+msgid "Zone Membership"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:29
+msgid ""
+"Network interfaces, segments, or subnets are assigned to zones to "
+"classify traffic"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:30
+msgid "Default Policy"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:31
+msgid ""
+"The action taken on traffic between zones when no explicit rule matches "
+"(typically deny)"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:34
+msgid "Viewing Security Zones"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:36
+msgid ""
+"Security zones are visible within the context of their security server "
+"integration:"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:38
+msgid "Navigate to ``Infrastructure > Network > Integrations``"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:39
+msgid "Select the desired security server integration"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:40
+msgid ""
+"Zones may be displayed in the **Summary** tab or accessible via a "
+"dedicated section depending on the integration type"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:43
+msgid "Zone-Based Firewall Rules"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:45
+msgid ""
+"When creating firewall rules on integrations that support zone-based "
+"security, zones can be referenced as source or destination qualifiers:"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:47
+msgid "Navigate to the **Firewall** tab of the security server integration"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:48
+msgid "Create or edit a firewall rule"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:49
+msgid "Select the source zone and destination zone for the rule"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:50
+msgid "Define the action (allow/deny) and service criteria"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:51
+msgid "Save the rule"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:53
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:53
+msgid ""
+"Zone-based rule support varies by integration type. Check the specific "
+"integration guide for your security platform for details on zone "
+"configuration and management."
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:56
+msgid "Integration-Specific Zone Support"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:58
+msgid "Palo Alto Networks"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:59
+msgid ""
+"Palo Alto firewalls use security zones as a primary organizational "
+"construct. Every interface must be assigned to a zone, and all security "
+"policies reference source and destination zones."
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:61
+msgid "NSX-T"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:62
+msgid ""
+"NSX-T uses transport zones to define the scope of logical networks. "
+"Security groups and distributed firewall rules in NSX-T operate "
+"independently of transport zones but can reference zone-aware constructs."
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:64
+msgid "Cisco ACI"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:65
+msgid ""
+"ACI uses the concept of security domains and contexts (VRFs) as zone "
+"equivalents, providing multi-tenant isolation."
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:68
+msgid "Required Role Permissions"
+msgstr ""
+
+#: ../../infrastructure/networks/security/security_zones.rst:70
+msgid ""
+"Access to security zone viewing requires the ``Infrastructure: Network "
+"Integrations`` permission with ``read`` or ``full`` access. Managing "
+"zone-based firewall rules requires the ``Infrastructure: Network "
+"Firewalls`` permission with ``managerules`` or ``full`` access."
+msgstr ""
+

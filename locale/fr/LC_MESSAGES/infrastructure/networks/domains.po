@@ -1,0 +1,347 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/networks/domains.rst:4
+msgid "Domains"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:6
+msgid "``Infrastructure > Network > Domains``"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:9
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:11
+msgid ""
+"The Domains section is for creating and managing domains for use in "
+"|morpheus|. Domains are used for setting FQDNs, joining Domains, and "
+"creating DNS records. The Domains section is also a multi-tenant endpoint"
+" for managing domain settings across multiple tenants."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:13
+msgid ""
+"Domains are synced in from Cloud, DNS and Network Integrations. Domains "
+"can also be user created."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:14
+msgid ""
+"Active Domains are available for selection in the Domain dropdown when "
+"provisioning an Instance"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:15
+msgid ""
+"Default Domains can be set for Clouds and Networks in their Advanced "
+"Options sections."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:16
+msgid ""
+"Images can be flagged to Auto-Join Domains in the ``Infrastructure > "
+"Network > Domains`` section"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:18
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:18
+msgid ""
+"For an Instance to auto-join a Domain, a Domain must set in the Advanced "
+"Options section of the Cloud or Network used when provisioning"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:21
+msgid "Adding Domains"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:23
+msgid "Navigate to ``Infrastructure > Network > Domains``"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:24
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:25
+msgid "Enter the following:"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Domain Name"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:27
+msgid "Ex. demo.example.com"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:28
+msgid "Descriptive metadata for use in |morpheus|"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Display Name"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:29
+msgid ""
+"Overrides the displayed name in domain selection components, which is "
+"useful when using many OU paths"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Public Zone"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:30
+msgid "Check for Public Zones, leave uncheck for Private Zones"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Workflow"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:31
+msgid ""
+"Select an existing Workflow which will be applied to Instances at "
+"provision time when they are associated with the domain. This is useful "
+"for any domain-related scripting you may currently use. For example, you "
+"may want to ensure a machine is removed from the domain when it's torn "
+"down which could be accomplished by creating a Provisioning Workflow "
+"(with teardown phase Tasks) and associating the Workflow with the domain"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Active"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:32
+msgid ""
+"Active Domains are available for selection in Domain selection fields "
+"across |morpheus|. Inactive Domains are removed from Domain selection "
+"fields."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Join Domain Controller"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:33
+msgid "Enable to have Windows instances join a Domain"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Username"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:34
+msgid ""
+"Admin user for Domain. ``domain\\username`` format required when "
+"specifying OU Path"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Password"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:35
+msgid "Password for DC user account"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "DC Server"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:36
+msgid "(optional) Specify the URL or Path of the DC Server"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "OU Path"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:37
+msgid "(optional) Enter the OU Path for the connection string."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Guest Username"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:38
+msgid ""
+"(optional) If set, this will change the provisioned hosts RPC Service "
+"User after domain join. Useful when a domain policy disables the  "
+"Administrator account that typically would be set as the RPC user on a "
+"host record. |morpheus| will update the RPC username and password on the "
+"host(s) record after domain join with the specified Guest Username and "
+"Guest Password. The RPC username and password are used for auth during "
+"Remote Procedure Call (RPC) executions over winrm, ssh and guest tools."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst
+msgid "Guest Password"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:39
+msgid ""
+"(optional) The password for the Guest User account indicated in the prior"
+" field"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:41
+msgid "Click :guilabel:`Save Changes`"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:43
+msgid ""
+"The Domain has been added and will be selectable in the Domain dropdown "
+"during provisioning, and in Cloud and Network settings."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:46
+msgid "Editing Domain Permissions"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:48
+msgid ""
+"To edit visibility permissions for a domain, navigate to ``Infrastructure"
+" > Network > Domains``. In the row for the selected domain, click MORE > "
+"Permissions. Within the Permissions modal, set Group and Tenant access "
+"permissions."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:50
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:50
+msgid ""
+"Only resources assigned to the Master Tenant can be set as Publicly "
+"visible. If the Tenant assigned is not the Master Tenant, visibility will"
+" automatically change to private. Additionally, only Master Tenant users "
+"can set visibility for domains. Domains originating in a subtenant will "
+"always be private to that subtenant."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:53
+msgid "Group Access"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:55
+msgid ""
+"The Group Access control affects which Groups have access to the domain "
+"at provision time. Select \"all\" to allow workloads provisioned to any "
+"Group access to the domain. If specific Groups are selected, only "
+"workloads provisioned to those Groups will have visibility of the domain "
+"during provisioning."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:58
+msgid "Tenant Permissions"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:60
+msgid ""
+"When set to public, all Tenants will have visibility into the domain and "
+"can join their Instances to the domain. When set to private, users can "
+"select specific Tenants which should have access to the domain."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:63
+msgid "Editing and Removing Domains"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:64
+msgid ""
+"Domains can be edited by selecting the `Actions` dropdown for the Domain "
+"and selecting `Edit`, or by selecting the |pencil| icon in list views."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:65
+msgid ""
+"Added Domains can be removed from |morpheus| by selecting the `Actions` "
+"dropdown for the Domain and selecting `Remove`, or the |trash| icon in "
+"list views."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:68
+msgid "Setting the default domain on a Cloud"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:70
+msgid "Navigate to `Infrastructure > Clouds`."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:71
+msgid "Edit the target Cloud."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:72
+#: ../../infrastructure/networks/domains.rst:81
+msgid "Expand `Advanced Options` section."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:73
+#: ../../infrastructure/networks/domains.rst:82
+msgid "In the *Domain* dropdown, select the Domain."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:74
+#: ../../infrastructure/networks/domains.rst:83
+msgid "Save Changes"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:77
+msgid "Setting the default domain on a Network"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:79
+msgid "Navigate to `Infrastructure > Network`."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:80
+msgid "Edit the target Network."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:86
+msgid "Selecting a Domain while provisioning an instance"
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:88
+msgid ""
+"While creating an instance, in the `Configure` section, expand the `DNS "
+"Options`."
+msgstr ""
+
+#: ../../infrastructure/networks/domains.rst:89
+msgid "Select Domain from the *Domain* dropdown."
+msgstr ""
+

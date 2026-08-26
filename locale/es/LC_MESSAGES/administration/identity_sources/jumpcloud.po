@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../administration/identity_sources/jumpcloud.rst:2
@@ -68,7 +68,7 @@ msgstr "Seleccionar **JumpCloud** desde el TYPE menú desplegable"
 msgid "Enter the following:"
 msgstr "Enter lo siguiente:"
 
-#: ../../administration/identity_sources/jumpcloud.rst:20
+#: ../../administration/identity_sources/jumpcloud.rst:19
 msgid "NAME"
 msgstr "NAME"
 
@@ -76,7 +76,7 @@ msgstr "NAME"
 msgid "A name for this Identity Source integration in |morpheus|."
 msgstr "Un nombre para este Identidad Origen integración en |morpheus|."
 
-#: ../../administration/identity_sources/jumpcloud.rst:23
+#: ../../administration/identity_sources/jumpcloud.rst:22
 msgid "DESCRIPTION"
 msgstr "DESCRIPTION"
 
@@ -84,7 +84,7 @@ msgstr "DESCRIPTION"
 msgid "Optional description of the Identity Source."
 msgstr "Optional description de el Identidad Origen."
 
-#: ../../administration/identity_sources/jumpcloud.rst:26
+#: ../../administration/identity_sources/jumpcloud.rst:25
 msgid "ORGANIZATION ID"
 msgstr "ORGANIZATION ID"
 
@@ -93,23 +93,24 @@ msgid ""
 "The JumpCloud Organization ID. This can be found in the JumpCloud Admin "
 "Console under Settings > General > Organization ID."
 msgstr ""
-"El JumpNube Organization ID. Este se puede encontrar en el JumpNube Admin "
-"Console under Configuración > General > Organization ID."
+"El JumpNube Organization ID. Este se puede encontrar en el JumpNube Admin"
+" Console under Configuración > General > Organization ID."
 
-#: ../../administration/identity_sources/jumpcloud.rst:29
+#: ../../administration/identity_sources/jumpcloud.rst:28
 msgid "BINDING USERNAME"
 msgstr "BINDING USERNAME"
 
 #: ../../administration/identity_sources/jumpcloud.rst:29
 msgid ""
-"A JumpCloud API user or admin account username used for API authentication. "
-"This account is used to validate user credentials and sync group/role data."
+"A JumpCloud API user or admin account username used for API "
+"authentication. This account is used to validate user credentials and "
+"sync group/role data."
 msgstr ""
 "Un JumpNube API usuario o admin cuenta usuarioname usado para API "
-"autenticación. Este cuenta se utiliza para validate usuario credenciales y "
-"sync grupo/rol data."
+"autenticación. Este cuenta se utiliza para validate usuario credenciales "
+"y sync grupo/rol data."
 
-#: ../../administration/identity_sources/jumpcloud.rst:32
+#: ../../administration/identity_sources/jumpcloud.rst:31
 msgid "BINDING PASSWORD"
 msgstr "BINDING PASSWORD"
 
@@ -117,47 +118,49 @@ msgstr "BINDING PASSWORD"
 msgid "The password or API key for the binding account."
 msgstr "El contraseña o API key para el binding cuenta."
 
-#: ../../administration/identity_sources/jumpcloud.rst:35
+#: ../../administration/identity_sources/jumpcloud.rst:34
 msgid "REQUIRED ROLE"
 msgstr "REQUIRED ROLE"
 
 #: ../../administration/identity_sources/jumpcloud.rst:35
+#, fuzzy
 msgid ""
-"(Optional) Enter a JumpCloud group name or role. Only JumpCloud users with "
-"this role/group membership will be allowed to authenticate to |morpheus|. "
-"Leave blank to allow all JumpCloud users."
+"(Optional) Enter a JumpCloud group name or role. Only JumpCloud users "
+"with this role/group membership will be allowed to authenticate to "
+"|morpheus|. If left empty, all JumpCloud users who can authenticate will "
+"be allowed to log in and a local user account is created automatically. "
+"It is strongly recommended to set this field in enterprise environments."
 msgstr ""
-"(Optional) Enter a JumpNube grupo nombre o rol. Solo JumpNube usuarios con "
-"este rol/grupo membership será allowed a authenticate a |morpheus|. Leave "
-"blank a permitir todos JumpNube usuarios."
+"(Optional) Enter a JumpNube grupo nombre o rol. Solo JumpNube usuarios "
+"con este rol/grupo membership será allowed a authenticate a |morpheus|. "
+"Leave blank a permitir todos JumpNube usuarios."
 
-#: ../../administration/identity_sources/jumpcloud.rst:38
+#: ../../administration/identity_sources/jumpcloud.rst:37
 msgid "DEFAULT ROLE"
 msgstr "DEFAULT ROLE"
 
 #: ../../administration/identity_sources/jumpcloud.rst:38
 msgid ""
-"The default |morpheus| Role assigned to users created from this JumpCloud "
-"integration when no other role mapping applies."
+"The default |morpheus| Role applied to all users who pass the Required "
+"Role check. This role is always assigned in addition to any roles granted"
+" through role mappings below."
 msgstr ""
-"El predeterminado |morpheus| Rol asignado a usuarios creado desde este "
-"JumpNube integración cuando no otro rol mapping se aplica."
 
-#: ../../administration/identity_sources/jumpcloud.rst:41
+#: ../../administration/identity_sources/jumpcloud.rst:40
 msgid "ROLE MAPPINGS"
 msgstr "ROLE MAPPINGS"
 
 #: ../../administration/identity_sources/jumpcloud.rst:41
 msgid ""
-"Map JumpCloud groups or roles to |morpheus| roles. Each existing |morpheus| "
-"role is listed with a field to enter the corresponding JumpCloud group name."
-" Users with matching JumpCloud group membership will be assigned the mapped "
-"|morpheus| role at login."
+"Map JumpCloud groups or roles to |morpheus| roles. Each existing "
+"|morpheus| role is listed with a field to enter the corresponding "
+"JumpCloud group name. Users with matching JumpCloud group membership will"
+" be assigned the mapped |morpheus| role at login."
 msgstr ""
-"Map JumpNube grupos o roles a |morpheus| roles. Cada existente |morpheus| "
-"rol es listed con a campo a enter el corresponding JumpNube grupo nombre. "
-"Usuarios con matching JumpNube grupo membership será asignado el mapped "
-"|morpheus| rol en inicio de sesión."
+"Map JumpNube grupos o roles a |morpheus| roles. Cada existente |morpheus|"
+" rol es listed con a campo a enter el corresponding JumpNube grupo "
+"nombre. Usuarios con matching JumpNube grupo membership será asignado el "
+"mapped |morpheus| rol en inicio de sesión."
 
 #: ../../administration/identity_sources/jumpcloud.rst:43
 msgid "Select :guilabel:`SAVE CHANGES`"
@@ -181,11 +184,11 @@ msgstr ""
 
 #: ../../administration/identity_sources/jumpcloud.rst:52
 msgid ""
-"On first login, a |morpheus| user account is automatically created matching "
-"the JumpCloud username and email"
+"On first login, a |morpheus| user account is automatically created "
+"matching the JumpCloud username and email"
 msgstr ""
-"En first inicio de sesión, a |morpheus| usuario cuenta es automáticamente "
-"creado matching el JumpNube usuarioname y correo electrónico"
+"En first inicio de sesión, a |morpheus| usuario cuenta es automáticamente"
+" creado matching el JumpNube usuarioname y correo electrónico"
 
 #: ../../administration/identity_sources/jumpcloud.rst:53
 msgid ""
@@ -197,21 +200,25 @@ msgstr ""
 
 #: ../../administration/identity_sources/jumpcloud.rst:54
 msgid ""
-"If a REQUIRED ROLE is specified, only users with that JumpCloud group/role "
-"can authenticate"
+"If a REQUIRED ROLE is specified, only users with that JumpCloud "
+"group/role can authenticate"
 msgstr ""
-"Si a REQUIRED ROLE es specified, solo usuarios con ese JumpNube grupo/rol "
-"puede authenticate"
+"Si a REQUIRED ROLE es specified, solo usuarios con ese JumpNube grupo/rol"
+" puede authenticate"
+
+#: ../../administration/identity_sources/jumpcloud.rst:56
+msgid "Important"
+msgstr ""
 
 #: ../../administration/identity_sources/jumpcloud.rst:56
 msgid ""
-"JumpCloud users will not authenticate in |morpheus| if there is an existing "
-"|morpheus| user with a matching username or email address that was not "
-"created by this identity source."
+"JumpCloud users will not authenticate in |morpheus| if there is an "
+"existing |morpheus| user with a matching username or email address that "
+"was not created by this identity source."
 msgstr ""
 "JumpNube usuarios no authenticate en |morpheus| si there es un existente "
-"|morpheus| usuario con a matching usuarioname o correo electrónico address "
-"ese fue no creado por este identidad origen."
+"|morpheus| usuario con a matching usuarioname o correo electrónico "
+"address ese fue no creado por este identidad origen."
 
 #: ../../administration/identity_sources/jumpcloud.rst:59
 msgid "Role Mapping"
@@ -219,40 +226,40 @@ msgstr "Rol Mapping"
 
 #: ../../administration/identity_sources/jumpcloud.rst:61
 msgid ""
-"Role mappings allow granular control over |morpheus| permissions based on "
-"JumpCloud group membership:"
+"Role mappings allow granular control over |morpheus| permissions based on"
+" JumpCloud group membership:"
 msgstr ""
-"Rol mappings permitir granular control over |morpheus| permisos basado en "
-"JumpNube grupo membership:"
+"Rol mappings permitir granular control over |morpheus| permisos basado en"
+" JumpNube grupo membership:"
 
 #: ../../administration/identity_sources/jumpcloud.rst:63
 msgid ""
 "Enter JumpCloud group names in the role mapping fields next to each "
 "|morpheus| role"
 msgstr ""
-"Enter JumpNube grupo nombres en el rol mapping campos next a cada |morpheus|"
-" rol"
+"Enter JumpNube grupo nombres en el rol mapping campos next a cada "
+"|morpheus| rol"
 
 #: ../../administration/identity_sources/jumpcloud.rst:64
 msgid ""
 "Users may be assigned multiple |morpheus| roles based on their JumpCloud "
 "group memberships"
 msgstr ""
-"Usuarios puede be asignado múltiples |morpheus| roles basado en su JumpNube "
-"grupo memberships"
+"Usuarios puede be asignado múltiples |morpheus| roles basado en su "
+"JumpNube grupo memberships"
 
 #: ../../administration/identity_sources/jumpcloud.rst:65
 msgid ""
-"Role assignments are re-evaluated on each login, reflecting any JumpCloud "
-"group changes"
+"Role assignments are re-evaluated on each login, reflecting any JumpCloud"
+" group changes"
 msgstr ""
 "Rol assignments son re-evaluated en cada inicio de sesión, reflecting "
 "cualquier JumpNube grupo changes"
 
 #: ../../administration/identity_sources/jumpcloud.rst:66
 msgid ""
-"If no role mapping matches and no Required Role blocks access, the Default "
-"Role is assigned"
+"If no role mapping matches and no Required Role blocks access, the "
+"Default Role is assigned"
 msgstr ""
 "Si no rol mapping matches y no Requerido Rol blocks acceso, el "
 "Predeterminado Rol es asignado"
@@ -266,21 +273,20 @@ msgid ""
 "When an identity source is configured for a Tenant, users can access the "
 "Tenant-specific login URL:"
 msgstr ""
-"Cuando un identidad origen es configurado para a Inquilino, usuarios puede "
-"acceso el Inquilino-específico inicio de sesión URL:"
+"Cuando un identidad origen es configurado para a Inquilino, usuarios "
+"puede acceso el Inquilino-específico inicio de sesión URL:"
 
 #: ../../administration/identity_sources/jumpcloud.rst:73
 msgid "The subdomain login URL is shown on the Identity Sources page"
-msgstr ""
-"El subdomain inicio de sesión URL es shown en el Identidad Orígenes página"
+msgstr "El subdomain inicio de sesión URL es shown en el Identidad Orígenes página"
 
 #: ../../administration/identity_sources/jumpcloud.rst:74
 msgid ""
 "Users navigating to this URL will be prompted to authenticate via the "
 "configured identity source"
 msgstr ""
-"Usuarios navigating a este URL será prompted a authenticate a través de el "
-"configurado identidad origen"
+"Usuarios navigating a este URL será prompted a authenticate a través de "
+"el configurado identidad origen"
 
 #: ../../administration/identity_sources/jumpcloud.rst:75
 msgid "This allows direct login without selecting a Tenant first"
@@ -311,11 +317,27 @@ msgid "Confirm the deletion"
 msgstr "Confirm el deletion"
 
 #: ../../administration/identity_sources/jumpcloud.rst:87
+msgid "Warning"
+msgstr ""
+
+#: ../../administration/identity_sources/jumpcloud.rst:87
 msgid ""
-"Removing an identity source does not delete users that were created through "
-"it. Those users will no longer be able to authenticate via JumpCloud but "
-"their |morpheus| accounts remain."
+"Removing an identity source does not delete users that were created "
+"through it. Those users will no longer be able to authenticate via "
+"JumpCloud but their |morpheus| accounts remain."
 msgstr ""
 "Removing un identidad origen hace no delete usuarios ese fueron creado a "
-"través de ello. Esos usuarios va a no longer be able a authenticate a través"
-" de JumpNube pero su |morpheus| cuentas remain."
+"través de ello. Esos usuarios va a no longer be able a authenticate a "
+"través de JumpNube pero su |morpheus| cuentas remain."
+
+#~ msgid ""
+#~ "The default |morpheus| Role assigned to"
+#~ " users created from this JumpCloud "
+#~ "integration when no other role mapping"
+#~ " applies."
+#~ msgstr ""
+#~ "El predeterminado |morpheus| Rol asignado "
+#~ "a usuarios creado desde este JumpNube"
+#~ " integración cuando no otro rol "
+#~ "mapping se aplica."
+

@@ -1,0 +1,251 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/identity_sources/ad.rst:2
+msgid "Active Directory"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:7
+msgid ""
+"Active Directory is Microsoft's primary authentication service widely "
+"used in Enterprise organizations and even via Microsoft's cloud services."
+" While Active Directory also supports LDAP protocol support (which "
+"|morpheus| can integrate with as well), the main Active Directory "
+"integration can also be utilized. It is even possible to map Active "
+"Directory groups to equivalent Roles within |morpheus| ."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:9
+#: ../../administration/identity_sources/ad.rst:66
+msgid "Note"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:9
+msgid ""
+"To use Active Directory, a valid / trusted SSL certificate must be in "
+"place on the Active Directory services (self signed will not work)."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:14
+msgid "Access Control Behavior"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:16
+msgid "Important"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:16
+msgid ""
+"If the REQUIRED GROUP field is left empty, **any user who can "
+"authenticate against the Active Directory server will be allowed to log "
+"in** and a local user account is automatically created. To restrict "
+"access to authorized users only, you must set the Required Group field."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:18
+msgid ""
+"When an Active Directory identity source is configured, the following "
+"access control logic applies:"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:20
+msgid ""
+"**Required Group configured:** Only AD users who are members of the "
+"specified group are allowed to log in. Users not in the required group "
+"are denied access and no user object is created in |morpheus|."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:21
+msgid ""
+"**Required Group empty (default):** All AD users who can authenticate are"
+" permitted to log in. A local user account is automatically created upon "
+"first sign-in, even if no role mappings apply to the user."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:22
+msgid ""
+"**Include Member Groups enabled:** Users in groups nested inside the "
+"required group are also granted access."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:24
+msgid ""
+"The Default Role and role mappings are applied only after the Required "
+"Group check passes. |morpheus| roles provide an additional layer of RBAC "
+"that controls what the user can see and do within the platform, but they "
+"do not restrict login access itself."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:26
+msgid "**Recommended configuration for enterprise environments:**"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:28
+msgid ""
+"Always set a Required Group to prevent unauthorized directory users from "
+"authenticating"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:29
+msgid ""
+"Create a dedicated AD group (e.g., \"Morpheus Users\") and add only users"
+" who should have access"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:30
+msgid "Set the Default Role to the most restrictive appropriate role"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:31
+msgid "Use role mappings to grant elevated permissions to specific AD groups"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:34
+msgid "Adding an Active Directory Integration"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:36
+msgid "Navigate to |AdmTen|"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:37
+msgid "Select a Tenant"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:38
+msgid "Select :guilabel:`IDENTITY SOURCES`"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:39
+msgid "Select :guilabel:`+ IDENTITY SOURCE`"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:40
+msgid "Choose \"Active Directory\""
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:41
+msgid "Populate the following:"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:43
+msgid "Name"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:44
+msgid "Unique name for authentication type."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:45
+msgid "AD Server"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:46
+msgid "Hostname or IP address of AD Server."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:47
+msgid "Domain"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:48
+msgid "Domain name of AD Domain."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:49
+msgid "Binding Username"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:50
+msgid "Service account username for bind user."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:51
+msgid "Binding Password"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:52
+msgid "Password for bind service account."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:53
+msgid "Required Group"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:54
+msgid ""
+"The AD group users must be in to have access. If left empty, all AD users"
+" who can authenticate will be allowed to log in (see the \"Access Control"
+" Behavior\" section above)."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:55
+msgid "Include Member Groups"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:56
+msgid ""
+"When checked, groups nested inside the required group will also be "
+"included"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:57
+msgid "Default Role"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:58
+msgid ""
+"The default role applied to all users who pass the Required Group check. "
+"This role is always assigned in addition to any roles granted through "
+"role mappings."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:59
+msgid "Service Account Holder"
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:60
+msgid ""
+"This is the admin account type in |morpheus| and an AD group can be "
+"created and populated to a user that this role should be assigned. Roles "
+"are assigned dynamically based on group membership."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:62
+msgid "Select :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:64
+msgid ""
+"Now allowed AD users can login to |morpheus| via their Active Directory "
+"credentials and a User will be automatically generated to |morpheus| with"
+" matching metadata and mapped Role permissions."
+msgstr ""
+
+#: ../../administration/identity_sources/ad.rst:66
+msgid "Only the username is required with password, not the username@domain."
+msgstr ""
+

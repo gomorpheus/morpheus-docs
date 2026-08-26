@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -41,14 +41,14 @@ msgid ""
 "resource tagging is handled consistently with each provisioning."
 msgstr ""
 "As organizations scale their cloud environments, they often necesitan "
-"devise methodologies for organizing those resources. Tags consist of key y "
-"opcional value pairs which make it easier to search for o filter your "
+"devise methodologies for organizing those resources. Tags consist of key "
+"y opcional value pairs which make it easier to search for o filter your "
 "cloud resources basado en categories relevant to the organization. While "
-"cada public o private cloud handles tagging slightly differently, Morpheus "
-"removes that complexity y differentiation by handling tags in a consistent "
-"way across clouds. Además, the Morpheus policy engine gives administrators "
-"tools para configurar guard rails y ensure cloud resource tagging is "
-"handled consistently con cada provisioning."
+"cada public o private cloud handles tagging slightly differently, "
+"Morpheus removes that complexity y differentiation by handling tags in a "
+"consistent way across clouds. Además, the Morpheus policy engine gives "
+"administrators tools para configurar guard rails y ensure cloud resource "
+"tagging is handled consistently con cada provisioning."
 
 #: ../../getting_started/guides/tagging_guide.rst:17
 msgid ""
@@ -56,9 +56,15 @@ msgid ""
 "as well as include provisioning examples from some of the most commonly "
 "integrated clouds."
 msgstr ""
-"This guide will go a través de Morpheus tagging features y best practices, "
-"así como include provisioning examples desde some de la most commonly "
-"integrated clouds."
+"This guide will go a través de Morpheus tagging features y best "
+"practices, así como include provisioning examples desde some de la most "
+"commonly integrated clouds."
+
+#: ../../getting_started/guides/tagging_guide.rst:19
+#: ../../getting_started/guides/tagging_guide.rst:30
+#: ../../getting_started/guides/tagging_guide.rst:61
+msgid "Note"
+msgstr ""
 
 #: ../../getting_started/guides/tagging_guide.rst:19
 msgid ""
@@ -81,13 +87,14 @@ msgid ""
 "Instance wizard, the user can expand the Tags section and enter as many "
 "Tags as he or she needs to comply with organization practices."
 msgstr ""
-"In the simplest use case, tags puede ser entered manually in la mayoría de "
-"provisioning scenarios. Por ejemplo, on the Configure tab of the Create "
-"Instance wizard, el usuario can expand the Tags section y enter as muchos "
-"Tags as he o she necesita comply con organization practices."
+"In the simplest use case, tags puede ser entered manually in la mayoría "
+"de provisioning scenarios. Por ejemplo, on the Configure tab of the "
+"Create Instance wizard, el usuario can expand the Tags section y enter as"
+" muchos Tags as he o she necesita comply con organization practices."
 
-#: ../../getting_started/guides/tagging_guide.rst:27
-msgid ".. image:: images/integration_guides/tagging_guide/1_manual_tag.png"
+#: ../../getting_started/guides/tagging_guide.rst:26
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/1_manual_tag.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/1_manual_tag.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:28
@@ -100,9 +107,9 @@ msgid ""
 "everywhere."
 msgstr ""
 "Una vez que el resource is deployed, Tags are synced y applied to the "
-"provisioned machine in the relevant cloud. Tags are shown on the Instance "
-"detail page in Morpheus y can también be confirmed in la nube console if "
-"desired. Tag syncing is también a two-way street in that cualquier tag "
+"provisioned machine in the relevant cloud. Tags are shown on the Instance"
+" detail page in Morpheus y can también be confirmed in la nube console if"
+" desired. Tag syncing is también a two-way street in that cualquier tag "
 "updates applied dentro de Morpheus o dentro de la nube console será "
 "reflected everywhere."
 
@@ -126,10 +133,10 @@ msgid ""
 " values. This is accomplished in Morpheus through the use of custom "
 "Instance Types, Inputs, and Option Lists."
 msgstr ""
-"Manually tagging resources as described in the previous section will work "
-"in algunos cases pero muchos administrators will likely necesitan pre-seed "
-"the provisioning wizards con tagging prompts o build dropdown lists for "
-"tag values. This is accomplished in Morpheus a través de the use of "
+"Manually tagging resources as described in the previous section will work"
+" in algunos cases pero muchos administrators will likely necesitan pre-"
+"seed the provisioning wizards con tagging prompts o build dropdown lists "
+"for tag values. This is accomplished in Morpheus a través de the use of "
 "personalizado Instance Types, Inputs, y Option Lists."
 
 #: ../../getting_started/guides/tagging_guide.rst:37
@@ -148,12 +155,13 @@ msgstr ""
 "tagging policy. If the tag value field debería ser manually entered at "
 "provision time o if el valor field is to be left blank, this step puede "
 "ser skipped. Option Lists are created y stored in the Morpheus Library "
-"(|Lib|). They puede ser populated manually by entering CSV o JSON datasets "
-"as shown in the example below. They can también be dynamically populated a "
-"través de Morpheus API o REST calls."
+"(|Lib|). They puede ser populated manually by entering CSV o JSON "
+"datasets as shown in the example below. They can también be dynamically "
+"populated a través de Morpheus API o REST calls."
 
-#: ../../getting_started/guides/tagging_guide.rst:41
-msgid ".. image:: images/integration_guides/tagging_guide/2_option_list.png"
+#: ../../getting_started/guides/tagging_guide.rst:40
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/2_option_list.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/2_option_list.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:42
@@ -162,9 +170,9 @@ msgid ""
 "Input to prompt the user for tag input when provisioning relevant "
 "Instance types. Inputs are also housed in the Morpheus Library (|Lib|)."
 msgstr ""
-"Con la set of possible values defined (si es necesario), we next create an "
-"Input to prompt the user for tag input when provisioning relevant Instance "
-"types. Inputs are también housed en la Morpheus Library (|Lib|)."
+"Con la set of possible values defined (si es necesario), we next create "
+"an Input to prompt the user for tag input when provisioning relevant "
+"Instance types. Inputs are también housed en la Morpheus Library (|Lib|)."
 
 #: ../../getting_started/guides/tagging_guide.rst:44
 msgid ""
@@ -180,17 +188,18 @@ msgid ""
 msgstr ""
 "It’s important to note el valor entered for the FIELD NAME on the nuevo "
 "Input será set as the tag key. The EXPORT AS TAG box should también be "
-"marked. Por defecto, the TYPE value is Text. This is appropriate cuando el "
-"user debería ser prompted con a free text field at provision time to enter "
-"a tag value. To tie this Input to the Option List that was just created "
-"(si es necesario), change the TYPE value to Select List o Typeahead. "
-"Typeahead works best for very long lists while Select List is often a "
-"better user experience for lists of a more manageable size. Set the Option "
-"List we created in the previous step in the OPTION LIST value (si es "
-"necesario)."
+"marked. Por defecto, the TYPE value is Text. This is appropriate cuando "
+"el user debería ser prompted con a free text field at provision time to "
+"enter a tag value. To tie this Input to the Option List that was just "
+"created (si es necesario), change the TYPE value to Select List o "
+"Typeahead. Typeahead works best for very long lists while Select List is "
+"often a better user experience for lists of a more manageable size. Set "
+"the Option List we created in the previous step in the OPTION LIST value "
+"(si es necesario)."
 
-#: ../../getting_started/guides/tagging_guide.rst:47
-msgid ".. image:: images/integration_guides/tagging_guide/3_option_type.png"
+#: ../../getting_started/guides/tagging_guide.rst:46
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/3_option_type.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/3_option_type.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:48
@@ -220,14 +229,15 @@ msgid ""
 "into associated Layouts and apply the Input to selected Layouts if that’s"
 " more appropriate."
 msgstr ""
-"Instance Types y Layouts are also stored in the Morpheus Library (|Lib|). "
-"By opening up any personalizado Instance Type, we can add the Input we "
-"just created when editing the Instance Type. Adicionalmente, we can drill "
-"en associated Layouts y apply the Input seleccionared Layouts if that’s "
+"Instance Types y Layouts are also stored in the Morpheus Library (|Lib|)."
+" By opening up any personalizado Instance Type, we can add the Input we "
+"just created when editing the Instance Type. Adicionalmente, we can drill"
+" en associated Layouts y apply the Input seleccionared Layouts if that’s "
 "more appropriate."
 
-#: ../../getting_started/guides/tagging_guide.rst:53
-msgid ".. image:: images/integration_guides/tagging_guide/4_instance_type.png"
+#: ../../getting_started/guides/tagging_guide.rst:52
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/4_instance_type.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/4_instance_type.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:54
@@ -237,10 +247,10 @@ msgid ""
 "We can even require the user input these values or govern their inputs "
 "through tagging policies which will be discussed in the next section."
 msgstr ""
-"Going forward, cada time the chosen Instance Type o Layout is provisioned, "
-"el usuario será prompted to enter relevant tag selections. We can even "
-"require el usuario input these values o govern their inputs a través de "
-"tagging policies which será discussed in the next section."
+"Going forward, cada time the chosen Instance Type o Layout is "
+"provisioned, el usuario será prompted to enter relevant tag selections. "
+"We can even require el usuario input these values o govern their inputs a"
+" través de tagging policies which será discussed in the next section."
 
 #: ../../getting_started/guides/tagging_guide.rst:57
 msgid "Instituting Tagging Policies"
@@ -253,10 +263,10 @@ msgid ""
 "from |AdmPol|. By creating a new policy and setting the TYPE to Tags, the"
 " relevant fields are revealed."
 msgstr ""
-"If needed, Morpheus allows cloud resource tagging to be governed a través "
-"de its native policy engine. Like otros policies, tag policies are added "
-"desde |AdmPol|. By creating a nuevo policy y setting the TYPE to Tags, the "
-"relevant fields are revealed."
+"If needed, Morpheus allows cloud resource tagging to be governed a través"
+" de its native policy engine. Like otros policies, tag policies are added"
+" desde |AdmPol|. By creating a nuevo policy y setting the TYPE to Tags, "
+"the relevant fields are revealed."
 
 #: ../../getting_started/guides/tagging_guide.rst:61
 msgid ""
@@ -264,9 +274,9 @@ msgid ""
 "Azure, Amazon AWS, VMware, and Google Cloud Platform clouds. Additional "
 "Clouds may be supported in the future."
 msgstr ""
-"Tag policy scanning y enforcement is only actualmente soportado for Azure, "
-"Amazon AWS, VMware, y Google Cloud Platform clouds. Additional Clouds may "
-"be soportado in the future."
+"Tag policy scanning y enforcement is only actualmente soportado for "
+"Azure, Amazon AWS, VMware, y Google Cloud Platform clouds. Additional "
+"Clouds may be soportado in the future."
 
 #: ../../getting_started/guides/tagging_guide.rst:63
 msgid ""
@@ -280,13 +290,14 @@ msgid ""
 "not meet policy requirements will also receive the warning banner."
 msgstr ""
 "With a tag policy, we can choose to enforce the policy on a strict o "
-"passive basis by marking o unmarking the STRICT ENFORCEMENT box. Strictly "
-"enforced tagging policies will not allow provisioning to proceed in "
+"passive basis by marking o unmarking the STRICT ENFORCEMENT box. Strictly"
+" enforced tagging policies will not allow provisioning to proceed in "
 "soportado clouds if the policy requirements are not met. If we opt to "
 "enforce the policy passively, a warning banner will appear on the detail "
-"page of any server that does not meet policy requirements. Adicionalmente, "
-"existente servers in soportado clouds será scanned y those which do not "
-"meet policy requirements will also receive the warning banner."
+"page of any server that does not meet policy requirements. "
+"Adicionalmente, existente servers in soportado clouds será scanned y "
+"those which do not meet policy requirements will also receive the warning"
+" banner."
 
 #: ../../getting_started/guides/tagging_guide.rst:65
 msgid ""
@@ -309,10 +320,12 @@ msgid ""
 "can also choose to scope the policy to one or more Subtenants."
 msgstr ""
 "Finalmente, like other |morpheus| policies, we can choose to scope it "
-"globally, by group, by cloud, o by user. Primary Tenant administrators can "
-"also choose to scope the policy to one o more Subtenants."
+"globally, by group, by cloud, o by user. Primary Tenant administrators "
+"can also choose to scope the policy to one o more Subtenants."
 
-msgid ".. image:: images/integration_guides/tagging_guide/5_tag_policy_new.png"
+#: ../../getting_started/guides/tagging_guide.rst:69
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/5_tag_policy_new.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/5_tag_policy_new.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:73
@@ -329,13 +342,13 @@ msgid ""
 " same tag fields and our tagging remains consistent regardless of the "
 "user who is provisioning a new resource at the time."
 msgstr ""
-"With the prep work complete, we can take a look at our Inputs in action at "
-"provision time. In this example case, several Inputs han sido created y "
-"applied to one custom Instance Type. The example Instance Type has three "
-"associated CentOS Layouts, one for AWS, one for VMware, y one for Azure. "
-"Regardless of the selected Layout, users are prompted to fill the same tag "
-"fields y our tagging remains consistent regardless of el usuario who is "
-"provisioning un nuevo resource at the time."
+"With the prep work complete, we can take a look at our Inputs in action "
+"at provision time. In this example case, several Inputs han sido created "
+"y applied to one custom Instance Type. The example Instance Type has "
+"three associated CentOS Layouts, one for AWS, one for VMware, y one for "
+"Azure. Regardless of the selected Layout, users are prompted to fill the "
+"same tag fields y our tagging remains consistent regardless of el usuario"
+" who is provisioning un nuevo resource at the time."
 
 #: ../../getting_started/guides/tagging_guide.rst:78
 msgid "Tagging and AWS"
@@ -349,8 +362,9 @@ msgstr ""
 "When provisioning my CentOS Instance Type con an Amazon Layout, the tag "
 "prompts are shown in the provisioning wizard."
 
-#: ../../getting_started/guides/tagging_guide.rst:83
-msgid ".. image:: images/integration_guides/tagging_guide/6_aws_provision.png"
+#: ../../getting_started/guides/tagging_guide.rst:82
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/6_aws_provision.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/6_aws_provision.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:84
@@ -363,8 +377,9 @@ msgstr ""
 "have two-way tag sync going forward. When tags are updated in Morpheus, "
 "the changed is synced a la AWS web console. The opposite is también true."
 
-#: ../../getting_started/guides/tagging_guide.rst:87
-msgid ".. image:: images/integration_guides/tagging_guide/7_aws_tags.png"
+#: ../../getting_started/guides/tagging_guide.rst:86
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/7_aws_tags.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/7_aws_tags.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:89
@@ -379,8 +394,9 @@ msgstr ""
 "When provisioning my CentOS Instance Type con a VMware Layout, the tag "
 "prompts are shown in the provisioning wizard."
 
-#: ../../getting_started/guides/tagging_guide.rst:94
-msgid ".. image:: images/integration_guides/tagging_guide/8_vmware_tags.png"
+#: ../../getting_started/guides/tagging_guide.rst:93
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/8_vmware_tags.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/8_vmware_tags.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:95
@@ -405,8 +421,9 @@ msgstr ""
 "When provisioning my CentOS Instance Type con an Azure Layout, the tag "
 "prompts are shown in the provisioning wizard."
 
-#: ../../getting_started/guides/tagging_guide.rst:103
-msgid ".. image:: images/integration_guides/tagging_guide/9_azure_tags.png"
+#: ../../getting_started/guides/tagging_guide.rst:102
+#, fuzzy
+msgid ".. image:: /images/integration_guides/tagging_guide/9_azure_tags.png"
 msgstr ".. image:: images/integration_guides/tagging_guide/9_azure_tags.png"
 
 #: ../../getting_started/guides/tagging_guide.rst:104
@@ -415,7 +432,7 @@ msgid ""
 "two-way tag sync going forward. When tags are updated in Morpheus, the "
 "changed is synced to Azure. The opposite is also true."
 msgstr ""
-"En la Azure console, we can see the same tags are applied. We también have "
-"two-way tag sync going forward. When tags are updated in Morpheus, the "
-"changed is synced to Azure. The opposite is también true."
+"En la Azure console, we can see the same tags are applied. We también "
+"have two-way tag sync going forward. When tags are updated in Morpheus, "
+"the changed is synced to Azure. The opposite is también true."
 

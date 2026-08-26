@@ -1,0 +1,485 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:2
+msgid "Hyper-V"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:4
+msgid ""
+"Hyper-V is the virtualized server computing environment introduced by "
+"Microsoft. Hyper-V is consumed by |morpheus| as a private cloud offering "
+"and is a common hypervisor technology in data centers. |morpheus| "
+"provides an avenue to aggregate Hyper-V resources together to allow "
+"efficient and seamless deployment of applications as a virtual machine "
+"(VM) or Docker host in the world of Hyper-V."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:7
+msgid "Features"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:9
+msgid "Virtual Machine Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:10
+msgid "Discovery of Existing Instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:11
+msgid "Containers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:12
+msgid "Backups / Snapshots"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:13
+msgid "Resources Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:14
+msgid "Migrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:15
+msgid "Auto Scaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:16
+msgid "Load Balancing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:17
+msgid "Remote Console"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:18
+msgid "Periodic Synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:19
+msgid "Veeam Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:20
+msgid "Lifecycle Management and Resize"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:21
+msgid "Unique Kerberos Authentication"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:24
+msgid "Getting Started"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:26
+msgid ""
+"To get started, a few prerequisites must first be met. The Hyper-V host "
+"must be installed with its firewall enabled and it can either be joined "
+"to a domain or standalone. The Hyper-V host must also have the external "
+"network of Hyper-V configured and it can share this network with the "
+"management operating system. A user account that is part of the local "
+"administrators group on the Hyper-V host is also required. This document "
+"covers Hyper-V 2008 and Hyper-V 2012."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:29
+msgid "Understanding WinRM"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:31
+msgid ""
+"|morpheus| uses WinRM to communicate to the Hyper-V host for deployment "
+"of the |morpheus| Agent. The |morpheus| Agent allows for the host "
+"dashboard to be populated with information in the form of graphs that "
+"cover CPU, Network, Storage, and memory consumption. Furthermore, this "
+"Agent provides logging and monitoring capabilities."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:33
+msgid ""
+"If Windows Remote Management (WinRM) is not installed and configured, "
+"WinRM scripts do not run and the WinRM command line tool cannot perform "
+"data operations or allow for the |morpheus| Agent to be installed. WinRM "
+"uses HTTP port 5985 or HTTPS port 5986 for communications."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:35
+msgid ""
+"To better understand all of the default settings of WinRM please refer to"
+" the `following page <https://msdn.microsoft.com/en-"
+"us/library/aa384372(v=vs.85).aspx>`_ in Microsoft documentation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:38
+msgid "Native Authentication"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:40
+msgid "To configure WinRM with default settings (WINRM_NATIVE)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:42
+msgid "Type the following command at a command prompt:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:44
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:77
+msgid "$ winrm quickconfig"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:48
+msgid ""
+"If you are not running under the local computer Administrator account, "
+"you must either select Run as Administrator from the Start menu or use "
+"the `Runas` command at a command prompt."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:50
+msgid "When the tool displays ``Make these changes [y/n]?``, type ``y``."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:52
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:85
+msgid "If configuration is successful, the following output is displayed:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:54
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:87
+msgid ""
+"$ WinRM has been updated for remote management.\n"
+"$ WinRM service type changed to delayed auto start.\n"
+"$ WinRM service started.\n"
+"$ Created a WinRM listener on HTTP://* to accept WS-Man requests to any "
+"IP on this machine."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:62
+msgid ""
+"Keep the default settings for client and server components of WinRM, or "
+"customize them. By default Kerberos is enabled and if domain "
+"authentication is not being used we want to disable that. Issue the below"
+" commands to setup basic authentication:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:64
+#, python-brace-format
+msgid ""
+"$ winrm set winrm/config/service/Auth '@{Basic=\"true\"}'\n"
+"$ winrm set winrm/config/service '@{AllowUnencrypted=\"true\"}'\n"
+"$ winrm set winrm/config/service/Auth '@{Kerberos=\"false\"}'"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:71
+msgid "Domain Authentication"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:73
+msgid "To configure WinRM with Domain Authentication (WINRM_INTERNAL)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:75
+msgid "Type the following command at a command prompt"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:81
+msgid ""
+"If you are not running under the local computer Administrator account, "
+"you must either select Run as Administrator from the Start menu or use "
+"the runas command at a command prompt."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:83
+msgid "When the tool displays Make these changes [y/n]?, type y."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:95
+msgid ""
+"Keep the default settings for client and server components of WinRM, or "
+"customize them. Issue the below commands to setup domain authentication:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:97
+#, python-brace-format
+msgid ""
+"$ winrm set winrm/config/service/Auth @{Basic=\"true\"}\n"
+"$ winrm set winrm/config/service @{AllowUnencrypted=\"false\"}\n"
+"$ winrm set winrm/config/service/Auth @{Kerberos=\"true\"}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:103
+msgid ""
+"Kerberos authentication will also need to be configured on the |morpheus|"
+" appliance to support Windows domain accounts to access the remote host "
+"with WINRM_INTERNAL connection type."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:105
+msgid "On the |morpheus| appliance the krb5-user package must be installed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:107
+msgid "For Ubuntu the command is as follows:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:109
+msgid "$ sudo apt-get install krb5-user"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:113
+msgid "For Centos the command is as follows:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:115
+msgid "$ sudo yum install krb5-workstation pam_krb5 -y"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:119
+msgid ""
+"Create a file in /etc called krb5.conf and replace the domain name with "
+"the name of the domain to be used. In this case we used |morpheus| .com "
+"as the domain."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:121
+#, python-brace-format
+msgid ""
+"[libdefaults]\n"
+"        default_realm = |morpheus| .COM\n"
+"            dns_lookup_kdc = true\n"
+"            verify_ap_req_nofail = false\n"
+"        default_tgs_enctypes = rc4-hmac\n"
+"        default_tkt_enctypes = rc4-hmac\n"
+"[realms]\n"
+"        |morpheus| .COM = {\n"
+"                kdc = win-ad.|morpheus| .COM:88\n"
+"                admin_server = win-ad.|morpheus| .COM:749\n"
+"     }\n"
+"[domain_realm]\n"
+"    .|morpheus| .COM = |morpheus| .COM\n"
+"        |morpheus| .COM = |morpheus| .COM\n"
+"[login]\n"
+"     krb4_convert = true\n"
+"     krb4_get_tickets = false"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:141
+msgid ""
+"After creation of the krb5.conf a keytab file is also required. See below"
+" for instructions on how to create a keytab file. "
+"http://www.itadmintools.com/2011/07/creating-kerberos-keytab-files.html"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:145
+msgid "Adding Hyper-V as a Private Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:147
+msgid ""
+"The Hyper-V host is prepared for |morpheus| to communicate with it via "
+"WinRM so the Hyper-V private cloud is ready to be configured. Create a "
+"group and then create a |morpheus| cloud for Hyper-V. Populated the "
+"information as show in Figure 1: specific for the environment being "
+"configured."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:149
+msgid ".. image:: /images/hyperv1_original.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:151
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:185
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:151
+msgid ""
+"The working path, vm path, and disk path should be created on the Hyper-V"
+" host by the Hyper-V administrator. If these paths are not created they "
+"will need to be setup and the Hyper-V settings will need to adjusted to "
+"reference them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:153
+msgid ".. image:: /images/hyperv2_original.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:156
+msgid "Service Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:158
+msgid ""
+"A default set of Service Plans are created in |morpheus| for the VMware "
+"provisioning engine. These Service Plans can be considered akin to AWS "
+"Flavors or Openstack Flavors. They provide a means to set predefined "
+"tiers on memory, storage, cores, and cpu. Price tables can also be "
+"applied to these so estimated cost per virtual machine can be tracked as "
+"well as pricing for customers. By default, these options are fixed sizes "
+"but can be configured for dynamic sizing. A service plan can be "
+"configured to allow a custom user entry for memory, storage, or cpu. To "
+"configure this, simply edit an existing Service Plan tied to Hyper-V or "
+"create a new one. These are managed from the Admin > Plans & Pricing "
+"section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:160
+msgid ".. image:: /images/hyperv3_original.png"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:163
+msgid "Docker"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:165
+msgid ""
+"So far this document has covered how to add the Hyper-V cloud integration"
+" and has enabled users the ability to provision virtual machine-based "
+"instances via the Add Instance catalog under the Provisioning menu. "
+"Another great feature provided by |morpheus| out of the box is the "
+"ability to use Docker containers and even support multiple containers per"
+" Docker host. To do this a Docker Host must first be provisioned into "
+"Hyper-V (multiple are needed when dealing with horizontal scaling "
+"scenarios)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:167
+msgid ""
+"To provision a Docker Host simply navigate to the Clusters tab of the "
+"Cloud detail page or Infrastructure > Clusters section. From there click "
+":guilabel:`+ ADD CLUSTER` to add a Hyper-V Docker Host. A cluster is "
+"created when adding Docker hosts, even when only one host is needed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:169
+msgid ""
+"|morpheus| views a Docker host just like any other hypervisor with the "
+"caveat being that it is used for running containerized images instead of "
+"virtualized ones. Once a Docker Host is successfully provisioned a green "
+"checkmark will appear to the right of the host marking it as available "
+"for use. In the event of a failure click into the relevant host that "
+"failed and an error explaining the failure will be displayed in red at "
+"the top."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:171
+msgid ""
+"Some common error scenarios include network connectivity. For a Docker "
+"Host to function properly, it must be able to resolve the |morpheus| "
+"appliance url which can be configured in Admin | Settings. If it is "
+"unable to resolve and negotiate with the appliance than the agent "
+"installation will fail and provisioning instructions will not be able to "
+"be issued to the host."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:174
+msgid "Feature Boundaries"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:176
+msgid ""
+"The Hyper-V integration is classified as a **Tier 2 — Core Cloud "
+"Management** integration. The following capabilities are not currently "
+"supported:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:178
+msgid "**Networking**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:180
+msgid ""
+"Network creation, deletion, or modification (Hyper-V VMSwitches are "
+"synchronized read-only from the host)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:181
+msgid "Native security group or firewall rule management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:182
+msgid "Network server integrations (NSX, ACI, etc.)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:183
+msgid "Distributed virtual switch support"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:185
+msgid ""
+"Hyper-V networks (VMSwitches) are discovered automatically during cloud "
+"synchronization. External and Internal switch types are supported. VLAN "
+"tagging and multiple NIC assignment are available at provisioning time, "
+"but network infrastructure must be managed directly on the Hyper-V host. "
+"IPAM / IP Pool assignment is supported via |morpheus| and applied through"
+" guest OS configuration (cloud-init or sysprep)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:187
+msgid "**Costing & Governance**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:189
+msgid "Price synchronization or billing integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:190
+msgid "Invoice generation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:191
+msgid "Right-sizing recommendations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:192
+msgid "Tag synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:193
+msgid "Multitenancy / resource pool scoping"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:195
+msgid "**Other**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:197
+msgid "Kubernetes cluster provisioning (Docker hosts are supported)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:198
+msgid "Image conversion (VMDK, QCOW2, etc.)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:199
+msgid "Clone to image"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hyperv/hyperv.rst:201
+msgid ""
+"For a full feature comparison across all supported clouds, see "
+":doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
+msgstr ""
+

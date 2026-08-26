@@ -1,0 +1,694 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../backups/backups.rst:3 ../../backups/backups_sub.rst:2
+msgid "Backups"
+msgstr ""
+
+#: ../../backups/backups.rst:5
+msgid ""
+"The |morpheus| built-in Backup solution provides VM, Container, Host, "
+"Database, File, Directory, Volume and Storage Provider Backup, Snapshot "
+"and Replication capabilities. Backups can be automatically configured "
+"during provisioning or manually created at any time. Backup Jobs with "
+"custom Execution Schedules and retention counts can be created and used "
+"across all environments in conjunction with configured Storage Providers."
+" Backups can be restored over current Instances or as new Instances, and "
+"downloaded or deleted from |morpheus|."
+msgstr ""
+
+#: ../../backups/backups.rst:7
+msgid ""
+"|morpheus| also integrates with external services to automate "
+"availability with other providers."
+msgstr ""
+
+#: ../../backups/backups.rst:10
+msgid "Backup Navigation"
+msgstr ""
+
+#: ../../backups/backups.rst:12
+msgid ""
+"The Backups menu exposes the following views when permitted by the user's"
+" Role:"
+msgstr ""
+
+#: ../../backups/backups.rst:14
+msgid "**Summary:** Backup health and activity metrics."
+msgstr ""
+
+#: ../../backups/backups.rst:15
+msgid ""
+"**Jobs:** Scheduled backup definitions, including their schedules and "
+"retention settings."
+msgstr ""
+
+#: ../../backups/backups.rst:16
+msgid "**Backups:** Configured backup sources and targets."
+msgstr ""
+
+#: ../../backups/backups.rst:17
+msgid ""
+"**History:** Backup execution and restore results used to review "
+"successful and failed activity."
+msgstr ""
+
+#: ../../backups/backups.rst:18
+msgid ""
+"**Integrations:** Configured third-party backup providers. Visibility of "
+"this item requires Backup Services permission."
+msgstr ""
+
+#: ../../backups/backups.rst:20
+msgid ""
+"Role permissions determine whether backup data and integrations are "
+"visible. If an expected item is absent, verify the user's Backups and "
+"Backup Services permissions."
+msgstr ""
+
+#: ../../backups/backups.rst:23
+msgid "Initial Backups Setup"
+msgstr ""
+
+#: ../../backups/backups.rst:25
+msgid ""
+"Global Backup settings (|AdmSetBac|), Storage Providers "
+"(:menuselection:`Infrastructure --> Storage`) and Execution Schedules "
+"(|LibAutExe|) should be configured prior to creating backups. Global "
+"backup settings are where scheduled backups can be globally enabled or "
+"disabled and certain global backup default settings can be configured. "
+"Storage providers include local and remote configured storage locations "
+"that can be used as backup targets. Execution schedules are timed "
+"intervals at which individual automated backup jobs will run. See the "
+"next two sections for full details on global backup settings and "
+"configuring execution schedules. See |morpheus| UI `storage documentation"
+" "
+"<https://docs.morpheusdata.com/en/latest/infrastructure/storage/storage.html>`_"
+" for more information about configuring local and remote storage targets "
+"and/or integrating with third party storage providers."
+msgstr ""
+
+#: ../../backups/backups.rst:28
+msgid "Global Backups Settings"
+msgstr ""
+
+#: ../../backups/backups.rst:30
+msgid "|morpheus| Backups can be enabled under |AdmSetBac|."
+msgstr ""
+
+#: ../../backups/backups.rst:32
+msgid "Scheduled Backups"
+msgstr ""
+
+#: ../../backups/backups.rst:33
+msgid ""
+"When enabled, configured Backups will automatically run on their "
+"configured schedules. If disabled, backups need to be manually run."
+msgstr ""
+
+#: ../../backups/backups.rst:34
+msgid "Create Backups"
+msgstr ""
+
+#: ../../backups/backups.rst:35
+msgid ""
+"When enabled, |morpheus| will automatically configure backup jobs for "
+"Instances at provision time."
+msgstr ""
+
+#: ../../backups/backups.rst:36
+msgid "Backup Appliance"
+msgstr ""
+
+#: ../../backups/backups.rst:37
+msgid ""
+"When enabled, a Backup will be created to backup the |morpheus| appliance"
+" database. Select the ``Backup`` text link to edit the Appliance Backup "
+"Settings and view existing Appliance Backups."
+msgstr ""
+
+#: ../../backups/backups.rst:38
+msgid "Default Backup Bucket"
+msgstr ""
+
+#: ../../backups/backups.rst:39
+msgid ""
+"From this dropdown, select the default storage bucket to be used for "
+"future created Backups. If needed, new storage providers can be "
+"configured and managed in the :menuselection:`Infrastructure --> Storage`"
+" section."
+msgstr ""
+
+#: ../../backups/backups.rst:40
+msgid "Default Backup Schedule"
+msgstr ""
+
+#: ../../backups/backups.rst:41
+msgid ""
+"From this dropdown, select a default execution schedule for future "
+"created Backups. If needed, new schedules can be configured in "
+"|LibAutExe|."
+msgstr ""
+
+#: ../../backups/backups.rst:42
+msgid "Backup Retention Count"
+msgstr ""
+
+#: ../../backups/backups.rst:43
+msgid "The default maximum number of successful backups to retain."
+msgstr ""
+
+#: ../../backups/backups.rst:44
+msgid "Default Synthetic Full Backup Enabled"
+msgstr ""
+
+#: ../../backups/backups.rst:45
+msgid ""
+"When enabled, supported workload types will have periodic full synthetic "
+"backups scheduled by default in addition to any typical backups (full "
+"backup followed by incremental backups) that may also be scheduled."
+msgstr ""
+
+#: ../../backups/backups.rst:46
+msgid "Default Synthetic Full Backups Schedule"
+msgstr ""
+
+#: ../../backups/backups.rst:47
+msgid ""
+"From this dropdown, select a default execution schedule for future full "
+"synthetic backups. In general, this should be at a longer internal than "
+"incremental backups that are also scheduled. If needed, new schedules can"
+" be configured in |LibAutExe|."
+msgstr ""
+
+#: ../../backups/backups.rst:50
+msgid "Execution Schedules"
+msgstr ""
+
+#: ../../backups/backups.rst:52
+msgid ""
+"Backup Execution Schedules can be configured and managed in |LibAutExe|. "
+"An execution schedule stores only the interval at which some execution "
+"should be run and they can apply to both backups and automation scripts. "
+"To create a new backup job with this schedule, navigate to `Backups > "
+"Backups` and click \"+ADD\". In the final step of creating the backup job"
+" we are able to select any of our created execution schedules. The "
+"Default Backup Schedule set in |AdmSetBac| will be selected when creating"
+" a backup job and not specifying an execution schedule."
+msgstr ""
+
+#: ../../backups/backups.rst:56
+msgid "Configuring Backups during Provisioning"
+msgstr ""
+
+#: ../../backups/backups.rst:58
+msgid ""
+"When Backups are enabled, Backup options are presented in the AUTOMATION "
+"tab of the provisioning wizard. Note that your default backup bucket and "
+"default backup schedule will be set according to your global backup "
+"settings as mentioned in the previous sections."
+msgstr ""
+
+#: ../../backups/backups.rst:60 ../../backups/backups.rst:119
+#: ../../backups/backups_sub.rst:8 ../../backups/backups_sub.rst:46
+msgid "Note"
+msgstr ""
+
+#: ../../backups/backups.rst:60
+msgid ""
+"The Backup options presented in the Automation tab can be disabled using "
+"a \"Create Backup\" Policy. See "
+":doc:`../administration/policies/policies`"
+msgstr ""
+
+#: ../../backups/backups.rst:62
+msgid "BACKUP TYPE"
+msgstr ""
+
+#: ../../backups/backups.rst:63
+msgid ""
+"Select the type for the Backup. Backup Types displayed will be filtered "
+"by available options for the selected Instance Layout"
+msgstr ""
+
+#: ../../backups/backups.rst:64
+msgid "BACKUP NAME"
+msgstr ""
+
+#: ../../backups/backups.rst:65 ../../backups/backups.rst:71
+msgid "Defaults to the Instance name"
+msgstr ""
+
+#: ../../backups/backups.rst:66
+msgid "BACKUP TARGET"
+msgstr ""
+
+#: ../../backups/backups.rst:67
+msgid "Select the Storage Provider target for the Backup (when applicable)"
+msgstr ""
+
+#: ../../backups/backups.rst:68
+msgid "BACKUP JOB TYPE"
+msgstr ""
+
+#: ../../backups/backups.rst:69
+msgid "Create a new job, clone an existing job, or Add to existing job"
+msgstr ""
+
+#: ../../backups/backups.rst:70
+msgid "JOB NAME"
+msgstr ""
+
+#: ../../backups/backups.rst:72
+msgid "RETENTION COUNT"
+msgstr ""
+
+#: ../../backups/backups.rst:73
+msgid "Maximum number of successful backups to retain"
+msgstr ""
+
+#: ../../backups/backups.rst:74
+msgid "BACKUP SCHEDULE"
+msgstr ""
+
+#: ../../backups/backups.rst:75
+msgid ""
+"Select the schedule for the backup job from the list of existing "
+"execution schedules"
+msgstr ""
+
+#: ../../backups/backups.rst:76
+msgid ""
+"SYNTHETIC FULL (Currently only available for KVM VM Snapshot-type "
+"backups, such as those used with |hvm| Instances. More Layout types are "
+"expected to support synthetic full backups in the future)"
+msgstr ""
+
+#: ../../backups/backups.rst:77
+msgid ""
+"When checked, an additional schedule is configured for the backup job "
+"during which a synthetic full backup will be taken. In general, this "
+"should be on a longer time period than that at which standard backups "
+"(full backup followed by incremental backups) are configured"
+msgstr ""
+
+#: ../../backups/backups.rst:78
+msgid "SYNTHETIC FULL SCHEDULE"
+msgstr ""
+
+#: ../../backups/backups.rst:79
+msgid ""
+"Select the schedule for the backup job on which synthetic full backups "
+"should be taken"
+msgstr ""
+
+#: ../../backups/backups.rst:81
+msgid ""
+"Backup Types displayed will be filtered by available options per selected"
+" Instance Layout. Many backup job types are supported including (but not "
+"limited to):"
+msgstr ""
+
+#: ../../backups/backups.rst:83
+msgid "File Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:84
+msgid "Directory Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:85
+msgid "MySQL"
+msgstr ""
+
+#: ../../backups/backups.rst:86
+msgid "MongoDB"
+msgstr ""
+
+#: ../../backups/backups.rst:87
+msgid "LVM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:88
+msgid "LVM Image"
+msgstr ""
+
+#: ../../backups/backups.rst:89
+msgid "LVM Migration"
+msgstr ""
+
+#: ../../backups/backups.rst:90
+msgid "Windows Migration"
+msgstr ""
+
+#: ../../backups/backups.rst:91
+msgid "Postgres"
+msgstr ""
+
+#: ../../backups/backups.rst:92
+msgid "Tar Directory Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:93
+msgid "Amazon VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:94 ../../backups/backups.rst:108
+msgid "VMWare VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:95
+msgid "Fusion VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:96
+msgid "Xen VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:97
+msgid "Veeam VMWare VM Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:98
+msgid "Veeam Hyper-V VM Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:99
+msgid "Google VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:100
+msgid "Commvault File/Directory Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:101
+msgid "Azure VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:102
+msgid "Morpheus Appliance"
+msgstr ""
+
+#: ../../backups/backups.rst:103
+msgid "Openstack VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:104
+msgid "DigitalOcean VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:105
+msgid "Nutanix VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:106
+msgid "Softlayer VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:107
+msgid "Hyper-V VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:109
+msgid "SCVMM VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:110
+msgid "UpCloud VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:111
+msgid "Bluemix VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:112
+msgid "Alibaba VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:113
+msgid "Oracle Cloud VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:114
+msgid "KVM VM Snapshot"
+msgstr ""
+
+#: ../../backups/backups.rst:115
+msgid "Container Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:116
+msgid "VM Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:117
+msgid "Object Storage Backup"
+msgstr ""
+
+#: ../../backups/backups.rst:119
+msgid ""
+"**LVM Migration** is a deprecated, single-logical-volume migration "
+"implementation and is distinct from migration-plan disk conversion. For "
+"current SCSI mapping, LVM prerequisites, and verification guidance, see "
+":doc:`../infrastructure/servers/server_migration`."
+msgstr ""
+
+#: ../../backups/summary.rst:2
+msgid "Summary"
+msgstr ""
+
+#: ../../backups/summary.rst:4
+msgid "The Backups Summary section shows the following metrics:"
+msgstr ""
+
+#: ../../backups/summary.rst:6
+msgid ""
+"Open this view from :menuselection:`Backups --> Summary`. Use "
+":menuselection:`Backups --> Jobs` for scheduled definitions and "
+":menuselection:`Backups --> History` for execution and restore results."
+msgstr ""
+
+#: ../../backups/summary.rst:8
+msgid "Number of Configured Backups trend"
+msgstr ""
+
+#: ../../backups/summary.rst:9
+msgid "Backup Success Rate"
+msgstr ""
+
+#: ../../backups/summary.rst:10
+msgid "Number of Completed Backups"
+msgstr ""
+
+#: ../../backups/summary.rst:11
+msgid "Number of Failed Backups"
+msgstr ""
+
+#: ../../backups/summary.rst:12
+msgid "Total Size of Backups (MB) trend"
+msgstr ""
+
+#: ../../backups/summary.rst:13
+msgid "Upcoming and In Progress Backups"
+msgstr ""
+
+#: ../../backups/summary.rst:15
+msgid ""
+"If a User's Role permission for Backups is set to `User`, the user will "
+"only see metrics for backups they own."
+msgstr ""
+
+#: ../../backups/summary.rst:17
+msgid ".. image:: /images/backups/backupSummary.png"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:4
+msgid ""
+"In the |BacBac| section, currently-configured Backups can be viewed and "
+"managed, and new Instance, Host and Provider backups be configured. "
+"Backups must be tied to a Backup Job, which holds the retention count and"
+" the schedule on which the backup should automatically be run. You can "
+"create a new Job at the same time as the backup is created or you can "
+"create the job ahead of time and associate any new backups to the "
+"existing job."
+msgstr ""
+
+#: ../../backups/backups_sub.rst:6
+msgid ""
+"Use :menuselection:`Backups --> Jobs` to review or manage those "
+"scheduling and retention definitions. Use :menuselection:`Backups --> "
+"History` to review backup execution and restore results."
+msgstr ""
+
+#: ../../backups/backups_sub.rst:8
+msgid ""
+"Role permissions for Backups determine which backups will be accessible "
+"to the individual user."
+msgstr ""
+
+#: ../../backups/backups_sub.rst:11
+msgid "Create an Instance Backup"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:13
+msgid "To create Instance backup:"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:15
+msgid "Navigate to |BacBac|"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:16
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:17
+msgid ""
+"From the Create Backup Wizard select the radio button for Instance, then "
+"click :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:18
+msgid "Input the following:"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:20
+msgid "Instance"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:21
+msgid "Select an Instance to backup from the typeahead menu"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:22
+msgid "Name"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:23
+msgid "Enter a name for the backup job being created"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:25
+msgid "Click :guilabel:`NEXT`"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:26
+msgid ""
+"Depending on the Instance Type selected in the previous step, enter "
+"additional details. These can include a specific container, backup type, "
+"database name, username and password, or a number of other things "
+"depending on the Instance Type"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:27
+msgid "Configure the storage bucket and retention details:"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:29
+msgid "Storage"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:30
+msgid "Select a configured storage bucket as the backup target"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:31
+msgid "Backup Job Type"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:32
+msgid ""
+"Create a new backup job, add this backup to an existing job, or clone an "
+"existing job to handle this backup"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:33
+msgid "Job Name"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:34
+msgid "If creating a new job, enter a name for the job"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:35
+msgid "Retention Count"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:36
+msgid ""
+"If creating a new job, enter the number of backups which should be "
+"simultaneously retained"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:37
+msgid "Schedule"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:38
+msgid ""
+"If creating a new job, select an execution schedule of which to run the "
+"backup"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:39
+msgid "Synthetic Full"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:40
+msgid ""
+"When the backup is targeting an |hvm| Instance, check this box to "
+"schedule synthetic full backups in addition to the normal full and "
+"incremental backups"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:41
+msgid "Synthetic Full Schedule"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:42
+msgid ""
+"If synthetic full backups are enabled, select an execution schedule on "
+"which to run the synthetic full backups"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:44
+msgid "Click :guilabel:`COMPLETE`."
+msgstr ""
+
+#: ../../backups/backups_sub.rst:46
+msgid ""
+"On VMware Cloud types, |morpheus| will merge and consolidate the "
+"snapshots held against a VM before exporting the OVF to the storage "
+"location or share. This is so |morpheus| has a full and consistent copy "
+"of the VM state."
+msgstr ""
+
+#: ../../backups/backups_sub.rst:48
+msgid "Tip"
+msgstr ""
+
+#: ../../backups/backups_sub.rst:48
+msgid ""
+"To edit an existing backup, click on the hyperlinked name of the backup "
+"job from the list of backups at |BacBac|."
+msgstr ""
+

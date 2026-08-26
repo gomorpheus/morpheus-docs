@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/servers/server_devices.rst:2
@@ -31,16 +31,16 @@ msgstr "Descripción general"
 #: ../../infrastructure/servers/server_devices.rst:7
 msgid ""
 "Server Devices in |morpheus| represent physical or virtual hardware "
-"peripherals (such as GPUs, PCIe devices, USB devices, or other passthrough "
-"hardware) that can be attached to or detached from virtual machines. Device "
-"management is used for hardware passthrough scenarios where VMs need direct "
-"access to physical devices on the host."
+"peripherals (such as GPUs, PCIe devices, USB devices, or other "
+"passthrough hardware) that can be attached to or detached from virtual "
+"machines. Device management is used for hardware passthrough scenarios "
+"where VMs need direct access to physical devices on the host."
 msgstr ""
 "Servidor Devices en |morpheus| represent physical o virtual hardware "
 "peripherals (como GPUs, PCIe devices, USB devices, o otro passthrough "
-"hardware) ese puede be adjunto un o detached desde virtual machines. Device "
-"gestión se usa para hardware passthrough scenarios donde VMs necesita direct"
-" acceso a physical devices en el host."
+"hardware) ese puede be adjunto un o detached desde virtual machines. "
+"Device gestión se usa para hardware passthrough scenarios donde VMs "
+"necesita direct acceso a physical devices en el host."
 
 #: ../../infrastructure/servers/server_devices.rst:10
 msgid "Role Requirements"
@@ -48,11 +48,11 @@ msgstr "Role Requirements"
 
 #: ../../infrastructure/servers/server_devices.rst:12
 msgid ""
-"``Infrastructure: Compute`` role permission at **Full** level is required to"
-" attach, detach, or assign devices."
+"``Infrastructure: Compute`` role permission at **Full** level is required"
+" to attach, detach, or assign devices."
 msgstr ""
-"``Infrastructure: Compute`` permiso de rol en **Full** nivel es requerido a "
-"attach, detach, o assign devices."
+"``Infrastructure: Compute`` permiso de rol en **Full** nivel es requerido"
+" a attach, detach, o assign devices."
 
 #: ../../infrastructure/servers/server_devices.rst:15
 msgid "Viewing Devices"
@@ -71,11 +71,11 @@ msgstr "Seleccionar el **DEVICES** pestaña (donde disponible)"
 
 #: ../../infrastructure/servers/server_devices.rst:20
 msgid ""
-"The Devices tab displays all hardware devices currently associated with the "
-"server, including:"
+"The Devices tab displays all hardware devices currently associated with "
+"the server, including:"
 msgstr ""
-"El Devices pestaña muestra todos hardware devices actualmente asociado con "
-"el servidor, incluyendo:"
+"El Devices pestaña muestra todos hardware devices actualmente asociado "
+"con el servidor, incluyendo:"
 
 #: ../../infrastructure/servers/server_devices.rst:22
 msgid "**Name** — Device name or identifier"
@@ -106,7 +106,7 @@ msgstr "Seleccionar **Attach Device**"
 msgid "In the device dialog, configure:"
 msgstr "En el device dialog, configure:"
 
-#: ../../infrastructure/servers/server_devices.rst:35
+#: ../../infrastructure/servers/server_devices.rst:34
 msgid "DEVICE"
 msgstr "DEVICE"
 
@@ -124,12 +124,17 @@ msgid "Click :guilabel:`SAVE`"
 msgstr "Click :guilabel:`SAVE`"
 
 #: ../../infrastructure/servers/server_devices.rst:39
-msgid ""
-"Attaching a device may require the VM to be powered off, depending on the "
-"device type and hypervisor capabilities."
+#: ../../infrastructure/servers/server_devices.rst:73
+msgid "Note"
 msgstr ""
-"Attaching un device puede requerir el VM a be powered off, dependiendo de el"
-" device tipo y hypervisor capabilities."
+
+#: ../../infrastructure/servers/server_devices.rst:39
+msgid ""
+"Attaching a device may require the VM to be powered off, depending on the"
+" device type and hypervisor capabilities."
+msgstr ""
+"Attaching un device puede requerir el VM a be powered off, dependiendo de"
+" el device tipo y hypervisor capabilities."
 
 #: ../../infrastructure/servers/server_devices.rst:42
 msgid "Detaching a Device"
@@ -153,8 +158,8 @@ msgstr "Assigning un Device a un Servidor"
 
 #: ../../infrastructure/servers/server_devices.rst:52
 msgid ""
-"For scenarios where a device needs to be pre-assigned to a server (reserving"
-" it for future use):"
+"For scenarios where a device needs to be pre-assigned to a server "
+"(reserving it for future use):"
 msgstr ""
 "Para scenarios donde un device necesita a be pre-asignado un un servidor "
 "(reserving it para future usar):"
@@ -176,14 +181,18 @@ msgstr ""
 "disponible para otro VMs."
 
 #: ../../infrastructure/servers/server_devices.rst:62
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/servers/server_devices.rst:62
 msgid ""
 "Detaching a device from a running VM may cause application errors if "
-"software inside the VM is actively using the device. Always ensure workloads"
-" are quiesced before detaching passthrough devices."
+"software inside the VM is actively using the device. Always ensure "
+"workloads are quiesced before detaching passthrough devices."
 msgstr ""
-"Detaching un device desde un ejecutando VM puede cause aplicación errores si"
-" software inside el VM es actively usando el device. Siempre asegurar cargas"
-" de trabajo son quiesced antes de detaching passthrough devices."
+"Detaching un device desde un ejecutando VM puede cause aplicación errores"
+" si software inside el VM es actively usando el device. Siempre asegurar "
+"cargas de trabajo son quiesced antes de detaching passthrough devices."
 
 #: ../../infrastructure/servers/server_devices.rst:65
 msgid "Supported Device Types"
@@ -191,20 +200,21 @@ msgstr "Supported Device Tipos"
 
 #: ../../infrastructure/servers/server_devices.rst:67
 msgid ""
-"The availability of device management depends on the cloud and hypervisor "
-"type:"
-msgstr ""
-"El disponibilidad de device gestión depends en el cloud y hypervisor tipo:"
+"The availability of device management depends on the cloud and hypervisor"
+" type:"
+msgstr "El disponibilidad de device gestión depends en el cloud y hypervisor tipo:"
 
 #: ../../infrastructure/servers/server_devices.rst:69
-msgid ""
-"**VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices"
-msgstr ""
-"**VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices"
+msgid "**VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices"
+msgstr "**VMware vSphere** — PCI/PCIe passthrough, vGPU, DirectPath I/O devices"
 
 #: ../../infrastructure/servers/server_devices.rst:70
-msgid "**KVM/MVM** — PCI passthrough, GPU passthrough, USB devices"
-msgstr "**KVM/MVM** — PCI passthrough, GPU passthrough, USB devices"
+msgid ""
+"**HVM/KVM** — PCI passthrough, USB devices, whole-GPU passthrough, and "
+"NVIDIA SR-IOV vGPU profiles. See "
+":doc:`/infrastructure/clusters/hvm/nvidia_vgpu` for vGPU prerequisites "
+"and lifecycle constraints"
+msgstr ""
 
 #: ../../infrastructure/servers/server_devices.rst:71
 msgid "**Nutanix AHV** — GPU passthrough devices"
@@ -212,12 +222,16 @@ msgstr "**Nutanix AHV** — GPU passthrough devices"
 
 #: ../../infrastructure/servers/server_devices.rst:73
 msgid ""
-"Device availability is determined by the host's hardware configuration and "
-"the hypervisor's passthrough settings. Devices must be properly configured "
-"for passthrough at the host level before they appear as available in "
-"|morpheus|."
+"Device availability is determined by the host's hardware configuration "
+"and the hypervisor's passthrough settings. Devices must be properly "
+"configured for passthrough at the host level before they appear as "
+"available in |morpheus|."
 msgstr ""
-"Device disponibilidad es determined por el host's hardware configuración y "
-"el hypervisor's passthrough configuraciones. Devices debe be correctamente "
-"configurado para passthrough en el host nivel antes de they aparecer como "
-"disponible en |morpheus|."
+"Device disponibilidad es determined por el host's hardware configuración "
+"y el hypervisor's passthrough configuraciones. Devices debe be "
+"correctamente configurado para passthrough en el host nivel antes de they"
+" aparecer como disponible en |morpheus|."
+
+#~ msgid "**KVM/MVM** — PCI passthrough, GPU passthrough, USB devices"
+#~ msgstr "**KVM/MVM** — PCI passthrough, GPU passthrough, USB devices"
+

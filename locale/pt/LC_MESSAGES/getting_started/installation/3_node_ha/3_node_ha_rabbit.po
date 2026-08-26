@@ -1,0 +1,246 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:2
+msgid "Clustering Embedded RabbitMQ"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:4
+msgid ""
+"Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ "
+"clustering (Node 1 for this example). On the nodes that are **NOT** the "
+"SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:11
+msgid ""
+"[root@node2 ~] morpheus-ctl stop morpheus-ui\n"
+"[root@node2 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node2 ~] rabbitmqctl stop_app\n"
+"[root@node2 ~] morpheus-ctl stop rabbitmq"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:21
+msgid ""
+"[root@node3 ~] morpheus-ctl stop morpheus-ui\n"
+"[root@node3 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node3 ~] rabbitmqctl stop_app\n"
+"[root@node3 ~] morpheus-ctl stop rabbitmq"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:29
+msgid "Then on the SOT node, we need to copy the secrets for RabbitMQ."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:31
+msgid "Begin by copying secrets from the SOT node to the other nodes."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:38
+#, python-brace-format
+msgid ""
+"root@node1: ~$ cat /etc/morpheus/morpheus-secrets.json\n"
+"\n"
+" \"rabbitmq\": {\n"
+"   \"morpheus_password\": \"***REDACTED***\",\n"
+"   \"queue_user_password\": \"***REDACTED***\",\n"
+"   \"cookie\": \"***REDACTED***\"\n"
+" },"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:51
+#, python-brace-format
+msgid ""
+"[root@node2 ~] vi /etc/morpheus/morpheus-secrets.json\n"
+"\n"
+"  \"rabbitmq\": {\n"
+"    \"morpheus_password\": \"***node01_morpheus_password***\",\n"
+"    \"queue_user_password\": \"***node01_queue_user_password***\",\n"
+"    \"cookie\": \"***node01_cookie***\"\n"
+"  },"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:64
+#, python-brace-format
+msgid ""
+"[root@node3 ~] vi /etc/morpheus/morpheus-secrets.json\n"
+"\n"
+"\"rabbitmq\": {\n"
+"  \"morpheus_password\": \"***node01_morpheus_password***\",\n"
+"  \"queue_user_password\": \"***node01_queue_user_password***\",\n"
+"  \"cookie\": \"***node01_cookie***\"\n"
+"},"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:74
+msgid "Then copy the erlang.cookie from the SOT node to the other nodes"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:81
+msgid ""
+"root@node1: ~$ cat /opt/morpheus/embedded/rabbitmq/.erlang.cookie\n"
+"\n"
+"# 754363AD864649RD63D28"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:90
+msgid ""
+"[root@node2 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie\n"
+"\n"
+"# node01_erlang_cookie"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:99
+msgid ""
+"[root@node3 ~] vi /opt/morpheus/embedded/rabbitmq/.erlang.cookie\n"
+"\n"
+"# node01_erlang_cookie"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:105
+msgid ""
+"Once the secrets and cookie are copied from node01 to nodes 2 & 3, run a "
+"reconfigure on nodes 2 & 3."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:112
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:178
+msgid "[root@node2 ~] morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:119
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:185
+msgid "[root@node3 ~] morpheus-ctl reconfigure"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:123
+msgid "Next we will join nodes 2 & 3 to the cluster."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
+msgid "Important"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
+msgid "The commands below must be run at root"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:132
+msgid ""
+"[root@node2 ~] morpheus-ctl stop rabbitmq\n"
+"[root@node2 ~] morpheus-ctl start rabbitmq\n"
+"[root@node2 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node2 ~] rabbitmqctl stop_app\n"
+"\n"
+"# Stopping node 'rabbit@node02' ...\n"
+"\n"
+"[root@node2 ~] rabbitmqctl join_cluster rabbit@node01\n"
+"\n"
+"# Clustering node 'rabbit@node02' with 'rabbit@node01' ...\n"
+"\n"
+"[root@node2 ~] rabbitmqctl start_app\n"
+"\n"
+"# Starting node 'rabbit@node02' ..."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:152
+msgid ""
+"[root@node3 ~] morpheus-ctl stop rabbitmq\n"
+"[root@node3 ~] morpheus-ctl start rabbitmq\n"
+"[root@node3 ~] source /opt/morpheus/embedded/rabbitmq/.profile\n"
+"[root@node3 ~] rabbitmqctl stop_app\n"
+"\n"
+"# Stopping node 'rabbit@node03' ...\n"
+"\n"
+"[root@node3 ~] rabbitmqctl join_cluster rabbit@node01\n"
+"\n"
+"# Clustering node 'rabbit@node03' with 'rabbit@node01' ...\n"
+"\n"
+"[root@node3 ~] rabbitmqctl start_app\n"
+"\n"
+"# Starting node 'rabbit@node03' ..."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:169
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:169
+msgid ""
+"If you receive an error ``unable to connect to epmd (port 4369) on "
+"node01: nxdomain (non-existing domain)`` make sure to add all IPs and "
+"short (non-fqdn) hostnames to the ``/etc/hosts`` file to ensure each node"
+" can resolve the other hostnames."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:171
+msgid "Next reconfigure Nodes 2 & 3"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:189
+msgid ""
+"The last thing to do is start the |morpheus| UI on the two nodes that are"
+" NOT the SOT node."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:196
+msgid "[root@node2 ~] morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:203
+msgid "[root@node3 ~] morpheus-ctl start morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:208
+msgid ""
+"You will be able to verify that the UI services have restarted properly "
+"by inspecting the logfiles. A standard practice after running a restart "
+"is to tail the UI log file."
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:215
+msgid "[root@node2 ~] morpheus-ctl tail morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:222
+msgid "[root@node3 ~] morpheus-ctl tail morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:226
+msgid ""
+"The UI should be available once the Morpheus logo is displayed in the "
+"logs. Look for the ascii logo accompanied by the install version and "
+"start time:"
+msgstr ""
+
+#: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:229
+msgid ""
+"timestamp:    __  ___              __\n"
+"timestamp:   /  |/  /__  _______  / /  ___ __ _____\n"
+"timestamp:  / /|_/ / _ \\/ __/ _ \\/ _ \\/ -_) // (_-<\n"
+"timestamp: /_/  /_/\\___/_/ / .__/_//_/\\__/\\_,_/___/\n"
+"timestamp: ****************************************\n"
+"timestamp:   Version: |morphver|\n"
+"timestamp:   Start Time: xxx xxx xxx 00:00:00 UTC 2024\n"
+"timestamp: ****************************************"
+msgstr ""
+

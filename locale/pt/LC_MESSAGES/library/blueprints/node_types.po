@@ -1,0 +1,290 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../library/blueprints/node_types.rst:2
+msgid "Node Types"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:4
+msgid "Node Types are the link between Images and Layouts."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:7
+msgid "Node Type Configuration Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:9
+msgid "The following fields are for all Technology types:"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:11
+msgid "Name"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:12
+msgid "Name of the Node Type in |morpheus|"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:13
+msgid "Short Name"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:14
+msgid ""
+"The short name is a lowercase name with no spaces used for display in "
+"your container list"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:15
+msgid "Version"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:16
+msgid "Version for the Node Type. Examples: 7.5, 2012 R2, latest"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:17
+msgid "Technology"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:18
+msgid ""
+"Select associated Technology. This will filter the available "
+"configuration options, images and which Layouts the Node Type can be "
+"added to"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:19
+msgid "Environment Variables"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:20
+msgid "Add pre-set environment variables to the Node Type"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:21
+msgid "Category"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:22
+msgid ""
+"Node Types of differing categories within the same Layout can have "
+"differing sizing"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:25
+msgid "Technology-Specific Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:27
+msgid ""
+"The Options fields will change depending on the Technology option "
+"selected. For VM provisioning technology options, select an image from "
+"the VM Image dropdown. This list is populated from the |morpheus| Virtual"
+" Images section and will include images uploaded into |morpheus| as well "
+"as synced images from added clouds."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:29
+#: ../../library/blueprints/node_types.rst:87
+msgid "Note"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:29
+msgid ""
+"Amazon and Azure Marketplace Images can be added in the Virtual Images "
+"section for use as Node Types in custom library items."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:32
+msgid "Docker Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:34
+msgid ""
+"For Docker, type in the name and version of the Docker Image, then select"
+" the integrated registry."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:36
+msgid "Service Ports"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:37
+msgid ""
+"To open ports on the node, enter the name and port to expose. The Load "
+"Balancer HTTP, HTTPS, or TCP setting is required when attaching to Load "
+"Balancers."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:39
+msgid ""
+"Defining an Exposed port will also create a hyperlink(s) on the container"
+" location (IP) in the VM or Container section of the associated Instance "
+"detail page."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:41
+msgid "Scripts"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:42
+msgid ""
+"Search for and select one or multiple scripts to be executed when the "
+"Node Type is provisioned"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:44
+msgid "File Templates"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:45
+msgid ""
+"Search for and select one or multiple File Templates to be written when "
+"the Node Type is provisioned"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:47
+msgid "Example port configuration:"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:49
+msgid ".. image:: /images/provisioning/library/node_ports.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:52
+msgid "VMware Options"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:54
+msgid ""
+"|morpheus| supports VMware-specific configurations related to Node Types "
+"targeted for VMware vCenter Clouds. Setting the TECHNOLOGY field on the "
+"Node Type to \"VMware\" reveals these fields."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:56
+msgid "**vApp Properties**"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:58
+msgid ""
+"Some VMware images may expect the user to provide values for vApp "
+"properties related to server configuration. |morpheus| allows the user to"
+" set values for vApp properties on the Node Type, which can be static "
+"values or even |morpheus| variables such as if we wanted to provide the "
+"next available IP address from a |morpheus| IP pool or source a password "
+"from |morpheus| Cypher. Consider the following example workflow for "
+"examining an OVA image, uploading it to |morpheus| as a Virtual Image, "
+"and setting vApp properties on the Node Type."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:60
+msgid ""
+"If you have an OVA that doesn't have the properties laid out in a visible"
+" format, you can unzip it and inspect the OVF file to help set the vApp "
+"properties in |morpheus|. For example, take a look at the screenshot "
+"below from an OVF file associated with an F5 image. There are four vApp "
+"properties I wish to set related to network and user configuration. The "
+"``userConfigurable`` property should be toggled to ``true`` for any that "
+"may be set to ``false``. The key is identified by the ``key`` property "
+"and, if desired, default values can be set via the ``value`` property. "
+"Save any changes to the OVF file."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:62
+msgid ".. image:: /images/provisioning/library/vappProps/vappOvf.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:64
+msgid ""
+"With changes saved, the image can be uploaded to |morpheus| as a Virtual "
+"Image from which we can create and configure a Node Type. Below you can "
+"see the Virtual Image uploaded and revealed on the Virtual Images list "
+"page."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:66
+msgid ".. image:: /images/provisioning/library/vappProps/vappVirtualImage.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:68
+msgid ""
+"Next, create a new Node Type. After setting the TECHNOLOGY value to "
+"\"VMware\" the fields related to vApp Property configuration will be "
+"revealed. Select the uploaded Virtual Image as the \"VM IMAGE\" and set "
+"the key/value pairs in VAPP PROPERTIES. In this case, I've dynamically "
+"loaded the values using |morpheus| variables."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:70
+msgid ".. image:: /images/provisioning/library/vappProps/vappNodeType.png"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:73
+msgid ""
+"The rest of the process is the same as building out any other |morpheus| "
+"library item. House the Node Type within a Layout and the Layout within "
+"an Instance Type. It should then be provisionable as any other Instance "
+"Type."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:75
+msgid "**Extra Options**"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:77
+msgid ""
+"When VMware Technology Type is selected, EXTRA OPTIONS will be available "
+"in the VMware VM Options section. These allow defining Advance vmx-file "
+"parameters during provisioning."
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:79
+msgid "Some Example include:"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:81
+msgid ""
+"tools.setinfo.sizeLimit : 1048576\n"
+"vmci0.unrestricted : FALSE\n"
+"isolation.tools.diskWiper.disable : TRUE"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:87
+msgid ""
+"Not all parameters can be set using extra config parameters. A sample "
+"reference list can be found at http://www.sanbarrow.com/vmx/vmx-"
+"advanced.html#vmx"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:89
+msgid "Important"
+msgstr ""
+
+#: ../../library/blueprints/node_types.rst:89
+msgid ""
+"Use caution when setting Extra Options. Malformed config files can break "
+"provisioning. Troubleshooting issues related to Extra Options defined are"
+" beyond the scope of |morpheus| product support."
+msgstr ""
+

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -25,18 +25,20 @@ msgid "Import Trusted Certificates"
 msgstr "Import Trusted Certificates"
 
 #: ../../getting_started/additional/ssl-import.rst:4
-msgid "The following applies to upgrades after modifying the java keystore."
-msgstr "The following applies to upgrades after modifying the java keystore."
+msgid ""
+"Use this procedure to add a certificate authority that the |morpheus| "
+"application must trust, such as the CA for a ServiceNow endpoint. "
+"Reconfigure imports certificates from the trusted-certificate directory "
+"into both the appliance OpenSSL trust path and the embedded JRE "
+"truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, "
+"so the UI must be restarted to load the updated JRE truststore."
+msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:6
-msgid "Steps to import trusted certificates to |morpheus| after an upgrade."
-msgstr "Steps importar trusted certificates to |morpheus| después de an upgrade."
-
-#: ../../getting_started/additional/ssl-import.rst:8
 msgid "Obtain the full SSL certificate chain in PEM format."
 msgstr "Obtain the full certificado SSL chain in PEM format."
 
-#: ../../getting_started/additional/ssl-import.rst:10
+#: ../../getting_started/additional/ssl-import.rst:8
 msgid ""
 "Copy them to each appliance and place them in the "
 "``/etc/morpheus/ssl/trusted_certs`` directory."
@@ -44,61 +46,42 @@ msgstr ""
 "Copy them to each appliance y place them in the "
 "``/etc/morpheus/ssl/trusted_certs`` directory."
 
-#: ../../getting_started/additional/ssl-import.rst:12
+#: ../../getting_started/additional/ssl-import.rst:10
+#, fuzzy
 msgid ""
-"Run morpheus-ctl reconfigure on each appliance, note you don’t need to "
-"stop Morpheus before you run this."
+"Run ``morpheus-ctl reconfigure`` on the appliance. Reconfigure can run "
+"while the UI is active."
 msgstr ""
 "Run morpheus-ctl reconfigure on each appliance, note you don’t necesita "
 "stop Morpheus antes de you run this."
 
-#: ../../getting_started/additional/ssl-import.rst:14
-msgid "Run the following command as root:"
-msgstr "Run el siguiente comando as root:"
-
-#: ../../getting_started/additional/ssl-import.rst:16
+#: ../../getting_started/additional/ssl-import.rst:12
 msgid ""
-"export "
-"PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH"
+"Verify that each certificate is present in the embedded JRE truststore. "
+"Reconfigure uses the certificate filename as its alias:"
 msgstr ""
-"export "
-"PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH"
+
+#: ../../getting_started/additional/ssl-import.rst:14
+msgid ""
+"/opt/morpheus/embedded/java/jre/bin/keytool -list -cacerts -storepass "
+"changeit -alias root_ca.pem"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:18
+msgid ""
+"Verify the remote endpoint and chain with the appliance OpenSSL client, "
+"replacing the host and port:"
+msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:20
-msgid ""
-"Run the following command for each certificate in the chain, adjusting "
-"the file and alias name as needed. Answer yes for the root certificate "
-"when asked it you want to trust it."
-msgstr ""
-"Run el siguiente comando for each certificate in the chain, adjusting el "
-"archivo y alias name as needed. Answer yes for the root certificate when "
-"asked it you want to trust it."
-
-#: ../../getting_started/additional/ssl-import.rst:22
-msgid ""
-"/opt/morpheus/embedded/java/jre/bin/keytool -import -keystore "
-"/opt/morpheus/embedded/java/jre/lib/security/cacerts -trustcacerts -file "
-"/etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -storepass "
-"changeit"
-msgstr ""
-"/opt/morpheus/embedded/java/jre/bin/keytool -import -keystore "
-"/opt/morpheus/embedded/java/jre/lib/security/cacerts -trustcacerts -file "
-"/etc/morpheus/ssl/trusted_certs/root_ca.pem -alias some_alias -storepass "
-"changeit"
-
-#: ../../getting_started/additional/ssl-import.rst:26
-msgid "Verify by running:"
-msgstr "Verify by running:"
-
-#: ../../getting_started/additional/ssl-import.rst:28
 msgid "openssl s_client -connect host:port -showcerts -tls1_2"
 msgstr "openssl s_client -connect host:port -showcerts -tls1_2"
 
-#: ../../getting_started/additional/ssl-import.rst:32
+#: ../../getting_started/additional/ssl-import.rst:24
 msgid "You should get an output similar to:"
 msgstr "You should get an output similar to:"
 
-#: ../../getting_started/additional/ssl-import.rst:34
+#: ../../getting_started/additional/ssl-import.rst:26
 msgid ""
 "New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384\n"
 "Server public key is 2048 bit\n"
@@ -122,28 +105,100 @@ msgid ""
 "Verify return code: 0 (ok) #<----------------"
 msgstr ""
 "New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384\\nServer public "
-"key is 2048 bit\\nSecure Renegotiation IS supported\\nNo ALPN "
-"negotiated\\nSSL-Session:\\nProtocol : TLSv1.2\\nCipher  : "
-"ECDHE-RSA-AES256-GCM-SHA384\\nSession-ID: "
-"5D9E820E4FF2A73A9977BA663E6029AA5415FEE85F49D8B1E541F5997C8E1FB2\\nSession-ID-ctx:\\nMaster-Key: "
-"29EEC2E7750C659AECB9942902D9A87B824E571522812B718420FC08F8D2ACE68CB16EC812A7D90B12A86D1970FFD81C\\nKey-Arg "
-": None\\nPSK identity: None\\nPSK identity hint: None\\nSRP username: "
-"None\\nStart Time: 1547219217\\nTimeout  : 7200 (sec)\\nVerify return "
-"code: 0 (ok) #<----------------"
+"key is 2048 bit\\nSecure Renegotiation IS supported\\nNo ALPN negotiated"
+"\\nSSL-Session:\\nProtocol : TLSv1.2\\nCipher  : ECDHE-RSA-AES256-GCM-"
+"SHA384\\nSession-ID: "
+"5D9E820E4FF2A73A9977BA663E6029AA5415FEE85F49D8B1E541F5997C8E1FB2"
+"\\nSession-ID-ctx:\\nMaster-Key: "
+"29EEC2E7750C659AECB9942902D9A87B824E571522812B718420FC08F8D2ACE68CB16EC812A7D90B12A86D1970FFD81C"
+"\\nKey-Arg : None\\nPSK identity: None\\nPSK identity hint: None\\nSRP "
+"username: None\\nStart Time: 1547219217\\nTimeout  : 7200 (sec)\\nVerify "
+"return code: 0 (ok) #<----------------"
 
-#: ../../getting_started/additional/ssl-import.rst:54
+#: ../../getting_started/additional/ssl-import.rst:46
 msgid ""
 "If the certificates are installed correctly you should see ``Verify "
 "return code: 0 (ok)``.  If they were not installed correctly then you "
 "will see a return similar to: ``Verify return code: 21 (unable to verify "
 "the first certificate)``"
 msgstr ""
-"If the certificates are installed correctly you should see ``Verify return "
-"code: 0 (ok)``. If they were not installed correctly then you will see a "
-"return similar to: ``Verify return code: 21 (unable to verify the first "
-"certificate)``"
+"If the certificates are installed correctly you should see ``Verify "
+"return code: 0 (ok)``. If they were not installed correctly then you will"
+" see a return similar to: ``Verify return code: 21 (unable to verify the "
+"first certificate)``"
+
+#: ../../getting_started/additional/ssl-import.rst:48
+msgid "Restart the UI so its JVM loads the updated truststore:"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:50
+msgid "morpheus-ctl restart morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:54
+msgid ""
+"Repeat the copy, reconfigure, truststore verification, and UI restart on "
+"every application node. In an HA deployment, process one application node"
+" at a time and confirm it is healthy before proceeding to the next node."
+msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:56
-msgid "Repeat for all App Nodes"
-msgstr "Repeat for all App Nodes"
+msgid ""
+"Retry the integration without disabling certificate verification. A "
+"successful connection confirms that the application JVM trusts the "
+"endpoint; ``openssl`` success alone does not verify the trust state of "
+"the already-running JVM."
+msgstr ""
+
+#~ msgid "The following applies to upgrades after modifying the java keystore."
+#~ msgstr "The following applies to upgrades after modifying the java keystore."
+
+#~ msgid "Steps to import trusted certificates to |morpheus| after an upgrade."
+#~ msgstr ""
+#~ "Steps importar trusted certificates to "
+#~ "|morpheus| después de an upgrade."
+
+#~ msgid "Run the following command as root:"
+#~ msgstr "Run el siguiente comando as root:"
+
+#~ msgid ""
+#~ "export "
+#~ "PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH"
+#~ msgstr ""
+#~ "export "
+#~ "PATH=/opt/morpheus/sbin:/opt/morpheus/sbin:/opt/morpheus/embedded/sbin:/opt/morpheus/embedded/bin:$PATH"
+
+#~ msgid ""
+#~ "Run the following command for each "
+#~ "certificate in the chain, adjusting the"
+#~ " file and alias name as needed. "
+#~ "Answer yes for the root certificate "
+#~ "when asked it you want to trust"
+#~ " it."
+#~ msgstr ""
+#~ "Run el siguiente comando for each "
+#~ "certificate in the chain, adjusting el"
+#~ " archivo y alias name as needed. "
+#~ "Answer yes for the root certificate "
+#~ "when asked it you want to trust"
+#~ " it."
+
+#~ msgid ""
+#~ "/opt/morpheus/embedded/java/jre/bin/keytool -import "
+#~ "-keystore /opt/morpheus/embedded/java/jre/lib/security/cacerts"
+#~ " -trustcacerts -file "
+#~ "/etc/morpheus/ssl/trusted_certs/root_ca.pem -alias "
+#~ "some_alias -storepass changeit"
+#~ msgstr ""
+#~ "/opt/morpheus/embedded/java/jre/bin/keytool -import "
+#~ "-keystore /opt/morpheus/embedded/java/jre/lib/security/cacerts"
+#~ " -trustcacerts -file "
+#~ "/etc/morpheus/ssl/trusted_certs/root_ca.pem -alias "
+#~ "some_alias -storepass changeit"
+
+#~ msgid "Verify by running:"
+#~ msgstr "Verify by running:"
+
+#~ msgid "Repeat for all App Nodes"
+#~ msgstr "Repeat for all App Nodes"
 

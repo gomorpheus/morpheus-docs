@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/guides/terraform_instances.rst:2
+msgid "Getting Started with Terraform Instance Types"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:6
+msgid ""
+"`Terraform <https://www.terraform.io/intro/index.html>`_ is a common tool"
+" that allows IT administrators to map out infrastructure as code in "
+"configuration files and supports all of the popular providers used in the"
+" modern datacenter. Once configured, Terraform will plan, deploy, and "
+"manage the infrastructure as needed. Configuration files can be brought "
+"under version control so teams can easily make changes to environments. "
+"Infrastructure can also be monitored for drift and corrective action can "
+"easily be taken."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:8
+msgid ""
+"|morpheus| allows users to on-board or even draft Terraform spec "
+"directly. With the configuration on-board, we can begin to piece together"
+" infrastructure constructs into the |morpheus| Library as Layouts and "
+"Instance Types. With the Library items staged, users can deploy new "
+"infrastructure directly into the selected providers. Once deployed, "
+"infrastructure can be monitored for drift from within |morpheus| UI. When"
+" needed, we can plan and take corrective action easily from the detail "
+"page of a |morpheus| Terraform Instance."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:10
+msgid ""
+"In this section, we've discussed a high-level overview of Terraform and "
+"working with Terraform in the |morpheus| context. In the next section, "
+"we'll actually onboard Terraform spec, create Library items, and deploy "
+"real infrastructure to AWS with |morpheus|."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:13
+msgid "Terraform Instance Types in Action"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:15
+msgid ""
+"In this example, we're going to deploy a VPC and three subnets to AWS "
+"using Terraform and |morpheus|. I've created Spec Templates to onboard "
+"``.tf`` configuration files which handle the AWS provider (with assume "
+"role for account flexibility), VPC creation, subnet creation, and "
+"variable injection."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:17
+msgid ""
+"We'll onboard the Terraform configuration files as modular Spec "
+"Templates, create new Instance Types with custom Layouts for the "
+"|morpheus| Library, and set up Inputs to inject variable values at "
+"provision time. Once deployed, we'll take a look at the new "
+"infrastructure in |morpheus| and go over the management capabilities for "
+"the new environment."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:20
+msgid "Spec Templates"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:22
+msgid ""
+"Terraform configuration is stored as a Spec Template in |morpheus|. You "
+"can store your configuration as one monolithic file for each Instance "
+"Type you intend to create or you can create individual Spec Templates for"
+" modular pieces which can be reused across multiple Instance Types. When "
+"added to the Layout later, we'll be able to include as many Spec "
+"Templates as we wish which enables us to reuse smaller modular pieces if "
+"desired."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:24
+msgid ""
+"Spec Templates are added in the |morpheus| Library (|LibTemSpe| tab). We "
+"can pull in the template from some type of repository, such as through a "
+"Github integration, or write new spec directly into the New Spec Template"
+" modal. In most cases, the spec will be pre-existing and pulled in from a"
+" version-controlled repository but here I have my Terraform spec entered "
+"locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the"
+" example below and click :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:26
+msgid ""
+"In the VERSION field at the bottom of the TF Spec Template modal, enter a"
+" Terraform version number to force that version to be used. This version "
+"is only honored if the Terraform Runtime setting "
+"(:menuselection:`Administration --> Settings --> Provisioning`) is set to"
+" \"auto\". When \"manual\" is selected as the Terraform Runtime setting, "
+"|morpheus| will simply use the version installed on the appliance box."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:28
+msgid "Tip"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:28
+msgid ""
+"When declaring variables, keep in mind that |morpheus| expects users to "
+"follow Terraform best practices. For example, when a variable type is not"
+" defined, it defaults to string. See `Terraform Documentation "
+"<https://www.terraform.io/docs/language/values/variables.html>`_ for "
+"additional resources on variable declaration."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:30
+msgid ".. image:: /images/integration_guides/terr_inst_guide/1newSpec.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:34
+msgid ""
+"# This spec template creates AWS subnets based on the count requested "
+"utilizing the vpc cidr provided in var.vpc_cidr variable\n"
+"\n"
+"locals {\n"
+"  bitCount = "
+"sum([tonumber(local.subnet_options.cidrMask),-tonumber(split(\"/\",var.vpc_cidr)[1])])"
+"\n"
+"}\n"
+"\n"
+"resource \"aws_subnet\" \"main\" {\n"
+"    count = tonumber(var.subnetCount)\n"
+"    vpc_id     = aws_vpc.main.id\n"
+"    cidr_block = cidrsubnet(var.vpc_cidr, local.bitCount, count.index)\n"
+"\n"
+"    tags = merge(\n"
+"        local.default_tags,\n"
+"        {\n"
+"        Name = \"${var.vpc_name}-subnet-0${count.index}\"\n"
+"        }\n"
+"    )\n"
+"}\n"
+"\n"
+"output \"aws_subnet\" {\n"
+"  value = aws_subnet.main\n"
+"  sensitive = true\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:62
+#, python-brace-format
+msgid ""
+"variable \"access_key\" {\n"
+"  type        = string\n"
+"}\n"
+"\n"
+"variable \"secret_key\" {\n"
+"  type        = string\n"
+"}\n"
+"\n"
+"variable \"subnetCount\" {\n"
+"  type = number\n"
+"  default = \"<%=customOptions.subnetCount%>\"\n"
+"}\n"
+"\n"
+"variable \"sensitive_thing\" {\n"
+"  type = string\n"
+"  default = \"this_var_is_sensitive\"\n"
+"  sensitive = true\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:85
+msgid ""
+"terraform {\n"
+"  required_providers {\n"
+"    aws = {\n"
+"      source = \"hashicorp/aws\"\n"
+"      version = \">= 3.35.0\"\n"
+"    }\n"
+"  }\n"
+"}\n"
+"\n"
+"provider \"aws\" {\n"
+"  region     = local.vpc_options.region\n"
+"  access_key = var.access_key\n"
+"  secret_key = var.secret_key\n"
+"\n"
+"  assume_role {\n"
+"    # The role ARN within Account B to AssumeRole into.\n"
+"    role_arn = "
+"\"arn:aws:iam::${local.vpc_options.aws_account}:role/OrganizationAccountAccessRole\""
+"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:109
+msgid ""
+"locals {\n"
+"  #  Common tags to be assigned to all resources\n"
+"  default_tags = {\n"
+"    Owner    = \"<%=username%>\"\n"
+"    Group = \"<%=groupName%>\"\n"
+"    Management_Tool = \"Terraform\"\n"
+"    Management_Platform = \"Morpheus\"\n"
+"  }\n"
+"\n"
+"  subnet_options = {\n"
+"    cidrMask = \"<%=customOptions.cidrMask%>\"\n"
+"    subnetCount = \"<%=customOptions.subnetCount%>\"\n"
+"  }\n"
+"  vpc_options = {\n"
+"    region = \"<%=customOptions.awsRegion%>\"\n"
+"    aws_account = \"<%=customOptions.awsAccount%>\"\n"
+"  }\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:132
+msgid ""
+"variable \"vpc_cidr\" {\n"
+"  type        = string\n"
+"  description = \"CIDR for the the VPC\"\n"
+"  default = \"172.16.0.0/24\"\n"
+"}\n"
+"\n"
+"variable \"vpc_name\" {\n"
+"  type        = string\n"
+"  description = \"Name for the VPC\"\n"
+"  default = \"durka\"\n"
+"}\n"
+"\n"
+"resource \"aws_vpc\" \"main\" {\n"
+"    cidr_block = var.vpc_cidr\n"
+"\n"
+" tags = merge(\n"
+"    local.default_tags,\n"
+"    {\n"
+"      Name = var.vpc_name\n"
+"    }\n"
+"  )\n"
+"}\n"
+"\n"
+"output \"aws_vpc\" {\n"
+"  value = aws_vpc.main\n"
+"  sensitive = true\n"
+"}"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:162
+msgid "Note"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:162
+msgid ""
+"In the AWS Terraform Locals example Spec Template above, pre-provision "
+"variables are used. Note the use of `pre-provision "
+"<https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=variables"
+"#pre-provision-vars>`_ variables to store the value for Owner and Group, "
+"among other things. See the variables section of |morpheus| documentation"
+" (linked in the prior sentence) for a listing of other possible pre-"
+"provision variables and a complete map of variables which can be resolved"
+" after provisioning has completed."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:165
+msgid "Inputs and Option Lists"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:167
+msgid ""
+"In order to create the Layout later in the guide, I need to create four "
+"Inputs so the user can make certain selections at provision time. I wrote"
+" my Terraform Configuration with this flexibility in mind so that the "
+"same Instance Type can be reused in different scenarios. In this "
+"particular case, I'm populating the Inputs with manual Option Lists but "
+"they can also be populated through REST calls or calls to the |morpheus| "
+"API when needed."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:169
+msgid ""
+"Option Lists are created in the Library (|Lib|) under the Option Lists "
+"tab. These are lists of items which will be used to create dropdown "
+"selections at provision time. Click :guilabel:`+ ADD`, complete the "
+"fields as I've done in the example below and click :guilabel:`SAVE "
+"CHANGES`. I've created one each for the AWS account selection, region "
+"selection, and CIDR mask input."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:171
+msgid ".. image:: /images/integration_guides/terr_inst_guide/7optionList.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:174
+msgid ""
+"Inputs are also created in the Library under the Inputs tab. In this "
+"case, I'm creating four Inputs. Three of them will display as dropdown "
+"selections and will be tied to one of the Option Lists we just made. The "
+"other will be a simple text input where the user can indicate the total "
+"number of subnets that should be created. Click :guilabel:`+ ADD`, "
+"complete the fields as I've done in the example below and click "
+":guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:176
+msgid ".. image:: /images/integration_guides/terr_inst_guide/8optionType.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:180
+msgid "Instance Type"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:182
+msgid ""
+"At this point we're ready to create a new Instance Type. We'll give the "
+"Instance Type a name, which users will use to identify the Instance Type "
+"from the list in the provisioning wizard. We don't need to set much else "
+"in this case, most of the pieces we've created in previous steps will be "
+"associated with the Layout that we create next. The Layout will also be "
+"tied to the Instance Type we're creating now. Instance Types are also "
+"created in the Library (|Lib|) under the Instance Types tab. Click "
+":guilabel:`+ ADD`, complete the fields as I've done in the example below "
+"and click :guilabel:`SAVE CHANGES`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:184
+msgid ".. image:: /images/integration_guides/terr_inst_guide/9instanceType.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:188
+msgid "Layout"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:190
+msgid ""
+"The Layout will bring together everything we've made to this point, the "
+"Spec Templates, Inputs and the Instance Type. We can add a new one from "
+"the Instance Type detail page (|LibBluIns| > Selected Instance Type) by "
+"clicking :guilabel:`+ ADD LAYOUT`. We can also create one from the "
+"Layouts section (|LibBluLay|) by clicking :guilabel:`+ ADD`."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:192
+msgid ""
+"First, change the TECHNOLOGY value to Terraform and the fields will "
+"change to allow proper configuration. Next, provide a name for your "
+"Layout. If you're creating the Layout through the Layout tab rather than "
+"from the Instance Type detail page, you'll need to identify the Instance "
+"Type the Layout goes with. Using the typeahead fields at bottom of the "
+"modal window, add our four Inputs and our five Spec Templates to the "
+"Layout. Finally, point the layout to a TFVAR SECRET from |morpheus| "
+"Cypher if needed. You can see a screenshot of my Layout configuration "
+"below"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:194
+msgid ".. image:: /images/integration_guides/terr_inst_guide/10Layout.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:198
+msgid "Provisioning"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:200
+msgid ""
+"Now, we're ready to provision new infrastructure into AWS using "
+"|morpheus| and Terraform. Just like any other Instance Type, we begin "
+"from the Instances list page (:menuselection:`Provisioning --> "
+"Instances`) and click :guilabel:`+ ADD`. Select the Instance Type we've "
+"just created and move on to the GROUP tab of the wizard. Here you'll give"
+" the new instance a name and select your Group and Cloud. Once finished, "
+"you'll move on to the CONFIGURE tab where we'll see the Inputs we created"
+" and associated with the Layout. Once finished with this tab, step "
+"through the rest of the wizard to complete the process. You can see the "
+"options I've selected for this configuration in the image below."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:202
+msgid ".. image:: /images/integration_guides/terr_inst_guide/11configureTab.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:205
+msgid "Review the New Instance"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:207
+msgid ""
+"After completing the wizard, from the History tab of the Instance detail "
+"page users can review the Terraform plan being executed and see the "
+"output while the resources are still being provisioned."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:209
+msgid ".. image:: /images/integration_guides/terr_inst_guide/12historyTab.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:211
+msgid ""
+"Once the provisioning process is complete, head to the State tab. Here we"
+" can see and link through to the associated Spec Templates. If needed, "
+"you can also edit the configuration spec by clicking on the pencil icon "
+"at the end of the row for any listed Spec Template."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:213
+msgid ""
+"By clicking :guilabel:`APPLY STATE`, the user can once again see the "
+"Input selections which were presented during the initial provisioning and"
+" make changes when needed. After making changes and clicking "
+":guilabel:`NEXT`, |morpheus| will show the plan output no different than "
+"if you'd run ``terraform plan``. On clicking :guilabel:`COMPLETE`, the "
+"plan will be executed as if you'd run ``terraform apply``. Back on the "
+"State tab you will see the output from the Apply process as well as an "
+"indicator of the success or failure of the operation."
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:215
+msgid ".. image:: /images/integration_guides/terr_inst_guide/13stateTab.png"
+msgstr ""
+
+#: ../../getting_started/guides/terraform_instances.rst:217
+msgid ""
+"|morpheus| will also regularly check for drift from the Terraform "
+"configuration. On the State tab near the top is a \"Drift Status\" "
+"indicator. This will either show Drift or No Drift depending on the "
+"situation. |morpheus| will automatically check for drift every few "
+"minutes but you can perform a manual check at any time by clicking "
+":guilabel:`REFRESH STATE`. Drift can be corrected when needed by "
+"reapplying state (:guilabel:`APPLY STATE` button)."
+msgstr ""
+

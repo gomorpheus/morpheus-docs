@@ -1,0 +1,1128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/tenants/tenants.rst:4
+msgid "Tenants |enterprise-only|"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:12
+msgid ""
+"Multi-tenancy is an Enterprise-only feature. Essentials and Advanced "
+"deployments operate as a single tenant."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:14
+msgid ""
+"A Tenant in |morpheus| is an isolated environment with unique users and "
+"workloads. The Master Tenant is the default Tenant in |morpheus|, created"
+" upon installation. All other Tenants outside of the Master Tenants are "
+"Subtenants."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:18
+msgid ""
+"The Master Tenant is the default Tenant created during the installation "
+"of |morpheus|"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:19
+msgid ""
+"All Tenants created after installation are Subtenants. Only one Master "
+"Tenant can exist"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:20
+msgid "The Master Tenant creates and controls all Subtenants."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:21
+msgid "Tenants are isolated environments with unique users, workloads, and Groups"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:22
+msgid "The Master Tenant can share or assign its resources to Subtenants"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:23
+msgid "Subtenants cannot share their resources with other Tenants"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:24
+msgid "Subtenants cannot see resources from other Subtenants"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:25
+msgid ""
+"Subtenants can only access Master Tenant resources that have been set to "
+"Public visibility or specifically assigned to the Subtenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:111
+#: ../../administration/tenants/tenants.rst:30
+msgid "Roles"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:32
+msgid ""
+"There are two Role types in |morpheus|, Tenant Roles and User Roles. "
+"Understanding these Role types is key to effectively administering Role "
+"permissions in |morpheus|. These two Role types are discussed in greater "
+"detail in this section."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:35
+msgid "Tenant Roles"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:37
+msgid ""
+"Tenant Roles set the maximum permission levels for Users in the Tenant. "
+"User Role permissions will not exceed the permissions of the Tenant Role."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:39
+msgid "Tenant Roles set the maximum permissions for a Tenant"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:40
+msgid "User Roles in a Tenant cannot exceed the permissions of the Tenant Role"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:41
+msgid "A Tenant Role can be assigned to one or multiple Tenants"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:42
+msgid ""
+"Tenant Roles determine Cloud access for the Subtenant such that all "
+"Clouds in the Master Tenant which have visibility set to Public will show"
+" as options in the Tenant Role Cloud Access tab"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:43
+msgid ""
+"Only Master Tenant Clouds given access in the Tenant Role will be "
+"accessible in the Subtenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:138
+#: ../../administration/tenants/tenants.rst:45
+#: ../../administration/tenants/tenants.rst:128
+#: ../../administration/tenants/tenants.rst:150
+#: ../../administration/tenants/tenants.rst:183
+msgid "Important"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:45
+msgid ""
+"Tenant Roles cap permissions on all Subtenant User Roles. User Roles can "
+"be created in the Subtenant with lesser permissions than the Tenant Role "
+"allows. Tenant Roles are designed for a Master Tenant Admin to set max "
+"permissions for the Subtenant, and a Subtenant Admin to configure User "
+"Roles inside the Subtenant."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:48
+msgid "User Roles"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:50
+msgid ""
+"User Roles determine feature, Group, and Instance Type access for all "
+"Users. In a multi-Tenant environment, there are two types of User Roles: "
+"Single-Tenant User Roles and Multi-Tenant User Roles."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:52
+msgid ""
+"**Single-Tenant User Roles:** These exist solely in the Tenant they are "
+"created in. All Roles created in a Subtenant will be Single-Tenant User "
+"Roles"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:53
+msgid ""
+"**Multi-Tenant User Roles:** The Master Tenant can create Multi-Tenant "
+"User Roles. These Roles are automatically seeded into Subtenants and can "
+"be assigned to Subtenant Users. Changes to Multi-Tenant User Roles made "
+"in the Master Tenant are propagated to all Subtenants. However, once a "
+"Multi-Tenant User Role is edited inside a Subtenant, it is no longer "
+"linked to the Multi-Tenant User Role and becomes its own unique Role. It "
+"will no longer receive propagated changes."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:23
+#: ../../administration/tenants/configuring_multi_tenancy.rst:38
+#: ../../administration/tenants/configuring_multi_tenancy.rst:73
+#: ../../administration/tenants/configuring_multi_tenancy.rst:113
+#: ../../administration/tenants/configuring_multi_tenancy.rst:133
+#: ../../administration/tenants/configuring_multi_tenancy.rst:214
+#: ../../administration/tenants/configuring_multi_tenancy.rst:227
+#: ../../administration/tenants/tenants.rst:55
+#: ../../administration/tenants/tenants.rst:163
+msgid "Note"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:55
+msgid ""
+"Multi-Tenant User Roles are intended to make Subtenant User Role creation"
+" easier, so Master Tenant Users do not have to re-create the same base "
+"Subtenant Users Roles for every Subtenant. Multi-Tenant User Roles are "
+"not a single Role across Tenants, but more like a template that creates "
+"new Subtenant User Roles that can then be managed in the Sub Tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:7
+#: ../../administration/tenants/tenants.rst:58
+msgid "Tenants"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:60
+msgid ""
+"The Tenants page displays a list of all Tenants. This page enables users "
+"to Create, Edit, and Delete Tenants. The list of Tenants displays the "
+"Tenant Name, Role, Total Instances, Total Users, and the Created Date."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:62
+msgid ""
+"Click the Tenant Name to drill into the Tenant View where you can again "
+"Edit or Delete the Tenant, as well as Create Users, Edit Users, and "
+"Delete Users users belonging to the Tenant."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:65
+msgid "Create Tenants"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:67
+msgid "To Create Tenants:"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:27
+#: ../../administration/tenants/tenants.rst:69
+#: ../../administration/tenants/tenants.rst:94
+#: ../../administration/tenants/tenants.rst:106
+#: ../../administration/tenants/tenants.rst:116
+#: ../../administration/tenants/tenants.rst:134
+#: ../../administration/tenants/tenants.rst:157
+#: ../../administration/tenants/tenants.rst:172
+msgid "Select the Administration link in the navigation bar."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:28
+#: ../../administration/tenants/tenants.rst:70
+#: ../../administration/tenants/tenants.rst:95
+#: ../../administration/tenants/tenants.rst:107
+#: ../../administration/tenants/tenants.rst:117
+#: ../../administration/tenants/tenants.rst:135
+#: ../../administration/tenants/tenants.rst:158
+#: ../../administration/tenants/tenants.rst:173
+msgid "Select the Tenants link in the sub navigation bar."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:71
+msgid "Click the Create Tenant button."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:72
+msgid "From the New Tenant wizard input:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:74
+msgid "Name"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:75
+msgid "Description (optional)"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:76
+msgid "Subdomain"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:77
+msgid ""
+"Parent Tenant: Required for a Subtenant. It selects the Tenant directly "
+"above the new Tenant in the hierarchy and determines which Tenant owns "
+"it. The field is available to a Master Tenant administrator during "
+"creation; it is disabled when editing an existing Tenant. The current "
+"Tenant is used as the initial parent, so the field is not an optional “no"
+" parent” choice for Subtenants."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:78
+msgid "Base Role"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:79
+msgid "Currency"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:81
+msgid ""
+"Within the Advanced Options section, track customer data related to the "
+"Tenant if needed:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:83
+msgid "Account Number"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:84
+msgid "Account Name"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:85
+msgid "Customer Number"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:87
+msgid "Click the :guilabel:`Save Changes`"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:90
+msgid "Edit Tenant"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:92
+msgid "To edit a Tenant:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:96
+#: ../../administration/tenants/tenants.rst:108
+msgid "Click the Edit pencil icon on the row of the Tenant to edit."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:97
+msgid "Edit the Edit Tenant settings."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:100
+msgid "Disabling Tenant"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:102
+msgid ""
+"When disabling a tenant, they are not able to login and cannot be "
+"impersonated by another tenant. However all of their information will "
+"still remain in |morpheus| and they may still receive notifications and "
+"alerts."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:104
+msgid "To disable a Tenant:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:109
+msgid "Uncheck the ``Enabled`` box."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:112
+msgid "Delete Tenant"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:114
+msgid "To delete a Tenant:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:118
+msgid "Click the Delete trashcan icon on the row of the Tenant to delete."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:119
+#: ../../administration/tenants/tenants.rst:176
+msgid "Confirm"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:57
+#: ../../administration/tenants/tenants.rst:122
+msgid "Tenant Users"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:124
+msgid ""
+"The Tenant View displays a list of users belonging to the Tenant and "
+"their Name, Username, Email, and Role."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:126
+msgid "From this page: Create, Edit, and Delete users within the Tenant."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:128
+#: ../../administration/tenants/tenants.rst:150
+msgid ""
+"In versions 3.1.1 and 2.12.5 and later, a Multi-Tenant User Role must be "
+"created prior to adding Subtenant Users or the User will not save. In "
+"previous versions a default Multi-Tenant Role was seeded. Due to customer"
+" requests, the seeded role was removed and a Multi-Tenant Role must be "
+"created by the Master Tenant for Subtenant Users."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:131
+msgid "Create Tenant User"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:132
+msgid "To create a Tenant User:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:136
+msgid ""
+"Click the Tenant Name on the row of the Tenant where the user will be "
+"added."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:137
+msgid "Click :guilabel:`+ ADD USER`"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:138
+msgid "From the New User wizard, input the fields below:"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:63
+#: ../../administration/tenants/tenants.rst:140
+msgid "First Name"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:64
+#: ../../administration/tenants/tenants.rst:141
+msgid "Last Name"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:65
+#: ../../administration/tenants/tenants.rst:142
+msgid "Username"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:143
+msgid "Email address"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:144
+msgid "Role (to be inherited by the user)"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:68
+#: ../../administration/tenants/tenants.rst:145
+msgid "Password"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:146
+msgid "Any default Windows or Linux credentials"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:148
+#: ../../administration/tenants/tenants.rst:165
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:153
+msgid "Edit a Tenant User"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:155
+msgid "To edit a User:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:159
+msgid "Click the specific Tenant name from the row of available Tenants."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:160
+msgid "Click the Edit pencil icon for your selected Tenant."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:161
+msgid "Edit User information"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:163
+msgid ""
+"Name, Username, Passwords and e-mail addresses cannot be edited on Users "
+"created from Identity Source Integrations."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:168
+msgid "Delete Tenant User"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:170
+msgid "To delete a Tenant User:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:174
+msgid "Click the Tenant Name from the row for the Tenant containing the user."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:175
+msgid "Click the Delete trashcan icon of the row of the user to delete."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:179
+msgid "Subtenant User Login"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:181
+msgid ""
+"Subtenant Users can have the same Username as the User on the Master "
+"Tenant or any other Tenant. Subtenant Users will now have to login using "
+"the subdomain prefix."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:183
+msgid ""
+"Subtenant users will no longer be able to login from the main login page "
+"without specifying their subdomain."
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:186
+msgid "Example:"
+msgstr ""
+
+#: ../../administration/tenants/tenants.rst:187
+msgid ""
+"I have a username ``subuser`` that belongs to a tenant with the subdomain"
+" ``subaccount``. When logging in from the main login url, I would now "
+"need to enter in: ``subaccount\\subuser``"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:2
+msgid "Configuring Tenants and Resources for Multi-Tenancy"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:4
+msgid ""
+"A very common scenario for Managed Service Providers is the need to "
+"provide access to resources on a customer by customer basis. Several "
+"administrative features are available in |morpheus| to ensure customer "
+"resources are properly scoped and isolated. With its built multi-tenancy "
+"capabilities and white label support, managed service providers have a "
+"wide range of capabilities when it comes to managing customer Tenants and"
+" users."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:9
+msgid "There are essentially two types of Tenants in |morpheus|"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:11
+msgid "Master Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:12
+msgid "Sub Tenants"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:14
+msgid ""
+"During the initial setup of a |morpheus| Appliance, the Master Tenant is "
+"created. All Tenants created in addition to this Master Tenant are sub-"
+"Tenants. There can only be one Master Tenant, and sub-Tenants cannot "
+"become the Master Tenant. The delineation between the Master Tenant and "
+"sub-Tenants is important to understand for properly scoping resources "
+"across Tenants."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:17
+msgid "Creating Tenants"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:19
+msgid ""
+"The Master Tenant is created during the initial appliance setup. "
+"Additional sub-Tenants can be created in the |AdmTen| section."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:21
+msgid ""
+"The Tenants page displays a list of all Tenants. This page enables users "
+"to: Create, Edit, and Delete Tenants. The list of Tenants displays the "
+"Tenant Name, Role, Total Instances, Total Users, Status (active or "
+"inactive) and the Created Date. Click the Tenant Name to drill into the "
+"Tenant View where you can edit or delete the Tenant, as well as create, "
+"edit and delete users belonging to the Tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:23
+msgid ""
+"At least one Tenant in addition to the Master Tenant is required to scope"
+" resources across Tenants."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:25
+msgid "To create a new sub-Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:29
+msgid "Click the :guilabel:`+Create Tenant` button."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:30
+msgid ""
+"From the New Tenant wizard input * Name (Required) * Description * Base "
+"Role * Currency (for pricing)"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:36
+msgid ""
+"The Base Role defines a role set from which all roles created within the "
+"Tenant will inherit."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:38
+msgid ""
+"In prior versions, we could set Limits when creating a Subtenant. These "
+"could restrict the amount of storage, memory, and CPUs that can be "
+"collectively provisioned by all users in the Tenant. In more recent "
+"versions, this functionality has been rolled into Policies (|AdmPol|). "
+"When creating a Policy, we are able to specify a Tenant to which the "
+"Policy should apply."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:40
+msgid "Click the :guilabel:`Save Changes` button."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:42
+msgid "The Create Tenant dialog box is shown"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:42
+msgid ".. image:: /images/advanced/tenant/createtenant.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:48
+msgid "Viewing Tenants"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:50
+msgid ""
+"To View an individual Tenant page, select the Tenant name from the main "
+"Tenants section."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:52
+msgid ".. image:: /images/advanced/tenant/viewtenant.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:54
+msgid ""
+"From inside the Tenant view, we can edit or delete the Tenant, as well as"
+" click into any of the Tenant's users."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:59
+msgid "To create a new user within the Tenant:"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:61
+msgid ""
+"Click the :guilabel:`CREATE USER` button, then from the New User wizard "
+"input the fields below:"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:66
+msgid "Email"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:67
+msgid "Role"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:69
+msgid "Confirm Password"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:71
+msgid "Click :guilabel:`Save Changes`."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:73
+msgid ""
+"Users are specific to each Tenant. Users created in the Master Tenant or "
+"other sub-Tenants will only have access to the Tenant they are created "
+"in."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:76
+msgid "Impersonate Tenant User"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:78
+msgid ""
+"|morpheus| allows admin users in the Master Tenant to impersonate any "
+"user in the Subtenants to see the application as if they are that user. "
+"To impersonate a user, you must be logged in as a user with the "
+"\"Impersonate User\" feature enabled in the assigned role."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:80
+msgid ""
+"From inside a Tenant detail page (containing the list of that Tenant's "
+"users), and in the specific user's ACTIONS drop down, select "
+"\"Impersonate\"."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:82
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-9583a.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:84
+msgid ""
+"This will log you in as that user in their respective Tenant. To log out "
+"of the impersonate users Tenant, select the username in the header, and "
+"then select \"Quit Impersonating\""
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:86
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-d229b.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:89
+msgid "Resources"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:90
+msgid ""
+"In the Master Tenant, resources can be configured with private or public "
+"visibility:"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:92
+msgid "Private Visibility: Only available to the assigned Tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:93
+msgid ""
+"Public Visibility (option available in Master Tenant only): Available "
+"across all Tenants"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:95
+msgid ""
+"Resources in the Master Tenant can also be assigned directly to "
+"Subtenants. When a resource is assigned to a Subtenant, it is only "
+"available for that Subtenant, and its visibility is automatically set to "
+"private. Public visibility is not an option for any resource assigned to "
+"or created in a Subtenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:97
+msgid ""
+"From the Master Tenant, the following resources can be configured for "
+"public visibility across all Tenants, or assigned to individual sub-"
+"Tenants"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:99
+msgid "Clouds"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:100
+msgid "Hosts"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:101
+msgid "Virtual Machines"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:102
+msgid "Networks"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:103
+msgid "Datastores"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:104
+msgid "Resource Pools"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:105
+msgid "Folders"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:106
+msgid "Virtual Images"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:107
+msgid "Library Instance Types"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:108
+msgid "Pricing"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:109
+msgid "Policies"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:110
+msgid "Workflows"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:113
+msgid ""
+"Virtual Image Blueprints can be made available to multiple select Tenants"
+" when set to private."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:116
+msgid "Cloud Visibility & Assignment"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:118
+msgid ""
+"To set the visibility of a Cloud to Public (shared across all Tenants) or"
+" Private (only available to the assigned Tenant):"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:120
+msgid "Navigate to Infrastructure > Clouds"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:121
+#: ../../administration/tenants/configuring_multi_tenancy.rst:145
+msgid ""
+"Select either the pencil/edit icon on the end of the cloud row, or click "
+"the name of the cloud and select \"Edit\" in the cloud page."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:122
+#: ../../administration/tenants/configuring_multi_tenancy.rst:168
+#: ../../administration/tenants/configuring_multi_tenancy.rst:190
+#: ../../administration/tenants/configuring_multi_tenancy.rst:211
+msgid "From the \"Visibility\" drop down, select either \"Public\" or \"Private\""
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:123
+#: ../../administration/tenants/configuring_multi_tenancy.rst:147
+msgid "Select :guilabel:`Save Changes` in the footer of the Edit Cloud modal."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:125
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-349e2.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:127
+msgid ""
+"When a cloud is set to Public visibility, it is available to be added to "
+"Subtenants. All Subtenants created after a Master Tenant cloud is set to "
+"public will automatically have clouds with public visibility added, and a"
+" group will be created for each available cloud matching the cloud name "
+"in the new Subtenant(s)."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:129
+msgid ""
+"For Tenants created prior to a Master Tenant cloud being set to public "
+"visibility, the Subtenant will have the option to add that cloud but it "
+"will not automatically be added."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:131
+msgid ""
+"While the cloud will be available for Subtenants, the resources available"
+" in that cloud to the Subtenant(s) depends on the visibility or "
+"assignment of the individual resources."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:133
+msgid ""
+"A Subtenant user must have sufficient role permissions and cloud access "
+"to add publicly available clouds. Master Tenant clouds settings cannot be"
+" edited from Subtenants."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:136
+msgid "Assign a Cloud to an Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:138
+msgid ""
+"When assigning a Cloud to a Tenant, all resources for that Cloud will "
+"only be available to the assigned Tenant. If a cloud is created in the "
+"Master Tenant and assigned to a sub-Tenant, it will no longer be "
+"available for use by the Master Tenant or any other sub-Tenants, although"
+" it can be assigned back to the Master Tenant, or to another sub-Tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:140
+msgid ""
+"It may be preferable for service providers to share or assign their cloud"
+" resources, such as specific hosts, networks, resources pools and "
+"datastores, across sub-Tenants, rather than an entire cloud."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:142
+msgid "**To assign a cloud from the Master Tenant to a Sub-Tenant**"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:144
+msgid "Navigate to Infrastructure, Clouds"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:146
+msgid ""
+"From the \"Tenant\" drop down, select the Tenant to assign the cloud to. "
+"The visibility will automatically be set to \"Private\" when a cloud is "
+"assigned to a sub-Tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:149
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-c907d.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:151
+msgid ""
+"When a cloud is assigned to a sub-Tenant, or assigned to the Master "
+"Tenant with private visibility, that cloud and all of its resources are "
+"only available to the assigned Tenant. The Master Tenant still maintains "
+"control and visibility, and can edit the cloud settings or re-assign the "
+"cloud."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:154
+msgid "Individual Resource Visibility & Assignment"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:156
+msgid ""
+"Similar to clouds, individual resources from the Master Tenant can be set"
+" to public and available to sub-Tenants, or assigned to sub-Tenants."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:158
+msgid ""
+"By default, any host, virtual machine, bare metal server, network, "
+"resource pool, datastore or blueprint added, created or inventoried by an"
+" Tenant is assigned to that Tenant. If these resources are in the Master "
+"Tenant, they can be assigned to sub Tenants. Assigning one of these "
+"resources will make it unavailable to the Master Tenant, but it will "
+"still be visible and editable by the Master Tenant. This allows Master "
+"Tenant resources to be isolated for use by sub-Tenants while still under "
+"the control of the Master Tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:160
+msgid ""
+"Resources assigned to sub-Tenants from the Master Tenant will be visible "
+"and available for use by that sub-Tenant, however they cannot be edited "
+"or re-assigned by the sub-tenant."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:162
+msgid ""
+"**Set the Visibility of a Host, Virtual Machine or Bare metal Server to "
+"Public or Private**"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:164
+#: ../../administration/tenants/configuring_multi_tenancy.rst:175
+msgid "From the Master Tenant, navigate to Infrastructure, Hosts"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:165
+#: ../../administration/tenants/configuring_multi_tenancy.rst:176
+msgid "Select either the Hosts, Virtual Machines or Bare Metal tab"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:166
+#: ../../administration/tenants/configuring_multi_tenancy.rst:177
+msgid "Click the name of the resource"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:167
+msgid "Select :guilabel:`Edit` in the resource page to bring up the config modal"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:169
+msgid "Select :guilabel:`Save Changes`"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:171
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-d738d.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:173
+msgid "Assigning a Host, Virtual Machine, or Bare Metal server to an Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:178
+msgid ""
+"From the \"Actions\" dropdown in the the resource page, select Assign "
+"Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:179
+msgid "In the Assign Tenant modal, select the Tenant to assign the resource to."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:180
+msgid "Select :guilabel:`Execute` in the modal"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:182
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-3c39f.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:184
+msgid ""
+"The resource will now be assigned and available for use by the assigned "
+"Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain "
+"visibility and control."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:186
+msgid "**Set the Visibility of a Network to Public or Private**"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:188
+#: ../../administration/tenants/configuring_multi_tenancy.rst:197
+msgid "From the Master Tenant, navigate to Infrastructure, Network"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:189
+#: ../../administration/tenants/configuring_multi_tenancy.rst:198
+msgid ""
+"Select either the pencil/edit icon in the network row, or click the name "
+"of the network and select \"Edit\" in the network page."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:191
+#: ../../administration/tenants/configuring_multi_tenancy.rst:216
+msgid "Select :guilabel:`Save Changes` in the modal"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:193
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-bc333.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:195
+msgid "**Assign a Network to an Tenant**"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:199
+msgid "From the \"Tenant\" drop down, select an Tenant to assign the network to."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:200
+msgid "Select :guilabel:`Save Changes` in the lower the modal"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:202
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-9f15c.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:204
+msgid ""
+"The Network will now be assigned and available for use by the assigned "
+"Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain "
+"visibility and control."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:206
+msgid "Set the Visibility or assign a datastore to an Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:208
+msgid "From the Master Tenant, navigate to Infrastructure, Storage"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:209
+msgid "Select the \"Data Stores\" tab"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:210
+msgid "Select Edit from the \"Actions\" dropdown in the datastores row"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:212
+msgid ""
+"From the \"Tenant\" drop down, select the Tenant to assign the datastore "
+"to."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:214
+msgid ""
+"If assigned to a sub-tenant, the visibility will be automatically set to "
+"private."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:218
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-1e978.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:220
+msgid "**Set the Visibility or assign a Virtual Image to an Tenant**"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:222
+msgid "From the Master Tenant, navigate to Provisioning, Virtual Images"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:223
+msgid "Select Edit from the \"Actions\" dropdown in the Virtual Images row"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:224
+msgid ""
+"From the \"Visibility\" drop down, select either \"Public\" or "
+"\"Private\". Public will share the"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:225
+msgid ""
+"From the \"Tenant\" field, start typing the name of the Tenant to assign "
+"the Virtual Image to. Matching Tenants will populate, then select the "
+"Tenant to add."
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:227
+msgid ""
+"Virtual Images can be set to Private, but accessible to more that one "
+"Tenant"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:229
+msgid ""
+"#. Repeat step 4 for all Tenants requiring access to the virtual image. "
+".. To remove access for an Tenant, click the \"x\" next to the Tenant "
+"name #. Select :guilabel:`Save Changes` in the modal"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:233
+msgid ".. image:: /images/advanced/configuring_multi_tenancy-d9abe.png"
+msgstr ""
+
+#: ../../administration/tenants/configuring_multi_tenancy.rst:235
+msgid "The Virtual Image will now be available for use by the assigned Tenants."
+msgstr ""
+

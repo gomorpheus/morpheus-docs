@@ -1,0 +1,479 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/vdi/allocations.rst:4
+msgid "VDI Allocations"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:9
+msgid ""
+"VDI Allocations represent the assignment of a VDI Pool instance to a "
+"specific user. When a user requests a virtual desktop session, |morpheus|"
+" creates an allocation that binds an available Instance from the pool to "
+"that user for the duration of their session (non-persistent pools) or "
+"indefinitely (persistent pools)."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:11
+msgid ""
+"Allocations are managed automatically by |morpheus| but can be monitored "
+"and manually managed by administrators."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:14
+msgid "Allocation Lifecycle"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:16
+msgid "Each allocation progresses through the following statuses:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:22
+msgid "Status"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:23
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:24
+msgid "Next State"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:25
+msgid "preparing"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:26
+msgid "Instance is being provisioned or started for the user"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:27
+msgid "available / failed"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:28
+msgid "available"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:29
+msgid "Instance is ready and waiting for user connection"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:30
+#: ../../infrastructure/vdi/allocations.rst:31
+#: ../../infrastructure/vdi/allocations.rst:36
+msgid "reserved"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:32
+msgid "Instance is actively assigned to a user session"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:33
+msgid "releasing / shutdown"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:34
+msgid "starting"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:35
+msgid "Instance is being powered on (persistent pools, returning user)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:37
+msgid "releasing"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:38
+msgid "Session has ended; instance is being released back to the pool"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:39
+msgid "(destroyed for non-persistent)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:40
+msgid "shutdown"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:41
+msgid "Instance has been shut down (persistent pools after timeout)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:42
+msgid "starting (on next request)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:43
+msgid "repossess"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:44
+msgid "Allocation is being forcibly reclaimed"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:45
+msgid "(destroyed)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:46
+msgid "failed"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:47
+msgid "Instance failed to provision or start"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:48
+#: ../../infrastructure/vdi/allocations.rst:51
+msgid "(requires admin intervention)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:49
+msgid "unknown"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:50
+msgid "State cannot be determined"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:54
+msgid "Allocation Behavior by Pool Type"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:57
+msgid "Non-Persistent Pools"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:59
+msgid "When a user requests a desktop, an available allocation is assigned"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:60
+msgid ""
+"When the lease timeout expires after disconnect, the Instance is "
+"**destroyed**"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:61
+msgid "A new Instance is provisioned to maintain the pool's minimum size"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:62
+msgid "User data is not preserved between sessions"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:65
+msgid "Persistent Pools"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:67
+msgid ""
+"On first request, a new allocation is created and bound to the user "
+"permanently"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:68
+msgid ""
+"When the lease timeout expires, the Instance is **shut down** (not "
+"destroyed)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:69
+msgid "On next request, the same Instance is powered back on"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:70
+msgid "User data, installed applications, and customizations are preserved"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:73
+msgid "Viewing Allocations"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:75
+msgid "Administrators can view allocations through:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:78
+msgid "Via VDI Pool Detail"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:80
+msgid "Navigate to ``Tools > VDI Pools``"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:81
+msgid "Select a pool"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:82
+msgid "View the Allocations tab showing all current allocations for that pool"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:85
+msgid "Via API"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:87
+msgid ""
+"``GET /api/vdi-allocations`` returns all allocations with filtering "
+"support:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:89
+msgid "Filter by pool: ``?vdiPoolId=<id>``"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:90
+msgid "Filter by user: ``?userId=<id>``"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:91
+msgid "Filter by status: ``?status=reserved``"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:94
+msgid "Allocation Fields"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:96
+msgid "Each allocation record contains:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:98
+msgid "**Pool** — The parent VDI Pool"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:99
+msgid "**Instance** — The assigned |morpheus| Instance"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:100
+msgid "**User** — The assigned user (null if unassigned/available)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:101
+msgid "**Status** — Current allocation status"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:102
+msgid "**Persistent** — Whether this is a persistent allocation"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:103
+msgid "**Recyclable** — Whether the allocation can be recycled (reused)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:104
+msgid "**Release Date** — When the allocation will be released (after timeout)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:105
+msgid "**Last Reserved** — Timestamp of last user assignment"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:106
+msgid "**Sessions** — Active VDI sessions on this allocation"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:109
+msgid "Lease Timeout Behavior"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:111
+msgid ""
+"The lease timeout controls when allocations are released after user "
+"disconnect:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:113
+msgid ""
+"**Non-persistent pools:** Recommended timeout of ~10 minutes. After "
+"expiry, the VM is destroyed."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:114
+msgid ""
+"**Persistent pools:** Recommended timeout of ~1 hour. After expiry, the "
+"VM is shut down."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:116
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:116
+msgid ""
+"Lease timeouts auto-extend for as long as the user is logged into or "
+"browsing any area of the |morpheus| application. Once the user closes "
+"their browser or logs out, timeouts stop auto-extending."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:119
+msgid "Pool Sizing and Allocations"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:121
+msgid "Allocations interact with pool sizing parameters:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:123
+msgid ""
+"**Minimum Idle** — Minimum number of available (unassigned) allocations "
+"to maintain. |morpheus| proactively provisions instances to meet this "
+"threshold."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:124
+msgid ""
+"**Initial Pool Size** — Number of instances provisioned when the pool is "
+"created."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:125
+msgid ""
+"**Maximum Pool Size** — Hard cap on total allocations (reserved + "
+"available)."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:127
+msgid ""
+"When an allocation is released (non-persistent), the pool controller "
+"checks if the available count has dropped below the minimum idle "
+"threshold and provisions replacements."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:130
+msgid "Managing Allocations"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:133
+msgid "Releasing an Allocation"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:135
+msgid "Administrators can force-release an allocation:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:137
+msgid "This disconnects any active user session"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:138
+msgid "For non-persistent pools: triggers instance destruction"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:139
+msgid "For persistent pools: triggers instance shutdown"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:142
+msgid "Viewing Session Details"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:144
+msgid ""
+"Each allocation tracks its VDI sessions (``VdiSession`` records) which "
+"contain:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:146
+msgid "Session start/end times"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:147
+msgid "Connection protocol (RDP, VNC)"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:148
+msgid "Client information"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:149
+msgid "Session duration"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:152
+msgid "Local User Creation"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:154
+msgid ""
+"The ``localUserCreated`` field tracks whether |morpheus| has created the "
+"user's local account on the VDI desktop. This ensures:"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:156
+msgid "Windows domain credentials or local accounts are configured on first use"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:157
+msgid "Subsequent sessions reuse the existing local account"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:158
+msgid "User profiles are available immediately on connection"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:161
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:163
+msgid ""
+"**Allocation stuck in \"preparing\":** Check the Instance provisioning "
+"status in ``Provisioning > Instances``. The underlying VM may have failed"
+" to provision."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:164
+msgid ""
+"**Allocation stuck in \"releasing\":** The Instance destruction may be "
+"failing. Check cloud connectivity and VM power state."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:165
+msgid ""
+"**No available allocations:** Pool may be at maximum capacity or minimum "
+"idle threshold is set too low for demand."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:166
+msgid ""
+"**User cannot connect:** Verify the allocation status is \"reserved\" and"
+" the Instance is powered on. Check Guacamole connectivity."
+msgstr ""
+
+#: ../../infrastructure/vdi/allocations.rst:167
+msgid ""
+"**Persistent allocation not preserving data:** Ensure the pool type is "
+"set to Persistent and the Instance is shutting down (not being "
+"destroyed)."
+msgstr ""
+

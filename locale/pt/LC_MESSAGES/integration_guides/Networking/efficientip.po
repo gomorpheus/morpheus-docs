@@ -1,0 +1,321 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Networking/efficientip.rst:2
+msgid "EfficientIP SOLIDserver"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:5
+msgid "Features"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:7
+msgid "Network Pools synchronization"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:8
+msgid "DNS Zone & Zone record synchronization"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:9
+msgid "Host Record synchronization"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:10
+msgid "Total & Free IP status bar for networks"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:11
+msgid ""
+"Network Grid and List view with IP Status and records, date and user "
+"tracking"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:12
+msgid ""
+"Automatic and manual IP Reservations, DNS A/PTR record creation and "
+"deletion"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:15
+msgid "Required Role Permissions"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:17
+msgid "**Add, edit and remove EfficientIP SOLIDserver integrations**"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:19
+msgid "Infrastructure: Network Integration: Full"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:21
+msgid "**View and edit synced IP pools**"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:23
+msgid "Infrastructure: Network IP Pools: Full"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:25
+msgid "**View networks and add synced IP pools to networks**"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:27
+msgid "Infrastructure: Networks: Full or Group"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:29
+msgid "**View and edit synced DNS zones, including creation of zone records**"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:31
+msgid "Infrastructure: Network Domains: Full"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:35
+msgid "Adding EfficientIP SOLIDserver Integration"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:37
+msgid ""
+"The EfficientIP SOLIDserver integration type is a plugin that must be "
+"added to |morpheus| before the option to create one will be available. In"
+" the future, users will be able to download this and other plugin types "
+"from a centralized marketplace. For now, the plugin jar file can be "
+"compiled from a public Github repository or can be requested from your "
+"account team. See the `Plugins Section "
+"<https://docs.morpheusdata.com/en/latest/administration/integrations/integrations.html#plugins>`_"
+" of |morpheus| documentation for more on the process of uploading the "
+"plugin JAR to your appliance."
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:39
+msgid ""
+"Navigate to :menuselection:`Infrastructure --> Network --> Integrations` "
+"and click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:40
+msgid "Under the IPAM section, select EfficientIP SOLIDserver"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:41
+#: ../../integration_guides/Networking/efficientip.rst:75
+#: ../../integration_guides/Networking/efficientip.rst:92
+msgid "Configure the following:"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:43
+msgid "**NAME:** Friendly name for this EfficientIP SOLIDserver integration"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:44
+msgid ""
+"**ENABLED:** When checked, this integration will be accessible in "
+"|morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:45
+msgid "**API URL:** The FQDN for the EfficientIP server, not a specific path"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:46
+msgid ""
+"**USERNAME:** The username for an EfficientIP service account. Bear in "
+"mind this account will need API access as well as the rights to work with"
+" pools, zones, and records you wish to consume from |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:47
+msgid "**PASSWORD:** The password for the above named account"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:48
+msgid ""
+"**THROTTLE RATE:** In larger environments, it may be necessary to "
+"introduce a rate limit on calls to the EfficientIP API from |morpheus|. "
+"If the EfficientIP console UI becomes less responsive than it was prior "
+"to integration with |morpheus|, it may be due to a high number of API "
+"calls in the background from |morpheus|. In such a case, start with a "
+"50ms throttle rate and adjust accordingly depending on performance"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:49
+msgid ""
+"**DISABLE SSL SNI VERIFICATION:** If necessary, disable the check for a "
+"valid SSL certificate on the EfficientIP server"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:50
+msgid ""
+"**INVENTORY EXISTING:** When checked, used IP space will be continually "
+"synced between |morpheus| and EfficientIP. If left unchecked, only IP "
+"space claimed (and freed) from |morpheus| is shown on the detail page for"
+" the EfficientIP pool"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:52
+#: ../../integration_guides/Networking/efficientip.rst:66
+#: ../../integration_guides/Networking/efficientip.rst:82
+#: ../../integration_guides/Networking/efficientip.rst:99
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:54
+msgid ""
+"Once saved, |morpheus| will begin to onboard data from EfficientIP. "
+"EfficientIP networks are viewable in :menuselection:`Infrastructure --> "
+"Network --> IP Pools` under the IP Pools tab. Depending on EfficientIP "
+"configuration, you may see up to two \"types\" of Network Pools sync from"
+" EfficientIP, SOLIDserver Subnet and SOLIDserver Pool. In EfficientIP, "
+"\"pools\" are an optional construct that subdivides subnets. In "
+"|morpheus|, both constructs are synced which gives an additional layer of"
+" organization when linking Network Pools with Networks (described in the "
+"next section) for organizations that use the pools construct. Within a "
+"selected IP Pool, host records will also sync and can be viewed in a grid"
+" or list layout. DNS Zones are synced under "
+":menuselection:`Infrastructure --> Network --> Domains`. By clicking into"
+" the domain, DNS Zone records can be viewed."
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:56
+msgid ".. image:: /images/integration_guides/networking/efficientip/pool.png"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:59
+msgid "Adding IP Pools to Networks"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:61
+msgid ""
+"At provision time, |morpheus| can automatically assign the next available"
+" IP address in an EfficientIP pool and create the corresponding DNS "
+"records. |morpheus| can also clean up DNS records and free up IP address "
+"space on teardown. In order to enable this functionality, add an "
+"EfficientIP IP Pool as the Network Pool for an existing network (or "
+"networks)."
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:63
+msgid "Navigate to :menuselection:`Infrastructure --> Network --> Networks`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:64
+msgid ""
+"Select a network to view the network detail page and click "
+":guilabel:`EDIT`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:65
+msgid ""
+"In the typeahead field for NETWORK POOL, search for and select the "
+"EfficientIP pool"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:68
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:68
+msgid ""
+"Gateway, DNS and CIDR must be populated for static/pool IP assignment. If"
+" desired, select \"Allow IP Override\" to allow selecting between DHCP, "
+"Static entry, and pool selection at provision time. Finally, deselect "
+"\"DHCP server\" if a DHCP server will not be used on the network (only "
+"static and/or IP Pool assignment)."
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:71
+msgid "Creating Host Records"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:73
+msgid ""
+"Select an EfficientIP Network Pool from :menuselection:`Infrastructure "
+"--> Network --> IP Pools`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:74
+msgid "Select :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:77
+msgid "**HOSTNAME:** The hostname for the record"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:78
+msgid "**IP ADDRESS:** The IP address for the host record"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:79
+msgid "**DOMAIN:** Select an EfficientIP zone"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:80
+msgid ""
+"**CREATE DNS RECORDS:** If selected, DNS A and PTR records will be "
+"created in EfficientIP"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:84
+msgid ""
+".. image:: "
+"/images/integration_guides/networking/efficientip/createhost.png"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:88
+msgid "Creating Zone Records"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:90
+msgid ""
+"Select an EfficientIP zone from the domains list at "
+":menuselection:`Infrastructure --> Network --> Domains`"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:91
+msgid "Click :guilabel:`+ ADD` on the Zone Records tab"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:94
+msgid "**NAME:** The name for the records (hostname)"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:95
+msgid "**TYPE:** The record type: A, AAAA, CNAME, MX, NS, PTR, SOA, or TXT"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:96
+msgid "**CONTENT:** The content of the record, such as IP address or A record"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:97
+msgid "**TTL:** The time to live value"
+msgstr ""
+
+#: ../../integration_guides/Networking/efficientip.rst:101
+msgid ""
+".. image:: "
+"/images/integration_guides/networking/efficientip/createzone.png"
+msgstr ""
+

@@ -1,0 +1,4167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:2
+msgid "HPE Bare Metal (BMaaS)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:7
+msgid ""
+"HPE Bare-Metal-as-a-Service (BMaaS) for |morpheus| Enterprise extends "
+"hybrid cloud management capabilities to HPE ProLiant physical servers. "
+"This integration allows the |morpheus| platform to discover, provision, "
+"and manage these servers as first-class resources. Additionally, HPE "
+"BMaaS Cloud integrates HPE ProLiant bare-metal infrastructure into cloud "
+"environments to enable cloud-based provisioning and lifecycle management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:9
+msgid ""
+"HPE BMaaS manages the end-to-end server lifecycle, including hardware "
+"discovery, bare-metal provisioning, operating system deployment, "
+"monitoring, and metering. The |morpheus| interface centrally orchestrates"
+" these tasks. This unified approach enables organizations to manage "
+"physical infrastructure, virtual machines, and cloud resources using "
+"consistent workflows, policies, and governance controls."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:12
+msgid "Features"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:14
+msgid ""
+"**Automated Server Discovery** - Automatically imports and discovers HPE "
+"ProLiant servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:15
+msgid ""
+"**Bare-Metal Provisioning** - Provisions hardware using custom or pre-"
+"configured OS images"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:16
+msgid ""
+"**Comprehensive OS Deployment** - Deploys Windows and Linux with "
+"unattended installations and customizable boot parameters"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:17
+msgid ""
+"**Lifecycle Management** - Manages firmware and drivers using the HPE "
+"Service Pack for ProLiant (SPP)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:18
+msgid ""
+"**Flexible Networking** - Supports both unmanaged and managed network "
+"integrations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:19
+msgid ""
+"**Metering and Billing** - Maps discovered hardware to service plans to "
+"align metering with billing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:20
+msgid ""
+"**Logical Organization** - Organizes resources into Bare Metal Clouds and"
+" Resource Pools to support multi-site environments and scalable "
+"infrastructure segmentation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/hpe_bare_metal.rst:22
+msgid ""
+"HPE BMaaS improves operational visibility and server lifecycle control. "
+"It offers a scalable, automated approach to manage physical "
+"infrastructure across both greenfield (new) and brownfield (existing) "
+"environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:2
+msgid "Adding HPE BMaaS Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:5
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:73
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:83
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:8
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:7
+msgid ""
+"This procedure describes how to integrate HPE BMaaS with your |morpheus| "
+"Enterprise environment."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:10
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:5
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:5
+msgid "About this task"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:12
+msgid "To install the **HPE BMaaS** plugin, perform the following steps:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:14
+msgid ""
+"Log in to the HPE |morpheus| Enterprise Software web interface using your"
+" administrator credentials."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:15
+msgid "Navigate to :menuselection:`Administration --> Integrations`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:16
+msgid "Select the Plugins tab and click :guilabel:`Add` button."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:17
+msgid ""
+"Drag the HPE BMaaS ``JAR`` file into the :guilabel:`Drop Files Here` "
+"area, or click :guilabel:`Add File` to select it manually."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:18
+msgid "Click :guilabel:`Upload`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/adding_integration.rst:20
+msgid "After a successful upload, HPE BMaaS is available for use."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:2
+msgid "Creating an HPE BMaaS Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:7
+msgid ""
+"Creating an HPE BMaaS Cloud integrates physical infrastructure into the "
+"|morpheus| management plane, establishing a logical boundary for bare-"
+"metal resources to enable group-based policies and proxy configurations. "
+"This setup allows for onboarding HPE ProLiant servers for automated "
+"provisioning and lifecycle management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:9
+msgid ""
+"To create an **HPE BMaaS Cloud** in |morpheus| for HPE ProLiant bare-"
+"metal operations, follow this procedure:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:12
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:10
+msgid "Procedure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:14
+msgid ""
+"Navigate to :menuselection:`Infrastructure --> Clouds` in the |morpheus| "
+"interface."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:15
+msgid "Click the :guilabel:`+ Add` button."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:16
+msgid ""
+"Locate and select the HPE BMaaS Cloud type as **HPE Bare Metal (BMaaS)**,"
+" and then click :guilabel:`Next`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:17
+msgid ""
+"Enter the name, code, Labels, Location, and complete any additional "
+"required details for the cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:18
+msgid ""
+"(Optional) In :guilabel:`Provisioning Command`, select a Proxy for "
+"provisioned bare metal instances if required, then click "
+":guilabel:`Next`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:19
+msgid "For the group, you may either select **Use Existing** or **Create New**:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:21
+msgid ""
+"To use an existing group, choose :guilabel:`Use Existing` and select the "
+"desired group from the drop-down list."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:22
+msgid ""
+"To create a new group, select :guilabel:`Create New` and enter a group "
+"name."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:24
+msgid "Click :guilabel:`Complete` to finish creating the HPE BMaaS Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/creating_cloud.rst:26
+msgid ""
+"After completing these steps, the HPE BMaaS Cloud appears in the "
+"Infrastructure > Clouds list and is ready to have bare-metal servers "
+"imported."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:380
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:2
+msgid "Importing HPE ProLiant Bare Metal Servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:7
+msgid ""
+"Perform the following procedure to import HPE ProLiant Bare Metal Servers"
+" into |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:12
+msgid ""
+"Navigate to :menuselection:`Infrastructure --> Compute`, then select the "
+"**Bare Metal** tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:13
+msgid "Click the :guilabel:`+ ADD` button and select **HPE Bare Metal Import**."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:14
+msgid "Select the target HPE BMaaS Cloud from the drop-down list."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:15
+msgid "Configure the import settings:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:17
+msgid ""
+"**iLO IP Range** - Specify the iLO IP address range to scan for HPE "
+"ProLiant servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:18
+msgid "**Credentials** - Provide the iLO credentials for server discovery"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:20
+msgid "Click :guilabel:`Import` to begin the server discovery process."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/importing_servers.rst:22
+msgid ""
+"After successful import, the discovered HPE ProLiant servers appear in "
+"the Bare Metal tab and are available for provisioning through |morpheus|."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:2
+msgid "Compute Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:4
+msgid ""
+"The topic section describes how HPE |morpheus| Enterprise orchestrates "
+"on-premises and HPE BMaaS Cloud resources. It covers the end-to-end "
+"lifecycle for physical servers, including installation, cloud "
+"configuration, on-boarding, and workload migration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:6
+msgid "Administrators perform the following tasks:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:7
+msgid "Define a Bare Metal Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:10
+msgid "Configure unmanaged networks and resource pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:13
+msgid "Import"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:14
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:22
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:396
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:448
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:588
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:12
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:17
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:22
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:48
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:61
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:67
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:62
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:74
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:118
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:173
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:180
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:66
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:79
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:96
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:109
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:254
+msgid "HPE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:15
+msgid "ProLiant servers for centralized visibility"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:18
+msgid "Manage greenfield (new) and brownfield (existing) server deployment"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:21
+msgid "Convert Pre-Provisioned servers into managed"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:23
+msgid "Morpheus instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:25
+msgid ""
+"Administrators use these procedures to enable consistent provisioning, "
+"lifecycle management, and governance for HPE ProLiant infrastructure "
+"within HPE Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:28
+msgid "Creating Resource Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:30
+msgid ""
+"This section describes how to create a resource pool within your HPE "
+"ProLiant Bare Metal Cloud in Morpheus. Resource pools help you organize "
+"and allocate servers for provisioning and management."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:33
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:209
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:386
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:437
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:569
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:630
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:100
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:131
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:64
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:120
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:175
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:68
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:98
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:138
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:166
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:187
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:210
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:247
+msgid "Navigate to"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:34
+msgid "Navigate to **Infrastructure > Clouds**. Select the cloud and click the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:35
+msgid "Resources"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:36
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:392
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:232
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:242
+msgid "tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:37
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:393
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:441
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:70
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:90
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:124
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:74
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:82
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:104
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:120
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:144
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:172
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:177
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:193
+msgid "Click the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:38
+msgid "Add Resource Pool."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:39
+msgid ""
+"Enter a name and complete any additional required details for the "
+"resource pool and then click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:40
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:401
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:403
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:417
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:507
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:154
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:184
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:193
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:150
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:152
+msgid "Next."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:41
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:418
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:421
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:575
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:613
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:635
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:640
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:56
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:76
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:107
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:119
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:135
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:218
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:150
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:183
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:192
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:201
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:156
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:251
+msgid "Click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:42
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:151
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:83
+msgid "Save Changes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:43
+msgid "to finalize resource pool creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:46
+msgid "Image Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:48
+msgid "The topic describes about image catalog and uploading various images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:51
+msgid "Image Catalog"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:53
+msgid ""
+"This section describes how to upload Bare Metal (BM) operating system "
+"images into Morpheus using a configurable image repository.HPE Morpheus "
+"supports multiple backend storage options, allowing administrators to "
+"centrally manage OS images and reuse them across bare metal provisioning "
+"workflows."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:55
+msgid ""
+"Uploaded images are registered underLibrary>Virtual Imagesand are made "
+"available for bare metal instance provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:57
+msgid ""
+"Supported OS Image Sources HPE Morpheus supports uploading Bare Metal OS "
+"images from the following storage backends:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:59
+msgid "Local storage on the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:60
+msgid "HPE Morpheus appliance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:62
+msgid "S3-compatible object storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:64
+msgid "CIFS (Samba) file shares"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:66
+msgid "NFS (v3) file shares"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:68
+msgid ""
+"Each backend option is configured as a File Share or Storage Bucket and "
+"referenced during image upload."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:71
+msgid "Uploading OS Images"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:75
+msgid ""
+"Image upload and deployment performance depend on network bandwidth and "
+"storage backend performance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:76
+msgid "File permissions on shared storage must allow Morpheus read access."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:77
+msgid ""
+"OS images must be bootable and compatible with the target bare metal "
+"hardware."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:78
+msgid ""
+"Server reboots and virtual media behavior depend on hardware management "
+"interfaces (for example, iLO)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:81
+msgid "Uploading OS Images Using Local Storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:85
+msgid "Ensure that Morpheus-app user owns the storage directory."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:87
+msgid "Ensure that Morpheus-app user has access to the storage path."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:89
+msgid ""
+"Local storage allows OS images to be uploaded directly to the Morpheus "
+"appliance filesystem and is suitable for smaller environments or "
+"evaluation use cases."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:92
+msgid "Configure a Local Storage file share under"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:93
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:116
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:140
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:163
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:387
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:543
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:570
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:607
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:65
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:121
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:69
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:99
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:139
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:167
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:188
+msgid "Infrastructure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:94
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:96
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:100
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:102
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:104
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:117
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:119
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:124
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:126
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:128
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:141
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:143
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:148
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:150
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:152
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:164
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:166
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:171
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:173
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:175
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:211
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:388
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:439
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:520
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:544
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:571
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:573
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:608
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:610
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:632
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:54
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:58
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:102
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:109
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:133
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:66
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:68
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:122
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:177
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:70
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:72
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:100
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:102
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:140
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:142
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:168
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:170
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:189
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:191
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:212
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:249
+msgid ">"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:95
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:118
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:142
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:165
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:71
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:101
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:141
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:169
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:190
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:176
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:178
+msgid "Storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:97
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:144
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:167
+msgid "File Shares."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:98
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:122
+msgid "Upload the OS ISO using"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:99
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:123
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:147
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:170
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:210
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:53
+msgid "Library"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:101
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:125
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:149
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:172
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:81
+msgid "Virtual Images"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:103
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:127
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:151
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:174
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:57
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:71
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:125
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:145
+msgid "Add"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:105
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:129
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:153
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:176
+msgid "ISO."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:106
+msgid "Verify the image status is"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:107
+msgid "#. Active. Uploading OS Images Using S3 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:111
+msgid "-Compatible Object Storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:112
+msgid ""
+"S3-compatible object storage (such as MinIO) provides scalable and "
+"durable storage for OS images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:115
+msgid "Configure an S3 storage bucket under"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:120
+msgid "Buckets."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:121
+msgid "Provide access credentials with read/write permissions."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:130
+msgid "Confirm successful upload and activation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:133
+msgid "Uploading OS Images Using CIFS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:135
+msgid ""
+"(Samba) CIFS (Samba) allows OS images to be stored on a shared Windows or"
+" Linux file server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:139
+msgid "Configure a CIFS file share under"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:145
+msgid "Provide valid credentials for the Samba share."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:146
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:169
+msgid "Upload the OS ISO through"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:154
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:177
+msgid "Verify the image is accessible for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:157
+msgid "Uploading OS Images Using NFS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:159
+msgid "NFS allows OS images to be stored on a shared Linux file server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:162
+msgid "Configure an NFSv3 file share under"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:168
+msgid "Provide valid credentials for the NFS share."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:180
+msgid "Windows OS Imaging"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:182
+msgid ""
+"This section provides guidance and requirements for deployingWindows "
+"Server on bare metalusing |morpheus| Enterprise. It covers required "
+"virtual image settings, Windows-specific boot considerations, current "
+"licensing limitations, and high-level troubleshooting guidance for failed"
+" installations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:184
+msgid "The following Windows distributions are supported for deployment:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:185
+msgid "Windows Server 2019"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:187
+msgid "Windows Server 2022"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:189
+msgid "Windows Server 2025"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:191
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:278
+msgid "Virtual Image Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:192
+msgid ""
+"When adding a Windows ISO to theMorpheus Virtual Images Library, the "
+"following settingsmustbe configured:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:193
+msgid "Is Cloud Init Enabled: Unchecked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:195
+msgid "Cloud Guest Customization: Checked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:197
+msgid "Sysprepped / Generalized Image: Checked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:199
+msgid "Install Agent: Checked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:202
+msgid "Advanced - VM Tools Installed: Checked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:205
+msgid "Windows Install Image Index"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:206
+msgid ""
+"By default, Morpheus installs Image Index 2, which typically corresponds "
+"to Windows Server Standard (Desktop Experience)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:208
+msgid "To deploy a different Windows edition:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:212
+msgid "Operating Systems."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:213
+msgid "Add a new Operating System entry with"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:214
+msgid "Platform = Windows."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:215
+msgid "Specify the desired"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:216
+msgid "Windows Install Index."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:217
+msgid ""
+"Complete the required fields (Vendor, OS Version, Category, OS Name, "
+"Codename, OS Family)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:220
+msgid "Associate the Windows Virtual Image with this Operating System."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:222
+msgid "You can use the existing Windows Operating System as reference templates."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:225
+msgid "Boot Prompt Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:227
+msgid ""
+"Unmodified Microsoft Windows Server ISOs display aPress any key to boot "
+"CD/DVD…prompt, which will interrupt unattended bare metal deployments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:229
+msgid "Two approaches are supported:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:230
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:234
+msgid "Option 1: Use a Modified ISO (Recommended)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:232
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:239
+msgid "Option 2: Manual Console Interaction"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:235
+msgid ""
+"Use a Windows ISO with the boot prompt removed. A script to generate such"
+" an ISO is available athttps://github.com/HewlettPackard/hpegl-metal-os-"
+"windows-iso"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:237
+msgid ""
+"Only the resulting ISO is required. A prebuilt Windows Server 2022 "
+"Evaluation ISO with this modification is also available and suitable for "
+"testing environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:240
+msgid "If using an unmodified ISO:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:243
+msgid "Create the instance as usual."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:244
+msgid "When the instance enters provisioning, open the Remote Console."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:245
+msgid ""
+"Press Enter when prompted to boot from the installation media.    Windows"
+" Licensing Considerations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:246
+msgid ""
+"At present, Windows licensing is not supported during bare metal "
+"provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:248
+msgid ""
+"Only Evaluation editions or versions that do not require a Product Key in"
+" AutoUnattend.xml can be deployed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:250
+msgid ""
+"The modified Windows Server 2022 ISO referenced above is an Evaluation "
+"edition and is suitable for testing."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:253
+msgid "Linux OS Imaging"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:255
+msgid ""
+"This section describes the supported Linux distributions and guides for "
+"deploying Linux on bare metal using Morpheus. It includes validated OS "
+"versions, required virtual image settings, boot loader configuration for "
+"unattended installation, and troubleshooting steps for common deployment "
+"issues (see Section Troubleshooting for more details)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:257
+msgid "The following Linux distributions have been validated for deployment:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:258
+msgid "Red Hat Enterprise Linux (RHEL) and derivatives"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:261
+msgid "RHEL 9.5"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:264
+msgid "Oracle Linux 8.10"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:267
+msgid "Oracle Linux 9.5"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:270
+msgid "Ubuntu Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:273
+msgid "Ubuntu Server 22.04.5 LTS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:276
+msgid "Ubuntu Server 24.04.3 LTS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:279
+msgid ""
+"When adding a Linux ISO toLibrary>Virtual Images, ensure the following "
+"settings:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:280
+msgid ""
+"Operating System: Select the appropriate OS (e.g., RHEL 9, Oracle Linux "
+"9, Ubuntu 22.04, Ubuntu 24.04)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:282
+msgid "Is Cloud Init Enabled: Checked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:284
+msgid "Advanced"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:287
+msgid "VM Tools Installed: Checked"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:289
+msgid "Boot Prompt Configuration - RHEL and Oracle Linux"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:290
+msgid ""
+"Unmodified RHEL and Oracle Linux ISOs include a default boot menu "
+"entry:Test this media & install OS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:292
+msgid "This entry performs afull media verificationbefore installation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:294
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:488
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:582
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:617
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:50
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:78
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:105
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:117
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:138
+msgid "NOTE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:295
+msgid "The media check does not cause installation failure."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:296
+msgid ""
+"It can, however, delay deployment by 30–60 minutes, particularly in "
+"remote or virtual media environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:297
+msgid ""
+"Skipping the media check is recommended to reduce installation time.   "
+"Supported Options"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:300
+msgid ""
+"Preferred: Modify the ISO - Adjust the ISO boot loader to remove or "
+"bypass the media check from the default boot entry. - Ensures faster, "
+"fully unattended deployment."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:303
+msgid ""
+"Alternative: Manual Boot Selection - At boot: Select - Install OS - "
+"(without media test). - Do NOT select - Test this media & install OS - ."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:310
+msgid ""
+"Reference - Grub menu example (for clarity): - 0 → Install Red Hat "
+"Enterprise Linux 9.5"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:315
+msgid "1 → Test this media & install Red Hat Enterprise Linux 9.5"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:318
+msgid "Default entry index"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:319
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:14
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:45
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:108
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:197
+msgid "1"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:320
+msgid "triggers the media check."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:321
+msgid "Changing the default to"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:322
+msgid "0"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:323
+msgid "or manually selecting"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:324
+msgid "Install OS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:325
+msgid "skips verification."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:327
+msgid "Boot Prompt Configuration - Ubuntu Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:328
+msgid ""
+"Ubuntu Server requires kernel boot parameters to enable unattended "
+"installation using cloud-init autoinstall."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:330
+msgid "Unmodified ISOs do not automatically perform unattended installation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:332
+msgid "Required Manual Step (Unmodified ISO)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:333
+msgid "At the GRUB boot menu:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:334
+msgid "Highlight the default Ubuntu entry."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:335
+msgid "Press"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:336
+msgid "e"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:337
+msgid "to edit."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:339
+msgid "Append the following kernel parameters:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:340
+msgid "autoinstall ds=nocloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:342
+msgid "Boot with the modified entry."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:345
+msgid "Example Boot Entry:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:346
+msgid "menuentry \\\"Ubuntu\\\" {"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:348
+msgid "set gfxpayload=keep"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:350
+msgid "linux   /casper/vmlinuz quiet autoinstall ds=nocloud ---"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:352
+msgid "initrd  /casper/initrd"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:354
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:208
+msgid "}"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:355
+msgid "This enables cloud-init–based unattended installation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:361
+msgid "Distribution"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:362
+msgid "Registration Reference"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:363
+msgid "Notes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:364
+msgid "RHEL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:365
+msgid "Red Hat Subscription-Manager Registration Guide"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:366
+msgid "Usesubscription-managerto register and attach subscriptions."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:367
+msgid "Oracle Linux"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:368
+msgid "Registering Oracle Linux System with ULN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:369
+msgid "Use theuln_registertool to register with Oracle Unbreakable Linux Network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:370
+msgid "Ubuntu"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:371
+msgid "Ubuntu 24.04 LTS Release Notes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:372
+msgid ""
+"Ubuntu does not require mandatory registration. An optional Ubuntu Pro "
+"subscription provides extended security maintenance and support."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:375
+msgid "Provisioning a New Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:377
+msgid ""
+"Provisioning a new server allows onboarding new, unmanagedHPE ProLiant "
+"servers into a Bare Metal Cloud environment, enablingHPE Morpheus to "
+"manage their lifecycle, including automated OS deployment and hardware "
+"monitoring."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:382
+msgid ""
+"ImportingHPE ProLiant Bare Metal Servers Perform the following procedure "
+"to importHPE ProLiant Bare Metal Servers:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:389
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:572
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:609
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:24
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:26
+msgid "Compute"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:390
+msgid ", then select the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:391
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:394
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:545
+msgid "Bare Metal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:395
+msgid "button, then select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:397
+msgid "Server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:398
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:577
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:147
+msgid "Select the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:399
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:129
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:186
+msgid "Group"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:400
+msgid "you created earlier from the drop-down list and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:402
+msgid "Enter a Name for the server and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:404
+msgid "Enter the following iLO (Integrated Lights Out) details for the server:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:405
+msgid "iLO IP Address"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:408
+msgid "iLO Username (typically \\\"Administrator\\\")"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:411
+msgid "iLO Administrator Password"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:416
+msgid "Leave the Pre-Provisioned Server option unselected, then click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:419
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:219
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:202
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:256
+msgid "Next"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:420
+msgid "to review your host configuration details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:422
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:157
+msgid "Complete"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:423
+msgid "to finalize the host creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:426
+msgid "The below image shows list of clouds available."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:428
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:597
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:86
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:124
+msgid "Results"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:429
+msgid ""
+"the HPE ProLiant Bare Metal plugin automatically discovers and records "
+"all hardware details from the server using its Integrated Lights Out "
+"(iLO) management interface. This discovery process may take a few "
+"minutes, depending on the server and network conditions. After "
+"completion, the server becomes available (STATUS =available) in Morpheus "
+"for further provisioning and lifecycle operations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:432
+msgid "Provisioning an Instance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:434
+msgid "Perform the following steps to provision an instance:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:438
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:519
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:631
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:101
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:132
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:176
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:248
+msgid "Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:440
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:633
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:103
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:178
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:250
+msgid "Instances."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:442
+msgid "ADD."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:443
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:452
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:457
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:504
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:508
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:80
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:219
+msgid "In the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:444
+msgid "TYPE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:445
+msgid "tab, select the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:446
+msgid "Instance Type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:447
+msgid "as"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:449
+msgid "Bare Metal (ILO) SERVER."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:453
+msgid "GROUP"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:454
+msgid "tab, complete the Instance Summary fields."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:458
+msgid "CONFIGURE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:459
+msgid "tab, complete the Configuration Options:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:460
+msgid "Layout"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:461
+msgid ""
+": Select the appropriate layout from the drop-down list (for example, "
+"Single iLO Server)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:464
+msgid "Plan"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:465
+msgid ": Choose one of the following:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:468
+msgid "Generic Plan"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:469
+msgid ": Any iLO"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:472
+msgid "Specific Plan"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:473
+msgid ": For example, DL360.Gen10Plus.1-32C.129-256GiB"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:476
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:118
+msgid "Resource Pool"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:477
+msgid ": Select the required resource pool from the drop-down list."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:480
+msgid "Volumes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:481
+msgid ""
+": Configure storage volumes as required. Refer to the Storage section for"
+" details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:482
+msgid "Enter the name of the volume in the first field."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:485
+msgid "Select the volume type from the drop down list."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:489
+msgid ""
+"When you select any other option apart from RAID, the system shows "
+"additional field to specify storage capacity. Enter the required storage."
+" Ensure that you configure more than 16 GB storage. You cannot specify "
+"more than one volume for Windows environment."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:490
+msgid "Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:491
+msgid ""
+": Configure network settings as required. Refer to the Networking section"
+" for details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:494
+msgid "Image"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:495
+msgid ": Select the Bare Metal OS image from the drop-down list."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:498
+msgid "Baremetal Host(s)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:499
+msgid ""
+": Select the target Bare Metal host(s) from the drop-down list if "
+"specific server(s) are desired."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:505
+msgid "AUTOMATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:506
+msgid "tab, select the appropriate options, then click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:509
+msgid "REVIEW"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:510
+msgid "tab, verify the configuration summary and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:511
+msgid "#. Complete. Post-Provisioning ^^^^^^^^^^^^^^^^^"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:515
+msgid "After provisioning the instance:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:518
+msgid "The new instance appears under"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:521
+msgid "Instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:522
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:546
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:245
+msgid "."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:525
+msgid "To monitor provisioning progress, select the instance from the list."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:527
+msgid "Once provisioning completes successfully, review the tabs as required."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:529
+msgid "To access the instance console, click the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:530
+msgid "Console"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:531
+msgid "tab"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:534
+msgid ""
+"After successful provisioning, verify that the instance and its "
+"corresponding bare metal host are listed in: - Under - Provisioning - > -"
+" Instances - ."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:542
+msgid "Under"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:549
+msgid ""
+"Go to the Instances page to view the instance Status, Health, CPU, "
+"Memory, and Storage details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:552
+msgid "Importing Pre-Provisioned Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:554
+msgid ""
+"Importing a Pre-Provisioned server enables administrators to bring "
+"existing physical servers and associated resources (networks and storage)"
+" into HPE Morpheus. This is the initial step in migrating an existing "
+"workload cluster into Morpheus management. It is completed in two phases:"
+" * Import * : Import existing servers as Pre-Provisioned resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:558
+msgid "Convert to Managed"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:559
+msgid ""
+": Convert imported servers into managed instances, creating Morpheus "
+"instances with associated network and storage attachments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:561
+msgid ""
+"This process is performed one workload cluster at a time, and each "
+"cluster can contain one or more servers. Once the initial server is "
+"converted, additional imported servers can be added to the same instance "
+"using theAdd Nodeoperation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:564
+msgid "Import Pre-Provisioned Servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:566
+msgid "Perform the following to add a bare metal server:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:574
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:611
+msgid "Bare Metal."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:576
+msgid "Add Bare Metal Server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:578
+msgid "Pre-Provisioned"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:579
+msgid "server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:580
+msgid "Complete the remaining server details and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:581
+msgid "Save."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:583
+msgid "For Windows"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:584
+msgid ""
+": When importing a Pre-Provisioned Windows server, select Windows OS. "
+"This is required because some import operations are specific to Windows."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:587
+msgid "During import, the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:589
+msgid ""
+"BMaaS validates the association between the provided iLO IP and OS IP by "
+"executing commands on the host OS. The supplied OS credentials must have "
+"elevated privileges:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:590
+msgid "Linux OS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:591
+msgid ": The user must have sudo privileges."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:594
+msgid "Windows OS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:595
+msgid ": The user must be in the Administrators group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:598
+msgid ""
+"Once the server is imported, it should be ready to be converted into a "
+"fully provisioned node."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:601
+msgid "Convert to Provisioned Node"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:603
+msgid "Perform the following to convert to Managed or create a new instance:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:606
+msgid "After the server is imported, go to"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:612
+msgid "Select the imported server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:614
+msgid "Convert to Managed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:615
+msgid "Confirm the server details and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:616
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:120
+msgid "Execute."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:618
+msgid ""
+"Use the same OS credentials that were provided during the import step."
+"      Results"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:619
+msgid ""
+"TheConvert to Managedaction creates a new instance, makes the selected "
+"server a fully provisioned node, and adds it to the new instance. It "
+"creates the association of this server with networks and volumes inHPE "
+"Morpheus, as present in the network switches and the storage array, "
+"respectively. In addition, it creates the association of the VLAN "
+"interfaces with the IP addresses on the host OS on the server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:622
+msgid "Add Additional Nodes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:624
+msgid ""
+"to the Instance To convert a Pre-Provisioned server into a fully "
+"provisioned node, and to make it part of an existing instance, the Add "
+"Node action is used, from the context of the Instance to which it is "
+"desired to be added."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:627
+msgid ""
+"Once an instance is created with the first converted node, you can add "
+"other imported servers to the same instance:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:634
+msgid "Select the newly created instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:636
+msgid "Add Node."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:637
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:72
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:149
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:155
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:215
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:73
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:179
+msgid "Select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:638
+msgid "Pre-Provisioned."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:639
+msgid "Choose the imported server and provide the required details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:641
+msgid "Execute"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:642
+msgid ".     Results"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/compute_management.rst:643
+msgid ""
+"This converts the selected imported server into a managed node and adds "
+"it to the existing instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:2
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:67
+msgid "Firmware and Driver Lifecycle Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:4
+msgid ""
+"Starting with HPE BMaaS version 1.0.0,HPE |morpheus| Enterprise supports "
+"firmware and driver updates for HPE ProLiant bare-metal servers using "
+"preloaded tasks and workflows. This capability enables administrators to "
+"centrally manage server firmware and driver compliance using HPE Service "
+"Pack for ProLiant (SPP) images, executed directly from the HPE Morpheus "
+"appliance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:6
+msgid ""
+"Firmware and driver updates are performed through Jobs and Workflows in "
+"HPE Morpheus and can be run in Dry Run (inventory)or Deploy modes. "
+"Updates can target firmware only, drivers only, or both, depending on "
+"operational requirements. The update process supports multiple servers "
+"per job and provides detailed execution logs for auditing and "
+"troubleshooting."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:9
+msgid "Before performing firmware and driver updates, ensure the following:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:13
+msgid "BM Plugin version 1.0.0 or later is installed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:16
+msgid "An appropriate"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:18
+msgid ""
+"SPP ISO is available for each server generation (for example, Gen10 and "
+"Gen11 require different SPP ISOs)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:21
+msgid "The"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:23
+msgid "Morpheus appliance has access to the SPP ISO, either through:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:26
+msgid "A locally downloaded ISO file, or"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:29
+msgid "A URL accessible without authentication."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:32
+msgid "For driver inventory and updates within a deployed operating system:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:35
+msgid ""
+"iSUT (Integrated Smart Update Tools) and AMS (Agentless Management "
+"Service) must be installed and running on the target servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:38
+msgid "ESXi hosts are expected to already have iSUT installed."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:41
+msgid "Adding HPE SPP to Virtual Image Library"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:43
+msgid ""
+"AddingHPE SPP to the Virtual Image Library This procedure describes how "
+"to add an HPE Service Pack for ProLiant (SPP) ISO to the Morpheus Virtual"
+" Images library for use in firmware and driver update workflows."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:47
+msgid "Obtain the appropriate"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:49
+msgid "SPP ISO for the target ProLiant server generation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:51
+msgid ""
+"A separate ISO is required for each server generation (for example, Gen10"
+" and Gen11)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:52
+msgid "In the Morpheus appliance, navigate to"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:55
+msgid "Virtual Images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:59
+msgid "SPP."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:60
+msgid "Enter a name for the image (for example,"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:62
+msgid "Gen10 SPP 2025.09.00"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:63
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:12
+msgid ")."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:64
+msgid "From the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:65
+msgid "Operating System"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:66
+msgid "drop-down list, select the appropriate"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:68
+msgid "SPP for Gen…"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:69
+msgid "entry."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:70
+msgid "Add the SPP ISO using one of the following methods:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:71
+msgid "Upload the locally downloaded ISO file, or"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:73
+msgid "URL / PATH"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:74
+msgid "and paste the full URL for the ISO."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:75
+msgid "Leave all other properties at their default values."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:77
+msgid "Save Changes."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:79
+msgid "When uploading a local file, wait for the upload to complete."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:82
+msgid "list, wait until:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:83
+msgid "Source"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:84
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:87
+msgid "shows"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:85
+msgid "Uploaded"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:86
+msgid "Status"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:88
+msgid "Active"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:89
+msgid "Record the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:90
+msgid "ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:91
+msgid ""
+"of the Virtual Image entry. This ID is required when creating the update "
+"job."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:94
+msgid "Installing iSUT on Deployed Instances"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:96
+msgid ""
+"(Optional) To enable driver inventory and updates within the operating "
+"system, iSUT and AMS must be installed on each deployed instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:104
+msgid "Select the target instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:106
+msgid ""
+"Since the workflow requires iLO credentials, only one instance can be "
+"selected at a time. Multiple instances cannot be targeted for a single "
+"iSUT/AMS install."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:108
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:173
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:194
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:216
+msgid "Actions"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:110
+msgid "Run Workflow."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:111
+msgid "Select the appropriate workflow:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:112
+msgid "Download and Install iSUT and AMS (Linux), or"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:113
+msgid "Download and Install iSUT and AMS (Windows)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:114
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:159
+msgid "Enter the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:115
+msgid "iLO credentials"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:116
+msgid "for the targeted bare metal server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:118
+msgid "These are iLO credentials, not OS credentials."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:121
+msgid "Monitor progress from the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:122
+msgid "History"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:123
+msgid "tab until the workflow completes."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:126
+msgid "Creating and Running an SPP Update Job"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:128
+msgid ""
+"This procedure describes how to create and execute aHPE Morpheus Job to "
+"perform firmware and driver updates using an HPE SPP image."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:134
+msgid "Jobs."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:136
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:75
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:105
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:252
+msgid "Add."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:137
+msgid "Enter a name for the job."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:139
+msgid ""
+"Separate jobs are required for different server generations (for example,"
+" Gen10 vs Gen11)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:142
+msgid "Create separate jobs for"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:143
+msgid "Dry Run"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:144
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:37
+msgid "and"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:145
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:169
+msgid "Deploy"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:146
+msgid "executions."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:150
+msgid "Workflow Job"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:151
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:157
+msgid "as the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:152
+msgid "Job Type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:153
+msgid "and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:156
+msgid "Deploy SPP"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:158
+msgid "workflow."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:160
+msgid "SPPVIRTUALIMAGE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:161
+msgid "value using the ID of the Virtual Image created earlier."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:162
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:194
+msgid "Select a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:163
+msgid "DEPLOYMODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:164
+msgid ":"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:165
+msgid "DryRun"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:166
+msgid ": Performs inventory only"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:170
+msgid ": Applies firmware and/or driver updates"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:173
+msgid "For"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:174
+msgid "SPP Deploy Content"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:175
+msgid ", choose one of the following:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:176
+msgid "Firmware only"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:179
+msgid "Drivers only"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:182
+msgid "Firmware and Drivers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:184
+msgid ""
+"NOTEDriver inventory and updates require iSUT and AMS to be running on "
+"the target servers. #. In the #. Nodes #. field, enter the iLO details "
+"for each target server in JSON format (minimum 1 server, maximum 30 "
+"servers). For example: #. ["
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:190
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:200
+msgid "{"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:192
+msgid "\\\"ilo_ip\\\":\\\"1.2.3.4\\\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:194
+msgid "\\\"ilo_user\\\":\\\"user1\\\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:196
+msgid "\\\"ilo_password\\\":\\\"password1\\\""
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:198
+msgid "},"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:202
+msgid "\\\"ilo_ip\\\":\\\"1.2.3.5\\\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:204
+msgid "\\\"ilo_user\\\":\\\"user2\\\","
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:206
+msgid "\\\"ilo_password\\\":\\\"password2\\\""
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:210
+msgid "]"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:212
+msgid "Optional:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:213
+msgid "Create a schedule, or leave the job as"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:214
+msgid "Manual."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:216
+msgid "Run Now"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:217
+msgid "if you want to execute the job immediately."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:220
+msgid ", review the settings, and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:221
+msgid "Complete."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:222
+msgid "If the job was not run immediately, click the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:223
+msgid "gear icon"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:224
+msgid "next to the job and select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:225
+msgid "#. Execute. Monitoring and Completion -------------------------"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:230
+msgid "Monitor job progress from the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:231
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:241
+msgid "Job Executions"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:233
+msgid "Execution time may range from"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:234
+msgid "15 minutes to over one hour"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:235
+msgid ", depending on:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:236
+msgid "Number of servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:237
+msgid "Deploy mode"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:238
+msgid "Selected content"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:239
+msgid "Firmware and driver versions on the target servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:240
+msgid "Upon completion, detailed logs are available in the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:243
+msgid "Do not enter any values in"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:244
+msgid "Custom Config"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:248
+msgid ""
+"Servers are not automatically rebooted as part of the update process. - "
+"If a reboot is required to complete updates, it must be performed "
+"manually at a time appropriate for the hosted services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:252
+msgid "Post-SPP Firmware Update Cold Power Cycle"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:254
+msgid ""
+"Post-SPP Firmware Update - Mandatory Cold Power Cycle   After applying an"
+" HPE Service Pack for ProLiant (SPP) on Gen11 and Gen12 servers, a full "
+"cold power cycle is required to ensure proper initialization of updated "
+"firmware components."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:256
+msgid ""
+"An iLO reset or standard operating system reboot is not sufficient after "
+"an SPP update."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:258
+msgid "Failure to perform a cold power cycle may result in:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:261
+msgid "Inconsistent Redfish storage inventory"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:262
+msgid "Smart Array controller desynchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:263
+msgid "Missing or stale drive objects"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:264
+msgid "Management platform initialization failures"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:265
+msgid ""
+"Incomplete firmware activation  Perform the following steps for cold "
+"power cycle:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:268
+msgid "Power OFF the server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:269
+msgid ""
+":Shut down gracefully through the operating system or iLO interface. "
+"Confirm the server is completely powered off."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:270
+msgid "Disconnect AC Power"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:271
+msgid ": Physically remove all power cables from the server power supplies."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:272
+msgid "Wait for 60 Seconds"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:273
+msgid ""
+": Allow sufficient time for residual power to drain. This clears "
+"controller cache and resets hardware state."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:276
+msgid "Reconnect Power"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:277
+msgid ": Reattach all power cables securely."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:278
+msgid "Power ON the Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:279
+msgid ": Boot the system normally.  A full AC power removal forces:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:282
+msgid "Smart Array controller re-enumeration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:283
+msgid "PCI bus reinitialization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:284
+msgid "Storage firmware reload"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:285
+msgid "Redfish object tree regeneration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:286
+msgid ""
+"Hardware state synchronization  This process resolves the majority of "
+"post-SPP Redfish storage inconsistencies observed on Gen11 and Gen12 "
+"platforms."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:288
+msgid ""
+"HPEstrongly recommends performing a full cold power cycle after major "
+"firmware bundle updates to ensure all updated components are fully "
+"initialized."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:2
+msgid "Network Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:4
+msgid ""
+"At a high level, there are two network modes in which a cloud can be "
+"configured to operate: - Unmanaged network mode ( - Unmanaged - )."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:10
+msgid "Managed network mode ("
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:11
+msgid "ArubaCX-Int"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:14
+msgid "Network modes are created during cloud creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:17
+msgid "Unmanaged Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:19
+msgid ""
+"The unmanaged Network mode is used when the network infrastructure is not"
+" managed by HPE Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:21
+msgid ""
+"In this case, there is a minimal configuration that is created as default"
+" when the cloud gets created with the network mode set to Unmanaged "
+"network. This minimal configuration includes a default Resource Pool that"
+" can be used to associate compute servers with, and a default unmanaged "
+"network that is available during instance provisioning to attach with "
+"compute servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:23
+msgid ""
+"The default unmanaged network is configured as an untagged network with "
+"DHCP as the IP allocation method. This allows a compute instance "
+"provisioned to come up with network connectivity without any specific "
+"network configuration required from the user."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:25
+msgid "The unmanaged network assumes:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:26
+msgid ""
+"The network infrastructure to be configured correctly for the untagged "
+"network to work correctly."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:28
+msgid "A DHCP server stood up in the infrastructure for that network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:32
+msgid ""
+"Users can create other networks (VLANs) if required, in addition to the "
+"default unmanaged network, and use them in their BM instance. NOTE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:33
+msgid "If the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:34
+msgid "ALLOW IP OVERRIDE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:35
+msgid ""
+"checkbox is selected (allows selection of DHCP or static IP or IP Pool), "
+"ensure that the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:36
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:137
+msgid "CIDR"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:38
+msgid "GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:39
+msgid "fields are configured correctly."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:41
+msgid ""
+"At present, only one physical interface is supported for the unmanaged "
+"network mode."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:43
+msgid ""
+"The network consumption by an instance is the same as for managed "
+"networks."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:46
+msgid "Managed Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:48
+msgid ""
+"The managed network mode is used when the network infrastructure is to be"
+" managed by Morpheus. In this case, the user can selectArubCX-Intduring "
+"the cloud creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:50
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:133
+msgid "AddingHPE ArubaCX Plugin"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:51
+msgid ""
+"In the managed network mode, the Aruba CX switches are supported as "
+"managed switches. To enable that, the ArubaCX plugin needs to be loaded."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:53
+msgid "You can load the ArubaCX plugin jar using theAdministration>Integrations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:56
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:139
+msgid "Creating ArubaCX Network Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:58
+msgid ""
+"The network integration allows the user to specify the switch "
+"information. It is expected that there are 2 switches per rack acting as "
+"the top-of-rack (ToR) switches. You need to specify information for a "
+"switch pair for a rack. If there are more than 1 rack, then information "
+"for the switch pair for each rack is required."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:61
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:117
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:172
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:65
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:95
+msgid "Log in to the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:63
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:119
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:174
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:67
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:97
+msgid ""
+"|morpheus| Enterprise Software web interface using your administrator "
+"credentials."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:67
+msgid "Network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:69
+msgid "Integrations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:72
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:126
+msgid "to add a new integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:75
+msgid "Aruba CX Switches"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:76
+msgid "under the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:77
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:96
+msgid "Networking"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:78
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:259
+msgid "section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:81
+msgid "Enter the following details for the network integration:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:82
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:133
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:190
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:23
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:77
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:107
+msgid "Name"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:83
+msgid "for network integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:84
+msgid "Username/Password"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:85
+msgid "for the switches"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:86
+msgid "Switch pair IP Addresses"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:87
+msgid "for each pair of switches"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:91
+msgid "Add Network Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:92
+msgid "to create the Network Integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:95
+msgid "Networks Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:97
+msgid ""
+"Once the network integration is created, networks can be created using "
+"the specific network integration that was created. Networks essentially "
+"define the VLAN that they represent along with other attributes such as "
+"the subnet’s IPv4 prefix, IP address allocation method, gateway address, "
+"DNS, etc. The screenshot below shows those details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:99
+msgid ""
+"TheVLAN Trunksspecifies the trunk VLANs to be added when this network is "
+"consumed by an instance. TheVLAN IDfield represents the primary VLAN for "
+"this network. This VLAN is configured as the untagged VLAN when this "
+"network is consumed by an instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:101
+msgid ""
+"TheNetwork Servicecorresponds to the network integration that was "
+"created. This specifies that the network is to be created in the "
+"infrastructure (switches) specified in the network integration selected."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:103
+msgid ""
+"ThePrivatecheckbox specifies that the network is a private network. By "
+"default, all networks are public. If private is selected, the primary "
+"VLAN in this network is not configured on the uplink connection. This "
+"would render them unreachable from outside of the cloud infrastructure. "
+"This is typically used for workload networks that are used to communicate"
+" between only the workload servers and other infrastructure within the "
+"private cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:105
+msgid ""
+"The configuration of a network will result in the primary VLAN in that "
+"network being provisioned on the network switches. The server ports are "
+"configured when those networks are consumed during the provisioning of a "
+"compute instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:108
+msgid "Creating Network Using ArubaCX"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:110
+msgid "Creating Network Using the ArubaCX Integration Prerequisites"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:112
+msgid ""
+"Before starting to create networks using integration, ensure that a Bare "
+"metal cloud is created with the ‘Network Mode’ set to the integration. If"
+" the Bare metal cloud already exists then ensure that ‘Network Mode’ is "
+"set to integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:114
+msgid "Perform the following to create the network:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:123
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:195
+msgid "Network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:128
+msgid "Enter the following details for the network:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:130
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:134
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:141
+msgid "for the network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:131
+msgid "Network Service"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:132
+msgid "specifies the Network Integration to use"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:135
+msgid "Gateway, DNS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:136
+msgid "information if required"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:138
+msgid "for the subnet"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:139
+msgid "Primary"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:140
+msgid "VLAN ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:142
+msgid "Check the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:143
+msgid "Private"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:144
+msgid "checkbox if a private network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:145
+msgid "VLAN trunks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:146
+msgid "for the network (optional)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:147
+msgid "Choose"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:148
+msgid "Network Pool"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:149
+msgid "to be one of the IP pools configured"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:152
+msgid "to create the network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:155
+msgid "Network Usage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:157
+msgid ""
+"Networks are attached to interfaces on a compute server. The interfaces "
+"can be the physical ports themselves or bond interfaces that combine two "
+"physical ports into an aggregated pipe. Bond interfaces provide the "
+"benefits of aggregated bandwidth on a single interface and also high "
+"availability by providing port-level redundancy."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:159
+msgid ""
+"Once the decision is made on what kind of interfaces to use, networks can"
+" be chosen from the preconfigured list to attach to the network "
+"interfaces. This determines which VLANs are configured on which switch "
+"ports (or LAGs). As mentioned earlier, the primary VLAN is provisioned as"
+" an untagged VLAN, and the trunk VLANs are provisioned as tagged VLANs on"
+" the server ports."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:161
+msgid "The supported bond types are:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:162
+msgid ""
+"Static Bond: This uses an L2+L3-based hash on the server OS and a static "
+"LAG on the switches."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:163
+msgid ""
+"LACP Bond: This uses the LACP mode on the server OS and LACP LAG on the "
+"switches."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:164
+msgid ""
+"Switch Independent Bond: This uses the balance-tlb mode on Linux servers "
+"and the switch-independent mode on Windows. The switch is configured as "
+"independent physical ports."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:167
+msgid "Specifying Network Usage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:169
+msgid ""
+"Perform the following to specify networks used during instance "
+"provisioning:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:181
+msgid "Bare Metal (ILO) Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:182
+msgid "as the type."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:185
+msgid "Specify a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:187
+msgid ","
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:188
+msgid "Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:189
+msgid ", and a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:191
+msgid "for the Instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:196
+msgid "Select an"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:197
+msgid "interface type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:198
+msgid "(Bond/Physical)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:199
+msgid "Specify any required"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:200
+msgid "virtual interface."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:203
+msgid "and complete."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:204
+msgid ""
+"For physical interfaces, the interfaces represent the physical ports in "
+"their display order. Virtual networks specify that tagged networks under "
+"the primary network specified are to be configured on the server OS with "
+"an IP interface. If any of those tagged networks are not required to be "
+"configured on the server OS as an IP interface, do not specify a virtual "
+"interface for those."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:2
+msgid "Storage Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:4
+msgid ""
+"There are two types of storage that are available for an instance to "
+"consume. One is the local storage available on the compute server used to"
+" create an instance. The other is the remote storage (SAN), using the "
+"Alletra MP storage array."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:6
+msgid ""
+"At present, there is no support for the management of the local storage "
+"throughHPE Morpheus. They are used to install the OS image, and any "
+"storage available beyond that is up to the user to configure and use. "
+"They cannot be managed fromHPE Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:8
+msgid ""
+"The remote storage is fully manageable. The user can create/update/delete"
+" volumes and manage their attachment to compute servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:11
+msgid "Boot Volume Selection"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:13
+msgid "During Instance Creation for Local Storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:14
+msgid ""
+"During Morpheus instance creation, the provisioning workflow will delete "
+"existing logical volumes,create a boot volume, and then identify the "
+"correct disk deviceusing the device’s unique identifier (UID)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:16
+msgid ""
+"The boot volume is determined by matching the device UID found in the "
+"storage controller to the corresponding Linux device path."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:22
+msgid "Storage Device"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:24
+msgid "RAID Type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:25
+msgid "Identifiers.DurableNameFormat"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:26
+msgid "Identifiers.DurableName"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:27
+msgid "HPE MegaRAID (MR216i-o) Storage Controller"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:28
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:33
+msgid "BootVolume"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:29
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:34
+msgid "RAID1"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:30
+msgid "NAA"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:31
+msgid "600508B1001C40706B7600592D4A5C5A"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:32
+msgid "HPE NVMe SHIELD (NS204i) Boot Device"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:35
+msgid "EUI"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:36
+msgid "1234:5678:9ABC:DEF0"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:38
+msgid "Finding the Device Path"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:39
+msgid ""
+"Once the device UID is known (from the storage controller), the "
+"provisioning script searches for the matching device in/dev/disk/by-id/"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:41
+msgid ""
+"The script looks for thefirst entry that contains the UID(or a stripped "
+"version of the UID). These entries arestable identifiersthat point to the"
+" actual Linux block device."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:43
+msgid ""
+"Once a match is found, the script resolves the symbolic link to determine"
+" the real boot device path, which will be in the form:/dev/sdX"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:45
+msgid "This/dev/sdXpath is then used for OS installation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:48
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:217
+msgid "Remote Storage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:50
+msgid ""
+"Remote storage enables lifecycle management of volumes on supportedHPE "
+"Alletra storage arrays(includingAlletra MPandAlletra 9000, where "
+"supported) and allows compute instances to attach to or detach from those"
+" volumes. These operations can be performed during instance provisioning "
+"or post-provisioning through the reconfigure workflow. The currently "
+"supported transport protocol isFibre Channel."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:52
+msgid ""
+"To get started with using remote storage, first, the storage plugin for "
+"Alletra needs to be loaded, and a storage server added. This allows the "
+"user to specify the URL where the management interface of the storage "
+"array is available, along with the user credentials to manage the storage"
+" array."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:54
+msgid ""
+"There is also a concept of a datastore, which is used to represent a "
+"container for a set of volumes. A datastore is associated with a storage "
+"server and also a resource pool. The resource pool is used to represent a"
+" site or a location, which is useful when storage HA is being used with "
+"datastores associated with different sites."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:56
+msgid "AddingHPE AlletraStorage Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:57
+msgid ""
+"You can add the Allertra Storage plugin JAR using the Upload plugin "
+"method."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:60
+msgid "Creating a Storage Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:62
+msgid "This procedure guides you through creating a storage server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:73
+msgid "Servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:76
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:106
+msgid "Provide a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:78
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:108
+msgid ", select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:80
+msgid "Alletra Block Storage HVM"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:81
+msgid "for type, specify the URL for the storage array, and the credentials."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:84
+msgid "to create the storage server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:87
+msgid "The added storage server appears under Servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:90
+msgid "Creating a Datastore"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:92
+msgid ""
+"This procedure guides you through creating a Datastore. The datastore "
+"acts as a container for volumes and must be created before volumes can be"
+" created."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:103
+msgid "DataStores."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:110
+msgid "Alletra Block Storage Baremetal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:111
+msgid "for type, select your"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:112
+msgid "cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:113
+msgid ", the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:114
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:148
+msgid "storage server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:115
+msgid "previously created,"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:116
+msgid "FC"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:117
+msgid "as the protocol type, and the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:119
+msgid "that applies to this storage server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:121
+msgid "Save"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:122
+msgid "to create the DataStore."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:125
+msgid "The added data store appears under Data Store."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:128
+msgid "Volume Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:130
+msgid ""
+"Volume life cycle management can be performed under "
+"theInfrastructure>Storage>Volumestab. It allows the user to perform "
+"create/resize/delete operations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:133
+msgid "Adding Volume"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:135
+msgid "Perform the following procedure to create a new volume:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:143
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:171
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:192
+msgid "Volumes."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:146
+msgid "button."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:149
+msgid "to create the volume in and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:151
+msgid ""
+"Select the required volume type, unreplicated, CPP replicated, or APP "
+"replicated, and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:153
+msgid "On the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:154
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:258
+msgid "Configure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:155
+msgid ""
+"screen, specify the volume name, size, datastore in which the volume "
+"needs to be created, shared/unshared. You can optionally specify the "
+"server/instance to export the volume, depending on whether it is "
+"unshared/shared."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:158
+msgid "to finish adding the volume."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:161
+msgid "Deleting Volume"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:163
+msgid ""
+"This procedure allows the users to delete a volume. A volume can be "
+"deleted only after it is detached from all the servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:174
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:195
+msgid "pulldown on the right and select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:175
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:178
+msgid "Delete"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:176
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:197
+msgid "for the volume to be deleted."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:179
+msgid "on the confirmation screen."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:182
+msgid "Resizing Volume"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:184
+msgid ""
+"This procedure allows the user to resize a volume. Volume size can only "
+"be increased. A rescan is required on the server OS to see the increased "
+"size."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:196
+msgid "Resize"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:198
+msgid "Specify the new size and click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:199
+msgid "#. Resize. Reconfiguring Volume ^^^^^^^^^^^^^^^^^^^^"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:203
+msgid ""
+"Reconfiguration allows the user to make changes to volumes consumed by a "
+"compute instance post-provisioning. This is achieved through "
+"theReconfigureaction on the instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:205
+msgid ""
+"New volumes can be created and attached to the compute instance. These "
+"can be shared or unshared volumes. Any volume attached to the compute "
+"instance can be resized to increase the size of the volume. Any attached "
+"volume can be detached. However, volumes cannot be deleted from the "
+"Reconfigure action. Volumes can be deleted only from the infrastructure "
+"management section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:207
+msgid ""
+"All these operations work in the context of a compute instance and are "
+"not specific to a compute server within the instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:211
+msgid "Provision"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:213
+msgid "Instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:214
+msgid ""
+"Click on the compute instance you want to reconfigure and access the "
+"details of the instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:215
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:224
+msgid "Click on"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:217
+msgid "and select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:218
+msgid "Reconfigure."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:220
+msgid "Reconfigure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:221
+msgid ""
+"wizard, make the changes desired to add a new volume, resize an existing "
+"volume or click the trash icon to detach a volume from the instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:225
+msgid "#. Reconfigure. Volume Consumption ------------------"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:229
+msgid ""
+"Consumption of volume is typically done through compute instance "
+"provisioning, where the user can specify volumes to attach to, whether "
+"existing volumes or new volumes to be created. It can also be done using "
+"the reconfigure action."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:231
+msgid "Instance Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:232
+msgid ""
+"During instance provisioning, the user can specify volumes to be attached"
+" to the servers within the instance. There are various types of volumes "
+"user can specify."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:234
+msgid "Sharing"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:235
+msgid ""
+"Volumes can be shared or unshared (attached to a specific server only). "
+"Specifying a shared volume means a single volume is attached to all the "
+"servers within that instance. Specifying an unshared volume means a "
+"volume is created for each server within the instance and exported to the"
+" corresponding server."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:237
+msgid "Existing vs New"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:238
+msgid ""
+"The user can specify a new volume to be created or specify to attach to "
+"an existing volume. Existing volume is applicable only to shared volumes."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:240
+msgid "Replicated vs Unreplicated"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:241
+msgid ""
+"When creating new volumes, the user can specify that the volume is "
+"unreplicated or replicated. Depending on the storage array deployed and "
+"the HA configuration, replicated volumes can be specified as CPP (classic"
+" peer persistence) or APP (active peer persistence)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:244
+msgid "Using Volume"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:246
+msgid "Perform the following to use the configured volume:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:253
+msgid "After selecting the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:255
+msgid ""
+"BareMetal ILO server for type and specifying the cloud, group, and a name"
+" for the instance, click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:257
+msgid "to advance to the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:260
+msgid "Click on the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:262
+msgid "sign next to Volumes to add a volume to this instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:263
+msgid ""
+"Specify a name for the volume, desired size, volume type to indicate "
+"whether it is a replicated volume or not, the datastore to create it in, "
+"and whether it’s a shared volume."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:2
+msgid "Troubleshooting and Diagnostics"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:4
+msgid ""
+"This section provides a structured approach to diagnose and resolve "
+"common issues encountered during compute, OS imaging, networking, and "
+"storage operations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:6
+msgid "Use the following details to obtain the accurate troubleshooting details:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:7
+msgid "Identify the symptom: locate the closest match in the table or subsection."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:8
+msgid ""
+"Confirm the likely cause: check the listed items using the provided tools"
+" and logs."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:9
+msgid "Apply the suggested fix: perform the recommended actions."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:10
+msgid ""
+"Collect diagnostic information: if the issue persists, gather logs and "
+"screenshots for support escalation.   When reporting an issue, you "
+"require the following diagnostics details:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:11
+msgid ""
+"System Details - Hostname / Device ID - OS version and build - "
+"BIOS/Firmware version"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:15
+msgid ""
+"Event Details - Date and time of failure - Step at which failure occurred"
+" - Any error messages or codes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:19
+msgid ""
+"Logs - Relevant log files for the failed component - Screenshots of "
+"errors (if applicable)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:27
+msgid "The topic describes troubleshooting procedures for compute."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:30
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:32
+msgid "OS Imaging"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:39
+msgid "No."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:40
+msgid "Symptom"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:41
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:104
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:193
+msgid "Additional Details"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:42
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:105
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:194
+msgid "Common Checks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:43
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:106
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:195
+msgid "Log Files"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:44
+msgid "Remarks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:46
+msgid "Windows Setup fails before completion"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:47
+msgid ""
+"Donotdismiss error dialogs immediately, as this may remove diagnostic "
+"information.UseiLO Remote Consoleto access the system.PressShift + F10to "
+"open a command prompt in the Windows PE environment."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:48
+msgid ""
+"Disk layout– Confirm the primary disk is attached to the local RAID "
+"controller.AutoUnattend.xml– Verify the file exists and defines required "
+"partitions:EFI System Partition (500 MB)Microsoft Reserved Partition (128"
+" MB)Primary OS partition"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:49
+msgid ""
+"Relevant setup logs may be found "
+"in:X:\\\\Windows\\\\PantherC:\\\\$WINDOWS.~BT\\\\Sources\\\\PantherKey "
+"files:setupact.logsetuperr.log"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:50
+msgid "Use logs to identify the specific failure stage and error code."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:51
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:114
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:203
+msgid "2"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:52
+msgid "RHEL / Oracle Linux(Autoinstall via Kickstart)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:53
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:59
+msgid ""
+"If the installation fails or hangs, the installer provides interactive "
+"shells and log files for debugging."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:54
+msgid ""
+"TTY Shortcuts:Alt + F1: Installer UIAlt + F2: Interactive shellAlt + F3: "
+"Installation logs"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:55
+msgid ""
+"Key Logs:/var/log/anaconda/anaconda.log/var/log/anaconda/syslog/root"
+"/anaconda-ks.cfg/root/original-ks.cfg/root/post-ks.log/var/log/cloud-"
+"init.log/var/log/cloud-init-output.log"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:56
+msgid ""
+"Use interactive shell (Alt + F2) to validate disk and network "
+"configuration before retrying installation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:57
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:120
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:209
+msgid "3"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:58
+msgid "Ubuntu Linux(Autoinstall via Curtin and Subiquity)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:60
+msgid ""
+"TTY Shortcuts:Alt + F2 or Ctrl + Alt + F2: Interactive shellInstaller "
+"runs on TTY1"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:61
+msgid ""
+"Key Logs/var/log/installer/curtin-install.log/var/log/installer/early-"
+"commands.log/var/log/installer/subiquity-client*/var/log/installer"
+"/subiquity-server*/var/log/cloud-init.log/var/log/cloud-init-output.log"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:62
+msgid ""
+"Use interactive shell (Alt + F2) to check network and storage "
+"configuration, then review logs for errors."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:65
+msgid "Firmware Lifecycle"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:102
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:191
+msgid "S.No."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:103
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:192
+msgid "Topic / Symptom"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:107
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:196
+msgid "Comments"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:109
+msgid "Cloud Network Mode Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:110
+msgid ""
+"Cloud can operate inUnmanagedorManaged (ArubaCX-Int)network modes. This "
+"choice is made during cloud creation underAdvanced Options."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:111
+msgid "Verify the correct network mode selected during cloud creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:112
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:118
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:124
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:130
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:136
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:142
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:148
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:154
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:160
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:166
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:172
+msgid "Morpheus UI log"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:113
+msgid ""
+"Use Unmanaged for external network control; use Managed for Morpheus-"
+"managed ArubaCX switches."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:115
+msgid "Unmanaged Network - Default Setup"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:116
+msgid ""
+"In Unmanaged mode, Morpheus creates a minimal configuration: a default "
+"Resource Pool and a default unmanaged network. The default network "
+"isuntaggedand usesDHCP."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:117
+msgid ""
+"Ensure the DHCP server exists and the network is configured for an "
+"untagged VLAN."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:119
+msgid ""
+"This allows instances to boot with connectivity without extra network "
+"configuration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:121
+msgid "Unmanaged Network - Additional VLANs"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:122
+msgid "Users can create additional VLANs/networks as required."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:123
+msgid "Check VLAN configuration and availability in provisioning options."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:125
+msgid "Additional networks can be consumed by bare-metal instances."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:126
+msgid "4"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:127
+msgid "Managed Network - ArubaCX Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:128
+msgid "Managed mode uses ArubaCX switches and requires the ArubaCX plugin."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:129
+msgid "Confirm the ArubaCX plugin is loaded in Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:131
+msgid ""
+"Managed networks allow Morpheus to configure VLANs on switches "
+"automatically."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:132
+msgid "5"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:134
+msgid ""
+"The plugin must be loaded to enable managed network features. Follow the "
+"procedure AddingHPE BMaaS Integration to load the plugin JAR."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:135
+msgid "Verify plugin status in Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:137
+msgid "Required before creating network integrations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:138
+msgid "6"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:140
+msgid ""
+"Integration defines switch credentials and switch pairs (typically 2 per "
+"rack)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:141
+msgid "Verify switch IPs, username, and password are correct."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:143
+msgid "One integration is needed per rack (switch pair)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:144
+msgid "7"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:145
+msgid "Creating Managed Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:146
+msgid ""
+"Networks represent VLANs and include attributes like subnet, gateway, "
+"DNS, and IP allocation method."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:147
+msgid "Ensure VLAN ID, trunks, and subnet are correct."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:149
+msgid "Primary VLAN is untagged, VLAN trunks are tagged."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:150
+msgid "8"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:151
+msgid "Private Network Option"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:152
+msgid ""
+"Private networks do not configure a primary VLAN on the uplink, making "
+"them inaccessible outside the cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:153
+msgid "Confirm if the network should be private or public."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:155
+msgid "Used for internal workload networks only."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:156
+msgid "9"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:157
+msgid "Network Consumption During Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:158
+msgid ""
+"Networks are attached to physical or bonded interfaces. Primary VLAN is "
+"untagged, trunk VLANs are tagged."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:159
+msgid "Check interface type (physical or bond) and correct VLAN assignment."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:161
+msgid "Supports Static Bond, LACP Bond, and Switch Independent Bond."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:162
+msgid "10"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:163
+msgid "Bond Interface Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:164
+msgid "Bond interfaces require two physical ports to form an aggregated link."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:165
+msgid "Ensure both physical ports are available and correctly mapped."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:167
+msgid "Bonding provides bandwidth aggregation and redundancy."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:168
+msgid "11"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:169
+msgid "Virtual Network Interfaces"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:170
+msgid ""
+"Virtual networks allow tagged VLANs to be configured as IP interfaces on "
+"the server OS."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:171
+msgid "Verify if tagged networks require an IP interface."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:173
+msgid "If not needed, do not configure the virtual interface."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:179
+msgid "The topic describes troubleshooting procedures for storage."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:182
+msgid "Local Boot Volume"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:184
+msgid "Local Storage - Boot Volume Selection During Instance Creation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:198
+msgid "Boot volume not found"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:199
+msgid "Device UID mismatch or not yet discovered"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:200
+msgid ""
+"Confirm device discovery is completeVerify the UID in the storage "
+"controller"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:202
+msgid "Wait for discovery to complete and retry."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:204
+msgid "ResourceMissingAtURIerrors"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:205
+msgid "Redfish device discovery is not complete"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:206
+msgid ""
+"Verify Redfish discovery statusConfirm the device is visible in Redfish "
+"inventory"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:208
+msgid "Retry after a short wait."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:210
+msgid "Script cannot find the device"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:211
+msgid "UID format mismatch or missing disk link"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:212
+msgid "Verify/dev/disk/by-id/entries- Confirm correct disk UID format"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/troubleshooting.rst:214
+msgid "Ensure disk links are correctly mapped and retry."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:2
+msgid "Known Limitations and Operational Considerations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:8
+msgid "S.No"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:9
+msgid "Topic"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:10
+msgid "Description"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:11
+msgid "Impact"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:12
+msgid "Applicability"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:13
+msgid "Operational Guidance"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:15
+msgid ""
+"SATA Controller Initialization Delay During Importing HPE ProLiant Bare "
+"Metal Servers"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:16
+msgid ""
+"During the bare-metal server import and hardware discovery process, if a "
+"server has one or more SATA controllers with no attached SATA disks, the "
+"system waits a minimum of 5 minutes per SATA controllerbefore "
+"continuing.The wait time is cumulative and applies to each SATA "
+"controller detected without attached disks.This behavior occurs during "
+"the initial hardware probing phase, before the server becomes available "
+"for provisioning in Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:17
+msgid ""
+"Increased time to complete bare-metal server discovery, import, and "
+"provisioning.Delay proportional to the number of SATA controllers present"
+" without disks.No impact once the server import process has completed.No "
+"impact when SATA controllers have SATA disks attached."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:18
+msgid ""
+"This condition is typically observed in lab or evaluationenvironments "
+"where SATA controllers may be present but not populated with "
+"disks.Standard production deployments are not expected to include unused "
+"SATA controllers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:19
+msgid ""
+"Disabling an Embedded SATA Controller (HPE ProLiant)Reboot the "
+"server.PressF9to enterSystem Utilities.Navigate to:System "
+"Configuration→BIOS/Platform Configuration (RBSU)→PCIe Device "
+"Configuration.Foreachembedded SATA controller that is not in use:Select "
+"the controller (for example, Embedded SATA Controller #1).Change theSATA "
+"Device DisablefromAutotoDisabled.Press F12 to save the changes and exit, "
+"followed by reboot."
+msgstr ""
+

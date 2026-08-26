@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Deployments/github.rst:2
+msgid "Github"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:4
+msgid ""
+"Integrate your Github account with |morpheus| and have access to all your"
+" public and private repositories within the platform. Use your existing "
+"code and any future code to build automation Tasks and Workflows, onboard"
+" Spec Templates for Terraform and Kubernetes to build App configurations,"
+" and more. Integrated Github repositories also populate the Code list "
+"page (|ProCod|) where repositories can be browsed and individual files "
+"can be viewed. Repositories can be configured as `import and export "
+"<https://docs.morpheusdata.com/en/latest/provisioning/code/code.html?highlight=import"
+"#import-and-export>`_ targets from Code detail pages as well. Each time "
+"code from your repositories is invoked in Tasks, Workflows, Spec "
+"Templates, and more, |morpheus| will pull the current live version "
+"(depending on configuration) so any recent changes to the code are used."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:7
+msgid "Generating a Personal Access Token (Classic)"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:9
+msgid ""
+"As of August 13, 2021, due to policy changes on the Github platform, "
+"|morpheus| requires an access token to authenticate with Github. Password"
+" authentication is no longer possible. |morpheus| accepts both classic "
+"personal access tokens and fine-grained tokens (described in the next "
+"section). To create a new access token:"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:11
+#: ../../integration_guides/Deployments/github.rst:30
+msgid "Log in to Github"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:12
+#: ../../integration_guides/Deployments/github.rst:31
+msgid ""
+"Click on your account profile avatar in the upper-right portion of the "
+"window"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:13
+#: ../../integration_guides/Deployments/github.rst:32
+msgid "Click Settings"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:14
+#: ../../integration_guides/Deployments/github.rst:33
+msgid "From the left nav, click on Developer Settings"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:15
+#: ../../integration_guides/Deployments/github.rst:34
+msgid "Once again from the left nav, click Personal access tokens"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:16
+msgid "Click \"Tokens (classic)\""
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:17
+#: ../../integration_guides/Deployments/github.rst:36
+msgid "Click Generate new token"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:18
+msgid "Click \"Generate new token (classic)\""
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:19
+msgid "Give the new token at least access to everything in the \"repo\" scope"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:20
+#: ../../integration_guides/Deployments/github.rst:38
+msgid "Click Generate token"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:21
+#: ../../integration_guides/Deployments/github.rst:39
+msgid ""
+"Copy the access token and save it for the next step when the integration "
+"is created"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:23
+#: ../../integration_guides/Deployments/github.rst:41
+msgid "Tip"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:23
+msgid ""
+"We recommend using a long-lived token, Github even includes the option to"
+" have no expiration on your tokens (for classic personal access tokens "
+"only, not fine-grained tokens). Should the token expire, any |morpheus| "
+"automation, App Blueprints, and Terraform or Kubernetes Spec Templates "
+"which are based on code contained in your repositories will no longer "
+"work. This could lead to failed provisioning and time spent "
+"troubleshooting to isolate the issue until the Github integration is "
+"refreshed with a new access token."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:26
+msgid "Generating a Fine-Grained Token"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:28
+msgid ""
+"As of August 13, 2021, due to policy changes on the Github platform, "
+"|morpheus| requires an access token to authenticate with Github. Password"
+" authentication is no longer possible. |morpheus| accepts both classic "
+"personal access tokens and fine-grained tokens. To create a new fine-"
+"grained access token:"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:35
+msgid "Click \"Fine-grained tokens\""
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:37
+msgid ""
+"Give the token access to all repositories unless you will only need to "
+"work with specific repositories within |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:41
+msgid ""
+"Fine-grained tokens can be created with an expiration date of up to one "
+"year. Should the token expire, any |morpheus| automation, App Blueprints,"
+" and Terraform or Kubernetes Spec Templates which are based on code "
+"contained in your repositories will no longer work. This could lead to "
+"failed provisioning and time spent troubleshooting to isolate the issue "
+"until the Github integration is refreshed with a new access token."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:44
+msgid "Creating an Integration"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:46
+msgid ""
+"New Github integrations are created either in the global integrations "
+"section (|AdmInt|) or in the code integrations section (|ProCodInt|). You"
+" will need a Github access token to complete this step, see the prior "
+"section for instructions on obtaining a Github access code."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:48
+msgid ""
+"Navigate to the global integrations section (|AdmInt|) or the code "
+"integrations section (|ProCodInt|)"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:49
+msgid "Click :guilabel:`+ADD`"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:50
+msgid "Click Github"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:51
+msgid "Configure the following:"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:53
+msgid "**NAME:** A friendly name for the Github integration in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:54
+msgid ""
+"**ENABLED:** When marked, this Github integration is active and any code "
+"repositories are available for building |morpheus| automation and other "
+"constructs within the platform"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:55
+msgid "**USERNAME:** The username for your Github account"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:56
+msgid ""
+"**PASSWORD:** Copy your access token here rather than in the \"ACCESS "
+"TOKEN\" field. See the \"Important\" box below for additional details"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:57
+msgid ""
+"**ACCESS TOKEN:** Do not use this field. See the \"Important\" box below "
+"for additional details"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:58
+msgid ""
+"**KEY PAIR:** (Optional) Select a stored SSH keypair for Github SSH "
+"authentication"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:59
+msgid ""
+"**ENABLE GIT REPOSITORY CACHING:** When unmarked, |morpheus| retrieves "
+"code fresh from the repository each time it's invoked. When marked, "
+"|morpheus| will use a cached version of the code if it's less than five "
+"minutes old. In general, this should be left unmarked unless you are "
+"experiencing performance issues related to very large amounts of code "
+"being invoked many times during a deployment"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:61
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:63
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:63
+msgid ""
+"Your access token should be pasted into the PASSWORD field and not the "
+"ACCESS TOKEN field. If the ACCESS TOKEN field is used, the repository "
+"will create successfully and many features will work. However, in Code "
+"detail pages (|ProCod| > Selected code detail page), you will not be able"
+" to browse files in private Github repositories unless the access token "
+"is pasted into the PASSWORD field. New Github integrations should be "
+"created by pasting the access token in the PASSWORD field and the ACCESS "
+"TOKEN field should be ignored."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:65
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:65
+msgid ""
+"In certain cases, it can take several seconds for the integration process"
+" to complete and the ADD INTEGRATION modal to be dismissed."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:68
+msgid "Viewing an Integrated Github Account"
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:70
+msgid ""
+"When authentication is successful, click into the new Github integration "
+"from the list of available integrations. The Organizations tab will list "
+"each organization the Github account is associated with. The Repositories"
+" tab lists all public and private repositories which are associated with "
+"the account. We can also click in to each repository to view its files "
+"and folders, as well as create specific types of automation or Spec "
+"Templates from the files directly in this view."
+msgstr ""
+
+#: ../../integration_guides/Deployments/github.rst:72
+msgid ".. image:: /images/integration_guides/github/github.png"
+msgstr ""
+

@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/hvmcli/deploy.rst:2
+msgid "deploy"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:4
+msgid ""
+"Deploy VME (VM Essentials) Manager or Worker virtual machines on the HVM "
+"host."
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:7
+msgid "Commands"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:13
+msgid "Command"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:15
+msgid "``manager``"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:16
+msgid "Deploy, manage, or check status of the VME Manager VM"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:17
+msgid "``worker``"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:18
+msgid "Deploy, manage, or check status of a VME Worker VM"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:21
+msgid "deploy manager"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:23
+msgid "Deploy or manage the VME Manager appliance virtual machine."
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:25
+msgid "**Deploy a new Manager VM:**"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:27
+msgid ""
+"sudo hvmcli deploy manager \\\n"
+"  --ip 10.1.1.100 \\\n"
+"  --netmask 255.255.255.0 \\\n"
+"  --gateway 10.1.1.1 \\\n"
+"  --hostname vme-mgr \\\n"
+"  --image file:///mnt/iso/morpheus.qcow2 \\\n"
+"  --interface enp3s0 \\\n"
+"  --admin-user morphadmin \\\n"
+"  --admin-password-stdin"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:39 ../../tools/hvmcli/deploy.rst:74
+msgid "Options:"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:41
+msgid "``--ip <address>`` — Static IP address for the Manager VM"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:42
+msgid "``--netmask <mask>`` — Subnet mask"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:43
+msgid "``--gateway <address>`` — Default gateway"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:44
+msgid "``--hostname <name>`` — Hostname for the VM"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:45
+msgid ""
+"``--image <uri>`` — Path or URL to the QCOW2 image (``file://`` or "
+"``http://``)"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:46
+msgid "``--interface <nic>`` — Host interface for the VM network"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:47
+msgid "``--admin-user <username>`` — Administrator username for the appliance"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:48
+msgid ""
+"``--admin-password-stdin`` — Read admin password from stdin (secure, no "
+"shell history)"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:50
+msgid "**Run pre-deployment checks:**"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:52
+msgid ""
+"sudo hvmcli deploy manager precheck \\\n"
+"  --ip 10.1.1.100 \\\n"
+"  --interface enp3s0 \\\n"
+"  --image file:///mnt/iso/morpheus.qcow2 \\\n"
+"  --json"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:60
+msgid "**Check Manager VM status:**"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:62
+msgid ""
+"sudo hvmcli deploy manager status\n"
+"sudo hvmcli deploy manager status --json"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:67
+msgid "**View Manager deployment logs:**"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:69
+msgid ""
+"sudo hvmcli deploy manager logs\n"
+"sudo hvmcli deploy manager logs --lines 100 --diagnostics"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:76
+msgid "``--lines <n>`` — Number of log lines to display"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:77
+msgid "``--diagnostics`` — Include diagnostic information"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:80
+msgid "deploy worker"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:82
+msgid "Deploy or manage a VME Worker virtual machine."
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:84
+msgid "**Deploy a new Worker VM:**"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:86
+msgid ""
+"sudo hvmcli deploy worker \\\n"
+"  --ip 10.1.1.110 \\\n"
+"  --netmask 255.255.255.0 \\\n"
+"  --gateway 10.1.1.1 \\\n"
+"  --hostname vme-wkr1 \\\n"
+"  --image file:///mnt/iso/morpheus.qcow2 \\\n"
+"  --interface enp3s0 \\\n"
+"  --worker-url https://10.1.1.100 \\\n"
+"  --worker-key abc123 \\\n"
+"  --apikey def456 \\\n"
+"  --admin-password-stdin"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:100
+msgid "Additional options for Worker:"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:102
+msgid "``--worker-url <url>`` — URL of the Manager VM to register with"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:103
+msgid "``--worker-key <key>`` — Worker registration key from the Manager"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:104
+msgid "``--apikey <key>`` — API key for Manager authentication"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:106
+msgid "**Check Worker VM status:**"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:108
+msgid "sudo hvmcli deploy worker status --json"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:112
+msgid "Tip"
+msgstr ""
+
+#: ../../tools/hvmcli/deploy.rst:112
+msgid ""
+"Always run ``deploy manager precheck`` before deploying to validate that "
+"network connectivity, image accessibility, and host resources are "
+"adequate."
+msgstr ""
+

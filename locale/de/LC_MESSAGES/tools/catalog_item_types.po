@@ -1,0 +1,517 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../tools/catalog_item_types.rst:4
+msgid "Catalog Item Types"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:9
+msgid ""
+"Catalog Item Types define the items available in the |morpheus| Self-"
+"Service Catalog. Each catalog item type specifies what gets provisioned "
+"or executed when a user orders from the catalog, including the "
+"configuration, form fields, branding, and access controls."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:11
+msgid ""
+"Catalog Item Types are managed in |TooCat| (Tools > Self-Service > "
+"Catalog Items) or through the Library Blueprints section, depending on "
+"the navigation configuration."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:13
+msgid ""
+"The Self-Service Catalog provides a simplified ordering experience for "
+"end users who don't need access to the full provisioning wizard."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:16
+msgid "Role Permissions"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:18
+msgid "**Tools: Catalog** — ``None``, ``Read``, or ``Full``"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:20
+msgid "**None:** Cannot access Catalog Item Types management"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:21
+msgid "**Read:** Can view catalog items"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:22
+msgid "**Full:** Can create, edit, and delete catalog items"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:25
+msgid "Catalog Item Reference Types"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:27
+msgid ""
+"Each Catalog Item Type has a reference type that determines what it "
+"provisions:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:33
+msgid "Reference Type"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:34
+msgid "Description"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:35
+msgid "**Instance**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:36
+msgid ""
+"Provisions an Instance from a configured Instance Type with predefined "
+"settings"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:37
+msgid "**Blueprint**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:38
+msgid ""
+"Deploys a multi-tier application from an App Blueprint (Morpheus, "
+"Terraform, ARM, CloudFormation, Kubernetes, Helm)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:39
+msgid "**Workflow**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:40
+msgid "Executes an Operational Workflow (no provisioning, just automation)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:43
+msgid "Creating a Catalog Item Type"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:45 ../../tools/catalog_item_types.rst:170
+#: ../../tools/catalog_item_types.rst:178
+msgid "Navigate to |TooCat|"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:46
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:47
+msgid "Select the item type (Instance, Blueprint, or Workflow)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:48
+msgid "Complete the configuration:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:50
+msgid "**General Settings:**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:52
+msgid "**NAME:** Display name shown in the catalog (must be unique per tenant)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:53
+msgid "**CODE:** Unique code identifier for API reference"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:54
+msgid "**DESCRIPTION:** Description shown to catalog users"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:55
+msgid "**CATEGORY:** Optional category for organizing items in the catalog"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:56
+msgid "**ENABLED:** Toggle availability in the catalog"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:57
+msgid "**FEATURED:** Mark to highlight in the catalog (displayed prominently)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:58
+msgid ""
+"**VISIBILITY:** ``Public`` (all tenants) or ``Private`` (owner tenant "
+"only)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:59
+msgid "**LABELS:** Organizational labels"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:61
+msgid "**Branding:**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:63
+msgid "**LOGO:** Upload a custom icon/logo (PNG, JPEG, SVG)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:64
+msgid "**DARK LOGO:** Logo variant for dark mode display"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:66
+msgid "**Configuration (varies by type):**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:68
+msgid "*Instance Type:*"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:70
+msgid ""
+"Full Instance provisioning configuration in JSON format including "
+"Instance Type, layout, plan, network, volumes, and options"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:72
+msgid "*Blueprint:*"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:74
+msgid "App Blueprint selection and configuration"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:75
+msgid "App Spec in JSON/YAML format"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:77
+msgid "*Workflow:*"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:79
+msgid "Select the Operational Workflow to execute"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:80
+msgid "Configure default input values"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:82
+msgid "**Form Configuration:**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:84
+msgid ""
+"**FORM TYPE:** Option Types (individual fields) or Option Type Form "
+"(reusable form)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:85
+msgid ""
+"**OPTION TYPES:** Select or create form fields presented to the user at "
+"order time"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:86
+msgid "**FORM:** Select a pre-built Option Type Form"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:88
+msgid "**Content:**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:90
+msgid ""
+"**CONTENT:** Rich text content (markdown/HTML) displayed on the catalog "
+"item detail page. Use for documentation, instructions, or SLA "
+"information."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:92
+msgid "**Access Control:**"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:94
+msgid "Role-based visibility controls which roles can see and order the item"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:96 ../../tools/catalog_item_types.rst:173
+msgid "Click :guilabel:`SAVE`"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:99
+msgid "Instance Type Configuration"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:101
+msgid ""
+"For Instance-type catalog items, the configuration JSON defines the "
+"complete provisioning specification:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:103
+#, python-brace-format
+msgid ""
+"{\n"
+"  \"instance\": {\n"
+"    \"type\": \"nginx\",\n"
+"    \"cloud\": {\"id\": 1},\n"
+"    \"layout\": {\"id\": 105},\n"
+"    \"plan\": {\"id\": 10}\n"
+"  },\n"
+"  \"config\": {\n"
+"    \"resourcePool\": {\"id\": 5},\n"
+"    \"network\": {\"id\": 3}\n"
+"  },\n"
+"  \"volumes\": [\n"
+"    {\"rootVolume\": true, \"size\": 50}\n"
+"  ]\n"
+"}"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:121
+msgid ""
+"Users ordering this item see only the form fields you've configured — the"
+" underlying provisioning details are hidden."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:124
+msgid "Blueprint Configuration"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:126
+msgid "For Blueprint-type catalog items, reference an existing App Blueprint:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:128
+msgid "Select the Blueprint from the configuration"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:129
+msgid "Optionally lock specific configuration values"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:130
+msgid "Users can fill in only the fields exposed through the form"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:133
+msgid "Workflow Configuration"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:135
+msgid "For Workflow-type catalog items:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:137
+msgid "Select an Operational Workflow"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:138
+msgid "Configure which inputs are presented to the user"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:139
+msgid "The workflow executes when the item is ordered"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:142
+msgid "Form Fields (Option Types)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:144
+msgid "Option Types define the form fields shown to catalog users at order time:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:146
+msgid "**Text:** Free-text input"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:147
+msgid "**Number:** Numeric input"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:148
+msgid "**Select List:** Dropdown from a static or dynamic list"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:149
+msgid "**Checkbox:** Boolean toggle"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:150
+msgid "**Password:** Masked input"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:151
+msgid "**Text Area:** Multi-line text"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:152
+msgid "**Hidden:** Value passed without user input"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:153
+msgid "**Typeahead:** Search-as-you-type selection"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:155
+msgid ""
+"Form fields can be sourced from Option Type Lists for dynamic data (e.g.,"
+" available environments, networks, resource pools)."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:158
+msgid "Quantity Support"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:160
+msgid ""
+"**ALLOW QUANTITY:** When enabled, users can order multiple copies in a "
+"single request"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:161
+msgid ""
+"**MAX QUANTITY:** Maximum number of copies per order (leave empty for "
+"unlimited)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:162
+msgid ""
+"**DISABLE AUTO PRICE:** When enabled, pricing is not automatically "
+"calculated for quantity changes"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:165
+msgid "Managing Catalog Item Types"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:168
+msgid "Editing"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:171
+msgid "Click the item name or the pencil icon"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:172
+msgid "Modify settings as needed"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:176
+msgid "Deleting"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:179
+msgid "Click the trash icon on the item row"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:180
+msgid "Confirm deletion"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:182
+msgid "Note"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:182
+msgid ""
+"Deleting a Catalog Item Type does not affect previously-provisioned "
+"resources from that item. It only removes the item from the catalog for "
+"future orders."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:185
+msgid "Multi-Tenant Considerations"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:187
+msgid "**Public** items created in the Master Tenant are visible to all tenants"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:188
+msgid "**Private** items are only visible to the creating tenant"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:189
+msgid "Sub-tenant users can only create Private catalog items"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:190
+msgid ""
+"Role-based access further restricts which users within a tenant can see "
+"specific items"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:193
+msgid "Layout Providers (Plugin)"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:195
+msgid ""
+"Plugin-based layout providers can extend the catalog item presentation "
+"with custom rendering. Installed plugins that implement "
+"``AbstractCatalogItemLayoutProvider`` appear as layout options during "
+"catalog item creation."
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:198
+msgid "API"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:200
+msgid "Catalog Item Types can be managed via the |morpheus| API:"
+msgstr ""
+
+#: ../../tools/catalog_item_types.rst:202
+#, python-brace-format
+msgid ""
+"# List catalog item types\n"
+"curl \"$MORPHEUS_API_URL/api/catalog-item-types\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\"\n"
+"\n"
+"# Create a catalog item type\n"
+"curl -X POST \"$MORPHEUS_API_URL/api/catalog-item-types\" \\\n"
+"  -H \"Authorization: Bearer $MORPHEUS_API_TOKEN\" \\\n"
+"  -H \"Content-Type: application/json\" \\\n"
+"  -d '{\n"
+"    \"catalogItemType\": {\n"
+"      \"name\": \"Web Server\",\n"
+"      \"description\": \"Standard Nginx web server\",\n"
+"      \"type\": \"instance\",\n"
+"      \"visibility\": \"public\",\n"
+"      \"enabled\": true,\n"
+"      \"config\": \"{\\\"instance\\\":{\\\"type\\\":\\\"nginx\\\"}}\"\n"
+"    }\n"
+"  }'"
+msgstr ""
+

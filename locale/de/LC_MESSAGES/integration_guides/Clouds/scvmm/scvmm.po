@@ -1,0 +1,764 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:2
+msgid "SCVMM"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:5
+msgid "Requirements"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:7
+msgid "Access to SCVMM host on port 5985 for Agent installation"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:8
+msgid "Access to Hyper-V host on port 2179 for hypervisor console access"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:9
+msgid ""
+"|morpheus| Agent installation (installed on the target SCVMM host via "
+"port 5985 and WinRM)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:10
+msgid "User with administrator privileges"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:14
+msgid "Agent Requirement"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:16
+msgid ""
+"SCVMM and Hyper-V integrations utilize the |morpheus| Agent for "
+"communication with the |morpheus| appliance, making the |morpheus| Agent "
+"required. This also means SCVMM and Hyper-V Clouds can only point to one "
+"|morpheus| Appliance at any given time. If another |morpheus| Appliance "
+"adds an SCVMM or Hyper-V Cloud thats is already managed by another "
+"|morpheus| Appliance, the |morpheus| Agent appliance_url will be updated "
+"to point to the new |morpheus| appliance_url, and the previous |morpheus|"
+" Appliance will no longer be able to communicate with the SCVMM Cloud or "
+"Hyper-V Cloud until the Agent configuration is updated to point to the "
+"previous appliance again. In |morpheus| version 4.2.1 and higher, "
+"multiple |morpheus| clouds can be created by integrating with the same "
+"SCVMM host. This allows users to create separate Clouds with are scoped "
+"to different SCVMM Cloud, Host and/or Cluster combinations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:18
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:27
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:87
+msgid "Note"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:18
+msgid ""
+"|morpheus| only supports integration with standalone SCVMM installations "
+"and not high-availability cluster installation at this time."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:21
+msgid "Add a SCVMM Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:23
+msgid "Navigate to ``Infrastructure > Clouds``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:24
+msgid ""
+"Select :guilabel:`+ CREATE CLOUD`, select SCVMM, and then click "
+":guilabel:`Next`."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:25
+msgid "Enter the following into the Create Cloud modal:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:27
+msgid ""
+"You will need to open port 5985 in order for |morpheus| to communicate to"
+" SCVMM. You will also want to make sure the SCVMM Controller has WinRM "
+"enabled."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:1
+msgid "**Cloud Configuration**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:3
+msgid "NAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:4
+msgid "Name of the Cloud in |morpheus|"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:5
+msgid "CODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:6
+msgid "Unique code used for api/cli, automation and policies."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:7
+msgid "LOCATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:8
+msgid "Description field for adding notes on the cloud, such as location."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:9
+msgid "VISIBILITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:10
+msgid ""
+"For setting cloud permissions in a multi-tenant environment. Not "
+"applicable in single tenant environments."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:11
+msgid "TENANT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:12
+msgid ""
+"If Visibility is set to Private, select the Tenant the Cloud resources "
+"will assigned to."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:13
+msgid "ENABLED"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:14
+msgid ""
+"When disabled, automatic Cloud sync is paused and the Cloud will not be "
+"selectable for provisioning."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:15
+msgid "AUTOMATICALLY POWER ON VMS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:16
+msgid ""
+"When enabled, |morpheus| will maintain the expected power state of "
+"managed VMs. |morpheus| will power on any managed VMs in the Cloud that "
+"have been shut down for unknown reasons (not powered off by |morpheus|) "
+"to ensure availability of services."
+msgstr ""
+
+#: ../../integration_guides/Clouds/base_options.rst:18
+msgid ""
+"When \"AUTOMATICALLY POWER ON VMS\" is enabled, the power state of "
+"managed VMs should be maintained in |morpheus|. This setting is not "
+"applicable to discovered/unmanaged resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:31
+msgid "**Details**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:34
+msgid "SCVMM HOST"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:35
+msgid "IP address or URL of SCVMM host server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:36
+msgid "USERNAME"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:37
+msgid "SCVMM Username, for example: svc.scvmm"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:38
+msgid "PASSWORD"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:39
+msgid "SCVMM user Password"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:40
+msgid "CLOUD"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:41
+msgid ""
+"To scope the SCVMM Integration to a single Cloud, select it from the "
+"Cloud dropdown, which populates after establishing communication and "
+"authorization over port 5985 using the supplied username and password. To"
+" scope to all Clouds, leave the dropdown selection as ``Select Cloud``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:42
+msgid "HOST GROUP"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:43
+msgid ""
+"To scope the SCVMM Integration to a single host group, select a host "
+"group from the dropdown list. To scope to all host groups, select ``All "
+"Hosts``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:44
+msgid "CLUSTER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:45
+msgid ""
+"To scope the SCVMM Integration to a single cluster, select a cluster from"
+" the dropdown list. To scope to all host groups, select ``All``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:46
+msgid "LIBRARY SHARE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:47
+msgid "Select a Library Share to be used with the cloud integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:48
+msgid "SHARED CONTROLLER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:49
+msgid ""
+"When creating additional |morpheus| clouds that point to an SCVMM host "
+"already integrated with this appliance, select the appropriate shared "
+"controller value from the dropdown."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:51
+msgid "Important"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:51
+msgid ""
+"Only set ``SHARED CONTROLLER`` on additional |morpheus| clouds and not on"
+" the Primary |morpheus| SCVMM cloud. Failure to set the ``SHARED "
+"CONTROLLER`` on secondary |morpheus| clouds pointed to the same SCVMM "
+"cluster will cause agent comm issues resulting in provisioning failures."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:53
+msgid "WORKING PATH"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:54
+msgid "Path for |morpheus| to write to, for example ``c:\\cloud``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:55
+msgid "DISK PATH"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:56
+msgid "Path for Virtual Disks, for example ``c:\\virtualdisks``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:57
+msgid "HIDE HOST SELECTION FROM USERS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:58
+msgid "Prevents host selection from appearing in provisioning wizards"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:59
+msgid "INVENTORY EXISTING INSTANCES"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:60
+msgid ""
+"Enable for |morpheus| to automatically discover existing VMs in the "
+"scoped resources"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:61
+msgid "ENABLE HYPERVISOR CONSOLE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:62
+msgid ""
+"Enable to use VNC Hypervisor Console for |morpheus| console connection as"
+" opposed to the default SSH and RDP console connection methods. Requires "
+"resolution of all Hyper-V host names and access over port 2179 from the "
+"|morpheus| appliance to Hyper-V hosts."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:64
+msgid "**SCVMM Specific Advanced Options**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:66
+msgid "INSTALL AGENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:67
+msgid ""
+"Enabled by default, INSTALL AGENT installs the |morpheus| agent on the "
+"scvmm Controller when adding the cloud, which is required for full "
+"functionally unless using a shared controller in which scenario the agent"
+" would already be installed on the scvmm controller node. Disabling "
+"INSTALL AGENT on the cloud config when not using a shared controller will"
+" remove the ability to provision to the cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:1
+msgid "**Advanced Options**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:3
+msgid "DOMAIN"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:4
+msgid "Specify a default domain for instances provisioned to this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:5
+msgid "SCALE PRIORITY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:6
+msgid ""
+"Only affects Docker Provisioning. Specifies the priority with which an "
+"instance will scale into the cloud. A lower priority number means this "
+"cloud integration will take scale precedence over other cloud "
+"integrations in the group."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:7
+msgid "APPLIANCE URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:8
+msgid ""
+"Alternate Appliance url for scenarios when the default Appliance URL "
+"(configured in `admin > settings`) is not reachable or resolvable for "
+"Instances provisioned in this cloud. The Appliance URL is used for Agent "
+"install and reporting."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:9
+msgid "TIME ZONE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:10
+msgid "Configures the time zone on provisioned VM's if necessary."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:11
+msgid "DATACENTER ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:12
+msgid ""
+"Used for differentiating pricing among multiple datacenters. Leave blank "
+"unless prices are properly configured."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:13
+msgid "NETWORK MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:14
+msgid "Unmanaged or select a Network Integration (NSX, ACI etc)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:15
+msgid "LOCAL FIREWALL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:16
+msgid ""
+"On or Off. Enable to managed Host and VM firewall/IP Table rules (linux "
+"only)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:17
+msgid "SECURITY SERVER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:18
+msgid "Security Server setting is for Security Service Integrations such as ACI"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:19
+msgid "TRUST PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:20
+msgid "Select Internal (Morpheus) or an existing Trust Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:21
+msgid "STORAGE MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:22
+msgid "Single Disk, LVM or Clustered"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:23
+msgid "BACKUP PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:24
+msgid ""
+"Select a backup provider. Depending on the Cloud type and any currently-"
+"configured backup plugins you may select Internal Backups (Morpheus) or "
+"another configured backup solution"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:25
+msgid "REPLICATION PROVIDER"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:26
+msgid ""
+"Sets the default Replication Provider for the Cloud. Select an existing "
+"Replication Provider Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:27
+msgid "GUIDANCE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:28
+msgid "Enable Guidance recommendations on cloud resources."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:29
+msgid "COSTING"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:30
+msgid ""
+"Enable for |morpheus| to sync Costing data from the Cloud provider, when "
+"available. For on-prem Clouds, enabling costing activates a costing "
+"service designed to mirror the live costing experience of public clouds, "
+"including invoicing with line items and real-time cost data (Operations >"
+" Costing > Invoices). If your organization utilizes reserved instances "
+"and you want to pull in related pricing data, some Cloud integrations "
+"include the option to select `Costing and Reservations`. If this is not "
+"relevant, select `Costing` to save money on additional calls to the Cloud"
+" provider's costing API."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:31
+msgid "DNS INTEGRATION"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:32
+msgid ""
+"Records for instances provisioned in this cloud will be added to selected"
+" DNS integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:33
+msgid "SERVICE REGISTRY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:34
+msgid ""
+"Services for instances provisioned in this cloud will be added to "
+"selected Service Registry integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:35
+msgid "CONFIG MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:36
+msgid "Select a Chef, Ansible or Puppet integration to be used with this Cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:37
+msgid "CMDB"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:38
+msgid "Select CMDB Integration to automatically update selected CMDB."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:39
+msgid "CMDB DISCOVERY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:40
+msgid ""
+"When checked, any automatically discovered (unmanaged) servers onboarded "
+"into |morpheus| from this Cloud will also have CMDB records created for "
+"them."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:41
+msgid "CHANGE MANAGEMENT"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:42
+msgid ""
+"Select an existing Change Management Integration to set on the Cloud. ex:"
+" Cherwell"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:43
+msgid "AGENT INSTALL MODE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:44
+msgid ""
+"SSH / WINRM / Guest Execution: |morpheus| will attempt to use SSH, WINRM "
+"or Guest Execution for Agent install."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:45
+msgid ""
+"Cloud Init / Unattend (when available): (DEFAULT) |morpheus| will utilize"
+" Cloud-Init or Cloudbase-Init for agent install when provisioning images "
+"with Cloud-Init/Cloudbase-Init installed. |morpheus| will fall back on "
+"SSH or WINRM if cloud-init is not installed on the provisioned image. "
+"Morpheus will also add Agent installation to Windows unattend.xml data "
+"when performing Guest Customizations or utilizing syspreped images."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:46
+msgid "VDI GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:47
+msgid ""
+"Set a VDI Gateway for outbound communication from the |morpheus| "
+"Appliance to the vdi endpoints. VDI Gateways can be added in "
+"``/tools/vdi/gateways``"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:50
+msgid "**CUSTOM LOGOS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:52
+msgid ""
+"When integrating a Cloud, it will appear by default throughout the UI "
+"with its standard logo (VMware logo for VMware Clouds, etc.). If desired,"
+" you may upload a custom logo that should appear instead. This might be "
+"useful for MSPs which might not want to reveal the Cloud type underlying "
+"its services. A dark mode version of the logo may also be uploaded if the"
+" standard logo doesn't look right against the |morpheus| dark mode theme."
+" Checking USE DEFAULT CLOUD LOGOS allows the user to return to the "
+"standard logo for the Cloud type without deleting the custom uploaded "
+"logo."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:54
+msgid "**INVENTORY OPTIONS**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:56
+msgid ""
+"Inventory options allow you to set a default active or inactive state for"
+" certain discovered resources. The list of available resources to "
+"configure will vary based on the Cloud type and its supported resources. "
+"By default, all possible resources for the Cloud type will be discovered "
+"in an active state. Uncheck the box for some or all resources to discover"
+" them in an inactive state. The list of potential resources that may "
+"appear include:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:58
+msgid "Service Plans"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:59
+msgid "Resource Pools"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:60
+msgid "Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:61
+msgid "Security Groups"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:62
+msgid "Datastores"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:63
+msgid "Folders"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:65
+msgid "**Provisioning Command**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:67
+msgid "PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:68
+msgid ""
+"Set a proxy for inbound communication from Instances to the |morpheus| "
+"Appliance. Proxies can be added in the `Infrastructure > Networks > "
+"Proxies` tab."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:69
+msgid "Bypass Proxy for Appliance URL"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:70
+msgid ""
+"Enable to bypass proxy settings (if added) for |morpheus| Agent "
+"communication to the Appliance URL."
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:71
+msgid "NO PROXY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:72
+msgid ""
+"Include a list of IP addresses or name servers to exclude from proxy "
+"traversal"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:73
+msgid "USER DATA (LINUX)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/advanced_options.rst:74
+msgid ""
+"Add cloud-init user data. |morpheus| 4.1.0 and earlier assumes bash "
+"syntax. |morpheus| 4.1.1 and later supports all User Data formats. Refer "
+"to https://cloudinit.readthedocs.io/en/latest/topics/format.html for more"
+" information."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:74
+msgid ""
+"After clicking :guilabel:`NEXT`, the new Cloud can be added to a Group or"
+" configured with additional advanced options."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:77
+msgid "Feature Boundaries"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:79
+msgid ""
+"The SCVMM integration is classified as a **Tier 2 — Core Cloud "
+"Management** integration. The following capabilities are not currently "
+"supported:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:81
+msgid "**Networking**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:83
+msgid ""
+"Network creation, deletion, or modification from |morpheus| (networks are"
+" synced from SCVMM)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:84
+msgid "Native security group management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:85
+msgid "Load balancer integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:87
+msgid ""
+"IPAM / IP Pool assignment is supported via |morpheus| and applied through"
+" guest OS configuration (cloud-init or sysprep)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:89
+msgid "**Costing & Governance**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:91
+msgid "Price synchronization or billing integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:92
+msgid "Right-sizing recommendations"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:93
+msgid "Tag synchronization"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:94
+msgid "Multitenancy / resource pool scoping per tenant"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:96
+msgid "**Other**"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:98
+msgid "Linux Guest Customization (Windows guest customization is supported)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:99
+msgid "Kubernetes cluster provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:100
+msgid "Remote console via hypervisor (SSH/RDP console is available)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:101
+msgid "Auto scaling"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:102
+msgid "VM migrations between hosts"
+msgstr ""
+
+#: ../../integration_guides/Clouds/scvmm/scvmm.rst:104
+msgid ""
+"For a full feature comparison across all supported clouds, see "
+":doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
+msgstr ""
+

@@ -1,0 +1,349 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../provisioning/automation/conditional_workflows.rst:4
+msgid "Conditional Workflow Tasks"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:7
+msgid "Overview"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:9
+msgid ""
+"Conditional Workflow Tasks provide branching logic within |morpheus| "
+"Workflows. A Conditional Workflow Task evaluates a JavaScript expression "
+"and, based on the result, executes one of two Operational Workflows — "
+"enabling dynamic, decision-based automation chains."
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:11
+msgid ""
+"This task type is found in :menuselection:`Library --> Automation` "
+"(Library > Automation > Tasks) with the type **Conditional Workflow**."
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:14
+msgid "How It Works"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:16
+msgid "The Conditional Workflow Task operates on a simple if/else model:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:18
+msgid "A JavaScript expression is evaluated"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:19
+msgid "If the expression resolves to ``true``, the **If Workflow** is executed"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:20
+msgid "If the expression resolves to ``false``, the **Else Workflow** is executed"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:21
+msgid "The parent Workflow continues after the conditional branch completes"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:23
+msgid ""
+"Parent Workflow\n"
+"├── Task 1\n"
+"├── Conditional Workflow Task\n"
+"│   ├── [true]  → If Operational Workflow\n"
+"│   └── [false] → Else Operational Workflow\n"
+"└── Task 3 (continues after conditional)"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:33
+msgid "Creating a Conditional Workflow Task"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:35
+msgid "Navigate to :menuselection:`Library --> Automation` > Tasks"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:36
+msgid "Click :guilabel:`+ ADD`"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:37
+msgid "Select **Conditional Workflow** as the Task Type"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:38
+msgid "Configure the Task:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:40
+msgid "**NAME:** Descriptive name for the conditional task"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:41
+msgid "**CODE:** Unique code for API, CLI, and variable references"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:42
+msgid "**LABELS:** Comma-separated labels for organization"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:43
+msgid ""
+"**CONDITIONAL (JS):** JavaScript expression that evaluates to ``true`` or"
+" ``false``"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:44
+msgid ""
+"**IF OPERATIONAL WORKFLOW:** The Workflow to execute when the condition "
+"is true"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:45
+msgid ""
+"**ELSE OPERATIONAL WORKFLOW:** The Workflow to execute when the condition"
+" is false"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:47
+msgid "Click :guilabel:`SAVE CHANGES`"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:50
+msgid "JavaScript Conditional Syntax"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:52
+msgid ""
+"The **CONDITIONAL (JS)** field accepts JavaScript expressions. The "
+"expression must resolve to a truthy or falsy value."
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:55
+msgid "Simple Comparisons"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:57
+msgid ""
+"// Check instance type\n"
+"\"<%= instance.instanceTypeName %>\" === \"nginx\"\n"
+"\n"
+"// Check cloud type\n"
+"\"<%= zone.zoneType.code %>\" === \"vmware\"\n"
+"\n"
+"// Numeric comparison\n"
+"parseInt(\"<%= instance.maxMemory %>\") > 1073741824"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:69
+msgid "Variable References"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:71
+msgid ""
+"|morpheus| variables can be injected into the JavaScript expression using"
+" ``<%= %>`` syntax:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:73
+msgid ""
+"// Check custom option value\n"
+"\"<%= customOptions.environment %>\" === \"production\"\n"
+"\n"
+"// Check instance status\n"
+"\"<%= instance.status %>\" === \"running\"\n"
+"\n"
+"// Check group membership\n"
+"\"<%= instance.group.name %>\" === \"Web Tier\""
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:85
+msgid "Using Task Results"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:87
+msgid "Results from prior Tasks in the Workflow can be referenced:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:89
+msgid ""
+"// Check result from a previous task (by task code)\n"
+"\"<%= results.healthCheck %>\" === \"healthy\"\n"
+"\n"
+"// Boolean from prior task\n"
+"\"<%= results.validationTask %>\" === \"true\"\n"
+"\n"
+"// Check if result contains a value\n"
+"\"<%= results.checkStatus %>\".indexOf(\"SUCCESS\") >= 0"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:101
+msgid "Complex Conditions"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:103
+msgid "Multiple conditions can be combined:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:105
+msgid ""
+"// AND condition\n"
+"\"<%= customOptions.tier %>\" === \"web\" && \"<%= zone.name %>\" === "
+"\"Production\"\n"
+"\n"
+"// OR condition\n"
+"\"<%= instance.plan.name %>\".indexOf(\"large\") >= 0 || parseInt(\"<%= "
+"instance.maxCores %>\") > 4\n"
+"\n"
+"// Negation\n"
+"\"<%= instance.status %>\" !== \"suspended\""
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:117
+msgid "Result Propagation"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:119
+msgid "When a Conditional Workflow Task executes a sub-workflow:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:121
+msgid ""
+"**Task Results:** Results from Tasks within the If/Else workflow are "
+"accessible to subsequent Tasks in the parent Workflow via "
+"``results.taskCode``"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:122
+msgid "**Error Handling:** If a Task within the sub-workflow fails:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:124
+msgid ""
+"If **Continue on Error** is set on the conditional task, the parent "
+"Workflow continues"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:125
+msgid "If not set, the parent Workflow fails"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:127
+msgid ""
+"**Output:** The conditional task itself does not produce a result value; "
+"results come from the individual Tasks within the executed sub-workflow"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:130
+msgid "Best Practices"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:132
+msgid ""
+"**Keep conditions simple:** Complex logic should be in a preceding Script"
+" Task that outputs a simple value for the conditional to evaluate"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:133
+msgid ""
+"**Use task codes:** Reference prior task results by code rather than name"
+" for stability"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:134
+msgid ""
+"**Test both branches:** Ensure both the If and Else workflows handle "
+"their scenarios completely"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:135
+msgid ""
+"**Handle null values:** Wrap variable references in null checks when "
+"values may not be present:"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:137
+msgid "(\"<%= customOptions.skipDeploy %>\" || \"false\") === \"true\""
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:141
+msgid ""
+"**Use RESULT TYPE wisely:** When chaining tasks before a conditional, set"
+" appropriate result types (Single Value, JSON) so values are accessible"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:144
+msgid "Examples"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:146
+msgid "**Route deployment by environment:**"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:148
+msgid "\"<%= customOptions.targetEnv %>\" === \"production\""
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:152
+msgid ""
+"If true → Production Deployment Workflow (with approvals, blue-green, "
+"etc.)"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:153
+msgid "If false → Development Deployment Workflow (direct deploy)"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:155
+msgid "**Conditional backup before update:**"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:157
+msgid "\"<%= customOptions.skipBackup %>\" !== \"true\""
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:161
+msgid "If true → Pre-Update Backup Workflow"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:162
+msgid "If false → Skip backup (empty workflow or no-op)"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:164
+msgid "**Scale decision based on metrics:**"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:166
+msgid "parseInt(\"<%= results.checkMetrics %>\") > 80"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:170
+msgid "If true → Scale Out Workflow"
+msgstr ""
+
+#: ../../provisioning/automation/conditional_workflows.rst:171
+msgid "If false → Normal Operation Workflow (no-op)"
+msgstr ""
+

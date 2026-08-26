@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -30,7 +30,11 @@ msgid ""
 "Types to always execute at the selected phase when that Node Type is "
 "provisioned, added to Workflows as Library Script Tasks, and/or executed "
 "ad-hoc on Instances."
-msgstr "Los Scripts son scripts de bash y Powershell que se pueden adjuntar a Tipos de nodo para ejecutarse siempre en la fase seleccionada cuando ese Tipo de nodo es aprovisionado, agregarse a Flujos de trabajo como Tareas de Script de Biblioteca, y/o ejecutarse de forma ad hoc en Instancias."
+msgstr ""
+"Los Scripts son scripts de bash y Powershell que se pueden adjuntar a "
+"Tipos de nodo para ejecutarse siempre en la fase seleccionada cuando ese "
+"Tipo de nodo es aprovisionado, agregarse a Flujos de trabajo como Tareas "
+"de Script de Biblioteca, y/o ejecutarse de forma ad hoc en Instancias."
 
 #: ../../library/templates/scripts.rst:7
 msgid "Creating Scripts"
@@ -56,7 +60,7 @@ msgstr "NOMBRE"
 msgid "Name of the Script in |morpheus|"
 msgstr "Nombre del Script en |morpheus|"
 
-#: ../../library/templates/scripts.rst:16
+#: ../../library/templates/scripts.rst:15
 msgid "SCRIPT TYPE"
 msgstr "TIPO DE SCRIPT"
 
@@ -68,7 +72,7 @@ msgstr "Bash"
 msgid "Powershell"
 msgstr "Powershell"
 
-#: ../../library/templates/scripts.rst:42
+#: ../../library/templates/scripts.rst:18
 msgid "PHASE"
 msgstr "FASE"
 
@@ -77,7 +81,10 @@ msgid ""
 "Select which phase the Script will execute when attached to a Node Type. "
 "When a script is attached to a Node Type, it will execute according to "
 "the selcted phase:"
-msgstr "Seleccione en qué fase se ejecutará el Script cuando esté adjunto a un Tipo de nodo. Cuando un script está adjunto a un Tipo de nodo, se ejecutará según la fase seleccionada:"
+msgstr ""
+"Seleccione en qué fase se ejecutará el Script cuando esté adjunto a un "
+"Tipo de nodo. Cuando un script está adjunto a un Tipo de nodo, se "
+"ejecutará según la fase seleccionada:"
 
 #: ../../library/templates/scripts.rst:21
 msgid "Start Service"
@@ -95,7 +102,7 @@ msgstr "Detener servicio"
 msgid "Any time the Instance action ``Stop Service`` is executed"
 msgstr "Cada vez que se ejecuta la acción de Instancia ``Stop Service``"
 
-#: ../../library/templates/scripts.rst:26
+#: ../../library/templates/scripts.rst:25
 msgid "Pre-Provision"
 msgstr "Pre-aprovisionamiento"
 
@@ -103,15 +110,19 @@ msgstr "Pre-aprovisionamiento"
 msgid ""
 "Containers: Script will execute against the container host before the "
 "container is provisioned"
-msgstr "Contenedores: El Script se ejecutará contra el host del contenedor antes de que el contenedor sea aprovisionado"
+msgstr ""
+"Contenedores: El Script se ejecutará contra el host del contenedor antes "
+"de que el contenedor sea aprovisionado"
 
 #: ../../library/templates/scripts.rst:27
 msgid ""
 "Virtual Machines: Script will execute before any provision phase Scripts "
 "or Tasks"
-msgstr "Máquinas virtuales: El Script se ejecutará antes de cualquier Script o Tarea de la fase de aprovisionamiento"
+msgstr ""
+"Máquinas virtuales: El Script se ejecutará antes de cualquier Script o "
+"Tarea de la fase de aprovisionamiento"
 
-#: ../../library/templates/scripts.rst:42
+#: ../../library/templates/scripts.rst:28
 msgid "Provision"
 msgstr "Aprovisionar"
 
@@ -120,7 +131,16 @@ msgid ""
 "Script will execute once per new Instance node during the provision "
 "Phase. Provisioning will not be considered complete until all scripts and"
 " tasks in the provisioning phase are completed"
-msgstr "El Script se ejecutará una vez por cada nuevo nodo de Instancia durante la fase de aprovisionamiento. El aprovisionamiento no se considerará completo hasta que todos los scripts y tareas en la fase de aprovisionamiento estén completados"
+msgstr ""
+"El Script se ejecutará una vez por cada nuevo nodo de Instancia durante "
+"la fase de aprovisionamiento. El aprovisionamiento no se considerará "
+"completo hasta que todos los scripts y tareas en la fase de "
+"aprovisionamiento estén completados"
+
+#: ../../library/templates/scripts.rst:31
+#: ../../library/templates/scripts.rst:47
+msgid "Note"
+msgstr ""
 
 #: ../../library/templates/scripts.rst:31
 msgid ""
@@ -129,7 +149,13 @@ msgid ""
 "messages. As an example, your VM could be up and running but if your "
 "Script is in the provision phase and fails, provisioning will be marked "
 "as a failure."
-msgstr "Cualquier Script o Tarea configurada en la fase de aprovisionamiento se incluirá en el tiempo total de aprovisionamiento e impactará los mensajes de estado de aprovisionamiento de éxito/advertencia/fallo. Como ejemplo, su VM podría estar en funcionamiento pero si su Script está en la fase de aprovisionamiento y falla, el aprovisionamiento se marcará como fallido."
+msgstr ""
+"Cualquier Script o Tarea configurada en la fase de aprovisionamiento se "
+"incluirá en el tiempo total de aprovisionamiento e impactará los mensajes"
+" de estado de aprovisionamiento de éxito/advertencia/fallo. Como ejemplo,"
+" su VM podría estar en funcionamiento pero si su Script está en la fase "
+"de aprovisionamiento y falla, el aprovisionamiento se marcará como "
+"fallido."
 
 #: ../../library/templates/scripts.rst:33
 msgid "Post-Provision"
@@ -141,7 +167,12 @@ msgid ""
 "is completed. Scripts and Tasks in the Post-Provision phase will show "
 "execution status and history, but are not considered part of the "
 "provision and do not impact provisioning status."
-msgstr "El Script se ejecutará una vez por cada nuevo nodo de Instancia después de que la fase de aprovisionamiento se complete. Los Scripts y Tareas en la fase Post-aprovisionamiento mostrarán el estado y el historial de ejecución, pero no se consideran parte del aprovisionamiento y no impactan el estado del aprovisionamiento."
+msgstr ""
+"El Script se ejecutará una vez por cada nuevo nodo de Instancia después "
+"de que la fase de aprovisionamiento se complete. Los Scripts y Tareas en "
+"la fase Post-aprovisionamiento mostrarán el estado y el historial de "
+"ejecución, pero no se consideran parte del aprovisionamiento y no "
+"impactan el estado del aprovisionamiento."
 
 #: ../../library/templates/scripts.rst:35
 msgid "Pre-Deploy"
@@ -152,7 +183,10 @@ msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The Script will run prior to the deployment file(s)"
 " being written"
-msgstr "El Script se ejecutará en la Instancia objetivo cada vez que se ejecute un despliegue contra la Instancia. El Script se ejecutará antes de que se escriban los archivos de despliegue"
+msgstr ""
+"El Script se ejecutará en la Instancia objetivo cada vez que se ejecute "
+"un despliegue contra la Instancia. El Script se ejecutará antes de que se"
+" escriban los archivos de despliegue"
 
 #: ../../library/templates/scripts.rst:37
 msgid "Deploy"
@@ -163,7 +197,10 @@ msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The script will run after the deployment file(s) "
 "are written"
-msgstr "El Script se ejecutará en la Instancia objetivo cada vez que se ejecute un despliegue contra la Instancia. El script se ejecutará después de que se escriban los archivos de despliegue"
+msgstr ""
+"El Script se ejecutará en la Instancia objetivo cada vez que se ejecute "
+"un despliegue contra la Instancia. El script se ejecutará después de que "
+"se escriban los archivos de despliegue"
 
 #: ../../library/templates/scripts.rst:39
 msgid "Reconfigure"
@@ -173,9 +210,11 @@ msgstr "Reconfigurar"
 msgid ""
 "Script will execute on target Instance any time a reconfigure is executed"
 " against the Instance."
-msgstr "El Script se ejecutará en la Instancia objetivo cada vez que se ejecute una reconfiguración contra la Instancia."
+msgstr ""
+"El Script se ejecutará en la Instancia objetivo cada vez que se ejecute "
+"una reconfiguración contra la Instancia."
 
-#: ../../library/templates/scripts.rst:42
+#: ../../library/templates/scripts.rst:41
 msgid "Teardown"
 msgstr "Desmontar"
 
@@ -184,9 +223,12 @@ msgid ""
 "Script will execute on target Instance upon Instance deletion. Script "
 "will execute against target Instance prior to the deletion/removal of "
 "resources."
-msgstr "El Script se ejecutará en la Instancia objetivo al eliminar la Instancia. El Script se ejecutará contra la Instancia objetivo antes de la eliminación/remoción de recursos."
+msgstr ""
+"El Script se ejecutará en la Instancia objetivo al eliminar la Instancia."
+" El Script se ejecutará contra la Instancia objetivo antes de la "
+"eliminación/remoción de recursos."
 
-#: ../../library/templates/scripts.rst:47
+#: ../../library/templates/scripts.rst:44
 msgid "SCRIPT"
 msgstr "SCRIPT"
 
@@ -198,7 +240,9 @@ msgstr "Ingrese el script Bash o Powershell."
 msgid ""
 "|morpheus| variables are supported in Library Scripts using ``<%= "
 "variable.var %>`` format"
-msgstr "Las variables de |morpheus| son soportadas en Scripts de Biblioteca usando el formato ``<%= variable.var %>``"
+msgstr ""
+"Las variables de |morpheus| son soportadas en Scripts de Biblioteca "
+"usando el formato ``<%= variable.var %>``"
 
 #: ../../library/templates/scripts.rst:49
 msgid "RUN AS USER"
@@ -209,9 +253,12 @@ msgid ""
 "By default Scripts are execute as ``morpheus-node``. To execute as "
 "another User, populate ``RUN AS USER`` and ensure proper user permissions"
 " & group access"
-msgstr "Por defecto los Scripts se ejecutan como ``morpheus-node``. Para ejecutar como otro Usuario, complete ``RUN AS USER`` y asegúrese de tener los permisos de usuario y acceso de grupo adecuados"
+msgstr ""
+"Por defecto los Scripts se ejecutan como ``morpheus-node``. Para ejecutar"
+" como otro Usuario, complete ``RUN AS USER`` y asegúrese de tener los "
+"permisos de usuario y acceso de grupo adecuados"
 
-#: ../../library/templates/scripts.rst:53
+#: ../../library/templates/scripts.rst:51
 msgid "SUDO"
 msgstr "SUDO"
 
@@ -224,7 +271,10 @@ msgid ""
 "To attach Scripts and templates that have been added to the Library to a "
 "Node Type, start typing the name and then select the script(s) and/or "
 "template(s)."
-msgstr "Para adjuntar Scripts y plantillas que se han agregado a la Biblioteca a un Tipo de nodo, comience a escribir el nombre y luego seleccione el/los script(s) y/o plantilla(s)."
+msgstr ""
+"Para adjuntar Scripts y plantillas que se han agregado a la Biblioteca a "
+"un Tipo de nodo, comience a escribir el nombre y luego seleccione el/los "
+"script(s) y/o plantilla(s)."
 
 #: ../../library/templates/scripts.rst:57
 msgid "Multiple scripts and templates can be added to a Node Type"
@@ -232,14 +282,22 @@ msgstr "Se pueden agregar múltiples scripts y plantillas a un Tipo de nodo"
 
 #: ../../library/templates/scripts.rst:58
 msgid "Scripts and Templates can be added/shared among multiple Node Types"
-msgstr "Los Scripts y Plantillas se pueden agregar/compartir entre múltiples Tipos de nodo"
+msgstr ""
+"Los Scripts y Plantillas se pueden agregar/compartir entre múltiples "
+"Tipos de nodo"
 
 #: ../../library/templates/scripts.rst:59
 msgid "The execution phase can be set for Scripts in the Scripts section"
-msgstr "La fase de ejecución se puede configurar para los Scripts en la sección de Scripts"
+msgstr ""
+"La fase de ejecución se puede configurar para los Scripts en la sección "
+"de Scripts"
 
 #: ../../library/templates/scripts.rst:60
 msgid ""
 "Search will populate Scripts or Templates containing the characters "
 "entered anywhere in their name, not just the first letter(s) of the name"
-msgstr "La búsqueda mostrará Scripts o Plantillas que contengan los caracteres ingresados en cualquier parte de su nombre, no solo la(s) primera(s) letra(s) del nombre"
+msgstr ""
+"La búsqueda mostrará Scripts o Plantillas que contengan los caracteres "
+"ingresados en cualquier parte de su nombre, no solo la(s) primera(s) "
+"letra(s) del nombre"
+

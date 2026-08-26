@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../administration/identity_sources/onelogin.rst:2
@@ -69,13 +69,17 @@ msgstr "DESCRIPTION"
 msgid "Optional Description of the Identity Source"
 msgstr "Optional Description de el Identidad Origen"
 
-#: ../../administration/identity_sources/onelogin.rst:19
+#: ../../administration/identity_sources/onelogin.rst:18
 msgid "ONELOGIN SUBDOMAIN"
 msgstr "ONELOGIN SUBDOMAIN"
 
 #: ../../administration/identity_sources/onelogin.rst:19
 msgid "example: morpheus-dev"
 msgstr "ejemplo: morpheus-dev"
+
+#: ../../administration/identity_sources/onelogin.rst:20
+msgid "Warning"
+msgstr ""
 
 #: ../../administration/identity_sources/onelogin.rst:20
 msgid ""
@@ -102,16 +106,15 @@ msgid ""
 "OneLogin API Client Secret from the Settings - API section in OneLogin "
 "portal"
 msgstr ""
-"OneLogin API Client Secret desde el Configuración - API sección en OneLogin "
-"portal"
+"OneLogin API Client Secret desde el Configuración - API sección en "
+"OneLogin portal"
 
 #: ../../administration/identity_sources/onelogin.rst:25
 msgid "API CLIENT ID"
 msgstr "API CLIENT ID"
 
 #: ../../administration/identity_sources/onelogin.rst:26
-msgid ""
-"OneLogin API Client ID from the Settings - API section in OneLogin portal"
+msgid "OneLogin API Client ID from the Settings - API section in OneLogin portal"
 msgstr ""
 "OneLogin API Client ID desde el Configuración - API sección en OneLogin "
 "portal"
@@ -121,59 +124,69 @@ msgid "REQUIRED ROLE"
 msgstr "REQUIRED ROLE"
 
 #: ../../administration/identity_sources/onelogin.rst:28
+#, fuzzy
 msgid ""
-"Enter a role if OneLogin users logging into morpheus must have at least this"
-" OneLogin role to gain access to Morpheus."
+"Enter a role if OneLogin users logging into morpheus must have at least "
+"this OneLogin role to gain access to Morpheus. If left empty, all "
+"OneLogin users who can authenticate will be allowed to log in and a local"
+" user account will be created automatically."
 msgstr ""
-"Enter a rol si OneLogin usuarios logging en morpheus debe tienen en least "
-"este OneLogin rol a gain acceso a Morpheus."
+"Enter a rol si OneLogin usuarios logging en morpheus debe tienen en least"
+" este OneLogin rol a gain acceso a Morpheus."
 
 #: ../../administration/identity_sources/onelogin.rst:29
 msgid "DEFAULT ROLE"
 msgstr "DEFAULT ROLE"
 
 #: ../../administration/identity_sources/onelogin.rst:30
+#, fuzzy
 msgid ""
-"The default Morpheus Role applied to users created from OneLogin Integration"
-" if no other role mapping is specified below"
+"The default Morpheus Role applied to all users who pass the Required Role"
+" check. This role is always assigned in addition to any roles granted "
+"through role mappings below."
 msgstr ""
 "El predeterminado Morpheus Rol aplicado a usuarios creado desde OneLogin "
 "Integración si no otro rol mapping es specified below"
 
-#: ../../administration/identity_sources/onelogin.rst:32
+#: ../../administration/identity_sources/onelogin.rst:31
 msgid "ROLE MAPPINGS"
 msgstr "ROLE MAPPINGS"
 
 #: ../../administration/identity_sources/onelogin.rst:32
 msgid ""
-"Existing Morpheus Roles will be listed with fields to enter OneLogin Roles "
-"to map to. Users with OneLogin roles matching the role mappings will be "
-"assigned the appropriate Role(s) in Morpheus when signing in."
+"Existing Morpheus Roles will be listed with fields to enter OneLogin "
+"Roles to map to. Users with OneLogin roles matching the role mappings "
+"will be assigned the appropriate Role(s) in Morpheus when signing in."
 msgstr ""
-"Existing Morpheus Roles será listed con campos a enter OneLogin Roles a map "
-"a. Usuarios con OneLogin roles matching el rol mappings será asignado el "
-"appropriate Rol(s) en Morpheus cuando signing en."
+"Existing Morpheus Roles será listed con campos a enter OneLogin Roles a "
+"map a. Usuarios con OneLogin roles matching el rol mappings será asignado"
+" el appropriate Rol(s) en Morpheus cuando signing en."
 
 #: ../../administration/identity_sources/onelogin.rst:34
 msgid ""
-"Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be added."
+"Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be "
+"added."
 msgstr ""
 "Seleccionar :guilabel:`SAVE CHANGES` y el OneLogin Integración será "
 "agregado."
 
 #: ../../administration/identity_sources/onelogin.rst:36
 msgid ""
-"Users can now login to Morpheus with OneLogin credentials. The first Login "
-"will create a user in Morpheus matching the Username, email and Password "
-"from OneLogin. If a REQUIRED ROLE is specified in the Identity Source "
-"settings, only users with that Role in OneLogin will be able to login to "
-"Morpheus."
+"Users can now login to Morpheus with OneLogin credentials. The first "
+"Login will create a user in Morpheus matching the Username, email and "
+"Password from OneLogin. If a REQUIRED ROLE is specified in the Identity "
+"Source settings, only users with that Role in OneLogin will be able to "
+"login to Morpheus."
 msgstr ""
-"Usuarios puede now inicio de sesión a Morpheus con OneLogin credenciales. El"
-" first Inicio de sesión va a crear a usuario en Morpheus matching el "
-"Usuarioname, correo electrónico y Contraseña desde OneLogin. Si a REQUIRED "
-"ROLE es specified en el Identidad Origen configuración, solo usuarios con "
-"ese Rol en OneLogin será able a inicio de sesión a Morpheus."
+"Usuarios puede now inicio de sesión a Morpheus con OneLogin credenciales."
+" El first Inicio de sesión va a crear a usuario en Morpheus matching el "
+"Usuarioname, correo electrónico y Contraseña desde OneLogin. Si a "
+"REQUIRED ROLE es specified en el Identidad Origen configuración, solo "
+"usuarios con ese Rol en OneLogin será able a inicio de sesión a Morpheus."
+
+#: ../../administration/identity_sources/onelogin.rst:38
+msgid "Important"
+msgstr ""
 
 #: ../../administration/identity_sources/onelogin.rst:38
 msgid ""
@@ -182,3 +195,4 @@ msgid ""
 msgstr ""
 "OneLogin usuarios no authenticate en Morpheus si there es un existente "
 "Morpheus Usuario con matching usuarioname o correo electrónico address."
+

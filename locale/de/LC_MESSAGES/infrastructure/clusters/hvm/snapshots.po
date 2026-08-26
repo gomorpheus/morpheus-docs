@@ -1,0 +1,563 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:2
+msgid "Snapshots"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:4
+msgid ""
+"|morpheus| supports point-in-time snapshots of HVM virtual machines for "
+"backup, recovery, and testing purposes. The snapshot mechanism varies "
+"depending on the underlying storage backend."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:7
+msgid "Snapshot Consistency Model"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:9
+msgid ""
+"HVM snapshots provide different levels of consistency depending on the "
+"storage backend and whether the QEMU Guest Agent is available:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:11
+msgid "**Application-consistent snapshots (QEMU Guest Agent connected):**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:13
+msgid ""
+"When the QEMU Guest Agent is installed and connected, |morpheus| quiesces"
+" the guest filesystem before taking the snapshot:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:15
+msgid ""
+"**Linux guests:** A ``sync`` command flushes pending I/O, then "
+"``fsfreeze`` is applied to freeze all filesystems before the snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:16
+msgid ""
+"**Windows guests:** The ``fsfreeze`` call triggers **Volume Shadow Copy "
+"Service (VSS)** inside the guest via the QEMU Guest Agent, which notifies"
+" VSS-aware applications (SQL Server, Exchange, Active Directory, etc.) to"
+" flush their buffers and enter a consistent state before the snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:18
+msgid ""
+"This provides **application-consistent** snapshots for both Linux and "
+"Windows when the guest agent is available."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:20
+msgid "**Crash-consistent snapshots (no QEMU Guest Agent):**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:22
+msgid ""
+"When the guest agent is not installed or not responding, snapshots are "
+"**crash-consistent** — they capture the disk state at a point in time, "
+"equivalent to an unexpected power loss:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:24
+msgid "No filesystem freeze or application quiescing is performed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:25
+msgid ""
+"Modern journaling filesystems (ext4, XFS, NTFS) recover cleanly from "
+"crash-consistent state"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:26
+msgid ""
+"Applications with their own write-ahead logs (databases) can also "
+"recover, but uncommitted transactions may be lost"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:28
+#: ../../infrastructure/clusters/hvm/snapshots.rst:134
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:28
+msgid ""
+"|morpheus| logs a warning when a snapshot is taken without the guest "
+"agent connected, indicating that the snapshot will be crash-consistent "
+"only. For production workloads, ensure the QEMU Guest Agent is installed "
+"and running to achieve application-consistent snapshots."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:30
+msgid ""
+"No memory state is captured in any snapshot mode — reverting a snapshot "
+"requires the VM to be restarted."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:33
+msgid "Snapshot Types by Storage Backend"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:39
+msgid "Storage Backend"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:40
+msgid "Snapshot Type"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:41
+#: ../../infrastructure/clusters/hvm/snapshots.rst:169
+msgid "Description"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:42
+msgid "GFS2 / NFS (file-based)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:43
+msgid "External qcow2 overlay"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:44
+msgid ""
+"Creates a new qcow2 overlay file that captures all writes after the "
+"snapshot point. The base image remains unchanged. This is the most common"
+" type for HVM clusters."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:45
+msgid "Ceph RBD"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:46
+msgid "RBD snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:47
+msgid "Creates a point-in-time snapshot at the Ceph cluster level."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:48
+msgid "HPE Alletra MP (array-based)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:49
+msgid "Storage array snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:50
+msgid ""
+"Snapshot is created on the HPE Alletra storage array via REST API. The "
+"hypervisor is not involved. Provides hardware-accelerated, space-"
+"efficient snapshots at the array firmware level."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:53
+msgid "Taking a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:55
+#: ../../infrastructure/clusters/hvm/snapshots.rst:102
+#: ../../infrastructure/clusters/hvm/snapshots.rst:124
+msgid "Navigate to the VM detail page"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:56
+msgid "Click :guilabel:`Actions` > :guilabel:`Create Snapshot`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:57
+msgid "Enter a name for the snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:58
+msgid "Click :guilabel:`Create`"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:60
+msgid ""
+"The Instance action is labeled :guilabel:`Create Snapshot` in current "
+"navigation. It appears only for snapshot-capable layouts and users with "
+"**Snapshots: Full** permission. See "
+":doc:`/provisioning/instances/managing_instances` for action "
+"availability."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:62
+msgid ""
+"For VMs with multiple disks, all disks are snapshotted atomically (when "
+"supported by the storage backend). CD-ROM volumes are excluded from "
+"snapshots."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:65
+msgid "How File-Based Snapshots Work (GFS2/NFS)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:67
+msgid "When a snapshot is created on a file-based datastore:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:69
+msgid "If the QEMU Guest Agent is connected:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:71
+msgid "**Linux:** A ``sync`` command flushes pending I/O"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:72
+msgid ""
+"**Windows:** Sync is skipped (not a Windows command); VSS quiescing is "
+"handled by the ``--quiesce`` flag in the next step"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:73
+msgid ""
+"The snapshot is created with the ``--quiesce`` flag, which triggers "
+"filesystem freeze (and VSS on Windows) via the guest agent"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:75
+msgid "If the QEMU Guest Agent is not connected:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:77
+msgid "No pre-snapshot flush or freeze is performed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:78
+msgid "A warning is logged indicating the snapshot will be crash-consistent only"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:79
+msgid "The snapshot proceeds without quiescing"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:81
+msgid ""
+"An external qcow2 overlay is created for each disk using an atomic "
+"operation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:82
+msgid "The VM continues running — writes go to the new overlay file"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:83
+msgid ""
+"The original disk image is preserved as read-only at the point-in-time "
+"state"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:85
+msgid ""
+"The snapshot file is stored alongside the original disk image on the same"
+" datastore."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:88
+msgid "How Array-Based Snapshots Work (HPE Alletra)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:90
+msgid "When a VM uses storage backed by an HPE Alletra array:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:92
+msgid ""
+"|morpheus| calls the Alletra REST API to create a snapshot of the volume "
+"set"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:93
+msgid ""
+"The snapshot is created as a read-only point-in-time copy at the array "
+"level"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:94
+msgid ""
+"No hypervisor-level operation is needed — the VM continues running "
+"uninterrupted"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:95
+msgid "The array handles space efficiency internally using copy-on-write"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:97
+msgid ""
+"Array-based snapshots are recommended for production workloads due to "
+"their minimal performance impact and hardware-accelerated operation."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:100
+msgid "Reverting a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:103
+#: ../../infrastructure/clusters/hvm/snapshots.rst:125
+msgid "Select the **Snapshots** tab"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:104
+msgid "Click :guilabel:`Revert` on the desired snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:106
+msgid "**What happens during revert:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:108
+msgid "The guest filesystem is frozen (if the QEMU Guest Agent is available)"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:109
+msgid "The VM is powered off"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:110
+msgid "The disk is rolled back to the snapshot state:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:112
+msgid "**File-based:** The overlay is discarded and the base image becomes active"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:113
+msgid "**RBD:** The volume is rolled back to the snapshot point"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:114
+msgid "**Alletra:** The array reverts the volume set to the snapshot state"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:116
+msgid "The guest filesystem is thawed"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:117
+msgid "The VM is restarted"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:119
+msgid "Warning"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:119
+msgid ""
+"Reverting a snapshot discards all changes made since the snapshot was "
+"taken. This operation cannot be undone."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:122
+msgid "Deleting a Snapshot"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:126
+msgid "Click :guilabel:`Delete` on the snapshot to remove"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:128
+msgid "**What happens during deletion:**"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:130
+msgid ""
+"**File-based:** The overlay is committed (merged) back into the base "
+"image, then removed. This preserves all changes made since the snapshot "
+"while freeing the snapshot overhead."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:131
+msgid "**RBD:** The RBD snapshot is deleted."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:132
+msgid "**Alletra:** The snapshot set is deleted from the array."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:134
+msgid ""
+"For file-based snapshots, deletion involves a block-commit operation that"
+" merges the overlay into the base image. This is an I/O-intensive "
+"operation and may take time for large disks."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:137
+msgid "Image Import Behavior"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:139
+msgid ""
+"Existing snapshots are supported when importing an HVM VM as a Virtual "
+"Image. For file-based storage, |morpheus| copies and merges the active "
+"qcow2 backing chain into a temporary export disk. This operation does not"
+" delete or merge the VM's existing snapshots. Other supported storage "
+"backends create a temporary export snapshot using their datastore "
+"implementation."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:141
+msgid ""
+"The resulting Virtual Image must contain both ``metadata.json`` and every"
+" referenced disk artifact. A metadata-only result is an incomplete "
+"import, not evidence that existing snapshots must be deleted. Preserve "
+"the source VM and snapshots and see "
+":doc:`/library/virtual_images/virtual_images` for verification and "
+"escalation guidance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:144
+msgid "Linked Clone Images"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:146
+msgid ""
+"HVM snapshots can be registered as linked clone Virtual Images for rapid,"
+" space-efficient VM provisioning. The provisioned VM writes to an overlay"
+" while the selected snapshot remains its shared backing disk. This is "
+"different from importing the VM as an independent Virtual Image."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:148
+msgid ""
+"Create and manage linked clone images from the Instance "
+":guilabel:`Backups` tab. See the **Creating Linked Clone Images** section"
+" in :doc:`/infrastructure/storage/storage` for the complete workflow, "
+"Windows and Linux guest preparation, permissions, and dependency "
+"guidance."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:150
+msgid "On HVM, observe these additional constraints:"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:152
+msgid ""
+"Linked clones require a file-based datastore and QCOW2 disks. LUN-per-"
+"vDisk storage, including HPE Alletra datastore types, does not support "
+"linked clones."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:153
+msgid ""
+"A linked clone on local storage is pinned to the source hypervisor and "
+"cannot be migrated to another host."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:154
+msgid ""
+"Storage migration is not supported because the overlay depends on the "
+"snapshot backing file in its original datastore."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:155
+msgid ""
+"The source VM and backing snapshot cannot be deleted while active linked-"
+"clone VMs depend on them. Morpheus blocks deletion and displays an error "
+"identifying the dependent VMs."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:156
+msgid ""
+"When shared storage is used, eligible host placement can use the shared "
+"backing file, but the source snapshot must remain available."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:157
+#: ../../infrastructure/clusters/hvm/snapshots.rst:177
+msgid "A VM cannot be snapshotted while a clone operation is in progress."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:159
+msgid ""
+"During provisioning from a linked clone Virtual Image, Morpheus creates a"
+" thin QCOW2 overlay referencing the snapshot as its backing file rather "
+"than copying the full disk. This is near-instant regardless of disk size."
+" On local storage, the VM is placed on the same host as the source. On "
+"shared storage, any host with access to the datastore is eligible. The "
+"linked clone Virtual Image appears only in provisioning dropdowns scoped "
+"to the cluster where its backing snapshot exists."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:162
+msgid "Limitations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:168
+msgid "Limitation"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:170
+msgid "No memory snapshots"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:171
+msgid ""
+"Only disk state is captured. The VM must be restarted after a revert. "
+"Running applications will not resume from their pre-snapshot state."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:172
+msgid "Guest agent required for app consistency"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:173
+msgid ""
+"Without the QEMU Guest Agent, snapshots are crash-consistent only. "
+"Install and enable the guest agent for application-consistent snapshots "
+"with VSS support on Windows."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:174
+msgid "Mixed storage VMs"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:175
+msgid ""
+"VMs with disks on different storage backends may have partial snapshots. "
+"For example, a VM with one disk on GFS2 and another on Alletra will "
+"snapshot each through its respective mechanism."
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:176
+msgid "Concurrent operations"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:178
+msgid "RDBM/Raw block devices"
+msgstr ""
+
+#: ../../infrastructure/clusters/hvm/snapshots.rst:179
+msgid ""
+"VMs with raw device block mapping (RDBM) volumes cannot have those "
+"volumes snapshotted through the file-based mechanism. Use array-based "
+"snapshots for these workloads."
+msgstr ""
+

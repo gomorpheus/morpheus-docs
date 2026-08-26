@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/networks/network_scopes.rst:4
@@ -39,10 +39,10 @@ msgstr "Descripción general"
 #: ../../infrastructure/networks/network_scopes.rst:11
 msgid ""
 "Scopes define network service boundaries within a network server "
-"integration. Scopes can be used to segment and organize network resources, "
-"providing logical isolation for different environments, tenants, or "
-"applications. |morpheus| supports creating, editing, and managing scopes on "
-"network integrations that expose this capability."
+"integration. Scopes can be used to segment and organize network "
+"resources, providing logical isolation for different environments, "
+"tenants, or applications. |morpheus| supports creating, editing, and "
+"managing scopes on network integrations that expose this capability."
 msgstr ""
 "Scopes define network servicio boundaries dentro de un network servidor "
 "integration. Scopes se puede usar a segment y organize network recursos, "
@@ -52,53 +52,64 @@ msgstr ""
 
 #: ../../infrastructure/networks/network_scopes.rst:13
 msgid ""
-"The Scopes tab is available on network server integrations that support this"
-" feature (``hasScopes`` flag). The tab title may vary based on the "
+"Scopes are distinct from Network Labels. To filter Network records that "
+"contain every requested Label through the Networks API, see "
+":ref:`networks_all_labels`."
+msgstr ""
+
+#: ../../infrastructure/networks/network_scopes.rst:15
+#: ../../infrastructure/networks/network_scopes.rst:37
+msgid "Note"
+msgstr ""
+
+#: ../../infrastructure/networks/network_scopes.rst:15
+msgid ""
+"The Scopes tab is available on network server integrations that support "
+"this feature (``hasScopes`` flag). The tab title may vary based on the "
 "integration type."
 msgstr ""
 "El Scopes pestaña está disponible en network servidor integrations ese "
 "support este función (``hasScopes`` flag). El pestaña title puede vary "
 "basado en el integration tipo."
 
-#: ../../infrastructure/networks/network_scopes.rst:16
+#: ../../infrastructure/networks/network_scopes.rst:18
 msgid "Viewing Scopes"
 msgstr "Viewing Scopes"
-
-#: ../../infrastructure/networks/network_scopes.rst:18
-#: ../../infrastructure/networks/network_scopes.rst:26
-#: ../../infrastructure/networks/network_scopes.rst:42
-#: ../../infrastructure/networks/network_scopes.rst:52
-msgid "Navigate to ``Infrastructure > Network > Integrations``"
-msgstr "Navegue un ``Infrastructure > Network > Integrations``"
-
-#: ../../infrastructure/networks/network_scopes.rst:19
-#: ../../infrastructure/networks/network_scopes.rst:27
-#: ../../infrastructure/networks/network_scopes.rst:43
-#: ../../infrastructure/networks/network_scopes.rst:53
-msgid "Select the desired network server integration"
-msgstr "Seleccionar el desired network servidor integration"
 
 #: ../../infrastructure/networks/network_scopes.rst:20
 #: ../../infrastructure/networks/network_scopes.rst:28
 #: ../../infrastructure/networks/network_scopes.rst:44
 #: ../../infrastructure/networks/network_scopes.rst:54
+msgid "Navigate to ``Infrastructure > Network > Integrations``"
+msgstr "Navegue un ``Infrastructure > Network > Integrations``"
+
+#: ../../infrastructure/networks/network_scopes.rst:21
+#: ../../infrastructure/networks/network_scopes.rst:29
+#: ../../infrastructure/networks/network_scopes.rst:45
+#: ../../infrastructure/networks/network_scopes.rst:55
+msgid "Select the desired network server integration"
+msgstr "Seleccionar el desired network servidor integration"
+
+#: ../../infrastructure/networks/network_scopes.rst:22
+#: ../../infrastructure/networks/network_scopes.rst:30
+#: ../../infrastructure/networks/network_scopes.rst:46
+#: ../../infrastructure/networks/network_scopes.rst:56
 msgid "Click the **Scopes** tab"
 msgstr "Click el **Scopes** pestaña"
 
-#: ../../infrastructure/networks/network_scopes.rst:21
+#: ../../infrastructure/networks/network_scopes.rst:23
 msgid "The list view displays scope names, descriptions, and related details"
-msgstr ""
-"El vista de lista muestra scope names, descriptions, y related details"
+msgstr "El vista de lista muestra scope names, descriptions, y related details"
 
-#: ../../infrastructure/networks/network_scopes.rst:24
+#: ../../infrastructure/networks/network_scopes.rst:26
 msgid "Adding a Scope"
 msgstr "Adding un Scope"
 
-#: ../../infrastructure/networks/network_scopes.rst:29
+#: ../../infrastructure/networks/network_scopes.rst:31
 msgid "Click :guilabel:`+ ADD`"
 msgstr "Click :guilabel:`+ AGREGAR`"
 
-#: ../../infrastructure/networks/network_scopes.rst:30
+#: ../../infrastructure/networks/network_scopes.rst:32
 msgid "Complete the required fields:"
 msgstr "Completo el requerido campos:"
 
@@ -106,7 +117,7 @@ msgstr "Completo el requerido campos:"
 msgid "Name"
 msgstr "Nombre"
 
-#: ../../infrastructure/networks/network_scopes.rst:32
+#: ../../infrastructure/networks/network_scopes.rst:34
 msgid "(required) A name for the scope"
 msgstr "(requerido) Un nombre para el scope"
 
@@ -114,72 +125,73 @@ msgstr "(requerido) Un nombre para el scope"
 msgid "Description"
 msgstr "Descripción"
 
-#: ../../infrastructure/networks/network_scopes.rst:33
+#: ../../infrastructure/networks/network_scopes.rst:35
 msgid "(optional) A description of the scope purpose"
 msgstr "(opcional) Un descripción del scope purpose"
 
-#: ../../infrastructure/networks/network_scopes.rst:35
-msgid ""
-"Additional fields may appear based on the network integration type and its "
-"configured option types."
-msgstr ""
-"Adicional campos puede aparecer basado en el network integration tipo y su "
-"configurado opción tipos."
-
 #: ../../infrastructure/networks/network_scopes.rst:37
-#: ../../infrastructure/networks/network_scopes.rst:47
-#: ../../infrastructure/networks/network_scopes.rst:65
+msgid ""
+"Additional fields may appear based on the network integration type and "
+"its configured option types."
+msgstr ""
+"Adicional campos puede aparecer basado en el network integration tipo y "
+"su configurado opción tipos."
+
+#: ../../infrastructure/networks/network_scopes.rst:39
+#: ../../infrastructure/networks/network_scopes.rst:49
+#: ../../infrastructure/networks/network_scopes.rst:67
 msgid "Click :guilabel:`SAVE`"
 msgstr "Click :guilabel:`SAVE`"
 
-#: ../../infrastructure/networks/network_scopes.rst:40
+#: ../../infrastructure/networks/network_scopes.rst:42
 msgid "Editing a Scope"
 msgstr "Editing un Scope"
 
-#: ../../infrastructure/networks/network_scopes.rst:45
+#: ../../infrastructure/networks/network_scopes.rst:47
 msgid "Click the pencil (edit) icon for the target scope"
 msgstr "Click el pencil (editar) ícono para el destino scope"
 
-#: ../../infrastructure/networks/network_scopes.rst:46
+#: ../../infrastructure/networks/network_scopes.rst:48
 msgid "Modify the desired fields"
 msgstr "Modify el desired campos"
 
-#: ../../infrastructure/networks/network_scopes.rst:50
+#: ../../infrastructure/networks/network_scopes.rst:52
 msgid "Deleting a Scope"
 msgstr "Deleting un Scope"
 
-#: ../../infrastructure/networks/network_scopes.rst:55
+#: ../../infrastructure/networks/network_scopes.rst:57
 msgid "Click the trash (delete) icon for the target scope"
 msgstr "Click el trash (eliminar) ícono para el destino scope"
 
-#: ../../infrastructure/networks/network_scopes.rst:56
+#: ../../infrastructure/networks/network_scopes.rst:58
 msgid "Confirm the deletion when prompted"
 msgstr "Confirmar el deletion cuando prompted"
 
-#: ../../infrastructure/networks/network_scopes.rst:59
+#: ../../infrastructure/networks/network_scopes.rst:61
 msgid "Permissions"
 msgstr "Permisos"
 
-#: ../../infrastructure/networks/network_scopes.rst:61
+#: ../../infrastructure/networks/network_scopes.rst:63
 msgid ""
-"Scope visibility and access can be managed through the permissions control:"
+"Scope visibility and access can be managed through the permissions "
+"control:"
 msgstr ""
 "Scope visibility y acceso se puede gestionar a través de el permisos "
 "control:"
 
-#: ../../infrastructure/networks/network_scopes.rst:63
+#: ../../infrastructure/networks/network_scopes.rst:65
 msgid "Click the lock icon or **Permissions** action for a scope"
 msgstr "Click el lock ícono o **Permisos** acción para un scope"
 
-#: ../../infrastructure/networks/network_scopes.rst:64
+#: ../../infrastructure/networks/network_scopes.rst:66
 msgid "Configure Group Access and Tenant Permissions as needed"
 msgstr "Configure Group Access y Tenant Permissions como necesario"
 
-#: ../../infrastructure/networks/network_scopes.rst:68
+#: ../../infrastructure/networks/network_scopes.rst:70
 msgid "Group Access"
 msgstr "Group Access"
 
-#: ../../infrastructure/networks/network_scopes.rst:70
+#: ../../infrastructure/networks/network_scopes.rst:72
 msgid ""
 "Controls which Groups have access to the scope. Select \"All\" for all "
 "Groups, or select specific Groups for restricted access."
@@ -187,26 +199,28 @@ msgstr ""
 "Controls cual Grupos tienen acceso al scope. Seleccionar \"Todos\" para "
 "todos Grupos, o seleccionar específico Grupos para restricted acceso."
 
-#: ../../infrastructure/networks/network_scopes.rst:73
+#: ../../infrastructure/networks/network_scopes.rst:75
 msgid "Tenant Permissions"
 msgstr "Tenant Permissions"
 
-#: ../../infrastructure/networks/network_scopes.rst:75
+#: ../../infrastructure/networks/network_scopes.rst:77
 msgid ""
-"Set to Public for all Tenants to access the scope, or Private to restrict to"
-" specific Tenants."
+"Set to Public for all Tenants to access the scope, or Private to restrict"
+" to specific Tenants."
 msgstr ""
-"Establecer a Público para todos Inquilinos a acceso el scope, o Privado a "
-"restrict a específico Inquilinos."
+"Establecer a Público para todos Inquilinos a acceso el scope, o Privado a"
+" restrict a específico Inquilinos."
 
-#: ../../infrastructure/networks/network_scopes.rst:78
+#: ../../infrastructure/networks/network_scopes.rst:80
 msgid "Required Role Permissions"
 msgstr "Requerido Role Permissions"
 
-#: ../../infrastructure/networks/network_scopes.rst:80
+#: ../../infrastructure/networks/network_scopes.rst:82
 msgid ""
 "Access to scope management requires the network server scope permission "
-"(``infrastructure-network-integration``) with ``read`` or ``full`` access."
+"(``infrastructure-network-integration``) with ``read`` or ``full`` "
+"access."
 msgstr ""
 "Acceso a scope gestión requiere el network servidor scope permiso "
 "(``infrastructure-network-integration``) con ``read`` o ``full`` acceso."
+

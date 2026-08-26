@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt\n"
+"Language-Team: pt <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:2
+msgid "Task Plugin"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:3
+msgid "Add custom Tasks types to Morpheus"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:6
+msgid "Setup"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:8
+msgid ""
+"Tasks (called Jobs in the UI) are useful components of your provisioning "
+"workflow. This plugin allows you to create custom Tasks"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:10
+msgid "Create a new class that implements ``com.morpheusdata.core.TaskProvider``"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:11
+msgid ""
+"Create a new class that extends "
+"``com.morpheusdata.core.AbstractTaskService``."
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:13
+msgid ""
+"This service defines methods for task execution in a variety of contexts,"
+" described below."
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:16
+msgid "Options"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:18
+msgid ""
+"``OptionType`` is an easy way to create configuration for your new Task. "
+"Simply provide a list of ``com.morpheusdata.model.OptionType`` to the "
+"``TaskProvider.getOptionTypes`` method."
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:20
+#, python-brace-format
+msgid ""
+"@Override\n"
+"List<OptionType> getOptionTypes() {\n"
+"        OptionType optionType = new OptionType(\n"
+"                        name: 'myTask',\n"
+"                        code: 'myTaskText',\n"
+"                        fieldName: 'myTask',\n"
+"                        optionSource: true,\n"
+"                        displayOrder: 0,\n"
+"                        fieldLabel: 'Text to Reverse',\n"
+"                        required: true,\n"
+"                        inputType: OptionType.InputType.TEXT\n"
+"        )\n"
+"        return [optionType]\n"
+"}"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:38
+msgid "Task Contexts"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:40
+msgid "A task can be run in one of three contexts:"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:42
+msgid "None/Local (``executeLocalTask``)"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:43
+msgid "Remote (``executeRemoteTask``)"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:44
+msgid "Instance (``executeContainerTask``, ``executeContainerTask``)"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:47
+msgid "Task Logo"
+msgstr ""
+
+#: ../../administration/integrations/plugin_examples/TaskPlugin.rst:49
+#, python-brace-format
+msgid ""
+"A custom logo can be used in the Morpheus UI by placing an image at "
+"``src/assets/images/{task-code}.png``. Recommended file size is 180 x 60 "
+"px."
+msgstr ""
+

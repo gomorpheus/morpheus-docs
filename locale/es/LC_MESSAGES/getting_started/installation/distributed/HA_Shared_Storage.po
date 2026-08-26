@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -32,9 +32,9 @@ msgid ""
 "nodes."
 msgstr ""
 "For configurations con 2 o more Applications Nodes, Shared Storage es "
-"obligatorio entre the app nodes. Local Storage File Shares will necesitan "
-"ser copied to a shared file system so all assets are available on all App "
-"nodes."
+"obligatorio entre the app nodes. Local Storage File Shares will necesitan"
+" ser copied to a shared file system so all assets are available on all "
+"App nodes."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:7
 msgid "Assets"
@@ -65,6 +65,10 @@ msgid "Morpheus backups"
 msgstr "Morpheus backups"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
+msgid "Tip"
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
 msgid ""
 "Backups, deployments and virtual image storage locations can be "
 "overridden within the |morpheus|-ui.  You can find more information on "
@@ -74,72 +78,114 @@ msgstr ""
 "overridden dentro de the |morpheus|-ui. You can find more information on "
 "storage here: :ref:`storage`"
 
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:17
-msgid ""
-"To copy the ``morpheus-ui`` directory to the shared storage follow the "
-"below steps:"
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:18
+msgid "Moving existing appliance files to shared storage"
 msgstr ""
-"To copy the ``morpheus-ui`` directory to the almacenamiento compartido "
-"follow the abajo steps:"
-
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:19
-msgid "SSH into the Appliance"
-msgstr "SSH en the Appliance"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:20
-msgid "sudo su (or login as root)"
-msgstr "sudo su (or login as root)"
-
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:21
-msgid "cd into ``/var/opt/morpheus/``"
-msgstr "cd en ``/var/opt/morpheus/``"
+msgid ""
+"Moving the Manager VM between HVM hosts or datastores is a hypervisor VM "
+"migration. It does **not** move the appliance files under "
+"``/var/opt/morpheus/morpheus-ui`` to shared application storage. The "
+"procedure below concerns appliance files only."
+msgstr ""
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:22
 msgid ""
-"Backup morpheus-ui directory by running the command below.  This will "
-"create a new directory in ``/var/opt/morpheus/`` called morpheus-ui-bkp "
-"and copy the contents of morpheus-ui into the new directory"
+"Use a maintenance window. The application is unavailable while all "
+"application nodes are stopped. The exact shared-storage type, mount "
+"options, copy tool, ownership, and rollback sequence depend on the "
+"appliance release and storage platform. HPE does not publish one generic "
+"shell sequence for an existing VM Essentials Manager because an "
+"incomplete copy or mounting an empty target over the source can make "
+"appliance assets unavailable."
 msgstr ""
-"Backup morpheus-ui directory by running the command below. This will "
-"create a new directory in ``/var/opt/morpheus/`` called morpheus-ui-bkp y "
-"copy the contents of morpheus-ui ina la new directory"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:24
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
-msgid "cp -r morpheus-ui morpheus-ui-bkp"
-msgstr "cp -r morpheus-ui morpheus-ui-bkp"
+msgid ""
+"Confirm why the move is required. A single-node Manager does not gain "
+"application availability merely by moving this directory. If the goal is "
+"recovery from loss of the HVM host, first use the decision tree in :ref"
+":`vme-manager-host-recovery`."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:25
+msgid ""
+"Open an HPE Support case with the Manager version, topology, current "
+"filesystem and usage, proposed storage type, mount endpoint and options, "
+"and maintenance window. Obtain a release-specific migration and rollback "
+"plan before changing the mount."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:26
+msgid ""
+"Create and verify all three recovery artifacts described in "
+":doc:`/getting_started/guides/backup_restore`: an appliance database "
+"backup, a filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, "
+"and protected copies of appliance configuration and secrets. Keep the "
+"backups outside the Manager VM and outside the target being changed."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:27
+msgid ""
+"Validate the target from every future application node: capacity, "
+"latency, name resolution, permissions, stable boot-time mounting, and the"
+" same numeric UID/GID for ``morpheus-app`` and ``morpheus-local``. For "
+"NFS, include the ``sync`` requirement below."
+msgstr ""
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:28
-msgid "Move morpheus-ui to your shared storage. Example below:"
-msgstr "Move morpheus-ui to your almacenamiento compartido. Example below:"
+msgid ""
+"Stop ``morpheus-ui`` on **every** application node as directed by the "
+"approved plan. Verify no node can write to the source before the final "
+"copy."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:29
+msgid ""
+"Follow the approved copy and mount sequence. Preserve ownership, "
+"permissions, links, timestamps, sparse files, and all hidden content. "
+"Mount the target at ``/var/opt/morpheus/morpheus-ui``; do not change "
+"application paths to point at an arbitrary staging directory."
+msgstr ""
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:30
-msgid "mv morpheus-ui /nfs/appliance-files/"
-msgstr "mv morpheus-ui /nfs/appliance-files/"
+msgid ""
+"Before startup, have the coordinator compare source and target content "
+"and verify ownership from every application node. Do not delete or "
+"repurpose the source."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:31
+msgid ""
+"Start one application node as directed. Verify the UI, uploaded virtual "
+"images, deployment archives, Ansible content, Terraform content, white-"
+"label assets, and appliance backup destination. Then start and verify "
+"remaining nodes one at a time."
+msgstr ""
+
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:32
+msgid ""
+"Retain the source and verified backups for the rollback period in the "
+"approved plan."
+msgstr ""
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:34
 msgid ""
-"Mount your shared storage volume to ``/var/opt/morpheus/morpheus-ui``. "
-"How you mount it is dependent on what kind of storage it is. If you mount"
-" the volume after the package install, but before the reconfigure, then "
-"you don't need to copy anything to a backup."
+"Stop and contact HPE Support if the target mounts differently between "
+"nodes, UID/GID values differ, the final copy cannot be proven quiescent "
+"and complete, startup writes to the old location, or any asset is "
+"missing. Roll back by stopping all application nodes and restoring the "
+"original mount/source according to the approved plan; do not merge two "
+"independently modified copies."
 msgstr ""
-"Mount your shared storage volume to ``/var/opt/morpheus/morpheus-ui``. How "
-"you mount it is dependent on what kind of storage it is. If you mount the "
-"volume after the package install, but before the reconfigure, then you "
-"don't need to copy anything to a backup."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
-msgid ""
-"SSH into the second Appliance and then Backup morpheus-ui directory by "
-"running"
-msgstr "SSH en the second Appliance y then Backup morpheus-ui directory by running"
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
+msgid "Important"
+msgstr ""
 
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:42
-msgid "When adding additional nodes you will only need to run step 6 and 7"
-msgstr "When adding adicional nodes you will only necesita run step 6 y 7"
-
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:44
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
 msgid ""
 "NFS mounts require ``sync`` option when using Ansible integration with "
 "|morpheus| Agent command bus execution enabled."
@@ -147,7 +193,7 @@ msgstr ""
 "NFS mounts require ``sync`` option when using Ansible integration con "
 "|morpheus| Agent command bus execution enabled."
 
-#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:46
+#: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
 msgid ""
 "On each application node, the morpheus-app and morpheus-local user and "
 "group uid/gid should be consistent.  If the uid and/or gid are different "
@@ -157,9 +203,82 @@ msgid ""
 "/etc/groups``"
 msgstr ""
 "On each application node, the morpheus-app y morpheus-local user y group "
-"uid/gid debería ser consistent.  If the uid and/or gid are different entre "
-"nodes, when the permissions are applied durante a reconfigure, the "
+"uid/gid debería ser consistent.  If the uid and/or gid are different "
+"entre nodes, when the permissions are applied durante a reconfigure, the "
 "permissions puede ser incorrect for other nodes.  The uid y gid for los "
 "usuarios puede ser seen by executing:  ``sudo cat /etc/passwd`` y ``sudo "
 "cat /etc/groups``"
+
+#~ msgid ""
+#~ "To copy the ``morpheus-ui`` directory"
+#~ " to the shared storage follow the "
+#~ "below steps:"
+#~ msgstr ""
+#~ "To copy the ``morpheus-ui`` directory"
+#~ " to the almacenamiento compartido follow"
+#~ " the abajo steps:"
+
+#~ msgid "SSH into the Appliance"
+#~ msgstr "SSH en the Appliance"
+
+#~ msgid "sudo su (or login as root)"
+#~ msgstr "sudo su (or login as root)"
+
+#~ msgid "cd into ``/var/opt/morpheus/``"
+#~ msgstr "cd en ``/var/opt/morpheus/``"
+
+#~ msgid ""
+#~ "Backup morpheus-ui directory by running"
+#~ " the command below.  This will create"
+#~ " a new directory in ``/var/opt/morpheus/``"
+#~ " called morpheus-ui-bkp and copy "
+#~ "the contents of morpheus-ui into "
+#~ "the new directory"
+#~ msgstr ""
+#~ "Backup morpheus-ui directory by running"
+#~ " the command below. This will create"
+#~ " a new directory in ``/var/opt/morpheus/``"
+#~ " called morpheus-ui-bkp y copy "
+#~ "the contents of morpheus-ui ina la"
+#~ " new directory"
+
+#~ msgid "cp -r morpheus-ui morpheus-ui-bkp"
+#~ msgstr "cp -r morpheus-ui morpheus-ui-bkp"
+
+#~ msgid "Move morpheus-ui to your shared storage. Example below:"
+#~ msgstr "Move morpheus-ui to your almacenamiento compartido. Example below:"
+
+#~ msgid "mv morpheus-ui /nfs/appliance-files/"
+#~ msgstr "mv morpheus-ui /nfs/appliance-files/"
+
+#~ msgid ""
+#~ "Mount your shared storage volume to "
+#~ "``/var/opt/morpheus/morpheus-ui``. How you "
+#~ "mount it is dependent on what kind"
+#~ " of storage it is. If you mount"
+#~ " the volume after the package "
+#~ "install, but before the reconfigure, "
+#~ "then you don't need to copy "
+#~ "anything to a backup."
+#~ msgstr ""
+#~ "Mount your shared storage volume to "
+#~ "``/var/opt/morpheus/morpheus-ui``. How you "
+#~ "mount it is dependent on what kind"
+#~ " of storage it is. If you mount"
+#~ " the volume after the package "
+#~ "install, but before the reconfigure, "
+#~ "then you don't need to copy "
+#~ "anything to a backup."
+
+#~ msgid ""
+#~ "SSH into the second Appliance and "
+#~ "then Backup morpheus-ui directory by "
+#~ "running"
+#~ msgstr ""
+#~ "SSH en the second Appliance y then"
+#~ " Backup morpheus-ui directory by "
+#~ "running"
+
+#~ msgid "When adding additional nodes you will only need to run step 6 and 7"
+#~ msgstr "When adding adicional nodes you will only necesita run step 6 y 7"
 

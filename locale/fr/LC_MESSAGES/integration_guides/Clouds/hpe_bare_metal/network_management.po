@@ -1,0 +1,601 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:2
+msgid "Network Management"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:4
+msgid ""
+"At a high level, there are two network modes in which a cloud can be "
+"configured to operate: - Unmanaged network mode ( - Unmanaged - )."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:10
+msgid "Managed network mode ("
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:11
+msgid "ArubaCX-Int"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:12
+msgid ")."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:14
+msgid "Network modes are created during cloud creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:17
+msgid "Unmanaged Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:19
+msgid ""
+"The unmanaged Network mode is used when the network infrastructure is not"
+" managed by HPE Morpheus."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:21
+msgid ""
+"In this case, there is a minimal configuration that is created as default"
+" when the cloud gets created with the network mode set to Unmanaged "
+"network. This minimal configuration includes a default Resource Pool that"
+" can be used to associate compute servers with, and a default unmanaged "
+"network that is available during instance provisioning to attach with "
+"compute servers."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:23
+msgid ""
+"The default unmanaged network is configured as an untagged network with "
+"DHCP as the IP allocation method. This allows a compute instance "
+"provisioned to come up with network connectivity without any specific "
+"network configuration required from the user."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:25
+msgid "The unmanaged network assumes:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:26
+msgid ""
+"The network infrastructure to be configured correctly for the untagged "
+"network to work correctly."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:28
+msgid "A DHCP server stood up in the infrastructure for that network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:32
+msgid ""
+"Users can create other networks (VLANs) if required, in addition to the "
+"default unmanaged network, and use them in their BM instance. NOTE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:33
+msgid "If the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:34
+msgid "ALLOW IP OVERRIDE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:35
+msgid ""
+"checkbox is selected (allows selection of DHCP or static IP or IP Pool), "
+"ensure that the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:36
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:137
+msgid "CIDR"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:37
+msgid "and"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:38
+msgid "GATEWAY"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:39
+msgid "fields are configured correctly."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:41
+msgid ""
+"At present, only one physical interface is supported for the unmanaged "
+"network mode."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:43
+msgid ""
+"The network consumption by an instance is the same as for managed "
+"networks."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:46
+msgid "Managed Networks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:48
+msgid ""
+"The managed network mode is used when the network infrastructure is to be"
+" managed by Morpheus. In this case, the user can selectArubCX-Intduring "
+"the cloud creation."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:50
+msgid "AddingHPE ArubaCX Plugin"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:51
+msgid ""
+"In the managed network mode, the Aruba CX switches are supported as "
+"managed switches. To enable that, the ArubaCX plugin needs to be loaded."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:53
+msgid "You can load the ArubaCX plugin jar using theAdministration>Integrations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:56
+msgid "Creating ArubaCX Network Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:58
+msgid ""
+"The network integration allows the user to specify the switch "
+"information. It is expected that there are 2 switches per rack acting as "
+"the top-of-rack (ToR) switches. You need to specify information for a "
+"switch pair for a rack. If there are more than 1 rack, then information "
+"for the switch pair for each rack is required."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:61
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:117
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:172
+msgid "Log in to the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:62
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:74
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:118
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:173
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:180
+msgid "HPE"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:63
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:119
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:174
+msgid ""
+"|morpheus| Enterprise Software web interface using your administrator "
+"credentials."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:64
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:120
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:175
+msgid "Navigate to"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:65
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:121
+msgid "Infrastructure"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:66
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:68
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:122
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:177
+msgid ">"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:67
+msgid "Network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:69
+msgid "Integrations."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:70
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:90
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:124
+msgid "Click the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:71
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:125
+msgid "Add"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:72
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:126
+msgid "to add a new integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:73
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:179
+msgid "Select"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:75
+msgid "Aruba CX Switches"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:76
+msgid "under the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:77
+msgid "Networking"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:78
+msgid "section."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:81
+msgid "Enter the following details for the network integration:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:82
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:133
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:190
+msgid "Name"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:83
+msgid "for network integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:84
+msgid "Username/Password"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:85
+msgid "for the switches"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:86
+msgid "Switch pair IP Addresses"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:87
+msgid "for each pair of switches"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:91
+msgid "Add Network Integration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:92
+msgid "to create the Network Integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:95
+msgid "Networks Configuration"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:97
+msgid ""
+"Once the network integration is created, networks can be created using "
+"the specific network integration that was created. Networks essentially "
+"define the VLAN that they represent along with other attributes such as "
+"the subnet’s IPv4 prefix, IP address allocation method, gateway address, "
+"DNS, etc. The screenshot below shows those details."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:99
+msgid ""
+"TheVLAN Trunksspecifies the trunk VLANs to be added when this network is "
+"consumed by an instance. TheVLAN IDfield represents the primary VLAN for "
+"this network. This VLAN is configured as the untagged VLAN when this "
+"network is consumed by an instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:101
+msgid ""
+"TheNetwork Servicecorresponds to the network integration that was "
+"created. This specifies that the network is to be created in the "
+"infrastructure (switches) specified in the network integration selected."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:103
+msgid ""
+"ThePrivatecheckbox specifies that the network is a private network. By "
+"default, all networks are public. If private is selected, the primary "
+"VLAN in this network is not configured on the uplink connection. This "
+"would render them unreachable from outside of the cloud infrastructure. "
+"This is typically used for workload networks that are used to communicate"
+" between only the workload servers and other infrastructure within the "
+"private cloud."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:105
+msgid ""
+"The configuration of a network will result in the primary VLAN in that "
+"network being provisioned on the network switches. The server ports are "
+"configured when those networks are consumed during the provisioning of a "
+"compute instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:108
+msgid "Creating Network Using ArubaCX"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:110
+msgid "Creating Network Using the ArubaCX Integration Prerequisites"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:112
+msgid ""
+"Before starting to create networks using integration, ensure that a Bare "
+"metal cloud is created with the ‘Network Mode’ set to the integration. If"
+" the Bare metal cloud already exists then ensure that ‘Network Mode’ is "
+"set to integration."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:114
+msgid "Perform the following to create the network:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:123
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:195
+msgid "Network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:128
+msgid "Enter the following details for the network:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:129
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:186
+msgid "Group"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:130
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:134
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:141
+msgid "for the network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:131
+msgid "Network Service"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:132
+msgid "specifies the Network Integration to use"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:135
+msgid "Gateway, DNS"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:136
+msgid "information if required"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:138
+msgid "for the subnet"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:139
+msgid "Primary"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:140
+msgid "VLAN ID"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:142
+msgid "Check the"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:143
+msgid "Private"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:144
+msgid "checkbox if a private network"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:145
+msgid "VLAN trunks"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:146
+msgid "for the network (optional)"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:147
+msgid "Choose"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:148
+msgid "Network Pool"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:149
+msgid "to be one of the IP pools configured"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:150
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:183
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:192
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:201
+msgid "Click"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:151
+msgid "Save Changes"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:152
+msgid "to create the network."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:155
+msgid "Network Usage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:157
+msgid ""
+"Networks are attached to interfaces on a compute server. The interfaces "
+"can be the physical ports themselves or bond interfaces that combine two "
+"physical ports into an aggregated pipe. Bond interfaces provide the "
+"benefits of aggregated bandwidth on a single interface and also high "
+"availability by providing port-level redundancy."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:159
+msgid ""
+"Once the decision is made on what kind of interfaces to use, networks can"
+" be chosen from the preconfigured list to attach to the network "
+"interfaces. This determines which VLANs are configured on which switch "
+"ports (or LAGs). As mentioned earlier, the primary VLAN is provisioned as"
+" an untagged VLAN, and the trunk VLANs are provisioned as tagged VLANs on"
+" the server ports."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:161
+msgid "The supported bond types are:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:162
+msgid ""
+"Static Bond: This uses an L2+L3-based hash on the server OS and a static "
+"LAG on the switches."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:163
+msgid ""
+"LACP Bond: This uses the LACP mode on the server OS and LACP LAG on the "
+"switches."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:164
+msgid ""
+"Switch Independent Bond: This uses the balance-tlb mode on Linux servers "
+"and the switch-independent mode on Windows. The switch is configured as "
+"independent physical ports."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:167
+msgid "Specifying Network Usage"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:169
+msgid ""
+"Perform the following to specify networks used during instance "
+"provisioning:"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:176
+msgid "Provisioning"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:178
+msgid "Instances."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:181
+msgid "Bare Metal (ILO) Server"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:182
+msgid "as the type."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:184
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:193
+msgid "Next."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:185
+msgid "Specify a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:187
+msgid ","
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:188
+msgid "Cloud"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:189
+msgid ", and a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:191
+msgid "for the Instance."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:194
+msgid "Select a"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:196
+msgid "Select an"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:197
+msgid "interface type"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:198
+msgid "(Bond/Physical)."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:199
+msgid "Specify any required"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:200
+msgid "virtual interface."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:202
+msgid "Next"
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:203
+msgid "and complete."
+msgstr ""
+
+#: ../../integration_guides/Clouds/hpe_bare_metal/network_management.rst:204
+msgid ""
+"For physical interfaces, the interfaces represent the physical ports in "
+"their display order. Virtual networks specify that tagged networks under "
+"the primary network specified are to be configured on the server OS with "
+"an IP interface. If any of those tagged networks are not required to be "
+"configured on the server OS as an IP interface, do not specify a virtual "
+"interface for those."
+msgstr ""
+

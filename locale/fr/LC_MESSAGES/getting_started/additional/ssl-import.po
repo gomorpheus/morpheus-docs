@@ -1,0 +1,133 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2026, Morpheus Data
+# This file is distributed under the same license as the Morpheus Docs
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Morpheus Docs \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../getting_started/additional/ssl-import.rst:2
+msgid "Import Trusted Certificates"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:4
+msgid ""
+"Use this procedure to add a certificate authority that the |morpheus| "
+"application must trust, such as the CA for a ServiceNow endpoint. "
+"Reconfigure imports certificates from the trusted-certificate directory "
+"into both the appliance OpenSSL trust path and the embedded JRE "
+"truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, "
+"so the UI must be restarted to load the updated JRE truststore."
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:6
+msgid "Obtain the full SSL certificate chain in PEM format."
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:8
+msgid ""
+"Copy them to each appliance and place them in the "
+"``/etc/morpheus/ssl/trusted_certs`` directory."
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:10
+msgid ""
+"Run ``morpheus-ctl reconfigure`` on the appliance. Reconfigure can run "
+"while the UI is active."
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:12
+msgid ""
+"Verify that each certificate is present in the embedded JRE truststore. "
+"Reconfigure uses the certificate filename as its alias:"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:14
+msgid ""
+"/opt/morpheus/embedded/java/jre/bin/keytool -list -cacerts -storepass "
+"changeit -alias root_ca.pem"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:18
+msgid ""
+"Verify the remote endpoint and chain with the appliance OpenSSL client, "
+"replacing the host and port:"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:20
+msgid "openssl s_client -connect host:port -showcerts -tls1_2"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:24
+msgid "You should get an output similar to:"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:26
+msgid ""
+"New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES256-GCM-SHA384\n"
+"Server public key is 2048 bit\n"
+"Secure Renegotiation IS supported\n"
+"No ALPN negotiated\n"
+"SSL-Session:\n"
+"Protocol : TLSv1.2\n"
+"Cipher  : ECDHE-RSA-AES256-GCM-SHA384\n"
+"Session-ID: "
+"5D9E820E4FF2A73A9977BA663E6029AA5415FEE85F49D8B1E541F5997C8E1FB2\n"
+"Session-ID-ctx:\n"
+"Master-Key: "
+"29EEC2E7750C659AECB9942902D9A87B824E571522812B718420FC08F8D2ACE68CB16EC812A7D90B12A86D1970FFD81C"
+"\n"
+"Key-Arg  : None\n"
+"PSK identity: None\n"
+"PSK identity hint: None\n"
+"SRP username: None\n"
+"Start Time: 1547219217\n"
+"Timeout  : 7200 (sec)\n"
+"Verify return code: 0 (ok) #<----------------"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:46
+msgid ""
+"If the certificates are installed correctly you should see ``Verify "
+"return code: 0 (ok)``.  If they were not installed correctly then you "
+"will see a return similar to: ``Verify return code: 21 (unable to verify "
+"the first certificate)``"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:48
+msgid "Restart the UI so its JVM loads the updated truststore:"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:50
+msgid "morpheus-ctl restart morpheus-ui"
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:54
+msgid ""
+"Repeat the copy, reconfigure, truststore verification, and UI restart on "
+"every application node. In an HA deployment, process one application node"
+" at a time and confirm it is healthy before proceeding to the next node."
+msgstr ""
+
+#: ../../getting_started/additional/ssl-import.rst:56
+msgid ""
+"Retry the integration without disabling certificate verification. A "
+"successful connection confirms that the application JVM trusts the "
+"endpoint; ``openssl`` success alone does not verify the trust state of "
+"the already-running JVM."
+msgstr ""
+

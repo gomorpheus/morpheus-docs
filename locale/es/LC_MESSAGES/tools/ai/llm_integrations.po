@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: es\n"
@@ -25,24 +25,22 @@ msgid "LLM Integrations"
 msgstr "Integraciones LLM"
 
 #: ../../tools/ai/llm_integrations.rst:6
+#, fuzzy
 msgid ""
 "LLM (Large Language Model) Integrations connect Morpheus to language "
 "model providers. These integrations supply the AI reasoning capabilities "
-"that power AI Agents. LLM integrations are **added through Administration"
-" > Integrations** and appear as a read-only reference under Tools > AI "
-"Services > Integrations."
+"that power AI Agents."
 msgstr ""
 "Las Integraciones LLM (Large Language Model) conectan Morpheus a "
-"proveedores de modelos de lenguaje. Estas integraciones proporcionan "
-"las capacidades de razonamiento de IA que impulsan a los Agentes de "
-"IA. Las integraciones LLM se **agregan a través de Administration > "
-"Integrations** y aparecen como referencia de solo lectura en Tools > "
-"AI Services > Integrations."
+"proveedores de modelos de lenguaje. Estas integraciones proporcionan las "
+"capacidades de razonamiento de IA que impulsan a los Agentes de IA. Las "
+"integraciones LLM se **agregan a través de Administration > "
+"Integrations** y aparecen como referencia de solo lectura en Tools > AI "
+"Services > Integrations."
 
 #: ../../tools/ai/llm_integrations.rst:8
-msgid ""
-"Navigate to :menuselection:`Tools --> AI Services --> Integrations` to "
-"view connected LLM providers."
+#, fuzzy
+msgid "Navigate to |TooAIInt| to manage connected LLM providers."
 msgstr ""
 "Navegue a :menuselection:`Tools --> AI Services --> Integrations` para "
 "ver los proveedores LLM conectados."
@@ -52,68 +50,102 @@ msgid "Adding an LLM Integration"
 msgstr "Agregar una integración LLM"
 
 #: ../../tools/ai/llm_integrations.rst:13
-msgid ""
-"LLM integrations are managed from :menuselection:`Administration --> "
-"Integrations`:"
+#, fuzzy
+msgid "LLM integrations are managed from |TooAIInt|:"
 msgstr ""
-"Las integraciones LLM se gestionan desde "
-":menuselection:`Administration --> Integrations`:"
+"Las integraciones LLM se gestionan desde :menuselection:`Administration "
+"--> Integrations`:"
 
 #: ../../tools/ai/llm_integrations.rst:15
-msgid "Click :guilabel:`+ ADD`"
-msgstr "Haga clic en :guilabel:`+ ADD`"
+msgid "Navigate to |TooAIInt|"
+msgstr ""
 
 #: ../../tools/ai/llm_integrations.rst:16
-msgid "Select an LLM provider type from the integration type list"
-msgstr ""
-"Seleccione un tipo de proveedor LLM de la lista de tipos de "
-"integración"
+#, fuzzy
+msgid "Click :guilabel:`+ New Integration`"
+msgstr "Haga clic en :guilabel:`+ ADD`"
 
 #: ../../tools/ai/llm_integrations.rst:17
-msgid "Configure provider-specific settings (API key, endpoint, etc.)"
+msgid "From the :guilabel:`New Integration` dropdown, select a type"
 msgstr ""
-"Configure los ajustes específicos del proveedor (clave API, endpoint, "
-"etc.)"
 
-#: ../../tools/ai/llm_integrations.rst:18
+#: ../../tools/ai/llm_integrations.rst:19
+#: ../../tools/ai/llm_integrations.rst:54
+#, fuzzy
+msgid "Note"
+msgstr "Notas"
+
+#: ../../tools/ai/llm_integrations.rst:21
+msgid "Currently, all integration types consume the same configuration fields."
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:23
+msgid "Configure the following fields:"
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:25
+msgid ":guilabel:`NAME` — A descriptive name for this integration"
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:26
+msgid ":guilabel:`ENABLED` — Check to activate the integration"
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:27
+msgid ":guilabel:`API ENDPOINT` — The URL for the provider's API endpoint"
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:28
+msgid ""
+":guilabel:`CREDENTIALS` — Select **Local Credentials** to paste an API "
+"key directly, or select from the secure credential store (e.g., Cypher)"
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:30
 msgid "Save the integration"
 msgstr "Guarde la integración"
 
-#: ../../tools/ai/llm_integrations.rst:20
+#: ../../tools/ai/llm_integrations.rst:32
 msgid ""
 "After saving, Morpheus automatically discovers available models from the "
 "provider and syncs them. These models then appear in the **Model** "
 "dropdown when configuring AI Agents."
 msgstr ""
-"After saving, Morpheus automatically discovers disponible models from the "
-"provider and syncs them. These models then appear in the **Model** "
+"After saving, Morpheus automatically discovers disponible models from the"
+" provider and syncs them. These models then appear in the **Model** "
 "dropdown when configuring AI Agents."
 
-#: ../../tools/ai/llm_integrations.rst:23
+#: ../../tools/ai/llm_integrations.rst:35
 msgid "Supported Providers"
 msgstr "Proveedores compatibles"
 
-#: ../../tools/ai/llm_integrations.rst:25
+#: ../../tools/ai/llm_integrations.rst:37
 msgid ""
-"LLM provider support is plugin-based. The following providers are "
-"available:"
+"Morpheus ships with provider integrations pre-installed but more will be "
+"added over time. Additionally, new AI integrations can be added to the "
+"platform by users through custom plugin development."
+msgstr ""
+
+#: ../../tools/ai/llm_integrations.rst:39
+#, fuzzy
+msgid "The following providers are currently available:"
 msgstr ""
 "El soporte de proveedores LLM está basado en plugins. Los siguientes "
 "proveedores están disponibles:"
 
-#: ../../tools/ai/llm_integrations.rst:31
+#: ../../tools/ai/llm_integrations.rst:45
 msgid "Provider"
 msgstr "Proveedor"
 
-#: ../../tools/ai/llm_integrations.rst:32
+#: ../../tools/ai/llm_integrations.rst:46
 msgid "Notes"
 msgstr "Notas"
 
-#: ../../tools/ai/llm_integrations.rst:33
+#: ../../tools/ai/llm_integrations.rst:47
 msgid "**GitHub Copilot**"
 msgstr "**GitHub Copilot**"
 
-#: ../../tools/ai/llm_integrations.rst:34
+#: ../../tools/ai/llm_integrations.rst:48
 msgid ""
 "GitHub Copilot integration. Requires GitHub Copilot subscription and "
 "authentication token."
@@ -121,23 +153,23 @@ msgstr ""
 "GitHub Copilot integration. Requires GitHub Copilot subscription y "
 "authentication token."
 
-#: ../../tools/ai/llm_integrations.rst:35
+#: ../../tools/ai/llm_integrations.rst:49
 msgid "**Ollama (Local)**"
 msgstr "**Ollama (Local)**"
 
-#: ../../tools/ai/llm_integrations.rst:36
+#: ../../tools/ai/llm_integrations.rst:50
 msgid ""
 "Self-hosted open-source models (Llama, Mistral, DeepSeek, etc.). Requires"
 " Ollama server URL. No API key needed for local instances."
 msgstr ""
-"Self-hosted open-source models (Llama, Mistral, DeepSeek, etc.). Requires "
-"Ollama server URL. No API key needed for local instancias."
+"Self-hosted open-source models (Llama, Mistral, DeepSeek, etc.). Requires"
+" Ollama server URL. No API key needed for local instancias."
 
-#: ../../tools/ai/llm_integrations.rst:37
+#: ../../tools/ai/llm_integrations.rst:51
 msgid "**OpenAI-Compatible (Local)**"
 msgstr "**OpenAI-Compatible (Local)**"
 
-#: ../../tools/ai/llm_integrations.rst:38
+#: ../../tools/ai/llm_integrations.rst:52
 msgid ""
 "Any local LLM server that exposes an OpenAI-compatible API (e.g., LM "
 "Studio, vLLM, LocalAI). Configure with the local server endpoint URL."
@@ -145,39 +177,41 @@ msgstr ""
 "Cualquier local LLM servidor que exposes un OpenAI-compatible API (e.g., "
 "LM Studio, vLLM, LocalAI). Configure con el/la local server endpoint URL."
 
-#: ../../tools/ai/llm_integrations.rst:42
+#: ../../tools/ai/llm_integrations.rst:56
+#, fuzzy
 msgid ""
-"Additional LLM providers can be added through the Morpheus plugin system "
-"as they become available."
+"Additional LLM providers can be added through the Morpheus plugin system."
+" See the developer documentation for guidance on creating custom AI "
+"integration plugins."
 msgstr ""
 "Additional LLM providers puede ser added through the Morpheus plugin "
 "system as they become available."
 
-#: ../../tools/ai/llm_integrations.rst:45
+#: ../../tools/ai/llm_integrations.rst:59
 msgid "Model Properties"
 msgstr "Propiedades del modelo"
 
-#: ../../tools/ai/llm_integrations.rst:47
+#: ../../tools/ai/llm_integrations.rst:61
 msgid ""
 "Discovered models include metadata to help select the appropriate model "
 "for your use case:"
 msgstr ""
-"Discovered models include metadata to help seleccione el appropriate model "
-"for your use case:"
+"Discovered models include metadata to help seleccione el appropriate "
+"model for your use case:"
 
-#: ../../tools/ai/llm_integrations.rst:53
+#: ../../tools/ai/llm_integrations.rst:67
 msgid "Property"
 msgstr "Propiedad"
 
-#: ../../tools/ai/llm_integrations.rst:54
+#: ../../tools/ai/llm_integrations.rst:68
 msgid "Description"
 msgstr "Descripción"
 
-#: ../../tools/ai/llm_integrations.rst:55
+#: ../../tools/ai/llm_integrations.rst:69
 msgid "**Context Window**"
 msgstr "**Context Window**"
 
-#: ../../tools/ai/llm_integrations.rst:56
+#: ../../tools/ai/llm_integrations.rst:70
 msgid ""
 "Maximum number of tokens the model can process in a single conversation "
 "(input + output)"
@@ -185,73 +219,71 @@ msgstr ""
 "Maximum number de tokens el/la model puede process en a single "
 "conversation (input + output)"
 
-#: ../../tools/ai/llm_integrations.rst:57
+#: ../../tools/ai/llm_integrations.rst:71
 msgid "**Max Output Tokens**"
 msgstr "**Max Output Tokens**"
 
-#: ../../tools/ai/llm_integrations.rst:58
+#: ../../tools/ai/llm_integrations.rst:72
 msgid "Maximum tokens the model can generate in a single response"
 msgstr "Maximum tokens el/la model puede generate en a single response"
 
-#: ../../tools/ai/llm_integrations.rst:59
+#: ../../tools/ai/llm_integrations.rst:73
 msgid "**Speed Score**"
 msgstr "**Speed Score**"
 
-#: ../../tools/ai/llm_integrations.rst:60
+#: ../../tools/ai/llm_integrations.rst:74
 msgid "Relative speed rating for response generation"
 msgstr "Relative speed rating para response generation"
 
-#: ../../tools/ai/llm_integrations.rst:61
+#: ../../tools/ai/llm_integrations.rst:75
 msgid "**Quality Score**"
 msgstr "**Quality Score**"
 
-#: ../../tools/ai/llm_integrations.rst:62
+#: ../../tools/ai/llm_integrations.rst:76
 msgid "Relative quality/capability rating"
 msgstr "Relativo quality/capability rating"
 
-#: ../../tools/ai/llm_integrations.rst:63
+#: ../../tools/ai/llm_integrations.rst:77
 msgid "**Cost Score**"
 msgstr "**Cost Score**"
 
-#: ../../tools/ai/llm_integrations.rst:64
+#: ../../tools/ai/llm_integrations.rst:78
 msgid "Relative cost per request/token"
 msgstr "Relativo cost per request/token"
 
-#: ../../tools/ai/llm_integrations.rst:67
+#: ../../tools/ai/llm_integrations.rst:81
 msgid "Usage Tracking"
 msgstr "Seguimiento de uso"
 
-#: ../../tools/ai/llm_integrations.rst:69
+#: ../../tools/ai/llm_integrations.rst:83
 msgid "LLM integrations track token and request usage:"
 msgstr "Las integraciones LLM rastrean el uso de tokens y solicitudes:"
 
-#: ../../tools/ai/llm_integrations.rst:71
+#: ../../tools/ai/llm_integrations.rst:85
 msgid "**Token Usage** — Total tokens consumed, remaining quota, and reset period"
-msgstr ""
-"**Token Usage** — Total tokens consumed, remaining quota, y reset period"
+msgstr "**Token Usage** — Total tokens consumed, remaining quota, y reset period"
 
-#: ../../tools/ai/llm_integrations.rst:72
+#: ../../tools/ai/llm_integrations.rst:86
 msgid "**Request Usage** — Total requests made, remaining quota, and reset period"
-msgstr ""
-"**Request Usage** — Total requests made, remaining quota, y reset period"
+msgstr "**Request Usage** — Total requests made, remaining quota, y reset period"
 
-#: ../../tools/ai/llm_integrations.rst:74
+#: ../../tools/ai/llm_integrations.rst:88
 msgid ""
 "These metrics help monitor API consumption and manage costs. Usage data "
 "is visible on the integration detail page."
 msgstr ""
-"These metrics help monitor API consumption and manage costs. Usage data is "
-"visible on the integration detalle página."
+"These metrics help monitor API consumption and manage costs. Usage data "
+"is visible on the integration detalle página."
 
-#: ../../tools/ai/llm_integrations.rst:77
+#: ../../tools/ai/llm_integrations.rst:91
 msgid "Choosing a Model"
 msgstr "Elegir un modelo"
 
-#: ../../tools/ai/llm_integrations.rst:79
+#: ../../tools/ai/llm_integrations.rst:93
 msgid "When selecting a model for an AI Agent, consider:"
 msgstr "Al seleccionar un modelo para un Agente de IA, considere:"
 
-#: ../../tools/ai/llm_integrations.rst:81
+#: ../../tools/ai/llm_integrations.rst:95
 msgid ""
 "**Context window** — Larger windows allow longer conversations and more "
 "tool results. Models with 128K+ context windows are recommended for "
@@ -261,16 +293,17 @@ msgstr ""
 "tool results. Models con 128K+ context windows son recommended para "
 "complex infrastructure queries."
 
-#: ../../tools/ai/llm_integrations.rst:82
+#: ../../tools/ai/llm_integrations.rst:96
 msgid ""
 "**Tool calling support** — Ensure the model supports function/tool "
 "calling (most modern models do). This is required for MCP tool "
 "invocation."
 msgstr ""
-"**Tool calling support** — Ensure the model supports function/tool calling "
-"(most modern models do). This es requerido for MCP tool invocation."
+"**Tool calling support** — Ensure the model supports function/tool "
+"calling (most modern models do). This es requerido for MCP tool "
+"invocation."
 
-#: ../../tools/ai/llm_integrations.rst:83
+#: ../../tools/ai/llm_integrations.rst:97
 msgid ""
 "**Speed vs. quality** — Faster models (GPT-4o-mini, Claude 3 Haiku) are "
 "better for frequent, simple queries. Higher-quality models (GPT-4o, "
@@ -281,11 +314,19 @@ msgstr ""
 "better para frequent, simple queries. Higher-quality models (GPT-4o, "
 "Claude 3 Opus) are better for complex reasoning y multi-step operations."
 
-#: ../../tools/ai/llm_integrations.rst:84
+#: ../../tools/ai/llm_integrations.rst:98
 msgid ""
 "**Cost** — High-throughput environments with many users should consider "
 "cost per token carefully."
 msgstr ""
-"**Cost** — High-throughput environments with many usuarios should consider "
-"cost per token carefully."
+"**Cost** — High-throughput environments with many usuarios should "
+"consider cost per token carefully."
+
+#~ msgid "Select an LLM provider type from the integration type list"
+#~ msgstr "Seleccione un tipo de proveedor LLM de la lista de tipos de integración"
+
+#~ msgid "Configure provider-specific settings (API key, endpoint, etc.)"
+#~ msgstr ""
+#~ "Configure los ajustes específicos del "
+#~ "proveedor (clave API, endpoint, etc.)"
 

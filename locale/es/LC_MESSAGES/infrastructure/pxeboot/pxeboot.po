@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Morpheus Docs\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-02 10:24-0400\n"
+"POT-Creation-Date: 2026-08-26 11:17-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: es <LL@li.org>\n"
 "Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: Babel 2.18.0\n"
 
 #: ../../infrastructure/pxeboot/pxeboot.rst:2
@@ -30,46 +30,61 @@ msgstr "Descripción general"
 
 #: ../../infrastructure/pxeboot/pxeboot.rst:9
 msgid ""
-"|morpheus| provides a simple-to-use Bare Metal boot capability based on PXE."
-" When a server boots and is redirected to the |morpheus| server for the "
-"installation files, they can be configured to be simply passed an OS or "
-"Hypervisor (in which case |morpheus| will see them as Bare Metal servers "
-"with no further detail) or they can be brought on as Virtual Machines or "
-"Docker Hosts. Installation of the |morpheus| Agent can also be done during "
-"the initial configuration stage."
+"|morpheus| provides a simple-to-use Bare Metal boot capability based on "
+"PXE. When a server boots and is redirected to the |morpheus| server for "
+"the installation files, they can be configured to be simply passed an OS "
+"or Hypervisor (in which case |morpheus| will see them as Bare Metal "
+"servers with no further detail) or they can be brought on as Virtual "
+"Machines or Docker Hosts. Installation of the |morpheus| Agent can also "
+"be done during the initial configuration stage."
 msgstr ""
-"|morpheus| proporciona un simple-a-usar Bare Metal boot capability basado en"
-" PXE. Cuando un servidor boots y es redirected al |morpheus| servidor para "
-"el installation archivos, they se puede configurar a be simply passed un OS "
-"o Hypervisor (en cual case |morpheus| será ver them como Bare Metal "
-"servidores con no further detail) o they puede be brought en como Máquinas "
-"virtuales o Docker Hosts. Installation del |morpheus| Agent también puede "
-"ser done durante el initial configuración stage."
+"|morpheus| proporciona un simple-a-usar Bare Metal boot capability basado"
+" en PXE. Cuando un servidor boots y es redirected al |morpheus| servidor "
+"para el installation archivos, they se puede configurar a be simply "
+"passed un OS o Hypervisor (en cual case |morpheus| será ver them como "
+"Bare Metal servidores con no further detail) o they puede be brought en "
+"como Máquinas virtuales o Docker Hosts. Installation del |morpheus| Agent"
+" también puede ser done durante el initial configuración stage."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:12
+#: ../../infrastructure/pxeboot/pxeboot.rst:11
+msgid "Important"
+msgstr ""
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:13
+msgid ""
+"This page describes the |morpheus| **bare-metal** PXE service. An HVM VM "
+"can instead boot from an existing PXE environment by enabling **Network "
+"Boot** on the VM. That setting places the VM's primary virtual NIC first "
+"in its boot order; it does not enroll the VM in the bare-metal workflow "
+"on this page. See "
+":doc:`/infrastructure/clusters/hvm/vm_advanced_options`."
+msgstr ""
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:16
 msgid "Prerequisites"
 msgstr "Requisitos previos"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:14
+#: ../../infrastructure/pxeboot/pxeboot.rst:18
 msgid ""
 "In order to work with |morpheus| bare metal PXE boot capabilities, some "
-"initial setup configuration is required. First, on the |morpheus| server, if"
-" you have a firewall enabled, make sure port 69 is open for TFTP. |morpheus|"
-" actually uses port 6969 and during installation a redirect should have been"
-" set. To check this, SSH onto the Morpheus server and run the following:"
+"initial setup configuration is required. First, on the |morpheus| server,"
+" if you have a firewall enabled, make sure port 69 is open for TFTP. "
+"|morpheus| actually uses port 6969 and during installation a redirect "
+"should have been set. To check this, SSH onto the Morpheus server and run"
+" the following:"
 msgstr ""
 "Para funcionar con |morpheus| bare metal PXE boot capabilities, algunos "
 "initial setup configuración es requerido. Primero, en el |morpheus| "
-"servidor, si you tienen un firewall habilitado, asegúrese de puerto 69 es "
-"abrir para TFTP. |morpheus| actually usa puerto 6969 y durante installation "
-"un redirect debería tienen been establecer. A verificar este, SSH onto el "
-"Morpheus servidor y ejecutar lo siguiente:"
+"servidor, si you tienen un firewall habilitado, asegúrese de puerto 69 es"
+" abrir para TFTP. |morpheus| actually usa puerto 6969 y durante "
+"installation un redirect debería tienen been establecer. A verificar "
+"este, SSH onto el Morpheus servidor y ejecutar lo siguiente:"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:16
+#: ../../infrastructure/pxeboot/pxeboot.rst:20
 msgid "iptables -t nat -L -n -v"
 msgstr "iptables -t nat -L -n -v"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:20
+#: ../../infrastructure/pxeboot/pxeboot.rst:24
 msgid ""
 "If the redirect is still properly, the response should include the "
 "following:"
@@ -77,44 +92,50 @@ msgstr ""
 "Si el redirect es todavía correctamente, el respuesta debería incluir lo "
 "siguiente:"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:22
+#: ../../infrastructure/pxeboot/pxeboot.rst:26
 msgid ""
 "Chain PREROUTING (policy ACCEPT 69 packets, 9767 bytes)\n"
 "\n"
 "pkts bytes target   prot opt in out source     destination\n"
 "\n"
-"0     0 REDIRECT udp  --  *  *   0.0.0.0/0  0.0.0.0/0        udp dpt:69 redir ports 6969\n"
+"0     0 REDIRECT udp  --  *  *   0.0.0.0/0  0.0.0.0/0        udp dpt:69 "
+"redir ports 6969\n"
 "\n"
-"0     0 DNAT     tcp  --  *  *   0.0.0.0/0  169.254.169.254  tcp dpt:80 to:192.168.1.156"
+"0     0 DNAT     tcp  --  *  *   0.0.0.0/0  169.254.169.254  tcp dpt:80 "
+"to:192.168.1.156"
 msgstr ""
 "Chain PREROUTING (política ACCEPT 69 packets, 9767 bytes)\n"
 "\n"
 "pkts bytes destino   prot opt en out origen     destino\n"
 "\n"
-"0     0 REDIRECT udp  --  *  *   0.0.0.0/0  0.0.0.0/0        udp dpt:69 redir puertos 6969\n"
+"0     0 REDIRECT udp  --  *  *   0.0.0.0/0  0.0.0.0/0        udp dpt:69 "
+"redir puertos 6969\n"
 "\n"
-"0     0 DNAT     tcp  --  *  *   0.0.0.0/0  169.254.169.254  tcp dpt:80 a:192.168.1.156"
+"0     0 DNAT     tcp  --  *  *   0.0.0.0/0  169.254.169.254  tcp dpt:80 "
+"a:192.168.1.156"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:32
+#: ../../infrastructure/pxeboot/pxeboot.rst:36
+#, fuzzy
 msgid ""
-"Next, in |morpheus|, set a default PXE root password. This password is set "
-"in |AdmSetPro|. With the default root password set, set up the redirect on "
-"the DHCP server. In addition to the DNS and Gateway settings, add Boot "
-"Server Host Name which will be the name of the |morpheus| Server and "
-"Bootfile Name which should be set to ``pxelinux.0``. If you are using a "
-"Linux-based DHCP server, for example on CentOS, the dhcpd.conf configuration"
-" will look something like the following:"
+"Next, in |morpheus|, set a default PXE root password. This password is "
+"set in :menuselection:`Administration --> Settings --> Provisioning`. "
+"With the default root password set, set up the redirect on the DHCP "
+"server. In addition to the DNS and Gateway settings, add Boot Server Host"
+" Name which will be the name of the |morpheus| Server and Bootfile Name "
+"which should be set to ``pxelinux.0``. If you are using a Linux-based "
+"DHCP server, for example on CentOS, the dhcpd.conf configuration will "
+"look something like the following:"
 msgstr ""
-"Siguiente, en |morpheus|, establecer un predeterminado PXE root contraseña. "
-"Este contraseña es establecer en |AdmSetPro|. Con el predeterminado root "
-"contraseña establecer, establecer up el redirect en el DHCP servidor. Además"
-" al DNS y Gateway configuraciones, agregar Boot Servidor Host Nombre cual "
-"será be el nombre del |morpheus| Servidor y Bootfile Nombre cual debería "
-"estar establecido a ``pxelinux.0``. Si you son usando un Linux-based DHCP "
-"servidor, por ejemplo en CentOS, el dhcpd.conf configuración será look "
-"something like lo siguiente:"
+"Siguiente, en |morpheus|, establecer un predeterminado PXE root "
+"contraseña. Este contraseña es establecer en |AdmSetPro|. Con el "
+"predeterminado root contraseña establecer, establecer up el redirect en "
+"el DHCP servidor. Además al DNS y Gateway configuraciones, agregar Boot "
+"Servidor Host Nombre cual será be el nombre del |morpheus| Servidor y "
+"Bootfile Nombre cual debería estar establecido a ``pxelinux.0``. Si you "
+"son usando un Linux-based DHCP servidor, por ejemplo en CentOS, el "
+"dhcpd.conf configuración será look something like lo siguiente:"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:34
+#: ../../infrastructure/pxeboot/pxeboot.rst:38
 msgid ""
 "allow booting;\n"
 "allow bootp;\n"
@@ -130,527 +151,529 @@ msgstr ""
 "siguiente-server xx.xx.xx.xx;\n"
 "filename \"pxelinux.0\";"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:43
-msgid ""
-"Replace the dummy IP address in the example dhcpd.conf file above with your "
-"|morpheus| appliance IP address."
+#: ../../infrastructure/pxeboot/pxeboot.rst:47
+msgid "Note"
 msgstr ""
-"Replace el dummy IP dirección en el ejemplo dhcpd.conf archivo arriba con su"
-" |morpheus| appliance IP dirección."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:45
+#: ../../infrastructure/pxeboot/pxeboot.rst:47
 msgid ""
-"Once you have done this, when you boot a PXE-enabled machine on the network,"
-" it will be told to access the |morpheus| server and request the "
-"``pxelinux.0`` file. It will do this on port 69, the default for TFTP and "
-"will be redirected to 6969 once it hits the |morpheus| server. If successful"
-" you will see the \"|morpheus| PXE Server\" menu when you boot a server. "
-"This is the default menu defined in |morpheus| and supports the shipped PXE "
-"images supplied with the product. By selecting any of the choices from the "
-"\"|morpheus| PXE Server menu\", the install files should be downloaded and "
-"the server configured as per the supplied kickstart files. At this point, "
-"back on the |morpheus| appliance, you should see the MAC address for the new"
-" server appear in the \"Discovered MAC Addresses\" tab of the |InfBoo| page."
+"Replace the dummy IP address in the example dhcpd.conf file above with "
+"your |morpheus| appliance IP address."
 msgstr ""
-"Once you tienen done este, cuando you boot un PXE-habilitado machine en el "
-"network, it será be told a acceso el |morpheus| servidor y solicitud el "
-"``pxelinux.0`` archivo. It será do este en puerto 69, el predeterminado para"
-" TFTP y será be redirected a 6969 once it hits el |morpheus| servidor. Si "
-"successful you será consulte la \"|morpheus| PXE Servidor\" menú cuando you "
-"boot un servidor. Este es el predeterminado menú definido en |morpheus| y "
-"soporta el shipped PXE imágenes supplied con el product. Por selecting "
-"cualquier del choices desde el \"|morpheus| PXE Servidor menú\", el instalar"
-" archivos debería be downloaded y el servidor configurado como per el "
-"supplied kickstart archivos. En este punto, back en el |morpheus| appliance,"
-" you debería consulte la MAC dirección para el nuevo servidor aparecer en el"
-" \"Discovered MAC Addresses\" pestaña del |InfBoo| página."
+"Replace el dummy IP dirección en el ejemplo dhcpd.conf archivo arriba con"
+" su |morpheus| appliance IP dirección."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:48
+#: ../../infrastructure/pxeboot/pxeboot.rst:49
+#, fuzzy
+msgid ""
+"Once you have done this, when you boot a PXE-enabled machine on the "
+"network, it will be told to access the |morpheus| server and request the "
+"``pxelinux.0`` file. It will do this on port 69, the default for TFTP and"
+" will be redirected to 6969 once it hits the |morpheus| server. If "
+"successful you will see the \"|morpheus| PXE Server\" menu when you boot "
+"a server. This is the default menu defined in |morpheus| and supports the"
+" shipped PXE images supplied with the product. By selecting any of the "
+"choices from the \"|morpheus| PXE Server menu\", the install files should"
+" be downloaded and the server configured as per the supplied kickstart "
+"files. At this point, back on the |morpheus| appliance, you should see "
+"the MAC address for the new server appear in the \"Discovered MAC "
+"Addresses\" tab of the :menuselection:`Infrastructure --> Boot` page."
+msgstr ""
+"Once you tienen done este, cuando you boot un PXE-habilitado machine en "
+"el network, it será be told a acceso el |morpheus| servidor y solicitud "
+"el ``pxelinux.0`` archivo. It será do este en puerto 69, el "
+"predeterminado para TFTP y será be redirected a 6969 once it hits el "
+"|morpheus| servidor. Si successful you será consulte la \"|morpheus| PXE "
+"Servidor\" menú cuando you boot un servidor. Este es el predeterminado "
+"menú definido en |morpheus| y soporta el shipped PXE imágenes supplied "
+"con el product. Por selecting cualquier del choices desde el \"|morpheus|"
+" PXE Servidor menú\", el instalar archivos debería be downloaded y el "
+"servidor configurado como per el supplied kickstart archivos. En este "
+"punto, back en el |morpheus| appliance, you debería consulte la MAC "
+"dirección para el nuevo servidor aparecer en el \"Discovered MAC "
+"Addresses\" pestaña del |InfBoo| página."
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:52
 msgid "Troubleshooting"
 msgstr "Solución de problemas"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:50
-msgid ""
-"If you do not get the Morpheus boot menu, there are a few things to check:"
+#: ../../infrastructure/pxeboot/pxeboot.rst:54
+msgid "If you do not get the Morpheus boot menu, there are a few things to check:"
 msgstr ""
 "Si you do no obtener el Morpheus boot menú, allí son un pocos things a "
 "verificar:"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:52
+#: ../../infrastructure/pxeboot/pxeboot.rst:56
 msgid "First, make sure the filename is correct. It must be ``pxelinux.0``"
-msgstr ""
-"Primero, asegúrese de el filename es correct. It debe be ``pxelinux.0``"
+msgstr "Primero, asegúrese de el filename es correct. It debe be ``pxelinux.0``"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:53
+#: ../../infrastructure/pxeboot/pxeboot.rst:57
 msgid ""
-"Next, check the TFTP server is responding by using a TFTP client to get the "
-"``pxelinux.0`` file from the |morpheus| server using the same host name as "
-"you have configured in the DHCP server configuration. Do this test on a "
-"machine on the same network as the machines you are trying to boot using PXE"
+"Next, check the TFTP server is responding by using a TFTP client to get "
+"the ``pxelinux.0`` file from the |morpheus| server using the same host "
+"name as you have configured in the DHCP server configuration. Do this "
+"test on a machine on the same network as the machines you are trying to "
+"boot using PXE"
 msgstr ""
 "Siguiente, verificar el TFTP servidor es responding por usando un TFTP "
 "cliente a obtener el ``pxelinux.0`` archivo desde el |morpheus| servidor "
-"usando el mismo host nombre como you tienen configurado en el DHCP servidor "
-"configuración. Do este probar en un machine en el mismo network como el "
-"machines you son trying a boot usando PXE"
+"usando el mismo host nombre como you tienen configurado en el DHCP "
+"servidor configuración. Do este probar en un machine en el mismo network "
+"como el machines you son trying a boot usando PXE"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:54
+#: ../../infrastructure/pxeboot/pxeboot.rst:58
 msgid ""
 "Leave the port number as 69 (the default) as this will also check the "
 "redirect is working"
 msgstr ""
-"Leave el puerto número como 69 (el predeterminado) como este será también "
-"verificar el redirect es funcionando"
-
-#: ../../infrastructure/pxeboot/pxeboot.rst:55
-msgid ""
-"If a GET call on the default port does not work, and the client allows (most"
-" do) try using port 6969. If this works, then the redirect is wrong"
-msgstr ""
-"Si un GET llamar en el predeterminado puerto does no funcionar, y el cliente"
-" permite (más do) try usando puerto 6969. Si este funciona, entonces el "
-"redirect es wrong"
-
-#: ../../infrastructure/pxeboot/pxeboot.rst:56
-msgid ""
-"If it will not work on either, check you can access the |morpheus| server "
-"from the network you are on and also check there are no firewalls between "
-"the test network and the |morpheus| Server"
-msgstr ""
-"Si it será no funcionar en cualquiera, verificar you puede acceso el "
-"|morpheus| servidor desde el network you son en y también verificar allí son"
-" no firewalls entre el probar network y el |morpheus| Servidor"
+"Leave el puerto número como 69 (el predeterminado) como este será también"
+" verificar el redirect es funcionando"
 
 #: ../../infrastructure/pxeboot/pxeboot.rst:59
+msgid ""
+"If a GET call on the default port does not work, and the client allows "
+"(most do) try using port 6969. If this works, then the redirect is wrong"
+msgstr ""
+"Si un GET llamar en el predeterminado puerto does no funcionar, y el "
+"cliente permite (más do) try usando puerto 6969. Si este funciona, "
+"entonces el redirect es wrong"
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:60
+msgid ""
+"If it will not work on either, check you can access the |morpheus| server"
+" from the network you are on and also check there are no firewalls "
+"between the test network and the |morpheus| Server"
+msgstr ""
+"Si it será no funcionar en cualquiera, verificar you puede acceso el "
+"|morpheus| servidor desde el network you son en y también verificar allí "
+"son no firewalls entre el probar network y el |morpheus| Servidor"
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:63
 msgid "Mapping"
 msgstr "Mapping"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:62
+#: ../../infrastructure/pxeboot/pxeboot.rst:66
 msgid "Add Mapping"
 msgstr "Agregar Mapping"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:64
+#: ../../infrastructure/pxeboot/pxeboot.rst:68
 msgid "Select the Mapping tab then click the Add Mapping button."
-msgstr ""
-"Seleccionar el Mapping pestaña entonces click el Agregar Mapping botón."
+msgstr "Seleccionar el Mapping pestaña entonces click el Agregar Mapping botón."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:65
+#: ../../infrastructure/pxeboot/pxeboot.rst:69
 msgid "From the New Mapping Wizard input the following information:"
 msgstr "Desde el Nuevo Mapping Wizard entrada lo siguiente información:"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:67
+#: ../../infrastructure/pxeboot/pxeboot.rst:71
 msgid "Match Pattern"
 msgstr "Match Pattern"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:68
+#: ../../infrastructure/pxeboot/pxeboot.rst:72
 msgid "Mac address separated by ':' or an ip address filter"
 msgstr "Mac dirección separated por ':' o un ip dirección filter"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:69
-#: ../../infrastructure/pxeboot/pxeboot.rst:138
+#: ../../infrastructure/pxeboot/pxeboot.rst:73
+#: ../../infrastructure/pxeboot/pxeboot.rst:142
 msgid "Description(optional)"
 msgstr "Descripción(opcional)"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:70
+#: ../../infrastructure/pxeboot/pxeboot.rst:74
 msgid "Description of the new mapping."
 msgstr "Descripción del nuevo mapping."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:71
-#: ../../infrastructure/pxeboot/pxeboot.rst:140
+#: ../../infrastructure/pxeboot/pxeboot.rst:75
+#: ../../infrastructure/pxeboot/pxeboot.rst:144
 msgid "Active"
 msgstr "Activo"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:72
-#: ../../infrastructure/pxeboot/pxeboot.rst:141
+#: ../../infrastructure/pxeboot/pxeboot.rst:76
+#: ../../infrastructure/pxeboot/pxeboot.rst:145
 msgid "Flag to denote the mapping as active or disabled."
 msgstr "Flag a denote el mapping como activo o deshabilitado."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:73
-#: ../../infrastructure/pxeboot/pxeboot.rst:184
+#: ../../infrastructure/pxeboot/pxeboot.rst:77
+#: ../../infrastructure/pxeboot/pxeboot.rst:188
 msgid "Operating System"
 msgstr "Operating Sistema"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:74
+#: ../../infrastructure/pxeboot/pxeboot.rst:78
 msgid "List of operating systems for the mapping."
 msgstr "List de sistemas operativos para el mapping."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:75
+#: ../../infrastructure/pxeboot/pxeboot.rst:79
 msgid "Boot Image"
 msgstr "Boot Imagen"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:76
+#: ../../infrastructure/pxeboot/pxeboot.rst:80
 msgid "Lists available PXE boot images."
 msgstr "Lists disponible PXE boot imágenes."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:77
+#: ../../infrastructure/pxeboot/pxeboot.rst:81
 msgid "Answer File"
 msgstr "Answer Archivo"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:78
+#: ../../infrastructure/pxeboot/pxeboot.rst:82
 msgid "Lists available answer files."
 msgstr "Lists disponible answer archivos."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:79
+#: ../../infrastructure/pxeboot/pxeboot.rst:83
 msgid "Cloud"
 msgstr "Nube"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:80
+#: ../../infrastructure/pxeboot/pxeboot.rst:84
 msgid "Lists the available clouds."
 msgstr "Lists el disponible clouds."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:82
+#: ../../infrastructure/pxeboot/pxeboot.rst:85
 msgid "Server Mode"
 msgstr "Server Modo"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:82
+#: ../../infrastructure/pxeboot/pxeboot.rst:86
 msgid ""
-"List of server modes:: unmanaged, Managed, Bare metal host, Container host, "
-"VM host, and Container & VM host."
+"List of server modes:: unmanaged, Managed, Bare metal host, Container "
+"host, VM host, and Container & VM host."
 msgstr ""
 "List de servidor modos:: unmanaged, Administrado, Bare metal host, "
 "Contenedor host, VM host, y Contenedor & VM host."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:84
-#: ../../infrastructure/pxeboot/pxeboot.rst:149
+#: ../../infrastructure/pxeboot/pxeboot.rst:88
+#: ../../infrastructure/pxeboot/pxeboot.rst:153
 msgid "Save"
 msgstr "Guardar"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:86
+#: ../../infrastructure/pxeboot/pxeboot.rst:90
 #, python-brace-format
 msgid ""
-"Once the mapping is added, and the target host is powered on, the {morpheus}"
-" PXE menu will load and PXE boot will start."
+"Once the mapping is added, and the target host is powered on, the "
+"{morpheus} PXE menu will load and PXE boot will start."
 msgstr ""
-"Once el mapping es agregado, y el destino host es powered en, el {morpheus} "
-"PXE menú será load y PXE boot será iniciar."
+"Once el mapping es agregado, y el destino host es powered en, el "
+"{morpheus} PXE menú será load y PXE boot será iniciar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:89
+#: ../../infrastructure/pxeboot/pxeboot.rst:93
 msgid "Edit Mapping"
 msgstr "Editar Mapping"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:91
+#: ../../infrastructure/pxeboot/pxeboot.rst:95
 msgid "Click the edit icon on the row of the mapping you wish to edit."
 msgstr "Click el editar ícono en el row del mapping you wish a editar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:92
-#: ../../infrastructure/pxeboot/pxeboot.rst:158
-#: ../../infrastructure/pxeboot/pxeboot.rst:204
+#: ../../infrastructure/pxeboot/pxeboot.rst:96
+#: ../../infrastructure/pxeboot/pxeboot.rst:162
+#: ../../infrastructure/pxeboot/pxeboot.rst:208
 msgid "Modify information as needed."
 msgstr "Modify información según sea necesario."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:93
-#: ../../infrastructure/pxeboot/pxeboot.rst:205
+#: ../../infrastructure/pxeboot/pxeboot.rst:97
+#: ../../infrastructure/pxeboot/pxeboot.rst:209
 msgid "Click the Save Changes button to save."
 msgstr "Click el Guardar Cambios botón a guardar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:95
+#: ../../infrastructure/pxeboot/pxeboot.rst:99
 msgid "Delete Mapping"
 msgstr "Eliminar Mapping"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:97
+#: ../../infrastructure/pxeboot/pxeboot.rst:101
 msgid "Click the delete icon on the row of the mapping you wish to delete."
 msgstr "Click el eliminar ícono en el row del mapping you wish a eliminar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:100
+#: ../../infrastructure/pxeboot/pxeboot.rst:104
 msgid "Boot Menus"
 msgstr "Boot Menus"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:102
+#: ../../infrastructure/pxeboot/pxeboot.rst:106
 msgid ""
-"System-seeded Boot Menus are displayed and user-created Boot Menus can be "
-"edited and deleted. User-created Boot Menus are edited or deleted by "
+"System-seeded Boot Menus are displayed and user-created Boot Menus can be"
+" edited and deleted. User-created Boot Menus are edited or deleted by "
 "clicking on the pencil or trash can icon in the appropriate row."
 msgstr ""
-"Sistema-seeded Boot Menus son mostrado y usuario-creado Boot Menus se puede "
-"editar y eliminado. Usuario-creado Boot Menus son edited o eliminado por "
-"clicking en el pencil o trash puede ícono en el appropriate row."
+"Sistema-seeded Boot Menus son mostrado y usuario-creado Boot Menus se "
+"puede editar y eliminado. Usuario-creado Boot Menus son edited o "
+"eliminado por clicking en el pencil o trash puede ícono en el appropriate"
+" row."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:105
+#: ../../infrastructure/pxeboot/pxeboot.rst:109
 msgid "Adding a Boot Menu"
 msgstr "Adding un Boot Menu"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:107
+#: ../../infrastructure/pxeboot/pxeboot.rst:111
 msgid "To begin, click :guilabel:`+ ADD`. Available fields include:"
-msgstr ""
-"Para comenzar, click :guilabel:`+ AGREGAR`. Disponible campos incluir:"
+msgstr "Para comenzar, click :guilabel:`+ AGREGAR`. Disponible campos incluir:"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:109
+#: ../../infrastructure/pxeboot/pxeboot.rst:113
 msgid "NAME: Name of the Boot Menu"
 msgstr "NAME: Nombre del Boot Menu"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:110
+#: ../../infrastructure/pxeboot/pxeboot.rst:114
 msgid "DESCRIPTION: Description of the Boot Menu"
 msgstr "DESCRIPTION: Descripción del Boot Menu"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:111
+#: ../../infrastructure/pxeboot/pxeboot.rst:115
 msgid "TYPE: Select between **bios, uefi, ipxe and grub**"
 msgstr "TYPE: Seleccionar entre **bios, uefi, ipxe and grub**"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:112
+#: ../../infrastructure/pxeboot/pxeboot.rst:116
 msgid "ENABLED: Determines if the Boot Menu is active"
 msgstr "ENABLED: Determines si el Boot Menu está activo"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:113
+#: ../../infrastructure/pxeboot/pxeboot.rst:117
 msgid "DEFAULT MENU"
 msgstr "DEFAULT MENU"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:114
+#: ../../infrastructure/pxeboot/pxeboot.rst:118
 msgid "ROOT MENU"
 msgstr "ROOT MENU"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:115
+#: ../../infrastructure/pxeboot/pxeboot.rst:119
 msgid "MENU NAME"
 msgstr "MENU NAME"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:116
+#: ../../infrastructure/pxeboot/pxeboot.rst:120
 msgid "BOOT IMAGE"
 msgstr "BOOT IMAGE"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:117
+#: ../../infrastructure/pxeboot/pxeboot.rst:121
 msgid "ANSWER FILE"
 msgstr "ANSWER FILE"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:118
+#: ../../infrastructure/pxeboot/pxeboot.rst:122
 msgid "MENU CONTENT"
 msgstr "MENU CONTENT"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:119
+#: ../../infrastructure/pxeboot/pxeboot.rst:123
 msgid "SUB MENUS"
 msgstr "SUB MENUS"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:121
+#: ../../infrastructure/pxeboot/pxeboot.rst:125
 msgid "Click :guilabel:`SAVE CHANGES`"
 msgstr "Click :guilabel:`GUARDAR CAMBIOS`"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:124
+#: ../../infrastructure/pxeboot/pxeboot.rst:128
 msgid "Answer Files"
 msgstr "Answer Files"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:126
+#: ../../infrastructure/pxeboot/pxeboot.rst:130
 msgid ""
-"Answer files are like lists of answers for questions that you know the setup"
-" program is going to ask but the user is not prepared to answer. They "
-"contain one or more sections, and each section contains one or more "
-"properties in the form name=value. Morpheus provides Answer Files for ESXi, "
-"CentOS, Ubuntu and XenServer, and user can add their own."
+"Answer files are like lists of answers for questions that you know the "
+"setup program is going to ask but the user is not prepared to answer. "
+"They contain one or more sections, and each section contains one or more "
+"properties in the form name=value. Morpheus provides Answer Files for "
+"ESXi, CentOS, Ubuntu and XenServer, and user can add their own."
 msgstr ""
-"Answer archivos son like lists de answers para questions ese you saber el "
-"setup program es going a ask pero el usuario es no prepared a answer. They "
-"contener one o más sections, y cada sección contiene one o más properties en"
-" el form nombre=valor. Morpheus proporciona Answer Files para ESXi, CentOS, "
-"Ubuntu y XenServer, y usuario puede agregar su own."
+"Answer archivos son like lists de answers para questions ese you saber el"
+" setup program es going a ask pero el usuario es no prepared a answer. "
+"They contener one o más sections, y cada sección contiene one o más "
+"properties en el form nombre=valor. Morpheus proporciona Answer Files "
+"para ESXi, CentOS, Ubuntu y XenServer, y usuario puede agregar su own."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:129
+#: ../../infrastructure/pxeboot/pxeboot.rst:133
 msgid "Add Answer Files"
 msgstr "Agregar Answer Files"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:131
-#: ../../infrastructure/pxeboot/pxeboot.rst:154
-#: ../../infrastructure/pxeboot/pxeboot.rst:164
-#: ../../infrastructure/pxeboot/pxeboot.rst:177
-#: ../../infrastructure/pxeboot/pxeboot.rst:200
-#: ../../infrastructure/pxeboot/pxeboot.rst:210
-#: ../../infrastructure/pxeboot/pxeboot.rst:218
-#: ../../infrastructure/pxeboot/pxeboot.rst:226
+#: ../../infrastructure/pxeboot/pxeboot.rst:135
+#: ../../infrastructure/pxeboot/pxeboot.rst:158
+#: ../../infrastructure/pxeboot/pxeboot.rst:168
+#: ../../infrastructure/pxeboot/pxeboot.rst:181
+#: ../../infrastructure/pxeboot/pxeboot.rst:204
+#: ../../infrastructure/pxeboot/pxeboot.rst:214
+#: ../../infrastructure/pxeboot/pxeboot.rst:222
+#: ../../infrastructure/pxeboot/pxeboot.rst:230
 msgid "Click the Infrastructure link in the navigation bar."
 msgstr "Click el Infraestructura enlace en el barra de navegación."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:132
-#: ../../infrastructure/pxeboot/pxeboot.rst:155
-#: ../../infrastructure/pxeboot/pxeboot.rst:165
-#: ../../infrastructure/pxeboot/pxeboot.rst:178
-#: ../../infrastructure/pxeboot/pxeboot.rst:201
+#: ../../infrastructure/pxeboot/pxeboot.rst:136
+#: ../../infrastructure/pxeboot/pxeboot.rst:159
+#: ../../infrastructure/pxeboot/pxeboot.rst:169
+#: ../../infrastructure/pxeboot/pxeboot.rst:182
+#: ../../infrastructure/pxeboot/pxeboot.rst:205
 msgid "Click the Boot link in the sub navigation bar"
 msgstr "Click el Boot enlace en el sub barra de navegación"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:133
+#: ../../infrastructure/pxeboot/pxeboot.rst:137
 msgid "Select the Answer Files tab then click the Add Answer File button."
 msgstr ""
-"Seleccionar el Answer Files pestaña entonces click el Agregar Answer Archivo"
-" botón."
+"Seleccionar el Answer Files pestaña entonces click el Agregar Answer "
+"Archivo botón."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:134
+#: ../../infrastructure/pxeboot/pxeboot.rst:138
 msgid "From the New Answer File Wizard input the following information"
 msgstr "Desde el Nuevo Answer Archivo Wizard entrada lo siguiente información"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:136
-#: ../../infrastructure/pxeboot/pxeboot.rst:182
+#: ../../infrastructure/pxeboot/pxeboot.rst:140
+#: ../../infrastructure/pxeboot/pxeboot.rst:186
 msgid "Name"
 msgstr "Nombre"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:137
+#: ../../infrastructure/pxeboot/pxeboot.rst:141
 msgid "Name of the answer file."
 msgstr "Nombre del answer archivo."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:139
+#: ../../infrastructure/pxeboot/pxeboot.rst:143
 msgid "Description of the new answer file."
 msgstr "Descripción del nuevo answer archivo."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:142
+#: ../../infrastructure/pxeboot/pxeboot.rst:146
 msgid "Script Name"
 msgstr "Script Nombre"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:143
+#: ../../infrastructure/pxeboot/pxeboot.rst:147
 msgid "Name of the new answer file."
 msgstr "Nombre del nuevo answer archivo."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:144
+#: ../../infrastructure/pxeboot/pxeboot.rst:148
 msgid "Script Version"
 msgstr "Script Versión"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:145
+#: ../../infrastructure/pxeboot/pxeboot.rst:149
 msgid "Version of the new answer file."
 msgstr "Versión del nuevo answer archivo."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:147
+#: ../../infrastructure/pxeboot/pxeboot.rst:150
 msgid "Script"
 msgstr "Script"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:147
+#: ../../infrastructure/pxeboot/pxeboot.rst:151
 msgid "The script for the new answer file."
 msgstr "El script para el nuevo answer archivo."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:152
+#: ../../infrastructure/pxeboot/pxeboot.rst:156
 msgid "Edit Answer File"
 msgstr "Editar Answer Archivo"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:156
+#: ../../infrastructure/pxeboot/pxeboot.rst:160
 msgid "Select the Answer Files tab"
 msgstr "Seleccionar el Answer Files pestaña"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:157
+#: ../../infrastructure/pxeboot/pxeboot.rst:161
 msgid "Click the edit icon on the row of the answer file you wish to edit."
 msgstr "Click el editar ícono en el row del answer archivo you wish a editar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:159
-#: ../../infrastructure/pxeboot/pxeboot.rst:195
+#: ../../infrastructure/pxeboot/pxeboot.rst:163
+#: ../../infrastructure/pxeboot/pxeboot.rst:199
 msgid "Save Changes"
 msgstr "Guardar Cambios"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:162
+#: ../../infrastructure/pxeboot/pxeboot.rst:166
 msgid "Delete Answer File"
 msgstr "Eliminar Answer Archivo"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:166
+#: ../../infrastructure/pxeboot/pxeboot.rst:170
 msgid "Select the Answer Files tab."
 msgstr "Seleccionar el Answer Files pestaña."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:167
-msgid ""
-"Click the delete icon on the row of the answer file you wish to delete."
-msgstr ""
-"Click el eliminar ícono en el row del answer archivo you wish a eliminar."
+#: ../../infrastructure/pxeboot/pxeboot.rst:171
+msgid "Click the delete icon on the row of the answer file you wish to delete."
+msgstr "Click el eliminar ícono en el row del answer archivo you wish a eliminar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:170
+#: ../../infrastructure/pxeboot/pxeboot.rst:174
 msgid "Images"
 msgstr "Imágenes"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:172
+#: ../../infrastructure/pxeboot/pxeboot.rst:176
 msgid ""
-"Morpheus provides Images for ESXi, CentOS, Ubuntu and XenServer, and user "
-"can add their own Images."
+"Morpheus provides Images for ESXi, CentOS, Ubuntu and XenServer, and user"
+" can add their own Images."
 msgstr ""
 "Morpheus proporciona Imágenes para ESXi, CentOS, Ubuntu y XenServer, y "
 "usuario puede agregar su own Imágenes."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:175
+#: ../../infrastructure/pxeboot/pxeboot.rst:179
 msgid "Add Images"
 msgstr "Agregar Imágenes"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:179
-msgid "Select the Images tab then click the Add Image button."
-msgstr ""
-"Seleccionar el Imágenes pestaña entonces click el Agregar Imagen botón."
-
-#: ../../infrastructure/pxeboot/pxeboot.rst:180
-msgid "From the Upload Virtual Image Wizard input the following information"
-msgstr ""
-"Desde el Cargar Virtual Imagen Wizard entrada lo siguiente información"
-
 #: ../../infrastructure/pxeboot/pxeboot.rst:183
+msgid "Select the Images tab then click the Add Image button."
+msgstr "Seleccionar el Imágenes pestaña entonces click el Agregar Imagen botón."
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:184
+msgid "From the Upload Virtual Image Wizard input the following information"
+msgstr "Desde el Cargar Virtual Imagen Wizard entrada lo siguiente información"
+
+#: ../../infrastructure/pxeboot/pxeboot.rst:187
 msgid "Name of the Image."
 msgstr "Nombre del Imagen."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:185
+#: ../../infrastructure/pxeboot/pxeboot.rst:189
 msgid "List of available operating systems."
 msgstr "List de disponible sistemas operativos."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:186
+#: ../../infrastructure/pxeboot/pxeboot.rst:190
 msgid "Storage Provider"
 msgstr "Storage Provider"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:187
+#: ../../infrastructure/pxeboot/pxeboot.rst:191
 msgid "List of available storage providers."
 msgstr "List de disponible storage providers."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:188
+#: ../../infrastructure/pxeboot/pxeboot.rst:192
 msgid "Image Path"
 msgstr "Imagen Ruta"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:189
+#: ../../infrastructure/pxeboot/pxeboot.rst:193
 msgid "Path of the image."
 msgstr "Ruta del imagen."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:190
+#: ../../infrastructure/pxeboot/pxeboot.rst:194
 msgid "Visibility"
 msgstr "Visibility"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:191
+#: ../../infrastructure/pxeboot/pxeboot.rst:195
 msgid "Private or Public"
 msgstr "Privado o Público"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:193
+#: ../../infrastructure/pxeboot/pxeboot.rst:196
 msgid "Account"
 msgstr "Account"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:193
+#: ../../infrastructure/pxeboot/pxeboot.rst:197
 msgid "List of accounts to allow permission to this image."
 msgstr "List de accounts a permitir permiso a este imagen."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:198
+#: ../../infrastructure/pxeboot/pxeboot.rst:202
 msgid "Edit Image"
 msgstr "Editar Imagen"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:202
-#: ../../infrastructure/pxeboot/pxeboot.rst:212
-#: ../../infrastructure/pxeboot/pxeboot.rst:220
+#: ../../infrastructure/pxeboot/pxeboot.rst:206
+#: ../../infrastructure/pxeboot/pxeboot.rst:216
+#: ../../infrastructure/pxeboot/pxeboot.rst:224
 msgid "Select the Images tab"
 msgstr "Seleccionar el Imágenes pestaña"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:203
+#: ../../infrastructure/pxeboot/pxeboot.rst:207
 msgid "Click the actions drop down and select edit."
 msgstr "Click el acciones desplegable y seleccionar editar."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:208
+#: ../../infrastructure/pxeboot/pxeboot.rst:212
 msgid "Convert Image"
 msgstr "Convert Imagen"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:211
-#: ../../infrastructure/pxeboot/pxeboot.rst:219
-#: ../../infrastructure/pxeboot/pxeboot.rst:227
+#: ../../infrastructure/pxeboot/pxeboot.rst:215
+#: ../../infrastructure/pxeboot/pxeboot.rst:223
+#: ../../infrastructure/pxeboot/pxeboot.rst:231
 msgid "Click the Boot link in the sub navigation bar."
 msgstr "Click el Boot enlace en el sub barra de navegación."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:213
+#: ../../infrastructure/pxeboot/pxeboot.rst:217
 msgid "Click the `Actions` drop and select `Convert`."
 msgstr "Click el `Acciones` drop y seleccionar `Convert`."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:216
+#: ../../infrastructure/pxeboot/pxeboot.rst:220
 msgid "Download Image"
 msgstr "Descargar Imagen"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:221
+#: ../../infrastructure/pxeboot/pxeboot.rst:225
 msgid "Click the `Actions` drop and select `Download`."
 msgstr "Click el `Acciones` drop y seleccionar `Descargar`."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:224
+#: ../../infrastructure/pxeboot/pxeboot.rst:228
 msgid "Remove Image"
 msgstr "Eliminar Imagen"
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:228
+#: ../../infrastructure/pxeboot/pxeboot.rst:232
 msgid "Select the Image tab."
 msgstr "Seleccionar el Imagen pestaña."
 
-#: ../../infrastructure/pxeboot/pxeboot.rst:229
+#: ../../infrastructure/pxeboot/pxeboot.rst:233
 msgid "Click the `Actions` drop and select `Remove`."
 msgstr "Click el `Acciones` drop y seleccionar `Eliminar`."
+
