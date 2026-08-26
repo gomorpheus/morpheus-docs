@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-08-25T12:41:16Z · 120 ready specs_
+_Generated: 2026-08-26T13:30:50Z · 127 ready specs_
 
 ## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
 _initiative · delivering · horizon: now_
@@ -207,10 +207,59 @@ Adds the missing appliance socket-consumption reference to the License page.
 
 ---
 
+## docs-910-kvm-rtc-kvmclock — "9.1.0 Docs: KVM RTC Catchup and kvmclock"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-kvm-rtc-kvmclock/spec.md)_
+
+---
+
+## docs-910-marketplace-search — "9.1.0 Docs: Plugin Marketplace Search"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-marketplace-search/spec.md)_
+
+---
+
+## docs-910-agent-log-throttle — "9.1.0 Docs: Agent Log Throttle Settings"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-agent-log-throttle/spec.md)_
+
+---
+
+## docs-910-support-bundle-ui — "9.1.0 Docs: Support Bundle Generation via UI"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-support-bundle-ui/spec.md)_
+
+---
+
+## docs-910-linked-clones-hvm — "9.1.0 Docs: Linked Clones in HVM"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-linked-clones-hvm/spec.md)_
+
+---
+
+## docs-910-datastore-explorer — "9.1.0 Docs: Datastore Explorer"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/features/docs-910-datastore-explorer/spec.md)_
+
+---
+
 ## docs-910-vgpu-slicing — "9.1.0 Docs: NVIDIA vGPU Slicing"
 _initiative · planning · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-vgpu-slicing/spec.md)_
+
+---
+
+## docs-910-vm-shutdown-options — "9.1.0 Docs: VM Graceful and Ungraceful Shutdown"
+_initiative · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/planning/initiatives/docs-910-vm-shutdown-options/spec.md)_
 
 ---
 
