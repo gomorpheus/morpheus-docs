@@ -124,6 +124,16 @@ For enhanced management capabilities (graceful shutdown, filesystem freeze for s
 
 The QEMU Guest Agent enables |morpheus| to communicate with the VM even when network-based access (SSH) is unavailable.
 
+Clock and Time Synchronization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+HVM 9.1 configures the libvirt domain XML so that guest time stays synchronized with the Host:
+
+- **Linux guests** use ``kvmclock`` as the time source with RTC set to **catchup** mode. This ensures the guest clock recovers after a pause (live migration, snapshot, host suspend) without requiring manual NTP correction.
+- **Windows guests** use ``localtime`` for the clock offset rather than UTC, matching the Windows default expectation. The hypervisor clock is set to ``catchup`` mode as well.
+
+These settings are applied automatically to new VMs and to existing VMs on their next restart. No user configuration is required. Guest-level NTP or Windows Time Service remains recommended for long-running workloads, but the hypervisor-level catchup reduces drift during VM lifecycle events.
+
 VirtIO Drivers
 ^^^^^^^^^^^^^^
 
