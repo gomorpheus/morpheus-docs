@@ -147,6 +147,15 @@ If ``/var/lib/dbus/machine-id`` is a regular file rather than a symbolic link to
 - Changes made to the source VM after the snapshot are not included. To publish an updated image, prepare the source again, create a new snapshot, and create a new linked clone Virtual Image.
 - Snapshot chains add storage and performance dependencies. Keep chains shallow and monitor the source datastore's capacity and health.
 
+**API**
+
+Create a linked clone Virtual Image via the API:
+
+- ``PUT /api/instances/{instanceId}/linked-clone/{snapshotId}``
+- ``PUT /api/servers/{serverId}/linked-clone/{snapshotId}``
+
+These endpoints register the snapshot as a linked clone Virtual Image. Provisioning a VM from the image then creates the thin overlay automatically.
+
 Snapshot Best Practices
 ^^^^^^^^^^^^^^^^^^^^^^^
 

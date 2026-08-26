@@ -152,8 +152,11 @@ On HVM, observe these additional constraints:
 - Linked clones require a file-based datastore and QCOW2 disks. LUN-per-vDisk storage, including HPE Alletra datastore types, does not support linked clones.
 - A linked clone on local storage is pinned to the source hypervisor and cannot be migrated to another host.
 - Storage migration is not supported because the overlay depends on the snapshot backing file in its original datastore.
-- The source VM and backing snapshot cannot be deleted while active linked-clone VMs depend on them.
+- The source VM and backing snapshot cannot be deleted while active linked-clone VMs depend on them. Morpheus blocks deletion and displays an error identifying the dependent VMs.
 - When shared storage is used, eligible host placement can use the shared backing file, but the source snapshot must remain available.
+- A VM cannot be snapshotted while a clone operation is in progress.
+
+During provisioning from a linked clone Virtual Image, Morpheus creates a thin QCOW2 overlay referencing the snapshot as its backing file rather than copying the full disk. This is near-instant regardless of disk size. On local storage, the VM is placed on the same host as the source. On shared storage, any host with access to the datastore is eligible. The linked clone Virtual Image appears only in provisioning dropdowns scoped to the cluster where its backing snapshot exists.
 
 Limitations
 -----------
