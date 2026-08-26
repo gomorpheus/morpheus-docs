@@ -19,6 +19,9 @@ Console Toolbar
 
 The toolbar along the top of the console provides:
 
+.. image:: /images/tools/host_console/vm_console.png
+   :alt: VM console viewer with the toolbar and the Keyboard menu open
+
 .. list-table::
    :header-rows: 1
    :widths: 25 75

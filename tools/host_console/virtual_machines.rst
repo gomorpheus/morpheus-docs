@@ -8,6 +8,9 @@ Virtual Machine List
 
 The list shows host-wide counts (**Total**, **Running**, **Stopped**, **Paused**, and **Suspended**) above a table:
 
+.. image:: /images/tools/host_console/vm_list.png
+   :alt: Virtual Machines list with host-wide counts and per-VM rows
+
 .. list-table::
    :header-rows: 1
    :widths: 20 80
@@ -41,6 +44,11 @@ Each row provides:
 - **Copy IP address** — copies the primary IP to the clipboard
 - **View details** — opens the VM detail view
 
+Expanding a row reveals a summary of the VM — autostart, host memory and CPU, network, firmware, guest-agent status, uptime, MAC address, disk usage, and VNC port — along with an **Open Console** button.
+
+.. image:: /images/tools/host_console/vm_row_expanded.png
+   :alt: Expanded VM row showing summary details and the Open Console button
+
 Virtual Machine Details
 ```````````````````````
 
@@ -53,6 +61,9 @@ Power Actions
 `````````````
 
 The actions available for a VM depend on its current state:
+
+.. image:: /images/tools/host_console/vm_actions_menu.png
+   :alt: Per-VM power-action menu showing Shut Down, Restart, Suspend, Reset, Power Off, and Copy IP address
 
 .. list-table::
    :header-rows: 1

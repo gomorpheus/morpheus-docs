@@ -17,6 +17,9 @@ Signing In
 2. Enter a local host **username** and **password**.
 3. On success the console opens the virtual machine list.
 
+.. image:: /images/tools/host_console/sign_in.png
+   :alt: Host Console sign-in page
+
 .. note:: If the page does not load, confirm the host agent is running (``sudo morpheus-node-ctl status``) and that TCP port ``7443`` is reachable from your browser.
 
 .. note:: Sign-in failures return a single generic message. Bad credentials, an account that is not in the ``morpheus-console`` group, a locked-out account, and a disabled account are all reported the same way — the specific reason is written to the host logs (see `Audit and Sign-In Logs`_).
