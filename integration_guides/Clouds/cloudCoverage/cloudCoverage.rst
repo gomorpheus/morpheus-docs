@@ -64,7 +64,7 @@ Tier 2 clouds provide solid provisioning, brownfield discovery, and backup capab
    * - **Hyper-V**
      - VM provisioning, discovery, Veeam integration. Networks are sync-only (no create/delete). No native security groups.
    * - **SCVMM**
-     - Similar to Hyper-V with System Center integration. Limited network management.
+     - Similar to Hyper-V with System Center integration. Veeam backup integration supported. Limited network management.
    * - **VMware vCloud Director (VCD)**
      - vApp support, brownfield, IP pools, multi-NIC, Kubernetes/Docker.
    * - **Open Telekom Cloud (OTC)**
@@ -202,7 +202,7 @@ Storage & Backups
    "Nutanix PE", "|checkmark|", "|partial|", "|checkmark|", "|checkmark|", "|dash|"
    "Nutanix PC", "|partial|", "|dash|", "|checkmark|", "|checkmark|", "|dash|"
    "Hyper-V", "|dash|", "|dash|", "|checkmark|", "|checkmark|", "|checkmark|"
-   "SCVMM", "|dash|", "|dash|", "|checkmark|", "|checkmark|", "|dash|"
+   "SCVMM", "|dash|", "|dash|", "|checkmark|", "|checkmark|", "|checkmark|"
    "VCD", "|dash|", "|dash|", "|checkmark|", "|checkmark|", "|dash|"
    "OTC", "|dash|", "|checkmark|", "|checkmark|", "|checkmark|", "|dash|"
    "Huawei", "|dash|", "|checkmark|", "|checkmark|", "|checkmark|", "|dash|"
@@ -304,6 +304,37 @@ Brownfield & Synchronization
    "XCP-ng", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
    "ESXi", "|partial|", "|partial|", "|checkmark|", "|partial|"
 
+Guest Customization
+^^^^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+   :header: "Cloud", "Linux cloud-init", "Windows Sysprep/Unattend", "Force Guest Customization", "Cloudbase-Init"
+   :widths: 20, 16, 16, 16, 16
+
+   "AWS", "|checkmark|", "N/A :sup:`4`", "N/A", "|dash|"
+   "Azure", "|checkmark|", "N/A :sup:`4`", "N/A", "|dash|"
+   "VMware vCenter", "|checkmark|", "|checkmark|", "|checkmark|", "|checkmark|"
+   "HVM", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "GCP", "|checkmark|", "N/A :sup:`4`", "N/A", "|dash|"
+   "OpenStack", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "Nutanix PE", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "Nutanix PC", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "Hyper-V", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "SCVMM", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "VCD", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "OTC", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "Huawei", "|checkmark|", "|checkmark|", "|dash|", "|checkmark|"
+   "Oracle Cloud", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "PowerVC", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "OLVM", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "UpCloud", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "DigitalOcean", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "Alibaba", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "XCP-ng", "|checkmark|", "|dash|", "|dash|", "|dash|"
+   "ESXi", "|checkmark|", "|partial|", "|dash|", "|dash|"
+
+| :sup:`4` Public clouds handle Windows customization via cloud-native userdata/metadata; sysprep is managed by the cloud provider
+
 Understanding the Matrix
 -------------------------
 
@@ -326,6 +357,9 @@ Containers & Kubernetes
 
 Brownfield & Synchronization
   Covers the ability to discover and import existing cloud resources, periodic synchronization of cloud state, remote console access, and inventory management.
+
+Guest Customization
+  Covers guest OS customization methods supported during provisioning. **Linux cloud-init** injects hostname, network, and user configuration via cloud-init datasources. **Windows Sysprep/Unattend** uses a sysprep'd image with an unattend.xml answer file injected at provisioning time. **Force Guest Customization** is a VMware-specific capability where VMware Tools delivers the customization payload to a running VM without requiring a pre-sysprep'd template. **Cloudbase-Init** is the Windows equivalent of cloud-init, used on platforms that support metadata-driven configuration. See :doc:`/provisioning/windows_cloud_guest_customization` for detailed Windows image preparation guidance.
 
 Plugin-Based Clouds
 --------------------

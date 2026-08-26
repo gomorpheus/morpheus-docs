@@ -19,6 +19,9 @@ Customization Approaches by Cloud Type
    * - VMware / VME
      - Force Guest Customization
      - VM is provisioned from a template with VMware Tools installed. |morpheus| triggers a guest customization pass — transferring the unattend.xml to the running VM, then rebooting to apply hostname, network, and domain settings.
+   * - SCVMM / Hyper-V
+     - Pre-sysprep'd image + unattend.xml
+     - Image must be sysprep'd before capture into the SCVMM library. When provisioning from a template, |morpheus| injects an unattend.xml to configure hostname, network, and domain join. For clone operations, unattend.xml injection is not supported — |morpheus| installs the Agent post-provisioning to handle configuration.
    * - AWS / Azure / GCP
      - Cloud-native (userdata)
      - Cloud provider handles customization via instance metadata and userdata. Image prep follows cloud-specific requirements.

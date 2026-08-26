@@ -4,18 +4,27 @@ SCVMM
 Requirements
 ^^^^^^^^^^^^
 
-- Access to SCVMM host on port 5985 for Agent installation
-- Access to Hyper-V host on port 2179 for hypervisor console access
+- Access to SCVMM host on port 5985 (WinRM must be enabled on the SCVMM host)
+- Access to Hyper-V hosts on port 2179 for hypervisor console access (when enabled)
 - |morpheus| Agent installation (installed on the target SCVMM host via port 5985 and WinRM)
-- User with administrator privileges
+- PowerShell Remoting enabled on the SCVMM host (``Enable-PSRemoting -Force``)
+- Credentials in ``DOMAIN\username`` format with the following privileges:
 
+  - **SCVMM Administrator role** membership (required for all SCVMM PowerShell cmdlets such as ``Get-SCVirtualMachine``, ``New-SCVirtualMachine``, etc.)
+  - **Local Administrator** on the SCVMM host (required for WinRM access, agent installation, and file system operations)
+  - **Read/write access** to the configured working path (default ``C:\morpheus``) and disk path on the SCVMM host
+  - **Read/write access** to the configured SCVMM Library Share
+
+- When using hypervisor console access, RemoteConnect must be enabled on Hyper-V hosts. Enhanced Session Mode (``Set-VMHost -EnableEnhancedSessionMode $true``) is recommended.
+
+.. tip:: Use the same RunAs account specified in SCVMM for the |morpheus| integration credentials. The |morpheus| Agent Windows service on the SCVMM host runs as ``LocalSystem`` by default.
 
 Agent Requirement
 ^^^^^^^^^^^^^^^^^
 
-SCVMM and Hyper-V integrations utilize the |morpheus| Agent for communication with the |morpheus| appliance, making the |morpheus| Agent required. This also means SCVMM and Hyper-V Clouds can only point to one |morpheus| Appliance at any given time. If another |morpheus| Appliance adds an SCVMM or Hyper-V Cloud thats is already managed by another |morpheus| Appliance, the |morpheus| Agent appliance_url will be updated to point to the new |morpheus| appliance_url, and the previous |morpheus| Appliance will no longer be able to communicate with the SCVMM Cloud or Hyper-V Cloud until the Agent configuration is updated to point to the previous appliance again. In |morpheus| version 4.2.1 and higher, multiple |morpheus| clouds can be created by integrating with the same SCVMM host. This allows users to create separate Clouds with are scoped to different SCVMM Cloud, Host and/or Cluster combinations.
+The |morpheus| Agent is installed **only on the SCVMM host** and not on individual Hyper-V hosts. SCVMM and Hyper-V integrations utilize the |morpheus| Agent for communication with the |morpheus| appliance, making the |morpheus| Agent required. This also means SCVMM and Hyper-V Clouds can only point to one |morpheus| Appliance at any given time. If another |morpheus| Appliance adds an SCVMM or Hyper-V Cloud thats is already managed by another |morpheus| Appliance, the |morpheus| Agent appliance_url will be updated to point to the new |morpheus| appliance_url, and the previous |morpheus| Appliance will no longer be able to communicate with the SCVMM Cloud or Hyper-V Cloud until the Agent configuration is updated to point to the previous appliance again. In |morpheus| version 4.2.1 and higher, multiple |morpheus| clouds can be created by integrating with the same SCVMM host. This allows users to create separate Clouds with are scoped to different SCVMM Cloud, Host and/or Cluster combinations.
 
-.. NOTE:: |morpheus| only supports integration with standalone SCVMM installations and not high-availability cluster installation at this time.
+.. NOTE:: |morpheus| supports SCVMM cloud deployment as an HA SCVMM failover cluster. When deploying in HA mode, you must use a singular agent API key and ensure only one agent is online at a time.
 
 Add a SCVMM Cloud
 ^^^^^^^^^^^^^^^^^^
@@ -95,7 +104,7 @@ The SCVMM integration is classified as a **Tier 2 — Core Cloud Management** in
 
 **Other**
 
-- Linux Guest Customization (Windows guest customization is supported)
+- Linux Guest Customization (Windows guest customization is supported via sysprep/unattend.xml — see :doc:`/provisioning/windows_cloud_guest_customization`)
 - Kubernetes cluster provisioning
 - Remote console via hypervisor (SSH/RDP console is available)
 - Auto scaling

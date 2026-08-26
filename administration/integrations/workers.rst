@@ -47,12 +47,15 @@ The following Cloud/Zone types have established Distributed Worker Cloud API pro
 - openstack
 - xenserver
 - macstadium
+- hvm
+- scvmm
+- hyperv
 
-HVM, SCVMM, and Hyper-V are not listed as supported Cloud proxy types because that capability is not established by the Worker implementation or package policy. Do not infer Cloud proxy support from another Worker role. In particular:
+HVM, SCVMM, and Hyper-V clouds can be managed remotely through Distributed Workers. When a Worker is assigned to an HVM, SCVMM, or Hyper-V Cloud, Cloud API traffic and Agent relay communication are proxied through the Worker. Note the following:
 
-- An HVM appliance image based on Ubuntu 24.04 is available beginning with |morpheus| 8.0.6, but an image on which a Worker can run does not qualify HVM as a proxied Cloud type or Ubuntu 24.04 as a supported Worker package platform.
-- A Distributed Worker can serve as an HVM quorum witness beginning with |morpheus| 9.0. Witness traffic is a cluster quorum role, not HVM Cloud API proxy support.
-- SCVMM and Hyper-V integration compatibility does not establish Distributed Worker proxy support for those Cloud types.
+- An HVM appliance image based on Ubuntu 24.04 is available beginning with |morpheus| 8.0.6.
+- A Distributed Worker can also serve as an HVM quorum witness beginning with |morpheus| 9.0. Witness traffic is a separate cluster quorum role in addition to Cloud API proxy support.
+- For SCVMM and Hyper-V, the Worker proxies WinRM-based API calls and Agent relay traffic to the SCVMM controller host.
 
 Installation
 ^^^^^^^^^^^^

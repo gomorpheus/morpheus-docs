@@ -1,12 +1,12 @@
 # Project Snapshot — morpheus-docs
 
-_Last refreshed: 2026-08-19T15:58:20Z · projected from 273 source nodes_
+_Last refreshed: 2026-08-26T20:25:50Z · projected from 281 source nodes_
 
 ## Surfaces
 
 | Surface | Stage | Path(s) | Last touched | Driver spec |
 |---|---|---|---|---|
-| (unassigned) | — | — | — | 265 specs without surface |
+| (unassigned) | — | — | — | 273 specs without surface |
 
 _Run `hero snapshot assign` to bucket unassigned specs._
 
@@ -99,7 +99,7 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 
 ## Recently completed (last 14 days)
 
-- **(unassigned)** — docs-910-datastore-maintenance-mode, docs-910-storage-drs, docs-910-linked-clones
+- **(unassigned)** — docs-910-datastore-explorer, docs-910-datastore-maintenance-mode, docs-910-storage-drs, docs-910-linked-clones
 
 ## Next up across surfaces
 
@@ -112,12 +112,12 @@ _Run `hero snapshot assign` to bucket unassigned specs._
 ## Open risks & blockers
 
 - **Blocked specs (6):** `docs-distributed-worker-deployment` (waits on docs-distributed-worker-capabilities); `docs-distributed-worker-witness` (waits on docs-distributed-worker-capabilities, docs-distributed-worker-deployment); `docs-hvm-qcow2-image-guidance` (waits on docs-qcow2-multidisk-upload); `docs-license-consumption-examples` (waits on docs-license-consumption-reference); `docs-multitenancy-administration-limitations` (waits on docs-multitenancy-hierarchy); `docs-multitenancy-resource-inheritance` (waits on docs-multitenancy-hierarchy).
-- **Stale-in-flight (11):** `docs-cluster-ha-dynamic-placement` (28d), `docs-fc-storage-connection` (28d), `docs-field-feedback-improvements` (28d), `docs-host-passthrough-guide` (28d), `docs-migrations-linux-drivers` (28d), `docs-storage-network-interfaces-hvm` (28d), `docs-tagged-bonds-guide` (28d), `docs-virtual-image-options-reference` (28d), `docs-windows-cloud-guest-customization` (28d), `docs-windows-domain-join-guide` (28d), `docs-windows-migration-conflict-resolution` (28d).
-- **Unassigned specs (265) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
+- **Stale-in-flight (12):** `docs-cluster-ha-dynamic-placement` (36d), `docs-fc-storage-connection` (36d), `docs-field-feedback-improvements` (36d), `docs-host-passthrough-guide` (36d), `docs-migrations-linux-drivers` (36d), `docs-storage-network-interfaces-hvm` (36d), `docs-tagged-bonds-guide` (36d), `docs-virtual-image-options-reference` (36d), `docs-windows-cloud-guest-customization` (36d), `docs-windows-domain-join-guide` (36d), `docs-windows-migration-conflict-resolution` (36d), `docs-910-system-updates` (15d).
+- **Unassigned specs (273) — no `surface:` declared.** Run `hero snapshot assign` to bucket them.
 
 ## Snapshot health
 
 - Surfaces detected: 0 (inferred: 0 · overrides applied: 0)
-- Specs covered: 0/265 (0%)
-- Projection generation: 0ms · Source nodes: 273
+- Specs covered: 0/273 (0%)
+- Projection generation: 0ms · Source nodes: 281
 

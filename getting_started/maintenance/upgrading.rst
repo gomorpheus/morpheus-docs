@@ -5,6 +5,8 @@ Upgrading
 
 This is the starting point for upgrading |morpheus|. Pick your Manager topology, complete the appliance package upgrade, then finish any HVM Host Agent or cluster layout steps that apply.
 
+.. tip:: For HVM deployments, see the :doc:`/getting_started/guides/hvm_upgrade_guide` for a cohesive end-to-end upgrade sequence covering Manager, cluster, and agent upgrades in the correct order.
+
 .. important::
 
    Always back up the appliance database before upgrading. Confirm free space for new node and VM node packages (|morphver| needs about 3.5 GB under the package repo). After package install and before ``morpheus-ctl reconfigure``, you may reclaim space with::

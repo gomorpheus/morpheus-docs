@@ -39,6 +39,8 @@
    /getting_started/guides/cypher_policies.rst
    /getting_started/guides/groups_roles_perms.rst
    /getting_started/guides/tenancy.rst
+   /getting_started/guides/edge_site_management.rst
+   /getting_started/guides/hvm_upgrade_guide.rst
 
 .. toctree::
    :maxdepth: 2

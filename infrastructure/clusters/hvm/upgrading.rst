@@ -12,6 +12,8 @@ Complete these steps in order. Layout and rolling cluster updates depend on a Ma
 #. **Run the cluster layout or rolling update** — After the Manager is on the target version, perform the layout transition (for example 1.2 → 1.3) or a rolling host update from the cluster actions in the UI. See the sections that follow.
 #. **Confirm agent and quorum health** — Host Agent upgrades that a layout update requires are handled automatically during the cluster update when needed; verify connectivity and Quorum afterward.
 
+.. tip:: For a cohesive end-to-end guide covering the complete HVM deployment upgrade sequence (Manager → Cluster → Agent → Verification), see :doc:`/getting_started/guides/hvm_upgrade_guide`.
+
 .. important:: A layout upgrade and an HVM OS update are separate operations. Layout 1.3 uses HVM OS/Ubuntu 24.04; layout 2.0 uses HVM OS 26.04. The supported layouts run in parallel. Do not change a cluster's layout or HVM OS outside a documented product workflow.
 
 .. warning:: The rolling update described here is an orchestrated cluster operation that runs the update and rollback scripts supplied by the selected HVM layout. It is not approval to perform an arbitrary Ubuntu release upgrade, replace package sources, or run general-purpose base-OS upgrade commands on an HVM host. No supported in-place base-OS transition outside a released cluster update is documented. If the required target OS is not offered by a product workflow, stop and contact Support for an approved migration or host-replacement plan; do not derive one from generic Ubuntu guidance.
