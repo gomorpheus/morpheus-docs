@@ -22,17 +22,19 @@ msgstr ""
 
 #: ../../administration/settings/logs.rst:2
 msgid "Logging Settings"
-msgstr ""
+msgstr "Protokollierungseinstellungen"
 
 #: ../../administration/settings/logs.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../administration/settings/logs.rst:7
 msgid ""
 "Open these settings at :menuselection:`Administration --> Settings --> "
 "Monitoring --> Logging Settings`."
 msgstr ""
+"Öffnen Sie diese Einstellungen unter :menuselection:`Administration --> Settings --> "
+"Monitoring --> Logging Settings`."
 
 #: ../../administration/settings/logs.rst:9
 msgid ""
@@ -42,6 +44,11 @@ msgid ""
 "also be forwarded using Syslog forward rules to any external solution "
 "that supports Syslogs."
 msgstr ""
+"|morpheus| enthält eine integrierte Protokollierungslösung, die Protokolle von"
+" Hosts und Diensten aggregiert. Protokolle werden in den Bereichen Instance, App, Host und"
+" globale Logs (|MonLog|) angezeigt und sind durchsuchbar und filterbar. Protokolle können"
+" auch über Syslog-Weiterleitungsregeln an jede externe Lösung weitergeleitet werden,"
+" die Syslogs unterstützt."
 
 #: ../../administration/settings/logs.rst:11
 msgid ""
@@ -54,16 +61,26 @@ msgid ""
 "be forwarded by the |morpheus| Agent to the |morpheus| appliance or "
 "forwarded with Syslog forward rules."
 msgstr ""
+"Die in den Bereichen Instance, App, Host und Gesamtprotokollen (|MonLog|)"
+" angezeigten Protokolle stammen nur von verwalteten VMs und Hosts, auf denen der"
+" |morpheus| Agent installiert ist. Der |morpheus| Agent überwacht ``/var/logs`` auf"
+" alle .log-Dateien und meldet diese entsprechend zurück. Containerisierte Instances"
+" können so konfiguriert werden, dass zusätzliche Protokolle angezeigt werden, indem"
+" der LOG FOLDER im Library NODE TYPE konfiguriert wird. Protokolle aus jeder .log-Datei"
+" im angegebenen Ordner werden vom |morpheus| Agent an die |morpheus|-Appliance"
+" weitergeleitet oder über Syslog-Weiterleitungsregeln weitergeleitet."
 
 #: ../../administration/settings/logs.rst:13
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../administration/settings/logs.rst:13
 msgid ""
 "The `Logs` section does not contain |morpheus| appliance logs, which can "
 "be found in `/var/log/morpheus/` and in |AdmHea|."
 msgstr ""
+"Der Abschnitt `Logs` enthält keine |morpheus|-Appliance-Protokolle. Diese befinden "
+"sich in `/var/log/morpheus/` und in |AdmHea|."
 
 #: ../../administration/settings/logs.rst:15
 msgid ""
@@ -72,24 +89,30 @@ msgid ""
 "be disabled with a simple toggle switch just above the Availability Time "
 "Frame configuration."
 msgstr ""
+"Protokolle werden in ElasticSearch gespeichert und die Aufbewahrungsdauer kann durch "
+"Anpassen des Availability Time Frame im Abschnitt |AdmSetMon| festgelegt werden. Die "
+"Protokollierung kann auch über einen einfachen Umschalter direkt über der Konfiguration "
+"des Availability Time Frame deaktiviert werden."
 
 #: ../../administration/settings/logs.rst:17
 msgid ".. image:: /images/administration/settings/logSettings.png"
-msgstr ""
+msgstr ".. image:: /images/administration/settings/logSettings.png"
 
 #: ../../administration/settings/logs.rst:20
 msgid "Advanced Options"
-msgstr ""
+msgstr "Erweiterte Optionen"
 
 #: ../../administration/settings/logs.rst:22
 msgid ""
 "Expand :guilabel:`Advanced Options` beneath the standard logging settings"
 " to access Agent Log Throttle and Agent Log Deduplication controls."
 msgstr ""
+"Klappen Sie :guilabel:`Advanced Options` unterhalb der Standard-Protokollierungseinstellungen"
+" auf, um auf die Steuerelemente für Agent Log Throttle und Agent Log Deduplication zuzugreifen."
 
 #: ../../administration/settings/logs.rst:25
 msgid "Agent Log Throttle Policy"
-msgstr ""
+msgstr "Agent-Protokolldrosselungsrichtlinie"
 
 #: ../../administration/settings/logs.rst:27
 msgid ""
@@ -100,26 +123,32 @@ msgid ""
 "offending server, or both. All settings default to **Off** on new "
 "installations."
 msgstr ""
+"Die Agent-Protokolldrosselungsrichtlinie schützt die |morpheus|-Appliance davor, "
+"überlastet zu werden, wenn ein einzelner Server-Agent Protokolle mit einer übermäßigen "
+"Rate sendet. Wenn das kumulative Protokollvolumen eines Servers eine konfigurierbare "
+"Obergrenze überschreitet, kann |morpheus| einen Alarm auslösen, die Protokollierung auf "
+"dem betroffenen Server aktiv deaktivieren oder beides. Alle Einstellungen sind bei "
+"Neuinstallationen standardmäßig auf **Off** gesetzt."
 
 #: ../../administration/settings/logs.rst:33
 msgid "Setting"
-msgstr ""
+msgstr "Einstellung"
 
 #: ../../administration/settings/logs.rst:34
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../administration/settings/logs.rst:35
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../../administration/settings/logs.rst:36
 msgid "Constraints"
-msgstr ""
+msgstr "Einschränkungen"
 
 #: ../../administration/settings/logs.rst:37
 msgid "Policy"
-msgstr ""
+msgstr "Richtlinie"
 
 #: ../../administration/settings/logs.rst:38
 msgid ""
@@ -127,50 +156,57 @@ msgid ""
 "**Monitor** raises an alarm but continues storing logs. **Enforce** "
 "disables logging on the server and drops subsequent log batches."
 msgstr ""
+"Steuert die Drosselungsreaktion. **Off** führt keine Drosselung durch. "
+"**Monitor** löst einen Alarm aus, speichert aber weiterhin Protokolle. **Enforce** "
+"deaktiviert die Protokollierung auf dem Server und verwirft nachfolgende Protokollstapel."
 
 #: ../../administration/settings/logs.rst:39
 msgid "Off"
-msgstr ""
+msgstr "Off"
 
 #: ../../administration/settings/logs.rst:41
 msgid "Threshold"
-msgstr ""
+msgstr "Schwellenwert"
 
 #: ../../administration/settings/logs.rst:42
 msgid ""
 "Maximum log volume allowed per minute before a breach is triggered "
 "(KB/min)."
 msgstr ""
+"Maximal zulässiges Protokollvolumen pro Minute, bevor eine Überschreitung "
+"ausgelöst wird (KB/min)."
 
 #: ../../administration/settings/logs.rst:43
 msgid "2048"
-msgstr ""
+msgstr "2048"
 
 #: ../../administration/settings/logs.rst:44
 msgid "Minimum 100"
-msgstr ""
+msgstr "Minimum 100"
 
 #: ../../administration/settings/logs.rst:45
 msgid "Window"
-msgstr ""
+msgstr "Zeitfenster"
 
 #: ../../administration/settings/logs.rst:46
 msgid ""
 "Rolling time window used to measure cumulative log volume. The effective "
 "ceiling is ``threshold × window``."
 msgstr ""
+"Rollendes Zeitfenster zur Messung des kumulativen Protokollvolumens. Die effektive "
+"Obergrenze beträgt ``threshold × window``."
 
 #: ../../administration/settings/logs.rst:47
 msgid "30 minutes"
-msgstr ""
+msgstr "30 Minuten"
 
 #: ../../administration/settings/logs.rst:48
 msgid "5–60 minutes"
-msgstr ""
+msgstr "5–60 Minuten"
 
 #: ../../administration/settings/logs.rst:49
 msgid "Auto Re-enable"
-msgstr ""
+msgstr "Automatische Reaktivierung"
 
 #: ../../administration/settings/logs.rst:50
 msgid ""
@@ -178,28 +214,33 @@ msgid ""
 "clears alarms after the cooldown period. When disabled, manual re-"
 "enablement is required."
 msgstr ""
+"Wenn aktiviert, wird die Protokollierung auf erzwungenen Servern automatisch "
+"reaktiviert und Alarme nach der Abklingzeit gelöscht. Wenn deaktiviert, ist eine "
+"manuelle Reaktivierung erforderlich."
 
 #: ../../administration/settings/logs.rst:51
 msgid "On"
-msgstr ""
+msgstr "On"
 
 #: ../../administration/settings/logs.rst:53
 msgid "Cooldown"
-msgstr ""
+msgstr "Abklingzeit"
 
 #: ../../administration/settings/logs.rst:54
 msgid ""
 "Time to wait after a breach before re-enabling logging or clearing "
 "alarms. Resets if the server re-breaches."
 msgstr ""
+"Wartezeit nach einer Überschreitung, bevor die Protokollierung reaktiviert oder "
+"Alarme gelöscht werden. Wird zurückgesetzt, wenn der Server erneut überschreitet."
 
 #: ../../administration/settings/logs.rst:55
 msgid "60 minutes"
-msgstr ""
+msgstr "60 Minuten"
 
 #: ../../administration/settings/logs.rst:56
 msgid "Must be ≥ Window"
-msgstr ""
+msgstr "Muss ≥ Zeitfenster sein"
 
 #: ../../administration/settings/logs.rst:58
 msgid ""
@@ -208,6 +249,10 @@ msgid ""
 " (2048 KB/min, 30-minute window), the ceiling is approximately 60 MB per "
 "30-minute window."
 msgstr ""
+"**So wird die Obergrenze berechnet:** Die effektive Byte-Obergrenze für ein "
+"Zeitfenster beträgt ``threshold (KB/min) × window (minutes) × 1024``. Mit den "
+"Standardwerten (2048 KB/min, 30-Minuten-Zeitfenster) liegt die Obergrenze bei "
+"ungefähr 60 MB pro 30-Minuten-Zeitfenster."
 
 #: ../../administration/settings/logs.rst:60
 msgid ""
@@ -218,6 +263,12 @@ msgid ""
 "is on, the alarm is cleared after the cooldown period elapses without a "
 "new breach."
 msgstr ""
+"**Monitor-Modus:** Das Protokollvolumen wird pro Server in einem rollenden Zeitfenster "
+"verfolgt. Wenn ein Server die Obergrenze überschreitet, wird ein Alarm unter "
+":menuselection:`Operations --> Alarms` mit der Kategorie "
+"``log.throttle.monitor`` ausgelöst. Protokolle werden weiterhin gespeichert. Wenn die "
+"automatische Reaktivierung aktiviert ist, wird der Alarm gelöscht, nachdem die "
+"Abklingzeit ohne eine neue Überschreitung abgelaufen ist."
 
 #: ../../administration/settings/logs.rst:62
 msgid ""
@@ -229,6 +280,14 @@ msgid ""
 "after the cooldown period. If auto re-enable is off, an administrator "
 "must manually re-enable logging on the server."
 msgstr ""
+"**Enforce-Modus:** Gleiche Volumenüberwachung wie im Monitor-Modus. Bei einer "
+"Überschreitung wird die Protokollierung auf dem Server deaktiviert "
+"(``enable_logs = false``), nachfolgende Protokollstapel werden auf der WebSocket-Ebene "
+"verworfen und der Agent wird angewiesen, die Übertragung zu stoppen. Ein Alarm mit der "
+"Kategorie ``log.throttle.enforce`` wird ausgelöst. Wenn die automatische Reaktivierung "
+"aktiviert ist, reaktiviert ein Hintergrundjob die Protokollierung nach der Abklingzeit. "
+"Wenn die automatische Reaktivierung deaktiviert ist, muss ein Administrator die "
+"Protokollierung auf dem Server manuell reaktivieren."
 
 #: ../../administration/settings/logs.rst:64
 msgid ""
@@ -238,6 +297,11 @@ msgid ""
 "over the global setting. Threshold, window, and cooldown values always "
 "use the global configuration."
 msgstr ""
+"**Pro-Server-Überschreibung:** Einzelne Server können die globale Richtlinie über "
+":menuselection:`Infrastructure --> Compute --> [Server] --> "
+"Edit --> Log Throttle Policy` überschreiben. Die Pro-Server-Richtlinie hat Vorrang "
+"vor der globalen Einstellung. Schwellenwert-, Zeitfenster- und Abklingzeitwerte "
+"verwenden immer die globale Konfiguration."
 
 #: ../../administration/settings/logs.rst:66
 msgid ""
@@ -245,10 +309,13 @@ msgid ""
 "Alarms` and can be acknowledged from that page or from the server detail "
 "page. Alarms include the server name, cloud, and breach details."
 msgstr ""
+"**Alarme:** Protokolldrosselungsalarme werden unter :menuselection:`Operations --> "
+"Alarms` angezeigt und können von dieser Seite oder von der Server-Detailseite "
+"bestätigt werden. Alarme enthalten den Servernamen, die Cloud und Überschreitungsdetails."
 
 #: ../../administration/settings/logs.rst:69
 msgid "Agent Log Deduplication"
-msgstr ""
+msgstr "Agent-Protokolldeduplizierung"
 
 #: ../../administration/settings/logs.rst:71
 msgid ""
@@ -258,6 +325,11 @@ msgid ""
 "resets. When the window resets, a summary entry records how many "
 "duplicates were suppressed."
 msgstr ""
+"Wenn aktiviert, unterdrückt |morpheus| doppelte Agent-Protokollnachrichten pro "
+"Server innerhalb eines rollenden 30-Sekunden-Zeitfensters. Nur das erste Vorkommen "
+"jeder eindeutigen Nachricht wird gespeichert; Wiederholungen werden verworfen, bis das "
+"Zeitfenster zurückgesetzt wird. Beim Zurücksetzen des Zeitfensters wird ein "
+"Zusammenfassungseintrag erstellt, der aufzeichnet, wie viele Duplikate unterdrückt wurden."
 
 #: ../../administration/settings/logs.rst:73
 msgid ""
@@ -265,32 +337,41 @@ msgid ""
 "syslog messages (for example, a repeated error condition) that can "
 "contribute to Elasticsearch pressure and queue exhaustion."
 msgstr ""
+"Diese Einstellung adressiert Szenarien, in denen ein einzelner Server identische "
+"Syslog-Nachrichten flutet (z. B. ein wiederholter Fehlerzustand), die zu "
+"Elasticsearch-Belastung und Warteschlangenerschöpfung beitragen können."
 
 #: ../../administration/settings/logs.rst:75
 msgid ""
 "A per-server signature cap of 100 unique messages bounds memory usage "
 "during the deduplication window."
 msgstr ""
+"Eine Pro-Server-Signaturobergrenze von 100 eindeutigen Nachrichten begrenzt die "
+"Speichernutzung während des Deduplizierungszeitfensters."
 
 #: ../../administration/settings/logs.rst:78
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../administration/settings/logs.rst:80
 msgid ""
 "Log throttle and deduplication settings are available via the log "
 "settings API:"
 msgstr ""
+"Protokolldrosselungs- und Deduplizierungseinstellungen sind über die "
+"Log-Einstellungen-API verfügbar:"
 
 #: ../../administration/settings/logs.rst:82
 msgid ""
 "``GET /api/log-settings`` — Returns current throttle and deduplication "
 "settings."
 msgstr ""
+"``GET /api/log-settings`` — Gibt die aktuellen Drosselungs- und "
+"Deduplizierungseinstellungen zurück."
 
 #: ../../administration/settings/logs.rst:83
 msgid "``PUT /api/log-settings`` — Update settings."
-msgstr ""
+msgstr "``PUT /api/log-settings`` — Einstellungen aktualisieren."
 
 #: ../../administration/settings/logs.rst:85
 msgid ""
@@ -298,14 +379,18 @@ msgid ""
 "``logThrottleWindow``, ``logThrottleAutoReEnable``, "
 "``logThrottleCooldown``, ``logDeduplication``."
 msgstr ""
+"Felder: ``logThrottlePolicy``, ``logThrottleThreshold``, "
+"``logThrottleWindow``, ``logThrottleAutoReEnable``, "
+"``logThrottleCooldown``, ``logDeduplication``."
 
 #: ../../administration/settings/logs.rst:87
 msgid "To query log throttle alarms across all tenants (master tenant only):"
-msgstr ""
+msgstr "So fragen Sie Protokolldrosselungsalarme über alle Mandanten ab (nur Master-Mandant):"
 
 #: ../../administration/settings/logs.rst:89
 msgid ""
 "morpheus health alarms --query category=\"log.throttle\" --query "
 "global=true"
 msgstr ""
-
+"morpheus health alarms --query category=\"log.throttle\" --query "
+"global=true"

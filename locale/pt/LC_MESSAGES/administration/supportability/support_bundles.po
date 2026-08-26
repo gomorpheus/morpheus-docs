@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/supportability/support_bundles.rst:2
 msgid "Support Bundles"
-msgstr ""
+msgstr "Pacotes de Suporte"
 
 #: ../../administration/supportability/support_bundles.rst:4
 msgid ""
@@ -31,17 +31,24 @@ msgid ""
 "support case resolution. Bundles are generated on-demand or automatically"
 " and can be downloaded locally or delivered directly to HPE Support."
 msgstr ""
+"Os pacotes de suporte coletam informações de diagnóstico do appliance "
+"|morpheus| e da infraestrutura gerenciada para auxiliar na resolução de "
+"problemas e casos de suporte. Os pacotes são gerados sob demanda ou "
+"automaticamente e podem ser baixados localmente ou entregues diretamente "
+"ao HPE Support."
 
 #: ../../administration/supportability/support_bundles.rst:6
 msgid ""
 "Navigate to :menuselection:`Administration --> Health --> Support "
 "Bundles` to view, generate, download, or delete support bundles."
 msgstr ""
+"Navegue até :menuselection:`Administration --> Health --> Support "
+"Bundles` para visualizar, gerar, baixar ou excluir pacotes de suporte."
 
 #: ../../administration/supportability/support_bundles.rst:8
 #: ../../administration/supportability/support_bundles.rst:46
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../administration/supportability/support_bundles.rst:8
 msgid ""
@@ -49,30 +56,37 @@ msgid ""
 "Admin role. The ``Admin: Support Bundles`` permission gates read and full"
 " access."
 msgstr ""
+"Os pacotes de suporte estão disponíveis apenas para usuários do tenant "
+"principal com a função System Admin. A permissão ``Admin: Support Bundles`` "
+"controla o acesso de leitura e acesso completo."
 
 #: ../../administration/supportability/support_bundles.rst:11
 msgid "Generating a Support Bundle"
-msgstr ""
+msgstr "Gerando um Pacote de Suporte"
 
 #: ../../administration/supportability/support_bundles.rst:13
 msgid ""
 "Navigate to :menuselection:`Administration --> Health --> Support "
 "Bundles`."
 msgstr ""
+"Navegue até :menuselection:`Administration --> Health --> Support "
+"Bundles`."
 
 #: ../../administration/supportability/support_bundles.rst:14
 msgid "Click :guilabel:`Generate New Support Bundle`."
-msgstr ""
+msgstr "Clique em :guilabel:`Generate New Support Bundle`."
 
 #: ../../administration/supportability/support_bundles.rst:15
 msgid "Enter a :guilabel:`Name` for the bundle."
-msgstr ""
+msgstr "Insira um :guilabel:`Name` para o pacote."
 
 #: ../../administration/supportability/support_bundles.rst:16
 msgid ""
 "Set the :guilabel:`Log Range Start` and :guilabel:`Log Range End` to "
 "define the time window for log collection."
 msgstr ""
+"Defina o :guilabel:`Log Range Start` e :guilabel:`Log Range End` para "
+"definir a janela de tempo para coleta de logs."
 
 #: ../../administration/supportability/support_bundles.rst:17
 msgid ""
@@ -80,10 +94,14 @@ msgid ""
 "content types to include. Resource-backed content types allow selecting "
 "specific resources (for example, a specific cloud or storage server)."
 msgstr ""
+"Na seção :guilabel:`Components`, selecione uma ou mais categorias e "
+"tipos de conteúdo para incluir. Tipos de conteúdo baseados em recursos "
+"permitem selecionar recursos específicos (por exemplo, uma Nuvem ou "
+"Servidor de Armazenamento específico)."
 
 #: ../../administration/supportability/support_bundles.rst:18
 msgid "Click :guilabel:`Generate`."
-msgstr ""
+msgstr "Clique em :guilabel:`Generate`."
 
 #: ../../administration/supportability/support_bundles.rst:20
 msgid ""
@@ -92,22 +110,27 @@ msgid ""
 " take several minutes depending on the number of components and log "
 "volume. An in-progress bundle can be cancelled from the list page."
 msgstr ""
+"O pacote é criado de forma assíncrona. O status progride de **Pending** "
+"passando por **In Progress** até **Completed** ou **Failed**. Pacotes "
+"grandes podem levar vários minutos dependendo do número de componentes e "
+"volume de logs. Um pacote em andamento pode ser cancelado na página de "
+"listagem."
 
 #: ../../administration/supportability/support_bundles.rst:23
 msgid "Bundle Content Categories"
-msgstr ""
+msgstr "Categorias de Conteúdo do Pacote"
 
 #: ../../administration/supportability/support_bundles.rst:29
 msgid "Category"
-msgstr ""
+msgstr "Categoria"
 
 #: ../../administration/supportability/support_bundles.rst:30
 msgid "Contents"
-msgstr ""
+msgstr "Conteúdo"
 
 #: ../../administration/supportability/support_bundles.rst:31
 msgid "Appliance"
-msgstr ""
+msgstr "Appliance"
 
 #: ../../administration/supportability/support_bundles.rst:32
 msgid ""
@@ -116,46 +139,54 @@ msgid ""
 "memory, storage, database, elastic, queues, threads), system information "
 "(OS, kernel, hardware, network)"
 msgstr ""
+"Logs da aplicação (morpheus-ui, check-server, guacd, mysql, nginx, "
+"opensearch), configuração do appliance (sanitizada), métricas de saúde "
+"(CPU, memória, armazenamento, banco de dados, elastic, filas, threads), "
+"informações do sistema (SO, kernel, hardware, rede)"
 
 #: ../../administration/supportability/support_bundles.rst:33
 msgid "Clouds"
-msgstr ""
+msgstr "Nuvens"
 
 #: ../../administration/supportability/support_bundles.rst:34
 msgid "Cloud integration diagnostics for selected clouds"
-msgstr ""
+msgstr "Diagnósticos de integração de Nuvem para as nuvens selecionadas"
 
 #: ../../administration/supportability/support_bundles.rst:35
 msgid "Clusters"
-msgstr ""
+msgstr "Clusters"
 
 #: ../../administration/supportability/support_bundles.rst:36
 msgid ""
 "HVM cluster health, host status, quorum state, and cluster-level "
 "diagnostics"
 msgstr ""
+"Saúde do Cluster HVM, status do host, estado do quórum e diagnósticos "
+"em nível de cluster"
 
 #: ../../administration/supportability/support_bundles.rst:37
 msgid "Networking"
-msgstr ""
+msgstr "Rede"
 
 #: ../../administration/supportability/support_bundles.rst:38
 msgid ""
 "Network server diagnostics (including Aruba CX switch bundle when "
 "configured)"
 msgstr ""
+"Diagnósticos do servidor de Rede (incluindo pacote do switch Aruba CX "
+"quando configurado)"
 
 #: ../../administration/supportability/support_bundles.rst:39
 msgid "Servers"
-msgstr ""
+msgstr "Servidores"
 
 #: ../../administration/supportability/support_bundles.rst:40
 msgid "Compute server diagnostics for selected managed servers"
-msgstr ""
+msgstr "Diagnósticos de Servidor de computação para servidores gerenciados selecionados"
 
 #: ../../administration/supportability/support_bundles.rst:41
 msgid "Storage"
-msgstr ""
+msgstr "Armazenamento"
 
 #: ../../administration/supportability/support_bundles.rst:42
 msgid ""
@@ -164,6 +195,10 @@ msgid ""
 "downloads the resulting bundle; if call-home is enabled, triggers "
 "generation only (data already sent separately)"
 msgstr ""
+"Diagnósticos do Servidor de Armazenamento. Para servidores de Armazenamento "
+"HPE Alletra MP: aciona a geração do pacote de telemetria no array. Se o "
+"call-home não estiver habilitado, baixa o pacote resultante; se o call-home "
+"estiver habilitado, aciona apenas a geração (dados já enviados separadamente)"
 
 #: ../../administration/supportability/support_bundles.rst:44
 msgid ""
@@ -172,6 +207,11 @@ msgid ""
 " particular storage server or cloud integration). A failure collecting "
 "one component does not block the overall bundle."
 msgstr ""
+"Cada categoria pode expor múltiplos tipos de conteúdo. Tipos de conteúdo "
+"baseados em recursos permitem selecionar instâncias específicas daquele "
+"recurso (por exemplo, um Servidor de Armazenamento ou integração de Nuvem "
+"específica). Uma falha na coleta de um componente não bloqueia o pacote "
+"geral."
 
 #: ../../administration/supportability/support_bundles.rst:46
 msgid ""
@@ -179,115 +219,140 @@ msgid ""
 " are encrypted at rest), or tenant-specific business data. Only "
 "infrastructure diagnostic information is collected."
 msgstr ""
+"Os pacotes de suporte nunca incluem dados de VM do cliente, credenciais "
+"armazenadas (estas são criptografadas em repouso) ou dados de negócio "
+"específicos do tenant. Apenas informações de diagnóstico de infraestrutura "
+"são coletadas."
 
 #: ../../administration/supportability/support_bundles.rst:49
 msgid "Health Metrics Included"
-msgstr ""
+msgstr "Métricas de Saúde Incluídas"
 
 #: ../../administration/supportability/support_bundles.rst:51
 msgid "The health summary collected in the bundle includes:"
-msgstr ""
+msgstr "O resumo de saúde coletado no pacote inclui:"
 
 #: ../../administration/supportability/support_bundles.rst:53
 msgid ""
 "**CPU:** Processor count, process uptime, Morpheus CPU usage, system CPU "
 "usage, system load average"
 msgstr ""
+"**CPU:** Contagem de processadores, tempo de atividade do processo, uso "
+"de CPU do Morpheus, uso de CPU do sistema, média de carga do sistema"
 
 #: ../../administration/supportability/support_bundles.rst:54
 msgid ""
 "**Memory:** Morpheus memory (total, used, free, usage %), system memory, "
 "swap"
 msgstr ""
+"**Memória:** Memória do Morpheus (total, usada, livre, % de uso), memória "
+"do sistema, swap"
 
 #: ../../administration/supportability/support_bundles.rst:55
 msgid ""
 "**Storage:** Filesystem details (used, free, total, percent utilization, "
 "mount points)"
 msgstr ""
+"**Armazenamento:** Detalhes do sistema de arquivos (usado, livre, total, "
+"percentual de utilização, pontos de montagem)"
 
 #: ../../administration/supportability/support_bundles.rst:56
 msgid ""
 "**Database (MySQL):** Version, connection statistics, thread statistics, "
 "performance metrics (slow queries, temp tables), InnoDB statistics"
 msgstr ""
+"**Banco de dados (MySQL):** Versão, estatísticas de conexão, estatísticas "
+"de threads, métricas de desempenho (consultas lentas, tabelas temporárias), "
+"estatísticas do InnoDB"
 
 #: ../../administration/supportability/support_bundles.rst:57
 msgid ""
 "**OpenSearch:** Cluster status, node count, shard information, per-node "
 "heap/memory/CPU, index health"
 msgstr ""
+"**OpenSearch:** Status do Cluster, contagem de nós, informações de shard, "
+"heap/memória/CPU por nó, saúde dos índices"
 
 #: ../../administration/supportability/support_bundles.rst:58
 msgid ""
 "**Queues (RabbitMQ):** Queue count, busy/error queues, per-queue message "
 "counts"
 msgstr ""
+"**Filas (RabbitMQ):** Contagem de filas, filas com erro/ocupadas, "
+"contagem de mensagens por fila"
 
 #: ../../administration/supportability/support_bundles.rst:59
 msgid "**Threads:** Total count, busy, running, blocked, per-thread details"
-msgstr ""
+msgstr "**Threads:** Contagem total, ocupadas, em execução, bloqueadas, detalhes por thread"
 
 #: ../../administration/supportability/support_bundles.rst:61
 msgid "This health data is written as a JSON file within the support bundle."
-msgstr ""
+msgstr "Estes dados de saúde são gravados como um arquivo JSON dentro do pacote de suporte."
 
 #: ../../administration/supportability/support_bundles.rst:64
 msgid "HPE Support Integration"
-msgstr ""
+msgstr "Integração com HPE Support"
 
 #: ../../administration/supportability/support_bundles.rst:66
 msgid ""
 "Configure HPE Support integration at :menuselection:`Administration --> "
 "Settings --> Support`."
 msgstr ""
+"Configure a integração com HPE Support em :menuselection:`Administration --> "
+"Settings --> Support`."
 
 #: ../../administration/supportability/support_bundles.rst:72
 msgid "Setting"
-msgstr ""
+msgstr "Configuração"
 
 #: ../../administration/supportability/support_bundles.rst:73
 #: ../../administration/supportability/support_bundles.rst:115
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../administration/supportability/support_bundles.rst:74
 msgid "Daily Support Bundle"
-msgstr ""
+msgstr "Pacote de Suporte Diário"
 
 #: ../../administration/supportability/support_bundles.rst:75
 msgid ""
 "When enabled, automatically generates a support bundle once daily and "
 "delivers it to HPE Support"
 msgstr ""
+"Quando habilitado, gera automaticamente um pacote de suporte uma vez ao "
+"dia e o entrega ao HPE Support"
 
 #: ../../administration/supportability/support_bundles.rst:76
 msgid "Send to HPE"
-msgstr ""
+msgstr "Enviar para HPE"
 
 #: ../../administration/supportability/support_bundles.rst:77
 msgid ""
 "When enabled, completed bundles are converted to CMB format and delivered"
 " to HPE via the RDA (Remote Data Access) agent"
 msgstr ""
+"Quando habilitado, os pacotes concluídos são convertidos para o formato "
+"CMB e entregues à HPE via o agente RDA (Remote Data Access)"
 
 #: ../../administration/supportability/support_bundles.rst:78
 msgid "Remote Support Access"
-msgstr ""
+msgstr "Acesso Remoto de Suporte"
 
 #: ../../administration/supportability/support_bundles.rst:79
 msgid ""
 "Enables HPE Support remote access to the appliance for diagnostics "
 "(requires Send to HPE enabled)"
 msgstr ""
+"Habilita o acesso remoto do HPE Support ao appliance para diagnósticos "
+"(requer Enviar para HPE habilitado)"
 
 #: ../../administration/supportability/support_bundles.rst:80
 msgid "Default Storage Bucket"
-msgstr ""
+msgstr "Bucket de Armazenamento Padrão"
 
 #: ../../administration/supportability/support_bundles.rst:81
 msgid "Select the storage bucket where bundles are archived"
-msgstr ""
+msgstr "Selecione o bucket de armazenamento onde os pacotes são arquivados"
 
 #: ../../administration/supportability/support_bundles.rst:83
 msgid ""
@@ -296,38 +361,50 @@ msgid ""
 "not configured), and **Station ID**. The Station ID uniquely identifies "
 "the appliance to HPE Support."
 msgstr ""
+"A tabela :guilabel:`Appliance Nodes` na página de Configurações de Suporte "
+"mostra o hostname de cada nó, o status da conexão RDA (conectado, "
+"desconectado ou não configurado) e o **Station ID**. O Station ID "
+"identifica exclusivamente o appliance para o HPE Support."
 
 #: ../../administration/supportability/support_bundles.rst:85
 msgid "When **Send to HPE** is enabled:"
-msgstr ""
+msgstr "Quando **Enviar para HPE** está habilitado:"
 
 #: ../../administration/supportability/support_bundles.rst:87
 msgid ""
 "Completed bundles are packaged and pushed to the local RDA agent for "
 "delivery"
 msgstr ""
+"Os pacotes concluídos são empacotados e enviados ao agente RDA local "
+"para entrega"
 
 #: ../../administration/supportability/support_bundles.rst:88
 msgid ""
 "Delivery status is tracked per bundle: In Progress, Delivered, Failed, or"
 " Superseded"
 msgstr ""
+"O status de entrega é rastreado por pacote: In Progress, Delivered, "
+"Failed ou Superseded"
 
 #: ../../administration/supportability/support_bundles.rst:89
 msgid ""
 "The list and detail views show delivery status when HPE delivery is "
 "enabled"
 msgstr ""
+"As visualizações de lista e detalhes mostram o status de entrega quando "
+"a entrega para HPE está habilitada"
 
 #: ../../administration/supportability/support_bundles.rst:91
 msgid ""
 "When **Send to HPE** is disabled, bundles remain on the appliance for "
 "manual download and submission to support."
 msgstr ""
+"Quando **Enviar para HPE** está desabilitado, os pacotes permanecem no "
+"appliance para download manual e envio ao suporte."
 
 #: ../../administration/supportability/support_bundles.rst:94
 msgid "Managing Support Bundles"
-msgstr ""
+msgstr "Gerenciando Pacotes de Suporte"
 
 #: ../../administration/supportability/support_bundles.rst:96
 msgid ""
@@ -335,18 +412,21 @@ msgid ""
 "columns for Name, Status, Started At, Completed At, Size, and Log Range. "
 "From each bundle's actions:"
 msgstr ""
+"Os pacotes gerados anteriormente são listados na aba Support Bundles com "
+"colunas para Name, Status, Started At, Completed At, Size e Log Range. "
+"A partir das ações de cada pacote:"
 
 #: ../../administration/supportability/support_bundles.rst:98
 msgid "**Download** — Download the bundle archive to your local machine"
-msgstr ""
+msgstr "**Download** — Baixa o arquivo do pacote para sua máquina local"
 
 #: ../../administration/supportability/support_bundles.rst:99
 msgid "**Delete** — Remove the bundle from the appliance"
-msgstr ""
+msgstr "**Delete** — Remove o pacote do appliance"
 
 #: ../../administration/supportability/support_bundles.rst:100
 msgid "**Cancel** — Stop an in-progress bundle generation"
-msgstr ""
+msgstr "**Cancel** — Interrompe a geração de um pacote em andamento"
 
 #: ../../administration/supportability/support_bundles.rst:102
 msgid ""
@@ -354,83 +434,86 @@ msgid ""
 "constrained environments, delete old bundles after they have been "
 "submitted to support."
 msgstr ""
+"Os pacotes de suporte são armazenados no sistema de arquivos do appliance. "
+"Em ambientes com espaço limitado, exclua pacotes antigos após eles terem "
+"sido enviados ao suporte."
 
 #: ../../administration/supportability/support_bundles.rst:105
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../administration/supportability/support_bundles.rst:107
 msgid "Support bundle operations are available via the REST API:"
-msgstr ""
+msgstr "As operações de pacote de suporte estão disponíveis via API REST:"
 
 #: ../../administration/supportability/support_bundles.rst:113
 msgid "Method"
-msgstr ""
+msgstr "Método"
 
 #: ../../administration/supportability/support_bundles.rst:114
 msgid "Endpoint"
-msgstr ""
+msgstr "Endpoint"
 
 #: ../../administration/supportability/support_bundles.rst:116
 #: ../../administration/supportability/support_bundles.rst:119
 #: ../../administration/supportability/support_bundles.rst:128
 msgid "GET"
-msgstr ""
+msgstr "GET"
 
 #: ../../administration/supportability/support_bundles.rst:117
 #: ../../administration/supportability/support_bundles.rst:123
 msgid "``/api/support-bundles``"
-msgstr ""
+msgstr "``/api/support-bundles``"
 
 #: ../../administration/supportability/support_bundles.rst:118
 msgid "List all support bundles"
-msgstr ""
+msgstr "Listar todos os pacotes de suporte"
 
 #: ../../administration/supportability/support_bundles.rst:120
 #: ../../administration/supportability/support_bundles.rst:126
 msgid "``/api/support-bundles/:id``"
-msgstr ""
+msgstr "``/api/support-bundles/:id``"
 
 #: ../../administration/supportability/support_bundles.rst:121
 msgid "Show bundle details"
-msgstr ""
+msgstr "Exibir detalhes do pacote"
 
 #: ../../administration/supportability/support_bundles.rst:122
 #: ../../administration/supportability/support_bundles.rst:131
 msgid "POST"
-msgstr ""
+msgstr "POST"
 
 #: ../../administration/supportability/support_bundles.rst:124
 msgid "Generate a new support bundle"
-msgstr ""
+msgstr "Gerar um novo pacote de suporte"
 
 #: ../../administration/supportability/support_bundles.rst:125
 msgid "DELETE"
-msgstr ""
+msgstr "DELETE"
 
 #: ../../administration/supportability/support_bundles.rst:127
 msgid "Delete a bundle"
-msgstr ""
+msgstr "Excluir um pacote"
 
 #: ../../administration/supportability/support_bundles.rst:129
 msgid "``/api/support-bundles/:id/download``"
-msgstr ""
+msgstr "``/api/support-bundles/:id/download``"
 
 #: ../../administration/supportability/support_bundles.rst:130
 msgid "Download the bundle archive"
-msgstr ""
+msgstr "Baixar o arquivo do pacote"
 
 #: ../../administration/supportability/support_bundles.rst:132
 msgid "``/api/support-bundles/:id/cancel``"
-msgstr ""
+msgstr "``/api/support-bundles/:id/cancel``"
 
 #: ../../administration/supportability/support_bundles.rst:133
 msgid "Cancel an in-progress bundle"
-msgstr ""
+msgstr "Cancelar um pacote em andamento"
 
 #: ../../administration/supportability/support_bundles.rst:136
 msgid "Automated Collection"
-msgstr ""
+msgstr "Coleta Automatizada"
 
 #: ../../administration/supportability/support_bundles.rst:138
 msgid ""
@@ -440,6 +523,11 @@ msgid ""
 "configuration diagnostics, and log data from the configured default time "
 "window."
 msgstr ""
+"Quando a geração diária de pacote de suporte está habilitada nas "
+"Configurações de Suporte, o |morpheus| gera automaticamente e (se "
+"configurado) entrega um pacote ao HPE Support uma vez por dia. Isso "
+"inclui métricas de saúde padrão, diagnósticos de configuração e dados "
+"de log da janela de tempo padrão configurada."
 
 #: ../../administration/supportability/support_bundles.rst:140
 msgid ""
@@ -447,22 +535,26 @@ msgid ""
 "support purposes when HPE Support integration is enabled. This telemetry "
 "includes:"
 msgstr ""
+"O |morpheus| também coleta telemetria de ambiente anonimizada para fins "
+"de suporte proativo quando a integração com HPE Support está habilitada. "
+"Esta telemetria inclui:"
 
 #: ../../administration/supportability/support_bundles.rst:142
 msgid "Appliance version and license information"
-msgstr ""
+msgstr "Versão do appliance e informações de licença"
 
 #: ../../administration/supportability/support_bundles.rst:143
 msgid "Cluster node counts and high-level resource utilization"
-msgstr ""
+msgstr "Contagem de nós do Cluster e utilização de recursos em alto nível"
 
 #: ../../administration/supportability/support_bundles.rst:144
 msgid "Feature usage statistics (anonymized)"
-msgstr ""
+msgstr "Estatísticas de uso de funcionalidades (anonimizadas)"
 
 #: ../../administration/supportability/support_bundles.rst:146
 msgid ""
 "This data does not include any customer content, credentials, or "
 "personally identifiable information."
 msgstr ""
-
+"Estes dados não incluem nenhum conteúdo do cliente, credenciais ou "
+"informações pessoalmente identificáveis."

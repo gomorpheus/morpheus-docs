@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:2
 msgid "Deploying Morpheus with the HPE Installer (Recommended)"
-msgstr ""
+msgstr "Implantando o Morpheus com o Instalador HPE (Recomendado)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:4
 msgid ""
@@ -31,23 +31,27 @@ msgid ""
 "handles the entire deployment process including image upload, VM "
 "creation, network configuration, and post-deployment verification."
 msgstr ""
+"O HPE Morpheus Manager Installer é um assistente gráfico que implanta o "
+"Morpheus Enterprise ou VM Essentials em um host HPE HVM em minutos. Ele "
+"gerencia todo o processo de implantação, incluindo upload de imagem, "
+"criação de VM, configuração de rede e verificação pós-implantação."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:6
 msgid "The installer is available on the HVM ISO file in two versions:"
-msgstr ""
+msgstr "O instalador está disponível no arquivo ISO do HVM em duas versões:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:8
 msgid "**macOS**: ``Morpheus_Manager_Installer-x64-<version>.dmg``"
-msgstr ""
+msgstr "**macOS**: ``Morpheus_Manager_Installer-x64-<version>.dmg``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:9
 msgid "**Windows**: ``Morpheus_Manager_Installer-x64-<version>.zip``"
-msgstr ""
+msgstr "**Windows**: ``Morpheus_Manager_Installer-x64-<version>.zip``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:11
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:283
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:11
 msgid ""
@@ -56,10 +60,14 @@ msgid ""
 "log output described below to judge progress rather than relying on a "
 "fixed duration."
 msgstr ""
+"A duração da implantação depende do tamanho da imagem, método de origem, "
+"taxa de transferência da rede, armazenamento do host e processamento da "
+"primeira inicialização. Use a fase e a saída de log descritas abaixo para "
+"avaliar o progresso em vez de depender de uma duração fixa."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:13
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:13
 msgid ""
@@ -69,40 +77,52 @@ msgid ""
 "repository access or an internal mirror. See :doc:`Morpheus Manager Base "
 "OS Updates </getting_started/maintenance/manager_os_updates>`."
 msgstr ""
+"Uma implantação local de QCOW2 não requer acesso à internet, mas o "
+"sistema operacional base Ubuntu do Manager implantado ainda requer uma "
+"fonte APT aprovada pela HPE para atualizações contínuas. Antes do uso em "
+"produção, planeje o acesso a repositórios aprovados ou um espelho interno. "
+"Consulte :doc:`Morpheus Manager Base OS Updates "
+"</getting_started/maintenance/manager_os_updates>`."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:16
 msgid "Prerequisites and Assumptions"
-msgstr ""
+msgstr "Pré-requisitos e Premissas"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:18
 msgid "Before using the installer, ensure the following:"
-msgstr ""
+msgstr "Antes de usar o instalador, certifique-se do seguinte:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:20
 msgid "Each HVM host has an IP address, netmask, and gateway already configured"
-msgstr ""
+msgstr "Cada host HVM possui um endereço IP, máscara de rede e gateway já configurados"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:21
 msgid "You have SSH access (port 22) to the target HVM host from your workstation"
-msgstr ""
+msgstr "Você tem acesso SSH (porta 22) ao host HVM de destino a partir da sua estação de trabalho"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:22
 msgid ""
 "You have HTTPS access (port 443) to the HVM host for post-deployment "
 "verification"
 msgstr ""
+"Você tem acesso HTTPS (porta 443) ao host HVM para verificação "
+"pós-implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:23
 msgid ""
 "The SSH user has sudo privileges to run ``virsh``, ``hvmcli``, and manage"
 " HVM resources"
 msgstr ""
+"O usuário SSH possui privilégios sudo para executar ``virsh``, ``hvmcli`` "
+"e gerenciar recursos do HVM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:24
 msgid ""
 "You have the HPE VM Essentials QCOW2 image ready (available on the HVM "
 "ISO or as an HTTP URL)"
 msgstr ""
+"Você possui a imagem QCOW2 do HPE VM Essentials pronta (disponível no "
+"ISO do HVM ou como uma URL HTTP)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:25
 msgid ""
@@ -111,62 +131,74 @@ msgid ""
 "``255.255.224.0``), not a CIDR prefix or address such as ``/19`` or "
 "``172.16.32.0/19``"
 msgstr ""
+"Você conhece os detalhes de configuração de rede da VM do Morpheus. O "
+"valor de **Netmask** deve usar notação decimal com pontos (por exemplo, "
+"``255.255.224.0``), não um prefixo CIDR ou endereço como ``/19`` ou "
+"``172.16.32.0/19``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:28
 msgid "Starting the Installer"
-msgstr ""
+msgstr "Iniciando o Instalador"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:30
 msgid "Mount or extract the HVM ISO file on your workstation"
-msgstr ""
+msgstr "Monte ou extraia o arquivo ISO do HVM na sua estação de trabalho"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:31
 msgid "Locate the installer for your platform:"
-msgstr ""
+msgstr "Localize o instalador para a sua plataforma:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:33
 msgid ""
 "**macOS**: Open the ``.dmg`` file and launch the HPE Morpheus Manager "
 "Installer application"
 msgstr ""
+"**macOS**: Abra o arquivo ``.dmg`` e inicie o aplicativo HPE Morpheus "
+"Manager Installer"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:34
 msgid "**Windows**: Extract the ``.zip`` file and run the installer executable"
-msgstr ""
+msgstr "**Windows**: Extraia o arquivo ``.zip`` e execute o instalador"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:36
 msgid "The installer opens with the **Prerequisites** screen"
-msgstr ""
+msgstr "O instalador abre com a tela de **Prerequisites**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:39
 msgid "Step 1: Prerequisites"
-msgstr ""
+msgstr "Etapa 1: Pré-requisitos"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:41
 msgid "The Welcome screen provides an overview of how the deployment works:"
-msgstr ""
+msgstr "A tela de Boas-vindas fornece uma visão geral de como a implantação funciona:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:43
 msgid ""
 "**Configure** — Enter SSH credentials, network settings, and VM "
 "configuration through the wizard"
 msgstr ""
+"**Configure** — Insira as credenciais SSH, configurações de rede e "
+"configuração da VM por meio do assistente"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:44
 msgid ""
 "**Upload & Deploy** — The installer uploads the QCOW2 image and runs "
 "``hvmcli`` to create and configure the VM"
 msgstr ""
+"**Upload & Deploy** — O instalador faz o upload da imagem QCOW2 e executa "
+"o ``hvmcli`` para criar e configurar a VM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:45
 msgid ""
 "**Verify & Access** — Cloud-init configures the VM, and the installer "
 "verifies the application is ready"
 msgstr ""
+"**Verify & Access** — O cloud-init configura a VM e o instalador verifica "
+"se o aplicativo está pronto"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:47
 msgid "HPE Morpheus Installer - Prerequisites screen"
-msgstr ""
+msgstr "HPE Morpheus Installer - Tela de pré-requisitos"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:47
 msgid ""
@@ -179,44 +211,56 @@ msgid ""
 "Before continuing, confirm each prerequisite in the **Before You Start** "
 "checklist:"
 msgstr ""
+"Antes de continuar, confirme cada pré-requisito na lista de verificação "
+"**Before You Start**:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:52
 msgid ""
 "**SSH access to the HVM host** — Ensure you can reach the target host "
 "over SSH (port 22) from this machine"
 msgstr ""
+"**SSH access to the HVM host** — Certifique-se de que você consegue "
+"alcançar o host de destino via SSH (porta 22) a partir desta máquina"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:53
 msgid ""
 "**HTTPS access to the HVM host** — The host must be reachable over HTTPS "
 "(port 443) for post-deploy verification"
 msgstr ""
+"**HTTPS access to the HVM host** — O host deve estar acessível via HTTPS "
+"(porta 443) para verificação pós-implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:54
 msgid ""
 "**User has sudo privileges** — The SSH user must have sudo access to run "
 "``virsh``, ``hvmcli``, and manage HVM resources"
 msgstr ""
+"**User has sudo privileges** — O usuário SSH deve ter acesso sudo para "
+"executar ``virsh``, ``hvmcli`` e gerenciar recursos do HVM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:55
 msgid ""
 "**QCOW2 image available** — Have the HPE VM Essentials QCOW2 image ready "
 "— either a local file or an HTTP URL"
 msgstr ""
+"**QCOW2 image available** — Tenha a imagem QCOW2 do HPE VM Essentials "
+"pronta — seja um arquivo local ou uma URL HTTP"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:56
 msgid ""
 "**Network configuration details** — Know the IP address, netmask, "
 "gateway, and DNS for the virtual machine"
 msgstr ""
+"**Network configuration details** — Saiba o endereço IP, máscara de rede, "
+"gateway e DNS da máquina virtual"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:58
 msgid "Once all items are confirmed, click **Next**."
-msgstr ""
+msgstr "Depois que todos os itens forem confirmados, clique em **Next**."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:60
 msgid "HPE Morpheus Installer - All prerequisites confirmed"
-msgstr ""
+msgstr "HPE Morpheus Installer - Todos os pré-requisitos confirmados"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:60
 msgid ""
@@ -226,17 +270,19 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:64
 msgid "Step 2: SSH Connection"
-msgstr ""
+msgstr "Etapa 2: Conexão SSH"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:66
 msgid ""
 "Configure the SSH connection to the target HVM hypervisor host where the "
 "Morpheus VM will be deployed."
 msgstr ""
+"Configure a conexão SSH com o host do hipervisor HVM de destino onde a "
+"VM do Morpheus será implantada."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:68
 msgid "HPE Morpheus Installer - SSH Connection screen"
-msgstr ""
+msgstr "HPE Morpheus Installer - Tela de conexão SSH"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:68
 msgid ""
@@ -246,47 +292,51 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:71
 msgid "**Host** — The IP address or hostname of the HVM host"
-msgstr ""
+msgstr "**Host** — O endereço IP ou nome do host HVM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:72
 msgid "**Port** — SSH port (default: ``22``)"
-msgstr ""
+msgstr "**Port** — Porta SSH (padrão: ``22``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:73
 msgid "**Username** — SSH user (e.g., ``ubuntu``)"
-msgstr ""
+msgstr "**Username** — Usuário SSH (por exemplo, ``ubuntu``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:74
 msgid ""
 "**Authentication Method** — Choose between **Password** or **SSH Key** "
 "authentication"
 msgstr ""
+"**Authentication Method** — Escolha entre autenticação por **Password** ou "
+"**SSH Key**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:75
 msgid ""
 "**Password** — Enter the password for the SSH user (if using password "
 "authentication)"
 msgstr ""
+"**Password** — Insira a senha do usuário SSH (se estiver usando "
+"autenticação por senha)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:77
 msgid "Click **Test Connection** to verify connectivity. The installer will:"
-msgstr ""
+msgstr "Clique em **Test Connection** para verificar a conectividade. O instalador irá:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:79
 msgid "Establish an SSH connection to the host"
-msgstr ""
+msgstr "Estabelecer uma conexão SSH com o host"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:80
 msgid "Verify the host-key fingerprint (you must accept it on first connection)"
-msgstr ""
+msgstr "Verificar a impressão digital da chave do host (você deve aceitá-la na primeira conexão)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:81
 msgid "Detect the existing management virtSwitch on the host"
-msgstr ""
+msgstr "Detectar o virtSwitch de gerenciamento existente no host"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:83
 msgid "HPE Morpheus Installer - SSH connection verified"
-msgstr ""
+msgstr "HPE Morpheus Installer - Conexão SSH verificada"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:83
 msgid ""
@@ -296,21 +346,23 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:86
 msgid "Once connected and the host identity is verified, click **Next**."
-msgstr ""
+msgstr "Depois de conectado e a identidade do host verificada, clique em **Next**."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:89
 msgid "Step 3: VM Network"
-msgstr ""
+msgstr "Etapa 3: Rede da VM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:91
 msgid ""
 "Configure the static network settings for the Morpheus appliance VM. This"
 " is the IP address that will be assigned to the Morpheus VM itself."
 msgstr ""
+"Configure as definições de rede estática para a VM do appliance Morpheus. "
+"Este é o endereço IP que será atribuído à própria VM do Morpheus."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:93
 msgid "HPE Morpheus Installer - VM Network configuration"
-msgstr ""
+msgstr "HPE Morpheus Installer - Configuração de rede da VM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:93
 msgid ".. image:: /images/getting_started/installation/installer/vm_network.png"
@@ -318,7 +370,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:96
 msgid "**IP Address** — Static IP address for the Morpheus VM"
-msgstr ""
+msgstr "**IP Address** — Endereço IP estático para a VM do Morpheus"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:97
 msgid ""
@@ -326,31 +378,38 @@ msgid ""
 "``255.255.252.0``). Do not enter CIDR notation (for example, ``/22`` or "
 "``192.168.0.0/22``)"
 msgstr ""
+"**Netmask** — Máscara de sub-rede em notação decimal com pontos (por "
+"exemplo, ``255.255.252.0``). Não insira notação CIDR (por exemplo, ``/22`` "
+"ou ``192.168.0.0/22``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:98
 msgid "**Gateway** — Default gateway for the VM"
-msgstr ""
+msgstr "**Gateway** — Gateway padrão para a VM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:99
 msgid ""
 "**DNS Servers** — One or more DNS servers (click the **x** to remove "
 "entries, or add more as needed)"
 msgstr ""
+"**DNS Servers** — Um ou mais servidores DNS (clique no **x** para remover "
+"entradas ou adicionar mais conforme necessário)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:100
 msgid ""
 "**Appliance URL (optional)** — Custom URL for accessing the Morpheus "
 "appliance (e.g., ``https://morpheus.example.com``)"
 msgstr ""
+"**Appliance URL (optional)** — URL personalizada para acessar o appliance "
+"Morpheus (por exemplo, ``https://morpheus.example.com``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:102
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:131
 msgid "Click **Next** to proceed."
-msgstr ""
+msgstr "Clique em **Next** para prosseguir."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:104
 msgid "Warning"
-msgstr ""
+msgstr "Aviso"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:104
 msgid ""
@@ -360,20 +419,28 @@ msgid ""
 "decimal mask before retrying. This differs from HVM host and ``hvmcli`` "
 "address inputs that are documented with CIDR notation."
 msgstr ""
+"O instalador do Manager pode aceitar uma máscara de rede em formato CIDR "
+"sem rejeitar o campo, mas a implantação do Manager pode falhar "
+"subsequentemente. Retorne à configuração de Rede da VM e insira a máscara "
+"decimal com pontos equivalente antes de tentar novamente. Isso difere das "
+"entradas de endereço do host HVM e do ``hvmcli`` que são documentadas com "
+"notação CIDR."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:107
 msgid "Step 4: Host Network"
-msgstr ""
+msgstr "Etapa 4: Rede do Host"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:109
 msgid ""
 "Configure the host management uplink. A management virtSwitch is created "
 "on the host before deployment (or reused if one already exists)."
 msgstr ""
+"Configure o uplink de gerenciamento do host. Um virtSwitch de gerenciamento "
+"é criado no host antes da implantação (ou reutilizado se já existir um)."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:111
 msgid "HPE Morpheus Installer - Host Network configuration"
-msgstr ""
+msgstr "HPE Morpheus Installer - Configuração de rede do Host"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:111
 msgid ".. image:: /images/getting_started/installation/installer/host_network.png"
@@ -384,10 +451,12 @@ msgid ""
 "**Management virtSwitch** — Displays the detected management virtSwitch "
 "(e.g., ``virtSwitch0 already exists on this host and will be reused``)"
 msgstr ""
+"**Management virtSwitch** — Exibe o virtSwitch de gerenciamento detectado "
+"(por exemplo, ``virtSwitch0 already exists on this host and will be reused``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:116
 msgid "Optional settings:"
-msgstr ""
+msgstr "Configurações opcionais:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:118
 msgid ""
@@ -396,38 +465,50 @@ msgid ""
 "appliance will be deployed using this VLAN for its network connectivity. "
 "When checked:"
 msgstr ""
+"**Use Compute VLAN** — Habilite se você deseja que a VM do appliance "
+"Morpheus seja implantada em uma VLAN específica. Quando um ID de VLAN é "
+"fornecido, o appliance Morpheus será implantado usando esta VLAN para sua "
+"conectividade de rede. Quando marcado:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:120
 msgid ""
 "**Compute Interface** — Select the host interface for the compute network"
 " bridge"
 msgstr ""
+"**Compute Interface** — Selecione a interface do host para a ponte de rede "
+"de computação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:121
 msgid ""
 "**Compute VLAN Tag** — The VLAN ID to use for the Morpheus appliance "
 "network"
 msgstr ""
+"**Compute VLAN Tag** — O ID de VLAN a ser usado para a rede do appliance "
+"Morpheus"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:123
 msgid ""
 "**Use HTTP Proxy** — Enable if the environment requires an HTTP proxy. "
 "When checked:"
 msgstr ""
+"**Use HTTP Proxy** — Habilite se o ambiente requer um proxy HTTP. "
+"Quando marcado:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:125
 msgid "**Proxy URL** — The proxy server URL (e.g., ``http://proxy:8080``)"
-msgstr ""
+msgstr "**Proxy URL** — A URL do servidor proxy (por exemplo, ``http://proxy:8080``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:126
 msgid ""
 "**No Proxy** — Comma-separated list of hosts to bypass the proxy (e.g., "
 "``localhost,127.0.0.1``)"
 msgstr ""
+"**No Proxy** — Lista separada por vírgulas de hosts que devem ignorar o "
+"proxy (por exemplo, ``localhost,127.0.0.1``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:128
 msgid "HPE Morpheus Installer - Host Network with VLAN and Proxy options"
-msgstr ""
+msgstr "HPE Morpheus Installer - Rede do Host com opções de VLAN e Proxy"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:128
 msgid ""
@@ -437,15 +518,15 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:134
 msgid "Step 5: VM Configuration"
-msgstr ""
+msgstr "Etapa 5: Configuração da VM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:136
 msgid "Configure the Morpheus appliance virtual machine settings."
-msgstr ""
+msgstr "Configure as definições da máquina virtual do appliance Morpheus."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:138
 msgid "HPE Morpheus Installer - VM Configuration"
-msgstr ""
+msgstr "HPE Morpheus Installer - Configuração da VM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:138
 msgid ""
@@ -455,27 +536,27 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:141
 msgid "**VM Settings:**"
-msgstr ""
+msgstr "**Configurações da VM:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:143
 msgid "**Hostname** — The hostname for the Morpheus VM (e.g., ``morpheus-app``)"
-msgstr ""
+msgstr "**Hostname** — O nome do host para a VM do Morpheus (por exemplo, ``morpheus-app``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:144
 msgid "**VM Size** — Select a VM sizing profile:"
-msgstr ""
+msgstr "**VM Size** — Selecione um perfil de dimensionamento da VM:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:146
 msgid "Small (12 GB RAM, 2 vCPUs)"
-msgstr ""
+msgstr "Small (12 GB RAM, 2 vCPUs)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:147
 msgid "Medium"
-msgstr ""
+msgstr "Medium"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:148
 msgid "Large"
-msgstr ""
+msgstr "Large"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:150
 msgid ""
@@ -487,6 +568,14 @@ msgid ""
 " for a workload-specific sizing review before committing to a large "
 "deployment."
 msgstr ""
+"Escolha um perfil com base nos hosts gerenciados esperados, VMs, total de "
+"objetos, integrações habilitadas e carga de trabalho. Os perfis não "
+"estabelecem um número fixo de clusters HVM que um Manager pode gerenciar. "
+"Para limites publicados e orientações sobre valores não publicados, "
+"consulte :doc:`HPE VM Essentials Maximums "
+"</infrastructure/clusters/hvm/maximums>`. Entre em contato com a HPE para "
+"uma análise de dimensionamento específica da carga de trabalho antes de "
+"comprometer-se com uma implantação de grande porte."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:152
 msgid ""
@@ -494,12 +583,17 @@ msgid ""
 "**Browse** button to locate the file on the ISO volume (e.g., ``hpe-vm-"
 "essentials-9.0.0-1.qcow2.gz``), or enter an HTTP URL"
 msgstr ""
+"**QCOW2 Image** — Caminho para a imagem QCOW2 do HPE VM Essentials. Use o "
+"botão **Browse** para localizar o arquivo no volume ISO (por exemplo, "
+"``hpe-vm-essentials-9.0.0-1.qcow2.gz``), ou insira uma URL HTTP"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:153
 msgid ""
 "**Expected SHA256 Checksum (optional)** — If provided, the local image "
 "file's SHA256 will be verified before upload"
 msgstr ""
+"**Expected SHA256 Checksum (optional)** — Se fornecido, o SHA256 do "
+"arquivo de imagem local será verificado antes do upload"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:155
 msgid ""
@@ -509,46 +603,56 @@ msgid ""
 " path, but it does not guarantee a shorter transfer. Use a trusted source"
 " and provide the publisher's SHA256 checksum when available."
 msgstr ""
+"Para um caminho local, a estação de trabalho permanece no caminho de "
+"transferência de imagem até que o upload seja concluído. Para uma URL, o "
+"host de destino deve ser capaz de resolver e alcançar a origem. O uso de "
+"URL pode evitar uma estação de trabalho lenta ou um caminho VPN, mas não "
+"garante uma transferência mais rápida. Use uma fonte confiável e forneça o "
+"checksum SHA256 do publicador quando disponível."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:157
 msgid "**Appliance First-Boot Configuration:**"
-msgstr ""
+msgstr "**Configuração da Primeira Inicialização do Appliance:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:159
 msgid ""
 "These fields configure the initial setup of the Morpheus appliance after "
 "deployment:"
 msgstr ""
+"Estes campos configuram a configuração inicial do appliance Morpheus após "
+"a implantação:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:161
 msgid "**Appliance Name** — Name of the Morpheus appliance (e.g., ``Morpheus``)"
-msgstr ""
+msgstr "**Appliance Name** — Nome do appliance Morpheus (por exemplo, ``Morpheus``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:162
 msgid ""
 "**Initial Tenant Name** — Name of the initial tenant (e.g., ``Master "
 "Tenant``)"
 msgstr ""
+"**Initial Tenant Name** — Nome do tenant inicial (por exemplo, ``Master "
+"Tenant``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:163
 msgid "**Admin Username** — Administrator username (e.g., ``admin``)"
-msgstr ""
+msgstr "**Admin Username** — Nome de usuário do administrador (por exemplo, ``admin``)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:164
 msgid "**Admin Password** — Password for the administrator account"
-msgstr ""
+msgstr "**Admin Password** — Senha da conta de administrador"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:165
 msgid "**Admin Email** — Email address for the administrator"
-msgstr ""
+msgstr "**Admin Email** — Endereço de e-mail do administrador"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:166
 msgid "**First Name** / **Last Name** — Administrator's name"
-msgstr ""
+msgstr "**First Name** / **Last Name** — Nome do administrador"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:168
 msgid "HPE Morpheus Installer - Browsing for the QCOW2 image on the ISO"
-msgstr ""
+msgstr "HPE Morpheus Installer - Navegando pela imagem QCOW2 no ISO"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:168
 msgid ".. image:: /images/getting_started/installation/installer/qcow2_browse.png"
@@ -556,21 +660,23 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:171
 msgid "Click **Next** to proceed to the review step."
-msgstr ""
+msgstr "Clique em **Next** para prosseguir para a etapa de revisão."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:174
 msgid "Step 6: Review & Preflight Check"
-msgstr ""
+msgstr "Etapa 6: Revisão e Verificação Pré-voo"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:176
 msgid ""
 "The final step before deployment. The installer runs preflight checks to "
 "validate your configuration and displays a summary."
 msgstr ""
+"A etapa final antes da implantação. O instalador executa verificações "
+"pré-voo para validar sua configuração e exibe um resumo."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:178
 msgid "HPE Morpheus Installer - Review and Preflight Check"
-msgstr ""
+msgstr "HPE Morpheus Installer - Revisão e verificação pré-voo"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:178
 msgid ""
@@ -580,31 +686,31 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:181
 msgid "**Preflight Checks:**"
-msgstr ""
+msgstr "**Verificações pré-voo:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:183
 msgid "SSH connection to host"
-msgstr ""
+msgstr "Conexão SSH com o host"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:184
 msgid "``hvmcli`` present + passwordless sudo"
-msgstr ""
+msgstr "``hvmcli`` presente + sudo sem senha"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:185
 msgid "IP address format valid"
-msgstr ""
+msgstr "Formato de endereço IP válido"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:186
 msgid "Hostname format valid"
-msgstr ""
+msgstr "Formato de nome de host válido"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:187
 msgid "Image path specified"
-msgstr ""
+msgstr "Caminho da imagem especificado"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:188
 msgid "Management uplink set"
-msgstr ""
+msgstr "Uplink de gerenciamento definido"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:190
 msgid ""
@@ -612,10 +718,13 @@ msgid ""
 " fails, click **Re-run** to retry or go back to correct the "
 "configuration."
 msgstr ""
+"Todas as verificações devem passar (exibidas em verde) antes de implantar. "
+"Se alguma verificação falhar, clique em **Re-run** para tentar novamente ou "
+"volte para corrigir a configuração."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:192
 msgid "**Configuration Summary:**"
-msgstr ""
+msgstr "**Resumo da Configuração:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:194
 msgid ""
@@ -623,24 +732,30 @@ msgid ""
 "netmask/gateway, DNS, hostname, VM size, image path, admin user, "
 "management uplink, compute interface, and proxy settings."
 msgstr ""
+"Revise o resumo completo da configuração, incluindo destino SSH, IP da VM, "
+"máscara de rede/gateway, DNS, nome do host, tamanho da VM, caminho da "
+"imagem, usuário administrador, uplink de gerenciamento, interface de "
+"computação e configurações de proxy."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:196
 msgid "When satisfied, click **Deploy** to start the deployment."
-msgstr ""
+msgstr "Quando estiver satisfeito, clique em **Deploy** para iniciar a implantação."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:199
 msgid "Deployment Progress"
-msgstr ""
+msgstr "Progresso da Implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:201
 msgid ""
 "Once deployment begins, the installer displays a real-time progress view "
 "showing each step:"
 msgstr ""
+"Após o início da implantação, o instalador exibe uma visualização de "
+"progresso em tempo real mostrando cada etapa:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:203
 msgid "HPE Morpheus Installer - Deployment in progress"
-msgstr ""
+msgstr "HPE Morpheus Installer - Implantação em andamento"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:203
 msgid ".. image:: /images/getting_started/installation/installer/deploying.png"
@@ -648,83 +763,87 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:206
 msgid "The deployment steps include:"
-msgstr ""
+msgstr "As etapas de implantação incluem:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:208
 msgid "Preparing host virtSwitch"
-msgstr ""
+msgstr "Preparando o virtSwitch do host"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:209
 msgid "Validating deployment parameters"
-msgstr ""
+msgstr "Validando parâmetros de implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:210
 msgid "Running pre-flight checks"
-msgstr ""
+msgstr "Executando verificações pré-voo"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:211
 msgid "Preparing KVM hypervisor"
-msgstr ""
+msgstr "Preparando o hipervisor KVM"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:212
 msgid "Configuring management network"
-msgstr ""
+msgstr "Configurando a rede de gerenciamento"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:213
 msgid "Configuring compute network"
-msgstr ""
+msgstr "Configurando a rede de computação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:214
 msgid "Creating local storage pool"
-msgstr ""
+msgstr "Criando pool de armazenamento local"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:215
 msgid "Downloading QCOW2 image"
-msgstr ""
+msgstr "Baixando imagem QCOW2"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:216
 msgid "Building cloud-init configuration"
-msgstr ""
+msgstr "Construindo configuração do cloud-init"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:217
 msgid "Defining virtual machine"
-msgstr ""
+msgstr "Definindo máquina virtual"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:218
 msgid "Starting virtual machine"
-msgstr ""
+msgstr "Iniciando máquina virtual"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:219
 msgid "Waiting for Morpheus services to start"
-msgstr ""
+msgstr "Aguardando os serviços do Morpheus iniciarem"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:220
 msgid "Running post-deploy health checks"
-msgstr ""
+msgstr "Executando verificações de saúde pós-implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:221
 msgid "Cleaning up temporary files"
-msgstr ""
+msgstr "Limpando arquivos temporários"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:223
 msgid ""
 "A **Cancel Deployment** button is available if you need to abort the "
 "process."
 msgstr ""
+"Um botão **Cancel Deployment** está disponível caso você precise abortar o "
+"processo."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:226
 msgid "Troubleshooting a Failed Deployment"
-msgstr ""
+msgstr "Solucionando Problemas de uma Implantação com Falha"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:228
 msgid ""
 "If the deployment encounters an error, the installer clearly indicates "
 "which step failed and provides troubleshooting options."
 msgstr ""
+"Se a implantação encontrar um erro, o instalador indica claramente qual "
+"etapa falhou e fornece opções de solução de problemas."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:230
 msgid "HPE Morpheus Installer - Deployment Failed"
-msgstr ""
+msgstr "HPE Morpheus Installer - Falha na implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:230
 msgid ""
@@ -737,10 +856,12 @@ msgid ""
 "Click **What went wrong** (or **Hide details**) to expand error details "
 "showing the specific error message."
 msgstr ""
+"Clique em **What went wrong** (ou **Hide details**) para expandir os "
+"detalhes do erro mostrando a mensagem de erro específica."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:235
 msgid "HPE Morpheus Installer - Deployment failure details"
-msgstr ""
+msgstr "HPE Morpheus Installer - Detalhes da falha na implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:235
 msgid ""
@@ -750,47 +871,51 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:238
 msgid "**What to try:**"
-msgstr ""
+msgstr "**O que tentar:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:240
 msgid "Check the deployment logs for more details"
-msgstr ""
+msgstr "Verifique os logs de implantação para mais detalhes"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:241
 msgid "Try restarting the deployment from scratch"
-msgstr ""
+msgstr "Tente reiniciar a implantação do zero"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:242
 msgid "If the issue persists, collect logs and contact support"
-msgstr ""
+msgstr "Se o problema persistir, colete os logs e entre em contato com o suporte"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:244
 msgid "**Available actions:**"
-msgstr ""
+msgstr "**Ações disponíveis:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:246
 msgid ""
 "**View Logs** — Opens the local log directory containing ``main.log`` "
 "with detailed deployment trace"
 msgstr ""
+"**View Logs** — Abre o diretório de logs local contendo ``main.log`` com "
+"rastreamento detalhado da implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:247
 msgid "**Export Report** — Exports a deployment report for support purposes"
-msgstr ""
+msgstr "**Export Report** — Exporta um relatório de implantação para fins de suporte"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:248
 msgid "**Retry Deployment** — Retry the deployment from the beginning"
-msgstr ""
+msgstr "**Retry Deployment** — Tenta novamente a implantação desde o início"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:249
 msgid ""
 "**Back to Configuration** — Return to the configuration wizard to adjust "
 "settings"
 msgstr ""
+"**Back to Configuration** — Retorna ao assistente de configuração para "
+"ajustar as configurações"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:251
 msgid "HPE Morpheus Installer - Viewing deployment logs"
-msgstr ""
+msgstr "HPE Morpheus Installer - Visualizando logs de implantação"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:251
 msgid ".. image:: /images/getting_started/installation/installer/view_logs.png"
@@ -799,17 +924,19 @@ msgstr ""
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:254
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:352
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:254
 msgid ""
 "Host-side logs are also available at ``/var/log/hvmcli/`` on the HVM host"
 " for additional troubleshooting."
 msgstr ""
+"Logs do lado do host também estão disponíveis em ``/var/log/hvmcli/`` no "
+"host HVM para solução de problemas adicional."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:257
 msgid "Large Image Uploads and Timeout"
-msgstr ""
+msgstr "Uploads de Imagens Grandes e Tempo Limite"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:259
 msgid ""
@@ -817,10 +944,13 @@ msgid ""
 "For very large QCOW2 images or slow network connections, the upload may "
 "exceed this limit."
 msgstr ""
+"A interface do instalador tem um **tempo limite de 60 minutos** para a "
+"etapa de upload da imagem. Para imagens QCOW2 muito grandes ou conexões de "
+"rede lentas, o upload pode exceder esse limite."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:261
 msgid "**Pre-staging the image manually:**"
-msgstr ""
+msgstr "**Pré-posicionando a imagem manualmente:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:263
 msgid ""
@@ -828,20 +958,25 @@ msgid ""
 "manually transfer the QCOW2 image to the host beforehand. The installer "
 "uploads images to:"
 msgstr ""
+"Se você antecipar que o upload levará mais de 60 minutos, pode transferir "
+"manualmente a imagem QCOW2 para o host antecipadamente. O instalador faz "
+"upload das imagens para:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:265
 msgid "/var/lib/libvirt/images/"
-msgstr ""
+msgstr "/var/lib/libvirt/images/"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:269
 msgid ""
 "To have the installer skip the upload and discover a pre-existing image "
 "on the host, place the file at:"
 msgstr ""
+"Para que o instalador pule o upload e descubra uma imagem pré-existente no "
+"host, coloque o arquivo em:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:271
 msgid "/var/lib/libvirt/images/<filename>.qcow2"
-msgstr ""
+msgstr "/var/lib/libvirt/images/<filename>.qcow2"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:275
 #, python-format
@@ -851,16 +986,22 @@ msgid ""
 "same size as the local source file, the upload step is skipped "
 "automatically."
 msgstr ""
+"O instalador verifica o tamanho do arquivo usando ``stat -c '%s' "
+"/var/lib/libvirt/images/<filename>`` — se o arquivo existir e tiver o "
+"mesmo tamanho que o arquivo de origem local, a etapa de upload é ignorada "
+"automaticamente."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:277
 msgid "**Example — manually uploading via SCP:**"
-msgstr ""
+msgstr "**Exemplo — upload manual via SCP:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:279
 msgid ""
 "scp hpe-vm-essentials-9.1.0-1.qcow2 ubuntu@<hvm-"
 "host>:/var/lib/libvirt/images/"
 msgstr ""
+"scp hpe-vm-essentials-9.1.0-1.qcow2 ubuntu@<hvm-"
+"host>:/var/lib/libvirt/images/"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:283
 msgid ""
@@ -868,10 +1009,14 @@ msgid ""
 "expects (i.e., the same filename you selected in the QCOW2 Image field). "
 "The size comparison must also match — do not rename or truncate the file."
 msgstr ""
+"Certifique-se de que o nome do arquivo no host corresponda exatamente ao "
+"que o instalador espera (ou seja, o mesmo nome de arquivo que você "
+"selecionou no campo QCOW2 Image). A comparação de tamanho também deve "
+"corresponder — não renomeie nem trunque o arquivo."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:286
 msgid "Installer Data Locations"
-msgstr ""
+msgstr "Locais de Dados do Instalador"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:288
 msgid ""
@@ -880,67 +1025,71 @@ msgid ""
 "saved settings, reset SSH trust, or troubleshoot a corrupted state), you "
 "can delete these files."
 msgstr ""
+"O HPE Morpheus Manager Installer armazena configuração, logs e dados de "
+"estado localmente na estação de trabalho. Se você precisar começar do zero "
+"(por exemplo, limpar configurações salvas, redefinir a confiança SSH ou "
+"solucionar um estado corrompido), pode excluir esses arquivos."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:290
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:339
 msgid "**macOS:**"
-msgstr ""
+msgstr "**macOS:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:296
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:309
 msgid "Path"
-msgstr ""
+msgstr "Caminho"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:297
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:310
 msgid "Contents"
-msgstr ""
+msgstr "Conteúdo"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:298
 msgid "``~/Library/Application Support/Morpheus Manager Installer/``"
-msgstr ""
+msgstr "``~/Library/Application Support/Morpheus Manager Installer/``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:299
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:312
 msgid "Configuration and state files (see below)"
-msgstr ""
+msgstr "Arquivos de configuração e estado (veja abaixo)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:300
 msgid "``~/Library/Logs/Morpheus Manager Installer/``"
-msgstr ""
+msgstr "``~/Library/Logs/Morpheus Manager Installer/``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:301
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:314
 msgid "Application log files (daily rotation, 10 MB max per file)"
-msgstr ""
+msgstr "Arquivos de log do aplicativo (rotação diária, máximo de 10 MB por arquivo)"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:303
 msgid "**Windows:**"
-msgstr ""
+msgstr "**Windows:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:311
 msgid "``%APPDATA%\\Morpheus Manager Installer\\``"
-msgstr ""
+msgstr "``%APPDATA%\\Morpheus Manager Installer\\``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:313
 msgid "``%APPDATA%\\Morpheus Manager Installer\\logs\\``"
-msgstr ""
+msgstr "``%APPDATA%\\Morpheus Manager Installer\\logs\\``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:316
 msgid "**Stored Files:**"
-msgstr ""
+msgstr "**Arquivos Armazenados:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:322
 msgid "File"
-msgstr ""
+msgstr "Arquivo"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:323
 msgid "Purpose"
-msgstr ""
+msgstr "Finalidade"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:324
 msgid "``session-config.json``"
-msgstr ""
+msgstr "``session-config.json``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:325
 msgid ""
@@ -948,68 +1097,82 @@ msgid ""
 " size, etc.) so they are pre-populated on next launch. Passwords are "
 "**not** stored."
 msgstr ""
+"Salva as últimas configurações de implantação utilizadas (host SSH, IP, "
+"configuração de rede, tamanho da VM, etc.) para que sejam pré-preenchidas "
+"no próximo lançamento. Senhas **não** são armazenadas."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:326
 msgid "``cluster-config.json``"
-msgstr ""
+msgstr "``cluster-config.json``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:327
 msgid ""
 "Saves cluster wizard settings (cluster name, datastore config). Secrets "
 "are redacted before persisting."
 msgstr ""
+"Salva as configurações do assistente de cluster (nome do cluster, "
+"configuração de datastore). Segredos são removidos antes de persistir."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:328
 msgid "``cluster-state.json``"
-msgstr ""
+msgstr "``cluster-state.json``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:329
 msgid ""
 "Tracks whether the last cluster deployment succeeded (used for "
 "resume/retry logic)."
 msgstr ""
+"Rastreia se a última implantação de cluster foi bem-sucedida (usado para "
+"lógica de retomada/nova tentativa)."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:330
 msgid "``known_hosts.json``"
-msgstr ""
+msgstr "``known_hosts.json``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:331
 msgid ""
 "Stores SSH host fingerprints for HVM hosts you have connected to. Used to"
 " detect host key changes (similar to ``~/.ssh/known_hosts``)."
 msgstr ""
+"Armazena impressões digitais de hosts SSH dos hosts HVM aos quais você se "
+"conectou. Usado para detectar alterações de chave do host (semelhante ao "
+"``~/.ssh/known_hosts``)."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:332
 msgid "``known_certs.json``"
-msgstr ""
+msgstr "``known_certs.json``"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:333
 msgid ""
 "Stores trusted TLS certificate fingerprints for Morpheus appliances with "
 "self-signed or untrusted certificates."
 msgstr ""
+"Armazena impressões digitais de certificados TLS confiáveis para "
+"appliances Morpheus com certificados autoassinados ou não confiáveis."
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:335
 msgid "**Resetting the Installer:**"
-msgstr ""
+msgstr "**Redefinindo o Instalador:**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:337
 msgid "To completely reset the installer to a clean state:"
-msgstr ""
+msgstr "Para redefinir completamente o instalador para um estado limpo:"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:341
 msgid ""
 "rm -rf ~/Library/Application\\ Support/Morpheus\\ Manager\\ Installer/\n"
 "rm -rf ~/Library/Logs/Morpheus\\ Manager\\ Installer/"
 msgstr ""
+"rm -rf ~/Library/Application\\ Support/Morpheus\\ Manager\\ Installer/\n"
+"rm -rf ~/Library/Logs/Morpheus\\ Manager\\ Installer/"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:346
 msgid "**Windows (PowerShell):**"
-msgstr ""
+msgstr "**Windows (PowerShell):**"
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:348
 msgid "Remove-Item -Recurse -Force \"$env:APPDATA\\Morpheus Manager Installer\""
-msgstr ""
+msgstr "Remove-Item -Recurse -Force \"$env:APPDATA\\Morpheus Manager Installer\""
 
 #: ../../getting_started/installation/singleNode/hpe_installer.rst:352
 msgid ""
@@ -1017,4 +1180,6 @@ msgid ""
 "imaging a host), you can delete just ``known_hosts.json`` rather than "
 "resetting everything."
 msgstr ""
-
+"Se você está apenas recebendo avisos de chave de host SSH (por exemplo, "
+"após reimagear um host), pode excluir apenas o ``known_hosts.json`` em vez "
+"de redefinir tudo."

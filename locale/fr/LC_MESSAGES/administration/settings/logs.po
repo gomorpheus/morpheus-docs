@@ -22,17 +22,19 @@ msgstr ""
 
 #: ../../administration/settings/logs.rst:2
 msgid "Logging Settings"
-msgstr ""
+msgstr "Paramètres de journalisation"
 
 #: ../../administration/settings/logs.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../administration/settings/logs.rst:7
 msgid ""
 "Open these settings at :menuselection:`Administration --> Settings --> "
 "Monitoring --> Logging Settings`."
 msgstr ""
+"Ouvrez ces paramètres dans :menuselection:`Administration --> Settings --> "
+"Monitoring --> Logging Settings`."
 
 #: ../../administration/settings/logs.rst:9
 msgid ""
@@ -42,6 +44,12 @@ msgid ""
 "also be forwarded using Syslog forward rules to any external solution "
 "that supports Syslogs."
 msgstr ""
+"|morpheus| contient une solution de journalisation intégrée qui agrège les "
+"journaux des hôtes et des services. Les journaux sont affichés, consultables "
+"et filtrables dans les sections Instance, App, Host et Logs globaux "
+"(|MonLog|). Les journaux peuvent également être transférés à l'aide de "
+"règles de transfert Syslog vers toute solution externe prenant en charge "
+"les Syslogs."
 
 #: ../../administration/settings/logs.rst:11
 msgid ""
@@ -54,16 +62,27 @@ msgid ""
 "be forwarded by the |morpheus| Agent to the |morpheus| appliance or "
 "forwarded with Syslog forward rules."
 msgstr ""
+"Les journaux affichés dans les sections Instance, App, Host et Logs globaux "
+"(|MonLog|) proviennent uniquement des VM et hôtes gérés sur lesquels "
+"l'agent |morpheus| est installé. L'agent |morpheus| surveille "
+"``/var/logs`` pour tout fichier .log et les remonte en conséquence. Les "
+"Instances conteneurisées peuvent être configurées pour afficher des journaux "
+"supplémentaires en configurant le LOG FOLDER dans le Library NODE TYPE. Les "
+"journaux de tout fichier .log dans le dossier spécifié seront transférés par "
+"l'agent |morpheus| vers l'appliance |morpheus| ou transférés via les règles "
+"de transfert Syslog."
 
 #: ../../administration/settings/logs.rst:13
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/settings/logs.rst:13
 msgid ""
 "The `Logs` section does not contain |morpheus| appliance logs, which can "
 "be found in `/var/log/morpheus/` and in |AdmHea|."
 msgstr ""
+"La section `Logs` ne contient pas les journaux de l'appliance |morpheus|, "
+"qui se trouvent dans `/var/log/morpheus/` et dans |AdmHea|."
 
 #: ../../administration/settings/logs.rst:15
 msgid ""
@@ -72,24 +91,32 @@ msgid ""
 "be disabled with a simple toggle switch just above the Availability Time "
 "Frame configuration."
 msgstr ""
+"Les journaux sont stockés dans ElasticSearch et la rétention peut être "
+"définie en ajustant la période de disponibilité dans la section |AdmSetMon|. "
+"La journalisation peut également être désactivée à l'aide d'un simple "
+"interrupteur situé juste au-dessus de la configuration de la période de "
+"disponibilité."
 
 #: ../../administration/settings/logs.rst:17
 msgid ".. image:: /images/administration/settings/logSettings.png"
-msgstr ""
+msgstr ".. image:: /images/administration/settings/logSettings.png"
 
 #: ../../administration/settings/logs.rst:20
 msgid "Advanced Options"
-msgstr ""
+msgstr "Options avancées"
 
 #: ../../administration/settings/logs.rst:22
 msgid ""
 "Expand :guilabel:`Advanced Options` beneath the standard logging settings"
 " to access Agent Log Throttle and Agent Log Deduplication controls."
 msgstr ""
+"Développez :guilabel:`Advanced Options` sous les paramètres de "
+"journalisation standard pour accéder aux contrôles de limitation des "
+"journaux de l'agent et de déduplication des journaux de l'agent."
 
 #: ../../administration/settings/logs.rst:25
 msgid "Agent Log Throttle Policy"
-msgstr ""
+msgstr "Politique de limitation des journaux de l'agent"
 
 #: ../../administration/settings/logs.rst:27
 msgid ""
@@ -100,26 +127,33 @@ msgid ""
 "offending server, or both. All settings default to **Off** on new "
 "installations."
 msgstr ""
+"La politique de limitation des journaux de l'agent protège l'appliance "
+"|morpheus| contre la surcharge lorsqu'un agent de serveur unique envoie des "
+"journaux à un rythme excessif. Lorsque le volume cumulé de journaux d'un "
+"serveur dépasse un plafond configurable, |morpheus| peut déclencher une "
+"alarme, désactiver activement la journalisation sur le serveur fautif, ou "
+"les deux. Tous les paramètres sont définis par défaut sur **Off** lors des "
+"nouvelles installations."
 
 #: ../../administration/settings/logs.rst:33
 msgid "Setting"
-msgstr ""
+msgstr "Paramètre"
 
 #: ../../administration/settings/logs.rst:34
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../administration/settings/logs.rst:35
 msgid "Default"
-msgstr ""
+msgstr "Défaut"
 
 #: ../../administration/settings/logs.rst:36
 msgid "Constraints"
-msgstr ""
+msgstr "Contraintes"
 
 #: ../../administration/settings/logs.rst:37
 msgid "Policy"
-msgstr ""
+msgstr "Politique"
 
 #: ../../administration/settings/logs.rst:38
 msgid ""
@@ -127,50 +161,58 @@ msgid ""
 "**Monitor** raises an alarm but continues storing logs. **Enforce** "
 "disables logging on the server and drops subsequent log batches."
 msgstr ""
+"Contrôle la réponse de limitation. **Off** ne réalise aucune limitation. "
+"**Monitor** déclenche une alarme mais continue à stocker les journaux. "
+"**Enforce** désactive la journalisation sur le serveur et supprime les lots "
+"de journaux suivants."
 
 #: ../../administration/settings/logs.rst:39
 msgid "Off"
-msgstr ""
+msgstr "Off"
 
 #: ../../administration/settings/logs.rst:41
 msgid "Threshold"
-msgstr ""
+msgstr "Seuil"
 
 #: ../../administration/settings/logs.rst:42
 msgid ""
 "Maximum log volume allowed per minute before a breach is triggered "
 "(KB/min)."
 msgstr ""
+"Volume maximal de journaux autorisé par minute avant le déclenchement d'un "
+"dépassement (Ko/min)."
 
 #: ../../administration/settings/logs.rst:43
 msgid "2048"
-msgstr ""
+msgstr "2048"
 
 #: ../../administration/settings/logs.rst:44
 msgid "Minimum 100"
-msgstr ""
+msgstr "Minimum 100"
 
 #: ../../administration/settings/logs.rst:45
 msgid "Window"
-msgstr ""
+msgstr "Fenêtre"
 
 #: ../../administration/settings/logs.rst:46
 msgid ""
 "Rolling time window used to measure cumulative log volume. The effective "
 "ceiling is ``threshold × window``."
 msgstr ""
+"Fenêtre temporelle glissante utilisée pour mesurer le volume cumulé de "
+"journaux. Le plafond effectif est ``threshold × window``."
 
 #: ../../administration/settings/logs.rst:47
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutes"
 
 #: ../../administration/settings/logs.rst:48
 msgid "5–60 minutes"
-msgstr ""
+msgstr "5–60 minutes"
 
 #: ../../administration/settings/logs.rst:49
 msgid "Auto Re-enable"
-msgstr ""
+msgstr "Réactivation automatique"
 
 #: ../../administration/settings/logs.rst:50
 msgid ""
@@ -178,28 +220,35 @@ msgid ""
 "clears alarms after the cooldown period. When disabled, manual re-"
 "enablement is required."
 msgstr ""
+"Lorsqu'elle est activée, réactive automatiquement la journalisation sur les "
+"serveurs en mode Enforce et efface les alarmes après la période de "
+"refroidissement. Lorsqu'elle est désactivée, une réactivation manuelle est "
+"requise."
 
 #: ../../administration/settings/logs.rst:51
 msgid "On"
-msgstr ""
+msgstr "On"
 
 #: ../../administration/settings/logs.rst:53
 msgid "Cooldown"
-msgstr ""
+msgstr "Refroidissement"
 
 #: ../../administration/settings/logs.rst:54
 msgid ""
 "Time to wait after a breach before re-enabling logging or clearing "
 "alarms. Resets if the server re-breaches."
 msgstr ""
+"Temps d'attente après un dépassement avant de réactiver la journalisation "
+"ou d'effacer les alarmes. Réinitialisé si le serveur dépasse à nouveau le "
+"seuil."
 
 #: ../../administration/settings/logs.rst:55
 msgid "60 minutes"
-msgstr ""
+msgstr "60 minutes"
 
 #: ../../administration/settings/logs.rst:56
 msgid "Must be ≥ Window"
-msgstr ""
+msgstr "Doit être ≥ Fenêtre"
 
 #: ../../administration/settings/logs.rst:58
 msgid ""
@@ -208,6 +257,10 @@ msgid ""
 " (2048 KB/min, 30-minute window), the ceiling is approximately 60 MB per "
 "30-minute window."
 msgstr ""
+"**Calcul du plafond :** Le plafond effectif en octets pour une fenêtre est "
+"``threshold (KB/min) × window (minutes) × 1024``. Avec les valeurs par "
+"défaut (2048 Ko/min, fenêtre de 30 minutes), le plafond est d'environ "
+"60 Mo par fenêtre de 30 minutes."
 
 #: ../../administration/settings/logs.rst:60
 msgid ""
@@ -218,6 +271,12 @@ msgid ""
 "is on, the alarm is cleared after the cooldown period elapses without a "
 "new breach."
 msgstr ""
+"**Mode Monitor :** Le volume de journaux est suivi par serveur dans une "
+"fenêtre glissante. Lorsqu'un serveur dépasse le plafond, une alarme est "
+"déclenchée dans :menuselection:`Operations --> Alarms` avec la catégorie "
+"``log.throttle.monitor``. Les journaux continuent d'être stockés. Si la "
+"réactivation automatique est activée, l'alarme est effacée après "
+"l'expiration de la période de refroidissement sans nouveau dépassement."
 
 #: ../../administration/settings/logs.rst:62
 msgid ""
@@ -229,6 +288,15 @@ msgid ""
 "after the cooldown period. If auto re-enable is off, an administrator "
 "must manually re-enable logging on the server."
 msgstr ""
+"**Mode Enforce :** Même suivi de volume que Monitor. En cas de dépassement, "
+"la journalisation est désactivée sur le serveur (``enable_logs = false``), "
+"les lots de journaux suivants sont supprimés au niveau de la couche "
+"WebSocket, et l'agent reçoit l'ordre de cesser la transmission. Une alarme "
+"de catégorie ``log.throttle.enforce`` est déclenchée. Si la réactivation "
+"automatique est activée, une tâche en arrière-plan réactive la "
+"journalisation après la période de refroidissement. Si la réactivation "
+"automatique est désactivée, un administrateur doit réactiver manuellement "
+"la journalisation sur le serveur."
 
 #: ../../administration/settings/logs.rst:64
 msgid ""
@@ -238,6 +306,11 @@ msgid ""
 "over the global setting. Threshold, window, and cooldown values always "
 "use the global configuration."
 msgstr ""
+"**Remplacement par serveur :** Les serveurs individuels peuvent remplacer "
+"la politique globale via :menuselection:`Infrastructure --> Compute --> "
+"[Server] --> Edit --> Log Throttle Policy`. La politique par serveur prend "
+"le pas sur le paramètre global. Les valeurs de seuil, de fenêtre et de "
+"refroidissement utilisent toujours la configuration globale."
 
 #: ../../administration/settings/logs.rst:66
 msgid ""
@@ -245,10 +318,14 @@ msgid ""
 "Alarms` and can be acknowledged from that page or from the server detail "
 "page. Alarms include the server name, cloud, and breach details."
 msgstr ""
+"**Alarmes :** Les alarmes de limitation des journaux apparaissent dans "
+":menuselection:`Operations --> Alarms` et peuvent être acquittées depuis "
+"cette page ou depuis la page de détail du serveur. Les alarmes incluent le "
+"nom du serveur, le cloud et les détails du dépassement."
 
 #: ../../administration/settings/logs.rst:69
 msgid "Agent Log Deduplication"
-msgstr ""
+msgstr "Déduplication des journaux de l'agent"
 
 #: ../../administration/settings/logs.rst:71
 msgid ""
@@ -258,6 +335,12 @@ msgid ""
 "resets. When the window resets, a summary entry records how many "
 "duplicates were suppressed."
 msgstr ""
+"Lorsqu'elle est activée, |morpheus| supprime les messages de journaux "
+"d'agent en double par serveur dans une fenêtre glissante de 30 secondes. "
+"Seule la première occurrence de chaque message unique est stockée ; les "
+"répétitions sont écartées jusqu'à la réinitialisation de la fenêtre. "
+"Lorsque la fenêtre est réinitialisée, une entrée récapitulative enregistre "
+"le nombre de doublons supprimés."
 
 #: ../../administration/settings/logs.rst:73
 msgid ""
@@ -265,32 +348,42 @@ msgid ""
 "syslog messages (for example, a repeated error condition) that can "
 "contribute to Elasticsearch pressure and queue exhaustion."
 msgstr ""
+"Ce paramètre traite les scénarios dans lesquels un serveur unique inonde "
+"des messages syslog identiques (par exemple, une condition d'erreur "
+"répétée) pouvant contribuer à la surcharge d'Elasticsearch et à "
+"l'épuisement de la file d'attente."
 
 #: ../../administration/settings/logs.rst:75
 msgid ""
 "A per-server signature cap of 100 unique messages bounds memory usage "
 "during the deduplication window."
 msgstr ""
+"Un plafond de 100 signatures de messages uniques par serveur limite "
+"l'utilisation de la mémoire pendant la fenêtre de déduplication."
 
 #: ../../administration/settings/logs.rst:78
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../administration/settings/logs.rst:80
 msgid ""
 "Log throttle and deduplication settings are available via the log "
 "settings API:"
 msgstr ""
+"Les paramètres de limitation et de déduplication des journaux sont "
+"disponibles via l'API de paramètres de journalisation :"
 
 #: ../../administration/settings/logs.rst:82
 msgid ""
 "``GET /api/log-settings`` — Returns current throttle and deduplication "
 "settings."
 msgstr ""
+"``GET /api/log-settings`` — Renvoie les paramètres actuels de limitation "
+"et de déduplication."
 
 #: ../../administration/settings/logs.rst:83
 msgid "``PUT /api/log-settings`` — Update settings."
-msgstr ""
+msgstr "``PUT /api/log-settings`` — Met à jour les paramètres."
 
 #: ../../administration/settings/logs.rst:85
 msgid ""
@@ -298,14 +391,20 @@ msgid ""
 "``logThrottleWindow``, ``logThrottleAutoReEnable``, "
 "``logThrottleCooldown``, ``logDeduplication``."
 msgstr ""
+"Champs : ``logThrottlePolicy``, ``logThrottleThreshold``, "
+"``logThrottleWindow``, ``logThrottleAutoReEnable``, "
+"``logThrottleCooldown``, ``logDeduplication``."
 
 #: ../../administration/settings/logs.rst:87
 msgid "To query log throttle alarms across all tenants (master tenant only):"
 msgstr ""
+"Pour interroger les alarmes de limitation des journaux sur tous les tenants "
+"(tenant principal uniquement) :"
 
 #: ../../administration/settings/logs.rst:89
 msgid ""
 "morpheus health alarms --query category=\"log.throttle\" --query "
 "global=true"
 msgstr ""
-
+"morpheus health alarms --query category=\"log.throttle\" --query "
+"global=true"
