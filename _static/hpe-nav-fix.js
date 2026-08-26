@@ -153,3 +153,68 @@
   if (document.readyState !== 'loading') wire();
   else document.addEventListener('DOMContentLoaded', wire);
 })();
+
+/* Fix the "On this page" (secondary TOC) scroll-spy off-by-one. immaterial marks
+   a heading active only once it reaches the theme's header-height line, but
+   hpe-header.css lands anchor jumps at `scroll-padding-top` (84px = the 68px
+   header + breathing room), which sits BELOW that line — so the theme keeps the
+   PREVIOUS item highlighted. Re-derive the active item ourselves against
+   scroll-padding-top using live heading positions, and re-assert it whenever the
+   theme re-marks a different one. */
+(function () {
+  var ACTIVE = 'md-nav__link--active';
+  var nav, links = [], observer;
+
+  function activeLine() {
+    var v = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop);
+    return (isNaN(v) ? 84 : v) + 4;   // +epsilon so a click-landed heading counts
+  }
+  function targetOf(a) {
+    var h = a.getAttribute('href') || '';
+    if (h.charAt(0) !== '#') return null;
+    try { return document.getElementById(decodeURIComponent(h.slice(1))); }
+    catch (e) { return null; }
+  }
+  function collect() {
+    nav = document.querySelector('.md-sidebar--secondary .md-nav--secondary');
+    links = nav ? [].slice.call(nav.querySelectorAll('a.md-nav__link[href^="#"]')) : [];
+    return links.length > 0;
+  }
+  function computeIndex() {
+    var line = activeLine(), idx = -1, t;
+    for (var i = 0; i < links.length; i++) {
+      t = targetOf(links[i]);
+      if (t && t.getBoundingClientRect().top <= line) idx = i;
+    }
+    return (idx === -1 && links.length) ? 0 : idx;   // above all headings -> first
+  }
+  function enforce() {
+    if (!links.length) return;
+    var idx = computeIndex(), dirty = false, i;
+    for (i = 0; i < links.length; i++) {
+      if (links[i].classList.contains(ACTIVE) !== (i === idx)) { dirty = true; break; }
+    }
+    if (!dirty) return;
+    if (observer) observer.disconnect();   // don't observe our own writes
+    for (i = 0; i < links.length; i++) links[i].classList.toggle(ACTIVE, i === idx);
+    if (observer) observer.observe(nav, { subtree: true, attributes: true, attributeFilter: ['class'] });
+  }
+
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { ticking = false; enforce(); });
+  }
+  function init() {
+    if (!collect()) return;
+    observer = new MutationObserver(enforce);   // re-correct when the theme re-marks
+    observer.observe(nav, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    window.addEventListener('hashchange', onScroll);
+    enforce();
+  }
+  if (document.readyState !== 'loading') init();
+  else document.addEventListener('DOMContentLoaded', init);
+})();
