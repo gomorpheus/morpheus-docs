@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:2
 msgid "NVIDIA vGPU Slicing"
-msgstr ""
+msgstr "NVIDIA vGPU Slicing"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:4
 msgid ""
@@ -32,6 +32,11 @@ msgid ""
 "VM. This allows multiple VMs to share one physical GPU while receiving "
 "defined framebuffer and compute resources."
 msgstr ""
+"Morpheus 9.1 unterstützt NVIDIA SR-IOV vGPU Slicing auf HVM/KVM Hosts. Eine "
+"unterstützte physische NVIDIA GPU kann Virtual Functions (VFs) bereitstellen, und "
+"jede VF kann mit einem NVIDIA vGPU-Profil programmiert und einer "
+"VM zugewiesen werden. Dies ermöglicht es mehreren VMs, eine physische GPU gemeinsam zu nutzen und dabei "
+"definierte Framebuffer- und Compute-Ressourcen zu erhalten."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:6
 msgid ""
@@ -40,10 +45,14 @@ msgid ""
 " VM through VFIO. NVIDIA vGPU slicing keeps the physical GPU and its VFs "
 "bound to the NVIDIA vGPU Manager on the Host."
 msgstr ""
+"Dieser Workflow unterscheidet sich von Whole-GPU-Passthrough. Whole-GPU-"
+"Passthrough trennt die physische GPU vom Host und weist sie über VFIO einer "
+"einzelnen VM zu. NVIDIA vGPU Slicing hält die physische GPU und ihre VFs "
+"an den NVIDIA vGPU Manager auf dem Host gebunden."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:8
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:10
 msgid ""
@@ -54,62 +63,76 @@ msgid ""
 "host OS, kernel, GPU, vGPU Manager, guest driver, profile, and guest OS "
 "combination supported by both HPE and NVIDIA."
 msgstr ""
+"Morpheus installiert weder den NVIDIA vGPU Manager noch NVIDIA-Gasttreiber, "
+"erstellt keine NVIDIA License System-Dienstinstanz und stellt keine "
+"NVIDIA-Client-Lizenzierungstokens bereit. Beziehen Sie die NVIDIA-Software und "
+"Lizenzberechtigung über die entsprechenden NVIDIA- und HPE-Kanäle und verwenden Sie eine "
+"von HPE und NVIDIA unterstützte Kombination aus Host-Betriebssystem, Kernel, GPU, vGPU Manager, "
+"Gasttreiber, Profil und Gast-Betriebssystem."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:13
 msgid "Architecture and Terms"
-msgstr ""
+msgstr "Architektur und Begriffe"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:19
 msgid "Term"
-msgstr ""
+msgstr "Begriff"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:20
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:21
 msgid "Physical GPU or PF"
-msgstr ""
+msgstr "Physische GPU oder PF"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:22
 msgid ""
 "The physical NVIDIA GPU installed in the HVM Host. It remains bound to "
 "the NVIDIA Host driver while segmentation is enabled."
 msgstr ""
+"Die physische NVIDIA GPU, die im HVM Host installiert ist. Sie bleibt an "
+"den NVIDIA-Host-Treiber gebunden, solange die Segmentierung aktiviert ist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:23
 msgid "Virtual function or VF"
-msgstr ""
+msgstr "Virtual Function oder VF"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:24
 msgid ""
 "A child PCI device created through NVIDIA SR-IOV. Morpheus displays VFs "
 "beneath the physical GPU on the Host's Devices tab."
 msgstr ""
+"Ein untergeordnetes PCI-Gerät, das über NVIDIA SR-IOV erstellt wird. Morpheus zeigt VFs "
+"unterhalb der physischen GPU auf der Registerkarte Devices des Hosts an."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:25
 msgid "Segment Type"
-msgstr ""
+msgstr "Segment Type"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:26
 msgid ""
 "The NVIDIA vGPU profile programmed on a VF. The profile defines "
 "properties such as framebuffer allocation and intended workload class."
 msgstr ""
+"Das auf einer VF programmierte NVIDIA vGPU-Profil. Das Profil definiert "
+"Eigenschaften wie Framebuffer-Zuweisung und vorgesehene Workload-Klasse."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:27
 msgid "Homogeneous Segmentation"
-msgstr ""
+msgstr "Homogene Segmentierung"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:28
 msgid ""
 "Uses profiles with the same framebuffer size on one physical GPU. Choose "
 "this mode for predictable, uniform VM capacity and simpler placement."
 msgstr ""
+"Verwendet Profile mit derselben Framebuffer-Größe auf einer physischen GPU. Wählen Sie "
+"diesen Modus für vorhersagbare, einheitliche VM-Kapazität und einfachere Platzierung."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:29
 msgid "Heterogeneous Segmentation"
-msgstr ""
+msgstr "Heterogene Segmentierung"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:30
 msgid ""
@@ -117,16 +140,21 @@ msgid ""
 "software, and selected profiles support mixed-size mode. This improves "
 "workload flexibility but can reduce placement efficiency."
 msgstr ""
+"Erlaubt unterschiedliche Profilgrößen auf einer physischen GPU, wenn GPU, NVIDIA-"
+"Software und ausgewählte Profile den Mixed-Size-Modus unterstützen. Dies verbessert "
+"die Workload-Flexibilität, kann aber die Platzierungseffizienz verringern."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:31
 msgid "Service Plan GPU Type"
-msgstr ""
+msgstr "Serviceplan-GPU-Typ"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:32
 msgid ""
 "The physical GPU type or vGPU Segment Type that every GPU requested by "
 "the Service Plan must match."
 msgstr ""
+"Der physische GPU-Typ oder vGPU Segment Type, mit dem jede vom "
+"Serviceplan angeforderte GPU übereinstimmen muss."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:34
 msgid ""
@@ -135,20 +163,26 @@ msgid ""
 " MIG/mdev correlation and lifecycle management are not complete in this "
 "release."
 msgstr ""
+"Morpheus 9.1 verwaltet PCI/SR-IOV VFs. Behandeln Sie NVIDIA MIG oder "
+"Legacy-Mediated-Device-Inventar nicht als gleichwertig zum unterstützten SR-IOV-Workflow; "
+"MIG/mdev-Korrelation und Lifecycle-Management sind in diesem "
+"Release nicht vollständig."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:37
 msgid "Plan the Slicing Model"
-msgstr ""
+msgstr "Das Slicing-Modell planen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:39
 msgid "Choose the slicing model before creating VFs and Service Plans:"
-msgstr ""
+msgstr "Wählen Sie das Slicing-Modell, bevor Sie VFs und Servicepläne erstellen:"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:41
 msgid ""
 "Identify whether workloads require graphics, virtual desktops, virtual "
 "applications, or compute acceleration."
 msgstr ""
+"Ermitteln Sie, ob Workloads Grafik, virtuelle Desktops, virtuelle "
+"Anwendungen oder Compute-Beschleunigung benötigen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:42
 msgid ""
@@ -156,24 +190,33 @@ msgid ""
 "the physical GPU, guest OS, NVIDIA software release, and license "
 "entitlement."
 msgstr ""
+"Wählen Sie eine NVIDIA vGPU-Profilserie und Framebuffer-Größe, die von "
+"der physischen GPU, dem Gast-Betriebssystem, dem NVIDIA-Software-Release und der "
+"Lizenzberechtigung unterstützt wird."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:43
 msgid ""
 "Determine how many identically sized profiles fit on each GPU and whether"
 " homogeneous mode satisfies the workload mix."
 msgstr ""
+"Bestimmen Sie, wie viele identisch dimensionierte Profile auf jede GPU passen und ob "
+"der homogene Modus den Workload-Mix abdeckt."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:44
 msgid ""
 "Use heterogeneous mode only when mixed profile sizes are required and "
 "NVIDIA supports mixed-size mode for that GPU and profile combination."
 msgstr ""
+"Verwenden Sie den heterogenen Modus nur, wenn gemischte Profilgrößen erforderlich sind und "
+"NVIDIA den Mixed-Size-Modus für diese GPU- und Profilkombination unterstützt."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:45
 msgid ""
 "Reserve capacity for maintenance and Host failure. Morpheus can place a "
 "VM only when a matching, pre-created VF is available on an eligible Host."
 msgstr ""
+"Reservieren Sie Kapazität für Wartung und Host-Ausfall. Morpheus kann eine "
+"VM nur platzieren, wenn eine passende, vorab erstellte VF auf einem geeigneten Host verfügbar ist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:47
 msgid ""
@@ -183,28 +226,39 @@ msgid ""
 "release, current segmentation mode, or remaining framebuffer does not "
 "support it."
 msgstr ""
+"Die Profilliste in Morpheus wird nach den Typen gefiltert, die der installierte "
+"NVIDIA vGPU Manager als aktuell erstellbar meldet. Ein im Morpheus-Katalog "
+"vorhandenes Profil wird möglicherweise nicht für einen Host angezeigt, wenn die GPU, der "
+"Treiber-Release, der aktuelle Segmentierungsmodus oder der verbleibende Framebuffer "
+"es nicht unterstützt."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:50
 msgid "Host Prerequisites"
-msgstr ""
+msgstr "Host-Voraussetzungen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:52
 msgid ""
 "Before enabling segmentation, verify all of the following on every GPU "
 "Host:"
 msgstr ""
+"Überprüfen Sie vor der Aktivierung der Segmentierung Folgendes auf jedem GPU-"
+"Host:"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:54
 msgid ""
 "The HVM Host uses the supported Ubuntu release and kernel for the "
 "selected HVM layout."
 msgstr ""
+"Der HVM Host verwendet das unterstützte Ubuntu-Release und den Kernel für das "
+"ausgewählte HVM-Layout."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:55
 msgid ""
 "The server platform and GPU appear in the NVIDIA support matrix for that "
 "exact vGPU software release."
 msgstr ""
+"Die Server-Plattform und GPU erscheinen in der NVIDIA-Supportmatrix für genau dieses "
+"vGPU-Software-Release."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:56
 msgid ""
@@ -212,24 +266,33 @@ msgid ""
 "enabled in system firmware when required by the GPU architecture. NVIDIA "
 "requires these settings for Ampere and later GPUs."
 msgstr ""
+"VT-d/IOMMU, SR-IOV und Alternative Routing-ID Interpretation (ARI) sind "
+"in der System-Firmware aktiviert, wenn die GPU-Architektur dies erfordert. NVIDIA "
+"setzt diese Einstellungen für Ampere- und neuere GPUs voraus."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:57
 msgid ""
 "The GPU is in the display mode required by NVIDIA. Some workstation GPUs "
 "require display-off mode for vGPU operation."
 msgstr ""
+"Die GPU befindet sich im von NVIDIA geforderten Display-Modus. Einige Workstation-GPUs "
+"erfordern den Display-Off-Modus für den vGPU-Betrieb."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:58
 msgid ""
 "A compatible NVIDIA vGPU Manager is installed on the Host and its "
 "required services are enabled."
 msgstr ""
+"Ein kompatibler NVIDIA vGPU Manager ist auf dem Host installiert und seine "
+"erforderlichen Dienste sind aktiviert."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:59
 msgid ""
 "The corresponding NVIDIA vGPU guest driver package is available for each "
 "supported Windows or Linux guest image."
 msgstr ""
+"Das entsprechende NVIDIA vGPU-Gasttreiberpaket ist für jedes "
+"unterstützte Windows- oder Linux-Gast-Image verfügbar."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:60
 msgid ""
@@ -237,6 +300,9 @@ msgid ""
 "permit guest VMs to reach the selected NVIDIA License System service "
 "instance."
 msgstr ""
+"DNS-, Zeitsynchronisations-, Routing-, Proxy- und Firewall-Konfiguration "
+"ermöglichen es Gast-VMs, die ausgewählte NVIDIA License System-Dienstinstanz "
+"zu erreichen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:62
 msgid ""
@@ -248,10 +314,17 @@ msgid ""
 " because it is available; host kernel and guest driver compatibility must"
 " be maintained as a set."
 msgstr ""
+"Siehe NVIDIA `Virtual GPU Software User Guide "
+"<https://docs.nvidia.com/vgpu/latest/grid-vgpu-user-guide/index.html>`_, "
+"`Ubuntu support matrix <https://docs.nvidia.com/vgpu/latest/product-"
+"support-matrix/ubuntu.html>`_ und die Release Notes für den gewählten NVIDIA "
+"vGPU-Software-Branch. Installieren Sie keinen neueren generischen NVIDIA-Treiber nur "
+"weil er verfügbar ist; Host-Kernel- und Gasttreiber-Kompatibilität müssen "
+"als Einheit beibehalten werden."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:65
 msgid "Install the NVIDIA Host Software"
-msgstr ""
+msgstr "Die NVIDIA-Host-Software installieren"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:67
 msgid ""
@@ -260,47 +333,58 @@ msgid ""
 "package includes the NVIDIA vGPU Manager for the Host and matching guest "
 "drivers."
 msgstr ""
+"NVIDIA vGPU-Software ist berechtigungsgesteuert. Laden Sie das für die Umgebung "
+"autorisierte Linux KVM/Ubuntu vGPU-Softwarepaket herunter. Das Paket enthält "
+"den NVIDIA vGPU Manager für den Host und passende Gasttreiber."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:69
 msgid ""
 "Place the HVM Host into maintenance and evacuate or stop workloads "
 "according to :doc:`host_maintenance`."
 msgstr ""
+"Versetzen Sie den HVM Host in den Wartungsmodus und evakuieren oder stoppen Sie "
+"Workloads gemäß :doc:`host_maintenance`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:70
 msgid "Confirm the exact HVM OS, kernel, GPU, firmware, and Secure Boot state."
-msgstr ""
+msgstr "Bestätigen Sie den genauen HVM-OS-, Kernel-, GPU-, Firmware- und Secure-Boot-Status."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:71
 msgid ""
 "Install the HPE-approved NVIDIA vGPU Manager package using the NVIDIA "
 "instructions for that Ubuntu and driver release."
 msgstr ""
+"Installieren Sie das von HPE genehmigte NVIDIA vGPU Manager-Paket gemäß den NVIDIA-"
+"Anweisungen für das jeweilige Ubuntu- und Treiber-Release."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:72
 msgid "Complete any required module signing when Secure Boot is enabled."
-msgstr ""
+msgstr "Führen Sie die erforderliche Modulsignierung durch, wenn Secure Boot aktiviert ist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:73
 msgid ""
 "Enable the NVIDIA vGPU Manager services required by the installed release"
 " and reboot the Host when directed by NVIDIA."
 msgstr ""
+"Aktivieren Sie die vom installierten Release benötigten NVIDIA vGPU Manager-Dienste "
+"und starten Sie den Host neu, wenn NVIDIA dies anweist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:74
 msgid ""
 "Verify that ``nvidia-smi`` reports the physical GPU and expected vGPU "
 "capabilities without driver or Xid errors."
 msgstr ""
+"Überprüfen Sie, dass ``nvidia-smi`` die physische GPU und die erwarteten vGPU-"
+"Fähigkeiten ohne Treiber- oder Xid-Fehler meldet."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:75
 msgid "Return the Host to service and refresh its inventory in Morpheus."
-msgstr ""
+msgstr "Setzen Sie den Host wieder in Betrieb und aktualisieren Sie sein Inventar in Morpheus."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:77
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:99
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:79
 msgid ""
@@ -309,58 +393,74 @@ msgid ""
 "or mismatched host and guest driver branch can prevent VMs from starting "
 "or make the GPU unavailable after an upgrade."
 msgstr ""
+"Kopieren Sie keine Paketnamen oder Versionsnummern aus einer anderen Umgebung. "
+"NVIDIA vGPU Manager-Module sind kernelabhängig. Ein nicht unterstützter Kernel "
+"oder ein nicht übereinstimmender Host- und Gasttreiber-Branch kann das Starten von VMs "
+"verhindern oder die GPU nach einem Upgrade unverfügbar machen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:82
 msgid "Enable Segmentation and Create Profiles"
-msgstr ""
+msgstr "Segmentierung aktivieren und Profile erstellen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:84
 msgid ""
 "Users require **Infrastructure: Server Devices** permission at the "
 "**Full** level."
 msgstr ""
+"Benutzer benötigen die Berechtigung **Infrastructure: Server Devices** auf der "
+"Stufe **Full**."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:86
 msgid ""
 "Navigate to :menuselection:`Infrastructure --> Hosts`, open the HVM Host,"
 " and select :guilabel:`Devices`."
 msgstr ""
+"Navigieren Sie zu :menuselection:`Infrastructure --> Hosts`, öffnen Sie den HVM Host "
+"und wählen Sie :guilabel:`Devices`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:87
 msgid ""
 "Locate the physical NVIDIA GPU. It must have **Attached** Host status; do"
 " not detach a GPU that will be segmented."
 msgstr ""
+"Suchen Sie die physische NVIDIA GPU. Sie muss den Host-Status **Attached** haben; "
+"trennen Sie keine GPU, die segmentiert werden soll."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:88
 msgid ""
 "From the GPU's Actions menu, select :guilabel:`Enable Homogeneous "
 "Segmentation` or :guilabel:`Enable Heterogeneous Segmentation`."
 msgstr ""
+"Wählen Sie im Actions-Menü der GPU :guilabel:`Enable Homogeneous "
+"Segmentation` oder :guilabel:`Enable Heterogeneous Segmentation`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:89
 msgid "Refresh Host devices if the child VFs do not appear automatically."
-msgstr ""
+msgstr "Aktualisieren Sie die Host-Geräte, wenn die untergeordneten VFs nicht automatisch erscheinen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:90
 msgid "Expand the physical GPU row to display its virtual functions."
-msgstr ""
+msgstr "Erweitern Sie die Zeile der physischen GPU, um ihre Virtual Functions anzuzeigen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:91
 msgid "For an unprogrammed VF, select :guilabel:`Create Segment Type`."
-msgstr ""
+msgstr "Wählen Sie für eine nicht programmierte VF :guilabel:`Create Segment Type`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:92
 msgid ""
 "Select a :guilabel:`Segment Type` from the profiles reported as "
 "creatable, then click :guilabel:`Execute`."
 msgstr ""
+"Wählen Sie einen :guilabel:`Segment Type` aus den als erstellbar gemeldeten "
+"Profilen und klicken Sie auf :guilabel:`Execute`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:93
 msgid ""
 "Repeat for each VF that should be available for manual assignment or "
 "Service Plan provisioning."
 msgstr ""
+"Wiederholen Sie dies für jede VF, die für manuelle Zuweisung oder "
+"Serviceplan-Provisionierung verfügbar sein soll."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:95
 msgid ""
@@ -370,6 +470,11 @@ msgid ""
 "profiles from different families and framebuffer sizes can coexist on the"
 " same physical GPU until framebuffer capacity is exhausted."
 msgstr ""
+"Im homogenen Modus legt die erste programmierte VF die Framebuffer-Größe "
+"für die verbleibenden Profile auf dieser physischen GPU fest. Die Liste der erstellbaren "
+"Typen wird auf Profile derselben Familie eingeschränkt. Im heterogenen Modus "
+"können Profile verschiedener Familien und Framebuffer-Größen auf derselben "
+"physischen GPU koexistieren, bis die Framebuffer-Kapazität erschöpft ist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:97
 msgid ""
@@ -380,6 +485,12 @@ msgid ""
 "all VFs from their VMs first; you do not have to manually destroy every "
 "programmed Segment Type to switch modes or disable segmentation."
 msgstr ""
+"Um zwischen homogenem und heterogenem Modus zu wechseln, verwenden Sie das "
+"Actions-Menü der GPU und wählen Sie :guilabel:`Switch to Heterogeneous` oder "
+":guilabel:`Switch to Homogeneous`. Der Moduswechsel oder das Deaktivieren der "
+"Segmentierung ist blockiert, solange eine untergeordnete VF einer VM zugewiesen ist. "
+"Heben Sie zuerst die Zuweisung aller VFs von ihren VMs auf; Sie müssen nicht jeden "
+"programmierten Segment Type manuell zerstören, um den Modus zu wechseln oder die Segmentierung zu deaktivieren."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:101
 msgid ""
@@ -388,16 +499,22 @@ msgid ""
 "must remain NVIDIA-bound. Detaching the physical GPU can destabilize "
 "libvirt or the Host."
 msgstr ""
+"Trennen Sie keine physische NVIDIA GPU, solange die Segmentierung aktiviert ist, und "
+"trennen Sie keine programmierte NVIDIA VF vom Host-Treiber. Segmentierte VFs "
+"müssen NVIDIA-gebunden bleiben. Das Trennen der physischen GPU kann "
+"libvirt oder den Host destabilisieren."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:104
 msgid "Create a vGPU Service Plan"
-msgstr ""
+msgstr "Einen vGPU-Serviceplan erstellen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:106
 msgid ""
 "Navigate to :menuselection:`Administration --> Plans` and add or edit an "
 "HVM/KVM Service Plan."
 msgstr ""
+"Navigieren Sie zu :menuselection:`Administration --> Plans` und fügen Sie einen "
+"HVM/KVM-Serviceplan hinzu oder bearbeiten Sie diesen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:107
 msgid ""
@@ -405,10 +522,13 @@ msgid ""
 "VM. The selected GPU Type applies uniformly to every device in this "
 "count."
 msgstr ""
+"Setzen Sie :guilabel:`GPU Count` auf die Anzahl der von jeder VM benötigten "
+"GPU-Geräte. Der ausgewählte GPU-Typ gilt einheitlich für jedes Gerät in dieser "
+"Anzahl."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:108
 msgid "Select :guilabel:`GPU Type` from the grouped typeahead picker:"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`GPU Type` aus der gruppierten Typeahead-Auswahl:"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:110
 msgid ""
@@ -416,6 +536,9 @@ msgid ""
 " a whole physical card or a programmed vGPU VF. Use this when the "
 "workload does not require a specific GPU model or profile."
 msgstr ""
+"**Any GPU** — Akzeptiert jede zuweisbare GPU-Einheit auf dem Ziel-Host, ob "
+"eine vollständige physische Karte oder eine programmierte vGPU VF. Verwenden Sie dies, wenn der "
+"Workload kein bestimmtes GPU-Modell oder Profil erfordert."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:111
 msgid ""
@@ -425,6 +548,11 @@ msgid ""
 "the plan to the **Device Type**: only whole cards whose "
 "``ComputeDeviceType`` matches are eligible."
 msgstr ""
+"**Physical GPU type** (fett, oberste Zeile) — Fordert Whole-Device-"
+"Passthrough dieses exakten GPU-Modells an. Die physische Karte muss vom "
+"Host-Treiber getrennt und nicht segmentiert sein. Die Auswahl eines physischen Typs "
+"beschränkt den Plan auf den **Device Type**: Nur vollständige Karten, deren "
+"``ComputeDeviceType`` übereinstimmt, sind berechtigt."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:112
 msgid ""
@@ -434,6 +562,11 @@ msgid ""
 " a Segment Type scopes the plan to the **Segment Type**: only VFs whose "
 "``ComputeDeviceSegmentType`` matches are eligible."
 msgstr ""
+"**Segment Type** (eingerückte Zeile unter einem physischen GPU-Typ) — Fordert eine "
+"vorab erstellte VF an, die mit genau diesem NVIDIA vGPU-Profil programmiert ist. Die VF "
+"muss bereits existieren und den passenden Segment Type zugewiesen haben. Die Auswahl "
+"eines Segment Type beschränkt den Plan auf den **Segment Type**: Nur VFs, deren "
+"``ComputeDeviceSegmentType`` übereinstimmt, sind berechtigt."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:114
 msgid ""
@@ -442,10 +575,14 @@ msgid ""
 "the relationship is visible. GPU types with no defined Segment Types "
 "appear as standalone selectable rows for whole-card passthrough only."
 msgstr ""
+"Ein Serviceplan kann keinen physischen GPU-Typ und einen Segment Type kombinieren. Die "
+"Auswahl gruppiert Segment Types unter ihrem übergeordneten physischen GPU-Typ, damit "
+"die Beziehung sichtbar ist. GPU-Typen ohne definierte Segment Types "
+"erscheinen als eigenständige auswählbare Zeilen nur für Whole-Card-Passthrough."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:116
 msgid "Save the Service Plan and configure its Group and Tenant access."
-msgstr ""
+msgstr "Speichern Sie den Serviceplan und konfigurieren Sie den Gruppen- und Mandantenzugriff."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:118
 msgid ""
@@ -454,10 +591,14 @@ msgid ""
 "Cluster has fewer matching, assignable devices than the requested GPU "
 "Count. Morpheus does not auto-create VFs or program profiles on demand."
 msgstr ""
+"GPU-tragende Pläne bleiben im Provisionierungsassistenten sichtbar, auch wenn keine "
+"Live-Kapazität verfügbar ist. Die Provisionierung schlägt sofort fehl, wenn der ausgewählte HVM-"
+"Cluster weniger passende, zuweisbare Geräte hat als die angeforderte GPU-"
+"Anzahl. Morpheus erstellt keine VFs automatisch und programmiert keine Profile auf Anforderung."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:121
 msgid "Provision or Manually Assign a vGPU"
-msgstr ""
+msgstr "Eine vGPU provisionieren oder manuell zuweisen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:123
 msgid ""
@@ -467,22 +608,27 @@ msgid ""
 "profile on demand. Prepare enough matching VFs before exposing the plan "
 "to consumers."
 msgstr ""
+"Wenn während der Provisionierung ein GPU-tragender Serviceplan ausgewählt wird, filtert Morpheus "
+"geeignete Hosts nach passenden Geräten, reserviert vorab erstellte VFs "
+"und weist sie der VM zu. Morpheus erstellt keine VF und programmiert kein "
+"Profil auf Anforderung. Bereiten Sie genügend passende VFs vor, bevor Sie den Plan "
+"für Verbraucher freigeben."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:125
 msgid "To assign a pre-created VF manually:"
-msgstr ""
+msgstr "So weisen Sie eine vorab erstellte VF manuell zu:"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:127
 msgid "Open the HVM Host's :guilabel:`Devices` tab and expand the physical GPU."
-msgstr ""
+msgstr "Öffnen Sie die Registerkarte :guilabel:`Devices` des HVM Hosts und erweitern Sie die physische GPU."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:128
 msgid "From the programmed VF's Actions menu, select :guilabel:`Assign Device`."
-msgstr ""
+msgstr "Wählen Sie im Actions-Menü der programmierten VF :guilabel:`Assign Device`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:129
 msgid "Select a VM on that Host and click :guilabel:`Execute`."
-msgstr ""
+msgstr "Wählen Sie eine VM auf diesem Host und klicken Sie auf :guilabel:`Execute`."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:131
 msgid ""
@@ -490,10 +636,13 @@ msgid ""
 " a device from a running VM can stop, redefine, and restart the VM. "
 "Schedule the operation as disruptive work."
 msgstr ""
+"GPU-Geräte sind in diesem Workflow nicht im laufenden Betrieb austauschbar. Das Zuweisen oder Entfernen "
+"eines Geräts von einer laufenden VM kann die VM stoppen, neu definieren und neu starten. "
+"Planen Sie den Vorgang als unterbrechende Arbeit ein."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:134
 msgid "Install and License the Guest Driver"
-msgstr ""
+msgstr "Den Gasttreiber installieren und lizenzieren"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:136
 msgid ""
@@ -501,6 +650,9 @@ msgid ""
 " software release used for the Host. Follow NVIDIA's Windows or Linux "
 "guest instructions and verify the vGPU with ``nvidia-smi`` inside the VM."
 msgstr ""
+"Installieren Sie den NVIDIA vGPU-Gasttreiber aus demselben kompatiblen NVIDIA vGPU-"
+"Software-Release, das für den Host verwendet wird. Folgen Sie den NVIDIA-Anweisungen für "
+"Windows- oder Linux-Gäste und überprüfen Sie die vGPU mit ``nvidia-smi`` innerhalb der VM."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:138
 msgid ""
@@ -508,54 +660,57 @@ msgid ""
 "NVIDIA vGPU software automatically selects the license edition from the "
 "profile series:"
 msgstr ""
+"Die NVIDIA vGPU-Lizenzierung ist von der Morpheus-Appliance-Lizenz getrennt. "
+"Die NVIDIA vGPU-Software wählt die Lizenzedition automatisch anhand der "
+"Profilserie aus:"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:144
 msgid "Profile Series"
-msgstr ""
+msgstr "Profilserie"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:145
 msgid "NVIDIA License"
-msgstr ""
+msgstr "NVIDIA-Lizenz"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:146
 msgid "Typical Use"
-msgstr ""
+msgstr "Typische Verwendung"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:147
 msgid "Q-series"
-msgstr ""
+msgstr "Q-Serie"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:148
 msgid "NVIDIA RTX Virtual Workstation (vWS)"
-msgstr ""
+msgstr "NVIDIA RTX Virtual Workstation (vWS)"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:149
 msgid "Professional graphics and workstation applications"
-msgstr ""
+msgstr "Professionelle Grafik- und Workstation-Anwendungen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:150
 msgid "B-series"
-msgstr ""
+msgstr "B-Serie"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:151
 msgid "NVIDIA Virtual PC (vPC), or vWS"
-msgstr ""
+msgstr "NVIDIA Virtual PC (vPC) oder vWS"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:152
 msgid "Business virtual desktops"
-msgstr ""
+msgstr "Geschäftliche virtuelle Desktops"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:153
 msgid "A-series"
-msgstr ""
+msgstr "A-Serie"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:154
 msgid "NVIDIA Virtual Applications (vApps)"
-msgstr ""
+msgstr "NVIDIA Virtual Applications (vApps)"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:155
 msgid "Application streaming and session-based workloads"
-msgstr ""
+msgstr "Anwendungsstreaming und sitzungsbasierte Workloads"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:157
 msgid ""
@@ -567,6 +722,13 @@ msgid ""
 " Guide <https://docs.nvidia.com/vgpu/latest/grid-licensing-user-"
 "guide/index.html>`_."
 msgstr ""
+"Der Kunde ist für den Erwerb ausreichender NVIDIA-Berechtigungen "
+"und die Einhaltung der NVIDIA-Lizenzbedingungen verantwortlich. Konfigurieren Sie eine Cloud License "
+"Service (CLS)- oder Delegated License Service (DLS)-Instanz im NVIDIA "
+"License System, generieren Sie ein Client Configuration Token und stellen Sie das "
+"Token in jeder Gast-VM gemäß dem NVIDIA `Client Licensing User"
+" Guide <https://docs.nvidia.com/vgpu/latest/grid-licensing-user-"
+"guide/index.html>`_ bereit."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:159
 msgid ""
@@ -579,10 +741,18 @@ msgid ""
 "directory. Restart the NVIDIA licensing service as directed by NVIDIA, "
 "then verify license acquisition in the guest."
 msgstr ""
+"Für aktuelle NVIDIA-Releases benötigen lizenzierte Clients den NVIDIA-Gasttreiber, "
+"ein gültiges Token und Netzwerkzugriff auf die CLS- oder DLS-Dienstinstanz. "
+"NVIDIA dokumentiert die TCP-Ports 443 und 80 für die aktuelle CLS/DLS-"
+"Clientkommunikation. Unter Linux konfigurieren Sie ``FeatureType=1`` für NVIDIA "
+"vGPU und legen das Token unter ``/etc/nvidia/ClientConfigToken`` ab; unter "
+"Windows legen Sie es im NVIDIA vGPU Licensing ClientConfigToken-"
+"Verzeichnis ab. Starten Sie den NVIDIA-Lizenzierungsdienst wie von NVIDIA angewiesen neu "
+"und überprüfen Sie dann den Lizenzerwerb im Gast."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:161
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:163
 msgid ""
@@ -591,16 +761,22 @@ msgid ""
 "preparation or provisioning automation without placing the token in "
 "public scripts, logs, or broadly shared images."
 msgstr ""
+"Morpheus speichert das NVIDIA-Client-Token nicht und zeigt keinen NVIDIA-Lizenz-"
+"Checkout-Status an. Automatisieren Sie die Token-Bereitstellung als Teil der sicheren Image-"
+"Vorbereitung oder Provisionierungsautomatisierung, ohne das Token in "
+"öffentlichen Skripten, Protokollen oder breit geteilten Images abzulegen."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:166
 msgid "Lifecycle and Placement Constraints"
-msgstr ""
+msgstr "Lebenszyklus- und Platzierungsbeschränkungen"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:168
 msgid ""
 "A vGPU VF is tied to its physical GPU and Host. Morpheus 9.1 does not "
 "provide vGPU live migration or automatic cross-Host VF remapping."
 msgstr ""
+"Eine vGPU VF ist an ihre physische GPU und ihren Host gebunden. Morpheus 9.1 bietet keine "
+"vGPU-Live-Migration oder automatische hostübergreifende VF-Neuzuordnung."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:169
 msgid ""
@@ -608,6 +784,9 @@ msgid ""
 "migration or automatic evacuation. Remove the assignment or provide an "
 "approved cold-migration procedure before Host maintenance."
 msgstr ""
+"Eine VM mit einem zugewiesenen GPU-Gerät ist nicht für normale HVM-Live-"
+"Migration oder automatische Evakuierung geeignet. Entfernen Sie die Zuweisung oder stellen Sie ein "
+"genehmigtes Cold-Migration-Verfahren vor der Host-Wartung bereit."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:170
 msgid ""
@@ -615,6 +794,9 @@ msgid ""
 "Segment Type destroyed. Unassign it from the VM before destroying the "
 "Segment Type."
 msgstr ""
+"Bei einer programmierten VF, die einer VM zugewiesen oder für sie reserviert ist, kann der "
+"Segment Type nicht zerstört werden. Heben Sie die Zuweisung von der VM auf, bevor Sie den "
+"Segment Type zerstören."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:171
 msgid ""
@@ -623,12 +805,18 @@ msgid ""
 "VFs first. You do not need to destroy every programmed Segment Type to "
 "change modes or disable segmentation."
 msgstr ""
+"Die Segmentierung kann nicht deaktiviert und der homogene/heterogene Modus "
+"nicht gewechselt werden, solange eine untergeordnete VF einer VM zugewiesen ist. Heben Sie zuerst "
+"die Zuweisung aller VFs auf. Sie müssen nicht jeden programmierten Segment Type zerstören, um "
+"den Modus zu ändern oder die Segmentierung zu deaktivieren."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:172
 msgid ""
 "Whole-GPU passthrough is unavailable while segmentation is enabled on the"
 " physical GPU."
 msgstr ""
+"Whole-GPU-Passthrough ist nicht verfügbar, solange die Segmentierung auf der "
+"physischen GPU aktiviert ist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:173
 msgid ""
@@ -636,16 +824,21 @@ msgid ""
 "devices. Keep spare matching VFs on other Hosts for planned maintenance, "
 "but do not assume automatic failover will reattach them."
 msgstr ""
+"Die Serviceplan-Kapazität basiert auf aktuell entdeckten zuweisbaren "
+"Geräten. Halten Sie passende Ersatz-VFs auf anderen Hosts für geplante Wartung bereit, "
+"gehen Sie aber nicht davon aus, dass ein automatisches Failover sie neu zuweist."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:174
 msgid ""
 "NVIDIA MIG/mdev slicing and non-NVIDIA GPU slicing are not supported by "
 "this Morpheus 9.1 workflow."
 msgstr ""
+"NVIDIA MIG/mdev-Slicing und Nicht-NVIDIA-GPU-Slicing werden von diesem "
+"Morpheus 9.1-Workflow nicht unterstützt."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:177
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Fehlerbehebung"
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:179
 msgid ""
@@ -653,6 +846,9 @@ msgid ""
 "capable Morpheus device type, remains attached to the Host driver, and "
 "the user has Full Server Devices permission."
 msgstr ""
+"**Keine Segmentierungsaktionen:** Bestätigen Sie, dass die GPU einem segmentierungsfähigen "
+"Morpheus-Gerätetyp zugeordnet ist, am Host-Treiber angeschlossen bleibt und "
+"der Benutzer die Berechtigung Full Server Devices hat."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:180
 msgid ""
@@ -660,6 +856,9 @@ msgid ""
 " the NVIDIA vGPU Manager services, and Host driver logs, then refresh "
 "Host devices."
 msgstr ""
+"**Keine Virtual Functions nach Aktivierung der Segmentierung:** Überprüfen Sie SR-IOV, ARI, "
+"die NVIDIA vGPU Manager-Dienste und Host-Treiber-Protokolle und aktualisieren Sie dann die "
+"Host-Geräte."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:181
 msgid ""
@@ -667,12 +866,17 @@ msgid ""
 " types for the physical GPU, current mode, and remaining framebuffer. A "
 "seeded profile is not necessarily available on every driver release."
 msgstr ""
+"**Keine erstellbaren Segment Types:** Bestätigen Sie, dass der Treiber erstellbare vGPU-"
+"Typen für die physische GPU, den aktuellen Modus und den verbleibenden Framebuffer meldet. Ein "
+"vorinstalliertes Profil ist nicht unbedingt in jedem Treiber-Release verfügbar."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:182
 msgid ""
 "**Provisioning reports insufficient GPUs:** Pre-create enough VFs with "
 "the exact Segment Type selected by the Service Plan on eligible Hosts."
 msgstr ""
+"**Provisionierung meldet unzureichende GPUs:** Erstellen Sie genügend VFs mit "
+"dem exakten Segment Type, der vom Serviceplan ausgewählt wurde, auf geeigneten Hosts vorab."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:183
 msgid ""
@@ -680,6 +884,9 @@ msgid ""
 "guest driver, confirm the VF is visible, and inspect ``nvidia-smi`` and "
 "guest driver logs."
 msgstr ""
+"**VM startet ohne nutzbare NVIDIA-Beschleunigung:** Installieren Sie einen kompatiblen "
+"Gasttreiber, bestätigen Sie, dass die VF sichtbar ist, und prüfen Sie ``nvidia-smi`` und "
+"Gasttreiber-Protokolle."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:184
 msgid ""
@@ -687,6 +894,9 @@ msgid ""
 "correct NVIDIA license from CLS or DLS. NVIDIA degrades licensed features"
 " when a software-enforced license is not acquired."
 msgstr ""
+"**Gast-Performance ist beeinträchtigt:** Bestätigen Sie, dass die VM die "
+"korrekte NVIDIA-Lizenz von CLS oder DLS erworben hat. NVIDIA schränkt lizenzierte Funktionen "
+"ein, wenn keine softwareerzwungene Lizenz erworben wird."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:185
 msgid ""
@@ -694,6 +904,9 @@ msgid ""
 "VFs from their VMs. You do not need to destroy every Segment Type first —"
 " only VM assignments block the operation."
 msgstr ""
+"**Moduswechsel oder Deaktivierung der Segmentierung ist blockiert:** Heben Sie die Zuweisung aller "
+"untergeordneten VFs von ihren VMs auf. Sie müssen nicht zuerst jeden Segment Type zerstören — "
+"nur VM-Zuweisungen blockieren den Vorgang."
 
 #: ../../infrastructure/clusters/hvm/nvidia_vgpu.rst:187
 msgid ""
@@ -701,4 +914,6 @@ msgid ""
 "the NVIDIA documentation for the exact installed vGPU software release "
 "rather than the unversioned latest behavior alone."
 msgstr ""
-
+"Verwenden Sie für Treiber-, Profil-, Gast-OS-, Lizenzierungs- und Known-Issue-Details "
+"die NVIDIA-Dokumentation für das exakt installierte vGPU-Software-Release "
+"anstatt nur das unversionierte neueste Verhalten."

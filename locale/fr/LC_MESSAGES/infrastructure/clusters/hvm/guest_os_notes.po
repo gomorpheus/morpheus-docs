@@ -22,13 +22,16 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:2
 msgid "Guest Operating System Notes"
-msgstr ""
+msgstr "Notes sur les systèmes d'exploitation invités"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:4
 msgid ""
 "This page covers OS-specific considerations, recommendations, and "
 "behaviors when running virtual machines on HVM clusters."
 msgstr ""
+"Cette page couvre les considérations, recommandations et comportements "
+"spécifiques aux systèmes d'exploitation lors de l'exécution de machines "
+"virtuelles sur des Clusters HVM."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:6
 msgid ""
@@ -37,15 +40,19 @@ msgid ""
 ":doc:`vm_advanced_options` for field availability and reconfiguration "
 "behavior."
 msgstr ""
+"Les contrôles HVM référencés sur cette page sont sélectionnés depuis "
+"**Advanced Options** à l'étape de configuration lors du provisionnement. "
+"Voir :doc:`vm_advanced_options` pour la disponibilité des champs et le "
+"comportement de reconfiguration."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:9
 msgid "Windows Guests"
-msgstr ""
+msgstr "Invités Windows"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:12
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:145
 msgid "Cores Per Socket"
-msgstr ""
+msgstr "Cores Per Socket"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:14
 msgid ""
@@ -55,6 +62,12 @@ msgid ""
 "(rather than multiple single-core sockets), set **Cores Per Socket** "
 "equal to the total vCPU count during provisioning."
 msgstr ""
+"Windows 10 et Windows 11 n'affichent qu'un seul socket dans le Gestionnaire "
+"des tâches, quelle que soit la topologie CPU réelle. Si votre VM Windows "
+"possède plusieurs vCPU et que vous souhaitez que l'invité les voie comme "
+"des cœurs au sein d'un seul socket (plutôt que plusieurs sockets "
+"monocœur), définissez **Cores Per Socket** égal au nombre total de vCPU "
+"lors du provisionnement."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:16
 msgid ""
@@ -63,12 +76,16 @@ msgid ""
 "(1), Windows sees 8 sockets with 1 core each, which may confuse certain "
 "applications and licensing models."
 msgstr ""
+"Par exemple, une VM avec 8 vCPU et Cores Per Socket défini à 8 se "
+"présentera comme 1 socket avec 8 cœurs. Si Cores Per Socket est laissé "
+"à la valeur par défaut (1), Windows voit 8 sockets avec 1 cœur chacun, "
+"ce qui peut perturber certaines applications et modèles de licence."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:18
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:114
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:196
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:18
 msgid ""
@@ -76,11 +93,15 @@ msgid ""
 " display, but setting Cores Per Socket appropriately is still recommended"
 " for licensing clarity (many Windows Server licenses are per-socket)."
 msgstr ""
+"Les éditions Windows Server sont moins affectées car elles prennent en "
+"charge l'affichage multi-socket, mais définir Cores Per Socket de manière "
+"appropriée est toujours recommandé pour la clarté des licences (de "
+"nombreuses licences Windows Server sont par socket)."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:21
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:138
 msgid "VirtIO Drivers"
-msgstr ""
+msgstr "Pilotes VirtIO"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:23
 msgid ""
@@ -88,52 +109,66 @@ msgid ""
 "performance, VirtIO drivers must be installed during the initial Windows "
 "setup:"
 msgstr ""
+"Windows n'inclut pas nativement les pilotes VirtIO. Pour obtenir des "
+"performances d'E/S optimales, les pilotes VirtIO doivent être installés "
+"lors de la configuration initiale de Windows :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:25
 msgid ""
 "When provisioning a Windows VM from an ISO, enable **Attach VirtIO "
 "Drivers** in Advanced Options"
 msgstr ""
+"Lors du provisionnement d'une VM Windows à partir d'un ISO, activez "
+"**Attach VirtIO Drivers** dans Advanced Options"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:26
 msgid "This mounts the VirtIO driver ISO as a secondary CD-ROM"
-msgstr ""
+msgstr "Cela monte l'ISO des pilotes VirtIO en tant que CD-ROM secondaire"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:27
 msgid ""
 "During the Windows \"Where do you want to install Windows?\" step, click "
 "**Load Driver**"
 msgstr ""
+"Lors de l'étape Windows « Where do you want to install Windows? », "
+"cliquez sur **Load Driver**"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:28
 msgid ""
 "Browse to the mounted VirtIO ISO and select the appropriate driver for "
 "your Windows version (e.g., ``viostor`` for the storage controller)"
 msgstr ""
+"Naviguez vers l'ISO VirtIO monté et sélectionnez le pilote approprié "
+"pour votre version de Windows (par ex., ``viostor`` pour le contrôleur "
+"de stockage)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:29
 msgid "Complete the Windows installation"
-msgstr ""
+msgstr "Terminez l'installation de Windows"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:30
 msgid ""
 "After Windows is installed and you are logged in, navigate to the VirtIO "
 "ISO drive in Windows Explorer"
 msgstr ""
+"Une fois Windows installé et connecté, naviguez vers le lecteur ISO "
+"VirtIO dans l'Explorateur Windows"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:31
 msgid "Right-click ``virtio-win-guest-tools`` and select **Install**"
-msgstr ""
+msgstr "Faites un clic droit sur ``virtio-win-guest-tools`` et sélectionnez **Install**"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:32
 msgid ""
 "Step through the installer — this installs all remaining VirtIO drivers "
 "(network, balloon, serial) and the QEMU Guest Agent"
 msgstr ""
+"Suivez les étapes de l'installeur — cela installe tous les pilotes VirtIO "
+"restants (réseau, balloon, série) et le QEMU Guest Agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:34
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:34
 msgid ""
@@ -142,16 +177,22 @@ msgid ""
 "agent communication without network access. Always run this installer "
 "after the OS is set up."
 msgstr ""
+"Le QEMU Guest Agent installé par ``virtio-win-guest-tools`` est requis "
+"pour la personnalisation de l'invité (Sysprep), l'arrêt gracieux et la "
+"communication de l'agent |morpheus| sans accès réseau. Exécutez toujours "
+"cet installeur après la configuration du système d'exploitation."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:37
 msgid "Hardware Compatibility"
-msgstr ""
+msgstr "Compatibilité matérielle"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:39
 msgid ""
 "**Modern (Q35)** — Use for Windows 8/Server 2012 and later. Supports "
 "PCIe, VirtIO, and modern features."
 msgstr ""
+"**Modern (Q35)** — À utiliser pour Windows 8/Server 2012 et versions "
+"ultérieures. Prend en charge PCIe, VirtIO et les fonctionnalités modernes."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:40
 msgid ""
@@ -159,10 +200,13 @@ msgid ""
 "guests that cannot load VirtIO drivers. This provides emulated IDE "
 "storage and legacy PCI bus."
 msgstr ""
+"**Legacy (i440fx)** — À utiliser pour Windows XP, Windows Server 2003 ou "
+"d'autres invités ne pouvant pas charger les pilotes VirtIO. Cela fournit "
+"un stockage IDE émulé et un bus PCI hérité."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:43
 msgid "TPM and Secure Boot"
-msgstr ""
+msgstr "TPM et Secure Boot"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:45
 msgid ""
@@ -170,16 +214,21 @@ msgid ""
 " **Secure Boot** (which also requires **UEFI**) in Advanced Options when "
 "provisioning Windows 11 VMs."
 msgstr ""
+"Windows 11 nécessite à la fois TPM 2.0 et Secure Boot. Activez **TPM** et "
+"**Secure Boot** (qui nécessite également **UEFI**) dans Advanced Options "
+"lors du provisionnement des VM Windows 11."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:47
 msgid ""
 "Windows 10 does not require TPM or Secure Boot but supports both for "
 "enhanced security features like BitLocker."
 msgstr ""
+"Windows 10 ne nécessite ni TPM ni Secure Boot mais prend en charge les "
+"deux pour des fonctionnalités de sécurité améliorées comme BitLocker."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:50
 msgid "Guest Customization (Sysprep)"
-msgstr ""
+msgstr "Personnalisation de l'invité (Sysprep)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:52
 msgid ""
@@ -187,28 +236,38 @@ msgid ""
 "runs Sysprep via the QEMU Guest Agent to generalize the image (new SID, "
 "hostname, network identity). This requires:"
 msgstr ""
+"Lors du clonage d'une VM Windows ou du provisionnement à partir d'un "
+"modèle, |morpheus| exécute Sysprep via le QEMU Guest Agent pour "
+"généraliser l'image (nouveau SID, nom d'hôte, identité réseau). Cela "
+"nécessite :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:54
 msgid ""
 "The VirtIO drivers and QEMU Guest Agent to be installed in the template "
 "(``virtioSupported`` must be true)"
 msgstr ""
+"Les pilotes VirtIO et le QEMU Guest Agent doivent être installés dans le "
+"modèle (``virtioSupported`` doit être true)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:55
 msgid ""
 "The template to have been prepared with ``sysprep /generalize`` (or have "
 "the Sysprep utility available)"
 msgstr ""
+"Le modèle doit avoir été préparé avec ``sysprep /generalize`` (ou "
+"l'utilitaire Sysprep doit être disponible)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:57
 msgid ""
 "If the QEMU Guest Agent is not available, guest customization will be "
 "skipped and the VM may have identity conflicts."
 msgstr ""
+"Si le QEMU Guest Agent n'est pas disponible, la personnalisation de "
+"l'invité sera ignorée et la VM peut avoir des conflits d'identité."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:60
 msgid "Hostname Length"
-msgstr ""
+msgstr "Longueur du nom d'hôte"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:62
 msgid ""
@@ -216,36 +275,47 @@ msgid ""
 "NetBIOS limit). If your naming policy generates longer names, be aware "
 "that the Windows hostname will differ from the |morpheus| display name."
 msgstr ""
+"Les noms d'hôte Windows sont automatiquement tronqués à **15 caractères** "
+"(la limite NetBIOS). Si votre politique de nommage génère des noms plus "
+"longs, sachez que le nom d'hôte Windows différera du nom d'affichage "
+"|morpheus|."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:65
 msgid "Agent Communication"
-msgstr ""
+msgstr "Communication de l'agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:67
 msgid "|morpheus| communicates with Windows VMs using:"
-msgstr ""
+msgstr "|morpheus| communique avec les VM Windows en utilisant :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:69
 msgid ""
 "**QEMU Guest Agent** (preferred) — works without network connectivity, "
 "used for Sysprep, command execution, and file operations"
 msgstr ""
+"**QEMU Guest Agent** (préféré) — fonctionne sans connectivité réseau, "
+"utilisé pour Sysprep, l'exécution de commandes et les opérations sur "
+"les fichiers"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:70
 msgid ""
 "**WinRM** (fallback) — requires network connectivity and WinRM to be "
 "enabled in the guest"
 msgstr ""
+"**WinRM** (solution de repli) — nécessite une connectivité réseau et "
+"que WinRM soit activé dans l'invité"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:72
 msgid ""
 "Ensure WinRM is configured with ``winrm quickconfig`` and set to "
 "automatic startup in your Windows templates."
 msgstr ""
+"Assurez-vous que WinRM est configuré avec ``winrm quickconfig`` et défini "
+"en démarrage automatique dans vos modèles Windows."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:75
 msgid "Diagnosing Inter-Host Network Throughput"
-msgstr ""
+msgstr "Diagnostic du débit réseau inter-Hôtes"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:77
 msgid ""
@@ -254,16 +324,23 @@ msgid ""
 "sizing, host load, Virtual Switch and bond configuration, MTU, and every "
 "physical link in the path."
 msgstr ""
+"N'utilisez pas une vitesse nominale de NIC de 10 Gb comme garantie de "
+"débit pour une VM Windows. Les résultats de bout en bout dépendent du "
+"pilote invité et du CPU, du dimensionnement de la VM, de la charge de "
+"l'Hôte, de la configuration du Virtual Switch et du bond, du MTU et de "
+"chaque liaison physique dans le chemin."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:79
 msgid "Before changing Windows settings:"
-msgstr ""
+msgstr "Avant de modifier les paramètres Windows :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:81
 msgid ""
 "Confirm the VirtIO network driver is installed and current for the "
 "supported guest image."
 msgstr ""
+"Confirmez que le pilote réseau VirtIO est installé et à jour pour "
+"l'image invité prise en charge."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:82
 msgid ""
@@ -271,30 +348,44 @@ msgid ""
 "streams; record latency, retransmits, guest CPU, and host CPU during the "
 "test."
 msgstr ""
+"Testez dans les deux directions avec un outil de débit dédié et plusieurs "
+"flux ; enregistrez la latence, les retransmissions, le CPU invité et le "
+"CPU de l'Hôte pendant le test."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:83
 msgid ""
 "Compare same-host and different-host VM results to isolate the "
 "virtual/guest path from the physical uplinks."
 msgstr ""
+"Comparez les résultats des VM sur le même Hôte et sur des Hôtes "
+"différents pour isoler le chemin virtuel/invité des liaisons montantes "
+"physiques."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:84
 msgid ""
 "Verify negotiated physical link speed, bond state, switch counters, "
 "VLANs, and end-to-end MTU. Resolve drops, errors, or MTU mismatch first."
 msgstr ""
+"Vérifiez la vitesse de liaison physique négociée, l'état du bond, les "
+"compteurs du switch, les VLAN et le MTU de bout en bout. Résolvez d'abord "
+"les pertes, erreurs ou incohérences de MTU."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:85
 msgid ""
 "Record the Windows version, VirtIO driver version, HVM release, VM "
 "vCPU/memory, test command, and topology so results are repeatable."
 msgstr ""
+"Enregistrez la version de Windows, la version du pilote VirtIO, la version "
+"HVM, les vCPU/mémoire de la VM, la commande de test et la topologie afin "
+"que les résultats soient reproductibles."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:87
 msgid ""
 "As a bounded diagnostic, an administrator can inspect RSS and TCP auto-"
 "tuning from an elevated PowerShell session:"
 msgstr ""
+"En tant que diagnostic limité, un administrateur peut inspecter le RSS et "
+"l'auto-réglage TCP depuis une session PowerShell élevée :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:89
 msgid ""
@@ -302,6 +393,9 @@ msgid ""
 "Get-NetAdapterAdvancedProperty -Name \"<adapter>\"\n"
 "netsh int tcp show global"
 msgstr ""
+"Get-NetAdapterRss\n"
+"Get-NetAdapterAdvancedProperty -Name \"<adapter>\"\n"
+"netsh int tcp show global"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:95
 msgid ""
@@ -311,6 +405,11 @@ msgid ""
 "NetAdapterRss -Name \"<adapter>\"`` if throughput, CPU use, or stability "
 "regresses."
 msgstr ""
+"Si le RSS est désactivé et que le pilote VirtIO installé le prend en "
+"charge, testez l'activation du RSS sur l'adaptateur spécifique avec "
+"``Enable-NetAdapterRss -Name \"<adapter>\"`` et répétez le même benchmark. "
+"Revenez en arrière avec ``Disable-NetAdapterRss -Name \"<adapter>\"`` si "
+"le débit, l'utilisation CPU ou la stabilité régresse."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:97
 msgid ""
@@ -320,14 +419,21 @@ msgid ""
 "measured workload under Microsoft and HPE Support direction, with the "
 "original adapter and registry values recorded for rollback."
 msgstr ""
+"Ne désactivez pas le checksum ou le large-send offload, et n'ajoutez pas "
+"les valeurs de registre ``MaxUserPort`` et ``TcpTimedWaitDelay`` comme "
+"optimisation HVM générale. Ces modifications affectent l'ensemble du "
+"réseau de l'invité et ne doivent être utilisées que pour une charge de "
+"travail mesurée sous la direction du support Microsoft et HPE, avec les "
+"valeurs originales de l'adaptateur et du registre enregistrées pour un "
+"retour en arrière."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:100
 msgid "Linux Guests"
-msgstr ""
+msgstr "Invités Linux"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:103
 msgid "Cloud-Init"
-msgstr ""
+msgstr "Cloud-Init"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:105
 msgid ""
@@ -335,36 +441,42 @@ msgid ""
 "|morpheus| generates cloud-init configuration (user data, meta data, and "
 "network data) and delivers it via an ISO mounted to the VM at boot."
 msgstr ""
+"Les VM Linux utilisent **cloud-init** par défaut pour la personnalisation "
+"de l'invité. |morpheus| génère la configuration cloud-init (user data, "
+"meta data et network data) et la fournit via un ISO monté sur la VM au "
+"démarrage."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:107
 msgid "Cloud-init handles:"
-msgstr ""
+msgstr "Cloud-init gère :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:109
 msgid "Hostname and network configuration"
-msgstr ""
+msgstr "Configuration du nom d'hôte et du réseau"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:110
 msgid "SSH key injection"
-msgstr ""
+msgstr "Injection de clés SSH"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:111
 msgid "User account creation"
-msgstr ""
+msgstr "Création de comptes utilisateur"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:112
 msgid "Post-provisioning scripts"
-msgstr ""
+msgstr "Scripts de post-provisionnement"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:114
 msgid ""
 "Ensure your Linux templates have cloud-init installed and configured to "
 "look for the ``NoCloud`` datasource."
 msgstr ""
+"Assurez-vous que vos modèles Linux ont cloud-init installé et configuré "
+"pour rechercher la source de données ``NoCloud``."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:117
 msgid "QEMU Guest Agent"
-msgstr ""
+msgstr "QEMU Guest Agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:119
 msgid ""
@@ -372,34 +484,41 @@ msgid ""
 "freeze for snapshots, live IP reporting), install the QEMU Guest Agent in"
 " your Linux templates:"
 msgstr ""
+"Pour des capacités de gestion améliorées (arrêt gracieux, gel du système "
+"de fichiers pour les Instantanés, rapport d'adresses IP en direct), "
+"installez le QEMU Guest Agent dans vos modèles Linux :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:121
 msgid "**Ubuntu/Debian:** ``apt install qemu-guest-agent``"
-msgstr ""
+msgstr "**Ubuntu/Debian :** ``apt install qemu-guest-agent``"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:122
 msgid "**RHEL/CentOS:** ``yum install qemu-guest-agent``"
-msgstr ""
+msgstr "**RHEL/CentOS :** ``yum install qemu-guest-agent``"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:123
 msgid "**Enable and start:** ``systemctl enable --now qemu-guest-agent``"
-msgstr ""
+msgstr "**Activer et démarrer :** ``systemctl enable --now qemu-guest-agent``"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:125
 msgid ""
 "The QEMU Guest Agent enables |morpheus| to communicate with the VM even "
 "when network-based access (SSH) is unavailable."
 msgstr ""
+"Le QEMU Guest Agent permet à |morpheus| de communiquer avec la VM même "
+"lorsque l'accès réseau (SSH) n'est pas disponible."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:128
 msgid "Clock and Time Synchronization"
-msgstr ""
+msgstr "Horloge et synchronisation temporelle"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:130
 msgid ""
 "HVM 9.1 configures the libvirt domain XML so that guest time stays "
 "synchronized with the Host:"
 msgstr ""
+"HVM 9.1 configure le XML du domaine libvirt afin que l'heure de l'invité "
+"reste synchronisée avec l'Hôte :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:132
 msgid ""
@@ -408,6 +527,10 @@ msgid ""
 "(live migration, snapshot, host suspend) without requiring manual NTP "
 "correction."
 msgstr ""
+"**Les invités Linux** utilisent ``kvmclock`` comme source de temps avec "
+"le RTC défini en mode **catchup**. Cela garantit que l'horloge de "
+"l'invité se rétablit après une pause (migration à chaud, Instantané, "
+"suspension de l'Hôte) sans nécessiter de correction NTP manuelle."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:133
 msgid ""
@@ -415,6 +538,9 @@ msgid ""
 "UTC, matching the Windows default expectation. The hypervisor clock is "
 "set to ``catchup`` mode as well."
 msgstr ""
+"**Les invités Windows** utilisent ``localtime`` pour le décalage d'horloge "
+"plutôt qu'UTC, correspondant à l'attente par défaut de Windows. L'horloge "
+"de l'hyperviseur est également définie en mode ``catchup``."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:135
 msgid ""
@@ -424,6 +550,12 @@ msgid ""
 "but the hypervisor-level catchup reduces drift during VM lifecycle "
 "events."
 msgstr ""
+"Ces paramètres sont appliqués automatiquement aux nouvelles VM et aux VM "
+"existantes lors de leur prochain redémarrage. Aucune configuration "
+"utilisateur n'est requise. Le NTP au niveau de l'invité ou le service "
+"de temps Windows reste recommandé pour les charges de travail de longue "
+"durée, mais le rattrapage au niveau de l'hyperviseur réduit la dérive "
+"lors des événements du cycle de vie des VM."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:140
 msgid ""
@@ -432,12 +564,19 @@ msgid ""
 "setting should be left at **Modern (Q35)** for all supported Linux "
 "distributions."
 msgstr ""
+"Les noyaux Linux modernes (2.6.25+) incluent nativement les pilotes "
+"VirtIO. Aucune installation de pilote supplémentaire n'est nécessaire. "
+"Le paramètre **Hardware Compatibility** doit être laissé à **Modern "
+"(Q35)** pour toutes les distributions Linux prises en charge."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:142
 msgid ""
 "For very old Linux distributions (kernel < 2.6.25) that lack VirtIO "
 "support, select **Legacy (i440fx)** hardware compatibility."
 msgstr ""
+"Pour les très anciennes distributions Linux (noyau < 2.6.25) qui ne "
+"prennent pas en charge VirtIO, sélectionnez la compatibilité matérielle "
+"**Legacy (i440fx)**."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:147
 msgid ""
@@ -447,42 +586,48 @@ msgid ""
 " cores-per-NUMA-node can improve memory locality. See :doc:`vm_compute` "
 "for vNUMA configuration."
 msgstr ""
+"Linux identifie et utilise correctement les topologies multi-socket, donc "
+"la configuration de Cores Per Socket est moins critique que pour Windows. "
+"Cependant, pour les charges de travail sensibles au NUMA, aligner Cores "
+"Per Socket avec les cœurs physiques par nœud NUMA de l'Hôte peut "
+"améliorer la localité mémoire. Voir :doc:`vm_compute` pour la "
+"configuration vNUMA."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:150
 msgid "Template Preparation"
-msgstr ""
+msgstr "Préparation du modèle"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:152
 msgid "Before converting a Linux VM to a template:"
-msgstr ""
+msgstr "Avant de convertir une VM Linux en modèle :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:154
 msgid "Clear cloud-init state: ``sudo cloud-init clean --logs --machine-id``"
-msgstr ""
+msgstr "Effacer l'état cloud-init : ``sudo cloud-init clean --logs --machine-id``"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:155
 msgid "Remove SSH host keys: ``sudo rm -f /etc/ssh/ssh_host_*``"
-msgstr ""
+msgstr "Supprimer les clés SSH de l'hôte : ``sudo rm -f /etc/ssh/ssh_host_*``"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:156
 msgid "Clear machine ID: ``sudo truncate -s 0 /etc/machine-id``"
-msgstr ""
+msgstr "Effacer l'identifiant machine : ``sudo truncate -s 0 /etc/machine-id``"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:157
 msgid "Remove persistent network rules if present"
-msgstr ""
+msgstr "Supprimer les règles réseau persistantes si elles sont présentes"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:158
 msgid "Power off the VM"
-msgstr ""
+msgstr "Éteindre la VM"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:161
 msgid "General Considerations"
-msgstr ""
+msgstr "Considérations générales"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:164
 msgid "Power Operations & Shutdown Behavior"
-msgstr ""
+msgstr "Opérations d'alimentation et comportement d'arrêt"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:166
 msgid ""
@@ -490,18 +635,27 @@ msgid ""
 " Instance or VM detail page, select :guilabel:`Stop Server` or "
 ":guilabel:`Stop`, then choose the shutdown type:"
 msgstr ""
+"Les VM HVM/KVM prennent en charge des opérations d'arrêt gracieux et "
+"forcé séparées. Depuis une page de détail d'Instance ou de VM, "
+"sélectionnez :guilabel:`Stop Server` ou :guilabel:`Stop`, puis choisissez "
+"le type d'arrêt :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:168
 msgid ""
 "**Graceful Shutdown** — The default. Sends an ACPI power-button signal "
 "and waits up to five minutes for the guest to report that it is shut off."
 msgstr ""
+"**Graceful Shutdown** — Par défaut. Envoie un signal ACPI de bouton "
+"d'alimentation et attend jusqu'à cinq minutes que l'invité signale "
+"qu'il est éteint."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:169
 msgid ""
 "**Force Stop (immediate power-off)** — Immediately powers off the VM "
 "without notifying the guest operating system."
 msgstr ""
+"**Force Stop (immediate power-off)** — Éteint immédiatement la VM sans "
+"notifier le système d'exploitation invité."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:171
 msgid ""
@@ -510,10 +664,15 @@ msgid ""
 " to a forced stop. Resolve the guest shutdown issue or submit a separate "
 ":guilabel:`Force Stop (immediate power-off)` request."
 msgstr ""
+"Si un arrêt gracieux atteint le délai d'expiration de cinq minutes, "
+"|morpheus| laisse la VM en cours d'exécution et signale le délai dépassé. "
+"Il ne passe pas automatiquement à un arrêt forcé. Résolvez le problème "
+"d'arrêt de l'invité ou soumettez une demande "
+":guilabel:`Force Stop (immediate power-off)` séparée."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:173
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:175
 msgid ""
@@ -523,6 +682,12 @@ msgid ""
 " shutdown cannot be completed, and follow the workload's recovery and "
 "consistency procedures afterward."
 msgstr ""
+"Force Stop est équivalent à couper l'alimentation d'un Serveur physique. "
+"L'invité ne peut pas vider les écritures du système de fichiers, arrêter "
+"les applications ou terminer les transactions de base de données. "
+"Utilisez-le uniquement lorsque la VM ne répond plus ou qu'un arrêt propre "
+"ne peut pas être effectué, et suivez les procédures de récupération et de "
+"cohérence de la charge de travail par la suite."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:177
 msgid ""
@@ -532,22 +697,28 @@ msgid ""
 "downtime. The selected shutdown type is recorded in activity and audit "
 "history; forced stops are identified as force operations."
 msgstr ""
+"Le même sélecteur de type d'arrêt est utilisé pour une ou plusieurs "
+"Instances ou VM HVM/KVM sélectionnées. L'arrêt gracieux reste sélectionné "
+"par défaut. Les arrêts d'Instance offrent également "
+":guilabel:`Mute Monitoring` pour les temps d'arrêt planifiés. Le type "
+"d'arrêt sélectionné est enregistré dans l'historique d'activité et "
+"d'audit ; les arrêts forcés sont identifiés comme des opérations de force."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:179
 msgid "**How ACPI shutdown works with different guest configurations:**"
-msgstr ""
+msgstr "**Comment l'arrêt ACPI fonctionne avec différentes configurations d'invité :**"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:185
 msgid "Guest Configuration"
-msgstr ""
+msgstr "Configuration de l'invité"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:186
 msgid "Shutdown Behavior"
-msgstr ""
+msgstr "Comportement d'arrêt"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:187
 msgid "QEMU Guest Agent installed"
-msgstr ""
+msgstr "QEMU Guest Agent installé"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:188
 msgid ""
@@ -556,10 +727,15 @@ msgid ""
 "responding to the ACPI power button event. However, the guest agent "
 "enables other operations like filesystem freeze before snapshots."
 msgstr ""
+"Le signal ACPI est envoyé au système d'exploitation invité. Le guest agent "
+"n'est **pas** utilisé pour le signal d'arrêt lui-même — l'arrêt est géré "
+"par le système d'exploitation invité répondant à l'événement du bouton "
+"d'alimentation ACPI. Cependant, le guest agent permet d'autres opérations "
+"comme le gel du système de fichiers avant les Instantanés."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:189
 msgid "QEMU Guest Agent NOT installed"
-msgstr ""
+msgstr "QEMU Guest Agent NON installé"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:190
 msgid ""
@@ -567,20 +743,27 @@ msgid ""
 "modern operating systems do), it will perform a clean shutdown. No "
 "behavioral difference for the stop operation."
 msgstr ""
+"Le même signal ACPI est envoyé. Si le système d'exploitation invité a le "
+"support ACPI activé (tous les systèmes d'exploitation modernes l'ont), "
+"il effectuera un arrêt propre. Aucune différence de comportement pour "
+"l'opération d'arrêt."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:191
 msgid "Guest Agent installed but not responding"
-msgstr ""
+msgstr "Guest Agent installé mais ne répondant pas"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:192
 msgid ""
 "No impact on shutdown. The ACPI power button signal is delivered at the "
 "hypervisor level, independent of the guest agent communication channel."
 msgstr ""
+"Aucun impact sur l'arrêt. Le signal du bouton d'alimentation ACPI est "
+"délivré au niveau de l'hyperviseur, indépendamment du canal de "
+"communication du guest agent."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:193
 msgid "Guest OS ignoring ACPI (rare)"
-msgstr ""
+msgstr "Système d'exploitation invité ignorant l'ACPI (rare)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:194
 msgid ""
@@ -589,6 +772,10 @@ msgid ""
 "explicitly select Force Stop if immediate power-off is operationally "
 "acceptable."
 msgstr ""
+"Le signal ACPI gracieux n'a aucun effet. Après le délai de cinq minutes, "
+"la VM reste en cours d'exécution. Corrigez la configuration ACPI de "
+"l'invité ou sélectionnez explicitement Force Stop si l'extinction "
+"immédiate est opérationnellement acceptable."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:196
 msgid ""
@@ -598,140 +785,155 @@ msgid ""
 " drains, or database flushes, stop the application cleanly before issuing"
 " Stop Server and verify that it completes within the five-minute window."
 msgstr ""
+"L'arrêt gracieux ne dépend pas du QEMU Guest Agent. Les invités Linux et "
+"Windows modernes gèrent normalement le signal ACPI du bouton "
+"d'alimentation de l'hyperviseur directement. Pour les charges de travail "
+"avec de longs scripts d'arrêt, des vidages d'applications ou des "
+"écritures de base de données, arrêtez l'application proprement avant "
+"d'émettre Stop Server et vérifiez qu'elle se termine dans la fenêtre de "
+"cinq minutes."
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:198
 msgid "**When the QEMU Guest Agent matters for power-related operations:**"
-msgstr ""
+msgstr "**Quand le QEMU Guest Agent est important pour les opérations liées à l'alimentation :**"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:200
 msgid ""
 "While the guest agent does not affect the graceful or forced Stop Server "
 "operation itself, it is used for:"
 msgstr ""
+"Bien que le guest agent n'affecte pas l'opération Stop Server gracieuse "
+"ou forcée elle-même, il est utilisé pour :"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:202
 msgid ""
 "**Filesystem freeze/thaw** — Before snapshots, the guest agent freezes "
 "guest filesystems for consistency"
 msgstr ""
+"**Gel/dégel du système de fichiers** — Avant les Instantanés, le guest "
+"agent gèle les systèmes de fichiers de l'invité pour la cohérence"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:203
 msgid ""
 "**Graceful reboot** — The agent can execute a clean reboot command inside"
 " the guest"
 msgstr ""
+"**Redémarrage gracieux** — L'agent peut exécuter une commande de "
+"redémarrage propre à l'intérieur de l'invité"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:204
 msgid ""
 "**Guest OS information** — Reporting IP addresses, OS version, and "
 "hostname back to |morpheus|"
 msgstr ""
+"**Informations sur le système d'exploitation invité** — Rapporte les "
+"adresses IP, la version du système d'exploitation et le nom d'hôte à "
+"|morpheus|"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:210
 msgid "Feature"
-msgstr ""
+msgstr "Fonctionnalité"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:211
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:212
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:213
 msgid "Guest customization method"
-msgstr ""
+msgstr "Méthode de personnalisation de l'invité"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:214
 msgid "Cloud-init (ISO)"
-msgstr ""
+msgstr "Cloud-init (ISO)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:215
 msgid "Sysprep via QEMU Guest Agent"
-msgstr ""
+msgstr "Sysprep via QEMU Guest Agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:216
 msgid "VirtIO drivers"
-msgstr ""
+msgstr "Pilotes VirtIO"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:217
 msgid "Built into kernel"
-msgstr ""
+msgstr "Intégrés au noyau"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:218
 msgid "Must install from VirtIO ISO"
-msgstr ""
+msgstr "Installation requise depuis l'ISO VirtIO"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:219
 msgid "Hostname limit"
-msgstr ""
+msgstr "Limite du nom d'hôte"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:220
 msgid "No practical limit"
-msgstr ""
+msgstr "Aucune limite pratique"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:221
 msgid "15 characters (NetBIOS)"
-msgstr ""
+msgstr "15 caractères (NetBIOS)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:222
 msgid "Agent communication"
-msgstr ""
+msgstr "Communication de l'agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:223
 msgid "SSH or QEMU Guest Agent"
-msgstr ""
+msgstr "SSH ou QEMU Guest Agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:224
 msgid "WinRM or QEMU Guest Agent"
-msgstr ""
+msgstr "WinRM ou QEMU Guest Agent"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:225
 msgid "Cloud-init support"
-msgstr ""
+msgstr "Support cloud-init"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:226
 msgid "Yes (default)"
-msgstr ""
+msgstr "Oui (par défaut)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:227
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:228
 msgid "TPM/Secure Boot"
-msgstr ""
+msgstr "TPM/Secure Boot"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:229
 msgid "Optional"
-msgstr ""
+msgstr "Optionnel"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:230
 msgid "Required for Windows 11"
-msgstr ""
+msgstr "Requis pour Windows 11"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:231
 msgid "Recommended chipset"
-msgstr ""
+msgstr "Chipset recommandé"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:232
 msgid "Modern (Q35)"
-msgstr ""
+msgstr "Modern (Q35)"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:233
 msgid "Modern (Q35) for Win 8+; Legacy (i440fx) for XP/2003"
-msgstr ""
+msgstr "Modern (Q35) pour Win 8+ ; Legacy (i440fx) pour XP/2003"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:234
 msgid "ISO mount bus"
-msgstr ""
+msgstr "Bus de montage ISO"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:235
 msgid "SCSI (when available) or SATA"
-msgstr ""
+msgstr "SCSI (si disponible) ou SATA"
 
 #: ../../infrastructure/clusters/hvm/guest_os_notes.rst:236
 msgid "Always SATA"
-msgstr ""
-
+msgstr "Toujours SATA"

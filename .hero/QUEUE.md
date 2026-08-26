@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-08-26T15:33:32Z · 126 ready specs_
+_Generated: 2026-08-26T16:44:15Z · 128 ready specs_
 
 ## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
 _initiative · delivering · horizon: now_
@@ -204,6 +204,20 @@ Adds the missing appliance socket-consumption reference to the License page.
 → `.hero/planning/features/docs-license-consumption-reference/spec.md`
 
 **Files:** `administration/settings/license.rst`, `../morpheus-ui/morpheus-core/grails-app/services/com/morpheus/ApplianceStatsService.groovy`, `../morpheus-ui/morpheus-core/grails-app/services/com/morpheus/ApplianceLicenseService.groovy`
+
+---
+
+## docs-guest-customization-matrix — "Guest Customization Compatibility Matrix"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/specs/docs-guest-customization-matrix/spec.md)_
+
+---
+
+## docs-scvmm-sysprep-guide — "SCVMM Sysprep and Unattend.xml Guide"
+_feature · planning · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/specs/docs-scvmm-sysprep-guide/spec.md)_
 
 ---
 

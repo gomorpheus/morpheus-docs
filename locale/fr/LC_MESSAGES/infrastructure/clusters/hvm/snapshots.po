@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:2
 msgid "Snapshots"
-msgstr ""
+msgstr "Instantanés"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:4
 msgid ""
@@ -30,32 +30,41 @@ msgid ""
 "backup, recovery, and testing purposes. The snapshot mechanism varies "
 "depending on the underlying storage backend."
 msgstr ""
+"|morpheus| prend en charge les instantanés ponctuels des machines virtuelles HVM "
+"à des fins de sauvegarde, de récupération et de test. Le mécanisme d'instantané varie "
+"en fonction du backend de stockage sous-jacent."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:7
 msgid "Snapshot Consistency Model"
-msgstr ""
+msgstr "Modèle de cohérence des instantanés"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:9
 msgid ""
 "HVM snapshots provide different levels of consistency depending on the "
 "storage backend and whether the QEMU Guest Agent is available:"
 msgstr ""
+"Les instantanés HVM offrent différents niveaux de cohérence selon le "
+"backend de stockage et la disponibilité du QEMU Guest Agent :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:11
 msgid "**Application-consistent snapshots (QEMU Guest Agent connected):**"
-msgstr ""
+msgstr "**Instantanés cohérents au niveau applicatif (QEMU Guest Agent connecté) :**"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:13
 msgid ""
 "When the QEMU Guest Agent is installed and connected, |morpheus| quiesces"
 " the guest filesystem before taking the snapshot:"
 msgstr ""
+"Lorsque le QEMU Guest Agent est installé et connecté, |morpheus| met en veille "
+"le système de fichiers invité avant de prendre l'instantané :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:15
 msgid ""
 "**Linux guests:** A ``sync`` command flushes pending I/O, then "
 "``fsfreeze`` is applied to freeze all filesystems before the snapshot"
 msgstr ""
+"**Invités Linux :** Une commande ``sync`` vide les E/S en attente, puis "
+"``fsfreeze`` est appliqué pour geler tous les systèmes de fichiers avant l'instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:16
 msgid ""
@@ -64,16 +73,22 @@ msgid ""
 " VSS-aware applications (SQL Server, Exchange, Active Directory, etc.) to"
 " flush their buffers and enter a consistent state before the snapshot"
 msgstr ""
+"**Invités Windows :** L'appel ``fsfreeze`` déclenche le **Volume Shadow Copy "
+"Service (VSS)** dans l'invité via le QEMU Guest Agent, qui notifie "
+"les applications compatibles VSS (SQL Server, Exchange, Active Directory, etc.) de "
+"vider leurs tampons et d'entrer dans un état cohérent avant l'instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:18
 msgid ""
 "This provides **application-consistent** snapshots for both Linux and "
 "Windows when the guest agent is available."
 msgstr ""
+"Cela fournit des instantanés **cohérents au niveau applicatif** pour Linux et "
+"Windows lorsque l'agent invité est disponible."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:20
 msgid "**Crash-consistent snapshots (no QEMU Guest Agent):**"
-msgstr ""
+msgstr "**Instantanés cohérents en cas de panne (sans QEMU Guest Agent) :**"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:22
 msgid ""
@@ -81,27 +96,34 @@ msgid ""
 "**crash-consistent** — they capture the disk state at a point in time, "
 "equivalent to an unexpected power loss:"
 msgstr ""
+"Lorsque l'agent invité n'est pas installé ou ne répond pas, les instantanés sont "
+"**cohérents en cas de panne** — ils capturent l'état du disque à un instant donné, "
+"équivalent à une perte d'alimentation inattendue :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:24
 msgid "No filesystem freeze or application quiescing is performed"
-msgstr ""
+msgstr "Aucun gel du système de fichiers ni mise en veille applicative n'est effectué"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:25
 msgid ""
 "Modern journaling filesystems (ext4, XFS, NTFS) recover cleanly from "
 "crash-consistent state"
 msgstr ""
+"Les systèmes de fichiers journalisés modernes (ext4, XFS, NTFS) récupèrent proprement "
+"à partir d'un état cohérent en cas de panne"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:26
 msgid ""
 "Applications with their own write-ahead logs (databases) can also "
 "recover, but uncommitted transactions may be lost"
 msgstr ""
+"Les applications disposant de leurs propres journaux de pré-écriture (bases de données) peuvent également "
+"récupérer, mais les transactions non validées peuvent être perdues"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:28
 #: ../../infrastructure/clusters/hvm/snapshots.rst:134
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:28
 msgid ""
@@ -110,37 +132,43 @@ msgid ""
 "only. For production workloads, ensure the QEMU Guest Agent is installed "
 "and running to achieve application-consistent snapshots."
 msgstr ""
+"|morpheus| enregistre un avertissement lorsqu'un instantané est pris sans que l'agent "
+"invité soit connecté, indiquant que l'instantané sera uniquement cohérent en cas de panne. "
+"Pour les charges de travail de production, assurez-vous que le QEMU Guest Agent est installé "
+"et en cours d'exécution pour obtenir des instantanés cohérents au niveau applicatif."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:30
 msgid ""
 "No memory state is captured in any snapshot mode — reverting a snapshot "
 "requires the VM to be restarted."
 msgstr ""
+"Aucun état mémoire n'est capturé dans aucun mode d'instantané — la restauration d'un instantané "
+"nécessite le redémarrage de la VM."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:33
 msgid "Snapshot Types by Storage Backend"
-msgstr ""
+msgstr "Types d'instantanés par backend de stockage"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:39
 msgid "Storage Backend"
-msgstr ""
+msgstr "Backend de stockage"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:40
 msgid "Snapshot Type"
-msgstr ""
+msgstr "Type d'instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:41
 #: ../../infrastructure/clusters/hvm/snapshots.rst:169
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:42
 msgid "GFS2 / NFS (file-based)"
-msgstr ""
+msgstr "GFS2 / NFS (basé sur fichiers)"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:43
 msgid "External qcow2 overlay"
-msgstr ""
+msgstr "Overlay qcow2 externe"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:44
 msgid ""
@@ -148,26 +176,29 @@ msgid ""
 "snapshot point. The base image remains unchanged. This is the most common"
 " type for HVM clusters."
 msgstr ""
+"Crée un nouveau fichier overlay qcow2 qui capture toutes les écritures après le "
+"point d'instantané. L'image de base reste inchangée. C'est le type le plus courant "
+"pour les clusters HVM."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:45
 msgid "Ceph RBD"
-msgstr ""
+msgstr "Ceph RBD"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:46
 msgid "RBD snapshot"
-msgstr ""
+msgstr "Instantané RBD"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:47
 msgid "Creates a point-in-time snapshot at the Ceph cluster level."
-msgstr ""
+msgstr "Crée un instantané ponctuel au niveau du cluster Ceph."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:48
 msgid "HPE Alletra MP (array-based)"
-msgstr ""
+msgstr "HPE Alletra MP (basé sur baie)"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:49
 msgid "Storage array snapshot"
-msgstr ""
+msgstr "Instantané de baie de stockage"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:50
 msgid ""
@@ -175,28 +206,31 @@ msgid ""
 "hypervisor is not involved. Provides hardware-accelerated, space-"
 "efficient snapshots at the array firmware level."
 msgstr ""
+"L'instantané est créé sur la baie de stockage HPE Alletra via l'API REST. "
+"L'hyperviseur n'est pas impliqué. Fournit des instantanés accélérés par le matériel et "
+"économes en espace au niveau du micrologiciel de la baie."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:53
 msgid "Taking a Snapshot"
-msgstr ""
+msgstr "Prendre un instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:55
 #: ../../infrastructure/clusters/hvm/snapshots.rst:102
 #: ../../infrastructure/clusters/hvm/snapshots.rst:124
 msgid "Navigate to the VM detail page"
-msgstr ""
+msgstr "Accédez à la page de détail de la VM"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:56
 msgid "Click :guilabel:`Actions` > :guilabel:`Create Snapshot`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Actions` > :guilabel:`Create Snapshot`"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:57
 msgid "Enter a name for the snapshot"
-msgstr ""
+msgstr "Saisissez un nom pour l'instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:58
 msgid "Click :guilabel:`Create`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Create`"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:60
 msgid ""
@@ -206,6 +240,10 @@ msgid ""
 ":doc:`/provisioning/instances/managing_instances` for action "
 "availability."
 msgstr ""
+"L'action d'instance est intitulée :guilabel:`Create Snapshot` dans la "
+"navigation actuelle. Elle n'apparaît que pour les dispositions compatibles avec les instantanés et les utilisateurs disposant "
+"de la permission **Snapshots: Full**. Voir "
+":doc:`/provisioning/instances/managing_instances` pour la disponibilité des actions."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:62
 msgid ""
@@ -213,179 +251,201 @@ msgid ""
 "supported by the storage backend). CD-ROM volumes are excluded from "
 "snapshots."
 msgstr ""
+"Pour les VM avec plusieurs disques, tous les disques sont instantanés de manière atomique (lorsque "
+"le backend de stockage le prend en charge). Les volumes CD-ROM sont exclus des "
+"instantanés."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:65
 msgid "How File-Based Snapshots Work (GFS2/NFS)"
-msgstr ""
+msgstr "Fonctionnement des instantanés basés sur fichiers (GFS2/NFS)"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:67
 msgid "When a snapshot is created on a file-based datastore:"
-msgstr ""
+msgstr "Lorsqu'un instantané est créé sur un magasin de données basé sur fichiers :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:69
 msgid "If the QEMU Guest Agent is connected:"
-msgstr ""
+msgstr "Si le QEMU Guest Agent est connecté :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:71
 msgid "**Linux:** A ``sync`` command flushes pending I/O"
-msgstr ""
+msgstr "**Linux :** Une commande ``sync`` vide les E/S en attente"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:72
 msgid ""
 "**Windows:** Sync is skipped (not a Windows command); VSS quiescing is "
 "handled by the ``--quiesce`` flag in the next step"
 msgstr ""
+"**Windows :** La synchronisation est ignorée (ce n'est pas une commande Windows) ; la mise en veille VSS est "
+"gérée par l'option ``--quiesce`` à l'étape suivante"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:73
 msgid ""
 "The snapshot is created with the ``--quiesce`` flag, which triggers "
 "filesystem freeze (and VSS on Windows) via the guest agent"
 msgstr ""
+"L'instantané est créé avec l'option ``--quiesce``, qui déclenche "
+"le gel du système de fichiers (et VSS sous Windows) via l'agent invité"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:75
 msgid "If the QEMU Guest Agent is not connected:"
-msgstr ""
+msgstr "Si le QEMU Guest Agent n'est pas connecté :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:77
 msgid "No pre-snapshot flush or freeze is performed"
-msgstr ""
+msgstr "Aucun vidage ni gel pré-instantané n'est effectué"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:78
 msgid "A warning is logged indicating the snapshot will be crash-consistent only"
-msgstr ""
+msgstr "Un avertissement est enregistré indiquant que l'instantané sera uniquement cohérent en cas de panne"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:79
 msgid "The snapshot proceeds without quiescing"
-msgstr ""
+msgstr "L'instantané se poursuit sans mise en veille"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:81
 msgid ""
 "An external qcow2 overlay is created for each disk using an atomic "
 "operation"
 msgstr ""
+"Un overlay qcow2 externe est créé pour chaque disque à l'aide d'une opération "
+"atomique"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:82
 msgid "The VM continues running — writes go to the new overlay file"
-msgstr ""
+msgstr "La VM continue de fonctionner — les écritures vont dans le nouveau fichier overlay"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:83
 msgid ""
 "The original disk image is preserved as read-only at the point-in-time "
 "state"
 msgstr ""
+"L'image disque d'origine est préservée en lecture seule à l'état ponctuel"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:85
 msgid ""
 "The snapshot file is stored alongside the original disk image on the same"
 " datastore."
 msgstr ""
+"Le fichier d'instantané est stocké à côté de l'image disque d'origine sur le même "
+"magasin de données."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:88
 msgid "How Array-Based Snapshots Work (HPE Alletra)"
-msgstr ""
+msgstr "Fonctionnement des instantanés basés sur baie (HPE Alletra)"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:90
 msgid "When a VM uses storage backed by an HPE Alletra array:"
-msgstr ""
+msgstr "Lorsqu'une VM utilise du stockage soutenu par une baie HPE Alletra :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:92
 msgid ""
 "|morpheus| calls the Alletra REST API to create a snapshot of the volume "
 "set"
 msgstr ""
+"|morpheus| appelle l'API REST Alletra pour créer un instantané du jeu de "
+"volumes"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:93
 msgid ""
 "The snapshot is created as a read-only point-in-time copy at the array "
 "level"
 msgstr ""
+"L'instantané est créé en tant que copie ponctuelle en lecture seule au niveau de la "
+"baie"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:94
 msgid ""
 "No hypervisor-level operation is needed — the VM continues running "
 "uninterrupted"
 msgstr ""
+"Aucune opération au niveau de l'hyperviseur n'est nécessaire — la VM continue de fonctionner "
+"sans interruption"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:95
 msgid "The array handles space efficiency internally using copy-on-write"
-msgstr ""
+msgstr "La baie gère l'efficacité de l'espace en interne via le copy-on-write"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:97
 msgid ""
 "Array-based snapshots are recommended for production workloads due to "
 "their minimal performance impact and hardware-accelerated operation."
 msgstr ""
+"Les instantanés basés sur baie sont recommandés pour les charges de travail de production en raison de "
+"leur impact minimal sur les performances et de leur fonctionnement accéléré par le matériel."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:100
 msgid "Reverting a Snapshot"
-msgstr ""
+msgstr "Restauration d'un instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:103
 #: ../../infrastructure/clusters/hvm/snapshots.rst:125
 msgid "Select the **Snapshots** tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet **Snapshots**"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:104
 msgid "Click :guilabel:`Revert` on the desired snapshot"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Revert` sur l'instantané souhaité"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:106
 msgid "**What happens during revert:**"
-msgstr ""
+msgstr "**Ce qui se passe pendant la restauration :**"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:108
 msgid "The guest filesystem is frozen (if the QEMU Guest Agent is available)"
-msgstr ""
+msgstr "Le système de fichiers invité est gelé (si le QEMU Guest Agent est disponible)"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:109
 msgid "The VM is powered off"
-msgstr ""
+msgstr "La VM est éteinte"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:110
 msgid "The disk is rolled back to the snapshot state:"
-msgstr ""
+msgstr "Le disque est restauré à l'état de l'instantané :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:112
 msgid "**File-based:** The overlay is discarded and the base image becomes active"
-msgstr ""
+msgstr "**Basé sur fichiers :** L'overlay est supprimé et l'image de base redevient active"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:113
 msgid "**RBD:** The volume is rolled back to the snapshot point"
-msgstr ""
+msgstr "**RBD :** Le volume est restauré au point d'instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:114
 msgid "**Alletra:** The array reverts the volume set to the snapshot state"
-msgstr ""
+msgstr "**Alletra :** La baie restaure le jeu de volumes à l'état de l'instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:116
 msgid "The guest filesystem is thawed"
-msgstr ""
+msgstr "Le système de fichiers invité est dégelé"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:117
 msgid "The VM is restarted"
-msgstr ""
+msgstr "La VM est redémarrée"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:119
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:119
 msgid ""
 "Reverting a snapshot discards all changes made since the snapshot was "
 "taken. This operation cannot be undone."
 msgstr ""
+"La restauration d'un instantané supprime toutes les modifications effectuées depuis la prise de "
+"l'instantané. Cette opération ne peut pas être annulée."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:122
 msgid "Deleting a Snapshot"
-msgstr ""
+msgstr "Suppression d'un instantané"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:126
 msgid "Click :guilabel:`Delete` on the snapshot to remove"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Delete` sur l'instantané à supprimer"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:128
 msgid "**What happens during deletion:**"
-msgstr ""
+msgstr "**Ce qui se passe pendant la suppression :**"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:130
 msgid ""
@@ -393,14 +453,17 @@ msgid ""
 "image, then removed. This preserves all changes made since the snapshot "
 "while freeing the snapshot overhead."
 msgstr ""
+"**Basé sur fichiers :** L'overlay est validé (fusionné) dans l'image de base, "
+"puis supprimé. Cela préserve toutes les modifications effectuées depuis l'instantané "
+"tout en libérant la surcharge de l'instantané."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:131
 msgid "**RBD:** The RBD snapshot is deleted."
-msgstr ""
+msgstr "**RBD :** L'instantané RBD est supprimé."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:132
 msgid "**Alletra:** The snapshot set is deleted from the array."
-msgstr ""
+msgstr "**Alletra :** Le jeu d'instantanés est supprimé de la baie."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:134
 msgid ""
@@ -408,10 +471,13 @@ msgid ""
 " merges the overlay into the base image. This is an I/O-intensive "
 "operation and may take time for large disks."
 msgstr ""
+"Pour les instantanés basés sur fichiers, la suppression implique une opération de block-commit qui "
+"fusionne l'overlay dans l'image de base. Il s'agit d'une opération intensive en E/S "
+"qui peut prendre du temps pour les disques volumineux."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:137
 msgid "Image Import Behavior"
-msgstr ""
+msgstr "Comportement de l'importation d'image"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:139
 msgid ""
@@ -422,6 +488,12 @@ msgid ""
 "backends create a temporary export snapshot using their datastore "
 "implementation."
 msgstr ""
+"Les instantanés existants sont pris en charge lors de l'importation d'une VM HVM en tant qu'image "
+"virtuelle. Pour le stockage basé sur fichiers, |morpheus| copie et fusionne la chaîne de sauvegarde "
+"qcow2 active dans un disque d'exportation temporaire. Cette opération ne "
+"supprime ni ne fusionne les instantanés existants de la VM. Les autres backends de stockage "
+"pris en charge créent un instantané d'exportation temporaire en utilisant l'implémentation de leur magasin "
+"de données."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:141
 msgid ""
@@ -432,10 +504,16 @@ msgid ""
 ":doc:`/library/virtual_images/virtual_images` for verification and "
 "escalation guidance."
 msgstr ""
+"L'image virtuelle résultante doit contenir à la fois ``metadata.json`` et chaque "
+"artefact de disque référencé. Un résultat contenant uniquement les métadonnées est une importation "
+"incomplète, et non une preuve que les instantanés existants doivent être supprimés. Préservez "
+"la VM source et les instantanés et consultez "
+":doc:`/library/virtual_images/virtual_images` pour les instructions de vérification et "
+"d'escalade."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:144
 msgid "Linked Clone Images"
-msgstr ""
+msgstr "Images de clone lié"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:146
 msgid ""
@@ -444,6 +522,10 @@ msgid ""
 " while the selected snapshot remains its shared backing disk. This is "
 "different from importing the VM as an independent Virtual Image."
 msgstr ""
+"Les instantanés HVM peuvent être enregistrés en tant qu'images virtuelles de clone lié pour un "
+"provisionnement de VM rapide et économe en espace. La VM provisionnée écrit dans un overlay "
+"tandis que l'instantané sélectionné reste son disque de sauvegarde partagé. Ceci est "
+"différent de l'importation de la VM en tant qu'image virtuelle indépendante."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:148
 msgid ""
@@ -453,10 +535,15 @@ msgid ""
 "Windows and Linux guest preparation, permissions, and dependency "
 "guidance."
 msgstr ""
+"Créez et gérez les images de clone lié depuis l'onglet "
+":guilabel:`Backups` de l'instance. Consultez la section **Creating Linked Clone Images** "
+"dans :doc:`/infrastructure/storage/storage` pour le flux de travail complet, "
+"la préparation des invités Windows et Linux, les permissions et les instructions "
+"de dépendance."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:150
 msgid "On HVM, observe these additional constraints:"
-msgstr ""
+msgstr "Sur HVM, respectez ces contraintes supplémentaires :"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:152
 msgid ""
@@ -464,18 +551,25 @@ msgid ""
 "vDisk storage, including HPE Alletra datastore types, does not support "
 "linked clones."
 msgstr ""
+"Les clones liés nécessitent un magasin de données basé sur fichiers et des disques QCOW2. Le stockage "
+"LUN-per-vDisk, y compris les types de magasin de données HPE Alletra, ne prend pas en charge "
+"les clones liés."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:153
 msgid ""
 "A linked clone on local storage is pinned to the source hypervisor and "
 "cannot be migrated to another host."
 msgstr ""
+"Un clone lié sur stockage local est fixé à l'hyperviseur source et "
+"ne peut pas être migré vers un autre hôte."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:154
 msgid ""
 "Storage migration is not supported because the overlay depends on the "
 "snapshot backing file in its original datastore."
 msgstr ""
+"La migration de stockage n'est pas prise en charge car l'overlay dépend du "
+"fichier de sauvegarde d'instantané dans son magasin de données d'origine."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:155
 msgid ""
@@ -483,17 +577,22 @@ msgid ""
 "clone VMs depend on them. Morpheus blocks deletion and displays an error "
 "identifying the dependent VMs."
 msgstr ""
+"La VM source et l'instantané de sauvegarde ne peuvent pas être supprimés tant que des VM de clone "
+"lié actives en dépendent. Morpheus bloque la suppression et affiche une erreur "
+"identifiant les VM dépendantes."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:156
 msgid ""
 "When shared storage is used, eligible host placement can use the shared "
 "backing file, but the source snapshot must remain available."
 msgstr ""
+"Lorsque le stockage partagé est utilisé, le placement éligible des hôtes peut utiliser le fichier "
+"de sauvegarde partagé, mais l'instantané source doit rester disponible."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:157
 #: ../../infrastructure/clusters/hvm/snapshots.rst:177
 msgid "A VM cannot be snapshotted while a clone operation is in progress."
-msgstr ""
+msgstr "Une VM ne peut pas être instantanée pendant qu'une opération de clonage est en cours."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:159
 msgid ""
@@ -505,28 +604,37 @@ msgid ""
 "linked clone Virtual Image appears only in provisioning dropdowns scoped "
 "to the cluster where its backing snapshot exists."
 msgstr ""
+"Lors du provisionnement à partir d'une image virtuelle de clone lié, Morpheus crée un "
+"overlay QCOW2 léger référençant l'instantané comme fichier de sauvegarde plutôt "
+"que de copier le disque entier. Cela est quasi-instantané quelle que soit la taille du disque. "
+"Sur le stockage local, la VM est placée sur le même hôte que la source. Sur "
+"le stockage partagé, tout hôte ayant accès au magasin de données est éligible. "
+"L'image virtuelle de clone lié n'apparaît que dans les menus déroulants de provisionnement "
+"limités au cluster où son instantané de sauvegarde existe."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:162
 msgid "Limitations"
-msgstr ""
+msgstr "Limitations"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:168
 msgid "Limitation"
-msgstr ""
+msgstr "Limitation"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:170
 msgid "No memory snapshots"
-msgstr ""
+msgstr "Pas d'instantanés mémoire"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:171
 msgid ""
 "Only disk state is captured. The VM must be restarted after a revert. "
 "Running applications will not resume from their pre-snapshot state."
 msgstr ""
+"Seul l'état du disque est capturé. La VM doit être redémarrée après une restauration. "
+"Les applications en cours d'exécution ne reprendront pas à partir de leur état pré-instantané."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:172
 msgid "Guest agent required for app consistency"
-msgstr ""
+msgstr "Agent invité requis pour la cohérence applicative"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:173
 msgid ""
@@ -534,10 +642,13 @@ msgid ""
 "Install and enable the guest agent for application-consistent snapshots "
 "with VSS support on Windows."
 msgstr ""
+"Sans le QEMU Guest Agent, les instantanés sont uniquement cohérents en cas de panne. "
+"Installez et activez l'agent invité pour des instantanés cohérents au niveau applicatif "
+"avec prise en charge VSS sous Windows."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:174
 msgid "Mixed storage VMs"
-msgstr ""
+msgstr "VM à stockage mixte"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:175
 msgid ""
@@ -545,14 +656,17 @@ msgid ""
 "For example, a VM with one disk on GFS2 and another on Alletra will "
 "snapshot each through its respective mechanism."
 msgstr ""
+"Les VM avec des disques sur différents backends de stockage peuvent avoir des instantanés partiels. "
+"Par exemple, une VM avec un disque sur GFS2 et un autre sur Alletra prendra un "
+"instantané de chacun via son mécanisme respectif."
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:176
 msgid "Concurrent operations"
-msgstr ""
+msgstr "Opérations simultanées"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:178
 msgid "RDBM/Raw block devices"
-msgstr ""
+msgstr "RDBM/Périphériques bloc bruts"
 
 #: ../../infrastructure/clusters/hvm/snapshots.rst:179
 msgid ""
@@ -560,4 +674,6 @@ msgid ""
 "volumes snapshotted through the file-based mechanism. Use array-based "
 "snapshots for these workloads."
 msgstr ""
-
+"Les VM avec des volumes de mappage de périphériques bloc bruts (RDBM) ne peuvent pas avoir ces "
+"volumes instantanés via le mécanisme basé sur fichiers. Utilisez des instantanés basés sur baie "
+"pour ces charges de travail."

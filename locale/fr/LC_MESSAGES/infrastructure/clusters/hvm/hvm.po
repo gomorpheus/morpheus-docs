@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:2
 msgid "HVM Clusters"
-msgstr ""
+msgstr "Clusters HVM"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:4
 msgid ""
@@ -32,88 +32,95 @@ msgid ""
 "layout. Use the layout matrix to identify the operating system, "
 "networking model, and management tools that apply to a cluster."
 msgstr ""
+"Les clusters HVM fournissent une virtualisation basée sur KVM, une gestion "
+"centralisée du cycle de vie, le placement des charges de travail, le "
+"stockage partagé, la supervision, la migration et la haute disponibilité. "
+"Ce guide couvre toutes les dispositions de cluster HVM prises en charge. "
+"Utilisez la matrice des dispositions pour identifier le système "
+"d'exploitation, le modèle réseau et les outils de gestion applicables à "
+"un cluster."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:39
 msgid "Supported Layouts"
-msgstr ""
+msgstr "Dispositions prises en charge"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:45
 msgid "Layout"
-msgstr ""
+msgstr "Disposition"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:46
 msgid "Host operating system"
-msgstr ""
+msgstr "Système d'exploitation de l'hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:47
 msgid "High availability"
-msgstr ""
+msgstr "Haute disponibilité"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:48
 msgid "Host networking"
-msgstr ""
+msgstr "Réseau de l'hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:49
 msgid "Host management"
-msgstr ""
+msgstr "Gestion de l'hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:50
 msgid "Legacy (1.2 and earlier)"
-msgstr ""
+msgstr "Legacy (1.2 et antérieur)"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:51
 msgid "Ubuntu 22.04"
-msgstr ""
+msgstr "Ubuntu 22.04"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:52
 msgid "Pacemaker and Corosync"
-msgstr ""
+msgstr "Pacemaker et Corosync"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:53
 #: ../../infrastructure/clusters/hvm/hvm.rst:58
 msgid "Open vSwitch (OVS)"
-msgstr ""
+msgstr "Open vSwitch (OVS)"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:54
 msgid "Standard Linux and ``pcs`` commands"
-msgstr ""
+msgstr "Commandes Linux standard et ``pcs``"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:55
 msgid "1.3"
-msgstr ""
+msgstr "1.3"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:56
 msgid "HVM OS/Ubuntu 24.04"
-msgstr ""
+msgstr "HVM OS/Ubuntu 24.04"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:57
 #: ../../infrastructure/clusters/hvm/hvm.rst:62
 msgid "|morpheus| Agent quorum, Corosync, and DLM"
-msgstr ""
+msgstr "Quorum de l'agent |morpheus|, Corosync et DLM"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:59
 msgid "Standard Linux commands"
-msgstr ""
+msgstr "Commandes Linux standard"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:60
 msgid "2.0"
-msgstr ""
+msgstr "2.0"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:61
 msgid "HVM OS 26.04"
-msgstr ""
+msgstr "HVM OS 26.04"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:63
 msgid "Virtual Switches (Linux bridge)"
-msgstr ""
+msgstr "Commutateurs virtuels (Linux bridge)"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:64
 msgid "``hvmcli`` and standard Linux commands"
-msgstr ""
+msgstr "``hvmcli`` et commandes Linux standard"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:66
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:68
 msgid ""
@@ -121,10 +128,13 @@ msgid ""
 "version. Confirm the cluster layout on the cluster detail page before "
 "following a layout-specific procedure."
 msgstr ""
+"Les versions de disposition et de HVM OS sont distinctes de la version du "
+"Manager |morpheus|. Vérifiez la disposition du cluster sur la page de détail "
+"du cluster avant de suivre une procédure spécifique à une disposition."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:71
 msgid "How to Use This Guide"
-msgstr ""
+msgstr "Comment utiliser ce guide"
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:73
 msgid ""
@@ -133,40 +143,59 @@ msgid ""
 "provisioning, and OVS differences are collected in "
 ":doc:`/infrastructure/clusters/mvm` to keep current workflows singular."
 msgstr ""
+"Sauf indication contraire dans une section, celle-ci s'applique aux "
+"dispositions 1.3 et 2.0. Les clusters Legacy restent pris en charge, mais "
+"leurs différences relatives à Pacemaker, Ceph, le provisionnement et OVS "
+"sont regroupées dans :doc:`/infrastructure/clusters/mvm` afin de conserver "
+"des flux de travail unifiés."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:75
 msgid ""
 "For OVS networking on Legacy and layout 1.3 clusters, see "
 ":doc:`hvm_networks`."
 msgstr ""
+"Pour la mise en réseau OVS sur les clusters Legacy et disposition 1.3, "
+"consultez :doc:`hvm_networks`."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:76
 msgid "For layout 2.0 networking, see :doc:`virtual_switches`."
 msgstr ""
+"Pour la mise en réseau de la disposition 2.0, consultez "
+":doc:`virtual_switches`."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:77
 msgid "For layout 2.0 host commands, see :doc:`/tools/hvmcli/hvmcli`."
 msgstr ""
+"Pour les commandes hôte de la disposition 2.0, consultez "
+":doc:`/tools/hvmcli/hvmcli`."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:78
 msgid ""
 "For NVIDIA SR-IOV vGPU profiles, Host preparation, Service Plans, and "
 "guest licensing, see :doc:`nvidia_vgpu`."
 msgstr ""
+"Pour les profils NVIDIA SR-IOV vGPU, la préparation de l'hôte, les plans de "
+"service et les licences invité, consultez :doc:`nvidia_vgpu`."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:79
 msgid ""
 "For datastore creation, Datastore Groups, file browsing, maintenance, and"
 " capacity operations, see :doc:`storage_operations`."
 msgstr ""
+"Pour la création de magasins de données, les groupes de magasins de données,"
+" la navigation de fichiers, la maintenance et les opérations de capacité, "
+"consultez :doc:`storage_operations`."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:80
 msgid ""
 "For VM snapshots and creating linked clone Virtual Images, see "
 ":doc:`snapshots`."
 msgstr ""
+"Pour les instantanés de VM et la création d'images virtuelles par clone lié,"
+" consultez :doc:`snapshots`."
 
 #: ../../infrastructure/clusters/hvm/hvm.rst:81
 msgid "For layout and HVM OS upgrades, see :doc:`upgrading`."
 msgstr ""
-
+"Pour les mises à niveau de disposition et de HVM OS, consultez "
+":doc:`upgrading`."
