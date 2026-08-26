@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:2
 msgid "HVM Networks"
-msgstr ""
+msgstr "Réseaux HVM"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:6
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:6
 msgid ""
@@ -35,10 +35,15 @@ msgid ""
 "layout 2.0 ``hvmcli`` objects. Layout 2.0 uses Linux bridge-based Virtual"
 " Switches; see :ref:`hvm_virtual_switch_read_only_verification`."
 msgstr ""
+"Cette page documente les constructions réseau héritées de l'interface "
+"utilisateur/plugin pour les clusters Legacy et layout 1.3. Elles n'ont "
+"pas de correspondance stable un-à-un avec les objets ``hvmcli`` du "
+"layout 2.0. Le layout 2.0 utilise des Virtual Switches basés sur des "
+"ponts Linux ; voir :ref:`hvm_virtual_switch_read_only_verification`."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:9
 msgid "Overview"
-msgstr ""
+msgstr "Présentation"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:11
 msgid ""
@@ -48,6 +53,11 @@ msgid ""
 "independent updates, maintenance, and extensibility without impacting the"
 " platform."
 msgstr ""
+"Le plugin réseau HVM fournit des capacités réseau avancées pour les "
+"clusters HVM |morpheus|. Il offre un fournisseur réseau modulaire basé "
+"sur des plugins qui sépare la gestion réseau du cœur |morpheus|, "
+"permettant des mises à jour, une maintenance et une extensibilité "
+"indépendantes sans impact sur la plateforme."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:13
 msgid ""
@@ -58,46 +68,61 @@ msgid ""
 "MacVTAP interfaces, and SR-IOV Virtual Function (VF) networks — directly "
 "from the |morpheus| user interface."
 msgstr ""
+"Le plugin est conçu spécifiquement pour les clusters HVM (basés sur KVM) "
+"et gère le cycle de vie complet des réseaux virtuels sur les hôtes du "
+"cluster. Il automatise la création, la configuration et la suppression "
+"des réseaux — y compris les groupes de ports basés sur des ponts Open "
+"vSwitch (OVS), les overlays VXLAN, les interfaces VLAN Linux, les "
+"interfaces MacVTAP et les réseaux SR-IOV Virtual Function (VF) — "
+"directement depuis l'interface utilisateur |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:15
 msgid "Key capabilities:"
-msgstr ""
+msgstr "Fonctionnalités clés :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:17
 msgid "Create and delete HVM networks of all five types directly from the UI"
-msgstr ""
+msgstr "Créer et supprimer des réseaux HVM des cinq types directement depuis l'interface utilisateur"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:18
 msgid ""
 "Configure Standard Networks in Access, Hybrid, or Trunk-only VLAN modes "
 "based on workload requirements"
 msgstr ""
+"Configurer les réseaux Standard en modes VLAN Access, Hybrid ou Trunk-only "
+"selon les exigences des charges de travail"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:19
 msgid ""
 "Trigger trunk VLAN configuration propagation to Aruba CX switches through"
 " the Aruba CX Network Plugin (Generic Integration)"
 msgstr ""
+"Déclencher la propagation de la configuration VLAN trunk vers les "
+"commutateurs Aruba CX via le plugin réseau Aruba CX (Generic Integration)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:20
 msgid ""
 "Automatically provision or delete network configurations whenever a host "
 "is added to or removed from a cluster"
 msgstr ""
+"Provisionner ou supprimer automatiquement les configurations réseau "
+"chaque fois qu'un hôte est ajouté ou retiré d'un cluster"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:21
 msgid ""
 "Detect and repair configuration drift using idempotent synchronization on"
 " every refresh cycle"
 msgstr ""
+"Détecter et corriger les dérives de configuration à l'aide d'une "
+"synchronisation idempotente à chaque cycle de rafraîchissement"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:22
 msgid "Discover existing libvirt networks and OVS configurations on hosts"
-msgstr ""
+msgstr "Découvrir les réseaux libvirt et les configurations OVS existants sur les hôtes"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:25
 msgid "Design and Ownership Boundaries"
-msgstr ""
+msgstr "Limites de conception et de responsabilité"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:27
 msgid ""
@@ -108,6 +133,13 @@ msgid ""
 " uplink, VLAN, and MTU intent on every cluster host before attaching "
 "workloads."
 msgstr ""
+"|morpheus| applique la configuration réseau HVM sélectionnée ; il ne "
+"conçoit pas la topologie physique du client. Les clients restent "
+"responsables de la configuration des commutateurs, de l'allocation des "
+"VLAN, de l'adressage IP, du routage, du DNS, de la cohérence MTU, de la "
+"bande passante, de la redondance et de la politique de sécurité. "
+"Confirmez le même uplink, VLAN et MTU prévu sur chaque hôte du cluster "
+"avant de connecter des charges de travail."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:29
 msgid ""
@@ -119,70 +151,83 @@ msgid ""
 "topology choices, start with the checklist in :ref:`hvm-host-prep` and "
 "use :doc:`virtual_switches`."
 msgstr ""
+"Utilisez un chemin de stockage ou de migration dédié lorsque l'analyse "
+"des charges de travail et des pannes nécessite une isolation ou une bande "
+"passante prévisible. Le partage d'un uplink est un choix de conception, "
+"pas une garantie produit. Les trames jumbo n'améliorent rien à moins que "
+"chaque point de terminaison et commutateur intermédiaire ne prenne en "
+"charge le même MTU ; validez de bout en bout avant de modifier un chemin "
+"de production. Pour les choix de topologie du layout 2.0, commencez par "
+"la checklist dans :ref:`hvm-host-prep` et utilisez "
+":doc:`virtual_switches`."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:32
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:34
 msgid "Ensure the following requirements are met before using HVM networks:"
-msgstr ""
+msgstr "Assurez-vous que les exigences suivantes sont remplies avant d'utiliser les réseaux HVM :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:37
 msgid "General Requirements"
-msgstr ""
+msgstr "Exigences générales"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:39
 msgid "The |morpheus| appliance must run version 9.0.0 or later"
-msgstr ""
+msgstr "L'appliance |morpheus| doit exécuter la version 9.0.0 ou ultérieure"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:40
 msgid "A pre-existing Legacy or layout 1.3 HVM cluster must be available"
-msgstr ""
+msgstr "Un cluster HVM Legacy ou layout 1.3 préexistant doit être disponible"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:41
 msgid "All cluster hosts must be reachable from the |morpheus| appliance"
-msgstr ""
+msgstr "Tous les hôtes du cluster doivent être accessibles depuis l'appliance |morpheus|"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:42
 msgid "Open vSwitch (OVS) must be installed and running on each host"
-msgstr ""
+msgstr "Open vSwitch (OVS) doit être installé et en cours d'exécution sur chaque hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:43
 msgid "Deploy the plugin only on an HVM KVM-based cluster"
-msgstr ""
+msgstr "Déployez le plugin uniquement sur un cluster HVM basé sur KVM"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:46
 msgid "Standard Network Requirements"
-msgstr ""
+msgstr "Exigences pour les réseaux Standard"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:48
 msgid "An OVS Bridge Domain virtual switch must exist in the cluster"
-msgstr ""
+msgstr "Un commutateur virtuel OVS Bridge Domain doit exister dans le cluster"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:49
 msgid ""
 "The bridge must be backed by a host network interface (for example, "
 "``mgmt`` or ``bond0``)"
 msgstr ""
+"Le pont doit être adossé à une interface réseau de l'hôte (par exemple, "
+"``mgmt`` ou ``bond0``)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:52
 msgid "Aruba CX Integration Requirements"
-msgstr ""
+msgstr "Exigences d'intégration Aruba CX"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:54
 msgid "Aruba CX switches must be configured and reachable"
-msgstr ""
+msgstr "Les commutateurs Aruba CX doivent être configurés et accessibles"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:55
 msgid ""
 "The Aruba CX Network Plugin (Generic Integration) must be installed and "
 "configured in |morpheus|"
 msgstr ""
+"Le plugin réseau Aruba CX (Generic Integration) doit être installé et "
+"configuré dans |morpheus|"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:58
 msgid "Verifying the Plugin"
-msgstr ""
+msgstr "Vérification du plugin"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:60
 msgid ""
@@ -190,20 +235,25 @@ msgid ""
 "automatically during HVM cluster configuration. You do not need to "
 "manually install the plugin."
 msgstr ""
+"Le plugin réseau HVM est préinstallé dans |morpheus| et enregistré "
+"automatiquement lors de la configuration du cluster HVM. Vous n'avez pas "
+"besoin d'installer le plugin manuellement."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:62
 msgid "To verify availability:"
-msgstr ""
+msgstr "Pour vérifier la disponibilité :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:64
 msgid "Navigate to :menuselection:`Administration --> Integrations --> Plugins`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Administration --> Integrations --> Plugins`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:65
 msgid ""
 "Confirm that **HVM Networking Plugin** appears in the list with status "
 "**Enabled**"
 msgstr ""
+"Confirmez que **HVM Networking Plugin** apparaît dans la liste avec le "
+"statut **Enabled**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:67
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:78
@@ -212,7 +262,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:238
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:279
 msgid "Note"
-msgstr ""
+msgstr "Remarque"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:69
 msgid ""
@@ -221,10 +271,14 @@ msgid ""
 "Plugins --> + Add Plugin`. The plugin JAR is published at HPE artifactory"
 " and is also available in the |morpheus| release bundle."
 msgstr ""
+"Si le plugin réseau HVM n'est pas listé, téléchargez le JAR du plugin "
+"manuellement via :menuselection:`Administration --> Integrations --> "
+"Plugins --> + Add Plugin`. Le JAR du plugin est publié sur l'artifactory "
+"HPE et est également disponible dans le bundle de version |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:72
 msgid "OVS Bridge Domain Virtual Switches"
-msgstr ""
+msgstr "Commutateurs virtuels OVS Bridge Domain"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:74
 msgid ""
@@ -233,6 +287,10 @@ msgid ""
 "OVS bridge or associate the virtual switch with an existing bridge on the"
 " hosts."
 msgstr ""
+"Avant de créer des réseaux Standard ou Overlay, assurez-vous qu'un "
+"commutateur virtuel OVS Bridge Domain existe dans le cluster. Vous pouvez "
+"créer un nouveau pont OVS ou associer le commutateur virtuel à un pont "
+"existant sur les hôtes."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:76
 msgid ""
@@ -242,44 +300,54 @@ msgid ""
 "networks, providing the bridge infrastructure required to connect "
 "workloads and handle traffic forwarding within the cluster."
 msgstr ""
+"Un commutateur virtuel OVS Bridge Domain est représenté dans |morpheus| "
+"en tant que ressource Network Router de type ``openVSwitch``. Il agit "
+"comme la couche de commutation virtuelle sous-jacente qui supporte les "
+"réseaux Standard et Overlay, fournissant l'infrastructure de pont "
+"nécessaire pour connecter les charges de travail et gérer le transfert "
+"de trafic au sein du cluster."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:80
 msgid ""
 "Ensure that the Name remains unique within the cluster and does not "
 "conflict with any existing OVS bridges on the hosts."
 msgstr ""
+"Assurez-vous que le nom reste unique au sein du cluster et n'entre pas "
+"en conflit avec les ponts OVS existants sur les hôtes."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:83
 msgid "Creating an OVS Bridge Domain Virtual Switch"
-msgstr ""
+msgstr "Création d'un commutateur virtuel OVS Bridge Domain"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:85
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:106
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:371
 msgid "Navigate to :menuselection:`Infrastructure --> Network --> Routers`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Network --> Routers`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:86
 msgid "Select :guilabel:`+ Add` and choose **OVS Bridge Domain**"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` et choisissez **OVS Bridge Domain**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:87
 msgid "Configure the following:"
-msgstr ""
+msgstr "Configurez les éléments suivants :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:89
 msgid "**Name** — A unique name for the virtual switch"
-msgstr ""
+msgstr "**Name** — Un nom unique pour le commutateur virtuel"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:90
 msgid "**Cluster** — Select the target HVM cluster"
-msgstr ""
+msgstr "**Cluster** — Sélectionnez le cluster HVM cible"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:91
 msgid ""
 "**Bridge Interface** — The host network interface backing the bridge (for"
 " example, ``bond0``)"
 msgstr ""
+"**Bridge Interface** — L'interface réseau de l'hôte adossée au pont (par "
+"exemple, ``bond0``)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:93
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:162
@@ -288,15 +356,15 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:272
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:337
 msgid "Click :guilabel:`Save`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Save`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:95
 msgid "The system creates the OVS bridge on all hosts in the cluster."
-msgstr ""
+msgstr "Le système crée le pont OVS sur tous les hôtes du cluster."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:98
 msgid "Deleting an OVS Bridge Domain Virtual Switch"
-msgstr ""
+msgstr "Suppression d'un commutateur virtuel OVS Bridge Domain"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:100
 msgid ""
@@ -305,11 +373,15 @@ msgid ""
 "definitions, and removes all dependent Standard and Overlay network "
 "objects from the |morpheus| database."
 msgstr ""
+"La suppression d'un commutateur virtuel OVS Bridge Domain retire le pont "
+"OVS de tous les hôtes du cluster, supprime les définitions de réseau "
+"libvirt associées et supprime tous les objets réseau Standard et Overlay "
+"dépendants de la base de données |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:102
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:285
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:104
 msgid ""
@@ -318,19 +390,23 @@ msgid ""
 "networks and VMs are removed or migrated before deleting the virtual "
 "switch."
 msgstr ""
+"Le système empêche la suppression si des VM sont actuellement connectées "
+"à des réseaux qui dépendent de ce commutateur virtuel. Assurez-vous que "
+"tous ces réseaux et VM sont supprimés ou migrés avant de supprimer le "
+"commutateur virtuel."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:107
 msgid "Select the OVS Bridge Domain virtual switch to delete"
-msgstr ""
+msgstr "Sélectionnez le commutateur virtuel OVS Bridge Domain à supprimer"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:108
 msgid "Click the delete icon next to the virtual switch name"
-msgstr ""
+msgstr "Cliquez sur l'icône de suppression à côté du nom du commutateur virtuel"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:109
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:347
 msgid "Confirm the deletion when prompted"
-msgstr ""
+msgstr "Confirmez la suppression lorsque vous y êtes invité"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:111
 msgid ""
@@ -338,92 +414,97 @@ msgid ""
 "definition) from all hosts in the cluster and deletes all dependent "
 "Standard and Overlay network objects."
 msgstr ""
+"Le système supprime le réseau pont libvirt parent (la définition du pont "
+"OVS) de tous les hôtes du cluster et supprime tous les objets réseau "
+"Standard et Overlay dépendants."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:114
 msgid "Network Types"
-msgstr ""
+msgstr "Types de réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:116
 msgid ""
 "HVM clusters support five network types, each designed for specific "
 "workload connectivity patterns:"
 msgstr ""
+"Les clusters HVM prennent en charge cinq types de réseau, chacun conçu "
+"pour des schémas de connectivité de charges de travail spécifiques :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:122
 msgid "Network Type"
-msgstr ""
+msgstr "Type de réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:123
 msgid "Backing Technology"
-msgstr ""
+msgstr "Technologie sous-jacente"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:124
 msgid "Use Case"
-msgstr ""
+msgstr "Cas d'utilisation"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:125
 msgid "**Standard**"
-msgstr ""
+msgstr "**Standard**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:126
 msgid "OVS port group on OVS Bridge Domain"
-msgstr ""
+msgstr "Groupe de ports OVS sur OVS Bridge Domain"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:127
 msgid "General VM connectivity with VLAN segmentation"
-msgstr ""
+msgstr "Connectivité VM générale avec segmentation VLAN"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:128
 msgid "**Overlay**"
-msgstr ""
+msgstr "**Overlay**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:129
 msgid "VXLAN tunneling with dedicated OVS bridge per network"
-msgstr ""
+msgstr "Tunnelisation VXLAN avec pont OVS dédié par réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:130
 msgid "Tenant isolation without physical VLAN configuration"
-msgstr ""
+msgstr "Isolation des locataires sans configuration VLAN physique"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:131
 msgid "**Data**"
-msgstr ""
+msgstr "**Data**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:132
 msgid "Linux VLAN interface mapped to libvirt network"
-msgstr ""
+msgstr "Interface VLAN Linux mappée sur un réseau libvirt"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:133
 msgid "High-throughput in-guest storage traffic (iSCSI, NFS)"
-msgstr ""
+msgstr "Trafic de stockage à haut débit dans le système invité (iSCSI, NFS)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:134
 msgid "**Private**"
-msgstr ""
+msgstr "**Private**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:135
 msgid "MacVTAP-backed libvirt network"
-msgstr ""
+msgstr "Réseau libvirt adossé à MacVTAP"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:136
 msgid "Direct connectivity to physical network segments"
-msgstr ""
+msgstr "Connectivité directe aux segments réseau physiques"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:137
 msgid "**SR-IOV**"
-msgstr ""
+msgstr "**SR-IOV**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:138
 msgid "SR-IOV Virtual Functions on physical NIC"
-msgstr ""
+msgstr "SR-IOV Virtual Functions sur NIC physique"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:139
 msgid "Near-native network performance for demanding workloads"
-msgstr ""
+msgstr "Performances réseau quasi natives pour les charges de travail exigeantes"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:142
 msgid "Creating HVM Standard Networks"
-msgstr ""
+msgstr "Création de réseaux HVM Standard"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:144
 msgid ""
@@ -433,6 +514,11 @@ msgid ""
 "define whether the network operates in Access, Hybrid, or Trunk-only "
 "mode."
 msgstr ""
+"Un réseau HVM Standard utilise un groupe de ports OVS sur un commutateur "
+"virtuel OVS Bridge Domain existant comme support. Le système détermine "
+"son comportement VLAN via les champs **VLAN Trunks** et **Trunk Only**, "
+"qui définissent si le réseau fonctionne en mode Access, Hybrid ou "
+"Trunk-only."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:148
 msgid ""
@@ -440,6 +526,9 @@ msgid ""
 "Hybrid and Trunk-only modes, eliminating the need to assign a separate "
 "NIC for each VLAN."
 msgstr ""
+"Une seule NIC physique de VM (VMNIC) peut transporter le trafic de "
+"plusieurs VLAN en modes Hybrid et Trunk-only, éliminant la nécessité "
+"d'attribuer une NIC séparée pour chaque VLAN."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:150
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:196
@@ -450,11 +539,11 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:344
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:359
 msgid "Navigate to :menuselection:`Infrastructure --> Network --> Networks`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Network --> Networks`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:151
 msgid "Select :guilabel:`+ Add` > **HVM Standard Network**"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` > **HVM Standard Network**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:152
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:223
@@ -462,11 +551,11 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:264
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:329
 msgid "Enter the following details:"
-msgstr ""
+msgstr "Saisissez les informations suivantes :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:154
 msgid "**Group** — Select the group to which the network belongs"
-msgstr ""
+msgstr "**Group** — Sélectionnez le groupe auquel le réseau appartient"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:155
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:226
@@ -474,11 +563,11 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:267
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:332
 msgid "**Network Service** — Select the network service"
-msgstr ""
+msgstr "**Network Service** — Sélectionnez le service réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:156
 msgid "**Router** — Select the OVS Bridge Domain virtual switch"
-msgstr ""
+msgstr "**Router** — Sélectionnez le commutateur virtuel OVS Bridge Domain"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:157
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:227
@@ -486,59 +575,68 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:268
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:333
 msgid "**Resource Pool** — Select the cluster resource pool"
-msgstr ""
+msgstr "**Resource Pool** — Sélectionnez le pool de ressources du cluster"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:158
 msgid "**VLAN ID** — The native VLAN ID for the network"
-msgstr ""
+msgstr "**VLAN ID** — L'identifiant VLAN natif du réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:159
 msgid ""
 "**VLAN Trunks** — Comma-separated list of trunk VLAN IDs or ranges (for "
 "example, ``100,200-210``)"
 msgstr ""
+"**VLAN Trunks** — Liste séparée par des virgules des identifiants VLAN "
+"trunk ou plages (par exemple, ``100,200-210``)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:160
 msgid "**Trunk Only** — Enable to use trunk-only mode (no native VLAN)"
-msgstr ""
+msgstr "**Trunk Only** — Activez pour utiliser le mode trunk-only (pas de VLAN natif)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:165
 msgid "VLAN Modes and Traffic Behavior"
-msgstr ""
+msgstr "Modes VLAN et comportement du trafic"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:167
 msgid "Standard Networks support three VLAN modes based on configuration:"
-msgstr ""
+msgstr "Les réseaux Standard prennent en charge trois modes VLAN selon la configuration :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:169
 msgid "**Access Mode (Default)**"
-msgstr ""
+msgstr "**Mode Access (par défaut)**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:171
 msgid ""
 "The OVS bridge handles VLAN tagging transparently. The VM receives "
 "untagged Ethernet frames and remains unaware of VLAN assignments."
 msgstr ""
+"Le pont OVS gère le marquage VLAN de manière transparente. La VM reçoit "
+"des trames Ethernet non marquées et n'a pas connaissance des "
+"attributions VLAN."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:173
 msgid "UI fields: VLAN ID = 200, VLAN Trunks = (empty), Trunk Only = off"
-msgstr ""
+msgstr "Champs de l'interface : VLAN ID = 200, VLAN Trunks = (vide), Trunk Only = off"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:174
 msgid ""
 "Egress (VM → network): The VM sends an untagged frame, and the OVS bridge"
 " inserts the VLAN 200 tag before forwarding to the uplink"
 msgstr ""
+"Sortie (VM → réseau) : La VM envoie une trame non marquée et le pont OVS "
+"insère le tag VLAN 200 avant de transmettre vers l'uplink"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:175
 msgid ""
 "Ingress (network → VM): OVS receives a VLAN 200 tagged frame, removes the"
 " tag, and delivers an untagged frame to the VM"
 msgstr ""
+"Entrée (réseau → VM) : OVS reçoit une trame marquée VLAN 200, retire le "
+"tag et délivre une trame non marquée à la VM"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:177
 msgid "**Hybrid Mode (Native VLAN + Trunk VLANs)**"
-msgstr ""
+msgstr "**Mode Hybrid (VLAN natif + VLAN trunk)**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:179
 msgid ""
@@ -546,38 +644,45 @@ msgid ""
 "group XML. The untagged traffic uses the native VLAN and trunk VLANs pass"
 " through tagged."
 msgstr ""
+"Le système utilise le VLAN 0 comme marqueur de passage non marqué dans "
+"le XML du groupe de ports. Le trafic non marqué utilise le VLAN natif et "
+"les VLAN trunk passent marqués."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:181
 msgid "UI fields: VLAN ID = 200, VLAN Trunks = 100,300, Trunk Only = off"
-msgstr ""
+msgstr "Champs de l'interface : VLAN ID = 200, VLAN Trunks = 100,300, Trunk Only = off"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:182
 msgid ""
 "The VM can send/receive both untagged (native VLAN 200) and tagged (VLANs"
 " 100, 300) traffic"
 msgstr ""
+"La VM peut envoyer/recevoir du trafic non marqué (VLAN natif 200) et "
+"marqué (VLAN 100, 300)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:184
 msgid "**Trunk-Only Mode**"
-msgstr ""
+msgstr "**Mode Trunk-Only**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:186
 msgid "All traffic is tagged. No native VLAN is assigned."
-msgstr ""
+msgstr "Tout le trafic est marqué. Aucun VLAN natif n'est attribué."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:188
 msgid "UI fields: VLAN ID = (any), VLAN Trunks = 100,200,300, Trunk Only = on"
-msgstr ""
+msgstr "Champs de l'interface : VLAN ID = (quelconque), VLAN Trunks = 100,200,300, Trunk Only = on"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:189
 msgid ""
 "The VM must tag all outgoing frames and expects all incoming frames to be"
 " tagged"
 msgstr ""
+"La VM doit marquer toutes les trames sortantes et s'attend à ce que "
+"toutes les trames entrantes soient marquées"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:192
 msgid "Modifying an HVM Standard Network"
-msgstr ""
+msgstr "Modification d'un réseau HVM Standard"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:194
 msgid ""
@@ -585,18 +690,21 @@ msgid ""
 "existing Standard Network after creation. You cannot modify the VLAN ID, "
 "Resource Pool, or Router fields."
 msgstr ""
+"Vous pouvez modifier les champs **VLAN Trunks** et **Trunk Only** sur un "
+"réseau Standard existant après sa création. Vous ne pouvez pas modifier "
+"les champs VLAN ID, Resource Pool ou Router."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:197
 msgid "Select the Standard Network to modify"
-msgstr ""
+msgstr "Sélectionnez le réseau Standard à modifier"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:198
 msgid "Click :guilabel:`Edit`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Edit`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:199
 msgid "Modify the following fields:"
-msgstr ""
+msgstr "Modifiez les champs suivants :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:201
 msgid ""
@@ -605,6 +713,10 @@ msgid ""
 "deleted VLANs unless another network in the same cluster and OVS bridge "
 "still uses them."
 msgstr ""
+"**VLAN Trunks** — Mettez à jour la liste séparée par des virgules des "
+"identifiants VLAN trunk ou plages. Le système provisionne les VLAN "
+"ajoutés sur tous les hôtes et supprime les VLAN retirés sauf si un autre "
+"réseau dans le même cluster et pont OVS les utilise encore."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:202
 msgid ""
@@ -612,18 +724,21 @@ msgid ""
 " native VLAN tag from the OVS port when switching from Hybrid to Trunk-"
 "only, and restores the native VLAN tag when switching back."
 msgstr ""
+"**Trunk Only** — Activez ou désactivez le mode trunk-only. Le système "
+"retire le tag VLAN natif du port OVS lors du passage de Hybrid à "
+"Trunk-only, et restaure le tag VLAN natif lors du retour."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:204
 msgid "Click :guilabel:`Save Changes`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Save Changes`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:206
 msgid "The plugin updates the port group XML on all hosts in the cluster."
-msgstr ""
+msgstr "Le plugin met à jour le XML du groupe de ports sur tous les hôtes du cluster."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:209
 msgid "Creating HVM Overlay Networks"
-msgstr ""
+msgstr "Création de réseaux HVM Overlay"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:211
 msgid ""
@@ -631,6 +746,10 @@ msgid ""
 "east-west VM traffic across hosts. It enables tenant network segmentation"
 " without requiring physical VLAN configuration on upstream switches."
 msgstr ""
+"Un réseau HVM Overlay utilise la tunnelisation VXLAN pour fournir une "
+"isolation du trafic VM est-ouest entre les hôtes. Il permet la "
+"segmentation réseau des locataires sans nécessiter de configuration VLAN "
+"physique sur les commutateurs en amont."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:213
 msgid ""
@@ -638,6 +757,9 @@ msgid ""
 "every host and configures a VXLAN tunnel endpoint on a designated host "
 "interface."
 msgstr ""
+"Le système déploie un pont OVS dédié pour chaque réseau overlay sur "
+"chaque hôte et configure un point de terminaison de tunnel VXLAN sur "
+"une interface hôte désignée."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:215
 msgid ""
@@ -649,6 +771,14 @@ msgid ""
 "legacy/layout 1.3 plugin described on this page; layout 2.0 uses the "
 "Virtual Switch model and must not be configured from this workflow."
 msgstr ""
+"Avant la création, vérifiez que chaque hôte participant dispose de "
+"l'interface tunnel sélectionnée, que les adresses des points de "
+"terminaison de tunnel sont mutuellement accessibles via l'underlay, et "
+"que le MTU de l'underlay peut transporter l'encapsulation VXLAN "
+"supplémentaire sans fragmentation. Les valeurs VNI doivent être uniques "
+"au sein du domaine VXLAN applicable. Ces exigences s'appliquent au "
+"plugin legacy/layout 1.3 décrit sur cette page ; le layout 2.0 utilise "
+"le modèle Virtual Switch et ne doit pas être configuré depuis ce workflow."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:219
 msgid ""
@@ -657,31 +787,37 @@ msgid ""
 "bridge for each Overlay Network on every host, ensuring complete "
 "isolation from other networks."
 msgstr ""
+"Le réseau HVM Overlay n'utilise pas le même commutateur virtuel OVS "
+"Bridge Domain que les réseaux Standard. Au lieu de cela, le système crée "
+"un pont OVS dédié pour chaque réseau Overlay sur chaque hôte, assurant "
+"une isolation complète par rapport aux autres réseaux."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:222
 msgid "Select :guilabel:`+ Add` > **HVM Overlay Network**"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` > **HVM Overlay Network**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:225
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:248
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:266
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:331
 msgid "**Group** — Select the group"
-msgstr ""
+msgstr "**Group** — Sélectionnez le groupe"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:228
 msgid "**VNI** — The VXLAN Network Identifier for tunnel isolation"
-msgstr ""
+msgstr "**VNI** — L'identifiant réseau VXLAN pour l'isolation du tunnel"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:229
 msgid ""
 "**Tunnel Interface** — The host interface used as the VXLAN tunnel "
 "endpoint"
 msgstr ""
+"**Tunnel Interface** — L'interface hôte utilisée comme point de "
+"terminaison du tunnel VXLAN"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:234
 msgid "Creating HVM Data Networks"
-msgstr ""
+msgstr "Création de réseaux HVM Data"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:236
 msgid ""
@@ -690,43 +826,52 @@ msgid ""
 "guest storage traffic, such as iSCSI or NFS. It also supports MTU "
 "configuration for jumbo frames."
 msgstr ""
+"Un réseau HVM Data crée une interface VLAN Linux sur chaque hôte et la "
+"mappe sur un réseau libvirt. Il est conçu pour gérer le trafic de "
+"stockage à haut débit dans le système invité, tel que iSCSI ou NFS. Il "
+"prend également en charge la configuration MTU pour les trames jumbo."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:240
 msgid "You can apply MTU changes only to stopped VMs"
-msgstr ""
+msgstr "Vous ne pouvez appliquer les modifications MTU qu'aux VM arrêtées"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:241
 msgid "Ensure to stop and start each VM after changing the MTU"
-msgstr ""
+msgstr "Assurez-vous d'arrêter et de redémarrer chaque VM après avoir modifié le MTU"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:242
 msgid ""
 "Configure the same MTU inside the guest only when the complete network "
 "path is designed and validated for that frame size"
 msgstr ""
+"Configurez le même MTU à l'intérieur du système invité uniquement lorsque "
+"le chemin réseau complet est conçu et validé pour cette taille de trame"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:245
 msgid "Select :guilabel:`+ Add` > **HVM Data Network**"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` > **HVM Data Network**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:251
 msgid "**VLAN ID** — The VLAN for the data network"
-msgstr ""
+msgstr "**VLAN ID** — Le VLAN pour le réseau data"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:252
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:270
 msgid "**Host Interface** — The host interface for the VLAN sub-interface"
-msgstr ""
+msgstr "**Host Interface** — L'interface hôte pour la sous-interface VLAN"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:253
 msgid ""
 "**MTU** — Maximum transmission unit. Use ``9000`` only for a validated "
 "end-to-end jumbo-frame path; otherwise use the network's standard MTU"
 msgstr ""
+"**MTU** — Unité de transmission maximale. Utilisez ``9000`` uniquement "
+"pour un chemin de trames jumbo validé de bout en bout ; sinon utilisez "
+"le MTU standard du réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:258
 msgid "Creating HVM Private Networks"
-msgstr ""
+msgstr "Création de réseaux HVM Private"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:260
 msgid ""
@@ -736,18 +881,24 @@ msgid ""
 "network, libvirt automatically creates a macvtap interface on the host, "
 "providing direct connectivity to the physical network segment."
 msgstr ""
+"Le réseau HVM Private crée un réseau libvirt adossé à MacVTAP sur chaque "
+"hôte. Le système crée une sous-interface marquée VLAN sur l'interface "
+"hôte sélectionnée en utilisant l'identifiant VLAN spécifié. Lorsqu'une "
+"VM se connecte à ce réseau, libvirt crée automatiquement une interface "
+"macvtap sur l'hôte, fournissant une connectivité directe au segment "
+"réseau physique."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:263
 msgid "Select :guilabel:`+ Add` > **HVM Private Network**"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` > **HVM Private Network**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:269
 msgid "**VLAN ID** — The VLAN for the private network"
-msgstr ""
+msgstr "**VLAN ID** — Le VLAN pour le réseau privé"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:275
 msgid "Creating HVM SR-IOV Networks"
-msgstr ""
+msgstr "Création de réseaux HVM SR-IOV"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:277
 msgid ""
@@ -758,22 +909,33 @@ msgid ""
 "Switch Tagging (VST), inserting and removing VLAN tags directly in "
 "hardware, making the process transparent to the VM guest OS."
 msgstr ""
+"Le réseau HVM SR-IOV utilise les SR-IOV Virtual Functions (VF) sur une "
+"NIC physique pour fournir des performances réseau quasi natives. Le "
+"plugin mappe un réseau hostdev libvirt sur une Physical Function (PF), "
+"et libvirt gère l'attribution des VF aux VM individuelles. Le matériel "
+"NIC effectue le VLAN Switch Tagging (VST), insérant et retirant les "
+"tags VLAN directement au niveau matériel, rendant le processus "
+"transparent pour le système d'exploitation invité de la VM."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:281
 msgid "The system does not support live migration of VMs that use SR-IOV networks"
-msgstr ""
+msgstr "Le système ne prend pas en charge la migration à chaud des VM utilisant des réseaux SR-IOV"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:282
 msgid ""
 "Ensure that you enable SR-IOV in the host BIOS/UEFI before configuring "
 "SR-IOV networks"
 msgstr ""
+"Assurez-vous d'activer SR-IOV dans le BIOS/UEFI de l'hôte avant de "
+"configurer les réseaux SR-IOV"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:283
 msgid ""
 "The plugin automatically detects SR-IOV-capable Physical Functions on "
 "each host"
 msgstr ""
+"Le plugin détecte automatiquement les Physical Functions compatibles "
+"SR-IOV sur chaque hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:287
 msgid ""
@@ -781,10 +943,14 @@ msgid ""
 "tracking can become inconsistent. Restart the ``libvirtd`` daemon if VF "
 "tracking issues occur."
 msgstr ""
+"Surveillez le comportement de libvirt après un clonage, une sauvegarde "
+"ou une restauration de VM car le suivi des VF peut devenir incohérent. "
+"Redémarrez le démon ``libvirtd`` si des problèmes de suivi des VF "
+"surviennent."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:290
 msgid "Understanding Physical Functions and Virtual Functions"
-msgstr ""
+msgstr "Comprendre les Physical Functions et les Virtual Functions"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:292
 msgid ""
@@ -794,6 +960,11 @@ msgid ""
 "driver controls the hardware, enables SR-IOV, and creates Virtual "
 "Functions."
 msgstr ""
+"**Physical Function (PF)** — Un périphérique PCIe complet sur un "
+"adaptateur réseau physique qui gère et contrôle la fonctionnalité "
+"SR-IOV. Le système d'exploitation de l'hôte découvre et gère la PF "
+"comme une NIC physique standard. Le pilote PF contrôle le matériel, "
+"active SR-IOV et crée les Virtual Functions."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:293
 msgid ""
@@ -802,22 +973,30 @@ msgid ""
 "independently with its own queue and interrupt, allowing direct hardware "
 "access without hypervisor overhead."
 msgstr ""
+"**Virtual Function (VF)** — Une fonction PCIe légère dérivée d'une PF "
+"qui fournit des performances d'E/S quasi natives à une VM. Chaque VF "
+"fonctionne indépendamment avec sa propre file d'attente et interruption, "
+"permettant un accès matériel direct sans surcharge de l'hyperviseur."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:296
 msgid "AppArmor Configuration"
-msgstr ""
+msgstr "Configuration AppArmor"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:298
 msgid ""
 "Configure AppArmor on each host to allow libvirt/QEMU to access VFIO "
 "devices for SR-IOV Virtual Functions:"
 msgstr ""
+"Configurez AppArmor sur chaque hôte pour permettre à libvirt/QEMU "
+"d'accéder aux périphériques VFIO pour les SR-IOV Virtual Functions :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:300
 msgid ""
 "Add the following entry to the local libvirt-qemu AppArmor abstraction "
 "file:"
 msgstr ""
+"Ajoutez l'entrée suivante au fichier d'abstraction AppArmor local de "
+"libvirt-qemu :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:302
 msgid ""
@@ -825,30 +1004,37 @@ msgid ""
 "# Allow read/write/lock access to all VFIO group devices for SR-IOV VFs\n"
 "/dev/vfio/* krw,"
 msgstr ""
+"# File: /etc/apparmor.d/local/abstractions/libvirt-qemu\n"
+"# Allow read/write/lock access to all VFIO group devices for SR-IOV VFs\n"
+"/dev/vfio/* krw,"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:308
 msgid "Reload AppArmor after making the change:"
-msgstr ""
+msgstr "Rechargez AppArmor après avoir effectué la modification :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:310
 msgid "sudo apparmor_parser -r /etc/apparmor.d/abstractions/libvirt-qemu"
-msgstr ""
+msgstr "sudo apparmor_parser -r /etc/apparmor.d/abstractions/libvirt-qemu"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:315
 msgid "Host NIC VF Management"
-msgstr ""
+msgstr "Gestion des VF de NIC de l'hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:317
 msgid ""
 "When you create an SR-IOV network, the plugin automatically performs the "
 "following:"
 msgstr ""
+"Lorsque vous créez un réseau SR-IOV, le plugin effectue automatiquement "
+"les opérations suivantes :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:319
 msgid ""
 "Discovers all SR-IOV-capable Physical Functions (PFs) on each host by "
 "reading ``/sys/class/net/*/device/sriov_totalvfs``"
 msgstr ""
+"Découvre toutes les Physical Functions (PF) compatibles SR-IOV sur "
+"chaque hôte en lisant ``/sys/class/net/*/device/sriov_totalvfs``"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:320
 msgid ""
@@ -857,10 +1043,14 @@ msgid ""
 "``sriov_totalvfs`` to ``sriov_numvfs``, ensuring VFs remain enabled "
 "across reboots."
 msgstr ""
+"Si les Virtual Functions (VF) ne sont pas activées, le plugin installe "
+"et démarre un service systemd persistant sur l'hôte. Ce service écrit "
+"``sriov_totalvfs`` dans ``sriov_numvfs``, assurant que les VF restent "
+"activées après les redémarrages."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:321
 msgid "Creates and autostarts the libvirt hostdev network on each host"
-msgstr ""
+msgstr "Crée et démarre automatiquement le réseau hostdev libvirt sur chaque hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:322
 msgid ""
@@ -868,40 +1058,46 @@ msgid ""
 "single libvirt hostdev pool on each host. The total number of VMs across "
 "all networks on that PF is limited by the total number of available VFs."
 msgstr ""
+"Tous les réseaux SR-IOV qui partagent la même Physical Function (PF) "
+"utilisent un seul pool hostdev libvirt sur chaque hôte. Le nombre total "
+"de VM sur tous les réseaux de cette PF est limité par le nombre total "
+"de VF disponibles."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:325
 msgid "Creating the SR-IOV Network"
-msgstr ""
+msgstr "Création du réseau SR-IOV"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:328
 msgid "Select :guilabel:`+ Add` > **HVM SR-IOV Network**"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` > **HVM SR-IOV Network**"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:334
 msgid "**Physical Function** — Select the SR-IOV capable NIC (PF)"
-msgstr ""
+msgstr "**Physical Function** — Sélectionnez la NIC compatible SR-IOV (PF)"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:335
 msgid "**VLAN ID** — The VLAN for hardware-level VST tagging"
-msgstr ""
+msgstr "**VLAN ID** — Le VLAN pour le marquage VST au niveau matériel"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:340
 msgid "Deleting an HVM Network"
-msgstr ""
+msgstr "Suppression d'un réseau HVM"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:342
 msgid ""
 "Deleting an HVM network removes the network definition from all hosts in "
 "the cluster and from the |morpheus| database."
 msgstr ""
+"La suppression d'un réseau HVM retire la définition du réseau de tous "
+"les hôtes du cluster et de la base de données |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:345
 msgid "Select the network to delete from the list"
-msgstr ""
+msgstr "Sélectionnez le réseau à supprimer dans la liste"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:346
 msgid "Click the delete icon next to the network name"
-msgstr ""
+msgstr "Cliquez sur l'icône de suppression à côté du nom du réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:349
 msgid ""
@@ -911,6 +1107,12 @@ msgid ""
 "cleanup. The system also updates the Aruba CX switch configuration for "
 "the removed VLAN IDs through the Generic Integration."
 msgstr ""
+"Le système supprime la définition du réseau libvirt et son groupe de "
+"ports de tous les hôtes du cluster. Pour les réseaux Standard, il "
+"supprime automatiquement les identifiants VLAN trunk avec le groupe de "
+"ports sans nécessiter de nettoyage séparé. Le système met également à "
+"jour la configuration des commutateurs Aruba CX pour les identifiants "
+"VLAN supprimés via la Generic Integration."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:351
 msgid ""
@@ -919,78 +1121,87 @@ msgid ""
 "every VM first and verify no workload depends on the VNI; deleting the "
 "network removes connectivity and does not migrate attached workloads."
 msgstr ""
+"Pour un réseau Overlay, la suppression retire également son pont OVS "
+"dédié et la configuration VXLAN des hôtes participants. Déplacez ou "
+"déconnectez d'abord chaque VM et vérifiez qu'aucune charge de travail "
+"ne dépend du VNI ; la suppression du réseau retire la connectivité et "
+"ne migre pas les charges de travail connectées."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:354
 msgid "Viewing Network Status"
-msgstr ""
+msgstr "Affichage de l'état du réseau"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:357
 msgid "Viewing Networks Managed by the Plugin"
-msgstr ""
+msgstr "Affichage des réseaux gérés par le plugin"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:360
 msgid "Filter by **Type** to view networks of each HVM network type:"
-msgstr ""
+msgstr "Filtrez par **Type** pour afficher les réseaux de chaque type de réseau HVM :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:362
 msgid "HVM Standard Network"
-msgstr ""
+msgstr "HVM Standard Network"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:363
 msgid "HVM Overlay Network"
-msgstr ""
+msgstr "HVM Overlay Network"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:364
 msgid "HVM Data Network"
-msgstr ""
+msgstr "HVM Data Network"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:365
 msgid "HVM Private Network"
-msgstr ""
+msgstr "HVM Private Network"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:366
 msgid "HVM SR-IOV Network"
-msgstr ""
+msgstr "HVM SR-IOV Network"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:369
 msgid "Viewing OVS Bridge Domain Virtual Switches"
-msgstr ""
+msgstr "Affichage des commutateurs virtuels OVS Bridge Domain"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:372
 msgid ""
 "Filter by type **OVS Bridge Domain** to see all virtual switches in the "
 "cluster"
 msgstr ""
+"Filtrez par type **OVS Bridge Domain** pour voir tous les commutateurs "
+"virtuels du cluster"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:375
 msgid "Viewing Plugin Logs"
-msgstr ""
+msgstr "Affichage des journaux du plugin"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:377
 msgid "Navigate to :menuselection:`Administration --> Health --> Morpheus Logs`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Administration --> Health --> Morpheus Logs`"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:378
 msgid "Enter ``HvmNetwork`` in the search box to filter by plugin name"
-msgstr ""
+msgstr "Saisissez ``HvmNetwork`` dans la zone de recherche pour filtrer par nom de plugin"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:381
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Dépannage"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:384
 msgid "General Troubleshooting"
-msgstr ""
+msgstr "Dépannage général"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:386
 msgid ""
 "For any issues related to HVM network plugin, view the |morpheus| "
 "appliance logs (see `Viewing Plugin Logs`_ above)."
 msgstr ""
+"Pour tout problème lié au plugin réseau HVM, consultez les journaux de "
+"l'appliance |morpheus| (voir `Viewing Plugin Logs`_ ci-dessus)."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:389
 msgid "New Host Does Not Receive Networks"
-msgstr ""
+msgstr "Le nouvel hôte ne reçoit pas les réseaux"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:391
 msgid ""
@@ -998,6 +1209,9 @@ msgid ""
 "host discovery or if required interfaces are not yet available for "
 "propagation."
 msgstr ""
+"Un nouvel hôte peut ne pas recevoir les réseaux si |morpheus| n'a pas "
+"terminé la découverte de l'hôte ou si les interfaces requises ne sont "
+"pas encore disponibles pour la propagation."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:393
 msgid ""
@@ -1005,38 +1219,47 @@ msgid ""
 "network definitions. If bond interface discovery remains incomplete, "
 "|morpheus| cannot complete network mapping for the host."
 msgstr ""
+"|morpheus| doit découvrir les interfaces de l'hôte avant de pouvoir "
+"propager les définitions de réseau. Si la découverte des interfaces bond "
+"reste incomplète, |morpheus| ne peut pas terminer le mappage réseau pour "
+"l'hôte."
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:395
 msgid "Resolution:"
-msgstr ""
+msgstr "Résolution :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:397
 msgid "Check for pending AddWorker jobs"
-msgstr ""
+msgstr "Vérifiez les tâches AddWorker en attente"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:398
 msgid ""
 "Confirm that |morpheus| has discovered all required bond interfaces on "
 "the host"
 msgstr ""
+"Confirmez que |morpheus| a découvert toutes les interfaces bond requises "
+"sur l'hôte"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:399
 msgid ""
 "Verify that the host inventory reflects the expected network interfaces "
 "before propagation begins"
 msgstr ""
+"Vérifiez que l'inventaire de l'hôte reflète les interfaces réseau "
+"attendues avant le début de la propagation"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:401
 msgid "If the issue persists:"
-msgstr ""
+msgstr "Si le problème persiste :"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:403
 msgid "Check whether the AddWorker workflow has reached the retry limit"
-msgstr ""
+msgstr "Vérifiez si le workflow AddWorker a atteint la limite de tentatives"
 
 #: ../../infrastructure/clusters/hvm/hvm_networks.rst:404
 msgid ""
 "Review :menuselection:`Infrastructure --> Activity` for error events "
 "related to the host"
 msgstr ""
-
+"Consultez :menuselection:`Infrastructure --> Activity` pour les "
+"événements d'erreur liés à l'hôte"

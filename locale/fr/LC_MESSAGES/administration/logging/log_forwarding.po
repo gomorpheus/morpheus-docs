@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/logging/log_forwarding.rst:2
 msgid "Log Forwarding"
-msgstr ""
+msgstr "Transfert de journaux"
 
 #: ../../administration/logging/log_forwarding.rst:4
 msgid ""
@@ -31,10 +31,16 @@ msgid ""
 "enables integration with centralized logging solutions and SIEM platforms"
 " such as Splunk, Datadog, Graylog, or any syslog-compatible receiver."
 msgstr ""
+"|morpheus| prend en charge le transfert de journaux depuis les hôtes "
+"gérés et les machines virtuelles vers des plateformes de journalisation "
+"externes à l'aide de **règles de transfert Syslog**. Cela permet "
+"l'intégration avec des solutions de journalisation centralisées et des "
+"plateformes SIEM telles que Splunk, Datadog, Graylog ou tout récepteur "
+"compatible syslog."
 
 #: ../../administration/logging/log_forwarding.rst:7
 msgid "How Log Forwarding Works"
-msgstr ""
+msgstr "Fonctionnement du transfert de journaux"
 
 #: ../../administration/logging/log_forwarding.rst:9
 msgid ""
@@ -45,10 +51,17 @@ msgid ""
 "destination — logs flow from the managed host to the syslog receiver, not"
 " through the |morpheus| appliance."
 msgstr ""
+"L'Agent |morpheus| sur chaque hôte géré surveille les fichiers journaux "
+"(``/var/log/*.log`` par défaut, ainsi que les dossiers de journaux "
+"personnalisés configurés sur les Library Node Types). Lorsque des règles "
+"de transfert syslog sont configurées, l'Agent transfère les entrées de "
+"journal correspondantes directement vers la destination syslog configurée "
+"— les journaux circulent de l'hôte géré vers le récepteur syslog, et non "
+"via l'appliance |morpheus|."
 
 #: ../../administration/logging/log_forwarding.rst:11
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/logging/log_forwarding.rst:11
 msgid ""
@@ -56,193 +69,211 @@ msgid ""
 " collected and stored in OpenSearch on the appliance (unless collection "
 "is disabled). Forwarding sends a copy to the external destination."
 msgstr ""
+"Le transfert de journaux fonctionne indépendamment de la collecte de "
+"journaux. Les journaux sont toujours collectés et stockés dans "
+"OpenSearch sur l'appliance (sauf si la collecte est désactivée). Le "
+"transfert envoie une copie vers la destination externe."
 
 #: ../../administration/logging/log_forwarding.rst:14
 msgid "Configuring Syslog Forwarding Rules"
-msgstr ""
+msgstr "Configuration des règles de transfert Syslog"
 
 #: ../../administration/logging/log_forwarding.rst:16
 msgid "Navigate to |AdmSetLog|"
-msgstr ""
+msgstr "Accédez à |AdmSetLog|"
 
 #: ../../administration/logging/log_forwarding.rst:17
 msgid "Click :guilabel:`+ Add Rule`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ Add Rule`"
 
 #: ../../administration/logging/log_forwarding.rst:18
 msgid "Configure the forwarding rule:"
-msgstr ""
+msgstr "Configurez la règle de transfert :"
 
 #: ../../administration/logging/log_forwarding.rst:24
 msgid "Field"
-msgstr ""
+msgstr "Champ"
 
 #: ../../administration/logging/log_forwarding.rst:25
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../administration/logging/log_forwarding.rst:26
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: ../../administration/logging/log_forwarding.rst:27
 msgid "Descriptive name for the rule"
-msgstr ""
+msgstr "Nom descriptif pour la règle"
 
 #: ../../administration/logging/log_forwarding.rst:28
 msgid "Rule"
-msgstr ""
+msgstr "Rule"
 
 #: ../../administration/logging/log_forwarding.rst:29
 msgid ""
 "The syslog forwarding destination and configuration. Uses standard syslog"
 " address format."
 msgstr ""
+"La destination et la configuration du transfert syslog. Utilise le "
+"format d'adresse syslog standard."
 
 #: ../../administration/logging/log_forwarding.rst:30
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 #: ../../administration/logging/log_forwarding.rst:31
 msgid "Hostname or IP address of the syslog receiver"
-msgstr ""
+msgstr "Nom d'hôte ou adresse IP du récepteur syslog"
 
 #: ../../administration/logging/log_forwarding.rst:32
 #: ../../administration/logging/log_forwarding.rst:72
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ../../administration/logging/log_forwarding.rst:33
 msgid ""
 "Port number on the syslog receiver (common: 514 for UDP, 1514 for TCP, "
 "6514 for TLS)"
 msgstr ""
+"Numéro de port sur le récepteur syslog (courants : 514 pour UDP, 1514 "
+"pour TCP, 6514 pour TLS)"
 
 #: ../../administration/logging/log_forwarding.rst:34
 #: ../../administration/logging/log_forwarding.rst:48
 msgid "Protocol"
-msgstr ""
+msgstr "Protocole"
 
 #: ../../administration/logging/log_forwarding.rst:35
 msgid "Transport protocol: UDP, TCP, or TCP+TLS (secure syslog)"
-msgstr ""
+msgstr "Protocole de transport : UDP, TCP ou TCP+TLS (syslog sécurisé)"
 
 #: ../../administration/logging/log_forwarding.rst:37
 msgid "Click :guilabel:`Save`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Save`"
 
 #: ../../administration/logging/log_forwarding.rst:39
 msgid ""
 "The rule takes effect on the next Agent check-in cycle for all managed "
 "hosts."
 msgstr ""
+"La règle prend effet au prochain cycle de vérification de l'Agent pour "
+"tous les hôtes gérés."
 
 #: ../../administration/logging/log_forwarding.rst:42
 msgid "Supported Transport Protocols"
-msgstr ""
+msgstr "Protocoles de transport pris en charge"
 
 #: ../../administration/logging/log_forwarding.rst:49
 msgid "Port (typical)"
-msgstr ""
+msgstr "Port (typique)"
 
 #: ../../administration/logging/log_forwarding.rst:50
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 #: ../../administration/logging/log_forwarding.rst:51
 msgid "UDP"
-msgstr ""
+msgstr "UDP"
 
 #: ../../administration/logging/log_forwarding.rst:52
 msgid "514"
-msgstr ""
+msgstr "514"
 
 #: ../../administration/logging/log_forwarding.rst:53
 msgid ""
 "Fastest, no delivery guarantee. Suitable for high-volume, low-criticality"
 " logs."
 msgstr ""
+"Le plus rapide, sans garantie de livraison. Adapté aux journaux à haut "
+"volume et faible criticité."
 
 #: ../../administration/logging/log_forwarding.rst:54
 msgid "TCP"
-msgstr ""
+msgstr "TCP"
 
 #: ../../administration/logging/log_forwarding.rst:55
 msgid "1514"
-msgstr ""
+msgstr "1514"
 
 #: ../../administration/logging/log_forwarding.rst:56
 msgid ""
 "Reliable delivery with connection-oriented transport. Recommended for "
 "most deployments."
 msgstr ""
+"Livraison fiable avec transport orienté connexion. Recommandé pour la "
+"plupart des déploiements."
 
 #: ../../administration/logging/log_forwarding.rst:57
 msgid "TCP + TLS"
-msgstr ""
+msgstr "TCP + TLS"
 
 #: ../../administration/logging/log_forwarding.rst:58
 msgid "6514"
-msgstr ""
+msgstr "6514"
 
 #: ../../administration/logging/log_forwarding.rst:59
 msgid ""
 "Encrypted transport. Required for compliance environments and when log "
 "data crosses untrusted networks."
 msgstr ""
+"Transport chiffré. Requis pour les environnements de conformité et "
+"lorsque les données de journal traversent des réseaux non fiables."
 
 #: ../../administration/logging/log_forwarding.rst:62
 msgid "Firewall Requirements"
-msgstr ""
+msgstr "Exigences de pare-feu"
 
 #: ../../administration/logging/log_forwarding.rst:64
 msgid "For log forwarding to function, the following network paths must be open:"
 msgstr ""
+"Pour que le transfert de journaux fonctionne, les chemins réseau "
+"suivants doivent être ouverts :"
 
 #: ../../administration/logging/log_forwarding.rst:70
 msgid "Source"
-msgstr ""
+msgstr "Source"
 
 #: ../../administration/logging/log_forwarding.rst:71
 msgid "Destination"
-msgstr ""
+msgstr "Destination"
 
 #: ../../administration/logging/log_forwarding.rst:73
 msgid "Purpose"
-msgstr ""
+msgstr "Fonction"
 
 #: ../../administration/logging/log_forwarding.rst:74
 #: ../../administration/logging/log_forwarding.rst:78
 msgid "Managed hosts/VMs"
-msgstr ""
+msgstr "Hôtes/machines virtuelles gérés"
 
 #: ../../administration/logging/log_forwarding.rst:75
 msgid "Syslog receiver"
-msgstr ""
+msgstr "Récepteur syslog"
 
 #: ../../administration/logging/log_forwarding.rst:76
 msgid "514/1514/6514"
-msgstr ""
+msgstr "514/1514/6514"
 
 #: ../../administration/logging/log_forwarding.rst:77
 msgid "Log forwarding (protocol-dependent)"
-msgstr ""
+msgstr "Transfert de journaux (dépend du protocole)"
 
 #: ../../administration/logging/log_forwarding.rst:79
 msgid "|morpheus| appliance"
-msgstr ""
+msgstr "Appliance |morpheus|"
 
 #: ../../administration/logging/log_forwarding.rst:80
 msgid "443"
-msgstr ""
+msgstr "443"
 
 #: ../../administration/logging/log_forwarding.rst:81
 msgid "Agent communication (always required)"
-msgstr ""
+msgstr "Communication de l'Agent (toujours requise)"
 
 #: ../../administration/logging/log_forwarding.rst:83
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../administration/logging/log_forwarding.rst:83
 msgid ""
@@ -250,36 +281,42 @@ msgid ""
 "receiver. Ensure all managed hosts have network access to the syslog "
 "destination — not just the |morpheus| appliance."
 msgstr ""
+"Le trafic de transfert de journaux circule directement des hôtes gérés "
+"vers le récepteur syslog. Assurez-vous que tous les hôtes gérés "
+"disposent d'un accès réseau à la destination syslog — pas seulement "
+"l'appliance |morpheus|."
 
 #: ../../administration/logging/log_forwarding.rst:86
 msgid "What Gets Forwarded"
-msgstr ""
+msgstr "Ce qui est transféré"
 
 #: ../../administration/logging/log_forwarding.rst:88
 msgid ""
 "By default, syslog forwarding includes all logs that the |morpheus| Agent"
 " collects:"
 msgstr ""
+"Par défaut, le transfert syslog inclut tous les journaux collectés par "
+"l'Agent |morpheus| :"
 
 #: ../../administration/logging/log_forwarding.rst:90
 msgid "System logs (``/var/log/syslog``, ``/var/log/messages``)"
-msgstr ""
+msgstr "Journaux système (``/var/log/syslog``, ``/var/log/messages``)"
 
 #: ../../administration/logging/log_forwarding.rst:91
 msgid "Application logs (any ``.log`` file in ``/var/log/``)"
-msgstr ""
+msgstr "Journaux d'application (tout fichier ``.log`` dans ``/var/log/``)"
 
 #: ../../administration/logging/log_forwarding.rst:92
 msgid "Custom log folders configured on Library Node Types"
-msgstr ""
+msgstr "Dossiers de journaux personnalisés configurés sur les Library Node Types"
 
 #: ../../administration/logging/log_forwarding.rst:93
 msgid "HVM hypervisor logs (kernel, libvirt, agent)"
-msgstr ""
+msgstr "Journaux de l'hyperviseur HVM (kernel, libvirt, agent)"
 
 #: ../../administration/logging/log_forwarding.rst:96
 msgid "Appliance Service Logs"
-msgstr ""
+msgstr "Journaux des services de l'appliance"
 
 #: ../../administration/logging/log_forwarding.rst:98
 msgid ""
@@ -290,10 +327,17 @@ msgid ""
 "logback SIEM appender configuration. See :doc:`appliance_logs` for "
 "details."
 msgstr ""
+"Les journaux des services de l'appliance (MySQL, RabbitMQ, OpenSearch, "
+"Nginx, journaux d'application) ne sont **pas** transférés par les règles "
+"syslog basées sur l'Agent. Pour transférer les journaux de l'appliance, "
+"configurez le transfert syslog au niveau du système d'exploitation à "
+"l'aide de ``rsyslog`` ou ``syslog-ng`` sur l'hôte de l'appliance, ou "
+"utilisez la configuration de l'appender SIEM logback. Voir "
+":doc:`appliance_logs` pour plus de détails."
 
 #: ../../administration/logging/log_forwarding.rst:101
 msgid "Integration with SIEM Platforms"
-msgstr ""
+msgstr "Intégration avec les plateformes SIEM"
 
 #: ../../administration/logging/log_forwarding.rst:103
 msgid ""
@@ -304,56 +348,76 @@ msgid ""
 "forwarding rules. See the CEF/SIEM Auditing section in "
 ":doc:`appliance_logs`."
 msgstr ""
+"Pour l'intégration SIEM (format CEF/LEEF, événements d'audit "
+"structurés), |morpheus| prend en charge un appender d'audit basé sur "
+"logback capable d'écrire directement dans les bases de données SIEM ou "
+"les points de terminaison syslog au format Common Event Format. Cette "
+"configuration s'effectue au niveau de l'appliance plutôt que via les "
+"règles de transfert de l'interface utilisateur. Voir la section "
+"CEF/SIEM Auditing dans :doc:`appliance_logs`."
 
 #: ../../administration/logging/log_forwarding.rst:106
 msgid "Troubleshooting Log Forwarding"
-msgstr ""
+msgstr "Dépannage du transfert de journaux"
 
 #: ../../administration/logging/log_forwarding.rst:108
 msgid "**Logs not appearing at the destination:**"
-msgstr ""
+msgstr "**Les journaux n'apparaissent pas à la destination :**"
 
 #: ../../administration/logging/log_forwarding.rst:110
 msgid ""
 "Verify network connectivity from a managed host to the syslog receiver on"
 " the configured port"
 msgstr ""
+"Vérifiez la connectivité réseau depuis un hôte géré vers le récepteur "
+"syslog sur le port configuré"
 
 #: ../../administration/logging/log_forwarding.rst:111
 msgid ""
 "Confirm the |morpheus| Agent is running on the host (``systemctl status "
 "morpheus-node-agent``)"
 msgstr ""
+"Confirmez que l'Agent |morpheus| est en cours d'exécution sur l'hôte "
+"(``systemctl status morpheus-node-agent``)"
 
 #: ../../administration/logging/log_forwarding.rst:112
 msgid ""
 "Check that the forwarding rule protocol matches what the receiver expects"
 " (UDP vs TCP vs TLS)"
 msgstr ""
+"Vérifiez que le protocole de la règle de transfert correspond à ce que "
+"le récepteur attend (UDP vs TCP vs TLS)"
 
 #: ../../administration/logging/log_forwarding.rst:113
 msgid ""
 "Verify no firewall is blocking the syslog port between managed hosts and "
 "the receiver"
 msgstr ""
+"Vérifiez qu'aucun pare-feu ne bloque le port syslog entre les hôtes "
+"gérés et le récepteur"
 
 #: ../../administration/logging/log_forwarding.rst:115
 msgid "**Partial logs forwarded:**"
-msgstr ""
+msgstr "**Journaux partiellement transférés :**"
 
 #: ../../administration/logging/log_forwarding.rst:117
 msgid ""
 "Only files matching ``.log`` extension in watched directories are "
 "forwarded"
 msgstr ""
+"Seuls les fichiers avec l'extension ``.log`` dans les répertoires "
+"surveillés sont transférés"
 
 #: ../../administration/logging/log_forwarding.rst:118
 msgid ""
 "Custom application logs require the LOG FOLDER to be configured on the "
 "Library Node Type"
 msgstr ""
+"Les journaux d'application personnalisés nécessitent que le LOG FOLDER "
+"soit configuré sur le Library Node Type"
 
 #: ../../administration/logging/log_forwarding.rst:119
 msgid "Binary log files or files with non-standard extensions are not forwarded"
 msgstr ""
-
+"Les fichiers journaux binaires ou les fichiers avec des extensions non "
+"standard ne sont pas transférés"

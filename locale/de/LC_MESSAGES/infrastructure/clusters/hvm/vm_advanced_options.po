@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:2
 msgid "VM Advanced Options"
-msgstr ""
+msgstr "Erweiterte VM-Optionen"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:4
 msgid ""
@@ -32,10 +32,16 @@ msgid ""
 "on the CONFIGURE tab during provisioning or through the "
 ":guilabel:`Actions` > :guilabel:`Reconfigure` menu on an existing VM."
 msgstr ""
+"Beim Bereitstellen oder Neukonfigurieren von virtuellen HVM-Maschinen bietet "
+"der Abschnitt **Advanced Options** Steuerungsmöglichkeiten für Firmware, "
+"Startverhalten, Sicherheit, Grafik und Virtualisierungseinstellungen. Diese "
+"Optionen befinden sich auf der Registerkarte CONFIGURE während der "
+"Bereitstellung oder über das Menü :guilabel:`Actions` > "
+":guilabel:`Reconfigure` bei einer bestehenden VM."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:6
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:6
 msgid ""
@@ -45,10 +51,15 @@ msgid ""
 "typically requires the VM to be powered off and its configuration "
 "regenerated."
 msgstr ""
+"Einige Optionen sind nur bei der erstmaligen Bereitstellung verfügbar, "
+"andere nur während der Neukonfiguration. Beachten Sie die "
+"Verfügbarkeitshinweise bei jeder Option unten. Das Ändern von Firmware- oder "
+"Startoptionen bei einer bestehenden VM erfordert in der Regel, dass die VM "
+"ausgeschaltet und ihre Konfiguration neu generiert wird."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:9
 msgid "Hardware / Chipset"
-msgstr ""
+msgstr "Hardware / Chipsatz"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:15
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:29
@@ -59,7 +70,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:165
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:179
 msgid "Option"
-msgstr ""
+msgstr "Option"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:16
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:30
@@ -69,7 +80,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:149
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:166
 msgid "Default"
-msgstr ""
+msgstr "Standard"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:17
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:31
@@ -80,16 +91,16 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:150
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:167
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:18
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:182
 msgid "Hardware Compatibility"
-msgstr ""
+msgstr "Hardwarekompatibilität"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:19
 msgid "Modern"
-msgstr ""
+msgstr "Modern"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:20
 msgid ""
@@ -99,15 +110,20 @@ msgid ""
 "not support VirtIO drivers (e.g., Windows XP, older Linux distributions)."
 " *Provision only.*"
 msgstr ""
+"Wählt den emulierten Maschinen-Chipsatztyp aus. **Modern** verwendet den "
+"q35-Chipsatz, der PCIe unterstützt und für die meisten Workloads empfohlen "
+"wird. **Legacy** verwendet den i440fx-Chipsatz für Gastbetriebssysteme, die "
+"keine VirtIO-Treiber unterstützen (z. B. Windows XP, ältere "
+"Linux-Distributionen). *Nur bei Bereitstellung.*"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:23
 msgid "Firmware & Boot"
-msgstr ""
+msgstr "Firmware & Start"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:32
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:185
 msgid "UEFI"
-msgstr ""
+msgstr "UEFI"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:33
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:36
@@ -121,29 +137,33 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:152
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:155
 msgid "Off"
-msgstr ""
+msgstr "Aus"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:34
 msgid ""
 "Enables UEFI firmware instead of legacy BIOS. Required for Secure Boot "
 "and recommended for modern operating systems."
 msgstr ""
+"Aktiviert UEFI-Firmware anstelle des Legacy-BIOS. Erforderlich für Secure "
+"Boot und empfohlen für moderne Betriebssysteme."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:35
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:188
 msgid "Secure Boot"
-msgstr ""
+msgstr "Secure Boot"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:37
 msgid ""
 "Enables UEFI Secure Boot, which verifies the integrity of the boot chain."
 " Requires UEFI to be enabled."
 msgstr ""
+"Aktiviert UEFI Secure Boot, das die Integrität der Startkette überprüft. "
+"Erfordert, dass UEFI aktiviert ist."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:38
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:191
 msgid "BIOS Host Mode"
-msgstr ""
+msgstr "BIOS Host Mode"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:40
 msgid ""
@@ -157,11 +177,20 @@ msgid ""
 "SMBIOS, such as certain enterprise licenses tied to physical serial "
 "numbers or hardware-aware monitoring agents."
 msgstr ""
+"Übergibt die SMBIOS/DMI-Daten des physischen Hosts direkt an die Gast-VM, "
+"anstatt emulierte Werte zu verwenden. Bei Deaktivierung (Standard) sieht der "
+"Gast die virtualisierte Identität (Hersteller \"Morpheus\", Produkt \"MVM\" "
+"und eine generierte Seriennummer). Bei Aktivierung sieht der Gast die "
+"tatsächlichen SMBIOS-Daten des physischen Servers (Hersteller, Produktname, "
+"Seriennummer, BIOS-Version usw.), als ob er direkt auf der Hardware laufen "
+"würde. Dies ist erforderlich für Software, die die Hardwareidentität über "
+"SMBIOS validiert, wie bestimmte Enterprise-Lizenzen, die an physische "
+"Seriennummern gebunden sind, oder hardwarebewusste Überwachungsagenten."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:41
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:194
 msgid "Network Boot"
-msgstr ""
+msgstr "Netzwerk-Boot"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:43
 msgid ""
@@ -170,11 +199,15 @@ msgid ""
 "follow it in boot order. The selected VM network must reach the DHCP/PXE "
 "services used by your environment."
 msgstr ""
+"Aktiviert PXE-/Netzwerk-Boot für die VM. Bei Aktivierung ist die primäre "
+"Netzwerkschnittstelle an Startreihenfolge 1; die Root-Festplatte und "
+"angeschlossene ISO-Geräte folgen in der Startreihenfolge. Das ausgewählte "
+"VM-Netzwerk muss die DHCP-/PXE-Dienste Ihrer Umgebung erreichen können."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:44
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:197
 msgid "Boot to BIOS/UEFI"
-msgstr ""
+msgstr "In BIOS/UEFI starten"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:46
 msgid ""
@@ -183,14 +216,18 @@ msgid ""
 "troubleshooting boot issues or changing firmware settings. *Reconfigure "
 "only.*"
 msgstr ""
+"Bei Aktivierung startet die VM bei jedem Neustart direkt in das "
+"BIOS/UEFI-Firmware-Setup-Menü, bis diese Option deaktiviert wird. Nützlich "
+"zur Fehlerbehebung bei Startproblemen oder zum Ändern von "
+"Firmware-Einstellungen. *Nur bei Neukonfiguration.*"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:47
 msgid "Boot Menu Timeout (seconds)"
-msgstr ""
+msgstr "Startmenü-Zeitlimit (Sekunden)"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:48
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:49
 msgid ""
@@ -198,15 +235,19 @@ msgid ""
 "default boot entry. Valid range is 1-30 seconds. Only visible when Boot "
 "to BIOS/UEFI is enabled. *Reconfigure only.*"
 msgstr ""
+"Die Anzahl der Sekunden, die das Startmenü wartet, bevor automatisch der "
+"Standard-Starteintrag ausgewählt wird. Gültiger Bereich ist 1–30 Sekunden. "
+"Nur sichtbar, wenn In BIOS/UEFI starten aktiviert ist. *Nur bei "
+"Neukonfiguration.*"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:52
 msgid "Security"
-msgstr ""
+msgstr "Sicherheit"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:61
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:203
 msgid "TPM"
-msgstr ""
+msgstr "TPM"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:63
 msgid ""
@@ -215,19 +256,24 @@ msgid ""
 "systems that mandate TPM 2.0. TPM state is stored on shared storage and "
 "is automatically recovered during VM failover."
 msgstr ""
+"Aktiviert ein emuliertes Trusted Platform Module (TPM)-Gerät für die VM "
+"mittels Software-TPM (swtpm). Erforderlich für Windows 11 und andere "
+"Betriebssysteme, die TPM 2.0 vorschreiben. Der TPM-Zustand wird auf "
+"gemeinsam genutztem Speicher gespeichert und bei VM-Failover automatisch "
+"wiederhergestellt."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:66
 msgid "QEMU & Virtualization"
-msgstr ""
+msgstr "QEMU & Virtualisierung"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:75
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:206
 msgid "QEMU Arguments"
-msgstr ""
+msgstr "QEMU-Argumente"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:76
 msgid "(empty)"
-msgstr ""
+msgstr "(leer)"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:77
 msgid ""
@@ -236,10 +282,15 @@ msgid ""
 "Available during provisioning and reconfiguration. Use only arguments "
 "validated for the QEMU version on the HVM hosts."
 msgstr ""
+"Benutzerdefinierte QEMU-Befehlszeilenargumente, die auf der HVM-VM "
+"gespeichert und beim Generieren der libvirt/QEMU-Definition in einzelne "
+"Argumente aufgeteilt werden. Verfügbar während der Bereitstellung und "
+"Neukonfiguration. Verwenden Sie nur Argumente, die für die QEMU-Version auf "
+"den HVM-Hosts validiert sind."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:78
 msgid "Enable Nested Virtualization"
-msgstr ""
+msgstr "Verschachtelte Virtualisierung aktivieren"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:80
 msgid ""
@@ -248,20 +299,28 @@ msgid ""
 "with hardware virtualization, nested KVM, or Hyper-V inside a VM. "
 "*Provision only.*"
 msgstr ""
+"Stellt VMX/SVM-CPU-Flags dem Gast zur Verfügung, sodass dieser seinen "
+"eigenen Hypervisor innerhalb der VM ausführen kann. Erforderlich für "
+"Anwendungsfälle wie das Ausführen von Docker mit Hardwarevirtualisierung, "
+"verschachteltem KVM oder Hyper-V innerhalb einer VM. *Nur bei "
+"Bereitstellung.*"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:82
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:82
 msgid ""
 "Use QEMU Arguments with caution. Invalid arguments can prevent the VM "
 "from starting. Consult KVM/QEMU documentation for valid options."
 msgstr ""
+"Verwenden Sie QEMU-Argumente mit Vorsicht. Ungültige Argumente können "
+"verhindern, dass die VM startet. Konsultieren Sie die KVM/QEMU-Dokumentation "
+"für gültige Optionen."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:85
 msgid "CPU Model (Cluster-Level Setting)"
-msgstr ""
+msgstr "CPU-Modell (Cluster-Ebene-Einstellung)"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:87
 msgid ""
@@ -269,14 +328,18 @@ msgid ""
 "VMs. This is a **cluster-level** setting configured when creating or "
 "editing the cluster, and applies to all VMs in the cluster."
 msgstr ""
+"Das **CPU-Modell** bestimmt, wie die CPU des Hosts den Gast-VMs präsentiert "
+"wird. Dies ist eine Einstellung auf **Cluster-Ebene**, die beim Erstellen "
+"oder Bearbeiten des Clusters konfiguriert wird und für alle VMs im Cluster "
+"gilt."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:93
 msgid "Mode"
-msgstr ""
+msgstr "Modus"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:95
 msgid "Host Passthrough (default)"
-msgstr ""
+msgstr "Host Passthrough (Standard)"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:96
 msgid ""
@@ -284,10 +347,14 @@ msgid ""
 "guest. Provides maximum performance and access to all CPU instructions "
 "(AES-NI, AVX-512, etc.). VMs see the real CPU model name."
 msgstr ""
+"Stellt das exakte Host-CPU-Modell und alle seine Funktionen dem Gast direkt "
+"zur Verfügung. Bietet maximale Leistung und Zugriff auf alle "
+"CPU-Instruktionen (AES-NI, AVX-512 usw.). VMs sehen den echten "
+"CPU-Modellnamen."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:97
 msgid "Host Model"
-msgstr ""
+msgstr "Host Model"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:98
 msgid ""
@@ -295,10 +362,14 @@ msgid ""
 "hypervisor's CPU compatibility library. Provides good performance while "
 "allowing limited heterogeneity between cluster hosts."
 msgstr ""
+"Verwendet ein CPU-Modell, das dem Host weitgehend entspricht, aber durch die "
+"CPU-Kompatibilitätsbibliothek des Hypervisors definiert wird. Bietet gute "
+"Leistung und ermöglicht gleichzeitig begrenzte Heterogenität zwischen "
+"Cluster-Hosts."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:99
 msgid "Named Model"
-msgstr ""
+msgstr "Benanntes Modell"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:100
 msgid ""
@@ -306,10 +377,13 @@ msgid ""
 "The guest sees only features defined by that model, regardless of what "
 "the host actually supports. Maximum portability."
 msgstr ""
+"Gibt einen exakten CPU-Modellnamen an (z. B. ``Skylake-Server``, ``EPYC``). "
+"Der Gast sieht nur die von diesem Modell definierten Funktionen, unabhängig "
+"davon, was der Host tatsächlich unterstützt. Maximale Portabilität."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:103
 msgid "CPU Compatibility and Migration"
-msgstr ""
+msgstr "CPU-Kompatibilität und Migration"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:105
 msgid ""
@@ -319,6 +393,11 @@ msgid ""
 "is compatible; validate live migration between every host model admitted "
 "to the cluster."
 msgstr ""
+"Der Standard ist **Host Passthrough**. Für eine VM ohne verschachtelte "
+"Virtualisierung markiert |morpheus| diese CPU-Definition als migrierbar. "
+"Dieses Flag stellt nicht sicher, dass jedes Paar unterschiedlicher "
+"physischer CPU-Modelle kompatibel ist; validieren Sie die Live-Migration "
+"zwischen jedem Host-Modell, das dem Cluster zugelassen ist."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:107
 msgid ""
@@ -328,6 +407,11 @@ msgid ""
 "model, so do not infer a model from processor age or marketing generation"
 " alone."
 msgstr ""
+"Ein **benanntes Modell** wird mit exakter Modellübereinstimmung ausgegeben. "
+"Wählen Sie ein Modell, das jeder Quell- und Ziel-Host unterstützt. Die "
+"Produktimplementierung wählt nicht automatisch ein universelles \"niedrigstes\""
+" CPU-Modell aus, daher sollten Sie ein Modell nicht allein aus dem "
+"Prozessoralter oder der Marketing-Generation ableiten."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:109
 msgid ""
@@ -335,14 +419,19 @@ msgid ""
 "marks the CPU non-migratable so VMX/SVM features remain exposed. Treat "
 "that VM as ineligible for live migration."
 msgstr ""
+"Wenn verschachtelte Virtualisierung mit Host Passthrough aktiviert ist, "
+"markiert |morpheus| die CPU als nicht migrierbar, damit VMX/SVM-Funktionen "
+"weiterhin verfügbar bleiben. Behandeln Sie diese VM als nicht für "
+"Live-Migration geeignet."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:111
 msgid "See :doc:`vm_migration` for the mixed-host preflight checks."
 msgstr ""
+"Siehe :doc:`vm_migration` für die Preflight-Prüfungen bei gemischten Hosts."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:114
 msgid "ISO and Network Installation"
-msgstr ""
+msgstr "ISO- und Netzwerkinstallation"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:116
 msgid ""
@@ -352,6 +441,12 @@ msgid ""
 "console. After installation, eject the installation media and restart the"
 " VM so it boots from its installed disk."
 msgstr ""
+"Für eine interaktive ISO-Installation fügen Sie ein ISO Virtual Image wie in "
+":doc:`/library/virtual_images/virtual_images` beschrieben hinzu, "
+"stellen Sie die HVM-VM von diesem Image bereit und schließen Sie den "
+"Gast-Installer über die Konsole ab. Werfen Sie nach der Installation das "
+"Installationsmedium aus und starten Sie die VM neu, damit sie von der "
+"installierten Festplatte startet."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:118
 msgid ""
@@ -361,10 +456,16 @@ msgid ""
 "installation, disable **Network Boot** through :guilabel:`Actions` > "
 ":guilabel:`Reconfigure`; the root disk then returns to boot order 1."
 msgstr ""
+"Für eine PXE-/Netzwerkinstallation aktivieren Sie **Netzwerk-Boot** und "
+"wählen ein primäres VM-Netzwerk, das die DHCP- und PXE-Dienste der Umgebung "
+"erreichen kann. Die primäre NIC wird an erster Stelle der Startreihenfolge "
+"platziert. Deaktivieren Sie nach der Installation **Netzwerk-Boot** über "
+":guilabel:`Actions` > :guilabel:`Reconfigure`; die Root-Festplatte kehrt "
+"dann zu Startreihenfolge 1 zurück."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:120
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:122
 msgid ""
@@ -372,15 +473,19 @@ msgid ""
 "is not the |morpheus| bare-metal discovery and provisioning workflow "
 "documented under :doc:`/infrastructure/pxeboot/pxeboot`."
 msgstr ""
+"VM-Netzwerk-Boot nutzt einen bestehenden PXE-Dienst über eine virtuelle NIC. "
+"Dies ist nicht der |morpheus| Bare-Metal-Erkennungs- und "
+"Bereitstellungs-Workflow, der unter "
+":doc:`/infrastructure/pxeboot/pxeboot` dokumentiert ist."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:125
 msgid "Drivers & Graphics"
-msgstr ""
+msgstr "Treiber & Grafik"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:134
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:212
 msgid "Attach VirtIO Drivers"
-msgstr ""
+msgstr "VirtIO-Treiber anhängen"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:136
 msgid ""
@@ -389,11 +494,16 @@ msgid ""
 "VirtIO storage and network drivers during OS setup. See "
 ":doc:`guest_os_notes` for the installation procedure. *Provision only.*"
 msgstr ""
+"Hängt eine VirtIO-Treiber-ISO als sekundäres CD-ROM-Gerät an die VM an. "
+"Aktivieren Sie dies bei der Bereitstellung von Windows-Gästen von einer ISO, "
+"um VirtIO-Speicher- und Netzwerktreiber während der Betriebssystem-Einrichtung "
+"zu installieren. Siehe :doc:`guest_os_notes` für das Installationsverfahren. "
+"*Nur bei Bereitstellung.*"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:137
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:215
 msgid "Disable Emulated Graphics"
-msgstr ""
+msgstr "Emulierte Grafik deaktivieren"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:139
 msgid ""
@@ -401,15 +511,19 @@ msgid ""
 "that do not require console access, such as dedicated appliances or GPU-"
 "passthrough workloads where the physical GPU provides the display."
 msgstr ""
+"Deaktiviert den emulierten Video-/Grafikadapter. Verwenden Sie dies für "
+"Headless-VMs, die keinen Konsolenzugriff benötigen, wie z. B. dedizierte "
+"Appliances oder GPU-Passthrough-Workloads, bei denen die physische GPU die "
+"Anzeige bereitstellt."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:142
 msgid "Memory"
-msgstr ""
+msgstr "Arbeitsspeicher"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:151
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:218
 msgid "Huge Pages"
-msgstr ""
+msgstr "Huge Pages"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:153
 msgid ""
@@ -419,30 +533,37 @@ msgid ""
 "applications. The host must have sufficient free huge pages allocated. "
 "*Provision only.*"
 msgstr ""
+"Aktiviert Huge Pages (2 MB) als Speicherunterstützung für die VM. Huge Pages "
+"reduzieren TLB-Fehlzugriffe (Translation Lookaside Buffer) und verbessern die "
+"Speicherzugriffsleistung für speicherintensive Workloads wie Datenbanken und "
+"HPC-Anwendungen. Der Host muss über ausreichend zugewiesene freie Huge Pages "
+"verfügen. *Nur bei Bereitstellung.*"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:154
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:221
 msgid "vNUMA Mode"
-msgstr ""
+msgstr "vNUMA-Modus"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:156
 msgid ""
 "Controls virtual NUMA topology for the VM. See :doc:`vm_compute` for "
 "detailed documentation on vNUMA modes (Off, Auto, Manual)."
 msgstr ""
+"Steuert die virtuelle NUMA-Topologie für die VM. Siehe :doc:`vm_compute` für "
+"detaillierte Dokumentation zu vNUMA-Modi (Aus, Auto, Manuell)."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:159
 msgid "Identity"
-msgstr ""
+msgstr "Identität"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:168
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:224
 msgid "Asset Tag"
-msgstr ""
+msgstr "Asset-Tag"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:169
 msgid "(VM name)"
-msgstr ""
+msgstr "(VM-Name)"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:170
 msgid ""
@@ -451,18 +572,23 @@ msgid ""
 " tools such as ``dmidecode`` and is useful for inventory tracking and "
 "automation scripts that need to identify the VM."
 msgstr ""
+"Legt den SMBIOS-Asset-Tag fest, der für das Gastbetriebssystem sichtbar ist. "
+"Wenn leer gelassen, wird der VM-Name verwendet. Dieser Wert kann innerhalb "
+"des Gastes mit Tools wie ``dmidecode`` ausgelesen werden und ist nützlich für "
+"die Inventarverfolgung und Automatisierungsskripte, die die VM identifizieren "
+"müssen."
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:173
 msgid "Option Availability Summary"
-msgstr ""
+msgstr "Zusammenfassung der Optionsverfügbarkeit"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:180
 msgid "Provision"
-msgstr ""
+msgstr "Bereitstellung"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:181
 msgid "Reconfigure"
-msgstr ""
+msgstr "Neukonfiguration"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:183
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:186
@@ -489,7 +615,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:225
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:226
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:184
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:198
@@ -498,13 +624,12 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:214
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:220
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:200
 msgid "Boot Menu Timeout"
-msgstr ""
+msgstr "Startmenü-Zeitlimit"
 
 #: ../../infrastructure/clusters/hvm/vm_advanced_options.rst:209
 msgid "Nested Virtualization"
-msgstr ""
-
+msgstr "Verschachtelte Virtualisierung"

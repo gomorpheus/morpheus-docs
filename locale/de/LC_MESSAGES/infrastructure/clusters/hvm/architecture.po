@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:2
 msgid "Architecture"
-msgstr ""
+msgstr "Architektur"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:7
 msgid ""
@@ -35,131 +35,147 @@ msgid ""
 "resource management used by Legacy layouts, providing tighter integration"
 " with the |morpheus| platform and simplified operations."
 msgstr ""
+"Die Layouts 1.3 und 2.0 verwenden den QuorumCheckService des |morpheus| "
+"Agenten für Hochverfügbarkeit. Diese Architektur ersetzt die Pacemaker-basierte "
+"Ressourcenverwaltung der Legacy-Layouts und bietet eine engere Integration "
+"mit der |morpheus|-Plattform sowie vereinfachte Abläufe."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:9
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:9
 msgid ""
 "This page applies to layouts 1.3 and 2.0. For the Pacemaker architecture "
 "used by Legacy layouts, see :doc:`/infrastructure/clusters/mvm`."
 msgstr ""
+"Diese Seite gilt für die Layouts 1.3 und 2.0. Informationen zur Pacemaker-Architektur "
+"der Legacy-Layouts finden Sie unter :doc:`/infrastructure/clusters/mvm`."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:12
 msgid "Component Stack"
-msgstr ""
+msgstr "Komponentenstapel"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:14
 msgid "Layouts 1.3 and 2.0 rely on three core components:"
-msgstr ""
+msgstr "Die Layouts 1.3 und 2.0 basieren auf drei Kernkomponenten:"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:16
 msgid "**Corosync**: Cluster membership and messaging layer"
-msgstr ""
+msgstr "**Corosync**: Cluster-Mitgliedschaft und Nachrichtenschicht"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:17
 msgid ""
 "**DLM (Distributed Lock Manager)**: Coordinates file locks for the HPE "
 "Clustered Datastore (GFS2) filesystem"
 msgstr ""
+"**DLM (Distributed Lock Manager)**: Koordiniert Dateisperren für das HPE "
+"Clustered Datastore (GFS2)-Dateisystem"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:18
 msgid ""
 "**Morpheus Agent (QuorumCheckService)**: Quorum decisions, failure "
 "detection, fencing, and recovery orchestration"
 msgstr ""
+"**Morpheus Agent (QuorumCheckService)**: Quorum-Entscheidungen, Fehlererkennung, "
+"Fencing und Wiederherstellungsorchestrierung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:21
 msgid "Quorum Algorithm"
-msgstr ""
+msgstr "Quorum-Algorithmus"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:23
 msgid ""
 "The |morpheus| agent on each host runs a QuorumCheckService that "
 "continuously monitors cluster health and makes quorum decisions."
 msgstr ""
+"Der |morpheus|-Agent auf jedem Host führt einen QuorumCheckService aus, "
+"der kontinuierlich den Cluster-Zustand überwacht und Quorum-Entscheidungen trifft."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:26
 msgid "Peer Communication"
-msgstr ""
+msgstr "Peer-Kommunikation"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:28
 msgid "Each host exposes a ``/quorum`` endpoint on port 7443"
-msgstr ""
+msgstr "Jeder Host stellt einen ``/quorum``-Endpunkt auf Port 7443 bereit"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:29
 msgid "Hosts ping each other every 20 seconds"
-msgstr ""
+msgstr "Hosts pingen sich gegenseitig alle 20 Sekunden an"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:30
 msgid "A node is considered unreachable after 60 seconds with no response"
-msgstr ""
+msgstr "Ein Knoten gilt nach 60 Sekunden ohne Antwort als nicht erreichbar"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:31
 msgid ""
 "Cross-verification: reachability is confirmed by a majority of same-site "
 "peers"
 msgstr ""
+"Gegenprüfung: Die Erreichbarkeit wird von einer Mehrheit der Peers am selben "
+"Standort bestätigt"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:34
 msgid "Majority Calculation"
-msgstr ""
+msgstr "Mehrheitsberechnung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:36
 msgid "The quorum algorithm uses a simple majority formula:"
-msgstr ""
+msgstr "Der Quorum-Algorithmus verwendet eine einfache Mehrheitsformel:"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:38
 msgid "neededForQuorum = (totalNodes / 2) + 1"
-msgstr ""
+msgstr "neededForQuorum = (totalNodes / 2) + 1"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:43
 msgid "Quorum States"
-msgstr ""
+msgstr "Quorum-Zustände"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:45
 msgid "Each node operates in one of three states:"
-msgstr ""
+msgstr "Jeder Knoten arbeitet in einem von drei Zuständen:"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:51
 msgid "State"
-msgstr ""
+msgstr "Zustand"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:52
 #: ../../infrastructure/clusters/hvm/architecture.rst:112
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:53
 msgid "Quorum Achieved"
-msgstr ""
+msgstr "Quorum erreicht"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:54
 msgid "A majority of cluster nodes are reachable. Normal operations continue."
-msgstr ""
+msgstr "Eine Mehrheit der Cluster-Knoten ist erreichbar. Der normale Betrieb wird fortgesetzt."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:55
 msgid "Quorum Lost"
-msgstr ""
+msgstr "Quorum verloren"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:56
 msgid ""
 "The node cannot reach a majority of peers. The node self-fences to "
 "protect data integrity."
 msgstr ""
+"Der Knoten kann keine Mehrheit der Peers erreichen. Der Knoten führt ein "
+"Self-Fencing durch, um die Datenintegrität zu schützen."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:57
 msgid "Fenced"
-msgstr ""
+msgstr "Abgegrenzt (Fenced)"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:58
 msgid "The node has been fenced and is waiting for recovery."
-msgstr ""
+msgstr "Der Knoten wurde abgegrenzt (fenced) und wartet auf die Wiederherstellung."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:61
 msgid "Designated Coordinator"
-msgstr ""
+msgstr "Designated Coordinator"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:63
 msgid ""
@@ -168,56 +184,65 @@ msgid ""
 " key hashes (sorted alphabetically). Only the coordinator is authorized "
 "to issue fencing operations."
 msgstr ""
+"Der Cluster wählt einen Designated Coordinator aus den erreichbaren Knoten. "
+"Der Coordinator wird durch den niedrigsten Hash der erreichbaren Host-Schlüssel-Hashes "
+"(alphabetisch sortiert) bestimmt. Nur der Coordinator ist berechtigt, "
+"Fencing-Operationen auszulösen."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:66
 msgid "Heartbeat Failover (MvmHeartbeatFailover)"
-msgstr ""
+msgstr "Heartbeat-Failover (MvmHeartbeatFailover)"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:68
 msgid ""
 "The heartbeat failover mechanism monitors host health via shared storage "
 "and orchestrates VM recovery when a host fails."
 msgstr ""
+"Der Heartbeat-Failover-Mechanismus überwacht den Host-Zustand über gemeinsamen "
+"Speicher und orchestriert die VM-Wiederherstellung bei einem Host-Ausfall."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:71
 msgid "Heartbeat Writes"
-msgstr ""
+msgstr "Heartbeat-Schreibvorgänge"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:73
 msgid "Each host writes ``hb.properties`` to shared storage every 20 seconds"
-msgstr ""
+msgstr "Jeder Host schreibt alle 20 Sekunden ``hb.properties`` auf den gemeinsamen Speicher"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:74
 msgid "The heartbeat file contains hostname, memory statistics, and timestamp"
-msgstr ""
+msgstr "Die Heartbeat-Datei enthält Hostname, Speicherstatistiken und Zeitstempel"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:75
 msgid "VM XML definitions are written for all running VMs alongside the heartbeat"
-msgstr ""
+msgstr "VM-XML-Definitionen werden für alle laufenden VMs zusammen mit dem Heartbeat geschrieben"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:78
 msgid "Failure Detection"
-msgstr ""
+msgstr "Fehlererkennung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:80
 msgid ""
 "A host is considered offline after 140 seconds (7 missed heartbeat "
 "intervals)"
 msgstr ""
+"Ein Host gilt nach 140 Sekunden (7 verpasste Heartbeat-Intervalle) als offline"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:81
 msgid ""
 "The Designated Coordinator assigns the failed host's VMs to surviving "
 "hosts based on available memory"
 msgstr ""
+"Der Designated Coordinator weist die VMs des ausgefallenen Hosts basierend "
+"auf dem verfügbaren Arbeitsspeicher den überlebenden Hosts zu"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:84
 msgid "Storage Structure"
-msgstr ""
+msgstr "Speicher-Struktur"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:86
 msgid "Heartbeat data is stored on the HPE Clustered Datastore (Shared LUN) at:"
-msgstr ""
+msgstr "Heartbeat-Daten werden auf dem HPE Clustered Datastore (Shared LUN) gespeichert unter:"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:88
 msgid ""
@@ -226,158 +251,169 @@ msgid ""
 "  ├── *.xml          (VM definitions)\n"
 "  └── recover/"
 msgstr ""
+"<datastore>/mvm-hb/<cluster_uuid>-2/<host_hash>/\n"
+"  ├── hb.properties\n"
+"  ├── *.xml          (VM-Definitionen)\n"
+"  └── recover/"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:96
 msgid "APD (All Paths Down) Protection"
-msgstr ""
+msgstr "APD (All Paths Down)-Schutz"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:98
 msgid ""
 "APD protection prevents split-brain data corruption when a host loses "
 "access to shared storage."
 msgstr ""
+"Der APD-Schutz verhindert Split-Brain-Datenbeschädigung, wenn ein Host den "
+"Zugriff auf den gemeinsamen Speicher verliert."
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:100
 msgid ""
 "After 6 consecutive failed heartbeat writes (~2 minutes), all non-pinned "
 "VMs on shared storage are shut down"
 msgstr ""
+"Nach 6 aufeinanderfolgenden fehlgeschlagenen Heartbeat-Schreibvorgängen (~2 Minuten) "
+"werden alle nicht angehefteten VMs auf dem gemeinsamen Speicher heruntergefahren"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:101
 msgid ""
 "This prevents VMs from running with stale data while another host may be "
 "serving the same storage"
 msgstr ""
+"Dies verhindert, dass VMs mit veralteten Daten laufen, während ein anderer Host "
+"möglicherweise denselben Speicher bereitstellt"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:104
 msgid "Timing Constants"
-msgstr ""
+msgstr "Zeitkonstanten"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:110
 msgid "Parameter"
-msgstr ""
+msgstr "Parameter"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:111
 msgid "Value"
-msgstr ""
+msgstr "Wert"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:113
 msgid "Ping interval"
-msgstr ""
+msgstr "Ping-Intervall"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:114
 #: ../../infrastructure/clusters/hvm/architecture.rst:120
 msgid "20s"
-msgstr ""
+msgstr "20s"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:115
 msgid "Frequency of quorum peer checks"
-msgstr ""
+msgstr "Häufigkeit der Quorum-Peer-Prüfungen"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:116
 msgid "Quorum timeout"
-msgstr ""
+msgstr "Quorum-Timeout"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:117
 #: ../../infrastructure/clusters/hvm/architecture.rst:129
 msgid "60s"
-msgstr ""
+msgstr "60s"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:118
 msgid "Time before a node is marked unreachable"
-msgstr ""
+msgstr "Zeit, bevor ein Knoten als nicht erreichbar markiert wird"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:119
 msgid "Heartbeat interval"
-msgstr ""
+msgstr "Heartbeat-Intervall"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:121
 msgid "Frequency of heartbeat writes to shared storage"
-msgstr ""
+msgstr "Häufigkeit der Heartbeat-Schreibvorgänge auf den gemeinsamen Speicher"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:122
 msgid "Heartbeat failure threshold"
-msgstr ""
+msgstr "Heartbeat-Fehlerschwelle"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:123
 msgid "140s (7 missed)"
-msgstr ""
+msgstr "140s (7 verpasst)"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:124
 msgid "Time before a host is considered offline"
-msgstr ""
+msgstr "Zeit, bevor ein Host als offline gilt"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:125
 msgid "APD threshold"
-msgstr ""
+msgstr "APD-Schwellenwert"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:126
 msgid "~2 minutes (6 failed cycles)"
-msgstr ""
+msgstr "~2 Minuten (6 fehlgeschlagene Zyklen)"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:127
 msgid "Time before VMs shut down on storage loss"
-msgstr ""
+msgstr "Zeit, bevor VMs bei Speicherverlust heruntergefahren werden"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:128
 msgid "Fence_ack cooldown"
-msgstr ""
+msgstr "Fence_ack-Abklingzeit"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:130
 msgid "Cooldown period after a fence acknowledgement"
-msgstr ""
+msgstr "Abklingzeit nach einer Fence-Bestätigung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:131
 msgid "DLM fence_wait delay"
-msgstr ""
+msgstr "DLM fence_wait-Verzögerung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:132
 msgid "Up to 30s"
-msgstr ""
+msgstr "Bis zu 30s"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:133
 msgid "Maximum DLM delay waiting for fence resolution"
-msgstr ""
+msgstr "Maximale DLM-Verzögerung beim Warten auf die Fence-Auflösung"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:136
 msgid "Persistence Files"
-msgstr ""
+msgstr "Persistenzdateien"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:138
 msgid ""
 "The |morpheus| agent persists cluster state to the following files on "
 "each host:"
 msgstr ""
+"Der |morpheus|-Agent speichert den Cluster-Zustand in den folgenden Dateien "
+"auf jedem Host:"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:144
 msgid "File Path"
-msgstr ""
+msgstr "Dateipfad"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:145
 msgid "Purpose"
-msgstr ""
+msgstr "Zweck"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:146
 msgid "``/opt/morpheus-node/.quorum-nodes``"
-msgstr ""
+msgstr "``/opt/morpheus-node/.quorum-nodes``"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:147
 msgid "Cluster member list"
-msgstr ""
+msgstr "Cluster-Mitgliederliste"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:148
 msgid "``/opt/morpheus-node/.hb``"
-msgstr ""
+msgstr "``/opt/morpheus-node/.hb``"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:149
 msgid "Heartbeat job configuration"
-msgstr ""
+msgstr "Heartbeat-Job-Konfiguration"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:150
 msgid "``/opt/morpheus-node/.mounts``"
-msgstr ""
+msgstr "``/opt/morpheus-node/.mounts``"
 
 #: ../../infrastructure/clusters/hvm/architecture.rst:151
 msgid "HPE Clustered Datastore (GFS2) mount list"
-msgstr ""
-
+msgstr "HPE Clustered Datastore (GFS2)-Einhängeliste"
