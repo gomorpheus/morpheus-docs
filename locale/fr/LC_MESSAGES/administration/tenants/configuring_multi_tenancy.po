@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:2
 msgid "Configuring Tenants and Resources for Multi-Tenancy"
-msgstr ""
+msgstr "Configuration des locataires et des ressources pour la multi-location"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:4
 msgid ""
@@ -33,23 +33,23 @@ msgid ""
 "capabilities and white label support, managed service providers have a "
 "wide range of capabilities when it comes to managing customer Tenants and"
 " users."
-msgstr ""
+msgstr "Un scénario très courant pour les fournisseurs de services gérés est la nécessité de fournir un accès aux ressources client par client. Plusieurs fonctionnalités administratives sont disponibles dans |morpheus| pour garantir que les ressources des clients sont correctement limitées et isolées. Grâce à ses capacités de multi-location intégrées et à la prise en charge de la marque blanche, les fournisseurs de services gérés disposent d'un large éventail de possibilités pour gérer les locataires et les utilisateurs clients."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:7
 msgid "Tenants"
-msgstr ""
+msgstr "Locataires"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:9
 msgid "There are essentially two types of Tenants in |morpheus|"
-msgstr ""
+msgstr "Il existe essentiellement deux types de locataires dans |morpheus|"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:11
 msgid "Master Tenant"
-msgstr ""
+msgstr "Locataire principal"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:12
 msgid "Sub Tenants"
-msgstr ""
+msgstr "Sous-locataires"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:14
 msgid ""
@@ -59,17 +59,17 @@ msgid ""
 "become the Master Tenant. The delineation between the Master Tenant and "
 "sub-Tenants is important to understand for properly scoping resources "
 "across Tenants."
-msgstr ""
+msgstr "Lors de la configuration initiale d'une appliance |morpheus|, le locataire principal est créé. Tous les locataires créés en plus de ce locataire principal sont des sous-locataires. Il ne peut y avoir qu'un seul locataire principal, et les sous-locataires ne peuvent pas devenir le locataire principal. La distinction entre le locataire principal et les sous-locataires est importante à comprendre pour limiter correctement les ressources entre les locataires."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:17
 msgid "Creating Tenants"
-msgstr ""
+msgstr "Création de locataires"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:19
 msgid ""
 "The Master Tenant is created during the initial appliance setup. "
 "Additional sub-Tenants can be created in the |AdmTen| section."
-msgstr ""
+msgstr "Le locataire principal est créé lors de la configuration initiale de l'appliance. Des sous-locataires supplémentaires peuvent être créés dans la section |AdmTen|."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:21
 msgid ""
@@ -79,7 +79,7 @@ msgid ""
 "inactive) and the Created Date. Click the Tenant Name to drill into the "
 "Tenant View where you can edit or delete the Tenant, as well as create, "
 "edit and delete users belonging to the Tenant."
-msgstr ""
+msgstr "La page Locataires affiche la liste de tous les locataires. Cette page permet aux utilisateurs de : créer, modifier et supprimer des locataires. La liste des locataires affiche le nom du locataire, le rôle, le total des instances, le total des utilisateurs, l'état (actif ou inactif) et la date de création. Cliquez sur le nom du locataire pour accéder à la vue du locataire où vous pouvez modifier ou supprimer le locataire, ainsi que créer, modifier et supprimer les utilisateurs appartenant au locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:23
 #: ../../administration/tenants/configuring_multi_tenancy.rst:38
@@ -89,41 +89,41 @@ msgstr ""
 #: ../../administration/tenants/configuring_multi_tenancy.rst:214
 #: ../../administration/tenants/configuring_multi_tenancy.rst:227
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:23
 msgid ""
 "At least one Tenant in addition to the Master Tenant is required to scope"
 " resources across Tenants."
-msgstr ""
+msgstr "Au moins un locataire en plus du locataire principal est requis pour limiter les ressources entre les locataires."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:25
 msgid "To create a new sub-Tenant"
-msgstr ""
+msgstr "Pour créer un nouveau sous-locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:27
 msgid "Select the Administration link in the navigation bar."
-msgstr ""
+msgstr "Sélectionnez le lien Administration dans la barre de navigation."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:28
 msgid "Select the Tenants link in the sub navigation bar."
-msgstr ""
+msgstr "Sélectionnez le lien Locataires dans la sous-barre de navigation."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:29
 msgid "Click the :guilabel:`+Create Tenant` button."
-msgstr ""
+msgstr "Cliquez sur le bouton :guilabel:`+Create Tenant`."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:30
 msgid ""
 "From the New Tenant wizard input * Name (Required) * Description * Base "
 "Role * Currency (for pricing)"
-msgstr ""
+msgstr "Dans l'assistant Nouveau locataire, saisissez * Nom (obligatoire) * Description * Rôle de base * Devise (pour la tarification)"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:36
 msgid ""
 "The Base Role defines a role set from which all roles created within the "
 "Tenant will inherit."
-msgstr ""
+msgstr "Le rôle de base définit un ensemble de rôles dont hériteront tous les rôles créés au sein du locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:38
 msgid ""
@@ -133,15 +133,15 @@ msgid ""
 "versions, this functionality has been rolled into Policies (|AdmPol|). "
 "When creating a Policy, we are able to specify a Tenant to which the "
 "Policy should apply."
-msgstr ""
+msgstr "Dans les versions antérieures, nous pouvions définir des limites lors de la création d'un sous-locataire. Celles-ci pouvaient restreindre la quantité de stockage, de mémoire et de processeurs pouvant être collectivement provisionnés par tous les utilisateurs du locataire. Dans les versions plus récentes, cette fonctionnalité a été intégrée aux règles (|AdmPol|). Lors de la création d'une règle, nous pouvons spécifier un locataire auquel la règle doit s'appliquer."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:40
 msgid "Click the :guilabel:`Save Changes` button."
-msgstr ""
+msgstr "Cliquez sur le bouton :guilabel:`Save Changes`."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:42
 msgid "The Create Tenant dialog box is shown"
-msgstr ""
+msgstr "La boîte de dialogue Créer un locataire s'affiche"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:42
 msgid ".. image:: /images/advanced/tenant/createtenant.png"
@@ -149,13 +149,13 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:48
 msgid "Viewing Tenants"
-msgstr ""
+msgstr "Consultation des locataires"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:50
 msgid ""
 "To View an individual Tenant page, select the Tenant name from the main "
 "Tenants section."
-msgstr ""
+msgstr "Pour afficher la page d'un locataire individuel, sélectionnez le nom du locataire dans la section principale Locataires."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:52
 msgid ".. image:: /images/advanced/tenant/viewtenant.png"
@@ -165,64 +165,64 @@ msgstr ""
 msgid ""
 "From inside the Tenant view, we can edit or delete the Tenant, as well as"
 " click into any of the Tenant's users."
-msgstr ""
+msgstr "Depuis la vue du locataire, nous pouvons modifier ou supprimer le locataire, ainsi qu'accéder aux utilisateurs de ce locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:57
 msgid "Tenant Users"
-msgstr ""
+msgstr "Utilisateurs du locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:59
 msgid "To create a new user within the Tenant:"
-msgstr ""
+msgstr "Pour créer un nouvel utilisateur au sein du locataire :"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:61
 msgid ""
 "Click the :guilabel:`CREATE USER` button, then from the New User wizard "
 "input the fields below:"
-msgstr ""
+msgstr "Cliquez sur le bouton :guilabel:`CREATE USER`, puis dans l'assistant Nouvel utilisateur, saisissez les champs ci-dessous :"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:63
 msgid "First Name"
-msgstr ""
+msgstr "Prénom"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:64
 msgid "Last Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:65
 msgid "Username"
-msgstr ""
+msgstr "Nom d'utilisateur"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:66
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:67
 msgid "Role"
-msgstr ""
+msgstr "Rôle"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:68
 msgid "Password"
-msgstr ""
+msgstr "Mot de passe"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:69
 msgid "Confirm Password"
-msgstr ""
+msgstr "Confirmer le mot de passe"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:71
 msgid "Click :guilabel:`Save Changes`."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Save Changes`."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:73
 msgid ""
 "Users are specific to each Tenant. Users created in the Master Tenant or "
 "other sub-Tenants will only have access to the Tenant they are created "
 "in."
-msgstr ""
+msgstr "Les utilisateurs sont spécifiques à chaque locataire. Les utilisateurs créés dans le locataire principal ou d'autres sous-locataires n'auront accès qu'au locataire dans lequel ils ont été créés."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:76
 msgid "Impersonate Tenant User"
-msgstr ""
+msgstr "Usurper l'identité d'un utilisateur du locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:78
 msgid ""
@@ -230,14 +230,14 @@ msgid ""
 "user in the Subtenants to see the application as if they are that user. "
 "To impersonate a user, you must be logged in as a user with the "
 "\"Impersonate User\" feature enabled in the assigned role."
-msgstr ""
+msgstr "|morpheus| permet aux utilisateurs administrateurs du locataire principal d'usurper l'identité de tout utilisateur des sous-locataires pour voir l'application comme s'ils étaient cet utilisateur. Pour usurper l'identité d'un utilisateur, vous devez être connecté en tant qu'utilisateur disposant de la fonctionnalité « Impersonate User » activée dans le rôle assigné."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:80
 msgid ""
 "From inside a Tenant detail page (containing the list of that Tenant's "
 "users), and in the specific user's ACTIONS drop down, select "
 "\"Impersonate\"."
-msgstr ""
+msgstr "Depuis une page de détail d'un locataire (contenant la liste des utilisateurs de ce locataire), et dans le menu déroulant ACTIONS de l'utilisateur concerné, sélectionnez « Impersonate »."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:82
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-9583a.png"
@@ -248,7 +248,7 @@ msgid ""
 "This will log you in as that user in their respective Tenant. To log out "
 "of the impersonate users Tenant, select the username in the header, and "
 "then select \"Quit Impersonating\""
-msgstr ""
+msgstr "Cela vous connectera en tant que cet utilisateur dans son locataire respectif. Pour vous déconnecter du locataire de l'utilisateur usurpé, sélectionnez le nom d'utilisateur dans l'en-tête, puis sélectionnez « Quit Impersonating »."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:86
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-d229b.png"
@@ -256,23 +256,23 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:89
 msgid "Resources"
-msgstr ""
+msgstr "Ressources"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:90
 msgid ""
 "In the Master Tenant, resources can be configured with private or public "
 "visibility:"
-msgstr ""
+msgstr "Dans le locataire principal, les ressources peuvent être configurées avec une visibilité privée ou publique :"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:92
 msgid "Private Visibility: Only available to the assigned Tenant."
-msgstr ""
+msgstr "Visibilité privée : disponible uniquement pour le locataire assigné."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:93
 msgid ""
 "Public Visibility (option available in Master Tenant only): Available "
 "across all Tenants"
-msgstr ""
+msgstr "Visibilité publique (option disponible uniquement dans le locataire principal) : disponible pour tous les locataires"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:95
 msgid ""
@@ -281,105 +281,105 @@ msgid ""
 "available for that Subtenant, and its visibility is automatically set to "
 "private. Public visibility is not an option for any resource assigned to "
 "or created in a Subtenant."
-msgstr ""
+msgstr "Les ressources du locataire principal peuvent également être assignées directement aux sous-locataires. Lorsqu'une ressource est assignée à un sous-locataire, elle n'est disponible que pour ce sous-locataire, et sa visibilité est automatiquement définie sur privée. La visibilité publique n'est pas une option pour toute ressource assignée à ou créée dans un sous-locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:97
 msgid ""
 "From the Master Tenant, the following resources can be configured for "
 "public visibility across all Tenants, or assigned to individual sub-"
 "Tenants"
-msgstr ""
+msgstr "Depuis le locataire principal, les ressources suivantes peuvent être configurées pour une visibilité publique sur tous les locataires, ou assignées à des sous-locataires individuels"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:99
 msgid "Clouds"
-msgstr ""
+msgstr "Clouds"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:100
 msgid "Hosts"
-msgstr ""
+msgstr "Hôtes"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:101
 msgid "Virtual Machines"
-msgstr ""
+msgstr "Machines virtuelles"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:102
 msgid "Networks"
-msgstr ""
+msgstr "Réseaux"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:103
 msgid "Datastores"
-msgstr ""
+msgstr "Datastores"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:104
 msgid "Resource Pools"
-msgstr ""
+msgstr "Pools de ressources"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:105
 msgid "Folders"
-msgstr ""
+msgstr "Dossiers"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:106
 msgid "Virtual Images"
-msgstr ""
+msgstr "Images virtuelles"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:107
 msgid "Library Instance Types"
-msgstr ""
+msgstr "Types d'instance de bibliothèque"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:108
 msgid "Pricing"
-msgstr ""
+msgstr "Tarification"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:109
 msgid "Policies"
-msgstr ""
+msgstr "Règles"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:110
 msgid "Workflows"
-msgstr ""
+msgstr "Workflows"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:111
 msgid "Roles"
-msgstr ""
+msgstr "Rôles"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:113
 msgid ""
 "Virtual Image Blueprints can be made available to multiple select Tenants"
 " when set to private."
-msgstr ""
+msgstr "Les plans d'images virtuelles peuvent être rendus disponibles pour plusieurs locataires sélectionnés lorsqu'ils sont définis sur privé."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:116
 msgid "Cloud Visibility & Assignment"
-msgstr ""
+msgstr "Visibilité et assignation des clouds"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:118
 msgid ""
 "To set the visibility of a Cloud to Public (shared across all Tenants) or"
 " Private (only available to the assigned Tenant):"
-msgstr ""
+msgstr "Pour définir la visibilité d'un cloud sur Public (partagé entre tous les locataires) ou Private (disponible uniquement pour le locataire assigné) :"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:120
 msgid "Navigate to Infrastructure > Clouds"
-msgstr ""
+msgstr "Accédez à Infrastructure > Clouds"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:121
 #: ../../administration/tenants/configuring_multi_tenancy.rst:145
 msgid ""
 "Select either the pencil/edit icon on the end of the cloud row, or click "
 "the name of the cloud and select \"Edit\" in the cloud page."
-msgstr ""
+msgstr "Sélectionnez soit l'icône crayon/modifier à la fin de la ligne du cloud, soit cliquez sur le nom du cloud et sélectionnez « Edit » dans la page du cloud."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:122
 #: ../../administration/tenants/configuring_multi_tenancy.rst:168
 #: ../../administration/tenants/configuring_multi_tenancy.rst:190
 #: ../../administration/tenants/configuring_multi_tenancy.rst:211
 msgid "From the \"Visibility\" drop down, select either \"Public\" or \"Private\""
-msgstr ""
+msgstr "Dans la liste déroulante « Visibility », sélectionnez « Public » ou « Private »"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:123
 #: ../../administration/tenants/configuring_multi_tenancy.rst:147
 msgid "Select :guilabel:`Save Changes` in the footer of the Edit Cloud modal."
-msgstr ""
+msgstr "Sélectionnez :guilabel:`Save Changes` dans le pied de page de la fenêtre modale Modifier le cloud."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:125
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-349e2.png"
@@ -392,36 +392,36 @@ msgid ""
 "public will automatically have clouds with public visibility added, and a"
 " group will be created for each available cloud matching the cloud name "
 "in the new Subtenant(s)."
-msgstr ""
+msgstr "Lorsqu'un cloud est défini sur visibilité publique, il peut être ajouté aux sous-locataires. Tous les sous-locataires créés après qu'un cloud du locataire principal a été défini sur public auront automatiquement des clouds à visibilité publique ajoutés, et un groupe sera créé pour chaque cloud disponible correspondant au nom du cloud dans le(s) nouveau(x) sous-locataire(s)."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:129
 msgid ""
 "For Tenants created prior to a Master Tenant cloud being set to public "
 "visibility, the Subtenant will have the option to add that cloud but it "
 "will not automatically be added."
-msgstr ""
+msgstr "Pour les locataires créés avant qu'un cloud du locataire principal ne soit défini sur visibilité publique, le sous-locataire aura la possibilité d'ajouter ce cloud mais il ne sera pas ajouté automatiquement."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:131
 msgid ""
 "While the cloud will be available for Subtenants, the resources available"
 " in that cloud to the Subtenant(s) depends on the visibility or "
 "assignment of the individual resources."
-msgstr ""
+msgstr "Bien que le cloud soit disponible pour les sous-locataires, les ressources disponibles dans ce cloud pour le(s) sous-locataire(s) dépendent de la visibilité ou de l'assignation des ressources individuelles."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:133
 msgid ""
 "A Subtenant user must have sufficient role permissions and cloud access "
 "to add publicly available clouds. Master Tenant clouds settings cannot be"
 " edited from Subtenants."
-msgstr ""
+msgstr "Un utilisateur de sous-locataire doit disposer d'autorisations de rôle et d'un accès cloud suffisants pour ajouter des clouds disponibles publiquement. Les paramètres des clouds du locataire principal ne peuvent pas être modifiés depuis les sous-locataires."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:136
 msgid "Assign a Cloud to an Tenant"
-msgstr ""
+msgstr "Assigner un cloud à un locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:138
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:138
 msgid ""
@@ -430,29 +430,29 @@ msgid ""
 "Master Tenant and assigned to a sub-Tenant, it will no longer be "
 "available for use by the Master Tenant or any other sub-Tenants, although"
 " it can be assigned back to the Master Tenant, or to another sub-Tenant."
-msgstr ""
+msgstr "Lors de l'assignation d'un cloud à un locataire, toutes les ressources de ce cloud ne seront disponibles que pour le locataire assigné. Si un cloud est créé dans le locataire principal et assigné à un sous-locataire, il ne sera plus disponible pour le locataire principal ni pour les autres sous-locataires, bien qu'il puisse être réassigné au locataire principal ou à un autre sous-locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:140
 msgid ""
 "It may be preferable for service providers to share or assign their cloud"
 " resources, such as specific hosts, networks, resources pools and "
 "datastores, across sub-Tenants, rather than an entire cloud."
-msgstr ""
+msgstr "Il peut être préférable pour les fournisseurs de services de partager ou d'assigner leurs ressources cloud, telles que des hôtes, réseaux, pools de ressources et datastores spécifiques, entre les sous-locataires, plutôt qu'un cloud entier."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:142
 msgid "**To assign a cloud from the Master Tenant to a Sub-Tenant**"
-msgstr ""
+msgstr "**Pour assigner un cloud du locataire principal à un sous-locataire**"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:144
 msgid "Navigate to Infrastructure, Clouds"
-msgstr ""
+msgstr "Accédez à Infrastructure, Clouds"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:146
 msgid ""
 "From the \"Tenant\" drop down, select the Tenant to assign the cloud to. "
 "The visibility will automatically be set to \"Private\" when a cloud is "
 "assigned to a sub-Tenant."
-msgstr ""
+msgstr "Dans la liste déroulante « Tenant », sélectionnez le locataire auquel assigner le cloud. La visibilité sera automatiquement définie sur « Private » lorsqu'un cloud est assigné à un sous-locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:149
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-c907d.png"
@@ -465,17 +465,17 @@ msgid ""
 "only available to the assigned Tenant. The Master Tenant still maintains "
 "control and visibility, and can edit the cloud settings or re-assign the "
 "cloud."
-msgstr ""
+msgstr "Lorsqu'un cloud est assigné à un sous-locataire, ou assigné au locataire principal avec une visibilité privée, ce cloud et toutes ses ressources ne sont disponibles que pour le locataire assigné. Le locataire principal conserve le contrôle et la visibilité, et peut modifier les paramètres du cloud ou le réassigner."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:154
 msgid "Individual Resource Visibility & Assignment"
-msgstr ""
+msgstr "Visibilité et assignation des ressources individuelles"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:156
 msgid ""
 "Similar to clouds, individual resources from the Master Tenant can be set"
 " to public and available to sub-Tenants, or assigned to sub-Tenants."
-msgstr ""
+msgstr "Comme pour les clouds, les ressources individuelles du locataire principal peuvent être définies sur public et rendues disponibles aux sous-locataires, ou assignées aux sous-locataires."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:158
 msgid ""
@@ -487,43 +487,43 @@ msgid ""
 "still be visible and editable by the Master Tenant. This allows Master "
 "Tenant resources to be isolated for use by sub-Tenants while still under "
 "the control of the Master Tenant."
-msgstr ""
+msgstr "Par défaut, tout hôte, machine virtuelle, serveur bare metal, réseau, pool de ressources, datastore ou plan ajouté, créé ou inventorié par un locataire est assigné à ce locataire. Si ces ressources se trouvent dans le locataire principal, elles peuvent être assignées aux sous-locataires. L'assignation de l'une de ces ressources la rendra indisponible pour le locataire principal, mais elle restera visible et modifiable par le locataire principal. Cela permet d'isoler les ressources du locataire principal pour une utilisation par les sous-locataires tout en restant sous le contrôle du locataire principal."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:160
 msgid ""
 "Resources assigned to sub-Tenants from the Master Tenant will be visible "
 "and available for use by that sub-Tenant, however they cannot be edited "
 "or re-assigned by the sub-tenant."
-msgstr ""
+msgstr "Les ressources assignées aux sous-locataires depuis le locataire principal seront visibles et disponibles pour ce sous-locataire, cependant elles ne peuvent pas être modifiées ou réassignées par le sous-locataire."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:162
 msgid ""
 "**Set the Visibility of a Host, Virtual Machine or Bare metal Server to "
 "Public or Private**"
-msgstr ""
+msgstr "**Définir la visibilité d'un hôte, d'une machine virtuelle ou d'un serveur bare metal sur Public ou Private**"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:164
 #: ../../administration/tenants/configuring_multi_tenancy.rst:175
 msgid "From the Master Tenant, navigate to Infrastructure, Hosts"
-msgstr ""
+msgstr "Depuis le locataire principal, accédez à Infrastructure, Hosts"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:165
 #: ../../administration/tenants/configuring_multi_tenancy.rst:176
 msgid "Select either the Hosts, Virtual Machines or Bare Metal tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet Hosts, Virtual Machines ou Bare Metal"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:166
 #: ../../administration/tenants/configuring_multi_tenancy.rst:177
 msgid "Click the name of the resource"
-msgstr ""
+msgstr "Cliquez sur le nom de la ressource"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:167
 msgid "Select :guilabel:`Edit` in the resource page to bring up the config modal"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`Edit` dans la page de la ressource pour ouvrir la fenêtre modale de configuration"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:169
 msgid "Select :guilabel:`Save Changes`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`Save Changes`"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:171
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-d738d.png"
@@ -531,21 +531,21 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:173
 msgid "Assigning a Host, Virtual Machine, or Bare Metal server to an Tenant"
-msgstr ""
+msgstr "Assignation d'un hôte, d'une machine virtuelle ou d'un serveur bare metal à un locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:178
 msgid ""
 "From the \"Actions\" dropdown in the the resource page, select Assign "
 "Tenant"
-msgstr ""
+msgstr "Dans la liste déroulante « Actions » de la page de la ressource, sélectionnez Assign Tenant"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:179
 msgid "In the Assign Tenant modal, select the Tenant to assign the resource to."
-msgstr ""
+msgstr "Dans la fenêtre modale Assign Tenant, sélectionnez le locataire auquel assigner la ressource."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:180
 msgid "Select :guilabel:`Execute` in the modal"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`Execute` dans la fenêtre modale"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:182
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-3c39f.png"
@@ -556,28 +556,28 @@ msgid ""
 "The resource will now be assigned and available for use by the assigned "
 "Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain "
 "visibility and control."
-msgstr ""
+msgstr "La ressource est maintenant assignée et disponible pour le locataire assigné. Si elle est assignée à un sous-locataire, le locataire principal conserve la visibilité et le contrôle."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:186
 msgid "**Set the Visibility of a Network to Public or Private**"
-msgstr ""
+msgstr "**Définir la visibilité d'un réseau sur Public ou Private**"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:188
 #: ../../administration/tenants/configuring_multi_tenancy.rst:197
 msgid "From the Master Tenant, navigate to Infrastructure, Network"
-msgstr ""
+msgstr "Depuis le locataire principal, accédez à Infrastructure, Network"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:189
 #: ../../administration/tenants/configuring_multi_tenancy.rst:198
 msgid ""
 "Select either the pencil/edit icon in the network row, or click the name "
 "of the network and select \"Edit\" in the network page."
-msgstr ""
+msgstr "Sélectionnez soit l'icône crayon/modifier dans la ligne du réseau, soit cliquez sur le nom du réseau et sélectionnez « Edit » dans la page du réseau."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:191
 #: ../../administration/tenants/configuring_multi_tenancy.rst:216
 msgid "Select :guilabel:`Save Changes` in the modal"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`Save Changes` dans la fenêtre modale"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:193
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-bc333.png"
@@ -585,15 +585,15 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:195
 msgid "**Assign a Network to an Tenant**"
-msgstr ""
+msgstr "**Assigner un réseau à un locataire**"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:199
 msgid "From the \"Tenant\" drop down, select an Tenant to assign the network to."
-msgstr ""
+msgstr "Dans la liste déroulante « Tenant », sélectionnez un locataire auquel assigner le réseau."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:200
 msgid "Select :guilabel:`Save Changes` in the lower the modal"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`Save Changes` en bas de la fenêtre modale"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:202
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-9f15c.png"
@@ -604,35 +604,35 @@ msgid ""
 "The Network will now be assigned and available for use by the assigned "
 "Tenant. If assigned to a sub-Tenant, the Master Tenant will maintain "
 "visibility and control."
-msgstr ""
+msgstr "Le réseau est maintenant assigné et disponible pour le locataire assigné. S'il est assigné à un sous-locataire, le locataire principal conserve la visibilité et le contrôle."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:206
 msgid "Set the Visibility or assign a datastore to an Tenant"
-msgstr ""
+msgstr "Définir la visibilité ou assigner un datastore à un locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:208
 msgid "From the Master Tenant, navigate to Infrastructure, Storage"
-msgstr ""
+msgstr "Depuis le locataire principal, accédez à Infrastructure, Storage"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:209
 msgid "Select the \"Data Stores\" tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet « Data Stores »"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:210
 msgid "Select Edit from the \"Actions\" dropdown in the datastores row"
-msgstr ""
+msgstr "Sélectionnez Edit dans la liste déroulante « Actions » de la ligne des datastores"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:212
 msgid ""
 "From the \"Tenant\" drop down, select the Tenant to assign the datastore "
 "to."
-msgstr ""
+msgstr "Dans la liste déroulante « Tenant », sélectionnez le locataire auquel assigner le datastore."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:214
 msgid ""
 "If assigned to a sub-tenant, the visibility will be automatically set to "
 "private."
-msgstr ""
+msgstr "S'il est assigné à un sous-locataire, la visibilité sera automatiquement définie sur privée."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:218
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-1e978.png"
@@ -640,41 +640,41 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:220
 msgid "**Set the Visibility or assign a Virtual Image to an Tenant**"
-msgstr ""
+msgstr "**Définir la visibilité ou assigner une image virtuelle à un locataire**"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:222
 msgid "From the Master Tenant, navigate to Provisioning, Virtual Images"
-msgstr ""
+msgstr "Depuis le locataire principal, accédez à Provisioning, Virtual Images"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:223
 msgid "Select Edit from the \"Actions\" dropdown in the Virtual Images row"
-msgstr ""
+msgstr "Sélectionnez Edit dans la liste déroulante « Actions » de la ligne Virtual Images"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:224
 msgid ""
 "From the \"Visibility\" drop down, select either \"Public\" or "
 "\"Private\". Public will share the"
-msgstr ""
+msgstr "Dans la liste déroulante « Visibility », sélectionnez « Public » ou « Private ». Public partagera le"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:225
 msgid ""
 "From the \"Tenant\" field, start typing the name of the Tenant to assign "
 "the Virtual Image to. Matching Tenants will populate, then select the "
 "Tenant to add."
-msgstr ""
+msgstr "Dans le champ « Tenant », commencez à saisir le nom du locataire auquel assigner l'image virtuelle. Les locataires correspondants s'afficheront, puis sélectionnez le locataire à ajouter."
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:227
 msgid ""
 "Virtual Images can be set to Private, but accessible to more that one "
 "Tenant"
-msgstr ""
+msgstr "Les images virtuelles peuvent être définies sur Private, mais accessibles à plus d'un locataire"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:229
 msgid ""
 "#. Repeat step 4 for all Tenants requiring access to the virtual image. "
 ".. To remove access for an Tenant, click the \"x\" next to the Tenant "
 "name #. Select :guilabel:`Save Changes` in the modal"
-msgstr ""
+msgstr "#. Répétez l'étape 4 pour tous les locataires nécessitant l'accès à l'image virtuelle. .. Pour retirer l'accès pour un locataire, cliquez sur le « x » à côté du nom du locataire #. Sélectionnez :guilabel:`Save Changes` dans la fenêtre modale"
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:233
 msgid ".. image:: /images/advanced/configuring_multi_tenancy-d9abe.png"
@@ -682,5 +682,5 @@ msgstr ""
 
 #: ../../administration/tenants/configuring_multi_tenancy.rst:235
 msgid "The Virtual Image will now be available for use by the assigned Tenants."
-msgstr ""
+msgstr "L'image virtuelle sera maintenant disponible pour les locataires assignés."
 

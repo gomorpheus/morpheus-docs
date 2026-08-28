@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:2
 msgid "Shared Storage"
-msgstr ""
+msgstr "Stockage partagé"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:4
 msgid ""
@@ -30,50 +30,50 @@ msgid ""
 "required between the app nodes. Local Storage File Shares will need to be"
 " copied to a shared file system so all assets are available on all App "
 "nodes."
-msgstr ""
+msgstr "Pour les configurations avec 2 nœuds d'application ou plus, un stockage partagé est requis entre les nœuds d'application. Les partages de fichiers de stockage local devront être copiés vers un système de fichiers partagé afin que tous les actifs soient disponibles sur tous les nœuds d'application."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:7
 msgid "Assets"
-msgstr ""
+msgstr "Actifs"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:8
 msgid "White label images"
-msgstr ""
+msgstr "Images en marque blanche"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:9
 msgid "Uploaded virtual images"
-msgstr ""
+msgstr "Images virtuelles importées"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:10
 msgid "Deploy uploads"
-msgstr ""
+msgstr "Imports de déploiement"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:11
 msgid "Ansible Plays"
-msgstr ""
+msgstr "Lectures Ansible"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:12
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:13
 msgid "Morpheus backups"
-msgstr ""
+msgstr "Sauvegardes Morpheus"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
 msgid "Tip"
-msgstr ""
+msgstr "Astuce"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
 msgid ""
 "Backups, deployments and virtual image storage locations can be "
 "overridden within the |morpheus|-ui.  You can find more information on "
 "storage here: :ref:`storage`"
-msgstr ""
+msgstr "Les emplacements de stockage des sauvegardes, des déploiements et des images virtuelles peuvent être remplacés dans |morpheus|-ui. Vous trouverez plus d'informations sur le stockage ici : :ref:`storage`"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:18
 msgid "Moving existing appliance files to shared storage"
-msgstr ""
+msgstr "Déplacement des fichiers d'appliance existants vers le stockage partagé"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:20
 msgid ""
@@ -81,7 +81,7 @@ msgid ""
 "migration. It does **not** move the appliance files under "
 "``/var/opt/morpheus/morpheus-ui`` to shared application storage. The "
 "procedure below concerns appliance files only."
-msgstr ""
+msgstr "Le déplacement de la VM Manager entre hôtes HVM ou datastores constitue une migration de VM hyperviseur. Cela ne **déplace pas** les fichiers d'appliance sous ``/var/opt/morpheus/morpheus-ui`` vers le stockage d'application partagé. La procédure ci-dessous concerne uniquement les fichiers d'appliance."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:22
 msgid ""
@@ -92,7 +92,7 @@ msgid ""
 "shell sequence for an existing VM Essentials Manager because an "
 "incomplete copy or mounting an empty target over the source can make "
 "appliance assets unavailable."
-msgstr ""
+msgstr "Utilisez une fenêtre de maintenance. L'application est indisponible pendant l'arrêt de tous les nœuds d'application. Le type de stockage partagé exact, les options de montage, l'outil de copie, la propriété et la séquence de restauration dépendent de la version de l'appliance et de la plate-forme de stockage. HPE ne publie pas une séquence shell générique unique pour un VM Essentials Manager existant, car une copie incomplète ou le montage d'une cible vide par-dessus la source peut rendre les actifs de l'appliance indisponibles."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:24
 msgid ""
@@ -100,7 +100,7 @@ msgid ""
 "application availability merely by moving this directory. If the goal is "
 "recovery from loss of the HVM host, first use the decision tree in :ref"
 ":`vme-manager-host-recovery`."
-msgstr ""
+msgstr "Confirmez pourquoi le déplacement est nécessaire. Un Manager mono-nœud n'acquiert pas de disponibilité d'application simplement en déplaçant ce répertoire. Si l'objectif est la reprise après perte de l'hôte HVM, commencez par l'arborescence de décision dans :ref:`vme-manager-host-recovery`."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:25
 msgid ""
@@ -108,7 +108,7 @@ msgid ""
 "filesystem and usage, proposed storage type, mount endpoint and options, "
 "and maintenance window. Obtain a release-specific migration and rollback "
 "plan before changing the mount."
-msgstr ""
+msgstr "Ouvrez un ticket d'assistance HPE avec la version du Manager, la topologie, le système de fichiers et l'utilisation actuels, le type de stockage proposé, le point de montage et les options, ainsi que la fenêtre de maintenance. Obtenez un plan de migration et de restauration propre à la version avant de modifier le montage."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:26
 msgid ""
@@ -117,7 +117,7 @@ msgid ""
 "backup, a filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, "
 "and protected copies of appliance configuration and secrets. Keep the "
 "backups outside the Manager VM and outside the target being changed."
-msgstr ""
+msgstr "Créez et vérifiez les trois artefacts de reprise décrits dans :doc:`/getting_started/guides/backup_restore` : une sauvegarde de la base de données de l'appliance, une sauvegarde au niveau du système de fichiers de ``/var/opt/morpheus/morpheus-ui``, et des copies protégées de la configuration et des secrets de l'appliance. Conservez les sauvegardes en dehors de la VM Manager et en dehors de la cible modifiée."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:27
 msgid ""
@@ -125,14 +125,14 @@ msgid ""
 "latency, name resolution, permissions, stable boot-time mounting, and the"
 " same numeric UID/GID for ``morpheus-app`` and ``morpheus-local``. For "
 "NFS, include the ``sync`` requirement below."
-msgstr ""
+msgstr "Validez la cible depuis chaque futur nœud d'application : capacité, latence, résolution de noms, autorisations, montage stable au démarrage, et les mêmes UID/GID numériques pour ``morpheus-app`` et ``morpheus-local``. Pour NFS, incluez l'exigence ``sync`` ci-dessous."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:28
 msgid ""
 "Stop ``morpheus-ui`` on **every** application node as directed by the "
 "approved plan. Verify no node can write to the source before the final "
 "copy."
-msgstr ""
+msgstr "Arrêtez ``morpheus-ui`` sur **chaque** nœud d'application selon le plan approuvé. Vérifiez qu'aucun nœud ne peut écrire sur la source avant la copie finale."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:29
 msgid ""
@@ -140,14 +140,14 @@ msgid ""
 "permissions, links, timestamps, sparse files, and all hidden content. "
 "Mount the target at ``/var/opt/morpheus/morpheus-ui``; do not change "
 "application paths to point at an arbitrary staging directory."
-msgstr ""
+msgstr "Suivez la séquence de copie et de montage approuvée. Préservez la propriété, les autorisations, les liens, les horodatages, les fichiers clairsemés et tout le contenu masqué. Montez la cible sur ``/var/opt/morpheus/morpheus-ui`` ; ne modifiez pas les chemins d'application pour pointer vers un répertoire de staging arbitraire."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:30
 msgid ""
 "Before startup, have the coordinator compare source and target content "
 "and verify ownership from every application node. Do not delete or "
 "repurpose the source."
-msgstr ""
+msgstr "Avant le démarrage, faites comparer le contenu source et cible par le coordinateur et vérifiez la propriété depuis chaque nœud d'application. Ne supprimez ni ne réaffectez la source."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:31
 msgid ""
@@ -155,13 +155,13 @@ msgid ""
 "images, deployment archives, Ansible content, Terraform content, white-"
 "label assets, and appliance backup destination. Then start and verify "
 "remaining nodes one at a time."
-msgstr ""
+msgstr "Démarrez un nœud d'application selon les instructions. Vérifiez l'interface utilisateur, les images virtuelles importées, les archives de déploiement, le contenu Ansible, le contenu Terraform, les actifs en marque blanche et la destination de sauvegarde de l'appliance. Démarrez et vérifiez ensuite les nœuds restants un par un."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:32
 msgid ""
 "Retain the source and verified backups for the rollback period in the "
 "approved plan."
-msgstr ""
+msgstr "Conservez la source et les sauvegardes vérifiées pendant la période de restauration prévue au plan approuvé."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:34
 msgid ""
@@ -171,18 +171,18 @@ msgid ""
 "missing. Roll back by stopping all application nodes and restoring the "
 "original mount/source according to the approved plan; do not merge two "
 "independently modified copies."
-msgstr ""
+msgstr "Arrêtez et contactez l'assistance HPE si la cible se monte différemment entre les nœuds, si les valeurs UID/GID diffèrent, si la copie finale ne peut pas être prouvée quiescente et complète, si le démarrage écrit à l'ancien emplacement, ou si un actif est manquant. Restaurez en arrêtant tous les nœuds d'application et en rétablissant le montage/la source d'origine selon le plan approuvé ; ne fusionnez pas deux copies modifiées indépendamment."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
 msgid ""
 "NFS mounts require ``sync`` option when using Ansible integration with "
 "|morpheus| Agent command bus execution enabled."
-msgstr ""
+msgstr "Les montages NFS exigent l'option ``sync`` lors de l'utilisation de l'intégration Ansible avec l'exécution du bus de commandes Agent |morpheus| activée."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
 msgid ""
@@ -192,5 +192,5 @@ msgid ""
 " permissions can be incorrect for other nodes.  The uid and gid for the "
 "users can be seen by executing:  ``sudo cat /etc/passwd`` and ``sudo cat "
 "/etc/groups``"
-msgstr ""
+msgstr "Sur chaque nœud d'application, l'utilisateur et le groupe morpheus-app et morpheus-local, ainsi que leurs uid/gid, doivent être cohérents. Si l'uid et/ou le gid diffèrent entre les nœuds, lors de l'application des autorisations lors d'un reconfigure, les autorisations peuvent être incorrectes pour les autres nœuds. L'uid et le gid des utilisateurs peuvent être consultés en exécutant : ``sudo cat /etc/passwd`` et ``sudo cat /etc/groups``"
 

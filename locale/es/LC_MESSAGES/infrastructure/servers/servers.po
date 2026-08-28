@@ -217,7 +217,7 @@ msgstr ""
 #: ../../infrastructure/servers/server_migration.rst:54
 #: ../../infrastructure/servers/server_placement.rst:43
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/servers/server_migration.rst:54
 msgid ""
@@ -259,7 +259,7 @@ msgstr ""
 
 #: ../../infrastructure/servers/server_migration.rst:66
 msgid "VME Migration: LVM and Source SCSI Disks"
-msgstr ""
+msgstr "Migración VME: LVM y discos SCSI de origen"
 
 #: ../../infrastructure/servers/server_migration.rst:68
 msgid ""
@@ -270,7 +270,7 @@ msgid ""
 "destination datastores with at least the source capacity. The guest must "
 "be able to load the destination storage driver and discover every volume "
 "required for boot and application data."
-msgstr ""
+msgstr "Antes de migrar una VM que usa Linux LVM, registre los volúmenes físicos de origen, grupos de volúmenes, volúmenes lógicos, puntos de montaje, volumen de arranque, y el bus del controlador y número de unidad de cada disco virtual. Confirme que todos los discos de origen requeridos están incluidos en el plan de migración y asignados a almacenes de datos de destino con al menos la capacidad de origen. El invitado debe poder cargar el controlador de almacenamiento de destino y descubrir cada volumen requerido para el arranque y los datos de aplicación."
 
 #: ../../infrastructure/servers/server_migration.rst:70
 msgid ""
@@ -282,7 +282,7 @@ msgid ""
 "registered, then stop the destination VM and move its disks to the "
 "selected paravirtual controller. Do not manually change controller "
 "mappings while that migration is running."
-msgstr ""
+msgstr "El planificador de migración preserva las asignaciones de bus y unidad del controlador de origen cuando están disponibles. Cuando una VM de origen tiene algún volumen respaldado por SCSI, el destino HVM usa un controlador VirtIO-SCSI para la asignación de discos posterior a la conversión; de lo contrario, usa VirtIO Block. Las migraciones de Windows que instalan herramientas de invitado arrancan inicialmente desde SATA mientras se registran los controladores VirtIO, luego detienen la VM de destino y mueven sus discos al controlador paravirtual seleccionado. No cambie manualmente las asignaciones del controlador mientras esa migración está en ejecución."
 
 #: ../../infrastructure/servers/server_migration.rst:72
 msgid ""
@@ -294,7 +294,7 @@ msgid ""
 "connectivity from source to destination. It copies a single selected "
 "logical-volume snapshot and is not evidence that arbitrary multi-PV, "
 "thin-pool, encrypted, clustered, or nested LVM layouts are supported."
-msgstr ""
+msgstr "El tipo de backup heredado **LVM Migration** es un flujo de trabajo separado y obsoleto. Su implementación requiere acceso SSH y sudo al origen y destino, ``lvm2`` y ``pv``, un dispositivo de volumen lógico de origen seleccionado explícitamente, espacio libre suficiente en el grupo de volúmenes de origen para un snapshot LVM, un dispositivo de datos de destino escribible y conectividad de transferencia basada en claves del origen al destino. Copia un único snapshot de volumen lógico seleccionado y no es evidencia de que se admitan diseños LVM arbitrarios multi-PV, thin-pool, cifrados, en clúster o anidados."
 
 #: ../../infrastructure/servers/server_migration.rst:74
 msgid ""
@@ -304,7 +304,7 @@ msgid ""
 "mount, and application data is accessible. If discovery does not match "
 "the recorded source layout, stop validation and retain the source VM; do "
 "not invent device-renaming or bootloader repair steps."
-msgstr ""
+msgstr "Después de la migración, verifique que el destino arranque desde el controlador esperado, que cada disco esperado esté presente en la asignación bus/unidad prevista, que todos los grupos de volúmenes y volúmenes lógicos se activen, que los sistemas de archivos se monten y que los datos de aplicación sean accesibles. Si el descubrimiento no coincide con el diseño de origen registrado, detenga la validación y conserve la VM de origen; no invente pasos de renombrado de dispositivos ni reparación del gestor de arranque."
 
 #: ../../infrastructure/servers/server_placement.rst:2
 msgid "Server Placement"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: ../../infrastructure/servers/server_devices.rst:62
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../infrastructure/servers/server_devices.rst:62
 msgid ""
@@ -647,7 +647,7 @@ msgid ""
 "NVIDIA SR-IOV vGPU profiles. See "
 ":doc:`/infrastructure/clusters/hvm/nvidia_vgpu` for vGPU prerequisites "
 "and lifecycle constraints"
-msgstr ""
+msgstr "**HVM/KVM** — PCI passthrough, dispositivos USB, passthrough de GPU completa y perfiles vGPU NVIDIA SR-IOV. Consulte :doc:`/infrastructure/clusters/hvm/nvidia_vgpu` para requisitos previos de vGPU y restricciones del ciclo de vida"
 
 #: ../../infrastructure/servers/server_devices.rst:71
 msgid "**Nutanix AHV** — GPU passthrough devices"

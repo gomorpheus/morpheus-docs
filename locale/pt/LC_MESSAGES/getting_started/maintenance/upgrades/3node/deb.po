@@ -22,47 +22,47 @@ msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:2
 msgid "3-Node HA Debian / Ubuntu Upgrade"
-msgstr ""
+msgstr "Atualização HA de 3 Nós Debian / Ubuntu"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:3
 msgid ""
 "The following covers upgrading the |morpheus| App nodes in 3 Node HA "
 "configurations to |morphver|."
-msgstr ""
+msgstr "O seguinte cobre a atualização dos nós de Aplicação |morpheus| em configurações HA de 3 Nós para |morphver|."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:5
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:19
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:72
 msgid "Warning"
-msgstr ""
+msgstr "Alerta"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:5
 msgid "As a best practice, always backup your database prior to any upgrade."
-msgstr ""
+msgstr "Como prática recomendada, sempre faça backup da sua base de dados antes de qualquer atualização."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:7
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:63
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:113
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:7
 msgid "The following is only for \"3 Node HA\" Architecture configurations."
-msgstr ""
+msgstr "O seguinte é apenas para configurações de Arquitetura \"3 Node HA\"."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:10
 msgid "|morpheus| Packages"
-msgstr ""
+msgstr "|morpheus| Pacotes"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:11
 msgid ""
 "|morpheus| Release Package urls can be obtained from "
 "`https://app.morpheushub.com <https://app.morpheushub.com>`_"
-msgstr ""
+msgstr "As urls de Pacotes de Release do |morpheus| podem ser obtidas em `https://app.morpheushub.com <https://app.morpheushub.com>`_"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:14
 msgid "|nonRollingUpgradeVer| or lower -> |morphver| Upgrade"
-msgstr ""
+msgstr "|nonRollingUpgradeVer| ou inferior -> Atualização |morphver|"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:19
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:72
@@ -72,14 +72,14 @@ msgid ""
 "/package-repos/*`` after |morphver| package installation and before "
 "reconfigure to clean old node and vm node packages from the package-repo "
 "when room is needed."
-msgstr ""
+msgstr "O |morpheus| |morphver| contém novos pacotes de nó e de nó de VM que exigem 3,5 GB de armazenamento. É seguro executar ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` após a instalação do pacote |morphver| e antes do reconfigure para limpar pacotes antigos de nó e de nó de VM do package-repo quando for necessário espaço."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:21
 msgid ""
 "Starting with Node 3, on **All** App Nodes, stop the morpheus-ui services"
 " via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout, run "
 "``morpheus-ctl graceful-kill morpheus-ui``."
-msgstr ""
+msgstr "Começando pelo Nó 3, em **Todos** os Nós de Aplicação, pare os serviços morpheus-ui via ``morpheus-ctl stop morpheus-ui``. Se receber um timeout, execute ``morpheus-ctl graceful-kill morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:23
 msgid "[root@app-server-3 ~]# morpheus-ctl stop morpheus-ui"
@@ -96,7 +96,7 @@ msgstr ""
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:35
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:74
 msgid "Upgrade the deb package on Node 1, then run a Reconfigure on Node 1"
-msgstr ""
+msgstr "Atualize o pacote deb no Nó 1 e, em seguida, execute um Reconfigure no Nó 1"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:37
 msgid ""
@@ -109,21 +109,21 @@ msgstr ""
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:43
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:70
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:43
 msgid ""
 "All services will automatically be stopped and started during the "
 "reconfigure process. After the reconfigure has succeeded, tail the ui "
 "service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Todos os serviços serão automaticamente parados e iniciados durante o processo de reconfigure. Após o reconfigure ter sido bem-sucedido, acompanhe o serviço ui para observar os logs de inicialização da ui com ``morpheus-ctl tail morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:45
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:86
 msgid ""
 "Once Node 1 upgrade has completed and the ui is available, upgrade the "
 "deb package on Node 2, then run a Reconfigure on Node 2."
-msgstr ""
+msgstr "Assim que a atualização do Nó 1 for concluída e a ui estiver disponível, atualize o pacote deb no Nó 2 e, em seguida, execute um Reconfigure no Nó 2."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:47
 msgid ""
@@ -135,7 +135,7 @@ msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:53
 msgid "Then upgrade the deb package on Node 3, and run a Reconfigure on Node 3"
-msgstr ""
+msgstr "Em seguida, atualize o pacote deb no Nó 3 e execute um Reconfigure no Nó 3"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:55
 msgid ""
@@ -150,7 +150,7 @@ msgstr ""
 msgid ""
 "The upgrade is complete and the |morpheus|-ui services should be running "
 "with clustered Elasticsearch and RabbitMQ services across the 3 nodes."
-msgstr ""
+msgstr "A atualização está concluída e os serviços |morpheus|-ui devem estar em execução com os serviços Elasticsearch e RabbitMQ em cluster nos 3 nós."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:63
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:113
@@ -161,17 +161,17 @@ msgid ""
 "was manually shutdown or killed. To resolve, run ``systemctl stop "
 "morpheus-runsvdir`` then ``systemctl start morpheus-runsvdir``, then run "
 "reconfigure again, ``morpheus-ctl reconfigure``."
-msgstr ""
+msgstr "Se o reconfigure após uma atualização de pacote rpm travar ou ficar parado ao iniciar um serviço (mysql, rabbitmq, elasticsearch ...), é possível que o serviço ``morpheus-runsvdir`` não tenha iniciado ou que um processo que ele gerenciava tenha sido desligado ou morto manualmente. Para resolver, execute ``systemctl stop morpheus-runsvdir`` e depois ``systemctl start morpheus-runsvdir`` e, em seguida, execute o reconfigure novamente, ``morpheus-ctl reconfigure``."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:68
 msgid "|minRollingUpgradeVer| or higher -> |morphver| Upgrade"
-msgstr ""
+msgstr "|minRollingUpgradeVer| ou superior -> Atualização |morphver|"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:70
 msgid ""
 "Rolling upgrades are supported for |minRollingUpgradeVer| or higher -> "
 "|morphver| only."
-msgstr ""
+msgstr "Atualizações rolling são suportadas apenas para |minRollingUpgradeVer| ou superior -> |morphver|."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:76
 msgid ""
@@ -189,7 +189,7 @@ msgid ""
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is "
 "started, proceed to the next node."
-msgstr ""
+msgstr "Após o reconfigure ter sido bem-sucedido, acompanhe o serviço ui para observar os logs de inicialização da ui com ``morpheus-ctl tail morpheus-ui``. Assim que o morpheus-ui for iniciado, prossiga para o próximo nó."
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:88
 msgid ""
@@ -205,7 +205,7 @@ msgstr ""
 msgid ""
 "Once Node 2 upgrade has completed and the ui is available, upgrade the "
 "deb package on Node 3, and run a Reconfigure on Node 3"
-msgstr ""
+msgstr "Assim que a atualização do Nó 2 for concluída e a ui estiver disponível, atualize o pacote deb no Nó 3 e execute um Reconfigure no Nó 3"
 
 #: ../../getting_started/maintenance/upgrades/3node/deb.rst:100
 msgid ""
@@ -221,5 +221,5 @@ msgstr ""
 msgid ""
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Após o reconfigure ter sido bem-sucedido, acompanhe o serviço ui para observar os logs de inicialização da ui com ``morpheus-ctl tail morpheus-ui``."
 

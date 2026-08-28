@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:2
 msgid "Apps"
-msgstr ""
+msgstr "Identity : 5000"
 
 #: ../../provisioning/apps/apps.rst:4
 msgid ""
@@ -32,52 +32,52 @@ msgid ""
 "Control List (ACL) rules. Use Apps to structure all necessary components "
 "into a single place. Add checks and groups for web servers, database "
 "nodes, etc."
-msgstr ""
+msgstr "Compute : 8774"
 
 #: ../../provisioning/apps/apps.rst:6
 msgid ""
 "Apps can be created from Blueprints, which are made in |LibBluApp| or "
 "from Existing Apps."
-msgstr ""
+msgstr "Image : 9292"
 
 #: ../../provisioning/apps/apps.rst:10
 msgid "Creating Apps"
-msgstr ""
+msgstr "Key Manager : 9311"
 
 #: ../../provisioning/apps/apps.rst:12
 msgid "New Apps can be created from Blueprints or using existing Instances."
-msgstr ""
+msgstr "Network : 9696"
 
 #: ../../provisioning/apps/apps.rst:16
 msgid "Creating Apps from Blueprints"
-msgstr ""
+msgstr "Volume API v3 : 8776 v3"
 
 #: ../../provisioning/apps/apps.rst:18 ../../provisioning/apps/apps.rst:36
 msgid ""
 "Click :guilabel:`+ADD` on the right side of the main Apps section in "
 "Provisioning."
-msgstr ""
+msgstr "Manila : 8786"
 
 #: ../../provisioning/apps/apps.rst:19
 msgid "Select an existing App Blueprint and click :guilabel:`NEXT`."
-msgstr ""
+msgstr "OpenStack Scalable File Service (SFS)"
 
 #: ../../provisioning/apps/apps.rst:21 ../../provisioning/apps/apps.rst:27
 #: ../../provisioning/apps/apps.rst:40 ../../provisioning/apps/apps.rst:51
 msgid "Note"
-msgstr ""
+msgstr "L'intégration |morpheus| avec le cloud OpenStack inclut la capacité de travailler avec OpenStack Scalable File Service (SFS)."
 
 #: ../../provisioning/apps/apps.rst:21
 msgid ""
 "App Blueprints must be created in |LibBluApp| to appear as options when "
 "provisioning an App."
-msgstr ""
+msgstr "Découverte et gestion des serveurs SFS"
 
 #: ../../provisioning/apps/apps.rst:23 ../../provisioning/apps/apps.rst:38
 msgid ""
 "Enter a Name for the App and select a Group. Default Cloud and Env can "
 "also be selected."
-msgstr ""
+msgstr "Lors de l'intégration d'un cloud OpenStack avec |morpheus|, les serveurs SFS et les partages de fichiers sont découverts automatiquement après un court délai."
 
 #: ../../provisioning/apps/apps.rst:24
 msgid ""
@@ -86,7 +86,7 @@ msgid ""
 " the Instances in the App.  If no Blueprint Configuration matched the "
 "Group, Cloud or Env selections, the Instances will have default "
 "configurations."
-msgstr ""
+msgstr "De plus, des serveurs OpenStack SFS peuvent être créés depuis la page de liste des serveurs de stockage (Infrastructure > Storage > Servers) directement dans |morpheus|. Cliquez sur :guilabel:`+ADD` pour commencer et définissez la valeur du type de serveur de stockage sur « Openstack SFS ». Comme pour les serveurs SFS synchronisés existants, ceux créés depuis |morpheus| peuvent être limités selon les besoins."
 
 #: ../../provisioning/apps/apps.rst:25
 msgid ""
@@ -101,13 +101,13 @@ msgid ""
 "to the Instance. Instances that have required fields that need populated "
 "will have a red X and must be completed. If your Blueprint is already "
 "fully configured, you can simply select :guilabel:`COMPLETE`!"
-msgstr ""
+msgstr "Découverte et gestion des partages de fichiers SFS"
 
 #: ../../provisioning/apps/apps.rst:29
 msgid ""
 "Select :guilabel:`COMPLETE` and the App will be created, and the "
 "Instances will begin provisioning."
-msgstr ""
+msgstr "Les partages de fichiers découverts apparaîtront parmi les autres partages de fichiers synchronisés avec |morpheus| dans Infrastructure > Storage > File Shares. Selon le nombre d'intégrations cloud sur votre appliance |morpheus| et le nombre d'intégrations cloud disponibles pour votre compte utilisateur, cette liste peut être assez longue. À l'aide de la barre de recherche sur cette page, vous pouvez restreindre la liste aux partages de fichiers dont les noms correspondent aux termes de recherche."
 
 #: ../../provisioning/apps/apps.rst:31
 msgid ".. image:: /images/provisioning/apps_301_1.png"
@@ -115,75 +115,75 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:34
 msgid "Creating Apps from Existing Instances"
-msgstr ""
+msgstr "« Failed to load files from storage provider » s'affiche lorsque l'appliance |morpheus| n'a pas accès au partage de fichiers."
 
 #: ../../provisioning/apps/apps.rst:37
 msgid ""
 "Select ``APP FROM EXISTING INSTANCES`` from the Blueprints list and click"
 " :guilabel:`NEXT`."
-msgstr ""
+msgstr "De nouveaux partages de fichiers OpenStack SFS peuvent également être créés directement dans |morpheus|. Depuis la page de liste des partages de fichiers, commencez en cliquant sur :guilabel:`+ADD`. Sélectionnez le type « Openstack SFS Share ». Définissez le champ storage service sur un serveur OpenStack SFS préexistant. La définition d'un nom convivial pour le partage de fichiers dans |morpheus| et la sélection parmi les zones de disponibilité synchronisées sont obligatoires."
 
 #: ../../provisioning/apps/apps.rst:40
 msgid ""
 "Only instances within the selected Group and Cloud will be available to "
 "be added to the App."
-msgstr ""
+msgstr "Création de réseau et de routeur"
 
 #: ../../provisioning/apps/apps.rst:42
 msgid "In the STRUCTURE section, select + to add a Tier"
-msgstr ""
+msgstr "Une fois un cloud OpenStack intégré dans |morpheus|, de nouvelles options de création de réseau deviennent disponibles. Lors de l'ajout d'un nouveau réseau (Infrastructure > Networks > onglet Networks), un nouveau type intitulé « OpenStack Private Network » est disponible en cliquant sur :guilabel:`+ADD`. Lorsque l'utilisateur crée cette structure réseau dans |morpheus|, un sous-réseau de couche 2 est créé, mais il n'est pas connecté à un routeur."
 
 #: ../../provisioning/apps/apps.rst:43
 msgid "Select or enter a Tier Name."
-msgstr ""
+msgstr "Créer un réseau"
 
 #: ../../provisioning/apps/apps.rst:44
 msgid ""
 "Select the Tier to set Boot Order, rename, or once multiple Tiers are "
 "added, connect the Tier to other Tiers."
-msgstr ""
+msgstr "Accédez à Infrastructure > Networks"
 
 #: ../../provisioning/apps/apps.rst:45
 msgid "In the STRUCTURE section, select + in a Tier to add an Instance"
-msgstr ""
+msgstr "Cliquez sur l'onglet Networks"
 
 #: ../../provisioning/apps/apps.rst:46
 msgid "Select the Instance Type of the Existing Instance to be added to the App."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ADD`"
 
 #: ../../provisioning/apps/apps.rst:47
 msgid "In the STRUCTURE section, select the Instance."
-msgstr ""
+msgstr "Sélectionnez OpenStack Private Network"
 
 #: ../../provisioning/apps/apps.rst:48
 msgid ""
 "In the CONFIGURATION section, select the Cloud the Existing Instance is "
 "in. Existing INSTANCES that match the Group, Cloud and Instance Types set"
 " will populate."
-msgstr ""
+msgstr "Complétez la fenêtre modale selon les exigences du nouveau réseau"
 
 #: ../../provisioning/apps/apps.rst:49
 msgid ""
 "Select the desired Instance from the INSTANCES list. Selected instance "
 "will show in the SELECTED INSTANCE section."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../provisioning/apps/apps.rst:51
 msgid ""
 "Only one existing Instance can be added per Instance. To add multiple "
 "Existing Instances, repeat the step above including adding an Instance "
 "for each Existing Instance to be added to the App."
-msgstr ""
+msgstr "Créer un routeur"
 
 #: ../../provisioning/apps/apps.rst:53
 msgid ""
 "Once all Existing Instances have been selected, click "
 ":guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Cliquez sur l'onglet Routers"
 
 #: ../../provisioning/apps/apps.rst:54
 msgid "A new App will be created out of the Existing Instances."
-msgstr ""
+msgstr "Sélectionnez OpenStack Router"
 
 #: ../../provisioning/apps/apps.rst:56
 msgid ".. image:: /images/provisioning/apps_301_2.png"
@@ -191,30 +191,30 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:61
 msgid "Managing Apps"
-msgstr ""
+msgstr "Lors de la création d'un routeur, il est utile de noter que External Network est le réseau d'IP flottantes qui a été assigné au projet OpenStack. Ce réseau accordera à vos instances leurs routes vers Internet. Internal Subnet peut être un sous-réseau de couche 2 que vous avez pu créer à l'étape précédente. De plus, plusieurs sous-réseaux peuvent être ajoutés au routeur (VPC) et l'adresse IP du sous-réseau serait l'adresse IP interne du routeur."
 
 #: ../../provisioning/apps/apps.rst:64 ../../provisioning/apps/apps.rst:74
 msgid "App Status"
-msgstr ""
+msgstr "Openstack"
 
 #: ../../provisioning/apps/apps.rst:66
 msgid ""
 "App Status is determined by the status of the Instances within the App or"
 " by the :redguilabel:`DELETE` action. All Instances in an App must be in "
 "'Running' status for the App status to equal 'Running'."
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../provisioning/apps/apps.rst:69
 msgid "**App Statuses**"
-msgstr ""
+msgstr "OpenStack devient une plate-forme d'orchestration d'infrastructure sur site largement utilisée. Il compte un large éventail de contributeurs et de sponsors entreprise. Il existe également plusieurs variantes d'OpenStack. |morpheus| prend en charge l'intégration avec toutes les offres de plate-forme et couvre la compatibilité jusqu'à OpenStack Juno. La liste complète des versions compatibles figure dans notre `table de compatibilité des intégrations <https://docs.morpheusdata.com/en/latest/release_notes/compatibility.html#integrations>`_. Il exploite les API et fournit une fonctionnalité complète en tant que portail en libre-service devant OpenStack."
 
 #: ../../provisioning/apps/apps.rst:73
 msgid "Status Icon"
-msgstr ""
+msgstr "Fonctionnalités"
 
 #: ../../provisioning/apps/apps.rst:75
 msgid "Status Reason"
-msgstr ""
+msgstr "Provisionnement de machines virtuelles"
 
 #: ../../provisioning/apps/apps.rst:76
 msgid ".. image:: /images/provisioning/instances/status/running_icon.svg"
@@ -222,11 +222,11 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:78
 msgid "Running"
-msgstr ""
+msgstr "Gestion des groupes de sécurité"
 
 #: ../../provisioning/apps/apps.rst:79
 msgid "All Instance Statuses = Running"
-msgstr ""
+msgstr "Prise en charge du mode disque Local/Image (via Ceph)"
 
 #: ../../provisioning/apps/apps.rst:80
 msgid ".. image:: /images/provisioning/instances/status/failed_icon.svg"
@@ -234,11 +234,11 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:82
 msgid "Failed"
-msgstr ""
+msgstr "Gestion et migration de VM brownfield"
 
 #: ../../provisioning/apps/apps.rst:83
 msgid "Any Instance Status = Failed"
-msgstr ""
+msgstr "Gestion du cycle de vie et redimensionnement"
 
 #: ../../provisioning/apps/apps.rst:84
 msgid ".. image:: /images/provisioning/instances/status/pending_icon.svg"
@@ -246,11 +246,11 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:86
 msgid "Pending"
-msgstr ""
+msgstr "Services de fichiers Manila (SFS)"
 
 #: ../../provisioning/apps/apps.rst:87
 msgid "Any Instance Status = Pending"
-msgstr ""
+msgstr "Stockage objet (OBS)"
 
 #: ../../provisioning/apps/apps.rst:88
 msgid ".. image:: /images/provisioning/instances/status/pendingRemoval_icon.svg"
@@ -258,11 +258,11 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:90
 msgid "Pending Removal"
-msgstr ""
+msgstr "Services d'équilibrage de charge LBaaS/Octavia"
 
 #: ../../provisioning/apps/apps.rst:91
 msgid "Any Instance Status = Pending Removal"
-msgstr ""
+msgstr "En plus de toutes ces fonctionnalités, |morpheus| ajoute également des fonctionnalités supplémentaires à OpenStack qui n'existent pas nativement, afin de faciliter la gestion dans les environnements multilocataires ainsi que les environnements cloud hybrides :"
 
 #: ../../provisioning/apps/apps.rst:92
 msgid ".. image:: /images/provisioning/instances/status/deploying_icon.svg"
@@ -270,11 +270,11 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:94
 msgid "Provisioning"
-msgstr ""
+msgstr "Conversion QCOW2 vers image RAW"
 
 #: ../../provisioning/apps/apps.rst:95
 msgid "Any Instance Status = Provisioning"
-msgstr ""
+msgstr "Allocation de ressources multilocataire"
 
 #: ../../provisioning/apps/apps.rst:96
 msgid ".. image:: /images/provisioning/instances/status/removing_icon.svg"
@@ -282,11 +282,11 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:98
 msgid "Removing"
-msgstr ""
+msgstr "Mise à l'échelle automatique et reprise"
 
 #: ../../provisioning/apps/apps.rst:99
 msgid "The DELETE action was trigger on the App"
-msgstr ""
+msgstr "Clonage d'instance"
 
 #: ../../provisioning/apps/apps.rst:100
 msgid ".. image:: /images/provisioning/instances/status/unknown_icon.svg"
@@ -294,163 +294,163 @@ msgstr ""
 
 #: ../../provisioning/apps/apps.rst:102
 msgid "Unknown"
-msgstr ""
+msgstr "Conseil"
 
 #: ../../provisioning/apps/apps.rst:103
 msgid "Any Instance Status = Unknown, or the App is empty"
-msgstr ""
+msgstr "Pour permettre à Morpheus de lister les hôtes hyperviseurs, assurez-vous que l'utilisateur OpenStack utilisé pour l'intégration cloud dispose de privilèges suffisants pour ``os_compute_api:os-hypervisors`` dans ``/etc/nova/policy.json`` dans OpenStack."
 
 #: ../../provisioning/apps/apps.rst:106
 msgid "Editing an App"
-msgstr ""
+msgstr "Premiers pas"
 
 #: ../../provisioning/apps/apps.rst:108
 msgid ""
 "The :guilabel:`EDIT` action allows permissioned users to update an Apps "
 "metadata, Environment, Group and Owner."
-msgstr ""
+msgstr "Les clouds OpenStack sont très faciles à intégrer avec |morpheus|. Commencez par accéder à la section ``Infrastructure > Clouds`` et cliquez sur :guilabel:`+ ADD`. Sélectionnez OpenStack pour démarrer le processus d'intégration ; la plupart des variantes OpenStack de marque fonctionneront également avec cette sélection de cloud."
 
 #: ../../provisioning/apps/apps.rst:110 ../../provisioning/apps/apps.rst:128
 #: ../../provisioning/apps/apps.rst:153
 msgid "Navigate to |ProApp|"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../provisioning/apps/apps.rst:111 ../../provisioning/apps/apps.rst:129
 #: ../../provisioning/apps/apps.rst:154
 msgid "Select an App from the list to view the App detail page"
-msgstr ""
+msgstr "La prise en charge de l'API Identity OpenStack v2 a été supprimée dans v5.3.3"
 
 #: ../../provisioning/apps/apps.rst:112
 msgid "Select :guilabel:`EDIT`"
-msgstr ""
+msgstr "**Configuration du cloud**"
 
 #: ../../provisioning/apps/apps.rst:113
 msgid "Update the following"
-msgstr ""
+msgstr "NAME"
 
 #: ../../provisioning/apps/apps.rst
 msgid "NAME"
-msgstr ""
+msgstr "Nom du Cloud dans |morpheus|"
 
 #: ../../provisioning/apps/apps.rst:115
 msgid "App Name"
-msgstr ""
+msgstr "CODE"
 
 #: ../../provisioning/apps/apps.rst
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "Code unique utilisé pour l'api/cli, l'automatisation et les politiques."
 
 #: ../../provisioning/apps/apps.rst:116
 msgid "App Description"
-msgstr ""
+msgstr "LOCATION"
 
 #: ../../provisioning/apps/apps.rst
 msgid "ENVIRONMENT"
-msgstr ""
+msgstr "Champ de description pour ajouter des notes sur le cloud, comme l'emplacement."
 
 #: ../../provisioning/apps/apps.rst:117
 msgid "App Environment"
-msgstr ""
+msgstr "VISIBILITY"
 
 #: ../../provisioning/apps/apps.rst
 msgid "GROUP"
-msgstr ""
+msgstr "Pour définir les autorisations cloud dans un environnement multi-locataire. Non applicable dans les environnements mono-locataire."
 
 #: ../../provisioning/apps/apps.rst:118
 msgid "App Group assignment"
-msgstr ""
+msgstr "TENANT"
 
 #: ../../provisioning/apps/apps.rst
 msgid "OWNER"
-msgstr ""
+msgstr "Si Visibility est défini sur Private, sélectionnez le locataire auquel les ressources cloud seront affectées."
 
 #: ../../provisioning/apps/apps.rst:119
 msgid "User assigned as Owner of the App"
-msgstr ""
+msgstr "ENABLED"
 
 #: ../../provisioning/apps/apps.rst:121
 msgid "Select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Lorsqu'il est désactivé, la synchronisation automatique du cloud est suspendue et le cloud ne sera pas sélectionnable pour le provisionnement."
 
 #: ../../provisioning/apps/apps.rst:124
 msgid "Deleting an App"
-msgstr ""
+msgstr "AUTOMATICALLY POWER ON VMS"
 
 #: ../../provisioning/apps/apps.rst:126
 msgid ""
 "The :guilabel:`DELETE` action allows permissioned users to delete an App "
 "and, by default, all Instances within the App."
-msgstr ""
+msgstr "L'action :guilabel:`DELETE` permet aux utilisateurs autorisés de supprimer une application et, par défaut, toutes les instances de l'application."
 
 #: ../../provisioning/apps/apps.rst:130
 msgid "Select :redguilabel:`DELETE`"
-msgstr ""
+msgstr "Sélectionnez :redguilabel:`DELETE`"
 
 #: ../../provisioning/apps/apps.rst:131
 msgid "The DELETE APP? confirmation modal will be displayed:"
-msgstr ""
+msgstr "La fenêtre modale de confirmation DELETE APP? s'affichera :"
 
 #: ../../provisioning/apps/apps.rst
 msgid "Remove Instances"
-msgstr ""
+msgstr "Supprimer les instances"
 
 #: ../../provisioning/apps/apps.rst:133
 msgid "Deletes all Instances associated with the App - Enabled by Default"
-msgstr ""
+msgstr "Supprime toutes les instances associées à l'application — activé par défaut"
 
 #: ../../provisioning/apps/apps.rst
 msgid "Preserve Backups"
-msgstr ""
+msgstr "Conserver les sauvegardes"
 
 #: ../../provisioning/apps/apps.rst:135
 msgid ""
 "Preserves Backups of the Instances associated with the App - Disabled by "
 "Default"
-msgstr ""
+msgstr "Conserve les sauvegardes des instances associées à l'application — désactivé par défaut"
 
 #: ../../provisioning/apps/apps.rst
 msgid "Preserve Volumes"
-msgstr ""
+msgstr "Conserver les volumes"
 
 #: ../../provisioning/apps/apps.rst:137
 msgid ""
 "Preserves Storage Volumes of the Instances associated with the App - "
 "Disabled by Default"
-msgstr ""
+msgstr "Conserve les volumes de stockage des instances associées à l'application — désactivé par défaut"
 
 #: ../../provisioning/apps/apps.rst
 msgid "Force Delete"
-msgstr ""
+msgstr "Suppression forcée"
 
 #: ../../provisioning/apps/apps.rst:139
 msgid ""
 "Forces deletion of the App - Required when any Instances associated with "
 "the App are in \"provisioning\" state - WARNING Force deleting may cause "
 "orphaned infrastructure or resources. - Disabled by Default"
-msgstr ""
+msgstr "Force la suppression de l'application — requis lorsque des instances associées à l'application sont à l'état « provisioning » — AVERTISSEMENT : la suppression forcée peut entraîner une infrastructure ou des ressources orphelines. — désactivé par défaut"
 
 #: ../../provisioning/apps/apps.rst:144
 msgid ""
 "Select :guilabel:`DELETE` to proceed with deleting the App, or "
 ":guilabel:`CANCEL` to abort the delete action."
-msgstr ""
+msgstr "Sélectionnez :guilabel:`DELETE` pour procéder à la suppression de l'application, ou :guilabel:`CANCEL` pour annuler l'action de suppression."
 
 #: ../../provisioning/apps/apps.rst:149
 msgid "Exporting Configuration JSON"
-msgstr ""
+msgstr "Exportation de la configuration JSON"
 
 #: ../../provisioning/apps/apps.rst:151
 msgid "To export an App Blueprint as JSON:"
-msgstr ""
+msgstr "Pour exporter un Blueprint d'application au format JSON :"
 
 #: ../../provisioning/apps/apps.rst:155
 msgid "Select :guilabel:`ACTIONS` > Export"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`ACTIONS` > Export"
 
 #: ../../provisioning/apps/apps.rst:156
 #, python-brace-format
 msgid ""
 "The App export file will be downloaded to your computer as "
 "``{app_name}.json``"
-msgstr ""
+msgstr "Le fichier d'export de l'application sera téléchargé sur votre ordinateur sous ``{app_name}.json``"
 

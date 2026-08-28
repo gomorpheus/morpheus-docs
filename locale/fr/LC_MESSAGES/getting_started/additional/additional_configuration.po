@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../getting_started/additional/additional_configuration.rst:4
 msgid "Additional Configuration Options"
-msgstr ""
+msgstr "Options de configuration supplémentaires"
 
 #: ../../getting_started/additional/morpheusRb.rst:4
 msgid "Advanced morpheus.rb Settings"
-msgstr ""
+msgstr "Paramètres avancés de morpheus.rb"
 
 #: ../../getting_started/additional/morpheusRb.rst:6
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 " services within the morpheus.rb file located in "
 "``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items "
 "available in the ``morpheus.rb`` file."
-msgstr ""
+msgstr "Morpheus permet des personnalisations avancées supplémentaires pour les services gérés par le système dans le fichier morpheus.rb situé dans ``/etc/morpheus/morpheus.rb``.  Voici la liste des éléments pris en charge disponibles dans le fichier ``morpheus.rb``."
 
 #: ../../getting_started/additional/encryption.rst:36
 #: ../../getting_started/additional/logback.rst:4
@@ -45,7 +45,7 @@ msgstr ""
 #: ../../getting_started/additional/offline.rst:56
 #: ../../getting_started/additional/offline.rst:92
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/additional/morpheusRb.rst:8
 msgid ""
@@ -58,7 +58,7 @@ msgid ""
 " our `KnowledgeBase <https://support.morpheusdata.com/s/article"
 "/Configure-Morpheus-to-utilize-and-alternate-port-for-"
 "SSL?language=en_US>`_."
-msgstr ""
+msgstr "Les paramètres de configuration des services ne s'appliquent pas aux services externalisés tels que les clusters MySQL, Elasticsearch ou RabbitMQ externes. Seuls les paramètres de connexion s'appliquent aux services externes. De plus, pour configurer |morpheus| afin d'utiliser des ports alternatifs pour SSL, des étapes de configuration supplémentaires peuvent être nécessaires. Si l'ajout d'un port à votre valeur ``appliance_url`` ne fonctionne pas, consultez l'article associé dans notre `KnowledgeBase <https://support.morpheusdata.com/s/article/Configure-Morpheus-to-utilize-and-alternate-port-for-SSL?language=en_US>`_."
 
 #: ../../getting_started/additional/morpheusRb.rst:10
 #, python-brace-format
@@ -240,7 +240,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ha_load_balancer.rst:2
 msgid "Load Balancer Configuration"
-msgstr ""
+msgstr "Configuration de l'équilibreur de charge"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:4
 msgid ""
@@ -249,37 +249,37 @@ msgid ""
 "upgrades. Below are the guidelines to configuring a load balancer for "
 "|morpheus| but each configuration may differ based on the organization's "
 "requirements."
-msgstr ""
+msgstr "Pour les configurations comportant 2 nœuds d'application ou plus, un équilibreur de charge est recommandé pour garantir la haute disponibilité (HA) face aux interruptions et aux mises à niveau. Vous trouverez ci-dessous les directives de configuration d'un équilibreur de charge pour |morpheus|, mais chaque configuration peut différer selon les exigences de l'organisation."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:7
 msgid "Requirements"
-msgstr ""
+msgstr "Exigences"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:9
 msgid "WebSockets enabled"
-msgstr ""
+msgstr "WebSockets activés"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:10
 msgid "Load Balance 443 (optionally redirect 80 to 443)"
-msgstr ""
+msgstr "Équilibrer la charge sur le port 443 (redirection optionnelle du port 80 vers 443)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:12
 msgid "SSL Termination (Offload), Bridging, and Passthrough are supported"
-msgstr ""
+msgstr "La terminaison SSL (Offload), le bridging et le passthrough sont pris en charge"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:14
 msgid "Round-Robin or least connection distribution"
-msgstr ""
+msgstr "Distribution Round-Robin ou par connexions minimales"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:16
 msgid ""
 "HTTPS monitor ``https://ip_address/ping`` body for ``MORPHEUS PING`` or "
 "status of 200, for node operational health"
-msgstr ""
+msgstr "Moniteur HTTPS ``https://ip_address/ping`` avec corps ``MORPHEUS PING`` ou statut 200, pour la santé opérationnelle des nœuds"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:19
 msgid "Example configurations"
-msgstr ""
+msgstr "Exemples de configuration"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:21
 msgid ""
@@ -299,11 +299,11 @@ msgid ""
 "Certificates "
 "<https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html>`_"
 " documentation."
-msgstr ""
+msgstr "Vous trouverez ci-dessous quelques exemples de configuration d'équilibreurs de charge pour répondre aux besoins d'une configuration HA.  Les exemples supposent l'utilisation du bridging SSL, ce qui signifie qu'un certificat SSL (TLS) est présenté par l'équilibreur de charge aux clients et que l'équilibreur de charge communiquera avec les nœuds backend via un certificat différent (éventuellement identique). Cette configuration est recommandée car les nœuds d'application |morpheus| créeront des certificats auto-signés et l'équilibreur de charge présentera un certificat valide aux utilisateurs finaux.  De plus, toutes les communications seront chiffrées. Cela réduit la charge de maintenance des certificats sur les nœuds d'application |morpheus|, car l'équilibreur de charge peut ignorer les certificats invalides sur les nœuds d'application. Cependant, les certificats sur les nœuds d'application |morpheus| ne sont pas obligatoirement auto-signés ; ils peuvent être remplacés par d'autres certificats de confiance en suivant la documentation `SSL Certificates <https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html>`_."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:26
 msgid "Tip"
-msgstr ""
+msgstr "Conseil"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:26
 msgid ""
@@ -312,135 +312,135 @@ msgid ""
 "reference.  The settings mentioned in the examples list the primary "
 "settings that may need to be configured, other settings are based on the "
 "organization's needs requirements and own configuration."
-msgstr ""
+msgstr "La liste ci-dessous n'est pas une liste exhaustive pour tous les équilibreurs de charge.  Les exemples fournis sont des déploiements courants pouvant servir de référence.  Les paramètres mentionnés dans les exemples listent les principaux paramètres à configurer ; les autres paramètres dépendent des besoins et de la configuration de l'organisation."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:30
 msgid "**Monitor**"
-msgstr ""
+msgstr "**Moniteur**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:32
 msgid "**Type:** HTTPS"
-msgstr ""
+msgstr "**Type :** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:33
 msgid "**Send String:** GET /ping"
-msgstr ""
+msgstr "**Chaîne d'envoi :** GET /ping"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:34
 msgid "**Receive String:** MORPHEUS PING"
-msgstr ""
+msgstr "**Chaîne de réception :** MORPHEUS PING"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:36
 msgid "**Pool**"
-msgstr ""
+msgstr "**Pool**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:38
 msgid "**Health Monitor:** Select monitor created in the **Monitor** section"
-msgstr ""
+msgstr "**Moniteur de santé :** Sélectionnez le moniteur créé dans la section **Moniteur**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:39
 msgid ""
 "**Load Balancing Method:** Least Connections (member) is recommended "
 "(alternatively Round Robin)"
-msgstr ""
+msgstr "**Méthode d'équilibrage de charge :** Least Connections (member) est recommandé (alternativement Round Robin)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:40
 msgid "**Node Service Port:** 443/HTTPS"
-msgstr ""
+msgstr "**Port de service du nœud :** 443/HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:42
 msgid "**Virtual Server**"
-msgstr ""
+msgstr "**Serveur virtuel**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:44
 msgid "**Type:** Standard"
-msgstr ""
+msgstr "**Type :** Standard"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:45
 msgid "**Service Port:** 443/HTTPS"
-msgstr ""
+msgstr "**Port de service :** 443/HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:46
 msgid "**Protocol:** TCP"
-msgstr ""
+msgstr "**Protocole :** TCP"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:47
 msgid "**Protocol Profile (Client):** tcp"
-msgstr ""
+msgstr "**Profil de protocole (Client) :** tcp"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:48
 msgid "**Protocol Profile (Server):** tcp"
-msgstr ""
+msgstr "**Profil de protocole (Serveur) :** tcp"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:49
 msgid "**HTTP Profile (Client):** http"
-msgstr ""
+msgstr "**Profil HTTP (Client) :** http"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:50
 msgid "**HTTP Profile (Server):** http"
-msgstr ""
+msgstr "**Profil HTTP (Serveur) :** http"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:51
 msgid ""
 "**SSL Profile (Client):** clientssl (or preferred profile with a trusted "
 "certificate)"
-msgstr ""
+msgstr "**Profil SSL (Client) :** clientssl (ou profil préféré avec un certificat de confiance)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:52
 msgid "**SSL Profile (Server):** serverssl"
-msgstr ""
+msgstr "**Profil SSL (Serveur) :** serverssl"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:53
 msgid "**Source Address Translation:** Auto Map"
-msgstr ""
+msgstr "**Traduction d'adresse source :** Auto Map"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:58
 msgid "**Target Group**"
-msgstr ""
+msgstr "**Groupe cible**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:60
 msgid "**Target Type:** Instances"
-msgstr ""
+msgstr "**Type de cible :** Instances"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:61
 msgid "**Protocol/Port:** HTTPS/443"
-msgstr ""
+msgstr "**Protocole/Port :** HTTPS/443"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:62
 msgid "**Health Check Protocol:** HTTPS"
-msgstr ""
+msgstr "**Protocole de contrôle de santé :** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:63
 msgid "**Health check path:** /ping"
-msgstr ""
+msgstr "**Chemin de contrôle de santé :** /ping"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:64
 msgid ""
 "**Load balancing algorithm:** Least Outstanding Requests is recommended "
 "(alternatively Round Robin)"
-msgstr ""
+msgstr "**Algorithme d'équilibrage de charge :** Least Outstanding Requests est recommandé (alternativement Round Robin)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:67
 msgid "**Load Balancer**"
-msgstr ""
+msgstr "**Équilibreur de charge**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:69
 msgid "**Security Group:** Allow HTTPS/443 Inbound and Outbound"
-msgstr ""
+msgstr "**Groupe de sécurité :** Autoriser HTTPS/443 entrant et sortant"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:70
 msgid ""
 "**Listener:** HTTPS:443 to the target group created in the **Target "
 "Group** section"
-msgstr ""
+msgstr "**Écouteur :** HTTPS:443 vers le groupe cible créé dans la section **Groupe cible**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:71
 msgid "**Security Policy:** ELBSecurityPolicy-2016-08"
-msgstr ""
+msgstr "**Politique de sécurité :** ELBSecurityPolicy-2016-08"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:75
 msgid "**Example** ``/etc/haproxy/haproxy.cfg`` **configuration file**"
-msgstr ""
+msgstr "**Exemple** de fichier de configuration ``/etc/haproxy/haproxy.cfg``"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:77
 msgid ""
@@ -510,211 +510,211 @@ msgid ""
 "In this example, it is assumed **End-To-End TLS Encryption** is being "
 "used, which means the Application Gateway will present a certificate to "
 "the clients and the backend nodes will present the **same** certificate."
-msgstr ""
+msgstr "Dans cet exemple, on suppose que le **chiffrement TLS de bout en bout** est utilisé, ce qui signifie que l'Application Gateway présentera un certificat aux clients et que les nœuds backend présenteront le **même** certificat."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:144
 msgid ""
 "If a setting is not mentioned, it is assumed that the default can be "
 "maintained."
-msgstr ""
+msgstr "Si un paramètre n'est pas mentionné, on suppose que la valeur par défaut peut être conservée."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:146
 msgid "**General Settings**"
-msgstr ""
+msgstr "**Paramètres généraux**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:148
 msgid "**Tier:** Standard V2"
-msgstr ""
+msgstr "**Niveau :** Standard V2"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:149
 msgid "**Capacity type:** **Autoscale** or **Manual** are both supported"
-msgstr ""
+msgstr "**Type de capacité :** **Autoscale** ou **Manual** sont tous deux pris en charge"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:150
 msgid "**HTTPS2:** Disabled"
-msgstr ""
+msgstr "**HTTPS2 :** Désactivé"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:152
 msgid "**Frontend Configuration**"
-msgstr ""
+msgstr "**Configuration frontend**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:154
 msgid ""
 "**Type:** Set **Public** if |morpheus| should be accessilbe externally, "
 "otherwise choose **Private**"
-msgstr ""
+msgstr "**Type :** Définissez **Public** si |morpheus| doit être accessible en externe, sinon choisissez **Private**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:155
 msgid ""
 "**Public IP Address:** Associate a previously create public IP or create "
 "a new one"
-msgstr ""
+msgstr "**Adresse IP publique :** Associez une IP publique créée précédemment ou créez-en une nouvelle"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:157
 msgid "**Listener**"
-msgstr ""
+msgstr "**Écouteur**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:159
 msgid ""
 "**Frontend IP:** Choose the IP created from the Frontend Configuration "
 "above"
-msgstr ""
+msgstr "**IP frontend :** Choisissez l'IP créée dans la configuration frontend ci-dessus"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:160
 #: ../../getting_started/additional/ha_load_balancer.rst:187
 msgid "**Protocol:** HTTPS"
-msgstr ""
+msgstr "**Protocole :** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:161
 msgid "**Port:** 443"
-msgstr ""
+msgstr "**Port :** 443"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:162
 msgid "**Certificate:**"
-msgstr ""
+msgstr "**Certificat :**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:164
 msgid "Upload the public certificate in **PFX** format"
-msgstr ""
+msgstr "Importez le certificat public au format **PFX**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:165
 msgid "This certificate should match the one presented by the backend nodes"
-msgstr ""
+msgstr "Ce certificat doit correspondre à celui présenté par les nœuds backend"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:166
 msgid "The certificate should include the entire chain, including the private key"
-msgstr ""
+msgstr "Le certificat doit inclure la chaîne complète, y compris la clé privée"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:167
 msgid "**Listener type:** Basic"
-msgstr ""
+msgstr "**Type d'écouteur :** Basic"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:168
 msgid "**Error page URL:** No"
-msgstr ""
+msgstr "**URL de page d'erreur :** Non"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:170
 msgid "**Backend Settings**"
-msgstr ""
+msgstr "**Paramètres backend**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:172
 msgid "**Backend protocol:** HTTPS"
-msgstr ""
+msgstr "**Protocole backend :** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:173
 msgid "**Backend port:** 443"
-msgstr ""
+msgstr "**Port backend :** 443"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:174
 msgid "**Use well known CA certificate:**"
-msgstr ""
+msgstr "**Utiliser un certificat d'autorité de certification reconnu :**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:176
 msgid ""
 "If set to **Yes**, the certificate does not need to be uploaded in the "
 "settings.  This must be a well known certificate provided by a well known"
 " certificate authority, not an internally generated certificate"
-msgstr ""
+msgstr "Si défini sur **Yes**, le certificat n'a pas besoin d'être importé dans les paramètres.  Il doit s'agir d'un certificat reconnu fourni par une autorité de certification reconnue, et non d'un certificat généré en interne"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:178
 msgid ""
 "If set to **No**, ensure the certificate that is present on the backend "
 "nodes is uploaded to the Application Gateway. Note that the certificate "
 "should include the entire chain (CA, Intermediates, Certificate)"
-msgstr ""
+msgstr "Si défini sur **No**, assurez-vous que le certificat présent sur les nœuds backend est importé dans l'Application Gateway. Notez que le certificat doit inclure la chaîne complète (CA, intermédiaires, certificat)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:180
 msgid "**Cookie-based affinity:** Disable"
-msgstr ""
+msgstr "**Affinité basée sur les cookies :** Désactiver"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:181
 msgid "**Connection draining:** Enable"
-msgstr ""
+msgstr "**Vidage des connexions :** Activer"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:182
 msgid "**Override with new host name:** No"
-msgstr ""
+msgstr "**Remplacer par un nouveau nom d'hôte :** Non"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:183
 msgid ""
 "**Use Custom probe:** No (one will be created next and will be assoicated"
 " during that configuration)"
-msgstr ""
+msgstr "**Utiliser une sonde personnalisée :** Non (une sera créée ensuite et associée lors de cette configuration)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:185
 msgid "**Health Probe**"
-msgstr ""
+msgstr "**Sonde de santé**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:188
 msgid ""
 "**Host:** Enter the host that is configured on the |morpheus| application"
 " nodes.  This same host that will be used on the Application Gateway "
 "Example:  morpheus.mydomain.com"
-msgstr ""
+msgstr "**Hôte :** Saisissez l'hôte configuré sur les nœuds d'application |morpheus|.  C'est le même hôte qui sera utilisé sur l'Application Gateway Exemple :  morpheus.mydomain.com"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:190
 msgid "**Pick host name from backend settings:** No"
-msgstr ""
+msgstr "**Prendre le nom d'hôte des paramètres backend :** Non"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:191
 msgid "**Pick port from backend settings:** Yes"
-msgstr ""
+msgstr "**Prendre le port des paramètres backend :** Oui"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:192
 msgid "**Path:** /ping"
-msgstr ""
+msgstr "**Chemin :** /ping"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:193
 msgid "**Use probe matching conditions:** Yes"
-msgstr ""
+msgstr "**Utiliser des conditions de correspondance de sonde :** Oui"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:194
 msgid "**HTTP response status code match:** 200-399"
-msgstr ""
+msgstr "**Correspondance du code de statut de réponse HTTP :** 200-399"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:195
 msgid "**Backend settings:** Choose the backend settings created above"
-msgstr ""
+msgstr "**Paramètres backend :** Choisissez les paramètres backend créés ci-dessus"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:197
 msgid "**Backend Pool**"
-msgstr ""
+msgstr "**Pool backend**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:199
 msgid ""
 "The **Target Type** can either be **Virtual Machine** or **IP address or "
 "FQDN**"
-msgstr ""
+msgstr "Le **Type de cible** peut être **Virtual Machine** ou **IP address or FQDN**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:201
 msgid ""
 "If |morpheus| is hosted in Azure, **Virtual Machine** will likely be the "
 "choice.  The load balancer will need to able to communicate with the "
 "target"
-msgstr ""
+msgstr "Si |morpheus| est hébergé dans Azure, **Virtual Machine** sera probablement le choix.  L'équilibreur de charge devra pouvoir communiquer avec la cible"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:202
 msgid ""
 "If |morpheus| is hosted on-premise, or outside of Azure, the **IP address"
 " or FQDN** can be used but the load balancer will need to able to "
 "communicate with the target"
-msgstr ""
+msgstr "Si |morpheus| est hébergé sur site ou en dehors d'Azure, **IP address or FQDN** peut être utilisé, mais l'équilibreur de charge devra pouvoir communiquer avec la cible"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:204
 msgid "**Important Items**"
-msgstr ""
+msgstr "**Éléments importants**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:206
 msgid ""
 "Ensure the backend virtual machines allow port 443 from the load "
 "balancer, otherwise a **502 error** may be seen"
-msgstr ""
+msgstr "Assurez-vous que les machines virtuelles backend autorisent le port 443 depuis l'équilibreur de charge, sinon une **erreur 502** peut apparaître"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:207
 msgid ""
 "If using a wildcard certificate, you **must** use a custom health probe, "
 "as mentioned above, otherwise you may see the following error message:"
-msgstr ""
+msgstr "Si vous utilisez un certificat wildcard, vous **devez** utiliser une sonde de santé personnalisée, comme mentionné ci-dessus, sinon vous pouvez voir le message d'erreur suivant :"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:209
 msgid ""
@@ -722,21 +722,21 @@ msgid ""
 "the host header entered in the health probe configuration (v2 SKU) or the"
 " FQDN in the backend pool (v1 SKU). Verify if the hostname matches with "
 "the CN of the backend server certificate.``"
-msgstr ""
+msgstr "``The Common Name (CN) of the backend server certificate does not match the host header entered in the health probe configuration (v2 SKU) or the FQDN in the backend pool (v1 SKU). Verify if the hostname matches with the CN of the backend server certificate.``"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:211
 msgid ""
 "More info: https://techcommunity.microsoft.com/t5/fasttrack-for-azure"
 "/walkthrough-configuring-end-to-end-tls-with-application-"
 "gateway/ba-p/3269132"
-msgstr ""
+msgstr "Plus d'informations : https://techcommunity.microsoft.com/t5/fasttrack-for-azure/walkthrough-configuring-end-to-end-tls-with-application-gateway/ba-p/3269132"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:213
 msgid ""
 "As mentioned above, ensure the complete chain for the certificate is "
 "presented by |morpheus|, otherwise you may see the following error "
 "message:"
-msgstr ""
+msgstr "Comme mentionné ci-dessus, assurez-vous que la chaîne complète du certificat est présentée par |morpheus|, sinon vous pouvez voir le message d'erreur suivant :"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:215
 msgid ""
@@ -744,47 +744,47 @@ msgid ""
 " not match the trusted root certificate added to the application gateway."
 " Ensure that you add the correct root certificate to whitelist the "
 "backend``"
-msgstr ""
+msgstr "``The root certificate of the server certificate used by the backend does not match the trusted root certificate added to the application gateway. Ensure that you add the correct root certificate to whitelist the backend``"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:217
 msgid ""
 "More info: https://learn.microsoft.com/en-us/answers/questions/150524"
 "/the-root-certificate-of-the-server-certificate-use"
-msgstr ""
+msgstr "Plus d'informations : https://learn.microsoft.com/en-us/answers/questions/150524/the-root-certificate-of-the-server-certificate-use"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:219
 msgid "Configuring the certificate on the |morpheus| nodes"
-msgstr ""
+msgstr "Configuration du certificat sur les nœuds |morpheus|"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:221
 msgid ""
 "More info: "
 "https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html"
-msgstr ""
+msgstr "Plus d'informations : https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:223
 msgid "Additional reading:"
-msgstr ""
+msgstr "Lectures complémentaires :"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:225
 msgid ""
 "https://learn.microsoft.com/en-us/azure/application-gateway/certificates-"
 "for-backend-authentication"
-msgstr ""
+msgstr "https://learn.microsoft.com/en-us/azure/application-gateway/certificates-for-backend-authentication"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:227
 msgid ""
 "https://learn.microsoft.com/en-us/azure/application-gateway/end-to-end-"
 "ssl-portal"
-msgstr ""
+msgstr "https://learn.microsoft.com/en-us/azure/application-gateway/end-to-end-ssl-portal"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:229
 msgid "https://learn.microsoft.com/en-us/azure/application-gateway/ssl-overview"
-msgstr ""
+msgstr "https://learn.microsoft.com/en-us/azure/application-gateway/ssl-overview"
 
 #: ../../getting_started/additional/offline.rst:4
 msgid "Offline Installations and Upgrades"
-msgstr ""
+msgstr "Installations et mises à niveau hors ligne"
 
 #: ../../getting_started/additional/offline.rst:6
 msgid ""
@@ -792,7 +792,7 @@ msgid ""
 "not allow downloads from our Amazon download site, you can add the "
 "supplemental package to add the needed packages the standard Morpheus "
 "installer would have downloaded."
-msgstr ""
+msgstr "Pour les clients dont l'appliance se trouve derrière un pare-feu/proxy qui n'autorise pas les téléchargements depuis notre site de téléchargement Amazon, vous pouvez ajouter le package supplémentaire pour inclure les packages nécessaires que l'installateur Morpheus standard aurait téléchargés."
 
 #: ../../getting_started/additional/offline.rst:8
 msgid ""
@@ -803,17 +803,17 @@ msgid ""
 " OS Updates </getting_started/maintenance/manager_os_updates>`. Offline "
 "HKS cluster provisioning uses a separate image-server workflow; see "
 ":doc:`/infrastructure/clusters/hks_offline_provisioning`."
-msgstr ""
+msgstr "Cette page couvre l'installation hors ligne et les mises à niveau des packages d'application pour l'appliance |morpheus|. Elle ne fournit pas les mises à jour du système d'exploitation de base Ubuntu pour l'image QCOW2 HPE Morpheus Manager. Pour les modèles de dépôt APT en réseau restreint et entièrement déconnecté, consultez :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`. Le provisionnement de cluster HKS hors ligne utilise un workflow distinct de serveur d'images ; consultez :doc:`/infrastructure/clusters/hks_offline_provisioning`."
 
 #: ../../getting_started/additional/offline.rst:11
 msgid "Offline Installation Requirements"
-msgstr ""
+msgstr "Exigences pour l'installation hors ligne"
 
 #: ../../getting_started/additional/offline.rst:13
 msgid ""
 "NTP should be correctly configured and the server is able to connect to "
 "the NTP server in the ntp.conf file"
-msgstr ""
+msgstr "NTP doit être correctement configuré et le serveur doit pouvoir se connecter au serveur NTP défini dans le fichier ntp.conf"
 
 #: ../../getting_started/additional/offline.rst:14
 msgid ""
@@ -821,38 +821,38 @@ msgid ""
 "repository servers or the server should be able to receive packages from "
 "the configured repositories. For a Manager QCOW2 appliance, expose only "
 "the update content validated by HPE for the installed release."
-msgstr ""
+msgstr "Les dépôts de packages du système d'exploitation doivent être configurés pour utiliser des serveurs de dépôt LAN locaux ou le serveur doit pouvoir recevoir des packages depuis les dépôts configurés. Pour une appliance Manager QCOW2, exposez uniquement le contenu de mise à jour validé par HPE pour la version installée."
 
 #: ../../getting_started/additional/offline.rst:15
 msgid ""
 "The standard Morpheus and supplemental packages must be downloaded from "
 "another system and transferred to the Morpheus Appliance server"
-msgstr ""
+msgstr "Les packages Morpheus standard et supplémentaires doivent être téléchargés depuis un autre système et transférés vers le serveur Morpheus Appliance"
 
 #: ../../getting_started/additional/offline.rst:16
 msgid "The supplemental package is additive, the full installer is also required"
-msgstr ""
+msgstr "Le package supplémentaire est additif ; l'installateur complet est également requis"
 
 #: ../../getting_started/additional/offline.rst:18
 msgid ""
 "The supplemental package is linked 1-to-1 to the appliance release. For "
 "example the supplemental package for 4.2.1-1 should be used with the "
 "appliance package 4.2.1-1"
-msgstr ""
+msgstr "Le package supplémentaire est lié 1 pour 1 à la version de l'appliance. Par exemple, le package supplémentaire 4.2.1-1 doit être utilisé avec le package appliance 4.2.1-1"
 
 #: ../../getting_started/additional/offline.rst:21
 msgid "Offline Install"
-msgstr ""
+msgstr "Installation hors ligne"
 
 #: ../../getting_started/additional/offline.rst:24
 msgid "Ubuntu/Debian"
-msgstr ""
+msgstr "Ubuntu/Debian"
 
 #: ../../getting_started/additional/offline.rst:26
 msgid ""
 "Download both the regular Morpheus Appliance package and the Supplemental"
 " packages on to the appliance server:"
-msgstr ""
+msgstr "Téléchargez le package Morpheus Appliance standard et les packages supplémentaires sur le serveur appliance :"
 
 #: ../../getting_started/additional/offline.rst:28
 msgid ""
@@ -863,7 +863,7 @@ msgstr ""
 #: ../../getting_started/additional/offline.rst:33
 #: ../../getting_started/additional/offline.rst:69
 msgid "Install the both the Appliance package AND the Supplemental package."
-msgstr ""
+msgstr "Installez le package Appliance ET le package supplémentaire."
 
 #: ../../getting_started/additional/offline.rst:35
 msgid ""
@@ -876,7 +876,7 @@ msgstr ""
 msgid ""
 "Set the Morpheus UI appliance url (if needed, hostname will be "
 "automatically set)."
-msgstr ""
+msgstr "Définissez l'URL de l'appliance de l'interface Morpheus (si nécessaire, le nom d'hôte sera défini automatiquement)."
 
 #: ../../getting_started/additional/offline.rst:42
 msgid ""
@@ -889,7 +889,7 @@ msgstr ""
 #: ../../getting_started/additional/offline.rst:48
 #: ../../getting_started/additional/offline.rst:84
 msgid "Reconfigure the appliance to install required packages"
-msgstr ""
+msgstr "Reconfigurez l'appliance pour installer les packages requis"
 
 #: ../../getting_started/additional/offline.rst:50
 #: ../../getting_started/additional/offline.rst:86
@@ -903,24 +903,24 @@ msgid ""
 "Chef runs the resource remote_file[package_name] action create while Chef"
 " verifies the checksum. After the reconfigure is complete, the morpheus-"
 "ui will start and be up in a few minutes."
-msgstr ""
+msgstr "L'exécution Chef doit se terminer avec succès. Il y a une brève pause lorsque Chef exécute l'action create de la ressource remote_file[package_name] pendant que Chef vérifie la somme de contrôle. Une fois la reconfiguration terminée, morpheus-ui démarre et sera opérationnel en quelques minutes."
 
 #: ../../getting_started/additional/offline.rst:56
 msgid ""
 "Tail the morpheus log file located at /var/log/morpheus/morpheus-"
 "ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look "
 "for the Morpheus ascii logo to know when the morpheus-ui is up."
-msgstr ""
+msgstr "Suivez le fichier journal morpheus situé à /var/log/morpheus/morpheus-ui/current avec la commande ``morpheus-ctl tail morpheus-ui`` et recherchez le logo ASCII Morpheus pour savoir quand morpheus-ui est opérationnel."
 
 #: ../../getting_started/additional/offline.rst:60
 msgid "CentOS/RHEL"
-msgstr ""
+msgstr "CentOS/RHEL"
 
 #: ../../getting_started/additional/offline.rst:62
 msgid ""
 "Download both the regular Morpheus Appliance package and the matching "
 "Supplemental package on to the Appliance server:"
-msgstr ""
+msgstr "Téléchargez le package Morpheus Appliance standard et le package supplémentaire correspondant sur le serveur Appliance :"
 
 #: ../../getting_started/additional/offline.rst:64
 msgid ""
@@ -947,16 +947,16 @@ msgstr ""
 msgid ""
 "Tail the morpheus-ui log file with ``morpheus-ctl tail morpheus-ui`` and "
 "look for the Morpheus ascii logo to know when the morpheus-ui is up."
-msgstr ""
+msgstr "Suivez le fichier journal morpheus-ui avec ``morpheus-ctl tail morpheus-ui`` et recherchez le logo ASCII Morpheus pour savoir quand morpheus-ui est opérationnel."
 
 #: ../../getting_started/additional/proxies.rst:2
 msgid "Proxies"
-msgstr ""
+msgstr "Proxies"
 
 #: ../../getting_started/additional/ipv6.rst:5
 #: ../../getting_started/additional/proxies.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../getting_started/additional/proxies.rst:7
 msgid ""
@@ -970,7 +970,7 @@ msgid ""
 "proxy settings directly (restricted to cloud-init based Linux platforms "
 "for now, but can also be done on windows based platforms in a different "
 "manner)."
-msgstr ""
+msgstr "Dans de nombreuses situations, les entreprises déploient des machines virtuelles dans des environnements restreints par proxy pour des raisons telles que la conformité PCI ou la sécurité générale. |morpheus| prend en charge nativement la connectivité via proxy. La prise en charge de l'authentification proxy est également fournie avec les capacités d'authentification de base ainsi que NTLM pour les environnements proxy Windows. |morpheus| peut même configurer les machines virtuelles qu'il provisionne pour utiliser ces proxies en définissant directement les paramètres proxy du système d'exploitation (limité aux plateformes Linux basées sur cloud-init pour l'instant, mais cela peut aussi être fait sur les plateformes Windows d'une autre manière)."
 
 #: ../../getting_started/additional/proxies.rst:9
 msgid ""
@@ -981,7 +981,7 @@ msgid ""
 "relevant connection info needed to utilize the proxy. It may also be "
 "advised to ensure that the Linux environment's ``http_proxy``, "
 "``https_proxy``, and ``no_proxy`` are set appropriately."
-msgstr ""
+msgstr "Pour commencer avec les proxies, il peut d'abord être important de configurer l'appliance |morpheus| elle-même pour accéder à la communication proxy afin de télécharger les images du catalogue de services. Pour configurer cela, visitez la page |AdmSet| où se trouve une section intitulée « Proxy Settings ». Renseignez les informations de connexion pertinentes nécessaires pour utiliser le proxy. Il peut également être conseillé de s'assurer que ``http_proxy``, ``https_proxy`` et ``no_proxy`` de l'environnement Linux sont définis de manière appropriée."
 
 #: ../../getting_started/additional/proxies.rst:11
 msgid ""
@@ -990,11 +990,11 @@ msgid ""
 ":doc:`/getting_started/requirements/requirements`. Do not copy proposed "
 "tunnel hostnames into proxy rules unless HPE has supplied the current "
 "endpoint registry for the enabled service and release."
-msgstr ""
+msgstr "Pour la connectivité optionnelle Central Service ou Remote Data Access, utilisez l'exigence de point de terminaison canonique dans :doc:`/getting_started/requirements/requirements`. Ne copiez pas les noms d'hôte de tunnel proposés dans les règles proxy sauf si HPE a fourni le registre de points de terminaison actuel pour le service et la version activés."
 
 #: ../../getting_started/additional/proxies.rst:14
 msgid "Defining Proxies"
-msgstr ""
+msgstr "Définition des proxies"
 
 #: ../../getting_started/additional/proxies.rst:15
 msgid ""
@@ -1006,11 +1006,11 @@ msgid ""
 " for various proxies. This includes the host ip address, proxy port, and "
 "any credentials (if necessary) needed to utilize the proxy. Now that "
 "these proxies are defined we can use them in various contexts."
-msgstr ""
+msgstr "Les proxies peuvent être utilisés dans différents contextes et éventuellement limités à des réseaux spécifiques dans lesquels on peut provisionner ou au niveau d'une intégration cloud dans son ensemble. Pour configurer un proxy pour utilisation par les moteurs de provisionnement dans |morpheus|, accédez à ``Infrastructure > Networks > Proxies``. Ici, nous pouvons créer des enregistrements représentant les informations de connexion pour divers proxies. Cela inclut l'adresse IP de l'hôte, le port proxy et les identifiants (si nécessaire) pour utiliser le proxy. Une fois ces proxies définis, nous pouvons les utiliser dans divers contextes."
 
 #: ../../getting_started/additional/proxies.rst:18
 msgid "Cloud Communication"
-msgstr ""
+msgstr "Communication cloud"
 
 #: ../../getting_started/additional/proxies.rst:20
 msgid ""
@@ -1023,11 +1023,11 @@ msgid ""
 "least one Proxy or Distributed Worker is available to the Tenant. The API"
 " Proxy controls communication between |morpheus| and the Cloud API; it "
 "does not configure proxy settings inside provisioned workloads."
-msgstr ""
+msgstr "Lorsque |morpheus| doit se connecter aux API cloud pour émettre des commandes de provisionnement ou synchroniser des environnements existants, ces points de terminaison API doivent être accessibles par l'appliance. Dans certains cas, l'appliance peut se trouver derrière un proxy pour l'accès aux clouds publics tels qu'Azure ou AWS. Après avoir défini un proxy, ajoutez ou modifiez un cloud compatible et sélectionnez-le sous ``Connection Options > API Proxy``. La section Connection Options apparaît lorsqu'au moins un proxy ou nœud de calcul distribué est disponible pour le locataire. L'API Proxy contrôle la communication entre |morpheus| et l'API cloud ; elle ne configure pas les paramètres proxy à l'intérieur des charges de travail provisionnées."
 
 #: ../../getting_started/additional/proxies.rst:23
 msgid "Provisioning with Proxies"
-msgstr ""
+msgstr "Provisionnement avec proxies"
 
 #: ../../getting_started/additional/proxies.rst:25
 msgid ""
@@ -1039,7 +1039,7 @@ msgid ""
 " cloud there is a setting for \"Provisioning Proxy\" in \"Provisioning "
 "Options\". If this proxy is set, |morpheus| will automatically apply "
 "these proxy settings to the guest operating system."
-msgstr ""
+msgstr "Les configurations proxy peuvent varier d'un système d'exploitation à l'autre et, dans certains cas, il est nécessaire de les configurer dans les plans comme prérequis. Dans d'autres cas, elles peuvent aussi être configurées automatiquement, principalement avec cloud-init (utilisé par défaut par notre catalogue de services sur tous les clouds). Lors de la modification/création d'un cloud, un paramètre « Provisioning Proxy » se trouve dans « Provisioning Options ». Si ce proxy est défini, |morpheus| appliquera automatiquement ces paramètres proxy au système d'exploitation invité."
 
 #: ../../getting_started/additional/proxies.rst:27
 msgid ""
@@ -1048,11 +1048,11 @@ msgid ""
 "or on the Networks tab of the relevant Cloud detail page. Here, a proxy "
 "can also be assigned as well as additional options like the ``No Proxy`` "
 "rules for proxy exceptions."
-msgstr ""
+msgstr "Les paramètres proxy peuvent également être remplacés sur l'enregistrement réseau. Les réseaux (ou sous-réseaux) peuvent être configurés dans ``Infrastructure > Networks`` ou dans l'onglet Networks de la page de détail du cloud concerné. Ici, un proxy peut également être assigné ainsi que des options supplémentaires comme les règles ``No Proxy`` pour les exceptions proxy."
 
 #: ../../getting_started/additional/proxies.rst:30
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #: ../../getting_started/additional/proxies.rst:32
 msgid ""
@@ -1061,29 +1061,29 @@ msgid ""
 "There are workflows that can be configured via the Automation engine to "
 "make this automatic when creating docker based hosts. Please see "
 "documentation on Docker and proxies for specific information."
-msgstr ""
+msgstr "Lors du provisionnement d'hôtes basés sur Docker dans un environnement proxy, il incombe à l'utilisateur de configurer manuellement la configuration proxy de l'hôte Docker. Des workflows peuvent être configurés via le moteur d'automatisation pour automatiser cela lors de la création d'hôtes Docker. Consultez la documentation sur Docker et les proxies pour des informations spécifiques."
 
 #: ../../getting_started/additional/proxies.rst:34
 msgid ""
 "Proxy setups can vary widely from company to company, and it may be "
 "advised to contact support for help configuring morpheus to work in the "
 "proxy environment."
-msgstr ""
+msgstr "Les configurations proxy peuvent varier considérablement d'une entreprise à l'autre ; il peut être conseillé de contacter le support pour obtenir de l'aide afin de configurer morpheus pour fonctionner dans l'environnement proxy."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:2
 msgid "SSL Certificates"
-msgstr ""
+msgstr "Certificats SSL"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:4
 msgid ""
 "By default |morpheus| generates a Self-Signed SSL Certificate. The Self-"
 "Signed SSL Certificate can be replaced with a Trusted CA Signed SSL "
 "Certificate."
-msgstr ""
+msgstr "Par défaut, |morpheus| génère un certificat SSL auto-signé. Le certificat SSL auto-signé peut être remplacé par un certificat SSL signé par une autorité de certification de confiance."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:7
 msgid "Trusted CA Signed SSL Certificate Implementation"
-msgstr ""
+msgstr "Mise en œuvre d'un certificat SSL signé par une autorité de certification de confiance"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:9
 msgid ""
@@ -1091,20 +1091,20 @@ msgid ""
 "generate an SSL certificate request (.csr) and private key (.key). If you"
 " need help formatting the command, `DigiCert provides a helpful tool "
 "<https://www.digicert.com/easy-csr/openssl.htm>`_"
-msgstr ""
+msgstr "Si vous n'avez pas encore votre certificat, exécutez une commande OpenSSL pour générer une demande de certificat SSL (.csr) et une clé privée (.key). Si vous avez besoin d'aide pour formater la commande, `DigiCert fournit un outil utile <https://www.digicert.com/easy-csr/openssl.htm>`_"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:11
 msgid ""
 "Submit your certificate request (.csr) and await approval of the request "
 "and return of the certificate (.crt)"
-msgstr ""
+msgstr "Soumettez votre demande de certificat (.csr) et attendez l'approbation de la demande et le retour du certificat (.crt)"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:13
 msgid ""
 "Copy the private key and certificate to "
 "``/etc/morpheus/ssl/your_fqdn_name.key`` and "
 "``/etc/morpheus/ssl/your_fqdn_name.crt`` respectively"
-msgstr ""
+msgstr "Copiez la clé privée et le certificat vers ``/etc/morpheus/ssl/your_fqdn_name.key`` et ``/etc/morpheus/ssl/your_fqdn_name.crt`` respectivement"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:17
 msgid ""
@@ -1128,7 +1128,7 @@ msgstr ""
 msgid ""
 "Edit the configuration file ``/etc/morpheus/morpheus.rb`` and add the "
 "following entries:"
-msgstr ""
+msgstr "Modifiez le fichier de configuration ``/etc/morpheus/morpheus.rb`` et ajoutez les entrées suivantes :"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:37
 msgid ""
@@ -1142,11 +1142,11 @@ msgid ""
 " server certificate is signed by an intermediate then you should include "
 "the signing chain inside the certificate file. The key file needs to be "
 "decrypted for Morpheus to install it properly."
-msgstr ""
+msgstr "Les deux fichiers doivent appartenir à root et être lisibles uniquement par root ; de plus, si le certificat serveur est signé par une autorité intermédiaire, vous devez inclure la chaîne de signature dans le fichier certificat. Le fichier clé doit être déchiffré pour que Morpheus l'installe correctement."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:44
 msgid "Next simply reconfigure the appliance and restart nginx:"
-msgstr ""
+msgstr "Ensuite, reconfigurez simplement l'appliance et redémarrez nginx :"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:46
 msgid ""
@@ -1156,44 +1156,44 @@ msgstr ""
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:52
 msgid "Self-Signed SSL Certificate Regeneration"
-msgstr ""
+msgstr "Régénération du certificat SSL auto-signé"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:54
 msgid ""
 "When Morpheus is deployed it generates a 10 year Self-Signed SSL "
 "Certificate.  Below details the process to regenerate the Certificate and"
 " Key files."
-msgstr ""
+msgstr "Lors du déploiement de Morpheus, un certificat SSL auto-signé de 10 ans est généré.  Vous trouverez ci-dessous la procédure pour régénérer les fichiers certificat et clé."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:57
 msgid "Regenerate both the Certificate and Key"
-msgstr ""
+msgstr "Régénérer le certificat et la clé"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:59
 msgid "Delete the certificate and key files in ``/etc/morpheus/ssl/``."
-msgstr ""
+msgstr "Supprimez les fichiers certificat et clé dans ``/etc/morpheus/ssl/``."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:60
 #: ../../getting_started/additional/morpheusSslCerts.rst:67
 msgid "Run Reconfigure ``morpheus-ctl reconfigure``."
-msgstr ""
+msgstr "Exécutez Reconfigure ``morpheus-ctl reconfigure``."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:61
 #: ../../getting_started/additional/morpheusSslCerts.rst:68
 msgid "Restart NGINX ``morpheus-ctl restart nginx``."
-msgstr ""
+msgstr "Redémarrez NGINX ``morpheus-ctl restart nginx``."
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:64
 msgid "Regenerate only the Certificate"
-msgstr ""
+msgstr "Régénérer uniquement le certificat"
 
 #: ../../getting_started/additional/morpheusSslCerts.rst:66
 msgid "Delete the certificate file in ``/etc/morpheus/ssl/``."
-msgstr ""
+msgstr "Supprimez le fichier certificat dans ``/etc/morpheus/ssl/``."
 
 #: ../../getting_started/additional/ssl-import.rst:2
 msgid "Import Trusted Certificates"
-msgstr ""
+msgstr "Importer des certificats de confiance"
 
 #: ../../getting_started/additional/ssl-import.rst:4
 msgid ""
@@ -1203,29 +1203,29 @@ msgid ""
 "into both the appliance OpenSSL trust path and the embedded JRE "
 "truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, "
 "so the UI must be restarted to load the updated JRE truststore."
-msgstr ""
+msgstr "Utilisez cette procédure pour ajouter une autorité de certification que l'application |morpheus| doit approuver, par exemple l'autorité de certification d'un point de terminaison ServiceNow. Reconfigure importe les certificats du répertoire trusted-certificate dans le chemin de confiance OpenSSL de l'appliance et dans le truststore JRE intégré. Reconfigure ne redémarre pas une JVM ``morpheus-ui`` en cours d'exécution ; l'interface doit donc être redémarrée pour charger le truststore JRE mis à jour."
 
 #: ../../getting_started/additional/ssl-import.rst:6
 msgid "Obtain the full SSL certificate chain in PEM format."
-msgstr ""
+msgstr "Obtenez la chaîne complète de certificats SSL au format PEM."
 
 #: ../../getting_started/additional/ssl-import.rst:8
 msgid ""
 "Copy them to each appliance and place them in the "
 "``/etc/morpheus/ssl/trusted_certs`` directory."
-msgstr ""
+msgstr "Copiez-les sur chaque appliance et placez-les dans le répertoire ``/etc/morpheus/ssl/trusted_certs``."
 
 #: ../../getting_started/additional/ssl-import.rst:10
 msgid ""
 "Run ``morpheus-ctl reconfigure`` on the appliance. Reconfigure can run "
 "while the UI is active."
-msgstr ""
+msgstr "Exécutez ``morpheus-ctl reconfigure`` sur l'appliance. Reconfigure peut s'exécuter pendant que l'interface est active."
 
 #: ../../getting_started/additional/ssl-import.rst:12
 msgid ""
 "Verify that each certificate is present in the embedded JRE truststore. "
 "Reconfigure uses the certificate filename as its alias:"
-msgstr ""
+msgstr "Vérifiez que chaque certificat est présent dans le truststore JRE intégré. Reconfigure utilise le nom de fichier du certificat comme alias :"
 
 #: ../../getting_started/additional/ssl-import.rst:14
 msgid ""
@@ -1237,7 +1237,7 @@ msgstr ""
 msgid ""
 "Verify the remote endpoint and chain with the appliance OpenSSL client, "
 "replacing the host and port:"
-msgstr ""
+msgstr "Vérifiez le point de terminaison distant et la chaîne avec le client OpenSSL de l'appliance, en remplaçant l'hôte et le port :"
 
 #: ../../getting_started/additional/ssl-import.rst:20
 msgid "openssl s_client -connect host:port -showcerts -tls1_2"
@@ -1245,7 +1245,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:24
 msgid "You should get an output similar to:"
-msgstr ""
+msgstr "Vous devriez obtenir une sortie similaire à :"
 
 #: ../../getting_started/additional/ssl-import.rst:26
 msgid ""
@@ -1277,11 +1277,11 @@ msgid ""
 "return code: 0 (ok)``.  If they were not installed correctly then you "
 "will see a return similar to: ``Verify return code: 21 (unable to verify "
 "the first certificate)``"
-msgstr ""
+msgstr "Si les certificats sont installés correctement, vous devriez voir ``Verify return code: 0 (ok)``.  S'ils n'ont pas été installés correctement, vous verrez un retour similaire à : ``Verify return code: 21 (unable to verify the first certificate)``"
 
 #: ../../getting_started/additional/ssl-import.rst:48
 msgid "Restart the UI so its JVM loads the updated truststore:"
-msgstr ""
+msgstr "Redémarrez l'interface pour que sa JVM charge le truststore mis à jour :"
 
 #: ../../getting_started/additional/ssl-import.rst:50
 msgid "morpheus-ctl restart morpheus-ui"
@@ -1292,7 +1292,7 @@ msgid ""
 "Repeat the copy, reconfigure, truststore verification, and UI restart on "
 "every application node. In an HA deployment, process one application node"
 " at a time and confirm it is healthy before proceeding to the next node."
-msgstr ""
+msgstr "Répétez la copie, la reconfiguration, la vérification du truststore et le redémarrage de l'interface sur chaque nœud d'application. Dans un déploiement HA, traitez un nœud d'application à la fois et confirmez qu'il est sain avant de passer au nœud suivant."
 
 #: ../../getting_started/additional/ssl-import.rst:56
 msgid ""
@@ -1300,11 +1300,11 @@ msgid ""
 "successful connection confirms that the application JVM trusts the "
 "endpoint; ``openssl`` success alone does not verify the trust state of "
 "the already-running JVM."
-msgstr ""
+msgstr "Réessayez l'intégration sans désactiver la vérification du certificat. Une connexion réussie confirme que la JVM de l'application approuve le point de terminaison ; le succès de ``openssl`` seul ne vérifie pas l'état de confiance de la JVM déjà en cours d'exécution."
 
 #: ../../getting_started/additional/encryption.rst:2
 msgid "Data Encryption"
-msgstr ""
+msgstr "Chiffrement des données"
 
 #: ../../getting_started/additional/encryption.rst:4
 msgid ""
@@ -1312,7 +1312,7 @@ msgid ""
 "encryption mode with GCM. Passwords and other strings in |morpheus| "
 "Appliance configuration files such as ``morpheus-secrets.json`` and "
 "``morpheus.rb`` are in plain text as they are only accessible by root."
-msgstr ""
+msgstr "Par défaut, Morpheus chiffre les données sensibles dans la base de données en utilisant le mode de chiffrement AES avec GCM. Les mots de passe et autres chaînes dans les fichiers de configuration de l'appliance |morpheus| tels que ``morpheus-secrets.json`` et ``morpheus.rb`` sont en texte clair car ils ne sont accessibles que par root."
 
 #: ../../getting_started/additional/encryption.rst:6
 msgid ""
@@ -1320,7 +1320,7 @@ msgid ""
 "can be set to an encrypted string using the |morpheus| crypto utility to "
 "generate ENC strings and then using ``ENC(string)`` as the value in the "
 "configuration file."
-msgstr ""
+msgstr "Les mots de passe et autres chaînes dans les fichiers de configuration de l'appliance |morpheus| peuvent être définis comme chaîne chiffrée à l'aide de l'utilitaire crypto |morpheus| pour générer des chaînes ENC, puis en utilisant ``ENC(string)`` comme valeur dans le fichier de configuration."
 
 #: ../../getting_started/additional/encryption.rst:8
 msgid ""
@@ -1329,7 +1329,7 @@ msgid ""
 " External database connection values and customized database names are "
 "configured under ``mysql`` in ``/etc/morpheus/morpheus.rb``; do not "
 "substitute an embedded secret for an external-service credential."
-msgstr ""
+msgstr "Pour les opérations de base de données, ``.mysql.morpheus_password`` dans ``morpheus-secrets.json`` est le mot de passe utilisateur d'application MySQL intégré généré. Les valeurs de connexion à une base de données externe et les noms de base de données personnalisés sont configurés sous ``mysql`` dans ``/etc/morpheus/morpheus.rb`` ; ne remplacez pas un secret intégré par un identifiant de service externe."
 
 #: ../../getting_started/additional/encryption.rst:10
 msgid ""
@@ -1337,23 +1337,23 @@ msgid ""
 " configuration file. This suffix will be combined with a system string to"
 " generate a SHA-256 hash, which is used to generate the AES encryption "
 "key."
-msgstr ""
+msgstr "De plus, un suffixe de clé de chiffrement personnalisé peut être défini dans le fichier de configuration morpheus.rb. Ce suffixe sera combiné avec une chaîne système pour générer un hachage SHA-256, utilisé pour générer la clé de chiffrement AES."
 
 #: ../../getting_started/additional/encryption.rst:13
 msgid "Generate ENC Strings for morpheus-secrets.json"
-msgstr ""
+msgstr "Générer des chaînes ENC pour morpheus-secrets.json"
 
 #: ../../getting_started/additional/encryption.rst:15
 msgid ""
 "System generated passwords are set in ``/etc/morpheus/morpheus-"
 "secrets.json``. These entries can be updated to ENC strings with the "
 "following steps:"
-msgstr ""
+msgstr "Les mots de passe générés par le système sont définis dans ``/etc/morpheus/morpheus-secrets.json``. Ces entrées peuvent être mises à jour en chaînes ENC avec les étapes suivantes :"
 
 #: ../../getting_started/additional/encryption.rst:17
 #: ../../getting_started/additional/logback.rst:20
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../getting_started/additional/encryption.rst:17
 msgid ""
@@ -1363,88 +1363,88 @@ msgid ""
 "``queue_user`` password. See "
 ":doc:`/getting_started/external_services/rabbitmq` for the supported "
 "limitation."
-msgstr ""
+msgstr "Convertir une valeur existante en sa représentation chiffrée est différent de la modification de l'identifiant de service sous-jacent. En particulier, n'utilisez pas cette procédure pour faire pivoter le mot de passe ``queue_user`` RabbitMQ géré par l'appliance. Consultez :doc:`/getting_started/external_services/rabbitmq` pour la limitation prise en charge."
 
 #: ../../getting_started/additional/encryption.rst:19
 msgid ""
 "On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string "
 "migrate`` which will output ENC() strings for the passwords in morpheus-"
 "secrets.json"
-msgstr ""
+msgstr "Sur l'appliance |morpheus|, exécutez ``morpheus-ctl get-crypto-string migrate`` qui produira des chaînes ENC() pour les mots de passe dans morpheus-secrets.json"
 
 #: ../../getting_started/additional/encryption.rst:20
 msgid ""
 "Update the desired password strings in the ``morpheus-secrets.json`` "
 "config file with the matching ENC() string."
-msgstr ""
+msgstr "Mettez à jour les chaînes de mot de passe souhaitées dans le fichier de configuration ``morpheus-secrets.json`` avec la chaîne ENC() correspondante."
 
 #: ../../getting_started/additional/encryption.rst:21
 msgid "Save ``morpheus-secrets.json``"
-msgstr ""
+msgstr "Enregistrez ``morpheus-secrets.json``"
 
 #: ../../getting_started/additional/encryption.rst:22
 #: ../../getting_started/additional/encryption.rst:43
 #: ../../getting_started/additional/encryption.rst:58
 msgid "Run ``morpheus-ctl reconfigure``"
-msgstr ""
+msgstr "Exécutez ``morpheus-ctl reconfigure``"
 
 #: ../../getting_started/additional/encryption.rst:25
 msgid "Generate ENC Strings for custom morpheus.rb entries"
-msgstr ""
+msgstr "Générer des chaînes ENC pour les entrées morpheus.rb personnalisées"
 
 #: ../../getting_started/additional/encryption.rst:27
 msgid ""
 "ENC() strings can be generated for sensitive data set in morpheus.rb, "
 "such as the password to an external service."
-msgstr ""
+msgstr "Des chaînes ENC() peuvent être générées pour les données sensibles définies dans morpheus.rb, comme le mot de passe d'un service externe."
 
 #: ../../getting_started/additional/encryption.rst:29
 msgid "To generate ENC(0) strings for morpheus.rb entries:"
-msgstr ""
+msgstr "Pour générer des chaînes ENC(0) pour les entrées morpheus.rb :"
 
 #: ../../getting_started/additional/encryption.rst:31
 msgid ""
 "On the |morpheus| appliance, run ``morpheus-ctl get-crypto-string string "
 "$clear_text '$suffix'`` which will output strings for the passwords in "
 "morpheus-secrets.json"
-msgstr ""
+msgstr "Sur l'appliance |morpheus|, exécutez ``morpheus-ctl get-crypto-string string $clear_text '$suffix'`` qui produira des chaînes pour les mots de passe dans morpheus-secrets.json"
 
 #: ../../getting_started/additional/encryption.rst:33
 msgid "Replace ``$clear_text`` with the string to be encrypted"
-msgstr ""
+msgstr "Remplacez ``$clear_text`` par la chaîne à chiffrer"
 
 #: ../../getting_started/additional/encryption.rst:34
 msgid ""
 "If a suffix is defined in morpheus.rb (as described in the next section),"
 " replace ``$suffix`` with your suffix."
-msgstr ""
+msgstr "Si un suffixe est défini dans morpheus.rb (comme décrit dans la section suivante), remplacez ``$suffix`` par votre suffixe."
 
 #: ../../getting_started/additional/encryption.rst:36
 msgid ""
 "It is advisable to disable bash history logging by running ``unset "
 "HISTFILE`` before running the morphesu-ctl get-crypto-string command and "
 "then ``set HISTFILE=$HOME/.bash_history`` to reenable."
-msgstr ""
+msgstr "Il est conseillé de désactiver la journalisation de l'historique bash en exécutant ``unset HISTFILE`` avant d'exécuter la commande morphesu-ctl get-crypto-string, puis ``set HISTFILE=$HOME/.bash_history`` pour la réactiver."
 
 #: ../../getting_started/additional/encryption.rst:38
 msgid ""
 "Update the desired password strings in the ``morpheus.rb`` config file "
 "with the matching string output, using ``ENC($output)`` format"
-msgstr ""
+msgstr "Mettez à jour les chaînes de mot de passe souhaitées dans le fichier de configuration ``morpheus.rb`` avec la sortie de chaîne correspondante, en utilisant le format ``ENC($output)``"
 
 #: ../../getting_started/additional/encryption.rst:40
 msgid ""
 "Example: ``mysql['morpheus_password'] = "
 "'ENC($ZI5DnaO0quhxKe$kDFD+U2ZeJUuYiNC$F1+czPNyo+3lAdq7V0gcrWwHnkINYqr13cUGrDVyog==)'``"
-msgstr ""
+msgstr "Exemple : ``mysql['morpheus_password'] = 'ENC($ZI5DnaO0quhxKe$kDFD+U2ZeJUuYiNC$F1+czPNyo+3lAdq7V0gcrWwHnkINYqr13cUGrDVyog==)'``"
 
 #: ../../getting_started/additional/encryption.rst:42
 msgid "Save ``morpheus.rb``"
-msgstr ""
+msgstr "Enregistrez ``morpheus.rb``"
 
 #: ../../getting_started/additional/encryption.rst:46
 msgid "Encrypted Key Suffix"
-msgstr ""
+msgstr "Suffixe de clé chiffré"
 
 #: ../../getting_started/additional/encryption.rst:48
 msgid ""
@@ -1452,12 +1452,12 @@ msgid ""
 "configuration file. This suffix will be combined with a system string to "
 "generate a SHA-256 Hash, which is used in the generation of the system "
 "AES encryption key."
-msgstr ""
+msgstr "Un suffixe de clé de chiffrement personnalisé peut être défini dans le fichier de configuration morpheus.rb. Ce suffixe sera combiné avec une chaîne système pour générer un hachage SHA-256, utilisé dans la génération de la clé de chiffrement AES système."
 
 #: ../../getting_started/additional/encryption.rst:50
 #: ../../getting_started/additional/encryption.rst:56
 msgid "Danger"
-msgstr ""
+msgstr "Danger"
 
 #: ../../getting_started/additional/encryption.rst:50
 msgid ""
@@ -1467,11 +1467,11 @@ msgid ""
 "Encryption Key Suffix is set, data cannot be recovered without it. Store "
 "any Encryption Key Suffix externally where it can be referenced for "
 "future scenarios."
-msgstr ""
+msgstr "La définition d'un suffixe de clé de chiffrement personnalisé affecte toutes les données chiffrées par |morpheus|, y compris les données de base de données et cypher. Le suffixe de clé de chiffrement est requis si les données doivent être migrées ou récupérées. Une fois le suffixe de clé de chiffrement défini, les données ne peuvent pas être récupérées sans lui. Stockez tout suffixe de clé de chiffrement en externe où il pourra être consulté pour des scénarios futurs."
 
 #: ../../getting_started/additional/encryption.rst:52
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../getting_started/additional/encryption.rst:52
 msgid ""
@@ -1479,30 +1479,30 @@ msgid ""
 "Changing or removing an existing Encryption Key Suffix will prevent data "
 "access. If an existing suffix is altered in the morpheus.rb file, it must"
 " be restore to its original value."
-msgstr ""
+msgstr "Le suffixe de clé de chiffrement ne peut pas être modifié ou supprimé après avoir été défini. Modifier ou supprimer un suffixe de clé de chiffrement existant empêchera l'accès aux données. Si un suffixe existant est modifié dans le fichier morpheus.rb, il doit être restauré à sa valeur d'origine."
 
 #: ../../getting_started/additional/encryption.rst:54
 msgid ""
 "Add ``app['encryption_key_suffix'] = '$suffix'`` to "
 "``/etc/morpheus/morpheus.rb``, replacing ``$suffix`` with your suffix."
-msgstr ""
+msgstr "Ajoutez ``app['encryption_key_suffix'] = '$suffix'`` à ``/etc/morpheus/morpheus.rb``, en remplaçant ``$suffix`` par votre suffixe."
 
 #: ../../getting_started/additional/encryption.rst:56
 msgid ""
 "Once an Encryption Key Suffix is set and applied via reconfigure, it "
 "cannot be altered or removed and data cannot be migrated or recovered "
 "without it."
-msgstr ""
+msgstr "Une fois qu'un suffixe de clé de chiffrement est défini et appliqué via reconfigure, il ne peut pas être modifié ou supprimé et les données ne peuvent pas être migrées ou récupérées sans lui."
 
 #: ../../getting_started/additional/encryption.rst:60
 msgid ""
 "Reconfigure will generate a new encryption key using the suffix and set "
 "(ENC) values for the service password in application.yml"
-msgstr ""
+msgstr "Reconfigure générera une nouvelle clé de chiffrement à l'aide du suffixe et définira des valeurs (ENC) pour le mot de passe de service dans application.yml"
 
 #: ../../getting_started/additional/logback.rst:2
 msgid "logback config"
-msgstr ""
+msgstr "Configuration logback"
 
 #: ../../getting_started/additional/logback.rst:4
 msgid ""
@@ -1510,75 +1510,75 @@ msgid ""
 "earlier versions use ``logback.groovy`` with a different syntax that is "
 "not compatible with this doc. Please refer to 5.4.3 and earlier "
 "documentation for ``logback.groovy`` configuration details."
-msgstr ""
+msgstr "Ce document concerne les versions 5.4.4+ qui utilisent ``logback.xml``. Les versions 5.4.3 et antérieures utilisent ``logback.groovy`` avec une syntaxe différente incompatible avec ce document. Consultez la documentation des versions 5.4.3 et antérieures pour les détails de configuration de ``logback.groovy``."
 
 #: ../../getting_started/additional/logback.rst:6
 msgid ""
 "The log output for the morpheus-ui service is configured in the "
 "logback.xml file. Log output levels can be updated when more or less log "
 "output is desired."
-msgstr ""
+msgstr "La sortie des journaux pour le service morpheus-ui est configurée dans le fichier logback.xml. Les niveaux de sortie des journaux peuvent être mis à jour lorsque plus ou moins de sortie de journal est souhaitée."
 
 #: ../../getting_started/additional/logback.rst:9
 msgid "Setting Log Levels"
-msgstr ""
+msgstr "Définition des niveaux de journal"
 
 #: ../../getting_started/additional/logback.rst:10
 msgid ""
 "To change a log level, edit the logback configuration file in "
 "/opt/morpheus/conf/logback.xml and save. The changes will be reflected "
 "within the configured ``scanPeriod``, 30 seconds by default."
-msgstr ""
+msgstr "Pour modifier un niveau de journal, modifiez le fichier de configuration logback dans /opt/morpheus/conf/logback.xml et enregistrez. Les modifications seront reflétées dans le ``scanPeriod`` configuré, 30 secondes par défaut."
 
 #: ../../getting_started/additional/logback.rst:12
 msgid "Levels:"
-msgstr ""
+msgstr "Niveaux :"
 
 #: ../../getting_started/additional/logback.rst:13
 msgid "**OFF** (no log output)"
-msgstr ""
+msgstr "**OFF** (aucune sortie de journal)"
 
 #: ../../getting_started/additional/logback.rst:14
 msgid "**ERROR** (includes error logs)"
-msgstr ""
+msgstr "**ERROR** (inclut les journaux d'erreur)"
 
 #: ../../getting_started/additional/logback.rst:15
 msgid "**WARN** (includes warn and error logs)"
-msgstr ""
+msgstr "**WARN** (inclut les journaux warn et error)"
 
 #: ../../getting_started/additional/logback.rst:16
 msgid "**INFO** (includes info, warn and error logs)"
-msgstr ""
+msgstr "**INFO** (inclut les journaux info, warn et error)"
 
 #: ../../getting_started/additional/logback.rst:17
 msgid "**DEBUG** (includes info, warn, error and debug logs)"
-msgstr ""
+msgstr "**DEBUG** (inclut les journaux info, warn, error et debug)"
 
 #: ../../getting_started/additional/logback.rst:18
 msgid "**TRACE** (includes info, warn, error, debug and trace logs)"
-msgstr ""
+msgstr "**TRACE** (inclut les journaux info, warn, error, debug et trace)"
 
 #: ../../getting_started/additional/logback.rst:20
 msgid ""
 "Use DEBUG and/or TRACE levels with caution. DEBUG & TRACE levels can "
 "produce many logs that can consume disk space quickly. Only use DEBUG "
 "and/or TRACE levels when needed and target them for specific services."
-msgstr ""
+msgstr "Utilisez les niveaux DEBUG et/ou TRACE avec prudence. Les niveaux DEBUG et TRACE peuvent produire de nombreux journaux qui consomment rapidement de l'espace disque. N'utilisez les niveaux DEBUG et/ou TRACE que lorsque c'est nécessaire et ciblez-les pour des services spécifiques."
 
 #: ../../getting_started/additional/logback.rst:23
 msgid "Example Logback Settings"
-msgstr ""
+msgstr "Exemples de paramètres Logback"
 
 #: ../../getting_started/additional/logback.rst:24
 msgid ""
 "Below are sample log configuration settings. This is not a complete list."
 " Additional log names/paths can typically be determined from the standard"
 " INFO, WARN and ERROR logs."
-msgstr ""
+msgstr "Vous trouverez ci-dessous des exemples de paramètres de configuration de journal. Il ne s'agit pas d'une liste exhaustive. D'autres noms/chemins de journaux peuvent généralement être déterminés à partir des journaux INFO, WARN et ERROR standard."
 
 #: ../../getting_started/additional/logback.rst
 msgid "ACI"
-msgstr ""
+msgstr "ACI"
 
 #: ../../getting_started/additional/logback.rst:27
 msgid ""
@@ -1592,7 +1592,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Amazon"
-msgstr ""
+msgstr "Amazon"
 
 #: ../../getting_started/additional/logback.rst:35
 msgid ""
@@ -1608,7 +1608,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Azure"
-msgstr ""
+msgstr "Azure"
 
 #: ../../getting_started/additional/logback.rst:43
 msgid ""
@@ -1625,7 +1625,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Chef"
-msgstr ""
+msgstr "Chef"
 
 #: ../../getting_started/additional/logback.rst:52
 msgid ""
@@ -1637,7 +1637,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ../../getting_started/additional/logback.rst:59
 msgid "<logger name=\"com.morpheus.dns.MicrosoftDnsService\" level=\"DEBUG\"/>"
@@ -1645,7 +1645,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "General"
-msgstr ""
+msgstr "Général"
 
 #: ../../getting_started/additional/logback.rst:64
 msgid ""
@@ -1664,7 +1664,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Google"
-msgstr ""
+msgstr "Google"
 
 #: ../../getting_started/additional/logback.rst:77
 msgid ""
@@ -1678,7 +1678,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Hyper-V"
-msgstr ""
+msgstr "Hyper-V"
 
 #: ../../getting_started/additional/logback.rst:85
 msgid ""
@@ -1690,7 +1690,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "IBM Cloud"
-msgstr ""
+msgstr "IBM Cloud"
 
 #: ../../getting_started/additional/logback.rst:91
 msgid ""
@@ -1702,7 +1702,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Kubernetes"
-msgstr ""
+msgstr "Kubernetes"
 
 #: ../../getting_started/additional/logback.rst:97
 msgid ""
@@ -1722,7 +1722,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Monitoring"
-msgstr ""
+msgstr "Surveillance"
 
 #: ../../getting_started/additional/logback.rst:107
 msgid ""
@@ -1732,7 +1732,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Network"
-msgstr ""
+msgstr "Réseau"
 
 #: ../../getting_started/additional/logback.rst:112
 msgid ""
@@ -1747,7 +1747,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Nutanix"
-msgstr ""
+msgstr "Nutanix"
 
 #: ../../getting_started/additional/logback.rst:120
 msgid ""
@@ -1761,7 +1761,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Openstack"
-msgstr ""
+msgstr "Openstack"
 
 #: ../../getting_started/additional/logback.rst:127
 msgid ""
@@ -1777,7 +1777,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Option Types"
-msgstr ""
+msgstr "Types d'options"
 
 #: ../../getting_started/additional/logback.rst:135
 msgid ""
@@ -1788,7 +1788,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Remote Console"
-msgstr ""
+msgstr "Console distante"
 
 #: ../../getting_started/additional/logback.rst:142
 msgid ""
@@ -1798,7 +1798,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "SCVMM"
-msgstr ""
+msgstr "SCVMM"
 
 #: ../../getting_started/additional/logback.rst:147
 msgid ""
@@ -1812,7 +1812,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "ServiceNow"
-msgstr ""
+msgstr "ServiceNow"
 
 #: ../../getting_started/additional/logback.rst:154
 msgid ""
@@ -1824,7 +1824,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Tasks"
-msgstr ""
+msgstr "Tâches"
 
 #: ../../getting_started/additional/logback.rst:160
 msgid ""
@@ -1836,7 +1836,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../getting_started/additional/logback.rst:167
 msgid ""
@@ -1854,7 +1854,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 #: ../../getting_started/additional/logback.rst:176
 msgid "<logger name=\"com.morpheus.AccountPriceService\" level=\"DEBUG\"/>"
@@ -1862,7 +1862,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "vCloud"
-msgstr ""
+msgstr "vCloud"
 
 #: ../../getting_started/additional/logback.rst:181
 msgid ""
@@ -1875,7 +1875,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Veeam"
-msgstr ""
+msgstr "Veeam"
 
 #: ../../getting_started/additional/logback.rst:188
 msgid "<logger name=\"com.morpheus.backup.VeeamBackupService\" level=\"DEBUG\"/>"
@@ -1883,7 +1883,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "Vmware"
-msgstr ""
+msgstr "Vmware"
 
 #: ../../getting_started/additional/logback.rst:193
 msgid ""
@@ -1897,7 +1897,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst
 msgid "vRO"
-msgstr ""
+msgstr "vRO"
 
 #: ../../getting_started/additional/logback.rst:200
 msgid "<logger name=\"com.morpheus.automation.VroService\" level=\"DEBUG\"/>"
@@ -1905,11 +1905,11 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst:206
 msgid "All core logger paths"
-msgstr ""
+msgstr "Tous les chemins de logger principaux"
 
 #: ../../getting_started/additional/logback.rst:208
 msgid "Expand below to see all core |morpheus| logger paths set to INFO level."
-msgstr ""
+msgstr "Développez ci-dessous pour voir tous les chemins de logger principaux |morpheus| définis au niveau INFO."
 
 #: ../../getting_started/additional/logback.rst:213
 msgid ""
@@ -2867,13 +2867,13 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst:779
 msgid "Audit logs"
-msgstr ""
+msgstr "Journaux d'audit"
 
 #: ../../getting_started/additional/logback.rst:781
 msgid ""
 "To set up CEF/SIEM auditing export, add the below appender above or below"
 " the other appenders in the logback.xml configuration file:"
-msgstr ""
+msgstr "Pour configurer l'export d'audit CEF/SIEM, ajoutez l'appender ci-dessous au-dessus ou en dessous des autres appenders dans le fichier de configuration logback.xml :"
 
 #: ../../getting_started/additional/logback.rst:783
 #, python-brace-format, python-format
@@ -2903,7 +2903,7 @@ msgid ""
 "Add the below logger above or below the other loggers in the logback.xml "
 "configuration file (make sure it is below, not above, the appender from "
 "the previous step or an error will occur):"
-msgstr ""
+msgstr "Ajoutez le logger ci-dessous au-dessus ou en dessous des autres loggers dans le fichier de configuration logback.xml (assurez-vous qu'il est en dessous, et non au-dessus, de l'appender de l'étape précédente, sinon une erreur se produira) :"
 
 #: ../../getting_started/additional/logback.rst:802
 msgid ""
@@ -2917,7 +2917,7 @@ msgstr ""
 msgid ""
 "Once you have done this, you need to restart the |morpheus| Application "
 "server:"
-msgstr ""
+msgstr "Une fois cela fait, vous devez redémarrer le serveur d'application |morpheus| :"
 
 #: ../../getting_started/additional/logback.rst:810
 msgid "morpheus-ctl stop morpheus-ui"
@@ -2925,14 +2925,14 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst:814
 msgid "Please be aware this will stop the web interface for |morpheus|."
-msgstr ""
+msgstr "Veuillez noter que cela arrêtera l'interface web pour |morpheus|."
 
 #: ../../getting_started/additional/logback.rst:816
 msgid ""
 "Once the service has stopped enter the following at the xml prompt to "
 "restart (if the service does not stop, replace stop with graceful-kill "
 "and retry)"
-msgstr ""
+msgstr "Une fois le service arrêté, saisissez ce qui suit à l'invite xml pour redémarrer (si le service ne s'arrête pas, remplacez stop par graceful-kill et réessayez)"
 
 #: ../../getting_started/additional/logback.rst:818
 msgid "morpheus-ctl start morpheus-ui"
@@ -2940,7 +2940,7 @@ msgstr ""
 
 #: ../../getting_started/additional/logback.rst:822
 msgid "To know when the UI is up and running you can run the following command"
-msgstr ""
+msgstr "Pour savoir quand l'interface est opérationnelle, vous pouvez exécuter la commande suivante"
 
 #: ../../getting_started/additional/logback.rst:824
 msgid "morpheus-ctl tail morpheus-ui"
@@ -2952,46 +2952,46 @@ msgid ""
 "User Interface. A new audit file will have been created called audit.log "
 "and will found in the default |morpheus| log path which is "
 "``/var/log/morpheus/morpheus-ui/``"
-msgstr ""
+msgstr "Une fois que vous voyez l'art ASCII apparaître, vous pourrez vous reconnecter à l'interface utilisateur. Un nouveau fichier d'audit appelé audit.log aura été créé et se trouvera dans le chemin de journal par défaut de |morpheus|, soit ``/var/log/morpheus/morpheus-ui/``"
 
 #: ../../getting_started/additional/logback.rst:830
 msgid ""
 "This is only an example and other configurations are possible, such as "
 "creating an appender definition for your SIEM audit database product."
-msgstr ""
+msgstr "Il s'agit uniquement d'un exemple et d'autres configurations sont possibles, comme la création d'une définition d'appender pour votre produit de base de données d'audit SIEM."
 
 #: ../../getting_started/additional/ipv6.rst:2
 msgid "IPv6"
-msgstr ""
+msgstr "IPv6"
 
 #: ../../getting_started/additional/ipv6.rst:7
 msgid ""
 "There may be situations where instances only have IPv6 routing available."
 "  |morpheus| fully supports IPv6 for the appliance and agent comms."
-msgstr ""
+msgstr "Il peut arriver que des instances n'aient accès qu'au routage IPv6.  |morpheus| prend entièrement en charge IPv6 pour l'appliance et les communications des agents."
 
 #: ../../getting_started/additional/ipv6.rst:9
 msgid ""
 "To enable IPv6 listener on the |morpheus| appliance, you must modify the "
 "NGINX listeners."
-msgstr ""
+msgstr "Pour activer l'écoute IPv6 sur l'appliance |morpheus|, vous devez modifier les écouteurs NGINX."
 
 #: ../../getting_started/additional/ipv6.rst:12
 msgid "Configuring NGINX Listeners"
-msgstr ""
+msgstr "Configuration des écouteurs NGINX"
 
 #: ../../getting_started/additional/ipv6.rst:13
 msgid ""
 "Confirm IPv6 is enabled and IP address is applied within the Morpheus "
 "underlying OS."
-msgstr ""
+msgstr "Confirmez qu'IPv6 est activé et que l'adresse IP est appliquée dans le système d'exploitation sous-jacent Morpheus."
 
 #: ../../getting_started/additional/ipv6.rst:15
 msgid ""
 "Modify the ``/opt/morpheus/embedded/nginx/conf/sites-"
 "available/morpheus.conf`` file, and add the following listerning under "
 "the server block at the top:"
-msgstr ""
+msgstr "Modifiez le fichier ``/opt/morpheus/embedded/nginx/conf/sites-available/morpheus.conf`` et ajoutez l'écoute suivante sous le bloc server en haut :"
 
 #: ../../getting_started/additional/ipv6.rst:17
 msgid "listen [::]:80;"
@@ -3002,7 +3002,7 @@ msgid ""
 "Modify the ``/opt/morpheus/embedded/nginx/conf/sites-available/morpheus-"
 "ssl.conf`` file, and add the following listerning under the server block "
 "at the top:"
-msgstr ""
+msgstr "Modifiez le fichier ``/opt/morpheus/embedded/nginx/conf/sites-available/morpheus-ssl.conf`` et ajoutez l'écoute suivante sous le bloc server en haut :"
 
 #: ../../getting_started/additional/ipv6.rst:23
 msgid "listen [::]:443 ssl;"
@@ -3010,7 +3010,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ipv6.rst:27
 msgid "Restart the NGINX service:"
-msgstr ""
+msgstr "Redémarrez le service NGINX :"
 
 #: ../../getting_started/additional/ipv6.rst:29
 msgid ""
@@ -3023,7 +3023,7 @@ msgstr ""
 msgid ""
 "The site should now be resolvable via IPv6. To test you should be able to"
 " do the following:"
-msgstr ""
+msgstr "Le site devrait maintenant être résolvable via IPv6. Pour tester, vous devriez pouvoir faire ce qui suit :"
 
 #: ../../getting_started/additional/ipv6.rst:37
 msgid ""

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../provisioning/concepts/concepts.rst:2
 msgid "Provisioning Concepts"
-msgstr ""
+msgstr "Provisionierungskonzepte"
 
 #: ../../provisioning/concepts/concepts.rst:4
 msgid ""
@@ -31,7 +31,7 @@ msgid ""
 "terminology and concepts may differ. These concepts are documented in "
 "this section along with places where terminology may be slightly "
 "different compared with other platforms or with common industry parlance."
-msgstr ""
+msgstr "|morpheus| ist eine leistungsstarke, infrastrukturagnostische Cloud Application Management Platform. Im Vergleich zu anderen CMP-Plattformen in diesem Bereich können Terminologie und Konzepte abweichen. Diese Konzepte werden in diesem Abschnitt dokumentiert, zusammen mit Stellen, an denen die Terminologie im Vergleich zu anderen Plattformen oder zur gängigen Branchensprache leicht abweichen kann."
 
 #: ../../provisioning/concepts/concepts.rst:6
 msgid ""
@@ -44,11 +44,11 @@ msgid ""
 "bit different. This provides a more complete platform that allows for "
 "greater capabilities out of the box as will be seen when these concepts "
 "are covered."
-msgstr ""
+msgstr "|morpheus| bezeichnet sich selbst als CAMP (Cloud Application Management Platform) im Gegensatz zu einer (Cloud Management Platform). Das mag geringfügig erscheinen, ist aber tatsächlich von großer Bedeutung. Viele CMP-Anwendungen beginnen auf der IaaS-Schicht und arbeiten sich bis zur Anwendungsschicht vor (oft benötigen sie zusätzliche PaaS-Architekturen, um das Modell zu vervollständigen). |morpheus| wurde aus einer Mittelperspektive heraus entworfen. Daher sind einige Konzepte etwas anders. Dies bietet eine vollständigere Plattform, die von Haus aus größere Fähigkeiten ermöglicht, wie bei der Behandlung dieser Konzepte deutlich wird."
 
 #: ../../provisioning/concepts/concepts.rst:9
 msgid "Instances"
-msgstr ""
+msgstr "Instanzen"
 
 #: ../../provisioning/concepts/concepts.rst:11
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 " Amazon AWS. In |morpheus|, this concept was rethought. An Instance is "
 "more of a representation of a resource or service. This service may "
 "involve several virtual machines or several Docker containers."
-msgstr ""
+msgstr "|morpheus| beginnt mit der Provisionierung von Instanzen. Auf einigen Plattformen repräsentiert eine Instanz ein einzelnes Objekt wie eine virtuelle Maschine in Amazon AWS. In |morpheus| wurde dieses Konzept neu durchdacht. Eine Instanz ist eher eine Darstellung einer Ressource oder eines Service. Dieser Service kann mehrere virtuelle Maschinen oder mehrere Docker-Container umfassen."
 
 #: ../../provisioning/concepts/concepts.rst:13
 msgid ""
@@ -74,18 +74,18 @@ msgid ""
 "changed in a big data world. This same concept also can apply to "
 "something like a simple Apache web server where there are 10 copies of a "
 "web server which are horizontally scaled out to handle traffic."
-msgstr ""
+msgstr "Im |morpheus|-Instanzassistenten ist MongoDB beispielsweise eine Option und enthält mehrere Instanzkonfigurationen. Eine dieser Konfigurationen ist ein vollständiger MongoDB-Cluster aus entweder sieben virtuellen Maschinen oder sieben Docker-Containern. Anstatt diese direkt als sieben einzelne „Instanzen“ darzustellen, gruppiert |morpheus| sie zu einer einzelnen Instanz eines Service, der mehrere Container oder virtuelle Maschinen enthält. Dies ermöglicht sogar Instanzmaßnahmen, die ausgeführt werden können, um die Kapazität einer Instanz zu erweitern (horizontal oder vertikal). Früher war ein Datenbankserver möglicherweise repräsentativ für einen einzelnen Server, aber dieses Modell hat sich in einer Big-Data-Welt drastisch geändert. Dasselbe Konzept kann auch auf etwas wie einen einfachen Apache-Webserver angewendet werden, bei dem es 10 Kopien eines Webservers gibt, die horizontal skaliert werden, um den Datenverkehr zu bewältigen."
 
 #: ../../provisioning/concepts/concepts.rst:15
 msgid ""
 "When viewing an Instance detail page, one is able to look at details and "
 "statistics specific to a virtual machine or container. |morpheus| simply "
 "helps simplify the management model for tracking these services."
-msgstr ""
+msgstr "Auf einer Instanzdetailseite kann man Details und Statistiken anzeigen, die für eine virtuelle Maschine oder einen Container spezifisch sind. |morpheus| hilft einfach, das Verwaltungsmodell für die Nachverfolgung dieser Dienste zu vereinfachen."
 
 #: ../../provisioning/concepts/concepts.rst:18
 msgid "Containers / Nodes / Virtual Machines"
-msgstr ""
+msgstr "Container / Knoten / Virtuelle Maschinen"
 
 #: ../../provisioning/concepts/concepts.rst:20
 msgid ""
@@ -100,11 +100,11 @@ msgid ""
 "but, in essence, the name is valid for both concepts of containerized "
 "environments as well as Virtual Machines. In fact, one can even think of "
 "a Docker Host as a Hypervisor (which we do)."
-msgstr ""
+msgstr "In Bezug auf Instanzen kann eine Instanz viele Knoten haben. Ein Knoten ist eine generische Darstellung eines Containers oder einer virtuellen Maschine. In den meisten Fällen stellt |morpheus| einen Knoten als Container oder Virtual Machine dar, je nach dem für die Instanz verwendeten Provisionierungs-Engine. Knoten ist nur eine generische Bezeichnung, wenn auf diese Arten von Elementen verwiesen wird. Die öffentliche |morpheus|-Entwickler-API bezeichnet jedoch oft sowohl virtuelle Maschinen als auch Docker-Container als „containers“. Die UI wurde seitdem aktualisiert, um dieses Konzept besser abzugrenzen und das Verständnis zu erleichtern, aber im Wesentlichen ist der Name sowohl für Konzepte containerisierter Umgebungen als auch für Virtual Machines gültig. Tatsächlich kann man sogar einen Docker Host als Hypervisor betrachten (was wir tun)."
 
 #: ../../provisioning/concepts/concepts.rst:23
 msgid "Hosts / Servers"
-msgstr ""
+msgstr "Hosts / Server"
 
 #: ../../provisioning/concepts/concepts.rst:25
 msgid ""
@@ -115,7 +115,7 @@ msgid ""
 "machines can be provisioned onto. A server is the underlying general "
 "representation of a physical or virtual server. It could be a Host "
 "representation, a Virtual Machine, or even a Bare Metal delineation."
-msgstr ""
+msgstr "Dieses Konzept ist hauptsächlich auf Benutzer von |morpheus| zugeschnitten, die für die Verwaltung und Wartung der zugrunde liegenden Infrastrukturintegrationen verantwortlich sind. Ein Host bezieht sich typischerweise auf einen Docker Host, auf dem ein Container (innerhalb einer Instanz) ausgeführt wird, oder auf einen Hypervisor, auf dem virtuelle Maschinen provisioniert werden können. Ein Server ist die zugrunde liegende allgemeine Darstellung eines physischen oder virtuellen Servers. Es könnte eine Host-Darstellung, eine Virtual Machine oder sogar eine Bare-Metal-Abgrenzung sein."
 
 #: ../../provisioning/concepts/concepts.rst:27
 msgid ""
@@ -135,11 +135,11 @@ msgid ""
 " Instance is made in the provisioning section of |morpheus| and the "
 "|morpheus| Agent can optionally be installed to provide more refined "
 "guest operating system-level statistics and logging."
-msgstr ""
+msgstr "Wenn ein Benutzer eine VM-basierte Instanz provisioniert, wird ein entsprechender Serverdatensatz erstellt, um die Verbindung zur tatsächlichen Ressource über die zugrunde liegende Provisionierungs-Engine darzustellen. Dies mag etwas seltsam erscheinen, bietet aber einen Aspekt von |morpheus|, der sehr leistungsstark ist. Dieses einzelne Konzept ermöglicht es |morpheus|, „Brownfield“-Umgebungen aufzunehmen. Wir müssen nicht von Null starten. |morpheus| kann in bestehende Umgebungen integriert werden und bestehende virtuelle Maschinen verwalten. Die Art und Weise, wie |morpheus| dies tut, besteht darin, bestehende VMs aus den hinzugefügten Cloud-Integrationen periodisch zu synchronisieren. Ein Serverdatensatz wird erstellt und periodisch aktualisiert (standardmäßig alle fünf Minuten) mit Echtzeitinformationen und Änderungen. Dies bietet im Wesentlichen auch CMDB-ähnliche Fähigkeiten. Wenn ein Server erkannt wird, kann der Benutzer (mit dem entsprechenden Zugriff) die virtuelle Maschine in eine verwaltete Instanz umwandeln. Wenn dies geschieht, wird eine entsprechende Instanz im Provisionierungsbereich von |morpheus| erstellt, und der |morpheus| Agent kann optional installiert werden, um verfeinerte Gastbetriebssystem-Statistiken und -Protokollierung bereitzustellen."
 
 #: ../../provisioning/concepts/concepts.rst:30
 msgid "Apps"
-msgstr ""
+msgstr "Apps"
 
 #: ../../provisioning/concepts/concepts.rst:32
 msgid ""
@@ -152,11 +152,11 @@ msgid ""
 "capabilities for them to cross connect. There are several service "
 "discovery aspects within |morpheus| as well as integrations with "
 "services."
-msgstr ""
+msgstr "Aufbauend auf allen vorherigen Konzepten bietet |morpheus| eine Apps-Schicht. Eine App ist eine Sammlung von Instanzen, die über Anwendungsschichten verknüpft sind. Schichten ermöglichen dem Benutzer, getrennte Verbindungsabschnitte zwischen den verschiedenen Elementen (Instanzen) innerhalb einer Anwendung zu definieren. Sobald diese Instanzen alle in einem Anwendungskonzept verknüpft sind, kann dies Instanzumgebungen beeinflussen und Service-Discovery-Fähigkeiten für ihre Querverbindung bereitstellen. Es gibt mehrere Service-Discovery-Aspekte innerhalb von |morpheus| sowie Integrationen mit Diensten."
 
 #: ../../provisioning/concepts/concepts.rst:35
 msgid "App Blueprints"
-msgstr ""
+msgstr "App Blueprints"
 
 #: ../../provisioning/concepts/concepts.rst:37
 msgid ""
@@ -164,5 +164,5 @@ msgid ""
 "easy reproducibility and deployment into various environments. They can "
 "be used to mix and match various Instance types to provision an "
 "application dependent on multiple layers of services."
-msgstr ""
+msgstr "Ein App Blueprint ermöglicht einem Benutzer, eine Anwendungsstruktur für einfache Reproduzierbarkeit und Bereitstellung in verschiedenen Umgebungen zu definieren. Sie können verwendet werden, um verschiedene Instanztypen zu mischen und anzupassen, um eine Anwendung zu provisionieren, die von mehreren Serviceschichten abhängig ist."
 

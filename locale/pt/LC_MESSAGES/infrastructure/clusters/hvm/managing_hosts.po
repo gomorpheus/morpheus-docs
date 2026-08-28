@@ -22,103 +22,103 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:2
 msgid "Adding and Removing Hosts"
-msgstr ""
+msgstr "Adicionando e Removendo Hosts"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:5
 msgid "Adding a Host to an Existing Cluster"
-msgstr ""
+msgstr "Adicionando um Host a um Cluster Existente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:7
 msgid ""
 "Hosts can be added to an existing HVM cluster to increase compute "
 "capacity or improve failure tolerance."
-msgstr ""
+msgstr "Hosts podem ser adicionados a um cluster HVM existente para aumentar a capacidade de computação ou melhorar a tolerância a falhas."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:9
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:80
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:9
 msgid ""
 "The agent quorum, Corosync, DLM, and GFS2 details on this page apply to "
 "layouts 1.3 and 2.0. See :doc:`/infrastructure/clusters/mvm` for Legacy "
 "host management."
-msgstr ""
+msgstr "Os detalhes de quorum do agente, Corosync, DLM e GFS2 nesta página se aplicam aos layouts 1.3 e 2.0. Consulte :doc:`/infrastructure/clusters/mvm` para o gerenciamento Legacy de hosts."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:12
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:112
 msgid "Prerequisites"
-msgstr ""
+msgstr "Pré-requisitos"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:14
 msgid "Before adding a new host:"
-msgstr ""
+msgstr "Antes de adicionar um novo host:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:16
 msgid ""
 "The new host meets all requirements listed in :doc:`building_clusters` "
 "(OS, CPU, memory, network, storage)"
-msgstr ""
+msgstr "O novo host atende a todos os requisitos listados em :doc:`building_clusters` (SO, CPU, memória, rede, armazenamento)"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:17
 msgid ""
 "The new host has network connectivity to all existing cluster hosts on "
 "port 7443"
-msgstr ""
+msgstr "O novo host tem conectividade de rede com todos os hosts existentes do cluster na porta 7443"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:18
 msgid "Shared storage (iSCSI targets) is accessible from the new host"
-msgstr ""
+msgstr "O armazenamento compartilhado (destinos iSCSI) está acessível a partir do novo host"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:19
 msgid "Sufficient license capacity is available"
-msgstr ""
+msgstr "Há capacidade de licença suficiente disponível"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:22
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:123
 msgid "Procedure"
-msgstr ""
+msgstr "Procedimento"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:24
 msgid "Navigate to ``Infrastructure > Clusters > [Cluster]``"
-msgstr ""
+msgstr "Navegue até ``Infrastructure > Clusters > [Cluster]``"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:25
 msgid "Click :guilabel:`+ Add Worker`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ Add Worker`"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:26
 msgid "Provide the new host's SSH IP, hostname, and credentials"
-msgstr ""
+msgstr "Informe o SSH IP, o hostname e as credenciais do novo host"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:27
 msgid "Click :guilabel:`Complete`"
-msgstr ""
+msgstr "Clique em :guilabel:`Complete`"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:30
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:133
 msgid "What Happens Automatically"
-msgstr ""
+msgstr "O Que Acontece Automaticamente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:32
 msgid ""
 "When a host is added to a layout 1.3 or 2.0 cluster, |morpheus| performs "
 "the following automated operations:"
-msgstr ""
+msgstr "Quando um host é adicionado a um cluster dos layouts 1.3 ou 2.0, o |morpheus| executa as seguintes operações automatizadas:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:34
 msgid ""
 "**Package installation and host preparation** — The same provisioning "
 "phases run as during initial cluster creation (KVM, Corosync, DLM, "
 "layout-specific networking, firewall, libvirt)"
-msgstr ""
+msgstr "**Instalação de pacotes e preparação do host** — As mesmas fases de provisionamento são executadas como na criação inicial do cluster (KVM, Corosync, DLM, rede específica do layout, firewall, libvirt)"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:36
 msgid ""
 "**Corosync authkey distribution** — The cluster's Corosync authentication"
 " key is retrieved from Cypher and installed on the new host"
-msgstr ""
+msgstr "**Distribuição do authkey do Corosync** — A chave de autenticação Corosync do cluster é recuperada do Cypher e instalada no novo host"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:38
 msgid ""
@@ -126,26 +126,26 @@ msgid ""
 " ``corosync.conf`` on all existing hosts, the ``config_version`` is "
 "incremented, and ``corosync-cfgtool -R`` is run on each host to reload "
 "the configuration live (no restart required)"
-msgstr ""
+msgstr "**Atualização da configuração do Corosync** — O bloco de nó do novo host é adicionado a ``corosync.conf`` em todos os hosts existentes, o ``config_version`` é incrementado e ``corosync-cfgtool -R`` é executado em cada host para recarregar a configuração ao vivo (sem necessidade de reinício)"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:40
 msgid ""
 "**DLM join** — The new host joins the DLM cluster and gains access to "
 "existing lockspaces"
-msgstr ""
+msgstr "**Ingresso no DLM** — O novo host entra no cluster DLM e obtém acesso aos lockspaces existentes"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:42
 msgid ""
 "**GFS2 journal addition** — For each HPE Clustered Datastore (Shared "
 "LUN), a new journal is added using ``gfs2_jadd`` if the current journal "
 "count is less than the new total node count"
-msgstr ""
+msgstr "**Adição de journal GFS2** — Para cada HPE Clustered Datastore (LUN Compartilhado), um novo journal é adicionado com ``gfs2_jadd`` se a contagem atual de journals for menor que a nova contagem total de nós"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:44
 msgid ""
 "**iSCSI target discovery** — All configured iSCSI targets are discovered "
 "and auto-logged-in on the new host"
-msgstr ""
+msgstr "**Descoberta de destinos iSCSI** — Todos os destinos iSCSI configurados são descobertos e têm login automático no novo host"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:46
 msgid ""
@@ -153,41 +153,41 @@ msgid ""
 "agents in the cluster (including the new host). Each agent persists the "
 "updated member list to ``.quorum-nodes`` and begins peer-to-peer quorum "
 "pinging with the new host"
-msgstr ""
+msgstr "**Atualização da lista de quorum** — O |morpheus| envia ``quorumInfo`` atualizado a todos os agentes do cluster (incluindo o novo host). Cada agente persiste a lista atualizada de membros em ``.quorum-nodes`` e inicia o ping de quorum peer-to-peer com o novo host"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:48
 msgid ""
 "**Storage pool creation** — libvirt storage pools are created on the new "
 "host for each existing datastore"
-msgstr ""
+msgstr "**Criação de pool de armazenamento** — Pools de armazenamento do libvirt são criados no novo host para cada datastore existente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:51
 msgid "Quorum Impact"
-msgstr ""
+msgstr "Impacto no Quorum"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:53
 msgid "Adding a host changes the quorum majority calculation:"
-msgstr ""
+msgstr "Adicionar um host altera o cálculo da maioria do quorum:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:59
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:154
 msgid "Previous Size"
-msgstr ""
+msgstr "Tamanho Anterior"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:60
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:155
 msgid "New Size"
-msgstr ""
+msgstr "Novo Tamanho"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:61
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:156
 msgid "New Majority Required"
-msgstr ""
+msgstr "Nova Maioria Necessária"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:62
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:157
 msgid "Failure Tolerance"
-msgstr ""
+msgstr "Tolerância a Falhas"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:63
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:65
@@ -212,7 +212,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:169
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:173
 msgid "1 host"
-msgstr ""
+msgstr "1 host"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:68
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:71
@@ -226,7 +226,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:161
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:165
 msgid "2 hosts"
-msgstr ""
+msgstr "2 hosts"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:72
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:75
@@ -242,40 +242,40 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:78
 msgid "3 hosts"
-msgstr ""
+msgstr "3 hosts"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:80
 msgid ""
 "Adding a 4th host to a 3-node cluster increases the majority requirement "
 "from 2 to 3 without improving failure tolerance. Consider adding hosts in"
 " pairs (3→5, 5→7) for optimal availability."
-msgstr ""
+msgstr "Adicionar um 4º host a um cluster de 3 nós aumenta o requisito de maioria de 2 para 3 sem melhorar a tolerância a falhas. Considere adicionar hosts em pares (3→5, 5→7) para disponibilidade ideal."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:83
 msgid "Verification After Adding"
-msgstr ""
+msgstr "Verificação Após a Adição"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:85
 msgid "After the new host is provisioned:"
-msgstr ""
+msgstr "Após o provisionamento do novo host:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:87
 msgid ""
 "Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
 "panel"
-msgstr ""
+msgstr "Navegue até o painel ``Infrastructure > Clusters > [Cluster] > Summary > Quorum``"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:88
 msgid "Confirm the total node count has increased"
-msgstr ""
+msgstr "Confirme que a contagem total de nós aumentou"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:89
 msgid "Confirm the new host shows as ONLINE"
-msgstr ""
+msgstr "Confirme que o novo host aparece como ONLINE"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:90
 msgid "On the new host, verify Corosync membership:"
-msgstr ""
+msgstr "No novo host, verifique a associação do Corosync:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:92
 msgid "corosync-quorumtool -l"
@@ -283,7 +283,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:96
 msgid "Verify DLM sees all members:"
-msgstr ""
+msgstr "Verifique se o DLM vê todos os membros:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:98
 msgid "dlm_tool status -v"
@@ -295,107 +295,107 @@ msgid ""
 "--filter ethernet``. If an interface was added to the host after "
 "enrollment, follow the Netplan and UI refresh procedure in :ref:`hvm-"
 "host-prep` before assigning it to a Virtual Switch."
-msgstr ""
+msgstr "Compare o inventário de interfaces físicas com ``sudo hvmcli interfaces list --filter ethernet``. Se uma interface foi adicionada ao host após o enrollment, siga o procedimento de Netplan e atualização da UI em :ref:`hvm-host-prep` antes de atribuí-la a um Virtual Switch."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:105
 msgid "Removing a Host from an Existing Cluster"
-msgstr ""
+msgstr "Removendo um Host de um Cluster Existente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:107
 msgid ""
 "Hosts can be removed from an HVM cluster when decommissioning hardware, "
 "reducing cluster size, or replacing failed nodes."
-msgstr ""
+msgstr "Hosts podem ser removidos de um cluster HVM ao descomissionar hardware, reduzir o tamanho do cluster ou substituir nós com falha."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:109
 msgid "Warning"
-msgstr ""
+msgstr "Alerta"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:109
 msgid ""
 "Removing a host reduces the cluster's failure tolerance. Ensure the "
 "remaining cluster size still meets your availability requirements before "
 "proceeding."
-msgstr ""
+msgstr "Remover um host reduz a tolerância a falhas do cluster. Garanta que o tamanho restante do cluster ainda atenda aos seus requisitos de disponibilidade antes de continuar."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:114
 msgid "Before removing a host:"
-msgstr ""
+msgstr "Antes de remover um host:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:116
 msgid ""
 "Confirm the cluster layout and ensure the resulting cluster will still "
 "have quorum (at minimum 3 nodes for a single-site cluster)"
-msgstr ""
+msgstr "Confirme o layout do cluster e garanta que o cluster resultante ainda terá quorum (no mínimo 3 nós para um cluster de site único)"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:117
 msgid ""
 "Confirm the Quorum panel reports ACHIEVED, all surviving hosts are "
 "reachable, lockspaces are healthy, and shared datastores are mounted with"
 " healthy paths"
-msgstr ""
+msgstr "Confirme que o painel Quorum reporta ACHIEVED, que todos os hosts sobreviventes estão reachable, que os lockspaces estão saudáveis e que os datastores compartilhados estão montados com caminhos saudáveis"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:118
 msgid ""
 "Evacuate all VMs from the host using maintenance mode (see "
 ":doc:`host_maintenance`)"
-msgstr ""
+msgstr "Evacue todas as VMs do host usando o modo de manutenção (consulte :doc:`host_maintenance`)"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:119
 msgid "Verify no VMs are pinned to the host that cannot be moved"
-msgstr ""
+msgstr "Verifique se não há VMs pinned ao host que não possam ser movidas"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:120
 msgid ""
 "Confirm no local or raw-device VM remains on the host and that remaining "
 "hosts have the required VM networks and storage access"
-msgstr ""
+msgstr "Confirme que nenhuma VM local ou raw-device permanece no host e que os hosts restantes têm as redes de VM e o acesso ao armazenamento necessários"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:125
 msgid ""
 "Place the host in maintenance mode to evacuate VMs (see "
 ":doc:`host_maintenance`)"
-msgstr ""
+msgstr "Coloque o host em modo de manutenção para evacuar as VMs (consulte :doc:`host_maintenance`)"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:126
 msgid "Navigate to ``Infrastructure > Clusters > [Cluster] > Hosts``"
-msgstr ""
+msgstr "Navegue até ``Infrastructure > Clusters > [Cluster] > Hosts``"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:127
 msgid "Select the host to remove"
-msgstr ""
+msgstr "Selecione o host a remover"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:128
 msgid "Click :guilabel:`Remove`"
-msgstr ""
+msgstr "Clique em :guilabel:`Remove`"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:129
 msgid "Confirm the removal"
-msgstr ""
+msgstr "Confirme a remoção"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:130
 msgid ""
 "Wait for the removal operation to finish; do not manually edit Corosync "
 "or Agent quorum files"
-msgstr ""
+msgstr "Aguarde a conclusão da operação de remoção; não edite manualmente os arquivos de quorum do Corosync ou do Agente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:135
 msgid ""
 "When a host is removed from a layout 1.3 or 2.0 cluster, |morpheus| "
 "performs the following:"
-msgstr ""
+msgstr "Quando um host é removido de um cluster dos layouts 1.3 ou 2.0, o |morpheus| executa o seguinte:"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:137
 msgid ""
 "**GFS2 unmount** — All HPE Clustered Datastores (GFS2 filesystems) are "
 "unmounted on the departing host"
-msgstr ""
+msgstr "**Desmontagem GFS2** — Todos os HPE Clustered Datastores (filesystems GFS2) são desmontados no host que está saindo"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:139
 msgid ""
 "**Cluster services stop** — DLM and Corosync are stopped and disabled on "
 "the departing host"
-msgstr ""
+msgstr "**Parada dos serviços do cluster** — DLM e Corosync são parados e desativados no host que está saindo"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:141
 msgid ""
@@ -404,24 +404,24 @@ msgid ""
 "is archived (backed up to ``/etc/corosync/archive/``), ``config_version``"
 " is incremented, and ``corosync-cfgtool -R`` reloads the configuration "
 "live on each remaining host"
-msgstr ""
+msgstr "**Atualização da configuração do Corosync** — O bloco de nó do host que está saindo é removido de ``corosync.conf`` em todos os hosts restantes. A configuração é arquivada (backup em ``/etc/corosync/archive/``), o ``config_version`` é incrementado e ``corosync-cfgtool -R`` recarrega a configuração ao vivo em cada host restante"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:143
 msgid ""
 "**Datastore cleanup** — Each datastore's location reference to the "
 "removed host is cleaned up"
-msgstr ""
+msgstr "**Limpeza do datastore** — A referência de localização de cada datastore ao host removido é limpa"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:145
 msgid ""
 "**Quorum list update** — Updated ``quorumInfo`` is sent to all remaining "
 "agents. The departing host is removed from ``.quorum-nodes`` on all "
 "cluster members"
-msgstr ""
+msgstr "**Atualização da lista de quorum** — ``quorumInfo`` atualizado é enviado a todos os agentes restantes. O host que está saindo é removido de ``.quorum-nodes`` em todos os membros do cluster"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:148
 msgid "Quorum Impact When Removing"
-msgstr ""
+msgstr "Impacto no Quorum ao Remover"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:172
 msgid "2"
@@ -429,36 +429,36 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:175
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:175
 msgid ""
 "Never reduce a single-site cluster below 3 nodes. A 2-node cluster cannot"
 " achieve quorum if either node fails, resulting in a complete cluster "
 "outage."
-msgstr ""
+msgstr "Nunca reduza um cluster de site único abaixo de 3 nós. Um cluster de 2 nós não consegue alcançar quorum se qualquer nó falhar, resultando em uma interrupção completa do cluster."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:178
 msgid "Handling Offline Host Removal"
-msgstr ""
+msgstr "Tratando a Remoção de Host Offline"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:180
 msgid "If the host to be removed is offline (powered off or unreachable):"
-msgstr ""
+msgstr "Se o host a ser removido estiver offline (desligado ou unreachable):"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:182
 msgid ""
 "First confirm the host is powered off or otherwise cannot access shared "
 "storage. If isolation cannot be proven, do not remove it; contact HPE "
 "Support"
-msgstr ""
+msgstr "Primeiro confirme que o host está desligado ou de outra forma não pode acessar o armazenamento compartilhado. Se o isolamento não puder ser comprovado, não o remova; contate o HPE Support"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:183
 msgid ""
 "Use the same UI :guilabel:`Remove` action. On layout 1.3 and later, "
 "|morpheus| removes the node from the Corosync ring using surviving online"
 " hosts and updates Agent quorum membership"
-msgstr ""
+msgstr "Use a mesma ação :guilabel:`Remove` da UI. No layout 1.3 e posteriores, o |morpheus| remove o nó do anel Corosync usando hosts online sobreviventes e atualiza a associação de quorum do Agente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:184
 msgid ""
@@ -466,13 +466,13 @@ msgid ""
 "updated Corosync configuration cannot be written consistently to all "
 "survivors, |morpheus| aborts the reload and raises an alarm rather than "
 "risk partitioning the ring"
-msgstr ""
+msgstr "Se o nó que está saindo ainda estiver ativo no anel Corosync, ou se a configuração Corosync atualizada não puder ser gravada de forma consistente em todos os sobreviventes, o |morpheus| aborta o reload e gera um alarme em vez de arriscar particionar o anel"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:185
 msgid ""
 "If no other hosts are online, cleanup cannot proceed and |morpheus| "
 "raises an **Unable to remove host** alarm"
-msgstr ""
+msgstr "Se nenhum outro host estiver online, a limpeza não pode prosseguir e o |morpheus| gera um alarme **Unable to remove host**"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:187
 msgid ""
@@ -480,37 +480,37 @@ msgid ""
 "for this workflow. If the UI operation raises an alarm or cannot "
 "establish a safe ring departure, retain the host record and contact HPE "
 "Support."
-msgstr ""
+msgstr "Não publique nem use comandos diretos de remoção no shell do host como substituto deste fluxo. Se a operação da UI gerar um alarme ou não puder estabelecer uma saída segura do anel, mantenha o registro do host e contate o HPE Support."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:190
 msgid "Post-removal Verification"
-msgstr ""
+msgstr "Verificação Pós-remoção"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:192
 msgid "Confirm the host no longer appears in the cluster Hosts list"
-msgstr ""
+msgstr "Confirme que o host não aparece mais na lista Hosts do cluster"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:193
 msgid ""
 "Confirm the Quorum panel reports ACHIEVED with the new member count and "
 "no removed host under down, fenced, or unclean members"
-msgstr ""
+msgstr "Confirme que o painel Quorum reporta ACHIEVED com a nova contagem de membros e sem o host removido entre membros down, fenced ou unclean"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:194
 msgid ""
 "Confirm Corosync and DLM list only the remaining members and lockspaces "
 "are healthy"
-msgstr ""
+msgstr "Confirme que Corosync e DLM listam apenas os membros restantes e que os lockspaces estão saudáveis"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:195
 msgid ""
 "Confirm every shared datastore is mounted and healthy on every remaining "
 "host"
-msgstr ""
+msgstr "Confirme que cada datastore compartilhado está montado e saudável em cada host restante"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:196
 msgid ""
 "Confirm evacuated or failed-over VMs run once, on hosts with their "
 "required networks and storage"
-msgstr ""
+msgstr "Confirme que as VMs evacuadas ou com failover são executadas uma vez, em hosts com as redes e o armazenamento necessários"
 

@@ -78,7 +78,7 @@ msgstr ""
 #: ../../troubleshooting/Morpheus_Agent.rst:12
 #: ../../troubleshooting/Morpheus_Agent.rst:145
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:12
 msgid ""
@@ -150,7 +150,7 @@ msgstr "La URL del Appliance comienza con https://, no http://"
 #: ../../troubleshooting/Morpheus_Agent.rst:70
 #: ../../troubleshooting/Morpheus_Agent.rst:95
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:33
 msgid "Be sure to use https:// even when using an IP address for the appliance."
@@ -215,7 +215,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_Agent.rst:46
 msgid "Endpoint Security Interference"
-msgstr ""
+msgstr "Interferencia de la seguridad de endpoints"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:48
 msgid ""
@@ -226,7 +226,7 @@ msgid ""
 "denied outbound HTTPS/WSS session affects registration and ongoing "
 "communication. An Agent upgrade can encounter the same controls again "
 "even when the previous version was permitted."
-msgstr ""
+msgstr "Los productos EDR, antivirus, control de aplicaciones y firewall de host pueden interrumpir diferentes etapas de la configuración del Agente. Una descarga o script bloqueados afecta la entrega; un gestor de paquetes denegado o una escritura de archivo afecta la instalación; un proceso ``morphd`` en cuarentena afecta el inicio; y una sesión HTTPS/WSS saliente denegada afecta el registro y la comunicación continua. Una actualización del Agente puede encontrar los mismos controles de nuevo incluso cuando la versión anterior estaba permitida."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:50
 msgid ""
@@ -234,7 +234,7 @@ msgid ""
 " entry from ``/var/log/morpheus/morpheus-ui/current``. On the target, "
 "collect Agent logs from ``/var/log/morpheus-node`` and the security "
 "product's prevention or quarantine event."
-msgstr ""
+msgstr "Registre la etapa fallida, la marca de tiempo, la salida de la instalación y la entrada relevante de ``/var/log/morpheus/morpheus-ui/current``. En el destino, recopile los logs del Agente desde ``/var/log/morpheus-node`` y el evento de prevención o cuarentena del producto de seguridad."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:51
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "Appliance URL. If these checks succeed but the Agent cannot connect, have"
 " the security team inspect TLS/websocket filtering and process-specific "
 "network policy."
-msgstr ""
+msgstr "Confirme la resolución DNS y la conectividad TCP 443 a la URL del Dispositivo configurada. Si estas verificaciones tienen éxito pero el Agente no puede conectarse, solicite al equipo de seguridad que revise el filtrado TLS/websocket y la política de red específica del proceso."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:52
 msgid ""
@@ -251,14 +251,14 @@ msgid ""
 "and ``/var/log/morpheus-node``. Permit only the exact package, process, "
 "path, action, or destination shown to be blocked, using the security "
 "vendor's approved allowlisting mechanism."
-msgstr ""
+msgstr "Correlacione el evento con ``morphd``, el servicio ``morpheus-node-runsvdir``, ``/opt/morpheus-node``, ``/etc/morpheus/morpheus-node.yaml`` y ``/var/log/morpheus-node``. Permita solo el paquete, proceso, ruta, acción o destino exacto que se haya mostrado como bloqueado, utilizando el mecanismo de lista de permitidos aprobado por el proveedor de seguridad."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:53
 msgid ""
 "Retry the failed installation or upgrade and verify that the Agent "
 "starts, reconnects, and reports in |morpheus|. Preserve the evidence if "
 "the targeted rule does not resolve the failure."
-msgstr ""
+msgstr "Reintente la instalación o actualización fallida y verifique que el Agente inicie, se reconecte y se reporte en |morpheus|. Preserve la evidencia si la regla específica no resuelve la falla."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:55
 msgid ""
@@ -269,7 +269,7 @@ msgid ""
 "practical interval, re-enable protection immediately, and verify both "
 "Agent health and security-control health. Escalate with the collected "
 "evidence rather than leaving protection disabled."
-msgstr ""
+msgstr "No prescriba una exclusión permanente para todo el directorio del Agente, todos los scripts, todos los procesos secundarios ni todo el tráfico. Si la deshabilitación temporal del control de seguridad es el único diagnóstico disponible, obtenga la aprobación de la política de seguridad, aísle la prueba al host afectado y al intervalo práctico más corto, vuelva a habilitar la protección de inmediato y verifique tanto la salud del Agente como la del control de seguridad. Escale con la evidencia recopilada en lugar de dejar la protección deshabilitada."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:58
 msgid "SSH"

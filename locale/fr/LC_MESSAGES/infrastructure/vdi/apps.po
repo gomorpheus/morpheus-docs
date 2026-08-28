@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/vdi/apps.rst:4
 msgid "VDI Applications"
-msgstr ""
+msgstr "Applications VDI"
 
 #: ../../infrastructure/vdi/apps.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/vdi/apps.rst:9
 msgid ""
@@ -34,225 +34,225 @@ msgid ""
 " launch an RDP session for Windows VDI Desktops into a particular "
 "application. They leverage Guacamole's remote-app property to open a "
 "specific application rather than a full desktop session."
-msgstr ""
+msgstr "Les applications VDI (VDI Apps) sont des raccourcis permettant de lancer une session RDP vers des bureaux VDI Windows directement dans une application particulière. Elles exploitent la propriété remote-app de Guacamole pour ouvrir une application spécifique plutôt qu'une session de bureau complète."
 
 #: ../../infrastructure/vdi/apps.rst:11
 msgid ""
 "VDI Apps are managed from ``Tools > VDI Pools > Apps`` tab and are "
 "consumed by users within the Virtual Desktop Persona."
-msgstr ""
+msgstr "Les applications VDI sont gérées depuis l'onglet ``Tools > VDI Pools > Apps`` et sont utilisées par les utilisateurs dans la persona Virtual Desktop."
 
 #: ../../infrastructure/vdi/apps.rst:13
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/vdi/apps.rst:13
 msgid ""
 "VDI Apps require the ``services-vdi-pools`` Role permission (Read or "
 "Full)."
-msgstr ""
+msgstr "Les applications VDI nécessitent l'autorisation de rôle ``services-vdi-pools`` (Lecture ou Complète)."
 
 #: ../../infrastructure/vdi/apps.rst:16
 msgid "Creating a VDI App"
-msgstr ""
+msgstr "Création d'une application VDI"
 
 #: ../../infrastructure/vdi/apps.rst:18
 msgid "Navigate to ``Tools > VDI Pools``"
-msgstr ""
+msgstr "Accédez à ``Tools > VDI Pools``"
 
 #: ../../infrastructure/vdi/apps.rst:19
 msgid "Select the **Apps** tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet **Apps**"
 
 #: ../../infrastructure/vdi/apps.rst:20
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "**None** — Clusters externes ou structures qui s'appuient sur un stockage cloud natif (EBS, Azure Disk, etc.)"
 
 #: ../../infrastructure/vdi/apps.rst:21
 msgid "Configure the following:"
-msgstr ""
+msgstr "L'environnement d'exécution de stockage choisi détermine quelles StorageClasses sont automatiquement configurées sur le cluster."
 
 #: ../../infrastructure/vdi/apps.rst:23
 msgid "NAME"
-msgstr ""
+msgstr "Calcul"
 
 #: ../../infrastructure/vdi/apps.rst:24
 msgid ""
 "Display name for the application (shown to end users in the Virtual "
 "Desktop Persona)"
-msgstr ""
+msgstr "Nom d'affichage de l'application (affiché aux utilisateurs finaux dans la persona Virtual Desktop)"
 
 #: ../../infrastructure/vdi/apps.rst:25
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/vdi/apps.rst:26
 msgid "Optional description of the application"
-msgstr ""
+msgstr "La page Infrastructure ``Hosts`` des versions précédentes a été renommée ``Compute`` et mise à jour avec les sections ``Container`` et ``Resource``."
 
 #: ../../infrastructure/vdi/apps.rst:27
 msgid "LAUNCH PREFIX"
-msgstr ""
+msgstr "La section `Infrastructure > Compute` offre une scène universelle pour afficher et gérer les Hôtes, les Machines virtuelles, les Conteneurs, les Ressources et le Bare Metal dans l'ensemble des Clouds."
 
 #: ../../infrastructure/vdi/apps.rst:28
 msgid ""
 "The RemoteApp program identifier. This **must** start with ``||`` "
 "followed by the application executable name."
-msgstr ""
+msgstr "Dans cette section, vous pouvez :"
 
 #: ../../infrastructure/vdi/apps.rst:30
 msgid "Examples:"
-msgstr ""
+msgstr "Afficher et gérer les Hôtes, les Machines virtuelles, les Conteneurs, les Ressources, le Bare Metal et les Hyperviseurs"
 
 #: ../../infrastructure/vdi/apps.rst:32
 msgid "``||notepad`` — Launches Notepad"
-msgstr ""
+msgstr "Ajouter manuellement des Machines virtuelles et des Hôtes bare metal"
 
 #: ../../infrastructure/vdi/apps.rst:33
 msgid "``||mstsc`` — Launches Remote Desktop Connection"
-msgstr ""
+msgstr "Convertir les Hôtes, les Machines virtuelles et le Bare Metal en Géré"
 
 #: ../../infrastructure/vdi/apps.rst:34
 msgid "``||winword`` — Launches Microsoft Word"
-msgstr ""
+msgstr "Hôtes"
 
 #: ../../infrastructure/vdi/apps.rst:35
 msgid "``||excel`` — Launches Microsoft Excel"
-msgstr ""
+msgstr "``||excel`` — Lance Microsoft Excel"
 
 #: ../../infrastructure/vdi/apps.rst:36
 msgid "``||chrome`` — Launches Google Chrome"
-msgstr ""
+msgstr "Filtres standard : :guilabel:`OS Type`"
 
 #: ../../infrastructure/vdi/apps.rst:38
 msgid "LOGO"
-msgstr ""
+msgstr "Filtres avancés : :guilabel:`Status` :guilabel:`Managed` :guilabel:`Server Type`"
 
 #: ../../infrastructure/vdi/apps.rst:39
 msgid ""
 "Upload a custom icon for the application. Supported formats: PNG, JPEG, "
 "SVG. The image is displayed at multiple resolutions (20x20, 42x42, 84x84 "
 "for HiDPI)."
-msgstr ""
+msgstr "Les Hôtes dans |morpheus| sont des Hyperviseurs et des hôtes Conteneur sur lesquels sont hébergées les VM et les Conteneurs, tels que les hôtes ESXi et les nœuds maîtres et de calcul Kubernetes. Ces hôtes proviennent de clouds intégrés, d'hôtes et de clusters provisionnés depuis Morpheus, ou d'hôtes ajoutés manuellement."
 
 #: ../../infrastructure/vdi/apps.rst:41 ../../infrastructure/vdi/apps.rst:51
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Le provisionnement de nouveaux hôtes s'effectue dans la section Infrastructure > Clusters de |morpheus|. Par exemple, le provisionnement d'un nouveau cluster Docker dans cette section lance la création d'un cluster Docker géré par |morpheus| avec un hôte (par défaut). Des hôtes supplémentaires et des structures personnalisées peuvent également être créés. Consultez la `section Clusters <https://docs.morpheusdata.com/en/latest/infrastructure/clusters/clusters.html>`_ de la documentation |morpheus| pour plus d'informations."
 
 #: ../../infrastructure/vdi/apps.rst:43
 msgid "Important"
-msgstr ""
+msgstr "Machines virtuelles"
 
 #: ../../infrastructure/vdi/apps.rst:43
 msgid ""
 "The Launch Prefix must begin with ``||`` (double pipe). This is the "
 "RemoteApp protocol prefix required by Guacamole. Entries without this "
 "prefix will fail validation."
-msgstr ""
+msgstr "Le préfixe de lancement doit commencer par ``||`` (double barre verticale). Il s'agit du préfixe de protocole RemoteApp requis par Guacamole. Les entrées sans ce préfixe échoueront à la validation."
 
 #: ../../infrastructure/vdi/apps.rst:46
 msgid "Editing a VDI App"
-msgstr ""
+msgstr "L'onglet Machines virtuelles répertorie toutes les VM gérées et non gérées dans |morpheus|. Les VM gérées sont soit provisionnées par |morpheus|, soit des VM inventoriées/découvertes converties en gérées. Les VM non gérées sont généralement des VM inventoriées/découvertes provenant d'intégrations Cloud."
 
 #: ../../infrastructure/vdi/apps.rst:48 ../../infrastructure/vdi/apps.rst:56
 msgid "Navigate to ``Tools > VDI Pools > Apps``"
-msgstr ""
+msgstr "**Changement de Cloud pour une machine virtuelle**"
 
 #: ../../infrastructure/vdi/apps.rst:49
 msgid "Click on the App name or select the edit action"
-msgstr ""
+msgstr "La fonctionnalité Change Cloud permet de réassocier un serveur à un nouveau Cloud, ce qui peut être nécessaire pour faciliter la tenue des registres dans |morpheus|. Pour utiliser cette fonctionnalité, l'utilisateur doit disposer de l'autorisation « Infrastructure: Move Servers » définie sur « Full »."
 
 #: ../../infrastructure/vdi/apps.rst:50
 msgid "Modify fields as needed"
-msgstr ""
+msgstr "Changer de Cloud peut être nécessaire, par exemple, lors du déplacement d'une VM d'un datacenter vCenter à un autre. Nous pouvons utiliser cet outil pour mettre à jour l'association Cloud dans |morpheus| également. D'autres scénarios peuvent inclure la migration de charges de travail d'un Cloud privé vers un Cloud public, ou même la création d'une toute nouvelle VM dans un nouveau Cloud représentant une charge de travail identique à une existante qui sera retirée."
 
 #: ../../infrastructure/vdi/apps.rst:54
 msgid "Deleting a VDI App"
-msgstr ""
+msgstr "Pour les Clouds VMware, la réaffectation de Cloud se produit automatiquement lorsqu'un serveur est migré d'un cluster à un autre ou d'un pool de ressources à un autre au sein du même cluster. Après la prochaine synchronisation Cloud, |morpheus| reflétera la migration effectuée dans vCenter. Dans ce scénario, vous ne devez pas utiliser les outils de changement de Cloud manuels. En fait, vous recevrez un avertissement dans les Journaux |morpheus| si vous tentez de le faire."
 
 #: ../../infrastructure/vdi/apps.rst:57
 msgid "Select the App to delete"
-msgstr ""
+msgstr "Pour changer de Cloud, accédez à la page de détail de la VM (:menuselection:`Infrastructure --> Compute --> Virtual Machines` > VM sélectionnée), cliquez sur le menu ACTIONS, puis sur Change Cloud. Vous pouvez sélectionner ici le Cloud cible et, en option, sélectionner une nouvelle VM dans laquelle fusionner la VM actuelle. L'essentiel à retenir est que cet outil sert uniquement à la tenue des registres dans |morpheus|. **Ce n'est pas un outil qui effectue la migration pour vous.** Consultez la vidéo intégrée ci-dessous pour une démonstration de cette fonctionnalité."
 
 #: ../../infrastructure/vdi/apps.rst:58
 msgid "Click :guilabel:`DELETE`"
-msgstr ""
+msgstr "Conteneurs"
 
 #: ../../infrastructure/vdi/apps.rst:59
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmez la suppression"
 
 #: ../../infrastructure/vdi/apps.rst:62
 msgid "Using VDI Apps"
-msgstr ""
+msgstr "Filtres standard : :guilabel:`Container Type` :guilabel:`Cloud`"
 
 #: ../../infrastructure/vdi/apps.rst:64
 msgid "End users access VDI Apps through the Virtual Desktop Persona:"
-msgstr ""
+msgstr "L'onglet conteneurs répertorie tous les Conteneurs associés aux Instances |morpheus| accessibles à l'utilisateur. Notez que les conteneurs système supplémentaires des clusters Kubernetes et Docker ne sont pas répertoriés ici, mais sont accessibles dans les sections de détail des Clusters."
 
 #: ../../infrastructure/vdi/apps.rst:66
 msgid "User logs into |morpheus| and switches to the Virtual Desktop Persona"
-msgstr ""
+msgstr "Ressources"
 
 #: ../../infrastructure/vdi/apps.rst:67
 msgid "Available VDI Apps are displayed with their configured icons"
-msgstr ""
+msgstr "Les applications VDI disponibles sont affichées avec leurs icônes configurées"
 
 #: ../../infrastructure/vdi/apps.rst:68
 msgid ""
 "Clicking an App icon launches an RDP session directly into the specified "
 "application"
-msgstr ""
+msgstr "Filtres standard : :guilabel:`Resource Type` :guilabel:`Cloud`"
 
 #: ../../infrastructure/vdi/apps.rst:69
 msgid ""
 "The session connects to an available VDI Pool allocation and opens the "
 "RemoteApp"
-msgstr ""
+msgstr "Les Ressources représentent des objets qui ne correspondent pas aux types VM ou Conteneur dans |morpheus|, tels que les ressources IAC de Terraform, CloudFormation ou de modèles ARM comme les VPC, Passerelles, Utilisateurs, Règles, Brokers, API, Points de terminaison, Répertoires, ACL, Routes... en fait, tout. Toutes les ressources créées à partir de modèles IAC sont mappées aux types de ressources du fournisseur IAC et |morpheus| maintient un enregistrement d'objet ressource à partir de la ressource mappée."
 
 #: ../../infrastructure/vdi/apps.rst:71
 msgid "VDI Apps work in conjunction with VDI Pools:"
-msgstr ""
+msgstr "Développez le tableau **Types de ressources** ci-dessous pour voir tous les types de ressources qui seront mappés à des objets Ressource dans |morpheus| :"
 
 #: ../../infrastructure/vdi/apps.rst:73
 msgid "The App defines *what* application to open"
-msgstr ""
+msgstr "Les types de ressources suivants sont mappés lors du provisionnement de modèles IAC, y compris les modèles Terraform et CloudFormation."
 
 #: ../../infrastructure/vdi/apps.rst:74
 msgid "The Pool provides *where* (which VM) the application runs"
-msgstr ""
+msgstr "ICÔNE"
 
 #: ../../infrastructure/vdi/apps.rst:75
 msgid "Allocations manage *which user* gets *which VM*"
-msgstr ""
+msgstr "NOM DE LA RESSOURCE"
 
 #: ../../infrastructure/vdi/apps.rst:78
 msgid "Requirements for RemoteApp"
-msgstr ""
+msgstr "FOURNISSEUR"
 
 #: ../../infrastructure/vdi/apps.rst:80
 msgid ""
 "For VDI Apps to function correctly, the Windows VDI template must be "
 "configured for RemoteApp:"
-msgstr ""
+msgstr "Pour que les applications VDI fonctionnent correctement, le modèle VDI Windows doit être configuré pour RemoteApp :"
 
 #: ../../infrastructure/vdi/apps.rst:82
 msgid "The target application must be installed on the VDI template/image"
-msgstr ""
+msgstr "TYPE MORPHEUS"
 
 #: ../../infrastructure/vdi/apps.rst:83
 msgid ""
 "The application must be registered as a RemoteApp program on the Windows "
 "host"
-msgstr ""
+msgstr "L'application doit être enregistrée comme programme RemoteApp sur l'hôte Windows"
 
 #: ../../infrastructure/vdi/apps.rst:84
 msgid "The RDP configuration must allow RemoteApp connections"
-msgstr ""
+msgstr "Accessanalyzer Analyseur"
 
 #: ../../infrastructure/vdi/apps.rst:86
 msgid "To register an application as a RemoteApp on Windows Server:"
-msgstr ""
+msgstr "Pour enregistrer une application comme RemoteApp sur Windows Server :"
 
 #: ../../infrastructure/vdi/apps.rst:88
 msgid ""
@@ -263,39 +263,39 @@ msgstr ""
 
 #: ../../infrastructure/vdi/apps.rst:93
 msgid "For Windows 10/11 desktops, configure via Group Policy or registry:"
-msgstr ""
+msgstr "Pour les bureaux Windows 10/11, configurez via la stratégie de groupe ou le registre :"
 
 #: ../../infrastructure/vdi/apps.rst:95
 msgid ""
 "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Terminal "
 "Server\\TSAppAllowList"
-msgstr ""
+msgstr "Certificat ACM"
 
 #: ../../infrastructure/vdi/apps.rst:100
 msgid "API Reference"
-msgstr ""
+msgstr "Référence API"
 
 #: ../../infrastructure/vdi/apps.rst:102
 msgid "VDI Apps are also manageable via the |morpheus| API:"
-msgstr ""
+msgstr "Validation de certificat ACM"
 
 #: ../../infrastructure/vdi/apps.rst:104
 msgid "``GET /api/vdi-apps`` — List all VDI Apps"
-msgstr ""
+msgstr "``GET /api/vdi-apps`` — Lister toutes les applications VDI"
 
 #: ../../infrastructure/vdi/apps.rst:105
 msgid "``GET /api/vdi-apps/:id`` — Get a specific VDI App"
-msgstr ""
+msgstr "Autorité de certification ACM PCA"
 
 #: ../../infrastructure/vdi/apps.rst:106
 msgid "``POST /api/vdi-apps`` — Create a VDI App"
-msgstr ""
+msgstr "``POST /api/vdi-apps`` — Créer une application VDI"
 
 #: ../../infrastructure/vdi/apps.rst:107
 msgid "``PUT /api/vdi-apps/:id`` — Update a VDI App"
-msgstr ""
+msgstr "``PUT /api/vdi-apps/:id`` — Mettre à jour une application VDI"
 
 #: ../../infrastructure/vdi/apps.rst:108
 msgid "``DELETE /api/vdi-apps/:id`` — Delete a VDI App"
-msgstr ""
+msgstr "Protection avancée contre les menaces"
 

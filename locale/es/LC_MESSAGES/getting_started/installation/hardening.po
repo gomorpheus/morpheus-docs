@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../getting_started/installation/hardening.rst:2
 msgid "Appliance Security & Hardening"
-msgstr ""
+msgstr "Seguridad y endurecimiento del dispositivo"
 
 #: ../../getting_started/installation/hardening.rst:4
 msgid ""
 "This section covers security considerations for the |morpheus| appliance "
 "installation, including database encryption, key rotation, and hardening "
 "recommendations."
-msgstr ""
+msgstr "Esta sección cubre consideraciones de seguridad para la instalación del dispositivo |morpheus|, incluyendo cifrado de base de datos, rotación de claves y recomendaciones de endurecimiento."
 
 #: ../../getting_started/installation/hardening.rst:7
 msgid "Compliance and Control Boundaries"
-msgstr ""
+msgstr "Límites de cumplimiento y control"
 
 #: ../../getting_started/installation/hardening.rst:9
 msgid ""
@@ -43,7 +43,7 @@ msgid ""
 "automated remediation profile, compliance dashboard, or centralized host-"
 "firewall policy is bundled as evidence for such a claim in this "
 "documentation."
-msgstr ""
+msgstr "Esta guía no es una declaración de que el VME Manager o cada imagen de Host HVM esté certificada contra un CIS Benchmark, DISA STIG u otro marco de cumplimiento. No se incluye como evidencia para tal afirmación en esta documentación un nombre/versión de benchmark, informe de evaluación, perfil de remediación automatizada, panel de cumplimiento ni política centralizada de firewall del host."
 
 #: ../../getting_started/installation/hardening.rst:11
 msgid ""
@@ -54,40 +54,40 @@ msgid ""
 "cluster layout, and enabled integrations. Where a contract requires a "
 "certification or attestation, obtain the current artifact from HPE rather"
 " than treating these recommendations as an attestation."
-msgstr ""
+msgstr "El cliente es responsable de seleccionar el marco de control aplicable, línea base del sistema operativo, política de red, controles de identidad, gestión de vulnerabilidades, recopilación de evidencia y proceso de excepciones. Valide los controles contra la versión exacta del Manager, versión de HVM OS, layout de clúster e integraciones habilitadas. Donde un contrato requiera certificación o attestación, obtenga el artefacto actual de HPE en lugar de tratar estas recomendaciones como attestación."
 
 #: ../../getting_started/installation/hardening.rst:13
 msgid ""
 "The product exposes security-related capabilities, but capability is not "
 "certification:"
-msgstr ""
+msgstr "El producto expone capacidades relacionadas con seguridad, pero capacidad no es certificación:"
 
 #: ../../getting_started/installation/hardening.rst:15
 msgid ""
 "Manager TLS, authentication, RBAC, encrypted credential storage, and "
 "audit/activity data can contribute to a customer control implementation."
-msgstr ""
+msgstr "TLS del Manager, autenticación, RBAC, almacenamiento cifrado de credenciales y datos de auditoría/actividad pueden contribuir a una implementación de control del cliente."
 
 #: ../../getting_started/installation/hardening.rst:16
 msgid ""
 "HVM host firewall policy remains environment- and image-specific; see "
 ":ref:`hvm-host-prep` and validate every required cluster communication "
 "before enforcement."
-msgstr ""
+msgstr "La política de firewall del host HVM permanece específica del entorno e imagen; consulte :ref:`hvm-host-prep` y valide toda comunicación de clúster requerida antes de la aplicación."
 
 #: ../../getting_started/installation/hardening.rst:17
 msgid ""
 "FIPS-related packages or modes must be evaluated for the exact release "
 "and cryptographic boundary. Enabling a FIPS mode does not by itself make "
 "the complete deployment compliant."
-msgstr ""
+msgstr "Los paquetes o modos relacionados con FIPS deben evaluarse para la versión exacta y el límite criptográfico. Habilitar un modo FIPS no hace por sí solo que la implementación completa sea conforme."
 
 #: ../../getting_started/installation/hardening.rst:18
 msgid ""
 "No shipped evidence in this guide establishes integrated Manager "
 "orchestration of host firewall rules, automated CIS/STIG scanning, "
 "compliance scoring, or automatic remediation."
-msgstr ""
+msgstr "Ninguna evidencia incluida en esta guía establece orquestación integrada del Manager de reglas de firewall del host, escaneo automatizado CIS/STIG, puntuación de cumplimiento o remediación automática."
 
 #: ../../getting_started/installation/hardening.rst:20
 msgid ""
@@ -96,66 +96,66 @@ msgid ""
 "recovery path. If a control interrupts Manager, Agent quorum, Corosync, "
 "storage, migration, or workload networking, restore the approved "
 "configuration and investigate before continuing."
-msgstr ""
+msgstr "Aplique el endurecimiento primero en un entorno no productivo. Registre la configuración anterior y mantenga acceso a consola u otra ruta de recuperación probada. Si un control interrumpe Manager, quorum del Agente, Corosync, almacenamiento, migración o red de cargas de trabajo, restaure la configuración aprobada e investigue antes de continuar."
 
 #: ../../getting_started/installation/hardening.rst:23
 msgid "Database Encryption"
-msgstr ""
+msgstr "Cifrado de base de datos"
 
 #: ../../getting_started/installation/hardening.rst:25
 msgid ""
 "|morpheus| automatically encrypts all sensitive data stored in the "
 "application database using **AES-256-GCM** encryption. This includes:"
-msgstr ""
+msgstr "|morpheus| cifra automáticamente todos los datos sensibles almacenados en la base de datos de la aplicación utilizando cifrado **AES-256-GCM**. Esto incluye:"
 
 #: ../../getting_started/installation/hardening.rst:27
 msgid "Cloud integration credentials (service passwords, API keys)"
-msgstr ""
+msgstr "Credenciales de integración de Nube (contraseñas de servicio, claves de API)"
 
 #: ../../getting_started/installation/hardening.rst:28
 msgid "Compute server access passwords and console passwords"
-msgstr ""
+msgstr "Contraseñas de acceso a servidores de compute y contraseñas de consola"
 
 #: ../../getting_started/installation/hardening.rst:29
 msgid "Integration and storage provider credentials"
-msgstr ""
+msgstr "Credenciales de integración y proveedores de almacenamiento"
 
 #: ../../getting_started/installation/hardening.rst:30
 msgid "Container registry passwords"
-msgstr ""
+msgstr "Contraseñas de registro de contenedores"
 
 #: ../../getting_started/installation/hardening.rst:31
 msgid "Security endpoint credentials"
-msgstr ""
+msgstr "Credenciales de endpoints de seguridad"
 
 #: ../../getting_started/installation/hardening.rst:32
 msgid "All credential store entries"
-msgstr ""
+msgstr "Todas las entradas del almacén de credenciales"
 
 #: ../../getting_started/installation/hardening.rst:34
 msgid ""
 "Encryption is transparent — data is encrypted on write and decrypted on "
 "read at the application layer. The database itself only stores "
 "ciphertext."
-msgstr ""
+msgstr "El cifrado es transparente: los datos se cifran al escribir y se descifran al leer en la capa de aplicación. La base de datos solo almacena texto cifrado."
 
 #: ../../getting_started/installation/hardening.rst:37
 msgid "Encryption Key Architecture"
-msgstr ""
+msgstr "Arquitectura de clave de cifrado"
 
 #: ../../getting_started/installation/hardening.rst:39
 msgid "The encryption system uses a two-part key:"
-msgstr ""
+msgstr "El sistema de cifrado utiliza una clave de dos partes:"
 
 #: ../../getting_started/installation/hardening.rst:41
 msgid "**Base key** — Built into the application"
-msgstr ""
+msgstr "**Clave base** — Integrada en la aplicación"
 
 #: ../../getting_started/installation/hardening.rst:42
 msgid ""
 "**Key suffix** — A customer-configurable value set in "
 "``/etc/morpheus/morpheus.rb``"
-msgstr ""
+msgstr "**Sufijo de clave** — Un valor configurable por el cliente establecido en ``/etc/morpheus/morpheus.rb``"
 
 #: ../../getting_started/installation/hardening.rst:44
 msgid ""
@@ -163,23 +163,23 @@ msgid ""
 "deriving the AES-256 encryption key. Each encrypted value also includes a"
 " unique random salt, ensuring that identical plaintext values produce "
 "different ciphertext."
-msgstr ""
+msgstr "Cuando se configura un sufijo de clave, se concatena a la clave base antes de derivar la clave de cifrado AES-256. Cada valor cifrado también incluye una sal aleatoria única, garantizando que valores de texto plano idénticos produzcan texto cifrado diferente."
 
 #: ../../getting_started/installation/hardening.rst:47
 msgid "Configuring the Encryption Key Suffix"
-msgstr ""
+msgstr "Configuración del sufijo de clave de cifrado"
 
 #: ../../getting_started/installation/hardening.rst:49
 msgid "To set or change the encryption key suffix:"
-msgstr ""
+msgstr "Para establecer o cambiar el sufijo de clave de cifrado:"
 
 #: ../../getting_started/installation/hardening.rst:51
 msgid "Edit ``/etc/morpheus/morpheus.rb``"
-msgstr ""
+msgstr "Edite ``/etc/morpheus/morpheus.rb``"
 
 #: ../../getting_started/installation/hardening.rst:52
 msgid "Add or update the encryption key suffix setting:"
-msgstr ""
+msgstr "Agregue o actualice la configuración del sufijo de clave de cifrado:"
 
 #: ../../getting_started/installation/hardening.rst:54
 msgid "morpheus['encryptionKeySuffix'] = 'your-unique-secret-value'"
@@ -187,7 +187,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hardening.rst:58
 msgid "Run reconfigure to apply:"
-msgstr ""
+msgstr "Ejecute reconfigure para aplicar:"
 
 #: ../../getting_started/installation/hardening.rst:60
 msgid "sudo morpheus-ctl reconfigure"
@@ -195,7 +195,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hardening.rst:64
 msgid "Restart the application:"
-msgstr ""
+msgstr "Reinicie la aplicación:"
 
 #: ../../getting_started/installation/hardening.rst:66
 msgid "sudo morpheus-ctl restart morpheus-ui"
@@ -206,61 +206,61 @@ msgid ""
 "On the next application startup, |morpheus| automatically **re-encrypts "
 "all sensitive database fields** using the new key. This process runs once"
 " during bootstrap and covers all credential types across the system."
-msgstr ""
+msgstr "En el próximo inicio de la aplicación, |morpheus| **vuelve a cifrar automáticamente todos los campos sensibles de la base de datos** utilizando la nueva clave. Este proceso se ejecuta una vez durante el bootstrap y cubre todos los tipos de credenciales del sistema."
 
 #: ../../getting_started/installation/hardening.rst:72
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/hardening.rst:72
 msgid ""
 "Store the encryption key suffix securely. If this value is lost and the "
 "database needs to be restored to a new appliance, encrypted credentials "
 "cannot be recovered without the original key suffix."
-msgstr ""
+msgstr "Almacene el sufijo de clave de cifrado de forma segura. Si se pierde este valor y la base de datos debe restaurarse en un dispositivo nuevo, las credenciales cifradas no pueden recuperarse sin el sufijo de clave original."
 
 #: ../../getting_started/installation/hardening.rst:74
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../getting_started/installation/hardening.rst:74
 msgid ""
 "In a high-availability (HA) deployment, all application nodes must have "
 "the same ``encryptionKeySuffix`` value in their ``morpheus.rb``. "
 "Mismatched keys between nodes will cause decryption failures."
-msgstr ""
+msgstr "En una implementación de alta disponibilidad (HA), todos los nodos de aplicación deben tener el mismo valor ``encryptionKeySuffix`` en su ``morpheus.rb``. Claves no coincidentes entre nodos causarán fallos de descifrado."
 
 #: ../../getting_started/installation/hardening.rst:77
 msgid "Rotating the Encryption Key"
-msgstr ""
+msgstr "Rotación de la clave de cifrado"
 
 #: ../../getting_started/installation/hardening.rst:79
 msgid "To rotate the encryption key:"
-msgstr ""
+msgstr "Para rotar la clave de cifrado:"
 
 #: ../../getting_started/installation/hardening.rst:81
 msgid "Choose a new key suffix value"
-msgstr ""
+msgstr "Elija un nuevo valor de sufijo de clave"
 
 #: ../../getting_started/installation/hardening.rst:82
 msgid ""
 "Update ``/etc/morpheus/morpheus.rb`` on all appliance nodes with the new "
 "value"
-msgstr ""
+msgstr "Actualice ``/etc/morpheus/morpheus.rb`` en todos los nodos del dispositivo con el nuevo valor"
 
 #: ../../getting_started/installation/hardening.rst:83
 msgid "Restart the application on each node"
-msgstr ""
+msgstr "Reinicie la aplicación en cada nodo"
 
 #: ../../getting_started/installation/hardening.rst:85
 msgid ""
 "The application will detect the key change and re-encrypt all sensitive "
 "fields with the new key on startup. No manual migration is required."
-msgstr ""
+msgstr "La aplicación detectará el cambio de clave y volverá a cifrar todos los campos sensibles con la nueva clave al iniciar. No se requiere migración manual."
 
 #: ../../getting_started/installation/hardening.rst:87
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/installation/hardening.rst:87
 msgid ""
@@ -268,80 +268,80 @@ msgid ""
 "encryption process (which runs at startup), the application is not "
 "serving requests. For large deployments with many stored credentials, "
 "this may take a few minutes."
-msgstr ""
+msgstr "La rotación de claves requiere un breve reinicio de la aplicación. Durante el proceso de recifrado (que se ejecuta al iniciar), la aplicación no atiende solicitudes. Para implementaciones grandes con muchas credenciales almacenadas, esto puede tardar unos minutos."
 
 #: ../../getting_started/installation/hardening.rst:90
 msgid "Cypher Secrets Engine"
-msgstr ""
+msgstr "Motor de secretos Cypher"
 
 #: ../../getting_started/installation/hardening.rst:92
 msgid ""
 "In addition to database-level encryption, |morpheus| provides a dedicated"
 " secrets engine called **Cypher** (accessible at |TooCyp|). Cypher "
 "provides:"
-msgstr ""
+msgstr "Además del cifrado a nivel de base de datos, |morpheus| proporciona un motor de secretos dedicado llamado **Cypher** (accesible en |TooCyp|). Cypher proporciona:"
 
 #: ../../getting_started/installation/hardening.rst:94
 msgid "Per-secret encryption with unique per-item keys"
-msgstr ""
+msgstr "Cifrado por secreto con claves únicas por elemento"
 
 #: ../../getting_started/installation/hardening.rst:95
 msgid "TTL-based lease management with automatic expiration"
-msgstr ""
+msgstr "Gestión de concesiones basada en TTL con expiración automática"
 
 #: ../../getting_started/installation/hardening.rst:96
 msgid "Mount-path-based access control"
-msgstr ""
+msgstr "Control de acceso basado en ruta de montaje"
 
 #: ../../getting_started/installation/hardening.rst:97
 msgid ""
 "Integration with infrastructure credential management (see "
 ":doc:`/infrastructure/servers/credentials`)"
-msgstr ""
+msgstr "Integración con administración de credenciales de infraestructura (consulte :doc:`/infrastructure/servers/credentials`)"
 
 #: ../../getting_started/installation/hardening.rst:99
 msgid ""
 "Cypher secrets are encrypted independently from database field encryption"
 " and use their own key material."
-msgstr ""
+msgstr "Los secretos Cypher se cifran independientemente del cifrado de campos de base de datos y utilizan su propio material de clave."
 
 #: ../../getting_started/installation/hardening.rst:102
 msgid "Hardening Recommendations"
-msgstr ""
+msgstr "Recomendaciones de endurecimiento"
 
 #: ../../getting_started/installation/hardening.rst:105
 msgid "Network Access"
-msgstr ""
+msgstr "Acceso de red"
 
 #: ../../getting_started/installation/hardening.rst:107
 msgid "Restrict management access (ports 443, 80) to authorized networks only"
-msgstr ""
+msgstr "Restrinja el acceso de administración (puertos 443, 80) solo a redes autorizadas"
 
 #: ../../getting_started/installation/hardening.rst:108
 msgid "Use a firewall or security group to limit access to the appliance"
-msgstr ""
+msgstr "Utilice un firewall o grupo de seguridad para limitar el acceso al dispositivo"
 
 #: ../../getting_started/installation/hardening.rst:109
 msgid ""
 "Place the appliance behind a load balancer with TLS termination for HA "
 "deployments"
-msgstr ""
+msgstr "Coloque el dispositivo detrás de un balanceador de carga con terminación TLS para implementaciones HA"
 
 #: ../../getting_started/installation/hardening.rst:110
 msgid "Restrict SSH access (port 22) to administrative users only"
-msgstr ""
+msgstr "Restrinja el acceso SSH (puerto 22) solo a usuarios administrativos"
 
 #: ../../getting_started/installation/hardening.rst:113
 msgid "TLS Configuration"
-msgstr ""
+msgstr "Configuración TLS"
 
 #: ../../getting_started/installation/hardening.rst:115
 msgid "Replace the self-signed certificate with a valid CA-signed certificate"
-msgstr ""
+msgstr "Reemplace el certificado autofirmado con un certificado válido firmado por CA"
 
 #: ../../getting_started/installation/hardening.rst:116
 msgid "Configure TLS in ``/etc/morpheus/morpheus.rb``:"
-msgstr ""
+msgstr "Configure TLS en ``/etc/morpheus/morpheus.rb``:"
 
 #: ../../getting_started/installation/hardening.rst:118
 msgid ""
@@ -351,117 +351,117 @@ msgstr ""
 
 #: ../../getting_started/installation/hardening.rst:123
 msgid "Run ``sudo morpheus-ctl reconfigure`` after certificate changes"
-msgstr ""
+msgstr "Ejecute ``sudo morpheus-ctl reconfigure`` después de cambios de certificado"
 
 #: ../../getting_started/installation/hardening.rst:126
 msgid "Authentication"
-msgstr ""
+msgstr "Autenticación"
 
 #: ../../getting_started/installation/hardening.rst:128
 msgid ""
 "Integrate with an enterprise identity provider (Active Directory, LDAP, "
 "SAML, or OIDC) rather than relying solely on local accounts"
-msgstr ""
+msgstr "Integre con un proveedor de identidad empresarial (Active Directory, LDAP, SAML u OIDC) en lugar de depender únicamente de cuentas locales"
 
 #: ../../getting_started/installation/hardening.rst:129
 msgid "Enforce MFA through your identity provider"
-msgstr ""
+msgstr "Imponga MFA a través de su proveedor de identidad"
 
 #: ../../getting_started/installation/hardening.rst:130
 msgid "Set strong password policies for any local accounts"
-msgstr ""
+msgstr "Establezca políticas de contraseña sólidas para cualquier cuenta local"
 
 #: ../../getting_started/installation/hardening.rst:131
 msgid "Disable or lock unused default accounts"
-msgstr ""
+msgstr "Deshabilite o bloquee cuentas predeterminadas no utilizadas"
 
 #: ../../getting_started/installation/hardening.rst:132
 msgid "Use API tokens with appropriate expiration for service integrations"
-msgstr ""
+msgstr "Utilice tokens de API con expiración apropiada para integraciones de servicio"
 
 #: ../../getting_started/installation/hardening.rst:135
 msgid "Role-Based Access"
-msgstr ""
+msgstr "Acceso basado en roles"
 
 #: ../../getting_started/installation/hardening.rst:137
 msgid ""
 "Apply the principle of least privilege — assign the minimum permissions "
 "required for each role"
-msgstr ""
+msgstr "Aplique el principio de mínimo privilegio: asigne los permisos mínimos requeridos para cada rol"
 
 #: ../../getting_started/installation/hardening.rst:138
 msgid "Use Tenant Roles to restrict Subtenant capabilities"
-msgstr ""
+msgstr "Utilice Roles de Inquilino para restringir capacidades de Subinquilino"
 
 #: ../../getting_started/installation/hardening.rst:139
 msgid "Audit role assignments regularly"
-msgstr ""
+msgstr "Audite asignaciones de roles regularmente"
 
 #: ../../getting_started/installation/hardening.rst:140
 msgid ""
 "Set sensitive permissions (Admin: Appliance Settings, Admin: Backup "
 "Settings) to None or Read for non-administrator roles"
-msgstr ""
+msgstr "Configure permisos sensibles (Admin: Appliance Settings, Admin: Backup Settings) en None o Read para roles no administradores"
 
 #: ../../getting_started/installation/hardening.rst:143
 msgid "Service Account Security"
-msgstr ""
+msgstr "Seguridad de cuentas de servicio"
 
 #: ../../getting_started/installation/hardening.rst:145
 msgid ""
 "Always configure the ``encryptionKeySuffix`` in production deployments "
 "(do not rely on the default key alone)"
-msgstr ""
+msgstr "Configure siempre ``encryptionKeySuffix`` en implementaciones productivas (no confíe únicamente en la clave predeterminada)"
 
 #: ../../getting_started/installation/hardening.rst:146
 msgid ""
 "Use Cypher or an external credential store for integration passwords "
 "rather than entering them inline"
-msgstr ""
+msgstr "Utilice Cypher o un almacén de credenciales externo para contraseñas de integración en lugar de ingresarlas en línea"
 
 #: ../../getting_started/installation/hardening.rst:147
 msgid "Rotate cloud integration credentials periodically"
-msgstr ""
+msgstr "Rote credenciales de integración de Nube periódicamente"
 
 #: ../../getting_started/installation/hardening.rst:148
 msgid "Audit integration credential access through the activity log"
-msgstr ""
+msgstr "Audite el acceso a credenciales de integración a través del log de actividad"
 
 #: ../../getting_started/installation/hardening.rst:151
 msgid "Appliance Updates"
-msgstr ""
+msgstr "Actualizaciones del dispositivo"
 
 #: ../../getting_started/installation/hardening.rst:153
 msgid "Keep the |morpheus| appliance on the latest supported release"
-msgstr ""
+msgstr "Mantenga el dispositivo |morpheus| en la versión compatible más reciente"
 
 #: ../../getting_started/installation/hardening.rst:154
 msgid "Subscribe to security advisories for timely awareness of vulnerabilities"
-msgstr ""
+msgstr "Suscríbase a avisos de seguridad para conocimiento oportuno de vulnerabilidades"
 
 #: ../../getting_started/installation/hardening.rst:155
 msgid "Test updates in a non-production environment before applying to production"
-msgstr ""
+msgstr "Pruebe actualizaciones en un entorno no productivo antes de aplicarlas a producción"
 
 #: ../../getting_started/installation/hardening.rst:158
 msgid "Backup Security"
-msgstr ""
+msgstr "Seguridad de backup"
 
 #: ../../getting_started/installation/hardening.rst:160
 msgid "Encrypt appliance backups at rest"
-msgstr ""
+msgstr "Cifre los backups del dispositivo en reposo"
 
 #: ../../getting_started/installation/hardening.rst:161
 msgid "Store backups in a separate location from the appliance"
-msgstr ""
+msgstr "Almacene backups en una ubicación separada del dispositivo"
 
 #: ../../getting_started/installation/hardening.rst:162
 msgid ""
 "Protect backup storage with access controls — backups contain encrypted "
 "credentials that could be targeted"
-msgstr ""
+msgstr "Proteja el almacenamiento de backup con controles de acceso: los backups contienen credenciales cifradas que podrían ser objetivo"
 
 #: ../../getting_started/installation/hardening.rst:163
 msgid "Test backup restoration periodically to verify encryption key availability"
-msgstr ""
+msgstr "Pruebe la restauración de backup periódicamente para verificar disponibilidad de la clave de cifrado"
 

@@ -46,7 +46,7 @@ msgid ""
 "This page covers multi-site stretch clusters with site groups. For a two-"
 "Host, single-site GFS2 cluster using a quorum-only witness, see "
 ":doc:`two_node_clusters`."
-msgstr ""
+msgstr "Esta página cubre clústers stretch multisitio con grupos de sitio. Para un clúster GFS2 de un solo sitio con dos Hosts y un testigo de solo quórum, consulte :doc:`two_node_clusters`."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:12
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:202
@@ -110,7 +110,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:86
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:219
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:32
 msgid ""
@@ -119,7 +119,7 @@ msgid ""
 "base URL |morpheus| uses to generate the ``witnessUrl`` sent to the "
 "Hosts. The Worker's outbound connection to the |morpheus| appliance is "
 "not sufficient for witness operation."
-msgstr ""
+msgstr "La **Worker URL** del registro Distributed Worker debe ser una URL estable que cada Host en ambos sitios pueda resolver, alcanzar y confiar. Esta es la URL base que |morpheus| usa para generar el ``witnessUrl`` enviado a los Hosts. La conexión saliente del Worker al dispositivo |morpheus| no es suficiente para la operación del testigo."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:35
 msgid "Creating the Worker Configuration"
@@ -127,7 +127,7 @@ msgstr "Creating el Worker Configuración"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:37
 msgid "Navigate to |AdmIntDis|"
-msgstr ""
+msgstr "Navegue a |AdmIntDis|"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:38
 msgid "Create a new worker configuration"
@@ -137,7 +137,7 @@ msgstr "Crear un nuevo worker configuración"
 msgid ""
 "Set **Worker URL** to the HTTPS URL exposed by the Worker at the third "
 "site"
-msgstr ""
+msgstr "Configure **Worker URL** con la URL HTTPS expuesta por el Worker en el tercer sitio"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:40
 msgid "Save the API key provided"
@@ -199,7 +199,7 @@ msgstr "morpheus-worker-ctl tail worker"
 msgid ""
 "From every cluster Host, verify DNS resolution and TLS connectivity to "
 "the Worker URL. For example:"
-msgstr ""
+msgstr "Desde cada Host del clúster, verifique la resolución DNS y la conectividad TLS con la Worker URL. Por ejemplo:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:76
 msgid ""
@@ -212,7 +212,7 @@ msgid ""
 "An HTTP error response still confirms the network and TLS path when the "
 "base URL has no page. Do not use ``--insecure`` for production "
 "validation; certificate trust is part of the witness requirement."
-msgstr ""
+msgstr "Una respuesta de error HTTP aún confirma la ruta de red y TLS cuando la URL base no tiene página. No use ``--insecure`` para la validación en producción; la confianza del certificado forma parte del requisito del testigo."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:84
 msgid "Cluster Deployment for Stretch"
@@ -257,7 +257,7 @@ msgstr "Click :guilabel:`Guardar cambios`"
 msgid ""
 "When site groups exist, |morpheus| represents the selected Worker as the "
 "``siteWitness`` quorum member. Do not create this group manually."
-msgstr ""
+msgstr "Cuando existen grupos de sitio, |morpheus| representa el Worker seleccionado como miembro de quórum ``siteWitness``. No cree este grupo manualmente."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:97
 msgid "Adding HPE Clustered Datastore (Shared LUN)"
@@ -274,7 +274,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:101
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:197
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:101
 msgid ""
@@ -286,75 +286,75 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:104
 msgid "Witness Validation and Troubleshooting"
-msgstr ""
+msgstr "Validación y solución de problemas del testigo"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:106
 msgid "After assigning the witness and adding GFS2 shared storage:"
-msgstr ""
+msgstr "Después de asignar el testigo y agregar almacenamiento compartido GFS2:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:108
 msgid "Confirm that the Distributed Worker is active in |AdmIntDis|."
-msgstr ""
+msgstr "Confirme que el Distributed Worker esté activo en |AdmIntDis|."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:109
 msgid ""
 "Open the cluster Quorum panel and confirm that the witness is listed as "
 "reachable."
-msgstr ""
+msgstr "Abra el panel Quorum del clúster y confirme que el testigo aparece como accesible."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:110
 msgid ""
 "From every Host, repeat DNS and TLS checks against the configured Worker "
 "URL."
-msgstr ""
+msgstr "Desde cada Host, repita las comprobaciones DNS y TLS contra la Worker URL configurada."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:111
 msgid ""
 "Review ``morpheus-worker-ctl tail worker`` on a package installation or "
 "``docker logs morpheus-worker`` for a container installation."
-msgstr ""
+msgstr "Revise ``morpheus-worker-ctl tail worker`` en una instalación por paquete o ``docker logs morpheus-worker`` para una instalación en contenedor."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:112
 msgid ""
 "Review the |morpheus| Agent logs on each Host for quorum and witness "
 "connection errors."
-msgstr ""
+msgstr "Revise los registros del Agente de |morpheus| en cada Host para detectar errores de quórum y conexión con el testigo."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:114
 msgid "Common failures include:"
-msgstr ""
+msgstr "Los fallos comunes incluyen:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:116
 msgid ""
 "**Worker active but witness unreachable:** The Worker can reach the "
 "Manager, but Hosts cannot reach the Worker URL. Correct DNS, routing, "
 "firewall, load-balancer, or certificate trust."
-msgstr ""
+msgstr "**Worker activo pero testigo inaccesible:** El Worker puede alcanzar el Manager, pero los Hosts no pueden alcanzar la Worker URL. Corrija DNS, enrutamiento, firewall, balanceador de carga o confianza del certificado."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:117
 msgid ""
 "**Witness absent from quorum:** Confirm the cluster has an HPE Shared "
 "File System (GFS2) datastore and the Worker is selected in the cluster "
 "Witness field."
-msgstr ""
+msgstr "**Testigo ausente del quórum:** Confirme que el clúster tiene un almacén de datos HPE Shared File System (GFS2) y que el Worker está seleccionado en el campo Witness del clúster."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:118
 msgid ""
 "**Certificate error:** Install a certificate trusted by every Host or "
 "correct the certificate chain served by the Worker or load balancer."
-msgstr ""
+msgstr "**Error de certificado:** Instale un certificado en el que confíe cada Host o corrija la cadena de certificados servida por el Worker o el balanceador de carga."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:119
 msgid ""
 "**Wrong URL:** Set the Distributed Worker record's Worker URL to the "
 "client-facing Worker endpoint, not the |morpheus| appliance URL."
-msgstr ""
+msgstr "**URL incorrecta:** Configure la Worker URL del registro Distributed Worker con el endpoint Worker orientado al cliente, no con la URL del dispositivo |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:120
 msgid ""
 "**Stretch assignment conflict:** Add the witness after cluster deployment"
 " and do not manually create a ``siteWitness`` group."
-msgstr ""
+msgstr "**Conflicto de asignación stretch:** Agregue el testigo después del despliegue del clúster y no cree manualmente un grupo ``siteWitness``."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:123
 msgid "Site Group Configuration"
@@ -397,7 +397,7 @@ msgstr "Repeat para el second site"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:136
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:136
 msgid ""
@@ -508,7 +508,7 @@ msgstr "Fenced nodos son rebooted y rejoin el cluster"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:183
 msgid "NFS-Based Stretch Clusters"
-msgstr ""
+msgstr "Clústers stretch basados en NFS"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:185
 msgid ""
@@ -517,37 +517,37 @@ msgid ""
 " approach is simpler to configure because it does not require Corosync, "
 "DLM, or the quorum/arbitration services — NFS handles concurrent access "
 "at the protocol level."
-msgstr ""
+msgstr "Como alternativa a HPE Clustered Datastores (LUN compartido), los clústers stretch pueden usar **almacenamiento respaldado por NFS** con conectividad multipath. Este enfoque es más sencillo de configurar porque no requiere Corosync, DLM ni los servicios de quórum/arbitraje — NFS gestiona el acceso concurrente a nivel de protocolo."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:188
 msgid "When to Use NFS for Stretch"
-msgstr ""
+msgstr "Cuándo usar NFS para stretch"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:190
 msgid "NFS-backed stretch clusters are appropriate when:"
-msgstr ""
+msgstr "Los clústers stretch respaldados por NFS son apropiados cuando:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:192
 msgid ""
 "You already have enterprise NFS infrastructure (e.g., NetApp, Pure "
 "Storage, Dell PowerScale) with multipath or multi-site replication"
-msgstr ""
+msgstr "Ya dispone de infraestructura NFS empresarial (p. ej., NetApp, Pure Storage, Dell PowerScale) con multipath o replicación multisitio"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:193
 msgid ""
 "You want to avoid the complexity of Corosync/DLM fencing and quorum "
 "management"
-msgstr ""
+msgstr "Desea evitar la complejidad del fencing Corosync/DLM y la gestión de quórum"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:194
 msgid ""
 "Your NFS appliance provides its own high availability (active/passive "
 "failover, synchronous replication across sites)"
-msgstr ""
+msgstr "Su appliance NFS proporciona su propia alta disponibilidad (conmutación por error activo/pasivo, replicación síncrona entre sitios)"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:195
 msgid "You need a simpler operational model with fewer moving parts"
-msgstr ""
+msgstr "Necesita un modelo operativo más simple con menos componentes móviles"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:199
 msgid ""
@@ -555,34 +555,34 @@ msgid ""
 "failover capabilities rather than the cluster-managed quorum system. "
 "Ensure your NFS infrastructure provides the level of availability your "
 "workloads require."
-msgstr ""
+msgstr "La contrapartida es que el comportamiento de HA depende de las propias capacidades de conmutación por error del appliance NFS en lugar del sistema de quórum gestionado por el clúster. Asegúrese de que su infraestructura NFS proporcione el nivel de disponibilidad que requieren sus cargas de trabajo."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:211
 msgid "Minimum 2 hosts (1 per site for basic stretch, more for capacity)"
-msgstr ""
+msgstr "Mínimo 2 hosts (1 por sitio para stretch básico, más para capacidad)"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:212
 msgid "NFS Storage"
-msgstr ""
+msgstr "Almacenamiento NFS"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:213
 msgid ""
 "Enterprise NFS appliance accessible from all hosts at both sites with "
 "multipath or replicated access"
-msgstr ""
+msgstr "Appliance NFS empresarial accesible desde todos los hosts en ambos sitios con acceso multipath o replicado"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:215
 msgid ""
 "All hosts must reach the NFS endpoint(s). Low-latency cross-site links "
 "are recommended for write-heavy workloads."
-msgstr ""
+msgstr "Todos los hosts deben alcanzar los endpoints NFS. Se recomiendan enlaces de baja latencia entre sitios para cargas de trabajo con muchas escrituras."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:217
 msgid ""
 "Optional. A witness is not strictly required since there is no Corosync "
 "quorum to arbitrate, but can still be configured for |morpheus|-level "
 "site awareness."
-msgstr ""
+msgstr "Opcional. Un testigo no es estrictamente necesario porque no hay quórum Corosync que arbitrar, pero aún puede configurarse para la conciencia de sitio a nivel de |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:221
 msgid ""
@@ -590,11 +590,11 @@ msgid ""
 "of endpoints for multipath) that is accessible from both sites "
 "simultaneously. If your NFS solution uses synchronous replication between"
 " sites, ensure both sites mount the same namespace."
-msgstr ""
+msgstr "El almacenamiento NFS debe presentarse como un endpoint montable único (o un par de endpoints para multipath) accesible desde ambos sitios simultáneamente. Si su solución NFS usa replicación síncrona entre sitios, asegúrese de que ambos sitios monten el mismo espacio de nombres."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:224
 msgid "Cluster Setup with NFS Storage"
-msgstr ""
+msgstr "Configuración del clúster con almacenamiento NFS"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:226
 #, fuzzy
@@ -609,7 +609,7 @@ msgstr ""
 msgid ""
 "When configuring storage, choose **NFS Pool** rather than HPE Clustered "
 "Datastore"
-msgstr ""
+msgstr "Al configurar el almacenamiento, elija **NFS Pool** en lugar de HPE Clustered Datastore"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:228
 #, fuzzy
@@ -630,21 +630,21 @@ msgstr "Click :guilabel:`Agregar`"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:232
 msgid "Select **NFS** as the type"
-msgstr ""
+msgstr "Seleccione **NFS** como tipo"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:233
 msgid "Enter the NFS server address and export path"
-msgstr ""
+msgstr "Introduzca la dirección del servidor NFS y la ruta de exportación"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:234
 msgid "The NFS mount is configured on all hosts in the cluster automatically"
-msgstr ""
+msgstr "El montaje NFS se configura automáticamente en todos los hosts del clúster"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:236
 msgid ""
 "If stretching across sites, ensure the NFS endpoint is reachable from "
 "hosts at both sites before adding hosts from the second site"
-msgstr ""
+msgstr "Si hace stretch entre sitios, asegúrese de que el endpoint NFS sea accesible desde los hosts en ambos sitios antes de agregar hosts del segundo sitio"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:239
 #, fuzzy
@@ -653,17 +653,17 @@ msgstr "Repeat para el second site"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:241
 msgid "Once the cluster is running with NFS storage at the primary site:"
-msgstr ""
+msgstr "Una vez que el clúster esté en ejecución con almacenamiento NFS en el sitio primario:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:243
 msgid ""
 "Prepare additional HVM hosts at the second site (see "
 ":doc:`/getting_started/installation/hvm_host_prep`)"
-msgstr ""
+msgstr "Prepare hosts HVM adicionales en el segundo sitio (consulte :doc:`/getting_started/installation/hvm_host_prep`)"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:244
 msgid "Ensure the NFS endpoint is mountable from the second site hosts"
-msgstr ""
+msgstr "Asegúrese de que el endpoint NFS sea montable desde los hosts del segundo sitio"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:245
 #, fuzzy
@@ -678,14 +678,14 @@ msgstr ""
 msgid ""
 "|morpheus| will configure the new hosts and mount the NFS datastore "
 "automatically"
-msgstr ""
+msgstr "|morpheus| configurará los nuevos hosts y montará el almacén de datos NFS automáticamente"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:248
 msgid ""
 "Workloads can now be migrated between hosts across sites using Live "
 "Migration, provided the NFS storage is accessible from both source and "
 "destination hosts."
-msgstr ""
+msgstr "Las cargas de trabajo pueden migrarse ahora entre hosts de distintos sitios mediante migración en vivo, siempre que el almacenamiento NFS sea accesible desde los hosts de origen y destino."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:251
 #, fuzzy
@@ -696,14 +696,14 @@ msgstr "Crear un nuevo worker configuración"
 msgid ""
 "For resilient NFS access across sites, configure multipath at the network"
 " or NFS appliance level:"
-msgstr ""
+msgstr "Para un acceso NFS resiliente entre sitios, configure multipath a nivel de red o del appliance NFS:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:255
 msgid ""
 "**Active/Active NFS endpoints** — If your NFS solution provides multiple "
 "access points (e.g., data LIFs across sites), configure DNS round-robin "
 "or a load-balanced VIP that routes to the nearest healthy endpoint"
-msgstr ""
+msgstr "**Endpoints NFS activo/activo** — Si su solución NFS proporciona múltiples puntos de acceso (p. ej., LIF de datos entre sitios), configure round-robin DNS o una VIP con balanceo de carga que enrute al endpoint sano más cercano"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:256
 msgid ""
@@ -711,7 +711,7 @@ msgid ""
 "sites, ensure the failover IP/VIP is consistent and that hosts reconnect "
 "automatically after failover (standard NFS client behavior with ``hard`` "
 "mount option)"
-msgstr ""
+msgstr "**Conmutación por error activo/pasivo** — Si el appliance NFS conmuta por error entre sitios, asegúrese de que la IP/VIP de conmutación por error sea consistente y de que los hosts se reconecten automáticamente después de la conmutación por error (comportamiento estándar del cliente NFS con la opción de montaje ``hard``)"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:257
 msgid ""
@@ -719,62 +719,62 @@ msgid ""
 "simultaneously, the NFS backend must support synchronous replication. "
 "Asynchronous replication introduces the risk of data loss on site "
 "failure."
-msgstr ""
+msgstr "**Replicación síncrona** — Para acceso de lectura/escritura desde ambos sitios simultáneamente, el backend NFS debe admitir replicación síncrona. La replicación asíncrona introduce el riesgo de pérdida de datos ante un fallo del sitio."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:259
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:261
 msgid ""
 "Use the ``hard`` and ``intr`` NFS mount options in production to ensure "
 "clients wait for the NFS server to recover rather than returning errors "
 "to applications during brief network interruptions."
-msgstr ""
+msgstr "Use las opciones de montaje NFS ``hard`` e ``intr`` en producción para que los clientes esperen a que el servidor NFS se recupere en lugar de devolver errores a las aplicaciones durante interrupciones breves de red."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:264
 msgid "Failover Behavior"
-msgstr ""
+msgstr "Comportamiento de conmutación por error"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:266
 msgid ""
 "Unlike the shared LUN model (which uses Corosync/DLM quorum and active "
 "fencing), NFS-based stretch clusters rely on:"
-msgstr ""
+msgstr "A diferencia del modelo de LUN compartido (que usa quórum Corosync/DLM y fencing activo), los clústers stretch basados en NFS dependen de:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:268
 msgid ""
 "**NFS appliance failover** — The storage layer handles its own HA. When "
 "the NFS endpoint fails over, hosts reconnect and I/O resumes."
-msgstr ""
+msgstr "**Conmutación por error del appliance NFS** — La capa de almacenamiento gestiona su propio HA. Cuando el endpoint NFS conmuta por error, los hosts se reconectan y se reanuda la E/S."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:269
 msgid ""
 "**|morpheus| host monitoring** — |morpheus| detects host unreachability "
 "and can trigger workload migration to surviving hosts (via Dynamic "
 "Placement policies)."
-msgstr ""
+msgstr "**Monitoreo de hosts de |morpheus|** — |morpheus| detecta la inaccesibilidad del host y puede desencadenar la migración de cargas de trabajo a hosts supervivientes (mediante políticas Dynamic Placement)."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:270
 msgid ""
 "**No fencing required** — Since NFS handles locking at the protocol level"
 " (NLM/NFSv4 leases), there is no risk of split-brain data corruption that"
 " requires active fencing."
-msgstr ""
+msgstr "**No se requiere fencing** — Como NFS gestiona el bloqueo a nivel de protocolo (concesiones NLM/NFSv4), no hay riesgo de corrupción de datos por split-brain que requiera fencing activo."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:272
 msgid "If a full site fails:"
-msgstr ""
+msgstr "Si falla un sitio completo:"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:274
 msgid "|morpheus| detects hosts at the failed site as unreachable"
-msgstr ""
+msgstr "|morpheus| detecta los hosts del sitio fallido como inaccesibles"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:275
 msgid ""
 "If Dynamic Placement is enabled with appropriate aggressiveness, "
 "workloads are automatically migrated to surviving hosts"
-msgstr ""
+msgstr "Si Dynamic Placement está habilitado con la agresividad adecuada, las cargas de trabajo se migran automáticamente a hosts supervivientes"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:276
 msgid ""
@@ -782,37 +782,37 @@ msgid ""
 " (``Infrastructure > Servers > [Host] > Actions > Enter Maintenance``). "
 "This live-migrates running VMs and moves powered-off VMs to other "
 "available hosts in the cluster."
-msgstr ""
+msgstr "La migración manual puede iniciarse poniendo un host en modo de mantenimiento (``Infrastructure > Servers > [Host] > Actions > Enter Maintenance``). Esto migra en vivo las VMs en ejecución y mueve las VMs apagadas a otros hosts disponibles del clúster."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:277
 msgid ""
 "When the failed site recovers, hosts rejoin the cluster and become "
 "available for workload placement again"
-msgstr ""
+msgstr "Cuando el sitio fallido se recupera, los hosts vuelven a unirse al clúster y quedan disponibles de nuevo para la colocación de cargas de trabajo"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:280
 msgid "Limitations"
-msgstr ""
+msgstr "Limitaciones"
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:282
 msgid ""
 "**Performance** — NFS adds network overhead compared to local/Ceph "
 "storage. Cross-site NFS access is subject to network latency."
-msgstr ""
+msgstr "**Rendimiento** — NFS añade sobrecarga de red frente al almacenamiento local/Ceph. El acceso NFS entre sitios está sujeto a la latencia de red."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:283
 msgid ""
 "**No cluster-level quorum** — The cluster does not independently "
 "arbitrate site failures. Failover depends on your NFS appliance's HA "
 "capabilities and |morpheus| Dynamic Placement settings."
-msgstr ""
+msgstr "**Sin quórum a nivel de clúster** — El clúster no arbitra de forma independiente los fallos de sitio. La conmutación por error depende de las capacidades de HA del appliance NFS y de la configuración Dynamic Placement de |morpheus|."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:284
 msgid ""
 "**Write performance across sites** — If hosts at both sites write to the "
 "same NFS volume, write performance is bounded by cross-site network "
 "latency (especially with synchronous replication)."
-msgstr ""
+msgstr "**Rendimiento de escritura entre sitios** — Si los hosts en ambos sitios escriben en el mismo volumen NFS, el rendimiento de escritura está limitado por la latencia de red entre sitios (especialmente con replicación síncrona)."
 
 #: ../../infrastructure/clusters/hvm/stretch_clusters.rst:285
 msgid ""
@@ -820,7 +820,7 @@ msgid ""
 "(databases, real-time systems) may not perform well on cross-site NFS. "
 "Consider placing these workloads on local storage or site-local NFS "
 "exports."
-msgstr ""
+msgstr "**No apto para todas las cargas de trabajo** — Las aplicaciones sensibles a la latencia (bases de datos, sistemas en tiempo real) pueden no funcionar bien con NFS entre sitios. Considere colocar estas cargas de trabajo en almacenamiento local o exportaciones NFS locales del sitio."
 
 #~ msgid "Navigate to ``Administration > Integrations > Distributed Workers``"
 #~ msgstr "Navegue un ``Administration > Integrations > Distributed Workers``"

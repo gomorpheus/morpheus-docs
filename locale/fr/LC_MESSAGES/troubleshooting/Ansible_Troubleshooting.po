@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:2
 msgid "Ansible Troubleshooting"
-msgstr ""
+msgstr "Dépannage Ansible"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:4
 msgid ""
@@ -31,11 +31,11 @@ msgid ""
 " task to see the output. You can also see the run output in UI logs at "
 "``/var/log/morpheus/morpheus-ui/current​``. These can be tailed by "
 "running ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Lorsqu'un workflow est exécuté manuellement, la sortie de l'exécution Ansible est disponible dans l'onglet Historique de l'instance. Sélectionnez la bulle ``i`` à côté de la tâche Ansible pour voir la sortie. Vous pouvez également consulter la sortie d'exécution dans les journaux de l'interface à ``/var/log/morpheus/morpheus-ui/current``. Ceux-ci peuvent être suivis en exécutant ``morpheus-ctl tail morpheus-ui``."
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:7
 msgid "Verify Ansible is installed on the |morpheus| Appliance"
-msgstr ""
+msgstr "Vérifier qu'Ansible est installé sur l'appliance |morpheus|"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:9
 msgid ""
@@ -46,21 +46,21 @@ msgid ""
 " Select Ansible Integration). We also see it in the Ansible tab of a "
 "Group or Cloud scoped to Ansible, just run ``--version`` as ansible is "
 "already included in the command."
-msgstr ""
+msgstr "Ansible devrait être installé automatiquement, mais certaines conditions d'OS ou de réseau peuvent empêcher l'installation automatique. Vous pouvez confirmer l'installation en exécutant ``ansible --version`` sur l'appliance |morpheus|, ou en consultant la page de détails de l'intégration Ansible (|AdmInt| > Sélectionner l'intégration Ansible). Nous le voyons également dans l'onglet Ansible d'un groupe ou d'un cloud associé à Ansible ; exécutez simplement ``--version``, car ansible est déjà inclus dans la commande."
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:12
 msgid "If Ansible is not installed"
-msgstr ""
+msgstr "Si Ansible n'est pas installé"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:14
 msgid ""
 "Follow these instructions to install, or use your preferred installation "
 "method"
-msgstr ""
+msgstr "Suivez ces instructions pour installer, ou utilisez votre méthode d'installation préférée"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:16
 msgid "Ubuntu:"
-msgstr ""
+msgstr "Ubuntu :"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:18
 msgid ""
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:25
 msgid "CentOS:"
-msgstr ""
+msgstr "CentOS :"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:27
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:32
 msgid "Then create the working Ansible directory for Morpheus:"
-msgstr ""
+msgstr "Créez ensuite le répertoire de travail Ansible pour Morpheus :"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:34
 msgid ""
@@ -92,7 +92,7 @@ msgstr ""
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:41
 msgid "Validate Git repo authorization and the configured paths"
-msgstr ""
+msgstr "Valider l'autorisation du dépôt Git et les chemins configurés"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:43
 msgid ""
@@ -101,7 +101,7 @@ msgid ""
 "to be added to the Git repo via user settings. If both are set up "
 "correctly, you will see the playbooks and roles populate in the Ansible "
 "Integration details page."
-msgstr ""
+msgstr "Les clés SSH publiques et privées doivent être ajoutées à l'appliance |morpheus| via ``Infrastructure > Keys & Certs`` et la clé publique doit être ajoutée au dépôt Git via les paramètres utilisateur. Si les deux sont correctement configurés, vous verrez les playbooks et les rôles apparaître dans la page de détails de l'intégration Ansible."
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:45
 msgid ""
@@ -109,7 +109,7 @@ msgid ""
 "than default. It can be left to use the default branch. If your playbooks"
 " are in a different branch you can add the brach name in the Git Ref "
 "field."
-msgstr ""
+msgstr "Le champ Git Ref sur les tâches de playbook sert à spécifier une branche git différente de la branche par défaut. Il peut être laissé vide pour utiliser la branche par défaut. Si vos playbooks se trouvent dans une branche différente, vous pouvez ajouter le nom de la branche dans le champ Git Ref."
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:47
 msgid ""
@@ -117,11 +117,11 @@ msgid ""
 "fields do not need to be populated, they are for running a different "
 "playbook than the one set in the Ansible task in the Workflow, or using a"
 " different Git Ref."
-msgstr ""
+msgstr "Lors de l'exécution d'un playbook dans un workflow, les champs de playbooks supplémentaires n'ont pas besoin d'être renseignés ; ils servent à exécuter un playbook différent de celui défini dans la tâche Ansible du workflow, ou à utiliser un Git Ref différent."
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:49
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../troubleshooting/Ansible_Troubleshooting.rst:51
 msgid ""
@@ -129,5 +129,5 @@ msgid ""
 "Instances through ``Actions > Run Workflow​`` and not seeing results, set"
 " the Provision Phase on the Ansible task to Provision​ as there may be "
 "issues with executing tasks on other phases when executing manually."
-msgstr ""
+msgstr "Si vous exécutez manuellement des workflows avec des tâches Ansible sur des instances existantes via ``Actions > Run Workflow`` et que vous ne voyez pas de résultats, définissez la phase de provisionnement de la tâche Ansible sur Provision, car il peut y avoir des problèmes lors de l'exécution de tâches sur d'autres phases en exécution manuelle."
 

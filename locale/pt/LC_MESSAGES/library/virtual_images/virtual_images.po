@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../library/virtual_images/virtual_images.rst:2
 msgid "Virtual Images"
-msgstr ""
+msgstr "Imagens Virtuais"
 
 #: ../../library/virtual_images/virtual_images.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../library/virtual_images/virtual_images.rst:7
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "Virtual Images section. Images can also be uploaded directly into "
 "|morpheus| via local file or url. Amazon and Azure Marketplace images can"
 " also be added to the Virtual Images Section."
-msgstr ""
+msgstr "A seção Virtual Image exibe uma lista de todas as imagens, locais e sincronizadas, disponíveis para implementação. |morpheus| inclui um rico catálogo de System Images pré-configuradas disponíveis para cada tipo de nuvem. User Images são sincronizadas automaticamente a partir de Integrações de Nuvem e adicionadas à seção Virtual Images. As imagens também podem ser enviadas diretamente para o |morpheus| via arquivo local ou url. Imagens do Amazon e Azure Marketplace também podem ser adicionadas à seção Virtual Images."
 
 #: ../../library/virtual_images/virtual_images.rst:9
 msgid ""
@@ -49,11 +49,11 @@ msgid ""
 " includes `a section on preparing images "
 "<https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html"
 "#prepping-an-image>`_ that may provide a helpful example."
-msgstr ""
+msgstr "Compreender o processo de preparação de imagens para consumo no |morpheus| é um passo muito importante para construir um ambiente |morpheus| eficaz. Além das informações contidas nesta seção sobre Virtual Images, pode ser útil ver um walkthrough completo de exemplo de preparação de imagem. Nosso guia de introdução para |morpheus| e VMware inclui `a section on preparing images <https://docs.morpheusdata.com/en/latest/getting_started/guides/vmware_guide.html#prepping-an-image>`_ que pode fornecer um exemplo útil."
 
 #: ../../library/virtual_images/virtual_images.rst:11
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../library/virtual_images/virtual_images.rst:11
 msgid ""
@@ -62,7 +62,7 @@ msgid ""
 "implementing their own library. The included images are not intended to "
 "be production-ready images. |morpheus| always recommends its users create"
 " their own gold images which meet their required specifications."
-msgstr ""
+msgstr "|morpheus| inclui um amplo catálogo de tipos de imagens de sistema como exemplos para mostrar como o produto pode ser usado e dar aos usuários um ponto de partida para implementar sua própria biblioteca. As imagens incluídas não se destinam a ser imagens prontas para produção. |morpheus| sempre recomenda que seus usuários criem suas próprias gold images que atendam às especificações necessárias."
 
 #: ../../library/virtual_images/virtual_images.rst:13
 #: ../../library/virtual_images/virtual_images.rst:22
@@ -70,31 +70,31 @@ msgstr ""
 #: ../../library/virtual_images/virtual_images.rst:243
 #: ../../library/virtual_images/virtual_images.rst:334
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../library/virtual_images/virtual_images.rst:13
 msgid ""
 "Invalid Image Settings cause provisioning failures. |morpheus| syncs in "
 "as much meta-data as possible for synced images, but additional "
 "configuration may be needed to ensure successful provisioning."
-msgstr ""
+msgstr "Configurações inválidas de Imagem causam falhas de provisionamento. |morpheus| sincroniza o máximo de metadados possível para imagens sincronizadas, mas configuração adicional pode ser necessária para garantir o provisionamento bem-sucedido."
 
 #: ../../library/virtual_images/virtual_images.rst:15
 #: ../../library/virtual_images/virtual_images.rst:110
 #: ../../library/virtual_images/virtual_images.rst:155
 msgid "Warning"
-msgstr ""
+msgstr "Alerta"
 
 #: ../../library/virtual_images/virtual_images.rst:15
 msgid ""
 "Cloud-init is enabled by default for all Linux images. If your Linux "
 "image does not have Cloud-init installed, `Cloud-init Enabled` must be "
 "unchecked before provisioning the image or it will fail immediately."
-msgstr ""
+msgstr "Cloud-init está ativado por padrão para todas as imagens Linux. Se sua imagem Linux não tiver Cloud-init instalado, `Cloud-init Enabled` deve ser desmarcado antes de provisionar a imagem ou ela falhará imediatamente."
 
 #: ../../library/virtual_images/virtual_images.rst:18
 msgid "Image Types"
-msgstr ""
+msgstr "Tipos de Imagem"
 
 #: ../../library/virtual_images/virtual_images.rst:20
 msgid ""
@@ -105,15 +105,15 @@ msgid ""
 "including specifying the Platform and User Credentials, prior to "
 "provisioning. Provisioning a User Image that has not been configured may "
 "result in failed provisioning."
-msgstr ""
+msgstr "|morpheus| fornece um vasto repositório de *System Image* com imagens pré-configuradas para cada Nuvem. Todas as outras imagens são *User Images*. User images podem ser adicionadas diretamente ao |morpheus|, ou sincronizadas automaticamente a partir de nuvens integradas. É importante configurar User Images sincronizadas para metadados, incluindo especificar a Plataforma e Credenciais de Usuário, antes do provisionamento. Provisionar uma User Image que não foi configurada pode resultar em falha de provisionamento."
 
 #: ../../library/virtual_images/virtual_images.rst:22
 msgid "Synced User Images need to be configured prior to provisioning."
-msgstr ""
+msgstr "User Images sincronizadas precisam ser configuradas antes do provisionamento."
 
 #: ../../library/virtual_images/virtual_images.rst:25
 msgid "Linked Clone Images"
-msgstr ""
+msgstr "Imagens Linked Clone"
 
 #: ../../library/virtual_images/virtual_images.rst:27
 msgid ""
@@ -122,7 +122,7 @@ msgid ""
 "writable disk that shares the snapshot's base data, reducing deployment "
 "time and initial storage consumption. It is not an independent copy of "
 "the source disk."
-msgstr ""
+msgstr "Uma Virtual Image linked clone é um registro respaldado por um snapshot de uma VM VMware ou HVM/KVM existente. O provisionamento a partir dela cria um disco gravável pequeno que compartilha os dados base do snapshot, reduzindo o tempo de implementação e o consumo inicial de armazenamento. Não é uma cópia independente do disco de origem."
 
 #: ../../library/virtual_images/virtual_images.rst:29
 msgid ""
@@ -132,7 +132,7 @@ msgid ""
 "for that snapshot. See the **Creating Linked Clone Images** section in "
 ":doc:`/infrastructure/storage/storage` for the complete workflow and "
 "platform constraints."
-msgstr ""
+msgstr "Imagens linked clone são criadas a partir da guia :guilabel:`Backups` de uma Instância, não da página Virtual Images. Prepare o guest, crie um snapshot e selecione :guilabel:`More` > :guilabel:`Create Linked Clone` para aquele snapshot. Consulte a seção **Creating Linked Clone Images** em :doc:`/infrastructure/storage/storage` para o workflow completo e as restrições de plataforma."
 
 #: ../../library/virtual_images/virtual_images.rst:31
 msgid ""
@@ -141,15 +141,15 @@ msgid ""
 " guest customization, agent, credentials, and permissions. Keep the "
 "source VM and backing snapshot for as long as the image or provisioned "
 "linked-clone VMs are needed."
-msgstr ""
+msgstr "Após a criação, edite o registro em :menuselection:`Library --> Virtual Images` e verifique o sistema operacional herdado, cloud-init ou Sysprep, customização de guest, agente, credenciais e permissões. Mantenha a VM de origem e o snapshot de suporte enquanto a imagem ou as VMs linked-clone provisionadas forem necessárias."
 
 #: ../../library/virtual_images/virtual_images.rst:34
 msgid "Configuring Virtual Images"
-msgstr ""
+msgstr "Configurando Virtual Images"
 
 #: ../../library/virtual_images/virtual_images.rst:37
 msgid "System Images"
-msgstr ""
+msgstr "System Images"
 
 #: ../../library/virtual_images/virtual_images.rst:39
 msgid ""
@@ -161,7 +161,7 @@ msgid ""
 "when creating additional users prior to provisioning, as the user data "
 "from these sections is required when provisioning System provided Virtual"
 " Images."
-msgstr ""
+msgstr "System Virtual Images são pré-configuradas com metadados e têm Cloud-Init ou Cloudbase-Init instalado. Essas imagens estão prontas para serem provisionadas sem configuração necessária; no entanto, é obrigatório preencher :menuselection:`Administration --> Settings --> Provisioning`, seção Cloud-Init, com dados de usuário, bem como dados de usuários de User Profile(s) ao criar usuários adicionais antes do provisionamento, pois os dados de usuário dessas seções são obrigatórios ao provisionar Virtual Images fornecidas pelo Sistema."
 
 #: ../../library/virtual_images/virtual_images.rst:41
 #: ../../library/virtual_images/virtual_images.rst:90
@@ -174,15 +174,15 @@ msgstr ""
 #: ../../library/virtual_images/virtual_images.rst:338
 #: ../../library/virtual_images/virtual_images.rst:364
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../library/virtual_images/virtual_images.rst:41
 msgid "System Images settings are not editable."
-msgstr ""
+msgstr "As configurações de System Images não são editáveis."
 
 #: ../../library/virtual_images/virtual_images.rst:44
 msgid "User Images"
-msgstr ""
+msgstr "User Images"
 
 #: ../../library/virtual_images/virtual_images.rst:46
 msgid ""
@@ -190,36 +190,36 @@ msgid ""
 "provision synced User Images. After integrating clouds and User Images "
 "have synced, it is highly recommended to configure the images prior to "
 "provisioning."
-msgstr ""
+msgstr "Normalmente |morpheus| não tem metadados suficientes para provisionar com sucesso User Images sincronizadas. Após integrar nuvens e as User Images terem sido sincronizadas, é altamente recomendável configurar as imagens antes do provisionamento."
 
 #: ../../library/virtual_images/virtual_images.rst:48
 msgid "**To edit and configure an existing Virtual Image:**"
-msgstr ""
+msgstr "**Para editar e configurar uma Virtual Image existente:**"
 
 #: ../../library/virtual_images/virtual_images.rst:50
 msgid ""
 "Select the pencil icon at the right of any row on the Virtual Images list"
 " page, or click :guilabel:`EDIT` on a Virtual Image detail page."
-msgstr ""
+msgstr "Selecione o ícone de lápis à direita de qualquer linha na página de lista de Virtual Images, ou clique em :guilabel:`EDIT` em uma página de detalhes de Virtual Image."
 
 #: ../../library/virtual_images/virtual_images.rst:51
 msgid "Configure the following on the Image:"
-msgstr ""
+msgstr "Configure o seguinte na Imagem:"
 
 #: ../../library/virtual_images/virtual_images.rst:53
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../../library/virtual_images/virtual_images.rst:54
 msgid ""
 "Name of the Virtual Image in |morpheus|. This can be changed from the "
 "name of the image, but editing will not change the name of the actual "
 "image"
-msgstr ""
+msgstr "Nome da Virtual Image no |morpheus|. Isso pode ser alterado em relação ao nome da imagem, mas a edição não alterará o nome da imagem real"
 
 #: ../../library/virtual_images/virtual_images.rst:55
 msgid "Operating System"
-msgstr ""
+msgstr "Sistema Operacional"
 
 #: ../../library/virtual_images/virtual_images.rst:56
 msgid ""
@@ -227,32 +227,32 @@ msgid ""
 "to have the operating system specified on the Virtual Image, as "
 "|morpheus| will assign Linux as the platform for all images without an "
 "operating system specified"
-msgstr ""
+msgstr "Especifica a plataforma e o SO da imagem. Todas as imagens Windows precisarão ter o sistema operacional especificado na Virtual Image, pois |morpheus| atribuirá Linux como plataforma para todas as imagens sem um sistema operacional especificado"
 
 #: ../../library/virtual_images/virtual_images.rst:57
 msgid "Minimum Memory"
-msgstr ""
+msgstr "Memória Mínima"
 
 #: ../../library/virtual_images/virtual_images.rst:58
 msgid ""
 "The Minimum Memory setting will filter available Service Plan options "
 "during provisioning. Service Plans that do not meet the minimum value set"
 " on the Virtual Image will not be provided as Service Plan choices"
-msgstr ""
+msgstr "A configuração Minimum Memory filtrará as opções de Service Plan disponíveis durante o provisionamento. Service Plans que não atenderem ao valor mínimo definido na Virtual Image não serão oferecidos como opções de Service Plan"
 
 #: ../../library/virtual_images/virtual_images.rst:59
 msgid "Cloud Init Enabled?"
-msgstr ""
+msgstr "Cloud Init Enabled?"
 
 #: ../../library/virtual_images/virtual_images.rst:60
 msgid ""
 "On by default, uncheck for any Image that does not have Cloud-Init "
 "installed"
-msgstr ""
+msgstr "Ativado por padrão; desmarque para qualquer Imagem que não tenha Cloud-Init instalado"
 
 #: ../../library/virtual_images/virtual_images.rst:61
 msgid "Install Agent?"
-msgstr ""
+msgstr "Install Agent?"
 
 #: ../../library/virtual_images/virtual_images.rst:62
 msgid ""
@@ -260,11 +260,11 @@ msgid ""
 "the loss of utilization statistics, logs, script execution, and "
 "monitoring. (Some utilization stats are still collected for Agent-less "
 "hosts and VMs depending on the cloud)"
-msgstr ""
+msgstr "Ativado por padrão; desmarque para pular a instalação do Agente. Observe que isso resultará na perda de estatísticas de utilização, logs, execução de scripts e monitoramento. (Algumas estatísticas de utilização ainda são coletadas para hosts e VMs sem Agente, dependendo da nuvem)"
 
 #: ../../library/virtual_images/virtual_images.rst:63
 msgid "Username"
-msgstr ""
+msgstr "Nome do Usuário"
 
 #: ../../library/virtual_images/virtual_images.rst:64
 msgid ""
@@ -280,43 +280,43 @@ msgid ""
 "not define any user other than Administrator. |morpheus| recommends "
 "running Guest Customizations for all Windows Images, which is required "
 "when joining Domains as the SID will change."
-msgstr ""
+msgstr "Nome de usuário existente na imagem para autenticação. Pode ser deixado em branco se credenciais padrão globais estiverem configuradas em :menuselection:`Administration --> Settings --> Provisioning` (existem padrões separados para Linux e Windows). Se Cloud-Init ou Guest Customizations forem usados, as credenciais de :menuselection:`Administration --> Settings --> Provisioning` e User Settings são aplicadas. Se credenciais forem definidas na imagem e Cloud-Init estiver ativado, |morpheus| adicionará esse usuário durante o provisionamento, portanto certifique-se de que esse usuário ainda não exista na imagem (como ``root``). Para Windows, não defina nenhum usuário além de Administrator. |morpheus| recomenda executar Guest Customizations para todas as Imagens Windows, o que é obrigatório ao ingressar em Domínios, pois o SID será alterado."
 
 #: ../../library/virtual_images/virtual_images.rst:65
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: ../../library/virtual_images/virtual_images.rst:66
 msgid ""
 "Password for the user on the image if username is populated. Can be left "
 "blank if global defaults are set in :menuselection:`Administration --> "
 "Settings --> Provisioning`."
-msgstr ""
+msgstr "Senha do usuário na imagem se o nome de usuário estiver preenchido. Pode ser deixada em branco se padrões globais estiverem definidos em :menuselection:`Administration --> Settings --> Provisioning`."
 
 #: ../../library/virtual_images/virtual_images.rst:67
 msgid "Bucket"
-msgstr ""
+msgstr "Repositório"
 
 #: ../../library/virtual_images/virtual_images.rst:68
 msgid ""
 "Location where the Virtual Image will be stored. Default Virtual Image "
 "Storage location is ``/var/opt/morpheus/morpheus-ui/vms``. Additional "
 "Storage Providers can be configured in ``Infrastructure > Storage``"
-msgstr ""
+msgstr "Localização onde a Virtual Image será armazenada. A localização padrão de Armazenamento de Virtual Image é ``/var/opt/morpheus/morpheus-ui/vms``. Provedores de Armazenamento adicionais podem ser configurados em ``Infrastructure > Storage``"
 
 #: ../../library/virtual_images/virtual_images.rst:69
 msgid "Cloud-Init User Data"
-msgstr ""
+msgstr "Cloud-Init User Data"
 
 #: ../../library/virtual_images/virtual_images.rst:70
 msgid ""
 "Accepts what would go in ``runcmd`` and can assume Bash syntax. Example "
 "use: Script to configure satellite registration at provision time"
-msgstr ""
+msgstr "Aceita o que iria em ``runcmd`` e pode assumir sintaxe Bash. Exemplo de uso: Script para configurar registro satellite no momento do provisionamento"
 
 #: ../../library/virtual_images/virtual_images.rst:71
 msgid "Permissions"
-msgstr ""
+msgstr "Permissões"
 
 #: ../../library/virtual_images/virtual_images.rst:72
 msgid ""
@@ -324,11 +324,11 @@ msgid ""
 "private visibility and select specific Tenants to which the Virtual Image"
 " will be made available. Select public visibility to share the Virtual "
 "Image with all Tenants"
-msgstr ""
+msgstr "Defina permissões de Tenant em um ambiente |morpheus| multi-tenant. Selecione visibilidade privada e selecione Tenants específicos para os quais a Virtual Image será disponibilizada. Selecione visibilidade pública para compartilhar a Virtual Image com todos os Tenants"
 
 #: ../../library/virtual_images/virtual_images.rst:73
 msgid "Auto Join Domain?"
-msgstr ""
+msgstr "Auto Join Domain?"
 
 #: ../../library/virtual_images/virtual_images.rst:74
 msgid ""
@@ -336,82 +336,82 @@ msgid ""
 " domains (Windows only, domain controller must be configured in "
 "``Infrastructure > Network`` and the configured domain set on the "
 "provisioned to Cloud or Network)"
-msgstr ""
+msgstr "Ative para que Instâncias provisionadas com esta imagem ingressem automaticamente em domínios configurados (somente Windows; o controlador de domínio deve estar configurado em ``Infrastructure > Network`` e o domínio configurado definido na Nuvem ou Rede de destino do provisionamento)"
 
 #: ../../library/virtual_images/virtual_images.rst:75
 msgid "VirtIO Drivers Loaded?"
-msgstr ""
+msgstr "VirtIO Drivers Loaded?"
 
 #: ../../library/virtual_images/virtual_images.rst:76
 msgid ""
 "Enable if VirtIO Drivers are installed on the image for provisioning to "
 "KVM-based hypervisors"
-msgstr ""
+msgstr "Ative se Drivers VirtIO estiverem instalados na imagem para provisionamento em hypervisors baseados em KVM"
 
 #: ../../library/virtual_images/virtual_images.rst:77
 msgid "FIPS Compliant Image?"
-msgstr ""
+msgstr "FIPS Compliant Image?"
 
 #: ../../library/virtual_images/virtual_images.rst:78
 msgid ""
 "When selected, |morpheus| will install the FIPS-compliant |morpheus| "
 "Agent package"
-msgstr ""
+msgstr "Quando selecionado, |morpheus| instalará o pacote do Agente |morpheus| compatível com FIPS"
 
 #: ../../library/virtual_images/virtual_images.rst:79
 msgid "VM Tools Installed?"
-msgstr ""
+msgstr "VM Tools Installed?"
 
 #: ../../library/virtual_images/virtual_images.rst:80
 msgid ""
 "On by default, uncheck if guest tools are not installed on the Virtual "
 "Image (VMware Tools for VMware, QEMU Guest Agent for HVM). |morpheus| "
 "will skip network wait during provisioning when deselected"
-msgstr ""
+msgstr "Ativado por padrão; desmarque se guest tools não estiverem instalados na Virtual Image (VMware Tools para VMware, QEMU Guest Agent para HVM). |morpheus| pulará a espera de rede durante o provisionamento quando desmarcado"
 
 #: ../../library/virtual_images/virtual_images.rst:81
 msgid "Force Guest Customization?"
-msgstr ""
+msgstr "Force Guest Customization?"
 
 #: ../../library/virtual_images/virtual_images.rst:82
 msgid ""
 "Forces guest customizations to run during provisioning. On VMware/VME, "
 "transfers unattend via VMware Tools and reboots. On HVM, injects unattend"
 " via the guest agent. Requires guest tools to be installed on the image."
-msgstr ""
+msgstr "Força a execução de guest customizations durante o provisionamento. No VMware/VME, transfere unattend via VMware Tools e reinicia. No HVM, injeta unattend via o guest agent. Requer que guest tools estejam instalados na imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:83
 #: ../../library/virtual_images/virtual_images.rst:319
 msgid "Trial Version"
-msgstr ""
+msgstr "Versão Trial"
 
 #: ../../library/virtual_images/virtual_images.rst:84
 msgid ""
 "Enable to automatically re-arm the expiration on Windows Trial Images "
 "during provisioning"
-msgstr ""
+msgstr "Ative para rearmar automaticamente a expiração em Windows Trial Images durante o provisionamento"
 
 #: ../../library/virtual_images/virtual_images.rst:85
 msgid "Enabled Sysprep?"
-msgstr ""
+msgstr "Enabled Sysprep?"
 
 #: ../../library/virtual_images/virtual_images.rst:86
 msgid ""
 "Applicable to multiple Clouds, including VMware vCenter, SCVMM, Nutanix, "
 "Hyper-V, KVM, and Google GCP. Enable if the Windows Image has been "
 "sysprepped. If enabled, |morpheus| will inject ``unattend.xml``"
-msgstr ""
+msgstr "Aplicável a várias Nuvens, incluindo VMware vCenter, SCVMM, Nutanix, Hyper-V, KVM e Google GCP. Ative se a Imagem Windows tiver sido sysprepped. Se ativado, |morpheus| injetará ``unattend.xml``"
 
 #: ../../library/virtual_images/virtual_images.rst:88
 msgid "Click :guilabel:`Save Changes`"
-msgstr ""
+msgstr "Clique em :guilabel:`Save Changes`"
 
 #: ../../library/virtual_images/virtual_images.rst:90
 msgid ""
 "Cloud-Init is enabled by default on all images. Images without Cloud-Init"
 " installed must have the ``cloud-init`` flag disabled on the Virtual "
 "Image setting or Provisioning may fail."
-msgstr ""
+msgstr "Cloud-Init está ativado por padrão em todas as imagens. Imagens sem Cloud-Init instalado devem ter a flag ``cloud-init`` desativada na configuração da Virtual Image ou o Provisionamento pode falhar."
 
 #: ../../library/virtual_images/virtual_images.rst:92
 msgid ""
@@ -420,17 +420,17 @@ msgid ""
 "security purposes, these files are stored in a non-executable state so "
 "users need not worry about potentially dangerous file types being "
 "uploaded (ex. executables)."
-msgstr ""
+msgstr "|morpheus| não valida nem restringe uploads de imagens a certos tipos de arquivo e qualquer tipo de arquivo pode ser enviado como Virtual Image. Por segurança, esses arquivos são armazenados em estado não executável para que os usuários não precisem se preocupar com tipos de arquivo potencialmente perigosos sendo enviados (ex. executáveis)."
 
 #: ../../library/virtual_images/virtual_images.rst:95
 msgid "Provisioning Images"
-msgstr ""
+msgstr "Provisionando Imagens"
 
 #: ../../library/virtual_images/virtual_images.rst:97
 msgid ""
 "When provisioning a system image, |morpheus| will stream the image from "
 "Amazon S3 to the target Cloud if the image is not local to the Cloud."
-msgstr ""
+msgstr "Ao provisionar uma imagem de sistema, |morpheus| transmitirá a imagem do Amazon S3 para a Nuvem de destino se a imagem não for local à Nuvem."
 
 #: ../../library/virtual_images/virtual_images.rst:99
 msgid ""
@@ -438,13 +438,13 @@ msgid ""
 "synced, marketplace, or previously copied images, no image stream from S3"
 " through the |morpheus| Appliance to the destination cloud will take "
 "place."
-msgstr ""
+msgstr "Ao usar imagens que já existem na Nuvem de destino, como imagens sincronizadas, de marketplace ou copiadas anteriormente, nenhum stream de imagem do S3 através do Appliance |morpheus| para a nuvem de destino ocorrerá."
 
 #: ../../library/virtual_images/virtual_images.rst:101
 msgid ""
 "The |morpheus| Appliance must be able to download from Amazon S3 when "
 "provisioning system images."
-msgstr ""
+msgstr "O Appliance |morpheus| deve conseguir baixar do Amazon S3 ao provisionar imagens de sistema."
 
 #: ../../library/virtual_images/virtual_images.rst:103
 msgid ""
@@ -452,11 +452,11 @@ msgid ""
 "Host when provisioning System Images or uploaded Images for the first "
 "time. This included being able to resolve ESXi host names in VMware "
 "vCenter clouds, and reach the destination ESXi host over port 443."
-msgstr ""
+msgstr "O Appliance |morpheus| deve conseguir alcançar e resolver o Host de destino ao provisionar System Images ou Imagens enviadas pela primeira vez. Isso inclui ser capaz de resolver nomes de host ESXi em nuvens VMware vCenter e alcançar o host ESXi de destino na porta 443."
 
 #: ../../library/virtual_images/virtual_images.rst:106
 msgid "Add Virtual Image"
-msgstr ""
+msgstr "Adicionar Virtual Image"
 
 #: ../../library/virtual_images/virtual_images.rst:108
 msgid ""
@@ -465,7 +465,7 @@ msgid ""
 "Images library, enabling the creation of custom catalog Instance Type "
 "from Marketplace images (no image is transferred to |morpheus| when "
 "adding Marketplace images)."
-msgstr ""
+msgstr "Virtual Images podem ser enviadas para o |morpheus| a partir de arquivos locais ou URLs. Metadados do Amazon e Azure Marketplace também podem ser adicionados à biblioteca de Virtual Images, permitindo a criação de Instance Type personalizado do catálogo a partir de imagens do Marketplace (nenhuma imagem é transferida para o |morpheus| ao adicionar imagens do Marketplace)."
 
 #: ../../library/virtual_images/virtual_images.rst:110
 msgid ""
@@ -477,95 +477,95 @@ msgid ""
 "Provider. Additional Storage Provider can be added at `Infrastructure > "
 "Storage`, which can be configured as the default Virtual Image Store or "
 "selected when uploading Images."
-msgstr ""
+msgstr "Esteja atento à seleção do Provedor de Armazenamento. O Provedor de Armazenamento padrão é o Appliance |morpheus| em ``/var/opt/morpheus/morpheus-ui/vms``. Enviar imagens grandes para o Appliance |morpheus| quando não houver espaço adequado causará falhas de upload e impactará a funcionalidade do Appliance. Certifique-se de que haja espaço adequado no Provedor de Armazenamento selecionado. Provedores de Armazenamento adicionais podem ser adicionados em `Infrastructure > Storage`, que podem ser configurados como o Armazenamento padrão de Virtual Image ou selecionados ao enviar Imagens."
 
 #: ../../library/virtual_images/virtual_images.rst:112
 msgid "VMware-type OVF Virtual Images do not support mounted ISO uploads"
-msgstr ""
+msgstr "Virtual Images OVF do tipo VMware não suportam uploads de ISO montados"
 
 #: ../../library/virtual_images/virtual_images.rst:114
 msgid "To Add Virtual Image:"
-msgstr ""
+msgstr "Para Adicionar Virtual Image:"
 
 #: ../../library/virtual_images/virtual_images.rst:116
 msgid "Select :guilabel:`+ Add` in the Virtual Images page."
-msgstr ""
+msgstr "Selecione :guilabel:`+ Add` na página Virtual Images."
 
 #: ../../library/virtual_images/virtual_images.rst:117
 msgid "Select Image format:"
-msgstr ""
+msgstr "Selecione o formato da Imagem:"
 
 #: ../../library/virtual_images/virtual_images.rst:119
 msgid "Alibaba"
-msgstr ""
+msgstr "Alibaba"
 
 #: ../../library/virtual_images/virtual_images.rst:120
 msgid "Amazon AMI"
-msgstr ""
+msgstr "Amazon AMI"
 
 #: ../../library/virtual_images/virtual_images.rst:121
 msgid "Azure Marketplace"
-msgstr ""
+msgstr "Azure Marketplace"
 
 #: ../../library/virtual_images/virtual_images.rst:122
 msgid "Digital Ocean"
-msgstr ""
+msgstr "Digital Ocean"
 
 #: ../../library/virtual_images/virtual_images.rst:123
 msgid "ISO"
-msgstr ""
+msgstr "ISO"
 
 #: ../../library/virtual_images/virtual_images.rst:124
 msgid "PXE Boot"
-msgstr ""
+msgstr "PXE Boot"
 
 #: ../../library/virtual_images/virtual_images.rst:125
 msgid "QCOW2"
-msgstr ""
+msgstr "QCOW2"
 
 #: ../../library/virtual_images/virtual_images.rst:126
 msgid "RAW"
-msgstr ""
+msgstr "RAW"
 
 #: ../../library/virtual_images/virtual_images.rst:127
 msgid "VHD"
-msgstr ""
+msgstr "VHD"
 
 #: ../../library/virtual_images/virtual_images.rst:128
 msgid "VMware (vmdk/ovf/ova)"
-msgstr ""
+msgstr "VMware (vmdk/ovf/ova)"
 
 #: ../../library/virtual_images/virtual_images.rst:130
 msgid ""
 "Configure the Virtual Image settings (see `Configuring Virtual Images`_ "
 "above for a description of each option)."
-msgstr ""
+msgstr "Configure as configurações da Virtual Image (veja `Configuring Virtual Images`_ acima para uma descrição de cada opção)."
 
 #: ../../library/virtual_images/virtual_images.rst:132
 msgid "Upload Image"
-msgstr ""
+msgstr "Enviar Imagem"
 
 #: ../../library/virtual_images/virtual_images.rst:134
 msgid "Images can be uploaded by File or URL:"
-msgstr ""
+msgstr "As imagens podem ser enviadas por Arquivo ou URL:"
 
 #: ../../library/virtual_images/virtual_images.rst:135
 msgid "*File*"
-msgstr ""
+msgstr "*File*"
 
 #: ../../library/virtual_images/virtual_images.rst:136
 msgid ""
 "Drag and Drop the image file, or select :guilabel:`Add File` to select "
 "the image file."
-msgstr ""
+msgstr "Arraste e solte o arquivo da imagem, ou selecione :guilabel:`Add File` para selecionar o arquivo da imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:137
 msgid "*Url*"
-msgstr ""
+msgstr "*Url*"
 
 #: ../../library/virtual_images/virtual_images.rst:138
 msgid "Select the URL radio button, and enter URL of the Image."
-msgstr ""
+msgstr "Selecione o botão de rádio URL e informe a URL da Imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:140
 msgid ""
@@ -573,17 +573,17 @@ msgid ""
 "import will finish in the background. When selecting or dragging and "
 "dropping a file, the browser upload must complete before saving the "
 "Virtual Image record or the Image will not be valid."
-msgstr ""
+msgstr "A configuração da Virtual Image pode ser salva ao usar uma URL e a importação terminará em segundo plano. Ao selecionar ou arrastar e soltar um arquivo, o upload do navegador deve ser concluído antes de salvar o registro da Virtual Image ou a Imagem não será válida."
 
 #: ../../library/virtual_images/virtual_images.rst:142
 msgid "Choose the source method based on where the image is available:"
-msgstr ""
+msgstr "Escolha o método de origem com base em onde a imagem está disponível:"
 
 #: ../../library/virtual_images/virtual_images.rst:144
 msgid ""
 "Use **File** when the image is on your workstation. Keep the browser "
 "session connected until the file upload completes."
-msgstr ""
+msgstr "Use **File** quando a imagem estiver na sua workstation. Mantenha a sessão do navegador conectada até que o upload do arquivo seja concluído."
 
 #: ../../library/virtual_images/virtual_images.rst:145
 msgid ""
@@ -591,7 +591,7 @@ msgid ""
 "that the |morpheus| Appliance can resolve and reach. The appliance "
 "retrieves the image after the record is saved, so the browser does not "
 "carry the image data."
-msgstr ""
+msgstr "Use **URL** quando a imagem estiver disponível a partir de um endpoint HTTP ou HTTPS que o Appliance |morpheus| possa resolver e alcançar. O appliance recupera a imagem após o registro ser salvo, de modo que o navegador não transporta os dados da imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:147
 msgid ""
@@ -601,7 +601,7 @@ msgid ""
 "does not guarantee a faster transfer. Use only a trusted endpoint and "
 "verify the image checksum against its publisher-provided value before "
 "use."
-msgstr ""
+msgstr "A duração da transferência depende do tamanho da imagem, do caminho entre a origem e o appliance, da largura de banda disponível e do Provedor de Armazenamento selecionado. A importação por URL pode evitar um caminho lento de workstation, VPN ou navegador, mas não garante uma transferência mais rápida. Use apenas um endpoint confiável e verifique o checksum da imagem em relação ao valor fornecido pelo publisher antes do uso."
 
 #: ../../library/virtual_images/virtual_images.rst:149
 msgid ""
@@ -610,11 +610,11 @@ msgid ""
 "selected Storage Provider, appliance reachability to a URL source, and "
 "any proxy or TLS errors in the appliance logs. Retry only after "
 "confirming the first transfer has failed."
-msgstr ""
+msgstr "Se uma importação parecer travada, não crie imediatamente uma segunda Virtual Image. Verifique o status da Virtual Image, a capacidade disponível no Provedor de Armazenamento selecionado, a acessibilidade do appliance a uma origem URL e quaisquer erros de proxy ou TLS nos logs do appliance. Tente novamente apenas após confirmar que a primeira transferência falhou."
 
 #: ../../library/virtual_images/virtual_images.rst:151
 msgid "Save Changes."
-msgstr ""
+msgstr "Salvar Alterações."
 
 #: ../../library/virtual_images/virtual_images.rst:153
 msgid ""
@@ -622,13 +622,13 @@ msgid ""
 "Additional Storage Providers can be configured in `Infrastructure > "
 "Storage`. Ensure local folders are owned by morpheus-app.morpheus-app if "
 "used."
-msgstr ""
+msgstr "A localização padrão de Armazenamento é ``/var/opt/morpheus/morpheus-ui/vms``. Provedores de Armazenamento adicionais podem ser configurados em `Infrastructure > Storage`. Certifique-se de que pastas locais pertençam a morpheus-app.morpheus-app se usadas."
 
 #: ../../library/virtual_images/virtual_images.rst:155
 msgid ""
 "Provisioning will fail if `Cloud init Enabled` is checked and Cloud-Init "
 "is not installed on the Image."
-msgstr ""
+msgstr "O provisionamento falhará se `Cloud init Enabled` estiver marcado e Cloud-Init não estiver instalado na Imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:157
 msgid ""
@@ -638,11 +638,11 @@ msgid ""
 ":menuselection:`Administration --> Settings --> Provisioning` when using "
 "Cloud-Init or Guest Customizations and new credentials are not set on the"
 " Virtual Image."
-msgstr ""
+msgstr "Credenciais existentes da Imagem são obrigatórias para Imagens Linux que não estão com Cloud-Init ativado e para Imagens Windows quando Guest Customizations não são usadas. As configurações de usuário Cloud-Init e Windows precisam ser configuradas em :menuselection:`Administration --> Settings --> Provisioning` ao usar Cloud-Init ou Guest Customizations e novas credenciais não estiverem definidas na Virtual Image."
 
 #: ../../library/virtual_images/virtual_images.rst:162
 msgid "Multi-Disk QCOW2 Images for HVM/KVM"
-msgstr ""
+msgstr "Imagens QCOW2 Multi-Disco para HVM/KVM"
 
 #: ../../library/virtual_images/virtual_images.rst:164
 msgid ""
@@ -650,17 +650,17 @@ msgid ""
 "every QCOW2 file and a JSON manifest named exactly ``metadata.json`` as "
 "files on the same Virtual Image. The manifest maps each QCOW2 file to its"
 " guest device, disk size, and order."
-msgstr ""
+msgstr "HVM/KVM oferece suporte a Virtual Images contendo vários discos QCOW2. Envie cada arquivo QCOW2 e um manifesto JSON nomeado exatamente ``metadata.json`` como arquivos na mesma Virtual Image. O manifesto mapeia cada arquivo QCOW2 ao seu dispositivo guest, tamanho do disco e ordem."
 
 #: ../../library/virtual_images/virtual_images.rst:166
 msgid ""
 "Without ``metadata.json``, |morpheus| treats a QCOW2 Virtual Image as a "
 "single-disk image even when multiple QCOW2 files have been uploaded."
-msgstr ""
+msgstr "Sem ``metadata.json``, |morpheus| trata uma Virtual Image QCOW2 como imagem de disco único mesmo quando vários arquivos QCOW2 foram enviados."
 
 #: ../../library/virtual_images/virtual_images.rst:168
 msgid "The following example defines a 50 GiB boot disk and a 100 GiB data disk:"
-msgstr ""
+msgstr "O exemplo a seguir define um disco de boot de 50 GiB e um disco de dados de 100 GiB:"
 
 #: ../../library/virtual_images/virtual_images.rst:170
 #, python-brace-format
@@ -688,23 +688,23 @@ msgstr ""
 
 #: ../../library/virtual_images/virtual_images.rst:192
 msgid "Multi-disk QCOW2 metadata fields"
-msgstr ""
+msgstr "Campos de metadados QCOW2 multi-disco"
 
 #: ../../library/virtual_images/virtual_images.rst:196
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: ../../library/virtual_images/virtual_images.rst:197
 msgid "Required"
-msgstr ""
+msgstr "Obrigatório"
 
 #: ../../library/virtual_images/virtual_images.rst:198
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../library/virtual_images/virtual_images.rst:199
 msgid "``disks``"
-msgstr ""
+msgstr "``disks``"
 
 #: ../../library/virtual_images/virtual_images.rst:200
 #: ../../library/virtual_images/virtual_images.rst:203
@@ -733,104 +733,104 @@ msgstr ""
 #: ../../library/virtual_images/virtual_images.rst:330
 #: ../../library/virtual_images/virtual_images.rst:331
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
 
 #: ../../library/virtual_images/virtual_images.rst:201
 msgid "Top-level array containing one object for each uploaded disk."
-msgstr ""
+msgstr "Array de nível superior contendo um objeto para cada disco enviado."
 
 #: ../../library/virtual_images/virtual_images.rst:202
 msgid "``file``"
-msgstr ""
+msgstr "``file``"
 
 #: ../../library/virtual_images/virtual_images.rst:204
 msgid ""
 "Exact, unique filename of the uploaded QCOW2 file, including the "
 "``.qcow2`` extension. Filename matching is case-insensitive."
-msgstr ""
+msgstr "Nome de arquivo exato e exclusivo do arquivo QCOW2 enviado, incluindo a extensão ``.qcow2``. A correspondência de nome de arquivo não diferencia maiúsculas de minúsculas."
 
 #: ../../library/virtual_images/virtual_images.rst:205
 msgid "``capacity``"
-msgstr ""
+msgstr "``capacity``"
 
 #: ../../library/virtual_images/virtual_images.rst:206
 #: ../../library/virtual_images/virtual_images.rst:209
 #: ../../library/virtual_images/virtual_images.rst:212
 msgid "Recommended"
-msgstr ""
+msgstr "Recomendado"
 
 #: ../../library/virtual_images/virtual_images.rst:207
 msgid ""
 "Virtual disk capacity in bytes. Convert GiB to bytes with ``GiB × "
 "1073741824``. For example, 50 GiB is ``53687091200`` bytes."
-msgstr ""
+msgstr "Capacidade do disco virtual em bytes. Converta GiB para bytes com ``GiB × 1073741824``. Por exemplo, 50 GiB são ``53687091200`` bytes."
 
 #: ../../library/virtual_images/virtual_images.rst:208
 msgid "``guestDeviceName``"
-msgstr ""
+msgstr "``guestDeviceName``"
 
 #: ../../library/virtual_images/virtual_images.rst:210
 msgid ""
 "Device name presented to the guest, such as ``vda`` for the root disk and"
 " ``vdb`` for the first data disk."
-msgstr ""
+msgstr "Nome do dispositivo apresentado ao guest, como ``vda`` para o disco root e ``vdb`` para o primeiro disco de dados."
 
 #: ../../library/virtual_images/virtual_images.rst:211
 msgid "``position``"
-msgstr ""
+msgstr "``position``"
 
 #: ../../library/virtual_images/virtual_images.rst:213
 msgid "Zero-based disk order. Use unique, sequential values beginning with ``0``."
-msgstr ""
+msgstr "Ordem do disco baseada em zero. Use valores exclusivos e sequenciais começando com ``0``."
 
 #: ../../library/virtual_images/virtual_images.rst:214
 msgid "``name``"
-msgstr ""
+msgstr "``name``"
 
 #: ../../library/virtual_images/virtual_images.rst:215
 #: ../../library/virtual_images/virtual_images.rst:218
 #: ../../library/virtual_images/virtual_images.rst:221
 #: ../../library/virtual_images/virtual_images.rst:224
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: ../../library/virtual_images/virtual_images.rst:216
 msgid ""
 "Descriptive source-disk label, such as ``root`` or ``data``. The "
 "displayed image-volume name can be derived from the Virtual Image name "
 "instead."
-msgstr ""
+msgstr "Rótulo descritivo do disco de origem, como ``root`` ou ``data``. O nome do volume da imagem exibido pode ser derivado do nome da Virtual Image."
 
 #: ../../library/virtual_images/virtual_images.rst:217
 msgid "``boot``"
-msgstr ""
+msgstr "``boot``"
 
 #: ../../library/virtual_images/virtual_images.rst:219
 msgid ""
 "Set to ``true`` on the boot disk. If no disk is marked as bootable, "
 "|morpheus| selects the first disk after sorting."
-msgstr ""
+msgstr "Defina como ``true`` no disco de boot. Se nenhum disco for marcado como bootable, |morpheus| seleciona o primeiro disco após a ordenação."
 
 #: ../../library/virtual_images/virtual_images.rst:220
 msgid "``unitNumber``"
-msgstr ""
+msgstr "``unitNumber``"
 
 #: ../../library/virtual_images/virtual_images.rst:222
 msgid ""
 "Unit number on a referenced storage controller. Omit for a basic VirtIO "
 "disk set."
-msgstr ""
+msgstr "Número da unidade em um controlador de armazenamento referenciado. Omita para um conjunto básico de discos VirtIO."
 
 #: ../../library/virtual_images/virtual_images.rst:223
 msgid "``storageController``"
-msgstr ""
+msgstr "``storageController``"
 
 #: ../../library/virtual_images/virtual_images.rst:225
 msgid ""
 "Controller reference used when a specific imported controller topology "
 "must be preserved. It requires a matching object in a top-level "
 "``storageControllers`` array. Omit both for a basic VirtIO disk set."
-msgstr ""
+msgstr "Referência de controlador usada quando uma topologia específica de controlador importada deve ser preservada. Requer um objeto correspondente em um array de nível superior ``storageControllers``. Omita ambos para um conjunto básico de discos VirtIO."
 
 #: ../../library/virtual_images/virtual_images.rst:227
 msgid ""
@@ -838,67 +838,67 @@ msgid ""
 "``position``. For a basic manifest without controller fields, "
 "``position`` determines the order. Use distinct filenames, positions, and"
 " guest device names to avoid ambiguous mappings."
-msgstr ""
+msgstr "Os registros de disco são ordenados por número de bus do controlador, número da unidade e depois ``position``. Para um manifesto básico sem campos de controlador, ``position`` determina a ordem. Use nomes de arquivo, posições e nomes de dispositivo guest distintos para evitar mapeamentos ambíguos."
 
 #: ../../library/virtual_images/virtual_images.rst:229
 msgid ""
 "Only ``disks`` and a resolvable ``file`` value are strictly needed for "
 "file discovery, but include the recommended fields shown above so "
 "|morpheus| can build predictable disk capacities, devices, and ordering."
-msgstr ""
+msgstr "Somente ``disks`` e um valor ``file`` resolvível são estritamente necessários para a descoberta de arquivos, mas inclua os campos recomendados mostrados acima para que |morpheus| possa construir capacidades, dispositivos e ordenação de disco previsíveis."
 
 #: ../../library/virtual_images/virtual_images.rst:231
 msgid "To upload a multi-disk QCOW2 image:"
-msgstr ""
+msgstr "Para enviar uma imagem QCOW2 multi-disco:"
 
 #: ../../library/virtual_images/virtual_images.rst:233
 msgid "Navigate to |LibVir| and click :guilabel:`+ ADD`."
-msgstr ""
+msgstr "Navegue até |LibVir| e clique em :guilabel:`+ ADD`."
 
 #: ../../library/virtual_images/virtual_images.rst:234
 msgid "Select :guilabel:`QCOW2` as the image format."
-msgstr ""
+msgstr "Selecione :guilabel:`QCOW2` como o formato da imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:235
 msgid ""
 "Configure the Virtual Image, including Operating System, Cloud-Init, "
 "Agent, credentials, VirtIO, and guest tools settings as appropriate for "
 "the image."
-msgstr ""
+msgstr "Configure a Virtual Image, incluindo Sistema Operacional, Cloud-Init, Agente, credenciais, VirtIO e configurações de guest tools conforme apropriado para a imagem."
 
 #: ../../library/virtual_images/virtual_images.rst:236
 msgid ""
 "Select **File** upload. Multi-disk upload requires adding multiple files "
 "to the same Virtual Image."
-msgstr ""
+msgstr "Selecione upload por **File**. O upload multi-disco exige adicionar vários arquivos à mesma Virtual Image."
 
 #: ../../library/virtual_images/virtual_images.rst:237
 msgid ""
 "Upload every referenced ``.qcow2`` file and wait for each upload to "
 "complete."
-msgstr ""
+msgstr "Envie cada arquivo ``.qcow2`` referenciado e aguarde a conclusão de cada upload."
 
 #: ../../library/virtual_images/virtual_images.rst:238
 msgid ""
 "Upload ``metadata.json`` last. Uploading the manifest triggers disk-map "
 "processing, so all referenced disk files must already be present."
-msgstr ""
+msgstr "Envie ``metadata.json`` por último. O envio do manifesto dispara o processamento do mapa de discos, portanto todos os arquivos de disco referenciados já devem estar presentes."
 
 #: ../../library/virtual_images/virtual_images.rst:239
 msgid ""
 "Confirm the file list contains ``metadata.json`` and every filename "
 "referenced by its ``disks`` array."
-msgstr ""
+msgstr "Confirme que a lista de arquivos contém ``metadata.json`` e cada nome de arquivo referenciado pelo seu array ``disks``."
 
 #: ../../library/virtual_images/virtual_images.rst:240
 msgid "Save the Virtual Image and wait for its status to become Active."
-msgstr ""
+msgstr "Salve a Virtual Image e aguarde até que seu status se torne Active."
 
 #: ../../library/virtual_images/virtual_images.rst:241
 msgid ""
 "Open the Virtual Image details and verify that every disk is present with"
 " the expected capacity, device order, and root disk before provisioning."
-msgstr ""
+msgstr "Abra os detalhes da Virtual Image e verifique se cada disco está presente com a capacidade, ordem de dispositivo e disco root esperados antes do provisionamento."
 
 #: ../../library/virtual_images/virtual_images.rst:243
 msgid ""
@@ -907,54 +907,54 @@ msgid ""
 "records can be incomplete. Remove and re-upload the manifest after all "
 "disk files are present, or recreate the Virtual Image if the stored "
 "volume map is incorrect."
-msgstr ""
+msgstr "Não envie ``metadata.json`` antes dos arquivos QCOW2. Se o manifesto for processado enquanto arquivos referenciados estiverem ausentes, os registros de disco resultantes podem ficar incompletos. Remova e reenvie o manifesto após todos os arquivos de disco estarem presentes, ou recrie a Virtual Image se o mapa de volumes armazenado estiver incorreto."
 
 #: ../../library/virtual_images/virtual_images.rst:245
 msgid "Troubleshooting multi-disk uploads:"
-msgstr ""
+msgstr "Solução de problemas de uploads multi-disco:"
 
 #: ../../library/virtual_images/virtual_images.rst:247
 msgid ""
 "**Only one disk is shown:** Confirm the file is named exactly "
 "``metadata.json``, contains a top-level ``disks`` array, and was uploaded"
 " after all QCOW2 files."
-msgstr ""
+msgstr "**Apenas um disco é mostrado:** Confirme que o arquivo se chama exatamente ``metadata.json``, contém um array ``disks`` de nível superior e foi enviado após todos os arquivos QCOW2."
 
 #: ../../library/virtual_images/virtual_images.rst:248
 msgid ""
 "**A disk is missing:** Confirm its ``file`` value exactly matches a "
 "unique uploaded filename and includes the ``.qcow2`` extension."
-msgstr ""
+msgstr "**Um disco está ausente:** Confirme que seu valor ``file`` corresponde exatamente a um nome de arquivo enviado exclusivo e inclui a extensão ``.qcow2``."
 
 #: ../../library/virtual_images/virtual_images.rst:249
 msgid ""
 "**Disk capacity is wrong:** Confirm ``capacity`` is in bytes rather than "
 "GiB. Multiply GiB by ``1073741824``."
-msgstr ""
+msgstr "**A capacidade do disco está errada:** Confirme que ``capacity`` está em bytes e não em GiB. Multiplique GiB por ``1073741824``."
 
 #: ../../library/virtual_images/virtual_images.rst:250
 msgid ""
 "**Wrong disk boots:** Set ``boot`` to ``true`` on the intended root disk "
 "and ensure its ordering fields do not conflict with another disk."
-msgstr ""
+msgstr "**O disco errado inicia:** Defina ``boot`` como ``true`` no disco root pretendido e garanta que seus campos de ordenação não entrem em conflito com outro disco."
 
 #: ../../library/virtual_images/virtual_images.rst:251
 msgid ""
 "**Device order is wrong:** Use sequential ``position`` values and "
 "matching ``guestDeviceName`` values such as ``vda``, ``vdb``, and "
 "``vdc``."
-msgstr ""
+msgstr "**A ordem dos dispositivos está errada:** Use valores ``position`` sequenciais e valores ``guestDeviceName`` correspondentes como ``vda``, ``vdb`` e ``vdc``."
 
 #: ../../library/virtual_images/virtual_images.rst:252
 msgid ""
 "**Manifest is ignored or the image remains invalid:** Validate the file "
 "as JSON, ensure there are no comments or trailing commas, and upload the "
 "corrected manifest after the disk files."
-msgstr ""
+msgstr "**O manifesto é ignorado ou a imagem permanece inválida:** Valide o arquivo como JSON, garanta que não haja comentários ou vírgulas finais e envie o manifesto corrigido após os arquivos de disco."
 
 #: ../../library/virtual_images/virtual_images.rst:255
 msgid "Virtual Image Options — Cloud Applicability"
-msgstr ""
+msgstr "Opções de Virtual Image — Aplicabilidade por Nuvem"
 
 #: ../../library/virtual_images/virtual_images.rst:257
 msgid ""
@@ -962,55 +962,55 @@ msgid ""
 "matrix clarifies which options have an effect depending on the target "
 "cloud. Options marked as having no effect are ignored during provisioning"
 " to that cloud type."
-msgstr ""
+msgstr "Nem todas as configurações de Virtual Image se aplicam a todos os tipos de nuvem. A matriz a seguir esclarece quais opções têm efeito dependendo da nuvem de destino. Opções marcadas como sem efeito são ignoradas durante o provisionamento para aquele tipo de nuvem."
 
 #: ../../library/virtual_images/virtual_images.rst:263
 msgid "Option"
-msgstr ""
+msgstr "Opção"
 
 #: ../../library/virtual_images/virtual_images.rst:264
 msgid "HVM (KVM)"
-msgstr ""
+msgstr "HVM (KVM)"
 
 #: ../../library/virtual_images/virtual_images.rst:265
 msgid "VMware / VME"
-msgstr ""
+msgstr "VMware / VME"
 
 #: ../../library/virtual_images/virtual_images.rst:266
 msgid "AWS"
-msgstr ""
+msgstr "AWS"
 
 #: ../../library/virtual_images/virtual_images.rst:267
 msgid "Azure"
-msgstr ""
+msgstr "Azure"
 
 #: ../../library/virtual_images/virtual_images.rst:268
 msgid "Nutanix"
-msgstr ""
+msgstr "Nutanix"
 
 #: ../../library/virtual_images/virtual_images.rst:269
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: ../../library/virtual_images/virtual_images.rst:270
 msgid "Cloud Init Enabled"
-msgstr ""
+msgstr "Cloud Init Enabled"
 
 #: ../../library/virtual_images/virtual_images.rst:276
 msgid "Must be unchecked if cloud-init is not installed on the image"
-msgstr ""
+msgstr "Deve ser desmarcado se cloud-init não estiver instalado na imagem"
 
 #: ../../library/virtual_images/virtual_images.rst:277
 msgid "Install Agent"
-msgstr ""
+msgstr "Install Agent"
 
 #: ../../library/virtual_images/virtual_images.rst:283
 msgid "Universal — works on all clouds"
-msgstr ""
+msgstr "Universal — funciona em todas as nuvens"
 
 #: ../../library/virtual_images/virtual_images.rst:284
 msgid "Force Guest Customization"
-msgstr ""
+msgstr "Force Guest Customization"
 
 #: ../../library/virtual_images/virtual_images.rst:285
 #: ../../library/virtual_images/virtual_images.rst:286
@@ -1018,7 +1018,7 @@ msgstr ""
 #: ../../library/virtual_images/virtual_images.rst:299
 #: ../../library/virtual_images/virtual_images.rst:300
 msgid "**Yes**"
-msgstr ""
+msgstr "**Yes**"
 
 #: ../../library/virtual_images/virtual_images.rst:287
 #: ../../library/virtual_images/virtual_images.rst:288
@@ -1037,65 +1037,65 @@ msgstr ""
 #: ../../library/virtual_images/virtual_images.rst:322
 #: ../../library/virtual_images/virtual_images.rst:323
 msgid "No effect"
-msgstr ""
+msgstr "Sem efeito"
 
 #: ../../library/virtual_images/virtual_images.rst:290
 msgid ""
 "Triggers guest customization during provisioning. On VMware/VME, "
 "transfers unattend via VMware Tools and reboots. On HVM, injects unattend"
 " and triggers customization via the guest agent."
-msgstr ""
+msgstr "Dispara guest customization durante o provisionamento. No VMware/VME, transfere unattend via VMware Tools e reinicia. No HVM, injeta unattend e dispara a customização via o guest agent."
 
 #: ../../library/virtual_images/virtual_images.rst:291
 msgid "VirtIO Drivers Loaded"
-msgstr ""
+msgstr "VirtIO Drivers Loaded"
 
 #: ../../library/virtual_images/virtual_images.rst:297
 msgid ""
 "HVM/KVM only. When unchecked, |morpheus| uses IDE/SATA bus instead of "
 "VirtIO."
-msgstr ""
+msgstr "Somente HVM/KVM. Quando desmarcado, |morpheus| usa barramento IDE/SATA em vez de VirtIO."
 
 #: ../../library/virtual_images/virtual_images.rst:298
 msgid "VM Tools Installed"
-msgstr ""
+msgstr "VM Tools Installed"
 
 #: ../../library/virtual_images/virtual_images.rst:304
 msgid ""
 "Indicates guest tools are present (VMware Tools for VMware, QEMU Guest "
 "Agent for HVM). When unchecked, |morpheus| skips network wait during "
 "provisioning."
-msgstr ""
+msgstr "Indica que guest tools estão presentes (VMware Tools para VMware, QEMU Guest Agent para HVM). Quando desmarcado, |morpheus| pula a espera de rede durante o provisionamento."
 
 #: ../../library/virtual_images/virtual_images.rst:305
 msgid "Enabled Sysprep"
-msgstr ""
+msgstr "Enabled Sysprep"
 
 #: ../../library/virtual_images/virtual_images.rst:311
 msgid ""
 "Windows images. |morpheus| injects unattend.xml when enabled. Works on "
 "VMware, HVM, Nutanix, SCVMM, Hyper-V, GCP."
-msgstr ""
+msgstr "Imagens Windows. |morpheus| injeta unattend.xml quando ativado. Funciona em VMware, HVM, Nutanix, SCVMM, Hyper-V, GCP."
 
 #: ../../library/virtual_images/virtual_images.rst:312
 msgid "Auto Join Domain"
-msgstr ""
+msgstr "Auto Join Domain"
 
 #: ../../library/virtual_images/virtual_images.rst:318
 msgid "Windows only. Requires Network Domain with Domain Controller configured."
-msgstr ""
+msgstr "Somente Windows. Requer Network Domain com Domain Controller configurado."
 
 #: ../../library/virtual_images/virtual_images.rst:325
 msgid "Windows trial re-arm. Applicable to any on-prem cloud."
-msgstr ""
+msgstr "Rearme de trial Windows. Aplicável a qualquer nuvem on-prem."
 
 #: ../../library/virtual_images/virtual_images.rst:326
 msgid "FIPS Compliant Image"
-msgstr ""
+msgstr "FIPS Compliant Image"
 
 #: ../../library/virtual_images/virtual_images.rst:332
 msgid "Universal — controls which Agent package is installed."
-msgstr ""
+msgstr "Universal — controla qual pacote do Agente é instalado."
 
 #: ../../library/virtual_images/virtual_images.rst:336
 msgid ""
@@ -1103,7 +1103,7 @@ msgid ""
 "this setting works on VMware/VME (via VMware Tools) and HVM (via the "
 "guest agent). On public clouds (AWS, Azure), customization is handled by "
 "the cloud provider's metadata service and this setting has no effect."
-msgstr ""
+msgstr "A fonte mais comum de confusão é **Force Guest Customization** — esta configuração funciona no VMware/VME (via VMware Tools) e no HVM (via o guest agent). Em nuvens públicas (AWS, Azure), a customização é tratada pelo serviço de metadados do provedor de nuvem e esta configuração não tem efeito."
 
 #: ../../library/virtual_images/virtual_images.rst:340
 msgid ""
@@ -1113,7 +1113,7 @@ msgid ""
 "for OS installation and do not use cloud-init or sysprep-based guest "
 "customization. Leaving these options enabled on an ISO image will cause "
 "provisioning failures or unexpected behavior."
-msgstr ""
+msgstr "**Tipos de imagem ISO** — Ao enviar imagens ISO (usadas para instalações manuais de SO ou mídia de boot), desative **Cloud Init Enabled** e **Enabled Sysprep**. Imagens baseadas em ISO normalmente são iniciadas de forma interativa para instalação do SO e não usam cloud-init ou guest customization baseada em sysprep. Deixar essas opções ativadas em uma imagem ISO causará falhas de provisionamento ou comportamento inesperado."
 
 #: ../../library/virtual_images/virtual_images.rst:342
 msgid ""
@@ -1122,11 +1122,11 @@ msgid ""
 "installed disk. For the related HVM boot controls and the separate "
 "network-boot path, see "
 ":doc:`/infrastructure/clusters/hvm/vm_advanced_options`."
-msgstr ""
+msgstr "Para HVM, provisione a VM a partir do ISO, conclua o instalador pelo console da VM, ejete a mídia ISO e reinicie a VM a partir do disco instalado. Para os controles de boot HVM relacionados e o caminho separado de network-boot, consulte :doc:`/infrastructure/clusters/hvm/vm_advanced_options`."
 
 #: ../../library/virtual_images/virtual_images.rst:345
 msgid "Import an HVM Instance as an Image"
-msgstr ""
+msgstr "Importar uma Instância HVM como Imagem"
 
 #: ../../library/virtual_images/virtual_images.rst:347
 msgid ""
@@ -1134,7 +1134,7 @@ msgid ""
 " HVM VM installed from ISO, verify that the guest boots from its "
 "installed disk and eject the installation ISO. The import excludes ISO "
 "volumes and exports the installed disks."
-msgstr ""
+msgstr "Antes de selecionar :guilabel:`Actions` > :guilabel:`Import as Image` para uma VM HVM instalada a partir de ISO, verifique se o guest inicia a partir do disco instalado e ejete o ISO de instalação. A importação exclui volumes ISO e exporta os discos instalados."
 
 #: ../../library/virtual_images/virtual_images.rst:349
 msgid ""
@@ -1143,7 +1143,7 @@ msgid ""
 "chain into a temporary export disk without modifying the VM's existing "
 "snapshots. Other supported storage backends create their own temporary "
 "export snapshot."
-msgstr ""
+msgstr "Snapshots baseados em arquivo existentes não precisam ser excluídos antes da importação. Quando um disco tem uma cadeia de backing qcow2, |morpheus| copia e mescla a cadeia em um disco de exportação temporário sem modificar os snapshots existentes da VM. Outros backends de armazenamento suportados criam seu próprio snapshot de exportação temporário."
 
 #: ../../library/virtual_images/virtual_images.rst:351
 msgid ""
@@ -1155,11 +1155,11 @@ msgid ""
 "storage backend, snapshot list, and import process output. Deleting an "
 "existing snapshot is not a required import step and should not be used as"
 " an import workaround."
-msgstr ""
+msgstr "Após a importação terminar, verifique se a Virtual Image resultante contém ``metadata.json`` e cada arquivo de disco referenciado pelo manifesto. Um registro de Virtual Image ou arquivo de metadados sem os arquivos de disco referenciados está incompleto, mesmo se o status for Active. Deixe a VM de origem e os snapshots inalterados e contate o Suporte com a versão HVM, backend de armazenamento, lista de snapshots e saída do processo de importação. Excluir um snapshot existente não é um passo obrigatório de importação e não deve ser usado como solução alternativa de importação."
 
 #: ../../library/virtual_images/virtual_images.rst:354
 msgid "VMware - VM Templates Copies"
-msgstr ""
+msgstr "VMware - Cópias de VM Templates"
 
 #: ../../library/virtual_images/virtual_images.rst:356
 msgid ""
@@ -1169,7 +1169,7 @@ msgid ""
 "Alternatively, an organization may decide to create a VM template in one "
 "vCenter and then transfer it to other vCenters, which then could be "
 "sync’d into |morpheus|."
-msgstr ""
+msgstr "Em um ambiente VMware, você pode ter um único VM template que usa em diferentes vCenters. Enviar uma imagem para o |morpheus|, mencionado na seção Add Virtual Image, é um método para resolver isso. Alternativamente, uma organização pode decidir criar um VM template em um vCenter e depois transferi-lo para outros vCenters, que então poderiam ser sincronizados no |morpheus|."
 
 #: ../../library/virtual_images/virtual_images.rst:358
 msgid ""
@@ -1178,7 +1178,7 @@ msgid ""
 "single virtual image in |morpheus|. This means that as you deploy to the "
 "various vCenter Clouds in |morpheus| using this virtual image, it will "
 "choose the correct VM template to use based on the Cloud deployed to."
-msgstr ""
+msgstr "Se todos os vCenters forem adicionados como Nuvens no |morpheus| e os templates tiverem o mesmo nome em cada vCenter, eles serão agregados sob uma única virtual image no |morpheus|. Isso significa que, ao implementar nas várias Nuvens vCenter no |morpheus| usando esta virtual image, será escolhido o VM template correto com base na Nuvem de destino."
 
 #: ../../library/virtual_images/virtual_images.rst:360
 msgid ""
@@ -1188,7 +1188,7 @@ msgid ""
 "reduces user selections. As well, this can reduce the cloning time of VMs"
 " by avoiding network transfers of images between geographic locations, "
 "ensuring the closest VM template is selected."
-msgstr ""
+msgstr "Isso elimina a necessidade de criar vários Node Types para cada virtual image se os templates tivessem nomes diferentes em cada vCenter. Isso pode reduzir a sobrecarga de manter vários Node Types e reduz as seleções do usuário. Além disso, isso pode reduzir o tempo de clonagem de VMs evitando transferências de rede de imagens entre localizações geográficas, garantindo que o VM template mais próximo seja selecionado."
 
 #: ../../library/virtual_images/virtual_images.rst:362
 msgid ""
@@ -1202,7 +1202,7 @@ msgid ""
 "Library is not stored in a datastore accessible by the cluster/host, a "
 "copy of the VM template will be performed to the target host/cluster "
 "instead."
-msgstr ""
+msgstr "|morpheus| oferece suporte a Content Libraries do VMware armazenando VM templates e sincronizando no |morpheus|, da mesma forma que um template em uma pasta. Além disso, a Content Library pode ser usada para alojar o mesmo template em várias bibliotecas. Se tiverem o mesmo nome, esses templates serão agregados sob uma única virtual image. Se a Content Library estiver armazenada em um datastore ao qual o host/cluster de destino tem acesso, essa library será usada primeiro, para reduzir o tempo de clonagem. Se a Content Library não estiver armazenada em um datastore acessível pelo cluster/host, uma cópia do VM template será realizada para o host/cluster de destino."
 
 #: ../../library/virtual_images/virtual_images.rst:364
 msgid ""
@@ -1210,5 +1210,5 @@ msgid ""
 "applies to a single VMware cloud with multiple logical data centers.  It "
 "will not apply to clusters, as a template is not associated with a "
 "cluster, only when it is converted to a VM."
-msgstr ""
+msgstr "VM templates são um objeto de nível de **Data Center**. O mesmo processo acima se aplica a uma única nuvem VMware com vários data centers lógicos. Não se aplicará a clusters, pois um template não está associado a um cluster, somente quando é convertido em uma VM."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:2
 msgid "Azure Scale Sets"
-msgstr ""
+msgstr "Azure Scale Sets"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:4
 msgid ""
@@ -32,48 +32,48 @@ msgid ""
 "for scaling the instances. The Instances nodes that are added and removed"
 " by Azure will be synced in by Morpheus as the instance scales up and "
 "down."
-msgstr ""
+msgstr "O auto-scaling de instâncias Azure pode ser feito com o serviço nativo de scaling do Morpheus ou com Azure Scale Sets. Ao usar Azure Scale Sets, as configurações de threshold e min/max nodes são gerenciadas no Azure."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:6
 #: ../../integration_guides/Clouds/azure/scalesets.rst:29
 #: ../../integration_guides/Clouds/azure/scalesets.rst:51
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:6
 msgid "Instances can only be added to Azure Scale Sets at provision time."
-msgstr ""
+msgstr "Instâncias só podem ser adicionadas a Azure Scale Sets no momento do provisionamento."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:9
 msgid "Adding an Instance to a Scale Set"
-msgstr ""
+msgstr "Adicionando uma Instância a um Scale Set"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:11
 msgid "In ``Provisioning - Instances`` select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Em ``Provisioning - Instances`` selecione :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:12
 msgid ""
 "Select an Instance Type that has scaling enabled (Advanced section when "
 "editing an Instance Type in `Provisioning - Library`)"
-msgstr ""
+msgstr "Selecione um Instance Type que tenha scaling ativado (seção Advanced ao editar um Instance Type em `Provisioning - Library`)"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:13
 msgid "Configure the Instance as desired"
-msgstr ""
+msgstr "Configure a Instância conforme desejado"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:14
 msgid ""
 "In the `AUTOMATION` section under `Scale - Scale Type` select `Azure "
 "Scale Set`"
-msgstr ""
+msgstr "Na seção `AUTOMATION` em `Scale - Scale Type` selecione `Azure Scale Set`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:15
 msgid ""
 "Select a default Threshold. Threshold pre-sets can be added in "
 "`Provisioning - Automation- Scale Thresholds` (requires Instances - "
 "Thresholds permission)"
-msgstr ""
+msgstr "Selecione um Threshold padrão. Pré-definições de Threshold podem ser adicionadas em `Provisioning - Automation- Scale Thresholds` (exige permissões de Função Instances - Thresholds)"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:17
 msgid ".. image:: /images/clouds/azure/azure_scale_sets1.png"
@@ -81,27 +81,27 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:19
 msgid "Complete the instance configuration and provision the instance."
-msgstr ""
+msgstr "Conclua a configuração da instância e provisione a instância."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:21
 msgid ""
 "A Virtual Machine scale set will be created in Azure with the selected "
 "threshold and min/max node settings."
-msgstr ""
+msgstr "Um Virtual Machine scale set será criado no Azure com o threshold selecionado e as configurações de min/max nodes."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:24
 msgid "Create Threshold Presets"
-msgstr ""
+msgstr "Criar Pré-definições de Threshold"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:27
 msgid "In ``Provisioning - Automation`` select the `SCALE THRESHOLDS` tab"
-msgstr ""
+msgstr "Em ``Provisioning - Automation`` selecione a aba `SCALE THRESHOLDS`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:29
 msgid ""
 "Access to the SCALE THRESHOLDS section requires `Instances - Thresholds` "
 "Role permissions."
-msgstr ""
+msgstr "O acesso à seção SCALE THRESHOLDS exige permissões de Função `Instances - Thresholds`."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:31
 msgid ".. image:: /images/provisioning/scalethresholds.png"
@@ -109,11 +109,11 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:32
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:33
 msgid "Configure Threshold settings."
-msgstr ""
+msgstr "Configure as configurações de Threshold."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:35
 msgid ".. image:: /images/provisioning/scalethresholds1.png"
@@ -121,41 +121,41 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:37
 msgid "Select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Selecione :guilabel:`SAVE CHANGES`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:39
 msgid ""
 "The new Threshold will be available for selection in the SCALE section "
 "during provisioning or when configuring an App Blueprint."
-msgstr ""
+msgstr "O novo Threshold estará disponível para seleção na seção SCALE durante o provisionamento ou ao configurar um App Blueprint."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:43
 msgid "Edit Thresholds on an Instance"
-msgstr ""
+msgstr "Editar Thresholds em uma Instância"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:45
 msgid "In ``Provisioning - Instances`` select the target Instance."
-msgstr ""
+msgstr "Em ``Provisioning - Instances`` selecione a Instância de destino."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:46
 msgid "Select the `SCALE` tab below the VM's section"
-msgstr ""
+msgstr "Selecione a aba `SCALE` abaixo da seção das VMs"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:47
 msgid "In the `THRESHOLDS` section of the SCALE tab, click :guilabel:`EDIT`"
-msgstr ""
+msgstr "Na seção `THRESHOLDS` da aba SCALE, clique em :guilabel:`EDIT`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:48
 msgid "Update the threshold settings."
-msgstr ""
+msgstr "Atualize as configurações de threshold."
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:49
 msgid "Select :guilabel:`APPLY`"
-msgstr ""
+msgstr "Selecione :guilabel:`APPLY`"
 
 #: ../../integration_guides/Clouds/azure/scalesets.rst:51
 msgid ""
 "Morpheus will sync in changes to a scale sets threshold settings if the "
 "settings are edited in Azure."
-msgstr ""
+msgstr "O Morpheus sincronizará alterações nas configurações de threshold de um scale set se as configurações forem editadas no Azure."
 

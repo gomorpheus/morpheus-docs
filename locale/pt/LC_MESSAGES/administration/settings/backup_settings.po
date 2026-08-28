@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/settings/backup_settings.rst:2
 msgid "Backup Settings"
-msgstr ""
+msgstr "Configurações de Backup"
 
 #: ../../administration/settings/backup_settings.rst:4
 msgid ""
@@ -30,22 +30,22 @@ msgid ""
 "select a default backup bucket, and administer global settings related to"
 " backups. Changes to global settings only affect new backups going "
 "forward and do not affect existing backups."
-msgstr ""
+msgstr "A página de configurações de Backup permite ativar ou desativar backups agendados, selecionar um repositório de backup padrão e administrar configurações globais relacionadas a backups. Alterações nas configurações globais afetam apenas novos backups daqui em diante e não afetam backups existentes."
 
 #: ../../administration/settings/backup_settings.rst:6
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../administration/settings/backup_settings.rst:6
 msgid ""
 "Appliance backups are subject to a two-hour time limit to complete the "
 "backup. Automated backup attempts will be abandoned and will fail once "
 "this time limit is exceeded."
-msgstr ""
+msgstr "Backups do appliance estão sujeitos a um limite de tempo de duas horas para concluir o backup. Tentativas de backup automatizado serão abandonadas e falharão quando este limite de tempo for excedido."
 
 #: ../../administration/settings/backup_settings.rst:8
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../administration/settings/backup_settings.rst:8
 msgid ""
@@ -58,91 +58,91 @@ msgid ""
 " for all app nodes. Another solution would be to make a \"Default Backup "
 "Bucket\" configuration selection, which all nodes would then use for "
 "backup storage and retrieval."
-msgstr ""
+msgstr "Appliances com arquitetura HA contendo vários nós de aplicação devem garantir que todos os nós possam acessar backups armazenados. Por padrão, se nenhuma configuração de \"Repositório de Backup Padrão\" for feita, os backups são armazenados em ``/var/opt/morpheus/bitcan``. Se este caminho for local aos nós de aplicação, todos os outros nós de aplicação não conseguiriam alcançar os backups. Nesse caso, uma solução seria criar um compartilhamento NFS para o diretório ``bitcan`` para todos os nós de aplicação. Outra solução seria fazer uma seleção de configuração de \"Repositório de Backup Padrão\", que todos os nós usariam então para armazenamento e recuperação de backup."
 
 #: ../../administration/settings/backup_settings.rst:11
 msgid "|morpheus| Backup Settings"
-msgstr ""
+msgstr "Configurações de Backup do |morpheus|"
 
 #: ../../administration/settings/backup_settings.rst:13
 msgid "Scheduled Backups"
-msgstr ""
+msgstr "Backups Agendados"
 
 #: ../../administration/settings/backup_settings.rst:14
 msgid "Enable automatic scheduled backups for provisioned instances"
-msgstr ""
+msgstr "Ativar backups agendados automáticos para instâncias provisionadas"
 
 #: ../../administration/settings/backup_settings.rst:16
 msgid "Create Backups"
-msgstr ""
+msgstr "Criar Backups"
 
 #: ../../administration/settings/backup_settings.rst:17
 msgid ""
 "When enabled, |morpheus| will automatically configure instances for "
 "manual or scheduled backups"
-msgstr ""
+msgstr "Quando ativado, |morpheus| configurará automaticamente instâncias para backups manuais ou agendados"
 
 #: ../../administration/settings/backup_settings.rst:19
 msgid "Backup Appliance"
-msgstr ""
+msgstr "Backup do Appliance"
 
 #: ../../administration/settings/backup_settings.rst:20
 msgid ""
 "When enabled, a backup will be created for the |morpheus| appliance "
 "database. Select the ``Backup`` text link to view or edit settings "
 "related to the appliance backup"
-msgstr ""
+msgstr "Quando ativado, um backup será criado para o banco de dados do appliance |morpheus|. Selecione o link de texto ``Backup`` para visualizar ou editar configurações relacionadas ao backup do appliance"
 
 #: ../../administration/settings/backup_settings.rst:22
 msgid "Default Backup Bucket"
-msgstr ""
+msgstr "Repositório de Backup Padrão"
 
 #: ../../administration/settings/backup_settings.rst:23
 msgid ""
 "Select an existing bucket as the default for future backup runs. Click "
 "the ``Infrastructure Storage`` text link to add a new storage bucket to "
 "|morpheus| if needed"
-msgstr ""
+msgstr "Selecione um repositório existente como padrão para futuras execuções de backup. Clique no link de texto ``Infrastructure Storage`` para adicionar um novo repositório de armazenamento ao |morpheus| se necessário"
 
 #: ../../administration/settings/backup_settings.rst:25
 msgid "Default Backup Schedule"
-msgstr ""
+msgstr "Agendamento de Backup Padrão"
 
 #: ../../administration/settings/backup_settings.rst:26
 msgid ""
 "Choose a default schedule interval for automated backups. The available "
 "selections in this dropdown menu are Execution Schedules defined in "
 "|LibAutExe|"
-msgstr ""
+msgstr "Escolha um intervalo de agendamento padrão para backups automatizados. As seleções disponíveis neste menu suspenso são Agendamentos de Execução definidos em |LibAutExe|"
 
 #: ../../administration/settings/backup_settings.rst:28
 msgid "Default Backup Retention"
-msgstr ""
+msgstr "Retenção de Backup Padrão"
 
 #: ../../administration/settings/backup_settings.rst:29
 msgid ""
 "Choose the default number of backups to be retained for automated "
 "Instance and appliance backup jobs"
-msgstr ""
+msgstr "Escolha o número padrão de backups a serem retidos para jobs de backup automatizado de Instância e appliance"
 
 #: ../../administration/settings/backup_settings.rst:31
 msgid "Default Synthetic Full Backup enabled"
-msgstr ""
+msgstr "Backup Sintético Completo Padrão ativado"
 
 #: ../../administration/settings/backup_settings.rst:32
 msgid ""
 "When enabled, full synthetic backups will be on by default in addition to"
 " standard backups for supported workload types"
-msgstr ""
+msgstr "Quando ativado, backups sintéticos completos estarão ativados por padrão além de backups padrão para tipos de workload suportados"
 
 #: ../../administration/settings/backup_settings.rst:34
 msgid "Default Synthetic Full Backup Schedule"
-msgstr ""
+msgstr "Agendamento de Backup Sintético Completo Padrão"
 
 #: ../../administration/settings/backup_settings.rst:35
 msgid ""
 "Choose a default schedule interval for full synthetic backups. The "
 "available selections in this dropdown menu are Execution Schedules "
 "defined in |LibAutExe|"
-msgstr ""
+msgstr "Escolha um intervalo de agendamento padrão para backups sintéticos completos. As seleções disponíveis neste menu suspenso são Agendamentos de Execução definidos em |LibAutExe|"
 

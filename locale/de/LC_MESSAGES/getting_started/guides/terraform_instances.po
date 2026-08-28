@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/terraform_instances.rst:2
 msgid "Getting Started with Terraform Instance Types"
-msgstr ""
+msgstr "Erste Schritte mit Terraform-Instanztypen"
 
 #: ../../getting_started/guides/terraform_instances.rst:6
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "under version control so teams can easily make changes to environments. "
 "Infrastructure can also be monitored for drift and corrective action can "
 "easily be taken."
-msgstr ""
+msgstr "`Terraform <https://www.terraform.io/intro/index.html>`_ ist ein gängiges Werkzeug, mit dem IT-Administratoren Infrastruktur als Code in Konfigurationsdateien abbilden können und das alle gängigen Provider im modernen Rechenzentrum unterstützt. Nach der Konfiguration plant, bereitstellt und verwaltet Terraform die Infrastruktur nach Bedarf. Konfigurationsdateien können unter Versionskontrolle gestellt werden, damit Teams Umgebungen einfach ändern können. Die Infrastruktur kann auch auf Drift überwacht und korrigierende Maßnahmen können leicht ergriffen werden."
 
 #: ../../getting_started/guides/terraform_instances.rst:8
 msgid ""
@@ -46,7 +46,7 @@ msgid ""
 "infrastructure can be monitored for drift from within |morpheus| UI. When"
 " needed, we can plan and take corrective action easily from the detail "
 "page of a |morpheus| Terraform Instance."
-msgstr ""
+msgstr "|morpheus| ermöglicht Benutzern, Terraform-Spezifikationen direkt einzubinden oder zu erstellen. Mit der eingebundenen Konfiguration können Infrastrukturkonstrukte in der |morpheus|-Bibliothek als Layouts und Instanztypen zusammengesetzt werden. Mit den vorbereiteten Bibliothekselementen können Benutzer neue Infrastruktur direkt in den ausgewählten Providern bereitstellen. Nach der Bereitstellung kann die Infrastruktur in der |morpheus|-UI auf Drift überwacht werden. Bei Bedarf können wir den Plan erstellen und korrigierende Maßnahmen einfach von der Detailseite einer |morpheus|-Terraform-Instanz aus durchführen."
 
 #: ../../getting_started/guides/terraform_instances.rst:10
 msgid ""
@@ -54,11 +54,11 @@ msgid ""
 "working with Terraform in the |morpheus| context. In the next section, "
 "we'll actually onboard Terraform spec, create Library items, and deploy "
 "real infrastructure to AWS with |morpheus|."
-msgstr ""
+msgstr "In diesem Abschnitt haben wir einen Überblick über Terraform und die Arbeit mit Terraform im |morpheus|-Kontext gegeben. Im nächsten Abschnitt binden wir Terraform-Spezifikationen ein, erstellen Bibliothekselemente und stellen echte Infrastruktur in AWS mit |morpheus| bereit."
 
 #: ../../getting_started/guides/terraform_instances.rst:13
 msgid "Terraform Instance Types in Action"
-msgstr ""
+msgstr "Terraform-Instanztypen in der Praxis"
 
 #: ../../getting_started/guides/terraform_instances.rst:15
 msgid ""
@@ -67,7 +67,7 @@ msgid ""
 "``.tf`` configuration files which handle the AWS provider (with assume "
 "role for account flexibility), VPC creation, subnet creation, and "
 "variable injection."
-msgstr ""
+msgstr "In diesem Beispiel stellen wir eine VPC und drei Subnetze in AWS mit Terraform und |morpheus| bereit. Ich habe Spec Templates erstellt, um ``.tf``-Konfigurationsdateien einzubinden, die den AWS-Provider (mit Assume Role für Kontenflexibilität), die VPC-Erstellung, die Subnetz-Erstellung und die Variableninjektion übernehmen."
 
 #: ../../getting_started/guides/terraform_instances.rst:17
 msgid ""
@@ -77,11 +77,11 @@ msgid ""
 "provision time. Once deployed, we'll take a look at the new "
 "infrastructure in |morpheus| and go over the management capabilities for "
 "the new environment."
-msgstr ""
+msgstr "Wir binden die Terraform-Konfigurationsdateien als modulare Spec Templates ein, erstellen neue Instanztypen mit benutzerdefinierten Layouts für die |morpheus|-Bibliothek und richten Eingaben ein, um Variablenwerte zur Provisionierungszeit einzuspeisen. Nach der Bereitstellung betrachten wir die neue Infrastruktur in |morpheus| und gehen die Verwaltungsfunktionen für die neue Umgebung durch."
 
 #: ../../getting_started/guides/terraform_instances.rst:20
 msgid "Spec Templates"
-msgstr ""
+msgstr "Spec Templates"
 
 #: ../../getting_started/guides/terraform_instances.rst:22
 msgid ""
@@ -92,7 +92,7 @@ msgid ""
 "added to the Layout later, we'll be able to include as many Spec "
 "Templates as we wish which enables us to reuse smaller modular pieces if "
 "desired."
-msgstr ""
+msgstr "Die Terraform-Konfiguration wird in |morpheus| als Spec Template gespeichert. Sie können Ihre Konfiguration als eine monolithische Datei für jeden geplanten Instanztyp speichern oder einzelne Spec Templates für modulare Teile erstellen, die über mehrere Instanztypen hinweg wiederverwendet werden können. Beim späteren Hinzufügen zum Layout können wir beliebig viele Spec Templates einbinden und so kleinere modulare Teile wiederverwenden."
 
 #: ../../getting_started/guides/terraform_instances.rst:24
 msgid ""
@@ -103,7 +103,7 @@ msgid ""
 " version-controlled repository but here I have my Terraform spec entered "
 "locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the"
 " example below and click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Spec Templates werden in der |morpheus|-Bibliothek (Registerkarte |LibTemSpe|) hinzugefügt. Wir können die Vorlage aus einem Repository beziehen, etwa über eine Github-Integration, oder neue Spezifikationen direkt im Modal New Spec Template schreiben. In den meisten Fällen ist die Spezifikation bereits vorhanden und kommt aus einem versionskontrollierten Repository; hier habe ich meine Terraform-Spezifikation lokal eingegeben. Klicken Sie auf :guilabel:`+ ADD`, füllen Sie die Felder wie im Beispiel unten aus und klicken Sie auf :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/terraform_instances.rst:26
 msgid ""
@@ -113,11 +113,11 @@ msgid ""
 "(:menuselection:`Administration --> Settings --> Provisioning`) is set to"
 " \"auto\". When \"manual\" is selected as the Terraform Runtime setting, "
 "|morpheus| will simply use the version installed on the appliance box."
-msgstr ""
+msgstr "Geben Sie im Feld VERSION unten im Modal TF Spec Template eine Terraform-Versionsnummer ein, um diese Version zu erzwingen. Diese Version wird nur berücksichtigt, wenn die Einstellung Terraform Runtime (:menuselection:`Administration --> Settings --> Provisioning`) auf „auto“ gesetzt ist. Wenn „manual“ als Terraform Runtime gewählt ist, verwendet |morpheus| einfach die auf der Appliance installierte Version."
 
 #: ../../getting_started/guides/terraform_instances.rst:28
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../getting_started/guides/terraform_instances.rst:28
 msgid ""
@@ -126,7 +126,7 @@ msgid ""
 " defined, it defaults to string. See `Terraform Documentation "
 "<https://www.terraform.io/docs/language/values/variables.html>`_ for "
 "additional resources on variable declaration."
-msgstr ""
+msgstr "Bei der Deklaration von Variablen sollten Benutzer die Terraform-Best Practices befolgen, die |morpheus| erwartet. Wenn beispielsweise kein Variablentyp definiert ist, ist der Standardwert string. Weitere Ressourcen zur Variablendeklaration finden Sie in der `Terraform Documentation <https://www.terraform.io/docs/language/values/variables.html>`_."
 
 #: ../../getting_started/guides/terraform_instances.rst:30
 msgid ".. image:: /images/integration_guides/terr_inst_guide/1newSpec.png"
@@ -265,7 +265,7 @@ msgstr ""
 
 #: ../../getting_started/guides/terraform_instances.rst:162
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/guides/terraform_instances.rst:162
 msgid ""
@@ -277,11 +277,11 @@ msgid ""
 " (linked in the prior sentence) for a listing of other possible pre-"
 "provision variables and a complete map of variables which can be resolved"
 " after provisioning has completed."
-msgstr ""
+msgstr "Im obigen Beispiel-Spec-Template AWS Terraform Locals werden Pre-Provision-Variablen verwendet. Beachten Sie die Verwendung von `pre-provision <https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=variables#pre-provision-vars>`_-Variablen zum Speichern des Werts für Owner und Group sowie anderer Werte. Im Abschnitt Variablen der |morpheus|-Dokumentation (im vorherigen Satz verlinkt) finden Sie eine Liste weiterer möglicher Pre-Provision-Variablen und eine vollständige Übersicht der Variablen, die nach Abschluss der Provisionierung aufgelöst werden können."
 
 #: ../../getting_started/guides/terraform_instances.rst:165
 msgid "Inputs and Option Lists"
-msgstr ""
+msgstr "Eingaben und Optionslisten"
 
 #: ../../getting_started/guides/terraform_instances.rst:167
 msgid ""
@@ -292,7 +292,7 @@ msgid ""
 "particular case, I'm populating the Inputs with manual Option Lists but "
 "they can also be populated through REST calls or calls to the |morpheus| "
 "API when needed."
-msgstr ""
+msgstr "Um das Layout später in diesem Leitfaden zu erstellen, muss ich vier Eingaben anlegen, damit der Benutzer bei der Provisionierung bestimmte Auswahlen treffen kann. Ich habe meine Terraform-Konfiguration mit dieser Flexibilität geschrieben, damit derselbe Instanztyp in unterschiedlichen Szenarien wiederverwendet werden kann. In diesem Fall befülle ich die Eingaben mit manuellen Optionslisten; sie können bei Bedarf auch über REST-Aufrufe oder Aufrufe der |morpheus|-API befüllt werden."
 
 #: ../../getting_started/guides/terraform_instances.rst:169
 msgid ""
@@ -302,7 +302,7 @@ msgid ""
 "fields as I've done in the example below and click :guilabel:`SAVE "
 "CHANGES`. I've created one each for the AWS account selection, region "
 "selection, and CIDR mask input."
-msgstr ""
+msgstr "Optionslisten werden in der Bibliothek (|Lib|) unter der Registerkarte Option Lists erstellt. Das sind Listen von Elementen, die zur Erstellung von Dropdown-Auswahlen bei der Provisionierung dienen. Klicken Sie auf :guilabel:`+ ADD`, füllen Sie die Felder wie im Beispiel unten aus und klicken Sie auf :guilabel:`SAVE CHANGES`. Ich habe jeweils eine für die AWS-Kontenauswahl, die Regionsauswahl und die CIDR-Masken-Eingabe erstellt."
 
 #: ../../getting_started/guides/terraform_instances.rst:171
 msgid ".. image:: /images/integration_guides/terr_inst_guide/7optionList.png"
@@ -317,7 +317,7 @@ msgid ""
 "number of subnets that should be created. Click :guilabel:`+ ADD`, "
 "complete the fields as I've done in the example below and click "
 ":guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Eingaben werden ebenfalls in der Bibliothek unter der Registerkarte Inputs erstellt. In diesem Fall erstelle ich vier Eingaben. Drei davon erscheinen als Dropdown-Auswahlen und sind an eine der soeben erstellten Optionslisten gebunden. Die vierte ist eine einfache Texteingabe, in der der Benutzer die Gesamtanzahl der zu erstellenden Subnetze angibt. Klicken Sie auf :guilabel:`+ ADD`, füllen Sie die Felder wie im Beispiel unten aus und klicken Sie auf :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/terraform_instances.rst:176
 msgid ".. image:: /images/integration_guides/terr_inst_guide/8optionType.png"
@@ -325,7 +325,7 @@ msgstr ""
 
 #: ../../getting_started/guides/terraform_instances.rst:180
 msgid "Instance Type"
-msgstr ""
+msgstr "Instanztyp"
 
 #: ../../getting_started/guides/terraform_instances.rst:182
 msgid ""
@@ -338,7 +338,7 @@ msgid ""
 "created in the Library (|Lib|) under the Instance Types tab. Click "
 ":guilabel:`+ ADD`, complete the fields as I've done in the example below "
 "and click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "An diesem Punkt können wir einen neuen Instanztyp erstellen. Wir geben dem Instanztyp einen Namen, mit dem Benutzer ihn in der Liste des Provisionierungsassistenten erkennen. Darüber hinaus müssen wir hier wenig festlegen; die meisten zuvor erstellten Teile werden dem Layout zugeordnet, das wir als Nächstes erstellen. Das Layout wird auch an den jetzt erstellten Instanztyp gebunden. Instanztypen werden ebenfalls in der Bibliothek (|Lib|) unter der Registerkarte Instance Types erstellt. Klicken Sie auf :guilabel:`+ ADD`, füllen Sie die Felder wie im Beispiel unten aus und klicken Sie auf :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/terraform_instances.rst:184
 msgid ".. image:: /images/integration_guides/terr_inst_guide/9instanceType.png"
@@ -346,7 +346,7 @@ msgstr ""
 
 #: ../../getting_started/guides/terraform_instances.rst:188
 msgid "Layout"
-msgstr ""
+msgstr "Layout"
 
 #: ../../getting_started/guides/terraform_instances.rst:190
 msgid ""
@@ -355,7 +355,7 @@ msgid ""
 "the Instance Type detail page (|LibBluIns| > Selected Instance Type) by "
 "clicking :guilabel:`+ ADD LAYOUT`. We can also create one from the "
 "Layouts section (|LibBluLay|) by clicking :guilabel:`+ ADD`."
-msgstr ""
+msgstr "Das Layout führt alles zusammen, was wir bisher erstellt haben: die Spec Templates, Eingaben und den Instanztyp. Wir können ein neues Layout von der Detailseite des Instanztyps (|LibBluIns| > Selected Instance Type) aus hinzufügen, indem wir auf :guilabel:`+ ADD LAYOUT` klicken. Wir können auch eines im Abschnitt Layouts (|LibBluLay|) erstellen, indem wir auf :guilabel:`+ ADD` klicken."
 
 #: ../../getting_started/guides/terraform_instances.rst:192
 msgid ""
@@ -368,7 +368,7 @@ msgid ""
 "Layout. Finally, point the layout to a TFVAR SECRET from |morpheus| "
 "Cypher if needed. You can see a screenshot of my Layout configuration "
 "below"
-msgstr ""
+msgstr "Ändern Sie zuerst den Wert TECHNOLOGY auf Terraform; die Felder ändern sich dann für die passende Konfiguration. Geben Sie anschließend einen Namen für Ihr Layout an. Wenn Sie das Layout über die Registerkarte Layout statt von der Detailseite des Instanztyps erstellen, müssen Sie den zugehörigen Instanztyp angeben. Fügen Sie über die Typeahead-Felder unten im Modal unsere vier Eingaben und fünf Spec Templates zum Layout hinzu. Verweisen Sie das Layout abschließend bei Bedarf auf ein TFVAR SECRET aus |morpheus| Cypher. Einen Screenshot meiner Layout-Konfiguration sehen Sie unten"
 
 #: ../../getting_started/guides/terraform_instances.rst:194
 msgid ".. image:: /images/integration_guides/terr_inst_guide/10Layout.png"
@@ -376,7 +376,7 @@ msgstr ""
 
 #: ../../getting_started/guides/terraform_instances.rst:198
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionierung"
 
 #: ../../getting_started/guides/terraform_instances.rst:200
 msgid ""
@@ -390,7 +390,7 @@ msgid ""
 " and associated with the Layout. Once finished with this tab, step "
 "through the rest of the wizard to complete the process. You can see the "
 "options I've selected for this configuration in the image below."
-msgstr ""
+msgstr "Nun können wir neue Infrastruktur in AWS mit |morpheus| und Terraform provisionieren. Wie bei jedem anderen Instanztyp beginnen wir auf der Instanzen-Listenseite (:menuselection:`Provisioning --> Instances`) und klicken auf :guilabel:`+ ADD`. Wählen Sie den soeben erstellten Instanztyp und wechseln Sie zur Registerkarte GROUP des Assistenten. Hier geben Sie der neuen Instanz einen Namen und wählen Gruppe und Cloud. Anschließend wechseln Sie zur Registerkarte CONFIGURE, auf der die dem Layout zugeordneten Eingaben erscheinen. Schließen Sie danach die übrigen Schritte des Assistenten ab. Die von mir gewählten Optionen für diese Konfiguration sehen Sie im Bild unten."
 
 #: ../../getting_started/guides/terraform_instances.rst:202
 msgid ".. image:: /images/integration_guides/terr_inst_guide/11configureTab.png"
@@ -398,14 +398,14 @@ msgstr ""
 
 #: ../../getting_started/guides/terraform_instances.rst:205
 msgid "Review the New Instance"
-msgstr ""
+msgstr "Die neue Instanz überprüfen"
 
 #: ../../getting_started/guides/terraform_instances.rst:207
 msgid ""
 "After completing the wizard, from the History tab of the Instance detail "
 "page users can review the Terraform plan being executed and see the "
 "output while the resources are still being provisioned."
-msgstr ""
+msgstr "Nach Abschluss des Assistenten können Benutzer auf der Registerkarte History der Instanz-Detailseite den ausgeführten Terraform-Plan prüfen und die Ausgabe sehen, während die Ressourcen noch provisioniert werden."
 
 #: ../../getting_started/guides/terraform_instances.rst:209
 msgid ".. image:: /images/integration_guides/terr_inst_guide/12historyTab.png"
@@ -417,7 +417,7 @@ msgid ""
 " can see and link through to the associated Spec Templates. If needed, "
 "you can also edit the configuration spec by clicking on the pencil icon "
 "at the end of the row for any listed Spec Template."
-msgstr ""
+msgstr "Wenn der Provisionierungsprozess abgeschlossen ist, wechseln Sie zur Registerkarte State. Hier sehen und verlinken Sie die zugehörigen Spec Templates. Bei Bedarf können Sie die Konfigurationsspezifikation bearbeiten, indem Sie auf das Bleistift-Symbol am Ende der Zeile eines aufgeführten Spec Templates klicken."
 
 #: ../../getting_started/guides/terraform_instances.rst:213
 msgid ""
@@ -429,7 +429,7 @@ msgid ""
 "plan will be executed as if you'd run ``terraform apply``. Back on the "
 "State tab you will see the output from the Apply process as well as an "
 "indicator of the success or failure of the operation."
-msgstr ""
+msgstr "Durch Klicken auf :guilabel:`APPLY STATE` sieht der Benutzer erneut die Eingabeauswahlen aus der ursprünglichen Provisionierung und kann bei Bedarf Änderungen vornehmen. Nach Änderungen und Klicken auf :guilabel:`NEXT` zeigt |morpheus| die Planausgabe an, wie bei ``terraform plan``. Mit Klicken auf :guilabel:`COMPLETE` wird der Plan ausgeführt, wie bei ``terraform apply``. Zurück auf der Registerkarte State sehen Sie die Ausgabe des Apply-Vorgangs sowie eine Anzeige für Erfolg oder Fehlschlag der Operation."
 
 #: ../../getting_started/guides/terraform_instances.rst:215
 msgid ".. image:: /images/integration_guides/terr_inst_guide/13stateTab.png"
@@ -444,5 +444,5 @@ msgid ""
 "minutes but you can perform a manual check at any time by clicking "
 ":guilabel:`REFRESH STATE`. Drift can be corrected when needed by "
 "reapplying state (:guilabel:`APPLY STATE` button)."
-msgstr ""
+msgstr "|morpheus| prüft außerdem regelmäßig auf Drift gegenüber der Terraform-Konfiguration. Oben auf der Registerkarte State gibt es die Anzeige „Drift Status“. Diese zeigt je nach Situation Drift oder No Drift. |morpheus| prüft automatisch alle paar Minuten auf Drift; eine manuelle Prüfung können Sie jederzeit mit :guilabel:`REFRESH STATE` ausführen. Drift kann bei Bedarf durch erneutes Anwenden des Zustands korrigiert werden (Schaltfläche :guilabel:`APPLY STATE`)."
 

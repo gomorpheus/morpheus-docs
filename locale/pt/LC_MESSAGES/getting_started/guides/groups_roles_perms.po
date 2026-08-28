@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:2
 msgid "Configuring Access with Clouds, Groups, and Roles"
-msgstr ""
+msgstr "Configurando Acesso com Nuvens, Grupos e Funções"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:4
 msgid ""
@@ -33,7 +33,7 @@ msgid ""
 "resources they need. Map currently-existing strategies for splitting "
 "resources and controlling costs into |morpheus| and your teams will have "
 "access only to resources allocated to their department."
-msgstr ""
+msgstr "Ao começar, é vital entender construções como Nuvens e Grupos conforme implementadas no |morpheus|. Implantar uma estratégia eficaz para dividir recursos organizacionais e grupos de pessoas sob essas construções garantirá que todas as partes tenham acesso conveniente aos recursos de que precisam. Mapeie estratégias atualmente existentes para dividir recursos e controlar custos nas construções |morpheus|."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:6
 msgid ""
@@ -42,7 +42,7 @@ msgid ""
 "resources and distributing access under these umbrellas. We'll end up "
 "with a permissions structure represented by the diagram below and step "
 "through each part of the implementation process."
-msgstr ""
+msgstr "Este guia discute as construções de Nuvens, Grupos, Funções, Usuários e Políticas e também apresenta um caso de uso de exemplo para alocar recursos e distribuir acesso sob esses umbrellas. Terminaremos com uma estrutura de permissões representada pelo diagrama abaixo e percorreremos cada parte do processo de implementação."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:8
 msgid ".. image:: /images/integration_guides/perms_guide/0permsDiagram.png"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:11
 msgid "Clouds"
-msgstr ""
+msgstr "Nuvens"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:13
 msgid ""
@@ -58,7 +58,7 @@ msgid ""
 "public clouds, private clouds, or bare metal servers. You can read more "
 "about Clouds in |morpheus| Docs `here "
 "<https://docs.morpheusdata.com/en/latest/infrastructure/clouds/clouds.html>`_."
-msgstr ""
+msgstr "Nuvens têm significado amplo no |morpheus| e podem ser integrações em nuvens públicas, nuvens privadas ou servidores bare metal. Você pode ler mais sobre Nuvens na documentação |morpheus| `aqui <https://docs.morpheusdata.com/en/latest/infrastructure/clouds/clouds.html>`_."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:15
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "are `here "
 "<https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/azure/azure.html>`_"
 " in |morpheus| Docs."
-msgstr ""
+msgstr "No nosso caso de exemplo, a organização tem uma conta Azure e três projetos departamentais separados consolidados sob grupos de recursos separados. A integração |morpheus| com a nuvem pública Azure permite aos usuários delimitar a Nuvem a um grupo de recursos específico, se desejado. Faremos isso neste caso porque nos permitirá restringir nossos usuários aos grupos de recursos Azure apropriados em uma etapa posterior."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:17
 msgid ".. image:: /images/integration_guides/perms_guide/1configCloud.png"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:21
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:23
 msgid ""
@@ -94,7 +94,7 @@ msgid ""
 "section, is selecting which Groups are associated with the Role. One or "
 "multiple Clouds are added to each Group and passed to users through their"
 " assigned Roles."
-msgstr ""
+msgstr "`Grupos <https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html>`_ no |morpheus| permitem que administradores determinem a quais Nuvens seus usuários têm acesso. Parte da definição de uma Função, que veremos na próxima seção, é selecionar quais Grupos estão associados à Função. Uma ou várias Nuvens são adicionadas a cada Grupo e passadas aos usuários por meio de suas Funções atribuídas."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:25
 msgid ""
@@ -105,7 +105,7 @@ msgid ""
 "specific resource group) is associated with each Group but often Groups "
 "will contain many Clouds. In the screenshot below, I am adding an Azure "
 "Cloud to a Group that is currently empty."
-msgstr ""
+msgstr "Ao criar uma Nuvem, ela deve ser adicionada a um Grupo. Além disso, Nuvens podem ser adicionadas a um Grupo a qualquer momento na guia Clouds da página de detalhes do Grupo (Infrastructure > Groups > Grupo específico). No caso de exemplo diagramado acima, uma Nuvem (conta de nuvem Azure delimitada a um grupo de recursos específico) está associada a cada Grupo, mas frequentemente Grupos conterão muitas Nuvens."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:27
 msgid ".. image:: /images/integration_guides/perms_guide/2addCloudToGroup.png"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:30
 msgid "Roles"
-msgstr ""
+msgstr "Funções"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:32
 msgid ""
@@ -128,7 +128,7 @@ msgid ""
 "example case, I will create a set of Roles to handle Group access for my "
 "users and another set of Roles to give access to the correct feature "
 "permissions."
-msgstr ""
+msgstr "As Funções |morpheus| determinam o acesso do usuário a muitas coisas, incluindo recursos da aplicação, Grupos, Tipos de Instância configurados, Blueprints configurados, Personas e configurações de Item de Catálogo para a Persona Service Catalog. É importante observar que um usuário pode ter várias Funções e receberá os direitos mais permissivos em todas essas Funções. Em muitos casos, isso simplifica muito a configuração de Funções."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:34
 msgid ""
@@ -136,7 +136,7 @@ msgid ""
 "three Groups we created in the previous step. By default, a new Role will"
 " have all feature permissions set to \"None\" as shown below meaning we "
 "can skip directly to the Group Access tab."
-msgstr ""
+msgstr "Para este caso de exemplo, começarei criando uma Função para cada um dos três Grupos que criamos na etapa anterior. Por padrão, uma nova Função terá todas as permissões de recurso definidas como \"None\", conforme mostrado abaixo, o que significa que podemos ir diretamente para a guia Group Access."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:36
 msgid ".. image:: /images/integration_guides/perms_guide/3roleFeatureAccess.png"
@@ -149,7 +149,7 @@ msgid ""
 "doing this for each of our Groups created in the last section, we can "
 "easily control Group access for each user by applying one or more of our "
 "Group Roles to their user which we will do in the next section."
-msgstr ""
+msgstr "Na guia Group Access, alternarei a configuração Global Access para Custom e darei acesso apenas a um Grupo, conforme mostrado na próxima imagem. Ao fazer isso para cada um dos nossos Grupos criados na última seção, podemos controlar facilmente o acesso ao Grupo para cada usuário aplicando uma ou mais de nossas Funções de Grupo à conta do usuário, o que faremos na próxima seção."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:40
 msgid ".. image:: /images/integration_guides/perms_guide/4roleGroupAccess.png"
@@ -165,11 +165,11 @@ msgid ""
 " Roles are created in the same way as the Group Roles we just created but"
 " all Group access will be set to \"None\" and the appropriate feature "
 "access will be configured on the \"Feature Access\" tab."
-msgstr ""
+msgstr "Além das Funções para lidar com o acesso ao Grupo, precisamos de conjuntos de Funções adicionais que controlarão nosso acesso a recursos. Por exemplo, podemos ter acesso altamente permissivo a recursos para administradores e mais restritivo para desenvolvedores ou outros usuários que tenham responsabilidades específicas exigindo acesso a apenas algumas áreas específicas da UI. Essas Funções adicionais são criadas da mesma forma que as Funções de Grupo."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:45
 msgid "Users"
-msgstr ""
+msgstr "Usuários"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:47
 msgid ""
@@ -180,7 +180,7 @@ msgid ""
 "this user and I've applied the \"Developer\" role to give only the "
 "feature access needed for this user to carry out his or her "
 "responsibilities."
-msgstr ""
+msgstr "Com a base lançada nas etapas anteriores, podemos configurar facilmente permissões para quaisquer contas de usuário que possamos adicionar ao |morpheus|. Na captura de tela abaixo, estou adicionando uma conta de usuário para um desenvolvedor na minha organização. Apliquei uma Função para lidar com o acesso correto ao Grupo para este usuário e apliquei a função \"Developer\" para dar apenas o acesso a recursos necessário para que este usuário desempenhe suas responsabilidades."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:49
 msgid ".. image:: /images/integration_guides/perms_guide/5newUser.png"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:53
 msgid "Policies"
-msgstr ""
+msgstr "Políticas"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:55
 msgid ""
@@ -199,7 +199,7 @@ msgid ""
 "<https://docs.morpheusdata.com/en/latest/administration/policies/policies.html>`_"
 " but we will also create some that apply to the example case discussed in"
 " this guide."
-msgstr ""
+msgstr "Uma consideração final para este caso de exemplo é a aplicação de políticas. O |morpheus| permite que administradores coloquem governança detalhada com escopo para usuários específicos, Funções, Grupos, Nuvens, Tenants ou globalmente. Você pode ler mais sobre políticas na documentação |morpheus| `aqui <https://docs.morpheusdata.com/en/latest/administration/policies/policies.html>`_, mas também criaremos algumas que se aplicam ao caso de exemplo."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:57
 msgid ""
@@ -208,7 +208,7 @@ msgid ""
 " scope it to a Group. In this case, I'm creating a maximum VMs policy but"
 " there are many other types which are listed in our documentation linked "
 "above."
-msgstr ""
+msgstr "As Políticas são criadas no menu Administração, na seção Policies. Na captura de tela abaixo, criei uma nova política e escolhi delimitá-la a um Grupo. Neste caso, estou criando uma política de VMs máximas, mas há muitos outros tipos listados na nossa documentação vinculada acima."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:59
 msgid ".. image:: /images/integration_guides/perms_guide/6policies.png"
@@ -216,7 +216,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:63
 msgid "Conclusion"
-msgstr ""
+msgstr "Conclusão"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:65
 msgid ""
@@ -228,5 +228,5 @@ msgid ""
 "discussed in this guide. Armed with that understanding, the example case "
 "presented here can be expanded to suit the needs of large-scale "
 "enterprise."
-msgstr ""
+msgstr "Neste ponto, concluímos a implementação da estrutura de acesso. À medida que novos usuários forem adicionados, poderemos facilmente dar a eles o acesso a Grupos e recursos de que precisam. Também podemos facilmente adicionar ou editar as políticas em vigor ou adicionar novas Nuvens e distribuir o acesso aos usuários existentes. A chave é entender a relação entre as construções |morpheus| discutidas neste guia."
 

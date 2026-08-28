@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../../tools/migrations/requirements.rst:2
 msgid "Requirements"
-msgstr ""
+msgstr "Exigences"
 
 #: ../../tools/migrations/requirements.rst:4
 msgid ""
 "This section covers requirements for successful migrations from VMware "
 "vCenter to HVM Clusters."
-msgstr ""
+msgstr "Cette section couvre les exigences pour des migrations réussies de VMware vCenter vers des clusters HVM."
 
 #: ../../tools/migrations/requirements.rst:7
 msgid "Infrastructure Requirements"
-msgstr ""
+msgstr "Exigences d'infrastructure"
 
 #: ../../tools/migrations/requirements.rst:9
 msgid ""
@@ -41,7 +41,7 @@ msgid ""
 "ACTIONS menu, and select \"Upgrade Agent.\" If unsuccessful, select "
 "\"Download Agent Script\" to download a host-specific shell script for "
 "manual installation."
-msgstr ""
+msgstr "**Version de l'agent HVM 2.10.0+** — Les hôtes HVM doivent exécuter la version 2.10.0 ou ultérieure de l'agent. Pour mettre à niveau, accédez à la page de détail de l'hôte, ouvrez le menu ACTIONS et sélectionnez « Upgrade Agent ». En cas d'échec, sélectionnez « Download Agent Script » pour télécharger un script shell spécifique à l'hôte pour une installation manuelle."
 
 #: ../../tools/migrations/requirements.rst:10
 msgid ""
@@ -50,98 +50,98 @@ msgid ""
 "able to resolve each ESXi FQDN. From each HVM Host, run ``getent hosts "
 "<esxi-fqdn>`` for every source ESXi host. Correct the DNS or host records"
 " before migration if a name does not resolve."
-msgstr ""
+msgstr "**Résolution de noms** — Si les hôtes ESXi sont enregistrés dans vCenter par nom de domaine complet (FQDN), chaque hôte HVM participant doit pouvoir résoudre chaque FQDN ESXi. Depuis chaque hôte HVM, exécutez ``getent hosts <esxi-fqdn>`` pour chaque hôte ESXi source. Corrigez le DNS ou les enregistrements d'hôte avant la migration si un nom ne se résout pas."
 
 #: ../../tools/migrations/requirements.rst:11
 msgid ""
 "**Network connectivity** — Separately from name resolution, HVM Hosts "
 "must be able to reach ESXi hosts and vCenter on the source VMware Cloud "
 "via the management network (HTTPS, port 443)."
-msgstr ""
+msgstr "**Connectivité réseau** — Indépendamment de la résolution de noms, les hôtes HVM doivent pouvoir joindre les hôtes ESXi et vCenter sur le cloud VMware source via le réseau de gestion (HTTPS, port 443)."
 
 #: ../../tools/migrations/requirements.rst:12
 msgid ""
 "**Source VMs must be running** — The preparation phase requires the "
 "source VM to be powered on. If a VM is powered off, it will be "
 "automatically started during the precheck phase."
-msgstr ""
+msgstr "**Les VM source doivent être en cours d'exécution** — La phase de préparation exige que la VM source soit sous tension. Si une VM est hors tension, elle sera automatiquement démarrée pendant la phase de pré-vérification."
 
 #: ../../tools/migrations/requirements.rst:15
 msgid "Source VM Requirements"
-msgstr ""
+msgstr "Exigences des VM source"
 
 #: ../../tools/migrations/requirements.rst:17
 msgid ""
 "Source VMs must be capable of having ``qemu-guest-tools`` or ``qemu-"
 "guest-agent`` installed (Linux) or VirtIO guest tools (Windows)"
-msgstr ""
+msgstr "Les VM source doivent pouvoir recevoir l'installation de ``qemu-guest-tools`` ou ``qemu-guest-agent`` (Linux) ou des outils invités VirtIO (Windows)"
 
 #: ../../tools/migrations/requirements.rst:18
 msgid ""
 "Source VMs **must not** have any attached ISOs or CD-ROMs — detach these "
 "before migration or the transfer will fail"
-msgstr ""
+msgstr "Les VM source **ne doivent pas** avoir d'ISO ou de CD-ROM attachés — détachez-les avant la migration, sinon le transfert échouera"
 
 #: ../../tools/migrations/requirements.rst:19
 msgid "RDM (Raw Device Mappings) are not supported"
-msgstr ""
+msgstr "Les RDM (Raw Device Mappings) ne sont pas pris en charge"
 
 #: ../../tools/migrations/requirements.rst:20
 msgid ""
 "VirtIO / VirtIO-SCSI storage must be supported by the guest OS kernel "
 "(Linux guests with standard kernels meet this requirement; Windows guests"
 " have drivers injected automatically)"
-msgstr ""
+msgstr "Le stockage VirtIO / VirtIO-SCSI doit être pris en charge par le noyau de l'OS invité (les invités Linux avec des noyaux standard satisfont à cette exigence ; les invités Windows reçoivent les pilotes injectés automatiquement)"
 
 #: ../../tools/migrations/requirements.rst:23
 msgid "Storage Considerations"
-msgstr ""
+msgstr "Considérations de stockage"
 
 #: ../../tools/migrations/requirements.rst:25
 msgid ""
 "**GFS2 and NFS targets** — Migrations produce thin-provisioned QCOW2 "
 "images, minimizing on-disk footprint"
-msgstr ""
+msgstr "**Cibles GFS2 et NFS** — Les migrations produisent des images QCOW2 à provisionnement fin, minimisant l'empreinte sur disque"
 
 #: ../../tools/migrations/requirements.rst:26
 msgid ""
 "**Block device targets** (local, Ceph RBD) — Migrations write raw format;"
 " ensure the target has sufficient capacity for the full virtual disk size"
-msgstr ""
+msgstr "**Cibles périphérique bloc** (local, Ceph RBD) — Les migrations écrivent au format raw ; assurez-vous que la cible dispose d'une capacité suffisante pour la taille complète du disque virtuel"
 
 #: ../../tools/migrations/requirements.rst:27
 msgid ""
 "**Ceph RBD** — RBD images are mapped to local block devices during "
 "transfer and unmapped after completion"
-msgstr ""
+msgstr "**Ceph RBD** — Les images RBD sont mappées vers des périphériques bloc locaux pendant le transfert et démappées après achèvement"
 
 #: ../../tools/migrations/requirements.rst:30
 msgid "Recommendations"
-msgstr ""
+msgstr "Recommandations"
 
 #: ../../tools/migrations/requirements.rst:32
 msgid ""
 "Start with a small test migration (1–3 VMs) to validate network "
 "connectivity, storage performance, and guest OS compatibility in your "
 "environment"
-msgstr ""
+msgstr "Commencez par une petite migration de test (1 à 3 VM) pour valider la connectivité réseau, les performances de stockage et la compatibilité de l'OS invité dans votre environnement"
 
 #: ../../tools/migrations/requirements.rst:33
 msgid ""
 "Schedule large migrations during maintenance windows — source VMs are "
 "powered down during the transfer phase"
-msgstr ""
+msgstr "Planifiez les migrations importantes pendant les fenêtres de maintenance — les VM source sont mises hors tension pendant la phase de transfert"
 
 #: ../../tools/migrations/requirements.rst:34
 msgid ""
 "Ensure adequate bandwidth between HVM hosts and ESXi hosts — transfer "
 "speed is directly proportional to available network throughput"
-msgstr ""
+msgstr "Assurez une bande passante adéquate entre les hôtes HVM et ESXi — la vitesse de transfert est directement proportionnelle au débit réseau disponible"
 
 #: ../../tools/migrations/requirements.rst:35
 msgid ""
 "For Windows workloads, verify the source VM has internet access or ensure"
 " the VirtIO ISO is available in a vCenter datastore (the automated driver"
 " injection uses network download first, falling back to ISO)"
-msgstr ""
+msgstr "Pour les charges de travail Windows, vérifiez que la VM source a accès à Internet ou assurez-vous que l'ISO VirtIO est disponible dans un datastore vCenter (l'injection automatique de pilotes utilise d'abord le téléchargement réseau, avec repli sur ISO)"
 

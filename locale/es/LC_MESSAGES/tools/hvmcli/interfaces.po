@@ -22,51 +22,51 @@ msgstr ""
 
 #: ../../tools/hvmcli/interfaces.rst:2
 msgid "interfaces"
-msgstr ""
+msgstr "interfaces"
 
 #: ../../tools/hvmcli/interfaces.rst:4
 msgid "List network interfaces and manage SR-IOV virtual functions."
-msgstr ""
+msgstr "Enumerar interfaces de red y administrar funciones virtuales SR-IOV."
 
 #: ../../tools/hvmcli/interfaces.rst:7
 msgid "Commands"
-msgstr ""
+msgstr "Comandos"
 
 #: ../../tools/hvmcli/interfaces.rst:13
 msgid "Command"
-msgstr ""
+msgstr "Comando"
 
 #: ../../tools/hvmcli/interfaces.rst:14
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: ../../tools/hvmcli/interfaces.rst:15
 msgid "``list``"
-msgstr ""
+msgstr "``list``"
 
 #: ../../tools/hvmcli/interfaces.rst:16
 msgid "List network interfaces with optional filtering"
-msgstr ""
+msgstr "Enumerar interfaces de red con filtrado opcional"
 
 #: ../../tools/hvmcli/interfaces.rst:17
 msgid "``vf``"
-msgstr ""
+msgstr "``vf``"
 
 #: ../../tools/hvmcli/interfaces.rst:18
 msgid "Manage SR-IOV virtual functions (list, create, delete, set)"
-msgstr ""
+msgstr "Administrar funciones virtuales SR-IOV (listar, crear, eliminar, configurar)"
 
 #: ../../tools/hvmcli/interfaces.rst:21
 msgid "interfaces list"
-msgstr ""
+msgstr "interfaces list"
 
 #: ../../tools/hvmcli/interfaces.rst:23
 msgid "List all network interfaces on the host. By default shows all interfaces."
-msgstr ""
+msgstr "Enumerar todas las interfaces de red del host. De forma predeterminada, muestra todas las interfaces."
 
 #: ../../tools/hvmcli/interfaces.rst:25
 msgid "sudo hvmcli interfaces list"
-msgstr ""
+msgstr "sudo hvmcli interfaces list"
 
 #: ../../tools/hvmcli/interfaces.rst:29
 msgid ""
@@ -84,7 +84,7 @@ msgstr ""
 
 #: ../../tools/hvmcli/interfaces.rst:37
 msgid "Use ``--filter`` to show specific interface types:"
-msgstr ""
+msgstr "Use ``--filter`` para mostrar tipos de interfaz específicos:"
 
 #: ../../tools/hvmcli/interfaces.rst:39
 msgid ""
@@ -93,85 +93,85 @@ msgid ""
 "sudo hvmcli interfaces list --filter network\n"
 "sudo hvmcli interfaces list --filter data\n"
 "sudo hvmcli interfaces list --filter sdn"
-msgstr ""
+msgstr "sudo hvmcli interfaces list --filter ethernet\\nsudo hvmcli interfaces list --filter fc\\nsudo hvmcli interfaces list --filter network\\nsudo hvmcli interfaces list --filter data\\nsudo hvmcli interfaces list --filter sdn"
 
 #: ../../tools/hvmcli/interfaces.rst:47
 msgid "Filter options:"
-msgstr ""
+msgstr "Opciones de filtro:"
 
 #: ../../tools/hvmcli/interfaces.rst:49
 msgid "``ethernet`` — Physical Ethernet interfaces only"
-msgstr ""
+msgstr "``ethernet`` — Solo interfaces Ethernet físicas"
 
 #: ../../tools/hvmcli/interfaces.rst:50
 msgid "``fc`` — Fibre Channel HBAs only"
-msgstr ""
+msgstr "``fc`` — Solo HBAs Fibre Channel"
 
 #: ../../tools/hvmcli/interfaces.rst:51
 msgid "``network`` — Interfaces that are part of a Virtual Switch network"
-msgstr ""
+msgstr "``network`` — Interfaces que forman parte de una red Virtual Switch"
 
 #: ../../tools/hvmcli/interfaces.rst:52
 msgid "``general`` — General purpose interfaces"
-msgstr ""
+msgstr "``general`` — Interfaces de propósito general"
 
 #: ../../tools/hvmcli/interfaces.rst:53
 msgid "``data`` — Data network interfaces"
-msgstr ""
+msgstr "``data`` — Interfaces de red de datos"
 
 #: ../../tools/hvmcli/interfaces.rst:54
 msgid "``sdn`` — SDN network interfaces"
-msgstr ""
+msgstr "``sdn`` — Interfaces de red SDN"
 
 #: ../../tools/hvmcli/interfaces.rst:57
 msgid "interfaces vf"
-msgstr ""
+msgstr "interfaces vf"
 
 #: ../../tools/hvmcli/interfaces.rst:59
 msgid "Manage SR-IOV Virtual Functions (VFs) on supported interfaces."
-msgstr ""
+msgstr "Administrar funciones virtuales SR-IOV (VFs) en interfaces compatibles."
 
 #: ../../tools/hvmcli/interfaces.rst:61
 msgid "**List VFs on an interface:**"
-msgstr ""
+msgstr "**Enumerar VFs en una interfaz:**"
 
 #: ../../tools/hvmcli/interfaces.rst:63
 msgid "sudo hvmcli interfaces vf list --interface ens1f0np0"
-msgstr ""
+msgstr "sudo hvmcli interfaces vf list --interface ens1f0np0"
 
 #: ../../tools/hvmcli/interfaces.rst:67
 msgid "**Create VFs on an interface:**"
-msgstr ""
+msgstr "**Crear VFs en una interfaz:**"
 
 #: ../../tools/hvmcli/interfaces.rst:69
 msgid "sudo hvmcli interfaces vf create --interface ens1f0np0 --count 4"
-msgstr ""
+msgstr "sudo hvmcli interfaces vf create --interface ens1f0np0 --count 4"
 
 #: ../../tools/hvmcli/interfaces.rst:73
 msgid "**Delete VFs from an interface:**"
-msgstr ""
+msgstr "**Eliminar VFs de una interfaz:**"
 
 #: ../../tools/hvmcli/interfaces.rst:75
 msgid "sudo hvmcli interfaces vf delete --interface ens1f0np0"
-msgstr ""
+msgstr "sudo hvmcli interfaces vf delete --interface ens1f0np0"
 
 #: ../../tools/hvmcli/interfaces.rst:79
 msgid "**Set VF properties:**"
-msgstr ""
+msgstr "**Configurar propiedades de VF:**"
 
 #: ../../tools/hvmcli/interfaces.rst:81
 msgid ""
 "sudo hvmcli interfaces vf set --interface ens1f0np0 --vf 0 --mac "
 "00:11:22:33:44:55"
-msgstr ""
+msgstr "sudo hvmcli interfaces vf set --interface ens1f0np0 --vf 0 --mac 00:11:22:33:44:55"
 
 #: ../../tools/hvmcli/interfaces.rst:85
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../tools/hvmcli/interfaces.rst:85
 msgid ""
 "SR-IOV must be enabled in the BIOS and the NIC must support virtual "
 "functions. Use ``hvmcli interfaces list`` to check SR-IOV support status."
-msgstr ""
+msgstr "SR-IOV debe estar habilitado en el BIOS y la NIC debe admitir funciones virtuales. Use ``hvmcli interfaces list`` para comprobar el estado de compatibilidad con SR-IOV."
 

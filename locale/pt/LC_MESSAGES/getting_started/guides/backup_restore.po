@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/backup_restore.rst:2
 msgid "Backing Up and Restoring |morpheus| Appliance"
-msgstr ""
+msgstr "Backup e Restauração do Appliance |morpheus|"
 
 #: ../../getting_started/guides/backup_restore.rst:4
 msgid ""
@@ -32,58 +32,58 @@ msgid ""
 "includes steps for restoring or migrating your appliance from the created"
 " backup. The steps are the same whether your appliance is deployed in a "
 "single node or distributed architecture."
-msgstr ""
+msgstr "O |morpheus| inclui ferramentas integradas para fazer backup de Instâncias gerenciadas, bem como do próprio appliance. Use este guia para configurar um local e um agendamento para o backup do seu appliance |morpheus|. Este guia também inclui etapas para restaurar ou migrar seu appliance a partir do backup criado. As etapas são as mesmas, quer o appliance esteja implementado em arquitetura de nó único ou distribuída."
 
 #: ../../getting_started/guides/backup_restore.rst:6
 msgid ""
 "The built-in |morpheus| appliance backup functionality backs up the MySQL"
 " data. It is not a complete Manager recovery set."
-msgstr ""
+msgstr "A funcionalidade integrada de backup do appliance |morpheus| faz backup dos dados do MySQL. Não é um conjunto completo de recuperação do Manager."
 
 #: ../../getting_started/guides/backup_restore.rst:10
 msgid ""
 "For Manager recovery, keep the following together and outside the Manager"
 " VM and its HVM host:"
-msgstr ""
+msgstr "Para recuperação do Manager, mantenha o seguinte junto e fora da VM do Manager e do seu host HVM:"
 
 #: ../../getting_started/guides/backup_restore.rst:12
 msgid "A recently verified appliance database backup"
-msgstr ""
+msgstr "Um backup recentemente verificado do banco de dados do appliance"
 
 #: ../../getting_started/guides/backup_restore.rst:13
 msgid ""
 "A filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, including"
 " ownership and permissions"
-msgstr ""
+msgstr "Um backup em nível de sistema de arquivos de ``/var/opt/morpheus/morpheus-ui``, incluindo propriedade e permissões"
 
 #: ../../getting_started/guides/backup_restore.rst:14
 msgid ""
 "Protected copies of ``/etc/morpheus/morpheus.rb``, ``/etc/morpheus"
 "/morpheus-secrets.json``, certificates, and the deployment record "
 "(appliance version, hostname, IP, DNS, gateway, and storage mappings)"
-msgstr ""
+msgstr "Cópias protegidas de ``/etc/morpheus/morpheus.rb``, ``/etc/morpheus/morpheus-secrets.json``, certificados e o registro de implementação (versão do appliance, hostname, IP, DNS, gateway e mapeamentos de armazenamento)"
 
 #: ../../getting_started/guides/backup_restore.rst:16
 msgid ""
 "Protect the secrets file as credential material. Test recovery on the "
 "same appliance version and document the recovery point and recovery time "
 "achieved by the test."
-msgstr ""
+msgstr "Proteja o arquivo de secrets como material de credencial. Teste a recuperação na mesma versão do appliance e documente o ponto de recuperação e o tempo de recuperação alcançados pelo teste."
 
 #: ../../getting_started/guides/backup_restore.rst:18
 #: ../../getting_started/guides/backup_restore.rst:49
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/guides/backup_restore.rst:18
 msgid ""
 "The destination |morpheus| appliance must be running the same version as "
 "that which the backup was taken from."
-msgstr ""
+msgstr "O appliance |morpheus| de destino deve estar executando a mesma versão daquela da qual o backup foi feito."
 
 #: ../../getting_started/guides/backup_restore.rst:21
 msgid "Create A Backup Job"
-msgstr ""
+msgstr "Criar um Backup Job"
 
 #: ../../getting_started/guides/backup_restore.rst:23
 msgid ""
@@ -93,118 +93,118 @@ msgid ""
 "schedules: Daily at Midnight and Weekly on Sunday at Midnight. If "
 "currently-existing options do not make sense for your backup needs, "
 "create a new execution schedule:"
-msgstr ""
+msgstr "Um Backup Job no |morpheus| contém o timing do agendamento e a contagem de retenção para backups automatizados. Se você já tiver um Job configurado, pode seguir para a próxima seção. Por padrão, o |morpheus| inclui dois agendamentos de execução: Daily at Midnight e Weekly on Sunday at Midnight. Se as opções existentes não fizerem sentido para suas necessidades de backup, crie um novo agendamento de execução:"
 
 #: ../../getting_started/guides/backup_restore.rst:25
 msgid "Navigate to :menuselection:`Library --> Automation`"
-msgstr ""
+msgstr "Navegue até :menuselection:`Library --> Automation`"
 
 #: ../../getting_started/guides/backup_restore.rst:26
 msgid "Click on the \"Execute Scheduling\" tab"
-msgstr ""
+msgstr "Clique na guia \"Execute Scheduling\""
 
 #: ../../getting_started/guides/backup_restore.rst:27
 #: ../../getting_started/guides/backup_restore.rst:34
 #: ../../getting_started/guides/backup_restore.rst:45
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ ADD`"
 
 #: ../../getting_started/guides/backup_restore.rst:28
 msgid "Enter schedule timing using ``cron`` notation"
-msgstr ""
+msgstr "Informe o timing do agendamento usando notação ``cron``"
 
 #: ../../getting_started/guides/backup_restore.rst:29
 #: ../../getting_started/guides/backup_restore.rst:36
 #: ../../getting_started/guides/backup_restore.rst:58
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE`"
 
 #: ../../getting_started/guides/backup_restore.rst:31
 msgid ""
 "With the execution schedule created, we can move on to creating the "
 "Backup Job itself. A Backup Job includes both the backup retention count "
 "and an execution schedule (which we just created)."
-msgstr ""
+msgstr "Com o agendamento de execução criado, podemos passar à criação do próprio Backup Job. Um Backup Job inclui tanto a contagem de retenção do backup quanto um agendamento de execução (que acabamos de criar)."
 
 #: ../../getting_started/guides/backup_restore.rst:33
 msgid "Navigate to Backups > Jobs"
-msgstr ""
+msgstr "Navegue até Backups > Jobs"
 
 #: ../../getting_started/guides/backup_restore.rst:35
 msgid "Name the Job, then configure the retention count and the schedule"
-msgstr ""
+msgstr "Nomeie o Job e, em seguida, configure a contagem de retenção e o agendamento"
 
 #: ../../getting_started/guides/backup_restore.rst:39
 msgid "Integrate a Bucket or File Share"
-msgstr ""
+msgstr "Integrar um Bucket ou File Share"
 
 #: ../../getting_started/guides/backup_restore.rst:41
 msgid ""
 "When configuring a |morpheus| appliance backup, a storage location is "
 "selected. If you already have the destination bucket or file share "
 "integrated with |morpheus|, skip to the next section."
-msgstr ""
+msgstr "Ao configurar um backup do appliance |morpheus|, um local de armazenamento é selecionado. Se você já tiver o bucket ou file share de destino integrado ao |morpheus|, pule para a próxima seção."
 
 #: ../../getting_started/guides/backup_restore.rst:43
 msgid "Navigate to Infrastructure > Storage"
-msgstr ""
+msgstr "Navegue até Infrastructure > Storage"
 
 #: ../../getting_started/guides/backup_restore.rst:44
 msgid ""
 "Click on the Buckets or File Shares tab depending on your chosen storage "
 "type"
-msgstr ""
+msgstr "Clique na guia Buckets ou File Shares, dependendo do tipo de armazenamento escolhido"
 
 #: ../../getting_started/guides/backup_restore.rst:46
 msgid "Select the appropriate bucket or file share type"
-msgstr ""
+msgstr "Selecione o tipo apropriado de bucket ou file share"
 
 #: ../../getting_started/guides/backup_restore.rst:47
 msgid "Complete the required fields and click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Preencha os campos obrigatórios e clique em :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/backup_restore.rst:49
 msgid ""
 "Additional guidance on integrating each of the supported bucket and file "
 "share types can be found elsewhere in |morpheus| documentation."
-msgstr ""
+msgstr "Orientação adicional sobre a integração de cada um dos tipos de bucket e file share suportados pode ser encontrada em outras partes da documentação do |morpheus|."
 
 #: ../../getting_started/guides/backup_restore.rst:52
 msgid "Configuring |morpheus| Appliance Backup"
-msgstr ""
+msgstr "Configurando o Backup do Appliance |morpheus|"
 
 #: ../../getting_started/guides/backup_restore.rst:54
 msgid ""
 "With the groundwork laid in the previous sections, we're ready to enable "
 "and configure |morpheus| appliance backup."
-msgstr ""
+msgstr "Com a base estabelecida nas seções anteriores, estamos prontos para ativar e configurar o backup do appliance |morpheus|."
 
 #: ../../getting_started/guides/backup_restore.rst:56
 msgid "Navigate to |AdmSetBac|"
-msgstr ""
+msgstr "Navegue até |AdmSetBac|"
 
 #: ../../getting_started/guides/backup_restore.rst:57
 msgid "Slide the switch labeled \"Backup Appliance\""
-msgstr ""
+msgstr "Deslize o switch rotulado \"Backup Appliance\""
 
 #: ../../getting_started/guides/backup_restore.rst:60
 msgid ""
 "On saving this change, a text link labeled \"Backup\" will be activated "
 "which will take you directly to the automatically-generated appliance "
 "backup job. Click this link to continue."
-msgstr ""
+msgstr "Ao salvar esta alteração, um link de texto rotulado \"Backup\" será ativado, o qual o levará diretamente ao job de backup do appliance gerado automaticamente. Clique neste link para continuar."
 
 #: ../../getting_started/guides/backup_restore.rst:62
 msgid "Click :guilabel:`EDIT`"
-msgstr ""
+msgstr "Clique em :guilabel:`EDIT`"
 
 #: ../../getting_started/guides/backup_restore.rst:63
 msgid "Enter a name for the appliance backup job"
-msgstr ""
+msgstr "Informe um nome para o job de backup do appliance"
 
 #: ../../getting_started/guides/backup_restore.rst:64
 msgid "Select an integrated storage bucket or file share"
-msgstr ""
+msgstr "Selecione um bucket ou file share de armazenamento integrado"
 
 #: ../../getting_started/guides/backup_restore.rst:65
 msgid ""
@@ -213,11 +213,11 @@ msgid ""
 "this modal. If you manually configure retention counts and schedules in "
 "addition to associating a Job, the Job values will override any manual "
 "settings."
-msgstr ""
+msgstr "Escolha um backup job pré-criado. Se você não tiver um backup job existente que se adeque, uma contagem de retenção e um agendamento podem ser criados manualmente neste modal. Se você configurar manualmente contagens de retenção e agendamentos além de associar um Job, os valores do Job substituirão quaisquer configurações manuais."
 
 #: ../../getting_started/guides/backup_restore.rst:66
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/backup_restore.rst:68
 msgid ""
@@ -226,22 +226,22 @@ msgid ""
 "backup will store backup copies of the appliance MySQL database. Should "
 "you need to restore or migrate your database from backup, follow the "
 "steps in the next section of this guide."
-msgstr ""
+msgstr "Neste ponto, seu appliance será automaticamente respaldado no agendamento que você escolheu e armazenado no local selecionado. Um backup do appliance armazenará cópias de backup do banco de dados MySQL do appliance. Caso precise restaurar ou migrar seu banco de dados a partir do backup, siga as etapas na próxima seção deste guia."
 
 #: ../../getting_started/guides/backup_restore.rst:71
 msgid "Restoring an Appliance from Backup"
-msgstr ""
+msgstr "Restaurando um Appliance a partir de Backup"
 
 #: ../../getting_started/guides/backup_restore.rst:76
 msgid "VME Manager host-failure decision tree"
-msgstr ""
+msgstr "Árvore de decisão de falha de host do VME Manager"
 
 #: ../../getting_started/guides/backup_restore.rst:78
 msgid ""
 "First isolate the failed HVM host so that it cannot run another copy of "
 "the Manager VM. Starting two copies with the same identity or disks can "
 "corrupt data and disrupt integrations. Then select the recovery path:"
-msgstr ""
+msgstr "Primeiro isole o host HVM com falha para que ele não possa executar outra cópia da VM do Manager. Iniciar duas cópias com a mesma identidade ou discos pode corromper dados e interromper integrações. Em seguida, selecione o caminho de recuperação:"
 
 #: ../../getting_started/guides/backup_restore.rst:80
 msgid ""
@@ -251,7 +251,7 @@ msgid ""
 "relocates the complete VM; it is not an appliance database restore. "
 "Preserve the VM identity, MAC addresses, and storage attachments. Start "
 "only one copy and validate it using the checklist below."
-msgstr ""
+msgstr "**The Manager VM and all of its disks are intact on storage accessible to another healthy host:** use o workflow suportado de registro, migração ou recuperação de VM HVM para o layout de cluster aplicável. Isso realoca a VM completa; não é uma restauração do banco de dados do appliance. Preserve a identidade da VM, endereços MAC e anexos de armazenamento. Inicie apenas uma cópia e valide-a usando a checklist abaixo."
 
 #: ../../getting_started/guides/backup_restore.rst:81
 msgid ""
@@ -260,7 +260,7 @@ msgid ""
 " deliberately update its DNS/IP identity, and contact HPE Support for the"
 " topology-specific database and appliance-file restore sequence. Do not "
 "attach the old and replacement Manager to production simultaneously."
-msgstr ""
+msgstr "**The VM is unavailable, but the complete recovery set survives:** implemente um Manager de substituição na **mesma versão do backup**, preserve ou atualize deliberadamente sua identidade DNS/IP, e entre em contato com o HPE Support para a sequência de restauração de banco de dados e arquivos do appliance específica da topologia. Não anexe o Manager antigo e o de substituição à produção simultaneamente."
 
 #: ../../getting_started/guides/backup_restore.rst:82
 msgid ""
@@ -269,7 +269,7 @@ msgid ""
 "assets needed to reproduce the appliance. Contact HPE Support to "
 "determine what can be recovered and which integrations and credentials "
 "must be rebuilt."
-msgstr ""
+msgstr "**Only a database backup survives:** pare. Um backup de banco de dados não contém todos os arquivos, configuração, secrets, certificados ou ativos enviados necessários para reproduzir o appliance. Entre em contato com o HPE Support para determinar o que pode ser recuperado e quais integrações e credenciais devem ser reconstruídas."
 
 #: ../../getting_started/guides/backup_restore.rst:83
 msgid ""
@@ -277,7 +277,7 @@ msgid ""
 "onboard resources under an HPE Support recovery plan. Do not copy "
 "database tables, edit appliance identity directly, or reuse unknown disks"
 " in an attempt to reconstruct the failed appliance."
-msgstr ""
+msgstr "**No viable VM or recovery set survives:** implemente um novo Manager e refaça o onboard dos recursos sob um plano de recuperação do HPE Support. Não copie tabelas de banco de dados, edite a identidade do appliance diretamente nem reutilize discos desconhecidos na tentativa de reconstruir o appliance com falha."
 
 #: ../../getting_started/guides/backup_restore.rst:85
 msgid ""
@@ -287,7 +287,7 @@ msgid ""
 "HPE Support if host isolation is uncertain, a disk is inconsistent, the "
 "replacement version differs, the database topology is unknown, or "
 "DNS/certificate/identity changes are required."
-msgstr ""
+msgstr "Antes de qualquer recuperação, registre o estado do host e do armazenamento com falha, isole ou desligue o host original, proteja os discos sobreviventes contra gravações e tire snapshots ou cópias em nível de armazenamento onde suportado. Pare e entre em contato com o HPE Support se o isolamento do host for incerto, um disco estiver inconsistente, a versão de substituição for diferente, a topologia do banco de dados for desconhecida ou forem necessárias alterações de DNS/certificado/identidade."
 
 #: ../../getting_started/guides/backup_restore.rst:87
 msgid ""
@@ -297,30 +297,30 @@ msgid ""
 "refresh, console access, integrations, automation credentials, and the "
 "next appliance backup. Do not discard the failed VM or recovery artifacts"
 " until this validation and an agreed rollback period are complete."
-msgstr ""
+msgstr "Após iniciar o Manager recuperado, verifique a URL e o certificado do appliance, login de administrador, status dos serviços, conectividade do banco de dados, ativos da UI e imagens enviadas, conectividade do cluster/host HVM, atualização do inventário, acesso ao console, integrações, credenciais de automação e o próximo backup do appliance. Não descarte a VM com falha ou os artefatos de recuperação até que esta validação e um período de rollback acordado estejam concluídos."
 
 #: ../../getting_started/guides/backup_restore.rst:89
 msgid ""
 "Begin by ensuring the Morpheus UI service is stopped on all of the "
 "application servers:"
-msgstr ""
+msgstr "Comece garantindo que o serviço Morpheus UI esteja parado em todos os servidores de aplicação:"
 
 #: ../../getting_started/guides/backup_restore.rst:91
 msgid "[root@app-server-new ~] morpheus-ctl stop morpheus-ui"
-msgstr ""
+msgstr "[root@app-server-new ~] morpheus-ctl stop morpheus-ui"
 
 #: ../../getting_started/guides/backup_restore.rst:95
 msgid ""
 "For an embedded database using the default generated credentials, "
 "retrieve the exact MySQL application-user key without printing unrelated "
 "secrets:"
-msgstr ""
+msgstr "Para um banco de dados incorporado usando as credenciais geradas por padrão, recupere a chave exata do usuário de aplicação MySQL sem imprimir secrets não relacionados:"
 
 #: ../../getting_started/guides/backup_restore.rst:97
 msgid ""
 "[root@app-server-old ~] jq -r '.mysql.morpheus_password' /etc/morpheus"
 "/morpheus-secrets.json"
-msgstr ""
+msgstr "[root@app-server-old ~] jq -r '.mysql.morpheus_password' /etc/morpheus/morpheus-secrets.json"
 
 #: ../../getting_started/guides/backup_restore.rst:101
 msgid ""
@@ -329,7 +329,7 @@ msgid ""
 "``/etc/morpheus/morpheus.rb`` instead. Values in ``morpheus-"
 "secrets.json`` describe generated embedded-service secrets and must not "
 "be assumed to describe an external service."
-msgstr ""
+msgstr "Para um banco de dados externo ou um nome de banco de dados, host, usuário ou senha personalizados, use a configuração efetiva ``mysql`` em ``/etc/morpheus/morpheus.rb`` em vez disso. Valores em ``morpheus-secrets.json`` descrevem secrets gerados de serviços incorporados e não devem ser assumidos como descritivos de um serviço externo."
 
 #: ../../getting_started/guides/backup_restore.rst:103
 msgid ""
@@ -342,15 +342,15 @@ msgid ""
 "command and recovery plan for the source and target appliance versions "
 "and database topology. Do not start the UI until Support's restore "
 "validation is complete."
-msgstr ""
+msgstr "Copie o backup do banco de dados SQL do bucket ou file share de backup para um local seguro em um nó do appliance. O comando de restauração direta ``mysql`` documentado anteriormente não é um procedimento geral de restauração suportado: dumps do appliance podem conter instruções em nível de banco de dados, e o destino de conexão correto, privilégios, nome do schema, sequência da topologia e validação dependem da implementação. Entre em contato com o HPE Support para o comando de restauração e o plano de recuperação das versões de origem e destino do appliance e da topologia do banco de dados. Não inicie a UI até que a validação de restauração do Support esteja concluída."
 
 #: ../../getting_started/guides/backup_restore.rst:105
 msgid ""
 "When the validated restore is complete, start the UI on each application "
 "server as directed by the recovery plan:"
-msgstr ""
+msgstr "Quando a restauração validada estiver concluída, inicie a UI em cada servidor de aplicação conforme direcionado pelo plano de recuperação:"
 
 #: ../../getting_started/guides/backup_restore.rst:107
 msgid "[root@app-server-new ~] morpheus-ctl start morpheus-ui"
-msgstr ""
+msgstr "[root@app-server-new ~] morpheus-ctl start morpheus-ui"
 

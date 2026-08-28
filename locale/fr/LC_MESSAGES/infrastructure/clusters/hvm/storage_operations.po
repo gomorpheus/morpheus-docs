@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:2
 msgid "Storage Lifecycle"
-msgstr ""
+msgstr "Cycle de vie du stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:4
 msgid ""
 "This section covers Day-2 storage operations on layout 1.3 and 2.0 HVM "
 "clusters, including adding and removing datastores, managing iSCSI "
 "targets, and expanding storage capacity."
-msgstr ""
+msgstr "Cette section couvre les opérations de stockage Day-2 sur les clusters HVM en disposition 1.3 et 2.0, y compris l'ajout et le retrait de datastores, la gestion des cibles iSCSI et l'extension de la capacité de stockage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:7
 msgid "Datastore Groups"
-msgstr ""
+msgstr "Groupes de datastores"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:9
 msgid ""
@@ -41,25 +41,25 @@ msgid ""
 " DRS rebalancing for HVM clusters. A Datastore Group is a logical "
 "datastore type that contains multiple shared, file-based datastores. It "
 "does not create another filesystem or libvirt storage pool."
-msgstr ""
+msgstr "Les groupes de datastores offrent un placement automatique du stockage et un rééquilibrage Storage DRS optionnel pour les clusters HVM. Un groupe de datastores est un type de datastore logique contenant plusieurs datastores partagés basés sur des fichiers. Il ne crée pas un autre système de fichiers ni pool de stockage libvirt."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:12
 msgid "Supported Members"
-msgstr ""
+msgstr "Membres pris en charge"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:14
 msgid "A Datastore Group can contain these HVM datastore types:"
-msgstr ""
+msgstr "Un groupe de datastores peut contenir ces types de datastores HVM :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:16
 msgid "**NFS Datastore**"
-msgstr ""
+msgstr "**NFS Datastore**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:17
 msgid ""
 "**HPE Clustered Datastore (Shared LUN)**, which provides a shared GFS2 "
 "filesystem"
-msgstr ""
+msgstr "**HPE Clustered Datastore (Shared LUN)**, qui fournit un système de fichiers GFS2 partagé"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:19
 msgid ""
@@ -67,24 +67,24 @@ msgid ""
 "datastores, LUN-per-vDisk datastores, inactive datastores, nested "
 "Datastore Groups, and datastores already assigned to another group are "
 "not offered for selection."
-msgstr ""
+msgstr "Les membres doivent être des datastores actifs dans le même cluster HVM. Les datastores locaux, LUN-per-vDisk, inactifs, les groupes de datastores imbriqués et les datastores déjà assignés à un autre groupe ne sont pas proposés à la sélection."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:21
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:376
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:451
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:23
 msgid ""
 "Datastore Groups and the Storage DRS behavior described here are specific"
 " to HVM clusters. Do not use this procedure for other cluster or Cloud "
 "types."
-msgstr ""
+msgstr "Les groupes de datastores et le comportement Storage DRS décrit ici sont spécifiques aux clusters HVM. N'utilisez pas cette procédure pour d'autres types de cluster ou Cloud."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:26
 msgid "Service Provider Storage Tiers"
-msgstr ""
+msgstr "Niveaux de stockage pour fournisseurs de services"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:28
 msgid ""
@@ -93,7 +93,7 @@ msgid ""
 "example, create groups named **Gold**, **Premium**, or **Standard**, and "
 "assign datastores with the corresponding media, performance, protection, "
 "or operational characteristics."
-msgstr ""
+msgstr "Les MSP et fournisseurs de services peuvent utiliser les groupes de datastores pour présenter des niveaux de service de stockage sans exposer l'inventaire sous-jacent de datastores. Par exemple, créez des groupes nommés **Gold**, **Premium** ou **Standard**, et assignez des datastores avec les caractéristiques média, performance, protection ou opérationnelles correspondantes."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:30
 msgid ""
@@ -102,7 +102,7 @@ msgid ""
 "group during provisioning, and |morpheus| can still resolve that group to"
 " an eligible member datastore. The consumer does not need direct "
 "permission to each member selected behind the group."
-msgstr ""
+msgstr "Accordez à un locataire ou un groupe l'accès au groupe de datastores tout en retenant l'accès à ses datastores membres. Le consommateur sélectionne le groupe de niveau de service lors du provisionnement, et |morpheus| peut toujours résoudre ce groupe vers un datastore membre éligible. Le consommateur n'a pas besoin d'une autorisation directe sur chaque membre sélectionné derrière le groupe."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:32
 msgid ""
@@ -111,7 +111,7 @@ msgid ""
 ":menuselection:`Administration --> Settings --> Provisioning`. Without "
 "this setting, users may see capacity information for datastore choices "
 "they are permitted to select."
-msgstr ""
+msgstr "Pour empêcher la capacité du datastore d'apparaître dans les sélecteurs de provisionnement, activez **Hide Datastore Stats On Selection** sous :menuselection:`Administration --> Settings --> Provisioning`. Sans ce paramètre, les utilisateurs peuvent voir les informations de capacité pour les choix de datastores qu'ils sont autorisés à sélectionner."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:34
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:216
@@ -120,7 +120,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:624
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:668
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:36
 msgid ""
@@ -131,47 +131,47 @@ msgid ""
 "underlying storage platform and service policy. Datastore Group placement"
 " uses capacity utilization; it does not benchmark media or validate "
 "service-level performance."
-msgstr ""
+msgstr "Un nom de niveau est une définition de service administrative, et non une garantie automatique de qualité de service. Maintenez les membres de chaque groupe opérationnellement équivalents pour le niveau annoncé, et appliquez les engagements IOPS, débit, disponibilité, chiffrement ou protection des données via la plate-forme de stockage sous-jacente et la règle de service. Le placement par groupe de datastores utilise l'utilisation de capacité ; il ne benchmark pas les médias ni ne valide les performances de niveau de service."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:39
 msgid "Creating a Datastore Group"
-msgstr ""
+msgstr "Création d'un groupe de datastores"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:41
 msgid ""
 "Users require **Infrastructure: Clusters** and **Infrastructure: "
 "Storage** permissions at the **Full** level."
-msgstr ""
+msgstr "Les utilisateurs nécessitent les autorisations **Infrastructure: Clusters** et **Infrastructure: Storage** au niveau **Full**."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:43
 msgid ""
 "Navigate to :menuselection:`Infrastructure --> Clusters` and open the HVM"
 " cluster."
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Clusters` et ouvrez le cluster HVM."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:44
 msgid "Select the :guilabel:`Datastores` tab."
-msgstr ""
+msgstr "Sélectionnez l'onglet :guilabel:`Datastores`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:45
 msgid "Click :guilabel:`Add`."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Add`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:46
 msgid ""
 "Enter a :guilabel:`Name` and select :guilabel:`Datastore Group` as the "
 ":guilabel:`Type`."
-msgstr ""
+msgstr "Saisissez un :guilabel:`Name` et sélectionnez :guilabel:`Datastore Group` comme :guilabel:`Type`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:47
 msgid "Configure the group:"
-msgstr ""
+msgstr "Configurez le groupe :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:53
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:158
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:198
 msgid "Field"
-msgstr ""
+msgstr "Champ"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:54
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:159
@@ -179,21 +179,21 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:403
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:658
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:55
 msgid "Member Datastores"
-msgstr ""
+msgstr "Datastores membres"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:56
 msgid ""
 "Select one or more eligible shared file-based datastores in this HVM "
 "cluster. A member can belong to only one Datastore Group."
-msgstr ""
+msgstr "Sélectionnez un ou plusieurs datastores partagés basés sur des fichiers éligibles dans ce cluster HVM. Un membre ne peut appartenir qu'à un seul groupe de datastores."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:57
 msgid "Space Threshold (%)"
-msgstr ""
+msgstr "Space Threshold (%)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:58
 msgid ""
@@ -201,22 +201,22 @@ msgid ""
 "evaluation. The allowed range is 70–95%; the default is 85%. A member "
 "must be strictly above the threshold before it is treated as "
 "overutilized."
-msgstr ""
+msgstr "Utilisation qui marque un membre comme au-dessus du seuil pour l'évaluation Storage DRS. La plage autorisée est 70–95 % ; la valeur par défaut est 85 %. Un membre doit être strictement au-dessus du seuil avant d'être considéré comme surutilisé."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:59
 msgid "Automation Level"
-msgstr ""
+msgstr "Niveau d'automatisation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:60
 msgid ""
 "**Fully Automated** queues eligible storage migrations. **No Automation "
 "(recommendations only)** creates recommendations without moving disks. "
 "The default is **Fully Automated**."
-msgstr ""
+msgstr "**Fully Automated** met en file d'attente les migrations de stockage éligibles. **No Automation (recommendations only)** crée des recommandations sans déplacer de disques. La valeur par défaut est **Fully Automated**."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:62
 msgid "Save the Datastore Group."
-msgstr ""
+msgstr "Enregistrez le groupe de datastores."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:64
 msgid ""
@@ -224,18 +224,18 @@ msgid ""
 "permissions to grant the intended Groups or Tenants access. Keep the "
 "member datastores private when their names and capacity should remain "
 "hidden."
-msgstr ""
+msgstr "Si le groupe est un niveau de stockage orienté consommateur, modifiez ses autorisations de datastore pour accorder l'accès aux groupes ou locataires prévus. Gardez les datastores membres privés lorsque leurs noms et capacité doivent rester masqués."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:66
 msgid ""
 "The group reports aggregate capacity and free space from its members. The"
 " datastore type cannot be changed after creation. Edit the group to "
 "change its members, threshold, or active state."
-msgstr ""
+msgstr "Le groupe rapporte la capacité agrégée et l'espace libre de ses membres. Le type de datastore ne peut pas être modifié après la création. Modifiez le groupe pour changer ses membres, seuil ou état actif."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:69
 msgid "Provisioning with a Datastore Group"
-msgstr ""
+msgstr "Provisionnement avec un groupe de datastores"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:71
 msgid ""
@@ -243,7 +243,7 @@ msgid ""
 "provisioning. Before creating the disk, |morpheus| resolves the logical "
 "group to an active, online member that allows provisioning and has enough"
 " capacity."
-msgstr ""
+msgstr "Sélectionnez le groupe de datastores comme datastore pour un disque VM lors du provisionnement. Avant de créer le disque, |morpheus| résout le groupe logique vers un membre actif et en ligne autorisant le provisionnement et disposant de capacité suffisante."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:73
 msgid ""
@@ -253,14 +253,14 @@ msgid ""
 "number of free bytes when members have different capacities. The selected"
 " member's capacity is reserved while provisioning proceeds so concurrent "
 "requests do not all select the same free space."
-msgstr ""
+msgstr "Dans le groupe sélectionné, |morpheus| choisit le membre avec l'utilisation projetée la plus faible après placement du disque. Cela favorise normalement le membre le moins rempli, ce qui peut différer du datastore avec le plus grand nombre d'octets libres lorsque les membres ont des capacités différentes. La capacité du membre sélectionné est réservée pendant le provisionnement afin que les requêtes concurrentes ne sélectionnent pas toutes le même espace libre."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:75
 msgid ""
 "The configured **Space Threshold (%)** does not reject initial placement."
 " It controls post-provision Storage DRS evaluation. Initial placement can"
 " use a member above that threshold if the requested disk still fits."
-msgstr ""
+msgstr "Le **Space Threshold (%)** configuré ne rejette pas le placement initial. Il contrôle l'évaluation Storage DRS post-provisionnement. Le placement initial peut utiliser un membre au-dessus de ce seuil si le disque demandé convient encore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:77
 msgid ""
@@ -268,44 +268,44 @@ msgid ""
 "named group, |morpheus| evaluates accessible Datastore Groups in the HVM "
 "cluster. It resolves the best member in each group, then selects the "
 "resulting member with the greatest free space."
-msgstr ""
+msgstr "Lorsque :guilabel:`Auto - Cluster` est disponible et sélectionné au lieu d'un groupe nommé, |morpheus| évalue les groupes de datastores accessibles dans le cluster HVM. Il résout le meilleur membre dans chaque groupe, puis sélectionne le membre résultant avec le plus grand espace libre."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:80
 msgid "Automatic Storage Rebalancing"
-msgstr ""
+msgstr "Rééquilibrage automatique du stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:82
 msgid ""
 "Storage DRS runs after a successful HVM cluster refresh. It evaluates "
 "each Datastore Group whose status is provisioned or warning:"
-msgstr ""
+msgstr "Storage DRS s'exécute après un rafraîchissement réussi du cluster HVM. Il évalue chaque groupe de datastores dont l'état est provisioned ou warning :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:84
 msgid "Members strictly above the configured threshold are treated as sources."
-msgstr ""
+msgstr "Les membres strictement au-dessus du seuil configuré sont traités comme sources."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:85
 msgid ""
 "|morpheus| identifies eligible VM disks that can be moved away from each "
 "source."
-msgstr ""
+msgstr "|morpheus| identifie les disques VM éligibles pouvant être déplacés depuis chaque source."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:86
 msgid ""
 "A target must have enough capacity and remain at or below the threshold "
 "after receiving the disk."
-msgstr ""
+msgstr "Une cible doit avoir assez de capacité et rester au ou en dessous du seuil après réception du disque."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:87
 msgid "The target closest to the group's overall utilization is preferred."
-msgstr ""
+msgstr "La cible la plus proche de l'utilisation globale du groupe est préférée."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:88
 msgid ""
 "With **Fully Automated**, persistent imbalance queues storage migrations."
 " With **No Automation**, |morpheus| creates a Storage DRS recommendation "
 "instead."
-msgstr ""
+msgstr "Avec **Fully Automated**, un déséquilibre persistant met en file d'attente des migrations de stockage. Avec **No Automation**, |morpheus| crée une recommandation Storage DRS à la place."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:90
 msgid ""
@@ -315,44 +315,44 @@ msgid ""
 "reading. Only one Storage DRS cycle runs for an HVM cluster at a time, "
 "and a group is skipped while a member contains a VM already being "
 "resized."
-msgstr ""
+msgstr "Le mode automatique exige que le même datastore source reste candidat à la migration sur des cycles d'évaluation consécutifs avant que les migrations soient mises en file d'attente. Cela évite de déplacer des disques à cause d'une lecture de capacité transitoire unique. Un seul cycle Storage DRS s'exécute à la fois pour un cluster HVM, et un groupe est ignoré tant qu'un membre contient une VM déjà en cours de redimensionnement."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:93
 msgid "Eligible Disks and Limitations"
-msgstr ""
+msgstr "Disques éligibles et limitations"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:95
 msgid ""
 "Storage DRS considers only active, provisioned VM disks with reported "
 "usage. It excludes:"
-msgstr ""
+msgstr "Storage DRS ne considère que les disques VM actifs et provisionnés avec utilisation rapportée. Il exclut :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:97
 msgid "Disks with snapshots"
-msgstr ""
+msgstr "Disques avec instantanés"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:98
 msgid "Multi-attach or shared disks"
-msgstr ""
+msgstr "Disques multi-attache ou partagés"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:99
 msgid "CD-ROM and ISO volumes"
-msgstr ""
+msgstr "Volumes CD-ROM et ISO"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:100
 msgid "Volumes without a positive size or reported usage"
-msgstr ""
+msgstr "Volumes sans taille positive ou utilisation rapportée"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:101
 msgid "Volumes that are already participating in a resize operation"
-msgstr ""
+msgstr "Volumes déjà impliqués dans une opération de redimensionnement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:103
 msgid ""
 "Storage DRS moves individual eligible disks rather than entire "
 "datastores. Each migration is executed through the VM resize workflow and"
 " is visible as a separate process."
-msgstr ""
+msgstr "Storage DRS déplace des disques éligibles individuels plutôt que des datastores entiers. Chaque migration est exécutée via le workflow de redimensionnement VM et est visible comme un processus distinct."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:105
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:130
@@ -362,7 +362,7 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:406
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:579
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:107
 msgid ""
@@ -370,7 +370,7 @@ msgid ""
 "Datastore Group or disable provisioning on it. Member-level placement and"
 " Storage DRS eligibility do not currently exclude a datastore solely "
 "because its maintenance status changed."
-msgstr ""
+msgstr "Avant de mettre un datastore membre en maintenance, retirez-le du groupe de datastores ou désactivez le provisionnement dessus. Le placement au niveau membre et l'éligibilité Storage DRS n'excluent actuellement pas un datastore uniquement parce que son état de maintenance a changé."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:109
 msgid ""
@@ -378,11 +378,11 @@ msgid ""
 "Group is not a storage-redundancy mechanism and does not replace array "
 "protection, backups, multipathing, datastore maintenance procedures, or "
 "capacity planning."
-msgstr ""
+msgstr "Surveillez la capacité et l'état de chaque membre indépendamment. Un groupe de datastores n'est pas un mécanisme de redondance de stockage et ne remplace pas la protection de baie, les sauvegardes, le multipath, les procédures de maintenance de datastore ou la planification de capacité."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:112
 msgid "Storage Design Boundaries"
-msgstr ""
+msgstr "Limites de conception du stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:114
 msgid ""
@@ -393,7 +393,7 @@ msgid ""
 "interoperability. Present shared block storage consistently to every "
 "cluster host and verify stable device identity and all expected paths "
 "before datastore creation or returning a host to service."
-msgstr ""
+msgstr "|morpheus| gère les opérations de datastore et d'hôte prises en charge mais ne remplace pas la conception de baie de stockage. Les clients restent responsables du dimensionnement de baie, de la présentation LUN, du zoning, de la configuration de cibles, de la règle multipath, de l'analyse perte/latence réseau, de la protection des données et de l'interopérabilité fournisseur. Présentez le stockage bloc partagé de manière cohérente à chaque hôte du cluster et vérifiez l'identité stable du périphérique et tous les chemins attendus avant la création de datastore ou le retour d'un hôte en service."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:116
 msgid ""
@@ -403,11 +403,11 @@ msgid ""
 "Fibre Channel and iSCSI, test loss of each individual path and confirm "
 "the multipath device remains available. A successfully discovered device "
 "is not evidence that the design is redundant or adequately sized."
-msgstr ""
+msgstr "Pour le stockage Ethernet, séparez le trafic ou fournissez une capacité redondante suffisante lorsque l'analyse de panne exige un comportement de stockage prévisible. Configurez les jumbo frames uniquement sur un chemin de bout en bout validé. Pour Fibre Channel et iSCSI, testez la perte de chaque chemin individuel et confirmez que le périphérique multipath reste disponible. Un périphérique découvert avec succès n'est pas une preuve que la conception est redondante ou correctement dimensionnée."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:119
 msgid "Datastore Details and File Explorer"
-msgstr ""
+msgstr "Détails du datastore et explorateur de fichiers"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:121
 msgid ""
@@ -416,7 +416,7 @@ msgid ""
 " The detail page provides Summary, Volumes, Virtual Machines, History, "
 "and, when supported, Files tabs. Use the Volumes and Virtual Machines "
 "tabs to assess placement before maintenance, migration, or removal."
-msgstr ""
+msgstr "Ouvrez un datastore HVM depuis :menuselection:`Infrastructure --> Storage --> Data Stores` ou l'onglet :guilabel:`Datastores` du cluster HVM. La page de détail fournit les onglets Summary, Volumes, Virtual Machines, History et, si pris en charge, Files. Utilisez les onglets Volumes et Virtual Machines pour évaluer le placement avant maintenance, migration ou retrait."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:123
 msgid ""
@@ -424,14 +424,14 @@ msgid ""
 "based HVM datastores with a configured path, principally NFS and HPE "
 "Clustered Datastores (GFS2). It requires an online HVM Host that can "
 "access the datastore."
-msgstr ""
+msgstr "L'onglet :guilabel:`Files` fournit Datastore Explorer pour les datastores HVM partagés basés sur des fichiers avec un chemin configuré, principalement NFS et HPE Clustered Datastores (GFS2). Il nécessite un hôte HVM en ligne pouvant accéder au datastore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:125
 msgid ""
 "**Read access** — With **Infrastructure: Storage** and **Infrastructure: "
 "Storage Browser** set to **Read**, users can navigate directories, search"
 " the current directory, and download files."
-msgstr ""
+msgstr "**Accès lecture** — Avec **Infrastructure: Storage** et **Infrastructure: Storage Browser** définis sur **Read**, les utilisateurs peuvent parcourir les répertoires, rechercher dans le répertoire courant et télécharger des fichiers."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:126
 msgid ""
@@ -439,7 +439,7 @@ msgid ""
 "upload files and recursively delete files or directories. Cluster-scoped "
 "access additionally requires **Infrastructure: Clusters** permission, and"
 " write operations require datastore ownership."
-msgstr ""
+msgstr "**Accès complet** — Avec les deux autorisations définies sur **Full**, les utilisateurs peuvent aussi importer des fichiers et supprimer récursivement des fichiers ou répertoires. L'accès au niveau cluster nécessite en outre l'autorisation **Infrastructure: Clusters**, et les opérations d'écriture nécessitent la propriété du datastore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:128
 msgid ""
@@ -447,7 +447,7 @@ msgid ""
 "copy, or edit files. It is not available for local, block, RBD, LUN-per-"
 "vDisk, or cloud-scoped datastores. Upload and delete are blocked during "
 "datastore maintenance; browsing and download remain available."
-msgstr ""
+msgstr "Datastore Explorer ne crée pas de répertoires vides et ne renomme, déplace, copie ou modifie pas de fichiers. Il n'est pas disponible pour les datastores locaux, bloc, RBD, LUN-per-vDisk ou au niveau cloud. L'import et la suppression sont bloqués pendant la maintenance du datastore ; la navigation et le téléchargement restent disponibles."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:132
 msgid ""
@@ -455,292 +455,292 @@ msgid ""
 "modify or delete VM disks, snapshot backing files, image artifacts, "
 "heartbeat data, active process files, or unknown datastore content. Use "
 "supported VM, snapshot, and datastore actions for managed artifacts."
-msgstr ""
+msgstr "Datastore Explorer opère directement sur le système de fichiers partagé. Ne modifiez ou supprimez pas les disques VM, fichiers de support d'instantané, artefacts d'image, données de pulsation, fichiers de processus actifs ou contenu inconnu du datastore. Utilisez les actions VM, instantané et datastore prises en charge pour les artefacts gérés."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:135
 msgid "Adding a New Datastore"
-msgstr ""
+msgstr "Ajout d'un nouveau datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:137
 msgid ""
 "New HPE Clustered Datastores (Shared LUNs) can be added to a running "
 "cluster without downtime."
-msgstr ""
+msgstr "De nouveaux HPE Clustered Datastores (Shared LUNs) peuvent être ajoutés à un cluster en cours d'exécution sans interruption."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:140
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:294
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:608
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:142
 msgid ""
 "A shared storage LUN is provisioned and accessible to all cluster hosts "
 "via iSCSI or Fibre Channel"
-msgstr ""
+msgstr "Un LUN de stockage partagé est provisionné et accessible à tous les hôtes du cluster via iSCSI ou Fibre Channel"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:143
 msgid ""
 "The iSCSI target for the LUN has been added to the cluster (see `Adding "
 "iSCSI Targets`_ below)"
-msgstr ""
+msgstr "La cible iSCSI du LUN a été ajoutée au cluster (voir `Adding iSCSI Targets`_ ci-dessous)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:144
 msgid "All hosts can see the block device (verify with ``lsblk`` on each host)"
-msgstr ""
+msgstr "Tous les hôtes voient le périphérique bloc (vérifiez avec ``lsblk`` sur chaque hôte)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:147
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:188
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:224
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:342
 msgid "Procedure"
-msgstr ""
+msgstr "Procédure"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:149
 msgid ""
 "Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores` "
 "and click :guilabel:`Add`. Alternatively, open the HVM Cluster's "
 ":guilabel:`Datastores` tab and click :guilabel:`Add`."
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Storage --> Data Stores` et cliquez sur :guilabel:`Add`. Vous pouvez aussi ouvrir l'onglet :guilabel:`Datastores` du cluster HVM et cliquer sur :guilabel:`Add`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:150
 msgid "Select :guilabel:`HPE Clustered Datastore (Shared LUN)` as the type."
-msgstr ""
+msgstr "Sélectionnez :guilabel:`HPE Clustered Datastore (Shared LUN)` comme type."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:151
 msgid ""
 "When using the global Data Stores page, select the Cloud and target HVM "
 "Cluster."
-msgstr ""
+msgstr "Lors de l'utilisation de la page globale Data Stores, sélectionnez le Cloud et le cluster HVM cible."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:152
 msgid "Configure the datastore:"
-msgstr ""
+msgstr "Configurez le datastore :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:160
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:161
 msgid "Descriptive name for the datastore"
-msgstr ""
+msgstr "Nom descriptif pour le datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:162
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:163
 msgid "Select the target HVM cluster"
-msgstr ""
+msgstr "Sélectionnez le cluster HVM cible"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:164
 msgid "Block Device"
-msgstr ""
+msgstr "Block Device"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:165
 msgid ""
 "The stable shared block device path. For multipath storage, use the WWN-"
 "based path, such as ``/dev/mapper/3<wwn>``; do not use a positional "
 "``mpathX`` name."
-msgstr ""
+msgstr "Le chemin stable du périphérique bloc partagé. Pour le stockage multipath, utilisez le chemin basé sur WWN, tel que ``/dev/mapper/3<wwn>`` ; n'utilisez pas un nom positionnel ``mpathX``."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:166
 msgid "Heartbeat Target"
-msgstr ""
+msgstr "Heartbeat Target"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:167
 msgid "Enable if this datastore should be used for heartbeat writes"
-msgstr ""
+msgstr "Activez si ce datastore doit être utilisé pour les écritures de pulsation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:169
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:205
 msgid "Click :guilabel:`Save`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Save`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:172
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:208
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:233
 msgid "What Happens Automatically"
-msgstr ""
+msgstr "Ce qui se passe automatiquement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:174
 msgid "When a new HPE Clustered Datastore is created:"
-msgstr ""
+msgstr "Lorsqu'un nouveau HPE Clustered Datastore est créé :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:176
 msgid ""
 "**GFS2 formatting** — ``mkfs.gfs2`` is run with lock_dlm protocol, 2048 "
 "resource groups, and 32 initial journals, with the lock table tied to the"
 " cluster"
-msgstr ""
+msgstr "**Formatage GFS2** — ``mkfs.gfs2`` est exécuté avec le protocole lock_dlm, 2048 groupes de ressources et 32 journaux initiaux, avec la table de verrous liée au cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:177
 msgid ""
 "**Journal provisioning** — Journals are added (``gfs2_jadd``) if the "
 "initial journal count is less than the number of hosts"
-msgstr ""
+msgstr "**Provisionnement de journaux** — Des journaux sont ajoutés (``gfs2_jadd``) si le nombre initial de journaux est inférieur au nombre d'hôtes"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:178
 msgid ""
 "**Mount on all hosts** — The filesystem is mounted on each cluster host. "
 "Mount information is persisted to ``/opt/morpheus-node/.mounts``"
-msgstr ""
+msgstr "**Montage sur tous les hôtes** — Le système de fichiers est monté sur chaque hôte du cluster. Les informations de montage sont persistées dans ``/opt/morpheus-node/.mounts``"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:179
 msgid ""
 "**libvirt storage pool** — A virsh storage pool is created on each host, "
 "making the datastore available for VM disk placement"
-msgstr ""
+msgstr "**Pool de stockage libvirt** — Un pool de stockage virsh est créé sur chaque hôte, rendant le datastore disponible pour le placement de disques VM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:180
 msgid ""
 "**Lock protocol** — The ``lock_dlm`` protocol coordinates file locking "
 "across all hosts through the existing DLM infrastructure"
-msgstr ""
+msgstr "**Protocole de verrouillage** — Le protocole ``lock_dlm`` coordonne le verrouillage de fichiers sur tous les hôtes via l'infrastructure DLM existante"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:183
 msgid "Adding iSCSI Targets"
-msgstr ""
+msgstr "Ajout de cibles iSCSI"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:185
 msgid ""
 "iSCSI targets provide the block device access that underpins HPE "
 "Clustered Datastores."
-msgstr ""
+msgstr "Les cibles iSCSI fournissent l'accès au périphérique bloc qui sous-tend les HPE Clustered Datastores."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:190
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:228
 msgid "Navigate to ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
-msgstr ""
+msgstr "Accédez à ``Infrastructure > Clusters > [Cluster] > Storage > iSCSI``"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:191
 msgid "Click :guilabel:`Add`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Add`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:192
 msgid "Enter the iSCSI target details:"
-msgstr ""
+msgstr "Saisissez les détails de la cible iSCSI :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:200
 msgid "Target IP"
-msgstr ""
+msgstr "Target IP"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:201
 msgid "IP address of the iSCSI target portal"
-msgstr ""
+msgstr "Adresse IP du portail cible iSCSI"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:202
 msgid "Target Port"
-msgstr ""
+msgstr "Target Port"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:203
 msgid "Port number (default: 3260)"
-msgstr ""
+msgstr "Numéro de port (par défaut : 3260)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:210
 msgid "When an iSCSI target is added:"
-msgstr ""
+msgstr "Lorsqu'une cible iSCSI est ajoutée :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:212
 msgid ""
 "**Discovery** — ``iscsiadm -m discovery -t st -p \"<IP>:<port>\"`` is run"
 " on all online cluster hosts"
-msgstr ""
+msgstr "**Discovery** — ``iscsiadm -m discovery -t st -p \"<IP>:<port>\"`` est exécuté sur tous les hôtes du cluster en ligne"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:213
 msgid ""
 "**Auto-login** — Sessions are configured for automatic startup and all "
 "available targets are logged in (``iscsiadm -m node "
 "--loginall=automatic``)"
-msgstr ""
+msgstr "**Auto-login** — Les sessions sont configurées pour le démarrage automatique et toutes les cibles disponibles sont connectées (``iscsiadm -m node --loginall=automatic``)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:214
 msgid "**Persistence** — Target connections persist across host reboots"
-msgstr ""
+msgstr "**Persistence** — Les connexions de cibles persistent après redémarrage des hôtes"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:216
 msgid ""
 "iSCSI targets are automatically discovered on all hosts in the cluster, "
 "not just a single host. This ensures all hosts can access the shared "
 "storage simultaneously."
-msgstr ""
+msgstr "Les cibles iSCSI sont automatiquement découvertes sur tous les hôtes du cluster, et pas seulement sur un seul hôte. Cela garantit que tous les hôtes peuvent accéder au stockage partagé simultanément."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:219
 msgid "Removing iSCSI Targets"
-msgstr ""
+msgstr "Retrait de cibles iSCSI"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:221
 msgid ""
 "Before removing an iSCSI target, ensure no datastores are using LUNs from"
 " that target. Removing a target with active datastores will cause storage"
 " failures."
-msgstr ""
+msgstr "Avant de retirer une cible iSCSI, assurez-vous qu'aucun datastore n'utilise de LUN de cette cible. Retirer une cible avec des datastores actifs provoquera des pannes de stockage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:226
 msgid "Migrate all VMs off datastores using the target's LUNs"
-msgstr ""
+msgstr "Migrez toutes les VM hors des datastores utilisant les LUN de la cible"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:227
 msgid "Remove the datastore from |morpheus| (see `Removing a Datastore`_ below)"
-msgstr ""
+msgstr "Retirez le datastore de |morpheus| (voir `Removing a Datastore`_ ci-dessous)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:229
 msgid "Select the target to remove"
-msgstr ""
+msgstr "Sélectionnez la cible à retirer"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:230
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:353
 msgid "Click :guilabel:`Remove`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Remove`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:235
 msgid ""
 "The iSCSI discovery database entry is removed from all online cluster "
 "hosts using ``iscsiadm -m discoverydb -t sendtargets -p \"<IP>:<port>\" "
 "-o delete``."
-msgstr ""
+msgstr "L'entrée de base de données de découverte iSCSI est retirée de tous les hôtes du cluster en ligne via ``iscsiadm -m discoverydb -t sendtargets -p \"<IP>:<port>\" -o delete``."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:238
 msgid "Expanding Storage Capacity"
-msgstr ""
+msgstr "Extension de la capacité de stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:240
 msgid "To add additional capacity to an existing cluster:"
-msgstr ""
+msgstr "Pour ajouter de la capacité supplémentaire à un cluster existant :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:242
 msgid "Provision new LUNs on your storage array"
-msgstr ""
+msgstr "Provisionnez de nouveaux LUN sur votre baie de stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:243
 msgid "Add iSCSI targets (if new portals) as described above"
-msgstr ""
+msgstr "Ajoutez des cibles iSCSI (si nouveaux portails) comme décrit ci-dessus"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:244
 msgid ""
 "Rescan storage on every HVM Host using the storage-vendor and HVM-"
 "release-approved procedure. Morpheus 9.1.0 does not expose a datastore-"
 "level :guilabel:`Grow Filesystem` action."
-msgstr ""
+msgstr "Rescannez le stockage sur chaque hôte HVM selon la procédure approuvée par le fournisseur de stockage et la version HVM. Morpheus 9.1.0 n'expose pas d'action :guilabel:`Grow Filesystem` au niveau du datastore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:245
 msgid "Verify the new LUN is visible on the cluster's Storage tab"
-msgstr ""
+msgstr "Vérifiez que le nouveau LUN est visible dans l'onglet Storage du cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:246
 msgid "Create a new HPE Clustered Datastore using the new block device"
-msgstr ""
+msgstr "Créez un nouveau HPE Clustered Datastore avec le nouveau périphérique bloc"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:248
 msgid ""
 "Adding a new datastore is the lower-risk way to add capacity because it "
 "does not change the block device beneath an existing clustered "
 "filesystem."
-msgstr ""
+msgstr "Ajouter un nouveau datastore est la méthode à moindre risque pour ajouter de la capacité car elle ne modifie pas le périphérique bloc sous un système de fichiers cluster existant."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:251
 msgid "Growing an Existing GFS2 Datastore"
-msgstr ""
+msgstr "Extension d'un datastore GFS2 existant"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:253
 msgid ""
@@ -750,7 +750,7 @@ msgid ""
 "commands. The operation crosses the array/LUN, every host's paths, the "
 "shared block device, and GFS2. A size mismatch or use of the wrong device"
 " can affect every VM on the datastore."
-msgstr ""
+msgstr "Utilisez cette procédure uniquement pour un HPE Clustered Datastore dont la baie de stockage prend en charge l'extension LUN en ligne et après confirmation par l'assistance HPE ou le propriétaire du stockage de la version HVM exacte, du transport, de la pile de périphériques et des commandes. L'opération traverse la baie/LUN, les chemins de chaque hôte, le périphérique bloc partagé et GFS2. Un écart de taille ou l'utilisation du mauvais périphérique peut affecter chaque VM sur le datastore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:255
 msgid ""
@@ -759,7 +759,7 @@ msgid ""
 " mounted GFS2 filesystem. The :guilabel:`Grow Filesystem` workflow "
 "tracked by MORPH-15316 is planned for Morpheus 9.2.0 and must not be "
 "assumed available in 9.1.0."
-msgstr ""
+msgstr "Morpheus 9.1.0 ne fournit pas d'action UI ou API pour agrandir le système de fichiers d'un datastore. L'extension du LUN sous-jacent n'augmente pas automatiquement le système de fichiers GFS2 monté. Le workflow :guilabel:`Grow Filesystem` suivi par MORPH-15316 est prévu pour Morpheus 9.2.0 et ne doit pas être supposé disponible en 9.1.0."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:257
 msgid ""
@@ -768,11 +768,11 @@ msgid ""
 "backup. Pause provisioning, migration, snapshots, backups, and other "
 "storage-changing jobs. Use one named coordinator; do not run the grow "
 "command concurrently from multiple hosts."
-msgstr ""
+msgstr "Créez et vérifiez les sauvegardes de charge de travail/application avant la fenêtre de maintenance. Un instantané VM sur le datastore en cours d'extension n'est pas une sauvegarde indépendante. Mettez en pause le provisionnement, la migration, les instantanés, les sauvegardes et les autres tâches modifiant le stockage. Utilisez un coordinateur nommé ; n'exécutez pas la commande grow simultanément depuis plusieurs hôtes."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:260
 msgid "Preflight and stop conditions"
-msgstr ""
+msgstr "Prévol et conditions d'arrêt"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:262
 msgid ""
@@ -781,14 +781,14 @@ msgid ""
 "size. Confirm the device is the same on every host and is not a "
 "partition, LVM logical volume, or raw VM disk unless the approved runbook"
 " explicitly covers that stack."
-msgstr ""
+msgstr "Enregistrez le nom du datastore, le point de montage, l'ID du système de fichiers, le périphérique multipath stable basé sur WWN, la taille actuelle baie/LUN, la taille ``lsblk`` et la taille ``df``. Confirmez que le périphérique est identique sur chaque hôte et n'est pas une partition, un volume logique LVM ou un disque VM brut sauf si le runbook approuvé couvre explicitement cette pile."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:263
 msgid ""
 "Confirm cluster quorum, DLM lockspaces, datastore mounts, and all storage"
 " paths are healthy. Resolve withdrawn GFS2, failed paths, duplicate WWNs,"
 " or inconsistent device mappings before proceeding."
-msgstr ""
+msgstr "Confirmez le quorum du cluster, les lockspaces DLM, les montages de datastore et que tous les chemins de stockage sont sains. Résolvez GFS2 withdrawn, chemins en échec, WWN dupliqués ou mappages de périphériques incohérents avant de continuer."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:264
 msgid ""
@@ -796,14 +796,14 @@ msgid ""
 "preserves the LUN identity/WWN and host-set exports, and is visible to "
 "all cluster hosts. Take the array backup or recovery point required by "
 "the storage owner."
-msgstr ""
+msgstr "Confirmez que l'extension de baie est non destructive, ne peut pas réduire le LUN, préserve l'identité/WWN du LUN et les exports host-set, et est visible par tous les hôtes du cluster. Effectuez la sauvegarde ou le point de récupération de baie requis par le propriétaire du stockage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:265
 msgid ""
 "Schedule a maintenance window and identify a rollback/stop plan. LUN "
 "expansion and ``gfs2_grow`` are forward-only operations; restoring the "
 "previous size is not a normal rollback."
-msgstr ""
+msgstr "Planifiez une fenêtre de maintenance et identifiez un plan de rollback/arrêt. L'extension LUN et ``gfs2_grow`` sont des opérations uniquement avant ; restaurer la taille précédente n'est pas un rollback normal."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:267
 msgid ""
@@ -811,25 +811,25 @@ msgid ""
 " cannot be proven, any host reports a different size or path set, the "
 "device stack includes an undocumented partition/LVM layer, the filesystem"
 " is withdrawn, or backups are not verified."
-msgstr ""
+msgstr "Arrêtez et contactez l'assistance HPE avant de modifier le stockage si le périphérique stable ne peut pas être prouvé, si un hôte rapporte une taille ou un ensemble de chemins différent, si la pile de périphériques inclut une couche partition/LVM non documentée, si le système de fichiers est withdrawn ou si les sauvegardes ne sont pas vérifiées."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:270
 msgid "Coordinated growth sequence"
-msgstr ""
+msgstr "Séquence de croissance coordonnée"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:272
 msgid ""
 "From the array, expand the existing LUN without changing its WWN or "
 "exports. Do not create a new LUN and present it under the old device "
 "identity."
-msgstr ""
+msgstr "Depuis la baie, étendez le LUN existant sans modifier son WWN ou ses exports. Ne créez pas un nouveau LUN et ne le présentez pas sous l'ancienne identité de périphérique."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:273
 msgid ""
 "Rescan SCSI/FC or iSCSI on **every** cluster host using the storage-"
 "vendor and HVM-release-approved method. Verify every host sees the new "
 "underlying path size."
-msgstr ""
+msgstr "Rescannez SCSI/FC ou iSCSI sur **chaque** hôte du cluster selon la méthode approuvée par le fournisseur de stockage et la version HVM. Vérifiez que chaque hôte voit la nouvelle taille de chemin sous-jacent."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:274
 msgid ""
@@ -837,7 +837,7 @@ msgid ""
 "same WWN-based ``/dev/mapper/3<wwn>`` device reports the new size on "
 "every host and all expected paths remain active. Do not run ``gfs2_grow``"
 " while hosts disagree."
-msgstr ""
+msgstr "Redimensionnez ou rechargez la carte multipath selon la méthode approuvée. Vérifiez que le même périphérique ``/dev/mapper/3<wwn>`` basé sur WWN rapporte la nouvelle taille sur chaque hôte et que tous les chemins attendus restent actifs. N'exécutez pas ``gfs2_grow`` tant que les hôtes ne sont pas d'accord."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:275
 msgid ""
@@ -845,14 +845,14 @@ msgid ""
 "layer, extend that layer using its approved procedure and verify the "
 "resulting GFS2 block device on every host. Do not infer a partition/LVM "
 "command from the device name."
-msgstr ""
+msgstr "Si — et seulement si — la pile de périphériques approuvée contient une couche partition ou LVM, étendez cette couche selon sa procédure approuvée et vérifiez le périphérique bloc GFS2 résultant sur chaque hôte. N'inférez pas une commande partition/LVM à partir du nom du périphérique."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:276
 msgid ""
 "On the single designated coordinator host, confirm the intended GFS2 "
 "filesystem is mounted, then run the filesystem grow against the **mount "
 "point**:"
-msgstr ""
+msgstr "Sur l'hôte coordinateur désigné unique, confirmez que le système de fichiers GFS2 prévu est monté, puis exécutez l'extension du système de fichiers contre le **point de montage** :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:278
 msgid "sudo gfs2_grow <gfs2-mount-point>"
@@ -862,7 +862,7 @@ msgstr ""
 msgid ""
 "Do not run ``gfs2_grow`` on the raw block-device path or from multiple "
 "hosts."
-msgstr ""
+msgstr "N'exécutez pas ``gfs2_grow`` sur le chemin du périphérique bloc brut ou depuis plusieurs hôtes."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:283
 msgid ""
@@ -870,13 +870,13 @@ msgid ""
 "every host. Confirm the datastore remains mounted and not withdrawn, DLM "
 "and quorum remain healthy, multipath retains all expected paths, and the "
 "|morpheus| datastore capacity updates after cluster refresh."
-msgstr ""
+msgstr "Vérifiez la nouvelle taille du système de fichiers avec ``df -hT <gfs2-mount-point>`` sur chaque hôte. Confirmez que le datastore reste monté et non withdrawn, que DLM et le quorum restent sains, que multipath conserve tous les chemins attendus et que la capacité du datastore |morpheus| se met à jour après rafraîchissement du cluster."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:284
 msgid ""
 "Resume paused jobs in stages and monitor kernel, DLM, Agent, and storage-"
 "array events."
-msgstr ""
+msgstr "Reprenez les tâches en pause par étapes et surveillez les événements noyau, DLM, Agent et baie de stockage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:286
 msgid ""
@@ -886,11 +886,11 @@ msgid ""
 "after refresh. Preserve command output and logs and contact HPE Support. "
 "Do not use ``fsck.gfs2``, recreate the filesystem, unmount it cluster-"
 "wide, or attempt to shrink the LUN as an improvised recovery."
-msgstr ""
+msgstr "Arrêtez sans répéter les commandes si un rescan perd des chemins, si multipath conserve l'ancienne taille, si les hôtes rapportent des tailles différentes, si ``gfs2_grow`` renvoie une erreur, si GFS2 withdraw, ou si la capacité UI ne concorde pas avec ``df`` après rafraîchissement. Conservez la sortie des commandes et les journaux et contactez l'assistance HPE. N'utilisez pas ``fsck.gfs2``, ne recréez pas le système de fichiers, ne le démontez pas cluster-wide et n'essayez pas de réduire le LUN comme récupération improvisée."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:289
 msgid "Datastore Maintenance and Evacuation"
-msgstr ""
+msgstr "Maintenance et évacuation de datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:291
 msgid ""
@@ -898,29 +898,29 @@ msgid ""
 "eligible VM volumes before a datastore is retired, replaced, or serviced."
 " This is separate from Host maintenance mode; see :doc:`host_maintenance`"
 " for evacuating an HVM Host."
-msgstr ""
+msgstr "Le mode maintenance de datastore empêche le nouveau provisionnement et évacue les volumes VM éligibles avant qu'un datastore soit retiré, remplacé ou entretenu. Ceci est distinct du mode maintenance d'hôte ; voir :doc:`host_maintenance` pour l'évacuation d'un hôte HVM."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:296
 msgid ""
 "**Infrastructure: Clusters** and **Infrastructure: Storage** permissions "
 "at the **Full** level"
-msgstr ""
+msgstr "Autorisations **Infrastructure: Clusters** et **Infrastructure: Storage** au niveau **Full**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:297
 msgid "Healthy source and destination storage with sufficient capacity"
-msgstr ""
+msgstr "Stockage source et destination sains avec capacité suffisante"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:298
 msgid "No conflicting VM resize or storage migration operations"
-msgstr ""
+msgstr "Aucune opération conflictuelle de redimensionnement VM ou migration de stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:299
 msgid "Removal of VM snapshots for workloads that must be migrated"
-msgstr ""
+msgstr "Suppression des instantanés VM pour les charges de travail devant être migrées"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:300
 msgid "A verified backup and recovery plan appropriate for the workloads"
-msgstr ""
+msgstr "Un plan de sauvegarde et de récupération vérifié adapté aux charges de travail"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:302
 msgid ""
@@ -928,39 +928,39 @@ msgid ""
 "group or disable provisioning before maintenance. A member's maintenance "
 "state alone does not currently remove it from Datastore Group placement "
 "or Storage DRS target selection."
-msgstr ""
+msgstr "Si le datastore est membre d'un groupe de datastores, retirez-le du groupe ou désactivez le provisionnement avant la maintenance. L'état de maintenance d'un membre seul ne le retire pas actuellement du placement par groupe de datastores ni de la sélection de cible Storage DRS."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:305
 msgid "Enter Maintenance Mode"
-msgstr ""
+msgstr "Entrer en mode maintenance"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:307
 msgid ""
 "Navigate to :menuselection:`Infrastructure --> Clusters`, open the HVM "
 "Cluster, select :guilabel:`Datastores`, and open the datastore."
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Clusters`, ouvrez le cluster HVM, sélectionnez :guilabel:`Datastores` et ouvrez le datastore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:308
 msgid "Click :guilabel:`Enter Maintenance`."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Enter Maintenance`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:309
 msgid "Review the listed VMs and snapshot warnings."
-msgstr ""
+msgstr "Examinez les VM listées et les avertissements d'instantanés."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:310
 msgid ""
 "To send all movable VM volumes to one datastore, select it under "
 ":guilabel:`Target Datastore`. Leave the field blank to allow |morpheus| "
 "to choose destinations automatically."
-msgstr ""
+msgstr "Pour envoyer tous les volumes VM déplaçables vers un datastore, sélectionnez-le sous :guilabel:`Target Datastore`. Laissez le champ vide pour laisser |morpheus| choisir les destinations automatiquement."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:311
 msgid ""
 "Click :guilabel:`Confirm`. If snapshots are reported, the confirmation "
 "changes to :guilabel:`Proceed Anyway`; those snapshot-bearing VMs are "
 "still skipped rather than forcibly migrated."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Confirm`. Si des instantanés sont signalés, la confirmation devient :guilabel:`Proceed Anyway` ; ces VM avec instantanés sont toujours ignorées plutôt que migrées de force."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:313
 msgid ""
@@ -968,7 +968,7 @@ msgid ""
 "Cluster, active, online, available for provisioning, outside maintenance,"
 " and large enough for the movable volumes. A Datastore Group cannot be "
 "selected as the maintenance target."
-msgstr ""
+msgstr "Avec une cible explicite, |morpheus| valide qu'elle est dans le même cluster HVM, active, en ligne, disponible pour le provisionnement, hors maintenance et assez grande pour les volumes déplaçables. Un groupe de datastores ne peut pas être sélectionné comme cible de maintenance."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:315
 msgid ""
@@ -978,11 +978,11 @@ msgid ""
 "target must remain below the automatic evacuation utilization limit after"
 " placement. If an otherwise movable VM cannot be assigned, maintenance "
 "entry stops before migration begins."
-msgstr ""
+msgstr "Sans cible explicite, |morpheus| évalue les datastores actifs et en ligne du même type dans le cluster HVM. Il place d'abord les ensembles de stockage VM les plus grands et peut distribuer différentes VM sur différentes cibles. Une cible doit rester sous la limite d'utilisation d'évacuation automatique après placement. Si une VM autrement déplaçable ne peut pas être assignée, l'entrée en maintenance s'arrête avant le début de la migration."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:318
 msgid "Migration Behavior"
-msgstr ""
+msgstr "Comportement de migration"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:320
 msgid ""
@@ -990,7 +990,7 @@ msgid ""
 "migrations through the standard VM resize workflow. It later reaches "
 "**Maintenance**, or returns to **Available** if a fatal planning or "
 "execution failure prevents entry."
-msgstr ""
+msgstr "La maintenance entre en état **Entering** et met en file d'attente des migrations de stockage asynchrones via le workflow standard de redimensionnement VM. Elle atteint ensuite **Maintenance**, ou revient à **Available** si une panne fatale de planification ou d'exécution empêche l'entrée."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:322
 msgid ""
@@ -1001,112 +1001,112 @@ msgid ""
 " warning when some VMs cannot migrate; review the datastore's Virtual "
 "Machines and Volumes tabs and the related processes before treating "
 "evacuation as complete."
-msgstr ""
+msgstr "Les VM avec instantanés ne peuvent pas être migrées en stockage et sont signalées comme ignorées. Une VM éteinte sur stockage local uniquement est aussi immobile. Les volumes orphelins, appartenant à l'infrastructure, multi-attache, raw ou spécifiques au fournisseur peuvent avoir des restrictions supplémentaires. La maintenance peut se terminer avec un avertissement lorsque certaines VM ne peuvent pas migrer ; examinez les onglets Virtual Machines et Volumes du datastore et les processus associés avant de considérer l'évacuation comme terminée."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:324
 msgid ""
 "There is no user-facing cancellation action after maintenance evacuation "
 "has been submitted. Do not retry or issue conflicting resize operations "
 "while migrations are active."
-msgstr ""
+msgstr "Il n'y a pas d'action d'annulation orientée utilisateur après soumission de l'évacuation de maintenance. Ne réessayez pas et n'émettez pas d'opérations de redimensionnement conflictuelles pendant les migrations actives."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:327
 msgid "Leave Maintenance Mode"
-msgstr ""
+msgstr "Quitter le mode maintenance"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:329
 msgid ""
 "Confirm that maintenance work is complete and the datastore is healthy "
 "and accessible from every expected HVM Host."
-msgstr ""
+msgstr "Confirmez que les travaux de maintenance sont terminés et que le datastore est sain et accessible depuis chaque hôte HVM attendu."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:330
 msgid "Open the cluster-scoped datastore detail page."
-msgstr ""
+msgstr "Ouvrez la page de détail du datastore au niveau du cluster."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:331
 msgid "Click :guilabel:`Leave Maintenance`."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Leave Maintenance`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:332
 msgid "Confirm the operation."
-msgstr ""
+msgstr "Confirmez l'opération."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:334
 msgid ""
 "The datastore transitions through **Exiting** and returns to "
 "**Available**, which re-enables provisioning. Leaving maintenance does "
 "not automatically move VMs back to the datastore."
-msgstr ""
+msgstr "Le datastore passe par **Exiting** et revient à **Available**, ce qui réactive le provisionnement. Quitter la maintenance ne déplace pas automatiquement les VM vers le datastore."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:337
 msgid "Removing a Datastore"
-msgstr ""
+msgstr "Retrait d'un datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:339
 msgid ""
 "All managed VM volumes must be evacuated and all remaining files or "
 "infrastructure volumes accounted for before removal. Removing a datastore"
 " with active or required data can cause data loss."
-msgstr ""
+msgstr "Tous les volumes VM gérés doivent être évacués et tous les fichiers restants ou volumes d'infrastructure pris en compte avant le retrait. Retirer un datastore avec des données actives ou requises peut entraîner une perte de données."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:344
 msgid "Verify no VMs have disks on the datastore:"
-msgstr ""
+msgstr "Vérifiez qu'aucune VM n'a de disques sur le datastore :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:346
 msgid ""
 "Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores`, "
 "then open the datastore"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Storage --> Data Stores`, puis ouvrez le datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:347
 msgid "Check the :guilabel:`Virtual Machines` tab"
-msgstr ""
+msgstr "Vérifiez l'onglet :guilabel:`Virtual Machines`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:348
 msgid ""
 "Check the :guilabel:`Volumes` tab and, for file-based datastores, inspect"
 " :guilabel:`Files` without modifying managed artifacts"
-msgstr ""
+msgstr "Vérifiez l'onglet :guilabel:`Volumes` et, pour les datastores basés sur des fichiers, inspectez :guilabel:`Files` sans modifier les artefacts gérés"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:350
 msgid ""
 "Use datastore maintenance mode to evacuate eligible VMs, then resolve "
 "every skipped or unmovable workload."
-msgstr ""
+msgstr "Utilisez le mode maintenance de datastore pour évacuer les VM éligibles, puis résolvez chaque charge de travail ignorée ou immobile."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:351
 msgid "Navigate to :menuselection:`Infrastructure --> Storage --> Data Stores`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Storage --> Data Stores`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:352
 msgid "Select the datastore to remove"
-msgstr ""
+msgstr "Sélectionnez le datastore à retirer"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:356
 msgid "What Happens"
-msgstr ""
+msgstr "Ce qui se passe"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:358
 msgid "The GFS2 filesystem is unmounted on all cluster hosts"
-msgstr ""
+msgstr "Le système de fichiers GFS2 est démonté sur tous les hôtes du cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:359
 msgid "The libvirt storage pool is destroyed on all hosts"
-msgstr ""
+msgstr "Le pool de stockage libvirt est détruit sur tous les hôtes"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:360
 msgid "Mount information is removed from ``/opt/morpheus-node/.mounts``"
-msgstr ""
+msgstr "Les informations de montage sont retirées de ``/opt/morpheus-node/.mounts``"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:361
 msgid "The datastore record is removed from |morpheus|"
-msgstr ""
+msgstr "L'enregistrement du datastore est retiré de |morpheus|"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:364
 msgid "Heartbeat Datastore Configuration"
-msgstr ""
+msgstr "Configuration du datastore de pulsation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:366
 msgid ""
@@ -1114,27 +1114,27 @@ msgid ""
 "writes ``hb.properties`` to the heartbeat datastore every 20 seconds, and"
 " the Designated Coordinator monitors these writes to detect host "
 "failures."
-msgstr ""
+msgstr "Le datastore de pulsation est utilisé pour la détection de l'état des hôtes. Chaque hôte écrit ``hb.properties`` sur le datastore de pulsation toutes les 20 secondes, et le coordinateur désigné surveille ces écritures pour détecter les pannes d'hôte."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:369
 msgid "Changing the Heartbeat Datastore"
-msgstr ""
+msgstr "Modification du datastore de pulsation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:371
 msgid "Navigate to ``Storage > Datastores``"
-msgstr ""
+msgstr "Accédez à ``Storage > Datastores``"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:372
 msgid "Edit the desired datastore's properties"
-msgstr ""
+msgstr "Modifiez les propriétés du datastore souhaité"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:373
 msgid "Enable the :guilabel:`Heartbeat Target` option"
-msgstr ""
+msgstr "Activez l'option :guilabel:`Heartbeat Target`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:374
 msgid "Save changes"
-msgstr ""
+msgstr "Enregistrez les modifications"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:376
 msgid ""
@@ -1143,102 +1143,102 @@ msgid ""
 "automatically select one (preferring provisioned, non-failing datastores)"
 " and clear the heartbeat flag on the others. An alarm is raised when this"
 " automatic selection occurs."
-msgstr ""
+msgstr "Un seul datastore peut être configuré comme cible de pulsation à la fois. Si plusieurs datastores sont marqués comme cibles de pulsation, |morpheus| en sélectionnera automatiquement un (en préférant les datastores provisionnés et non en échec) et effacera l'indicateur de pulsation sur les autres. Une alarme est déclenchée lorsque cette sélection automatique se produit."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:379
 msgid "Heartbeat Datastore Best Practices"
-msgstr ""
+msgstr "Bonnes pratiques pour le datastore de pulsation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:381
 msgid "Use a highly reliable datastore as the heartbeat target"
-msgstr ""
+msgstr "Utilisez un datastore très fiable comme cible de pulsation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:382
 msgid "Ensure the heartbeat datastore is accessible from all cluster hosts"
-msgstr ""
+msgstr "Assurez-vous que le datastore de pulsation est accessible depuis tous les hôtes du cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:383
 msgid ""
 "If the heartbeat datastore fails, VM failover detection is impaired until"
 " a new heartbeat target is configured"
-msgstr ""
+msgstr "Si le datastore de pulsation tombe en panne, la détection de basculement VM est altérée jusqu'à la configuration d'une nouvelle cible de pulsation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:384
 msgid ""
 "Monitor the heartbeat datastore's health in the Quorum panel "
 "(``Infrastructure > Clusters > [Cluster] > Summary``)"
-msgstr ""
+msgstr "Surveillez l'état du datastore de pulsation dans le panneau Quorum (``Infrastructure > Clusters > [Cluster] > Summary``)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:387
 msgid "Datastore Health Monitoring"
-msgstr ""
+msgstr "Surveillance de l'état du datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:389
 msgid "|morpheus| continuously monitors datastore health:"
-msgstr ""
+msgstr "|morpheus| surveille en continu l'état du datastore :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:391
 msgid ""
 "**Mount status** — Each host's agent reports mount status (MOUNTED, "
 "WARNING, FAILED)"
-msgstr ""
+msgstr "**État de montage** — L'agent de chaque hôte rapporte l'état de montage (MOUNTED, WARNING, FAILED)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:392
 msgid ""
 "**GFS2 withdrawal** — If the GFS2 filesystem enters a withdrawn state "
 "(due to journal errors or storage issues), the datastore location status "
 "is updated to ``warning`` or ``failed``"
-msgstr ""
+msgstr "**Withdraw GFS2** — Si le système de fichiers GFS2 entre en état withdrawn (en raison d'erreurs de journal ou de problèmes de stockage), l'état d'emplacement du datastore est mis à jour vers ``warning`` ou ``failed``"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:393
 msgid ""
 "**virsh pool status** — If a libvirt storage pool is missing on a host, "
 "|morpheus| recreates it automatically during the next sync cycle"
-msgstr ""
+msgstr "**État pool virsh** — Si un pool de stockage libvirt manque sur un hôte, |morpheus| le recrée automatiquement lors du prochain cycle de synchronisation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:396
 msgid "Datastore Status Indicators"
-msgstr ""
+msgstr "Indicateurs d'état du datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:402
 msgid "Status"
-msgstr ""
+msgstr "État"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:404
 msgid "Provisioned"
-msgstr ""
+msgstr "Provisioned"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:405
 msgid "Datastore is healthy and operational on all hosts"
-msgstr ""
+msgstr "Le datastore est sain et opérationnel sur tous les hôtes"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:407
 msgid "One or more hosts report mount issues; investigate the affected host(s)"
-msgstr ""
+msgstr "Un ou plusieurs hôtes signalent des problèmes de montage ; investigatez le(s) hôte(s) affecté(s)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:408
 msgid "Failed"
-msgstr ""
+msgstr "Échec"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:409
 msgid "All hosts report mount failures; datastore is not operational"
-msgstr ""
+msgstr "Tous les hôtes signalent des échecs de montage ; le datastore n'est pas opérationnel"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:410
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionnement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:411
 msgid "Datastore is being created or mounted"
-msgstr ""
+msgstr "Le datastore est en cours de création ou de montage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:413
 msgid "For troubleshooting datastore issues, see :doc:`troubleshooting`."
-msgstr ""
+msgstr "Pour le dépannage des problèmes de datastore, voir :doc:`troubleshooting`."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:416
 msgid "Fibre Channel Configuration"
-msgstr ""
+msgstr "Configuration Fibre Channel"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:418
 msgid ""
@@ -1246,40 +1246,40 @@ msgid ""
 "Clustered Datastores in addition to iSCSI. FC provides lower latency and "
 "higher throughput than iSCSI and is the preferred choice for production "
 "workloads."
-msgstr ""
+msgstr "Les clusters HVM prennent en charge Fibre Channel (FC) comme transport de stockage pour les HPE Clustered Datastores en plus d'iSCSI. FC offre une latence plus faible et un débit plus élevé qu'iSCSI et est le choix privilégié pour les charges de travail de production."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:421
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:461
 msgid "Host Requirements"
-msgstr ""
+msgstr "Exigences de l'hôte"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:423
 msgid "Each HVM host that will access FC storage must have:"
-msgstr ""
+msgstr "Chaque hôte HVM qui accédera au stockage FC doit disposer de :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:425
 msgid ""
 "One or more Fibre Channel HBA (Host Bus Adapter) ports connected to the "
 "SAN fabric"
-msgstr ""
+msgstr "Une ou plusieurs ports Fibre Channel HBA (Host Bus Adapter) connectés au tissu SAN"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:426
 msgid ""
 "Proper zoning configured on the SAN switch to allow the host HBA WWPNs to"
 " communicate with the storage array ports"
-msgstr ""
+msgstr "Un zoning correct configuré sur le switch SAN pour permettre aux WWPN HBA de l'hôte de communiquer avec les ports de la baie de stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:427
 msgid ""
 "``multipathd`` running (installed automatically during HVM cluster "
 "provisioning)"
-msgstr ""
+msgstr "``multipathd`` en cours d'exécution (installé automatiquement lors du provisionnement du cluster HVM)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:429
 msgid ""
 "On layout 2.0 hosts, verify multipath before creating a datastore and "
 "after any path change:"
-msgstr ""
+msgstr "Sur les hôtes en disposition 2.0, vérifiez multipath avant de créer un datastore et après tout changement de chemin :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:431
 msgid ""
@@ -1298,7 +1298,7 @@ msgid ""
 "through another active path. If the multipath device disappears or all "
 "paths fail, stop datastore creation or host return-to-service and restore"
 " storage connectivity."
-msgstr ""
+msgstr "Pour iSCSI, utilisez ``sudo hvmcli storage iscsi --list`` et ``sudo hvmcli storage iscsi --multipath``. Un périphérique sain rapporte ses chemins attendus comme actifs sans chemin en échec. Lors d'une panne de chemin unique, le périphérique multipath et son nom mapper basé sur WWN doivent rester disponibles via un autre chemin actif. Si le périphérique multipath disparaît ou si tous les chemins échouent, arrêtez la création de datastore ou le retour d'hôte en service et rétablissez la connectivité du stockage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:440
 msgid ""
@@ -1306,38 +1306,38 @@ msgid ""
 "iSCSI). When a storage plugin provisions a LUN and exports it to the "
 "cluster hosts' WWPNs, the hosts automatically discover the new device "
 "after a SCSI rescan."
-msgstr ""
+msgstr "Les cibles FC n'ont pas besoin d'être ajoutées manuellement dans l'interface |morpheus| (contrairement à iSCSI). Lorsqu'un plug-in de stockage provisionne un LUN et l'exporte vers les WWPN des hôtes du cluster, les hôtes découvrent automatiquement le nouveau périphérique après un rescan SCSI."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:443
 msgid "How FC Storage Works with GFS2"
-msgstr ""
+msgstr "Comment le stockage FC fonctionne avec GFS2"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:445
 msgid ""
 "The storage plugin (e.g., HPE Alletra MP) creates a LUN on the array and "
 "exports it to a **host-set** containing the FC WWPNs of all cluster hosts"
-msgstr ""
+msgstr "Le plug-in de stockage (p. ex., HPE Alletra MP) crée un LUN sur la baie et l'exporte vers un **host-set** contenant les WWPN FC de tous les hôtes du cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:446
 msgid "A SCSI rescan is triggered on each host to discover the new block device"
-msgstr ""
+msgstr "Un rescan SCSI est déclenché sur chaque hôte pour découvrir le nouveau périphérique bloc"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:447
 msgid ""
 "The block device is identified by its **WWN** through multipath — the "
 "device path is always ``/dev/mapper/3<volumeWwn>`` (WWN-stable, not "
 "positional ``/dev/mapper/mpathX``)"
-msgstr ""
+msgstr "Le périphérique bloc est identifié par son **WWN** via multipath — le chemin du périphérique est toujours ``/dev/mapper/3<volumeWwn>`` (stable par WWN, et non positionnel ``/dev/mapper/mpathX``)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:448
 msgid ""
 "GFS2 filesystem is formatted on the device and mounted on all cluster "
 "hosts simultaneously"
-msgstr ""
+msgstr "Le système de fichiers GFS2 est formaté sur le périphérique et monté simultanément sur tous les hôtes du cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:449
 msgid "The device is registered as a virsh storage pool for VM provisioning"
-msgstr ""
+msgstr "Le périphérique est enregistré comme pool de stockage virsh pour le provisionnement VM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:451
 msgid ""
@@ -1345,11 +1345,11 @@ msgid ""
 "(``/dev/mapper/3<wwn>``), never positional names like "
 "``/dev/mapper/mpathX``. Positional names differ across hosts and would "
 "cause mount failures on other cluster members."
-msgstr ""
+msgstr "Les chemins de périphériques en HVM utilisent toujours des noms multipath basés sur WWN (``/dev/mapper/3<wwn>``), jamais des noms positionnels comme ``/dev/mapper/mpathX``. Les noms positionnels diffèrent entre hôtes et provoqueraient des échecs de montage sur d'autres membres du cluster."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:454
 msgid "NVMe over TCP"
-msgstr ""
+msgstr "NVMe over TCP"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:456
 msgid ""
@@ -1357,52 +1357,52 @@ msgid ""
 "for HPE Clustered Datastores. NVMe/TCP provides significantly lower "
 "latency and higher IOPS than iSCSI while using the same standard Ethernet"
 " infrastructure — no specialized HBAs or SAN fabric required."
-msgstr ""
+msgstr "Les clusters HVM prennent en charge **NVMe over TCP (NVMe/TCP)** comme transport de stockage pour les HPE Clustered Datastores. NVMe/TCP offre une latence nettement plus faible et davantage d'IOPS qu'iSCSI tout en utilisant la même infrastructure Ethernet standard — aucun HBA spécialisé ni tissu SAN requis."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:458
 msgid ""
 "NVMe/TCP support was validated in Morpheus 9.0.0 with the removal of "
 "Pacemaker. The |morpheus| Agent-based quorum system is fully compatible "
 "with NVMe/TCP-backed GFS2 datastores."
-msgstr ""
+msgstr "La prise en charge NVMe/TCP a été validée dans Morpheus 9.0.0 avec la suppression de Pacemaker. Le système de quorum basé sur l'agent |morpheus| est entièrement compatible avec les datastores GFS2 basés sur NVMe/TCP."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:463
 msgid "Each HVM host must have:"
-msgstr ""
+msgstr "Chaque hôte HVM doit disposer de :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:465
 msgid ""
 "Linux kernel 5.15+ (included in the HVM OS versions used by layouts 1.3 "
 "and 2.0)"
-msgstr ""
+msgstr "Noyau Linux 5.15+ (inclus dans les versions OS HVM utilisées par les dispositions 1.3 et 2.0)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:466
 msgid "The ``nvme-tcp`` kernel module loaded"
-msgstr ""
+msgstr "Le module noyau ``nvme-tcp`` chargé"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:467
 msgid "The ``nvme-cli`` package installed (for ``nvme connect`` and discovery)"
-msgstr ""
+msgstr "Le package ``nvme-cli`` installé (pour ``nvme connect`` et la découverte)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:468
 msgid ""
 "Network connectivity to the NVMe/TCP target on the configured port "
 "(default: 4420)"
-msgstr ""
+msgstr "Connectivité réseau vers la cible NVMe/TCP sur le port configuré (par défaut : 4420)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:471
 msgid "Connecting NVMe/TCP Targets"
-msgstr ""
+msgstr "Connexion des cibles NVMe/TCP"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:473
 msgid ""
 "NVMe/TCP targets must be connected on **all cluster hosts** before "
 "creating a GFS2 datastore. On each host:"
-msgstr ""
+msgstr "Les cibles NVMe/TCP doivent être connectées sur **tous les hôtes du cluster** avant de créer un datastore GFS2. Sur chaque hôte :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:475
 msgid "Discover available subsystems:"
-msgstr ""
+msgstr "Découvrez les sous-systèmes disponibles :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:477
 msgid "sudo nvme discover -t tcp -a <target-ip> -s <port>"
@@ -1410,7 +1410,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:481
 msgid "Connect to the target subsystem:"
-msgstr ""
+msgstr "Connectez-vous au sous-système cible :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:483
 msgid "sudo nvme connect -t tcp -a <target-ip> -s <port> -n <subsystem-nqn>"
@@ -1418,7 +1418,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:487
 msgid "Verify the NVMe namespace is visible:"
-msgstr ""
+msgstr "Vérifiez que l'espace de noms NVMe est visible :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:489
 msgid "sudo nvme list"
@@ -1426,7 +1426,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:493
 msgid "Confirm the block device appears (e.g., ``/dev/nvme0n1``):"
-msgstr ""
+msgstr "Confirmez que le périphérique bloc apparaît (p. ex., ``/dev/nvme0n1``) :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:495
 msgid "lsblk"
@@ -1436,7 +1436,7 @@ msgstr ""
 msgid ""
 "For **persistent connections** that survive host reboots, create a "
 "discovery controller entry or use ``/etc/nvme/discovery.conf``:"
-msgstr ""
+msgstr "Pour des **connexions persistantes** survivant aux redémarrages d'hôte, créez une entrée de contrôleur de découverte ou utilisez ``/etc/nvme/discovery.conf`` :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:501
 msgid ""
@@ -1453,111 +1453,111 @@ msgid ""
 "NVMe multipath (``/sys/module/nvme_core/parameters/multipath`` set to "
 "``Y``), which presents a single ``/dev/nvmeXnY`` device aggregating all "
 "paths."
-msgstr ""
+msgstr "Contrairement à iSCSI, NVMe/TCP n'utilise pas device-mapper multipath (``/dev/mapper/``). Les espaces de noms NVMe apparaissent comme périphériques ``/dev/nvmeXnY``. Pour le multipath avec plusieurs chemins vers le même espace de noms, utilisez le multipath NVMe natif (``/sys/module/nvme_core/parameters/multipath`` défini sur ``Y``), qui présente un seul périphérique ``/dev/nvmeXnY`` agrégeant tous les chemins."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:509
 msgid "Creating a GFS2 Datastore on NVMe/TCP"
-msgstr ""
+msgstr "Création d'un datastore GFS2 sur NVMe/TCP"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:511
 msgid "Once the NVMe namespace is visible on all cluster hosts:"
-msgstr ""
+msgstr "Une fois l'espace de noms NVMe visible sur tous les hôtes du cluster :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:513
 msgid "Navigate to the cluster detail page > Storage tab"
-msgstr ""
+msgstr "Accédez à la page de détail du cluster > onglet Storage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:514
 msgid "Click :guilabel:`+ Add` to create a new HPE Clustered Datastore"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ Add` pour créer un nouveau HPE Clustered Datastore"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:515
 msgid "Select the NVMe block device (e.g., ``/dev/nvme0n1``) as the block device"
-msgstr ""
+msgstr "Sélectionnez le périphérique bloc NVMe (par ex. ``/dev/nvme0n1``) comme périphérique bloc"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:516
 msgid "Complete the datastore creation as normal"
-msgstr ""
+msgstr "Terminez la création du datastore normalement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:518
 msgid ""
 "GFS2 treats the NVMe namespace identically to any other block device — "
 "formatting, mounting, and DLM locking work the same as with iSCSI or FC-"
 "backed datastores."
-msgstr ""
+msgstr "GFS2 traite l'espace de noms NVMe de manière identique à tout autre périphérique bloc — le formatage, le montage et le verrouillage DLM fonctionnent de la même façon qu'avec les datastores basés sur iSCSI ou FC."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:521
 msgid "Performance Considerations"
-msgstr ""
+msgstr "Considérations relatives aux performances"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:527
 msgid "Transport"
-msgstr ""
+msgstr "Transport"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:528
 msgid "Latency"
-msgstr ""
+msgstr "Latence"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:529
 msgid "Infrastructure"
-msgstr ""
+msgstr "Infrastructure"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:530
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:591
 msgid "Best For"
-msgstr ""
+msgstr "Idéal pour"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:531
 msgid "iSCSI"
-msgstr ""
+msgstr "iSCSI"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:532
 msgid "Higher (~100-200μs)"
-msgstr ""
+msgstr "Plus élevée (~100-200μs)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:533
 msgid "Standard Ethernet"
-msgstr ""
+msgstr "Ethernet standard"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:534
 msgid "General workloads, legacy arrays"
-msgstr ""
+msgstr "Charges de travail générales, baies héritées"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:535
 msgid "Fibre Channel"
-msgstr ""
+msgstr "Fibre Channel"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:536
 msgid "Low (~50-100μs)"
-msgstr ""
+msgstr "Faible (~50-100μs)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:537
 msgid "Dedicated SAN fabric + HBAs"
-msgstr ""
+msgstr "Infrastructure SAN dédiée + HBA"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:538
 msgid "Enterprise production, existing FC infrastructure"
-msgstr ""
+msgstr "Production d'entreprise, infrastructure FC existante"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:539
 msgid "NVMe/TCP"
-msgstr ""
+msgstr "NVMe/TCP"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:540
 msgid "Lowest (~30-80μs)"
-msgstr ""
+msgstr "La plus faible (~30-80μs)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:541
 msgid "Standard Ethernet (25GbE+ recommended)"
-msgstr ""
+msgstr "Ethernet standard (25GbE+ recommandé)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:542
 msgid "Latency-sensitive workloads, all-flash arrays, new deployments"
-msgstr ""
+msgstr "Charges de travail sensibles à la latence, baies all-flash, nouveaux déploiements"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:545
 msgid "Pluggable Storage Backend"
-msgstr ""
+msgstr "Backend de stockage extensible"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:547
 msgid ""
@@ -1565,44 +1565,44 @@ msgid ""
 "handled by dedicated plugins rather than being built into the platform. "
 "This allows |morpheus| to support different storage backends without "
 "modifications to the core cluster code."
-msgstr ""
+msgstr "La couche de stockage HVM est **extensible** — la gestion des baies de stockage est assurée par des plug-ins dédiés plutôt que d'être intégrée à la plate-forme. Cela permet à |morpheus| de prendre en charge différents backends de stockage sans modification du code central du cluster."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:550
 msgid "HPE Alletra MP Plugin"
-msgstr ""
+msgstr "Plug-in HPE Alletra MP"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:552
 msgid ""
 "The primary storage plugin for HVM clusters is the **HPE Alletra Block "
 "Storage** plugin. This plugin manages the full lifecycle of LUNs on HPE "
 "Alletra MP arrays:"
-msgstr ""
+msgstr "Le plug-in de stockage principal pour les clusters HVM est le plug-in **HPE Alletra Block Storage**. Ce plug-in gère l'intégralité du cycle de vie des LUN sur les baies HPE Alletra MP :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:554
 msgid "Creates and deletes LUNs (volumes) via Alletra REST APIs"
-msgstr ""
+msgstr "Crée et supprime des LUN (volumes) via les API REST Alletra"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:555
 msgid "Exports LUNs to cluster hosts via host-sets (FC WWPNs or iSCSI IQNs)"
-msgstr ""
+msgstr "Exporte les LUN vers les hôtes du cluster via des host-sets (WWPN FC ou IQN iSCSI)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:556
 msgid "Handles LUN discovery, multipath device resolution, and online resize"
-msgstr ""
+msgstr "Gère la découverte des LUN, la résolution des périphériques multipath et le redimensionnement en ligne"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:557
 msgid ""
 "Supports snapshots, clones, and synchronous replication (remote copy "
 "groups)"
-msgstr ""
+msgstr "Prend en charge les instantanés, les clones et la réplication synchrone (groupes de copie distante)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:558
 msgid "Generates storage-specific support bundle diagnostics"
-msgstr ""
+msgstr "Génère des diagnostics de bundle d'assistance spécifiques au stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:561
 msgid "LUN-Per-vDisk Mode"
-msgstr ""
+msgstr "Mode LUN par vDisk"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:563
 msgid ""
@@ -1610,53 +1610,53 @@ msgid ""
 "files on a GFS2 shared filesystem, the Alletra MP plugin supports a "
 "**LUN-per-vDisk** mode where each virtual disk is backed by its own "
 "dedicated LUN on the storage array."
-msgstr ""
+msgstr "En plus du modèle standard où les VM stockent leurs disques virtuels sous forme de fichiers sur un système de fichiers partagé GFS2, le plug-in Alletra MP prend en charge un mode **LUN par vDisk** dans lequel chaque disque virtuel est associé à son propre LUN dédié sur la baie de stockage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:565
 msgid "**Use cases:**"
-msgstr ""
+msgstr "**Cas d'utilisation :**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:567
 msgid "Raw Device Mapping (RDM) workloads requiring direct block device access"
-msgstr ""
+msgstr "Charges de travail Raw Device Mapping (RDM) nécessitant un accès direct au périphérique bloc"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:568
 msgid ""
 "High-performance VMs that need dedicated I/O paths without filesystem "
 "overhead"
-msgstr ""
+msgstr "VM hautes performances nécessitant des chemins d'E/S dédiés sans surcharge du système de fichiers"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:569
 msgid ""
 "Applications that require consistent low-latency storage (databases, "
 "real-time analytics)"
-msgstr ""
+msgstr "Applications nécessitant un stockage à faible latence constante (bases de données, analyses en temps réel)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:571
 msgid "**How it works:**"
-msgstr ""
+msgstr "**Fonctionnement :**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:573
 msgid ""
 "When a VM disk is created with the Alletra storage provider selected, the"
 " plugin provisions an individual LUN on the array"
-msgstr ""
+msgstr "Lorsqu'un disque VM est créé avec le fournisseur de stockage Alletra sélectionné, le plug-in provisionne un LUN individuel sur la baie"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:574
 msgid ""
 "The LUN is exported to **all hosts in the cluster** (not just the host "
 "currently running the VM) to support live migration and failover"
-msgstr ""
+msgstr "Le LUN est exporté vers **tous les hôtes du cluster** (et non uniquement l'hôte exécutant actuellement la VM) pour prendre en charge la migration à chaud et le basculement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:575
 msgid ""
 "The block device is attached directly to the VM via its WWN-based "
 "multipath path"
-msgstr ""
+msgstr "Le périphérique bloc est attaché directement à la VM via son chemin multipath basé sur le WWN"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:577
 msgid "**Performance limits and considerations:**"
-msgstr ""
+msgstr "**Limites et considérations relatives aux performances :**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:579
 msgid ""
@@ -1665,70 +1665,70 @@ msgid ""
 "storage performance degrades significantly. This limit applies to the "
 "total number of LUN-per-vDisk volumes across the entire cluster, "
 "regardless of cluster size."
-msgstr ""
+msgstr "Limitez l'utilisation LUN par vDisk à environ **800 vDisks par cluster**. Au-delà de ce seuil, la surcharge de gestion multipath sature et les performances de stockage se dégradent significativement. Cette limite s'applique au nombre total de volumes LUN par vDisk sur l'ensemble du cluster, quelle que soit la taille du cluster."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:581
 msgid ""
 "Because LUNs are exported to all hosts for failover support, the per-"
 "cluster limit is independent of the number of hosts — adding more hosts "
 "does not increase the maximum"
-msgstr ""
+msgstr "Comme les LUN sont exportés vers tous les hôtes pour la prise en charge du basculement, la limite par cluster est indépendante du nombre d'hôtes — l'ajout d'hôtes supplémentaires n'augmente pas le maximum"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:582
 msgid ""
 "Use LUN-per-vDisk selectively for workloads that genuinely require it, "
 "not as a default for all VMs"
-msgstr ""
+msgstr "Utilisez LUN par vDisk de manière sélective pour les charges de travail qui en ont réellement besoin, et non comme valeur par défaut pour toutes les VM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:583
 msgid ""
 "Standard GFS2-backed datastores are recommended for the majority of "
 "workloads and have no practical per-cluster vDisk limit"
-msgstr ""
+msgstr "Les datastores standard basés sur GFS2 sont recommandés pour la majorité des charges de travail et n'ont pas de limite pratique de vDisks par cluster"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:584
 msgid ""
 "Monitor the storage array's host-set export count and multipath device "
 "count on each host"
-msgstr ""
+msgstr "Surveillez le nombre d'exportations host-set de la baie de stockage et le nombre de périphériques multipath sur chaque hôte"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:590
 msgid "Storage Mode"
-msgstr ""
+msgstr "Mode de stockage"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:592
 msgid "Considerations"
-msgstr ""
+msgstr "Considérations"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:593
 msgid "GFS2 Shared Datastore"
-msgstr ""
+msgstr "Datastore partagé GFS2"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:594
 msgid "General workloads, templates, most VMs"
-msgstr ""
+msgstr "Charges de travail générales, modèles, la plupart des VM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:595
 msgid "No per-vDisk limit, shared filesystem overhead, standard performance"
-msgstr ""
+msgstr "Pas de limite par vDisk, surcharge du système de fichiers partagé, performances standard"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:596
 msgid "LUN-per-vDisk (Alletra)"
-msgstr ""
+msgstr "LUN par vDisk (Alletra)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:597
 msgid "RDM, high-performance VMs, dedicated I/O"
-msgstr ""
+msgstr "RDM, VM hautes performances, E/S dédiées"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:598
 msgid ""
 "~800 vDisk cluster limit, higher array management overhead, direct block "
 "performance"
-msgstr ""
+msgstr "Limite d'environ 800 vDisks par cluster, surcharge accrue de gestion de la baie, performances bloc directes"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:601
 msgid "Raw Device Block Mapping (RDBM)"
-msgstr ""
+msgstr "Raw Device Block Mapping (RDBM)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:603
 msgid ""
@@ -1738,166 +1738,166 @@ msgid ""
 "Device Mapping (RDM) feature and is ideal for performance-sensitive "
 "workloads, direct SCSI passthrough, or cluster applications requiring "
 "shared storage access."
-msgstr ""
+msgstr "Raw Device Block Mapping (RDBM) permet d'attacher un périphérique bloc brut de l'hôte directement à une machine virtuelle HVM sans fichier de disque virtuel intermédiaire ni couche de système de fichiers clusterisé. Cela est analogue à la fonctionnalité Raw Device Mapping (RDM) de VMware et convient aux charges de travail sensibles aux performances, au passthrough SCSI direct ou aux applications cluster nécessitant un accès au stockage partagé."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:605
 msgid ""
 "When an RDBM volume is attached, the system creates a ``<disk "
 "type=\"block\" device=\"disk\">`` entry in the VM's libvirt "
 "configuration, with the host device path as the source."
-msgstr ""
+msgstr "Lorsqu'un volume RDBM est attaché, le système crée une entrée ``<disk type=\"block\" device=\"disk\">`` dans la configuration libvirt de la VM, avec le chemin du périphérique hôte comme source."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:610
 msgid "The raw block device must be visible on the HVM host"
-msgstr ""
+msgstr "Le périphérique bloc brut doit être visible sur l'hôte HVM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:611
 msgid ""
 "The device must not be part of an existing datastore or clustered "
 "filesystem"
-msgstr ""
+msgstr "Le périphérique ne doit pas faire partie d'un datastore existant ou d'un système de fichiers clusterisé"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:612
 msgid "A stable device path is recommended (e.g., ``/dev/disk/by-id/wwn-0x...``)"
-msgstr ""
+msgstr "Un chemin de périphérique stable est recommandé (par ex. ``/dev/disk/by-id/wwn-0x...``)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:615
 msgid "Attaching an RDBM Volume"
-msgstr ""
+msgstr "Attacher un volume RDBM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:617
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:635
 msgid ""
 "Navigate to the HVM cluster detail page (:menuselection:`Infrastructure "
 "--> Clusters` > select cluster)"
-msgstr ""
+msgstr "Accédez à la page de détail du cluster HVM (:menuselection:`Infrastructure --> Clusters` > sélectionnez le cluster)"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:618
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:636
 msgid "Select the **Storage Volumes** tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet **Storage Volumes**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:619
 msgid "Locate the raw block device volume to attach"
-msgstr ""
+msgstr "Localisez le volume de périphérique bloc brut à attacher"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:620
 msgid "Click :guilabel:`Attach` on the volume row"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Attach` sur la ligne du volume"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:621
 msgid "Select the target VM from the prompt"
-msgstr ""
+msgstr "Sélectionnez la VM cible dans l'invite"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:622
 msgid "Confirm the attachment"
-msgstr ""
+msgstr "Confirmez l'attachement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:624
 msgid ""
 "Volumes that are already backing a Datastore are excluded from the "
 "available list."
-msgstr ""
+msgstr "Les volumes qui alimentent déjà un Datastore sont exclus de la liste disponible."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:626
 msgid "Hot-attach is supported for running VMs without requiring a reboot."
-msgstr ""
+msgstr "L'attachement à chaud est pris en charge pour les VM en cours d'exécution sans redémarrage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:629
 msgid "Detaching an RDBM Volume"
-msgstr ""
+msgstr "Détacher un volume RDBM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:631
 msgid "RDBM volumes can be detached from a VM in two ways:"
-msgstr ""
+msgstr "Les volumes RDBM peuvent être détachés d'une VM de deux manières :"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:633
 msgid "**From the Cluster Storage Volumes tab:**"
-msgstr ""
+msgstr "**Depuis l'onglet Storage Volumes du cluster :**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:637
 msgid "Locate the attached RDBM volume"
-msgstr ""
+msgstr "Localisez le volume RDBM attaché"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:638
 msgid "Click :guilabel:`Detach` on the volume row"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Detach` sur la ligne du volume"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:639
 msgid "Confirm the detachment"
-msgstr ""
+msgstr "Confirmez le détachement"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:641
 msgid "**From the VM Reconfigure action:**"
-msgstr ""
+msgstr "**Depuis l'action Reconfigure de la VM :**"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:643
 msgid "Navigate to the VM detail page"
-msgstr ""
+msgstr "Accédez à la page de détail de la VM"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:644
 msgid "Click the :guilabel:`Actions` dropdown and select :guilabel:`Reconfigure`"
-msgstr ""
+msgstr "Cliquez sur le menu déroulant :guilabel:`Actions` et sélectionnez :guilabel:`Reconfigure`"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:645
 msgid "Remove the RDBM volume from the disk configuration"
-msgstr ""
+msgstr "Supprimez le volume RDBM de la configuration des disques"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:646
 msgid "Save the reconfiguration"
-msgstr ""
+msgstr "Enregistrez la reconfiguration"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:648
 msgid "Hot-detach is supported for running VMs without requiring a reboot."
-msgstr ""
+msgstr "Le détachement à chaud est pris en charge pour les VM en cours d'exécution sans redémarrage."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:651
 msgid "Limitations"
-msgstr ""
+msgstr "Limitations"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:657
 msgid "Limitation"
-msgstr ""
+msgstr "Limitation"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:659
 msgid "Host Pinning"
-msgstr ""
+msgstr "Ancrage à l'hôte"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:660
 msgid ""
 "VMs with RDBM volumes are pinned to the current host. Dynamic Placement "
 "will not migrate these VMs."
-msgstr ""
+msgstr "Les VM avec des volumes RDBM sont ancrées à l'hôte actuel. Dynamic Placement ne migrera pas ces VM."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:661
 msgid "No Cross-Host Migration"
-msgstr ""
+msgstr "Pas de migration inter-hôtes"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:662
 msgid ""
 "Even if the same SAN LUN is visible on multiple hosts, RDBM VMs cannot be"
 " live migrated in this release."
-msgstr ""
+msgstr "Même si le même LUN SAN est visible sur plusieurs hôtes, les VM RDBM ne peuvent pas être migrées à chaud dans cette version."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:663
 msgid "Maintenance Mode"
-msgstr ""
+msgstr "Mode maintenance"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:664
 msgid ""
 "RDBM VMs are skipped during host maintenance mode evacuation with a "
 "warning. They must be manually shut down or moved."
-msgstr ""
+msgstr "Les VM RDBM sont ignorées lors de l'évacuation en mode maintenance de l'hôte, avec un avertissement. Elles doivent être arrêtées ou déplacées manuellement."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:665
 msgid "Move Operations Blocked"
-msgstr ""
+msgstr "Opérations de déplacement bloquées"
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:666
 msgid ""
 "Placement move and manage operations are blocked for VMs with RDBM "
 "volumes, returning a clear error message."
-msgstr ""
+msgstr "Les opérations de déplacement et de gestion Placement sont bloquées pour les VM avec des volumes RDBM, avec un message d'erreur explicite."
 
 #: ../../infrastructure/clusters/hvm/storage_operations.rst:668
 msgid ""
@@ -1905,5 +1905,5 @@ msgid ""
 "(such as Alletra shared LUNs) remain moveable and are not subject to "
 "these limitations. Only raw block devices without a Datastore association"
 " are treated as pinned RDBM volumes."
-msgstr ""
+msgstr "Les volumes avec ``diskType=block`` qui **ont** une association Datastore (comme les LUN partagés Alletra) restent déplaçables et ne sont pas soumis à ces limitations. Seuls les périphériques bloc bruts sans association Datastore sont traités comme des volumes RDBM ancrés."
 

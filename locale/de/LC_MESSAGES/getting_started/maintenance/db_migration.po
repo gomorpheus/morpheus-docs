@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../getting_started/maintenance/db_migration.rst:2
 msgid "Morpheus DB Migration"
-msgstr ""
+msgstr "Morpheus-DB-Migration"
 
 #: ../../getting_started/maintenance/db_migration.rst:4
 msgid ""
 "If your new installation is part of a migration or you need to move the "
 "data from your original Morpheus database, this is easily accomplished by"
 " using a stateful dump."
-msgstr ""
+msgstr "Wenn Ihre neue Installation Teil einer Migration ist oder Sie die Daten aus Ihrer ursprünglichen Morpheus-Datenbank verschieben müssen, erledigen Sie dies einfach mit einem zustandsbehafteten Dump."
 
 #: ../../getting_started/maintenance/db_migration.rst:6
 msgid "To begin this, stop the Morpheus UI on your original Morpheus server:"
-msgstr ""
+msgstr "Beginnen Sie damit, die Morpheus-UI auf Ihrem ursprünglichen Morpheus-Server zu stoppen:"
 
 #: ../../getting_started/maintenance/db_migration.rst:8
 msgid "[root@app-server-old ~] morpheus-ctl stop morpheus-ui"
@@ -44,7 +44,7 @@ msgid ""
 "Once this is done you can safely export. For an embedded database using "
 "generated credentials, retrieve the exact MySQL application-user key "
 "without printing unrelated secrets:"
-msgstr ""
+msgstr "Anschließend können Sie sicher exportieren. Für eine eingebettete Datenbank mit generierten Anmeldedaten rufen Sie den genauen MySQL-Anwendungsbenutzerschlüssel ab, ohne nicht verwandte Secrets auszugeben:"
 
 #: ../../getting_started/maintenance/db_migration.rst:14
 msgid ""
@@ -60,7 +60,7 @@ msgid ""
 "``morpheus-secrets.json`` for an external service. Morpheus provides "
 "embedded client binaries, but the following example applies only to the "
 "default local database and schema. Enter the password when prompted:"
-msgstr ""
+msgstr "Bei einer externen Datenbank oder einer angepassten Verbindung entnehmen Sie Datenbankname, Host, Benutzer und Kennwort der wirksamen ``mysql``-Konfiguration in ``/etc/morpheus/morpheus.rb``. Verwenden Sie für einen externen Dienst keine generierten Werte aus ``morpheus-secrets.json``. Morpheus stellt eingebettete Client-Binaries bereit, das folgende Beispiel gilt jedoch nur für die lokale Standarddatenbank und das Standardschema. Geben Sie das Kennwort bei Aufforderung ein:"
 
 #: ../../getting_started/maintenance/db_migration.rst:20
 msgid ""
@@ -74,14 +74,14 @@ msgid ""
 "This file needs to be pushed to the new Morpheus Installation's backend. "
 "Depending on the GRANTS in the new MySQL backend, this will likely "
 "require moving this file to one of the new Morpheus frontend servers."
-msgstr ""
+msgstr "Diese Datei muss auf das Back-End der neuen Morpheus-Installation übertragen werden. Je nach GRANTS im neuen MySQL-Back-End muss die Datei wahrscheinlich auf einen der neuen Morpheus-Frontend-Server verschoben werden."
 
 #: ../../getting_started/maintenance/db_migration.rst:28
 msgid ""
 "Once the file is in place it can be imported into the backend. Begin by "
 "ensuring the Morpheus UI service is stopped on all of the application "
 "servers:"
-msgstr ""
+msgstr "Sobald die Datei vorhanden ist, kann sie in das Back-End importiert werden. Stellen Sie zunächst sicher, dass der Morpheus-UI-Dienst auf allen Anwendungsservern gestoppt ist:"
 
 #: ../../getting_started/maintenance/db_migration.rst:30
 msgid "[root@app-server-new ~] morpheus-ctl stop morpheus-ui"
@@ -96,13 +96,13 @@ msgid ""
 "external databases. Contact HPE Support for a migration and rollback plan"
 " validated for both appliance versions and database topologies. Keep "
 "every application UI stopped until the import has been validated."
-msgstr ""
+msgstr "Der zuvor dokumentierte direkte ``mysql``-Importbefehl ist kein unterstütztes allgemeines Migrationsverfahren. Zustandsbehaftete Dumps können datenbankweite Anweisungen enthalten, und Ziel, Berechtigungen, Topologie-Reihenfolge sowie Prüfungen nach dem Import variieren bei benutzerdefinierten Schemanamen und externen Datenbanken. Wenden Sie sich an den HPE Support für einen Migrations- und Rollback-Plan, der für beide Appliance-Versionen und Datenbanktopologien validiert ist. Lassen Sie jede Anwendungs-UI gestoppt, bis der Import validiert wurde."
 
 #: ../../getting_started/maintenance/db_migration.rst:36
 msgid ""
 "After validation, start the UI on each application server as directed by "
 "the migration plan:"
-msgstr ""
+msgstr "Starten Sie nach der Validierung die UI auf jedem Anwendungsserver gemäß dem Migrationsplan:"
 
 #: ../../getting_started/maintenance/db_migration.rst:38
 msgid "[root@app-server-new ~] morpheus-ctl start morpheus-ui"
@@ -115,7 +115,7 @@ msgid ""
 "have a different dynamically-generated MySQL password. We can update that"
 " password value by altering the backup directly in the |morpheus| "
 "database."
-msgstr ""
+msgstr "Nach Abschluss der Migration müssen Sie auch das gespeicherte Kennwort für den Appliance-Sicherungsjob aktualisieren, da die Ziel-Appliance ein anderes dynamisch generiertes MySQL-Kennwort hat. Wir können diesen Kennwortwert aktualisieren, indem wir die Sicherung direkt in der |morpheus|-Datenbank ändern."
 
 #: ../../getting_started/maintenance/db_migration.rst:44
 msgid ""
@@ -126,21 +126,21 @@ msgstr ""
 
 #: ../../getting_started/maintenance/db_migration.rst:49
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../getting_started/maintenance/db_migration.rst:49
 msgid ""
 "After the migration it is important to reset the unique ID of the "
 "Morpheus Appliance. This will ensure your new installation will "
 "communicate correctly with the Morpheus Hub."
-msgstr ""
+msgstr "Nach der Migration ist es wichtig, die eindeutige ID der Morpheus Appliance zurückzusetzen. Dadurch wird sichergestellt, dass Ihre neue Installation korrekt mit dem Morpheus Hub kommuniziert."
 
 #: ../../getting_started/maintenance/db_migration.rst:51
 msgid ""
 "The final step is to generate a new unique ID for the Morpheus Appliance."
 " Firstly run the following SQL command on the database for the new "
 "installation:"
-msgstr ""
+msgstr "Der letzte Schritt besteht darin, eine neue eindeutige ID für die Morpheus Appliance zu erzeugen. Führen Sie zuerst den folgenden SQL-Befehl auf der Datenbank der neuen Installation aus:"
 
 #: ../../getting_started/maintenance/db_migration.rst:53
 msgid "UPDATE appliance_instance SET hub_unique_id = NULL;"
@@ -151,5 +151,5 @@ msgid ""
 "Secondly, re-apply your Morpheus license key within the Morpheus UI via "
 "the \"Upgrade A License\" action within Administration -> Settings -> "
 "License"
-msgstr ""
+msgstr "Wenden Sie anschließend Ihren Morpheus-Lizenzschlüssel erneut in der Morpheus-UI über die Aktion „Upgrade A License“ unter Administration -> Settings -> License an"
 

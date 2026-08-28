@@ -22,14 +22,14 @@ msgstr ""
 
 #: ../../troubleshooting/SSL_cert_regen.rst:2
 msgid "SSL Self-signed Certificate Regeneration"
-msgstr ""
+msgstr "Regenerierung selbstsignierter SSL-Zertifikate"
 
 #: ../../troubleshooting/SSL_cert_regen.rst:4
 msgid ""
 "When Morpheus is deployed it generates a 10 year self-signed non-trusted "
 "SSL certificate.  Below details the process to regenerate this "
 "certificate and key."
-msgstr ""
+msgstr "Wenn Morpheus bereitgestellt wird, erzeugt es ein 10 Jahre gültiges, selbstsigniertes, nicht vertrauenswürdiges SSL-Zertifikat. Nachfolgend wird der Prozess zur Regenerierung dieses Zertifikats und des Schlüssels beschrieben."
 
 #: ../../troubleshooting/SSL_cert_regen.rst:6
 msgid ""
@@ -39,33 +39,33 @@ msgid ""
 ":doc:`/getting_started/additional/ssl-import`; reconfigure imports the "
 "CA, and ``morpheus-ui`` must then be restarted so the running JVM loads "
 "the updated truststore."
-msgstr ""
+msgstr "Dieses Verfahren ersetzt das Zertifikat, das die Appliance über NGINX präsentiert. Es fügt keine Zertifizierungsstelle für ausgehende Integrationen hinzu. Bei einem Integrations-Trust-Fehler verwenden Sie :doc:`/getting_started/additional/ssl-import`; die Rekonfiguration importiert die CA, und ``morpheus-ui`` muss anschließend neu gestartet werden, damit die laufende JVM den aktualisierten Truststore lädt."
 
 #: ../../troubleshooting/SSL_cert_regen.rst:9
 msgid "Replacing both the certificate and private key"
-msgstr ""
+msgstr "Zertifikat und privaten Schlüssel ersetzen"
 
 #: ../../troubleshooting/SSL_cert_regen.rst:11
 msgid ""
 "Delete the certificate and key files in ``/etc/morpheus/ssl/`` that end "
 "in ``.crt`` and ``.key``"
-msgstr ""
+msgstr "Löschen Sie die Zertifikat- und Schlüsseldateien in ``/etc/morpheus/ssl/``, die auf ``.crt`` und ``.key`` enden"
 
 #: ../../troubleshooting/SSL_cert_regen.rst:12
 #: ../../troubleshooting/SSL_cert_regen.rst:19
 msgid "Run Reconfigure ``morpheus-ctl reconfigure``"
-msgstr ""
+msgstr "Reconfigure ausführen ``morpheus-ctl reconfigure``"
 
 #: ../../troubleshooting/SSL_cert_regen.rst:13
 #: ../../troubleshooting/SSL_cert_regen.rst:20
 msgid "Restart NGINX ``morpheus-ctl restart nginx``"
-msgstr ""
+msgstr "NGINX neu starten ``morpheus-ctl restart nginx``"
 
 #: ../../troubleshooting/SSL_cert_regen.rst:16
 msgid "Replacing only the certificate"
-msgstr ""
+msgstr "Nur das Zertifikat ersetzen"
 
 #: ../../troubleshooting/SSL_cert_regen.rst:18
 msgid "Delete the certificate file in ``/etc/morpheus/ssl/`` it ends in ``.crt``"
-msgstr ""
+msgstr "Löschen Sie die Zertifikatdatei in ``/etc/morpheus/ssl/``; sie endet auf ``.crt``"
 

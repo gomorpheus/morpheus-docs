@@ -151,7 +151,7 @@ msgid ""
 "that node on this page. Use load-balancer access logs and appliance logs "
 "to correlate a request with an application node; do not depend on an "
 "unmaintained forum plugin for this operational decision."
-msgstr ""
+msgstr "Los niveles de salud proporcionan una representación en vivo de la carga actual de memoria y CPU en el dispositivo. En un dispositivo HA, estos datos son específicos del nodo de aplicación que atiende la solicitud. El producto base no identifica ese nodo en esta página. Use los logs de acceso del balanceador de carga y los logs del dispositivo para correlacionar una solicitud con un nodo de aplicación; no dependa de un plugin de foro no mantenido para esta decisión operativa."
 
 #: ../../administration/health/health.rst:23
 msgid ""
@@ -174,7 +174,7 @@ msgid ""
 "**Morpheus Memory:** JVM maximum heap for the |morpheus| application "
 "process on the application node serving the page (see the metric "
 "definitions below)"
-msgstr ""
+msgstr "**Memoria de Morpheus:** heap máximo de JVM para el proceso de aplicación |morpheus| en el nodo de aplicación que atiende la página (consulte las definiciones de métricas a continuación)"
 
 #: ../../administration/health/health.rst:26
 msgid ""
@@ -200,7 +200,7 @@ msgstr ""
 
 #: ../../administration/health/health.rst:30
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../administration/health/health.rst:30
 msgid ""
@@ -210,7 +210,7 @@ msgid ""
 "guidance below. If warnings persist with degraded behavior, collect a "
 "support bundle and open a case through the `HPE Support Center "
 "<https://www.hpe.com/support/hpesc>`_."
-msgstr ""
+msgstr "Una alta utilización de la memoria del sistema por sí sola no establece presión en el dispositivo porque el uso del sistema operativo incluye cachés y procesos fuera de la JVM de la aplicación. Use las definiciones de métricas y la orientación de advertencias a continuación. Si las advertencias persisten con un comportamiento degradado, recopile un paquete de soporte y abra un caso a través del `HPE Support Center <https://www.hpe.com/support/hpesc>`_."
 
 #: ../../administration/health/health.rst:33
 msgid "Additional System Health Indices"
@@ -218,19 +218,19 @@ msgstr "Additional System Health Indices"
 
 #: ../../administration/health/health.rst:36
 msgid "Memory metric definitions"
-msgstr ""
+msgstr "Definiciones de métricas de memoria"
 
 #: ../../administration/health/health.rst:42
 msgid "Displayed metric"
-msgstr ""
+msgstr "Métrica mostrada"
 
 #: ../../administration/health/health.rst:43
 msgid "Current calculation"
-msgstr ""
+msgstr "Cálculo actual"
 
 #: ../../administration/health/health.rst:44
 msgid "Scope and interpretation"
-msgstr ""
+msgstr "Alcance e interpretación"
 
 #: ../../administration/health/health.rst:45
 #: ../../administration/health/health.rst:90
@@ -239,13 +239,13 @@ msgstr "Morpheus Memory"
 
 #: ../../administration/health/health.rst:46
 msgid "JVM maximum memory (``Runtime.maxMemory``)"
-msgstr ""
+msgstr "Memoria máxima de JVM (``Runtime.maxMemory``)"
 
 #: ../../administration/health/health.rst:47
 msgid ""
 "Upper heap limit for the |morpheus| application process on the "
 "application node serving the page."
-msgstr ""
+msgstr "Límite superior de heap para el proceso de aplicación |morpheus| en el nodo de aplicación que atiende la página."
 
 #: ../../administration/health/health.rst:48
 #: ../../administration/health/health.rst:91
@@ -254,13 +254,13 @@ msgstr "Morpheus Usado Memory"
 
 #: ../../administration/health/health.rst:49
 msgid "JVM total memory minus JVM free memory"
-msgstr ""
+msgstr "Memoria total de JVM menos memoria libre de JVM"
 
 #: ../../administration/health/health.rst:50
 msgid ""
 "Heap currently committed to the JVM and occupied. This is not total "
 "resident memory for every appliance service."
-msgstr ""
+msgstr "Heap actualmente comprometido con la JVM y ocupado. Esto no es la memoria residente total de todos los servicios del dispositivo."
 
 #: ../../administration/health/health.rst:51
 #: ../../administration/health/health.rst:92
@@ -276,7 +276,7 @@ msgstr "System Free Memory"
 msgid ""
 "Free space inside the currently committed JVM heap, not all memory "
 "available before the heap reaches its maximum."
-msgstr ""
+msgstr "Espacio libre dentro del heap de JVM actualmente comprometido, no toda la memoria disponible antes de que el heap alcance su máximo."
 
 #: ../../administration/health/health.rst:54
 #: ../../administration/health/health.rst:93
@@ -292,7 +292,7 @@ msgstr "Morpheus Usado Memory"
 msgid ""
 "Percentage of the currently committed heap, not of Morpheus Memory (the "
 "maximum heap)."
-msgstr ""
+msgstr "Porcentaje del heap actualmente comprometido, no de Memoria de Morpheus (el heap máximo)."
 
 #: ../../administration/health/health.rst:57
 #: ../../administration/health/health.rst:94
@@ -301,13 +301,13 @@ msgstr "System Memory"
 
 #: ../../administration/health/health.rst:58
 msgid "Operating-system total physical memory"
-msgstr ""
+msgstr "Memoria física total del sistema operativo"
 
 #: ../../administration/health/health.rst:59
 msgid ""
 "Host or container-visible physical-memory scope for the current "
 "application node."
-msgstr ""
+msgstr "Alcance de memoria física visible para el host o contenedor del nodo de aplicación actual."
 
 #: ../../administration/health/health.rst:60
 #: ../../administration/health/health.rst:95
@@ -321,7 +321,7 @@ msgstr "System Free Memory"
 
 #: ../../administration/health/health.rst:62
 msgid "Includes the OS, caches, and all visible processes."
-msgstr ""
+msgstr "Incluye el SO, las cachés y todos los procesos visibles."
 
 #: ../../administration/health/health.rst:63
 #: ../../administration/health/health.rst:96
@@ -335,7 +335,7 @@ msgstr "System Free Memory"
 
 #: ../../administration/health/health.rst:65
 msgid "Does not represent JVM free heap."
-msgstr ""
+msgstr "No representa el heap libre de JVM."
 
 #: ../../administration/health/health.rst:66
 #: ../../administration/health/health.rst:97
@@ -344,11 +344,11 @@ msgstr "System Memory Usage"
 
 #: ../../administration/health/health.rst:67
 msgid "(System Memory - System Free Memory) / System Memory × 100"
-msgstr ""
+msgstr "(System Memory - System Free Memory) / System Memory × 100"
 
 #: ../../administration/health/health.rst:68
 msgid "Whole node/container-visible usage."
-msgstr ""
+msgstr "Uso visible de todo el nodo/contenedor."
 
 #: ../../administration/health/health.rst:69
 #, fuzzy
@@ -357,11 +357,11 @@ msgstr "System Swap"
 
 #: ../../administration/health/health.rst:70
 msgid "OS total swap / OS free swap"
-msgstr ""
+msgstr "Swap total del SO / swap libre del SO"
 
 #: ../../administration/health/health.rst:71
 msgid "Swap visible to the current node."
-msgstr ""
+msgstr "Swap visible para el nodo actual."
 
 #: ../../administration/health/health.rst:73
 msgid ""
@@ -371,11 +371,11 @@ msgid ""
 "In HA deployments, each application node has its own JVM and system "
 "sample; compare the node that raised the warning rather than adding "
 "values across nodes."
-msgstr ""
+msgstr "Los valores no forman un desglose aritmético único: ``totalMemory`` de JVM es heap comprometido, ``maxMemory`` de JVM es un límite, y los valores del sistema incluyen otros procesos y cachés. Se muestrean cuando se cargan los datos de salud. En implementaciones HA, cada nodo de aplicación tiene su propia muestra de JVM y sistema; compare el nodo que generó la advertencia en lugar de sumar valores entre nodos."
 
 #: ../../administration/health/health.rst:76
 msgid "Memory warning decisions"
-msgstr ""
+msgstr "Decisiones de advertencia de memoria"
 
 #: ../../administration/health/health.rst:78
 #, python-format
@@ -386,7 +386,7 @@ msgid ""
 "currently committed total memory. These tests are ordered; the displayed "
 "message identifies the first matched condition. A collection error "
 "produces an error state rather than a utilization warning."
-msgstr ""
+msgstr "La implementación actual de salud informa una advertencia cuando el swap usado es mayor que el 60% del swap total. Si esa prueba no se cumple, informa una advertencia cuando la Memoria usada de Morpheus es mayor que el 95% de la memoria total actualmente comprometida de la JVM. Estas pruebas están ordenadas; el mensaje mostrado identifica la primera condición coincidente. Un error de recopilación produce un estado de error en lugar de una advertencia de utilización."
 
 #: ../../administration/health/health.rst:80
 msgid ""
@@ -398,7 +398,7 @@ msgid ""
 "behavior, engage support to review sizing before increasing the "
 "application memory limit. Health thresholds are appliance alarms and are "
 "unrelated to workload resize Guidance thresholds."
-msgstr ""
+msgstr "Trate un valor alto aislado como una señal puntual. Compruebe si la advertencia persiste, revise el rendimiento de la aplicación y el comportamiento de la recolección de basura, y recopile un paquete de soporte antes de cambiar los límites de memoria. Para una presión sostenida de swap, investigue la presión de memoria del host/contenedor y los procesos en competencia. Para una presión sostenida del heap de Morpheus con comportamiento degradado, contacte con soporte para revisar el dimensionamiento antes de aumentar el límite de memoria de la aplicación. Los umbrales de salud son alarmas del dispositivo y no están relacionados con los umbrales de Guía de redimensionamiento de cargas de trabajo."
 
 #: ../../administration/health/health.rst:82
 msgid "CPU"

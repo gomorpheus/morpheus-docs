@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/requirements/capacity_planning.rst:2
 msgid "Capacity and Planning"
-msgstr ""
+msgstr "Capacité et planification"
 
 #: ../../getting_started/requirements/capacity_planning.rst:4
 msgid ""
@@ -32,69 +32,69 @@ msgid ""
 "have many variables to determine the capacity of each node, as each "
 "users' environment will be different.  Example factors that determine the"
 " capacity are:"
-msgstr ""
+msgstr "Il existe de nombreuses architectures différentes sur lesquelles |morpheus| peut être déployé.  Cependant, les architectures les plus courantes sont un nœud unique All-In-One (AIO) et un cluster haute disponibilité (HA) à 3 nœuds. Ces architectures peuvent avoir de nombreuses variables pour déterminer la capacité de chaque nœud, car l'environnement de chaque utilisateur sera différent.  Exemples de facteurs déterminant la capacité :"
 
 #: ../../getting_started/requirements/capacity_planning.rst:6
 msgid ""
 "Number of virtual machines (VMs)/systems/instances that |morpheus| will "
 "manage, also know as Workload Elements (WLEs)"
-msgstr ""
+msgstr "Nombre de machines virtuelles (VM)/systèmes/instances que |morpheus| gérera, également appelés éléments de charge de travail (WLE)"
 
 #: ../../getting_started/requirements/capacity_planning.rst:7
 msgid "If the WLEs will have agents installed"
-msgstr ""
+msgstr "Si des agents seront installés sur les WLE"
 
 #: ../../getting_started/requirements/capacity_planning.rst:8
 msgid "The number of clouds added to |morpheus|"
-msgstr ""
+msgstr "Le nombre de clouds ajoutés à |morpheus|"
 
 #: ../../getting_started/requirements/capacity_planning.rst:9
 msgid "The technologies used, such as: Kubernetes, Terraform, ARM, etc."
-msgstr ""
+msgstr "Les technologies utilisées, telles que : Kubernetes, Terraform, ARM, etc."
 
 #: ../../getting_started/requirements/capacity_planning.rst:10
 msgid "The number of concurrent worflows"
-msgstr ""
+msgstr "Le nombre de workflows simultanés"
 
 #: ../../getting_started/requirements/capacity_planning.rst:11
 msgid "Number of active users"
-msgstr ""
+msgstr "Nombre d'utilisateurs actifs"
 
 #: ../../getting_started/requirements/capacity_planning.rst:13
 msgid ""
 "Although there are many factors that can contribute to the capacity "
 "planning, even outside the list above, below are recommended initial "
 "specifications."
-msgstr ""
+msgstr "Bien qu'il existe de nombreux facteurs pouvant contribuer à la planification de capacité, même en dehors de la liste ci-dessus, voici ci-dessous des spécifications initiales recommandées."
 
 #: ../../getting_started/requirements/capacity_planning.rst:15
 msgid "**Recommendations**"
-msgstr ""
+msgstr "**Recommandations**"
 
 #: ../../getting_started/requirements/capacity_planning.rst:19
 msgid "Architecture"
-msgstr ""
+msgstr "Architecture"
 
 #: ../../getting_started/requirements/capacity_planning.rst:20
 msgid "# of CPUs per node"
-msgstr ""
+msgstr "Nombre de processeurs par nœud"
 
 #: ../../getting_started/requirements/capacity_planning.rst:21
 msgid "Memory (GB) per node"
-msgstr ""
+msgstr "Mémoire (Go) par nœud"
 
 #: ../../getting_started/requirements/capacity_planning.rst:22
 msgid "Local Storage (GB) per node"
-msgstr ""
+msgstr "Stockage local (Go) par nœud"
 
 #: ../../getting_started/requirements/capacity_planning.rst:23
 msgid "Shared Storage (NFS)"
-msgstr ""
+msgstr "Stockage partagé (NFS)"
 
 #: ../../getting_started/requirements/capacity_planning.rst:24
 #: ../../getting_started/requirements/capacity_planning.rst:29
 msgid "AIO"
-msgstr ""
+msgstr "AIO"
 
 #: ../../getting_started/requirements/capacity_planning.rst:25
 #: ../../getting_started/requirements/capacity_planning.rst:30
@@ -114,7 +114,7 @@ msgstr ""
 #: ../../getting_started/requirements/capacity_planning.rst:28
 #: ../../getting_started/requirements/capacity_planning.rst:33
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../../getting_started/requirements/capacity_planning.rst:31
 #: ../../getting_started/requirements/capacity_planning.rst:41
@@ -130,7 +130,7 @@ msgstr ""
 #: ../../getting_started/requirements/capacity_planning.rst:34
 #: ../../getting_started/requirements/capacity_planning.rst:39
 msgid "3-Node HA"
-msgstr ""
+msgstr "HA à 3 nœuds"
 
 #: ../../getting_started/requirements/capacity_planning.rst:38
 #: ../../getting_started/requirements/capacity_planning.rst:43
@@ -153,7 +153,7 @@ msgid ""
 "failure and is unavailable during upgrades; a 3-Node HA architecture "
 "provides redundancy and supports zero-downtime upgrades when properly "
 "designed."
-msgstr ""
+msgstr "Le tableau fournit des recommandations initiales de ressources, et non des limites fixes de charge de travail ou d'objets. La capacité réelle dépend des VM et systèmes gérés, de l'utilisation de l'Agent, des Clouds, des intégrations, de la concurrence d'automatisation, des utilisateurs actifs, de la conservation et du comportement de la charge de travail. En raison de la facilité d'installation et de maintenance, envisagez fortement une architecture AIO sauf si la haute disponibilité, les mises à niveau sans temps d'arrêt ou le dimensionnement spécifique à la charge de travail nécessitent une architecture multi-nœuds. Une architecture AIO ne tolère pas les pannes et est indisponible pendant les mises à niveau ; une architecture HA à 3 nœuds offre de la redondance et prend en charge les mises à niveau sans temps d'arrêt lorsqu'elle est correctement conçue."
 
 #: ../../getting_started/requirements/capacity_planning.rst:47
 msgid ""
@@ -164,28 +164,28 @@ msgid ""
 "number of nodes for quorum. For VME Manager limits and values that HPE "
 "has not published, see :doc:`HPE VM Essentials Maximums "
 "</infrastructure/clusters/hvm/maximums>`."
-msgstr ""
+msgstr "Les nœuds AIO et HA à 3 nœuds peuvent être **mis à l'échelle** en ajoutant des processeurs ou de la mémoire. Une architecture HA à 3 nœuds peut également être **étendue** pour ajouter de la capacité et de la redondance, alors qu'une configuration AIO ne peut pas ajouter de nœuds d'application. L'architecture HA à 3 nœuds doit toujours comporter un nombre impair de nœuds pour le quorum. Pour les limites VME Manager et les valeurs non publiées par HPE, consultez :doc:`HPE VM Essentials Maximums </infrastructure/clusters/hvm/maximums>`."
 
 #: ../../getting_started/requirements/capacity_planning.rst:49
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../getting_started/requirements/capacity_planning.rst:49
 msgid ""
 "Customer architectures and requirements will vary.  Please contact your "
 "account manager if you wish to deploy or transition to a HA environment, "
 "which can help right-size the environment"
-msgstr ""
+msgstr "Les architectures et exigences des clients varieront.  Veuillez contacter votre gestionnaire de compte si vous souhaitez déployer ou migrer vers un environnement HA, ce qui peut aider à dimensionner correctement l'environnement"
 
 #: ../../getting_started/requirements/capacity_planning.rst:51
 msgid "Additional information around the various architectures can be found here:"
-msgstr ""
+msgstr "Des informations supplémentaires sur les différentes architectures sont disponibles ici :"
 
 #: ../../getting_started/requirements/capacity_planning.rst:53
 msgid ":ref:`installation-overview`"
-msgstr ""
+msgstr ":ref:`installation-overview`"
 
 #: ../../getting_started/requirements/capacity_planning.rst:55
 msgid ":ref:`distributed-overview`"
-msgstr ""
+msgstr ":ref:`distributed-overview`"
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:2
 msgid "Advanced"
-msgstr ""
+msgstr "Ajout de serveurs aux groupes d'affinité lors du provisionnement"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:4
 msgid ""
@@ -35,15 +35,15 @@ msgid ""
 "VSphere under firewall configuration on the host. Simply check the "
 "`gdbserver` option, which will open up the necessary ports (starting at "
 "5900 range)."
-msgstr ""
+msgstr "En plus d'ajouter des serveurs depuis le groupe d'affinité, les serveurs nouvellement provisionnés peuvent être ajoutés à un groupe d'affinité lors du provisionnement. Depuis l'onglet CONFIGURE de l'assistant de provisionnement, développez la section Options avancées. Dans Options avancées, sélectionnez un groupe d'affinité. Le groupe d'affinité doit exister au préalable et cette liste sera filtrée pour n'afficher que les groupes d'affinité applicables en fonction des autres paramètres de configuration définis sur la nouvelle instance."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:6
 msgid "Important"
-msgstr ""
+msgstr "Étiquetage et métadonnées"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:6
 msgid "Hypervisor Console for vCenter 6.5 requires |morpheus| v3.2.0+"
-msgstr ""
+msgstr "À partir de la version 4.1.0 de Morpheus, la prise en charge de l'étiquetage est incluse pour vCenter, en plus des autres clouds qui la prenaient déjà en charge dans les versions antérieures. Les tags seront synchronisés vers vCenter depuis Morpheus et les tags existants sont également inventoriés depuis vCenter vers Morpheus."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:8
 msgid ""
@@ -52,7 +52,7 @@ msgid ""
 " that says `Enable Hypervisor Console`. It is important to note that "
 "currently this functionality only works for newly provisioned vm's "
 "provisioned directly via |morpheus|. This should change soon however."
-msgstr ""
+msgstr "Cette fonctionnalité nécessite une version minimale de l'API vCenter 6.5. La version de l'API peut être modifiée en accédant à « Infrastructure > Clouds » et en cliquant sur le bouton de modification (crayon) dans la ligne du cloud concerné. Le champ est libellé « VERSION »."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:10
 msgid ""
@@ -61,11 +61,11 @@ msgid ""
 "that the ESXi host license has an enterprise level license as it will not"
 " allow the appliance to download a virtual image if it is not a paid "
 "VMware license."
-msgstr ""
+msgstr "Des tags peuvent être créés à la demande lors du provisionnement depuis l'onglet « CONFIGURE » de l'assistant « CREATE INSTANCE » (:menuselection:`Provisioning --> Instances`). Dans le tiroir « Metadata », vous verrez des ensembles de champs pour saisir des paires clé/valeur. Lors de la création de l'instance, ces métadonnées seront synchronisées dans vCenter."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:13
 msgid "Device Type Selection"
-msgstr ""
+msgstr "Les « Inputs » de votre bibliothèque peuvent également être exportés en tant que métadonnées pour une utilisation avec vCenter. Lors de l'ajout ou de la modification d'un Input (|LibOptInp|), cochez simplement la case libellée « EXPORT AS METADATA ». Le « FIELD NAME » devient la catégorie de tag dans VMWare."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:15
 msgid ""
@@ -77,5 +77,5 @@ msgid ""
 "presented and the configured/default type is used. These settings are "
 "verified for VMware Clouds only; do not infer the same controls for HVM "
 "or another Cloud type."
-msgstr ""
+msgstr "La configuration avancée du cloud VMware contient des paramètres distincts :guilabel:`Enable Storage Type Selection` et :guilabel:`Enable Network Type Selection`. Activez le paramètre applicable lorsque les utilisateurs doivent choisir parmi les types de stockage ou d'interface réseau exposés par le fournisseur de provisionnement VMware. Lorsqu'ils sont désactivés, le sélecteur correspondant n'est pas présenté et le type configuré/par défaut est utilisé. Ces paramètres sont vérifiés pour les clouds VMware uniquement ; n'en déduisez pas les mêmes contrôles pour HVM ou un autre type de cloud."
 

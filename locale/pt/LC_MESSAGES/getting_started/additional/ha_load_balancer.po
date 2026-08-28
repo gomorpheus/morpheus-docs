@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ha_load_balancer.rst:2
 msgid "Load Balancer Configuration"
-msgstr ""
+msgstr "Configuração do Load Balancer"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:4
 msgid ""
@@ -31,37 +31,37 @@ msgid ""
 "upgrades. Below are the guidelines to configuring a load balancer for "
 "|morpheus| but each configuration may differ based on the organization's "
 "requirements."
-msgstr ""
+msgstr "Para configurações com 2 ou mais Application Nodes, um load balancer é recomendado para garantir alta disponibilidade (HA) diante de interrupções e upgrades. Abaixo estão as diretrizes para configurar um load balancer para o |morpheus|, mas cada configuração pode diferir com base nos requisitos da organização."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:7
 msgid "Requirements"
-msgstr ""
+msgstr "Requisitos"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:9
 msgid "WebSockets enabled"
-msgstr ""
+msgstr "WebSockets ativados"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:10
 msgid "Load Balance 443 (optionally redirect 80 to 443)"
-msgstr ""
+msgstr "Balancear carga na porta 443 (opcionalmente redirecionar 80 para 443)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:12
 msgid "SSL Termination (Offload), Bridging, and Passthrough are supported"
-msgstr ""
+msgstr "SSL Termination (Offload), Bridging e Passthrough são suportados"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:14
 msgid "Round-Robin or least connection distribution"
-msgstr ""
+msgstr "Distribuição Round-Robin ou least connection"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:16
 msgid ""
 "HTTPS monitor ``https://ip_address/ping`` body for ``MORPHEUS PING`` or "
 "status of 200, for node operational health"
-msgstr ""
+msgstr "Monitor HTTPS ``https://ip_address/ping`` corpo para ``MORPHEUS PING`` ou status 200, para a saúde operacional do nó"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:19
 msgid "Example configurations"
-msgstr ""
+msgstr "Exemplos de configurações"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:21
 msgid ""
@@ -81,11 +81,11 @@ msgid ""
 "Certificates "
 "<https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html>`_"
 " documentation."
-msgstr ""
+msgstr "Abaixo estão alguns exemplos de configuração de load balancers para atender às necessidades de uma configuração HA. Os exemplos pressupõem que o SSL bridging será usado, o que significa que um certificado SSL (TLS) é apresentado pelo load balancer aos clientes e o load balancer se comunicará com os nós de backend por meio de um certificado diferente (possivelmente o mesmo). Esta configuração é recomendada porque os nós de aplicação do |morpheus| criarão certificados autoassinados e o load balancer apresentará um certificado válido aos usuários finais. Além disso, toda a comunicação será criptografada. Isso reduz a sobrecarga de manutenção dos certificados nos nós de aplicação do |morpheus|, pois o load balancer pode ignorar certificados inválidos nos nós de aplicação. No entanto, os certificados nos nós de aplicação do |morpheus| não precisam ser autoassinados; eles podem ser substituídos por outros certificados confiáveis seguindo a documentação de `SSL Certificates <https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html>`_."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:26
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:26
 msgid ""
@@ -94,135 +94,135 @@ msgid ""
 "reference.  The settings mentioned in the examples list the primary "
 "settings that may need to be configured, other settings are based on the "
 "organization's needs requirements and own configuration."
-msgstr ""
+msgstr "A lista abaixo não pretende ser uma lista completa para todos os load balancers. Os exemplos fornecidos são implantações comuns que podem ser usados como referência. As configurações mencionadas nos exemplos listam as principais configurações que podem precisar ser definidas; outras configurações baseiam-se nas necessidades, requisitos e própria configuração da organização."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:30
 msgid "**Monitor**"
-msgstr ""
+msgstr "**Monitor**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:32
 msgid "**Type:** HTTPS"
-msgstr ""
+msgstr "**Type:** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:33
 msgid "**Send String:** GET /ping"
-msgstr ""
+msgstr "**Send String:** GET /ping"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:34
 msgid "**Receive String:** MORPHEUS PING"
-msgstr ""
+msgstr "**Receive String:** MORPHEUS PING"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:36
 msgid "**Pool**"
-msgstr ""
+msgstr "**Pool**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:38
 msgid "**Health Monitor:** Select monitor created in the **Monitor** section"
-msgstr ""
+msgstr "**Health Monitor:** Selecione o monitor criado na seção **Monitor**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:39
 msgid ""
 "**Load Balancing Method:** Least Connections (member) is recommended "
 "(alternatively Round Robin)"
-msgstr ""
+msgstr "**Load Balancing Method:** Least Connections (member) é recomendado (alternativamente Round Robin)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:40
 msgid "**Node Service Port:** 443/HTTPS"
-msgstr ""
+msgstr "**Node Service Port:** 443/HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:42
 msgid "**Virtual Server**"
-msgstr ""
+msgstr "**Virtual Server**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:44
 msgid "**Type:** Standard"
-msgstr ""
+msgstr "**Type:** Standard"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:45
 msgid "**Service Port:** 443/HTTPS"
-msgstr ""
+msgstr "**Service Port:** 443/HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:46
 msgid "**Protocol:** TCP"
-msgstr ""
+msgstr "**Protocol:** TCP"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:47
 msgid "**Protocol Profile (Client):** tcp"
-msgstr ""
+msgstr "**Protocol Profile (Client):** tcp"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:48
 msgid "**Protocol Profile (Server):** tcp"
-msgstr ""
+msgstr "**Protocol Profile (Server):** tcp"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:49
 msgid "**HTTP Profile (Client):** http"
-msgstr ""
+msgstr "**HTTP Profile (Client):** http"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:50
 msgid "**HTTP Profile (Server):** http"
-msgstr ""
+msgstr "**HTTP Profile (Server):** http"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:51
 msgid ""
 "**SSL Profile (Client):** clientssl (or preferred profile with a trusted "
 "certificate)"
-msgstr ""
+msgstr "**SSL Profile (Client):** clientssl (ou o perfil preferido com um certificado confiável)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:52
 msgid "**SSL Profile (Server):** serverssl"
-msgstr ""
+msgstr "**SSL Profile (Server):** serverssl"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:53
 msgid "**Source Address Translation:** Auto Map"
-msgstr ""
+msgstr "**Source Address Translation:** Auto Map"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:58
 msgid "**Target Group**"
-msgstr ""
+msgstr "**Target Group**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:60
 msgid "**Target Type:** Instances"
-msgstr ""
+msgstr "**Target Type:** Instances"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:61
 msgid "**Protocol/Port:** HTTPS/443"
-msgstr ""
+msgstr "**Protocol/Port:** HTTPS/443"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:62
 msgid "**Health Check Protocol:** HTTPS"
-msgstr ""
+msgstr "**Health Check Protocol:** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:63
 msgid "**Health check path:** /ping"
-msgstr ""
+msgstr "**Health check path:** /ping"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:64
 msgid ""
 "**Load balancing algorithm:** Least Outstanding Requests is recommended "
 "(alternatively Round Robin)"
-msgstr ""
+msgstr "**Load balancing algorithm:** Least Outstanding Requests é recomendado (alternativamente Round Robin)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:67
 msgid "**Load Balancer**"
-msgstr ""
+msgstr "**Load Balancer**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:69
 msgid "**Security Group:** Allow HTTPS/443 Inbound and Outbound"
-msgstr ""
+msgstr "**Security Group:** Permitir HTTPS/443 de Entrada e Saída"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:70
 msgid ""
 "**Listener:** HTTPS:443 to the target group created in the **Target "
 "Group** section"
-msgstr ""
+msgstr "**Listener:** HTTPS:443 para o target group criado na seção **Target Group**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:71
 msgid "**Security Policy:** ELBSecurityPolicy-2016-08"
-msgstr ""
+msgstr "**Security Policy:** ELBSecurityPolicy-2016-08"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:75
 msgid "**Example** ``/etc/haproxy/haproxy.cfg`` **configuration file**"
-msgstr ""
+msgstr "**Exemplo** de arquivo de configuração ``/etc/haproxy/haproxy.cfg``"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:77
 msgid ""
@@ -292,211 +292,211 @@ msgid ""
 "In this example, it is assumed **End-To-End TLS Encryption** is being "
 "used, which means the Application Gateway will present a certificate to "
 "the clients and the backend nodes will present the **same** certificate."
-msgstr ""
+msgstr "Neste exemplo, presume-se que a **End-To-End TLS Encryption** está sendo usada, o que significa que o Application Gateway apresentará um certificado aos clientes e os nós de backend apresentarão o **mesmo** certificado."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:144
 msgid ""
 "If a setting is not mentioned, it is assumed that the default can be "
 "maintained."
-msgstr ""
+msgstr "Se uma configuração não for mencionada, presume-se que o padrão pode ser mantido."
 
 #: ../../getting_started/additional/ha_load_balancer.rst:146
 msgid "**General Settings**"
-msgstr ""
+msgstr "**General Settings**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:148
 msgid "**Tier:** Standard V2"
-msgstr ""
+msgstr "**Tier:** Standard V2"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:149
 msgid "**Capacity type:** **Autoscale** or **Manual** are both supported"
-msgstr ""
+msgstr "**Capacity type:** **Autoscale** ou **Manual** são ambos suportados"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:150
 msgid "**HTTPS2:** Disabled"
-msgstr ""
+msgstr "**HTTPS2:** Desativado"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:152
 msgid "**Frontend Configuration**"
-msgstr ""
+msgstr "**Frontend Configuration**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:154
 msgid ""
 "**Type:** Set **Public** if |morpheus| should be accessilbe externally, "
 "otherwise choose **Private**"
-msgstr ""
+msgstr "**Type:** Defina **Public** se o |morpheus| deve ser acessível externamente; caso contrário, escolha **Private**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:155
 msgid ""
 "**Public IP Address:** Associate a previously create public IP or create "
 "a new one"
-msgstr ""
+msgstr "**Public IP Address:** Associe um IP público criado anteriormente ou crie um novo"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:157
 msgid "**Listener**"
-msgstr ""
+msgstr "**Listener**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:159
 msgid ""
 "**Frontend IP:** Choose the IP created from the Frontend Configuration "
 "above"
-msgstr ""
+msgstr "**Frontend IP:** Escolha o IP criado na Frontend Configuration acima"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:160
 #: ../../getting_started/additional/ha_load_balancer.rst:187
 msgid "**Protocol:** HTTPS"
-msgstr ""
+msgstr "**Protocol:** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:161
 msgid "**Port:** 443"
-msgstr ""
+msgstr "**Port:** 443"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:162
 msgid "**Certificate:**"
-msgstr ""
+msgstr "**Certificate:**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:164
 msgid "Upload the public certificate in **PFX** format"
-msgstr ""
+msgstr "Envie o certificado público no formato **PFX**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:165
 msgid "This certificate should match the one presented by the backend nodes"
-msgstr ""
+msgstr "Este certificado deve corresponder ao apresentado pelos nós de backend"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:166
 msgid "The certificate should include the entire chain, including the private key"
-msgstr ""
+msgstr "O certificado deve incluir a cadeia inteira, incluindo a chave privada"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:167
 msgid "**Listener type:** Basic"
-msgstr ""
+msgstr "**Listener type:** Basic"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:168
 msgid "**Error page URL:** No"
-msgstr ""
+msgstr "**Error page URL:** No"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:170
 msgid "**Backend Settings**"
-msgstr ""
+msgstr "**Backend Settings**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:172
 msgid "**Backend protocol:** HTTPS"
-msgstr ""
+msgstr "**Backend protocol:** HTTPS"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:173
 msgid "**Backend port:** 443"
-msgstr ""
+msgstr "**Backend port:** 443"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:174
 msgid "**Use well known CA certificate:**"
-msgstr ""
+msgstr "**Use well known CA certificate:**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:176
 msgid ""
 "If set to **Yes**, the certificate does not need to be uploaded in the "
 "settings.  This must be a well known certificate provided by a well known"
 " certificate authority, not an internally generated certificate"
-msgstr ""
+msgstr "Se definido como **Yes**, o certificado não precisa ser enviado nas configurações. Este deve ser um certificado bem conhecido fornecido por uma autoridade certificadora bem conhecida, não um certificado gerado internamente"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:178
 msgid ""
 "If set to **No**, ensure the certificate that is present on the backend "
 "nodes is uploaded to the Application Gateway. Note that the certificate "
 "should include the entire chain (CA, Intermediates, Certificate)"
-msgstr ""
+msgstr "Se definido como **No**, certifique-se de que o certificado presente nos nós de backend seja enviado ao Application Gateway. Observe que o certificado deve incluir a cadeia inteira (CA, Intermediates, Certificate)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:180
 msgid "**Cookie-based affinity:** Disable"
-msgstr ""
+msgstr "**Cookie-based affinity:** Disable"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:181
 msgid "**Connection draining:** Enable"
-msgstr ""
+msgstr "**Connection draining:** Enable"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:182
 msgid "**Override with new host name:** No"
-msgstr ""
+msgstr "**Override with new host name:** No"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:183
 msgid ""
 "**Use Custom probe:** No (one will be created next and will be assoicated"
 " during that configuration)"
-msgstr ""
+msgstr "**Use Custom probe:** No (um será criado a seguir e será associado durante essa configuração)"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:185
 msgid "**Health Probe**"
-msgstr ""
+msgstr "**Health Probe**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:188
 msgid ""
 "**Host:** Enter the host that is configured on the |morpheus| application"
 " nodes.  This same host that will be used on the Application Gateway "
 "Example:  morpheus.mydomain.com"
-msgstr ""
+msgstr "**Host:** Informe o host configurado nos nós de aplicação do |morpheus|. Este mesmo host será usado no Application Gateway. Exemplo: morpheus.mydomain.com"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:190
 msgid "**Pick host name from backend settings:** No"
-msgstr ""
+msgstr "**Pick host name from backend settings:** No"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:191
 msgid "**Pick port from backend settings:** Yes"
-msgstr ""
+msgstr "**Pick port from backend settings:** Yes"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:192
 msgid "**Path:** /ping"
-msgstr ""
+msgstr "**Path:** /ping"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:193
 msgid "**Use probe matching conditions:** Yes"
-msgstr ""
+msgstr "**Use probe matching conditions:** Yes"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:194
 msgid "**HTTP response status code match:** 200-399"
-msgstr ""
+msgstr "**HTTP response status code match:** 200-399"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:195
 msgid "**Backend settings:** Choose the backend settings created above"
-msgstr ""
+msgstr "**Backend settings:** Escolha as backend settings criadas acima"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:197
 msgid "**Backend Pool**"
-msgstr ""
+msgstr "**Backend Pool**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:199
 msgid ""
 "The **Target Type** can either be **Virtual Machine** or **IP address or "
 "FQDN**"
-msgstr ""
+msgstr "O **Target Type** pode ser **Virtual Machine** ou **IP address or FQDN**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:201
 msgid ""
 "If |morpheus| is hosted in Azure, **Virtual Machine** will likely be the "
 "choice.  The load balancer will need to able to communicate with the "
 "target"
-msgstr ""
+msgstr "Se o |morpheus| estiver hospedado no Azure, **Virtual Machine** provavelmente será a escolha. O load balancer precisará conseguir se comunicar com o destino"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:202
 msgid ""
 "If |morpheus| is hosted on-premise, or outside of Azure, the **IP address"
 " or FQDN** can be used but the load balancer will need to able to "
 "communicate with the target"
-msgstr ""
+msgstr "Se o |morpheus| estiver hospedado on-premise, ou fora do Azure, o **IP address or FQDN** pode ser usado, mas o load balancer precisará conseguir se comunicar com o destino"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:204
 msgid "**Important Items**"
-msgstr ""
+msgstr "**Itens Importantes**"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:206
 msgid ""
 "Ensure the backend virtual machines allow port 443 from the load "
 "balancer, otherwise a **502 error** may be seen"
-msgstr ""
+msgstr "Certifique-se de que as máquinas virtuais de backend permitam a porta 443 a partir do load balancer; caso contrário, um **erro 502** pode ser visto"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:207
 msgid ""
 "If using a wildcard certificate, you **must** use a custom health probe, "
 "as mentioned above, otherwise you may see the following error message:"
-msgstr ""
+msgstr "Se estiver usando um certificado curinga, você **deve** usar uma health probe personalizada, conforme mencionado acima; caso contrário, você poderá ver a seguinte mensagem de erro:"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:209
 msgid ""
@@ -504,21 +504,21 @@ msgid ""
 "the host header entered in the health probe configuration (v2 SKU) or the"
 " FQDN in the backend pool (v1 SKU). Verify if the hostname matches with "
 "the CN of the backend server certificate.``"
-msgstr ""
+msgstr "``The Common Name (CN) of the backend server certificate does not match the host header entered in the health probe configuration (v2 SKU) or the FQDN in the backend pool (v1 SKU). Verify if the hostname matches with the CN of the backend server certificate.``"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:211
 msgid ""
 "More info: https://techcommunity.microsoft.com/t5/fasttrack-for-azure"
 "/walkthrough-configuring-end-to-end-tls-with-application-"
 "gateway/ba-p/3269132"
-msgstr ""
+msgstr "Mais informações: https://techcommunity.microsoft.com/t5/fasttrack-for-azure/walkthrough-configuring-end-to-end-tls-with-application-gateway/ba-p/3269132"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:213
 msgid ""
 "As mentioned above, ensure the complete chain for the certificate is "
 "presented by |morpheus|, otherwise you may see the following error "
 "message:"
-msgstr ""
+msgstr "Conforme mencionado acima, certifique-se de que a cadeia completa do certificado seja apresentada pelo |morpheus|; caso contrário, você poderá ver a seguinte mensagem de erro:"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:215
 msgid ""
@@ -526,41 +526,41 @@ msgid ""
 " not match the trusted root certificate added to the application gateway."
 " Ensure that you add the correct root certificate to whitelist the "
 "backend``"
-msgstr ""
+msgstr "``The root certificate of the server certificate used by the backend does not match the trusted root certificate added to the application gateway. Ensure that you add the correct root certificate to whitelist the backend``"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:217
 msgid ""
 "More info: https://learn.microsoft.com/en-us/answers/questions/150524"
 "/the-root-certificate-of-the-server-certificate-use"
-msgstr ""
+msgstr "Mais informações: https://learn.microsoft.com/en-us/answers/questions/150524/the-root-certificate-of-the-server-certificate-use"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:219
 msgid "Configuring the certificate on the |morpheus| nodes"
-msgstr ""
+msgstr "Configurando o certificado nos nós do |morpheus|"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:221
 msgid ""
 "More info: "
 "https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html"
-msgstr ""
+msgstr "Mais informações: https://docs.morpheusdata.com/en/latest/getting_started/additional/morpheusSslCerts.html"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:223
 msgid "Additional reading:"
-msgstr ""
+msgstr "Leitura adicional:"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:225
 msgid ""
 "https://learn.microsoft.com/en-us/azure/application-gateway/certificates-"
 "for-backend-authentication"
-msgstr ""
+msgstr "https://learn.microsoft.com/en-us/azure/application-gateway/certificates-for-backend-authentication"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:227
 msgid ""
 "https://learn.microsoft.com/en-us/azure/application-gateway/end-to-end-"
 "ssl-portal"
-msgstr ""
+msgstr "https://learn.microsoft.com/en-us/azure/application-gateway/end-to-end-ssl-portal"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:229
 msgid "https://learn.microsoft.com/en-us/azure/application-gateway/ssl-overview"
-msgstr ""
+msgstr "https://learn.microsoft.com/en-us/azure/application-gateway/ssl-overview"
 

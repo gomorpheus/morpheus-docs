@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/op_workflows.rst:2
 msgid "Adding Functionality Through Operational Workflows"
-msgstr ""
+msgstr "Funktionalität durch Operational Workflows hinzufügen"
 
 #: ../../getting_started/guides/op_workflows.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "schedule, similar to a cron job. While they're often used to orchestrate "
 "some facet of cloud resource management, they can also be used to speed "
 "and standardize creation of |morpheus| constructs."
-msgstr ""
+msgstr "Operational Workflows in |morpheus| sind logisch angeordnete Mengen einzelner Automatisierungsaufgaben, die eine bestimmte Funktion erfüllen sollen. Sie können bei Bedarf einmalig ausgeführt oder ähnlich einem Cron-Job zeitgesteuert geplant werden. Oft dienen sie der Orchestrierung von Aspekten des Cloud-Ressourcenmanagements; sie können aber auch die Erstellung von |morpheus|-Konstrukten beschleunigen und standardisieren."
 
 #: ../../getting_started/guides/op_workflows.rst:6
 msgid ""
@@ -41,39 +41,39 @@ msgid ""
 "Subtenants. This is not natively-available functionality as Groups are "
 "not a tenanted construct in |morpheus|. They exist solely within the "
 "Tenant that created them and cannot be shared or viewed by others."
-msgstr ""
+msgstr "Als Beispiel für diesen Leitfaden erstellen wir einen Operational Workflow, mit dem Administratoren des Primary Tenant Gruppen innerhalb von Subtenants anlegen können. Das ist keine native Funktion, da Gruppen in |morpheus| kein mandantenfähiges Konstrukt sind. Sie existieren nur innerhalb des Mandanten, der sie erstellt hat, und können nicht geteilt oder von anderen eingesehen werden."
 
 #: ../../getting_started/guides/op_workflows.rst:8
 msgid "In this guide, we'll use the following |morpheus| constructs:"
-msgstr ""
+msgstr "In diesem Leitfaden verwenden wir die folgenden |morpheus|-Konstrukte:"
 
 #: ../../getting_started/guides/op_workflows.rst:10
 msgid "Groups"
-msgstr ""
+msgstr "Gruppen"
 
 #: ../../getting_started/guides/op_workflows.rst:11
 msgid "Cypher"
-msgstr ""
+msgstr "Cypher"
 
 #: ../../getting_started/guides/op_workflows.rst:12
 msgid "Tasks"
-msgstr ""
+msgstr "Aufgaben"
 
 #: ../../getting_started/guides/op_workflows.rst:13
 msgid "Workflows"
-msgstr ""
+msgstr "Workflows"
 
 #: ../../getting_started/guides/op_workflows.rst:14
 msgid "Inputs"
-msgstr ""
+msgstr "Eingaben"
 
 #: ../../getting_started/guides/op_workflows.rst:15
 msgid "|morpheus| API"
-msgstr ""
+msgstr "|morpheus|-API"
 
 #: ../../getting_started/guides/op_workflows.rst:18
 msgid "Initial Considerations"
-msgstr ""
+msgstr "Erste Überlegungen"
 
 #: ../../getting_started/guides/op_workflows.rst:20
 msgid ""
@@ -82,7 +82,7 @@ msgid ""
 "access to a user account within the Subtenant which has rights to create "
 "Groups. You could use a pre-existing user account or create a service "
 "user for automated processes like this one."
-msgstr ""
+msgstr "Da wir Gruppen in einem zweiten Mandanten erstellen, benötigen Sie mindestens einen weiteren Mandanten in Ihrer Appliance (|AdmTen|). Außerdem benötigen Sie Zugriff auf ein Benutzerkonto im Subtenant mit Rechten zum Erstellen von Gruppen. Sie können ein vorhandenes Benutzerkonto nutzen oder einen Servicebenutzer für automatisierte Prozesse wie diesen anlegen."
 
 #: ../../getting_started/guides/op_workflows.rst:22
 msgid ""
@@ -96,11 +96,11 @@ msgid ""
 "step. You will not be able to see this key again after closing the modal "
 "containing the API Keys. Return to your primary |morpheus| account in the"
 " original Tenant to continue with the guide."
-msgstr ""
+msgstr "Impersonieren Sie Ihr Servicekonto oder melden Sie sich damit an und erstellen Sie einen API-Schlüssel. API-Schlüssel werden erstellt, indem Sie oben rechts im Anwendungsfenster auf den Benutzernamen und dann auf User Settings klicken. Auf der Seite User Settings klicken Sie auf :guilabel:`API ACCESS`. Neben einem der Einträge (welcher ist egal, aber achten Sie darauf, keinen bereits genutzten Schlüssel zu überschreiben) klicken Sie auf ACTIONS und dann auf Generate. Kopieren Sie den Access Token an einen sicheren Ort, von dem Sie ihn im nächsten Schritt abrufen können. Nach dem Schließen des Modals mit den API-Schlüsseln können Sie diesen Schlüssel nicht erneut einsehen. Kehren Sie zu Ihrem primären |morpheus|-Konto im ursprünglichen Mandanten zurück, um mit dem Leitfaden fortzufahren."
 
 #: ../../getting_started/guides/op_workflows.rst:25
 msgid "Create Cypher"
-msgstr ""
+msgstr "Cypher erstellen"
 
 #: ../../getting_started/guides/op_workflows.rst:27
 msgid ""
@@ -110,7 +110,7 @@ msgid ""
 "store the API Key for our service account user so we can call it into "
 "automation scripts in a later step. In the |morpheus| UI, go to |TooCyp| "
 "and click :guilabel:`+ ADD`."
-msgstr ""
+msgstr "Cypher ist ein sicherer Key/Value-Store in |morpheus|. Mit Cypher können wir Kennwörter und andere Secret-Werte (z. B. API-Schlüssel) sicher speichern und später in Automatisierungsaufgaben und Vorlagen aufrufen. Hier speichern wir den API-Schlüssel unseres Servicekonto-Benutzers, um ihn in einem späteren Schritt in Automatisierungsskripte einzubinden. Gehen Sie in der |morpheus|-UI zu |TooCyp| und klicken Sie auf :guilabel:`+ ADD`."
 
 #: ../../getting_started/guides/op_workflows.rst:29
 msgid ""
@@ -118,23 +118,23 @@ msgid ""
 " different contexts. Here we'll use the \"secret\" type which allows us "
 "to enter some known value which can be securely accessed later. Enter the"
 " following:"
-msgstr ""
+msgstr "Es gibt verschiedene Typen von Cypher-Schlüsseln für unterschiedliche Kontexte. Hier verwenden wir den Typ „secret“, mit dem wir einen bekannten Wert eingeben können, auf den später sicher zugegriffen werden kann. Geben Sie Folgendes ein:"
 
 #: ../../getting_started/guides/op_workflows.rst:31
 msgid "**KEY:** secret/subusertoken"
-msgstr ""
+msgstr "**KEY:** secret/subusertoken"
 
 #: ../../getting_started/guides/op_workflows.rst:32
 msgid "**VALUE:** Enter |morpheus| API Key for the Subtenant user"
-msgstr ""
+msgstr "**VALUE:** |morpheus|-API-Schlüssel für den Subtenant-Benutzer eingeben"
 
 #: ../../getting_started/guides/op_workflows.rst:33
 msgid "**LEASE:** 0 (Lease time is given in seconds, with \"0\" being unlimited)"
-msgstr ""
+msgstr "**LEASE:** 0 (Lease-Zeit in Sekunden; „0“ bedeutet unbegrenzt)"
 
 #: ../../getting_started/guides/op_workflows.rst:35
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/op_workflows.rst:37
 msgid ".. image:: /images/opworkguide/createcypher.png"
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../../getting_started/guides/op_workflows.rst:40
 msgid "Create Inputs"
-msgstr ""
+msgstr "Eingaben erstellen"
 
 #: ../../getting_started/guides/op_workflows.rst:42
 msgid ""
@@ -152,49 +152,49 @@ msgid ""
 "Inputs will be associated with our Operational Workflow. We will create "
 "three so the user can define a name for the new Group and optionally "
 "provide a code and/or location value if desired."
-msgstr ""
+msgstr "Eingaben sind benutzerdefinierte Eingabefelder, die Layouts, Instanztypen, Workflows und anderen Konstrukten in |morpheus| hinzugefügt werden können. Die Eingabe kann in Vorlagen und Skripten als Variable genutzt werden. In diesem Fall werden die Eingaben unserem Operational Workflow zugeordnet. Wir erstellen drei, damit der Benutzer einen Namen für die neue Gruppe festlegen und optional einen Code- und/oder Standortwert angeben kann."
 
 #: ../../getting_started/guides/op_workflows.rst:44
 msgid ""
 "In |morpheus| UI, navigate to |LibOptInp|. Click :guilabel:`+ ADD`. "
 "Complete the following fields:"
-msgstr ""
+msgstr "Navigieren Sie in der |morpheus|-UI zu |LibOptInp|. Klicken Sie auf :guilabel:`+ ADD`. Füllen Sie die folgenden Felder aus:"
 
 #: ../../getting_started/guides/op_workflows.rst:46
 msgid ""
 "**NAME:** Subtenant Group Name (The friendly name for the Input object in"
 " |morpheus|)"
-msgstr ""
+msgstr "**NAME:** Subtenant Group Name (Der Anzeigename für das Eingabeobjekt in |morpheus|)"
 
 #: ../../getting_started/guides/op_workflows.rst:47
 msgid ""
 "**FIELD NAME:** subgroupname (The internal property which the input value"
 " is assigned to)"
-msgstr ""
+msgstr "**FIELD NAME:** subgroupname (Die interne Eigenschaft, der der Eingabewert zugewiesen wird)"
 
 #: ../../getting_started/guides/op_workflows.rst:48
 msgid ""
 "**TYPE:** Text (The input type, in this case an open text field for the "
 "user)"
-msgstr ""
+msgstr "**TYPE:** Text (Der Eingabetyp; hier ein offenes Textfeld für den Benutzer)"
 
 #: ../../getting_started/guides/op_workflows.rst:49
 msgid ""
 "**LABEL:** Subtenant Group Name (The label the user sees next to the "
 "input field)"
-msgstr ""
+msgstr "**LABEL:** Subtenant Group Name (Die Beschriftung neben dem Eingabefeld für den Benutzer)"
 
 #: ../../getting_started/guides/op_workflows.rst:50
 msgid ""
 "**REQUIRED:** Checked (A name value is required for our Group so this "
 "Input should be marked required. The other two Inputs we'll create will "
 "not be required as they are optional fields when creating a Group)"
-msgstr ""
+msgstr "**REQUIRED:** Aktiviert (Ein Name ist für unsere Gruppe erforderlich; diese Eingabe sollte als erforderlich markiert sein. Die anderen beiden Eingaben sind nicht erforderlich, da sie beim Erstellen einer Gruppe optional sind)"
 
 #: ../../getting_started/guides/op_workflows.rst:52
 #: ../../getting_started/guides/op_workflows.rst:92
 msgid "Once done, click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Klicken Sie anschließend auf :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/op_workflows.rst:54
 msgid ".. image:: /images/opworkguide/createinput.png"
@@ -204,63 +204,63 @@ msgstr ""
 msgid ""
 "Create two more Inputs in a similar fashion with the following "
 "configuration:"
-msgstr ""
+msgstr "Erstellen Sie auf ähnliche Weise zwei weitere Eingaben mit folgender Konfiguration:"
 
 #: ../../getting_started/guides/op_workflows.rst:59
 msgid "**Code Input**"
-msgstr ""
+msgstr "**Code-Eingabe**"
 
 #: ../../getting_started/guides/op_workflows.rst:61
 msgid "**NAME:** Subtenant Group Code"
-msgstr ""
+msgstr "**NAME:** Subtenant Group Code"
 
 #: ../../getting_started/guides/op_workflows.rst:62
 msgid "**FIELD NAME:** subgroupcode"
-msgstr ""
+msgstr "**FIELD NAME:** subgroupcode"
 
 #: ../../getting_started/guides/op_workflows.rst:63
 #: ../../getting_started/guides/op_workflows.rst:72
 msgid "**TYPE:** Text"
-msgstr ""
+msgstr "**TYPE:** Text"
 
 #: ../../getting_started/guides/op_workflows.rst:64
 msgid "**LABEL:** Subtenant Group Code"
-msgstr ""
+msgstr "**LABEL:** Subtenant Group Code"
 
 #: ../../getting_started/guides/op_workflows.rst:65
 msgid ""
 "**HELP BLOCK:** Optional Code Value (I opted to enter help block text to "
 "make it clearer to the user that this is an optional input)"
-msgstr ""
+msgstr "**HELP BLOCK:** Optional Code Value (Ich habe Hilfetext eingegeben, um dem Benutzer klarer zu machen, dass dies eine optionale Eingabe ist)"
 
 #: ../../getting_started/guides/op_workflows.rst:66
 #: ../../getting_started/guides/op_workflows.rst:75
 msgid "**REQUIRED:** Unchecked"
-msgstr ""
+msgstr "**REQUIRED:** Deaktiviert"
 
 #: ../../getting_started/guides/op_workflows.rst:68
 msgid "**Location Input**"
-msgstr ""
+msgstr "**Standort-Eingabe**"
 
 #: ../../getting_started/guides/op_workflows.rst:70
 msgid "**NAME:** Subtenant Group Location"
-msgstr ""
+msgstr "**NAME:** Subtenant Group Location"
 
 #: ../../getting_started/guides/op_workflows.rst:71
 msgid "**FIELD NAME:** subgrouplocation"
-msgstr ""
+msgstr "**FIELD NAME:** subgrouplocation"
 
 #: ../../getting_started/guides/op_workflows.rst:73
 msgid "**LABEL:** Subtenant Group Location"
-msgstr ""
+msgstr "**LABEL:** Subtenant Group Location"
 
 #: ../../getting_started/guides/op_workflows.rst:74
 msgid "**HELP BLOCK:** Optional Location Value"
-msgstr ""
+msgstr "**HELP BLOCK:** Optional Location Value"
 
 #: ../../getting_started/guides/op_workflows.rst:78
 msgid "Create Task"
-msgstr ""
+msgstr "Aufgabe erstellen"
 
 #: ../../getting_started/guides/op_workflows.rst:80
 msgid ""
@@ -280,39 +280,39 @@ msgid ""
 " `here <https://github.com/ahark86/morpheus-group-"
 "create/blob/master/main.py>`_. New Github integrations can be added in "
 "|AdmInt|."
-msgstr ""
+msgstr "Aufgaben in |morpheus| sind einzelne Automatisierungsskripte. Sie können zu Workflows zusammengefügt werden (wie wir später sehen), um umfassendere Automatisierungspakete zu erstellen. Sie können in verschiedenen Sprachen geschrieben werden (einschließlich BASH, Powershell, Python, Javascript und mehr) oder bestimmte Funktionen erfüllen, z. B. einen Server neu starten oder eine E-Mail-Benachrichtigung senden. In diesem Fall habe ich ein Python-Skript außerhalb von |morpheus| geschrieben und in einem Github-Repository versioniert. Da mein Github-Konto mit |morpheus| integriert ist, kann ich im neuen Task einfach auf das Skript verweisen. So entfällt Copy-and-Paste von Code, und bei jedem Aufruf der Aufgabe wird die neueste Codeversion ausgeführt. Die Integration mit Versionskontrolle ist optional; der Einfachheit halber können Sie ein kurzes Skript auch direkt in |morpheus| entwerfen. Zum Anzeigen, Kopieren oder Forken des Codes siehe `here <https://github.com/ahark86/morpheus-group-create/blob/master/main.py>`_. Neue Github-Integrationen können unter |AdmInt| hinzugefügt werden."
 
 #: ../../getting_started/guides/op_workflows.rst:82
 msgid ""
 "Navigate to |LibAutTas| and click :guilabel:`+ ADD`. Create a new Task "
 "with the following configuration:"
-msgstr ""
+msgstr "Navigieren Sie zu |LibAutTas| und klicken Sie auf :guilabel:`+ ADD`. Erstellen Sie eine neue Aufgabe mit folgender Konfiguration:"
 
 #: ../../getting_started/guides/op_workflows.rst:84
 msgid "**NAME:** Subtenant Group Create - Task"
-msgstr ""
+msgstr "**NAME:** Subtenant Group Create - Task"
 
 #: ../../getting_started/guides/op_workflows.rst:85
 msgid ""
 "**TYPE:** Python Script (Once Type is selected, available fields will be "
 "updated to those specific to the chosen type)"
-msgstr ""
+msgstr "**TYPE:** Python Script (Nach Auswahl des Typs werden die verfügbaren Felder auf die typspezifischen aktualisiert)"
 
 #: ../../getting_started/guides/op_workflows.rst:86
 msgid "**RESULT TYPE:** None"
-msgstr ""
+msgstr "**RESULT TYPE:** None"
 
 #: ../../getting_started/guides/op_workflows.rst:87
 msgid ""
 "**SOURCE:** Repository (Select Local to draft or paste code directly into"
 " |morpheus|)"
-msgstr ""
+msgstr "**SOURCE:** Repository (Wählen Sie Local, um Code direkt in |morpheus| zu entwerfen oder einzufügen)"
 
 #: ../../getting_started/guides/op_workflows.rst:88
 msgid ""
 "**FILE PATH:** main.py (In my case, the script is in the root of the "
 "repository so I can simply refer to it by filename)"
-msgstr ""
+msgstr "**FILE PATH:** main.py (In meinem Fall liegt das Skript im Root des Repositorys, daher reicht der Dateiname)"
 
 #: ../../getting_started/guides/op_workflows.rst:89
 msgid ""
@@ -324,13 +324,13 @@ msgid ""
 " as well, which are laid out in a `Knowledge Base article "
 "<https://support.morpheusdata.com/s/article/How-to-use-stored-cypher-"
 "secrets-in-python-task?language=en_US>`_."
-msgstr ""
+msgstr "**COMMAND ARGUMENTS:** Optionale Befehlszeilenargumente für das Python-Skript. In meinem Fall übergebe ich den |morpheus|-API-Schlüssel aus Cypher als Befehlszeilenargument (siehe Screenshot) und verbrauche ihn im Code über das Modul *sys* aus der Python-Standardbibliothek. Es gibt weitere Wege, Cypher-Secrets in Python-Skripten zu nutzen, die in einem `Knowledge Base article <https://support.morpheusdata.com/s/article/How-to-use-stored-cypher-secrets-in-python-task?language=en_US>`_ beschrieben sind."
 
 #: ../../getting_started/guides/op_workflows.rst:90
 msgid ""
 "**ADDITIONAL PACKAGES:** List packages used which are not part of the "
 "standard Python library"
-msgstr ""
+msgstr "**ADDITIONAL PACKAGES:** Pakete auflisten, die nicht Teil der Python-Standardbibliothek sind"
 
 #: ../../getting_started/guides/op_workflows.rst:94
 msgid ".. image:: /images/opworkguide/createtask.png"
@@ -338,7 +338,7 @@ msgstr ""
 
 #: ../../getting_started/guides/op_workflows.rst:97
 msgid "Create Operational Workflow"
-msgstr ""
+msgstr "Operational Workflow erstellen"
 
 #: ../../getting_started/guides/op_workflows.rst:99
 msgid ""
@@ -350,36 +350,36 @@ msgid ""
 "lifecycle, such as during provisioning, teardown, startup, or shutdown. "
 "In our case, we need an Operational Workflow which are run on-demand when"
 " needed or on timed intervals."
-msgstr ""
+msgstr "|morpheus|-Workflows fassen mehrere Aufgaben zu einer logischen Gruppe zusammen. Es gibt zwei Workflow-Typen: Operational und Provisioning. Provisioning Workflows (in diesem Leitfaden nicht verwendet) werden einer Instanz zum Zeitpunkt der Provisionierung zugeordnet und führen automatisch die passenden Aufgaben aus, wenn die Instanz bestimmte Phasen ihres Lebenszyklus erreicht, z. B. bei Provisionierung, Teardown, Start oder Herunterfahren. In unserem Fall benötigen wir einen Operational Workflow, der bei Bedarf oder in zeitlichen Intervallen ausgeführt wird."
 
 #: ../../getting_started/guides/op_workflows.rst:101
 msgid ""
 "Navigate to |LibAutWor| and click :guilabel:`+ ADD`. Set the following "
 "configurations:"
-msgstr ""
+msgstr "Navigieren Sie zu |LibAutWor| und klicken Sie auf :guilabel:`+ ADD`. Legen Sie folgende Konfigurationen fest:"
 
 #: ../../getting_started/guides/op_workflows.rst:103
 msgid "**NAME:** Subtenant Group Create"
-msgstr ""
+msgstr "**NAME:** Subtenant Group Create"
 
 #: ../../getting_started/guides/op_workflows.rst:104
 msgid "**PLATFORM:** All"
-msgstr ""
+msgstr "**PLATFORM:** All"
 
 #: ../../getting_started/guides/op_workflows.rst:105
 msgid "**TASKS:** Subtenant Group Create - Task"
-msgstr ""
+msgstr "**TASKS:** Subtenant Group Create - Task"
 
 #: ../../getting_started/guides/op_workflows.rst:106
 msgid ""
 "**INPUTS:** Find Subtenant Group Name, Subtenant Group Code, and "
 "Subtenant Group Location using the typeahead field. I think it makes most"
 " sense to order them with Name first but it's not required"
-msgstr ""
+msgstr "**INPUTS:** Suchen Sie Subtenant Group Name, Subtenant Group Code und Subtenant Group Location über das Typeahead-Feld. Am sinnvollsten erscheint mir die Reihenfolge mit Name zuerst, aber das ist nicht erforderlich"
 
 #: ../../getting_started/guides/op_workflows.rst:108
 msgid "Once done, click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie anschließend auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/op_workflows.rst:110
 msgid ".. image:: /images/opworkguide/createworkflow.png"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ../../getting_started/guides/op_workflows.rst:114
 msgid "Execute Workflow"
-msgstr ""
+msgstr "Workflow ausführen"
 
 #: ../../getting_started/guides/op_workflows.rst:116
 msgid ""
@@ -398,7 +398,7 @@ msgid ""
 "required (as we configured) and our help block text underneath the "
 "optional Inputs. Complete each field (Context Type can be left at None) "
 "and click :guilabel:`EXECUTE`."
-msgstr ""
+msgstr "Nach dem Speichern des neuen Operational Workflows bleiben Sie auf der Workflows-Listenseite. Von hier aus können wir den neuen Workflow testen. Klicken Sie auf das Zahnradsymbol ganz rechts in der Zeile und dann auf Execute. Unsere drei Eingaben sollten sichtbar sein. Das Namensfeld ist als erforderlich markiert (wie konfiguriert), und unter den optionalen Eingaben steht unser Hilfetext. Füllen Sie jedes Feld aus (Context Type kann auf None bleiben) und klicken Sie auf :guilabel:`EXECUTE`."
 
 #: ../../getting_started/guides/op_workflows.rst:118
 msgid ".. image:: /images/opworkguide/executeworkflow.png"
@@ -409,7 +409,7 @@ msgid ""
 "Once again login in as or impersonate your service account user within "
 "the Subtenant. Navigate to |InfGro| and inspect the list. You should now "
 "see that our Group has been created here."
-msgstr ""
+msgstr "Melden Sie sich erneut als Ihr Servicekonto-Benutzer im Subtenant an oder impersonieren Sie ihn. Navigieren Sie zu |InfGro| und prüfen Sie die Liste. Die Gruppe sollte nun hier erstellt worden sein."
 
 #: ../../getting_started/guides/op_workflows.rst:123
 msgid ".. image:: /images/opworkguide/grouplist.png"

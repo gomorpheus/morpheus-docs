@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../provisioning/requirements.rst:2
 msgid "Requirements"
-msgstr ""
+msgstr "Anforderungen"
 
 #: ../../provisioning/requirements.rst:4
 msgid ""
@@ -34,35 +34,35 @@ msgid ""
 "governance, auditing, monitoring, backups, costs, sizing and on and on. "
 "Point being there is a lot that goes on when spinning up an instance or "
 "app, and to make the magic happen a few requirements need to be met."
-msgstr ""
+msgstr "Das Provisionieren von Instanzen und Apps umfasst typischerweise viele Schritte über das Starten einer Workload hinaus. |morpheus| ist darauf ausgerichtet, alles zu automatisieren, was für den vollständigen Betrieb Ihrer Anwendung erforderlich ist, einschließlich Netzwerk, Datenspeicher, Hostnames, Domains, DNS, Lizenzen, Skripts/Automatisierung, Skalierung, Load Balancer, Sicherheit, Zugänglichkeit, Governance, Auditing, Monitoring, Sicherungen, Kosten, Dimensionierung und vieles mehr. Der Punkt ist: Beim Starten einer Instanz oder App passiert viel, und damit die Magie funktioniert, müssen einige Anforderungen erfüllt sein."
 
 #: ../../provisioning/requirements.rst:6 ../../provisioning/requirements.rst:50
 #: ../../provisioning/requirements.rst:84
 #: ../../provisioning/requirements.rst:119
 #: ../../provisioning/requirements.rst:121
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../provisioning/requirements.rst:6
 msgid ""
 "By default, Agent Installation is enabled when provisioning unless "
 "deselected on the Virtual Images or `SKIP AGENT INSTALL` is selected when"
 " provisioning."
-msgstr ""
+msgstr "Standardmäßig ist die Agent-Installation bei der Provisionierung aktiviert, sofern sie nicht auf den Virtual Images abgewählt oder `SKIP AGENT INSTALL` bei der Provisionierung ausgewählt wird."
 
 #: ../../provisioning/requirements.rst:9
 msgid "VM Provision Steps"
-msgstr ""
+msgstr "VM-Provisionierungsschritte"
 
 #: ../../provisioning/requirements.rst:11
 msgid ""
 "While an infinite number of steps can happen when provisioning an "
 "Instance or App using VM(s) in |morpheus|, the basic order is:"
-msgstr ""
+msgstr "Obwohl bei der Provisionierung einer Instanz oder App mit VM(s) in |morpheus| unendlich viele Schritte möglich sind, lautet die grundlegende Reihenfolge:"
 
 #: ../../provisioning/requirements.rst:13
 msgid "Look for Virtual Image"
-msgstr ""
+msgstr "Virtual Image suchen"
 
 #: ../../provisioning/requirements.rst:15
 msgid ""
@@ -70,11 +70,11 @@ msgid ""
 "selected during provisioning is already available in the source Cloud. If"
 " not and it is an Uploaded/Local Image, |morpheus| will attempt to upload"
 " the Image to the target Cloud."
-msgstr ""
+msgstr "|morpheus| prüft, ob das auf dem Node Type festgelegte oder bei der Provisionierung ausgewählte Virtual Image bereits in der Quell-Cloud verfügbar ist. Falls nicht und es sich um ein hochgeladenes/lokales Image handelt, versucht |morpheus|, das Image in die Ziel-Cloud hochzuladen."
 
 #: ../../provisioning/requirements.rst:17
 msgid "**Upload Image**"
-msgstr ""
+msgstr "**Image hochladen**"
 
 #: ../../provisioning/requirements.rst:19
 msgid ""
@@ -83,7 +83,7 @@ msgid ""
 "valid for the target Cloud, the Image meets the target cloud upload "
 "requirements, and |morpheus| has network access and permissions to upload"
 " the image."
-msgstr ""
+msgstr "Für hochgeladene/lokale Images, die in der Ziel-Cloud nicht vorhanden sind, muss |morpheus| das Image hochladen. Stellen Sie sicher, dass das Virtual Image für die Ziel-Cloud gültig ist, dass das Image die Upload-Anforderungen der Ziel-Cloud erfüllt und dass |morpheus| Netzwerkzugriff und Berechtigungen zum Hochladen des Images hat."
 
 #: ../../provisioning/requirements.rst:21
 #: ../../provisioning/requirements.rst:27
@@ -94,7 +94,7 @@ msgstr ""
 #: ../../provisioning/requirements.rst:172
 #: ../../provisioning/requirements.rst:196
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../provisioning/requirements.rst:21
 #: ../../provisioning/requirements.rst:130
@@ -103,82 +103,82 @@ msgid ""
 "directly to the target ESXi host, NOT through the vCenter server. Ensure "
 "the |morpheus| Appliance(s) can resolve target ESXi hostnames and connect"
 " on port 443 for successful vmdk/ova uploads."
-msgstr ""
+msgstr "Beim Hochladen eines Images in eine VMware-Cloud wird das Virtual Image direkt auf den Ziel-ESXi-Host kopiert, NICHT über den vCenter-Server. Stellen Sie sicher, dass die |morpheus|-Appliance(s) Ziel-ESXi-Hostnames auflösen und Port 443 verbinden können, damit vmdk/ova-Uploads erfolgreich sind."
 
 #: ../../provisioning/requirements.rst:23
 msgid "**Clone Image**"
-msgstr ""
+msgstr "**Image klonen**"
 
 #: ../../provisioning/requirements.rst:25
 msgid ""
 "Once the Image is confirmed available in the target cloud, |morpheus| "
 "will clone the Image to the target Datastore."
-msgstr ""
+msgstr "Sobald bestätigt ist, dass das Image in der Ziel-Cloud verfügbar ist, klont |morpheus| das Image in den Ziel-Datenspeicher."
 
 #: ../../provisioning/requirements.rst:27
 msgid "The target host must have access to the target Datastore of the Image"
-msgstr ""
+msgstr "Der Zielhost muss Zugriff auf den Ziel-Datenspeicher des Images haben"
 
 #: ../../provisioning/requirements.rst:29
 msgid "Reconfigure Image"
-msgstr ""
+msgstr "Image neu konfigurieren"
 
 #: ../../provisioning/requirements.rst:31
 msgid ""
 "Once cloned, |morpheus| will resize the Image based off provisioning "
 "parameters"
-msgstr ""
+msgstr "Nach dem Klonen passt |morpheus| die Größe des Images anhand der Provisionierungsparameter an"
 
 #: ../../provisioning/requirements.rst:33
 msgid "Cloud-init (if enabled)"
-msgstr ""
+msgstr "Cloud-init (falls aktiviert)"
 
 #: ../../provisioning/requirements.rst:34
 msgid "Attached cloud-init iso"
-msgstr ""
+msgstr "Angehängtes cloud-init-ISO"
 
 #: ../../provisioning/requirements.rst:35
 msgid ""
 "When using cloud-init, |morpheus| will attach a tiny metadata iso to the "
 "new VM. Network, Machine, User and any other cloud-init metadata will be "
 "sourced from this iso."
-msgstr ""
+msgstr "Bei Verwendung von cloud-init hängt |morpheus| ein kleines Metadaten-ISO an die neue VM an. Netzwerk-, Maschinen-, Benutzer- und alle anderen cloud-init-Metadaten werden von diesem ISO bezogen."
 
 #: ../../provisioning/requirements.rst:36
 msgid "VM Tools"
-msgstr ""
+msgstr "VM Tools"
 
 #: ../../provisioning/requirements.rst:37
 msgid ""
 "|morpheus| will run Guest Customizations via VMware VM Tools, including "
 "network config when assigning static IP's."
-msgstr ""
+msgstr "|morpheus| führt Guest Customizations über VMware VM Tools aus, einschließlich der Netzwerkkonfiguration bei der Zuweisung statischer IPs."
 
 #: ../../provisioning/requirements.rst:38
 msgid "Wait for Power On status and Network info"
-msgstr ""
+msgstr "Auf Power-On-Status und Netzwerkinformationen warten"
 
 #: ../../provisioning/requirements.rst:40
 msgid ""
 "|morpheus| will wait to hear back from the target cloud/hypervisor that "
 "the VM has successfully started and has an IP address."
-msgstr ""
+msgstr "|morpheus| wartet darauf, vom Ziel-Cloud/Hypervisor zu erfahren, dass die VM erfolgreich gestartet wurde und über eine IP-Adresse verfügt."
 
 #: ../../provisioning/requirements.rst:44
 msgid ""
 "If ``VM TOOLS INSTALLED?`` is NOT checked on the source Virtual Image "
 "configuration, |morpheus| will skip waiting for network."
-msgstr ""
+msgstr "Wenn ``VM TOOLS INSTALLED?`` auf der Quell-Virtual-Image-Konfiguration NICHT aktiviert ist, überspringt |morpheus| das Warten auf das Netzwerk."
 
 #: ../../provisioning/requirements.rst:46
 msgid "Finalize"
-msgstr ""
+msgstr "Abschließen"
 
 #: ../../provisioning/requirements.rst:48
 msgid ""
 "By default this will include Agent Installation and any post-provision "
 "scripts or workflows or integration automation steps."
-msgstr ""
+msgstr "Standardmäßig umfasst dies die Agent-Installation sowie alle Post-Provision-Skripts, Workflows oder Integrationsautomatisierungsschritte."
 
 #: ../../provisioning/requirements.rst:50
 msgid ""
@@ -186,18 +186,18 @@ msgid ""
 "means the Agent cannot be installed or has not been heard back from. This"
 " will result in a `!` warning Instance status upon provisioning "
 "completion."
-msgstr ""
+msgstr "Wenn die VM für längere Zeit in finalize hängen bleibt, bedeutet dies typischerweise, dass der Agent nicht installiert werden kann oder keine Rückmeldung erhalten wurde. Dies führt bei Abschluss der Provisionierung zu einem `!`-Warnungsstatus der Instanz."
 
 #: ../../provisioning/requirements.rst:52
 msgid ""
 "If agent installation is not possible or desired, uncheck \"Install "
 "Agent\" on the source Virtual Image configuration or select \"Skip Agent "
 "Install\" during provisioning to speed up provisioning completion."
-msgstr ""
+msgstr "Wenn die Agent-Installation nicht möglich oder nicht gewünscht ist, deaktivieren Sie „Install Agent“ in der Quell-Virtual-Image-Konfiguration oder wählen Sie „Skip Agent Install“ bei der Provisionierung, um den Abschluss der Provisionierung zu beschleunigen."
 
 #: ../../provisioning/requirements.rst:55
 msgid "Virtual Images"
-msgstr ""
+msgstr "Virtual Images"
 
 #: ../../provisioning/requirements.rst:57
 msgid ""
@@ -206,11 +206,11 @@ msgid ""
 "VM is the Virtual Image. When provisioning a VM, |morpheus| will need to "
 "do a few things depending on the location of the Virtual Image and if "
 "agent install, console access, and script execution is desired."
-msgstr ""
+msgstr "Obwohl Container die Zukunft sind, ist die gängigste Provisionierungsmethode die Verwendung virtueller Maschinen, und der wichtigste Bestandteil der Provisionierung einer VM ist das Virtual Image. Beim Provisionieren einer VM muss |morpheus| je nach Speicherort des Virtual Images und ob Agent-Installation, Konsolenzugriff und Skriptausführung gewünscht sind, einige Dinge tun."
 
 #: ../../provisioning/requirements.rst:59
 msgid "Synced Images need to be properly configured"
-msgstr ""
+msgstr "Synchronisierte Images müssen richtig konfiguriert sein"
 
 #: ../../provisioning/requirements.rst:60
 msgid ""
@@ -220,11 +220,11 @@ msgid ""
 "configured. The Virtual Image is already at the target Cloud, but "
 "datastore selection, credentials, cloud-init settings, and networks and "
 "security settings on the Virtual Image can cause provisioning issues."
-msgstr ""
+msgstr "|morpheus| erfasst so viele Metadaten für synchronisierte Images wie möglich, aber je nach Cloud, Betriebssystem, Image-Konfiguration und Agent-Installationseinstellungen sind synchronisierte Virtual Images standardmäßig möglicherweise erst nach der Konfiguration bereit zur Provisionierung. Das Virtual Image befindet sich bereits in der Ziel-Cloud, aber Datenspeicherauswahl, Anmeldedaten, cloud-init-Einstellungen sowie Netzwerk- und Sicherheitseinstellungen am Virtual Image können zu Provisionierungsproblemen führen."
 
 #: ../../provisioning/requirements.rst:61
 msgid "Local/Uploaded Virtual Images"
-msgstr ""
+msgstr "Lokale/hochgeladene Virtual Images"
 
 #: ../../provisioning/requirements.rst:62
 msgid ""
@@ -235,11 +235,11 @@ msgid ""
 "provisioning a synced Virtual Image, copying an uploaded Virtual Image to"
 " the target Cloud is required and network and image configurations can "
 "cause upload failures, resulting in provisioning issues."
-msgstr ""
+msgstr "In |morpheus| hochgeladene Images werden während des Prozesses `Add Virtual Image` konfiguriert; in den meisten Szenarien muss |morpheus| das Virtual Image jedoch trotzdem beim ersten Provisionieren in die Ziel-Cloud auf den Ziel-Hypervisor/Cloud kopieren. Zusätzlich zu den Anforderungen für die Provisionierung eines synchronisierten Virtual Images ist das Kopieren eines hochgeladenen Virtual Images in die Ziel-Cloud erforderlich, und Netzwerk- sowie Image-Konfigurationen können Upload-Fehler verursachen, die zu Provisionierungsproblemen führen."
 
 #: ../../provisioning/requirements.rst:63
 msgid "Marketplace Images"
-msgstr ""
+msgstr "Marketplace Images"
 
 #: ../../provisioning/requirements.rst:64
 msgid ""
@@ -248,11 +248,11 @@ msgid ""
 "Node Types for custom Instance Types. Marketplace items provisioned/added"
 " to |morpheus| still fall upon the requirements of the target Cloud, such"
 " as matching the region with the Image and licensing."
-msgstr ""
+msgstr "AWS- und Azure-Marketplace-Images können mit den generischen Amazon- oder Azure-Instanztypen provisioniert oder als Virtual Images hinzugefügt und für benutzerdefinierte Instanztypen auf Node Types beschränkt werden. Marketplace-Elemente, die in |morpheus| provisioniert/hinzugefügt werden, unterliegen weiterhin den Anforderungen der Ziel-Cloud, z. B. der Übereinstimmung der Region mit dem Image und der Lizenzierung."
 
 #: ../../provisioning/requirements.rst:67
 msgid "Synced Images"
-msgstr ""
+msgstr "Synchronisierte Images"
 
 #: ../../provisioning/requirements.rst:69
 msgid ""
@@ -263,35 +263,35 @@ msgid ""
 "generic Instance Type, ie VMware, Amazon, Azure, Openstack etc Instance "
 "Types, or by creating custom Instance Types and selecting the Image on a "
 "Node Type."
-msgstr ""
+msgstr "Wenn eine Cloud zu |morpheus| hinzugefügt wird, werden alle verfügbaren Image-/Vorlagen-Datensätze aus dieser Cloud synchronisiert, unabhängig von den Inventory-Einstellungen der Cloud. Diese Image-Datensätze sind im Abschnitt Virtual Images verfügbar und können über den generischen Instanztyp der Ziel-Cloud provisioniert werden, z. B. VMware-, Amazon-, Azure-, OpenStack- usw. Instanztypen, oder durch Erstellen benutzerdefinierter Instanztypen und Auswahl des Images auf einem Node Type."
 
 #: ../../provisioning/requirements.rst:71
 msgid ""
 "Synced Virtual Images are just meta-data records in |morpheus| pointing "
 "to the Image in the target Cloud. The actual Image files are not "
 "copied/imported to |morpheus|."
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../provisioning/requirements.rst:73
 msgid ""
 "Before provisioning a synced Virtual Images, ensure the image is "
 "configured properly:"
-msgstr ""
+msgstr "Synchronisierte Virtual Images sind in |morpheus| lediglich Metadaten-Datensätze, die auf das Image in der Ziel-Cloud verweisen. Die eigentlichen Image-Dateien werden nicht nach |morpheus| kopiert/importiert."
 
 #: ../../provisioning/requirements.rst:75
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: ../../provisioning/requirements.rst:76
 msgid ""
 "Name of the Virtual Image in |morpheus|. This can be changed from the "
 "name of the Image, but editing will not change the name of the actual "
 "Image."
-msgstr ""
+msgstr "Name des Virtual Images in |morpheus|. Dieser kann vom Namen des Images abweichen, aber eine Bearbeitung ändert nicht den Namen des eigentlichen Images."
 
 #: ../../provisioning/requirements.rst:77
 msgid "Operating System"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: ../../provisioning/requirements.rst:78
 msgid ""
@@ -299,11 +299,11 @@ msgid ""
 "to have Operating System specified on the  Virtual Image, as |morpheus| "
 "will assign Linux as the Platform for all Images without Operating System"
 " specified."
-msgstr ""
+msgstr "Gibt Plattform und Betriebssystem des Images an. Für alle Windows-Images muss das Betriebssystem am Virtual Image angegeben werden, da |morpheus| Linux als Plattform für alle Images ohne angegebenes Betriebssystem zuweist."
 
 #: ../../provisioning/requirements.rst:79
 msgid "Minimum Memory"
-msgstr ""
+msgstr "Minimum Arbeitsspeicher"
 
 #: ../../provisioning/requirements.rst:80
 msgid ""
@@ -311,17 +311,17 @@ msgid ""
 "during provisioning. Service Plans that do not meet the Minimum Memory "
 "value set on the Virtual Image will not be provided as Service Plan "
 "choices."
-msgstr ""
+msgstr "Die Einstellung Minimum Memory filtert verfügbare Tarifoptionen während der Provisionierung. Tarife, die den am Virtual Image festgelegten Minimum-Memory-Wert nicht erfüllen, werden nicht als Tarifauswahl angeboten."
 
 #: ../../provisioning/requirements.rst:81
 msgid "Cloud Init Enabled?"
-msgstr ""
+msgstr "Cloud Init Enabled?"
 
 #: ../../provisioning/requirements.rst:82
 msgid ""
 "On by default, uncheck for any Image that does not have Cloud-Init or "
 "Cloudbase-Init installed."
-msgstr ""
+msgstr "Standardmäßig aktiviert; deaktivieren Sie dies für jedes Image, auf dem Cloud-Init oder Cloudbase-Init nicht installiert ist."
 
 #: ../../provisioning/requirements.rst:84
 #: ../../provisioning/requirements.rst:119
@@ -329,11 +329,11 @@ msgid ""
 "Provisioning a Virtual Image that has `Cloud Init Enabled?` checked on "
 "the Virtual Record in |morpheus| but does not have cloud-init installed "
 "will result in immediate provisioning failure."
-msgstr ""
+msgstr "Das Provisionieren eines Virtual Images, bei dem `Cloud Init Enabled?` am Virtual Record in |morpheus| aktiviert ist, auf dem cloud-init jedoch nicht installiert ist, führt zu einem sofortigen Provisionierungsfehler."
 
 #: ../../provisioning/requirements.rst:86
 msgid "Install Agent"
-msgstr ""
+msgstr "Install Agent"
 
 #: ../../provisioning/requirements.rst:87
 msgid ""
@@ -341,11 +341,11 @@ msgid ""
 "the loss of utilization statistics, logs, script execution, and "
 "monitoring. (Some utilization stats are collected for agent-less hosts "
 "and vm's from VMware and AWS clouds)."
-msgstr ""
+msgstr "Standardmäßig aktiviert; deaktivieren Sie dies, um die Agent-Installation zu überspringen. Beachten Sie, dass dadurch Auslastungsstatistiken, Protokolle, Skriptausführung und Monitoring entfallen. (Einige Auslastungsstatistiken werden für agentenlose Hosts und VMs aus VMware- und AWS-Clouds erfasst)."
 
 #: ../../provisioning/requirements.rst:88
 msgid "Username"
-msgstr ""
+msgstr "Benutzername"
 
 #: ../../provisioning/requirements.rst:89
 msgid ""
@@ -363,19 +363,19 @@ msgid ""
 "Cloudbase-init. |morpheus| recommends running Guest Customizations for "
 "all Windows Images, which is required when joining Domains as the SID "
 "will change."
-msgstr ""
+msgstr "Vorhandener Benutzername auf dem Image. Dies ist für die Authentifizierung erforderlich, es sei denn, |morpheus| kann Benutzerdaten, Cloud-Init, Cloudbase-Init oder Guest Customizations hinzufügen. Wenn Cloud-Init, Cloudbase-Init, Guest Customizations oder Nutanix Sysprep verwendet werden, werden Anmeldedaten in :menuselection:`Administration --> Settings --> Provisioning` und User Settings definiert. Wenn Anmeldedaten am Image definiert sind und Cloud-Init aktiviert ist, fügt |morpheus| diesen Benutzer während der Provisionierung hinzu; stellen Sie daher sicher, dass dieser Benutzer im Image noch nicht existiert (z. B. ``root``). Für Windows Guest Customizations setzt |morpheus| das Administrator-Kennwort auf den am Image definierten Wert, wenn der Benutzer Administrator definiert ist. Definieren Sie für Windows-Images keinen anderen Benutzer als Administrator, es sei denn, Sie verwenden Cloudbase-Init. |morpheus| empfiehlt, Guest Customizations für alle Windows-Images auszuführen, was beim Beitritt zu Domains erforderlich ist, da sich die SID ändert."
 
 #: ../../provisioning/requirements.rst:90
 msgid "Password"
-msgstr ""
+msgstr "Kennwort"
 
 #: ../../provisioning/requirements.rst:91
 msgid "Password for the Existing User on the image if Username is populated."
-msgstr ""
+msgstr "Kennwort für den vorhandenen Benutzer auf dem Image, wenn Benutzername ausgefüllt ist."
 
 #: ../../provisioning/requirements.rst:92
 msgid "Storage Provider"
-msgstr ""
+msgstr "Storage Provider"
 
 #: ../../provisioning/requirements.rst:93
 msgid ""
@@ -383,61 +383,61 @@ msgid ""
 "Storage location is /var/opt/morpheus/morpheus-ui/VMs. Additional Storage"
 " Providers can be configured in :menuselection:`Infrastructure --> "
 "Storage`."
-msgstr ""
+msgstr "Speicherort, an dem das Virtual Image gespeichert wird. Der Standardspeicherort für Virtual Images ist /var/opt/morpheus/morpheus-ui/VMs. Zusätzliche Storage Provider können in :menuselection:`Infrastructure --> Storage` konfiguriert werden."
 
 #: ../../provisioning/requirements.rst:94
 msgid "Cloud-Init User Data"
-msgstr ""
+msgstr "Cloud-Init User Data"
 
 #: ../../provisioning/requirements.rst:95
 msgid ""
 "Accepts what would go in runcmd and can assume bash syntax. Example use: "
 "Script to configure satellite registration at provision time."
-msgstr ""
+msgstr "Akzeptiert, was in runcmd stehen würde, und kann Bash-Syntax voraussetzen. Beispielverwendung: Skript zur Konfiguration der Satellite-Registrierung zum Zeitpunkt der Provisionierung."
 
 #: ../../provisioning/requirements.rst:96
 msgid "Permissions"
-msgstr ""
+msgstr "Berechtigungen"
 
 #: ../../provisioning/requirements.rst:97
 msgid ""
 "Set Tenant permissions in a multi-tenant |morpheus| environment. No "
 "impact on single-tenant environments."
-msgstr ""
+msgstr "Legen Sie Mandantenberechtigungen in einer mandantenfähigen |morpheus|-Umgebung fest. Keine Auswirkungen auf Einzelmandanten-Umgebungen."
 
 #: ../../provisioning/requirements.rst:98
 msgid "Visibility"
-msgstr ""
+msgstr "Sichtbarkeit"
 
 #: ../../provisioning/requirements.rst:99
 msgid "Private"
-msgstr ""
+msgstr "Privat"
 
 #: ../../provisioning/requirements.rst:100
 msgid "Image is only available in the specified Tenants below."
-msgstr ""
+msgstr "Das Image ist nur in den unten angegebenen Mandanten verfügbar."
 
 #: ../../provisioning/requirements.rst:101
 msgid "Public"
-msgstr ""
+msgstr "Öffentlich"
 
 #: ../../provisioning/requirements.rst:102
 msgid "Image is available to all Tenants."
-msgstr ""
+msgstr "Das Image ist für alle Mandanten verfügbar."
 
 #: ../../provisioning/requirements.rst:103
 msgid "Tenant"
-msgstr ""
+msgstr "Mandant"
 
 #: ../../provisioning/requirements.rst:104
 msgid ""
 "If Visibility is set to Private, specify Tenants the Image will be "
 "available for."
-msgstr ""
+msgstr "Wenn die Sichtbarkeit auf Privat gesetzt ist, geben Sie die Mandanten an, für die das Image verfügbar sein soll."
 
 #: ../../provisioning/requirements.rst:106
 msgid "Auto Join Domain?"
-msgstr ""
+msgstr "Auto Join Domain?"
 
 #: ../../provisioning/requirements.rst:107
 msgid ""
@@ -445,32 +445,32 @@ msgid ""
 " domains (Windows only, domain controller must be configured in "
 ":menuselection:`Infrastructure --> Network` and the configured domain set"
 " on the provisioned to Cloud or Network)."
-msgstr ""
+msgstr "Aktivieren Sie dies, damit mit diesem Image provisionierte Instanzen konfigurierte Domains automatisch beitreten (nur Windows; der Domänencontroller muss in :menuselection:`Infrastructure --> Network` konfiguriert und die konfigurierte Domain auf der Ziel-Cloud oder dem Netzwerk festgelegt sein)."
 
 #: ../../provisioning/requirements.rst:108
 msgid "VirtIO Drivers Loaded?"
-msgstr ""
+msgstr "VirtIO Drivers Loaded?"
 
 #: ../../provisioning/requirements.rst:109
 msgid ""
 "Enable if VirtIO Drivers are installed on the image for provisioning to "
 "KVM based Hypervisors."
-msgstr ""
+msgstr "Aktivieren Sie dies, wenn VirtIO-Treiber auf dem Image für die Provisionierung auf KVM-basierten Hypervisors installiert sind."
 
 #: ../../provisioning/requirements.rst:110
 msgid "VM Tools Installed?"
-msgstr ""
+msgstr "VM Tools Installed?"
 
 #: ../../provisioning/requirements.rst:111
 msgid ""
 "On by default, uncheck if VMware Tools (including OpenVMTools) are not "
 "installed on the Virtual Image. |morpheus| will skip network wait during "
 "provisioning when deselected."
-msgstr ""
+msgstr "Standardmäßig aktiviert; deaktivieren Sie dies, wenn VMware Tools (einschließlich OpenVMTools) nicht auf dem Virtual Image installiert sind. |morpheus| überspringt das Warten auf das Netzwerk während der Provisionierung, wenn dies abgewählt ist."
 
 #: ../../provisioning/requirements.rst:112
 msgid "Force Guest Customization?"
-msgstr ""
+msgstr "Force Guest Customization?"
 
 #: ../../provisioning/requirements.rst:113
 msgid ""
@@ -479,28 +479,28 @@ msgid ""
 "would not run by default. This is required for host/computer name "
 "definitions. domain joining, licenses and user definitions when using "
 "DHCP."
-msgstr ""
+msgstr "Nur VMware; erzwingt die Ausführung von Guest Customizations während der Provisionierung, typischerweise bei der Provisionierung in ein DHCP-Netzwerk, in dem Guest Customizations standardmäßig nicht ausgeführt würden. Dies ist für Host-/Computernamen-Definitionen, Domain-Beitritt, Lizenzen und Benutzerdefinitionen bei Verwendung von DHCP erforderlich."
 
 #: ../../provisioning/requirements.rst:114
 msgid "Trial Version"
-msgstr ""
+msgstr "Trial Version"
 
 #: ../../provisioning/requirements.rst:115
 msgid ""
 "Enable to automatically re-arm the expiration on Windows Trial Images "
 "during provisioning."
-msgstr ""
+msgstr "Aktivieren Sie dies, um die Ablaufzeit von Windows-Trial-Images während der Provisionierung automatisch zu verlängern."
 
 #: ../../provisioning/requirements.rst:116
 msgid "Enabled Sysprep?"
-msgstr ""
+msgstr "Enabled Sysprep?"
 
 #: ../../provisioning/requirements.rst:117
 msgid ""
 "Applicable to Nutanix Only. Enable if the Windows Image has been "
 "sysprepped. If enabled, |morpheus| will inject Unattend.xml through the "
 "Nutanix API (v3+ only)"
-msgstr ""
+msgstr "Nur für Nutanix zutreffend. Aktivieren Sie dies, wenn das Windows-Image sysprep't wurde. Wenn aktiviert, injiziert |morpheus| Unattend.xml über die Nutanix-API (nur v3+)."
 
 #: ../../provisioning/requirements.rst:121
 msgid ""
@@ -508,36 +508,36 @@ msgid ""
 "must be defined on the Virtual Image record for Agent Install, Domain "
 "joining, licensing, script execution and other automation, and SSH or RDP"
 " Console access."
-msgstr ""
+msgstr "Für Linux-Images ohne cloud-Init müssen ein vorhandener Benutzername und ein Kennwort am Virtual-Image-Datensatz definiert sein für Agent-Installation, Domain-Beitritt, Lizenzierung, Skriptausführung und andere Automatisierung sowie SSH- oder RDP-Konsolenzugriff."
 
 #: ../../provisioning/requirements.rst:125
 msgid "Local Virtual Images"
-msgstr ""
+msgstr "Lokale Virtual Images"
 
 #: ../../provisioning/requirements.rst:126
 msgid ""
 "A Local Virtual Image means it has been uploaded to |morpheus|.  To "
 "provision, |morpheus| will need to upload the Image to the target Cloud "
 "upon first provision."
-msgstr ""
+msgstr "Ein lokales Virtual Image bedeutet, dass es nach |morpheus| hochgeladen wurde. Zur Provisionierung muss |morpheus| das Image beim ersten Provisionieren in die Ziel-Cloud hochladen."
 
 #: ../../provisioning/requirements.rst:128
 msgid ""
 "Ensure the Virtual Image is valid for the target Cloud, the Image meets "
 "the target cloud upload requirements, and |morpheus| has network access "
 "and permissions to upload the image."
-msgstr ""
+msgstr "Stellen Sie sicher, dass das Virtual Image für die Ziel-Cloud gültig ist, dass das Image die Upload-Anforderungen der Ziel-Cloud erfüllt und dass |morpheus| Netzwerkzugriff und Berechtigungen zum Hochladen des Images hat."
 
 #: ../../provisioning/requirements.rst:132
 msgid ""
 "Once a Local Virtual Image has been uploaded to a Cloud, subsequent "
 "provisions will use the Image local to the cloud instead of uploading "
 "again as long as the copied image is still available in the source Cloud."
-msgstr ""
+msgstr "Sobald ein lokales Virtual Image in eine Cloud hochgeladen wurde, verwenden nachfolgende Provisionierungen das Image lokal in der Cloud statt erneut hochzuladen, solange das kopierte Image in der Quell-Cloud noch verfügbar ist."
 
 #: ../../provisioning/requirements.rst:135
 msgid "Agent Install"
-msgstr ""
+msgstr "Agent-Installation"
 
 #: ../../provisioning/requirements.rst:137
 msgid ""
@@ -546,7 +546,7 @@ msgid ""
 "a vm instance is still in the provisioning phase long after the vm is up,"
 " the instance is unable to reach |morpheus|, or depending on agent "
 "install mode, |morpheus| is unable to reach the instance."
-msgstr ""
+msgstr "Beim Provisionieren einer Instanz gibt es Netzwerk- und Konfigurationsanforderungen, um den Morpheus-Agent erfolgreich zu installieren. Wenn eine VM-Instanz lange nach dem Hochfahren der VM noch in der Provisionierungsphase steckt, kann die Instanz |morpheus| typischerweise nicht erreichen, oder je nach Agent-Installationsmodus kann |morpheus| die Instanz nicht erreichen."
 
 #: ../../provisioning/requirements.rst:139
 msgid ""
@@ -555,7 +555,7 @@ msgid ""
 "|AdmSet| over both 443 and 80. When an instance is provisioned from "
 "|morpheus|, it must be able to reach the |morpheus| appliance via the "
 "appliance_url or the Agent will not be installed."
-msgstr ""
+msgstr "Der häufigste Grund für fehlgeschlagene Agent-Installationen ist, dass die provisionierte Instanz die |morpheus|-Appliance über die in |AdmSet| festgelegte appliance_url weder über Port 443 noch über Port 80 erreichen kann. Wenn eine Instanz aus |morpheus| provisioniert wird, muss sie die |morpheus|-Appliance über die appliance_url erreichen können, sonst wird der Agent nicht installiert."
 
 #: ../../provisioning/requirements.rst:141
 msgid ".. image:: /images/agent-7c9a2.png"
@@ -568,69 +568,69 @@ msgid ""
 "configuration pane when creating or editing a cloud. When this field is "
 "populated, it will override the main appliance url for anything "
 "provisioned into that cloud."
-msgstr ""
+msgstr "Zusätzlich zur Haupt-appliance_url in |AdmSet| können weitere appliance_urls pro Cloud in den Advanced Options des Cloud-Konfigurationsbereichs beim Erstellen oder Bearbeiten einer Cloud festgelegt werden. Wenn dieses Feld ausgefüllt ist, überschreibt es die Haupt-Appliance-URL für alles, was in dieser Cloud provisioniert wird."
 
 #: ../../provisioning/requirements.rst:147
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../provisioning/requirements.rst:147
 msgid ""
 "The |morpheus| UI current log, located at /var/log/morpheus/morpheus-"
 "ui/current, is very helpful when troubleshooting agent installations."
-msgstr ""
+msgstr "Das aktuelle |morpheus|-UI-Protokoll unter /var/log/morpheus/morpheus-ui/current ist sehr hilfreich bei der Fehlerbehebung von Agent-Installationen."
 
 #: ../../provisioning/requirements.rst:150
 msgid "Agent Install Modes"
-msgstr ""
+msgstr "Agent-Installationsmodi"
 
 #: ../../provisioning/requirements.rst:152
 msgid "There are 3 Agent install modes:"
-msgstr ""
+msgstr "Es gibt 3 Agent-Installationsmodi:"
 
 #: ../../provisioning/requirements.rst:154
 msgid "ssh/winrm"
-msgstr ""
+msgstr "ssh/winrm"
 
 #: ../../provisioning/requirements.rst:155
 msgid "VMware Tools"
-msgstr ""
+msgstr "VMware Tools"
 
 #: ../../provisioning/requirements.rst:156
 msgid "cloud-init"
-msgstr ""
+msgstr "cloud-init"
 
 #: ../../provisioning/requirements.rst:159
 msgid "For All Agent Install modes"
-msgstr ""
+msgstr "Für alle Agent-Installationsmodi"
 
 #: ../../provisioning/requirements.rst:161
 msgid ""
 "When an instance is provisioned and the agent does not install, verify "
 "the following for any agent install mode:"
-msgstr ""
+msgstr "Wenn eine Instanz provisioniert wird und der Agent nicht installiert wird, überprüfen Sie Folgendes für jeden Agent-Installationsmodus:"
 
 #: ../../provisioning/requirements.rst:163
 msgid ""
 "The |morpheus| appliance_url (|AdmSet|) is both reachable and resolvable "
 "from the provisioned node."
-msgstr ""
+msgstr "Die |morpheus|-appliance_url (|AdmSet|) ist von dem provisionierten Knoten aus sowohl erreichbar als auch auflösbar."
 
 #: ../../provisioning/requirements.rst:164
 msgid "The appliance_url begins with to ``https://``, not ``http://``."
-msgstr ""
+msgstr "Die appliance_url beginnt mit ``https://``, nicht mit ``http://``."
 
 #: ../../provisioning/requirements.rst:166
 msgid ""
 "Be sure to use ``https://`` even when using an IP address for the "
 "appliance."
-msgstr ""
+msgstr "Verwenden Sie ``https://`` auch dann, wenn Sie eine IP-Adresse für die Appliance verwenden."
 
 #: ../../provisioning/requirements.rst:168
 msgid ""
 "Inbound connectivity access to the |morpheus| Appliance from provisioned "
 "VM's and container hosts on port 443 (needed for agent communication)"
-msgstr ""
+msgstr "Eingehende Konnektivität zur |morpheus|-Appliance von provisionierten VMs und Container-Hosts auf Port 443 (für die Agent-Kommunikation erforderlich)"
 
 #: ../../provisioning/requirements.rst:170
 msgid ""
@@ -638,12 +638,12 @@ msgid ""
 "credentials entered. These can be entered/edited in the "
 ":menuselection:`Library --> Virtual Images` section but clicking the "
 "Actions dropdown of an image and selecting Edit."
-msgstr ""
+msgstr "Private (nicht von Morpheus bereitgestellte) VM-Images/Vorlagen müssen mit Anmeldedaten versehen sein. Diese können im Abschnitt :menuselection:`Library --> Virtual Images` eingegeben/bearbeitet werden, indem Sie das Actions-Dropdown eines Images öffnen und Edit auswählen."
 
 #: ../../provisioning/requirements.rst:172
 #: ../../provisioning/requirements.rst:196
 msgid "Administrator user is required for Windows agent install."
-msgstr ""
+msgstr "Für die Windows-Agent-Installation ist der Benutzer Administrator erforderlich."
 
 #: ../../provisioning/requirements.rst:174
 msgid ""
@@ -652,26 +652,26 @@ msgid ""
 "Network Type: Static in the Advanced section during provisioning. IP "
 "Pools can also be created in the Infrastructure > Networks > IP Pools "
 "section and added to clouds network sections for IPAM."
-msgstr ""
+msgstr "Die Instanz hat keine IP-Adresse zugewiesen. In Szenarien ohne DHCP-Server müssen statische IP-Informationen eingegeben werden, indem im Advanced-Bereich während der Provisionierung Network Type: Static ausgewählt wird. IP-Pools können auch im Abschnitt Infrastructure > Networks > IP Pools erstellt und den Netzwerken von Clouds für IPAM hinzugefügt werden."
 
 #: ../../provisioning/requirements.rst:176
 msgid ""
 "DNS is not configured and the node cannot resolve the appliance. If DNS "
 "cannot be configured, the IP address of the |morpheus| appliance can be "
 "used as the main or cloud appliance."
-msgstr ""
+msgstr "DNS ist nicht konfiguriert und der Knoten kann die Appliance nicht auflösen. Wenn DNS nicht konfiguriert werden kann, kann die IP-Adresse der |morpheus|-Appliance als Haupt- oder Cloud-Appliance verwendet werden."
 
 #: ../../provisioning/requirements.rst:179
 msgid "SSH/Winrm"
-msgstr ""
+msgstr "SSH/Winrm"
 
 #: ../../provisioning/requirements.rst:182
 msgid "Linux Agent"
-msgstr ""
+msgstr "Linux Agent"
 
 #: ../../provisioning/requirements.rst:184
 msgid "Port 22 is open for Linux images, and SSH is enabled"
-msgstr ""
+msgstr "Port 22 ist für Linux-Images geöffnet und SSH ist aktiviert"
 
 #: ../../provisioning/requirements.rst:185
 #: ../../provisioning/requirements.rst:194
@@ -679,7 +679,7 @@ msgid ""
 "Credentials have been entered on the image if using custom or synced "
 "image. Credentials can be entered on images in the "
 ":menuselection:`Library --> Virtual Images` section."
-msgstr ""
+msgstr "Anmeldedaten wurden am Image eingegeben, wenn ein benutzerdefiniertes oder synchronisiertes Image verwendet wird. Anmeldedaten können an Images im Abschnitt :menuselection:`Library --> Virtual Images` eingegeben werden."
 
 #: ../../provisioning/requirements.rst:187
 msgid ".. image:: /images/provisioning/agent_ssh.gif"
@@ -687,19 +687,19 @@ msgstr ""
 
 #: ../../provisioning/requirements.rst:191
 msgid "Windows Agent"
-msgstr ""
+msgstr "Windows Agent"
 
 #: ../../provisioning/requirements.rst:193
 msgid "Port 5985 must be open and WinRM enabled for Windows images."
-msgstr ""
+msgstr "Port 5985 muss geöffnet und WinRM für Windows-Images aktiviert sein."
 
 #: ../../provisioning/requirements.rst:199
 msgid "VMware tools (vmtools) rpc mode"
-msgstr ""
+msgstr "VMware tools (vmtools) rpc mode"
 
 #: ../../provisioning/requirements.rst:201
 msgid "VMware tools is installed on the template(s)"
-msgstr ""
+msgstr "VMware Tools ist auf der/den Vorlage(n) installiert"
 
 #: ../../provisioning/requirements.rst:202
 msgid ""
@@ -707,21 +707,21 @@ msgid ""
 "image when Cloud-init or Guest Customizations or Sysprep for Windows are "
 "not used. Credentials can be entered on Images in the "
 ":menuselection:`Library --> Virtual Images` section."
-msgstr ""
+msgstr "Anmeldedaten wurden am Image eingegeben, wenn ein hochgeladenes oder synchronisiertes Image verwendet wird und Cloud-Init oder Guest Customizations oder Sysprep für Windows nicht verwendet werden. Anmeldedaten können an Images im Abschnitt :menuselection:`Library --> Virtual Images` eingegeben werden."
 
 #: ../../provisioning/requirements.rst:205
 msgid "Cloud-Init agent install mode"
-msgstr ""
+msgstr "Cloud-Init-Agent-Installationsmodus"
 
 #: ../../provisioning/requirements.rst:207
 msgid ""
 "Cloud-Init is configured in :menuselection:`Administration --> Settings "
 "--> Provisioning` section"
-msgstr ""
+msgstr "Cloud-Init ist im Abschnitt :menuselection:`Administration --> Settings --> Provisioning` konfiguriert"
 
 #: ../../provisioning/requirements.rst:208
 msgid ""
 "Provisioned image/blueprint has Cloud-Init (linux) or Cloudbase-Init "
 "(windows) installed"
-msgstr ""
+msgstr "Das provisionierte Image/Blueprint hat Cloud-Init (Linux) oder Cloudbase-Init (Windows) installiert"
 

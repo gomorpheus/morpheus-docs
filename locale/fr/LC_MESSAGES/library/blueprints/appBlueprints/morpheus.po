@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:2
 msgid "|morpheus| Blueprints"
-msgstr ""
+msgstr "Utilisateur disposant de privilèges sudo"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 " click provisioning. Blueprints can be built within the ``Builder`` "
 "section or by code in the ``Raw`` section. Blueprints can also be "
 "exported as YAML or JSON and created with the |morpheus| API and CLI."
-msgstr ""
+msgstr "SSH PASSWORD / KEY"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:6
 msgid ""
@@ -49,11 +49,11 @@ msgid ""
 "For Example, ARM is locked into Azure, while CloudFormation is locked "
 "into AWS. Even Terraform does not allow a tf file to expand its bounds "
 "beyond a specific provider type."
-msgstr ""
+msgstr "Identifiants d'authentification"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:9
 msgid "Basic Blueprint Structure"
-msgstr ""
+msgstr "|morpheus| se connectera, installera l'agent et commencera à gérer l'hôte"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:11
 msgid ""
@@ -66,7 +66,7 @@ msgid ""
 "and a ``Database`` tier. These tiers can also be marked as connected such"
 " that network communication rules can appropriately be defined. A basic 2"
 " Tier blueprint skeleton might look something like this:"
-msgstr ""
+msgstr "Types d'instance"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:13
 msgid ""
@@ -83,7 +83,7 @@ msgid ""
 "    tier:\n"
 "      bootOrder: 0\n"
 "    instances:"
-msgstr ""
+msgstr "MVM Cloud prend en charge deux types d'instance :"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:30
 #, python-brace-format
@@ -95,11 +95,11 @@ msgid ""
 " the connected tiers by tier name. A Boot Order can also optionally be "
 "defined under a nested ``{\"tier\": {\"bootOrder\": 1}}`` object "
 "structure."
-msgstr ""
+msgstr "**KVM** (code : ``kvm``) — Machine virtuelle KVM standard"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:33
 msgid "Configuration Scopes"
-msgstr ""
+msgstr "**HVM** (code : ``mvm``) — Machine virtuelle haute performance optimisée pour l'hyperviseur HVM Morpheus"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:35
 msgid ""
@@ -107,11 +107,11 @@ msgid ""
 "configuration scoping. This allows properties to be overridden based on "
 "the apps target environment or even target group and cloud. For example. "
 "Maybe we want to use a larger plan size in production vs. development"
-msgstr ""
+msgstr "Les deux utilisent le même ``kvmContainerService`` sous-jacent pour le provisionnement."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:37
 msgid "An example of that can be done using \"environments\" overrides."
-msgstr ""
+msgstr "Images virtuelles"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:39
 msgid ""
@@ -142,7 +142,7 @@ msgid ""
 "                   AWS Cali:\n"
 "                     plan:\n"
 "                       code: container-256"
-msgstr ""
+msgstr "Le provisionnement MVM/HVM prend en charge les images virtuelles QCOW2 et RAW. Une image QCOW2 multi-disques nécessite un fichier QCOW2 par disque et un fichier nommé ``metadata.json`` sur la même image virtuelle. Le manifeste associe les noms de fichiers aux capacités de disque, aux noms de périphériques invités, à l'ordre et au disque de démarrage. Téléversez les fichiers QCOW2 avant le manifeste."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:70
 msgid ""
@@ -157,11 +157,11 @@ msgid ""
 "level of precedence. a cloud configuration in a group is the next level "
 "higher and finally an environment configuration in a group in a cloud is "
 "the highest level of scoped precedence."
-msgstr ""
+msgstr "Consultez :ref:`multi-disk-qcow2-images-for-hvm-kvm` pour le schéma du manifeste et la procédure de téléversement."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:74
 msgid "Getting Started"
-msgstr ""
+msgstr "Provisionnement"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:76
 msgid ""
@@ -169,7 +169,7 @@ msgid ""
 "configuration. Docker templates are less complex than virtual machine "
 "based templates so lets look at a Blueprint that deploys a single Nginx "
 "container to a target cloud:"
-msgstr ""
+msgstr "Pour provisionner une VM sur MVM Cloud :"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:78
 msgid ""
@@ -205,7 +205,7 @@ msgid ""
 "              - name: HTTP\n"
 "                port: 80\n"
 "                lb: HTTP"
-msgstr ""
+msgstr "Accédez à ``Provisioning > Instances``"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:114
 msgid ""
@@ -216,7 +216,7 @@ msgid ""
 "morpheus api doc. That is a useful resource to look at while building "
 "morpheus blueprints or by using the `morpheus-cli` which provides prompts"
 " for helping build custom morpheus app blueprints."
-msgstr ""
+msgstr "Choisissez le type d'instance KVM ou HVM"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:117
 msgid ".. image:: /images/provisioning/templates_301_1.png"
@@ -224,94 +224,94 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:120
 msgid "Creating Morpheus App Blueprints"
-msgstr ""
+msgstr "IMAGE"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:122
 msgid "Navigate to |LibBluApp|"
-msgstr ""
+msgstr "Sélectionnez parmi les images virtuelles disponibles (saisie assistée à partir des images synchronisées)"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:123
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "PLAN"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:124
 msgid "Enter a NAME for the Blueprint and select :guilabel:`NEXT`"
-msgstr ""
+msgstr "Sélectionnez un plan de service (configuration CPU, RAM, stockage)"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:125
 msgid "Optionally add a Description, Category, and Image for the Blueprint."
-msgstr ""
+msgstr "NETWORK"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:128
 msgid "Add Tiers"
-msgstr ""
+msgstr "Sélectionnez le réseau cible (pont, VLAN)"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:130
 msgid "In the STRUCTURE section, select + to add a Tier"
-msgstr ""
+msgstr "HOST"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:131
 msgid "Select or enter a Tier Name."
-msgstr ""
+msgstr "Épingler éventuellement à un hôte hyperviseur spécifique"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:132
 msgid ""
 "Select the Tier to set Boot Order, rename, or once multiple Tiers are "
 "added, connect the Tier to other Tiers."
-msgstr ""
+msgstr "VOLUMES"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:135
 msgid "Add Instances to Tiers"
-msgstr ""
+msgstr "Configurez le(s) disque(s) — taille, type, datastore"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:137
 msgid "In the STRUCTURE section, select + in a Tier to add an Instance"
-msgstr ""
+msgstr "Profils de stockage"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:138
 msgid "Select an Instance Type"
-msgstr ""
+msgstr "MVM Cloud prend en charge les profils de stockage qui définissent les caractéristiques de stockage :"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:139
 msgid ""
 "Optionally add a name for the Instance. Instances with blank names will "
 "automatically be named based off the App name."
-msgstr ""
+msgstr "Type de backend de stockage"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:141
 msgid "Tip"
-msgstr ""
+msgstr "Niveau de performance"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:141
 #, python-brace-format
 msgid ""
 "You can use the variable ``${app.name}`` in your instance naming "
 "convention to reference the name of the application you're deploying."
-msgstr ""
+msgstr "Vous pouvez utiliser la variable ``${app.name}`` dans votre convention de nommage d'instance pour référencer le nom de l'application que vous déployez."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:145
 msgid "Add Configurations to Instances"
-msgstr ""
+msgstr "Valeurs par défaut du type de volume"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:147
 msgid "In the STRUCTURE section, select + in an Instance to add a Configuration"
-msgstr ""
+msgstr "Les profils de stockage sont configurés via les données seed et peuvent être personnalisés pour des environnements spécifiques."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:148
 msgid "Select at least one option from Group, Cloud or Environment."
-msgstr ""
+msgstr "Réseau"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:149
 msgid "Select ``ADD CONFIG`` to create the configuration"
-msgstr ""
+msgstr "Le réseau MVM Cloud prend en charge :"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:150
 msgid "Populate the Configuration"
-msgstr ""
+msgstr "**Ponts Linux** — Interfaces de pont Linux standard"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:152
 msgid "Configurations can be fully partially or populated"
-msgstr ""
+msgstr "**Open vSwitch (OVS)** — Commutation virtuelle compatible SDN"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:153
 msgid ""
@@ -319,44 +319,44 @@ msgid ""
 "Field. Locking prevents the field from being editable when provisioning "
 "an App using the Blueprint while hidden fields are not revealed to the "
 "user at all"
-msgstr ""
+msgstr "**VLAN** — Étiquetage VLAN sur les ports pont/OVS"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:154
 msgid ""
 "ALLOW EXISTING INSTANCE will allow users to add existing Instances to the"
 " App when using the blueprint"
-msgstr ""
+msgstr "**Direct/passthrough** — SR-IOV et passthrough PCI pour un réseau haute performance"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:157
 msgid "Save"
-msgstr ""
+msgstr "MVM Cloud vs cluster MVM"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:159
 msgid ""
 "Once all desired Tiers, Instances and Configurations are added, select "
 "Save. The Blueprint will be created, can be edited after saving, and will"
 " available in the Apps section for provisioning."
-msgstr ""
+msgstr "Fonctionnalité"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:161
 msgid "Note"
-msgstr ""
+msgstr "Cluster MVM"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:161
 msgid ""
 "Blueprints are not provisioned when created. To provision a Blueprint, "
 "use |ProApp|."
-msgstr ""
+msgstr "Modèle de gestion"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:164
 msgid "RAW"
-msgstr ""
+msgstr "Intégration cloud (plate)"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:166
 msgid ""
 "Blueprints can be create, edited or Exported in the RAW section when "
 "creating or editing a blueprint."
-msgstr ""
+msgstr "Cluster (topologie maître/worker)"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:168
 msgid ".. image:: /images/provisioning/templates_301_2.png"
@@ -364,38 +364,38 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:170
 msgid "To Export a Blueprint as JSON or YAML:"
-msgstr ""
+msgstr "Infrastructure > Clouds"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:172
 msgid "Navigate to  |LibBluApp|"
-msgstr ""
+msgstr "Infrastructure > Clusters"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:173
 msgid "Edit an existing App by clicking on the pencil icon"
-msgstr ""
+msgstr "Haute disponibilité"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:174
 msgid "On the Edit Blueprint modal, select the Raw tab"
-msgstr ""
+msgstr "Manuel"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:175
 msgid "Select YAML or JSON from the dropdown in the top right"
-msgstr ""
+msgstr "HA intégrée, fencing"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:176
 msgid "Click the Export button"
-msgstr ""
+msgstr "Migration à chaud"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:177
 msgid ""
 "Select the configurations to include in the export by selecting or "
 "deselecting configurations as needed. Selected configurations will be "
 "highlighted"
-msgstr ""
+msgstr "Non disponible"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:178
 msgid "Click the DOWNLOAD CONFIGURATION button"
-msgstr ""
+msgstr "Prise en charge"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:179
 #, python-brace-format
@@ -403,10 +403,12 @@ msgid ""
 "The Blueprint export file will be downloaded to your computer as "
 "``{app_name}-config.json or {app_name}-config.yaml``"
 msgstr ""
+"Le fichier d'export du Blueprint sera téléchargé sur votre ordinateur sous "
+"``{app_name}-config.json or {app_name}-config.yaml``"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:182
 msgid "Provisioning"
-msgstr ""
+msgstr "Par hôte"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:184
 msgid ""
@@ -414,5 +416,5 @@ msgid ""
 "when creating an App. See the `App section "
 "<https://docs.morpheusdata.com/en/latest/provisioning/apps/apps.html>`_ "
 "of |morpheus| docs for more on provisioning Apps."
-msgstr ""
+msgstr "À l'échelle du cluster (Ceph, NFS)"
 

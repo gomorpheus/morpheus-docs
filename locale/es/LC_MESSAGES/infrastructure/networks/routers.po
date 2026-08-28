@@ -83,7 +83,7 @@ msgstr "Abrir Telekom Router"
 #: ../../infrastructure/networks/routers.rst:19
 #: ../../infrastructure/networks/routers.rst:35
 msgid "VM Network (OVS)"
-msgstr ""
+msgstr "Red de VM (OVS)"
 
 #: ../../infrastructure/networks/routers.rst:22
 msgid "Create New Router"
@@ -109,7 +109,7 @@ msgstr "Una vez completado, click :guilabel:`ADD NETWORK ROUTER`"
 
 #: ../../infrastructure/networks/routers.rst:30
 msgid "Common Fields"
-msgstr ""
+msgstr "Campos comunes"
 
 #: ../../infrastructure/networks/routers.rst:32
 msgid ""
@@ -118,7 +118,7 @@ msgid ""
 "to apply to another. Common provider fields include a router **Name**, "
 "enabled state, Cloud or network integration, and integration-specific "
 "location or gateway selections."
-msgstr ""
+msgstr "El primer campo es **Router Type**. Los campos restantes los proporciona ese proveedor de router, por lo que un campo mostrado para un tipo no debe asumirse aplicable a otro. Los campos comunes del proveedor incluyen un **Nombre** de router, estado habilitado, Nube o integración de red, y selecciones de ubicación o gateway específicas de la integración."
 
 #: ../../infrastructure/networks/routers.rst:37
 msgid ""
@@ -126,111 +126,111 @@ msgid ""
 "Despite appearing in the Routers list, it defines an Open vSwitch "
 "bridging domain for an HVM cluster; it does not provide gateway, NAT, "
 "firewall, DHCP, BGP, or static-routing functions."
-msgstr ""
+msgstr "**VM Network (OVS)** es la etiqueta de la interfaz para el tipo ``openVSwitch``. A pesar de aparecer en la lista de Routers, define un dominio de conmutación Open vSwitch para un clúster HVM; no proporciona funciones de gateway, NAT, firewall, DHCP, BGP ni enrutamiento estático."
 
 #: ../../infrastructure/networks/routers.rst:39
 msgid "VM Network (OVS) creation fields"
-msgstr ""
+msgstr "Campos de creación de VM Network (OVS)"
 
 #: ../../infrastructure/networks/routers.rst:43
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: ../../infrastructure/networks/routers.rst:44
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: ../../infrastructure/networks/routers.rst:45
 msgid "Name"
-msgstr ""
+msgstr "Nombre"
 
 #: ../../infrastructure/networks/routers.rst:46
 msgid "Required display name for the OVS network definition."
-msgstr ""
+msgstr "Nombre para mostrar requerido para la definición de red OVS."
 
 #: ../../infrastructure/networks/routers.rst:47
 msgid "Cluster"
-msgstr ""
+msgstr "Clúster"
 
 #: ../../infrastructure/networks/routers.rst:48
 msgid ""
 "Required HVM cluster on which the OVS bridge or overlay is configured. "
 "Only eligible clusters are offered."
-msgstr ""
+msgstr "Clúster HVM requerido en el que se configura el puente o overlay OVS. Solo se ofrecen clústeres elegibles."
 
 #: ../../infrastructure/networks/routers.rst:49
 msgid "Enable Overlay"
-msgstr ""
+msgstr "Habilitar overlay"
 
 #: ../../infrastructure/networks/routers.rst:50
 msgid ""
 "Selects an overlay network across cluster hosts. When clear, configure a "
 "bridge and port instead."
-msgstr ""
+msgstr "Selecciona una red overlay entre los hosts del clúster. Si está desmarcado, configure un puente y un puerto en su lugar."
 
 #: ../../infrastructure/networks/routers.rst:51
 msgid "OVS Bridge Name"
-msgstr ""
+msgstr "Nombre del puente OVS"
 
 #: ../../infrastructure/networks/routers.rst:52
 msgid ""
 "Existing bridge on the selected cluster for a non-overlay network. Select"
 " the create option to expose **New OVS Bridge Name**."
-msgstr ""
+msgstr "Puente existente en el clúster seleccionado para una red sin overlay. Seleccione la opción de creación para exponer **New OVS Bridge Name**."
 
 #: ../../infrastructure/networks/routers.rst:53
 msgid "New OVS Bridge Name"
-msgstr ""
+msgstr "Nuevo nombre del puente OVS"
 
 #: ../../infrastructure/networks/routers.rst:54
 msgid ""
 "Required name when creating a bridge rather than selecting an existing "
 "one."
-msgstr ""
+msgstr "Nombre requerido al crear un puente en lugar de seleccionar uno existente."
 
 #: ../../infrastructure/networks/routers.rst:55
 msgid "Port Name"
-msgstr ""
+msgstr "Nombre del puerto"
 
 #: ../../infrastructure/networks/routers.rst:56
 msgid ""
 "Required host network interface attached to a newly created non-overlay "
 "bridge."
-msgstr ""
+msgstr "Interfaz de red del host requerida conectada a un puente sin overlay recién creado."
 
 #: ../../infrastructure/networks/routers.rst:57
 msgid "Overlay Net Interface"
-msgstr ""
+msgstr "Interfaz de red overlay"
 
 #: ../../infrastructure/networks/routers.rst:58
 msgid ""
 "Required cluster interface carrying overlay traffic when **Enable "
 "Overlay** is selected."
-msgstr ""
+msgstr "Interfaz del clúster requerida que transporta tráfico overlay cuando se selecciona **Enable Overlay**."
 
 #: ../../infrastructure/networks/routers.rst:59
 msgid "Overlay Net Port"
-msgstr ""
+msgstr "Puerto de red overlay"
 
 #: ../../infrastructure/networks/routers.rst:60
 msgid "Required UDP overlay port. The current form defaults to ``4789``."
-msgstr ""
+msgstr "Puerto UDP overlay requerido. El formulario actual tiene ``4789`` como valor predeterminado."
 
 #: ../../infrastructure/networks/routers.rst:61
 msgid "Overlay ID"
-msgstr ""
+msgstr "ID de overlay"
 
 #: ../../infrastructure/networks/routers.rst:62
 msgid "Required overlay network identifier."
-msgstr ""
+msgstr "Identificador de red overlay requerido."
 
 #: ../../infrastructure/networks/routers.rst:63
 msgid "CIDR"
-msgstr ""
+msgstr "CIDR"
 
 #: ../../infrastructure/networks/routers.rst:64
 msgid "Required overlay address range in CIDR notation."
-msgstr ""
+msgstr "Rango de direcciones overlay requerido en notación CIDR."
 
 #: ../../infrastructure/networks/routers.rst:66
 msgid ""
@@ -238,11 +238,11 @@ msgid ""
 "expose provider-specific fields and capabilities; compare the form in the"
 " running release with the corresponding integration guide before creating"
 " or changing them."
-msgstr ""
+msgstr "El tipo OVS y estos campos tienen alcance de clúster HVM. Otros tipos de router exponen campos y capacidades específicos del proveedor; compare el formulario en la versión en ejecución con la guía de integración correspondiente antes de crearlos o modificarlos."
 
 #: ../../infrastructure/networks/routers.rst:69
 msgid "Provider-specific Router Fields"
-msgstr ""
+msgstr "Campos de router específicos del proveedor"
 
 #: ../../infrastructure/networks/routers.rst:71
 msgid ""
@@ -254,7 +254,7 @@ msgid ""
 "availability; a field or Router type absent from that form is not "
 "documented as supported for that provider. Do not reuse the VM Network "
 "(OVS) meanings for another Router type."
-msgstr ""
+msgstr "Los metadatos de documentación incluidos no establecen un inventario de campos independiente de la versión para los formularios de Router suministrados por NSX, OpenStack, Open Telekom y otras integraciones. Sus campos visibles dependen de la integración seleccionada, el inventario del proveedor, los permisos y la versión del producto. El formulario Create Router en ejecución es la referencia autorizada para la disponibilidad de campos; un campo o tipo de Router ausente de ese formulario no está documentado como compatible para ese proveedor. No reutilice los significados de VM Network (OVS) para otro tipo de Router."
 
 #: ../../infrastructure/networks/routers.rst:74
 msgid "Editing Existing Routers"

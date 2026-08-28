@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/docker.rst:2
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #: ../../integration_guides/Clouds/vmware/docker.rst:4
 msgid ""
@@ -33,7 +33,7 @@ msgid ""
 "Docker containers and even support multiple containers per Docker host. "
 "To do this a Docker Host must first be provisioned into VMware (multiple "
 "are needed when dealing with horizontal scaling scenarios)."
-msgstr ""
+msgstr "Até agora, este documento cobriu como adicionar a integração de nuvem VMware e habilitou aos usuários a capacidade de provisionar instâncias baseadas em máquina virtual por meio do catálogo `Add Instance` em `Provisioning`. Outro ótimo recurso fornecido pelo |morpheus| pronto para uso é a capacidade de usar containers Docker e até oferecer suporte a vários containers por host Docker. Para isso, um Docker Host deve primeiro ser provisionado no VMware (vários são necessários ao lidar com cenários de dimensionamento horizontal)."
 
 #: ../../integration_guides/Clouds/vmware/docker.rst:6
 msgid ""
@@ -48,7 +48,7 @@ msgid ""
 "right of the host marking it as available for use. In the event of a "
 "failure click into the relevant host that failed and an error explaining "
 "the failure will be displayed in red at the top."
-msgstr ""
+msgstr "Para provisionar um Docker Host, basta navegar até a aba Clusters da página de detalhes da Nuvem ou a seção Infrastructure > Clusters. A partir daí, clique em :guilabel:`+ ADD CLUSTER` para adicionar um VMware Docker Host. Este host aparecerá na aba Hosts ao lado de outros servidores ESXi que foram inventariados pela integração de nuvem VMware. O |morpheus| vê um host Docker como qualquer outro Hypervisor, com a ressalva de que ele é usado para executar imagens conteinerizadas em vez de virtualizadas. Depois que um Docker Host é provisionado com sucesso, uma marca de seleção verde aparecerá à direita do host, marcando-o como disponível para uso. Em caso de falha, clique no host relevante que falhou e um erro explicando a falha será exibido em vermelho na parte superior."
 
 #: ../../integration_guides/Clouds/vmware/docker.rst:8
 msgid ""
@@ -56,7 +56,7 @@ msgid ""
 "dedicated second disk is not required for every VMware Docker Host; "
 "configure the volumes required by the selected layout and your storage "
 "design."
-msgstr ""
+msgstr "O layout Docker selecionado pode expor um volume de dados configurável. Um segundo disco dedicado não é obrigatório para todos os VMware Docker Hosts; configure os volumes exigidos pelo layout selecionado e pelo seu design de armazenamento."
 
 #: ../../integration_guides/Clouds/vmware/docker.rst:10
 msgid ""
@@ -66,5 +66,5 @@ msgid ""
 "resolve and negotiate with the appliance than the agent installation will"
 " fail and provisioning instructions will not be able to be issued to the "
 "host."
-msgstr ""
+msgstr "Alguns cenários de erro comuns incluem conectividade de rede. Para que um Docker Host funcione corretamente, ele deve ser capaz de resolver a url do appliance |morpheus|, que pode ser configurada em |AdmSet|. Se não conseguir resolver e negociar com o appliance, a instalação do agente falhará e as instruções de provisionamento não poderão ser emitidas para o host."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../tools/image_builder.rst:2
 msgid "Image Builder"
-msgstr ""
+msgstr "Image Builder"
 
 #: ../../tools/image_builder.rst:4
 msgid ""
@@ -34,85 +34,85 @@ msgid ""
 " to target Storage provider, and converts the image to all other "
 "specified formats. The new Virtual Image records are automatically added "
 "to Morpheus and the Images are then available for use."
-msgstr ""
+msgstr "A ferramenta Morpheus Image Builder cria Imagens vmdk, qcow2, vhd e raw do zero. O Image Builder cria uma VM em branco no VMware, anexa um iso do SO, executa um boot script na VM na inicialização via VNC que chama um preseed script que executa a instalação e configuração desacompanhada do SO. O Morpheus então executa uma exportação ova do vmdk concluído para o provedor de Armazenamento de destino e converte a imagem para todos os outros formatos especificados. Os novos registros de Imagem Virtual são adicionados automaticamente ao Morpheus e as Imagens ficam então disponíveis para uso."
 
 #: ../../tools/image_builder.rst:7
 msgid "Requirements"
-msgstr ""
+msgstr "Requisitos"
 
 #: ../../tools/image_builder.rst:9
 msgid ""
 "DHCP must be enabled on the network specified for the VM in Morpheus, and"
 " network settings configured for DHCP in Morpheus"
-msgstr ""
+msgstr "O DHCP deve estar ativado na rede especificada para a VM no Morpheus, e as configurações de rede configuradas para DHCP no Morpheus"
 
 #: ../../tools/image_builder.rst:10
 msgid ""
 "The blank VM must get network configuration via DHCP upon boot. Static IP"
 " assignment is not possible."
-msgstr ""
+msgstr "A VM em branco deve obter a configuração de rede via DHCP na inicialização. Atribuição de IP estático não é possível."
 
 #: ../../tools/image_builder.rst:11
 msgid "Hypervisor Console must be enabled on the Target Cloud"
-msgstr ""
+msgstr "O Hypervisor Console deve estar ativado na Nuvem de Destino"
 
 #: ../../tools/image_builder.rst:12
 msgid "Morpheus utilizes VNC to pass the boot script to the VM."
-msgstr ""
+msgstr "O Morpheus utiliza VNC para passar o boot script para a VM."
 
 #: ../../tools/image_builder.rst:13
 msgid "VM must be able to reach and resolve the Morpheus appliance url over 443"
-msgstr ""
+msgstr "A VM deve ser capaz de alcançar e resolver a URL do appliance Morpheus na porta 443"
 
 #: ../../tools/image_builder.rst:14
 msgid "The boot script calls to the Morpheus appliance to get the preseed script."
-msgstr ""
+msgstr "O boot script chama o appliance Morpheus para obter o preseed script."
 
 #: ../../tools/image_builder.rst:15
 msgid "Valid Linux iso set for the Virtual Image. Windows is not supported."
-msgstr ""
+msgstr "ISO Linux válido definido para a Imagem Virtual. Windows não é suportado."
 
 #: ../../tools/image_builder.rst:16
 msgid "The iso can exist in the target cloud or uploaded to Morpheus"
-msgstr ""
+msgstr "O iso pode existir na nuvem de destino ou ser carregado no Morpheus"
 
 #: ../../tools/image_builder.rst:18 ../../tools/image_builder.rst:36
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../tools/image_builder.rst:18
 msgid "``cloud-init enabled`` must be disabled on the iso Virtual Image settings."
-msgstr ""
+msgstr "``cloud-init enabled`` deve estar desativado nas configurações da Imagem Virtual iso."
 
 #: ../../tools/image_builder.rst:20
 msgid "Access to target ESXi host(s) over 443 and ESXi hostname dns resolution"
-msgstr ""
+msgstr "Acesso aos Host(s) ESXi de destino na porta 443 e resolução DNS do hostname ESXi"
 
 #: ../../tools/image_builder.rst:21
 msgid ""
 "Same requirement as Hypervisor Console and Image upload/download to/from "
 "vCenter."
-msgstr ""
+msgstr "Mesmo requisito do Hypervisor Console e upload/download de Imagem de/para o vCenter."
 
 #: ../../tools/image_builder.rst:22
 msgid "Valid Boot Script"
-msgstr ""
+msgstr "Boot Script válido"
 
 #: ../../tools/image_builder.rst:23
 msgid "Valid Pre-seed script"
-msgstr ""
+msgstr "Pre-seed script válido"
 
 #: ../../tools/image_builder.rst:24
 msgid "Valid Storage Provider configure for ova export of generated image."
-msgstr ""
+msgstr "Provedor de Armazenamento válido configurado para exportação ova da imagem gerada."
 
 #: ../../tools/image_builder.rst:27
 msgid "Sample Scripts"
-msgstr ""
+msgstr "Scripts de Exemplo"
 
 #: ../../tools/image_builder.rst:30
 msgid "Sample Boot Script"
-msgstr ""
+msgstr "Boot Script de Exemplo"
 
 #: ../../tools/image_builder.rst:32
 msgid "<wait5><tab> text ks=<%=preseedUrl%><enter>"
@@ -122,11 +122,11 @@ msgstr ""
 msgid ""
 "``<%=preseedUrl%>`` is a Morpheus variable that will populate with the "
 "Morpheus appliance url."
-msgstr ""
+msgstr "``<%=preseedUrl%>`` é uma variável Morpheus que será preenchida com a URL do appliance Morpheus."
 
 #: ../../tools/image_builder.rst:39
 msgid "Sample Preseed Script"
-msgstr ""
+msgstr "Preseed Script de Exemplo"
 
 #: ../../tools/image_builder.rst:41
 #, python-format

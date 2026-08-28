@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:2
 msgid "Automated Single-Node Application Deployment with |morpheus|"
-msgstr ""
+msgstr "Déploiement automatisé d'application mono-nœud avec |morpheus|"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:4
 msgid ""
@@ -35,49 +35,49 @@ msgid ""
 "node. There is also an accompanying guide which automates the process for"
 " deployed SuiteCRM as a multi-tiered application consisting of a MySQL "
 "database on one node and the SuiteCRM application on a second node."
-msgstr ""
+msgstr "Ce document fournit un guide complet étape par étape pour automatiser la configuration, l'installation et le déploiement de l'application CRM open source SuiteCRM à l'aide de |morpheus|. Dans ce guide, nous créerons un type d'instance personnalisé pour SuiteCRM qui pourra ensuite être sélectionné lors du provisionnement. Une fois configuré, le processus de provisionnement est entièrement automatisé et aboutit à SuiteCRM et une base de données installés sur un seul nœud. Il existe également un guide complémentaire qui automatise le processus pour SuiteCRM déployé en tant qu'application multi-niveaux composée d'une base de données MySQL sur un nœud et de l'application SuiteCRM sur un second nœud."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:6
 msgid ""
 "In this guide, we'll use the following |morpheus| constructs to fully "
 "automate the provisioning process of a single-node application:"
-msgstr ""
+msgstr "Dans ce guide, nous utiliserons les constructions |morpheus| suivantes pour automatiser entièrement le processus de provisionnement d'une application mono-nœud :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:8
 msgid "Instance Types"
-msgstr ""
+msgstr "Types d'instance"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:9
 msgid "Layouts"
-msgstr ""
+msgstr "Dispositions"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:10
 msgid "Node Types"
-msgstr ""
+msgstr "Types de nœuds"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:11
 msgid "Cypher"
-msgstr ""
+msgstr "Cypher"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:12
 msgid "Archive"
-msgstr ""
+msgstr "Archive"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:13
 msgid "Inputs"
-msgstr ""
+msgstr "Entrées"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:14
 msgid "File Templates"
-msgstr ""
+msgstr "Modèles de fichiers"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:15
 msgid "Tasks"
-msgstr ""
+msgstr "Tâches"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:16
 msgid "Provisioning Workflows"
-msgstr ""
+msgstr "Workflows de provisionnement"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:18
 msgid ""
@@ -90,11 +90,11 @@ msgid ""
 "environment. As I'm building the example, I'll show screenshots targeting"
 " a build for VMware vCenter Clouds. Despite the screenshots, this guide "
 "is useful for any environment."
-msgstr ""
+msgstr "Chacune de ces constructions peut être explorée plus en profondeur dans ses propres sections de la documentation |morpheus|, mais ce guide illustrera comment ces éléments peuvent être assemblés pour automatiser le déploiement, garantir la cohérence et la sécurité, et activer le libre-service. Cela pourrait être utilisé pour créer un type d'instance provisionnable sur tout type de cloud pris en charge par |morpheus|, et il est volontairement ouvert pour être utile dans tout environnement. Lors de la construction de l'exemple, je montrerai des captures d'écran ciblant une construction pour des clouds VMware vCenter. Malgré les captures d'écran, ce guide est utile pour tout environnement."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:21
 msgid "Create a |morpheus| Archive for Install Files"
-msgstr ""
+msgstr "Créer une archive |morpheus| pour les fichiers d'installation"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:23
 msgid ""
@@ -106,7 +106,7 @@ msgid ""
 "the appliance itself. In this example, we'll use an S3-backed bucket. "
 "With an Amazon AWS Cloud already integrated with |morpheus|, we can even "
 "create the S3 bucket itself without leaving |morpheus| UI."
-msgstr ""
+msgstr "Les archives |morpheus| vous permettent de stocker des fichiers qui peuvent ensuite être mis à disposition en téléchargement dans des scripts ou par des utilisateurs. Les archives sont soutenues par des buckets ou des partages de fichiers qui doivent exister avant la création de l'archive. Les buckets peuvent être soutenus par Amazon S3, par exemple. Les partages de fichiers peuvent être soutenus par un partage de fichiers NFS ou même pointer directement vers un dossier local sur l'appliance elle-même. Dans cet exemple, nous utiliserons un bucket soutenu par S3. Avec un cloud Amazon AWS déjà intégré à |morpheus|, nous pouvons même créer le bucket S3 lui-même sans quitter l'interface |morpheus|."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:25
 msgid ""
@@ -116,35 +116,35 @@ msgid ""
 "in mind if you make any changes you may need to carefully confirm Task "
 "configurations and calls to Cypher or Archive to ensure they match any "
 "changes you've made."
-msgstr ""
+msgstr "Pour créer un nouveau bucket, accédez à :menuselection:`Infrastructure --> Storage`. Depuis l'onglet Buckets, cliquez sur :guilabel:`+ ADD`, puis sélectionnez « AWS S3 Bucket ». La configuration d'exemple du bucket est présentée ci-dessous. Gardez à l'esprit que si vous apportez des modifications, vous devrez peut-être vérifier attentivement les configurations de tâches et les appels à Cypher ou à l'archive pour vous assurer qu'ils correspondent aux modifications apportées."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:27
 msgid ""
 "**NAME:** Automation Training S3 Bucket (this is simply a friendly name "
 "for the bucket within |morpheus|)"
-msgstr ""
+msgstr "**NAME:** Automation Training S3 Bucket (il s'agit simplement d'un nom convivial pour le bucket dans |morpheus|)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:28
 msgid "**Storage Service:** Select your pre-existing AWS Cloud"
-msgstr ""
+msgstr "**Storage Service:** Sélectionnez votre cloud AWS existant"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:29
 msgid ""
 "**BUCKET NAME:** Enter a unique name for the bucket (this much conform to"
 " AWS bucket naming rules, consult AWS documentation if needed)"
-msgstr ""
+msgstr "**BUCKET NAME:** Saisissez un nom unique pour le bucket (celui-ci doit respecter les règles de nommage des buckets AWS ; consultez la documentation AWS si nécessaire)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:30
 msgid "**CREATE BUCKET:** Checked"
-msgstr ""
+msgstr "**CREATE BUCKET:** Checked"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:31
 msgid "**REGION:** The AWS region to create the bucket in"
-msgstr ""
+msgstr "**REGION:** La région AWS dans laquelle créer le bucket"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:32
 msgid "**ACTIVE:** Checked (this makes it available for use in |morpheus|)"
-msgstr ""
+msgstr "**ACTIVE:** Checked (cela le rend disponible pour utilisation dans |morpheus|)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:34
 msgid ".. image:: /images/suitecrmsinglenode/newBucket.png"
@@ -155,31 +155,31 @@ msgid ""
 "With the bucket created, we can now create the Archive. Start by going to"
 " |TooArc| and clicking :guilabel:`+ ADD`. In the new Archive, we need to "
 "configure the following:"
-msgstr ""
+msgstr "Une fois le bucket créé, nous pouvons maintenant créer l'archive. Commencez par accéder à |TooArc| et cliquez sur :guilabel:`+ ADD`. Dans la nouvelle archive, nous devons configurer les éléments suivants :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:39
 msgid "**NAME:** Software Archive"
-msgstr ""
+msgstr "**NAME:** Software Archive"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:40
 msgid "**BUCKET:** Select the bucket we just created"
-msgstr ""
+msgstr "**BUCKET:** Sélectionnez le bucket que nous venons de créer"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:41
 msgid ""
 "**PUBLIC URL:** Checked (this automatically creates a public download URL"
 " when files are added to the Archive)"
-msgstr ""
+msgstr "**PUBLIC URL:** Checked (cela crée automatiquement une URL de téléchargement public lorsque des fichiers sont ajoutés à l'archive)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:43
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:43
 msgid ""
 "If you don't name your Archive \"Software Archive\" as indicated here, "
 "you will have to make manual changes to Task config later in this guide."
-msgstr ""
+msgstr "Si vous ne nommez pas votre archive « Software Archive » comme indiqué ici, vous devrez apporter des modifications manuelles à la configuration des tâches plus tard dans ce guide."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:45
 msgid ""
@@ -190,7 +190,7 @@ msgid ""
 "please note that changes might be needed to the automation scripts to "
 "account for any changes to the installation or configuration processes "
 "for that version."
-msgstr ""
+msgstr "À ce stade, vous devriez télécharger le fichier ZIP d'installation pour SuiteCRM. Vous pouvez accéder à la version 7.14.3 `ici <https://github.com/salesagility/SuiteCRM/releases>`_. Ce guide est conçu pour la version 7.14.3. Si vous choisissez de télécharger une version différente, veuillez noter que des modifications pourraient être nécessaires aux scripts d'automatisation pour tenir compte des changements apportés aux processus d'installation ou de configuration pour cette version."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:47
 msgid ""
@@ -200,7 +200,7 @@ msgid ""
 "successfully uploaded. Click :guilabel:`DONE`. We've now added the "
 "installation ZIP file and it is visible in the list of files on the Files"
 " tab."
-msgstr ""
+msgstr "Cliquez sur l'archive nouvellement créée et notez qu'elle ne contient aucun fichier. Sous l'onglet Files, cliquez sur :guilabel:`+ ADD`. Faites glisser le fichier ZIP d'installation sur la fenêtre modale et attendez que le fichier soit téléchargé avec succès. Cliquez sur :guilabel:`DONE`. Nous avons maintenant ajouté le fichier ZIP d'installation et il est visible dans la liste des fichiers de l'onglet Files."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:49
 msgid ""
@@ -211,7 +211,7 @@ msgid ""
 "file directly from this Archive and automate the installation process. "
 "Generated links can be viewed from the Links tab and a record of it will "
 "be visible on the History tab."
-msgstr ""
+msgstr "Cliquez sur le nom du fichier nouvellement ajouté pour accéder à la page de détails du fichier. Pendant que vous y êtes, cliquez sur l'onglet Scripts et vous verrez des exemples de syntaxe pour la manière dont ce fichier et d'autres fichiers peuvent être accessibles dans vos scripts d'automatisation. Vous verrez cette syntaxe utilisée plus tard dans cet exemple lorsque nous accédons au fichier ZIP directement depuis cette archive et automatisons le processus d'installation. Les liens générés peuvent être consultés depuis l'onglet Links et un enregistrement sera visible dans l'onglet History."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:51
 msgid ".. image:: /images/suitecrmsinglenode/fileDetail.png"
@@ -219,7 +219,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:54
 msgid "Create Cypher"
-msgstr ""
+msgstr "Créer Cypher"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:56
 msgid ""
@@ -228,7 +228,7 @@ msgid ""
 " can then be called into automation Tasks and templates. Here we will "
 "store the MariaDB root user password as a Cypher entry. In the |morpheus|"
 " UI, go to |TooCyp| and click :guilabel:`+ ADD`."
-msgstr ""
+msgstr "Cypher est un magasin clé/valeur sécurisé dans |morpheus|. À l'aide de Cypher, nous pouvons stocker en toute sécurité des mots de passe et d'autres valeurs secrètes (telles que des clés API) qui peuvent ensuite être appelées dans les tâches et modèles d'automatisation. Ici, nous stockerons le mot de passe de l'utilisateur root MariaDB en tant qu'entrée Cypher. Dans l'interface |morpheus|, accédez à |TooCyp| et cliquez sur :guilabel:`+ ADD`."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:58
 msgid ""
@@ -236,25 +236,25 @@ msgid ""
 " different contexts. Here's we'll use the \"secret\" type which allows us"
 " to enter some known value which can be securely accessed later. Enter "
 "the following:"
-msgstr ""
+msgstr "Il existe plusieurs types de clés Cypher, utiles dans différents contextes. Ici, nous utiliserons le type « secret », qui nous permet de saisir une valeur connue pouvant être consultée en toute sécurité ultérieurement. Saisissez les éléments suivants :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:60
 msgid "**KEY:** secret/dba/mariadb_root"
-msgstr ""
+msgstr "**KEY:** secret/dba/mariadb_root"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:61
 msgid "**VALUE:** Password123?"
-msgstr ""
+msgstr "**VALUE:** Password123?"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:62
 msgid "**LEASE:** 0 (Lease time is given in seconds, with \"0\" being unlimited)"
-msgstr ""
+msgstr "**LEASE:** 0 (La durée du bail est indiquée en secondes, « 0 » signifiant illimité)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:64
 #: ../../getting_started/guides/autoinstall_instance.rst:314
 #: ../../getting_started/guides/autoinstall_instance.rst:357
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:66
 msgid ".. image:: /images/suitecrmsinglenode/cypherMaria.png"
@@ -262,7 +262,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:69
 msgid "Create Inputs"
-msgstr ""
+msgstr "Créer des entrées"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:71
 msgid ""
@@ -271,57 +271,57 @@ msgid ""
 "variables within templates and scripts. We'll create three inputs in this"
 " case for the database name, the database username, and the database user"
 " password."
-msgstr ""
+msgstr "Les entrées sont des champs de saisie personnalisés qui peuvent être ajoutés aux Structures, Types d'instances et autres constructions dans |morpheus|. L'entrée peut être consommée comme variables dans les modèles et les scripts. Nous allons créer trois entrées dans ce cas pour le nom de la base de données, le nom d'utilisateur de la base de données et le mot de passe de l'utilisateur de la base de données."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:73
 msgid ""
 "In |morpheus| UI, navigate to |LibOptInp|. Click :guilabel:`+ ADD`. "
 "Complete the following fields:"
-msgstr ""
+msgstr "Dans l'interface |morpheus|, accédez à |LibOptInp|. Cliquez sur :guilabel:`+ ADD`. Renseignez les champs suivants :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:75
 msgid "**NAME:** SuiteCRM DB Name (The name for the Input object in |morpheus|)"
-msgstr ""
+msgstr "**NAME:** SuiteCRM DB Name (Le nom de l'objet Input dans |morpheus|)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:76
 msgid "**LABEL:** SUITECRM (Labels are a categorizing feature in |morpheus|)"
-msgstr ""
+msgstr "**LABEL:** SUITECRM (Les libellés sont une fonctionnalité de catégorisation dans |morpheus|)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:77
 msgid ""
 "**FIELD NAME:** databaseNameSCRM (The internal property which the input "
 "value is assigned to)"
-msgstr ""
+msgstr "**FIELD NAME:** databaseNameSCRM (La propriété interne à laquelle la valeur de l'entrée est assignée)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:78
 msgid ""
 "**SHOW ON EDIT:** Checked (By checking this box, we can view this Input "
 "value when editing the Instance after provisioning)"
-msgstr ""
+msgstr "**SHOW ON EDIT:** Coché (En cochant cette case, nous pouvons afficher cette valeur Input lors de la modification de l'Instance après le provisionnement)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:79
 msgid ""
 "**DISPLAY VALUE ON DETAILS:** Checked (By checking this box, we will see "
 "the value of this Input on the detail page for the provsioned Instance)"
-msgstr ""
+msgstr "**DISPLAY VALUE ON DETAILS:** Coché (En cochant cette case, nous verrons la valeur de cette entrée sur la page de détail de l'Instance provisionnée)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:80
 msgid ""
 "**TYPE:** Text (The input type, in this case an open text field for the "
 "user)"
-msgstr ""
+msgstr "**TYPE:** Text (Le type d'entrée, dans ce cas un champ texte ouvert pour l'utilisateur)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:81
 msgid ""
 "**LABEL:** SuiteCRM DB Name (The label the user will see next to the "
 "field at provsion time)"
-msgstr ""
+msgstr "**LABEL:** SuiteCRM DB Name (Le libellé que l'utilisateur verra à côté du champ au moment du provisionnement)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:82
 msgid ""
 "**REQUIRED:** Checked (By checking this box, the Input will be required "
 "at provision time)"
-msgstr ""
+msgstr "**REQUIRED:** Coché (En cochant cette case, l'entrée sera obligatoire au moment du provisionnement)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:87
 msgid ".. image:: /images/suitecrmsinglenode/dbNameInput.png"
@@ -329,43 +329,43 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:90
 msgid "Click :guilabel:`SAVE CHANGES`. Then, create two additional Inputs:"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`. Ensuite, créez deux entrées supplémentaires :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:92
 msgid "**NAME:** SuiteCRM DB User"
-msgstr ""
+msgstr "**NAME:** SuiteCRM DB User"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:93
 #: ../../getting_started/guides/autoinstall_instance.rst:107
 msgid "**LABEL:** SUITECRM"
-msgstr ""
+msgstr "**LABEL:** SUITECRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:94
 msgid "**FIELD NAME:** databaseUserSCRM"
-msgstr ""
+msgstr "**FIELD NAME:** databaseUserSCRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:95
 #: ../../getting_started/guides/autoinstall_instance.rst:109
 msgid "**SHOW ON EDIT:** Checked"
-msgstr ""
+msgstr "**SHOW ON EDIT:** Coché"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:96
 #: ../../getting_started/guides/autoinstall_instance.rst:110
 msgid "**DISPLAY VALUE ON DETAILS:** Checked"
-msgstr ""
+msgstr "**DISPLAY VALUE ON DETAILS:** Coché"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:97
 msgid "**TYPE:** Text"
-msgstr ""
+msgstr "**TYPE:** Text"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:98
 msgid "**LABEL:** SuiteCRM DB User"
-msgstr ""
+msgstr "**LABEL:** SuiteCRM DB User"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:99
 #: ../../getting_started/guides/autoinstall_instance.rst:113
 msgid "**REQUIRED:** Checked"
-msgstr ""
+msgstr "**REQUIRED:** Coché"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:103
 msgid ".. image:: /images/suitecrmsinglenode/dbUserInput.png"
@@ -373,21 +373,21 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:106
 msgid "**NAME:** SuiteCRM DB Password"
-msgstr ""
+msgstr "**NAME:** SuiteCRM DB Password"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:108
 msgid "**FIELD NAME:** databasePassSCRM"
-msgstr ""
+msgstr "**FIELD NAME:** databasePassSCRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:111
 msgid ""
 "**TYPE:** Password (Password type Inputs are masked on screen when "
 "entered by the user)"
-msgstr ""
+msgstr "**TYPE:** Password (Les entrées de type Password sont masquées à l'écran lorsqu'elles sont saisies par l'utilisateur)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:112
 msgid "**LABEL:** SuiteCRM DB Password"
-msgstr ""
+msgstr "**LABEL:** SuiteCRM DB Password"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:117
 msgid ".. image:: /images/suitecrmsinglenode/dbPassInput.png"
@@ -395,7 +395,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:121
 msgid "Create File Templates"
-msgstr ""
+msgstr "Créer des modèles de fichiers"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:123
 msgid ""
@@ -403,11 +403,11 @@ msgid ""
 " We can create a File Template in |morpheus| and the config file will be "
 "generated dynamically at provision time with the appropriate values. "
 "Navigate to |LibTemFil| and click :guilabel:`+ ADD`. Enter the following:"
-msgstr ""
+msgstr "Pour notre application SuiteCRM, nous devons créer un fichier de configuration Apache. Nous pouvons créer un modèle de fichier dans |morpheus| et le fichier de configuration sera généré dynamiquement au moment du provisionnement avec les valeurs appropriées. Accédez à |LibTemFil| et cliquez sur :guilabel:`+ ADD`. Saisissez les éléments suivants :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:125
 msgid "**NAME:** suitecrm - conf"
-msgstr ""
+msgstr "**NAME:** suitecrm - conf"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:126
 #: ../../getting_started/guides/autoinstall_instance.rst:170
@@ -417,37 +417,37 @@ msgstr ""
 #: ../../getting_started/guides/autoinstall_instance.rst:329
 #: ../../getting_started/guides/autoinstall_instance.rst:339
 msgid "**LABELS:** SUITECRM"
-msgstr ""
+msgstr "**LABELS:** SUITECRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:127
 msgid "**FILE NAME:** suitecrm.conf"
-msgstr ""
+msgstr "**FILE NAME:** suitecrm.conf"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:128
 msgid "**FILE PATH:** /etc/apache2/sites-available"
-msgstr ""
+msgstr "**FILE PATH:** /etc/apache2/sites-available"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:129
 msgid "**PHASE:** Provision"
-msgstr ""
+msgstr "**PHASE:** Provision"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:130
 msgid ""
 "**TEMPLATE:** See below for the complete template, note how we're able to"
 " dynamically resolve |morpheus| variables within the template"
-msgstr ""
+msgstr "**TEMPLATE:** Voir ci-dessous le modèle complet ; notez comment nous pouvons résoudre dynamiquement les variables |morpheus| dans le modèle"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:131
 msgid "**FILE OWNER:** root"
-msgstr ""
+msgstr "**FILE OWNER:** root"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:132
 msgid "**SETTING NAME:** suitecrm"
-msgstr ""
+msgstr "**SETTING NAME:** suitecrm"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:133
 msgid "**SETTING CATEGORY:** App"
-msgstr ""
+msgstr "**SETTING CATEGORY:** App"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:135
 #, python-brace-format
@@ -481,7 +481,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:162
 msgid "Create Tasks"
-msgstr ""
+msgstr "Créer des tâches"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:164
 msgid ""
@@ -489,39 +489,39 @@ msgid ""
 " Apache config file we just created, another will be a Bash script Task "
 "to actually install and configure SuiteCRM on the box, and the third will"
 " be another Bash script Task which will restart the Apache service."
-msgstr ""
+msgstr "À ce stade, nous devons créer trois tâches d'automatisation. L'une définira le fichier de configuration Apache que nous venons de créer, une autre sera une tâche de script Bash pour installer et configurer SuiteCRM sur la machine, et la troisième sera une autre tâche de script Bash qui redémarrera le service Apache."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:166
 msgid ""
 "To create a Library Template Task, navigate to |LibAutTas|. Click "
 ":guilabel:`+ ADD`. Enter the following:"
-msgstr ""
+msgstr "Pour créer une tâche de modèle de bibliothèque, accédez à |LibAutTas|. Cliquez sur :guilabel:`+ ADD`. Saisissez les éléments suivants :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:168
 msgid "**NAME:** suitecrm file template"
-msgstr ""
+msgstr "**NAME:** suitecrm file template"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:169
 msgid "**CODE:** suitecrmfiletemplate"
-msgstr ""
+msgstr "**CODE:** suitecrmfiletemplate"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:171
 msgid ""
 "**TYPE:** Library Template (The proper fields will appear once the Type "
 "is set)"
-msgstr ""
+msgstr "**TYPE:** Library Template (Les champs appropriés apparaîtront une fois le type défini)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:172
 msgid ""
 "**TEMPLATE:** suitecrm - conf (Select the File Template we already "
 "created from this dropdown menu)"
-msgstr ""
+msgstr "**TEMPLATE:** suitecrm - conf (Sélectionnez le modèle de fichier que nous avons déjà créé dans ce menu déroulant)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:173
 #: ../../getting_started/guides/autoinstall_instance.rst:186
 #: ../../getting_started/guides/autoinstall_instance.rst:290
 msgid "**EXECUTE TARGET:** Resource"
-msgstr ""
+msgstr "**EXECUTE TARGET:** Resource"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:175
 msgid ".. image:: /images/suitecrmsinglenode/libtemtask.png"
@@ -531,28 +531,28 @@ msgstr ""
 msgid ""
 "Now create the first Bash Task which will install and configure SuiteCRM "
 "on a newly-provisioned box:"
-msgstr ""
+msgstr "Créez maintenant la première tâche Bash qui installera et configurera SuiteCRM sur une machine nouvellement provisionnée :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:179
 msgid "**NAME:** suitecrm - single node"
-msgstr ""
+msgstr "**NAME:** suitecrm - single node"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:181
 #: ../../getting_started/guides/autoinstall_instance.rst:285
 msgid ""
 "**TYPE:** Shell Script (The proper fields will appear once the Type is "
 "set)"
-msgstr ""
+msgstr "**TYPE:** Shell Script (Les champs appropriés apparaîtront une fois le type défini)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:182
 #: ../../getting_started/guides/autoinstall_instance.rst:286
 msgid "**RESULT TYPE:** None"
-msgstr ""
+msgstr "**RESULT TYPE:** None"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:183
 #: ../../getting_started/guides/autoinstall_instance.rst:287
 msgid "**SUDO:** Checked"
-msgstr ""
+msgstr "**SUDO:** Coché"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:184
 msgid ""
@@ -561,14 +561,14 @@ msgid ""
 "content can be dynamically pulled from the repository at the time the "
 "Task is invoked. This ensures the code is always current without ever "
 "manually updating Tasks)"
-msgstr ""
+msgstr "**SOURCE:** Local (Nous saisirons le script localement dans ce cas, mais si des dépôts de contrôle de version sont intégrés, tels que Github, le contenu du script peut être récupéré dynamiquement depuis le dépôt au moment où la tâche est invoquée. Cela garantit que le code est toujours à jour sans jamais mettre à jour manuellement les tâches)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:185
 msgid ""
 "**CONTENT:** Expand the section below to see the script content. Note how"
 " Cypher secrets and custom option (Input) values are invoked in this "
 "script"
-msgstr ""
+msgstr "**CONTENT:** Développez la section ci-dessous pour voir le contenu du script. Notez comment les secrets Cypher et les valeurs d'option personnalisée (Input) sont invoqués dans ce script"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:190
 #, python-brace-format
@@ -672,19 +672,19 @@ msgstr ""
 msgid ""
 "Finally, we'll add the Apache restart Task. Configure a new Task as shown"
 " below:"
-msgstr ""
+msgstr "Enfin, nous ajouterons la tâche de redémarrage Apache. Configurez une nouvelle tâche comme indiqué ci-dessous :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:283
 msgid "**NAME:** suitecrm apache restart"
-msgstr ""
+msgstr "**NAME:** suitecrm apache restart"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:288
 msgid "**SOURCE:** Local"
-msgstr ""
+msgstr "**SOURCE:** Local"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:289
 msgid "**CONTENT:** Expand the section below to see the script content"
-msgstr ""
+msgstr "**CONTENT:** Développez la section ci-dessous pour voir le contenu du script"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:294
 msgid ""
@@ -699,7 +699,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:303
 msgid "Create the Provisioning Workflow"
-msgstr ""
+msgstr "Créer le workflow de provisionnement"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:305
 msgid ""
@@ -714,21 +714,21 @@ msgid ""
 " with our Tasks in the provisioning phase so that SuiteCRM will be "
 "installed, the Apache config file will be set, and the Apache service "
 "will be restarted automatically when the Instance is provisioned."
-msgstr ""
+msgstr "Les workflows |morpheus| regroupent plusieurs tâches en un groupe logique. Il existe deux types de workflows : opérationnels et de provisionnement. Nous n'utiliserons aucun workflow opérationnel ici, mais ces workflows peuvent être exécutés à la demande selon les besoins ou programmés pour s'exécuter selon une planification récurrente (comme une tâche cron). Les workflows de provisionnement sont associés à une Instance au moment du provisionnement et s'exécuteront automatiquement lorsque l'Instance atteint certaines phases de son cycle de vie, telles que le provisionnement, le démantèlement, le démarrage ou l'arrêt. Dans ce cas, nous pouvons créer un workflow de provisionnement avec nos tâches dans la phase de provisionnement afin que SuiteCRM soit installé, que le fichier de configuration Apache soit défini et que le service Apache soit redémarré automatiquement lorsque l'Instance est provisionnée."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:307
 msgid ""
 "Navigate to |LibAutWor| and click :guilabel:`+ ADD`. Set the following "
 "configurations:"
-msgstr ""
+msgstr "Accédez à |LibAutWor| et cliquez sur :guilabel:`+ ADD`. Définissez les configurations suivantes :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:309
 msgid "**NAME:** SuiteCRM - single node"
-msgstr ""
+msgstr "**NAME:** SuiteCRM - single node"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:311
 msgid "**PLATFORM:** Linux"
-msgstr ""
+msgstr "**PLATFORM:** Linux"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:312
 msgid ""
@@ -736,7 +736,7 @@ msgid ""
 " Tasks in the Search field. After adding them, they can be reordered but "
 "they should be set such that the install script is run first, the file "
 "template is set second, and the Apache restart is run last"
-msgstr ""
+msgstr "**TASKS:** Développez la section Provision et commencez à saisir les noms de nos tâches dans le champ Rechercher. Après les avoir ajoutées, elles peuvent être réordonnées, mais elles doivent être configurées de sorte que le script d'installation s'exécute en premier, que le modèle de fichier soit défini en second et que le redémarrage Apache s'exécute en dernier"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:316
 msgid ".. image:: /images/suitecrmsinglenode/provworkflow.png"
@@ -744,7 +744,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:320
 msgid "Create a Custom Library Item"
-msgstr ""
+msgstr "Créer un élément de bibliothèque personnalisé"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:322
 msgid ""
@@ -756,32 +756,32 @@ msgid ""
 "just a few clicks. In |morpheus| there are three layers to such Library "
 "items: Instance Types, Layouts, and Node Types. We'll create the Instance"
 " Type first:"
-msgstr ""
+msgstr "Après avoir créé des entrées Cypher, des entrées et des tâches, nous sommes prêts à les regrouper dans un Type d'instance personnalisé pour la Bibliothèque |morpheus|. Nous allons créer une nouvelle entrée de bibliothèque SuiteCRM qui sera disponible pour certains ou tous les utilisateurs (selon les autorisations de rôle) dans l'assistant de provisionnement. Cela leur permettra de déployer des appliances SuiteCRM mono-nœud en quelques clics. Dans |morpheus|, il existe trois couches pour de tels éléments de bibliothèque : Types d'instances, Structures et Types de nœuds. Nous allons créer le Type d'instance en premier :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:324
 msgid ""
 "Navigate to |LibBluIns| and click :guilabel:`+ ADD`. Enter the following "
 "configurations:"
-msgstr ""
+msgstr "Accédez à |LibBluIns| et cliquez sur :guilabel:`+ ADD`. Saisissez les configurations suivantes :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:326
 msgid "**NAME:** Custom SuiteCRM"
-msgstr ""
+msgstr "**NAME:** Custom SuiteCRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:327
 msgid "**CODE:** custSuiteCRM"
-msgstr ""
+msgstr "**CODE:** custSuiteCRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:328
 msgid "**CATEGORY:** Apps"
-msgstr ""
+msgstr "**CATEGORY:** Apps"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:330
 msgid ""
 "**ICON:** If desired, search the file system on your local computer for a"
 " SuiteCRM logo icon for easier identification of this Instance Type at "
 "provision time"
-msgstr ""
+msgstr "**ICON:** Si vous le souhaitez, recherchez sur le système de fichiers de votre ordinateur local une icône de logo SuiteCRM pour faciliter l'identification de ce Type d'instance au moment du provisionnement"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:332
 msgid ".. image:: /images/suitecrmsinglenode/instype.png"
@@ -795,43 +795,43 @@ msgid ""
 "in this case VMware. It's possible to have multiple Layouts associated "
 "with an Instance Type which can be selected depending on the chosen Cloud"
 " the user might be provisioning on. Configure the Layout as follows:"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`. Après avoir créé le Type d'instance, cliquez dessus, puis cliquez sur :guilabel:`+ ADD LAYOUT` depuis la page de détail du Type d'instance. Une Structure spécifie la technologie sur laquelle l'Instance s'exécutera, dans ce cas VMware. Il est possible d'avoir plusieurs Structures associées à un Type d'instance, sélectionnables selon le Cloud choisi par l'utilisateur pour le provisionnement. Configurez la Structure comme suit :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:337
 msgid "**NAME:** SuiteCRM - Single Node"
-msgstr ""
+msgstr "**NAME:** SuiteCRM - Single Node"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:338
 msgid "**VERSION:** 7.14.3"
-msgstr ""
+msgstr "**VERSION:** 7.14.3"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:340
 msgid ""
 "**CREATABLE:** Checked (If unchecked, this Layout won't be an available "
 "option at provision time)"
-msgstr ""
+msgstr "**CREATABLE:** Coché (Si décoché, cette Structure ne sera pas une option disponible au moment du provisionnement)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:341
 #: ../../getting_started/guides/autoinstall_instance.rst:354
 msgid "**TECHNOLOGY:** Select the relevant technology for your environment"
-msgstr ""
+msgstr "**TECHNOLOGY:** Sélectionnez la technologie pertinente pour votre environnement"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:342
 msgid ""
 "**MINIMUM MEMORY:** 2048 (If entered, this value will override any memory"
 " requirement set on the virtual image to ensure your Instance service "
 "will run properly)"
-msgstr ""
+msgstr "**MINIMUM MEMORY:** 2048 (Si saisi, cette valeur remplacera toute exigence de mémoire définie sur l'image virtuelle pour garantir le bon fonctionnement de votre service Instance)"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:343
 msgid ""
 "**WORKFLOW:** Select the Workflow we've already created, \"SuiteCRM - "
 "single node\""
-msgstr ""
+msgstr "**WORKFLOW:** Sélectionnez le workflow que nous avons déjà créé, « SuiteCRM - single node »"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:344
 msgid "**INPUTS:** Search and find the three custom Inputs we created earlier"
-msgstr ""
+msgstr "**INPUTS:** Recherchez et trouvez les trois entrées personnalisées que nous avons créées précédemment"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:346
 msgid ".. image:: /images/suitecrmsinglenode/layout.png"
@@ -851,23 +851,23 @@ msgid ""
 "which is supplied by |morpheus|. You can associate Node Types with your "
 "own custom virtual images as well when needed. Set the following "
 "configurations on the new Node Type:"
-msgstr ""
+msgstr "Une fois les configurations saisies, cliquez sur :guilabel:`SAVE CHANGES`. Après avoir créé la Structure, nous devons associer un Type de nœud. Depuis la page de détail de la Structure, cliquez sur :guilabel:`+ ADD` dans la section « VM Types ». Le terme VM Types est parfois utilisé à la place de Types de nœuds dans |morpheus|, mais ils désignent la même chose et sont entièrement interchangeables. Les Types de nœuds sont des images de calcul et seront des types pertinents pour la technologie Cloud de destination (AMI pour le provisionnement sur AWS ou images virtuelles VMware pour les Clouds vCenter, etc.). Dans ce cas, nous allons simplement pointer vers une image Ubuntu par défaut dans un format approprié fourni par |morpheus|. Vous pouvez également associer des Types de nœuds à vos propres images virtuelles personnalisées si nécessaire. Définissez les configurations suivantes sur le nouveau Type de nœud :"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:351
 msgid "**NAME:** Custom Ubuntu 22.04 Node"
-msgstr ""
+msgstr "**NAME:** Custom Ubuntu 22.04 Node"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:352
 msgid "**SHORT NAME:** ubuntu2204"
-msgstr ""
+msgstr "**SHORT NAME:** ubuntu2204"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:353
 msgid "**VERSION:** 22.04"
-msgstr ""
+msgstr "**VERSION:** 22.04"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:355
 msgid "**VM IMAGE:** Select the included Ubuntu 18.04 image"
-msgstr ""
+msgstr "**VM IMAGE:** Sélectionnez l'image Ubuntu 18.04 incluse"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:359
 msgid ".. image:: /images/suitecrmsinglenode/nodetype.png"
@@ -875,14 +875,14 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:363
 msgid "Provision the SuiteCRM Instance Type"
-msgstr ""
+msgstr "Provisionner le Type d'instance SuiteCRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:365
 msgid ""
 "At this point, the setup is finished and SuiteCRM will be available as an"
 " Instance Type option for your users. We'll go ahead and walk through the"
 " provisioning process at this point just to take a look."
-msgstr ""
+msgstr "À ce stade, la configuration est terminée et SuiteCRM sera disponible comme option de Type d'instance pour vos utilisateurs. Nous allons maintenant parcourir le processus de provisionnement pour voir le résultat."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:367
 msgid ""
@@ -899,7 +899,7 @@ msgid ""
 "Username, and Password. Click :guilabel:`NEXT`. On the Automation tab, we"
 " do not need to select a Workflow as our Workflow is already set on the "
 "Layout. Click :guilabel:`NEXT` and click :guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Pour commencer le provisionnement, accédez à :menuselection:`Provisioning --> Instances` et cliquez sur :guilabel:`+ ADD`. Dans la liste des Types d'instances, sélectionnez le Type d'instance « SUITE_CRM » que nous venons de créer, puis cliquez sur :guilabel:`NEXT`. Dans l'onglet Groupe, sélectionnez un Groupe contenant un Cloud de destination pertinent pour la configuration de l'Instance, puis sélectionnez le Cloud sur lequel vous souhaitez provisionner l'application. Cliquez sur :guilabel:`NEXT`. Dans l'onglet Configuration, sélectionnez la Structure que nous avons créée et configurez un plan, un Pool de ressources et un réseau adaptés à votre environnement et aux besoins de calcul de la charge de travail. Vous verrez alors les champs Input que nous avons créés, où vous devrez saisir un nom de base de données SuiteCRM, un nom d'utilisateur et un mot de passe. Cliquez sur :guilabel:`NEXT`. Dans l'onglet Automatisation, nous n'avons pas besoin de sélectionner un workflow car notre workflow est déjà défini sur la Structure. Cliquez sur :guilabel:`NEXT`, puis sur :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/autoinstall_instance.rst:369
 msgid ".. image:: /images/suitecrmsinglenode/provision.png"
@@ -907,7 +907,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_instance.rst:373
 msgid "Configure SuiteCRM"
-msgstr ""
+msgstr "Configurer SuiteCRM"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:375
 msgid ""
@@ -916,7 +916,7 @@ msgid ""
 "agreement page and can proceed with the setup steps. SuiteCRM is now up "
 "and running. Additional instances of SuiteCRM can be stood up in the "
 "future with just a few clicks!"
-msgstr ""
+msgstr "SuiteCRM est maintenant prêt pour sa configuration initiale. Dans un navigateur web, accédez à `http://<YOUR_INSTANCE_IP>/install.php`. Vous devriez voir la page du contrat de licence et pouvoir poursuivre les étapes de configuration. SuiteCRM est maintenant opérationnel. D'autres instances de SuiteCRM pourront être déployées à l'avenir en quelques clics !"
 
 #: ../../getting_started/guides/autoinstall_instance.rst:377
 msgid ".. image:: /images/suitecrmsinglenode/eula.png"

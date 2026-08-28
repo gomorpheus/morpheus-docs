@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:2
 msgid "HKS Offline Provisioning and Upgrades"
-msgstr ""
+msgstr "Provisionnement et mises à niveau HKS hors ligne"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:4
 msgid ""
@@ -30,18 +30,18 @@ msgid ""
 "server instead of public image and package sources. This is separate from"
 " installing the |morpheus| appliance with its supplemental package; see "
 ":ref:`offline-installation` for appliance installation."
-msgstr ""
+msgstr "Les dispositions HKS qui annoncent la prise en charge hors ligne peuvent utiliser un serveur d'images configuré au lieu de sources d'images et de paquets publics. Ceci est distinct de l'installation de l'appliance |morpheus| avec son paquet supplémentaire ; consultez :ref:`offline-installation` pour l'installation de l'appliance."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:7
 msgid "Preparation"
-msgstr ""
+msgstr "Préparation"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:9
 msgid ""
 "Select an HKS Cluster Layout that supports offline provisioning and the "
 "required Kubernetes version. |morpheus| rejects offline mode for layouts "
 "that do not advertise offline support."
-msgstr ""
+msgstr "Sélectionnez une disposition de cluster HKS qui prend en charge le provisionnement hors ligne et la version Kubernetes requise. |morpheus| rejette le mode hors ligne pour les dispositions qui n'annoncent pas la prise en charge hors ligne."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:10
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "component packages, container-runtime packages, CNI/CSI and other cluster"
 " add-on images, Kubernetes control-plane and pause images, and any Agent "
 "packages used by the layout."
-msgstr ""
+msgstr "Obtenez le manifeste hors ligne approuvé pour la version pour la disposition |morpheus| et HKS sélectionnée. Les catégories d'artefacts requises sont l'image ou le modèle OS du nœud, les métadonnées de disposition/paquet HKS, les paquets Kubernetes et composants de nœud, les paquets d'exécution de conteneurs, les images complémentaires CNI/CSI et autres du cluster, les images du plan de contrôle Kubernetes et pause, et tous les paquets Agent utilisés par la disposition."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:11
 msgid ""
@@ -60,20 +60,20 @@ msgid ""
 "the manifest. Use only the versions, registry/repository paths, and "
 "checksums supplied for that release. A universal bill of materials is not"
 " bundled with this guide and must not be inferred from another release."
-msgstr ""
+msgstr "Mettez en scène chaque élément de ce manifeste sur le serveur d'images, registre, dépôt de paquets OS ou emplacement d'image |morpheus| approuvé pour la version nommé par le manifeste. Utilisez uniquement les versions, chemins de registre/dépôt et sommes de contrôle fournis pour cette version. Une nomenclature universelle n'est pas incluse avec ce guide et ne doit pas être déduite d'une autre version."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:12
 msgid ""
 "Ensure every control-plane and worker node can resolve and reach the "
 "image server and the |morpheus| appliance. Configure local DNS, NTP, OS "
 "package repositories, and any registry credentials before provisioning."
-msgstr ""
+msgstr "Assurez-vous que chaque nœud du plan de contrôle et nœud de calcul peut résoudre et joindre le serveur d'images et l'appliance |morpheus|. Configurez le DNS local, NTP, les dépôts de paquets OS et tous les identifiants de registre avant le provisionnement."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:13
 msgid ""
 "Validate each downloaded artifact against its published checksum before "
 "importing it. Do not substitute a similarly named upstream artifact."
-msgstr ""
+msgstr "Validez chaque artefact téléchargé par rapport à sa somme de contrôle publiée avant de l'importer. Ne substituez pas un artefact en amont de nom similaire."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:14
 msgid ""
@@ -81,46 +81,46 @@ msgid ""
 "checksum, and final staging location for every artifact. Do not begin "
 "provisioning while an item is missing, has no release-approved checksum, "
 "or does not match its checksum."
-msgstr ""
+msgstr "Enregistrez la version du manifeste, l'URL source, la somme de contrôle attendue, la somme de contrôle calculée et l'emplacement de mise en scène final pour chaque artefact. Ne commencez pas le provisionnement tant qu'un élément est manquant, n'a pas de somme de contrôle approuvée pour la version ou ne correspond pas à sa somme de contrôle."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:17
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionnement"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:19
 msgid ""
 "Start the Kubernetes Cluster wizard and select a layout that supports "
 "offline provisioning."
-msgstr ""
+msgstr "Démarrez l'assistant de cluster Kubernetes et sélectionnez une disposition qui prend en charge le provisionnement hors ligne."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:20
 msgid ""
 "In the advanced repository settings, select the cluster repository "
 "credentials and enable **Image Server**."
-msgstr ""
+msgstr "Dans les paramètres avancés du dépôt, sélectionnez les identifiants du dépôt de cluster et activez **Image Server**."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:21
 msgid ""
 "Complete the normal HKS network, node, and layout settings, then "
 "provision the cluster."
-msgstr ""
+msgstr "Terminez les paramètres réseau, nœud et disposition HKS normaux, puis provisionnez le cluster."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:22
 msgid ""
 "Follow the cluster process output. Confirm that package and image "
 "requests resolve to the staged repository and that no node requires "
 "internet egress."
-msgstr ""
+msgstr "Suivez la sortie du processus du cluster. Confirmez que les requêtes de paquets et d'images se résolvent vers le dépôt mis en scène et qu'aucun nœud ne nécessite une sortie Internet."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:23
 msgid ""
 "When provisioning completes, confirm every node is Ready, system Pods are"
 " running, and the configured Kubernetes version matches the layout."
-msgstr ""
+msgstr "Lorsque le provisionnement se termine, confirmez que chaque nœud est Ready, que les Pods système sont en cours d'exécution et que la version Kubernetes configurée correspond à la disposition."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:26
 msgid "Offline Upgrades"
-msgstr ""
+msgstr "Mises à niveau hors ligne"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:28
 msgid ""
@@ -130,7 +130,7 @@ msgid ""
 "stage and verify the target release artifacts on the same image server, "
 "confirm the target layout is enabled, and ensure the repository remains "
 "reachable from every node."
-msgstr ""
+msgstr "Les clusters hors ligne utilisent les versions disponibles à partir des dispositions compatibles activées et exécutent des scripts de mise à niveau dédiés hors ligne pour le plan de contrôle et les nœuds de calcul. Les mises à niveau progressent une version mineure à la fois. Avant de commencer, mettez en scène et vérifiez les artefacts de version cible sur le même serveur d'images, confirmez que la disposition cible est activée et assurez-vous que le dépôt reste joignable depuis chaque nœud."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:30
 msgid ""
@@ -138,40 +138,40 @@ msgid ""
 " before workers, and returns successful nodes to service. Review "
 ":doc:`hks_node_maintenance` before upgrading. Afterward, confirm all "
 "nodes are Ready and report the target version."
-msgstr ""
+msgstr "Pendant une mise à niveau, |morpheus| met les nœuds en cordon, met à niveau les nœuds du plan de contrôle avant les nœuds de calcul, et remet en service les nœuds réussis. Consultez :doc:`hks_node_maintenance` avant la mise à niveau. Ensuite, confirmez que tous les nœuds sont Ready et signalent la version cible."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:33
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Dépannage"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:35
 msgid ""
 "If offline mode is rejected, verify the selected layout supports offline "
 "provisioning."
-msgstr ""
+msgstr "Si le mode hors ligne est rejeté, vérifiez que la disposition sélectionnée prend en charge le provisionnement hors ligne."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:36
 msgid ""
 "If no upgrade version appears, verify an enabled compatible layout exists"
 " for the next supported version and that its artifacts are staged."
-msgstr ""
+msgstr "Si aucune version de mise à niveau n'apparaît, vérifiez qu'une disposition compatible activée existe pour la prochaine version prise en charge et que ses artefacts sont mis en scène."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:37
 msgid ""
 "If registry validation fails, verify the image-server URL, credentials, "
 "certificate trust, DNS, and node-to-server network path."
-msgstr ""
+msgstr "Si la validation du registre échoue, vérifiez l'URL du serveur d'images, les identifiants, la confiance du certificat, le DNS et le chemin réseau nœud-serveur."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:38
 msgid ""
 "If package installation fails, verify the release-specific Debian "
 "repository URL and package versions on the image server."
-msgstr ""
+msgstr "Si l'installation de paquets échoue, vérifiez l'URL du dépôt Debian spécifique à la version et les versions de paquets sur le serveur d'images."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:39
 msgid ""
 "Use cluster History and process output to identify the node and artifact "
 "that failed. Do not temporarily enable internet access as a substitute "
 "for correcting an incomplete offline artifact set."
-msgstr ""
+msgstr "Utilisez l'Historique du cluster et la sortie du processus pour identifier le nœud et l'artefact qui ont échoué. N'activez pas temporairement l'accès Internet comme substitut à la correction d'un ensemble d'artefacts hors ligne incomplet."
 

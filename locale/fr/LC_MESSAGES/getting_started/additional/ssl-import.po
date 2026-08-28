@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:2
 msgid "Import Trusted Certificates"
-msgstr ""
+msgstr "Importer des certificats de confiance"
 
 #: ../../getting_started/additional/ssl-import.rst:4
 msgid ""
@@ -32,29 +32,29 @@ msgid ""
 "into both the appliance OpenSSL trust path and the embedded JRE "
 "truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, "
 "so the UI must be restarted to load the updated JRE truststore."
-msgstr ""
+msgstr "Utilisez cette procédure pour ajouter une autorité de certification que l'application |morpheus| doit approuver, telle que l'autorité de certification pour un point de terminaison ServiceNow. La reconfiguration importe les certificats du répertoire trusted-certificate à la fois dans le chemin de confiance OpenSSL de l'appliance et dans le truststore JRE intégré. La reconfiguration ne redémarre pas une JVM ``morpheus-ui`` en cours d'exécution, donc l'interface utilisateur doit être redémarrée pour charger le truststore JRE mis à jour."
 
 #: ../../getting_started/additional/ssl-import.rst:6
 msgid "Obtain the full SSL certificate chain in PEM format."
-msgstr ""
+msgstr "Obtenez la chaîne complète de certificats SSL au format PEM."
 
 #: ../../getting_started/additional/ssl-import.rst:8
 msgid ""
 "Copy them to each appliance and place them in the "
 "``/etc/morpheus/ssl/trusted_certs`` directory."
-msgstr ""
+msgstr "Copiez-les sur chaque appliance et placez-les dans le répertoire ``/etc/morpheus/ssl/trusted_certs``."
 
 #: ../../getting_started/additional/ssl-import.rst:10
 msgid ""
 "Run ``morpheus-ctl reconfigure`` on the appliance. Reconfigure can run "
 "while the UI is active."
-msgstr ""
+msgstr "Exécutez ``morpheus-ctl reconfigure`` sur l'appliance. La reconfiguration peut s'exécuter pendant que l'interface utilisateur est active."
 
 #: ../../getting_started/additional/ssl-import.rst:12
 msgid ""
 "Verify that each certificate is present in the embedded JRE truststore. "
 "Reconfigure uses the certificate filename as its alias:"
-msgstr ""
+msgstr "Vérifiez que chaque certificat est présent dans le truststore JRE intégré. La reconfiguration utilise le nom de fichier du certificat comme alias :"
 
 #: ../../getting_started/additional/ssl-import.rst:14
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 msgid ""
 "Verify the remote endpoint and chain with the appliance OpenSSL client, "
 "replacing the host and port:"
-msgstr ""
+msgstr "Vérifiez le point de terminaison distant et la chaîne avec le client OpenSSL de l'appliance, en remplaçant l'hôte et le port :"
 
 #: ../../getting_started/additional/ssl-import.rst:20
 msgid "openssl s_client -connect host:port -showcerts -tls1_2"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:24
 msgid "You should get an output similar to:"
-msgstr ""
+msgstr "Vous devriez obtenir une sortie similaire à :"
 
 #: ../../getting_started/additional/ssl-import.rst:26
 msgid ""
@@ -106,11 +106,11 @@ msgid ""
 "return code: 0 (ok)``.  If they were not installed correctly then you "
 "will see a return similar to: ``Verify return code: 21 (unable to verify "
 "the first certificate)``"
-msgstr ""
+msgstr "Si les certificats sont installés correctement, vous devriez voir ``Verify return code: 0 (ok)``.  S'ils n'ont pas été installés correctement, vous verrez un retour similaire à : ``Verify return code: 21 (unable to verify the first certificate)``"
 
 #: ../../getting_started/additional/ssl-import.rst:48
 msgid "Restart the UI so its JVM loads the updated truststore:"
-msgstr ""
+msgstr "Redémarrez l'interface utilisateur pour que sa JVM charge le truststore mis à jour :"
 
 #: ../../getting_started/additional/ssl-import.rst:50
 msgid "morpheus-ctl restart morpheus-ui"
@@ -121,7 +121,7 @@ msgid ""
 "Repeat the copy, reconfigure, truststore verification, and UI restart on "
 "every application node. In an HA deployment, process one application node"
 " at a time and confirm it is healthy before proceeding to the next node."
-msgstr ""
+msgstr "Répétez la copie, la reconfiguration, la vérification du truststore et le redémarrage de l'interface utilisateur sur chaque nœud d'application. Dans un déploiement HA, traitez un nœud d'application à la fois et confirmez qu'il est sain avant de passer au nœud suivant."
 
 #: ../../getting_started/additional/ssl-import.rst:56
 msgid ""
@@ -129,5 +129,5 @@ msgid ""
 "successful connection confirms that the application JVM trusts the "
 "endpoint; ``openssl`` success alone does not verify the trust state of "
 "the already-running JVM."
-msgstr ""
+msgstr "Réessayez l'intégration sans désactiver la vérification du certificat. Une connexion réussie confirme que la JVM de l'application approuve le point de terminaison ; le succès d'``openssl`` seul ne vérifie pas l'état de confiance de la JVM déjà en cours d'exécution."
 

@@ -106,7 +106,7 @@ msgid ""
 "not grant Administrator to troubleshoot a single VM. vTPM and encrypted-"
 "VM operations can require privileges that an unencrypted-VM test never "
 "exercises."
-msgstr ""
+msgstr "Configure el rol para las operaciones habilitadas en su entorno y asígnelo solo en los objetos de inventario donde se requieran esas operaciones. No conceda Administrator para solucionar problemas de una sola VM. Las operaciones de vTPM y VM cifradas pueden requerir privilegios que una prueba con VM no cifrada nunca ejercita."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:22
 msgid "Content Library"
@@ -118,7 +118,7 @@ msgstr "All Content Library privileges"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:25
 msgid "Cryptographic operations for encrypted or vTPM VMs"
-msgstr ""
+msgstr "Operaciones criptográficas para VMs cifradas o con vTPM"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:26
 #: ../../integration_guides/Clouds/vmware/permissions.rst:84
@@ -127,11 +127,11 @@ msgstr "Clone"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:27
 msgid "Direct Access"
-msgstr ""
+msgstr "Direct Access"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:28
 msgid "Migrate"
-msgstr ""
+msgstr "Migrate"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:30
 msgid ""
@@ -143,7 +143,7 @@ msgid ""
 "the set as a reported requirement for workflows that include console "
 "access, clone, or migration of encrypted/vTPM VMs, not as a requirement "
 "for every unencrypted VM."
-msgstr ""
+msgstr "Los nombres anteriores corresponden a los privilegios de vCenter **Cryptographic operations** informados en MORPH-6016 como ``Clone``, ``Direct`` y ``AccessMigrate``. El informe estableció que agregar el conjunto restauró el acceso a la consola del hipervisor para una VM Windows 11 con vTPM descubierta; no aisló qué privilegio individual consumió la sesión de consola. Trate el conjunto como un requisito informado para flujos de trabajo que incluyan acceso a consola, clonación o migración de VMs cifradas/con vTPM, no como un requisito para cada VM no cifrada."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:32
 msgid ""
@@ -155,7 +155,7 @@ msgid ""
 "complete set, use vCenter task/event and |morpheus| logs to identify the "
 "denied operation and have the VMware/security owner approve the minimum "
 "privilege; do not broaden the role to Administrator."
-msgstr ""
+msgstr "Aplique estos privilegios al rol de integración dedicado de |morpheus| en el alcance de inventario de vCenter más pequeño que contenga las VMs cifradas/con vTPM afectadas, con propagación solo donde los objetos secundarios lo requieran. Verifique la asignación de rol heredada por la VM afectada y pruebe consola, clonación y migración por separado. Si la política no puede permitir el conjunto completo, use tareas/eventos de vCenter y los logs de |morpheus| para identificar la operación denegada y pida al propietario de VMware/seguridad que apruebe el privilegio mínimo; no amplíe el rol a Administrator."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:34
 #: ../../integration_guides/Clouds/vmware/permissions.rst:123
@@ -404,7 +404,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:104
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:104
 msgid ""

@@ -22,73 +22,73 @@ msgstr ""
 
 #: ../../infrastructure/clouds/profiles.rst:2
 msgid "Cloud Profiles"
-msgstr ""
+msgstr "Saisissez des entrées clé/valeur, en sélectionnant + pour ajouter des entrées supplémentaires"
 
 #: ../../infrastructure/clouds/profiles.rst:5
 msgid "Role Permissions"
-msgstr ""
+msgstr "Profils cloud"
 
 #: ../../infrastructure/clouds/profiles.rst:9
 msgid ""
 "Access to **Profiles** tab is determined by the following role "
 "permissions:"
-msgstr ""
+msgstr "Autorisations de rôle"
 
 #: ../../infrastructure/clouds/profiles.rst:11
 msgid "Role: Feature Access: ``Admin: Profiles``"
-msgstr ""
+msgstr "L'accès à l'onglet **Profiles** est déterminé par les autorisations de rôle suivantes :"
 
 #: ../../infrastructure/clouds/profiles.rst:12
 msgid "None: Cannot access Profiles tab or create/view/edit/delete profiles"
-msgstr ""
+msgstr "Rôle : Accès aux fonctionnalités : ``Admin: Profiles``"
 
 #: ../../infrastructure/clouds/profiles.rst:13
 msgid ""
 "Read: Can access Profiles tab, can view profiles, cannot "
 "create/edit/delete profiles"
-msgstr ""
+msgstr "None : Impossible d'accéder à l'onglet Profiles ou de créer/consulter/modifier/supprimer des profils"
 
 #: ../../infrastructure/clouds/profiles.rst:14
 msgid "Full: Can access Profiles tab, can create/view/edit/delete profiles"
-msgstr ""
+msgstr "Read : Peut accéder à l'onglet Profiles, peut consulter les profils, ne peut pas créer/modifier/supprimer des profils"
 
 #: ../../infrastructure/clouds/profiles.rst:17
 msgid "Terraform Profiles"
-msgstr ""
+msgstr "Full : Peut accéder à l'onglet Profiles, peut créer/consulter/modifier/supprimer des profils"
 
 #: ../../infrastructure/clouds/profiles.rst:19
 msgid ""
 "Terraform Profiles allow creation of Cloud-associated tfvars secrets, "
 "allowing tf apps and specs to be provisioned across multiple clouds that "
 "required different tfvars."
-msgstr ""
+msgstr "Profils Terraform"
 
 #: ../../infrastructure/clouds/profiles.rst:20
 msgid ""
 "Target Cloud Terraform Profiles are automatically mapped to tf apps/specs"
 " during provisioning, no manual scoping is required."
-msgstr ""
+msgstr "Les profils Terraform permettent la création de secrets tfvars associés au cloud, permettant aux applications et spécifications tf d'être provisionnées sur plusieurs clouds nécessitant des tfvars différents."
 
 #: ../../infrastructure/clouds/profiles.rst:21
 msgid ""
 "Terraform Profiles are encrypted in Cypher and creating a profile creates"
 " a Cypher entry with key `tfvars/profile/cloud/$cloudCode/variables``"
-msgstr ""
+msgstr "Les profils Terraform du cloud cible sont automatiquement mappés aux applications/spécifications tf lors du provisionnement, aucun ciblage manuel n'est requis."
 
 #: ../../infrastructure/clouds/profiles.rst:22
 msgid "Terraform Profiles can be edited after creation"
-msgstr ""
+msgstr "Les profils Terraform sont chiffrés dans Cypher et la création d'un profil crée une entrée Cypher avec la clé `tfvars/profile/cloud/$cloudCode/variables``"
 
 #: ../../infrastructure/clouds/profiles.rst:23
 msgid ""
 "Terraform Profiles are limited to one per Cloud, once one is created for "
 "the Cloud the option to create a Terraform Profile is no longer present. "
 "Edit the existing Terraform Profile to make changes at that point"
-msgstr ""
+msgstr "Les profils Terraform peuvent être modifiés après leur création"
 
 #: ../../infrastructure/clouds/profiles.rst:25
 msgid "Important"
-msgstr ""
+msgstr "Les profils Terraform sont limités à un par cloud ; une fois qu'un profil est créé pour le cloud, l'option de création d'un profil Terraform n'est plus disponible. Modifiez le profil Terraform existant pour apporter des modifications à ce stade"
 
 #: ../../infrastructure/clouds/profiles.rst:25
 msgid ""
@@ -103,36 +103,36 @@ msgid ""
 "all Clouds of the same type have the same generic Cloud code and thus "
 "share a Terraform Profile. To avoid this situation, enter a Cloud code "
 "value at creation time or edit existing Clouds to have a unique code."
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clouds/profiles.rst:28
 msgid "Create a Terraform Profile"
-msgstr ""
+msgstr "Étant donné que |morpheus| monte les profils Terraform dans Cypher à l'aide d'un point de montage contenant la valeur du code cloud, tous les clouds ayant le même code partageront un profil Terraform. Créez ou modifiez des clouds pour qu'ils aient une valeur de code unique s'ils doivent avoir un profil Terraform unique. Il est également important de comprendre que |morpheus| n'exige pas qu'un code soit défini pour les clouds lors de leur création. Lorsque des clouds sont créés sans code, |morpheus| applique un code générique non unique basé sur le type de cloud (« amazon » pour les clouds AWS, par exemple). Cela crée une situation potentielle où tous les clouds du même type ont le même code cloud générique et partagent donc un profil Terraform. Pour éviter cette situation, saisissez une valeur de code cloud lors de la création ou modifiez les clouds existants pour qu'ils aient un code unique."
 
 #: ../../infrastructure/clouds/profiles.rst:30
 msgid "Navigate to |InfClo| and select a Cloud"
-msgstr ""
+msgstr "Créer un profil Terraform"
 
 #: ../../infrastructure/clouds/profiles.rst:31
 msgid "Select the \"Profiles\" tab"
-msgstr ""
+msgstr "Accédez à |InfClo| et sélectionnez un cloud"
 
 #: ../../infrastructure/clouds/profiles.rst:32
 #: ../../infrastructure/clouds/profiles.rst:64
 msgid "Select :guilabel:`+ ADD PROFILE`"
-msgstr ""
+msgstr "Sélectionnez l'onglet « Profiles »"
 
 #: ../../infrastructure/clouds/profiles.rst:33
 msgid "Select Terraform Profile Type"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ ADD PROFILE`"
 
 #: ../../infrastructure/clouds/profiles.rst:34
 msgid "Enter tfvars in the `Terraform Profile Variables` field"
-msgstr ""
+msgstr "Sélectionnez le type de profil Terraform"
 
 #: ../../infrastructure/clouds/profiles.rst:36
 msgid "example Terraform Profile Variables"
-msgstr ""
+msgstr "Saisissez les tfvars dans le champ `Terraform Profile Variables`"
 
 #: ../../infrastructure/clouds/profiles.rst:38
 msgid ""
@@ -144,7 +144,7 @@ msgstr ""
 #: ../../infrastructure/clouds/profiles.rst:45
 #: ../../infrastructure/clouds/profiles.rst:67
 msgid "Select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`SAVE CHANGES`"
 
 #: ../../infrastructure/clouds/profiles.rst:47
 msgid ""
@@ -153,46 +153,46 @@ msgid ""
 "Terraform. It is not necessary to manually tie this tfvars files to your "
 "App Blueprint, these tfvars will automatically be available to Terraform "
 "whenever you provision an App to this cloud."
-msgstr ""
+msgstr "Désormais, lors du provisionnement d'une instance ou d'une application Terraform vers le cloud dans lequel le profil a été créé, les tfvars du profil deviennent disponibles pour Terraform. Il n'est pas nécessaire de lier manuellement ces fichiers tfvars à votre plan, ces tfvars seront automatiquement disponibles pour Terraform chaque fois que vous provisionnez une application vers ce cloud."
 
 #: ../../infrastructure/clouds/profiles.rst:54
 msgid "Key/Value Store Profiles"
-msgstr ""
+msgstr "Profils Key/Value Store"
 
 #: ../../infrastructure/clouds/profiles.rst:56
 msgid ""
 "Key/Value Profiles (Key/Value Store) expand provisioning, automation, "
 "billing and reporting capabilities by allowing dynamic custom object "
 "specific metadata in provisioning and automation mappings"
-msgstr ""
+msgstr "Les profils Key/Value (Key/Value Store) étendent les capacités de provisionnement, d'automatisation, de facturation et de reporting en permettant des métadonnées dynamiques spécifiques à des objets personnalisés dans les mappages de provisionnement et d'automatisation"
 
 #: ../../infrastructure/clouds/profiles.rst:57
 msgid "Key/Value Profile entries are available using ``<%=cloud.profile.key%>``"
-msgstr ""
+msgstr "Les entrées de profil Key/Value sont disponibles via ``<%=cloud.profile.key%>``"
 
 #: ../../infrastructure/clouds/profiles.rst:58
 msgid ""
 "Terraform Profiles are limited to one Profile per Cloud, however multiple"
 " key/value pairs can be added to a single profile"
-msgstr ""
+msgstr "Les profils Terraform sont limités à un profil par cloud, cependant plusieurs paires clé/valeur peuvent être ajoutées à un seul profil"
 
 #: ../../infrastructure/clouds/profiles.rst:61
 msgid "Create a Key/Value Profile"
-msgstr ""
+msgstr "Créer un profil Key/Value"
 
 #: ../../infrastructure/clouds/profiles.rst:62
 msgid "Navigate to ``/infrastructure/clouds/`` and select a Cloud"
-msgstr ""
+msgstr "Accédez à ``/infrastructure/clouds/`` et sélectionnez un cloud"
 
 #: ../../infrastructure/clouds/profiles.rst:63
 msgid "Select the ``Profiles`` tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet ``Profiles``"
 
 #: ../../infrastructure/clouds/profiles.rst:65
 msgid "Select Key/Value Profile Type"
-msgstr ""
+msgstr "Sélectionnez le type de profil Key/Value"
 
 #: ../../infrastructure/clouds/profiles.rst:66
 msgid "Enter key/value entries, selecting + to add additional entries"
-msgstr ""
+msgstr "Saisissez des entrées clé/valeur, en sélectionnant + pour ajouter des entrées supplémentaires"
 

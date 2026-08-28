@@ -112,7 +112,7 @@ msgid ""
 "For Windows 11 VMs with vTPM or other encrypted VMs, review the task-"
 "scoped **Cryptographic operations** guidance in `VMware Permissions`_ "
 "before enabling hypervisor console, clone, or migration workflows."
-msgstr ""
+msgstr "Para VMs Windows 11 con vTPM u otras VMs cifradas, revise la orientación de **Cryptographic operations** con alcance de tarea en `VMware Permissions`_ antes de habilitar flujos de trabajo de consola del hipervisor, clonación o migración."
 
 #: ../../integration_guides/Clouds/vmware/vmware.rst:30
 msgid ""
@@ -154,7 +154,7 @@ msgid ""
 ":doc:`/getting_started/guides/vmware_to_vme` to find the corresponding "
 "workflow for common inventory, provisioning, placement, networking, "
 "lifecycle, migration, console, and backup tasks."
-msgstr ""
+msgstr "Los administradores de VMware que adoptan VM Essentials pueden usar :doc:`/getting_started/guides/vmware_to_vme` para encontrar el flujo de trabajo correspondiente para tareas comunes de inventario, aprovisionamiento, colocación, redes, ciclo de vida, migración, consola y backup."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:2
 msgid "Getting Started"
@@ -411,7 +411,7 @@ msgstr ""
 #: ../../integration_guides/Clouds/vmware/vmware_templates.rst:163
 #: ../../integration_guides/Clouds/vmware/vmware_templates.rst:260
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:43
 msgid ""
@@ -602,7 +602,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:73
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:73
 msgid ""
@@ -829,7 +829,7 @@ msgid ""
 "dedicated second disk is not required for every VMware Docker Host; "
 "configure the volumes required by the selected layout and your storage "
 "design."
-msgstr ""
+msgstr "El layout de Docker seleccionado puede exponer un volumen de datos configurable. No se requiere un segundo disco dedicado para cada Host Docker de VMware; configure los volúmenes requeridos por el layout seleccionado y su diseño de almacenamiento."
 
 #: ../../integration_guides/Clouds/vmware/docker.rst:10
 msgid ""
@@ -930,7 +930,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:13
 msgid "Device Type Selection"
-msgstr ""
+msgstr "Selección de tipo de dispositivo"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:15
 msgid ""
@@ -942,7 +942,7 @@ msgid ""
 "presented and the configured/default type is used. These settings are "
 "verified for VMware Clouds only; do not infer the same controls for HVM "
 "or another Cloud type."
-msgstr ""
+msgstr "La configuración avanzada de VMware Cloud contiene ajustes separados :guilabel:`Enable Storage Type Selection` y :guilabel:`Enable Network Type Selection`. Habilite el ajuste correspondiente cuando los usuarios deban elegir entre los tipos de almacenamiento o de interfaz de red expuestos por el proveedor de aprovisionamiento de VMware. Cuando está deshabilitado, no se presenta el selector correspondiente y se usa el tipo configurado/predeterminado. Estos ajustes están verificados solo para Nubes VMware; no infiera los mismos controles para HVM u otro tipo de Nube."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:2
 msgid "VMware Permissions"
@@ -1025,7 +1025,7 @@ msgid ""
 "not grant Administrator to troubleshoot a single VM. vTPM and encrypted-"
 "VM operations can require privileges that an unencrypted-VM test never "
 "exercises."
-msgstr ""
+msgstr "Configure el rol para las operaciones habilitadas en su entorno y asígnelo solo en los objetos de inventario donde se requieran esas operaciones. No conceda Administrator para solucionar problemas de una sola VM. Las operaciones de vTPM y VM cifradas pueden requerir privilegios que una prueba con VM no cifrada nunca ejercita."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:22
 msgid "Content Library"
@@ -1037,7 +1037,7 @@ msgstr "All Content Library privileges"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:25
 msgid "Cryptographic operations for encrypted or vTPM VMs"
-msgstr ""
+msgstr "Operaciones criptográficas para VMs cifradas o con vTPM"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:26
 #: ../../integration_guides/Clouds/vmware/permissions.rst:84
@@ -1046,11 +1046,11 @@ msgstr "Clone"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:27
 msgid "Direct Access"
-msgstr ""
+msgstr "Direct Access"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:28
 msgid "Migrate"
-msgstr ""
+msgstr "Migrate"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:30
 msgid ""
@@ -1062,7 +1062,7 @@ msgid ""
 "the set as a reported requirement for workflows that include console "
 "access, clone, or migration of encrypted/vTPM VMs, not as a requirement "
 "for every unencrypted VM."
-msgstr ""
+msgstr "Los nombres anteriores corresponden a los privilegios de vCenter **Cryptographic operations** informados en MORPH-6016 como ``Clone``, ``Direct`` y ``AccessMigrate``. El informe estableció que agregar el conjunto restauró el acceso a la consola del hipervisor para una VM Windows 11 con vTPM descubierta; no aisló qué privilegio individual consumió la sesión de consola. Trate el conjunto como un requisito informado para flujos de trabajo que incluyan acceso a consola, clonación o migración de VMs cifradas/con vTPM, no como un requisito para cada VM no cifrada."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:32
 msgid ""
@@ -1074,7 +1074,7 @@ msgid ""
 "complete set, use vCenter task/event and |morpheus| logs to identify the "
 "denied operation and have the VMware/security owner approve the minimum "
 "privilege; do not broaden the role to Administrator."
-msgstr ""
+msgstr "Aplique estos privilegios al rol de integración dedicado de |morpheus| en el alcance de inventario de vCenter más pequeño que contenga las VMs cifradas/con vTPM afectadas, con propagación solo donde los objetos secundarios lo requieran. Verifique la asignación de rol heredada por la VM afectada y pruebe consola, clonación y migración por separado. Si la política no puede permitir el conjunto completo, use tareas/eventos de vCenter y los logs de |morpheus| para identificar la operación denegada y pida al propietario de VMware/seguridad que apruebe el privilegio mínimo; no amplíe el rol a Administrator."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:34
 #: ../../integration_guides/Clouds/vmware/permissions.rst:123
@@ -2038,7 +2038,7 @@ msgid ""
 msgstr ""
 "cat << EOF > /etc/udev/rules.d/70-persistent-net.rules\n"
 "SUBSYSTEM==\"net\", ACTION==\"add\", DRIVERS==\"?*\", "
-"ATTR{dev_id}==\"0x0\", ATTR{tipo}==\"1\", NAME=\"eth0\"\n"
+"ATTR{dev_id}==\"0x0\", ATTR{type}==\"1\", NAME=\"eth0\"\n"
 "EOF"
 
 #: ../../integration_guides/Clouds/vmware/vmware_templates.rst:196

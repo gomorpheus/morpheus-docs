@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:4
 msgid "Helm Upgrade Workflow"
-msgstr ""
+msgstr "Helm-Upgrade-Workflow"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:9
 msgid ""
@@ -36,120 +36,120 @@ msgid ""
 "configurations without redeploying from scratch. This is handled "
 "internally by the ``upgradeOrInstallApp`` method which ensures idempotent"
 " operations."
-msgstr ""
+msgstr "|morpheus| unterstützt In-Place-Upgrades von mit Helm bereitgestellten Anwendungen. Der Upgrade-Workflow verwendet die Semantik von ``helm upgrade --install`` und ermöglicht Benutzern, Chart-Werte zu aktualisieren, neue Chart-Versionen anzuwenden oder Konfigurationen zu ändern, ohne von Grund auf neu bereitzustellen. Dies wird intern von der Methode ``upgradeOrInstallApp`` übernommen, die idempotente Operationen sicherstellt."
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:11
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:11
 msgid "Helm upgrades preserve release history, enabling rollback if needed."
-msgstr ""
+msgstr "Helm-Upgrades bewahren die Release-Historie und ermöglichen bei Bedarf ein Rollback."
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:14
 msgid "Upgrade Methods"
-msgstr ""
+msgstr "Upgrade-Methoden"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:16
 msgid "|morpheus| supports several upgrade operation types:"
-msgstr ""
+msgstr "|morpheus| unterstützt mehrere Upgrade-Operationstypen:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:19
 msgid "Values Override Upgrade"
-msgstr ""
+msgstr "Values-Override-Upgrade"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:21
 msgid "Update the deployed release with new Helm ``--set`` values:"
-msgstr ""
+msgstr "Das bereitgestellte Release mit neuen Helm-``--set``-Werten aktualisieren:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:23
 #: ../../provisioning/kubernetes/helm_upgrades.rst:34
 msgid "Navigate to ``Provisioning > Apps``"
-msgstr ""
+msgstr "Zu ``Provisioning > Apps`` navigieren"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:24
 #: ../../provisioning/kubernetes/helm_upgrades.rst:35
 msgid "Select the Helm App to upgrade"
-msgstr ""
+msgstr "Die zu aktualisierende Helm-App auswählen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:25
 #: ../../provisioning/kubernetes/helm_upgrades.rst:36
 msgid "From the ACTIONS menu, select **Upgrade**"
-msgstr ""
+msgstr "Im Menü ACTIONS **Upgrade** auswählen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:26
 msgid ""
 "Modify the **Override Values** field with new ``key=value`` pairs (comma-"
 "separated)"
-msgstr ""
+msgstr "Das Feld **Override Values** mit neuen ``key=value``-Paaren (durch Komma getrennt) anpassen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:27
 #: ../../provisioning/kubernetes/helm_upgrades.rst:38
 msgid "Select :guilabel:`APPLY`"
-msgstr ""
+msgstr ":guilabel:`APPLY` auswählen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:30
 msgid "Custom YAML Upgrade"
-msgstr ""
+msgstr "Custom-YAML-Upgrade"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:32
 msgid "Provide a complete custom ``values.yaml`` to apply:"
-msgstr ""
+msgstr "Eine vollständige benutzerdefinierte ``values.yaml`` zum Anwenden bereitstellen:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:37
 msgid "Enter or paste custom values YAML in the **Custom Values YAML** field"
-msgstr ""
+msgstr "Benutzerdefiniertes Values-YAML in das Feld **Custom Values YAML** eingeben oder einfügen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:41
 msgid "Combined Upgrade"
-msgstr ""
+msgstr "Kombiniertes Upgrade"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:43
 msgid ""
 "Apply both a custom values file and individual set overrides in a single "
 "operation. When both are provided, |morpheus| auto-detects the combined "
 "operation type:"
-msgstr ""
+msgstr "In einem Vorgang sowohl eine benutzerdefinierte Values-Datei als auch einzelne Set-Overrides anwenden. Wenn beides angegeben ist, erkennt |morpheus| den kombinierten Operationstyp automatisch:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:45
 msgid "Custom YAML values are applied first (via ``-f``)"
-msgstr ""
+msgstr "Benutzerdefinierte YAML-Werte werden zuerst angewendet (über ``-f``)"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:46
 msgid "Individual ``--set`` values take precedence and override matching keys"
-msgstr ""
+msgstr "Einzelne ``--set``-Werte haben Vorrang und überschreiben übereinstimmende Schlüssel"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:48
 msgid ""
 "This is useful for applying a base configuration file while overriding "
 "specific environment-specific values."
-msgstr ""
+msgstr "Das ist nützlich, um eine Basiskonfigurationsdatei anzuwenden und gleichzeitig bestimmte umgebungsspezifische Werte zu überschreiben."
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:51
 msgid "How Upgrades Work"
-msgstr ""
+msgstr "So funktionieren Upgrades"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:53
 msgid "When an upgrade is triggered, |morpheus| executes the following:"
-msgstr ""
+msgstr "Wenn ein Upgrade ausgelöst wird, führt |morpheus| Folgendes aus:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:55
 msgid ""
 "**Resolves the chart source** — Locates the chart from the configured Git"
 " repository or cached chart path"
-msgstr ""
+msgstr "**Chart-Quelle auflösen** — Ermittelt das Chart aus dem konfigurierten Git-Repository oder dem zwischengespeicherten Chart-Pfad"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:56
 msgid ""
 "**Processes namespace** — Uses the existing release namespace or the "
 "resource pool namespace as fallback"
-msgstr ""
+msgstr "**Namensraum verarbeiten** — Verwendet den vorhandenen Release-Namensraum oder als Fallback den Resource-Pool-Namensraum"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:57
 msgid ""
 "**Builds the Helm command** — Constructs ``helm upgrade --install "
 "<release-name>`` with:"
-msgstr ""
+msgstr "**Helm-Befehl erstellen** — Konstruiert ``helm upgrade --install <release-name>`` mit:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:59
 msgid "``--namespace=<namespace>``"
@@ -161,169 +161,169 @@ msgstr ""
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:61
 msgid "Values file (``-f values.yaml``) if template parameters exist"
-msgstr ""
+msgstr "Values-Datei (``-f values.yaml``), falls Template-Parameter vorhanden sind"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:62
 msgid "Custom values file (``-f custom-values.yaml``) if provided"
-msgstr ""
+msgstr "Benutzerdefinierte Values-Datei (``-f custom-values.yaml``), falls angegeben"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:63
 msgid "``--set`` overrides if provided"
-msgstr ""
+msgstr "``--set``-Overrides, falls angegeben"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:64
 msgid "Any additional Helm arguments configured on the App"
-msgstr ""
+msgstr "Alle zusätzlichen Helm-Argumente, die für die App konfiguriert sind"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:66
 msgid ""
 "**Executes against the cluster** — Runs the command against the target "
 "cluster's API server"
-msgstr ""
+msgstr "**Gegen den Cluster ausführen** — Führt den Befehl gegen den API-Server des Zielclusters aus"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:67
 msgid ""
 "**Updates resource records** — Syncs the new state of Kubernetes "
 "resources back to |morpheus|"
-msgstr ""
+msgstr "**Ressourcendatensätze aktualisieren** — Synchronisiert den neuen Zustand der Kubernetes-Ressourcen zurück nach |morpheus|"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:70
 msgid "Upgrade vs Install Behavior"
-msgstr ""
+msgstr "Upgrade- vs. Install-Verhalten"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:72
 msgid "The ``helm upgrade --install`` flag ensures:"
-msgstr ""
+msgstr "Das Flag ``helm upgrade --install`` stellt sicher:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:74
 msgid "If the release **exists**, it is upgraded with the new configuration"
-msgstr ""
+msgstr "Wenn das Release **existiert**, wird es mit der neuen Konfiguration aktualisiert"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:75
 msgid "If the release **does not exist**, it is installed fresh"
-msgstr ""
+msgstr "Wenn das Release **nicht existiert**, wird es neu installiert"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:77
 msgid "This makes the operation idempotent and safe to retry on failure."
-msgstr ""
+msgstr "Dadurch ist die Operation idempotent und bei Fehlern sicher wiederholbar."
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:80
 msgid "Monitoring Upgrade Status"
-msgstr ""
+msgstr "Upgrade-Status überwachen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:82
 msgid "After initiating an upgrade:"
-msgstr ""
+msgstr "Nach dem Start eines Upgrades:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:84
 msgid "Progress is tracked in the App's History tab"
-msgstr ""
+msgstr "Der Fortschritt wird auf der Registerkarte History der App nachverfolgt"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:85
 msgid ""
 "Process output is available by clicking the info icon on the target "
 "process"
-msgstr ""
+msgstr "Die Prozessausgabe ist durch Klicken auf das Info-Symbol am Zielprozess verfügbar"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:86
 msgid "Logs are also available in ``Operations > Activity > History``"
-msgstr ""
+msgstr "Protokolle sind auch unter ``Operations > Activity > History`` verfügbar"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:88
 msgid ""
 "If an upgrade fails, the release retains its previous state (unless "
 "``--atomic`` was specified, in which case Helm auto-rolls back)."
-msgstr ""
+msgstr "Wenn ein Upgrade fehlschlägt, behält das Release seinen vorherigen Zustand (es sei denn, ``--atomic`` wurde angegeben; in diesem Fall führt Helm automatisch ein Rollback durch)."
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:91
 msgid "Configuration Persistence"
-msgstr ""
+msgstr "Konfigurationspersistenz"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:93
 msgid "|morpheus| tracks chart configuration across upgrades:"
-msgstr ""
+msgstr "|morpheus| verfolgt die Chart-Konfiguration über Upgrades hinweg:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:95
 msgid ""
 "**Chart path** — Stored in the App config and reused on subsequent "
 "upgrades"
-msgstr ""
+msgstr "**Chart path** — Wird in der App-Konfiguration gespeichert und bei nachfolgenden Upgrades wiederverwendet"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:96
 msgid ""
 "**Git path** — The repository path to the chart is persisted for the "
 "release"
-msgstr ""
+msgstr "**Git path** — Der Repository-Pfad zum Chart bleibt für das Release erhalten"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:97
 msgid ""
 "**Release name** — Defaults to the App name and remains consistent across"
 " upgrades"
-msgstr ""
+msgstr "**Release name** — Entspricht standardmäßig dem App-Namen und bleibt über Upgrades hinweg konsistent"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:100
 msgid "Rolling Back"
-msgstr ""
+msgstr "Rollback"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:102
 msgid "To roll back a failed upgrade, you can:"
-msgstr ""
+msgstr "Um ein fehlgeschlagenes Upgrade zurückzurollen, können Sie:"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:104
 msgid "Re-run the upgrade with the previous values configuration"
-msgstr ""
+msgstr "Das Upgrade mit der vorherigen Wertekonfiguration erneut ausführen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:105
 msgid ""
 "Use the ``kubectl`` command line on the Cluster Control tab to run ``helm"
 " rollback <release> <revision>``"
-msgstr ""
+msgstr "Über die Registerkarte Cluster Control die ``kubectl``-Befehlszeile verwenden und ``helm rollback <release> <revision>`` ausführen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:106
 msgid "Delete and re-provision the App from the original blueprint"
-msgstr ""
+msgstr "Die App löschen und aus dem ursprünglichen Blueprint erneut provisionieren"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:108
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:108
 msgid ""
 "Check the release history with ``helm history <release-name>`` from the "
 "cluster Control tab to identify the target revision number for rollback."
-msgstr ""
+msgstr "Prüfen Sie die Release-Historie mit ``helm history <release-name>`` auf der Cluster-Control-Registerkarte, um die Zielrevisionsnummer für das Rollback zu ermitteln."
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:111
 msgid "Best Practices"
-msgstr ""
+msgstr "Best Practices"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:113
 msgid ""
 "**Test with --dry-run:** Add ``--dry-run`` to Additional Helm Args during"
 " testing to preview changes without applying them"
-msgstr ""
+msgstr "**Mit --dry-run testen:** Fügen Sie während des Testens ``--dry-run`` zu Additional Helm Args hinzu, um Änderungen vor der Anwendung in der Vorschau zu sehen"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:114
 msgid ""
 "**Use --wait:** Include ``--wait`` to ensure the upgrade only reports "
 "success after all resources are ready"
-msgstr ""
+msgstr "**--wait verwenden:** Schließen Sie ``--wait`` ein, damit das Upgrade erst als erfolgreich gemeldet wird, wenn alle Ressourcen bereit sind"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:115
 msgid ""
 "**Pin chart versions:** Specify explicit chart versions to avoid "
 "unexpected changes from upstream"
-msgstr ""
+msgstr "**Chart-Versionen festlegen:** Geben Sie explizite Chart-Versionen an, um unerwartete Änderungen aus Upstream zu vermeiden"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:116
 msgid ""
 "**Incremental changes:** Make small, focused value changes per upgrade "
 "rather than large configuration shifts"
-msgstr ""
+msgstr "**Inkrementelle Änderungen:** Nehmen Sie pro Upgrade kleine, gezielte Werteänderungen vor statt großer Konfigurationswechsel"
 
 #: ../../provisioning/kubernetes/helm_upgrades.rst:117
 msgid ""
 "**Monitor pod status:** After upgrade, verify pod health on the cluster "
 "Workloads tab"
-msgstr ""
+msgstr "**Pod-Status überwachen:** Prüfen Sie nach dem Upgrade den Pod-Zustand auf der Cluster-Registerkarte Workloads"
 

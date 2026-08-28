@@ -49,7 +49,7 @@ msgstr ""
 #: ../../getting_started/additional/offline.rst:56
 #: ../../getting_started/additional/offline.rst:92
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/additional/morpheusRb.rst:8
 msgid ""
@@ -501,7 +501,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ha_load_balancer.rst:26
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../getting_started/additional/ha_load_balancer.rst:26
 msgid ""
@@ -1103,7 +1103,7 @@ msgid ""
 " OS Updates </getting_started/maintenance/manager_os_updates>`. Offline "
 "HKS cluster provisioning uses a separate image-server workflow; see "
 ":doc:`/infrastructure/clusters/hks_offline_provisioning`."
-msgstr ""
+msgstr "Esta página cubre la instalación offline y las actualizaciones del paquete de aplicación para el dispositivo |morpheus|. No proporciona actualizaciones del sistema operativo base Ubuntu para la imagen QCOW2 de HPE Morpheus Manager. Para modelos de repositorio APT restringidos y totalmente desconectados, consulte :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`. El aprovisionamiento offline de clústeres HKS utiliza un flujo de trabajo de servidor de imágenes independiente; consulte :doc:`/infrastructure/clusters/hks_offline_provisioning`."
 
 #: ../../getting_started/additional/offline.rst:11
 msgid "Offline Installation Requirements"
@@ -1346,7 +1346,7 @@ msgid ""
 ":doc:`/getting_started/requirements/requirements`. Do not copy proposed "
 "tunnel hostnames into proxy rules unless HPE has supplied the current "
 "endpoint registry for the enabled service and release."
-msgstr ""
+msgstr "Para conectividad opcional de Central Service o Remote Data Access, utilice el requisito de endpoint canónico en :doc:`/getting_started/requirements/requirements`. No copie nombres de host de túnel propuestos en reglas de proxy a menos que HPE haya proporcionado el registro de endpoints actual para el servicio y la versión habilitados."
 
 #: ../../getting_started/additional/proxies.rst:14
 msgid "Defining Proxies"
@@ -1632,7 +1632,7 @@ msgid ""
 "into both the appliance OpenSSL trust path and the embedded JRE "
 "truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, "
 "so the UI must be restarted to load the updated JRE truststore."
-msgstr ""
+msgstr "Utilice este procedimiento para agregar una autoridad de certificación en la que la aplicación |morpheus| deba confiar, como la CA de un endpoint de ServiceNow. Reconfigure importa certificados del directorio de certificados de confianza tanto en la ruta de confianza OpenSSL del dispositivo como en el truststore JRE integrado. Reconfigure no reinicia una JVM ``morpheus-ui`` en ejecución, por lo que la UI debe reiniciarse para cargar el truststore JRE actualizado."
 
 #: ../../getting_started/additional/ssl-import.rst:6
 msgid "Obtain the full SSL certificate chain in PEM format."
@@ -1659,7 +1659,7 @@ msgstr ""
 msgid ""
 "Verify that each certificate is present in the embedded JRE truststore. "
 "Reconfigure uses the certificate filename as its alias:"
-msgstr ""
+msgstr "Verifique que cada certificado esté presente en el truststore JRE integrado. Reconfigure utiliza el nombre del archivo de certificado como alias:"
 
 #: ../../getting_started/additional/ssl-import.rst:14
 msgid ""
@@ -1671,7 +1671,7 @@ msgstr ""
 msgid ""
 "Verify the remote endpoint and chain with the appliance OpenSSL client, "
 "replacing the host and port:"
-msgstr ""
+msgstr "Verifique el endpoint remoto y la cadena con el cliente OpenSSL del dispositivo, reemplazando el host y el puerto:"
 
 #: ../../getting_started/additional/ssl-import.rst:20
 msgid "openssl s_client -connect host:port -showcerts -tls1_2"
@@ -1729,7 +1729,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:48
 msgid "Restart the UI so its JVM loads the updated truststore:"
-msgstr ""
+msgstr "Reinicie la UI para que su JVM cargue el truststore actualizado:"
 
 #: ../../getting_started/additional/ssl-import.rst:50
 #, fuzzy
@@ -1741,7 +1741,7 @@ msgid ""
 "Repeat the copy, reconfigure, truststore verification, and UI restart on "
 "every application node. In an HA deployment, process one application node"
 " at a time and confirm it is healthy before proceeding to the next node."
-msgstr ""
+msgstr "Repita la copia, reconfigure, verificación del truststore y reinicio de la UI en cada nodo de aplicación. En una implementación HA, procese un nodo de aplicación a la vez y confirme que esté en buen estado antes de continuar con el siguiente nodo."
 
 #: ../../getting_started/additional/ssl-import.rst:56
 msgid ""
@@ -1749,7 +1749,7 @@ msgid ""
 "successful connection confirms that the application JVM trusts the "
 "endpoint; ``openssl`` success alone does not verify the trust state of "
 "the already-running JVM."
-msgstr ""
+msgstr "Reintente la integración sin deshabilitar la verificación de certificados. Una conexión exitosa confirma que la JVM de la aplicación confía en el endpoint; el éxito de ``openssl`` por sí solo no verifica el estado de confianza de la JVM ya en ejecución."
 
 #: ../../getting_started/additional/encryption.rst:2
 msgid "Data Encryption"
@@ -1786,7 +1786,7 @@ msgid ""
 " External database connection values and customized database names are "
 "configured under ``mysql`` in ``/etc/morpheus/morpheus.rb``; do not "
 "substitute an embedded secret for an external-service credential."
-msgstr ""
+msgstr "Para operaciones de base de datos, ``.mysql.morpheus_password`` en ``morpheus-secrets.json`` es la contraseña generada del usuario de aplicación MySQL integrado. Los valores de conexión de base de datos externa y los nombres de base de datos personalizados se configuran bajo ``mysql`` en ``/etc/morpheus/morpheus.rb``; no sustituya un secreto integrado por una credencial de servicio externo."
 
 #: ../../getting_started/additional/encryption.rst:10
 msgid ""
@@ -1817,7 +1817,7 @@ msgstr ""
 #: ../../getting_started/additional/encryption.rst:17
 #: ../../getting_started/additional/logback.rst:20
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../getting_started/additional/encryption.rst:17
 msgid ""
@@ -1827,7 +1827,7 @@ msgid ""
 "``queue_user`` password. See "
 ":doc:`/getting_started/external_services/rabbitmq` for the supported "
 "limitation."
-msgstr ""
+msgstr "Convertir un valor existente a su representación cifrada es diferente de cambiar la credencial de servicio subyacente. En particular, no utilice este procedimiento para rotar la contraseña ``queue_user`` de RabbitMQ administrada por el dispositivo. Consulte :doc:`/getting_started/external_services/rabbitmq` para la limitación admitida."
 
 #: ../../getting_started/additional/encryption.rst:19
 msgid ""
@@ -1944,7 +1944,7 @@ msgstr ""
 #: ../../getting_started/additional/encryption.rst:50
 #: ../../getting_started/additional/encryption.rst:56
 msgid "Danger"
-msgstr ""
+msgstr "Peligro"
 
 #: ../../getting_started/additional/encryption.rst:50
 msgid ""

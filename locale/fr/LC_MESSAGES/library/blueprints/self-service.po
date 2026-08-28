@@ -22,13 +22,13 @@ msgstr ""
 
 #: ../../library/blueprints/self-service.rst:2
 msgid "Catalog Items |advanced-plus|"
-msgstr ""
+msgstr "Réseau non géré - Configuration par défaut"
 
 #: ../../library/blueprints/self-service.rst:7
 msgid ""
 "The Service Catalog is an Advanced+ feature, available in HPE Morpheus "
 "Enterprise and Advanced tiers."
-msgstr ""
+msgstr "En mode Unmanaged, Morpheus crée une configuration minimale : un pool de ressources par défaut et un réseau non géré par défaut. Le réseau par défaut est non étiqueté et utilise DHCP."
 
 #: ../../library/blueprints/self-service.rst:9
 msgid ""
@@ -41,7 +41,7 @@ msgid ""
 "without sacrificing configurability for administrators. All available "
 "catalog items are built in the Self Service area and users will see "
 "relevant items in their catalogs based on Role permissions."
-msgstr ""
+msgstr "Assurez-vous qu'un serveur DHCP existe et que le réseau est configuré pour un VLAN non étiqueté."
 
 #: ../../library/blueprints/self-service.rst:11
 #: ../../library/blueprints/self-service.rst:27
@@ -50,13 +50,13 @@ msgstr ""
 #: ../../library/blueprints/self-service.rst:297
 #: ../../library/blueprints/self-service.rst:311
 msgid "Note"
-msgstr ""
+msgstr "Cela permet aux instances de démarrer avec une connectivité sans configuration réseau supplémentaire."
 
 #: ../../library/blueprints/self-service.rst:11
 msgid ""
 "For more on Personas and using the Service Catalog persona, see the "
 "Personas sections of our documentation."
-msgstr ""
+msgstr "Réseau non géré - VLAN supplémentaires"
 
 #: ../../library/blueprints/self-service.rst:13
 msgid ""
@@ -65,7 +65,7 @@ msgid ""
 "catalog while users with full rights can create and edit catalog items. "
 "Users without any rights to Self Service will not be able to access the "
 "page at all."
-msgstr ""
+msgstr "Les utilisateurs peuvent créer des VLAN/réseaux supplémentaires selon les besoins."
 
 #: ../../library/blueprints/self-service.rst:15
 msgid ""
@@ -73,11 +73,11 @@ msgid ""
 "service catalog persona and which service catalog items are available for"
 " a user under the service catalog persona. See the Roles section of "
 "|morpheus| documentation for more information on administering Roles."
-msgstr ""
+msgstr "Vérifiez la configuration VLAN et la disponibilité dans les options de provisionnement."
 
 #: ../../library/blueprints/self-service.rst:18
 msgid "Viewing the Self Service Catalog"
-msgstr ""
+msgstr "Des réseaux supplémentaires peuvent être consommés par les instances bare metal."
 
 #: ../../library/blueprints/self-service.rst:20
 msgid ""
@@ -89,7 +89,7 @@ msgid ""
 "description and whether not the catalog item is featured or active. "
 "Featured items are given special visibility in the Service Catalog "
 "Persona and inactive items will not appear as provisioning options."
-msgstr ""
+msgstr "Réseau géré - Intégration ArubaCX"
 
 #: ../../library/blueprints/self-service.rst:22
 msgid ".. image:: /images/tools/self_service/catalogList.png"
@@ -97,7 +97,7 @@ msgstr ""
 
 #: ../../library/blueprints/self-service.rst:25
 msgid "Building Catalog Instances"
-msgstr ""
+msgstr "Confirmez que le plug-in ArubaCX est chargé dans Morpheus."
 
 #: ../../library/blueprints/self-service.rst:27
 #: ../../library/blueprints/self-service.rst:60
@@ -107,7 +107,7 @@ msgid ""
 "API usage for Catalog Items with Forms is not yet supported. If planning "
 "to use the API or CLI to order Catalog Items you should not use Forms on "
 "Catalog Items until it is supported."
-msgstr ""
+msgstr "Les réseaux gérés permettent à Morpheus de configurer automatiquement les VLAN sur les commutateurs."
 
 #: ../../library/blueprints/self-service.rst:29
 msgid ""
@@ -116,14 +116,14 @@ msgid ""
 "service suite. From the Self Service section, we can pre-configure "
 "|morpheus| Instances and present them to users viewing the Service "
 "Catalog Persona for one-click deployment."
-msgstr ""
+msgstr "Ajout du plug-in HPE ArubaCX"
 
 #: ../../library/blueprints/self-service.rst:31
 msgid ""
 "From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. "
 "From the dropdown menu, select Instance. The modal window will appear to "
 "configure and add a new catalog Instance."
-msgstr ""
+msgstr "Le plug-in doit être chargé pour activer les fonctionnalités réseau gérées. Suivez la procédure Adding HPE BMaaS Integration pour charger le fichier JAR du plug-in."
 
 #: ../../library/blueprints/self-service.rst:33
 msgid ".. image:: /images/tools/self_service/createInstance.png"
@@ -133,13 +133,13 @@ msgstr ""
 #: ../../library/blueprints/self-service.rst:257
 #: ../../library/blueprints/self-service.rst:315
 msgid "Configure the following:"
-msgstr ""
+msgstr "Requis avant de créer des intégrations réseau."
 
 #: ../../library/blueprints/self-service.rst:37
 #: ../../library/blueprints/self-service.rst:259
 #: ../../library/blueprints/self-service.rst:317
 msgid "**NAME:** A friendly name for the catalog item in |morpheus|"
-msgstr ""
+msgstr "Création d'une intégration réseau ArubaCX"
 
 #: ../../library/blueprints/self-service.rst:38
 #: ../../library/blueprints/self-service.rst:260
@@ -147,13 +147,13 @@ msgstr ""
 msgid ""
 "**CODE:** An optional shortcode for coded naming schemes or programmatic "
 "reference"
-msgstr ""
+msgstr "L'intégration définit les identifiants des commutateurs et les paires de commutateurs (généralement 2 par rack)."
 
 #: ../../library/blueprints/self-service.rst:39
 #: ../../library/blueprints/self-service.rst:261
 #: ../../library/blueprints/self-service.rst:319
 msgid "**DESCRIPTION:** An optional description identifying the catalog item"
-msgstr ""
+msgstr "Vérifiez que les IP, le nom d'utilisateur et le mot de passe des commutateurs sont corrects."
 
 #: ../../library/blueprints/self-service.rst:40
 #: ../../library/blueprints/self-service.rst:262
@@ -161,14 +161,14 @@ msgstr ""
 msgid ""
 "**CATEGORY:** Select an existing category or enter a new one. When "
 "provisioning from the catelog, items can be filtered by category"
-msgstr ""
+msgstr "Une intégration est nécessaire par rack (paire de commutateurs)."
 
 #: ../../library/blueprints/self-service.rst:41
 #: ../../library/blueprints/self-service.rst:264
 msgid ""
 "**ENABLED:** When checked, this catalog item will be available for "
 "provisioning"
-msgstr ""
+msgstr "Création de réseaux gérés"
 
 #: ../../library/blueprints/self-service.rst:42
 #: ../../library/blueprints/self-service.rst:263
@@ -177,13 +177,13 @@ msgid ""
 "**LABELS:** A comma-separated list of descriptive strings which can be "
 "used to categorize the Catalog Item. The Catalog Items list view page can"
 " be filtered by labels to make them easier to find"
-msgstr ""
+msgstr "Les réseaux représentent des VLAN et incluent des attributs tels que le sous-réseau, la passerelle, le DNS et la méthode d'allocation IP."
 
 #: ../../library/blueprints/self-service.rst:43
 msgid ""
 "**ENABLED:** When marked, this Catalog Item will be available from the "
 "provisioning Catalog view"
-msgstr ""
+msgstr "Assurez-vous que l'ID VLAN, les trunks et le sous-réseau sont corrects."
 
 #: ../../library/blueprints/self-service.rst:44
 #: ../../library/blueprints/self-service.rst:265
@@ -193,7 +193,7 @@ msgid ""
 "refreshed with every field change at the time this Catalog Item is "
 "ordered. For some workloads with heavy Configuration-phase Tasks this may"
 " improve performance of the order page"
-msgstr ""
+msgstr "Le VLAN principal est non étiqueté, les trunks VLAN sont étiquetés."
 
 #: ../../library/blueprints/self-service.rst:45
 #: ../../library/blueprints/self-service.rst:266
@@ -201,7 +201,7 @@ msgstr ""
 msgid ""
 "**FEATURED:** When checked, this catalog item will be given special "
 "visibility in the Service Catalog Persona view"
-msgstr ""
+msgstr "Option réseau privé"
 
 #: ../../library/blueprints/self-service.rst:46
 #: ../../library/blueprints/self-service.rst:267
@@ -210,7 +210,7 @@ msgid ""
 "order page allowing users to order multiple copies. If this option is "
 "enabled, ensure your configuration supports that flexibility (such as "
 "when IP or load balancer details are specified)"
-msgstr ""
+msgstr "Les réseaux privés ne configurent pas de VLAN principal sur l'uplink, les rendant inaccessibles depuis l'extérieur du cloud."
 
 #: ../../library/blueprints/self-service.rst:47
 #: ../../library/blueprints/self-service.rst:268
@@ -218,7 +218,7 @@ msgid ""
 "**MAX QUANTITY:** When the ALLOW QUANTITY configuration is used, an "
 "additional MAX QUANTITY configuration is available which sets an upper "
 "limit on the quantity that may be executed"
-msgstr ""
+msgstr "Confirmez si le réseau doit être privé ou public."
 
 #: ../../library/blueprints/self-service.rst:48
 #: ../../library/blueprints/self-service.rst:269
@@ -228,13 +228,13 @@ msgid ""
 " users in the current Tenant. Master Tenant administrators may set "
 "catalog items to public to make them viewable and usable by Subtenant "
 "users"
-msgstr ""
+msgstr "Utilisé uniquement pour les réseaux de charges de travail internes."
 
 #: ../../library/blueprints/self-service.rst:49
 #: ../../library/blueprints/self-service.rst:270
 #: ../../library/blueprints/self-service.rst:326
 msgid "**LOGO:** Select or upload a logo to be associated with this catalog item"
-msgstr ""
+msgstr "Consommation réseau lors du provisionnement"
 
 #: ../../library/blueprints/self-service.rst:50
 #: ../../library/blueprints/self-service.rst:271
@@ -242,7 +242,7 @@ msgstr ""
 msgid ""
 "**DARK LOGO:** If desired, set an alternate logo for use when the dark "
 "theme is applied to the |morpheus| appliance"
-msgstr ""
+msgstr "Les réseaux sont attachés aux interfaces physiques ou bondées. Le VLAN principal est non étiqueté, les VLAN trunk sont étiquetés."
 
 #: ../../library/blueprints/self-service.rst:51
 msgid ""
@@ -255,7 +255,7 @@ msgid ""
 " to control. Dynamic inputs are passed with the following syntax: \"<%= "
 "customOptions.fieldName %>\" where fieldName is the Field Name value set "
 "on the Input"
-msgstr ""
+msgstr "Vérifiez le type d'interface (physique ou bond) et l'attribution VLAN correcte."
 
 #: ../../library/blueprints/self-service.rst:52
 msgid ""
@@ -263,7 +263,7 @@ msgid ""
 "Item. Markdown-formatted text is accepted and displayed appropriately "
 "when the item is ordered from the Service Catalog. A new Catalog Item-"
 "type Wiki entry will also be added containing this information"
-msgstr ""
+msgstr "Prend en charge Static Bond, LACP Bond et Switch Independent Bond."
 
 #: ../../library/blueprints/self-service.rst:53
 #: ../../library/blueprints/self-service.rst:299
@@ -273,7 +273,7 @@ msgid ""
 "to set the user options at provisioning time. See `Forms documentation "
 "<https://docs.morpheusdata.com/en/latest/library/options/options.html#forms>`_"
 " for complete details on creating Forms."
-msgstr ""
+msgstr "Configuration des interfaces bond"
 
 #: ../../library/blueprints/self-service.rst:54
 #: ../../library/blueprints/self-service.rst:300
@@ -281,7 +281,7 @@ msgstr ""
 msgid ""
 "**FORM:** If the Form Type of \"Form\" is selected, choose the pre-"
 "existing Form which should be associated with the Catalog Item"
-msgstr ""
+msgstr "Les interfaces bond nécessitent deux ports physiques pour former un lien agrégé."
 
 #: ../../library/blueprints/self-service.rst:55
 #: ../../library/blueprints/self-service.rst:301
@@ -289,18 +289,18 @@ msgstr ""
 msgid ""
 "**INPUTS:** If the Form Type of \"Inputs\" is selected, choose the pre-"
 "existing Inputs which should be associated with the Catalog Item"
-msgstr ""
+msgstr "Assurez-vous que les deux ports physiques sont disponibles et correctement mappés."
 
 #: ../../library/blueprints/self-service.rst:58
 msgid "Using Forms with Catalog Items"
-msgstr ""
+msgstr "Le bonding fournit l'agrégation de bande passante et la redondance."
 
 #: ../../library/blueprints/self-service.rst:62
 msgid ""
 "Using Forms provides a number of advantages over using Inputs. Once the "
 "Form is selected, |morpheus| helpfully provides a sidebar which contains "
 "all variables that can be consumed in the Instance config from the Form:"
-msgstr ""
+msgstr "Interfaces réseau virtuelles"
 
 #: ../../library/blueprints/self-service.rst:64
 msgid ".. image:: /images/forms/catalogSidebar.png"
@@ -315,7 +315,7 @@ msgid ""
 "value. In most cases, you should leave auto-inject turned on but the "
 "option is available to disable it for more advanced situations such as if"
 " you wanted to code custom logic into the variable call."
-msgstr ""
+msgstr "Vérifiez si les réseaux étiquetés nécessitent une interface IP."
 
 #: ../../library/blueprints/self-service.rst:68
 msgid ""
@@ -328,7 +328,7 @@ msgid ""
 "resolved variable. Variable tiles may be dragged from the sidebar into "
 "the CONFIG text area and a properly-formatted variable call will be "
 "inserted."
-msgstr ""
+msgstr "Si ce n'est pas nécessaire, ne configurez pas l'interface virtuelle."
 
 #: ../../library/blueprints/self-service.rst:70
 msgid ".. image:: /images/forms/optionTypeHelp.png"
@@ -344,7 +344,7 @@ msgid ""
 "Group, Cloud, Plan, etc. from the form at provision time. The creator of "
 "the Catalog Item does not need to override those static configurations "
 "with variable calls."
-msgstr ""
+msgstr "Cette rubrique décrit les procédures de dépannage pour le stockage."
 
 #: ../../library/blueprints/self-service.rst:76
 #, python-brace-format
@@ -517,17 +517,17 @@ msgid ""
 "    \"id\": \"2\"\n"
 "  }\n"
 "}"
-msgstr ""
+msgstr "Volume de démarrage local"
 
 #: ../../library/blueprints/self-service.rst:246
 #: ../../library/blueprints/self-service.rst:305
 #: ../../library/blueprints/self-service.rst:338
 msgid "Once done, click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Stockage local - Sélection du volume de démarrage lors de la création d'instance"
 
 #: ../../library/blueprints/self-service.rst:249
 msgid "Building Catalog Blueprints"
-msgstr ""
+msgstr "Volume de démarrage introuvable"
 
 #: ../../library/blueprints/self-service.rst:253
 msgid ""
@@ -538,21 +538,21 @@ msgid ""
 "Blueprints of various supported types. Just like with catalog Instances, "
 "we can pre-configure Blueprints and present them to users viewing the "
 "Service Catalog Persona view for easy, one-click deployment."
-msgstr ""
+msgstr "Incompatibilité de l'UID du périphérique ou pas encore découvert"
 
 #: ../../library/blueprints/self-service.rst:255
 msgid ""
 "From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. "
 "From the dropdown menu, select Blueprint. The modal window will appear to"
 " configure and add a new catalog Blueprint."
-msgstr ""
+msgstr "Confirmez que la découverte du périphérique est terminée Vérifiez l'UID dans le contrôleur de stockage"
 
 #: ../../library/blueprints/self-service.rst:272
 msgid ""
 "**CONFIGURE:** Click :guilabel:`CONFIGURE` to use the familiar App "
 "provisioning wizard to tie Blueprint and App deployment configuration to "
 "the Catalog Item"
-msgstr ""
+msgstr "Attendez la fin de la découverte et réessayez."
 
 #: ../../library/blueprints/self-service.rst:273
 msgid ""
@@ -561,7 +561,7 @@ msgid ""
 "existing Blueprint spec that are desired. App Spec configuration must be "
 "YAML, a simple example that names the App and sets the Group and Cloud is"
 " included below:"
-msgstr ""
+msgstr "Erreurs ResourceMissingAtURI"
 
 #: ../../library/blueprints/self-service.rst:275
 msgid ""
@@ -582,7 +582,7 @@ msgid ""
 "      - instance:\n"
 "          type: apache\n"
 "          cloud: Dev AWS"
-msgstr ""
+msgstr "La découverte Redfish du périphérique n'est pas terminée"
 
 #: ../../library/blueprints/self-service.rst:295
 #: ../../library/blueprints/self-service.rst:331
@@ -591,7 +591,7 @@ msgid ""
 "Item. Markdown-formatted text is accepted and displayed appropriately "
 "when the item is ordered from the Service Catalog. A new Catalog Item-"
 "type Wiki entry will also be added containing this information."
-msgstr ""
+msgstr "Vérifiez l'état de la découverte Redfish Confirmez que le périphérique est visible dans l'inventaire Redfish"
 
 #: ../../library/blueprints/self-service.rst:297
 msgid ""
@@ -600,12 +600,12 @@ msgid ""
 "are available here as many are unknown until provisioning. Users may use "
 "any custom Input values (customOption) as well as name or hostname values"
 " which are resolved as part of naming policy evaluation."
-msgstr ""
+msgstr "Réessayez après une courte attente."
 
 #: ../../library/blueprints/self-service.rst:303
 #: ../../library/blueprints/self-service.rst:336
 msgid "Tip"
-msgstr ""
+msgstr "Le script ne trouve pas le périphérique"
 
 #: ../../library/blueprints/self-service.rst:303
 #: ../../library/blueprints/self-service.rst:336
@@ -613,37 +613,37 @@ msgid ""
 "There are a number of advantages to using Forms over Inputs. See the "
 "section above on using Forms with Catalog Items for a complete "
 "description on how they are used and the advantages to using them."
-msgstr ""
+msgstr "Incompatibilité de format UID ou lien disque manquant"
 
 #: ../../library/blueprints/self-service.rst:309
 msgid "Building Catalog Workflows"
-msgstr ""
+msgstr "Vérifiez les entrées /dev/disk/by-id/ - Confirmez le format UID du disque correct"
 
 #: ../../library/blueprints/self-service.rst:313
 msgid ""
 "From the Catalog Items List Page (|LibBluCat|), click :guilabel:`ADD`. "
 "From the dropdown menu, select Workflow. The modal window will appear to "
 "configure and add a new catalog Workflow."
-msgstr ""
+msgstr "Assurez-vous que les liens disque sont correctement mappés et réessayez."
 
 #: ../../library/blueprints/self-service.rst:322
 msgid ""
 "**ENABLED:** When checked, this Workflow item will be available for "
 "selection in the Service Catalog"
-msgstr ""
+msgstr "Stockage distant"
 
 #: ../../library/blueprints/self-service.rst:328
 msgid ""
 "**WORKFLOW:** Select an existing Workflow to be associated with this "
 "Catalog Item, new Workflows are created in :menuselection:`Library --> "
 "Automation`"
-msgstr ""
+msgstr "Hyper-V"
 
 #: ../../library/blueprints/self-service.rst:329
 msgid ""
 "**CONTEXT:** Optionally restrict users to a specific target context, "
 "Instance, Server, or None"
-msgstr ""
+msgstr "Hyper-V est l'environnement de calcul serveur virtualisé introduit par Microsoft. Hyper-V est consommé par |morpheus| en tant qu'offre de cloud privé et constitue une technologie d'hyperviseur courante dans les centres de données. |morpheus| offre un moyen d'agréger les ressources Hyper-V pour permettre un déploiement efficace et transparent d'applications en tant que machine virtuelle (VM) ou hôte Docker dans l'univers Hyper-V."
 
 #: ../../library/blueprints/self-service.rst:330
 msgid ""
@@ -651,11 +651,11 @@ msgid ""
 "documentation "
 "<https://docs.morpheusdata.com/en/latest/library/automation/workflows.html"
 "#allow-custom-config>`_ for a formatting example"
-msgstr ""
+msgstr "Fonctionnalités"
 
 #: ../../library/blueprints/self-service.rst:341
 msgid "Editing and Deleting from the Self Service Catalog"
-msgstr ""
+msgstr "Provisionnement de machines virtuelles"
 
 #: ../../library/blueprints/self-service.rst:343
 msgid ""
@@ -664,5 +664,5 @@ msgid ""
 "relevant row to edit the Service Catalog item or the trash can icon to "
 "delete it. Alternatively, Service Catalog items can be made inactive to "
 "remove them as provisioning options rather than deleting them."
-msgstr ""
+msgstr "Découverte des instances existantes"
 

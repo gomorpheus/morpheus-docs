@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/automation/execute_scheduling.rst:2
 msgid "Execute Scheduling"
-msgstr ""
+msgstr "Agendamento de Execução"
 
 #: ../../library/automation/execute_scheduling.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "Schedule to run the selected Task or Workflow at the needed time. Backup "
 "Jobs are a special type of Job configured in the Backups section which "
 "also use Execute Schedules to time backup runs as needed."
-msgstr ""
+msgstr "Execute Scheduling cria agendas de tempo para Jobs, incluindo Jobs de Tarefa, Workflow e Backup. Jobs, que são discutidos com mais detalhes em `outra seção <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#jobs>`_ da documentação do |morpheus|, combinam uma Tarefa ou Workflow com um Execute Schedule para executar a Tarefa ou Workflow selecionado no horário necessário. Backup Jobs são um tipo especial de Job configurado na seção Backups que também usa Execute Schedules para programar execuções de backup conforme necessário."
 
 #: ../../library/automation/execute_scheduling.rst:6
 msgid ""
@@ -43,12 +43,12 @@ msgid ""
 "be created by clicking the corresponding translation in the create or "
 "edit Execution Schedule modal below the Schedule field and selecting a "
 "new value."
-msgstr ""
+msgstr "As agendas usam expressões CRON, como ``0 23 * * 2`` equivalendo a ``Executes every week on Tuesday at 23:00``. Expressões CRON podem ser facilmente criadas clicando na tradução correspondente no modal de criação ou edição de Execution Schedule abaixo do campo Schedule e selecionando um novo valor."
 
 #: ../../library/automation/execute_scheduling.rst:8
 #: ../../library/automation/execute_scheduling.rst:16
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../library/automation/execute_scheduling.rst:8
 msgid ""
@@ -65,78 +65,78 @@ msgid ""
 "is not interpreted correctly. This is due to an issue with the underlying"
 " library used to build this feature and cannot easily be resolved at this"
 " time."
-msgstr ""
+msgstr "As expressões CRON de Execute Schedules não devem incluir segundos ou anos. Os dias da semana devem ser numerados de 1 a 7, começando com segunda-feira e terminando com domingo. A notação SUN-SAT também pode ser usada. Para mais informações sobre a escrita de expressões CRON, muitos guias estão hospedados na Internet, incluindo `este <https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm>`_. Os agendas de execução do |morpheus| oferecem suporte à maior parte da sintaxe cron, mas certas expressões mais complexas podem falhar na avaliação e o execute schedule não será salvo. Além disso, algumas expressões complexas podem ser salvas e funcionar corretamente enquanto a avaliação escrita amigável abaixo do campo SCHEDULE não é interpretada corretamente. Isso se deve a um problema com a biblioteca subjacente usada para construir este recurso e não pode ser facilmente resolvido neste momento."
 
 #: ../../library/automation/execute_scheduling.rst:11
 msgid "Create Execution Schedules"
-msgstr ""
+msgstr "Criar Execution Schedules"
 
 #: ../../library/automation/execute_scheduling.rst:13
 msgid "NAME"
-msgstr ""
+msgstr "NOME"
 
 #: ../../library/automation/execute_scheduling.rst:14
 msgid "Name of the Execution Schedule"
-msgstr ""
+msgstr "Nome do Execution Schedule"
 
 #: ../../library/automation/execute_scheduling.rst:16
 msgid ""
 "When assigning Execution Schedules, the name value will appear in the "
 "selection drop-down. Using a name that references the time interval is "
 "often helpful"
-msgstr ""
+msgstr "Ao atribuir Execution Schedules, o valor do nome aparecerá no menu suspenso de seleção. Usar um nome que referencie o intervalo de tempo é frequentemente útil"
 
 #: ../../library/automation/execute_scheduling.rst:18
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIÇÃO"
 
 #: ../../library/automation/execute_scheduling.rst:19
 msgid ""
 "Description of the Execution Schedule for reference in the Execution "
 "Schedules list"
-msgstr ""
+msgstr "Descrição do Execution Schedule para referência na lista de Execution Schedules"
 
 #: ../../library/automation/execute_scheduling.rst:20
 msgid "VISIBILITY"
-msgstr ""
+msgstr "VISIBILIDADE"
 
 #: ../../library/automation/execute_scheduling.rst:21
 msgid ""
 "|mastertenant| administrators may share Execute Schedules with Subtenants"
 " by setting the visibility to Public"
-msgstr ""
+msgstr "Administradores |mastertenant| podem compartilhar Execute Schedules com Subtenants definindo a visibilidade como Public"
 
 #: ../../library/automation/execute_scheduling.rst:22
 msgid "TIME ZONE"
-msgstr ""
+msgstr "FUSO HORÁRIO"
 
 #: ../../library/automation/execute_scheduling.rst:23
 msgid "The time zone for execution"
-msgstr ""
+msgstr "O fuso horário para execução"
 
 #: ../../library/automation/execute_scheduling.rst:24
 msgid "Enabled"
-msgstr ""
+msgstr "Ativado"
 
 #: ../../library/automation/execute_scheduling.rst:25
 msgid ""
 "Check to enable the schedule. Uncheck to disable all associated "
 "executions and remove the schedule as an option for Jobs in the future"
-msgstr ""
+msgstr "Marque para habilitar a agenda. Desmarque para desabilitar todas as execuções associadas e remover a agenda como uma opção para Jobs no futuro"
 
 #: ../../library/automation/execute_scheduling.rst:26
 msgid "SCHEDULE"
-msgstr ""
+msgstr "SCHEDULE"
 
 #: ../../library/automation/execute_scheduling.rst:27
 msgid ""
 "Enter CRON expression for the Execution Schedule, for example ``0 0 * * "
 "*`` equals ``Every day at 00:00``"
-msgstr ""
+msgstr "Informe a expressão CRON para o Execution Schedule; por exemplo, ``0 0 * * *`` equivale a ``Every day at 00:00``"
 
 #: ../../library/automation/execute_scheduling.rst:28
 msgid "SCHEDULE TRANSLATION"
-msgstr ""
+msgstr "SCHEDULE TRANSLATION"
 
 #: ../../library/automation/execute_scheduling.rst:29
 msgid ""
@@ -144,5 +144,5 @@ msgid ""
 "Highlighted values can be updated by selecting the value, and relevant "
 "options will be presented. The CRON expression will automatically be "
 "updated"
-msgstr ""
+msgstr "A agenda CRON informada é traduzida abaixo do campo SCHEDULE. Valores destacados podem ser atualizados selecionando o valor, e opções relevantes serão apresentadas. A expressão CRON será atualizada automaticamente"
 

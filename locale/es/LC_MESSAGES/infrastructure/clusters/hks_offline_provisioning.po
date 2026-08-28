@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:2
 msgid "HKS Offline Provisioning and Upgrades"
-msgstr ""
+msgstr "Aprovisionamiento y actualizaciones offline de HKS"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:4
 msgid ""
@@ -30,18 +30,18 @@ msgid ""
 "server instead of public image and package sources. This is separate from"
 " installing the |morpheus| appliance with its supplemental package; see "
 ":ref:`offline-installation` for appliance installation."
-msgstr ""
+msgstr "Los layouts HKS que anuncian soporte offline pueden utilizar un servidor de imágenes configurado en lugar de fuentes públicas de imágenes y paquetes. Esto es independiente de la instalación del dispositivo |morpheus| con su paquete complementario; consulte :ref:`offline-installation` para la instalación del dispositivo."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:7
 msgid "Preparation"
-msgstr ""
+msgstr "Preparación"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:9
 msgid ""
 "Select an HKS Cluster Layout that supports offline provisioning and the "
 "required Kubernetes version. |morpheus| rejects offline mode for layouts "
 "that do not advertise offline support."
-msgstr ""
+msgstr "Seleccione un Layout de Clúster HKS que admita aprovisionamiento offline y la versión de Kubernetes requerida. |morpheus| rechaza el modo offline para layouts que no anuncian soporte offline."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:10
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "component packages, container-runtime packages, CNI/CSI and other cluster"
 " add-on images, Kubernetes control-plane and pause images, and any Agent "
 "packages used by the layout."
-msgstr ""
+msgstr "Obtenga el manifiesto offline aprobado por la versión para la versión seleccionada de |morpheus| y del layout HKS. Las categorías de artefactos requeridas son la imagen o plantilla del SO del nodo, metadatos de layout/paquete HKS, paquetes de Kubernetes y componentes de nodo, paquetes del runtime de contenedores, imágenes de complementos de clúster CNI/CSI y otros, imágenes del plano de control de Kubernetes y de pause, y cualquier paquete de Agente utilizado por el layout."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:11
 msgid ""
@@ -60,20 +60,20 @@ msgid ""
 "the manifest. Use only the versions, registry/repository paths, and "
 "checksums supplied for that release. A universal bill of materials is not"
 " bundled with this guide and must not be inferred from another release."
-msgstr ""
+msgstr "Prepare todos los elementos de ese manifiesto en el servidor de imágenes, registro, repositorio de paquetes del SO o ubicación de imágenes de |morpheus| indicados por el manifiesto. Utilice únicamente las versiones, rutas de registro/repositorio y checksums proporcionados para esa versión. Esta guía no incluye una lista de materiales universal y no debe inferirse de otra versión."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:12
 msgid ""
 "Ensure every control-plane and worker node can resolve and reach the "
 "image server and the |morpheus| appliance. Configure local DNS, NTP, OS "
 "package repositories, and any registry credentials before provisioning."
-msgstr ""
+msgstr "Asegúrese de que todos los nodos del plano de control y worker puedan resolver y alcanzar el servidor de imágenes y el dispositivo |morpheus|. Configure DNS local, NTP, repositorios de paquetes del SO y cualquier credencial de registro antes del aprovisionamiento."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:13
 msgid ""
 "Validate each downloaded artifact against its published checksum before "
 "importing it. Do not substitute a similarly named upstream artifact."
-msgstr ""
+msgstr "Valide cada artefacto descargado contra su checksum publicado antes de importarlo. No sustituya un artefacto upstream con nombre similar."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:14
 msgid ""
@@ -81,46 +81,46 @@ msgid ""
 "checksum, and final staging location for every artifact. Do not begin "
 "provisioning while an item is missing, has no release-approved checksum, "
 "or does not match its checksum."
-msgstr ""
+msgstr "Registre la versión del manifiesto, la URL de origen, el checksum esperado, el checksum calculado y la ubicación final de preparación de cada artefacto. No comience el aprovisionamiento mientras falte un elemento, no tenga checksum aprobado por la versión o no coincida con su checksum."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:17
 msgid "Provisioning"
-msgstr ""
+msgstr "Aprovisionamiento"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:19
 msgid ""
 "Start the Kubernetes Cluster wizard and select a layout that supports "
 "offline provisioning."
-msgstr ""
+msgstr "Inicie el asistente de Clúster de Kubernetes y seleccione un layout que admita aprovisionamiento offline."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:20
 msgid ""
 "In the advanced repository settings, select the cluster repository "
 "credentials and enable **Image Server**."
-msgstr ""
+msgstr "En la configuración avanzada del repositorio, seleccione las credenciales del repositorio del clúster y habilite **Image Server**."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:21
 msgid ""
 "Complete the normal HKS network, node, and layout settings, then "
 "provision the cluster."
-msgstr ""
+msgstr "Complete la configuración normal de red, nodos y layout de HKS y luego aprovisione el clúster."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:22
 msgid ""
 "Follow the cluster process output. Confirm that package and image "
 "requests resolve to the staged repository and that no node requires "
 "internet egress."
-msgstr ""
+msgstr "Siga la salida del proceso del clúster. Confirme que las solicitudes de paquetes e imágenes se resuelvan al repositorio preparado y que ningún nodo requiera egreso a internet."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:23
 msgid ""
 "When provisioning completes, confirm every node is Ready, system Pods are"
 " running, and the configured Kubernetes version matches the layout."
-msgstr ""
+msgstr "Cuando finalice el aprovisionamiento, confirme que todos los nodos estén Ready, que los Pods del sistema estén en ejecución y que la versión de Kubernetes configurada coincida con el layout."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:26
 msgid "Offline Upgrades"
-msgstr ""
+msgstr "Actualizaciones offline"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:28
 msgid ""
@@ -130,7 +130,7 @@ msgid ""
 "stage and verify the target release artifacts on the same image server, "
 "confirm the target layout is enabled, and ensure the repository remains "
 "reachable from every node."
-msgstr ""
+msgstr "Los clústeres offline utilizan las versiones disponibles de layouts compatibles habilitados y ejecutan scripts dedicados de actualización offline del plano de control y worker. Las actualizaciones avanzan una versión menor a la vez. Antes de comenzar, prepare y verifique los artefactos de la versión de destino en el mismo servidor de imágenes, confirme que el layout de destino esté habilitado y asegúrese de que el repositorio siga siendo accesible desde todos los nodos."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:30
 msgid ""
@@ -138,40 +138,40 @@ msgid ""
 " before workers, and returns successful nodes to service. Review "
 ":doc:`hks_node_maintenance` before upgrading. Afterward, confirm all "
 "nodes are Ready and report the target version."
-msgstr ""
+msgstr "Durante una actualización, |morpheus| aplica cordon a los nodos, actualiza los nodos del plano de control antes que los worker y devuelve al servicio los nodos exitosos. Revise :doc:`hks_node_maintenance` antes de actualizar. Después, confirme que todos los nodos estén Ready e informen la versión de destino."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:33
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solución de problemas"
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:35
 msgid ""
 "If offline mode is rejected, verify the selected layout supports offline "
 "provisioning."
-msgstr ""
+msgstr "Si se rechaza el modo offline, verifique que el layout seleccionado admita aprovisionamiento offline."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:36
 msgid ""
 "If no upgrade version appears, verify an enabled compatible layout exists"
 " for the next supported version and that its artifacts are staged."
-msgstr ""
+msgstr "Si no aparece ninguna versión de actualización, verifique que exista un layout compatible habilitado para la siguiente versión admitida y que sus artefactos estén preparados."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:37
 msgid ""
 "If registry validation fails, verify the image-server URL, credentials, "
 "certificate trust, DNS, and node-to-server network path."
-msgstr ""
+msgstr "Si falla la validación del registro, verifique la URL del servidor de imágenes, las credenciales, la confianza del certificado, DNS y la ruta de red nodo-servidor."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:38
 msgid ""
 "If package installation fails, verify the release-specific Debian "
 "repository URL and package versions on the image server."
-msgstr ""
+msgstr "Si falla la instalación de paquetes, verifique la URL del repositorio Debian específica de la versión y las versiones de paquetes en el servidor de imágenes."
 
 #: ../../infrastructure/clusters/hks_offline_provisioning.rst:39
 msgid ""
 "Use cluster History and process output to identify the node and artifact "
 "that failed. Do not temporarily enable internet access as a substitute "
 "for correcting an incomplete offline artifact set."
-msgstr ""
+msgstr "Utilice el Historial del clúster y la salida del proceso para identificar el nodo y el artefacto que fallaron. No habilite temporalmente el acceso a internet como sustituto de corregir un conjunto de artefactos offline incompleto."
 

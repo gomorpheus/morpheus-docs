@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../../integration_guides/Automation/chef.rst:2
 msgid "Chef |advanced-plus|"
-msgstr ""
+msgstr "Règle de partage de fichiers de sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:7
 msgid ""
 "The Chef integration is an Advanced+ feature, available in HPE Morpheus "
 "Enterprise and Advanced tiers."
-msgstr ""
+msgstr "BackupPolicyFileShare"
 
 #: ../../integration_guides/Automation/chef.rst:10
 msgid "Overview"
-msgstr ""
+msgstr "Règle VM de sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:12
 msgid ""
@@ -43,64 +43,64 @@ msgid ""
 " selecting Run Workflows from the Actions menu on the Instance detail "
 "page. Workflows can also be added to Instances in the blueprint and app "
 "sections."
-msgstr ""
+msgstr "BackupPolicyVM"
 
 #: ../../integration_guides/Automation/chef.rst:16
 msgid "Add Chef Integration"
-msgstr ""
+msgstr "Partage de fichiers protégé par sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:18
 msgid "Navigate to |AdmInt| and select `+ New Integration`"
-msgstr ""
+msgstr "BackupProtectedFileShare"
 
 #: ../../integration_guides/Automation/chef.rst:19
 msgid "Select Integration Type \"Chef\""
-msgstr ""
+msgstr "VM protégée par sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:20
 msgid "Populate the following fields:"
-msgstr ""
+msgstr "BackupProtectedVM"
 
 #: ../../integration_guides/Automation/chef.rst:22
 msgid "Name: Name of the Chef Integration in |morpheus|"
-msgstr ""
+msgstr "Sélection de sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:23
 msgid ""
 "Chef Endpoint: url of chef server api endpoint in https://api.example.com"
 " format. Do not add /organization/xxxx here, which is populated in the "
 "Chef Organization field"
-msgstr ""
+msgstr "Chef Endpoint: url du point de terminaison api du serveur chef au format https://api.example.com. N'ajoutez pas /organization/xxxx ici, ce qui est renseigné dans le champ Chef Organization"
 
 #: ../../integration_guides/Automation/chef.rst:24
 msgid ""
 "Chef Version: 12.3.0 by default, can be changed to use a different/more "
 "recent version of chef"
-msgstr ""
+msgstr "Compte de stockage de sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:25
 msgid "Chef Organization: Chef Server Organization"
-msgstr ""
+msgstr "BackupStorageAccount"
 
 #: ../../integration_guides/Automation/chef.rst:26
 msgid "Chef User: Chef Server User"
-msgstr ""
+msgstr "Coffre de sauvegarde"
 
 #: ../../integration_guides/Automation/chef.rst:27
 msgid ""
 "User Private Key: The private key of the user with access to this chef "
 "server"
-msgstr ""
+msgstr "User Private Key: La clé privée de l'utilisateur ayant accès à ce serveur chef"
 
 #: ../../integration_guides/Automation/chef.rst:28
 msgid "Organization Validator: Validator key for the organization"
-msgstr ""
+msgstr "Hôte bastion"
 
 #: ../../integration_guides/Automation/chef.rst:30
 #: ../../integration_guides/Automation/chef.rst:43
 #: ../../integration_guides/Automation/chef.rst:52
 msgid "Save Changes"
-msgstr ""
+msgstr "BastionHost"
 
 #: ../../integration_guides/Automation/chef.rst:32
 msgid ""
@@ -109,11 +109,11 @@ msgid ""
 " and specify Environment, Node ID, Runlist, Attributes and Tags when "
 "creating instances. The Chef integration can also be selected in the Chef"
 " Server dropdown when creating a Chef Bootstrap-type Task."
-msgstr ""
+msgstr "L'intégration Chef ajoutée est maintenant disponible pour utilisation dans |morpheus|. L'intégration Chef peut être ajoutée aux Clouds ou groupes pour amorcer automatiquement les nœuds et spécifier Environment, Node ID, Runlist, Attributes et Tags lors de la création d'instances. L'intégration Chef peut également être sélectionnée dans la liste déroulante Chef Server lors de la création d'une tâche de type Chef Bootstrap."
 
 #: ../../integration_guides/Automation/chef.rst:34
 msgid "Note"
-msgstr ""
+msgstr "Compte Batch"
 
 #: ../../integration_guides/Automation/chef.rst:34
 msgid ""
@@ -121,45 +121,45 @@ msgid ""
 " Chef Bootstrap-type Tasks or Chef associations with Clouds or "
 "infrastructure Groups. It does not enable users to update run-lists on "
 "the Chef server for nodes which have already been bootstrapped."
-msgstr ""
+msgstr "BatchAccount"
 
 #: ../../integration_guides/Automation/chef.rst:37
 msgid "Scope Chef Integration to a Cloud"
-msgstr ""
+msgstr "Application Batch"
 
 #: ../../integration_guides/Automation/chef.rst:39
 msgid "Navigate to `Infrastructure > Clouds`"
-msgstr ""
+msgstr "BatchApplication"
 
 #: ../../integration_guides/Automation/chef.rst:40
 msgid "Edit the target Cloud"
-msgstr ""
+msgstr "Certificat Batch"
 
 #: ../../integration_guides/Automation/chef.rst:41
 #: ../../integration_guides/Automation/chef.rst:50
 msgid "Expand the `Advanced Options` section"
-msgstr ""
+msgstr "BatchCertificate"
 
 #: ../../integration_guides/Automation/chef.rst:42
 #: ../../integration_guides/Automation/chef.rst:51
 msgid "In the `Config Management` dropdown, select the Chef Integration."
-msgstr ""
+msgstr "Environnement de calcul Batch"
 
 #: ../../integration_guides/Automation/chef.rst:46
 msgid "Scope Chef Integration to a Group"
-msgstr ""
+msgstr "Limiter l'intégration Chef à un groupe"
 
 #: ../../integration_guides/Automation/chef.rst:48
 msgid "Navigate to `Infrastructure > Groups`"
-msgstr ""
+msgstr "Définition de tâche Batch"
 
 #: ../../integration_guides/Automation/chef.rst:49
 msgid "Edit the target Group"
-msgstr ""
+msgstr "Modifiez le groupe cible"
 
 #: ../../integration_guides/Automation/chef.rst:55
 msgid "Provisioning Options"
-msgstr ""
+msgstr "File d'attente de tâches Batch"
 
 #: ../../integration_guides/Automation/chef.rst:57
 msgid ""
@@ -167,57 +167,57 @@ msgid ""
 " added, a `Chef` section will appear in the Config section of the "
 "provisioning wizard. By default, Chef is enabled, but can be disabled by "
 "expanding the `Chef` section and unchecking `Enable Chef`."
-msgstr ""
+msgstr "Lors du provisionnement d'instances dans un Cloud ou un groupe avec une intégration Chef ajoutée, une section `Chef` apparaîtra dans la section Config de l'assistant de provisionnement. Par défaut, Chef est activé, mais peut être désactivé en développant la section `Chef` et en décochant `Enable Chef`."
 
 #: ../../integration_guides/Automation/chef.rst:59
 msgid "Chef Integration Provisioning options:"
-msgstr ""
+msgstr "Pool Batch"
 
 #: ../../integration_guides/Automation/chef.rst:61
 msgid "Enable Chef"
-msgstr ""
+msgstr "BatchPool"
 
 #: ../../integration_guides/Automation/chef.rst:62
 msgid "Select to bootstrap"
-msgstr ""
+msgstr "Sélectionnez pour l'amorçage"
 
 #: ../../integration_guides/Automation/chef.rst:63
 msgid "Chef Environment"
-msgstr ""
+msgstr "Canal Bot E-mail"
 
 #: ../../integration_guides/Automation/chef.rst:64
 msgid "Populate Chef environment, or leave as `_default`"
-msgstr ""
+msgstr "BotChannelEmail"
 
 #: ../../integration_guides/Automation/chef.rst:65
 msgid "Chef Node ID"
-msgstr ""
+msgstr "Canal Bot MS Teams"
 
 #: ../../integration_guides/Automation/chef.rst:66
 msgid "Defaults to instance name, configurable."
-msgstr ""
+msgstr "BotChannelMSTeams"
 
 #: ../../integration_guides/Automation/chef.rst:67
 msgid "Chef Runlist"
-msgstr ""
+msgstr "Enregistrement de canal Bot"
 
 #: ../../integration_guides/Automation/chef.rst:68
 msgid "Add Runlist"
-msgstr ""
+msgstr "BotChannelRegistration"
 
 #: ../../integration_guides/Automation/chef.rst:69
 msgid "CHEF ATTRIBUTES"
-msgstr ""
+msgstr "Canal Bot Slack"
 
 #: ../../integration_guides/Automation/chef.rst:70
 msgid "Add Chef Attributes"
-msgstr ""
+msgstr "BotChannelSlack"
 
 #: ../../integration_guides/Automation/chef.rst:71
 msgid "CHEF TAGS"
-msgstr ""
+msgstr "Connexion Bot"
 
 #: ../../integration_guides/Automation/chef.rst:72
 msgid "Add Chef tags"
-msgstr ""
+msgstr "BotConnection"
 

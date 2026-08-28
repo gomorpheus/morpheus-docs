@@ -22,32 +22,32 @@ msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:4
 msgid "Single Node/AIO Appliance Upgrades"
-msgstr ""
+msgstr "Mises à niveau d'appliance mono-nœud/AIO"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:6
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:6
 msgid ""
 "Only appliances running Morpheus |minUpgradeVer| or higher can upgrade to"
 " |morphver|. Always backup your database before running any upgrade."
-msgstr ""
+msgstr "Seules les appliances exécutant Morpheus |minUpgradeVer| ou version ultérieure peuvent être mises à niveau vers |morphver|. Sauvegardez toujours votre base de données avant toute mise à niveau."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:8
 msgid ""
 "The following covers upgrading Single Node or AIO (All-In-One) Appliance "
 "configurations."
-msgstr ""
+msgstr "Ce qui suit couvre la mise à niveau des configurations d'appliance mono-nœud ou AIO (All-In-One)."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:11
 msgid "Debian / Ubuntu"
-msgstr ""
+msgstr "Debian / Ubuntu"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:13
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:34
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:13
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:34
@@ -57,14 +57,14 @@ msgid ""
 "/package-repos/*`` after |morphver| package installation and before "
 "reconfigure to clean old node and vm node packages from the package-repo "
 "when room is needed."
-msgstr ""
+msgstr "|morpheus| |morphver| contient de nouveaux packages de nœuds et de nœuds VM nécessitant 3,5 Go de stockage. Il est sûr d'exécuter ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` après l'installation du package |morphver| et avant la reconfiguration pour nettoyer les anciens packages de nœuds et de nœuds vm du dépôt de packages lorsque de l'espace est nécessaire."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:15
 msgid ""
 "To upgrade Morpheus running on Ubuntu/Debian, download new deb package "
 "from My HPE Software Center and transfer it to your application node, "
 "stop the morpheus-ui, install the new deb package, then reconfigure."
-msgstr ""
+msgstr "Pour mettre à niveau Morpheus exécuté sur Ubuntu/Debian, téléchargez le nouveau package deb depuis My HPE Software Center et transférez-le sur votre nœud d'application, arrêtez morpheus-ui, installez le nouveau package deb, puis reconfigurez."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:17
 msgid ""
@@ -79,12 +79,12 @@ msgid ""
 "All services will automatically start during the reconfigure process. "
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Tous les services démarreront automatiquement pendant le processus de reconfiguration. Une fois la reconfiguration réussie, suivez le service ui pour observer les journaux de démarrage de l'ui avec ``morpheus-ctl tail morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:25
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:46
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:25
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:46
@@ -96,16 +96,16 @@ msgid ""
 "another service hangs on starting during reconfigure, run ``systemctl "
 "restart morpheus-runsvdir`` then reconfigure and restart ``morpheus-ui`` "
 "if successful."
-msgstr ""
+msgstr "Les services seront arrêtés pendant l'installation du package et démarrés pendant le processus de reconfiguration, y compris le service morpheus-ui. Si le processus de reconfiguration est interrompu ou échoue, le service morpheus-ui peut devoir être démarré ou redémarré manuellement. Dans certaines situations, si un autre service reste bloqué au démarrage pendant la reconfiguration, exécutez ``systemctl restart morpheus-runsvdir`` puis reconfigurez et redémarrez ``morpheus-ui`` en cas de succès."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:27
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:48
 msgid "After the morpheus-ui service finishes loading, the upgrade is complete."
-msgstr ""
+msgstr "Une fois le service morpheus-ui chargé, la mise à niveau est terminée."
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:32
 msgid "CentOS / RHEL / Amazon / SLES"
-msgstr ""
+msgstr "CentOS / RHEL / Amazon / SLES"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:36
 msgid ""
@@ -113,7 +113,7 @@ msgid ""
 " upgrade package from My HPE Software Center, transfer it to your "
 "application node, stop the morpheus-ui, install the new rpm package, then"
 " reconfigure:"
-msgstr ""
+msgstr "Pour mettre à niveau Morpheus exécuté sur CentOS, RHEL, Amazon ou SLES, téléchargez le package de mise à niveau depuis My HPE Software Center, transférez-le sur votre nœud d'application, arrêtez morpheus-ui, installez le nouveau package rpm, puis reconfigurez :"
 
 #: ../../getting_started/maintenance/upgrades/single/singlenode.rst:38
 msgid ""

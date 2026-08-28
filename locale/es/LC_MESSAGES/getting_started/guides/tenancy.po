@@ -133,7 +133,7 @@ msgstr ""
 #: ../../integration_guides/IdentityManagement/active_directory.rst:69
 #: ../../integration_guides/IdentityManagement/active_directory.rst:111
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/guides/tenancy.rst:17
 msgid ""
@@ -482,7 +482,7 @@ msgstr ""
 #: ../../integration_guides/IdentityManagement/active_directory.rst:25
 #: ../../integration_guides/IdentityManagement/active_directory.rst:52
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:25
 msgid ""
@@ -639,13 +639,13 @@ msgid ""
 "in**. A local |morpheus| user account is automatically created for each "
 "user upon first login. To restrict access to only authorized users, you "
 "must configure the REQUIRED GROUP field."
-msgstr ""
+msgstr "Si el campo REQUIRED GROUP se deja vacío, **cualquier usuario que pueda autenticarse contra el servidor Active Directory podrá iniciar sesión**. Se crea automáticamente una cuenta de usuario local de |morpheus| para cada usuario en el primer inicio de sesión. Para restringir el acceso solo a usuarios autorizados, debe configurar el campo REQUIRED GROUP."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:54
 msgid ""
 "The REQUIRED GROUP field is the primary mechanism for controlling which "
 "AD users are permitted to access |morpheus|. It works as follows:"
-msgstr ""
+msgstr "El campo REQUIRED GROUP es el mecanismo principal para controlar qué usuarios de AD tienen permitido acceder a |morpheus|. Funciona de la siguiente manera:"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:56
 msgid ""
@@ -653,57 +653,57 @@ msgid ""
 "group can log in. Users who authenticate successfully against AD but are "
 "not in the required group are denied access and no local user object is "
 "created."
-msgstr ""
+msgstr "**Required Group configurado:** Solo los usuarios miembros del grupo AD especificado pueden iniciar sesión. Los usuarios que se autentican correctamente contra AD pero no están en el grupo requerido se les deniega el acceso y no se crea un objeto de usuario local."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:57
 msgid ""
 "**Required Group empty:** All users who can authenticate against the AD "
 "server are allowed to log in. This is the default behavior and is "
 "typically **not appropriate for enterprise environments**."
-msgstr ""
+msgstr "**Required Group vacío:** Se permite iniciar sesión a todos los usuarios que pueden autenticarse contra el servidor AD. Este es el comportamiento predeterminado y normalmente **no es apropiado para entornos empresariales**."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:58
 msgid ""
 "**Include Member Groups:** When checked, users in groups nested inside "
 "the required group are also granted access."
-msgstr ""
+msgstr "**Include Member Groups:** Cuando está marcado, también se concede acceso a usuarios en grupos anidados dentro del grupo requerido."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:60
 msgid ""
 "The Required Group acts as a gatekeeper. Role mappings and the Default "
 "Role are only applied **after** the Required Group check passes. The "
 "interaction between these fields is:"
-msgstr ""
+msgstr "El Required Group actúa como control de acceso. Los mapeos de roles y el Rol predeterminado solo se aplican **después** de que pase la verificación del Required Group. La interacción entre estos campos es:"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:62
 msgid "User authenticates credentials against AD"
-msgstr ""
+msgstr "El usuario autentica credenciales contra AD"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:63
 msgid "|morpheus| checks if the user is in the Required Group (if configured)"
-msgstr ""
+msgstr "|morpheus| verifica si el usuario está en el Required Group (si está configurado)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:64
 msgid ""
 "If the user is not in the Required Group, login is denied (no user is "
 "created)"
-msgstr ""
+msgstr "Si el usuario no está en el Required Group, se deniega el inicio de sesión (no se crea usuario)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:65
 msgid ""
 "If the user passes the Required Group check, |morpheus| creates or syncs "
 "the user account"
-msgstr ""
+msgstr "Si el usuario pasa la verificación del Required Group, |morpheus| crea o sincroniza la cuenta de usuario"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:66
 msgid "The Default Role is applied to the user"
-msgstr ""
+msgstr "Se aplica el Rol predeterminado al usuario"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:67
 msgid ""
 "Any additional role mappings are applied based on the user's AD group "
 "memberships"
-msgstr ""
+msgstr "Se aplican mapeos de roles adicionales según las membresías de grupo AD del usuario"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:69
 msgid ""
@@ -711,35 +711,35 @@ msgid ""
 "Group check. It is additive—users receive the Default Role in addition to"
 " any roles assigned through role mappings. It is not a fallback that only"
 " applies when no other mapping matches."
-msgstr ""
+msgstr "El Rol predeterminado **siempre** se aplica a usuarios que pasan la verificación del Required Group. Es aditivo: los usuarios reciben el Rol predeterminado además de cualquier rol asignado mediante mapeos de roles. No es un respaldo que solo se aplica cuando ningún otro mapeo coincide."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:71
 msgid "**Recommended Configuration for Enterprise Environments:**"
-msgstr ""
+msgstr "**Configuración recomendada para entornos empresariales:**"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:73
 msgid ""
 "Always set a Required Group to prevent unauthorized directory users from "
 "accessing |morpheus|"
-msgstr ""
+msgstr "Configure siempre un Required Group para evitar que usuarios no autorizados del directorio accedan a |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:74
 msgid ""
 "Create a dedicated AD group (e.g., \"Morpheus Users\") and add only "
 "authorized users"
-msgstr ""
+msgstr "Cree un grupo AD dedicado (p. ej., \"Morpheus Users\") y agregue solo usuarios autorizados"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:75
 msgid ""
 "Set the Default Role to the most restrictive role appropriate for general"
 " users"
-msgstr ""
+msgstr "Configure el Rol predeterminado al rol más restrictivo apropiado para usuarios generales"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:76
 msgid ""
 "Use role mappings to assign elevated roles (e.g., System Admin) to users "
 "in specific AD groups"
-msgstr ""
+msgstr "Utilice mapeos de roles para asignar roles elevados (p. ej., System Admin) a usuarios en grupos AD específicos"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:82
 msgid "Select a Tenant"
@@ -834,17 +834,17 @@ msgid ""
 "recommended to set this field in enterprise environments to restrict "
 "access to only authorized users (see the \"Restricting Access with "
 "Required Group\" section above)"
-msgstr ""
+msgstr "El grupo AD del que deben formar parte los usuarios para tener acceso. Si se deja vacío, se permitirá iniciar sesión a todos los usuarios que puedan autenticarse contra el servidor AD y se creará automáticamente una cuenta de usuario local. Se recomienda encarecidamente configurar este campo en entornos empresariales para restringir el acceso solo a usuarios autorizados (consulte la sección \"Restricting Access with Required Group\" anterior)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:102
 msgid "Include Member Groups"
-msgstr ""
+msgstr "Include Member Groups"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:103
 msgid ""
 "When checked, users in groups that are nested inside the required group "
 "will also be granted access"
-msgstr ""
+msgstr "Cuando está marcado, también se concede acceso a usuarios en grupos anidados dentro del grupo requerido"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:104
 msgid "Default Role"
@@ -856,7 +856,7 @@ msgid ""
 "This role is always assigned in addition to any roles granted through the"
 " role mappings below. Set this to the most restrictive role appropriate "
 "for general users"
-msgstr ""
+msgstr "El rol predeterminado aplicado a todos los usuarios que pasan la verificación del Required Group. Este rol siempre se asigna además de cualquier rol concedido mediante los mapeos de roles siguientes. Configúrelo al rol más restrictivo apropiado para usuarios generales"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:106
 msgid "ENABLE ROLE MAPPING PERMISSION"
@@ -1147,7 +1147,7 @@ msgstr ""
 
 #: ../../getting_started/guides/tenancy.rst:148
 msgid "Navigate to :menuselection:`Provisioning --> Instances`"
-msgstr ""
+msgstr "Navegue a :menuselection:`Provisioning --> Instances`"
 
 #: ../../getting_started/guides/tenancy.rst:150
 msgid "Select the Ubuntu Instance Type"

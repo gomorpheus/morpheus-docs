@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:2
 msgid "morpheus-ctl tips"
-msgstr ""
+msgstr "Dicas do morpheus-ctl"
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:4
 msgid ""
 "``morpheus-ctl`` is useful beyond reconfigures and starting the ui, and "
 "many commands can be run across all services, or scoped to a singe "
 "service."
-msgstr ""
+msgstr "O ``morpheus-ctl`` é útil além de reconfigures e da inicialização da ui, e muitos comandos podem ser executados em todos os serviços ou delimitados a um único serviço."
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:6
 msgid "Some common commands include:"
-msgstr ""
+msgstr "Alguns comandos comuns incluem:"
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:8
 msgid "morpheus-ctl status"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:9
 msgid "Lists all the installed services and their current status"
-msgstr ""
+msgstr "Lista todos os serviços instalados e seu status atual"
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:10
 msgid "morpheus-ctl start (service)"
@@ -51,14 +51,14 @@ msgstr ""
 msgid ""
 "This starts all services if no service is specified, or starts the "
 "specified service. For example,"
-msgstr ""
+msgstr "Isso inicia todos os serviços se nenhum serviço for especificado, ou inicia o serviço especificado. Por exemplo,"
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:13
 msgid ""
 "``morpheus-ctl start/stop/restart/kill`` on an all-in-one appliance will "
 "start, stop, restart or kill mysql, elasticsearch, rabbitmq, check-"
 "server, guacd and the morpheus-ui, one by one."
-msgstr ""
+msgstr "``morpheus-ctl start/stop/restart/kill`` em um appliance all-in-one iniciará, parará, reiniciará ou matará mysql, elasticsearch, rabbitmq, check-server, guacd e o morpheus-ui, um por um."
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:14
 msgid ""
@@ -67,11 +67,11 @@ msgid ""
 "in their current state.  Same goes for ``morpheus-ctl "
 "start/stop/restart/kill mysql``, ``morpheus-ctl start/stop/restart/kill "
 "elasticsearch`` etc."
-msgstr ""
+msgstr "``morpheus-ctl start/stop/restart/kill morpheus-ui`` iniciará, parará, reiniciará ou matará apenas o serviço morpheus-ui, deixando os outros serviços em seu estado atual. O mesmo vale para ``morpheus-ctl start/stop/restart/kill mysql``, ``morpheus-ctl start/stop/restart/kill elasticsearch`` etc."
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:17
 msgid "``morpheus-ctl`` commands:"
-msgstr ""
+msgstr "Comandos ``morpheus-ctl``:"
 
 #: ../../getting_started/maintenance/morpheus-ctl.rst:19
 msgid ""
@@ -130,5 +130,5 @@ msgid ""
 "\n"
 "   firewall-enable-blocking\n"
 "     Enables firewall blocking mode."
-msgstr ""
+msgstr "Comandos Gerais:\n\n  cleanse\n    Exclui *todos* os dados do morpheus e começa do zero.\n  help\n    Imprime esta mensagem de ajuda.\n  reconfigure\n    Reconfigura a aplicação. O reconfigure não é uma operação geral de rotação de credenciais; por exemplo, ele não altera a senha de um usuário RabbitMQ existente gerenciado pelo appliance. Consulte :doc:`/getting_started/external_services/rabbitmq` antes de alterar credenciais do RabbitMQ.\n  show-config\n    Mostra a configuração que seria gerada pelo reconfigure.\n  uninstall\n    Encerra todos os processos e desinstala o supervisor de processos (os dados serão preservados).\n\n Comandos de Gerenciamento de Serviços:\n\n   graceful-kill\n     Tenta uma parada graciosa e, em seguida, SIGKILL no grupo de processos inteiro.\n   hup\n     Envia um HUP aos serviços.\n   int\n     Envia um INT aos serviços.\n   kill\n     Envia um KILL aos serviços.\n   once\n     Inicia os serviços se estiverem inativos. Não os reinicia se pararem.\n   restart\n     Para os serviços se estiverem em execução e, em seguida, os inicia novamente.\n   service-list\n     Lista todos os serviços (serviços ativados aparecem com um *.)\n   start\n     Inicia os serviços se estiverem inativos e os reinicia se pararem.\n   status\n     Mostra o status de todos os serviços.\n   stop\n     Para os serviços e não os reinicia.\n   tail\n     Acompanha os logs de serviço de todos os serviços ativados.\n   term\n     Envia um TERM aos serviços.\n\n Comandos do Elasticsearch:\n\n   elastic-util\n     Backup/Restore de dados do ElasticSearch\n\n Comandos de Firewall:\n\n   firewall-enable-blocking\n     Ativa o modo de bloqueio do firewall."
 

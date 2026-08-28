@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../infrastructure/vdi/gateways.rst:4
 msgid "VDI Gateways"
-msgstr ""
+msgstr "VDI Gateways"
 
 #: ../../infrastructure/vdi/gateways.rst:9
 msgid ""
 "VDI Gateways require an Advanced or Enterprise license. Distributed "
 "Workers used for other supported use cases, including HVM quorum "
 "witnesses, are also available in VM Essentials."
-msgstr ""
+msgstr "VDI Gateways requerem uma licença Advanced ou Enterprise. Distributed Workers usados para outros casos de uso suportados, incluindo witnesses de quorum HVM, também estão disponíveis no VM Essentials."
 
 #: ../../infrastructure/vdi/gateways.rst:12
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../infrastructure/vdi/gateways.rst:14
 msgid ""
@@ -42,60 +42,60 @@ msgid ""
 "a controlled network path. This is essential for environments where VDI "
 "desktops reside on isolated networks not directly accessible to end "
 "users."
-msgstr ""
+msgstr "VDI Gateways fornecem um ponto de conexão seguro entre usuários finais e sessões de desktop VDI. Um gateway atua como proxy, roteando o tráfego VDI por um caminho de rede controlado. Isso é essencial para ambientes em que os desktops VDI residem em redes isoladas não acessíveis diretamente aos usuários finais."
 
 #: ../../infrastructure/vdi/gateways.rst:16
 msgid "VDI Gateways are managed from |TooVDIGat|."
-msgstr ""
+msgstr "VDI Gateways são gerenciados em |TooVDIGat|."
 
 #: ../../infrastructure/vdi/gateways.rst:18
 #: ../../infrastructure/vdi/gateways.rst:68
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/vdi/gateways.rst:18
 msgid ""
 "VDI Gateways require the ``services-vdi-pools`` Role permission (Read or "
 "Full)."
-msgstr ""
+msgstr "VDI Gateways requerem a permissão de Função ``services-vdi-pools`` (Read ou Full)."
 
 #: ../../infrastructure/vdi/gateways.rst:21
 msgid "Gateway Architecture"
-msgstr ""
+msgstr "Arquitetura do Gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:23
 msgid "The VDI Gateway sits between the user's browser and the Guacamole session:"
-msgstr ""
+msgstr "O VDI Gateway fica entre o navegador do usuário e a sessão Guacamole:"
 
 #: ../../infrastructure/vdi/gateways.rst:25
 msgid "User Browser → VDI Gateway → Guacamole Server → VDI Desktop (RDP/VNC)"
-msgstr ""
+msgstr "User Browser → VDI Gateway → Guacamole Server → VDI Desktop (RDP/VNC)"
 
 #: ../../infrastructure/vdi/gateways.rst:29
 msgid "This architecture enables:"
-msgstr ""
+msgstr "Esta arquitetura possibilita:"
 
 #: ../../infrastructure/vdi/gateways.rst:31
 msgid ""
 "**Network isolation** — VDI desktops can be on a private network "
 "inaccessible to users directly"
-msgstr ""
+msgstr "**Network isolation** — Os desktops VDI podem estar em uma rede privada inacessível aos usuários diretamente"
 
 #: ../../infrastructure/vdi/gateways.rst:32
 msgid "**Load distribution** — Multiple gateways can distribute connection load"
-msgstr ""
+msgstr "**Load distribution** — Vários gateways podem distribuir a carga de conexão"
 
 #: ../../infrastructure/vdi/gateways.rst:33
 msgid ""
 "**Security** — All VDI traffic routes through a controlled proxy with API"
 " key authentication"
-msgstr ""
+msgstr "**Security** — Todo o tráfego VDI é roteado por um proxy controlado com autenticação por chave de API"
 
 #: ../../infrastructure/vdi/gateways.rst:34
 msgid ""
 "**Geographic distribution** — Place gateways closer to users for reduced "
 "latency"
-msgstr ""
+msgstr "**Geographic distribution** — Posicione gateways mais próximos dos usuários para latência reduzida"
 
 #: ../../infrastructure/vdi/gateways.rst:36
 msgid ""
@@ -104,7 +104,7 @@ msgid ""
 "Console Gateway in |AdmSetApp|. VDI desktop routing is separate: assign "
 "the gateway to a VDI Pool in |TooVDIPoo|. Both uses authenticate the "
 "Worker runtime with the VDI Gateway API key."
-msgstr ""
+msgstr "O mesmo registro de VDI Gateway também pode rotear consoles de Instance e Host. Atribua-o em uma Network ou Cloud, ou selecione-o como Default Console Gateway em |AdmSetApp|. O roteamento de desktop VDI é separado: atribua o gateway a um VDI Pool em |TooVDIPoo|. Ambos os usos autenticam o runtime do Worker com a chave de API do VDI Gateway."
 
 #: ../../infrastructure/vdi/gateways.rst:38
 msgid ""
@@ -112,287 +112,287 @@ msgid ""
 "configured with a Distributed Worker key. See "
 ":doc:`/administration/integrations/workers` for the role and key matrix "
 "and canonical package and container deployment instructions."
-msgstr ""
+msgstr "O mesmo runtime pode adicionalmente atuar como Distributed Worker quando configurado com uma chave de Distributed Worker. Consulte :doc:`/administration/integrations/workers` para a matriz de funções e chaves e as instruções canônicas de implantação de pacote e container."
 
 #: ../../infrastructure/vdi/gateways.rst:41
 msgid "Creating a VDI Gateway"
-msgstr ""
+msgstr "Criando um VDI Gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:43
 #: ../../infrastructure/vdi/gateways.rst:63
 #: ../../infrastructure/vdi/gateways.rst:73
 msgid "Navigate to |TooVDIGat|"
-msgstr ""
+msgstr "Navegue até |TooVDIGat|"
 
 #: ../../infrastructure/vdi/gateways.rst:44
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ ADD`"
 
 #: ../../infrastructure/vdi/gateways.rst:45
 msgid "Configure:"
-msgstr ""
+msgstr "Configure:"
 
 #: ../../infrastructure/vdi/gateways.rst:47
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../infrastructure/vdi/gateways.rst:48
 msgid "Unique name for the gateway (must be unique per tenant)"
-msgstr ""
+msgstr "Nome exclusivo para o gateway (deve ser exclusivo por tenant)"
 
 #: ../../infrastructure/vdi/gateways.rst:49
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #: ../../infrastructure/vdi/gateways.rst:50
 msgid "Optional description of the gateway's purpose or location"
-msgstr ""
+msgstr "Descrição opcional da finalidade ou localização do gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:51
 msgid "GATEWAY URL"
-msgstr ""
+msgstr "GATEWAY URL"
 
 #: ../../infrastructure/vdi/gateways.rst:52
 msgid ""
 "The URL where the gateway service is accessible (e.g., ``https://vdi-"
 "gw.example.com:8443``)"
-msgstr ""
+msgstr "A URL em que o serviço de gateway está acessível (por exemplo, ``https://vdi-gw.example.com:8443``)"
 
 #: ../../infrastructure/vdi/gateways.rst:54
 #: ../../infrastructure/vdi/gateways.rst:66
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE`"
 
 #: ../../infrastructure/vdi/gateways.rst:56
 msgid ""
 "Upon creation, |morpheus| generates an **API Key** for the gateway. This "
 "key is used by the gateway service to authenticate with the |morpheus| "
 "appliance."
-msgstr ""
+msgstr "Após a criação, |morpheus| gera uma **API Key** para o gateway. Esta chave é usada pelo serviço de gateway para autenticar-se no appliance |morpheus|."
 
 #: ../../infrastructure/vdi/gateways.rst:58
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../infrastructure/vdi/gateways.rst:58
 msgid ""
 "Copy the API Key immediately after creation. It is used to configure the "
 "gateway service and cannot be retrieved later (only regenerated)."
-msgstr ""
+msgstr "Copie a API Key imediatamente após a criação. Ela é usada para configurar o serviço de gateway e não pode ser recuperada depois (apenas regenerada)."
 
 #: ../../infrastructure/vdi/gateways.rst:61
 msgid "Editing a VDI Gateway"
-msgstr ""
+msgstr "Editando um VDI Gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:64
 msgid "Click the gateway name or select the edit action"
-msgstr ""
+msgstr "Clique no nome do gateway ou selecione a ação de editar"
 
 #: ../../infrastructure/vdi/gateways.rst:65
 msgid "Modify the name, description, or gateway URL"
-msgstr ""
+msgstr "Modifique o nome, a descrição ou a URL do gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:68
 msgid ""
 "The API Key cannot be changed through the edit interface. To regenerate a"
 " key, delete and recreate the gateway."
-msgstr ""
+msgstr "A API Key não pode ser alterada pela interface de edição. Para regenerar uma chave, exclua e recrie o gateway."
 
 #: ../../infrastructure/vdi/gateways.rst:71
 msgid "Deleting a VDI Gateway"
-msgstr ""
+msgstr "Excluindo um VDI Gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:74
 msgid "Select the gateway to delete"
-msgstr ""
+msgstr "Selecione o gateway a excluir"
 
 #: ../../infrastructure/vdi/gateways.rst:75
 msgid "Click :guilabel:`DELETE`"
-msgstr ""
+msgstr "Clique em :guilabel:`DELETE`"
 
 #: ../../infrastructure/vdi/gateways.rst:76
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirme a exclusão"
 
 #: ../../infrastructure/vdi/gateways.rst:78
 msgid "Warning"
-msgstr ""
+msgstr "Alerta"
 
 #: ../../infrastructure/vdi/gateways.rst:78
 msgid ""
 "A gateway cannot be deleted if it is currently assigned to one or more "
 "VDI Pools. Remove the gateway assignment from all pools before deleting."
-msgstr ""
+msgstr "Um gateway não pode ser excluído se estiver atualmente atribuído a um ou mais VDI Pools. Remova a atribuição do gateway de todos os pools antes de excluir."
 
 #: ../../infrastructure/vdi/gateways.rst:81
 msgid "Assigning Gateways to Pools"
-msgstr ""
+msgstr "Atribuindo Gateways a Pools"
 
 #: ../../infrastructure/vdi/gateways.rst:83
 msgid "VDI Gateways are assigned at the Pool level:"
-msgstr ""
+msgstr "VDI Gateways são atribuídos no nível do Pool:"
 
 #: ../../infrastructure/vdi/gateways.rst:85
 msgid "Navigate to |TooVDIPoo|"
-msgstr ""
+msgstr "Navegue até |TooVDIPoo|"
 
 #: ../../infrastructure/vdi/gateways.rst:86
 msgid "Edit or create a VDI Pool"
-msgstr ""
+msgstr "Edite ou crie um VDI Pool"
 
 #: ../../infrastructure/vdi/gateways.rst:87
 msgid ""
 "In the pool configuration, select the desired **Gateway** from the "
 "dropdown"
-msgstr ""
+msgstr "Na configuração do pool, selecione o **Gateway** desejado no dropdown"
 
 #: ../../infrastructure/vdi/gateways.rst:88
 msgid "Save the pool"
-msgstr ""
+msgstr "Salve o pool"
 
 #: ../../infrastructure/vdi/gateways.rst:90
 msgid ""
 "When a gateway is assigned to a pool, all user sessions for that pool "
 "route through the specified gateway."
-msgstr ""
+msgstr "Quando um gateway é atribuído a um pool, todas as sessões de usuário daquele pool são roteadas pelo gateway especificado."
 
 #: ../../infrastructure/vdi/gateways.rst:93
 msgid "Gateway Configuration Fields"
-msgstr ""
+msgstr "Campos de Configuração do Gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:99
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: ../../infrastructure/vdi/gateways.rst:100
 #: ../../infrastructure/vdi/gateways.rst:107
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../infrastructure/vdi/gateways.rst:101
 msgid "Required"
-msgstr ""
+msgstr "Obrigatório"
 
 #: ../../infrastructure/vdi/gateways.rst:102
 msgid "Default"
-msgstr ""
+msgstr "Padrão"
 
 #: ../../infrastructure/vdi/gateways.rst:103
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../../infrastructure/vdi/gateways.rst:104
 msgid "Unique identifier for the gateway"
-msgstr ""
+msgstr "Identificador exclusivo do gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:105
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
 
 #: ../../infrastructure/vdi/gateways.rst:106
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: ../../infrastructure/vdi/gateways.rst:108
 msgid "Purpose or location note"
-msgstr ""
+msgstr "Nota de finalidade ou localização"
 
 #: ../../infrastructure/vdi/gateways.rst:109
 #: ../../infrastructure/vdi/gateways.rst:113
 #: ../../infrastructure/vdi/gateways.rst:121
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: ../../infrastructure/vdi/gateways.rst:110
 #: ../../infrastructure/vdi/gateways.rst:114
 msgid "null"
-msgstr ""
+msgstr "null"
 
 #: ../../infrastructure/vdi/gateways.rst:111
 msgid "Gateway URL"
-msgstr ""
+msgstr "Gateway URL"
 
 #: ../../infrastructure/vdi/gateways.rst:112
 msgid "URL of the gateway service endpoint"
-msgstr ""
+msgstr "URL do endpoint do serviço de gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:115
 msgid "API Key"
-msgstr ""
+msgstr "API Key"
 
 #: ../../infrastructure/vdi/gateways.rst:116
 msgid "Auto-generated authentication key"
-msgstr ""
+msgstr "Chave de autenticação gerada automaticamente"
 
 #: ../../infrastructure/vdi/gateways.rst:117
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: ../../infrastructure/vdi/gateways.rst:118
 msgid "Generated on save"
-msgstr ""
+msgstr "Gerada ao salvar"
 
 #: ../../infrastructure/vdi/gateways.rst:119
 msgid "Enabled"
-msgstr ""
+msgstr "Enabled"
 
 #: ../../infrastructure/vdi/gateways.rst:120
 msgid "Whether the gateway is active"
-msgstr ""
+msgstr "Se o gateway está ativo"
 
 #: ../../infrastructure/vdi/gateways.rst:122
 msgid "true"
-msgstr ""
+msgstr "true"
 
 #: ../../infrastructure/vdi/gateways.rst:125
 msgid "Deploying the Gateway Service"
-msgstr ""
+msgstr "Implantando o Serviço de Gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:127
 msgid ""
 "The VDI Gateway service is a separate component that must be deployed on "
 "a server with network access to both:"
-msgstr ""
+msgstr "O serviço VDI Gateway é um componente separado que deve ser implantado em um servidor com acesso de rede a ambos:"
 
 #: ../../infrastructure/vdi/gateways.rst:129
 msgid "The |morpheus| appliance (for API communication)"
-msgstr ""
+msgstr "O appliance |morpheus| (para comunicação da API)"
 
 #: ../../infrastructure/vdi/gateways.rst:130
 msgid "The VDI desktop network (for RDP/VNC proxying)"
-msgstr ""
+msgstr "A rede de desktop VDI (para proxy RDP/VNC)"
 
 #: ../../infrastructure/vdi/gateways.rst:132
 msgid "Configuration requirements:"
-msgstr ""
+msgstr "Requisitos de configuração:"
 
 #: ../../infrastructure/vdi/gateways.rst:134
 msgid "Install the gateway service package"
-msgstr ""
+msgstr "Instale o pacote do serviço de gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:135
 msgid "Configure the gateway URL to match what was entered in |morpheus|"
-msgstr ""
+msgstr "Configure a URL do gateway para corresponder ao que foi informado no |morpheus|"
 
 #: ../../infrastructure/vdi/gateways.rst:136
 msgid "Set the API Key from the |morpheus| gateway configuration"
-msgstr ""
+msgstr "Defina a API Key da configuração de gateway do |morpheus|"
 
 #: ../../infrastructure/vdi/gateways.rst:137
 msgid "Ensure ports are open:"
-msgstr ""
+msgstr "Certifique-se de que as portas estejam abertas:"
 
 #: ../../infrastructure/vdi/gateways.rst:139
 msgid "Inbound from users (typically 443 or 8443)"
-msgstr ""
+msgstr "Entrada dos usuários (normalmente 443 ou 8443)"
 
 #: ../../infrastructure/vdi/gateways.rst:140
 msgid "Outbound to VDI desktops (RDP 3389, VNC 5900+)"
-msgstr ""
+msgstr "Saída para desktops VDI (RDP 3389, VNC 5900+)"
 
 #: ../../infrastructure/vdi/gateways.rst:141
 msgid "Outbound to |morpheus| appliance (443)"
-msgstr ""
+msgstr "Saída para o appliance |morpheus| (443)"
 
 #: ../../infrastructure/vdi/gateways.rst:143
 msgid ""
@@ -401,61 +401,61 @@ msgid ""
 "procedures, TLS options, environment variables, combined-role "
 "configuration, logs, and upgrades, see "
 ":doc:`/administration/integrations/workers`."
-msgstr ""
+msgstr "Para procedimentos atuais de pacote e container `morpheusdata/morpheus-worker <https://hub.docker.com/r/morpheusdata/morpheus-worker>`_, opções TLS, variáveis de ambiente, configuração de função combinada, logs e upgrades, consulte :doc:`/administration/integrations/workers`."
 
 #: ../../infrastructure/vdi/gateways.rst:146
 msgid "API Reference"
-msgstr ""
+msgstr "Referência da API"
 
 #: ../../infrastructure/vdi/gateways.rst:148
 msgid "VDI Gateways are manageable via the |morpheus| API:"
-msgstr ""
+msgstr "VDI Gateways são gerenciáveis via a API |morpheus|:"
 
 #: ../../infrastructure/vdi/gateways.rst:150
 msgid "``GET /api/vdi-gateways`` — List all VDI Gateways"
-msgstr ""
+msgstr "``GET /api/vdi-gateways`` — Listar todos os VDI Gateways"
 
 #: ../../infrastructure/vdi/gateways.rst:151
 msgid "``GET /api/vdi-gateways/:id`` — Get a specific gateway"
-msgstr ""
+msgstr "``GET /api/vdi-gateways/:id`` — Obter um gateway específico"
 
 #: ../../infrastructure/vdi/gateways.rst:152
 msgid "``POST /api/vdi-gateways`` — Create a gateway"
-msgstr ""
+msgstr "``POST /api/vdi-gateways`` — Criar um gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:153
 msgid "``PUT /api/vdi-gateways/:id`` — Update a gateway"
-msgstr ""
+msgstr "``PUT /api/vdi-gateways/:id`` — Atualizar um gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:154
 msgid "``DELETE /api/vdi-gateways/:id`` — Delete a gateway"
-msgstr ""
+msgstr "``DELETE /api/vdi-gateways/:id`` — Excluir um gateway"
 
 #: ../../infrastructure/vdi/gateways.rst:157
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solução de Problemas"
 
 #: ../../infrastructure/vdi/gateways.rst:159
 msgid ""
 "**Gateway unreachable:** Verify the Gateway URL is accessible from the "
 "|morpheus| appliance and from end-user browsers"
-msgstr ""
+msgstr "**Gateway unreachable:** Verifique se a Gateway URL está acessível a partir do appliance |morpheus| e dos navegadores dos usuários finais"
 
 #: ../../infrastructure/vdi/gateways.rst:160
 msgid ""
 "**Authentication failed:** Ensure the API Key configured on the gateway "
 "service matches the one generated in |morpheus|"
-msgstr ""
+msgstr "**Authentication failed:** Certifique-se de que a API Key configurada no serviço de gateway corresponde à gerada no |morpheus|"
 
 #: ../../infrastructure/vdi/gateways.rst:161
 msgid ""
 "**Cannot delete gateway:** Remove the gateway assignment from all VDI "
 "Pools first"
-msgstr ""
+msgstr "**Cannot delete gateway:** Remova primeiro a atribuição do gateway de todos os VDI Pools"
 
 #: ../../infrastructure/vdi/gateways.rst:162
 msgid ""
 "**Sessions not routing through gateway:** Verify the pool has the gateway"
 " assigned and that the gateway service is running"
-msgstr ""
+msgstr "**Sessions not routing through gateway:** Verifique se o pool tem o gateway atribuído e se o serviço de gateway está em execução"
 

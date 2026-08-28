@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/certificates/acm.rst:4
 msgid "Amazon Certificate Manager (ACM)"
-msgstr ""
+msgstr "Amazon Certificate Manager (ACM)"
 
 #: ../../infrastructure/certificates/acm.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/certificates/acm.rst:9
 msgid ""
@@ -34,41 +34,41 @@ msgid ""
 "SSL/TLS certificates for AWS resources. This integration allows "
 "|morpheus| to provision and manage certificates within AWS, leveraging "
 "ACM's automatic renewal and validation capabilities."
-msgstr ""
+msgstr "|morpheus| s'intègre à Amazon Certificate Manager (ACM) pour gérer les certificats SSL/TLS des ressources AWS. Cette intégration permet à |morpheus| de provisionner et de gérer des certificats au sein d'AWS, en tirant parti des capacités de renouvellement et de validation automatiques d'ACM."
 
 #: ../../infrastructure/certificates/acm.rst:11
 msgid ""
 "ACM certificates managed through |morpheus| can be used with AWS services"
 " including:"
-msgstr ""
+msgstr "Les certificats ACM gérés via |morpheus| peuvent être utilisés avec les services AWS suivants :"
 
 #: ../../infrastructure/certificates/acm.rst:13
 msgid "Elastic Load Balancers (ALB, NLB, CLB)"
-msgstr ""
+msgstr "Elastic Load Balancers (ALB, NLB, CLB)"
 
 #: ../../infrastructure/certificates/acm.rst:14
 msgid "Amazon CloudFront distributions"
-msgstr ""
+msgstr "Distributions Amazon CloudFront"
 
 #: ../../infrastructure/certificates/acm.rst:15
 msgid "Amazon API Gateway endpoints"
-msgstr ""
+msgstr "Points de terminaison Amazon API Gateway"
 
 #: ../../infrastructure/certificates/acm.rst:16
 msgid "AWS Elastic Beanstalk environments"
-msgstr ""
+msgstr "Environnements AWS Elastic Beanstalk"
 
 #: ../../infrastructure/certificates/acm.rst:19
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../infrastructure/certificates/acm.rst:21
 msgid "An active AWS Cloud integration in |morpheus|"
-msgstr ""
+msgstr "Une intégration Cloud AWS active dans |morpheus|"
 
 #: ../../infrastructure/certificates/acm.rst:22
 msgid "IAM permissions for the ACM service:"
-msgstr ""
+msgstr "Autorisations IAM pour le service ACM :"
 
 #: ../../infrastructure/certificates/acm.rst:24
 msgid "``acm:RequestCertificate``"
@@ -96,117 +96,117 @@ msgstr ""
 
 #: ../../infrastructure/certificates/acm.rst:31
 msgid "For DNS validation: Route 53 permissions or access to the domain's DNS"
-msgstr ""
+msgstr "Pour la validation DNS : autorisations Route 53 ou accès au DNS du domaine"
 
 #: ../../infrastructure/certificates/acm.rst:34
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 #: ../../infrastructure/certificates/acm.rst:36
 msgid ""
 "ACM integration is available automatically when an AWS Cloud is "
 "configured in |morpheus|. No additional integration setup is required "
 "beyond the AWS Cloud configuration."
-msgstr ""
+msgstr "L'intégration ACM est disponible automatiquement lorsqu'un Cloud AWS est configuré dans |morpheus|. Aucune configuration d'intégration supplémentaire n'est requise au-delà de la configuration du Cloud AWS."
 
 #: ../../infrastructure/certificates/acm.rst:39
 msgid "Requesting ACM Certificates"
-msgstr ""
+msgstr "Demande de certificats ACM"
 
 #: ../../infrastructure/certificates/acm.rst:41
 msgid "To request a new certificate through ACM:"
-msgstr ""
+msgstr "Pour demander un nouveau certificat via ACM :"
 
 #: ../../infrastructure/certificates/acm.rst:43
 #: ../../infrastructure/certificates/acm.rst:89
 #: ../../infrastructure/certificates/acm.rst:126
 msgid "Navigate to |InfTruCer|"
-msgstr ""
+msgstr "Accédez à |InfTruCer|"
 
 #: ../../infrastructure/certificates/acm.rst:44
 #: ../../infrastructure/certificates/acm.rst:90
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ ADD`"
 
 #: ../../infrastructure/certificates/acm.rst:45
 msgid "Select the ACM certificate type"
-msgstr ""
+msgstr "Sélectionnez le type de certificat ACM"
 
 #: ../../infrastructure/certificates/acm.rst:46
 msgid "Complete the request fields:"
-msgstr ""
+msgstr "Remplissez les champs de la demande :"
 
 #: ../../infrastructure/certificates/acm.rst:48
 msgid "**NAME:** A name for the certificate in |morpheus|"
-msgstr ""
+msgstr "**NOM :** Un nom pour le certificat dans |morpheus|"
 
 #: ../../infrastructure/certificates/acm.rst:49
 msgid "**AWS CLOUD:** Select the AWS Cloud integration"
-msgstr ""
+msgstr "**AWS CLOUD :** Sélectionnez l'intégration Cloud AWS"
 
 #: ../../infrastructure/certificates/acm.rst:50
 msgid "**REGION:** AWS region for the certificate"
-msgstr ""
+msgstr "**RÉGION :** Région AWS pour le certificat"
 
 #: ../../infrastructure/certificates/acm.rst:51
 msgid ""
 "**DOMAIN NAME:** Primary domain for the certificate (e.g., "
 "``example.com``)"
-msgstr ""
+msgstr "**NOM DE DOMAINE :** Domaine principal du certificat (par ex., ``example.com``)"
 
 #: ../../infrastructure/certificates/acm.rst:52
 msgid ""
 "**ADDITIONAL NAMES:** Subject Alternative Names (SANs) for additional "
 "domains"
-msgstr ""
+msgstr "**NOMS SUPPLÉMENTAIRES :** Noms alternatifs du sujet (SAN) pour des domaines supplémentaires"
 
 #: ../../infrastructure/certificates/acm.rst:53
 msgid "**VALIDATION METHOD:** DNS Validation (recommended) or Email Validation"
-msgstr ""
+msgstr "**MÉTHODE DE VALIDATION :** Validation DNS (recommandée) ou validation par e-mail"
 
 #: ../../infrastructure/certificates/acm.rst:55
 msgid "Click :guilabel:`REQUEST`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`REQUEST`"
 
 #: ../../infrastructure/certificates/acm.rst:57
 msgid ""
 "|morpheus| submits the certificate request to ACM. The certificate status"
 " will show as \"Pending Validation\" until domain ownership is verified."
-msgstr ""
+msgstr "|morpheus| soumet la demande de certificat à ACM. L'état du certificat s'affiche comme « Pending Validation » jusqu'à ce que la propriété du domaine soit vérifiée."
 
 #: ../../infrastructure/certificates/acm.rst:60
 msgid "Domain Validation"
-msgstr ""
+msgstr "Validation de domaine"
 
 #: ../../infrastructure/certificates/acm.rst:63
 msgid "DNS Validation (Recommended)"
-msgstr ""
+msgstr "Validation DNS (recommandée)"
 
 #: ../../infrastructure/certificates/acm.rst:65
 msgid "ACM provides a CNAME record that must be added to your domain's DNS:"
-msgstr ""
+msgstr "ACM fournit un enregistrement CNAME qui doit être ajouté au DNS de votre domaine :"
 
 #: ../../infrastructure/certificates/acm.rst:67
 msgid ""
 "If the domain is managed in Route 53 through |morpheus|, validation can "
 "be completed automatically"
-msgstr ""
+msgstr "Si le domaine est géré dans Route 53 via |morpheus|, la validation peut être effectuée automatiquement"
 
 #: ../../infrastructure/certificates/acm.rst:68
 msgid "For external DNS, add the provided CNAME record to your DNS zone"
-msgstr ""
+msgstr "Pour un DNS externe, ajoutez l'enregistrement CNAME fourni à votre zone DNS"
 
 #: ../../infrastructure/certificates/acm.rst:69
 msgid "DNS validation records can remain in place for automatic renewal"
-msgstr ""
+msgstr "Les enregistrements de validation DNS peuvent rester en place pour le renouvellement automatique"
 
 #: ../../infrastructure/certificates/acm.rst:72
 msgid "Email Validation"
-msgstr ""
+msgstr "Validation par e-mail"
 
 #: ../../infrastructure/certificates/acm.rst:74
 msgid "ACM sends validation emails to domain contacts:"
-msgstr ""
+msgstr "ACM envoie des e-mails de validation aux contacts du domaine :"
 
 #: ../../infrastructure/certificates/acm.rst:76
 msgid "``admin@example.com``"
@@ -232,126 +232,126 @@ msgstr ""
 msgid ""
 "Follow the link in the validation email to approve the certificate "
 "request."
-msgstr ""
+msgstr "Suivez le lien dans l'e-mail de validation pour approuver la demande de certificat."
 
 #: ../../infrastructure/certificates/acm.rst:85
 msgid "Importing Existing Certificates to ACM"
-msgstr ""
+msgstr "Importation de certificats existants vers ACM"
 
 #: ../../infrastructure/certificates/acm.rst:87
 msgid "To import a third-party certificate into ACM through |morpheus|:"
-msgstr ""
+msgstr "Pour importer un certificat tiers dans ACM via |morpheus| :"
 
 #: ../../infrastructure/certificates/acm.rst:91
 msgid "Select ACM Import type"
-msgstr ""
+msgstr "Sélectionnez le type d'importation ACM"
 
 #: ../../infrastructure/certificates/acm.rst:92
 msgid "Provide:"
-msgstr ""
+msgstr "Fournissez :"
 
 #: ../../infrastructure/certificates/acm.rst:94
 msgid "**CERTIFICATE BODY:** PEM-encoded certificate"
-msgstr ""
+msgstr "**CORPS DU CERTIFICAT :** Certificat encodé PEM"
 
 #: ../../infrastructure/certificates/acm.rst:95
 msgid "**PRIVATE KEY:** PEM-encoded private key"
-msgstr ""
+msgstr "**CLÉ PRIVÉE :** Clé privée encodée PEM"
 
 #: ../../infrastructure/certificates/acm.rst:96
 msgid "**CERTIFICATE CHAIN:** PEM-encoded intermediate certificates"
-msgstr ""
+msgstr "**CHAÎNE DE CERTIFICATS :** Certificats intermédiaires encodés PEM"
 
 #: ../../infrastructure/certificates/acm.rst:98
 msgid "Click :guilabel:`IMPORT`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`IMPORT`"
 
 #: ../../infrastructure/certificates/acm.rst:100
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/certificates/acm.rst:100
 msgid ""
 "Imported certificates are not automatically renewed by ACM. Only "
 "certificates requested through ACM receive automatic renewal."
-msgstr ""
+msgstr "Les certificats importés ne sont pas renouvelés automatiquement par ACM. Seuls les certificats demandés via ACM bénéficient d'un renouvellement automatique."
 
 #: ../../infrastructure/certificates/acm.rst:103
 msgid "Certificate Renewal"
-msgstr ""
+msgstr "Renouvellement de certificat"
 
 #: ../../infrastructure/certificates/acm.rst:105
 msgid "Certificates requested through ACM are automatically renewed by AWS:"
-msgstr ""
+msgstr "Les certificats demandés via ACM sont renouvelés automatiquement par AWS :"
 
 #: ../../infrastructure/certificates/acm.rst:107
 msgid "ACM begins renewal 60 days before expiration"
-msgstr ""
+msgstr "ACM commence le renouvellement 60 jours avant l'expiration"
 
 #: ../../infrastructure/certificates/acm.rst:108
 msgid ""
 "DNS-validated certificates renew automatically if the CNAME record is "
 "still in place"
-msgstr ""
+msgstr "Les certificats validés par DNS se renouvellent automatiquement si l'enregistrement CNAME est toujours en place"
 
 #: ../../infrastructure/certificates/acm.rst:109
 msgid "Email-validated certificates require re-approval via email"
-msgstr ""
+msgstr "Les certificats validés par e-mail nécessitent une nouvelle approbation par e-mail"
 
 #: ../../infrastructure/certificates/acm.rst:110
 msgid "|morpheus| syncs the renewed certificate data automatically"
-msgstr ""
+msgstr "|morpheus| synchronise automatiquement les données du certificat renouvelé"
 
 #: ../../infrastructure/certificates/acm.rst:113
 msgid "Certificate Synchronization"
-msgstr ""
+msgstr "Synchronisation des certificats"
 
 #: ../../infrastructure/certificates/acm.rst:115
 msgid "|morpheus| synchronizes ACM certificate inventory from AWS:"
-msgstr ""
+msgstr "|morpheus| synchronise l'inventaire des certificats ACM depuis AWS :"
 
 #: ../../infrastructure/certificates/acm.rst:117
 msgid ""
 "Certificates created directly in the AWS Console appear in |morpheus| "
 "after sync"
-msgstr ""
+msgstr "Les certificats créés directement dans la console AWS apparaissent dans |morpheus| après synchronisation"
 
 #: ../../infrastructure/certificates/acm.rst:118
 msgid "Certificate status (Issued, Pending, Expired, Revoked) is kept current"
-msgstr ""
+msgstr "L'état du certificat (Issued, Pending, Expired, Revoked) est maintenu à jour"
 
 #: ../../infrastructure/certificates/acm.rst:119
 msgid "Association with AWS resources (ELBs, CloudFront) is tracked"
-msgstr ""
+msgstr "L'association avec les ressources AWS (ELB, CloudFront) est suivie"
 
 #: ../../infrastructure/certificates/acm.rst:122
 msgid "Deleting ACM Certificates"
-msgstr ""
+msgstr "Suppression de certificats ACM"
 
 #: ../../infrastructure/certificates/acm.rst:124
 msgid "To delete an ACM certificate:"
-msgstr ""
+msgstr "Pour supprimer un certificat ACM :"
 
 #: ../../infrastructure/certificates/acm.rst:127
 msgid "Select the ACM certificate"
-msgstr ""
+msgstr "Sélectionnez le certificat ACM"
 
 #: ../../infrastructure/certificates/acm.rst:128
 msgid "Click :guilabel:`DELETE` from the Actions menu"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`DELETE` dans le menu Actions"
 
 #: ../../infrastructure/certificates/acm.rst:129
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmez la suppression"
 
 #: ../../infrastructure/certificates/acm.rst:131
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/certificates/acm.rst:131
 msgid ""
 "ACM certificates cannot be deleted while in use by AWS services (load "
 "balancers, CloudFront, etc.). Remove the certificate association from all"
 " services before deletion."
-msgstr ""
+msgstr "Les certificats ACM ne peuvent pas être supprimés tant qu'ils sont utilisés par des services AWS (équilibreurs de charge, CloudFront, etc.). Supprimez l'association du certificat de tous les services avant la suppression."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/policies/cypherpolicies.rst:2
 msgid "Cypher Policies"
-msgstr ""
+msgstr "Políticas Cypher"
 
 #: ../../administration/policies/cypherpolicies.rst:4
 msgid ""
@@ -32,11 +32,11 @@ msgid ""
 "deploying Cypher Access policies, including how user role permissions "
 "will interact with the policy and how conflicts between overlapping "
 "policies are resolved."
-msgstr ""
+msgstr "O |morpheus| permite que administradores definam políticas Cypher robustas, que determinam acesso global, por função e/ou por usuário específico aos pontos de montagem de segredos Cypher configurados. Várias considerações devem ser feitas ao implantar políticas de Acesso Cypher, incluindo como as permissões de função de usuário interagem com a política e como conflitos entre políticas sobrepostas são resolvidos."
 
 #: ../../administration/policies/cypherpolicies.rst:7
 msgid "Role Permissions"
-msgstr ""
+msgstr "Permissões de Função"
 
 #: ../../administration/policies/cypherpolicies.rst:9
 msgid ""
@@ -49,37 +49,37 @@ msgid ""
 "Cypher UI from the Role completely. Alternatively, if the Role needs to "
 "use and decrypt even one Cypher entry, set the feature permission to "
 "\"Full Decrypt\". The complete set of available permissions are below:"
-msgstr ""
+msgstr "As permissões de Função de Usuário (|AdmRol|) afetam significativamente o acesso Cypher. As permissões de Função de acesso Cypher são definidas na guia Features da Função selecionada em \"Tools: Cypher\". A permissão da Função deve ser definida com base no nível mais alto de acesso a qualquer entrada Cypher individual necessária para a Função específica. Por exemplo, se a Função não precisa de acesso a nenhuma entrada Cypher, defina a permissão de recurso como \"None\" e oculte completamente a interface Cypher da Função. Alternativamente, se a Função precisa usar e descriptografar pelo menos uma entrada Cypher, defina a permissão de recurso como \"Full Decrypt\". O conjunto completo de permissões disponíveis está abaixo:"
 
 #: ../../administration/policies/cypherpolicies.rst:11
 msgid "**NONE:** Cypher UI hidden"
-msgstr ""
+msgstr "**NONE:** Interface Cypher oculta"
 
 #: ../../administration/policies/cypherpolicies.rst:12
 msgid "**READ:** Cypher UI present, entries can be listed"
-msgstr ""
+msgstr "**READ:** Interface Cypher presente, entradas podem ser listadas"
 
 #: ../../administration/policies/cypherpolicies.rst:13
 msgid ""
 "**USER:** Cypher UI present, user sees and can use their own entries, "
 "user can create new entries"
-msgstr ""
+msgstr "**USER:** Interface Cypher presente, usuário vê e pode usar suas próprias entradas, usuário pode criar novas entradas"
 
 #: ../../administration/policies/cypherpolicies.rst:14
 msgid ""
 "**FULL:** Cypher UI present, user sees and can use all entries, user can "
 "create new entries, user cannot decrypt any entries"
-msgstr ""
+msgstr "**FULL:** Interface Cypher presente, usuário vê e pode usar todas as entradas, usuário pode criar novas entradas, usuário não pode descriptografar nenhuma entrada"
 
 #: ../../administration/policies/cypherpolicies.rst:15
 msgid ""
 "**FULL DECRYPT:** Full access to Cypher features including the ability to"
 " decrypt secrets"
-msgstr ""
+msgstr "**FULL DECRYPT:** Acesso completo aos recursos Cypher, incluindo a capacidade de descriptografar segredos"
 
 #: ../../administration/policies/cypherpolicies.rst:18
 msgid "Cypher Access Policies"
-msgstr ""
+msgstr "Políticas de Acesso Cypher"
 
 #: ../../administration/policies/cypherpolicies.rst:20
 msgid ""
@@ -87,7 +87,7 @@ msgid ""
 "Click :guilabel:`+ ADD POLICY` to create new. Set the type to \"Cypher "
 "Access\" and the relevant configuration options will be displayed. In "
 "addition to the type, enter a name for the Policy in the top section."
-msgstr ""
+msgstr "Como outros tipos de Política, as Políticas de Acesso Cypher são criadas em |AdmPol|. Clique em :guilabel:`+ ADD POLICY` para criar uma nova. Defina o tipo como \"Cypher Access\" e as opções de configuração relevantes serão exibidas. Além do tipo, insira um nome para a Política na seção superior."
 
 #: ../../administration/policies/cypherpolicies.rst:22
 msgid ".. image:: /images/administration/policies/polname.png"
@@ -100,33 +100,33 @@ msgid ""
 "this field supports pattern matching with regex. For example, enter "
 "\".*\" to refer to all Cypher entries or \"secret/.*\" to refer to all "
 "entries under the secret mount point."
-msgstr ""
+msgstr "Na próxima seção, insira o caminho da chave ao qual a Política se aplicará. Além de entradas estáticas que apontam para uma entrada Cypher específica, este campo suporta correspondência de padrões com regex. Por exemplo, insira \".*\" para referir-se a todas as entradas Cypher ou \"secret/.*\" para referir-se a todas as entradas sob o ponto de montagem secret."
 
 #: ../../administration/policies/cypherpolicies.rst:27
 msgid ""
 "In addition to the path, set the privileges users in the Policy scope "
 "should have on the indicated path."
-msgstr ""
+msgstr "Além do caminho, defina os privilégios que os usuários no escopo da Política devem ter no caminho indicado."
 
 #: ../../administration/policies/cypherpolicies.rst:29
 msgid "**LIST:** See the entries on the indicated path listed in the Cypher UI"
-msgstr ""
+msgstr "**LIST:** Veja as entradas no caminho indicado listadas na interface Cypher"
 
 #: ../../administration/policies/cypherpolicies.rst:30
 msgid "**READ:** Decrypt the entries on the indicated path"
-msgstr ""
+msgstr "**READ:** Descriptografe as entradas no caminho indicado"
 
 #: ../../administration/policies/cypherpolicies.rst:31
 msgid "**WRITE:** Add new entries on the indicated path"
-msgstr ""
+msgstr "**WRITE:** Adicione novas entradas no caminho indicado"
 
 #: ../../administration/policies/cypherpolicies.rst:32
 msgid "**UPDATE:** Edit Cypher entries on the indicated path"
-msgstr ""
+msgstr "**UPDATE:** Edite entradas Cypher no caminho indicado"
 
 #: ../../administration/policies/cypherpolicies.rst:33
 msgid "**DELETE:** Delete entries on the indicated path"
-msgstr ""
+msgstr "**DELETE:** Exclua entradas no caminho indicado"
 
 #: ../../administration/policies/cypherpolicies.rst:35
 msgid ".. image:: /images/administration/policies/polconfig.png"
@@ -140,7 +140,7 @@ msgid ""
 "you have existing Roles in |morpheus| for each department, you can set up"
 " Role-scoped Policies to ensure they can only list, use, and add Cypher "
 "entries which are relevant to their own department."
-msgstr ""
+msgstr "Por fim, defina o escopo da Política. As Políticas de Acesso Cypher suportam escopo Global, Função e Usuário. Por exemplo, você pode querer bloquear conjuntos de entradas Cypher para vários departamentos em sua organização. Se você tiver Funções existentes no |morpheus| para cada departamento, pode configurar Políticas com escopo de Função para garantir que eles só possam listar, usar e adicionar entradas Cypher relevantes ao seu próprio departamento."
 
 #: ../../administration/policies/cypherpolicies.rst:40
 msgid ".. image:: /images/administration/policies/polfilter.png"
@@ -148,7 +148,7 @@ msgstr ""
 
 #: ../../administration/policies/cypherpolicies.rst:43
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../administration/policies/cypherpolicies.rst:43
 msgid ""
@@ -163,11 +163,11 @@ msgid ""
 "example, if a Role-scoped Policy targeting \".*\" grants LIST and READ "
 "while a User-scoped Policy targeting the same path grants LIST, the user "
 "would be granted the rights in the Role-scoped Policy."
-msgstr ""
+msgstr "Quando Políticas de Acesso Cypher entram em conflito, a Política com o caminho de maior comprimento (tipicamente a mais específica) tem precedência. Por exemplo, uma Política que concede acesso LIST e READ a \"secret/aws/.*\" seria substituída por uma Política que concede NENHUM acesso a \"secret/aws/my-secret-key\". Nesse caso, o usuário veria tudo no caminho \"secret/aws/.*\", exceto o indicado na Política mais específica. Quando Políticas direcionadas ao mesmo caminho diferem apenas em seu escopo, a seguinte precedência de escopo é aplicada: Função > Usuário > Global. Por exemplo, se uma Política com escopo de Função direcionada a \".*\" concede LIST e READ enquanto uma Política com escopo de Usuário direcionada ao mesmo caminho concede LIST, o usuário receberá os direitos da Política com escopo de Função."
 
 #: ../../administration/policies/cypherpolicies.rst:46
 msgid "Cloud Profiles"
-msgstr ""
+msgstr "Perfis de Nuvem"
 
 #: ../../administration/policies/cypherpolicies.rst:48
 msgid ""
@@ -183,11 +183,11 @@ msgid ""
 "does not affect access on the Cloud. Other Role permissions, such as "
 "\"Admin: Profiles\", \"Infrastructure: Clouds\", and Cloud/Group access "
 "must be used to restrict access via Cloud detail pages."
-msgstr ""
+msgstr "Os Perfis de Nuvem Terraform são criados em cada página de detalhes da Nuvem (|InfClo| > Nuvem Selecionada > Guia Profiles), criptografados em Cypher, e criam uma entrada Cypher visível tanto na guia Profile da página de detalhes da Nuvem quanto em Cypher. Quando adicionados a uma Nuvem, eles criam uma entrada Cypher no caminho tfvars/profile/cloud/$cloudCode/variables. Se uma entrada Cypher de perfil de Nuvem for restrita por uma política de Acesso Cypher, ela será (ou não será) listável/legível/excluível conforme ditado pela Política, mas ainda poderá ser visualizada na página de detalhes da Nuvem se o usuário tiver permissões suficientes. Restringir ou conceder acesso a perfis de Nuvem via Política não afeta o acesso na Nuvem. Outras permissões de Função, como \"Admin: Profiles\", \"Infrastructure: Clouds\" e acesso Nuvem/Grupo devem ser usadas para restringir o acesso via páginas de detalhes da Nuvem."
 
 #: ../../administration/policies/cypherpolicies.rst:51
 msgid "Example Policy"
-msgstr ""
+msgstr "Exemplo de Política"
 
 #: ../../administration/policies/cypherpolicies.rst:53
 msgid ""
@@ -195,7 +195,7 @@ msgid ""
 "AWS-related secrets and another department that needs access to Azure-"
 "related secrets. There are many other secrets stored in my appliance but "
 "I don't want either of these departments to access any of those."
-msgstr ""
+msgstr "Em minha organização de exemplo, tenho um departamento que precisa de acesso a segredos relacionados à AWS e outro departamento que precisa de acesso a segredos relacionados ao Azure. Há muitos outros segredos armazenados em meu appliance, mas não quero que nenhum desses departamentos acesse nenhum deles."
 
 #: ../../administration/policies/cypherpolicies.rst:55
 msgid ".. image:: /images/administration/policies/cypherlist.png"
@@ -208,7 +208,7 @@ msgid ""
 "Policy specifically excludes them from seeing one specific entry. The "
 "Policy with the more specific path will supersede the more generic Policy"
 " that includes a wildcard."
-msgstr ""
+msgstr "Para o primeiro departamento, configurei uma Política que permite listar e ler (incluindo direitos de uso e descriptografia) segredos AWS. Uma segunda Política os exclui especificamente de ver uma entrada específica. A Política com o caminho mais específico substituirá a Política mais genérica que inclui um curinga."
 
 #: ../../administration/policies/cypherpolicies.rst:59
 msgid ".. image:: /images/administration/policies/pollist.png"
@@ -218,7 +218,7 @@ msgstr ""
 msgid ""
 "By impersonating the user, we see they indeed have access to just the two"
 " desired Cypher entries."
-msgstr ""
+msgstr "Ao impersonar o usuário, vemos que ele de fato tem acesso apenas às duas entradas Cypher desejadas."
 
 #: ../../administration/policies/cypherpolicies.rst:63
 msgid ".. image:: /images/administration/policies/user1cypher.png"
@@ -228,7 +228,7 @@ msgstr ""
 msgid ""
 "For the second department, I have set up a Policy that allows them to "
 "list and read (including use and decryption rights) Azure secrets."
-msgstr ""
+msgstr "Para o segundo departamento, configurei uma Política que permite listar e ler (incluindo direitos de uso e descriptografia) segredos Azure."
 
 #: ../../administration/policies/cypherpolicies.rst:67
 msgid ".. image:: /images/administration/policies/cypherlist2.png"
@@ -238,7 +238,7 @@ msgstr ""
 msgid ""
 "By impersonating the user once again, we see they indeed have access only"
 " to Azure entries."
-msgstr ""
+msgstr "Ao impersonar o usuário novamente, vemos que ele de fato tem acesso apenas às entradas Azure."
 
 #: ../../administration/policies/cypherpolicies.rst:71
 msgid ".. image:: /images/administration/policies/user2cypher.png"

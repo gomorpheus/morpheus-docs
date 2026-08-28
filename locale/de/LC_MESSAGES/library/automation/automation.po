@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../library/automation/automation.rst:4
 msgid "Automation"
-msgstr ""
+msgstr "Automatisierung"
 
 #: ../../library/automation/automation.rst:6
 msgid "``Library > Automation``"
-msgstr ""
+msgstr "``Library > Automation``"
 
 #: ../../library/automation/automation.rst:8
 msgid ""
@@ -36,16 +36,16 @@ msgid ""
 "Tasks are are combined into workflows, which can be selected to run at "
 "provision time or executed on existing instances via ``Actions > Run "
 "Workflow``."
-msgstr ""
+msgstr "Der Abschnitt Automatisierung besteht aus Aufgaben und Workflows. Aufgaben können direkt hinzugefügte Skripts, Skripts und Blueprints aus dem Abschnitt Bibliothek, Recipes, Playbooks, Puppet-Agent-Installationen oder HTTP-(API-)Aufrufe sein. Diese Aufgaben werden zu Workflows kombiniert, die zur Provisionierungszeit ausgewählt oder auf vorhandenen Instanzen über ``Actions > Run Workflow`` ausgeführt werden können."
 
 #: ../../library/automation/tasks.rst:5
 msgid "Tasks"
-msgstr ""
+msgstr "Aufgaben"
 
 #: ../../library/automation/tasks.rst:30
 #: ../../library/automation/tasks/taskResults.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../library/automation/tasks.rst:32
 msgid ""
@@ -54,17 +54,17 @@ msgid ""
 "puppet agent installs, and http (api) calls. Tasks are primarily created "
 "for use in Workflows, but a single Task can be executed on an existing "
 "instance via ``Actions > Run Task``."
-msgstr ""
+msgstr "Es gibt viele Aufgabentypen, einschließlich direkt hinzugefügter Skripts, Skripts und Vorlagen aus dem Abschnitt Bibliothek, Recipes, Playbooks, Puppet-Agent-Installationen und HTTP-(API-)Aufrufe. Aufgaben werden hauptsächlich für die Verwendung in Workflows erstellt, aber eine einzelne Aufgabe kann auf einer vorhandenen Instanz über ``Actions > Run Task`` ausgeführt werden."
 
 #: ../../library/automation/tasks.rst:35
 msgid "Role Permissions"
-msgstr ""
+msgstr "Rollenberechtigungen"
 
 #: ../../library/automation/tasks.rst:37
 msgid ""
 "The User Role Permission 'Provisioning: Tasks  FULL' is required to "
 "create, edit and delete tasks."
-msgstr ""
+msgstr "Die Benutzerrollenberechtigung 'Provisioning: Tasks  FULL' ist erforderlich, um Aufgaben zu erstellen, zu bearbeiten und zu löschen."
 
 #: ../../library/automation/tasks.rst:39
 msgid ""
@@ -72,22 +72,22 @@ msgid ""
 "have an additional Role Permission: ``Tasks - Script Engines``. Script "
 "Engine Task Types will be hidden for users without ``Tasks - Script "
 "Engines`` role permissions."
-msgstr ""
+msgstr "Aufgabentypen, die lokal gegen die |morpheus|-Appliance ausgeführt werden können, haben eine zusätzliche Rollenberechtigung: ``Tasks - Script Engines``. Script-Engine-Aufgabentypen werden für Benutzer ohne die Rollenberechtigungen ``Tasks - Script Engines`` ausgeblendet."
 
 #: ../../library/automation/tasks.rst:42
 msgid "Common Options"
-msgstr ""
+msgstr "Gemeinsame Optionen"
 
 #: ../../library/automation/tasks.rst:44
 msgid ""
 "When creating a Task, the required and optional inputs will vary "
 "significantly by the Task type. However, there are options which are "
 "common to Tasks of all types."
-msgstr ""
+msgstr "Beim Erstellen einer Aufgabe variieren die erforderlichen und optionalen Eingaben erheblich je nach Aufgabentyp. Es gibt jedoch Optionen, die allen Aufgabentypen gemeinsam sind."
 
 #: ../../library/automation/tasks.rst:47
 msgid "Target Options"
-msgstr ""
+msgstr "Zieloptionen"
 
 #: ../../library/automation/tasks.rst:49
 msgid ""
@@ -95,60 +95,60 @@ msgid ""
 " Some Task types allow for any of the three execution targets listed "
 "below and some will limit the user to two or just one. The table in the "
 "next section lists the available execution targets for each Task type."
-msgstr ""
+msgstr "Beim Erstellen einer Aufgabe können Benutzer ein Ziel für die Ausführung auswählen. Einige Aufgabentypen erlauben eines der drei unten aufgeführten Ausführungsziele, andere beschränken den Benutzer auf zwei oder nur eines. Die Tabelle im nächsten Abschnitt listet die verfügbaren Ausführungsziele für jeden Aufgabentyp auf."
 
 #: ../../library/automation/tasks.rst:51
 msgid ""
 "**Resource:** A |morpheus|-managed Instance or server is selected to "
 "execute the Task"
-msgstr ""
+msgstr "**Resource:** Eine von |morpheus| verwaltete Instanz oder ein Server wird ausgewählt, um die Aufgabe auszuführen"
 
 #: ../../library/automation/tasks.rst:52
 msgid "**Local:** The Task is executed by the |morpheus| appliance node"
-msgstr ""
+msgstr "**Local:** Die Aufgabe wird vom |morpheus|-Appliance-Knoten ausgeführt"
 
 #: ../../library/automation/tasks.rst:53
 msgid "**Remote:** The user specifies a remote box which will execute the Task"
-msgstr ""
+msgstr "**Remote:** Der Benutzer gibt eine Remote-Box an, die die Aufgabe ausführt"
 
 #: ../../library/automation/tasks.rst:56
 msgid "Execute Options"
-msgstr ""
+msgstr "Ausführungsoptionen"
 
 #: ../../library/automation/tasks.rst:58
 msgid ""
 "**Continue on Error:** When marked, Workflows containing this Task will "
 "continue and will remain in a successful state if this Task fails"
-msgstr ""
+msgstr "**Continue on Error:** Wenn markiert, werden Workflows, die diese Aufgabe enthalten, fortgesetzt und bleiben in einem erfolgreichen Zustand, wenn diese Aufgabe fehlschlägt"
 
 #: ../../library/automation/tasks.rst:59
 msgid ""
 "**Retryable:** When marked, this Task can be configured to be retried in "
 "the event of failure"
-msgstr ""
+msgstr "**Retryable:** Wenn markiert, kann diese Aufgabe so konfiguriert werden, dass sie bei einem Fehler wiederholt wird"
 
 #: ../../library/automation/tasks.rst:60
 msgid ""
 "**Retry Count:** The maximum number of times the Task will be retried "
 "when there is a failure"
-msgstr ""
+msgstr "**Retry Count:** Die maximale Anzahl, wie oft die Aufgabe bei einem Fehler wiederholt wird"
 
 #: ../../library/automation/tasks.rst:61
 msgid ""
 "**Retry Delay:** The length of time (in seconds) |morpheus| will wait to "
 "retry the Task"
-msgstr ""
+msgstr "**Retry Delay:** Die Wartezeit (in Sekunden), die |morpheus| vor dem erneuten Versuch der Aufgabe wartet"
 
 #: ../../library/automation/tasks.rst:62
 msgid ""
 "**Allow Custom Config:** When marked, a text area is provided at Task "
 "execution time to allow the user to pass extra variables or specify extra"
 " configuration. See the next section for an example."
-msgstr ""
+msgstr "**Allow Custom Config:** Wenn markiert, wird zur Ausführungszeit der Aufgabe ein Textfeld bereitgestellt, damit der Benutzer zusätzliche Variablen übergeben oder zusätzliche Konfiguration angeben kann. Siehe den nächsten Abschnitt für ein Beispiel."
 
 #: ../../library/automation/tasks.rst:65 ../../library/automation/tasks.rst:115
 msgid "Source Options"
-msgstr ""
+msgstr "Quellenoptionen"
 
 #: ../../library/automation/tasks.rst:67
 msgid ""
@@ -156,14 +156,14 @@ msgid ""
 "the Task type. Changing the SOURCE type will often update the available "
 "fields in the Task modal to accommodate the selected sourcing. Not every "
 "Task type supports every sourcing type listed here."
-msgstr ""
+msgstr "Aufgabakonfigurationscode kann je nach Aufgabentyp auf verschiedene Weise eingegeben werden. Das Ändern des SOURCE-Typs aktualisiert häufig die verfügbaren Felder im Aufgaben-Modal, um die ausgewählte Quelle zu berücksichtigen. Nicht jeder Aufgabentyp unterstützt jeden hier aufgeführten Quellentyp."
 
 #: ../../library/automation/tasks.rst:69
 msgid ""
 "**Local:** The Task configuration code is written directly in |morpheus| "
 "in a large text area. |morpheus| includes syntax highlighting for "
 "supported Task languages for easier debugging and script writing"
-msgstr ""
+msgstr "**Local:** Der Aufgabakonfigurationscode wird direkt in |morpheus| in einem großen Textfeld geschrieben. |morpheus| enthält Syntaxhervorhebung für unterstützte Aufgabensprachen zur einfacheren Fehlersuche und Skripterstellung"
 
 #: ../../library/automation/tasks.rst:70
 msgid ""
@@ -179,18 +179,18 @@ msgid ""
 "following syntax: ``refs/tags/<tag-name-here>``. Unless otherwise "
 "specified, Task config is sourced fresh from the repository each time the"
 " Task is invoked which ensures the latest code is always used"
-msgstr ""
+msgstr "**Repository:** Beziehen Sie den Aufgabakonfigurationscode aus einem integrierten Git- oder Github-Repository. Dies erfordert eine vorhandene Integration mit einem Github- oder anderen Git-basierten Repository. Siehe die `relevant integration guides <https://docs.morpheusdata.com/en/latest/integration_guides/Deployments/deployment.html>`_ für vollständige Details zum Erstellen einer solchen Integration. Geben Sie den Pfad zur entsprechenden Datei über das Feld WORKING PATH an. Der entsprechende Branch kann auch angegeben werden (falls ein anderer Branch als 'main' erforderlich ist) im Feld BRANCH/TAG. Um ein Tag aus diesem Feld zu referenzieren, verwenden Sie die folgende Syntax: ``refs/tags/<tag-name-here>``. Sofern nicht anders angegeben, wird die Aufgabenkonfiguration bei jedem Aufruf der Aufgabe frisch aus dem Repository bezogen, wodurch stets der neueste Code verwendet wird"
 
 #: ../../library/automation/tasks.rst:71
 msgid ""
 "**URL:** For Task configuration that can be source via an outside URL, "
 "specify the address in the URL field"
-msgstr ""
+msgstr "**URL:** Für Aufgabenkonfiguration, die über eine externe URL bezogen werden kann, geben Sie die Adresse im Feld URL an"
 
 #: ../../library/automation/tasks.rst:74
 #: ../../library/automation/workflows.rst:99
 msgid "Allow Custom Config"
-msgstr ""
+msgstr "Allow Custom Config"
 
 #: ../../library/automation/tasks.rst:76
 msgid ""
@@ -204,12 +204,12 @@ msgid ""
 "which can be resolved within your automation scripts. This could be used "
 "to pass extra variables that aren't always needed in the script or for "
 "specifying extra configuration."
-msgstr ""
+msgstr "Wenn „Allow Custom Config“ bei einer Aufgabe markiert ist, wird dem Benutzer bei manueller Ausführung der Aufgabe von der Aufgabenlistenseite ein Textfeld für benutzerdefinierte Konfiguration angezeigt. Wenn die Aufgabe Teil eines Operational Workflows sein soll, markieren Sie dasselbe Kästchen am Workflow statt an der Aufgabe, um das Textfeld zur Ausführungszeit zu sehen. Dieses Textfeld befindet sich im Abschnitt „Advanced Options“, der erweitert werden muss, um das Textfeld anzuzeigen. Fügen Sie im Textfeld eine JSON-Map von Schlüssel-Wert-Paaren hinzu, die in Ihren Automatisierungsskripten aufgelöst werden können. Dies könnte verwendet werden, um zusätzliche Variablen zu übergeben, die nicht immer im Skript benötigt werden, oder um zusätzliche Konfiguration anzugeben."
 
 #: ../../library/automation/tasks.rst:78
 #: ../../library/automation/workflows.rst:103
 msgid "**Example JSON Map:**"
-msgstr ""
+msgstr "**Beispiel-JSON-Map:**"
 
 #: ../../library/automation/tasks.rst:80
 #: ../../library/automation/workflows.rst:105
@@ -226,7 +226,7 @@ msgid ""
 "When the Task is executed, these extra variables would be resolved where "
 "called into the script such as in the following simple BASH script "
 "example:"
-msgstr ""
+msgstr "Wenn die Aufgabe ausgeführt wird, würden diese zusätzlichen Variablen dort aufgelöst, wo sie im Skript aufgerufen werden, wie im folgenden einfachen BASH-Skriptbeispiel:"
 
 #: ../../library/automation/tasks.rst:89
 #: ../../library/automation/workflows.rst:114
@@ -238,7 +238,7 @@ msgstr ""
 #: ../../library/automation/tasks.rst:94
 #: ../../library/automation/workflows.rst:119
 msgid "The above example would result in the following output:"
-msgstr ""
+msgstr "Das obige Beispiel würde die folgende Ausgabe ergeben:"
 
 #: ../../library/automation/tasks.rst:96
 #: ../../library/automation/workflows.rst:121
@@ -249,7 +249,7 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:102
 msgid "Task Types"
-msgstr ""
+msgstr "Aufgabentypen"
 
 #: ../../library/automation/tasks.rst:107
 msgid ""
@@ -257,40 +257,40 @@ msgid ""
 "Ansible, Chef, Puppet, Groovy Script, Python Script (Jython), and "
 "vRealize Orchestrator. Bash and PowerShell tasks are available in all "
 "tiers."
-msgstr ""
+msgstr "Die folgenden Aufgabentypen erfordern die Advanced- oder Enterprise-Stufe: Ansible, Chef, Puppet, Groovy Script, Python Script (Jython) und vRealize Orchestrator. Bash- und PowerShell-Aufgaben sind in allen Stufen verfügbar."
 
 #: ../../library/automation/tasks.rst:109
 msgid "**Available Task Types**"
-msgstr ""
+msgstr "**Verfügbare Aufgabentypen**"
 
 #: ../../library/automation/tasks.rst:113
 msgid "Task Type"
-msgstr ""
+msgstr "Aufgabentyp"
 
 #: ../../library/automation/tasks.rst:114
 msgid "Task Description"
-msgstr ""
+msgstr "Aufgabenbeschreibung"
 
 #: ../../library/automation/tasks.rst:116
 msgid "Execute Target Options"
-msgstr ""
+msgstr "Optionen für das Ausführungsziel"
 
 #: ../../library/automation/tasks.rst:117
 msgid "Configuration Requirements"
-msgstr ""
+msgstr "Konfigurationsanforderungen"
 
 #: ../../library/automation/tasks.rst:118
 msgid "Role Permissions Requirements"
-msgstr ""
+msgstr "Anforderungen an Rollenberechtigungen"
 
 #: ../../library/automation/tasks.rst:119
 #: ../../library/automation/tasks.rst:258
 msgid "|ansible|"
-msgstr ""
+msgstr "|ansible|"
 
 #: ../../library/automation/tasks.rst:7
 msgid "ansible"
-msgstr ""
+msgstr "ansible"
 
 #: ../../library/automation/tasks.rst:7
 msgid ""
@@ -300,24 +300,24 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:120
 msgid "Ansible"
-msgstr ""
+msgstr "Ansible"
 
 #: ../../library/automation/tasks.rst:121
 msgid "Runs an Ansible playbook. Ansible Integration required"
-msgstr ""
+msgstr "Führt ein Ansible-Playbook aus. Ansible-Integration erforderlich"
 
 #: ../../library/automation/tasks.rst:122
 msgid "Ansible Repo (Git)"
-msgstr ""
+msgstr "Ansible Repo (Git)"
 
 #: ../../library/automation/tasks.rst:123
 #: ../../library/automation/tasks.rst:242
 msgid "Local, Resource"
-msgstr ""
+msgstr "Local, Resource"
 
 #: ../../library/automation/tasks.rst:124
 msgid "Existing Ansible Integration"
-msgstr ""
+msgstr "Vorhandene Ansible-Integration"
 
 #: ../../library/automation/tasks.rst:125
 #: ../../library/automation/tasks.rst:132
@@ -335,16 +335,16 @@ msgstr ""
 #: ../../library/automation/tasks.rst:244
 #: ../../library/automation/tasks.rst:251
 msgid "Library: Tasks"
-msgstr ""
+msgstr "Bibliothek: Aufgaben"
 
 #: ../../library/automation/tasks.rst:126
 #: ../../library/automation/tasks.rst:272
 msgid "|ansibletower|"
-msgstr ""
+msgstr "|ansibletower|"
 
 #: ../../library/automation/tasks.rst:8
 msgid "ansibletower"
-msgstr ""
+msgstr "ansibletower"
 
 #: ../../library/automation/tasks.rst:8
 msgid ".. image:: /images/automation/tasks/ansible_tower_logo.png"
@@ -352,33 +352,33 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:127
 msgid "Ansible Tower"
-msgstr ""
+msgstr "Ansible Tower"
 
 #: ../../library/automation/tasks.rst:128
 msgid "Relays Ansible calls to Ansible Tower"
-msgstr ""
+msgstr "Leitet Ansible-Aufrufe an Ansible Tower weiter"
 
 #: ../../library/automation/tasks.rst:129
 msgid "Tower Integration"
-msgstr ""
+msgstr "Tower Integration"
 
 #: ../../library/automation/tasks.rst:130
 #: ../../library/automation/tasks.rst:235
 msgid "Local, Remote, Resource"
-msgstr ""
+msgstr "Local, Remote, Resource"
 
 #: ../../library/automation/tasks.rst:131
 msgid "Existing Ansible Tower Integration"
-msgstr ""
+msgstr "Vorhandene Ansible Tower-Integration"
 
 #: ../../library/automation/tasks.rst:133
 #: ../../library/automation/tasks.rst:285
 msgid "|chef|"
-msgstr ""
+msgstr "|chef|"
 
 #: ../../library/automation/tasks.rst:9
 msgid "chef"
-msgstr ""
+msgstr "chef"
 
 #: ../../library/automation/tasks.rst:9
 msgid ""
@@ -388,15 +388,15 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:134
 msgid "Chef bootstrap"
-msgstr ""
+msgstr "Chef bootstrap"
 
 #: ../../library/automation/tasks.rst:135
 msgid "Executes Chef bootstrap and run list. Chef Integration required"
-msgstr ""
+msgstr "Führt Chef-Bootstrap und Run List aus. Chef-Integration erforderlich"
 
 #: ../../library/automation/tasks.rst:136
 msgid "Chef Server"
-msgstr ""
+msgstr "Chef Server"
 
 #: ../../library/automation/tasks.rst:137
 #: ../../library/automation/tasks.rst:186
@@ -404,19 +404,19 @@ msgstr ""
 #: ../../library/automation/tasks.rst:214
 #: ../../library/automation/tasks.rst:228
 msgid "Resource"
-msgstr ""
+msgstr "Resource"
 
 #: ../../library/automation/tasks.rst:138
 msgid "Existing Chef Integration"
-msgstr ""
+msgstr "Vorhandene Chef-Integration"
 
 #: ../../library/automation/tasks.rst:140
 msgid "|conditional|"
-msgstr ""
+msgstr "|conditional|"
 
 #: ../../library/automation/tasks.rst:27
 msgid "conditional"
-msgstr ""
+msgstr "conditional"
 
 #: ../../library/automation/tasks.rst:27 ../../library/automation/tasks.rst:299
 msgid ".. image:: /images/automation/tasks/conditional.svg"
@@ -424,7 +424,7 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:141
 msgid "Conditional Workflow"
-msgstr ""
+msgstr "Conditional Workflow"
 
 #: ../../library/automation/tasks.rst:142
 msgid ""
@@ -432,14 +432,14 @@ msgid ""
 "|morpheus| will run the Operational Workflow set as the \"IF OPERATIONAL "
 "WORKFLOW\" and if it resolves to ``false``, |morpheus| will run the "
 "\"ELSE OPERATIONAL WORKFLOW\""
-msgstr ""
+msgstr "Ermöglicht dem Benutzer, JavaScript-Logik festzulegen. Wenn sie zu ``true`` aufgelöst wird, führt |morpheus| den als „IF OPERATIONAL WORKFLOW“ festgelegten Operational Workflow aus, und wenn sie zu ``false`` aufgelöst wird, führt |morpheus| den „ELSE OPERATIONAL WORKFLOW“ aus"
 
 #: ../../library/automation/tasks.rst:143
 msgid ""
 "N/A (JavaScript logic must be locally sourced, Tasks housed within the "
 "associated Workflows may have different sourcing options depending on "
 "their types.)"
-msgstr ""
+msgstr "N/A (JavaScript-Logik muss lokal bezogen werden; Aufgaben innerhalb der zugehörigen Workflows können je nach Typ unterschiedliche Quellenoptionen haben.)"
 
 #: ../../library/automation/tasks.rst:144
 #: ../../library/automation/tasks.rst:151
@@ -453,19 +453,19 @@ msgstr ""
 #: ../../library/automation/tasks.rst:221
 #: ../../library/automation/tasks.rst:249
 msgid "Local"
-msgstr ""
+msgstr "Local"
 
 #: ../../library/automation/tasks.rst:145
 msgid "Existing Operational Workflows"
-msgstr ""
+msgstr "Vorhandene Operational Workflows"
 
 #: ../../library/automation/tasks.rst:147
 msgid "|Email|"
-msgstr ""
+msgstr "|Email|"
 
 #: ../../library/automation/tasks.rst:10
 msgid "email"
-msgstr ""
+msgstr "email"
 
 #: ../../library/automation/tasks.rst:10
 msgid ".. image:: /images/automation/tasks/email_logo.png"
@@ -473,28 +473,28 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:148
 msgid "Email"
-msgstr ""
+msgstr "E-Mail"
 
 #: ../../library/automation/tasks.rst:149
 msgid "Send an email from a Workflow"
-msgstr ""
+msgstr "E-Mail aus einem Workflow senden"
 
 #: ../../library/automation/tasks.rst:150
 msgid "Task Content"
-msgstr ""
+msgstr "Task Content"
 
 #: ../../library/automation/tasks.rst:152
 msgid "SMTP Configured"
-msgstr ""
+msgstr "SMTP konfiguriert"
 
 #: ../../library/automation/tasks.rst:154
 #: ../../library/automation/tasks.rst:311
 msgid "|groovy|"
-msgstr ""
+msgstr "|groovy|"
 
 #: ../../library/automation/tasks.rst:11
 msgid "groovy"
-msgstr ""
+msgstr "groovy"
 
 #: ../../library/automation/tasks.rst:11
 msgid ""
@@ -504,11 +504,11 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:155
 msgid "Groovy script"
-msgstr ""
+msgstr "Groovy-Skript"
 
 #: ../../library/automation/tasks.rst:156
 msgid "Executes Groovy Script locally (on |morpheus| app node)"
-msgstr ""
+msgstr "Führt Groovy-Skript lokal aus (auf dem |morpheus|-App-Knoten)"
 
 #: ../../library/automation/tasks.rst:157
 #: ../../library/automation/tasks.rst:178
@@ -516,7 +516,7 @@ msgstr ""
 #: ../../library/automation/tasks.rst:220
 #: ../../library/automation/tasks.rst:234
 msgid "Local, Repository, Url"
-msgstr ""
+msgstr "Local, Repository, Url"
 
 #: ../../library/automation/tasks.rst:159
 #: ../../library/automation/tasks.rst:166
@@ -526,23 +526,23 @@ msgstr ""
 #: ../../library/automation/tasks.rst:229
 #: ../../library/automation/tasks.rst:236
 msgid "None"
-msgstr ""
+msgstr "Keine"
 
 #: ../../library/automation/tasks.rst:160
 #: ../../library/automation/tasks.rst:174
 #: ../../library/automation/tasks.rst:181
 #: ../../library/automation/tasks.rst:223
 msgid "Library: Tasks, Tasks - Script Engines"
-msgstr ""
+msgstr "Bibliothek: Aufgaben, Tasks - Script Engines"
 
 #: ../../library/automation/tasks.rst:161
 #: ../../library/automation/tasks.rst:334
 msgid "|http|"
-msgstr ""
+msgstr "|http|"
 
 #: ../../library/automation/tasks.rst:12
 msgid "http"
-msgstr ""
+msgstr "http"
 
 #: ../../library/automation/tasks.rst:12
 msgid ""
@@ -552,20 +552,20 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:162
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: ../../library/automation/tasks.rst:163
 msgid "Executes REST call for targeting external API's."
-msgstr ""
+msgstr "Führt REST-Aufruf für externe APIs aus."
 
 #: ../../library/automation/tasks.rst:168
 #: ../../library/automation/tasks.rst:357
 msgid "|javascript|"
-msgstr ""
+msgstr "|javascript|"
 
 #: ../../library/automation/tasks.rst:13
 msgid "javascript"
-msgstr ""
+msgstr "javascript"
 
 #: ../../library/automation/tasks.rst:13
 msgid ""
@@ -575,20 +575,20 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:169
 msgid "Javascript"
-msgstr ""
+msgstr "Javascript"
 
 #: ../../library/automation/tasks.rst:170
 msgid "Executes Javascript locally (on |morpheus| app node)"
-msgstr ""
+msgstr "Führt Javascript lokal aus (auf dem |morpheus|-App-Knoten)"
 
 #: ../../library/automation/tasks.rst:175
 #: ../../library/automation/tasks.rst:370
 msgid "|jruby|"
-msgstr ""
+msgstr "|jruby|"
 
 #: ../../library/automation/tasks.rst:14
 msgid "jruby"
-msgstr ""
+msgstr "jruby"
 
 #: ../../library/automation/tasks.rst:14
 msgid ""
@@ -598,20 +598,20 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:176
 msgid "jRuby Scirpt"
-msgstr ""
+msgstr "jRuby Scirpt"
 
 #: ../../library/automation/tasks.rst:177
 msgid "Executes Ruby script locally (on |morpheus| app node)"
-msgstr ""
+msgstr "Führt Ruby-Skript lokal aus (auf dem |morpheus|-App-Knoten)"
 
 #: ../../library/automation/tasks.rst:182
 #: ../../library/automation/tasks.rst:379
 msgid "|libraryscript|"
-msgstr ""
+msgstr "|libraryscript|"
 
 #: ../../library/automation/tasks.rst:21
 msgid "libraryscript"
-msgstr ""
+msgstr "libraryscript"
 
 #: ../../library/automation/tasks.rst:21
 msgid ""
@@ -622,24 +622,24 @@ msgstr ""
 #: ../../library/automation/tasks.rst:183
 #: ../../library/automation/tasks.rst:185
 msgid "Library Script"
-msgstr ""
+msgstr "Library Script"
 
 #: ../../library/automation/tasks.rst:184
 msgid "Creates a Task from an existing Library Script (|LibTemScr|)"
-msgstr ""
+msgstr "Erstellt eine Aufgabe aus einem vorhandenen Library Script (|LibTemScr|)"
 
 #: ../../library/automation/tasks.rst:187
 msgid "Existing Library Script"
-msgstr ""
+msgstr "Vorhandenes Library Script"
 
 #: ../../library/automation/tasks.rst:189
 #: ../../library/automation/tasks.rst:388
 msgid "|template|"
-msgstr ""
+msgstr "|template|"
 
 #: ../../library/automation/tasks.rst:18
 msgid "template"
-msgstr ""
+msgstr "template"
 
 #: ../../library/automation/tasks.rst:18
 msgid ""
@@ -650,23 +650,23 @@ msgstr ""
 #: ../../library/automation/tasks.rst:190
 #: ../../library/automation/tasks.rst:192
 msgid "Library Template"
-msgstr ""
+msgstr "Library Template"
 
 #: ../../library/automation/tasks.rst:191
 msgid "Creates a Task from an existing Library Template (|LibTemSpe|)"
-msgstr ""
+msgstr "Erstellt eine Aufgabe aus einer vorhandenen Library Template (|LibTemSpe|)"
 
 #: ../../library/automation/tasks.rst:194
 msgid "Existing Library Templates"
-msgstr ""
+msgstr "Vorhandene Library Templates"
 
 #: ../../library/automation/tasks.rst:196
 msgid "|nestedworkflow|"
-msgstr ""
+msgstr "|nestedworkflow|"
 
 #: ../../library/automation/tasks.rst:26
 msgid "nestedworkflow"
-msgstr ""
+msgstr "nestedworkflow"
 
 #: ../../library/automation/tasks.rst:26 ../../library/automation/tasks.rst:396
 msgid ".. image:: /images/automation/tasks/nestedworkflow.svg"
@@ -674,29 +674,29 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:197
 msgid "Nested Workflow"
-msgstr ""
+msgstr "Nested Workflow"
 
 #: ../../library/automation/tasks.rst:198
 msgid ""
 "Embeds a Workflow into a Task which allows the Workflow to be nested "
 "within other Workflows for situations when common Task sets are "
 "frequently used in Workflows"
-msgstr ""
+msgstr "Betten Sie einen Workflow in eine Aufgabe ein, wodurch der Workflow in andere Workflows verschachtelt werden kann, wenn gemeinsame Aufgabensätze häufig in Workflows verwendet werden"
 
 #: ../../library/automation/tasks.rst:199
 #: ../../library/automation/tasks.rst:201
 #: ../../library/automation/tasks.rst:248
 msgid "N/A"
-msgstr ""
+msgstr "N/A"
 
 #: ../../library/automation/tasks.rst:203
 #: ../../library/automation/tasks.rst:405
 msgid "|powershell|"
-msgstr ""
+msgstr "|powershell|"
 
 #: ../../library/automation/tasks.rst:20
 msgid "powershell"
-msgstr ""
+msgstr "powershell"
 
 #: ../../library/automation/tasks.rst:20
 msgid ""
@@ -706,24 +706,24 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:204
 msgid "PowerShell Script"
-msgstr ""
+msgstr "PowerShell-Skript"
 
 #: ../../library/automation/tasks.rst:205
 msgid "Execute PowerShell Script on the Target Resource"
-msgstr ""
+msgstr "PowerShell-Skript auf der Zielressource ausführen"
 
 #: ../../library/automation/tasks.rst:207
 msgid "Remote, Resource, Local"
-msgstr ""
+msgstr "Remote, Resource, Local"
 
 #: ../../library/automation/tasks.rst:210
 #: ../../library/automation/tasks.rst:424
 msgid "|puppet|"
-msgstr ""
+msgstr "|puppet|"
 
 #: ../../library/automation/tasks.rst:22
 msgid "puppet"
-msgstr ""
+msgstr "puppet"
 
 #: ../../library/automation/tasks.rst:22
 msgid ""
@@ -733,29 +733,29 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:211
 msgid "Puppet Agent Install"
-msgstr ""
+msgstr "Puppet Agent Install"
 
 #: ../../library/automation/tasks.rst:212
 msgid ""
 "Executes Puppet Agent bootstrap, writes ``puppet.conf`` and triggers "
 "agent checkin. Puppet Integration required"
-msgstr ""
+msgstr "Führt Puppet-Agent-Bootstrap aus, schreibt ``puppet.conf`` und löst den Agent-Check-in aus. Puppet-Integration erforderlich"
 
 #: ../../library/automation/tasks.rst:213
 msgid "Puppet Master"
-msgstr ""
+msgstr "Puppet Master"
 
 #: ../../library/automation/tasks.rst:215
 msgid "Existing Puppet Integration"
-msgstr ""
+msgstr "Vorhandene Puppet-Integration"
 
 #: ../../library/automation/tasks.rst:217
 msgid "|Python|"
-msgstr ""
+msgstr "|Python|"
 
 #: ../../library/automation/tasks.rst:15
 msgid "python"
-msgstr ""
+msgstr "python"
 
 #: ../../library/automation/tasks.rst:15
 msgid ""
@@ -765,24 +765,24 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:218
 msgid "Python Script"
-msgstr ""
+msgstr "Python-Skript"
 
 #: ../../library/automation/tasks.rst:219
 msgid "Executes Python Script locally"
-msgstr ""
+msgstr "Führt Python-Skript lokal aus"
 
 #: ../../library/automation/tasks.rst:222
 msgid "``virtualenv`` installed on Appliance Nodes"
-msgstr ""
+msgstr "``virtualenv`` auf Appliance-Knoten installiert"
 
 #: ../../library/automation/tasks.rst:224
 #: ../../library/automation/tasks.rst:500
 msgid "|restart|"
-msgstr ""
+msgstr "|restart|"
 
 #: ../../library/automation/tasks.rst:16
 msgid "restart"
-msgstr ""
+msgstr "restart"
 
 #: ../../library/automation/tasks.rst:16
 msgid ""
@@ -792,26 +792,26 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:225
 msgid "Restart"
-msgstr ""
+msgstr "Neustart"
 
 #: ../../library/automation/tasks.rst:226
 msgid ""
 "Restarts target VM/Host/Container and confirms startup status before "
 "executing next task in Workflow"
-msgstr ""
+msgstr "Startet Ziel-VM/Host/Container neu und bestätigt den Startstatus, bevor die nächste Aufgabe im Workflow ausgeführt wird"
 
 #: ../../library/automation/tasks.rst:227
 msgid "System"
-msgstr ""
+msgstr "SYSTEM"
 
 #: ../../library/automation/tasks.rst:231
 #: ../../library/automation/tasks.rst:507
 msgid "|shellscript|"
-msgstr ""
+msgstr "|shellscript|"
 
 #: ../../library/automation/tasks.rst:17
 msgid "shellscript"
-msgstr ""
+msgstr "shellscript"
 
 #: ../../library/automation/tasks.rst:17
 msgid ""
@@ -821,20 +821,20 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:232
 msgid "Shell Script"
-msgstr ""
+msgstr "Shell-Skript"
 
 #: ../../library/automation/tasks.rst:233
 msgid "Executes Bash script on the target resource"
-msgstr ""
+msgstr "Führt Bash-Skript auf der Zielressource aus"
 
 #: ../../library/automation/tasks.rst:238
 #: ../../library/automation/tasks.rst:521
 msgid "|vro|"
-msgstr ""
+msgstr "|vro|"
 
 #: ../../library/automation/tasks.rst:24
 msgid "vro"
-msgstr ""
+msgstr "vro"
 
 #: ../../library/automation/tasks.rst:24
 msgid ".. image:: /images/automation/tasks/vro_logo.png"
@@ -842,28 +842,28 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:239
 msgid "vRealize Orchestrator Workflow"
-msgstr ""
+msgstr "vRealize Orchestrator Workflow"
 
 #: ../../library/automation/tasks.rst:240
 msgid "Executes vRO Workflow on the Target Resource"
-msgstr ""
+msgstr "Führt vRO-Workflow auf der Zielressource aus"
 
 #: ../../library/automation/tasks.rst:241
 msgid "vRO Integration"
-msgstr ""
+msgstr "vRO Integration"
 
 #: ../../library/automation/tasks.rst:243
 msgid "Existing vRO Integration"
-msgstr ""
+msgstr "Vorhandene vRO-Integration"
 
 #: ../../library/automation/tasks.rst:245
 #: ../../library/automation/tasks.rst:532
 msgid "|wa|"
-msgstr ""
+msgstr "|wa|"
 
 #: ../../library/automation/tasks.rst:25
 msgid "wa"
-msgstr ""
+msgstr "wa"
 
 #: ../../library/automation/tasks.rst:25
 msgid ".. image:: /images/automation/tasks/writeAttributes.png"
@@ -871,19 +871,19 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:246
 msgid "Write Attributes"
-msgstr ""
+msgstr "Write Attributes"
 
 #: ../../library/automation/tasks.rst:247
 msgid "Add arbitrary values to the Attributes map of the target resource"
-msgstr ""
+msgstr "Beliebige Werte zur Attributes-Map der Zielressource hinzufügen"
 
 #: ../../library/automation/tasks.rst:250
 msgid "Provide map of values as valid JSON"
-msgstr ""
+msgstr "Werte-Map als gültiges JSON bereitstellen"
 
 #: ../../library/automation/tasks.rst:254
 msgid "Task Configuration"
-msgstr ""
+msgstr "Aufgabenkonfiguration"
 
 #: ../../library/automation/tasks.rst:260
 #: ../../library/automation/tasks.rst:274
@@ -905,7 +905,7 @@ msgstr ""
 #: ../../library/automation/tasks.rst:523
 #: ../../library/automation/tasks.rst:534
 msgid "**NAME:** Name of the Task"
-msgstr ""
+msgstr "**NAME:** Name der Aufgabe"
 
 #: ../../library/automation/tasks.rst:261
 #: ../../library/automation/tasks.rst:275
@@ -927,76 +927,76 @@ msgstr ""
 #: ../../library/automation/tasks.rst:524
 #: ../../library/automation/tasks.rst:535
 msgid "**CODE:** Unique code name for API, CLI, and variable references"
-msgstr ""
+msgstr "**CODE:** Eindeutiger Code-Name für API-, CLI- und Variablenreferenzen"
 
 #: ../../library/automation/tasks.rst:262
 msgid "**ANSIBLE REPO:** Select existing Ansible Integration"
-msgstr ""
+msgstr "**ANSIBLE REPO:** Vorhandene Ansible-Integration auswählen"
 
 #: ../../library/automation/tasks.rst:263
 msgid "**GIT REF:** Specify tag or branch (Option, blank assumes default)"
-msgstr ""
+msgstr "**GIT REF:** Tag oder Branch angeben (optional, leer nimmt den Standard an)"
 
 #: ../../library/automation/tasks.rst:264
 msgid ""
 "**PLAYBOOK:** Name of playbook to execute, both ``playbook`` and "
 "``playbook.yml`` format supported"
-msgstr ""
+msgstr "**PLAYBOOK:** Name des auszuführenden Playbooks; sowohl das Format ``playbook`` als auch ``playbook.yml`` wird unterstützt"
 
 #: ../../library/automation/tasks.rst:265
 msgid ""
 "**TAGS:** Enter comma separated tags to filter executed tasks by (ie "
 "``--tags``)"
-msgstr ""
+msgstr "**TAGS:** Durch Kommas getrennte Tags eingeben, um ausgeführte Aufgaben zu filtern (z. B. ``--tags``)"
 
 #: ../../library/automation/tasks.rst:266
 msgid ""
 "**SKIP TAGS:** Enter comma separated tags to run the playbook without "
 "matching tagged tasks (ie ``--skip-tags``)"
-msgstr ""
+msgstr "**SKIP TAGS:** Durch Kommas getrennte Tags eingeben, um das Playbook ohne übereinstimmende getaggte Aufgaben auszuführen (z. B. ``--skip-tags``)"
 
 #: ../../library/automation/tasks.rst:268
 #: ../../library/automation/tasks.rst:436
 #: ../../library/automation/tasks/taskResults.rst:22
 #: ../../library/automation/tasks/taskResults.rst:24
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../library/automation/tasks.rst:268
 msgid ""
 "Using different Git Refs for multiple Ansible Tasks in same Workflow is "
 "not supported. Git Refs can vary between Workflows, but Tasks in each "
 "Workflow must use the same Git Ref."
-msgstr ""
+msgstr "Die Verwendung unterschiedlicher Git Refs für mehrere Ansible-Aufgaben im selben Workflow wird nicht unterstützt. Git Refs können zwischen Workflows variieren, aber Aufgaben in jedem Workflow müssen denselben Git Ref verwenden."
 
 #: ../../library/automation/tasks.rst:276
 msgid "**TOWER INTEGRATION:** Select an existing Ansible Tower integration"
-msgstr ""
+msgstr "**TOWER INTEGRATION:** Eine vorhandene Ansible Tower-Integration auswählen"
 
 #: ../../library/automation/tasks.rst:277
 msgid ""
 "**INVENTORY:** Select an existing Inventory, when bootstrapping an "
 "Instance, |morpheus| will add the Instance to the Inventory"
-msgstr ""
+msgstr "**INVENTORY:** Ein vorhandenes Inventar auswählen; beim Bootstrap einer Instanz fügt |morpheus| die Instanz dem Inventar hinzu"
 
 #: ../../library/automation/tasks.rst:278
 msgid ""
 "**GROUP:** Enter a group name, when bootstrapping an Instance, |morpheus|"
 " will add the Instance to the Group if it exists. If it does not exist, "
 "|morpheus| will create the Group"
-msgstr ""
+msgstr "**GROUP:** Einen Gruppennamen eingeben; beim Bootstrap einer Instanz fügt |morpheus| die Instanz der Gruppe hinzu, falls sie existiert. Wenn sie nicht existiert, erstellt |morpheus| die Gruppe"
 
 #: ../../library/automation/tasks.rst:279
 msgid ""
 "**JOB TEMPLATE:** Select an existing job template to associate with the "
 "Task"
-msgstr ""
+msgstr "**JOB TEMPLATE:** Eine vorhandene Job-Vorlage auswählen, die mit der Aufgabe verknüpft werden soll"
 
 #: ../../library/automation/tasks.rst:280
 msgid ""
 "**SCM OVERRIDE:** If needed, specify an SCM branch other than that "
 "specified on the template"
-msgstr ""
+msgstr "**SCM OVERRIDE:** Falls erforderlich, einen anderen SCM-Branch angeben als den auf der Vorlage festgelegten"
 
 #: ../../library/automation/tasks.rst:281
 msgid ""
@@ -1005,45 +1005,45 @@ msgid ""
 "in the Group), Run for all (template is executed on all hosts in the "
 "Inventory), or Skip Execution (to skip execution of the template on the "
 "Instance provisioned)"
-msgstr ""
+msgstr "**EXECUTE MODE:** Limit to Instance auswählen (Vorlage wird nur auf der provisionierten Instanz ausgeführt), Limit to Group (Vorlage wird auf allen Hosts in der Gruppe ausgeführt), Run for all (Vorlage wird auf allen Hosts im Inventar ausgeführt) oder Skip Execution (um die Ausführung der Vorlage auf der provisionierten Instanz zu überspringen)"
 
 #: ../../library/automation/tasks.rst:289
 msgid "**CHEF SERVER:** Select existing Chef integration"
-msgstr ""
+msgstr "**CHEF SERVER:** Vorhandene Chef-Integration auswählen"
 
 #: ../../library/automation/tasks.rst:290
 msgid "**ENVIRONMENT:** Populate Chef environment, or leave as ``_default``"
-msgstr ""
+msgstr "**ENVIRONMENT:** Chef-Umgebung ausfüllen oder als ``_default`` belassen"
 
 #: ../../library/automation/tasks.rst:291
 msgid "**RUN LIST:** Enter Run List, eg ``role[web]``"
-msgstr ""
+msgstr "**RUN LIST:** Run List eingeben, z. B. ``role[web]``"
 
 #: ../../library/automation/tasks.rst:292
 msgid "**DATA BAG KEY:** Enter data bag key (will be masked upon save)"
-msgstr ""
+msgstr "**DATA BAG KEY:** Data-Bag-Schlüssel eingeben (wird beim Speichern maskiert)"
 
 #: ../../library/automation/tasks.rst:293
 msgid ""
 "**DATA BAG KEY PATH:** Enter data bag key path, eg "
 "``/etc/chef/databag_secret``"
-msgstr ""
+msgstr "**DATA BAG KEY PATH:** Data-Bag-Schlüsselpfad eingeben, z. B. ``/etc/chef/databag_secret``"
 
 #: ../../library/automation/tasks.rst:294
 msgid "**NODE NAME:** Defaults to Instance name, configurable"
-msgstr ""
+msgstr "**NODE NAME:** Standardmäßig der Instanzname, konfigurierbar"
 
 #: ../../library/automation/tasks.rst:295
 #, python-brace-format
 msgid "**NODE ATTRIBUTES:** Specify attributes inside the ``{}``"
-msgstr ""
+msgstr "**NODE ATTRIBUTES:** Attribute innerhalb der ``{}`` angeben"
 
 #: ../../library/automation/tasks.rst:304
 msgid ""
 "**LABELS:** A comma separated list of Labels for organizational purposes."
 " See elsewhere in |morpheus| docs for additional details on utilizing "
 "Labels"
-msgstr ""
+msgstr "**LABELS:** Eine durch Kommas getrennte Liste von Labels für organisatorische Zwecke. Weitere Details zur Nutzung von Labels finden Sie an anderer Stelle in der |morpheus|-Dokumentation"
 
 #: ../../library/automation/tasks.rst:305
 msgid ""
@@ -1051,19 +1051,19 @@ msgid ""
 "Workflow which is ultimately run. If it resolves to ``true``, the \"If\" "
 "Workflow is run and if it resolves to ``false`` the \"Else\" Workflow is "
 "run"
-msgstr ""
+msgstr "**CONDITIONAL (JS):** JavaScript-Logik, die den Operational Workflow bestimmt, der letztlich ausgeführt wird. Wenn sie zu ``true`` aufgelöst wird, wird der „If“-Workflow ausgeführt, und wenn sie zu ``false`` aufgelöst wird, wird der „Else“-Workflow ausgeführt"
 
 #: ../../library/automation/tasks.rst:306
 msgid ""
 "**IF OPERATIONAL WORKFLOW:** Set the Operational Workflow which should be"
 " run if the JavaScript conditional resolves to ``true``"
-msgstr ""
+msgstr "**IF OPERATIONAL WORKFLOW:** Den Operational Workflow festlegen, der ausgeführt werden soll, wenn die JavaScript-Bedingung zu ``true`` aufgelöst wird"
 
 #: ../../library/automation/tasks.rst:307
 msgid ""
 "**ELSE OPERATIONAL WORKFLOW:** Set the Operational Workflow which should "
 "be run if the JavaScript conditional resolves to ``false``"
-msgstr ""
+msgstr "**ELSE OPERATIONAL WORKFLOW:** Den Operational Workflow festlegen, der ausgeführt werden soll, wenn die JavaScript-Bedingung zu ``false`` aufgelöst wird"
 
 #: ../../library/automation/tasks.rst:315
 #: ../../library/automation/tasks.rst:338
@@ -1075,49 +1075,49 @@ msgstr ""
 #: ../../library/automation/tasks.rst:511
 #: ../../library/automation/tasks.rst:525
 msgid "**RESULT TYPE:** Single Value, Key/Value Pairs, or JSON"
-msgstr ""
+msgstr "**RESULT TYPE:** Single Value, Key/Value Pairs oder JSON"
 
 #: ../../library/automation/tasks.rst:316
 msgid ""
 "**CONTENT:** Contents of the Groovy script if not sourcing it from a "
 "repository"
-msgstr ""
+msgstr "**CONTENT:** Inhalt des Groovy-Skripts, falls es nicht aus einem Repository bezogen wird"
 
 #: ../../library/automation/tasks.rst:320
 msgid "|email|"
-msgstr ""
+msgstr "|email|"
 
 #: ../../library/automation/tasks.rst:324
 msgid ""
 "**SOURCE:** Choose local to draft or paste the email directly into the "
 "Task. Choose Repository or URL to bring in a template from a Git "
 "repository or another outside source"
-msgstr ""
+msgstr "**SOURCE:** Wählen Sie local, um die E-Mail direkt in die Aufgabe zu entwerfen oder einzufügen. Wählen Sie Repository oder URL, um eine Vorlage aus einem Git-Repository oder einer anderen externen Quelle einzubinden"
 
 #: ../../library/automation/tasks.rst:325
 msgid ""
 "**EMAIL ADDRESS:** Email addresses can be entered literally or |morpheus|"
 " automation variables can be injected, such as "
 "``<%=instance.createdByEmail%>``"
-msgstr ""
+msgstr "**EMAIL ADDRESS:** E-Mail-Adressen können wörtlich eingegeben oder |morpheus|-Automatisierungsvariablen injiziert werden, z. B. ``<%=instance.createdByEmail%>``"
 
 #: ../../library/automation/tasks.rst:326
 msgid ""
 "**SUBJECT:** The subject line of the email, |morpheus| automation "
 "variables can be injected into the subject field"
-msgstr ""
+msgstr "**SUBJECT:** Die Betreffzeile der E-Mail; |morpheus|-Automatisierungsvariablen können in das Betreffeld injiziert werden"
 
 #: ../../library/automation/tasks.rst:327
 msgid ""
 "**CONTENT:** The body of the email is HTML. |morpheus| automation "
 "variables can be injected into the email body when needed"
-msgstr ""
+msgstr "**CONTENT:** Der Text der E-Mail ist HTML. |morpheus|-Automatisierungsvariablen können bei Bedarf in den E-Mail-Text injiziert werden"
 
 #: ../../library/automation/tasks.rst:328
 msgid ""
 "**SKIP WRAPPED EMAIL TEMPLATE:** The |morpheus|-styled email template is "
 "ignored and only HTML in the Content field is used"
-msgstr ""
+msgstr "**SKIP WRAPPED EMAIL TEMPLATE:** Die |morpheus|-gestylte E-Mail-Vorlage wird ignoriert und nur HTML im Feld Content wird verwendet"
 
 #: ../../library/automation/power_scheduling.rst:33
 #: ../../library/automation/tasks.rst:330
@@ -1125,63 +1125,63 @@ msgstr ""
 #: ../../library/automation/tasks.rst:540
 #: ../../library/automation/tasks.rst:593
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../library/automation/tasks.rst:330
 msgid ""
 "To whitelabel email sent from Tasks, select SKIP WRAPPED EMAIL TEMPLATE "
 "and use an HTML template with your own CSS styling"
-msgstr ""
+msgstr "Um E-Mails aus Aufgaben zu whitelabeln, wählen Sie SKIP WRAPPED EMAIL TEMPLATE und verwenden Sie eine HTML-Vorlage mit Ihrem eigenen CSS-Styling"
 
 #: ../../library/automation/tasks.rst:339
 msgid "**URL:** An HTTP or HTTPS URL as the HTTP Task target"
-msgstr ""
+msgstr "**URL:** Eine HTTP- oder HTTPS-URL als Ziel der HTTP-Aufgabe"
 
 #: ../../library/automation/tasks.rst:340
 msgid "**HTTP METHOD:** GET (default), POST, PUT, PATCH, HEAD, or DELETE"
-msgstr ""
+msgstr "**HTTP METHOD:** GET (Standard), POST, PUT, PATCH, HEAD oder DELETE"
 
 #: ../../library/automation/tasks.rst:341
 msgid "**AUTH USER:** Username for username/password authentication"
-msgstr ""
+msgstr "**AUTH USER:** Benutzername für die Authentifizierung mit Benutzername/Kennwort"
 
 #: ../../library/automation/tasks.rst:342
 msgid "**PASSWORD:** Password for username/password authentication"
-msgstr ""
+msgstr "**PASSWORD:** Kennwort für die Authentifizierung mit Benutzername/Kennwort"
 
 #: ../../library/automation/tasks.rst:343
 msgid "**BODY:** Request Body"
-msgstr ""
+msgstr "**BODY:** Request Body"
 
 #: ../../library/automation/tasks.rst:344
 msgid "**HTTP HEADERS:** Enter requests headers, examples below:"
-msgstr ""
+msgstr "**HTTP HEADERS:** Request-Header eingeben, Beispiele unten:"
 
 #: ../../library/automation/tasks.rst:348
 msgid "Authorization"
-msgstr ""
+msgstr "Authorization"
 
 #: ../../library/automation/tasks.rst:349
 msgid "Bearer `token`"
-msgstr ""
+msgstr "Bearer `token`"
 
 #: ../../library/automation/tasks.rst:350
 msgid "Content-Type"
-msgstr ""
+msgstr "Content-Type"
 
 #: ../../library/automation/tasks.rst:351
 msgid "application/json"
-msgstr ""
+msgstr "application/json"
 
 #: ../../library/automation/tasks.rst:353
 msgid ""
 "**IGNORE SSL ERRORS:** Mark when making REST calls to systems without a "
 "trusted SSL certificate"
-msgstr ""
+msgstr "**IGNORE SSL ERRORS:** Markieren, wenn REST-Aufrufe an Systeme ohne vertrauenswürdiges SSL-Zertifikat erfolgen"
 
 #: ../../library/automation/tasks.rst:362
 msgid "**SCRIPT:** Javascript contents to execute"
-msgstr ""
+msgstr "**SCRIPT:** Auszuführende Javascript-Inhalte"
 
 #: ../../library/automation/tasks.rst:364
 msgid ""
@@ -1191,7 +1191,7 @@ msgid ""
 "management. Host access is restricted to list, map, and array values "
 "supplied in the Task bindings; do not rely on arbitrary Java class "
 "access."
-msgstr ""
+msgstr "JavaScript-Aufgaben werden im Prozess auf dem |morpheus|-Anwendungsknoten ausgeführt, der die Aufgabe verarbeitet, unter Verwendung der mitgelieferten GraalJS Community-Runtime. Sie sind keine Node.js-Prozesse und stellen keine Node.js-Module oder Paketverwaltung bereit. Der Hostzugriff ist auf Listen-, Map- und Array-Werte beschränkt, die in den Aufgabenbindungen bereitgestellt werden; verlassen Sie sich nicht auf willkürlichen Java-Klassenzugriff."
 
 #: ../../library/automation/tasks.rst:366
 msgid ""
@@ -1201,60 +1201,60 @@ msgid ""
 " boundary. Before an upgrade, test required language features in a non-"
 "production JavaScript Task on the target release. There is no separate "
 "supported command for replacing or upgrading this embedded interpreter."
-msgstr ""
+msgstr "Die mitgelieferte GraalJS-Abhängigkeit kann sich mit einem |morpheus|-Release ändern (der aktuelle Produktquellcode pinnt GraalJS 25.0.3). Behandeln Sie das Appliance-Release und nicht den ``node``-Befehl des Host-Betriebssystems als Runtime-Grenze. Vor einem Upgrade testen Sie erforderliche Sprachfeatures in einer Non-Production-JavaScript-Aufgabe auf dem Ziel-Release. Es gibt keinen separaten unterstützten Befehl zum Ersetzen oder Aktualisieren dieses eingebetteten Interpreters."
 
 #: ../../library/automation/tasks.rst:375
 msgid ""
 "**CONTENT:** Contents of the jRuby script is entered here if it's not "
 "being called in from an outside source"
-msgstr ""
+msgstr "**CONTENT:** Der Inhalt des jRuby-Skripts wird hier eingegeben, wenn er nicht aus einer externen Quelle aufgerufen wird"
 
 #: ../../library/automation/tasks.rst:384
 msgid "**SCRIPT:** Search for an existing script in the typeahead field"
-msgstr ""
+msgstr "**SCRIPT:** Nach einem vorhandenen Skript im Typeahead-Feld suchen"
 
 #: ../../library/automation/tasks.rst:392
 msgid "**TEMPLATE:** Search for an existing template in the typeahead field"
-msgstr ""
+msgstr "**TEMPLATE:** Nach einer vorhandenen Vorlage im Typeahead-Feld suchen"
 
 #: ../../library/automation/tasks.rst:401
 msgid ""
 "**OPERATIONAL WORKFLOW:** The Workflow to be embedded as a Task for "
 "reference inside other Workflows"
-msgstr ""
+msgstr "**OPERATIONAL WORKFLOW:** Der Workflow, der als Aufgabe eingebettet werden soll, zur Referenz in anderen Workflows"
 
 #: ../../library/automation/tasks.rst:410
 msgid ""
 "**VERSION:** Select the version of Powershell this Task should run in. "
 "Powershell 5 is the default selection, Powershell 6 or 7 must be "
 "installed on the target to select those versions"
-msgstr ""
+msgstr "**VERSION:** Wählen Sie die Version von PowerShell aus, in der diese Aufgabe ausgeführt werden soll. PowerShell 5 ist die Standardauswahl; PowerShell 6 oder 7 muss auf dem Ziel installiert sein, um diese Versionen auszuwählen"
 
 #: ../../library/automation/tasks.rst:411
 msgid "**ELEVATED SHELL:** Run script with administrator privileges"
-msgstr ""
+msgstr "**ELEVATED SHELL:** Skript mit Administratorrechten ausführen"
 
 #: ../../library/automation/tasks.rst:412
 msgid "**IP ADDRESS:** IP address of the PowerShell Task target"
-msgstr ""
+msgstr "**IP ADDRESS:** IP-Adresse des PowerShell-Aufgabenziels"
 
 #: ../../library/automation/tasks.rst:413
 msgid "**PORT:** SSH port for PowerShell Task target (5985 default)"
-msgstr ""
+msgstr "**PORT:** SSH-Port für das PowerShell-Aufgabenziel (Standardwert 5985)"
 
 #: ../../library/automation/tasks.rst:414
 msgid "**USERNAME:** Username for PowerShell Task target"
-msgstr ""
+msgstr "**USERNAME:** Benutzername für das PowerShell-Aufgabenziel"
 
 #: ../../library/automation/tasks.rst:415
 msgid "**PASSWORD:** Password for PowerShell Task target"
-msgstr ""
+msgstr "**PASSWORD:** Kennwort für das PowerShell-Aufgabenziel"
 
 #: ../../library/automation/tasks.rst:416
 msgid ""
 "**Content:**  Enter script to execute if not calling the script in from "
 "an outside source"
-msgstr ""
+msgstr "**Content:** Geben Sie das auszuführende Skript ein, wenn das Skript nicht aus einer externen Quelle aufgerufen wird"
 
 #: ../../library/automation/execute_scheduling.rst:8
 #: ../../library/automation/execute_scheduling.rst:16
@@ -1266,7 +1266,7 @@ msgstr ""
 #: ../../library/automation/workflows.rst:169
 #: ../../library/automation/workflows.rst:238
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../library/automation/tasks.rst:418
 msgid ""
@@ -1275,23 +1275,23 @@ msgid ""
 "<https://docs.microsoft.com/en-us/powershell/scripting/install"
 "/installing-powershell-on-linux?view=powershell-7.2>`_ contains "
 "installation instructions for all major Linux distributions and versions."
-msgstr ""
+msgstr "Wenn das Ausführungsziel auf lokal gesetzt wird, muss PowerShell auf dem/den |morpheus|-Appliance-System(en) installiert sein. `Microsoft Documentation <https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-linux?view=powershell-7.2>`_ enthält Installationsanweisungen für alle gängigen Linux-Distributionen und -Versionen."
 
 #: ../../library/automation/tasks.rst:428
 msgid ""
 "**PUPPET MASTER:** Select Puppet Master from an existing Puppet "
 "integration"
-msgstr ""
+msgstr "**PUPPET MASTER:** Puppet Master aus einer vorhandenen Puppet-Integration auswählen"
 
 #: ../../library/automation/tasks.rst:429
 msgid ""
 "**PUPPET NODE NAME:** Enter Puppet node name. Variables supported eg. "
 "``<%= instance.name %>``"
-msgstr ""
+msgstr "**PUPPET NODE NAME:** Puppet-Knotennamen eingeben. Variablen werden unterstützt, z. B. ``<%= instance.name %>``"
 
 #: ../../library/automation/tasks.rst:430
 msgid "**PUPPET ENVIRONMENT:** Enter Puppet environment, eg. ``production``"
-msgstr ""
+msgstr "**PUPPET ENVIRONMENT:** Puppet-Umgebung eingeben, z. B. ``production``"
 
 #: ../../library/automation/tasks.rst:434
 msgid "|python|"
@@ -1303,19 +1303,19 @@ msgid ""
 "must be installed on your appliances in order to work with Python Tasks. "
 "See the information below for more detailed steps to install "
 "``virtualenv`` on your |morpheus| appliance node(s)."
-msgstr ""
+msgstr "Python-Aufgaben verwenden virtuelle Umgebungen. Daher muss ``virtualenv`` auf Ihren Appliances installiert sein, um mit Python-Aufgaben zu arbeiten. Weitere detaillierte Schritte zur Installation von ``virtualenv`` auf Ihren |morpheus|-Appliance-Knoten finden Sie in den Informationen unten."
 
 #: ../../library/automation/tasks.rst:441
 msgid ""
 "**CONTENT:** Python script to execute is entered here if not pulled in "
 "from an outside repository"
-msgstr ""
+msgstr "**CONTENT:** Das auszuführende Python-Skript wird hier eingegeben, wenn es nicht aus einem externen Repository bezogen wird"
 
 #: ../../library/automation/tasks.rst:442
 msgid ""
 "**COMMAND ARGUMENTS:** Optional arguments passed into the Python script. "
 "Variables supported eg. ``<%= instance.name %>``"
-msgstr ""
+msgstr "**COMMAND ARGUMENTS:** Fakultative Argumente, die an das Python-Skript übergeben werden. Variablen werden unterstützt, z. B. ``<%= instance.name %>``"
 
 #: ../../library/automation/tasks.rst:443
 msgid ""
@@ -1323,11 +1323,11 @@ msgid ""
 "``requirements.txt`` (if detected). Expected format for additional "
 "packages: 'packageName==x.x.x packageName2==x.x.x', the version must be "
 "specified"
-msgstr ""
+msgstr "**ADDITIONAL PACKAGES:** Zusätzliche Pakete, die nach ``requirements.txt`` installiert werden (falls erkannt). Erwartetes Format für zusätzliche Pakete: 'packageName==x.x.x packageName2==x.x.x'; die Version muss angegeben werden"
 
 #: ../../library/automation/tasks.rst:444
 msgid "**PYTHON BINARY:** Optional binary to override the default Python binary"
-msgstr ""
+msgstr "**PYTHON BINARY:** Fakultäre Binärdatei zum Überschreiben der Standard-Python-Binärdatei"
 
 #: ../../library/automation/tasks.rst:446
 msgid ""
@@ -1336,7 +1336,7 @@ msgid ""
 "subtract four line numbers to arrive at the correct line in the Python "
 "document. This is because |morpheus| injects four lines at execution time"
 " to add |morpheus| environment variables."
-msgstr ""
+msgstr "Bei der Fehlerbehebung in Python-Skripten anhand der in der |morpheus|-Benutzeroberfläche gemeldeten Zeilennummern (z. B. in den Ausführungsverläufen von Aufgaben) müssen Sie vier Zeilennummern abziehen, um zur richtigen Zeile im Python-Dokument zu gelangen. Dies liegt daran, dass |morpheus| zur Ausführungszeit vier Zeilen einfügt, um |morpheus|-Umgebungsvariablen hinzuzufügen."
 
 #: ../../library/automation/tasks.rst:448
 msgid ":raw-html:`<br />`"
@@ -1344,7 +1344,7 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:453
 msgid "**Enterprise Proxy Considerations**"
-msgstr ""
+msgstr "**Überlegungen zu Enterprise-Proxys**"
 
 #: ../../library/automation/tasks.rst:455
 msgid ""
@@ -1354,7 +1354,7 @@ msgid ""
 "global |morpheus| proxy rules. To deal with this, create or edit the pip "
 "configuration file at ``/etc/pip.conf``. Your configuration should "
 "include something like the following:"
-msgstr ""
+msgstr "In Enterprise-Proxy-Umgebungen, in denen Python-Aufgaben mit zusätzlichen Paket-Download-Anforderungen ausgeführt werden, müssen weitere Überlegungen angestellt werden. Diese zusätzlichen Pakete werden mit ``pip`` heruntergeladen und befolgen möglicherweise nicht die globalen |morpheus|-Proxy-Regeln. Erstellen oder bearbeiten Sie dazu die pip-Konfigurationsdatei unter ``/etc/pip.conf``. Ihre Konfiguration sollte etwa Folgendes enthalten:"
 
 #: ../../library/automation/tasks.rst:457
 msgid ""
@@ -1367,24 +1367,24 @@ msgid ""
 "For more information, review the Pip documentation on using proxy servers"
 " `here <https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-"
 "server>`_."
-msgstr ""
+msgstr "Weitere Informationen finden Sie in der Pip-Dokumentation zur Verwendung von Proxy-Servern `here <https://pip.pypa.io/en/stable/user_guide/#using-a-proxy-server>`_."
 
 #: ../../library/automation/tasks.rst:464
 msgid "**CentOS 7 / Python 2.7 (RHEL system Python)**"
-msgstr ""
+msgstr "**CentOS 7 / Python 2.7 (RHEL-System-Python)**"
 
 #: ../../library/automation/tasks.rst:466
 msgid ""
 "With a fresh install of |morpheus| on a default build of CentOS 7, Python"
 " Tasks will not function due to the missing requirement of "
 "``virtualenv``."
-msgstr ""
+msgstr "Bei einer Neuinstallation von |morpheus| auf einem Standard-Build von CentOS 7 funktionieren Python-Aufgaben aufgrund der fehlenden Anforderung ``virtualenv`` nicht."
 
 #: ../../library/automation/tasks.rst:468
 msgid ""
 "If you attempt to run a python task, you will get an error similar to the"
 " following:"
-msgstr ""
+msgstr "Wenn Sie versuchen, eine Python-Aufgabe auszuführen, erhalten Sie einen Fehler ähnlich dem folgenden:"
 
 #: ../../library/automation/tasks.rst:470
 msgid ""
@@ -1397,7 +1397,7 @@ msgstr ""
 msgid ""
 "In order to run |morpheus| Python Tasks in CentOS 7, install "
 "``virtualenv``: ``yum install python-virtualenv``"
-msgstr ""
+msgstr "Um |morpheus|-Python-Aufgaben unter CentOS 7 auszuführen, installieren Sie ``virtualenv``: ``yum install python-virtualenv``"
 
 #: ../../library/automation/tasks.rst:477
 msgid ""
@@ -1408,7 +1408,7 @@ msgid ""
 "build a virtual environment in ``/tmp`` using the ``python3`` binary, "
 "which is equivalent to making a virtual environment like so: ``virtualenv"
 " ~/venv -p /bin/python3``."
-msgstr ""
+msgstr "Wenn Sie ``python3`` benötigen, können Sie die beim Erstellen der virtuellen Umgebung zu verwendende Binärdatei angeben. Führen Sie bei einer Standardinstallation Folgendes aus: ``yum install python3``. Geben Sie dann in Ihrer |morpheus|-Python-Aufgabe die Binärdatei im Feld PYTHON BINARY als „/bin/python3“ an. Dadurch wird eine virtuelle Umgebung in ``/tmp`` mit der ``python3``-Binärdatei erstellt, was dem Erstellen einer virtuellen Umgebung wie folgt entspricht: ``virtualenv ~/venv -p /bin/python3``."
 
 #: ../../library/automation/tasks.rst:479
 #: ../../library/automation/tasks.rst:496
@@ -1417,18 +1417,18 @@ msgid ""
 "environment, put them in ``pip`` format and space-separated into the "
 "ADDITIONAL PACKAGES field on the Python Task. Use the help text below the"
 " field to ensure correct formatting."
-msgstr ""
+msgstr "Wenn Sie zusätzliche Python-Pakete in die virtuelle Umgebung installieren möchten, tragen Sie diese im ``pip``-Format und durch Leerzeichen getrennt in das Feld ADDITIONAL PACKAGES der Python-Aufgabe ein. Verwenden Sie den Hilfetext unter dem Feld, um das korrekte Format sicherzustellen."
 
 #: ../../library/automation/tasks.rst:481
 msgid "**CentOS 8 and Python**"
-msgstr ""
+msgstr "**CentOS 8 und Python**"
 
 #: ../../library/automation/tasks.rst:483
 msgid ""
 "In CentOS 8, Python is not installed by default. There is a ``platform-"
 "python`` but that should not be used for anything in userland. The error "
 "message with a default install of CentOS 8 will be similar to this:"
-msgstr ""
+msgstr "Unter CentOS 8 ist Python standardmäßig nicht installiert. Es gibt ein ``platform-python``, das jedoch nicht für Benutzerumgebungen verwendet werden sollte. Die Fehlermeldung bei einer Standardinstallation von CentOS 8 ist ähnlich wie diese:"
 
 #: ../../library/automation/tasks.rst:485
 msgid ""
@@ -1442,30 +1442,30 @@ msgid ""
 "The default ``virtualenv`` for CentOS 8 is the python3 variety, for "
 "|morpheus| to use Python Tasks, do the following: ``yum install "
 "python3-virtualenv``"
-msgstr ""
+msgstr "Das Standard-``virtualenv`` für CentOS 8 ist die python3-Variante. Damit |morpheus| Python-Aufgaben verwenden kann, führen Sie Folgendes aus: ``yum install python3-virtualenv``"
 
 #: ../../library/automation/tasks.rst:492
 msgid ""
 "If Python2 is required, do the following: ``yum install python2`` and "
 "specify ``/bin/python2`` as the PYTHON BINARY in your |morpheus| Task."
-msgstr ""
+msgstr "Wenn Python2 erforderlich ist, führen Sie Folgendes aus: ``yum install python2`` und geben Sie ``/bin/python2`` als PYTHON BINARY in Ihrer |morpheus|-Aufgabe an."
 
 #: ../../library/automation/tasks.rst:494
 msgid ""
 "This will build a ``virtualenv`` in ``/tmp`` using the ``python2`` "
 "binary, which is equivalent to making a ``virtualenv`` like so: "
 "``virtualenv ~/venv -p /bin/python2``"
-msgstr ""
+msgstr "Dadurch wird ein ``virtualenv`` in ``/tmp`` mit der ``python2``-Binärdatei erstellt, was dem Erstellen eines ``virtualenv`` wie folgt entspricht: ``virtualenv ~/venv -p /bin/python2``"
 
 #: ../../library/automation/tasks.rst:512
 msgid "**SUDO:** Mark the box to run the script as ``sudo``"
-msgstr ""
+msgstr "**SUDO:** Markieren Sie das Kästchen, um das Skript als ``sudo`` auszuführen"
 
 #: ../../library/automation/tasks.rst:513
 msgid ""
 "**CONTENT:** Script to execute is entered here if not pulled in from an "
 "outside repository"
-msgstr ""
+msgstr "**CONTENT:** Das auszuführende Skript wird hier eingegeben, wenn es nicht aus einem externen Repository bezogen wird"
 
 #: ../../library/automation/tasks.rst:517
 msgid ""
@@ -1479,47 +1479,47 @@ msgid ""
 " master) shouldn't be used. If these options are not set, the working "
 "folder will be /opt/morpheus/lib/tomcat/temp which would not allow "
 "scripts to reference file paths relative to the repository (if needed)."
-msgstr ""
+msgstr "Wenn die Option EXECUTE TARGET auf „Local“ gesetzt ist (d. h. die Aufgabe wird auf der Appliance selbst ausgeführt), werden zwei zusätzliche Felder angezeigt: GIT REPO und GIT REF. Verwenden Sie GIT REPO, um die Shell-Variable PWD (identifiziert das aktuelle Arbeitsverzeichnis) auf das lokal zwischengespeicherte Repository zu setzen (z. B. /var/opt/morpheus-node/morpheus-local/repo/git/76fecffdf1fe96516e90becdab9de) und GIT REF, um den Git-Branch zu identifizieren, von dem die Aufgabe ausgeführt werden soll, wenn der Standardwert (typischerweise main oder master) nicht verwendet werden soll. Wenn diese Optionen nicht gesetzt sind, ist der Arbeitsordner /opt/morpheus/lib/tomcat/temp, was Skripten nicht erlauben würde, Dateipfade relativ zum Repository zu referenzieren (falls erforderlich)."
 
 #: ../../library/automation/tasks.rst:526
 msgid "**vRO INTEGRATION:** Select an existing vRO integration"
-msgstr ""
+msgstr "**vRO INTEGRATION:** Eine vorhandene vRO-Integration auswählen"
 
 #: ../../library/automation/tasks.rst:527
 msgid ""
 "**WORKFLOW:** Select a vRO workflow from the list synced from the "
 "selected integration"
-msgstr ""
+msgstr "**WORKFLOW:** Einen vRO-Workflow aus der von der ausgewählten Integration synchronisierten Liste auswählen"
 
 #: ../../library/automation/tasks.rst:528
 msgid "**PARAMETER BODY (JSON):**"
-msgstr ""
+msgstr "**PARAMETER BODY (JSON):**"
 
 #: ../../library/automation/tasks.rst:536
 msgid ""
 "**ATTRIBUTES:** A JSON map of arbitrary values to write to the attributes"
 " property of the target resource"
-msgstr ""
+msgstr "**ATTRIBUTES:** Eine JSON-Zuordnung beliebiger Werte, die in die attributes-Eigenschaft der Zielressource geschrieben werden"
 
 #: ../../library/automation/tasks.rst:540
 msgid ""
 "This is often useful for storing values from one phase of a Provisioning "
 "Workflow for access in another phase. See the video demo below for a "
 "complete example."
-msgstr ""
+msgstr "Dies ist oft nützlich, um Werte aus einer Phase eines Provisionierungs-Workflows für den Zugriff in einer anderen Phase zu speichern. Ein vollständiges Beispiel finden Sie in der Videodemonstration unten."
 
 #: ../../library/automation/tasks.rst:542
 msgid ""
 "There are a number of ways that a JSON payload can be statically drafted "
 "within a Write Attributes Task or called into the Task as a result from a"
 " prior Task. Consider the following examples:"
-msgstr ""
+msgstr "Es gibt verschiedene Möglichkeiten, eine JSON-Nutzlast statisch in einer Write-Attributes-Aufgabe zu entwerfen oder als Ergebnis einer vorherigen Aufgabe in die Aufgabe einzubinden. Betrachten Sie die folgenden Beispiele:"
 
 #: ../../library/automation/tasks.rst:544
 msgid ""
 "To pass in a static JSON map with static values, use the format shown "
 "below."
-msgstr ""
+msgstr "Um eine statische JSON-Zuordnung mit statischen Werten zu übergeben, verwenden Sie das unten gezeigte Format."
 
 #: ../../library/automation/tasks.rst:546
 #, python-brace-format
@@ -1538,7 +1538,7 @@ msgid ""
 "within the JSON map as shown in the next example. Note that \"taskCode1\""
 " and \"taskCode2\" refer to the CODE field value for the Task whose "
 "output you wish to reference."
-msgstr ""
+msgstr "Um eine statische JSON-Zuordnung mit dynamischen Werten aus vorherigen Aufgabenergebnissen zu übergeben, stellen Sie sicher, dass der RESULT-TYPE-Wert einer oder mehrerer vorheriger Aufgaben in der Workflow-Phase auf „Single Value“ gesetzt ist, und referenzieren Sie die Werte in der JSON-Zuordnung wie im nächsten Beispiel gezeigt. Beachten Sie, dass „taskCode1“ und „taskCode2“ auf den CODE-Feldwert der Aufgabe verweisen, deren Ausgabe Sie referenzieren möchten."
 
 #: ../../library/automation/tasks.rst:555
 #, python-brace-format
@@ -1559,7 +1559,7 @@ msgid ""
 "and able to be referenced from future Tasks, you must set the "
 "\"instances\" key and call the ``encodeAsJSON()`` Groovy method as shown "
 "in the example."
-msgstr ""
+msgstr "Um eine dynamische JSON-Zuordnung aus einer vorherigen Aufgabe zu übergeben, formatieren Sie Ihre Write-Attributes-Aufgabe wie im nächsten Beispiel gezeigt. Stellen Sie sicher, dass der RESULT-TYPE-Wert der Aufgabe, die eine JSON-Zuordnung zurückgibt, auf „JSON“ gesetzt ist. Beachten Sie, dass „taskCode“ im Beispiel auf den CODE-Feldwert der referenzierten Aufgabe verweist. Damit die JSON-Zuordnung korrekt gesetzt und von zukünftigen Aufgaben referenziert werden kann, müssen Sie den Schlüssel „instances“ setzen und die Groovy-Methode ``encodeAsJSON()`` wie im Beispiel gezeigt aufrufen."
 
 #: ../../library/automation/tasks.rst:564
 #, python-brace-format
@@ -1571,41 +1571,41 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:581
 msgid "Task Management"
-msgstr ""
+msgstr "Aufgabenverwaltung"
 
 #: ../../library/automation/tasks.rst:584
 msgid "Adding Tasks"
-msgstr ""
+msgstr "Aufgaben hinzufügen"
 
 #: ../../library/automation/tasks.rst:586
 #: ../../library/automation/tasks.rst:600
 #: ../../library/automation/tasks.rst:608
 msgid "Select Automation from within the Library menu"
-msgstr ""
+msgstr "Wählen Sie Automatisierung im Menü Bibliothek aus"
 
 #: ../../library/automation/tasks.rst:587
 msgid "On the Tasks tab, click the :guilabel:`Add` button"
-msgstr ""
+msgstr "Klicken Sie auf der Registerkarte Tasks auf die Schaltfläche :guilabel:`Add`"
 
 #: ../../library/automation/tasks.rst:588
 msgid "From the New Task Wizard input a name for the task"
-msgstr ""
+msgstr "Geben Sie im New Task Wizard einen Namen für die Aufgabe ein"
 
 #: ../../library/automation/tasks.rst:589
 msgid "Select the type of task from from the type dropdown"
-msgstr ""
+msgstr "Wählen Sie den Aufgabentyp aus dem Typ-Dropdown aus"
 
 #: ../../library/automation/tasks.rst:590
 msgid ""
 "Input the appropriate configuration details. These will vary "
 "signficiantly based on the selected Task type. More details on each Task "
 "type are contained in the preceding sections."
-msgstr ""
+msgstr "Geben Sie die entsprechenden Konfigurationsdetails ein. Diese variieren erheblich je nach ausgewähltem Aufgabentyp. Weitere Details zu jedem Aufgabentyp finden Sie in den vorherigen Abschnitten."
 
 #: ../../library/automation/tasks.rst:591
 #: ../../library/automation/tasks.rst:603
 msgid "Once done, click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie anschließend auf :guilabel:`SAVE CHANGES`"
 
 #: ../../library/automation/tasks.rst:593
 msgid ""
@@ -1616,7 +1616,7 @@ msgid ""
 "relevant variable into the config area and |morpheus| will automatically "
 "fill in the variable call formatted for the currently chosen Task type. "
 "See the screenshot below."
-msgstr ""
+msgstr "Beim Schreiben einer Aufgabenkonfiguration ist es oft erforderlich, |morpheus|-Variablen zu referenzieren, die sich auf die spezifische Instanz beziehen, gegen die die Aufgabe ausgeführt wird. |morpheus| enthält eine herausklappbare Spalte entlang der rechten Seite des Add/Edit-Task-Modals, die verfügbare Variablen auflistet. Ziehen Sie die relevante Variable per Drag-and-Drop in den Konfigurationsbereich, und |morpheus| füllt den Variablenaufruf automatisch im für den aktuell gewählten Aufgabentyp formatierten Format aus. Siehe Screenshot unten."
 
 #: ../../library/automation/tasks.rst:595
 msgid ".. image:: /images/automation/tasks/taskvars.png"
@@ -1624,27 +1624,27 @@ msgstr ""
 
 #: ../../library/automation/tasks.rst:598
 msgid "Editing Tasks"
-msgstr ""
+msgstr "Aufgaben bearbeiten"
 
 #: ../../library/automation/tasks.rst:601
 msgid "Click the pencil icon (|pencil|) on the row of the task you wish to edit"
-msgstr ""
+msgstr "Klicken Sie auf das Stiftsymbol (|pencil|) in der Zeile der Aufgabe, die Sie bearbeiten möchten"
 
 #: ../../library/automation/tasks.rst:602
 msgid "Modify Task as needed"
-msgstr ""
+msgstr "Aufgabe nach Bedarf ändern"
 
 #: ../../library/automation/tasks.rst:606
 msgid "Deleting Tasks"
-msgstr ""
+msgstr "Aufgaben löschen"
 
 #: ../../library/automation/tasks.rst:609
 msgid "Click the trash icon (|trash|) on the row of the Task you wish to delete"
-msgstr ""
+msgstr "Klicken Sie auf das Papierkorbsymbol (|trash|) in der Zeile der Aufgabe, die Sie löschen möchten"
 
 #: ../../library/automation/tasks/taskResults.rst:4
 msgid "Task Results"
-msgstr ""
+msgstr "Aufgabenergebnisse"
 
 #: ../../library/automation/tasks/taskResults.rst:8
 msgid ""
@@ -1653,7 +1653,7 @@ msgid ""
 "results are stored on the ``results`` variable. Since results are "
 "available to all Tasks, we can use results from any or all prior Tasks so"
 " long as they are executed within the same provision phase."
-msgstr ""
+msgstr "Mit Aufgabenergebnissen steht die Ausgabe aller vorhergehenden Aufgaben innerhalb derselben Workflow-Phase zur Verfügung, um in weitere Aufgaben übernommen zu werden. Die Ergebnisse werden in der Variable ``results`` gespeichert. Da Ergebnisse für alle Aufgaben verfügbar sind, können wir Ergebnisse aus einer oder allen vorherigen Aufgaben verwenden, solange sie innerhalb derselben Provisionierungsphase ausgeführt werden."
 
 #: ../../library/automation/tasks/taskResults.rst:10
 msgid ""
@@ -1668,27 +1668,27 @@ msgid ""
 "<https://docs.morpheusdata.com/en/latest/library/automation/tasks/taskResults.html"
 "#results-types>`_ to see how script results are processed in various "
 "example cases."
-msgstr ""
+msgstr "Bei skriptbasierten Aufgaben speichert |morpheus| bei gesetztem RESULT TYPE die Ausgabe in der Variable ``results``. Es ist wichtig zu verstehen, dass der Ergebnistyp das Format der Aufgabenausgabe angibt, das |morpheus| erwarten soll. |morpheus| parst diese Ausgabe in eine Groovy-Map, die durch Auflösen der Variable ``results`` abgerufen und weiter geparst werden kann. Wenn der RESULT TYPE falsch gesetzt ist, kann |morpheus| die Aufgabenergebnisse möglicherweise nicht korrekt speichern. Springen Sie zum Abschnitt `Script Config Examples <https://docs.morpheusdata.com/en/latest/library/automation/tasks/taskResults.html#results-types>`_, um zu sehen, wie Skriptergebnisse in verschiedenen Beispielszenarien verarbeitet werden."
 
 #: ../../library/automation/tasks/taskResults.rst:13
 msgid "Results Types"
-msgstr ""
+msgstr "Ergebnistypen"
 
 #: ../../library/automation/tasks/taskResults.rst:15
 #: ../../library/automation/tasks/taskResults.rst:53
 msgid "Single Value"
-msgstr ""
+msgstr "Single Value"
 
 #: ../../library/automation/tasks/taskResults.rst:16
 msgid ""
 "Entire task output is stored in ``<%=results.taskCode%>`` or "
 "``<%=results[\"Task Name\"]%>`` variable."
-msgstr ""
+msgstr "Die gesamte Aufgabenausgabe wird in der Variable ``<%=results.taskCode%>`` oder ``<%=results[\"Task Name\"]%>`` gespeichert."
 
 #: ../../library/automation/tasks/taskResults.rst:17
 #: ../../library/automation/tasks/taskResults.rst:72
 msgid "Key/Value pairs"
-msgstr ""
+msgstr "Schlüssel/Wert-Paare"
 
 #: ../../library/automation/tasks/taskResults.rst:18
 msgid ""
@@ -1696,13 +1696,13 @@ msgid ""
 "with ``<%=results.taskCode%>`` or ``<%=results[\"Task Name\"]%>`` "
 "variable (output inside ``[]``). Individual Values are available with "
 "``<%=results.taskCode.key%>`` variables."
-msgstr ""
+msgstr "Erwartet die Ausgabe ``key=value,key=value``. Die gesamte Aufgabenausgabe ist mit der Variable ``<%=results.taskCode%>`` oder ``<%=results[\"Task Name\"]%>`` verfügbar (Ausgabe innerhalb von ``[]``). Einzelne Werte sind mit den Variablen ``<%=results.taskCode.key%>`` verfügbar."
 
 #: ../../library/automation/tasks/taskResults.rst
 #: ../../library/automation/tasks/taskResults.rst:19
 #: ../../library/automation/tasks/taskResults.rst:95
 msgid "JSON"
-msgstr ""
+msgstr "JSON"
 
 #: ../../library/automation/tasks/taskResults.rst:20
 msgid ""
@@ -1710,7 +1710,7 @@ msgid ""
 " is available with ``<%=results.taskCode%>`` or ``<%=results[\"Task "
 "Name\"]%>`` variable (output inside ``[]``). Individual Values are "
 "available with ``<%=results.taskCode.key%>`` variables."
-msgstr ""
+msgstr "Erwartet die JSON-formatierte Ausgabe ``key:value,key:value``. Die gesamte Aufgabenausgabe ist mit der Variable ``<%=results.taskCode%>`` oder ``<%=results[\"Task Name\"]%>`` verfügbar (Ausgabe innerhalb von ``[]``). Einzelne Werte sind mit den Variablen ``<%=results.taskCode.key%>`` verfügbar."
 
 #: ../../library/automation/tasks/taskResults.rst:22
 msgid ""
@@ -1718,74 +1718,74 @@ msgid ""
 "line. Ensure formatting is correct for the appropriate result type. For "
 "example, if Results Type is ``json`` and the output is not fully json "
 "compatible, the result would not return properly."
-msgstr ""
+msgstr "Die gesamte Ausgabe eines Skripts wird als Ergebnisse behandelt, nicht nur die letzte Zeile. Stellen Sie sicher, dass die Formatierung für den entsprechenden Ergebnistyp korrekt ist. Wenn beispielsweise der Results Type ``json`` ist und die Ausgabe nicht vollständig JSON-kompatibel ist, würde das Ergebnis nicht korrekt zurückgegeben."
 
 #: ../../library/automation/tasks/taskResults.rst:24
 msgid "Task results are not supported for Library Script task types"
-msgstr ""
+msgstr "Aufgabenergebnisse werden für Aufgabentypen vom Typ Library Script nicht unterstützt"
 
 #: ../../library/automation/tasks/taskResults.rst:27
 msgid "Script Config Examples"
-msgstr ""
+msgstr "Skriptkonfigurationsbeispiele"
 
 #: ../../library/automation/tasks/taskResults.rst
 msgid "Single Value using Task Code"
-msgstr ""
+msgstr "Single Value mit Aufgaben-Code"
 
 #: ../../library/automation/tasks/taskResults.rst:30
 #: ../../library/automation/tasks/taskResults.rst:47
 #: ../../library/automation/tasks/taskResults.rst:66
 #: ../../library/automation/tasks/taskResults.rst:89
 msgid "Source Task Config"
-msgstr ""
+msgstr "Quellaufgaben-Konfiguration"
 
 #: ../../library/automation/tasks/taskResults.rst:31
 msgid "NAME: Var Code (single)"
-msgstr ""
+msgstr "NAME: Var Code (single)"
 
 #: ../../library/automation/tasks/taskResults.rst:32
 msgid "CODE: singleExample"
-msgstr ""
+msgstr "CODE: singleExample"
 
 #: ../../library/automation/tasks/taskResults.rst:33
 msgid "RESULT TYPE: Single Value"
-msgstr ""
+msgstr "RESULT TYPE: Single Value"
 
 #: ../../library/automation/tasks/taskResults.rst:34
 msgid "SCRIPT: ``echo \"string value\"``"
-msgstr ""
+msgstr "SCRIPT: ``echo \"string value\"``"
 
 #: ../../library/automation/tasks/taskResults.rst:36
 msgid "Source Task Output: ``string value``"
-msgstr ""
+msgstr "Quellaufgaben-Ausgabe: ``string value``"
 
 #: ../../library/automation/tasks/taskResults.rst:38
 msgid "Results Task Config (using task code in variable)"
-msgstr ""
+msgstr "Ergebnisaufgaben-Konfiguration (mit Aufgabencode in der Variable)"
 
 #: ../../library/automation/tasks/taskResults.rst:39
 msgid "NAME: N/A"
-msgstr ""
+msgstr "NAME: n. a."
 
 #: ../../library/automation/tasks/taskResults.rst:40
 msgid "CODE: N/A"
-msgstr ""
+msgstr "CODE: n. a."
 
 #: ../../library/automation/tasks/taskResults.rst:41
 msgid "RESULT TYPE: N/A"
-msgstr ""
+msgstr "RESULT TYPE: n. a."
 
 #: ../../library/automation/tasks/taskResults.rst:42
 msgid "SCRIPT: ``echo \"single: <%=results.singleExample%>\"``"
-msgstr ""
+msgstr "SCRIPT: ``echo \"single: <%=results.singleExample%>\"``"
 
 #: ../../library/automation/tasks/taskResults.rst:44
 msgid "Results Task Output: ``single: string value``"
-msgstr ""
+msgstr "Ergebnisaufgaben-Ausgabe: ``single: string value``"
 
 #: ../../library/automation/tasks/taskResults.rst
 msgid "Single Value using Task Name"
-msgstr ""
+msgstr "Single Value mit Aufgabenname"
 
 #: ../../library/automation/execute_scheduling.rst:13
 #: ../../library/automation/power_scheduling.rst:13
@@ -1795,33 +1795,33 @@ msgstr ""
 #: ../../library/automation/tasks/taskResults.rst:67
 #: ../../library/automation/tasks/taskResults.rst:90
 msgid "NAME"
-msgstr ""
+msgstr "Name"
 
 #: ../../library/automation/tasks/taskResults.rst:49
 msgid "Var Code"
-msgstr ""
+msgstr "Var Code"
 
 #: ../../library/automation/tasks/taskResults.rst:50
 #: ../../library/automation/tasks/taskResults.rst:69
 #: ../../library/automation/tasks/taskResults.rst:92
 msgid "CODE"
-msgstr ""
+msgstr "CODE"
 
 #: ../../library/automation/tasks/taskResults.rst:51
 msgid "none"
-msgstr ""
+msgstr "Keine"
 
 #: ../../library/automation/tasks/taskResults.rst:52
 #: ../../library/automation/tasks/taskResults.rst:71
 #: ../../library/automation/tasks/taskResults.rst:94
 msgid "RESULT TYPE"
-msgstr ""
+msgstr "RESULT TYPE"
 
 #: ../../library/automation/tasks/taskResults.rst:54
 #: ../../library/automation/tasks/taskResults.rst:73
 #: ../../library/automation/tasks/taskResults.rst:96
 msgid "SCRIPT"
-msgstr ""
+msgstr "SCRIPT"
 
 #: ../../library/automation/tasks/taskResults.rst:55
 msgid "``echo \"string value\"``"
@@ -1831,7 +1831,7 @@ msgstr ""
 #: ../../library/automation/tasks/taskResults.rst:75
 #: ../../library/automation/tasks/taskResults.rst:98
 msgid "Source Task Output"
-msgstr ""
+msgstr "Quellaufgaben-Ausgabe"
 
 #: ../../library/automation/tasks/taskResults.rst:57
 msgid "``string value``"
@@ -1839,7 +1839,7 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst:58
 msgid "Results Task using task name in variable"
-msgstr ""
+msgstr "Ergebnisaufgabe mit Aufgabenname in der Variable"
 
 #: ../../library/automation/tasks/taskResults.rst:59
 #: ../../library/automation/tasks/taskResults.rst:78
@@ -1848,7 +1848,7 @@ msgstr ""
 #: ../../library/automation/tasks/taskResults.rst:106
 #: ../../library/automation/tasks/taskResults.rst:112
 msgid "Results Task Script"
-msgstr ""
+msgstr "Ergebnisaufgaben-Skript"
 
 #: ../../library/automation/tasks/taskResults.rst:60
 msgid "``echo \"task name: <%=results[\"Var Code\"]%>\"``"
@@ -1861,7 +1861,7 @@ msgstr ""
 #: ../../library/automation/tasks/taskResults.rst:108
 #: ../../library/automation/tasks/taskResults.rst:122
 msgid "Results Task Output"
-msgstr ""
+msgstr "Ergebnisaufgaben-Ausgabe"
 
 #: ../../library/automation/tasks/taskResults.rst:62
 msgid "``task name: test value``"
@@ -1869,15 +1869,15 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst
 msgid "Key/Value Pairs"
-msgstr ""
+msgstr "Schlüssel/Wert-Paare"
 
 #: ../../library/automation/tasks/taskResults.rst:68
 msgid "Var Code (keyval)"
-msgstr ""
+msgstr "Var Code (keyval)"
 
 #: ../../library/automation/tasks/taskResults.rst:70
 msgid "keyvalExample"
-msgstr ""
+msgstr "keyvalExample"
 
 #: ../../library/automation/tasks/taskResults.rst:74
 msgid "``echo \"flash=bang,ping=pong\"``"
@@ -1890,7 +1890,7 @@ msgstr ""
 #: ../../library/automation/tasks/taskResults.rst:77
 #: ../../library/automation/tasks/taskResults.rst:100
 msgid "Results Task for all results"
-msgstr ""
+msgstr "Ergebnisaufgabe für alle Ergebnisse"
 
 #: ../../library/automation/tasks/taskResults.rst:79
 msgid "``echo \"keyval: <%=results.keyvalExample%>\"``"
@@ -1902,7 +1902,7 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst:82
 msgid "Results Task for a single value)"
-msgstr ""
+msgstr "Ergebnisaufgabe für einen einzelnen Wert)"
 
 #: ../../library/automation/tasks/taskResults.rst:84
 msgid "``echo \"keyval value: <%=results.keyvalExample.flash%>\"``"
@@ -1914,11 +1914,11 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst:91
 msgid "Var Code (json)"
-msgstr ""
+msgstr "Var Code (json)"
 
 #: ../../library/automation/tasks/taskResults.rst:93
 msgid "jsonExample"
-msgstr ""
+msgstr "jsonExample"
 
 #: ../../library/automation/tasks/taskResults.rst:97
 #, python-brace-format
@@ -1940,7 +1940,7 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst:105
 msgid "Results Task for a single value"
-msgstr ""
+msgstr "Ergebnisaufgabe für einen einzelnen Wert"
 
 #: ../../library/automation/tasks/taskResults.rst:107
 msgid "``echo \"json value: <%=results.jsonExample.ping%>\"``"
@@ -1952,7 +1952,7 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst
 msgid "Multiple Task Results"
-msgstr ""
+msgstr "Mehrere Aufgabenergebnisse"
 
 #: ../../library/automation/tasks/taskResults.rst:113
 msgid ""
@@ -1976,7 +1976,7 @@ msgstr ""
 
 #: ../../library/automation/tasks/taskResults.rst:133
 msgid "Workflow Config"
-msgstr ""
+msgstr "Workflow-Konfiguration"
 
 #: ../../library/automation/tasks/taskResults.rst:135
 msgid ""
@@ -1984,25 +1984,25 @@ msgid ""
 " the results will be available to all tasks in the same phase of the "
 "workflow via the ``<%=results.variables%>`` during the workflow "
 "execution."
-msgstr ""
+msgstr "Fügen Sie eine oder mehrere Aufgaben mit konfiguriertem Results Type zu einem Workflow hinzu, und die Ergebnisse stehen allen Aufgaben in derselben Phase des Workflows über ``<%=results.variables%>`` während der Workflow-Ausführung zur Verfügung."
 
 #: ../../library/automation/tasks/taskResults.rst:137
 msgid "Task Results are only available to tasks in the same workflow phase"
-msgstr ""
+msgstr "Aufgabenergebnisse sind nur für Aufgaben in derselben Workflow-Phase verfügbar"
 
 #: ../../library/automation/tasks/taskResults.rst:138
 msgid "Task Results are only available during workflow execution"
-msgstr ""
+msgstr "Aufgabenergebnisse sind nur während der Workflow-Ausführung verfügbar"
 
 #: ../../library/automation/workflows.rst:2
 msgid "Workflows |advanced-plus|"
-msgstr ""
+msgstr "Workflows |advanced-plus|"
 
 #: ../../library/automation/workflows.rst:7
 msgid ""
 "Workflows are an Advanced+ feature, available in HPE Morpheus Enterprise "
 "and Advanced tiers."
-msgstr ""
+msgstr "Workflows sind ein Advanced+-Feature und in den Stufen HPE Morpheus Enterprise und Advanced verfügbar."
 
 #: ../../library/automation/workflows.rst:9
 msgid ""
@@ -2011,7 +2011,7 @@ msgid ""
 "existing Instance or server from the Actions menu on the Instance or "
 "server detail page. Additionally, they can be scheduled to run on a "
 "recurring basis through Morpheus Jobs (|ProJob|)."
-msgstr ""
+msgstr "Workflows sind Gruppen von Aufgaben, die im vorherigen Abschnitt ausführlich beschrieben werden. Operative Workflows können bei Bedarf gegen eine vorhandene Instanz oder einen Server über das Menü Actions auf der Detailseite der Instanz oder des Servers ausgeführt werden. Zusätzlich können sie über Morpheus Jobs (|ProJob|) so geplant werden, dass sie wiederkehrend ausgeführt werden."
 
 #: ../../library/automation/workflows.rst:11
 msgid ""
@@ -2022,49 +2022,49 @@ msgid ""
 "as Provision, Post Provision, and Teardown. When the Instance reaches a "
 "given stage, the appropriate Tasks are run. Task results and output can "
 "be viewed from the History tab of the Instance or server detail page."
-msgstr ""
+msgstr "Provisionierungs-Workflows werden Instanzen zur Provisionierungszeit zugeordnet (auf der Registerkarte Automation des Add-Instance-Assistenten) oder nach der Provisionierung über das Menü Actions auf der Instanz-Detailseite. Provisionierungs-Workflows weisen Aufgaben verschiedenen Phasen des Instanz-Lebenszyklus zu, z. B. Provision, Post Provision und Teardown. Wenn die Instanz eine bestimmte Phase erreicht, werden die entsprechenden Aufgaben ausgeführt. Aufgabenergebnisse und -ausgaben können auf der Registerkarte History der Instanz- oder Server-Detailseite eingesehen werden."
 
 #: ../../library/automation/workflows.rst:14
 msgid "Provisioning Workflow Execution Phases"
-msgstr ""
+msgstr "Ausführungsphasen von Provisionierungs-Workflows"
 
 #: ../../library/automation/workflows.rst:20
 msgid "Phase"
-msgstr ""
+msgstr "Phase"
 
 #: ../../library/automation/workflows.rst:21
 #: ../../library/automation/workflows.rst:178
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../library/automation/workflows.rst:22
 msgid "Usage Example"
-msgstr ""
+msgstr "Nutzungsbeispiel"
 
 #: ../../library/automation/workflows.rst:23
 msgid "Notes"
-msgstr ""
+msgstr "Notizen"
 
 #: ../../library/automation/workflows.rst:24
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
 #: ../../library/automation/workflows.rst:25
 msgid ""
 "Tasks are run prior to initial calls to the specified cloud API to "
 "initiate provisioning"
-msgstr ""
+msgstr "Aufgaben werden vor den ersten Aufrufen der angegebenen Cloud-API zur Einleitung der Provisionierung ausgeführt"
 
 #: ../../library/automation/workflows.rst:26
 msgid ""
 "Call to an external platform to dynamically generate a hostname prior to "
 "kicking off provisioning or dynamically altering configuration of a "
 "Catalog Item prior to provisioning"
-msgstr ""
+msgstr "Aufruf einer externen Plattform zur dynamischen Generierung eines Hostnamens vor dem Start der Provisionierung oder dynamische Änderung der Konfiguration eines Katalogelements vor der Provisionierung"
 
 #: ../../library/automation/workflows.rst:28
 msgid "Price"
-msgstr ""
+msgstr "Preis"
 
 #: ../../library/automation/workflows.rst:29
 msgid ""
@@ -2076,34 +2076,34 @@ msgid ""
 "in order to work properly. Any other pricing (such as on the Service "
 "Plan) is overridden. See the section below for a detailed example of this"
 " Phase being used."
-msgstr ""
+msgstr "Price-Phase-Aufgaben werden nur aufgerufen, wenn der Workflow an ein Layout gebunden ist. Wie bei der Configuration-Phase werden diese Aufgaben vor allen Aufrufen der Ziel-Cloud-API ausgeführt und ermöglichen das Überschreiben von Preisdaten für die zu provisionierende Arbeitslast. Eine „spec“-Variable mit der Instanzkonfiguration wird in die Aufgabe übergeben, und eine spezifische Rückgabenutzlast wird erwartet, damit dies korrekt funktioniert. Alle anderen Preise (z. B. im Service-Tarif) werden überschrieben. Siehe den Abschnitt unten für ein detailliertes Beispiel zur Verwendung dieser Phase."
 
 #: ../../library/automation/workflows.rst:30
 msgid ""
 "An MSP customer calling out to a custom pricing API to deliver Instance "
 "pricing to their own customers."
-msgstr ""
+msgstr "Ein MSP-Kunde, der eine benutzerdefinierte Preis-API aufruft, um Instanzpreise an die eigenen Kunden zu liefern."
 
 #: ../../library/automation/workflows.rst:31
 msgid ""
 "See the section below on Price Phase implementation for a detailed setup "
 "example."
-msgstr ""
+msgstr "Siehe den Abschnitt unten zur Implementierung der Price-Phase für ein detailliertes Einrichtungsbeispiel."
 
 #: ../../library/automation/workflows.rst:32
 msgid "Pre Provision"
-msgstr ""
+msgstr "Pre Provision"
 
 #: ../../library/automation/workflows.rst:33
 msgid ""
 "For VMs, Tasks are run after the VM is running and prior to any Tasks in "
 "the Provision phase. For containers, Tasks in this phase are run on the "
 "Docker host and prior to ``docker run``"
-msgstr ""
+msgstr "Bei VMs werden Aufgaben ausgeführt, nachdem die VM läuft und vor allen Aufgaben in der Provision-Phase. Bei Containern werden Aufgaben in dieser Phase auf dem Docker-Host und vor ``docker run`` ausgeführt"
 
 #: ../../library/automation/workflows.rst:34
 msgid "Prepare a Docker host to run containers"
-msgstr ""
+msgstr "Einen Docker-Host für die Ausführung von Containern vorbereiten"
 
 #: ../../library/automation/workflows.rst:35
 msgid ""
@@ -2111,22 +2111,22 @@ msgid ""
 "which is set at the Provision phase executes. Pre Provision for scripts "
 "is mainly for Docker as you can execute on the host before the container "
 "is running."
-msgstr ""
+msgstr "Pre Provision kann für ein Blueprint verwendet werden, damit es hinzugefügt wird, bevor ein Skript ausgeführt wird, das in der Provision-Phase gesetzt ist. Pre Provision für Skripte ist hauptsächlich für Docker gedacht, da Sie auf dem Host ausführen können, bevor der Container läuft."
 
 #: ../../library/automation/workflows.rst:36
 msgid "Provision"
-msgstr ""
+msgstr "Provision"
 
 #: ../../library/automation/workflows.rst:37
 msgid ""
 "Like pre-provision, Tasks for VMs are run after the VM is running. For "
 "containers, these Tasks are run on the containers once they are running "
 "on the host. For many users, this is the most commonly-used phase."
-msgstr ""
+msgstr "Wie bei Pre Provision werden Aufgaben für VMs ausgeführt, nachdem die VM läuft. Bei Containern werden diese Aufgaben auf den Containern ausgeführt, sobald sie auf dem Host laufen. Für viele Benutzer ist dies die am häufigsten verwendete Phase."
 
 #: ../../library/automation/workflows.rst:38
 msgid "Join the server to a domain"
-msgstr ""
+msgstr "Den Server einer Domain beitreten lassen"
 
 #: ../../library/automation/workflows.rst:39
 msgid ""
@@ -2136,19 +2136,19 @@ msgid ""
 "not considered to be vital to the existence of the Instance should go in "
 "the Post Provision phase where their failure will not constitute failure "
 "of the Instance."
-msgstr ""
+msgstr "Aufgaben in der Provision-Phase gelten als entscheidend für die Betriebsbereitschaft der Instanz. Wenn eine Aufgabe in der Provision-Phase fehlschlägt, schlägt der Workflow fehl und auch die Instanz-Provisionierung schlägt fehl. Aufgaben, die nicht als entscheidend für die Existenz der Instanz gelten, sollten in die Post-Provision-Phase gehen, wo ihr Fehlschlagen nicht den Fehlschlag der Instanz bedeutet."
 
 #: ../../library/automation/workflows.rst:40
 msgid "Post Provision"
-msgstr ""
+msgstr "Post Provision"
 
 #: ../../library/automation/workflows.rst:41
 msgid "Tasks are run after the entire provisioning process has completed"
-msgstr ""
+msgstr "Aufgaben werden ausgeführt, nachdem der gesamte Provisionierungsprozess abgeschlossen ist"
 
 #: ../../library/automation/workflows.rst:42
 msgid "Disable UAC or Windows Firewall on a Windows box or join Active Directory"
-msgstr ""
+msgstr "UAC oder Windows Firewall auf einem Windows-System deaktivieren oder Active Directory beitreten"
 
 #: ../../library/automation/workflows.rst:43
 msgid ""
@@ -2157,210 +2157,210 @@ msgid ""
 " Post Provision operations may need to affect all nodes, such as when "
 "joining a new node to a cluster. Tasks in Pre Provision and Provision "
 "phases would only be run on the new node in this scenario."
-msgstr ""
+msgstr "Beim Hinzufügen eines Knotens zu einer Instanz werden Aufgaben in dieser Phase auf allen Knoten der Instanz ausgeführt, nachdem der neue Knoten provisioniert wurde. Dies liegt daran, dass Post-Provision-Operationen alle Knoten betreffen können, z. B. beim Beitritt eines neuen Knotens zu einem Cluster. Aufgaben in den Phasen Pre Provision und Provision würden in diesem Szenario nur auf dem neuen Knoten ausgeführt."
 
 #: ../../library/automation/workflows.rst:44
 msgid "Start Service"
-msgstr ""
+msgstr "Start Service"
 
 #: ../../library/automation/workflows.rst:45
 msgid ""
 "Tasks in this phase are intended to start the service associated with the"
 " Instance type."
-msgstr ""
+msgstr "Aufgaben in dieser Phase sollen den mit dem Instanztyp verknüpften Service starten."
 
 #: ../../library/automation/workflows.rst:46
 msgid ""
 "Include a script to start the service associated with the Instance (such "
 "as MySQL) which will execute when the Start Service action is selected "
 "from the Instance detail page"
-msgstr ""
+msgstr "Fügen Sie ein Skript zum Starten des mit der Instanz verknüpften Service (z. B. MySQL) hinzu, das ausgeführt wird, wenn die Aktion Start Service auf der Instanz-Detailseite ausgewählt wird"
 
 #: ../../library/automation/workflows.rst:47
 msgid ""
 "Start services is manually run from the Instance detail page and is "
 "designed to refer to the service the Instance provides."
-msgstr ""
+msgstr "Start Services wird manuell von der Instanz-Detailseite ausgeführt und bezieht sich auf den Service, den die Instanz bereitstellt."
 
 #: ../../library/automation/workflows.rst:48
 msgid "Stop Service"
-msgstr ""
+msgstr "Stop Service"
 
 #: ../../library/automation/workflows.rst:49
 msgid ""
 "Tasks in this phase intended to stop the service associated with the "
 "Instance type."
-msgstr ""
+msgstr "Aufgaben in dieser Phase sollen den mit dem Instanztyp verknüpften Service anhalten."
 
 #: ../../library/automation/workflows.rst:50
 msgid ""
 "Include a script to stop the service associated with the Instance (such "
 "as MySQL) which will execute when the Stop Service action is selected "
 "from the Instance detail page"
-msgstr ""
+msgstr "Fügen Sie ein Skript zum Anhalten des mit der Instanz verknüpften Service (z. B. MySQL) hinzu, das ausgeführt wird, wenn die Aktion Stop Service auf der Instanz-Detailseite ausgewählt wird"
 
 #: ../../library/automation/workflows.rst:51
 msgid ""
 "Stop services is manually run from the Instance detail page and is "
 "designed to refer to the service the Instance provides."
-msgstr ""
+msgstr "Stop Services wird manuell von der Instanz-Detailseite ausgeführt und bezieht sich auf den Service, den die Instanz bereitstellt."
 
 #: ../../library/automation/workflows.rst:52
 msgid "Pre Deploy"
-msgstr ""
+msgstr "Pre Deploy"
 
 #: ../../library/automation/workflows.rst:53
 msgid ""
 "Tasks in this phase are run when a new deploy is triggered from the "
 "Deploy tab of the Instance detail page, prior to the deploy taking place."
-msgstr ""
+msgstr "Aufgaben in dieser Phase werden ausgeführt, wenn eine neue Bereitstellung von der Registerkarte Deploy der Instanz-Detailseite ausgelöst wird, bevor die Bereitstellung stattfindet."
 
 #: ../../library/automation/workflows.rst:54
 msgid ""
 "Extract files from a deploy folder and move them to their final positions"
 " prior to deploy"
-msgstr ""
+msgstr "Dateien aus einem Deploy-Ordner extrahieren und vor der Bereitstellung an ihre endgültigen Positionen verschieben"
 
 #: ../../library/automation/workflows.rst:55
 #: ../../library/automation/workflows.rst:59
 msgid ""
 "Deployments are manually triggered from the Instance detail page and are "
 "designed to refer to deployment of services, like a website or database."
-msgstr ""
+msgstr "Bereitstellungen werden manuell von der Instanz-Detailseite ausgelöst und beziehen sich auf die Bereitstellung von Diensten, z. B. einer Website oder Datenbank."
 
 #: ../../library/automation/workflows.rst:56
 msgid "Deploy"
-msgstr ""
+msgstr "Bereitstellen"
 
 #: ../../library/automation/workflows.rst:57
 msgid ""
 "Tasks in this phase are run when a new deploy is triggered from the "
 "Deploy tab of the Instance detail page, after the deploy has completed"
-msgstr ""
+msgstr "Aufgaben in dieser Phase werden ausgeführt, wenn eine neue Bereitstellung von der Registerkarte Deploy der Instanz-Detailseite ausgelöst wird, nachdem die Bereitstellung abgeschlossen ist"
 
 #: ../../library/automation/workflows.rst:58
 msgid ""
 "Update configuration files or inject connection details from the "
 "environment at completion of the deploy process"
-msgstr ""
+msgstr "Konfigurationsdateien aktualisieren oder Verbindungsdetails aus der Umgebung am Ende des Bereitstellungsprozesses einfügen"
 
 #: ../../library/automation/workflows.rst:60
 msgid "Reconfigure"
-msgstr ""
+msgstr "Reconfigure"
 
 #: ../../library/automation/workflows.rst:61
 msgid ""
 "Tasks in this phase are run when the reconfigure action is made against "
 "an Instance or host"
-msgstr ""
+msgstr "Aufgaben in dieser Phase werden ausgeführt, wenn die Aktion Reconfigure gegen eine Instanz oder einen Host ausgeführt wird"
 
 #: ../../library/automation/workflows.rst:62
 msgid "Rescan or restart the Instance after a disk is added"
-msgstr ""
+msgstr "Die Instanz nach dem Hinzufügen eines Laufwerks neu scannen oder neu starten"
 
 #: ../../library/automation/workflows.rst:64
 msgid "Teardown"
-msgstr ""
+msgstr "Teardown"
 
 #: ../../library/automation/workflows.rst:65
 msgid "Tasks are run during VM or container destroy"
-msgstr ""
+msgstr "Aufgaben werden während der Zerstörung einer VM oder eines Containers ausgeführt"
 
 #: ../../library/automation/workflows.rst:66
 msgid "Remove Active Directory objects prior to tearing down the Instance"
-msgstr ""
+msgstr "Active-Directory-Objekte vor dem Abbauen der Instanz entfernen"
 
 #: ../../library/automation/workflows.rst:68
 msgid "Scale Down"
-msgstr ""
+msgstr "Scale Down"
 
 #: ../../library/automation/workflows.rst:69
 msgid ""
 "Tasks are run when a node is removed from an Instance. This does not "
 "apply to Clusters when a worker node is removed."
-msgstr ""
+msgstr "Aufgaben werden ausgeführt, wenn ein Knoten aus einer Instanz entfernt wird. Dies gilt nicht für Cluster, wenn ein Worker-Knoten entfernt wird."
 
 #: ../../library/automation/workflows.rst:72
 msgid "Shutdown"
-msgstr ""
+msgstr "Herunterfahren"
 
 #: ../../library/automation/workflows.rst:73
 msgid "Tasks are run immediately before the target is shutdown"
-msgstr ""
+msgstr "Aufgaben werden unmittelbar vor dem Herunterfahren des Ziels ausgeführt"
 
 #: ../../library/automation/workflows.rst:74
 #: ../../library/automation/workflows.rst:78
 msgid "Send an update on Instance power state to a CMDB"
-msgstr ""
+msgstr "Eine Aktualisierung zum Ein/Aus-Zustand der Instanz an eine CMDB senden"
 
 #: ../../library/automation/workflows.rst:76
 msgid "Startup"
-msgstr ""
+msgstr "Startup"
 
 #: ../../library/automation/workflows.rst:77
 msgid "Tasks are run immediately before the target is started"
-msgstr ""
+msgstr "Aufgaben werden unmittelbar vor dem Starten des Ziels ausgeführt"
 
 #: ../../library/automation/workflows.rst:82
 msgid "Add Workflow"
-msgstr ""
+msgstr "Workflow hinzufügen"
 
 #: ../../library/automation/workflows.rst:84
 msgid "Select the Library link in the navigation bar"
-msgstr ""
+msgstr "Wählen Sie den Link Library in der Navigationsleiste aus"
 
 #: ../../library/automation/workflows.rst:85
 msgid "Select Automation from the sub-navigation menu"
-msgstr ""
+msgstr "Wählen Sie Automatisierung aus dem Unternavigationsmenü aus"
 
 #: ../../library/automation/workflows.rst:86
 msgid "Click the Workflows tab to show the Workflows tab panel"
-msgstr ""
+msgstr "Klicken Sie auf die Registerkarte Workflows, um das Registerkartenfenster Workflows anzuzeigen"
 
 #: ../../library/automation/workflows.rst:87
 msgid ""
 "Click the :guilabel:`+ Add` dropdown and select a Workflow type "
 "(Operational or Provisioning, see the section above for more on Workflow "
 "type differences)"
-msgstr ""
+msgstr "Klicken Sie auf das Dropdown :guilabel:`+ Add` und wählen Sie einen Workflow-Typ aus (Operational oder Provisioning; siehe den Abschnitt oben zu den Unterschieden der Workflow-Typen)"
 
 #: ../../library/automation/workflows.rst:88
 msgid "From the New Workflow Wizard input a name for the workflow"
-msgstr ""
+msgstr "Geben Sie im New Workflow Wizard einen Namen für den Workflow ein"
 
 #: ../../library/automation/workflows.rst:89
 msgid "Optionally input a description and a target platform"
-msgstr ""
+msgstr "Geben Sie optional eine Beschreibung und eine Zielplattform ein"
 
 #: ../../library/automation/workflows.rst:90
 msgid ""
 "Add Tasks and Inputs using the typeahead fields, Tasks must be added to "
 "the appropriate phases for Provisioning Workflows"
-msgstr ""
+msgstr "Fügen Sie Aufgaben und Eingaben über die Typeahead-Felder hinzu; bei Provisionierungs-Workflows müssen Aufgaben den entsprechenden Phasen hinzugefügt werden"
 
 #: ../../library/automation/workflows.rst:91
 msgid ""
 "If multiple tasks are added to the same execution phase, their execution "
 "order can be changed by selecting the grip icon and dragging the task to "
 "the desired execution order"
-msgstr ""
+msgstr "Wenn mehrere Aufgaben derselben Ausführungsphase hinzugefügt werden, kann ihre Ausführungsreihenfolge geändert werden, indem das Griffsymbol ausgewählt und die Aufgabe an die gewünschte Ausführungsreihenfolge gezogen wird"
 
 #: ../../library/automation/workflows.rst:92
 msgid ""
 "For multi-Tenant environments, select Public or Private visibility for "
 "the Workflow"
-msgstr ""
+msgstr "Wählen Sie in Multi-Mandanten-Umgebungen die Sichtbarkeit Public oder Private für den Workflow aus"
 
 #: ../../library/automation/workflows.rst:93
 msgid ""
 "For Operational Workflows, optionally mark \"Allow Custom Config\" from "
 "the Advanced Options section if needed. See the next section for more on "
 "this selection"
-msgstr ""
+msgstr "Markieren Sie bei Operational Workflows optional „Allow Custom Config“ im Abschnitt Advanced Options, falls erforderlich. Weitere Informationen zu dieser Auswahl finden Sie im nächsten Abschnitt"
 
 #: ../../library/automation/workflows.rst:94
 msgid "Click the :guilabel:`SAVE CHANGES` button to save"
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche :guilabel:`SAVE CHANGES`, um zu speichern"
 
 #: ../../library/automation/workflows.rst:96
 msgid ""
@@ -2368,7 +2368,7 @@ msgid ""
 " Tenants will be able to see the Workflow and also execute it directly "
 "from the Workflows list (if it's an Operational Workflow). They will not "
 "be able to edit or delete the Workflow."
-msgstr ""
+msgstr "Wenn die Workflow-Sichtbarkeit in einer Multi-Mandanten-Umgebung auf Public gesetzt wird, können Mandanten den Workflow sehen und ihn auch direkt aus der Workflows-Liste ausführen (falls es sich um einen Operational Workflow handelt). Sie können den Workflow nicht bearbeiten oder löschen."
 
 #: ../../library/automation/workflows.rst:101
 msgid ""
@@ -2379,18 +2379,18 @@ msgid ""
 "JSON map of key-value pairs which can be resolved within your automation "
 "scripts. This could be used to pass extra variables that aren't always "
 "needed in the script or for specifying extra configuration."
-msgstr ""
+msgstr "Wenn bei Operational Workflows „Allow Custom Config“ markiert ist, wird dem Benutzer zur Ausführungszeit ein Textbereich für die benutzerdefinierte Konfiguration angezeigt. Dieser Textbereich befindet sich im Abschnitt „Advanced Options“, der erweitert werden muss, um den Textbereich anzuzeigen. Fügen Sie im Textbereich eine JSON-Zuordnung von Schlüssel-Wert-Paaren hinzu, die in Ihren Automatisierungsskripten aufgelöst werden können. Dies könnte verwendet werden, um zusätzliche Variablen zu übergeben, die nicht immer im Skript benötigt werden, oder um zusätzliche Konfiguration anzugeben."
 
 #: ../../library/automation/workflows.rst:112
 msgid ""
 "When the Workflow is executed, these extra variables would be resolved "
 "where called into the script such as in the following simple BASH script "
 "example:"
-msgstr ""
+msgstr "Wenn der Workflow ausgeführt wird, würden diese zusätzlichen Variablen dort aufgelöst, wo sie im Skript aufgerufen werden, wie im folgenden einfachen BASH-Skriptbeispiel:"
 
 #: ../../library/automation/workflows.rst:127
 msgid "Retrying Workflows"
-msgstr ""
+msgstr "Workflows wiederholen"
 
 #: ../../library/automation/workflows.rst:129
 msgid ""
@@ -2409,7 +2409,7 @@ msgid ""
 "Provisioning Workflow), the user can opt to resume the Tasks from the "
 "failure point after making a correction and restore the Instance to a "
 "successfully-provisioned state."
-msgstr ""
+msgstr "Wenn ein Workflow fehlschlägt, ermöglicht |morpheus| Benutzern, ab der fehlgeschlagenen Aufgabe fortzusetzen. Greifen Sie auf die Workflow-Ausführung über die Ausführungs-Listenseite (|ProExe|), über die Registerkarte Executions der Workflow-Detailseite (|LibAutWor| > ausgewählter Workflow) oder über die Registerkarte History auf der Instanz-Detailseite (:menuselection:`Provisioning --> Instances` > ausgewählte Instanz) zu. Wählen Sie in der Ausführung die Schaltfläche Retry, die wie ein kreisförmiger Pfeil im Uhrzeigersinn aussieht und im Screenshot unten hervorgehoben ist. Dies kann sehr nützlich sein, da Sie einen potenziell sehr lange laufenden Workflow ab einem Fehlerpunkt fortsetzen können, ohne von vorne beginnen zu müssen. Ebenso kann der Benutzer, wenn eine provisionierte Instanz aufgrund eines Fehlers in einem angehängten Workflow fehlgeschlagen ist (z. B. eine fehlgeschlagene Aufgabe in der Provision-Phase eines angehängten Provisionierungs-Workflows), nach einer Korrektur die Aufgaben ab dem Fehlerpunkt fortsetzen und die Instanz in einen erfolgreich provisionierten Zustand zurückversetzen."
 
 #: ../../library/automation/workflows.rst:141
 msgid ".. image:: /images/automation/retryTask.png"
@@ -2417,7 +2417,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:144
 msgid "Cancelling Workflow Tasks"
-msgstr ""
+msgstr "Workflow-Aufgaben abbrechen"
 
 #: ../../library/automation/workflows.rst:146
 msgid ""
@@ -2427,7 +2427,7 @@ msgid ""
 "in a cancelled state. This is useful if you have a very long-running Task"
 " that you know will fail and wish to cancel or if you want to prevent a "
 "\"retryable\" Task from running again."
-msgstr ""
+msgstr "Wenn ein Workflow ausgeführt wird, bietet |morpheus| die Möglichkeit, eine Aufgabe abzubrechen und zu verhindern, dass nachfolgende Aufgaben gestartet werden. Bei späterer Ansicht in History oder Executions bleiben Aufgabe und Workflow in einem abgebrochenen Zustand. Dies ist nützlich, wenn Sie eine sehr lange laufende Aufgabe haben, von der Sie wissen, dass sie fehlschlagen wird und die Sie abbrechen möchten, oder wenn Sie verhindern möchten, dass eine „wiederholbare“ Aufgabe erneut ausgeführt wird."
 
 #: ../../library/automation/workflows.rst:148
 msgid ""
@@ -2436,7 +2436,7 @@ msgid ""
 "cancelled, see that the Workflow and Task are now considered to be in a "
 "cancelled state which is shown in the UI. At this point the cancel button"
 " becomes a retry button and the Task could be resumed if desired."
-msgstr ""
+msgstr "Um einen Workflow abzubrechen, öffnen Sie die Ausführung. Innerhalb der laufenden Aufgabe befindet sich eine Abbrechen-Schaltfläche; klicken Sie darauf, um den Workflow zu unterbrechen. Nach dem Abbruch sehen Sie, dass Workflow und Aufgabe jetzt als abgebrochen gelten, was in der Benutzeroberfläche angezeigt wird. An diesem Punkt wird die Abbrechen-Schaltfläche zu einer Wiederholen-Schaltfläche, und die Aufgabe könnte bei Bedarf fortgesetzt werden."
 
 #: ../../library/automation/workflows.rst:150
 msgid ""
@@ -2445,7 +2445,7 @@ msgid ""
 "it from continuing. Behind the scenes, |morpheus| allows the running "
 "process to complete or time out rather than risk corrupting data with a "
 "non-graceful interrupt."
-msgstr ""
+msgstr "Das Abbrechen einer Aufgabe unterbricht nicht tatsächlich den bereits auf den Arbeitslasten selbst laufenden Prozess. Es unterbricht lediglich den Workflow und verhindert die Fortsetzung. Im Hintergrund lässt |morpheus| den laufenden Prozess abschließen oder ablaufen, anstatt Daten durch eine nicht ordnungsgemäße Unterbrechung zu gefährden."
 
 #: ../../library/automation/workflows.rst:152
 msgid ".. image:: /images/automation/cancelTask.png"
@@ -2453,7 +2453,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:155
 msgid "Price Phase Task Utilization"
-msgstr ""
+msgstr "Nutzung von Price-Phase-Aufgaben"
 
 #: ../../library/automation/workflows.rst:167
 msgid ""
@@ -2471,44 +2471,44 @@ msgid ""
 "Workflows which invoke Price Phase Tasks are tied to the Layout, the user"
 " can see different pricing depending on which Instance Type Layout is "
 "selected."
-msgstr ""
+msgstr "Price-Phase-Aufgaben ermöglichen es, berechnete Preise für jede Arbeitslast in jeder Cloud (auch öffentlichen Clouds) basierend auf vom Benutzer entworfener benutzerdefinierter Logik zu überschreiben. Die Variable „spec“ wird in die Aufgabe eingespeist und repräsentiert die Instanzkonfiguration. Die Aufgabe kann so entworfen werden, dass sie die Instanzkonfigurationsdaten verwendet und einen angemessenen Preis für die Instanz berechnet. |morpheus| erwartet eine Rückgabenutzlast im unten stehenden Format, damit die Preisüberschreibung korrekt funktioniert. Falls verwendet, ersetzt die über die Aufgabe berechnete Preisgestaltung alle anderen Kostendaten, die auf die Arbeitslast angewendet worden wären (z. B. Preisgestaltung basierend auf dem Service-Tarif). Der Benutzer sieht Preisschätzungen basierend auf der Price-Phase-Aufgabe im Instanz-Provisionierungsassistenten, wo sonst die Service-Tarif-Preisgestaltung angezeigt würde. Da Workflows, die Price-Phase-Aufgaben aufrufen, an das Layout gebunden sind, kann der Benutzer außerdem je nach ausgewähltem Instanztyp-Layout unterschiedliche Preise sehen."
 
 #: ../../library/automation/workflows.rst:169
 msgid "Price Phase Tasks are only invoked if the Workflow is tied to a Layout."
-msgstr ""
+msgstr "Price-Phase-Aufgaben werden nur aufgerufen, wenn der Workflow an ein Layout gebunden ist."
 
 #: ../../library/automation/workflows.rst:171
 msgid ""
 "The return payload should be a JSON array of \"priceData\" objects. "
 "priceData objects should contain values for each of the keys in the table"
 " below:"
-msgstr ""
+msgstr "Die Rückgabenutzlast sollte ein JSON-Array von „priceData“-Objekten sein. priceData-Objekte sollten Werte für jeden der Schlüssel in der Tabelle unten enthalten:"
 
 #: ../../library/automation/workflows.rst:177
 msgid "Key"
-msgstr ""
+msgstr "Schlüssel"
 
 #: ../../library/automation/workflows.rst:179
 msgid "Data Type"
-msgstr ""
+msgstr "Datentyp"
 
 #: ../../library/automation/workflows.rst:180
 msgid "Possible Values"
-msgstr ""
+msgstr "Mögliche Werte"
 
 #: ../../library/automation/workflows.rst:181
 msgid "incurCharges"
-msgstr ""
+msgstr "incurCharges"
 
 #: ../../library/automation/workflows.rst:182
 msgid "Indicates the Instance state when this charge should be applied"
-msgstr ""
+msgstr "Gibt den Instanzzustand an, in dem diese Gebühr angewendet werden soll"
 
 #: ../../library/automation/workflows.rst:183
 #: ../../library/automation/workflows.rst:187
 #: ../../library/automation/workflows.rst:191
 msgid "String"
-msgstr ""
+msgstr "String"
 
 #: ../../library/automation/workflows.rst:184
 msgid ""
@@ -2517,65 +2517,65 @@ msgid ""
 "shutdown state, **Always:** This charge is always applied. Some charges "
 "may apply simultaneously, for example, \"Always\" and \"Running\" states "
 "will apply while the workload is running."
-msgstr ""
+msgstr "**Running:** Gebühr wird erhoben, während die Arbeitslast in einem laufenden Zustand ist, **Stopped:** Gebühr wird erhoben, während die Arbeitslast in einem angehaltenen oder heruntergefahrenen Zustand ist, **Always:** Diese Gebühr wird immer angewendet. Einige Gebühren können gleichzeitig gelten; beispielsweise gelten die Zustände „Always“ und „Running“, während die Arbeitslast läuft."
 
 #: ../../library/automation/workflows.rst:185
 msgid "currency"
-msgstr ""
+msgstr "currency"
 
 #: ../../library/automation/workflows.rst:186
 msgid "Indicates the currency in which the charge will be applied"
-msgstr ""
+msgstr "Gibt die Währung an, in der die Gebühr angewendet wird"
 
 #: ../../library/automation/workflows.rst:188
 msgid ""
 "Enter any three-letter currency code which |morpheus| supports for its "
 "pricing, such as \"USD\", \"CAD\", or \"GBP\""
-msgstr ""
+msgstr "Geben Sie einen dreistelligen Währungscode ein, den |morpheus| für seine Preise unterstützt, z. B. „USD“, „CAD“ oder „GBP“"
 
 #: ../../library/automation/workflows.rst:189
 msgid "unit"
-msgstr ""
+msgstr "unit"
 
 #: ../../library/automation/workflows.rst:190
 msgid "Indicates the time interval at which the charge is applied"
-msgstr ""
+msgstr "Gibt das Zeitintervall an, in dem die Gebühr angewendet wird"
 
 #: ../../library/automation/workflows.rst:192
 msgid "Enter \"minute\", \"hour\", \"day\", \"month\", or \"year\""
-msgstr ""
+msgstr "Geben Sie „minute“, „hour“, „day“, „month“ oder „year“ ein"
 
 #: ../../library/automation/workflows.rst:193
 msgid "cost"
-msgstr ""
+msgstr "cost"
 
 #: ../../library/automation/workflows.rst:194
 msgid ""
 "Indicates the amount applied as cost for each configured time unit "
 "interval that passes. This is the cost to you, not the price with markup "
 "which the customer would see."
-msgstr ""
+msgstr "Gibt den Betrag an, der als Kosten für jedes konfigurierte Zeiteinheitsintervall angewendet wird. Dies sind Ihre Kosten, nicht der Preis mit Aufschlag, den der Kunde sehen würde."
 
 #: ../../library/automation/workflows.rst:195
 #: ../../library/automation/workflows.rst:199
 msgid "Number"
-msgstr ""
+msgstr "Number"
 
 #: ../../library/automation/workflows.rst:196
 #: ../../library/automation/workflows.rst:200
 msgid "A numerical amount such as \"3.00\" or \"34.23\""
-msgstr ""
+msgstr "Ein numerischer Betrag wie „3.00“ oder „34.23“"
 
 #: ../../library/automation/workflows.rst:197
 msgid "price"
-msgstr ""
+msgstr "price"
 
 #: ../../library/automation/workflows.rst:198
 msgid ""
 "Indicates the amount applied as price for each configured time unit "
 "interval that passes. This is the price to the customer with any built-in"
 " markup you need to apply."
-msgstr ""
+msgstr "Gibt den Betrag an, der als Preis für jedes konfigurierte Zeiteinheitsintervall angewendet wird. Dies ist der Preis für den Kunden mit dem erforderlichen eingebauten Aufschlag."
 
 #: ../../library/automation/workflows.rst:202
 msgid ""
@@ -2585,7 +2585,7 @@ msgid ""
 "outputting a static payload though in a real world scenario you'd likely "
 "use Task logic to output a dynamic array based on the Instance "
 "configuration."
-msgstr ""
+msgstr "In dieser Phase könnten verschiedene Aufgabentypen verwendet werden. Solange die Aufgabe das erforderliche JSON-Array zurückgibt, funktioniert die Aufgabe korrekt. Unten ist ein Beispiel mit einer Groovy-Aufgabe. Dieses gibt lediglich eine statische Nutzlast aus; in einem realen Szenario würden Sie wahrscheinlich Aufgabenlogik verwenden, um ein dynamisches Array basierend auf der Instanzkonfiguration auszugeben."
 
 #: ../../library/automation/workflows.rst:204
 msgid ""
@@ -2619,7 +2619,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:234
 msgid "Nesting Workflows"
-msgstr ""
+msgstr "Verschachtelte Workflows"
 
 #: ../../library/automation/workflows.rst:236
 msgid ""
@@ -2635,7 +2635,7 @@ msgid ""
 "existing Workflows too). For more on creating Tasks, see |morpheus| `Task"
 " documentation "
 "<https://docs.morpheusdata.com/en/latest/library/automation/automation.html#tasks>`_."
-msgstr ""
+msgstr "|morpheus| ermöglicht das Verschachteln von Workflows zur einfacheren Workflow-Erstellung, wenn in einer Umgebung viele Workflows verwendet werden, die nur geringfügige Unterschiede aufweisen oder aus gemeinsamen Teilen bestehen. Verschachtelbare Workflows werden wie jeder andere Operational Workflow erstellt. Sobald der Workflow gespeichert ist, kann er in einen speziellen Aufgabentyp namens „Nested Workflow“ eingebettet werden. Eine Aufgabe vom Typ Nested Workflow referenziert einfach einen Operational Workflow, der möglicherweise innerhalb anderer Workflows verwendet werden muss. Sobald Nested-Workflow-Aufgaben erstellt sind, können sie als Teil aller danach erstellten neuen Operational- oder Provisionierungs-Workflows verwendet werden (oder auch zu vorhandenen Workflows hinzugefügt werden). Weitere Informationen zum Erstellen von Aufgaben finden Sie in der |morpheus|-`Task documentation <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#tasks>`_."
 
 #: ../../library/automation/workflows.rst:238
 msgid ""
@@ -2645,199 +2645,199 @@ msgid ""
 " See |morpheus| `Task documentation "
 "<https://docs.morpheusdata.com/en/latest/library/automation/automation.html"
 "#task-results>`_ for more on chaining Task results."
-msgstr ""
+msgstr "Ergebnisse vorheriger Aufgaben werden weiterhin mit derselben Syntax abgerufen, auch wenn eine vorherige Aufgabe in einem Nested Workflow eingebettet ist. Zusätzliche Syntax zum Referenzieren der Nested-Workflow-Aufgabe oder des Workflows selbst ist nicht erforderlich. Siehe |morpheus|-`Task documentation <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#task-results>`_ für weitere Informationen zur Verkettung von Aufgabenergebnissen."
 
 #: ../../library/automation/workflows.rst:251
 msgid "Edit Workflow"
-msgstr ""
+msgstr "Workflow bearbeiten"
 
 #: ../../library/automation/workflows.rst:253
 #: ../../library/automation/workflows.rst:263
 msgid "Select the Library link in the navigation bar."
-msgstr ""
+msgstr "Wählen Sie den Link Library in der Navigationsleiste aus."
 
 #: ../../library/automation/workflows.rst:254
 #: ../../library/automation/workflows.rst:264
 msgid "Select Automation from the sub-navigation menu."
-msgstr ""
+msgstr "Wählen Sie Automatisierung aus dem Unternavigationsmenü aus."
 
 #: ../../library/automation/workflows.rst:255
 #: ../../library/automation/workflows.rst:265
 msgid "Click the Workflows tab to show the workflows tab panel."
-msgstr ""
+msgstr "Klicken Sie auf die Registerkarte Workflows, um das Registerkartenfenster Workflows anzuzeigen."
 
 #: ../../library/automation/workflows.rst:256
 msgid "Click the Edit icon on the row of the workflow you wish to edit."
-msgstr ""
+msgstr "Klicken Sie auf das Bearbeitungssymbol in der Zeile des Workflows, den Sie bearbeiten möchten."
 
 #: ../../library/automation/workflows.rst:257
 msgid "Modify information as needed."
-msgstr ""
+msgstr "Informationen nach Bedarf ändern."
 
 #: ../../library/automation/workflows.rst:258
 msgid "Click the :guilabel:`Save Changes` button to save."
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche :guilabel:`Save Changes`, um zu speichern."
 
 #: ../../library/automation/workflows.rst:261
 msgid "Delete Workflow"
-msgstr ""
+msgstr "Workflow löschen"
 
 #: ../../library/automation/workflows.rst:266
 msgid "Click the Delete icon on the row of the workflow you wish to delete."
-msgstr ""
+msgstr "Klicken Sie auf das Löschsymbol in der Zeile des Workflows, den Sie löschen möchten."
 
 #: ../../library/automation/scale_thresholds.rst:2
 msgid "Scale Thresholds"
-msgstr ""
+msgstr "Skalierungsschwellenwerte"
 
 #: ../../library/automation/scale_thresholds.rst:4
 msgid ""
 "Scale Thresholds are pre-configured settings for auto-scaling Instances. "
 "When adding auto-scaling to an instance, existing Scale Thresholds can be"
 " selected to determine auto-scaling rules."
-msgstr ""
+msgstr "Skalierungsschwellenwerte sind vorkonfigurierte Einstellungen für die Autoskalierung von Instanzen. Beim Hinzufügen der Autoskalierung zu einer Instanz können vorhandene Skalierungsschwellenwerte ausgewählt werden, um die Autoskalierungsregeln festzulegen."
 
 #: ../../library/automation/scale_thresholds.rst:7
 msgid "Creating Scale Thresholds"
-msgstr ""
+msgstr "Skalierungsschwellenwerte erstellen"
 
 #: ../../library/automation/scale_thresholds.rst:9
 msgid "Navigate to |LibAutSca|"
-msgstr ""
+msgstr "Navigieren Sie zu |LibAutSca|"
 
 #: ../../library/automation/power_scheduling.rst:10
 #: ../../library/automation/power_scheduling.rst:60
 #: ../../library/automation/scale_thresholds.rst:10
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`+ ADD`"
 
 #: ../../library/automation/scale_thresholds.rst:11
 msgid "Populate the following:"
-msgstr ""
+msgstr "Füllen Sie Folgendes aus:"
 
 #: ../../library/automation/scale_thresholds.rst:14
 msgid "Name of the Scale Threshold"
-msgstr ""
+msgstr "Name des Skalierungsschwellenwerts"
 
 #: ../../library/automation/scale_thresholds.rst:15
 msgid "AUTO UPSCALE"
-msgstr ""
+msgstr "AUTO UPSCALE"
 
 #: ../../library/automation/scale_thresholds.rst:16
 msgid "Enable to automatically upscale per Scale Threshold specifications"
-msgstr ""
+msgstr "Aktivieren, um gemäß den Spezifikationen des Skalierungsschwellenwerts automatisch hochzuskalieren"
 
 #: ../../library/automation/scale_thresholds.rst:17
 msgid "AUTO DOWNSCALE"
-msgstr ""
+msgstr "AUTO DOWNSCALE"
 
 #: ../../library/automation/scale_thresholds.rst:18
 msgid "Enable to automatically downscale per Scale Threshold specifications"
-msgstr ""
+msgstr "Aktivieren, um gemäß den Spezifikationen des Skalierungsschwellenwerts automatisch herunterzuskalieren"
 
 #: ../../library/automation/scale_thresholds.rst:19
 msgid "MIN COUNT"
-msgstr ""
+msgstr "MIN COUNT"
 
 #: ../../library/automation/scale_thresholds.rst:20
 msgid ""
 "Minimum node count for Instance. Auto-scaling will not downscale below "
 "MIN COUNT, and will auto upscale if the MIN COUNT is not met)"
-msgstr ""
+msgstr "Minimale Knotenanzahl für die Instanz. Die Autoskalierung skaliert nicht unter MIN COUNT herunter und skaliert automatisch hoch, wenn MIN COUNT nicht erreicht ist)"
 
 #: ../../library/automation/scale_thresholds.rst:21
 msgid "MAX COUNT"
-msgstr ""
+msgstr "MAX COUNT"
 
 #: ../../library/automation/scale_thresholds.rst:22
 msgid ""
 "Maximum node count for Instance. Auto-scaling will not upscale past MAX "
 "COUNT, and will auto downscale if MAX COUNT is exceeded."
-msgstr ""
+msgstr "Maximale Knotenanzahl für die Instanz. Die Autoskalierung skaliert nicht über MAX COUNT hinaus und skaliert automatisch herunter, wenn MAX COUNT überschritten wird."
 
 #: ../../library/automation/scale_thresholds.rst:23
 msgid "ENABLE MEMORY THRESHOLD"
-msgstr ""
+msgstr "ENABLE MEMORY THRESHOLD"
 
 #: ../../library/automation/scale_thresholds.rst:24
 msgid "Check to set auto-scaling by specified memory utilization threshold (%)"
-msgstr ""
+msgstr "Aktivieren, um die Autoskalierung anhand des angegebenen Arbeitsspeicher-Auslastungsschwellenwerts (%) festzulegen"
 
 #: ../../library/automation/scale_thresholds.rst:25
 msgid "MIN MEMORY"
-msgstr ""
+msgstr "MIN MEMORY"
 
 #: ../../library/automation/scale_thresholds.rst:26
 #, python-format
 msgid "Enter MIN MEMORY % for triggering downscaling."
-msgstr ""
+msgstr "Geben Sie MIN MEMORY % ein, um das Herunterskalieren auszulösen."
 
 #: ../../library/automation/scale_thresholds.rst:27
 msgid "MAX MEMORY"
-msgstr ""
+msgstr "MAX MEMORY"
 
 #: ../../library/automation/scale_thresholds.rst:28
 #, python-format
 msgid "Enter MAX MEMORY % for triggering upscaling."
-msgstr ""
+msgstr "Geben Sie MAX MEMORY % ein, um das Hochskalieren auszulösen."
 
 #: ../../library/automation/scale_thresholds.rst:29
 msgid "ENABLE DISK THRESHOLD"
-msgstr ""
+msgstr "ENABLE DISK THRESHOLD"
 
 #: ../../library/automation/scale_thresholds.rst:30
 msgid "Check to set auto-scaling by specified disk utilization threshold (%)"
-msgstr ""
+msgstr "Aktivieren, um die Autoskalierung anhand des angegebenen Laufwerk-Auslastungsschwellenwerts (%) festzulegen"
 
 #: ../../library/automation/scale_thresholds.rst:31
 msgid "MIN DISK"
-msgstr ""
+msgstr "MIN DISK"
 
 #: ../../library/automation/scale_thresholds.rst:32
 #, python-format
 msgid "Enter MIN DISK % for triggering downscaling."
-msgstr ""
+msgstr "Geben Sie MIN DISK % ein, um das Herunterskalieren auszulösen."
 
 #: ../../library/automation/scale_thresholds.rst:33
 msgid "MAX DISK"
-msgstr ""
+msgstr "MAX DISK"
 
 #: ../../library/automation/scale_thresholds.rst:34
 #, python-format
 msgid "Enter MAX DISK % for triggering upscaling."
-msgstr ""
+msgstr "Geben Sie MAX DISK % ein, um das Hochskalieren auszulösen."
 
 #: ../../library/automation/scale_thresholds.rst:35
 msgid "ENABLE CPU THRESHOLD"
-msgstr ""
+msgstr "ENABLE CPU THRESHOLD"
 
 #: ../../library/automation/scale_thresholds.rst:36
 msgid ""
 "Check to set auto-scaling by specified overall CPU utilization threshold "
 "(%)"
-msgstr ""
+msgstr "Aktivieren, um die Autoskalierung anhand des angegebenen Gesamt-CPU-Auslastungsschwellenwerts (%) festzulegen"
 
 #: ../../library/automation/scale_thresholds.rst:37
 msgid "MIN CPU"
-msgstr ""
+msgstr "MIN CPU"
 
 #: ../../library/automation/scale_thresholds.rst:38
 #, python-format
 msgid "Enter MIN CPU % for triggering downscaling."
-msgstr ""
+msgstr "Geben Sie MIN CPU % ein, um das Herunterskalieren auszulösen."
 
 #: ../../library/automation/scale_thresholds.rst:39
 msgid "MAX CPU"
-msgstr ""
+msgstr "MAX CPU"
 
 #: ../../library/automation/scale_thresholds.rst:40
 #, python-format
 msgid "Enter MAX CPU % for triggering upscaling."
-msgstr ""
+msgstr "Geben Sie MAX CPU % ein, um das Hochskalieren auszulösen."
 
 #: ../../library/automation/power_scheduling.rst:2
 msgid "Power Scheduling"
-msgstr ""
+msgstr "Einschaltplanung"
 
 #: ../../library/automation/power_scheduling.rst:4
 msgid ""
@@ -2845,76 +2845,76 @@ msgid ""
 "VM's, apply Power Schedules to Instances pre or post-provisioning, apply "
 "Power Schedule policies on Group or Clouds, or use Guidance to "
 "automatically recommend and apply optimized Power Schedules."
-msgstr ""
+msgstr "Legen Sie wöchentliche Zeitpläne für Herunterfahr- und Startzeiten für Instanzen und VMs fest, wenden Sie Einschaltpläne vor oder nach der Provisionierung auf Instanzen an, wenden Sie Einschaltplan-Richtlinien auf Gruppe oder Clouds an, oder verwenden Sie Guidance, um optimierte Einschaltpläne automatisch zu empfehlen und anzuwenden."
 
 #: ../../library/automation/power_scheduling.rst:7
 msgid "Create Power schedules"
-msgstr ""
+msgstr "Einschaltpläne erstellen"
 
 #: ../../library/automation/power_scheduling.rst:9
 msgid "Navigate to |LibAutPow|"
-msgstr ""
+msgstr "Navigieren Sie zu |LibAutPow|"
 
 #: ../../library/automation/power_scheduling.rst:11
 msgid "Configure the following options:"
-msgstr ""
+msgstr "Konfigurieren Sie die folgenden Optionen:"
 
 #: ../../library/automation/power_scheduling.rst:14
 msgid "Name of the Power Schedule"
-msgstr ""
+msgstr "Name des Einschaltplans"
 
 #: ../../library/automation/execute_scheduling.rst:18
 #: ../../library/automation/power_scheduling.rst:15
 #: ../../library/automation/power_scheduling.rst:66
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #: ../../library/automation/power_scheduling.rst:16
 msgid "Description for the Power Schedule"
-msgstr ""
+msgstr "Beschreibung für den Einschaltplan"
 
 #: ../../library/automation/execute_scheduling.rst:22
 #: ../../library/automation/power_scheduling.rst:17
 msgid "TIME ZONE"
-msgstr ""
+msgstr "TIME ZONE"
 
 #: ../../library/automation/power_scheduling.rst:18
 msgid "Time Zone the Power Schedule times correlate to."
-msgstr ""
+msgstr "Zeitzone, mit der die Einschaltplanzeiten korrelieren."
 
 #: ../../library/automation/power_scheduling.rst:19
 msgid "TYPE"
-msgstr ""
+msgstr "TYPE"
 
 #: ../../library/automation/power_scheduling.rst:20
 msgid "Power On"
-msgstr ""
+msgstr "Power On"
 
 #: ../../library/automation/power_scheduling.rst:21
 msgid "Power Up and then Down at scheduled times"
-msgstr ""
+msgstr "Einschalten und dann zu geplanten Zeiten ausschalten"
 
 #: ../../library/automation/power_scheduling.rst:22
 msgid "Power off"
-msgstr ""
+msgstr "Power off"
 
 #: ../../library/automation/power_scheduling.rst:23
 msgid "Power Down then Up at scheduled times"
-msgstr ""
+msgstr "Ausschalten und dann zu geplanten Zeiten einschalten"
 
 #: ../../library/automation/execute_scheduling.rst:24
 #: ../../library/automation/power_scheduling.rst:24
 #: ../../library/automation/power_scheduling.rst:68
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiv"
 
 #: ../../library/automation/power_scheduling.rst:25
 msgid "Check for Power Schedule to be Active. Uncheck to disable Power Schedule."
-msgstr ""
+msgstr "Aktivieren Sie das Kontrollkästchen, damit der Einschaltplan aktiv ist. Deaktivieren Sie es, um den Einschaltplan zu deaktivieren."
 
 #: ../../library/automation/power_scheduling.rst:26
 msgid "DAYS"
-msgstr ""
+msgstr "DAYS"
 
 #: ../../library/automation/power_scheduling.rst:27
 msgid ""
@@ -2923,7 +2923,7 @@ msgid ""
 "Off. Time indicated applies to selected Time Zone. The sliders can be "
 "used to set time in 15-minute steps, for single-minute granularity click "
 "the pencil icon and enter a specific time down to the minute."
-msgstr ""
+msgstr "Verschieben Sie die Start- und Endzeit-Steuerelemente für jeden Tag, um den Zeitplan jedes Tages zu konfigurieren. Grüne Abschnitte bedeuten eingeschaltet, rote Abschnitte bedeuten ausgeschaltet. Die angezeigte Zeit gilt für die ausgewählte Zeitzone. Die Schieberegler können verwendet werden, um die Zeit in 15-Minuten-Schritten festzulegen; für Minutengranularität klicken Sie auf das Stiftsymbol und geben Sie eine bestimmte Zeit bis zur Minute ein."
 
 #: ../../library/automation/power_scheduling.rst:29
 msgid ".. image:: /images/operations/powerSchedule.png"
@@ -2934,180 +2934,180 @@ msgstr ""
 #: ../../library/automation/power_scheduling.rst:52
 #: ../../library/automation/power_scheduling.rst:91
 msgid "Select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`SAVE CHANGES`"
 
 #: ../../library/automation/power_scheduling.rst:33
 msgid ""
 "To view the Instances a power schedule is currently set on, select the "
 "name of a Power Schedule to go to the Power Schedule Detail Page."
-msgstr ""
+msgstr "Um die Instanzen anzuzeigen, für die derzeit ein Einschaltplan festgelegt ist, wählen Sie den Namen eines Einschaltplans aus, um zur Detailseite des Einschaltplans zu gelangen."
 
 #: ../../library/automation/power_scheduling.rst:36
 msgid "Add Power Schedule to Instance"
-msgstr ""
+msgstr "Einschaltplan zu Instanz hinzufügen"
 
 #: ../../library/automation/power_scheduling.rst:38
 msgid "Navigate to :menuselection:`Provisioning --> Instances`"
-msgstr ""
+msgstr "Navigieren Sie zu :menuselection:`Provisioning --> Instances`"
 
 #: ../../library/automation/power_scheduling.rst:39
 msgid "Select an Instance"
-msgstr ""
+msgstr "Wählen Sie eine Instanz aus"
 
 #: ../../library/automation/power_scheduling.rst:40
 #: ../../library/automation/power_scheduling.rst:49
 msgid "Select :guilabel:`EDIT`"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`EDIT`"
 
 #: ../../library/automation/power_scheduling.rst:41
 #: ../../library/automation/power_scheduling.rst:51
 msgid "In the POWER SCHEDULE dropdown, select a Power Schedule."
-msgstr ""
+msgstr "Wählen Sie im Dropdown POWER SCHEDULE einen Einschaltplan aus."
 
 #: ../../library/automation/power_scheduling.rst:45
 msgid "Add Power Schedule to Virtual Machine"
-msgstr ""
+msgstr "Einschaltplan zu virtueller Maschine hinzufügen"
 
 #: ../../library/automation/power_scheduling.rst:47
 msgid "Navigate to ``Infrastructure > Compute > Virtual Machines``"
-msgstr ""
+msgstr "Navigieren Sie zu ``Infrastructure > Compute > Virtual Machines``"
 
 #: ../../library/automation/power_scheduling.rst:48
 msgid "Select a Virtual Machine"
-msgstr ""
+msgstr "Wählen Sie eine virtuelle Maschine aus"
 
 #: ../../library/automation/power_scheduling.rst:50
 msgid "Expand the Advanced Options section"
-msgstr ""
+msgstr "Erweitern Sie den Abschnitt Advanced Options"
 
 #: ../../library/automation/power_scheduling.rst:55
 msgid "Add Power Schedule Policy"
-msgstr ""
+msgstr "Einschaltplan-Richtlinie hinzufügen"
 
 #: ../../library/automation/power_scheduling.rst:57
 msgid ""
 "Power Schedule Policies apply to Instances created after the Policy is "
 "enabled."
-msgstr ""
+msgstr "Einschaltplan-Richtlinien gelten für Instanzen, die nach Aktivierung der Richtlinie erstellt werden."
 
 #: ../../library/automation/power_scheduling.rst:59
 msgid "Navigate to |AdmPol|"
-msgstr ""
+msgstr "Navigieren Sie zu |AdmPol|"
 
 #: ../../library/automation/power_scheduling.rst:61
 msgid "Select TYPE `Power Schedule`"
-msgstr ""
+msgstr "Wählen Sie TYPE `Power Schedule`"
 
 #: ../../library/automation/power_scheduling.rst:62
 msgid "Configure the Power Schedule Policy:"
-msgstr ""
+msgstr "Konfigurieren Sie die Einschaltplan-Richtlinie:"
 
 #: ../../library/automation/power_scheduling.rst:65
 msgid "Name of the Policy"
-msgstr ""
+msgstr "Name der Richtlinie"
 
 #: ../../library/automation/power_scheduling.rst:67
 msgid "Add details about your Policy for reference in the Policies tab."
-msgstr ""
+msgstr "Fügen Sie Details zu Ihrer Richtlinie als Referenz auf der Registerkarte Policies hinzu."
 
 #: ../../library/automation/power_scheduling.rst:69
 msgid ""
 "Policies can be edited and disabled or enabled at any time. Disabling a "
 "Power Schedule Policy will prevent the Power Schedule from running on the"
 " Clouds Instances until re-enabled."
-msgstr ""
+msgstr "Richtlinien können jederzeit bearbeitet sowie deaktiviert oder aktiviert werden. Das Deaktivieren einer Einschaltplan-Richtlinie verhindert, dass der Einschaltplan auf den Cloud-Instanzen ausgeführt wird, bis er erneut aktiviert wird."
 
 #: ../../library/automation/power_scheduling.rst:70
 msgid "ENFORCEMENT TYPE"
-msgstr ""
+msgstr "ENFORCEMENT TYPE"
 
 #: ../../library/automation/power_scheduling.rst:71
 msgid ""
 "User Configurable: Power Schedule choice is editable by User during "
 "provisioning."
-msgstr ""
+msgstr "User Configurable: Die Einschaltplan-Auswahl ist vom Benutzer während der Provisionierung bearbeitbar."
 
 #: ../../library/automation/power_scheduling.rst:72
 msgid ""
 "Fixed Schedule: User cannot change Power Schedule setting during "
 "provisioning."
-msgstr ""
+msgstr "Fixed Schedule: Der Benutzer kann die Einschaltplan-Einstellung während der Provisionierung nicht ändern."
 
 #: ../../library/automation/power_scheduling.rst:74
 msgid "POWER SCHEDULE"
-msgstr ""
+msgstr "POWER SCHEDULE"
 
 #: ../../library/automation/power_scheduling.rst:75
 msgid ""
 "Select Power Schedule to use in the Policy. Power schedule can be added "
 "in |LibAutPow|"
-msgstr ""
+msgstr "Wählen Sie den in der Richtlinie zu verwendenden Einschaltplan aus. Einschaltpläne können unter |LibAutPow| hinzugefügt werden"
 
 #: ../../library/automation/power_scheduling.rst:76
 msgid "SCOPE"
-msgstr ""
+msgstr "SCOPE"
 
 #: ../../library/automation/power_scheduling.rst:77
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: ../../library/automation/power_scheduling.rst:78
 msgid "Applies to all Instances created while the Policy is enabled"
-msgstr ""
+msgstr "Gilt für alle Instanzen, die erstellt werden, während die Richtlinie aktiv ist"
 
 #: ../../library/automation/power_scheduling.rst:79
 msgid "Group"
-msgstr ""
+msgstr "Gruppe"
 
 #: ../../library/automation/power_scheduling.rst:80
 msgid ""
 "Applies to all Instances created in or moved into specified Group while "
 "the Policy is enabled"
-msgstr ""
+msgstr "Gilt für alle Instanzen, die in der angegebenen Gruppe erstellt oder in sie verschoben werden, während die Richtlinie aktiv ist"
 
 #: ../../library/automation/power_scheduling.rst:81
 msgid "Cloud"
-msgstr ""
+msgstr "Cloud"
 
 #: ../../library/automation/power_scheduling.rst:82
 msgid ""
 "Applies to all Instances created in specified Cloud while the Policy is "
 "enabled"
-msgstr ""
+msgstr "Gilt für alle Instanzen, die in der angegebenen Cloud erstellt werden, während die Richtlinie aktiv ist"
 
 #: ../../library/automation/power_scheduling.rst:83
 msgid "User"
-msgstr ""
+msgstr "Benutzer"
 
 #: ../../library/automation/power_scheduling.rst:84
 msgid ""
 "Applies to all Instances created by specified User while the Policy is "
 "enabled"
-msgstr ""
+msgstr "Gilt für alle Instanzen, die vom angegebenen Benutzer erstellt werden, während die Richtlinie aktiv ist"
 
 #: ../../library/automation/power_scheduling.rst:85
 msgid "Role"
-msgstr ""
+msgstr "Rolle"
 
 #: ../../library/automation/power_scheduling.rst:86
 msgid ""
 "Applies to all Instances created by Users with specified Role while the "
 "Policy is enabled"
-msgstr ""
+msgstr "Gilt für alle Instanzen, die von Benutzern mit der angegebenen Rolle erstellt werden, während die Richtlinie aktiv ist"
 
 #: ../../library/automation/power_scheduling.rst:88
 msgid "Permissions- TENANTS"
-msgstr ""
+msgstr "Permissions- TENANTS"
 
 #: ../../library/automation/power_scheduling.rst:89
 msgid ""
 "Leave blank to apply to all Tenants, or search for and select Tenants to "
 "enforce the Policy on specific Tenants."
-msgstr ""
+msgstr "Leer lassen, um auf alle Mandanten anzuwenden, oder nach Mandanten suchen und auswählen, um die Richtlinie auf bestimmte Mandanten durchzusetzen."
 
 #: ../../library/automation/execute_scheduling.rst:2
 msgid "Execute Scheduling"
-msgstr ""
+msgstr "Ausführungszeitplanung"
 
 #: ../../library/automation/execute_scheduling.rst:4
 msgid ""
@@ -3119,7 +3119,7 @@ msgid ""
 "Schedule to run the selected Task or Workflow at the needed time. Backup "
 "Jobs are a special type of Job configured in the Backups section which "
 "also use Execute Schedules to time backup runs as needed."
-msgstr ""
+msgstr "Execute Scheduling erstellt Zeitpläne für Jobs, einschließlich Aufgaben-, Workflow- und Sicherungs-Jobs. Jobs, die in `another section <https://docs.morpheusdata.com/en/4.2.0/provisioning/jobs/jobs.html#jobs>`_ der |morpheus|-Dokumentation ausführlicher behandelt werden, kombinieren entweder eine Aufgabe oder einen Workflow mit einem Execute Schedule, um die ausgewählte Aufgabe oder den Workflow zur benötigten Zeit auszuführen. Sicherungs-Jobs sind ein spezieller Jobtyp, der im Abschnitt Backups konfiguriert wird und ebenfalls Execute Schedules verwendet, um Sicherungsläufe nach Bedarf zu zeitlichen."
 
 #: ../../library/automation/execute_scheduling.rst:6
 msgid ""
@@ -3128,7 +3128,7 @@ msgid ""
 "be created by clicking the corresponding translation in the create or "
 "edit Execution Schedule modal below the Schedule field and selecting a "
 "new value."
-msgstr ""
+msgstr "Zeitpläne verwenden CRON-Ausdrücke, z. B. ``0 23 * * 2`` entspricht ``Executes every week on Tuesday at 23:00``. CRON-Ausdrücke können einfach erstellt werden, indem Sie auf die entsprechende Übersetzung im Erstellen- oder Bearbeiten-Modal für Execution Schedule unter dem Feld Schedule klicken und einen neuen Wert auswählen."
 
 #: ../../library/automation/execute_scheduling.rst:8
 msgid ""
@@ -3145,62 +3145,62 @@ msgid ""
 "is not interpreted correctly. This is due to an issue with the underlying"
 " library used to build this feature and cannot easily be resolved at this"
 " time."
-msgstr ""
+msgstr "CRON-Ausdrücke von Execute Schedules sollten keine Sekunden oder Jahre enthalten. Die Wochentage sollten mit 1–7 nummeriert sein, beginnend mit Montag und endend mit Sonntag. Die Notation SUN–SAT kann ebenfalls verwendet werden. Weitere Informationen zum Schreiben von CRON-Ausdrücken finden Sie in vielen Anleitungen im Internet, darunter `this one <https://docs.oracle.com/cd/E12058_01/doc/doc.1014/e12030/cron_expressions.htm>`_. |morpheus|-Ausführungszeitpläne unterstützen die meisten Cron-Syntaxen, aber bestimmte komplexere Ausdrücke können bei der Auswertung fehlschlagen, und der Execute Schedule wird nicht gespeichert. Außerdem können einige komplexe Ausdrücke gespeichert werden und korrekt funktionieren, während die freundliche schriftliche Auswertung unter dem Feld SCHEDULE nicht korrekt interpretiert wird. Dies liegt an einem Problem mit der zugrunde liegenden Bibliothek, die zum Erstellen dieses Features verwendet wird, und kann derzeit nicht einfach behoben werden."
 
 #: ../../library/automation/execute_scheduling.rst:11
 msgid "Create Execution Schedules"
-msgstr ""
+msgstr "Execution Schedules erstellen"
 
 #: ../../library/automation/execute_scheduling.rst:14
 msgid "Name of the Execution Schedule"
-msgstr ""
+msgstr "Name des Execution Schedule"
 
 #: ../../library/automation/execute_scheduling.rst:16
 msgid ""
 "When assigning Execution Schedules, the name value will appear in the "
 "selection drop-down. Using a name that references the time interval is "
 "often helpful"
-msgstr ""
+msgstr "Beim Zuweisen von Execution Schedules erscheint der Namewert im Auswahl-Dropdown. Ein Name, der auf das Zeitintervall verweist, ist oft hilfreich"
 
 #: ../../library/automation/execute_scheduling.rst:19
 msgid ""
 "Description of the Execution Schedule for reference in the Execution "
 "Schedules list"
-msgstr ""
+msgstr "Beschreibung des Execution Schedule als Referenz in der Execution-Schedules-Liste"
 
 #: ../../library/automation/execute_scheduling.rst:20
 msgid "VISIBILITY"
-msgstr ""
+msgstr "VISIBILITY"
 
 #: ../../library/automation/execute_scheduling.rst:21
 msgid ""
 "|mastertenant| administrators may share Execute Schedules with Subtenants"
 " by setting the visibility to Public"
-msgstr ""
+msgstr "|mastertenant|-Administratoren können Execute Schedules mit Subtenants teilen, indem sie die Sichtbarkeit auf Public setzen"
 
 #: ../../library/automation/execute_scheduling.rst:23
 msgid "The time zone for execution"
-msgstr ""
+msgstr "Die Zeitzone für die Ausführung"
 
 #: ../../library/automation/execute_scheduling.rst:25
 msgid ""
 "Check to enable the schedule. Uncheck to disable all associated "
 "executions and remove the schedule as an option for Jobs in the future"
-msgstr ""
+msgstr "Aktivieren Sie das Kontrollkästchen, um den Zeitplan zu aktivieren. Deaktivieren Sie es, um alle zugehörigen Ausführungen zu deaktivieren und den Zeitplan als Option für zukünftige Jobs zu entfernen"
 
 #: ../../library/automation/execute_scheduling.rst:26
 msgid "SCHEDULE"
-msgstr ""
+msgstr "SCHEDULE"
 
 #: ../../library/automation/execute_scheduling.rst:27
 msgid ""
 "Enter CRON expression for the Execution Schedule, for example ``0 0 * * "
 "*`` equals ``Every day at 00:00``"
-msgstr ""
+msgstr "Geben Sie den CRON-Ausdruck für den Execution Schedule ein, z. B. entspricht ``0 0 * * *`` ``Every day at 00:00``"
 
 #: ../../library/automation/execute_scheduling.rst:28
 msgid "SCHEDULE TRANSLATION"
-msgstr ""
+msgstr "SCHEDULE TRANSLATION"
 
 #: ../../library/automation/execute_scheduling.rst:29
 msgid ""
@@ -3208,5 +3208,5 @@ msgid ""
 "Highlighted values can be updated by selecting the value, and relevant "
 "options will be presented. The CRON expression will automatically be "
 "updated"
-msgstr ""
+msgstr "Der eingegebene CRON-Zeitplan wird unter dem Feld SCHEDULE übersetzt. Hervorgehobene Werte können durch Auswählen des Werts aktualisiert werden, und relevante Optionen werden angezeigt. Der CRON-Ausdruck wird automatisch aktualisiert"
 

@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:2
 msgid "VM Compute Configuration"
-msgstr ""
+msgstr "Configuration du calcul VM"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:5
 msgid "vCPU Placement"
-msgstr ""
+msgstr "Placement vCPU"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:7
 msgid ""
@@ -35,60 +35,60 @@ msgid ""
 "The |morpheus| Agent periodically evaluates all running VMs on each host "
 "and adjusts their vCPU-to-physical-CPU bindings based on the host's NUMA "
 "and L3 cache topology."
-msgstr ""
+msgstr "Le placement vCPU est une fonctionnalité au niveau du cluster qui gère activement l'affinité CPU physique des vCPU des machines virtuelles pour optimiser les performances. L'agent |morpheus| évalue périodiquement toutes les VM en cours d'exécution sur chaque hôte et ajuste leurs liaisons vCPU-CPU physique en fonction de la topologie NUMA et du cache L3 de l'hôte."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:9
 msgid ""
 "This feature is especially important for workloads that are sensitive to "
 "cross-NUMA memory access latency or L3 cache contention."
-msgstr ""
+msgstr "Cette fonctionnalité est particulièrement importante pour les charges de travail sensibles à la latence d'accès mémoire inter-NUMA ou à la contention du cache L3."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:12
 msgid "Enabling vCPU Placement"
-msgstr ""
+msgstr "Activation du placement vCPU"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:14
 msgid ""
 "Navigate to :menuselection:`Infrastructure --> Clusters` and select the "
 "HVM cluster"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Clusters` et sélectionnez le cluster HVM"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:15
 msgid "Click :guilabel:`Edit`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Edit`"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:16
 msgid "In the **Options** section, locate the **Dynamic Placement Mode** field"
-msgstr ""
+msgstr "Dans la section **Options**, localisez le champ **Dynamic Placement Mode**"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:17
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:67
 msgid "Select the desired mode:"
-msgstr ""
+msgstr "Sélectionnez le mode souhaité :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:23
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:73
 msgid "Mode"
-msgstr ""
+msgstr "Mode"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:24
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:74
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:25
 msgid "Unmanaged"
-msgstr ""
+msgstr "Non gérés"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:26
 msgid ""
 "vCPU placement is not managed. The hypervisor's default scheduler handles"
 " CPU assignment. This is the default setting."
-msgstr ""
+msgstr "Le placement vCPU n'est pas géré. Le planificateur par défaut de l'hyperviseur gère l'attribution CPU. Il s'agit du paramètre par défaut."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:27
 msgid "Region"
-msgstr ""
+msgstr "Région"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:28
 msgid ""
@@ -97,70 +97,70 @@ msgid ""
 "locality boundary for optimal performance while allowing the hypervisor "
 "flexibility within that region. If a VM is too large to fit within a "
 "single region, it switches to pinned mode for that VM."
-msgstr ""
+msgstr "Les vCPU de chaque VM sont répartis sur tous les CPU physiques d'une seule région NUMA/cache L3. Cela maintient les vCPU de la VM dans la même limite de localité mémoire pour des performances optimales tout en laissant de la flexibilité à l'hyperviseur dans cette région. Si une VM est trop grande pour tenir dans une seule région, elle bascule en mode épinglé pour cette VM."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:29
 msgid "Pinned"
-msgstr ""
+msgstr "Épinglé"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:30
 msgid ""
 "Each vCPU is pinned to a specific physical CPU core, chosen based on the "
 "least-utilized core available. This provides the most deterministic "
 "performance but reduces scheduler flexibility."
-msgstr ""
+msgstr "Chaque vCPU est épinglé à un cœur CPU physique spécifique, choisi en fonction du cœur le moins utilisé disponible. Cela offre les performances les plus déterministes mais réduit la flexibilité du planificateur."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:32
 msgid "Click :guilabel:`Save`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Save`"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:35
 msgid "How vCPU Placement Works"
-msgstr ""
+msgstr "Fonctionnement du placement vCPU"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:37
 msgid ""
 "When enabled, the |morpheus| Agent on each host runs a periodic placement"
 " cycle:"
-msgstr ""
+msgstr "Lorsqu'il est activé, l'agent |morpheus| sur chaque hôte exécute un cycle de placement périodique :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:39
 msgid ""
 "The host's physical CPU topology is read (NUMA nodes, sockets, cores, and"
 " L3 cache groups)"
-msgstr ""
+msgstr "La topologie CPU physique de l'hôte est lue (nœuds NUMA, sockets, cœurs et groupes de cache L3)"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:40
 msgid "All running VMs are enumerated and their current vCPU affinities inspected"
-msgstr ""
+msgstr "Toutes les VM en cours d'exécution sont énumérées et leurs affinités vCPU actuelles sont inspectées"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:41
 msgid "For each VM:"
-msgstr ""
+msgstr "Pour chaque VM :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:43
 msgid ""
 "If the VM has **guest vNUMA topology defined** (see `vNUMA Provisioning`_"
 " below), vCPUs are pinned to the corresponding host NUMA node's physical "
 "CPUs. This takes priority over the cluster placement mode."
-msgstr ""
+msgstr "Si la VM a une **topologie vNUMA invité définie** (voir `vNUMA Provisioning`_ ci-dessous), les vCPU sont épinglés aux CPU physiques du nœud NUMA hôte correspondant. Cela a priorité sur le mode de placement du cluster."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:44
 msgid ""
 "In **Region** mode: the least-utilized NUMA/L3 region is selected and all"
 " of the VM's vCPUs are given affinity to the CPUs in that region"
-msgstr ""
+msgstr "En mode **Region** : la région NUMA/L3 la moins utilisée est sélectionnée et tous les vCPU de la VM reçoivent une affinité pour les CPU de cette région"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:45
 msgid ""
 "In **Pinned** mode (or if the VM's vCPU count exceeds a single region's "
 "capacity): each vCPU is individually pinned to the least-utilized "
 "physical CPU"
-msgstr ""
+msgstr "En mode **Pinned** (ou si le nombre de vCPU de la VM dépasse la capacité d'une seule région) : chaque vCPU est individuellement épinglé au CPU physique le moins utilisé"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:48
 msgid "Excluded Cores"
-msgstr ""
+msgstr "Cœurs exclus"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:50
 msgid ""
@@ -168,11 +168,11 @@ msgid ""
 "threads) can be excluded from vCPU placement. Excluded cores are "
 "specified in the cluster configuration and the placement manager will "
 "never assign VM vCPUs to these cores."
-msgstr ""
+msgstr "Les cœurs réservés pour les fonctions au niveau de l'hôte (comme DPDK ou les threads I/O dédiés) peuvent être exclus du placement vCPU. Les cœurs exclus sont spécifiés dans la configuration du cluster et le gestionnaire de placement n'assignera jamais de vCPU de VM à ces cœurs."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:53
 msgid "vNUMA Provisioning"
-msgstr ""
+msgstr "Provisionnement vNUMA"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:55
 msgid ""
@@ -181,7 +181,7 @@ msgid ""
 " their own memory allocation and thread placement. This is critical for "
 "\"wide\" VMs that span multiple physical CPU sockets, such as large "
 "database or HPC workloads."
-msgstr ""
+msgstr "vNUMA (NUMA virtuel) expose la topologie NUMA de l'hôte au système d'exploitation invité, permettant aux charges de travail sensibles à NUMA dans la VM d'optimiser leur propre allocation mémoire et placement de threads. Ceci est essentiel pour les VM « larges » qui s'étendent sur plusieurs sockets CPU physiques, comme les bases de données volumineuses ou les charges de travail HPC."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:57
 msgid ""
@@ -189,45 +189,45 @@ msgid ""
 "topology that maps to the host's physical NUMA boundaries. The vCPU "
 "Placement Manager then automatically pins each vNUMA cell's vCPUs to the "
 "corresponding host NUMA node's physical CPUs."
-msgstr ""
+msgstr "Lorsque vNUMA est activé, la configuration de la VM inclut une topologie NUMA virtuelle qui correspond aux limites NUMA physiques de l'hôte. Le gestionnaire de placement vCPU épingle alors automatiquement les vCPU de chaque cellule vNUMA aux CPU physiques du nœud NUMA hôte correspondant."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:60
 msgid "Configuring vNUMA"
-msgstr ""
+msgstr "Configuration de vNUMA"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:62
 msgid ""
 "vNUMA is configured per-VM in the **Advanced Options** section during "
 "provisioning or reconfigure:"
-msgstr ""
+msgstr "vNUMA est configuré par VM dans la section **Advanced Options** lors du provisionnement ou de la reconfiguration :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:64
 msgid "Navigate to the VM detail page"
-msgstr ""
+msgstr "Accédez à la page de détail de la VM"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:65
 msgid ""
 "Click :guilabel:`Actions` > :guilabel:`Reconfigure` (or configure during "
 "provisioning)"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Actions` > :guilabel:`Reconfigure` (ou configurez pendant le provisionnement)"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:66
 msgid "In the **Advanced Options** section, locate the **vNUMA Mode** field"
-msgstr ""
+msgstr "Dans la section **Advanced Options**, localisez le champ **vNUMA Mode**"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:75
 msgid "Off"
-msgstr ""
+msgstr "Désactivé"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:76
 msgid ""
 "No virtual NUMA topology is emitted in the VM configuration. The guest "
 "sees a flat CPU/memory layout. This is the default."
-msgstr ""
+msgstr "Aucune topologie NUMA virtuelle n'est émise dans la configuration de la VM. L'invité voit une disposition CPU/mémoire plate. Il s'agit du paramètre par défaut."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:77
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:78
 msgid ""
@@ -236,121 +236,121 @@ msgid ""
 "cells are only generated when the VM is large enough to span a NUMA "
 "boundary (i.e., its cores or memory exceed what a single NUMA node can "
 "provide). If the VM fits within one NUMA node, no vNUMA is emitted."
-msgstr ""
+msgstr "|morpheus| calcule automatiquement la topologie vNUMA optimale en fonction de la disposition NUMA physique de l'hôte et de l'allocation de ressources de la VM. Les cellules vNUMA ne sont générées que lorsque la VM est suffisamment grande pour s'étendre sur une limite NUMA (c'est-à-dire que ses cœurs ou sa mémoire dépassent ce qu'un seul nœud NUMA peut fournir). Si la VM tient dans un nœud NUMA, aucun vNUMA n'est émis."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:79
 msgid "Manual"
-msgstr ""
+msgstr "Manuel"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:80
 msgid ""
 "Uses a previously-synced or explicitly-stored NUMA cell configuration. "
 "This is automatically set when |morpheus| discovers an existing VM with "
 "vNUMA topology already configured."
-msgstr ""
+msgstr "Utilise une configuration de cellule NUMA précédemment synchronisée ou explicitement stockée. Ceci est défini automatiquement lorsque |morpheus| découvre une VM existante avec une topologie vNUMA déjà configurée."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:82
 msgid "Save the reconfiguration"
-msgstr ""
+msgstr "Enregistrez la reconfiguration"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:84
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:84
 msgid ""
 "Changing the vNUMA mode requires the VM to be powered off and its "
 "configuration to be regenerated."
-msgstr ""
+msgstr "La modification du mode vNUMA nécessite que la VM soit arrêtée et que sa configuration soit régénérée."
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:87
 msgid "How Auto Mode Calculates vNUMA Topology"
-msgstr ""
+msgstr "Comment le mode Auto calcule la topologie vNUMA"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:89
 msgid "In Auto mode, the system:"
-msgstr ""
+msgstr "En mode Auto, le système :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:91
 msgid ""
 "Reads the host's physical NUMA topology (number of nodes, CPUs per node, "
 "memory per node)"
-msgstr ""
+msgstr "Lit la topologie NUMA physique de l'hôte (nombre de nœuds, CPU par nœud, mémoire par nœud)"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:92
 msgid ""
 "Determines whether the VM spans a NUMA boundary by comparing the VM's "
 "total cores and memory against a single NUMA node's capacity"
-msgstr ""
+msgstr "Détermine si la VM s'étend sur une limite NUMA en comparant le total de cœurs et de mémoire de la VM à la capacité d'un seul nœud NUMA"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:93
 msgid ""
 "If the VM fits within one node, no vNUMA cells are generated (flat "
 "topology is optimal)"
-msgstr ""
+msgstr "Si la VM tient dans un nœud, aucune cellule vNUMA n'est générée (la topologie plate est optimale)"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:94
 msgid ""
 "If the VM spans nodes, calculates the number of vNUMA cells needed "
 "(capped at the host's total NUMA node count)"
-msgstr ""
+msgstr "Si la VM s'étend sur plusieurs nœuds, calcule le nombre de cellules vNUMA nécessaires (plafonné au nombre total de nœuds NUMA de l'hôte)"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:95
 msgid "Distributes cores and memory evenly across cells"
-msgstr ""
+msgstr "Répartit les cœurs et la mémoire uniformément entre les cellules"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:98
 msgid "Synced VMs and Manual Mode"
-msgstr ""
+msgstr "VM synchronisées et mode Manuel"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:100
 msgid ""
 "When |morpheus| discovers existing VMs on a host (brownfield import or "
 "inventory sync), it reads any existing vNUMA topology from the VM's "
 "configuration. If vNUMA cells are found:"
-msgstr ""
+msgstr "Lorsque |morpheus| découvre des VM existantes sur un hôte (import brownfield ou synchronisation d'inventaire), il lit toute topologie vNUMA existante dans la configuration de la VM. Si des cellules vNUMA sont trouvées :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:102
 msgid "The vNUMA Mode is automatically set to **Manual**"
-msgstr ""
+msgstr "Le mode vNUMA est automatiquement défini sur **Manual**"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:103
 msgid ""
 "The cell configuration is stored and preserved across reconfigure "
 "operations"
-msgstr ""
+msgstr "La configuration des cellules est stockée et préservée lors des opérations de reconfiguration"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:104
 msgid ""
 "The vCPU Placement Manager uses this topology to correctly pin vCPUs to "
 "the appropriate host NUMA nodes"
-msgstr ""
+msgstr "Le gestionnaire de placement vCPU utilise cette topologie pour épingler correctement les vCPU aux nœuds NUMA hôte appropriés"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:107
 msgid "Integration with vCPU Placement"
-msgstr ""
+msgstr "Intégration avec le placement vCPU"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:109
 msgid "vNUMA and vCPU Placement work together:"
-msgstr ""
+msgstr "vNUMA et le placement vCPU fonctionnent ensemble :"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:111
 msgid ""
 "When a VM has vNUMA cells defined (Auto or Manual mode), the vCPU "
 "Placement Manager pins each cell's vCPUs to the physical CPUs of the "
 "corresponding host NUMA node"
-msgstr ""
+msgstr "Lorsqu'une VM a des cellules vNUMA définies (mode Auto ou Manual), le gestionnaire de placement vCPU épingle les vCPU de chaque cellule aux CPU physiques du nœud NUMA hôte correspondant"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:112
 msgid ""
 "This ensures that memory allocated by the guest on a given vNUMA node is "
 "physically local to the CPUs handling that workload"
-msgstr ""
+msgstr "Cela garantit que la mémoire allouée par l'invité sur un nœud vNUMA donné est physiquement locale aux CPU qui traitent cette charge de travail"
 
 #: ../../infrastructure/clusters/hvm/vm_compute.rst:113
 msgid ""
 "VMs with vNUMA take priority over the cluster-level placement mode — the "
 "per-cell pinning is always applied regardless of whether the cluster is "
 "set to Region or Pinned"
-msgstr ""
+msgstr "Les VM avec vNUMA ont priorité sur le mode de placement au niveau du cluster — l'épinglage par cellule est toujours appliqué indépendamment du fait que le cluster soit défini sur Region ou Pinned"
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:2
 msgid "Azure Active Directory SSO (SAML)"
-msgstr ""
+msgstr "SSO Azure Active Directory (SAML)"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:4
 msgid ""
@@ -30,65 +30,65 @@ msgid ""
 "in |morpheus| using the SAML Identity Source Type. The Azure AD SSO "
 "configuration is slightly different than other SAML providers, and this "
 "guide will assist in adding a Azure AD SSO Identity Source."
-msgstr ""
+msgstr "L'authentification unique Azure Active Directory peut être ajoutée comme source d'identité dans |morpheus| à l'aide du type de source d'identité SAML. La configuration SSO Azure AD diffère légèrement des autres fournisseurs SAML ; ce guide vous aidera à ajouter une source d'identité SSO Azure AD."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:8
 msgid "Create Azure Enterprise Application"
-msgstr ""
+msgstr "Créer une application d'entreprise Azure"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:10
 msgid "Login to the `Azure Portal <https://portal.azure.com>`_"
-msgstr ""
+msgstr "Connectez-vous au `Portail Azure <https://portal.azure.com>`_"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:11
 msgid "Navigate to: ``Azure Active Directory > Enterprise Applications``"
-msgstr ""
+msgstr "Accédez à : ``Azure Active Directory > Enterprise Applications``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:12
 msgid "Click the ``+ New application`` button at the top"
-msgstr ""
+msgstr "Cliquez sur le bouton ``+ New application`` en haut"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:13
 msgid "Click the ``+ Create your own application`` button at the top"
-msgstr ""
+msgstr "Cliquez sur le bouton ``+ Create your own application`` en haut"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:14
 msgid ""
 "Ensure ``Integrate any other application you don't find in the gallery "
 "(Non-gallery)`` is selected and enter a name for the app.  Common "
 "examples are:  ``MorpheusSSO``"
-msgstr ""
+msgstr "Assurez-vous que ``Integrate any other application you don't find in the gallery (Non-gallery)`` est sélectionné et saisissez un nom pour l'application. Exemples courants : ``MorpheusSSO``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:15
 msgid "Click the ``Create`` button at the bottom and wait for it to complete"
-msgstr ""
+msgstr "Cliquez sur le bouton ``Create`` en bas et attendez la fin de l'opération"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:16
 msgid ""
 "Once created, you'll be in the ``Overview`` of the application created.  "
 "Navigate to the ``Single sign-on`` section from the left pane"
-msgstr ""
+msgstr "Une fois créée, vous serez dans la ``Overview`` de l'application. Accédez à la section ``Single sign-on`` dans le volet de gauche"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:17
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:62
 msgid "Choose ``SAML`` as the Single sign-on method"
-msgstr ""
+msgstr "Choisissez ``SAML`` comme méthode d'authentification unique"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:18
 msgid ""
 "Copy both the ``Login URL`` and ``Logout URL`` in Step 4, we'll need "
 "these in some of the next steps"
-msgstr ""
+msgstr "Copiez l'``Login URL`` et l'``Logout URL`` à l'étape 4 ; nous en aurons besoin dans les étapes suivantes"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:19
 msgid ""
 "Before we can continue configuring the application, the configuration "
 "needs to be generated in |morpheus| for more data"
-msgstr ""
+msgstr "Avant de poursuivre la configuration de l'application, la configuration doit être générée dans |morpheus| pour obtenir davantage de données"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:22
 msgid "Create an Azure AD SAML Integration in |morpheus|"
-msgstr ""
+msgstr "Créer une intégration SAML Azure AD dans |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:24
 msgid ""
@@ -99,85 +99,85 @@ msgid ""
 "ID)`` and ``Reply URL (Assertion Consumer Service URL)`` to input into "
 "Azure SSO configuration, we need to create a ``Azure AD SAML SSO`` "
 "integration in |morpheus| first."
-msgstr ""
+msgstr "Azure nécessite la saisie de l'``Identifier (Entity ID)`` et de l'``Reply URL (Assertion Consumer Service URL)`` dans la configuration SSO Azure avant de fournir les points de terminaison et le certificat nécessaires pour ajouter l'intégration dans |morpheus|. Pour obtenir l'``Identifier (Entity ID)`` et l'``Reply URL (Assertion Consumer Service URL)`` à saisir dans la configuration SSO Azure, nous devons d'abord créer une intégration ``Azure AD SAML SSO`` dans |morpheus|."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:28
 msgid "To add the integration:"
-msgstr ""
+msgstr "Pour ajouter l'intégration :"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:30
 msgid "Login to |morpheus|"
-msgstr ""
+msgstr "Connectez-vous à |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:31
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:99
 msgid "Navigate to |AdmTen|"
-msgstr ""
+msgstr "Accédez à |AdmTen|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:32
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:100
 msgid "Click a tenant hyperlink"
-msgstr ""
+msgstr "Cliquez sur un lien hypertexte de locataire"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:33
 msgid "Click the :guilabel:`IDENTITY SOURCES` button in the Tenant detail page"
-msgstr ""
+msgstr "Cliquez sur le bouton :guilabel:`IDENTITY SOURCES` dans la page de détail du Locataire"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:34
 msgid "Click the :guilabel:`+ ADD IDENTITY SOURCE` button"
-msgstr ""
+msgstr "Cliquez sur le bouton :guilabel:`+ ADD IDENTITY SOURCE`"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:35
 msgid "Select ``Azure AD SAML SSO`` from the ``TYPE`` dropdown"
-msgstr ""
+msgstr "Sélectionnez ``Azure AD SAML SSO`` dans la liste déroulante ``TYPE``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:36
 msgid "Add"
-msgstr ""
+msgstr "Ajouter"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:38
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:40
 msgid "(Optional) Description"
-msgstr ""
+msgstr "(Optionnel) Description"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:42
 msgid ""
 "Paste the ``Login URL`` copied from Azure into the ``LOGIN REDIRECT URL``"
 " field"
-msgstr ""
+msgstr "Collez l'``Login URL`` copiée depuis Azure dans le champ ``LOGIN REDIRECT URL``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:44
 msgid ""
 "Paste the ``Logout URL`` copied from Azure into the ``SAML LOGOUT "
 "REDIRECT URL`` field"
-msgstr ""
+msgstr "Collez l'``Logout URL`` copiée depuis Azure dans le champ ``SAML LOGOUT REDIRECT URL``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:46
 msgid ""
 "This is the minimum information needed for now, which will let us "
 "generate the details needed from |morpheus|.  We'll return to this "
 "configuration page later to enter more information."
-msgstr ""
+msgstr "Il s'agit des informations minimales nécessaires pour l'instant, ce qui nous permettra de générer les détails requis depuis |morpheus|. Nous reviendrons plus tard sur cette page de configuration pour saisir d'autres informations."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:47
 msgid "Click the :guilabel:`SAVE CHANGES` button"
-msgstr ""
+msgstr "Cliquez sur le bouton :guilabel:`SAVE CHANGES`"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:49
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:123
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:134
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:49
 msgid ""
 "Setting SAML REQUEST to \"No Signature\" and SAML RESPONSE to \"Do Not "
 "Validate Assertion Signature\" is allowed but not recommended for "
 "security reasons."
-msgstr ""
+msgstr "Définir SAML REQUEST sur « No Signature » et SAML RESPONSE sur « Do Not Validate Assertion Signature » est autorisé mais déconseillé pour des raisons de sécurité."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:51
 msgid ""
@@ -185,7 +185,7 @@ msgid ""
 "URL` (``Reply URL (Assertion Consumer Service URL)``) will be provide in "
 "the Identity Source list view. Copy these for use in Azure SSO "
 "configuration."
-msgstr ""
+msgstr "Après l'enregistrement, l'`Entity ID` (``Identifier (Entity ID)``) et l'`SP ACS URL` (``Reply URL (Assertion Consumer Service URL)``) seront fournis dans la vue liste des sources d'identité. Copiez-les pour les utiliser dans la configuration SSO Azure."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:53
 msgid ""
@@ -195,50 +195,50 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:57
 msgid "Configure Azure Enterprise Application"
-msgstr ""
+msgstr "Configurer l'application d'entreprise Azure"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:59
 msgid ""
 "This guide assumes an Azure AD Enterprise Application has already been "
 "created. Please refer to documentation above, if this has not already "
 "been configured."
-msgstr ""
+msgstr "Ce guide suppose qu'une application d'entreprise Azure AD a déjà été créée. Consultez la documentation ci-dessus si ce n'est pas encore le cas."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:61
 msgid ""
 "Navigate to: ``Azure Active Directory > Enterprise Applications > Single "
 "sign-on``"
-msgstr ""
+msgstr "Accédez à : ``Azure Active Directory > Enterprise Applications > Single sign-on``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:63
 msgid ""
 "On Step 1 (``Basic SAML Configuration``), click the ``Edit`` button and "
 "enter the following:"
-msgstr ""
+msgstr "À l'étape 1 (``Basic SAML Configuration``), cliquez sur le bouton ``Edit`` et saisissez les éléments suivants :"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:65
 msgid "Identifier (Entity ID)"
-msgstr ""
+msgstr "Identifier (Entity ID)"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:66
 msgid ""
 "Enter the ``Entity ID`` URL from the |morpheus| Identity Source "
 "Integration above"
-msgstr ""
+msgstr "Saisissez l'URL ``Entity ID`` de l'intégration de source d'identité |morpheus| ci-dessus"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:68
 msgid "Reply URL (Assertion Consumer Service URL)"
-msgstr ""
+msgstr "Reply URL (Assertion Consumer Service URL)"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:69
 msgid ""
 "Enter the ``SP ACS URL`` from the |morpheus| Identity Source Integration "
 "above"
-msgstr ""
+msgstr "Saisissez l'URL ``SP ACS URL`` de l'intégration de source d'identité |morpheus| ci-dessus"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:71
 msgid "Logout URL"
-msgstr ""
+msgstr "Logout URL"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:72
 msgid ""
@@ -246,21 +246,21 @@ msgid ""
 "tenant, the format may instead be the following:  "
 "``https://yourUrl/login/account/1`` The login URL can be found under "
 ":guilabel:`IDENTITY SOURCES` in the tenant"
-msgstr ""
+msgstr "Saisissez le format suivant : ``https://yourUrl/login/`` S'il s'agit d'un sous-locataire, le format peut être : ``https://yourUrl/login/account/1`` L'URL de connexion se trouve sous :guilabel:`IDENTITY SOURCES` dans le locataire"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:76
 msgid "On Step 2 (``Attributes and Claims``), click the ``Edit`` button"
-msgstr ""
+msgstr "À l'étape 2 (``Attributes and Claims``), cliquez sur le bouton ``Edit``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:77
 msgid "Click the ``Add a group claim`` button at the top"
-msgstr ""
+msgstr "Cliquez sur le bouton ``Add a group claim`` en haut"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:78
 msgid ""
 "Choose ``All groups`` and ensure ``Group ID`` is selected for the "
 "``Source attribute`` dropdown"
-msgstr ""
+msgstr "Choisissez ``All groups`` et assurez-vous que ``Group ID`` est sélectionné dans la liste déroulante ``Source attribute``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:80
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:85
@@ -272,105 +272,105 @@ msgstr ""
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:145
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:187
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:80
 msgid ""
 "You can also choose ``Security groups``, which ever makes more sense for "
 "the organization"
-msgstr ""
+msgstr "Vous pouvez également choisir ``Security groups``, selon ce qui convient le mieux à l'organisation"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:82
 msgid ""
 "Close the pane and return to the Enterprise Application in the ``Single "
 "sign-on`` section"
-msgstr ""
+msgstr "Fermez le volet et revenez à l'application d'entreprise dans la section ``Single sign-on``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:83
 msgid ""
 "On Step 3 (``SAML Certificates``), click the ``Download`` link next to "
 "``Certificate (Base64)`` and ``Federation Metadata XML``"
-msgstr ""
+msgstr "À l'étape 3 (``SAML Certificates``), cliquez sur le lien ``Download`` à côté de ``Certificate (Base64)`` et ``Federation Metadata XML``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:85
 msgid ""
 "The files will download, keep them available for later configuation in "
 "|morpheus|"
-msgstr ""
+msgstr "Les fichiers seront téléchargés ; conservez-les pour la configuration ultérieure dans |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:87
 msgid "Navigate to ``Users and Groups`` in the left pane"
-msgstr ""
+msgstr "Accédez à ``Users and Groups`` dans le volet de gauche"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:88
 msgid "Click the ``Add user/group`` button"
-msgstr ""
+msgstr "Cliquez sur le bouton ``Add user/group``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:89
 msgid ""
 "Add Azure groups to this application that will be able to login to "
 "|morpheus|"
-msgstr ""
+msgstr "Ajoutez des groupes Azure à cette application qui pourront se connecter à |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:91
 msgid ""
 "Note the object ID for each of these groups, as they will be used later "
 "when configuring |morpheus| to map the group to roles"
-msgstr ""
+msgstr "Notez l'ID d'objet de chacun de ces groupes ; ils seront utilisés plus tard lors de la configuration du mappage de groupes vers rôles dans |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:93
 msgid "Once groups have been added, click the ``Assign`` button at the bottom"
-msgstr ""
+msgstr "Une fois les groupes ajoutés, cliquez sur le bouton ``Assign`` en bas"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:96
 msgid "Configure the Azure AD SAML Integration in |morpheus|"
-msgstr ""
+msgstr "Configurer l'intégration SAML Azure AD dans |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:98
 msgid "Login to |morpheus| using ``Username and Password``, as usual"
-msgstr ""
+msgstr "Connectez-vous à |morpheus| avec ``Username and Password``, comme d'habitude"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:101
 msgid "Select :guilabel:`IDENTITY SOURCES` in the Tenant detail page"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`IDENTITY SOURCES` dans la page de détail du Locataire"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:102
 msgid "Click the pencil (edit) next to the integration created previously"
-msgstr ""
+msgstr "Cliquez sur le crayon (modifier) à côté de l'intégration créée précédemment"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:103
 msgid "Ensure the ``SAML REQUEST`` field is set to ``Self Signed``"
-msgstr ""
+msgstr "Assurez-vous que le champ ``SAML REQUEST`` est défini sur ``Self Signed``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:105
 msgid ""
 "A custom RSA signature can be used here if needed, if required by the "
 "orgnaization"
-msgstr ""
+msgstr "Une signature RSA personnalisée peut être utilisée ici si l'organisation l'exige"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:107
 msgid ""
 "Ensure the ``SAML RESPONSE`` field is set to ``Validate Assertion "
 "Signature``"
-msgstr ""
+msgstr "Assurez-vous que le champ ``SAML RESPONSE`` est défini sur ``Validate Assertion Signature``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:109
 msgid ""
 "With this setting, if the assertion signature ever changes in the Azure "
 "Enterprise Application, this would need to be updated to match"
-msgstr ""
+msgstr "Avec ce paramètre, si la signature d'assertion change dans l'application d'entreprise Azure, il faudra la mettre à jour en conséquence"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:111
 msgid ""
 "Edit/view the downloaded ``Federation Metadata XML`` (``.xml`` extension)"
 " file from the previous section"
-msgstr ""
+msgstr "Modifiez/consultez le fichier ``Federation Metadata XML`` (extension ``.xml``) téléchargé dans la section précédente"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:113
 msgid ""
 "It is recommended to use ``Microsoft Edge``, or another browser, to view "
 "the contents"
-msgstr ""
+msgstr "Il est recommandé d'utiliser ``Microsoft Edge`` ou un autre navigateur pour consulter le contenu"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:115
 msgid ""
@@ -378,45 +378,45 @@ msgid ""
 "</X509Certificate>`` under the ``<Signature>`` section.  Copy the entire "
 "contents between the ``<X509Certificate>`` and ``</X509Certificate>``, it"
 " is very long"
-msgstr ""
+msgstr "Dans le fichier ``Federation Metadata XML``, localisez le ``<X509Certificate> </X509Certificate>`` sous la section ``<Signature>``. Copiez l'intégralité du contenu entre ``<X509Certificate>`` et ``</X509Certificate>`` ; il est très long"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:116
 msgid ""
 "Paste the value copied from the ``Federation Metadata XML`` file into the"
 " ``Public Key (Optional)`` box, below the ``SAML RESPONSE`` dropdown"
-msgstr ""
+msgstr "Collez la valeur copiée depuis le fichier ``Federation Metadata XML`` dans la zone ``Public Key (Optional)``, sous la liste déroulante ``SAML RESPONSE``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:119
 msgid "Configure Role Mappings"
-msgstr ""
+msgstr "Configurer les mappages de rôles"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:121
 msgid ""
 "Role mappings will map Azure AD Groups to Morpheus Roles. Azure AD users "
 "will be assigned Roles in |morpheus| upon signing in based on their Group"
 " Membership in Azure AD."
-msgstr ""
+msgstr "Les mappages de rôles associent les groupes Azure AD aux rôles Morpheus. Les utilisateurs Azure AD se verront attribuer des rôles dans |morpheus| lors de la connexion en fonction de leur appartenance aux groupes Azure AD."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:123
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:134
 msgid ""
 "Use an Azure Groups ``Object ID``, not Group name, when entering Role "
 "Mappings. Example: ``7626a4a2-b388-4d9b-a228-72ce9a33bd4b``"
-msgstr ""
+msgstr "Utilisez l'``Object ID`` d'un groupe Azure, et non le nom du groupe, lors de la saisie des mappages de rôles. Exemple : ``7626a4a2-b388-4d9b-a228-72ce9a33bd4b``"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:125
 msgid "DEFAULT ROLE"
-msgstr ""
+msgstr "DEFAULT ROLE"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:126
 msgid ""
 "Role a Azure AD user will be assigned by default upon signing in to "
 "|morpheus| using this Identity Source."
-msgstr ""
+msgstr "Rôle attribué par défaut à un utilisateur Azure AD lors de la connexion à |morpheus| via cette source d'identité."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:127
 msgid "REQUIRED AZURE AD GROUP OBJECT ID"
-msgstr ""
+msgstr "REQUIRED AZURE AD GROUP OBJECT ID"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:128
 msgid ""
@@ -426,21 +426,21 @@ msgid ""
 "blank, any user from the Azure AD App will be able to sign in to "
 "|morpheus| and will be assigned the Default Role if no Role Mappings "
 "match AD Group membership."
-msgstr ""
+msgstr "ID d'objet du groupe Azure AD dont l'utilisateur doit être membre pour être autorisé à se connecter à |morpheus|. Les utilisateurs n'appartenant pas à ce groupe ne seront pas autorisés à se connecter à |morpheus|. Ce champ est optionnel ; s'il est laissé vide, tout utilisateur de l'application Azure AD pourra se connecter à |morpheus| et se verra attribuer le rôle par défaut si aucun mappage de rôle ne correspond à l'appartenance au groupe AD."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:129
 msgid "GROUP ASSERTION ATTRIBUTE NAME"
-msgstr ""
+msgstr "GROUP ASSERTION ATTRIBUTE NAME"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:130
 msgid ""
 "Enter ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`` "
 "for Azure AD SSO"
-msgstr ""
+msgstr "Saisissez ``http://schemas.microsoft.com/ws/2008/06/identity/claims/groups`` pour Azure AD SSO"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:131
 msgid "Additional Role Mappings"
-msgstr ""
+msgstr "Mappages de rôles supplémentaires"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:132
 msgid ""
@@ -448,11 +448,11 @@ msgid ""
 " to an Azure AD Group, enter the Object ID of the desired Azure AD Group "
 "in the `Role Attribute Value` field for the corresponding |morpheus| "
 "Role."
-msgstr ""
+msgstr "Les rôles existants dans |morpheus| seront listés. Pour associer un rôle |morpheus| à un groupe Azure AD, saisissez l'ID d'objet du groupe Azure AD souhaité dans le champ `Role Attribute Value` correspondant au rôle |morpheus|."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:136
 msgid "ENABLE ROLE MAPPING PERMISSION"
-msgstr ""
+msgstr "ENABLE ROLE MAPPING PERMISSION"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:137
 msgid ""
@@ -460,18 +460,18 @@ msgid ""
 "Roles will have the ability to set role mapping for the Identity Source "
 "integration. This allows the Tenant user to edit only the role mappings "
 "without viewing or potentially editing the Identity Source configuration."
-msgstr ""
+msgstr "Lorsque cette option est sélectionnée, les utilisateurs du Locataire disposant des droits appropriés pour consulter et modifier les rôles pourront définir le mappage de rôles pour l'intégration de source d'identité. Cela permet à l'utilisateur du Locataire de modifier uniquement les mappages de rôles sans consulter ni modifier la configuration de la source d'identité."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:138
 msgid "MANUAL ROLE ASSIGNMENT"
-msgstr ""
+msgstr "MANUAL ROLE ASSIGNMENT"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:139
 msgid ""
 "When selected, administrators can manually edit Roles for users created "
 "through this identity source integration from the user detail page "
 "(|AdmUse| > Selected user)."
-msgstr ""
+msgstr "Lorsque cette option est sélectionnée, les administrateurs peuvent modifier manuellement les rôles des utilisateurs créés via cette intégration de source d'identité depuis la page de détail de l'utilisateur (|AdmUse| > Utilisateur sélectionné)."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:141
 msgid ""
@@ -479,34 +479,34 @@ msgid ""
 " guide <https://support.morpheusdata.com/s/article/How-to-enable-"
 "Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ "
 "in our KnowledgeBase."
-msgstr ""
+msgstr "Pour en savoir plus sur les autorisations de mappage de rôles des sources d'identité, consultez le `guide associé <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ dans notre base de connaissances."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:143
 msgid ""
 "Once populated, select :guilabel:`SAVE CHANGES` and the SAML identity "
 "source integration will be added. The Identity Source can be edited "
 "anytime to deactivate or change Role Mappings or other values."
-msgstr ""
+msgstr "Une fois les champs renseignés, sélectionnez :guilabel:`SAVE CHANGES` et l'intégration de source d'identité SAML sera ajoutée. La source d'identité peut être modifiée à tout moment pour la désactiver ou modifier les mappages de rôles ou d'autres valeurs."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:145
 msgid ""
 "If Role mappings are edited after Azure AD SSO users have signed into "
 "|morpheus|, currently logged in users will need to log out of |morpheus| "
 "for the new Role mappings to take effect, when applicable."
-msgstr ""
+msgstr "Si les mappages de rôles sont modifiés après que des utilisateurs Azure AD SSO se sont connectés à |morpheus|, les utilisateurs actuellement connectés devront se déconnecter de |morpheus| pour que les nouveaux mappages de rôles prennent effet, le cas échéant."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:147
 msgid ""
 "Under the ``Role Azure Group Mappings`` secton, verify the ``DEFAULT "
 "ROLE`` dropdown has the role in |morpheus| selected that all users will "
 "be assigned by default"
-msgstr ""
+msgstr "Sous la section ``Role Azure Group Mappings``, vérifiez que la liste déroulante ``DEFAULT ROLE`` contient le rôle |morpheus| que tous les utilisateurs se verront attribuer par défaut"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:149
 msgid ""
 "It is recommended that this role contains no permissions, which ensures "
 "that anyone who authenticates gets no access"
-msgstr ""
+msgstr "Il est recommandé que ce rôle ne contienne aucune autorisation, afin que toute personne s'authentifiant n'obtienne aucun accès"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:151
 msgid ""
@@ -514,15 +514,15 @@ msgid ""
 "listed.  Next to these are text boxes with ``Assertion Attribute "
 "Mappings`` inside.  Enter group object IDs from Azure into these text "
 "boxes.  This will map the Azure AD groups to specific roles in Morpheus"
-msgstr ""
+msgstr "Sous la section ``Role Azure Group Mappings``, vous verrez les noms de rôles listés. À côté se trouvent des zones de texte intitulées ``Assertion Attribute Mappings``. Saisissez les ID d'objet de groupes Azure dans ces zones de texte. Cela associera les groupes Azure AD à des rôles spécifiques dans Morpheus"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:152
 msgid "Finally, click ``Save Changes`` at the bottom of the page"
-msgstr ""
+msgstr "Enfin, cliquez sur ``Save Changes`` en bas de la page"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:154
 msgid "Here is an example of the configuration above:"
-msgstr ""
+msgstr "Voici un exemple de la configuration ci-dessus :"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:156
 msgid ""
@@ -532,7 +532,7 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:160
 msgid "Azure Group Lookups"
-msgstr ""
+msgstr "Recherches de groupes Azure"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:162
 msgid ""
@@ -543,63 +543,63 @@ msgid ""
 "populate the ``Azure Group Lookups`` section in order for those users to "
 "be able to use the Azure AD SAML SSO integration, otherwise no groups "
 "will be obtained and proper role mappings cannot occur."
-msgstr ""
+msgstr "Lorsqu'un utilisateur Azure AD possède plus de 150 attributs de groupe, Azure n'inclut pas les revendications de groupe dans la réponse SAML, et |morpheus| doit interroger Microsoft Graph pour obtenir les valeurs d'attributs de groupe de l'utilisateur. Lorsque des utilisateurs sont membres de plus de 150 groupes, renseignez la section ``Azure Group Lookups`` afin que ces utilisateurs puissent utiliser l'intégration Azure AD SAML SSO ; sinon, aucun groupe ne sera obtenu et les mappages de rôles appropriés ne pourront pas s'appliquer."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:164
 msgid "AZURE TENANT ID"
-msgstr ""
+msgstr "AZURE TENANT ID"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:165
 msgid ""
 "Add Azure AD Tenant ID if user group membership will exceed 150. See "
 ":ref:`azure_ids` for information on obtaining an Azure AD Tenant ID"
-msgstr ""
+msgstr "Ajoutez l'ID de locataire Azure AD si l'appartenance aux groupes de l'utilisateur dépassera 150. Consultez :ref:`azure_ids` pour obtenir un ID de locataire Azure AD"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:166
 msgid "AZURE APP ID"
-msgstr ""
+msgstr "AZURE APP ID"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:167
 msgid ""
 "Add Azure AD Application (Client) ID if user group membership will exceed"
 " 150. See :ref:`azure_ids` for information on obtaining an Azure AD "
 "Application (Client) ID"
-msgstr ""
+msgstr "Ajoutez l'ID d'application (client) Azure AD si l'appartenance aux groupes de l'utilisateur dépassera 150. Consultez :ref:`azure_ids` pour obtenir un ID d'application (client) Azure AD"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:168
 msgid "AZURE APP SECRET"
-msgstr ""
+msgstr "AZURE APP SECRET"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:169
 msgid ""
 "Add Azure Application (Client) Secret if user group membership will "
 "exceed 150. See :ref:`azure_secret` for information on creating an Azure "
 "Application (Client) Secret"
-msgstr ""
+msgstr "Ajoutez le secret d'application (client) Azure si l'appartenance aux groupes de l'utilisateur dépassera 150. Consultez :ref:`azure_secret` pour créer un secret d'application (client) Azure"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:170
 msgid "ROLE LINK ATTRIBUTE NAME"
-msgstr ""
+msgstr "ROLE LINK ATTRIBUTE NAME"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:171
 msgid ""
 "default: http://schemas.microsoft.com/claims/groups.link. This is not "
 "normally changed."
-msgstr ""
+msgstr "Par défaut : http://schemas.microsoft.com/claims/groups.link. Cette valeur n'est généralement pas modifiée."
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:174
 msgid "Logging Into |morpheus| with Azure AD SAML"
-msgstr ""
+msgstr "Connexion à |morpheus| avec Azure AD SAML"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:176
 msgid "Navigate to the |morpheus| URL"
-msgstr ""
+msgstr "Accédez à l'URL |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:177
 msgid ""
 "A new button will appear to allow sign-in using Azure AD SAML, with the "
 "same name as the integration.  Click the button"
-msgstr ""
+msgstr "Un nouveau bouton apparaîtra pour permettre la connexion via Azure AD SAML, portant le même nom que l'intégration. Cliquez sur le bouton"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:179
 msgid ""
@@ -609,7 +609,7 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:182
 msgid "Sign-in with your Microsoft/Azure account"
-msgstr ""
+msgstr "Connectez-vous avec votre compte Microsoft/Azure"
 
 #: ../../integration_guides/IdentityManagement/AzureAD.rst:184
 msgid ""
@@ -622,5 +622,5 @@ msgid ""
 "If no local users other than the System Admin have been created, "
 "\"USERNAME AND PASSWORD\" option will not be displayed, only the SAML "
 "option."
-msgstr ""
+msgstr "Si aucun utilisateur local autre que l'administrateur système n'a été créé, l'option « USERNAME AND PASSWORD » ne sera pas affichée, seule l'option SAML le sera."
 

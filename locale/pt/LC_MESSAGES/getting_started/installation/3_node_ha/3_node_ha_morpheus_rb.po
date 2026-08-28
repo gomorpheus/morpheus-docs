@@ -23,7 +23,7 @@ msgstr ""
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:1
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:96
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:2
 msgid ""
@@ -35,14 +35,14 @@ msgid ""
 " UIDs/GIDs starting at 999 and work down. Availability of UIDs and GIDs "
 "can be seen by inspecting ``/etc/passwd`` and ``/etc/group`` "
 "respectively.  Change the UIDs and GIDs below based on what is available."
-msgstr ""
+msgstr "Na configuração abaixo, o UID e o GID para os usuários e grupos são definidos para serviços que serão embutidos. Isso garante que sejam consistentes em todos os nós. Se não forem consistentes, as permissões do armazenamento compartilhado podem ficar dessincronizadas e erros aparecerão para plugins, imagens etc. Se não forem especificados, o Morpheus encontrará automaticamente UIDs/GIDs disponíveis começando em 999 e descendo. A disponibilidade de UIDs e GIDs pode ser vista inspecionando ``/etc/passwd`` e ``/etc/group``, respectivamente. Altere os UIDs e GIDs abaixo com base no que estiver disponível."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:8
 msgid ""
 "You can find additional configuration settings `here "
 "<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
 "#advanced-morpheus-rb-settings>`_"
-msgstr ""
+msgstr "Você pode encontrar configurações adicionais `aqui <https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html#advanced-morpheus-rb-settings>`_"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:15
 #, python-brace-format
@@ -138,12 +138,12 @@ msgid ""
 "configuration, ``mysql['host']`` can be a single entry, if the database "
 "has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` or "
 "``mysql['host'] = '10.100.10.111'``"
-msgstr ""
+msgstr "As configurações acima para ```mysql['host']`` mostram uma lista de hosts, se o banco de dados tiver vários endpoints. Como outras opções na configuração, ``mysql['host']`` pode ser uma única entrada, se o banco de dados tiver um único endpoint: ``mysql['host'] = 'myDbEndpoint.example.com`` ou ``mysql['host'] = '10.100.10.111'``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:98
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:100
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:98
 msgid ""
@@ -153,7 +153,7 @@ msgid ""
 "``cluster.initial_master_nodes`` in the generated elasticsearch.yml "
 "config. Node names that do not match entries in "
 "cluster.initial_master_nodes will cause clustering issues."
-msgstr ""
+msgstr "Os nomes dos nós elasticsearch definidos em ``elasticsearch['node_name']`` devem corresponder às entradas de host em elasticsearch['es_hosts']. ``node_name`` é usado para ``node.name`` e ``es_hosts`` é usado para ``cluster.initial_master_nodes`` na config elasticsearch.yml gerada. Nomes de nós que não correspondem às entradas em cluster.initial_master_nodes causarão problemas de clustering."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:100
 msgid ""
@@ -161,5 +161,5 @@ msgid ""
 "**rabbit@node01**.  The shortname for the server of node01 must be "
 "resolvable by DNS or /etc/hosts of all other hosts, same for node02 and "
 "node03.  FQDNs cannot be used here"
-msgstr ""
+msgstr "O rabbitmq['node_name'] no exemplo do Nó 1 acima é **rabbit@node01**. O shortname do servidor de node01 deve ser resolvível por DNS ou /etc/hosts de todos os outros hosts, o mesmo para node02 e node03. FQDNs não podem ser usados aqui"
 

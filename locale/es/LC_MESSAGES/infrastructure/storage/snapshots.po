@@ -196,7 +196,7 @@ msgstr "Confirmar el revert operación"
 
 #: ../../infrastructure/storage/snapshots.rst:60
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../infrastructure/storage/snapshots.rst:60
 msgid ""
@@ -244,7 +244,7 @@ msgstr "Click :guilabel:`DELETE ALL`"
 #: ../../infrastructure/storage/snapshots.rst:80
 #: ../../infrastructure/storage/snapshots.rst:196
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/storage/snapshots.rst:80
 msgid ""
@@ -276,7 +276,7 @@ msgstr "Click :guilabel:`IMPORT`"
 
 #: ../../infrastructure/storage/snapshots.rst:94
 msgid "Creating Linked Clone Images"
-msgstr ""
+msgstr "Creación de imágenes de clon vinculado"
 
 #: ../../infrastructure/storage/snapshots.rst:96
 msgid ""
@@ -285,7 +285,7 @@ msgid ""
 "disk instead of copying the complete source disk. This reduces "
 "provisioning time and initial storage consumption, but creates a "
 "dependency on the source VM and snapshot."
-msgstr ""
+msgstr "Los snapshots de VMware y HVM/KVM pueden registrarse como Virtual Images de clon vinculado. Un clon vinculado usa el snapshot seleccionado como disco de respaldo compartido en lugar de copiar el disco de origen completo. Esto reduce el tiempo de aprovisionamiento y el consumo inicial de almacenamiento, pero crea una dependencia de la VM de origen y del snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:98
 msgid ""
@@ -294,17 +294,17 @@ msgid ""
 "machine identity, SSH host keys, network rules, or Windows system "
 "identity. Complete the guest preparation steps below before creating the "
 "snapshot."
-msgstr ""
+msgstr "Prepare el invitado antes de tomar el snapshot. De lo contrario, cada VM aprovisionada desde el clon vinculado puede heredar el hostname de origen, identidad de máquina, claves de host SSH, reglas de red o identidad del sistema Windows. Complete los pasos de preparación del invitado a continuación antes de crear el snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:100
 msgid "Prepare and shut down the source VM."
-msgstr ""
+msgstr "Prepare y apague la VM de origen."
 
 #: ../../infrastructure/storage/snapshots.rst:101
 msgid ""
 "On the Instance detail page, select :guilabel:`Actions` > "
 ":guilabel:`Create Snapshot`."
-msgstr ""
+msgstr "En la página de detalle de la Instancia, seleccione :guilabel:`Actions` > :guilabel:`Create Snapshot`."
 
 #: ../../infrastructure/storage/snapshots.rst:102
 #, fuzzy
@@ -313,13 +313,13 @@ msgstr "Un descriptive nombre para el snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:103
 msgid "Select the Instance :guilabel:`Backups` tab."
-msgstr ""
+msgstr "Seleccione la pestaña :guilabel:`Backups` de la Instancia."
 
 #: ../../infrastructure/storage/snapshots.rst:104
 msgid ""
 "Locate the completed snapshot, select :guilabel:`More`, and then select "
 ":guilabel:`Create Linked Clone`."
-msgstr ""
+msgstr "Localice el snapshot completado, seleccione :guilabel:`More` y luego seleccione :guilabel:`Create Linked Clone`."
 
 #: ../../infrastructure/storage/snapshots.rst:105
 #, fuzzy
@@ -330,14 +330,14 @@ msgstr "Confirmar el revert operación"
 msgid ""
 "Navigate to :menuselection:`Library --> Virtual Images` and open the "
 "Virtual Image whose name matches the snapshot."
-msgstr ""
+msgstr "Navegue a :menuselection:`Library --> Virtual Images` y abra la Virtual Image cuyo nombre coincide con el snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:107
 msgid ""
 "Verify its operating system, guest customization, cloud-init or Sysprep, "
 "agent, credentials, and tenant permissions before using it in an Instance"
 " Type or provisioning workflow."
-msgstr ""
+msgstr "Verifique su sistema operativo, personalización de invitado, cloud-init o Sysprep, agente, credenciales y permisos de inquilino antes de usarla en un Instance Type o flujo de trabajo de aprovisionamiento."
 
 #: ../../infrastructure/storage/snapshots.rst:109
 msgid ""
@@ -346,28 +346,28 @@ msgid ""
 " to **Full**. Creating it registers a Virtual Image record; it does not "
 "create a VM. VMs are created when that Virtual Image is selected during "
 "provisioning."
-msgstr ""
+msgstr "La acción :guilabel:`Create Linked Clone` aparece solo para tipos de aprovisionamiento compatibles y usuarios con el permiso **Snapshots: Linked Clone** establecido en **Full**. Crearla registra un registro de Virtual Image; no crea una VM. Las VMs se crean cuando esa Virtual Image se selecciona durante el aprovisionamiento."
 
 #: ../../infrastructure/storage/snapshots.rst:111
 msgid "**Guest Preparation**"
-msgstr ""
+msgstr "**Preparación del invitado**"
 
 #: ../../infrastructure/storage/snapshots.rst:113
 msgid ""
 "Complete application installation, patching, and configuration before "
 "generalizing the guest. Do not start the source VM again between "
 "generalization and snapshot creation."
-msgstr ""
+msgstr "Complete la instalación de aplicaciones, parches y configuración antes de generalizar el invitado. No inicie la VM de origen nuevamente entre la generalización y la creación del snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:115
 msgid "**Windows**"
-msgstr ""
+msgstr "**Windows**"
 
 #: ../../infrastructure/storage/snapshots.rst:117
 msgid ""
 "Use Sysprep to remove the source system identity and start OOBE on the "
 "first boot of each provisioned VM:"
-msgstr ""
+msgstr "Use Sysprep para eliminar la identidad del sistema de origen e iniciar OOBE en el primer arranque de cada VM aprovisionada:"
 
 #: ../../infrastructure/storage/snapshots.rst:119
 msgid ""
@@ -382,18 +382,18 @@ msgid ""
 "platform-specific customization behavior, including VMware **Force Guest "
 "Customization**, see "
 ":doc:`/provisioning/windows_cloud_guest_customization`."
-msgstr ""
+msgstr "Después de que Sysprep apague la VM, déjela apagada y cree el snapshot. En la Virtual Image resultante, habilite **Sysprep**. Para el comportamiento de personalización específico de la plataforma, incluido VMware **Force Guest Customization**, consulte :doc:`/provisioning/windows_cloud_guest_customization`."
 
 #: ../../infrastructure/storage/snapshots.rst:125
 msgid "**Linux**"
-msgstr ""
+msgstr "**Linux**"
 
 #: ../../infrastructure/storage/snapshots.rst:127
 msgid ""
 "For a cloud-init-enabled Linux guest, clear instance state and "
 "identifiers before shutdown. The exact files vary by distribution; the "
 "following is appropriate for current Ubuntu images:"
-msgstr ""
+msgstr "Para un invitado Linux con cloud-init habilitado, borre el estado de la instancia y los identificadores antes del apagado. Los archivos exactos varían según la distribución; lo siguiente es apropiado para imágenes actuales de Ubuntu:"
 
 #: ../../infrastructure/storage/snapshots.rst:129
 msgid ""
@@ -412,71 +412,71 @@ msgid ""
 "rules created for the source VM; do not remove distribution-supplied "
 "rules. Verify that cloud-init is installed and enabled, then leave "
 "**Cloud Init Enabled** selected on the resulting Virtual Image."
-msgstr ""
+msgstr "Si ``/var/lib/dbus/machine-id`` es un archivo regular en lugar de un enlace simbólico a ``/etc/machine-id``, elimínelo o vacíelo según la orientación de preparación de imagen de la distribución. Elimine solo reglas udev persistentes creadas para la VM de origen; no elimine reglas proporcionadas por la distribución. Verifique que cloud-init esté instalado y habilitado, luego deje **Cloud Init Enabled** seleccionado en la Virtual Image resultante."
 
 #: ../../infrastructure/storage/snapshots.rst:139
 msgid "**Dependencies and Limitations**"
-msgstr ""
+msgstr "**Dependencias y limitaciones**"
 
 #: ../../infrastructure/storage/snapshots.rst:141
 msgid ""
 "Do not treat a linked clone as an independent image. The source VM and "
 "selected snapshot remain part of its backing chain."
-msgstr ""
+msgstr "No trate un clon vinculado como una imagen independiente. La VM de origen y el snapshot seleccionado siguen siendo parte de su cadena de respaldo."
 
 #: ../../infrastructure/storage/snapshots.rst:142
 msgid ""
 "Do not delete the backing snapshot or source VM while linked-clone VMs "
 "depend on them. HVM blocks these operations when it detects active "
 "dependents."
-msgstr ""
+msgstr "No elimine el snapshot de respaldo ni la VM de origen mientras las VMs de clon vinculado dependan de ellos. HVM bloquea estas operaciones cuando detecta dependientes activos."
 
 #: ../../infrastructure/storage/snapshots.rst:143
 msgid ""
 "VMware linked clone images are primarily intended for rapid provisioning "
 "such as VDI pools and cannot be resized."
-msgstr ""
+msgstr "Las imágenes de clon vinculado de VMware están destinadas principalmente al aprovisionamiento rápido, como pools VDI, y no se pueden redimensionar."
 
 #: ../../infrastructure/storage/snapshots.rst:144
 msgid ""
 "HVM linked clones require a file-based datastore and QCOW2 disks. LUN-"
 "per-vDisk storage, including HPE Alletra datastore types, does not "
 "support linked clones."
-msgstr ""
+msgstr "Los clones vinculados HVM requieren un almacén de datos basado en archivos y discos QCOW2. El almacenamiento LUN-per-vDisk, incluidos los tipos de almacén de datos HPE Alletra, no admite clones vinculados."
 
 #: ../../infrastructure/storage/snapshots.rst:145
 msgid ""
 "HVM linked clones on local storage are pinned to the source hypervisor. "
 "Host migration is not supported. HVM storage migration is not supported "
 "because the overlay depends on the original snapshot backing file."
-msgstr ""
+msgstr "Los clones vinculados HVM en almacenamiento local están fijados al hipervisor de origen. La migración de host no está admitida. La migración de almacenamiento HVM no está admitida porque la superposición depende del archivo de respaldo del snapshot original."
 
 #: ../../infrastructure/storage/snapshots.rst:146
 msgid ""
 "Shared HVM storage avoids local-host pinning, but the backing snapshot "
 "must remain available in its original datastore."
-msgstr ""
+msgstr "El almacenamiento HVM compartido evita la fijación al host local, pero el snapshot de respaldo debe permanecer disponible en su almacén de datos original."
 
 #: ../../infrastructure/storage/snapshots.rst:147
 msgid ""
 "Changes made to the source VM after the snapshot are not included. To "
 "publish an updated image, prepare the source again, create a new "
 "snapshot, and create a new linked clone Virtual Image."
-msgstr ""
+msgstr "Los cambios realizados en la VM de origen después del snapshot no se incluyen. Para publicar una imagen actualizada, prepare el origen nuevamente, cree un snapshot nuevo y cree una Virtual Image de clon vinculado nueva."
 
 #: ../../infrastructure/storage/snapshots.rst:148
 msgid ""
 "Snapshot chains add storage and performance dependencies. Keep chains "
 "shallow and monitor the source datastore's capacity and health."
-msgstr ""
+msgstr "Las cadenas de snapshots agregan dependencias de almacenamiento y rendimiento. Mantenga las cadenas poco profundas y supervise la capacidad y salud del almacén de datos de origen."
 
 #: ../../infrastructure/storage/snapshots.rst:150
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: ../../infrastructure/storage/snapshots.rst:152
 msgid "Create a linked clone Virtual Image via the API:"
-msgstr ""
+msgstr "Cree una Virtual Image de clon vinculado mediante la API:"
 
 #: ../../infrastructure/storage/snapshots.rst:154
 #, python-brace-format
@@ -493,7 +493,7 @@ msgid ""
 "These endpoints register the snapshot as a linked clone Virtual Image. "
 "Provisioning a VM from the image then creates the thin overlay "
 "automatically."
-msgstr ""
+msgstr "Estos endpoints registran el snapshot como una Virtual Image de clon vinculado. Aprovisionar una VM desde la imagen crea entonces la superposición thin automáticamente."
 
 #: ../../infrastructure/storage/snapshots.rst:160
 msgid "Snapshot Best Practices"
@@ -556,7 +556,7 @@ msgid ""
 "Snapshot support is available on more cloud types than linked clone "
 "Virtual Image creation. Linked clone creation is supported only for "
 "VMware vSphere and HVM/KVM."
-msgstr ""
+msgstr "El soporte de snapshots está disponible en más tipos de nube que la creación de Virtual Images de clon vinculado. La creación de clon vinculado solo está admitida para VMware vSphere y HVM/KVM."
 
 #: ../../infrastructure/storage/snapshots.rst:177
 #, fuzzy
@@ -570,11 +570,11 @@ msgstr "Snapshots"
 
 #: ../../infrastructure/storage/snapshots.rst:179
 msgid "Linked Clone Virtual Images"
-msgstr ""
+msgstr "Virtual Images de clon vinculado"
 
 #: ../../infrastructure/storage/snapshots.rst:180
 msgid "VMware vSphere"
-msgstr ""
+msgstr "VMware vSphere"
 
 #: ../../infrastructure/storage/snapshots.rst:181
 #, fuzzy
@@ -585,11 +585,11 @@ msgstr ""
 
 #: ../../infrastructure/storage/snapshots.rst:182
 msgid "**Supported**"
-msgstr ""
+msgstr "**Compatible**"
 
 #: ../../infrastructure/storage/snapshots.rst:183
 msgid "HVM/KVM"
-msgstr ""
+msgstr "HVM/KVM"
 
 #: ../../infrastructure/storage/snapshots.rst:184
 #, fuzzy
@@ -600,11 +600,11 @@ msgstr "Viewing Snapshots"
 msgid ""
 "**Supported on file-based datastores with QCOW2 disks only**; not "
 "supported on LUN-per-vDisk storage such as HPE Alletra"
-msgstr ""
+msgstr "**Compatible solo en almacenes de datos basados en archivos con discos QCOW2**; no compatible con almacenamiento LUN-per-vDisk como HPE Alletra"
 
 #: ../../infrastructure/storage/snapshots.rst:186
 msgid "Nutanix AHV"
-msgstr ""
+msgstr "Nutanix AHV"
 
 #: ../../infrastructure/storage/snapshots.rst:187
 #, fuzzy
@@ -615,11 +615,11 @@ msgstr "**Nutanix AHV** — Snapshot support sin memoria estado"
 #: ../../infrastructure/storage/snapshots.rst:191
 #: ../../infrastructure/storage/snapshots.rst:194
 msgid "Not supported"
-msgstr ""
+msgstr "No compatible"
 
 #: ../../infrastructure/storage/snapshots.rst:189
 msgid "Azure"
-msgstr ""
+msgstr "Azure"
 
 #: ../../infrastructure/storage/snapshots.rst:190
 #, fuzzy
@@ -628,7 +628,7 @@ msgstr "**Azure** — Administrado disco snapshots"
 
 #: ../../infrastructure/storage/snapshots.rst:192
 msgid "AWS"
-msgstr ""
+msgstr "AWS"
 
 #: ../../infrastructure/storage/snapshots.rst:193
 #, fuzzy

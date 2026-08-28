@@ -22,52 +22,52 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:2
 msgid "|morpheus| UI not loading after upgrade or reconfigure"
-msgstr ""
+msgstr "L'interface |morpheus| ne se charge pas après une mise à niveau ou une reconfiguration"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:4
 msgid "Problem:"
-msgstr ""
+msgstr "Problème :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:5
 msgid "The |morpheus| ui does not load after performing an upgrade."
-msgstr ""
+msgstr "L'interface |morpheus| ne se charge pas après une mise à niveau."
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:7
 msgid "Common Causes:"
-msgstr ""
+msgstr "Causes courantes :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:8
 msgid "The morpheus-ui has not finished loading"
-msgstr ""
+msgstr "morpheus-ui n'a pas terminé son chargement"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:9
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:23
 msgid ""
 "The morpheus-ui was not fully stopped before reconfigure, or not started "
 "after reconfigure"
-msgstr ""
+msgstr "morpheus-ui n'a pas été complètement arrêté avant la reconfiguration, ou n'a pas été démarré après la reconfiguration"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:10
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:38
 msgid ""
 "|morpheus| was forced to restart or shut down while the database schema "
 "was being migrated during an upgrade"
-msgstr ""
+msgstr "|morpheus| a été forcé de redémarrer ou de s'arrêter pendant la migration du schéma de base de données lors d'une mise à niveau"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:12
 msgid "Solutions:"
-msgstr ""
+msgstr "Solutions :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:13
 msgid "The morpheus-ui has not finished loading."
-msgstr ""
+msgstr "morpheus-ui n'a pas terminé son chargement."
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:15
 msgid ""
 "An easy way to see when the ui is finished loading and running is to tail"
 " the ui current file and look for the morpheus logo with version and "
 "start time"
-msgstr ""
+msgstr "Un moyen simple de savoir quand l'interface a terminé son chargement et son exécution consiste à suivre le fichier current de l'interface et à rechercher le logo Morpheus avec la version et l'heure de démarrage"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:17
 msgid "morpheus-ctl tail morpheus-ui"
@@ -75,13 +75,13 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:21
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:21
 msgid ""
 "After running `morpheus-ctl start morpheus-ui`, the |morpheus| ui takes "
 "around 3 minutes to run depending on hardware."
-msgstr ""
+msgstr "Après l'exécution de `morpheus-ctl start morpheus-ui`, l'interface |morpheus| met environ 3 minutes à démarrer selon le matériel."
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:25
 msgid ""
@@ -91,11 +91,11 @@ msgid ""
 "timeout, run morpheus-ctl kill morpheus-ui prior to reconfigure, and be "
 "sure to run morpheus-ctl start morpheus-ui after reconfigure is "
 "completed."
-msgstr ""
+msgstr "L'interface Morpheus doit être arrêtée avant d'exécuter morpheus-ctl reconfigure lors d'une mise à niveau. Parfois, morpheus-ctl stop morpheus-ui expire et l'interface n'est pas réellement arrêtée. Si l'arrêt de l'interface expire, exécutez morpheus-ctl kill morpheus-ui avant la reconfiguration, et assurez-vous d'exécuter morpheus-ctl start morpheus-ui une fois la reconfiguration terminée."
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:28
 msgid "If you ran a reconfigure before stopping the ui, run:"
-msgstr ""
+msgstr "Si vous avez exécuté une reconfiguration avant d'arrêter l'interface, exécutez :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:30
 msgid ""
@@ -106,7 +106,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:36
 msgid "Wait for the ui to come up."
-msgstr ""
+msgstr "Attendez que l'interface démarre."
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:40
 msgid ""
@@ -116,7 +116,7 @@ msgid ""
 "likely means morpheus was forced to restart or shut down while the "
 "database schema was being migrated during an upgrade, and the lock was "
 "not released."
-msgstr ""
+msgstr "Si l'interface ne démarre pas et que vous voyez l'erreur ``Invocation of init method failed; nested exception is liquibase.exception.LockException: Could not acquire change log lock.  Currently locked by morpheus``, cela signifie probablement que Morpheus a été forcé de redémarrer ou de s'arrêter pendant la migration du schéma de base de données lors d'une mise à niveau, et que le verrou n'a pas été libéré."
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:42
 msgid ""
@@ -125,11 +125,11 @@ msgid ""
 "for morpheus mysql. The username and db name are both morpheus. The "
 "password to login to mysql can be found in the application.yml file "
 "located at ``/opt/morpheus/conf/application.yml``"
-msgstr ""
+msgstr "Pour libérer le verrou, vous devrez exécuter une requête mysql. Vous devrez installer mysql-client sur l'appliance Morpheus et récupérer le mot de passe mysql de Morpheus. Le nom d'utilisateur et le nom de la base de données sont tous deux morpheus. Le mot de passe de connexion à mysql se trouve dans le fichier application.yml situé à ``/opt/morpheus/conf/application.yml``"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:44
 msgid "Then run the following:"
-msgstr ""
+msgstr "Exécutez ensuite les commandes suivantes :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:46
 msgid "mysql -u morpheus -p -h 127.0.0.1 morpheus"
@@ -137,11 +137,11 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:50
 msgid "At the prompt, enter the mysql password from the application.yml"
-msgstr ""
+msgstr "À l'invite, saisissez le mot de passe mysql du fichier application.yml"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:52
 msgid "Then run:"
-msgstr ""
+msgstr "Exécutez ensuite :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:54
 msgid "DELETE FROM DATABASECHANGELOGLOCK;"
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:58
 msgid "Then restart morpheus-ui:"
-msgstr ""
+msgstr "Redémarrez ensuite morpheus-ui :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:60
 msgid "sudo morpheus-ctl restart morpheus-ui"
@@ -157,7 +157,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:64
 msgid "If the restart timesout, run:"
-msgstr ""
+msgstr "Si le redémarrage expire, exécutez :"
 
 #: ../../troubleshooting/Morpheus_UI_Not_Loading.rst:66
 msgid ""

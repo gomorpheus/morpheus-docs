@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:2
 msgid "Getting Started with Custom Reports"
-msgstr ""
+msgstr "Introdução a Relatórios Personalizados"
 
 #: ../../getting_started/guides/custom_reports.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "developer documentation including the full API documentation and links to"
 " Github repositories containing complete code examples are available in "
 "the `Developer Portal <https://developer.morpheusdata.com/>`_."
-msgstr ""
+msgstr "A arquitetura de plugins |morpheus| é uma biblioteca que permite aos usuários estender a funcionalidade em várias categorias, incluindo novos provedores de Nuvem, tipos de Task, visualizações da UI, relatórios personalizados e muito mais. Neste guia, veremos o desenvolvimento de um relatório personalizado e sua adição à UI do |morpheus| como uma seleção de relatório para os usuários consumirem. A documentação completa do desenvolvedor está disponível no Portal do Desenvolvedor |morpheus|."
 
 #: ../../getting_started/guides/custom_reports.rst:6
 msgid ""
@@ -50,21 +50,21 @@ msgid ""
 "this guide is based on, is `here <https://github.com/martezr/morpheus-"
 "example-reports-plugin>`_. You can read the example code and tweak it to "
 "suit your needs using the guidance in this document."
-msgstr ""
+msgstr "O desenvolvimento de plugins personalizados requer experiência em programação, mas este guia foi elaborado para dividir as etapas necessárias em um processo digerível que os usuários possam executar rapidamente. Os plugins |morpheus| são escritos em Java ou Groovy; nosso exemplo aqui será escrito em Groovy. O suporte a idiomas adicionais está planejado, mas ainda não está disponível no momento da redação."
 
 #: ../../getting_started/guides/custom_reports.rst:8
 msgid ""
 "Before you begin, ensure you have the following installed in your "
 "development environment:"
-msgstr ""
+msgstr "Antes de começar, garanta que você tenha o seguinte instalado no seu ambiente de desenvolvimento:"
 
 #: ../../getting_started/guides/custom_reports.rst:10
 msgid "Gradle 6.5 or later"
-msgstr ""
+msgstr "Gradle 6.5 ou posterior"
 
 #: ../../getting_started/guides/custom_reports.rst:11
 msgid "Java 8 or 11"
-msgstr ""
+msgstr "Java 8 ou 11"
 
 #: ../../getting_started/guides/custom_reports.rst:13
 msgid ""
@@ -73,11 +73,11 @@ msgid ""
 "type. Below that will be a table which shows each Cypher item "
 "individually and sorted alphabetically along with their create date and "
 "the date they were last accessed."
-msgstr ""
+msgstr "Neste exemplo, criarei um relatório personalizado que mostra o número total de itens Cypher no |morpheus| com uma divisão do total por tipo. Abaixo disso haverá uma tabela que mostra cada item Cypher individualmente e ordenado alfabeticamente, juntamente com a data de criação e a data do último acesso."
 
 #: ../../getting_started/guides/custom_reports.rst:16
 msgid "Identify Target Data"
-msgstr ""
+msgstr "Identificar Dados de Destino"
 
 #: ../../getting_started/guides/custom_reports.rst:18
 msgid ""
@@ -88,7 +88,7 @@ msgid ""
 "tool can be helpful if you aren't familiar with the |morpheus| database "
 "layout since we can quickly view any table and toggle sorting to identify"
 " the targeted columns."
-msgstr ""
+msgstr "Para reunir dados para um relatório personalizado, você consultará diretamente o banco de dados |morpheus|. Para identificar as tabelas e colunas relevantes, você pode se conectar ao nó do appliance e usar o cliente MySQL ou, remotamente, usar uma ferramenta GUI (como o MySQL Workbench) para procurar os dados de que precisa. Usar uma ferramenta GUI pode ser útil se você não estiver familiarizado com o esquema do banco de dados |morpheus|."
 
 #: ../../getting_started/guides/custom_reports.rst:20
 msgid ""
@@ -96,7 +96,7 @@ msgid ""
 "can get these from a secrets file which is created during |morpheus| "
 "installation. Start an SSH session with your appliance node and ``cat`` "
 "the ``morpheus-secrets.json`` file:"
-msgstr ""
+msgstr "Mas primeiro precisaremos de credenciais de acesso ao banco de dados |morpheus|. Podemos obtê-las de um arquivo de segredos criado durante a instalação do |morpheus|. Inicie uma sessão SSH com o nó do appliance e faça ``cat`` no arquivo ``morpheus-secrets.json``:"
 
 #: ../../getting_started/guides/custom_reports.rst:22
 msgid "cat /etc/morpheus/morpheus-secrets.json"
@@ -106,7 +106,7 @@ msgstr ""
 msgid ""
 "You should receive an output like the one shown below. In the place of "
 "the redacted values, you will see the actual secret values."
-msgstr ""
+msgstr "Você deverá receber uma saída como a mostrada abaixo. No lugar dos valores redactados, você verá os valores secretos reais."
 
 #: ../../getting_started/guides/custom_reports.rst:28
 #, python-brace-format
@@ -138,7 +138,7 @@ msgid ""
 "I'm targeting the Cypher Item objects and planning to surface the "
 "``item_key``, ``last_updated``, ``lease_timeout``, and ``last_accessed`` "
 "values."
-msgstr ""
+msgstr "Copie o valor ``morpheus-password``, pois você precisará dele para criar uma nova conexão com o banco de dados |morpheus| no MySQL Workbench. Abra o MySQL Workbench e configure uma nova conexão. Depois que a conexão for criada, abra a lista de todas as tabelas do banco de dados na coluna esquerda da aplicação. Neste caso, estou interessado na tabela ``cypher_item``."
 
 #: ../../getting_started/guides/custom_reports.rst:48
 msgid ".. image:: /images/integration_guides/custom_report_guide/database.png"
@@ -150,7 +150,7 @@ msgid ""
 "the table objects in the way we wish to display them in our report. Later"
 " on, this will become part of the Groovy code that makes up the custom "
 "report plugin."
-msgstr ""
+msgstr "Estruturaremos nossa consulta SQL para direcionar essas colunas selecionadas e ordenar os objetos da tabela da forma como desejamos exibi-los em nosso relatório. Mais adiante, isso se tornará parte do código Groovy que compõe o plugin de relatório personalizado."
 
 #: ../../getting_started/guides/custom_reports.rst:52
 msgid ""
@@ -160,14 +160,14 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:57
 msgid "Developing the Plugin"
-msgstr ""
+msgstr "Desenvolvendo o Plugin"
 
 #: ../../getting_started/guides/custom_reports.rst:59
 msgid ""
 "To begin, create a new directory to house the project. You'll ultimately "
 "end up with a file structure typical of Java or Groovy projects, looking "
 "something like this:"
-msgstr ""
+msgstr "Para começar, crie um novo diretório para abrigar o projeto. Você acabará com uma estrutura de arquivos típica de projetos Java ou Groovy, com aparência semelhante a esta:"
 
 #: ../../getting_started/guides/custom_reports.rst:61
 msgid ""
@@ -193,111 +193,111 @@ msgid ""
 "folder. Consult the table below for key files, their purpose, and their "
 "locations. Example code and further discussion of relevant files is "
 "included in the following sections."
-msgstr ""
+msgstr "Configure o arquivo ``.gitignore`` para ignorar o diretório ``build/``, que aparecerá após o primeiro build. Os pacotes do projeto ficam em ``src/main/groovy`` e contêm arquivos-fonte terminados em ``.groovy``. Os recursos de visualização são armazenados na subpasta ``src/main/resources`` e variam conforme o renderizador de visualização escolhido. Ativos estáticos, como ícones ou JavaScript personalizado, ficam em ``src/assets``."
 
 #: ../../getting_started/guides/custom_reports.rst:75
 msgid "**File Structure**"
-msgstr ""
+msgstr "**Estrutura de Arquivos**"
 
 #: ../../getting_started/guides/custom_reports.rst:79
 msgid "File Name"
-msgstr ""
+msgstr "File Name"
 
 #: ../../getting_started/guides/custom_reports.rst:80
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../getting_started/guides/custom_reports.rst:81
 msgid "File Path"
-msgstr ""
+msgstr "File Path"
 
 #: ../../getting_started/guides/custom_reports.rst:82
 #: ../../getting_started/guides/custom_reports.rst:84
 msgid "build.gradle"
-msgstr ""
+msgstr "build.gradle"
 
 #: ../../getting_started/guides/custom_reports.rst:83
 msgid "The Gradle build file"
-msgstr ""
+msgstr "O arquivo de build do Gradle"
 
 #: ../../getting_started/guides/custom_reports.rst:85
 #: ../../getting_started/guides/custom_reports.rst:87
 msgid "gradle.properties"
-msgstr ""
+msgstr "gradle.properties"
 
 #: ../../getting_started/guides/custom_reports.rst:86
 msgid "The properties file for the Gradle build tool"
-msgstr ""
+msgstr "O arquivo de propriedades da ferramenta de build Gradle"
 
 #: ../../getting_started/guides/custom_reports.rst:88
 msgid "CustomReportProvider.groovy"
-msgstr ""
+msgstr "CustomReportProvider.groovy"
 
 #: ../../getting_started/guides/custom_reports.rst:89
 msgid ""
 "Most of the custom code to fetch report data, determine how the data is "
 "aggregated, and categorize the report is written here"
-msgstr ""
+msgstr "A maior parte do código personalizado para buscar dados do relatório, determinar como os dados são agregados e categorizar o relatório é escrita aqui"
 
 #: ../../getting_started/guides/custom_reports.rst:90
 msgid "src/main/groovy/com/morpheusdata/reports/CustomReportProvider.groovy"
-msgstr ""
+msgstr "src/main/groovy/com/morpheusdata/reports/CustomReportProvider.groovy"
 
 #: ../../getting_started/guides/custom_reports.rst:91
 msgid "ReportsPlugin.groovy"
-msgstr ""
+msgstr "ReportsPlugin.groovy"
 
 #: ../../getting_started/guides/custom_reports.rst:92
 msgid ""
 "Create a new report plugin class which extends the plugin class here to "
 "register, name and describe the new plugin"
-msgstr ""
+msgstr "Crie aqui uma nova classe de plugin de relatório que estenda a classe plugin para registrar, nomear e descrever o novo plugin"
 
 #: ../../getting_started/guides/custom_reports.rst:93
 msgid "src/main/groovy/com/morpheusdata/reports/ReportsPlugin.groovy"
-msgstr ""
+msgstr "src/main/groovy/com/morpheusdata/reports/ReportsPlugin.groovy"
 
 #: ../../getting_started/guides/custom_reports.rst:94
 msgid "cypherReport.hbs"
-msgstr ""
+msgstr "cypherReport.hbs"
 
 #: ../../getting_started/guides/custom_reports.rst:95
 msgid ""
 "Handles creation of the new UI view which is displayed when the report is"
 " viewed"
-msgstr ""
+msgstr "Cuida da criação da nova visualização da UI exibida quando o relatório é visualizado"
 
 #: ../../getting_started/guides/custom_reports.rst:96
 msgid "src/mainresources/renderer/hbs/cypherReport.hbs"
-msgstr ""
+msgstr "src/mainresources/renderer/hbs/cypherReport.hbs"
 
 #: ../../getting_started/guides/custom_reports.rst:99
 msgid "Creating the build.gradle File"
-msgstr ""
+msgstr "Criando o Arquivo build.gradle"
 
 #: ../../getting_started/guides/custom_reports.rst:101
 msgid ""
 "Gradle is the build tool used to compile |morpheus| plugins so "
 "``build.gradle`` is required. An example build file is given below but "
 "some useful values to call out are as follows:"
-msgstr ""
+msgstr "O Gradle é a ferramenta de build usada para compilar plugins |morpheus|, portanto ``build.gradle`` é obrigatório. Um arquivo de build de exemplo é fornecido abaixo, mas alguns valores úteis a destacar são os seguintes:"
 
 #: ../../getting_started/guides/custom_reports.rst:103
 msgid "**Group:** The package group in Java, typically your reverse DNS name"
-msgstr ""
+msgstr "**Group:** O grupo de pacotes em Java, tipicamente seu nome DNS reverso"
 
 #: ../../getting_started/guides/custom_reports.rst:104
 msgid ""
 "**Version:** The version number for your plugin. This will be displayed "
 "in the Plugins section of |morpheus| UI for reference when later versions"
 " of your plugin are developed"
-msgstr ""
+msgstr "**Version:** O número de versão do seu plugin. Ele será exibido na seção Plugins da UI do |morpheus| para referência quando versões posteriores do seu plugin forem desenvolvidas"
 
 #: ../../getting_started/guides/custom_reports.rst:105
 msgid ""
 "**Plugin-class:** This will vary based on the plugin type being developed"
 " but for a custom report, use ``com.morpheusdata.reports.ReportsPlugin``"
-msgstr ""
+msgstr "**Plugin-class:** Isso variará com base no tipo de plugin em desenvolvimento, mas para um relatório personalizado use ``com.morpheusdata.reports.ReportsPlugin``"
 
 #: ../../getting_started/guides/custom_reports.rst:107
 msgid ""
@@ -346,14 +346,14 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:150
 msgid "Creating the Plugin Class"
-msgstr ""
+msgstr "Criando a Classe do Plugin"
 
 #: ../../getting_started/guides/custom_reports.rst:152
 msgid ""
 "Next, create a plugin class which handles registration of the new report,"
 " sets a name and description, and targets the appropriate report provider"
 " class which we'll go over in the next section."
-msgstr ""
+msgstr "Em seguida, crie uma classe de plugin que cuide do registro do novo relatório, defina um nome e uma descrição e aponte para a classe apropriada do provedor de relatório, que abordaremos na próxima seção."
 
 #: ../../getting_started/guides/custom_reports.rst:154
 msgid ""
@@ -381,7 +381,7 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:176
 msgid "Creating the Report Provider Class"
-msgstr ""
+msgstr "Criando a Classe Report Provider"
 
 #: ../../getting_started/guides/custom_reports.rst:178
 msgid ""
@@ -389,7 +389,7 @@ msgid ""
 "the targeted data so it can be rendered in the report view. An example "
 "report provider is reproduced below with comments to increase readability"
 " of the code."
-msgstr ""
+msgstr "A classe provedora do relatório contém o código que buscará e compilará os dados direcionados para que possam ser renderizados na visualização do relatório. Um provedor de relatório de exemplo é reproduzido abaixo com comentários para aumentar a legibilidade do código."
 
 #: ../../getting_started/guides/custom_reports.rst:180
 msgid ""
@@ -585,7 +585,7 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:344
 msgid "Create the Custom Report View"
-msgstr ""
+msgstr "Criar a Visualização do Relatório Personalizado"
 
 #: ../../getting_started/guides/custom_reports.rst:346
 msgid ""
@@ -594,7 +594,7 @@ msgid ""
 "be overridden, we'll use the default template provider for this example. "
 "There is more information on view rendering in the |morpheus| `Developer "
 "Portal <https://developer.morpheusdata.com/docs#views>`_."
-msgstr ""
+msgstr "Por padrão, as visualizações de plugins personalizados são tratadas por um provedor de template Handlebars para preencher seções HTML com o seu próprio conteúdo. Embora possa ser substituído, usaremos o provedor de template padrão neste exemplo. Há mais informações sobre renderização de visualizações no `Portal do Desenvolvedor <https://developer.morpheusdata.com/docs#views>`_ |morpheus|."
 
 #: ../../getting_started/guides/custom_reports.rst:348
 msgid ""
@@ -663,7 +663,7 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:406
 msgid "Build the JAR"
-msgstr ""
+msgstr "Criar o JAR"
 
 #: ../../getting_started/guides/custom_reports.rst:408
 msgid ""
@@ -671,7 +671,7 @@ msgid ""
 " |morpheus| so the report can be viewed. To do so, change directory into "
 "the location of the directory created earlier to hold your custom plugin "
 "code."
-msgstr ""
+msgstr "Com o código escrito, use o gradle para criar o JAR que poderemos enviar ao |morpheus| para que o relatório possa ser visualizado. Para isso, mude para o diretório criado anteriormente para armazenar o código do plugin personalizado."
 
 #: ../../getting_started/guides/custom_reports.rst:410
 msgid "cd path/to/your/directory"
@@ -679,7 +679,7 @@ msgstr ""
 
 #: ../../getting_started/guides/custom_reports.rst:414
 msgid "Build your new plugin."
-msgstr ""
+msgstr "Crie seu novo plugin."
 
 #: ../../getting_started/guides/custom_reports.rst:416
 msgid "gradle shadowJar"
@@ -689,11 +689,11 @@ msgstr ""
 msgid ""
 "Once the build process has completed, locate the JAR in the "
 "``build/libs`` directory"
-msgstr ""
+msgstr "Depois que o processo de build for concluído, localize o JAR no diretório ``build/libs``"
 
 #: ../../getting_started/guides/custom_reports.rst:423
 msgid "Upload the Custom Report Plugin to Morpheus UI"
-msgstr ""
+msgstr "Enviar o Plugin de Relatório Personalizado para a UI do Morpheus"
 
 #: ../../getting_started/guides/custom_reports.rst:425
 msgid ""
@@ -702,7 +702,7 @@ msgid ""
 "click :guilabel:`Choose File`. Browse for your JAR file and upload it to "
 "|morpheus|. The new plugin will be added next to any other custom plugins"
 " that may have been developed for your appliance."
-msgstr ""
+msgstr "Plugins personalizados são adicionados ao |morpheus| pela guia Plugins na seção Integrações (|AdmInt| > Plugins). Navegue até esta seção e clique em :guilabel:`Choose File`. Procure o arquivo JAR e envie-o para o |morpheus|. O novo plugin será adicionado ao lado de quaisquer outros plugins personalizados que possam ter sido desenvolvidos para o seu appliance."
 
 #: ../../getting_started/guides/custom_reports.rst:427
 msgid ""
@@ -710,5 +710,5 @@ msgid ""
 "You new report will appear correctly categorized, labeled, and described "
 "according to your code. Just like any other report, it can be run now or "
 "scheduled for future runs."
-msgstr ""
+msgstr "Depois de enviado, navegue até a seção Relatórios (Operations > Reports). Seu novo relatório aparecerá corretamente categorizado, rotulado e descrito de acordo com o seu código. Assim como qualquer outro relatório, ele pode ser executado agora ou agendado para execuções futuras."
 

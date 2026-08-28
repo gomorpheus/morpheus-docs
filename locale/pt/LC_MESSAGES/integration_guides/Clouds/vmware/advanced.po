@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:2
 msgid "Advanced"
-msgstr ""
+msgstr "Avançado"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:4
 msgid ""
@@ -35,15 +35,15 @@ msgid ""
 "VSphere under firewall configuration on the host. Simply check the "
 "`gdbserver` option, which will open up the necessary ports (starting at "
 "5900 range)."
-msgstr ""
+msgstr "Há vários recursos avançados fornecidos no |morpheus| que podem aproveitar alguns aspectos interessantes do VMware. Um desses recursos é o suporte a Console Remoto diretamente no hypervisor. Para habilitar este recurso, alguns pré-requisitos devem ser atendidos. Primeiro, o appliance |morpheus| deve ter acesso de rede aos hosts ESXi no VCenter. Em segundo lugar, as configurações de firewall precisam ser ajustadas em cada host ESXi. Isso pode ser feito no VSphere em firewall configuration no host. Basta marcar a opção `gdbserver`, que abrirá as portas necessárias (começando na faixa 5900)."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:6
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:6
 msgid "Hypervisor Console for vCenter 6.5 requires |morpheus| v3.2.0+"
-msgstr ""
+msgstr "O Console do Hypervisor para vCenter 6.5 requer |morpheus| v3.2.0+"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:8
 msgid ""
@@ -52,7 +52,7 @@ msgid ""
 " that says `Enable Hypervisor Console`. It is important to note that "
 "currently this functionality only works for newly provisioned vm's "
 "provisioned directly via |morpheus|. This should change soon however."
-msgstr ""
+msgstr "Agora que os hosts ESXi estão prontos para utilizar o console remoto, basta editar a nuvem no |morpheus| via ``Infrastructure > Clouds``. Marque a opção que diz `Enable Hypervisor Console`. É importante observar que, atualmente, esta funcionalidade só funciona para VMs recém-provisionadas diretamente via |morpheus|. Isso, no entanto, deve mudar em breve."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:10
 msgid ""
@@ -61,11 +61,11 @@ msgid ""
 "that the ESXi host license has an enterprise level license as it will not"
 " allow the appliance to download a virtual image if it is not a paid "
 "VMware license."
-msgstr ""
+msgstr "Também é possível importar snapshots de VM para fins de backup ou conversão a partir do VCenter e também de um host ESXi. No entanto, isso exige que a licença do host ESXi tenha uma licença de nível empresarial, pois não permitirá que o appliance baixe uma virtual image se não for uma licença VMware paga."
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:13
 msgid "Device Type Selection"
-msgstr ""
+msgstr "Seleção de Tipo de Dispositivo"
 
 #: ../../integration_guides/Clouds/vmware/advanced.rst:15
 msgid ""
@@ -77,5 +77,5 @@ msgid ""
 "presented and the configured/default type is used. These settings are "
 "verified for VMware Clouds only; do not infer the same controls for HVM "
 "or another Cloud type."
-msgstr ""
+msgstr "A configuração avançada da Nuvem VMware contém as configurações separadas :guilabel:`Enable Storage Type Selection` e :guilabel:`Enable Network Type Selection`. Ative a configuração aplicável quando os usuários precisarem escolher entre os tipos de interface de armazenamento ou rede expostos pelo provedor de provisionamento VMware. Quando desativada, o seletor correspondente não é apresentado e o tipo configurado/padrão é usado. Estas configurações são verificadas apenas para Nuvens VMware; não infira os mesmos controles para HVM ou outro tipo de Nuvem."
 

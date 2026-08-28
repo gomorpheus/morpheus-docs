@@ -22,25 +22,25 @@ msgstr ""
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:2
 msgid "Approvals plugin"
-msgstr ""
+msgstr "Approvals-Plugin"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:4
 msgid "Integrate Morpheus with your own ITSM solution"
-msgstr ""
+msgstr "Morpheus in Ihre eigene ITSM-Lösung integrieren"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:7
 msgid "Setup"
-msgstr ""
+msgstr "Konfiguration"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:8
 msgid ""
 "This plugin will enable you to create configuration for several aspects "
 "of Approvals within Morpheus."
-msgstr ""
+msgstr "Dieses Plugin ermöglicht Ihnen, die Konfiguration für mehrere Aspekte von Approvals in Morpheus zu erstellen."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:11
 msgid "Integration"
-msgstr ""
+msgstr "Integration"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:12
 msgid ""
@@ -49,11 +49,11 @@ msgid ""
 "the ``ApprovalProvider.integrationOptionTypes`` method. These "
 "``OptionType`` will be visible when creating the new Integration in the "
 "Morpheus UI (|AdmInt|)."
-msgstr ""
+msgstr "Beim Installieren dieses Plugins wird ein neuer Integration Type erstellt. Sie können die ``OptionType`` für die neue Integration mit der Methode ``ApprovalProvider.integrationOptionTypes`` anpassen. Diese ``OptionType`` sind beim Erstellen der neuen Integration in der Morpheus-UI sichtbar (|AdmInt|)."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:17
 msgid "Policies"
-msgstr ""
+msgstr "Richtlinien"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:18
 msgid ""
@@ -61,11 +61,11 @@ msgid ""
 "approval is required for provisioning. Custom ``OptionType`` can be "
 "defined for Policy creation by implementing the "
 "``ApprovalProvider.policyOptionTypes`` method."
-msgstr ""
+msgstr "Richtlinien (|AdmPol| in der Morpheus-UI) definieren die Bedingungen, unter denen für die Provisionierung eine Genehmigung erforderlich ist. Benutzerdefinierte ``OptionType`` können für die Richtlinienerstellung definiert werden, indem die Methode ``ApprovalProvider.policyOptionTypes`` implementiert wird."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:22
 msgid "Create Approval"
-msgstr ""
+msgstr "Genehmigung erstellen"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:24
 msgid ""
@@ -73,24 +73,24 @@ msgid ""
 "Request is created. Here is where you can send the request to your ITSM. "
 "Each ``Request`` will have one or more ``RequestReference`` for each "
 "resource associated with the provision request."
-msgstr ""
+msgstr "``ApprovalProvider.createApprovalRequest`` wird aufgerufen, nachdem eine Provision Request erstellt wurde. Hier können Sie die Anfrage an Ihr ITSM senden. Jeder ``Request`` hat eine oder mehrere ``RequestReference`` für jede mit der Provisionierungsanfrage verknüpfte Ressource."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:28
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:28
 msgid ""
 "It is important that you specify an ``externalId`` in the "
 "``RequestResponse`` and each ``RequestReference`` so that Morpheus can "
 "track the approval status."
-msgstr ""
+msgstr "Es ist wichtig, dass Sie eine ``externalId`` in der ``RequestResponse`` und in jeder ``RequestReference`` angeben, damit Morpheus den Genehmigungsstatus verfolgen kann."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:30
 msgid ""
 "The ``integrationOptionTypes`` you specified are available in the method "
 "argument ``Policy.configMap``"
-msgstr ""
+msgstr "Die von Ihnen angegebenen ``integrationOptionTypes`` sind im Methodenargument ``Policy.configMap`` verfügbar"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:32
 msgid ""
@@ -102,7 +102,7 @@ msgstr ""
 msgid ""
 "and the ``policyOptionTypes`` you specified are available in the method "
 "argument ``AccountIntegration.configMap``."
-msgstr ""
+msgstr "und die von Ihnen angegebenen ``policyOptionTypes`` sind im Methodenargument ``AccountIntegration.configMap`` verfügbar."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:38
 msgid "String myPolicyConfigValue = policy.configMap?.\"my-policy-config-option\""
@@ -110,48 +110,48 @@ msgstr ""
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:43
 msgid "Monitor Approval"
-msgstr ""
+msgstr "Genehmigung überwachen"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:44
 msgid ""
 "At a regular interval, Morpheus checks for Request approvals. In the "
 "``ApprovalProvider.monitor`` method define your logic for retrieving a "
 "list of approval requests in your ITSM solution."
-msgstr ""
+msgstr "In regelmäßigen Abständen prüft Morpheus auf Anfragegenehmigungen. Definieren Sie in der Methode ``ApprovalProvider.monitor`` Ihre Logik zum Abrufen einer Liste von Genehmigungsanfragen in Ihrer ITSM-Lösung."
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:46
 msgid ""
 "Approval ``RequestReference`` should be returned with one of the "
 "following ``ApprovalStatus``:"
-msgstr ""
+msgstr "Genehmigungs-``RequestReference`` sollten mit einem der folgenden ``ApprovalStatus`` zurückgegeben werden:"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:48
 msgid "``requesting``"
-msgstr ""
+msgstr "``requesting``"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:49
 msgid "``requested``"
-msgstr ""
+msgstr "``requested``"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:50
 msgid "``error``"
-msgstr ""
+msgstr "``error``"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:51
 msgid "``approved``"
-msgstr ""
+msgstr "``approved``"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:52
 msgid "``rejected``"
-msgstr ""
+msgstr "``rejected``"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:53
 msgid "``cancelled``"
-msgstr ""
+msgstr "``cancelled``"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:56
 msgid "Integration Logo"
-msgstr ""
+msgstr "Integrations-Logo"
 
 #: ../../administration/integrations/plugin_examples/ApprovalsPlugin.rst:58
 #, python-brace-format
@@ -159,5 +159,5 @@ msgid ""
 "A custom logo can be used in the Morpheus UI by placing an image at "
 "``src/assets/images/{plugin-code}.png``. Recommended file size is 180 x "
 "60 px."
-msgstr ""
+msgstr "Ein benutzerdefiniertes Logo kann in der Morpheus-UI verwendet werden, indem ein Bild unter ``src/assets/images/{plugin-code}.png`` abgelegt wird. Empfohlene Dateigröße ist 180 x 60 px."
 

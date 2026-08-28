@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../administration/integrations/packages.rst:2
 msgid "Packages"
-msgstr ""
+msgstr "Pacotes"
 
 #: ../../administration/integrations/packages.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../administration/integrations/packages.rst:7
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 "Spec Temples and Cluster Layouts. Following upload of a valid package, "
 "the defined |morpheus| resources are immediately available for use in the"
 " appliance."
-msgstr ""
+msgstr "Pacotes são arquivos de código usados para definir recursos do |morpheus|, que podem então ser enviados e usados em qualquer appliance |morpheus| onde forem necessários. Pacotes |morpheus| (.morpkg, .mpkg ou .mopkg) são adicionados na seção |AdmIntPac| da interface. Pacotes |morpheus| contêm objetos de Biblioteca e automação, como Tipos de Instância, Layouts, Tipos de Nó, Tarefas, Spec Temples e Layouts de Cluster. Após o envio de um pacote válido, os recursos |morpheus| definidos ficam imediatamente disponíveis para uso no appliance."
 
 #: ../../administration/integrations/packages.rst:9
 msgid ""
@@ -47,35 +47,35 @@ msgid ""
 "distribute and/or import custom |morpheus| packages too. This section "
 "goes over the process for writing and preparing packages for upload to a "
 "|morpheus| appliance."
-msgstr ""
+msgstr "A adição de ``/administration/packages`` é voltada principalmente para o envio de pacotes futuros fornecidos pelo |morpheus|, porém os usuários também podem criar, distribuir e/ou importar pacotes |morpheus| personalizados. Esta seção aborda o processo de escrita e preparação de pacotes para envio a um appliance |morpheus|."
 
 #: ../../administration/integrations/packages.rst:12
 msgid "Role Permissions"
-msgstr ""
+msgstr "Permissões de Função"
 
 #: ../../administration/integrations/packages.rst:14
 msgid ""
 "Access and capabilities for the **Packages** section is determined by the"
 " following role permissions:"
-msgstr ""
+msgstr "O acesso e as capacidades da seção **Packages** são determinados pelas seguintes permissões de função:"
 
 #: ../../administration/integrations/packages.rst:16
 msgid "Role: Feature Access: ``Admin: Plugins``"
-msgstr ""
+msgstr "Função: Acesso a Recursos: ``Admin: Plugins``"
 
 #: ../../administration/integrations/packages.rst:17
 msgid "None: Cannot access Admin: Plugins section"
-msgstr ""
+msgstr "Nenhum: Não pode acessar a seção Admin: Plugins"
 
 #: ../../administration/integrations/packages.rst:18
 msgid ""
 "Full: Access to Admin: Plugins and ability to upload |morpheus| packages "
 "(``.morpkg``, ``.mpkg``, or ``.mopkg``)"
-msgstr ""
+msgstr "Completo: Acesso a Admin: Plugins e capacidade de enviar pacotes |morpheus| (``.morpkg``, ``.mpkg`` ou ``.mopkg``)"
 
 #: ../../administration/integrations/packages.rst:21
 msgid "Getting Started"
-msgstr ""
+msgstr "Primeiros Passos"
 
 #: ../../administration/integrations/packages.rst:23
 msgid ""
@@ -87,7 +87,7 @@ msgid ""
 "Language) and follow referenced resource naming. In the next section, we "
 "will define the required attributes for both the ``.json`` manifest and "
 "the scribe files with examples."
-msgstr ""
+msgstr "Pacotes consistem em duas partes principais, um arquivo de manifesto ``.json`` (que define alguns metadados sobre o pacote) e um ou mais arquivos ``.scribe`` que definem os recursos a serem adicionados. Esses arquivos são compactados e importados no |morpheus| como um único arquivo (``.morpkg``, ``.mpkg`` ou ``.mopkg``). Arquivos scribe são escritos em HCL (Hashicorp Configuration Language) e seguem a nomenclatura de recursos referenciados. Na próxima seção, definiremos os atributos obrigatórios tanto para o manifesto ``.json`` quanto para os arquivos scribe com exemplos."
 
 #: ../../administration/integrations/packages.rst:25
 msgid ""
@@ -102,7 +102,7 @@ msgid ""
 "number, and upload the package once again. This ensures important local "
 "changes would not be overwritten by subsequent uploads. There is no "
 "warning given in the UI, changes are simply overwritten without notice."
-msgstr ""
+msgstr "Ao enviar pacotes para o |morpheus|, lembre-se de que os mesmos pacotes podem ser reinstalados quantas vezes forem necessárias. Quando o mesmo pacote é reinstalado, quaisquer alterações locais nesses recursos feitas no appliance |morpheus| serão sobrescritas. Por exemplo, se uma Tarefa foi criada por pacote e alterações são feitas localmente na configuração da Tarefa no |morpheus|, envios subsequentes dos pacotes sobrescreverão essas alterações. Um método melhor para fazer alterações em recursos originados de pacotes seria atualizar o código do pacote, aumentar o número da versão e enviar o pacote novamente. Isso garante que alterações locais importantes não sejam sobrescritas por envios subsequentes. Não há aviso na interface; as alterações são simplesmente sobrescritas sem notificação."
 
 #: ../../administration/integrations/packages.rst:27
 msgid ""
@@ -110,11 +110,11 @@ msgid ""
 "(|trash| icon on the packages detail page), you will simply delete the "
 "package from the list. |morpheus| will show a helpful list of resources "
 "added with the package if cleanup is desired but will not delete them."
-msgstr ""
+msgstr "Além disso, vale notar que, embora os pacotes possam ser excluídos (ícone |trash| na página de detalhes dos pacotes), você simplesmente excluirá o pacote da lista. O |morpheus| mostrará uma lista útil de recursos adicionados com o pacote se a limpeza for desejada, mas não os excluirá."
 
 #: ../../administration/integrations/packages.rst:30
 msgid "Creating Packages"
-msgstr ""
+msgstr "Criando Pacotes"
 
 #: ../../administration/integrations/packages.rst:32
 msgid ""
@@ -122,11 +122,11 @@ msgid ""
 "file and any number of ``.scribe`` files. We'll first look at the "
 "manifest file, its purpose, and attributes that must be included in the "
 "JSON map."
-msgstr ""
+msgstr "Conforme observado na última seção, um pacote consiste em um arquivo de manifesto ``.json`` e qualquer número de arquivos ``.scribe``. Primeiro examinaremos o arquivo de manifesto, sua finalidade e os atributos que devem ser incluídos no mapa JSON."
 
 #: ../../administration/integrations/packages.rst:34
 msgid "A typical package manifest looks like this:"
-msgstr ""
+msgstr "Um manifesto de pacote típico se parece com isto:"
 
 #: ../../administration/integrations/packages.rst:36
 #, python-brace-format
@@ -142,13 +142,13 @@ msgstr ""
 
 #: ../../administration/integrations/packages.rst:46
 msgid "The manifest includes each of the following attributes:"
-msgstr ""
+msgstr "O manifesto inclui cada um dos seguintes atributos:"
 
 #: ../../administration/integrations/packages.rst:48
 msgid ""
 "**TYPE:** Tells |morpheus| to process all included files with the package"
 " as scribe files. Currently, this is the only supported type"
-msgstr ""
+msgstr "**TYPE:** Informa ao |morpheus| para processar todos os arquivos incluídos no pacote como arquivos scribe. Atualmente, este é o único tipo suportado"
 
 #: ../../administration/integrations/packages.rst:49
 msgid ""
@@ -156,25 +156,25 @@ msgid ""
 " UI. The example manifest above came from a package that adds resources "
 "for an Ubuntu 22.04 library item to |morpheus|, and is named to indicate "
 "that"
-msgstr ""
+msgstr "**NAME:** Este é o nome do pacote que aparecerá na interface do |morpheus|. O manifesto de exemplo acima veio de um pacote que adiciona recursos para um item de biblioteca Ubuntu 22.04 ao |morpheus| e é nomeado para indicar isso"
 
 #: ../../administration/integrations/packages.rst:50
 msgid ""
 "**CODE:** Not visible in UI but exists for referencing the package via "
 "|morpheus| API"
-msgstr ""
+msgstr "**CODE:** Não visível na interface, mas existe para referenciar o pacote via API do |morpheus|"
 
 #: ../../administration/integrations/packages.rst:51
 msgid ""
 "**ORGANIZATION:** Appears only in the database but can be exposed via "
 "|morpheus| API"
-msgstr ""
+msgstr "**ORGANIZATION:** Aparece apenas no banco de dados, mas pode ser exposto via API do |morpheus|"
 
 #: ../../administration/integrations/packages.rst:52
 msgid ""
 "**VERSION:** Listed in |morpheus| UI and is useful for tracking changes "
 "over time to package-sourced resources"
-msgstr ""
+msgstr "**VERSION:** Listado na interface do |morpheus| e útil para rastrear alterações ao longo do tempo em recursos originados de pacotes"
 
 #: ../../administration/integrations/packages.rst:54
 msgid ""
@@ -184,7 +184,7 @@ msgid ""
 "environment. Certain resources will require reference to other resources "
 "included with the scribe file. Here's a simple scribe file creating a "
 "shell script-type \"Hello World\" Task:"
-msgstr ""
+msgstr "Arquivos scribe são consideravelmente mais complicados e ainda não foram totalmente documentados publicamente. No entanto, podemos mostrar alguns exemplos aqui e fornecer estratégias para extrair exemplos adicionais do seu próprio ambiente. Certos recursos exigirão referência a outros recursos incluídos no arquivo scribe. Aqui está um arquivo scribe simples criando uma Tarefa \"Hello World\" do tipo script shell:"
 
 #: ../../administration/integrations/packages.rst:56
 #, python-brace-format
@@ -223,7 +223,7 @@ msgid ""
 "referenced by HCL referenced resource naming such as in the following "
 "example where a ``workload-type`` resource references a ``virtual-image``"
 " resource:"
-msgstr ""
+msgstr "Neste caso, a configuração da Tarefa foi escrita localmente no modal Adicionar/Editar Tarefa no |morpheus|, em vez de ser obtida de outro lugar (como um repositório Github). O conteúdo da Tarefa em si é um recurso distinto e é referenciado no recurso Task por UUID. Recursos externos também podem ser referenciados por nomenclatura de recurso referenciado HCL, como no exemplo a seguir, onde um recurso ``workload-type`` referencia um recurso ``virtual-image``:"
 
 #: ../../administration/integrations/packages.rst:84
 msgid ""
@@ -275,7 +275,7 @@ msgstr ""
 msgid ""
 "The specific virtual image is referenced as ``virtual-"
 "image.vmware_vsphere_image_morpheus_almalinux_9_20240324``."
-msgstr ""
+msgstr "Para ir além, você pode gerar exemplos adicionais a partir dos seus próprios ambientes. Use o recurso `Import/Export <https://docs.morpheusdata.com/en/latest/provisioning/code/code.html#import-and-export>`_ integrado ao |morpheus| e exporte seus recursos criados para repositórios Git integrados. Ao visualizar os resultados nos seus repositórios, você verá que os recursos são exportados como arquivos scribe."
 
 #: ../../administration/integrations/packages.rst:127
 msgid ""
@@ -286,11 +286,11 @@ msgid ""
 "created resources into integrated Git repositories. When viewing the "
 "results in your repositories, you'll see the resources are exported as "
 "scribe files."
-msgstr ""
+msgstr "Preparando e Enviando Pacotes"
 
 #: ../../administration/integrations/packages.rst:130
 msgid "Preparing and Uploading Packages"
-msgstr ""
+msgstr "Para preparar o pacote, certifique-se de que o manifesto e os arquivos scribe estejam reunidos em um diretório. Em seguida, você precisará compactar o conteúdo desse diretório com uma extensão válida (``.morpkg``, ``.mpkg`` ou ``.mopkg``). No Linux, de fora do diretório, você pode usar: ``zip -j <package-name>.mpkg <directory-name>/*``. O pacote está pronto para ser enviado. Navegue até |AdmIntPac| em qualquer appliance e use a ferramenta de seleção de arquivo para enviar seu novo arquivo de pacote."
 
 #: ../../administration/integrations/packages.rst:132
 msgid ""
@@ -301,5 +301,5 @@ msgid ""
 "name>.mpkg <directory-name>/*``. The package is now ready to be uploaded."
 " Navigate to |AdmIntPac| on any appliance and use the file picker tool to"
 " upload your new package file."
-msgstr ""
+msgstr "Para preparar o pacote, certifique-se de que o manifesto e os arquivos scribe estejam reunidos em um diretório. Em seguida, você precisará compactar o conteúdo desse diretório com uma extensão válida (``.morpkg``, ``.mpkg`` ou ``.mopkg``). No Linux, de fora do diretório, você pode usar: ``zip -j <package-name>.mpkg <directory-name>/*``. O pacote está pronto para ser enviado. Navegue até |AdmIntPac| em qualquer appliance e use a ferramenta de seleção de arquivo para enviar seu novo arquivo de pacote."
 

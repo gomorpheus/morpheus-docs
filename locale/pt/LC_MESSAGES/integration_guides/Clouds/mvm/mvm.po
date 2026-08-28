@@ -23,11 +23,11 @@ msgstr ""
 #: ../../integration_guides/Clouds/mvm/mvm.rst:2
 #: ../../integration_guides/Clouds/mvm/mvm.rst:146
 msgid "MVM Cloud"
-msgstr ""
+msgstr "Nuvem MVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:7
 msgid ""
@@ -36,17 +36,17 @@ msgid ""
 "MVM *Clusters* which are managed via ``Infrastructure > Clusters``, the "
 "MVM Cloud integration provides a cloud-level abstraction for provisioning"
 " and managing KVM virtual machines across distributed hypervisor hosts."
-msgstr ""
+msgstr "A Nuvem MVM (Morpheus Virtual Machine), também conhecida como HVM (HPE Virtual Machine), é a plataforma de hypervisor nativa baseada em KVM do |morpheus|. Diferentemente dos *Clusters* MVM, que são gerenciados via ``Infrastructure > Clusters``, a integração de Nuvem MVM fornece uma abstração em nível de nuvem para provisionar e gerenciar máquinas virtuais KVM em hosts hypervisor distribuídos."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:9
 msgid ""
 "The MVM Cloud integration uses the ``kvmContainerService`` for "
 "provisioning and ``MvmHostService`` for host management."
-msgstr ""
+msgstr "A integração de Nuvem MVM usa o ``kvmContainerService`` para provisionamento e o ``MvmHostService`` para gerenciamento de hosts."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:11
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:11
 msgid ""
@@ -54,218 +54,218 @@ msgid ""
 "traditional cloud integration for VM provisioning. MVM Clusters provide "
 "clustered hypervisor management with features like HA, live migration, "
 "and shared storage. Both use KVM underneath."
-msgstr ""
+msgstr "A Nuvem MVM e os Clusters MVM têm propósitos diferentes. A Nuvem MVM é uma integração de nuvem tradicional para provisionamento de VM. Os Clusters MVM fornecem gerenciamento de hypervisor em cluster com recursos como HA, migração ao vivo e armazenamento compartilhado. Ambos usam KVM por baixo."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:14
 msgid "Features"
-msgstr ""
+msgstr "Recursos"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:16
 msgid "KVM virtual machine provisioning and lifecycle management"
-msgstr ""
+msgstr "Provisionamento e gerenciamento do ciclo de vida de máquinas virtuais KVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:17
 msgid "Virtual image management with template-based provisioning"
-msgstr ""
+msgstr "Gerenciamento de virtual image com provisionamento baseado em template"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:18
 msgid "Host hypervisor management"
-msgstr ""
+msgstr "Gerenciamento de host hypervisor"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:19
 msgid "Network configuration (bridges, VLANs, OVS)"
-msgstr ""
+msgstr "Configuração de rede (bridges, VLANs, OVS)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:20
 msgid "Storage profile management"
-msgstr ""
+msgstr "Gerenciamento de perfil de armazenamento"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:21
 msgid "Auto-scaling support"
-msgstr ""
+msgstr "Suporte a auto-scaling"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:22
 msgid "Brownfield VM import"
-msgstr ""
+msgstr "Importação de VM brownfield"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:23
 msgid "Console access"
-msgstr ""
+msgstr "Acesso ao console"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:26
 msgid "Prerequisites"
-msgstr ""
+msgstr "Pré-requisitos"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:28
 msgid "One or more Linux hosts with KVM/QEMU installed and configured"
-msgstr ""
+msgstr "Um ou mais hosts Linux com KVM/QEMU instalado e configurado"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:29
 msgid "|morpheus| Agent installed on hypervisor hosts (or ability to install)"
-msgstr ""
+msgstr "Agente |morpheus| instalado nos hosts hypervisor (ou capacidade de instalar)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:30
 msgid "Network connectivity between |morpheus| and hypervisor hosts"
-msgstr ""
+msgstr "Conectividade de rede entre o |morpheus| e os hosts hypervisor"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:31
 msgid "Sufficient CPU, memory, and storage resources for VM provisioning"
-msgstr ""
+msgstr "Recursos suficientes de CPU, memória e armazenamento para provisionamento de VM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:32
 msgid "Libvirt service running on target hosts"
-msgstr ""
+msgstr "Serviço Libvirt em execução nos hosts de destino"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:35
 msgid "Adding an MVM Cloud"
-msgstr ""
+msgstr "Adição de uma Nuvem MVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:37
 msgid "Navigate to ``Infrastructure > Clouds``"
-msgstr ""
+msgstr "Navegue até ``Infrastructure > Clouds``"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:38
 #: ../../integration_guides/Clouds/mvm/mvm.rst:98
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:39
 msgid "Choose **MVM** (or **HVM**) from the cloud type list"
-msgstr ""
+msgstr "Escolha **MVM** (ou **HVM**) na lista de tipos de nuvem"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:40
 #: ../../integration_guides/Clouds/mvm/mvm.rst:101
 msgid "Configure:"
-msgstr ""
+msgstr "Configure:"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:42
 msgid "NAME"
-msgstr ""
+msgstr "NOME"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:43
 msgid "Friendly name for the cloud"
-msgstr ""
+msgstr "Nome amigável para a nuvem"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:44
 msgid "CODE"
-msgstr ""
+msgstr "CÓDIGO"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:45
 msgid "Unique code identifier"
-msgstr ""
+msgstr "Identificador de código exclusivo"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:46
 msgid "LOCATION"
-msgstr ""
+msgstr "LOCALIZAÇÃO"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:47
 msgid "Optional location descriptor"
-msgstr ""
+msgstr "Descritor de localização opcional"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:48
 msgid "VISIBILITY"
-msgstr ""
+msgstr "VISIBILIDADE"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:49
 msgid "Public (all tenants) or Private (master tenant only)"
-msgstr ""
+msgstr "Público (todos os tenants) ou Privado (somente tenant master)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:50
 msgid "TENANT"
-msgstr ""
+msgstr "TENANT"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:51
 msgid "Owning tenant for the cloud"
-msgstr ""
+msgstr "Tenant proprietário da nuvem"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:53
 msgid "Select :guilabel:`NEXT` and configure Group assignment"
-msgstr ""
+msgstr "Selecione :guilabel:`NEXT` e configure a atribuição de Grupo"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:54
 #: ../../integration_guides/Clouds/mvm/mvm.rst:114
 msgid "Complete the wizard"
-msgstr ""
+msgstr "Conclua o assistente"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:56
 msgid ""
 "After adding the cloud, hypervisor hosts must be added to provide compute"
 " capacity."
-msgstr ""
+msgstr "Após adicionar a nuvem, hosts hypervisor devem ser adicionados para fornecer capacidade de computação."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:59
 msgid "Adding Hypervisor Hosts"
-msgstr ""
+msgstr "Adição de Hosts Hypervisor"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:61
 msgid "Navigate to the MVM Cloud detail page"
-msgstr ""
+msgstr "Navegue até a página de detalhes da Nuvem MVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:62
 msgid "Select the **Hosts** tab"
-msgstr ""
+msgstr "Selecione a aba **Hosts**"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:63
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:64
 msgid "Configure the host connection:"
-msgstr ""
+msgstr "Configure a conexão do host:"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:66
 msgid "SSH HOST"
-msgstr ""
+msgstr "SSH HOST"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:67
 msgid "IP address or hostname of the KVM hypervisor"
-msgstr ""
+msgstr "Endereço IP ou hostname do hypervisor KVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:68
 msgid "SSH USERNAME"
-msgstr ""
+msgstr "SSH USERNAME"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:69
 msgid "User with sudo privileges"
-msgstr ""
+msgstr "Usuário com privilégios sudo"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:70
 msgid "SSH PASSWORD / KEY"
-msgstr ""
+msgstr "SSH PASSWORD / KEY"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:71
 msgid "Authentication credentials"
-msgstr ""
+msgstr "Credenciais de autenticação"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:73
 msgid "|morpheus| will connect, install the agent, and begin managing the host"
-msgstr ""
+msgstr "O |morpheus| se conectará, instalará o agente e começará a gerenciar o host"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:76
 msgid "Instance Types"
-msgstr ""
+msgstr "Tipos de Instância"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:78
 msgid "MVM Cloud supports two Instance Types:"
-msgstr ""
+msgstr "A Nuvem MVM oferece suporte a dois Tipos de Instância:"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:80
 msgid "**KVM** (code: ``kvm``) — Standard KVM virtual machine"
-msgstr ""
+msgstr "**KVM** (código: ``kvm``) — Máquina virtual KVM padrão"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:81
 msgid ""
 "**HVM** (code: ``mvm``) — High-performance virtual machine optimized for "
 "the Morpheus HVM hypervisor"
-msgstr ""
+msgstr "**HVM** (código: ``mvm``) — Máquina virtual de alto desempenho otimizada para o hypervisor Morpheus HVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:83
 msgid "Both use the same underlying ``kvmContainerService`` for provisioning."
-msgstr ""
+msgstr "Ambos usam o mesmo ``kvmContainerService`` subjacente para provisionamento."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:86
 msgid "Virtual Images"
-msgstr ""
+msgstr "Virtual Images"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:88
 msgid ""
@@ -274,268 +274,268 @@ msgid ""
 "``metadata.json`` on the same Virtual Image. The manifest maps filenames "
 "to disk capacities, guest device names, ordering, and the boot disk. "
 "Upload the QCOW2 files before the manifest."
-msgstr ""
+msgstr "O provisionamento MVM/HVM oferece suporte a Virtual Images QCOW2 e RAW. Uma imagem QCOW2 de vários discos exige um arquivo QCOW2 por disco e um arquivo chamado ``metadata.json`` na mesma Virtual Image. O manifesto mapeia nomes de arquivo para capacidades de disco, nomes de dispositivo convidado, ordenação e o disco de boot. Faça upload dos arquivos QCOW2 antes do manifesto."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:90
 msgid ""
 "See :ref:`multi-disk-qcow2-images-for-hvm-kvm` for the manifest schema "
 "and upload procedure."
-msgstr ""
+msgstr "Consulte :ref:`multi-disk-qcow2-images-for-hvm-kvm` para o esquema do manifesto e o procedimento de upload."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:93
 #: ../../integration_guides/Clouds/mvm/mvm.rst:163
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionamento"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:95
 msgid "To provision a VM on MVM Cloud:"
-msgstr ""
+msgstr "Para provisionar uma VM na Nuvem MVM:"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:97
 msgid "Navigate to ``Provisioning > Instances``"
-msgstr ""
+msgstr "Navegue até ``Provisioning > Instances``"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:99
 msgid "Choose the KVM or HVM Instance Type"
-msgstr ""
+msgstr "Escolha o Tipo de Instância KVM ou HVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:100
 msgid "Select the MVM Cloud as the target"
-msgstr ""
+msgstr "Selecione a Nuvem MVM como destino"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:103
 msgid "IMAGE"
-msgstr ""
+msgstr "IMAGE"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:104
 msgid "Select from available virtual images (typeahead from synced images)"
-msgstr ""
+msgstr "Selecione entre as virtual images disponíveis (typeahead a partir de imagens sincronizadas)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:105
 msgid "PLAN"
-msgstr ""
+msgstr "PLANO"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:106
 msgid "Select a service plan (CPU, RAM, storage configuration)"
-msgstr ""
+msgstr "Selecione um plano de serviço (configuração de CPU, RAM, armazenamento)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:107
 msgid "NETWORK"
-msgstr ""
+msgstr "REDE"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:108
 msgid "Select the target network (bridge, VLAN)"
-msgstr ""
+msgstr "Selecione a rede de destino (bridge, VLAN)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:109
 msgid "HOST"
-msgstr ""
+msgstr "HOST"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:110
 msgid "Optionally pin to a specific hypervisor host"
-msgstr ""
+msgstr "Opcionalmente fixe em um host hypervisor específico"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:111
 msgid "VOLUMES"
-msgstr ""
+msgstr "VOLUMES"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:112
 msgid "Configure disk(s) — size, type, datastore"
-msgstr ""
+msgstr "Configure disco(s) — tamanho, tipo, datastore"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:117
 msgid "Storage Profiles"
-msgstr ""
+msgstr "Perfis de Armazenamento"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:119
 msgid "MVM Cloud supports storage profiles that define storage characteristics:"
-msgstr ""
+msgstr "A Nuvem MVM oferece suporte a perfis de armazenamento que definem características de armazenamento:"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:121
 msgid "Storage backend type"
-msgstr ""
+msgstr "Tipo de backend de armazenamento"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:122
 msgid "Performance tier"
-msgstr ""
+msgstr "Camada de desempenho"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:123
 msgid "Replication settings"
-msgstr ""
+msgstr "Configurações de replicação"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:124
 msgid "Volume type defaults"
-msgstr ""
+msgstr "Padrões de tipo de volume"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:126
 msgid ""
 "Storage profiles are configured via seed data and can be customized for "
 "specific environments."
-msgstr ""
+msgstr "Os perfis de armazenamento são configurados via seed data e podem ser personalizados para ambientes específicos."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:129
 msgid "Networking"
-msgstr ""
+msgstr "Rede"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:131
 msgid "MVM Cloud networking supports:"
-msgstr ""
+msgstr "A rede da Nuvem MVM oferece suporte a:"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:133
 msgid "**Linux bridges** — Standard Linux bridge interfaces"
-msgstr ""
+msgstr "**Linux bridges** — Interfaces bridge Linux padrão"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:134
 msgid "**Open vSwitch (OVS)** — SDN-capable virtual switching"
-msgstr ""
+msgstr "**Open vSwitch (OVS)** — Switching virtual com capacidade SDN"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:135
 msgid "**VLANs** — VLAN tagging on bridge/OVS ports"
-msgstr ""
+msgstr "**VLANs** — Marcação VLAN em portas bridge/OVS"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:136
 msgid ""
 "**Direct/passthrough** — SR-IOV and PCI passthrough for high-performance "
 "networking"
-msgstr ""
+msgstr "**Direct/passthrough** — SR-IOV e PCI passthrough para rede de alto desempenho"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:139
 msgid "MVM Cloud vs MVM Cluster"
-msgstr ""
+msgstr "Nuvem MVM vs Cluster MVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:145
 msgid "Feature"
-msgstr ""
+msgstr "Característica"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:147
 msgid "MVM Cluster"
-msgstr ""
+msgstr "Cluster MVM"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:148
 msgid "Management model"
-msgstr ""
+msgstr "Modelo de gerenciamento"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:149
 msgid "Cloud integration (flat)"
-msgstr ""
+msgstr "Integração de nuvem (plana)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:150
 msgid "Cluster (master/worker topology)"
-msgstr ""
+msgstr "Cluster (topologia master/worker)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:151
 msgid "Navigation"
-msgstr ""
+msgstr "Navegação"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:152
 msgid "Infrastructure > Clouds"
-msgstr ""
+msgstr "Infrastructure > Clouds"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:153
 msgid "Infrastructure > Clusters"
-msgstr ""
+msgstr "Infrastructure > Clusters"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:154
 msgid "High Availability"
-msgstr ""
+msgstr "Alta Disponibilidade"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:155
 msgid "Manual"
-msgstr ""
+msgstr "Manual"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:156
 msgid "Built-in HA, fencing"
-msgstr ""
+msgstr "HA integrado, fencing"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:157
 msgid "Live Migration"
-msgstr ""
+msgstr "Migração ao Vivo"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:158
 msgid "Not available"
-msgstr ""
+msgstr "Não disponível"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:159
 msgid "Supported"
-msgstr ""
+msgstr "Suportado"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:160
 msgid "Shared Storage"
-msgstr ""
+msgstr "Armazenamento Compartilhado"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:161
 msgid "Per-host"
-msgstr ""
+msgstr "Por host"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:162
 msgid "Cluster-wide (Ceph, NFS)"
-msgstr ""
+msgstr "Em todo o cluster (Ceph, NFS)"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:164
 msgid "Direct to host"
-msgstr ""
+msgstr "Direto ao host"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:165
 msgid "Scheduler-placed"
-msgstr ""
+msgstr "Colocado pelo agendador"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:166
 msgid "Use case"
-msgstr ""
+msgstr "Caso de uso"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:167
 msgid "Simple KVM environments"
-msgstr ""
+msgstr "Ambientes KVM simples"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:168
 msgid "Production hyperconverged"
-msgstr ""
+msgstr "Hiperconvergente de produção"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:171
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solução de Problemas"
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:173
 msgid ""
 "**Host not connecting:** Verify SSH connectivity and that the user has "
 "sudo access. Check that libvirt is running on the host."
-msgstr ""
+msgstr "**Host não conectando:** Verifique a conectividade SSH e se o usuário tem acesso sudo. Confirme que o libvirt está em execução no host."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:174
 msgid ""
 "**No images available:** Ensure virtual images have been uploaded or "
 "synced. Images must be in a KVM-compatible format (QCOW2, RAW)."
-msgstr ""
+msgstr "**Nenhuma imagem disponível:** Garanta que virtual images tenham sido enviadas ou sincronizadas. As imagens devem estar em um formato compatível com KVM (QCOW2, RAW)."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:175
 msgid ""
 "**Only one disk or missing data disks:** Confirm the multi-disk QCOW2 "
 "image includes a valid ``metadata.json`` file and that each manifest "
 "filename matches an uploaded QCOW2 file."
-msgstr ""
+msgstr "**Apenas um disco ou discos de dados ausentes:** Confirme que a imagem QCOW2 de vários discos inclui um arquivo ``metadata.json`` válido e que cada nome de arquivo do manifesto corresponde a um arquivo QCOW2 enviado."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:176
 msgid ""
 "**Wrong disk size or boot disk:** Confirm capacities are expressed in "
 "bytes, disk positions are unique, and the intended root disk has ``boot``"
 " set to ``true``."
-msgstr ""
+msgstr "**Tamanho de disco errado ou disco de boot:** Confirme que as capacidades são expressas em bytes, que as posições dos discos são exclusivas e que o disco root pretendido tem ``boot`` definido como ``true``."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:177
 msgid ""
 "**Provisioning fails:** Check available capacity on the target host. "
 "Verify storage pools have free space."
-msgstr ""
+msgstr "**Provisionamento falha:** Verifique a capacidade disponível no host de destino. Confirme que os storage pools têm espaço livre."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:178
 msgid ""
 "**Network errors:** Confirm bridge interfaces exist on the hypervisor "
 "host and match the configured network names."
-msgstr ""
+msgstr "**Erros de rede:** Confirme que as interfaces bridge existem no host hypervisor e correspondem aos nomes de rede configurados."
 
 #: ../../integration_guides/Clouds/mvm/mvm.rst:179
 msgid ""
 "**Console not working:** Ensure VNC/SPICE ports (5900+) are accessible "
 "from the |morpheus| appliance to the hypervisor host."
-msgstr ""
+msgstr "**Console não funciona:** Garanta que as portas VNC/SPICE (5900+) estejam acessíveis do appliance |morpheus| ao host hypervisor."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../monitoring/checks.rst:2
 msgid "Checks"
-msgstr ""
+msgstr "Prüfungen"
 
 #: ../../monitoring/checks.rst:4
 msgid ""
@@ -34,18 +34,18 @@ msgid ""
 "database type checks to web checks and message checks. They are highly "
 "configurable and also feature fallback check types for those more generic"
 " use cases."
-msgstr ""
+msgstr "Das Monitoring-System besteht aus einzelnen Checks. Für jeden über |morpheus| provisionierten Container oder jede VM wird ein Check erstellt. Interessant ist, dass diese Checks typbewusst sind. Es gibt mehrere integrierte Check-Typen, die je nach provisioniertem Service- oder Instance-Typ ausgewählt werden — von Datenbank- über Web- bis hin zu Message-Checks. Sie sind stark konfigurierbar und bieten Fallback-Check-Typen für generischere Anwendungsfälle."
 
 #: ../../monitoring/checks.rst:6
 msgid ""
 "Checks can be customized to run custom queries, check queue sizes, or "
 "even adjust severity levels and check intervals. All of these things can "
 "be controlled from the Checks sub tab within Monitoring."
-msgstr ""
+msgstr "Checks können angepasst werden, um benutzerdefinierte Abfragen auszuführen, Queue-Größen zu prüfen oder Schweregrade und Check-Intervalle anzupassen. All dies steuern Sie über den Unterreiter Checks innerhalb von Monitoring."
 
 #: ../../monitoring/checks.rst:9
 msgid "Health"
-msgstr ""
+msgstr "Betriebszustand"
 
 #: ../../monitoring/checks.rst:11
 msgid ""
@@ -59,7 +59,7 @@ msgid ""
 "\"Happy\" to see only Checks in a Healthy state, \"Sad\" to see only "
 "Checks in an Error state, \"Warning\" to see Checks in both a \"Warning\""
 " and \"Unknown\" state, and \"Muted\" to see only muted Checks."
-msgstr ""
+msgstr "Ein Check kann einen von vier primären Health-Zuständen haben: Error, Healthy, Warning und Unknown. Checks können auch stummgeschaltet (Muted) sein; dann sind sie deaktiviert und werden nicht aktiv ausgeführt, um einen aktualisierten Health-Zustand zu ermitteln. Während Checks stummgeschaltet sind, ändert sich der Verfügbarkeitsprozentsatz unabhängig vom Zustand der geprüften Arbeitslast nicht. Die Standardansicht zeigt Checks in allen Health-Zuständen; die Ansicht kann auf einen einzelnen Zustand gefiltert werden. Stellen Sie den Ansichtsfilter auf „Happy“, um nur Checks im Zustand Healthy zu sehen, auf „Sad“ für Checks im Zustand Error, auf „Warning“ für Checks in den Zuständen „Warning“ und „Unknown“ sowie auf „Muted“ für nur stummgeschaltete Checks."
 
 #: ../../monitoring/checks.rst:13
 msgid ""
@@ -69,11 +69,11 @@ msgid ""
 "depending on the grouping of the Check. When a Check recovers, it "
 "automatically goes into a Warning state. The Warning state will remain "
 "until 10 successful Check runs have completed."
-msgstr ""
+msgstr "Wenn ein Check-Test fehlschlägt, versucht das System den Check nach 30 Sekunden automatisch erneut, um Fehlalarme zu vermeiden. Dadurch wechselt der Check in den Error-Zustand und löst den entsprechenden Schweregrad-Vorfall je nach Gruppierung des Checks aus. Bei Wiederherstellung wechselt der Check automatisch in den Warning-Zustand. Der Warning-Zustand bleibt bestehen, bis 10 erfolgreiche Check-Läufe abgeschlossen sind."
 
 #: ../../monitoring/checks.rst:16
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
 #: ../../monitoring/checks.rst:18
 msgid ""
@@ -81,29 +81,29 @@ msgid ""
 "options can be configured in `Admin > Monitoring`. This includes the "
 "default check interval time. By default a check is run every 5 minutes. "
 "This can however be changed to run as frequently as once every minute."
-msgstr ""
+msgstr "Alle Check-Typen haben mehrere Kernoptionen; einige dieser Standardoptionen können unter `Admin > Monitoring` konfiguriert werden. Dazu gehört das Standard-Check-Intervall. Standardmäßig wird ein Check alle 5 Minuten ausgeführt. Dies kann jedoch so geändert werden, dass er so häufig wie einmal pro Minute läuft."
 
 #: ../../monitoring/checks.rst:20
 msgid ""
 "*Max Severity*: The maximum severity level impact for a created incident "
 "that can occur if the check fails (defaults to Critical)."
-msgstr ""
+msgstr "*Max Severity*: Der maximale Schweregrad-Einfluss eines erzeugten Vorfalls bei fehlgeschlagenem Check (Standard: Critical)."
 
 #: ../../monitoring/checks.rst:21
 msgid ""
 "*Check Interval*: The frequency with which a check is run (default 5 "
 "minutes)."
-msgstr ""
+msgstr "*Check Interval*: Die Häufigkeit, mit der ein Check ausgeführt wird (Standard 5 Minuten)."
 
 #: ../../monitoring/checks.rst:22
 msgid ""
 "*Affects Availability*: Whether or not this check impacts overall system "
 "availability calculations."
-msgstr ""
+msgstr "*Affects Availability*: Ob dieser Check die systemweite Verfügbarkeitsberechnung beeinflusst."
 
 #: ../../monitoring/checks.rst:26
 msgid "SSH Tunneling"
-msgstr ""
+msgstr "SSH-Tunneling"
 
 #: ../../monitoring/checks.rst:28
 msgid ""
@@ -112,11 +112,11 @@ msgid ""
 "these safely, and securely |morpheus| provides an SSH Tunneling mechanism"
 " for its check servers. This allows the check to be confirmed via an ssh "
 "port tunnel securely using a keypair."
-msgstr ""
+msgstr "Bei der Überwachung von Datenbanken und Diensten sind diese oft nicht über öffentliche IPs für externes Monitoring erreichbar. Um sie sicher zu erreichen, bietet |morpheus| einen SSH-Tunneling-Mechanismus für seine Check-Server. Dadurch kann der Check über einen SSH-Port-Tunnel sicher mit einem Schlüsselpaar bestätigt werden."
 
 #: ../../monitoring/checks.rst:31
 msgid "Check Servers"
-msgstr ""
+msgstr "Check-Server"
 
 #: ../../monitoring/checks.rst:33
 msgid ""
@@ -126,15 +126,15 @@ msgid ""
 "or even scaled horizontally onto sets of check servers. All other checks "
 "that are related to provisioned containers or VMs are executed by the "
 "installed agent on the guest OS or Docker host."
-msgstr ""
+msgstr "Bei einer Basisinstallation von |morpheus| ist ein einzelner `check server` auf der Appliance installiert. Dieser führt benutzerdefinierte Checks aus. Der Dienst verbindet sich mit den bereitgestellten RabbitMQ-Diensten und kann ausgelagert oder horizontal auf Sets von Check-Servern skaliert werden. Alle übrigen Checks für provisionierte Container oder VMs werden vom installierten Agent auf dem Gastbetriebssystem oder Docker-Host ausgeführt."
 
 #: ../../monitoring/checks.rst:36
 msgid "Check types"
-msgstr ""
+msgstr "Check-Typen"
 
 #: ../../monitoring/checks.rst:39
 msgid "Web Check"
-msgstr ""
+msgstr "Web Check"
 
 #: ../../monitoring/checks.rst:41
 msgid ""
@@ -142,76 +142,76 @@ msgid ""
 "match check criteria confirms if the website is loading with the expected"
 " values. The text to match character should be within the first few lines"
 " of the page source."
-msgstr ""
+msgstr "Ein Web Check eignet sich, um zu prüfen, ob eine URL erreichbar ist; das Text-to-Match-Kriterium bestätigt, ob die Website mit den erwarteten Werten geladen wird. Der Text-to-Match-Text sollte in den ersten Zeilen des Seitencodes stehen."
 
 #: ../../monitoring/checks.rst:43
 msgid "Use case:"
-msgstr ""
+msgstr "Anwendungsfall:"
 
 #: ../../monitoring/checks.rst:44
 msgid ""
 "Adding a check to make sure morpheus demo environment is functioning. The"
 " below check will login to the morpheus UI and look for a text Morpheus "
 "on the dashboard page."
-msgstr ""
+msgstr "Einen Check hinzufügen, um sicherzustellen, dass die Morpheus-Demo-Umgebung funktioniert. Der folgende Check meldet sich an der Morpheus-UI an und sucht auf der Dashboard-Seite nach dem Text Morpheus."
 
 #: ../../monitoring/checks.rst:45
 msgid "Values to be added in Check:"
-msgstr ""
+msgstr "Im Check einzutragende Werte:"
 
 #: ../../monitoring/checks.rst:46 ../../monitoring/checks.rst:70
 #: ../../monitoring/checks.rst:86
 msgid "Name: \"<enter name>\""
-msgstr ""
+msgstr "Name: \"<enter name>\""
 
 #: ../../monitoring/checks.rst:47
 msgid "Type: Web Check"
-msgstr ""
+msgstr "Type: Web Check"
 
 #: ../../monitoring/checks.rst:48 ../../monitoring/checks.rst:72
 #: ../../monitoring/checks.rst:88
 msgid "Interval: 5 mins (Select an interval)"
-msgstr ""
+msgstr "Interval: 5 mins (Select an interval)"
 
 #: ../../monitoring/checks.rst:49 ../../monitoring/checks.rst:73
 msgid "Max severity: Critical"
-msgstr ""
+msgstr "Max severity: Critical"
 
 #: ../../monitoring/checks.rst:50 ../../monitoring/checks.rst:74
 #: ../../monitoring/checks.rst:89
 msgid "Check the box for affects availability"
-msgstr ""
+msgstr "Kontrollkästchen für Affects Availability aktivieren"
 
 #: ../../monitoring/checks.rst:51
 msgid ""
 "Web Url: https://demo.morpheusdata.com/operations/dashboard (Note: this "
 "page will load only if my login is successful. Enter the login details in"
 " Username and password fields)"
-msgstr ""
+msgstr "Web Url: https://demo.morpheusdata.com/operations/dashboard (Hinweis: Diese Seite lädt nur bei erfolgreicher Anmeldung. Geben Sie die Anmeldedaten in den Feldern Username und Password ein.)"
 
 #: ../../monitoring/checks.rst:52
 msgid "Request Method: GET"
-msgstr ""
+msgstr "Request Method: GET"
 
 #: ../../monitoring/checks.rst:53
 msgid "Basic Authentication: * User: <username> * Password: <password>"
-msgstr ""
+msgstr "Basic Authentication: * User: <username> * Password: <password>"
 
 #: ../../monitoring/checks.rst:56
 msgid ""
 "Text to Match: \"Morpheus\" (Login to the url and on the page of "
 "dashboard, right click and select view page source. In the forst few "
 "lines, look for a text that you want this check to verify)"
-msgstr ""
+msgstr "Text to Match: \"Morpheus\" (Melden Sie sich an der URL an und wählen Sie auf der Dashboard-Seite per Rechtsklick „Seitenquelltext anzeigen“. Suchen Sie in den ersten Zeilen nach einem Text, den dieser Check prüfen soll.)"
 
 #: ../../monitoring/checks.rst:57 ../../monitoring/checks.rst:76
 #: ../../monitoring/checks.rst:98
 msgid "Save Changes"
-msgstr ""
+msgstr "Save Changes"
 
 #: ../../monitoring/checks.rst:60
 msgid "Push API Check"
-msgstr ""
+msgstr "Push API Check"
 
 #: ../../monitoring/checks.rst:62
 msgid ""
@@ -221,92 +221,92 @@ msgid ""
 "external API push updates as to the status of the check timed closely "
 "with the configured check interval setting. This is used to throttle the "
 "push from performing too many status updates."
-msgstr ""
+msgstr "Dieser Check kann verwendet werden, um einen API-Aufruf von einer Plattform an Morpheus zu senden und zu prüfen, ob die Push-API funktioniert. Ein Push Check wird nicht regelmäßig vom Standard-Monitoring-System abgefragt. Stattdessen wird erwartet, dass ein externer API-Push Statusaktualisierungen zeitnah zum konfigurierten Check-Intervall sendet. Dies begrenzt zu häufige Statusaktualisierungen durch den Push."
 
 #: ../../monitoring/checks.rst:65
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../monitoring/checks.rst:65
 msgid ""
 "If a check is not heard from within the check intervals, It's status will"
 " be updated to error and an incident will be raised as if it failed."
-msgstr ""
+msgstr "Wird innerhalb der Check-Intervalle nichts vom Check empfangen, wird sein Status auf Error gesetzt und ein Vorfall wie bei einem Fehlschlag ausgelöst."
 
 #: ../../monitoring/checks.rst:67 ../../monitoring/checks.rst:83
 msgid "Use Case:"
-msgstr ""
+msgstr "Anwendungsfall:"
 
 #: ../../monitoring/checks.rst:68
 msgid ""
 "Send an API call from an app to make sure the API is not cluttered and "
 "can send checks in a 2 mins interval."
-msgstr ""
+msgstr "Einen API-Aufruf von einer App senden, um sicherzustellen, dass die API nicht überlastet ist und Checks in einem Intervall von 2 Minuten senden kann."
 
 #: ../../monitoring/checks.rst:69 ../../monitoring/checks.rst:85
 msgid "Values to be added to the check:"
-msgstr ""
+msgstr "Im Check einzutragende Werte:"
 
 #: ../../monitoring/checks.rst:71
 msgid "Type: \"Push API Check\""
-msgstr ""
+msgstr "Type: \"Push API Check\""
 
 #: ../../monitoring/checks.rst:75
 msgid ""
 "Copy the curl command are schedule to send this via your API. For testing"
 " we used postman to send the api call at an interval of 4 mins."
-msgstr ""
+msgstr "Kopieren Sie den curl-Befehl und planen Sie, ihn über Ihre API zu senden. Zum Testen haben wir Postman verwendet, um den API-Aufruf im Intervall von 4 Minuten zu senden."
 
 #: ../../monitoring/checks.rst:79
 msgid "MySQL Check"
-msgstr ""
+msgstr "MySQL Check"
 
 #: ../../monitoring/checks.rst:81
 msgid "This check is used to run a query on a host running mysql."
-msgstr ""
+msgstr "Dieser Check dient zum Ausführen einer Abfrage auf einem Host mit MySQL."
 
 #: ../../monitoring/checks.rst:84
 msgid ""
 "Query localhost running mysql to query a table to check if there is any "
 "status as requested. If the status has a count of 1 then the check would "
 "pass else mark it as critical."
-msgstr ""
+msgstr "Abfrage auf localhost mit MySQL an einer Tabelle, um zu prüfen, ob ein gewünschter Status vorliegt. Wenn der Status die Anzahl 1 hat, besteht der Check, andernfalls wird er als Critical markiert."
 
 #: ../../monitoring/checks.rst:87
 msgid "Type: \"MySQL Check\""
-msgstr ""
+msgstr "Type: \"MySQL Check\""
 
 #: ../../monitoring/checks.rst:90
 msgid "Host: 127.0.0.1"
-msgstr ""
+msgstr "Host: 127.0.0.1"
 
 #: ../../monitoring/checks.rst:91
 msgid "Port: 3306"
-msgstr ""
+msgstr "Port: 3306"
 
 #: ../../monitoring/checks.rst:92
 msgid "DB Name: morpheus"
-msgstr ""
+msgstr "DB Name: morpheus"
 
 #: ../../monitoring/checks.rst:93
 msgid "User: <db user name>"
-msgstr ""
+msgstr "User: <db user name>"
 
 #: ../../monitoring/checks.rst:94
 msgid "Password: <password>"
-msgstr ""
+msgstr "Password: <password>"
 
 #: ../../monitoring/checks.rst:95
 msgid ""
 "Query: \"select count(*) as count from request_reference where status = "
 "'requested';\""
-msgstr ""
+msgstr "Query: \"select count(*) as count from request_reference where status = 'requested';\""
 
 #: ../../monitoring/checks.rst:96
 msgid "Operator: Equal"
-msgstr ""
+msgstr "Operator: Equal"
 
 #: ../../monitoring/checks.rst:97
 msgid "Check results: 1"
-msgstr ""
+msgstr "Check results: 1"
 

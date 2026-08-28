@@ -22,15 +22,15 @@ msgstr ""
 
 #: ../../integration_guides/Automation/terraform.rst:2
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../integration_guides/Automation/terraform.rst:5
 msgid "Requirements"
-msgstr ""
+msgstr "Requisitos"
 
 #: ../../integration_guides/Automation/terraform.rst:8
 msgid "Role Access"
-msgstr ""
+msgstr "Acesso por Função"
 
 #: ../../integration_guides/Automation/terraform.rst:10
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 "Terraform App Blueprints in |LibBluApp|, the |morpheus| user must have "
 "Role permissions for `Provisioning: Blueprints - Terraform` set to "
 "`Full`."
-msgstr ""
+msgstr "Para ver a opção de tipo Terraform App Blueprint e criar Terraform App Blueprints em |LibBluApp|, o usuário |morpheus| deve ter permissões de Função para `Provisioning: Blueprints - Terraform` definidas como `Full`."
 
 #: ../../integration_guides/Automation/terraform.rst:12
 #: ../../integration_guides/Automation/terraform.rst:150
@@ -46,23 +46,23 @@ msgid ""
 "In order to provision Terraform Apps in |ProApp|, the Morpheus user must "
 "have Role permissions for `Provisioning: Blueprints - Terraform` set to "
 "`Provision` or `Full`."
-msgstr ""
+msgstr "Para provisionar Apps Terraform em |ProApp|, o usuário Morpheus deve ter permissões de Função para `Provisioning: Blueprints - Terraform` definidas como `Provision` ou `Full`."
 
 #: ../../integration_guides/Automation/terraform.rst:14
 msgid ""
 "Existing Terraform Blueprints must be added before they can be "
 "provisioned from |ProApp|."
-msgstr ""
+msgstr "Blueprints Terraform existentes devem ser adicionados antes de poderem ser provisionados a partir de |ProApp|."
 
 #: ../../integration_guides/Automation/terraform.rst:16
 msgid ""
 "In order to provision Terraform Apps, the user must have Role permissions"
 " for `Provisioning: Apps` set to `Full`."
-msgstr ""
+msgstr "Para provisionar Apps Terraform, o usuário deve ter permissões de Função para `Provisioning: Apps` definidas como `Full`."
 
 #: ../../integration_guides/Automation/terraform.rst:19
 msgid "Github/Git Repo"
-msgstr ""
+msgstr "Repositório Github/Git"
 
 #: ../../integration_guides/Automation/terraform.rst:21
 msgid ""
@@ -71,31 +71,31 @@ msgid ""
 "can be manually drafted in |morpheus| and added to Terraform App "
 "Blueprints but they could not be sourced from version control "
 "repositories."
-msgstr ""
+msgstr "Para usar arquivos .tf de um repositório Git, uma integração Git ou Github precisa ser configurada em |AdmInt|. Se nenhuma estiver configurada, arquivos .tf ou .tf.json podem ser redigidos manualmente no |morpheus| e adicionados a Terraform App Blueprints, mas não poderiam ser obtidos de repositórios de controle de versão."
 
 #: ../../integration_guides/Automation/terraform.rst:24
 msgid "Supported App Provisioning Targets"
-msgstr ""
+msgstr "Alvos de Provisionamento de App Suportados"
 
 #: ../../integration_guides/Automation/terraform.rst:26
 msgid "VMware"
-msgstr ""
+msgstr "VMware"
 
 #: ../../integration_guides/Automation/terraform.rst:27
 msgid "Amazon AWS"
-msgstr ""
+msgstr "Amazon AWS"
 
 #: ../../integration_guides/Automation/terraform.rst:28
 msgid "Microsoft Azure"
-msgstr ""
+msgstr "Microsoft Azure"
 
 #: ../../integration_guides/Automation/terraform.rst:29
 msgid "Google Cloud Platform (GCP)"
-msgstr ""
+msgstr "Google Cloud Platform (GCP)"
 
 #: ../../integration_guides/Automation/terraform.rst:30
 msgid "Oracle Cloud"
-msgstr ""
+msgstr "Oracle Cloud"
 
 #: ../../getting_started/guides/terraform_instances.rst:159
 #: ../../integration_guides/Automation/terraform.rst:32
@@ -104,21 +104,21 @@ msgstr ""
 #: ../../integration_guides/Automation/terraform.rst:150
 #: ../../integration_guides/Automation/terraform.rst:180
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Automation/terraform.rst:32
 msgid "Additional clouds are planned for later releases."
-msgstr ""
+msgstr "Nuvens adicionais estão planejadas para releases posteriores."
 
 #: ../../integration_guides/Automation/terraform.rst:35
 msgid "Terraform Installation"
-msgstr ""
+msgstr "Instalação do Terraform"
 
 #: ../../integration_guides/Automation/terraform.rst:37
 msgid ""
 "The first time you attempt to provision a Terraform App, you may come "
 "across an error indicating that Terraform is not installed:"
-msgstr ""
+msgstr "Na primeira vez que você tentar provisionar um App Terraform, pode encontrar um erro indicando que o Terraform não está instalado:"
 
 #: ../../integration_guides/Automation/terraform.rst:39
 msgid "bash: line 1: terraform: command not found"
@@ -144,7 +144,7 @@ msgid ""
 "well. When a version is set on a Terraform Spec Template or Terraform App"
 " Blueprint, that version will supersede the default version indicated in "
 "global settings."
-msgstr ""
+msgstr "Isso provavelmente significa que você ainda não configurou as Terraform Settings nas configurações globais do |morpheus|. Navegue até :menuselection:`Administration --> Settings --> Provisioning` e role até a seção Terraform Settings. Por padrão, o campo Terraform Runtime está definido como \"Manual\". Quando definido assim, o |morpheus| tentará usar o Terraform conforme instalado na máquina do appliance e ele pode não estar instalado no momento. Para que o |morpheus| gerencie o processo de instalação do Terraform para você e gerencie o versionamento do Terraform por App, defina o Terraform Runtime como \"Auto\". Você também deve definir o campo Default Terraform Version. Quando uma versão é definida em um Terraform Spec Template ou Terraform App Blueprint, essa versão prevalecerá sobre a versão padrão indicada nas configurações globais."
 
 #: ../../integration_guides/Automation/terraform.rst:53
 msgid ""
@@ -155,7 +155,7 @@ msgstr ""
 #: ../../infrastructure/clouds/profiles.rst:19
 #: ../../integration_guides/Automation/terraform.rst:57
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../integration_guides/Automation/terraform.rst:57
 msgid ""
@@ -164,93 +164,93 @@ msgid ""
 " installed appropriately on the appliance. Install Terraform in the "
 "/usr/sbin/terraform directory and make sure it's owned by the morpheus-"
 "local user."
-msgstr ""
+msgstr "Appliances |morpheus| que não têm acesso à Internet precisarão deixar as configurações Terraform Runtime em \"Manual\" e garantir que o Terraform esteja instalado adequadamente no appliance. Instale o Terraform no diretório /usr/sbin/terraform e certifique-se de que ele pertença ao usuário morpheus-local."
 
 #: ../../integration_guides/Automation/terraform.rst:60
 msgid "Creating Terraform App Blueprints"
-msgstr ""
+msgstr "Criando Terraform App Blueprints"
 
 #: ../../integration_guides/Automation/terraform.rst:62
 msgid ""
 "In order to provision Terraform apps, Terraform App Blueprints must be "
 "created first."
-msgstr ""
+msgstr "Para provisionar apps Terraform, Terraform App Blueprints devem ser criados primeiro."
 
 #: ../../integration_guides/Automation/terraform.rst:64
 msgid "Navigate to |LibBluApp|"
-msgstr ""
+msgstr "Navegue até |LibBluApp|"
 
 #: ../../integration_guides/Automation/terraform.rst:65
 #: ../../integration_guides/Automation/terraform.rst:153
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Automation/terraform.rst:66
 msgid "Name the Blueprint and select `Terraform` type."
-msgstr ""
+msgstr "Nomeie o Blueprint e selecione o tipo `Terraform`."
 
 #: ../../integration_guides/Automation/terraform.rst:68
 msgid ""
 "In order to see the Terraform Blueprint type option, the |morpheus| user "
 "must have Role permissions for `Provisioning: Blueprints - Terraform` set"
 " to `Full`."
-msgstr ""
+msgstr "Para ver a opção de tipo Terraform Blueprint, o usuário |morpheus| deve ter permissões de Função para `Provisioning: Blueprints - Terraform` definidas como `Full`."
 
 #: ../../integration_guides/Automation/terraform.rst:70
 #: ../../integration_guides/Automation/terraform.rst:155
 #: ../../integration_guides/Automation/terraform.rst:157
 #: ../../integration_guides/Automation/terraform.rst:186
 msgid "Select :guilabel:`NEXT`"
-msgstr ""
+msgstr "Selecione :guilabel:`NEXT`"
 
 #: ../../integration_guides/Automation/terraform.rst:71
 msgid "Configure the following:"
-msgstr ""
+msgstr "Configure o seguinte:"
 
 #: ../../integration_guides/Automation/terraform.rst:73
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../integration_guides/Automation/terraform.rst:74
 msgid "Friendly name for the App Blueprint in |morpheus|"
-msgstr ""
+msgstr "Nome amigável para o App Blueprint no |morpheus|"
 
 #: ../../integration_guides/Automation/terraform.rst:75
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #: ../../integration_guides/Automation/terraform.rst:76
 msgid "Description for your App Blueprint shown in the Apps list (optional)"
-msgstr ""
+msgstr "Descrição do seu App Blueprint exibida na lista de Apps (opcional)"
 
 #: ../../integration_guides/Automation/terraform.rst:77
 msgid "CATEGORY"
-msgstr ""
+msgstr "CATEGORY"
 
 #: ../../integration_guides/Automation/terraform.rst:78
 msgid "A category for your App (optional)"
-msgstr ""
+msgstr "Uma categoria para o seu App (opcional)"
 
 #: ../../integration_guides/Automation/terraform.rst:79
 msgid "IMAGE"
-msgstr ""
+msgstr "IMAGE"
 
 #: ../../integration_guides/Automation/terraform.rst:80
 msgid ""
 "Add reference icon for your App Blueprint to make it more identifiable at"
 " provision time (optional)"
-msgstr ""
+msgstr "Adicione um ícone de referência para o seu App Blueprint para torná-lo mais identificável no momento do provisionamento (opcional)"
 
 #: ../../integration_guides/Automation/terraform.rst:81
 msgid ""
 "CONFIG TYPE (select Terraform Specs, Terraform (.tf), Terraform.json, or "
 "Git Repository)"
-msgstr ""
+msgstr "CONFIG TYPE (selecione Terraform Specs, Terraform (.tf), Terraform.json ou Git Repository)"
 
 #: ../../integration_guides/Automation/terraform.rst:85
 #: ../../integration_guides/Automation/terraform.rst:96
 msgid "CONFIG"
-msgstr ""
+msgstr "CONFIG"
 
 #: ../../integration_guides/Automation/terraform.rst:86
 msgid ""
@@ -258,14 +258,14 @@ msgid ""
 "presented as input fields during App provisioning, or auto-populated with"
 " matching values if contained in a selected TFVAR Secret file added to "
 "the Cypher service."
-msgstr ""
+msgstr "Redija ou cole o conteúdo .tf na área de texto de configuração. As variáveis serão apresentadas como campos de entrada durante o provisionamento do App, ou preenchidas automaticamente com valores correspondentes se contidas em um arquivo TFVAR Secret selecionado adicionado ao serviço Cypher."
 
 #: ../../integration_guides/Automation/terraform.rst:87
 #: ../../integration_guides/Automation/terraform.rst:98
 #: ../../integration_guides/Automation/terraform.rst:109
 #: ../../integration_guides/Automation/terraform.rst:126
 msgid "TFVAR SECRET"
-msgstr ""
+msgstr "TFVAR SECRET"
 
 #: ../../integration_guides/Automation/terraform.rst:88
 #: ../../integration_guides/Automation/terraform.rst:99
@@ -277,14 +277,14 @@ msgid ""
 " currently stored at the \"tfvar/*\" Cypher mount point. Note that tfvars"
 " already set in any existing Terraform Cloud Profiles will already be "
 "available to your App and wouldn't need to be set here."
-msgstr ""
+msgstr "Selecione um arquivo tfvar secret existente armazenado no serviço Cypher do |morpheus|. Esta lista é filtrada automaticamente para mostrar todas as entradas Cypher atualmente armazenadas no ponto de montagem Cypher \"tfvar/*\". Observe que tfvars já definidos em quaisquer Terraform Cloud Profiles existentes já estarão disponíveis para o seu App e não precisariam ser definidos aqui."
 
 #: ../../integration_guides/Automation/terraform.rst:89
 #: ../../integration_guides/Automation/terraform.rst:100
 #: ../../integration_guides/Automation/terraform.rst:111
 #: ../../integration_guides/Automation/terraform.rst:128
 msgid "VERSION"
-msgstr ""
+msgstr "VERSION"
 
 #: ../../integration_guides/Automation/terraform.rst:90
 #: ../../integration_guides/Automation/terraform.rst:101
@@ -298,21 +298,21 @@ msgid ""
 "to \"auto\" in global settings for |morpheus| to manage the Terraform "
 "version for you. When set to \"manual\", |morpheus| will use the "
 "Terraform version installed on the appliance box."
-msgstr ""
+msgstr "Especifique uma versão exigida pelo seu App Terraform (opcional). Se especificada, a versão informada prevalecerá sobre a versão global do Terraform especificada nas configurações globais do |morpheus| (:menuselection:`Administration --> Settings --> Provisioning`). \"Terraform Runtime\" também deve estar definido como \"auto\" nas configurações globais para que o |morpheus| gerencie a versão do Terraform para você. Quando definido como \"manual\", o |morpheus| usará a versão do Terraform instalada na máquina do appliance."
 
 #: ../../integration_guides/Automation/terraform.rst:91
 #: ../../integration_guides/Automation/terraform.rst:102
 #: ../../integration_guides/Automation/terraform.rst:113
 #: ../../integration_guides/Automation/terraform.rst:130
 msgid "OPTIONS"
-msgstr ""
+msgstr "OPTIONS"
 
 #: ../../integration_guides/Automation/terraform.rst:92
 #: ../../integration_guides/Automation/terraform.rst:103
 msgid ""
 "Specify any valid Terraform command line options |morpheus| should append"
 " to its internal \"terraform apply\" call when the App is provisioned"
-msgstr ""
+msgstr "Especifique quaisquer opções de linha de comando Terraform válidas que o |morpheus| deve acrescentar à sua chamada interna \"terraform apply\" quando o App for provisionado"
 
 #: ../../integration_guides/Automation/terraform.rst:97
 msgid ""
@@ -320,11 +320,11 @@ msgid ""
 "will be presented as input fields during App provisioning, or auto-"
 "populated with matching values if contained in a selected TFVAR Secret "
 "file added to the Cypher service."
-msgstr ""
+msgstr "Redija ou cole o conteúdo .tf.json na área de texto de configuração. As variáveis serão apresentadas como campos de entrada durante o provisionamento do App, ou preenchidas automaticamente com valores correspondentes se contidas em um arquivo TFVAR Secret selecionado adicionado ao serviço Cypher."
 
 #: ../../integration_guides/Automation/terraform.rst:107
 msgid "SPEC TEMPLATE"
-msgstr ""
+msgstr "SPEC TEMPLATE"
 
 #: ../../integration_guides/Automation/terraform.rst:108
 msgid ""
@@ -332,128 +332,128 @@ msgid ""
 " make up your App. Variables will be presented as input fields during App"
 " provisioning, or auto-populated with matching values if contained in a "
 "selected TFVAR Secret file added to the Cypher service."
-msgstr ""
+msgstr "Usando o campo typeahead, selecione todos os Spec Templates do tipo Terraform que compõem o seu App. As variáveis serão apresentadas como campos de entrada durante o provisionamento do App, ou preenchidas automaticamente com valores correspondentes se contidas em um arquivo TFVAR Secret selecionado adicionado ao serviço Cypher."
 
 #: ../../integration_guides/Automation/terraform.rst:114
 #: ../../integration_guides/Automation/terraform.rst:131
 msgid ""
 "Specify any valid Terraform command line options |morpheus| should append"
 " to its internal \"terraform apply\" call when the App is provisioned."
-msgstr ""
+msgstr "Especifique quaisquer opções de linha de comando Terraform válidas que o |morpheus| deve acrescentar à sua chamada interna \"terraform apply\" quando o App for provisionado."
 
 #: ../../integration_guides/Automation/terraform.rst:118
 msgid "SCM INTEGRATION"
-msgstr ""
+msgstr "SCM INTEGRATION"
 
 #: ../../integration_guides/Automation/terraform.rst:119
 msgid ""
 "Select a Github or Git integration that has been added in |AdmInt| and "
 "which contains relevant .tf files. Integrations must be pre-existing "
 "prior to creating the App Blueprint."
-msgstr ""
+msgstr "Selecione uma integração Github ou Git que tenha sido adicionada em |AdmInt| e que contenha arquivos .tf relevantes. As integrações devem existir previamente antes de criar o App Blueprint."
 
 #: ../../integration_guides/Automation/terraform.rst:120
 msgid "Repository"
-msgstr ""
+msgstr "Repositório"
 
 #: ../../integration_guides/Automation/terraform.rst:121
 msgid ""
 "Select a repository which contains relevant .tf files from the Github or "
 "Git integration selected in the prior step."
-msgstr ""
+msgstr "Selecione um repositório que contenha arquivos .tf relevantes da integração Github ou Git selecionada na etapa anterior."
 
 #: ../../integration_guides/Automation/terraform.rst:122
 msgid "BRANCH OR TAG"
-msgstr ""
+msgstr "BRANCH OR TAG"
 
 #: ../../integration_guides/Automation/terraform.rst:123
 msgid ""
 "Select the Git branch containing the desired version of .tf files for the"
 " App. \"master\" is chosen by default if no value is entered."
-msgstr ""
+msgstr "Selecione o branch Git contendo a versão desejada dos arquivos .tf para o App. \"master\" é escolhido por padrão se nenhum valor for informado."
 
 #: ../../integration_guides/Automation/terraform.rst:124
 msgid "WORKING PATH"
-msgstr ""
+msgstr "WORKING PATH"
 
 #: ../../integration_guides/Automation/terraform.rst:125
 msgid ""
 "Enter the repo path for the .tf file(s). ``./`` is default if no value is"
 " entered."
-msgstr ""
+msgstr "Informe o caminho do repositório para o(s) arquivo(s) .tf. ``./`` é o padrão se nenhum valor for informado."
 
 #: ../../integration_guides/Automation/terraform.rst:134
 msgid "Select :guilabel:`COMPLETE`"
-msgstr ""
+msgstr "Selecione :guilabel:`COMPLETE`"
 
 #: ../../integration_guides/Automation/terraform.rst:136
 msgid ""
 "|morpheus| will scan the blueprint to check for validity and will surface"
 " any errors which need correcting before the App Blueprint can be saved. "
 "Your Terraform App is ready to be provisioned from |ProApp|."
-msgstr ""
+msgstr "O |morpheus| analisará o blueprint para verificar a validade e apresentará quaisquer erros que precisem ser corrigidos antes que o App Blueprint possa ser salvo. Seu App Terraform está pronto para ser provisionado a partir de |ProApp|."
 
 #: ../../integration_guides/Automation/terraform.rst:139
 msgid "Cloud Profiles"
-msgstr ""
+msgstr "Perfis de Nuvem"
 
 #: ../../infrastructure/clouds/profiles.rst:3
 msgid ""
 "Access to **Profiles** tab is determined by the following role "
 "permissions:"
-msgstr ""
+msgstr "O acesso à aba **Profiles** é determinado pelas seguintes permissões de função:"
 
 #: ../../infrastructure/clouds/profiles.rst:5
 msgid "Role: Feature Access: ``Admin: Profiles``"
-msgstr ""
+msgstr "Role: Feature Access: ``Admin: Profiles``"
 
 #: ../../infrastructure/clouds/profiles.rst:6
 msgid "None: Cannot access Profiles tab or create/view/edit/delete profiles"
-msgstr ""
+msgstr "None: Não pode acessar a aba Profiles nem criar/visualizar/editar/excluir perfis"
 
 #: ../../infrastructure/clouds/profiles.rst:7
 msgid ""
 "Read: Can access Profiles tab, can view profiles, cannot "
 "create/edit/delete profiles"
-msgstr ""
+msgstr "Read: Pode acessar a aba Profiles, pode visualizar perfis, não pode criar/editar/excluir perfis"
 
 #: ../../infrastructure/clouds/profiles.rst:8
 msgid "Full: Can access Profiles tab, can create/view/edit/delete profiles"
-msgstr ""
+msgstr "Full: Pode acessar a aba Profiles, pode criar/visualizar/editar/excluir perfis"
 
 #: ../../infrastructure/clouds/profiles.rst:11
 msgid "Terraform Profiles"
-msgstr ""
+msgstr "Perfis Terraform"
 
 #: ../../infrastructure/clouds/profiles.rst:13
 msgid ""
 "Terraform Profiles allow creation of Cloud-associated tfvars secrets, "
 "allowing tf apps and specs to be provisioned across multiple clouds that "
 "required different tfvars."
-msgstr ""
+msgstr "Os Perfis Terraform permitem a criação de segredos tfvars associados à Nuvem, permitindo que apps e specs tf sejam provisionados em várias nuvens que exigem tfvars diferentes."
 
 #: ../../infrastructure/clouds/profiles.rst:14
 msgid ""
 "Target Cloud Terraform Profiles are automatically mapped to tf apps/specs"
 " during provisioning, no manual scoping is required."
-msgstr ""
+msgstr "Os Perfis Terraform da Nuvem de destino são mapeados automaticamente para apps/specs tf durante o provisionamento; nenhuma delimitação manual é necessária."
 
 #: ../../infrastructure/clouds/profiles.rst:15
 msgid ""
 "Terraform Profiles are encrypted in Cypher and creating a profile creates"
 " a Cypher entry with key `tfvars/profile/cloud/$cloudCode/variables``"
-msgstr ""
+msgstr "Os Perfis Terraform são criptografados no Cypher e criar um perfil cria uma entrada Cypher com a chave `tfvars/profile/cloud/$cloudCode/variables``"
 
 #: ../../infrastructure/clouds/profiles.rst:16
 msgid "Terraform Profiles can be edited after creation"
-msgstr ""
+msgstr "Os Perfis Terraform podem ser editados após a criação"
 
 #: ../../infrastructure/clouds/profiles.rst:17
 msgid ""
 "Terraform Profiles are limited to one per Cloud, once one is created for "
 "the Cloud the option to create a Terraform Profile is no longer present. "
 "Edit the existing Terraform Profile to make changes at that point"
-msgstr ""
+msgstr "Os Perfis Terraform são limitados a um por Nuvem; depois que um é criado para a Nuvem, a opção de criar um Perfil Terraform não está mais presente. Edite o Perfil Terraform existente para fazer alterações a partir desse ponto"
 
 #: ../../infrastructure/clouds/profiles.rst:19
 msgid ""
@@ -468,35 +468,35 @@ msgid ""
 "all Clouds of the same type have the same generic Cloud code and thus "
 "share a Terraform Profile. To avoid this situation, enter a Cloud code "
 "value at creation time or edit existing Clouds to have a unique code."
-msgstr ""
+msgstr "Como o |morpheus| monta Perfis Terraform no Cypher usando um ponto de montagem que contém o valor do código da Nuvem, quaisquer Nuvens que tenham o mesmo código compartilharão um Perfil Terraform. Crie ou edite Nuvens para terem um valor de código exclusivo se devem ter um Perfil Terraform exclusivo. Também é importante entender que o |morpheus| não exige que as Nuvens tenham um código no momento da criação. Quando as Nuvens são criadas sem um código, o |morpheus| aplica um código genérico não exclusivo com base no tipo de Nuvem (\"amazon\" para Nuvens AWS, por exemplo). Isso configura uma situação potencial em que todas as Nuvens do mesmo tipo têm o mesmo código genérico de Nuvem e, portanto, compartilham um Perfil Terraform. Para evitar essa situação, informe um valor de código da Nuvem no momento da criação ou edite as Nuvens existentes para terem um código exclusivo."
 
 #: ../../infrastructure/clouds/profiles.rst:22
 msgid "Create a Terraform Profile"
-msgstr ""
+msgstr "Criar um Perfil Terraform"
 
 #: ../../infrastructure/clouds/profiles.rst:24
 msgid "Navigate to |InfClo| and select a Cloud"
-msgstr ""
+msgstr "Navegue até |InfClo| e selecione uma Nuvem"
 
 #: ../../infrastructure/clouds/profiles.rst:25
 msgid "Select the \"Profiles\" tab"
-msgstr ""
+msgstr "Selecione a aba \"Profiles\""
 
 #: ../../infrastructure/clouds/profiles.rst:26
 msgid "Select :guilabel:`+ ADD PROFILE`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD PROFILE`"
 
 #: ../../infrastructure/clouds/profiles.rst:27
 msgid "Select Terraform Profile Type"
-msgstr ""
+msgstr "Selecione o Tipo Terraform Profile"
 
 #: ../../infrastructure/clouds/profiles.rst:28
 msgid "Enter tfvars in the `Terraform Profile Variables` field"
-msgstr ""
+msgstr "Informe os tfvars no campo `Terraform Profile Variables`"
 
 #: ../../infrastructure/clouds/profiles.rst:30
 msgid "example Terraform Profile Variables"
-msgstr ""
+msgstr "exemplo de Terraform Profile Variables"
 
 #: ../../infrastructure/clouds/profiles.rst:32
 msgid ""
@@ -507,7 +507,7 @@ msgstr ""
 
 #: ../../infrastructure/clouds/profiles.rst:39
 msgid "Select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Selecione :guilabel:`SAVE CHANGES`"
 
 #: ../../infrastructure/clouds/profiles.rst:41
 msgid ""
@@ -516,40 +516,40 @@ msgid ""
 "Terraform. It is not necessary to manually tie this tfvars files to your "
 "App Blueprint, these tfvars will automatically be available to Terraform "
 "whenever you provision an App to this cloud."
-msgstr ""
+msgstr "Agora, ao provisionar uma Instância ou App Terraform para a Nuvem em que o perfil foi criado, os tfvars do perfil tornam-se disponíveis ao Terraform. Não é necessário vincular manualmente esses arquivos tfvars ao seu App Blueprint; esses tfvars estarão automaticamente disponíveis ao Terraform sempre que você provisionar um App para esta nuvem."
 
 #: ../../integration_guides/Automation/terraform.rst:146
 msgid "Provisioning Terraform Apps"
-msgstr ""
+msgstr "Provisionando Apps Terraform"
 
 #: ../../integration_guides/Automation/terraform.rst:148
 msgid ""
 "Terraform App Blueprints must be added to |LibBluApp| before they can be "
 "provisioned. At least one Terraform App Blueprint must exist before "
 "Terraform Apps can be provisioned from |ProApp|."
-msgstr ""
+msgstr "Terraform App Blueprints devem ser adicionados a |LibBluApp| antes de poderem ser provisionados. Pelo menos um Terraform App Blueprint deve existir antes que Apps Terraform possam ser provisionados a partir de |ProApp|."
 
 #: ../../integration_guides/Automation/terraform.rst:152
 msgid "Navigate to |ProApp|"
-msgstr ""
+msgstr "Navegue até |ProApp|"
 
 #: ../../integration_guides/Automation/terraform.rst:154
 msgid "Choose an existing Terraform App Blueprint"
-msgstr ""
+msgstr "Escolha um Terraform App Blueprint existente"
 
 #: ../../integration_guides/Automation/terraform.rst:156
 msgid ""
 "Enter a NAME for the App and select the Group, Default Cloud and "
 "Environment (optional)"
-msgstr ""
+msgstr "Informe um NAME para o App e selecione o Group, Default Cloud e Environment (opcional)"
 
 #: ../../integration_guides/Automation/terraform.rst:158
 msgid "Configure the following sections:"
-msgstr ""
+msgstr "Configure as seguintes seções:"
 
 #: ../../integration_guides/Automation/terraform.rst:162
 msgid "BACKEND TYPE"
-msgstr ""
+msgstr "BACKEND TYPE"
 
 #: ../../integration_guides/Automation/terraform.rst:163
 msgid ""
@@ -561,11 +561,11 @@ msgid ""
 "default Internal value. **Backend Type selection is currently only "
 "available for Terraform Apps. Selecting Backend Type for Terraform "
 "Instance Types is a planned future feature addition.**"
-msgstr ""
+msgstr "Internal é a seleção padrão e a escolha mais segura. Isso envia o estado do Terraform de volta ao appliance via HTTP loopback para ser armazenado no banco de dados do appliance. Os usuários também podem selecionar Local, que gravará o estado do Terraform no sistema de arquivos local primeiro antes de ser armazenado no banco de dados e removido do sistema de arquivos local. Em caso de dúvida, use o valor padrão Internal. **A seleção de Backend Type está disponível atualmente apenas para Apps Terraform. Selecionar Backend Type para Terraform Instance Types é uma adição de recurso planejada para o futuro.**"
 
 #: ../../integration_guides/Automation/terraform.rst:164
 msgid "VALIDATE PLAN"
-msgstr ""
+msgstr "VALIDATE PLAN"
 
 #: ../../integration_guides/Automation/terraform.rst:165
 msgid ""
@@ -573,11 +573,11 @@ msgid ""
 " validation to ensure the Terraform spec is valid. Typically users would "
 "only unmark this box if onboarding an existing App with Initial State "
 "(see Advanced Options configuration below)."
-msgstr ""
+msgstr "Marcado por padrão. Quando desmarcado, o |morpheus| não realizará sua validação típica para garantir que o spec Terraform seja válido. Tipicamente, os usuários só desmarcariam esta caixa ao integrar um App existente com Initial State (veja a configuração Advanced Options abaixo)."
 
 #: ../../integration_guides/Automation/terraform.rst:166
 msgid "RUN APPLY"
-msgstr ""
+msgstr "RUN APPLY"
 
 #: ../../integration_guides/Automation/terraform.rst:167
 msgid ""
@@ -585,7 +585,7 @@ msgid ""
 "completion of the App wizard. Typically users would only unmark this box "
 "if onboarding an existing App with Initial State (see Advanced Options "
 "configuration below)."
-msgstr ""
+msgstr "Marcado por padrão. Quando desmarcado, o |morpheus| não aplicará o plano na conclusão do assistente do App. Tipicamente, os usuários só desmarcariam esta caixa ao integrar um App existente com Initial State (veja a configuração Advanced Options abaixo)."
 
 #: ../../integration_guides/Automation/terraform.rst:171
 msgid ""
@@ -596,11 +596,11 @@ msgid ""
 "variables will be presented in the Terraform Variables section for user "
 "entry and any configured default values on the Terraform spec will be "
 "pre-loaded."
-msgstr ""
+msgstr "Preencha aqui quaisquer variáveis obrigatórias ou opcionais. Variáveis cujos valores estão armazenados em um arquivo tfvars associado obtido do Cypher |morpheus| são mascaradas do usuário. Variáveis armazenadas em qualquer Terraform Cloud Profile associado à Nuvem selecionada também são mascaradas automaticamente. Outras variáveis serão apresentadas na seção Terraform Variables para entrada do usuário e quaisquer valores padrão configurados no spec Terraform serão pré-carregados."
 
 #: ../../integration_guides/Automation/terraform.rst:175
 msgid "REFRESH MODE"
-msgstr ""
+msgstr "REFRESH MODE"
 
 #: ../../integration_guides/Automation/terraform.rst:176
 msgid ""
@@ -610,11 +610,11 @@ msgid ""
 "results of drift checks are reported on the App detail page and users may"
 " apply the plan at any time to bring the App back into alignment with the"
 " Terraform spec."
-msgstr ""
+msgstr "Defina um intervalo no qual o |morpheus| deve verificar automaticamente o App quanto a drift em relação ao spec Terraform. Se definido como Manual, o |morpheus| nunca realizará verificações automáticas e o usuário deve fazê-lo quando desejar. Os resultados das verificações de drift são relatados na página de detalhes do App e os usuários podem aplicar o plano a qualquer momento para realinhar o App com o spec Terraform."
 
 #: ../../integration_guides/Automation/terraform.rst:177
 msgid "INITIAL STATE"
-msgstr ""
+msgstr "INITIAL STATE"
 
 #: ../../integration_guides/Automation/terraform.rst:178
 msgid ""
@@ -624,7 +624,7 @@ msgid ""
 "state, users may want to skip plan validation or may not want to apply "
 "right away. Opt out of these functions by unmarking the corresponding box"
 " in the App Settings section."
-msgstr ""
+msgstr "Cole o estado Terraform existente para integrar um App Terraform existente para gerenciamento pelo |morpheus|. Embora o campo seja pequeno, ele aceitará estado Terraform grande e multilinha. Ao criar um App a partir de estado existente, os usuários podem querer pular a validação do plano ou podem não querer aplicar imediatamente. Opte por não usar essas funções desmarcando a caixa correspondente na seção App Settings."
 
 #: ../../integration_guides/Automation/terraform.rst:180
 msgid ""
@@ -632,7 +632,7 @@ msgid ""
 "components may break the import process. This feature is being iterated "
 "on rapidly to increase coverage to as many application types and "
 "conditions as possible."
-msgstr ""
+msgstr "A importação de estado Terraform é um recurso novo. Neste momento, alguns componentes do arquivo de estado podem interromper o processo de importação. Este recurso está sendo iterado rapidamente para aumentar a cobertura para o maior número possível de tipos de aplicação e condições."
 
 #: ../../integration_guides/Automation/terraform.rst:184
 msgid ""
@@ -640,21 +640,21 @@ msgid ""
 "invoked, variables surfaced from the App spec, resources to be created, "
 "and .tf files utilized. There is no user input to be entered into this "
 "section."
-msgstr ""
+msgstr "Revise os componentes do App Terraform aqui, incluindo quaisquer providers invocados, variáveis apresentadas a partir do spec do App, recursos a serem criados e arquivos .tf utilizados. Não há entrada do usuário a ser informada nesta seção."
 
 #: ../../integration_guides/Automation/terraform.rst:187
 msgid ""
 "|morpheus| will now validate the App (unless the user has opted out of "
 "this check) and surface any errors which would cause provisioning issues."
 " If all is well, click :guilabel:`COMPLETE`"
-msgstr ""
+msgstr "O |morpheus| agora validará o App (a menos que o usuário tenha optado por não realizar esta verificação) e apresentará quaisquer erros que causariam problemas de provisionamento. Se estiver tudo bem, clique em :guilabel:`COMPLETE`"
 
 #: ../../getting_started/guides/terraform_instances.rst:25
 #: ../../integration_guides/Automation/terraform.rst:189
 #: ../../integration_guides/Automation/terraform.rst:200
 #: ../../integration_guides/Automation/terraform.rst:226
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../integration_guides/Automation/terraform.rst:189
 msgid ""
@@ -665,11 +665,11 @@ msgid ""
 " made by editing the App Blueprint, pushing .tf changes to your code "
 "repository, or Terraform Spec Templates (depending on how the .tf files "
 "are sourced for your App Blueprint)."
-msgstr ""
+msgstr "Revise o App na seção Terraform Preview. Se algum dado de configuração precisar ser editado, selecione a aba `RAW`, edite a configuração e, em seguida, selecione a aba `BUILDER` novamente. As alterações de configuração da edição RAW serão atualizadas na seção de pré-visualização para revisão adicional. Edições permanentes podem ser feitas editando o App Blueprint, enviando alterações .tf ao seu repositório de código, ou Terraform Spec Templates (dependendo de como os arquivos .tf são obtidos para o seu App Blueprint)."
 
 #: ../../integration_guides/Automation/terraform.rst:191
 msgid "The Terraform App will begin to provision."
-msgstr ""
+msgstr "O App Terraform começará a ser provisionado."
 
 #: ../../integration_guides/Automation/terraform.rst:193
 msgid ""
@@ -677,11 +677,11 @@ msgid ""
 "page (|ProApp| > select the App). This tab contains subsections related "
 "to state management which is discussed in greater detail in the next "
 "section."
-msgstr ""
+msgstr "Após a conclusão do provisionamento, observe a aba State na página de detalhes do App (|ProApp| > selecione o App). Esta aba contém subseções relacionadas ao gerenciamento de estado, discutidas em maior detalhe na próxima seção."
 
 #: ../../integration_guides/Automation/terraform.rst:196
 msgid "Terraform App State Management"
-msgstr ""
+msgstr "Gerenciamento de Estado do App Terraform"
 
 #: ../../integration_guides/Automation/terraform.rst:198
 msgid ""
@@ -692,7 +692,7 @@ msgid ""
 "like using Terraform from the command line. Press return on the keyboard "
 "or click on the \"play\" button to the right of the text field to execute"
 " the commmand."
-msgstr ""
+msgstr "O gerenciamento de estado é feito a partir da aba State da página de detalhes do App Terraform (|ProApp| > App selecionado). Com a aba selecionada, o campo de comando Terraform estará presente independentemente da subseção selecionada. Use este campo para enviar comandos Terraform aos seus apps exatamente como ao usar o Terraform pela linha de comando. Pressione return no teclado ou clique no botão \"play\" à direita do campo de texto para executar o comando."
 
 #: ../../integration_guides/Automation/terraform.rst:200
 msgid ""
@@ -701,7 +701,7 @@ msgid ""
 "\"terraform\" with each command sent. Entering \"state\" or \"plan\" is "
 "equal to entering \"terraform state\" or \"terraform plan\" from the "
 "command line."
-msgstr ""
+msgstr "\"terraform\" é inserido automaticamente para cada comando, conforme impresso ao longo da borda esquerda do campo de texto. Assim, você não precisa digitar \"terraform\" em cada comando enviado. Informar \"state\" ou \"plan\" é igual a informar \"terraform state\" ou \"terraform plan\" pela linha de comando."
 
 #: ../../integration_guides/Automation/terraform.rst:202
 msgid ".. image:: /images/integration_guides/automation/terraform/appDetail.png"
@@ -715,7 +715,7 @@ msgid ""
 "individual output windows by clicking the \"x\" button in the upper-right"
 " of each window. All command output can be dismissed by clicking the blue"
 " \"x\" button to the right of the command field itself."
-msgstr ""
+msgstr "Quando comandos Terraform são executados contra a aplicação, o |morpheus| fornece barras de progresso e saída de comando na UI. A saída do comando é mostrada abaixo do campo de comando Terraform. Os usuários podem dispensar janelas de saída individuais clicando no botão \"x\" no canto superior direito de cada janela. Toda a saída de comando pode ser dispensada clicando no botão \"x\" azul à direita do próprio campo de comando."
 
 #: ../../integration_guides/Automation/terraform.rst:206
 msgid ""
@@ -731,7 +731,7 @@ msgid ""
 "Refresh State command, including detailed information about changes "
 "Terraform would make to App objects to in order to realign them with the "
 "App spec are shown in the UI."
-msgstr ""
+msgstr "Dentro de ACTIONS há quatro seleções: Refresh State, Apply State, Edit Inputs e Edit STATE. Selecionar Refresh State é equivalente a usar o comando \"terraform plan\" pela linha de comando. Isso lerá o estado existente de quaisquer objetos existentes que fazem parte do App e comparará sua configuração atual com o estado anterior. Quaisquer diferenças serão anotadas na saída. Se diferenças forem descobertas, o App é considerado em estado de \"drift\". Este status de drift é mostrado na UI quando o usuário está visualizando a subseção \"State\" (descrita em maior detalhe na próxima seção). A saída do comando Refresh State, incluindo informações detalhadas sobre as alterações que o Terraform faria nos objetos do App para realinhá-los com o spec do App, é mostrada na UI."
 
 #: ../../integration_guides/Automation/terraform.rst:208
 msgid ".. image:: /images/integration_guides/automation/terraform/planOutput.png"
@@ -751,18 +751,18 @@ msgid ""
 "|morpheus| would immediately take them if desired. When ready, click "
 ":guilabel:`COMPLETE`. This will execute all planned changes as if the "
 "user had run \"terraform apply -auto-approve\" from a terminal session."
-msgstr ""
+msgstr "A seleção Apply State abre um modal que permite ao usuário visualizar o spec do App novamente. Isso inclui poder visualizar e editar variáveis Terraform se necessário. Após fazer quaisquer edições necessárias, clique em :guilabel:`NEXT` e o |morpheus| validará o App novamente, exatamente como fez no momento do provisionamento. Na próxima aba do assistente, o |morpheus| mostrará ao usuário as alterações planejadas que seriam executadas se o usuário concluir o modal. Uma saída será mostrada como se \"terraform plan\" fosse executado pela linha de comando. Observe quaisquer objetos do App que seriam criados, alterados ou destruídos se as ações forem aceitas, pois o |morpheus| as executaria imediatamente se desejado. Quando estiver pronto, clique em :guilabel:`COMPLETE`. Isso executará todas as alterações planejadas como se o usuário tivesse executado \"terraform apply -auto-approve\" a partir de uma sessão de terminal."
 
 #: ../../integration_guides/Automation/terraform.rst:212
 msgid ""
 "Edit Inputs allows for editing of Input values without going through the "
 "process of applying state. Edit State displays the state in a large text "
 "area for direct editing."
-msgstr ""
+msgstr "Edit Inputs permite editar valores de Entrada sem passar pelo processo de aplicar o estado. Edit State exibe o estado em uma grande área de texto para edição direta."
 
 #: ../../integration_guides/Automation/terraform.rst:215
 msgid "State Subsection"
-msgstr ""
+msgstr "Subseção State"
 
 #: ../../integration_guides/Automation/terraform.rst:217
 msgid ""
@@ -772,7 +772,7 @@ msgid ""
 "currently in a Drift state, users can select Refresh State from the "
 "ACTIONS menu to identify which objects and attributes have deviated from "
 "the App configuration."
-msgstr ""
+msgstr "A Subseção State mostra o estado atual de drift do App. Isso inclui quando o |morpheus| verificou drift pela última vez e se o App está atualmente em estado \"Drift\" ou \"No Drift\". Se o App estiver atualmente em estado Drift, os usuários podem selecionar Refresh State no menu ACTIONS para identificar quais objetos e atributos se desviaram da configuração do App."
 
 #: ../../integration_guides/Automation/terraform.rst:219
 msgid ""
@@ -782,7 +782,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/terraform.rst:222
 msgid "Specs Subsection"
-msgstr ""
+msgstr "Subseção Specs"
 
 #: ../../integration_guides/Automation/terraform.rst:224
 msgid ""
@@ -790,7 +790,7 @@ msgid ""
 "(|LibTemSpe|) which make up the App. Users may even edit Spec Template "
 "config directly from this view by clicking the Edit (pencil) icon to the "
 "right of each Spec Template listed."
-msgstr ""
+msgstr "A Subseção Specs mostrará ao usuário todos os Spec Templates |morpheus| (|LibTemSpe|) que compõem o App. Os usuários podem até editar a configuração do Spec Template diretamente desta visualização clicando no ícone Edit (lápis) à direita de cada Spec Template listado."
 
 #: ../../integration_guides/Automation/terraform.rst:226
 msgid ""
@@ -803,7 +803,7 @@ msgid ""
 "option to make a new commit into your repository and then let Terraform "
 "handle the process of bringing your App in line with the new "
 "specifications."
-msgstr ""
+msgstr "Editar um Spec Template aqui o desanexará do objeto de origem, essencialmente tornando-o um objeto completamente novo que existe apenas aqui. Todas as atualizações futuras desse Spec Template teriam de ser feitas aqui daqui em diante. Na maioria dos casos, é aconselhável editar o Spec Template diretamente na origem. Por exemplo, se este Spec Template foi obtido de um repositório de controle de versão integrado (ex. Github), provavelmente a melhor opção é fazer um novo commit no seu repositório e então deixar o Terraform lidar com o processo de alinhar o seu App às novas especificações."
 
 #: ../../integration_guides/Automation/terraform.rst:228
 msgid ".. image:: /images/integration_guides/automation/terraform/editSpec.png"
@@ -811,7 +811,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/terraform.rst:231
 msgid "Plan Subsection"
-msgstr ""
+msgstr "Subseção Plan"
 
 #: ../../integration_guides/Automation/terraform.rst:233
 msgid ""
@@ -819,11 +819,11 @@ msgid ""
 "run against your App. This will either indicate that your infrastructure "
 "(App) matches the configuration or it will indicate that a drift of some "
 "sort has taken place."
-msgstr ""
+msgstr "Esta seção exibe a saída da execução mais recente de \"terraform plan\" contra o seu App. Isso indicará que sua infraestrutura (App) corresponde à configuração ou indicará que algum tipo de drift ocorreu."
 
 #: ../../integration_guides/Automation/terraform.rst:236
 msgid "Input Subsection"
-msgstr ""
+msgstr "Subseção Input"
 
 #: ../../integration_guides/Automation/terraform.rst:238
 msgid ""
@@ -831,19 +831,19 @@ msgid ""
 "relevant to the App. Variable values are shown unless they are flagged as"
 " sensitive in your configuration. All variables sourced from a |morpheus|"
 " Cypher tfvars mount will automatically be masked."
-msgstr ""
+msgstr "Esta seção lista todas as entradas Terraform, como variáveis, relevantes para o App. Os valores das variáveis são mostrados a menos que estejam sinalizados como sensíveis na sua configuração. Todas as variáveis obtidas de um mount tfvars Cypher |morpheus| serão mascaradas automaticamente."
 
 #: ../../integration_guides/Automation/terraform.rst:241
 msgid "Output Subsection"
-msgstr ""
+msgstr "Subseção Output"
 
 #: ../../integration_guides/Automation/terraform.rst:243
 msgid "This section lists all configured Terraform output."
-msgstr ""
+msgstr "Esta seção lista toda a saída Terraform configurada."
 
 #: ../../integration_guides/Automation/terraform.rst:246
 msgid "Terraform Instance Type Example"
-msgstr ""
+msgstr "Exemplo de Tipo de Instância Terraform"
 
 #: ../../integration_guides/Automation/terraform.rst:248
 msgid ""
@@ -851,7 +851,7 @@ msgid ""
 "construct in addition to App Blueprints and Apps. Expand the section "
 "below to see a complete end-to-end example of a Terraform Instance Type "
 "from drafting new Spec Templates through to provisioning."
-msgstr ""
+msgstr "O Spec Terraform também pode ser usado dentro do constructo Instance Type do |morpheus|, além de App Blueprints e Apps. Expanda a seção abaixo para ver um exemplo completo de ponta a ponta de um Terraform Instance Type, desde a redação de novos Spec Templates até o provisionamento."
 
 #: ../../getting_started/guides/terraform_instances.rst:3
 msgid ""
@@ -863,7 +863,7 @@ msgid ""
 "under version control so teams can easily make changes to environments. "
 "Infrastructure can also be monitored for drift and corrective action can "
 "easily be taken."
-msgstr ""
+msgstr "`Terraform <https://www.terraform.io/intro/index.html>`_ é uma ferramenta comum que permite aos administradores de TI mapear a infraestrutura como código em arquivos de configuração e oferece suporte a todos os providers populares usados no datacenter moderno. Uma vez configurado, o Terraform planejará, implantará e gerenciará a infraestrutura conforme necessário. Os arquivos de configuração podem ser colocados sob controle de versão para que as equipes possam fazer alterações facilmente nos ambientes. A infraestrutura também pode ser monitorada quanto a drift e ações corretivas podem ser facilmente tomadas."
 
 #: ../../getting_started/guides/terraform_instances.rst:5
 msgid ""
@@ -875,7 +875,7 @@ msgid ""
 "infrastructure can be monitored for drift from within |morpheus| UI. When"
 " needed, we can plan and take corrective action easily from the detail "
 "page of a |morpheus| Terraform Instance."
-msgstr ""
+msgstr "O |morpheus| permite que os usuários integrem ou até redijam spec Terraform diretamente. Com a configuração integrada, podemos começar a montar constructs de infraestrutura na Library |morpheus| como Layouts e Instance Types. Com os itens da Library preparados, os usuários podem implantar nova infraestrutura diretamente nos providers selecionados. Uma vez implantada, a infraestrutura pode ser monitorada quanto a drift dentro da UI |morpheus|. Quando necessário, podemos planejar e tomar ações corretivas facilmente a partir da página de detalhes de uma Instância Terraform |morpheus|."
 
 #: ../../getting_started/guides/terraform_instances.rst:7
 msgid ""
@@ -883,7 +883,7 @@ msgid ""
 "working with Terraform in the |morpheus| context. In the next section, "
 "we'll actually onboard Terraform spec, create Library items, and deploy "
 "real infrastructure to AWS with |morpheus|."
-msgstr ""
+msgstr "Nesta seção, discutimos uma visão geral de alto nível do Terraform e do trabalho com Terraform no contexto |morpheus|. Na próxima seção, realmente integraremos spec Terraform, criaremos itens da Library e implantaremos infraestrutura real na AWS com o |morpheus|."
 
 #: ../../getting_started/guides/terraform_instances.rst:12
 msgid ""
@@ -892,7 +892,7 @@ msgid ""
 "``.tf`` configuration files which handle the AWS provider (with assume "
 "role for account flexibility), VPC creation, subnet creation, and "
 "variable injection."
-msgstr ""
+msgstr "Neste exemplo, vamos implantar uma VPC e três subnets na AWS usando Terraform e |morpheus|. Criei Spec Templates para integrar arquivos de configuração ``.tf`` que lidam com o provider AWS (com assume role para flexibilidade de conta), criação de VPC, criação de subnet e injeção de variáveis."
 
 #: ../../getting_started/guides/terraform_instances.rst:14
 msgid ""
@@ -902,7 +902,7 @@ msgid ""
 "provision time. Once deployed, we'll take a look at the new "
 "infrastructure in |morpheus| and go over the management capabilities for "
 "the new environment."
-msgstr ""
+msgstr "Integraremos os arquivos de configuração Terraform como Spec Templates modulares, criaremos novos Instance Types com Layouts personalizados para a Library |morpheus| e configuraremos Inputs para injetar valores de variáveis no momento do provisionamento. Uma vez implantado, veremos a nova infraestrutura no |morpheus| e revisaremos as capacidades de gerenciamento do novo ambiente."
 
 #: ../../getting_started/guides/terraform_instances.rst:19
 msgid ""
@@ -913,7 +913,7 @@ msgid ""
 "added to the Layout later, we'll be able to include as many Spec "
 "Templates as we wish which enables us to reuse smaller modular pieces if "
 "desired."
-msgstr ""
+msgstr "A configuração Terraform é armazenada como um Spec Template no |morpheus|. Você pode armazenar sua configuração como um arquivo monolítico para cada Instance Type que pretende criar ou pode criar Spec Templates individuais para peças modulares que podem ser reutilizadas em vários Instance Types. Ao adicionar ao Layout mais adiante, poderemos incluir quantos Spec Templates desejarmos, o que nos permite reutilizar peças modulares menores se desejado."
 
 #: ../../getting_started/guides/terraform_instances.rst:21
 msgid ""
@@ -924,7 +924,7 @@ msgid ""
 " version-controlled repository but here I have my Terraform spec entered "
 "locally. Click :guilabel:`+ ADD`, complete the fields as I've done in the"
 " example below and click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Spec Templates são adicionados na Library |morpheus| (aba |LibTemSpe|). Podemos puxar o template de algum tipo de repositório, como por meio de uma integração Github, ou escrever novo spec diretamente no modal New Spec Template. Na maioria dos casos, o spec será pré-existente e puxado de um repositório com controle de versão, mas aqui tenho meu spec Terraform inserido localmente. Clique em :guilabel:`+ ADD`, preencha os campos como fiz no exemplo abaixo e clique em :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/terraform_instances.rst:23
 msgid ""
@@ -934,7 +934,7 @@ msgid ""
 "(:menuselection:`Administration --> Settings --> Provisioning`) is set to"
 " \"auto\". When \"manual\" is selected as the Terraform Runtime setting, "
 "|morpheus| will simply use the version installed on the appliance box."
-msgstr ""
+msgstr "No campo VERSION na parte inferior do modal TF Spec Template, informe um número de versão do Terraform para forçar o uso dessa versão. Esta versão só é respeitada se a configuração Terraform Runtime (:menuselection:`Administration --> Settings --> Provisioning`) estiver definida como \"auto\". Quando \"manual\" é selecionado como configuração Terraform Runtime, o |morpheus| simplesmente usará a versão instalada na máquina do appliance."
 
 #: ../../getting_started/guides/terraform_instances.rst:25
 msgid ""
@@ -943,7 +943,7 @@ msgid ""
 " defined, it defaults to string. See `Terraform Documentation "
 "<https://www.terraform.io/docs/language/values/variables.html>`_ for "
 "additional resources on variable declaration."
-msgstr ""
+msgstr "Ao declarar variáveis, tenha em mente que o |morpheus| espera que os usuários sigam as melhores práticas do Terraform. Por exemplo, quando um tipo de variável não é definido, o padrão é string. Consulte a `Documentação Terraform <https://www.terraform.io/docs/language/values/variables.html>`_ para recursos adicionais sobre declaração de variáveis."
 
 #: ../../getting_started/guides/terraform_instances.rst:27
 msgid ".. image:: /images/integration_guides/terr_inst_guide/1newSpec.png"
@@ -1090,7 +1090,7 @@ msgid ""
 " (linked in the prior sentence) for a listing of other possible pre-"
 "provision variables and a complete map of variables which can be resolved"
 " after provisioning has completed."
-msgstr ""
+msgstr "No exemplo de Spec Template AWS Terraform Locals acima, variáveis de pré-provisionamento são usadas. Observe o uso de variáveis `pre-provision <https://docs.morpheusdata.com/en/latest/troubleshooting/Variables_Examples.html?highlight=variables#pre-provision-vars>`_ para armazenar o valor de Owner e Group, entre outras coisas. Consulte a seção de variáveis da documentação |morpheus| (vinculada na frase anterior) para uma listagem de outras possíveis variáveis de pré-provisionamento e um mapa completo de variáveis que podem ser resolvidas após a conclusão do provisionamento."
 
 #: ../../getting_started/guides/terraform_instances.rst:164
 msgid ""
@@ -1101,7 +1101,7 @@ msgid ""
 "particular case, I'm populating the Inputs with manual Option Lists but "
 "they can also be populated through REST calls or calls to the |morpheus| "
 "API when needed."
-msgstr ""
+msgstr "Para criar o Layout mais adiante neste guia, preciso criar quatro Inputs para que o usuário possa fazer certas seleções no momento do provisionamento. Escrevi minha Configuração Terraform com essa flexibilidade em mente para que o mesmo Instance Type possa ser reutilizado em diferentes cenários. Neste caso particular, estou preenchendo os Inputs com Option Lists manuais, mas eles também podem ser preenchidos por chamadas REST ou chamadas à API |morpheus| quando necessário."
 
 #: ../../getting_started/guides/terraform_instances.rst:166
 msgid ""
@@ -1111,7 +1111,7 @@ msgid ""
 "fields as I've done in the example below and click :guilabel:`SAVE "
 "CHANGES`. I've created one each for the AWS account selection, region "
 "selection, and CIDR mask input."
-msgstr ""
+msgstr "Option Lists são criadas na Library (|Lib|) sob a aba Option Lists. Estas são listas de itens que serão usadas para criar seleções dropdown no momento do provisionamento. Clique em :guilabel:`+ ADD`, preencha os campos como fiz no exemplo abaixo e clique em :guilabel:`SAVE CHANGES`. Criei uma para a seleção de conta AWS, seleção de região e entrada de máscara CIDR."
 
 #: ../../getting_started/guides/terraform_instances.rst:168
 msgid ".. image:: /images/integration_guides/terr_inst_guide/7optionList.png"
@@ -1126,7 +1126,7 @@ msgid ""
 "number of subnets that should be created. Click :guilabel:`+ ADD`, "
 "complete the fields as I've done in the example below and click "
 ":guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Inputs também são criados na Library sob a aba Inputs. Neste caso, estou criando quatro Inputs. Três deles serão exibidos como seleções dropdown e serão vinculados a uma das Option Lists que acabamos de criar. O outro será uma simples entrada de texto em que o usuário pode indicar o número total de subnets que devem ser criadas. Clique em :guilabel:`+ ADD`, preencha os campos como fiz no exemplo abaixo e clique em :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/terraform_instances.rst:173
 msgid ".. image:: /images/integration_guides/terr_inst_guide/8optionType.png"
@@ -1143,7 +1143,7 @@ msgid ""
 "created in the Library (|Lib|) under the Instance Types tab. Click "
 ":guilabel:`+ ADD`, complete the fields as I've done in the example below "
 "and click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Neste ponto estamos prontos para criar um novo Instance Type. Daremos ao Instance Type um nome, que os usuários usarão para identificar o Instance Type na lista do assistente de provisionamento. Não precisamos definir muito mais neste caso; a maioria das peças que criamos nas etapas anteriores será associada ao Layout que criaremos a seguir. O Layout também será vinculado ao Instance Type que estamos criando agora. Instance Types também são criados na Library (|Lib|) sob a aba Instance Types. Clique em :guilabel:`+ ADD`, preencha os campos como fiz no exemplo abaixo e clique em :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/terraform_instances.rst:181
 msgid ".. image:: /images/integration_guides/terr_inst_guide/9instanceType.png"
@@ -1156,7 +1156,7 @@ msgid ""
 "the Instance Type detail page (|LibBluIns| > Selected Instance Type) by "
 "clicking :guilabel:`+ ADD LAYOUT`. We can also create one from the "
 "Layouts section (|LibBluLay|) by clicking :guilabel:`+ ADD`."
-msgstr ""
+msgstr "O Layout reunirá tudo o que criamos até este ponto: os Spec Templates, Inputs e o Instance Type. Podemos adicionar um novo a partir da página de detalhes do Instance Type (|LibBluIns| > Instance Type Selecionado) clicando em :guilabel:`+ ADD LAYOUT`. Também podemos criar um a partir da seção Layouts (|LibBluLay|) clicando em :guilabel:`+ ADD`."
 
 #: ../../getting_started/guides/terraform_instances.rst:189
 msgid ""
@@ -1169,7 +1169,7 @@ msgid ""
 "Layout. Finally, point the layout to a TFVAR SECRET from |morpheus| "
 "Cypher if needed. You can see a screenshot of my Layout configuration "
 "below"
-msgstr ""
+msgstr "Primeiro, altere o valor TECHNOLOGY para Terraform e os campos mudarão para permitir a configuração adequada. Em seguida, forneça um nome para o seu Layout. Se estiver criando o Layout pela aba Layout em vez da página de detalhes do Instance Type, você precisará identificar o Instance Type ao qual o Layout pertence. Usando os campos typeahead na parte inferior da janela modal, adicione nossos quatro Inputs e nossos cinco Spec Templates ao Layout. Por fim, aponte o layout para um TFVAR SECRET do Cypher |morpheus| se necessário. Você pode ver uma captura de tela da minha configuração de Layout abaixo"
 
 #: ../../getting_started/guides/terraform_instances.rst:191
 msgid ".. image:: /images/integration_guides/terr_inst_guide/10Layout.png"
@@ -1187,7 +1187,7 @@ msgid ""
 " and associated with the Layout. Once finished with this tab, step "
 "through the rest of the wizard to complete the process. You can see the "
 "options I've selected for this configuration in the image below."
-msgstr ""
+msgstr "Agora, estamos prontos para provisionar nova infraestrutura na AWS usando |morpheus| e Terraform. Assim como qualquer outro Instance Type, começamos na página de lista de Instances (:menuselection:`Provisioning --> Instances`) e clicamos em :guilabel:`+ ADD`. Selecione o Instance Type que acabamos de criar e avance para a aba GROUP do assistente. Aqui você dará um nome à nova instância e selecionará seu Group e Cloud. Após concluir, você avançará para a aba CONFIGURE, onde veremos os Inputs que criamos e associamos ao Layout. Após concluir esta aba, percorra o restante do assistente para concluir o processo. Você pode ver as opções que selecionei para esta configuração na imagem abaixo."
 
 #: ../../getting_started/guides/terraform_instances.rst:199
 msgid ".. image:: /images/integration_guides/terr_inst_guide/11configureTab.png"
@@ -1198,7 +1198,7 @@ msgid ""
 "After completing the wizard, from the History tab of the Instance detail "
 "page users can review the Terraform plan being executed and see the "
 "output while the resources are still being provisioned."
-msgstr ""
+msgstr "Após concluir o assistente, na aba History da página de detalhes da Instância os usuários podem revisar o plano Terraform sendo executado e ver a saída enquanto os recursos ainda estão sendo provisionados."
 
 #: ../../getting_started/guides/terraform_instances.rst:206
 msgid ".. image:: /images/integration_guides/terr_inst_guide/12historyTab.png"
@@ -1210,7 +1210,7 @@ msgid ""
 " can see and link through to the associated Spec Templates. If needed, "
 "you can also edit the configuration spec by clicking on the pencil icon "
 "at the end of the row for any listed Spec Template."
-msgstr ""
+msgstr "Após a conclusão do processo de provisionamento, vá para a aba State. Aqui podemos ver e vincular aos Spec Templates associados. Se necessário, você também pode editar o spec de configuração clicando no ícone de lápis no final da linha de qualquer Spec Template listado."
 
 #: ../../getting_started/guides/terraform_instances.rst:210
 msgid ""
@@ -1222,7 +1222,7 @@ msgid ""
 "plan will be executed as if you'd run ``terraform apply``. Back on the "
 "State tab you will see the output from the Apply process as well as an "
 "indicator of the success or failure of the operation."
-msgstr ""
+msgstr "Ao clicar em :guilabel:`APPLY STATE`, o usuário pode ver novamente as seleções de Input apresentadas durante o provisionamento inicial e fazer alterações quando necessário. Após fazer alterações e clicar em :guilabel:`NEXT`, o |morpheus| mostrará a saída do plano exatamente como se você tivesse executado ``terraform plan``. Ao clicar em :guilabel:`COMPLETE`, o plano será executado como se você tivesse executado ``terraform apply``. De volta à aba State, você verá a saída do processo Apply, bem como um indicador de sucesso ou falha da operação."
 
 #: ../../getting_started/guides/terraform_instances.rst:212
 msgid ".. image:: /images/integration_guides/terr_inst_guide/13stateTab.png"
@@ -1237,5 +1237,5 @@ msgid ""
 "minutes but you can perform a manual check at any time by clicking "
 ":guilabel:`REFRESH STATE`. Drift can be corrected when needed by "
 "reapplying state (:guilabel:`APPLY STATE` button)."
-msgstr ""
+msgstr "O |morpheus| também verificará regularmente o drift em relação à configuração Terraform. Na aba State, perto do topo, há um indicador \"Drift Status\". Isso mostrará Drift ou No Drift dependendo da situação. O |morpheus| verificará automaticamente o drift a cada poucos minutos, mas você pode realizar uma verificação manual a qualquer momento clicando em :guilabel:`REFRESH STATE`. O drift pode ser corrigido quando necessário reaplicando o estado (botão :guilabel:`APPLY STATE`)."
 

@@ -22,66 +22,66 @@ msgstr ""
 
 #: ../../library/labels.rst:2
 msgid "Labels"
-msgstr ""
+msgstr "Clusters K8s Morpheus"
 
 #: ../../library/labels.rst:14
 msgid ""
 "Labels are a categorization feature designed to allow easier filtering of"
 " list views in the |morpheus| Library. The following library constructs "
 "can be labeled:"
-msgstr ""
+msgstr "Hôtes Docker"
 
 #: ../../library/labels.rst:16
 msgid "Clouds"
-msgstr ""
+msgstr "Clouds"
 
 #: ../../library/labels.rst:17
 msgid "Groups"
-msgstr ""
+msgstr "Groupes"
 
 #: ../../library/labels.rst:18
 msgid "Tasks"
-msgstr ""
+msgstr "Tâches"
 
 #: ../../library/labels.rst:19
 msgid "Workflows"
-msgstr ""
+msgstr "Workflows"
 
 #: ../../library/labels.rst:20
 msgid "Jobs"
-msgstr ""
+msgstr "Jobs"
 
 #: ../../library/labels.rst:21
 msgid "Instance Types"
-msgstr ""
+msgstr "Types d'instance"
 
 #: ../../library/labels.rst:22
 msgid "Instances"
-msgstr ""
+msgstr "Instances"
 
 #: ../../library/labels.rst:23
 msgid "Layouts"
-msgstr ""
+msgstr "Layouts"
 
 #: ../../library/labels.rst:24
 msgid "Node Types"
-msgstr ""
+msgstr "Types de nœud"
 
 #: ../../library/labels.rst:25
 msgid "Servers"
-msgstr ""
+msgstr "Serveurs"
 
 #: ../../library/labels.rst:26
 msgid "Virtual Images"
-msgstr ""
+msgstr "Images virtuelles"
 
 #: ../../library/labels.rst:27
 msgid "Inputs"
-msgstr ""
+msgstr "Entrées"
 
 #: ../../library/labels.rst:28
 msgid "Option Lists"
-msgstr ""
+msgstr "Listas d'options"
 
 #: ../../library/labels.rst:30
 msgid ""
@@ -89,7 +89,7 @@ msgid ""
 " default, labels are turned on in the list view but if they aren't "
 "showing, click the gear icon (|gear|) and then click Labels to enable "
 "them."
-msgstr ""
+msgstr "Les libellés sont visibles depuis les vues de liste de tous les éléments répertoriés ci-dessus. Par défaut, les libellés sont activés dans la vue de liste, mais s'ils ne s'affichent pas, cliquez sur l'icône d'engrenage (|gear|), puis sur Labels pour les activer."
 
 #: ../../library/labels.rst:32
 msgid ""
@@ -97,11 +97,11 @@ msgid ""
 "Labels. Enter a search string to find an existing label or click the "
 "dropdown button within the field to select an existing label. This will "
 "filter the list to show only constructs which have the selected label."
-msgstr ""
+msgstr "La vue de liste contient une rangée de filtres au-dessus de la liste, dont l'un est Labels. Saisissez une chaîne de recherche pour trouver un libellé existant ou cliquez sur le bouton déroulant dans le champ pour sélectionner un libellé existant. Cela filtrera la liste pour n'afficher que les éléments qui possèdent le libellé sélectionné."
 
 #: ../../library/labels.rst:34 ../../library/labels.rst:51
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../library/labels.rst:34
 msgid ""
@@ -111,7 +111,7 @@ msgid ""
 "the list during its nightly sync. It is normal for a label to continue to"
 " exist in this list, even if it's not currently applied to any "
 "constructs, until the next nightly sync has taken place."
-msgstr ""
+msgstr "Toute liste peut être filtrée par tout libellé existant dans le locataire actuel. Lorsqu'un libellé est supprimé d'un élément et qu'aucun autre élément ne possède ce libellé, |morpheus| supprimera le libellé de la liste lors de sa synchronisation nocturne. Il est normal qu'un libellé continue d'exister dans cette liste, même s'il n'est actuellement appliqué à aucun élément, jusqu'à la prochaine synchronisation nocturne."
 
 #: ../../library/labels.rst:36
 msgid ".. image:: /images/provisioning/library/labels/labels.png"
@@ -119,14 +119,14 @@ msgstr ""
 
 #: ../../library/labels.rst:39
 msgid "Adding and Removing Labels"
-msgstr ""
+msgstr "Ajout et suppression de libellés"
 
 #: ../../library/labels.rst:41
 msgid ""
 "Labels can be created when adding or edited any of the supported "
 "constructs listed above. When adding or editing the object, enter or edit"
 " the comma-separated list of labels you wish to apply."
-msgstr ""
+msgstr "Les libellés peuvent être créés lors de l'ajout ou de la modification de l'un des éléments pris en charge répertoriés ci-dessus. Lors de l'ajout ou de la modification de l'objet, saisissez ou modifiez la liste de libellés séparés par des virgules que vous souhaitez appliquer."
 
 #: ../../library/labels.rst:43
 msgid ".. image:: /images/provisioning/library/labels/labeladd.png"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: ../../library/labels.rst:47
 msgid "Running Automation Against Label Targets"
-msgstr ""
+msgstr "Exécution de l'automatisation sur des cibles de libellés"
 
 #: ../../library/labels.rst:49
 msgid ""
@@ -146,14 +146,14 @@ msgid ""
 " Label may be selected and users cannot enter multiple Labels in the "
 "field. If a non-existent Label is entered, the automation simply will not"
 " run against any Workloads since the Label does not match any."
-msgstr ""
+msgstr "Les éléments d'automatisation |morpheus| Jobs, Tasks et Workflows peuvent être exécutés sur des libellés d'instance ou des libellés de serveur. Lors de la création du Job ou de l'exécution de la Task ou du Workflow, sélectionnez Server Label ou Instance Label. Après avoir spécifié le libellé, l'automatisation sera exécutée sur toutes les Instances ou Serveurs qui possèdent le libellé indiqué. Actuellement, un seul libellé peut être sélectionné et les utilisateurs ne peuvent pas saisir plusieurs libellés dans le champ. Si un libellé inexistant est saisi, l'automatisation ne s'exécutera sur aucune charge de travail, car le libellé ne correspond à aucune."
 
 #: ../../library/labels.rst:51
 msgid ""
 "Instance and server Labels are separate. Even if some Instances or "
 "servers have the same Label, the automation is only run against the "
 "selected construct (Instance Labels or Server Labels)."
-msgstr ""
+msgstr "Les libellés d'instance et de serveur sont distincts. Même si certaines Instances ou serveurs possèdent le même libellé, l'automatisation n'est exécutée que sur le type sélectionné (Instance Labels ou Server Labels)."
 
 #: ../../library/labels.rst:53
 msgid ".. image:: /images/automation/executeLabel.png"

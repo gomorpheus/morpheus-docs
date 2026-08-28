@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:2
 msgid "Storage Management"
-msgstr ""
+msgstr "Gerenciamento de Armazenamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:4
 msgid ""
@@ -30,7 +30,7 @@ msgid ""
 "consume. One is the local storage available on the compute server used to"
 " create an instance. The other is the remote storage (SAN), using the "
 "Alletra MP storage array."
-msgstr ""
+msgstr "Há dois tipos de armazenamento disponíveis para uma instância consumir. Um é o armazenamento local disponível no servidor de computação usado para criar uma instância. O outro é o armazenamento remoto (SAN), usando o array de armazenamento Alletra MP."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:6
 msgid ""
@@ -38,121 +38,121 @@ msgid ""
 "throughHPE Morpheus. They are used to install the OS image, and any "
 "storage available beyond that is up to the user to configure and use. "
 "They cannot be managed fromHPE Morpheus."
-msgstr ""
+msgstr "No momento, não há suporte para o gerenciamento do armazenamento local pelo HPE Morpheus. Eles são usados para instalar a imagem do SO, e qualquer armazenamento disponível além disso cabe ao usuário configurar e usar. Eles não podem ser gerenciados a partir do HPE Morpheus."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:8
 msgid ""
 "The remote storage is fully manageable. The user can create/update/delete"
 " volumes and manage their attachment to compute servers."
-msgstr ""
+msgstr "O armazenamento remoto é totalmente gerenciável. O usuário pode criar/atualizar/excluir volumes e gerenciar seu anexo a servidores de computação."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:11
 msgid "Boot Volume Selection"
-msgstr ""
+msgstr "Seleção do Volume de Boot"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:13
 msgid "During Instance Creation for Local Storage"
-msgstr ""
+msgstr "Durante a Criação da Instância para Armazenamento Local"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:14
 msgid ""
 "During Morpheus instance creation, the provisioning workflow will delete "
 "existing logical volumes,create a boot volume, and then identify the "
 "correct disk deviceusing the device’s unique identifier (UID)."
-msgstr ""
+msgstr "Durante a criação de instância do Morpheus, o workflow de provisionamento excluirá volumes lógicos existentes, criará um volume de boot e, em seguida, identificará o dispositivo de disco correto usando o identificador exclusivo (UID) do dispositivo."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:16
 msgid ""
 "The boot volume is determined by matching the device UID found in the "
 "storage controller to the corresponding Linux device path."
-msgstr ""
+msgstr "O volume de boot é determinado ao corresponder o UID do dispositivo encontrado no controlador de armazenamento ao caminho de dispositivo Linux correspondente."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:22
 msgid "Storage Device"
-msgstr ""
+msgstr "Dispositivo de Armazenamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:23
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:77
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:107
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:24
 msgid "RAID Type"
-msgstr ""
+msgstr "Tipo RAID"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:25
 msgid "Identifiers.DurableNameFormat"
-msgstr ""
+msgstr "Identifiers.DurableNameFormat"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:26
 msgid "Identifiers.DurableName"
-msgstr ""
+msgstr "Identifiers.DurableName"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:27
 msgid "HPE MegaRAID (MR216i-o) Storage Controller"
-msgstr ""
+msgstr "HPE MegaRAID (MR216i-o) Storage Controller"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:28
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:33
 msgid "BootVolume"
-msgstr ""
+msgstr "BootVolume"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:29
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:34
 msgid "RAID1"
-msgstr ""
+msgstr "RAID1"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:30
 msgid "NAA"
-msgstr ""
+msgstr "NAA"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:31
 msgid "600508B1001C40706B7600592D4A5C5A"
-msgstr ""
+msgstr "600508B1001C40706B7600592D4A5C5A"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:32
 msgid "HPE NVMe SHIELD (NS204i) Boot Device"
-msgstr ""
+msgstr "HPE NVMe SHIELD (NS204i) Boot Device"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:35
 msgid "EUI"
-msgstr ""
+msgstr "EUI"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:36
 msgid "1234:5678:9ABC:DEF0"
-msgstr ""
+msgstr "1234:5678:9ABC:DEF0"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:38
 msgid "Finding the Device Path"
-msgstr ""
+msgstr "Localização do Caminho do Dispositivo"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:39
 msgid ""
 "Once the device UID is known (from the storage controller), the "
 "provisioning script searches for the matching device in/dev/disk/by-id/"
-msgstr ""
+msgstr "Depois que o UID do dispositivo é conhecido (a partir do controlador de armazenamento), o script de provisionamento procura o dispositivo correspondente em /dev/disk/by-id/"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:41
 msgid ""
 "The script looks for thefirst entry that contains the UID(or a stripped "
 "version of the UID). These entries arestable identifiersthat point to the"
 " actual Linux block device."
-msgstr ""
+msgstr "O script procura a primeira entrada que contém o UID (ou uma versão sem prefixo do UID). Essas entradas são identificadores estáveis que apontam para o dispositivo de bloco Linux real."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:43
 msgid ""
 "Once a match is found, the script resolves the symbolic link to determine"
 " the real boot device path, which will be in the form:/dev/sdX"
-msgstr ""
+msgstr "Quando uma correspondência é encontrada, o script resolve o link simbólico para determinar o caminho real do dispositivo de boot, que estará no formato:/dev/sdX"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:45
 msgid "This/dev/sdXpath is then used for OS installation."
-msgstr ""
+msgstr "Este caminho /dev/sdX é então usado para a instalação do SO."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:48
 msgid "Remote Storage"
-msgstr ""
+msgstr "Armazenamento Remoto"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:50
 msgid ""
@@ -162,7 +162,7 @@ msgid ""
 " volumes. These operations can be performed during instance provisioning "
 "or post-provisioning through the reconfigure workflow. The currently "
 "supported transport protocol isFibre Channel."
-msgstr ""
+msgstr "O armazenamento remoto permite o gerenciamento do ciclo de vida de volumes em arrays de armazenamento HPE Alletra compatíveis (incluindo Alletra MP e Alletra 9000, onde suportado) e permite que instâncias de computação anexem ou desanexem esses volumes. Essas operações podem ser realizadas durante o provisionamento de instância ou pós-provisionamento por meio do workflow de reconfiguração. O protocolo de transporte atualmente suportado é Fibre Channel."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:52
 msgid ""
@@ -171,7 +171,7 @@ msgid ""
 "user to specify the URL where the management interface of the storage "
 "array is available, along with the user credentials to manage the storage"
 " array."
-msgstr ""
+msgstr "Para começar a usar o armazenamento remoto, primeiro o plugin de armazenamento para Alletra precisa ser carregado e um servidor de armazenamento adicionado. Isso permite que o usuário especifique a URL onde a interface de gerenciamento do array de armazenamento está disponível, juntamente com as credenciais do usuário para gerenciar o array de armazenamento."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:54
 msgid ""
@@ -180,30 +180,30 @@ msgid ""
 "server and also a resource pool. The resource pool is used to represent a"
 " site or a location, which is useful when storage HA is being used with "
 "datastores associated with different sites."
-msgstr ""
+msgstr "Há também o conceito de um datastore, que é usado para representar um contêiner para um conjunto de volumes. Um datastore está associado a um servidor de armazenamento e também a um resource pool. O resource pool é usado para representar um site ou uma localização, o que é útil quando o HA de armazenamento está sendo usado com datastores associados a sites diferentes."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:56
 msgid "AddingHPE AlletraStorage Integration"
-msgstr ""
+msgstr "Adição da Integração de Armazenamento HPE Alletra"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:57
 msgid ""
 "You can add the Allertra Storage plugin JAR using the Upload plugin "
 "method."
-msgstr ""
+msgstr "Você pode adicionar o JAR do plugin Allertra Storage usando o método Upload plugin."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:60
 msgid "Creating a Storage Server"
-msgstr ""
+msgstr "Criação de um Servidor de Armazenamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:62
 msgid "This procedure guides you through creating a storage server."
-msgstr ""
+msgstr "Este procedimento orienta você na criação de um servidor de armazenamento."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:65
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:95
 msgid "Log in to the"
-msgstr ""
+msgstr "Faça login na"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:66
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:79
@@ -211,14 +211,14 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:109
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:254
 msgid "HPE"
-msgstr ""
+msgstr "HPE"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:67
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:97
 msgid ""
 "|morpheus| Enterprise Software web interface using your administrator "
 "credentials."
-msgstr ""
+msgstr "interface web do |morpheus| Enterprise Software usando suas credenciais de administrador."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:68
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:98
@@ -228,7 +228,7 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:210
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:247
 msgid "Navigate to"
-msgstr ""
+msgstr "Navegue até"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:69
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:99
@@ -236,7 +236,7 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:167
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:188
 msgid "Infrastructure"
-msgstr ""
+msgstr "Infraestrutura"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:70
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:72
@@ -259,11 +259,11 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:169
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:190
 msgid "Storage"
-msgstr ""
+msgstr "Armazenamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:73
 msgid "Servers."
-msgstr ""
+msgstr "Servidores."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:74
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:82
@@ -274,177 +274,177 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:177
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:193
 msgid "Click the"
-msgstr ""
+msgstr "Clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:75
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:105
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:252
 msgid "Add."
-msgstr ""
+msgstr "Adicionar."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:76
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:106
 msgid "Provide a"
-msgstr ""
+msgstr "Forneça um"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:78
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:108
 msgid ", select"
-msgstr ""
+msgstr ", selecione"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:80
 msgid "Alletra Block Storage HVM"
-msgstr ""
+msgstr "Alletra Block Storage HVM"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:81
 msgid "for type, specify the URL for the storage array, and the credentials."
-msgstr ""
+msgstr "para o tipo, especifique a URL do array de armazenamento e as credenciais."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:83
 msgid "Save Changes"
-msgstr ""
+msgstr "Save Changes"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:84
 msgid "to create the storage server."
-msgstr ""
+msgstr "para criar o servidor de armazenamento."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:86
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:124
 msgid "Results"
-msgstr ""
+msgstr "Resultados"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:87
 msgid "The added storage server appears under Servers."
-msgstr ""
+msgstr "O servidor de armazenamento adicionado aparece em Servidores."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:90
 msgid "Creating a Datastore"
-msgstr ""
+msgstr "Criação de um Datastore"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:92
 msgid ""
 "This procedure guides you through creating a Datastore. The datastore "
 "acts as a container for volumes and must be created before volumes can be"
 " created."
-msgstr ""
+msgstr "Este procedimento orienta você na criação de um Datastore. O datastore atua como um contêiner para volumes e deve ser criado antes que os volumes possam ser criados."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:103
 msgid "DataStores."
-msgstr ""
+msgstr "DataStores."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:110
 msgid "Alletra Block Storage Baremetal"
-msgstr ""
+msgstr "Alletra Block Storage Baremetal"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:111
 msgid "for type, select your"
-msgstr ""
+msgstr "para o tipo, selecione sua"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:112
 msgid "cloud"
-msgstr ""
+msgstr "nuvem"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:113
 msgid ", the"
-msgstr ""
+msgstr ", o"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:114
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:148
 msgid "storage server"
-msgstr ""
+msgstr "servidor de armazenamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:115
 msgid "previously created,"
-msgstr ""
+msgstr "criado anteriormente,"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:116
 msgid "FC"
-msgstr ""
+msgstr "FC"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:117
 msgid "as the protocol type, and the"
-msgstr ""
+msgstr "como o tipo de protocolo, e o"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:118
 msgid "Resource Pool"
-msgstr ""
+msgstr "Resource Pool"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:119
 msgid "that applies to this storage server."
-msgstr ""
+msgstr "que se aplica a este servidor de armazenamento."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:121
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:122
 msgid "to create the DataStore."
-msgstr ""
+msgstr "para criar o DataStore."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:125
 msgid "The added data store appears under Data Store."
-msgstr ""
+msgstr "O data store adicionado aparece em Data Store."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:128
 msgid "Volume Management"
-msgstr ""
+msgstr "Gerenciamento de Volume"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:130
 msgid ""
 "Volume life cycle management can be performed under "
 "theInfrastructure>Storage>Volumestab. It allows the user to perform "
 "create/resize/delete operations."
-msgstr ""
+msgstr "O gerenciamento do ciclo de vida do volume pode ser realizado na aba Infraestrutura>Armazenamento>Volumes. Ele permite que o usuário realize operações de criar/redimensionar/excluir."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:133
 msgid "Adding Volume"
-msgstr ""
+msgstr "Adição de Volume"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:135
 msgid "Perform the following procedure to create a new volume:"
-msgstr ""
+msgstr "Execute o procedimento a seguir para criar um novo volume:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:143
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:171
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:192
 msgid "Volumes."
-msgstr ""
+msgstr "Volumes."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:145
 msgid "Add"
-msgstr ""
+msgstr "Adicionar"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:146
 msgid "button."
-msgstr ""
+msgstr "botão."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:147
 msgid "Select the"
-msgstr ""
+msgstr "Selecione o"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:149
 msgid "to create the volume in and click"
-msgstr ""
+msgstr "para criar o volume e clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:150
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:152
 msgid "Next."
-msgstr ""
+msgstr "Next."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:151
 msgid ""
 "Select the required volume type, unreplicated, CPP replicated, or APP "
 "replicated, and click"
-msgstr ""
+msgstr "Selecione o tipo de volume necessário, unreplicated, CPP replicated ou APP replicated, e clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:153
 msgid "On the"
-msgstr ""
+msgstr "Na tela"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:154
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:258
 msgid "Configure"
-msgstr ""
+msgstr "Configurar"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:155
 msgid ""
@@ -452,85 +452,85 @@ msgid ""
 "needs to be created, shared/unshared. You can optionally specify the "
 "server/instance to export the volume, depending on whether it is "
 "unshared/shared."
-msgstr ""
+msgstr "especifique o nome do volume, o tamanho, o datastore no qual o volume precisa ser criado, shared/unshared. Opcionalmente, você pode especificar o servidor/instância para exportar o volume, dependendo de ser unshared/shared."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:156
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:251
 msgid "Click"
-msgstr ""
+msgstr "Clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:157
 msgid "Complete"
-msgstr ""
+msgstr "Concluir"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:158
 msgid "to finish adding the volume."
-msgstr ""
+msgstr "para concluir a adição do volume."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:161
 msgid "Deleting Volume"
-msgstr ""
+msgstr "Exclusão de Volume"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:163
 msgid ""
 "This procedure allows the users to delete a volume. A volume can be "
 "deleted only after it is detached from all the servers."
-msgstr ""
+msgstr "Este procedimento permite que os usuários excluam um volume. Um volume só pode ser excluído depois de ser desanexado de todos os servidores."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:173
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:194
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:216
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:174
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:195
 msgid "pulldown on the right and select"
-msgstr ""
+msgstr "menu suspenso à direita e selecione"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:175
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:178
 msgid "Delete"
-msgstr ""
+msgstr "Excluir"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:176
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:197
 msgid "for the volume to be deleted."
-msgstr ""
+msgstr "para o volume a ser excluído."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:179
 msgid "on the confirmation screen."
-msgstr ""
+msgstr "na tela de confirmação."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:182
 msgid "Resizing Volume"
-msgstr ""
+msgstr "Redimensionamento de Volume"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:184
 msgid ""
 "This procedure allows the user to resize a volume. Volume size can only "
 "be increased. A rescan is required on the server OS to see the increased "
 "size."
-msgstr ""
+msgstr "Este procedimento permite que o usuário redimensione um volume. O tamanho do volume só pode ser aumentado. É necessário um rescan no SO do servidor para ver o tamanho aumentado."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:196
 msgid "Resize"
-msgstr ""
+msgstr "Resize"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:198
 msgid "Specify the new size and click"
-msgstr ""
+msgstr "Especifique o novo tamanho e clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:199
 msgid "#. Resize. Reconfiguring Volume ^^^^^^^^^^^^^^^^^^^^"
-msgstr ""
+msgstr "#. Resize. Reconfiguração de Volume ^^^^^^^^^^^^^^^^^^^^"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:203
 msgid ""
 "Reconfiguration allows the user to make changes to volumes consumed by a "
 "compute instance post-provisioning. This is achieved through "
 "theReconfigureaction on the instance."
-msgstr ""
+msgstr "A reconfiguração permite que o usuário faça alterações nos volumes consumidos por uma instância de computação após o provisionamento. Isso é feito por meio da ação Reconfigure na instância."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:205
 msgid ""
@@ -540,58 +540,58 @@ msgid ""
 "volume can be detached. However, volumes cannot be deleted from the "
 "Reconfigure action. Volumes can be deleted only from the infrastructure "
 "management section."
-msgstr ""
+msgstr "Novos volumes podem ser criados e anexados à instância de computação. Estes podem ser volumes shared ou unshared. Qualquer volume anexado à instância de computação pode ser redimensionado para aumentar o tamanho do volume. Qualquer volume anexado pode ser desanexado. No entanto, os volumes não podem ser excluídos a partir da ação Reconfigure. Os volumes só podem ser excluídos na seção de gerenciamento de infraestrutura."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:207
 msgid ""
 "All these operations work in the context of a compute instance and are "
 "not specific to a compute server within the instance."
-msgstr ""
+msgstr "Todas essas operações funcionam no contexto de uma instância de computação e não são específicas de um servidor de computação dentro da instância."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:211
 msgid "Provision"
-msgstr ""
+msgstr "Provisionar"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:213
 msgid "Instance."
-msgstr ""
+msgstr "Instância."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:214
 msgid ""
 "Click on the compute instance you want to reconfigure and access the "
 "details of the instance."
-msgstr ""
+msgstr "Clique na instância de computação que deseja reconfigurar e acesse os detalhes da instância."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:215
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:224
 msgid "Click on"
-msgstr ""
+msgstr "Clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:217
 msgid "and select"
-msgstr ""
+msgstr "e selecione"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:218
 msgid "Reconfigure."
-msgstr ""
+msgstr "Reconfigure."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:219
 msgid "In the"
-msgstr ""
+msgstr "No"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:220
 msgid "Reconfigure"
-msgstr ""
+msgstr "Reconfigure"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:221
 msgid ""
 "wizard, make the changes desired to add a new volume, resize an existing "
 "volume or click the trash icon to detach a volume from the instance."
-msgstr ""
+msgstr "assistente, faça as alterações desejadas para adicionar um novo volume, redimensionar um volume existente ou clique no ícone de lixeira para desanexar um volume da instância."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:225
 msgid "#. Reconfigure. Volume Consumption ------------------"
-msgstr ""
+msgstr "#. Reconfigure. Consumo de Volume ------------------"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:229
 msgid ""
@@ -599,22 +599,22 @@ msgid ""
 "provisioning, where the user can specify volumes to attach to, whether "
 "existing volumes or new volumes to be created. It can also be done using "
 "the reconfigure action."
-msgstr ""
+msgstr "O consumo de volume é tipicamente feito por meio do provisionamento de instância de computação, onde o usuário pode especificar volumes para anexar, sejam volumes existentes ou novos volumes a criar. Também pode ser feito usando a ação de reconfiguração."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:231
 msgid "Instance Provisioning"
-msgstr ""
+msgstr "Provisionamento de Instância"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:232
 msgid ""
 "During instance provisioning, the user can specify volumes to be attached"
 " to the servers within the instance. There are various types of volumes "
 "user can specify."
-msgstr ""
+msgstr "Durante o provisionamento de instância, o usuário pode especificar volumes a serem anexados aos servidores dentro da instância. Há vários tipos de volumes que o usuário pode especificar."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:234
 msgid "Sharing"
-msgstr ""
+msgstr "Compartilhamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:235
 msgid ""
@@ -623,21 +623,21 @@ msgid ""
 "servers within that instance. Specifying an unshared volume means a "
 "volume is created for each server within the instance and exported to the"
 " corresponding server."
-msgstr ""
+msgstr "Os volumes podem ser shared ou unshared (anexados a um servidor específico apenas). Especificar um volume shared significa que um único volume é anexado a todos os servidores dentro dessa instância. Especificar um volume unshared significa que um volume é criado para cada servidor dentro da instância e exportado para o servidor correspondente."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:237
 msgid "Existing vs New"
-msgstr ""
+msgstr "Existente vs Novo"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:238
 msgid ""
 "The user can specify a new volume to be created or specify to attach to "
 "an existing volume. Existing volume is applicable only to shared volumes."
-msgstr ""
+msgstr "O usuário pode especificar um novo volume a ser criado ou especificar anexar a um volume existente. Volume existente é aplicável apenas a volumes shared."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:240
 msgid "Replicated vs Unreplicated"
-msgstr ""
+msgstr "Replicated vs Unreplicated"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:241
 msgid ""
@@ -645,58 +645,58 @@ msgid ""
 "unreplicated or replicated. Depending on the storage array deployed and "
 "the HA configuration, replicated volumes can be specified as CPP (classic"
 " peer persistence) or APP (active peer persistence)."
-msgstr ""
+msgstr "Ao criar novos volumes, o usuário pode especificar que o volume é unreplicated ou replicated. Dependendo do array de armazenamento implantado e da configuração de HA, volumes replicated podem ser especificados como CPP (classic peer persistence) ou APP (active peer persistence)."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:244
 msgid "Using Volume"
-msgstr ""
+msgstr "Uso do Volume"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:246
 msgid "Perform the following to use the configured volume:"
-msgstr ""
+msgstr "Execute o seguinte para usar o volume configurado:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:248
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionamento"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:250
 msgid "Instances."
-msgstr ""
+msgstr "Instâncias."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:253
 msgid "After selecting the"
-msgstr ""
+msgstr "Após selecionar o"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:255
 msgid ""
 "BareMetal ILO server for type and specifying the cloud, group, and a name"
 " for the instance, click"
-msgstr ""
+msgstr "BareMetal ILO server como tipo e especificar a nuvem, o grupo e um nome para a instância, clique em"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:256
 msgid "Next"
-msgstr ""
+msgstr "Próximo"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:257
 msgid "to advance to the"
-msgstr ""
+msgstr "para avançar para a"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:259
 msgid "section."
-msgstr ""
+msgstr "seção."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:260
 msgid "Click on the"
-msgstr ""
+msgstr "Clique no sinal"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:262
 msgid "sign next to Volumes to add a volume to this instance."
-msgstr ""
+msgstr "ao lado de Volumes para adicionar um volume a esta instância."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/storage_management.rst:263
 msgid ""
 "Specify a name for the volume, desired size, volume type to indicate "
 "whether it is a replicated volume or not, the datastore to create it in, "
 "and whether it’s a shared volume."
-msgstr ""
+msgstr "Especifique um nome para o volume, o tamanho desejado, o tipo de volume para indicar se é um volume replicated ou não, o datastore em que criá-lo e se é um volume shared."
 

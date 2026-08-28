@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_Agent.rst:2
 msgid "|morpheus| Agent Install Troubleshooting"
-msgstr ""
+msgstr "Dépannage de l'installation de l'agent |morpheus|"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "long after the VM is up, the Instance is unable to reach |morpheus|. "
 "Depending on the Agent install mode, it could also mean |morpheus| is "
 "unable to reach the Instance."
-msgstr ""
+msgstr "Lors du provisionnement d'une instance, des exigences réseau et de configuration doivent être prises en compte pour installer avec succès l'agent |morpheus|. En général, lorsqu'une instance VM reste en phase de provisionnement longtemps après le démarrage de la VM, l'instance ne peut pas joindre |morpheus|. Selon le mode d'installation de l'agent, cela peut aussi signifier que |morpheus| ne peut pas joindre l'instance."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:6
 msgid ""
@@ -41,7 +41,7 @@ msgid ""
 "|AdmSet| over port 443. When an Instance is provisioned from |morpheus|, "
 "it must be able to reach the |morpheus| appliance via the Appliance URL "
 "or the Agent will not be installed."
-msgstr ""
+msgstr "La raison la plus courante d'échec d'installation de l'agent est que l'instance provisionnée ne peut pas joindre l'appliance |morpheus| via l'URL de l'appliance définie dans |AdmSet| sur le port 443. Lorsqu'une instance est provisionnée depuis |morpheus|, elle doit pouvoir joindre l'appliance |morpheus| via l'URL de l'appliance, sinon l'agent ne sera pas installé."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:8
 msgid ".. image:: /images/agent-7c9a2.png"
@@ -54,85 +54,85 @@ msgid ""
 "configuration modal when creating or editing a Cloud. When this field is "
 "populated, it will override the main Appliance URL for anything "
 "provisioned into that Cloud."
-msgstr ""
+msgstr "En plus de l'URL principale de l'appliance dans |AdmSet|, des URL d'appliance supplémentaires peuvent être définies par cloud dans la section Options avancées de la fenêtre modale de configuration du cloud lors de la création ou de la modification d'un cloud. Lorsque ce champ est renseigné, il remplace l'URL principale de l'appliance pour tout ce qui est provisionné dans ce cloud."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:12
 #: ../../troubleshooting/Morpheus_Agent.rst:145
 msgid "Tip"
-msgstr ""
+msgstr "Astuce"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:12
 msgid ""
 "The |morpheus| UI current log, located at /var/log/morpheus/morpheus-"
 "ui/current, is very helpful when troubleshooting Agent installations."
-msgstr ""
+msgstr "Le journal actuel de l'interface |morpheus|, situé à /var/log/morpheus/morpheus-ui/current, est très utile pour le dépannage des installations d'agent."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:15
 msgid "Agent Install Methods"
-msgstr ""
+msgstr "Méthodes d'installation de l'agent"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:17
 msgid "Morpheus Agent installation supports multiple install methods."
-msgstr ""
+msgstr "L'installation de l'agent Morpheus prend en charge plusieurs méthodes d'installation."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:19
 msgid "SSH/WinRM"
-msgstr ""
+msgstr "SSH/WinRM"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:20
 msgid "VM Tools"
-msgstr ""
+msgstr "VM Tools"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:21
 msgid "Cloud-Init & Cloudbase-Init"
-msgstr ""
+msgstr "Cloud-Init et Cloudbase-Init"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:22
 #: ../../troubleshooting/Morpheus_Agent.rst:98
 msgid "Windows Unattended"
-msgstr ""
+msgstr "Windows Unattended"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:23
 #: ../../troubleshooting/Morpheus_Agent.rst:105
 msgid "Manual"
-msgstr ""
+msgstr "Manuel"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:26
 msgid "For All Agent Install Methods"
-msgstr ""
+msgstr "Pour toutes les méthodes d'installation de l'agent"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:28
 msgid ""
 "When an Instance is provisioned and the Agent does not install, verify "
 "the following for any Agent install mode:"
-msgstr ""
+msgstr "Lorsqu'une instance est provisionnée et que l'agent ne s'installe pas, vérifiez les éléments suivants pour tout mode d'installation de l'agent :"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:30
 msgid ""
 "The |morpheus| Appliance URL (|AdmSet|) is both reachable and resolvable "
 "from the provisioned node"
-msgstr ""
+msgstr "L'URL de l'appliance |morpheus| (|AdmSet|) est à la fois joignable et résolvable depuis le nœud provisionné"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:31
 msgid "The Appliance URL begins with https://, not http://"
-msgstr ""
+msgstr "L'URL de l'appliance commence par https://, et non http://"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:33
 #: ../../troubleshooting/Morpheus_Agent.rst:39
 #: ../../troubleshooting/Morpheus_Agent.rst:70
 #: ../../troubleshooting/Morpheus_Agent.rst:95
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:33
 msgid "Be sure to use https:// even when using an IP address for the appliance."
-msgstr ""
+msgstr "Assurez-vous d'utiliser https:// même lorsque vous utilisez une adresse IP pour l'appliance."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:35
 msgid ""
 "Inbound connectivity access to the |morpheus| appliance from provisioned "
 "VMs and container hosts on port 443 (needed for Agent communication)"
-msgstr ""
+msgstr "Accès de connectivité entrant à l'appliance |morpheus| depuis les VM provisionnées et les hôtes de conteneurs sur le port 443 (nécessaire pour la communication de l'agent)"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:37
 msgid ""
@@ -140,12 +140,12 @@ msgid ""
 " credentials stored. These can be entered or edited in the "
 ":menuselection:`Library --> Virtual Images` section by clicking the "
 "Actions dropdown on an image detail page and selecting Edit."
-msgstr ""
+msgstr "Les images et modèles VM privés (non fournis par |morpheus|) doivent avoir leurs identifiants enregistrés. Ceux-ci peuvent être saisis ou modifiés dans la section :menuselection:`Library --> Virtual Images` en cliquant sur le menu déroulant Actions sur une page de détail d'image et en sélectionnant Edit."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:39
 #: ../../troubleshooting/Morpheus_Agent.rst:70
 msgid "Administrator user is required for Windows Agent install."
-msgstr ""
+msgstr "Un utilisateur administrateur est requis pour l'installation de l'agent Windows."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:41
 msgid ""
@@ -154,18 +154,18 @@ msgid ""
 "Network Type: Static in the Advanced Options section during provisioning."
 " IP Pools can also be created in the Infrastructure > Networks > IP Pools"
 " section and added to Cloud network sections for IPAM"
-msgstr ""
+msgstr "L'instance n'a pas d'adresse IP assignée. Pour les scénarios sans serveur DHCP, les informations d'IP statique doivent être saisies en sélectionnant Network Type: Static dans la section Options avancées pendant le provisionnement. Des pools IP peuvent également être créés dans la section Infrastructure > Networks > IP Pools et ajoutés aux sections réseau du cloud pour l'IPAM"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:43
 msgid ""
 "DNS is not configured and the node cannot resolve the appliance. If DNS "
 "cannot be configured, the IP address of the |morpheus| appliance can be "
 "used as the main or Cloud appliance"
-msgstr ""
+msgstr "Le DNS n'est pas configuré et le nœud ne peut pas résoudre l'appliance. Si le DNS ne peut pas être configuré, l'adresse IP de l'appliance |morpheus| peut être utilisée comme appliance principale ou cloud"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:46
 msgid "Endpoint Security Interference"
-msgstr ""
+msgstr "Interférence de la sécurité des points de terminaison"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:48
 msgid ""
@@ -176,7 +176,7 @@ msgid ""
 "denied outbound HTTPS/WSS session affects registration and ongoing "
 "communication. An Agent upgrade can encounter the same controls again "
 "even when the previous version was permitted."
-msgstr ""
+msgstr "Les produits EDR, antivirus, contrôle d'applications et pare-feu hôte peuvent interrompre différentes étapes de la configuration de l'agent. Un téléchargement ou un script bloqué affecte la livraison ; un gestionnaire de paquets ou une écriture de fichier refusée affecte l'installation ; un processus ``morphd`` mis en quarantaine affecte le démarrage ; et une session HTTPS/WSS sortante refusée affecte l'enregistrement et la communication continue. Une mise à niveau de l'agent peut rencontrer à nouveau les mêmes contrôles, même si la version précédente était autorisée."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:50
 msgid ""
@@ -184,7 +184,7 @@ msgid ""
 " entry from ``/var/log/morpheus/morpheus-ui/current``. On the target, "
 "collect Agent logs from ``/var/log/morpheus-node`` and the security "
 "product's prevention or quarantine event."
-msgstr ""
+msgstr "Enregistrez l'étape en échec, l'horodatage, la sortie d'installation et l'entrée pertinente de ``/var/log/morpheus/morpheus-ui/current``. Sur la cible, collectez les journaux de l'agent depuis ``/var/log/morpheus-node`` et l'événement de prévention ou de quarantaine du produit de sécurité."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:51
 msgid ""
@@ -192,7 +192,7 @@ msgid ""
 "Appliance URL. If these checks succeed but the Agent cannot connect, have"
 " the security team inspect TLS/websocket filtering and process-specific "
 "network policy."
-msgstr ""
+msgstr "Confirmez la résolution DNS et la connectivité TCP 443 vers l'URL de l'appliance configurée. Si ces vérifications réussissent mais que l'agent ne peut pas se connecter, demandez à l'équipe de sécurité d'inspecter le filtrage TLS/websocket et la politique réseau spécifique aux processus."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:52
 msgid ""
@@ -201,14 +201,14 @@ msgid ""
 "and ``/var/log/morpheus-node``. Permit only the exact package, process, "
 "path, action, or destination shown to be blocked, using the security "
 "vendor's approved allowlisting mechanism."
-msgstr ""
+msgstr "Corrélez l'événement avec ``morphd``, le service ``morpheus-node-runsvdir``, ``/opt/morpheus-node``, ``/etc/morpheus/morpheus-node.yaml``, et ``/var/log/morpheus-node``. Autorisez uniquement le paquet, le processus, le chemin, l'action ou la destination exacts montrés comme bloqués, en utilisant le mécanisme d'autorisation approuvé du fournisseur de sécurité."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:53
 msgid ""
 "Retry the failed installation or upgrade and verify that the Agent "
 "starts, reconnects, and reports in |morpheus|. Preserve the evidence if "
 "the targeted rule does not resolve the failure."
-msgstr ""
+msgstr "Relancez l'installation ou la mise à niveau en échec et vérifiez que l'agent démarre, se reconnecte et se signale dans |morpheus|. Conservez les preuves si la règle ciblée ne résout pas l'échec."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:55
 msgid ""
@@ -219,117 +219,117 @@ msgid ""
 "practical interval, re-enable protection immediately, and verify both "
 "Agent health and security-control health. Escalate with the collected "
 "evidence rather than leaving protection disabled."
-msgstr ""
+msgstr "Ne prescrivez pas d'exclusion permanente pour l'ensemble du répertoire de l'agent, tous les scripts, tous les processus enfants ou tout le trafic. Si la désactivation temporaire du contrôle de sécurité est la seule option de diagnostic disponible, obtenez l'approbation de la politique de sécurité, isolez le test à l'hôte affecté et à l'intervalle le plus court possible, réactivez la protection immédiatement, et vérifiez à la fois l'état de l'agent et l'état du contrôle de sécurité. Escaladez avec les preuves collectées plutôt que de laisser la protection désactivée."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:58
 msgid "SSH"
-msgstr ""
+msgstr "SSH"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:60
 msgid "Port 22 is open for Linux images, and SSH is enabled"
-msgstr ""
+msgstr "Le port 22 est ouvert pour les images Linux, et SSH est activé"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:62
 msgid ""
 "Credentials set on the image if using a custom or synced image. "
 "Credentials can be entered on images in the :menuselection:`Library --> "
 "Virtual Images` section"
-msgstr ""
+msgstr "Identifiants définis sur l'image si vous utilisez une image personnalisée ou synchronisée. Les identifiants peuvent être saisis sur les images dans la section :menuselection:`Library --> Virtual Images`"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:65
 msgid "WinRM"
-msgstr ""
+msgstr "WinRM"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:67
 msgid "Port 5985 must be open and WinRM enabled for Windows images"
-msgstr ""
+msgstr "Le port 5985 doit être ouvert et WinRM activé pour les images Windows"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:68
 msgid ""
 "Credentials have been entered on the image if using a custom or synced "
 "image. Credentials can be entered on images in the "
 ":menuselection:`Library --> Virtual Images` section"
-msgstr ""
+msgstr "Des identifiants ont été saisis sur l'image si vous utilisez une image personnalisée ou synchronisée. Les identifiants peuvent être saisis sur les images dans la section :menuselection:`Library --> Virtual Images`"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:73
 msgid "VMware Tools (vmtools)"
-msgstr ""
+msgstr "VMware Tools (vmtools)"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:75
 msgid "VMware Tools is installed on the template(s)"
-msgstr ""
+msgstr "VMware Tools est installé sur le(s) modèle(s)"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:76
 msgid ""
 "Credentials have been entered on the image if using custom or synced "
 "image. Credentials can be entered on images in the "
 ":menuselection:`Library --> Virtual Images` section"
-msgstr ""
+msgstr "Des identifiants ont été saisis sur l'image si vous utilisez une image personnalisée ou synchronisée. Les identifiants peuvent être saisis sur les images dans la section :menuselection:`Library --> Virtual Images`"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:77
 msgid "Sudo privileges required for Linux"
-msgstr ""
+msgstr "Privilèges sudo requis pour Linux"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:78
 msgid "Administrator User required for Windows (SID 500)"
-msgstr ""
+msgstr "Utilisateur administrateur requis pour Windows (SID 500)"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:81
 msgid "Cloud-Init"
-msgstr ""
+msgstr "Cloud-Init"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:83
 msgid ""
 "Cloud-Init settings configured in :menuselection:`Administration --> "
 "Settings --> Provisioning` section"
-msgstr ""
+msgstr "Paramètres Cloud-Init configurés dans la section :menuselection:`Administration --> Settings --> Provisioning`"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:84
 msgid "Cloud-Init installed on Virtual Image"
-msgstr ""
+msgstr "Cloud-Init installé sur l'image virtuelle"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:85
 #: ../../troubleshooting/Morpheus_Agent.rst:92
 msgid "``Cloud-Init`` enabled on Virtual Image config"
-msgstr ""
+msgstr "``Cloud-Init`` activé dans la configuration de l'image virtuelle"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:88
 msgid "Cloudbase-Init"
-msgstr ""
+msgstr "Cloudbase-Init"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:90
 #: ../../troubleshooting/Morpheus_Agent.rst:100
 msgid ""
 "Windows Administrator Password defined in :menuselection:`Administration "
 "--> Settings --> Provisioning` section"
-msgstr ""
+msgstr "Mot de passe administrateur Windows défini dans la section :menuselection:`Administration --> Settings --> Provisioning`"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:91
 msgid "Cloudbase-Init installed on Virtual Image"
-msgstr ""
+msgstr "Cloudbase-Init installé sur l'image virtuelle"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:93
 msgid "Cloudbase-Init is only required for OpenStack Cloud types"
-msgstr ""
+msgstr "Cloudbase-Init n'est requis que pour les types de cloud OpenStack"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:95
 msgid ""
 "Unattend Agent Installation and customizations are recommended over "
 "Cloudbase-Init"
-msgstr ""
+msgstr "L'installation de l'agent Unattend et les personnalisations sont recommandées plutôt que Cloudbase-Init"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:101
 msgid ""
 "VMware: ``Force Guest Customizations`` set to forced on Virtual Image "
 "config when using DHCP (Static Assignment will already force Guest "
 "Customizations)"
-msgstr ""
+msgstr "VMware : ``Force Guest Customizations`` défini sur forced dans la configuration de l'image virtuelle lors de l'utilisation du DHCP (Static Assignment forcera déjà les personnalisations invité)"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:102
 msgid ""
 "Nutanix & SCVMM: Virtual Image is sysprepped and shutdown, ``Sysprep "
 "Enabled`` flagged on Virtual Image config"
-msgstr ""
+msgstr "Nutanix et SCVMM : l'image virtuelle est syspreppée et arrêtée, ``Sysprep Enabled`` activé dans la configuration de l'image virtuelle"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:107
 msgid ""
@@ -338,23 +338,23 @@ msgid ""
 "manually on the target host when required for a given managed resource. "
 "Please note the script will be unique per managed resource and should not"
 " be saved to run as needed on any arbitrary resources in the future."
-msgstr ""
+msgstr "Les scripts d'installation de l'agent peuvent être téléchargés depuis |morpheus| en sélectionnant ``Actions > Download Agent Script`` depuis une page de détail de serveur, puis exécutés manuellement sur l'hôte cible lorsque requis pour une ressource gérée donnée. Notez que le script sera unique par ressource gérée et ne doit pas être enregistré pour une exécution ultérieure sur des ressources arbitraires."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:109
 msgid ""
 "When installing on Windows, continue with the steps below to complete "
 "manual installation:"
-msgstr ""
+msgstr "Lors de l'installation sur Windows, poursuivez avec les étapes ci-dessous pour terminer l'installation manuelle :"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:111
 msgid "Open powershell as an administrator"
-msgstr ""
+msgstr "Ouvrir PowerShell en tant qu'administrateur"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:112
 msgid ""
 "Run the ``unblock-file cmdlet`` against the download agent installation "
 "script:"
-msgstr ""
+msgstr "Exécutez la ``unblock-file cmdlet`` sur le script d'installation de l'agent téléchargé :"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:114
 msgid ""
@@ -370,7 +370,7 @@ msgstr ""
 msgid ""
 "After running the powershell script, ensure the script downloaded the msi"
 " and the Agent service started correctly:"
-msgstr ""
+msgstr "Après l'exécution du script PowerShell, vérifiez que le script a téléchargé le fichier msi et que le service Agent a démarré correctement :"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:124
 msgid "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
@@ -380,59 +380,59 @@ msgstr ""
 msgid ""
 "Following setup, verify that the Agent is reporting back to the "
 "|morpheus| appliance."
-msgstr ""
+msgstr "Après la configuration, vérifiez que l'Agent communique avec l'appliance |morpheus|."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:131
 msgid "Restarting the |morpheus| Agent"
-msgstr ""
+msgstr "Redémarrage de l'Agent |morpheus|"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:133
 msgid ""
 "In some situations, it may necessary to restart the |morpheus| Agent on "
 "the host to re-sync communication from the Agent to the |morpheus| "
 "appliance."
-msgstr ""
+msgstr "Dans certaines situations, il peut être nécessaire de redémarrer l'Agent |morpheus| sur l'hôte pour resynchroniser la communication entre l'Agent et l'appliance |morpheus|."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:136
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:138
 msgid ""
 "On the target host, run ``sudo morpheus-node-ctl restart morphd`` and the"
 " |morpheus| agent will restart. ``morpheus-node-ctl status`` will also "
 "show the agent status."
-msgstr ""
+msgstr "Sur l'hôte cible, exécutez ``sudo morpheus-node-ctl restart morphd`` et l'agent |morpheus| redémarrera. ``morpheus-node-ctl status`` affiche également l'état de l'agent."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:141
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:143
 msgid ""
 "The |morpheus| Windows Agent service can be restarted in Administrative "
 "Tools > Services."
-msgstr ""
+msgstr "Le service Agent Windows |morpheus| peut être redémarré dans Outils d'administration > Services."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:145
 msgid ""
 "The |morpheus| Remote Console is not dependent on Agent communication and"
 " can be used to install or restart the |morpheus| agent on an Instance."
-msgstr ""
+msgstr "La Console distante |morpheus| ne dépend pas de la communication avec l'Agent et peut être utilisée pour installer ou redémarrer l'agent |morpheus| sur une Instance."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:148
 msgid "Uninstall |morpheus| Agent"
-msgstr ""
+msgstr "Désinstaller l'Agent |morpheus|"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:151
 msgid "Linux Agents"
-msgstr ""
+msgstr "Agents Linux"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:153
 msgid ""
 "You can use the following to uninstall the linux agent (contains commands"
 " for both rpm and deb agents)"
-msgstr ""
+msgstr "Vous pouvez utiliser les commandes suivantes pour désinstaller l'agent Linux (contient des commandes pour les agents rpm et deb)"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:155
 msgid ""
@@ -458,7 +458,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_Agent.rst:177
 msgid "Windows Agents"
-msgstr ""
+msgstr "Agents Windows"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:179
 msgid ""
@@ -469,12 +469,12 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_Agent.rst:186
 msgid "CentOS/RHEL 7 Images"
-msgstr ""
+msgstr "Images CentOS/RHEL 7"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:188
 msgid ""
 "For custom CentOS 7 images we highly recommend setting up Cloud-Init and "
 "fixing the network device names. More information for custom CentOS "
 "images can be found in the CentOS 7 image guide."
-msgstr ""
+msgstr "Pour les images CentOS 7 personnalisées, nous recommandons fortement de configurer Cloud-Init et de corriger les noms des périphériques réseau. Vous trouverez plus d'informations sur les images CentOS personnalisées dans le guide des images CentOS 7."
 

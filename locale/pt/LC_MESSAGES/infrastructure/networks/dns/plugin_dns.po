@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:4
 msgid "Plugin DNS Providers"
-msgstr ""
+msgstr "Providers DNS de Plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:9
 msgid ""
@@ -34,239 +34,239 @@ msgid ""
 "extending DNS management capabilities beyond the built-in providers. DNS "
 "plugins implement a standard interface enabling |morpheus| to manage DNS "
 "zones and records through custom or third-party DNS services."
-msgstr ""
+msgstr "O |morpheus| oferece suporte a um framework de provider DNS baseado em plugins que permite estender as capacidades de gerenciamento DNS além dos providers embutidos. Plugins DNS implementam uma interface padrão permitindo que o |morpheus| gerencie zonas e registros DNS por meio de serviços DNS personalizados ou de terceiros."
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:11
 msgid ""
 "Plugin DNS providers appear alongside built-in providers when configuring"
 " DNS integrations and can be used anywhere DNS management is invoked, "
 "including:"
-msgstr ""
+msgstr "Providers DNS de plugin aparecem junto aos providers embutidos ao configurar integrações DNS e podem ser usados em qualquer lugar em que o gerenciamento DNS seja invocado, incluindo:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:13
 msgid "Automatic DNS record creation during Instance provisioning"
-msgstr ""
+msgstr "Criação automática de registros DNS durante o provisionamento de Instância"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:14
 msgid "Manual DNS record management through the Domains interface"
-msgstr ""
+msgstr "Gerenciamento manual de registros DNS por meio da interface Domains"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:15
 msgid "DNS record cleanup during Instance teardown"
-msgstr ""
+msgstr "Limpeza de registros DNS durante o teardown de Instância"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:16
 msgid "Integration with naming policies for automated DNS naming"
-msgstr ""
+msgstr "Integração com políticas de nomenclatura para nomenclatura DNS automatizada"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:19
 msgid "Architecture"
-msgstr ""
+msgstr "Arquitetura"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:21
 msgid "The plugin DNS framework is built on the |morpheus| Plugin API:"
-msgstr ""
+msgstr "O framework de plugin DNS é construído sobre a Plugin API do |morpheus|:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:23
 msgid "Plugins implement the ``DnsProvider`` interface"
-msgstr ""
+msgstr "Plugins implementam a interface ``DnsProvider``"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:24
 msgid "Each plugin registers one or more DNS provider types"
-msgstr ""
+msgstr "Cada plugin registra um ou mais tipos de provider DNS"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:25
 msgid "Providers handle zone and record CRUD operations"
-msgstr ""
+msgstr "Providers tratam operações CRUD de zona e registro"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:26
 msgid "|morpheus| manages the lifecycle and invocation of plugin operations"
-msgstr ""
+msgstr "O |morpheus| gerencia o ciclo de vida e a invocação das operações do plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:28
 msgid ""
 "Available plugin DNS providers are determined by which plugins are "
 "installed on the |morpheus| appliance (Administration > Integrations > "
 "Plugins)."
-msgstr ""
+msgstr "Os providers DNS de plugin disponíveis são determinados pelos plugins instalados no appliance |morpheus| (Administration > Integrations > Plugins)."
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:31
 msgid "Configuring a Plugin DNS Provider"
-msgstr ""
+msgstr "Configurando um Provider DNS de Plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:33
 msgid "To add a plugin-based DNS integration:"
-msgstr ""
+msgstr "Para adicionar uma integração DNS baseada em plugin:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:35
 msgid "Ensure the DNS plugin is installed (|AdmIntPlu|)"
-msgstr ""
+msgstr "Certifique-se de que o plugin DNS esteja instalado (|AdmIntPlu|)"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:36
 msgid "Navigate to |InfNetSer| (Infrastructure > Network > Services)"
-msgstr ""
+msgstr "Navegue até |InfNetSer| (Infrastructure > Network > Services)"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:37
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ ADD`"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:38
 msgid "Select the plugin DNS provider type from the dropdown"
-msgstr ""
+msgstr "Selecione o tipo de provider DNS do plugin no dropdown"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:39
 msgid "Complete the provider-specific configuration fields:"
-msgstr ""
+msgstr "Preencha os campos de configuração específicos do provider:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:41
 msgid "**NAME:** Descriptive name for the DNS integration"
-msgstr ""
+msgstr "**NAME:** Nome descritivo para a integração DNS"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:42
 msgid ""
 "**Additional fields vary by plugin** (e.g., API URL, credentials, zone "
 "filters)"
-msgstr ""
+msgstr "**Campos adicionais variam por plugin** (ex.: API URL, credenciais, filtros de zona)"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:44
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE`"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:46
 msgid ""
 "|morpheus| validates the connection and synchronizes available DNS zones "
 "from the provider."
-msgstr ""
+msgstr "O |morpheus| valida a conexão e sincroniza as zonas DNS disponíveis do provider."
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:49
 msgid "Using Plugin DNS with Provisioning"
-msgstr ""
+msgstr "Usando Plugin DNS com Provisionamento"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:51
 msgid ""
 "Once configured, plugin DNS providers integrate with the provisioning "
 "workflow:"
-msgstr ""
+msgstr "Uma vez configurados, providers DNS de plugin integram-se com o workflow de provisionamento:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:53
 msgid "Associate the DNS integration with a Cloud or Network Domain"
-msgstr ""
+msgstr "Associe a integração DNS a uma Nuvem ou Network Domain"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:54
 msgid "Configure naming policies that include DNS domain suffixes"
-msgstr ""
+msgstr "Configure políticas de nomenclatura que incluam sufixos de domínio DNS"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:55
 msgid "During provisioning, |morpheus| automatically:"
-msgstr ""
+msgstr "Durante o provisionamento, o |morpheus| automaticamente:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:57
 msgid "Creates A/AAAA records for the provisioned Instance"
-msgstr ""
+msgstr "Cria registros A/AAAA para a Instância provisionada"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:58
 msgid "Creates PTR records if reverse zones are configured"
-msgstr ""
+msgstr "Cria registros PTR se zonas reversas estiverem configuradas"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:59
 msgid "Applies hostname based on naming policies"
-msgstr ""
+msgstr "Aplica o nome de host com base nas políticas de nomenclatura"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:61
 msgid "During Instance teardown, DNS records are automatically removed"
-msgstr ""
+msgstr "Durante o teardown da Instância, os registros DNS são removidos automaticamente"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:64
 msgid "Managing Records"
-msgstr ""
+msgstr "Gerenciando Registros"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:66
 msgid ""
 "DNS records managed through plugin providers are accessible in the "
 "standard Domains interface:"
-msgstr ""
+msgstr "Registros DNS gerenciados por meio de providers de plugin estão acessíveis na interface padrão Domains:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:68
 msgid "Navigate to Infrastructure > Network > Domains"
-msgstr ""
+msgstr "Navegue até Infrastructure > Network > Domains"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:69
 msgid "Select the domain associated with the plugin DNS provider"
-msgstr ""
+msgstr "Selecione o domínio associado ao provider DNS do plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:70
 msgid "View, add, edit, or delete records as with any DNS integration"
-msgstr ""
+msgstr "Visualize, adicione, edite ou exclua registros como em qualquer integração DNS"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:72
 msgid ""
 "Supported record types depend on the specific plugin implementation. "
 "Common types include:"
-msgstr ""
+msgstr "Os tipos de registro suportados dependem da implementação específica do plugin. Tipos comuns incluem:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:74
 msgid "**A:** IPv4 address records"
-msgstr ""
+msgstr "**A:** Registros de endereço IPv4"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:75
 msgid "**AAAA:** IPv6 address records"
-msgstr ""
+msgstr "**AAAA:** Registros de endereço IPv6"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:76
 msgid "**CNAME:** Canonical name aliases"
-msgstr ""
+msgstr "**CNAME:** Aliases de nome canônico"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:77
 msgid "**TXT:** Text records"
-msgstr ""
+msgstr "**TXT:** Registros de texto"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:78
 msgid "**MX:** Mail exchange records"
-msgstr ""
+msgstr "**MX:** Registros de troca de e-mail"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:79
 msgid "**PTR:** Pointer (reverse DNS) records"
-msgstr ""
+msgstr "**PTR:** Registros de ponteiro (DNS reverso)"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:80
 msgid "**SRV:** Service locator records"
-msgstr ""
+msgstr "**SRV:** Registros de localizador de serviço"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:83
 msgid "Developing DNS Plugins"
-msgstr ""
+msgstr "Desenvolvendo Plugins DNS"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:85
 msgid ""
 "DNS plugins are developed using the |morpheus| Plugin API. A DNS plugin "
 "must:"
-msgstr ""
+msgstr "Plugins DNS são desenvolvidos usando a Plugin API do |morpheus|. Um plugin DNS deve:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:87
 msgid "Extend the appropriate base class (``DnsProvider``)"
-msgstr ""
+msgstr "Estender a classe base apropriada (``DnsProvider``)"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:88
 msgid "Implement zone listing and record management methods"
-msgstr ""
+msgstr "Implementar métodos de listagem de zonas e gerenciamento de registros"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:89
 msgid "Package as a JAR file with a plugin descriptor"
-msgstr ""
+msgstr "Empacotar como um arquivo JAR com um descritor de plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:90
 msgid "Register provider types and option types for configuration"
-msgstr ""
+msgstr "Registrar tipos de provider e option types para configuração"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:92
 msgid ""
 "For plugin development details, refer to the `Morpheus Plugin Developer "
 "Guide <https://developer.morpheusdata.com>`_."
-msgstr ""
+msgstr "Para detalhes de desenvolvimento de plugins, consulte o `Morpheus Plugin Developer Guide <https://developer.morpheusdata.com>`_."
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:94
 msgid "Example plugin structure:"
-msgstr ""
+msgstr "Exemplo de estrutura de plugin:"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:96
 #, python-brace-format
@@ -287,59 +287,59 @@ msgstr ""
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:112
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solução de Problemas"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:114
 msgid "**Plugin not appearing in provider list:**"
-msgstr ""
+msgstr "**Plugin não aparecendo na lista de providers:**"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:116
 msgid ""
 "Verify the plugin JAR is uploaded in Administration > Integrations > "
 "Plugins"
-msgstr ""
+msgstr "Verifique se o JAR do plugin foi enviado em Administration > Integrations > Plugins"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:117
 msgid "Check the plugin status shows as \"Active\""
-msgstr ""
+msgstr "Confirme que o status do plugin aparece como \"Active\""
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:118
 msgid "Review |morpheus| application logs for plugin loading errors"
-msgstr ""
+msgstr "Revise os logs da aplicação |morpheus| em busca de erros de carregamento do plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:120
 msgid "**DNS records not creating during provisioning:**"
-msgstr ""
+msgstr "**Registros DNS não sendo criados durante o provisionamento:**"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:122
 msgid "Confirm the DNS integration is associated with the Cloud or Network Domain"
-msgstr ""
+msgstr "Confirme que a integração DNS está associada à Nuvem ou Network Domain"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:123
 msgid "Verify naming policies include the correct DNS domain"
-msgstr ""
+msgstr "Verifique se as políticas de nomenclatura incluem o domínio DNS correto"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:124
 msgid "Check the plugin integration status (green = connected)"
-msgstr ""
+msgstr "Verifique o status da integração do plugin (verde = conectado)"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:125
 msgid "Review activity logs for API errors from the plugin"
-msgstr ""
+msgstr "Revise os logs de atividade em busca de erros de API do plugin"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:127
 msgid "**Zone synchronization issues:**"
-msgstr ""
+msgstr "**Problemas de sincronização de zona:**"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:129
 msgid "Click :guilabel:`REFRESH` on the DNS integration to force re-sync"
-msgstr ""
+msgstr "Clique em :guilabel:`REFRESH` na integração DNS para forçar a re-sincronização"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:130
 msgid "Verify API credentials and connectivity to the DNS service"
-msgstr ""
+msgstr "Verifique as credenciais de API e a conectividade com o serviço DNS"
 
 #: ../../infrastructure/networks/dns/plugin_dns.rst:131
 msgid "Check for permission issues on the external DNS service"
-msgstr ""
+msgstr "Verifique se há problemas de permissão no serviço DNS externo"
 

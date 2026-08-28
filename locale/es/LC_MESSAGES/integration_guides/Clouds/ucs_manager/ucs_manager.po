@@ -51,17 +51,17 @@ msgid ""
 " security policy; use a dedicated account with sufficient read access for"
 " inventory and write access for Service Profile provisioning rather than "
 "assuming a built-in |morpheus| role."
-msgstr ""
+msgstr "Esta integración automatiza las capacidades de UCS descritas a continuación; no es una interfaz general de administración de UCS. Cree y valide las organizaciones, pools, políticas, rutas de red y fuentes de instalación requeridas en UCS Manager antes de depender de ellas desde |morpheus|. Los privilegios exactos de UCS los determinan esos objetos y la política de seguridad de la organización en UCS; use una cuenta dedicada con acceso de lectura suficiente para inventario y acceso de escritura para aprovisionamiento de Service Profile en lugar de asumir un rol integrado de |morpheus|."
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:12
 msgid "Features"
-msgstr ""
+msgstr "Funciones"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:14
 msgid ""
 "Validate and onboard a UCS Manager endpoint using an existing UCS "
 "organization or a new organization created for |morpheus|"
-msgstr ""
+msgstr "Valide e incorpore un endpoint de UCS Manager usando una organización UCS existente o una nueva organización creada para |morpheus|"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:15
 msgid ""
@@ -69,29 +69,29 @@ msgid ""
 "servers, networks, boot and BIOS policies, maintenance policies, UUID "
 "pools, SAN connection policies, disk group policies, storage profiles, "
 "and server pools"
-msgstr ""
+msgstr "Sincronice organizaciones, chasis, blades, cartuchos, servidores de cartucho, redes, políticas de arranque y BIOS, políticas de mantenimiento, pools de UUID, políticas de conexión SAN, políticas de grupos de discos, perfiles de almacenamiento y pools de servidores"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:16
 msgid "Provision bare-metal hosts with UCS Service Profiles and PXE boot mappings"
-msgstr ""
+msgstr "Aprovisione hosts bare metal con Service Profiles de UCS y mapeos de arranque PXE"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:17
 msgid ""
 "Onboard inventoried UCS servers for management and return managed servers"
 " to unmanaged inventory"
-msgstr ""
+msgstr "Incorpore servidores UCS inventariados para administración y devuelva servidores administrados al inventario no administrado"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:18
 msgid ""
 "Import UCS faults as |morpheus| operation notifications associated with "
 "the matching zone, chassis, or server when a match is available"
-msgstr ""
+msgstr "Importe fallas de UCS como notificaciones de operación de |morpheus| asociadas con la zona, el chasis o el servidor coincidente cuando haya una coincidencia disponible"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:19
 msgid ""
 "Calculate UCS usage with the system **Custom UCS Price Set**, which "
 "contains memory, CPU, core, and storage component prices"
-msgstr ""
+msgstr "Calcule el uso de UCS con el **Custom UCS Price Set** del sistema, que contiene precios de componentes de memoria, CPU, core y almacenamiento"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:22
 msgid "Adding UCS Manager Cloud"
@@ -195,7 +195,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/base_options.rst:18
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Clouds/base_options.rst:18
 msgid ""
@@ -315,11 +315,11 @@ msgid ""
 "inventory listed above. Invalid credentials set an error status; an "
 "unreachable endpoint sets the Cloud offline. Use the Cloud refresh action"
 " after changing inventory in UCS Manager."
-msgstr ""
+msgstr "Después de la creación, |morpheus| prueba la conectividad y las credenciales. Una actualización exitosa establece el estado de la Nube en OK y sincroniza el inventario indicado anteriormente. Las credenciales no válidas establecen un estado de error; un endpoint inaccesible deja la Nube offline. Use la acción de actualización de la Nube después de cambiar el inventario en UCS Manager."
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:64
 msgid "Bare-metal Provisioning and Lifecycle"
-msgstr ""
+msgstr "Aprovisionamiento y ciclo de vida bare metal"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:66
 msgid ""
@@ -330,7 +330,7 @@ msgid ""
 "pools, PXE image, network path, and Kickstart source are available to the"
 " target server. A failure to create the Service Profile marks the server "
 "failed; review the provisioning process before retrying."
-msgstr ""
+msgstr "El aprovisionamiento selecciona un servidor UCS sincronizado disponible, crea o reutiliza una plantilla de Service Profile, crea mapeos de arranque PXE para la imagen seleccionada y crea el Service Profile de UCS. Antes del aprovisionamiento, confirme que la organización seleccionada, el pool de servidores, las políticas, los pools de MAC/UUID, la imagen PXE, la ruta de red y la fuente Kickstart están disponibles para el servidor de destino. Un fallo al crear el Service Profile marca el servidor como fallido; revise el proceso de aprovisionamiento antes de reintentar."
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:68
 msgid ""
@@ -339,11 +339,11 @@ msgid ""
 "its |morpheus|-managed server pool, clears managed network addressing, "
 "and restores its UCS server inventory type. Confirm that no workload "
 "depends on the server before removing it from management."
-msgstr ""
+msgstr "Los servidores no administrados sincronizados se pueden seleccionar para administración de |morpheus|. Devolver un servidor UCS administrado al inventario no administrado lo elimina de su pool de servidores administrados por |morpheus|, borra el direccionamiento de red administrado y restaura su tipo de inventario de servidor UCS. Confirme que ninguna carga de trabajo depende del servidor antes de eliminarlo de la administración."
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:71
 msgid "Faults and Costing"
-msgstr ""
+msgstr "Fallas y costos"
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:73
 msgid ""
@@ -352,7 +352,7 @@ msgid ""
 "associates a fault with a matching server or chassis when possible. "
 "Faults no longer returned by UCS are marked inactive. See "
 ":doc:`/operations/alarms` for notification and alarm handling."
-msgstr ""
+msgstr "Cada actualización de la Nube importa fallas activas de UCS a las notificaciones de |morpheus|, asigna la severidad y el estado de reconocimiento de UCS, y asocia una falla con un servidor o chasis coincidente cuando es posible. Las fallas que UCS ya no devuelve se marcan como inactivas. Consulte :doc:`/operations/alarms` para el manejo de notificaciones y alarmas."
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:75
 msgid ""
@@ -360,7 +360,7 @@ msgid ""
 "and storage component prices. Configure component prices using the "
 "pricing guidance in :doc:`/administration/plans_pricing/prices` before "
 "relying on cost totals."
-msgstr ""
+msgstr "Las Nubes UCS usan el **Custom UCS Price Set** y sus precios de componentes de memoria, CPU, core y almacenamiento. Configure los precios de componentes usando la orientación de precios en :doc:`/administration/plans_pricing/prices` antes de depender de los totales de costo."
 
 #: ../../integration_guides/Clouds/ucs_manager/ucs_manager.rst:77
 msgid ""
@@ -369,5 +369,5 @@ msgid ""
 "Cisco-side recovery. If a refresh or Service Profile operation fails, "
 "preserve the failed process and UCS fault details and reconcile the UCS "
 "object state before retrying."
-msgstr ""
+msgstr "La integración no reemplaza UCS Manager para la creación de objetos fuera de las operaciones de aprovisionamiento descritas aquí, la remediación de fallas de UCS ni la recuperación del lado de Cisco. Si una actualización u operación de Service Profile falla, preserve el proceso fallido y los detalles de la falla de UCS y concilie el estado del objeto UCS antes de reintentar."
 

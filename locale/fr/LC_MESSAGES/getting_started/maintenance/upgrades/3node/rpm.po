@@ -22,47 +22,47 @@ msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:2
 msgid "3-Node HA CentOS / RHEL Upgrade"
-msgstr ""
+msgstr "Mise à niveau CentOS / RHEL HA à 3 nœuds"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:3
 msgid ""
 "The following covers upgrading the |morpheus| App nodes in 3 Node HA "
 "configurations to |morphver|."
-msgstr ""
+msgstr "Ce qui suit couvre la mise à niveau des nœuds d'application |morpheus| dans les configurations HA à 3 nœuds vers |morphver|."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:5
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:19
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:72
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:5
 msgid "As a best practice, always backup your database prior to any upgrade."
-msgstr ""
+msgstr "En tant que bonne pratique, sauvegardez toujours votre base de données avant toute mise à niveau."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:7
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:63
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:113
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:7
 msgid "The following is only for \"3 Node HA\" Architecture configurations."
-msgstr ""
+msgstr "Ce qui suit concerne uniquement les configurations d'architecture « 3 Node HA »."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:10
 msgid "|morpheus| Packages"
-msgstr ""
+msgstr "|morpheus| Packages"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:11
 msgid ""
 "|morpheus| Release Package urls can be obtained from "
 "`https://app.morpheushub.com <https://app.morpheushub.com>`_"
-msgstr ""
+msgstr "Les URL des packages de version |morpheus| peuvent être obtenues depuis `https://app.morpheushub.com <https://app.morpheushub.com>`_"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:14
 msgid "|nonRollingUpgradeVer| or lower -> |morphver| Upgrade"
-msgstr ""
+msgstr "|nonRollingUpgradeVer| ou version antérieure -> Mise à niveau |morphver|"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:19
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:72
@@ -72,14 +72,14 @@ msgid ""
 "/package-repos/*`` after |morphver| package installation and before "
 "reconfigure to clean old node and vm node packages from the package-repo "
 "when room is needed."
-msgstr ""
+msgstr "|morpheus| |morphver| contient de nouveaux packages de nœuds et de nœuds VM nécessitant 3,5 Go de stockage. Il est sûr d'exécuter ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` après l'installation du package |morphver| et avant la reconfiguration pour nettoyer les anciens packages de nœuds et de nœuds vm du dépôt de packages lorsque de l'espace est nécessaire."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:21
 msgid ""
 "Starting with Node 3, on **All** App Nodes, stop the morpheus-ui services"
 " via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout, run "
 "``morpheus-ctl graceful-kill morpheus-ui``."
-msgstr ""
+msgstr "À partir du nœud 3, sur **tous** les nœuds d'application, arrêtez les services morpheus-ui via ``morpheus-ctl stop morpheus-ui``. En cas de dépassement de délai, exécutez ``morpheus-ctl graceful-kill morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:23
 msgid "[root@app-server-3 ~]# morpheus-ctl stop morpheus-ui"
@@ -96,7 +96,7 @@ msgstr ""
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:35
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:75
 msgid "Upgrade the RPM package on Node 1, then run a Reconfigure on Node 1"
-msgstr ""
+msgstr "Mettez à niveau le package RPM sur le nœud 1, puis exécutez une reconfiguration sur le nœud 1"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:37
 msgid ""
@@ -110,20 +110,20 @@ msgstr ""
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:43
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:70
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:43
 msgid ""
 "All services will automatically be stopped and started during the "
 "reconfigure process. After the reconfigure has succeeded, tail the ui "
 "service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Tous les services seront automatiquement arrêtés et démarrés pendant le processus de reconfiguration. Une fois la reconfiguration réussie, suivez le service ui pour observer les journaux de démarrage de l'ui avec ``morpheus-ctl tail morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:45
 msgid ""
 "Once Node 1 upgrade has completed and the ui is available, upgrade the "
 "RPM package on Node 2, then run a Reconfigure on Node 2."
-msgstr ""
+msgstr "Une fois la mise à niveau du nœud 1 terminée et l'ui disponible, mettez à niveau le package RPM sur le nœud 2, puis exécutez une reconfiguration sur le nœud 2."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:47
 msgid ""
@@ -137,7 +137,7 @@ msgstr ""
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:53
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:99
 msgid "Then upgrade the RPM package on Node 3, then run a Reconfigure on Node 3"
-msgstr ""
+msgstr "Mettez ensuite à niveau le package RPM sur le nœud 3, puis exécutez une reconfiguration sur le nœud 3"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:55
 msgid ""
@@ -153,7 +153,7 @@ msgstr ""
 msgid ""
 "The upgrade is complete and the |morpheus|-ui services should be running "
 "with clustered Elasticsearch and RabbitMQ services across the 3 nodes."
-msgstr ""
+msgstr "La mise à niveau est terminée et les services |morpheus|-ui devraient fonctionner avec les services Elasticsearch et RabbitMQ en cluster sur les 3 nœuds."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:63
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:113
@@ -164,17 +164,17 @@ msgid ""
 "was manually shutdown or killed. To resolve, run ``systemctl stop "
 "morpheus-runsvdir`` then ``systemctl start morpheus-runsvdir``, then run "
 "reconfigure again, ``morpheus-ctl reconfigure``."
-msgstr ""
+msgstr "Si la reconfiguration après une mise à niveau du package rpm se bloque ou reste suspendue au démarrage d'un service (mysql, rabbitmq, elasticsearch ...), il est possible que le service ``morpheus-runsvdir`` ne se soit pas démarré ou qu'un processus qu'il gérait ait été arrêté ou tué manuellement. Pour résoudre le problème, exécutez ``systemctl stop morpheus-runsvdir`` puis ``systemctl start morpheus-runsvdir``, puis exécutez à nouveau la reconfiguration, ``morpheus-ctl reconfigure``."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:68
 msgid "|minRollingUpgradeVer| or higher -> |morphver| Upgrade"
-msgstr ""
+msgstr "|minRollingUpgradeVer| ou version ultérieure -> Mise à niveau |morphver|"
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:70
 msgid ""
 "Rolling upgrades are supported for |minRollingUpgradeVer| or higher -> "
 "|morphver| only."
-msgstr ""
+msgstr "Les mises à niveau progressives sont prises en charge uniquement pour |minRollingUpgradeVer| ou version ultérieure -> |morphver|."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:77
 msgid ""
@@ -194,13 +194,13 @@ msgid ""
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is "
 "started, proceed to the next node."
-msgstr ""
+msgstr "Une fois la reconfiguration réussie, suivez le service ui pour observer les journaux de démarrage de l'ui avec ``morpheus-ctl tail morpheus-ui``. Une fois morpheus-ui démarré, passez au nœud suivant."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:87
 msgid ""
 "Once Node 1 upgrade has completed and the u is available, upgrade the RPM"
 " package on Node 2, then run a Reconfigure on Node 2."
-msgstr ""
+msgstr "Une fois la mise à niveau du nœud 1 terminée et l'ui disponible, mettez à niveau le package RPM sur le nœud 2, puis exécutez une reconfiguration sur le nœud 2."
 
 #: ../../getting_started/maintenance/upgrades/3node/rpm.rst:89
 msgid ""

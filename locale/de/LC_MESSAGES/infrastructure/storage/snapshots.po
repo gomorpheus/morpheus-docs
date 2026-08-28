@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/storage/snapshots.rst:2
 msgid "Snapshots"
-msgstr ""
+msgstr "Snapshots"
 
 #: ../../infrastructure/storage/snapshots.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../infrastructure/storage/snapshots.rst:7
 msgid ""
@@ -35,226 +35,226 @@ msgid ""
 "previous state if needed. |morpheus| provides centralized snapshot "
 "management across clouds, supporting creation, reversion, and deletion of"
 " snapshots."
-msgstr ""
+msgstr "Snapshots erfassen den Zustand der Festplatte(n) einer virtuellen Maschine zu einem bestimmten Zeitpunkt und ermöglichen Administratoren, eine VM bei Bedarf schnell auf einen früheren Zustand zurückzusetzen. |morpheus| bietet zentrale Snapshot-Verwaltung über Clouds hinweg und unterstützt das Erstellen, Zurücksetzen und Löschen von Snapshots."
 
 #: ../../infrastructure/storage/snapshots.rst:9
 msgid ""
 "Snapshots can be managed from the server/instance detail page or from a "
 "centralized snapshots view."
-msgstr ""
+msgstr "Snapshots können von der Server-/Instanz-Detailseite oder aus einer zentralen Snapshot-Ansicht verwaltet werden."
 
 #: ../../infrastructure/storage/snapshots.rst:12
 msgid "Role Requirements"
-msgstr ""
+msgstr "Rollenanforderungen"
 
 #: ../../infrastructure/storage/snapshots.rst:14
 msgid ""
 "``Infrastructure: Compute`` role permission at **Full** level is required"
 " to create, revert, or delete snapshots."
-msgstr ""
+msgstr "Die Rollenberechtigung ``Infrastructure: Compute`` auf Stufe **Full** ist erforderlich, um Snapshots zu erstellen, zurückzusetzen oder zu löschen."
 
 #: ../../infrastructure/storage/snapshots.rst:15
 msgid "**Read** access allows viewing existing snapshots."
-msgstr ""
+msgstr "**Read**-Zugriff ermöglicht das Anzeigen vorhandener Snapshots."
 
 #: ../../infrastructure/storage/snapshots.rst:18
 msgid "Viewing Snapshots"
-msgstr ""
+msgstr "Snapshots anzeigen"
 
 #: ../../infrastructure/storage/snapshots.rst:20
 msgid "From a Server:"
-msgstr ""
+msgstr "Von einem Server aus:"
 
 #: ../../infrastructure/storage/snapshots.rst:22
 #: ../../infrastructure/storage/snapshots.rst:87
 msgid "Navigate to the server detail page"
-msgstr ""
+msgstr "Navigieren Sie zur Server-Detailseite"
 
 #: ../../infrastructure/storage/snapshots.rst:23
 msgid "Select the **SNAPSHOTS** tab"
-msgstr ""
+msgstr "Wählen Sie die Registerkarte **SNAPSHOTS**"
 
 #: ../../infrastructure/storage/snapshots.rst:25
 msgid "The Snapshots tab displays all snapshots for the server, including:"
-msgstr ""
+msgstr "Die Registerkarte Snapshots zeigt alle Snapshots für den Server an, einschließlich:"
 
 #: ../../infrastructure/storage/snapshots.rst:27
 msgid "**Name** — Snapshot name or description"
-msgstr ""
+msgstr "**Name** — Snapshot-Name oder Beschreibung"
 
 #: ../../infrastructure/storage/snapshots.rst:28
 msgid "**Date Created** — When the snapshot was taken"
-msgstr ""
+msgstr "**Date Created** — Zeitpunkt, zu dem der Snapshot erstellt wurde"
 
 #: ../../infrastructure/storage/snapshots.rst:29
 msgid "**Size** — Disk space consumed by the snapshot"
-msgstr ""
+msgstr "**Size** — Vom Snapshot belegter Speicherplatz"
 
 #: ../../infrastructure/storage/snapshots.rst:30
 msgid "**Status** — Snapshot state (active, creating, deleting)"
-msgstr ""
+msgstr "**Status** — Snapshot-Zustand (aktiv, wird erstellt, wird gelöscht)"
 
 #: ../../infrastructure/storage/snapshots.rst:33
 msgid "Creating a Snapshot"
-msgstr ""
+msgstr "Snapshot erstellen"
 
 #: ../../infrastructure/storage/snapshots.rst:35
 msgid "Navigate to the server or instance detail page"
-msgstr ""
+msgstr "Navigieren Sie zur Server- oder Instanz-Detailseite"
 
 #: ../../infrastructure/storage/snapshots.rst:36
 #: ../../infrastructure/storage/snapshots.rst:88
 msgid "Click :guilabel:`ACTIONS`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`ACTIONS`"
 
 #: ../../infrastructure/storage/snapshots.rst:37
 msgid "Select **Snapshot**"
-msgstr ""
+msgstr "Wählen Sie **Snapshot**"
 
 #: ../../infrastructure/storage/snapshots.rst:38
 msgid "In the snapshot dialog, configure:"
-msgstr ""
+msgstr "Konfigurieren Sie im Snapshot-Dialog:"
 
 #: ../../infrastructure/storage/snapshots.rst:40
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../infrastructure/storage/snapshots.rst:41
 msgid "A descriptive name for the snapshot."
-msgstr ""
+msgstr "Ein beschreibender Name für den Snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:42
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #: ../../infrastructure/storage/snapshots.rst:43
 msgid "Optional notes about the snapshot's purpose or what state it captures."
-msgstr ""
+msgstr "Optionale Notizen zum Zweck des Snapshots oder dazu, welchen Zustand er erfasst."
 
 #: ../../infrastructure/storage/snapshots.rst:44
 msgid "MEMORY"
-msgstr ""
+msgstr "MEMORY"
 
 #: ../../infrastructure/storage/snapshots.rst:45
 msgid ""
 "(Where supported) Include the VM's memory state in the snapshot. This "
 "allows reverting to the exact running state."
-msgstr ""
+msgstr "(Sofern unterstützt) Den Arbeitsspeicherzustand der VM in den Snapshot einbeziehen. Dadurch kann auf den exakten laufenden Zustand zurückgesetzt werden."
 
 #: ../../infrastructure/storage/snapshots.rst:46
 msgid "QUIESCE"
-msgstr ""
+msgstr "QUIESCE"
 
 #: ../../infrastructure/storage/snapshots.rst:47
 msgid ""
 "(Where supported) Quiesce the guest file system before taking the "
 "snapshot. This ensures application-consistent data."
-msgstr ""
+msgstr "(Sofern unterstützt) Das Gastdateisystem vor dem Erstellen des Snapshots ruhigstellen (Quiesce). Dadurch werden anwendungskonsistente Daten sichergestellt."
 
 #: ../../infrastructure/storage/snapshots.rst:49
 msgid "Click :guilabel:`CREATE`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`CREATE`"
 
 #: ../../infrastructure/storage/snapshots.rst:51
 msgid ""
 "The snapshot operation runs asynchronously. The new snapshot will appear "
 "in the Snapshots tab once complete."
-msgstr ""
+msgstr "Der Snapshot-Vorgang läuft asynchron. Der neue Snapshot erscheint nach Abschluss auf der Registerkarte Snapshots."
 
 #: ../../infrastructure/storage/snapshots.rst:54
 msgid "Reverting to a Snapshot"
-msgstr ""
+msgstr "Auf einen Snapshot zurücksetzen"
 
 #: ../../infrastructure/storage/snapshots.rst:56
 #: ../../infrastructure/storage/snapshots.rst:65
 #: ../../infrastructure/storage/snapshots.rst:76
 msgid "Navigate to the server's **SNAPSHOTS** tab"
-msgstr ""
+msgstr "Navigieren Sie zur Registerkarte **SNAPSHOTS** des Servers"
 
 #: ../../infrastructure/storage/snapshots.rst:57
 msgid "Click the revert icon next to the desired snapshot"
-msgstr ""
+msgstr "Klicken Sie auf das Zurücksetzen-Symbol neben dem gewünschten Snapshot"
 
 #: ../../infrastructure/storage/snapshots.rst:58
 msgid "Confirm the revert operation"
-msgstr ""
+msgstr "Bestätigen Sie den Zurücksetzungsvorgang"
 
 #: ../../infrastructure/storage/snapshots.rst:60
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../infrastructure/storage/snapshots.rst:60
 msgid ""
 "Reverting to a snapshot discards all changes made since the snapshot was "
 "taken. This includes disk writes, configuration changes, and (if memory "
 "was not captured) the running state of applications."
-msgstr ""
+msgstr "Das Zurücksetzen auf einen Snapshot verwirft alle Änderungen seit Erstellung des Snapshots. Dazu gehören Festplattenschreibvorgänge, Konfigurationsänderungen und (falls der Arbeitsspeicher nicht erfasst wurde) der laufende Zustand von Anwendungen."
 
 #: ../../infrastructure/storage/snapshots.rst:63
 msgid "Deleting a Snapshot"
-msgstr ""
+msgstr "Snapshot löschen"
 
 #: ../../infrastructure/storage/snapshots.rst:66
 msgid "Click the delete icon next to the snapshot"
-msgstr ""
+msgstr "Klicken Sie auf das Löschsymbol neben dem Snapshot"
 
 #: ../../infrastructure/storage/snapshots.rst:67
 #: ../../infrastructure/storage/snapshots.rst:78
 msgid "Confirm the deletion"
-msgstr ""
+msgstr "Bestätigen Sie das Löschen"
 
 #: ../../infrastructure/storage/snapshots.rst:69
 msgid ""
 "Deleting a snapshot consolidates the snapshot data back into the base "
 "disk. This frees the space consumed by the snapshot delta."
-msgstr ""
+msgstr "Das Löschen eines Snapshots konsolidiert die Snapshot-Daten zurück in die Basisplatte. Dadurch wird der vom Snapshot-Delta belegte Speicherplatz freigegeben."
 
 #: ../../infrastructure/storage/snapshots.rst:72
 msgid "Deleting All Snapshots"
-msgstr ""
+msgstr "Alle Snapshots löschen"
 
 #: ../../infrastructure/storage/snapshots.rst:74
 msgid "To remove all snapshots for a server:"
-msgstr ""
+msgstr "So entfernen Sie alle Snapshots für einen Server:"
 
 #: ../../infrastructure/storage/snapshots.rst:77
 msgid "Click :guilabel:`DELETE ALL`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`DELETE ALL`"
 
 #: ../../infrastructure/storage/snapshots.rst:80
 #: ../../infrastructure/storage/snapshots.rst:196
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../infrastructure/storage/snapshots.rst:80
 msgid ""
 "Deleting all snapshots consolidates the entire snapshot chain. This "
 "operation may take time for VMs with large or numerous snapshots."
-msgstr ""
+msgstr "Das Löschen aller Snapshots konsolidiert die gesamte Snapshot-Kette. Dieser Vorgang kann bei VMs mit großen oder zahlreichen Snapshots Zeit in Anspruch nehmen."
 
 #: ../../infrastructure/storage/snapshots.rst:83
 msgid "Importing Snapshots"
-msgstr ""
+msgstr "Snapshots importieren"
 
 #: ../../infrastructure/storage/snapshots.rst:85
 msgid "|morpheus| can import existing snapshots from the hypervisor:"
-msgstr ""
+msgstr "|morpheus| kann vorhandene Snapshots vom Hypervisor importieren:"
 
 #: ../../infrastructure/storage/snapshots.rst:89
 msgid "Select **Import Snapshot**"
-msgstr ""
+msgstr "Wählen Sie **Import Snapshot**"
 
 #: ../../infrastructure/storage/snapshots.rst:90
 msgid "Select the snapshot to import from the hypervisor"
-msgstr ""
+msgstr "Wählen Sie den vom Hypervisor zu importierenden Snapshot"
 
 #: ../../infrastructure/storage/snapshots.rst:91
 msgid "Click :guilabel:`IMPORT`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`IMPORT`"
 
 #: ../../infrastructure/storage/snapshots.rst:94
 msgid "Creating Linked Clone Images"
-msgstr ""
+msgstr "Linked-Clone-Images erstellen"
 
 #: ../../infrastructure/storage/snapshots.rst:96
 msgid ""
@@ -263,7 +263,7 @@ msgid ""
 "disk instead of copying the complete source disk. This reduces "
 "provisioning time and initial storage consumption, but creates a "
 "dependency on the source VM and snapshot."
-msgstr ""
+msgstr "VMware- und HVM/KVM-Snapshots können als Linked-Clone-Virtual-Images registriert werden. Ein Linked Clone verwendet den ausgewählten Snapshot als gemeinsame Basisplatte, anstatt die vollständige Quellplatte zu kopieren. Das verkürzt die Provisionierungszeit und den anfänglichen Speicherverbrauch, erzeugt jedoch eine Abhängigkeit von der Quell-VM und dem Snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:98
 msgid ""
@@ -272,48 +272,48 @@ msgid ""
 "machine identity, SSH host keys, network rules, or Windows system "
 "identity. Complete the guest preparation steps below before creating the "
 "snapshot."
-msgstr ""
+msgstr "Bereiten Sie den Gast vor dem Erstellen des Snapshots vor. Andernfalls kann jede von dem Linked Clone provisionierte VM den Quell-Hostnamen, die Maschinenidentität, SSH-Hostschlüssel, Netzwerkregeln oder die Windows-Systemidentität erben. Führen Sie die folgenden Gastvorbereitungsschritte durch, bevor Sie den Snapshot erstellen."
 
 #: ../../infrastructure/storage/snapshots.rst:100
 msgid "Prepare and shut down the source VM."
-msgstr ""
+msgstr "Bereiten Sie die Quell-VM vor und fahren Sie sie herunter."
 
 #: ../../infrastructure/storage/snapshots.rst:101
 msgid ""
 "On the Instance detail page, select :guilabel:`Actions` > "
 ":guilabel:`Create Snapshot`."
-msgstr ""
+msgstr "Wählen Sie auf der Instanz-Detailseite :guilabel:`Actions` > :guilabel:`Create Snapshot`."
 
 #: ../../infrastructure/storage/snapshots.rst:102
 msgid "Enter a recognizable name and create the snapshot."
-msgstr ""
+msgstr "Geben Sie einen erkennbaren Namen ein und erstellen Sie den Snapshot."
 
 #: ../../infrastructure/storage/snapshots.rst:103
 msgid "Select the Instance :guilabel:`Backups` tab."
-msgstr ""
+msgstr "Wählen Sie die Registerkarte :guilabel:`Backups` der Instanz."
 
 #: ../../infrastructure/storage/snapshots.rst:104
 msgid ""
 "Locate the completed snapshot, select :guilabel:`More`, and then select "
 ":guilabel:`Create Linked Clone`."
-msgstr ""
+msgstr "Suchen Sie den abgeschlossenen Snapshot, wählen Sie :guilabel:`More` und anschließend :guilabel:`Create Linked Clone`."
 
 #: ../../infrastructure/storage/snapshots.rst:105
 msgid "Confirm the operation."
-msgstr ""
+msgstr "Bestätigen Sie den Vorgang."
 
 #: ../../infrastructure/storage/snapshots.rst:106
 msgid ""
 "Navigate to :menuselection:`Library --> Virtual Images` and open the "
 "Virtual Image whose name matches the snapshot."
-msgstr ""
+msgstr "Navigieren Sie zu :menuselection:`Library --> Virtual Images` und öffnen Sie das Virtual Image, dessen Name dem Snapshot entspricht."
 
 #: ../../infrastructure/storage/snapshots.rst:107
 msgid ""
 "Verify its operating system, guest customization, cloud-init or Sysprep, "
 "agent, credentials, and tenant permissions before using it in an Instance"
 " Type or provisioning workflow."
-msgstr ""
+msgstr "Überprüfen Sie Betriebssystem, Gastanpassung, cloud-init oder Sysprep, Agent, Anmeldedaten und Mandantenberechtigungen, bevor Sie es in einem Instanztyp oder Provisionierungs-Workflow verwenden."
 
 #: ../../infrastructure/storage/snapshots.rst:109
 msgid ""
@@ -322,28 +322,28 @@ msgid ""
 " to **Full**. Creating it registers a Virtual Image record; it does not "
 "create a VM. VMs are created when that Virtual Image is selected during "
 "provisioning."
-msgstr ""
+msgstr "Die Maßnahme :guilabel:`Create Linked Clone` erscheint nur für unterstützte Provisionierungstypen und Benutzer mit der Berechtigung **Snapshots: Linked Clone** auf **Full**. Das Erstellen registriert einen Virtual-Image-Datensatz; es wird keine VM erstellt. VMs werden erstellt, wenn dieses Virtual Image bei der Provisionierung ausgewählt wird."
 
 #: ../../infrastructure/storage/snapshots.rst:111
 msgid "**Guest Preparation**"
-msgstr ""
+msgstr "**Guest Preparation**"
 
 #: ../../infrastructure/storage/snapshots.rst:113
 msgid ""
 "Complete application installation, patching, and configuration before "
 "generalizing the guest. Do not start the source VM again between "
 "generalization and snapshot creation."
-msgstr ""
+msgstr "Schließen Sie Anwendungsinstallation, Patching und Konfiguration ab, bevor Sie den Gast generalisieren. Starten Sie die Quell-VM zwischen Generalisierung und Snapshot-Erstellung nicht erneut."
 
 #: ../../infrastructure/storage/snapshots.rst:115
 msgid "**Windows**"
-msgstr ""
+msgstr "**Windows**"
 
 #: ../../infrastructure/storage/snapshots.rst:117
 msgid ""
 "Use Sysprep to remove the source system identity and start OOBE on the "
 "first boot of each provisioned VM:"
-msgstr ""
+msgstr "Verwenden Sie Sysprep, um die Quellsystemidentität zu entfernen und OOBE beim ersten Start jeder provisionierten VM zu starten:"
 
 #: ../../infrastructure/storage/snapshots.rst:119
 msgid ""
@@ -358,18 +358,18 @@ msgid ""
 "platform-specific customization behavior, including VMware **Force Guest "
 "Customization**, see "
 ":doc:`/provisioning/windows_cloud_guest_customization`."
-msgstr ""
+msgstr "Nachdem Sysprep die VM heruntergefahren hat, lassen Sie sie ausgeschaltet und erstellen Sie den Snapshot. Aktivieren Sie auf dem resultierenden Virtual Image **Sysprep**. Zum plattformspezifischen Anpassungsverhalten, einschließlich VMware **Force Guest Customization**, siehe :doc:`/provisioning/windows_cloud_guest_customization`."
 
 #: ../../infrastructure/storage/snapshots.rst:125
 msgid "**Linux**"
-msgstr ""
+msgstr "**Linux**"
 
 #: ../../infrastructure/storage/snapshots.rst:127
 msgid ""
 "For a cloud-init-enabled Linux guest, clear instance state and "
 "identifiers before shutdown. The exact files vary by distribution; the "
 "following is appropriate for current Ubuntu images:"
-msgstr ""
+msgstr "Für einen cloud-init-fähigen Linux-Gast löschen Sie Instanzzustand und Identifikatoren vor dem Herunterfahren. Die genauen Dateien variieren je nach Distribution; Folgendes ist für aktuelle Ubuntu-Images geeignet:"
 
 #: ../../infrastructure/storage/snapshots.rst:129
 msgid ""
@@ -388,71 +388,71 @@ msgid ""
 "rules created for the source VM; do not remove distribution-supplied "
 "rules. Verify that cloud-init is installed and enabled, then leave "
 "**Cloud Init Enabled** selected on the resulting Virtual Image."
-msgstr ""
+msgstr "Wenn ``/var/lib/dbus/machine-id`` eine reguläre Datei und kein symbolischer Link auf ``/etc/machine-id`` ist, entfernen oder leeren Sie sie gemäß der Image-Vorbereitungshinweise der Distribution. Entfernen Sie nur persistente udev-Regeln, die für die Quell-VM erstellt wurden; entfernen Sie keine von der Distribution bereitgestellten Regeln. Stellen Sie sicher, dass cloud-init installiert und aktiviert ist, und lassen Sie **Cloud Init Enabled** auf dem resultierenden Virtual Image ausgewählt."
 
 #: ../../infrastructure/storage/snapshots.rst:139
 msgid "**Dependencies and Limitations**"
-msgstr ""
+msgstr "**Dependencies and Limitations**"
 
 #: ../../infrastructure/storage/snapshots.rst:141
 msgid ""
 "Do not treat a linked clone as an independent image. The source VM and "
 "selected snapshot remain part of its backing chain."
-msgstr ""
+msgstr "Behandeln Sie einen Linked Clone nicht als unabhängiges Image. Die Quell-VM und der ausgewählte Snapshot bleiben Teil seiner Basisplatte-Kette."
 
 #: ../../infrastructure/storage/snapshots.rst:142
 msgid ""
 "Do not delete the backing snapshot or source VM while linked-clone VMs "
 "depend on them. HVM blocks these operations when it detects active "
 "dependents."
-msgstr ""
+msgstr "Löschen Sie den Basis-Snapshot oder die Quell-VM nicht, solange Linked-Clone-VMs davon abhängen. HVM blockiert diese Vorgänge, wenn aktive Abhängigkeiten erkannt werden."
 
 #: ../../infrastructure/storage/snapshots.rst:143
 msgid ""
 "VMware linked clone images are primarily intended for rapid provisioning "
 "such as VDI pools and cannot be resized."
-msgstr ""
+msgstr "VMware-Linked-Clone-Images sind primär für schnelle Provisionierung wie VDI-Pools vorgesehen und können nicht in der Größe geändert werden."
 
 #: ../../infrastructure/storage/snapshots.rst:144
 msgid ""
 "HVM linked clones require a file-based datastore and QCOW2 disks. LUN-"
 "per-vDisk storage, including HPE Alletra datastore types, does not "
 "support linked clones."
-msgstr ""
+msgstr "HVM-Linked-Clones erfordern einen dateibasierten Datastore und QCOW2-Festplatten. LUN-per-vDisk-Speicher, einschließlich HPE-Alletra-Datastore-Typen, unterstützt keine Linked Clones."
 
 #: ../../infrastructure/storage/snapshots.rst:145
 msgid ""
 "HVM linked clones on local storage are pinned to the source hypervisor. "
 "Host migration is not supported. HVM storage migration is not supported "
 "because the overlay depends on the original snapshot backing file."
-msgstr ""
+msgstr "HVM-Linked-Clones auf lokalem Speicher sind an den Quell-Hypervisor gebunden. Host-Migration wird nicht unterstützt. HVM-Speichermigration wird nicht unterstützt, weil das Overlay von der ursprünglichen Snapshot-Basisdatei abhängt."
 
 #: ../../infrastructure/storage/snapshots.rst:146
 msgid ""
 "Shared HVM storage avoids local-host pinning, but the backing snapshot "
 "must remain available in its original datastore."
-msgstr ""
+msgstr "Freigegebener HVM-Speicher vermeidet die Bindung an den lokalen Host, aber der Basis-Snapshot muss in seinem ursprünglichen Datastore verfügbar bleiben."
 
 #: ../../infrastructure/storage/snapshots.rst:147
 msgid ""
 "Changes made to the source VM after the snapshot are not included. To "
 "publish an updated image, prepare the source again, create a new "
 "snapshot, and create a new linked clone Virtual Image."
-msgstr ""
+msgstr "Änderungen an der Quell-VM nach dem Snapshot sind nicht enthalten. Um ein aktualisiertes Image zu veröffentlichen, bereiten Sie die Quelle erneut vor, erstellen Sie einen neuen Snapshot und erstellen Sie ein neues Linked-Clone-Virtual-Image."
 
 #: ../../infrastructure/storage/snapshots.rst:148
 msgid ""
 "Snapshot chains add storage and performance dependencies. Keep chains "
 "shallow and monitor the source datastore's capacity and health."
-msgstr ""
+msgstr "Snapshot-Ketten erhöhen Speicher- und Leistungsabhängigkeiten. Halten Sie Ketten flach und überwachen Sie Kapazität und Betriebszustand des Quell-Datastores."
 
 #: ../../infrastructure/storage/snapshots.rst:150
 msgid "**API**"
-msgstr ""
+msgstr "**API**"
 
 #: ../../infrastructure/storage/snapshots.rst:152
 msgid "Create a linked clone Virtual Image via the API:"
-msgstr ""
+msgstr "Erstellen Sie ein Linked-Clone-Virtual-Image über die API:"
 
 #: ../../infrastructure/storage/snapshots.rst:154
 #, python-brace-format
@@ -469,129 +469,129 @@ msgid ""
 "These endpoints register the snapshot as a linked clone Virtual Image. "
 "Provisioning a VM from the image then creates the thin overlay "
 "automatically."
-msgstr ""
+msgstr "Diese Endpunkte registrieren den Snapshot als Linked-Clone-Virtual-Image. Beim Provisionieren einer VM aus dem Image wird das Thin-Overlay dann automatisch erstellt."
 
 #: ../../infrastructure/storage/snapshots.rst:160
 msgid "Snapshot Best Practices"
-msgstr ""
+msgstr "Snapshot-Best Practices"
 
 #: ../../infrastructure/storage/snapshots.rst:162
 msgid ""
 "**Keep snapshots short-lived** — Snapshots consume increasing disk space "
 "over time as the delta grows. Delete snapshots once they are no longer "
 "needed."
-msgstr ""
+msgstr "**Keep snapshots short-lived** — Snapshots verbrauchen mit der Zeit zunehmend Speicherplatz, da das Delta wächst. Löschen Sie Snapshots, sobald sie nicht mehr benötigt werden."
 
 #: ../../infrastructure/storage/snapshots.rst:163
 msgid ""
 "**Don't use as backups** — Snapshots are not a replacement for proper "
 "backups. They reside on the same storage as the VM and are lost if the "
 "storage fails."
-msgstr ""
+msgstr "**Don't use as backups** — Snapshots sind kein Ersatz für ordnungsgemäße Sicherungen. Sie befinden sich auf demselben Speicher wie die VM und gehen bei einem Speicherausfall verloren."
 
 #: ../../infrastructure/storage/snapshots.rst:164
 msgid ""
 "**Limit chain depth** — Avoid creating deep chains of snapshots (snapshot"
 " of a snapshot). Performance degrades with chain depth."
-msgstr ""
+msgstr "**Limit chain depth** — Vermeiden Sie tiefe Snapshot-Ketten (Snapshot eines Snapshots). Die Leistung verschlechtert sich mit der Kettentiefe."
 
 #: ../../infrastructure/storage/snapshots.rst:165
 msgid ""
 "**Quiesce when possible** — For application consistency, always quiesce "
 "the guest file system before snapshotting databases or transactional "
 "workloads."
-msgstr ""
+msgstr "**Quiesce when possible** — Für Anwendungskonsistenz sollten Sie das Gastdateisystem vor dem Snapshot von Datenbanken oder transaktionalen Arbeitslasten immer ruhigstellen."
 
 #: ../../infrastructure/storage/snapshots.rst:166
 msgid ""
 "**Archive snapshots** — Configure the default archive store "
 "(``Administration > Settings > Appliance > Archive Store``) if snapshots "
 "need to be stored externally."
-msgstr ""
+msgstr "**Archive snapshots** — Konfigurieren Sie den Standard-Archivspeicher (``Administration > Settings > Appliance > Archive Store``), wenn Snapshots extern gespeichert werden müssen."
 
 #: ../../infrastructure/storage/snapshots.rst:169
 msgid "Supported Cloud Types"
-msgstr ""
+msgstr "Unterstützte Cloud-Typen"
 
 #: ../../infrastructure/storage/snapshots.rst:171
 msgid ""
 "Snapshot support is available on more cloud types than linked clone "
 "Virtual Image creation. Linked clone creation is supported only for "
 "VMware vSphere and HVM/KVM."
-msgstr ""
+msgstr "Snapshot-Unterstützung ist auf mehr Cloud-Typen verfügbar als die Erstellung von Linked-Clone-Virtual-Images. Die Linked-Clone-Erstellung wird nur für VMware vSphere und HVM/KVM unterstützt."
 
 #: ../../infrastructure/storage/snapshots.rst:177
 msgid "Cloud Type"
-msgstr ""
+msgstr "Cloud Type"
 
 #: ../../infrastructure/storage/snapshots.rst:178
 msgid "Snapshot Support"
-msgstr ""
+msgstr "Snapshot Support"
 
 #: ../../infrastructure/storage/snapshots.rst:179
 msgid "Linked Clone Virtual Images"
-msgstr ""
+msgstr "Linked Clone Virtual Images"
 
 #: ../../infrastructure/storage/snapshots.rst:180
 msgid "VMware vSphere"
-msgstr ""
+msgstr "VMware vSphere"
 
 #: ../../infrastructure/storage/snapshots.rst:181
 msgid "Full support including memory snapshots and quiescing"
-msgstr ""
+msgstr "Vollständige Unterstützung einschließlich Memory-Snapshots und Quiescing"
 
 #: ../../infrastructure/storage/snapshots.rst:182
 msgid "**Supported**"
-msgstr ""
+msgstr "**Supported**"
 
 #: ../../infrastructure/storage/snapshots.rst:183
 msgid "HVM/KVM"
-msgstr ""
+msgstr "HVM/KVM"
 
 #: ../../infrastructure/storage/snapshots.rst:184
 msgid "Libvirt/QEMU snapshots"
-msgstr ""
+msgstr "Libvirt/QEMU-Snapshots"
 
 #: ../../infrastructure/storage/snapshots.rst:185
 msgid ""
 "**Supported on file-based datastores with QCOW2 disks only**; not "
 "supported on LUN-per-vDisk storage such as HPE Alletra"
-msgstr ""
+msgstr "**Unterstützt nur auf dateibasierten Datastores mit QCOW2-Festplatten**; nicht unterstützt auf LUN-per-vDisk-Speicher wie HPE Alletra"
 
 #: ../../infrastructure/storage/snapshots.rst:186
 msgid "Nutanix AHV"
-msgstr ""
+msgstr "Nutanix AHV"
 
 #: ../../infrastructure/storage/snapshots.rst:187
 msgid "Snapshots without memory state"
-msgstr ""
+msgstr "Snapshots ohne Arbeitsspeicherzustand"
 
 #: ../../infrastructure/storage/snapshots.rst:188
 #: ../../infrastructure/storage/snapshots.rst:191
 #: ../../infrastructure/storage/snapshots.rst:194
 msgid "Not supported"
-msgstr ""
+msgstr "Nicht unterstützt"
 
 #: ../../infrastructure/storage/snapshots.rst:189
 msgid "Azure"
-msgstr ""
+msgstr "Azure"
 
 #: ../../infrastructure/storage/snapshots.rst:190
 msgid "Managed disk snapshots"
-msgstr ""
+msgstr "Managed-Disk-Snapshots"
 
 #: ../../infrastructure/storage/snapshots.rst:192
 msgid "AWS"
-msgstr ""
+msgstr "AWS"
 
 #: ../../infrastructure/storage/snapshots.rst:193
 msgid "EBS snapshots at the volume level"
-msgstr ""
+msgstr "EBS-Snapshots auf Datenträgerebene"
 
 #: ../../infrastructure/storage/snapshots.rst:196
 msgid ""
 "Some cloud types may not support all snapshot options (e.g., memory "
 "snapshots, quiescing). Unavailable options will be hidden or greyed out "
 "in the dialog."
-msgstr ""
+msgstr "Einige Cloud-Typen unterstützen möglicherweise nicht alle Snapshot-Optionen (z. B. Memory-Snapshots, Quiescing). Nicht verfügbare Optionen werden im Dialog ausgeblendet oder ausgegraut."
 

@@ -22,14 +22,14 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:2
 msgid "Clustering Embedded RabbitMQ"
-msgstr ""
+msgstr "Eingebettetes RabbitMQ clustern"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:4
 msgid ""
 "Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ "
 "clustering (Node 1 for this example). On the nodes that are **NOT** the "
 "SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ."
-msgstr ""
+msgstr "Wählen Sie einen der Knoten als Source Of Truth (SOT) für das RabbitMQ-Clustering (in diesem Beispiel Knoten 1). Auf den Knoten, die **NICHT** der SOT sind (in diesem Beispiel Knoten 2 und 3), stoppen Sie zuerst die UI und RabbitMQ."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:11
 msgid ""
@@ -49,11 +49,11 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:29
 msgid "Then on the SOT node, we need to copy the secrets for RabbitMQ."
-msgstr ""
+msgstr "Auf dem SOT-Knoten müssen wir als Nächstes die Secrets für RabbitMQ kopieren."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:31
 msgid "Begin by copying secrets from the SOT node to the other nodes."
-msgstr ""
+msgstr "Kopieren Sie zunächst die Secrets vom SOT-Knoten auf die anderen Knoten."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:38
 #, python-brace-format
@@ -93,7 +93,7 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:74
 msgid "Then copy the erlang.cookie from the SOT node to the other nodes"
-msgstr ""
+msgstr "Kopieren Sie anschließend das erlang.cookie vom SOT-Knoten auf die anderen Knoten"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:81
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 msgid ""
 "Once the secrets and cookie are copied from node01 to nodes 2 & 3, run a "
 "reconfigure on nodes 2 & 3."
-msgstr ""
+msgstr "Nachdem Secrets und Cookie von node01 auf die Knoten 2 und 3 kopiert wurden, führen Sie auf den Knoten 2 und 3 ein Reconfigure aus."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:112
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:178
@@ -134,15 +134,15 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:123
 msgid "Next we will join nodes 2 & 3 to the cluster."
-msgstr ""
+msgstr "Als Nächstes fügen wir die Knoten 2 und 3 dem Cluster hinzu."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
 msgid "The commands below must be run at root"
-msgstr ""
+msgstr "Die folgenden Befehle müssen als root ausgeführt werden"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:132
 msgid ""
@@ -182,7 +182,7 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:169
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:169
 msgid ""
@@ -190,17 +190,17 @@ msgid ""
 "node01: nxdomain (non-existing domain)`` make sure to add all IPs and "
 "short (non-fqdn) hostnames to the ``/etc/hosts`` file to ensure each node"
 " can resolve the other hostnames."
-msgstr ""
+msgstr "Wenn Sie den Fehler ``unable to connect to epmd (port 4369) on node01: nxdomain (non-existing domain)`` erhalten, fügen Sie alle IPs und kurzen (nicht-FQDN) Hostnamen zur Datei ``/etc/hosts`` hinzu, damit jeder Knoten die anderen Hostnamen auflösen kann."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:171
 msgid "Next reconfigure Nodes 2 & 3"
-msgstr ""
+msgstr "Führen Sie als Nächstes ein Reconfigure auf den Knoten 2 und 3 aus"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:189
 msgid ""
 "The last thing to do is start the |morpheus| UI on the two nodes that are"
 " NOT the SOT node."
-msgstr ""
+msgstr "Zuletzt starten Sie die |morpheus|-UI auf den beiden Knoten, die NICHT der SOT-Knoten sind."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:196
 msgid "[root@node2 ~] morpheus-ctl start morpheus-ui"
@@ -215,7 +215,7 @@ msgid ""
 "You will be able to verify that the UI services have restarted properly "
 "by inspecting the logfiles. A standard practice after running a restart "
 "is to tail the UI log file."
-msgstr ""
+msgstr "Sie können prüfen, ob die UI-Dienste korrekt neu gestartet wurden, indem Sie die Protokolldateien einsehen. Nach einem Neustart ist es üblich, die UI-Protokolldatei zu verfolgen (tail)."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:215
 msgid "[root@node2 ~] morpheus-ctl tail morpheus-ui"
@@ -230,7 +230,7 @@ msgid ""
 "The UI should be available once the Morpheus logo is displayed in the "
 "logs. Look for the ascii logo accompanied by the install version and "
 "start time:"
-msgstr ""
+msgstr "Die UI sollte verfügbar sein, sobald das Morpheus-Logo in den Protokollen angezeigt wird. Achten Sie auf das ASCII-Logo mit Installationsversion und Startzeit:"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:229
 msgid ""

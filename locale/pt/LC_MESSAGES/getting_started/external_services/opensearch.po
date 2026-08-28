@@ -22,29 +22,29 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:4
 msgid "OpenSearch"
-msgstr ""
+msgstr "OpenSearch"
 
 #: ../../getting_started/external_services/opensearch.rst:6
 msgid ""
 "OpenSearch provides log aggregation, metrics storage, and full-text "
 "search for |morpheus|. This page covers setting up and configuring "
 "OpenSearch when running it as an external or distributed service."
-msgstr ""
+msgstr "O OpenSearch fornece agregação de logs, armazenamento de métricas e pesquisa de texto completo para o |morpheus|. Esta página cobre a configuração do OpenSearch ao executá-lo como serviço externo ou distribuído."
 
 #: ../../getting_started/external_services/opensearch.rst:8
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/external_services/opensearch.rst:10
 msgid ""
 "For HVM deployments and all-in-one installations, OpenSearch is embedded "
 "and requires no configuration. This page is only relevant when running "
 "OpenSearch externally or in a multi-node embedded cluster."
-msgstr ""
+msgstr "Para implantações HVM e instalações all-in-one, o OpenSearch é incorporado e não exige configuração. Esta página só é relevante ao executar o OpenSearch externamente ou em um cluster incorporado multi-nó."
 
 #: ../../getting_started/external_services/opensearch.rst:13
 msgid "Settings Reference"
-msgstr ""
+msgstr "Referência de Configurações"
 
 #: ../../getting_started/external_services/opensearch.rst:15
 msgid ""
@@ -52,23 +52,23 @@ msgid ""
 "``/etc/morpheus/morpheus.rb`` under the ``opensearch[...]`` namespace (or"
 " the legacy ``elasticsearch[...]`` namespace — values are bridged "
 "automatically, with ``opensearch[...]`` taking precedence)."
-msgstr ""
+msgstr "As seguintes configurações controlam o comportamento do OpenSearch. Elas podem ser definidas em ``/etc/morpheus/morpheus.rb`` sob o namespace ``opensearch[...]`` (ou o namespace legado ``elasticsearch[...]`` — os valores são conectados automaticamente, com ``opensearch[...]`` tendo precedência)."
 
 #: ../../getting_started/external_services/opensearch.rst:21
 msgid "Setting"
-msgstr ""
+msgstr "Configuração"
 
 #: ../../getting_started/external_services/opensearch.rst:22
 msgid "opensearch.yml Mapping"
-msgstr ""
+msgstr "Mapeamento opensearch.yml"
 
 #: ../../getting_started/external_services/opensearch.rst:23
 msgid "Purpose"
-msgstr ""
+msgstr "Finalidade"
 
 #: ../../getting_started/external_services/opensearch.rst:24
 msgid "``enable``"
-msgstr ""
+msgstr "``enable``"
 
 #: ../../getting_started/external_services/opensearch.rst:25
 #: ../../getting_started/external_services/opensearch.rst:46
@@ -81,179 +81,179 @@ msgstr ""
 msgid ""
 "Enable/disable the embedded OpenSearch service. Set to ``false`` when "
 "using an external cluster. Default ``true``."
-msgstr ""
+msgstr "Ativar/desativar o serviço OpenSearch incorporado. Defina como ``false`` ao usar um cluster externo. Padrão ``true``."
 
 #: ../../getting_started/external_services/opensearch.rst:27
 msgid "``es_hosts``"
-msgstr ""
+msgstr "``es_hosts``"
 
 #: ../../getting_started/external_services/opensearch.rst:28
 msgid "``cluster.initial_master_nodes``, ``discovery.seed_hosts``"
-msgstr ""
+msgstr "``cluster.initial_master_nodes``, ``discovery.seed_hosts``"
 
 #: ../../getting_started/external_services/opensearch.rst:29
 msgid ""
 "Cluster membership and discovery. For external clusters, lists the "
 "external hosts."
-msgstr ""
+msgstr "Associação e descoberta do cluster. Para clusters externos, lista os hosts externos."
 
 #: ../../getting_started/external_services/opensearch.rst:30
 msgid "``node_name``"
-msgstr ""
+msgstr "``node_name``"
 
 #: ../../getting_started/external_services/opensearch.rst:31
 msgid "``node.name``"
-msgstr ""
+msgstr "``node.name``"
 
 #: ../../getting_started/external_services/opensearch.rst:32
 msgid "Unique name for this node within the cluster."
-msgstr ""
+msgstr "Nome exclusivo para este nó dentro do cluster."
 
 #: ../../getting_started/external_services/opensearch.rst:33
 msgid "``host``"
-msgstr ""
+msgstr "``host``"
 
 #: ../../getting_started/external_services/opensearch.rst:34
 msgid "``network.host`` or ``network.bind_host``"
-msgstr ""
+msgstr "``network.host`` ou ``network.bind_host``"
 
 #: ../../getting_started/external_services/opensearch.rst:35
 msgid ""
 "Interface to bind to. Default ``127.0.0.1``. Set to ``0.0.0.0`` for "
 "cluster use."
-msgstr ""
+msgstr "Interface à qual se vincular. Padrão ``127.0.0.1``. Defina como ``0.0.0.0`` para uso em cluster."
 
 #: ../../getting_started/external_services/opensearch.rst:36
 msgid "``publish_ip``"
-msgstr ""
+msgstr "``publish_ip``"
 
 #: ../../getting_started/external_services/opensearch.rst:37
 msgid "``network.publish_host``"
-msgstr ""
+msgstr "``network.publish_host``"
 
 #: ../../getting_started/external_services/opensearch.rst:38
 msgid ""
 "The IP other nodes use to reach this node. Falls back to Ohai's "
 "``node['ipaddress']`` if not set."
-msgstr ""
+msgstr "O IP que outros nós usam para alcançar este nó. Recorre ao ``node['ipaddress']`` do Ohai se não estiver definido."
 
 #: ../../getting_started/external_services/opensearch.rst:39
 msgid "``secure_mode``"
-msgstr ""
+msgstr "``secure_mode``"
 
 #: ../../getting_started/external_services/opensearch.rst:40
 msgid "``plugins.security.disabled: false``, TLS config"
-msgstr ""
+msgstr "``plugins.security.disabled: false``, configuração TLS"
 
 #: ../../getting_started/external_services/opensearch.rst:41
 msgid ""
 "Enables TLS on HTTP and transport layers, generates certs, runs "
 "securityadmin.sh."
-msgstr ""
+msgstr "Ativa TLS nas camadas HTTP e de transporte, gera certificados e executa securityadmin.sh."
 
 #: ../../getting_started/external_services/opensearch.rst:42
 msgid "``cluster``"
-msgstr ""
+msgstr "``cluster``"
 
 #: ../../getting_started/external_services/opensearch.rst:43
 msgid "``cluster.name``"
-msgstr ""
+msgstr "``cluster.name``"
 
 #: ../../getting_started/external_services/opensearch.rst:44
 msgid "Cluster name. Defaults to ``morpheus``. Must be the same on all nodes."
-msgstr ""
+msgstr "Nome do cluster. O padrão é ``morpheus``. Deve ser o mesmo em todos os nós."
 
 #: ../../getting_started/external_services/opensearch.rst:45
 msgid "``use_tls``"
-msgstr ""
+msgstr "``use_tls``"
 
 #: ../../getting_started/external_services/opensearch.rst:47
 msgid ""
 "Connect to OpenSearch over HTTPS. Automatically set to ``true`` when "
 "``secure_mode`` is enabled on the embedded service. Set manually for "
 "external TLS clusters."
-msgstr ""
+msgstr "Conectar ao OpenSearch por HTTPS. Definido automaticamente como ``true`` quando ``secure_mode`` está ativado no serviço incorporado. Defina manualmente para clusters TLS externos."
 
 #: ../../getting_started/external_services/opensearch.rst:48
 msgid "``auth_user``"
-msgstr ""
+msgstr "``auth_user``"
 
 #: ../../getting_started/external_services/opensearch.rst:50
 msgid ""
 "Username for |morpheus| to authenticate with OpenSearch. Used for "
 "external clusters. When nil and ``secure_mode`` is enabled, the auto-"
 "created ``morpheus`` internal user is used."
-msgstr ""
+msgstr "Nome de usuário para o |morpheus| autenticar no OpenSearch. Usado para clusters externos. Quando nil e ``secure_mode`` está ativado, o usuário interno ``morpheus`` criado automaticamente é usado."
 
 #: ../../getting_started/external_services/opensearch.rst:51
 msgid "``auth_password``"
-msgstr ""
+msgstr "``auth_password``"
 
 #: ../../getting_started/external_services/opensearch.rst:53
 msgid "Password for ``auth_user``. Used for external clusters."
-msgstr ""
+msgstr "Senha para ``auth_user``. Usada para clusters externos."
 
 #: ../../getting_started/external_services/opensearch.rst:54
 msgid "``replica_count``"
-msgstr ""
+msgstr "``replica_count``"
 
 #: ../../getting_started/external_services/opensearch.rst:55
 msgid "``numberOfReplicas``"
-msgstr ""
+msgstr "``numberOfReplicas``"
 
 #: ../../getting_started/external_services/opensearch.rst:56
 msgid ""
 "Number of index replicas. Default ``1``. Set to ``0`` for single-node "
 "deployments."
-msgstr ""
+msgstr "Número de réplicas de índice. Padrão ``1``. Defina como ``0`` para implantações de nó único."
 
 #: ../../getting_started/external_services/opensearch.rst:57
 msgid "``admin_dn``"
-msgstr ""
+msgstr "``admin_dn``"
 
 #: ../../getting_started/external_services/opensearch.rst:58
 msgid "``plugins.security.authcz.admin_dn``"
-msgstr ""
+msgstr "``plugins.security.authcz.admin_dn``"
 
 #: ../../getting_started/external_services/opensearch.rst:59
 msgid ""
 "Distinguished name for the admin certificate. Defaults to "
 "``O=Morpheus,OU=Ops,CN=<node_name>``."
-msgstr ""
+msgstr "Nome distinto do certificado de admin. O padrão é ``O=Morpheus,OU=Ops,CN=<node_name>``."
 
 #: ../../getting_started/external_services/opensearch.rst:60
 msgid "``nodes_dn``"
-msgstr ""
+msgstr "``nodes_dn``"
 
 #: ../../getting_started/external_services/opensearch.rst:61
 msgid "``plugins.security.nodes_dn``"
-msgstr ""
+msgstr "``plugins.security.nodes_dn``"
 
 #: ../../getting_started/external_services/opensearch.rst:62
 msgid ""
 "Distinguished name for trusted node certificates. Defaults to "
 "``O=Morpheus,OU=Ops,CN=<node_name>``."
-msgstr ""
+msgstr "Nome distinto dos certificados de nó confiáveis. O padrão é ``O=Morpheus,OU=Ops,CN=<node_name>``."
 
 #: ../../getting_started/external_services/opensearch.rst:65
 msgid "Ports"
-msgstr ""
+msgstr "Portas"
 
 #: ../../getting_started/external_services/opensearch.rst:67
 msgid "Ensure the following ports are open between all OpenSearch cluster nodes:"
-msgstr ""
+msgstr "Certifique-se de que as seguintes portas estejam abertas entre todos os nós do cluster OpenSearch:"
 
 #: ../../getting_started/external_services/opensearch.rst:69
 msgid "**9200** — HTTP (client queries)"
-msgstr ""
+msgstr "**9200** — HTTP (consultas de cliente)"
 
 #: ../../getting_started/external_services/opensearch.rst:70
 msgid "**9300** — Transport (inter-node communication and cluster formation)"
-msgstr ""
+msgstr "**9300** — Transporte (comunicação entre nós e formação do cluster)"
 
 #: ../../getting_started/external_services/opensearch.rst:73
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: ../../getting_started/external_services/opensearch.rst:75
 msgid ""
@@ -261,49 +261,49 @@ msgid ""
 "``morpheus.rb``. The ``elasticsearch`` keys are bridged to ``opensearch``"
 " automatically. If the same key is set under both namespaces, the "
 "``opensearch[...]`` value takes precedence."
-msgstr ""
+msgstr "Você pode usar as chaves ``elasticsearch[...]`` ou ``opensearch[...]`` no ``morpheus.rb``. As chaves ``elasticsearch`` são conectadas automaticamente a ``opensearch``. Se a mesma chave for definida sob ambos os namespaces, o valor ``opensearch[...]`` tem precedência."
 
 #: ../../getting_started/external_services/opensearch.rst:76
 msgid ""
 "The reconfigure strips ``127.0.0.1`` from ``es_hosts`` when more than one"
 " host is present, so you don't need to exclude it."
-msgstr ""
+msgstr "O reconfigure remove ``127.0.0.1`` de ``es_hosts`` quando há mais de um host presente, portanto você não precisa excluí-lo."
 
 #: ../../getting_started/external_services/opensearch.rst:77
 msgid ""
 "In secure mode, ``admin_dn`` and ``nodes_dn`` default to "
 "``O=Morpheus,OU=Ops,CN=<node_name>`` and are set automatically per node. "
 "These only need to be overridden when using custom certificates."
-msgstr ""
+msgstr "No modo seguro, ``admin_dn`` e ``nodes_dn`` têm o padrão ``O=Morpheus,OU=Ops,CN=<node_name>`` e são definidos automaticamente por nó. Eles só precisam ser substituídos ao usar certificados personalizados."
 
 #: ../../getting_started/external_services/opensearch.rst:80
 msgid "Custom Certificates"
-msgstr ""
+msgstr "Certificados Personalizados"
 
 #: ../../getting_started/external_services/opensearch.rst:82
 msgid ""
 "When using your own certificates instead of the auto-generated ones, set "
 "``admin_dn`` and ``nodes_dn`` to match the subject DN of your "
 "certificates:"
-msgstr ""
+msgstr "Ao usar seus próprios certificados em vez dos gerados automaticamente, defina ``admin_dn`` e ``nodes_dn`` para corresponder ao subject DN dos seus certificados:"
 
 #: ../../getting_started/external_services/opensearch.rst:84
 msgid ""
 "``admin_dn`` — Identifies the certificate authorized to run "
 "administrative operations (e.g., ``securityadmin.sh``). Only requests "
 "signed by a certificate matching this DN can modify the security index."
-msgstr ""
+msgstr "``admin_dn`` — Identifica o certificado autorizado a executar operações administrativas (por exemplo, ``securityadmin.sh``). Somente solicitações assinadas por um certificado correspondente a este DN podem modificar o índice de segurança."
 
 #: ../../getting_started/external_services/opensearch.rst:85
 msgid ""
 "``nodes_dn`` — Identifies certificates trusted for inter-node transport "
 "communication. Nodes will reject transport connections from certificates "
 "that don't match."
-msgstr ""
+msgstr "``nodes_dn`` — Identifica certificados confiáveis para comunicação de transporte entre nós. Os nós rejeitarão conexões de transporte de certificados que não correspondam."
 
 #: ../../getting_started/external_services/opensearch.rst:87
 msgid "To extract the subject DN from an existing certificate:"
-msgstr ""
+msgstr "Para extrair o subject DN de um certificado existente:"
 
 #: ../../getting_started/external_services/opensearch.rst:89
 msgid "openssl x509 -in /path/to/cert.pem -noout -subject -nameopt RFC2253"
@@ -311,7 +311,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:93
 msgid "Set the values in ``/etc/morpheus/morpheus.rb`` on each node:"
-msgstr ""
+msgstr "Defina os valores em ``/etc/morpheus/morpheus.rb`` em cada nó:"
 
 #: ../../getting_started/external_services/opensearch.rst:95
 msgid ""
@@ -324,11 +324,11 @@ msgid ""
 "If the admin and node certificates share the same DN (common when a "
 "single wildcard or shared cert is used), both values can be set to the "
 "same string."
-msgstr ""
+msgstr "Se os certificados de admin e de nó compartilharem o mesmo DN (comum quando um único certificado curinga ou compartilhado é usado), ambos os valores podem ser definidos com a mesma string."
 
 #: ../../getting_started/external_services/opensearch.rst:103
 msgid "Setting the Morpheus User Password"
-msgstr ""
+msgstr "Definindo a Senha do Usuário Morpheus"
 
 #: ../../getting_started/external_services/opensearch.rst:105
 msgid ""
@@ -337,13 +337,13 @@ msgid ""
 "The password is auto-generated and stored in ``/etc/morpheus/morpheus-"
 "secrets.json`` under the ``elasticsearch.morpheus_password`` key. No "
 "manual configuration is needed in the default case."
-msgstr ""
+msgstr "Quando ``secure_mode`` está ativado, o reconfigure cria um usuário interno do OpenSearch chamado ``morpheus`` que o |morpheus| usa para autenticar. A senha é gerada automaticamente e armazenada em ``/etc/morpheus/morpheus-secrets.json`` sob a chave ``elasticsearch.morpheus_password``. Nenhuma configuração manual é necessária no caso padrão."
 
 #: ../../getting_started/external_services/opensearch.rst:107
 msgid ""
 "To set a custom password, add it to ``/etc/morpheus/morpheus.rb`` on each"
 " node:"
-msgstr ""
+msgstr "Para definir uma senha personalizada, adicione-a a ``/etc/morpheus/morpheus.rb`` em cada nó:"
 
 #: ../../getting_started/external_services/opensearch.rst:109
 msgid "opensearch['morpheus_password'] = 'my-custom-password'"
@@ -351,7 +351,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:114
 msgid "Encrypting Passwords"
-msgstr ""
+msgstr "Criptografando Senhas"
 
 #: ../../getting_started/external_services/opensearch.rst:116
 #, python-brace-format
@@ -359,11 +359,11 @@ msgid ""
 "Passwords in ``morpheus.rb`` can be stored in encrypted form using the "
 "``ENC{...}`` wrapper. During reconfigure, the recipe detects the ``ENC`` "
 "prefix and decrypts the value automatically."
-msgstr ""
+msgstr "As senhas no ``morpheus.rb`` podem ser armazenadas de forma criptografada usando o wrapper ``ENC{...}``. Durante o reconfigure, a recipe detecta o prefixo ``ENC`` e descriptografa o valor automaticamente."
 
 #: ../../getting_started/external_services/opensearch.rst:118
 msgid "To generate an encrypted string:"
-msgstr ""
+msgstr "Para gerar uma string criptografada:"
 
 #: ../../getting_started/external_services/opensearch.rst:120
 msgid "morpheus-ctl get-crypto-string string 'my-custom-password'"
@@ -371,7 +371,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:124
 msgid "Use the output in ``morpheus.rb``:"
-msgstr ""
+msgstr "Use a saída no ``morpheus.rb``:"
 
 #: ../../getting_started/external_services/opensearch.rst:126
 #, python-brace-format
@@ -384,24 +384,24 @@ msgid ""
 "``/etc/morpheus/morpheus-secrets.json``), so the encrypted value is "
 "specific to that appliance. All nodes in the cluster share the same "
 "secrets file contents."
-msgstr ""
+msgstr "A criptografia usa o ``encryption_key_suffix`` do appliance (de ``/etc/morpheus/morpheus-secrets.json``), portanto o valor criptografado é específico daquele appliance. Todos os nós do cluster compartilham o mesmo conteúdo do arquivo de segredos."
 
 #: ../../getting_started/external_services/opensearch.rst:133
 msgid "Single Node (Embedded)"
-msgstr ""
+msgstr "Nó Único (Incorporado)"
 
 #: ../../getting_started/external_services/opensearch.rst:135
 msgid ""
 "A single-node setup uses the embedded OpenSearch service with default "
 "settings. No ``morpheus.rb`` changes are required unless enabling secure "
 "mode."
-msgstr ""
+msgstr "Uma configuração de nó único usa o serviço OpenSearch incorporado com as configurações padrão. Nenhuma alteração no ``morpheus.rb`` é necessária, a menos que se ative o modo seguro."
 
 #: ../../getting_started/external_services/opensearch.rst:137
 msgid ""
 "The embedded OpenSearch service starts automatically after reconfigure. "
 "To enable secure mode:"
-msgstr ""
+msgstr "O serviço OpenSearch incorporado inicia automaticamente após o reconfigure. Para ativar o modo seguro:"
 
 #: ../../getting_started/external_services/opensearch.rst:139
 msgid "opensearch['secure_mode'] = true"
@@ -409,79 +409,79 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:144
 msgid "3-Node Embedded Cluster"
-msgstr ""
+msgstr "Cluster Incorporado de 3 Nós"
 
 #: ../../getting_started/external_services/opensearch.rst:147
 msgid "Prerequisites"
-msgstr ""
+msgstr "Pré-requisitos"
 
 #: ../../getting_started/external_services/opensearch.rst:149
 msgid "**Networking:**"
-msgstr ""
+msgstr "**Rede:**"
 
 #: ../../getting_started/external_services/opensearch.rst:151
 msgid ""
 "All 3 nodes must be able to reach each other on ports 9200 (HTTP) and "
 "9300 (Transport)"
-msgstr ""
+msgstr "Todos os 3 nós devem conseguir alcançar uns aos outros nas portas 9200 (HTTP) e 9300 (Transporte)"
 
 #: ../../getting_started/external_services/opensearch.rst:152
 msgid "Each node needs a stable, routable IP address or resolvable hostname"
-msgstr ""
+msgstr "Cada nó precisa de um endereço IP ou hostname resolvível estável e roteável"
 
 #: ../../getting_started/external_services/opensearch.rst:153
 msgid ""
 "Both IP addresses and hostnames are supported in ``es_hosts`` and "
 "``publish_ip``"
-msgstr ""
+msgstr "Tanto endereços IP quanto hostnames são suportados em ``es_hosts`` e ``publish_ip``"
 
 #: ../../getting_started/external_services/opensearch.rst:155
 msgid "**Configuration:**"
-msgstr ""
+msgstr "**Configuração:**"
 
 #: ../../getting_started/external_services/opensearch.rst:157
 msgid "Each node must have the same ``es_hosts`` hash listing all 3 nodes"
-msgstr ""
+msgstr "Cada nó deve ter o mesmo hash ``es_hosts`` listando todos os 3 nós"
 
 #: ../../getting_started/external_services/opensearch.rst:158
 msgid "A unique ``node_name`` per node"
-msgstr ""
+msgstr "Um ``node_name`` exclusivo por nó"
 
 #: ../../getting_started/external_services/opensearch.rst:159
 msgid "A unique ``publish_ip`` matching that node's routable IP"
-msgstr ""
+msgstr "Um ``publish_ip`` exclusivo correspondente ao IP roteável daquele nó"
 
 #: ../../getting_started/external_services/opensearch.rst:160
 msgid "``host`` set to ``0.0.0.0`` (default ``127.0.0.1`` only listens locally)"
-msgstr ""
+msgstr "``host`` definido como ``0.0.0.0`` (o padrão ``127.0.0.1`` só escuta localmente)"
 
 #: ../../getting_started/external_services/opensearch.rst:161
 msgid "All nodes must share the same ``cluster`` name (defaults to ``morpheus``)"
-msgstr ""
+msgstr "Todos os nós devem compartilhar o mesmo nome de ``cluster`` (o padrão é ``morpheus``)"
 
 #: ../../getting_started/external_services/opensearch.rst:163
 msgid "**Example nodes:**"
-msgstr ""
+msgstr "**Nós de exemplo:**"
 
 #: ../../getting_started/external_services/opensearch.rst:165
 msgid "Node 1: ``10.0.0.1`` (morpheus-1)"
-msgstr ""
+msgstr "Nó 1: ``10.0.0.1`` (morpheus-1)"
 
 #: ../../getting_started/external_services/opensearch.rst:166
 msgid "Node 2: ``10.0.0.2`` (morpheus-2)"
-msgstr ""
+msgstr "Nó 2: ``10.0.0.2`` (morpheus-2)"
 
 #: ../../getting_started/external_services/opensearch.rst:167
 msgid "Node 3: ``10.0.0.3`` (morpheus-3)"
-msgstr ""
+msgstr "Nó 3: ``10.0.0.3`` (morpheus-3)"
 
 #: ../../getting_started/external_services/opensearch.rst:170
 msgid "Without Secure Mode"
-msgstr ""
+msgstr "Sem Modo Seguro"
 
 #: ../../getting_started/external_services/opensearch.rst:172
 msgid "**Node 1** — ``/etc/morpheus/morpheus.rb``:"
-msgstr ""
+msgstr "**Nó 1** — ``/etc/morpheus/morpheus.rb``:"
 
 #: ../../getting_started/external_services/opensearch.rst:174
 #, python-brace-format
@@ -495,7 +495,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:181
 msgid "**Node 2** — ``/etc/morpheus/morpheus.rb``:"
-msgstr ""
+msgstr "**Nó 2** — ``/etc/morpheus/morpheus.rb``:"
 
 #: ../../getting_started/external_services/opensearch.rst:183
 #, python-brace-format
@@ -509,7 +509,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:190
 msgid "**Node 3** — ``/etc/morpheus/morpheus.rb``:"
-msgstr ""
+msgstr "**Nó 3** — ``/etc/morpheus/morpheus.rb``:"
 
 #: ../../getting_started/external_services/opensearch.rst:192
 #, python-brace-format
@@ -523,7 +523,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:199
 msgid "Run on all three nodes:"
-msgstr ""
+msgstr "Execute em todos os três nós:"
 
 #: ../../getting_started/external_services/opensearch.rst:201
 #: ../../getting_started/external_services/opensearch.rst:226
@@ -535,26 +535,26 @@ msgstr ""
 msgid ""
 "Nodes can be reconfigured in any order. The cluster will form once all "
 "nodes are up and can reach each other."
-msgstr ""
+msgstr "Os nós podem ser reconfigurados em qualquer ordem. O cluster será formado assim que todos os nós estiverem no ar e puderem alcançar uns aos outros."
 
 #: ../../getting_started/external_services/opensearch.rst:208
 msgid "With Secure Mode"
-msgstr ""
+msgstr "Com Modo Seguro"
 
 #: ../../getting_started/external_services/opensearch.rst:210
 msgid ""
 "Secure mode enables TLS on both the HTTP and transport layers. Each node "
 "generates its own node certificate, but all nodes must share the **same "
 "root CA**."
-msgstr ""
+msgstr "O modo seguro ativa o TLS nas camadas HTTP e de transporte. Cada nó gera seu próprio certificado de nó, mas todos os nós devem compartilhar a **mesma CA raiz**."
 
 #: ../../getting_started/external_services/opensearch.rst:212
 msgid "**Step 1 — Configure and reconfigure Node 1 first**"
-msgstr ""
+msgstr "**Passo 1 — Configurar e reconfigurar o Nó 1 primeiro**"
 
 #: ../../getting_started/external_services/opensearch.rst:214
 msgid "Node 1 — ``/etc/morpheus/morpheus.rb``:"
-msgstr ""
+msgstr "Nó 1 — ``/etc/morpheus/morpheus.rb``:"
 
 #: ../../getting_started/external_services/opensearch.rst:216
 #, python-brace-format
@@ -569,29 +569,29 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:224
 msgid "Run reconfigure on Node 1:"
-msgstr ""
+msgstr "Execute o reconfigure no Nó 1:"
 
 #: ../../getting_started/external_services/opensearch.rst:230
 msgid "This generates the root CA and node certificate at:"
-msgstr ""
+msgstr "Isso gera a CA raiz e o certificado do nó em:"
 
 #: ../../getting_started/external_services/opensearch.rst:232
 msgid "``/opt/morpheus/embedded/opensearch-*/config/root-ca.pem``"
-msgstr ""
+msgstr "``/opt/morpheus/embedded/opensearch-*/config/root-ca.pem``"
 
 #: ../../getting_started/external_services/opensearch.rst:233
 msgid "``/opt/morpheus/embedded/opensearch-*/config/root-ca-key.pem``"
-msgstr ""
+msgstr "``/opt/morpheus/embedded/opensearch-*/config/root-ca-key.pem``"
 
 #: ../../getting_started/external_services/opensearch.rst:235
 msgid "**Step 2 — Copy the root CA to Nodes 2 and 3**"
-msgstr ""
+msgstr "**Passo 2 — Copiar a CA raiz para os Nós 2 e 3**"
 
 #: ../../getting_started/external_services/opensearch.rst:237
 msgid ""
 "Copy both CA files from Node 1 to the same path on Nodes 2 and 3 "
 "**before** running reconfigure on them:"
-msgstr ""
+msgstr "Copie ambos os arquivos da CA do Nó 1 para o mesmo caminho nos Nós 2 e 3 **antes** de executar o reconfigure neles:"
 
 #: ../../getting_started/external_services/opensearch.rst:239
 msgid ""
@@ -604,7 +604,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:245
 msgid "Set ownership on Nodes 2 and 3:"
-msgstr ""
+msgstr "Defina a propriedade nos Nós 2 e 3:"
 
 #: ../../getting_started/external_services/opensearch.rst:247
 msgid ""
@@ -614,7 +614,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:251
 msgid "**Step 3 — Configure and reconfigure Nodes 2 and 3**"
-msgstr ""
+msgstr "**Passo 3 — Configurar e reconfigurar os Nós 2 e 3**"
 
 #: ../../getting_started/external_services/opensearch.rst:253
 msgid ""
@@ -622,23 +622,23 @@ msgid ""
 " the appropriate ``node_name`` and ``publish_ip``), then run ``morpheus-"
 "ctl reconfigure``. Each node will skip CA generation (the files already "
 "exist) and generate its own node certificate signed by the shared CA."
-msgstr ""
+msgstr "Defina a mesma configuração com ``secure_mode = true`` em cada nó (com o ``node_name`` e ``publish_ip`` apropriados) e, em seguida, execute ``morpheus-ctl reconfigure``. Cada nó ignorará a geração da CA (os arquivos já existem) e gerará seu próprio certificado de nó assinado pela CA compartilhada."
 
 #: ../../getting_started/external_services/opensearch.rst:256
 msgid "External Cluster"
-msgstr ""
+msgstr "Cluster Externo"
 
 #: ../../getting_started/external_services/opensearch.rst:258
 msgid ""
 "When using an externally managed OpenSearch (or Elasticsearch) cluster, "
 "disable the embedded service and point |morpheus| at the external hosts."
-msgstr ""
+msgstr "Ao usar um cluster OpenSearch (ou Elasticsearch) gerenciado externamente, desative o serviço incorporado e aponte o |morpheus| para os hosts externos."
 
 #: ../../getting_started/external_services/opensearch.rst:260
 msgid ""
 "Add the following to ``/etc/morpheus/morpheus.rb`` on each |morpheus| "
 "appliance node:"
-msgstr ""
+msgstr "Adicione o seguinte a ``/etc/morpheus/morpheus.rb`` em cada nó do appliance |morpheus|:"
 
 #: ../../getting_started/external_services/opensearch.rst:262
 #, python-brace-format
@@ -652,7 +652,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:269
 msgid "If the external cluster uses TLS:"
-msgstr ""
+msgstr "Se o cluster externo usar TLS:"
 
 #: ../../getting_started/external_services/opensearch.rst:271
 msgid "opensearch['use_tls'] = true"
@@ -660,48 +660,48 @@ msgstr ""
 
 #: ../../getting_started/external_services/opensearch.rst:275
 msgid "Then reconfigure:"
-msgstr ""
+msgstr "Em seguida, reconfigure:"
 
 #: ../../getting_started/external_services/opensearch.rst:281
 msgid ""
 "The embedded OpenSearch service will not be started. |morpheus| connects "
 "directly to the external cluster."
-msgstr ""
+msgstr "O serviço OpenSearch incorporado não será iniciado. O |morpheus| conecta-se diretamente ao cluster externo."
 
 #: ../../getting_started/external_services/opensearch.rst:283
 msgid "**Notes for external clusters:**"
-msgstr ""
+msgstr "**Notas para clusters externos:**"
 
 #: ../../getting_started/external_services/opensearch.rst:285
 msgid ""
 "``auth_user`` and ``auth_password`` are sent to the external cluster for "
 "authentication. These must match a user configured on the external "
 "cluster."
-msgstr ""
+msgstr "``auth_user`` e ``auth_password`` são enviados ao cluster externo para autenticação. Eles devem corresponder a um usuário configurado no cluster externo."
 
 #: ../../getting_started/external_services/opensearch.rst:286
 #, python-brace-format
 msgid ""
 "``auth_password`` supports the ``ENC{...}`` encrypted format (see "
 "Encrypting Passwords above)."
-msgstr ""
+msgstr "``auth_password`` oferece suporte ao formato criptografado ``ENC{...}`` (consulte Criptografando Senhas acima)."
 
 #: ../../getting_started/external_services/opensearch.rst:287
 msgid ""
 "Do **not** set ``secure_mode`` — that setting controls the embedded "
 "service's certificate generation. For external TLS clusters, use "
 "``use_tls`` instead."
-msgstr ""
+msgstr "Não defina ``secure_mode`` — essa configuração controla a geração de certificados do serviço incorporado. Para clusters TLS externos, use ``use_tls`` em vez disso."
 
 #: ../../getting_started/external_services/opensearch.rst:288
 msgid ""
 "``replica_count`` can be adjusted to match the external cluster's "
 "topology (default ``1``)."
-msgstr ""
+msgstr "``replica_count`` pode ser ajustado para corresponder à topologia do cluster externo (padrão ``1``)."
 
 #: ../../getting_started/external_services/opensearch.rst:289
 msgid ""
 "|morpheus| supports both OpenSearch and Elasticsearch as the external "
 "cluster — no migration is required on the external side."
-msgstr ""
+msgstr "O |morpheus| oferece suporte tanto a OpenSearch quanto a Elasticsearch como cluster externo — nenhuma migração é necessária no lado externo."
 

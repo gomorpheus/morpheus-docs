@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../library/kibana.rst:2
 msgid "Library Example: Kibana"
-msgstr ""
+msgstr "Exemplo da Biblioteca: Kibana"
 
 #: ../../library/kibana.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../library/kibana.rst:7
 msgid ""
@@ -34,43 +34,43 @@ msgid ""
 "the installation and configuration of Kibana. This simple example "
 "utilizes all sections of the Library including Inputs, File Templates and"
 " Scripts."
-msgstr ""
+msgstr "Neste exemplo, construiremos um novo item da Biblioteca Kibana para automatizar a instalação e configuração do Kibana. Este exemplo simples utiliza todas as seções da Biblioteca, incluindo Entradas, File Templates e Scripts."
 
 #: ../../library/kibana.rst:9 ../../library/kibana.rst:20
 msgid "Configure Virtual Image"
-msgstr ""
+msgstr "Configurar Imagem Virtual"
 
 #: ../../library/kibana.rst:10 ../../library/kibana.rst:29
 msgid "Add Kibana Instance Type"
-msgstr ""
+msgstr "Adicionar Tipo de Instância Kibana"
 
 #: ../../library/kibana.rst:11 ../../library/kibana.rst:61
 msgid "Add Input for ElasticSearch URL"
-msgstr ""
+msgstr "Adicionar Entrada para URL do ElasticSearch"
 
 #: ../../library/kibana.rst:12 ../../library/kibana.rst:87
 msgid "Add Input for Kibana Version"
-msgstr ""
+msgstr "Adicionar Entrada para Versão do Kibana"
 
 #: ../../library/kibana.rst:13 ../../library/kibana.rst:114
 msgid "Add File Template for kibana.yml"
-msgstr ""
+msgstr "Adicionar File Template para kibana.yml"
 
 #: ../../library/kibana.rst:14
 msgid "Add Script for Kibana installation"
-msgstr ""
+msgstr "Adicionar Script para instalação do Kibana"
 
 #: ../../library/kibana.rst:15
 msgid "Add Kibana Node Type(s)"
-msgstr ""
+msgstr "Adicionar Tipo(s) de Nó Kibana"
 
 #: ../../library/kibana.rst:16
 msgid "Add Kibana Layout(s)"
-msgstr ""
+msgstr "Adicionar Layout(s) Kibana"
 
 #: ../../library/kibana.rst:17
 msgid "Provision"
-msgstr ""
+msgstr "Provisionar"
 
 #: ../../library/kibana.rst:22
 msgid ""
@@ -79,7 +79,7 @@ msgid ""
 " while using any OS. Pre-installing Kibana on the image is an option but "
 "using a base image can be more flexible and limit the number of Virtual "
 "Images required across our catalog."
-msgstr ""
+msgstr "Para nossa Instância Kibana, usaremos imagens de SO base e instalaremos o Kibana no momento do provisionamento. Isso nos permite determinar a versão e a configuração usando qualquer SO. Pré-instalar o Kibana na imagem é uma opção, mas usar uma imagem base pode ser mais flexível e limitar o número de Imagens Virtuais necessárias em nosso catálogo."
 
 #: ../../library/kibana.rst:24
 msgid ""
@@ -91,7 +91,7 @@ msgid ""
 "|morpheus| can auth on the VM with existing credentials. Defining "
 "```Minimum Memory`` ensures only Plans meeting the minimum memory "
 "requirement will be options when provisioning."
-msgstr ""
+msgstr "A primeira imagem usada é uma imagem base CentOS 7.5 sincronizada de uma nuvem Nutanix. O Cloud-init está instalado na imagem, então pouca configuração é necessária além de garantir que o Sistema Operacional esteja definido corretamente e que ``Is Cloud Init Enabled?`` esteja marcado. Se a imagem não tiver cloud-init instalado, o nome de usuário e a senha precisariam ser definidos para que o |morpheus| possa autenticar na VM com as credenciais existentes. Definir ```Minimum Memory`` garante que apenas Planos que atendam ao requisito mínimo de memória serão opções no provisionamento."
 
 #: ../../library/kibana.rst:26
 msgid ".. image:: /images/provisioning/library/kibana_image.png"
@@ -103,66 +103,66 @@ msgid ""
 "create one. If we already had a Kibana Instance Type and wanted to add "
 "additional Node Types and Layouts to it, creating an instance Type would "
 "not be necessary."
-msgstr ""
+msgstr "Não temos um Tipo de Instância Kibana existente, então precisaremos criar um. Se já tivéssemos um Tipo de Instância Kibana e quiséssemos adicionar Tipos de Nó e Layouts adicionais a ele, criar um Tipo de Instância não seria necessário."
 
 #: ../../library/kibana.rst:33 ../../library/kibana.rst:65
 #: ../../library/kibana.rst:91
 msgid "NAME"
-msgstr ""
+msgstr "NOME"
 
 #: ../../library/kibana.rst:34
 msgid "Kibana"
-msgstr ""
+msgstr "Kibana"
 
 #: ../../library/kibana.rst:35
 msgid "CODE"
-msgstr ""
+msgstr "CÓDIGO"
 
 #: ../../library/kibana.rst:36
 msgid "kibana"
-msgstr ""
+msgstr "kibana"
 
 #: ../../library/kibana.rst:37 ../../library/kibana.rst:67
 #: ../../library/kibana.rst:93
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIÇÃO"
 
 #: ../../library/kibana.rst:38
 msgid ""
 "Kibana is an open source analytics and visualization platform designed to"
 " work with Elasticsearch."
-msgstr ""
+msgstr "Kibana é uma plataforma de análises e visualização de código aberto projetada para funcionar com o Elasticsearch."
 
 #: ../../library/kibana.rst:39
 msgid "CATEGORY"
-msgstr ""
+msgstr "CATEGORIA"
 
 #: ../../library/kibana.rst:40
 msgid "Apps"
-msgstr ""
+msgstr "Aplicações"
 
 #: ../../library/kibana.rst:41
 msgid "ICON"
-msgstr ""
+msgstr "ÍCONE"
 
 #: ../../library/kibana.rst:42
 msgid "Kibana-Logo-Color-H.png"
-msgstr ""
+msgstr "Kibana-Logo-Color-H.png"
 
 #: ../../library/kibana.rst:43
 msgid "VISIBILITY"
-msgstr ""
+msgstr "VISIBILIDADE"
 
 #: ../../library/kibana.rst:44
 msgid ""
 "Private, as at this time we will only offer this Instance Type for the "
 "master Tenant. If we wanted to offer it to all Tenants, Visibility should"
 " be set to Public and then exposed on the Tenant Roles for access."
-msgstr ""
+msgstr "Privado, pois neste momento ofereceremos este Tipo de Instância apenas para o Tenant mestre. Se quiséssemos oferecê-lo a todos os Tenants, a Visibilidade deveria ser definida como Público e então exposta nas Funções do Tenant para acesso."
 
 #: ../../library/kibana.rst:45
 msgid "Inputs"
-msgstr ""
+msgstr "Entradas"
 
 #: ../../library/kibana.rst:46
 msgid ""
@@ -170,51 +170,51 @@ msgid ""
 "this Instance Type, but we will set them on the layout instead in case we"
 " want to define the version and/or leave the Elasticsearch URL "
 "unconfigured with different layout options."
-msgstr ""
+msgstr "Poderíamos definir as Entradas ``ElasticSearch URL`` e ``Kibana Version`` neste Tipo de Instância, mas as definiremos no layout em vez disso, caso queiramos definir a versão e/ou deixar a URL do Elasticsearch sem configuração com diferentes opções de layout."
 
 #: ../../library/kibana.rst:47
 msgid "ENVIRONMENT PREFIX"
-msgstr ""
+msgstr "PREFIXO DE AMBIENTE"
 
 #: ../../library/kibana.rst:48
 msgid "We will add a ``kibana`` Environment Prefix to identify evars"
-msgstr ""
+msgstr "Adicionaremos um Prefixo de Ambiente ``kibana`` para identificar evars"
 
 #: ../../library/kibana.rst:49
 msgid "ENVIRONMENT VARIABLES"
-msgstr ""
+msgstr "VARIÁVEIS DE AMBIENTE"
 
 #: ../../library/kibana.rst:50
 msgid ""
 "We will leave blank but we could define config options for Kibana in a "
 "different config scenario."
-msgstr ""
+msgstr "Deixaremos em branco, mas poderíamos definir opções de configuração para o Kibana em um cenário de configuração diferente."
 
 #: ../../library/kibana.rst:51
 msgid "Enable Settings"
-msgstr ""
+msgstr "Habilitar Configurações"
 
 #: ../../library/kibana.rst:52
 msgid ""
 "Enabling ``Enable Settings`` will allow us to expose the ``kibana.yml`` "
 "in the Settings Tab on the Instance."
-msgstr ""
+msgstr "Habilitar ``Enable Settings`` permitirá expor o ``kibana.yml`` na Aba Settings da Instância."
 
 #: ../../library/kibana.rst:53
 msgid "Enable Scaling (Horizontal)"
-msgstr ""
+msgstr "Habilitar Escala (Horizontal)"
 
 #: ../../library/kibana.rst:54
 msgid "Disabling as we will not be scaling Kibana at this time"
-msgstr ""
+msgstr "Desabilitando, pois não escalaremos o Kibana neste momento"
 
 #: ../../library/kibana.rst:55
 msgid "Support Deployments"
-msgstr ""
+msgstr "Suportar Deployments"
 
 #: ../../library/kibana.rst:56
 msgid "Disabling as we do not intend to use deployments for this instance type"
-msgstr ""
+msgstr "Desabilitando, pois não pretendemos usar deployments para este tipo de instância"
 
 #: ../../library/kibana.rst:58
 msgid ".. image:: /images/provisioning/library/kibana_instance_type.png"
@@ -226,78 +226,78 @@ msgid ""
 "``kibana.yml``. To allow the user to define which Elasticsearch instance "
 "Kibana will connect with, we will define an Input that will be a variable"
 " in the ``kibana.yml``, which we will be defining with a File Template."
-msgstr ""
+msgstr "Ao provisionar o Kibana, queremos definir a url do Elasticsearch no ``kibana.yml``. Para permitir que o usuário defina com qual instância Elasticsearch o Kibana se conectará, definiremos uma Entrada que será uma variável no ``kibana.yml``, que definiremos com um File Template."
 
 #: ../../library/kibana.rst:66
 msgid "kibana es host"
-msgstr ""
+msgstr "kibana es host"
 
 #: ../../library/kibana.rst:68
 msgid "Elasticsearch Host for Kibana"
-msgstr ""
+msgstr "Host Elasticsearch para Kibana"
 
 #: ../../library/kibana.rst:69 ../../library/kibana.rst:95
 msgid "FIELD NAME"
-msgstr ""
+msgstr "NOME DO CAMPO"
 
 #: ../../library/kibana.rst:70
 msgid "esurl"
-msgstr ""
+msgstr "esurl"
 
 #: ../../library/kibana.rst:72 ../../library/kibana.rst:98
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../library/kibana.rst:72
 msgid ""
 "Not this field name as it will be used when adding the varibale to the "
 "``kibana.yml`` File Template, which will be ``<%= customOptions.esurl "
 "%>``."
-msgstr ""
+msgstr "Anote este nome de campo, pois será usado ao adicionar a variável ao File Template ``kibana.yml``, que será ``<%= customOptions.esurl %>``."
 
 #: ../../library/kibana.rst:73 ../../library/kibana.rst:100
 msgid "TYPE"
-msgstr ""
+msgstr "TIPO"
 
 #: ../../library/kibana.rst:74
 msgid "Text, as we will allow the user to define the Elasticsearch host url."
-msgstr ""
+msgstr "Texto, pois permitiremos que o usuário defina a url do host Elasticsearch."
 
 #: ../../library/kibana.rst:75 ../../library/kibana.rst:102
 msgid "LABEL"
-msgstr ""
+msgstr "RÓTULO"
 
 #: ../../library/kibana.rst:76
 msgid ""
 "Defined as ``elasticsearch.url:``, which will be the label of the input "
 "field for the Elasticsearch URL"
-msgstr ""
+msgstr "Definido como ``elasticsearch.url:``, que será o rótulo do campo de entrada para a URL do Elasticsearch"
 
 #: ../../library/kibana.rst:77 ../../library/kibana.rst:104
 msgid "PLACEHOLDER"
-msgstr ""
+msgstr "PLACEHOLDER"
 
 #: ../../library/kibana.rst:78
 msgid ""
 "Added ``http://elaticsearch_host:9200`` so users know the proper format "
 "for entering the Elasticsearch URL at provision time."
-msgstr ""
+msgstr "Adicionado ``http://elaticsearch_host:9200`` para que os usuários saibam o formato correto para informar a URL do Elasticsearch no momento do provisionamento."
 
 #: ../../library/kibana.rst:79 ../../library/kibana.rst:106
 msgid "DEFAULT VALUE"
-msgstr ""
+msgstr "VALOR PADRÃO"
 
 #: ../../library/kibana.rst:80
 msgid "Left blank as we will not know the Elasticsearch URL required"
-msgstr ""
+msgstr "Deixado em branco, pois não saberemos a URL do Elasticsearch necessária"
 
 #: ../../library/kibana.rst:81 ../../library/kibana.rst:108
 msgid "Required"
-msgstr ""
+msgstr "Obrigatório"
 
 #: ../../library/kibana.rst:82
 msgid "Enabled to ensure user defines the Elasticsearch URL"
-msgstr ""
+msgstr "Ativado para garantir que o usuário defina a URL do Elasticsearch"
 
 #: ../../library/kibana.rst:84
 msgid ".. image:: /images/provisioning/library/kibana_eshost_option.png"
@@ -310,22 +310,22 @@ msgid ""
 "Types and/or Layouts for each version, because we will be installing "
 "Kibana with a script, we can grab the version though an Input and inject "
 "the associated url into the script using an Input variable."
-msgstr ""
+msgstr "Neste exemplo, ofereceremos seleção de versão no momento do provisionamento por meio de uma Entrada. Embora pudéssemos adicionar seleção de versão adicionando Tipos de Nó e/ou Layouts para cada versão, como instalaremos o Kibana com um script, podemos obter a versão por meio de uma Entrada e injetar a url associada no script usando uma variável de Entrada."
 
 #: ../../library/kibana.rst:92 ../../library/kibana.rst:94
 msgid "kibana version"
-msgstr ""
+msgstr "kibana version"
 
 #: ../../library/kibana.rst:96
 msgid "kibversion"
-msgstr ""
+msgstr "kibversion"
 
 #: ../../library/kibana.rst:98
 msgid ""
 "Not this field name as it will be used when adding the variable to the "
 "Kibana installation script, which will be ``<%= customOptions.kibversion "
 "%>``."
-msgstr ""
+msgstr "Anote este nome de campo, pois será usado ao adicionar a variável ao script de instalação do Kibana, que será ``<%= customOptions.kibversion %>``."
 
 #: ../../library/kibana.rst:101
 msgid ""
@@ -335,29 +335,29 @@ msgid ""
 "dataset, or from a REST source query, however to remain flexible and "
 "leave all future version options available, we will use TEXT type in this"
 " example."
-msgstr ""
+msgstr "Usaremos o tipo TEXT para permitir que o usuário informe a versão necessária. Usar `Select` também é uma opção, que seria associada a uma OPTION LIST com opções de versão pré-preenchidas definidas via dataset CSV ou JSON, ou a partir de uma consulta de origem REST; no entanto, para permanecer flexível e deixar todas as opções de versões futuras disponíveis, usaremos o tipo TEXT neste exemplo."
 
 #: ../../library/kibana.rst:103
 msgid ""
 "Defined as ``Kibana Version``, which will be the label of the input field"
 " for the Kibana Version"
-msgstr ""
+msgstr "Definido como ``Kibana Version``, que será o rótulo do campo de entrada para a Versão do Kibana"
 
 #: ../../library/kibana.rst:105
 msgid ""
 "Added ``5.4.1`` so users know the proper format for entering the "
 "Elasticsearch URL at provision time."
-msgstr ""
+msgstr "Adicionado ``5.4.1`` para que os usuários saibam o formato correto para informar a URL do Elasticsearch no momento do provisionamento."
 
 #: ../../library/kibana.rst:107
 msgid ""
 "Defined as ``5.4.1`` as this is the default version of Elasticsearch "
 "installed by |morpheus|"
-msgstr ""
+msgstr "Definido como ``5.4.1``, pois esta é a versão padrão do Elasticsearch instalada pelo |morpheus|"
 
 #: ../../library/kibana.rst:109
 msgid "Enabled to ensure user defines the Kibana version to be installed"
-msgstr ""
+msgstr "Ativado para garantir que o usuário defina a versão do Kibana a ser instalada"
 
 #: ../../library/kibana.rst:111
 msgid ".. image:: /images/provisioning/library/kibana_version_option.png"

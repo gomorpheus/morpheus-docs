@@ -22,48 +22,48 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:2
 msgid "Single Node Install on CentOS"
-msgstr ""
+msgstr "Einzelknoteninstallation auf CentOS"
 
 #: ../../getting_started/additional/morpheusRb.rst:8
 #: ../../getting_started/installation/singleNode/centos.rst:4
 #: ../../getting_started/installation/singleNode/centos.rst:48
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/installation/singleNode/centos.rst:4
 msgid ""
 "Appliance Package links are available at https://app.morpheushub.com in "
 "the downloads section."
-msgstr ""
+msgstr "Links zu Appliance-Paketen finden Sie unter https://app.morpheushub.com im Bereich Downloads."
 
 #: ../../getting_started/installation/singleNode/centos.rst:7
 msgid "Quick Install"
-msgstr ""
+msgstr "Schnellinstallation"
 
 #: ../../getting_started/installation/singleNode/centos.rst:8
 msgid "Install the Appliance package and run ``sudo morpheus-ctl reconfigure``."
-msgstr ""
+msgstr "Installieren Sie das Appliance-Paket und führen Sie ``sudo morpheus-ctl reconfigure`` aus."
 
 #: ../../getting_started/installation/singleNode/centos.rst:10
 msgid ""
 "That is it. After the reconfigure completes, |morpheus| will start and be"
 " available at ``https://your_machine_name`` in a minute or few."
-msgstr ""
+msgstr "Das war’s. Nach Abschluss des Reconfigure startet |morpheus| und ist in ein bis wenigen Minuten unter ``https://your_machine_name`` verfügbar."
 
 #: ../../getting_started/installation/singleNode/centos.rst:13
 msgid "Step-by-step Install Instructions"
-msgstr ""
+msgstr "Schritt-für-Schritt-Installationsanleitung"
 
 #: ../../getting_started/installation/singleNode/centos.rst:15
 msgid "Ensure the |morpheus| Appliance host meets the minimum :ref:`Requirements`"
-msgstr ""
+msgstr "Stellen Sie sicher, dass der |morpheus|-Appliance-Host die Mindest-:ref:`Requirements` erfüllt"
 
 #: ../../getting_started/installation/singleNode/centos.rst:17
 msgid ""
 "Download the target version ``.rpm`` package for installation in a "
 "directory of your choosing. The package can be removed after successful "
 "installation."
-msgstr ""
+msgstr "Laden Sie das ``.rpm``-Paket der Zielversion zur Installation in ein Verzeichnis Ihrer Wahl herunter. Das Paket kann nach erfolgreicher Installation entfernt werden."
 
 #: ../../getting_started/installation/singleNode/centos.rst:19
 msgid ""
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:23
 msgid "Validate the package checksum matches source checksums. For example:"
-msgstr ""
+msgstr "Prüfen Sie, ob die Paket-Prüfsumme mit den Quell-Prüfsummen übereinstimmt. Zum Beispiel:"
 
 #: ../../getting_started/installation/singleNode/centos.rst:25
 msgid "sha256sum morpheus-appliance-$version.rpm"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:29
 msgid "Next install the rpm package"
-msgstr ""
+msgstr "Installieren Sie als Nächstes das rpm-Paket"
 
 #: ../../getting_started/installation/singleNode/centos.rst:31
 msgid "sudo rpm -ihv morpheus-appliance-x.x.x-1.x86_64.rpm"
@@ -94,7 +94,7 @@ msgid ""
 "``/etc/morpheus/morpheus.rb`` and changing the value of "
 "``appliance_url``. Additional Appliance configuration options are "
 "available below."
-msgstr ""
+msgstr "Standardmäßig verwendet appliance_url den Hostnamen der Maschine, z. B. ``https://your_machine_name``. Die Standard-URL kann geändert werden, indem Sie ``/etc/morpheus/morpheus.rb`` bearbeiten und den Wert von ``appliance_url`` anpassen. Weitere Appliance-Konfigurationsoptionen finden Sie unten."
 
 #: ../../getting_started/additional/morpheusRb.rst:6
 msgid ""
@@ -102,7 +102,7 @@ msgid ""
 " services within the morpheus.rb file located in "
 "``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items "
 "available in the ``morpheus.rb`` file."
-msgstr ""
+msgstr "Morpheus erlaubt zusätzliche erweiterte Anpassungen für systemverwaltete Dienste in der Datei morpheus.rb unter ``/etc/morpheus/morpheus.rb``. Nachfolgend eine Liste der unterstützten Einträge in der Datei ``morpheus.rb``."
 
 #: ../../getting_started/additional/morpheusRb.rst:8
 msgid ""
@@ -115,7 +115,7 @@ msgid ""
 " our `KnowledgeBase <https://support.morpheusdata.com/s/article"
 "/Configure-Morpheus-to-utilize-and-alternate-port-for-"
 "SSL?language=en_US>`_."
-msgstr ""
+msgstr "Dienstkonfigurationseinstellungen gelten nicht für externalisierte Dienste wie externe MySQL-, Elasticsearch- oder RabbitMQ-Cluster. Für externe Dienste sind nur Verbindungseinstellungen relevant. Um |morpheus| für alternative Ports für SSL zu konfigurieren, können zusätzliche Schritte nötig sein. Wenn das Anhängen eines Ports an ``appliance_url`` nicht funktioniert, lesen Sie den zugehörigen Artikel in unserer `KnowledgeBase <https://support.morpheusdata.com/s/article/Configure-Morpheus-to-utilize-and-alternate-port-for-SSL?language=en_US>`_."
 
 #: ../../getting_started/additional/morpheusRb.rst:10
 #, python-brace-format
@@ -297,7 +297,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:42
 msgid "After all configuration options have been set, run:"
-msgstr ""
+msgstr "Nachdem alle Konfigurationsoptionen gesetzt sind, führen Sie aus:"
 
 #: ../../getting_started/installation/singleNode/centos.rst:44
 msgid "sudo morpheus-ctl reconfigure"
@@ -309,7 +309,7 @@ msgid ""
 "editing ``/etc/morpheus/morpheus.rb`` and running ``sudo morpheus-ctl "
 "reconfigure`` again. Appliance and other services may need to be "
 "restarted depending on configuration changes."
-msgstr ""
+msgstr "Konfigurationsoptionen können nach dem ersten Reconfigure aktualisiert werden, indem Sie ``/etc/morpheus/morpheus.rb`` bearbeiten und erneut ``sudo morpheus-ctl reconfigure`` ausführen. Je nach Konfigurationsänderungen müssen Appliance und andere Dienste möglicherweise neu gestartet werden."
 
 #: ../../getting_started/installation/singleNode/centos.rst:50
 msgid ""
@@ -317,7 +317,7 @@ msgid ""
 "automatically start up and be available shortly. To monitor the UI "
 "startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the "
 "ascii logo accompanied by the install version and start time:"
-msgstr ""
+msgstr "Nach Abschluss der Installation startet der Dienst morpheus-ui automatisch und ist in Kürze verfügbar. Um den UI-Startprozess zu überwachen, führen Sie ``morpheus-ctl tail morpheus-ui`` aus und achten Sie auf das ASCII-Logo mit Installationsversion und Startzeit:"
 
 #: ../../getting_started/installation/singleNode/centos.rst:52
 msgid ""
@@ -335,7 +335,7 @@ msgstr ""
 msgid ""
 "There are additional install settings that can be viewed in the "
 ":ref:`additional_options` section."
-msgstr ""
+msgstr "Weitere Installationseinstellungen finden Sie im Abschnitt :ref:`additional_options`."
 
 #: ../../getting_started/installation/singleNode/centos.rst:65
 msgid ""
@@ -345,21 +345,21 @@ msgid ""
 "settings page where a license can be applied for use (if a license is "
 "required you may request one or purchase one by contacting your sales "
 "representative)."
-msgstr ""
+msgstr "Wenn der Browser auf die Appliance zeigt, erscheint ein Ersteinrichtungsassistent. Folgen Sie den Anweisungen auf dem Bildschirm und erstellen Sie das Master-Konto. Anschließend erscheint die Seite mit den Lizenzeinstellungen, auf der eine Lizenz angewendet werden kann (falls eine Lizenz erforderlich ist, können Sie eine anfordern oder erwerben, indem Sie Ihren Vertriebsmitarbeiter kontaktieren)."
 
 #: ../../getting_started/installation/singleNode/centos.rst:67
 msgid ""
 "More details on setting up infrastructure can be found throughout this "
 "guide."
-msgstr ""
+msgstr "Weitere Details zur Einrichtung der Infrastruktur finden Sie in diesem Leitfaden."
 
 #: ../../getting_started/installation/singleNode/centos.rst:69
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../getting_started/installation/singleNode/centos.rst:69
 msgid ""
 "If any issues occur it may be prudent to check the morpheus log for "
 "details at ``/var/log/morpheus/morpheus-ui/current``."
-msgstr ""
+msgstr "Bei Problemen kann es sinnvoll sein, das Morpheus-Protokoll unter ``/var/log/morpheus/morpheus-ui/current`` zu prüfen."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../tools/hpe_vm/network.rst:2
 msgid "Configure Network"
-msgstr ""
+msgstr "Netzwerk konfigurieren"
 
 #: ../../tools/hpe_vm/network.rst:4
 msgid ""
@@ -30,135 +30,135 @@ msgid ""
 " host's netplan configuration. It allows you to manage network "
 "interfaces, bonds, VLANs, and bridges without manually editing YAML "
 "files."
-msgstr ""
+msgstr "Die Menüoption **Configure Network** bietet einen grafischen Editor für die Netplan-Konfiguration des Hosts. Damit können Sie Netzwerkschnittstellen, Bonds, VLANs und Bridges verwalten, ohne YAML-Dateien manuell zu bearbeiten."
 
 #: ../../tools/hpe_vm/network.rst:7
 msgid "How It Works"
-msgstr ""
+msgstr "Funktionsweise"
 
 #: ../../tools/hpe_vm/network.rst:9
 msgid "Reads the current netplan configuration and network device status"
-msgstr ""
+msgstr "Liest die aktuelle Netplan-Konfiguration und den Status der Netzwerkgeräte"
 
 #: ../../tools/hpe_vm/network.rst:10
 msgid "Displays devices in a table with their type, name, addresses, and status"
-msgstr ""
+msgstr "Zeigt Geräte in einer Tabelle mit Typ, Name, Adressen und Status an"
 
 #: ../../tools/hpe_vm/network.rst:11
 msgid "Supports adding, editing, and removing network devices"
-msgstr ""
+msgstr "Unterstützt das Hinzufügen, Bearbeiten und Entfernen von Netzwerkgeräten"
 
 #: ../../tools/hpe_vm/network.rst:12
 msgid "Generates and previews the resulting netplan YAML before applying"
-msgstr ""
+msgstr "Erzeugt und zeigt die resultierende Netplan-YAML zur Vorschau an, bevor sie angewendet wird"
 
 #: ../../tools/hpe_vm/network.rst:15
 msgid "Supported Device Types"
-msgstr ""
+msgstr "Unterstützte Gerätetypen"
 
 #: ../../tools/hpe_vm/network.rst:17
 msgid "The editor supports all device types defined in netplan:"
-msgstr ""
+msgstr "Der Editor unterstützt alle in Netplan definierten Gerätetypen:"
 
 #: ../../tools/hpe_vm/network.rst:19
 msgid "**Ethernet** — Physical network interfaces"
-msgstr ""
+msgstr "**Ethernet** — Physische Netzwerkschnittstellen"
 
 #: ../../tools/hpe_vm/network.rst:20
 msgid "**Bond** — Link aggregation (active-backup, balance-rr, 802.3ad/LACP)"
-msgstr ""
+msgstr "**Bond** — Link-Aggregation (active-backup, balance-rr, 802.3ad/LACP)"
 
 #: ../../tools/hpe_vm/network.rst:21
 msgid "**VLAN** — 802.1Q tagged interfaces"
-msgstr ""
+msgstr "**VLAN** — 802.1Q-getaggte Schnittstellen"
 
 #: ../../tools/hpe_vm/network.rst:22
 msgid "**Bridge** — Linux bridge devices"
-msgstr ""
+msgstr "**Bridge** — Linux-Bridge-Geräte"
 
 #: ../../tools/hpe_vm/network.rst:25
 msgid "Workflow"
-msgstr ""
+msgstr "Workflow"
 
 #: ../../tools/hpe_vm/network.rst:27
 msgid "Select **Configure Network** from the main menu"
-msgstr ""
+msgstr "**Configure Network** im Hauptmenü auswählen"
 
 #: ../../tools/hpe_vm/network.rst:28
 msgid "The current network devices are listed in a table"
-msgstr ""
+msgstr "Die aktuellen Netzwerkgeräte werden in einer Tabelle aufgelistet"
 
 #: ../../tools/hpe_vm/network.rst:29
 msgid "Use the buttons to:"
-msgstr ""
+msgstr "Verwenden Sie die Schaltflächen zum:"
 
 #: ../../tools/hpe_vm/network.rst:31
 msgid "**Add** — Create a new device definition"
-msgstr ""
+msgstr "**Add** — Eine neue Gerätedefinition erstellen"
 
 #: ../../tools/hpe_vm/network.rst:32
 msgid "**Edit** — Modify the selected device"
-msgstr ""
+msgstr "**Edit** — Das ausgewählte Gerät ändern"
 
 #: ../../tools/hpe_vm/network.rst:33
 msgid "**Remove** — Delete a device definition"
-msgstr ""
+msgstr "**Remove** — Eine Gerätedefinition löschen"
 
 #: ../../tools/hpe_vm/network.rst:34
 msgid "**Preview** — View the generated netplan YAML"
-msgstr ""
+msgstr "**Preview** — Die erzeugte Netplan-YAML anzeigen"
 
 #: ../../tools/hpe_vm/network.rst:36
 msgid "When ready, select **Save** to apply changes"
-msgstr ""
+msgstr "Wenn Sie bereit sind, **Save** auswählen, um die Änderungen anzuwenden"
 
 #: ../../tools/hpe_vm/network.rst:39
 msgid "Applying Changes"
-msgstr ""
+msgstr "Änderungen anwenden"
 
 #: ../../tools/hpe_vm/network.rst:41
 msgid "When you save:"
-msgstr ""
+msgstr "Wenn Sie speichern:"
 
 #: ../../tools/hpe_vm/network.rst:43
 msgid "The existing netplan YAML is backed up"
-msgstr ""
+msgstr "Die vorhandene Netplan-YAML wird gesichert"
 
 #: ../../tools/hpe_vm/network.rst:44
 msgid "A new configuration is written to ``/etc/netplan/60-mvm.yaml``"
-msgstr ""
+msgstr "Eine neue Konfiguration wird nach ``/etc/netplan/60-mvm.yaml`` geschrieben"
 
 #: ../../tools/hpe_vm/network.rst:45
 msgid "``netplan apply`` is executed to activate the changes"
-msgstr ""
+msgstr "``netplan apply`` wird ausgeführt, um die Änderungen zu aktivieren"
 
 #: ../../tools/hpe_vm/network.rst:46
 msgid ""
 "If the network becomes unreachable, an automatic rollback restores the "
 "previous configuration"
-msgstr ""
+msgstr "Wenn das Netzwerk unerreichbar wird, stellt ein automatischer Rollback die vorherige Konfiguration wieder her"
 
 #: ../../tools/hpe_vm/network.rst:48
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../tools/hpe_vm/network.rst:48
 msgid ""
 "Network configuration changes can cause loss of connectivity. Ensure you "
 "have physical or iLO console access before modifying network settings."
-msgstr ""
+msgstr "Änderungen an der Netzwerkkonfiguration können zu Verbindungsverlust führen. Stellen Sie sicher, dass Sie physischen oder iLO-Konsolenzugriff haben, bevor Sie Netzwerkeinstellungen ändern."
 
 #: ../../tools/hpe_vm/network.rst:51
 msgid "Validation"
-msgstr ""
+msgstr "Validierung"
 
 #: ../../tools/hpe_vm/network.rst:53
 msgid "IP addresses must be in CIDR notation (e.g., ``192.168.1.10/24``)"
-msgstr ""
+msgstr "IP-Adressen müssen in CIDR-Notation angegeben werden (z. B. ``192.168.1.10/24``)"
 
 #: ../../tools/hpe_vm/network.rst:54
 msgid ""
 "Device names must reference existing physical interfaces or previously "
 "defined virtual devices"
-msgstr ""
+msgstr "Gerätenamen müssen auf vorhandene physische Schnittstellen oder zuvor definierte virtuelle Geräte verweisen"
 

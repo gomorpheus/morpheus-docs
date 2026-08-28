@@ -22,15 +22,15 @@ msgstr ""
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:2
 msgid "Instance Tabs"
-msgstr ""
+msgstr "Guias de Instância"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:4
 msgid "Customize the UI for your Instances by providing your own tabs."
-msgstr ""
+msgstr "Personalize a interface para suas Instâncias fornecendo suas próprias guias."
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:7
 msgid "Setup"
-msgstr ""
+msgstr "Configuração"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:8
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 "``com.morpheusdata.core.AbstractInstanceTabProvider``. When the Morpheus "
 "UI builds the Instance UI it calls the ``renderTemplate`` method. Below "
 "is a simple example binding the Instance object to the template model."
-msgstr ""
+msgstr "Crie uma nova classe que estenda ``com.morpheusdata.core.AbstractInstanceTabProvider``. Quando a interface do Morpheus constrói a interface da Instância, ela chama o método ``renderTemplate``. Abaixo está um exemplo simples que vincula o objeto Instance ao modelo do template."
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:10
 #, python-brace-format
@@ -53,13 +53,13 @@ msgstr ""
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:20
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:20
 msgid ""
 "Use ``MorpheusContext.buildInstanceConfig`` to get more details about "
 "your Instance. See ``com.morpheusdata.model.TaskConfig``"
-msgstr ""
+msgstr "Use ``MorpheusContext.buildInstanceConfig`` para obter mais detalhes sobre sua Instância. Consulte ``com.morpheusdata.model.TaskConfig``"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:22
 msgid ""
@@ -67,11 +67,11 @@ msgid ""
 "provided template engine. To override this default, implement the "
 "``com.morpheusdata.core.InstanceTabProvider`` interface and then write "
 "your own ``getRenderer()`` method."
-msgstr ""
+msgstr "Handlebars <https://github.com/jknack/handlebars.java> é o mecanismo de template padrão fornecido. Para substituir esse padrão, implemente a interface ``com.morpheusdata.core.InstanceTabProvider`` e escreva seu próprio método ``getRenderer()``."
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:26
 msgid "Templating"
-msgstr ""
+msgstr "Templates"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:27
 msgid ""
@@ -79,15 +79,15 @@ msgid ""
 "core/blob/master/morpheus-plugin-docs/src/docs/asciidoc/Views.adoc> "
 "section and the documentation for your templating engine for specific "
 "syntax."
-msgstr ""
+msgstr "Consulte a seção Views <https://github.com/gomorpheus/morpheus-plugin-core/blob/master/morpheus-plugin-docs/src/docs/asciidoc/Views.adoc> e a documentação do seu mecanismo de template para a sintaxe específica."
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:31
 msgid "Security Policies"
-msgstr ""
+msgstr "Políticas de Segurança"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:34
 msgid "User Permissions"
-msgstr ""
+msgstr "Permissões de Usuário"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:35
 msgid ""
@@ -95,7 +95,7 @@ msgid ""
 " method is called to determine if the current user can view the custom "
 "Instance Tab. For example, you may wish to check that the current "
 "``User`` has been granted the custom permission defined by your plugin."
-msgstr ""
+msgstr "Antes de um template ser renderizado na interface, o método ``InstanceTabProvider.show`` é chamado para determinar se o usuário atual pode visualizar a guia personalizada da Instância. Por exemplo, você pode verificar se o ``User`` atual recebeu a permissão personalizada definida pelo seu plugin."
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:37
 msgid ""
@@ -114,7 +114,7 @@ msgstr ""
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:52
 msgid "Content Security Policy"
-msgstr ""
+msgstr "Política de Segurança de Conteúdo"
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:53
 msgid ""
@@ -122,7 +122,7 @@ msgid ""
 "stylesheets, or frames, you will need to customize the Morpheus "
 "``Content-Security-Policy`` Header to allow those elements to be loaded "
 "in the browser."
-msgstr ""
+msgstr "Se sua interface personalizada precisar incluir recursos externos, como scripts, folhas de estilo ou frames, você precisará personalizar o cabeçalho ``Content-Security-Policy`` do Morpheus para permitir que esses elementos sejam carregados no navegador."
 
 #: ../../administration/integrations/plugin_examples/PluginsTab.rst:55
 #, python-brace-format

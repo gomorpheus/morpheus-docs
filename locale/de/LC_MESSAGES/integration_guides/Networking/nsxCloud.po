@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Networking/nsxCloud.rst:2
 msgid "NSX Cloud"
-msgstr ""
+msgstr "NSX Cloud"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:4
 msgid ""
@@ -32,43 +32,43 @@ msgid ""
 "Cloud integration with VMware vCenter-type Clouds. This offers robust "
 "syncing and manipulation of NSX Cloud constructs as well as the ability "
 "to consume those networks when provisioning to VMware Cloud targets."
-msgstr ""
+msgstr "NSX Cloud ist eine Netzwerklösung, mit der Administratoren Netzwerk- und Sicherheitsrichtlinien für Anwendungen in privaten und öffentlichen Clouds definieren können. Bei Integration mit |morpheus| können Benutzer eine NSX-Cloud-Integration mit Clouds vom Typ VMware vCenter anwenden. Dies bietet robuste Synchronisierung und Manipulation von NSX-Cloud-Konstrukten sowie die Möglichkeit, diese Netzwerke bei der Provisionierung auf VMware-Cloud-Ziele zu nutzen."
 
 #: ../../integration_guides/Networking/nsxCloud.rst:7
 msgid "Features"
-msgstr ""
+msgstr "Features"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:9
 msgid "Sync and manage DHCP servers"
-msgstr ""
+msgstr "DHCP-Server synchronisieren und verwalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:10
 msgid "Sync and manage DHCP relays"
-msgstr ""
+msgstr "DHCP-Relays synchronisieren und verwalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:11
 msgid "Sync and manage network segments"
-msgstr ""
+msgstr "Netzwerksegmente synchronisieren und verwalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:12
 msgid "Sync and manage distributed firewall rules"
-msgstr ""
+msgstr "Verteilte Firewall-Regeln synchronisieren und verwalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:13
 msgid "Sync and manage tier-1 routers"
-msgstr ""
+msgstr "Tier-1-Router synchronisieren und verwalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:14
 msgid "Sync and manage groups, including management groups and compute groups"
-msgstr ""
+msgstr "Gruppen synchronisieren und verwalten, einschließlich Management- und Compute-Gruppen"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:15
 msgid "Integration with VMware-type Clouds"
-msgstr ""
+msgstr "Integration mit Clouds vom Typ VMware"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:18
 msgid "Integrating with VMware Clouds"
-msgstr ""
+msgstr "Integration mit VMware Clouds"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:20
 msgid ""
@@ -85,7 +85,7 @@ msgid ""
 "Management Gateway tab within it. Edit the list of sources for your "
 "vCenter inbound rules. The IP address for the |morpheus| appliance should"
 " be among the allowed inbound addresses."
-msgstr ""
+msgstr "Die Integration mit einer VMware Cloud erfordert eine bereits vorhandene Cloud-Integration. Wenn Sie zuerst eine VMware Cloud integrieren müssen, finden Sie vollständige Details im `VMware Cloud integration guide <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/vmware/vmware.html>`_ in der |morpheus|-UI-Dokumentation. Wenn Sie die VMware Cloud jetzt erstellen, beachten Sie, dass Sie eingehende Firewall-Regeln aktualisieren müssen, damit die |morpheus|-Appliance eine Verbindung mit VMware herstellen kann. Wird dieser Schritt nicht ausgeführt, schlagen alle Versuche fehl, diese Cloud-Integration zu erstellen. Melden Sie sich an der NSX-Cloud-Webkonsole an und klicken Sie auf die Registerkarte Security. Gehen Sie innerhalb der Security-Registerkarte zum Abschnitt Gateway Firewall und dort zur Registerkarte Management Gateway. Bearbeiten Sie die Liste der Quellen für Ihre eingehenden vCenter-Regeln. Die IP-Adresse der |morpheus|-Appliance sollte unter den zulässigen eingehenden Adressen sein."
 
 #: ../../integration_guides/Networking/nsxCloud.rst:22
 msgid ""
@@ -93,11 +93,11 @@ msgid ""
 ":menuselection:`Infrastructure --> Network --> Integrations`. Click "
 ":guilabel:`+ ADD` and then click \"NSX Cloud\". Make the following "
 "configurations to create the integration with NSX Cloud:"
-msgstr ""
+msgstr "Um eine neue NSX-Cloud-Integration zu beginnen, navigieren Sie zu :menuselection:`Infrastructure --> Network --> Integrations`. Klicken Sie auf :guilabel:`+ ADD` und anschließend auf „NSX Cloud“. Nehmen Sie die folgenden Konfigurationen vor, um die Integration mit NSX Cloud zu erstellen:"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:24
 msgid "**NAME:** A friendly name for the NSX Cloud integration in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Ein sprechender Name für die NSX-Cloud-Integration in |morpheus|"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:25
 msgid ""
@@ -105,7 +105,7 @@ msgid ""
 "Select \"Public\" to make the NSX Cloud integration available to all "
 "Tenants. Select \"Private\" to reserve the integration for the "
 "|mastertenant|"
-msgstr ""
+msgstr "**VISIBILITY:** Diese Option ist nur vom |mastertenant| aus verfügbar. Wählen Sie „Public“, um die NSX-Cloud-Integration für alle Mandanten verfügbar zu machen. Wählen Sie „Private“, um die Integration dem |mastertenant| vorzubehalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:26
 msgid ""
@@ -113,19 +113,19 @@ msgid ""
 "something like this: https://nsx-xx-xx-xx-xx.rp.vmwarevmc.com/vmc"
 "/reverse-proxy/api/orgs/xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/sddcs/xxxxxx-"
 "xxxx-xxxx-xxxx-xxxxxxxxxxx"
-msgstr ""
+msgstr "**API HOST:** Die API-Zugriffs-URL für NSX Cloud. Ihre API-URL sieht etwa so aus: https://nsx-xx-xx-xx-xx.rp.vmwarevmc.com/vmc/reverse-proxy/api/orgs/xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx/sddcs/xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:27
 msgid ""
 "**API KEY:** An API token granting sufficient access for |morpheus| to "
 "work with all relevant NSX constructs"
-msgstr ""
+msgstr "**API KEY:** Ein API-Token mit ausreichendem Zugriff, damit |morpheus| mit allen relevanten NSX-Konstrukten arbeiten kann"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:28
 msgid ""
 "**CLOUD:** Select the VMware Cloud integration that NSX Cloud should "
 "integrate with"
-msgstr ""
+msgstr "**CLOUD:** Wählen Sie die VMware-Cloud-Integration aus, mit der NSX Cloud integriert werden soll"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:30
 msgid ""
@@ -136,11 +136,11 @@ msgid ""
 "VMware Cloud (|InfClo| > Selected VMware Cloud > EDIT button). Expand the"
 " Advanced Options panel of the EDIT CLOUD modal and the NSX Cloud "
 "integration should be set under the NETWORK MODE configuration."
-msgstr ""
+msgstr "Wenn Sie fertig sind, klicken Sie auf :guilabel:`ADD NETWORK INTEGRATION`. Nach kurzer Zeit wird die neue Integration erstellt und erscheint neben anderen Netzwerkintegrationen auf der Liste der Netzwerkintegrationen. Wir können prüfen, dass NSX Cloud und die VMware Cloud integriert sind, indem wir die VMware Cloud bearbeiten (|InfClo| > ausgewählte VMware Cloud > Schaltfläche EDIT). Erweitern Sie den Bereich Advanced Options des Modals EDIT CLOUD; die NSX-Cloud-Integration sollte unter der Konfiguration NETWORK MODE gesetzt sein."
 
 #: ../../integration_guides/Networking/nsxCloud.rst:33
 msgid "Managing NSX Cloud"
-msgstr ""
+msgstr "NSX Cloud verwalten"
 
 #: ../../integration_guides/Networking/nsxCloud.rst:35
 msgid ""
@@ -150,5 +150,5 @@ msgid ""
 "the NSX Cloud integration that was just created. From this section, we "
 "can create, manage, and delete DHCP servers and relays, network segments,"
 " firewall rules, tier-1 routers, and groups."
-msgstr ""
+msgstr "Nach Abschluss der Integration können Sie den Detailbereich der neuen Integration prüfen. Wählen Sie auf der Seite der Netzwerkintegrationsliste (:menuselection:`Infrastructure --> Network --> Integrations`) die soeben erstellte NSX-Cloud-Integration. In diesem Bereich können wir DHCP-Server und -Relays, Netzwerksegmente, Firewall-Regeln, Tier-1-Router und Gruppen erstellen, verwalten und löschen."
 

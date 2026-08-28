@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Deployments/github.rst:2
 msgid "Github"
-msgstr ""
+msgstr "Github"
 
 #: ../../integration_guides/Deployments/github.rst:4
 msgid ""
@@ -38,11 +38,11 @@ msgid ""
 "code from your repositories is invoked in Tasks, Workflows, Spec "
 "Templates, and more, |morpheus| will pull the current live version "
 "(depending on configuration) so any recent changes to the code are used."
-msgstr ""
+msgstr "Intégrez votre compte Github avec |morpheus| et accédez à tous vos dépôts publics et privés dans la plateforme. Utilisez votre code existant et tout code futur pour créer des tâches et workflows d'automatisation, intégrer des modèles Spec pour Terraform et Kubernetes afin de créer des configurations d'applications, et plus encore. Les dépôts Github intégrés alimentent également la page de liste Code (|ProCod|) où les dépôts peuvent être parcourus et les fichiers individuels consultés. Les dépôts peuvent être configurés comme cibles `import and export <https://docs.morpheusdata.com/en/latest/provisioning/code/code.html?highlight=import#import-and-export>`_ depuis les pages de détail Code. Chaque fois que du code de vos dépôts est invoqué dans des tâches, workflows, modèles Spec, etc., |morpheus| récupérera la version en direct actuelle (selon la configuration) afin que les modifications récentes du code soient utilisées."
 
 #: ../../integration_guides/Deployments/github.rst:7
 msgid "Generating a Personal Access Token (Classic)"
-msgstr ""
+msgstr "Génération d'un jeton d'accès personnel (Classic)"
 
 #: ../../integration_guides/Deployments/github.rst:9
 msgid ""
@@ -51,68 +51,68 @@ msgid ""
 " authentication is no longer possible. |morpheus| accepts both classic "
 "personal access tokens and fine-grained tokens (described in the next "
 "section). To create a new access token:"
-msgstr ""
+msgstr "Depuis le 13 août 2021, en raison des changements de politique sur la plateforme Github, |morpheus| nécessite un jeton d'accès pour s'authentifier auprès de Github. L'authentification par mot de passe n'est plus possible. |morpheus| accepte à la fois les jetons d'accès personnels classiques et les jetons à permissions fines (décrits dans la section suivante). Pour créer un nouveau jeton d'accès :"
 
 #: ../../integration_guides/Deployments/github.rst:11
 #: ../../integration_guides/Deployments/github.rst:30
 msgid "Log in to Github"
-msgstr ""
+msgstr "Connectez-vous à Github"
 
 #: ../../integration_guides/Deployments/github.rst:12
 #: ../../integration_guides/Deployments/github.rst:31
 msgid ""
 "Click on your account profile avatar in the upper-right portion of the "
 "window"
-msgstr ""
+msgstr "Cliquez sur l'avatar de profil de votre compte dans la partie supérieure droite de la fenêtre"
 
 #: ../../integration_guides/Deployments/github.rst:13
 #: ../../integration_guides/Deployments/github.rst:32
 msgid "Click Settings"
-msgstr ""
+msgstr "Cliquez sur Settings"
 
 #: ../../integration_guides/Deployments/github.rst:14
 #: ../../integration_guides/Deployments/github.rst:33
 msgid "From the left nav, click on Developer Settings"
-msgstr ""
+msgstr "Dans la navigation de gauche, cliquez sur Developer Settings"
 
 #: ../../integration_guides/Deployments/github.rst:15
 #: ../../integration_guides/Deployments/github.rst:34
 msgid "Once again from the left nav, click Personal access tokens"
-msgstr ""
+msgstr "Encore une fois dans la navigation de gauche, cliquez sur Personal access tokens"
 
 #: ../../integration_guides/Deployments/github.rst:16
 msgid "Click \"Tokens (classic)\""
-msgstr ""
+msgstr "Cliquez sur « Tokens (classic) »"
 
 #: ../../integration_guides/Deployments/github.rst:17
 #: ../../integration_guides/Deployments/github.rst:36
 msgid "Click Generate new token"
-msgstr ""
+msgstr "Cliquez sur Generate new token"
 
 #: ../../integration_guides/Deployments/github.rst:18
 msgid "Click \"Generate new token (classic)\""
-msgstr ""
+msgstr "Cliquez sur « Generate new token (classic) »"
 
 #: ../../integration_guides/Deployments/github.rst:19
 msgid "Give the new token at least access to everything in the \"repo\" scope"
-msgstr ""
+msgstr "Accordez au nouveau jeton au minimum l'accès à tout dans la portée « repo »"
 
 #: ../../integration_guides/Deployments/github.rst:20
 #: ../../integration_guides/Deployments/github.rst:38
 msgid "Click Generate token"
-msgstr ""
+msgstr "Cliquez sur Generate token"
 
 #: ../../integration_guides/Deployments/github.rst:21
 #: ../../integration_guides/Deployments/github.rst:39
 msgid ""
 "Copy the access token and save it for the next step when the integration "
 "is created"
-msgstr ""
+msgstr "Copiez le jeton d'accès et enregistrez-le pour l'étape suivante lors de la création de l'intégration"
 
 #: ../../integration_guides/Deployments/github.rst:23
 #: ../../integration_guides/Deployments/github.rst:41
 msgid "Tip"
-msgstr ""
+msgstr "Conseil"
 
 #: ../../integration_guides/Deployments/github.rst:23
 msgid ""
@@ -124,11 +124,11 @@ msgid ""
 "work. This could lead to failed provisioning and time spent "
 "troubleshooting to isolate the issue until the Github integration is "
 "refreshed with a new access token."
-msgstr ""
+msgstr "Nous recommandons d'utiliser un jeton de longue durée ; Github inclut même l'option de ne pas définir d'expiration sur vos jetons (pour les jetons d'accès personnels classiques uniquement, pas les jetons à permissions fines). Si le jeton expire, toute automatisation |morpheus|, plan d'application et modèle Spec Terraform ou Kubernetes basés sur du code contenu dans vos dépôts ne fonctionnera plus. Cela peut entraîner des échecs de provisionnement et du temps passé à isoler le problème jusqu'à ce que l'intégration Github soit actualisée avec un nouveau jeton d'accès."
 
 #: ../../integration_guides/Deployments/github.rst:26
 msgid "Generating a Fine-Grained Token"
-msgstr ""
+msgstr "Génération d'un jeton à permissions fines"
 
 #: ../../integration_guides/Deployments/github.rst:28
 msgid ""
@@ -137,17 +137,17 @@ msgid ""
 " authentication is no longer possible. |morpheus| accepts both classic "
 "personal access tokens and fine-grained tokens. To create a new fine-"
 "grained access token:"
-msgstr ""
+msgstr "Depuis le 13 août 2021, en raison des changements de politique sur la plateforme Github, |morpheus| nécessite un jeton d'accès pour s'authentifier auprès de Github. L'authentification par mot de passe n'est plus possible. |morpheus| accepte à la fois les jetons d'accès personnels classiques et les jetons à permissions fines. Pour créer un nouveau jeton d'accès à permissions fines :"
 
 #: ../../integration_guides/Deployments/github.rst:35
 msgid "Click \"Fine-grained tokens\""
-msgstr ""
+msgstr "Cliquez sur « Fine-grained tokens »"
 
 #: ../../integration_guides/Deployments/github.rst:37
 msgid ""
 "Give the token access to all repositories unless you will only need to "
 "work with specific repositories within |morpheus|"
-msgstr ""
+msgstr "Accordez au jeton l'accès à tous les dépôts sauf si vous n'aurez besoin de travailler qu'avec des dépôts spécifiques dans |morpheus|"
 
 #: ../../integration_guides/Deployments/github.rst:41
 msgid ""
@@ -157,11 +157,11 @@ msgid ""
 "contained in your repositories will no longer work. This could lead to "
 "failed provisioning and time spent troubleshooting to isolate the issue "
 "until the Github integration is refreshed with a new access token."
-msgstr ""
+msgstr "Les jetons à permissions fines peuvent être créés avec une date d'expiration allant jusqu'à un an. Si le jeton expire, toute automatisation |morpheus|, plan d'application et modèle Spec Terraform ou Kubernetes basés sur du code contenu dans vos dépôts ne fonctionnera plus. Cela peut entraîner des échecs de provisionnement et du temps passé à isoler le problème jusqu'à ce que l'intégration Github soit actualisée avec un nouveau jeton d'accès."
 
 #: ../../integration_guides/Deployments/github.rst:44
 msgid "Creating an Integration"
-msgstr ""
+msgstr "Création d'une intégration"
 
 #: ../../integration_guides/Deployments/github.rst:46
 msgid ""
@@ -169,58 +169,58 @@ msgid ""
 "section (|AdmInt|) or in the code integrations section (|ProCodInt|). You"
 " will need a Github access token to complete this step, see the prior "
 "section for instructions on obtaining a Github access code."
-msgstr ""
+msgstr "Les nouvelles intégrations Github sont créées soit dans la section intégrations globales (|AdmInt|), soit dans la section intégrations de code (|ProCodInt|). Vous aurez besoin d'un jeton d'accès Github pour terminer cette étape ; consultez la section précédente pour obtenir des instructions sur l'obtention d'un code d'accès Github."
 
 #: ../../integration_guides/Deployments/github.rst:48
 msgid ""
 "Navigate to the global integrations section (|AdmInt|) or the code "
 "integrations section (|ProCodInt|)"
-msgstr ""
+msgstr "Accédez à la section intégrations globales (|AdmInt|) ou à la section intégrations de code (|ProCodInt|)"
 
 #: ../../integration_guides/Deployments/github.rst:49
 msgid "Click :guilabel:`+ADD`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ADD`"
 
 #: ../../integration_guides/Deployments/github.rst:50
 msgid "Click Github"
-msgstr ""
+msgstr "Cliquez sur Github"
 
 #: ../../integration_guides/Deployments/github.rst:51
 msgid "Configure the following:"
-msgstr ""
+msgstr "Configurez les éléments suivants :"
 
 #: ../../integration_guides/Deployments/github.rst:53
 msgid "**NAME:** A friendly name for the Github integration in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Un nom convivial pour l'intégration Github dans |morpheus|"
 
 #: ../../integration_guides/Deployments/github.rst:54
 msgid ""
 "**ENABLED:** When marked, this Github integration is active and any code "
 "repositories are available for building |morpheus| automation and other "
 "constructs within the platform"
-msgstr ""
+msgstr "**ENABLED:** Lorsque coché, cette intégration Github est active et tous les dépôts de code sont disponibles pour créer de l'automatisation |morpheus| et d'autres constructions dans la plateforme"
 
 #: ../../integration_guides/Deployments/github.rst:55
 msgid "**USERNAME:** The username for your Github account"
-msgstr ""
+msgstr "**USERNAME:** Le nom d'utilisateur de votre compte Github"
 
 #: ../../integration_guides/Deployments/github.rst:56
 msgid ""
 "**PASSWORD:** Copy your access token here rather than in the \"ACCESS "
 "TOKEN\" field. See the \"Important\" box below for additional details"
-msgstr ""
+msgstr "**PASSWORD:** Copiez votre jeton d'accès ici plutôt que dans le champ « ACCESS TOKEN ». Consultez la zone « Important » ci-dessous pour plus de détails"
 
 #: ../../integration_guides/Deployments/github.rst:57
 msgid ""
 "**ACCESS TOKEN:** Do not use this field. See the \"Important\" box below "
 "for additional details"
-msgstr ""
+msgstr "**ACCESS TOKEN:** N'utilisez pas ce champ. Consultez la zone « Important » ci-dessous pour plus de détails"
 
 #: ../../integration_guides/Deployments/github.rst:58
 msgid ""
 "**KEY PAIR:** (Optional) Select a stored SSH keypair for Github SSH "
 "authentication"
-msgstr ""
+msgstr "**KEY PAIR:** (Optionnel) Sélectionnez une paire de clés SSH stockée pour l'authentification SSH Github"
 
 #: ../../integration_guides/Deployments/github.rst:59
 msgid ""
@@ -230,15 +230,15 @@ msgid ""
 "minutes old. In general, this should be left unmarked unless you are "
 "experiencing performance issues related to very large amounts of code "
 "being invoked many times during a deployment"
-msgstr ""
+msgstr "**ENABLE GIT REPOSITORY CACHING:** Lorsque décoché, |morpheus| récupère le code à jour depuis le dépôt à chaque invocation. Lorsque coché, |morpheus| utilisera une version en cache du code si elle date de moins de cinq minutes. En général, cette option doit rester décochée sauf si vous rencontrez des problèmes de performance liés à de très grandes quantités de code invoquées de nombreuses fois pendant un déploiement"
 
 #: ../../integration_guides/Deployments/github.rst:61
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../integration_guides/Deployments/github.rst:63
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../integration_guides/Deployments/github.rst:63
 msgid ""
@@ -250,21 +250,21 @@ msgid ""
 "is pasted into the PASSWORD field. New Github integrations should be "
 "created by pasting the access token in the PASSWORD field and the ACCESS "
 "TOKEN field should be ignored."
-msgstr ""
+msgstr "Votre jeton d'accès doit être collé dans le champ PASSWORD et non dans le champ ACCESS TOKEN. Si le champ ACCESS TOKEN est utilisé, le dépôt sera créé avec succès et de nombreuses fonctionnalités fonctionneront. Cependant, dans les pages de détail Code (|ProCod| > page de détail du code sélectionné), vous ne pourrez pas parcourir les fichiers des dépôts Github privés sauf si le jeton d'accès est collé dans le champ PASSWORD. Les nouvelles intégrations Github doivent être créées en collant le jeton d'accès dans le champ PASSWORD ; le champ ACCESS TOKEN doit être ignoré."
 
 #: ../../integration_guides/Deployments/github.rst:65
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/Deployments/github.rst:65
 msgid ""
 "In certain cases, it can take several seconds for the integration process"
 " to complete and the ADD INTEGRATION modal to be dismissed."
-msgstr ""
+msgstr "Dans certains cas, le processus d'intégration peut prendre plusieurs secondes et la fenêtre modale ADD INTEGRATION peut mettre du temps à se fermer."
 
 #: ../../integration_guides/Deployments/github.rst:68
 msgid "Viewing an Integrated Github Account"
-msgstr ""
+msgstr "Consultation d'un compte Github intégré"
 
 #: ../../integration_guides/Deployments/github.rst:70
 msgid ""
@@ -275,7 +275,7 @@ msgid ""
 "the account. We can also click in to each repository to view its files "
 "and folders, as well as create specific types of automation or Spec "
 "Templates from the files directly in this view."
-msgstr ""
+msgstr "Lorsque l'authentification réussit, cliquez sur la nouvelle intégration Github dans la liste des intégrations disponibles. L'onglet Organizations listera chaque organisation associée au compte Github. L'onglet Repositories liste tous les dépôts publics et privés associés au compte. Vous pouvez également cliquer sur chaque dépôt pour consulter ses fichiers et dossiers, ainsi que créer des types spécifiques d'automatisation ou de modèles Spec directement depuis les fichiers dans cette vue."
 
 #: ../../integration_guides/Deployments/github.rst:72
 msgid ".. image:: /images/integration_guides/github/github.png"

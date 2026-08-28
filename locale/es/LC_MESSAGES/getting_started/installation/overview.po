@@ -28,11 +28,11 @@ msgstr "Descripción general de la instalación"
 msgid ""
 "|morpheus| supports two primary deployment methods. Choose the path that "
 "fits your environment:"
-msgstr ""
+msgstr "|morpheus| admite dos métodos de implementación principales. Elija la ruta que se adapte a su entorno:"
 
 #: ../../getting_started/installation/overview.rst:11
 msgid "HPE HVM Deployment (Recommended)"
-msgstr ""
+msgstr "Implementación HPE HVM (recomendada)"
 
 #: ../../getting_started/installation/overview.rst:13
 msgid ""
@@ -40,31 +40,31 @@ msgid ""
 "deployed as a virtual appliance directly onto an HVM host using the **HPE"
 " Morpheus Manager Installer**. This is the fastest and simplest path to a"
 " running |morpheus| environment. This approach:"
-msgstr ""
+msgstr "Para clientes que utilizan HPE HVM como plataforma de hipervisor, |morpheus| se implementa como un dispositivo virtual directamente en un host HVM usando el **HPE Morpheus Manager Installer**. Esta es la ruta más rápida y sencilla hacia un entorno |morpheus| en ejecución. Este enfoque:"
 
 #: ../../getting_started/installation/overview.rst:15
 msgid "Takes **15–30 minutes** from start to a running appliance"
-msgstr ""
+msgstr "Toma **15–30 minutos** desde el inicio hasta un dispositivo en ejecución"
 
 #: ../../getting_started/installation/overview.rst:16
 msgid ""
 "Requires no manual package installation — the installer handles image "
 "upload, VM creation, and configuration"
-msgstr ""
+msgstr "No requiere instalación manual de paquetes — el instalador gestiona la carga de imagen, creación de VM y configuración"
 
 #: ../../getting_started/installation/overview.rst:17
 msgid "Deploys a fully self-contained appliance from a QCOW2 image"
-msgstr ""
+msgstr "Implementa un dispositivo completamente autocontenido desde una imagen QCOW2"
 
 #: ../../getting_started/installation/overview.rst:18
 msgid ""
 "Can deploy a local QCOW2 image entirely over the local network without "
 "internet access"
-msgstr ""
+msgstr "Puede implementar una imagen QCOW2 local completamente a través de la red local sin acceso a internet"
 
 #: ../../getting_started/installation/overview.rst:20
 msgid "**To get started with HVM deployment:**"
-msgstr ""
+msgstr "**Para comenzar con la implementación HVM:**"
 
 #: ../../getting_started/installation/overview.rst:22
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 "</getting_started/installation/hvm_host_prep>` — Install HVM OS 24.04 on "
 "bare-metal servers and configure networking. This is required before "
 "running the installer."
-msgstr ""
+msgstr ":doc:`Prepare sus host(s) HVM </getting_started/installation/hvm_host_prep>` — Instale HVM OS 24.04 en servidores bare-metal y configure la red. Esto es necesario antes de ejecutar el instalador."
 
 #: ../../getting_started/installation/overview.rst:23
 msgid ""
@@ -80,14 +80,14 @@ msgid ""
 "</getting_started/installation/singleNode/hpe_installer>` — Run the "
 "graphical installer from your workstation to deploy the |morpheus| "
 "appliance VM onto a prepared HVM host."
-msgstr ""
+msgstr ":doc:`Implemente Morpheus con el HPE Installer </getting_started/installation/singleNode/hpe_installer>` — Ejecute el instalador gráfico desde su estación de trabajo para implementar la VM del dispositivo |morpheus| en un host HVM preparado."
 
 #: ../../getting_started/installation/overview.rst:25
 msgid ""
 "After the appliance is running, you can add additional HVM hosts to form "
 "a cluster from within the |morpheus| UI (:menuselection:`Infrastructure "
 "--> Clusters`)."
-msgstr ""
+msgstr "Después de que el dispositivo esté en ejecución, puede agregar hosts HVM adicionales para formar un clúster desde la UI de |morpheus| (:menuselection:`Infrastructure --> Clusters`)."
 
 #: ../../getting_started/installation/overview.rst:27
 msgid ""
@@ -96,11 +96,11 @@ msgid ""
 " APT source for security and package updates. For connected and air-"
 "gapped options, see :doc:`Morpheus Manager Base OS Updates "
 "</getting_started/maintenance/manager_os_updates>`."
-msgstr ""
+msgstr "La implementación local y el mantenimiento continuo tienen requisitos de conectividad diferentes. El SO base Ubuntu del Manager aún requiere una fuente APT aprobada por HPE para actualizaciones de seguridad y paquetes. Para opciones conectadas y air-gapped, consulte :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`."
 
 #: ../../getting_started/installation/overview.rst:32
 msgid "Manual Package Installation"
-msgstr ""
+msgstr "Instalación manual de paquetes"
 
 #: ../../getting_started/installation/overview.rst:34
 msgid ""
@@ -110,7 +110,7 @@ msgid ""
 "supported Linux OS. This method is also used for advanced deployment "
 "topologies (distributed services, full HA) where you need granular "
 "control over each component."
-msgstr ""
+msgstr "Para entornos que **no** utilizan HPE HVM — como VMware existente, Hyper-V, VMs en la nube o servidores Linux bare-metal — |morpheus| está disponible como paquetes estándar ``debian`` o ``yum`` instalados directamente en un SO Linux compatible. Este método también se utiliza para topologías de implementación avanzadas (servicios distribuidos, HA completa) donde necesita control granular sobre cada componente."
 
 #: ../../getting_started/installation/overview.rst:36
 #, fuzzy
@@ -152,17 +152,17 @@ msgstr ""
 
 #: ../../getting_started/installation/overview.rst:42
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/overview.rst:42
 msgid ""
 "|morpheus| requires TLS v1.2 for all incoming appliance connections. "
 "Ensure front-end load balancers and agents support TLS v1.2 or higher."
-msgstr ""
+msgstr "|morpheus| requiere TLS v1.2 para todas las conexiones entrantes al dispositivo. Asegúrese de que los balanceadores de carga front-end y los agentes admitan TLS v1.2 o superior."
 
 #: ../../getting_started/installation/overview.rst:45
 msgid "Architecture Options"
-msgstr ""
+msgstr "Opciones de arquitectura"
 
 #: ../../getting_started/installation/overview.rst:47
 msgid "Single Host (All-In-One/default)"
@@ -208,7 +208,7 @@ msgid ""
 " configured to use the same external MySQL cluster or supported service. "
 "Reconfigure does not install MySQL on the application hosts in this "
 "topology."
-msgstr ""
+msgstr "Los niveles Application, Message y Non-Transactional se instalan y agrupan en tres o más hosts de aplicación. El nivel Transactional Database Tier permanece fuera de los hosts de aplicación, y cada host de aplicación está configurado para usar el mismo clúster MySQL externo o servicio compatible. Reconfigure no instala MySQL en los hosts de aplicación en esta topología."
 
 #: ../../getting_started/installation/overview.rst:53
 msgid "App Host(s) with Distributed Services (Full HA)"

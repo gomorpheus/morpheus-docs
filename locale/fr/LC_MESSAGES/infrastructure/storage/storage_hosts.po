@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/storage/storage_hosts.rst:2
 msgid "Storage Hosts"
-msgstr ""
+msgstr "Hôtes de stockage"
 
 #: ../../infrastructure/storage/storage_hosts.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/storage/storage_hosts.rst:7
 msgid ""
@@ -35,111 +35,111 @@ msgid ""
 "mapping. When a storage server is integrated into |morpheus| (for "
 "example, HPE Alletra MP), the platform automatically syncs and caches the"
 " registered hosts and host sets from the storage array."
-msgstr ""
+msgstr "Les hôtes de stockage représentent les hôtes physiques ou virtuels connectés à un serveur de stockage aux fins de présentation de volumes et de mappage LUN. Lorsqu'un serveur de stockage est intégré à |morpheus| (par exemple, HPE Alletra MP), la plateforme synchronise et met en cache automatiquement les hôtes et ensembles d'hôtes enregistrés depuis la baie de stockage."
 
 #: ../../infrastructure/storage/storage_hosts.rst:9
 msgid ""
 "Storage Hosts are used during datastore creation and volume mapping "
 "operations to determine which hosts should have access to a particular "
 "storage volume or LUN."
-msgstr ""
+msgstr "Les hôtes de stockage sont utilisés lors de la création de data stores et des opérations de mappage de volumes pour déterminer quels hôtes doivent avoir accès à un volume de stockage ou LUN particulier."
 
 #: ../../infrastructure/storage/storage_hosts.rst:12
 msgid "Viewing Storage Hosts"
-msgstr ""
+msgstr "Consultation des hôtes de stockage"
 
 #: ../../infrastructure/storage/storage_hosts.rst:14
 msgid "Navigate to ``Infrastructure > Storage``"
-msgstr ""
+msgstr "Accédez à ``Infrastructure > Storage``"
 
 #: ../../infrastructure/storage/storage_hosts.rst:15
 msgid "Select the **SERVERS** tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet **SERVERS**"
 
 #: ../../infrastructure/storage/storage_hosts.rst:16
 msgid "Click the name of a storage server to view its detail page"
-msgstr ""
+msgstr "Cliquez sur le nom d'un serveur de stockage pour afficher sa page de détail"
 
 #: ../../infrastructure/storage/storage_hosts.rst:17
 msgid "Select the **HOSTS** tab"
-msgstr ""
+msgstr "Sélectionnez l'onglet **HOSTS**"
 
 #: ../../infrastructure/storage/storage_hosts.rst:19
 msgid ""
 "The Hosts tab displays all hosts registered with the storage server, "
 "including:"
-msgstr ""
+msgstr "L'onglet Hosts affiche tous les hôtes enregistrés auprès du serveur de stockage, notamment :"
 
 #: ../../infrastructure/storage/storage_hosts.rst:21
 msgid "**Name** — The host name as reported by the storage array."
-msgstr ""
+msgstr "**Name** — Le nom d'hôte tel que rapporté par la baie de stockage."
 
 #: ../../infrastructure/storage/storage_hosts.rst:22
 msgid "**OS** — The operating system type of the host (where available)."
-msgstr ""
+msgstr "**OS** — Le type de système d'exploitation de l'hôte (lorsque disponible)."
 
 #: ../../infrastructure/storage/storage_hosts.rst:23
 msgid ""
 "**WWN/IQN** — Fibre Channel World Wide Names or iSCSI Qualified Names "
 "associated with the host."
-msgstr ""
+msgstr "**WWN/IQN** — World Wide Names Fibre Channel ou iSCSI Qualified Names associés à l'hôte."
 
 #: ../../infrastructure/storage/storage_hosts.rst:24
 msgid ""
 "**Host Set** — The host group or host set the host belongs to (if "
 "applicable)."
-msgstr ""
+msgstr "**Host Set** — Le groupe d'hôtes ou l'ensemble d'hôtes auquel l'hôte appartient (le cas échéant)."
 
 #: ../../infrastructure/storage/storage_hosts.rst:27
 msgid "Host Sets"
-msgstr ""
+msgstr "Ensembles d'hôtes"
 
 #: ../../infrastructure/storage/storage_hosts.rst:29
 msgid ""
 "Host Sets (also known as Host Groups) are logical groupings of storage "
 "hosts that share common volume access. When volumes are mapped to a Host "
 "Set, all member hosts gain access to the presented LUN."
-msgstr ""
+msgstr "Les ensembles d'hôtes (également appelés groupes d'hôtes) sont des regroupements logiques d'hôtes de stockage partageant un accès commun aux volumes. Lorsque des volumes sont mappés à un ensemble d'hôtes, tous les hôtes membres obtiennent l'accès au LUN présenté."
 
 #: ../../infrastructure/storage/storage_hosts.rst:31
 msgid ""
 "Host Sets are synced automatically from the storage array and are used "
 "during datastore provisioning to define which group of hosts should see "
 "the new volume."
-msgstr ""
+msgstr "Les ensembles d'hôtes sont synchronisés automatiquement depuis la baie de stockage et sont utilisés lors du provisionnement de data stores pour définir quel groupe d'hôtes doit voir le nouveau volume."
 
 #: ../../infrastructure/storage/storage_hosts.rst:33
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/storage/storage_hosts.rst:33
 msgid ""
 "Storage Hosts and Host Sets are read-only in |morpheus| and are synced "
 "from the external storage server. To add or modify hosts, use the storage"
 " array's native management interface."
-msgstr ""
+msgstr "Les hôtes de stockage et les ensembles d'hôtes sont en lecture seule dans |morpheus| et sont synchronisés depuis le serveur de stockage externe. Pour ajouter ou modifier des hôtes, utilisez l'interface de gestion native de la baie de stockage."
 
 #: ../../infrastructure/storage/storage_hosts.rst:36
 msgid "Sync Behavior"
-msgstr ""
+msgstr "Comportement de synchronisation"
 
 #: ../../infrastructure/storage/storage_hosts.rst:38
 msgid ""
 "When a Storage Server is refreshed (either manually or on schedule), "
 "|morpheus| caches:"
-msgstr ""
+msgstr "Lorsqu'un serveur de stockage est actualisé (manuellement ou selon une planification), |morpheus| met en cache :"
 
 #: ../../infrastructure/storage/storage_hosts.rst:40
 msgid "**Hosts** — Individual host registrations on the array"
-msgstr ""
+msgstr "**Hosts** — Enregistrements d'hôtes individuels sur la baie"
 
 #: ../../infrastructure/storage/storage_hosts.rst:41
 msgid "**Host Sets** — Grouped host definitions for multi-host volume access"
-msgstr ""
+msgstr "**Host Sets** — Définitions d'hôtes groupés pour l'accès multi-hôtes aux volumes"
 
 #: ../../infrastructure/storage/storage_hosts.rst:43
 msgid ""
 "These cached entries are used by the platform for volume mapping "
 "operations and datastore creation workflows."
-msgstr ""
+msgstr "Ces entrées mises en cache sont utilisées par la plateforme pour les opérations de mappage de volumes et les workflows de création de data stores."
 

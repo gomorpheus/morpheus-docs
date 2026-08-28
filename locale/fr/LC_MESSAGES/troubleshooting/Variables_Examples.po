@@ -22,25 +22,25 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:4
 msgid "Variables"
-msgstr ""
+msgstr "Variables"
 
 #: ../../troubleshooting/Variables_Examples.rst:6
 msgid ""
 "A vast number of variables are available for use in Tasks, Scripts, "
 "Templates, Resource Names, Cloud-Init User Data and Option List configs."
-msgstr ""
+msgstr "Un grand nombre de variables sont disponibles pour les Tâches, Scripts, Modèles, noms de ressources, User Data Cloud-Init et configurations de listes d'options."
 
 #: ../../troubleshooting/Variables_Examples.rst:8
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../troubleshooting/Variables_Examples.rst:8
 msgid "Variables are case sensitive"
-msgstr ""
+msgstr "Les variables sont sensibles à la casse"
 
 #: ../../troubleshooting/Variables_Examples.rst:11
 msgid "Pre-Provision Vars"
-msgstr ""
+msgstr "Variables de pré-provisionnement"
 
 #: ../../troubleshooting/Variables_Examples.rst:13
 #, python-brace-format
@@ -49,18 +49,18 @@ msgid ""
 "Hostnames. These can be passed inside ``${ }`` blocks during provisioning"
 " or in relevant policy configs. Groovy syntax can be resolved to allow "
 "for dynamic name generation as shown in some of the examples below."
-msgstr ""
+msgstr "Un sous-ensemble de variables est disponible pour Instance, Host Name et Hostnames. Elles peuvent être transmises dans des blocs ``${ }`` lors du provisionnement ou dans les configurations de règles pertinentes. La syntaxe Groovy peut être résolue pour permettre une génération dynamique de noms, comme le montrent certains exemples ci-dessous."
 
 #: ../../troubleshooting/Variables_Examples.rst:15
 #, python-brace-format
 msgid ""
 "Instance Naming Policy example: ``${userInitials}-${cloudCode}-${platform"
 " == 'windows' ? 'W' : 'L'}-${sequence}``"
-msgstr ""
+msgstr "Exemple de règle de nommage d'Instance : ``${userInitials}-${cloudCode}-${platform == 'windows' ? 'W' : 'L'}-${sequence}``"
 
 #: ../../troubleshooting/Variables_Examples.rst:17
 msgid "Available variables for Naming Policy naming patterns include:"
-msgstr ""
+msgstr "Les variables disponibles pour les modèles de nommage des règles de nommage incluent :"
 
 #: ../../troubleshooting/Variables_Examples.rst:19
 #, python-brace-format
@@ -101,41 +101,41 @@ msgid ""
 "3000 is ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, "
 "resulting in an Instance Name of **md-vmwd3-centos-3001** for the first "
 "instance, followed by **md-vmwd3-centos-3002** and so on."
-msgstr ""
+msgstr "Exemple de règle de nom d'Instance utilisant un modèle de nommage avec les initiales utilisateur, le code Cloud, le type d'Instance et un numéro séquentiel commençant à 3000 : ``${userInitials}-${cloudCode}-${type}-${sequence+3000}``, produisant un nom d'Instance **md-vmwd3-centos-3001** pour la première instance, suivi de **md-vmwd3-centos-3002**, et ainsi de suite."
 
 #: ../../troubleshooting/Variables_Examples.rst:49
 #: ../../troubleshooting/Variables_Examples.rst:66
 #: ../../troubleshooting/Variables_Examples.rst:560
 #: ../../troubleshooting/Variables_Examples.rst:1084
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../troubleshooting/Variables_Examples.rst:49
 msgid ""
 "It's not recommended that users include \">\", \"<\", \"%\", \"$\", or "
 "\"=\" in naming policies."
-msgstr ""
+msgstr "Il n'est pas recommandé d'inclure \">\", \"<\", \"%\", \"$\" ou \"=\" dans les règles de nommage."
 
 #: ../../troubleshooting/Variables_Examples.rst:52
 msgid "Syntax Examples"
-msgstr ""
+msgstr "Exemples de syntaxe"
 
 #: ../../troubleshooting/Variables_Examples.rst:54
 msgid "PowerShell Example: ``$app_id = \"<%= instance.metadata.app_id %>\"``"
-msgstr ""
+msgstr "Exemple PowerShell : ``$app_id = \"<%= instance.metadata.app_id %>\"``"
 
 #: ../../troubleshooting/Variables_Examples.rst:56
 msgid "Bash Example:   ``HOSTNAME=\"<%= container.server.hostname %>\"``"
-msgstr ""
+msgstr "Exemple Bash :   ``HOSTNAME=\"<%= container.server.hostname %>\"``"
 
 #: ../../troubleshooting/Variables_Examples.rst:58
 msgid "Python Example: ``hostname = morpheus['server']['hostname']``"
-msgstr ""
+msgstr "Exemple Python : ``hostname = morpheus['server']['hostname']``"
 
 #: ../../troubleshooting/Variables_Examples.rst:60
 #, python-brace-format
 msgid "HTTP Body Example: ``{\"name\": \"<%= instance.createdByUsername %>\"}``"
-msgstr ""
+msgstr "Exemple de corps HTTP : ``{\"name\": \"<%= instance.createdByUsername %>\"}``"
 
 #: ../../troubleshooting/Variables_Examples.rst:62
 msgid ".. image:: /images/troubleshooting/Metadata-Enviornment-Variable-Spot"
@@ -147,11 +147,11 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:66
 msgid "customOptions values are defined from custom Inputs."
-msgstr ""
+msgstr "Les valeurs customOptions sont définies à partir des Entrées personnalisées."
 
 #: ../../troubleshooting/Variables_Examples.rst:69
 msgid "Common Examples"
-msgstr ""
+msgstr "Exemples courants"
 
 #: ../../troubleshooting/Variables_Examples.rst:71
 msgid ""
@@ -322,7 +322,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:218
 msgid "Instance"
-msgstr ""
+msgstr "Instance"
 
 #: ../../troubleshooting/Variables_Examples.rst:220
 msgid ""
@@ -410,7 +410,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:304
 msgid "Container"
-msgstr ""
+msgstr "Conteneur"
 
 #: ../../troubleshooting/Variables_Examples.rst:306
 #, python-brace-format
@@ -449,7 +449,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:340
 msgid "Server"
-msgstr ""
+msgstr "Serveur"
 
 #: ../../troubleshooting/Variables_Examples.rst:342
 msgid ""
@@ -526,7 +526,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:415
 msgid "Zone (Cloud)"
-msgstr ""
+msgstr "Zone (Cloud)"
 
 #: ../../troubleshooting/Variables_Examples.rst:417
 #, python-brace-format
@@ -548,7 +548,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:434
 msgid "networkConfig"
-msgstr ""
+msgstr "networkConfig"
 
 #: ../../troubleshooting/Variables_Examples.rst:436
 #, python-brace-format
@@ -600,7 +600,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:483
 msgid "Group (Site)"
-msgstr ""
+msgstr "Groupe (Site)"
 
 #: ../../troubleshooting/Variables_Examples.rst:485
 #, python-brace-format
@@ -615,7 +615,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:495
 msgid "Custom Options (Inputs)"
-msgstr ""
+msgstr "Options personnalisées (Entrées)"
 
 #: ../../troubleshooting/Variables_Examples.rst:497
 #, python-brace-format
@@ -627,11 +627,11 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:504
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: ../../troubleshooting/Variables_Examples.rst:506
 msgid "ex: ``<%= morpheus.user.id %>``"
-msgstr ""
+msgstr "ex. : ``<%= morpheus.user.id %>``"
 
 #: ../../troubleshooting/Variables_Examples.rst:508
 #, python-brace-format
@@ -667,7 +667,7 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:539
 msgid "User"
-msgstr ""
+msgstr "Utilisateur"
 
 #: ../../troubleshooting/Variables_Examples.rst:541
 msgid ""
@@ -685,20 +685,20 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:556
 msgid "Script Variables Example"
-msgstr ""
+msgstr "Exemple de variables de script"
 
 #: ../../troubleshooting/Variables_Examples.rst:558
 msgid ""
 "Below is an example of the variables available to a script running "
 "against an Instance context."
-msgstr ""
+msgstr "Ci-dessous, un exemple des variables disponibles pour un script s'exécutant dans un contexte Instance."
 
 #: ../../troubleshooting/Variables_Examples.rst:560
 #: ../../troubleshooting/Variables_Examples.rst:1084
 msgid ""
 "Variable maps are determined by context, configurations and permissions, "
 "actual maps may contain additional or fewer options."
-msgstr ""
+msgstr "Les cartes de variables sont déterminées par le contexte, les configurations et les permissions ; les cartes réelles peuvent contenir des options supplémentaires ou moins nombreuses."
 
 #: ../../troubleshooting/Variables_Examples.rst:562
 msgid ""
@@ -1224,5 +1224,5 @@ msgstr ""
 
 #: ../../troubleshooting/Variables_Examples.rst:1087
 msgid "Spec Template Variables"
-msgstr ""
+msgstr "Variables de modèle Spec"
 

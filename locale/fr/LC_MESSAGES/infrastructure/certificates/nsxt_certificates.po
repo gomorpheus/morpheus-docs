@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:4
 msgid "NSX-T Certificate Management"
-msgstr ""
+msgstr "Gestion des certificats NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:9
 msgid ""
@@ -36,184 +36,184 @@ msgid ""
 "|morpheus| can manage the lifecycle of these certificates, including "
 "uploading certificates to NSX-T managers and associating them with NSX-T "
 "services."
-msgstr ""
+msgstr "|morpheus| fournit une gestion intégrée des certificats pour les environnements VMware NSX-T. NSX-T nécessite des certificats pour sécuriser les communications entre son plan de gestion, son plan de contrôle et ses nœuds de transport. |morpheus| peut gérer le cycle de vie de ces certificats, y compris le téléversement de certificats vers les gestionnaires NSX-T et leur association aux services NSX-T."
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:11
 msgid ""
 "This feature is available when an NSX-T integration has been configured "
 "in |morpheus|."
-msgstr ""
+msgstr "Cette fonctionnalité est disponible lorsqu'une intégration NSX-T a été configurée dans |morpheus|."
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:14
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:16
 msgid ""
 "An active NSX-T integration configured in |morpheus| (Infrastructure > "
 "Network > Integrations)"
-msgstr ""
+msgstr "Une intégration NSX-T active configurée dans |morpheus| (Infrastructure > Network > Integrations)"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:17
 msgid "NSX-T Manager version 2.5 or higher"
-msgstr ""
+msgstr "NSX-T Manager version 2.5 ou supérieure"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:18
 msgid "Appropriate NSX-T API permissions for certificate management"
-msgstr ""
+msgstr "Autorisations API NSX-T appropriées pour la gestion des certificats"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:19
 msgid "Valid SSL/TLS certificates compatible with NSX-T requirements"
-msgstr ""
+msgstr "Certificats SSL/TLS valides compatibles avec les exigences NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:22
 msgid "NSX-T Certificate Requirements"
-msgstr ""
+msgstr "Exigences de certificat NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:24
 msgid "NSX-T has specific requirements for certificates:"
-msgstr ""
+msgstr "NSX-T a des exigences spécifiques pour les certificats :"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:26
 msgid "**Format:** PEM-encoded X.509 certificates"
-msgstr ""
+msgstr "**Format :** Certificats X.509 encodés PEM"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:27
 msgid "**Key Size:** Minimum 2048-bit RSA or 256-bit ECDSA"
-msgstr ""
+msgstr "**Taille de clé :** RSA 2048 bits minimum ou ECDSA 256 bits"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:28
 msgid ""
 "**Subject Alternative Names (SANs):** Must include the FQDN and IP "
 "address of the NSX-T Manager nodes"
-msgstr ""
+msgstr "**Noms alternatifs du sujet (SAN) :** Doivent inclure le nom de domaine complet et l'adresse IP des nœuds NSX-T Manager"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:29
 msgid ""
 "**Extended Key Usage:** Server Authentication (1.3.6.1.5.5.7.3.1) and "
 "Client Authentication (1.3.6.1.5.5.7.3.2) as appropriate"
-msgstr ""
+msgstr "**Utilisation étendue de la clé :** Authentification serveur (1.3.6.1.5.5.7.3.1) et authentification client (1.3.6.1.5.5.7.3.2) selon les besoins"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:30
 msgid ""
 "**Validity:** Certificates should have sufficient validity period "
 "(recommended minimum 1 year)"
-msgstr ""
+msgstr "**Validité :** Les certificats doivent avoir une période de validité suffisante (minimum recommandé de 1 an)"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:33
 msgid "Managing NSX-T Certificates"
-msgstr ""
+msgstr "Gestion des certificats NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:36
 msgid "Uploading Certificates to NSX-T"
-msgstr ""
+msgstr "Téléversement de certificats vers NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:38
 msgid ""
 "When a certificate is uploaded to |morpheus| and associated with an NSX-T"
 " integration, |morpheus| handles pushing the certificate to the NSX-T "
 "Manager:"
-msgstr ""
+msgstr "Lorsqu'un certificat est téléversé dans |morpheus| et associé à une intégration NSX-T, |morpheus| gère l'envoi du certificat vers le NSX-T Manager :"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:40
 msgid "Navigate to |InfTruCer|"
-msgstr ""
+msgstr "Accédez à |InfTruCer|"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:41
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ ADD`"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:42
 msgid "Select the NSX-T certificate type"
-msgstr ""
+msgstr "Sélectionnez le type de certificat NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:43
 msgid "Complete the certificate fields:"
-msgstr ""
+msgstr "Remplissez les champs du certificat :"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:45
 msgid "**NAME:** Descriptive name for the certificate"
-msgstr ""
+msgstr "**NOM :** Nom descriptif pour le certificat"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:46
 msgid "**NSX-T INTEGRATION:** Select the target NSX-T integration"
-msgstr ""
+msgstr "**INTÉGRATION NSX-T :** Sélectionnez l'intégration NSX-T cible"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:47
 msgid "**CERTIFICATE (PEM):** The certificate content"
-msgstr ""
+msgstr "**CERTIFICAT (PEM) :** Le contenu du certificat"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:48
 msgid "**PRIVATE KEY (PEM):** The private key content"
-msgstr ""
+msgstr "**CLÉ PRIVÉE (PEM) :** Le contenu de la clé privée"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:49
 msgid "**CERTIFICATE CHAIN (PEM):** Intermediate and root CA certificates"
-msgstr ""
+msgstr "**CHAÎNE DE CERTIFICATS (PEM) :** Certificats CA intermédiaires et racine"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:51
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE`"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:53
 msgid ""
 "|morpheus| uploads the certificate to the NSX-T Manager and stores the "
 "external reference for ongoing management."
-msgstr ""
+msgstr "|morpheus| téléverse le certificat vers le NSX-T Manager et stocke la référence externe pour une gestion continue."
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:56
 msgid "Viewing NSX-T Certificates"
-msgstr ""
+msgstr "Affichage des certificats NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:58
 msgid ""
 "Certificates synced from NSX-T integrations appear in the certificate "
 "list with their NSX-T association visible. Details include:"
-msgstr ""
+msgstr "Les certificats synchronisés depuis les intégrations NSX-T apparaissent dans la liste des certificats avec leur association NSX-T visible. Les détails incluent :"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:60
 msgid "NSX-T Manager reference ID"
-msgstr ""
+msgstr "ID de référence NSX-T Manager"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:61
 msgid "Certificate purpose (e.g., API, Cluster Communication)"
-msgstr ""
+msgstr "Objectif du certificat (par ex., API, Cluster Communication)"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:62
 msgid "Expiration status"
-msgstr ""
+msgstr "État d'expiration"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:63
 msgid "Associated NSX-T services"
-msgstr ""
+msgstr "Services NSX-T associés"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:66
 msgid "Replacing NSX-T Certificates"
-msgstr ""
+msgstr "Remplacement de certificats NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:68
 msgid "To replace an expiring certificate on an NSX-T Manager:"
-msgstr ""
+msgstr "Pour remplacer un certificat expirant sur un NSX-T Manager :"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:70
 msgid "Upload the new certificate to |morpheus| as described above"
-msgstr ""
+msgstr "Téléversez le nouveau certificat dans |morpheus| comme décrit ci-dessus"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:71
 msgid "Associate the new certificate with the same NSX-T service"
-msgstr ""
+msgstr "Associez le nouveau certificat au même service NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:72
 msgid "|morpheus| coordinates the replacement with the NSX-T Manager API"
-msgstr ""
+msgstr "|morpheus| coordonne le remplacement avec l'API NSX-T Manager"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:73
 msgid "Verify the NSX-T Manager is using the new certificate"
-msgstr ""
+msgstr "Vérifiez que le NSX-T Manager utilise le nouveau certificat"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:75
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:75
 msgid ""
@@ -221,69 +221,69 @@ msgid ""
 "careful planning. Incorrect certificate replacement can disrupt NSX-T "
 "operations. Always verify certificate compatibility in a test environment"
 " first."
-msgstr ""
+msgstr "Le remplacement de certificats sur les services de gestion et de cluster NSX-T nécessite une planification minutieuse. Un remplacement incorrect de certificat peut perturber les opérations NSX-T. Vérifiez toujours la compatibilité des certificats dans un environnement de test au préalable."
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:78
 msgid "Certificate Synchronization"
-msgstr ""
+msgstr "Synchronisation des certificats"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:80
 msgid ""
 "|morpheus| periodically synchronizes certificate data from NSX-T "
 "integrations:"
-msgstr ""
+msgstr "|morpheus| synchronise périodiquement les données de certificat depuis les intégrations NSX-T :"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:82
 msgid "Existing certificates on NSX-T are discovered and displayed in |morpheus|"
-msgstr ""
+msgstr "Les certificats existants sur NSX-T sont découverts et affichés dans |morpheus|"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:83
 msgid "Certificate expiration dates are tracked"
-msgstr ""
+msgstr "Les dates d'expiration des certificats sont suivies"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:84
 msgid "Status changes (e.g., revocation) are reflected in the |morpheus| UI"
-msgstr ""
+msgstr "Les changements d'état (par ex., révocation) sont reflétés dans l'interface |morpheus|"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:86
 msgid ""
 "To force a synchronization, refresh the NSX-T integration from "
 "Infrastructure > Network > Integrations."
-msgstr ""
+msgstr "Pour forcer une synchronisation, actualisez l'intégration NSX-T depuis Infrastructure > Network > Integrations."
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:89
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Dépannage"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:91
 msgid "**Certificate upload fails:**"
-msgstr ""
+msgstr "**Échec du téléversement du certificat :**"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:93
 msgid "Verify the certificate and key are in valid PEM format"
-msgstr ""
+msgstr "Vérifiez que le certificat et la clé sont au format PEM valide"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:94
 msgid "Ensure the private key matches the certificate (modulus check)"
-msgstr ""
+msgstr "Assurez-vous que la clé privée correspond au certificat (vérification du modulus)"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:95
 msgid "Confirm NSX-T API connectivity from the |morpheus| appliance"
-msgstr ""
+msgstr "Confirmez la connectivité API NSX-T depuis l'appliance |morpheus|"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:97
 msgid "**Certificate not appearing on NSX-T:**"
-msgstr ""
+msgstr "**Certificat n'apparaissant pas sur NSX-T :**"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:99
 msgid "Check the |morpheus| integration status for the NSX-T instance"
-msgstr ""
+msgstr "Vérifiez l'état de l'intégration |morpheus| pour l'instance NSX-T"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:100
 msgid "Review the |morpheus| activity log for API errors"
-msgstr ""
+msgstr "Consultez le journal d'activité |morpheus| pour les erreurs API"
 
 #: ../../infrastructure/certificates/nsxt_certificates.rst:101
 msgid "Verify NSX-T API user has certificate management permissions"
-msgstr ""
+msgstr "Vérifiez que l'utilisateur API NSX-T dispose des autorisations de gestion des certificats"
 

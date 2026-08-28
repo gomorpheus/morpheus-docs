@@ -48,7 +48,7 @@ msgstr ""
 #: ../../administration/identity_sources/ad.rst:9
 #: ../../administration/identity_sources/ad.rst:66
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../administration/identity_sources/ad.rst:9
 msgid ""
@@ -60,11 +60,11 @@ msgstr ""
 
 #: ../../administration/identity_sources/ad.rst:14
 msgid "Access Control Behavior"
-msgstr ""
+msgstr "Comportamiento de control de acceso"
 
 #: ../../administration/identity_sources/ad.rst:16
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../administration/identity_sources/ad.rst:16
 msgid ""
@@ -72,33 +72,33 @@ msgid ""
 "authenticate against the Active Directory server will be allowed to log "
 "in** and a local user account is automatically created. To restrict "
 "access to authorized users only, you must set the Required Group field."
-msgstr ""
+msgstr "Si el campo REQUIRED GROUP se deja vacío, **cualquier usuario que pueda autenticarse contra el servidor Active Directory podrá iniciar sesión** y se creará automáticamente una cuenta de usuario local. Para restringir el acceso solo a usuarios autorizados, debe configurar el campo Required Group."
 
 #: ../../administration/identity_sources/ad.rst:18
 msgid ""
 "When an Active Directory identity source is configured, the following "
 "access control logic applies:"
-msgstr ""
+msgstr "Cuando se configura una fuente de identidad Active Directory, se aplica la siguiente lógica de control de acceso:"
 
 #: ../../administration/identity_sources/ad.rst:20
 msgid ""
 "**Required Group configured:** Only AD users who are members of the "
 "specified group are allowed to log in. Users not in the required group "
 "are denied access and no user object is created in |morpheus|."
-msgstr ""
+msgstr "**Required Group configurado:** Solo los usuarios de AD que son miembros del grupo especificado pueden iniciar sesión. A los usuarios que no están en el grupo requerido se les deniega el acceso y no se crea ningún objeto de usuario en |morpheus|."
 
 #: ../../administration/identity_sources/ad.rst:21
 msgid ""
 "**Required Group empty (default):** All AD users who can authenticate are"
 " permitted to log in. A local user account is automatically created upon "
 "first sign-in, even if no role mappings apply to the user."
-msgstr ""
+msgstr "**Required Group vacío (predeterminado):** Se permite iniciar sesión a todos los usuarios de AD que puedan autenticarse. Se crea automáticamente una cuenta de usuario local en el primer inicio de sesión, incluso si no se aplican mapeos de rol al usuario."
 
 #: ../../administration/identity_sources/ad.rst:22
 msgid ""
 "**Include Member Groups enabled:** Users in groups nested inside the "
 "required group are also granted access."
-msgstr ""
+msgstr "**Include Member Groups habilitado:** También se concede acceso a los usuarios de grupos anidados dentro del grupo requerido."
 
 #: ../../administration/identity_sources/ad.rst:24
 msgid ""
@@ -106,31 +106,31 @@ msgid ""
 "Group check passes. |morpheus| roles provide an additional layer of RBAC "
 "that controls what the user can see and do within the platform, but they "
 "do not restrict login access itself."
-msgstr ""
+msgstr "El Rol predeterminado y los mapeos de rol se aplican solo después de que pasa la verificación de Required Group. Los roles de |morpheus| proporcionan una capa adicional de RBAC que controla lo que el usuario puede ver y hacer dentro de la plataforma, pero no restringen el acceso de inicio de sesión en sí."
 
 #: ../../administration/identity_sources/ad.rst:26
 msgid "**Recommended configuration for enterprise environments:**"
-msgstr ""
+msgstr "**Configuración recomendada para entornos empresariales:**"
 
 #: ../../administration/identity_sources/ad.rst:28
 msgid ""
 "Always set a Required Group to prevent unauthorized directory users from "
 "authenticating"
-msgstr ""
+msgstr "Configure siempre un Required Group para evitar que usuarios no autorizados del directorio se autentiquen"
 
 #: ../../administration/identity_sources/ad.rst:29
 msgid ""
 "Create a dedicated AD group (e.g., \"Morpheus Users\") and add only users"
 " who should have access"
-msgstr ""
+msgstr "Cree un grupo de AD dedicado (p. ej., \"Morpheus Users\") y agregue solo usuarios que deban tener acceso"
 
 #: ../../administration/identity_sources/ad.rst:30
 msgid "Set the Default Role to the most restrictive appropriate role"
-msgstr ""
+msgstr "Configure el Rol predeterminado al rol más restrictivo apropiado"
 
 #: ../../administration/identity_sources/ad.rst:31
 msgid "Use role mappings to grant elevated permissions to specific AD groups"
-msgstr ""
+msgstr "Use mapeos de rol para conceder permisos elevados a grupos de AD específicos"
 
 #: ../../administration/identity_sources/ad.rst:34
 msgid "Adding an Active Directory Integration"
@@ -209,7 +209,7 @@ msgid ""
 "The AD group users must be in to have access. If left empty, all AD users"
 " who can authenticate will be allowed to log in (see the \"Access Control"
 " Behavior\" section above)."
-msgstr ""
+msgstr "El grupo de AD en el que deben estar los usuarios para tener acceso. Si se deja vacío, se permitirá iniciar sesión a todos los usuarios de AD que puedan autenticarse (consulte la sección \"Comportamiento de control de acceso\" anterior)."
 
 #: ../../administration/identity_sources/ad.rst:55
 msgid "Include Member Groups"
@@ -232,7 +232,7 @@ msgid ""
 "The default role applied to all users who pass the Required Group check. "
 "This role is always assigned in addition to any roles granted through "
 "role mappings."
-msgstr ""
+msgstr "El rol predeterminado aplicado a todos los usuarios que pasan la verificación de Required Group. Este rol siempre se asigna además de cualquier rol concedido mediante mapeos de rol."
 
 #: ../../administration/identity_sources/ad.rst:59
 msgid "Service Account Holder"

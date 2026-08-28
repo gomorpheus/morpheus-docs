@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../getting_started/maintenance/scaling.rst:2
 msgid "Scaling Morpheus Nodes"
-msgstr ""
+msgstr "Skalieren von Morpheus-Knoten"
 
 #: ../../getting_started/maintenance/scaling.rst:4
 msgid ""
 "Morpheus App nodes can be scaled to accommodate additional load. "
 "Appliance nodes can be scaled vertically in centralized architectures, "
 "and both vertically and horizontally in distributed architectures."
-msgstr ""
+msgstr "Morpheus-App-Knoten können skaliert werden, um zusätzliche Last aufzunehmen. Appliance-Knoten können in zentralisierten Architekturen vertikal und in verteilten Architekturen vertikal und horizontal skaliert werden."
 
 #: ../../getting_started/maintenance/scaling.rst:7
 msgid "Vertical Scaling"
-msgstr ""
+msgstr "Vertikale Skalierung"
 
 #: ../../getting_started/maintenance/scaling.rst:9
 msgid ""
@@ -41,7 +41,7 @@ msgid ""
 "scaled at any time, however a reconfigure must be performed for "
 "additional resources to be utilized by |morpheus| on a node, which will "
 "result in the ``morpheus-ui`` restarting on the reconfiguring node."
-msgstr ""
+msgstr "In allen Appliance-Architekturen können Anwendungsknoten jederzeit vertikal skaliert werden; für die Nutzung zusätzlicher Ressourcen durch |morpheus| auf einem Knoten muss jedoch ein Reconfigure durchgeführt werden, wodurch ``morpheus-ui`` auf dem rekonfigurierenden Knoten neu gestartet wird."
 
 #: ../../getting_started/maintenance/scaling.rst:11
 msgid ""
@@ -50,93 +50,93 @@ msgid ""
 "VM running the Morpheus App, the additional memory/ram will not be "
 "utilized by the Morpheus Application until a ``morpheus-ctl reconfigure``"
 " command is ran and the additional memory/ram is recognized."
-msgstr ""
+msgstr "Morpheus konfiguriert die Arbeitsspeicher-/RAM-Nutzung für Dienste während des ``reconfigure``-Prozesses. Wenn zusätzlicher Arbeitsspeicher/RAM zu einem Host oder einer VM mit der Morpheus-App hinzugefügt wird, wird dieser erst genutzt, nachdem ``morpheus-ctl reconfigure`` ausgeführt und der zusätzliche Arbeitsspeicher/RAM erkannt wurde."
 
 #: ../../getting_started/maintenance/scaling.rst:13
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../getting_started/maintenance/scaling.rst:13
 msgid ""
 "When the ``morpheus-ctl reconfigure`` command detects changes on "
 "available memory/ram, it will restart the ``morpheus-ui`` service."
-msgstr ""
+msgstr "Wenn ``morpheus-ctl reconfigure`` Änderungen am verfügbaren Arbeitsspeicher/RAM erkennt, wird der Dienst ``morpheus-ui`` neu gestartet."
 
 #: ../../getting_started/maintenance/scaling.rst:15
 msgid "The impact on Availability depends on the Morpheus Appliance Architecture."
-msgstr ""
+msgstr "Die Auswirkungen auf die Verfügbarkeit hängen von der Morpheus-Appliance-Architektur ab."
 
 #: ../../getting_started/maintenance/scaling.rst:17
 msgid "Centralized Appliances"
-msgstr ""
+msgstr "Zentralisierte Appliances"
 
 #: ../../getting_started/maintenance/scaling.rst:18
 msgid "Morpheus will be unavailable while the ``morpheus-ui`` restarts."
-msgstr ""
+msgstr "Morpheus ist nicht verfügbar, während ``morpheus-ui`` neu startet."
 
 #: ../../getting_started/maintenance/scaling.rst:19
 msgid "Distributed Appliances"
-msgstr ""
+msgstr "Verteilte Appliances"
 
 #: ../../getting_started/maintenance/scaling.rst:20
 msgid ""
 "Zero-down time can be achieved by Reconfiguring one App Node at a time, "
 "with proper Front-End Load Balancer configuration."
-msgstr ""
+msgstr "Null-Ausfallzeit ist möglich, indem jeweils ein App-Knoten rekonfiguriert wird, bei korrekter Front-End-Load-Balancer-Konfiguration."
 
 #: ../../getting_started/maintenance/scaling.rst:23
 msgid "Horizontal Scaling"
-msgstr ""
+msgstr "Horizontale Skalierung"
 
 #: ../../getting_started/maintenance/scaling.rst:25
 msgid ""
 "Additional Morpheus App Nodes can be added at any time to Fully "
 "Distributed Architectures."
-msgstr ""
+msgstr "Zusätzliche Morpheus-App-Knoten können jederzeit zu vollständig verteilten Architekturen hinzugefügt werden."
 
 #: ../../getting_started/maintenance/scaling.rst:27
 msgid "Configure Shared Storage paths for the new App Node(s)"
-msgstr ""
+msgstr "Shared-Storage-Pfade für die neuen App-Knoten konfigurieren"
 
 #: ../../getting_started/maintenance/scaling.rst:28
 msgid ""
 "Install, but do not run the ``morpheus-ctl reconfigure`` command on the "
 "new App Node(s), using the same Morpheus version as the existing "
 "Appliance nodes."
-msgstr ""
+msgstr "Installieren Sie das ``morpheus-ctl reconfigure``-Kommando auf den neuen App-Knoten noch nicht; verwenden Sie dieselbe Morpheus-Version wie die bestehenden Appliance-Knoten."
 
 #: ../../getting_started/maintenance/scaling.rst:29
 msgid "Copy the ``morpheus.rb`` from an existing App Node to the new App Node(s)"
-msgstr ""
+msgstr "Kopieren Sie ``morpheus.rb`` von einem bestehenden App-Knoten auf die neuen App-Knoten"
 
 #: ../../getting_started/maintenance/scaling.rst:30
 msgid ""
 "Ensure permissions and network configuration for the new App Node(s) to "
 "access all MySQL and Elasticsearch nodes, and the RabbitMQ VIP."
-msgstr ""
+msgstr "Stellen Sie Berechtigungen und Netzwerkkonfiguration sicher, damit die neuen App-Knoten auf alle MySQL- und Elasticsearch-Knoten sowie die RabbitMQ-VIP zugreifen können."
 
 #: ../../getting_started/maintenance/scaling.rst:31
 msgid ""
 "Ensure permissions and network configuration for all required UI services"
 " and Integrations, such as network access to ESXi hosts over 443 for "
 "Hypervisor console and/or image transfers."
-msgstr ""
+msgstr "Stellen Sie Berechtigungen und Netzwerkkonfiguration für alle erforderlichen UI-Dienste und Integrationen sicher, z. B. Netzwerkzugriff auf ESXi-Hosts über 443 für Hypervisor-Konsole und/oder Image-Transfers."
 
 #: ../../getting_started/maintenance/scaling.rst:32
 msgid "Add associated SSL files and configuration which is not on shared storage."
-msgstr ""
+msgstr "Fügen Sie zugehörige SSL-Dateien und Konfiguration hinzu, die nicht auf Shared Storage liegen."
 
 #: ../../getting_started/maintenance/scaling.rst:33
 msgid "Reconfigure the new App Node(s) via ``morpheus-ctl reconfigure``"
-msgstr ""
+msgstr "Rekonfigurieren Sie die neuen App-Knoten mit ``morpheus-ctl reconfigure``"
 
 #: ../../getting_started/maintenance/scaling.rst:34
 msgid "Verify UI startup succeeded"
-msgstr ""
+msgstr "Prüfen Sie, dass der UI-Start erfolgreich war"
 
 #: ../../getting_started/maintenance/scaling.rst:35
 msgid "Add New App Node(s) to Front End Morpheus UI Load Balancer pool."
-msgstr ""
+msgstr "Fügen Sie die neuen App-Knoten dem Front-End-Morpheus-UI-Load-Balancer-Pool hinzu."
 
 #: ../../getting_started/maintenance/scaling.rst:37
 msgid ""
@@ -144,15 +144,15 @@ msgid ""
 "and be configured to use the existing tiers for the UI service. Upon "
 "successful reconfigure, the Morpheus service will be available on the App"
 " Node(s) with consistent data and capabilities."
-msgstr ""
+msgstr "Während ``morpheus-ctl reconfigure`` validieren die neuen App-Knoten die bestehenden Schichten für den UI-Dienst und werden dafür konfiguriert. Nach erfolgreichem Reconfigure ist der Morpheus-Dienst auf den App-Knoten mit konsistenten Daten und Funktionen verfügbar."
 
 #: ../../getting_started/maintenance/scaling.rst:39
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/maintenance/scaling.rst:39
 msgid ""
 "No services, including ``morpheus-ui``, are required to be shut down on "
 "existing nodes when adding new App Nodes"
-msgstr ""
+msgstr "Beim Hinzufügen neuer App-Knoten müssen auf bestehenden Knoten keine Dienste, einschließlich ``morpheus-ui``, heruntergefahren werden"
 

@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:2
 msgid "Ansible |advanced-plus|"
-msgstr ""
+msgstr "Ansible |advanced-plus|"
 
 #: ../../integration_guides/Automation/ansible.rst:7
 msgid ""
 "The Ansible integration is an Advanced+ feature, available in HPE "
 "Morpheus Enterprise and Advanced tiers."
-msgstr ""
+msgstr "Die Ansible-Integration ist ein Advanced+-Feature und in den HPE Morpheus Enterprise- und Advanced-Stufen verfügbar."
 
 #: ../../integration_guides/Automation/ansible.rst:10
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../integration_guides/Automation/ansible.rst:12
 msgid ""
@@ -43,7 +43,7 @@ msgid ""
 "simplistic markup language known as YAML. |morpheus| integrates with an "
 "existing repository of playbooks as the master in a master-slave Ansible "
 "architecture."
-msgstr ""
+msgstr "Ansible ist eine Konfigurationsmanagement-Engine, die in der IT- und DevOPS-Community rasch an Popularität gewinnt. Obwohl sie einige der Vorteile in großem Maßstab fehlt, die Lösungen wie Chef oder Puppet bieten, ist der Einstieg sehr einfach und ermöglicht Ingenieuren, Aufgaben in einer einfachen Markup-Sprache namens YAML zu entwickeln. |morpheus| integriert sich mit einem bestehenden Repository von Playbooks als Master in einer Master-Slave-Ansible-Architektur."
 
 #: ../../integration_guides/Automation/ansible.rst:14
 msgid ""
@@ -54,36 +54,36 @@ msgid ""
 "may not be feasible due to networking restrictions or other firewall "
 "constraints. Instead it can run over the |morpheus| Agent which only "
 "requires port 443 access back to the |morpheus| appliance URL."
-msgstr ""
+msgstr "|morpheus| unterstützt nicht nur Ansible, sondern erweitert Ansible erheblich um Funktionen, die in nativer Form nicht möglich wären. Beispielsweise kann Ansible so konfiguriert werden, dass es über den |morpheus|-Agent-Kommunikationsbus ausgeführt wird. Dadurch können Playbooks gegen Instanzen ausgeführt werden, bei denen SSH/WinRM-Zugriff aufgrund von Netzwerkeinschränkungen oder anderen Firewall-Beschränkungen nicht machbar ist. Stattdessen kann es über den |morpheus|-Agent ausgeführt werden, der nur Port-443-Zugriff zurück zur |morpheus|-Appliance-URL erfordert."
 
 #: ../../integration_guides/Automation/ansible.rst:16
 msgid ""
 "This integration supports both Linux-based and Windows platforms for "
 "playbook execution and can also be configured to query secrets from "
 "|morpheus| Cypher services (similar to Vault)."
-msgstr ""
+msgstr "Diese Integration unterstützt sowohl Linux-basierte als auch Windows-Plattformen für die Playbook-Ausführung und kann auch so konfiguriert werden, dass Secrets aus |morpheus|-Cypher-Diensten abgefragt werden (ähnlich wie Vault)."
 
 #: ../../integration_guides/Automation/ansible.rst:19
 msgid "Requirements"
-msgstr ""
+msgstr "Anforderungen"
 
 #: ../../integration_guides/Automation/ansible.rst:20
 msgid "Minimum Ansible Version Requirement is 2.7.x"
-msgstr ""
+msgstr "Die Mindest-Ansible-Versionsanforderung ist 2.7.x"
 
 #: ../../integration_guides/Automation/ansible.rst:21
 msgid "For agentless non-commandbus, sshpass is required"
-msgstr ""
+msgstr "Für agentenloses Non-Commandbus ist sshpass erforderlich"
 
 #: ../../integration_guides/Automation/ansible.rst:22
 msgid "For Windows non-agent command bus, pywinrm is required"
-msgstr ""
+msgstr "Für Windows Non-Agent-Commandbus ist pywinrm erforderlich"
 
 #: ../../integration_guides/Automation/ansible.rst:23
 msgid ""
 "``Integrations: Ansible`` User Role Permission required for access to "
 "Ansible Details Pages and Ansible tabs in Groups and Clouds"
-msgstr ""
+msgstr "Die Benutzerrollenberechtigung ``Integrations: Ansible`` ist für den Zugriff auf Ansible-Detailseiten und Ansible-Tabs in Gruppen und Clouds erforderlich"
 
 #: ../../integration_guides/Automation/ansible.rst:24
 msgid ""
@@ -92,14 +92,14 @@ msgid ""
 "library. For Ubuntu 18.04 or 20.04 run ``sudo apt install python-"
 "requests`` or ``sudo apt install python3-requests``, respectively. For "
 "RHEL/CentOS, run ``sudo yum install python2-requests``"
-msgstr ""
+msgstr "Das Abrufen von |morpheus|-Cypher-Secrets in Ansible-Skripten erfordert das Python-Modul ``requests``, das nicht Teil der Python-Standardbibliothek ist. Für Ubuntu 18.04 oder 20.04 führen Sie ``sudo apt install python-requests`` bzw. ``sudo apt install python3-requests`` aus. Für RHEL/CentOS führen Sie ``sudo yum install python2-requests`` aus"
 
 #: ../../integration_guides/Automation/ansible.rst:26
 #: ../../integration_guides/Automation/ansible.rst:105
 #: ../../integration_guides/Automation/ansible.rst:142
 #: ../../integration_guides/Automation/ansible.rst:159
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../integration_guides/Automation/ansible.rst:26
 msgid ""
@@ -109,143 +109,143 @@ msgid ""
 "Ansible "
 "<https://docs.morpheusdata.com/en/latest/troubleshooting/Ansible_Troubleshooting.html>`_"
 " for installation steps."
-msgstr ""
+msgstr "Die Installation von Ansible auf der |morpheus|-Appliance ist eine Voraussetzung. In manchen Fällen erfolgt dies automatisch, in bestimmten Situationen müssen Sie manuell installieren. Siehe den Abschnitt unten zu `troubleshooting Ansible <https://docs.morpheusdata.com/en/latest/troubleshooting/Ansible_Troubleshooting.html>`_ für Installationsschritte."
 
 #: ../../integration_guides/Automation/ansible.rst:29
 msgid "Add Ansible Integration"
-msgstr ""
+msgstr "Ansible-Integration hinzufügen"
 
 #: ../../integration_guides/Automation/ansible.rst:31
 msgid "Navigate to |LibInt| and select `+ New Integration`"
-msgstr ""
+msgstr "Navigieren Sie zu |LibInt| und wählen Sie `+ New Integration`"
 
 #: ../../integration_guides/Automation/ansible.rst:32
 msgid "Select Integration Type \"Ansible\""
-msgstr ""
+msgstr "Wählen Sie den Integrationstyp „Ansible“"
 
 #: ../../integration_guides/Automation/ansible.rst:33
 msgid "Populate the following fields:"
-msgstr ""
+msgstr "Füllen Sie die folgenden Felder aus:"
 
 #: ../../integration_guides/Automation/ansible.rst:35
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: ../../integration_guides/Automation/ansible.rst:36
 msgid "Name of the Ansible Integration in |morpheus|"
-msgstr ""
+msgstr "Name der Ansible-Integration in |morpheus|"
 
 #: ../../integration_guides/Automation/ansible.rst:37
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiv"
 
 #: ../../integration_guides/Automation/ansible.rst:38
 msgid "Enabled by default"
-msgstr ""
+msgstr "Standardmäßig aktiviert"
 
 #: ../../integration_guides/Automation/ansible.rst:39
 msgid "Ansible Git URL"
-msgstr ""
+msgstr "Ansible Git URL"
 
 #: ../../integration_guides/Automation/ansible.rst:40
 msgid "https or git url format of the Ansible Git repo to use"
-msgstr ""
+msgstr "https- oder git-URL-Format des zu verwendenden Ansible-Git-Repos"
 
 #: ../../integration_guides/Automation/ansible.rst:41
 msgid "Keypair"
-msgstr ""
+msgstr "Schlüsselpaar auswählen"
 
 #: ../../integration_guides/Automation/ansible.rst:42
 msgid ""
 "For private Git repos, a keypair must be added to |morpheus| and the "
 "public key added to the git account."
-msgstr ""
+msgstr "Für private Git-Repos muss ein Schlüsselpaar zu |morpheus| hinzugefügt und der öffentliche Schlüssel dem Git-Konto hinzugefügt werden."
 
 #: ../../integration_guides/Automation/ansible.rst:43
 msgid "Playbooks Path"
-msgstr ""
+msgstr "Playbooks Path"
 
 #: ../../integration_guides/Automation/ansible.rst:44
 msgid "Path of the Playbooks relative to the Git url."
-msgstr ""
+msgstr "Pfad der Playbooks relativ zur Git-URL."
 
 #: ../../integration_guides/Automation/ansible.rst:45
 msgid "Roles Path"
-msgstr ""
+msgstr "Roles Path"
 
 #: ../../integration_guides/Automation/ansible.rst:46
 msgid "Path of the Roles relative to the Git url."
-msgstr ""
+msgstr "Pfad der Roles relativ zur Git-URL."
 
 #: ../../integration_guides/Automation/ansible.rst:47
 msgid "Group Variable Path"
-msgstr ""
+msgstr "Group Variable Path"
 
 #: ../../integration_guides/Automation/ansible.rst:48
 msgid "Path of the Group Variables relative to the Git url."
-msgstr ""
+msgstr "Pfad der Group Variables relativ zur Git-URL."
 
 #: ../../integration_guides/Automation/ansible.rst:49
 msgid "Host Variables Path"
-msgstr ""
+msgstr "Host Variables Path"
 
 #: ../../integration_guides/Automation/ansible.rst:50
 msgid "Path of the Host Variables relative to the Git url."
-msgstr ""
+msgstr "Pfad der Host Variables relativ zur Git-URL."
 
 #: ../../integration_guides/Automation/ansible.rst:51
 msgid "Use Ansible Galaxy"
-msgstr ""
+msgstr "Ansible Galaxy verwenden"
 
 #: ../../integration_guides/Automation/ansible.rst:52
 msgid "Install roles defined in ``requirements.yml``"
-msgstr ""
+msgstr "In ``requirements.yml`` definierte Rollen installieren"
 
 #: ../../integration_guides/Automation/ansible.rst:53
 msgid "Enable Verbose Logging"
-msgstr ""
+msgstr "Ausführliche Protokollierung aktivieren"
 
 #: ../../integration_guides/Automation/ansible.rst:54
 msgid "Enable to output verbose logging for Ansible task history"
-msgstr ""
+msgstr "Aktivieren, um ausführliche Protokollierung für den Ansible-Aufgabenverlauf auszugeben"
 
 #: ../../integration_guides/Automation/ansible.rst:55
 msgid "Use Morpheus Agent Command Bus"
-msgstr ""
+msgstr "Morpheus Agent Command Bus verwenden"
 
 #: ../../integration_guides/Automation/ansible.rst:56
 msgid ""
 "Enable for Ansible Playbooks to be executed via Morpheus Agent Command "
 "Bus instead of SSH"
-msgstr ""
+msgstr "Aktivieren, damit Ansible Playbooks über den Morpheus Agent Command Bus statt über SSH ausgeführt werden"
 
 #: ../../integration_guides/Automation/ansible.rst:58
 #: ../../integration_guides/Automation/ansible.rst:78
 #: ../../integration_guides/Automation/ansible.rst:89
 msgid "Save Changes"
-msgstr ""
+msgstr "Save Changes"
 
 #: ../../integration_guides/Automation/ansible.rst:60
 msgid ""
 "Once you have completed this section and saved your changes you can set "
 "up a Cloud or Group to utilize this integration."
-msgstr ""
+msgstr "Nachdem Sie diesen Abschnitt abgeschlossen und Ihre Änderungen gespeichert haben, können Sie eine Cloud oder Gruppe so einrichten, dass sie diese Integration nutzt."
 
 #: ../../integration_guides/Automation/ansible.rst:63
 msgid "Ansible on Windows"
-msgstr ""
+msgstr "Ansible unter Windows"
 
 #: ../../integration_guides/Automation/ansible.rst:65
 msgid ""
 "When executing Ansible playbooks on Windows platforms, a few requirements"
 " must be met:"
-msgstr ""
+msgstr "Beim Ausführen von Ansible Playbooks auf Windows-Plattformen müssen einige Anforderungen erfüllt sein:"
 
 #: ../../integration_guides/Automation/ansible.rst:67
 msgid ""
 "``pywinrm`` may need to be installed on the |morpheus| Appliance via "
 "``pip install pywinrm``"
-msgstr ""
+msgstr "``pywinrm`` muss ggf. auf der |morpheus|-Appliance über ``pip install pywinrm`` installiert werden"
 
 #: ../../integration_guides/Automation/ansible.rst:69
 msgid ""
@@ -254,59 +254,59 @@ msgid ""
 "cloud is scoped to Ansible. The playbooks do not need to be executed "
 "solely in the Group or Cloud, one just needs to be scoped to an Ansible "
 "Integration for Ansible Windows to run properly."
-msgstr ""
+msgstr "Eine Ansible-Integration muss einer Gruppe oder Cloud zugeordnet sein, damit Ansible unter Windows ausgeführt wird, da |morpheus| Ansible local annimmt, wenn keine Gruppe oder Cloud Ansible zugeordnet ist. Die Playbooks müssen nicht ausschließlich in der Gruppe oder Cloud ausgeführt werden; es muss lediglich eine Ansible-Integration zugeordnet sein, damit Ansible unter Windows korrekt funktioniert."
 
 #: ../../integration_guides/Automation/ansible.rst:72
 msgid "Scope Ansible Integration to a Cloud"
-msgstr ""
+msgstr "Ansible-Integration einer Cloud zuordnen"
 
 #: ../../integration_guides/Automation/ansible.rst:74
 msgid "Navigate to `Infrastructure > Clouds`"
-msgstr ""
+msgstr "Navigieren Sie zu `Infrastructure > Clouds`"
 
 #: ../../integration_guides/Automation/ansible.rst:75
 msgid "Edit the target Cloud"
-msgstr ""
+msgstr "Bearbeiten Sie die Ziel-Cloud"
 
 #: ../../integration_guides/Automation/ansible.rst:76
 #: ../../integration_guides/Automation/ansible.rst:87
 msgid "Expand the `Advanced Options` section"
-msgstr ""
+msgstr "Erweitern Sie den Abschnitt `Advanced Options`"
 
 #: ../../integration_guides/Automation/ansible.rst:77
 #: ../../integration_guides/Automation/ansible.rst:88
 msgid "In the `Config Management` dropdown, select the Ansible Integration."
-msgstr ""
+msgstr "Wählen Sie im Dropdown-Menü `Config Management` die Ansible-Integration aus."
 
 #: ../../integration_guides/Automation/ansible.rst:80
 msgid ""
 "Once an Ansible integration is added to a Cloud, a new \"ANSIBLE\" tab "
 "will appear on the Cloud details page, populated with the Ansible "
 "integrations Playbook and Roles, as well as an editable Inventory list."
-msgstr ""
+msgstr "Sobald eine Ansible-Integration zu einer Cloud hinzugefügt wurde, erscheint auf der Cloud-Detailseite ein neuer Tab „ANSIBLE“, der mit den Playbooks und Rollen der Ansible-Integration sowie einer bearbeitbaren Inventarliste gefüllt ist."
 
 #: ../../integration_guides/Automation/ansible.rst:83
 msgid "Scope Ansible Integration to a Group"
-msgstr ""
+msgstr "Ansible-Integration einer Gruppe zuordnen"
 
 #: ../../integration_guides/Automation/ansible.rst:85
 msgid "Navigate to `Infrastructure > Groups`"
-msgstr ""
+msgstr "Navigieren Sie zu `Infrastructure > Groups`"
 
 #: ../../integration_guides/Automation/ansible.rst:86
 msgid "Edit the target Group"
-msgstr ""
+msgstr "Bearbeiten Sie die Zielgruppe"
 
 #: ../../integration_guides/Automation/ansible.rst:91
 msgid ""
 "Once an Ansible integration is added to a Group, a new \"ANSIBLE\" tab "
 "will appear on the Group details page, populated with the Ansible "
 "integrations Playbook and Roles, as well as an editable Inventory list."
-msgstr ""
+msgstr "Sobald eine Ansible-Integration zu einer Gruppe hinzugefügt wurde, erscheint auf der Gruppen-Detailseite ein neuer Tab „ANSIBLE“, der mit den Playbooks und Rollen der Ansible-Integration sowie einer bearbeitbaren Inventarliste gefüllt ist."
 
 #: ../../integration_guides/Automation/ansible.rst:94
 msgid "Provisioning Options"
-msgstr ""
+msgstr "Provisionierungsoptionen"
 
 #: ../../integration_guides/Automation/ansible.rst:96
 msgid ""
@@ -315,66 +315,66 @@ msgid ""
 " of the provisioning wizard. By default, Ansible is enabled, but can be "
 "disabled by expanding the `Ansible` section and unchecking `Enable "
 "Ansible`."
-msgstr ""
+msgstr "Beim Provisionieren von Instanzen in eine Cloud oder Gruppe mit hinzugefügter Ansible-Integration erscheint im Abschnitt Config des Provisionierungsassistenten ein Abschnitt `Ansible`. Standardmäßig ist Ansible aktiviert, kann aber deaktiviert werden, indem Sie den Abschnitt `Ansible` erweitern und `Enable Ansible` deaktivieren."
 
 #: ../../integration_guides/Automation/ansible.rst:98
 msgid "Ansible Integration Provisioning options:"
-msgstr ""
+msgstr "Optionen zur Provisionierung mit Ansible-Integration:"
 
 #: ../../integration_guides/Automation/ansible.rst:100
 msgid "Enable Ansible"
-msgstr ""
+msgstr "Enable Ansible"
 
 #: ../../integration_guides/Automation/ansible.rst:101
 msgid "Select to bootstrap"
-msgstr ""
+msgstr "Zum Bootstrap auswählen"
 
 #: ../../integration_guides/Automation/ansible.rst:102
 msgid "Ansible Group"
-msgstr ""
+msgstr "Ansible Group"
 
 #: ../../integration_guides/Automation/ansible.rst:103
 msgid ""
 "Ansible Inventory Group. Use existing group or enter a new group name to "
 "create a new group. Leaving this field blank will place instance in the "
 "\"unassigned\" inventory group."
-msgstr ""
+msgstr "Ansible-Inventargruppe. Verwenden Sie eine vorhandene Gruppe oder geben Sie einen neuen Gruppennamen ein, um eine neue Gruppe zu erstellen. Wenn Sie dieses Feld leer lassen, wird die Instanz in der Inventargruppe „unassigned“ platziert."
 
 #: ../../integration_guides/Automation/ansible.rst:105
 msgid ""
 "An instance can belong to multiple groups by separating group names with "
 "a comma"
-msgstr ""
+msgstr "Eine Instanz kann mehreren Gruppen angehören, indem Sie Gruppennamen durch ein Komma trennen"
 
 #: ../../integration_guides/Automation/ansible.rst:107
 msgid "Playbook"
-msgstr ""
+msgstr "Playbook"
 
 #: ../../integration_guides/Automation/ansible.rst:108
 msgid "Playbook(s) to run. The .yml extension is optional."
-msgstr ""
+msgstr "Auszuführende(s) Playbook(s). Die Erweiterung .yml ist optional."
 
 #: ../../integration_guides/Automation/ansible.rst:111
 msgid "Running Playbooks"
-msgstr ""
+msgstr "Playbooks ausführen"
 
 #: ../../integration_guides/Automation/ansible.rst:113
 msgid ""
 "Playbooks can also be run on all inventory groups, individual groups, or "
 "added as a task and ran with workflows."
-msgstr ""
+msgstr "Playbooks können auch für alle Inventargruppen, einzelne Gruppen oder als Aufgabe hinzugefügt und mit Workflows ausgeführt werden."
 
 #: ../../integration_guides/Automation/ansible.rst:115
 msgid ""
 "To run Ansible on all or a single inventory group, in the Ansible tab of "
 "the |morpheus| Group page, select the `Actions` dropdown and click `Run`."
-msgstr ""
+msgstr "Um Ansible für alle oder eine einzelne Inventargruppe auszuführen, wählen Sie im Ansible-Tab der |morpheus|-Gruppenseite das Dropdown-Menü `Actions` und klicken Sie auf `Run`."
 
 #: ../../integration_guides/Automation/ansible.rst:117
 msgid ""
 "In the `Run Ansible` modal, you can then select all or an individual "
 "group, and then all or a single Playbook, as well as add custom tags."
-msgstr ""
+msgstr "Im Modal `Run Ansible` können Sie dann alle oder eine einzelne Gruppe sowie alle oder ein einzelnes Playbook auswählen und benutzerdefinierte Tags hinzufügen."
 
 #: ../../integration_guides/Automation/ansible.rst:119
 msgid ""
@@ -383,29 +383,29 @@ msgid ""
 " Automation pane during provisioning of new instances, when creating app "
 "blueprints, or ran on existing instances using the `Actions > Run "
 "Workflow` on the Instance or Host pages."
-msgstr ""
+msgstr "Playbooks können auch als Aufgaben zu Workflows im Abschnitt :menuselection:`Library --> Automation` hinzugefügt und anschließend im Bereich Automatisierung bei der Provisionierung neuer Instanzen, beim Erstellen von App-Blueprints oder auf vorhandenen Instanzen über `Actions > Run Workflow` auf den Instanz- oder Host-Seiten ausgewählt werden."
 
 #: ../../integration_guides/Automation/ansible.rst:122
 msgid "Using variables"
-msgstr ""
+msgstr "Variablen verwenden"
 
 #: ../../integration_guides/Automation/ansible.rst:124
 msgid "|morpheus| variables can be used in playbooks."
-msgstr ""
+msgstr "|morpheus|-Variablen können in Playbooks verwendet werden."
 
 #: ../../integration_guides/Automation/ansible.rst:126
 msgid "Use Case:"
-msgstr ""
+msgstr "Anwendungsfall:"
 
 #: ../../integration_guides/Automation/ansible.rst:127
 msgid "Create a user as instance hostname during provisioning."
-msgstr ""
+msgstr "Einen Benutzer als Instanz-Hostname während der Provisionierung erstellen."
 
 #: ../../integration_guides/Automation/ansible.rst:128
 msgid ""
 "Below is the playbook. Add this playbook to a task and run it as a "
 "workflow on the instance."
-msgstr ""
+msgstr "Nachfolgend das Playbook. Fügen Sie dieses Playbook einer Aufgabe hinzu und führen Sie es als Workflow auf der Instanz aus."
 
 #: ../../integration_guides/Automation/ansible.rst:129
 msgid ""
@@ -425,20 +425,20 @@ msgstr ""
 msgid ""
 "``{{ morpheus['instance']['hostname'] }}`` is the format of using "
 "|morpheus| Variables"
-msgstr ""
+msgstr "``{{ morpheus['instance']['hostname'] }}`` ist das Format zur Verwendung von |morpheus|-Variablen"
 
 #: ../../integration_guides/Automation/ansible.rst:144
 msgid ""
 "Create a user with a name which you enter during provisioning using a "
 "custom Instance type."
-msgstr ""
+msgstr "Einen Benutzer mit einem Namen erstellen, den Sie während der Provisionierung über einen benutzerdefinierten Instanztyp eingeben."
 
 #: ../../integration_guides/Automation/ansible.rst:145
 msgid ""
 "This instance type has a `Text` Input that provides a text box to enter a"
 " username. The fieldName of the Input in this case would be `username`. "
 "Below is the playbook."
-msgstr ""
+msgstr "Dieser Instanztyp hat eine `Text`-Eingabe, die ein Textfeld zur Eingabe eines Benutzernamens bereitstellt. Der fieldName der Eingabe wäre in diesem Fall `username`. Nachfolgend das Playbook."
 
 #: ../../integration_guides/Automation/ansible.rst:146
 msgid ""
@@ -456,11 +456,11 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:159
 msgid "``{{ morpheus['customOptions']['username'] }}`` will be the format."
-msgstr ""
+msgstr "``{{ morpheus['customOptions']['username'] }}`` ist das Format."
 
 #: ../../integration_guides/Automation/ansible.rst:162
 msgid "Using Secrets"
-msgstr ""
+msgstr "Secrets verwenden"
 
 #: ../../integration_guides/Automation/ansible.rst:164
 msgid ""
@@ -471,7 +471,7 @@ msgid ""
 "allows one to store secret data in a highly encrypted way for future "
 "retrieval. Referencing keys stored in cypher in your playbooks is a "
 "matter of using a built-in lookup plugin for ansible."
-msgstr ""
+msgstr "Ein weiteres großartiges Feature bei der gemeinsamen Nutzung von Ansible und |morpheus| ist die integrierte Unterstützung für einige der von |morpheus| für die Automatisierung bereitgestellten Dienste. Einer dieser Dienste ist Cypher (weitere Details finden Sie in der Dokumentation zu :ref:`Cypher`). Cypher ermöglicht das Speichern geheimer Daten in stark verschlüsselter Form zur späteren Abrufung. Schlüssel, die in Cypher gespeichert sind, in Ihren Playbooks zu referenzieren, erfolgt über ein integriertes Lookup-Plugin für Ansible."
 
 #: ../../integration_guides/Automation/ansible.rst:166
 msgid ""
@@ -490,14 +490,14 @@ msgid ""
 "example the `password/` mountpoint is capable of autogenerating passwords"
 " if they have not previously been defined and storing them within cypher "
 "for reference later."
-msgstr ""
+msgstr "Durch die Syntax ``{{ lookup('cypher','secret=password/myusername') }}``. Damit kann der Wert direkt aus dem Schlüssel verwendet werden. Dieses Lookup-Plugin unterstützt auch einige weitere praktische Shortcuts. Im obigen Beispiel kann der Mountpoint `password/` Kennwörter automatisch generieren, falls sie zuvor noch nicht definiert wurden, und sie in Cypher zur späteren Referenz speichern."
 
 #: ../../integration_guides/Automation/ansible.rst:177
 msgid ""
 "Another capability is accessing properties from within a key in cypher. "
 "The value of a key can also be a JSON object which can be referenced for "
 "properties within. For example:"
-msgstr ""
+msgstr "Eine weitere Möglichkeit ist der Zugriff auf Eigenschaften innerhalb eines Schlüssels in Cypher. Der Wert eines Schlüssels kann auch ein JSON-Objekt sein, dessen Eigenschaften referenziert werden können. Zum Beispiel:"
 
 #: ../../integration_guides/Automation/ansible.rst:179
 msgid "{{ lookup('cypher','secret=secret/myjsonobject:value') }}"
@@ -507,18 +507,18 @@ msgstr ""
 msgid ""
 "This would grab the `value` property off the nested json data stored "
 "within the key."
-msgstr ""
+msgstr "Dadurch würde die Eigenschaft `value` aus den verschachtelten JSON-Daten innerhalb des Schlüssels gelesen."
 
 #: ../../integration_guides/Automation/ansible.rst:185
 msgid ""
 "Cypher is very powerful for storing these temporary or permanent secrets "
 "that one may need to orchestrate various tasks and workflows within "
 "Ansible."
-msgstr ""
+msgstr "Cypher ist sehr leistungsfähig zum Speichern dieser temporären oder permanenten Secrets, die man für die Orchestrierung verschiedener Aufgaben und Workflows in Ansible benötigt."
 
 #: ../../integration_guides/Automation/ansible.rst:188
 msgid "Custom Inventory Entries"
-msgstr ""
+msgstr "Benutzerdefinierte Inventareinträge"
 
 #: ../../integration_guides/Automation/ansible.rst:190
 msgid ""
@@ -529,7 +529,7 @@ msgid ""
 " specific Ansible integration). Click on the ``ACTIONS`` button, then "
 "click ``EDIT INVENTORY``. Inventory should be in the default Ansible ini "
 "format."
-msgstr ""
+msgstr "Mit Morpheus ist es möglich, benutzerdefinierte Inventareinträge hinzuzufügen, die außerhalb des Morpheus-Host-/Server-Eintrags existieren. Dies gilt global über Cloud oder Gruppe und erfolgt auf der Integrations-Detailseite der Ansible-Integration. Um einen benutzerdefinierten Inventareintrag hinzuzufügen, navigieren Sie zu |LibInt| > (Ihre spezifische Ansible-Integration). Klicken Sie auf die Schaltfläche ``ACTIONS`` und dann auf ``EDIT INVENTORY``. Das Inventar sollte im Standard-Ansible-INI-Format vorliegen."
 
 #: ../../integration_guides/Automation/ansible.rst:192
 msgid ".. image:: /images/integration_guides/automation/ansible_inventory.png"
@@ -537,7 +537,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:195
 msgid "Using Ansible over the |morpheus| Agent Command Bus"
-msgstr ""
+msgstr "Ansible über den |morpheus| Agent Command Bus verwenden"
 
 #: ../../integration_guides/Automation/ansible.rst:197
 msgid ""
@@ -546,7 +546,7 @@ msgid ""
 "target machine. This could be due to being a customer network (in the "
 "environment of an MSP ), or various security restrictions put in place by"
 " tighter industries (i.e. Government, Medical, Finance)."
-msgstr ""
+msgstr "In vielen Umgebungen können Sicherheitsbeschränkungen die Nutzung von SSH oder WinRM zum Ausführen von Playbooks von einem Ansible-Server auf der Appliance auf eine Zielmaschine einschränken. Dies kann an einem Kundennetzwerk (in der Umgebung eines MSP) oder an verschiedenen Sicherheitsbeschränkungen in strengeren Branchen (z. B. Behörden, Medizin, Finanzen) liegen."
 
 #: ../../integration_guides/Automation/ansible.rst:199
 msgid ""
@@ -562,11 +562,11 @@ msgid ""
 "up. However, |morpheus| offers some solutions to help mitigate these "
 "issues and increase scalability while, at the same time improving "
 "security."
-msgstr ""
+msgstr "Mit Ansible kann man schnell in Schwierigkeiten geraten. Die Skalierbarkeit ist durch grundlegende Designentscheidungen begrenzt, die Kernkonzepte anderer Konfigurationsmanagement-Frameworks (z. B. Chef und Puppet) zu umgehen scheinen. Da kein Agent vorhanden ist, muss die Ansible-Ausführungsbinärdatei selbst die gesamte Last und Logik der Playbook-Ausführung auf allen Maschinen im Inventar eines Ansible-Projekts bewältigen. Dies unterscheidet sich von anderen Tools, bei denen die Arbeitslast auf die Agents jeder VM verteilt wird. Aufgrund dieses „Outreach“-Ansatzes ist der Einstieg in Ansible sehr einfach, kann aber deutlich langsamer und schwerer zu skalieren sein. |morpheus| bietet jedoch Lösungen, um diese Probleme zu mindern, die Skalierbarkeit zu erhöhen und gleichzeitig die Sicherheit zu verbessern."
 
 #: ../../integration_guides/Automation/ansible.rst:202
 msgid "How does the |morpheus| Agent Command Bus Work?"
-msgstr ""
+msgstr "Wie funktioniert der |morpheus| Agent Command Bus?"
 
 #: ../../integration_guides/Automation/ansible.rst:204
 msgid ""
@@ -579,7 +579,7 @@ msgid ""
 "sending back logs, guest statistics, and a command bus for automation. "
 "Since it is a WebSocket, bidirectional communication is possible over a "
 "STOMP communication bus."
-msgstr ""
+msgstr "Eines der großen Vorteile von |morpheus| ist der agentoptionale Ansatz. Das bedeutet, dass diese Funktionalität auch ohne den Agent funktionieren kann; der Agent liefert jedoch die hier dargestellten Sicherheitsvorteile. Wenn eine Instanz in |morpheus| provisioniert (oder in verwaltet umgewandelt) wird, kann ein Agent installiert werden. Dieser Agent öffnet einen sicheren WebSocket zurück zur |morpheus|-Appliance (über Port 443). Dieser Agent ist für das Zurücksenden von Protokollen, Gaststatistiken und einen Command Bus für die Automatisierung verantwortlich. Da es sich um einen WebSocket handelt, ist bidirektionale Kommunikation über einen STOMP-Kommunikationsbus möglich."
 
 #: ../../integration_guides/Automation/ansible.rst:206
 msgid ""
@@ -597,7 +597,7 @@ msgid ""
 "execution. This means Ansible needs zero knowledge of a machines target "
 "ip address, nor its credentials. These are all stored and safely "
 "encrypted within |morpheus|."
-msgstr ""
+msgstr "Wenn diese Funktionalität in einer Ansible-Integration aktiviert ist, wird ein `connection_plugin` vom Typ `morpheus` und `morpheus_win` bei Ansible registriert. Diese leiten Bash- oder PowerShell-Befehle in ihrer Rohform von Ansible zur Ausführung über eine |morpheus|-API. Die Ansible-Binärdatei sendet auszuführende Befehle als HTTPS-Anfrage über die API und nutzt dabei ein einmaliges Ausführungs-Lease-Token, das an die Ansible-Binärdatei gesendet wird. Auch Dateiübertragungen können über diese API-Schnittstelle erfolgen. Wenn |morpheus| diese Befehle empfängt, werden sie an den Agent der Zielinstanz zur Ausführung gesendet. Nach Abschluss wird eine Antwort zurückgesendet und auf dem `ExecutionRequest` in |morpheus| aktualisiert. Ansible fragt den Status und die Ausgabe dieser Anfragen ab und verwendet sie als Antwort der Ausführung. Das bedeutet, dass Ansible weder die Ziel-IP-Adresse einer Maschine noch deren Anmeldedaten kennen muss. Diese werden alle in |morpheus| gespeichert und sicher verschlüsselt."
 
 #: ../../integration_guides/Automation/ansible.rst:208
 msgid ""
@@ -605,11 +605,11 @@ msgid ""
 "simpler than utilizing `pywinrm` when it comes to orchestrating Windows  "
 "as the winrm configurations can be cumbersome to properly setup, "
 "especially in tightly secured Enterprise environments."
-msgstr ""
+msgstr "Es wurde auch darauf hingewiesen, dass dieser Ausführungsbus deutlich einfacher ist als die Nutzung von `pywinrm` bei der Orchestrierung von Windows, da die WinRM-Konfigurationen umständlich einzurichten sein können, insbesondere in streng gesicherten Unternehmensumgebungen."
 
 #: ../../integration_guides/Automation/ansible.rst:211
 msgid "Using Ansible Galaxy"
-msgstr ""
+msgstr "Ansible Galaxy verwenden"
 
 #: ../../integration_guides/Automation/ansible.rst:213
 msgid ""
@@ -618,11 +618,11 @@ msgid ""
 "into the root of your Git repository and make sure `Use Ansible Galaxy` "
 "is checked in the integration.  Roles will be installed in the root of "
 "the repository if a directory is not defined in `Roles Path`."
-msgstr ""
+msgstr "|morpheus| kann eine ``requirements.yml``-Datei verwenden, um Ansible-Rollen zu definieren, die vor dem Ausführen Ihres Playbooks heruntergeladen werden. Legen Sie ``requirements.yml`` im Stammverzeichnis Ihres Git-Repositorys ab und stellen Sie sicher, dass `Use Ansible Galaxy` in der Integration aktiviert ist. Rollen werden im Stammverzeichnis des Repositorys installiert, wenn in `Roles Path` kein Verzeichnis definiert ist."
 
 #: ../../integration_guides/Automation/ansible.rst:215
 msgid "Example requirements.yml:"
-msgstr ""
+msgstr "Beispiel requirements.yml:"
 
 #: ../../integration_guides/Automation/ansible.rst:217
 msgid ""
@@ -632,7 +632,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:222
 msgid "Example playbook.yml:"
-msgstr ""
+msgstr "Beispiel playbook.yml:"
 
 #: ../../integration_guides/Automation/ansible.rst:224
 msgid ""
@@ -644,7 +644,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:232
 msgid "Troubleshooting Ansible"
-msgstr ""
+msgstr "Ansible Fehlerbehebung"
 
 #: ../../integration_guides/Automation/ansible.rst:234
 msgid ""
@@ -653,11 +653,11 @@ msgid ""
 " task to see the output.  You can also see the run output in the ui logs "
 "in /var/log/morpheus/morpheus-ui/current​ which can be tailed by running "
 "``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Wenn ein Workflow manuell ausgeführt wird, ist die Ansible-Ausführungsausgabe im Tab Instanzverlauf verfügbar. Wählen Sie die ``i``-Blase neben der Ansible-Aufgabe, um die Ausgabe zu sehen. Sie können die Ausführungsausgabe auch in den UI-Protokollen unter /var/log/morpheus/morpheus-ui/current sehen, die mit ``morpheus-ctl tail morpheus-ui`` verfolgt werden können."
 
 #: ../../integration_guides/Automation/ansible.rst:236
 msgid "Verify Ansible is installed on the |morpheus| Appliance."
-msgstr ""
+msgstr "Prüfen Sie, ob Ansible auf der |morpheus|-Appliance installiert ist."
 
 #: ../../integration_guides/Automation/ansible.rst:238
 msgid ""
@@ -668,17 +668,17 @@ msgid ""
 " Select Ansible Integration). We also see it in the Ansible tab of a "
 "Group or Cloud scoped to Ansible, just run ``--version`` as ansible is "
 "already included in the command."
-msgstr ""
+msgstr "Ansible sollte automatisch installiert werden, aber bestimmte Betriebssystem- oder Netzwerkbedingungen können die automatische Installation verhindern. Sie können die Installation bestätigen, indem Sie ``ansible --version`` in der |morpheus|-Appliance ausführen oder die Ansible-Integrations-Detailseite anzeigen (|AdmInt| > Ansible-Integration auswählen). Wir sehen es auch im Ansible-Tab einer Ansible zugeordneten Gruppe oder Cloud; führen Sie einfach ``--version`` aus, da ansible bereits im Befehl enthalten ist."
 
 #: ../../integration_guides/Automation/ansible.rst:240
 msgid ""
 "If Ansible is not installed, follow these instructions to install, or use"
 " your preferred installation method:"
-msgstr ""
+msgstr "Wenn Ansible nicht installiert ist, folgen Sie diesen Anweisungen zur Installation oder verwenden Sie Ihre bevorzugte Installationsmethode:"
 
 #: ../../integration_guides/Automation/ansible.rst:242
 msgid "Ubuntu:"
-msgstr ""
+msgstr "Ubuntu:"
 
 #: ../../integration_guides/Automation/ansible.rst:244
 msgid ""
@@ -690,7 +690,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:251
 msgid "CentOS:"
-msgstr ""
+msgstr "CentOS:"
 
 #: ../../integration_guides/Automation/ansible.rst:253
 msgid ""
@@ -700,7 +700,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/ansible.rst:258
 msgid "Then create the working Ansible directory for |morpheus|:"
-msgstr ""
+msgstr "Erstellen Sie anschließend das Arbeitsverzeichnis für Ansible für |morpheus|:"
 
 #: ../../integration_guides/Automation/ansible.rst:260
 msgid ""
@@ -713,7 +713,7 @@ msgstr ""
 msgid ""
 "Validate the git repo is authorizing and the paths are configured "
 "correctly."
-msgstr ""
+msgstr "Prüfen Sie, ob das Git-Repository autorisiert und die Pfade korrekt konfiguriert sind."
 
 #: ../../integration_guides/Automation/ansible.rst:269
 msgid ""
@@ -722,7 +722,7 @@ msgid ""
 "to be added to the git repo via user settings. If both are set up right, "
 "you will see the playbooks and roles populate in the Ansible Integration "
 "details page."
-msgstr ""
+msgstr "Die öffentlichen und privaten SSH-Schlüssel müssen über „Infrastructure > Keys & Certs“ zur |morpheus|-Appliance hinzugefügt werden, und der öffentliche Schlüssel muss über die Benutzereinstellungen zum Git-Repository hinzugefügt werden. Wenn beides richtig eingerichtet ist, sehen Sie die Playbooks und Rollen auf der Ansible-Integrations-Detailseite."
 
 #: ../../integration_guides/Automation/ansible.rst:271
 msgid ""
@@ -730,7 +730,7 @@ msgid ""
 "than default. It can be left to use the default branch. If your playbooks"
 " are in a different branch you can add the brach name in the Git Ref "
 "field."
-msgstr ""
+msgstr "Das Feld Git Ref bei Playbook-Aufgaben dient zur Angabe eines anderen Git-Zweigs als dem Standard. Es kann leer gelassen werden, um den Standardzweig zu verwenden. Wenn sich Ihre Playbooks in einem anderen Zweig befinden, können Sie den Zweignamen im Feld Git Ref angeben."
 
 #: ../../integration_guides/Automation/ansible.rst:273
 msgid ""
@@ -738,7 +738,7 @@ msgid ""
 "fields do not need to be populated, they are for running a different "
 "playbook than the one set in the Ansible task in the Workflow, or using a"
 " different Git Ref."
-msgstr ""
+msgstr "Beim Ausführen eines Playbooks in einem Workflow müssen die zusätzlichen Playbook-Felder nicht ausgefüllt werden; sie dienen dem Ausführen eines anderen Playbooks als dem in der Ansible-Aufgabe im Workflow festgelegten oder der Verwendung eines anderen Git Ref."
 
 #: ../../integration_guides/Automation/ansible.rst:275
 msgid ""
@@ -746,5 +746,5 @@ msgid ""
 "Instances through `Actions > Run Workflow​` and not seeing results, set "
 "the Provision Phase on the Ansible task to Provision​ as there may be "
 "issues with executing tasks on other phases when executing manually."
-msgstr ""
+msgstr "Wenn Sie Workflows mit Ansible-Aufgaben manuell auf vorhandenen Instanzen über `Actions > Run Workflow` ausführen und keine Ergebnisse sehen, setzen Sie die Provisionierungsphase der Ansible-Aufgabe auf Provision, da es bei der manuellen Ausführung Probleme mit der Ausführung von Aufgaben in anderen Phasen geben kann."
 

@@ -23,11 +23,11 @@ msgstr ""
 #: ../../administration/health/health.rst:2
 #: ../../administration/health/health.rst:169
 msgid "Health"
-msgstr ""
+msgstr "État"
 
 #: ../../administration/health/health.rst:5
 msgid "|Morpheus| Health"
-msgstr ""
+msgstr "État |Morpheus|"
 
 #: ../../administration/health/health.rst:7
 msgid ".. image:: /images/administration/health/morpheusHealth500.png"
@@ -38,7 +38,7 @@ msgid ""
 "The |morpheus| Health section provides an overview of the health of your "
 "|Morpheus| appliance. It includes an appliance health summary in the "
 "following areas:"
-msgstr ""
+msgstr "La section État |morpheus| fournit un aperçu de l'état de votre appliance |Morpheus|. Elle inclut un résumé de l'état de l'appliance dans les domaines suivants :"
 
 #: ../../administration/health/health.rst:11
 msgid ""
@@ -48,7 +48,7 @@ msgid ""
 "Depending on appliance performance and how frequently this indicator is "
 "in a warning state, it may be necessary to upgrade to increase CPU. The "
 "**Overall** health indicator will mirror the CPU health indicator"
-msgstr ""
+msgstr "**CPU :** L'utilisation CPU de l'appliance est vérifiée. Si l'utilisation est supérieure à 50 %, cet indicateur sera en état jaune ou avertissement. Si |morpheus| ne peut pas terminer la vérification, il sera en état rouge ou erreur. Selon les performances de l'appliance et la fréquence de cet indicateur en avertissement, une mise à niveau pour augmenter le CPU peut être nécessaire. L'indicateur d'état **Global** reflétera l'indicateur d'état CPU"
 
 #: ../../administration/health/health.rst:12
 #, python-format
@@ -60,14 +60,14 @@ msgid ""
 "frequently this indicator is in a warning state, it may be necessary to "
 "increase swap, upgrade the appliance to add memory, or consider a "
 "different appliance architecture for those using single-node appliances"
-msgstr ""
+msgstr "**Mémoire :** Si l'utilisation du swap est supérieure à 60 % ou l'utilisation mémoire |morpheus| supérieure à 95 %, cet indicateur sera en état jaune ou avertissement. Si |morpheus| ne peut pas terminer la vérification pour une raison quelconque, il sera en état rouge ou erreur. Selon les performances de l'appliance et la fréquence de cet indicateur en avertissement, il peut être nécessaire d'augmenter le swap, mettre à niveau l'appliance pour ajouter de la mémoire ou envisager une architecture d'appliance différente pour ceux qui utilisent des appliances mono-nœud"
 
 #: ../../administration/health/health.rst:13
 msgid ""
 "**Storage:** If utilization of the filesystem mounted at \"/\" exceeds "
 "80%, this indicator will be in a yellow warned status. Above 90% will put"
 " this indicator in red or error status"
-msgstr ""
+msgstr "**Stockage :** Si l'utilisation du système de fichiers monté sur « / » dépasse 80 %, cet indicateur sera en état jaune averti. Au-dessus de 90 %, cet indicateur passera en état rouge ou erreur"
 
 #: ../../administration/health/health.rst:14
 msgid ""
@@ -80,14 +80,14 @@ msgid ""
 "connections against the number of max connections. In the case of "
 "database connections exceeding the maximum, consider increasing the "
 "maximum settings connection"
-msgstr ""
+msgstr "**Base de données :** La base de données est vérifiée. Si le nombre de connexions à la base de données dépasse le nombre maximum configuré ou si des requêtes de test sont signalées comme lentes, cet indicateur sera en état jaune ou avertissement. Si |morpheus| ne peut pas communiquer avec la base de données, il sera en état rouge ou erreur. Dans la section base de données plus bas sur la page, vous pouvez comparer le nombre maximum de connexions utilisées au nombre maximum de connexions. Si les connexions à la base de données dépassent le maximum, envisagez d'augmenter le paramètre maximum de connexions"
 
 #: ../../administration/health/health.rst:15
 msgid ""
 "**Elastic:** Elasticsearch is polled for the health status of each index."
 " If any indices are not reporting a \"green\" health status, this "
 "indicator will be in a yellow or warning state."
-msgstr ""
+msgstr "**Elastic :** Elasticsearch est interrogé pour l'état de santé de chaque index. Si des index ne signalent pas un état « green », cet indicateur sera en état jaune ou avertissement."
 
 #: ../../administration/health/health.rst:16
 msgid ""
@@ -98,11 +98,11 @@ msgid ""
 "the individual Queues listed and which have messages piling up. When the "
 "appliance is unable to complete the check for any reason, this indicator "
 "will be in a red or error state"
-msgstr ""
+msgstr "**Files d'attente :** Les files d'attente RabbitMQ sont vérifiées. Toute file contenant plus de 1000 messages est considérée en état d'erreur. L'état des files d'attente de l'appliance est jaune ou avertissement lorsque des files sont dans cet état d'erreur. Dans la section Files d'attente plus bas sur la page, vous pouvez voir les files individuelles listées et celles dont les messages s'accumulent. Lorsque l'appliance ne peut pas terminer la vérification pour une raison quelconque, cet indicateur sera en état rouge ou erreur"
 
 #: ../../administration/health/health.rst:19
 msgid "Health Levels"
-msgstr ""
+msgstr "Niveaux d'état"
 
 #: ../../administration/health/health.rst:21
 msgid ""
@@ -112,46 +112,46 @@ msgid ""
 "that node on this page. Use load-balancer access logs and appliance logs "
 "to correlate a request with an application node; do not depend on an "
 "unmaintained forum plugin for this operational decision."
-msgstr ""
+msgstr "Les niveaux d'état fournissent une représentation en direct de la charge mémoire et CPU actuelle sur l'appliance. Dans une appliance HA, ces données sont spécifiques au nœud d'application servant la requête. Le produit de base n'identifie pas ce nœud sur cette page. Utilisez les journaux d'accès du load balancer et les journaux d'appliance pour corréler une requête avec un nœud d'application ; ne dépendez pas d'un plug-in de forum non maintenu pour cette décision opérationnelle."
 
 #: ../../administration/health/health.rst:23
 msgid ""
 "**Morpheus CPU:** Instantaneous amount of CPU capacity in use by "
 "|morpheus| processes"
-msgstr ""
+msgstr "**CPU Morpheus :** Quantité instantanée de capacité CPU utilisée par les processus |morpheus|"
 
 #: ../../administration/health/health.rst:24
 msgid ""
 "**System CPU:** Instantaneous amount of CPU capacity in use by all "
 "processes"
-msgstr ""
+msgstr "**CPU système :** Quantité instantanée de capacité CPU utilisée par tous les processus"
 
 #: ../../administration/health/health.rst:25
 msgid ""
 "**Morpheus Memory:** JVM maximum heap for the |morpheus| application "
 "process on the application node serving the page (see the metric "
 "definitions below)"
-msgstr ""
+msgstr "**Mémoire Morpheus :** Heap maximum JVM pour le processus d'application |morpheus| sur le nœud d'application servant la page (voir les définitions de métriques ci-dessous)"
 
 #: ../../administration/health/health.rst:26
 msgid ""
 "**System Memory:** Instantaneous amount of total system memory currently "
 "claimed (this is commonly a high percentage, see the TIP box below)"
-msgstr ""
+msgstr "**Mémoire système :** Quantité instantanée de mémoire système totale actuellement réclamée (ce pourcentage est généralement élevé, voir la zone TIP ci-dessous)"
 
 #: ../../administration/health/health.rst:27
 msgid "**Used Swap:** Instantaneous amount of total available system swap in use"
-msgstr ""
+msgstr "**Swap utilisé :** Quantité instantanée du swap système total disponible en cours d'utilisation"
 
 #: ../../administration/health/health.rst:28
 msgid ""
 "**Storage:** The instantaneous percentage utilization of the filesystem "
 "mounted at \"/\""
-msgstr ""
+msgstr "**Stockage :** Pourcentage d'utilisation instantané du système de fichiers monté sur « / »"
 
 #: ../../administration/health/health.rst:30
 msgid "Tip"
-msgstr ""
+msgstr "Astuce"
 
 #: ../../administration/health/health.rst:30
 msgid ""
@@ -161,153 +161,153 @@ msgid ""
 "guidance below. If warnings persist with degraded behavior, collect a "
 "support bundle and open a case through the `HPE Support Center "
 "<https://www.hpe.com/support/hpesc>`_."
-msgstr ""
+msgstr "Une utilisation élevée de la mémoire système seule ne démontre pas une pression sur l'appliance, car l'utilisation du système d'exploitation inclut les caches et les processus hors JVM d'application. Utilisez les définitions de métriques et les recommandations d'avertissement ci-dessous. Si les avertissements persistent avec une dégradation du comportement, collectez un bundle d'assistance et ouvrez un dossier via le `HPE Support Center <https://www.hpe.com/support/hpesc>`_."
 
 #: ../../administration/health/health.rst:33
 msgid "Additional System Health Indices"
-msgstr ""
+msgstr "Indices d'état système supplémentaires"
 
 #: ../../administration/health/health.rst:36
 msgid "Memory metric definitions"
-msgstr ""
+msgstr "Définitions des métriques mémoire"
 
 #: ../../administration/health/health.rst:42
 msgid "Displayed metric"
-msgstr ""
+msgstr "Métrique affichée"
 
 #: ../../administration/health/health.rst:43
 msgid "Current calculation"
-msgstr ""
+msgstr "Calcul actuel"
 
 #: ../../administration/health/health.rst:44
 msgid "Scope and interpretation"
-msgstr ""
+msgstr "Portée et interprétation"
 
 #: ../../administration/health/health.rst:45
 #: ../../administration/health/health.rst:90
 msgid "Morpheus Memory"
-msgstr ""
+msgstr "Mémoire Morpheus"
 
 #: ../../administration/health/health.rst:46
 msgid "JVM maximum memory (``Runtime.maxMemory``)"
-msgstr ""
+msgstr "Mémoire maximum JVM (``Runtime.maxMemory``)"
 
 #: ../../administration/health/health.rst:47
 msgid ""
 "Upper heap limit for the |morpheus| application process on the "
 "application node serving the page."
-msgstr ""
+msgstr "Limite supérieure du heap pour le processus d'application |morpheus| sur le nœud d'application servant la page."
 
 #: ../../administration/health/health.rst:48
 #: ../../administration/health/health.rst:91
 msgid "Morpheus Used Memory"
-msgstr ""
+msgstr "Mémoire utilisée Morpheus"
 
 #: ../../administration/health/health.rst:49
 msgid "JVM total memory minus JVM free memory"
-msgstr ""
+msgstr "Mémoire totale JVM moins mémoire libre JVM"
 
 #: ../../administration/health/health.rst:50
 msgid ""
 "Heap currently committed to the JVM and occupied. This is not total "
 "resident memory for every appliance service."
-msgstr ""
+msgstr "Heap actuellement engagé dans la JVM et occupé. Ce n'est pas la mémoire résidente totale pour tous les services d'appliance."
 
 #: ../../administration/health/health.rst:51
 #: ../../administration/health/health.rst:92
 msgid "Morpheus Free Memory"
-msgstr ""
+msgstr "Mémoire libre Morpheus"
 
 #: ../../administration/health/health.rst:52
 msgid "``Runtime.freeMemory``"
-msgstr ""
+msgstr "``Runtime.freeMemory``"
 
 #: ../../administration/health/health.rst:53
 msgid ""
 "Free space inside the currently committed JVM heap, not all memory "
 "available before the heap reaches its maximum."
-msgstr ""
+msgstr "Espace libre dans le heap JVM actuellement engagé, pas toute la mémoire disponible avant que le heap atteigne son maximum."
 
 #: ../../administration/health/health.rst:54
 #: ../../administration/health/health.rst:93
 msgid "Morpheus Memory Usage"
-msgstr ""
+msgstr "Utilisation mémoire Morpheus"
 
 #: ../../administration/health/health.rst:55
 msgid "Morpheus Used Memory / JVM total memory × 100"
-msgstr ""
+msgstr "Mémoire utilisée Morpheus / mémoire totale JVM × 100"
 
 #: ../../administration/health/health.rst:56
 msgid ""
 "Percentage of the currently committed heap, not of Morpheus Memory (the "
 "maximum heap)."
-msgstr ""
+msgstr "Pourcentage du heap actuellement engagé, pas de Mémoire Morpheus (le heap maximum)."
 
 #: ../../administration/health/health.rst:57
 #: ../../administration/health/health.rst:94
 msgid "System Memory"
-msgstr ""
+msgstr "Mémoire système"
 
 #: ../../administration/health/health.rst:58
 msgid "Operating-system total physical memory"
-msgstr ""
+msgstr "Mémoire physique totale du système d'exploitation"
 
 #: ../../administration/health/health.rst:59
 msgid ""
 "Host or container-visible physical-memory scope for the current "
 "application node."
-msgstr ""
+msgstr "Portée de la mémoire physique visible par l'hôte ou le conteneur pour le nœud d'application actuel."
 
 #: ../../administration/health/health.rst:60
 #: ../../administration/health/health.rst:95
 msgid "System Used Memory"
-msgstr ""
+msgstr "Mémoire utilisée système"
 
 #: ../../administration/health/health.rst:61
 msgid "System Memory minus System Free Memory"
-msgstr ""
+msgstr "Mémoire système moins mémoire libre système"
 
 #: ../../administration/health/health.rst:62
 msgid "Includes the OS, caches, and all visible processes."
-msgstr ""
+msgstr "Inclut le SE, les caches et tous les processus visibles."
 
 #: ../../administration/health/health.rst:63
 #: ../../administration/health/health.rst:96
 msgid "System Free Memory"
-msgstr ""
+msgstr "Mémoire libre système"
 
 #: ../../administration/health/health.rst:64
 msgid "Operating-system free physical memory"
-msgstr ""
+msgstr "Mémoire physique libre du système d'exploitation"
 
 #: ../../administration/health/health.rst:65
 msgid "Does not represent JVM free heap."
-msgstr ""
+msgstr "Ne représente pas le heap libre JVM."
 
 #: ../../administration/health/health.rst:66
 #: ../../administration/health/health.rst:97
 msgid "System Memory Usage"
-msgstr ""
+msgstr "Utilisation mémoire système"
 
 #: ../../administration/health/health.rst:67
 msgid "(System Memory - System Free Memory) / System Memory × 100"
-msgstr ""
+msgstr "(Mémoire système - Mémoire libre système) / Mémoire système × 100"
 
 #: ../../administration/health/health.rst:68
 msgid "Whole node/container-visible usage."
-msgstr ""
+msgstr "Utilisation visible au niveau du nœud/conteneur entier."
 
 #: ../../administration/health/health.rst:69
 msgid "System Swap / Free Swap"
-msgstr ""
+msgstr "Swap système / Swap libre"
 
 #: ../../administration/health/health.rst:70
 msgid "OS total swap / OS free swap"
-msgstr ""
+msgstr "Swap total OS / swap libre OS"
 
 #: ../../administration/health/health.rst:71
 msgid "Swap visible to the current node."
-msgstr ""
+msgstr "Swap visible par le nœud actuel."
 
 #: ../../administration/health/health.rst:73
 msgid ""
@@ -317,11 +317,11 @@ msgid ""
 "In HA deployments, each application node has its own JVM and system "
 "sample; compare the node that raised the warning rather than adding "
 "values across nodes."
-msgstr ""
+msgstr "Les valeurs ne forment pas une décomposition arithmétique unique : ``totalMemory`` JVM est le heap engagé, ``maxMemory`` JVM est une limite, et les valeurs système incluent d'autres processus et caches. Elles sont échantillonnées lors du chargement des données d'état. Dans les déploiements HA, chaque nœud d'application a son propre échantillon JVM et système ; comparez le nœud ayant émis l'avertissement plutôt que d'additionner les valeurs entre nœuds."
 
 #: ../../administration/health/health.rst:76
 msgid "Memory warning decisions"
-msgstr ""
+msgstr "Décisions d'avertissement mémoire"
 
 #: ../../administration/health/health.rst:78
 #, python-format
@@ -332,7 +332,7 @@ msgid ""
 "currently committed total memory. These tests are ordered; the displayed "
 "message identifies the first matched condition. A collection error "
 "produces an error state rather than a utilization warning."
-msgstr ""
+msgstr "L'implémentation actuelle de l'état signale un avertissement lorsque le swap utilisé est supérieur à 60 % du swap total. Si ce test n'est pas satisfait, elle signale un avertissement lorsque la Mémoire utilisée Morpheus est supérieure à 95 % de la mémoire totale actuellement engagée dans la JVM. Ces tests sont ordonnés ; le message affiché identifie la première condition correspondante. Une erreur de collecte produit un état d'erreur plutôt qu'un avertissement d'utilisation."
 
 #: ../../administration/health/health.rst:80
 msgid ""
@@ -344,347 +344,347 @@ msgid ""
 "behavior, engage support to review sizing before increasing the "
 "application memory limit. Health thresholds are appliance alarms and are "
 "unrelated to workload resize Guidance thresholds."
-msgstr ""
+msgstr "Traitez une valeur élevée isolée comme un signal ponctuel. Vérifiez si l'avertissement persiste, examinez les performances de l'application et le comportement du garbage collection, et collectez un bundle d'assistance avant de modifier les limites mémoire. Pour une pression swap soutenue, examinez la pression mémoire hôte/conteneur et les processus concurrents. Pour une pression heap Morpheus soutenue avec dégradation du comportement, contactez l'assistance pour examiner le dimensionnement avant d'augmenter la limite mémoire de l'application. Les seuils d'état sont des alarmes d'appliance et ne sont pas liés aux seuils de Recommandation de redimensionnement des charges de travail."
 
 #: ../../administration/health/health.rst:82
 msgid "CPU"
-msgstr ""
+msgstr "Processeur"
 
 #: ../../administration/health/health.rst:83
 msgid "Processor Count"
-msgstr ""
+msgstr "Nombre de processeurs"
 
 #: ../../administration/health/health.rst:84
 msgid "Process Time"
-msgstr ""
+msgstr "Temps de processus"
 
 #: ../../administration/health/health.rst:85
 msgid "Morpheus CPU"
-msgstr ""
+msgstr "CPU Morpheus"
 
 #: ../../administration/health/health.rst:86
 msgid "System CPU"
-msgstr ""
+msgstr "CPU système"
 
 #: ../../administration/health/health.rst:87
 msgid "System Load"
-msgstr ""
+msgstr "Charge système"
 
 #: ../../administration/health/health.rst:89
 msgid "MEMORY"
-msgstr ""
+msgstr "MÉMOIRE"
 
 #: ../../administration/health/health.rst:98
 msgid "System Swap"
-msgstr ""
+msgstr "Swap système"
 
 #: ../../administration/health/health.rst:99
 msgid "Free Swap"
-msgstr ""
+msgstr "Swap libre"
 
 #: ../../administration/health/health.rst:101
 msgid "DATABASE"
-msgstr ""
+msgstr "BASE DE DONNÉES"
 
 #: ../../administration/health/health.rst:102
 msgid "Lifetime Connections"
-msgstr ""
+msgstr "Connexions à vie"
 
 #: ../../administration/health/health.rst:103
 msgid "Aborted Connections"
-msgstr ""
+msgstr "Connexions abandonnées"
 
 #: ../../administration/health/health.rst:104
 msgid "Max Used Connections"
-msgstr ""
+msgstr "Connexions max utilisées"
 
 #: ../../administration/health/health.rst:105
 msgid "Max Connections"
-msgstr ""
+msgstr "Connexions max"
 
 #: ../../administration/health/health.rst:106
 msgid "Threads Running"
-msgstr ""
+msgstr "Threads en cours d'exécution"
 
 #: ../../administration/health/health.rst:107
 msgid "Threads Connected"
-msgstr ""
+msgstr "Threads connectés"
 
 #: ../../administration/health/health.rst:108
 msgid "Slow Queries"
-msgstr ""
+msgstr "Requêtes lentes"
 
 #: ../../administration/health/health.rst:109
 msgid "Temp Tables"
-msgstr ""
+msgstr "Tables temporaires"
 
 #: ../../administration/health/health.rst:110
 #: ../../administration/health/health.rst:117
 msgid "Key Reads"
-msgstr ""
+msgstr "Lectures de clés"
 
 #: ../../administration/health/health.rst:111
 #: ../../administration/health/health.rst:120
 msgid "Handler Reads"
-msgstr ""
+msgstr "Lectures handler"
 
 #: ../../administration/health/health.rst:112
 msgid "Buffer Pool Free"
-msgstr ""
+msgstr "Pool de buffers libre"
 
 #: ../../administration/health/health.rst:113
 msgid "Open Tables"
-msgstr ""
+msgstr "Tables ouvertes"
 
 #: ../../administration/health/health.rst:114
 msgid "Table Scans"
-msgstr ""
+msgstr "Analyses de table"
 
 #: ../../administration/health/health.rst:115
 msgid "Full Joins"
-msgstr ""
+msgstr "Jointures complètes"
 
 #: ../../administration/health/health.rst:116
 msgid "Key Read Requests"
-msgstr ""
+msgstr "Requêtes de lecture de clés"
 
 #: ../../administration/health/health.rst:118
 msgid "Engine Waits"
-msgstr ""
+msgstr "Attentes moteur"
 
 #: ../../administration/health/health.rst:119
 msgid "Lock Waits"
-msgstr ""
+msgstr "Attentes de verrou"
 
 #: ../../administration/health/health.rst:121
 msgid "Engine IO Writes"
-msgstr ""
+msgstr "Écritures IO moteur"
 
 #: ../../administration/health/health.rst:122
 msgid "Engine IO Reads"
-msgstr ""
+msgstr "Lectures IO moteur"
 
 #: ../../administration/health/health.rst:123
 msgid "Engine IO Double Writes"
-msgstr ""
+msgstr "Double écritures IO moteur"
 
 #: ../../administration/health/health.rst:124
 msgid "Engine Log Writes"
-msgstr ""
+msgstr "Écritures de journal moteur"
 
 #: ../../administration/health/health.rst:125
 msgid "Engine Memory"
-msgstr ""
+msgstr "Mémoire moteur"
 
 #: ../../administration/health/health.rst:126
 msgid "Dictionary Memory"
-msgstr ""
+msgstr "Mémoire dictionnaire"
 
 #: ../../administration/health/health.rst:127
 msgid "Buffer Pool Size"
-msgstr ""
+msgstr "Taille du pool de buffers"
 
 #: ../../administration/health/health.rst:128
 msgid "Free Buffers"
-msgstr ""
+msgstr "Buffers libres"
 
 #: ../../administration/health/health.rst:129
 msgid "Database Pages"
-msgstr ""
+msgstr "Pages de base de données"
 
 #: ../../administration/health/health.rst:130
 msgid "Old Pages"
-msgstr ""
+msgstr "Pages anciennes"
 
 #: ../../administration/health/health.rst:131
 msgid "Dirty Page Percent"
-msgstr ""
+msgstr "Pourcentage de pages sales"
 
 #: ../../administration/health/health.rst:132
 msgid "Max Dirty Pages"
-msgstr ""
+msgstr "Pages sales max"
 
 #: ../../administration/health/health.rst:133
 msgid "Pending Reads"
-msgstr ""
+msgstr "Lectures en attente"
 
 #: ../../administration/health/health.rst:134
 msgid "Insert Rate"
-msgstr ""
+msgstr "Taux d'insertion"
 
 #: ../../administration/health/health.rst:135
 msgid "Update Rate"
-msgstr ""
+msgstr "Taux de mise à jour"
 
 #: ../../administration/health/health.rst:136
 msgid "Delete Rate"
-msgstr ""
+msgstr "Taux de suppression"
 
 #: ../../administration/health/health.rst:137
 msgid "Read Rate"
-msgstr ""
+msgstr "Taux de lecture"
 
 #: ../../administration/health/health.rst:138
 msgid "Buffer Hit Rate"
-msgstr ""
+msgstr "Taux de succès buffer"
 
 #: ../../administration/health/health.rst:139
 msgid "Read Write Ratio"
-msgstr ""
+msgstr "Ratio lecture/écriture"
 
 #: ../../administration/health/health.rst:140
 msgid "Uptime"
-msgstr ""
+msgstr "Temps d'activité"
 
 #: ../../administration/health/health.rst:142
 msgid "ELASTIC"
-msgstr ""
+msgstr "ELASTIC"
 
 #: ../../administration/health/health.rst:143
 #: ../../administration/health/health.rst:171
 msgid "Status"
-msgstr ""
+msgstr "État"
 
 #: ../../administration/health/health.rst:144
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 #: ../../administration/health/health.rst:145
 msgid "Node Count"
-msgstr ""
+msgstr "Nombre de nœuds"
 
 #: ../../administration/health/health.rst:146
 msgid "Data Nodes"
-msgstr ""
+msgstr "Nœuds de données"
 
 #: ../../administration/health/health.rst:147
 msgid "Shards"
-msgstr ""
+msgstr "Shards"
 
 #: ../../administration/health/health.rst:148
 msgid "Primary Shards"
-msgstr ""
+msgstr "Shards primaires"
 
 #: ../../administration/health/health.rst:149
 msgid "Relocating Shards"
-msgstr ""
+msgstr "Shards en relocation"
 
 #: ../../administration/health/health.rst:150
 msgid "Initializing"
-msgstr ""
+msgstr "Initialisation"
 
 #: ../../administration/health/health.rst:151
 msgid "Unassigned"
-msgstr ""
+msgstr "Non attribuée"
 
 #: ../../administration/health/health.rst:152
 msgid "Pending Tasks"
-msgstr ""
+msgstr "Tâches en attente"
 
 #: ../../administration/health/health.rst:153
 msgid "Active Shards"
-msgstr ""
+msgstr "Shards actifs"
 
 #: ../../administration/health/health.rst:155
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/health/health.rst:155
 msgid "Warning status is typical for Elasticsearch"
-msgstr ""
+msgstr "L'état d'avertissement est typique pour Elasticsearch"
 
 #: ../../administration/health/health.rst:157
 msgid "Elastic Nodes"
-msgstr ""
+msgstr "Nœuds Elastic"
 
 #: ../../administration/health/health.rst:158
 msgid "Node"
-msgstr ""
+msgstr "Nœud"
 
 #: ../../administration/health/health.rst:159
 msgid "Master"
-msgstr ""
+msgstr "Maître"
 
 #: ../../administration/health/health.rst:160
 msgid "Location"
-msgstr ""
+msgstr "Emplacement"
 
 #: ../../administration/health/health.rst:161
 msgid "Heap Usage"
-msgstr ""
+msgstr "Utilisation heap"
 
 #: ../../administration/health/health.rst:162
 msgid "Memory Usage"
-msgstr ""
+msgstr "Utilisation mémoire"
 
 #: ../../administration/health/health.rst:163
 msgid "CPU Usage"
-msgstr ""
+msgstr "Utilisation CPU"
 
 #: ../../administration/health/health.rst:164
 msgid "1M Load"
-msgstr ""
+msgstr "Charge 1M"
 
 #: ../../administration/health/health.rst:165
 msgid "5M Load"
-msgstr ""
+msgstr "Charge 5M"
 
 #: ../../administration/health/health.rst:166
 msgid "15M Load"
-msgstr ""
+msgstr "Charge 15M"
 
 #: ../../administration/health/health.rst:168
 msgid "Elastic Indices"
-msgstr ""
+msgstr "Index Elastic"
 
 #: ../../administration/health/health.rst:170
 msgid "Index"
-msgstr ""
+msgstr "Index"
 
 #: ../../administration/health/health.rst:172
 #: ../../administration/health/health.rst:176
 msgid "Primary"
-msgstr ""
+msgstr "Primaire"
 
 #: ../../administration/health/health.rst:173
 msgid "Replicas"
-msgstr ""
+msgstr "Réplicas"
 
 #: ../../administration/health/health.rst:174
 msgid "Doc"
-msgstr ""
+msgstr "Doc"
 
 #: ../../administration/health/health.rst:175
 msgid "Count"
-msgstr ""
+msgstr "Total"
 
 #: ../../administration/health/health.rst:177
 msgid "Size"
-msgstr ""
+msgstr "Taille"
 
 #: ../../administration/health/health.rst:178
 msgid "Total Size"
-msgstr ""
+msgstr "Taille totale"
 
 #: ../../administration/health/health.rst:180
 msgid "Queues"
-msgstr ""
+msgstr "Files d'attente"
 
 #: ../../administration/health/health.rst:181
 msgid "Queue Count"
-msgstr ""
+msgstr "Nombre de files"
 
 #: ../../administration/health/health.rst:182
 msgid "Busy Queues"
-msgstr ""
+msgstr "Files occupées"
 
 #: ../../administration/health/health.rst:183
 msgid "Error Queues"
-msgstr ""
+msgstr "Files en erreur"
 
 #: ../../administration/health/health.rst:186
 msgid "|Morpheus| Logs"
-msgstr ""
+msgstr "Journaux |Morpheus|"
 
 #: ../../administration/health/health.rst:188
 msgid ""
@@ -692,7 +692,7 @@ msgid ""
 "list. If needed, users can export the logs by clicking "
 ":guilabel:`EXPORT`. This action triggers a download containing the last "
 "10,000 log entries as a ``.log`` file."
-msgstr ""
+msgstr "La section journaux |morpheus| agrège les journaux spécifiques à l'appliance dans une liste. Si nécessaire, les utilisateurs peuvent exporter les journaux en cliquant sur :guilabel:`EXPORT`. Cette action déclenche un téléchargement contenant les 10 000 dernières entrées de journal en fichier ``.log``."
 
 #: ../../administration/health/health.rst:190
 msgid ".. image:: /images/administration/healthlogs.png"

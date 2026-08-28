@@ -1,0 +1,24 @@
+Translate a batch of HPE Morpheus documentation strings into {LANG_NAME}. Work in the repo directory (already your cwd). Be efficient: minimal tool calls, no re-reading, no extra validation beyond steps 6-7, do not use todo lists. Do NOT read or run anything except the manifest, the glossary, the chunk, the two output files, and the commands in steps 6-7. Do not read tool scripts, do not run ls/find/grep.
+
+1. Read the batch manifest: {MANIFEST}
+2. Read its glossary file (path in manifest): JSON of English term -> exact {LANG_NAME} translation. Whenever such a term appears in text, you MUST use that exact translation.
+3. Read its chunk file (path in manifest). Structure: a .po header (ignore), then entry blocks in order; each block's first line is a comment `# SEQ: N` — N is the entry number used in output files. (The file may exceed 2000 lines; read it in consecutive passes with an offset until you have seen all entries up to the manifest's "count".)
+4. For EVERY entry (seq 1..count), decide:
+   - TRANSLATE: add one line to the sidecar file (path in manifest): N<TAB>translation
+   - SKIP: add one line to the skip file (path in manifest): N<TAB>reason, reason one of: code, image, punct
+   Only skip entries that are: code blocks (shell sessions, YAML/JSON snippets, config file content, log output), msgids starting with `.. image::`, or pure punctuation/symbols with no natural-language words. EVERYTHING ELSE MUST BE TRANSLATED.
+5. Write the translations in SMALL PART FILES (important: never generate more than 50 lines in one tool call). Using the Write tool, create files named sidecar_part01.tsv, sidecar_part02.tsv, ... in the SAME DIRECTORY as the sidecar file, each containing at most 50 lines of `N<TAB>translation`. Then assemble with ONE bash command: `cat <batch_dir>/sidecar_part*.tsv > <sidecar path from manifest>` (replace with the real absolute paths). The skip file (path in manifest) is usually small: write it directly with the Write tool (lines `N<TAB>reason`); if it would exceed 50 lines, use the same part-file approach with skip_partNN.tsv.
+   Translation text rules: single line, NO tab characters inside, NO po escaping (write plain text; do NOT write backslash-quote or double backslash; the merge tool escapes for you). Every seq from 1 to count appears in EXACTLY ONE line across all sidecar parts (and the skip file).
+6. Run: python3 tools/translate/merge_batch.py {MANIFEST}
+   Expect TOTAL applied + skips_registered == count and conflict=0. If conflict>0 or the math is off, find and fix the bad sidecar/skip lines and re-run until clean.
+7. Run one bash command: for each f in the manifest's "files" list, msgfmt --check -o /dev/null <f> (paths relative to repo root). All must exit 0 (PO-Revision-Date/Last-Translator header warnings are fine).
+
+TRANSLATION RULES (strict):
+- Fluent, professional {LANG_NAME} for technical documentation. Keep the same number of sentences; never add, merge, or drop sentences.
+- Preserve ALL markup byte-for-byte: ``code``, |substitutions|, :ref:`target`, :doc:`path`, :menuselection:`A --> B`, :numref:, `hyperlink`_ targets. Translate only plain text around markup.
+- :guilabel:`X` — keep the X text in English, do NOT translate it.
+- NEVER translate: code, CLI commands, file paths, URLs, environment variables, API fields/parameter names, package names, version numbers, JSON/YAML keys, log output, host/VM/datastore names.
+- Keep product names in English: HPE Morpheus, Morpheus, Morpheus Data.
+- Short standalone section titles are translated normally (e.g. "Note" -> {NOTE_WORD}).
+
+Final reply: at most 5 lines — applied/skipped/conflicts counts, msgfmt result, one example (msgid preview -> your translation), any problems.

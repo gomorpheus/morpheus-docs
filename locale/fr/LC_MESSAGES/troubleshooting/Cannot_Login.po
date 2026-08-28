@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../troubleshooting/Cannot_Login.rst:2
 msgid "Cannot Login"
-msgstr ""
+msgstr "Impossible de se connecter"
 
 #: ../../troubleshooting/Cannot_Login.rst:5
 msgid "Forgot password"
-msgstr ""
+msgstr "Mot de passe oublié"
 
 #: ../../troubleshooting/Cannot_Login.rst:7
 msgid ""
@@ -34,51 +34,51 @@ msgid ""
 "link on the login page. They can then enter their username or email "
 "address to send a reset password email to the email address defined on "
 "the user."
-msgstr ""
+msgstr "Si un utilisateur oublie son mot de passe, il peut utiliser le lien `FORGOT PASSWORD?` sur la page de connexion. Il peut ensuite saisir son nom d'utilisateur ou son adresse e-mail pour envoyer un e-mail de réinitialisation du mot de passe à l'adresse e-mail définie pour l'utilisateur."
 
 #: ../../troubleshooting/Cannot_Login.rst:9
 msgid ""
 "If the default or user added SMTP server is not functioning or blocked, a"
 " System Admin user can impersonate that user and update their password."
-msgstr ""
+msgstr "Si le serveur SMTP par défaut ou ajouté par l'utilisateur ne fonctionne pas ou est bloqué, un utilisateur administrateur système peut usurper l'identité de cet utilisateur et mettre à jour son mot de passe."
 
 #: ../../troubleshooting/Cannot_Login.rst:11
 msgid ""
 "If the System Admin user password needs to be reset and the default or "
 "user added SMTP server is not functioning or blocked, please contact "
 "Morpheus support for assistance."
-msgstr ""
+msgstr "Si le mot de passe de l'utilisateur administrateur système doit être réinitialisé et que le serveur SMTP par défaut ou ajouté par l'utilisateur ne fonctionne pas ou est bloqué, contactez l'assistance Morpheus pour obtenir de l'aide."
 
 #: ../../troubleshooting/Cannot_Login.rst:14
 msgid "Sub-Tenant user cannot login after 3.4.0 upgrade"
-msgstr ""
+msgstr "Un utilisateur sous-locataire ne peut pas se connecter après la mise à niveau 3.4.0"
 
 #: ../../troubleshooting/Cannot_Login.rst:16
 msgid ""
 "|morpheus| v3.4.0 added support for all subtenant users to login via the "
 "main tenant url using subtenant id or subdomain prefix, ie "
 "``tenantId\\username`` or ``subdomain\\username``."
-msgstr ""
+msgstr "|morpheus| v3.4.0 a ajouté la prise en charge de la connexion de tous les utilisateurs sous-locataires via l'URL du locataire principal en utilisant l'identifiant de sous-locataire ou le préfixe de sous-domaine, c'est-à-dire ``tenantId\\username`` ou ``subdomain\\username``."
 
 #: ../../troubleshooting/Cannot_Login.rst:18
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../troubleshooting/Cannot_Login.rst:18
 msgid ""
 "Tenant subdomains can be defined by editing Tenant settings and updating "
 "the `SUBDOMAIN` field."
-msgstr ""
+msgstr "Les sous-domaines de locataire peuvent être définis en modifiant les paramètres du locataire et en mettant à jour le champ `SUBDOMAIN`."
 
 #: ../../troubleshooting/Cannot_Login.rst:20
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../troubleshooting/Cannot_Login.rst:20
 msgid ""
 "Subtenant local users will no longer be able to login from main login url"
 " without using their subtenant id or subdomain prefix."
-msgstr ""
+msgstr "Les utilisateurs locaux sous-locataires ne pourront plus se connecter depuis l'URL de connexion principale sans utiliser leur identifiant de sous-locataire ou leur préfixe de sous-domaine."
 
 #: ../../troubleshooting/Cannot_Login.rst:22
 msgid ""
@@ -86,7 +86,7 @@ msgid ""
 " identity source integration generated user accounts to be able to login "
 "to the master tenant, gain API and CLI access, and remove the requirement"
 " for usernames to be unique across all tenants."
-msgstr ""
+msgstr "Les exigences de connexion ont été ajoutées dans v3.4.0 pour permettre aux utilisateurs sous-locataires disposant de comptes utilisateur générés par l'intégration de source d'identité de se connecter au locataire principal, d'obtenir l'accès API et CLI, et de supprimer l'exigence que les noms d'utilisateur soient uniques dans tous les locataires."
 
 #: ../../troubleshooting/Cannot_Login.rst:24
 msgid ""
@@ -94,18 +94,18 @@ msgid ""
 "accounts could login to their tenant via the master tenant url, while "
 "subtenant users that had identity source integration generated user "
 "accounts had to use the subtenant specific login url."
-msgstr ""
+msgstr "Auparavant, les utilisateurs sous-locataires disposant de comptes utilisateur locaux/générés par morpheus pouvaient se connecter à leur locataire via l'URL du locataire principal, tandis que les utilisateurs sous-locataires disposant de comptes utilisateur générés par l'intégration de source d'identité devaient utiliser l'URL de connexion spécifique au sous-locataire."
 
 #: ../../troubleshooting/Cannot_Login.rst:26
 msgid ""
 "In v3.4.0+ all subtenant users can login via the master tenant url by "
 "specifying their tenant id or subdomain prefix, ``\\``, then username. "
 "Subtenants can still use the tenant specific login url as well."
-msgstr ""
+msgstr "Dans v3.4.0+, tous les utilisateurs sous-locataires peuvent se connecter via l'URL du locataire principal en spécifiant leur identifiant de locataire ou leur préfixe de sous-domaine, ``\\``, puis le nom d'utilisateur. Les sous-locataires peuvent toujours utiliser l'URL de connexion spécifique au locataire."
 
 #: ../../troubleshooting/Cannot_Login.rst:28
 msgid "Example:"
-msgstr ""
+msgstr "Exemple :"
 
 #: ../../troubleshooting/Cannot_Login.rst:29
 msgid ""
@@ -113,11 +113,11 @@ msgid ""
 " ``acme`` and tenant id ``58``. When logging in from the main login url, "
 "I now need to enter in: ``acme\\subuser`` and the password. Alternatively"
 " the tenant ID can be used, ie ``58\\subuser``"
-msgstr ""
+msgstr "J'ai un nom d'utilisateur ``subuser`` qui appartient à un locataire avec le sous-domaine ``acme`` et l'identifiant de locataire ``58``. Lors de la connexion depuis l'URL de connexion principale, je dois maintenant saisir : ``acme\\subuser`` et le mot de passe. Alternativement, l'identifiant de locataire peut être utilisé, c'est-à-dire ``58\\subuser``"
 
 #: ../../troubleshooting/Cannot_Login.rst:32
 msgid "Active Directory user suddenly cannot Login"
-msgstr ""
+msgstr "Un utilisateur Active Directory ne peut plus se connecter soudainement"
 
 #: ../../troubleshooting/Cannot_Login.rst:34
 msgid ""
@@ -128,5 +128,5 @@ msgid ""
 "Morpheus support for a resolution. The OU association for the user(s) can"
 " also be manually updated in the database. This issue is resolved in "
 "|morpheus| versions 3.4.1 and higher."
-msgstr ""
+msgstr "Dans |morpheus| v3.4.0 et antérieures, les changements d'OU dans Active Directory peuvent désactiver les connexions pour les utilisateurs AD qui s'étaient déjà authentifiés/avaient des comptes utilisateur existants dans |morpheus|. Si un utilisateur Active Directory ne peut pas se connecter à |morpheus| après que son OU a été modifié dans AD, contactez l'assistance Morpheus pour une résolution. L'association OU pour le(s) utilisateur(s) peut également être mise à jour manuellement dans la base de données. Ce problème est résolu dans les versions |morpheus| 3.4.1 et ultérieures."
 

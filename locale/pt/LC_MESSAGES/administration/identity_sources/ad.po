@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../administration/identity_sources/ad.rst:2
 msgid "Active Directory"
-msgstr ""
+msgstr "Active Directory"
 
 #: ../../administration/identity_sources/ad.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../administration/identity_sources/ad.rst:7
 msgid ""
@@ -36,26 +36,26 @@ msgid ""
 "|morpheus| can integrate with as well), the main Active Directory "
 "integration can also be utilized. It is even possible to map Active "
 "Directory groups to equivalent Roles within |morpheus| ."
-msgstr ""
+msgstr "Active Directory é o principal serviço de autenticação da Microsoft amplamente usado em organizações empresariais e até via serviços em nuvem da Microsoft. Embora o Active Directory também suporte o protocolo LDAP (com o qual o |morpheus| também pode integrar), a integração principal do Active Directory também pode ser utilizada. É até possível mapear grupos do Active Directory para Funções equivalentes no |morpheus| ."
 
 #: ../../administration/identity_sources/ad.rst:9
 #: ../../administration/identity_sources/ad.rst:66
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../administration/identity_sources/ad.rst:9
 msgid ""
 "To use Active Directory, a valid / trusted SSL certificate must be in "
 "place on the Active Directory services (self signed will not work)."
-msgstr ""
+msgstr "Para usar o Active Directory, um certificado SSL válido/confiável deve estar em vigor nos serviços do Active Directory (autoassinado não funcionará)."
 
 #: ../../administration/identity_sources/ad.rst:14
 msgid "Access Control Behavior"
-msgstr ""
+msgstr "Comportamento de Controle de Acesso"
 
 #: ../../administration/identity_sources/ad.rst:16
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../administration/identity_sources/ad.rst:16
 msgid ""
@@ -63,33 +63,33 @@ msgid ""
 "authenticate against the Active Directory server will be allowed to log "
 "in** and a local user account is automatically created. To restrict "
 "access to authorized users only, you must set the Required Group field."
-msgstr ""
+msgstr "Se o campo REQUIRED GROUP for deixado vazio, **qualquer usuário que consiga autenticar no servidor Active Directory poderá fazer login** e uma conta de usuário local é criada automaticamente. Para restringir o acesso apenas a usuários autorizados, você deve definir o campo Required Group."
 
 #: ../../administration/identity_sources/ad.rst:18
 msgid ""
 "When an Active Directory identity source is configured, the following "
 "access control logic applies:"
-msgstr ""
+msgstr "Quando uma origem de identidade Active Directory está configurada, a seguinte lógica de controle de acesso se aplica:"
 
 #: ../../administration/identity_sources/ad.rst:20
 msgid ""
 "**Required Group configured:** Only AD users who are members of the "
 "specified group are allowed to log in. Users not in the required group "
 "are denied access and no user object is created in |morpheus|."
-msgstr ""
+msgstr "**Required Group configurado:** Apenas usuários AD que são membros do grupo especificado podem fazer login. Usuários que não estão no grupo obrigatório têm acesso negado e nenhum objeto de usuário é criado no |morpheus|."
 
 #: ../../administration/identity_sources/ad.rst:21
 msgid ""
 "**Required Group empty (default):** All AD users who can authenticate are"
 " permitted to log in. A local user account is automatically created upon "
 "first sign-in, even if no role mappings apply to the user."
-msgstr ""
+msgstr "**Required Group vazio (padrão):** Todos os usuários AD que conseguem autenticar têm permissão para fazer login. Uma conta de usuário local é criada automaticamente no primeiro login, mesmo que nenhum mapeamento de função se aplique ao usuário."
 
 #: ../../administration/identity_sources/ad.rst:22
 msgid ""
 "**Include Member Groups enabled:** Users in groups nested inside the "
 "required group are also granted access."
-msgstr ""
+msgstr "**Include Member Groups ativado:** Usuários em grupos aninhados dentro do grupo obrigatório também recebem acesso."
 
 #: ../../administration/identity_sources/ad.rst:24
 msgid ""
@@ -97,155 +97,155 @@ msgid ""
 "Group check passes. |morpheus| roles provide an additional layer of RBAC "
 "that controls what the user can see and do within the platform, but they "
 "do not restrict login access itself."
-msgstr ""
+msgstr "A Função Padrão e os mapeamentos de função são aplicados apenas após a verificação do Required Group passar. As funções do |morpheus| fornecem uma camada adicional de RBAC que controla o que o usuário pode ver e fazer na plataforma, mas não restringem o acesso de login em si."
 
 #: ../../administration/identity_sources/ad.rst:26
 msgid "**Recommended configuration for enterprise environments:**"
-msgstr ""
+msgstr "**Configuração recomendada para ambientes empresariais:**"
 
 #: ../../administration/identity_sources/ad.rst:28
 msgid ""
 "Always set a Required Group to prevent unauthorized directory users from "
 "authenticating"
-msgstr ""
+msgstr "Sempre defina um Required Group para impedir que usuários de diretório não autorizados se autentiquem"
 
 #: ../../administration/identity_sources/ad.rst:29
 msgid ""
 "Create a dedicated AD group (e.g., \"Morpheus Users\") and add only users"
 " who should have access"
-msgstr ""
+msgstr "Crie um grupo AD dedicado (por exemplo, \"Morpheus Users\") e adicione apenas usuários que devem ter acesso"
 
 #: ../../administration/identity_sources/ad.rst:30
 msgid "Set the Default Role to the most restrictive appropriate role"
-msgstr ""
+msgstr "Defina a Função Padrão para a função mais restritiva apropriada"
 
 #: ../../administration/identity_sources/ad.rst:31
 msgid "Use role mappings to grant elevated permissions to specific AD groups"
-msgstr ""
+msgstr "Use mapeamentos de função para conceder permissões elevadas a grupos AD específicos"
 
 #: ../../administration/identity_sources/ad.rst:34
 msgid "Adding an Active Directory Integration"
-msgstr ""
+msgstr "Adicionando uma Integração Active Directory"
 
 #: ../../administration/identity_sources/ad.rst:36
 msgid "Navigate to |AdmTen|"
-msgstr ""
+msgstr "Navegue até |AdmTen|"
 
 #: ../../administration/identity_sources/ad.rst:37
 msgid "Select a Tenant"
-msgstr ""
+msgstr "Selecione um Tenant"
 
 #: ../../administration/identity_sources/ad.rst:38
 msgid "Select :guilabel:`IDENTITY SOURCES`"
-msgstr ""
+msgstr "Selecione :guilabel:`IDENTITY SOURCES`"
 
 #: ../../administration/identity_sources/ad.rst:39
 msgid "Select :guilabel:`+ IDENTITY SOURCE`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ IDENTITY SOURCE`"
 
 #: ../../administration/identity_sources/ad.rst:40
 msgid "Choose \"Active Directory\""
-msgstr ""
+msgstr "Escolha \"Active Directory\""
 
 #: ../../administration/identity_sources/ad.rst:41
 msgid "Populate the following:"
-msgstr ""
+msgstr "Preencha o seguinte:"
 
 #: ../../administration/identity_sources/ad.rst:43
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../../administration/identity_sources/ad.rst:44
 msgid "Unique name for authentication type."
-msgstr ""
+msgstr "Nome exclusivo para o tipo de autenticação."
 
 #: ../../administration/identity_sources/ad.rst:45
 msgid "AD Server"
-msgstr ""
+msgstr "AD Server"
 
 #: ../../administration/identity_sources/ad.rst:46
 msgid "Hostname or IP address of AD Server."
-msgstr ""
+msgstr "Nome do host ou endereço IP do AD Server."
 
 #: ../../administration/identity_sources/ad.rst:47
 msgid "Domain"
-msgstr ""
+msgstr "Domínio"
 
 #: ../../administration/identity_sources/ad.rst:48
 msgid "Domain name of AD Domain."
-msgstr ""
+msgstr "Nome de domínio do AD Domain."
 
 #: ../../administration/identity_sources/ad.rst:49
 msgid "Binding Username"
-msgstr ""
+msgstr "Binding Username"
 
 #: ../../administration/identity_sources/ad.rst:50
 msgid "Service account username for bind user."
-msgstr ""
+msgstr "Nome de usuário da conta de serviço para o usuário de bind."
 
 #: ../../administration/identity_sources/ad.rst:51
 msgid "Binding Password"
-msgstr ""
+msgstr "Binding Password"
 
 #: ../../administration/identity_sources/ad.rst:52
 msgid "Password for bind service account."
-msgstr ""
+msgstr "Senha da conta de serviço de bind."
 
 #: ../../administration/identity_sources/ad.rst:53
 msgid "Required Group"
-msgstr ""
+msgstr "Required Group"
 
 #: ../../administration/identity_sources/ad.rst:54
 msgid ""
 "The AD group users must be in to have access. If left empty, all AD users"
 " who can authenticate will be allowed to log in (see the \"Access Control"
 " Behavior\" section above)."
-msgstr ""
+msgstr "O grupo AD no qual os usuários devem estar para ter acesso. Se deixado vazio, todos os usuários AD que conseguem autenticar terão permissão para fazer login (consulte a seção \"Access Control Behavior\" acima)."
 
 #: ../../administration/identity_sources/ad.rst:55
 msgid "Include Member Groups"
-msgstr ""
+msgstr "Include Member Groups"
 
 #: ../../administration/identity_sources/ad.rst:56
 msgid ""
 "When checked, groups nested inside the required group will also be "
 "included"
-msgstr ""
+msgstr "Quando marcado, grupos aninhados dentro do grupo obrigatório também serão incluídos"
 
 #: ../../administration/identity_sources/ad.rst:57
 msgid "Default Role"
-msgstr ""
+msgstr "Default Role"
 
 #: ../../administration/identity_sources/ad.rst:58
 msgid ""
 "The default role applied to all users who pass the Required Group check. "
 "This role is always assigned in addition to any roles granted through "
 "role mappings."
-msgstr ""
+msgstr "A função padrão aplicada a todos os usuários que passam na verificação do Required Group. Esta função é sempre atribuída além de quaisquer funções concedidas por meio de mapeamentos de função."
 
 #: ../../administration/identity_sources/ad.rst:59
 msgid "Service Account Holder"
-msgstr ""
+msgstr "Service Account Holder"
 
 #: ../../administration/identity_sources/ad.rst:60
 msgid ""
 "This is the admin account type in |morpheus| and an AD group can be "
 "created and populated to a user that this role should be assigned. Roles "
 "are assigned dynamically based on group membership."
-msgstr ""
+msgstr "Este é o tipo de conta de administrador no |morpheus| e um grupo AD pode ser criado e populado para um usuário ao qual esta função deve ser atribuída. As funções são atribuídas dinamicamente com base na associação ao grupo."
 
 #: ../../administration/identity_sources/ad.rst:62
 msgid "Select :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Selecione :guilabel:`SAVE CHANGES`."
 
 #: ../../administration/identity_sources/ad.rst:64
 msgid ""
 "Now allowed AD users can login to |morpheus| via their Active Directory "
 "credentials and a User will be automatically generated to |morpheus| with"
 " matching metadata and mapped Role permissions."
-msgstr ""
+msgstr "Agora usuários AD permitidos podem fazer login no |morpheus| com suas credenciais do Active Directory e um Usuário será gerado automaticamente no |morpheus| com metadados correspondentes e permissões de Função mapeadas."
 
 #: ../../administration/identity_sources/ad.rst:66
 msgid "Only the username is required with password, not the username@domain."
-msgstr ""
+msgstr "Apenas o nome de usuário é necessário com senha, não username@domain."
 

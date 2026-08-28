@@ -24,20 +24,20 @@ msgstr ""
 msgid ""
 "System administrators have access to a utilities panel with the following"
 " options:"
-msgstr ""
+msgstr "Les administrateurs système ont accès à un panneau d'utilitaires avec les options suivantes :"
 
 #: ../../administration/settings/utilities.rst:3
 msgid "**Reindex all searchable data:** Execute"
-msgstr ""
+msgstr "**Réindexer toutes les données consultables :** Exécuter"
 
 #: ../../administration/settings/utilities.rst:4
 msgid "**Toggle Maintenance Mode:** Enable"
-msgstr ""
+msgstr "**Activer/désactiver le mode maintenance :** Activer"
 
 #: ../../administration/settings/utilities.rst:6
 #: ../../administration/settings/utilities.rst:8
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/settings/utilities.rst:6
 msgid ""
@@ -46,7 +46,7 @@ msgid ""
 "queues so an auto-scaling group can scale down. It also drains active "
 "sessions across services. Restarting |morpheus| UI disables maintenance "
 "mode."
-msgstr ""
+msgstr "Le mode maintenance place proprement |morpheus| dans un état où la maintenance peut être effectuée sur l'appliance. Cela vide les sessions actives et les files d'attente afin qu'un groupe de mise à l'échelle automatique puisse réduire. Il vide également les sessions actives entre les services. Le redémarrage de l'interface utilisateur |morpheus| désactive le mode maintenance."
 
 #: ../../administration/settings/utilities.rst:8
 msgid ""
@@ -59,7 +59,7 @@ msgid ""
 "<https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_"
 " to toggle a specific node into maintenance mode to avoid redirects back "
 "to the VIP address."
-msgstr ""
+msgstr "Lors de l'utilisation de |morpheus| dans un environnement haute disponibilité (HA), il est important d'accéder directement à un nœud et d'activer le mode maintenance, plutôt que d'utiliser l'IP virtuelle (VIP) du équilibreur de charge. Une entrée d'hôte local vers le nœud spécifique peut être requise pour s'assurer que le bon nœud entre en mode maintenance. En fait, il est recommandé d'utiliser le `point de terminaison API analogue <https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_ pour basculer un nœud spécifique en mode maintenance afin d'éviter les redirections vers l'adresse VIP."
 
 #: ../../administration/settings/utilities.rst:10
 msgid ""
@@ -69,5 +69,5 @@ msgid ""
 "removed/paused from the load balancer VIP or have VIP health checks "
 "implemented, if the node UI/API will become inaccessible due to "
 "maintenance."
-msgstr ""
+msgstr "Un nœud |morpheus| en mode maintenance peut toujours être accessible via le VIP/groupe cible de l'équilibreur de charge et peut mettre les requêtes en file d'attente, mais ne traitera rien en file d'attente pendant le mode maintenance. Un nœud peut être retiré/mis en pause du VIP de l'équilibreur de charge ou avoir des contrôles de santé VIP implémentés, si l'interface utilisateur/API du nœud devient inaccessible en raison de la maintenance."
 

@@ -22,33 +22,33 @@ msgstr ""
 
 #: ../../administration/settings/settings.rst:2
 msgid "Settings"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../administration/settings/settings.rst:4
 msgid ""
 "The |AdmSet| section sets global configuration parameters for the "
 "|morpheus| appliance, whitelabeling, provisioning, monitoring, backups, "
 "logs, software licenses, and the license for |morpheus| itself."
-msgstr ""
+msgstr "Critique"
 
 #: ../../administration/settings/settings.rst:7
 msgid "Appliance"
-msgstr ""
+msgstr "Paramètres"
 
 #: ../../administration/settings/appliance.rst:2
 msgid "Appliance Settings"
-msgstr ""
+msgstr "La section |AdmSet| définit les paramètres de configuration globaux pour l'appliance |morpheus|, la marque blanche, le provisionnement, la surveillance, les sauvegardes, les journaux, les licences logicielles et la licence de |morpheus| lui-même."
 
 #: ../../administration/settings/appliance.rst:4
 msgid "Appliance URL"
-msgstr ""
+msgstr "Appliance"
 
 #: ../../administration/settings/appliance.rst:5
 msgid ""
 "The default URL used for Agent install and Agent functionality. All "
 "Instances and Hosts must be able to resolve and reach this URL over 443 "
 "for successful agent install and communication."
-msgstr ""
+msgstr "Paramètres de l'appliance"
 
 #: ../../administration/settings/appliance.rst:7
 #: ../../administration/settings/backup_settings.rst:6
@@ -70,17 +70,17 @@ msgstr ""
 #: ../../administration/settings/whitelabel.rst:84
 #: ../../administration/settings/whitelabel.rst:91
 msgid "Note"
-msgstr ""
+msgstr "URL de l'appliance"
 
 #: ../../administration/settings/appliance.rst:7
 msgid ""
 "Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud >"
 " Advanced Options` section."
-msgstr ""
+msgstr "L'URL par défaut utilisée pour l'installation de l'Agent et les fonctionnalités de l'Agent. Toutes les Instances et tous les Hôtes doivent pouvoir résoudre et atteindre cette URL sur le port 443 pour une installation et une communication réussies de l'agent."
 
 #: ../../administration/settings/appliance.rst:9
 msgid "Internal Appliance URL (PXE)"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/settings/appliance.rst:10
 msgid ""
@@ -88,11 +88,11 @@ msgid ""
 "NAT masquerading. This allows one to override the default appliance url "
 "endpoint for use by the PXE Server. If this is unset, the default "
 "appliance url will be used instead."
-msgstr ""
+msgstr "Des URL d'appliance alternatives peuvent être configurées par Cloud dans la section `Edit Cloud > Advanced Options`."
 
 #: ../../administration/settings/appliance.rst:11
 msgid "API Allowed Origins"
-msgstr ""
+msgstr "URL interne de l'appliance (PXE)"
 
 #: ../../administration/settings/appliance.rst:12
 msgid ""
@@ -102,11 +102,11 @@ msgid ""
 "origins should be specified here. By default, all origins are allowed. "
 "When this field is filled, an exclusive whitelist of allowed origins is "
 "established."
-msgstr ""
+msgstr "Pour le démarrage PXE, votre appliance doit être routable directement avec un masquage NAT minimal. Cela permet de remplacer le point de terminaison d'URL d'appliance par défaut pour utilisation par le serveur PXE. Si ce paramètre n'est pas défini, l'URL d'appliance par défaut sera utilisée à la place."
 
 #: ../../administration/settings/appliance.rst:13
 msgid "Cloud Sync Interval"
-msgstr ""
+msgstr "Origines autorisées pour l'API"
 
 #: ../../administration/settings/appliance.rst:14
 msgid ""
@@ -114,11 +114,11 @@ msgid ""
 "here in seconds, the default value is 300 seconds (five minutes). "
 "Appliances managing a very large number of clouds may be adversely "
 "affected by setting this value too low."
-msgstr ""
+msgstr "Champ lié à CORS qui spécifie les origines autorisées à accéder à l'API |morpheus|. Par exemple, si vous conceviez une application Web devant effectuer des appels AJAX à l'API |morpheus|. Les origines doivent être spécifiées ici. Par défaut, toutes les origines sont autorisées. Lorsque ce champ est rempli, une liste blanche exclusive d'origines autorisées est établie."
 
 #: ../../administration/settings/appliance.rst:15
 msgid "Usage Retainment"
-msgstr ""
+msgstr "Intervalle de synchronisation Cloud"
 
 #: ../../administration/settings/appliance.rst:16
 msgid ""
@@ -126,11 +126,11 @@ msgid ""
 "records. Retainment period is not set by default. Usage records will "
 "remain indefinitely if Usage Retainment is not set. Note this does not "
 "affect generated Invoice records."
-msgstr ""
+msgstr "Les données sont actualisées via les intégrations cloud à l'intervalle spécifié ici en secondes ; la valeur par défaut est 300 secondes (cinq minutes). Les appliances gérant un très grand nombre de clouds peuvent être affectées négativement si cette valeur est définie trop basse."
 
 #: ../../administration/settings/appliance.rst:17
 msgid "Incident Retainment"
-msgstr ""
+msgstr "Conservation de l'utilisation"
 
 #: ../../administration/settings/appliance.rst:18
 msgid ""
@@ -138,11 +138,11 @@ msgid ""
 "database. In general, this setting can be left alone but in certain cases"
 " may need to be adjusted as very large incident database tables can "
 "affect the stability of the application."
-msgstr ""
+msgstr "Détermine combien de jours conserver les enregistrements d'utilisation du compte (données de coûts facturés à l'usage). La période de conservation n'est pas définie par défaut. Les enregistrements d'utilisation resteront indéfiniment si la conservation de l'utilisation n'est pas définie. Notez que cela n'affecte pas les enregistrements de factures générés."
 
 #: ../../administration/settings/appliance.rst:19
 msgid "Stats Retainment"
-msgstr ""
+msgstr "Conservation des incidents"
 
 #: ../../administration/settings/appliance.rst:20
 msgid ""
@@ -151,64 +151,64 @@ msgid ""
 " a longer period of time. For example, in the Monitoring tab of an "
 "Instance detail page, users can select a 60 or 90-day analysis period if "
 "the stats have been retained that long"
-msgstr ""
+msgstr "Saisissez le nombre de jours pendant lesquels |morpheus| doit conserver les enregistrements d'incidents dans la base de données. En général, ce paramètre peut être laissé tel quel, mais dans certains cas, il peut être nécessaire de l'ajuster, car des tables d'incidents très volumineuses peuvent affecter la stabilité de l'application."
 
 #: ../../administration/settings/appliance.rst:21
 msgid "Denied Hosts"
-msgstr ""
+msgstr "Conservation des statistiques"
 
 #: ../../administration/settings/appliance.rst:22
 msgid ""
 "A comma-delimited list of IP addresses and/or hostnames which should not "
 "be allowed sources for HTTP Tasks or REST-populated Option Lists."
-msgstr ""
+msgstr "Sélectionnez une période de 30, 60 ou 90 jours pour la conservation des statistiques. Sélectionner une période plus longue permet d'analyser les statistiques, telles que les métriques d'Instance, sur une période plus longue. Par exemple, dans l'onglet Surveillance d'une page de détail d'Instance, les utilisateurs peuvent sélectionner une période d'analyse de 60 ou 90 jours si les statistiques ont été conservées aussi longtemps"
 
 #: ../../administration/settings/appliance.rst:23
 msgid "Approved Hosts"
-msgstr ""
+msgstr "Hôtes refusés"
 
 #: ../../administration/settings/appliance.rst:24
 msgid ""
 "A comma-delimited list of IP addresses and/or hostnames which are the "
 "only approved sources for HTTP Tasks or REST-populated Option Lists. By "
 "entering any values here, all others are automatically denied."
-msgstr ""
+msgstr "Liste séparée par des virgules d'adresses IP et/ou de noms d'hôte qui ne doivent pas être autorisés comme sources pour les HTTP Tasks ou les listes d'options alimentées par REST."
 
 #: ../../administration/settings/appliance.rst:25
 msgid "Enable SSL Verification of Agent (Communications)"
-msgstr ""
+msgstr "Hôtes approuvés"
 
 #: ../../administration/settings/appliance.rst:26
 msgid ""
 "Enabling SSL Verification of Agent Communications requires a valid "
 "Certificate be installed on the Appliance."
-msgstr ""
+msgstr "Liste séparée par des virgules d'adresses IP et/ou de noms d'hôte qui sont les seules sources approuvées pour les HTTP Tasks ou les listes d'options alimentées par REST. En saisissant des valeurs ici, toutes les autres sont automatiquement refusées."
 
 #: ../../administration/settings/appliance.rst:27
 msgid "Disable SSH Password Authentication"
-msgstr ""
+msgstr "Activer la vérification SSL de l'Agent (Communications)"
 
 #: ../../administration/settings/appliance.rst:28
 msgid ""
 "Only allow ssh login using SSH keys. When true, SSH Password "
 "Authentication will not be enabled for VM's and Hosts provisioned after "
 "the setting is enabled."
-msgstr ""
+msgstr "L'activation de la vérification SSL des communications de l'Agent nécessite qu'un Certificat valide soit installé sur l'Appliance."
 
 #: ../../administration/settings/appliance.rst:29
 msgid "Default Appliance Locale"
-msgstr ""
+msgstr "Désactiver l'authentification par mot de passe SSH"
 
 #: ../../administration/settings/appliance.rst:30
 msgid ""
 "Sets the default language and region for all users on the |morpheus| "
 "appliance. Users with individual language preferences may also override "
 "this selection on their User Settings page"
-msgstr ""
+msgstr "Autoriser uniquement la connexion ssh à l'aide de clés SSH. Lorsque cette option est activée, l'authentification par mot de passe SSH ne sera pas activée pour les VM et Hôtes provisionnés après l'activation du paramètre."
 
 #: ../../administration/settings/appliance.rst:31
 msgid "Default Console Gateway"
-msgstr ""
+msgstr "Paramètres régionaux par défaut de l'appliance"
 
 #: ../../administration/settings/appliance.rst:32
 msgid ""
@@ -216,11 +216,11 @@ msgid ""
 "sessions. The gateway can use the same Worker runtime as a Distributed "
 "Worker, but it requires a VDI Gateway registration and API key. See "
 ":doc:`/administration/integrations/workers` and :ref:`vdi-gateways`."
-msgstr ""
+msgstr "Définit la langue et la région par défaut pour tous les utilisateurs de l'appliance |morpheus|. Les utilisateurs disposant de préférences linguistiques individuelles peuvent également remplacer cette sélection sur leur page User Settings"
 
 #: ../../administration/settings/appliance.rst:33
 msgid "Max Option List Size"
-msgstr ""
+msgstr "Passerelle de console par défaut"
 
 #: ../../administration/settings/appliance.rst:34
 msgid ""
@@ -229,11 +229,11 @@ msgid ""
 "that a very large payload is inadvertently accessed. The entered number "
 "is multiplied by 1000 (for example, entering \"1\" results in a maximum "
 "list size of 1000)."
-msgstr ""
+msgstr "Sélectionnez une VDI Gateway configurée pour acheminer les sessions de console d'Instance et d'Hôte. La passerelle peut utiliser le même runtime Worker qu'un Distributed Worker, mais elle nécessite une inscription VDI Gateway et une clé API. Voir :doc:`/administration/integrations/workers` et :ref:`vdi-gateways`."
 
 #: ../../administration/settings/appliance.rst:35
 msgid "Dashboards to Display"
-msgstr ""
+msgstr "Taille maximale des listes d'options"
 
 #: ../../administration/settings/appliance.rst:36
 msgid ""
@@ -241,97 +241,97 @@ msgid ""
 "appliance from Dashboard-type plugins. Select all desired Dashboards and "
 "they will be displayed in the order set. Dashboards can be dragged up and"
 " down the list to set the order correctly."
-msgstr ""
+msgstr "Définit une taille maximale pour les listes d'options (telles que celles provenant d'appels REST vers un serveur distant) afin de préserver les performances de l'appliance en cas d'accès involontaire à une charge utile très volumineuse. Le nombre saisi est multiplié par 1000 (par exemple, saisir « 1 » donne une taille maximale de liste de 1000)."
 
 #: ../../administration/settings/tenant_management.rst:2
 msgid "Tenant Management Settings"
-msgstr ""
+msgstr "Paramètres de gestion des locataires"
 
 #: ../../administration/settings/tenant_management.rst:4
 msgid "Registration Enabled"
-msgstr ""
+msgstr "Inscription activée"
 
 #: ../../administration/settings/tenant_management.rst:5
 msgid ""
 "If enabled, the appliance login screen will have a \"NEED AN ACCOUNT? "
 "SIGN UP HERE\" link added, enabling new Tenant registration."
-msgstr ""
+msgstr "Si activée, l'écran de connexion de l'appliance affichera un lien « NEED AN ACCOUNT? SIGN UP HERE », permettant l'inscription de nouveaux Locataires."
 
 #: ../../administration/settings/tenant_management.rst:6
 msgid "Default Tenant Role"
-msgstr ""
+msgstr "Rôle de locataire par défaut"
 
 #: ../../administration/settings/tenant_management.rst:7
 msgid ""
 "Sets the default Tenant Role applied to Tenants created from Tenant "
 "Registration."
-msgstr ""
+msgstr "Définit le Rôle de locataire par défaut appliqué aux Locataires créés depuis l'inscription de Locataire."
 
 #: ../../administration/settings/tenant_management.rst:8
 msgid "Default User Role"
-msgstr ""
+msgstr "Rôle utilisateur par défaut"
 
 #: ../../administration/settings/tenant_management.rst:9
 msgid ""
 "Sets the default User Role applied to the User created from a Tenant "
 "Registration."
-msgstr ""
+msgstr "Définit le Rôle utilisateur par défaut appliqué à l'Utilisateur créé depuis une inscription de Locataire."
 
 #: ../../administration/settings/user_management.rst:2
 msgid "User Management Settings"
-msgstr ""
+msgstr "Paramètres de gestion des utilisateurs"
 
 #: ../../administration/settings/user_management.rst:4
 msgid "Min Password Length"
-msgstr ""
+msgstr "Longueur minimale du mot de passe"
 
 #: ../../administration/settings/user_management.rst:5
 msgid ""
 "User passwords must at least be as many characters in length as the "
 "entered value"
-msgstr ""
+msgstr "Longueur minimale du mot de passe"
 
 #: ../../administration/settings/user_management.rst:6
 msgid "Min Password Uppercase"
-msgstr ""
+msgstr "Les mots de passe utilisateur doivent comporter au moins autant de caractères que la valeur saisie"
 
 #: ../../administration/settings/user_management.rst:7
 msgid ""
 "User passwords must include at least as many uppercase characters as the "
 "entered value"
-msgstr ""
+msgstr "Majuscules minimales du mot de passe"
 
 #: ../../administration/settings/user_management.rst:8
 msgid "Min Password Numbers"
-msgstr ""
+msgstr "Les mots de passe utilisateur doivent inclure au moins autant de caractères majuscules que la valeur saisie"
 
 #: ../../administration/settings/user_management.rst:9
 msgid "User passwords must include at least as many numerals as the entered value"
-msgstr ""
+msgstr "Chiffres minimaux du mot de passe"
 
 #: ../../administration/settings/user_management.rst:10
 msgid "Min Password Symbols"
-msgstr ""
+msgstr "Les mots de passe utilisateur doivent inclure au moins autant de chiffres que la valeur saisie"
 
 #: ../../administration/settings/user_management.rst:11
 msgid ""
 "User passwords must include at least as many special characters as the "
 "entered value"
-msgstr ""
+msgstr "Les mots de passe utilisateur doivent inclure au moins autant de caractères spéciaux que la valeur saisie"
 
 #: ../../administration/settings/user_management.rst:12
 msgid "Session Expires (Minutes)"
-msgstr ""
+msgstr "Symboles minimaux du mot de passe"
 
 #: ../../administration/settings/user_management.rst:13
 msgid ""
 "A user session is forcibly logged out after the entered number of minutes"
 " of inactivity"
-msgstr ""
+msgstr "Les mots de passe utilisateur doivent inclure au moins autant de caractères spéciaux que la valeur saisie"
 
 #: ../../administration/settings/user_management.rst:14
 msgid "Session Warning (Minutes)"
-msgstr ""
+msgstr "Expiration de session (minutes)"
 
 #: ../../administration/settings/user_management.rst:15
 msgid ""
@@ -339,31 +339,31 @@ msgid ""
 "the number of minutes entered. Example: If sessions are set to expire "
 "after 90 minutes, warn the user after 60 minutes if you intend to provide"
 " 30 minutes advance warning"
-msgstr ""
+msgstr "Une session utilisateur est déconnectée de force après le nombre de minutes d'inactivité saisi"
 
 #: ../../administration/settings/user_management.rst:16
 msgid "Expire Password After (Days)"
-msgstr ""
+msgstr "Avertissement de session (minutes)"
 
 #: ../../administration/settings/user_management.rst:17
 msgid ""
 "User account passwords will expire after the entered number of days. "
 "Enter 0 or leave the field empty to opt out of this feature."
-msgstr ""
+msgstr "Un avertissement contextuel s'affiche à l'utilisateur lorsqu'il est inactif depuis le nombre de minutes saisi. Exemple : si les sessions expirent après 90 minutes, avertissez l'utilisateur après 60 minutes si vous souhaitez fournir un préavis de 30 minutes"
 
 #: ../../administration/settings/user_management.rst:18
 msgid "Disable User After Attempts (Number of Attempts)"
-msgstr ""
+msgstr "Expiration du mot de passe après (jours)"
 
 #: ../../administration/settings/user_management.rst:19
 msgid ""
 "Disable a User account after a specified number of failed login attempts."
 " Enter 0 or leave the field empty to opt out of this feature."
-msgstr ""
+msgstr "Désactive un compte Utilisateur après un nombre spécifié de tentatives de connexion échouées. Saisissez 0 ou laissez le champ vide pour désactiver cette fonctionnalité."
 
 #: ../../administration/settings/user_management.rst:20
 msgid "Disable User If Inactive For (Days)"
-msgstr ""
+msgstr "Désactiver l'utilisateur en cas d'inactivité pendant (jours)"
 
 #: ../../administration/settings/user_management.rst:21
 msgid ""
@@ -371,11 +371,11 @@ msgid ""
 "User will not be able to log into the appliance again until another User "
 "with sufficient rights enables the account. Enter 0 or leave the field "
 "empty to opt out of this feature."
-msgstr ""
+msgstr "Désactive un compte Utilisateur s'il est inactif pendant le nombre de jours saisi. L'Utilisateur ne pourra plus se connecter à l'appliance tant qu'un autre Utilisateur disposant des droits suffisants ne réactive le compte. Saisissez 0 ou laissez le champ vide pour désactiver cette fonctionnalité."
 
 #: ../../administration/settings/user_management.rst:22
 msgid "Send warning email before deactivating (Days)"
-msgstr ""
+msgstr "Envoyer un e-mail d'avertissement avant la désactivation (jours)"
 
 #: ../../administration/settings/user_management.rst:23
 msgid ""
@@ -383,11 +383,11 @@ msgid ""
 "email should be sent. For example, enter \"5\" to warn the User when they"
 " are five days short of the deactivation time entered in the prior field."
 " Enter 0 or leave the field empty to opt out of this feature."
-msgstr ""
+msgstr "Saisissez le nombre de jours avant la désactivation du compte auxquels un e-mail d'avertissement doit être envoyé. Par exemple, saisissez « 5 » pour avertir l'Utilisateur cinq jours avant la date de désactivation saisie dans le champ précédent. Saisissez 0 ou laissez le champ vide pour désactiver cette fonctionnalité."
 
 #: ../../administration/settings/email.rst:2
 msgid "Email Settings"
-msgstr ""
+msgstr "Paramètres e-mail"
 
 #: ../../administration/settings/email.rst:4
 msgid ""
@@ -395,55 +395,55 @@ msgid ""
 "delivery. You will need to provide |morpheus| the following information, "
 "your mail server systems administrator can assist you in filling these "
 "fields and with the preferred encryption method."
-msgstr ""
+msgstr "Dans cette section, vous pouvez configurer un serveur SMTP pour la livraison des notifications par e-mail. Vous devrez fournir à |morpheus| les informations suivantes ; l'administrateur de votre système de messagerie pourra vous aider à les obtenir."
 
 #: ../../administration/settings/email.rst:6
 msgid "From Address"
-msgstr ""
+msgstr "Adresse d'expéditeur"
 
 #: ../../administration/settings/email.rst:7
 msgid "SMTP Server"
-msgstr ""
+msgstr "Serveur SMTP"
 
 #: ../../administration/settings/email.rst:8
 msgid "SMTP Port"
-msgstr ""
+msgstr "Port SMTP"
 
 #: ../../administration/settings/email.rst:9
 msgid "SSL Enabled"
-msgstr ""
+msgstr "SSL activé"
 
 #: ../../administration/settings/email.rst:10
 msgid "TLS Encryption"
-msgstr ""
+msgstr "Chiffrement TLS"
 
 #: ../../administration/settings/email.rst:11
 msgid "SMTP User"
-msgstr ""
+msgstr "Utilisateur SMTP"
 
 #: ../../administration/settings/email.rst:12
 msgid "SMTP Password"
-msgstr ""
+msgstr "Mot de passe SMTP"
 
 #: ../../administration/settings/email.rst:14
 msgid ""
 "We recommend that you add the |morpheus| server to your SMTP whitelist as"
 " well as using user authentication as an additional security measure."
-msgstr ""
+msgstr "Nous recommandons d'ajouter le serveur |morpheus| à votre liste blanche SMTP ainsi que d'utiliser l'authentification utilisateur comme mesure de sécurité supplémentaire."
 
 #: ../../administration/settings/email.rst:16
 msgid ""
 "Once you have added your SMTP server information into |morpheus|, scroll "
 "down to the bottom of the page and press the blue SAVE button which can "
 "be found under the Enabled Clouds section."
-msgstr ""
+msgstr "Une fois les informations de votre serveur SMTP ajoutées dans |morpheus|, faites défiler la page jusqu'en bas et appuyez sur le bouton bleu ENREGISTRER situé sous la section Clouds activés."
 
 #: ../../administration/settings/email.rst:18
 msgid ""
 "When you have saved your SMTP server settings in the |morpheus| appliance"
 " you will then need to restart the UI. To restart the morpheus-ui, "
 "connect to your |morpheus| server via SSH and run the below command:"
-msgstr ""
+msgstr "Lorsque vous avez enregistré vos paramètres SMTP dans l'appliance |morpheus|, vous devrez redémarrer l'interface utilisateur. Pour redémarrer morpheus-ui, connectez-vous à votre serveur |morpheus| via SSH et exécutez la commande ci-dessous."
 
 #: ../../administration/settings/email.rst:20
 msgid "``sudo morpheus-ctl restart morpheus-ui``"
@@ -454,18 +454,18 @@ msgstr ""
 #: ../../administration/settings/emailTemplates.rst:8
 #: ../../administration/settings/emailTemplates.rst:16
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../administration/settings/email.rst:22
 msgid ""
 "If you do not restart morpheus-ui, the notifications will not be sent. "
 "Please note it can take up to three minutes for the UI to become "
 "reachable again."
-msgstr ""
+msgstr "Si vous ne redémarrez pas morpheus-ui, les notifications ne seront pas envoyées. Veuillez noter que l'interface utilisateur peut mettre jusqu'à trois minutes à redevenir accessible."
 
 #: ../../administration/settings/sms.rst:2
 msgid "Twilio SMS Settings"
-msgstr ""
+msgstr "Paramètres SMS Twilio"
 
 #: ../../administration/settings/sms.rst:4
 msgid ""
@@ -474,68 +474,68 @@ msgid ""
 "security reasons clients must now supply their own. Complete the fields "
 "indicated below and then restart all |morpheus| nodes to apply the "
 "changes."
-msgstr ""
+msgstr "Configurez la livraison de messages SMS texte pour les alertes |morpheus|. Auparavant, les clients pouvaient utiliser le compte propre de |morpheus| pour la livraison, mais pour des raisons de sécurité, les clients doivent désormais fournir le leur. Remplissez les champs indiqués ci-dessous, puis redémarrez tous les nœuds |morpheus| pour appliquer les modifications."
 
 #: ../../administration/settings/sms.rst:6
 msgid "**Account SID:** Twilio Account SID"
-msgstr ""
+msgstr "**Account SID :** Twilio Account SID"
 
 #: ../../administration/settings/sms.rst:7
 msgid "**SMS From #:** The \"From\" number to receive the text message from"
-msgstr ""
+msgstr "**SMS From # :** Le numéro « From » à partir duquel recevoir le message texte"
 
 #: ../../administration/settings/sms.rst:8
 msgid "**Auth Token:** The Twilio API authentication token for your account"
-msgstr ""
+msgstr "**Auth Token :** Le jeton d'authentification de l'API Twilio pour votre compte"
 
 #: ../../administration/settings/proxy.rst:2
 msgid "Proxy Settings"
-msgstr ""
+msgstr "Paramètres Proxy"
 
 #: ../../administration/settings/proxy.rst:4
 msgid ""
 "The |morpheus| Appliance can be configured to communicate through a Proxy"
 " server for Cloud API's and Agent communication back to the Appliance."
-msgstr ""
+msgstr "L'appliance |morpheus| peut être configurée pour communiquer via un serveur Proxy pour les API Cloud et la communication de l'Agent vers l'Appliance."
 
 #: ../../administration/settings/proxy.rst:6
 msgid ""
 "Additional Proxy configuration is available in the `Infrastructure > "
 "Network > Proxies` section. Added Proxies can be scoped to Clouds in the "
 "`Edit Cloud > Advanced Options` section of the Cloud."
-msgstr ""
+msgstr "Une configuration Proxy supplémentaire est disponible dans la section `Infrastructure > Network > Proxies`. Les Proxies ajoutés peuvent être associés aux Clouds dans la section `Edit Cloud > Advanced Options` du Cloud."
 
 #: ../../administration/settings/proxy.rst:8
 msgid "Add a Global Proxy server by entering the following:"
-msgstr ""
+msgstr "Ajoutez un serveur Proxy global en saisissant les éléments suivants :"
 
 #: ../../administration/settings/proxy.rst:10
 msgid "Proxy Host"
-msgstr ""
+msgstr "Hôte Proxy"
 
 #: ../../administration/settings/proxy.rst:11
 msgid "Proxy Port"
-msgstr ""
+msgstr "Port Proxy"
 
 #: ../../administration/settings/proxy.rst:12
 msgid "Proxy User"
-msgstr ""
+msgstr "Utilisateur Proxy"
 
 #: ../../administration/settings/proxy.rst:13
 msgid "Proxy Password"
-msgstr ""
+msgstr "Mot de passe Proxy"
 
 #: ../../administration/settings/proxy.rst:14
 msgid "Proxy Domain"
-msgstr ""
+msgstr "Domaine Proxy"
 
 #: ../../administration/settings/proxy.rst:15
 msgid "Proxy Workstation"
-msgstr ""
+msgstr "Poste de travail Proxy"
 
 #: ../../administration/settings/currency.rst:2
 msgid "Currency Settings"
-msgstr ""
+msgstr "Paramètres de devise"
 
 #: ../../administration/settings/currency.rst:4
 msgid ""
@@ -547,35 +547,35 @@ msgid ""
 "with currency conversion services \"open exchange rates\" and "
 "\"fixer.io\". This article goes through the process of setting up the "
 "integration and how it works to determine pricing conversions."
-msgstr ""
+msgstr "Dans |morpheus|, les Locataires sont des environnements distincts qui peuvent être définis comme utilisant des devises uniques d'un Locataire à l'autre. De plus, ces devises peuvent différer de la devise du Locataire principal."
 
 #: ../../administration/settings/currency.rst:7
 msgid "Integrating With a Currency Exchange Provider"
-msgstr ""
+msgstr "Intégration avec un fournisseur de change"
 
 #: ../../administration/settings/currency.rst:9
 msgid "Navigate to |AdmSetApp|"
-msgstr ""
+msgstr "Accédez à |AdmSetApp|"
 
 #: ../../administration/settings/currency.rst:10
 msgid ""
 "Under the Currency Settings heading, make a \"Currency Provider\" "
 "selection"
-msgstr ""
+msgstr "Sous l'en-tête Paramètres de devise, sélectionnez un « Fournisseur de devise »"
 
 #: ../../administration/settings/currency.rst:11
 msgid "Enter your \"Provider API Key\""
-msgstr ""
+msgstr "Saisissez votre « Clé API du fournisseur »"
 
 #: ../../administration/settings/currency.rst:13
 msgid ""
 "The service is now integrated and can be used as described in the next "
 "section."
-msgstr ""
+msgstr "Le service est maintenant intégré et peut être utilisé comme décrit dans la section suivante."
 
 #: ../../administration/settings/currency.rst:16
 msgid "Consuming Currency Exchange in |morpheus|"
-msgstr ""
+msgstr "Utilisation du change de devises dans |morpheus|"
 
 #: ../../administration/settings/currency.rst:18
 msgid ""
@@ -583,13 +583,13 @@ msgid ""
 "12 hours. When needed, Morpheus will use this cached data to present "
 "currency conversions rather than hitting the API directly each time. This"
 " limits the total number of API hits and reduces costs."
-msgstr ""
+msgstr "Les données de change de devises sont synchronisées depuis le fournisseur intégré toutes les 12 heures. Si nécessaire, Morpheus utilisera ces données mises en cache pour afficher les conversions de devises plutôt que d'interroger directement l'API à chaque demande."
 
 #: ../../administration/settings/currency.rst:20
 msgid ""
 "Exchanged currency values will be shown under conditions similar to the "
 "following scenario:"
-msgstr ""
+msgstr "Les valeurs de devises converties seront affichées dans des conditions similaires au scénario suivant :"
 
 #: ../../administration/settings/currency.rst:22
 msgid ""
@@ -598,34 +598,34 @@ msgid ""
 " defined in Currency A. Morpheus will convert the pricing data from "
 "currency A to Currency B for this user (and all users in this Subtenant) "
 "since price conversion has been enabled."
-msgstr ""
+msgstr "Un utilisateur travaille dans un Sous-locataire configuré pour la Devise B. L'utilisateur tente de provisionner une Instance avec des jeux de tarification qui n'ont été définis qu'en Devise A. Morpheus convertira les prix de la Devise A en Devise B pour l'affichage."
 
 #: ../../administration/settings/enabled_cloud.rst:2
 msgid "Enabled Clouds (Types)"
-msgstr ""
+msgstr "Clouds activés (Types)"
 
 #: ../../administration/settings/enabled_cloud.rst:4
 msgid "Controls which types of Cloud can be created."
-msgstr ""
+msgstr "Contrôle quels types de Cloud peuvent être créés."
 
 #: ../../administration/settings/enabled_cloud.rst:6
 msgid ""
 "When a Cloud type is disabled, it will be removed from the available "
 "options when adding new Clouds in ``Infrastructure > Clouds``. Existing "
 "Clouds are not affected by changes to this setting."
-msgstr ""
+msgstr "Lorsqu'un type de Cloud est désactivé, il est retiré des options disponibles lors de l'ajout de nouveaux Clouds dans ``Infrastructure > Clouds``. Les Clouds existants ne sont pas affectés par les modifications de ce paramètre."
 
 #: ../../administration/settings/settings.rst:26
 msgid "Whitelabel"
-msgstr ""
+msgstr "Marque blanche"
 
 #: ../../administration/settings/whitelabel.rst:2
 msgid "Whitelabel Settings |enterprise-only|"
-msgstr ""
+msgstr "Paramètres de marque blanche |enterprise-only|"
 
 #: ../../administration/settings/whitelabel.rst:7
 msgid "Whitelabel customization is available only with an Enterprise license."
-msgstr ""
+msgstr "La personnalisation en marque blanche est disponible uniquement avec une licence Enterprise."
 
 #: ../../administration/settings/clients.rst:4
 #: ../../administration/settings/environments.rst:2
@@ -635,193 +635,193 @@ msgstr ""
 #: ../../administration/settings/logs.rst:5
 #: ../../administration/settings/whitelabel.rst:10
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../administration/settings/whitelabel.rst:12
 msgid ""
 "|morpheus| Tenants can be WhiteLabeled with custom Logos, Colors, Copy, "
 "and custom CSS. Sub-Tenants can be individually white-labeled, or the "
 "Master Tenant Whitelabel can apply to all Sub-Tenants."
-msgstr ""
+msgstr "Les Locataires |morpheus| peuvent être personnalisés en marque blanche avec des Logos, Couleurs, Textes et CSS personnalisés. Les Sous-locataires peuvent être personnalisés individuellement, ou la marque blanche du Locataire principal peut s'appliquer à tous les Sous-locataires."
 
 #: ../../administration/settings/whitelabel.rst:14
 msgid "Enable Whitelabel"
-msgstr ""
+msgstr "Activer la marque blanche"
 
 #: ../../administration/settings/whitelabel.rst:15
 msgid ""
 "Turns on the configured Whitelabel settings. Disabling will return the "
 "Appliance to the default colors and logos, but the configured options "
 "will remain saved and will apply if Whitelabel is re-enabled."
-msgstr ""
+msgstr "Active les paramètres de marque blanche configurés. La désactivation restitue à l'Appliance les couleurs et logos par défaut, mais les options configurées restent enregistrées et s'appliqueront si la marque blanche est réactivée."
 
 #: ../../administration/settings/whitelabel.rst:16
 msgid "Appliance Name"
-msgstr ""
+msgstr "Nom de l'appliance"
 
 #: ../../administration/settings/whitelabel.rst:17
 msgid "Replaces |morpheus| in page titles."
-msgstr ""
+msgstr "Remplace |morpheus| dans les titres de page."
 
 #: ../../administration/settings/whitelabel.rst:18
 msgid "Header Logo"
-msgstr ""
+msgstr "Logo d'en-tête"
 
 #: ../../administration/settings/whitelabel.rst:19
 msgid ""
 "Top left header logo. Uploaded image is resized to 38 pixels high with a "
 "proportional width at that height."
-msgstr ""
+msgstr "Logo en haut à gauche de l'en-tête. L'image importée est redimensionnée à 38 pixels de hauteur avec une largeur proportionnelle à cette hauteur."
 
 #: ../../administration/settings/whitelabel.rst:20
 msgid "Disable Support Menu"
-msgstr ""
+msgstr "Désactiver le menu Assistance"
 
 #: ../../administration/settings/whitelabel.rst:21
 msgid "Enable this flag to hide the support dropdown menu in the header."
-msgstr ""
+msgstr "Activez ce drapeau pour masquer le menu déroulant d'assistance dans l'en-tête."
 
 #: ../../administration/settings/whitelabel.rst:22
 msgid "Support Menu Links"
-msgstr ""
+msgstr "Liens du menu Assistance"
 
 #: ../../administration/settings/whitelabel.rst:23
 msgid ""
 "Customize support links. Label Code can be used for translations and is "
 "optional. Be sure to specify fully qualified url if linking to external "
 "sites."
-msgstr ""
+msgstr "Personnalisez les liens d'assistance. Label Code peut être utilisé pour les traductions et est optionnel. Assurez-vous de spécifier une URL entièrement qualifiée si vous liez vers des sites externes."
 
 #: ../../administration/settings/whitelabel.rst:24
 msgid "Security Banner"
-msgstr ""
+msgstr "Bannière de sécurité"
 
 #: ../../administration/settings/whitelabel.rst:25
 msgid ""
 "The Security Banner section in ``/admin/settings#!whitelabel`` displays "
 "content on the login screen for Security and Consent messaging and "
 "warnings."
-msgstr ""
+msgstr "La section Bannière de sécurité dans ``/admin/settings#!whitelabel`` affiche du contenu sur l'écran de connexion pour les messages et avertissements de sécurité et de consentement."
 
 #: ../../administration/settings/whitelabel.rst:26
 msgid "Applicable at Global and Tenant levels"
-msgstr ""
+msgstr "Applicable aux niveaux Global et Locataire"
 
 #: ../../administration/settings/whitelabel.rst:27
 msgid "Security Banner input field accepts plain text and markdown"
-msgstr ""
+msgstr "Le champ de saisie Bannière de sécurité accepte du texte brut et du markdown"
 
 #: ../../administration/settings/whitelabel.rst:28
 msgid "Content is displayed below login section in scoped ``/login/auth`` pages."
-msgstr ""
+msgstr "Le contenu est affiché sous la section de connexion dans les pages ``/login/auth`` concernées."
 
 #: ../../administration/settings/whitelabel.rst:29
 msgid "Footer Logo"
-msgstr ""
+msgstr "Logo de pied de page"
 
 #: ../../administration/settings/whitelabel.rst:30
 msgid ""
 "Footer Logo in bottom left. Uploaded image is resized to 27 pixels high "
 "with a proportional width at that height."
-msgstr ""
+msgstr "Logo de pied de page en bas à gauche. L'image importée est redimensionnée à 27 pixels de hauteur avec une largeur proportionnelle à cette hauteur."
 
 #: ../../administration/settings/whitelabel.rst:31
 msgid "Login Logo"
-msgstr ""
+msgstr "Logo de connexion"
 
 #: ../../administration/settings/whitelabel.rst:32
 msgid ""
 "Logo shown on Login screen. Uploaded image is resized to 192 pixels wide "
 "with an unbound height proportional to that locked width."
-msgstr ""
+msgstr "Logo affiché sur l'écran de connexion. L'image importée est redimensionnée à 192 pixels de large avec une hauteur non limitée proportionnelle à cette largeur fixe."
 
 #: ../../administration/settings/whitelabel.rst:33
 msgid "Favicon"
-msgstr ""
+msgstr "Icône favicon"
 
 #: ../../administration/settings/whitelabel.rst:34
 msgid "Must be a .ico file type."
-msgstr ""
+msgstr "Doit être un fichier de type .ico."
 
 #: ../../administration/settings/whitelabel.rst:35
 msgid "Reset"
-msgstr ""
+msgstr "Réinitialiser"
 
 #: ../../administration/settings/whitelabel.rst:36
 msgid ""
 "When selected and Whitelabel settings are saved, associated logo is "
 "returned to blank default value."
-msgstr ""
+msgstr "Lorsqu'il est sélectionné et que les paramètres de marque blanche sont enregistrés, le logo associé revient à la valeur par défaut vide."
 
 #: ../../administration/settings/whitelabel.rst:39
 msgid "Colors"
-msgstr ""
+msgstr "Couleurs"
 
 #: ../../administration/settings/whitelabel.rst:41
 msgid ""
 "Update Colors by entering HEX value or selecting the Color Selector pop-"
 "up next to each filed and selecting a color."
-msgstr ""
+msgstr "Mettez à jour les couleurs en saisissant une valeur HEX ou en sélectionnant le sélecteur de couleur à côté de chaque champ et en choisissant une couleur."
 
 #: ../../administration/settings/whitelabel.rst:43
 msgid "Header Background"
-msgstr ""
+msgstr "Arrière-plan de l'en-tête"
 
 #: ../../administration/settings/whitelabel.rst:44
 msgid "Header Foreground"
-msgstr ""
+msgstr "Premier plan de l'en-tête"
 
 #: ../../administration/settings/whitelabel.rst:45
 msgid "Nav Background"
-msgstr ""
+msgstr "Arrière-plan de navigation"
 
 #: ../../administration/settings/whitelabel.rst:46
 msgid "Nav Foreground"
-msgstr ""
+msgstr "Premier plan de navigation"
 
 #: ../../administration/settings/whitelabel.rst:47
 msgid "Nav Hover"
-msgstr ""
+msgstr "Survol de navigation"
 
 #: ../../administration/settings/whitelabel.rst:48
 msgid "Primary Button Bg"
-msgstr ""
+msgstr "Arrière-plan du bouton principal"
 
 #: ../../administration/settings/whitelabel.rst:49
 msgid "Primary Button Fg"
-msgstr ""
+msgstr "Premier plan du bouton principal"
 
 #: ../../administration/settings/whitelabel.rst:50
 msgid "Primary Button Hover Bg"
-msgstr ""
+msgstr "Arrière-plan du survol du bouton principal"
 
 #: ../../administration/settings/whitelabel.rst:51
 msgid "Primary Button Hover Fg"
-msgstr ""
+msgstr "Premier plan du survol du bouton principal"
 
 #: ../../administration/settings/whitelabel.rst:52
 msgid "Footer Background"
-msgstr ""
+msgstr "Arrière-plan du pied de page"
 
 #: ../../administration/settings/whitelabel.rst:53
 msgid "Footer Foreground"
-msgstr ""
+msgstr "Premier plan du pied de page"
 
 #: ../../administration/settings/whitelabel.rst:54
 msgid "Login Background"
-msgstr ""
+msgstr "Arrière-plan de connexion"
 
 #: ../../administration/settings/whitelabel.rst:57
 msgid "Override CSS"
-msgstr ""
+msgstr "Remplacer le CSS"
 
 #: ../../administration/settings/whitelabel.rst:59
 msgid "Override CSS settings by entering CSS in `Override CSS` field."
-msgstr ""
+msgstr "Remplacez les paramètres CSS en saisissant du CSS dans le champ `Override CSS`."
 
 #: ../../administration/settings/whitelabel.rst:61
 msgid "Example: (this will add one continues background image to the Header)"
-msgstr ""
+msgstr "Exemple : (cela ajoutera une image d'arrière-plan continue à l'en-tête)"
 
 #: ../../administration/settings/whitelabel.rst:63
 #, python-brace-format
@@ -836,33 +836,33 @@ msgstr ""
 
 #: ../../administration/settings/whitelabel.rst:73
 msgid "Copy"
-msgstr ""
+msgstr "Texte"
 
 #: ../../administration/settings/whitelabel.rst:75
 msgid ""
 "Add custom Copyright String, Terms of Use, Privacy Policy contained in "
 "the Footer text and links in the App and on the login page and emails."
-msgstr ""
+msgstr "Ajoutez une chaîne de copyright personnalisée, des Conditions d'utilisation, une Politique de confidentialité contenues dans le texte et les liens du pied de page dans l'application, sur la page de connexion et dans les e-mails."
 
 #: ../../administration/settings/whitelabel.rst:77
 msgid "Available Copy fields"
-msgstr ""
+msgstr "Champs Texte disponibles"
 
 #: ../../administration/settings/whitelabel.rst:79
 msgid "Copyright String"
-msgstr ""
+msgstr "Chaîne de copyright"
 
 #: ../../administration/settings/whitelabel.rst:80
 msgid "Terms and Privacy String"
-msgstr ""
+msgstr "Chaîne Conditions et Confidentialité"
 
 #: ../../administration/settings/whitelabel.rst:81
 msgid "Terms of Use"
-msgstr ""
+msgstr "Conditions d'utilisation"
 
 #: ../../administration/settings/whitelabel.rst:82
 msgid "Privacy Policy"
-msgstr ""
+msgstr "Politique de confidentialité"
 
 #: ../../administration/settings/whitelabel.rst:84
 msgid ""
@@ -873,24 +873,24 @@ msgid ""
 "login page. This field takes any custom HTML markup allowing you to link "
 "to the internal legal pages or to your own outside legal pages if you "
 "prefer."
-msgstr ""
+msgstr "Les liens Conditions d'utilisation et Politique de confidentialité du pied de page chargeront des pages internes à ``https://applaince_url/privacy-policy`` et ``https://applaince_url/terms-of-use`` affichant les informations saisies en texte brut."
 
 #: ../../administration/settings/whitelabel.rst:87
 msgid "​UI Loading Page"
-msgstr ""
+msgstr "Page de chargement de l'interface utilisateur"
 
 #: ../../administration/settings/whitelabel.rst:89
 msgid ""
 "When the |morpheus| UI is restarted or loading, a default \"Morpheus is "
 "Loading\" page is displayed. This page can be changed by adding the "
 "following to ``/etc/morpheus/morpheus.rb`` and adjusting the values."
-msgstr ""
+msgstr "Lorsque l'interface utilisateur |morpheus| est redémarrée ou en cours de chargement, une page par défaut « Morpheus is Loading » est affichée. Cette page peut être modifiée en ajoutant les éléments suivants à ``/etc/morpheus/morpheus.rb`` et en ajustant les valeurs."
 
 #: ../../administration/settings/whitelabel.rst:91
 msgid ""
 "``morpheus-ctl reconfigure`` must be ran for any chnages to "
 "``/etc/morpheus/morpheus.rb`` to take effect."
-msgstr ""
+msgstr "``morpheus-ctl reconfigure`` doit être exécuté pour que toute modification de ``/etc/morpheus/morpheus.rb`` prenne effet."
 
 #: ../../administration/settings/whitelabel.rst:93
 msgid ""
@@ -915,7 +915,7 @@ msgstr ""
 #: ../../administration/settings/emailTemplates.rst:2
 #: ../../administration/settings/settings.rst:31
 msgid "Email Templates"
-msgstr ""
+msgstr "Modèles d'e-mail"
 
 #: ../../administration/settings/emailTemplates.rst:4
 msgid ""
@@ -925,7 +925,7 @@ msgid ""
 "more. |morpheus| includes system-default email templates for all of these"
 " emailed conditions but allows users to create their own email templates "
 "to override the default template."
-msgstr ""
+msgstr "|morpheus| envoie périodiquement des e-mails à ses utilisateurs pour alerter sur diverses conditions, telles qu'une réussite de provisionnement d'Instance, des avertissements concernant l'expiration imminente d'une Instance, des demandes de réinitialisation de mot de passe, etc."
 
 #: ../../administration/settings/emailTemplates.rst:6
 msgid ""
@@ -939,14 +939,14 @@ msgid ""
 "Templates will apply in order of specificity: Tenant-specific templates "
 "apply first, then custom global templates, and finally system templates "
 "if no others exist for that email type."
-msgstr ""
+msgstr "En accédant à l'onglet Modèles d'e-mail, les utilisateurs verront une liste de tous les modèles d'e-mail existants. Nous pouvons également voir le propriétaire qui a créé le modèle ainsi que le Compte (Locataire) associé."
 
 #: ../../administration/settings/emailTemplates.rst:8
 msgid ""
 "Email templates apply in order of specificity. Tenant-specific templates "
 "apply over custom global templates which apply over system-default "
 "templates."
-msgstr ""
+msgstr "Les modèles d'e-mail s'appliquent par ordre de spécificité. Les modèles spécifiques au Locataire s'appliquent avant les modèles globaux personnalisés, qui s'appliquent avant les modèles par défaut du système."
 
 #: ../../administration/settings/emailTemplates.rst:10
 msgid ".. image:: /images/administration/settings/emailTemplateList.png"
@@ -954,7 +954,7 @@ msgstr ""
 
 #: ../../administration/settings/emailTemplates.rst:12
 msgid "**Creating Templates**"
-msgstr ""
+msgstr "**Création de modèles**"
 
 #: ../../administration/settings/emailTemplates.rst:14
 msgid ""
@@ -965,7 +965,7 @@ msgid ""
 " |morpheus| standard styling or your custom whitelabel styling depending "
 "on appliance configuration. The template itself should only include email"
 " body content which will be inserted within the styling wrapper."
-msgstr ""
+msgstr "Avant de créer le premier modèle, il est important de comprendre que les e-mails provenant de modèles personnalisés seront toujours enveloppés dans les en-têtes et pieds de page e-mail standard de |morpheus|. Ils incluront également les styles standard."
 
 #: ../../administration/settings/emailTemplates.rst:16
 msgid ""
@@ -975,7 +975,7 @@ msgid ""
 "the template. Other functionality-breaking scenarios may also be "
 "possible. Review the system-default template of any email type to copy "
 "syntax examples for such vital components."
-msgstr ""
+msgstr "Il est possible de compromettre la fonctionnalité de certains types d'e-mails générés en créant un modèle personnalisé. Par exemple, dans un e-mail de réinitialisation de mot de passe, vous devez vous assurer que le bouton de réinitialisation du mot de passe est toujours présent."
 
 #: ../../administration/settings/emailTemplates.rst:18
 msgid ""
@@ -985,7 +985,7 @@ msgid ""
 "template of the type you wish to create. You'll see the variables "
 "mentioned in a comment at the bottom of the template such as in this "
 "example Confirm Password Update Template:"
-msgstr ""
+msgstr "Certains types de modèles auront des variables accessibles, telles que le nom de l'utilisateur connecté (pour adresser l'e-mail) ou le nom d'une Instance. Pour voir les variables disponibles, cliquez sur le bouton info du modèle système correspondant."
 
 #: ../../administration/settings/emailTemplates.rst:20
 #, python-brace-format
@@ -1006,28 +1006,28 @@ msgid ""
 "To begin creating a new template, from the Email Templates tab of the "
 "global settings page (|AdmSet|), click :guilabel:`+ CREATE`. The "
 "following configurations must be set:"
-msgstr ""
+msgstr "Pour commencer à créer un nouveau modèle, depuis l'onglet Modèles d'e-mail de la page de paramètres globaux (|AdmSet|), cliquez sur :guilabel:`+ CREATE`. Les configurations suivantes doivent être définies :"
 
 #: ../../administration/settings/emailTemplates.rst:30
 msgid "**TYPE:** Select the email type for the new template"
-msgstr ""
+msgstr "**TYPE :** Sélectionnez le type d'e-mail pour le nouveau modèle"
 
 #: ../../administration/settings/emailTemplates.rst:31
 msgid "**TEMPLATE:** The HTML markdown for the new custom email template"
-msgstr ""
+msgstr "**MODÈLE :** Le markdown HTML pour le nouveau modèle d'e-mail personnalisé"
 
 #: ../../administration/settings/emailTemplates.rst:32
 msgid ""
 "**TENANTS:** This option is only available in the |mastertenant|. Select "
 "a specific Tenant to tie the template to that Tenant or leave it empty to"
 " create a global template"
-msgstr ""
+msgstr "**LOCATAIRES :** Cette option n'est disponible que dans le |mastertenant|. Sélectionnez un Locataire spécifique pour lier le modèle à ce Locataire ou laissez-le vide pour créer un modèle global"
 
 #: ../../administration/settings/emailTemplates.rst:34
 msgid ""
 "The following is an example of a Forgot Password Template. Note that it "
 "calls in the variable for the associated user display name and username."
-msgstr ""
+msgstr "Voici un exemple de modèle Mot de passe oublié. Notez qu'il appelle la variable pour le nom d'affichage et le nom d'utilisateur de l'utilisateur associé."
 
 #: ../../administration/settings/emailTemplates.rst:36
 #, python-brace-format
@@ -1044,181 +1044,181 @@ msgstr ""
 
 #: ../../administration/settings/settings.rst:36
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionnement"
 
 #: ../../administration/settings/provisioning.rst:2
 msgid "Provisioning Settings"
-msgstr ""
+msgstr "Paramètres de provisionnement"
 
 #: ../../administration/settings/provisioning.rst:4
 msgid "Allow Cloud Selection"
-msgstr ""
+msgstr "Autoriser la sélection du Cloud"
 
 #: ../../administration/settings/provisioning.rst:5
 msgid "Displays or hides Cloud Selection dropdown in Provisioning wizard."
-msgstr ""
+msgstr "Affiche ou masque la liste déroulante Sélection du Cloud dans l'assistant de provisionnement."
 
 #: ../../administration/settings/provisioning.rst:6
 msgid "Allow Host Selection"
-msgstr ""
+msgstr "Autoriser la sélection de l'hôte"
 
 #: ../../administration/settings/provisioning.rst:7
 msgid "Displays or hides Host Selection dropdown in Provisioning wizard."
-msgstr ""
+msgstr "Affiche ou masque la liste déroulante Sélection de l'hôte dans l'assistant de provisionnement."
 
 #: ../../administration/settings/provisioning.rst:8
 msgid "Require Environment Selection"
-msgstr ""
+msgstr "Exiger la sélection de l'environnement"
 
 #: ../../administration/settings/provisioning.rst:9
 msgid "Forces users to select and Environment during provisioning"
-msgstr ""
+msgstr "Force les utilisateurs à sélectionner un Environnement lors du provisionnement"
 
 #: ../../administration/settings/provisioning.rst:10
 msgid "Show Pricing"
-msgstr ""
+msgstr "Afficher la tarification"
 
 #: ../../administration/settings/provisioning.rst:11
 msgid ""
 "Displays or hides Pricing in Provisioning wizard and Instance and Host "
 "detail pages."
-msgstr ""
+msgstr "Affiche ou masque la Tarification dans l'assistant de provisionnement et sur les pages de détail d'Instance et d'Hôte."
 
 #: ../../administration/settings/provisioning.rst:12
 msgid "Hide Datastore Stats On Selection"
-msgstr ""
+msgstr "Masquer les statistiques du Datastore lors de la sélection"
 
 #: ../../administration/settings/provisioning.rst:13
 msgid "Hides Datastore utilization and size stats in provisioning and app wizards"
-msgstr ""
+msgstr "Masque l'utilisation et la taille du Datastore dans les assistants de provisionnement et d'application"
 
 #: ../../administration/settings/provisioning.rst:14
 msgid "Cross-Tenant Naming Policies"
-msgstr ""
+msgstr "Règles de nommage inter-locataires"
 
 #: ../../administration/settings/provisioning.rst:15
 msgid ""
 "Enable for the ``sequence`` value in naming policies to apply across "
 "tenants"
-msgstr ""
+msgstr "Activez pour que la valeur ``sequence`` dans les règles de nommage s'applique entre les locataires"
 
 #: ../../administration/settings/provisioning.rst:16
 msgid "Reuse Naming Sequence Numbers"
-msgstr ""
+msgstr "Réutiliser les numéros de séquence de nommage"
 
 #: ../../administration/settings/provisioning.rst:17
 msgid ""
 "When selected, sequence numbers can be reused when Instances are removed."
 " Deselect this option and |morpheus| will track issued sequence numbers "
 "and use the next available number each time."
-msgstr ""
+msgstr "Lorsque cette option est sélectionnée, les numéros de séquence peuvent être réutilisés lorsque des Instances sont supprimées. Désélectionnez cette option et |morpheus| suivra les numéros de séquence émis et utilisera le prochain numéro disponible à chaque fois."
 
 #: ../../administration/settings/provisioning.rst:18
 msgid "Deployment Archive Store"
-msgstr ""
+msgstr "Magasin d'archives de déploiement"
 
 #: ../../administration/settings/provisioning.rst:19
 msgid "Default Storage Provider for storing Deployment Archives."
-msgstr ""
+msgstr "Fournisseur de stockage par défaut pour stocker les archives de déploiement."
 
 #: ../../administration/settings/provisioning.rst:21
 msgid ""
 "Storage Providers can be configured and managed in the `Infrastructure > "
 "Storage` section."
-msgstr ""
+msgstr "Les Fournisseurs de stockage peuvent être configurés et gérés dans la section `Infrastructure > Storage`."
 
 #: ../../administration/settings/provisioning.rst:24
 msgid "Cloud-Init Settings"
-msgstr ""
+msgstr "Paramètres Cloud-Init"
 
 #: ../../administration/settings/provisioning.rst:26
 msgid ""
 "|morpheus| can add global users for Linux and Windows at provision time. "
 "Cloud-init/Cloudbase-Init or VMware Tools installed on the provisioned "
 "virtual images is required."
-msgstr ""
+msgstr "|morpheus| peut ajouter des utilisateurs globaux pour Linux et Windows au moment du provisionnement. Cloud-init/Cloudbase-Init ou VMware Tools installés sur les images virtuelles provisionnées est requis."
 
 #: ../../administration/settings/provisioning.rst:28
 msgid "Linux"
-msgstr ""
+msgstr "Linux"
 
 #: ../../administration/settings/provisioning.rst:29
 msgid ""
 "**Username:** Enter User to be added to Linux Instances during "
 "provisioning."
-msgstr ""
+msgstr "**Nom d'utilisateur :** Saisissez l'Utilisateur à ajouter aux Instances Linux lors du provisionnement."
 
 #: ../../administration/settings/provisioning.rst:30
 msgid "**Password:** Enter password to be set for the above Linux user."
-msgstr ""
+msgstr "**Mot de passe :** Saisissez le mot de passe à définir pour l'utilisateur Linux ci-dessus."
 
 #: ../../administration/settings/provisioning.rst:31
 msgid "**KeyPair:** Select KeyPair to be added for the above Linux user."
-msgstr ""
+msgstr "**KeyPair :** Sélectionnez la KeyPair à ajouter pour l'utilisateur Linux ci-dessus."
 
 #: ../../administration/settings/provisioning.rst:33
 msgid ""
 "Either a password, keypair, or both can be populated for the Linux user. "
 "Keypairs can be added in the `Infrastructure > Keys & Certs` section."
-msgstr ""
+msgstr "Un mot de passe, une paire de clés ou les deux peuvent être renseignés pour l'utilisateur Linux. Les paires de clés peuvent être ajoutées dans la section `Infrastructure > Keys & Certs`."
 
 #: ../../administration/settings/provisioning.rst:36
 msgid "Windows Settings"
-msgstr ""
+msgstr "Paramètres Windows"
 
 #: ../../administration/settings/provisioning.rst:38
 msgid ""
 "**Administrator Password:** Enter password to be set for the Windows "
 "Administrator User during provisioning."
-msgstr ""
+msgstr "**Mot de passe Administrateur :** Saisissez le mot de passe à définir pour l'Utilisateur Administrateur Windows lors du provisionnement."
 
 #: ../../administration/settings/provisioning.rst:41
 msgid "PXE Boot Settings"
-msgstr ""
+msgstr "Paramètres de démarrage PXE"
 
 #: ../../administration/settings/provisioning.rst:43
 msgid "Default Root Password"
-msgstr ""
+msgstr "Mot de passe Root par défaut"
 
 #: ../../administration/settings/provisioning.rst:44
 msgid "Enter the default password to be set for Root during PXE Boots."
-msgstr ""
+msgstr "Saisissez le mot de passe par défaut à définir pour Root lors des démarrages PXE."
 
 #: ../../administration/settings/provisioning.rst:47
 msgid "App Blueprint Settings"
-msgstr ""
+msgstr "Paramètres de plan d'application"
 
 #: ../../administration/settings/provisioning.rst:49
 msgid "Determines the Default Blueprint Type selected in new App Wizard"
-msgstr ""
+msgstr "Détermine le Type de plan par défaut sélectionné dans l'Assistant de nouvelle application"
 
 #: ../../administration/settings/provisioning.rst:51
 msgid "Morpheus"
-msgstr ""
+msgstr "Morpheus"
 
 #: ../../administration/settings/provisioning.rst:52
 msgid "ARM Template"
-msgstr ""
+msgstr "Modèle ARM"
 
 #: ../../administration/settings/provisioning.rst:53
 msgid "CloudFormation"
-msgstr ""
+msgstr "CloudFormation"
 
 #: ../../administration/settings/provisioning.rst:54
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../administration/settings/provisioning.rst:55
 msgid "Kubernetes Spec"
-msgstr ""
+msgstr "Spécification Kubernetes"
 
 #: ../../administration/settings/provisioning.rst:56
 msgid "Helm Chart"
-msgstr ""
+msgstr "Chart Helm"
 
 #: ../../administration/settings/provisioning.rst:59
 msgid "Terraform Settings"
-msgstr ""
+msgstr "Paramètres Terraform"
 
 #: ../../administration/settings/provisioning.rst:61
 msgid ""
@@ -1230,39 +1230,39 @@ msgid ""
 "`installed on your appliance "
 "<https://docs.morpheusdata.com/en/latest/integration_guides/Automation/terraform.html"
 "?#terraform-installation>`_."
-msgstr ""
+msgstr "**Runtime Terraform :** Sélectionnez « auto » ou « manual ». Lorsque vous sélectionnez « auto », |morpheus| téléchargera et utilisera automatiquement la version Terraform indiquée dans le champ VERSION des Modèles de spécifications qui composent un type d'Instance Terraform ou un plan (jusqu'à v1.5.5 uniquement). Lorsque vous sélectionnez « manual », |morpheus| utilisera la version de Terraform `installée sur votre appliance <https://docs.morpheusdata.com/en/latest/integration_guides/Automation/terraform.html?#terraform-installation>`_."
 
 #: ../../administration/settings/settings.rst:41
 msgid "Monitoring"
-msgstr ""
+msgstr "Surveillance"
 
 #: ../../administration/settings/monitoring.rst:2
 msgid "|morpheus| Monitoring Settings"
-msgstr ""
+msgstr "Paramètres de surveillance |morpheus|"
 
 #: ../../administration/settings/monitoring.rst:4
 msgid "Auto Create Checks"
-msgstr ""
+msgstr "Créer automatiquement les vérifications"
 
 #: ../../administration/settings/monitoring.rst:5
 msgid ""
 "When enabled a Monitoring Check will automatically be create for "
 "Instances and Apps."
-msgstr ""
+msgstr "Lorsque cette option est activée, une Vérification de surveillance sera automatiquement créée pour les Instances et les Apps."
 
 #: ../../administration/settings/monitoring.rst:6
 msgid "Availability Time Frame"
-msgstr ""
+msgstr "Période de disponibilité"
 
 #: ../../administration/settings/monitoring.rst:7
 msgid ""
 "The number of days availability should be calculated for. Changes will "
 "not take effect until your checks have passed their check interval."
-msgstr ""
+msgstr "Le nombre de jours sur lesquels la disponibilité doit être calculée. Les modifications ne prendront effet qu'une fois vos vérifications passées leur intervalle de vérification."
 
 #: ../../administration/settings/monitoring.rst:8
 msgid "Availability Precision"
-msgstr ""
+msgstr "Précision de disponibilité"
 
 #: ../../administration/settings/monitoring.rst:9
 msgid ""
@@ -1270,107 +1270,107 @@ msgid ""
 "anywhere between 0 and 5. Instance availability is shown on the Instance "
 "detail page (and used elsewhere) and refers to the percentage of time the"
 " workload is up."
-msgstr ""
+msgstr "Le nombre de décimales pour l'affichage de la disponibilité, de 0 à 5. La disponibilité de l'Instance est affichée sur la page de détail de l'Instance (et utilisée ailleurs) et fait référence au pourcentage de temps pendant lequel la charge de travail est active."
 
 #: ../../administration/settings/monitoring.rst:10
 msgid "Default Check Interval"
-msgstr ""
+msgstr "Intervalle de vérification par défaut"
 
 #: ../../administration/settings/monitoring.rst:11
 msgid "The default interval to use when creating new checks."
-msgstr ""
+msgstr "L'intervalle par défaut à utiliser lors de la création de nouvelles vérifications."
 
 #: ../../administration/settings/monitoring.rst:13
 msgid ""
 "Monitoring Checks can be manually configured if `Auto Create Checks` is "
 "disabled."
-msgstr ""
+msgstr "Les Vérifications de surveillance peuvent être configurées manuellement si `Auto Create Checks` est désactivé."
 
 #: ../../administration/settings/servicenowmonitoring.rst:2
 msgid "Service Now"
-msgstr ""
+msgstr "ServiceNow"
 
 #: ../../administration/settings/servicenowmonitoring.rst:5
 msgid "ServiceNow Monitoring Integration Settings"
-msgstr ""
+msgstr "Paramètres d'intégration de surveillance ServiceNow"
 
 #: ../../administration/settings/servicenowmonitoring.rst:7
 msgid ""
 "A ServiceNow Integration must be already configured in |AdmInt| to enable"
 " the ServiceNow Monitoring Integration."
-msgstr ""
+msgstr "Une Intégration ServiceNow doit déjà être configurée dans |AdmInt| pour activer l'Intégration de surveillance ServiceNow."
 
 #: ../../administration/settings/servicenowmonitoring.rst:9
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 #: ../../administration/settings/servicenowmonitoring.rst:10
 msgid "Enables the ServiceNow Monitoring Integration"
-msgstr ""
+msgstr "Active l'Intégration de surveillance ServiceNow"
 
 #: ../../administration/settings/servicenowmonitoring.rst:11
 msgid "Integration"
-msgstr ""
+msgstr "Intégration"
 
 #: ../../administration/settings/servicenowmonitoring.rst:12
 msgid "Select from a ServiceNow Integration added in |AdmInt|"
-msgstr ""
+msgstr "Sélectionnez parmi une Intégration ServiceNow ajoutée dans |AdmInt|"
 
 #: ../../administration/settings/servicenowmonitoring.rst:13
 msgid "New Incident Action"
-msgstr ""
+msgstr "Action Nouvel incident"
 
 #: ../../administration/settings/servicenowmonitoring.rst:14
 msgid "The Service Now action to take when a Morpheus incident is created."
-msgstr ""
+msgstr "L'action ServiceNow à effectuer lorsqu'un incident Morpheus est créé."
 
 #: ../../administration/settings/servicenowmonitoring.rst:15
 msgid "Close Incident Action"
-msgstr ""
+msgstr "Action Fermer l'incident"
 
 #: ../../administration/settings/servicenowmonitoring.rst:16
 msgid "The Service Now action to take when a Morpheus incident is closed."
-msgstr ""
+msgstr "L'action ServiceNow à effectuer lorsqu'un incident Morpheus est fermé."
 
 #: ../../administration/settings/servicenowmonitoring.rst:18
 msgid "Incident Severity Mapping"
-msgstr ""
+msgstr "Mappage de sévérité d'incident"
 
 #: ../../administration/settings/servicenowmonitoring.rst:23
 msgid "|morpheus| Severity"
-msgstr ""
+msgstr "Sévérité |morpheus|"
 
 #: ../../administration/settings/servicenowmonitoring.rst:23
 msgid "ServiceNow Impact"
-msgstr ""
+msgstr "Impact ServiceNow"
 
 #: ../../administration/settings/servicenowmonitoring.rst:25
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: ../../administration/settings/servicenowmonitoring.rst:25
 #: ../../administration/settings/servicenowmonitoring.rst:26
 #: ../../administration/settings/servicenowmonitoring.rst:27
 msgid "Low/Medium/High"
-msgstr ""
+msgstr "Faible/Moyen/Élevé"
 
 #: ../../administration/settings/servicenowmonitoring.rst:26
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../administration/settings/servicenowmonitoring.rst:27
 msgid "Critical"
-msgstr ""
+msgstr "Critique"
 
 #: ../../administration/settings/logs.rst:2
 msgid "Logging Settings"
-msgstr ""
+msgstr "Paramètres de journalisation"
 
 #: ../../administration/settings/logs.rst:7
 msgid ""
 "Open these settings at :menuselection:`Administration --> Settings --> "
 "Monitoring --> Logging Settings`."
-msgstr ""
+msgstr "Ouvrez ces paramètres dans :menuselection:`Administration --> Settings --> Monitoring --> Logging Settings`."
 
 #: ../../administration/settings/logs.rst:9
 msgid ""
@@ -1379,7 +1379,7 @@ msgid ""
 "the Instance, App, Host and global Logs (|MonLog|) sections. Logs can "
 "also be forwarded using Syslog forward rules to any external solution "
 "that supports Syslogs."
-msgstr ""
+msgstr "|morpheus| contient une solution de journalisation intégrée qui agrège les journaux des hôtes et des services. Les journaux sont affichés, consultables et filtrables dans les sections Instance, App, Hôte et Journaux globaux (|MonLog|). Les journaux peuvent également être transférés à l'aide de règles de transfert Syslog vers toute solution externe compatible Syslog."
 
 #: ../../administration/settings/logs.rst:11
 msgid ""
@@ -1391,13 +1391,13 @@ msgid ""
 "Library NODE TYPE. Logs from any .log file in the specified folder will "
 "be forwarded by the |morpheus| Agent to the |morpheus| appliance or "
 "forwarded with Syslog forward rules."
-msgstr ""
+msgstr "Les journaux affichés dans les sections Instance, App, Hôte et Journaux globaux (|MonLog|) proviennent uniquement des VM et Hôtes gérés sur lesquels l'Agent |morpheus| est installé. L'Agent |morpheus| surveillera ``/var/logs`` pour tout fichier .log et les remontera en conséquence. Les Instances conteneurisées peuvent être configurées pour afficher des journaux supplémentaires en configurant le DOSSIER LOG dans le TYPE DE NŒUD de la Bibliothèque. Les journaux de tout fichier .log dans le dossier spécifié seront transférés par l'Agent |morpheus| vers l'appliance |morpheus| ou transférés avec des règles de transfert Syslog."
 
 #: ../../administration/settings/logs.rst:13
 msgid ""
 "The `Logs` section does not contain |morpheus| appliance logs, which can "
 "be found in `/var/log/morpheus/` and in |AdmHea|."
-msgstr ""
+msgstr "La section `Logs` ne contient pas les journaux de l'appliance |morpheus|, qui se trouvent dans `/var/log/morpheus/` et dans |AdmHea|."
 
 #: ../../administration/settings/logs.rst:15
 msgid ""
@@ -1405,7 +1405,7 @@ msgid ""
 "the Availability Time Frame in the |AdmSetMon| section. Logging can also "
 "be disabled with a simple toggle switch just above the Availability Time "
 "Frame configuration."
-msgstr ""
+msgstr "Les journaux sont stockés dans ElasticSearch et la rétention peut être définie en ajustant la Période de disponibilité dans la section |AdmSetMon|. La journalisation peut également être désactivée avec un simple bouton bascule juste au-dessus de la configuration Période de disponibilité."
 
 #: ../../administration/settings/logs.rst:17
 msgid ".. image:: /images/administration/settings/logSettings.png"
@@ -1413,17 +1413,17 @@ msgstr ""
 
 #: ../../administration/settings/logs.rst:20
 msgid "Advanced Options"
-msgstr ""
+msgstr "Options avancées"
 
 #: ../../administration/settings/logs.rst:22
 msgid ""
 "Expand :guilabel:`Advanced Options` beneath the standard logging settings"
 " to access Agent Log Throttle and Agent Log Deduplication controls."
-msgstr ""
+msgstr "Développez :guilabel:`Advanced Options` sous les paramètres de journalisation standard pour accéder aux contrôles de limitation et de déduplication des journaux de l'Agent."
 
 #: ../../administration/settings/logs.rst:25
 msgid "Agent Log Throttle Policy"
-msgstr ""
+msgstr "Politique de limitation des journaux de l'Agent"
 
 #: ../../administration/settings/logs.rst:27
 msgid ""
@@ -1433,50 +1433,50 @@ msgid ""
 "ceiling, |morpheus| can raise an alarm, actively disable logging on the "
 "offending server, or both. All settings default to **Off** on new "
 "installations."
-msgstr ""
+msgstr "La Politique de limitation des journaux de l'Agent protège l'appliance |morpheus| d'une surcharge lorsqu'un seul agent serveur envoie des journaux à un rythme excessif. Lorsque le volume cumulé de journaux d'un serveur dépasse un plafond configurable, |morpheus| peut lever une alarme, désactiver activement la journalisation sur le serveur en infraction, ou les deux. Tous les paramètres sont par défaut sur **Off** sur les nouvelles installations."
 
 #: ../../administration/settings/logs.rst:33
 msgid "Setting"
-msgstr ""
+msgstr "Paramètre"
 
 #: ../../administration/settings/environments.rst:18
 #: ../../administration/settings/licenses.rst:26
 #: ../../administration/settings/logs.rst:34
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../administration/settings/logs.rst:35
 msgid "Default"
-msgstr ""
+msgstr "Par défaut"
 
 #: ../../administration/settings/logs.rst:36
 msgid "Constraints"
-msgstr ""
+msgstr "Contraintes"
 
 #: ../../administration/settings/logs.rst:37
 msgid "Policy"
-msgstr ""
+msgstr "Politique"
 
 #: ../../administration/settings/logs.rst:38
 msgid ""
 "Controls the throttle response. **Off** performs no throttling. "
 "**Monitor** raises an alarm but continues storing logs. **Enforce** "
 "disables logging on the server and drops subsequent log batches."
-msgstr ""
+msgstr "Contrôle la réponse de limitation. **Off** n'effectue aucune limitation. **Monitor** lève une alarme mais continue de stocker les journaux. **Enforce** désactive la journalisation sur le serveur et ignore les lots de journaux suivants."
 
 #: ../../administration/settings/logs.rst:39
 msgid "Off"
-msgstr ""
+msgstr "Désactivé"
 
 #: ../../administration/settings/logs.rst:41
 msgid "Threshold"
-msgstr ""
+msgstr "Seuil"
 
 #: ../../administration/settings/logs.rst:42
 msgid ""
 "Maximum log volume allowed per minute before a breach is triggered "
 "(KB/min)."
-msgstr ""
+msgstr "Volume maximal de journaux autorisé par minute avant qu'une violation ne soit déclenchée (Ko/min)."
 
 #: ../../administration/settings/logs.rst:43
 msgid "2048"
@@ -1484,58 +1484,58 @@ msgstr ""
 
 #: ../../administration/settings/logs.rst:44
 msgid "Minimum 100"
-msgstr ""
+msgstr "Minimum 100"
 
 #: ../../administration/settings/logs.rst:45
 msgid "Window"
-msgstr ""
+msgstr "Fenêtre"
 
 #: ../../administration/settings/logs.rst:46
 msgid ""
 "Rolling time window used to measure cumulative log volume. The effective "
 "ceiling is ``threshold × window``."
-msgstr ""
+msgstr "Fenêtre temporelle glissante utilisée pour mesurer le volume cumulé de journaux. Le plafond effectif est ``threshold × window``."
 
 #: ../../administration/settings/logs.rst:47
 msgid "30 minutes"
-msgstr ""
+msgstr "30 minutes"
 
 #: ../../administration/settings/logs.rst:48
 msgid "5–60 minutes"
-msgstr ""
+msgstr "5–60 minutes"
 
 #: ../../administration/settings/logs.rst:49
 msgid "Auto Re-enable"
-msgstr ""
+msgstr "Réactivation automatique"
 
 #: ../../administration/settings/logs.rst:50
 msgid ""
 "When enabled, automatically re-enables logging on enforced servers and "
 "clears alarms after the cooldown period. When disabled, manual re-"
 "enablement is required."
-msgstr ""
+msgstr "Lorsque cette option est activée, réactive automatiquement la journalisation sur les serveurs soumis à une mesure coercitive et efface les alarmes après la période de refroidissement. Lorsqu'elle est désactivée, une réactivation manuelle est requise."
 
 #: ../../administration/settings/logs.rst:51
 msgid "On"
-msgstr ""
+msgstr "Activé"
 
 #: ../../administration/settings/logs.rst:53
 msgid "Cooldown"
-msgstr ""
+msgstr "Refroidissement"
 
 #: ../../administration/settings/logs.rst:54
 msgid ""
 "Time to wait after a breach before re-enabling logging or clearing "
 "alarms. Resets if the server re-breaches."
-msgstr ""
+msgstr "Temps d'attente après une violation avant de réactiver la journalisation ou d'effacer les alarmes. Se réinitialise si le serveur reviole."
 
 #: ../../administration/settings/logs.rst:55
 msgid "60 minutes"
-msgstr ""
+msgstr "60 minutes"
 
 #: ../../administration/settings/logs.rst:56
 msgid "Must be ≥ Window"
-msgstr ""
+msgstr "Doit être ≥ Fenêtre"
 
 #: ../../administration/settings/logs.rst:58
 msgid ""
@@ -1543,7 +1543,7 @@ msgid ""
 "window is ``threshold (KB/min) × window (minutes) × 1024``. With defaults"
 " (2048 KB/min, 30-minute window), the ceiling is approximately 60 MB per "
 "30-minute window."
-msgstr ""
+msgstr "**Comment le plafond est calculé :** Le plafond effectif en octets pour une fenêtre est ``threshold (KB/min) × window (minutes) × 1024``. Avec les valeurs par défaut (2048 Ko/min, fenêtre de 30 minutes), le plafond est d'environ 60 Mo par fenêtre de 30 minutes."
 
 #: ../../administration/settings/logs.rst:60
 msgid ""
@@ -1553,7 +1553,7 @@ msgid ""
 "``log.throttle.monitor``. Logs continue to be stored. If auto re-enable "
 "is on, the alarm is cleared after the cooldown period elapses without a "
 "new breach."
-msgstr ""
+msgstr "**Mode Monitor :** Le volume de journaux est suivi par serveur dans une fenêtre glissante. Lorsqu'un serveur dépasse le plafond, une alarme est levée dans :menuselection:`Operations --> Alarms` avec la catégorie ``log.throttle.monitor``. Les journaux continuent d'être stockés. Si la réactivation automatique est activée, l'alarme est effacée après l'expiration de la période de refroidissement sans nouvelle violation."
 
 #: ../../administration/settings/logs.rst:62
 msgid ""
@@ -1564,7 +1564,7 @@ msgid ""
 "raised. If auto re-enable is on, a background job re-enables logging "
 "after the cooldown period. If auto re-enable is off, an administrator "
 "must manually re-enable logging on the server."
-msgstr ""
+msgstr "**Mode Enforce :** Même suivi du volume que Monitor. En cas de violation, la journalisation est désactivée sur le serveur (``enable_logs = false``), les lots de journaux suivants sont ignorés au niveau WebSocket, et l'agent reçoit l'ordre d'arrêter la transmission. Une alarme avec la catégorie ``log.throttle.enforce`` est levée. Si la réactivation automatique est activée, une tâche en arrière-plan réactive la journalisation après la période de refroidissement. Si la réactivation automatique est désactivée, un administrateur doit réactiver manuellement la journalisation sur le serveur."
 
 #: ../../administration/settings/logs.rst:64
 msgid ""
@@ -1573,18 +1573,18 @@ msgid ""
 "Edit --> Log Throttle Policy`. The per-server policy takes precedence "
 "over the global setting. Threshold, window, and cooldown values always "
 "use the global configuration."
-msgstr ""
+msgstr "**Remplacement par serveur :** Les serveurs individuels peuvent remplacer la politique globale via :menuselection:`Infrastructure --> Compute --> [Server] --> Edit --> Log Throttle Policy`. La politique par serveur prime sur le paramètre global. Les valeurs de seuil, fenêtre et refroidissement utilisent toujours la configuration globale."
 
 #: ../../administration/settings/logs.rst:66
 msgid ""
 "**Alarms:** Log throttle alarms appear on :menuselection:`Operations --> "
 "Alarms` and can be acknowledged from that page or from the server detail "
 "page. Alarms include the server name, cloud, and breach details."
-msgstr ""
+msgstr "**Alarmes :** Les alarmes de limitation de journaux apparaissent dans :menuselection:`Operations --> Alarms` et peuvent être confirmées depuis cette page ou depuis la page de détail du serveur. Les alarmes incluent le nom du serveur, le cloud et les détails de la violation."
 
 #: ../../administration/settings/logs.rst:69
 msgid "Agent Log Deduplication"
-msgstr ""
+msgstr "Déduplication des journaux de l'Agent"
 
 #: ../../administration/settings/logs.rst:71
 msgid ""
@@ -1593,51 +1593,51 @@ msgid ""
 "each unique message is stored; repeats are discarded until the window "
 "resets. When the window resets, a summary entry records how many "
 "duplicates were suppressed."
-msgstr ""
+msgstr "Lorsque cette option est activée, |morpheus| supprime les messages de journal d'agent en double par serveur dans une fenêtre glissante de 30 secondes. Seule la première occurrence de chaque message unique est stockée ; les répétitions sont ignorées jusqu'à la réinitialisation de la fenêtre. Lorsque la fenêtre se réinitialise, une entrée de résumé enregistre le nombre de doublons supprimés."
 
 #: ../../administration/settings/logs.rst:73
 msgid ""
 "This setting addresses scenarios where a single server floods identical "
 "syslog messages (for example, a repeated error condition) that can "
 "contribute to Elasticsearch pressure and queue exhaustion."
-msgstr ""
+msgstr "Ce paramètre répond aux scénarios où un seul serveur inonde des messages syslog identiques (par exemple, une condition d'erreur répétée) qui peuvent contribuer à la pression sur Elasticsearch et à l'épuisement de la file d'attente."
 
 #: ../../administration/settings/logs.rst:75
 msgid ""
 "A per-server signature cap of 100 unique messages bounds memory usage "
 "during the deduplication window."
-msgstr ""
+msgstr "Un plafond de signature par serveur de 100 messages uniques limite l'utilisation de la mémoire pendant la fenêtre de déduplication."
 
 #: ../../administration/settings/logs.rst:78
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../administration/settings/logs.rst:80
 msgid ""
 "Log throttle and deduplication settings are available via the log "
 "settings API:"
-msgstr ""
+msgstr "Les paramètres de limitation et de déduplication des journaux sont disponibles via l'API des paramètres de journalisation :"
 
 #: ../../administration/settings/logs.rst:82
 msgid ""
 "``GET /api/log-settings`` — Returns current throttle and deduplication "
 "settings."
-msgstr ""
+msgstr "``GET /api/log-settings`` — Renvoie les paramètres actuels de limitation et de déduplication."
 
 #: ../../administration/settings/logs.rst:83
 msgid "``PUT /api/log-settings`` — Update settings."
-msgstr ""
+msgstr "``PUT /api/log-settings`` — Mettre à jour les paramètres."
 
 #: ../../administration/settings/logs.rst:85
 msgid ""
 "Fields: ``logThrottlePolicy``, ``logThrottleThreshold``, "
 "``logThrottleWindow``, ``logThrottleAutoReEnable``, "
 "``logThrottleCooldown``, ``logDeduplication``."
-msgstr ""
+msgstr "Champs : ``logThrottlePolicy``, ``logThrottleThreshold``, ``logThrottleWindow``, ``logThrottleAutoReEnable``, ``logThrottleCooldown``, ``logDeduplication``."
 
 #: ../../administration/settings/logs.rst:87
 msgid "To query log throttle alarms across all tenants (master tenant only):"
-msgstr ""
+msgstr "Pour interroger les alarmes de limitation de journaux sur tous les locataires (locataire principal uniquement) :"
 
 #: ../../administration/settings/logs.rst:89
 msgid ""
@@ -1647,11 +1647,11 @@ msgstr ""
 
 #: ../../administration/settings/settings.rst:48
 msgid "Backups"
-msgstr ""
+msgstr "Sauvegardes"
 
 #: ../../administration/settings/backup_settings.rst:2
 msgid "Backup Settings"
-msgstr ""
+msgstr "Paramètres de sauvegarde"
 
 #: ../../administration/settings/backup_settings.rst:4
 msgid ""
@@ -1659,14 +1659,14 @@ msgid ""
 "select a default backup bucket, and administer global settings related to"
 " backups. Changes to global settings only affect new backups going "
 "forward and do not affect existing backups."
-msgstr ""
+msgstr "La page Paramètres de sauvegarde vous permet d'activer ou de désactiver les sauvegardes planifiées, de sélectionner un bucket de sauvegarde par défaut et d'administrer les paramètres globaux liés aux sauvegardes. Les modifications des paramètres globaux n'affectent que les nouvelles sauvegardes et n'affectent pas les sauvegardes existantes."
 
 #: ../../administration/settings/backup_settings.rst:6
 msgid ""
 "Appliance backups are subject to a two-hour time limit to complete the "
 "backup. Automated backup attempts will be abandoned and will fail once "
 "this time limit is exceeded."
-msgstr ""
+msgstr "Les sauvegardes de l'appliance sont soumises à une limite de temps de deux heures pour terminer la sauvegarde. Les tentatives de sauvegarde automatisées seront abandonnées et échoueront une fois cette limite dépassée."
 
 #: ../../administration/settings/backup_settings.rst:8
 msgid ""
@@ -1679,97 +1679,97 @@ msgid ""
 " for all app nodes. Another solution would be to make a \"Default Backup "
 "Bucket\" configuration selection, which all nodes would then use for "
 "backup storage and retrieval."
-msgstr ""
+msgstr "Les appliances avec une architecture HA contenant plusieurs nœuds d'application doivent s'assurer que tous les nœuds peuvent accéder aux sauvegardes stockées. Par défaut, si aucune configuration « Default Backup Bucket » n'est effectuée, les sauvegardes sont stockées dans ``/var/opt/morpheus/bitcan``. Si ce chemin est local aux nœuds d'application, les autres nœuds d'application ne pourraient pas accéder aux sauvegardes. Dans ce cas, une solution consisterait à créer un partage NFS pour le répertoire ``bitcan`` pour tous les nœuds d'application. Une autre solution consisterait à effectuer une sélection de configuration « Default Backup Bucket », que tous les nœuds utiliseraient ensuite pour le stockage et la récupération des sauvegardes."
 
 #: ../../administration/settings/backup_settings.rst:11
 msgid "|morpheus| Backup Settings"
-msgstr ""
+msgstr "Paramètres de sauvegarde |morpheus|"
 
 #: ../../administration/settings/backup_settings.rst:13
 msgid "Scheduled Backups"
-msgstr ""
+msgstr "Sauvegardes planifiées"
 
 #: ../../administration/settings/backup_settings.rst:14
 msgid "Enable automatic scheduled backups for provisioned instances"
-msgstr ""
+msgstr "Activer les sauvegardes planifiées automatiques pour les instances provisionnées"
 
 #: ../../administration/settings/backup_settings.rst:16
 msgid "Create Backups"
-msgstr ""
+msgstr "Créer des sauvegardes"
 
 #: ../../administration/settings/backup_settings.rst:17
 msgid ""
 "When enabled, |morpheus| will automatically configure instances for "
 "manual or scheduled backups"
-msgstr ""
+msgstr "Lorsque cette option est activée, |morpheus| configurera automatiquement les instances pour les sauvegardes manuelles ou planifiées"
 
 #: ../../administration/settings/backup_settings.rst:19
 msgid "Backup Appliance"
-msgstr ""
+msgstr "Sauvegarder l'appliance"
 
 #: ../../administration/settings/backup_settings.rst:20
 msgid ""
 "When enabled, a backup will be created for the |morpheus| appliance "
 "database. Select the ``Backup`` text link to view or edit settings "
 "related to the appliance backup"
-msgstr ""
+msgstr "Lorsque cette option est activée, une sauvegarde sera créée pour la base de données de l'appliance |morpheus|. Sélectionnez le lien texte ``Backup`` pour afficher ou modifier les paramètres liés à la sauvegarde de l'appliance"
 
 #: ../../administration/settings/backup_settings.rst:22
 msgid "Default Backup Bucket"
-msgstr ""
+msgstr "Bucket de sauvegarde par défaut"
 
 #: ../../administration/settings/backup_settings.rst:23
 msgid ""
 "Select an existing bucket as the default for future backup runs. Click "
 "the ``Infrastructure Storage`` text link to add a new storage bucket to "
 "|morpheus| if needed"
-msgstr ""
+msgstr "Sélectionnez un bucket existant comme bucket par défaut pour les exécutions de sauvegarde futures. Cliquez sur le lien texte ``Infrastructure Storage`` pour ajouter un nouveau bucket de stockage à |morpheus| si nécessaire"
 
 #: ../../administration/settings/backup_settings.rst:25
 msgid "Default Backup Schedule"
-msgstr ""
+msgstr "Planification de sauvegarde par défaut"
 
 #: ../../administration/settings/backup_settings.rst:26
 msgid ""
 "Choose a default schedule interval for automated backups. The available "
 "selections in this dropdown menu are Execution Schedules defined in "
 "|LibAutExe|"
-msgstr ""
+msgstr "Choisissez un intervalle de planification par défaut pour les sauvegardes automatisées. Les sélections disponibles dans ce menu déroulant sont les Planifications d'exécution définies dans |LibAutExe|"
 
 #: ../../administration/settings/backup_settings.rst:28
 msgid "Default Backup Retention"
-msgstr ""
+msgstr "Rétention de sauvegarde par défaut"
 
 #: ../../administration/settings/backup_settings.rst:29
 msgid ""
 "Choose the default number of backups to be retained for automated "
 "Instance and appliance backup jobs"
-msgstr ""
+msgstr "Choisissez le nombre par défaut de sauvegardes à conserver pour les tâches de sauvegarde automatisées d'Instance et d'appliance"
 
 #: ../../administration/settings/backup_settings.rst:31
 msgid "Default Synthetic Full Backup enabled"
-msgstr ""
+msgstr "Sauvegarde complète synthétique par défaut activée"
 
 #: ../../administration/settings/backup_settings.rst:32
 msgid ""
 "When enabled, full synthetic backups will be on by default in addition to"
 " standard backups for supported workload types"
-msgstr ""
+msgstr "Lorsque cette option est activée, les sauvegardes complètes synthétiques seront activées par défaut en plus des sauvegardes standard pour les types de charges de travail pris en charge"
 
 #: ../../administration/settings/backup_settings.rst:34
 msgid "Default Synthetic Full Backup Schedule"
-msgstr ""
+msgstr "Planification de sauvegarde complète synthétique par défaut"
 
 #: ../../administration/settings/backup_settings.rst:35
 msgid ""
 "Choose a default schedule interval for full synthetic backups. The "
 "available selections in this dropdown menu are Execution Schedules "
 "defined in |LibAutExe|"
-msgstr ""
+msgstr "Choisissez un intervalle de planification par défaut pour les sauvegardes complètes synthétiques. Les sélections disponibles dans ce menu déroulant sont les Planifications d'exécution définies dans |LibAutExe|"
 
 #: ../../administration/settings/settings.rst:53
 msgid "Guidance"
-msgstr ""
+msgstr "Recommandation"
 
 #: ../../administration/settings/guidance.rst:4
 msgid ""
@@ -1780,7 +1780,7 @@ msgid ""
 "organizations significant amounts of money over time. Out of the box, "
 "|morpheus| is configured for sensible thresholds used in making these "
 "recommendations but they can be edited here if needed."
-msgstr ""
+msgstr "La recommandation |morpheus| est un outil important qui formule des recommandations pour l'optimisation des ressources et des coûts. Elle analyse les activités processeur, mémoire et stockage au fil du temps pour formuler des recommandations intelligentes sur le dimensionnement et l'état d'alimentation. Ces recommandations peuvent libérer des ressources et faire économiser des sommes significatives aux organisations au fil du temps. Par défaut, |morpheus| est configuré avec des seuils raisonnables pour ces recommandations, mais ils peuvent être modifiés ici si nécessaire."
 
 #: ../../administration/settings/guidance.rst:6
 msgid ""
@@ -1788,103 +1788,103 @@ msgid ""
 "resize recommendations. They do not control the instantaneous appliance "
 "memory warnings shown under Administration > Health. See "
 ":doc:`/administration/health/health` for those formulas and thresholds."
-msgstr ""
+msgstr "Ces seuils évaluent les métriques des charges de travail gérées au fil du temps pour produire des recommandations de redimensionnement. Ils ne contrôlent pas les avertissements de mémoire instantanés de l'appliance affichés sous Administration > Health. Consultez :doc:`/administration/health/health` pour ces formules et seuils."
 
 #: ../../administration/settings/guidance.rst:9
 msgid "Power Settings"
-msgstr ""
+msgstr "Paramètres d'alimentation"
 
 #: ../../administration/settings/guidance.rst:11
 msgid ""
 "|morpheus| will recommend shutting down a resource if *all* three of the "
 "baselines in this section are exceeded:"
-msgstr ""
+msgstr "|morpheus| recommandera l'arrêt d'une ressource si *toutes* les lignes de base de cette section sont dépassées :"
 
 #: ../../administration/settings/guidance.rst:13
 msgid ""
 "**Average CPU (%):** Shutdown will be recommended if the average CPU "
 "usage is below this value. Values over 100% are possible as this value "
 "factors the number of CPU cores. Default value: 75"
-msgstr ""
+msgstr "**Processeur moyen (%) :** L'arrêt sera recommandé si l'utilisation moyenne du processeur est inférieure à cette valeur. Des valeurs supérieures à 100 % sont possibles car cette valeur tient compte du nombre de cœurs processeur. Valeur par défaut : 75"
 
 #: ../../administration/settings/guidance.rst:14
 msgid ""
 "**Maximum CPU (%):** Shutdown will be recommended if the CPU usage never "
 "exceeds this value. Values over 100% are possible as this value factors "
 "the number of CPU cores. Default value: 500"
-msgstr ""
+msgstr "**Processeur maximum (%) :** L'arrêt sera recommandé si l'utilisation du processeur n'a jamais dépassé cette valeur. Des valeurs supérieures à 100 % sont possibles car cette valeur tient compte du nombre de cœurs processeur. Valeur par défaut : 500"
 
 #: ../../administration/settings/guidance.rst:15
 msgid ""
 "**Network Threshold (bytes):** Shutdown will be recommended if the "
 "average network bandwidth is below this value. Default value: 2000 "
 "bytes/second"
-msgstr ""
+msgstr "**Seuil réseau (octets) :** L'arrêt sera recommandé si la bande passante réseau moyenne est inférieure à cette valeur. Valeur par défaut : 2000 octets/seconde"
 
 #: ../../administration/settings/guidance.rst:18
 msgid "CPU Up-size Settings"
-msgstr ""
+msgstr "Paramètres d'augmentation du processeur"
 
 #: ../../administration/settings/guidance.rst:20
 msgid ""
 "CPU up-size will be recommended when *both* of the following baselines "
 "are exceeded for a resource:"
-msgstr ""
+msgstr "Une augmentation du processeur sera recommandée lorsque *les deux* lignes de base suivantes sont dépassées pour une ressource :"
 
 #: ../../administration/settings/guidance.rst:22
 msgid ""
 "**Average CPU (%):** CPU up-size is recommended if the average CPU "
 "percentage exceeds this value (and other criteria are also met). Default "
 "value: 50"
-msgstr ""
+msgstr "**Processeur moyen (%) :** Une augmentation du processeur est recommandée si le pourcentage moyen du processeur dépasse cette valeur (et que d'autres critères sont également remplis). Valeur par défaut : 50"
 
 #: ../../administration/settings/guidance.rst:23
 msgid ""
 "**Maximum CPU (%):** CPU up-size is recommended if the maximum CPU "
 "percentage exceeds this value. Default value: 99"
-msgstr ""
+msgstr "**Processeur maximum (%) :** Une augmentation du processeur est recommandée si le pourcentage maximum du processeur dépasse cette valeur. Valeur par défaut : 99"
 
 #: ../../administration/settings/guidance.rst:26
 msgid "Memory Up-size Settings"
-msgstr ""
+msgstr "Paramètres d'augmentation de la mémoire"
 
 #: ../../administration/settings/guidance.rst:28
 msgid ""
 "Memory up-size will be recommended when both of the following thresholds "
 "are met for a resource:"
-msgstr ""
+msgstr "Une augmentation de la mémoire sera recommandée lorsque les deux seuils suivants sont atteints pour une ressource :"
 
 #: ../../administration/settings/guidance.rst:30
 msgid ""
 "**Minimum Free Memory (%):** Memory up-size will be recommended if free "
 "memory dips below this value. Default value: 10"
-msgstr ""
+msgstr "**Mémoire libre minimale (%) :** Une augmentation de la mémoire sera recommandée si la mémoire libre descend en dessous de cette valeur. Valeur par défaut : 10"
 
 #: ../../administration/settings/guidance.rst:33
 msgid "Memory Down-size Settings"
-msgstr ""
+msgstr "Paramètres de réduction de la mémoire"
 
 #: ../../administration/settings/guidance.rst:35
 msgid ""
 "Memory down-size will be recommended when both of the following "
 "thresholds are met for a resource:"
-msgstr ""
+msgstr "Une réduction de la mémoire sera recommandée lorsque les deux seuils suivants sont atteints pour une ressource :"
 
 #: ../../administration/settings/guidance.rst:37
 msgid ""
 "**Average Free Memory (%):** Memory down-size is recommended if the "
 "average free memory is above this value. Default value: 60"
-msgstr ""
+msgstr "**Mémoire libre moyenne (%) :** Une réduction de la mémoire est recommandée si la mémoire libre moyenne est supérieure à cette valeur. Valeur par défaut : 60"
 
 #: ../../administration/settings/guidance.rst:38
 msgid ""
 "**Maximum Free Memory (%):** Memory down-size is recommended if free "
 "memory has never dipped below this value. Default value: 30"
-msgstr ""
+msgstr "**Mémoire libre maximale (%) :** Une réduction de la mémoire est recommandée si la mémoire libre n'est jamais descendue en dessous de cette valeur. Valeur par défaut : 30"
 
 #: ../../administration/settings/settings.rst:58
 msgid "Clients"
-msgstr ""
+msgstr "Clients"
 
 #: ../../administration/settings/clients.rst:6
 msgid ""
@@ -1894,62 +1894,62 @@ msgid ""
 "tokens may be generated or re-generated from the :ref:`API Access section"
 " <api-access>`. Their expiration times may be viewed as well. Client "
 "settings are available only in the Primary Tenant and affect all Tenants."
-msgstr ""
+msgstr "|morpheus| inclut des clients OAuth préconfigurés et permet à l'utilisateur d'en créer autant qu'il le souhaite. Les clients préconfigurés sont modifiables mais ne peuvent pas être supprimés. Une fois configurés, des jetons d'accès peuvent être générés ou régénérés depuis la :ref:`section API Access <api-access>`. Leurs durées d'expiration peuvent également être consultées. Les paramètres des clients ne sont disponibles que dans le Locataire principal et affectent tous les Locataires."
 
 #: ../../administration/settings/clients.rst:9
 msgid "Creating an OAuth Client"
-msgstr ""
+msgstr "Création d'un client OAuth"
 
 #: ../../administration/settings/clients.rst:11
 msgid ""
 "To create a new OAuth Client, click :guilabel:`+ ADD` and configure the "
 "following:"
-msgstr ""
+msgstr "Pour créer un nouveau client OAuth, cliquez sur :guilabel:`+ ADD` et configurez les éléments suivants :"
 
 #: ../../administration/settings/clients.rst:13
 msgid "**CLIENT ID:** A reference name for the client in |morpheus|"
-msgstr ""
+msgstr "**CLIENT ID :** Un nom de référence pour le client dans |morpheus|"
 
 #: ../../administration/settings/clients.rst:14
 msgid "**SECRET:** An optional OAuth client secret"
-msgstr ""
+msgstr "**SECRET :** Un secret client OAuth optionnel"
 
 #: ../../administration/settings/clients.rst:15
 msgid ""
 "**ACCESS TOKEN VALIDITY INTERVAL (SECONDS):** The length of time (in "
 "seconds) during which the token should be enabled"
-msgstr ""
+msgstr "**ACCESS TOKEN VALIDITY INTERVAL (SECONDS) :** La durée (en secondes) pendant laquelle le jeton doit être activé"
 
 #: ../../administration/settings/clients.rst:16
 msgid ""
 "**REFRESH TOKEN VALIDITY INTERVAL (SECONDS):** The length of time (in "
 "seconds) during which the refresh token should be enabled"
-msgstr ""
+msgstr "**REFRESH TOKEN VALIDITY INTERVAL (SECONDS) :** La durée (en secondes) pendant laquelle le jeton de rafraîchissement doit être activé"
 
 #: ../../administration/settings/clients.rst:18
 msgid "Once the client is configured, click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Une fois le client configuré, cliquez sur :guilabel:`SAVE CHANGES`."
 
 #: ../../administration/settings/clients.rst:21
 msgid "Editing and Deleting OAuth Clients"
-msgstr ""
+msgstr "Modification et suppression des clients OAuth"
 
 #: ../../administration/settings/clients.rst:23
 msgid ""
 "From the OAuth client list view (|AdmSetCli|), click the pencil "
 "(|pencil|) or trash can (|trash|) icons to edit or delete the OAuth "
 "Client."
-msgstr ""
+msgstr "Depuis la vue liste des clients OAuth (|AdmSetCli|), cliquez sur les icônes crayon (|pencil|) ou corbeille (|trash|) pour modifier ou supprimer le client OAuth."
 
 #: ../../administration/settings/clients.rst:25
 msgid ""
 "Pre-configured |morpheus|-default clients may be edited but not deleted. "
 "User-created clients may be edited or deleted."
-msgstr ""
+msgstr "Les clients par défaut préconfigurés de |morpheus| peuvent être modifiés mais pas supprimés. Les clients créés par l'utilisateur peuvent être modifiés ou supprimés."
 
 #: ../../administration/settings/settings.rst:63
 msgid "Environments"
-msgstr ""
+msgstr "Environnements"
 
 #: ../../administration/settings/environments.rst:4
 msgid ""
@@ -1957,7 +1957,7 @@ msgid ""
 "labels, which are available in the `Environment` dropdown during Instance"
 " or App provisioning. An Instance's environment label can be changed by "
 "editing the Instance."
-msgstr ""
+msgstr "La section Environnements est l'endroit où vous créez et gérez vos libellés d'environnement, disponibles dans la liste déroulante `Environment` lors du provisionnement d'Instance ou d'App. Le libellé d'environnement d'une Instance peut être modifié en éditant l'Instance."
 
 #: ../../administration/settings/environments.rst:6
 msgid ""
@@ -1971,75 +1971,75 @@ msgid ""
 "segmentation. Provisioning Settings can require users to select an "
 "Environment, but that requirement does not change what the selected value"
 " authorizes."
-msgstr ""
+msgstr "Un Environnement est un enregistrement ``InstanceContextType`` contenant un code, un nom, une description, un ordre d'affichage, un Locataire, une visibilité et un état actif. En en sélectionner un stocke son contexte sur l'Instance ou l'App. Cela prend en charge la catégorisation, l'affichage, le filtrage, les variables d'automatisation et les expressions de règles de nommage ; ce n'est pas en soi une règle de placement, une action de cycle de vie ou une limite RBAC. Utilisez Groupes/Clouds et Règles pour le comportement de placement ou de cycle de vie et Rôles/permissions de ressources pour la segmentation d'accès. Les Paramètres de provisionnement peuvent exiger que les utilisateurs sélectionnent un Environnement, mais cette exigence ne modifie pas ce que la valeur sélectionnée autorise."
 
 #: ../../administration/settings/environments.rst:9
 msgid "Creating Environments"
-msgstr ""
+msgstr "Création d'environnements"
 
 #: ../../administration/settings/environments.rst:11
 msgid "Select `+ Create Environment`"
-msgstr ""
+msgstr "Sélectionnez `+ Create Environment`"
 
 #: ../../administration/settings/environments.rst:12
 msgid "Populate the following for the New Environment:"
-msgstr ""
+msgstr "Renseignez les éléments suivants pour le nouvel Environnement :"
 
 #: ../../administration/settings/environments.rst:14
 #: ../../administration/settings/licenses.rst:14
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../../administration/settings/environments.rst:15
 msgid "The friendly name for the environment in |morpheus|"
-msgstr ""
+msgstr "Le nom convivial de l'environnement dans |morpheus|"
 
 #: ../../administration/settings/environments.rst:16
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: ../../administration/settings/environments.rst:17
 msgid "Shortcode used for API and CLI"
-msgstr ""
+msgstr "Code court utilisé pour l'API et la CLI"
 
 #: ../../administration/settings/environments.rst:19
 msgid "Environment description displayed on the Environments list page"
-msgstr ""
+msgstr "Description de l'environnement affichée sur la page de liste des Environnements"
 
 #: ../../administration/settings/environments.rst:20
 msgid "Display Order"
-msgstr ""
+msgstr "Ordre d'affichage"
 
 #: ../../administration/settings/environments.rst:21
 msgid ""
 "The order in which environments are presented when provisioning, a value "
 "of \"0\" will position the environment at the top of the list"
-msgstr ""
+msgstr "L'ordre dans lequel les environnements sont présentés lors du provisionnement ; une valeur de « 0 » positionnera l'environnement en haut de la liste"
 
 #: ../../administration/settings/environments.rst:22
 msgid "Visibility"
-msgstr ""
+msgstr "Visibilité"
 
 #: ../../administration/settings/environments.rst:23
 msgid "*Private*: Available only in the Tenant the environment is created in"
-msgstr ""
+msgstr "*Private* : Disponible uniquement dans le Locataire où l'environnement est créé"
 
 #: ../../administration/settings/environments.rst:24
 msgid ""
 "*Public*: Available for all Tenants. Public is only applicable for "
 "environments created in the the Master Tenant."
-msgstr ""
+msgstr "*Public* : Disponible pour tous les Locataires. Public n'est applicable que pour les environnements créés dans le Locataire principal."
 
 #: ../../administration/settings/environments.rst:26
 msgid ""
 "User-created environments can be edited, hidden, or removed from the "
 "Actions menu on the environments list page. |morpheus|-default "
 "environments can only be hidden from users during provisioning."
-msgstr ""
+msgstr "Les environnements créés par l'utilisateur peuvent être modifiés, masqués ou supprimés depuis le menu Actions sur la page de liste des environnements. Les environnements par défaut de |morpheus| ne peuvent être que masqués aux utilisateurs lors du provisionnement."
 
 #: ../../administration/settings/settings.rst:68
 msgid "Software Licenses"
-msgstr ""
+msgstr "Licences logicielles"
 
 #: ../../administration/settings/licenses.rst:4
 msgid ""
@@ -2048,111 +2048,111 @@ msgid ""
 "then attached to images. |morpheus| will then apply the license to "
 "Instances provisioned using the images with license attached. Licenses "
 "can be configured for single or multiple Tenants."
-msgstr ""
+msgstr "La section Licence sert à automatiser l'application de Licences aux Instances lors du provisionnement. Des Licences peuvent être ajoutées à |morpheus| puis associées à des images. |morpheus| appliquera ensuite la licence aux Instances provisionnées à l'aide des images auxquelles la licence est associée. Les Licences peuvent être configurées pour un ou plusieurs Locataires."
 
 #: ../../administration/settings/licenses.rst:7
 msgid "Creating Licenses"
-msgstr ""
+msgstr "Création de licences"
 
 #: ../../administration/settings/licenses.rst:9
 msgid "Select `+ Create License`"
-msgstr ""
+msgstr "Sélectionnez `+ Create License`"
 
 #: ../../administration/settings/licenses.rst:10
 msgid "In the New License modal, enter the following:"
-msgstr ""
+msgstr "Dans la fenêtre modale Nouvelle licence, saisissez les éléments suivants :"
 
 #: ../../administration/settings/licenses.rst:12
 msgid "License Type"
-msgstr ""
+msgstr "Type de licence"
 
 #: ../../administration/settings/licenses.rst:13
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: ../../administration/settings/licenses.rst:15
 msgid "Name of the License in |morpheus|"
-msgstr ""
+msgstr "Nom de la Licence dans |morpheus|"
 
 #: ../../administration/settings/licenses.rst:16
 msgid "License Key"
-msgstr ""
+msgstr "Clé de licence"
 
 #: ../../administration/settings/licenses.rst:17
 msgid "Enter the License Key"
-msgstr ""
+msgstr "Saisissez la clé de licence"
 
 #: ../../administration/settings/licenses.rst:18
 msgid "Org Name"
-msgstr ""
+msgstr "Nom de l'organisation"
 
 #: ../../administration/settings/licenses.rst:19
 msgid "The Organization Name (if applicable) related to the license key"
-msgstr ""
+msgstr "Le nom de l'Organisation (le cas échéant) lié à la clé de licence"
 
 #: ../../administration/settings/licenses.rst:20
 msgid "Full Name"
-msgstr ""
+msgstr "Nom complet"
 
 #: ../../administration/settings/licenses.rst:21
 msgid "The Full Name (if applicable) related to the license key"
-msgstr ""
+msgstr "Le nom complet (le cas échéant) lié à la clé de licence"
 
 #: ../../administration/settings/licenses.rst:22
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 #: ../../administration/settings/licenses.rst:23
 msgid "The License Version"
-msgstr ""
+msgstr "La version de la Licence"
 
 #: ../../administration/settings/licenses.rst:24
 msgid "Copies"
-msgstr ""
+msgstr "Copies"
 
 #: ../../administration/settings/licenses.rst:25
 msgid "The Number of copies available on the License"
-msgstr ""
+msgstr "Le nombre de copies disponibles sur la Licence"
 
 #: ../../administration/settings/licenses.rst:27
 msgid ""
 "License description displayed in the Licenses list in |morpheus|, helpful"
 " for identifying the License after creation"
-msgstr ""
+msgstr "Description de la licence affichée dans la liste des Licences dans |morpheus|, utile pour identifier la Licence après création"
 
 #: ../../administration/settings/licenses.rst:28
 msgid "Virtual Images"
-msgstr ""
+msgstr "Images virtuelles"
 
 #: ../../administration/settings/licenses.rst:29
 msgid ""
 "Search for existing Virtual Images by name and select to attach the image"
 " to the license."
-msgstr ""
+msgstr "Recherchez des Images virtuelles existantes par nom et sélectionnez-les pour associer l'image à la licence."
 
 #: ../../administration/settings/licenses.rst:30
 msgid ""
 "Virtual Images are synced from Clouds or added in the "
 ":menuselection:`Library --> Virtual Images` section."
-msgstr ""
+msgstr "Les Images virtuelles sont synchronisées depuis les Clouds ou ajoutées dans la section :menuselection:`Library --> Virtual Images`."
 
 #: ../../administration/settings/licenses.rst:31
 msgid "Tenant Permissions"
-msgstr ""
+msgstr "Permissions du Locataire"
 
 #: ../../administration/settings/licenses.rst:32
 msgid ""
 "Search for and select the Tenant(s) the License will be available for. "
 "Multiple Tenants can be added."
-msgstr ""
+msgstr "Recherchez et sélectionnez le(s) Locataire(s) pour lesquels la Licence sera disponible. Plusieurs Locataires peuvent être ajoutés."
 
 #: ../../administration/settings/licenses.rst:34
 msgid "Save Changes"
-msgstr ""
+msgstr "Enregistrer les modifications"
 
 #: ../../administration/settings/licenses.rst:37
 msgid "Provisioning with Licenses"
-msgstr ""
+msgstr "Provisionnement avec licences"
 
 #: ../../administration/settings/licenses.rst:39
 msgid ""
@@ -2162,39 +2162,39 @@ msgid ""
 "configured with the Virtual Image, or if the image is selected when using"
 " generic Cloud Instances types (VMware, AWS, Nutanix, Openstack etc). "
 "Virtual Images can be removed from a License by editing the License."
-msgstr ""
+msgstr "Lorsqu'une Image virtuelle est ajoutée à une licence, |morpheus| appliquera automatiquement la Licence aux Instances configurées avec l'Image virtuelle lors du provisionnement, y compris les Types d'Instance avec un Type de nœud configuré avec l'Image virtuelle, ou si l'image est sélectionnée lors de l'utilisation de types d'Instances Cloud génériques (VMware, AWS, Nutanix, OpenStack, etc.). Les Images virtuelles peuvent être retirées d'une Licence en modifiant la Licence."
 
 #: ../../administration/settings/licenses.rst:42
 msgid "Managing Licenses"
-msgstr ""
+msgstr "Gestion des licences"
 
 #: ../../administration/settings/licenses.rst:44
 msgid ""
 "Created Licenses details are displayed in the License page, including the"
 " number of copies applied per License, the Tenants added to the License, "
 "and the Virtual Images attached to the License."
-msgstr ""
+msgstr "Les détails des Licences créées sont affichés sur la page Licence, y compris le nombre de copies appliquées par Licence, les Locataires ajoutés à la Licence et les Images virtuelles associées à la Licence."
 
 #: ../../administration/settings/licenses.rst:46
 msgid ""
 "The Name, Version, Copies, Description, Virtual Images and Tenant "
 "Permissions are editable but selecting the `Actions` dropdown on a "
 "License."
-msgstr ""
+msgstr "Le Nom, la Version, les Copies, la Description, les Images virtuelles et les Permissions du Locataire sont modifiables en sélectionnant la liste déroulante `Actions` sur une Licence."
 
 #: ../../administration/settings/licenses.rst:48
 msgid ""
 "License Types, Keys, Org Names and Full Names are not editable after a "
 "license has been created."
-msgstr ""
+msgstr "Les Types de licence, Clés, Noms d'organisation et Noms complets ne sont pas modifiables après la création d'une licence."
 
 #: ../../administration/settings/licenses.rst:50
 msgid "License can also be removed using the `Actions` dropdown on a License."
-msgstr ""
+msgstr "Une Licence peut également être supprimée à l'aide de la liste déroulante `Actions` sur une Licence."
 
 #: ../../administration/settings/settings.rst:73
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #: ../../administration/settings/license.rst:4
 msgid ""
@@ -2202,7 +2202,7 @@ msgid ""
 "and Hosts, and converting existing Instances and Hosts to managed. "
 "Licenses can be applied and updated in this section, and the current "
 "license status can be checked."
-msgstr ""
+msgstr "|morpheus| requiert une licence valide pour provisionner de nouvelles Instances, Apps et Hôtes, et pour convertir des Instances et Hôtes existants en mode géré. Les Licences peuvent être appliquées et mises à jour dans cette section, et l'état actuel de la licence peut être vérifié."
 
 #: ../../administration/settings/license.rst:6
 msgid ""
@@ -2212,7 +2212,7 @@ msgid ""
 "specific limits. The rules in `Socket Consumption`_ describe the current "
 "standard socket limit; they do not replace the terms of the applicable "
 "license agreement."
-msgstr ""
+msgstr "Les limites affichées sur la page Licence dépendent de la licence appliquée. Les licences standard actuelles peuvent inclure une limite de sockets. Les anciennes licences peuvent utiliser à la place des limites d'éléments de charge de travail (WLE), de RAM gérée, de stockage, d'Hôtes ou spécifiques à HVM. Les règles dans `Socket Consumption`_ décrivent la limite standard actuelle de sockets ; elles ne remplacent pas les termes de l'accord de licence applicable."
 
 #: ../../administration/settings/license.rst:8
 msgid ""
@@ -2220,11 +2220,11 @@ msgid ""
 "capacity limits. It is different from the :ref:`provisioning_licenses` "
 "section, which stores third-party software license keys for application "
 "to provisioned Instances."
-msgstr ""
+msgstr "La page Licence de l'appliance contrôle la licence produit |morpheus| et les limites de capacité. Elle est différente de la section :ref:`provisioning_licenses`, qui stocke les clés de licence logicielle tierces pour application aux Instances provisionnées."
 
 #: ../../administration/settings/license.rst:11
 msgid "Current Licenses and Usage"
-msgstr ""
+msgstr "Licences et utilisation actuelles"
 
 #: ../../administration/settings/license.rst:13
 msgid ""
@@ -2232,42 +2232,42 @@ msgid ""
 "installed license, its effective dates, and each limit encoded in the "
 "license. When multiple compatible licenses are installed, the page also "
 "shows the effective stacked license."
-msgstr ""
+msgstr "Si une clé de licence a déjà été appliquée, la page Licence affiche la licence installée, ses dates effectives et chaque limite encodée dans la licence. Lorsque plusieurs licences compatibles sont installées, la page affiche également la licence empilée effective."
 
 #: ../../administration/settings/license.rst:15
 msgid "Tenant Name"
-msgstr ""
+msgstr "Nom du Locataire"
 
 #: ../../administration/settings/license.rst:16
 msgid "Company name the License was generated for."
-msgstr ""
+msgstr "Nom de l'entreprise pour laquelle la Licence a été générée."
 
 #: ../../administration/settings/license.rst:17
 msgid "Start Date"
-msgstr ""
+msgstr "Date de début"
 
 #: ../../administration/settings/license.rst:18
 msgid "Date and time the current License started."
-msgstr ""
+msgstr "Date et heure de début de la Licence actuelle."
 
 #: ../../administration/settings/license.rst:19
 msgid "End Date"
-msgstr ""
+msgstr "Date de fin"
 
 #: ../../administration/settings/license.rst:20
 msgid "Date and time the current License expires."
-msgstr ""
+msgstr "Date et heure d'expiration de la Licence actuelle."
 
 #: ../../administration/settings/license.rst:21
 msgid "Usage"
-msgstr ""
+msgstr "Utilisation"
 
 #: ../../administration/settings/license.rst:22
 msgid ""
 "Used and available capacity for the limits encoded in the License. For a "
 "standard socket license, expand the Sockets usage details to view Host "
 "Sockets, Private Cloud VM Sockets, and Public Cloud VM Sockets."
-msgstr ""
+msgstr "Capacité utilisée et disponible pour les limites encodées dans la Licence. Pour une licence standard par sockets, développez les détails d'utilisation Sockets pour afficher Host Sockets, Private Cloud VM Sockets et Public Cloud VM Sockets."
 
 #: ../../administration/settings/license.rst:24
 msgid ""
@@ -2275,36 +2275,36 @@ msgid ""
 "Contact your account team if the displayed limits differ from your "
 "license agreement or if you need help interpreting contractual "
 "entitlements."
-msgstr ""
+msgstr "La page Licence est la source de l'utilisation calculée de l'appliance. Contactez votre équipe de compte si les limites affichées diffèrent de votre accord de licence ou si vous avez besoin d'aide pour interpréter les droits contractuels."
 
 #: ../../administration/settings/license.rst:26
 msgid ""
 "Once a current License expires or reaches a hard limit, users can no "
 "longer provision resources governed by that limit or convert additional "
 "resources to managed. |morpheus| otherwise continues to function."
-msgstr ""
+msgstr "Une fois qu'une Licence actuelle expire ou atteint une limite stricte, les utilisateurs ne peuvent plus provisionner de ressources régies par cette limite ni convertir des ressources supplémentaires en mode géré. |morpheus| continue par ailleurs de fonctionner."
 
 #: ../../administration/settings/license.rst:29
 msgid "Socket Consumption"
-msgstr ""
+msgstr "Consommation de sockets"
 
 #: ../../administration/settings/license.rst:31
 msgid "For a current standard socket license, total socket usage is the sum of:"
-msgstr ""
+msgstr "Pour une licence standard actuelle par sockets, l'utilisation totale de sockets est la somme de :"
 
 #: ../../administration/settings/license.rst:33
 msgid "Physical sockets on qualifying private Cloud Hosts"
-msgstr ""
+msgstr "Sockets physiques sur les Hôtes Cloud privés qualifiés"
 
 #: ../../administration/settings/license.rst:34
 msgid "VM-derived sockets for public Cloud VMs"
-msgstr ""
+msgstr "Sockets dérivés de VM pour les VM Cloud public"
 
 #: ../../administration/settings/license.rst:35
 msgid ""
 "VM-derived sockets for private Cloud VMs only when their Cloud has no "
 "qualifying inventoried Host"
-msgstr ""
+msgstr "Sockets dérivés de VM pour les VM Cloud privé uniquement lorsque leur Cloud n'a pas d'Hôte inventorié qualifié"
 
 #: ../../administration/settings/license.rst:37
 msgid ""
@@ -2312,115 +2312,115 @@ msgid ""
 "fractional usage when the VM count is not an exact multiple of 15; use "
 "the value shown on the License page rather than estimating how a fraction"
 " is displayed."
-msgstr ""
+msgstr "Le taux dérivé de VM est de 15 VM par socket. L'appliance peut calculer une utilisation fractionnaire lorsque le nombre de VM n'est pas un multiple exact de 15 ; utilisez la valeur affichée sur la page Licence plutôt que d'estimer comment une fraction est affichée."
 
 #: ../../administration/settings/license.rst:39
 msgid "Socket consumption by resource type"
-msgstr ""
+msgstr "Consommation de sockets par type de ressource"
 
 #: ../../administration/settings/license.rst:43
 msgid "Resource"
-msgstr ""
+msgstr "Ressource"
 
 #: ../../administration/settings/license.rst:44
 msgid "Socket consumption"
-msgstr ""
+msgstr "Consommation de sockets"
 
 #: ../../administration/settings/license.rst:45
 msgid "Calculation"
-msgstr ""
+msgstr "Calcul"
 
 #: ../../administration/settings/license.rst:46
 msgid ""
 "Physical hypervisor, container hypervisor, or bare metal Host in a "
 "private Cloud"
-msgstr ""
+msgstr "Hyperviseur physique, hyperviseur de conteneurs ou Hôte bare metal dans un Cloud privé"
 
 #: ../../administration/settings/license.rst:47
 #: ../../administration/settings/license.rst:56
 #: ../../administration/settings/license.rst:59
 #: ../../administration/settings/license.rst:65
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: ../../administration/settings/license.rst:48
 msgid ""
 "Uses the Host's reported physical socket count. If no socket count is "
 "reported, the Host consumes two sockets."
-msgstr ""
+msgstr "Utilise le nombre de sockets physiques signalé par l'Hôte. Si aucun nombre de sockets n'est signalé, l'Hôte consomme deux sockets."
 
 #: ../../administration/settings/license.rst:49
 msgid "Duplicate inventory record for the same physical private Cloud Host"
-msgstr ""
+msgstr "Enregistrement d'inventaire en double pour le même Hôte Cloud privé physique"
 
 #: ../../administration/settings/license.rst:50
 #: ../../administration/settings/license.rst:53
 #: ../../administration/settings/license.rst:62
 msgid "No additional sockets"
-msgstr ""
+msgstr "Aucun socket supplémentaire"
 
 #: ../../administration/settings/license.rst:51
 msgid "Records that share the same unique Host identifier are counted once."
-msgstr ""
+msgstr "Les enregistrements partageant le même identifiant d'Hôte unique ne sont comptés qu'une fois."
 
 #: ../../administration/settings/license.rst:52
 msgid "Guest VM in a private Cloud with qualifying inventoried Hosts"
-msgstr ""
+msgstr "VM invitée dans un Cloud privé avec Hôtes inventoriés qualifiés"
 
 #: ../../administration/settings/license.rst:54
 msgid ""
 "The underlying Hosts already consume their physical sockets, so their "
 "guest VMs are not counted again."
-msgstr ""
+msgstr "Les Hôtes sous-jacents consomment déjà leurs sockets physiques, leurs VM invitées ne sont donc pas recomptées."
 
 #: ../../administration/settings/license.rst:55
 msgid "VM in a private Cloud without qualifying inventoried Hosts"
-msgstr ""
+msgstr "VM dans un Cloud privé sans Hôtes inventoriés qualifiés"
 
 #: ../../administration/settings/license.rst:57
 #: ../../administration/settings/license.rst:60
 msgid ""
 "The appliance divides the number of VMs by 15 to calculate VM-derived "
 "sockets."
-msgstr ""
+msgstr "L'appliance divise le nombre de VM par 15 pour calculer les sockets dérivés de VM."
 
 #: ../../administration/settings/license.rst:58
 msgid "VM in a public Cloud"
-msgstr ""
+msgstr "VM dans un Cloud public"
 
 #: ../../administration/settings/license.rst:61
 msgid "Virtual HKS control plane or worker node on VMware"
-msgstr ""
+msgstr "Plan de contrôle HKS virtuel ou nœud worker sur VMware"
 
 #: ../../administration/settings/license.rst:63
 msgid ""
 "When the VMware Hosts are inventoried and counted, the HKS nodes are "
 "guest VMs and do not consume sockets again."
-msgstr ""
+msgstr "Lorsque les Hôtes VMware sont inventoriés et comptés, les nœuds HKS sont des VM invitées et ne consomment pas de sockets supplémentaires."
 
 #: ../../administration/settings/license.rst:64
 msgid "Bare metal HKS worker Host"
-msgstr ""
+msgstr "Hôte worker HKS bare metal"
 
 #: ../../administration/settings/license.rst:66
 msgid ""
 "Uses the worker Host's reported physical sockets, or two sockets when no "
 "value is reported."
-msgstr ""
+msgstr "Utilise les sockets physiques signalés par l'Hôte worker, ou deux sockets lorsqu'aucune valeur n'est signalée."
 
 #: ../../administration/settings/license.rst:67
 msgid "Controller, Kubernetes master, guest Host, or nested child Host record"
-msgstr ""
+msgstr "Enregistrement Contrôleur, maître Kubernetes, Hôte invité ou Hôte enfant imbriqué"
 
 #: ../../administration/settings/license.rst:68
 msgid "No physical Host sockets"
-msgstr ""
+msgstr "Aucun socket d'Hôte physique"
 
 #: ../../administration/settings/license.rst:69
 msgid ""
 "These records are excluded from the qualifying private Cloud Host count. "
 "Their underlying physical Hosts can still consume sockets."
-msgstr ""
+msgstr "Ces enregistrements sont exclus du décompte des Hôtes Cloud privés qualifiés. Leurs Hôtes physiques sous-jacents peuvent toujours consommer des sockets."
 
 #: ../../administration/settings/license.rst:71
 msgid ""
@@ -2428,15 +2428,15 @@ msgid ""
 " virtual HKS nodes running on VMware do not consume an HKS socket "
 "allocation in addition to the physical sockets already consumed by the "
 "VMware Hosts."
-msgstr ""
+msgstr "Cette comptabilisation évite le double comptage dans un Cloud privé. Par exemple, les nœuds HKS virtuels exécutés sur VMware ne consomment pas d'allocation de socket HKS en plus des sockets physiques déjà consommés par les Hôtes VMware."
 
 #: ../../administration/settings/license.rst:74
 msgid "Socket Consumption Examples"
-msgstr ""
+msgstr "Exemples de consommation de sockets"
 
 #: ../../administration/settings/license.rst:76
 msgid "Virtual HKS on VMware"
-msgstr ""
+msgstr "HKS virtuel sur VMware"
 
 #: ../../administration/settings/license.rst:77
 msgid ""
@@ -2444,11 +2444,11 @@ msgid ""
 " each. The Hosts consume six sockets total. An HKS cluster runs three "
 "control plane VMs and six worker VMs on those Hosts. The nine HKS guest "
 "VMs consume zero additional sockets, so total socket usage remains six."
-msgstr ""
+msgstr "Un Cloud VMware contient trois Hôtes inventoriés avec deux sockets physiques chacun. Les Hôtes consomment six sockets au total. Un cluster HKS exécute trois VM de plan de contrôle et six VM worker sur ces Hôtes. Les neuf VM invitées HKS consomment zéro socket supplémentaire, l'utilisation totale de sockets reste donc à six."
 
 #: ../../administration/settings/license.rst:79
 msgid "Bare Metal HKS"
-msgstr ""
+msgstr "HKS Bare Metal"
 
 #: ../../administration/settings/license.rst:80
 msgid ""
@@ -2457,21 +2457,21 @@ msgid ""
 "Kubernetes master records are excluded from the physical Host count. If a"
 " qualifying worker does not report its socket count, |morpheus| counts "
 "two sockets for that worker."
-msgstr ""
+msgstr "Un cluster HKS contient quatre Hôtes worker bare metal qualifiés avec deux sockets physiques chacun. Les workers consomment huit sockets au total. Les enregistrements maître Kubernetes sont exclus du décompte des Hôtes physiques. Si un worker qualifié ne signale pas son nombre de sockets, |morpheus| compte deux sockets pour ce worker."
 
 #: ../../administration/settings/license.rst:82
 msgid "Public Cloud VMs"
-msgstr ""
+msgstr "VM Cloud public"
 
 #: ../../administration/settings/license.rst:83
 msgid ""
 "Thirty VMs in a public Cloud consume two VM-derived sockets: ``30 / 15 = "
 "2``."
-msgstr ""
+msgstr "Trente VM dans un Cloud public consomment deux sockets dérivés de VM : ``30 / 15 = 2``."
 
 #: ../../administration/settings/license.rst:85
 msgid "Private Cloud VMs without inventoried Hosts"
-msgstr ""
+msgstr "VM Cloud privé sans Hôtes inventoriés"
 
 #: ../../administration/settings/license.rst:86
 msgid ""
@@ -2479,11 +2479,11 @@ msgid ""
 "or bare metal Hosts consume two VM-derived sockets: ``30 / 15 = 2``. If "
 "qualifying Hosts are later inventoried for that Cloud, their physical "
 "sockets are counted and their guest VMs are no longer counted separately."
-msgstr ""
+msgstr "Trente VM dans un Cloud privé sans hyperviseur ou Hôte bare metal inventorié qualifié consomment deux sockets dérivés de VM : ``30 / 15 = 2``. Si des Hôtes qualifiés sont ultérieurement inventoriés pour ce Cloud, leurs sockets physiques sont comptés et leurs VM invitées ne sont plus comptées séparément."
 
 #: ../../administration/settings/license.rst:89
 msgid "Legacy License Limits"
-msgstr ""
+msgstr "Limites de licence héritées"
 
 #: ../../administration/settings/license.rst:91
 msgid ""
@@ -2493,7 +2493,7 @@ msgid ""
 "standard socket limit. Do not combine limits from different models when "
 "estimating usage. The values and usage shown on the License page identify"
 " the model active on the appliance."
-msgstr ""
+msgstr "Les anciennes licences peuvent utiliser un modèle de limite différent. Selon la Licence appliquée, la page Licence peut afficher des éléments de charge de travail, de la RAM gérée, du stockage, des Hôtes ou une limite de socket HVM distincte au lieu de la limite standard actuelle de sockets. Ne combinez pas les limites de différents modèles lors de l'estimation de l'utilisation. Les valeurs et l'utilisation affichées sur la page Licence identifient le modèle actif sur l'appliance."
 
 #: ../../administration/settings/license.rst:93
 msgid ""
@@ -2501,55 +2501,55 @@ msgid ""
 "Knowledge Base article <https://support.morpheusdata.com/s/article/What-"
 "is-a-Workload-Element-or-WE-for-purposes-of-Morpheus-"
 "licensing?language=en_US>`_."
-msgstr ""
+msgstr "Pour des informations sur les licences basées sur WLE, consultez l'article `Workload Element Knowledge Base <https://support.morpheusdata.com/s/article/What-is-a-Workload-Element-or-WE-for-purposes-of-Morpheus-licensing?language=en_US>`_."
 
 #: ../../administration/settings/license.rst:96
 msgid "Upgrade License Key"
-msgstr ""
+msgstr "Mettre à jour la clé de licence"
 
 #: ../../administration/settings/license.rst:98
 msgid "To add a new or update an existing License:"
-msgstr ""
+msgstr "Pour ajouter une nouvelle Licence ou mettre à jour une Licence existante :"
 
 #: ../../administration/settings/license.rst:100
 msgid "Copy the License Key into the License Key field"
-msgstr ""
+msgstr "Copiez la clé de licence dans le champ Clé de licence"
 
 #: ../../administration/settings/license.rst:101
 msgid "Click `UPDATE`"
-msgstr ""
+msgstr "Cliquez sur `UPDATE`"
 
 #: ../../administration/settings/license.rst:103
 msgid "If valid, the new License will be applied."
-msgstr ""
+msgstr "Si elle est valide, la nouvelle Licence sera appliquée."
 
 #: ../../administration/settings/license.rst:106
 msgid "Request new License"
-msgstr ""
+msgstr "Demander une nouvelle licence"
 
 #: ../../administration/settings/license.rst:108
 msgid ""
 "Licenses can be requested at https://app.morpheushub.com or by contacting"
 " your account team."
-msgstr ""
+msgstr "Les licences peuvent être demandées sur https://app.morpheushub.com ou en contactant votre équipe de compte."
 
 #: ../../administration/settings/settings.rst:78
 msgid "Utilities"
-msgstr ""
+msgstr "Utilitaires"
 
 #: ../../administration/settings/utilities.rst:1
 msgid ""
 "System administrators have access to a utilities panel with the following"
 " options:"
-msgstr ""
+msgstr "Les administrateurs système ont accès à un panneau d'utilitaires avec les options suivantes :"
 
 #: ../../administration/settings/utilities.rst:3
 msgid "**Reindex all searchable data:** Execute"
-msgstr ""
+msgstr "**Réindexer toutes les données consultables :** Exécuter"
 
 #: ../../administration/settings/utilities.rst:4
 msgid "**Toggle Maintenance Mode:** Enable"
-msgstr ""
+msgstr "**Activer/désactiver le mode maintenance :** Activer"
 
 #: ../../administration/settings/utilities.rst:6
 msgid ""
@@ -2558,7 +2558,7 @@ msgid ""
 "queues so an auto-scaling group can scale down. It also drains active "
 "sessions across services. Restarting |morpheus| UI disables maintenance "
 "mode."
-msgstr ""
+msgstr "Le mode maintenance place proprement |morpheus| dans un état où la maintenance peut être effectuée sur l'appliance. Cela vide les sessions actives et les files d'attente afin qu'un groupe de mise à l'échelle automatique puisse réduire. Il vide également les sessions actives entre les services. Le redémarrage de l'interface utilisateur |morpheus| désactive le mode maintenance."
 
 #: ../../administration/settings/utilities.rst:8
 msgid ""
@@ -2571,7 +2571,7 @@ msgid ""
 "<https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_"
 " to toggle a specific node into maintenance mode to avoid redirects back "
 "to the VIP address."
-msgstr ""
+msgstr "Lors de l'utilisation de |morpheus| dans un environnement haute disponibilité (HA), il est important d'accéder directement à un nœud et d'activer le mode maintenance, plutôt que d'utiliser l'IP virtuelle (VIP) du équilibreur de charge. Une entrée d'hôte local vers le nœud spécifique peut être requise pour s'assurer que le bon nœud entre en mode maintenance. En fait, il est recommandé d'utiliser le `point de terminaison API analogue <https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_ pour basculer un nœud spécifique en mode maintenance afin d'éviter les redirections vers l'adresse VIP."
 
 #: ../../administration/settings/utilities.rst:10
 msgid ""
@@ -2581,5 +2581,5 @@ msgid ""
 "removed/paused from the load balancer VIP or have VIP health checks "
 "implemented, if the node UI/API will become inaccessible due to "
 "maintenance."
-msgstr ""
+msgstr "Un nœud |morpheus| en mode maintenance peut toujours être accessible via le VIP/groupe cible de l'équilibreur de charge et peut mettre les requêtes en file d'attente, mais ne traitera rien en file d'attente pendant le mode maintenance. Un nœud peut être retiré/mis en pause du VIP de l'équilibreur de charge ou avoir des contrôles de santé VIP implémentés, si l'interface utilisateur/API du nœud devient inaccessible en raison de la maintenance."
 

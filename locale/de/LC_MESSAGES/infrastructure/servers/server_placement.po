@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/servers/server_placement.rst:2
 msgid "Server Placement"
-msgstr ""
+msgstr "Serverplatzierung"
 
 #: ../../infrastructure/servers/server_placement.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../infrastructure/servers/server_placement.rst:7
 msgid ""
@@ -34,137 +34,137 @@ msgid ""
 "pool a virtual machine is assigned to within a cloud. Placement "
 "configuration can be set during provisioning or updated post-provisioning"
 " to optimize resource utilization across the infrastructure."
-msgstr ""
+msgstr "Serverplatzierung in |morpheus| steuert, welchem Host, Cluster oder Ressourcenpool eine virtuelle Maschine innerhalb einer Cloud zugewiesen wird. Die Platzierungskonfiguration kann während der Provisionierung gesetzt oder danach aktualisiert werden, um die Ressourcenauslastung in der Infrastruktur zu optimieren."
 
 #: ../../infrastructure/servers/server_placement.rst:9
 msgid ""
 "Placement settings work in conjunction with cloud resource pool "
 "configurations and can be influenced by Host-VM Groups (affinity and "
 "anti-affinity rules)."
-msgstr ""
+msgstr "Platzierungseinstellungen wirken zusammen mit Cloud-Ressourcenpool-Konfigurationen und können durch Host-VM Groups (Affinitäts- und Anti-Affinitätsregeln) beeinflusst werden."
 
 #: ../../infrastructure/servers/server_placement.rst:12
 msgid "Configuring Placement"
-msgstr ""
+msgstr "Platzierung konfigurieren"
 
 #: ../../infrastructure/servers/server_placement.rst:15
 msgid "During Provisioning"
-msgstr ""
+msgstr "Während der Provisionierung"
 
 #: ../../infrastructure/servers/server_placement.rst:17
 msgid ""
 "When provisioning a new instance, placement is configured in the "
 "**Configure** step:"
-msgstr ""
+msgstr "Beim Provisionieren einer neuen Instanz wird die Platzierung im Schritt **Configure** konfiguriert:"
 
 #: ../../infrastructure/servers/server_placement.rst:19
 #: ../../infrastructure/servers/server_placement.rst:36
 msgid "CLOUD"
-msgstr ""
+msgstr "CLOUD"
 
 #: ../../infrastructure/servers/server_placement.rst:20
 msgid "The target cloud determines available placement options."
-msgstr ""
+msgstr "Die Ziel-Cloud bestimmt die verfügbaren Platzierungsoptionen."
 
 #: ../../infrastructure/servers/server_placement.rst:21
 #: ../../infrastructure/servers/server_placement.rst:38
 msgid "RESOURCE POOL"
-msgstr ""
+msgstr "RESOURCE POOL"
 
 #: ../../infrastructure/servers/server_placement.rst:22
 msgid ""
 "Select a resource pool or cluster. This defines the boundary within which"
 " the VM will be placed."
-msgstr ""
+msgstr "Wählen Sie einen Ressourcenpool oder Cluster. Damit wird die Grenze definiert, innerhalb derer die VM platziert wird."
 
 #: ../../infrastructure/servers/server_placement.rst:23
 msgid "HOST"
-msgstr ""
+msgstr "HOST"
 
 #: ../../infrastructure/servers/server_placement.rst:24
 msgid ""
 "(Optional) When manual host selection is enabled, a specific host can be "
 "chosen. If left as auto-select, |morpheus| or the hypervisor will "
 "determine optimal placement."
-msgstr ""
+msgstr "(Optional) Wenn die manuelle Hostauswahl aktiviert ist, kann ein bestimmter Host gewählt werden. Bei Auto-Select bestimmt |morpheus| oder der Hypervisor die optimale Platzierung."
 
 #: ../../infrastructure/servers/server_placement.rst:27
 msgid "Updating Placement Post-Provisioning"
-msgstr ""
+msgstr "Platzierung nach der Provisionierung aktualisieren"
 
 #: ../../infrastructure/servers/server_placement.rst:29
 msgid "To change a server's placement after provisioning:"
-msgstr ""
+msgstr "So ändern Sie die Platzierung eines Servers nach der Provisionierung:"
 
 #: ../../infrastructure/servers/server_placement.rst:31
 msgid "Navigate to the server detail page"
-msgstr ""
+msgstr "Navigieren Sie zur Server-Detailseite"
 
 #: ../../infrastructure/servers/server_placement.rst:32
 msgid "Click :guilabel:`ACTIONS`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`ACTIONS`"
 
 #: ../../infrastructure/servers/server_placement.rst:33
 msgid "Select **Change Cloud** or **Placement**"
-msgstr ""
+msgstr "Wählen Sie **Change Cloud** oder **Placement**"
 
 #: ../../infrastructure/servers/server_placement.rst:34
 msgid "Update the placement configuration:"
-msgstr ""
+msgstr "Aktualisieren Sie die Platzierungskonfiguration:"
 
 #: ../../infrastructure/servers/server_placement.rst:37
 msgid "The target cloud (for cross-cloud placement changes)."
-msgstr ""
+msgstr "Die Ziel-Cloud (für Cloud-übergreifende Platzierungsänderungen)."
 
 #: ../../infrastructure/servers/server_placement.rst:39
 msgid "The destination resource pool or cluster."
-msgstr ""
+msgstr "Der Ziel-Ressourcenpool oder -Cluster."
 
 #: ../../infrastructure/servers/server_placement.rst:41
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE`"
 
 #: ../../infrastructure/servers/server_placement.rst:43
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../infrastructure/servers/server_placement.rst:43
 msgid ""
 "Changing placement may trigger a migration operation depending on the "
 "hypervisor. See :doc:`server_migration` for details on VM migration."
-msgstr ""
+msgstr "Das Ändern der Platzierung kann je nach Hypervisor einen Migrationsvorgang auslösen. Siehe :doc:`server_migration` für Details zur VM-Migration."
 
 #: ../../infrastructure/servers/server_placement.rst:46
 msgid "Automatic Placement"
-msgstr ""
+msgstr "Automatische Platzierung"
 
 #: ../../infrastructure/servers/server_placement.rst:48
 msgid ""
 "When no specific host is selected, |morpheus| works with the underlying "
 "hypervisor's placement engine:"
-msgstr ""
+msgstr "Wenn kein bestimmter Host ausgewählt ist, arbeitet |morpheus| mit der Platzierungs-Engine des zugrunde liegenden Hypervisors:"
 
 #: ../../infrastructure/servers/server_placement.rst:50
 msgid ""
 "**VMware DRS** — When DRS is enabled, VMware handles optimal host "
 "placement within a cluster."
-msgstr ""
+msgstr "**VMware DRS** — Wenn DRS aktiviert ist, übernimmt VMware die optimale Hostplatzierung innerhalb eines Clusters."
 
 #: ../../infrastructure/servers/server_placement.rst:51
 msgid ""
 "**Nutanix ADS** — Acropolis Dynamic Scheduling distributes VMs across "
 "hosts."
-msgstr ""
+msgstr "**Nutanix ADS** — Acropolis Dynamic Scheduling verteilt VMs über Hosts."
 
 #: ../../infrastructure/servers/server_placement.rst:52
 msgid ""
 "**KVM/MVM** — |morpheus| selects the host with the most available "
 "resources in the target pool."
-msgstr ""
+msgstr "**KVM/MVM** — |morpheus| wählt den Host mit den meisten verfügbaren Ressourcen im Zielpool."
 
 #: ../../infrastructure/servers/server_placement.rst:55
 msgid "Host-VM Group Integration"
-msgstr ""
+msgstr "Host-VM-Group-Integration"
 
 #: ../../infrastructure/servers/server_placement.rst:57
 msgid ""
@@ -172,5 +172,5 @@ msgid ""
 "define affinity and anti-affinity rules. See "
 ":doc:`/infrastructure/clusters/host_vm_groups` for details on configuring"
 " these rules."
-msgstr ""
+msgstr "Die Serverplatzierung kann zusätzlich über Host-VM Groups gesteuert werden, die Affinitäts- und Anti-Affinitätsregeln definieren. Siehe :doc:`/infrastructure/clusters/host_vm_groups` für Details zur Konfiguration dieser Regeln."
 

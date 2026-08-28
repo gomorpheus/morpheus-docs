@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/certificates/private_keys.rst:4
 msgid "Private Key Management"
-msgstr ""
+msgstr "Gerenciamento de Chaves Privadas"
 
 #: ../../infrastructure/certificates/private_keys.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../infrastructure/certificates/private_keys.rst:9
 msgid ""
@@ -35,175 +35,175 @@ msgid ""
 "controlled through role-based permissions. This section covers best "
 "practices and operational procedures for key management within "
 "|morpheus|."
-msgstr ""
+msgstr "O |morpheus| armazena e gerencia com segurança as chaves privadas associadas a certificados SSL/TLS. As chaves privadas são criptografadas em repouso e o acesso é controlado por meio de permissões baseadas em função. Esta seção cobre as práticas recomendadas e os procedimentos operacionais para gerenciamento de chaves no |morpheus|."
 
 #: ../../infrastructure/certificates/private_keys.rst:12
 msgid "Key Storage Security"
-msgstr ""
+msgstr "Segurança do Armazenamento de Chaves"
 
 #: ../../infrastructure/certificates/private_keys.rst:14
 msgid ""
 "All private keys stored in |morpheus| are protected by multiple layers of"
 " security:"
-msgstr ""
+msgstr "Todas as chaves privadas armazenadas no |morpheus| são protegidas por várias camadas de segurança:"
 
 #: ../../infrastructure/certificates/private_keys.rst:16
 msgid ""
 "**Encryption at Rest:** Keys are stored using AES-256 encryption in the "
 "|morpheus| database"
-msgstr ""
+msgstr "**Encryption at Rest:** As chaves são armazenadas usando criptografia AES-256 na base de dados |morpheus|"
 
 #: ../../infrastructure/certificates/private_keys.rst:17
 msgid ""
 "**Access Control:** Only users with the appropriate role permissions can "
 "view or manage certificates containing private keys"
-msgstr ""
+msgstr "**Access Control:** Somente usuários com as permissões de função apropriadas podem visualizar ou gerenciar certificados que contenham chaves privadas"
 
 #: ../../infrastructure/certificates/private_keys.rst:18
 msgid ""
 "**Masked Display:** Private keys are never displayed in plain text in the"
 " UI after upload"
-msgstr ""
+msgstr "**Masked Display:** As chaves privadas nunca são exibidas em texto simples na UI após o envio"
 
 #: ../../infrastructure/certificates/private_keys.rst:19
 msgid ""
 "**Audit Trail:** Key access and modifications are logged in the "
 "|morpheus| activity feed"
-msgstr ""
+msgstr "**Audit Trail:** O acesso e as modificações de chaves são registrados no feed de atividade |morpheus|"
 
 #: ../../infrastructure/certificates/private_keys.rst:22
 msgid "Supported Key Types"
-msgstr ""
+msgstr "Tipos de Chave Suportados"
 
 #: ../../infrastructure/certificates/private_keys.rst:24
 msgid "|morpheus| supports the following private key formats:"
-msgstr ""
+msgstr "O |morpheus| oferece suporte aos seguintes formatos de chave privada:"
 
 #: ../../infrastructure/certificates/private_keys.rst:26
 msgid "**RSA:** 2048-bit and 4096-bit RSA keys (most common)"
-msgstr ""
+msgstr "**RSA:** Chaves RSA de 2048 bits e 4096 bits (mais comuns)"
 
 #: ../../infrastructure/certificates/private_keys.rst:27
 msgid "**ECDSA:** Elliptic Curve keys (P-256, P-384, P-521)"
-msgstr ""
+msgstr "**ECDSA:** Chaves de Curva Elíptica (P-256, P-384, P-521)"
 
 #: ../../infrastructure/certificates/private_keys.rst:28
 msgid ""
 "**PEM Format:** Base64-encoded DER format enclosed in ``-----BEGIN "
 "PRIVATE KEY-----`` / ``-----END PRIVATE KEY-----`` headers"
-msgstr ""
+msgstr "**PEM Format:** Formato DER codificado em Base64 delimitado pelos cabeçalhos ``-----BEGIN PRIVATE KEY-----`` / ``-----END PRIVATE KEY-----``"
 
 #: ../../infrastructure/certificates/private_keys.rst:31
 msgid "Key Passphrases"
-msgstr ""
+msgstr "Frases-Senha de Chave"
 
 #: ../../infrastructure/certificates/private_keys.rst:33
 msgid "|morpheus| supports passphrase-protected private keys:"
-msgstr ""
+msgstr "O |morpheus| oferece suporte a chaves privadas protegidas por frase-senha:"
 
 #: ../../infrastructure/certificates/private_keys.rst:35
 msgid ""
 "When uploading a key with a passphrase, enter the passphrase in the **KEY"
 " PASSPHRASE** field"
-msgstr ""
+msgstr "Ao enviar uma chave com frase-senha, digite a frase-senha no campo **KEY PASSPHRASE**"
 
 #: ../../infrastructure/certificates/private_keys.rst:36
 msgid "The passphrase is stored encrypted alongside the key"
-msgstr ""
+msgstr "A frase-senha é armazenada criptografada junto com a chave"
 
 #: ../../infrastructure/certificates/private_keys.rst:37
 msgid ""
 "|morpheus| automatically decrypts the key when needed for operations "
 "(e.g., SSL termination)"
-msgstr ""
+msgstr "O |morpheus| descriptografa automaticamente a chave quando necessário para operações (por exemplo, terminação SSL)"
 
 #: ../../infrastructure/certificates/private_keys.rst:39
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/certificates/private_keys.rst:39
 msgid ""
 "It is recommended to use passphrase-protected keys for an additional "
 "layer of security, particularly when keys are shared across multiple "
 "systems."
-msgstr ""
+msgstr "Recomenda-se usar chaves protegidas por frase-senha para uma camada adicional de segurança, particularmente quando as chaves são compartilhadas entre vários sistemas."
 
 #: ../../infrastructure/certificates/private_keys.rst:42
 msgid "Uploading Private Keys"
-msgstr ""
+msgstr "Enviando Chaves Privadas"
 
 #: ../../infrastructure/certificates/private_keys.rst:44
 msgid "Private keys are uploaded as part of a certificate record:"
-msgstr ""
+msgstr "As chaves privadas são enviadas como parte de um registro de certificado:"
 
 #: ../../infrastructure/certificates/private_keys.rst:46
 msgid "Navigate to |InfTruCer|"
-msgstr ""
+msgstr "Navegue até |InfTruCer|"
 
 #: ../../infrastructure/certificates/private_keys.rst:47
 msgid "Click :guilabel:`+ ADD` or edit an existing certificate"
-msgstr ""
+msgstr "Clique em :guilabel:`+ ADD` ou edite um certificado existente"
 
 #: ../../infrastructure/certificates/private_keys.rst:48
 msgid ""
 "In the **PRIVATE KEY (PEM)** field, paste the full PEM-encoded private "
 "key content"
-msgstr ""
+msgstr "No campo **PRIVATE KEY (PEM)**, cole o conteúdo completo da chave privada codificada em PEM"
 
 #: ../../infrastructure/certificates/private_keys.rst:49
 msgid ""
 "If the key is passphrase-protected, enter the passphrase in the **KEY "
 "PASSPHRASE** field"
-msgstr ""
+msgstr "Se a chave estiver protegida por frase-senha, digite a frase-senha no campo **KEY PASSPHRASE**"
 
 #: ../../infrastructure/certificates/private_keys.rst:50
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE`"
 
 #: ../../infrastructure/certificates/private_keys.rst:53
 msgid "Key Rotation"
-msgstr ""
+msgstr "Rotação de Chaves"
 
 #: ../../infrastructure/certificates/private_keys.rst:55
 msgid "To rotate a private key (e.g., for security compliance):"
-msgstr ""
+msgstr "Para rotacionar uma chave privada (por exemplo, para conformidade de segurança):"
 
 #: ../../infrastructure/certificates/private_keys.rst:57
 msgid ""
 "Generate a new key pair and obtain a new certificate signed with the new "
 "key"
-msgstr ""
+msgstr "Gere um novo par de chaves e obtenha um novo certificado assinado com a nova chave"
 
 #: ../../infrastructure/certificates/private_keys.rst:58
 msgid "Edit the existing certificate record in |morpheus|"
-msgstr ""
+msgstr "Edite o registro de certificado existente no |morpheus|"
 
 #: ../../infrastructure/certificates/private_keys.rst:59
 msgid "Replace the certificate content and private key with the new values"
-msgstr ""
+msgstr "Substitua o conteúdo do certificado e a chave privada pelos novos valores"
 
 #: ../../infrastructure/certificates/private_keys.rst:60
 msgid "Save the updated record"
-msgstr ""
+msgstr "Salve o registro atualizado"
 
 #: ../../infrastructure/certificates/private_keys.rst:61
 msgid "Verify services using the certificate continue to function correctly"
-msgstr ""
+msgstr "Verifique se os serviços que usam o certificado continuam a funcionar corretamente"
 
 #: ../../infrastructure/certificates/private_keys.rst:63
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../infrastructure/certificates/private_keys.rst:63
 msgid ""
 "For zero-downtime key rotation on load balancers, add the new certificate"
 " as a separate entry first, update the load balancer configuration to use"
 " the new certificate, then remove the old entry."
-msgstr ""
+msgstr "Para rotação de chaves sem tempo de inatividade em load balancers, adicione primeiro o novo certificado como uma entrada separada, atualize a configuração do load balancer para usar o novo certificado e, em seguida, remova a entrada antiga."
 
 #: ../../infrastructure/certificates/private_keys.rst:66
 msgid "Key Export Restrictions"
-msgstr ""
+msgstr "Restrições de Exportação de Chaves"
 
 #: ../../infrastructure/certificates/private_keys.rst:68
 msgid ""
@@ -211,16 +211,16 @@ msgid ""
 "private keys once uploaded. This is a security measure to prevent "
 "unauthorized key extraction. If a private key is needed outside of "
 "|morpheus|, it must be retrieved from the original source or regenerated."
-msgstr ""
+msgstr "Por design, o |morpheus| não fornece um mecanismo para exportar ou baixar chaves privadas após o envio. Esta é uma medida de segurança para impedir a extração não autorizada de chaves. Se uma chave privada for necessária fora do |morpheus|, ela deve ser recuperada da origem original ou regenerada."
 
 #: ../../infrastructure/certificates/private_keys.rst:71
 msgid "SSH Key Pairs"
-msgstr ""
+msgstr "Pares de Chaves SSH"
 
 #: ../../infrastructure/certificates/private_keys.rst:73
 msgid ""
 "SSH key pairs for server authentication are managed separately in the "
 "**Key Pairs** section of Infrastructure > Trust. See the Key Pairs "
 "documentation for details on managing SSH keys used during provisioning."
-msgstr ""
+msgstr "Os pares de chaves SSH para autenticação de servidor são gerenciados separadamente na seção **Key Pairs** de Infrastructure > Trust. Consulte a documentação de Key Pairs para detalhes sobre o gerenciamento de chaves SSH usadas durante o provisionamento."
 

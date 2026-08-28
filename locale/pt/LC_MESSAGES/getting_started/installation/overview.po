@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../../getting_started/installation/overview.rst:4
 msgid "Installation Overview"
-msgstr ""
+msgstr "Visão Geral da Instalação"
 
 #: ../../getting_started/installation/overview.rst:6
 msgid ""
 "|morpheus| supports two primary deployment methods. Choose the path that "
 "fits your environment:"
-msgstr ""
+msgstr "O |morpheus| oferece suporte a dois métodos principais de implementação. Escolha o caminho que se adequa ao seu ambiente:"
 
 #: ../../getting_started/installation/overview.rst:11
 msgid "HPE HVM Deployment (Recommended)"
-msgstr ""
+msgstr "Implementação HPE HVM (Recomendado)"
 
 #: ../../getting_started/installation/overview.rst:13
 msgid ""
@@ -40,31 +40,31 @@ msgid ""
 "deployed as a virtual appliance directly onto an HVM host using the **HPE"
 " Morpheus Manager Installer**. This is the fastest and simplest path to a"
 " running |morpheus| environment. This approach:"
-msgstr ""
+msgstr "Para clientes que usam HPE HVM como plataforma de hypervisor, o |morpheus| é implementado como um appliance virtual diretamente em um host HVM usando o **HPE Morpheus Manager Installer**. Este é o caminho mais rápido e simples para um ambiente |morpheus| em execução. Esta abordagem:"
 
 #: ../../getting_started/installation/overview.rst:15
 msgid "Takes **15–30 minutes** from start to a running appliance"
-msgstr ""
+msgstr "Leva **15–30 minutos** do início até um appliance em execução"
 
 #: ../../getting_started/installation/overview.rst:16
 msgid ""
 "Requires no manual package installation — the installer handles image "
 "upload, VM creation, and configuration"
-msgstr ""
+msgstr "Não requer instalação manual de pacotes — o instalador cuida do upload da imagem, da criação da VM e da configuração"
 
 #: ../../getting_started/installation/overview.rst:17
 msgid "Deploys a fully self-contained appliance from a QCOW2 image"
-msgstr ""
+msgstr "Implementa um appliance totalmente autônomo a partir de uma imagem QCOW2"
 
 #: ../../getting_started/installation/overview.rst:18
 msgid ""
 "Can deploy a local QCOW2 image entirely over the local network without "
 "internet access"
-msgstr ""
+msgstr "Pode implementar uma imagem QCOW2 local inteiramente pela rede local sem acesso à Internet"
 
 #: ../../getting_started/installation/overview.rst:20
 msgid "**To get started with HVM deployment:**"
-msgstr ""
+msgstr "**Para começar com a implementação HVM:**"
 
 #: ../../getting_started/installation/overview.rst:22
 msgid ""
@@ -72,7 +72,7 @@ msgid ""
 "</getting_started/installation/hvm_host_prep>` — Install HVM OS 24.04 on "
 "bare-metal servers and configure networking. This is required before "
 "running the installer."
-msgstr ""
+msgstr ":doc:`Prepare seu(s) host(s) HVM </getting_started/installation/hvm_host_prep>` — Instale o HVM OS 24.04 em servidores bare-metal e configure a rede. Isso é necessário antes de executar o instalador."
 
 #: ../../getting_started/installation/overview.rst:23
 msgid ""
@@ -80,14 +80,14 @@ msgid ""
 "</getting_started/installation/singleNode/hpe_installer>` — Run the "
 "graphical installer from your workstation to deploy the |morpheus| "
 "appliance VM onto a prepared HVM host."
-msgstr ""
+msgstr ":doc:`Implemente o Morpheus com o Instalador HPE </getting_started/installation/singleNode/hpe_installer>` — Execute o instalador gráfico a partir da sua workstation para implementar a VM do appliance |morpheus| em um host HVM preparado."
 
 #: ../../getting_started/installation/overview.rst:25
 msgid ""
 "After the appliance is running, you can add additional HVM hosts to form "
 "a cluster from within the |morpheus| UI (:menuselection:`Infrastructure "
 "--> Clusters`)."
-msgstr ""
+msgstr "Após o appliance estar em execução, você pode adicionar hosts HVM adicionais para formar um cluster de dentro da UI do |morpheus| (:menuselection:`Infrastructure --> Clusters`)."
 
 #: ../../getting_started/installation/overview.rst:27
 msgid ""
@@ -96,11 +96,11 @@ msgid ""
 " APT source for security and package updates. For connected and air-"
 "gapped options, see :doc:`Morpheus Manager Base OS Updates "
 "</getting_started/maintenance/manager_os_updates>`."
-msgstr ""
+msgstr "A implementação local e a manutenção contínua têm requisitos de conectividade diferentes. O SO base Ubuntu do Manager ainda requer uma origem APT aprovada pela HPE para atualizações de segurança e de pacotes. Para opções conectadas e air-gapped, consulte :doc:`Atualizações do SO Base do Morpheus Manager </getting_started/maintenance/manager_os_updates>`."
 
 #: ../../getting_started/installation/overview.rst:32
 msgid "Manual Package Installation"
-msgstr ""
+msgstr "Instalação Manual de Pacotes"
 
 #: ../../getting_started/installation/overview.rst:34
 msgid ""
@@ -110,7 +110,7 @@ msgid ""
 "supported Linux OS. This method is also used for advanced deployment "
 "topologies (distributed services, full HA) where you need granular "
 "control over each component."
-msgstr ""
+msgstr "Para ambientes que **não** usam HPE HVM — como VMware existente, Hyper-V, VMs em nuvem ou servidores Linux bare-metal — o |morpheus| está disponível como pacotes padrão ``debian`` ou ``yum`` instalados diretamente em um SO Linux suportado. Este método também é usado para topologias avançadas de implementação (serviços distribuídos, HA completa) onde você precisa de controle granular sobre cada componente."
 
 #: ../../getting_started/installation/overview.rst:36
 msgid ""
@@ -118,7 +118,7 @@ msgid ""
 "host. |morpheus| can also be configured in a distributed architecture "
 "with external services and multiple application hosts for High "
 "Availability."
-msgstr ""
+msgstr "A configuração padrão instala todos os serviços necessários em um único host. O |morpheus| também pode ser configurado em uma arquitetura distribuída com serviços externos e vários hosts de aplicação para Alta Disponibilidade."
 
 #: ../../getting_started/installation/overview.rst:38
 msgid ""
@@ -126,42 +126,42 @@ msgid ""
 "reconfigure`` command. The config file ``/etc/morpheus/morpheus.rb`` can "
 "optionally point the application to external services (distributed "
 "configuration)."
-msgstr ""
+msgstr "Todos os componentes são instalados e configurados durante o comando ``morpheus-ctl reconfigure``. O arquivo de configuração ``/etc/morpheus/morpheus.rb`` pode opcionalmente apontar a aplicação para serviços externos (configuração distribuída)."
 
 #: ../../getting_started/installation/overview.rst:40
 msgid ""
 "|morpheus| Release Packages can be obtained from `HPE My Software Center "
 "<https://myenterpriselicense.hpe.com/>`_."
-msgstr ""
+msgstr "Os Pacotes de Release do |morpheus| podem ser obtidos no `HPE My Software Center <https://myenterpriselicense.hpe.com/>`_."
 
 #: ../../getting_started/installation/overview.rst:42
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/overview.rst:42
 msgid ""
 "|morpheus| requires TLS v1.2 for all incoming appliance connections. "
 "Ensure front-end load balancers and agents support TLS v1.2 or higher."
-msgstr ""
+msgstr "O |morpheus| requer TLS v1.2 para todas as conexões de entrada do appliance. Certifique-se de que load balancers front-end e agents ofereçam suporte a TLS v1.2 ou superior."
 
 #: ../../getting_started/installation/overview.rst:45
 msgid "Architecture Options"
-msgstr ""
+msgstr "Opções de Arquitetura"
 
 #: ../../getting_started/installation/overview.rst:47
 msgid "Single Host (All-In-One/default)"
-msgstr ""
+msgstr "Host Único (All-In-One/padrão)"
 
 #: ../../getting_started/installation/overview.rst:48
 msgid ""
 "All tiers running on a single host. The reconfigure process installs all "
 "required services. This is the default configuration."
-msgstr ""
+msgstr "Todos os tiers em execução em um único host. O processo de reconfigure instala todos os serviços necessários. Esta é a configuração padrão."
 
 #: ../../getting_started/installation/overview.rst:49
 #: ../../getting_started/installation/overview.rst:101
 msgid "Single Hosts with Distributed Service(s)"
-msgstr ""
+msgstr "Hosts Únicos com Serviço(s) Distribuído(s)"
 
 #: ../../getting_started/installation/overview.rst:50
 msgid ""
@@ -169,11 +169,11 @@ msgid ""
 "are externalized, with the remaining services on a single host. The "
 "reconfigure process installs all services not set to false in "
 "``/etc/morpheus/morpheus.rb``"
-msgstr ""
+msgstr "Os tiers Transactional Database, Non-Transactional Database e/ou Message são externalizados, com os serviços restantes em um único host. O processo de reconfigure instala todos os serviços não definidos como false em ``/etc/morpheus/morpheus.rb``"
 
 #: ../../getting_started/installation/overview.rst:51
 msgid "Clustered Hosts with Distributed Transactional Database (3-Node HA)"
-msgstr ""
+msgstr "Hosts em Cluster com Banco de Dados Transacional Distribuído (HA de 3 Nós)"
 
 #: ../../getting_started/installation/overview.rst:52
 msgid ""
@@ -183,11 +183,11 @@ msgid ""
 " configured to use the same external MySQL cluster or supported service. "
 "Reconfigure does not install MySQL on the application hosts in this "
 "topology."
-msgstr ""
+msgstr "Os tiers Application, Message e Non-Transactional são instalados e colocados em cluster em três ou mais hosts de aplicação. O Transactional Database Tier permanece fora dos hosts de aplicação, e cada host de aplicação é configurado para usar o mesmo cluster MySQL externo ou serviço suportado. O reconfigure não instala MySQL nos hosts de aplicação nesta topologia."
 
 #: ../../getting_started/installation/overview.rst:53
 msgid "App Host(s) with Distributed Services (Full HA)"
-msgstr ""
+msgstr "Host(s) de App com Serviços Distribuídos (HA Completa)"
 
 #: ../../getting_started/installation/overview.rst:54
 msgid ""
@@ -195,11 +195,11 @@ msgid ""
 " externalized Transactional Database, Non-Transactional Database, and "
 "Message Tiers. The reconfigure process installs only Application "
 "services."
-msgstr ""
+msgstr "O Application tier é instalado em um ou mais hosts. Todos os hosts de UI apontam para os tiers Transactional Database, Non-Transactional Database e Message externalizados. O processo de reconfigure instala apenas os serviços de Application."
 
 #: ../../getting_started/installation/overview.rst:57
 msgid "Distributed Configurations"
-msgstr ""
+msgstr "Configurações Distribuídas"
 
 #: ../../getting_started/installation/overview.rst:59
 msgid ""
@@ -211,7 +211,7 @@ msgid ""
 "can grow more complicated, depending on the configuration you want to do "
 "and this article will cover the basic concepts of the Morpheus HA "
 "architecture that can be used in a wide array of configurations."
-msgstr ""
+msgstr "O Morpheus oferece uma ampla variedade de opções quando se trata de arquiteturas de implementação. Ele pode começar como uma instância simples de uma máquina onde todos os serviços são executados na mesma máquina, ou pode ser dividido em serviços individuais por máquina e configurado em uma configuração de alta disponibilidade, seja na mesma região ou entre regiões. Naturalmente, a alta disponibilidade pode se tornar mais complicada, dependendo da configuração que você deseja fazer, e este artigo cobrirá os conceitos básicos da arquitetura HA do Morpheus que podem ser usados em uma ampla variedade de configurações."
 
 #: ../../getting_started/installation/overview.rst:61
 msgid ""
@@ -220,11 +220,11 @@ msgid ""
 "Non-Transactional Database Tier, and Message Tier. Each of these tiers "
 "have their own recommendations for High availability deployments that we "
 "need to cover."
-msgstr ""
+msgstr "Há quatro tiers principais de serviços representados no appliance Morpheus. São eles o Application Tier, Transactional Database Tier, Non-Transactional Database Tier e Message Tier. Cada um desses tiers tem suas próprias recomendações para implementações de alta disponibilidade que precisamos cobrir."
 
 #: ../../getting_started/installation/overview.rst:64
 msgid "Application Tier"
-msgstr ""
+msgstr "Application Tier"
 
 #: ../../getting_started/installation/overview.rst:65
 msgid ""
@@ -243,11 +243,11 @@ msgid ""
 "storage service such as Amazon S3 or Openstack Swiftstack as well. If not"
 " using those options a simple NFS cluster can also be used to handle the "
 "shared storage structure."
-msgstr ""
+msgstr "O application tier é facilmente instalado com o mesmo pacote de repositório Debian ou yum com o qual o Morpheus normalmente é distribuído. A configuração avançada permite que os tiers adicionais sejam ignorados e deixem apenas os serviços “stateless” que precisam ser executados. Esses serviços stateless incluem Nginx e Tomcat. Essas máquinas também devem ter pelo menos 8 GB de Memória. Elas podem ser configuradas em todas as regiões e colocadas atrás de um load-balancer central ou de um load-balancer baseado em Geo. Tipicamente se conectam a todos os outros tiers, pois nenhum dos outros tiers se comunica entre si, exceto por meio do application tier central. Uma peça final na configuração do Application tier é que um meio de armazenamento compartilhado é necessário para manter coisas como archives de implementação, catálogos de imagens virtuais, backups etc. Estes também podem ser externalizados para um serviço de object storage, como Amazon S3 ou Openstack Swiftstack. Se não estiver usando essas opções, um cluster NFS simples também pode ser usado para lidar com a estrutura de armazenamento compartilhado."
 
 #: ../../getting_started/installation/overview.rst:68
 msgid "Transactional Database Tier"
-msgstr ""
+msgstr "Transactional Database Tier"
 
 #: ../../getting_started/installation/overview.rst:69
 msgid ""
@@ -261,11 +261,11 @@ msgid ""
 "replication delay cross region. This does increase the risk of job run "
 "overlap between the 2 regions however, the concurrent operations "
 "typically self-correct and this is a non-issue."
-msgstr ""
+msgstr "O Transactional database tier geralmente consiste em um banco de dados compatível com MySQL. Recomenda-se que uma configuração em cluster com lock seja usada. Há vários documentos online relacionados à configuração e ao setup de tal cluster, mas ele pode ser disposto de forma mais simples em uma configuração many-master. Pode haver alguns nós configurados com atraso de replicação, bem como alguns sem atraso de replicação. É prática comum não ter atraso de replicação dentro da mesma região e permitir algum atraso de replicação entre regiões. Isso aumenta o risco de sobreposição de execução de jobs entre as 2 regiões; no entanto, as operações concorrentes tipicamente se autocorrigem e isso não é um problema."
 
 #: ../../getting_started/installation/overview.rst:72
 msgid "Non-Transactional Database Tier"
-msgstr ""
+msgstr "Non-Transactional Database Tier"
 
 #: ../../getting_started/installation/overview.rst:73
 msgid ""
@@ -279,11 +279,11 @@ msgid ""
 " require a sizable chunk of memory for larger data sets. 8 GB is "
 "recommended and more nodes can be added to scale either horizontally or "
 "vertically."
-msgstr ""
+msgstr "O Non-Transactional tier consiste em um cluster ElasticSearch (versão 7.6.0). O Elastic Search é usado para dados de agregação de logs e dados de agregação temporal (essencialmente estatísticas, métricas e logs). Isso permite um alto throughput de gravação em escala. O ElasticSearch é um banco de dados em cluster, o que significa que todos os nós, independentemente da região, precisam estar conectados entre si por meio do que chamam de protocolo “Transport”. É relativamente simples de configurar, pois todos os nós são idênticos. Também é um sistema baseado em Java e requer uma quantidade considerável de memória para conjuntos de dados maiores. Recomenda-se 8 GB e mais nós podem ser adicionados para escalar horizontal ou verticalmente."
 
 #: ../../getting_started/installation/overview.rst:76
 msgid "Messaging Tier"
-msgstr ""
+msgstr "Messaging Tier"
 
 #: ../../getting_started/installation/overview.rst:77
 msgid ""
@@ -299,162 +299,162 @@ msgid ""
 "to forward in a Rabbit MQ cluster are (5672, and 61613). A RabbitMQ "
 "cluster can run on smaller memory machines depending on how frequent "
 "large requests bursts occur. 4 - 8 GB of Memory is recommended to start."
-msgstr ""
+msgstr "O Messaging tier é um tier baseado em AMQP juntamente com o Protocolo STOMP (usado para comunicação do agent). O modelo principal recomendado é usar o RabbitMQ para serviços de fila. O RabbitMQ também é um sistema de filas baseado em cluster e precisa de pelo menos 3 instâncias para configurações HA. Isso se deve às eleições nos cenários de failover que o RabbitMQ pode gerenciar. Se estiver fazendo um cluster RabbitMQ HA entre regiões, recomenda-se ter pelo menos 3 clusters de fila Rabbit por região. Tipicamente, para lidar com HA, um cluster RabbitMQ deve ser colocado entre um load balancer e o servidor de aplicação front-end para lidar com conexões entre hosts. As portas necessárias para encaminhar em um cluster Rabbit MQ são (5672 e 61613). Um cluster RabbitMQ pode ser executado em máquinas com menos memória, dependendo da frequência de bursts de solicitações grandes. Recomenda-se começar com 4 a 8 GB de Memória."
 
 #: ../../getting_started/installation/overview.rst:80
 msgid "Pros/Cons"
-msgstr ""
+msgstr "Prós/Contras"
 
 #: ../../getting_started/installation/overview.rst:82
 msgid "Single Host"
-msgstr ""
+msgstr "Host Único"
 
 #: ../../getting_started/installation/overview.rst:83
 #: ../../getting_started/installation/overview.rst:102
 #: ../../getting_started/installation/overview.rst:113
 #: ../../getting_started/installation/overview.rst:129
 msgid "Advantages"
-msgstr ""
+msgstr "Vantagens"
 
 #: ../../getting_started/installation/overview.rst:84
 msgid "Simple Installation - Morpheus Installs all required services"
-msgstr ""
+msgstr "Instalação Simples - O Morpheus instala todos os serviços necessários"
 
 #: ../../getting_started/installation/overview.rst:86
 msgid "Simple Configuration - Morpheus configures all required services"
-msgstr ""
+msgstr "Configuração Simples - O Morpheus configura todos os serviços necessários"
 
 #: ../../getting_started/installation/overview.rst:88
 msgid ""
 "Simple Maintenance - All service connections and credentials are local - "
 "All logs are local - All Data is local (by default)"
-msgstr ""
+msgstr "Manutenção Simples - Todas as conexões e credenciais de serviço são locais - Todos os logs são locais - Todos os Dados são locais (por padrão)"
 
 #: ../../getting_started/installation/overview.rst:92
 msgid ""
 "Not dependent on network connections for vital services - Facilitates "
 "speed and reliability"
-msgstr ""
+msgstr "Não depende de conexões de rede para serviços vitais - Facilita velocidade e confiabilidade"
 
 #: ../../getting_started/installation/overview.rst:94
 #: ../../getting_started/installation/overview.rst:105
 #: ../../getting_started/installation/overview.rst:119
 #: ../../getting_started/installation/overview.rst:135
 msgid "Disadvantages"
-msgstr ""
+msgstr "Desvantagens"
 
 #: ../../getting_started/installation/overview.rst:95
 msgid "Single point of failure"
-msgstr ""
+msgstr "Ponto único de falha"
 
 #: ../../getting_started/installation/overview.rst:96
 msgid "Individual services cannot be scaled"
-msgstr ""
+msgstr "Serviços individuais não podem ser dimensionados"
 
 #: ../../getting_started/installation/overview.rst:97
 msgid "Upgrades require (minimal) downtime"
-msgstr ""
+msgstr "Atualizações exigem downtime (mínimo)"
 
 #: ../../getting_started/installation/overview.rst:98
 #: ../../getting_started/installation/overview.rst:106
 msgid "Single region"
-msgstr ""
+msgstr "Região única"
 
 #: ../../getting_started/installation/overview.rst:103
 msgid "Individual services can be scaled"
-msgstr ""
+msgstr "Serviços individuais podem ser dimensionados"
 
 #: ../../getting_started/installation/overview.rst:104
 #: ../../getting_started/installation/overview.rst:115
 #: ../../getting_started/installation/overview.rst:131
 msgid "Managed Services such as RDS can be utilized"
-msgstr ""
+msgstr "Serviços Gerenciados como RDS podem ser utilizados"
 
 #: ../../getting_started/installation/overview.rst:107
 #: ../../getting_started/installation/overview.rst:136
 msgid "External services require additional configuration and maintenance"
-msgstr ""
+msgstr "Serviços externos exigem configuração e manutenção adicionais"
 
 #: ../../getting_started/installation/overview.rst:108
 msgid "Morpheus is subject to network performance, configuration and availability"
-msgstr ""
+msgstr "O Morpheus está sujeito ao desempenho, à configuração e à disponibilidade da rede"
 
 #: ../../getting_started/installation/overview.rst:109
 msgid "Increased Installation time possible"
-msgstr ""
+msgstr "Tempo de instalação aumentado possível"
 
 #: ../../getting_started/installation/overview.rst:112
 msgid "Clustered Hosts with Distributed Transactional Database"
-msgstr ""
+msgstr "Hosts em Cluster com Banco de Dados Transacional Distribuído"
 
 #: ../../getting_started/installation/overview.rst:114
 msgid "Database can be scaled vertically and/or horizontally"
-msgstr ""
+msgstr "O banco de dados pode ser dimensionado vertical e/ou horizontalmente"
 
 #: ../../getting_started/installation/overview.rst:116
 #: ../../getting_started/installation/overview.rst:132
 msgid "Zero down time upgrades"
-msgstr ""
+msgstr "Atualizações com zero downtime"
 
 #: ../../getting_started/installation/overview.rst:117
 #: ../../getting_started/installation/overview.rst:133
 msgid "No single point of failure"
-msgstr ""
+msgstr "Sem ponto único de falha"
 
 #: ../../getting_started/installation/overview.rst:118
 msgid "RabbitMQ and Elasticsearch Clusters"
-msgstr ""
+msgstr "Clusters RabbitMQ e Elasticsearch"
 
 #: ../../getting_started/installation/overview.rst:120
 msgid ""
 "External Database services requires additional configuration and "
 "maintenance"
-msgstr ""
+msgstr "Serviços de banco de dados externos exigem configuração e manutenção adicionais"
 
 #: ../../getting_started/installation/overview.rst:121
 msgid "App Host Clustering requires additional configuration and maintenance"
-msgstr ""
+msgstr "O clustering de App Host exige configuração e manutenção adicionais"
 
 #: ../../getting_started/installation/overview.rst:122
 #: ../../getting_started/installation/overview.rst:137
 msgid "Extended Installation time"
-msgstr ""
+msgstr "Tempo de instalação estendido"
 
 #: ../../getting_started/installation/overview.rst:123
 msgid "Increased Infrastructure requirements"
-msgstr ""
+msgstr "Requisitos de infraestrutura aumentados"
 
 #: ../../getting_started/installation/overview.rst:124
 #: ../../getting_started/installation/overview.rst:140
 msgid "Load Balancer required to front App Hosts"
-msgstr ""
+msgstr "Load Balancer necessário na frente dos App Hosts"
 
 #: ../../getting_started/installation/overview.rst:125
 #: ../../getting_started/installation/overview.rst:141
 msgid "Shared Storage configuration required"
-msgstr ""
+msgstr "Configuração de armazenamento compartilhado necessária"
 
 #: ../../getting_started/installation/overview.rst:128
 msgid "App Host(s) with Distributed Services"
-msgstr ""
+msgstr "Host(s) de App com Serviços Distribuídos"
 
 #: ../../getting_started/installation/overview.rst:130
 msgid "Individual services can be scaled vertically and/or horizontally"
-msgstr ""
+msgstr "Serviços individuais podem ser dimensionados vertical e/ou horizontalmente"
 
 #: ../../getting_started/installation/overview.rst:134
 msgid "Multi region support"
-msgstr ""
+msgstr "Suporte a múltiplas regiões"
 
 #: ../../getting_started/installation/overview.rst:138
 msgid "Increased Infrastructure Requirements"
-msgstr ""
+msgstr "Requisitos de infraestrutura aumentados"
 
 #: ../../getting_started/installation/overview.rst:139
 msgid "Increased Networking requirements"
-msgstr ""
+msgstr "Requisitos de rede aumentados"
 
 #: ../../getting_started/installation/overview.rst:142
 msgid "Rabbit Load balancer required"
-msgstr ""
+msgstr "Load balancer Rabbit necessário"
 

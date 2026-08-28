@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../tools/translate/README.md:1
 msgid "AI Translation Pipeline"
-msgstr ""
+msgstr "KI-Übersetzungspipeline"
 
 #: ../../tools/translate/README.md:3
 msgid ""
 "Translates Sphinx documentation `.po` files into target languages using "
 "AI models, constrained by the official Morpheus UI glossary for "
 "terminology consistency."
-msgstr ""
+msgstr "Übersetzt Sphinx-Dokumentations-``.po``-Dateien in Zielsprachen mithilfe von KI-Modellen, eingeschränkt durch das offizielle Morpheus-UI-Glossar für konsistente Terminologie."
 
 #: ../../tools/translate/README.md:5
 msgid "Prerequisites"
-msgstr ""
+msgstr "Voraussetzungen"
 
 #: ../../tools/translate/README.md:7
 msgid "pip3 install openai anthropic sphinx-intl\n"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md:11
 msgid "Set your API key:"
-msgstr ""
+msgstr "Legen Sie Ihren API-Schlüssel fest:"
 
 #: ../../tools/translate/README.md:12
 msgid ""
@@ -52,11 +52,11 @@ msgstr ""
 
 #: ../../tools/translate/README.md:18
 msgid "Workflow"
-msgstr ""
+msgstr "Workflow"
 
 #: ../../tools/translate/README.md:20
 msgid "1. Extract glossary from UI translations"
-msgstr ""
+msgstr "1. Glossar aus UI-Übersetzungen extrahieren"
 
 #: ../../tools/translate/README.md:22
 msgid "python3 tools/translate/extract_glossary.py\n"
@@ -67,11 +67,11 @@ msgid ""
 "This parses `../morpheus-ui/morpheus-ui/grails-"
 "app/i18n/messages_es_ES.properties` and outputs "
 "`tools/translate/glossary.json` with 4,000+ term mappings."
-msgstr ""
+msgstr "Dies parst `../morpheus-ui/morpheus-ui/grails-app/i18n/messages_es_ES.properties` und gibt `tools/translate/glossary.json` mit über 4.000 Termzuordnungen aus."
 
 #: ../../tools/translate/README.md:28
 msgid "2. Extract translatable strings (if not done)"
-msgstr ""
+msgstr "2. Übersetzbare Zeichenfolgen extrahieren (falls noch nicht geschehen)"
 
 #: ../../tools/translate/README.md:30
 msgid ""
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md:35
 msgid "3. Translate a section"
-msgstr ""
+msgstr "3. Einen Abschnitt übersetzen"
 
 #: ../../tools/translate/README.md:37
 msgid ""
@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md:51
 msgid "4. Build the translated docs"
-msgstr ""
+msgstr "4. Die übersetzte Dokumentation erstellen"
 
 #: ../../tools/translate/README.md:53
 msgid "make html-es\n"
@@ -113,15 +113,15 @@ msgstr ""
 
 #: ../../tools/translate/README.md:57
 msgid "Options"
-msgstr ""
+msgstr "Optionen"
 
 #: ../../tools/translate/README.md
 msgid "Flag"
-msgstr ""
+msgstr "Flag"
 
 #: ../../tools/translate/README.md
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../tools/translate/README.md
 msgid "`--lang LANG`"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Target language (default: `es`)"
-msgstr ""
+msgstr "Zielsprache (Standard: `es`)"
 
 #: ../../tools/translate/README.md
 msgid "`--glossary PATH`"
@@ -137,7 +137,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Path to glossary JSON"
-msgstr ""
+msgstr "Pfad zur Glossar-JSON"
 
 #: ../../tools/translate/README.md
 msgid "`--model MODEL`"
@@ -145,7 +145,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "AI model: `gpt-4o` (default), `claude-sonnet-4-20250514`"
-msgstr ""
+msgstr "KI-Modell: `gpt-4o` (Standard), `claude-sonnet-4-20250514`"
 
 #: ../../tools/translate/README.md
 msgid "`--batch-size N`"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Entries per API call (default: 20)"
-msgstr ""
+msgstr "Einträge pro API-Aufruf (Standard: 20)"
 
 #: ../../tools/translate/README.md
 msgid "`--dry-run`"
@@ -161,7 +161,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Preview without making API calls"
-msgstr ""
+msgstr "Vorschau ohne API-Aufrufe"
 
 #: ../../tools/translate/README.md
 msgid "`--resume`"
@@ -169,7 +169,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Skip already-translated entries (default: on)"
-msgstr ""
+msgstr "Bereits übersetzte Einträge überspringen (Standard: aktiv)"
 
 #: ../../tools/translate/README.md
 msgid "`--no-resume`"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Re-translate all entries"
-msgstr ""
+msgstr "Alle Einträge erneut übersetzen"
 
 #: ../../tools/translate/README.md
 msgid "`--report PATH`"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Write JSON report to file"
-msgstr ""
+msgstr "JSON-Bericht in Datei schreiben"
 
 #: ../../tools/translate/README.md
 msgid "`--verbose` / `-v`"
@@ -193,7 +193,7 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Detailed progress output"
-msgstr ""
+msgstr "Detaillierte Fortschrittsausgabe"
 
 #: ../../tools/translate/README.md
 msgid "`--section NAME`"
@@ -201,15 +201,15 @@ msgstr ""
 
 #: ../../tools/translate/README.md
 msgid "Translate only one section subdirectory"
-msgstr ""
+msgstr "Nur ein Abschnittsunterverzeichnis übersetzen"
 
 #: ../../tools/translate/README.md:72
 msgid "Multi-locale Support"
-msgstr ""
+msgstr "Unterstützung mehrerer Locales"
 
 #: ../../tools/translate/README.md:74
 msgid "To add a new language:"
-msgstr ""
+msgstr "So fügen Sie eine neue Sprache hinzu:"
 
 #: ../../tools/translate/README.md:76
 msgid ""
@@ -227,69 +227,69 @@ msgstr ""
 
 #: ../../tools/translate/README.md:87
 msgid "Glossary"
-msgstr ""
+msgstr "Glossar"
 
 #: ../../tools/translate/README.md:89
 msgid ""
 "The glossary (`glossary.json`) is extracted from the Morpheus UI i18n "
 "properties file and ensures product terms match the UI exactly:"
-msgstr ""
+msgstr "Das Glossar (`glossary.json`) wird aus der Morpheus-UI-i18n-Properties-Datei extrahiert und stellt sicher, dass Produktbegriffe exakt mit der UI übereinstimmen:"
 
 #: ../../tools/translate/README.md:91
 msgid "Instance → Instancia"
-msgstr ""
+msgstr "Instance → Instancia"
 
 #: ../../tools/translate/README.md:92
 msgid "Cloud → Nube"
-msgstr ""
+msgstr "Cloud → Nube"
 
 #: ../../tools/translate/README.md:93
 msgid "Workflow → Flujo de trabajo"
-msgstr ""
+msgstr "Workflow → Flujo de trabajo"
 
 #: ../../tools/translate/README.md:94
 msgid "Infrastructure → Infraestructura"
-msgstr ""
+msgstr "Infrastructure → Infraestructura"
 
 #: ../../tools/translate/README.md:95
 msgid "etc."
-msgstr ""
+msgstr "usw."
 
 #: ../../tools/translate/README.md:97
 msgid "How It Works"
-msgstr ""
+msgstr "Funktionsweise"
 
 #: ../../tools/translate/README.md:99
 msgid "Parses `.po` files to find untranslated `msgid` entries"
-msgstr ""
+msgstr "Parst ``.po``-Dateien, um nicht übersetzte ``msgid``-Einträge zu finden"
 
 #: ../../tools/translate/README.md:100
 msgid "Batches entries (default: 20 per API call)"
-msgstr ""
+msgstr "Bündelt Einträge (Standard: 20 pro API-Aufruf)"
 
 #: ../../tools/translate/README.md:101
 msgid "Builds a prompt with relevant glossary terms + markup preservation rules"
-msgstr ""
+msgstr "Erstellt einen Prompt mit relevanten Glossarbegriffen und Regeln zur Markup-Erhaltung"
 
 #: ../../tools/translate/README.md:102
 msgid "Calls the AI model for translation"
-msgstr ""
+msgstr "Ruft das KI-Modell zur Übersetzung auf"
 
 #: ../../tools/translate/README.md:103
 msgid "Writes translated `msgstr` values back to the `.po` file"
-msgstr ""
+msgstr "Schreibt übersetzte ``msgstr``-Werte zurück in die ``.po``-Datei"
 
 #: ../../tools/translate/README.md:104
 msgid "Supports resume — re-running won't re-translate already-translated entries"
-msgstr ""
+msgstr "Unterstützt Fortsetzen — erneutes Ausführen übersetzt bereits übersetzte Einträge nicht erneut"
 
 #: ../../tools/translate/README.md:106
 msgid "Validation"
-msgstr ""
+msgstr "Validierung"
 
 #: ../../tools/translate/README.md:108
 msgid "After translation, validate with:"
-msgstr ""
+msgstr "Nach der Übersetzung mit Folgendem validieren:"
 
 #: ../../tools/translate/README.md:110
 #, python-brace-format

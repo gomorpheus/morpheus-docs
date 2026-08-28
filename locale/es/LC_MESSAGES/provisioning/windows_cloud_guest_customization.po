@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:2
 msgid "Windows Guest Customization (Image Preparation)"
-msgstr ""
+msgstr "Personalización de guest Windows (preparación de imagen)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:4
 msgid ""
@@ -30,45 +30,45 @@ msgid ""
 "|morpheus| guest customization — including hostname assignment, network "
 "configuration, and Active Directory domain join. The approach varies by "
 "cloud type."
-msgstr ""
+msgstr "Esta guía cubre la preparación de imágenes virtuales Windows para el aprovisionamiento con personalización de guest de |morpheus|, incluida la asignación de hostname, configuración de red y unión al dominio de Active Directory. El enfoque varía según el tipo de nube."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:7
 msgid "Customization Approaches by Cloud Type"
-msgstr ""
+msgstr "Enfoques de personalización por tipo de nube"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:13
 msgid "Cloud Type"
-msgstr ""
+msgstr "Tipo de nube"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:14
 msgid "Primary Method"
-msgstr ""
+msgstr "Método principal"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:15
 msgid "How It Works"
-msgstr ""
+msgstr "Cómo funciona"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:16
 msgid "HVM (KVM)"
-msgstr ""
+msgstr "HVM (KVM)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:17
 msgid "Pre-sysprep'd image"
-msgstr ""
+msgstr "Imagen pre-sysprep"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:18
 msgid ""
 "Image is sysprep'd before capture. On first boot, Windows completes OOBE,"
 " |morpheus| Agent installs and handles hostname/domain join."
-msgstr ""
+msgstr "La imagen se prepara con sysprep antes de la captura. En el primer arranque, Windows completa OOBE, el agente de |morpheus| se instala y gestiona hostname/unión al dominio."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:19
 msgid "VMware / VME"
-msgstr ""
+msgstr "VMware / VME"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:20
 msgid "Force Guest Customization"
-msgstr ""
+msgstr "Force Guest Customization"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:21
 msgid ""
@@ -76,111 +76,111 @@ msgid ""
 " triggers a guest customization pass — transferring the unattend.xml to "
 "the running VM, then rebooting to apply hostname, network, and domain "
 "settings."
-msgstr ""
+msgstr "La VM se aprovisiona desde una plantilla con VMware Tools instalado. |morpheus| activa un pase de personalización del guest — transfiere unattend.xml a la VM en ejecución y luego reinicia para aplicar hostname, red y ajustes de dominio."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:22
 msgid "AWS / Azure / GCP"
-msgstr ""
+msgstr "AWS / Azure / GCP"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:23
 msgid "Cloud-native (userdata)"
-msgstr ""
+msgstr "Nativo de la nube (userdata)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:24
 msgid ""
 "Cloud provider handles customization via instance metadata and userdata. "
 "Image prep follows cloud-specific requirements."
-msgstr ""
+msgstr "El proveedor de nube gestiona la personalización mediante metadatos de instancia y userdata. La preparación de la imagen sigue los requisitos específicos de la nube."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:27
 msgid "Force Guest Customization (VMware / VME)"
-msgstr ""
+msgstr "Force Guest Customization (VMware / VME)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:29
 msgid ""
 "On VMware and VME clouds, **Force Guest Customization** works differently"
 " than on other platforms:"
-msgstr ""
+msgstr "En nubes VMware y VME, **Force Guest Customization** funciona de manera diferente que en otras plataformas:"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:31
 msgid ""
 "The VM is provisioned from a template that has **VMware Tools installed**"
 " (not necessarily sysprep'd)"
-msgstr ""
+msgstr "La VM se aprovisiona desde una plantilla que tiene **VMware Tools instalado** (no necesariamente preparada con sysprep)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:32
 msgid "|morpheus| boots the VM"
-msgstr ""
+msgstr "|morpheus| arranca la VM"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:33
 msgid ""
 "VMware guest customization transfers an unattend.xml into the running "
 "guest via VMware Tools"
-msgstr ""
+msgstr "La personalización de guest de VMware transfiere unattend.xml al guest en ejecución mediante VMware Tools"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:34
 msgid ""
 "The VM reboots to apply the customization (hostname, network, SID "
 "regeneration, domain join)"
-msgstr ""
+msgstr "La VM reinicia para aplicar la personalización (hostname, red, regeneración de SID, unión al dominio)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:36
 msgid ""
 "This means the source template does **not** need to be in a sysprep'd "
 "state — VMware Tools handles the customization injection and triggers the"
 " re-specialize pass."
-msgstr ""
+msgstr "Esto significa que la plantilla de origen **no** necesita estar en estado preparado con sysprep — VMware Tools gestiona la inyección de personalización y activa el pase de reespecialización."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:38
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:40
 msgid ""
 "Force Guest Customization on VMware requires VMware Tools to be installed"
 " and running in the template. Without Tools, the customization payload "
 "cannot be delivered to the guest."
-msgstr ""
+msgstr "Force Guest Customization en VMware requiere que VMware Tools esté instalado y en ejecución en la plantilla. Sin Tools, la carga de personalización no puede entregarse al guest."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:43
 msgid "Pre-Sysprep'd Images (HVM / General Use)"
-msgstr ""
+msgstr "Imágenes pre-sysprep (HVM / uso general)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:45
 msgid ""
 "For HVM clusters (and any cloud where Force Guest Customization is not "
 "available), the image must be **sysprep'd before capture**:"
-msgstr ""
+msgstr "Para clústeres HVM (y cualquier nube donde Force Guest Customization no esté disponible), la imagen debe **prepararse con sysprep antes de la captura**:"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:48
 msgid "Step 1: Prepare the Template VM"
-msgstr ""
+msgstr "Paso 1: Preparar la VM plantilla"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:50
 msgid "Install Windows (Server 2016, 2019, 2022, 2025 or Windows 10/11)"
-msgstr ""
+msgstr "Instalar Windows (Server 2016, 2019, 2022, 2025 o Windows 10/11)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:51
 msgid "Install all Windows Updates"
-msgstr ""
+msgstr "Instalar todas las actualizaciones de Windows"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:52
 msgid ""
 "Install VirtIO drivers (for HVM — use the **Attach VirtIO Drivers** "
 "advanced option during initial ISO provisioning)"
-msgstr ""
+msgstr "Instalar controladores VirtIO (para HVM — utilice la opción avanzada **Attach VirtIO Drivers** durante el aprovisionamiento inicial con ISO)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:53
 msgid "Install any required software or roles"
-msgstr ""
+msgstr "Instalar cualquier software o rol requerido"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:54
 msgid "Configure Windows Firewall to allow WinRM (port 5985/5986)"
-msgstr ""
+msgstr "Configurar el firewall de Windows para permitir WinRM (puerto 5985/5986)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:57
 msgid "Step 2: Sysprep"
-msgstr ""
+msgstr "Paso 2: Sysprep"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:59
 msgid ""
@@ -192,61 +192,61 @@ msgstr ""
 msgid ""
 "The VM shuts down after generalizing. **Do not boot it again** — capture "
 "it as a virtual image at this point."
-msgstr ""
+msgstr "La VM se apaga después de generalizar. **No la arranque de nuevo** — captúrela como imagen virtual en este punto."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:66
 msgid "Step 3: Upload as Virtual Image"
-msgstr ""
+msgstr "Paso 3: Cargar como imagen virtual"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:68
 msgid ""
 "Navigate to :menuselection:`Library --> Virtual Images`, click "
 ":guilabel:`+ Add`, and configure:"
-msgstr ""
+msgstr "Navegue a :menuselection:`Library --> Virtual Images`, haga clic en :guilabel:`+ Add` y configure:"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:74
 msgid "Setting"
-msgstr ""
+msgstr "Ajuste"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:75
 msgid "Value"
-msgstr ""
+msgstr "Valor"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:76
 msgid "Purpose"
-msgstr ""
+msgstr "Propósito"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:77
 #: ../../provisioning/windows_cloud_guest_customization.rst:103
 msgid "Is Sysprep"
-msgstr ""
+msgstr "Is Sysprep"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:78
 msgid "**Enabled**"
-msgstr ""
+msgstr "**Habilitado**"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:79
 msgid ""
 "Indicates the image is in a generalized state and will go through OOBE on"
 " first boot"
-msgstr ""
+msgstr "Indica que la imagen está en estado generalizado y pasará por OOBE en el primer arranque"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:80
 #: ../../provisioning/windows_cloud_guest_customization.rst:112
 msgid "Install Agent"
-msgstr ""
+msgstr "Install Agent"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:81
 msgid "Enabled"
-msgstr ""
+msgstr "Habilitado"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:82
 msgid "Installs the |morpheus| Agent for management and domain join"
-msgstr ""
+msgstr "Instala el agente de |morpheus| para administración y unión al dominio"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:83
 msgid "Username"
-msgstr ""
+msgstr "Usuario"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:84
 msgid "``Administrator``"
@@ -254,282 +254,282 @@ msgstr ""
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:85
 msgid "Local admin account for initial agent connection"
-msgstr ""
+msgstr "Cuenta de administrador local para la conexión inicial del agente"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:86
 msgid "Password"
-msgstr ""
+msgstr "Contraseña"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:87
 msgid "(set password)"
-msgstr ""
+msgstr "(establecer contraseña)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:88
 msgid "Local admin password for agent authentication"
-msgstr ""
+msgstr "Contraseña de administrador local para autenticación del agente"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:91
 msgid "Virtual Image Options Reference"
-msgstr ""
+msgstr "Referencia de opciones de imagen virtual"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:97
 msgid "Option"
-msgstr ""
+msgstr "Opción"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:98
 msgid "Applicable Clouds"
-msgstr ""
+msgstr "Nubes aplicables"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:99
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:100
 msgid "Is Force Customization"
-msgstr ""
+msgstr "Is Force Customization"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:101
 msgid "VMware, VME"
-msgstr ""
+msgstr "VMware, VME"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:102
 msgid ""
 "Triggers guest customization via VMware Tools — transfers unattend.xml "
 "and reboots the VM to apply settings. Does NOT require the image to be "
 "pre-sysprep'd."
-msgstr ""
+msgstr "Activa la personalización del guest mediante VMware Tools — transfiere unattend.xml y reinicia la VM para aplicar ajustes. NO requiere que la imagen esté pre-sysprep."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:104
 #: ../../provisioning/windows_cloud_guest_customization.rst:110
 #: ../../provisioning/windows_cloud_guest_customization.rst:113
 #: ../../provisioning/windows_cloud_guest_customization.rst:116
 msgid "All"
-msgstr ""
+msgstr "Todos"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:105
 msgid ""
 "Indicates the image is in a sysprep'd (generalized) state. Used by "
 "|morpheus| to know the VM will go through OOBE on first boot."
-msgstr ""
+msgstr "Indica que la imagen está en estado preparado con sysprep (generalizado). |morpheus| lo utiliza para saber que la VM pasará por OOBE en el primer arranque."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:106
 msgid "Is Cloud Init"
-msgstr ""
+msgstr "Is Cloud Init"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:107
 msgid "HVM, OpenStack"
-msgstr ""
+msgstr "HVM, OpenStack"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:108
 msgid ""
 "Generates a cloud-init ISO with metadata/userdata and attaches it to the "
 "VM. Used for Linux guests primarily."
-msgstr ""
+msgstr "Genera una ISO cloud-init con metadatos/userdata y la adjunta a la VM. Se utiliza principalmente para guests Linux."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:109
 msgid "Is Auto Join Domain"
-msgstr ""
+msgstr "Is Auto Join Domain"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:111
 msgid ""
 "Automatically triggers domain join when a Network Domain is configured, "
 "without requiring explicit domain selection during provisioning."
-msgstr ""
+msgstr "Activa automáticamente la unión al dominio cuando hay un dominio de red configurado, sin requerir selección explícita de dominio durante el aprovisionamiento."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:114
 msgid ""
 "Installs the |morpheus| Agent on the guest for management, monitoring, "
 "and remote execution."
-msgstr ""
+msgstr "Instala el agente de |morpheus| en el guest para administración, monitoreo y ejecución remota."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:115
 msgid "Skip Network Wait"
-msgstr ""
+msgstr "Skip Network Wait"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:117
 msgid ""
 "Skips waiting for network availability before proceeding with "
 "provisioning. Useful for isolated networks."
-msgstr ""
+msgstr "Omite la espera de disponibilidad de red antes de continuar con el aprovisionamiento. Útil para redes aisladas."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:118
 msgid "VirtIO Supported"
-msgstr ""
+msgstr "VirtIO admitido"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:119
 msgid "HVM"
-msgstr ""
+msgstr "HVM"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:120
 msgid ""
 "Indicates the image has VirtIO drivers installed. When disabled, "
 "|morpheus| uses IDE/SATA disk bus instead of VirtIO."
-msgstr ""
+msgstr "Indica que la imagen tiene instalados controladores VirtIO. Cuando está deshabilitado, |morpheus| usa el bus de disco IDE/SATA en lugar de VirtIO."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:123
 msgid "Domain Join Configuration"
-msgstr ""
+msgstr "Configuración de unión a dominio"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:125
 msgid ""
 "Domain join is triggered by the **Network Domain** configuration, not by "
 "image settings. The Network Domain can be associated via:"
-msgstr ""
+msgstr "La unión a dominio se activa mediante la configuración **Network Domain**, no mediante la configuración de imagen. El Network Domain puede asociarse mediante:"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:127
 msgid ""
 "**Network selection at provisioning** — The network chosen during "
 "instance creation has an associated Network Domain with Domain Controller"
 " enabled"
-msgstr ""
+msgstr "**Selección de red durante el aprovisionamiento** — La red elegida durante la creación de la instancia tiene un Network Domain asociado con Domain Controller habilitado"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:128
 msgid ""
 "**Cloud default** — A default Network Domain set on the Cloud "
 "configuration applies to all VMs in that Cloud unless overridden"
-msgstr ""
+msgstr "**Predeterminado de Nube** — Un Network Domain predeterminado establecido en la configuración de Nube se aplica a todas las VMs de esa Nube a menos que se anule"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:130
 msgid ""
 "See :doc:`/integration_guides/windows_domain_join` for full domain join "
 "setup instructions."
-msgstr ""
+msgstr "Consulte :doc:`/integration_guides/windows_domain_join` para instrucciones completas de configuración de unión a dominio."
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:133
 msgid "What Gets Customized"
-msgstr ""
+msgstr "Qué se personaliza"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:139
 msgid "Customization"
-msgstr ""
+msgstr "Personalización"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:140
 msgid "VMware/VME (Force Customization)"
-msgstr ""
+msgstr "VMware/VME (Force Customization)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:141
 msgid "HVM (Pre-Sysprep'd)"
-msgstr ""
+msgstr "HVM (Pre-Sysprep'd)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:142
 msgid "Hostname"
-msgstr ""
+msgstr "Hostname"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:143
 msgid "Applied via unattend.xml during reboot"
-msgstr ""
+msgstr "Se aplica mediante unattend.xml durante el reinicio"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:144
 msgid "Set by |morpheus| Agent after OOBE completes"
-msgstr ""
+msgstr "Lo establece el Agente de |morpheus| después de que finaliza OOBE"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:145
 msgid "Network (static IP)"
-msgstr ""
+msgstr "Red (IP estática)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:146
 msgid "Applied via guest customization spec"
-msgstr ""
+msgstr "Se aplica mediante la especificación de personalización de invitado"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:147
 msgid "Configured by |morpheus| Agent"
-msgstr ""
+msgstr "Configurado por el Agente de |morpheus|"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:148
 msgid "Domain join"
-msgstr ""
+msgstr "Unión a dominio"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:149
 msgid "Can be included in unattend OR handled by |morpheus| Agent post-boot"
-msgstr ""
+msgstr "Puede incluirse en unattend O ser gestionado por el Agente de |morpheus| después del arranque"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:150
 msgid "Handled by |morpheus| Agent post-boot"
-msgstr ""
+msgstr "Gestionado por el Agente de |morpheus| después del arranque"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:151
 msgid "SID regeneration"
-msgstr ""
+msgstr "Regeneración de SID"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:152
 msgid "Yes (forced re-specialize)"
-msgstr ""
+msgstr "Sí (re-especialización forzada)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:153
 msgid "Yes (sysprep generalize)"
-msgstr ""
+msgstr "Sí (generalize de sysprep)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:154
 msgid "Admin password"
-msgstr ""
+msgstr "Contraseña de administrador"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:155
 msgid "Set via customization spec"
-msgstr ""
+msgstr "Se establece mediante la especificación de personalización"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:156
 msgid "Set from Virtual Image credentials"
-msgstr ""
+msgstr "Se establece desde las credenciales de Virtual Image"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:159
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solución de problemas"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:162
 msgid "Force Customization Not Working (VMware)"
-msgstr ""
+msgstr "Force Customization no funciona (VMware)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:164
 msgid "Verify VMware Tools is installed and running in the template"
-msgstr ""
+msgstr "Verifique que VMware Tools esté instalado y en ejecución en la plantilla"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:165
 msgid "Check that the template is powered off (not suspended)"
-msgstr ""
+msgstr "Compruebe que la plantilla esté apagada (no suspendida)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:166
 msgid ""
 "Verify **Is Force Customization** is enabled on the Virtual Image in "
 "|morpheus|"
-msgstr ""
+msgstr "Verifique que **Is Force Customization** esté habilitado en la Virtual Image en |morpheus|"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:169
 msgid "VM Boots to OOBE Setup Screen (HVM)"
-msgstr ""
+msgstr "La VM arranca en la pantalla de configuración OOBE (HVM)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:171
 msgid "Verify **Is Sysprep** is enabled on the Virtual Image"
-msgstr ""
+msgstr "Verifique que **Is Sysprep** esté habilitado en la Virtual Image"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:172
 msgid ""
 "Check that the image was properly sysprep'd before capture (not booted "
 "after sysprep)"
-msgstr ""
+msgstr "Compruebe que la imagen se sysprepeó correctamente antes de la captura (no se inició después de sysprep)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:173
 msgid ""
 "Ensure the |morpheus| Agent can reach the appliance to receive "
 "configuration"
-msgstr ""
+msgstr "Asegúrese de que el Agente de |morpheus| pueda alcanzar el dispositivo para recibir la configuración"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:176
 msgid "Hostname Not Applied"
-msgstr ""
+msgstr "Hostname no aplicado"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:178
 msgid ""
 "Verify the |morpheus| Agent is running (check Services for \"Morpheus "
 "Windows Agent\")"
-msgstr ""
+msgstr "Verifique que el Agente de |morpheus| esté en ejecución (compruebe Servicios para \"Morpheus Windows Agent\")"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:179
 msgid "Check that the Instance name does not exceed 15 characters (NetBIOS limit)"
-msgstr ""
+msgstr "Compruebe que el nombre de la Instancia no supere 15 caracteres (límite NetBIOS)"
 
 #: ../../provisioning/windows_cloud_guest_customization.rst:180
 msgid ""
 "For VMware, verify guest customization completed (check vCenter recent "
 "tasks)"
-msgstr ""
+msgstr "Para VMware, verifique que la personalización de invitado se completó (consulte las tareas recientes de vCenter)"
 

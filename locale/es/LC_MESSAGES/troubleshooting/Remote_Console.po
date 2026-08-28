@@ -418,7 +418,7 @@ msgstr ""
 
 #: ../../troubleshooting/Remote_Console.rst:91
 msgid "Encrypted or vTPM VMware VM"
-msgstr ""
+msgstr "VM VMware cifrada o con vTPM"
 
 #: ../../troubleshooting/Remote_Console.rst:93
 msgid ""
@@ -430,34 +430,34 @@ msgid ""
 "The report did not prove that all three are individually required by "
 "console access; Clone and Migrate also correspond to their named "
 "encrypted-VM lifecycle operations."
-msgstr ""
+msgstr "Si la consola del hipervisor funciona para VMs VMware ordinarias pero falla para una VM Windows 11 con vTPM u otra VM cifrada, verifique el rol de vCenter heredado por esa VM. MORPH-6016 informó que agregar **Cryptographic operations > Clone, Direct Access, and Migrate** (privilegio de API reportado como ``AccessMigrate``) al rol dedicado de |morpheus| restauró el acceso. El informe no demostró que los tres sean requeridos individualmente para el acceso a la consola; Clone y Migrate también corresponden a sus operaciones de ciclo de vida de VM cifrada con nombre."
 
 #: ../../troubleshooting/Remote_Console.rst:95
 msgid ""
 "Confirm the Cloud uses Hypervisor Console and that appliance-to-ESXi DNS "
 "and TCP 443 requirements above are met."
-msgstr ""
+msgstr "Confirme que la Nube usa Hypervisor Console y que se cumplen los requisitos de DNS appliance-to-ESXi y TCP 443 anteriores."
 
 #: ../../troubleshooting/Remote_Console.rst:96
 msgid ""
 "In vCenter, confirm the integration user receives the intended dedicated "
 "role on the affected VM through the expected inventory assignment and "
 "propagation."
-msgstr ""
+msgstr "En vCenter, confirme que el usuario de integración recibe el rol dedicado previsto en la VM afectada a través de la asignación y propagación de inventario esperadas."
 
 #: ../../troubleshooting/Remote_Console.rst:97
 msgid ""
 "Compare the role with "
 ":doc:`/integration_guides/Clouds/vmware/permissions`. Add only the "
 "approved cryptographic privileges at the smallest required scope."
-msgstr ""
+msgstr "Compare el rol con :doc:`/integration_guides/Clouds/vmware/permissions`. Agregue solo los privilegios criptográficos aprobados en el alcance mínimo requerido."
 
 #: ../../troubleshooting/Remote_Console.rst:98
 msgid ""
 "Reopen the console, then test any required clone and migration operations"
 " independently. Review vCenter tasks/events and |morpheus| logs for a "
 "specific authorization denial."
-msgstr ""
+msgstr "Vuelva a abrir la consola, luego pruebe de forma independiente cualquier operación de clonación y migración requerida. Revise las tareas/eventos de vCenter y los logs de |morpheus| para detectar una denegación de autorización específica."
 
 #: ../../troubleshooting/Remote_Console.rst:100
 msgid ""
@@ -465,7 +465,7 @@ msgid ""
 "cannot grant the reported set or the failure remains, retain the denied "
 "privilege/task evidence and escalate to the VMware integration owner or "
 "HPE Support."
-msgstr ""
+msgstr "No conceda vCenter Administrator como solución alternativa. Si la organización no puede conceder el conjunto reportado o la falla persiste, conserve la evidencia del privilegio/tarea denegados y escale al propietario de la integración de VMware o a HPE Support."
 
 #: ../../troubleshooting/Remote_Console.rst:103
 msgid ""

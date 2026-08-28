@@ -55,9 +55,13 @@
     height: auto;
     z-index: auto;
   }
+  /* Inline accordion for the drawer tree. Closed = 0fr (collapses). Open must
+     be `auto` (not `1fr`): a nested open section inside another `1fr` track
+     resolves against an indefinite parent size and collapses to height 0 —
+     empty gap under e.g. Infrastructure with invisible children. */
   .md-nav--primary .md-nav__toggle ~ .md-nav {
     display: grid;
-    grid-template-rows: minmax(0, 0fr);
+    grid-template-rows: 0fr;
     transform: none;
     opacity: 0;
     visibility: collapse;
@@ -66,7 +70,7 @@
   }
   .md-nav--primary .md-nav__toggle.md-toggle--indeterminate ~ .md-nav,
   .md-nav--primary .md-nav__toggle:checked ~ .md-nav {
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-rows: auto;
     opacity: 1;
     visibility: visible;
     transition: grid-template-rows 0.25s cubic-bezier(0.86, 0, 0.07, 1),
@@ -74,13 +78,23 @@
   }
   .md-nav--primary .md-nav__toggle ~ .md-nav > .md-nav__list {
     overflow: hidden;
+    min-height: 0;
   }
-  .md-nav--primary .md-nav__toggle:checked ~ .md-nav > .md-nav__list {
+  .md-nav--primary .md-nav__toggle:checked ~ .md-nav > .md-nav__list,
+  .md-nav--primary .md-nav__toggle.md-toggle--indeterminate ~ .md-nav > .md-nav__list {
     overflow: visible;
   }
   /* Drop the sliding-panel title bars + back-arrows on the NESTED panels. */
   .md-nav--primary .md-nav .md-nav__title {
     display: none !important;
+  }
+  /* Immaterial hides the active nested section below ~60em (it expects that
+     section to appear as a sliding panel with its own title bar). We flattened
+     the drawer into an inline tree and hid those panel titles above, so without
+     this override the current section (e.g. Infrastructure) disappears and
+     leaves an empty gap where its children should be. */
+  .md-nav--primary .md-nav__current-nested {
+    display: list-item !important;
   }
   /* Top-level title becomes the drawer header bar. It's a <label for="__drawer">,
      so the whole bar (and the ✕) already closes the drawer on click. Override

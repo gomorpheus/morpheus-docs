@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/additional/offline.rst:4
 msgid "Offline Installations and Upgrades"
-msgstr ""
+msgstr "Installations et mises à jour hors ligne"
 
 #: ../../getting_started/additional/offline.rst:6
 msgid ""
@@ -30,7 +30,7 @@ msgid ""
 "not allow downloads from our Amazon download site, you can add the "
 "supplemental package to add the needed packages the standard Morpheus "
 "installer would have downloaded."
-msgstr ""
+msgstr "Pour les clients dont l'appliance se trouve derrière un pare-feu/proxy qui n'autorise pas les téléchargements depuis notre site de téléchargement Amazon, vous pouvez ajouter le package supplémentaire pour ajouter les packages nécessaires que l'installateur Morpheus standard aurait téléchargés."
 
 #: ../../getting_started/additional/offline.rst:8
 msgid ""
@@ -41,17 +41,17 @@ msgid ""
 " OS Updates </getting_started/maintenance/manager_os_updates>`. Offline "
 "HKS cluster provisioning uses a separate image-server workflow; see "
 ":doc:`/infrastructure/clusters/hks_offline_provisioning`."
-msgstr ""
+msgstr "Cette page couvre l'installation hors ligne et les mises à jour des packages d'application pour l'appliance |morpheus|. Elle ne fournit pas les mises à jour du système d'exploitation de base Ubuntu pour l'image QCOW2 HPE Morpheus Manager. Pour les modèles de dépôt APT en réseau restreint et entièrement déconnecté, consultez :doc:`Morpheus Manager Base OS Updates </getting_started/maintenance/manager_os_updates>`. Le provisionnement de cluster HKS hors ligne utilise un workflow distinct de serveur d'images ; consultez :doc:`/infrastructure/clusters/hks_offline_provisioning`."
 
 #: ../../getting_started/additional/offline.rst:11
 msgid "Offline Installation Requirements"
-msgstr ""
+msgstr "Exigences d'installation hors ligne"
 
 #: ../../getting_started/additional/offline.rst:13
 msgid ""
 "NTP should be correctly configured and the server is able to connect to "
 "the NTP server in the ntp.conf file"
-msgstr ""
+msgstr "NTP doit être correctement configuré et le serveur doit pouvoir se connecter au serveur NTP dans le fichier ntp.conf"
 
 #: ../../getting_started/additional/offline.rst:14
 msgid ""
@@ -59,44 +59,44 @@ msgid ""
 "repository servers or the server should be able to receive packages from "
 "the configured repositories. For a Manager QCOW2 appliance, expose only "
 "the update content validated by HPE for the installed release."
-msgstr ""
+msgstr "Les dépôts de packages du système d'exploitation doivent être configurés pour utiliser des serveurs de dépôt LAN locaux ou le serveur doit pouvoir recevoir des packages depuis les dépôts configurés. Pour une appliance Manager QCOW2, exposez uniquement le contenu de mise à jour validé par HPE pour la version installée."
 
 #: ../../getting_started/additional/offline.rst:15
 msgid ""
 "The standard Morpheus and supplemental packages must be downloaded from "
 "another system and transferred to the Morpheus Appliance server"
-msgstr ""
+msgstr "Les packages Morpheus standard et supplémentaires doivent être téléchargés depuis un autre système et transférés vers le serveur d'appliance Morpheus"
 
 #: ../../getting_started/additional/offline.rst:16
 msgid "The supplemental package is additive, the full installer is also required"
-msgstr ""
+msgstr "Le package supplémentaire est additif, l'installateur complet est également requis"
 
 #: ../../getting_started/additional/offline.rst:18
 #: ../../getting_started/additional/offline.rst:56
 #: ../../getting_started/additional/offline.rst:92
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/additional/offline.rst:18
 msgid ""
 "The supplemental package is linked 1-to-1 to the appliance release. For "
 "example the supplemental package for 4.2.1-1 should be used with the "
 "appliance package 4.2.1-1"
-msgstr ""
+msgstr "Le package supplémentaire est lié 1 pour 1 à la version de l'appliance. Par exemple, le package supplémentaire pour 4.2.1-1 doit être utilisé avec le package d'appliance 4.2.1-1"
 
 #: ../../getting_started/additional/offline.rst:21
 msgid "Offline Install"
-msgstr ""
+msgstr "Installation hors ligne"
 
 #: ../../getting_started/additional/offline.rst:24
 msgid "Ubuntu/Debian"
-msgstr ""
+msgstr "Ubuntu/Debian"
 
 #: ../../getting_started/additional/offline.rst:26
 msgid ""
 "Download both the regular Morpheus Appliance package and the Supplemental"
 " packages on to the appliance server:"
-msgstr ""
+msgstr "Téléchargez le package d'appliance Morpheus standard et les packages supplémentaires sur le serveur d'appliance :"
 
 #: ../../getting_started/additional/offline.rst:28
 msgid ""
@@ -107,7 +107,7 @@ msgstr ""
 #: ../../getting_started/additional/offline.rst:33
 #: ../../getting_started/additional/offline.rst:69
 msgid "Install the both the Appliance package AND the Supplemental package."
-msgstr ""
+msgstr "Installez le package d'appliance ET le package supplémentaire."
 
 #: ../../getting_started/additional/offline.rst:35
 msgid ""
@@ -120,7 +120,7 @@ msgstr ""
 msgid ""
 "Set the Morpheus UI appliance url (if needed, hostname will be "
 "automatically set)."
-msgstr ""
+msgstr "Définissez l'URL d'appliance de l'interface utilisateur Morpheus (si nécessaire, le nom d'hôte sera défini automatiquement)."
 
 #: ../../getting_started/additional/offline.rst:42
 msgid ""
@@ -133,7 +133,7 @@ msgstr ""
 #: ../../getting_started/additional/offline.rst:48
 #: ../../getting_started/additional/offline.rst:84
 msgid "Reconfigure the appliance to install required packages"
-msgstr ""
+msgstr "Reconfigurez l'appliance pour installer les packages requis"
 
 #: ../../getting_started/additional/offline.rst:50
 #: ../../getting_started/additional/offline.rst:86
@@ -147,24 +147,24 @@ msgid ""
 "Chef runs the resource remote_file[package_name] action create while Chef"
 " verifies the checksum. After the reconfigure is complete, the morpheus-"
 "ui will start and be up in a few minutes."
-msgstr ""
+msgstr "L'exécution Chef doit se terminer avec succès. Il y a une courte pause lorsque Chef exécute l'action create de la ressource remote_file[package_name] pendant que Chef vérifie la somme de contrôle. Une fois la reconfiguration terminée, morpheus-ui démarrera et sera opérationnel en quelques minutes."
 
 #: ../../getting_started/additional/offline.rst:56
 msgid ""
 "Tail the morpheus log file located at /var/log/morpheus/morpheus-"
 "ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look "
 "for the Morpheus ascii logo to know when the morpheus-ui is up."
-msgstr ""
+msgstr "Suivez le fichier journal morpheus situé à /var/log/morpheus/morpheus-ui/current avec la commande ``morpheus-ctl tail morpheus-ui`` et recherchez le logo ASCII Morpheus pour savoir quand morpheus-ui est opérationnel."
 
 #: ../../getting_started/additional/offline.rst:60
 msgid "CentOS/RHEL"
-msgstr ""
+msgstr "CentOS/RHEL"
 
 #: ../../getting_started/additional/offline.rst:62
 msgid ""
 "Download both the regular Morpheus Appliance package and the matching "
 "Supplemental package on to the Appliance server:"
-msgstr ""
+msgstr "Téléchargez le package d'appliance Morpheus standard et le package supplémentaire correspondant sur le serveur d'appliance :"
 
 #: ../../getting_started/additional/offline.rst:64
 msgid ""
@@ -191,5 +191,5 @@ msgstr ""
 msgid ""
 "Tail the morpheus-ui log file with ``morpheus-ctl tail morpheus-ui`` and "
 "look for the Morpheus ascii logo to know when the morpheus-ui is up."
-msgstr ""
+msgstr "Suivez le fichier journal morpheus-ui avec ``morpheus-ctl tail morpheus-ui`` et recherchez le logo ASCII Morpheus pour savoir quand morpheus-ui est opérationnel."
 

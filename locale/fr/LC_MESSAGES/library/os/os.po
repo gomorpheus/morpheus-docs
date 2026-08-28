@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/os/os.rst:2
 msgid "Operating Systems"
-msgstr ""
+msgstr "Systèmes d'exploitation"
 
 #: ../../library/os/os.rst:4
 msgid ""
@@ -33,11 +33,11 @@ msgid ""
 "only Workflows designed for the platform can be run against workloads "
 "provisioned from the image. It can also help ensure certain types of "
 "reporting and dashboard metrics are correct."
-msgstr ""
+msgstr "Par défaut, de nombreux systèmes d'exploitation (également appelés types d'OS) sont intégrés dans |morpheus|. Les types d'OS peuvent être définis sur les images virtuelles lors de leur création. Si vous n'utilisez aucune autre fonctionnalité des types d'OS décrite ici, ils restent utiles pour les définir sur les images virtuelles afin de garantir que seuls les workflows conçus pour la plate-forme peuvent être exécutés sur les charges de travail provisionnées à partir de l'image. Cela peut également contribuer à garantir que certains types de rapports et de métriques de tableau de bord sont corrects."
 
 #: ../../library/os/os.rst:6
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../library/os/os.rst:6
 msgid ""
@@ -50,33 +50,33 @@ msgid ""
 "and this image would supersede the system image with the same technology "
 "and/or Cloud configuration. Read this section in full for complete detail"
 " on the use cases for the Operating System construct."
-msgstr ""
+msgstr "Il est important de noter que les images utilisateur sont toujours sélectionnées avant les images système ayant la même configuration (même technologie associée et/ou cloud). De plus, les images configurées de manière plus spécifique (par exemple, une image avec à la fois une technologie et un cloud configurés) seront sélectionnées avant celles moins spécifiquement configurées. Une seule image utilisateur peut être ajoutée par système d'exploitation avec une configuration identique de technologie et/ou de cloud, et cette image remplacerait l'image système ayant la même configuration de technologie et/ou de cloud. Lisez cette section en entier pour obtenir des détails complets sur les cas d'utilisation de la construction Système d'exploitation."
 
 #: ../../library/os/os.rst:9
 msgid "Permissions"
-msgstr ""
+msgstr "Permissions"
 
 #: ../../library/os/os.rst:11
 msgid ""
 "Access to Operating Systems is controlled by the ``Library: Operating "
 "Systems`` feature permission. Access levels are as follows:"
-msgstr ""
+msgstr "L'accès aux systèmes d'exploitation est contrôlé par l'autorisation de fonctionnalité ``Library: Operating Systems``. Les niveaux d'accès sont les suivants :"
 
 #: ../../library/os/os.rst:13
 msgid "**FULL:** Access to view, create, and edit Operating Systems"
-msgstr ""
+msgstr "**FULL :** Accès pour afficher, créer et modifier les systèmes d'exploitation"
 
 #: ../../library/os/os.rst:14
 msgid "**READ:** Access to view Operating Systems only"
-msgstr ""
+msgstr "**READ :** Accès pour afficher uniquement les systèmes d'exploitation"
 
 #: ../../library/os/os.rst:15
 msgid "**NONE:** No access to the Operating Systems section of the UI"
-msgstr ""
+msgstr "**NONE :** Aucun accès à la section Systèmes d'exploitation de l'interface utilisateur"
 
 #: ../../library/os/os.rst:18
 msgid "Use Cases"
-msgstr ""
+msgstr "Cas d'utilisation"
 
 #: ../../library/os/os.rst:20
 msgid ""
@@ -85,7 +85,7 @@ msgid ""
 "to use built-in Instance Types (for example, the \"UBUNTU\" Instance "
 "Type) while replacing the included default images with your own gold "
 "master images for some or all provisioning technologies."
-msgstr ""
+msgstr "Les types d'OS peuvent principalement être utilisés dans l'un des deux cas d'utilisation suivants. Le premier consiste à ajouter vos propres images à des types d'OS existants. L'intérêt est d'utiliser des types d'instance intégrés (par exemple, le type d'instance « UBUNTU ») tout en remplaçant les images par défaut incluses par vos propres images de référence pour une ou plusieurs technologies de provisionnement."
 
 #: ../../library/os/os.rst:22
 msgid ""
@@ -96,7 +96,7 @@ msgid ""
 "currently provides default images, you will see all of the Virtual Images"
 " for that OS type and the provisioning technology each image is "
 "compatible with."
-msgstr ""
+msgstr "Affichez les types d'OS existants en accédant à |LibOpe|. Une liste de tous les types d'OS s'affiche ici. S'il s'agit d'une appliance toute neuve ou si vous n'avez jamais ajouté de nouveaux systèmes d'exploitation, tous ceux affichés ici seront des types d'OS système par défaut. En cliquant sur l'un des types d'OS pour lesquels |morpheus| fournit actuellement des images par défaut, vous verrez toutes les images virtuelles de ce type d'OS et la technologie de provisionnement compatible avec chaque image."
 
 #: ../../library/os/os.rst:24
 msgid ".. image:: /images/os/listOsImages.png"
@@ -108,18 +108,18 @@ msgid ""
 " :guilabel:`+ ADD`. Select the image and optionally identify a "
 "provisioning technology or even a specific Cloud. When finished, click "
 ":guilabel:`SAVE`."
-msgstr ""
+msgstr "Pour ajouter une image virtuelle existante au type d'OS actuellement sélectionné, cliquez sur :guilabel:`+ ADD`. Sélectionnez l'image et, si nécessaire, identifiez une technologie de provisionnement ou même un cloud spécifique. Lorsque vous avez terminé, cliquez sur :guilabel:`SAVE`."
 
 #: ../../library/os/os.rst:28
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../library/os/os.rst:28
 msgid ""
 "When adding a Virtual Image to an OS type, only Virtual Images that have "
 "been saved with the same OS type (Operating System) configuration will be"
 " shown in the typeahead list."
-msgstr ""
+msgstr "Lors de l'ajout d'une image virtuelle à un type d'OS, seules les images virtuelles enregistrées avec la même configuration de type d'OS (système d'exploitation) apparaîtront dans la liste de saisie prédictive."
 
 #: ../../library/os/os.rst:30
 msgid ".. image:: /images/os/addOsImage.png"
@@ -138,7 +138,7 @@ msgid ""
 "image can be added per Operating System with an identical technology "
 "and/or Cloud configuration and this image would supersede the system "
 "image with the same technology and/or Cloud configuration."
-msgstr ""
+msgstr "Une fois les images associées à un type d'OS intégré, elles seront utilisées lorsque la situation le justifie (une cible de provisionnement compatible est sélectionnée ou le cloud approprié est choisi, selon la configuration de l'image du type d'OS). Il est important de noter que les images utilisateur sont toujours sélectionnées de préférence aux images système avec la même configuration (même technologie et/ou cloud associé). De plus, les images configurées de manière plus spécifique (par exemple, une image avec une technologie et un cloud configurés) seront sélectionnées de préférence à celles moins spécifiquement configurées. Une seule image utilisateur peut être ajoutée par système d'exploitation avec une configuration de technologie et/ou de cloud identique, et cette image remplacera l'image système avec la même configuration de technologie et/ou de cloud."
 
 #: ../../library/os/os.rst:34
 msgid ""
@@ -146,7 +146,7 @@ msgid ""
 "Systems can be added by navigating to |LibOpe| and clicking :guilabel:`+ "
 "ADD`. OS types can be configured with highly granular detail allowing "
 "environments with similar Os types to distinguish them."
-msgstr ""
+msgstr "Le second cas d'utilisation consiste à ajouter votre propre système d'exploitation. De nouveaux systèmes d'exploitation peuvent être ajoutés en accédant à |LibOpe| et en cliquant sur :guilabel:`+ ADD`. Les types d'OS peuvent être configurés avec un niveau de détail très granulaire, permettant aux environnements avec des types d'OS similaires de les distinguer."
 
 #: ../../library/os/os.rst:36
 msgid ".. image:: /images/os/createOsType.png"
@@ -160,7 +160,7 @@ msgid ""
 "association, you can return to the OS type and complete the association "
 "with the Operating System by clicking into the OS type and clicking "
 ":guilabel:`+ ADD`."
-msgstr ""
+msgstr "Après la création du type d'OS, toute image virtuelle nouvelle ou existante peut être associée au système d'exploitation nouvellement créé (:menuselection:`Library --> Virtual Images`). Une fois que les images virtuelles ont l'association de système d'exploitation, vous pouvez revenir au type d'OS et finaliser l'association avec le système d'exploitation en cliquant sur le type d'OS et en cliquant sur :guilabel:`+ ADD`."
 
 #: ../../library/os/os.rst:41
 msgid ""
@@ -173,7 +173,7 @@ msgid ""
 "image or with an OS type. By selecting an OS type, the Node Type will "
 "select the appropriate image at provision time based on technology and/or"
 " Cloud filters."
-msgstr ""
+msgstr "Une fois que vous disposez d'un système d'exploitation personnalisé chargé avec vos propres images de référence, le type d'OS peut être utilisé pour de nouveaux types de nœuds. Pour voir comment cela fonctionne, accédez à |LibBluNod| et cliquez sur :guilabel:`+ ADD`. Modifiez la technologie par défaut d'un nouveau type de nœud, en passant de la valeur par défaut « Docker » à une autre technologie, telle que « VMware ». Notez que l'option est proposée d'associer le type de nœud soit à une image spécifique, soit à un type d'OS. En sélectionnant un type d'OS, le type de nœud sélectionnera l'image appropriée au moment du provisionnement en fonction des filtres de technologie et/ou de cloud."
 
 #: ../../library/os/os.rst:43
 msgid ".. image:: /images/os/createNodeType.png"
@@ -186,5 +186,5 @@ msgid ""
 "selected over those less specifically configured. Additionally, only one "
 "user image can be added per Operating System with an identical technology"
 " and/or Cloud configuration."
-msgstr ""
+msgstr "Il est important de noter que les images configurées de manière plus spécifique (par exemple, une image avec une technologie et un cloud configurés) seront sélectionnées de préférence à celles moins spécifiquement configurées. De plus, une seule image utilisateur peut être ajoutée par système d'exploitation avec une configuration de technologie et/ou de cloud identique."
 

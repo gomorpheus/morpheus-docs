@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../getting_started/guides/aws_guide.rst:2
 msgid "Getting started with Morpheus and AWS"
-msgstr ""
+msgstr "Erste Schritte mit Morpheus und AWS"
 
 #: ../../getting_started/guides/aws_guide.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Einführung"
 
 #: ../../getting_started/guides/aws_guide.rst:7
 msgid ""
@@ -40,11 +40,11 @@ msgid ""
 "forward from that point. There is a lot more to see and do in Morpheus "
 "that is beyond the scope of this guide. For more, consult the complete "
 "Morpheus documentation or take part in our user community forum."
-msgstr ""
+msgstr "Dieser Leitfaden hilft Ihnen, schnell mit Morpheus und AWS zu starten und das Beste daraus zu machen. Am Ende integrieren Sie Ihre erste Cloud, konfigurieren Netzwerke, bereiten Images vor und nutzen sie, provisionieren Instanzen und beginnen mit der Automatisierung. Wir gehen kurz auf Installation und Kontoeinstellung ein, stellen aber Links zu zusätzlichen Ressourcen für diese ersten Schritte bereit. Weitgehend setzt dieser Leitfaden voraus, dass Sie Morpheus installieren können und bereit sind, von dort aus weiterzugehen. In Morpheus gibt es noch viel mehr zu entdecken, das über den Rahmen dieses Leitfadens hinausgeht. Weitere Informationen finden Sie in der vollständigen Morpheus-Dokumentation oder nehmen Sie an unserem User-Community-Forum teil."
 
 #: ../../getting_started/guides/aws_guide.rst:10
 msgid "Installation & Setup"
-msgstr ""
+msgstr "Installation und Einrichtung"
 
 #: ../../getting_started/guides/aws_guide.rst:12
 msgid ""
@@ -58,11 +58,11 @@ msgid ""
 "on installation. A lab license is a time-unlimited license for Morpheus "
 "that limits you to 25 managed and discovered workloads. If you have a "
 "timed trial or a paid license, the license can be applied in |AdmSetLic|."
-msgstr ""
+msgstr "In der einfachsten Konfiguration benötigt Morpheus einen Appliance-Server, der alle Komponenten enthält, die zum Orchestrieren von virtuellen Maschinen und Containern erforderlich sind. Vollständige Anforderungen, einschließlich Überlegungen zu Datenspeicher und Netzwerk, finden Sie unter :ref:`requirements`. Um neue Instanzen, Hosts oder Anwendungen zu provisionieren (oder erkannte Ressourcen in verwaltete Ressourcen umzuwandeln), benötigen Sie eine gültige Lizenz. Wenn Sie keine haben, richtet Morpheus bei der Installation automatisch eine Lab-Lizenz ein. Eine Lab-Lizenz ist eine zeitlich unbegrenzte Lizenz für Morpheus, die Sie auf 25 verwaltete und erkannte Arbeitslasten beschränkt. Wenn Sie eine zeitlich begrenzte Testversion oder eine kostenpflichtige Lizenz haben, kann die Lizenz in |AdmSetLic| angewendet werden."
 
 #: ../../getting_started/guides/aws_guide.rst:15
 msgid "Groups"
-msgstr ""
+msgstr "Gruppen"
 
 #: ../../getting_started/guides/aws_guide.rst:17
 msgid ""
@@ -74,7 +74,7 @@ msgid ""
 "create a group that contains all clouds for testing purposes. We will "
 "create that group now so that we can add our first cloud into this group "
 "in the next section."
-msgstr ""
+msgstr "Gruppen in Morpheus legen fest, auf welche Ressourcen ein Benutzer Zugriff hat. Clouds werden zu Gruppen hinzugefügt, und ein Benutzer kann nur auf Clouds zugreifen, die sich in den Gruppen befinden, zu denen ihre Rollen ihnen Zugriff gewähren. Weitere Informationen zu Morpheus-Gruppen finden Sie im Abschnitt :ref:`Groups`. Eine ausführliche Behandlung von Gruppen geht über den Rahmen dieses Leitfadens hinaus, aber es ist oft nützlich, eine Gruppe zu erstellen, die alle Clouds zu Testzwecken enthält. Wir erstellen diese Gruppe jetzt, damit wir im nächsten Abschnitt unsere erste Cloud in diese Gruppe aufnehmen können."
 
 #: ../../getting_started/guides/aws_guide.rst:19
 msgid ""
@@ -85,7 +85,7 @@ msgid ""
 "Morpheus API or Morpheus CLI. It's useful in most cases to have an \"All "
 "Clouds\" group for testing purposes so this will likely help you down the"
 " road."
-msgstr ""
+msgstr "Navigieren Sie zu `Infrastructure > Groups`. Hier sehen wir eine Liste aller konfigurierten Gruppen, die jedoch unmittelbar nach der Installation leer ist. Klicken Sie auf „+CREATE“. Geben Sie Ihrer Gruppe einen Namen, z. B. „All Clouds“. Das Feld „CODE“ wird verwendet, wenn Morpheus über die Morpheus-API oder die Morpheus-CLI aufgerufen wird. In den meisten Fällen ist es nützlich, eine Gruppe „All Clouds“ zu Testzwecken zu haben, daher wird Ihnen das später helfen."
 
 #: ../../getting_started/guides/aws_guide.rst:21
 msgid ".. image:: /images/vCenterGuideImages/Groups/1groupConfig.png"
@@ -93,18 +93,18 @@ msgstr ""
 
 #: ../../getting_started/guides/aws_guide.rst:23
 msgid "Click \"SAVE CHANGES\". Your group is now ready to accept clouds."
-msgstr ""
+msgstr "Klicken Sie auf „SAVE CHANGES“. Ihre Gruppe ist jetzt bereit, Clouds aufzunehmen."
 
 #: ../../getting_started/guides/aws_guide.rst:26
 msgid "Integrating Your First Cloud"
-msgstr ""
+msgstr "Ihre erste Cloud integrieren"
 
 #: ../../getting_started/guides/aws_guide.rst:28
 msgid ""
 "Clouds in Morpheus consist of any consumable endpoint whether that be On-"
 "Prem, Public clouds, or even bare metal. In this guide, we will focus on "
 "integrating and working with AWS."
-msgstr ""
+msgstr "Clouds in Morpheus bestehen aus jedem nutzbaren Endpunkt, sei es On-Prem, Public Clouds oder sogar Bare Metal. In diesem Leitfaden konzentrieren wir uns auf die Integration und Arbeit mit AWS."
 
 #: ../../getting_started/guides/aws_guide.rst:30
 msgid ""
@@ -112,13 +112,13 @@ msgid ""
 "the cloud detail page which lists all configured clouds. It will be empty"
 " if you've just completed installation and setup of Morpheus but soon we "
 "will see our integrated AWS cloud here."
-msgstr ""
+msgstr "Navigieren Sie zunächst zu `Infrastructure > Clouds`. Dies ist die Cloud-Detailseite, die alle konfigurierten Clouds auflistet. Sie ist leer, wenn Sie gerade die Installation und Einrichtung von Morpheus abgeschlossen haben, aber bald werden wir hier unsere integrierte AWS Cloud sehen."
 
 #: ../../getting_started/guides/aws_guide.rst:32
 msgid ""
 "Click the \"+ADD\" button to pop the \"CREATE CLOUD\" wizard. Select "
 "\"AMAZON\" and click the \"NEXT\" button."
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche „+ADD“, um den Assistenten „CREATE CLOUD“ zu öffnen. Wählen Sie „AMAZON“ und klicken Sie auf die Schaltfläche „NEXT“."
 
 #: ../../getting_started/guides/aws_guide.rst:34
 msgid ""
@@ -126,22 +126,22 @@ msgid ""
 "region and enter your credentials in the \"ACCESS KEY\" and \"SECRET "
 "KEY\" fields. We can also set a number of advanced options here that may "
 "be relevant to your AWS use case."
-msgstr ""
+msgstr "Geben Sie auf der Registerkarte „CONFIGURE“ Ihrer Cloud einen „NAME“. Wählen Sie Ihre Amazon-Region und geben Sie Ihre Anmeldedaten in die Felder „ACCESS KEY“ und „SECRET KEY“ ein. Wir können hier auch eine Reihe erweiterter Optionen festlegen, die für Ihren AWS-Anwendungsfall relevant sein können."
 
 #: ../../getting_started/guides/aws_guide.rst:36
 msgid "Once you're satisfied with your selections, click \"NEXT\""
-msgstr ""
+msgstr "Wenn Sie mit Ihren Auswahlen zufrieden sind, klicken Sie auf „NEXT“"
 
 #: ../../getting_started/guides/aws_guide.rst:38
 msgid ""
 "We have now arrived at the \"GROUP\" tab. In this case, we will mark the "
 "radio button to \"USE EXISTING\" groups if you wish to use the group we "
 "configured earlier."
-msgstr ""
+msgstr "Wir sind nun auf der Registerkarte „GROUP“ angekommen. In diesem Fall markieren wir die Option „USE EXISTING“ für Gruppen, wenn Sie die zuvor konfigurierte Gruppe verwenden möchten."
 
 #: ../../getting_started/guides/aws_guide.rst:40
 msgid "Once you've selected the group, click \"NEXT\""
-msgstr ""
+msgstr "Nachdem Sie die Gruppe ausgewählt haben, klicken Sie auf „NEXT“"
 
 #: ../../getting_started/guides/aws_guide.rst:42
 msgid ""
@@ -150,11 +150,11 @@ msgid ""
 "cloud detail page. After a short time, Morpheus will provide summary "
 "information and statistics on existing virtual machines, networks, and "
 "other resources available in the cloud."
-msgstr ""
+msgstr "Auf der letzten Registerkarte des Assistenten „CREATE CLOUD“ bestätigen Sie Ihre Auswahlen und klicken auf „COMPLETE“. Die neue Cloud wird nun auf der Cloud-Detailseite aufgeführt. Nach kurzer Zeit liefert Morpheus Zusammenfassungsinformationen und Statistiken zu vorhandenen virtuellen Maschinen, Netzwerken und anderen in der Cloud verfügbaren Ressourcen."
 
 #: ../../getting_started/guides/aws_guide.rst:45
 msgid "Viewing Cloud Inventory"
-msgstr ""
+msgstr "Cloud-Inventar anzeigen"
 
 #: ../../getting_started/guides/aws_guide.rst:47
 msgid ""
@@ -167,17 +167,17 @@ msgid ""
 "categories individual resources within them by clicking on the category "
 "tabs. We can link to the detail page for any specific resource by "
 "clicking on it from its resource category list."
-msgstr ""
+msgstr "Nachdem wir unsere erste AWS Cloud integriert haben, können wir kurz innehalten und prüfen, was Morpheus uns auf der Cloud-Detailseite bietet. Wir sehen, dass Morpheus geschätzte Kosten und Kostenverläufe liefert, Messwerte zu genutzten Ressourcen bereitstellt und auch Ressourcenanzahlen in verschiedenen Kategorien auflistet, einschließlich Container-Hosts, Hypervisors und virtuellen Maschinen. Wir können in diese Kategorien eintauchen, um Listen von Ressourcen in den verschiedenen Kategorien zu sehen, indem wir auf die Kategorie-Registerkarten klicken. Wir können zur Detailseite einer bestimmten Ressource gelangen, indem wir sie in der Ressourcenkategorieliste anklicken."
 
 #: ../../getting_started/guides/aws_guide.rst:50
 msgid "Configuring Resource Pools"
-msgstr ""
+msgstr "Ressourcenpools konfigurieren"
 
 #: ../../getting_started/guides/aws_guide.rst:52
 msgid ""
 "With our AWS cloud configured, Morpheus will automatically sync in "
 "available resource pools and data stores."
-msgstr ""
+msgstr "Mit unserer konfigurierten AWS Cloud synchronisiert Morpheus automatisch verfügbare Ressourcenpools und Datenspeicher."
 
 #: ../../getting_started/guides/aws_guide.rst:54
 msgid ""
@@ -191,7 +191,7 @@ msgid ""
 "\"SAVE CHANGES\" we will see that the resource pool is now grayed out in "
 "the list. The resources contained in that pool will not be accessible for"
 " provisioning within Morpheus."
-msgstr ""
+msgstr "Ressourcenpools sind, sobald Morpheus Zeit hatte, sie zu erfassen, auf der Cloud-Detailseite sichtbar. Navigieren Sie zu `Infrastructure > Clouds > (your AWS cloud) > RESOURCES tab`. Hier können wir den Zugriff auf die verschiedenen in Amazon konfigurierten Ressourcenpools sehen und steuern. Beispielsweise können wir den Zugriff auf einen bestimmten Ressourcenpool innerhalb von Morpheus vollständig einschränken, indem wir auf die Schaltfläche „ACTIONS“ und dann auf „Edit“ klicken. Wenn wir die Option „ACTIVE“ deaktivieren und dann auf „SAVE CHANGES“ klicken, sehen wir, dass der Ressourcenpool in der Liste ausgegraut ist. Die in diesem Pool enthaltenen Ressourcen sind in Morpheus nicht für die Provisionierung zugänglich."
 
 #: ../../getting_started/guides/aws_guide.rst:56
 msgid ".. image:: /images/AwsGuideImages/ResourcePools/1resourcePools.png"
@@ -207,7 +207,7 @@ msgid ""
 "choose to make some or all of our resource pools available to every "
 "group. Specific resource pools can also be defined as the default for "
 "each group if needed."
-msgstr ""
+msgstr "Oft möchten unsere Kunden bestimmte Ressourcenblöcke bestimmten Gruppen zur Verfügung stellen. Dies lässt sich einfach und bequem über denselben Dialog „EDIT RESOURCE POOL“ steuern, in dem wir gerade gearbeitet haben. Wenn wir die Schublade „Group Access“ erweitern, können wir jeder gewünschten Gruppe Zugriff auf jeden Pool gewähren oder entziehen. Wir können auch wählen, einige oder alle unserer Ressourcenpools jeder Gruppe zur Verfügung zu stellen. Spezifische Ressourcenpools können bei Bedarf auch als Standard für jede Gruppe definiert werden."
 
 #: ../../getting_started/guides/aws_guide.rst:60
 msgid ".. image:: /images/AwsGuideImages/ResourcePools/2editResourceGroups.png"
@@ -220,11 +220,11 @@ msgid ""
 "specific cluster is my SQL cluster and only specific services plans "
 "should be consumable within it. We can control that through this same "
 "dialog box."
-msgstr ""
+msgstr "Zusätzlich können wir zulassen, dass nur bestimmte Service-Tarife in einen bestimmten Ressourcenpool provisioniert werden. Beispielsweise ist ein bestimmter Cluster mein SQL-Cluster, und nur bestimmte Service-Tarife sollten darin nutzbar sein. Wir können das über denselben Dialog steuern."
 
 #: ../../getting_started/guides/aws_guide.rst:65
 msgid "Configuring Network for Provisioning"
-msgstr ""
+msgstr "Netzwerk für die Provisionierung konfigurieren"
 
 #: ../../getting_started/guides/aws_guide.rst:67
 msgid ""
@@ -235,7 +235,7 @@ msgid ""
 "may also be paginated across a large number of pages. In such a case, it "
 "may be easier to view or configure networks from the specific cloud "
 "detail page so that networks from other clouds are not shown."
-msgstr ""
+msgstr "Bei der Netzwerkkonfiguration können wir globale Standardwerte festlegen, indem wir zu `Infrastructure > Network > NETWORKS tab` gehen. Hier können wir Netzwerke aus allen in Morpheus integrierten Clouds hinzufügen oder konfigurieren. Je nach Anzahl der von Morpheus erfassten Clouds kann diese Liste recht umfangreich sein und auch über viele Seiten paginiert werden. In einem solchen Fall kann es einfacher sein, Netzwerke von der spezifischen Cloud-Detailseite aus anzuzeigen oder zu konfigurieren, sodass Netzwerke anderer Clouds nicht angezeigt werden."
 
 #: ../../getting_started/guides/aws_guide.rst:69
 msgid ".. image:: /images/vCenterGuideImages/Network/1networksSection.png"
@@ -249,7 +249,7 @@ msgid ""
 "integrations, we simply need to name our new integration, give the API "
 "URL, and provide credentials. There's more information in the "
 ":ref:`Networking Integrations` section of Morpheus Docs."
-msgstr ""
+msgstr "Bleiben Sie in `Infrastructure > Network` und beachten Sie die Registerkarte „INTEGRATIONS“. Hier können wir relevante Integrationen einrichten, z. B. IPAM-Integrationen. Im Allgemeinen müssen wir beim Hinzufügen von IPAM-Integrationen lediglich unsere neue Integration benennen, die API-URL angeben und Anmeldedaten bereitstellen. Weitere Informationen finden Sie im Abschnitt :ref:`Networking Integrations` der Morpheus-Dokumentation."
 
 #: ../../getting_started/guides/aws_guide.rst:73
 msgid ".. image:: /images/vCenterGuideImages/Network/2addIPAM.png"
@@ -268,7 +268,7 @@ msgid ""
 "pools. Edit an existing network by clicking the pencil icon on the "
 "Networks List Page (Infrastructure > Networks > Networks Tab) and fill in"
 " the \"Network Pool\" field to associate the IP Pool with the network."
-msgstr ""
+msgstr "Unter `Infrastructure > Networking` können wir auch IP-Adresspools über die Registerkarte IP Pools einrichten. Diese Pools können manuell definiert werden (als Morpheus-Typ-IP-Pool bekannt) oder aus beliebigen von Ihnen konfigurierten IPAM-Integrationen stammen. Wenn Instanzen provisioniert werden, weist Morpheus IP-Adressen aus dem während der Provisionierung gewählten Pool zu. Wenn die Instanz später aufgelöst wird, gibt Morpheus die IP-Adresse automatisch frei, damit sie bei Bedarf von einer anderen Instanz verwendet werden kann. Beim Hinzufügen oder Bearbeiten eines Netzwerks können wir das Netzwerk auf einen dieser konfigurierten IP-Adresspools beschränken. Bearbeiten Sie ein vorhandenes Netzwerk, indem Sie auf das Stiftsymbol auf der Netzwerkliste (Infrastructure > Networks > Networks Tab) klicken, und füllen Sie das Feld „Network Pool“ aus, um den IP-Pool dem Netzwerk zuzuordnen."
 
 #: ../../getting_started/guides/aws_guide.rst:77
 msgid ".. image:: /images/vCenterGuideImages/Network/3addIPPool.png"
@@ -282,7 +282,7 @@ msgid ""
 "`Infrastructure > Clouds > (your AWS cloud) > NETWORKS tab`. Just as with"
 " resource pools, we have the ability to make certain networks inactive in"
 " Morpheus, or scope them to be usable only for certain groups or tenants."
-msgstr ""
+msgstr "Da sich dieser Leitfaden auf die Arbeit innerhalb der AWS Cloud konzentriert, die wir zu Beginn integriert haben, betrachten wir unsere Netzwerkkonfigurationen auch auf der Cloud-Detailseite. Navigieren Sie zu `Infrastructure > Clouds > (your AWS cloud) > NETWORKS tab`. Genau wie bei Ressourcenpools haben wir die Möglichkeit, bestimmte Netzwerke in Morpheus inaktiv zu machen oder sie so einzuschränken, dass sie nur für bestimmte Gruppen oder Mandanten nutzbar sind."
 
 #: ../../getting_started/guides/aws_guide.rst:81
 msgid ".. image:: /images/AwsGuideImages/Networks/1cloudNetwork.png"
@@ -290,7 +290,7 @@ msgstr ""
 
 #: ../../getting_started/guides/aws_guide.rst:84
 msgid "Prepping an Image"
-msgstr ""
+msgstr "Ein Image vorbereiten"
 
 #: ../../getting_started/guides/aws_guide.rst:86
 msgid ""
@@ -302,17 +302,17 @@ msgid ""
 " will work with the images included in Morpheus by default but have "
 "guides in Morpheus Docs for :ref:`vmware-templates` which are consumable "
 "in Morpheus."
-msgstr ""
+msgstr "Wie wir im nächsten Abschnitt besprechen und ausprobieren werden, liefert Morpheus von Haus aus einen Standardsatz von Blueprints, die für viele moderne Bereitstellungsszenarien relevant sind. Weitgehend handelt es sich um Basis-Betriebssystem-Images mit einigen zusätzlichen Anpassungen. In vielen On-Premise-Bereitstellungen gibt es jedoch oft benutzerdefinierte Image- und Netzwerkanforderungen. Wir arbeiten mit den in Morpheus standardmäßig enthaltenen Images, haben aber in der Morpheus-Dokumentation Leitfäden für :ref:`vmware-templates`, die in Morpheus nutzbar sind."
 
 #: ../../getting_started/guides/aws_guide.rst:89
 msgid "Provisioning Your First Instance"
-msgstr ""
+msgstr "Ihre erste Instanz provisionieren"
 
 #: ../../getting_started/guides/aws_guide.rst:91
 msgid ""
 "At this point, we are ready to provision our first image. As a first "
 "instance, we'll provision an Apache web server to our AWS cloud."
-msgstr ""
+msgstr "An diesem Punkt sind wir bereit, unser erstes Image zu provisionieren. Als erste Instanz provisionieren wir einen Apache-Webserver in unsere AWS Cloud."
 
 #: ../../getting_started/guides/aws_guide.rst:93
 msgid ""
@@ -321,7 +321,7 @@ msgid ""
 "start a new instance we click the \"+ADD\" button to pop the \"CREATE "
 "INSTANCE\" wizard. We'll scroll down to and select the Apache instance "
 "type and click \"NEXT\"."
-msgstr ""
+msgstr "Navigieren Sie zu `:menuselection:`Provisioning --> Instances``. Wenn derzeit Instanzen provisioniert sind, sehen wir sie hier aufgelistet. Um eine neue Instanz zu starten, klicken wir auf die Schaltfläche „+ADD“, um den Assistenten „CREATE INSTANCE“ zu öffnen. Wir scrollen nach unten, wählen den Apache-Instanztyp und klicken auf „NEXT“."
 
 #: ../../getting_started/guides/aws_guide.rst:95
 msgid ".. image:: /images/vCenterGuideImages/FirstInstance/1createInstance.png"
@@ -335,7 +335,7 @@ msgid ""
 "select here. This will allow us to select the AWS cloud from the "
 "\"CLOUD\" dropdown menu. Provide a unique name to this instance and then "
 "click \"NEXT\""
-msgstr ""
+msgstr "Zuerst geben wir die Gruppe an, in die provisioniert werden soll, wodurch die verfügbaren Clouds bestimmt werden. Wenn Sie diesem Leitfaden bis hierher gefolgt sind, sollten Sie zumindest eine Gruppe haben, die alle Ihre Clouds enthält und die Sie hier auswählen können. Dadurch können wir die AWS Cloud aus dem Dropdown-Menü „CLOUD“ auswählen. Geben Sie dieser Instanz einen eindeutigen Namen und klicken Sie dann auf „NEXT“"
 
 #: ../../getting_started/guides/aws_guide.rst:99
 msgid ""
@@ -343,48 +343,48 @@ msgid ""
 " options are cloud and layout-specific, more generalized information on "
 "creating instances and available options is :ref:`Morpheus Agent`. For "
 "our purposes, we'll select the following options:"
-msgstr ""
+msgstr "Auf der Registerkarte „CONFIGURE“ werden uns eine Reihe von Optionen angezeigt. Die Optionen sind Cloud- und Layout-spezifisch; allgemeinere Informationen zum Erstellen von Instanzen und verfügbaren Optionen finden Sie unter :ref:`Morpheus Agent`. Für unsere Zwecke wählen wir die folgenden Optionen:"
 
 #: ../../getting_started/guides/aws_guide.rst:101
 msgid ""
 "**LAYOUT**: Includes options such as the base OS, custom layouts will "
 "also be here when available"
-msgstr ""
+msgstr "**LAYOUT**: Enthält Optionen wie das Basis-Betriebssystem; benutzerdefinierte Layouts sind hier ebenfalls verfügbar, wenn vorhanden"
 
 #: ../../getting_started/guides/aws_guide.rst:103
 msgid ""
 "**PLAN**: Select the resource plan for your instance. Some plans have "
 "minimum resource limits, Morpheus will only show plans at or above these "
 "limits. User-defined plans can also be created in `|AdmPla|`."
-msgstr ""
+msgstr "**PLAN**: Wählen Sie den Ressourcentarif für Ihre Instanz. Einige Tarife haben Mindestressourcenlimits; Morpheus zeigt nur Tarife auf oder über diesen Limits an. Benutzerdefinierte Tarife können auch in `|AdmPla|` erstellt werden."
 
 #: ../../getting_started/guides/aws_guide.rst:105
 msgid ""
 "**VOLUMES**: The minimum disk space is set by the plan, this value may be"
 " locked if you've selected a custom plan that defines the volume size"
-msgstr ""
+msgstr "**VOLUMES**: Der Mindestspeicherplatz wird durch den Tarif festgelegt; dieser Wert kann gesperrt sein, wenn Sie einen benutzerdefinierten Tarif ausgewählt haben, der die Datenträgergröße definiert"
 
 #: ../../getting_started/guides/aws_guide.rst:107
 msgid ""
 "**NETWORKS**: Select a network, note that IP pools must be linked with "
 "the networks defined in VMware in order to assign static IP addresses"
-msgstr ""
+msgstr "**NETWORKS**: Wählen Sie ein Netzwerk; beachten Sie, dass IP-Pools mit den in VMware definierten Netzwerken verknüpft sein müssen, um statische IP-Adressen zuzuweisen"
 
 #: ../../getting_started/guides/aws_guide.rst:109
 msgid "**SECURITY GROUPS**"
-msgstr ""
+msgstr "**SECURITY GROUPS**"
 
 #: ../../getting_started/guides/aws_guide.rst:111
 msgid ""
 "Under the \"User Config\" drawer, mark the box to \"CREATE YOUR USER\". "
 "Click :guilabel:`NEXT`."
-msgstr ""
+msgstr "Unter der Schublade „User Config“ aktivieren Sie das Kontrollkästchen „CREATE YOUR USER“. Klicken Sie auf :guilabel:`NEXT`."
 
 #: ../../getting_started/guides/aws_guide.rst:113
 #: ../../getting_started/guides/aws_guide.rst:126
 #: ../../getting_started/guides/aws_guide.rst:199
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/guides/aws_guide.rst:113
 msgid ""
@@ -393,7 +393,7 @@ msgid ""
 " defined these credentials, you can do so by clicking on your username in"
 " the upper-right corner of the application window and selecting \"USER "
 "SETTINGS\"."
-msgstr ""
+msgstr "„CREATE YOUR USER“ legt ein Benutzerkonto in der VM mit den in Ihren Morpheus-Benutzerkontoeinstellungen festgelegten Anmeldedaten an. Wenn Sie diese Anmeldedaten noch nicht definiert haben, können Sie dies tun, indem Sie in der oberen rechten Ecke des Anwendungsfensters auf Ihren Benutzernamen klicken und „USER SETTINGS“ auswählen."
 
 #: ../../getting_started/guides/aws_guide.rst:115
 msgid ""
@@ -401,13 +401,13 @@ msgid ""
 "tab but feel free to stop and take a look at the available selections "
 "here. There is more information later in this guide on automation and "
 "even more beyond that in the rest of Morpheus docs."
-msgstr ""
+msgstr "Vorerst klicken wir einfach auf „NEXT“, um durch die Registerkarte „AUTOMATION“ zu gelangen, aber Sie können gerne anhalten und die verfügbaren Auswahlen hier betrachten. Später in diesem Leitfaden gibt es weitere Informationen zur Automatisierung und darüber hinaus noch mehr in der übrigen Morpheus-Dokumentation."
 
 #: ../../getting_started/guides/aws_guide.rst:117
 msgid ""
 "Review the settings for your first instance and click "
 ":guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Überprüfen Sie die Einstellungen für Ihre erste Instanz und klicken Sie auf :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/aws_guide.rst:119
 msgid ""
@@ -424,11 +424,11 @@ msgid ""
 "when the instance is fully ready. Furthermore, we can click on the "
 "hyperlinked IP address in the \"VMS\" section of this page to view a "
 "default page in a web browser to confirm success."
-msgstr ""
+msgstr "Wir landen nun wieder auf der Instanzliste. Wir sehen an diesem Punkt einen neuen Eintrag in der Liste mit einem Statusindikator, dass die neue Maschine gestartet wird (Raketensymbol im Statusfeld). Wir können auf die Instanz in der Liste doppelklicken, um zur Instanzdetailseite zu gelangen. Vorerst sehen wir einen Fortschrittsbalken, der anzeigt, dass die Instanz erstellt wird und startet. Die genaue Dauer dieses Prozesses hängt von den bei der Provisionierung der Instanz getroffenen Auswahlen ab. Für detailliertere Informationen zum Status verschiedener Provisionierungsprozesse können wir nach unten scrollen und die Registerkarte „HISTORY“ auswählen. Das „STATUS“-Symbol wechselt von der blauen Rakete zu einem grünen Wiedergabebutton, wenn die Instanz vollständig bereit ist. Darüber hinaus können wir auf die verlinkte IP-Adresse im Abschnitt „VMS“ dieser Seite klicken, um eine Standardseite in einem Webbrowser anzuzeigen und den Erfolg zu bestätigen."
 
 #: ../../getting_started/guides/aws_guide.rst:122
 msgid "Creating Your First Library Item"
-msgstr ""
+msgstr "Ihren ersten Bibliothekseintrag erstellen"
 
 #: ../../getting_started/guides/aws_guide.rst:124
 msgid ""
@@ -437,7 +437,7 @@ msgid ""
 "items to simplify and speed provisioning in the future. In this section, "
 "we'll build a catalog item and show how that can translate into quick "
 "instance provisioning after configuration."
-msgstr ""
+msgstr "Im vorherigen Abschnitt haben wir unsere erste Instanz manuell provisioniert. Morpheus ermöglicht es Ihnen jedoch, einen Katalog benutzerdefinierter provisionierbarer Elemente zu erstellen, um die Provisionierung in Zukunft zu vereinfachen und zu beschleunigen. In diesem Abschnitt erstellen wir einen Katalogeintrag und zeigen, wie das nach der Konfiguration in eine schnelle Instanzprovisionierung übersetzt werden kann."
 
 #: ../../getting_started/guides/aws_guide.rst:126
 msgid ""
@@ -446,11 +446,11 @@ msgid ""
 "you'll want to ensure it's uploaded. You will not be able to complete "
 "this section without selecting an available image. In this example we "
 "will use Morpheus Redis 3.0 on Ubuntu 14.04.3 v2."
-msgstr ""
+msgstr "Bevor Sie diesen Prozess starten, ist es wichtig zu entscheiden, welches virtuelle Image Sie verwenden möchten. Wenn Sie kein von Morpheus bereitgestelltes Image verwenden, sollten Sie sicherstellen, dass es hochgeladen ist. Sie können diesen Abschnitt nicht abschließen, ohne ein verfügbares Image auszuwählen. In diesem Beispiel verwenden wir Morpheus Redis 3.0 on Ubuntu 14.04.3 v2."
 
 #: ../../getting_started/guides/aws_guide.rst:128
 msgid "Navigate to |LibBluNod| and click :guilabel:`+ADD`."
-msgstr ""
+msgstr "Navigieren Sie zu |LibBluNod| und klicken Sie auf :guilabel:`+ADD`."
 
 #: ../../getting_started/guides/aws_guide.rst:130
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/1addNode.png"
@@ -460,31 +460,31 @@ msgstr ""
 msgid ""
 "In this example, I am going to set the following options in the \"NEW "
 "NODE TYPE\" wizard:"
-msgstr ""
+msgstr "In diesem Beispiel lege ich die folgenden Optionen im Assistenten „NEW NODE TYPE“ fest:"
 
 #: ../../getting_started/guides/aws_guide.rst:134
 #: ../../getting_started/guides/aws_guide.rst:162
 #: ../../getting_started/guides/aws_guide.rst:189
 #: ../../getting_started/guides/aws_guide.rst:207
 msgid "**NAME**"
-msgstr ""
+msgstr "**NAME**"
 
 #: ../../getting_started/guides/aws_guide.rst:136
 msgid "**SHORT NAME**"
-msgstr ""
+msgstr "**SHORT NAME**"
 
 #: ../../getting_started/guides/aws_guide.rst:138
 msgid "**VERSION**: 1 (In this particular case, the version is not important)"
-msgstr ""
+msgstr "**VERSION**: 1 (In diesem speziellen Fall ist die Version nicht wichtig)"
 
 #: ../../getting_started/guides/aws_guide.rst:140
 #: ../../getting_started/guides/aws_guide.rst:166
 msgid "**TECHNOLOGY**: Amazon"
-msgstr ""
+msgstr "**TECHNOLOGY**: Amazon"
 
 #: ../../getting_started/guides/aws_guide.rst:142
 msgid "**AMI IMAGE**: Morpheus Redis 3.0 on Ubuntu 14.04.3 v2"
-msgstr ""
+msgstr "**AMI IMAGE**: Morpheus Redis 3.0 on Ubuntu 14.04.3 v2"
 
 #: ../../getting_started/guides/aws_guide.rst:144
 msgid ".. image:: /images/AwsGuideImages/NewCatalogItem/2nodeSettings.png"
@@ -495,7 +495,7 @@ msgid ""
 "With the new node created, we'll now add a new instance type which will "
 "be accessable from the provisioning wizard once created. Move from the "
 "\"NODE TYPES\" tab to the \"INSTANCE TYPES\" tab and click \"+ADD\"."
-msgstr ""
+msgstr "Nachdem der neue Knoten erstellt wurde, fügen wir nun einen neuen Instanztyp hinzu, der nach der Erstellung im Provisionierungsassistenten zugänglich ist. Wechseln Sie von der Registerkarte „NODE TYPES“ zur Registerkarte „INSTANCE TYPES“ und klicken Sie auf „+ADD“."
 
 #: ../../getting_started/guides/aws_guide.rst:148
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/3addInstanceType.png"
@@ -505,7 +505,7 @@ msgstr ""
 msgid ""
 "In the \"NEW INSTANCE TYPE\" wizard, I'll simply enter a **NAME** and "
 "**CODE** value. Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "Im Assistenten „NEW INSTANCE TYPE“ gebe ich einfach einen **NAME**- und **CODE**-Wert ein. Klicken Sie auf „SAVE CHANGES“."
 
 #: ../../getting_started/guides/aws_guide.rst:152
 msgid ""
@@ -518,7 +518,7 @@ msgid ""
 "Now that we've created a new instance type, access it by clicking on the "
 "name in the list of custom instances you've created. In my case, I've "
 "given the name \"NewInstanceType\"."
-msgstr ""
+msgstr "Nachdem wir einen neuen Instanztyp erstellt haben, greifen Sie darauf zu, indem Sie auf den Namen in der Liste der von Ihnen erstellten benutzerdefinierten Instanzen klicken. In meinem Fall habe ich den Namen „NewInstanceType“ vergeben."
 
 #: ../../getting_started/guides/aws_guide.rst:156
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/5openInstanceType.png"
@@ -528,27 +528,27 @@ msgstr ""
 msgid ""
 "Once we've opened the new instance type, by default, we should be on the "
 "\"LAYOUTS\" tab. Click \"+ADD LAYOUT\"."
-msgstr ""
+msgstr "Sobald wir den neuen Instanztyp geöffnet haben, sollten wir standardmäßig auf der Registerkarte „LAYOUTS“ sein. Klicken Sie auf „+ADD LAYOUT“."
 
 #: ../../getting_started/guides/aws_guide.rst:160
 msgid "I've set the following fields on my example layout:"
-msgstr ""
+msgstr "Ich habe die folgenden Felder in meinem Beispiel-Layout festgelegt:"
 
 #: ../../getting_started/guides/aws_guide.rst:164
 msgid ""
 "**VERSION**: This is the version number of the layout itself, which is "
 "labeled 1.0 in the example"
-msgstr ""
+msgstr "**VERSION**: Dies ist die Versionsnummer des Layouts selbst, die im Beispiel mit 1.0 gekennzeichnet ist"
 
 #: ../../getting_started/guides/aws_guide.rst:168
 msgid ""
 "**Nodes**: Select the node we created earlier, if desired you can specify"
 " multiple nodes"
-msgstr ""
+msgstr "**Nodes**: Wählen Sie den zuvor erstellten Knoten; bei Bedarf können Sie mehrere Knoten angeben"
 
 #: ../../getting_started/guides/aws_guide.rst:170
 msgid "Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "Klicken Sie auf „SAVE CHANGES“."
 
 #: ../../getting_started/guides/aws_guide.rst:172
 msgid ""
@@ -557,7 +557,7 @@ msgid ""
 "`:menuselection:`Provisioning --> Instances`` and click \"+ADD\". From "
 "the search bar we can search for the new instance type we've created. In "
 "the example case, we called it \"newinstancetype\". Click \"NEXT\"."
-msgstr ""
+msgstr "An diesem Punkt haben wir die Einrichtungsarbeit abgeschlossen und können nun die nach unseren Vorgaben erstellte Instanz provisionieren. Navigieren Sie zu `:menuselection:`Provisioning --> Instances`` und klicken Sie auf „+ADD“. Über die Suchleiste können wir nach dem neu erstellten Instanztyp suchen. Im Beispiel haben wir ihn „newinstancetype“ genannt. Klicken Sie auf „NEXT“."
 
 #: ../../getting_started/guides/aws_guide.rst:174
 msgid ""
@@ -567,7 +567,7 @@ msgid ""
 " of creating the new instance type. Select a network and click \"NEXT\". "
 "Once again we will also click \"NEXT\" through the \"AUTOMATION\" tab. "
 "Finally, click \"COMPLETE\"."
-msgstr ""
+msgstr "Wie zuvor können wir eine Gruppe und Cloud auswählen, um diese neue Instanz zu provisionieren. Klicken Sie auf „NEXT“. Beachten Sie auf der Registerkarte „CONFIGURE“, dass Layout und Tarif bereits ausgewählt sind, da sie als Teil der Erstellung des neuen Instanztyps konfiguriert wurden. Wählen Sie ein Netzwerk und klicken Sie auf „NEXT“. Erneut klicken wir auch auf „NEXT“ durch die Registerkarte „AUTOMATION“. Klicken Sie abschließend auf „COMPLETE“."
 
 #: ../../getting_started/guides/aws_guide.rst:176
 msgid ""
@@ -576,11 +576,11 @@ msgid ""
 " open the instance detail page in Morpheus and click on the \"CONSOLE\" "
 "tab. You'll be logged in with your user account and are then able to "
 "confirm the machine is ready and available."
-msgstr ""
+msgstr "Wie zuvor bei der manuellen Provisionierung einer Instanz beginnt Morpheus nun, die neue VM zu starten. Sobald der Provisionierungsprozess abgeschlossen ist, öffnen Sie die Instanzdetailseite in Morpheus und klicken Sie auf die Registerkarte „CONSOLE“. Sie werden mit Ihrem Benutzerkonto angemeldet und können dann bestätigen, dass die Maschine bereit und verfügbar ist."
 
 #: ../../getting_started/guides/aws_guide.rst:179
 msgid "Automation and Configuration Management"
-msgstr ""
+msgstr "Automatisierung und Konfigurationsmanagement"
 
 #: ../../getting_started/guides/aws_guide.rst:181
 msgid ""
@@ -591,7 +591,7 @@ msgid ""
 "executed individually but they are often combined into workflows. We can "
 "opt to run a workflow at provision time or they can be executed on "
 "existing instances through the Actions menu."
-msgstr ""
+msgstr "Die Morpheus-Automatisierung besteht aus Aufgaben und Workflows. Eine Aufgabe könnte ein direkt hinzugefügtes Skript, aus der Morpheus-Bibliothek abgerufene Skripte oder Blueprints, Playbooks, Recipes oder eine Reihe anderer Dinge sein. Die vollständige Liste der Aufgabentypen finden Sie unter :ref:`automation`. Aufgaben können einzeln ausgeführt werden, werden aber oft zu Workflows kombiniert. Wir können wählen, einen Workflow zum Zeitpunkt der Provisionierung auszuführen, oder sie können über das Menü Actions auf vorhandenen Instanzen ausgeführt werden."
 
 #: ../../getting_started/guides/aws_guide.rst:183
 msgid ""
@@ -601,7 +601,7 @@ msgid ""
 "already have an Apache instance running. If you don't yet have that, "
 "provision one before continuing with this guide and ensure it's reachable"
 " on port 80."
-msgstr ""
+msgstr "In diesem Leitfaden richten wir eine Ansible-Integration ein, erstellen eine Aufgabe, fügen die Aufgabe einem Workflow hinzu und führen den Workflow gegen eine neue und eine vorhandene Instanz aus. Wenn Sie diesem Leitfaden bis hierher gefolgt sind, sollten Sie bereits eine Apache-Instanz laufen haben. Wenn Sie diese noch nicht haben, provisionieren Sie eine, bevor Sie mit diesem Leitfaden fortfahren, und stellen Sie sicher, dass sie auf Port 80 erreichbar ist."
 
 #: ../../getting_started/guides/aws_guide.rst:185
 msgid ".. image:: /images/vCenterGuideImages/Automation/1newIntegration.png"
@@ -613,32 +613,32 @@ msgid ""
 "sample repository referenced here or integrate with your own. Go to "
 "'|AdmInt|'. Click \"+ NEW INTEGRATION\" and select Ansible from the "
 "dropdown menu. Fill in the following details:"
-msgstr ""
+msgstr "Zuerst richten wir die Ansible-Integration ein; Sie können mit dem hier referenzierten Beispiel-Repository integrieren oder mit Ihrem eigenen. Gehen Sie zu '|AdmInt|'. Klicken Sie auf „+ NEW INTEGRATION“ und wählen Sie Ansible aus dem Dropdown-Menü. Füllen Sie die folgenden Details aus:"
 
 #: ../../getting_started/guides/aws_guide.rst:191
 msgid ""
 "**ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus-ansible-"
 "example, or enter the URL for your own Ansible git repository"
-msgstr ""
+msgstr "**ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus-ansible-example, oder geben Sie die URL für Ihr eigenes Ansible-Git-Repository ein"
 
 #: ../../getting_started/guides/aws_guide.rst:193
 msgid "**PLAYBOOKS PATH**"
-msgstr ""
+msgstr "**PLAYBOOKS PATH**"
 
 #: ../../getting_started/guides/aws_guide.rst:195
 msgid "**ROLES PATH**"
-msgstr ""
+msgstr "**ROLES PATH**"
 
 #: ../../getting_started/guides/aws_guide.rst:197
 msgid "Mark the box to \"USE MORPHEUS AGENT COMMAND BUS\""
-msgstr ""
+msgstr "Aktivieren Sie das Kontrollkästchen „USE MORPHEUS AGENT COMMAND BUS“"
 
 #: ../../getting_started/guides/aws_guide.rst:199
 msgid ""
 "If your git repository requires authentication, you should create a "
 "keypair and use the following URL format: git@github.com:ncelebic"
 "/morpheus-ansible-example.git."
-msgstr ""
+msgstr "Wenn Ihr Git-Repository Authentifizierung erfordert, sollten Sie ein Schlüsselpaar erstellen und das folgende URL-Format verwenden: git@github.com:ncelebic/morpheus-ansible-example.git."
 
 #: ../../getting_started/guides/aws_guide.rst:201
 msgid ".. image:: /images/vCenterGuideImages/Automation/2configureIntegration.png"
@@ -650,7 +650,7 @@ msgid ""
 " among any other configured inetegrations. If we click on this new "
 "integration to view detail, a green checkmark icon indicates the git "
 "repository has been fully synced."
-msgstr ""
+msgstr "Klicken Sie auf „SAVE CHANGES“. Sie sehen nun unsere neue Ansible-Integration unter allen anderen konfigurierten Integrationen aufgeführt. Wenn wir auf diese neue Integration klicken, um Details anzuzeigen, zeigt ein grünes Häkchen-Symbol an, dass das Git-Repository vollständig synchronisiert wurde."
 
 #: ../../getting_started/guides/aws_guide.rst:205
 msgid ""
@@ -659,17 +659,17 @@ msgid ""
 "click \"+ADD\". We'll first set our \"TYPE\" value to Ansible Playbook so"
 " that the correct set of fields appear in the \"NEW TASK\" wizard. Set "
 "the following options:"
-msgstr ""
+msgstr "Nachdem die Ansible-Integration eingerichtet ist, können wir eine Aufgabe erstellen, die unser Playbook enthält. Gehen Sie zu `:menuselection:`Library --> Automation``, klicken Sie auf „+ADD“. Zuerst setzen wir unseren „TYPE“-Wert auf Ansible Playbook, damit die richtige Feldgruppe im Assistenten „NEW TASK“ erscheint. Legen Sie die folgenden Optionen fest:"
 
 #: ../../getting_started/guides/aws_guide.rst:209
 msgid ""
 "**ANSIBLE REPO**: Here we will choose the Ansible integration that we "
 "just created"
-msgstr ""
+msgstr "**ANSIBLE REPO**: Hier wählen wir die soeben erstellte Ansible-Integration"
 
 #: ../../getting_started/guides/aws_guide.rst:211
 msgid "**PLAYBOOK**: In our example case, enter 'playbook.yml'"
-msgstr ""
+msgstr "**PLAYBOOK**: Geben Sie in unserem Beispiel „playbook.yml“ ein"
 
 #: ../../getting_started/guides/aws_guide.rst:213
 msgid ".. image:: /images/vCenterGuideImages/Automation/3taskConfig.png"
@@ -682,7 +682,7 @@ msgid ""
 "Instances`` and clicking into our VM. From the \"ACTIONS\" menu select "
 "\"Run Task\". From the \"TASK\" dropdown menu, select the task we just "
 "added and click \"EXECUTE\"."
-msgstr ""
+msgstr "Klicken Sie auf „SAVE CHANGES“, um unsere neue Aufgabe zu speichern. Wir können die neue Aufgabe jetzt auf unserer Apache-VM testen, indem wir zu `:menuselection:`Provisioning --> Instances`` gehen und in unsere VM klicken. Wählen Sie im Menü „ACTIONS“ „Run Task“. Wählen Sie im Dropdown-Menü „TASK“ die soeben hinzugefügte Aufgabe und klicken Sie auf „EXECUTE“."
 
 #: ../../getting_started/guides/aws_guide.rst:217
 msgid ".. image:: /images/vCenterGuideImages/Automation/4executeTask.png"
@@ -694,7 +694,7 @@ msgid ""
 "on the (i) button to the right of each entry in the list. In this case, "
 "we can also see the results of the task by clicking on the link in the "
 "\"LOCATION\" column of the \"VMS\" section."
-msgstr ""
+msgstr "Um den Fortschritt der Aufgabe zu sehen, klicken Sie auf die Registerkarte „HISTORY“ und auf die Schaltfläche (i) rechts neben jedem Eintrag in der Liste. In diesem Fall können wir die Ergebnisse der Aufgabe auch sehen, indem wir auf den Link in der Spalte „LOCATION“ des Abschnitts „VMS“ klicken."
 
 #: ../../getting_started/guides/aws_guide.rst:221
 msgid ""
@@ -704,7 +704,7 @@ msgid ""
 " give the new workflow a name and expand the Post Provision section. As "
 "we begin to type in the name of the task we've created, it should appear "
 "as a selection. Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "Nachdem unsere Aufgabe erstellt ist, können wir sie in einen Workflow aufnehmen. Zurück unter `:menuselection:`Library --> Automation`` klicken wir auf die Registerkarte „WORKFLOWS“. Klicken Sie auf „+ADD“ und wählen Sie Provisioning Workflow. Wir geben dem neuen Workflow einen Namen und erweitern den Abschnitt Post Provision. Wenn wir beginnen, den Namen der erstellten Aufgabe einzugeben, sollte er als Auswahl erscheinen. Klicken Sie auf „SAVE CHANGES“."
 
 #: ../../getting_started/guides/aws_guide.rst:223
 msgid ".. image:: /images/vCenterGuideImages/Automation/5newWorkflow.png"
@@ -719,7 +719,7 @@ msgid ""
 "of the \"CREATE INSTANCE\" wizard, we have a workflow to select. From the"
 " \"WORKFLOW\" dropdown menu, select the workflow we just created and "
 "complete provisioning of the new instance."
-msgstr ""
+msgstr "Nachdem wir einen Workflow haben, kehren wir zu `:menuselection:`Provisioning --> Instances`` zurück und beginnen, eine weitere Apache-Instanz zu provisionieren. Detailliertere Anweisungen zur Provisionierung einer neuen Apache-Instanz finden Sie bei Bedarf früher in diesem Leitfaden. Wenn Sie nun den Abschnitt „AUTOMATION“ des Assistenten „CREATE INSTANCE“ erreichen, haben wir einen Workflow zur Auswahl. Wählen Sie im Dropdown-Menü „WORKFLOW“ den soeben erstellten Workflow und schließen Sie die Provisionierung der neuen Instanz ab."
 
 #: ../../getting_started/guides/aws_guide.rst:227
 msgid ""
@@ -731,7 +731,7 @@ msgstr ""
 msgid ""
 "As the instance is provisioning, we can go to the \"HISTORY\" tab and see"
 " Morpheus executing the tasks that were contained in our workflow."
-msgstr ""
+msgstr "Während die Instanz provisioniert wird, können wir zur Registerkarte „HISTORY“ gehen und sehen, wie Morpheus die in unserem Workflow enthaltenen Aufgaben ausführt."
 
 #: ../../getting_started/guides/aws_guide.rst:231
 msgid ""
@@ -740,11 +740,11 @@ msgid ""
 "automation types that can be built into your workflows as well. For "
 "further information, take a look at the :ref:`Automation Integrations` "
 "guide in Morpheus docs."
-msgstr ""
+msgstr "Dies ist nur ein Beispiel für die Verwendung von Morpheus zur Automatisierung der Konfiguration einer Instanz nach Ihren Anforderungen. Es gibt eine Reihe weiterer Automatisierungstypen, die ebenfalls in Ihre Workflows eingebaut werden können. Weitere Informationen finden Sie im Leitfaden :ref:`Automation Integrations` in der Morpheus-Dokumentation."
 
 #: ../../getting_started/guides/aws_guide.rst:234
 msgid "Conclusion"
-msgstr ""
+msgstr "Fazit"
 
 #: ../../getting_started/guides/aws_guide.rst:236
 msgid ""
@@ -753,5 +753,5 @@ msgid ""
 "and do in Morpheus. Take a look at the rest of `Morpheus Docs "
 "<https://docs.morpheusdata.com>`_ for more information on supported "
 "integrations and other things possible."
-msgstr ""
+msgstr "An diesem Punkt sollten Sie in Morpheus betriebsbereit sein und AWS nutzen können. Dieser Leitfaden kratzt nur an der Oberfläche; in Morpheus gibt es noch viel mehr zu sehen und zu tun. Werfen Sie einen Blick auf den Rest der `Morpheus Docs <https://docs.morpheusdata.com>`_ für weitere Informationen zu unterstützten Integrationen und anderen Möglichkeiten."
 

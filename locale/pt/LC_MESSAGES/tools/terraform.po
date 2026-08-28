@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../tools/terraform.rst:4
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../tools/terraform.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../tools/terraform.rst:9
 msgid ""
@@ -34,242 +34,242 @@ msgid ""
 "and a management tool. The Tools-level Terraform features focus on state "
 "management, drift detection, and operational commands for Terraform-"
 "managed infrastructure within |morpheus|."
-msgstr ""
+msgstr "O |morpheus| fornece integração Terraform tanto como mecanismo de provisionamento quanto como ferramenta de gerenciamento. Os recursos Terraform no nível Tools focam em gerenciamento de estado, detecção de drift e comandos operacionais para infraestrutura gerenciada por Terraform dentro do |morpheus|."
 
 #: ../../tools/terraform.rst:11
 msgid ""
 "Terraform state and operations are accessible from App and Instance "
 "detail pages for resources provisioned using Terraform blueprints or "
 "Terraform Instance Types."
-msgstr ""
+msgstr "O estado e as operações do Terraform estão acessíveis nas páginas de detalhe de App e Instância para recursos provisionados usando blueprints Terraform ou Spec Templates Terraform."
 
 #: ../../tools/terraform.rst:14
 msgid "Terraform State Management"
-msgstr ""
+msgstr "Gerenciamento de Estado Terraform"
 
 #: ../../tools/terraform.rst:16
 msgid ""
 "|morpheus| stores and manages Terraform state for all Terraform-"
 "provisioned resources:"
-msgstr ""
+msgstr "O |morpheus| armazena e gerencia o estado Terraform para todos os recursos provisionados com Terraform:"
 
 #: ../../tools/terraform.rst:19
 msgid "State Storage"
-msgstr ""
+msgstr "Armazenamento de Estado"
 
 #: ../../tools/terraform.rst:21
 msgid "Terraform state is stored within |morpheus| (no external backend required)"
-msgstr ""
+msgstr "O estado Terraform é armazenado dentro do |morpheus| (nenhum backend externo é necessário)"
 
 #: ../../tools/terraform.rst:22
 msgid "State is encrypted at rest in the |morpheus| database"
-msgstr ""
+msgstr "O estado é criptografado em repouso no banco de dados do |morpheus|"
 
 #: ../../tools/terraform.rst:23
 msgid "State versioning is maintained for rollback capability"
-msgstr ""
+msgstr "O versionamento de estado é mantido para capacidade de rollback"
 
 #: ../../tools/terraform.rst:24
 msgid "State can be viewed and edited from the App or Instance detail page"
-msgstr ""
+msgstr "O estado pode ser visualizado e editado na página de detalhe do App ou da Instância"
 
 #: ../../tools/terraform.rst:27
 msgid "Viewing State"
-msgstr ""
+msgstr "Visualizando o Estado"
 
 #: ../../tools/terraform.rst:29
 msgid "To view the current Terraform state:"
-msgstr ""
+msgstr "Para visualizar o estado Terraform atual:"
 
 #: ../../tools/terraform.rst:31 ../../tools/terraform.rst:63
 msgid "Navigate to the App or Instance provisioned with Terraform"
-msgstr ""
+msgstr "Navegue até o App ou a Instância provisionada com Terraform"
 
 #: ../../tools/terraform.rst:32
 msgid "Select the **State** tab"
-msgstr ""
+msgstr "Selecione a aba **State**"
 
 #: ../../tools/terraform.rst:33
 msgid "The current state JSON is displayed with syntax highlighting"
-msgstr ""
+msgstr "O JSON de estado atual é exibido com destaque de sintaxe"
 
 #: ../../tools/terraform.rst:36
 msgid "Editing State"
-msgstr ""
+msgstr "Editando o Estado"
 
 #: ../../tools/terraform.rst:38
 msgid "Warning"
-msgstr ""
+msgstr "Alerta"
 
 #: ../../tools/terraform.rst:38
 msgid ""
 "Editing Terraform state directly is an advanced operation that can cause "
 "infrastructure inconsistencies. Only modify state when necessary (e.g., "
 "importing existing resources, removing orphaned entries)."
-msgstr ""
+msgstr "Editar o estado Terraform diretamente é uma operação avançada que pode causar inconsistências na infraestrutura. Modifique o estado apenas quando necessário (ex.: importar recursos existentes, remover entradas órfãs)."
 
 #: ../../tools/terraform.rst:40
 msgid "To edit state:"
-msgstr ""
+msgstr "Para editar o estado:"
 
 #: ../../tools/terraform.rst:42
 msgid "Navigate to the App or Instance **State** tab"
-msgstr ""
+msgstr "Navegue até a aba **State** do App ou da Instância"
 
 #: ../../tools/terraform.rst:43
 msgid "Click :guilabel:`EDIT STATE`"
-msgstr ""
+msgstr "Clique em :guilabel:`EDIT STATE`"
 
 #: ../../tools/terraform.rst:44
 msgid "Modify the state JSON as needed"
-msgstr ""
+msgstr "Modifique o JSON de estado conforme necessário"
 
 #: ../../tools/terraform.rst:45
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE`"
 
 #: ../../tools/terraform.rst:47
 msgid ""
 "Role permission **Provisioning: State** with ``Full`` access is required "
 "for state editing."
-msgstr ""
+msgstr "A permissão de função **Provisioning: State** com acesso ``Full`` é necessária para edição de estado."
 
 #: ../../tools/terraform.rst:50
 msgid "Drift Detection"
-msgstr ""
+msgstr "Detecção de Drift"
 
 #: ../../tools/terraform.rst:52
 msgid ""
 "|morpheus| can detect drift between the declared Terraform configuration "
 "and the actual infrastructure state:"
-msgstr ""
+msgstr "O |morpheus| pode detectar drift entre a configuração Terraform declarada e o estado real da infraestrutura:"
 
 #: ../../tools/terraform.rst:54
 msgid ""
 "Drift is identified by running ``terraform plan`` against the current "
 "state"
-msgstr ""
+msgstr "O drift é identificado executando ``terraform plan`` contra o estado atual"
 
 #: ../../tools/terraform.rst:55
 msgid "Resources that have changed outside of Terraform management are flagged"
-msgstr ""
+msgstr "Recursos que foram alterados fora do gerenciamento do Terraform são sinalizados"
 
 #: ../../tools/terraform.rst:56
 msgid ""
 "Drift information helps identify configuration issues and unauthorized "
 "changes"
-msgstr ""
+msgstr "As informações de drift ajudam a identificar problemas de configuração e alterações não autorizadas"
 
 #: ../../tools/terraform.rst:59
 msgid "Running Terraform Commands"
-msgstr ""
+msgstr "Executando Comandos Terraform"
 
 #: ../../tools/terraform.rst:61
 msgid "From the App or Instance detail page, Terraform commands can be executed:"
-msgstr ""
+msgstr "Na página de detalhe do App ou da Instância, comandos Terraform podem ser executados:"
 
 #: ../../tools/terraform.rst:64
 msgid "Open the **Console** or **Terraform** tab"
-msgstr ""
+msgstr "Abra a aba **Console** ou **Terraform**"
 
 #: ../../tools/terraform.rst:65
 msgid "Enter Terraform commands in the command field:"
-msgstr ""
+msgstr "Digite comandos Terraform no campo de comando:"
 
 #: ../../tools/terraform.rst:67
 msgid "``plan`` — Preview changes without applying"
-msgstr ""
+msgstr "``plan`` — Visualizar alterações sem aplicá-las"
 
 #: ../../tools/terraform.rst:68
 msgid "``apply`` — Apply the current configuration"
-msgstr ""
+msgstr "``apply`` — Aplicar a configuração atual"
 
 #: ../../tools/terraform.rst:69
 msgid "``destroy`` — Destroy managed resources"
-msgstr ""
+msgstr "``destroy`` — Destruir recursos gerenciados"
 
 #: ../../tools/terraform.rst:70
 msgid "``refresh`` — Update state to match real infrastructure"
-msgstr ""
+msgstr "``refresh`` — Atualizar o estado para corresponder à infraestrutura real"
 
 #: ../../tools/terraform.rst:71
 msgid "``output`` — Display output values"
-msgstr ""
+msgstr "``output`` — Exibir valores de saída"
 
 #: ../../tools/terraform.rst:72
 msgid "``state list`` — List resources in state"
-msgstr ""
+msgstr "``state list`` — Listar recursos no estado"
 
 #: ../../tools/terraform.rst:73
 msgid "``state show <resource>`` — Show details of a specific resource"
-msgstr ""
+msgstr "``state show <resource>`` — Mostrar detalhes de um recurso específico"
 
 #: ../../tools/terraform.rst:75
 msgid "Click :guilabel:`EXECUTE`"
-msgstr ""
+msgstr "Clique em :guilabel:`EXECUTE`"
 
 #: ../../tools/terraform.rst:77
 msgid "Command output is displayed in real-time and stored in execution history."
-msgstr ""
+msgstr "A saída do comando é exibida em tempo real e armazenada no histórico de execução."
 
 #: ../../tools/terraform.rst:79
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../tools/terraform.rst:79
 msgid ""
 "Terraform commands are prefixed with ``terraform`` automatically. Enter "
 "only the subcommand (e.g., ``plan`` not ``terraform plan``)."
-msgstr ""
+msgstr "Os comandos Terraform são prefixados com ``terraform`` automaticamente. Digite apenas o subcomando (ex.: ``plan`` e não ``terraform plan``)."
 
 #: ../../tools/terraform.rst:82
 msgid "Terraform Settings"
-msgstr ""
+msgstr "Configurações Terraform"
 
 #: ../../tools/terraform.rst:84
 msgid ""
 "Global Terraform settings are configured in "
 ":menuselection:`Administration --> Settings --> Provisioning` "
 "(Administration > Settings > Provisioning):"
-msgstr ""
+msgstr "As configurações globais do Terraform são definidas em :menuselection:`Administration --> Settings --> Provisioning` (Administration > Settings > Provisioning):"
 
 #: ../../tools/terraform.rst:87
 msgid "Terraform Runtime"
-msgstr ""
+msgstr "Runtime Terraform"
 
 #: ../../tools/terraform.rst:89
 msgid ""
 "**TERRAFORM RUNTIME:** Select the Terraform runtime version (e.g., "
 "``1.5.x``, ``1.6.x``)"
-msgstr ""
+msgstr "**TERRAFORM RUNTIME:** Selecione a versão do runtime Terraform (ex.: ``1.5.x``, ``1.6.x``)"
 
 #: ../../tools/terraform.rst:90
 msgid "This sets the default Terraform version used for new deployments"
-msgstr ""
+msgstr "Isso define a versão padrão do Terraform usada para novas implementações"
 
 #: ../../tools/terraform.rst:91
 msgid ""
 "Individual Apps/Instances may specify version constraints in their "
 "configuration"
-msgstr ""
+msgstr "Apps/Instâncias individuais podem especificar restrições de versão em sua configuração"
 
 #: ../../tools/terraform.rst:94
 msgid "State Backend"
-msgstr ""
+msgstr "Backend de Estado"
 
 #: ../../tools/terraform.rst:96
 msgid "By default, |morpheus| acts as the state backend"
-msgstr ""
+msgstr "Por padrão, o |morpheus| atua como o backend de estado"
 
 #: ../../tools/terraform.rst:97
 msgid ""
 "Remote backends (S3, Azure Blob, GCS, Consul) can be configured in the "
 "Terraform configuration files"
-msgstr ""
+msgstr "Backends remotos (S3, Azure Blob, GCS, Consul) podem ser configurados nos arquivos de configuração do Terraform"
 
 #: ../../tools/terraform.rst:100
 msgid "Terraform Providers"
-msgstr ""
+msgstr "Provedores Terraform"
 
 #: ../../tools/terraform.rst:102
 msgid ""
@@ -277,143 +277,143 @@ msgid ""
 "Registry. Provider plugins are downloaded automatically during "
 "``terraform init`` based on the configuration's ``required_providers`` "
 "block."
-msgstr ""
+msgstr "O |morpheus| oferece suporte a todos os provedores Terraform disponíveis no Terraform Registry. Plugins de provedor são baixados automaticamente durante ``terraform init`` com base no bloco ``required_providers`` da configuração."
 
 #: ../../tools/terraform.rst:105
 msgid "Terraform Variables"
-msgstr ""
+msgstr "Variáveis Terraform"
 
 #: ../../tools/terraform.rst:107
 msgid "Variables for Terraform plans can be supplied from multiple sources:"
-msgstr ""
+msgstr "Variáveis para planos Terraform podem ser fornecidas a partir de várias fontes:"
 
 #: ../../tools/terraform.rst:109
 msgid "**Instance configuration:** Variables set during provisioning"
-msgstr ""
+msgstr "**Configuração da Instância:** Variáveis definidas durante o provisionamento"
 
 #: ../../tools/terraform.rst:110
 msgid ""
 "**Cypher secrets:** Sensitive values pulled from |morpheus| Cypher "
 "(``tfvars`` mount)"
-msgstr ""
+msgstr "**Segredos Cypher:** Valores sensíveis obtidos do Cypher do |morpheus| (mount ``tfvars``)"
 
 #: ../../tools/terraform.rst:111
 msgid "**Input variables:** User-supplied values at execution time"
-msgstr ""
+msgstr "**Variáveis de entrada:** Valores fornecidos pelo usuário no momento da execução"
 
 #: ../../tools/terraform.rst:112
 msgid "**Environment variables:** ``TF_VAR_*`` environment variables"
-msgstr ""
+msgstr "**Variáveis de ambiente:** Variáveis de ambiente ``TF_VAR_*``"
 
 #: ../../tools/terraform.rst:114
 msgid "To store Terraform variable files securely:"
-msgstr ""
+msgstr "Para armazenar arquivos de variáveis Terraform com segurança:"
 
 #: ../../tools/terraform.rst:116
 msgid "Navigate to |TooCyp| (Tools > Cypher)"
-msgstr ""
+msgstr "Navegue até |TooCyp| (Tools > Cypher)"
 
 #: ../../tools/terraform.rst:117
 msgid "Create a key with the ``tfvars`` mount point: ``tfvars/myapp/variables``"
-msgstr ""
+msgstr "Crie uma chave com o ponto de montagem ``tfvars``: ``tfvars/myapp/variables``"
 
 #: ../../tools/terraform.rst:118
 msgid "Store the tfvars content as the value"
-msgstr ""
+msgstr "Armazene o conteúdo tfvars como o valor"
 
 #: ../../tools/terraform.rst:119
 msgid "Reference in your Terraform configuration"
-msgstr ""
+msgstr "Referencie em sua configuração Terraform"
 
 #: ../../tools/terraform.rst:122
 msgid "Workspaces"
-msgstr ""
+msgstr "Workspaces"
 
 #: ../../tools/terraform.rst:124
 msgid ""
 "Terraform workspaces allow managing multiple environments with a single "
 "configuration:"
-msgstr ""
+msgstr "Workspaces Terraform permitem gerenciar vários ambientes com uma única configuração:"
 
 #: ../../tools/terraform.rst:126
 msgid "|morpheus| tracks the active workspace for each Terraform deployment"
-msgstr ""
+msgstr "O |morpheus| rastreia o workspace ativo de cada implementação Terraform"
 
 #: ../../tools/terraform.rst:127
 msgid "Workspace selection can be part of the provisioning configuration"
-msgstr ""
+msgstr "A seleção de workspace pode fazer parte da configuração de provisionamento"
 
 #: ../../tools/terraform.rst:128
 msgid "State is maintained per-workspace"
-msgstr ""
+msgstr "O estado é mantido por workspace"
 
 #: ../../tools/terraform.rst:131
 msgid "Execution History"
-msgstr ""
+msgstr "Histórico de Execução"
 
 #: ../../tools/terraform.rst:133
 msgid "All Terraform command executions are tracked:"
-msgstr ""
+msgstr "Todas as execuções de comandos Terraform são rastreadas:"
 
 #: ../../tools/terraform.rst:135
 msgid "Navigate to the App or Instance detail page"
-msgstr ""
+msgstr "Navegue até a página de detalhe do App ou da Instância"
 
 #: ../../tools/terraform.rst:136
 msgid "Select the **History** tab"
-msgstr ""
+msgstr "Selecione a aba **History**"
 
 #: ../../tools/terraform.rst:137
 msgid "View past Terraform operations including:"
-msgstr ""
+msgstr "Visualize operações Terraform anteriores, incluindo:"
 
 #: ../../tools/terraform.rst:139
 msgid "Command executed"
-msgstr ""
+msgstr "Comando executado"
 
 #: ../../tools/terraform.rst:140
 msgid "Execution timestamp"
-msgstr ""
+msgstr "Carimbo de data/hora da execução"
 
 #: ../../tools/terraform.rst:141
 msgid "User who initiated the command"
-msgstr ""
+msgstr "Usuário que iniciou o comando"
 
 #: ../../tools/terraform.rst:142
 msgid "Exit code and output"
-msgstr ""
+msgstr "Código de saída e saída"
 
 #: ../../tools/terraform.rst:143
 msgid "Execution duration"
-msgstr ""
+msgstr "Duração da execução"
 
 #: ../../tools/terraform.rst:146
 msgid "Role Permissions"
-msgstr ""
+msgstr "Permissões de Função"
 
 #: ../../tools/terraform.rst:148
 msgid "Terraform operations are controlled by the following role permissions:"
-msgstr ""
+msgstr "As operações Terraform são controladas pelas seguintes permissões de função:"
 
 #: ../../tools/terraform.rst:150
 msgid "**Provisioning: State** — ``None``, ``Read``, ``Full``"
-msgstr ""
+msgstr "**Provisioning: State** — ``None``, ``Read``, ``Full``"
 
 #: ../../tools/terraform.rst:152
 msgid "**None:** Cannot access Terraform state"
-msgstr ""
+msgstr "**None:** Não pode acessar o estado Terraform"
 
 #: ../../tools/terraform.rst:153
 msgid "**Read:** Can view state and execution history"
-msgstr ""
+msgstr "**Read:** Pode visualizar o estado e o histórico de execução"
 
 #: ../../tools/terraform.rst:154
 msgid "**Full:** Can edit state and execute Terraform commands"
-msgstr ""
+msgstr "**Full:** Pode editar o estado e executar comandos Terraform"
 
 #: ../../tools/terraform.rst:156
 msgid ""
 "**Provisioning: Apps** or **Provisioning: Instances** — Required to "
 "access the parent resource"
-msgstr ""
+msgstr "**Provisioning: Apps** ou **Provisioning: Instances** — Necessário para acessar o recurso pai"
 

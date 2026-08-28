@@ -22,31 +22,31 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:2
 msgid "Known Limitations and Operational Considerations"
-msgstr ""
+msgstr "Limitations connues et considérations opérationnelles"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:8
 msgid "S.No"
-msgstr ""
+msgstr "N°"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:9
 msgid "Topic"
-msgstr ""
+msgstr "Rubrique"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:10
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:11
 msgid "Impact"
-msgstr ""
+msgstr "Impact"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:12
 msgid "Applicability"
-msgstr ""
+msgstr "Applicabilité"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:13
 msgid "Operational Guidance"
-msgstr ""
+msgstr "Recommandations opérationnelles"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:14
 msgid "1"
@@ -56,7 +56,7 @@ msgstr ""
 msgid ""
 "SATA Controller Initialization Delay During Importing HPE ProLiant Bare "
 "Metal Servers"
-msgstr ""
+msgstr "Délai d'initialisation du contrôleur SATA lors de l'importation de serveurs bare metal HPE ProLiant"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:16
 msgid ""
@@ -67,7 +67,7 @@ msgid ""
 "controller detected without attached disks.This behavior occurs during "
 "the initial hardware probing phase, before the server becomes available "
 "for provisioning in Morpheus."
-msgstr ""
+msgstr "Lors du processus d'importation de serveurs bare metal et de découverte matérielle, si un serveur possède un ou plusieurs contrôleurs SATA sans disques SATA attachés, le système attend un minimum de 5 minutes par contrôleur SATA avant de continuer. Le temps d'attente est cumulatif et s'applique à chaque contrôleur SATA détecté sans disques attachés. Ce comportement se produit pendant la phase initiale de sonde matérielle, avant que le serveur ne devienne disponible pour le provisionnement dans Morpheus."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:17
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "provisioning.Delay proportional to the number of SATA controllers present"
 " without disks.No impact once the server import process has completed.No "
 "impact when SATA controllers have SATA disks attached."
-msgstr ""
+msgstr "Augmentation du temps nécessaire pour terminer la découverte, l'importation et le provisionnement des serveurs bare metal. Délai proportionnel au nombre de contrôleurs SATA présents sans disques. Aucun impact une fois le processus d'importation du serveur terminé. Aucun impact lorsque les contrôleurs SATA ont des disques SATA attachés."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:18
 msgid ""
@@ -83,7 +83,7 @@ msgid ""
 "where SATA controllers may be present but not populated with "
 "disks.Standard production deployments are not expected to include unused "
 "SATA controllers."
-msgstr ""
+msgstr "Cette condition est généralement observée dans des environnements de laboratoire ou d'évaluation où des contrôleurs SATA peuvent être présents mais non peuplés de disques. Les déploiements de production standard ne devraient pas inclure de contrôleurs SATA inutilisés."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:19
 msgid ""
@@ -94,5 +94,5 @@ msgid ""
 "the controller (for example, Embedded SATA Controller #1).Change theSATA "
 "Device DisablefromAutotoDisabled.Press F12 to save the changes and exit, "
 "followed by reboot."
-msgstr ""
+msgstr "Désactivation d'un contrôleur SATA intégré (HPE ProLiant) Redémarrez le serveur. Appuyez sur F9 pour entrer dans System Utilities. Accédez à : System Configuration→BIOS/Platform Configuration (RBSU)→PCIe Device Configuration. Pour chaque contrôleur SATA intégré non utilisé : Sélectionnez le contrôleur (par exemple, Embedded SATA Controller #1). Modifiez SATA Device Disable de Auto à Disabled. Appuyez sur F12 pour enregistrer les modifications et quitter, puis redémarrez."
 

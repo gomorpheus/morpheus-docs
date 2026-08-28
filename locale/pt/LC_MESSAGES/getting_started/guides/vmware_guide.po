@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:2
 msgid "Getting started with |morpheus| and VMware"
-msgstr ""
+msgstr "Introdução ao |morpheus| e VMware"
 
 #: ../../getting_started/guides/vmware_guide.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Introdução"
 
 #: ../../getting_started/guides/vmware_guide.rst:7
 msgid ""
@@ -40,11 +40,11 @@ msgid ""
 "forward from that point. There is a lot more to see and do in |morpheus| "
 "that is beyond the scope of this guide. For more, consult the complete "
 "|morpheus| documentation or take part in our user community forum."
-msgstr ""
+msgstr "Este guia foi elaborado para ajudar você a começar e aproveitar rapidamente ao máximo o |morpheus| com VMWare. Ao final, você integrará sua primeira nuvem, configurará redes, preparará e consumirá imagens, provisionará instâncias e começará com automação. Discutiremos brevemente a instalação e a configuração da conta, mas forneceremos links para recursos adicionais para esses primeiros passos. Em grande parte, este guia pressupõe que você consegue instalar o |morpheus| e está pronto para avançar a partir desse ponto. Há muito mais para ver e fazer no |morpheus| que está além do escopo deste guia. Para mais informações, consulte a documentação completa do |morpheus| ou participe do nosso fórum da comunidade de usuários."
 
 #: ../../getting_started/guides/vmware_guide.rst:10
 msgid "Installation & Setup"
-msgstr ""
+msgstr "Instalação e Configuração"
 
 #: ../../getting_started/guides/vmware_guide.rst:12
 msgid ""
@@ -59,11 +59,11 @@ msgid ""
 "valid license. If you don't have one, you can request a lab license for "
 "free at `Morpheus Hub <https://app.morpheushub.com>`_. Once obtained, the"
 " license can be applied in |AdmSetLic|."
-msgstr ""
+msgstr "Na configuração mais simples, o |morpheus| precisa de um servidor de appliance que conterá todos os componentes necessários para orquestrar máquinas virtuais e containers. Os requisitos completos, incluindo considerações de armazenamento e rede, podem ser encontrados na documentação do |morpheus| `aqui <https://docs.morpheusdata.com/en/4.1.0/getting_started/requirements/requirements.html#requirements>`_. Para provisionar quaisquer novas instâncias, hosts ou aplicações (ou converter quaisquer recursos descobertos em recursos gerenciados), você precisará de uma licença válida. Se não tiver uma, pode solicitar uma licença de laboratório gratuitamente no `Morpheus Hub <https://app.morpheushub.com>`_. Depois de obtida, a licença pode ser aplicada em |AdmSetLic|."
 
 #: ../../getting_started/guides/vmware_guide.rst:15
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: ../../getting_started/guides/vmware_guide.rst:17
 msgid ""
@@ -76,7 +76,7 @@ msgid ""
 "often useful to create a group that contains all clouds for testing "
 "purposes. We will create that group now so that we can add our first "
 "cloud into this group in the next section."
-msgstr ""
+msgstr "Grupos no |morpheus| definem a quais recursos um usuário tem acesso. Nuvens são adicionadas a grupos e um usuário só pode acessar nuvens que estão nos grupos aos quais suas funções dão acesso. Mais informações sobre grupos do |morpheus| estão `aqui <https://docs.morpheusdata.com/en/4.1.1/infrastructure/groups/groups.html#groups>`_. Um aprofundamento em grupos vai além do escopo deste guia, mas muitas vezes é útil criar um grupo que contenha todas as nuvens para fins de teste. Criaremos esse grupo agora para que possamos adicionar nossa primeira nuvem a este grupo na próxima seção."
 
 #: ../../getting_started/guides/vmware_guide.rst:19
 msgid ""
@@ -87,11 +87,11 @@ msgid ""
 "|morpheus| API or |morpheus| CLI. It's useful in most cases to have an "
 "\"All Clouds\" group for testing purposes so this will likely help you "
 "down the road."
-msgstr ""
+msgstr "Navegue até `Infrastructure > Groups`. Aqui veremos uma lista de todos os grupos configurados, mas, claro, ela estará vazia imediatamente após a instalação. Clique em \"+CREATE\". Dê um nome ao seu grupo, como \"All Clouds\". O campo \"CODE\" é usado ao chamar o |morpheus| pela API do |morpheus| ou pelo CLI do |morpheus|. É útil na maioria dos casos ter um grupo \"All Clouds\" para fins de teste, então isso provavelmente o ajudará no futuro."
 
 #: ../../getting_started/guides/vmware_guide.rst:21
 msgid "The new group dialog box showing a name for the group filled in"
-msgstr ""
+msgstr "A caixa de diálogo do novo grupo mostrando um nome preenchido para o grupo"
 
 #: ../../getting_started/guides/vmware_guide.rst:21
 msgid ".. image:: /images/vCenterGuideImages/Groups/1groupConfig.png"
@@ -99,18 +99,18 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:26
 msgid "Click \"SAVE CHANGES\". Your group is now ready to accept clouds."
-msgstr ""
+msgstr "Clique em \"SAVE CHANGES\". Seu grupo agora está pronto para aceitar nuvens."
 
 #: ../../getting_started/guides/vmware_guide.rst:29
 msgid "Integrating Your First Cloud"
-msgstr ""
+msgstr "Integrando Sua Primeira Nuvem"
 
 #: ../../getting_started/guides/vmware_guide.rst:31
 msgid ""
 "Clouds in |morpheus| consist of any consumable endpoint whether that be "
 "On-Prem, Public clouds, or even bare metal. In this guide, we will focus "
 "on integrating and working with VMWare vCenter."
-msgstr ""
+msgstr "Nuvens no |morpheus| consistem em qualquer endpoint consumível, seja On-Prem, nuvens públicas ou até bare metal. Neste guia, focaremos em integrar e trabalhar com VMWare vCenter."
 
 #: ../../getting_started/guides/vmware_guide.rst:33
 msgid ""
@@ -118,17 +118,17 @@ msgid ""
 "the cloud detail page which lists all configured clouds. It will be empty"
 " if you've just completed installation and setup of |morpheus| but soon "
 "we will see our integrated vCenter cloud here."
-msgstr ""
+msgstr "Para começar, navegaremos até `Infrastructure > Clouds`. Esta é a página de detalhes da nuvem que lista todas as nuvens configuradas. Ela estará vazia se você acabou de concluir a instalação e configuração do |morpheus|, mas em breve veremos nossa nuvem vCenter integrada aqui."
 
 #: ../../getting_started/guides/vmware_guide.rst:35
 msgid ""
 "Click the \"+ADD\" button to pop the \"CREATE CLOUD\" wizard. Select "
 "\"VMWARE VCENTER\" and click the \"NEXT\" button."
-msgstr ""
+msgstr "Clique no botão \"+ADD\" para abrir o assistente \"CREATE CLOUD\". Selecione \"VMWARE VCENTER\" e clique no botão \"NEXT\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:37
 msgid "The list of clouds available to integrate with, vCenter is selected"
-msgstr ""
+msgstr "A lista de nuvens disponíveis para integração; o vCenter está selecionado"
 
 #: ../../getting_started/guides/vmware_guide.rst:37
 msgid ".. image:: /images/vCenterGuideImages/FirstCloud/1createCloud.png"
@@ -139,11 +139,11 @@ msgid ""
 "On the \"CONFIGURE\" tab, we're asked to set the initial connection "
 "strings into vSphere. The **API URL** should be in the following format: "
 "https://<URL>/sdk. The **USERNAME** should be in user@domain format."
-msgstr ""
+msgstr "Na guia \"CONFIGURE\", somos solicitados a definir as strings de conexão iniciais no vSphere. A **API URL** deve estar no seguinte formato: https://<URL>/sdk. O **USERNAME** deve estar no formato user@domain."
 
 #: ../../getting_started/guides/vmware_guide.rst:44
 msgid "The create cloud dialog box with relevant fields filled"
-msgstr ""
+msgstr "A caixa de diálogo de criar nuvem com os campos relevantes preenchidos"
 
 #: ../../getting_started/guides/vmware_guide.rst:44
 msgid ".. image:: /images/vCenterGuideImages/FirstCloud/2cloudConfigure.png"
@@ -155,7 +155,7 @@ msgid ""
 "**CLUSTER** or even the specific **RESOURCE POOL** if you choose. Once "
 "you've entered your URL and credentials, these dropdown menus will become"
 " populated."
-msgstr ""
+msgstr "O |morpheus| permite que nuvens vCenter sejam delimitadas ao **VDC** e **CLUSTER** ou até mesmo ao **RESOURCE POOL** específico, se você escolher. Depois de informar sua URL e credenciais, esses menus suspensos serão preenchidos."
 
 #: ../../getting_started/guides/vmware_guide.rst:51
 msgid ""
@@ -166,7 +166,7 @@ msgid ""
 "recommended to select **Vmware Tools** but WinRM/SSH are able to be used "
 "to configure the guest directly.  If using WinRM, ensure it is configured"
 " on the virtual image, discusssed below."
-msgstr ""
+msgstr "A configuração **RPC MODE** determina como o |morpheus| se conectará às VMs e fará chamadas de configuração e scripting se o `Morpheus Agent <https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html#morpheus-agent>`_ não estiver instalado. Em um ambiente VMware, recomenda-se selecionar **Vmware Tools**, mas WinRM/SSH também podem ser usados para configurar o guest diretamente. Se usar WinRM, certifique-se de que ele esteja configurado na imagem virtual, discutido abaixo."
 
 #: ../../getting_started/guides/vmware_guide.rst:53
 msgid ""
@@ -174,11 +174,11 @@ msgid ""
 "polling VMs for statistics and rightsizing recommendations as well as "
 "**ENABLE HYPERVISOR CONSOLE** to use native vSphere console with port 443"
 " connectivity between |morpheus| and ESXi hosts."
-msgstr ""
+msgstr "Além disso, podemos optar por **INVENTORY EXISTING INSTANCES** para começar a coletar estatísticas de VMs e recomendações de rightsizing, bem como **ENABLE HYPERVISOR CONSOLE** para usar o console nativo do vSphere com conectividade na porta 443 entre o |morpheus| e os hosts ESXi."
 
 #: ../../getting_started/guides/vmware_guide.rst:55
 msgid "To move on, expand the \"Advanced Options\" section."
-msgstr ""
+msgstr "Para continuar, expanda a seção \"Advanced Options\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:57
 msgid ""
@@ -188,11 +188,11 @@ msgid ""
 " are **DOMAIN**, **STORAGE TYPE**, **APPLIANCE URL** (overrides the "
 "|morpheus| URL for external systems), **GUIDANCE** (setting \"Manual\" "
 "will make recommendations for rightsizing), and **AGENT INSTALL MODE**."
-msgstr ""
+msgstr "Na seção \"Advanced Options\" há configurações adicionais a considerar para sua primeira nuvem. Algumas delas não serão utilizáveis até que referenciem integrações adicionais configuradas. Configurações comuns a considerar são **DOMAIN**, **STORAGE TYPE**, **APPLIANCE URL** (substitui a URL do |morpheus| para sistemas externos), **GUIDANCE** (definir \"Manual\" fará recomendações de rightsizing) e **AGENT INSTALL MODE**."
 
 #: ../../getting_started/guides/vmware_guide.rst:59
 msgid "The advanced options section of the create cloud dialog box"
-msgstr ""
+msgstr "A seção de opções avançadas da caixa de diálogo de criar nuvem"
 
 #: ../../getting_started/guides/vmware_guide.rst:59
 msgid ".. image:: /images/vCenterGuideImages/FirstCloud/3advancedOptions.png"
@@ -200,18 +200,18 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:64
 msgid "Once you're satisfied with your selections, click \"NEXT\""
-msgstr ""
+msgstr "Quando estiver satisfeito com suas seleções, clique em \"NEXT\""
 
 #: ../../getting_started/guides/vmware_guide.rst:66
 msgid ""
 "We have now arrived at the \"GROUP\" tab. In this case, we will mark the "
 "radio button to \"USE EXISTING\" groups if you wish to use the group we "
 "configured earlier."
-msgstr ""
+msgstr "Chegamos agora à guia \"GROUP\". Neste caso, marcaremos o botão de opção para \"USE EXISTING\" groups se desejar usar o grupo que configuramos anteriormente."
 
 #: ../../getting_started/guides/vmware_guide.rst:68
 msgid "The group tab of the create cloud dialog box"
-msgstr ""
+msgstr "A guia group da caixa de diálogo de criar nuvem"
 
 #: ../../getting_started/guides/vmware_guide.rst:68
 msgid ".. image:: /images/vCenterGuideImages/FirstCloud/4groupTab.png"
@@ -219,7 +219,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:73
 msgid "Once you've selected the group, click \"NEXT\""
-msgstr ""
+msgstr "Depois de selecionar o grupo, clique em \"NEXT\""
 
 #: ../../getting_started/guides/vmware_guide.rst:75
 msgid ""
@@ -228,11 +228,11 @@ msgid ""
 "cloud detail page. After a short time, |morpheus| will provide summary "
 "information and statistics on existing virtual machines, networks, and "
 "other resources available in the cloud."
-msgstr ""
+msgstr "Na guia final do assistente \"CREATE CLOUD\", você confirmará suas seleções e clicará em \"COMPLETE\". A nova nuvem agora está listada na página de detalhes da nuvem. Após um curto período, o |morpheus| fornecerá informações resumidas e estatísticas sobre máquinas virtuais existentes, redes e outros recursos disponíveis na nuvem."
 
 #: ../../getting_started/guides/vmware_guide.rst:78
 msgid "Viewing Cloud Inventory"
-msgstr ""
+msgstr "Visualizando o Inventário da Nuvem"
 
 #: ../../getting_started/guides/vmware_guide.rst:80
 msgid ""
@@ -245,17 +245,17 @@ msgid ""
 "various categories individual resources within them by clicking on the "
 "category tabs. We can link to the detail page for any specific resource "
 "by clicking on it from its resource category list."
-msgstr ""
+msgstr "Agora que integramos nossa primeira nuvem VMware, podemos pausar por um momento para revisar o que o |morpheus| nos oferece na página de detalhes da nuvem. Podemos ver que o |morpheus| fornece custos estimados e históricos de custos, métricas sobre recursos usados e também lista contagens de recursos em várias categorias, incluindo hosts de container, hypervisors e máquinas virtuais. Podemos aprofundar nessas categorias para ver listas de recursos nas várias categorias e recursos individuais nelas clicando nas guias de categoria. Podemos vincular à página de detalhes de qualquer recurso específico clicando nele a partir de sua lista de categoria de recurso."
 
 #: ../../getting_started/guides/vmware_guide.rst:83
 msgid "Configuring Resource Pools"
-msgstr ""
+msgstr "Configurando Pools de Recursos"
 
 #: ../../getting_started/guides/vmware_guide.rst:85
 msgid ""
 "With our VMware cloud configured, |morpheus| will automatically sync in "
 "available resource pools and data stores."
-msgstr ""
+msgstr "Com nossa nuvem VMware configurada, o |morpheus| sincronizará automaticamente os pools de recursos e data stores disponíveis."
 
 #: ../../getting_started/guides/vmware_guide.rst:87
 msgid ""
@@ -269,11 +269,11 @@ msgid ""
 "then click \"SAVE CHANGES\" we will see that the resource pool is now "
 "grayed out in the list. The resources contained in that pool will not be "
 "accessible for provisioning within |morpheus|."
-msgstr ""
+msgstr "Para pools de recursos, depois que o |morpheus| tiver tempo para ingeri-los, eles ficarão visíveis na página de detalhes da nuvem. Navegue até `Infrastructure > Clouds > (sua nuvem VMware) > guia RESOURCES`. Aqui, podemos ver e controlar o acesso aos vários pools de recursos que foram configurados no vCenter. Por exemplo, podemos restringir completamente o acesso a um pool de recursos específico no |morpheus| clicando no botão \"ACTIONS\" e depois em \"Edit\". Se desmarcarmos o botão \"ACTIVE\" e depois clicarmos em \"SAVE CHANGES\", veremos que o pool de recursos agora está esmaecido na lista. Os recursos contidos nesse pool não estarão acessíveis para provisionamento no |morpheus|."
 
 #: ../../getting_started/guides/vmware_guide.rst:89
 msgid "The list of synced resource pools in |morpheus|"
-msgstr ""
+msgstr "A lista de pools de recursos sincronizados no |morpheus|"
 
 #: ../../getting_started/guides/vmware_guide.rst:89
 msgid ".. image:: /images/vCenterGuideImages/ResourcePools/1resourcePools.png"
@@ -289,11 +289,11 @@ msgid ""
 "choose to make some or all of our resource pools available to every "
 "group. Specific resource pools can also be defined as the default for "
 "each group if needed."
-msgstr ""
+msgstr "Frequentemente, nossos clientes quererão disponibilizar blocos específicos de recursos para seus próprios clientes. Isso pode ser controlado de forma fácil e conveniente pela mesma caixa de diálogo \"EDIT RESOURCE POOL\" em que estávamos trabalhando. Se expandirmos a seção \"Group Access\", poderemos conceder ou remover o acesso a cada pool para qualquer grupo que desejarmos. Também podemos optar por disponibilizar alguns ou todos os nossos pools de recursos para todos os grupos. Pools de recursos específicos também podem ser definidos como padrão para cada grupo, se necessário."
 
 #: ../../getting_started/guides/vmware_guide.rst:96
 msgid "The edit resource pools dialog box"
-msgstr ""
+msgstr "A caixa de diálogo de editar pools de recursos"
 
 #: ../../getting_started/guides/vmware_guide.rst:96
 msgid ".. image:: /images/vCenterGuideImages/ResourcePools/2editResourcePools.png"
@@ -306,17 +306,17 @@ msgid ""
 "specific cluster is my SQL cluster and only specific services plans "
 "should be consumable within it. We can control that through this same "
 "dialog box."
-msgstr ""
+msgstr "Além disso, podemos optar por permitir que apenas certos planos de serviço sejam provisionados em um pool específico de recursos. Por exemplo, talvez um cluster específico seja meu cluster SQL e apenas planos de serviço específicos devam ser consumíveis nele. Podemos controlar isso por meio desta mesma caixa de diálogo."
 
 #: ../../getting_started/guides/vmware_guide.rst:104
 msgid "Configuring Data Stores"
-msgstr ""
+msgstr "Configurando Data Stores"
 
 #: ../../getting_started/guides/vmware_guide.rst:106
 msgid ""
 "To take a look at data stores, we'll move from the \"RESOURCES\" tab to "
 "the \"DATA STORES\" tab on our cloud detail page."
-msgstr ""
+msgstr "Para examinar os data stores, passaremos da guia \"RESOURCES\" para a guia \"DATA STORES\" na página de detalhes da nossa nuvem."
 
 #: ../../getting_started/guides/vmware_guide.rst:108
 msgid ""
@@ -325,11 +325,11 @@ msgid ""
 "disable access within |morpheus| completely by clicking on \"ACTIONS\" "
 "and then \"Edit\". If we unmark the \"ACTIVE\" checkbox and click \"SAVE "
 "CHANGES\", you will see that specific data store has been grayed out."
-msgstr ""
+msgstr "O |morpheus| dá ao usuário um controle semelhante com data stores ao que vimos com nossos pools de recursos anteriormente. Assim como com pools de recursos, podemos desativar completamente o acesso no |morpheus| clicando em \"ACTIONS\" e depois em \"Edit\". Se desmarcarmos a caixa \"ACTIVE\" e clicarmos em \"SAVE CHANGES\", você verá que o data store específico foi esmaecido."
 
 #: ../../getting_started/guides/vmware_guide.rst:110
 msgid "The list of synced data stored in |morpheus|"
-msgstr ""
+msgstr "A lista de data stores sincronizados no |morpheus|"
 
 #: ../../getting_started/guides/vmware_guide.rst:110
 msgid ".. image:: /images/vCenterGuideImages/DataStores/1dataStores.png"
@@ -340,11 +340,11 @@ msgid ""
 "Just like with resource pools, we are also able to scope data stores to "
 "specific groups. This ensures that the members of each group are only "
 "able to consume the data stores they should have access to."
-msgstr ""
+msgstr "Assim como com pools de recursos, também podemos delimitar data stores a grupos específicos. Isso garante que os membros de cada grupo só possam consumir os data stores aos quais devem ter acesso."
 
 #: ../../getting_started/guides/vmware_guide.rst:117
 msgid "The edit data stores dialog box"
-msgstr ""
+msgstr "A caixa de diálogo de editar data stores"
 
 #: ../../getting_started/guides/vmware_guide.rst:117
 msgid ".. image:: /images/vCenterGuideImages/DataStores/2editDataStores.png"
@@ -352,7 +352,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:123
 msgid "Configuring Folders"
-msgstr ""
+msgstr "Configurando Pastas"
 
 #: ../../getting_started/guides/vmware_guide.rst:125
 msgid ""
@@ -360,30 +360,30 @@ msgid ""
 "the folders discovered from the vCenter Cloud. Edit folder configurations"
 " by selecting \"ACTIONS\" from the end of the row, then clicking "
 "\"Edit\". Consider the following configurations for specific folders:"
-msgstr ""
+msgstr "Ainda na guia \"RESOURCES\", na subguia \"FOLDERS\" vemos as pastas descobertas da Nuvem vCenter. Edite as configurações da pasta selecionando \"ACTIONS\" no final da linha e depois clicando em \"Edit\". Considere as seguintes configurações para pastas específicas:"
 
 #: ../../getting_started/guides/vmware_guide.rst:127
 msgid ""
 "**DEFAULT:** If selected, this folder will be pre-selected when "
 "provisioning new Instances to this Cloud (See the Folder option on the "
 "CONFIGURE tab of the Instance provisioning wizard)"
-msgstr ""
+msgstr "**DEFAULT:** Se selecionada, esta pasta será pré-selecionada ao provisionar novas Instâncias nesta Nuvem (Consulte a opção Folder na guia CONFIGURE do assistente de provisionamento de Instância)"
 
 #: ../../getting_started/guides/vmware_guide.rst:128
 msgid ""
 "**IMAGE TARGET:** |morpheus| will look in the image target folder(s) to "
 "onboard VMware images"
-msgstr ""
+msgstr "**IMAGE TARGET:** O |morpheus| procurará na(s) pasta(s) image target para integrar imagens VMware"
 
 #: ../../getting_started/guides/vmware_guide.rst:130
 msgid ""
 "After saving the changes, you'll see any folders set as default or image "
 "target indicated in the folders list."
-msgstr ""
+msgstr "Após salvar as alterações, você verá quaisquer pastas definidas como default ou image target indicadas na lista de pastas."
 
 #: ../../getting_started/guides/vmware_guide.rst:133
 msgid "Configuring Network for Provisioning"
-msgstr ""
+msgstr "Configurando a Rede para Provisionamento"
 
 #: ../../getting_started/guides/vmware_guide.rst:135
 msgid ""
@@ -394,11 +394,11 @@ msgid ""
 "and may also be paginated across a large number of pages. In such a case,"
 " it may be easier to view or configure networks from the specific cloud "
 "detail page so that networks from other clouds are not shown."
-msgstr ""
+msgstr "Ao configurar a rede, podemos definir padrões globais em `Infrastructure > Network > guia NETWORKS`. Aqui podemos adicionar ou configurar redes de todas as nuvens integradas ao |morpheus|. Dependendo do número de nuvens que o |morpheus| ingeriu, esta lista pode ser bastante grande e também pode ser paginada em um grande número de páginas. Nesse caso, pode ser mais fácil visualizar ou configurar redes na página de detalhes da nuvem específica para que redes de outras nuvens não sejam mostradas."
 
 #: ../../getting_started/guides/vmware_guide.rst:137
 msgid "The list of configured neworks"
-msgstr ""
+msgstr "A lista de redes configuradas"
 
 #: ../../getting_started/guides/vmware_guide.rst:137
 msgid ".. image:: /images/vCenterGuideImages/Network/1networksSection.png"
@@ -414,11 +414,11 @@ msgid ""
 "integration "
 "<https://docs.morpheusdata.com/en/4.1.1/integration_guides/integration_guides.html#networking>`_"
 " section of |morpheus| Docs."
-msgstr ""
+msgstr "Ainda em `Infrastructure > Network`, observe a guia \"INTEGRATIONS\". É aqui que podemos configurar quaisquer integrações que possam ser relevantes, como integrações IPAM. De modo geral, ao adicionar integrações IPAM, precisamos apenas nomear nossa nova integração, informar a URL da API e fornecer credenciais. Há mais informações na seção de `integração IPAM <https://docs.morpheusdata.com/en/4.1.1/integration_guides/integration_guides.html#networking>`_ da documentação do |morpheus|."
 
 #: ../../getting_started/guides/vmware_guide.rst:144
 msgid "The add IPAM integration dialog box"
-msgstr ""
+msgstr "A caixa de diálogo de adicionar integração IPAM"
 
 #: ../../getting_started/guides/vmware_guide.rst:144
 msgid ".. image:: /images/vCenterGuideImages/Network/2addIPAM.png"
@@ -438,11 +438,11 @@ msgid ""
 "the Networks List Page (Infrastructure > Networks > Networks Tab) and "
 "fill in the \"Network Pool\" field to associate the IP Pool with the "
 "network."
-msgstr ""
+msgstr "Em `Infrastructure > Networking` também podemos configurar pools de endereços IP na guia IP Pools. Esses pools podem ser definidos manualmente, conhecidos como um IP pool do tipo |morpheus|, ou podem vir de quaisquer integrações IPAM que você tenha configurado. À medida que as instâncias são provisionadas, o |morpheus| atribuirá endereços IP do pool escolhido durante o provisionamento. Quando a instância for dissolvida mais tarde, o |morpheus| liberará automaticamente o endereço IP para ser usado por outra instância quando necessário. Ao adicionar ou editar uma rede, podemos optar por delimitar a rede a um desses pools de endereços IP configurados. Edite uma rede existente clicando no ícone de lápis na Página de Lista de Redes (Infrastructure > Networks > Networks Tab) e preencha o campo \"Network Pool\" para associar o IP Pool à rede."
 
 #: ../../getting_started/guides/vmware_guide.rst:151
 msgid "Creating a |morpheus|-type IP pool"
-msgstr ""
+msgstr "Criando um IP pool do tipo |morpheus|"
 
 #: ../../getting_started/guides/vmware_guide.rst:151
 msgid ".. image:: /images/vCenterGuideImages/Network/3addIPPool.png"
@@ -457,11 +457,11 @@ msgid ""
 "with resource pools and data stores, we have the ability to make certain "
 "networks inactive in |morpheus|, or scope them to be usable only for "
 "certain groups or tenants."
-msgstr ""
+msgstr "Como este guia se concentra em trabalhar em uma nuvem VMware que integramos no início, também examinaremos nossas configurações de rede na página de detalhes da nuvem. Navegue até `Infrastructure > Clouds > (sua nuvem VMware) > guia NETWORKS`. Assim como com pools de recursos e data stores, temos a capacidade de tornar certas redes inativas no |morpheus|, ou delimitá-las para serem utilizáveis apenas por certos grupos ou tenants."
 
 #: ../../getting_started/guides/vmware_guide.rst:158
 msgid "Viewing networks on the cloud detail page"
-msgstr ""
+msgstr "Visualizando redes na página de detalhes da nuvem"
 
 #: ../../getting_started/guides/vmware_guide.rst:158
 msgid ".. image:: /images/vCenterGuideImages/Network/4cloudNetworks.png"
@@ -469,7 +469,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:164
 msgid "Prepping an Image"
-msgstr ""
+msgstr "Preparando uma Imagem"
 
 #: ../../getting_started/guides/vmware_guide.rst:166
 msgid ""
@@ -481,45 +481,45 @@ msgid ""
 "requirements. We will work with images included in |morpheus| by default "
 "in this guide but it's important to discuss how to prep custom images as "
 "well."
-msgstr ""
+msgstr "Como discutiremos e experimentaremos na próxima seção, o |morpheus| vem pronto com um conjunto padrão de blueprints relevantes para muitos cenários modernos de implementação. Em grande parte, essas são imagens base de sistema operacional com alguns ajustes adicionais. No entanto, em muitas implementações on-premise, frequentemente há requisitos personalizados de imagem e rede. Trabalharemos com imagens incluídas no |morpheus| por padrão neste guia, mas é importante discutir também como preparar imagens personalizadas."
 
 #: ../../getting_started/guides/vmware_guide.rst:169
 msgid "Creating a Windows Image"
-msgstr ""
+msgstr "Criando uma Imagem Windows"
 
 #: ../../getting_started/guides/vmware_guide.rst:171
 msgid "The following versions of Windows Server are supported:"
-msgstr ""
+msgstr "As seguintes versões do Windows Server são suportadas:"
 
 #: ../../getting_started/guides/vmware_guide.rst:173
 msgid "2008 R2"
-msgstr ""
+msgstr "2008 R2"
 
 #: ../../getting_started/guides/vmware_guide.rst:174
 msgid "2012"
-msgstr ""
+msgstr "2012"
 
 #: ../../getting_started/guides/vmware_guide.rst:175
 msgid "2012 R2"
-msgstr ""
+msgstr "2012 R2"
 
 #: ../../getting_started/guides/vmware_guide.rst:176
 msgid "2016"
-msgstr ""
+msgstr "2016"
 
 #: ../../getting_started/guides/vmware_guide.rst:177
 msgid "2019"
-msgstr ""
+msgstr "2019"
 
 #: ../../getting_started/guides/vmware_guide.rst:178
 msgid "2022"
-msgstr ""
+msgstr "2022"
 
 #: ../../getting_started/guides/vmware_guide.rst:180
 msgid ""
 "To start, create a new Windows VM in vCenter using a base version of your"
 " selected Windows build."
-msgstr ""
+msgstr "Para começar, crie uma nova VM Windows no vCenter usando uma versão base do build do Windows selecionado."
 
 #: ../../getting_started/guides/vmware_guide.rst:182
 #: ../../getting_started/guides/vmware_guide.rst:188
@@ -532,7 +532,7 @@ msgstr ""
 #: ../../getting_started/guides/vmware_guide.rst:479
 #: ../../getting_started/guides/vmware_guide.rst:574
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/guides/vmware_guide.rst:183
 msgid ""
@@ -540,7 +540,7 @@ msgid ""
 "purposes as this generally speeds cloning and deploy times. Morpheus "
 "provisioning and post-deploy scripts allow to to expand the drive to any "
 "size that you need."
-msgstr ""
+msgstr "Recomenda-se tornar a unidade VMDK o menor possível para seus propósitos, pois isso geralmente acelera os tempos de clonagem e implementação. Os scripts de provisionamento e pós-implementação do Morpheus permitem expandir a unidade para qualquer tamanho de que você precise."
 
 #: ../../getting_started/guides/vmware_guide.rst:185
 msgid ""
@@ -550,7 +550,7 @@ msgid ""
 "``Vmware Tools``, and the |morpheus| agent is not installed, |morpheus| "
 "can communicate with the virtual machine directly for tasks and other "
 "processes."
-msgstr ""
+msgstr "Depois que a VM for criada, certifique-se de que o VMware Tools esteja instalado no sistema operacional. Isso garantirá que a máquina virtual possa se comunicar corretamente com o vCenter, mas também, se a nuvem foi configurada para usar ``RPC MODE`` de ``Vmware Tools`` e o agente |morpheus| não estiver instalado, o |morpheus| poderá se comunicar com a máquina virtual diretamente para tarefas e outros processos."
 
 #: ../../getting_started/guides/vmware_guide.rst:189
 msgid ""
@@ -559,36 +559,36 @@ msgid ""
 " allowed from your Morpheus appliance through the local Windows firewall."
 "  Also, run the following command to enable WinRM in the guest: ``winrm "
 "quickconfig``"
-msgstr ""
+msgstr "Se a nuvem foi configurada para usar ``RPC MODE`` de ``SSH/WinRM``, será necessário configurar o WinRM na máquina virtual. Certifique-se de que o WinRM seja permitido a partir do seu appliance Morpheus através do firewall local do Windows. Além disso, execute o seguinte comando para ativar o WinRM no guest: ``winrm quickconfig``"
 
 #: ../../getting_started/guides/vmware_guide.rst:192
 msgid ""
 "Next, install .NET 4.5.2 or higher as a `requirement "
 "<https://docs.morpheusdata.com/en/latest/getting_started/functionality/agent/agentInstallation.html"
 "#agent-install-requirements>`_ for the Morpheus agent."
-msgstr ""
+msgstr "Em seguida, instale o .NET 4.5.2 ou superior como um `requisito <https://docs.morpheusdata.com/en/latest/getting_started/functionality/agent/agentInstallation.html#agent-install-requirements>`_ para o agente Morpheus."
 
 #: ../../getting_started/guides/vmware_guide.rst:194
 msgid ""
 "Finally, choose a method that will be used to customize the operating "
 "system:"
-msgstr ""
+msgstr "Por fim, escolha um método que será usado para personalizar o sistema operacional:"
 
 #: ../../getting_started/guides/vmware_guide.rst:196
 msgid "Guest Customization"
-msgstr ""
+msgstr "Guest Customization"
 
 #: ../../getting_started/guides/vmware_guide.rst:197
 msgid "Sysprep"
-msgstr ""
+msgstr "Sysprep"
 
 #: ../../getting_started/guides/vmware_guide.rst:198
 msgid "Cloudbase-Init"
-msgstr ""
+msgstr "Cloudbase-Init"
 
 #: ../../getting_started/guides/vmware_guide.rst:200
 msgid "**Using Guest Customization (Recommended)**"
-msgstr ""
+msgstr "**Usando Guest Customization (Recomendado)**"
 
 #: ../../getting_started/guides/vmware_guide.rst:202
 msgid ""
@@ -596,11 +596,11 @@ msgid ""
 " its own customization specification and applying it at deployment.  "
 "There are no other changes needed in the guest operating system when "
 "using this method."
-msgstr ""
+msgstr "O |morpheus| pode utilizar o recurso de guest customizations do vCenter, criando sua própria especificação de personalização e aplicando-a na implementação. Não há outras alterações necessárias no sistema operacional guest ao usar este método."
 
 #: ../../getting_started/guides/vmware_guide.rst:204
 msgid "Turn off the virtual machine and convert it to a template"
-msgstr ""
+msgstr "Desligue a máquina virtual e converta-a em um template"
 
 #: ../../getting_started/guides/vmware_guide.rst:206
 msgid ""
@@ -608,18 +608,18 @@ msgid ""
 "Short).  Once the Virtual Image has been synced into "
 ":menuselection:`Library --> Virtual Images`, edit it and ensure **VMware "
 "Guest Customization?** is checked."
-msgstr ""
+msgstr "Atualize sua nuvem (|InfClo| > Click Cloud > :guilabel:`Refresh` > Short). Depois que a Virtual Image tiver sido sincronizada em :menuselection:`Library --> Virtual Images`, edite-a e certifique-se de que **VMware Guest Customization?** esteja marcado."
 
 #: ../../getting_started/guides/vmware_guide.rst:208
 msgid "**Using Windows Sysprep**"
-msgstr ""
+msgstr "**Usando Windows Sysprep**"
 
 #: ../../getting_started/guides/vmware_guide.rst:210
 msgid ""
 "|morpheus| can inject an unattend file via CD-ROM to override the default"
 " sysprep process when preparing a virtual machine.  Run the following "
 "command from the guest operating system to sysprep the operating system:"
-msgstr ""
+msgstr "O |morpheus| pode injetar um arquivo unattend via CD-ROM para substituir o processo sysprep padrão ao preparar uma máquina virtual. Execute o seguinte comando a partir do sistema operacional guest para fazer o sysprep do sistema operacional:"
 
 #: ../../getting_started/guides/vmware_guide.rst:212
 msgid "``C:\\Windows\\System32\\sysprep /oobe /generalize /shutdown``"
@@ -630,7 +630,7 @@ msgid ""
 "The unattend file created on the virtual machine can be ignored, no "
 "changes will be needed.  Once the virtual machine has completed shutting "
 "down, convert it to a template."
-msgstr ""
+msgstr "O arquivo unattend criado na máquina virtual pode ser ignorado; nenhuma alteração será necessária. Depois que a máquina virtual tiver concluído o desligamento, converta-a em um template."
 
 #: ../../getting_started/guides/vmware_guide.rst:216
 msgid ""
@@ -638,7 +638,7 @@ msgid ""
 "Short).  Once the Virtual Image has been synced into "
 ":menuselection:`Library --> Virtual Images`, edit it and ensure "
 "**Sysprepped/Generalized Image?** is checked."
-msgstr ""
+msgstr "Atualize sua nuvem (|InfClo| > Click Cloud > :guilabel:`Refresh` > Short). Depois que a Virtual Image tiver sido sincronizada em :menuselection:`Library --> Virtual Images`, edite-a e certifique-se de que **Sysprepped/Generalized Image?** esteja marcado."
 
 #: ../../getting_started/guides/vmware_guide.rst:218
 msgid ""
@@ -646,15 +646,15 @@ msgid ""
 "using static IP addresses or IP pools when provisioning, ensure a Sysprep"
 " has not been performed in the guest. In such cases, a guest "
 "customization will always be performed."
-msgstr ""
+msgstr "Se **VMware Guest Customization?** estiver ativado na imagem virtual ou se estiver usando endereços IP estáticos ou pools de IP ao provisionar, certifique-se de que um Sysprep não tenha sido realizado no guest. Nesses casos, uma guest customization sempre será realizada."
 
 #: ../../getting_started/guides/vmware_guide.rst:220
 msgid "**Using Cloudbase-init**"
-msgstr ""
+msgstr "**Usando Cloudbase-init**"
 
 #: ../../getting_started/guides/vmware_guide.rst:222
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/guides/vmware_guide.rst:223
 msgid ""
@@ -662,30 +662,30 @@ msgid ""
 "are not familiar with cloud-init (used in Linux).  It is recommended to "
 "use either **Guest Customization** or **Windows Sysprep** if the admins "
 "are more famililar with those tools."
-msgstr ""
+msgstr "Alguns administradores podem ter dificuldades ao usar o Cloudbase-Init, especialmente se não estiverem familiarizados com cloud-init (usado no Linux). Recomenda-se usar **Guest Customization** ou **Windows Sysprep** se os administradores estiverem mais familiarizados com essas ferramentas."
 
 #: ../../getting_started/guides/vmware_guide.rst:225
 msgid ""
 "|morpheus| can inject a cloud-init file via CD-ROM to override the "
 "default sysprep process when preparing a virtual machine, if the "
 "Cloudbase-Init service is installed."
-msgstr ""
+msgstr "O |morpheus| pode injetar um arquivo cloud-init via CD-ROM para substituir o processo sysprep padrão ao preparar uma máquina virtual, se o serviço Cloudbase-Init estiver instalado."
 
 #: ../../getting_started/guides/vmware_guide.rst:227
 msgid ""
 "Download Cloudbase-Init from `https://cloudbase.it "
 "<https://cloudbase.it>`_ for your appropriate architecture."
-msgstr ""
+msgstr "Baixe o Cloudbase-Init em `https://cloudbase.it <https://cloudbase.it>`_ para a arquitetura apropriada."
 
 #: ../../getting_started/guides/vmware_guide.rst:229
 msgid ""
 "Run the installer and keep the default settings.  Below is an example of "
 "the final settings page:"
-msgstr ""
+msgstr "Execute o instalador e mantenha as configurações padrão. Abaixo está um exemplo da página final de configurações:"
 
 #: ../../getting_started/guides/vmware_guide.rst:231
 msgid "Cloudbase-Init settings"
-msgstr ""
+msgstr "Configurações do Cloudbase-Init"
 
 #: ../../getting_started/guides/vmware_guide.rst:231
 msgid ".. image:: /images/getting_started/cloudbase-init-settings.png"
@@ -695,11 +695,11 @@ msgstr ""
 msgid ""
 "At the end of the installer, options will be available to sysprep and "
 "shutdown the virtual machine.  Checkmark both boxes and click **Finish**:"
-msgstr ""
+msgstr "Ao final do instalador, opções estarão disponíveis para fazer sysprep e desligar a máquina virtual. Marque ambas as caixas e clique em **Finish**:"
 
 #: ../../getting_started/guides/vmware_guide.rst:236
 msgid "Cloudbase-Init sysprep"
-msgstr ""
+msgstr "Sysprep do Cloudbase-Init"
 
 #: ../../getting_started/guides/vmware_guide.rst:236
 msgid ".. image:: /images/getting_started/cloudbase-init-sysprep.png"
@@ -709,11 +709,11 @@ msgstr ""
 msgid ""
 "Once started, the sysprep process should continue until the virtual "
 "machine shutsdown."
-msgstr ""
+msgstr "Uma vez iniciado, o processo de sysprep deve continuar até que a máquina virtual desligue."
 
 #: ../../getting_started/guides/vmware_guide.rst:241
 msgid "Cloudbase-Init progress"
-msgstr ""
+msgstr "Progresso do Cloudbase-Init"
 
 #: ../../getting_started/guides/vmware_guide.rst:241
 msgid ".. image:: /images/getting_started/cloudbase-init-progress.png"
@@ -723,7 +723,7 @@ msgstr ""
 msgid ""
 "Once the virtual machine has completed shutting down, convert it to a "
 "template."
-msgstr ""
+msgstr "Depois que a máquina virtual tiver concluído o desligamento, converta-a em um template."
 
 #: ../../getting_started/guides/vmware_guide.rst:246
 msgid ""
@@ -731,23 +731,23 @@ msgid ""
 "Short).  Once the Virtual Image has been synced into "
 ":menuselection:`Library --> Virtual Images`, edit it and ensure **Is "
 "Cloud Init Enabled?** is checked."
-msgstr ""
+msgstr "Atualize sua nuvem (|InfClo| > Click Cloud > :guilabel:`Refresh` > Short). Depois que a Virtual Image tiver sido sincronizada em :menuselection:`Library --> Virtual Images`, edite-a e certifique-se de que **Is Cloud Init Enabled?** esteja marcado."
 
 #: ../../getting_started/guides/vmware_guide.rst:249
 msgid "Creating a CentOS/RHEL Image"
-msgstr ""
+msgstr "Criando uma Imagem CentOS/RHEL"
 
 #: ../../getting_started/guides/vmware_guide.rst:251
 msgid ""
 "Create a new machine in vCenter and install a base version of your "
 "preferred Linux distro."
-msgstr ""
+msgstr "Crie uma nova máquina no vCenter e instale uma versão base da sua distro Linux preferida."
 
 #: ../../getting_started/guides/vmware_guide.rst:253
 msgid ""
 "If you are using cloud-init as part of your image, you will need to "
 "ensure your virtual machine has a cdrom."
-msgstr ""
+msgstr "Se estiver usando cloud-init como parte da sua imagem, precisará garantir que sua máquina virtual tenha um cdrom."
 
 #: ../../getting_started/guides/vmware_guide.rst:255
 msgid ""
@@ -755,7 +755,7 @@ msgid ""
 "partition without a swap disk. Next, install the distro applying any "
 "updates to the operating system or security updates. Once the operating "
 "system is running and updated, install the following:"
-msgstr ""
+msgstr "Antes de instalar o sistema operacional, configure uma única partição ext ou xfs sem um disco swap. Em seguida, instale a distro aplicando quaisquer atualizações do sistema operacional ou de segurança. Com o sistema operacional em execução e atualizado, instale o seguinte:"
 
 #: ../../getting_started/guides/vmware_guide.rst:257
 msgid ""
@@ -770,7 +770,7 @@ msgstr ""
 msgid ""
 "Set selinux to permissive as the enforced setting can cause problems with"
 " cloud-init:"
-msgstr ""
+msgstr "Defina o selinux como permissive, pois a configuração enforced pode causar problemas com o cloud-init:"
 
 #: ../../getting_started/guides/vmware_guide.rst:267
 msgid "sudo vi /etc/selinux/config"
@@ -778,11 +778,11 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:271
 msgid "**Cloud-Init**"
-msgstr ""
+msgstr "**Cloud-Init**"
 
 #: ../../getting_started/guides/vmware_guide.rst:273
 msgid "We'll get started by installing cloud-init using the following command:"
-msgstr ""
+msgstr "Começaremos instalando o cloud-init usando o seguinte comando:"
 
 #: ../../getting_started/guides/vmware_guide.rst:275
 #, python-brace-format
@@ -801,7 +801,7 @@ msgid ""
 " had no plans to use Ansible, this installation could be skipped. The "
 "dracut-modules-growroot is responsible for resizing the root partition "
 "upon initial boot which was potentially adjusted during provisioning."
-msgstr ""
+msgstr "O comando acima instalará algumas dependências principais para cloud-init e automação mais tarde, conforme você trabalhar com suas instâncias provisionadas. Por exemplo, instalamos o Git aqui, pois ele é usado para automação Ansible. Se você não planejasse usar o Ansible, esta instalação poderia ser omitida. O dracut-modules-growroot é responsável por redimensionar a partição root no boot inicial, que potencialmente foi ajustada durante o provisionamento."
 
 #: ../../getting_started/guides/vmware_guide.rst:283
 msgid ""
@@ -811,11 +811,11 @@ msgid ""
 "cloud-init. We can define that default user in "
 ":menuselection:`Administration --> Settings --> Provisioning` > Cloud-"
 "Init"
-msgstr ""
+msgstr "Um benefício importante de usar cloud-init é que não precisamos travar credenciais no blueprint. Recomendamos configurar um usuário cloud-init padrão que será criado automaticamente quando a VM for inicializada pelo cloud-init. Podemos definir esse usuário padrão em :menuselection:`Administration --> Settings --> Provisioning` > Cloud-Init"
 
 #: ../../getting_started/guides/vmware_guide.rst:285
 msgid "**Network Interfaces**"
-msgstr ""
+msgstr "**Interfaces de Rede**"
 
 #: ../../getting_started/guides/vmware_guide.rst:287
 msgid ""
@@ -826,11 +826,11 @@ msgid ""
 "when provisioning this blueprint in our VMware environments. To "
 "accomplish this end, we will rename the interface back to \"eth0\" using "
 "the steps below."
-msgstr ""
+msgstr "A partir do CentOS 7, as convenções de nomenclatura de interfaces de rede mudaram. Você pode verificar isso executando `ifconfig` e observando que a interface de rede primária tem algum valor semelhante a \"ens2344\". A nomenclatura é dinâmica e tipicamente definida com base no ID de hardware. Não queremos que isso flutue ao provisionar este blueprint em nossos ambientes VMware. Para esse fim, renomearemos a interface de volta para \"eth0\" usando as etapas abaixo."
 
 #: ../../getting_started/guides/vmware_guide.rst:289
 msgid "First, adjust the bootloader to disable interface naming:"
-msgstr ""
+msgstr "Primeiro, ajuste o bootloader para desativar a nomenclatura de interfaces:"
 
 #: ../../getting_started/guides/vmware_guide.rst:291
 msgid ""
@@ -843,7 +843,7 @@ msgid ""
 "The next step is to adjust network scripts in CentOS. Start by confiming "
 "the presence of a file called `/etc/sysconfig/network-scripts/ifcfg-"
 "eth0`. Once confirmed, run the following script:"
-msgstr ""
+msgstr "O próximo passo é ajustar os scripts de rede no CentOS. Comece confirmando a presença de um arquivo chamado `/etc/sysconfig/network-scripts/ifcfg-eth0`. Uma vez confirmado, execute o seguinte script:"
 
 #: ../../getting_started/guides/vmware_guide.rst:298
 #, python-brace-format
@@ -866,7 +866,7 @@ msgid ""
 "This script tries to confirm there is a new `ifcfg-eth0` config created "
 "to replace the old config file. Confirm this config exists after running "
 "and if not you will have to build your own:"
-msgstr ""
+msgstr "Este script tenta confirmar que há uma nova configuração `ifcfg-eth0` criada para substituir o arquivo de configuração antigo. Confirme que esta configuração existe após a execução e, se não, você terá que criar a sua própria:"
 
 #: ../../getting_started/guides/vmware_guide.rst:310
 msgid ""
@@ -885,17 +885,17 @@ msgid ""
 "for specific scenarios, take a look at the `VMware image prep "
 "<https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html#gotchas>`_"
 " page in |morpheus| Docs."
-msgstr ""
+msgstr "Para mais informações sobre preparação de imagem CentOS/RHEL, incluindo configurações adicionais para cenários específicos, consulte a página de `preparação de imagem VMware <https://docs.morpheusdata.com/en/4.1.1/integration_guides/Clouds/vmware/vmware_templates.html#gotchas>`_ na documentação do |morpheus|."
 
 #: ../../getting_started/guides/vmware_guide.rst:322
 msgid "**Creating an Ubuntu 20.04 Image**"
-msgstr ""
+msgstr "**Criando uma Imagem Ubuntu 20.04**"
 
 #: ../../getting_started/guides/vmware_guide.rst:324
 msgid ""
 "Download the Ubuntu 20.04 ISO from Canonical, and upload the base image "
 "to vCetner. Then, create a new virtual machine in vCenter."
-msgstr ""
+msgstr "Baixe a ISO do Ubuntu 20.04 da Canonical e envie a imagem base para o vCenter. Em seguida, crie uma nova máquina virtual no vCenter."
 
 #: ../../getting_started/guides/vmware_guide.rst:326
 msgid ""
@@ -903,42 +903,42 @@ msgid ""
 " virtual machine has a cdrom. Select the Ubuntu 20.04 ISO we just "
 "downloaded from the CD/DVD drive dropdown menu when creating the new "
 "virtual machine."
-msgstr ""
+msgstr "Como incluiremos cloud-init em nossa imagem, precisaremos garantir que a máquina virtual tenha um cdrom. Selecione a ISO do Ubuntu 20.04 que acabamos de baixar no menu suspenso da unidade CD/DVD ao criar a nova máquina virtual."
 
 #: ../../getting_started/guides/vmware_guide.rst:328
 msgid ""
 "Before installing the operating system, set up a single ext partition "
 "without a swap disk. Then, continue on installing Ubuntu making the "
 "following selections during the setup process:"
-msgstr ""
+msgstr "Antes de instalar o sistema operacional, configure uma única partição ext sem um disco swap. Em seguida, continue instalando o Ubuntu fazendo as seguintes seleções durante o processo de configuração:"
 
 #: ../../getting_started/guides/vmware_guide.rst:330
 msgid "Update to the latest installer if a later version is available"
-msgstr ""
+msgstr "Atualize para o instalador mais recente se uma versão posterior estiver disponível"
 
 #: ../../getting_started/guides/vmware_guide.rst:331
 msgid ""
 "Use the entire disk and deselect the option to set up the disk as an LVM "
 "group"
-msgstr ""
+msgstr "Use o disco inteiro e desmarque a opção de configurar o disco como um grupo LVM"
 
 #: ../../getting_started/guides/vmware_guide.rst:332
 msgid "Configure an account and set a password"
-msgstr ""
+msgstr "Configure uma conta e defina uma senha"
 
 #: ../../getting_started/guides/vmware_guide.rst:333
 msgid "Opt to install OpenSSH Server"
-msgstr ""
+msgstr "Opte por instalar o OpenSSH Server"
 
 #: ../../getting_started/guides/vmware_guide.rst:334
 msgid "Other optional packages aren't needed for this basic Ubuntu image"
-msgstr ""
+msgstr "Outros pacotes opcionais não são necessários para esta imagem básica do Ubuntu"
 
 #: ../../getting_started/guides/vmware_guide.rst:336
 msgid ""
 "Complete the installation process and reboot the machine. Update the "
 "package list and apply any upgrades:"
-msgstr ""
+msgstr "Conclua o processo de instalação e reinicie a máquina. Atualize a lista de pacotes e aplique quaisquer atualizações:"
 
 #: ../../getting_started/guides/vmware_guide.rst:338
 msgid ""
@@ -950,7 +950,7 @@ msgstr ""
 msgid ""
 "Disable assignment of new styled names for network interfaces (instead of"
 " ``ens###`` they will be ``eth#``):"
-msgstr ""
+msgstr "Desative a atribuição de nomes no novo estilo para interfaces de rede (em vez de ``ens###`` elas serão ``eth#``):"
 
 #: ../../getting_started/guides/vmware_guide.rst:345
 msgid ""
@@ -961,7 +961,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:349
 msgid "Update GRUB:"
-msgstr ""
+msgstr "Atualize o GRUB:"
 
 #: ../../getting_started/guides/vmware_guide.rst:351
 msgid "update-grub"
@@ -969,7 +969,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:355
 msgid "Update the ``70-persistent-net.rules`` file:"
-msgstr ""
+msgstr "Atualize o arquivo ``70-persistent-net.rules``:"
 
 #: ../../getting_started/guides/vmware_guide.rst:357
 #, python-brace-format
@@ -984,7 +984,7 @@ msgstr ""
 msgid ""
 "Remove ``subiquity-disable-cloudinit-networking.cfg`` as cloud-init will "
 "skip network configuration if it's present:"
-msgstr ""
+msgstr "Remova ``subiquity-disable-cloudinit-networking.cfg``, pois o cloud-init ignorará a configuração de rede se ele estiver presente:"
 
 #: ../../getting_started/guides/vmware_guide.rst:365
 msgid "rm -f /etc/cloud/cloud.cfg.d/subiquity-disable-cloudinit-networking.cfg"
@@ -992,7 +992,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:369
 msgid "Update ``99-pve.cfg``:"
-msgstr ""
+msgstr "Atualize ``99-pve.cfg``:"
 
 #: ../../getting_started/guides/vmware_guide.rst:371
 msgid ""
@@ -1003,7 +1003,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:377
 msgid "Remove Netplan files, they will not be regenerated if they exist:"
-msgstr ""
+msgstr "Remova os arquivos Netplan; eles não serão regenerados se existirem:"
 
 #: ../../getting_started/guides/vmware_guide.rst:379
 msgid ""
@@ -1013,7 +1013,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:384
 msgid "Run cloud-init clean:"
-msgstr ""
+msgstr "Execute cloud-init clean:"
 
 #: ../../getting_started/guides/vmware_guide.rst:386
 msgid "cloud-init clean"
@@ -1026,7 +1026,7 @@ msgid ""
 "root. The history entry has a copy in the memory and it will flush back "
 "to the file when you log out. You can avoid this with the following "
 "command:"
-msgstr ""
+msgstr "Em seguida, reinicie o sistema e confirme que a interface de rede está rotulada como ``eth0`` quando a máquina voltar. Depois, limpe o histórico do BASH para root. A entrada do histórico tem uma cópia na memória e será gravada de volta no arquivo quando você sair. Você pode evitar isso com o seguinte comando:"
 
 #: ../../getting_started/guides/vmware_guide.rst:392
 msgid "cat /dev/null > ~/.bash_history && history -c && exit"
@@ -1034,7 +1034,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:396
 msgid "Shutdown the system:"
-msgstr ""
+msgstr "Desligue o sistema:"
 
 #: ../../getting_started/guides/vmware_guide.rst:398
 msgid "shutdown -h now"
@@ -1045,17 +1045,17 @@ msgid ""
 "Convert the VM to a template in vCenter before moving back to |morpheus| "
 "to onboard the image and use it to begin building your provisioning "
 "library."
-msgstr ""
+msgstr "Converta a VM em um template no vCenter antes de voltar ao |morpheus| para integrar a imagem e usá-la para começar a construir sua biblioteca de provisionamento."
 
 #: ../../getting_started/guides/vmware_guide.rst:405
 msgid "Provisioning Your First Instance"
-msgstr ""
+msgstr "Provisionando Sua Primeira Instância"
 
 #: ../../getting_started/guides/vmware_guide.rst:407
 msgid ""
 "At this point, we are ready to provision our first image. As a first "
 "instance, we'll provision an Apache web server to our vCenter cloud."
-msgstr ""
+msgstr "Neste ponto, estamos prontos para provisionar nossa primeira imagem. Como primeira instância, provisionaremos um servidor web Apache em nossa nuvem vCenter."
 
 #: ../../getting_started/guides/vmware_guide.rst:409
 msgid ""
@@ -1064,11 +1064,11 @@ msgid ""
 "instance we click the \"+ADD\" button to pop the \"CREATE INSTANCE\" "
 "wizard. We'll scroll down to and select the Apache instance type and "
 "click \"NEXT\"."
-msgstr ""
+msgstr "Navegue até :menuselection:`Provisioning --> Instances`. Se houver quaisquer instâncias atualmente provisionadas, as veremos listadas aqui. Para iniciar uma nova instância, clicamos no botão \"+ADD\" para abrir o assistente \"CREATE INSTANCE\". Rolemos para baixo, selecionemos o tipo de instância Apache e clicemos em \"NEXT\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:411
 msgid "Selecting an instance type to provision"
-msgstr ""
+msgstr "Selecionando um tipo de instância para provisionar"
 
 #: ../../getting_started/guides/vmware_guide.rst:411
 msgid ".. image:: /images/vCenterGuideImages/FirstInstance/1createInstance.png"
@@ -1082,7 +1082,7 @@ msgid ""
 "select here. This will allow us to select the vCenter cloud from the "
 "\"CLOUD\" dropdown menu. Provide a unique name to this instance and then "
 "click \"NEXT\""
-msgstr ""
+msgstr "Primeiro, especificaremos o grupo no qual provisionar, o que determina as nuvens disponíveis. Se você seguiu este guia até este ponto, deve ter pelo menos um grupo que abriga todas as suas nuvens que você pode selecionar aqui. Isso nos permitirá selecionar a nuvem vCenter no menu suspenso \"CLOUD\". Forneça um nome exclusivo para esta instância e depois clique em \"NEXT\""
 
 #: ../../getting_started/guides/vmware_guide.rst:418
 msgid ""
@@ -1091,43 +1091,43 @@ msgid ""
 "creating instances and available options is `here "
 "<https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html"
 "#morpheus-agent>`_. For our purposes, we'll select the following options:"
-msgstr ""
+msgstr "Na guia \"CONFIGURE\", são apresentadas várias opções. As opções são específicas da nuvem e do layout; informações mais generalizadas sobre criação de instâncias e opções disponíveis estão `aqui <https://docs.morpheusdata.com/en/4.1.1/getting_started/agent/morpheus_agent.html#morpheus-agent>`_. Para nossos propósitos, selecionaremos as seguintes opções:"
 
 #: ../../getting_started/guides/vmware_guide.rst:420
 msgid ""
 "**LAYOUT**: Includes options such as the base OS, custom layouts will "
 "also be here when available"
-msgstr ""
+msgstr "**LAYOUT**: Inclui opções como o SO base; layouts personalizados também estarão aqui quando disponíveis"
 
 #: ../../getting_started/guides/vmware_guide.rst:422
 msgid ""
 "**PLAN**: Select the resource plan for your instance. Some plans have "
 "minimum resource limits, |morpheus| will only show plans at or above "
 "these limits. User-defined plans can also be created in |AdmPla|."
-msgstr ""
+msgstr "**PLAN**: Selecione o plano de recursos para sua instância. Alguns planos têm limites mínimos de recursos; o |morpheus| mostrará apenas planos iguais ou acima desses limites. Planos definidos pelo usuário também podem ser criados em |AdmPla|."
 
 #: ../../getting_started/guides/vmware_guide.rst:424
 msgid ""
 "**VOLUMES and DATASTORES**: The minimum disk space is set by the plan, "
 "this value may be locked if you've selected a custom plan that defines "
 "the volume size"
-msgstr ""
+msgstr "**VOLUMES and DATASTORES**: O espaço mínimo em disco é definido pelo plano; este valor pode estar bloqueado se você selecionou um plano personalizado que define o tamanho do volume"
 
 #: ../../getting_started/guides/vmware_guide.rst:426
 msgid ""
 "**NETWORKS**: Select a network, note that IP pools must be linked with "
 "the networks defined in VMware in order to assign static IP addresses"
-msgstr ""
+msgstr "**NETWORKS**: Selecione uma rede; observe que pools de IP devem estar vinculados às redes definidas no VMware para atribuir endereços IP estáticos"
 
 #: ../../getting_started/guides/vmware_guide.rst:428
 msgid ""
 "Under the \"User Config\" drawer, mark the box to \"CREATE YOUR USER\". "
 "Click \"NEXT\"."
-msgstr ""
+msgstr "Na seção \"User Config\", marque a caixa \"CREATE YOUR USER\". Clique em \"NEXT\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:430
 msgid "The configure tab of the create instance dialog box"
-msgstr ""
+msgstr "A guia configure da caixa de diálogo de criar instância"
 
 #: ../../getting_started/guides/vmware_guide.rst:430
 msgid ".. image:: /images/vCenterGuideImages/FirstInstance/2instanceConfigure.png"
@@ -1140,7 +1140,7 @@ msgid ""
 " defined these credentials, you can do so by clicking on your username in"
 " the upper-right corner of the application window and selecting \"USER "
 "SETTINGS\"."
-msgstr ""
+msgstr "\"CREATE YOUR USER\" criará uma conta de usuário na VM com as credenciais definidas nas configurações da conta de usuário do Morpheus. Se você ainda não definiu essas credenciais, pode fazê-lo clicando no seu nome de usuário no canto superior direito da janela do aplicativo e selecionando \"USER SETTINGS\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:437
 msgid ""
@@ -1148,15 +1148,15 @@ msgid ""
 "tab but feel free to stop and take a look at the available selections "
 "here. There is more information later in this guide on automation and "
 "even more beyond that in the rest of |morpheus| docs."
-msgstr ""
+msgstr "Por enquanto, simplesmente clicaremos em \"NEXT\" para avançar pela guia \"AUTOMATION\", mas sinta-se à vontade para parar e examinar as seleções disponíveis aqui. Há mais informações mais adiante neste guia sobre automação e ainda mais no restante da documentação do |morpheus|."
 
 #: ../../getting_started/guides/vmware_guide.rst:439
 msgid "Review the settings for your first instance and click \"COMPLETE\"."
-msgstr ""
+msgstr "Revise as configurações da sua primeira instância e clique em \"COMPLETE\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:441
 msgid "Confirming the instance to be provisioned"
-msgstr ""
+msgstr "Confirmando a instância a ser provisionada"
 
 #: ../../getting_started/guides/vmware_guide.rst:441
 msgid ".. image:: /images/vCenterGuideImages/FirstInstance/3completeInstance.png"
@@ -1180,11 +1180,11 @@ msgid ""
 "a green play button when the instance is fully ready. Furthermore, we can"
 " click on the hyperlinked IP address in the \"VMS\" section of this page "
 "to view a default page in a web browser to confirm success."
-msgstr ""
+msgstr "Agora voltamos à página de lista de instâncias. Podemos ver uma nova entrada na lista neste ponto com um indicador de status de que a nova máquina está sendo iniciada (ícone de foguete no campo de status). Podemos dar um duplo clique na instância na lista para ir à página de detalhes da instância. Por enquanto, veremos uma barra de progresso indicando que a instância está sendo criada e está iniciando. O tempo exato que este processo levará depende do seu ambiente e das seleções feitas ao provisionar a instância. Inicialmente, o |morpheus| estimará quanto tempo isso levará e a barra de progresso pode não ser precisa. Com o tempo, o |morpheus| aprenderá quanto esses processos levam e a precisão da barra de progresso melhorará. Para informações mais detalhadas sobre o status de vários processos de provisionamento, podemos rolar para baixo e selecionar a guia \"HISTORY\". O ícone \"STATUS\" mudará do foguete azul para um botão de play verde quando a instância estiver totalmente pronta. Além disso, podemos clicar no endereço IP com hyperlink na seção \"VMS\" desta página para ver uma página padrão em um navegador web e confirmar o sucesso."
 
 #: ../../getting_started/guides/vmware_guide.rst:448
 msgid "Monitoring privisioning progress on the instance detail page"
-msgstr ""
+msgstr "Monitorando o progresso do provisionamento na página de detalhes da instância"
 
 #: ../../getting_started/guides/vmware_guide.rst:448
 msgid ".. image:: /images/vCenterGuideImages/FirstInstance/4reviewInstance.png"
@@ -1192,7 +1192,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:454
 msgid "Creating Your First Library Item"
-msgstr ""
+msgstr "Criando Seu Primeiro Item da Biblioteca"
 
 #: ../../getting_started/guides/vmware_guide.rst:456
 msgid ""
@@ -1201,7 +1201,7 @@ msgid ""
 " items to simplify and speed provisioning in the future. In this section,"
 " we'll build a catalog item and show how that can translate into quick "
 "instance provisioning after configuration."
-msgstr ""
+msgstr "Na seção anterior, provisionamos manualmente nossa primeira instância. No entanto, o |morpheus| permite que você construa um catálogo de itens provisionáveis personalizados para simplificar e acelerar o provisionamento no futuro. Nesta seção, construiremos um item de catálogo e mostraremos como isso pode se traduzir em provisionamento rápido de instâncias após a configuração."
 
 #: ../../getting_started/guides/vmware_guide.rst:458
 msgid ""
@@ -1210,15 +1210,15 @@ msgid ""
 "you'll want to ensure it's uploaded. You will not be able to complete "
 "this section without selecting an available image. In this example we "
 "will use Morpheus Redis 3.0 on Ubuntu 14.04.3 v2."
-msgstr ""
+msgstr "Antes de iniciar este processo, é importante decidir qual imagem virtual você planeja usar. Se não estiver usando uma imagem fornecida pelo Morpheus, você deve garantir que ela esteja enviada. Você não poderá concluir esta seção sem selecionar uma imagem disponível. Neste exemplo, usaremos Morpheus Redis 3.0 on Ubuntu 14.04.3 v2."
 
 #: ../../getting_started/guides/vmware_guide.rst:460
 msgid "Navigate to |LibBluNod| and click \"+ADD\"."
-msgstr ""
+msgstr "Navegue até |LibBluNod| e clique em \"+ADD\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:462
 msgid "Adding a new node type"
-msgstr ""
+msgstr "Adicionando um novo tipo de nó"
 
 #: ../../getting_started/guides/vmware_guide.rst:462
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/1addNode.png"
@@ -1228,31 +1228,31 @@ msgstr ""
 msgid ""
 "In this example, I am going to set the following options in the \"NEW "
 "NODE TYPE\" wizard:"
-msgstr ""
+msgstr "Neste exemplo, definirei as seguintes opções no assistente \"NEW NODE TYPE\":"
 
 #: ../../getting_started/guides/vmware_guide.rst:469
 #: ../../getting_started/guides/vmware_guide.rst:511
 #: ../../getting_started/guides/vmware_guide.rst:564
 #: ../../getting_started/guides/vmware_guide.rst:585
 msgid "**NAME**"
-msgstr ""
+msgstr "**NAME**"
 
 #: ../../getting_started/guides/vmware_guide.rst:471
 msgid "**SHORT NAME**"
-msgstr ""
+msgstr "**SHORT NAME**"
 
 #: ../../getting_started/guides/vmware_guide.rst:473
 msgid "**VERSION**: 1 (In this particular case, the version is not important)"
-msgstr ""
+msgstr "**VERSION**: 1 (Neste caso particular, a versão não é importante)"
 
 #: ../../getting_started/guides/vmware_guide.rst:475
 #: ../../getting_started/guides/vmware_guide.rst:515
 msgid "**TECHNOLOGY**: VMware"
-msgstr ""
+msgstr "**TECHNOLOGY**: VMware"
 
 #: ../../getting_started/guides/vmware_guide.rst:477
 msgid "**VM IMAGE**: |morpheus| Redis 3.0 on Ubuntu 14.04.3 v2"
-msgstr ""
+msgstr "**VM IMAGE**: |morpheus| Redis 3.0 on Ubuntu 14.04.3 v2"
 
 #: ../../getting_started/guides/vmware_guide.rst:479
 msgid ""
@@ -1260,11 +1260,11 @@ msgid ""
 "will always be used for this node, regardless of the specific deployment "
 "details. This can include LDAP Authentication, bash scripts that should "
 "run on installation, among other things."
-msgstr ""
+msgstr "Na seção \"VMware VM Options\" você deve adicionar qualquer coisa que sempre será usada para este nó, independentemente dos detalhes específicos da implementação. Isso pode incluir autenticação LDAP, scripts bash que devem ser executados na instalação, entre outras coisas."
 
 #: ../../getting_started/guides/vmware_guide.rst:481
 msgid "Configuring options for the new node"
-msgstr ""
+msgstr "Configurando opções para o novo nó"
 
 #: ../../getting_started/guides/vmware_guide.rst:481
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/2nodeSettings.png"
@@ -1275,11 +1275,11 @@ msgid ""
 "With the new node created, we'll now add a new instance type which will "
 "be accessable from the provisioning wizard once created. Move from the "
 "\"NODE TYPES\" tab to the \"INSTANCE TYPES\" tab and click \"+ADD\"."
-msgstr ""
+msgstr "Com o novo nó criado, agora adicionaremos um novo tipo de instância que estará acessível no assistente de provisionamento uma vez criado. Passe da guia \"NODE TYPES\" para a guia \"INSTANCE TYPES\" e clique em \"+ADD\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:488
 msgid "Adding a new instance type"
-msgstr ""
+msgstr "Adicionando um novo tipo de instância"
 
 #: ../../getting_started/guides/vmware_guide.rst:488
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/3addInstanceType.png"
@@ -1289,11 +1289,11 @@ msgstr ""
 msgid ""
 "In the \"NEW INSTANCE TYPE\" wizard, I'll simply enter a **NAME** and "
 "**CODE** value. Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "No assistente \"NEW INSTANCE TYPE\", simplesmente inserirei um valor de **NAME** e **CODE**. Clique em \"SAVE CHANGES\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:495
 msgid "Configuring the new instance type"
-msgstr ""
+msgstr "Configurando o novo tipo de instância"
 
 #: ../../getting_started/guides/vmware_guide.rst:495
 msgid ""
@@ -1306,11 +1306,11 @@ msgid ""
 "Now that we've created a new instance type, access it by clicking on the "
 "name in the list of custom instances you've created. In my case, I've "
 "given the name \"NewInstanceType\"."
-msgstr ""
+msgstr "Agora que criamos um novo tipo de instância, acesse-o clicando no nome na lista de instâncias personalizadas que você criou. No meu caso, dei o nome \"NewInstanceType\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:502
 msgid "Opening our newly created instance type"
-msgstr ""
+msgstr "Abrindo nosso tipo de instância recém-criado"
 
 #: ../../getting_started/guides/vmware_guide.rst:502
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/5openInstanceType.png"
@@ -1320,31 +1320,31 @@ msgstr ""
 msgid ""
 "Once we've opened the new instance type, by default, we should be on the "
 "\"LAYOUTS\" tab. Click \"+ADD LAYOUT\"."
-msgstr ""
+msgstr "Depois de abrirmos o novo tipo de instância, por padrão, devemos estar na guia \"LAYOUTS\". Clique em \"+ADD LAYOUT\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:509
 msgid "I've set the following fields on my example layout:"
-msgstr ""
+msgstr "Defini os seguintes campos no meu layout de exemplo:"
 
 #: ../../getting_started/guides/vmware_guide.rst:513
 msgid ""
 "**VERSION**: This is the version number of the layout itself, which is "
 "labeled 1.0 in the example"
-msgstr ""
+msgstr "**VERSION**: Este é o número de versão do próprio layout, rotulado como 1.0 no exemplo"
 
 #: ../../getting_started/guides/vmware_guide.rst:517
 msgid ""
 "**Nodes**: Select the node we created earlier, if desired you can specify"
 " multiple nodes"
-msgstr ""
+msgstr "**Nodes**: Selecione o nó que criamos anteriormente; se desejar, você pode especificar vários nós"
 
 #: ../../getting_started/guides/vmware_guide.rst:519
 msgid "Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "Clique em \"SAVE CHANGES\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:521
 msgid "Configuring the new layout"
-msgstr ""
+msgstr "Configurando o novo layout"
 
 #: ../../getting_started/guides/vmware_guide.rst:521
 msgid ".. image:: /images/vCenterGuideImages/NewCatalogItem/6layoutSettings.png"
@@ -1357,11 +1357,11 @@ msgid ""
 ":menuselection:`Provisioning --> Instances` and click \"+ADD\". From the "
 "search bar we can search for the new instance type we've created. In the "
 "example case, we called it \"newinstancetype\". Click \"NEXT\"."
-msgstr ""
+msgstr "Neste ponto, concluímos o trabalho de configuração e agora podemos provisionar a instância que criamos conforme nossas especificações. Navegue até :menuselection:`Provisioning --> Instances` e clique em \"+ADD\". Na barra de pesquisa, podemos pesquisar o novo tipo de instância que criamos. No caso do exemplo, chamamos de \"newinstancetype\". Clique em \"NEXT\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:528
 msgid "Searching for our custom instance type"
-msgstr ""
+msgstr "Pesquisando nosso tipo de instância personalizado"
 
 #: ../../getting_started/guides/vmware_guide.rst:528
 msgid ""
@@ -1377,11 +1377,11 @@ msgid ""
 " of creating the new instance type. Select a network and click \"NEXT\". "
 "Once again we will also click \"NEXT\" through the \"AUTOMATION\" tab. "
 "Finally, click \"COMPLETE\"."
-msgstr ""
+msgstr "Como antes, podemos selecionar um grupo e uma nuvem para provisionar esta nova instância. Clique em \"NEXT\". Na guia \"CONFIGURE\", observe que o layout e o plano já estão selecionados porque foram configurados como parte da criação do novo tipo de instância. Selecione uma rede e clique em \"NEXT\". Mais uma vez, também clicaremos em \"NEXT\" pela guia \"AUTOMATION\". Por fim, clique em \"COMPLETE\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:535
 msgid "Configuring the newlt created instance"
-msgstr ""
+msgstr "Configurando a instância recém-criada"
 
 #: ../../getting_started/guides/vmware_guide.rst:535
 msgid ""
@@ -1397,7 +1397,7 @@ msgid ""
 "and represent that on a progress bar. Over time, |morpheus| begins to "
 "learn how long these processes take and becomes more accurate in "
 "predicting spin-up time."
-msgstr ""
+msgstr "Como antes, quando provisionamos manualmente uma instância, o |morpheus| agora começará a iniciar a nova VM. Quanto tempo isso levará depende do seu ambiente, mas o |morpheus| preverá quanto tempo este processo levará e representará isso em uma barra de progresso. Com o tempo, o |morpheus| começa a aprender quanto esses processos levam e se torna mais preciso ao prever o tempo de inicialização."
 
 #: ../../getting_started/guides/vmware_guide.rst:542
 msgid ""
@@ -1405,11 +1405,11 @@ msgid ""
 "page in |morpheus| and click on the \"CONSOLE\" tab. You'll be logged in "
 "with your user account and are then able to confirm the machine is ready "
 "and available."
-msgstr ""
+msgstr "Quando o processo de provisionamento for concluído, abra a página de detalhes da instância no |morpheus| e clique na guia \"CONSOLE\". Você será conectado com sua conta de usuário e poderá confirmar que a máquina está pronta e disponível."
 
 #: ../../getting_started/guides/vmware_guide.rst:544
 msgid "Confirming creation of the new instance"
-msgstr ""
+msgstr "Confirmando a criação da nova instância"
 
 #: ../../getting_started/guides/vmware_guide.rst:544
 msgid ""
@@ -1419,7 +1419,7 @@ msgstr ""
 
 #: ../../getting_started/guides/vmware_guide.rst:550
 msgid "Automation and Configuration Management"
-msgstr ""
+msgstr "Automação e Gerenciamento de Configuração"
 
 #: ../../getting_started/guides/vmware_guide.rst:553
 msgid ""
@@ -1432,7 +1432,7 @@ msgid ""
 "often combined into workflows. We can opt to run a workflow at provision "
 "time or they can be executed on existing instances through the Actions "
 "menu."
-msgstr ""
+msgstr "A automação do |morpheus| é composta por Tasks e Workflows. Uma task pode ser um script adicionado diretamente, scripts ou blueprints obtidos da Biblioteca do |morpheus|, playbooks, recipes ou várias outras coisas. A lista completa de tipos de task pode ser encontrada na `seção Automation <https://docs.morpheusdata.com/en/4.1.1/provisioning/automation/automation.html#automation>`_ da documentação do |morpheus|. Tasks podem ser executadas individualmente, mas frequentemente são combinadas em workflows. Podemos optar por executar um workflow no momento do provisionamento ou eles podem ser executados em instâncias existentes pelo menu Actions."
 
 #: ../../getting_started/guides/vmware_guide.rst:555
 msgid ""
@@ -1442,11 +1442,11 @@ msgid ""
 "already have an Apache instance running. If you don't yet have that, "
 "provision one before continuing with this guide and ensure it's reachable"
 " on port 80."
-msgstr ""
+msgstr "Neste guia, configuraremos uma integração Ansible, criaremos uma task, adicionaremos a task a um workflow e executaremos o workflow em uma instância nova e existente. Se você trabalhou neste guia até este ponto, já deve ter uma instância Apache em execução. Se ainda não tiver isso, provisione uma antes de continuar com este guia e certifique-se de que ela esteja acessível na porta 80."
 
 #: ../../getting_started/guides/vmware_guide.rst:557
 msgid "Adding a new automation integration"
-msgstr ""
+msgstr "Adicionando uma nova integração de automação"
 
 #: ../../getting_started/guides/vmware_guide.rst:557
 msgid ".. image:: /images/vCenterGuideImages/Automation/1newIntegration.png"
@@ -1458,36 +1458,36 @@ msgid ""
 "sample repository referenced here or integrate with your own. Go to "
 "'|AdmInt|'. Click \"+NEW INTEGRATION\" and select Ansible from the "
 "dropdown menu. Fill in the following details:"
-msgstr ""
+msgstr "Primeiro configuraremos a integração Ansible; você pode integrar com o repositório de exemplo referenciado aqui ou integrar com o seu próprio. Vá para '|AdmInt|'. Clique em \"+NEW INTEGRATION\" e selecione Ansible no menu suspenso. Preencha os seguintes detalhes:"
 
 #: ../../getting_started/guides/vmware_guide.rst:566
 msgid ""
 "**ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus-ansible-"
 "example, or enter the URL for your own Ansible git repository"
-msgstr ""
+msgstr "**ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus-ansible-example, ou informe a URL do seu próprio repositório git Ansible"
 
 #: ../../getting_started/guides/vmware_guide.rst:568
 msgid "**PLAYBOOKS PATH**"
-msgstr ""
+msgstr "**PLAYBOOKS PATH**"
 
 #: ../../getting_started/guides/vmware_guide.rst:570
 msgid "**ROLES PATH**"
-msgstr ""
+msgstr "**ROLES PATH**"
 
 #: ../../getting_started/guides/vmware_guide.rst:572
 msgid "Mark the box to \"USE MORPHEUS AGENT COMMAND BUS\""
-msgstr ""
+msgstr "Marque a caixa \"USE MORPHEUS AGENT COMMAND BUS\""
 
 #: ../../getting_started/guides/vmware_guide.rst:574
 msgid ""
 "If your git repository requires authentication, you should create a "
 "keypair and use the following URL format: git@github.com:ncelebic"
 "/morpheus-ansible-example.git."
-msgstr ""
+msgstr "Se o seu repositório git exigir autenticação, você deve criar um keypair e usar o seguinte formato de URL: git@github.com:ncelebic/morpheus-ansible-example.git."
 
 #: ../../getting_started/guides/vmware_guide.rst:576
 msgid "Configuring the new Ansible integration"
-msgstr ""
+msgstr "Configurando a nova integração Ansible"
 
 #: ../../getting_started/guides/vmware_guide.rst:576
 msgid ".. image:: /images/vCenterGuideImages/Automation/2configureIntegration.png"
@@ -1499,7 +1499,7 @@ msgid ""
 " among any other configured inetegrations. If we click on this new "
 "integration to view detail, a green checkmark icon indicates the git "
 "repository has been fully synced."
-msgstr ""
+msgstr "Clique em \"SAVE CHANGES\". Agora você verá nossa nova integração Ansible listada entre quaisquer outras integrações configuradas. Se clicarmos nesta nova integração para ver os detalhes, um ícone de marca de seleção verde indica que o repositório git foi totalmente sincronizado."
 
 #: ../../getting_started/guides/vmware_guide.rst:583
 msgid ""
@@ -1508,21 +1508,21 @@ msgid ""
 "click \"+ADD\". We'll first set our \"TYPE\" value to Ansible Playbook so"
 " that the correct set of fields appear in the \"NEW TASK\" wizard. Set "
 "the following options:"
-msgstr ""
+msgstr "Com a integração Ansible configurada, agora podemos criar uma task que inclui nosso playbook. Vá para :menuselection:`Library --> Automation`, clique em \"+ADD\". Primeiro definiremos nosso valor \"TYPE\" como Ansible Playbook para que o conjunto correto de campos apareça no assistente \"NEW TASK\". Defina as seguintes opções:"
 
 #: ../../getting_started/guides/vmware_guide.rst:587
 msgid ""
 "**ANSIBLE REPO**: Here we will choose the Ansible integration that we "
 "just created"
-msgstr ""
+msgstr "**ANSIBLE REPO**: Aqui escolheremos a integração Ansible que acabamos de criar"
 
 #: ../../getting_started/guides/vmware_guide.rst:589
 msgid "**PLAYBOOK**: In our example case, enter 'playbook.yml'"
-msgstr ""
+msgstr "**PLAYBOOK**: No nosso caso de exemplo, informe 'playbook.yml'"
 
 #: ../../getting_started/guides/vmware_guide.rst:591
 msgid "Configuring the new task"
-msgstr ""
+msgstr "Configurando a nova task"
 
 #: ../../getting_started/guides/vmware_guide.rst:591
 msgid ".. image:: /images/vCenterGuideImages/Automation/3taskConfig.png"
@@ -1535,11 +1535,11 @@ msgid ""
 " and clicking into our VM. From the \"ACTIONS\" menu select \"Run Task\"."
 " From the \"TASK\" dropdown menu, select the task we just added and click"
 " \"EXECUTE\"."
-msgstr ""
+msgstr "Clique em \"SAVE CHANGES\" para salvar nossa nova task. Podemos testar a nova task em nossa VM Apache agora indo para :menuselection:`Provisioning --> Instances` e clicando em nossa VM. No menu \"ACTIONS\", selecione \"Run Task\". No menu suspenso \"TASK\", selecione a task que acabamos de adicionar e clique em \"EXECUTE\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:598
 msgid "Executing the new task"
-msgstr ""
+msgstr "Executando a nova task"
 
 #: ../../getting_started/guides/vmware_guide.rst:598
 msgid ".. image:: /images/vCenterGuideImages/Automation/4executeTask.png"
@@ -1551,7 +1551,7 @@ msgid ""
 "on the (i) button to the right of each entry in the list. In this case, "
 "we can also see the results of the task by clicking on the link in the "
 "\"LOCATION\" column of the \"VMS\" section."
-msgstr ""
+msgstr "Para ver o progresso da task, clique na guia \"HISTORY\" e clique no botão (i) à direita de cada entrada na lista. Neste caso, também podemos ver os resultados da task clicando no link na coluna \"LOCATION\" da seção \"VMS\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:605
 msgid ""
@@ -1561,11 +1561,11 @@ msgid ""
 " give the new workflow a name and expand the Post Provision section. As "
 "we begin to type in the name of the task we've created, it should appear "
 "as a selection. Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "Agora que nossa task está criada, podemos colocá-la em um workflow. De volta em :menuselection:`Library --> Automation`, clicaremos na guia \"WORKFLOWS\". Clique em \"+ADD\" e selecione Provisioning Workflow. Daremos um nome ao novo workflow e expandiremos a seção Post Provision. Conforme começarmos a digitar o nome da task que criamos, ela deve aparecer como uma seleção. Clique em \"SAVE CHANGES\"."
 
 #: ../../getting_started/guides/vmware_guide.rst:607
 msgid "Creating a workflow for our task"
-msgstr ""
+msgstr "Criando um workflow para nossa task"
 
 #: ../../getting_started/guides/vmware_guide.rst:607
 msgid ".. image:: /images/vCenterGuideImages/Automation/5newWorkflow.png"
@@ -1580,11 +1580,11 @@ msgid ""
 "of the \"CREATE INSTANCE\" wizard, we have a workflow to select. From the"
 " \"WORKFLOW\" dropdown menu, select the workflow we just created and "
 "complete provisioning of the new instance."
-msgstr ""
+msgstr "Agora que temos um workflow, retorne a :menuselection:`Provisioning --> Instances` e comece a provisionar outra instância Apache. Instruções mais detalhadas sobre o provisionamento de uma nova instância Apache estão incluídas anteriormente neste guia, se necessário. Agora, ao chegar à seção \"AUTOMATION\" do assistente \"CREATE INSTANCE\", temos um workflow para selecionar. No menu suspenso \"WORKFLOW\", selecione o workflow que acabamos de criar e conclua o provisionamento da nova instância."
 
 #: ../../getting_started/guides/vmware_guide.rst:614
 msgid "Running the new workflow on provisioning"
-msgstr ""
+msgstr "Executando o novo workflow no provisionamento"
 
 #: ../../getting_started/guides/vmware_guide.rst:614
 msgid ""
@@ -1596,7 +1596,7 @@ msgstr ""
 msgid ""
 "As the instance is provisioning, we can go to the \"HISTORY\" tab and see"
 " |morpheus| executing the tasks that were contained in our workflow."
-msgstr ""
+msgstr "Conforme a instância está sendo provisionada, podemos ir à guia \"HISTORY\" e ver o |morpheus| executando as tasks contidas em nosso workflow."
 
 #: ../../getting_started/guides/vmware_guide.rst:621
 msgid ""
@@ -1606,11 +1606,11 @@ msgid ""
 "further information, take a look at the `automation integrations "
 "<https://docs.morpheusdata.com/en/4.1.1/integration_guides/integration_guides.html#automation>`_"
 " guide in |morpheus| docs."
-msgstr ""
+msgstr "Este é apenas um exemplo de uso do |morpheus| para automatizar o processo de configuração de uma instância conforme suas necessidades. Há vários outros tipos de automação que também podem ser incorporados aos seus workflows. Para mais informações, consulte o guia de `integrações de automação <https://docs.morpheusdata.com/en/4.1.1/integration_guides/integration_guides.html#automation>`_ na documentação do |morpheus|."
 
 #: ../../getting_started/guides/vmware_guide.rst:624
 msgid "Conclusion"
-msgstr ""
+msgstr "Conclusão"
 
 #: ../../getting_started/guides/vmware_guide.rst:626
 msgid ""
@@ -1619,5 +1619,5 @@ msgid ""
 "more to see and do in |morpheus|. Take a look at the rest of `Morpheus "
 "Docs <https://docs.morpheusdata.com/en/4.1.1/index.html>`_ for more "
 "information on supported integrations and other things possible."
-msgstr ""
+msgstr "Neste ponto, você deve estar operacional no |morpheus|, pronto para consumir VMware. Este guia apenas arranha a superfície; há muito mais para ver e fazer no |morpheus|. Consulte o restante da `Documentação do Morpheus <https://docs.morpheusdata.com/en/4.1.1/index.html>`_ para mais informações sobre integrações suportadas e outras possibilidades."
 

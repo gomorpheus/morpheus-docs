@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:4
 msgid "Kubernetes Storage Management"
-msgstr ""
+msgstr "Gestion du stockage Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:9
 msgid ""
@@ -34,442 +34,442 @@ msgid ""
 "of persistent storage resources within the cluster. |morpheus| syncs and "
 "manages StorageClasses, Persistent Volumes (PVs), Persistent Volume "
 "Claims (PVCs), ConfigMaps, and Secrets."
-msgstr ""
+msgstr "L'onglet Storage de la page de détail d'un cluster Kubernetes permet de gérer les ressources de stockage persistant dans le cluster. |morpheus| synchronise et gère les StorageClasses, Persistent Volumes (PV), Persistent Volume Claims (PVC), ConfigMaps et Secrets."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:11
 msgid ""
 "Navigate to the Storage tab via ``Infrastructure > Clusters > [cluster "
 "name] > Storage``."
-msgstr ""
+msgstr "Accédez à l'onglet Storage via ``Infrastructure > Clusters > [cluster name] > Storage``."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:13
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:13
 msgid ""
 "Storage management requires ``Infrastructure: Clusters > Full`` Role "
 "permission."
-msgstr ""
+msgstr "La gestion du stockage nécessite l'autorisation de rôle ``Infrastructure: Clusters > Full``."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:16
 msgid "Storage Classes"
-msgstr ""
+msgstr "Classes de stockage"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:18
 msgid ""
 "StorageClasses define the types of storage available in the cluster. They"
 " map to provisioners (e.g., OpenEBS, Rook/Ceph, AWS EBS, vSphere volumes)"
 " and define parameters for dynamically provisioned volumes."
-msgstr ""
+msgstr "Les StorageClasses définissent les types de stockage disponibles dans le cluster. Elles correspondent aux provisionneurs (par ex. OpenEBS, Rook/Ceph, AWS EBS, volumes vSphere) et définissent les paramètres pour les volumes provisionnés dynamiquement."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:21
 msgid "Viewing Storage Classes"
-msgstr ""
+msgstr "Consultation des classes de stockage"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:23
 msgid ""
 "The Storage Classes subtab displays all StorageClasses synced from the "
 "cluster, including:"
-msgstr ""
+msgstr "Le sous-onglet Storage Classes affiche toutes les StorageClasses synchronisées depuis le cluster, notamment :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:25
 msgid "**NAME** — StorageClass name"
-msgstr ""
+msgstr "**NAME** — Nom de la StorageClass"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:26
 msgid ""
 "**PROVISIONER** — The storage provisioner (e.g., ``kubernetes.io/no-"
 "provisioner``, ``openebs.io/local``, ``rook-ceph.rbd.csi.ceph.com``)"
-msgstr ""
+msgstr "**PROVISIONER** — Le provisionneur de stockage (par ex. ``kubernetes.io/no-provisioner``, ``openebs.io/local``, ``rook-ceph.rbd.csi.ceph.com``)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:27
 msgid ""
 "**RECLAIM POLICY** — What happens to PVs when released (``Retain``, "
 "``Delete``, ``Recycle``)"
-msgstr ""
+msgstr "**RECLAIM POLICY** — Ce qui arrive aux PV lors de leur libération (``Retain``, ``Delete``, ``Recycle``)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:28
 msgid ""
 "**VOLUME BINDING MODE** — When volume binding occurs (``Immediate``, "
 "``WaitForFirstConsumer``)"
-msgstr ""
+msgstr "**VOLUME BINDING MODE** — Quand la liaison de volume a lieu (``Immediate``, ``WaitForFirstConsumer``)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:29
 msgid "**DEFAULT** — Whether this is the cluster's default StorageClass"
-msgstr ""
+msgstr "**DEFAULT** — S'il s'agit de la StorageClass par défaut du cluster"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:31
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:31
 msgid ""
 "When using |morpheus| Kubernetes clusters with OpenEBS, ensure a default "
 "StorageClass is available so that Kubernetes specs or Helm templates "
 "using a default StorageClass for PVCs can be utilized."
-msgstr ""
+msgstr "Lors de l'utilisation de clusters Kubernetes |morpheus| avec OpenEBS, assurez-vous qu'une StorageClass par défaut est disponible afin que les specs Kubernetes ou les modèles Helm utilisant une StorageClass par défaut pour les PVC puissent être utilisés."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:34
 msgid "Persistent Volumes (PVs)"
-msgstr ""
+msgstr "Persistent Volumes (PV)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:36
 msgid ""
 "Persistent Volumes represent physical storage resources in the cluster "
 "that have been provisioned by an administrator or dynamically provisioned"
 " using a StorageClass."
-msgstr ""
+msgstr "Les Persistent Volumes représentent les ressources de stockage physiques du cluster qui ont été provisionnées par un administrateur ou provisionnées dynamiquement à l'aide d'une StorageClass."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:39
 msgid "Viewing Persistent Volumes"
-msgstr ""
+msgstr "Consultation des Persistent Volumes"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:41
 msgid "The Volumes subtab shows:"
-msgstr ""
+msgstr "Le sous-onglet Volumes affiche :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:43
 msgid "**NAME** — PV name"
-msgstr ""
+msgstr "**NAME** — Nom du PV"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:44
 msgid "**CAPACITY** — Storage size (e.g., ``10Gi``)"
-msgstr ""
+msgstr "**CAPACITY** — Taille de stockage (par ex. ``10Gi``)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:45
 msgid ""
 "**ACCESS MODES** — ``ReadWriteOnce``, ``ReadOnlyMany``, or "
 "``ReadWriteMany``"
-msgstr ""
+msgstr "**ACCESS MODES** — ``ReadWriteOnce``, ``ReadOnlyMany`` ou ``ReadWriteMany``"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:46
 msgid "**RECLAIM POLICY** — ``Retain``, ``Delete``, or ``Recycle``"
-msgstr ""
+msgstr "**RECLAIM POLICY** — ``Retain``, ``Delete`` ou ``Recycle``"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:47
 msgid "**STATUS** — ``Available``, ``Bound``, ``Released``, or ``Failed``"
-msgstr ""
+msgstr "**STATUS** — ``Available``, ``Bound``, ``Released`` ou ``Failed``"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:48
 msgid "**CLAIM** — The PVC bound to this volume (if any)"
-msgstr ""
+msgstr "**CLAIM** — Le PVC lié à ce volume (le cas échéant)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:49
 msgid "**STORAGE CLASS** — Associated StorageClass"
-msgstr ""
+msgstr "**STORAGE CLASS** — StorageClass associée"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:50
 msgid "**NAMESPACE** — Namespace (if applicable)"
-msgstr ""
+msgstr "**NAMESPACE** — Espace de noms (le cas échéant)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:53
 msgid "Creating Persistent Volumes"
-msgstr ""
+msgstr "Création de Persistent Volumes"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:55
 msgid "To create a PV through |morpheus|:"
-msgstr ""
+msgstr "Pour créer un PV via |morpheus| :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:57
 msgid "Navigate to the Storage tab on the cluster detail page"
-msgstr ""
+msgstr "Accédez à l'onglet Storage de la page de détail du cluster"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:58
 msgid "Select the Volumes subtab"
-msgstr ""
+msgstr "Sélectionnez le sous-onglet Volumes"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:59
 #: ../../infrastructure/clusters/kubernetes/storage.rst:115
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ ADD`"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:60
 #: ../../infrastructure/clusters/kubernetes/storage.rst:116
 msgid "Configure:"
-msgstr ""
+msgstr "Configurez :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:62
 #: ../../infrastructure/clusters/kubernetes/storage.rst:118
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:63
 msgid "Name for the Persistent Volume"
-msgstr ""
+msgstr "Nom du Persistent Volume"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:64
 #: ../../infrastructure/clusters/kubernetes/storage.rst:120
 msgid "NAMESPACE"
-msgstr ""
+msgstr "NAMESPACE"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:65
 msgid "Target namespace (optional for cluster-scoped PVs)"
-msgstr ""
+msgstr "Espace de noms cible (optionnel pour les PV au niveau du cluster)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:66
 #: ../../infrastructure/clusters/kubernetes/storage.rst:122
 msgid "STORAGE CLASS"
-msgstr ""
+msgstr "STORAGE CLASS"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:67
 msgid "Select from available StorageClasses"
-msgstr ""
+msgstr "Sélectionnez parmi les StorageClasses disponibles"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:68
 #: ../../infrastructure/clusters/kubernetes/storage.rst:124
 msgid "ACCESS MODE"
-msgstr ""
+msgstr "ACCESS MODE"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:69
 msgid "Select the access mode:"
-msgstr ""
+msgstr "Sélectionnez le mode d'accès :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:71
 msgid "**ReadWriteOnce (RWO)** — Single node read-write"
-msgstr ""
+msgstr "**ReadWriteOnce (RWO)** — Lecture-écriture sur un seul nœud"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:72
 msgid "**ReadOnlyMany (ROX)** — Multi-node read-only"
-msgstr ""
+msgstr "**ReadOnlyMany (ROX)** — Lecture seule multi-nœuds"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:73
 msgid "**ReadWriteMany (RWX)** — Multi-node read-write"
-msgstr ""
+msgstr "**ReadWriteMany (RWX)** — Lecture-écriture multi-nœuds"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:75
 #: ../../infrastructure/clusters/kubernetes/storage.rst:126
 msgid "CAPACITY"
-msgstr ""
+msgstr "CAPACITY"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:76
 msgid "Storage size (e.g., ``10Gi``, ``100Gi``)"
-msgstr ""
+msgstr "Taille de stockage (par ex. ``10Gi``, ``100Gi``)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:78
 #: ../../infrastructure/clusters/kubernetes/storage.rst:129
 msgid "Select :guilabel:`SAVE`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`SAVE`"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:81
 msgid "Deleting Persistent Volumes"
-msgstr ""
+msgstr "Suppression de Persistent Volumes"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:83
 msgid "Deleting a PV from |morpheus|:"
-msgstr ""
+msgstr "Suppression d'un PV depuis |morpheus| :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:85
 msgid "Select the PV from the Volumes list"
-msgstr ""
+msgstr "Sélectionnez le PV dans la liste Volumes"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:86
 msgid "Click :guilabel:`DELETE`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`DELETE`"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:87
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmez la suppression"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:89
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:89
 msgid ""
 "Deleting a PV that is bound to a PVC will first delete the associated "
 "claim. Use the ``Orphan`` propagation policy to retain the underlying "
 "storage data."
-msgstr ""
+msgstr "La suppression d'un PV lié à un PVC supprimera d'abord la revendication associée. Utilisez la politique de propagation ``Orphan`` pour conserver les données de stockage sous-jacentes."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:92
 msgid "Persistent Volume Claims (PVCs)"
-msgstr ""
+msgstr "Persistent Volume Claims (PVC)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:94
 msgid ""
 "PVCs are requests for storage by a user. They consume PV resources and "
 "are namespace-scoped."
-msgstr ""
+msgstr "Les PVC sont des demandes de stockage par un utilisateur. Ils consomment des ressources PV et sont limités à un espace de noms."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:97
 msgid "Viewing Volume Claims"
-msgstr ""
+msgstr "Consultation des revendications de volume"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:99
 msgid "The Volume Claims subtab displays:"
-msgstr ""
+msgstr "Le sous-onglet Volume Claims affiche :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:101
 msgid "**NAME** — Claim name"
-msgstr ""
+msgstr "**NAME** — Nom de la revendication"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:102
 msgid "**NAMESPACE** — Namespace containing the claim"
-msgstr ""
+msgstr "**NAMESPACE** — Espace de noms contenant la revendication"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:103
 msgid "**STATUS** — ``Pending``, ``Bound``, or ``Lost``"
-msgstr ""
+msgstr "**STATUS** — ``Pending``, ``Bound`` ou ``Lost``"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:104
 msgid "**VOLUME** — The PV bound to this claim"
-msgstr ""
+msgstr "**VOLUME** — Le PV lié à cette revendication"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:105
 msgid "**CAPACITY** — Allocated storage size"
-msgstr ""
+msgstr "**CAPACITY** — Taille de stockage allouée"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:106
 msgid "**ACCESS MODES** — Requested access modes"
-msgstr ""
+msgstr "**ACCESS MODES** — Modes d'accès demandés"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:107
 msgid "**STORAGE CLASS** — Requested StorageClass"
-msgstr ""
+msgstr "**STORAGE CLASS** — StorageClass demandée"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:110
 msgid "Creating Volume Claims"
-msgstr ""
+msgstr "Création de revendications de volume"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:112
 msgid "To create a PVC:"
-msgstr ""
+msgstr "Pour créer un PVC :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:114
 msgid "Navigate to the Storage tab > Volume Claims subtab"
-msgstr ""
+msgstr "Accédez à l'onglet Storage > sous-onglet Volume Claims"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:119
 msgid "Claim name"
-msgstr ""
+msgstr "Nom de la revendication"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:121
 msgid "Target namespace for the claim"
-msgstr ""
+msgstr "Espace de noms cible pour la revendication"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:123
 msgid "Select a StorageClass (or leave blank for default)"
-msgstr ""
+msgstr "Sélectionnez une StorageClass (ou laissez vide pour la valeur par défaut)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:125
 msgid "Requested access mode"
-msgstr ""
+msgstr "Mode d'accès demandé"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:127
 msgid "Requested storage size"
-msgstr ""
+msgstr "Taille de stockage demandée"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:131
 msgid ""
 "|morpheus| creates the PVC in the cluster. If dynamic provisioning is "
 "configured for the selected StorageClass, a PV will be automatically "
 "created and bound."
-msgstr ""
+msgstr "|morpheus| crée le PVC dans le cluster. Si le provisionnement dynamique est configuré pour la StorageClass sélectionnée, un PV sera automatiquement créé et lié."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:134
 msgid "Deleting Volume Claims"
-msgstr ""
+msgstr "Suppression des revendications de volume"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:136
 msgid "When deleting a PVC from |morpheus|:"
-msgstr ""
+msgstr "Lors de la suppression d'un PVC depuis |morpheus| :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:138
 msgid "The PVC is removed from the cluster"
-msgstr ""
+msgstr "Le PVC est supprimé du cluster"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:139
 msgid "Behavior for the associated PV depends on the ``propagationPolicy``:"
-msgstr ""
+msgstr "Le comportement pour le PV associé dépend de la ``propagationPolicy`` :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:141
 msgid "**Foreground** (default) — Both PVC and PV are deleted"
-msgstr ""
+msgstr "**Foreground** (par défaut) — Le PVC et le PV sont supprimés"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:142
 msgid ""
 "**Orphan** — Only the PVC is deleted; the PV is retained with a "
 "``Released`` status"
-msgstr ""
+msgstr "**Orphan** — Seul le PVC est supprimé ; le PV est conservé avec le statut ``Released``"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:145
 msgid "ConfigMaps"
-msgstr ""
+msgstr "ConfigMaps"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:147
 msgid ""
 "ConfigMaps store non-confidential configuration data as key-value pairs. "
 "They are synced and viewable on the Storage tab."
-msgstr ""
+msgstr "Les ConfigMaps stockent des données de configuration non confidentielles sous forme de paires clé-valeur. Elles sont synchronisées et consultables dans l'onglet Storage."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:149
 msgid "View existing ConfigMaps per namespace"
-msgstr ""
+msgstr "Consulter les ConfigMaps existants par espace de noms"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:150
 msgid "Inspect key-value contents"
-msgstr ""
+msgstr "Inspecter le contenu clé-valeur"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:151
 msgid "Create new ConfigMaps with arbitrary key-value data"
-msgstr ""
+msgstr "Créer de nouveaux ConfigMaps avec des données clé-valeur arbitraires"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:154
 msgid "Secrets"
-msgstr ""
+msgstr "Secrets"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:156
 msgid ""
 "Secrets store sensitive data such as passwords, tokens, and keys. They "
 "are synced from the cluster and displayed (values are masked by default)."
-msgstr ""
+msgstr "Les Secrets stockent des données sensibles telles que mots de passe, jetons et clés. Ils sont synchronisés depuis le cluster et affichés (les valeurs sont masquées par défaut)."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:158
 msgid "View existing Secrets per namespace"
-msgstr ""
+msgstr "Consulter les Secrets existants par espace de noms"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:159
 msgid ""
 "Secret types include ``Opaque``, ``kubernetes.io/tls``, "
 "``kubernetes.io/dockerconfigjson``, etc."
-msgstr ""
+msgstr "Les types de Secret incluent ``Opaque``, ``kubernetes.io/tls``, ``kubernetes.io/dockerconfigjson``, etc."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:160
 msgid "Create new Secrets with encoded data"
-msgstr ""
+msgstr "Créer de nouveaux Secrets avec des données encodées"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:163
 msgid "Storage Runtime Options"
-msgstr ""
+msgstr "Options de runtime de stockage"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:165
 msgid ""
 "When provisioning a |morpheus| Kubernetes cluster, the storage runtime is"
 " configured via the Cluster Layout:"
-msgstr ""
+msgstr "Lors du provisionnement d'un cluster Kubernetes |morpheus|, le runtime de stockage est configuré via la disposition du cluster :"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:167
 msgid ""
 "**OpenEBS** — Default for many MKS layouts. Provides local and replicated"
 " storage."
-msgstr ""
+msgstr "**OpenEBS** — Par défaut pour de nombreuses dispositions MKS. Fournit un stockage local et répliqué."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:168
 msgid ""
 "**Rook/Ceph** — Available on VMware Fusion and VMware layouts. Provides "
 "distributed block storage."
-msgstr ""
+msgstr "**Rook/Ceph** — Disponible sur les dispositions VMware Fusion et VMware. Fournit un stockage bloc distribué."
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:169
 msgid ""
 "**None** — External clusters or layouts that rely on cloud-native storage"
 " (EBS, Azure Disk, etc.)"
-msgstr ""
+msgstr "**None** — Clusters externes ou structures qui s'appuient sur un stockage cloud natif (EBS, Azure Disk, etc.)"
 
 #: ../../infrastructure/clusters/kubernetes/storage.rst:171
 msgid ""
 "The chosen storage runtime determines which StorageClasses are "
 "automatically configured on the cluster."
-msgstr ""
+msgstr "L'environnement d'exécution de stockage choisi détermine quelles StorageClasses sont automatiquement configurées sur le cluster."
 

@@ -22,48 +22,48 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:2
 msgid "Single Node Install on CentOS"
-msgstr ""
+msgstr "Installation mono-nœud sur CentOS"
 
 #: ../../getting_started/additional/morpheusRb.rst:8
 #: ../../getting_started/installation/singleNode/centos.rst:4
 #: ../../getting_started/installation/singleNode/centos.rst:48
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/installation/singleNode/centos.rst:4
 msgid ""
 "Appliance Package links are available at https://app.morpheushub.com in "
 "the downloads section."
-msgstr ""
+msgstr "Les liens vers les packages Appliance sont disponibles sur https://app.morpheushub.com dans la section téléchargements."
 
 #: ../../getting_started/installation/singleNode/centos.rst:7
 msgid "Quick Install"
-msgstr ""
+msgstr "Installation rapide"
 
 #: ../../getting_started/installation/singleNode/centos.rst:8
 msgid "Install the Appliance package and run ``sudo morpheus-ctl reconfigure``."
-msgstr ""
+msgstr "Installez le package Appliance et exécutez ``sudo morpheus-ctl reconfigure``."
 
 #: ../../getting_started/installation/singleNode/centos.rst:10
 msgid ""
 "That is it. After the reconfigure completes, |morpheus| will start and be"
 " available at ``https://your_machine_name`` in a minute or few."
-msgstr ""
+msgstr "C'est tout. Une fois le reconfigure terminé, |morpheus| démarrera et sera disponible à ``https://your_machine_name`` en une minute ou quelques minutes."
 
 #: ../../getting_started/installation/singleNode/centos.rst:13
 msgid "Step-by-step Install Instructions"
-msgstr ""
+msgstr "Instructions d'installation pas à pas"
 
 #: ../../getting_started/installation/singleNode/centos.rst:15
 msgid "Ensure the |morpheus| Appliance host meets the minimum :ref:`Requirements`"
-msgstr ""
+msgstr "Assurez-vous que l'hôte Appliance |morpheus| respecte les :ref:`Requirements` minimales"
 
 #: ../../getting_started/installation/singleNode/centos.rst:17
 msgid ""
 "Download the target version ``.rpm`` package for installation in a "
 "directory of your choosing. The package can be removed after successful "
 "installation."
-msgstr ""
+msgstr "Téléchargez le package ``.rpm`` de la version cible pour l'installation dans un répertoire de votre choix. Le package peut être supprimé après une installation réussie."
 
 #: ../../getting_started/installation/singleNode/centos.rst:19
 msgid ""
@@ -73,7 +73,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:23
 msgid "Validate the package checksum matches source checksums. For example:"
-msgstr ""
+msgstr "Validez que la somme de contrôle du package correspond aux sommes de contrôle source. Par exemple :"
 
 #: ../../getting_started/installation/singleNode/centos.rst:25
 msgid "sha256sum morpheus-appliance-$version.rpm"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:29
 msgid "Next install the rpm package"
-msgstr ""
+msgstr "Installez ensuite le package rpm"
 
 #: ../../getting_started/installation/singleNode/centos.rst:31
 msgid "sudo rpm -ihv morpheus-appliance-x.x.x-1.x86_64.rpm"
@@ -94,7 +94,7 @@ msgid ""
 "``/etc/morpheus/morpheus.rb`` and changing the value of "
 "``appliance_url``. Additional Appliance configuration options are "
 "available below."
-msgstr ""
+msgstr "Par défaut, appliance_url utilise le nom d'hôte de la machine, c'est-à-dire ``https://your_machine_name``. L'URL par défaut peut être modifiée en éditant ``/etc/morpheus/morpheus.rb`` et en changeant la valeur de ``appliance_url``. D'autres options de configuration de l'appliance sont disponibles ci-dessous."
 
 #: ../../getting_started/additional/morpheusRb.rst:6
 msgid ""
@@ -102,7 +102,7 @@ msgid ""
 " services within the morpheus.rb file located in "
 "``/etc/morpheus/morpheus.rb``.  Below is a list of the supported items "
 "available in the ``morpheus.rb`` file."
-msgstr ""
+msgstr "Morpheus permet des personnalisations avancées supplémentaires pour les services gérés par le système dans le fichier morpheus.rb situé dans ``/etc/morpheus/morpheus.rb``. Vous trouverez ci-dessous la liste des éléments pris en charge disponibles dans le fichier ``morpheus.rb``."
 
 #: ../../getting_started/additional/morpheusRb.rst:8
 msgid ""
@@ -115,7 +115,7 @@ msgid ""
 " our `KnowledgeBase <https://support.morpheusdata.com/s/article"
 "/Configure-Morpheus-to-utilize-and-alternate-port-for-"
 "SSL?language=en_US>`_."
-msgstr ""
+msgstr "Les paramètres de configuration des services ne s'appliquent pas aux services externalisés tels que les clusters MySQL, Elasticsearch ou RabbitMQ externes. Seuls les paramètres de connexion s'appliquent aux services externes. De plus, pour configurer |morpheus| afin d'utiliser des ports alternatifs pour SSL, des étapes de configuration supplémentaires peuvent être nécessaires. Si l'ajout simple d'un port à votre valeur ``appliance_url`` ne fonctionne pas, consultez l'article associé dans notre `KnowledgeBase <https://support.morpheusdata.com/s/article/Configure-Morpheus-to-utilize-and-alternate-port-for-SSL?language=en_US>`_."
 
 #: ../../getting_started/additional/morpheusRb.rst:10
 #, python-brace-format
@@ -297,7 +297,7 @@ msgstr ""
 
 #: ../../getting_started/installation/singleNode/centos.rst:42
 msgid "After all configuration options have been set, run:"
-msgstr ""
+msgstr "Une fois toutes les options de configuration définies, exécutez :"
 
 #: ../../getting_started/installation/singleNode/centos.rst:44
 msgid "sudo morpheus-ctl reconfigure"
@@ -309,7 +309,7 @@ msgid ""
 "editing ``/etc/morpheus/morpheus.rb`` and running ``sudo morpheus-ctl "
 "reconfigure`` again. Appliance and other services may need to be "
 "restarted depending on configuration changes."
-msgstr ""
+msgstr "Les options de configuration peuvent être mises à jour après le reconfigure initial en modifiant ``/etc/morpheus/morpheus.rb`` et en exécutant à nouveau ``sudo morpheus-ctl reconfigure``. L'appliance et d'autres services peuvent nécessiter un redémarrage selon les modifications de configuration."
 
 #: ../../getting_started/installation/singleNode/centos.rst:50
 msgid ""
@@ -317,7 +317,7 @@ msgid ""
 "automatically start up and be available shortly. To monitor the UI "
 "startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the "
 "ascii logo accompanied by the install version and start time:"
-msgstr ""
+msgstr "Une fois l'installation terminée, le service morpheus-ui démarrera automatiquement et sera disponible sous peu. Pour surveiller le processus de démarrage de l'interface utilisateur, exécutez ``morpheus-ctl tail morpheus-ui`` et recherchez le logo ASCII accompagné de la version d'installation et de l'heure de démarrage :"
 
 #: ../../getting_started/installation/singleNode/centos.rst:52
 msgid ""
@@ -335,7 +335,7 @@ msgstr ""
 msgid ""
 "There are additional install settings that can be viewed in the "
 ":ref:`additional_options` section."
-msgstr ""
+msgstr "Des paramètres d'installation supplémentaires sont disponibles dans la section :ref:`additional_options`."
 
 #: ../../getting_started/installation/singleNode/centos.rst:65
 msgid ""
@@ -345,21 +345,21 @@ msgid ""
 "settings page where a license can be applied for use (if a license is "
 "required you may request one or purchase one by contacting your sales "
 "representative)."
-msgstr ""
+msgstr "Lorsque le navigateur est dirigé vers l'appliance, un assistant de configuration initiale s'affiche. Veuillez suivre les instructions à l'écran en créant le compte principal. Vous accéderez ensuite à la page des paramètres de licence où une licence peut être appliquée (si une licence est requise, vous pouvez en demander une ou en acheter une en contactant votre représentant commercial)."
 
 #: ../../getting_started/installation/singleNode/centos.rst:67
 msgid ""
 "More details on setting up infrastructure can be found throughout this "
 "guide."
-msgstr ""
+msgstr "Vous trouverez plus de détails sur la configuration de l'infrastructure dans l'ensemble de ce guide."
 
 #: ../../getting_started/installation/singleNode/centos.rst:69
 msgid "Tip"
-msgstr ""
+msgstr "Astuce"
 
 #: ../../getting_started/installation/singleNode/centos.rst:69
 msgid ""
 "If any issues occur it may be prudent to check the morpheus log for "
 "details at ``/var/log/morpheus/morpheus-ui/current``."
-msgstr ""
+msgstr "En cas de problème, il peut être prudent de consulter le journal morpheus pour plus de détails à ``/var/log/morpheus/morpheus-ui/current``."
 

@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../getting_started/additional/proxies.rst:2
 msgid "Proxies"
-msgstr ""
+msgstr "Proxies"
 
 #: ../../getting_started/additional/proxies.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../getting_started/additional/proxies.rst:7
 msgid ""
@@ -40,7 +40,7 @@ msgid ""
 "proxy settings directly (restricted to cloud-init based Linux platforms "
 "for now, but can also be done on windows based platforms in a different "
 "manner)."
-msgstr ""
+msgstr "Em muitas situações, as empresas implantam máquinas virtuais em ambientes restritos por proxy para coisas como Conformidade PCI, ou apenas segurança geral. Como resultado disso, o |morpheus| oferece suporte pronto para uso à conectividade por proxy. O suporte à autenticação de proxy também é fornecido com recursos de Basic Authentication, bem como NTLM para ambientes de Proxy Windows. O |morpheus| é até capaz de configurar as máquinas virtuais que provisiona para utilizar esses proxies, configurando diretamente as configurações de proxy dos sistemas operacionais (restrito a plataformas Linux baseadas em cloud-init por enquanto, mas também pode ser feito em plataformas Windows de maneira diferente)."
 
 #: ../../getting_started/additional/proxies.rst:9
 msgid ""
@@ -51,7 +51,7 @@ msgid ""
 "relevant connection info needed to utilize the proxy. It may also be "
 "advised to ensure that the Linux environment's ``http_proxy``, "
 "``https_proxy``, and ``no_proxy`` are set appropriately."
-msgstr ""
+msgstr "Para começar com Proxies, pode ser primeiro importante configurar o próprio appliance |morpheus| para ter acesso à comunicação por proxy para baixar imagens do catálogo de serviços. Para configurar isso, visite a página |AdmSet|, onde há uma seção rotulada \"Proxy Settings\". Preencha as informações de conexão relevantes necessárias para utilizar o proxy. Também pode ser aconselhável garantir que ``http_proxy``, ``https_proxy`` e ``no_proxy`` do ambiente Linux estejam definidos adequadamente."
 
 #: ../../getting_started/additional/proxies.rst:11
 msgid ""
@@ -60,11 +60,11 @@ msgid ""
 ":doc:`/getting_started/requirements/requirements`. Do not copy proposed "
 "tunnel hostnames into proxy rules unless HPE has supplied the current "
 "endpoint registry for the enabled service and release."
-msgstr ""
+msgstr "Para conectividade opcional de Central Service ou Remote Data Access, use o requisito canônico de endpoint em :doc:`/getting_started/requirements/requirements`. Não copie hostnames de túnel propostos para regras de proxy, a menos que a HPE tenha fornecido o registro atual de endpoints para o serviço e a release habilitados."
 
 #: ../../getting_started/additional/proxies.rst:14
 msgid "Defining Proxies"
-msgstr ""
+msgstr "Definindo Proxies"
 
 #: ../../getting_started/additional/proxies.rst:15
 msgid ""
@@ -76,11 +76,11 @@ msgid ""
 " for various proxies. This includes the host ip address, proxy port, and "
 "any credentials (if necessary) needed to utilize the proxy. Now that "
 "these proxies are defined we can use them in various contexts."
-msgstr ""
+msgstr "Os proxies podem ser usados em alguns contextos diferentes e, opcionalmente, delimitados a redes específicas nas quais se possa estar provisionando ou em uma integração de nuvem como um todo. Para configurar um Proxy para uso pelos mecanismos de provisionamento no |morpheus|, devemos ir a ``Infrastructure > Networks > Proxies``. Aqui podemos criar registros que representam informações de conexão para vários proxies. Isso inclui o endereço IP do host, a porta do proxy e quaisquer credenciais (se necessário) necessárias para utilizar o proxy. Agora que esses proxies estão definidos, podemos usá-los em vários contextos."
 
 #: ../../getting_started/additional/proxies.rst:18
 msgid "Cloud Communication"
-msgstr ""
+msgstr "Comunicação com a Nuvem"
 
 #: ../../getting_started/additional/proxies.rst:20
 msgid ""
@@ -93,11 +93,11 @@ msgid ""
 "least one Proxy or Distributed Worker is available to the Tenant. The API"
 " Proxy controls communication between |morpheus| and the Cloud API; it "
 "does not configure proxy settings inside provisioned workloads."
-msgstr ""
+msgstr "Quando o |morpheus| precisa se conectar a APIs de nuvem para emitir comandos de provisionamento ou sincronizar ambientes existentes, esses endpoints de API devem estar acessíveis pelo appliance. Em alguns casos, o appliance pode estar atrás de um proxy para acesso a Nuvens públicas como Azure ou AWS. Após definir um Proxy, adicione ou edite uma Nuvem compatível e selecione-o em ``Connection Options > API Proxy``. A seção Connection Options aparece quando pelo menos um Proxy ou Distributed Worker está disponível para o Tenant. O API Proxy controla a comunicação entre o |morpheus| e a API da Nuvem; ele não configura as configurações de proxy dentro das cargas de trabalho provisionadas."
 
 #: ../../getting_started/additional/proxies.rst:23
 msgid "Provisioning with Proxies"
-msgstr ""
+msgstr "Provisionando com Proxies"
 
 #: ../../getting_started/additional/proxies.rst:25
 msgid ""
@@ -109,7 +109,7 @@ msgid ""
 " cloud there is a setting for \"Provisioning Proxy\" in \"Provisioning "
 "Options\". If this proxy is set, |morpheus| will automatically apply "
 "these proxy settings to the guest operating system."
-msgstr ""
+msgstr "As configurações de proxy podem variar de sistema operacional para sistema operacional e, em alguns casos, é necessário que sejam configuradas nos blueprints como pré-requisito. Em outros casos, também podem ser configuradas automaticamente. Principalmente com o uso de cloud-init (que todo o nosso catálogo de serviços pronto para uso utiliza em todas as nuvens). Ao editar/criar uma nuvem, há uma configuração para \"Provisioning Proxy\" em \"Provisioning Options\". Se este proxy estiver definido, o |morpheus| aplicará automaticamente essas configurações de proxy ao sistema operacional convidado."
 
 #: ../../getting_started/additional/proxies.rst:27
 msgid ""
@@ -118,11 +118,11 @@ msgid ""
 "or on the Networks tab of the relevant Cloud detail page. Here, a proxy "
 "can also be assigned as well as additional options like the ``No Proxy`` "
 "rules for proxy exceptions."
-msgstr ""
+msgstr "A substituição das configurações de proxy também pode ser feita no registro Network. Redes (ou subnets) podem ser configuradas em ``Infrastructure > Networks`` ou na guia Networks da página de detalhes da Nuvem relevante. Aqui, um proxy também pode ser atribuído, bem como opções adicionais como as regras ``No Proxy`` para exceções de proxy."
 
 #: ../../getting_started/additional/proxies.rst:30
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #: ../../getting_started/additional/proxies.rst:32
 msgid ""
@@ -131,12 +131,12 @@ msgid ""
 "There are workflows that can be configured via the Automation engine to "
 "make this automatic when creating docker based hosts. Please see "
 "documentation on Docker and proxies for specific information."
-msgstr ""
+msgstr "Ao provisionar hosts baseados em Docker em um ambiente com Proxy, cabe ao usuário configurar manualmente a configuração de proxy do host docker. Há workflows que podem ser configurados por meio do mecanismo de Automação para tornar isso automático ao criar hosts baseados em docker. Consulte a documentação sobre Docker e proxies para informações específicas."
 
 #: ../../getting_started/additional/proxies.rst:34
 msgid ""
 "Proxy setups can vary widely from company to company, and it may be "
 "advised to contact support for help configuring morpheus to work in the "
 "proxy environment."
-msgstr ""
+msgstr "As configurações de proxy podem variar amplamente de empresa para empresa, e pode ser aconselhável contatar o suporte para obter ajuda na configuração do morpheus para funcionar no ambiente de proxy."
 

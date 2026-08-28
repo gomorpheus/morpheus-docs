@@ -22,22 +22,22 @@ msgstr ""
 
 #: ../../infrastructure/networks/networks.rst:2
 msgid "Networks"
-msgstr ""
+msgstr "Redes"
 
 #: ../../infrastructure/networks/networks.rst:4
 msgid "`Infrastructure > Network > Networks`"
-msgstr ""
+msgstr "`Infrastructure > Network > Networks`"
 
 #: ../../infrastructure/networks/networks.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../infrastructure/networks/networks.rst:9
 msgid ""
 "The Networks section is for configuring networks across all clouds in "
 "|morpheus|. Existing networks from Clouds added in |morpheus| will auto-"
 "populate in the Networks section."
-msgstr ""
+msgstr "A seção Networks é para configurar redes em todas as nuvens no |morpheus|. Redes existentes de Nuvens adicionadas no |morpheus| serão preenchidas automaticamente na seção Networks."
 
 #: ../../infrastructure/networks/networks.rst:11
 msgid ""
@@ -46,18 +46,18 @@ msgid ""
 "tenancy usage. Inactive Networks are unavailable for provisioning use. In"
 " addition, |morpheus| allows administrators to restrict management of "
 "|morpheus|-created Networks through Role permissions."
-msgstr ""
+msgstr "Redes podem ser configuradas para atribuição DHCP ou IP Estático, pools de IP atribuídos e configuradas para visibilidade e atribuição de conta para uso multi-tenant. Redes Inativas ficam indisponíveis para uso no provisionamento. Além disso, o |morpheus| permite que administradores restrinjam o gerenciamento de Redes criadas pelo |morpheus| por meio de permissões de Função."
 
 #: ../../infrastructure/networks/networks.rst:16
 msgid "Filtering Networks by all Labels through the API"
-msgstr ""
+msgstr "Filtrando Redes por todos os Labels por meio da API"
 
 #: ../../infrastructure/networks/networks.rst:18
 msgid ""
 "The Networks API ``allLabels`` filter matches Networks that have every "
 "supplied Label. Supply the query key once for each Label; do not combine "
 "multiple Labels into one comma- or space-separated value."
-msgstr ""
+msgstr "O filtro ``allLabels`` da API Networks corresponde a Redes que possuem cada Label fornecido. Informe a chave de consulta uma vez para cada Label; não combine vários Labels em um único valor separado por vírgula ou espaço."
 
 #: ../../infrastructure/networks/networks.rst:20
 msgid "GET /api/networks?allLabels=ENV.NIT&allLabels=SERVICE.LNX_AP_WLS"
@@ -69,264 +69,264 @@ msgid ""
 "parameters are collected as separate values and the label service joins "
 "once per value, so the result contains only Networks matching all values."
 " By contrast, ``labels``/``label`` uses match-any behavior."
-msgstr ""
+msgstr "Codifique em URL os valores de Label quando contiverem caracteres reservados. Parâmetros repetidos são coletados como valores separados e o serviço de label une uma vez por valor, de modo que o resultado contém apenas Redes que correspondem a todos os valores. Em contraste, ``labels``/``label`` usa comportamento de correspondência a qualquer um."
 
 #: ../../infrastructure/networks/networks.rst:27
 msgid "Understanding Networks (VMware to |morpheus|)"
-msgstr ""
+msgstr "Entendendo Redes (VMware para |morpheus|)"
 
 #: ../../infrastructure/networks/networks.rst:29
 msgid ""
 "For administrators coming from VMware environments, the following analogy"
 " table maps familiar VMware networking concepts to their |morpheus| "
 "equivalents:"
-msgstr ""
+msgstr "Para administradores vindos de ambientes VMware, a tabela de analogia a seguir mapeia conceitos familiares de rede VMware para seus equivalentes no |morpheus|:"
 
 #: ../../infrastructure/networks/networks.rst:35
 msgid "VMware Concept"
-msgstr ""
+msgstr "Conceito VMware"
 
 #: ../../infrastructure/networks/networks.rst:36
 msgid "|morpheus| Equivalent"
-msgstr ""
+msgstr "Equivalente |morpheus|"
 
 #: ../../infrastructure/networks/networks.rst:37
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: ../../infrastructure/networks/networks.rst:38
 msgid "vSwitch / vDS (Distributed Switch)"
-msgstr ""
+msgstr "vSwitch / vDS (Distributed Switch)"
 
 #: ../../infrastructure/networks/networks.rst:39
 msgid "Virtual Switch (HVM clusters)"
-msgstr ""
+msgstr "Virtual Switch (clusters HVM)"
 
 #: ../../infrastructure/networks/networks.rst:40
 msgid ""
 "Cluster-level abstraction that manages uplinks, bonds, and traffic types."
 " See :doc:`/infrastructure/clusters/hvm/virtual_switches`."
-msgstr ""
+msgstr "Abstração no nível do cluster que gerencia uplinks, bonds e tipos de tráfego. Consulte :doc:`/infrastructure/clusters/hvm/virtual_switches`."
 
 #: ../../infrastructure/networks/networks.rst:41
 msgid "Port Group"
-msgstr ""
+msgstr "Port Group"
 
 #: ../../infrastructure/networks/networks.rst:42
 msgid "Network"
-msgstr ""
+msgstr "Rede"
 
 #: ../../infrastructure/networks/networks.rst:43
 msgid ""
 "A named network with VLAN, CIDR, gateway, and DNS settings. VMs are "
 "attached to Networks during provisioning."
-msgstr ""
+msgstr "Uma rede nomeada com configurações de VLAN, CIDR, gateway e DNS. VMs são anexadas a Redes durante o provisionamento."
 
 #: ../../infrastructure/networks/networks.rst:44
 msgid "VLAN ID (on port group)"
-msgstr ""
+msgstr "VLAN ID (no port group)"
 
 #: ../../infrastructure/networks/networks.rst:45
 msgid "VLAN ID (on Network or Virtual Switch segment)"
-msgstr ""
+msgstr "VLAN ID (na Rede ou no segmento do Virtual Switch)"
 
 #: ../../infrastructure/networks/networks.rst:46
 msgid ""
 "VLAN tagging is set on the Network record or on the Virtual Switch "
 "traffic segment."
-msgstr ""
+msgstr "A marcação VLAN é definida no registro Network ou no segmento de tráfego do Virtual Switch."
 
 #: ../../infrastructure/networks/networks.rst:47
 msgid "VM Network / Management Network"
-msgstr ""
+msgstr "VM Network / Management Network"
 
 #: ../../infrastructure/networks/networks.rst:48
 msgid "VM Network traffic type (Virtual Switch)"
-msgstr ""
+msgstr "Tipo de tráfego VM Network (Virtual Switch)"
 
 #: ../../infrastructure/networks/networks.rst:49
 msgid ""
 "The default Virtual Switch (``virtSwitch0``) carries VM traffic. "
 "Additional switches can be created for storage and migration."
-msgstr ""
+msgstr "O Virtual Switch padrão (``virtSwitch0``) transporta o tráfego de VM. Switches adicionais podem ser criados para armazenamento e migração."
 
 #: ../../infrastructure/networks/networks.rst:50
 msgid "VMkernel adapter (vmk) for storage"
-msgstr ""
+msgstr "Adaptador VMkernel (vmk) para armazenamento"
 
 #: ../../infrastructure/networks/networks.rst:51
 msgid "Data (NFS) or Data (iSCSI) traffic type"
-msgstr ""
+msgstr "Tipo de tráfego Data (NFS) ou Data (iSCSI)"
 
 #: ../../infrastructure/networks/networks.rst:52
 msgid ""
 "Storage traffic is carried on dedicated Virtual Switch segments with "
 "host-level IP addresses assigned."
-msgstr ""
+msgstr "O tráfego de armazenamento é transportado em segmentos dedicados do Virtual Switch com endereços IP no nível do host atribuídos."
 
 #: ../../infrastructure/networks/networks.rst:53
 msgid "VMkernel adapter for vMotion"
-msgstr ""
+msgstr "Adaptador VMkernel para vMotion"
 
 #: ../../infrastructure/networks/networks.rst:54
 msgid "Live Migration traffic type"
-msgstr ""
+msgstr "Tipo de tráfego Live Migration"
 
 #: ../../infrastructure/networks/networks.rst:55
 msgid "Dedicated Virtual Switch segment for live migration traffic between hosts."
-msgstr ""
+msgstr "Segmento dedicado do Virtual Switch para tráfego de migração ao vivo entre hosts."
 
 #: ../../infrastructure/networks/networks.rst:56
 msgid "IP Pool (IPAM)"
-msgstr ""
+msgstr "IP Pool (IPAM)"
 
 #: ../../infrastructure/networks/networks.rst:57
 msgid "IP Pool (|morpheus| or IPAM integration)"
-msgstr ""
+msgstr "Pool de IP (|morpheus| ou integração IPAM)"
 
 #: ../../infrastructure/networks/networks.rst:58
 msgid ""
 "|morpheus| has built-in IP pool management or can integrate with external"
 " IPAM (Infoblox, Bluecat, etc.)."
-msgstr ""
+msgstr "O |morpheus| possui gerenciamento de pool de IP embutido ou pode integrar-se com IPAM externo (Infoblox, Bluecat, etc.)."
 
 #: ../../infrastructure/networks/networks.rst:59
 msgid "Domain / DNS"
-msgstr ""
+msgstr "Domain / DNS"
 
 #: ../../infrastructure/networks/networks.rst:60
 msgid "Network Domain"
-msgstr ""
+msgstr "Network Domain"
 
 #: ../../infrastructure/networks/networks.rst:61
 msgid ""
 "Configured under Infrastructure > Network > Domains. Used for DNS suffix "
 "and Active Directory domain join."
-msgstr ""
+msgstr "Configurado em Infrastructure > Network > Domains. Usado para sufixo DNS e ingresso no domínio Active Directory."
 
 #: ../../infrastructure/networks/networks.rst:64
 msgid "Creating a New Network"
-msgstr ""
+msgstr "Criando uma Nova Rede"
 
 #: ../../infrastructure/networks/networks.rst:66
 msgid "To create a new network and make it available for VM provisioning:"
-msgstr ""
+msgstr "Para criar uma nova rede e disponibilizá-la para provisionamento de VM:"
 
 #: ../../infrastructure/networks/networks.rst:68
 msgid "Navigate to ``Infrastructure > Network > Networks``"
-msgstr ""
+msgstr "Navegue até ``Infrastructure > Network > Networks``"
 
 #: ../../infrastructure/networks/networks.rst:69
 msgid "Click :guilabel:`+ Add`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ Add`"
 
 #: ../../infrastructure/networks/networks.rst:70
 msgid "Select the target Cloud where this network will be used"
-msgstr ""
+msgstr "Selecione a Nuvem de destino onde esta rede será usada"
 
 #: ../../infrastructure/networks/networks.rst:71
 msgid "Configure the network settings:"
-msgstr ""
+msgstr "Configure as configurações da rede:"
 
 #: ../../infrastructure/networks/networks.rst:77
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: ../../infrastructure/networks/networks.rst:78
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../infrastructure/networks/networks.rst:79
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: ../../infrastructure/networks/networks.rst:80
 msgid "Display name for the network (e.g., ``Production-VLAN100``)"
-msgstr ""
+msgstr "Nome de exibição da rede (ex.: ``Production-VLAN100``)"
 
 #: ../../infrastructure/networks/networks.rst:81
 msgid "CIDR"
-msgstr ""
+msgstr "CIDR"
 
 #: ../../infrastructure/networks/networks.rst:82
 msgid "Network CIDR notation (e.g., ``10.10.100.0/24``)"
-msgstr ""
+msgstr "Notação CIDR da rede (ex.: ``10.10.100.0/24``)"
 
 #: ../../infrastructure/networks/networks.rst:83
 #: ../../infrastructure/networks/networks.rst:149
 msgid "Gateway"
-msgstr ""
+msgstr "Gateway"
 
 #: ../../infrastructure/networks/networks.rst:84
 msgid "Default gateway IP for VMs on this network"
-msgstr ""
+msgstr "IP do gateway padrão para VMs nesta rede"
 
 #: ../../infrastructure/networks/networks.rst:85
 msgid "DNS Primary / Secondary"
-msgstr ""
+msgstr "DNS Primary / Secondary"
 
 #: ../../infrastructure/networks/networks.rst:86
 msgid "DNS servers for VMs on this network"
-msgstr ""
+msgstr "Servidores DNS para VMs nesta rede"
 
 #: ../../infrastructure/networks/networks.rst:87
 msgid "VLAN ID"
-msgstr ""
+msgstr "VLAN ID"
 
 #: ../../infrastructure/networks/networks.rst:88
 msgid ""
 "VLAN tag (if applicable). Must match the VLAN configured on the physical "
 "switch / Virtual Switch."
-msgstr ""
+msgstr "Tag VLAN (se aplicável). Deve corresponder à VLAN configurada no switch físico / Virtual Switch."
 
 #: ../../infrastructure/networks/networks.rst:89
 msgid "DHCP Server"
-msgstr ""
+msgstr "Servidor DHCP"
 
 #: ../../infrastructure/networks/networks.rst:90
 msgid ""
 "Enable if a DHCP server is present on this network. When enabled, VMs "
 "receive IPs from DHCP rather than |morpheus| IP management."
-msgstr ""
+msgstr "Ative se um servidor DHCP estiver presente nesta rede. Quando ativado, as VMs recebem IPs do DHCP em vez do gerenciamento de IP do |morpheus|."
 
 #: ../../infrastructure/networks/networks.rst:91
 msgid "Network Pool"
-msgstr ""
+msgstr "Network Pool"
 
 #: ../../infrastructure/networks/networks.rst:92
 msgid ""
 "Select an IP Pool for static IP assignment. When a pool is assigned, IPs "
 "are automatically allocated from the pool during provisioning."
-msgstr ""
+msgstr "Selecione um Pool de IP para atribuição de IP estático. Quando um pool é atribuído, os IPs são alocados automaticamente do pool durante o provisionamento."
 
 #: ../../infrastructure/networks/networks.rst:93
 msgid "Domain"
-msgstr ""
+msgstr "Domínio"
 
 #: ../../infrastructure/networks/networks.rst:94
 msgid "Associate a Network Domain for DNS suffix and domain join"
-msgstr ""
+msgstr "Associe um Network Domain para sufixo DNS e ingresso no domínio"
 
 #: ../../infrastructure/networks/networks.rst:95
 #: ../../infrastructure/networks/networks.rst:164
 msgid "Active"
-msgstr ""
+msgstr "Ativo"
 
 #: ../../infrastructure/networks/networks.rst:96
 msgid "Must be enabled for the network to appear as a provisioning option"
-msgstr ""
+msgstr "Deve estar ativado para que a rede apareça como opção de provisionamento"
 
 #: ../../infrastructure/networks/networks.rst:98
 msgid "Configure permissions (Group Access, Tenant Permissions) as needed"
-msgstr ""
+msgstr "Configure as permissões (Acesso de Grupo, Permissões de Tenant) conforme necessário"
 
 #: ../../infrastructure/networks/networks.rst:99
 msgid "Click :guilabel:`Save Changes`"
-msgstr ""
+msgstr "Clique em :guilabel:`Save Changes`"
 
 #: ../../infrastructure/networks/networks.rst:101
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../infrastructure/networks/networks.rst:103
 msgid ""
@@ -335,11 +335,11 @@ msgid ""
 " in |morpheus| with those same settings. On an HVM cluster, ensure a "
 "Virtual Switch exists with a VM Network segment on VLAN 100 to carry this"
 " traffic on the physical uplinks."
-msgstr ""
+msgstr "**Replicando uma rede VMware:** Se você tiver um port group VMware na VLAN 100 com sub-rede 10.10.100.0/24 e gateway 10.10.100.1, crie uma Rede no |morpheus| com essas mesmas configurações. Em um cluster HVM, certifique-se de que exista um Virtual Switch com um segmento VM Network na VLAN 100 para transportar este tráfego nos uplinks físicos."
 
 #: ../../infrastructure/networks/networks.rst:106
 msgid "Synced Networks vs Manually Created Networks"
-msgstr ""
+msgstr "Redes Sincronizadas vs Redes Criadas Manualmente"
 
 #: ../../infrastructure/networks/networks.rst:108
 msgid ""
@@ -347,7 +347,7 @@ msgid ""
 "(e.g., VMware port groups, AWS VPCs/subnets). These appear in the "
 "Networks list after a Cloud sync and can be edited to add "
 "|morpheus|-specific settings (IP pools, domains, permissions)."
-msgstr ""
+msgstr "**Redes sincronizadas** são descobertas automaticamente a partir de Nuvens integradas (ex.: port groups VMware, VPCs/subnets AWS). Estas aparecem na lista Networks após uma sincronização de Nuvem e podem ser editadas para adicionar configurações específicas do |morpheus| (pools de IP, domínios, permissões)."
 
 #: ../../infrastructure/networks/networks.rst:109
 msgid ""
@@ -355,7 +355,7 @@ msgid ""
 "used when the Cloud does not auto-discover networks (e.g., HVM clusters "
 "where networks are defined by Virtual Switch segments) or when you need "
 "to create an overlay network definition."
-msgstr ""
+msgstr "**Redes criadas manualmente** são definidas diretamente no |morpheus| e são usadas quando a Nuvem não descobre redes automaticamente (ex.: clusters HVM onde as redes são definidas por segmentos do Virtual Switch) ou quando você precisa criar uma definição de rede overlay."
 
 #: ../../infrastructure/networks/networks.rst:111
 msgid ""
@@ -363,57 +363,57 @@ msgid ""
 " prerequisites, and deletion impact, use "
 ":doc:`/infrastructure/clusters/hvm/hvm_networks`. Do not apply that "
 "plugin workflow to layout 2.0 Virtual Switches."
-msgstr ""
+msgstr "Para os campos **HVM Overlay Network** do layout legado 1.3, comportamento VXLAN, pré-requisitos e impacto da exclusão, use :doc:`/infrastructure/clusters/hvm/hvm_networks`. Não aplique esse fluxo de trabalho do plugin a Virtual Switches do layout 2.0."
 
 #: ../../infrastructure/networks/networks.rst:114
 msgid "Configuring Networks"
-msgstr ""
+msgstr "Configurando Redes"
 
 #: ../../infrastructure/networks/networks.rst:117
 msgid "DHCP"
-msgstr ""
+msgstr "DHCP"
 
 #: ../../infrastructure/networks/networks.rst:119
 msgid "To configure a network for DHCP:"
-msgstr ""
+msgstr "Para configurar uma rede para DHCP:"
 
 #: ../../infrastructure/networks/networks.rst:121
 #: ../../infrastructure/networks/networks.rst:140
 msgid "Navigate to `Infrastructure > Network > Networks`"
-msgstr ""
+msgstr "Navegue até `Infrastructure > Network > Networks`"
 
 #: ../../infrastructure/networks/networks.rst:122
 #: ../../infrastructure/networks/networks.rst:141
 msgid "Search for the target network"
-msgstr ""
+msgstr "Busque a rede de destino"
 
 #: ../../infrastructure/networks/networks.rst:123
 #: ../../infrastructure/networks/networks.rst:142
 msgid "Edit the Network by either:"
-msgstr ""
+msgstr "Edite a Rede por meio de:"
 
 #: ../../infrastructure/networks/networks.rst:125
 #: ../../infrastructure/networks/networks.rst:144
 msgid "Select `Actions > Edit`"
-msgstr ""
+msgstr "Selecione `Actions > Edit`"
 
 #: ../../infrastructure/networks/networks.rst:126
 #: ../../infrastructure/networks/networks.rst:145
 msgid "Select the Network, then select `Edit`"
-msgstr ""
+msgstr "Selecione a Rede e, em seguida, selecione `Edit`"
 
 #: ../../infrastructure/networks/networks.rst:128
 msgid "In the Network Config modal, set the DHCP flag as Active (default)"
-msgstr ""
+msgstr "No modal Network Config, defina a flag DHCP como Active (padrão)"
 
 #: ../../infrastructure/networks/networks.rst:129
 #: ../../infrastructure/networks/networks.rst:169
 msgid "Save Changes"
-msgstr ""
+msgstr "Salvar Alterações"
 
 #: ../../infrastructure/networks/networks.rst:131
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../infrastructure/networks/networks.rst:131
 msgid ""
@@ -422,104 +422,104 @@ msgid ""
 "provisioning to a network that has the DHCP server flag active in "
 "|morpheus| , but no DHCP server actually on the network will in most "
 "cases cause the instance to not receive an IP address."
-msgstr ""
+msgstr "A flag DHCP informa ao |morpheus| que esta rede possui um servidor DHCP atribuindo Endereços IP aos hosts. O |morpheus| não atua como o servidor DHCP, e o provisionamento em uma rede que tem a flag de servidor DHCP ativa no |morpheus|, mas sem um servidor DHCP realmente na rede, na maioria dos casos fará com que a instância não receba um endereço IP."
 
 #: ../../infrastructure/networks/networks.rst:133
 #: ../../infrastructure/networks/networks.rst:171
 #: ../../infrastructure/networks/networks.rst:173
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/networks/networks.rst:133
 msgid ""
 "When selecting a network with DHCP enabled during provisioning, \"DHCP\" "
 "will populate to the right of the selected network:"
-msgstr ""
+msgstr "Ao selecionar uma rede com DHCP ativado durante o provisionamento, \"DHCP\" será preenchido à direita da rede selecionada:"
 
 #: ../../infrastructure/networks/networks.rst:136
 msgid "Static and IP Pools"
-msgstr ""
+msgstr "Estático e Pools de IP"
 
 #: ../../infrastructure/networks/networks.rst:138
 msgid "To configure a network for Static IP Assignment:"
-msgstr ""
+msgstr "Para configurar uma rede para Atribuição de IP Estático:"
 
 #: ../../infrastructure/networks/networks.rst:147
 msgid "In the Network Config modal, add the following:"
-msgstr ""
+msgstr "No modal Network Config, adicione o seguinte:"
 
 #: ../../infrastructure/networks/networks.rst:150
 msgid "DNS Primary"
-msgstr ""
+msgstr "DNS Primary"
 
 #: ../../infrastructure/networks/networks.rst:151
 msgid "DNS Secondary"
-msgstr ""
+msgstr "DNS Secondary"
 
 #: ../../infrastructure/networks/networks.rst:152
 msgid "CIDR ex 10.10.10.0/22"
-msgstr ""
+msgstr "CIDR ex 10.10.10.0/22"
 
 #: ../../infrastructure/networks/networks.rst:153
 msgid "VLAN ID (if necessary)"
-msgstr ""
+msgstr "VLAN ID (se necessário)"
 
 #: ../../infrastructure/networks/networks.rst:154
 msgid ""
 "Network Pool * Leave as \"choose a pool\" for entering a static IP while "
 "provisioning * Select a Pool to use a pre-configured |morpheus| or IPAM "
 "Integration IP Pool"
-msgstr ""
+msgstr "Network Pool * Deixe como \"choose a pool\" para informar um IP estático durante o provisionamento * Selecione um Pool para usar um Pool de IP pré-configurado do |morpheus| ou de Integração IPAM"
 
 #: ../../infrastructure/networks/networks.rst:158
 msgid "The Permissions settings are used for Multi-Tenant resource configuration"
-msgstr ""
+msgstr "As configurações de Permissions são usadas para configuração de recursos Multi-Tenant"
 
 #: ../../infrastructure/networks/networks.rst:160
 msgid ""
 "Leave settings as default if used in a single-tenant environment (only "
 "one Tenant in your |morpheus| appliance)"
-msgstr ""
+msgstr "Deixe as configurações como padrão se usadas em um ambiente single-tenant (apenas um Tenant no seu appliance |morpheus|)"
 
 #: ../../infrastructure/networks/networks.rst:161
 msgid ""
 "To share this network across all accounts in a multi-tenant environment, "
 "select the Master Tenant and set the Visibility to Public"
-msgstr ""
+msgstr "Para compartilhar esta rede entre todas as contas em um ambiente multi-tenant, selecione o Master Tenant e defina a Visibility como Public"
 
 #: ../../infrastructure/networks/networks.rst:162
 msgid ""
 "To assign this network to be used by only one account in a multi-tenant "
 "environment, select the account and set visibility to Private"
-msgstr ""
+msgstr "Para atribuir esta rede para ser usada por apenas uma conta em um ambiente multi-tenant, selecione a conta e defina a visibility como Private"
 
 #: ../../infrastructure/networks/networks.rst:166
 msgid "Leave as enabled to use this network"
-msgstr ""
+msgstr "Deixe ativado para usar esta rede"
 
 #: ../../infrastructure/networks/networks.rst:167
 msgid ""
 "Disable the active flag to remove this network from available network "
 "options"
-msgstr ""
+msgstr "Desative a flag active para remover esta rede das opções de rede disponíveis"
 
 #: ../../infrastructure/networks/networks.rst:171
 msgid ""
 "When selecting a network with DHCP disabled and no IP Pool assigned "
 "during provisioning, an IP entry field will populate to the right of the "
 "selected network(s):"
-msgstr ""
+msgstr "Ao selecionar uma rede com DHCP desativado e sem Pool de IP atribuído durante o provisionamento, um campo de entrada de IP será preenchido à direita da(s) rede(s) selecionada(s):"
 
 #: ../../infrastructure/networks/networks.rst:173
 msgid ""
 "When selecting a network with an IP Pool assigned during provisioning, "
 "the name of the IP pool will populate to the right of the selected "
 "network(s). IP Pools override DHCP."
-msgstr ""
+msgstr "Ao selecionar uma rede com um Pool de IP atribuído durante o provisionamento, o nome do pool de IP será preenchido à direita da(s) rede(s) selecionada(s). Pools de IP substituem o DHCP."
 
 #: ../../infrastructure/networks/networks.rst:176
 msgid "Advanced Options (Search Domains)"
-msgstr ""
+msgstr "Opções Avançadas (Search Domains)"
 
 #: ../../infrastructure/networks/networks.rst:178
 msgid ""
@@ -528,11 +528,11 @@ msgid ""
 "entered as comma separated values, which will be added to DNS "
 "configurations, such as `/etc/resolv.conf` These domains are injected via"
 " cloud-init or other method chosen for the virtual image."
-msgstr ""
+msgstr "Search domains são anexados a buscas DNS quando um nome de domínio **não** totalmente qualificado (nome curto) é consultado. Search domains podem ser informados como valores separados por vírgula, que serão adicionados às configurações de DNS, como `/etc/resolv.conf`. Esses domínios são injetados via cloud-init ou outro método escolhido para a imagem virtual."
 
 #: ../../infrastructure/networks/networks.rst:182
 msgid "Group and Tenant Access"
-msgstr ""
+msgstr "Acesso de Grupo e Tenant"
 
 #: ../../infrastructure/networks/networks.rst:184
 msgid ""
@@ -545,11 +545,11 @@ msgid ""
 "Network. Public visibility allows access to the Network for users in all "
 "Tenants (subject to additional RBAC controls) while Private visibility "
 "allows access only for selected Tenants. Select all that may apply."
-msgstr ""
+msgstr "Redes podem ser configuradas para fornecer acesso específico de Grupo e Tenant, se desejado. **Group Access** controla quais Grupos no momento do provisionamento terão acesso ao recurso Network. Apenas workloads sendo provisionados para os Grupos selecionados teriam visibilidade da Rede. Workloads provisionados para outros Grupos não veriam a Rede como uma seleção disponível. **Tenant Permissions** controlam quais Tenants podem ver a Rede. Visibilidade Public permite acesso à Rede para usuários em todos os Tenants (sujeito a controles RBAC adicionais), enquanto visibilidade Private permite acesso apenas para Tenants selecionados. Selecione todos os que se aplicarem."
 
 #: ../../infrastructure/networks/networks.rst:187
 msgid "Guest Console SSH Tunnel"
-msgstr ""
+msgstr "Túnel SSH do Guest Console"
 
 #: ../../infrastructure/networks/networks.rst:189
 msgid ""
@@ -561,43 +561,43 @@ msgid ""
 "resides on the segregated network. When the guest console is configured "
 "with the SSH protocol, the traffic will be routed to the jump host, which"
 " will then relay to the target instance."
-msgstr ""
+msgstr "Em alguns cenários, instâncias que estão segregadas do appliance |morpheus| por restrições de porta, ou outros mecanismos, podem causar dificuldades para acessar o guest console via a UI web do |morpheus|. As configurações Guest Console SSH Tunnel permitem que o administrador configure as configurações de um jump host que é dual-homed, acessível pelo |morpheus|, mas também reside na rede segregada. Quando o guest console é configurado com o protocolo SSH, o tráfego será roteado para o jump host, que então retransmitirá para a instância de destino."
 
 #: ../../infrastructure/networks/networks.rst:193
 msgid "GUEST CONSOLE JUMP HOST"
-msgstr ""
+msgstr "GUEST CONSOLE JUMP HOST"
 
 #: ../../infrastructure/networks/networks.rst:194
 msgid "DNS hostname or IP of the jump host to relay the traffic"
-msgstr ""
+msgstr "Nome de host DNS ou IP do jump host para retransmitir o tráfego"
 
 #: ../../infrastructure/networks/networks.rst:196
 msgid "GUEST CONSOLE JUMP PORT"
-msgstr ""
+msgstr "GUEST CONSOLE JUMP PORT"
 
 #: ../../infrastructure/networks/networks.rst:197
 msgid "Port override, if different than 22 for SSH"
-msgstr ""
+msgstr "Substituição de porta, se diferente de 22 para SSH"
 
 #: ../../infrastructure/networks/networks.rst:199
 msgid "GUEST CONSOLE JUMP USERNAME"
-msgstr ""
+msgstr "GUEST CONSOLE JUMP USERNAME"
 
 #: ../../infrastructure/networks/networks.rst:200
 msgid "Username used to authenticate to the jump host"
-msgstr ""
+msgstr "Nome de usuário usado para autenticar no jump host"
 
 #: ../../infrastructure/networks/networks.rst:202
 msgid "GUEST CONSOLE JUMP PASSWORD"
-msgstr ""
+msgstr "GUEST CONSOLE JUMP PASSWORD"
 
 #: ../../infrastructure/networks/networks.rst:203
 msgid "Password that is used with the username to autenticate to the jump host"
-msgstr ""
+msgstr "Senha usada com o nome de usuário para autenticar no jump host"
 
 #: ../../infrastructure/networks/networks.rst:205
 msgid "GUEST CONSOLE KEYPAIR"
-msgstr ""
+msgstr "GUEST CONSOLE KEYPAIR"
 
 #: ../../infrastructure/networks/networks.rst:206
 msgid ""
@@ -605,22 +605,22 @@ msgid ""
 " password to the jump host, which is associated with the configured "
 "username Keypairs can be imported at: :menuselection:`Infrastructure --> "
 "Keys & Certs --> Key Pairs`"
-msgstr ""
+msgstr "Par de chaves salvo no |morpheus| a ser usado em vez de, ou além da, senha do jump host, que está associado ao nome de usuário configurado. Pares de chaves podem ser importados em: :menuselection:`Infrastructure --> Keys & Certs --> Key Pairs`"
 
 #: ../../infrastructure/networks/networks.rst:210
 msgid "Subnets"
-msgstr ""
+msgstr "Sub-Redes"
 
 #: ../../infrastructure/networks/networks.rst:212
 msgid ""
 "Subnet details can be viewed from the `SUBNETS` tab on the detail page of"
 " a specific network. From the `SUBNETS` tab, Morpheus allows the user to "
 "search and edit existing subnets."
-msgstr ""
+msgstr "Os detalhes da sub-rede podem ser visualizados na aba `SUBNETS` na página de detalhes de uma rede específica. Na aba `SUBNETS`, o Morpheus permite ao usuário buscar e editar sub-redes existentes."
 
 #: ../../infrastructure/networks/networks.rst:214
 msgid "In an Azure VNet, you can also create new subnets with the `+ADD` button."
-msgstr ""
+msgstr "Em um Azure VNet, você também pode criar novas sub-redes com o botão `+ADD`."
 
 #: ../../infrastructure/networks/networks.rst:216
 msgid ".. image:: /images/infrastructure/network/create_subnet_421.png"

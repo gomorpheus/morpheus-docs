@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:2
 msgid "Audit Logging"
-msgstr ""
+msgstr "Log de Auditoria"
 
 #: ../../administration/logging/audit_logging.rst:4
 msgid ""
@@ -30,120 +30,120 @@ msgid ""
 "and operational actions performed through the UI and API. Audit logs use "
 "the industry-standard **Common Event Format (CEF)** and support export to"
 " SIEM platforms for compliance and security monitoring."
-msgstr ""
+msgstr "O |morpheus| mantém uma trilha de auditoria abrangente de todas as ações administrativas e operacionais realizadas pela interface e pela API. Os logs de auditoria usam o padrão da indústria **Common Event Format (CEF)** e oferecem suporte à exportação para plataformas SIEM para conformidade e monitoramento de segurança."
 
 #: ../../administration/logging/audit_logging.rst:6
 msgid ""
 "The audit system satisfies requirements for security frameworks including"
 " NIST 800-53 AU (Audit and Accountability) controls, SOC 2 CC7 (System "
 "Operations), and PCI-DSS Requirement 10 (Track and Monitor Access)."
-msgstr ""
+msgstr "O sistema de auditoria atende aos requisitos de frameworks de segurança, incluindo controles NIST 800-53 AU (Auditoria e Responsabilização), SOC 2 CC7 (Operações do Sistema) e PCI-DSS Requisito 10 (Rastrear e Monitorar Acesso)."
 
 #: ../../administration/logging/audit_logging.rst:9
 msgid "What Gets Audited"
-msgstr ""
+msgstr "O Que É Auditado"
 
 #: ../../administration/logging/audit_logging.rst:11
 msgid "The audit system automatically captures:"
-msgstr ""
+msgstr "O sistema de auditoria captura automaticamente:"
 
 #: ../../administration/logging/audit_logging.rst:13
 msgid ""
 "**All create operations** (HTTP POST) — resource creation, provisioning, "
 "user creation, etc."
-msgstr ""
+msgstr "**Todas as operações de criação** (HTTP POST) — criação de recursos, provisionamento, criação de usuários etc."
 
 #: ../../administration/logging/audit_logging.rst:14
 msgid ""
 "**All update operations** (HTTP PUT) — configuration changes, edits, "
 "permission updates"
-msgstr ""
+msgstr "**Todas as operações de atualização** (HTTP PUT) — alterações de configuração, edições, atualizações de permissões"
 
 #: ../../administration/logging/audit_logging.rst:15
 msgid ""
 "**All delete operations** (HTTP DELETE) — resource removal, "
 "decommissioning"
-msgstr ""
+msgstr "**Todas as operações de exclusão** (HTTP DELETE) — remoção de recursos, descomissionamento"
 
 #: ../../administration/logging/audit_logging.rst:16
 msgid ""
 "**Explicit view events** — console access, Cypher decryption, and other "
 "sensitive read operations"
-msgstr ""
+msgstr "**Eventos de visualização explícitos** — acesso ao console, descriptografia Cypher e outras operações de leitura sensíveis"
 
 #: ../../administration/logging/audit_logging.rst:22
 msgid "Event Category"
-msgstr ""
+msgstr "Categoria de Evento"
 
 #: ../../administration/logging/audit_logging.rst:23
 msgid "Examples"
-msgstr ""
+msgstr "Exemplos"
 
 #: ../../administration/logging/audit_logging.rst:24
 msgid "Authentication"
-msgstr ""
+msgstr "Autenticação"
 
 #: ../../administration/logging/audit_logging.rst:25
 msgid "User login, logout, failed authentication, impersonation"
-msgstr ""
+msgstr "Login de usuário, logout, falha de autenticação, impersonação"
 
 #: ../../administration/logging/audit_logging.rst:26
 msgid "Resource Management"
-msgstr ""
+msgstr "Gerenciamento de Recursos"
 
 #: ../../administration/logging/audit_logging.rst:27
 msgid "Instance/VM create, update, delete; host add/remove; cluster operations"
-msgstr ""
+msgstr "Criação, atualização, exclusão de Instância/VM; adição/remoção de host; operações de cluster"
 
 #: ../../administration/logging/audit_logging.rst:28
 msgid "Configuration Changes"
-msgstr ""
+msgstr "Alterações de Configuração"
 
 #: ../../administration/logging/audit_logging.rst:29
 msgid "Role permission updates, policy changes, integration configuration"
-msgstr ""
+msgstr "Atualizações de permissões de função, alterações de política, configuração de integração"
 
 #: ../../administration/logging/audit_logging.rst:30
 msgid "Security Events"
-msgstr ""
+msgstr "Eventos de Segurança"
 
 #: ../../administration/logging/audit_logging.rst:31
 msgid "Cypher secret decryption, API token creation, credential access"
-msgstr ""
+msgstr "Descriptografia de segredo Cypher, criação de token de API, acesso a credenciais"
 
 #: ../../administration/logging/audit_logging.rst:32
 msgid "Console Access"
-msgstr ""
+msgstr "Acesso ao Console"
 
 #: ../../administration/logging/audit_logging.rst:33
 msgid "Instance console opened, VDI session started"
-msgstr ""
+msgstr "Console de Instância aberto, sessão VDI iniciada"
 
 #: ../../administration/logging/audit_logging.rst:34
 msgid "Infrastructure"
-msgstr ""
+msgstr "Infraestrutura"
 
 #: ../../administration/logging/audit_logging.rst:35
 msgid "Cloud sync operations, resource pool changes, network modifications"
-msgstr ""
+msgstr "Operações de sincronização de Nuvem, alterações de pool de recursos, modificações de rede"
 
 #: ../../administration/logging/audit_logging.rst:36
 msgid "Automation"
-msgstr ""
+msgstr "Automação"
 
 #: ../../administration/logging/audit_logging.rst:37
 msgid "Manual task/workflow execution, Ansible playbook runs"
-msgstr ""
+msgstr "Execução manual de tarefa/workflow, execuções de playbook Ansible"
 
 #: ../../administration/logging/audit_logging.rst:40
 msgid "Audit Event Format (CEF)"
-msgstr ""
+msgstr "Formato de Evento de Auditoria (CEF)"
 
 #: ../../administration/logging/audit_logging.rst:42
 msgid ""
 "Every audit event is formatted using the **Common Event Format (CEF)** "
 "standard:"
-msgstr ""
+msgstr "Cada evento de auditoria é formatado usando o padrão **Common Event Format (CEF)**:"
 
 #: ../../administration/logging/audit_logging.rst:44
 msgid "CEF:0|MorpheusData|Morpheus|<version>|<signatureId>|<eventName>|<severity>|<extensions>"
@@ -151,24 +151,24 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:48
 msgid "**CEF Extension Fields:**"
-msgstr ""
+msgstr "**Campos de Extensão CEF:**"
 
 #: ../../administration/logging/audit_logging.rst:54
 msgid "Field"
-msgstr ""
+msgstr "Campo"
 
 #: ../../administration/logging/audit_logging.rst:55
 msgid "CEF Key"
-msgstr ""
+msgstr "Chave CEF"
 
 #: ../../administration/logging/audit_logging.rst:56
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../administration/logging/audit_logging.rst:57
 #: ../../administration/logging/audit_logging.rst:208
 msgid "Source IP"
-msgstr ""
+msgstr "IP de Origem"
 
 #: ../../administration/logging/audit_logging.rst:58
 msgid "``src``"
@@ -176,11 +176,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:59
 msgid "Client IP address (respects X-Forwarded-For for proxied requests)"
-msgstr ""
+msgstr "Endereço IP do cliente (respeita X-Forwarded-For para solicitações com proxy)"
 
 #: ../../administration/logging/audit_logging.rst:60
 msgid "User ID"
-msgstr ""
+msgstr "ID do Usuário"
 
 #: ../../administration/logging/audit_logging.rst:61
 msgid "``suid``"
@@ -188,11 +188,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:62
 msgid "Numeric user ID of the actor"
-msgstr ""
+msgstr "ID numérico do usuário do ator"
 
 #: ../../administration/logging/audit_logging.rst:63
 msgid "Username"
-msgstr ""
+msgstr "Nome do Usuário"
 
 #: ../../administration/logging/audit_logging.rst:64
 msgid "``suser``"
@@ -200,11 +200,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:65
 msgid "Username of the actor"
-msgstr ""
+msgstr "Nome de usuário do ator"
 
 #: ../../administration/logging/audit_logging.rst:66
 msgid "Request URL"
-msgstr ""
+msgstr "URL da Solicitação"
 
 #: ../../administration/logging/audit_logging.rst:67
 msgid "``request``"
@@ -212,11 +212,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:68
 msgid "Full URL of the request"
-msgstr ""
+msgstr "URL completa da solicitação"
 
 #: ../../administration/logging/audit_logging.rst:69
 msgid "HTTP Method"
-msgstr ""
+msgstr "Método HTTP"
 
 #: ../../administration/logging/audit_logging.rst:70
 msgid "``requestMethod``"
@@ -224,11 +224,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:71
 msgid "POST, PUT, DELETE, or GET"
-msgstr ""
+msgstr "POST, PUT, DELETE ou GET"
 
 #: ../../administration/logging/audit_logging.rst:72
 msgid "Object Type"
-msgstr ""
+msgstr "Tipo de Objeto"
 
 #: ../../administration/logging/audit_logging.rst:73
 msgid "``cs1``"
@@ -236,11 +236,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:74
 msgid "Type of resource affected (e.g., Instance, ComputeServer, Role)"
-msgstr ""
+msgstr "Tipo de recurso afetado (por exemplo, Instance, ComputeServer, Role)"
 
 #: ../../administration/logging/audit_logging.rst:75
 msgid "Object ID"
-msgstr ""
+msgstr "ID do Objeto"
 
 #: ../../administration/logging/audit_logging.rst:76
 msgid "``cn1``"
@@ -248,11 +248,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:77
 msgid "ID of the affected resource"
-msgstr ""
+msgstr "ID do recurso afetado"
 
 #: ../../administration/logging/audit_logging.rst:78
 msgid "Object Name"
-msgstr ""
+msgstr "Nome do Objeto"
 
 #: ../../administration/logging/audit_logging.rst:79
 msgid "``cs2``"
@@ -260,11 +260,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:80
 msgid "Display name of the affected resource"
-msgstr ""
+msgstr "Nome de exibição do recurso afetado"
 
 #: ../../administration/logging/audit_logging.rst:81
 msgid "Account ID"
-msgstr ""
+msgstr "ID da Conta"
 
 #: ../../administration/logging/audit_logging.rst:82
 msgid "``cn2``"
@@ -272,11 +272,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:83
 msgid "Tenant/account ID"
-msgstr ""
+msgstr "ID do tenant/conta"
 
 #: ../../administration/logging/audit_logging.rst:84
 msgid "Original User"
-msgstr ""
+msgstr "Usuário Original"
 
 #: ../../administration/logging/audit_logging.rst:85
 msgid "``cs4``"
@@ -284,11 +284,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:86
 msgid "Real username when action performed via impersonation"
-msgstr ""
+msgstr "Nome de usuário real quando a ação é executada por impersonação"
 
 #: ../../administration/logging/audit_logging.rst:87
 msgid "Target User"
-msgstr ""
+msgstr "Usuário de Destino"
 
 #: ../../administration/logging/audit_logging.rst:88
 msgid "``duser``"
@@ -296,45 +296,45 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:89
 msgid "User being impersonated (impersonation events only)"
-msgstr ""
+msgstr "Usuário sendo impersonado (somente eventos de impersonação)"
 
 #: ../../administration/logging/audit_logging.rst:92
 msgid "Where Audit Data Is Stored"
-msgstr ""
+msgstr "Onde os Dados de Auditoria São Armazenados"
 
 #: ../../administration/logging/audit_logging.rst:94
 msgid "Audit data is written to **three locations** simultaneously:"
-msgstr ""
+msgstr "Os dados de auditoria são gravados em **três locais** simultaneamente:"
 
 #: ../../administration/logging/audit_logging.rst:97
 msgid "Database (``audit_log`` table)"
-msgstr ""
+msgstr "Base de Dados (tabela ``audit_log``)"
 
 #: ../../administration/logging/audit_logging.rst:99
 msgid ""
 "The primary audit store. All events are persisted to the ``audit_log`` "
 "table in the application database with the following retention:"
-msgstr ""
+msgstr "O armazenamento principal de auditoria. Todos os eventos são persistidos na tabela ``audit_log`` no banco de dados da aplicação com a seguinte retenção:"
 
 #: ../../administration/logging/audit_logging.rst:101
 msgid ""
 "**Automatic purge after 90 days** — a background job removes entries "
 "older than 90 days"
-msgstr ""
+msgstr "**Expurgo automático após 90 dias** — um job em segundo plano remove entradas com mais de 90 dias"
 
 #: ../../administration/logging/audit_logging.rst:102
 msgid ""
 "Includes a ``logSignature`` field containing a SHA-256 hash of the audit "
 "entry for **tamper detection**"
-msgstr ""
+msgstr "Inclui um campo ``logSignature`` contendo um hash SHA-256 da entrada de auditoria para **detecção de adulteração**"
 
 #: ../../administration/logging/audit_logging.rst:104
 msgid "The database audit log is viewable in the |morpheus| UI at |AdmAct|."
-msgstr ""
+msgstr "O log de auditoria do banco de dados pode ser visualizado na interface do |morpheus| em |AdmAct|."
 
 #: ../../administration/logging/audit_logging.rst:107
 msgid "Logback (File-based)"
-msgstr ""
+msgstr "Logback (baseado em arquivo)"
 
 #: ../../administration/logging/audit_logging.rst:109
 msgid ""
@@ -342,7 +342,7 @@ msgid ""
 "``com.morpheus.AuditLogService`` logger. By default, these go to the main"
 " application log. For a dedicated audit log file, add a rolling file "
 "appender to ``logback.xml``:"
-msgstr ""
+msgstr "Os eventos de auditoria são registrados pelo framework Logback padrão no logger ``com.morpheus.AuditLogService``. Por padrão, eles vão para o log principal da aplicação. Para um arquivo de log de auditoria dedicado, adicione um appender de arquivo com rotação ao ``logback.xml``:"
 
 #: ../../administration/logging/audit_logging.rst:111
 #, python-brace-format, python-format
@@ -371,41 +371,41 @@ msgstr ""
 msgid ""
 "This provides a file-based audit trail that can be retained longer than "
 "the 90-day database purge and forwarded via OS-level syslog."
-msgstr ""
+msgstr "Isso fornece uma trilha de auditoria baseada em arquivo que pode ser retida por mais tempo que o expurgo de 90 dias do banco de dados e encaminhada via syslog em nível de SO."
 
 #: ../../administration/logging/audit_logging.rst:131
 msgid "SIEM / External Forwarding"
-msgstr ""
+msgstr "SIEM / Encaminhamento Externo"
 
 #: ../../administration/logging/audit_logging.rst:133
 msgid ""
 "Because audit events use CEF format natively, they can be forwarded "
 "directly to SIEM platforms:"
-msgstr ""
+msgstr "Como os eventos de auditoria usam o formato CEF nativamente, eles podem ser encaminhados diretamente para plataformas SIEM:"
 
 #: ../../administration/logging/audit_logging.rst:135
 msgid "**ArcSight** — CEF is the native format"
-msgstr ""
+msgstr "**ArcSight** — CEF é o formato nativo"
 
 #: ../../administration/logging/audit_logging.rst:136
 msgid "**Splunk** — Use the Splunk CEF Add-on for parsing"
-msgstr ""
+msgstr "**Splunk** — Use o Splunk CEF Add-on para análise"
 
 #: ../../administration/logging/audit_logging.rst:137
 msgid "**IBM QRadar** — Supports CEF log source type"
-msgstr ""
+msgstr "**IBM QRadar** — Oferece suporte ao tipo de origem de log CEF"
 
 #: ../../administration/logging/audit_logging.rst:138
 msgid ""
 "**Any syslog-compatible SIEM** — Forward the audit log file via rsyslog"
 "/syslog-ng"
-msgstr ""
+msgstr "**Qualquer SIEM compatível com syslog** — Encaminhe o arquivo de log de auditoria via rsyslog/syslog-ng"
 
 #: ../../administration/logging/audit_logging.rst:140
 msgid ""
 "To forward audit events to a SIEM via syslog, configure a syslog appender"
 " in ``logback.xml``:"
-msgstr ""
+msgstr "Para encaminhar eventos de auditoria para um SIEM via syslog, configure um appender syslog em ``logback.xml``:"
 
 #: ../../administration/logging/audit_logging.rst:142
 msgid ""
@@ -425,74 +425,74 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:156
 msgid "Tamper Detection"
-msgstr ""
+msgstr "Detecção de Adulteração"
 
 #: ../../administration/logging/audit_logging.rst:158
 msgid ""
 "Each audit log entry includes a ``logSignature`` field — a **SHA-256 "
 "hash** of the full CEF description. This allows security teams to verify "
 "that audit records have not been modified after creation:"
-msgstr ""
+msgstr "Cada entrada de log de auditoria inclui um campo ``logSignature`` — um **hash SHA-256** da descrição CEF completa. Isso permite que equipes de segurança verifiquem se os registros de auditoria não foram modificados após a criação:"
 
 #: ../../administration/logging/audit_logging.rst:160
 msgid ""
 "Compare the stored hash against a recalculated hash of the description "
 "field"
-msgstr ""
+msgstr "Compare o hash armazenado com um hash recalculado do campo de descrição"
 
 #: ../../administration/logging/audit_logging.rst:161
 msgid "Any discrepancy indicates the record has been tampered with"
-msgstr ""
+msgstr "Qualquer discrepância indica que o registro foi adulterado"
 
 #: ../../administration/logging/audit_logging.rst:162
 msgid ""
 "This satisfies NIST 800-53 AU-9 (Protection of Audit Information) and "
 "AU-10 (Non-repudiation)"
-msgstr ""
+msgstr "Isso atende ao NIST 800-53 AU-9 (Proteção de Informações de Auditoria) e AU-10 (Não repúdio)"
 
 #: ../../administration/logging/audit_logging.rst:165
 msgid "Impersonation Tracking"
-msgstr ""
+msgstr "Rastreamento de Impersonação"
 
 #: ../../administration/logging/audit_logging.rst:167
 msgid ""
 "When an administrator impersonates another user, the audit system records"
 " **both identities**:"
-msgstr ""
+msgstr "Quando um administrador impersona outro usuário, o sistema de auditoria registra **ambas as identidades**:"
 
 #: ../../administration/logging/audit_logging.rst:169
 msgid "``suser`` / ``cs4`` — The original administrator username"
-msgstr ""
+msgstr "``suser`` / ``cs4`` — O nome de usuário do administrador original"
 
 #: ../../administration/logging/audit_logging.rst:170
 msgid "``duser`` — The impersonated user"
-msgstr ""
+msgstr "``duser`` — O usuário impersonado"
 
 #: ../../administration/logging/audit_logging.rst:172
 msgid ""
 "This ensures accountability is maintained even during impersonation "
 "sessions and provides a clear chain of responsibility."
-msgstr ""
+msgstr "Isso garante que a responsabilização seja mantida mesmo durante sessões de impersonação e fornece uma cadeia clara de responsabilidade."
 
 #: ../../administration/logging/audit_logging.rst:175
 msgid "Compliance Framework Alignment"
-msgstr ""
+msgstr "Alinhamento com Frameworks de Conformidade"
 
 #: ../../administration/logging/audit_logging.rst:181
 msgid "Framework"
-msgstr ""
+msgstr "Framework"
 
 #: ../../administration/logging/audit_logging.rst:182
 msgid "Controls"
-msgstr ""
+msgstr "Controles"
 
 #: ../../administration/logging/audit_logging.rst:183
 msgid "How |morpheus| Satisfies"
-msgstr ""
+msgstr "Como o |morpheus| Atende"
 
 #: ../../administration/logging/audit_logging.rst:184
 msgid "NIST 800-53"
-msgstr ""
+msgstr "NIST 800-53"
 
 #: ../../administration/logging/audit_logging.rst:185
 msgid "AU-2, AU-3, AU-6, AU-9, AU-10, AU-12"
@@ -502,11 +502,11 @@ msgstr ""
 msgid ""
 "Automatic event capture, CEF format with required fields, tamper-evident "
 "hashing, configurable retention and export"
-msgstr ""
+msgstr "Captura automática de eventos, formato CEF com campos obrigatórios, hash à prova de adulteração, retenção e exportação configuráveis"
 
 #: ../../administration/logging/audit_logging.rst:187
 msgid "SOC 2"
-msgstr ""
+msgstr "SOC 2"
 
 #: ../../administration/logging/audit_logging.rst:188
 msgid "CC7.2, CC7.3"
@@ -514,11 +514,11 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:189
 msgid "System activity monitoring, anomaly detection support via SIEM export"
-msgstr ""
+msgstr "Monitoramento de atividade do sistema, suporte à detecção de anomalias via exportação SIEM"
 
 #: ../../administration/logging/audit_logging.rst:190
 msgid "PCI-DSS"
-msgstr ""
+msgstr "PCI-DSS"
 
 #: ../../administration/logging/audit_logging.rst:191
 msgid "Req 10.1–10.7"
@@ -528,11 +528,11 @@ msgstr ""
 msgid ""
 "All access tracked, user identification, timestamping, integrity "
 "protection, 90-day online retention"
-msgstr ""
+msgstr "Todo acesso rastreado, identificação de usuário, carimbo de data/hora, proteção de integridade, retenção online de 90 dias"
 
 #: ../../administration/logging/audit_logging.rst:193
 msgid "HIPAA"
-msgstr ""
+msgstr "HIPAA"
 
 #: ../../administration/logging/audit_logging.rst:194
 msgid "§164.312(b)"
@@ -540,15 +540,15 @@ msgstr ""
 
 #: ../../administration/logging/audit_logging.rst:195
 msgid "Audit controls for information system activity recording"
-msgstr ""
+msgstr "Controles de auditoria para registro de atividade do sistema de informação"
 
 #: ../../administration/logging/audit_logging.rst:198
 msgid "Viewing Audit Logs"
-msgstr ""
+msgstr "Visualização dos Logs de Auditoria"
 
 #: ../../administration/logging/audit_logging.rst:200
 msgid "**From the UI:**"
-msgstr ""
+msgstr "**Da interface:**"
 
 #: ../../administration/logging/audit_logging.rst:202
 msgid ""
@@ -556,56 +556,56 @@ msgid ""
 "recent product activity. See :doc:`/operations/activity` for the current "
 "filters, permission requirements, and the distinction between Activity, "
 "Alarms, and process History."
-msgstr ""
+msgstr "Navegue até :menuselection:`Operations --> Activity` para visualizar e filtrar a atividade recente do produto. Consulte :doc:`/operations/activity` para os filtros atuais, requisitos de permissão e a distinção entre Atividade, Alarmes e Histórico de processos."
 
 #: ../../administration/logging/audit_logging.rst:204
 msgid "Timestamp"
-msgstr ""
+msgstr "Carimbo de data/hora"
 
 #: ../../administration/logging/audit_logging.rst:205
 msgid "User"
-msgstr ""
+msgstr "Usuário"
 
 #: ../../administration/logging/audit_logging.rst:206
 msgid "Event description"
-msgstr ""
+msgstr "Descrição do evento"
 
 #: ../../administration/logging/audit_logging.rst:207
 msgid "Object type and ID"
-msgstr ""
+msgstr "Tipo e ID do objeto"
 
 #: ../../administration/logging/audit_logging.rst:210
 msgid "**From the API:**"
-msgstr ""
+msgstr "**Da API:**"
 
 #: ../../administration/logging/audit_logging.rst:212
 msgid ""
 "Audit logs are accessible via the |morpheus| API for programmatic access "
 "and integration with external reporting tools."
-msgstr ""
+msgstr "Os logs de auditoria são acessíveis via API do |morpheus| para acesso programático e integração com ferramentas externas de relatórios."
 
 #: ../../administration/logging/audit_logging.rst:215
 msgid "Retention and Archival"
-msgstr ""
+msgstr "Retenção e Arquivamento"
 
 #: ../../administration/logging/audit_logging.rst:217
 msgid "**Database retention:** 90 days (automatic purge)"
-msgstr ""
+msgstr "**Retenção no banco de dados:** 90 dias (expurgo automático)"
 
 #: ../../administration/logging/audit_logging.rst:218
 msgid ""
 "**File-based retention:** Configurable via logback rolling policy "
 "(recommended: 365 days for compliance)"
-msgstr ""
+msgstr "**Retenção baseada em arquivo:** Configurável via política de rotação do logback (recomendado: 365 dias para conformidade)"
 
 #: ../../administration/logging/audit_logging.rst:219
 msgid "**SIEM retention:** Determined by your SIEM platform's retention policy"
-msgstr ""
+msgstr "**Retenção no SIEM:** Determinada pela política de retenção da sua plataforma SIEM"
 
 #: ../../administration/logging/audit_logging.rst:221
 msgid ""
 "For compliance requirements that mandate longer retention, configure the "
 "file-based audit log with an extended ``maxHistory`` and archive to "
 "immutable storage."
-msgstr ""
+msgstr "Para requisitos de conformidade que exigem retenção mais longa, configure o log de auditoria baseado em arquivo com ``maxHistory`` estendido e arquive em armazenamento imutável."
 

@@ -74,3 +74,75 @@ Once you are happy, press the “Create pull request” button and you’re done
 
 ### Step 4: Review by the maintainers
 For your work to be integrated into the project, the maintainers will review your work and either request changes or merge it.
+
+## Localization
+
+Documentation is translated from English into **Spanish (es)**, **French (fr)**, **German (de)**, and **Portuguese (pt)** using Sphinx gettext (`.po` files under `locale/`).
+
+### Automatic incremental translation (GitHub Actions + Copilot)
+
+When English docs (`.rst` or `.md`) change on `dev-9.1`, four [GitHub Agentic Workflows](https://docs.github.com/en/copilot/concepts/agents/about-github-agentic-workflows) run in parallel—one per language—and use **GitHub Copilot** to translate only the new or changed strings. Each run opens a **draft PR** labeled `localization` for human review.
+
+| Workflow | Language |
+|----------|----------|
+| `localize-es` | Spanish |
+| `localize-fr` | French |
+| `localize-de` | German |
+| `localize-pt` | Portuguese |
+
+**What triggers a run**
+
+- Push to `dev-9.1` that modifies `**/*.rst` or `**/*.md`
+- Manual run from **Actions → localize-&lt;lang&gt; → Run workflow**
+
+**What is skipped**
+
+- Commits that only touch `locale/**` (manual translation work does not re-trigger automation)
+- Bulk localization commits tagged in the commit message (see below)
+- Auto-localization commits from these workflows (`chore(localize/<lang>): …` or `[localize/<lang>] …`)
+- Runs where `sphinx-intl update` leaves no empty or fuzzy entries to translate
+
+**Bulk manual translations**
+
+When committing large manual translation batches, include a skip marker in the commit message so automated runs do not overwrite your work:
+
+```
+chore(i18n): bulk translate administration [bulk-i18n]
+```
+
+Accepted markers: `[bulk-i18n]`, `[skip-localize]`, or `chore(i18n): bulk`.
+
+**Org setup (one-time)**
+
+Repository admins must enable GitHub Actions, GitHub Copilot, and **Copilot CLI billed to the organization** in Copilot policy settings. See [.github/workflows/README-localization.md](.github/workflows/README-localization.md) for workflow maintenance details (compiling lock files, local testing).
+
+### Manual local translation
+
+For bulk or offline translation work, use the AI pipeline in `tools/translate/`:
+
+```bash
+pip3 install -r requirements.txt
+
+# Extract / refresh .po files for all languages
+make gettext
+make intl-update
+
+# Translate a section or language (needs OPENAI_API_KEY or ANTHROPIC_API_KEY)
+python3 tools/translate/translate_po.py locale/es/LC_MESSAGES/getting_started -v
+
+# Build translated HTML
+make html-es    # Spanish
+make html-fr    # French
+make html-de    # German
+make html-pt    # Portuguese
+```
+
+Glossaries per language live in `tools/translate/glossary*.json` and enforce Morpheus UI terminology. Full pipeline options and validation steps are documented in [tools/translate/README.md](tools/translate/README.md).
+
+**Test incremental prep locally**
+
+```bash
+python3 tools/translate/prepare_diff_localize.py --lang es --manifest /tmp/manifest.json
+```
+
+This is the same manifest step the Copilot workflows run before translating.

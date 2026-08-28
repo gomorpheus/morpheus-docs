@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../administration/integrations/packages.rst:2
 msgid "Packages"
-msgstr ""
+msgstr "Pakete"
 
 #: ../../administration/integrations/packages.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../../administration/integrations/packages.rst:7
 msgid ""
@@ -38,7 +38,7 @@ msgid ""
 "Spec Temples and Cluster Layouts. Following upload of a valid package, "
 "the defined |morpheus| resources are immediately available for use in the"
 " appliance."
-msgstr ""
+msgstr "Pakete sind Codedateien zur Definition von |morpheus|-Ressourcen, die anschließend hochgeladen und in jeder |morpheus|-Appliance verwendet werden können, in der sie benötigt werden. |morpheus|-Pakete (.morpkg, .mpkg oder .mopkg) werden im Abschnitt |AdmIntPac| der UI hinzugefügt. |morpheus|-Pakete enthalten Bibliotheks- und Automatisierungsobjekte wie Instance Types, Layouts, Node Types, Tasks, Spec Temples und Cluster Layouts. Nach dem Upload eines gültigen Pakets stehen die definierten |morpheus|-Ressourcen in der Appliance sofort zur Verfügung."
 
 #: ../../administration/integrations/packages.rst:9
 msgid ""
@@ -47,35 +47,35 @@ msgid ""
 "distribute and/or import custom |morpheus| packages too. This section "
 "goes over the process for writing and preparing packages for upload to a "
 "|morpheus| appliance."
-msgstr ""
+msgstr "Die Ergänzung von ``/administration/packages`` zielt in erster Linie auf das Hochladen zukünftiger von |morpheus| bereitgestellter Pakete ab. Benutzer können jedoch auch benutzerdefinierte |morpheus|-Pakete erstellen, verteilen und/oder importieren. Dieser Abschnitt beschreibt den Prozess zum Schreiben und Vorbereiten von Paketen für den Upload in eine |morpheus|-Appliance."
 
 #: ../../administration/integrations/packages.rst:12
 msgid "Role Permissions"
-msgstr ""
+msgstr "Rollenberechtigungen"
 
 #: ../../administration/integrations/packages.rst:14
 msgid ""
 "Access and capabilities for the **Packages** section is determined by the"
 " following role permissions:"
-msgstr ""
+msgstr "Zugriff und Funktionen für den Abschnitt **Packages** werden durch die folgenden Rollenberechtigungen bestimmt:"
 
 #: ../../administration/integrations/packages.rst:16
 msgid "Role: Feature Access: ``Admin: Plugins``"
-msgstr ""
+msgstr "Rolle: Feature Access: ``Admin: Plugins``"
 
 #: ../../administration/integrations/packages.rst:17
 msgid "None: Cannot access Admin: Plugins section"
-msgstr ""
+msgstr "None: Kein Zugriff auf den Abschnitt Admin: Plugins"
 
 #: ../../administration/integrations/packages.rst:18
 msgid ""
 "Full: Access to Admin: Plugins and ability to upload |morpheus| packages "
 "(``.morpkg``, ``.mpkg``, or ``.mopkg``)"
-msgstr ""
+msgstr "Full: Zugriff auf Admin: Plugins und Möglichkeit zum Upload von |morpheus|-Paketen (``.morpkg``, ``.mpkg`` oder ``.mopkg``)"
 
 #: ../../administration/integrations/packages.rst:21
 msgid "Getting Started"
-msgstr ""
+msgstr "Erste Schritte"
 
 #: ../../administration/integrations/packages.rst:23
 msgid ""
@@ -87,7 +87,7 @@ msgid ""
 "Language) and follow referenced resource naming. In the next section, we "
 "will define the required attributes for both the ``.json`` manifest and "
 "the scribe files with examples."
-msgstr ""
+msgstr "Pakete bestehen aus zwei Hauptteilen: einer ``.json``-Manifestdatei (die Metadaten zum Paket festlegt) und einer oder mehreren ``.scribe``-Dateien, die die hinzuzufügenden Ressourcen definieren. Diese Dateien werden gezippt und als eine Datei (``.morpkg``, ``.mpkg`` oder ``.mopkg``) in |morpheus| importiert. Scribe-Dateien sind in HCL (Hashicorp Configuration Language) geschrieben und folgen der referenzierten Ressourcenbenennung. Im nächsten Abschnitt definieren wir die erforderlichen Attribute sowohl für das ``.json``-Manifest als auch für die Scribe-Dateien anhand von Beispielen."
 
 #: ../../administration/integrations/packages.rst:25
 msgid ""
@@ -102,7 +102,7 @@ msgid ""
 "number, and upload the package once again. This ensures important local "
 "changes would not be overwritten by subsequent uploads. There is no "
 "warning given in the UI, changes are simply overwritten without notice."
-msgstr ""
+msgstr "Beachten Sie beim Hochladen von Paketen in |morpheus|, dass dieselben Pakete beliebig oft erneut installiert werden können. Wenn dasselbe Paket erneut installiert wird, werden alle lokalen Änderungen an diesen Ressourcen in der |morpheus|-Appliance überschrieben. Wenn beispielsweise eine Aufgabe durch ein Paket erstellt wurde und lokal Änderungen an der Aufgabenkonfiguration in |morpheus| vorgenommen werden, würden nachfolgende Uploads der Pakete diese Änderungen überschreiben. Eine bessere Methode für Änderungen an paketbasierten Ressourcen besteht darin, den Paketcode zu aktualisieren, die Versionsnummer zu erhöhen und das Paket erneut hochzuladen. So wird sichergestellt, dass wichtige lokale Änderungen nicht durch nachfolgende Uploads überschrieben werden. In der UI wird keine Warnung angezeigt; Änderungen werden ohne Hinweis einfach überschrieben."
 
 #: ../../administration/integrations/packages.rst:27
 msgid ""
@@ -110,11 +110,11 @@ msgid ""
 "(|trash| icon on the packages detail page), you will simply delete the "
 "package from the list. |morpheus| will show a helpful list of resources "
 "added with the package if cleanup is desired but will not delete them."
-msgstr ""
+msgstr "Darüber hinaus ist zu beachten, dass beim Löschen von Paketen (|trash|-Symbol auf der Paketdetailseite) das Paket lediglich aus der Liste entfernt wird. |morpheus| zeigt eine hilfreiche Liste der mit dem Paket hinzugefügten Ressourcen an, falls eine Bereinigung gewünscht wird, löscht diese jedoch nicht."
 
 #: ../../administration/integrations/packages.rst:30
 msgid "Creating Packages"
-msgstr ""
+msgstr "Pakete erstellen"
 
 #: ../../administration/integrations/packages.rst:32
 msgid ""
@@ -122,11 +122,11 @@ msgid ""
 "file and any number of ``.scribe`` files. We'll first look at the "
 "manifest file, its purpose, and attributes that must be included in the "
 "JSON map."
-msgstr ""
+msgstr "Wie im vorherigen Abschnitt beschrieben, besteht ein Paket aus einer ``.json``-Manifestdatei und einer beliebigen Anzahl von ``.scribe``-Dateien. Zunächst betrachten wir die Manifestdatei, ihren Zweck und die Attribute, die in der JSON-Zuordnung enthalten sein müssen."
 
 #: ../../administration/integrations/packages.rst:34
 msgid "A typical package manifest looks like this:"
-msgstr ""
+msgstr "Ein typisches Paketmanifest sieht wie folgt aus:"
 
 #: ../../administration/integrations/packages.rst:36
 #, python-brace-format
@@ -142,13 +142,13 @@ msgstr ""
 
 #: ../../administration/integrations/packages.rst:46
 msgid "The manifest includes each of the following attributes:"
-msgstr ""
+msgstr "Das Manifest enthält die folgenden Attribute:"
 
 #: ../../administration/integrations/packages.rst:48
 msgid ""
 "**TYPE:** Tells |morpheus| to process all included files with the package"
 " as scribe files. Currently, this is the only supported type"
-msgstr ""
+msgstr "**TYPE:** Weist |morpheus| an, alle im Paket enthaltenen Dateien als Scribe-Dateien zu verarbeiten. Derzeit ist dies der einzige unterstützte Typ"
 
 #: ../../administration/integrations/packages.rst:49
 msgid ""
@@ -156,25 +156,25 @@ msgid ""
 " UI. The example manifest above came from a package that adds resources "
 "for an Ubuntu 22.04 library item to |morpheus|, and is named to indicate "
 "that"
-msgstr ""
+msgstr "**NAME:** Dies ist der Name des Pakets, der in der |morpheus|-UI angezeigt wird. Das obige Beispielmanifest stammt aus einem Paket, das Ressourcen für ein Ubuntu-22.04-Bibliothekselement zu |morpheus| hinzufügt, und ist entsprechend benannt"
 
 #: ../../administration/integrations/packages.rst:50
 msgid ""
 "**CODE:** Not visible in UI but exists for referencing the package via "
 "|morpheus| API"
-msgstr ""
+msgstr "**CODE:** In der UI nicht sichtbar, dient jedoch der Referenzierung des Pakets über die |morpheus|-API"
 
 #: ../../administration/integrations/packages.rst:51
 msgid ""
 "**ORGANIZATION:** Appears only in the database but can be exposed via "
 "|morpheus| API"
-msgstr ""
+msgstr "**ORGANIZATION:** Erscheint nur in der Datenbank, kann aber über die |morpheus|-API bereitgestellt werden"
 
 #: ../../administration/integrations/packages.rst:52
 msgid ""
 "**VERSION:** Listed in |morpheus| UI and is useful for tracking changes "
 "over time to package-sourced resources"
-msgstr ""
+msgstr "**VERSION:** Wird in der |morpheus|-UI aufgeführt und ist nützlich, um Änderungen an paketbasierten Ressourcen im Zeitverlauf nachzuvollziehen"
 
 #: ../../administration/integrations/packages.rst:54
 msgid ""
@@ -184,7 +184,7 @@ msgid ""
 "environment. Certain resources will require reference to other resources "
 "included with the scribe file. Here's a simple scribe file creating a "
 "shell script-type \"Hello World\" Task:"
-msgstr ""
+msgstr "Scribe-Dateien sind deutlich komplexer und wurden öffentlich noch nicht vollständig dokumentiert. Dennoch können wir hier einige Beispiele zeigen und Strategien zum Extrahieren weiterer Beispiele aus Ihrer eigenen Umgebung angeben. Bestimmte Ressourcen erfordern Verweise auf andere Ressourcen, die in der Scribe-Datei enthalten sind. Hier ist eine einfache Scribe-Datei, die eine Shell-Skript-Aufgabe vom Typ „Hello World“ erstellt:"
 
 #: ../../administration/integrations/packages.rst:56
 #, python-brace-format
@@ -223,7 +223,7 @@ msgid ""
 "referenced by HCL referenced resource naming such as in the following "
 "example where a ``workload-type`` resource references a ``virtual-image``"
 " resource:"
-msgstr ""
+msgstr "In diesem Fall wurde die Aufgabenkonfiguration lokal im Modal Add/Edit Task in |morpheus| geschrieben und nicht von anderswo bezogen (beispielsweise einem Github-Repository). Der Aufgabeninhalt selbst ist eine eigene Ressource und wird in der Aufgabenressource über die UUID referenziert. Externe Ressourcen können auch über die HCL-Ressourcenbenennung referenziert werden, wie im folgenden Beispiel, in dem eine ``workload-type``-Ressource eine ``virtual-image``-Ressource referenziert:"
 
 #: ../../administration/integrations/packages.rst:84
 msgid ""
@@ -275,7 +275,7 @@ msgstr ""
 msgid ""
 "The specific virtual image is referenced as ``virtual-"
 "image.vmware_vsphere_image_morpheus_almalinux_9_20240324``."
-msgstr ""
+msgstr "Das spezifische virtuelle Image wird als ``virtual-image.vmware_vsphere_image_morpheus_almalinux_9_20240324`` referenziert."
 
 #: ../../administration/integrations/packages.rst:127
 msgid ""
@@ -286,11 +286,11 @@ msgid ""
 "created resources into integrated Git repositories. When viewing the "
 "results in your repositories, you'll see the resources are exported as "
 "scribe files."
-msgstr ""
+msgstr "Um weiterzugehen, können Sie zusätzliche Beispiele aus Ihren eigenen Umgebungen generieren. Nutzen Sie die in |morpheus| integrierte Funktion `Import/Export <https://docs.morpheusdata.com/en/latest/provisioning/code/code.html#import-and-export>`_ und exportieren Sie Ihre erstellten Ressourcen in integrierte Git-Repositorys. Beim Anzeigen der Ergebnisse in Ihren Repositorys sehen Sie, dass die Ressourcen als Scribe-Dateien exportiert werden."
 
 #: ../../administration/integrations/packages.rst:130
 msgid "Preparing and Uploading Packages"
-msgstr ""
+msgstr "Pakete vorbereiten und hochladen"
 
 #: ../../administration/integrations/packages.rst:132
 msgid ""
@@ -301,5 +301,5 @@ msgid ""
 "name>.mpkg <directory-name>/*``. The package is now ready to be uploaded."
 " Navigate to |AdmIntPac| on any appliance and use the file picker tool to"
 " upload your new package file."
-msgstr ""
+msgstr "Um das Paket vorzubereiten, stellen Sie sicher, dass Manifest- und Scribe-Dateien in einem Verzeichnis zusammengeführt sind. Anschließend müssen Sie den Inhalt dieses Verzeichnisses mit einer gültigen Erweiterung (``.morpkg``, ``.mpkg`` oder ``.mopkg``) zippen. Unter Linux können Sie von außerhalb des Verzeichnisses Folgendes verwenden: ``zip -j <package-name>.mpkg <directory-name>/*``. Das Paket ist nun bereit zum Upload. Navigieren Sie auf einer beliebigen Appliance zu |AdmIntPac| und verwenden Sie das Dateiauswahlwerkzeug, um Ihre neue Paketdatei hochzuladen."
 

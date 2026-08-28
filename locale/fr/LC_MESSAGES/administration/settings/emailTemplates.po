@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/settings/emailTemplates.rst:2
 msgid "Email Templates"
-msgstr ""
+msgstr "Modèles d'e-mail"
 
 #: ../../administration/settings/emailTemplates.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "more. |morpheus| includes system-default email templates for all of these"
 " emailed conditions but allows users to create their own email templates "
 "to override the default template."
-msgstr ""
+msgstr "|morpheus| envoie périodiquement des e-mails à ses utilisateurs pour alerter sur diverses conditions, telles qu'un succès de provisionnement d'Instance, des avertissements concernant l'expiration imminente d'une Instance, des demandes de liens de réinitialisation de mot de passe, et plus encore. |morpheus| inclut des modèles d'e-mail par défaut du système pour toutes ces conditions par e-mail, mais permet aux utilisateurs de créer leurs propres modèles d'e-mail pour remplacer le modèle par défaut."
 
 #: ../../administration/settings/emailTemplates.rst:6
 msgid ""
@@ -46,19 +46,19 @@ msgid ""
 "Templates will apply in order of specificity: Tenant-specific templates "
 "apply first, then custom global templates, and finally system templates "
 "if no others exist for that email type."
-msgstr ""
+msgstr "En accédant à l'onglet Email Templates, les utilisateurs verront une liste de tous les modèles d'e-mail existants. Nous pouvons également voir le propriétaire qui a créé le modèle ainsi que le Compte (Locataire) associé. Les modèles par défaut du système apparaissent comme appartenant à « System » et n'affichent aucun Compte (Locataire) associé. Lorsqu'un utilisateur |mastertenant| crée un modèle, l'option est donnée de lier le modèle à un Compte ou de créer un modèle global. La colonne Accounts affichera « Global » pour les modèles globaux. Les modèles s'appliquent par ordre de spécificité : les modèles spécifiques au Locataire s'appliquent en premier, puis les modèles globaux personnalisés, et enfin les modèles système si aucun autre n'existe pour ce type d'e-mail."
 
 #: ../../administration/settings/emailTemplates.rst:8
 #: ../../administration/settings/emailTemplates.rst:16
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../administration/settings/emailTemplates.rst:8
 msgid ""
 "Email templates apply in order of specificity. Tenant-specific templates "
 "apply over custom global templates which apply over system-default "
 "templates."
-msgstr ""
+msgstr "Les modèles d'e-mail s'appliquent par ordre de spécificité. Les modèles spécifiques au Locataire s'appliquent avant les modèles globaux personnalisés, qui s'appliquent avant les modèles par défaut du système."
 
 #: ../../administration/settings/emailTemplates.rst:10
 msgid ".. image:: /images/administration/settings/emailTemplateList.png"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../administration/settings/emailTemplates.rst:12
 msgid "**Creating Templates**"
-msgstr ""
+msgstr "**Création de modèles**"
 
 #: ../../administration/settings/emailTemplates.rst:14
 msgid ""
@@ -77,7 +77,7 @@ msgid ""
 " |morpheus| standard styling or your custom whitelabel styling depending "
 "on appliance configuration. The template itself should only include email"
 " body content which will be inserted within the styling wrapper."
-msgstr ""
+msgstr "Avant de créer le premier modèle, il est important de comprendre que les e-mails provenant de modèles personnalisés seront toujours enveloppés dans les en-têtes et pieds de page e-mail standard de |morpheus|. Ils incluront également le style intégré. Ce style provient directement de votre configuration de marque blanche de Locataire et inclura le style standard de |morpheus| ou votre style de marque blanche personnalisé selon la configuration de l'appliance. Le modèle lui-même ne doit inclure que le contenu du corps de l'e-mail qui sera inséré dans l'enveloppe de style."
 
 #: ../../administration/settings/emailTemplates.rst:16
 msgid ""
@@ -87,7 +87,7 @@ msgid ""
 "the template. Other functionality-breaking scenarios may also be "
 "possible. Review the system-default template of any email type to copy "
 "syntax examples for such vital components."
-msgstr ""
+msgstr "Il est possible de casser la fonctionnalité de certains types d'e-mails générés en créant un modèle personnalisé. Par exemple, dans un e-mail de réinitialisation de mot de passe, vous devez vous assurer que le bouton de réinitialisation de mot de passe est toujours inclus dans le modèle. D'autres scénarios pouvant casser la fonctionnalité sont également possibles. Consultez le modèle par défaut du système de tout type d'e-mail pour copier des exemples de syntaxe pour ces composants vitaux."
 
 #: ../../administration/settings/emailTemplates.rst:18
 msgid ""
@@ -97,7 +97,7 @@ msgid ""
 "template of the type you wish to create. You'll see the variables "
 "mentioned in a comment at the bottom of the template such as in this "
 "example Confirm Password Update Template:"
-msgstr ""
+msgstr "Certains types de modèles auront des variables accessibles, telles que le nom de l'utilisateur connecté (pour adresser l'e-mail) ou un nom d'Instance. Pour voir les variables disponibles, cliquez sur le bouton info du modèle par défaut du système du type que vous souhaitez créer. Vous verrez les variables mentionnées dans un commentaire en bas du modèle, comme dans cet exemple Confirm Password Update Template :"
 
 #: ../../administration/settings/emailTemplates.rst:20
 #, python-brace-format
@@ -118,28 +118,28 @@ msgid ""
 "To begin creating a new template, from the Email Templates tab of the "
 "global settings page (|AdmSet|), click :guilabel:`+ CREATE`. The "
 "following configurations must be set:"
-msgstr ""
+msgstr "Pour commencer à créer un nouveau modèle, depuis l'onglet Email Templates de la page des paramètres globaux (|AdmSet|), cliquez sur :guilabel:`+ CREATE`. Les configurations suivantes doivent être définies :"
 
 #: ../../administration/settings/emailTemplates.rst:30
 msgid "**TYPE:** Select the email type for the new template"
-msgstr ""
+msgstr "**TYPE :** Sélectionnez le type d'e-mail pour le nouveau modèle"
 
 #: ../../administration/settings/emailTemplates.rst:31
 msgid "**TEMPLATE:** The HTML markdown for the new custom email template"
-msgstr ""
+msgstr "**TEMPLATE :** Le markdown HTML pour le nouveau modèle d'e-mail personnalisé"
 
 #: ../../administration/settings/emailTemplates.rst:32
 msgid ""
 "**TENANTS:** This option is only available in the |mastertenant|. Select "
 "a specific Tenant to tie the template to that Tenant or leave it empty to"
 " create a global template"
-msgstr ""
+msgstr "**TENANTS :** Cette option n'est disponible que dans le |mastertenant|. Sélectionnez un Locataire spécifique pour lier le modèle à ce Locataire ou laissez-le vide pour créer un modèle global"
 
 #: ../../administration/settings/emailTemplates.rst:34
 msgid ""
 "The following is an example of a Forgot Password Template. Note that it "
 "calls in the variable for the associated user display name and username."
-msgstr ""
+msgstr "Voici un exemple de modèle Forgot Password. Notez qu'il appelle la variable pour le nom d'affichage et le nom d'utilisateur de l'utilisateur associé."
 
 #: ../../administration/settings/emailTemplates.rst:36
 #, python-brace-format

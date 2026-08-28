@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:4
 msgid "Migrating from Elasticsearch to OpenSearch"
-msgstr ""
+msgstr "Migración de Elasticsearch a OpenSearch"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:6
 msgid ""
@@ -30,67 +30,67 @@ msgid ""
 "Elasticsearch to OpenSearch. This migration only affects appliances "
 "upgrading from earlier versions — fresh installations and HVM deployments"
 " already use OpenSearch."
-msgstr ""
+msgstr "A partir de |morpheus| 8.1.0, el servicio de búsqueda embebido cambió de Elasticsearch a OpenSearch. Esta migración solo afecta dispositivos que se actualizan desde versiones anteriores — las instalaciones nuevas y las implementaciones HVM ya usan OpenSearch."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:8
 msgid "During upgrade, the reconfigure process will:"
-msgstr ""
+msgstr "Durante la actualización, el proceso de reconfigure:"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:10
 msgid "Automatically disable the old Elasticsearch service"
-msgstr ""
+msgstr "Deshabilita automáticamente el servicio Elasticsearch antiguo"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:11
 msgid "Start OpenSearch in its place"
-msgstr ""
+msgstr "Inicia OpenSearch en su lugar"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:12
 msgid ""
 "Migrate the Elasticsearch PKCS12 CA to PEM format if ``secure_mode`` is "
 "enabled"
-msgstr ""
+msgstr "Migra la CA PKCS12 de Elasticsearch a formato PEM si ``secure_mode`` está habilitado"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:14
 msgid ""
 "No changes to ``/etc/morpheus/morpheus.rb`` are required. Existing "
 "``elasticsearch[...]`` settings are bridged to the ``opensearch`` "
 "namespace automatically."
-msgstr ""
+msgstr "No se requieren cambios en ``/etc/morpheus/morpheus.rb``. La configuración existente ``elasticsearch[...]`` se conecta automáticamente al espacio de nombres ``opensearch``."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:16
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:18
 msgid ""
 "Data (indices) must be migrated separately using ``morpheus-ctl migrate-"
 "elasticsearch``. Run ``morpheus-ctl migrate-elasticsearch help`` on an "
 "appliance after upgrade for full usage information."
-msgstr ""
+msgstr "Los datos (índices) deben migrarse por separado usando ``morpheus-ctl migrate-elasticsearch``. Ejecute ``morpheus-ctl migrate-elasticsearch help`` en un dispositivo después de la actualización para obtener información completa de uso."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:21
 msgid "Single Node — Upgrading from Elasticsearch"
-msgstr ""
+msgstr "Nodo único — Actualización desde Elasticsearch"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:23
 #: ../../getting_started/maintenance/opensearch_migration.rst:55
 #: ../../getting_started/maintenance/opensearch_migration.rst:114
 msgid "**Step 1 — Upgrade the Morpheus package**"
-msgstr ""
+msgstr "**Paso 1 — Actualizar el paquete Morpheus**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:25
 msgid "Install the new |morpheus| package. Do **NOT** run reconfigure yet."
-msgstr ""
+msgstr "Instale el nuevo paquete |morpheus|. **NO** ejecute reconfigure todavía."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:27
 msgid "**Step 2 — Run the migration script**"
-msgstr ""
+msgstr "**Paso 2 — Ejecutar el script de migración**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:29
 msgid ""
 "For single-node appliances, the migration script handles everything "
 "automatically:"
-msgstr ""
+msgstr "Para dispositivos de un solo nodo, el script de migración gestiona todo automáticamente:"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:31
 #: ../../getting_started/maintenance/opensearch_migration.rst:89
@@ -99,39 +99,39 @@ msgstr ""
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:35
 msgid "This script does the following:"
-msgstr ""
+msgstr "Este script realiza lo siguiente:"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:37
 msgid ""
 "Starts a temporary Elasticsearch instance using the preserved ES "
 "installation"
-msgstr ""
+msgstr "Inicia una instancia temporal de Elasticsearch usando la instalación ES preservada"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:38
 msgid ""
 "Resets voting configuration if needed (for nodes which were previously "
 "part of a cluster)"
-msgstr ""
+msgstr "Restablece la configuración de votación si es necesario (para nodos que anteriormente formaban parte de un clúster)"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:39
 msgid "Sets replicas to 0 for single-node operation"
-msgstr ""
+msgstr "Establece réplicas en 0 para operación de un solo nodo"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:40
 msgid "Exports all indices to JSON files"
-msgstr ""
+msgstr "Exporta todos los índices a archivos JSON"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:41
 msgid "Imports into OpenSearch"
-msgstr ""
+msgstr "Importa en OpenSearch"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:42
 msgid "Stops the temporary ES cluster"
-msgstr ""
+msgstr "Detiene el clúster ES temporal"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:44
 msgid "**Step 3 — Reconfigure**"
-msgstr ""
+msgstr "**Paso 3 — Reconfigure**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:46
 #: ../../getting_started/maintenance/opensearch_migration.rst:105
@@ -144,11 +144,11 @@ msgid ""
 "The old Elasticsearch service is disabled automatically and OpenSearch "
 "starts in its place. If ``secure_mode`` was enabled, the Elasticsearch "
 "PKCS12 CA is automatically migrated to PEM format."
-msgstr ""
+msgstr "El servicio Elasticsearch antiguo se deshabilita automáticamente y OpenSearch inicia en su lugar. Si ``secure_mode`` estaba habilitado, la CA PKCS12 de Elasticsearch se migra automáticamente a formato PEM."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:53
 msgid "3-Node Cluster — Upgrading from Elasticsearch"
-msgstr ""
+msgstr "Clúster de 3 nodos — Actualización desde Elasticsearch"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:57
 msgid ""
@@ -158,17 +158,17 @@ msgid ""
 "data and binaries are preserved across package install, reconfigure, and "
 "normal operation — the migration export can be run at any time until the "
 "ES data is removed."
-msgstr ""
+msgstr "Instale el nuevo paquete |morpheus| en los 3 nodos. **No** ejecute reconfigure todavía. El script preinstall preserva la instalación Elasticsearch en ``/var/opt/morpheus/elasticsearch-8.15.5/home/``. Los datos y binarios ES se preservan durante la instalación del paquete, reconfigure y operación normal — la exportación de migración puede ejecutarse en cualquier momento hasta que se eliminen los datos ES."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:59
 msgid "**Step 2 — Check the ES cluster configuration**"
-msgstr ""
+msgstr "**Paso 2 — Verificar la configuración del clúster ES**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:61
 msgid ""
 "Run the following and note the ``discovery.seed_hosts`` and "
 "``cluster.initial_master_nodes``:"
-msgstr ""
+msgstr "Ejecute lo siguiente y anote ``discovery.seed_hosts`` y ``cluster.initial_master_nodes``:"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:63
 msgid "cat /var/opt/morpheus/elasticsearch-8.15.5/home/config/elasticsearch.yml"
@@ -176,13 +176,13 @@ msgstr ""
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:67
 msgid "**Step 3 — Start Elasticsearch on all nodes**"
-msgstr ""
+msgstr "**Paso 3 — Iniciar Elasticsearch en todos los nodos**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:69
 msgid ""
 "Start ES on each node within 30 seconds of each other (order does not "
 "matter):"
-msgstr ""
+msgstr "Inicie ES en cada nodo dentro de 30 segundos entre sí (el orden no importa):"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:71
 msgid ""
@@ -193,12 +193,12 @@ msgstr ""
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:75
 msgid "**Step 4 — Verify cluster health**"
-msgstr ""
+msgstr "**Paso 4 — Verificar la salud del clúster**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:77
 #: ../../getting_started/maintenance/opensearch_migration.rst:87
 msgid "From any node:"
-msgstr ""
+msgstr "Desde cualquier nodo:"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:79
 msgid "curl http://127.0.0.1:9200/_cluster/health?pretty"
@@ -208,23 +208,23 @@ msgstr ""
 msgid ""
 "You should see: ``\"status\": \"green\"``, ``\"number_of_nodes\": 3``, "
 "``\"unassigned_shards\": 0``"
-msgstr ""
+msgstr "Debería ver: ``\"status\": \"green\"``, ``\"number_of_nodes\": 3``, ``\"unassigned_shards\": 0``"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:85
 msgid "**Step 5 — Run the migration export**"
-msgstr ""
+msgstr "**Paso 5 — Ejecutar la exportación de migración**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:93
 msgid "The script will detect the running ES cluster and export from it."
-msgstr ""
+msgstr "El script detectará el clúster ES en ejecución y exportará desde él."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:95
 msgid "**Step 6 — Stop Elasticsearch on all nodes**"
-msgstr ""
+msgstr "**Paso 6 — Detener Elasticsearch en todos los nodos**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:97
 msgid "After the migration completes, on each node:"
-msgstr ""
+msgstr "Después de que se complete la migración, en cada nodo:"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:99
 msgid "pkill -f 'elasticsearch-8.15.5'"
@@ -232,11 +232,11 @@ msgstr ""
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:103
 msgid "**Step 7 — Reconfigure all nodes**"
-msgstr ""
+msgstr "**Paso 7 — Reconfigure en todos los nodos**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:110
 msgid "External Cluster — Upgrading"
-msgstr ""
+msgstr "Clúster externo — Actualización"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:112
 msgid ""
@@ -245,19 +245,19 @@ msgid ""
 "straightforward — no data migration is needed on the appliance side since"
 " the data lives on the external cluster. The external cluster does not "
 "need to be migrated to OpenSearch; |morpheus| supports both."
-msgstr ""
+msgstr "Si la instalación |morpheus| existente ya estaba configurada para usar un clúster Elasticsearch u OpenSearch externo, la actualización es sencilla — no se necesita migración de datos en el lado del dispositivo ya que los datos residen en el clúster externo. El clúster externo no necesita migrarse a OpenSearch; |morpheus| admite ambos."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:116
 msgid "Install the new |morpheus| package on each appliance node."
-msgstr ""
+msgstr "Instale el nuevo paquete |morpheus| en cada nodo del dispositivo."
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:118
 msgid "**Step 2 — Reconfigure**"
-msgstr ""
+msgstr "**Paso 2 — Reconfigure**"
 
 #: ../../getting_started/maintenance/opensearch_migration.rst:120
 msgid ""
 "No ``morpheus.rb`` changes are needed. The existing "
 "``elasticsearch[...]`` settings are bridged automatically."
-msgstr ""
+msgstr "No se necesitan cambios en ``morpheus.rb``. La configuración existente ``elasticsearch[...]`` se conecta automáticamente."
 

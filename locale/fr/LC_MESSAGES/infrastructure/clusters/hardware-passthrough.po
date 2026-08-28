@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:2
 msgid "Hardware Passthrough"
-msgstr ""
+msgstr "Pass-through matériel"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:4
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 "ad-hoc basis by manually attaching hardware to existing VMs. Other "
 "supported hardware types must be past through to the VM after "
 "provisioning."
-msgstr ""
+msgstr "|morpheus| inclut la prise en charge du pass-through matériel et du pooling pour les VM provisionnées sur les |clusters|. Cette prise en charge s'étend aux GPU, USB et périphériques NVME. Pour être utilisables, ces périphériques doivent être connectés à un |host| ou à plusieurs |hosts|. |morpheus| inclut des contrôles pour détacher les périphériques matériels du système d'exploitation sous-jacent sur l'hôte hyperviseur et les ajouter à un pool où ils sont disponibles pour consommation par les VM. Le matériel GPU peut être connecté aux VM au moment du provisionnement via des plans de service personnalisés ou de manière ad hoc en connectant manuellement le matériel à des VM existantes. Les autres types de matériel pris en charge doivent être passés à la VM après le provisionnement."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:6
 msgid ""
@@ -44,11 +44,11 @@ msgid ""
 "the GPU bound to the NVIDIA Host driver and assigns programmed SR-IOV "
 "virtual functions instead of the full physical card. For that workflow, "
 "see :doc:`hvm/nvidia_vgpu`."
-msgstr ""
+msgstr "Cette page décrit le pass-through de périphérique complet. Le découpage NVIDIA vGPU maintient le GPU lié au pilote hôte NVIDIA et attribue des fonctions virtuelles SR-IOV programmées au lieu de la carte physique complète. Pour ce workflow, consultez :doc:`hvm/nvidia_vgpu`."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:9
 msgid "Creating Service Plans"
-msgstr ""
+msgstr "Création de plans de service"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:11
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "you'll see in the next sections it is not strictly required. It is also "
 "possible to manually attach GPUs or other hardware types on any existing "
 "VM runnning on |clusters|."
-msgstr ""
+msgstr "Lors de l'utilisation de matériel GPU, il peut être plus pratique d'utiliser un plan de service personnalisé. Cela permet aux administrateurs de préconfigurer le nombre de cartes matérielles discrètes à connecter à la VM au moment du provisionnement. Une fois provisionnée, le nombre spécifié de GPU sera connecté à la VM. Pour les charges de travail provisionnées et démantelées régulièrement, cela évite des étapes supplémentaires de connexion manuelle de GPU disponibles dans le pool. Lors du démantèlement, les périphériques connectés de tous types sont libérés dans le pool. Bien que l'utilisation de plans de service puisse être la plus pratique dans certains cas, comme vous le verrez dans les sections suivantes, ce n'est pas strictement obligatoire. Il est également possible de connecter manuellement des GPU ou d'autres types de matériel sur toute VM exécutée sur des |clusters|."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:13
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "Segment Types represent NVIDIA vGPU profiles and use the separate slicing"
 " workflow. See :doc:`/administration/plans_pricing/plans` for complete "
 "Service Plan guidance."
-msgstr ""
+msgstr "Pour créer un nouveau plan de service, accédez à |AdmPla|. Cliquez sur :guilabel:`+ Add` puis Service Plan. Dans la fenêtre modale New Service Plan, définissez d'abord la configuration PROVISION TYPE sur « KVM ». Cela mettra à jour les champs de configuration disponibles et affichera :guilabel:`GPU Count` et :guilabel:`GPU Type`. Sélectionnez un type de GPU physique pour le pass-through de carte complète. Les types de segment indentés représentent les profils NVIDIA vGPU et utilisent le workflow de découpage distinct. Consultez :doc:`/administration/plans_pricing/plans` pour des conseils complets sur les plans de service."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:15
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/gpuPlan.png"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:19
 msgid "Viewing and Assigning Hardware Devices"
-msgstr ""
+msgstr "Visualisation et attribution de périphériques matériels"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:21
 msgid ""
@@ -96,7 +96,7 @@ msgid ""
 "the Devices tab on the Host detail page. Detach a piece of hardware from "
 "the host using the ACTIONS dropdown for that piece of hardware. As shown "
 "in the screenshot below, DETACH DEVICE is selected for a USB device."
-msgstr ""
+msgstr "Les périphériques matériels sont affichés au niveau du détail de l'hôte et au niveau du détail de la VM (serveur) via un onglet Devices. Le détail de l'hôte affichera tous les périphériques matériels connectés et leur état actuel : Connecté (à l'hôte), détaché (de l'hôte) ou attribué (à une VM). Le détail de la VM n'affichera que les périphériques matériels actuellement connectés à cette VM. Pour commencer à consommer des périphériques matériels avec des VM |cluster|, consultez à nouveau la liste dans l'onglet Devices de la page de détail de l'hôte. Détachez un périphérique matériel de l'hôte à l'aide du menu déroulant ACTIONS pour ce périphérique. Comme illustré dans la capture d'écran ci-dessous, DETACH DEVICE est sélectionné pour un périphérique USB."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:23
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/detachDevice.png"
@@ -107,7 +107,7 @@ msgid ""
 "Once detached, the status of the device is changed to \"Detached\" (see "
 "screenshot below) and the device is available for consumption by VMs "
 "running on this host."
-msgstr ""
+msgstr "Une fois détaché, l'état du périphérique passe à « Detached » (voir la capture d'écran ci-dessous) et le périphérique est disponible pour consommation par les VM exécutées sur cet hôte."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:27
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/deviceDetached.png"
@@ -117,7 +117,7 @@ msgstr ""
 msgid ""
 "To assign the hardware to a specific VM, click the ACTIONS dropdown once "
 "again for the now-detached hardware. Now, click ASSIGN DEVICE."
-msgstr ""
+msgstr "Pour attribuer le matériel à une VM spécifique, cliquez à nouveau sur le menu déroulant ACTIONS pour le matériel maintenant détaché. Cliquez ensuite sur ASSIGN DEVICE."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:31
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/assignDevice.png"
@@ -127,7 +127,7 @@ msgstr ""
 msgid ""
 "Within the ASSIGN DEVICE modal that will appear, select the server for "
 "device assignment and click :guilabel:`EXECUTE`."
-msgstr ""
+msgstr "Dans la fenêtre modale ASSIGN DEVICE qui apparaîtra, sélectionnez le serveur pour l'attribution du périphérique et cliquez sur :guilabel:`EXECUTE`."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:35
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/assignToServer.png"
@@ -139,7 +139,7 @@ msgid ""
 "to \"Assigned.\" If we then open a console session with this VM, we can "
 "see the USB device is assigned successfully and is usable by the guest "
 "OS."
-msgstr ""
+msgstr "L'icône et l'état du périphérique dans la liste matérielle sont maintenant passés à « Assigned ». Si nous ouvrons ensuite une session console avec cette VM, nous pouvons voir que le périphérique USB est attribué avec succès et est utilisable par le système d'exploitation invité."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:39
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/vmConsole.png"
@@ -147,11 +147,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:41
 msgid "The same process can be used to detach and assign GPU or NVME devices."
-msgstr ""
+msgstr "Le même processus peut être utilisé pour détacher et attribuer des périphériques GPU ou NVME."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:44
 msgid "GPU Passthrough Example"
-msgstr ""
+msgstr "Exemple de pass-through GPU"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:46
 msgid ""
@@ -161,7 +161,7 @@ msgid ""
 "running on the VM. In this example, there is an Nvidia GeForce RTX 3050 "
 "connected to one of the |hosts|. By passing the GPU hardware through to a"
 " provisioned VM, hardware-accelerated AI workloads can be run on the VM."
-msgstr ""
+msgstr "Dans une section précédente, un plan de service a été créé qui consomme un GPU lorsqu'une VM est provisionnée avec ce plan. Cette section montre un exemple de provisionnement d'une charge de travail avec ce plan et d'une charge de travail accélérée GPU exécutée sur la VM. Dans cet exemple, un Nvidia GeForce RTX 3050 est connecté à l'un des |hosts|. En passant le matériel GPU à une VM provisionnée, des charges de travail IA accélérées par matériel peuvent être exécutées sur la VM."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:48
 msgid ""
@@ -171,7 +171,7 @@ msgid ""
 ":guilabel:`+ ADD`. Choose type |mvm| and click :guilabel:`NEXT`. On the "
 "next pane, choose the Group and Cloud in which your desired |cluster| "
 "resides, name the Instance, and click :guilabel:`NEXT`."
-msgstr ""
+msgstr "Commencez par accéder à :menuselection:`Provisioning --> Instances`. La liste de toutes les instances actuellement gérées se trouve ici avec des informations de haut niveau (état d'alimentation, etc.). Pour démarrer une nouvelle instance, cliquez sur :guilabel:`+ ADD`. Choisissez le type |mvm| et cliquez sur :guilabel:`NEXT`. Dans le volet suivant, choisissez le groupe et le cloud dans lesquels se trouve votre |cluster| souhaité, nommez l'instance et cliquez sur :guilabel:`NEXT`."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:50
 msgid ""
@@ -182,7 +182,7 @@ msgid ""
 "includes user-created Plans, such as those you've created to consume GPU "
 "hardware. In the screenshot below, you can see the \"GPU Plan\" was "
 "selected."
-msgstr ""
+msgstr "Sur l'onglet CONFIGURE, le principal point à noter pour cet exemple est la configuration PLAN. Ce menu déroulant contient des plans par défaut inclus avec |morpheus| et compatibles avec la technologie de provisionnement |mvm| (nommés « 1 CPU, 1GB Memory », etc.). Ce menu déroulant inclut également les plans créés par l'utilisateur, tels que ceux que vous avez créés pour consommer du matériel GPU. Dans la capture d'écran ci-dessous, vous pouvez voir que « GPU Plan » a été sélectionné."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:52
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/showPlan.png"
@@ -193,7 +193,7 @@ msgid ""
 "From here, complete the Instance provisioning wizard selecting any "
 "automation or lifecycle configurations and wait for the Instance "
 "provisioning to complete."
-msgstr ""
+msgstr "À partir de là, terminez l'assistant de provisionnement d'instance en sélectionnant les configurations d'automatisation ou de cycle de vie souhaitées et attendez que le provisionnement de l'instance se termine."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:57
 msgid ""
@@ -203,7 +203,7 @@ msgid ""
 "on the name of the desired VM to access the VM detail page. Click on the "
 "Devices tab. As in the screenshot below, the attached GPU should be "
 "shown."
-msgstr ""
+msgstr "Une fois le provisionnement terminé, vérifiez le(s) périphérique(s) connecté(s) depuis l'interface |morpheus|. Cela se fait au niveau de la VM plutôt qu'au niveau de l'instance. Depuis la page de détail de l'instance, cliquez sur l'onglet Resources. Cliquez sur le nom de la VM souhaitée pour accéder à la page de détail de la VM. Cliquez sur l'onglet Devices. Comme dans la capture d'écran ci-dessous, le GPU connecté doit être affiché."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:59
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/attachedGpu.png"
@@ -215,7 +215,7 @@ msgid ""
 "|morpheus| UI or by connecting to the VM over SSH from a local terminal "
 "session. Use the ``lspci`` command to view all devices connected to PCI "
 "buses. The attached GPU should be shown here as it is in the UI."
-msgstr ""
+msgstr "Pour aller plus loin, ouvrez une session console sur la nouvelle VM soit via l'interface |morpheus| soit en vous connectant à la VM via SSH depuis un terminal local. Utilisez la commande ``lspci`` pour afficher tous les périphériques connectés aux bus PCI. Le GPU connecté doit être affiché ici comme dans l'interface."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:63
 msgid ""
@@ -224,7 +224,7 @@ msgid ""
 "make it easy to run large language models (LLMs) locally. In the "
 "screenshot below, see the AI chatbot response to an input. This result "
 "took only a few seconds thanks to GPU hardware acceleration."
-msgstr ""
+msgstr "À ce stade, la VM est prête à exécuter normalement des charges de travail accélérées GPU. Pour tester cela, j'exécuterai Ollama, un outil open source conçu pour faciliter l'exécution de grands modèles de langage (LLM) localement. Dans la capture d'écran ci-dessous, voyez la réponse du chatbot IA à une entrée. Ce résultat n'a pris que quelques secondes grâce à l'accélération matérielle GPU."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:65
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/ollamaOutput.png"
@@ -234,7 +234,7 @@ msgstr ""
 msgid ""
 "With the request completed, we can run the ``ollama ps`` command which "
 "confirms the model was running under GPU acceleration."
-msgstr ""
+msgstr "Une fois la requête terminée, nous pouvons exécuter la commande ``ollama ps`` qui confirme que le modèle s'exécutait sous accélération GPU."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:69
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/gpuUsed.png"

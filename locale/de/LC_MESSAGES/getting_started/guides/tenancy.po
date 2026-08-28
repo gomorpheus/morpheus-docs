@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/tenancy.rst:2
 msgid "Tenancy"
-msgstr ""
+msgstr "Mandantenverhältnis"
 
 #: ../../getting_started/guides/tenancy.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "Roles, Groups, and whitelabeling. We will also share a Cloud and Library "
 "item from the |mastertenant| which is provisionable from the new "
 "Subtenant."
-msgstr ""
+msgstr "|morpheus|-Appliances können multimandantenfähig sein, d. h. mehrere isolierte Umgebungen namens Mandanten enthalten. Der erfolgreiche Aufbau einer multimandantenfähigen |morpheus|-Umgebung erfordert das Erstellen und Zusammenführen mehrerer Konstrukte. Dieser Leitfaden beschreibt die Bausteine für funktionierende Mandanten mit Benutzern, Identitätsintegrationen, Rollen, Gruppen und Whitelabeling. Wir teilen außerdem eine Cloud und einen Bibliothekseintrag aus dem |mastertenant|, die vom neuen Subtenant aus provisionierbar sind."
 
 #: ../../getting_started/guides/tenancy.rst:6
 msgid ""
@@ -45,49 +45,49 @@ msgid ""
 "also have their own users and integrations. The |mastertenant| may (or "
 "may not) share down integrations, Library items, Roles, and more but "
 "Subtenants are fully isolated from each other."
-msgstr ""
+msgstr "Bei der Installation wird ein einzelner Mandant erstellt. Dieser Mandant wird oft als |mastertenant| bezeichnet und hat besondere Eigenschaften, die zusätzlich erstellte Mandanten (Subtenants) nicht haben. Mandanten verwalten ihre eigenen Arbeitslasten, können eigenes Whitelabeling haben und verfügen über eigene Benutzer und Integrationen. Der |mastertenant| kann (oder muss nicht) Integrationen, Bibliothekseinträge, Rollen und mehr weitergeben; Subtenants sind voneinander vollständig isoliert."
 
 #: ../../administration/tenants/tenants.rst:3
 msgid ""
 "The Master Tenant is the default Tenant created during the installation "
 "of |morpheus|"
-msgstr ""
+msgstr "Der Master Tenant ist der Standardmandant, der bei der Installation von |morpheus| erstellt wird"
 
 #: ../../administration/tenants/tenants.rst:4
 msgid ""
 "All Tenants created after installation are Subtenants. Only one Master "
 "Tenant can exist"
-msgstr ""
+msgstr "Alle nach der Installation erstellten Mandanten sind Subtenants. Es kann nur einen Master Tenant geben"
 
 #: ../../administration/tenants/tenants.rst:5
 msgid "The Master Tenant creates and controls all Subtenants."
-msgstr ""
+msgstr "Der Master Tenant erstellt und steuert alle Subtenants."
 
 #: ../../administration/tenants/tenants.rst:6
 msgid "Tenants are isolated environments with unique users, workloads, and Groups"
-msgstr ""
+msgstr "Mandanten sind isolierte Umgebungen mit eigenen Benutzern, Arbeitslasten und Gruppen"
 
 #: ../../administration/tenants/tenants.rst:7
 msgid "The Master Tenant can share or assign its resources to Subtenants"
-msgstr ""
+msgstr "Der Master Tenant kann seine Ressourcen an Subtenants freigeben oder zuweisen"
 
 #: ../../administration/tenants/tenants.rst:8
 msgid "Subtenants cannot share their resources with other Tenants"
-msgstr ""
+msgstr "Subtenants können ihre Ressourcen nicht mit anderen Mandanten teilen"
 
 #: ../../administration/tenants/tenants.rst:9
 msgid "Subtenants cannot see resources from other Subtenants"
-msgstr ""
+msgstr "Subtenants können Ressourcen anderer Subtenants nicht sehen"
 
 #: ../../administration/tenants/tenants.rst:10
 msgid ""
 "Subtenants can only access Master Tenant resources that have been set to "
 "Public visibility or specifically assigned to the Subtenant"
-msgstr ""
+msgstr "Subtenants können nur auf Master-Tenant-Ressourcen zugreifen, die auf öffentliche Sichtbarkeit gesetzt oder dem Subtenant speziell zugewiesen wurden"
 
 #: ../../getting_started/guides/tenancy.rst:13
 msgid "Tenant Roles"
-msgstr ""
+msgstr "Mandantenrollen"
 
 #: ../../getting_started/guides/tenancy.rst:15
 msgid ""
@@ -98,21 +98,21 @@ msgid ""
 "Tasks, Workflows, and other things integrated or created in and shared "
 "from the |mastertenant|. Only |mastertenant| administrators have the "
 "ability to create Tenant Roles."
-msgstr ""
+msgstr "Bevor wir den Mandanten erstellen, müssen wir verstehen, was eine Mandantenrolle ist, und sicherstellen, dass eine Mandantenrolle mit korrekten Rechteberechtigungen existiert. Mandantenrollen setzen die maximalen Feature-Berechtigungsstufen für jeden Benutzer im Subtenant und gewähren (oder entziehen) Zugriff auf Clouds, Bibliothekseinträge, Aufgaben, Workflows und andere im |mastertenant| integrierte oder erstellte und freigegebene Elemente. Nur Administratoren des |mastertenant| können Mandantenrollen erstellen."
 
 #: ../../getting_started/guides/tenancy.rst:17
 #: ../../integration_guides/IdentityManagement/active_directory.rst:16
 #: ../../integration_guides/IdentityManagement/active_directory.rst:69
 #: ../../integration_guides/IdentityManagement/active_directory.rst:111
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/guides/tenancy.rst:17
 msgid ""
 "User Roles within the Tenant may be created with lesser permissions than "
 "the Tenant Role allows but we will discuss User Roles further in a later "
 "section."
-msgstr ""
+msgstr "Benutzerrollen innerhalb des Mandanten können mit geringeren Berechtigungen als die Mandantenrolle erlaubt erstellt werden; Benutzerrollen behandeln wir in einem späteren Abschnitt genauer."
 
 #: ../../getting_started/guides/tenancy.rst:19
 msgid ""
@@ -121,20 +121,20 @@ msgid ""
 " own Tenant Roles so they may be edited as needed. To get started, we can"
 " create a new Tenant Role and copy from the pre-existing \"Tenant Admin\""
 " Role."
-msgstr ""
+msgstr "In einer neuen Umgebung ist die einzige Mandantenrolle die mitgelieferte Rolle „Tenant Admin“, die jedoch nicht bearbeitbar ist. Es empfiehlt sich, eigene Mandantenrollen zu erstellen, damit sie bei Bedarf bearbeitet werden können. Zu Beginn können wir eine neue Mandantenrolle erstellen und von der vorhandenen Rolle „Tenant Admin“ kopieren."
 
 #: ../../getting_started/guides/tenancy.rst:21
 msgid "Navigate to |AdmRol|"
-msgstr ""
+msgstr "Navigieren Sie zu |AdmRol|"
 
 #: ../../getting_started/guides/tenancy.rst:22
 #: ../../getting_started/guides/tenancy.rst:59
 msgid "Click :guilabel:`+ CREATE ROLE`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`+ CREATE ROLE`"
 
 #: ../../getting_started/guides/tenancy.rst:23
 msgid "Set a NAME, TYPE (Tenant Role), and COPY FROM ROLE (Tenant Admin)"
-msgstr ""
+msgstr "Legen Sie NAME, TYPE (Tenant Role) und COPY FROM ROLE (Tenant Admin) fest"
 
 #: ../../getting_started/guides/tenancy.rst:24
 #: ../../getting_started/guides/tenancy.rst:41
@@ -143,7 +143,7 @@ msgstr ""
 #: ../../getting_started/guides/tenancy.rst:113
 #: ../../getting_started/guides/tenancy.rst:136
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/tenancy.rst:26
 msgid ".. image:: /images/administration/tenants/addTenantRole.png"
@@ -156,32 +156,32 @@ msgid ""
 "permissions for each feature that Users within the Tenant can have. We'll"
 " worry about scoping resources to the Subtenant (such as Clouds) in a "
 "later section."
-msgstr ""
+msgstr "Nach der Erstellung klicken Sie in die neue Rolle und bearbeiten Sie bei Bedarf die Feature-Berechtigungen. Denken Sie daran: Die Mandantenrolle setzt die maximal verfügbaren Rollenberechtigungen für jedes Feature, das Benutzer im Mandanten haben können. Die Einschränkung von Ressourcen auf den Subtenant (z. B. Clouds) behandeln wir in einem späteren Abschnitt."
 
 #: ../../getting_started/guides/tenancy.rst:31
 msgid "With a Tenant Role created, we can move on to creating the Tenant itself."
-msgstr ""
+msgstr "Mit erstellter Mandantenrolle können wir den Mandanten selbst anlegen."
 
 #: ../../getting_started/guides/tenancy.rst:34
 msgid "Create a Tenant"
-msgstr ""
+msgstr "Einen Mandanten erstellen"
 
 #: ../../getting_started/guides/tenancy.rst:36
 msgid "We'll now create a Tenant and apply the Tenant Role we've just created."
-msgstr ""
+msgstr "Wir erstellen nun einen Mandanten und wenden die gerade erstellte Mandantenrolle an."
 
 #: ../../getting_started/guides/tenancy.rst:38
 #: ../../integration_guides/IdentityManagement/active_directory.rst:81
 msgid "Navigate to |AdmTen|"
-msgstr ""
+msgstr "Navigieren Sie zu |AdmTen|"
 
 #: ../../getting_started/guides/tenancy.rst:39
 msgid "Click :guilabel:`CREATE TENANT`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`CREATE TENANT`"
 
 #: ../../getting_started/guides/tenancy.rst:40
 msgid "Name your Tenant and set the Tenant Role in the BASE ROLE field"
-msgstr ""
+msgstr "Benennen Sie Ihren Mandanten und setzen Sie die Mandantenrolle im Feld BASE ROLE"
 
 #: ../../getting_started/guides/tenancy.rst:43
 msgid ""
@@ -189,7 +189,7 @@ msgid ""
 "required. See the Tenants section of |morpheus| documentation to learn "
 "more about other settings which may be applied when adding or editing "
 "Tenants."
-msgstr ""
+msgstr "NAME und BASE ROLE sind die wichtigsten Einstellungen und die einzigen beiden erforderlichen. Im Abschnitt Tenants der |morpheus|-Dokumentation erfahren Sie mehr über weitere Einstellungen beim Hinzufügen oder Bearbeiten von Mandanten."
 
 #: ../../getting_started/guides/tenancy.rst:45
 msgid ".. image:: /images/administration/tenants/addTenant.png"
@@ -200,11 +200,11 @@ msgid ""
 "With the Tenant created, the rest of the guide will pertain to "
 "configuring the new Tenant and demonstrating how to provision new "
 "workloads using resources shared down from the |mastertenant|."
-msgstr ""
+msgstr "Nach Erstellung des Mandanten betrifft der Rest des Leitfadens die Konfiguration des neuen Mandanten und die Demonstration, wie neue Arbeitslasten mit vom |mastertenant| freigegebenen Ressourcen provisioniert werden."
 
 #: ../../getting_started/guides/tenancy.rst:51
 msgid "Users and User Roles"
-msgstr ""
+msgstr "Benutzer und Benutzerrollen"
 
 #: ../../getting_started/guides/tenancy.rst:53
 msgid ""
@@ -214,7 +214,7 @@ msgid ""
 "could go ahead and create a new User but if this is a new |morpheus| "
 "environment, the new Tenant will not have any User Roles to apply to the "
 "new User we wish to create."
-msgstr ""
+msgstr "In den vorherigen Schritten haben wir einen neuen Mandanten erstellt und unsere Mandantenrolle damit verknüpft. Wenn Sie in den neuen Mandanten klicken, sehen Sie, dass es derzeit keine Benutzer gibt; der neue Mandant ist also noch nicht nutzbar. Wir könnten einen neuen Benutzer anlegen, aber in einer neuen |morpheus|-Umgebung hätte der neue Mandant keine Benutzerrollen, die wir dem neuen Benutzer zuweisen könnten."
 
 #: ../../getting_started/guides/tenancy.rst:55
 msgid ""
@@ -229,19 +229,19 @@ msgid ""
 " other User Role created in the Subtenant. To prevent this situation, "
 "|mastertenant| administrators can set a \"MULTITENANT LOCKED\" option to "
 "restrict such edits in the Subtenant."
-msgstr ""
+msgstr "Zur Lösung können wir vom |mastertenant| aus eine „Multi-Tenant User Role“ hinzufügen. Das ist im Wesentlichen eine Rollenvorlage, aus der eine Rolle erstellt und in jeden Mandanten gesät wird. Nur Administratoren des |mastertenant| können Multi-Tenant-Benutzerrollen erstellen. Nach der Erstellung können Änderungen vorgenommen werden; Berechtigungsänderungen werden an die Kindrolle in jedem Subtenant weitergegeben. Wichtig: Wird die Kindrolle jemals im Subtenant bearbeitet, bricht die Verknüpfung zur Multi-Tenant-Benutzerrolle und sie verhält sich wie jede andere im Subtenant erstellte Benutzerrolle. Um das zu verhindern, können Administratoren des |mastertenant| die Option „MULTITENANT LOCKED“ setzen und solche Bearbeitungen im Subtenant einschränken."
 
 #: ../../getting_started/guides/tenancy.rst:57
 msgid "New Multi-Tenant User Roles are created in |AdmRol|:"
-msgstr ""
+msgstr "Neue Multi-Tenant-Benutzerrollen werden unter |AdmRol| erstellt:"
 
 #: ../../getting_started/guides/tenancy.rst:60
 msgid "Provide a NAME, TYPE (User Role), COPY FROM ROLE (if desired)"
-msgstr ""
+msgstr "Geben Sie NAME, TYPE (User Role) und ggf. COPY FROM ROLE an"
 
 #: ../../getting_started/guides/tenancy.rst:61
 msgid "Mark the boxes to set MULTITENANT ROLE and MULTITENANT LOCKED"
-msgstr ""
+msgstr "Markieren Sie die Kontrollkästchen für MULTITENANT ROLE und MULTITENANT LOCKED"
 
 #: ../../getting_started/guides/tenancy.rst:64
 msgid ""
@@ -253,7 +253,7 @@ msgid ""
 "Users in the Subtenant will not be able to exceed permissions set on the "
 "Tenant Role as discussed in a prior section. If desired, you can click "
 "into this User Role now and edit its permissions to suit your needs."
-msgstr ""
+msgstr "Nach dem Speichern erscheint die Rolle im |mastertenant| und wird auch in den bereits erstellten Mandanten gesät, da es eine Multi-Tenant-Benutzerrolle ist. Wir haben die Rolle auch gesperrt, damit Subtenant-Benutzer sie nicht bearbeiten und von künftigen Berechtigungsänderungen im |mastertenant| trennen können. Unabhängig von den gesetzten Berechtigungen können Benutzer im Subtenant die auf der Mandantenrolle gesetzten Berechtigungen nicht überschreiten, wie zuvor besprochen. Bei Bedarf können Sie jetzt in diese Benutzerrolle klicken und ihre Berechtigungen anpassen."
 
 #: ../../getting_started/guides/tenancy.rst:66
 msgid ".. image:: /images/administration/tenants/addUserRole.png"
@@ -266,7 +266,7 @@ msgid ""
 "list page (|AdmTen|) and selecting the Tenant. There are a number of "
 "configurations to make when creating a user but when selecting the User's"
 " Role you should see the previously-created Multi-Tenant User Role."
-msgstr ""
+msgstr "Nun können wir einen Benutzer hinzufügen, der den Mandanten nutzbar macht. Wir können einen im neuen Mandanten anlegen, indem wir zur Mandantenliste (|AdmTen|) navigieren und den Mandanten auswählen. Beim Erstellen eines Benutzers gibt es mehrere Konfigurationen; bei der Auswahl der Benutzerrolle sollten Sie die zuvor erstellte Multi-Tenant-Benutzerrolle sehen."
 
 #: ../../getting_started/guides/tenancy.rst:71
 msgid ".. image:: /images/administration/tenants/addUser.png"
@@ -282,7 +282,7 @@ msgid ""
 " the updated name given in the upper-right portion of the application "
 "window. To quit impersonating, click on the name and select \"Quit "
 "Impersonating.\""
-msgstr ""
+msgstr "Nach dem Speichern des neuen Benutzers können wir den neuen Mandanten erstmals testen, indem wir den Benutzer impersonieren und den Mandanten betreten. In der Benutzerliste auf der Mandantendetailseite klicken Sie auf das Zahnradsymbol (|gear|) am Ende der Benutzerzeile und wählen „Impersonate.“ Sie sollten sich im neuen Mandanten als neuer Benutzer befinden. Das bestätigen Sie anhand des aktualisierten Namens oben rechts im Anwendungsfenster. Zum Beenden der Impersonation klicken Sie auf den Namen und wählen „Quit Impersonating.“"
 
 #: ../../getting_started/guides/tenancy.rst:76
 msgid ""
@@ -294,7 +294,7 @@ msgid ""
 "|morpheus|. The complete integration guide elsewhere in |morpheus| docs "
 "also includes common Active Directory troubleshooting steps should those "
 "be needed."
-msgstr ""
+msgstr "Bis hierher haben wir einen Benutzer manuell erstellt; wichtig ist aber auch, dass |morpheus| eine vorhandene Identitätsintegration wie Microsoft Active Directory nutzen kann, um Benutzererstellung und Rollenzuweisung zu verwalten. Erweitern Sie den Abschnitt unten für einen Beispielanwendungsfall oder fahren Sie fort, wenn Sie Benutzer direkt in |morpheus| verwalten möchten. Der vollständige Integrationsleitfaden in den |morpheus|-Docs enthält auch gängige Active-Directory-Fehlerbehebungsschritte, falls nötig."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:14
 msgid ""
@@ -310,7 +310,7 @@ msgid ""
 "automatically filtered down to |morpheus|. This section includes an "
 "example integration walkthrough as well as additional details on the "
 "integration feature set."
-msgstr ""
+msgstr "Active Directory ist der primäre Authentifizierungsdienst von Microsoft. Er ist in Unternehmen und auch in Microsoft-Cloud-Diensten weit verbreitet. Obwohl Active Directory auch LDAP unterstützt (mit dem |morpheus| ebenfalls integrieren kann), enthält |morpheus| einen eigenen Identitätintegrations-Typ speziell für Active Directory. Durch die Integration von Active Directory können |morpheus|-Administratoren die Verwaltung des Benutzerlebenszyklus vollständig an Active Directory abgeben. Das Erstellen neuer Benutzer, das Anwenden von Rollen, das Aktualisieren grundlegender Benutzerdaten, das Deaktivieren von Benutzern und mehr können in Active Directory erfolgen und automatisch an |morpheus| weitergegeben werden. Dieser Abschnitt enthält einen Beispielintegrations-Walkthrough sowie weitere Details zum Funktionsumfang der Integration."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:16
 msgid ""
@@ -318,7 +318,7 @@ msgid ""
 "identity source with the same |morpheus| Tenant. You must ensure the "
 "users on each identity source are unique users or that the two domains "
 "use different naming conventions for users."
-msgstr ""
+msgstr "Vorsicht ist geboten, wenn mehr als eine Active-Directory-Identitätsquelle mit demselben |morpheus|-Mandanten integriert wird. Sie müssen sicherstellen, dass die Benutzer jeder Identitätsquelle eindeutig sind oder die beiden Domains unterschiedliche Namenskonventionen für Benutzer verwenden."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:21
 msgid ""
@@ -333,7 +333,7 @@ msgid ""
 "environment for a specific customer. The customer's own existing Active "
 "Directory server and groups can be leveraged to build |morpheus| user "
 "accounts with correct role mapping automatically."
-msgstr ""
+msgstr "In |morpheus| werden Identitätsquellen (falls verwendet) pro Mandant konfiguriert. Um eine Identitätsintegration zu sehen oder eine neue zu erstellen, navigieren Sie zu einer Mandantendetailseite (|AdmTen| > Ausgewählter Mandant) und klicken Sie auf :guilabel:`IDENTITY SOURCES`. Von dieser Seite aus können wir eine neue Identitätsquelle hinzufügen oder auf das Stiftsymbol (|pencil|) neben einer vorhandenen Identitätsquelle klicken, um sie anzuzeigen oder zu bearbeiten. Jede konfigurierte Identitätsquelle gilt nur für einen Mandanten und kann nicht geteilt werden. Besonders nützlich ist das in einer MSP-Appliance, in der jeder Mandant eine siloartige Umgebung für einen bestimmten Kunden ist. Der vorhandene Active-Directory-Server und die Gruppen des Kunden können genutzt werden, um |morpheus|-Benutzerkonten mit korrektem Rollenmapping automatisch zu erstellen."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:23
 msgid ""
@@ -345,19 +345,19 @@ msgid ""
 " role changes based on changes to the user's associated AD groups or "
 "updated passwords. Additionally, disabling a user in AD will prevent them"
 " from accessing |morpheus|."
-msgstr ""
+msgstr "Bei der Konfiguration einer Active-Directory-Integration in |morpheus| werden AD-Gruppen auf |morpheus|-Rollen gemappt. Beim ersten Login fügt |morpheus| das neue Benutzerkonto mit korrektem Namen und E-Mail hinzu und wendet je nach Konfiguration eine oder mehrere Rollen an. Fortan synchronisiert |morpheus| Änderungen am Benutzer, einschließlich Rollenänderungen aufgrund geänderter zugehöriger AD-Gruppen oder aktualisierter Kennwörter. Das Deaktivieren eines Benutzers in AD verhindert außerdem den Zugriff auf |morpheus|."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:25
 #: ../../integration_guides/IdentityManagement/active_directory.rst:52
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:25
 msgid ""
 "|morpheus| will connect over port 389 for non-secure LDAP and port 636 "
 "for secure LDAP. Ensure that |morpheus| is able to talk to the AD server "
 "on the proper port."
-msgstr ""
+msgstr "|morpheus| verbindet sich über Port 389 für unsicheres LDAP und Port 636 für sicheres LDAP. Stellen Sie sicher, dass |morpheus| den AD-Server über den richtigen Port erreichen kann."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:30
 msgid ""
@@ -370,7 +370,7 @@ msgid ""
 "how |morpheus| roles can be mapped to AD groups. In the same AD server, I"
 " have two users. John Smith is in groups \"Morpheus Users\" and "
 "\"Morpheus Admins\". John Jones is only in the \"Morpheus Users\" group."
-msgstr ""
+msgstr "In einem einfachen Beispiel haben wir einen Active-Directory-Server mit zwei für |morpheus| relevanten Gruppen: „Morpheus Users“ und „Morpheus Admins.“ Wir konfigurieren |morpheus| so, dass nur Benutzer in der Gruppe „Morpheus Users“ überhaupt Zugriff auf |morpheus| haben. Benutzer, die auch in „Morpheus Admins“ sind, erhalten in |morpheus| die Rolle System Admin. Später bei der Integrationskonfiguration sehen wir, wie |morpheus|-Rollen auf AD-Gruppen gemappt werden können. Im selben AD-Server habe ich zwei Benutzer. John Smith ist in den Gruppen „Morpheus Users“ und „Morpheus Admins“. John Jones ist nur in „Morpheus Users“."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:32
 msgid ".. image:: /images/integration_guides/identity_sources/ad/ad.png"
@@ -384,15 +384,15 @@ msgid ""
 "page (|AdmTen| > Selected Tenant) and clicking :guilabel:`IDENTITY "
 "SOURCES`. On setting the type to \"Active Directory,\" the form will "
 "update with the needed fields. Note the following basic fields:"
-msgstr ""
+msgstr "Mit Kenntnis des AD-Schemas und der Anforderungen an |morpheus|-Benutzerrollen können wir die Integration erstellen. Identitätsintegrationen sind mandantenspezifisch; navigieren Sie daher zur Mandantendetailseite (|AdmTen| > Ausgewählter Mandant) und klicken Sie auf :guilabel:`IDENTITY SOURCES`. Nach Setzen des Typs auf „Active Directory“ aktualisiert sich das Formular mit den benötigten Feldern. Beachten Sie die folgenden Grundfelder:"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:36
 msgid "**AD SERVER:** The IP address or hostname for the Active Directory Server"
-msgstr ""
+msgstr "**AD SERVER:** Die IP-Adresse oder der Hostname des Active-Directory-Servers"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:37
 msgid "**DOMAIN:** The AD domain in which the relevant users and groups reside"
-msgstr ""
+msgstr "**DOMAIN:** Die AD-Domain, in der die relevanten Benutzer und Gruppen liegen"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:38
 msgid ""
@@ -402,11 +402,11 @@ msgid ""
 "your organization's IT security policies but the integration with "
 "|morpheus| will not work properly if the user does not have the needed "
 "access"
-msgstr ""
+msgstr "**BINDING USERNAME:** Ein Serverbenutzer mit Zugriff auf relevante Objekte auf dem AD-Server. In meinem Beispiel habe ich den integrierten Benutzer Administrator verwendet, was die einfachste Option ist. Andere Benutzer können je nach IT-Sicherheitsrichtlinien Ihrer Organisation genutzt werden; die Integration mit |morpheus| funktioniert jedoch nicht korrekt, wenn der Benutzer nicht den benötigten Zugriff hat"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:39
 msgid "**BINDING PASSWORD:** The password for the user in the prior field"
-msgstr ""
+msgstr "**BINDING PASSWORD:** Das Kennwort für den Benutzer im vorherigen Feld"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:41
 msgid ""
@@ -426,7 +426,7 @@ msgid ""
 "DOMAIN, or binding user details). MANUAL ROLE ASSIGNMENT allows users to "
 "manually update |morpheus| roles outside of the automatic mappings "
 "created by the AD integration."
-msgstr ""
+msgstr "Nach den Grundkonfigurationen beeinflussen die übrigen Einstellungen die Erzeugung von |morpheus|-Benutzern und -Rollen. Eine REQUIRED GROUP ist optional und eine Gruppe, in der der Benutzer *sein muss*, um überhaupt |morpheus|-Zugriff zu haben. Hier fordern wir die Gruppe „Morpheus Users“. Eine DEFAULT ROLE ist erforderlich und wird allen Benutzern zugewiesen, unabhängig von zusätzlichen Rollen aufgrund ihrer AD-Gruppenmitgliedschaft. Darüber hinaus werden hier alle anderen |morpheus|-Rollen aufgelistet; ein AD-Gruppenname kann so vielen wie nötig zugeordnet werden. In diesem Beispiel erhalten Benutzer in „Morpheus Admins“ die |morpheus|-Rolle System Admin. Auch wenn wir sie nicht genutzt haben: ENABLE ROLE MAPPING PERMISSION gibt Administratoren im Mandanten die Möglichkeit, die AD-Rollenmappings zu aktualisieren (ohne Zugriff auf Kernintegrationsfelder wie AD SERVER, DOMAIN oder Binding-Benutzerdetails). MANUAL ROLE ASSIGNMENT erlaubt Benutzern, |morpheus|-Rollen manuell außerhalb der automatischen Mappings der AD-Integration zu aktualisieren."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:43
 msgid ".. image:: /images/integration_guides/identity_sources/ad/intConfig.png"
@@ -442,7 +442,7 @@ msgid ""
 "sync any changes to these users. For example, |morpheus| roles may be "
 "updated based on changing AD groups or user access may be completely "
 "revoked by disabling the user in AD."
-msgstr ""
+msgstr "Nach Abschluss der Integrationsschritte können Benutzer sich bei |morpheus| anmelden, und ein Benutzerkonto mit korrekten Rollen wird automatisch erstellt. In unserem Beispiel hat sich John Smith angemeldet; wir sehen, dass ihm die Standardrolle sowie die Rolle System Admin aufgrund seiner AD-Gruppenzuordnungen zugewiesen sind. Fortan synchronisiert |morpheus| Änderungen an diesen Benutzern. Beispielsweise können |morpheus|-Rollen anhand geänderter AD-Gruppen aktualisiert oder der Zugriff durch Deaktivieren des Benutzers in AD vollständig entzogen werden."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:47
 msgid ".. image:: /images/integration_guides/identity_sources/ad/user.png"
@@ -455,13 +455,13 @@ msgid ""
 "in**. A local |morpheus| user account is automatically created for each "
 "user upon first login. To restrict access to only authorized users, you "
 "must configure the REQUIRED GROUP field."
-msgstr ""
+msgstr "Wenn das Feld REQUIRED GROUP leer bleibt, **darf sich jeder Benutzer anmelden, der sich am Active-Directory-Server authentifizieren kann**. Beim ersten Login wird automatisch ein lokales |morpheus|-Benutzerkonto erstellt. Um den Zugriff auf autorisierte Benutzer zu beschränken, müssen Sie das Feld REQUIRED GROUP konfigurieren."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:54
 msgid ""
 "The REQUIRED GROUP field is the primary mechanism for controlling which "
 "AD users are permitted to access |morpheus|. It works as follows:"
-msgstr ""
+msgstr "Das Feld REQUIRED GROUP ist der primäre Mechanismus zur Steuerung, welche AD-Benutzer auf |morpheus| zugreifen dürfen. Es funktioniert wie folgt:"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:56
 msgid ""
@@ -469,57 +469,57 @@ msgid ""
 "group can log in. Users who authenticate successfully against AD but are "
 "not in the required group are denied access and no local user object is "
 "created."
-msgstr ""
+msgstr "**Required Group gesetzt:** Nur Benutzer, die Mitglieder der angegebenen AD-Gruppe sind, können sich anmelden. Benutzer, die sich erfolgreich an AD authentifizieren, aber nicht in der erforderlichen Gruppe sind, werden abgelehnt und es wird kein lokales Benutzerobjekt erstellt."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:57
 msgid ""
 "**Required Group empty:** All users who can authenticate against the AD "
 "server are allowed to log in. This is the default behavior and is "
 "typically **not appropriate for enterprise environments**."
-msgstr ""
+msgstr "**Required Group leer:** Alle Benutzer, die sich am AD-Server authentifizieren können, dürfen sich anmelden. Das ist das Standardverhalten und typischerweise **für Unternehmensumgebungen nicht geeignet**."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:58
 msgid ""
 "**Include Member Groups:** When checked, users in groups nested inside "
 "the required group are also granted access."
-msgstr ""
+msgstr "**Include Member Groups:** Wenn aktiviert, erhalten auch Benutzer in Gruppen, die in der erforderlichen Gruppe verschachtelt sind, Zugriff."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:60
 msgid ""
 "The Required Group acts as a gatekeeper. Role mappings and the Default "
 "Role are only applied **after** the Required Group check passes. The "
 "interaction between these fields is:"
-msgstr ""
+msgstr "Die Required Group fungiert als Torwächter. Rollenmappings und die Default Role werden erst **nach** bestandener Required-Group-Prüfung angewendet. Das Zusammenspiel dieser Felder ist:"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:62
 msgid "User authenticates credentials against AD"
-msgstr ""
+msgstr "Benutzer authentifiziert Anmeldedaten gegenüber AD"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:63
 msgid "|morpheus| checks if the user is in the Required Group (if configured)"
-msgstr ""
+msgstr "|morpheus| prüft, ob der Benutzer in der Required Group ist (falls konfiguriert)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:64
 msgid ""
 "If the user is not in the Required Group, login is denied (no user is "
 "created)"
-msgstr ""
+msgstr "Ist der Benutzer nicht in der Required Group, wird der Login verweigert (kein Benutzer wird erstellt)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:65
 msgid ""
 "If the user passes the Required Group check, |morpheus| creates or syncs "
 "the user account"
-msgstr ""
+msgstr "Besteht der Benutzer die Required-Group-Prüfung, erstellt oder synchronisiert |morpheus| das Benutzerkonto"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:66
 msgid "The Default Role is applied to the user"
-msgstr ""
+msgstr "Die Default Role wird auf den Benutzer angewendet"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:67
 msgid ""
 "Any additional role mappings are applied based on the user's AD group "
 "memberships"
-msgstr ""
+msgstr "Weitere Rollenmappings werden anhand der AD-Gruppenmitgliedschaften des Benutzers angewendet"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:69
 msgid ""
@@ -527,83 +527,83 @@ msgid ""
 "Group check. It is additive—users receive the Default Role in addition to"
 " any roles assigned through role mappings. It is not a fallback that only"
 " applies when no other mapping matches."
-msgstr ""
+msgstr "Die Default Role wird Benutzern, die die Required-Group-Prüfung bestehen, **immer** zugewiesen. Sie ist additiv – Benutzer erhalten die Default Role zusätzlich zu allen über Rollenmappings zugewiesenen Rollen. Sie ist kein Fallback, der nur greift, wenn kein anderes Mapping passt."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:71
 msgid "**Recommended Configuration for Enterprise Environments:**"
-msgstr ""
+msgstr "**Empfohlene Konfiguration für Unternehmensumgebungen:**"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:73
 msgid ""
 "Always set a Required Group to prevent unauthorized directory users from "
 "accessing |morpheus|"
-msgstr ""
+msgstr "Setzen Sie immer eine Required Group, um unautorisierten Directory-Benutzern den Zugriff auf |morpheus| zu verwehren"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:74
 msgid ""
 "Create a dedicated AD group (e.g., \"Morpheus Users\") and add only "
 "authorized users"
-msgstr ""
+msgstr "Erstellen Sie eine dedizierte AD-Gruppe (z. B. „Morpheus Users“) und fügen Sie nur autorisierte Benutzer hinzu"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:75
 msgid ""
 "Set the Default Role to the most restrictive role appropriate for general"
 " users"
-msgstr ""
+msgstr "Setzen Sie die Default Role auf die restriktivste Rolle, die für allgemeine Benutzer angemessen ist"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:76
 msgid ""
 "Use role mappings to assign elevated roles (e.g., System Admin) to users "
 "in specific AD groups"
-msgstr ""
+msgstr "Nutzen Sie Rollenmappings, um erhöhte Rollen (z. B. System Admin) Benutzern in bestimmten AD-Gruppen zuzuweisen"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:82
 msgid "Select a Tenant"
-msgstr ""
+msgstr "Einen Mandanten auswählen"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:83
 msgid "Select :guilabel:`IDENTITY SOURCES`"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`IDENTITY SOURCES`"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:84
 msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`+ ADD IDENTITY SOURCE`"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:85
 msgid "Set the TYPE to \"Active Directory\""
-msgstr ""
+msgstr "Setzen Sie TYPE auf „Active Directory“"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:86
 msgid "Populate the following:"
-msgstr ""
+msgstr "Füllen Sie Folgendes aus:"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:88
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:89
 msgid "A friendly name in |morpheus| for the AD integration"
-msgstr ""
+msgstr "Ein Anzeigename in |morpheus| für die AD-Integration"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:90
 msgid "AD Server"
-msgstr ""
+msgstr "AD Server"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:91
 msgid "The Hostname or IP address of AD Server"
-msgstr ""
+msgstr "Der Hostname oder die IP-Adresse des AD-Servers"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:92
 msgid "Domain"
-msgstr ""
+msgstr "Domain"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:93
 msgid "The AD domain in which the relevant user and group objects reside"
-msgstr ""
+msgstr "Die AD-Domain, in der die relevanten Benutzer- und Gruppenobjekte liegen"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:94
 msgid "USE SSL"
-msgstr ""
+msgstr "USE SSL"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:95
 msgid ""
@@ -611,29 +611,29 @@ msgid ""
 "server. |morpheus| will connect over port 389 for non-secure LDAP and "
 "port 636 for secure LDAP, ensure |morpheus| can connect to the AD server "
 "over the correct port"
-msgstr ""
+msgstr "Gibt an, ob SSL für die Kommunikation mit dem AD-Server verwendet werden soll. |morpheus| verbindet sich über Port 389 für unsicheres LDAP und Port 636 für sicheres LDAP; stellen Sie sicher, dass |morpheus| den AD-Server über den richtigen Port erreichen kann"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:96
 msgid "Binding Username"
-msgstr ""
+msgstr "Binding Username"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:97
 msgid ""
 "A username for a service account which has access to relevant objects "
 "(users, groups, etc.). For ease, the \"Administrator\" user may be used"
-msgstr ""
+msgstr "Ein Benutzername für ein Servicekonto mit Zugriff auf relevante Objekte (Benutzer, Gruppen usw.). Der Einfachheit halber kann der Benutzer „Administrator“ verwendet werden"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:98
 msgid "Binding Password"
-msgstr ""
+msgstr "Binding Password"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:99
 msgid "The password for the above account"
-msgstr ""
+msgstr "Das Kennwort für das obige Konto"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:100
 msgid "Required Group"
-msgstr ""
+msgstr "Required Group"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:101
 msgid ""
@@ -643,21 +643,21 @@ msgid ""
 "recommended to set this field in enterprise environments to restrict "
 "access to only authorized users (see the \"Restricting Access with "
 "Required Group\" section above)"
-msgstr ""
+msgstr "Die AD-Gruppe, in der Benutzer sein müssen, um Zugriff zu haben. Bleibt sie leer, dürfen sich alle Benutzer anmelden, die sich am AD-Server authentifizieren können, und ein lokales Benutzerkonto wird automatisch erstellt. In Unternehmensumgebungen wird dringend empfohlen, dieses Feld zu setzen, um den Zugriff auf autorisierte Benutzer zu beschränken (siehe Abschnitt „Restricting Access with Required Group“ oben)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:102
 msgid "Include Member Groups"
-msgstr ""
+msgstr "Include Member Groups"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:103
 msgid ""
 "When checked, users in groups that are nested inside the required group "
 "will also be granted access"
-msgstr ""
+msgstr "Wenn aktiviert, erhalten auch Benutzer in Gruppen, die in der erforderlichen Gruppe verschachtelt sind, Zugriff"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:104
 msgid "Default Role"
-msgstr ""
+msgstr "Default Role"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:105
 msgid ""
@@ -665,11 +665,11 @@ msgid ""
 "This role is always assigned in addition to any roles granted through the"
 " role mappings below. Set this to the most restrictive role appropriate "
 "for general users"
-msgstr ""
+msgstr "Die Standardrolle, die allen Benutzern zugewiesen wird, die die Required-Group-Prüfung bestehen. Diese Rolle wird immer zusätzlich zu den über die Rollenmappings unten gewährten Rollen zugewiesen. Setzen Sie sie auf die restriktivste Rolle, die für allgemeine Benutzer angemessen ist"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:106
 msgid "ENABLE ROLE MAPPING PERMISSION"
-msgstr ""
+msgstr "ENABLE ROLE MAPPING PERMISSION"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:107
 msgid ""
@@ -678,18 +678,18 @@ msgid ""
 "integration. This allows the Tenant user to edit only the role mappings "
 "without viewing or potentially editing the basic Identity Source "
 "configuration (AD server, domain, binding user details, etc)"
-msgstr ""
+msgstr "Wenn ausgewählt, können Mandantenbenutzer mit entsprechenden Rechten zum Anzeigen und Bearbeiten von Rollen das Rollenmapping für die Identity-Source-Integration setzen. So kann der Mandantenbenutzer nur die Rollenmappings bearbeiten, ohne die grundlegende Identity-Source-Konfiguration (AD-Server, Domain, Binding-Benutzerdetails usw.) einzusehen oder potenziell zu bearbeiten"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:108
 msgid "MANUAL ROLE ASSIGNMENT"
-msgstr ""
+msgstr "MANUAL ROLE ASSIGNMENT"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:109
 msgid ""
 "When selected, administrators can manually edit Roles for users created "
 "through this identity source integration from the user detail page "
 "(|AdmUse| > Selected user)"
-msgstr ""
+msgstr "Wenn ausgewählt, können Administratoren Rollen für Benutzer, die über diese Identitätsquellen-Integration erstellt wurden, manuell auf der Benutzerdetailseite bearbeiten (|AdmUse| > Ausgewählter Benutzer)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:111
 msgid ""
@@ -697,22 +697,22 @@ msgid ""
 " guide <https://support.morpheusdata.com/s/article/How-to-enable-"
 "Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ "
 "in our KnowledgeBase."
-msgstr ""
+msgstr "Mehr zu Identity-Source-Rollenmapping-Berechtigungen finden Sie im `associated guide <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ in unserer KnowledgeBase."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:113
 msgid "Select :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Wählen Sie :guilabel:`SAVE CHANGES`."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:115
 msgid ""
 "Now allowed AD users can login to |morpheus| via their Active Directory "
 "credentials and a User will be automatically generated to |morpheus| with"
 " matching metadata and mapped Role permissions."
-msgstr ""
+msgstr "Nun können zugelassene AD-Benutzer sich mit ihren Active-Directory-Anmeldedaten bei |morpheus| anmelden, und ein Benutzer wird automatisch in |morpheus| mit passenden Metadaten und gemappten Rollenberechtigungen erzeugt."
 
 #: ../../getting_started/guides/tenancy.rst:85
 msgid "Whitelabeling"
-msgstr ""
+msgstr "Whitelabeling"
 
 #: ../../getting_started/guides/tenancy.rst:87
 msgid ""
@@ -726,7 +726,7 @@ msgid ""
 "needed, review a more detailed explanation of each `whitelabel setting "
 "<https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#whitelabel>`_"
 " in |morpheus| documentation."
-msgstr ""
+msgstr "|morpheus| ermöglicht die Anpassung jedes Mandanten an eigenes Erscheinungsbild über Whitelabeling-Funktionen. Ihre Organisation kann das Standard-|morpheus|-Logo und Farbschema durch eigene Logos und Farben ersetzen. Whitelabel-Einstellungen liegen unter |AdmSetWhi| und sind weitgehend selbsterklärend. Laden Sie Logos hoch und setzen Sie in jedem Feld benutzerdefinierte hexadezimale Farben. Setzen Sie abschließend die Konfiguration „Enable Whitelabel“ und klicken Sie ganz unten auf der Seite auf :guilabel:`SAVE`. Bei Bedarf finden Sie eine ausführlichere Erklärung jeder `whitelabel setting <https://docs.morpheusdata.com/en/latest/administration/settings/settings.html#whitelabel>`_ in der |morpheus|-Dokumentation."
 
 #: ../../getting_started/guides/tenancy.rst:89
 msgid ".. image:: /images/administration/tenants/whitelabelSettings.png"
@@ -734,7 +734,7 @@ msgstr ""
 
 #: ../../getting_started/guides/tenancy.rst:92
 msgid "Scoping Clouds to Tenants"
-msgstr ""
+msgstr "Clouds auf Mandanten einschränken"
 
 #: ../../getting_started/guides/tenancy.rst:94
 msgid ""
@@ -746,7 +746,7 @@ msgid ""
 "doing so by the Tenant Role). However, |mastertenant| administrators may "
 "also choose to share integrations created in the |mastertenant| down to "
 "Subtenant users."
-msgstr ""
+msgstr "Nachdem der Mandant erstellt und mit einem Benutzer und Rollen versehen ist, richten wir nützliche Provisionierungsressourcen ein. Mandanten sind vollständige (aber isolierte) |morpheus|-Umgebungen, die eigene Cloud-Integrationen erstellen oder Integrationen mit anderen Drittanbietertechnologien nutzen können (sofern die Mandantenrolle das nicht einschränkt). Administratoren des |mastertenant| können jedoch auch im |mastertenant| erstellte Integrationen an Subtenant-Benutzer weitergeben."
 
 #: ../../getting_started/guides/tenancy.rst:96
 msgid ""
@@ -756,19 +756,19 @@ msgid ""
 "(available to all Tenants). In our example, we're going to expose an "
 "Amazon AWS Cloud integrated in the |mastertenant| down to our newly-"
 "created Subtenant. To set the Cloud visibility, use the following steps:"
-msgstr ""
+msgstr "Viele Konstrukte in |morpheus| haben aus Sicht des |mastertenant| ein Attribut „Visibility“. Es steuert, ob das Konstrukt „Private“ (für einen ausgewählten Mandanten reserviert) oder Public (für alle Mandanten verfügbar) ist. In unserem Beispiel geben wir eine im |mastertenant| integrierte Amazon-AWS-Cloud an unseren neu erstellten Subtenant weiter. So setzen Sie die Cloud-Sichtbarkeit:"
 
 #: ../../getting_started/guides/tenancy.rst:98
 msgid "Navigate to the Clouds list page (|InfClo|)"
-msgstr ""
+msgstr "Navigieren Sie zur Clouds-Listenseite (|InfClo|)"
 
 #: ../../getting_started/guides/tenancy.rst:99
 msgid "Edit the Cloud by clicking the pencil icon (|pencil|) in its row"
-msgstr ""
+msgstr "Bearbeiten Sie die Cloud, indem Sie auf das Stiftsymbol (|pencil|) in ihrer Zeile klicken"
 
 #: ../../getting_started/guides/tenancy.rst:100
 msgid "Toggle the VISIBILITY attribute to \"Public\""
-msgstr ""
+msgstr "Schalten Sie das Attribut VISIBILITY auf „Public“"
 
 #: ../../getting_started/guides/tenancy.rst:103
 msgid ".. image:: /images/administration/tenants/editCloud.png"
@@ -780,29 +780,29 @@ msgid ""
 "Resource Pool (A VPC, in Amazon parlance) for Subtenant users to "
 "provision into. We do this from the Cloud detail page (|InfClo|) > Click "
 "on selected Cloud."
-msgstr ""
+msgstr "Die Cloud ist nun für den Subtenant freigegeben; wir müssen aber auch einen Ressourcenpool (in Amazon-Terminologie eine VPC) freigeben, in den Subtenant-Benutzer provisionieren können. Das geschieht von der Cloud-Detailseite (|InfClo|) > Auf die ausgewählte Cloud klicken."
 
 #: ../../getting_started/guides/tenancy.rst:108
 msgid "Select the Resources subtab"
-msgstr ""
+msgstr "Wählen Sie die Unterregisterkarte Resources"
 
 #: ../../getting_started/guides/tenancy.rst:109
 msgid "Click ACTIONS next to the selected Resource Pool (VPC)"
-msgstr ""
+msgstr "Klicken Sie neben dem ausgewählten Ressourcenpool (VPC) auf ACTIONS"
 
 #: ../../getting_started/guides/tenancy.rst:110
 msgid "Click Edit"
-msgstr ""
+msgstr "Klicken Sie auf Edit"
 
 #: ../../getting_started/guides/tenancy.rst:111
 msgid "Expand the \"Tenant Permissions\" section"
-msgstr ""
+msgstr "Erweitern Sie den Abschnitt „Tenant Permissions“"
 
 #: ../../getting_started/guides/tenancy.rst:112
 msgid ""
 "Set Visibility to Public (alternatively, you could keep the Private "
 "visibility and add the new Tenant in the next field)"
-msgstr ""
+msgstr "Setzen Sie Visibility auf Public (alternativ können Sie Private Visibility beibehalten und den neuen Mandanten im nächsten Feld hinzufügen)"
 
 #: ../../getting_started/guides/tenancy.rst:115
 msgid ".. image:: /images/administration/tenants/addResourcePool.png"
@@ -812,11 +812,11 @@ msgstr ""
 msgid ""
 "Repeat the same process for Networks and Security Groups, both of which "
 "are contained in the Networks subtab of the Cloud detail page."
-msgstr ""
+msgstr "Wiederholen Sie denselben Vorgang für Networks und Security Groups; beide befinden sich auf der Unterregisterkarte Networks der Cloud-Detailseite."
 
 #: ../../getting_started/guides/tenancy.rst:120
 msgid "Groups"
-msgstr ""
+msgstr "Gruppen"
 
 #: ../../getting_started/guides/tenancy.rst:122
 msgid ""
@@ -825,7 +825,7 @@ msgid ""
 " is defined by the User Role and many resources have a Group access "
 "component which allows administrators to control User access to things "
 "like Clouds, Networks, Datastores, Resource Pools, Folders and more."
-msgstr ""
+msgstr "Als Letztes vor Bibliothekseinträgen und Provisionierung betrachten wir Gruppen. Gruppen legen fest, auf welche Ressourcen ein Benutzer zugreifen kann. Der Gruppenzugriff wird durch die Benutzerrolle definiert; viele Ressourcen haben eine Gruppenzugriffskomponente, mit der Administratoren den Benutzerzugriff auf Clouds, Netzwerke, Datenspeicher, Ressourcenpools, Ordner und mehr steuern können."
 
 #: ../../getting_started/guides/tenancy.rst:124
 msgid ""
@@ -833,40 +833,40 @@ msgid ""
 "shared down from |mastertenant| to Subtenants. In order to create a Group"
 " for our new Tenant, impersonate the User we've created in previous "
 "steps. Once working in the Tenant, use the following steps:"
-msgstr ""
+msgstr "Gruppen existieren nur innerhalb des Mandanten, der sie erstellt; sie können nicht vom |mastertenant| an Subtenants weitergegeben werden. Um eine Gruppe für unseren neuen Mandanten zu erstellen, impersonieren Sie den in vorherigen Schritten erstellten Benutzer. Arbeiten Sie im Mandanten und gehen Sie wie folgt vor:"
 
 #: ../../getting_started/guides/tenancy.rst:126
 msgid "Navigate to |InfGro|"
-msgstr ""
+msgstr "Navigieren Sie zu |InfGro|"
 
 #: ../../getting_started/guides/tenancy.rst:127
 msgid "Click :guilabel:`+ CREATE`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`+ CREATE`"
 
 #: ../../getting_started/guides/tenancy.rst:128
 msgid "Set a NAME for the Group and click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Legen Sie einen NAME für die Gruppe fest und klicken Sie auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/tenancy.rst:130
 msgid "We'll now add the shared Cloud to the Group:"
-msgstr ""
+msgstr "Wir fügen nun die freigegebene Cloud zur Gruppe hinzu:"
 
 #: ../../getting_started/guides/tenancy.rst:132
 msgid "Click on the name of the Group to access the Group detail page"
-msgstr ""
+msgstr "Klicken Sie auf den Namen der Gruppe, um die Gruppendetailseite zu öffnen"
 
 #: ../../getting_started/guides/tenancy.rst:133
 msgid "Click on the Clouds tab"
-msgstr ""
+msgstr "Klicken Sie auf die Registerkarte Clouds"
 
 #: ../../getting_started/guides/tenancy.rst:134
 #: ../../getting_started/guides/tenancy.rst:149
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`+ ADD`"
 
 #: ../../getting_started/guides/tenancy.rst:135
 msgid "Use the typeahead field to select the shared Cloud"
-msgstr ""
+msgstr "Wählen Sie die freigegebene Cloud über das Typeahead-Feld aus"
 
 #: ../../getting_started/guides/tenancy.rst:138
 msgid ".. image:: /images/administration/tenants/addCloudToGroup.png"
@@ -877,57 +877,57 @@ msgid ""
 "At this point the basic configuration steps are complete and we will "
 "attempt a provisioning test using built-in Instance Types which are "
 "preinstalled with |morpheus|."
-msgstr ""
+msgstr "Damit sind die grundlegenden Konfigurationsschritte abgeschlossen; wir versuchen einen Provisionierungstest mit eingebauten Instanztypen, die mit |morpheus| vorinstalliert sind."
 
 #: ../../getting_started/guides/tenancy.rst:144
 msgid "Provisioning Test"
-msgstr ""
+msgstr "Provisionierungstest"
 
 #: ../../getting_started/guides/tenancy.rst:146
 msgid ""
 "At this point, you can conduct a test by attempting to provision one of "
 "the basic Instance Types shipped with |morpheus| for demonstration "
 "purposes. To test, we'll provision a basic Ubuntu box to our AWS Cloud."
-msgstr ""
+msgstr "An diesem Punkt können Sie einen Test durchführen, indem Sie einen der grundlegenden Instanztypen provisionieren, die |morpheus| zu Demonstrationszwecken mitliefert. Zum Testen provisionieren wir eine einfache Ubuntu-Box in unsere AWS-Cloud."
 
 #: ../../getting_started/guides/tenancy.rst:148
 msgid "Navigate to :menuselection:`Provisioning --> Instances`"
-msgstr ""
+msgstr "Navigieren Sie zu :menuselection:`Provisioning --> Instances`"
 
 #: ../../getting_started/guides/tenancy.rst:150
 msgid "Select the Ubuntu Instance Type"
-msgstr ""
+msgstr "Wählen Sie den Ubuntu-Instanztyp aus"
 
 #: ../../getting_started/guides/tenancy.rst:151
 #: ../../getting_started/guides/tenancy.rst:154
 #: ../../getting_started/guides/tenancy.rst:156
 msgid "Click :guilabel:`NEXT`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`NEXT`"
 
 #: ../../getting_started/guides/tenancy.rst:152
 msgid ""
 "Select the Group and Cloud noting that only resources shared with the "
 "Subtenant are selectable"
-msgstr ""
+msgstr "Wählen Sie Gruppe und Cloud aus und beachten Sie, dass nur Ressourcen auswählbar sind, die mit dem Subtenant geteilt werden"
 
 #: ../../getting_started/guides/tenancy.rst:153
 msgid "Name the Instance"
-msgstr ""
+msgstr "Benennen Sie die Instanz"
 
 #: ../../getting_started/guides/tenancy.rst:155
 msgid ""
 "On the CONFIGURE tab, select a Resource Pool, Network, and Security Group"
 " once again noting that only resources shared with the Subtenant are "
 "selectable"
-msgstr ""
+msgstr "Wählen Sie auf der Registerkarte CONFIGURE einen Ressourcenpool, ein Netzwerk und eine Security Group aus und beachten Sie erneut, dass nur Ressourcen auswählbar sind, die mit dem Subtenant geteilt werden"
 
 #: ../../getting_started/guides/tenancy.rst:157
 msgid "Click :guilabel:`NEXT` once again"
-msgstr ""
+msgstr "Klicken Sie erneut auf :guilabel:`NEXT`"
 
 #: ../../getting_started/guides/tenancy.rst:158
 msgid "Click :guilabel:`COMPLETE`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`COMPLETE`"
 
 #: ../../getting_started/guides/tenancy.rst:160
 msgid ".. image:: /images/administration/tenants/createInstance.png"
@@ -935,11 +935,11 @@ msgstr ""
 
 #: ../../getting_started/guides/tenancy.rst:162
 msgid "After a minute or two, the Instance should be fully provisioned."
-msgstr ""
+msgstr "Nach ein oder zwei Minuten sollte die Instanz vollständig provisioniert sein."
 
 #: ../../getting_started/guides/tenancy.rst:165
 msgid "Exposing Custom Instance Types to Subtenants"
-msgstr ""
+msgstr "Benutzerdefinierte Instanztypen für Subtenants freigeben"
 
 #: ../../getting_started/guides/tenancy.rst:167
 msgid ""
@@ -954,5 +954,5 @@ msgid ""
 "selectable and the User should be able to provision the custom Instance "
 "Type in the same was as the default Instance Type was provisioned in the "
 "previous step."
-msgstr ""
+msgstr "|mastertenant|-Administratoren können auch benutzerdefinierte Bibliothekselemente an Subtenants weitergeben. Navigieren Sie dazu zu |LibBlu| und wählen Sie einen Instanztyp aus. Klicken Sie auf das Bleistift-Symbol (|pencil|) in der Zeile des ausgewählten Instanztyps, um ihn zu bearbeiten. Aktualisieren Sie wie zuvor die Einstellung VISIBILITY auf Public. Stellen Sie außerdem sicher, dass die Benutzerrolle für den Subtenant-Benutzer Zugriff auf den ausgewählten Instanztyp gewährt. Führen Sie nach den Konfigurationsänderungen einen ähnlichen Test wie im vorherigen Abschnitt durch. Wenn Sie versuchen, eine neue Instanz zu provisionieren, sollte der neue Instanztyp auswählbar sein und der Benutzer sollte den benutzerdefinierten Instanztyp ebenso provisionieren können wie den Standard-Instanztyp im vorherigen Schritt."
 

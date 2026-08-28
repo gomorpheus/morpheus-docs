@@ -47,7 +47,7 @@ msgstr ""
 
 #: ../../getting_started/functionality/agent/overview.rst:6
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/functionality/agent/overview.rst:7
 msgid ""
@@ -70,11 +70,11 @@ msgid ""
 "requested actions back to the workload. This design removes the need for "
 "the Manager to initiate SSH or WinRM sessions after installation, but it "
 "is not a read-only telemetry channel."
-msgstr ""
+msgstr "El Agente |morpheus| no escucha en un puerto de administración entrante. Inicia una conexión HTTPS/WSS saliente al dispositivo |morpheus| configurado en TCP 443. La conexión persistente transporta inventario, estadísticas, datos de monitoreo y logs al dispositivo y transporta acciones solicitadas por el Manager de vuelta a la carga de trabajo. Este diseño elimina la necesidad de que el Manager inicie sesiones SSH o WinRM después de la instalación, pero no es un canal de telemetría de solo lectura."
 
 #: ../../getting_started/functionality/agent/overview.rst:12
 msgid "Agent Security Boundary"
-msgstr ""
+msgstr "Límite de seguridad del Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:14
 msgid ""
@@ -88,29 +88,29 @@ msgid ""
 "responsibilities. Apply least privilege to |morpheus| roles, protect "
 "Agent keys and Manager administrator access, and review activity/audit "
 "records for administrative actions."
-msgstr ""
+msgstr "Trate el control del Manager |morpheus| y la clave API de un Agente como un límite de confianza equivalente a un shell remoto. Una acción autorizada del Manager puede solicitar al Agente que ejecute un comando, escriba o transfiera archivos y realice operaciones de administración de cargas de trabajo. En Linux, el Agente se ejecuta como la cuenta de servicio ``morpheus-node`` y utiliza permisos ``sudo`` configurados para operaciones privilegiadas. Los Agentes de Host HVM tienen responsabilidades adicionales privilegiadas de almacenamiento, virtualización, fencing, montaje y reinicio. Aplique el mínimo privilegio a los roles de |morpheus|, proteja las claves del Agente y el acceso de administrador del Manager, y revise los registros de actividad/auditoría para acciones administrativas."
 
 #: ../../getting_started/functionality/agent/overview.rst:16
 msgid ""
 "The principal Linux locations and processes to include in host monitoring"
 " are:"
-msgstr ""
+msgstr "Las ubicaciones y procesos principales de Linux que deben incluirse en el monitoreo del host son:"
 
 #: ../../getting_started/functionality/agent/overview.rst:18
 msgid "``/opt/morpheus-node`` for Agent binaries and runtime files"
-msgstr ""
+msgstr "``/opt/morpheus-node`` para binarios y archivos de runtime del Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:19
 msgid "``/etc/morpheus/morpheus-node.yaml`` for Agent configuration"
-msgstr ""
+msgstr "``/etc/morpheus/morpheus-node.yaml`` para la configuración del Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:20
 msgid "``/var/log/morpheus-node`` for Agent logs"
-msgstr ""
+msgstr "``/var/log/morpheus-node`` para logs del Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:21
 msgid "``morphd``, supervised by the ``morpheus-node-runsvdir`` service"
-msgstr ""
+msgstr "``morphd``, supervisado por el servicio ``morpheus-node-runsvdir``"
 
 #: ../../getting_started/functionality/agent/overview.rst:23
 msgid ""
@@ -121,7 +121,7 @@ msgid ""
 "not validate the peer certificate chain. Use a trusted appliance "
 "certificate and enable peer verification where required by organizational"
 " policy; test certificate trust before enforcing the setting broadly."
-msgstr ""
+msgstr "La configuración ``verifyPeer`` del Agente controla la verificación de la cadena de certificados para su conexión saliente. Cuando ``verifyPeer`` es ``true``, el endpoint del dispositivo debe presentar un certificado en el que confíe el host del Agente. Cuando está ausente o es ``false``, el runtime del Agente no valida la cadena de certificados del par. Utilice un certificado de dispositivo de confianza y habilite la verificación del par donde lo requiera la política organizacional; pruebe la confianza del certificado antes de aplicar la configuración ampliamente."
 
 #: ../../getting_started/functionality/agent/overview.rst:25
 msgid ""
@@ -132,7 +132,7 @@ msgid ""
 "Upgrade Agents through the Manager's **Upgrade Agent** action or a newly "
 "downloaded, resource-specific Agent script, and verify that the Agent "
 "reconnects and reports the expected version."
-msgstr ""
+msgstr "Los paquetes y scripts del Agente deben provenir del dispositivo |morpheus| configurado o de una fuente de paquetes publicada por HPE para la versión aplicable. La disponibilidad de paquetes es específica de versión, SO y arquitectura; la ejecución exitosa en una plataforma no listada no establece soporte. Actualice los Agentes mediante la acción **Upgrade Agent** del Manager o un script de Agente descargado recientemente y específico del recurso, y verifique que el Agente se reconecte e informe la versión esperada."
 
 #: ../../getting_started/functionality/agent/overview.rst:27
 msgid ""
@@ -141,7 +141,7 @@ msgid ""
 " Agent paths, restrict who can request Agent actions, protect backups "
 "containing Agent configuration, and investigate unexpected Agent command "
 "or file activity as privileged remote administration."
-msgstr ""
+msgstr "Los controles de seguridad del cliente deben permitir solo la administración requerida Manager-a-Agente y la ruta Agente-a-Manager. Monitoree cambios bajo las rutas del Agente, restrinja quién puede solicitar acciones del Agente, proteja backups que contengan configuración del Agente e investigue actividad inesperada de comandos o archivos del Agente como administración remota privilegiada."
 
 #~ msgid ""
 #~ "The |morpheus| Agent is very lightweight"

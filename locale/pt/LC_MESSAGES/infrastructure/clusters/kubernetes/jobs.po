@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:4
 msgid "Kubernetes Jobs"
-msgstr ""
+msgstr "Jobs Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:9
 msgid ""
@@ -34,82 +34,82 @@ msgid ""
 "**Jobs**, **CronJobs**, and **Deploy Jobs**. These are managed through "
 "the cluster Workloads tab and can be created, monitored, and deleted from"
 " the |morpheus| UI."
-msgstr ""
+msgstr "O |morpheus| oferece suporte a três tipos distintos de job em clusters Kubernetes: **Jobs**, **CronJobs** e **Deploy Jobs**. Eles são gerenciados pela aba Workloads do cluster e podem ser criados, monitorados e excluídos na UI do |morpheus|."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:11
 msgid ""
 "Jobs are executed via the ``KubernetesJobExecutorService`` and can be run"
 " on-demand or scheduled."
-msgstr ""
+msgstr "Os Jobs são executados via ``KubernetesJobExecutorService`` e podem ser executados sob demanda ou agendados."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:14
 msgid "Job Types"
-msgstr ""
+msgstr "Tipos de Job"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:17
 msgid "Job"
-msgstr ""
+msgstr "Job"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:19
 msgid ""
 "A Kubernetes Job creates one or more Pods and ensures a specified number "
 "of them successfully terminate. Jobs are useful for batch processing, "
 "data migrations, and one-off tasks."
-msgstr ""
+msgstr "Um Job Kubernetes cria um ou mais Pods e garante que um número especificado deles termine com sucesso. Jobs são úteis para processamento em lote, migrações de dados e tarefas pontuais."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:21
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:33
 msgid "Key characteristics:"
-msgstr ""
+msgstr "Características principais:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:23
 msgid "Runs to completion (not continuously)"
-msgstr ""
+msgstr "Executa até a conclusão (não continuamente)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:24
 msgid "Tracks successful and failed Pod completions"
-msgstr ""
+msgstr "Rastreia conclusões bem-sucedidas e com falha de Pods"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:25
 msgid "Supports parallelism and completion count configuration"
-msgstr ""
+msgstr "Oferece suporte a paralelismo e configuração de contagem de conclusões"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:26
 msgid "Automatically cleaned up based on TTL settings"
-msgstr ""
+msgstr "Limpeza automática com base nas configurações de TTL"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:29
 msgid "CronJob"
-msgstr ""
+msgstr "CronJob"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:31
 msgid ""
 "A CronJob creates Jobs on a repeating schedule defined by a cron "
 "expression. Useful for periodic tasks such as backups, report generation,"
 " and cleanup operations."
-msgstr ""
+msgstr "Um CronJob cria Jobs em um agendamento repetido definido por uma expressão cron. Útil para tarefas periódicas como backups, geração de relatórios e operações de limpeza."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:35
 msgid ""
 "Schedule defined in standard cron format (e.g., ``0 */6 * * *`` for every"
 " 6 hours)"
-msgstr ""
+msgstr "Agendamento definido no formato cron padrão (por exemplo, ``0 */6 * * *`` a cada 6 horas)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:36
 msgid "Creates a new Job object on each scheduled run"
-msgstr ""
+msgstr "Cria um novo objeto Job a cada execução agendada"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:37
 msgid "Configurable concurrency policy (Allow, Forbid, Replace)"
-msgstr ""
+msgstr "Política de concorrência configurável (Allow, Forbid, Replace)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:38
 msgid "History limits for successful and failed Jobs"
-msgstr ""
+msgstr "Limites de histórico para Jobs bem-sucedidos e com falha"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:41
 msgid "Deploy Job"
-msgstr ""
+msgstr "Deploy Job"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:43
 msgid ""
@@ -117,273 +117,273 @@ msgid ""
 "operations against Kubernetes clusters. They combine the deployment "
 "workflow with job semantics, allowing deployment operations to be tracked"
 " as discrete units of work."
-msgstr ""
+msgstr "Deploy Jobs são tipos de job específicos do |morpheus| que executam operações de implantação em clusters Kubernetes. Eles combinam o fluxo de implantação com a semântica de job, permitindo que operações de implantação sejam rastreadas como unidades discretas de trabalho."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:46
 msgid "Creating Jobs"
-msgstr ""
+msgstr "Criando Jobs"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:49
 msgid "Via Cluster ACTIONS Menu"
-msgstr ""
+msgstr "Via Menu ACTIONS do Cluster"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:51
 msgid "Navigate to ``Infrastructure > Clusters > [cluster name]``"
-msgstr ""
+msgstr "Navegue até ``Infrastructure > Clusters > [cluster name]``"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:52
 msgid "From the ACTIONS menu, select **Run Workload**"
-msgstr ""
+msgstr "No menu ACTIONS, selecione **Run Workload**"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:53
 msgid ""
 "Select the workload type: **Job**, **Deployment**, **StatefulSet**, or "
 "**DaemonSet**"
-msgstr ""
+msgstr "Selecione o tipo de carga: **Job**, **Deployment**, **StatefulSet** ou **DaemonSet**"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:54
 msgid "Configure:"
-msgstr ""
+msgstr "Configure:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:56
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:57
 msgid "Name for the Job"
-msgstr ""
+msgstr "Nome para o Job"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:58
 msgid "NAMESPACE"
-msgstr ""
+msgstr "NAMESPACE"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:59
 msgid "Target namespace"
-msgstr ""
+msgstr "Namespace de destino"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:60
 msgid "IMAGE"
-msgstr ""
+msgstr "IMAGE"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:61
 msgid "Container image to run"
-msgstr ""
+msgstr "Imagem do container a executar"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:62
 msgid "COMMAND"
-msgstr ""
+msgstr "COMMAND"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:63
 msgid "Command to execute in the container (optional)"
-msgstr ""
+msgstr "Comando a executar no container (opcional)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:64
 msgid "ARGS"
-msgstr ""
+msgstr "ARGS"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:65
 msgid "Arguments to pass to the command (optional)"
-msgstr ""
+msgstr "Argumentos a passar para o comando (opcional)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:66
 msgid "COMPLETIONS"
-msgstr ""
+msgstr "COMPLETIONS"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:67
 msgid "Number of successful completions required (Jobs only)"
-msgstr ""
+msgstr "Número de conclusões bem-sucedidas necessárias (somente Jobs)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:68
 msgid "PARALLELISM"
-msgstr ""
+msgstr "PARALLELISM"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:69
 msgid "Number of Pods to run concurrently (Jobs only)"
-msgstr ""
+msgstr "Número de Pods a executar de forma concorrente (somente Jobs)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:70
 msgid "RESTART POLICY"
-msgstr ""
+msgstr "RESTART POLICY"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:71
 msgid "``Never`` or ``OnFailure``"
-msgstr ""
+msgstr "``Never`` ou ``OnFailure``"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:73
 msgid "Select :guilabel:`RUN`"
-msgstr ""
+msgstr "Selecione :guilabel:`RUN`"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:76
 msgid "Via Provisioning Jobs"
-msgstr ""
+msgstr "Via Provisioning Jobs"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:78
 msgid "Navigate to ``Provisioning > Jobs``"
-msgstr ""
+msgstr "Navegue até ``Provisioning > Jobs``"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:79
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:80
 msgid "Configure the job targeting a Kubernetes cluster"
-msgstr ""
+msgstr "Configure o job visando um cluster Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:81
 msgid "Set the schedule (for CronJob behavior) or run on-demand"
-msgstr ""
+msgstr "Defina o agendamento (para comportamento de CronJob) ou execute sob demanda"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:84
 msgid "Monitoring Jobs"
-msgstr ""
+msgstr "Monitorando Jobs"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:86
 msgid "Active and completed Jobs are visible on the cluster Workloads tab:"
-msgstr ""
+msgstr "Jobs ativos e concluídos ficam visíveis na aba Workloads do cluster:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:88
 msgid "**STATUS** — Running, Succeeded, Failed"
-msgstr ""
+msgstr "**STATUS** — Running, Succeeded, Failed"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:89
 msgid "**COMPLETIONS** — Progress toward completion count (e.g., ``2/3``)"
-msgstr ""
+msgstr "**COMPLETIONS** — Progresso em direção à contagem de conclusões (por exemplo, ``2/3``)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:90
 msgid "**DURATION** — Time since Job creation"
-msgstr ""
+msgstr "**DURATION** — Tempo desde a criação do Job"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:91
 msgid "**AGE** — Time since the Job was created"
-msgstr ""
+msgstr "**AGE** — Tempo desde que o Job foi criado"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:93
 msgid "For detailed information:"
-msgstr ""
+msgstr "Para informações detalhadas:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:95
 msgid "Click on a Job to see its Pods and their statuses"
-msgstr ""
+msgstr "Clique em um Job para ver seus Pods e seus status"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:96
 msgid "View Pod logs for debugging failed Jobs"
-msgstr ""
+msgstr "Veja os logs do Pod para depurar Jobs com falha"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:97
 msgid "Check events for scheduling or resource issues"
-msgstr ""
+msgstr "Verifique eventos para problemas de agendamento ou recursos"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:100
 msgid "Deleting Jobs"
-msgstr ""
+msgstr "Excluindo Jobs"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:102
 msgid "To delete a Job from |morpheus|:"
-msgstr ""
+msgstr "Para excluir um Job do |morpheus|:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:104
 msgid "Navigate to the cluster Workloads tab > Jobs subtab"
-msgstr ""
+msgstr "Navegue até a aba Workloads do cluster > subaba Jobs"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:105
 msgid "Select the Job to delete"
-msgstr ""
+msgstr "Selecione o Job a excluir"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:106
 msgid "Click :guilabel:`DELETE`"
-msgstr ""
+msgstr "Clique em :guilabel:`DELETE`"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:107
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirme a exclusão"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:109
 msgid ""
 "When deleting a Job, |morpheus| uses a ``Background`` propagation policy,"
 " which means:"
-msgstr ""
+msgstr "Ao excluir um Job, o |morpheus| usa uma política de propagação ``Background``, o que significa:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:111
 msgid "The Job object is deleted immediately"
-msgstr ""
+msgstr "O objeto Job é excluído imediatamente"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:112
 msgid "Associated Pods are garbage collected asynchronously by Kubernetes"
-msgstr ""
+msgstr "Pods associados são coletados pelo garbage collector de forma assíncrona pelo Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:113
 msgid "Pod logs remain accessible briefly until Pods are fully terminated"
-msgstr ""
+msgstr "Os logs dos Pods permanecem acessíveis brevemente até que os Pods sejam totalmente terminados"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:115
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:115
 msgid ""
 "Deleting a CronJob also removes all Jobs it has created that are still "
 "running."
-msgstr ""
+msgstr "Excluir um CronJob também remove todos os Jobs que ele criou e que ainda estão em execução."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:118
 msgid "Job Templates"
-msgstr ""
+msgstr "Modelos de Job"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:120
 msgid ""
 "|morpheus| tracks Jobs internally as ``JobTemplate`` records linked to "
 "their parent cluster (``ComputeServerGroup``). Each Job template stores:"
-msgstr ""
+msgstr "O |morpheus| rastreia Jobs internamente como registros ``JobTemplate`` vinculados ao cluster pai (``ComputeServerGroup``). Cada modelo de Job armazena:"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:122
 msgid "The Job name (``internalId``)"
-msgstr ""
+msgstr "O nome do Job (``internalId``)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:123
 msgid "The namespace (``organizationId``)"
-msgstr ""
+msgstr "O namespace (``organizationId``)"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:124
 msgid "Reference to the parent cluster"
-msgstr ""
+msgstr "Referência ao cluster pai"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:126
 msgid ""
 "This allows |morpheus| to manage the full lifecycle of Jobs across the "
 "cluster."
-msgstr ""
+msgstr "Isso permite que o |morpheus| gerencie o ciclo de vida completo dos Jobs no cluster."
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:129
 msgid "Best Practices"
-msgstr ""
+msgstr "Práticas Recomendadas"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:131
 msgid ""
 "**Set TTL for finished Jobs:** Use ``ttlSecondsAfterFinished`` to auto-"
 "clean completed Jobs"
-msgstr ""
+msgstr "**Defina TTL para Jobs finalizados:** Use ``ttlSecondsAfterFinished`` para limpar automaticamente Jobs concluídos"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:132
 msgid ""
 "**Use resource limits:** Always set CPU and memory limits on Job Pods to "
 "prevent resource starvation"
-msgstr ""
+msgstr "**Use limites de recursos:** Sempre defina limites de CPU e memória nos Pods do Job para evitar starvation de recursos"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:133
 msgid ""
 "**Monitor CronJob history:** Review failed Job history regularly; "
 "configure ``failedJobsHistoryLimit`` appropriately"
-msgstr ""
+msgstr "**Monitore o histórico do CronJob:** Revise regularmente o histórico de Jobs com falha; configure ``failedJobsHistoryLimit`` adequadamente"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:134
 msgid ""
 "**Use restart policies wisely:** ``OnFailure`` retries the container in-"
 "place; ``Never`` creates a new Pod on failure"
-msgstr ""
+msgstr "**Use políticas de restart com sabedoria:** ``OnFailure`` tenta novamente o container no lugar; ``Never`` cria um novo Pod em caso de falha"
 
 #: ../../infrastructure/clusters/kubernetes/jobs.rst:135
 msgid ""
 "**Namespace isolation:** Run batch Jobs in dedicated namespaces to avoid "
 "impacting production workloads"
-msgstr ""
+msgstr "**Isolamento de namespace:** Execute Jobs em lote em namespaces dedicados para evitar impacto nas cargas de produção"
 

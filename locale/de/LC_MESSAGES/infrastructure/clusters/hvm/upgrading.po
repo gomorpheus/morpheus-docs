@@ -22,19 +22,19 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:2
 msgid "Upgrading Clusters"
-msgstr ""
+msgstr "Cluster upgraden"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:4
 msgid ""
 "This section covers upgrade procedures for HVM clusters, including layout"
 " upgrades, appliance version upgrades, and agent package updates."
-msgstr ""
+msgstr "Dieser Abschnitt behandelt Upgrade-Verfahren für HVM-Cluster, einschließlich Layout-Upgrades, Appliance-Versions-Upgrades und Agent-Paketaktualisierungen."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:6
 #: ../../infrastructure/clusters/hvm/upgrading.rst:41
 #: ../../infrastructure/clusters/hvm/upgrading.rst:57
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:6
 msgid ""
@@ -42,12 +42,12 @@ msgid ""
 " uses HVM OS/Ubuntu 24.04; layout 2.0 uses HVM OS 26.04. The supported "
 "layouts run in parallel. Do not change a cluster's layout or HVM OS "
 "outside a documented product workflow."
-msgstr ""
+msgstr "Ein Layout-Upgrade und ein HVM-OS-Update sind getrennte Vorgänge. Layout 1.3 verwendet HVM OS/Ubuntu 24.04; Layout 2.0 verwendet HVM OS 26.04. Die unterstützten Layouts laufen parallel. Ändern Sie Layout oder HVM-OS eines Clusters nicht außerhalb eines dokumentierten Produkt-Workflows."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:8
 #: ../../infrastructure/clusters/hvm/upgrading.rst:111
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:8
 msgid ""
@@ -60,141 +60,141 @@ msgid ""
 "not offered by a product workflow, stop and contact Support for an "
 "approved migration or host-replacement plan; do not derive one from "
 "generic Ubuntu guidance."
-msgstr ""
+msgstr "Das hier beschriebene Rolling Update ist ein orchestrierter Cluster-Vorgang, der die vom ausgewählten HVM-Layout bereitgestellten Update- und Rollback-Skripte ausführt. Es ist keine Freigabe für ein beliebiges Ubuntu-Release-Upgrade, das Ersetzen von Paketquellen oder das Ausführen allgemeiner Basis-OS-Upgrade-Befehle auf einem HVM-Host. Es ist kein unterstützter In-Place-Basis-OS-Übergang außerhalb eines freigegebenen Cluster-Updates dokumentiert. Wenn das erforderliche Ziel-OS nicht über einen Produkt-Workflow angeboten wird, halten Sie an und kontaktieren Sie den Support für einen genehmigten Migrations- oder Host-Austauschplan; leiten Sie keinen aus allgemeiner Ubuntu-Anleitung ab."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:11
 msgid "Layout 1.2 → 1.3 Upgrade"
-msgstr ""
+msgstr "Layout-Upgrade 1.2 → 1.3"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:13
 msgid ""
 "The HVM 1.3 layout replaces the Pacemaker-based high availability stack "
 "with the |morpheus| agent's QuorumCheckService. Clusters running layout "
 "1.2 can be upgraded to 1.3."
-msgstr ""
+msgstr "Das HVM-1.3-Layout ersetzt den Pacemaker-basierten Hochverfügbarkeits-Stack durch den QuorumCheckService des |morpheus|-Agents. Cluster mit Layout 1.2 können auf 1.3 upgegradet werden."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:16
 msgid "What Changes"
-msgstr ""
+msgstr "Was sich ändert"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:22
 msgid "Component"
-msgstr ""
+msgstr "Komponente"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:23
 msgid "Layout 1.2"
-msgstr ""
+msgstr "Layout 1.2"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:24
 msgid "Layout 1.3"
-msgstr ""
+msgstr "Layout 1.3"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:25
 msgid "Quorum/HA management"
-msgstr ""
+msgstr "Quorum-/HA-Management"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:26
 msgid "Pacemaker + Corosync"
-msgstr ""
+msgstr "Pacemaker + Corosync"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:27
 msgid "|morpheus| Agent (QuorumCheckService) + Corosync"
-msgstr ""
+msgstr "|morpheus| Agent (QuorumCheckService) + Corosync"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:28
 msgid "Fencing"
-msgstr ""
+msgstr "Fencing"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:29
 msgid "STONITH via Pacemaker"
-msgstr ""
+msgstr "STONITH über Pacemaker"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:30
 msgid "Agent-based fence_ack via DLM"
-msgstr ""
+msgstr "Agent-basiertes fence_ack über DLM"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:31
 msgid "Resource management"
-msgstr ""
+msgstr "Ressourcenverwaltung"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:32
 msgid "Pacemaker resource agents"
-msgstr ""
+msgstr "Pacemaker-Ressourcen-Agents"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:33
 msgid "Agent-managed mounts and health checks"
-msgstr ""
+msgstr "Agent-verwaltete Mounts und Health-Checks"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:34
 msgid "Failure detection"
-msgstr ""
+msgstr "Ausfallerkennung"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:35
 msgid "Pacemaker node monitoring"
-msgstr ""
+msgstr "Pacemaker-Knotenüberwachung"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:36
 msgid "Peer-to-peer quorum pinging + heartbeat writes"
-msgstr ""
+msgstr "Peer-to-Peer-Quorum-Pinging + Heartbeat-Schreibvorgänge"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:37
 msgid "Cluster commands"
-msgstr ""
+msgstr "Cluster-Befehle"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:38
 msgid "``pcs`` CLI"
-msgstr ""
+msgstr "``pcs``-CLI"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:39
 msgid "``corosync-quorumtool``, ``dlm_tool``, agent ``/quorum`` endpoint"
-msgstr ""
+msgstr "``corosync-quorumtool``, ``dlm_tool``, Agent-Endpunkt ``/quorum``"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:41
 msgid ""
 "After upgrading to layout 1.3, ``pcs`` commands are no longer available "
 "or applicable. Use the diagnostic commands listed in "
 ":doc:`troubleshooting` for all cluster operations."
-msgstr ""
+msgstr "Nach dem Upgrade auf Layout 1.3 sind ``pcs``-Befehle nicht mehr verfügbar oder anwendbar. Verwenden Sie die in :doc:`troubleshooting` aufgeführten Diagnosebefehle für alle Cluster-Vorgänge."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:44
 msgid "What Is Preserved"
-msgstr ""
+msgstr "Was erhalten bleibt"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:46
 msgid ""
 "**Corosync** — Continues to provide cluster membership and messaging "
 "(shared between both layouts)"
-msgstr ""
+msgstr "**Corosync** — Stellt weiterhin Cluster-Mitgliedschaft und Messaging bereit (gemeinsam für beide Layouts)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:47
 msgid ""
 "**DLM** — Continues to coordinate filesystem locks (shared between both "
 "layouts)"
-msgstr ""
+msgstr "**DLM** — Koordiniert weiterhin Dateisystemsperren (gemeinsam für beide Layouts)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:48
 msgid ""
 "**HPE Clustered Datastores** — GFS2 filesystems remain mounted and "
 "operational"
-msgstr ""
+msgstr "**HPE Clustered Datastores** — GFS2-Dateisysteme bleiben gemountet und betriebsbereit"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:49
 msgid "**VMs** — All running VMs continue without interruption"
-msgstr ""
+msgstr "**VMs** — Alle laufenden VMs setzen den Betrieb ohne Unterbrechung fort"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:50
 msgid "**iSCSI connectivity** — Storage paths are unaffected"
-msgstr ""
+msgstr "**iSCSI-Konnektivität** — Speicherpfade bleiben unberührt"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:53
 msgid "Upgrade Process"
-msgstr ""
+msgstr "Upgrade-Prozess"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:55
 msgid ""
 "The layout upgrade is performed as part of a cluster update operation. "
 "During the upgrade:"
-msgstr ""
+msgstr "Das Layout-Upgrade wird als Teil eines Cluster-Update-Vorgangs durchgeführt. Während des Upgrades:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:57
 msgid ""
@@ -204,33 +204,33 @@ msgid ""
 "Manager upgrade or every HVM update. The cluster update upgrades an older"
 " Host Agent before running the transition scripts and stops if the Agent "
 "cannot reconnect at the required version."
-msgstr ""
+msgstr "Die freigegebenen HVM-Update-Definitionen von 1.2 auf 1.3 erfordern |morpheus| Agent 3.2.7 oder höher auf jedem Host. Dieses Minimum gilt nur für diesen Layout-Übergang; es ist keine allgemeine Agent-Anforderung für jedes VME-Manager-Upgrade oder jedes HVM-Update. Das Cluster-Update aktualisiert einen älteren Host-Agent, bevor die Übergangsskripte ausgeführt werden, und stoppt, wenn der Agent nicht in der erforderlichen Version erneut verbinden kann."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:59
 msgid "Pacemaker services are disabled and removed"
-msgstr ""
+msgstr "Pacemaker-Dienste werden deaktiviert und entfernt"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:60
 msgid "The |morpheus| agent's QuorumCheckService activates"
-msgstr ""
+msgstr "Der QuorumCheckService des |morpheus|-Agents wird aktiviert"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:61
 msgid "Quorum info is sent to all agents"
-msgstr ""
+msgstr "Quorum-Informationen werden an alle Agents gesendet"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:62
 msgid "Agents begin peer-to-peer quorum pinging"
-msgstr ""
+msgstr "Agents beginnen mit Peer-to-Peer-Quorum-Pinging"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:65
 msgid "Post-Upgrade: Corosync Authkey"
-msgstr ""
+msgstr "Nach dem Upgrade: Corosync-Authkey"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:67
 #: ../../infrastructure/clusters/hvm/upgrading.rst:136
 #: ../../infrastructure/clusters/hvm/upgrading.rst:168
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:67
 msgid ""
@@ -239,258 +239,258 @@ msgid ""
 "Pacemaker). |morpheus| automatically detects this condition and "
 "retroactively stores the authkey from an online host. This ensures that "
 "future add-worker operations can distribute the authkey to new hosts."
-msgstr ""
+msgstr "Bei von 1.2 auf 1.3 upgegradeten Clustern ist der Corosync-Authkey möglicherweise nicht in Cypher gespeichert (da 1.2-Cluster die Authkey-Verteilung über Pacemaker verwalteten). |morpheus| erkennt diesen Zustand automatisch und speichert den Authkey nachträglich von einem Online-Host. So können künftige Add-Worker-Vorgänge den Authkey an neue Hosts verteilen."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:70
 msgid "Rolling Cluster Updates"
-msgstr ""
+msgstr "Rolling Cluster Updates"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:72
 msgid ""
 "Layouts 1.3 and 2.0 support rolling updates where each host is updated "
 "one at a time without cluster downtime."
-msgstr ""
+msgstr "Layouts 1.3 und 2.0 unterstützen Rolling Updates, bei denen jeder Host einzeln ohne Cluster-Ausfallzeit aktualisiert wird."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:75
 msgid "Update Process (Per Host)"
-msgstr ""
+msgstr "Update-Prozess (pro Host)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:77
 msgid "For each host in the cluster, the rolling update performs:"
-msgstr ""
+msgstr "Für jeden Host im Cluster führt das Rolling Update Folgendes aus:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:79
 msgid ""
 "**Agent upgrade** (if required) — If the host's agent version is below "
 "the minimum required version, the agent is upgraded first. |morpheus| "
 "waits for the agent to reconnect after the upgrade."
-msgstr ""
+msgstr "**Agent-Upgrade** (falls erforderlich) — Liegt die Agent-Version des Hosts unter der Mindestversion, wird der Agent zuerst upgegradet. |morpheus| wartet, bis der Agent nach dem Upgrade erneut verbindet."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:81
 msgid ""
 "**Enter maintenance mode** — VMs are evacuated from the host via live "
 "migration (see :doc:`host_maintenance`). A Dynamic Placement lock is "
 "acquired to prevent resource scheduling from interfering."
-msgstr ""
+msgstr "**Wartungsmodus aktivieren** — VMs werden per Live-Migration vom Host evakuiert (siehe :doc:`host_maintenance`). Eine Dynamic-Placement-Sperre wird erworben, damit die Ressourcenplanung nicht interferiert."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:83
 msgid ""
 "**Execute update scripts** — Layout-defined scripts run on the host "
 "(package updates, configuration changes, etc.)"
-msgstr ""
+msgstr "**Update-Skripte ausführen** — Layout-definierte Skripte laufen auf dem Host (Paketaktualisierungen, Konfigurationsänderungen usw.)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:85
 msgid ""
 "**Exit maintenance mode** — The host returns to normal operation and can "
 "receive VMs again. The Dynamic Placement lock is released."
-msgstr ""
+msgstr "**Wartungsmodus beenden** — Der Host kehrt in den Normalbetrieb zurück und kann wieder VMs empfangen. Die Dynamic-Placement-Sperre wird freigegeben."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:87
 msgid "**Proceed to next host** — The process repeats for the next host."
-msgstr ""
+msgstr "**Zum nächsten Host fortfahren** — Der Prozess wiederholt sich für den nächsten Host."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:89
 msgid "After all hosts complete the update phase:"
-msgstr ""
+msgstr "Nachdem alle Hosts die Update-Phase abgeschlossen haben:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:91
 msgid ""
 "**Post-update scripts** — Any scripts designated as ``postUpdate`` phase "
 "run on each host."
-msgstr ""
+msgstr "**Post-Update-Skripte** — Alle als Phase ``postUpdate`` gekennzeichneten Skripte werden auf jedem Host ausgeführt."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:94
 msgid "Failure Handling"
-msgstr ""
+msgstr "Fehlerbehandlung"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:100
 msgid "Scenario"
-msgstr ""
+msgstr "Szenario"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:101
 msgid "Behavior"
-msgstr ""
+msgstr "Verhalten"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:102
 msgid "Agent upgrade fails"
-msgstr ""
+msgstr "Agent-Upgrade schlägt fehl"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:103
 msgid "Update stops for that host; error is reported"
-msgstr ""
+msgstr "Update stoppt für diesen Host; Fehler wird gemeldet"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:104
 msgid "Maintenance mode fails (insufficient capacity)"
-msgstr ""
+msgstr "Wartungsmodus schlägt fehl (unzureichende Kapazität)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:105
 msgid "Update stops for that host; VMs remain in place"
-msgstr ""
+msgstr "Update stoppt für diesen Host; VMs bleiben an Ort und Stelle"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:106
 msgid "Update script fails"
-msgstr ""
+msgstr "Update-Skript schlägt fehl"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:107
 msgid "Rollback scripts run on the failed host and all previously succeeded hosts"
-msgstr ""
+msgstr "Rollback-Skripte laufen auf dem fehlgeschlagenen Host und allen zuvor erfolgreichen Hosts"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:108
 msgid "Agent does not reconnect after upgrade"
-msgstr ""
+msgstr "Agent verbindet nach dem Upgrade nicht erneut"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:109
 msgid "Update stops; timeout error is reported"
-msgstr ""
+msgstr "Update stoppt; Timeout-Fehler wird gemeldet"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:111
 msgid ""
 "Only one cluster update operation can run at a time. Attempting to start "
 "a second update while one is in progress will be rejected."
-msgstr ""
+msgstr "Es kann jeweils nur ein Cluster-Update-Vorgang laufen. Der Versuch, ein zweites Update zu starten, während eines läuft, wird abgelehnt."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:114
 msgid "Rollback Support"
-msgstr ""
+msgstr "Rollback-Unterstützung"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:116
 msgid ""
 "If the cluster layout defines rollback scripts, they are executed in "
 "reverse order on:"
-msgstr ""
+msgstr "Wenn das Cluster-Layout Rollback-Skripte definiert, werden diese in umgekehrter Reihenfolge ausgeführt auf:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:118
 msgid "The host where the failure occurred"
-msgstr ""
+msgstr "Dem Host, auf dem der Fehler aufgetreten ist"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:119
 msgid "All hosts that previously completed the update phase successfully"
-msgstr ""
+msgstr "Allen Hosts, die die Update-Phase zuvor erfolgreich abgeschlossen haben"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:121
 msgid "This restores the cluster to its pre-update state."
-msgstr ""
+msgstr "Dadurch wird der Cluster in den Zustand vor dem Update zurückversetzt."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:124
 msgid "Morpheus Appliance Upgrades"
-msgstr ""
+msgstr "Morpheus-Appliance-Upgrades"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:126
 msgid "When upgrading the |morpheus| appliance itself:"
-msgstr ""
+msgstr "Beim Upgrade der |morpheus|-Appliance selbst:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:129
 msgid "Pre-Upgrade Considerations"
-msgstr ""
+msgstr "Überlegungen vor dem Upgrade"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:131
 msgid ""
 "Active HVM clusters will continue to operate during the appliance upgrade"
 " (agents are self-sustaining)"
-msgstr ""
+msgstr "Aktive HVM-Cluster bleiben während des Appliance-Upgrades betriebsfähig (Agents sind selbsttragend)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:132
 msgid "Quorum decisions are made by agents independently of the appliance"
-msgstr ""
+msgstr "Quorum-Entscheidungen treffen Agents unabhängig von der Appliance"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:133
 msgid "Heartbeat writes continue regardless of appliance connectivity"
-msgstr ""
+msgstr "Heartbeat-Schreibvorgänge laufen unabhängig von der Appliance-Konnektivität weiter"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:134
 msgid "VM failover will still work during appliance downtime"
-msgstr ""
+msgstr "VM-Failover funktioniert auch während einer Appliance-Ausfallzeit"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:136
 msgid ""
 "The |morpheus| agent's QuorumCheckService operates autonomously. Cluster "
 "quorum, heartbeat monitoring, and failover continue even if the "
 "|morpheus| appliance is offline for maintenance."
-msgstr ""
+msgstr "Der QuorumCheckService des |morpheus|-Agents arbeitet autonom. Cluster-Quorum, Heartbeat-Überwachung und Failover laufen weiter, auch wenn die |morpheus|-Appliance wegen Wartung offline ist."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:139
 #: ../../infrastructure/clusters/hvm/upgrading.rst:197
 msgid "Post-Upgrade Verification"
-msgstr ""
+msgstr "Überprüfung nach dem Upgrade"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:141
 msgid "After upgrading the |morpheus| appliance:"
-msgstr ""
+msgstr "Nach dem Upgrade der |morpheus|-Appliance:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:143
 msgid "Navigate to ``Infrastructure > Clusters``"
-msgstr ""
+msgstr "Navigieren Sie zu ``Infrastructure > Clusters``"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:144
 msgid "Verify all clusters show their expected state"
-msgstr ""
+msgstr "Prüfen Sie, ob alle Cluster den erwarteten Zustand anzeigen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:145
 msgid "Check the Quorum panel for each cluster — confirm ACHIEVED status"
-msgstr ""
+msgstr "Prüfen Sie das Quorum-Panel für jeden Cluster — bestätigen Sie den Status ACHIEVED"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:146
 msgid "Verify agent connectivity (all hosts show recent ``lastAgentUpdate``)"
-msgstr ""
+msgstr "Prüfen Sie die Agent-Konnektivität (alle Hosts zeigen ein aktuelles ``lastAgentUpdate``)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:149
 msgid "Agent Package Updates"
-msgstr ""
+msgstr "Agent-Paketaktualisierungen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:151
 msgid ""
 "The |morpheus| agent on each cluster host can be updated independently of"
 " cluster layout updates."
-msgstr ""
+msgstr "Der |morpheus|-Agent auf jedem Cluster-Host kann unabhängig von Cluster-Layout-Updates aktualisiert werden."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:154
 msgid "Automatic Agent Upgrades"
-msgstr ""
+msgstr "Automatische Agent-Upgrades"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:156
 msgid ""
 "During rolling cluster updates, if a host's agent version is below the "
 "``minAgentVersion`` required by the update definition, the agent is "
 "upgraded automatically before update scripts execute."
-msgstr ""
+msgstr "Liegt während Rolling Cluster Updates die Agent-Version eines Hosts unter der von der Update-Definition geforderten ``minAgentVersion``, wird der Agent automatisch upgegradet, bevor Update-Skripte ausgeführt werden."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:158
 msgid "The automatic agent upgrade:"
-msgstr ""
+msgstr "Das automatische Agent-Upgrade:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:160
 msgid "Triggers the agent upgrade on the host"
-msgstr ""
+msgstr "Löst das Agent-Upgrade auf dem Host aus"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:161
 msgid "Waits for the agent to disconnect and reconnect"
-msgstr ""
+msgstr "Wartet, bis der Agent die Verbindung trennt und erneut verbindet"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:162
 msgid "Verifies the new agent version meets requirements"
-msgstr ""
+msgstr "Prüft, ob die neue Agent-Version die Anforderungen erfüllt"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:163
 msgid "Proceeds with the update only after successful agent reconnection"
-msgstr ""
+msgstr "Setzt das Update erst nach erfolgreicher erneuter Agent-Verbindung fort"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:166
 msgid "Manual Agent Upgrades"
-msgstr ""
+msgstr "Manuelle Agent-Upgrades"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:168
 msgid ""
 "Manual agent upgrades are typically not required. The rolling cluster "
 "update process handles agent upgrades automatically when needed."
-msgstr ""
+msgstr "Manuelle Agent-Upgrades sind in der Regel nicht erforderlich. Der Rolling-Cluster-Update-Prozess übernimmt Agent-Upgrades bei Bedarf automatisch."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:171
 msgid "Pre-Upgrade Checklist"
-msgstr ""
+msgstr "Checkliste vor dem Upgrade"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:173
 msgid "Before performing any cluster upgrade:"
-msgstr ""
+msgstr "Vor jedem Cluster-Upgrade:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:179
 #: ../../infrastructure/clusters/hvm/upgrading.rst:181
@@ -505,49 +505,49 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:180
 msgid "Verify cluster health: Quorum ACHIEVED, all nodes ONLINE, no fenced nodes"
-msgstr ""
+msgstr "Clusterzustand prüfen: Quorum ACHIEVED, alle Knoten ONLINE, keine gefenceten Knoten"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:182
 msgid ""
 "Confirm N+1 capacity: remaining hosts can absorb workloads during rolling"
 " maintenance"
-msgstr ""
+msgstr "N+1-Kapazität bestätigen: verbleibende Hosts können Arbeitslasten während der Rolling-Wartung aufnehmen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:184
 msgid "Check for pinned VMs that may block maintenance mode"
-msgstr ""
+msgstr "Auf gepinnte VMs prüfen, die den Wartungsmodus blockieren können"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:186
 msgid ""
 "Verify shared storage health: all datastores PROVISIONED, no withdrawn "
 "filesystems"
-msgstr ""
+msgstr "Zustand des gemeinsamen Speichers prüfen: alle Datenspeicher PROVISIONED, keine zurückgezogenen Dateisysteme"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:188
 msgid "Take a backup of critical VM configurations"
-msgstr ""
+msgstr "Sicherung kritischer VM-Konfigurationen erstellen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:190
 msgid ""
 "Ensure no other maintenance or Dynamic Placement operations are in "
 "progress"
-msgstr ""
+msgstr "Sicherstellen, dass keine anderen Wartungs- oder Dynamic-Placement-Vorgänge laufen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:192
 msgid "Verify network connectivity between all hosts (port 7443, SSH)"
-msgstr ""
+msgstr "Netzwerkkonnektivität zwischen allen Hosts prüfen (Port 7443, SSH)"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:194
 msgid "Review the upgrade release notes for any known issues"
-msgstr ""
+msgstr "Die Upgrade-Release Notes auf bekannte Probleme prüfen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:199
 msgid "After completing a cluster upgrade:"
-msgstr ""
+msgstr "Nach Abschluss eines Cluster-Upgrades:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:201
 msgid "**Quorum health:**"
-msgstr ""
+msgstr "**Quorum-Zustand:**"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:203
 msgid "curl -k https://localhost:7443/quorum"
@@ -555,11 +555,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:207
 msgid "Confirm quorum is ACHIEVED with all nodes ONLINE."
-msgstr ""
+msgstr "Bestätigen Sie, dass das Quorum ACHIEVED ist und alle Knoten ONLINE sind."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:209
 msgid "**Corosync membership:**"
-msgstr ""
+msgstr "**Corosync-Mitgliedschaft:**"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:211
 msgid "corosync-quorumtool -s"
@@ -567,11 +567,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:215
 msgid "Confirm ``Quorate: Yes`` and all expected nodes are listed."
-msgstr ""
+msgstr "Bestätigen Sie ``Quorate: Yes`` und dass alle erwarteten Knoten aufgeführt sind."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:217
 msgid "**DLM status:**"
-msgstr ""
+msgstr "**DLM-Status:**"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:219
 msgid "dlm_tool status -v"
@@ -579,11 +579,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:223
 msgid "Confirm all nodes show ``member=1``."
-msgstr ""
+msgstr "Bestätigen Sie, dass alle Knoten ``member=1`` anzeigen."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:225
 msgid "**Datastore mounts:**"
-msgstr ""
+msgstr "**Datenspeicher-Mounts:**"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:227
 msgid "mount | grep gfs2"
@@ -591,39 +591,39 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:231
 msgid "Confirm all expected HPE Clustered Datastores are mounted."
-msgstr ""
+msgstr "Bestätigen Sie, dass alle erwarteten HPE Clustered Datastores gemountet sind."
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:233
 msgid "**UI verification:**"
-msgstr ""
+msgstr "**UI-Überprüfung:**"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:235
 msgid ""
 "Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` "
 "panel and confirm:"
-msgstr ""
+msgstr "Navigieren Sie zum Panel ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` und bestätigen Sie:"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:237
 msgid "Quorum status: ACHIEVED"
-msgstr ""
+msgstr "Quorum-Status: ACHIEVED"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:238
 msgid "All nodes: ONLINE"
-msgstr ""
+msgstr "Alle Knoten: ONLINE"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:239
 msgid "Coordinator: assigned"
-msgstr ""
+msgstr "Coordinator: zugewiesen"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:240
 msgid "Lockspaces: OK"
-msgstr ""
+msgstr "Lockspaces: OK"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:242
 msgid "**VM health:**"
-msgstr ""
+msgstr "**VM-Zustand:**"
 
 #: ../../infrastructure/clusters/hvm/upgrading.rst:244
 msgid "Verify all VMs are running and accessible after the upgrade completes."
-msgstr ""
+msgstr "Prüfen Sie, dass alle VMs nach Abschluss des Upgrades laufen und erreichbar sind."
 

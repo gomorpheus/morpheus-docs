@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/certificates/certificate_management.rst:4
 msgid "Certificate Management"
-msgstr ""
+msgstr "Gestion des certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/certificates/certificate_management.rst:9
 msgid ""
@@ -35,7 +35,7 @@ msgid ""
 "in |morpheus| can be used for SSL termination on load balancers, securing"
 " container communications, authenticating to integrations, and "
 "provisioning encrypted endpoints."
-msgstr ""
+msgstr "|morpheus| fournit une gestion centralisée des certificats SSL/TLS pour sécuriser les communications dans votre infrastructure. Les certificats stockés dans |morpheus| peuvent être utilisés pour la terminaison SSL sur les équilibreurs de charge, la sécurisation des communications de conteneurs, l'authentification auprès d'intégrations et le provisionnement de points de terminaison chiffrés."
 
 #: ../../infrastructure/certificates/certificate_management.rst:11
 msgid ""
@@ -43,268 +43,268 @@ msgid ""
 "Certificates). From this section, administrators can upload existing "
 "certificates, generate certificate signing requests (CSRs), and manage "
 "the full lifecycle of SSL/TLS certificates."
-msgstr ""
+msgstr "La gestion des certificats se trouve dans |InfTruCer| (Infrastructure > Trust > Certificates). Depuis cette section, les administrateurs peuvent importer des certificats existants, générer des demandes de signature de certificat (CSR) et gérer l'ensemble du cycle de vie des certificats SSL/TLS."
 
 #: ../../infrastructure/certificates/certificate_management.rst:14
 msgid "Role Permissions"
-msgstr ""
+msgstr "Autorisations de rôle"
 
 #: ../../infrastructure/certificates/certificate_management.rst:16
 msgid ""
 "Access to certificate management is controlled by the following role "
 "permission:"
-msgstr ""
+msgstr "L'accès à la gestion des certificats est contrôlé par l'autorisation de rôle suivante :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:18
 msgid "**Infrastructure: Trust (Certificates)** — ``None``, ``Read``, or ``Full``"
-msgstr ""
+msgstr "**Infrastructure : Trust (Certificates)** — ``None``, ``Read`` ou ``Full``"
 
 #: ../../infrastructure/certificates/certificate_management.rst:20
 msgid "**None:** Cannot access the Certificates section"
-msgstr ""
+msgstr "**None :** Impossible d'accéder à la section Certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:21
 msgid "**Read:** Can view certificates but cannot create, edit, or delete"
-msgstr ""
+msgstr "**Read :** Peut consulter les certificats mais ne peut pas créer, modifier ou supprimer"
 
 #: ../../infrastructure/certificates/certificate_management.rst:22
 msgid "**Full:** Full management access to certificates"
-msgstr ""
+msgstr "**Full :** Accès complet à la gestion des certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:25
 msgid "Certificate Types"
-msgstr ""
+msgstr "Types de certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:27
 msgid "|morpheus| supports several certificate types:"
-msgstr ""
+msgstr "|morpheus| prend en charge plusieurs types de certificats :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:29
 msgid ""
 "**SSL Certificate (PEM):** Standard PEM-encoded SSL/TLS certificate with "
 "private key and optional certificate chain"
-msgstr ""
+msgstr "**Certificat SSL (PEM) :** Certificat SSL/TLS standard encodé PEM avec clé privée et chaîne de certificats optionnelle"
 
 #: ../../infrastructure/certificates/certificate_management.rst:30
 msgid ""
 "**x509 Client Certificate:** Client certificates used for mutual TLS "
 "authentication"
-msgstr ""
+msgstr "**Certificat client x509 :** Certificats client utilisés pour l'authentification TLS mutuelle"
 
 #: ../../infrastructure/certificates/certificate_management.rst:31
 msgid ""
 "**x509 Device Certificate:** Device certificates for IoT or machine-to-"
 "machine authentication"
-msgstr ""
+msgstr "**Certificat d'appareil x509 :** Certificats d'appareil pour l'authentification IoT ou machine à machine"
 
 #: ../../infrastructure/certificates/certificate_management.rst:32
 msgid ""
 "**Self-Signed Certificate:** Certificates generated and signed by "
 "|morpheus| internal CA"
-msgstr ""
+msgstr "**Certificat auto-signé :** Certificats générés et signés par la CA interne de |morpheus|"
 
 #: ../../infrastructure/certificates/certificate_management.rst:33
 msgid "**Root CA Certificate:** Trusted root certificate authority certificates"
-msgstr ""
+msgstr "**Certificat CA racine :** Certificats d'autorité de certification racine de confiance"
 
 #: ../../infrastructure/certificates/certificate_management.rst:34
 msgid ""
 "**Certificate Signing Request (CSR):** Pending certificate requests "
 "awaiting signing by a CA"
-msgstr ""
+msgstr "**Demande de signature de certificat (CSR) :** Demandes de certificat en attente de signature par une CA"
 
 #: ../../infrastructure/certificates/certificate_management.rst:37
 msgid "Adding a Certificate"
-msgstr ""
+msgstr "Ajout d'un certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:39
 msgid "To upload or create a certificate:"
-msgstr ""
+msgstr "Pour importer ou créer un certificat :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:41
 #: ../../infrastructure/certificates/certificate_management.rst:61
 #: ../../infrastructure/certificates/certificate_management.rst:107
 #: ../../infrastructure/certificates/certificate_management.rst:117
 msgid "Navigate to |InfTruCer|"
-msgstr ""
+msgstr "Accédez à |InfTruCer|"
 
 #: ../../infrastructure/certificates/certificate_management.rst:42
 #: ../../infrastructure/certificates/certificate_management.rst:62
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ ADD`"
 
 #: ../../infrastructure/certificates/certificate_management.rst:43
 msgid "Select the certificate type"
-msgstr ""
+msgstr "Sélectionnez le type de certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:44
 msgid "Complete the form fields:"
-msgstr ""
+msgstr "Remplissez les champs du formulaire :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:46
 msgid "**NAME:** A descriptive name for the certificate"
-msgstr ""
+msgstr "**NOM :** Un nom descriptif pour le certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:47
 msgid ""
 "**DOMAIN NAME:** The domain or common name the certificate covers (e.g., "
 "``*.example.com``)"
-msgstr ""
+msgstr "**NOM DE DOMAINE :** Le domaine ou le nom commun couvert par le certificat (par ex., ``*.example.com``)"
 
 #: ../../infrastructure/certificates/certificate_management.rst:48
 msgid "**CERTIFICATE (PEM):** Paste the PEM-encoded certificate content"
-msgstr ""
+msgstr "**CERTIFICAT (PEM) :** Collez le contenu du certificat encodé PEM"
 
 #: ../../infrastructure/certificates/certificate_management.rst:49
 msgid "**PRIVATE KEY (PEM):** Paste the PEM-encoded private key"
-msgstr ""
+msgstr "**CLÉ PRIVÉE (PEM) :** Collez la clé privée encodée PEM"
 
 #: ../../infrastructure/certificates/certificate_management.rst:50
 msgid ""
 "**CERTIFICATE CHAIN (PEM):** Paste intermediate and root CA certificates "
 "(optional but recommended)"
-msgstr ""
+msgstr "**CHAÎNE DE CERTIFICATS (PEM) :** Collez les certificats CA intermédiaires et racine (facultatif mais recommandé)"
 
 #: ../../infrastructure/certificates/certificate_management.rst:52
 #: ../../infrastructure/certificates/certificate_management.rst:110
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE`"
 
 #: ../../infrastructure/certificates/certificate_management.rst:54
 #: ../../infrastructure/certificates/certificate_management.rst:112
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/certificates/certificate_management.rst:54
 msgid ""
 "Private keys are encrypted at rest using |morpheus| internal encryption. "
 "They are never exposed in plain text through the UI after upload."
-msgstr ""
+msgstr "Les clés privées sont chiffrées au repos à l'aide du chiffrement interne de |morpheus|. Elles ne sont jamais exposées en texte clair via l'interface après l'importation."
 
 #: ../../infrastructure/certificates/certificate_management.rst:57
 msgid "Generating a Certificate Signing Request"
-msgstr ""
+msgstr "Génération d'une demande de signature de certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:59
 msgid "To generate a CSR for signing by an external Certificate Authority:"
-msgstr ""
+msgstr "Pour générer une CSR à signer par une autorité de certification externe :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:63
 msgid "Select the appropriate certificate type that supports CSR generation"
-msgstr ""
+msgstr "Sélectionnez le type de certificat approprié prenant en charge la génération de CSR"
 
 #: ../../infrastructure/certificates/certificate_management.rst:64
 msgid "Fill in the subject fields:"
-msgstr ""
+msgstr "Remplissez les champs du sujet :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:66
 msgid ""
 "**COMMON NAME (CN):** The fully qualified domain name (e.g., "
 "``app.example.com``)"
-msgstr ""
+msgstr "**NOM COMMUN (CN) :** Le nom de domaine complet (par ex., ``app.example.com``)"
 
 #: ../../infrastructure/certificates/certificate_management.rst:67
 msgid "**ORGANIZATION:** Your organization name"
-msgstr ""
+msgstr "**ORGANISATION :** Nom de votre organisation"
 
 #: ../../infrastructure/certificates/certificate_management.rst:68
 msgid "**ORGANIZATION UNIT:** Department or unit name"
-msgstr ""
+msgstr "**UNITÉ D'ORGANISATION :** Nom du département ou de l'unité"
 
 #: ../../infrastructure/certificates/certificate_management.rst:69
 msgid "**CITY/LOCALITY:** City"
-msgstr ""
+msgstr "**VILLE/LOCALITÉ :** Ville"
 
 #: ../../infrastructure/certificates/certificate_management.rst:70
 msgid "**STATE/PROVINCE:** State or province"
-msgstr ""
+msgstr "**ÉTAT/PROVINCE :** État ou province"
 
 #: ../../infrastructure/certificates/certificate_management.rst:71
 msgid "**COUNTRY:** Two-letter country code (e.g., ``US``)"
-msgstr ""
+msgstr "**PAYS :** Code pays à deux lettres (par ex., ``US``)"
 
 #: ../../infrastructure/certificates/certificate_management.rst:72
 msgid "**KEY SIZE:** Key length in bits (2048, 4096)"
-msgstr ""
+msgstr "**TAILLE DE CLÉ :** Longueur de clé en bits (2048, 4096)"
 
 #: ../../infrastructure/certificates/certificate_management.rst:73
 msgid "**KEY ALGORITHM:** RSA or ECDSA"
-msgstr ""
+msgstr "**ALGORITHME DE CLÉ :** RSA ou ECDSA"
 
 #: ../../infrastructure/certificates/certificate_management.rst:75
 msgid "Click :guilabel:`GENERATE REQUEST`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`GENERATE REQUEST`"
 
 #: ../../infrastructure/certificates/certificate_management.rst:77
 msgid ""
 "The CSR can then be submitted to your Certificate Authority for signing. "
 "Once signed, upload the resulting certificate back to |morpheus| to "
 "complete the process."
-msgstr ""
+msgstr "La CSR peut ensuite être soumise à votre autorité de certification pour signature. Une fois signé, importez le certificat résultant dans |morpheus| pour finaliser le processus."
 
 #: ../../infrastructure/certificates/certificate_management.rst:80
 msgid "Certificate Details"
-msgstr ""
+msgstr "Détails du certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:82
 msgid "Selecting a certificate from the list displays its details:"
-msgstr ""
+msgstr "La sélection d'un certificat dans la liste affiche ses détails :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:84
 msgid "**Status:** Active, Expired, or Pending"
-msgstr ""
+msgstr "**État :** Actif, Expiré ou En cours"
 
 #: ../../infrastructure/certificates/certificate_management.rst:85
 msgid "**Issued To / Issued By:** Subject and issuer information"
-msgstr ""
+msgstr "**Émis pour / Émis par :** Informations sur le sujet et l'émetteur"
 
 #: ../../infrastructure/certificates/certificate_management.rst:86
 msgid "**Serial Number:** Certificate serial number"
-msgstr ""
+msgstr "**Numéro de série :** Numéro de série du certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:87
 msgid "**Fingerprint:** SHA-256 fingerprint for verification"
-msgstr ""
+msgstr "**Empreinte :** Empreinte SHA-256 pour vérification"
 
 #: ../../infrastructure/certificates/certificate_management.rst:88
 msgid "**Issue Date / Expiration Date:** Certificate validity period"
-msgstr ""
+msgstr "**Date d'émission / Date d'expiration :** Période de validité du certificat"
 
 #: ../../infrastructure/certificates/certificate_management.rst:89
 msgid "**Key Algorithm / Key Size:** Cryptographic details"
-msgstr ""
+msgstr "**Algorithme de clé / Taille de clé :** Détails cryptographiques"
 
 #: ../../infrastructure/certificates/certificate_management.rst:90
 msgid "**Wildcard:** Whether the certificate covers wildcard domains"
-msgstr ""
+msgstr "**Wildcard :** Indique si le certificat couvre des domaines wildcard"
 
 #: ../../infrastructure/certificates/certificate_management.rst:93
 msgid "Certificate Usage"
-msgstr ""
+msgstr "Utilisation des certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:95
 msgid "Certificates stored in |morpheus| can be applied in various contexts:"
-msgstr ""
+msgstr "Les certificats stockés dans |morpheus| peuvent être appliqués dans divers contextes :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:97
 msgid "**Load Balancers:** SSL termination and re-encryption profiles"
-msgstr ""
+msgstr "**Équilibreurs de charge :** Profils de terminaison SSL et de rechiffrement"
 
 #: ../../infrastructure/certificates/certificate_management.rst:98
 msgid "**Network Routers:** NSX-T and other router SSL configurations"
-msgstr ""
+msgstr "**Routeurs réseau :** Configurations SSL NSX-T et autres routeurs"
 
 #: ../../infrastructure/certificates/certificate_management.rst:99
 msgid ""
 "**Provisioning:** Applied during Instance provisioning for SSL-enabled "
 "services"
-msgstr ""
+msgstr "**Provisionnement :** Appliqués lors du provisionnement d'instances pour les services compatibles SSL"
 
 #: ../../infrastructure/certificates/certificate_management.rst:100
 msgid ""
 "**Integrations:** Authentication with external services requiring client "
 "certificates"
-msgstr ""
+msgstr "**Intégrations :** Authentification auprès de services externes nécessitant des certificats client"
 
 #: ../../infrastructure/certificates/certificate_management.rst:102
 msgid ""
@@ -314,60 +314,60 @@ msgid ""
 ":doc:`/getting_started/additional/ssl-import`. That procedure includes "
 "the required ``morpheus-ui`` restart; reconfigure updates the truststores"
 " but does not restart the running UI JVM."
-msgstr ""
+msgstr "Les certificats importés dans cette section sont des objets d'application et ne sont pas identiques aux autorités de certification approuvées par la JVM de l'appliance. Pour faire confiance à la CA d'un point de terminaison d'intégration sortante, suivez :doc:`/getting_started/additional/ssl-import`. Cette procédure inclut le redémarrage requis de ``morpheus-ui`` ; la reconfiguration met à jour les magasins de confiance mais ne redémarre pas la JVM de l'interface en cours d'exécution."
 
 #: ../../infrastructure/certificates/certificate_management.rst:105
 msgid "Editing Certificates"
-msgstr ""
+msgstr "Modification de certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:108
 msgid ""
 "Click the pencil icon on the certificate row or select the certificate "
 "and click :guilabel:`EDIT`"
-msgstr ""
+msgstr "Cliquez sur l'icône crayon sur la ligne du certificat ou sélectionnez le certificat et cliquez sur :guilabel:`EDIT`"
 
 #: ../../infrastructure/certificates/certificate_management.rst:109
 msgid "Modify the certificate fields as needed"
-msgstr ""
+msgstr "Modifiez les champs du certificat selon vos besoins"
 
 #: ../../infrastructure/certificates/certificate_management.rst:112
 msgid ""
 "Certificate content (PEM data) can be updated, for example when renewing "
 "a certificate with the same name."
-msgstr ""
+msgstr "Le contenu du certificat (données PEM) peut être mis à jour, par exemple lors du renouvellement d'un certificat portant le même nom."
 
 #: ../../infrastructure/certificates/certificate_management.rst:115
 msgid "Deleting Certificates"
-msgstr ""
+msgstr "Suppression de certificats"
 
 #: ../../infrastructure/certificates/certificate_management.rst:118
 msgid ""
 "Click the trash icon on the certificate row or select the certificate and"
 " choose :guilabel:`DELETE` from the Actions menu"
-msgstr ""
+msgstr "Cliquez sur l'icône de corbeille sur la ligne du certificat ou sélectionnez le certificat et choisissez :guilabel:`DELETE` dans le menu Actions"
 
 #: ../../infrastructure/certificates/certificate_management.rst:119
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmez la suppression"
 
 #: ../../infrastructure/certificates/certificate_management.rst:121
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/certificates/certificate_management.rst:121
 msgid ""
 "Deleting a certificate that is actively in use by load balancers or other"
 " services may cause service disruptions. Verify the certificate is not "
 "referenced before removal."
-msgstr ""
+msgstr "La suppression d'un certificat activement utilisé par des équilibreurs de charge ou d'autres services peut provoquer des interruptions de service. Vérifiez que le certificat n'est pas référencé avant la suppression."
 
 #: ../../infrastructure/certificates/certificate_management.rst:124
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../infrastructure/certificates/certificate_management.rst:126
 msgid "Certificates can also be managed via the |morpheus| API:"
-msgstr ""
+msgstr "Les certificats peuvent également être gérés via l'API |morpheus| :"
 
 #: ../../infrastructure/certificates/certificate_management.rst:128
 #, python-brace-format

@@ -22,32 +22,32 @@ msgstr ""
 
 #: ../../administration/settings/appliance.rst:2
 msgid "Appliance Settings"
-msgstr ""
+msgstr "Configurações do Appliance"
 
 #: ../../administration/settings/appliance.rst:4
 msgid "Appliance URL"
-msgstr ""
+msgstr "URL do Appliance"
 
 #: ../../administration/settings/appliance.rst:5
 msgid ""
 "The default URL used for Agent install and Agent functionality. All "
 "Instances and Hosts must be able to resolve and reach this URL over 443 "
 "for successful agent install and communication."
-msgstr ""
+msgstr "A URL padrão usada para instalação do Agente e funcionalidade do Agente. Todas as Instâncias e Hosts devem conseguir resolver e alcançar esta URL na porta 443 para instalação e comunicação bem-sucedidas do agente."
 
 #: ../../administration/settings/appliance.rst:7
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../administration/settings/appliance.rst:7
 msgid ""
 "Alternate Appliance URLs can be configured per Cloud in the `Edit Cloud >"
 " Advanced Options` section."
-msgstr ""
+msgstr "URLs alternativas do Appliance podem ser configuradas por Nuvem na seção `Edit Cloud > Advanced Options`."
 
 #: ../../administration/settings/appliance.rst:9
 msgid "Internal Appliance URL (PXE)"
-msgstr ""
+msgstr "URL Interna do Appliance (PXE)"
 
 #: ../../administration/settings/appliance.rst:10
 msgid ""
@@ -55,11 +55,11 @@ msgid ""
 "NAT masquerading. This allows one to override the default appliance url "
 "endpoint for use by the PXE Server. If this is unset, the default "
 "appliance url will be used instead."
-msgstr ""
+msgstr "Para PXE-Boot, seu appliance precisa ser roteável diretamente com mascaramento NAT mínimo. Isso permite substituir o endpoint de URL padrão do appliance para uso pelo Servidor PXE. Se não estiver definido, a URL padrão do appliance será usada."
 
 #: ../../administration/settings/appliance.rst:11
 msgid "API Allowed Origins"
-msgstr ""
+msgstr "Origens Permitidas da API"
 
 #: ../../administration/settings/appliance.rst:12
 msgid ""
@@ -69,11 +69,11 @@ msgid ""
 "origins should be specified here. By default, all origins are allowed. "
 "When this field is filled, an exclusive whitelist of allowed origins is "
 "established."
-msgstr ""
+msgstr "Um campo relacionado a CORS que especifica as origens permitidas a acessar a API do |morpheus|. Por exemplo, se você estivesse projetando uma aplicação web que precisasse fazer chamadas AJAX à API do |morpheus|. As origens devem ser especificadas aqui. Por padrão, todas as origens são permitidas. Quando este campo é preenchido, uma lista branca exclusiva de origens permitidas é estabelecida."
 
 #: ../../administration/settings/appliance.rst:13
 msgid "Cloud Sync Interval"
-msgstr ""
+msgstr "Intervalo de Sincronização da Nuvem"
 
 #: ../../administration/settings/appliance.rst:14
 msgid ""
@@ -81,11 +81,11 @@ msgid ""
 "here in seconds, the default value is 300 seconds (five minutes). "
 "Appliances managing a very large number of clouds may be adversely "
 "affected by setting this value too low."
-msgstr ""
+msgstr "Os dados são atualizados por meio de integrações de nuvem no intervalo especificado aqui em segundos; o valor padrão é 300 segundos (cinco minutos). Appliances que gerenciam um número muito grande de nuvens podem ser afetados negativamente se este valor for definido muito baixo."
 
 #: ../../administration/settings/appliance.rst:15
 msgid "Usage Retainment"
-msgstr ""
+msgstr "Retenção de Uso"
 
 #: ../../administration/settings/appliance.rst:16
 msgid ""
@@ -93,11 +93,11 @@ msgid ""
 "records. Retainment period is not set by default. Usage records will "
 "remain indefinitely if Usage Retainment is not set. Note this does not "
 "affect generated Invoice records."
-msgstr ""
+msgstr "Determina quantos dias manter registros de uso da conta (dados de custos medidos). O período de retenção não é definido por padrão. Os registros de uso permanecerão indefinidamente se a Retenção de Uso não for definida. Nota: isso não afeta registros de Fatura gerados."
 
 #: ../../administration/settings/appliance.rst:17
 msgid "Incident Retainment"
-msgstr ""
+msgstr "Retenção de Incidentes"
 
 #: ../../administration/settings/appliance.rst:18
 msgid ""
@@ -105,11 +105,11 @@ msgid ""
 "database. In general, this setting can be left alone but in certain cases"
 " may need to be adjusted as very large incident database tables can "
 "affect the stability of the application."
-msgstr ""
+msgstr "Insira o número de dias que |morpheus| deve manter registros de incidentes no banco de dados. Em geral, esta configuração pode ser deixada como está, mas em certos casos pode precisar ser ajustada, pois tabelas de banco de dados de incidentes muito grandes podem afetar a estabilidade da aplicação."
 
 #: ../../administration/settings/appliance.rst:19
 msgid "Stats Retainment"
-msgstr ""
+msgstr "Retenção de Estatísticas"
 
 #: ../../administration/settings/appliance.rst:20
 msgid ""
@@ -118,64 +118,64 @@ msgid ""
 " a longer period of time. For example, in the Monitoring tab of an "
 "Instance detail page, users can select a 60 or 90-day analysis period if "
 "the stats have been retained that long"
-msgstr ""
+msgstr "Selecione um período de 30, 60 ou 90 dias para retenção de estatísticas. Selecionar um período maior oferece a capacidade de analisar estatísticas, como métricas de Instância, por um período mais longo. Por exemplo, na guia Monitoramento de uma página de detalhes da Instância, os usuários podem selecionar um período de análise de 60 ou 90 dias se as estatísticas tiverem sido retidas por esse tempo"
 
 #: ../../administration/settings/appliance.rst:21
 msgid "Denied Hosts"
-msgstr ""
+msgstr "Hosts Negados"
 
 #: ../../administration/settings/appliance.rst:22
 msgid ""
 "A comma-delimited list of IP addresses and/or hostnames which should not "
 "be allowed sources for HTTP Tasks or REST-populated Option Lists."
-msgstr ""
+msgstr "Uma lista separada por vírgulas de endereços IP e/ou nomes de host que não devem ser fontes permitidas para Tasks HTTP ou Listas de Opções preenchidas por REST."
 
 #: ../../administration/settings/appliance.rst:23
 msgid "Approved Hosts"
-msgstr ""
+msgstr "Hosts Aprovados"
 
 #: ../../administration/settings/appliance.rst:24
 msgid ""
 "A comma-delimited list of IP addresses and/or hostnames which are the "
 "only approved sources for HTTP Tasks or REST-populated Option Lists. By "
 "entering any values here, all others are automatically denied."
-msgstr ""
+msgstr "Uma lista separada por vírgulas de endereços IP e/ou nomes de host que são as únicas fontes aprovadas para Tasks HTTP ou Listas de Opções preenchidas por REST. Ao inserir quaisquer valores aqui, todos os outros são automaticamente negados."
 
 #: ../../administration/settings/appliance.rst:25
 msgid "Enable SSL Verification of Agent (Communications)"
-msgstr ""
+msgstr "Ativar Verificação SSL do Agente (Comunicações)"
 
 #: ../../administration/settings/appliance.rst:26
 msgid ""
 "Enabling SSL Verification of Agent Communications requires a valid "
 "Certificate be installed on the Appliance."
-msgstr ""
+msgstr "Ativar a Verificação SSL das Comunicações do Agente requer que um Certificado válido esteja instalado no Appliance."
 
 #: ../../administration/settings/appliance.rst:27
 msgid "Disable SSH Password Authentication"
-msgstr ""
+msgstr "Desativar Autenticação por Senha SSH"
 
 #: ../../administration/settings/appliance.rst:28
 msgid ""
 "Only allow ssh login using SSH keys. When true, SSH Password "
 "Authentication will not be enabled for VM's and Hosts provisioned after "
 "the setting is enabled."
-msgstr ""
+msgstr "Permitir login ssh apenas usando chaves SSH. Quando verdadeiro, a Autenticação por Senha SSH não será ativada para VMs e Hosts provisionados após a ativação da configuração."
 
 #: ../../administration/settings/appliance.rst:29
 msgid "Default Appliance Locale"
-msgstr ""
+msgstr "Localidade Padrão do Appliance"
 
 #: ../../administration/settings/appliance.rst:30
 msgid ""
 "Sets the default language and region for all users on the |morpheus| "
 "appliance. Users with individual language preferences may also override "
 "this selection on their User Settings page"
-msgstr ""
+msgstr "Define o idioma e a região padrão para todos os usuários no appliance |morpheus|. Usuários com preferências de idioma individuais também podem substituir esta seleção na página Configurações do Usuário"
 
 #: ../../administration/settings/appliance.rst:31
 msgid "Default Console Gateway"
-msgstr ""
+msgstr "Gateway de Console Padrão"
 
 #: ../../administration/settings/appliance.rst:32
 msgid ""
@@ -183,11 +183,11 @@ msgid ""
 "sessions. The gateway can use the same Worker runtime as a Distributed "
 "Worker, but it requires a VDI Gateway registration and API key. See "
 ":doc:`/administration/integrations/workers` and :ref:`vdi-gateways`."
-msgstr ""
+msgstr "Selecione um VDI Gateway configurado para rotear sessões de console de Instância e Host. O gateway pode usar o mesmo runtime Worker de um Worker Distribuído, mas requer um registro de VDI Gateway e chave de API. Consulte :doc:`/administration/integrations/workers` e :ref:`vdi-gateways`."
 
 #: ../../administration/settings/appliance.rst:33
 msgid "Max Option List Size"
-msgstr ""
+msgstr "Tamanho Máximo da Lista de Opções"
 
 #: ../../administration/settings/appliance.rst:34
 msgid ""
@@ -196,11 +196,11 @@ msgid ""
 "that a very large payload is inadvertently accessed. The entered number "
 "is multiplied by 1000 (for example, entering \"1\" results in a maximum "
 "list size of 1000)."
-msgstr ""
+msgstr "Define um tamanho máximo para Listas de Opções (como aquelas originadas de chamadas REST a um servidor remoto) para preservar o desempenho do appliance no caso de um payload muito grande ser acessado inadvertidamente. O número inserido é multiplicado por 1000 (por exemplo, inserir \"1\" resulta em um tamanho máximo de lista de 1000)."
 
 #: ../../administration/settings/appliance.rst:35
 msgid "Dashboards to Display"
-msgstr ""
+msgstr "Painéis de Controle a Exibir"
 
 #: ../../administration/settings/appliance.rst:36
 msgid ""
@@ -208,5 +208,5 @@ msgid ""
 "appliance from Dashboard-type plugins. Select all desired Dashboards and "
 "they will be displayed in the order set. Dashboards can be dragged up and"
 " down the list to set the order correctly."
-msgstr ""
+msgstr "Um campo typeahead que mostrará todos os Painéis de Controle disponíveis para o appliance a partir de plugins do tipo Dashboard. Selecione todos os Painéis de Controle desejados e eles serão exibidos na ordem definida. Os Painéis de Controle podem ser arrastados para cima e para baixo na lista para definir a ordem corretamente."
 

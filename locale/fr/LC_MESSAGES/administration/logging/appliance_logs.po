@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:2
 msgid "Appliance Log Configuration"
-msgstr ""
+msgstr "Configuration des journaux de l'appliance"
 
 #: ../../administration/logging/appliance_logs.rst:4
 msgid ""
@@ -30,23 +30,23 @@ msgid ""
 "the application server, services, and internal components. These logs are"
 " distinct from the host/VM logs collected by the |morpheus| Agent (see "
 ":doc:`log_forwarding`)."
-msgstr ""
+msgstr "Cette section couvre la configuration des journaux au niveau de l'appliance |morpheus| — le serveur d'applications, les services et les composants internes. Ces journaux sont distincts des journaux hôte/VM collectés par l'Agent |morpheus| (voir :doc:`log_forwarding`)."
 
 #: ../../administration/logging/appliance_logs.rst:7
 msgid "Log File Locations"
-msgstr ""
+msgstr "Emplacements des fichiers journaux"
 
 #: ../../administration/logging/appliance_logs.rst:9
 msgid "All appliance logs are located under ``/var/log/morpheus/``:"
-msgstr ""
+msgstr "Tous les journaux de l'appliance se trouvent sous ``/var/log/morpheus/`` :"
 
 #: ../../administration/logging/appliance_logs.rst:15
 msgid "Path"
-msgstr ""
+msgstr "Chemin"
 
 #: ../../administration/logging/appliance_logs.rst:16
 msgid "Contents"
-msgstr ""
+msgstr "Contenu"
 
 #: ../../administration/logging/appliance_logs.rst:17
 msgid "``/var/log/morpheus/morpheus-ui/current``"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:18
 msgid "Main application log (current)"
-msgstr ""
+msgstr "Journal principal de l'application (actuel)"
 
 #: ../../administration/logging/appliance_logs.rst:19
 msgid "``/var/log/morpheus/morpheus-ui/``"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:20
 msgid "Rotated application logs"
-msgstr ""
+msgstr "Journaux d'application archivés"
 
 #: ../../administration/logging/appliance_logs.rst:21
 msgid "``/var/log/morpheus/nginx/``"
@@ -70,7 +70,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:22
 msgid "Reverse proxy access and error logs"
-msgstr ""
+msgstr "Journaux d'accès et d'erreur du proxy inverse"
 
 #: ../../administration/logging/appliance_logs.rst:23
 msgid "``/var/log/morpheus/mysql/``"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:24
 msgid "Embedded MySQL logs (if using embedded DB)"
-msgstr ""
+msgstr "Journaux MySQL intégrés (si vous utilisez la base de données intégrée)"
 
 #: ../../administration/logging/appliance_logs.rst:25
 msgid "``/var/log/morpheus/rabbitmq/``"
@@ -86,7 +86,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:26
 msgid "Embedded RabbitMQ logs (if using embedded messaging)"
-msgstr ""
+msgstr "Journaux RabbitMQ intégrés (si vous utilisez la messagerie intégrée)"
 
 #: ../../administration/logging/appliance_logs.rst:27
 msgid "``/var/log/morpheus/opensearch/``"
@@ -94,7 +94,7 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:28
 msgid "OpenSearch indexing engine logs"
-msgstr ""
+msgstr "Journaux du moteur d'indexation OpenSearch"
 
 #: ../../administration/logging/appliance_logs.rst:29
 msgid "``/var/log/morpheus/check-server/``"
@@ -102,15 +102,15 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:30
 msgid "Health check service logs"
-msgstr ""
+msgstr "Journaux du service de contrôle de santé"
 
 #: ../../administration/logging/appliance_logs.rst:33
 msgid "Viewing Appliance Logs"
-msgstr ""
+msgstr "Consultation des journaux de l'appliance"
 
 #: ../../administration/logging/appliance_logs.rst:35
 msgid "**From the CLI:**"
-msgstr ""
+msgstr "**Depuis la CLI :**"
 
 #: ../../administration/logging/appliance_logs.rst:37
 msgid "sudo morpheus-ctl tail morpheus-ui"
@@ -121,25 +121,25 @@ msgid ""
 "This tails the live application log. Replace ``morpheus-ui`` with any "
 "other service name (``nginx``, ``rabbitmq``, ``opensearch``, ``mysql``) "
 "to tail that service's logs."
-msgstr ""
+msgstr "Cette commande affiche en continu le journal d'application en direct. Remplacez ``morpheus-ui`` par tout autre nom de service (``nginx``, ``rabbitmq``, ``opensearch``, ``mysql``) pour suivre les journaux de ce service."
 
 #: ../../administration/logging/appliance_logs.rst:43
 msgid "**From the UI:**"
-msgstr ""
+msgstr "**Depuis l'interface :**"
 
 #: ../../administration/logging/appliance_logs.rst:45
 msgid "Navigate to |AdmHea| to view appliance health and recent log entries."
-msgstr ""
+msgstr "Accédez à |AdmHea| pour consulter l'état de l'appliance et les entrées de journal récentes."
 
 #: ../../administration/logging/appliance_logs.rst:48
 msgid "Logback Configuration"
-msgstr ""
+msgstr "Configuration Logback"
 
 #: ../../administration/logging/appliance_logs.rst:50
 msgid ""
 "The |morpheus| application uses **Logback** for log management. The "
 "configuration file is located at:"
-msgstr ""
+msgstr "L'application |morpheus| utilise **Logback** pour la gestion des journaux. Le fichier de configuration se trouve à :"
 
 #: ../../administration/logging/appliance_logs.rst:52
 msgid "``/opt/morpheus/embedded/morpheus-ui/conf/logback.xml``"
@@ -147,35 +147,35 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:54
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../administration/logging/appliance_logs.rst:54
 msgid ""
 "Modifications to logback.xml will be overwritten during appliance "
 "upgrades. Back up your custom configuration before upgrading."
-msgstr ""
+msgstr "Les modifications apportées à logback.xml seront écrasées lors des mises à niveau de l'appliance. Sauvegardez votre configuration personnalisée avant la mise à niveau."
 
 #: ../../administration/logging/appliance_logs.rst:56
 msgid ""
 "For detailed logback configuration options including log levels, "
 "appenders, rotation settings, and CEF/SIEM audit export, see the "
 ":doc:`/getting_started/additional/logback` reference."
-msgstr ""
+msgstr "Pour des options détaillées de configuration Logback, y compris les niveaux de journal, les appenders, les paramètres de rotation et l'export d'audit CEF/SIEM, consultez la référence :doc:`/getting_started/additional/logback`."
 
 #: ../../administration/logging/appliance_logs.rst:59
 msgid "Common Configuration Tasks"
-msgstr ""
+msgstr "Tâches de configuration courantes"
 
 #: ../../administration/logging/appliance_logs.rst:61
 msgid "**Changing log levels:**"
-msgstr ""
+msgstr "**Modification des niveaux de journal :**"
 
 #: ../../administration/logging/appliance_logs.rst:63
 msgid ""
 "Edit ``logback.xml`` and adjust the ``level`` attribute on the "
 "appropriate logger. For example, to enable debug logging for "
 "provisioning:"
-msgstr ""
+msgstr "Modifiez ``logback.xml`` et ajustez l'attribut ``level`` sur le logger approprié. Par exemple, pour activer la journalisation de débogage pour le provisionnement :"
 
 #: ../../administration/logging/appliance_logs.rst:65
 msgid "<logger name=\"com.morpheus.provision\" level=\"DEBUG\"/>"
@@ -185,11 +185,11 @@ msgstr ""
 msgid ""
 "Changes take effect within 60 seconds (Logback scans for configuration "
 "changes automatically)."
-msgstr ""
+msgstr "Les modifications prennent effet dans les 60 secondes (Logback recherche automatiquement les changements de configuration)."
 
 #: ../../administration/logging/appliance_logs.rst:71
 msgid "**CEF/SIEM Audit Export:**"
-msgstr ""
+msgstr "**Export d'audit CEF/SIEM :**"
 
 #: ../../administration/logging/appliance_logs.rst:73
 msgid ""
@@ -197,11 +197,11 @@ msgid ""
 "for SIEM integration. This is configured by adding a CEF appender to "
 "logback.xml. See the :doc:`/getting_started/additional/logback` reference"
 " for the full appender configuration."
-msgstr ""
+msgstr "|morpheus| prend en charge l'export des événements d'audit au format Common Event Format (CEF) pour l'intégration SIEM. Cela se configure en ajoutant un appender CEF à logback.xml. Consultez la référence :doc:`/getting_started/additional/logback` pour la configuration complète de l'appender."
 
 #: ../../administration/logging/appliance_logs.rst:75
 msgid "**Log Rotation:**"
-msgstr ""
+msgstr "**Rotation des journaux :**"
 
 #: ../../administration/logging/appliance_logs.rst:77
 msgid ""
@@ -209,7 +209,7 @@ msgid ""
 "|morpheus| packaging). Default rotation settings keep up to 30 log files "
 "of 200MB each per service. These defaults can be adjusted in "
 "``/etc/morpheus/morpheus.rb``:"
-msgstr ""
+msgstr "Les journaux de l'appliance sont archivés par le service ``svlogd`` (inclus dans l'empaquetage |morpheus|). Les paramètres de rotation par défaut conservent jusqu'à 30 fichiers journaux de 200 Mo chacun par service. Ces valeurs par défaut peuvent être ajustées dans ``/etc/morpheus/morpheus.rb`` :"
 
 #: ../../administration/logging/appliance_logs.rst:79
 msgid ""
@@ -219,38 +219,38 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:84
 msgid "Run ``sudo morpheus-ctl reconfigure`` after changes."
-msgstr ""
+msgstr "Exécutez ``sudo morpheus-ctl reconfigure`` après les modifications."
 
 #: ../../administration/logging/appliance_logs.rst:87
 msgid "Forwarding Appliance Logs Externally"
-msgstr ""
+msgstr "Transfert externe des journaux de l'appliance"
 
 #: ../../administration/logging/appliance_logs.rst:89
 msgid ""
 "To forward appliance-level logs (not host/VM logs) to an external syslog "
 "or SIEM:"
-msgstr ""
+msgstr "Pour transférer les journaux au niveau de l'appliance (pas les journaux hôte/VM) vers un syslog externe ou un SIEM :"
 
 #: ../../administration/logging/appliance_logs.rst:91
 msgid "**Option 1: OS-level syslog (rsyslog/syslog-ng)**"
-msgstr ""
+msgstr "**Option 1 : syslog au niveau du système d'exploitation (rsyslog/syslog-ng)**"
 
 #: ../../administration/logging/appliance_logs.rst:93
 msgid ""
 "Configure the appliance host's system syslog daemon to forward "
 "``/var/log/morpheus/`` entries to your centralized logging platform. This"
 " is the simplest approach and works with any syslog receiver."
-msgstr ""
+msgstr "Configurez le démon syslog système de l'hôte appliance pour transférer les entrées ``/var/log/morpheus/`` vers votre plateforme de journalisation centralisée. C'est l'approche la plus simple et elle fonctionne avec tout récepteur syslog."
 
 #: ../../administration/logging/appliance_logs.rst:95
 msgid "**Option 2: Logback syslog appender**"
-msgstr ""
+msgstr "**Option 2 : appender syslog Logback**"
 
 #: ../../administration/logging/appliance_logs.rst:97
 msgid ""
 "Add a syslog appender directly in ``logback.xml`` for application-level "
 "log forwarding:"
-msgstr ""
+msgstr "Ajoutez un appender syslog directement dans ``logback.xml`` pour le transfert des journaux au niveau application :"
 
 #: ../../administration/logging/appliance_logs.rst:99
 #, python-format
@@ -266,11 +266,11 @@ msgstr ""
 
 #: ../../administration/logging/appliance_logs.rst:108
 msgid "**Option 3: CEF appender for SIEM**"
-msgstr ""
+msgstr "**Option 3 : appender CEF pour SIEM**"
 
 #: ../../administration/logging/appliance_logs.rst:110
 msgid ""
 "For structured audit events in CEF format, see the SIEM auditing section "
 "in the :doc:`/getting_started/additional/logback` reference."
-msgstr ""
+msgstr "Pour les événements d'audit structurés au format CEF, consultez la section audit SIEM dans la référence :doc:`/getting_started/additional/logback`."
 

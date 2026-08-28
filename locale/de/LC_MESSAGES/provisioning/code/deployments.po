@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../../provisioning/code/deployments.rst:4
 msgid "Deployments"
-msgstr ""
+msgstr "Deployments"
 
 #: ../../provisioning/code/deployments.rst:6
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../provisioning/code/deployments.rst:6
 msgid ""
 "In v5.3.2+, :menuselection:`Provisioning --> Deployments` has been moved "
 "to :menuselection:`Provisioning --> Code --> Deployments`"
-msgstr ""
+msgstr "In v5.3.2+ wurde :menuselection:`Provisioning --> Deployments` nach :menuselection:`Provisioning --> Code --> Deployments` verschoben"
 
 #: ../../provisioning/code/deployments.rst:8
 msgid ""
@@ -42,7 +42,7 @@ msgid ""
 "build server, pulled from a public or private Git repository or even via "
 "the API and the various plugins created, such as Jenkins, and Gradle to "
 "support continuous build / integration workflows."
-msgstr ""
+msgstr "Der Abschnitt Deployments bietet sehr nützliche PaaS-ähnliche Funktionen beim Bereitstellen von Anwendungen in der neu provisionierten Umgebung. Diese können direkt aus der UI hochgeladen, von einem Build-Server oder einem öffentlichen oder privaten Git-Repository bezogen oder über die API und verschiedene Plugins wie Jenkins und Gradle für Continuous-Build-/Integrations-Workflows bereitgestellt werden."
 
 #: ../../provisioning/code/deployments.rst:10
 msgid ""
@@ -52,39 +52,39 @@ msgid ""
 "versions across Instances that may exist in different environments. An "
 "example might be to deploy a version from a deployment to a staging "
 "Instance and (once approved) also deployed into production."
-msgstr ""
+msgstr "Ein Deployment kann als Satz von Versionen betrachtet werden, die zu einem bestimmten Projekt oder einer Anwendung gehören. So lässt sich eine Versionshistorie führen und diese Deployment-Versionen einfach über Instanzen in verschiedenen Umgebungen wiederverwenden. Ein Beispiel wäre, eine Version aus einem Deployment in eine Staging-Instanz und (nach Freigabe) auch in die Produktion bereitzustellen."
 
 #: ../../provisioning/code/deployments.rst:13
 msgid "Role Permissions"
-msgstr ""
+msgstr "Rollenberechtigungen"
 
 #: ../../provisioning/code/deployments.rst:15
 msgid ""
 "Access and capabilities for the **Deployments** section is determined by "
 "the following role permissions:"
-msgstr ""
+msgstr "Zugriff und Funktionen für den Abschnitt **Deployments** werden durch die folgenden Rollenberechtigungen bestimmt:"
 
 #: ../../provisioning/code/deployments.rst:17
 msgid "Role: Feature Access: ``Provisioning: Code Deployments``"
-msgstr ""
+msgstr "Rolle: Feature Access: ``Provisioning: Code Deployments``"
 
 #: ../../provisioning/code/deployments.rst:18
 msgid "None: Cannot access Provisioning: Code Deployments."
-msgstr ""
+msgstr "None: Kein Zugriff auf Provisioning: Code Deployments."
 
 #: ../../provisioning/code/deployments.rst:19
 msgid ""
 "Read: Can view Code Deployments. Cannot create, delete or edit Code "
 "Deployments."
-msgstr ""
+msgstr "Read: Kann Code Deployments anzeigen. Kann Code Deployments nicht erstellen, löschen oder bearbeiten."
 
 #: ../../provisioning/code/deployments.rst:20
 msgid "Full: Can create, delete and edit Code Deployments."
-msgstr ""
+msgstr "Full: Kann Code Deployments erstellen, löschen und bearbeiten."
 
 #: ../../provisioning/code/deployments.rst:23
 msgid "Getting Started"
-msgstr ""
+msgstr "Erste Schritte"
 
 #: ../../provisioning/code/deployments.rst:25
 msgid ""
@@ -94,7 +94,7 @@ msgid ""
 "archive that are needed for the application to run. This could be a "
 "single file like a `WAR` file for Tomcat, or it could be hundreds of "
 "files for stacks like `Ruby on Rails`."
-msgstr ""
+msgstr "Der Einstieg in Deployments ist einfach. Sie können je nach Anwendungsstack leicht variieren, aber die einfachste Phase eines Deployments ist das Hinzufügen einer Version und der benötigten Dateien zum Deployment-Archiv, damit die Anwendung laufen kann. Das kann eine einzelne Datei wie eine `WAR`-Datei für Tomcat sein oder Hunderte von Dateien für Stacks wie `Ruby on Rails`."
 
 #: ../../provisioning/code/deployments.rst:27
 msgid ""
@@ -104,7 +104,7 @@ msgid ""
 "name representing the application that is being deployed. Once a "
 "deployment is created select the deployment to view its versions (which "
 "will be empty to start). Next, it is time to add a version."
-msgstr ""
+msgstr "Es gibt mehrere Wege, ein Deployment zu erstellen. Der erste ist der Abschnitt :menuselection:`Provisioning --> Code --> Deployments` der Anwendung. Fügen Sie einfach ein neues Deployment hinzu und geben Sie einen Namen für die bereitzustellende Anwendung. Nach dem Erstellen wählen Sie das Deployment, um seine Versionen anzuzeigen (anfangs leer). Als Nächstes fügen Sie eine Version hinzu."
 
 #: ../../provisioning/code/deployments.rst:29
 msgid ""
@@ -118,12 +118,12 @@ msgid ""
 "files are uploaded via the CLI, or available build tool integration "
 "plugins. Once the files have completed their upload simply save the "
 "version for use."
-msgstr ""
+msgstr "Beim Hinzufügen einer Version gibt es mehrere Optionen. Die UI stellt drei Typen dar: File, Fetch und Git. Ein File-Deployment ermöglicht dem Benutzer, Dateien einfach in den vom Dialog angezeigten Datei-Explorer zu ziehen. Dieser kann einzelne Dateien oder ganze Dateibäume aufnehmen (bei Dateien in Unterordnern wird derzeit nur der Chrome-Browser unterstützt). Das ist auch der übliche Typ beim Upload über die CLI oder verfügbare Build-Tool-Integrationsplugins. Nach Abschluss des Uploads speichern Sie die Version einfach zur Nutzung."
 
 #: ../../provisioning/code/deployments.rst:32
 #: ../../provisioning/code/deployments.rst:91
 msgid "Git"
-msgstr ""
+msgstr "Git"
 
 #: ../../provisioning/code/deployments.rst:34
 msgid ""
@@ -136,12 +136,12 @@ msgid ""
 "From here either a `ssh` or `https` git url can be entered along with a "
 "git branch or tag name. Once the version is saved, this repository will "
 "be copied down into the deployment archive for use."
-msgstr ""
+msgstr "Für Git-basierte Deploys unterstützt |morpheus| öffentliche und private Repositories. Für ein privates Git-Repository zeigt der Dialog „Add Version“ ein öffentliches Schlüsselpaar, das dem Git-Dienst zur Authentifizierung hinzugefügt werden kann. Derzeit wird dieses Schlüsselpaar kontoweit und nicht benutzerspezifisch geteilt; es kann daher sinnvoll sein, die Integration mit einem Deployment-Konto in Git zu verbinden. Anschließend kann eine `ssh`- oder `https`-Git-URL zusammen mit einem Git-Branch- oder Tag-Namen eingegeben werden. Nach dem Speichern der Version wird dieses Repository in das Deployment-Archiv kopiert."
 
 #: ../../provisioning/code/deployments.rst:37
 #: ../../provisioning/code/deployments.rst:89
 msgid "Fetch"
-msgstr ""
+msgstr "Fetch"
 
 #: ../../provisioning/code/deployments.rst:39
 msgid ""
@@ -152,11 +152,11 @@ msgid ""
 "archive). HTTP Authentication options can also be entered if the url "
 "requires some form of basic authentication scheme for access by the "
 "appliance."
-msgstr ""
+msgstr "Fetch-basierte Deployments sind unkompliziert. Geben Sie einfach eine URL zu einer Datei ein, die das Deployment darstellt. Das kann eine einzelne Datei sein (dann wird sie einzeln zum Deployment-Archiv hinzugefügt) oder eine Zip-Datei (die automatisch in das Archiv entpackt wird). HTTP-Authentifizierungsoptionen können ebenfalls eingegeben werden, wenn die URL eine Basic-Authentifizierung für den Zugriff durch die Appliance erfordert."
 
 #: ../../provisioning/code/deployments.rst:42
 msgid "Configuring Library Items for Deployments"
-msgstr ""
+msgstr "Library Items für Deployments konfigurieren"
 
 #: ../../provisioning/code/deployments.rst:44
 msgid ""
@@ -164,7 +164,7 @@ msgid ""
 "provisioned Instance, the Library items must have certain configurations "
 "set. Once configured correctly, any Instance provisioned from the Library"
 " item would then have access to any of your Deployments."
-msgstr ""
+msgstr "Damit die UI-Werkzeuge für Deployments mit einer provisionierten Instanz verfügbar sind, müssen die Library Items bestimmte Konfigurationen haben. Nach korrekter Konfiguration hat jede aus dem Library Item provisionierte Instanz Zugriff auf Ihre Deployments."
 
 #: ../../provisioning/code/deployments.rst:46
 msgid ""
@@ -183,11 +183,11 @@ msgid ""
 " the Deploy phase are run after the deployment is completed, such as if "
 "you wanted to update configuration files or inject connection details "
 "from the environment after the completion of the deploy process."
-msgstr ""
+msgstr "Aktivieren Sie zuerst im **Instance Type** (|LibBluIns|) das Attribut SUPPORT DEPLOYMENTS. Es ist standardmäßig aus und muss für alle relevanten Instanztypen manuell aktiviert werden. Stellen Sie als Nächstes den korrekten DEPLOY FOLDER bei **Node Types** (|LibBluNod|) ein. Das ist der Mountpunkt, der durch den Inhalt Ihrer Deployments ersetzt wird. Schließlich sollten die dem Library Item zugeordneten **Provisioning Workflows** die richtigen Aufgaben in den Phasen Pre-Deploy und/oder Deploy enthalten. Aufgaben in der Pre-Deploy-Phase werden ausgeführt, sobald das Deployment aus der UI ausgelöst wird, bevor andere Deploy-Aktionen erfolgen. Damit können z. B. Dateien aus dem Deploy-Ordner extrahiert und an ihre Endziele verschoben werden, bevor die primären Deploy-Aktionen stattfinden. Aufgaben in der Deploy-Phase laufen nach Abschluss des Deployments, z. B. um Konfigurationsdateien zu aktualisieren oder Verbindungsdetails aus der Umgebung nach dem Deploy einzufügen."
 
 #: ../../provisioning/code/deployments.rst:49
 msgid "Deploying to an Instance"
-msgstr ""
+msgstr "In eine Instanz bereitstellen"
 
 #: ../../provisioning/code/deployments.rst:51
 msgid ""
@@ -207,22 +207,22 @@ msgid ""
 "will now be asynchronously sent off to all of the virtual machines or "
 "containers within the Instance in a rolling restart and the deployment "
 "status will be represented."
-msgstr ""
+msgstr "Nachdem das Deployment-Objekt und die Library Items konfiguriert sind, lässt sich dieses Deployment leicht in jede in |morpheus| provisionierte Instanz pushen, indem Sie zur betreffenden Instanz navigieren. Auf der Instanz-Detailseite gibt es eine Registerkarte `Runtime` und darin eine weitere Registerkarte `Deploy`. Von dort aus fügen Sie einfach ein Deploy hinzu. Der Dialog fragt zuerst, aus welchem Deployment bereitgestellt wird (oder erlaubt, sofort ein neues zu erstellen), und zweitens, welche Version (ebenfalls mit Option, eine on-the-fly hinzuzufügen). Der nächste Schritt des Assistenten zeigt ggf. instanztypspezifische Konfigurationsoptionen (z. B. `CATALINA_OPTS` für Tomcat oder `Java Command` für Java) sowie Datei-Explorer und Deployment-Typ-Auswahlen zur Überprüfung (oder zur Nutzung beim Erstellen einer neuen Version on-the-fly). Füllen Sie die erforderlichen Felder aus und klicken Sie auf Complete. Das Deploy wird asynchron an alle VMs oder Container der Instanz in einem Rolling Restart gesendet und der Deployment-Status dargestellt."
 
 #: ../../provisioning/code/deployments.rst:53
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../provisioning/code/deployments.rst:53
 msgid ""
 "When deploying to an Instance, the custom configuration options that were"
 " entered during the previous deployment are automatically carried forward"
 " allowing one to edit them or leave them as is."
-msgstr ""
+msgstr "Beim Bereitstellen in eine Instanz werden die benutzerdefinierten Konfigurationsoptionen des vorherigen Deployments automatisch übernommen und können bearbeitet oder belassen werden."
 
 #: ../../provisioning/code/deployments.rst:56
 msgid "Rolling Backwards and Forwards"
-msgstr ""
+msgstr "Vor- und Zurückrollen"
 
 #: ../../provisioning/code/deployments.rst:58
 msgid ""
@@ -231,11 +231,11 @@ msgid ""
 "deployment and jump back to it in the event of a failed deployment. The "
 "history will automatically be updated and the configuration, as well as "
 "data from the previous deployment state of the Instance will be restored."
-msgstr ""
+msgstr "Dank der in |morpheus| geführten Deployment-Historie lässt sich auf der Deploy-Registerkarte der Instanzdetails leicht ein zuvor ausgeführtes Deployment wählen und bei einem fehlgeschlagenen Deployment darauf zurückspringen. Die Historie wird automatisch aktualisiert und Konfiguration sowie Daten aus dem vorherigen Deployment-Zustand der Instanz werden wiederhergestellt."
 
 #: ../../provisioning/code/deployments.rst:61
 msgid "Offloading Storage"
-msgstr ""
+msgstr "Speicher auslagern"
 
 #: ../../provisioning/code/deployments.rst:63
 msgid ""
@@ -249,115 +249,115 @@ msgid ""
 "mountpoint provided. This option can be adjusted in "
 ":menuselection:`Administration --> Settings --> Provisioning` once a "
 "storage provider is created within the account."
-msgstr ""
+msgstr "Da |morpheus| eine vollständige Historie der Backup-Builds führt, wird es mit wachsender Appliance nötig, den Speicherort zu ändern. Bei Neuinstallation liegen diese auf der lokalen Appliance unter ``/var/opt/morpheus`` oder dort, wohin das Master-Konto die Konfiguration zeigt. Der Deployment-Archivspeicher kann auch angepasst werden, indem ein `Storage Provider` für einen S3-kompatiblen Object Store, OpenStack Swift Object Store oder einen anderen Mountpunkt erstellt wird. Diese Option ist unter :menuselection:`Administration --> Settings --> Provisioning` anpassbar, sobald ein Storage Provider im Konto erstellt ist."
 
 #: ../../provisioning/code/deployments.rst:66
 msgid "Add Deployment"
-msgstr ""
+msgstr "Deployment hinzufügen"
 
 #: ../../provisioning/code/deployments.rst:68
 #: ../../provisioning/code/deployments.rst:78
 #: ../../provisioning/code/deployments.rst:99
 #: ../../provisioning/code/deployments.rst:109
 msgid "Select the ``Provisioning`` link in the navigation bar."
-msgstr ""
+msgstr "Wählen Sie den Link ``Provisioning`` in der Navigationsleiste."
 
 #: ../../provisioning/code/deployments.rst:69
 #: ../../provisioning/code/deployments.rst:79
 #: ../../provisioning/code/deployments.rst:100
 #: ../../provisioning/code/deployments.rst:110
 msgid "Select the ``Code`` link in the sub-navigation bar."
-msgstr ""
+msgstr "Wählen Sie den Link ``Code`` in der Unternavigationsleiste."
 
 #: ../../provisioning/code/deployments.rst:70
 #: ../../provisioning/code/deployments.rst:80
 #: ../../provisioning/code/deployments.rst:101
 #: ../../provisioning/code/deployments.rst:111
 msgid "Select the ``Deployments`` tab."
-msgstr ""
+msgstr "Wählen Sie die Registerkarte ``Deployments``."
 
 #: ../../provisioning/code/deployments.rst:71
 msgid "Click the :guilabel:`+ Add` button."
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche :guilabel:`+ Add`."
 
 #: ../../provisioning/code/deployments.rst:72
 msgid "Enter a Name for the deployment and a description (optional)"
-msgstr ""
+msgstr "Geben Sie einen Namen für das Deployment und optional eine Beschreibung ein"
 
 #: ../../provisioning/code/deployments.rst:73
 #: ../../provisioning/code/deployments.rst:94
 #: ../../provisioning/code/deployments.rst:104
 msgid "Click the :guilabel:`Save Changes` button to save."
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche :guilabel:`Save Changes`, um zu speichern."
 
 #: ../../provisioning/code/deployments.rst:76
 msgid "Add Version"
-msgstr ""
+msgstr "Version hinzufügen"
 
 #: ../../provisioning/code/deployments.rst:81
 msgid "Click the Name of the deployment you would like to add a version to."
-msgstr ""
+msgstr "Klicken Sie auf den Namen des Deployments, dem Sie eine Version hinzufügen möchten."
 
 #: ../../provisioning/code/deployments.rst:82
 msgid "Click the :guilabel:`Add Version` button."
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche :guilabel:`Add Version`."
 
 #: ../../provisioning/code/deployments.rst:83
 msgid "From the Add Version Wizard select the deployment type."
-msgstr ""
+msgstr "Wählen Sie im Add-Version-Assistenten den Deployment-Typ."
 
 #: ../../provisioning/code/deployments.rst:84
 msgid "Input the Version of the deployment."
-msgstr ""
+msgstr "Geben Sie die Version des Deployments ein."
 
 #: ../../provisioning/code/deployments.rst:85
 msgid "Depending on the type of deployment selected perform one of the following:"
-msgstr ""
+msgstr "Führen Sie je nach gewähltem Deployment-Typ eines der Folgenden aus:"
 
 #: ../../provisioning/code/deployments.rst:87
 msgid "Files"
-msgstr ""
+msgstr "Dateien"
 
 #: ../../provisioning/code/deployments.rst:88
 msgid ""
 "Drag files into the file explorer presented by the dialog. This file "
 "explorer can take single files or entire file trees."
-msgstr ""
+msgstr "Ziehen Sie Dateien in den vom Dialog angezeigten Datei-Explorer. Dieser kann einzelne Dateien oder ganze Dateibäume aufnehmen."
 
 #: ../../provisioning/code/deployments.rst:90
 msgid "Enter a url to a file representing the deployment."
-msgstr ""
+msgstr "Geben Sie eine URL zu einer Datei ein, die das Deployment darstellt."
 
 #: ../../provisioning/code/deployments.rst:92
 msgid ""
 "The add version dialog will display a public key pair that can be added "
 "to the git service for authentication purposes. Either a ssh or https git"
 " url can be entered along with a git branch or tag name."
-msgstr ""
+msgstr "Der Dialog „Add Version“ zeigt ein öffentliches Schlüsselpaar, das dem Git-Dienst zur Authentifizierung hinzugefügt werden kann. Es kann eine ssh- oder https-Git-URL zusammen mit einem Git-Branch- oder Tag-Namen eingegeben werden."
 
 #: ../../provisioning/code/deployments.rst:97
 msgid "Edit Deployment"
-msgstr ""
+msgstr "Deployment bearbeiten"
 
 #: ../../provisioning/code/deployments.rst:102
 msgid ""
 "Click the |pencil| icon on the row of the deployment you wish to edit, or"
 " click the Name of the deployment and then the :guilabel:`Edit` button "
 "from the deployment detail page."
-msgstr ""
+msgstr "Klicken Sie auf das Symbol |pencil| in der Zeile des zu bearbeitenden Deployments oder auf den Namen des Deployments und dann auf die Schaltfläche :guilabel:`Edit` auf der Deployment-Detailseite."
 
 #: ../../provisioning/code/deployments.rst:103
 msgid "Modify information as needed"
-msgstr ""
+msgstr "Informationen nach Bedarf ändern"
 
 #: ../../provisioning/code/deployments.rst:107
 msgid "Delete Deployment"
-msgstr ""
+msgstr "Deployment löschen"
 
 #: ../../provisioning/code/deployments.rst:112
 msgid ""
 "Click the |trash| icon on the row of the deployment you wish to delete, "
 "or click the Name of the deployment and then the :redguilabel:`DELETE` "
 "button."
-msgstr ""
+msgstr "Klicken Sie auf das Symbol |trash| in der Zeile des zu löschenden Deployments oder auf den Namen des Deployments und dann auf die Schaltfläche :redguilabel:`DELETE`."
 

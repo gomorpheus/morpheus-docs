@@ -24,20 +24,20 @@ msgstr ""
 msgid ""
 "System administrators have access to a utilities panel with the following"
 " options:"
-msgstr ""
+msgstr "Administradores de sistema têm acesso a um painel de utilitários com as seguintes opções:"
 
 #: ../../administration/settings/utilities.rst:3
 msgid "**Reindex all searchable data:** Execute"
-msgstr ""
+msgstr "**Reindexar todos os dados pesquisáveis:** Execute"
 
 #: ../../administration/settings/utilities.rst:4
 msgid "**Toggle Maintenance Mode:** Enable"
-msgstr ""
+msgstr "**Alternar Modo de Manutenção:** Ativar"
 
 #: ../../administration/settings/utilities.rst:6
 #: ../../administration/settings/utilities.rst:8
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../administration/settings/utilities.rst:6
 msgid ""
@@ -46,7 +46,7 @@ msgid ""
 "queues so an auto-scaling group can scale down. It also drains active "
 "sessions across services. Restarting |morpheus| UI disables maintenance "
 "mode."
-msgstr ""
+msgstr "O modo de manutenção coloca o |morpheus| de forma limpa em um estado no qual a manutenção pode ser realizada no appliance. Isso drena quaisquer sessões e filas ativas para que um grupo de autoescala possa reduzir. Também drena sessões ativas entre serviços. Reiniciar a UI do |morpheus| desativa o modo de manutenção."
 
 #: ../../administration/settings/utilities.rst:8
 msgid ""
@@ -59,7 +59,7 @@ msgid ""
 "<https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_"
 " to toggle a specific node into maintenance mode to avoid redirects back "
 "to the VIP address."
-msgstr ""
+msgstr "Ao usar o |morpheus| em um ambiente Highly Available (HA), é importante navegar diretamente a um nó e ativar o modo de manutenção, em vez de usar o IP virtual (VIP) do balanceador de carga. Uma entrada de host local para o nó específico pode ser necessária para garantir que o nó correto entre em modo de manutenção. Na verdade, recomenda-se usar o `endpoint de API análogo <https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_ para alternar um nó específico para o modo de manutenção e evitar redirecionamentos de volta ao endereço VIP."
 
 #: ../../administration/settings/utilities.rst:10
 msgid ""
@@ -69,5 +69,5 @@ msgid ""
 "removed/paused from the load balancer VIP or have VIP health checks "
 "implemented, if the node UI/API will become inaccessible due to "
 "maintenance."
-msgstr ""
+msgstr "Um nó |morpheus| em modo de manutenção ainda pode ser acessível pelo VIP/grupo de destino do balanceador de carga e pode enfileirar solicitações, mas não processará nada na fila enquanto estiver em modo de manutenção. Um nó pode ser removido/pausado do VIP do balanceador de carga ou ter verificações de integridade VIP implementadas, se a UI/API do nó ficar inacessível devido à manutenção."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:2
 msgid "OneLogin"
-msgstr ""
+msgstr "OneLogin"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:4
 msgid ""
@@ -33,11 +33,11 @@ msgid ""
 "platform. As employees are onboarded, change positions, or leave the "
 "company, additional user management within the |morpheus| platform is not"
 " necessary."
-msgstr ""
+msgstr "Durch die Integration von OneLogin mit |morpheus| können Benutzer mit ihren bestehenden, in der OneLogin-Plattform eingerichteten Anmeldedaten auf |morpheus| zugreifen. Darüber hinaus können Administratoren den Benutzerzugriff einschließlich Rollenzuweisung sowie das Aktivieren oder Deaktivieren von Benutzern innerhalb der OneLogin-Plattform verwalten. Wenn Mitarbeiter onboarded werden, die Position wechseln oder das Unternehmen verlassen, ist keine zusätzliche Benutzerverwaltung innerhalb der |morpheus|-Plattform erforderlich."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:7
 msgid "Adding OneLogin Identity Source Integration"
-msgstr ""
+msgstr "OneLogin-Identity-Source-Integration hinzufügen"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:9
 msgid ""
@@ -47,7 +47,7 @@ msgid ""
 " Click the button labeled \"New Credential\". Provide a name for the new "
 "API credentials and select \"Manage Users\" as the permissions type. "
 "Store the credentials somewhere they can be retrieved in the next step."
-msgstr ""
+msgstr "Melden Sie sich zunächst mit einem Administratorkonto bei OneLogin an, um benötigte Informationen zu beschaffen. Wählen Sie in der oberen Menüleiste Administration. Klicken Sie im Admin-Bereich auf Developers > API Credentials. Klicken Sie auf die Schaltfläche „New Credential“. Geben Sie einen Namen für die neuen API-Anmeldedaten an und wählen Sie „Manage Users“ als Berechtigungstyp. Speichern Sie die Anmeldedaten so, dass sie im nächsten Schritt abrufbar sind."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:11
 msgid ""
@@ -63,19 +63,19 @@ msgid ""
 " The list of currently-integrated identity providers is here. Click "
 ":guilabel:`+ ADD IDENTITY SOURCE` to start a new integration for "
 "OneLogin. Fill in the fields below:"
-msgstr ""
+msgstr "Zurück in |morpheus| navigieren Sie zu dem Mandanten, der mit OneLogin integriert werden soll. Identity Provider werden in |morpheus| pro Mandant integriert. Klicken Sie im ausgewählten Mandanten auf :guilabel:`IDENTITY SOURCES`. Hier finden Sie die Liste der derzeit integrierten Identity Provider. Klicken Sie auf :guilabel:`+ ADD IDENTITY SOURCE`, um eine neue Integration für OneLogin zu starten. Füllen Sie die folgenden Felder aus:"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:16
 msgid "**TYPE:** OneLogin"
-msgstr ""
+msgstr "**TYPE:** OneLogin"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:17
 msgid "**NAME:** A name for the identity source integration in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Ein Name für die Identity-Source-Integration in |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:18
 msgid "**DESCRIPTION:** An optional description for the identity source"
-msgstr ""
+msgstr "**DESCRIPTION:** Eine optionale Beschreibung für die Identity Source"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:19
 msgid ""
@@ -83,23 +83,23 @@ msgid ""
 "example, \"morpheus-dev\" if your portal is accessed at morpheus-"
 "dev.onelogin.com. Incorrect subdomains will cause login attempts to "
 "|morpheus| to fail"
-msgstr ""
+msgstr "**ONELOGIN SUBDOMAIN:** Die Subdomain aus Ihrer OneLogin-Portal-URL. Zum Beispiel „morpheus-dev“, wenn Ihr Portal unter morpheus-dev.onelogin.com erreichbar ist. Falsche Subdomains führen dazu, dass Anmeldeversuche bei |morpheus| fehlschlagen"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:20
 msgid "**ONELOGIN REGION:** Specify US or EU region"
-msgstr ""
+msgstr "**ONELOGIN REGION:** Geben Sie die Region US oder EU an"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:21
 msgid ""
 "**API CLIENT SECRET:** OneLogin API client secret which was gathered "
 "earlier in this walkthrough"
-msgstr ""
+msgstr "**API CLIENT SECRET:** OneLogin-API-Client-Secret, das früher in dieser Anleitung erfasst wurde"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:22
 msgid ""
 "**API CLIENT ID:** OneLogin API client ID which was gathered earlier in "
 "this walkthrough"
-msgstr ""
+msgstr "**API CLIENT ID:** OneLogin-API-Client-ID, die früher in dieser Anleitung erfasst wurde"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:23
 msgid ""
@@ -108,14 +108,14 @@ msgid ""
 "OneLogin users who can authenticate will be allowed to log in and a local"
 " user account will be created automatically. It is strongly recommended "
 "to set this field in enterprise environments."
-msgstr ""
+msgstr "**REQUIRED ROLE:** Geben Sie eine Rolle ein, die OneLogin-Benutzer beim Anmelden bei |morpheus| haben müssen, um Zugriff auf |morpheus| zu erhalten. Bleibt das Feld leer, dürfen sich alle OneLogin-Benutzer anmelden, die sich authentifizieren können, und es wird automatisch ein lokales Benutzerkonto erstellt. Es wird dringend empfohlen, dieses Feld in Unternehmensumgebungen festzulegen."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:24
 msgid ""
 "**DEFAULT ROLE:** The default |morpheus| Role applied to all users who "
 "pass the Required Role check. This role is always assigned in addition to"
 " any roles granted through role mappings below."
-msgstr ""
+msgstr "**DEFAULT ROLE:** Die Standard-|morpheus|-Rolle, die allen Benutzern zugewiesen wird, die die Required-Role-Prüfung bestehen. Diese Rolle wird immer zusätzlich zu allen über die Rollen-Mappings unten gewährten Rollen zugewiesen."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:25
 msgid ""
@@ -123,7 +123,7 @@ msgid ""
 "fields to enter OneLogin Roles to create a mapping. Users with OneLogin "
 "roles matching the role mappings will be assigned the appropriate Role(s)"
 " in |morpheus| when signing in"
-msgstr ""
+msgstr "**ROLE MAPPINGS:** Alle vorhandenen |morpheus|-Rollen werden mit Feldern zum Eingeben von OneLogin-Rollen aufgelistet, um ein Mapping zu erstellen. Benutzer mit OneLogin-Rollen, die den Rollen-Mappings entsprechen, erhalten beim Anmelden die entsprechenden Rolle(n) in |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:26
 msgid ""
@@ -132,20 +132,20 @@ msgid ""
 "role mapping for the Identity Source integration. This allows the Tenant "
 "user to edit only the role mappings without viewing or potentially "
 "editing the core integration fields (such as the API keys)"
-msgstr ""
+msgstr "**ENABLE ROLE MAPPING PERMISSION:** Wenn ausgewählt, können Mandanten-Benutzer mit entsprechenden Rechten zum Anzeigen und Bearbeiten von Rollen das Rollen-Mapping für die Identity-Source-Integration festlegen. So kann der Mandanten-Benutzer nur die Rollen-Mappings bearbeiten, ohne die Kernintegrationsfelder (wie die API-Schlüssel) einzusehen oder potenziell zu bearbeiten"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:27
 msgid ""
 "**MANUAL ROLE ASSIGNMENT:** When selected, administrators can manually "
 "edit Roles for users created through this identity source integration "
 "from the user detail page (|AdmUse| > Selected user)."
-msgstr ""
+msgstr "**MANUAL ROLE ASSIGNMENT:** Wenn ausgewählt, können Administratoren Rollen für Benutzer, die über diese Identity-Source-Integration erstellt wurden, manuell auf der Benutzer-Detailseite bearbeiten (|AdmUse| > Ausgewählter Benutzer)."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:29
 msgid ""
 "Select :guilabel:`SAVE CHANGES` and the OneLogin Integration will be "
 "added."
-msgstr ""
+msgstr "Wählen Sie :guilabel:`SAVE CHANGES`, und die OneLogin-Integration wird hinzugefügt."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:31
 msgid ""
@@ -154,17 +154,17 @@ msgid ""
 "password from OneLogin. If a REQUIRED ROLE is specified in the Identity "
 "Source settings, only users with that Role in OneLogin will be able to "
 "login to |morpheus|."
-msgstr ""
+msgstr "Benutzer können sich nun mit OneLogin-Anmeldedaten bei |morpheus| anmelden. Die erste Anmeldung erstellt einen Benutzer in |morpheus| mit übereinstimmendem Benutzername, E-Mail und Kennwort aus OneLogin. Wenn in den Identity-Source-Einstellungen eine REQUIRED ROLE angegeben ist, können sich nur Benutzer mit dieser Rolle in OneLogin bei |morpheus| anmelden."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:33
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:33
 msgid ""
 "OneLogin users will not authenticate in |morpheus| if there is an "
 "existing |morpheus| User with matching username or email address."
-msgstr ""
+msgstr "OneLogin-Benutzer werden in |morpheus| nicht authentifiziert, wenn bereits ein |morpheus|-Benutzer mit übereinstimmendem Benutzername oder E-Mail-Adresse vorhanden ist."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:35
 msgid ""
@@ -175,7 +175,7 @@ msgid ""
 "OneLogin to make sure the user hasn't been disabled or if its Role(s) "
 "have changed in OneLogin which would affect its corresponding Roles in "
 "|morpheus|."
-msgstr ""
+msgstr "Sie können die Integration nun testen, indem Sie sich mit Benutzeranmeldedaten anmelden, die in OneLogin konfiguriert wurden. Bei der ersten Anmeldung wird ein neuer Benutzer mit demselben Benutzernamen, derselben E-Mail-Adresse und demselben Kennwort wie in OneLogin erstellt. Bei nachfolgenden Anmeldungen synchronisiert |morpheus| mit OneLogin, um sicherzustellen, dass der Benutzer nicht deaktiviert wurde oder ob sich seine Rolle(n) in OneLogin geändert haben, was die entsprechenden Rollen in |morpheus| beeinflussen würde."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:37
 msgid ""
@@ -184,29 +184,29 @@ msgid ""
 "|morpheus| is integrating using an API key with sufficient privileges. In"
 " a situation where troubleshooting is needed, first confirm these APIs "
 "can be accessed using the provided key."
-msgstr ""
+msgstr "Die |morpheus|-Identity-Source-Integration interagiert mit den unten aufgeführten OneLogin-APIs. Diese Referenz kann erforderlich sein, um sicherzustellen, dass |morpheus| mit einem API-Schlüssel mit ausreichenden Berechtigungen integriert. Bei Bedarf der Fehlerbehebung bestätigen Sie zuerst, dass auf diese APIs mit dem bereitgestellten Schlüssel zugegriffen werden kann."
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:39
 msgid "``/auth/oauth2/token`` - Generate Token"
-msgstr ""
+msgstr "``/auth/oauth2/token`` - Token generieren"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:40
 msgid "``/api/1/users/$user_id/roles`` - Get Roles"
-msgstr ""
+msgstr "``/api/1/users/$user_id/roles`` - Rollen abrufen"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:41
 msgid "``/api/1/login/auth`` - Create Session"
-msgstr ""
+msgstr "``/api/1/login/auth`` - Sitzung erstellen"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:42
 msgid "``/api/1/users/$user_id`` - Get User"
-msgstr ""
+msgstr "``/api/1/users/$user_id`` - Benutzer abrufen"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:43
 msgid "``/api/1/roles/$role_id`` - Get Role"
-msgstr ""
+msgstr "``/api/1/roles/$role_id`` - Rolle abrufen"
 
 #: ../../integration_guides/IdentityManagement/onelogin.rst:44
 msgid "``/api/1/roles?name=$role_name`` - Find Role"
-msgstr ""
+msgstr "``/api/1/roles?name=$role_name`` - Rolle suchen"
 

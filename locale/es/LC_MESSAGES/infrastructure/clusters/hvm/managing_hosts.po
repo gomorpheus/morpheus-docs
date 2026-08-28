@@ -40,14 +40,14 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:9
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:80
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:9
 msgid ""
 "The agent quorum, Corosync, DLM, and GFS2 details on this page apply to "
 "layouts 1.3 and 2.0. See :doc:`/infrastructure/clusters/mvm` for Legacy "
 "host management."
-msgstr ""
+msgstr "Los detalles de quórum del agente, Corosync, DLM y GFS2 en esta página se aplican a los diseños 1.3 y 2.0. Consulte :doc:`/infrastructure/clusters/mvm` para la administración de hosts Legacy."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:12
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:112
@@ -333,7 +333,7 @@ msgid ""
 "--filter ethernet``. If an interface was added to the host after "
 "enrollment, follow the Netplan and UI refresh procedure in :ref:`hvm-"
 "host-prep` before assigning it to a Virtual Switch."
-msgstr ""
+msgstr "Compare el inventario de interfaces físicas con ``sudo hvmcli interfaces list --filter ethernet``. Si se agregó una interfaz al host después del registro, siga el procedimiento de Netplan y actualización de la UI en :ref:`hvm-host-prep` antes de asignarla a un Virtual Switch."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:105
 msgid "Removing a Host from an Existing Cluster"
@@ -350,7 +350,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:109
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:109
 msgid ""
@@ -380,7 +380,7 @@ msgid ""
 "Confirm the Quorum panel reports ACHIEVED, all surviving hosts are "
 "reachable, lockspaces are healthy, and shared datastores are mounted with"
 " healthy paths"
-msgstr ""
+msgstr "Confirme que el panel Quorum informe ACHIEVED, que todos los hosts supervivientes sean accesibles, que los lockspaces estén sanos y que los almacenes de datos compartidos estén montados con rutas sanas"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:118
 msgid ""
@@ -398,7 +398,7 @@ msgstr "Verificar no VMs son pinned al host ese cannot be moved"
 msgid ""
 "Confirm no local or raw-device VM remains on the host and that remaining "
 "hosts have the required VM networks and storage access"
-msgstr ""
+msgstr "Confirme que no quede ninguna VM local o de dispositivo raw en el host y que los hosts restantes tengan acceso a las redes y al almacenamiento requeridos por las VMs"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:125
 msgid ""
@@ -429,7 +429,7 @@ msgstr "Confirmar el removal"
 msgid ""
 "Wait for the removal operation to finish; do not manually edit Corosync "
 "or Agent quorum files"
-msgstr ""
+msgstr "Espere a que finalice la operación de eliminación; no edite manualmente los archivos de Corosync o de quórum del Agente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:135
 #, fuzzy
@@ -498,7 +498,7 @@ msgstr "2"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:175
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:175
 msgid ""
@@ -523,14 +523,14 @@ msgid ""
 "First confirm the host is powered off or otherwise cannot access shared "
 "storage. If isolation cannot be proven, do not remove it; contact HPE "
 "Support"
-msgstr ""
+msgstr "Primero confirme que el host esté apagado o que de otro modo no pueda acceder al almacenamiento compartido. Si no se puede demostrar el aislamiento, no lo elimine; contacte al Soporte de HPE"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:183
 msgid ""
 "Use the same UI :guilabel:`Remove` action. On layout 1.3 and later, "
 "|morpheus| removes the node from the Corosync ring using surviving online"
 " hosts and updates Agent quorum membership"
-msgstr ""
+msgstr "Use la misma acción :guilabel:`Remove` de la UI. En el diseño 1.3 y posteriores, |morpheus| elimina el nodo del anillo Corosync usando hosts en línea supervivientes y actualiza la membresía del quórum del Agente"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:184
 msgid ""
@@ -538,13 +538,13 @@ msgid ""
 "updated Corosync configuration cannot be written consistently to all "
 "survivors, |morpheus| aborts the reload and raises an alarm rather than "
 "risk partitioning the ring"
-msgstr ""
+msgstr "Si el nodo que sale sigue activo en el anillo Corosync, o la configuración actualizada de Corosync no se puede escribir de forma coherente en todos los supervivientes, |morpheus| aborta la recarga y genera una alarma en lugar de arriesgar el particionamiento del anillo"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:185
 msgid ""
 "If no other hosts are online, cleanup cannot proceed and |morpheus| "
 "raises an **Unable to remove host** alarm"
-msgstr ""
+msgstr "Si no hay otros hosts en línea, la limpieza no puede continuar y |morpheus| genera una alarma **Unable to remove host**"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:187
 msgid ""
@@ -552,39 +552,39 @@ msgid ""
 "for this workflow. If the UI operation raises an alarm or cannot "
 "establish a safe ring departure, retain the host record and contact HPE "
 "Support."
-msgstr ""
+msgstr "No publique ni use comandos de eliminación directos en el shell del host como sustituto de este flujo de trabajo. Si la operación de la UI genera una alarma o no puede establecer una salida segura del anillo, conserve el registro del host y contacte al Soporte de HPE."
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:190
 msgid "Post-removal Verification"
-msgstr ""
+msgstr "Verificación posterior a la eliminación"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:192
 msgid "Confirm the host no longer appears in the cluster Hosts list"
-msgstr ""
+msgstr "Confirme que el host ya no aparezca en la lista de Hosts del clúster"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:193
 msgid ""
 "Confirm the Quorum panel reports ACHIEVED with the new member count and "
 "no removed host under down, fenced, or unclean members"
-msgstr ""
+msgstr "Confirme que el panel Quorum informe ACHIEVED con el nuevo recuento de miembros y que no haya ningún host eliminado entre miembros caídos, aislados o sucios"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:194
 msgid ""
 "Confirm Corosync and DLM list only the remaining members and lockspaces "
 "are healthy"
-msgstr ""
+msgstr "Confirme que Corosync y DLM muestren únicamente los miembros restantes y que los lockspaces estén sanos"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:195
 msgid ""
 "Confirm every shared datastore is mounted and healthy on every remaining "
 "host"
-msgstr ""
+msgstr "Confirme que cada almacén de datos compartido esté montado y sano en cada host restante"
 
 #: ../../infrastructure/clusters/hvm/managing_hosts.rst:196
 msgid ""
 "Confirm evacuated or failed-over VMs run once, on hosts with their "
 "required networks and storage"
-msgstr ""
+msgstr "Confirme que las VMs evacuadas o con conmutación por error se ejecuten una sola vez, en hosts con sus redes y almacenamiento requeridos"
 
 #~ msgid "Click :guilabel:`Remove` or :guilabel:`Delete`"
 #~ msgstr "Click :guilabel:`Eliminar` o :guilabel:`Eliminar`"

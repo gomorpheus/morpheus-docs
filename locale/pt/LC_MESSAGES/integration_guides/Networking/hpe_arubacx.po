@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:2
 msgid "ArubaCX Network Integration"
-msgstr ""
+msgstr "Integração de Rede ArubaCX"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Visão geral"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:6
 msgid ""
@@ -37,56 +37,56 @@ msgid ""
 "servers and switches. |morpheus| integrates directly with ArubaCX to "
 "create or delete networks for OVS Port Groups that are added or deleted "
 "within a configured Cluster."
-msgstr ""
+msgstr "O plugin de rede ArubaCX é implementado como um ``GenericIntegrationProvider`` do |morpheus| em Groovy. O plugin trata eventos de rede e cluster gerados pelo |morpheus| e modifica a configuração dos switches ArubaCX com base nas conexões de cabo entre os servidores e switches afetados. O |morpheus| integra-se diretamente ao ArubaCX para criar ou excluir redes para OVS Port Groups que são adicionados ou excluídos dentro de um Cluster configurado."
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:10
 msgid "Features"
-msgstr ""
+msgstr "Características"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:12
 msgid "Network - Create or Delete OVS Port Group."
-msgstr ""
+msgstr "Rede - Criar ou Excluir OVS Port Group."
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:15
 msgid "Prerequisites"
-msgstr ""
+msgstr "Pré-requisitos"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:16
 msgid "A pair of ArubaCX 8325 series switches"
-msgstr ""
+msgstr "Um par de switches ArubaCX série 8325"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:17
 msgid "All the hosts in the Cluster are connected to these pair of switches"
-msgstr ""
+msgstr "Todos os hosts no Cluster estão conectados a esse par de switches"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:18
 msgid "REST API access to the ArubaCX switches with administrative rights"
-msgstr ""
+msgstr "Acesso à REST API dos switches ArubaCX com direitos administrativos"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:19
 msgid ""
 "User credentials for the ArubaCX switch pair with API access granted and "
 "read/write access to the switch configuration"
-msgstr ""
+msgstr "Credenciais de usuário para o par de switches ArubaCX com acesso à API concedido e acesso de leitura/escrita à configuração do switch"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:21
 msgid "**Server Network Configuration (Netplan)**"
-msgstr ""
+msgstr "**Configuração de Rede do Servidor (Netplan)**"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:23
 msgid "On each host, configure a ``bond0`` interface on the management interfaces"
-msgstr ""
+msgstr "Em cada host, configure uma interface ``bond0`` nas interfaces de gerenciamento"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:24
 msgid "The management interfaces should be connected to the ArubaCX switch pair"
-msgstr ""
+msgstr "As interfaces de gerenciamento devem estar conectadas ao par de switches ArubaCX"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:26
 #: ../../integration_guides/Networking/hpe_arubacx.rst:46
 #: ../../integration_guides/Networking/hpe_arubacx.rst:67
 #: ../../integration_guides/Networking/hpe_arubacx.rst:81
 msgid "**Sample configuration:**"
-msgstr ""
+msgstr "**Configuração de exemplo:**"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:28
 #, python-brace-format
@@ -105,19 +105,19 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:41
 msgid "**Switch Configuration**"
-msgstr ""
+msgstr "**Configuração do Switch**"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:43
 msgid ""
 "Configure the management interface and IP address on both switches in the"
 " pair"
-msgstr ""
+msgstr "Configure a interface de gerenciamento e o endereço IP em ambos os switches do par"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:44
 msgid ""
 "The switch pair must be configured with ``vsx-sync`` enabled for high "
 "availability and redundancy"
-msgstr ""
+msgstr "O par de switches deve ser configurado com ``vsx-sync`` ativado para alta disponibilidade e redundância"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:48
 msgid ""
@@ -141,11 +141,11 @@ msgstr ""
 msgid ""
 "Create a Multi-Chassis Link Aggregation Group (MC-LAG) between the "
 "ArubaCX switch and the upstream network, referred to as ``lag1``"
-msgstr ""
+msgstr "Crie um Multi-Chassis Link Aggregation Group (MC-LAG) entre o switch ArubaCX e a rede upstream, referido como ``lag1``"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:65
 msgid "Configure the ``lag1`` interface on both switches in the pair"
-msgstr ""
+msgstr "Configure a interface ``lag1`` em ambos os switches do par"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:69
 msgid ""
@@ -162,7 +162,7 @@ msgstr ""
 msgid ""
 "The switch ports connected to the server’s management interfaces should "
 "be set to \"Trunk mode\" with a \"Native VLAN\""
-msgstr ""
+msgstr "As portas do switch conectadas às interfaces de gerenciamento do servidor devem ser definidas como \"Trunk mode\" com uma \"Native VLAN\""
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:83
 msgid ""
@@ -175,12 +175,12 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:92
 msgid "Adding ArubaCX Integration"
-msgstr ""
+msgstr "Adicionando Integração ArubaCX"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:94
 #: ../../integration_guides/Networking/hpe_arubacx.rst:127
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:94
 msgid ""
@@ -188,15 +188,15 @@ msgid ""
 "credentials for Aruba CX switch pair with API access granted and "
 "read/write access to switch configuration. See ArubaCX 8325 documentation"
 " for more information on user rights administration in that product."
-msgstr ""
+msgstr "O uso completo da integração ArubaCX do |morpheus| requer credenciais para o par de switches Aruba CX com acesso à API concedido e acesso de leitura/escrita à configuração do switch. Consulte a documentação do ArubaCX 8325 para mais informações sobre administração de direitos de usuário nesse produto."
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:96
 msgid "Navigate to |AdmInt|"
-msgstr ""
+msgstr "Navegue até |AdmInt|"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:97
 msgid "Select :guilabel:`+ New Integration` > Other > ArubaCX"
-msgstr ""
+msgstr "Selecione :guilabel:`+ New Integration` > Other > ArubaCX"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:99
 msgid ""
@@ -206,62 +206,62 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:101
 msgid "Enter the following:"
-msgstr ""
+msgstr "Informe o seguinte:"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:103
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:104
 msgid "Name of the integration in |morpheus|"
-msgstr ""
+msgstr "Nome da integração no |morpheus|"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:105
 msgid "ENABLED"
-msgstr ""
+msgstr "ENABLED"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:106
 msgid "Deselect to disable the integration"
-msgstr ""
+msgstr "Desmarque para desativar a integração"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:107
 #: ../../integration_guides/Networking/hpe_arubacx.rst:113
 msgid "ARUBA SWITCH IP"
-msgstr ""
+msgstr "ARUBA SWITCH IP"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:108
 msgid "Primary switch IP address"
-msgstr ""
+msgstr "Endereço IP do switch primário"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:109
 #: ../../integration_guides/Networking/hpe_arubacx.rst:115
 msgid "ARUBA SWITCH USERNAME"
-msgstr ""
+msgstr "ARUBA SWITCH USERNAME"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:110
 msgid "Primary switch user username"
-msgstr ""
+msgstr "Nome de usuário do usuário do switch primário"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:111
 #: ../../integration_guides/Networking/hpe_arubacx.rst:117
 msgid "ARUBA SWITCH PASSWORD"
-msgstr ""
+msgstr "ARUBA SWITCH PASSWORD"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:112
 msgid "Primary switch user password"
-msgstr ""
+msgstr "Senha do usuário do switch primário"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:114
 msgid "Secondary switch IP address"
-msgstr ""
+msgstr "Endereço IP do switch secundário"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:116
 msgid "Secondary switch user username"
-msgstr ""
+msgstr "Nome de usuário do usuário do switch secundário"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:118
 msgid "Secondary switch user password"
-msgstr ""
+msgstr "Senha do usuário do switch secundário"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:120
 msgid ".. image:: /images/integration_guides/other/arubacx/arubacx_settings.png"
@@ -269,35 +269,35 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:123
 msgid "Select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Selecione :guilabel:`SAVE CHANGES`"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:125
 msgid "Upon save the `ArubaCX Network integration` will be created."
-msgstr ""
+msgstr "Ao salvar, a `integração de Rede ArubaCX` será criada."
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:127
 msgid "All fields can be edited after saving."
-msgstr ""
+msgstr "Todos os campos podem ser editados após salvar."
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:130
 msgid "Add ArubaCX Integration to a Cluster"
-msgstr ""
+msgstr "Adicionar Integração ArubaCX a um Cluster"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:131
 msgid "In :menuselection:`Infrastructure --> Clusters` select the target Cluster"
-msgstr ""
+msgstr "Em :menuselection:`Infrastructure --> Clusters` selecione o Cluster de destino"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:132
 msgid "Select the `Edit` icon for the Cluster"
-msgstr ""
+msgstr "Selecione o ícone `Edit` do Cluster"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:133
 msgid "In the \"Integrations\" dropdown, select an available ArubaCX Integration"
-msgstr ""
+msgstr "No dropdown \"Integrations\", selecione uma Integração ArubaCX disponível"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:134
 msgid "Save Changes"
-msgstr ""
+msgstr "Salve as Alterações"
 
 #: ../../integration_guides/Networking/hpe_arubacx.rst:136
 msgid ""

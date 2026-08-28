@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:2
 msgid "Configuring Access with Clouds, Groups, and Roles"
-msgstr ""
+msgstr "Configuration de l'accès avec les Clouds, Groupes et Rôles"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:4
 msgid ""
@@ -33,7 +33,7 @@ msgid ""
 "resources they need. Map currently-existing strategies for splitting "
 "resources and controlling costs into |morpheus| and your teams will have "
 "access only to resources allocated to their department."
-msgstr ""
+msgstr "En débutant, il est essentiel de comprendre des concepts tels que les Clouds et les Groupes tels qu'ils sont implémentés dans |morpheus|. Déployer une stratégie efficace pour répartir les ressources organisationnelles et les groupes de personnes sous ces concepts garantira que toutes les parties ont un accès pratique aux ressources dont elles ont besoin. Mappez les stratégies existantes de répartition des ressources et de contrôle des coûts dans |morpheus| et vos équipes n'auront accès qu'aux ressources allouées à leur service."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:6
 msgid ""
@@ -42,7 +42,7 @@ msgid ""
 "resources and distributing access under these umbrellas. We'll end up "
 "with a permissions structure represented by the diagram below and step "
 "through each part of the implementation process."
-msgstr ""
+msgstr "Ce guide aborde les concepts de Clouds, Groupes, Rôles, Utilisateurs et Règles tout en présentant un cas d'utilisation exemple pour l'allocation de ressources et la distribution de l'accès sous ces concepts. Nous obtiendrons une structure de permissions représentée par le diagramme ci-dessous et parcourrons chaque partie du processus de mise en œuvre."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:8
 msgid ".. image:: /images/integration_guides/perms_guide/0permsDiagram.png"
@@ -50,7 +50,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:11
 msgid "Clouds"
-msgstr ""
+msgstr "Clouds"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:13
 msgid ""
@@ -58,7 +58,7 @@ msgid ""
 "public clouds, private clouds, or bare metal servers. You can read more "
 "about Clouds in |morpheus| Docs `here "
 "<https://docs.morpheusdata.com/en/latest/infrastructure/clouds/clouds.html>`_."
-msgstr ""
+msgstr "Les Clouds ont une signification large dans |morpheus| et peuvent être des intégrations vers des clouds publics, des clouds privés ou des serveurs bare metal. Vous pouvez en savoir plus sur les Clouds dans la documentation |morpheus| `ici <https://docs.morpheusdata.com/en/latest/infrastructure/clouds/clouds.html>`_."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:15
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "are `here "
 "<https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/azure/azure.html>`_"
 " in |morpheus| Docs."
-msgstr ""
+msgstr "Dans notre cas exemple, l'organisation dispose d'un compte Azure et de trois projets de services distincts consolidés sous des groupes de ressources séparés. L'intégration |morpheus| avec le cloud public Azure permet aux utilisateurs de limiter le Cloud à un groupe de ressources spécifique, si souhaité. Nous le ferons dans ce cas, car cela nous permettra de restreindre nos utilisateurs aux groupes de ressources Azure appropriés à une étape ultérieure. Dans la capture d'écran ci-dessous, notez comment je limite le Cloud Azure |morpheus| à un groupe de ressources spécifique lors de l'ajout ou de la modification du Cloud. Ce processus sera répété deux fois supplémentaires pour créer les trois Clouds |morpheus| nécessaires. Les détails complets sur l'intégration de |morpheus| avec le cloud public Azure se trouvent `ici <https://docs.morpheusdata.com/en/latest/integration_guides/Clouds/azure/azure.html>`_ dans la documentation |morpheus|."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:17
 msgid ".. image:: /images/integration_guides/perms_guide/1configCloud.png"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:21
 msgid "Groups"
-msgstr ""
+msgstr "Groupes"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:23
 msgid ""
@@ -94,7 +94,7 @@ msgid ""
 "section, is selecting which Groups are associated with the Role. One or "
 "multiple Clouds are added to each Group and passed to users through their"
 " assigned Roles."
-msgstr ""
+msgstr "Les `Groupes <https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html>`_ dans |morpheus| permettent aux administrateurs de déterminer quels Clouds leurs utilisateurs peuvent accéder. Une partie de la définition d'un rôle, que nous verrons dans la section suivante, consiste à sélectionner les Groupes associés au rôle. Un ou plusieurs Clouds sont ajoutés à chaque Groupe et transmis aux utilisateurs via leurs rôles assignés."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:25
 msgid ""
@@ -105,7 +105,7 @@ msgid ""
 "specific resource group) is associated with each Group but often Groups "
 "will contain many Clouds. In the screenshot below, I am adding an Azure "
 "Cloud to a Group that is currently empty."
-msgstr ""
+msgstr "Lors de la création d'un Cloud, il doit être ajouté à un Groupe. De plus, des Clouds peuvent être ajoutés à un Groupe à tout moment depuis l'onglet Clouds de la page de détail du Groupe (Infrastructure > Groupes > Groupe spécifique). Dans le cas exemple diagrammé ci-dessus, un Cloud (compte cloud Azure limité à un groupe de ressources spécifique) est associé à chaque Groupe, mais les Groupes contiennent souvent de nombreux Clouds. Dans la capture d'écran ci-dessous, j'ajoute un Cloud Azure à un Groupe actuellement vide."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:27
 msgid ".. image:: /images/integration_guides/perms_guide/2addCloudToGroup.png"
@@ -113,7 +113,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:30
 msgid "Roles"
-msgstr ""
+msgstr "Rôles"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:32
 msgid ""
@@ -128,7 +128,7 @@ msgid ""
 "example case, I will create a set of Roles to handle Group access for my "
 "users and another set of Roles to give access to the correct feature "
 "permissions."
-msgstr ""
+msgstr "Les rôles |morpheus| déterminent l'accès des utilisateurs à de nombreux éléments, notamment les fonctionnalités de l'application, les Groupes, les Types d'instances configurés, les Plans configurés, les Personas et les configurations d'éléments de catalogue pour la Persona Catalogue de services. Il est important de noter qu'un utilisateur peut avoir plusieurs rôles et bénéficiera des droits les plus permissifs parmi tous ces rôles. Dans de nombreux cas, cela simplifie considérablement la configuration des rôles pour les administrateurs, car cela évite de créer des rôles individuels très spécifiques adaptés à chaque cas. Pour illustrer cela dans notre cas exemple, je vais créer un ensemble de rôles pour gérer l'accès aux Groupes pour mes utilisateurs et un autre ensemble de rôles pour accorder les permissions de fonctionnalité appropriées."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:34
 msgid ""
@@ -136,7 +136,7 @@ msgid ""
 "three Groups we created in the previous step. By default, a new Role will"
 " have all feature permissions set to \"None\" as shown below meaning we "
 "can skip directly to the Group Access tab."
-msgstr ""
+msgstr "Pour ce cas exemple, je commencerai par créer un rôle pour chacun des trois Groupes que nous avons créés à l'étape précédente. Par défaut, un nouveau rôle aura toutes les permissions de fonctionnalité définies sur « None », comme illustré ci-dessous, ce qui signifie que nous pouvons passer directement à l'onglet Accès aux groupes."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:36
 msgid ".. image:: /images/integration_guides/perms_guide/3roleFeatureAccess.png"
@@ -149,7 +149,7 @@ msgid ""
 "doing this for each of our Groups created in the last section, we can "
 "easily control Group access for each user by applying one or more of our "
 "Group Roles to their user which we will do in the next section."
-msgstr ""
+msgstr "Sur l'onglet Accès aux groupes, je basculerai le paramètre Accès global sur Personnalisé et n'accorderai l'accès qu'à un seul Groupe, comme illustré sur l'image suivante. En faisant cela pour chacun de nos Groupes créés dans la dernière section, nous pouvons facilement contrôler l'accès aux Groupes pour chaque utilisateur en appliquant un ou plusieurs de nos rôles de Groupe à leur utilisateur, ce que nous ferons dans la section suivante."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:40
 msgid ".. image:: /images/integration_guides/perms_guide/4roleGroupAccess.png"
@@ -165,11 +165,11 @@ msgid ""
 " Roles are created in the same way as the Group Roles we just created but"
 " all Group access will be set to \"None\" and the appropriate feature "
 "access will be configured on the \"Feature Access\" tab."
-msgstr ""
+msgstr "Outre les rôles pour gérer l'accès aux Groupes, nous avons besoin d'ensembles de rôles supplémentaires qui contrôleront notre accès aux fonctionnalités. Par exemple, nous pourrions avoir un accès aux fonctionnalités très permissif pour les administrateurs et un accès plus restrictif pour les développeurs ou d'autres utilisateurs ayant des responsabilités spécifiques nécessitant l'accès à quelques zones spécifiques de l'interface. Ces rôles supplémentaires sont créés de la même manière que les rôles de Groupe que nous venons de créer, mais tout accès aux Groupes sera défini sur « None » et l'accès aux fonctionnalités approprié sera configuré sur l'onglet « Feature Access »."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:45
 msgid "Users"
-msgstr ""
+msgstr "Utilisateurs"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:47
 msgid ""
@@ -180,7 +180,7 @@ msgid ""
 "this user and I've applied the \"Developer\" role to give only the "
 "feature access needed for this user to carry out his or her "
 "responsibilities."
-msgstr ""
+msgstr "Avec les bases posées dans les étapes précédentes, nous pouvons facilement configurer les permissions pour tout compte utilisateur que nous pourrions ajouter à |morpheus|. Dans la capture d'écran ci-dessous, j'ajoute un compte utilisateur pour un développeur de mon organisation. J'ai appliqué un rôle pour gérer l'accès correct aux Groupes pour cet utilisateur et j'ai appliqué le rôle « Developer » pour n'accorder que l'accès aux fonctionnalités nécessaires à cet utilisateur pour exercer ses responsabilités."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:49
 msgid ".. image:: /images/integration_guides/perms_guide/5newUser.png"
@@ -188,7 +188,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:53
 msgid "Policies"
-msgstr ""
+msgstr "Règles"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:55
 msgid ""
@@ -199,7 +199,7 @@ msgid ""
 "<https://docs.morpheusdata.com/en/latest/administration/policies/policies.html>`_"
 " but we will also create some that apply to the example case discussed in"
 " this guide."
-msgstr ""
+msgstr "Une dernière considération pour ce cas exemple est l'application des règles. |morpheus| permet aux administrateurs de mettre en place une gouvernance fine, limitée à des utilisateurs, rôles, groupes, clouds, locataires ou globalement. Vous pouvez en savoir plus sur les règles dans la documentation |morpheus| `ici <https://docs.morpheusdata.com/en/latest/administration/policies/policies.html>`_, et nous en créerons également qui s'appliquent au cas exemple discuté dans ce guide."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:57
 msgid ""
@@ -208,7 +208,7 @@ msgid ""
 " scope it to a Group. In this case, I'm creating a maximum VMs policy but"
 " there are many other types which are listed in our documentation linked "
 "above."
-msgstr ""
+msgstr "Les règles sont créées depuis le menu Administration dans la section Règles. Dans la capture d'écran ci-dessous, j'ai créé une nouvelle règle et choisi de la limiter à un Groupe. Dans ce cas, je crée une règle de VMs maximum, mais de nombreux autres types sont listés dans notre documentation liée ci-dessus."
 
 #: ../../getting_started/guides/groups_roles_perms.rst:59
 msgid ".. image:: /images/integration_guides/perms_guide/6policies.png"
@@ -216,7 +216,7 @@ msgstr ""
 
 #: ../../getting_started/guides/groups_roles_perms.rst:63
 msgid "Conclusion"
-msgstr ""
+msgstr "Conclusion"
 
 #: ../../getting_started/guides/groups_roles_perms.rst:65
 msgid ""
@@ -228,5 +228,5 @@ msgid ""
 "discussed in this guide. Armed with that understanding, the example case "
 "presented here can be expanded to suit the needs of large-scale "
 "enterprise."
-msgstr ""
+msgstr "À ce stade, nous avons terminé la mise en œuvre de la structure d'accès. Lorsque de nouveaux utilisateurs sont ajoutés, nous pouvons facilement leur accorder l'accès aux Groupes et aux fonctionnalités dont ils ont besoin. Nous pouvons également facilement ajouter ou modifier les règles en place ou ajouter de nouveaux Clouds et distribuer l'accès aux utilisateurs existants. L'essentiel est de comprendre la relation entre les concepts |morpheus| abordés dans ce guide. Fort de cette compréhension, le cas exemple présenté ici peut être étendu pour répondre aux besoins d'une entreprise à grande échelle."
 

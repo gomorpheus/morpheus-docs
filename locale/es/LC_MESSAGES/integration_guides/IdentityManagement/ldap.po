@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:2
 msgid "LDAP"
-msgstr ""
+msgstr "LDAP"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Descripción general"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:7
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "and creates or updates the corresponding |morpheus| user at login. "
 "Identity sources are configured per Tenant under |AdmTen| > selected "
 "Tenant > :guilabel:`IDENTITY SOURCES`."
-msgstr ""
+msgstr "La fuente de identidad LDAP autentica usuarios contra un directorio LDAP y crea o actualiza el usuario correspondiente de |morpheus| al iniciar sesión. Las fuentes de identidad se configuran por inquilino en |AdmTen| > inquilino seleccionado > :guilabel:`IDENTITY SOURCES`."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:9
 msgid ""
@@ -45,79 +45,79 @@ msgid ""
 "``ldaps://`` URL and a certificate issued for the directory hostname "
 "whenever the directory supports TLS. Do not place production credentials "
 "in examples, tickets, or screenshots."
-msgstr ""
+msgstr "Antes de configurar la fuente, obtenga una URL de directorio, una cuenta de enlace con privilegios mínimos, el patrón de nombre distinguido (DN) del usuario, los nombres de atributos de usuario y los DNs de cualquier grupo utilizado para restringir el acceso o asignar roles. El dispositivo debe poder alcanzar el endpoint del directorio. Utilice una URL ``ldaps://`` y un certificado emitido para el hostname del directorio siempre que el directorio admita TLS. No coloque credenciales de producción en ejemplos, tickets o capturas de pantalla."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:12
 msgid "Adding an LDAP Identity Source"
-msgstr ""
+msgstr "Agregar una fuente de identidad LDAP"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:14
 msgid "Navigate to |AdmTen| and select a Tenant."
-msgstr ""
+msgstr "Navegue a |AdmTen| y seleccione un inquilino."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:15
 msgid ""
 "Select :guilabel:`IDENTITY SOURCES`, then :guilabel:`+ ADD IDENTITY "
 "SOURCE`."
-msgstr ""
+msgstr "Seleccione :guilabel:`IDENTITY SOURCES`, luego :guilabel:`+ ADD IDENTITY SOURCE`."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:16
 msgid "Select ``LDAP`` and configure the following fields:"
-msgstr ""
+msgstr "Seleccione ``LDAP`` y configure los siguientes campos:"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:18
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:19
 msgid ""
 "LDAP endpoint, including the scheme and port, for example "
 "``ldaps://ldap.example.com:636``."
-msgstr ""
+msgstr "Endpoint LDAP, incluido el esquema y el puerto, por ejemplo ``ldaps://ldap.example.com:636``."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:20
 msgid "Binding Username"
-msgstr ""
+msgstr "Nombre de usuario de enlace"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:21
 msgid ""
 "DN or username for an account that can read the required users, "
 "attributes, and groups."
-msgstr ""
+msgstr "DN o nombre de usuario de una cuenta que pueda leer los usuarios, atributos y grupos requeridos."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:22
 msgid "Binding Password"
-msgstr ""
+msgstr "Contraseña de enlace"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:23
 msgid "Password for the binding account. The value is stored as a secured field."
-msgstr ""
+msgstr "Contraseña de la cuenta de enlace. El valor se almacena como un campo protegido."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:24
 msgid "User DN Expression"
-msgstr ""
+msgstr "Expresión DN de usuario"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:25
 msgid ""
 "Template used to construct the authenticating user's DN. ``$username`` is"
 " replaced with the supplied login name, for example "
 "``uid=$username,ou=people,dc=example,dc=com``."
-msgstr ""
+msgstr "Plantilla utilizada para construir el DN del usuario que se autentica. ``$username`` se reemplaza con el nombre de inicio de sesión proporcionado, por ejemplo ``uid=$username,ou=people,dc=example,dc=com``."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:26
 msgid "Required Group DN"
-msgstr ""
+msgstr "DN de grupo requerido"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:27
 msgid ""
 "Optional group DN that a user must match before login is authorized. "
 "Leaving it empty removes this group gate; successful directory "
 "authentication can then create or synchronize a user."
-msgstr ""
+msgstr "DN de grupo opcional que un usuario debe coincidir antes de que se autorice el inicio de sesión. Dejarlo vacío elimina este filtro de grupo; la autenticación exitosa en el directorio puede entonces crear o sincronizar un usuario."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:28
 msgid "LDAP Attribute Names"
-msgstr ""
+msgstr "Nombres de atributos LDAP"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:29
 msgid ""
@@ -126,7 +126,7 @@ msgid ""
 "implementation defaults to ``uid``, ``cn``, ``givenName``, ``sn``, "
 "``mail``, ``uniqueMember``, and ``memberOf`` respectively when a value is"
 " not supplied."
-msgstr ""
+msgstr "Nombres de atributos utilizados para leer el nombre de usuario, nombre común, nombre, apellido, email, miembros del grupo y membresías de grupo del usuario. La implementación utiliza ``uid``, ``cn``, ``givenName``, ``sn``, ``mail``, ``uniqueMember`` y ``memberOf`` respectivamente como valores predeterminados cuando no se proporciona un valor."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:31
 msgid ""
@@ -136,64 +136,64 @@ msgid ""
 " adds its Role; the Default Role is also assigned. With Manual Role "
 "Assignment disabled, these identity-source Roles are recalculated on "
 "login."
-msgstr ""
+msgstr "Configure el rol predeterminado y asigne roles adicionales de |morpheus| a DNs de grupos LDAP. Al iniciar sesión, se prueba la membresía de grupo contra el atributo de membresía de usuario configurado (y luego ``uniqueMemberOf``). Cada asignación coincidente agrega su rol; el rol predeterminado también se asigna. Con la asignación manual de roles deshabilitada, estos roles de la fuente de identidad se recalculan al iniciar sesión."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:32
 msgid ""
 "Save the source. Saving validates the URL, bind credentials, user DN "
 "expression, Required Group DN, and mapped group DNs."
-msgstr ""
+msgstr "Guarde la fuente. Al guardar se validan la URL, las credenciales de enlace, la expresión DN de usuario, el DN de grupo requerido y los DNs de grupos asignados."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:35
 msgid "Testing and troubleshooting"
-msgstr ""
+msgstr "Pruebas y solución de problemas"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:37
 msgid ""
 "Test with a non-administrative directory user that is in the required and"
 " mapped groups, then with a user outside the Required Group. Confirm the "
 "resulting local profile attributes and Roles. If saving or login fails:"
-msgstr ""
+msgstr "Pruebe con un usuario de directorio no administrativo que esté en los grupos requeridos y asignados, luego con un usuario fuera del grupo requerido. Confirme los atributos del perfil local resultante y los roles. Si falla el guardado o el inicio de sesión:"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:39
 msgid ""
 "Verify DNS, routing, and the LDAP/LDAPS port from every appliance "
 "application node."
-msgstr ""
+msgstr "Verifique DNS, enrutamiento y el puerto LDAP/LDAPS desde cada nodo de aplicación del dispositivo."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:40
 msgid ""
 "Verify the bind account can read the generated user DN and every "
 "configured group DN."
-msgstr ""
+msgstr "Verifique que la cuenta de enlace pueda leer el DN de usuario generado y cada DN de grupo configurado."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:41
 msgid ""
 "Check that the User DN Expression produces the user's exact DN and that "
 "attribute names match the directory schema."
-msgstr ""
+msgstr "Compruebe que la expresión DN de usuario produce el DN exacto del usuario y que los nombres de atributos coinciden con el esquema del directorio."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:42
 msgid ""
 "Confirm group mapping values are full DNs and match the values returned "
 "by the user's membership attribute."
-msgstr ""
+msgstr "Confirme que los valores de asignación de grupos son DNs completos y coinciden con los valores devueltos por el atributo de membresía del usuario."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:43
 msgid ""
 "For LDAPS, verify the endpoint hostname and certificate chain. Do not "
 "bypass certificate checks in external diagnostic clients or replace LDAPS"
 " with clear-text LDAP as a production workaround."
-msgstr ""
+msgstr "Para LDAPS, verifique el hostname del endpoint y la cadena de certificados. No omita las comprobaciones de certificados en clientes de diagnóstico externos ni reemplace LDAPS con LDAP sin cifrar como solución alternativa de producción."
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:45
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/IdentityManagement/ldap.rst:45
 msgid ""
 "The fields and defaults above describe the current LDAP implementation. "
 "Directory schemas vary; use the attribute names and DN syntax returned by"
 " your directory rather than assuming Active Directory conventions."
-msgstr ""
+msgstr "Los campos y valores predeterminados anteriores describen la implementación LDAP actual. Los esquemas de directorio varían; utilice los nombres de atributos y la sintaxis DN devueltos por su directorio en lugar de asumir convenciones de Active Directory."
 

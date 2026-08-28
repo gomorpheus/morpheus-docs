@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:2
 msgid "Getting Started with Custom Instance Tabs"
-msgstr ""
+msgstr "Erste Schritte mit benutzerdefinierten Instanz-Registerkarten"
 
 #: ../../getting_started/guides/instance_tabs.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "documentation including the full API documentation and links to Github "
 "repositories containing complete code examples are available in the "
 "`Developer Portal <https://developer.morpheusdata.com/>`_."
-msgstr ""
+msgstr "Die |morpheus|-Plugin-Architektur ist eine Bibliothek, mit der Benutzer die Funktionalität in mehreren Kategorien erweitern können, darunter neue Cloud-Provider, Aufgabentypen, UI-Ansichten, benutzerdefinierte Berichte und mehr. In diesem Leitfaden entwickeln wir eine benutzerdefinierte DataDog-Registerkarte für Instanz-Detailseiten und fügen sie der |morpheus|-UI hinzu. Vollständige Entwicklerdokumentation einschließlich der gesamten API-Dokumentation und Links zu Github-Repositorys mit vollständigen Codebeispielen finden Sie im `Developer Portal <https://developer.morpheusdata.com/>`_."
 
 #: ../../getting_started/guides/instance_tabs.rst:6
 msgid ""
@@ -50,29 +50,29 @@ msgid ""
 "this guide is based on, is `here <https://github.com/martezr/morpheus-"
 "datadog-instance-tab-plugin>`_. You can read the example code and tweak "
 "it to suit your needs using the guidance in this document."
-msgstr ""
+msgstr "Die Entwicklung benutzerdefinierter Plugins erfordert Programmiererfahrung, aber dieser Leitfaden gliedert die erforderlichen Schritte in einen überschaubaren Prozess, den Benutzer schnell umsetzen können. |morpheus|-Plugins werden in Java oder Groovy geschrieben; unser Beispiel hier ist in Groovy verfasst. Unterstützung für weitere Sprachen ist geplant, zum Zeitpunkt dieser Veröffentlichung jedoch noch nicht verfügbar. Wenn Sie kein erfahrener Java- oder Groovy-Entwickler sind, kann es hilfreich sein, ein `example code repository <https://github.com/gomorpheus/morpheus-plugin-core/tree/master/samples/morpheus-reports-plugin>`_ zu klonen, auf das wir in unserem Entwicklerportal verlinken. Ein weiteres Beispiel, auf dem dieser Leitfaden basiert, finden Sie `here <https://github.com/martezr/morpheus-datadog-instance-tab-plugin>`_. Sie können den Beispielcode lesen und anhand der Hinweise in diesem Dokument an Ihre Anforderungen anpassen."
 
 #: ../../getting_started/guides/instance_tabs.rst:8
 msgid ""
 "Before you begin, ensure you have the following installed in your "
 "development environment:"
-msgstr ""
+msgstr "Stellen Sie vor dem Start sicher, dass Folgendes in Ihrer Entwicklungsumgebung installiert ist:"
 
 #: ../../getting_started/guides/instance_tabs.rst:10
 msgid "Gradle 6.5 or later"
-msgstr ""
+msgstr "Gradle 6.5 oder höher"
 
 #: ../../getting_started/guides/instance_tabs.rst:11
 msgid "Java 8 or 11"
-msgstr ""
+msgstr "Java 8 oder 11"
 
 #: ../../getting_started/guides/instance_tabs.rst:12
 msgid "A DataDog account"
-msgstr ""
+msgstr "Ein DataDog-Konto"
 
 #: ../../getting_started/guides/instance_tabs.rst:15
 msgid "Planning the Plugin"
-msgstr ""
+msgstr "Das Plugin planen"
 
 #: ../../getting_started/guides/instance_tabs.rst:17
 msgid ""
@@ -83,11 +83,11 @@ msgid ""
 "information collected by DataDog. We'll also create a default page which "
 "will show in this tab for Instance which do not have the DataDog agent "
 "installed."
-msgstr ""
+msgstr "In diesem Beispiel erstelle ich eine benutzerdefinierte UI-Registerkarte für Instanz-Detailseiten, die zugehörige Daten aus der DataDog-Monitoring-Lösung anzeigt. Die Registerkarte enthält zwei auswählbare Abschnitte: erstens eine Übersicht mit Grundinformationen zur Instanz und zweitens Systeminformationen, die von DataDog erfasst wurden. Außerdem erstellen wir eine Standardseite, die in dieser Registerkarte für Instanzen ohne installierten DataDog-Agent angezeigt wird."
 
 #: ../../getting_started/guides/instance_tabs.rst:20
 msgid "Understanding the DataDog API"
-msgstr ""
+msgstr "Die DataDog-API verstehen"
 
 #: ../../getting_started/guides/instance_tabs.rst:22
 msgid ""
@@ -99,25 +99,25 @@ msgid ""
 "authenticate calls to its REST API. The process for generating the keys "
 "can also be found in `DataDog API documentation "
 "<https://docs.datadoghq.com/account_management/api-app-keys/#api-keys>`_."
-msgstr ""
+msgstr "Da wir wissen, was wir tun wollen, müssen wir die API-Aufrufe ermitteln, die die gewünschten Daten für unser Plugin liefern. Die `DataDog API Documentation <https://docs.datadoghq.com/api/latest/>`_ beschreibt die unterstützten API-Aufrufe und die zu erwartenden Response-Payloads. Zusätzlich erfordert die DataDog-REST-API einen API-Schlüssel sowie einen Application Key zur Authentifizierung der Aufrufe. Der Prozess zur Erzeugung der Schlüssel ist ebenfalls in der `DataDog API documentation <https://docs.datadoghq.com/account_management/api-app-keys/#api-keys>`_ beschrieben."
 
 #: ../../getting_started/guides/instance_tabs.rst:24
 msgid ""
 "When making API calls, we'll use a function from the |morpheus| plugin "
 "library which simplifies the process for making HTTP requests to external"
 " APIs. You'll see an example use of that function later in this guide."
-msgstr ""
+msgstr "Für API-Aufrufe nutzen wir eine Funktion aus der |morpheus|-Plugin-Bibliothek, die HTTP-Anfragen an externe APIs vereinfacht. Ein Beispiel für die Verwendung dieser Funktion sehen Sie später in diesem Leitfaden."
 
 #: ../../getting_started/guides/instance_tabs.rst:27
 msgid "Developing the Plugin"
-msgstr ""
+msgstr "Das Plugin entwickeln"
 
 #: ../../getting_started/guides/instance_tabs.rst:29
 msgid ""
 "The first thing we'll do is create a new directory to house the project. "
 "You’ll ultimately end up with a file structure typical of Java or Groovy "
 "projects, looking something like this:"
-msgstr ""
+msgstr "Als Erstes erstellen wir ein neues Verzeichnis für das Projekt. Am Ende erhalten Sie eine für Java- oder Groovy-Projekte typische Dateistruktur, die etwa so aussieht:"
 
 #: ../../getting_started/guides/instance_tabs.rst:31
 msgid ""
@@ -140,11 +140,11 @@ msgid ""
 "resources are stored in the src/main/resources subfolder and vary "
 "depending on the view renderer of choice. Static assets, like icons or "
 "custom javascript, live within the src/assets folder."
-msgstr ""
+msgstr "Konfigurieren Sie die .gitignore-Datei so, dass das Verzeichnis build/ ignoriert wird, das nach dem ersten Build erscheint. Projektpakete liegen unter src/main/groovy und enthalten Quelldateien mit der Endung .groovy. Ansichtsressourcen werden im Unterordner src/main/resources gespeichert und variieren je nach gewähltem View-Renderer. Statische Assets wie Icons oder benutzerdefiniertes JavaScript liegen im Ordner src/assets."
 
 #: ../../getting_started/guides/instance_tabs.rst:46
 msgid "Updating the build.gradle File"
-msgstr ""
+msgstr "Die Datei build.gradle aktualisieren"
 
 #: ../../getting_started/guides/instance_tabs.rst:48
 msgid ""
@@ -152,7 +152,7 @@ msgid ""
 "plugin. The example included in the expandable section below is "
 "sufficient for most use cases with a few updates detailed in the table "
 "below."
-msgstr ""
+msgstr "Die Datei build.gradle enthält Informationen für den Build des Plugins. Das Beispiel im erweiterbaren Abschnitt unten reicht für die meisten Anwendungsfälle; einige Aktualisierungen sind in der folgenden Tabelle beschrieben."
 
 #: ../../getting_started/guides/instance_tabs.rst:52
 msgid ""
@@ -201,39 +201,39 @@ msgstr ""
 #: ../../getting_started/guides/instance_tabs.rst:100
 #: ../../getting_started/guides/instance_tabs.rst:127
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 #: ../../getting_started/guides/instance_tabs.rst:101
 #: ../../getting_started/guides/instance_tabs.rst:128
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../getting_started/guides/instance_tabs.rst:102
 msgid "Example"
-msgstr ""
+msgstr "Beispiel"
 
 #: ../../getting_started/guides/instance_tabs.rst:103
 msgid "group"
-msgstr ""
+msgstr "group"
 
 #: ../../getting_started/guides/instance_tabs.rst:104
 msgid ""
 "The group of the project or an identifier of who owns the plugins. This "
 "is typically a domain that is associated with the individual developer or"
 " organization."
-msgstr ""
+msgstr "Die Gruppe des Projekts oder eine Kennung des Plugin-Inhabers. Typischerweise ist dies eine Domain, die dem einzelnen Entwickler oder der Organisation zugeordnet ist."
 
 #: ../../getting_started/guides/instance_tabs.rst:105
 msgid "com.morpheusdata"
-msgstr ""
+msgstr "com.morpheusdata"
 
 #: ../../getting_started/guides/instance_tabs.rst:106
 msgid "version"
-msgstr ""
+msgstr "version"
 
 #: ../../getting_started/guides/instance_tabs.rst:107
 msgid "The version of the plugin which will appear in the Morpheus UI"
-msgstr ""
+msgstr "Die Version des Plugins, die in der Morpheus-UI angezeigt wird"
 
 #: ../../getting_started/guides/instance_tabs.rst:108
 msgid "0.0.2"
@@ -241,7 +241,7 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:109
 msgid "dependencies"
-msgstr ""
+msgstr "dependencies"
 
 #: ../../getting_started/guides/instance_tabs.rst:110
 msgid ""
@@ -251,30 +251,30 @@ msgid ""
 "<https://search.maven.org/artifact/com.morpheusdata/morpheus-plugin-"
 "api>`_ where the releases are hosted. **Versions of the dependency align "
 "with specified versions of the Morpheus platform.**"
-msgstr ""
+msgstr "Das Plugin nutzt mehrere Abhängigkeiten für seine Funktionalität; die Abhängigkeit morpheus-plugin-api ist für uns besonders relevant. Die verfügbaren Release-Versionen finden Sie auf `Maven Central <https://search.maven.org/artifact/com.morpheusdata/morpheus-plugin-api>`_, wo die Releases gehostet werden. **Die Versionen der Abhängigkeit stimmen mit angegebenen Versionen der Morpheus-Plattform überein.**"
 
 #: ../../getting_started/guides/instance_tabs.rst:111
 msgid "com.morpheusdata:morpheus-plugin-api:0.12.0"
-msgstr ""
+msgstr "com.morpheusdata:morpheus-plugin-api:0.12.0"
 
 #: ../../getting_started/guides/instance_tabs.rst:112
 msgid "plugin-class"
-msgstr ""
+msgstr "plugin-class"
 
 #: ../../getting_started/guides/instance_tabs.rst:113
 msgid ""
 "The name of the plugin class (group.packageName.className). In the "
 "example this also aligns with the folder structure of "
 "com/morpheusdata/tab/DataDogTabPlugin.groovy"
-msgstr ""
+msgstr "Der Name der Plugin-Klasse (group.packageName.className). Im Beispiel entspricht dies auch der Ordnerstruktur von com/morpheusdata/tab/DataDogTabPlugin.groovy"
 
 #: ../../getting_started/guides/instance_tabs.rst:114
 msgid "com.morpheusdata.tab.DataDogTabPlugin"
-msgstr ""
+msgstr "com.morpheusdata.tab.DataDogTabPlugin"
 
 #: ../../getting_started/guides/instance_tabs.rst:117
 msgid "Plugin Settings"
-msgstr ""
+msgstr "Plugin-Einstellungen"
 
 #: ../../getting_started/guides/instance_tabs.rst:119
 msgid ""
@@ -282,54 +282,54 @@ msgid ""
 "to update the configuration of the plugin without the need to rebuild it."
 " The 5.4.1 release of the |morpheus| platform added support for plugin "
 "settings which enable the plugin to support runtime configuration."
-msgstr ""
+msgstr "Das Plugin sollte Laufzeitkonfiguration unterstützen, damit Administratoren die Konfiguration ohne erneuten Build aktualisieren können. Mit dem Release 5.4.1 der |morpheus|-Plattform wurden Plugin-Einstellungen eingeführt, die eine Laufzeitkonfiguration ermöglichen."
 
 #: ../../getting_started/guides/instance_tabs.rst:121
 msgid ""
 "In our example we want to expose a few runtime configuration settings "
 "such as the API credentials and conditions for when the tab should be "
 "visible. The table below details the settings that the plugin supports."
-msgstr ""
+msgstr "In unserem Beispiel möchten wir einige Laufzeitkonfigurationseinstellungen bereitstellen, etwa die API-Anmeldedaten und Bedingungen, wann die Registerkarte sichtbar sein soll. Die folgende Tabelle beschreibt die vom Plugin unterstützten Einstellungen."
 
 #: ../../getting_started/guides/instance_tabs.rst:129
 msgid "DataDog API Key"
-msgstr ""
+msgstr "DataDog API Key"
 
 #: ../../getting_started/guides/instance_tabs.rst:130
 msgid "The API key used for authenticating to the DataDog REST API"
-msgstr ""
+msgstr "Der API-Schlüssel zur Authentifizierung an der DataDog-REST-API"
 
 #: ../../getting_started/guides/instance_tabs.rst:131
 msgid "DataDog Application Key"
-msgstr ""
+msgstr "DataDog Application Key"
 
 #: ../../getting_started/guides/instance_tabs.rst:132
 msgid "The application key used for authenticating to the DataDog REST API"
-msgstr ""
+msgstr "Der Application Key zur Authentifizierung an der DataDog-REST-API"
 
 #: ../../getting_started/guides/instance_tabs.rst:133
 msgid "Environment Visibility"
-msgstr ""
+msgstr "Umgebungssichtbarkeit"
 
 #: ../../getting_started/guides/instance_tabs.rst:134
 msgid ""
 "The setting to define which Morpheus environments that a workload belongs"
 " to for the tab to be visible"
-msgstr ""
+msgstr "Die Einstellung, die festlegt, zu welchen Morpheus-Umgebungen eine Arbeitslast gehören muss, damit die Registerkarte sichtbar ist"
 
 #: ../../getting_started/guides/instance_tabs.rst:135
 msgid "Group Visibility"
-msgstr ""
+msgstr "Gruppensichtbarkeit"
 
 #: ../../getting_started/guides/instance_tabs.rst:136
 msgid ""
 "The setting to define which Morpheus groups that a workload belongs to "
 "for the tab to be visible"
-msgstr ""
+msgstr "Die Einstellung, die festlegt, zu welchen Morpheus-Gruppen eine Arbeitslast gehören muss, damit die Registerkarte sichtbar ist"
 
 #: ../../getting_started/guides/instance_tabs.rst:139
 msgid "Defining Plugin Settings"
-msgstr ""
+msgstr "Plugin-Einstellungen definieren"
 
 #: ../../getting_started/guides/instance_tabs.rst:141
 msgid ""
@@ -339,7 +339,7 @@ msgid ""
 " file as inputs similar to inputs used in other areas of the |morpheus| "
 "platform. One item of note is the ``fieldName`` which is used as the "
 "reference for when retrieving the value specified from within the code."
-msgstr ""
+msgstr "Die Plugin-Einstellungen werden in der Datei `plugin definition <https://github.com/martezr/morpheus-datadog-instance-tab-plugin/blob/main/src/main/groovy/com/morpheusdata/tab/DataDogTabPlugin.groovy>`_ als Eingaben definiert, ähnlich wie Eingaben in anderen Bereichen der |morpheus|-Plattform. Besonders wichtig ist ``fieldName``, das als Referenz beim Abrufen des im Code angegebenen Werts dient."
 
 #: ../../getting_started/guides/instance_tabs.rst:143
 msgid ""
@@ -357,7 +357,7 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:157
 msgid "Retrieving Plugin Settings"
-msgstr ""
+msgstr "Plugin-Einstellungen abrufen"
 
 #: ../../getting_started/guides/instance_tabs.rst:159
 msgid ""
@@ -365,7 +365,7 @@ msgid ""
 "configuration of the plugin and so we need to reference them in our code."
 " The settings are accessible by retrieving them and parsing the JSON "
 "payload."
-msgstr ""
+msgstr "Plugin-Einstellungen ermöglichen Administratoren, die Laufzeitkonfiguration des Plugins zu aktualisieren; daher müssen wir sie in unserem Code referenzieren. Die Einstellungen sind zugänglich, indem man sie abruft und die JSON-Payload parst."
 
 #: ../../getting_started/guides/instance_tabs.rst:161
 #, python-brace-format
@@ -389,17 +389,17 @@ msgid ""
 "In our example, the value of the settings will be available using dot "
 "notation (i.e. settingsJson.settingFieldName). This is where fieldName "
 "value of the plugin settings is referenced."
-msgstr ""
+msgstr "In unserem Beispiel sind die Einstellungswerte über Dot-Notation verfügbar (z. B. settingsJson.settingFieldName). Hier wird der fieldName-Wert der Plugin-Einstellungen referenziert."
 
 #: ../../getting_started/guides/instance_tabs.rst:179
 msgid "Query the DataDog API"
-msgstr ""
+msgstr "Die DataDog-API abfragen"
 
 #: ../../getting_started/guides/instance_tabs.rst:181
 msgid ""
 "Now that we've got the response payload we'll use the JsonSlurper library"
 " to parse the JSON."
-msgstr ""
+msgstr "Nachdem wir die Response-Payload haben, verwenden wir die Bibliothek JsonSlurper, um das JSON zu parsen."
 
 #: ../../getting_started/guides/instance_tabs.rst:183
 msgid ""
@@ -412,7 +412,7 @@ msgid ""
 "The parsed payload supports accessing the payload values using dot "
 "notation. The example below which is been truncated for brevity shows how"
 " the payload is accessed and ultimately passed to the html template file."
-msgstr ""
+msgstr "Die geparste Payload unterstützt den Zugriff auf Payload-Werte über Dot-Notation. Das unten stehende, der Kürze halber gekürzte Beispiel zeigt, wie auf die Payload zugegriffen und sie schließlich an die HTML-Template-Datei übergeben wird."
 
 #: ../../getting_started/guides/instance_tabs.rst:190
 #, python-brace-format
@@ -443,24 +443,24 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:216
 msgid "Managing Tab Visibility"
-msgstr ""
+msgstr "Sichtbarkeit der Registerkarte steuern"
 
 #: ../../getting_started/guides/instance_tabs.rst:218
 msgid ""
 "Now that we've got the core functionality of the plugin developed, we "
 "want to restrict which Instances the tab is displayed for (i.e. only "
 "production, AWS cloud Instances, etc.)."
-msgstr ""
+msgstr "Nachdem die Kernfunktionalität des Plugins entwickelt ist, möchten wir einschränken, für welche Instanzen die Registerkarte angezeigt wird (z. B. nur Produktion, AWS-Cloud-Instanzen usw.)."
 
 #: ../../getting_started/guides/instance_tabs.rst:221
 msgid "Manage Visibility with |morpheus| RBAC"
-msgstr ""
+msgstr "Sichtbarkeit mit |morpheus|-RBAC steuern"
 
 #: ../../getting_started/guides/instance_tabs.rst:223
 msgid ""
 "The RBAC permissions associated with a user can be used to determine the "
 "visibility of the DataDog plugin tab."
-msgstr ""
+msgstr "Die mit einem Benutzer verknüpften RBAC-Berechtigungen können die Sichtbarkeit der DataDog-Plugin-Registerkarte bestimmen."
 
 #: ../../getting_started/guides/instance_tabs.rst:225
 #, python-brace-format
@@ -473,7 +473,7 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:233
 msgid "Manage Visibility by Instance Environment Setting"
-msgstr ""
+msgstr "Sichtbarkeit über die Instanz-Umgebungseinstellung steuern"
 
 #: ../../getting_started/guides/instance_tabs.rst:235
 msgid ""
@@ -481,7 +481,7 @@ msgid ""
 "used by custom plugin logic to determine visibility of the DataDog plugin"
 " tab. This example is application logic in the plugin; an Environment is "
 "metadata and does not create a native |morpheus| RBAC boundary."
-msgstr ""
+msgstr "Der auf einer Instanz oder virtuellen Maschine gespeicherte Umgebungkontext kann von benutzerdefinierter Plugin-Logik genutzt werden, um die Sichtbarkeit der DataDog-Plugin-Registerkarte zu bestimmen. Dies ist Anwendungslogik im Plugin; eine Umgebung ist Metadaten und erzeugt keine native |morpheus|-RBAC-Grenze."
 
 #: ../../getting_started/guides/instance_tabs.rst:237
 #, python-brace-format
@@ -504,13 +504,13 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:254
 msgid "Manage Visibility By |morpheus| Group"
-msgstr ""
+msgstr "Sichtbarkeit über |morpheus|-Gruppe steuern"
 
 #: ../../getting_started/guides/instance_tabs.rst:256
 msgid ""
 "The Morpheus group that an instance or virtual machine belongs to can be "
 "used to determine the visibility of the DataDog plugin tab."
-msgstr ""
+msgstr "Die Morpheus-Gruppe, zu der eine Instanz oder virtuelle Maschine gehört, kann die Sichtbarkeit der DataDog-Plugin-Registerkarte bestimmen."
 
 #: ../../getting_started/guides/instance_tabs.rst:258
 #, python-brace-format
@@ -532,7 +532,7 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:275
 msgid "Build the UI Tab Plugin"
-msgstr ""
+msgstr "Das UI-Tab-Plugin erstellen"
 
 #: ../../getting_started/guides/instance_tabs.rst:277
 msgid ""
@@ -540,7 +540,7 @@ msgid ""
 "upload to |morpheus| to install the plugin. To do so, change directory "
 "into the location of the directory created earlier to hold your custom "
 "plugin code."
-msgstr ""
+msgstr "Nachdem der Code geschrieben ist, erstellen wir mit gradle das JAR, das wir in |morpheus| hochladen, um das Plugin zu installieren. Wechseln Sie dazu in das früher angelegte Verzeichnis mit Ihrem benutzerdefinierten Plugin-Code."
 
 #: ../../getting_started/guides/instance_tabs.rst:279
 msgid "cd path/to/your/directory"
@@ -548,7 +548,7 @@ msgstr ""
 
 #: ../../getting_started/guides/instance_tabs.rst:283
 msgid "Run gradle to build a new version of the plugin."
-msgstr ""
+msgstr "Führen Sie gradle aus, um eine neue Version des Plugins zu erstellen."
 
 #: ../../getting_started/guides/instance_tabs.rst:285
 msgid "gradle shadowJar"
@@ -558,47 +558,47 @@ msgstr ""
 msgid ""
 "Once the build process has completed, locate the JAR in the build/libs "
 "directory."
-msgstr ""
+msgstr "Sobald der Build abgeschlossen ist, finden Sie das JAR im Verzeichnis build/libs."
 
 #: ../../getting_started/guides/instance_tabs.rst:292
 msgid "Install and Configure the UI Plugin"
-msgstr ""
+msgstr "Das UI-Plugin installieren und konfigurieren"
 
 #: ../../getting_started/guides/instance_tabs.rst:294
 msgid ""
 "Custom plugins are added to |morpheus| through the Plugins tab in the "
 "Integrations section of the Morpheus UI."
-msgstr ""
+msgstr "Benutzerdefinierte Plugins werden in |morpheus| über die Registerkarte Plugins im Abschnitt Integrationen der Morpheus-UI hinzugefügt."
 
 #: ../../getting_started/guides/instance_tabs.rst:296
 msgid "Navigate to |AdmIntPlu| and click CHOOSE FILE"
-msgstr ""
+msgstr "Navigieren Sie zu |AdmIntPlu| und klicken Sie auf CHOOSE FILE"
 
 #: ../../getting_started/guides/instance_tabs.rst:297
 msgid "Browse for the JAR file and upload it to |morpheus|"
-msgstr ""
+msgstr "Suchen Sie die JAR-Datei und laden Sie sie in |morpheus| hoch"
 
 #: ../../getting_started/guides/instance_tabs.rst:298
 msgid ""
 "The new plugin will be added next to any other custom plugins that may "
 "have been developed for your appliance"
-msgstr ""
+msgstr "Das neue Plugin wird neben allen anderen benutzerdefinierten Plugins Ihrer Appliance hinzugefügt"
 
 #: ../../getting_started/guides/instance_tabs.rst:299
 msgid ""
 "Click on the pencil to the right of the plugin to open the configuration "
 "modal"
-msgstr ""
+msgstr "Klicken Sie auf den Stift rechts neben dem Plugin, um das Konfigurationsmodal zu öffnen"
 
 #: ../../getting_started/guides/instance_tabs.rst:300
 msgid ""
 "Enter the API and Application keys used to authenticate to the DataDog "
 "REST API"
-msgstr ""
+msgstr "Geben Sie die API- und Application Keys zur Authentifizierung an der DataDog-REST-API ein"
 
 #: ../../getting_started/guides/instance_tabs.rst:301
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE`"
 
 #: ../../getting_started/guides/instance_tabs.rst:303
 msgid ""
@@ -607,5 +607,5 @@ msgid ""
 "requirements you may have established. In the row of tabs, you should now"
 " see DataDog. Click on this tab to see the retrieved DataDog details "
 "relevant to this Instance."
-msgstr ""
+msgstr "Nachdem das Plugin zu |morpheus| hinzugefügt wurde, navigieren Sie zu einer Instanz-Detailseite, auf der der DataDog-Agent läuft und die Ihre Sichtbarkeitsanforderungen erfüllt. In der Reihe der Registerkarten sollte nun DataDog erscheinen. Klicken Sie darauf, um die abgerufenen DataDog-Details zu dieser Instanz zu sehen."
 

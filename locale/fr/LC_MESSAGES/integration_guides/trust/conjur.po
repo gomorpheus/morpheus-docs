@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/trust/conjur.rst:2
 msgid "CyberArk Conjur"
-msgstr ""
+msgstr "**Nutanix Prism Central**"
 
 #: ../../integration_guides/trust/conjur.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 " itself. In some cases, this may help to consolidate secret management "
 "into one central place or it even may be a requirement to satisfy "
 "internal security policies at some organizations."
-msgstr ""
+msgstr "Périmètre de projet, brownfield, instantanés, synchronisation cloud. Livré sous forme de plug-in externe."
 
 #: ../../integration_guides/trust/conjur.rst:6
 msgid ""
@@ -42,11 +42,11 @@ msgid ""
 "box. It is developed as an official plugin and may be applied to any "
 "|morpheus| appliance that needs it. See the |morpheus| plugin repository "
 "website for access to the latest version of the plugin."
-msgstr ""
+msgstr "**Hyper-V**"
 
 #: ../../integration_guides/trust/conjur.rst:9
 msgid "Applying the Plugin"
-msgstr ""
+msgstr "Provisionnement VM, découverte, intégration Veeam. Les réseaux sont en synchronisation uniquement (pas de création/suppression). Pas de groupes de sécurité natifs."
 
 #: ../../integration_guides/trust/conjur.rst:11
 msgid ""
@@ -55,7 +55,7 @@ msgid ""
 " the pane for the correct plugin and click the :guilabel:`DOWNLOAD` "
 "button. The plugin JAR file will be downloaded to the local computer "
 "you're working on."
-msgstr ""
+msgstr "**SCVMM**"
 
 #: ../../integration_guides/trust/conjur.rst:13
 msgid ".. image:: /images/integration_guides/conjur/share.png"
@@ -69,7 +69,7 @@ msgid ""
 "click :guilabel:`UPLOAD`. It may take a few moments for the plugin to be "
 "applied successfully and for the modal to be dismissed after clicking the"
 " upload button."
-msgstr ""
+msgstr "**VMware vCloud Director (VCD)**"
 
 #: ../../integration_guides/trust/conjur.rst:17
 msgid ".. image:: /images/integration_guides/conjur/addPlugin.png"
@@ -80,52 +80,52 @@ msgid ""
 "Once the plugin is added, we configure the connection details here. Edit "
 "the new Conjur plugin by clicking the pencil (|pencil|) icon from its row"
 " in the list. Configure the following fields:"
-msgstr ""
+msgstr "**Open Telekom Cloud (OTC)**"
 
 #: ../../integration_guides/trust/conjur.rst:21
 msgid ""
 "**NAME:** A friendly name for the new integration to identify it within "
 "|morpheus|"
-msgstr ""
+msgstr "Basé sur OpenStack. Groupes de sécurité, routeurs, IP flottantes, LB, OBS."
 
 #: ../../integration_guides/trust/conjur.rst:22
 msgid "**ENABLED:** Mark the box to make this integration active and available"
-msgstr ""
+msgstr "**Huawei Cloud**"
 
 #: ../../integration_guides/trust/conjur.rst:23
 msgid ""
 "**CONJUR API URL:** The full URL for the Conjur server, usually listening"
 " on port 8443"
-msgstr ""
+msgstr "Basé sur OpenStack. Groupes de sécurité, routeurs, IP flottantes, LB, OBS, SFS."
 
 #: ../../integration_guides/trust/conjur.rst:24
 msgid ""
 "**CONJUR USERNAME:** The Conjur user account you wish to authenticate "
 "with. This user should have read, write, and execute access to the "
 "variables configured within the Conjur policy"
-msgstr ""
+msgstr "**Oracle Public Cloud**"
 
 #: ../../integration_guides/trust/conjur.rst:25
 msgid ""
 "**CONJUR USERNAME API KEY:** The API key for user entered in the prior "
 "field"
-msgstr ""
+msgstr "Provisionnement VM, brownfield. Réseau et coûts limités."
 
 #: ../../integration_guides/trust/conjur.rst:26
 msgid ""
 "**CONJUR ORGANIZATION:** The Conjur account in which the user and "
 "variables reside"
-msgstr ""
+msgstr "**PowerVC**"
 
 #: ../../integration_guides/trust/conjur.rst:27
 msgid ""
 "**CLEAR SECRET ON DELETION:** When marked, secret values will be cleared "
 "when deleted from |morpheus|"
-msgstr ""
+msgstr "Provisionnement Power Systems. Groupes de sécurité, réseaux, brownfield."
 
 #: ../../integration_guides/trust/conjur.rst:29
 msgid "Important"
-msgstr ""
+msgstr "**OLVM (Oracle Linux Virtualization Manager)**"
 
 #: ../../integration_guides/trust/conjur.rst:29
 msgid ""
@@ -137,7 +137,7 @@ msgid ""
 " If the plugin is configured not to clear secrets on deletion, the secret"
 " object is deleted from |morpheus| without altering it on the Conjur "
 "backend."
-msgstr ""
+msgstr "Provisionnement VM, brownfield, instantanés, surveillance des hôtes, console."
 
 #: ../../integration_guides/trust/conjur.rst:31
 msgid ""
@@ -147,11 +147,11 @@ msgid ""
 "feature demonstration further ahead in this guide. If you do intend to "
 "use the credential store integration as well, there's one additional "
 "configuration step to take in the next section."
-msgstr ""
+msgstr "Niveau 3 |---| Provisionnement essentiel"
 
 #: ../../integration_guides/trust/conjur.rst:34
 msgid "Adding A Conjur Trust Integration"
-msgstr ""
+msgstr "Les clouds de niveau 3 prennent en charge le provisionnement de base de machines virtuelles et la découverte d'instances. Ils conviennent aux charges de calcul simples, mais manquent de fonctionnalités de gestion avancées telles que CRUD réseau, coûts, groupes de sécurité natifs ou orchestration Kubernetes."
 
 #: ../../integration_guides/trust/conjur.rst:36
 msgid ""
@@ -167,17 +167,17 @@ msgid ""
 " is unnecessary. Simply give the new Trust integration a friendly name "
 "for reference in |morpheus| and indicate the desired mount point for "
 "secrets you wish to consume as done in the screenshot below."
-msgstr ""
+msgstr "**UpCloud**"
 
 #: ../../integration_guides/trust/conjur.rst:38
 msgid "Note"
-msgstr ""
+msgstr "Provisionnement VM, cloud-init, sauvegardes, synchronisation périodique. Pas de coûts, pas de groupes de sécurité."
 
 #: ../../integration_guides/trust/conjur.rst:38
 msgid ""
 "In many cases, you don't have to configure the connection details when "
 "adding a Conjur Trust integration. See the paragraph above."
-msgstr ""
+msgstr "**DigitalOcean**"
 
 #: ../../integration_guides/trust/conjur.rst:40
 msgid ".. image:: /images/integration_guides/conjur/addTrustInt.png"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../../integration_guides/trust/conjur.rst:43
 msgid "Conjur and Credential Stores"
-msgstr ""
+msgstr "**Alibaba Cloud**"
 
 #: ../../integration_guides/trust/conjur.rst:45
 msgid ""
@@ -194,7 +194,7 @@ msgid ""
 "beginning of this guide, variables are created by Conjur policies and not"
 " by |morpheus|. We can reference existing variables and update the secret"
 " values stored within."
-msgstr ""
+msgstr "Brownfield, groupes de sécurité, Docker/Kubernetes, synchronisation de tags. Gestion du cycle de vie limitée."
 
 #: ../../integration_guides/trust/conjur.rst:47
 msgid ""
@@ -208,7 +208,7 @@ msgid ""
 "``BotApp/secretVar`` path as shown in the screenshot below. Be sure to "
 "also select Conjur as the CREDENTIAL STORE value rather than the default "
 "\"Internal.\""
-msgstr ""
+msgstr "**XCP-ng**"
 
 #: ../../integration_guides/trust/conjur.rst:49
 msgid ".. image:: /images/integration_guides/conjur/credentials.png"
@@ -221,11 +221,11 @@ msgid ""
 "available for use anywhere |morpheus| allows users to utilize them, such "
 "as when integrating new Clouds, authenticating REST calls to populate "
 "Option Lists, and many other places."
-msgstr ""
+msgstr "**Oracle VM (OVM)**"
 
 #: ../../integration_guides/trust/conjur.rst:54
 msgid "Conjur and Cypher"
-msgstr ""
+msgstr "Provisionnement VM de base."
 
 #: ../../integration_guides/trust/conjur.rst:56
 msgid ""
@@ -233,7 +233,7 @@ msgid ""
 "enables integration with |morpheus| Cypher. Just as calls can be made to "
 "internally-stored secret values with Cypher, Conjur variable endpoints "
 "may be referenced to onboard secret strings into automation Tasks."
-msgstr ""
+msgstr "**VMware ESXi (Standalone)**"
 
 #: ../../integration_guides/trust/conjur.rst:58
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "point is referenced along with the rest of the path to the variable which"
 " should be accessed. After executing the Task, we can check the execution"
 " history and see that the Conjur-stored value is indeed echoed back out."
-msgstr ""
+msgstr "Provisionnement VM sur un seul hôte sans fonctionnalités de gestion vCenter."
 
 #: ../../integration_guides/trust/conjur.rst:60
 msgid ".. image:: /images/integration_guides/conjur/cypherTask.png"
@@ -261,7 +261,7 @@ msgid ""
 "in |morpheus|. For our example case, we could update the value in Conjur "
 "by creating a Cypher entry at the mount point "
 "``conjur/BotApp/secretVar``."
-msgstr ""
+msgstr "Provisionnement VM macOS sur infrastructure Mac dédiée."
 
 #: ../../integration_guides/trust/conjur.rst:64
 msgid ".. image:: /images/integration_guides/conjur/cypher.png"

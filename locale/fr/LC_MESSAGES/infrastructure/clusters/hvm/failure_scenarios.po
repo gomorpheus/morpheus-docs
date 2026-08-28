@@ -22,55 +22,55 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:2
 msgid "Failure Scenarios"
-msgstr ""
+msgstr "Scénarios de panne"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:4
 msgid ""
 "This section documents the expected behavior and timelines for common "
 "failure scenarios in layout 1.3 and 2.0 HVM clusters."
-msgstr ""
+msgstr "Cette section documente le comportement attendu et les délais pour les scénarios de panne courants dans les clusters HVM en disposition 1.3 et 2.0."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:7
 msgid "Scenario 1: Single Host Failure"
-msgstr ""
+msgstr "Scénario 1 : Panne d'un seul hôte"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:9
 msgid ""
 "A single host becomes unavailable due to hardware failure, OS crash, or "
 "power loss."
-msgstr ""
+msgstr "Un seul hôte devient indisponible en raison d'une panne matérielle, d'un crash de l'OS ou d'une coupure de courant."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:12
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:41
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:64
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:91
 msgid "Timeline"
-msgstr ""
+msgstr "Chronologie"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:18
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:47
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:70
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:97
 msgid "Time"
-msgstr ""
+msgstr "Heure"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:19
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:48
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:71
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:98
 msgid "Event"
-msgstr ""
+msgstr "Événement"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:20
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:49
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:72
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:99
 msgid "T+0s"
-msgstr ""
+msgstr "T+0s"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:21
 msgid "Host stops responding to quorum pings"
-msgstr ""
+msgstr "L'hôte cesse de répondre aux pings de quorum"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:22
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:74
@@ -82,173 +82,173 @@ msgstr ""
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:107
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:109
 msgid "T+60s"
-msgstr ""
+msgstr "T+60s"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:23
 msgid "Node marked unreachable (3 missed ping intervals)"
-msgstr ""
+msgstr "Nœud marqué comme injoignable (3 intervalles de ping manqués)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:24
 msgid "T+60–90s"
-msgstr ""
+msgstr "T+60–90s"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:25
 msgid "Designated Coordinator issues ``fence_ack`` for the failed node"
-msgstr ""
+msgstr "Le coordinateur désigné émet ``fence_ack`` pour le nœud défaillant"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:26
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:111
 msgid "T+140s"
-msgstr ""
+msgstr "T+140s"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:27
 msgid "Heartbeat failure threshold reached (7 missed intervals)"
-msgstr ""
+msgstr "Seuil de panne de pulsation atteint (7 intervalles manqués)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:28
 msgid "T+140s+"
-msgstr ""
+msgstr "T+140s+"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:29
 msgid ""
 "Coordinator assigns failed host's VMs to surviving hosts by available "
 "memory"
-msgstr ""
+msgstr "Le coordinateur assigne les VM de l'hôte défaillant aux hôtes survivants selon la mémoire disponible"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:31
 msgid ""
 "**Recovery:** Automatic. Fix the underlying host issue and the node will "
 "rejoin on reboot."
-msgstr ""
+msgstr "**Récupération :** Automatique. Corrigez le problème sous-jacent de l'hôte et le nœud rejoindra le cluster au redémarrage."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:33
 msgid ""
 "If the host remains Offline (Unclean) or fenced, use the evidence, "
 "isolation, reboot, and validation workflow in :doc:`troubleshooting`. Do "
 "not use Pacemaker cleanup commands on layouts 1.3 or 2.0."
-msgstr ""
+msgstr "Si l'hôte reste Offline (Unclean) ou isolé (fenced), utilisez le workflow de preuves, d'isolation, de redémarrage et de validation dans :doc:`troubleshooting`. N'utilisez pas les commandes de nettoyage Pacemaker sur les dispositions 1.3 ou 2.0."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:36
 msgid "Scenario 2: Storage Partition (APD)"
-msgstr ""
+msgstr "Scénario 2 : Partition de stockage (APD)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:38
 msgid ""
 "A host loses all paths to shared storage while remaining network-"
 "reachable to other cluster nodes."
-msgstr ""
+msgstr "Un hôte perd tous les chemins vers le stockage partagé tout en restant joignable sur le réseau par les autres nœuds du cluster."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:50
 msgid "Storage paths fail, heartbeat writes begin failing"
-msgstr ""
+msgstr "Les chemins de stockage échouent, les écritures de pulsation commencent à échouer"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:51
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:53
 msgid "~T+2min"
-msgstr ""
+msgstr "~T+2min"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:52
 msgid "6 consecutive failed heartbeat write cycles"
-msgstr ""
+msgstr "6 cycles consécutifs d'échec d'écriture de pulsation"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:54
 msgid ""
 "APD protection activates: all non-pinned VMs on shared storage are shut "
 "down"
-msgstr ""
+msgstr "La protection APD s'active : toutes les VM non épinglées sur le stockage partagé sont arrêtées"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:56
 msgid ""
 "**Recovery:** Restore storage connectivity to the affected host, then "
 "restart VMs. Investigate the root cause of the storage path failure."
-msgstr ""
+msgstr "**Récupération :** Rétablissez la connectivité de stockage sur l'hôte affecté, puis redémarrez les VM. Enquêtez sur la cause racine de la panne de chemin de stockage."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:59
 msgid "Scenario 3: Network Partition"
-msgstr ""
+msgstr "Scénario 3 : Partition réseau"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:61
 msgid ""
 "A network failure splits the cluster into two groups that cannot "
 "communicate with each other."
-msgstr ""
+msgstr "Une panne réseau divise le cluster en deux groupes qui ne peuvent pas communiquer entre eux."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:73
 msgid "Network partition occurs"
-msgstr ""
+msgstr "Une partition réseau se produit"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:75
 msgid "Nodes on each side detect unreachable peers"
-msgstr ""
+msgstr "Les nœuds de chaque côté détectent des pairs injoignables"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:77
 msgid "Majority side: retains quorum, continues operations"
-msgstr ""
+msgstr "Côté majoritaire : conserve le quorum, poursuit les opérations"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:79
 msgid "Minority side: loses quorum, self-fences"
-msgstr ""
+msgstr "Côté minoritaire : perd le quorum, s'isole automatiquement (self-fence)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:80
 msgid "Recovery"
-msgstr ""
+msgstr "Récupération"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:81
 msgid "When network is restored, fenced nodes reboot and rejoin"
-msgstr ""
+msgstr "Lorsque le réseau est rétabli, les nœuds isolés redémarrent et rejoignent le cluster"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:83
 msgid ""
 "**Recovery:** Fix the network issue. Fenced hosts will automatically "
 "recover via reboot."
-msgstr ""
+msgstr "**Récupération :** Corrigez le problème réseau. Les hôtes isolés se rétabliront automatiquement via un redémarrage."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:86
 msgid "Scenario 4: Stretch Cluster Site Failure"
-msgstr ""
+msgstr "Scénario 4 : Panne de site dans un cluster étendu"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:88
 msgid "An entire site becomes unavailable in a stretch cluster configuration."
-msgstr ""
+msgstr "Un site entier devient indisponible dans une configuration de cluster étendu."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:100
 msgid "All nodes at one site become unreachable"
-msgstr ""
+msgstr "Tous les nœuds d'un site deviennent injoignables"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:102
 msgid "Site failure detected (all non-witness nodes at site unreachable)"
-msgstr ""
+msgstr "Panne de site détectée (tous les nœuds non témoins du site injoignables)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:104
 msgid "Surviving site checks witness reachability"
-msgstr ""
+msgstr "Le site survivant vérifie la joignabilité du témoin"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:106
 msgid "Arbitration: alphabetically first site name wins"
-msgstr ""
+msgstr "Arbitrage : le nom de site le premier par ordre alphabétique l'emporte"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:108
 msgid "Winner adjusts Corosync votes, issues ``fence_ack``"
-msgstr ""
+msgstr "Le gagnant ajuste les votes Corosync, émet ``fence_ack``"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:110
 msgid "Loser self-fences (stops DLM, Corosync)"
-msgstr ""
+msgstr "Le perdant s'isole automatiquement (arrête DLM, Corosync)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:112
 msgid "VM failover begins for VMs from the failed site"
-msgstr ""
+msgstr "Le basculement des VM commence pour les VM du site défaillant"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:114
 msgid ""
 "**Recovery:** Automatic. After the failed site is restored, 3 consecutive"
 " healthy cycles (~3 minutes) must pass. Votes are restored, fenced nodes "
 "reboot and rejoin. Redistribute VMs across sites after recovery."
-msgstr ""
+msgstr "**Récupération :** Automatique. Après la restauration du site défaillant, 3 cycles sains consécutifs (~3 minutes) doivent s'écouler. Les votes sont restaurés, les nœuds isolés redémarrent et rejoignent le cluster. Redistribuez les VM entre les sites après la récupération."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:117
 msgid "Two-Node Cluster Failures"
-msgstr ""
+msgstr "Pannes dans un cluster à deux nœuds"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:119
 msgid ""
@@ -258,93 +258,93 @@ msgid ""
 " Hosts are healthy, the cluster retains two of three votes but loses "
 "Host-failure tolerance until the witness returns. See "
 ":doc:`two_node_clusters` for the complete failure and maintenance matrix."
-msgstr ""
+msgstr "Un cluster GFS2 à deux hôtes utilise un témoin Distributed Worker comme troisième vote de quorum. Un hôte peut rester opérationnel après la panne de l'autre hôte uniquement tant que le témoin reste joignable. Si le témoin tombe en panne alors que les deux hôtes sont sains, le cluster conserve deux votes sur trois mais perd la tolérance aux pannes d'hôte jusqu'au retour du témoin. Consultez :doc:`two_node_clusters` pour la matrice complète de pannes et de maintenance."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:122
 msgid "Scenario 5: Single Node Reboot"
-msgstr ""
+msgstr "Scénario 5 : Redémarrage d'un seul nœud"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:124
 msgid "A single node is rebooted (planned or unplanned)."
-msgstr ""
+msgstr "Un seul nœud est redémarré (planifié ou non planifié)."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:127
 msgid "Fast Reboot (<140 seconds)"
-msgstr ""
+msgstr "Redémarrage rapide (<140 secondes)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:129
 msgid "If the node returns before the heartbeat failure threshold:"
-msgstr ""
+msgstr "Si le nœud revient avant le seuil de panne de pulsation :"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:131
 msgid "No VM failover occurs"
-msgstr ""
+msgstr "Aucun basculement de VM ne se produit"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:132
 msgid "Node rejoins quorum automatically"
-msgstr ""
+msgstr "Le nœud rejoint automatiquement le quorum"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:135
 msgid "Slow Reboot (>140 seconds)"
-msgstr ""
+msgstr "Redémarrage lent (>140 secondes)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:137
 msgid "If the reboot takes longer than the heartbeat failure threshold:"
-msgstr ""
+msgstr "Si le redémarrage dépasse le seuil de panne de pulsation :"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:139
 msgid "VMs are moved to surviving hosts"
-msgstr ""
+msgstr "Les VM sont déplacées vers les hôtes survivants"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:140
 msgid "On boot, the node enters recovery mode"
-msgstr ""
+msgstr "Au démarrage, le nœud entre en mode récupération"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:141
 msgid "Agent re-establishes quorum membership"
-msgstr ""
+msgstr "L'agent rétablit l'appartenance au quorum"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:143
 msgid "**Recovery:** Automatic. Node rejoins cluster on boot."
-msgstr ""
+msgstr "**Récupération :** Automatique. Le nœud rejoint le cluster au démarrage."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:146
 msgid "Scenario 6: Layout 1.2 to 1.3 Upgrade"
-msgstr ""
+msgstr "Scénario 6 : Mise à niveau de la disposition 1.2 vers 1.3"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:148
 msgid ""
 "Upgrading from HVM layout 1.2 (Pacemaker-based) to layout 1.3 (agent-"
 "based quorum)."
-msgstr ""
+msgstr "Mise à niveau de la disposition HVM 1.2 (basée sur Pacemaker) vers la disposition 1.3 (quorum basé sur l'agent)."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:151
 msgid "Process"
-msgstr ""
+msgstr "Processus"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:153
 msgid "Pacemaker services are disabled and removed"
-msgstr ""
+msgstr "Les services Pacemaker sont désactivés et supprimés"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:154
 msgid ""
 "The |morpheus| agent's QuorumCheckService takes over quorum and fencing "
 "responsibilities"
-msgstr ""
+msgstr "Le QuorumCheckService de l'agent |morpheus| prend en charge les responsabilités de quorum et d'isolation"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:155
 msgid ""
 "Corosync and DLM continue to operate (these components are shared between"
 " both layouts)"
-msgstr ""
+msgstr "Corosync et DLM continuent de fonctionner (ces composants sont partagés entre les deux dispositions)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:158
 msgid "Verification After Upgrade"
-msgstr ""
+msgstr "Vérification après la mise à niveau"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:160
 msgid "Run the following commands to confirm the upgrade completed successfully:"
-msgstr ""
+msgstr "Exécutez les commandes suivantes pour confirmer que la mise à niveau s'est terminée avec succès :"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:162
 msgid ""
@@ -355,117 +355,117 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:168
 msgid "Confirm:"
-msgstr ""
+msgstr "Confirmez :"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:170
 msgid "Corosync lists all expected compute Hosts"
-msgstr ""
+msgstr "Corosync répertorie tous les hôtes de calcul attendus"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:171
 msgid "DLM shows all nodes with ``member=1``"
-msgstr ""
+msgstr "DLM affiche tous les nœuds avec ``member=1``"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:172
 msgid "Agent ``/quorum`` endpoint returns healthy status with all nodes ONLINE"
-msgstr ""
+msgstr "Le point de terminaison Agent ``/quorum`` renvoie un état sain avec tous les nœuds ONLINE"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:174
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:176
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:174
 msgid ""
 "Corosync's ``Quorate`` value does not determine Agent quorum for layout "
 "1.3 or later and may be ``No`` in a healthy two-node or stretch "
 "configuration."
-msgstr ""
+msgstr "La valeur ``Quorate`` de Corosync ne détermine pas le quorum Agent pour la disposition 1.3 ou ultérieure et peut être ``No`` dans une configuration saine à deux nœuds ou étendue."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:176
 msgid ""
 "After upgrading, ``pcs`` commands are no longer available or applicable. "
 "Use the diagnostic commands listed in :doc:`troubleshooting` for all "
 "cluster operations."
-msgstr ""
+msgstr "Après la mise à niveau, les commandes ``pcs`` ne sont plus disponibles ni applicables. Utilisez les commandes de diagnostic répertoriées dans :doc:`troubleshooting` pour toutes les opérations de cluster."
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:179
 msgid "Recovery Matrix"
-msgstr ""
+msgstr "Matrice de récupération"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:185
 msgid "Scenario"
-msgstr ""
+msgstr "Scénario"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:186
 msgid "Recovery Type"
-msgstr ""
+msgstr "Type de récupération"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:187
 msgid "Action Required"
-msgstr ""
+msgstr "Action requise"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:188
 msgid "Single host failure"
-msgstr ""
+msgstr "Panne d'un seul hôte"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:189
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:195
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:198
 msgid "Automatic"
-msgstr ""
+msgstr "Automatique"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:190
 msgid "Fix host issue; node rejoins on reboot"
-msgstr ""
+msgstr "Corrigez le problème de l'hôte ; le nœud rejoint au redémarrage"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:191
 msgid "Storage partition (APD)"
-msgstr ""
+msgstr "Partition de stockage (APD)"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:192
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:204
 msgid "Manual"
-msgstr ""
+msgstr "Manuelle"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:193
 msgid "Restore storage connectivity, restart VMs"
-msgstr ""
+msgstr "Rétablissez la connectivité de stockage, redémarrez les VM"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:194
 msgid "Network partition"
-msgstr ""
+msgstr "Partition réseau"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:196
 msgid "Fix network; fenced hosts auto-recover via reboot"
-msgstr ""
+msgstr "Corrigez le réseau ; les hôtes isolés se rétablissent automatiquement via un redémarrage"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:197
 msgid "Stretch site failure"
-msgstr ""
+msgstr "Panne de site étendu"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:199
 msgid "Site restores; redistribute VMs after recovery"
-msgstr ""
+msgstr "Le site se rétablit ; redistribuez les VM après la récupération"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:200
 msgid "DLM stuck"
-msgstr ""
+msgstr "DLM bloqué"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:201
 msgid "Automatic/Support"
-msgstr ""
+msgstr "Automatique/Assistance"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:202
 msgid ""
 "Agent manages fence acknowledgement; contact HPE Support if it remains "
 "blocked after isolation is verified"
-msgstr ""
+msgstr "L'agent gère l'accusé de réception d'isolation ; contactez l'assistance HPE si le blocage persiste après vérification de l'isolation"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:203
 msgid "GFS2 withdrawn"
-msgstr ""
+msgstr "GFS2 retiré"
 
 #: ../../infrastructure/clusters/hvm/failure_scenarios.rst:205
 msgid "Unmount/remount or reboot affected host"
-msgstr ""
+msgstr "Démontez/remontez ou redémarrez l'hôte affecté"
 

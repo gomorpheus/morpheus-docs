@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:2
 msgid "Automated Multi-Node Application Deployment with |morpheus|"
-msgstr ""
+msgstr "Déploiement automatisé d'applications multi-nœuds avec |morpheus|"
 
 #: ../../getting_started/guides/autoinstall_app.rst:4
 msgid ""
@@ -33,7 +33,7 @@ msgid ""
 "<https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html>`_"
 " and, in some cases, will refer directly to sections of that guide rather"
 " than duplicating information here."
-msgstr ""
+msgstr "Ce document fournit un guide complet étape par étape pour automatiser la configuration, l'installation et le déploiement de l'application CRM open source SuiteCRM à l'aide de |morpheus|. Il s'agit d'un guide complémentaire à notre `guide de déploiement d'application mono-nœud <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html>`_ et, dans certains cas, renverra directement à des sections de ce guide plutôt que de dupliquer les informations ici."
 
 #: ../../getting_started/guides/autoinstall_app.rst:6
 msgid ""
@@ -43,31 +43,31 @@ msgid ""
 "in the two-tiered app mentioned previously. We'll use the following "
 "|morpheus| constructs to fully automate the provisioning process of a "
 "multi-tiered application:"
-msgstr ""
+msgstr "Dans ce guide, nous créerons un plan d'application personnalisé pour SuiteCRM composé d'un nœud de base de données et d'un nœud d'application. Une fois configuré, le processus de provisionnement est entièrement automatisé (|ProApp|) et aboutit à l'application à deux niveaux mentionnée précédemment. Nous utiliserons les constructions |morpheus| suivantes pour automatiser entièrement le processus de provisionnement d'une application multi-niveaux :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:8
 msgid "App Blueprints"
-msgstr ""
+msgstr "Plans d'application"
 
 #: ../../getting_started/guides/autoinstall_app.rst:9
 msgid "Cypher"
-msgstr ""
+msgstr "Cypher"
 
 #: ../../getting_started/guides/autoinstall_app.rst:10
 msgid "Inputs"
-msgstr ""
+msgstr "Entrées"
 
 #: ../../getting_started/guides/autoinstall_app.rst:11
 msgid "File Templates"
-msgstr ""
+msgstr "Modèles de fichiers"
 
 #: ../../getting_started/guides/autoinstall_app.rst:12
 msgid "Tasks"
-msgstr ""
+msgstr "Tâches"
 
 #: ../../getting_started/guides/autoinstall_app.rst:13
 msgid "Provisioning Workflows"
-msgstr ""
+msgstr "Workflows de provisionnement"
 
 #: ../../getting_started/guides/autoinstall_app.rst:15
 msgid ""
@@ -84,11 +84,11 @@ msgid ""
 "including public clouds like Amazon AWS. You may have to make slight "
 "modifications in spots in order to make a fully working Instance Type for"
 " other Clouds."
-msgstr ""
+msgstr "Chacune de ces constructions peut être explorée plus en profondeur dans ses propres sections de la documentation |morpheus|, mais ce guide illustrera comment ces éléments peuvent être assemblés pour automatiser le déploiement, garantir la cohérence et la sécurité, et activer le libre-service. De plus, bien que cela puisse être fait sur de nombreux types de clouds différents, je configure ce type d'instance pour le provisionnement sur un cloud VMware vCenter. Vous devez disposer d'un cloud VMware déjà intégré à |morpheus| pour suivre exactement le guide, mais je ne détaillerai pas ici le processus de création de nouveaux clouds. Si vous n'avez pas de cloud vCenter disponible, les concepts du guide se transposent à d'autres types de clouds, y compris les clouds publics comme Amazon AWS. Vous devrez peut-être apporter de légères modifications à certains endroits pour créer un type d'instance entièrement fonctionnel pour d'autres clouds."
 
 #: ../../getting_started/guides/autoinstall_app.rst:18
 msgid "Create Cypher"
-msgstr ""
+msgstr "Créer Cypher"
 
 #: ../../getting_started/guides/autoinstall_app.rst:20
 msgid ""
@@ -101,7 +101,7 @@ msgid ""
 "`single-node deployment guide "
 "<https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html"
 "#create-cypher>`_ for details on setting up the first Cypher entry."
-msgstr ""
+msgstr "Cypher est un magasin clé/valeur sécurisé dans |morpheus|. À l'aide de Cypher, nous pouvons stocker en toute sécurité des mots de passe et d'autres valeurs secrètes (telles que des clés API) qui peuvent ensuite être appelées dans les tâches et modèles d'automatisation. Dans ce cas, nous devons stocker deux secrets Cypher : le premier pour le mot de passe root MySQL et le second pour l'utilisateur que nous utiliserons pour exécuter des commandes SSH depuis le serveur d'application vers le serveur de base de données. Reportez-vous au `guide de déploiement mono-nœud <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html#create-cypher>`_ pour les détails sur la configuration de la première entrée Cypher."
 
 #: ../../getting_started/guides/autoinstall_app.rst:22
 msgid ""
@@ -115,11 +115,11 @@ msgid ""
 "After that, simply create a `secret/cloudinit` Cypher entry which stores "
 "the password for this user using the same process by which you set up the"
 " MySQL root password Cypher entry."
-msgstr ""
+msgstr "Ensuite, nous devons configurer un Cypher pour l'utilisateur SSH afin que notre nœud d'application puisse accéder à la base de données. Une astuce pratique consiste à utiliser l'utilisateur spécifié dans le paramètre global Cloud-Init de |morpheus|, car il sera automatiquement créé sur les instances lors de leur provisionnement par |morpheus|. Pour vérifier que l'utilisateur est correctement configuré, dans l'interface |morpheus|, accédez à :menuselection:`Administration --> Settings --> Provisioning`. Dans la section Cloud-Init Settings, assurez-vous qu'un nom d'utilisateur et un mot de passe sont définis. Ensuite, créez simplement une entrée Cypher `secret/cloudinit` qui stocke le mot de passe de cet utilisateur en suivant le même processus que pour la configuration de l'entrée Cypher du mot de passe root MySQL."
 
 #: ../../getting_started/guides/autoinstall_app.rst:25
 msgid "Create Inputs"
-msgstr ""
+msgstr "Créer des entrées"
 
 #: ../../getting_started/guides/autoinstall_app.rst:27
 msgid ""
@@ -130,11 +130,11 @@ msgid ""
 " companion guide, if needed, you can reference them `here "
 "<https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html"
 "#create-inputs>`_."
-msgstr ""
+msgstr "Les entrées sont des champs de saisie personnalisés dans |morpheus|. L'entrée peut être consommée comme variables dans les modèles et scripts. Nous créerons dans ce cas trois entrées pour le nom de la base de données, le nom d'utilisateur de la base de données et le mot de passe de l'utilisateur de la base de données. Les étapes pour créer ces entrées ont été détaillées dans le guide complémentaire ; si nécessaire, vous pouvez vous y référer `ici <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html#create-inputs>`_."
 
 #: ../../getting_started/guides/autoinstall_app.rst:30
 msgid "Create File Template and Library Template Task"
-msgstr ""
+msgstr "Créer un modèle de fichier et une tâche de modèle de bibliothèque"
 
 #: ../../getting_started/guides/autoinstall_app.rst:32
 msgid ""
@@ -149,11 +149,11 @@ msgid ""
 "<https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html"
 "#create-tasks>`_ are detailed in the companion guide so follow the links "
 "for walkthrough steps and return to this guide."
-msgstr ""
+msgstr "Pour notre application SuiteCRM, nous devrons créer un fichier de configuration Apache. Nous pouvons créer un modèle de fichier dans |morpheus| et le fichier de configuration sera généré dynamiquement au moment du provisionnement avec les valeurs appropriées. Nous créerons également une tâche que nous pourrons utiliser pour définir automatiquement notre modèle de fichier au moment approprié pendant le provisionnement. Les étapes pour créer le `modèle de fichier <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html#create-file-templates>`_ et la `tâche de modèle de bibliothèque <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html#create-tasks>`_ sont détaillées dans le guide complémentaire ; suivez les liens pour les étapes pas à pas et revenez à ce guide."
 
 #: ../../getting_started/guides/autoinstall_app.rst:35
 msgid "Create Database Install Task"
-msgstr ""
+msgstr "Créer une tâche d'installation de base de données"
 
 #: ../../getting_started/guides/autoinstall_app.rst:37
 msgid ""
@@ -164,32 +164,32 @@ msgid ""
 "need a simple third Task to restart the Apache service after setting the "
 "config file. We'll go through the steps for creating all three of these "
 "Tasks in this section."
-msgstr ""
+msgstr "Étant donné que la base de données est installée sur son propre nœud, nous avons besoin d'une tâche qui installe uniquement la base de données. Dans la section précédente, nous avons créé une tâche de modèle de bibliothèque, mais cette fois nous créerons des tâches de script Bash pour gérer l'installation du nœud de base de données et l'installation du nœud d'application. Nous aurons également besoin d'une troisième tâche simple pour redémarrer le service Apache après la configuration du fichier. Nous passerons en revue les étapes de création de ces trois tâches dans cette section."
 
 #: ../../getting_started/guides/autoinstall_app.rst:39
 msgid ""
 "Navigate to |LibAutTas| and click :guilabel:`+ ADD` to start a new Task. "
 "Configure the new Task as follows:"
-msgstr ""
+msgstr "Accédez à |LibAutTas| et cliquez sur :guilabel:`+ ADD` pour démarrer une nouvelle tâche. Configurez la nouvelle tâche comme suit :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:41
 msgid "**Name:** suitecrm install db multi node"
-msgstr ""
+msgstr "**Name:** suitecrm install db multi node"
 
 #: ../../getting_started/guides/autoinstall_app.rst:42
 msgid "**Code:** suitecrminstalldbMN"
-msgstr ""
+msgstr "**Code:** suitecrminstalldbMN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:43
 msgid ""
 "**Type:** Shell Script (The proper fields will appear once the Type is "
 "set)"
-msgstr ""
+msgstr "**Type:** Shell Script (Les champs appropriés apparaîtront une fois le type défini)"
 
 #: ../../getting_started/guides/autoinstall_app.rst:44
 #: ../../getting_started/guides/autoinstall_app.rst:97
 msgid "**Sudo:** Checked"
-msgstr ""
+msgstr "**Sudo:** Checked"
 
 #: ../../getting_started/guides/autoinstall_app.rst:45
 msgid ""
@@ -198,12 +198,12 @@ msgid ""
 "content can be dynamically pulled from the repository at the time the "
 "Task is invoked. This ensures the code is always current without ever "
 "manually updating Tasks)"
-msgstr ""
+msgstr "**Source:** Local (Nous saisirons le script localement dans ce cas, mais si des dépôts de contrôle de version sont intégrés, comme Github, le contenu du script peut être récupéré dynamiquement depuis le dépôt au moment où la tâche est invoquée. Cela garantit que le code est toujours à jour sans jamais mettre à jour manuellement les tâches)"
 
 #: ../../getting_started/guides/autoinstall_app.rst:46
 #: ../../getting_started/guides/autoinstall_app.rst:99
 msgid "**Execute Target:** Resource"
-msgstr ""
+msgstr "**Execute Target:** Resource"
 
 #: ../../getting_started/guides/autoinstall_app.rst:50
 msgid ""
@@ -247,7 +247,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:86
 msgid "Create Application Install and Apache Restart Tasks"
-msgstr ""
+msgstr "Créer des tâches d'installation d'application et de redémarrage Apache"
 
 #: ../../getting_started/guides/autoinstall_app.rst:88
 msgid ""
@@ -264,12 +264,12 @@ msgid ""
 " within the application install task using `sshpass` to remotely execute "
 "the MySQL commands on the database. This is where the `cloud-init` user "
 "and Cypher we created earlier come in."
-msgstr ""
+msgstr "Nous devons maintenant créer une tâche de script Bash pour installer l'application. Cependant, avant de le faire, nous devons réfléchir à la manière dont ces tâches s'exécuteront. Nous devons avoir la base de données installée avant l'application. Nous pouvons y parvenir dans notre plan d'application en configurant l'ordre de démarrage pour que la base de données soit provisionnée avant l'application. Cependant, dans le cadre de la configuration de la base de données, nous devons également créer un utilisateur de base de données et configurer l'accès distant à la base de données pour l'adresse IP du serveur d'application. Le défi ici est que nous ne pouvons pas créer l'utilisateur de base de données dans le cadre de la tâche d'installation de la base de données, car nous ne connaîtrons pas l'adresse IP du serveur d'application. Pour contourner cela, nous exécuterons les tâches de configuration de la base de données dans la tâche d'installation de l'application en utilisant `sshpass` pour exécuter à distance les commandes MySQL sur la base de données. C'est là qu'interviennent l'utilisateur `cloud-init` et le Cypher que nous avons créés précédemment."
 
 #: ../../getting_started/guides/autoinstall_app.rst:90
 #: ../../getting_started/guides/autoinstall_app.rst:298
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/guides/autoinstall_app.rst:90
 msgid ""
@@ -280,29 +280,29 @@ msgid ""
 "this because in the App Blueprint we will connect the tiers which means "
 "Instances in a tier can import the evars from Instances in connected "
 "tiers."
-msgstr ""
+msgstr "Dans la section de code ci-dessous, n'oubliez pas de définir le nom d'utilisateur correct pour votre utilisateur cloud-init. Dans le code ci-dessous, il est défini sur pjonesci. Vous verrez également dans la tâche ci-dessous que nous utilisons des variables d'environnement pour récupérer l'adresse IP de l'hôte de base de données (variable MYSQL_HOST). Nous pouvons le faire car, dans le plan d'application, nous connecterons les niveaux, ce qui signifie que les instances d'un niveau peuvent importer les evars des instances des niveaux connectés."
 
 #: ../../getting_started/guides/autoinstall_app.rst:92
 msgid ""
 "Once again, click :guilabel:`+ ADD` to start a new Task. Configure the "
 "new Task as follows:"
-msgstr ""
+msgstr "À nouveau, cliquez sur :guilabel:`+ ADD` pour démarrer une nouvelle tâche. Configurez la nouvelle tâche comme suit :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:94
 msgid "**Name:** suitecrm install app multi node"
-msgstr ""
+msgstr "**Name:** suitecrm install app multi node"
 
 #: ../../getting_started/guides/autoinstall_app.rst:95
 msgid "**Code:** suitecrminstallappMN"
-msgstr ""
+msgstr "**Code:** suitecrminstallappMN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:96
 msgid "**Type:** Shell Script"
-msgstr ""
+msgstr "**Type:** Shell Script"
 
 #: ../../getting_started/guides/autoinstall_app.rst:98
 msgid "**Source:** Local"
-msgstr ""
+msgstr "**Source:** Local"
 
 #: ../../getting_started/guides/autoinstall_app.rst:103
 #, python-brace-format
@@ -387,11 +387,11 @@ msgid ""
 "application guide "
 "<https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html"
 "#create-tasks>`_."
-msgstr ""
+msgstr "Enfin, créez la tâche de redémarrage Apache mentionnée précédemment. Les étapes exactes pour créer cette tâche sont présentées dans le `guide d'application mono-nœud complémentaire <https://docs.morpheusdata.com/en/latest/getting_started/guides/autoinstall_instance.html#create-tasks>`_."
 
 #: ../../getting_started/guides/autoinstall_app.rst:168
 msgid "Create Workflows"
-msgstr ""
+msgstr "Créer des workflows"
 
 #: ../../getting_started/guides/autoinstall_app.rst:170
 msgid ""
@@ -406,28 +406,28 @@ msgid ""
 " with our Tasks in the provision phase. One Workflow will primarily "
 "handle database node installation and the other will primarily handle "
 "application node installation."
-msgstr ""
+msgstr "Les workflows |morpheus| regroupent plusieurs tâches en un groupe logique. Il existe deux types de workflows : opérationnels et de provisionnement. Nous n'utiliserons pas de workflows opérationnels ici, mais ces workflows peuvent être exécutés à la demande ou programmés de manière récurrente (comme une tâche cron). Les workflows de provisionnement sont associés à une instance au moment du provisionnement et s'exécutent automatiquement lorsque l'instance atteint certaines phases de son cycle de vie, comme pendant le provisionnement, le démontage, le démarrage ou l'arrêt. Dans ce cas, nous pouvons créer un workflow de provisionnement avec nos tâches dans la phase de provisionnement. Un workflow gérera principalement l'installation du nœud de base de données et l'autre gérera principalement l'installation du nœud d'application."
 
 #: ../../getting_started/guides/autoinstall_app.rst:172
 msgid ""
 "Navigate to |LibAutWor| and click :guilabel:`+ ADD`. Set the following "
 "configurations:"
-msgstr ""
+msgstr "Accédez à |LibAutWor| et cliquez sur :guilabel:`+ ADD`. Définissez les configurations suivantes :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:174
 msgid "**NAME:** SuiteCRMDB - Multi Node"
-msgstr ""
+msgstr "**NAME:** SuiteCRMDB - Multi Node"
 
 #: ../../getting_started/guides/autoinstall_app.rst:175
 #: ../../getting_started/guides/autoinstall_app.rst:184
 msgid "**PLATFORM:** Linux"
-msgstr ""
+msgstr "**PLATFORM:** Linux"
 
 #: ../../getting_started/guides/autoinstall_app.rst:176
 msgid ""
 "**TASKS:** In the provision phase, add our \"suitecrm install db multi "
 "node\" Task"
-msgstr ""
+msgstr "**TASKS:** Dans la phase de provisionnement, ajoutez notre tâche « suitecrm install db multi node »"
 
 #: ../../getting_started/guides/autoinstall_app.rst:178
 msgid ".. image:: /images/suitecrmmultinode/dbwf.png"
@@ -435,21 +435,21 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:181
 msgid "Click :guilabel:`SAVE CHANGES` and then create the second Workflow:"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`, puis créez le second workflow :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:183
 msgid "**NAME:** SuiteCRMApp - Multi Node"
-msgstr ""
+msgstr "**NAME:** SuiteCRMApp - Multi Node"
 
 #: ../../getting_started/guides/autoinstall_app.rst:185
 msgid ""
 "**TASKS:** In the provision phase, add our \"suitecrm install app multi "
 "node\", \"suitecrm file template\", and \"suitecrm apache restart\" Tasks"
-msgstr ""
+msgstr "**TASKS:** Dans la phase de provisionnement, ajoutez nos tâches « suitecrm install app multi node », « suitecrm file template » et « suitecrm apache restart »"
 
 #: ../../getting_started/guides/autoinstall_app.rst:187
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/autoinstall_app.rst:189
 msgid ".. image:: /images/suitecrmmultinode/appwf.png"
@@ -457,7 +457,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:193
 msgid "Create Instance Types for the Database and Application"
-msgstr ""
+msgstr "Créer des types d'instance pour la base de données et l'application"
 
 #: ../../getting_started/guides/autoinstall_app.rst:195
 msgid ""
@@ -468,36 +468,36 @@ msgid ""
 "logical tiers in an App Blueprint so they can be provisioned as a "
 "|morpheus| App. Each Instance Type will contain a Layout and a Node Type,"
 " I'll discuss each construct more fully as it's time to create them."
-msgstr ""
+msgstr "À ce stade, nous sommes prêts à assembler nos éléments en types d'instance personnalisés pour la base de données et l'application. Les types d'instance peuvent être provisionnés individuellement (:menuselection:`Provisioning --> Instances`), mais dans ce cas, nous voulons structurer plusieurs types d'instance en niveaux logiques dans un plan d'application afin qu'ils puissent être provisionnés en tant qu'application |morpheus|. Chaque type d'instance contiendra une disposition et un type de nœud ; j'examinerai chaque construction plus en détail au moment de sa création."
 
 #: ../../getting_started/guides/autoinstall_app.rst:197
 msgid ""
 "Navigate to |LibBluIns| and click :guilabel:`+ ADD`. Set the following "
 "configurations:"
-msgstr ""
+msgstr "Accédez à |LibBluIns| et cliquez sur :guilabel:`+ ADD`. Définissez les configurations suivantes :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:199
 msgid "**NAME:** SUITE_CRM_DB_MN"
-msgstr ""
+msgstr "**NAME:** SUITE_CRM_DB_MN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:200
 msgid "**CODE:** suitecrmdbmn"
-msgstr ""
+msgstr "**CODE:** suitecrmdbmn"
 
 #: ../../getting_started/guides/autoinstall_app.rst:201
 msgid "**CATEGORY:** SQL"
-msgstr ""
+msgstr "**CATEGORY:** SQL"
 
 #: ../../getting_started/guides/autoinstall_app.rst:202
 msgid ""
 "**ICON:** If desired, browse your local computer for a MariaDB icon to "
 "make this Instance Type more recognizable when provisioning or creating "
 "App Blueprints"
-msgstr ""
+msgstr "**ICON:** Si vous le souhaitez, parcourez votre ordinateur local pour une icône MariaDB afin de rendre ce type d'instance plus reconnaissable lors du provisionnement ou de la création de plans d'application"
 
 #: ../../getting_started/guides/autoinstall_app.rst:203
 msgid "**ENVIRONMENT PREFIX:** SUITECRMDBMN"
-msgstr ""
+msgstr "**ENVIRONMENT PREFIX:** SUITECRMDBMN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:205
 msgid ".. image:: /images/suitecrmmultinode/dbinstype.png"
@@ -511,43 +511,43 @@ msgid ""
 "associated with an Instance Type which can be selected depending on the "
 "chosen Cloud the user might be provisioning on. Configure the Layout as "
 "follows:"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`. Une fois le type d'instance créé, nous sommes prêts à ajouter une disposition. Une disposition spécifie la technologie sur laquelle l'instance s'exécutera, dans ce cas VMware. Il est possible d'avoir plusieurs dispositions associées à un type d'instance, qui peuvent être sélectionnées en fonction du cloud choisi par l'utilisateur lors du provisionnement. Configurez la disposition comme suit :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:210
 msgid "**NAME:** LO_SUITE_CRM_DB_MN"
-msgstr ""
+msgstr "**NAME:** LO_SUITE_CRM_DB_MN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:211
 #: ../../getting_started/guides/autoinstall_app.rst:224
 #: ../../getting_started/guides/autoinstall_app.rst:240
 #: ../../getting_started/guides/autoinstall_app.rst:251
 msgid "**VERSION:** Latest"
-msgstr ""
+msgstr "**VERSION:** Latest"
 
 #: ../../getting_started/guides/autoinstall_app.rst:212
 #: ../../getting_started/guides/autoinstall_app.rst:241
 msgid "**CREATABLE:** Checked"
-msgstr ""
+msgstr "**CREATABLE:** Checked"
 
 #: ../../getting_started/guides/autoinstall_app.rst:213
 #: ../../getting_started/guides/autoinstall_app.rst:225
 #: ../../getting_started/guides/autoinstall_app.rst:242
 #: ../../getting_started/guides/autoinstall_app.rst:252
 msgid "**TECHNOLOGY:** VMware"
-msgstr ""
+msgstr "**TECHNOLOGY:** VMware"
 
 #: ../../getting_started/guides/autoinstall_app.rst:214
 msgid ""
 "**WORKFLOW:** Select the \"SuiteCRM - Multi Node\" Workflow that was "
 "previously created"
-msgstr ""
+msgstr "**WORKFLOW:** Sélectionnez le workflow « SuiteCRM - Multi Node » créé précédemment"
 
 #: ../../getting_started/guides/autoinstall_app.rst:215
 #: ../../getting_started/guides/autoinstall_app.rst:244
 msgid ""
 "**INPUTS:** Include the \"SuiteCRM DB Name\", \"SuiteCRM DB Password\", "
 "and \"SuiteCRM DB User\" Inputs that were previously created"
-msgstr ""
+msgstr "**INPUTS:** Incluez les entrées « SuiteCRM DB Name », « SuiteCRM DB Password » et « SuiteCRM DB User » créées précédemment"
 
 #: ../../getting_started/guides/autoinstall_app.rst:217
 msgid ".. image:: /images/suitecrmmultinode/dblo.png"
@@ -563,22 +563,22 @@ msgid ""
 "to a default Ubuntu image which is supplied by |morpheus| though you can "
 "associate Node Types with your own custom virtual images when needed. Set"
 " the following configurations on the new Node Type:"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`. Une fois la disposition créée, nous sommes prêts à associer un type de nœud. Depuis la page de détails de la disposition, cliquez sur :guilabel:`+ ADD` dans la section « VM Types ». Le terme VM Types est parfois utilisé à la place de Node Types dans |morpheus|, mais ils désignent la même chose et sont entièrement interchangeables. Dans ce cas, nous allons simplement pointer vers une image Ubuntu par défaut fournie par |morpheus|, bien que vous puissiez associer des types de nœuds à vos propres images virtuelles personnalisées si nécessaire. Définissez les configurations suivantes sur le nouveau type de nœud :"
 
 #: ../../getting_started/guides/autoinstall_app.rst:222
 msgid "**NAME:** NODE_SUITE_CRM_DB_MN"
-msgstr ""
+msgstr "**NAME:** NODE_SUITE_CRM_DB_MN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:223
 msgid "**SHORT NAME:** nodesuitecrmdbmn"
-msgstr ""
+msgstr "**SHORT NAME:** nodesuitecrmdbmn"
 
 #: ../../getting_started/guides/autoinstall_app.rst:226
 #: ../../getting_started/guides/autoinstall_app.rst:253
 msgid ""
 "**VM IMAGE:** Choose the |morpheus| Ubuntu 18 image that is included with"
 " |morpheus| out of the box"
-msgstr ""
+msgstr "**VM IMAGE:** Choisissez l'image Ubuntu 18 |morpheus| incluse avec |morpheus| d'origine"
 
 #: ../../getting_started/guides/autoinstall_app.rst:228
 msgid ""
@@ -588,30 +588,30 @@ msgid ""
 "out the configurations for the Instance Type, Layout, and Node Type, you "
 "can refer back to the steps above if you need to see the click-by-click "
 "instructions once again for creating these objects."
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`. Cela termine l'élément de bibliothèque de base de données nécessaire pour construire notre plan d'application dans la section suivante. Nous devons maintenant ajouter un élément de bibliothèque représentant le nœud d'application. Ci-dessous, je listerai les configurations pour le type d'instance, la disposition et le type de nœud ; vous pouvez vous référer aux étapes ci-dessus si vous avez besoin de revoir les instructions pas à pas pour créer ces objets."
 
 #: ../../getting_started/guides/autoinstall_app.rst:230
 msgid "**NAME:** SUITE_CRM_APP_MN"
-msgstr ""
+msgstr "**NAME:** SUITE_CRM_APP_MN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:231
 msgid "**CODE:** suitecrmappmn"
-msgstr ""
+msgstr "**CODE:** suitecrmappmn"
 
 #: ../../getting_started/guides/autoinstall_app.rst:232
 msgid "**CATEGORY:** Apps"
-msgstr ""
+msgstr "**CATEGORY:** Apps"
 
 #: ../../getting_started/guides/autoinstall_app.rst:233
 msgid ""
 "**ICON:** If desired, browse your local computer for a SuiteCRM icon to "
 "make this Instance Type more recognizable when provisioning or creating "
 "App Blueprints"
-msgstr ""
+msgstr "**ICON:** Si vous le souhaitez, parcourez votre ordinateur local pour une icône SuiteCRM afin de rendre ce type d'instance plus reconnaissable lors du provisionnement ou de la création de plans d'application"
 
 #: ../../getting_started/guides/autoinstall_app.rst:234
 msgid "**ENVIRONMENT PREFIX:** SUITECRMAPPMN"
-msgstr ""
+msgstr "**ENVIRONMENT PREFIX:** SUITECRMAPPMN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:236
 msgid ".. image:: /images/suitecrmmultinode/appinstype.png"
@@ -619,14 +619,14 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:239
 msgid "**NAME:** LO_SUITE_CRM_APP_MN"
-msgstr ""
+msgstr "**NAME:** LO_SUITE_CRM_APP_MN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:243
 msgid ""
 "**MINIMUM MEMORY:** 4 GB (If entered, this value will override any memory"
 " requirement set on the virtual image to ensure your Instance service "
 "will run properly)"
-msgstr ""
+msgstr "**MINIMUM MEMORY:** 4 GB (Si saisi, cette valeur remplacera toute exigence de mémoire définie sur l'image virtuelle pour garantir le bon fonctionnement de votre service d'instance)"
 
 #: ../../getting_started/guides/autoinstall_app.rst:246
 msgid ".. image:: /images/suitecrmmultinode/applo.png"
@@ -634,11 +634,11 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:249
 msgid "**NAME:** NODE_SUITE_CRM_APP_MN"
-msgstr ""
+msgstr "**NAME:** NODE_SUITE_CRM_APP_MN"
 
 #: ../../getting_started/guides/autoinstall_app.rst:250
 msgid "**SHORT NAME:** nodesuitecrmappmn"
-msgstr ""
+msgstr "**SHORT NAME:** nodesuitecrmappmn"
 
 #: ../../getting_started/guides/autoinstall_app.rst:255
 msgid ".. image:: /images/suitecrmmultinode/appnode.png"
@@ -646,7 +646,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:259
 msgid "Create the App Blueprint"
-msgstr ""
+msgstr "Créer le plan d'application"
 
 #: ../../getting_started/guides/autoinstall_app.rst:261
 msgid ""
@@ -656,14 +656,14 @@ msgid ""
 "previously created to build out an App Blueprint for a two-tier SuiteCRM "
 "application with the database running on one VM and the application "
 "running on another VM."
-msgstr ""
+msgstr "Nous sommes maintenant prêts à créer un plan d'application |morpheus|. Les plans |morpheus| permettent des déploiements d'applications multi-niveaux préconfigurés pour plusieurs environnements. Dans cet exemple, nous utiliserons les types d'instance personnalisés créés précédemment pour construire un plan d'application pour une application SuiteCRM à deux niveaux avec la base de données exécutée sur une VM et l'application sur une autre VM."
 
 #: ../../getting_started/guides/autoinstall_app.rst:263
 msgid ""
 "Go to |LibBluApp| and click :guilabel:`+ ADD`. Enter a name for the "
 "Blueprint (SuiteCRM Multi Node) and set type to |morpheus|. Click "
 ":guilabel:`NEXT`."
-msgstr ""
+msgstr "Accédez à |LibBluApp| et cliquez sur :guilabel:`+ ADD`. Saisissez un nom pour le plan (SuiteCRM Multi Node) et définissez le type sur |morpheus|. Cliquez sur :guilabel:`NEXT`."
 
 #: ../../getting_started/guides/autoinstall_app.rst:265
 msgid ""
@@ -671,7 +671,7 @@ msgid ""
 "build out the structure of the App Blueprint. In the structure section on"
 " the left of the screen, click the + to add App Tier and then click it "
 "again to add a Database tier."
-msgstr ""
+msgstr "Vous êtes maintenant dans l'écran de configuration du plan d'application où vous pouvez construire la structure du plan d'application. Dans la section structure à gauche de l'écran, cliquez sur + pour ajouter un niveau d'application, puis cliquez à nouveau pour ajouter un niveau de base de données."
 
 #: ../../getting_started/guides/autoinstall_app.rst:267
 msgid ".. image:: /images/suitecrmmultinode/namebp.png"
@@ -683,7 +683,7 @@ msgid ""
 "each tier. Click the \"+\"\" next to the App tier and in the window that "
 "pops up select the application Instance Type created previously "
 "(SUITE_CRM_APP_MN)."
-msgstr ""
+msgstr "Maintenant que les niveaux sont créés, nous pouvons créer la configuration pour chaque niveau. Cliquez sur le « + » à côté du niveau App et, dans la fenêtre qui s'affiche, sélectionnez le type d'instance d'application créé précédemment (SUITE_CRM_APP_MN)."
 
 #: ../../getting_started/guides/autoinstall_app.rst:271
 msgid ".. image:: /images/suitecrmmultinode/setappins.png"
@@ -698,7 +698,7 @@ msgid ""
 "Now click the \"+\" next to the Suite CRM Instance Type (under App). "
 "Select the Group and Cloud required (I'm selecting my VMware Cloud, in "
 "this case) and then click :guilabel:`ADD CONFIG`."
-msgstr ""
+msgstr "Cliquez maintenant sur le « + » à côté du type d'instance Suite CRM (sous App). Sélectionnez le groupe et le cloud requis (je sélectionne mon cloud VMware, dans ce cas), puis cliquez sur :guilabel:`ADD CONFIG`."
 
 #: ../../getting_started/guides/autoinstall_app.rst:277
 msgid ".. image:: /images/suitecrmmultinode/setappcloud.png"
@@ -712,7 +712,7 @@ msgid ""
 "to the right of the fields allow you to lock down entries so that they "
 "cannot be changed when provisioning the App later. Do not click "
 ":guilabel:`COMPLETE` yet, we still need to configure the database tier."
-msgstr ""
+msgstr "Vous aurez maintenant une configuration sous l'icône Suite CRM. Cliquez sur la configuration et elle apparaîtra dans le volet de droite de la fenêtre. Renseignez la configuration requise pour provisionner l'instance. Les cadenas à droite des champs permettent de verrouiller les entrées afin qu'elles ne puissent pas être modifiées lors du provisionnement ultérieur de l'application. Ne cliquez pas encore sur :guilabel:`COMPLETE`, nous devons encore configurer le niveau de base de données."
 
 #: ../../getting_started/guides/autoinstall_app.rst:281
 msgid ".. image:: /images/suitecrmmultinode/configappins.png"
@@ -723,7 +723,7 @@ msgid ""
 "Back in the left-hand pane, click the \"+\" next to Database and perform "
 "the same steps as before to add in the SUITE_CRM_DB_MN Instance Type to "
 "the database tier. Add in the required configuration."
-msgstr ""
+msgstr "Dans le volet de gauche, cliquez sur le « + » à côté de Database et effectuez les mêmes étapes qu'auparavant pour ajouter le type d'instance SUITE_CRM_DB_MN au niveau de base de données. Ajoutez la configuration requise."
 
 #: ../../getting_started/guides/autoinstall_app.rst:285
 msgid ".. image:: /images/suitecrmmultinode/configdbins.png"
@@ -737,7 +737,7 @@ msgid ""
 "so we set the boot order to 0 on the database and 1 on the application. "
 "We also need to connect the tiers by checking the box under connected "
 "tiers."
-msgstr ""
+msgstr "Une fois la configuration définie pour les deux niveaux, nous devons définir l'ordre de démarrage et connecter les niveaux. L'ordre de démarrage est utilisé pour contrôler l'ordre dans lequel les niveaux sont construits. Nous voulons que le niveau de base de données soit construit en premier, nous définissons donc l'ordre de démarrage sur 0 pour la base de données et sur 1 pour l'application. Nous devons également connecter les niveaux en cochant la case sous connected tiers."
 
 #: ../../getting_started/guides/autoinstall_app.rst:289
 msgid ".. image:: /images/suitecrmmultinode/dbbootorder.png"
@@ -745,11 +745,11 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:291
 msgid "Save the App Blueprint by clicking :guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Enregistrez le plan d'application en cliquant sur :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/autoinstall_app.rst:294
 msgid "Deploy the App Blueprint"
-msgstr ""
+msgstr "Déployer le plan d'application"
 
 #: ../../getting_started/guides/autoinstall_app.rst:296
 msgid ""
@@ -757,13 +757,13 @@ msgid ""
 "ADD`. Select the App Blueprint we just created and work through the "
 "provisioning wizard, including naming the App and selecting the target "
 "Cloud."
-msgstr ""
+msgstr "Pour déployer un plan d'application, accédez à |ProApp| et cliquez sur :guilabel:`+ ADD`. Sélectionnez le plan d'application que nous venons de créer et suivez l'assistant de provisionnement, y compris le nommage de l'application et la sélection du cloud cible."
 
 #: ../../getting_started/guides/autoinstall_app.rst:298
 msgid ""
 "For the database hostname, specify the internal IP address of the "
 "database node"
-msgstr ""
+msgstr "Pour le nom d'hôte de la base de données, spécifiez l'adresse IP interne du nœud de base de données"
 
 #: ../../getting_started/guides/autoinstall_app.rst:300
 msgid ".. image:: /images/suitecrmmultinode/app1.png"
@@ -779,7 +779,7 @@ msgstr ""
 
 #: ../../getting_started/guides/autoinstall_app.rst:307
 msgid "Configure SuiteCRM"
-msgstr ""
+msgstr "Configurer SuiteCRM"
 
 #: ../../getting_started/guides/autoinstall_app.rst:309
 msgid ""
@@ -788,7 +788,7 @@ msgid ""
 "agreement page and can proceed with the setup steps. SuiteCRM is now up "
 "and running. Additional instances of SuiteCRM can be stood up in the "
 "future with just a few clicks!"
-msgstr ""
+msgstr "SuiteCRM est maintenant prêt pour sa configuration initiale. Dans un navigateur Web, accédez à `http://<YOUR_APP_NODE_IP>/install.php`. Vous devriez voir la page du contrat de licence et pouvez poursuivre les étapes de configuration. SuiteCRM est maintenant opérationnel. Des instances supplémentaires de SuiteCRM pourront être déployées à l'avenir en quelques clics !"
 
 #: ../../getting_started/guides/autoinstall_app.rst:311
 msgid ".. image:: /images/suitecrmsinglenode/eula.png"

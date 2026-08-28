@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../provisioning/instances/creating_instances.rst:2
 msgid "Creating Instances"
-msgstr ""
+msgstr "Création d'instances"
 
 #: ../../provisioning/instances/creating_instances.rst:4
 msgid ""
@@ -33,7 +33,7 @@ msgid ""
 "fledged apps. The list contains a lot of items to choose from and they "
 "are represented to the user based on what provisioning engines are "
 "enabled and integrated in the |morpheus| environment."
-msgstr ""
+msgstr "Le catalogue d'instances est le guichet unique pour sélectionner les éléments à provisionner et à assembler. Il contient non seulement des options de base pour conteneurs et VM, mais aussi des services adaptés pour bases de données SQL, bases NoSQL, caches, bus de messages, serveurs web et même des applications complètes. La liste propose de nombreux éléments, présentés à l'utilisateur selon les moteurs de provisionnement activés et intégrés dans l'environnement |morpheus|."
 
 #: ../../provisioning/instances/creating_instances.rst:6
 msgid ""
@@ -41,23 +41,23 @@ msgid ""
 "right of the :menuselection:`Provisioning --> Instances` section. A modal"
 " will display allowing the catalog to be searched. Once an item is "
 "selected it is just a matter of following the steps through the wizard."
-msgstr ""
+msgstr "Pour commencer, cliquez simplement sur le bouton :guilabel:`+ Add` en haut à droite de la section :menuselection:`Provisioning --> Instances`. Une fenêtre modale s'affiche pour rechercher dans le catalogue. Une fois un élément sélectionné, il suffit de suivre les étapes de l'assistant."
 
 #: ../../provisioning/instances/creating_instances.rst:8
 msgid "Tip"
-msgstr ""
+msgstr "Conseil"
 
 #: ../../provisioning/instances/creating_instances.rst:8
 msgid ""
 "The Instance catalog can be customized via role-based access control "
 "(RBAC) thereby restricting access to non-sanctioned catalog items, as "
 "well as added to via the |Lib| section. It is completely customizable."
-msgstr ""
+msgstr "Le catalogue d'instances peut être personnalisé via le contrôle d'accès basé sur les rôles (RBAC), ce qui restreint l'accès aux éléments non autorisés du catalogue, et peut également être enrichi via la section |Lib|. Il est entièrement personnalisable."
 
 #: ../../provisioning/instances/creating_instances.rst:10
 #: ../../provisioning/instances/creating_instances.rst:16
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../provisioning/instances/creating_instances.rst:10
 msgid ""
@@ -65,7 +65,7 @@ msgid ""
 "for your storage platform. For example, :doc:`/integration_guides/storage"
 "/hpe-alletra-mp` includes a walkthrough of creating Instances on HPE "
 "Alletra MP datastores."
-msgstr ""
+msgstr "Pour les workflows de provisionnement spécifiques au stockage, consultez le guide d'intégration de votre plate-forme de stockage. Par exemple, :doc:`/integration_guides/storage/hpe-alletra-mp` inclut un guide pas à pas pour créer des instances sur des datastores HPE Alletra MP."
 
 #: ../../provisioning/instances/creating_instances.rst:12
 msgid ""
@@ -78,7 +78,7 @@ msgid ""
 ":doc:`/getting_started/guides/vmware_guide` guide. The wizard continues "
 "by allowing us to choose a name for the Instance as well as an "
 "environment."
-msgstr ""
+msgstr "L'étape suivante demande de sélectionner un groupe et un cloud. Le groupe est une représentation abstraite pouvant contenir plusieurs intégrations cloud. Les clouds peuvent appartenir à plusieurs groupes, et les groupes sont également utiles pour utiliser le RBAC afin de restreindre l'accès au provisionnement et de définir des politiques de conservation. Si l'environnement est nouveau et que ces éléments n'existent pas encore, il peut être conseillé de consulter l'un de nos guides de démarrage, comme le guide :doc:`/getting_started/guides/vmware_guide`. L'assistant permet ensuite de choisir un nom pour l'instance ainsi qu'un environnement."
 
 #: ../../provisioning/instances/creating_instances.rst:14
 msgid ""
@@ -88,14 +88,14 @@ msgid ""
 "active state, provision type, and layout or image minimums also apply. "
 "**Default** permission behavior is not an explicit allow-list and does "
 "not mean the cluster is preselected. See :ref:`hvm-cluster-permissions`."
-msgstr ""
+msgstr "Pour le provisionnement basé sur un cluster, les autorisations de groupe de cluster filtrent les cibles disponibles après la sélection du groupe. Les autorisations de plan de service de cluster filtrent ensuite les choix de plan pour cette cible ; l'accès par rôle, l'état actif du plan, le type de provisionnement et les minimums de disposition ou d'image s'appliquent également. Le comportement d'autorisation **Default** n'est pas une liste d'autorisation explicite et ne signifie pas que le cluster est présélectionné. Voir :ref:`hvm-cluster-permissions`."
 
 #: ../../provisioning/instances/creating_instances.rst:16
 msgid ""
 "Currently the Environment option is mostly useful for presenting the user"
 " with informative metadata around the Instance when coming back to it "
 "later."
-msgstr ""
+msgstr "Actuellement, l'option Environnement sert surtout à présenter à l'utilisateur des métadonnées informatives autour de l'instance lors d'une consultation ultérieure."
 
 #: ../../provisioning/instances/creating_instances.rst:18
 #, python-brace-format
@@ -105,7 +105,7 @@ msgid ""
 "through Provisioning Settings, and naming policies can reference it as "
 "``${instance.instanceContext}``. The Environment record itself does not "
 "grant access; use Roles and resource permissions for access control."
-msgstr ""
+msgstr "La valeur Environnement est stockée comme contexte d'instance et peut être affichée et filtrée comme métadonnée. Les administrateurs peuvent exiger une valeur via les paramètres de provisionnement, et les politiques de nommage peuvent y faire référence via ``${instance.instanceContext}``. L'enregistrement Environnement lui-même n'accorde pas d'accès ; utilisez les rôles et les autorisations de ressources pour le contrôle d'accès."
 
 #: ../../provisioning/instances/creating_instances.rst:20
 msgid ""
@@ -114,7 +114,7 @@ msgid ""
 "include cloud-specific fields (i.e. Datastore for VMware or Network). "
 "There will also be options like setting an initial user account. Some of "
 "these fields are optional and will be represented as such."
-msgstr ""
+msgstr "Il est maintenant temps de configurer l'instance. Selon la configuration d'instance choisie, les champs changent. Cela peut inclure des champs spécifiques au cloud (par exemple, Datastore pour VMware ou Network). Il y aura aussi des options comme la définition d'un compte utilisateur initial. Certains de ces champs sont facultatifs et seront indiqués comme tels."
 
 #: ../../provisioning/instances/creating_instances.rst:22
 msgid ""
@@ -124,7 +124,7 @@ msgid ""
 ":doc:`/integration_guides/Clouds/vmware/advanced`. Selector availability "
 "is provider-specific and can differ between initial provisioning and "
 "reconfiguration."
-msgstr ""
+msgstr "Pour les clouds VMware, les sélecteurs de type de stockage et de type d'interface réseau s'affichent uniquement lorsque les paramètres cloud correspondants sont activés et que le fournisseur expose des choix. Voir :doc:`/integration_guides/Clouds/vmware/advanced`. La disponibilité des sélecteurs est spécifique au fournisseur et peut différer entre le provisionnement initial et la reconfiguration."
 
 #: ../../provisioning/instances/creating_instances.rst:24
 msgid ""
@@ -138,7 +138,7 @@ msgid ""
 "and reconfiguration; its value is tokenized and passed to QEMU when the "
 "VM definition is generated, so invalid or conflicting arguments can "
 "prevent startup."
-msgstr ""
+msgstr "Pour les VM HVM, développez **Advanced Options** à l'étape Configure pour définir le firmware, le démarrage, la sécurité, les graphiques, la mémoire, l'identité et les contrôles de virtualisation spécifiques au fournisseur. Les champs affichés dépendent de la disposition sélectionnée et du fait que la VM est provisionnée ou reconfigurée. Voir :doc:`/infrastructure/clusters/hvm/vm_advanced_options` pour l'inventaire actuel des champs, les valeurs par défaut, les dépendances et la matrice de disponibilité. En particulier, :guilabel:`QEMU Arguments` est disponible pendant le provisionnement et la reconfiguration ; sa valeur est tokenisée et transmise à QEMU lors de la génération de la définition de VM, donc des arguments invalides ou conflictuels peuvent empêcher le démarrage."
 
 #: ../../provisioning/instances/creating_instances.rst:26
 msgid ""
@@ -152,7 +152,7 @@ msgid ""
 " firewall port or publishes an application endpoint. Confirm the selected"
 " layout and the field group before setting it; do not apply a port value "
 "from one Instance type to another."
-msgstr ""
+msgstr "Il n'existe pas de champ universel :guilabel:`Port` pour les instances. Un champ portant ce libellé est fourni par un type d'instance ou un workflow de connexion sélectionné, et sa signification dépend de ce contexte. Par exemple, la disposition MySQL **Existing** utilise :guilabel:`Host` et :guilabel:`Port` pour se connecter au service MySQL existant ; le port par défaut est ``3306``. Un formulaire de connexion à un serveur Windows peut également libeller son port de connexion WinRM comme :guilabel:`Port` avec la valeur par défaut ``5985``. Aucun de ces champs n'ouvre un port de pare-feu invité ni ne publie un point de terminaison d'application. Confirmez la disposition et le groupe de champs sélectionnés avant de le définir ; n'appliquez pas une valeur de port d'un type d'instance à un autre."
 
 #: ../../provisioning/instances/creating_instances.rst:28
 msgid ""
@@ -163,7 +163,7 @@ msgid ""
 " configurations exist for a wide range of Instance types and are "
 "optimized for high performance and scale. It is even possible to "
 "provision entire sharded MongoDB clusters."
-msgstr ""
+msgstr "Les options de configuration proposées dans cet écran sont très puissantes. Un exemple est MySQL, où une disposition Master/Slave ou Master/Master peut être sélectionnée. Ces configurations déploient automatiquement deux VM ou conteneurs MySQL et les relient pour fournir la réplication. Ces types de configurations existent pour un large éventail de types d'instance et sont optimisés pour des performances et une montée en charge élevées. Il est même possible de provisionner des clusters MongoDB entièrement shardés."
 
 #: ../../provisioning/instances/creating_instances.rst:30
 msgid ""
@@ -174,7 +174,7 @@ msgid ""
 " run (see more on Tasks and Workflows elsewhere in |morpheus| "
 "documentation), assign a load balancer, or even configure the backup job "
 "that gets created."
-msgstr ""
+msgstr "Une dernière étape avant que l'instance puisse être provisionnée est l'étape Automatisation. Cette étape de l'assistant peut apparaître ou non selon les capacités du type d'instance ou les configurations précédentes du compte. C'est ici que l'on peut facilement sélectionner un workflow post-provisionnement à exécuter (voir les tâches et workflows ailleurs dans la documentation |morpheus|), assigner un équilibreur de charge ou même configurer la tâche de sauvegarde créée."
 
 #: ../../provisioning/instances/creating_instances.rst:32
 msgid ""
@@ -185,11 +185,11 @@ msgid ""
 "range from seconds to minutes (typically a container configuration will "
 "be rather quick if the Instance type has previously been provisioned "
 "before)."
-msgstr ""
+msgstr "Maintenant que les étapes de provisionnement du type d'instance sélectionné sont terminées, il suffit de vérifier vos sélections et de finaliser. L'instance apparaîtra automatiquement dans la liste des instances et son état de provisionnement sera affiché. Selon ce qui a été provisionné, cette étape peut prendre de quelques secondes à quelques minutes (une configuration conteneur sera généralement rapide si le type d'instance a déjà été provisionné auparavant)."
 
 #: ../../provisioning/instances/creating_instances.rst:35
 msgid "Converting Discovered Resources to Managed Instances"
-msgstr ""
+msgstr "Conversion des ressources découvertes en instances gérées"
 
 #: ../../provisioning/instances/creating_instances.rst:37
 msgid ""
@@ -211,7 +211,7 @@ msgid ""
 "for VMs, Containers or Hosts tab. Discovered resources will be indicated "
 "as such whereas containers which are associated with a managed Instance "
 "will be marked as a \"Managed\"."
-msgstr ""
+msgstr "Lors de la création de nouvelles intégrations cloud (ou de leur mise à jour), les utilisateurs peuvent choisir que |morpheus| intègre les ressources existantes actuellement présentes dans le cloud. Il peut s'agir par exemple de machines virtuelles sur des hôtes vCenter avant l'intégration avec |morpheus|, d'instances EC2 préexistantes sur un compte Amazon AWS ou de machines virtuelles sur un hôte KVM. Avec la fenêtre modale Ajouter/Modifier un cloud ouverte, cochez INVENTORY EXISTING INSTANCES pour que |morpheus| intègre automatiquement ces ressources. |morpheus| les inventorie non seulement au moment de l'intégration (ou de la mise à jour) du cloud, mais continue aussi d'interroger le cloud cible toutes les cinq minutes (par défaut) pour détecter les serveurs ajoutés ou supprimés. Les utilisateurs peuvent voir ces serveurs découverts dans :menuselection:`Infrastructure --> Compute`. Selon le type de ressource, elle peut apparaître dans l'onglet Machines virtuelles, Conteneurs ou un autre onglet. On peut également voir une liste de serveurs découverts sur les pages de détail du cloud (|InfClo| > Cloud sélectionné). Cliquez sur les onglets VM, Conteneurs ou Hôtes. Les ressources découvertes sont indiquées comme telles, tandis que les conteneurs associés à une instance gérée sont marqués comme « Managed »."
 
 #: ../../provisioning/instances/creating_instances.rst:39
 msgid ""
@@ -220,53 +220,53 @@ msgid ""
 "(:menuselection:`Infrastructure --> Compute --> Virtual Machines` > "
 "selected machine) and from the ACTIONS menu select \"Convert to "
 "Managed\". At this point, we must make a number of selections:"
-msgstr ""
+msgstr "De plus, |morpheus| permet aux utilisateurs de convertir des ressources découvertes en instances gérées. Commencez depuis la page de détail du serveur (:menuselection:`Infrastructure --> Compute --> Virtual Machines` > machine sélectionnée) et, dans le menu ACTIONS, sélectionnez « Convert to Managed ». À ce stade, plusieurs sélections doivent être effectuées :"
 
 #: ../../provisioning/instances/creating_instances.rst:41
 msgid "Assign to the primary Tenant or one of the Subtenants"
-msgstr ""
+msgstr "Assigner au locataire principal ou à l'un des sous-locataires"
 
 #: ../../provisioning/instances/creating_instances.rst:42
 msgid ""
 "Select a Group (this dropdown contains a filtered list of Groups which "
 "the associated Cloud is in)"
-msgstr ""
+msgstr "Sélectionner un groupe (cette liste déroulante contient une liste filtrée des groupes auxquels le cloud associé appartient)"
 
 #: ../../provisioning/instances/creating_instances.rst:43
 msgid "Username and password for a seeded account"
-msgstr ""
+msgstr "Nom d'utilisateur et mot de passe pour un compte initial"
 
 #: ../../provisioning/instances/creating_instances.rst:44
 msgid ""
 "Opt to install |morpheus| Agent or not "
 "(:doc:`/getting_started/functionality/agent/features`)"
-msgstr ""
+msgstr "Choisir d'installer ou non l'agent |morpheus| (:doc:`/getting_started/functionality/agent/features`)"
 
 #: ../../provisioning/instances/creating_instances.rst:45
 msgid ""
 "Select the Instance Type which should be associated with the new Instance"
 " containing this VM"
-msgstr ""
+msgstr "Sélectionner le type d'instance à associer à la nouvelle instance contenant cette VM"
 
 #: ../../provisioning/instances/creating_instances.rst:46
 msgid ""
 "Select a version number for the Instance (such as 20.04 for a basic "
 "Ubuntu Instance)"
-msgstr ""
+msgstr "Sélectionner un numéro de version pour l'instance (par exemple 20.04 pour une instance Ubuntu de base)"
 
 #: ../../provisioning/instances/creating_instances.rst:47
 msgid "Select a Layout, Instance Types often have multiple Layout configurations"
-msgstr ""
+msgstr "Sélectionner une disposition ; les types d'instance ont souvent plusieurs configurations de disposition"
 
 #: ../../provisioning/instances/creating_instances.rst:48
 msgid "Identify the operating system"
-msgstr ""
+msgstr "Identifier le système d'exploitation"
 
 #: ../../provisioning/instances/creating_instances.rst:49
 msgid ""
 "Select a Plan (this dropdown contains a filtered list of plans which "
 "correlate to the size of the VM)"
-msgstr ""
+msgstr "Sélectionner un plan (cette liste déroulante contient une liste filtrée de plans correspondant à la taille de la VM)"
 
 #: ../../provisioning/instances/creating_instances.rst:51
 msgid ""
@@ -276,5 +276,5 @@ msgid ""
 "(:menuselection:`Provisioning --> Instances`). We can now work with it in"
 " the same way we can work with any other Instance, such as by adding it "
 "to an App or expanding the Instance horizontally with added nodes."
-msgstr ""
+msgstr "Enfin, cliquez sur :guilabel:`EXECUTE`. Une fois ce processus terminé, le serveur sera indiqué comme « Managed » dans la liste des serveurs. De plus, une nouvelle instance apparaîtra sur la page Liste des instances (:menuselection:`Provisioning --> Instances`). Vous pouvez désormais l'utiliser comme toute autre instance, par exemple en l'ajoutant à une application ou en étendant l'instance horizontalement avec des nœuds supplémentaires."
 

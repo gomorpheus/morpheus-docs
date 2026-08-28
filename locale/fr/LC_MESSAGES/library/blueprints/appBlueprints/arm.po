@@ -22,52 +22,52 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/arm.rst:2
 msgid "ARM Blueprints"
-msgstr ""
+msgstr "Instances existantes"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:4
 msgid ""
 "ARM Blueprints provide a simple and repeatable way of deploying "
 "infrastructure-as-code to Azure Clouds. Objects and properties are "
 "defined in a JSON file and are provisionable on-demand in *|ProApp|*"
-msgstr ""
+msgstr "|morpheus| fournit plusieurs fonctionnalités concernant l'intégration de machines virtuelles et serveurs existants dans un environnement. La plupart des options cloud contiennent une case « *Inventory Existing Instances* ». Lorsque cette option est sélectionnée, toutes les VM trouvées dans la portée spécifiée de l'intégration cloud seront analysées périodiquement et les machines virtuelles seront synchronisées dans |morpheus|. Les utilisateurs peuvent également choisir d'intégrer uniquement les machines virtuelles exécutées dans des pools de ressources spécifiques. Une fois le Cloud vCenter intégré, accédez à la page de détail du Cloud spécifique (sélectionnez-le dans la liste à |InfClo|). Depuis l'onglet Resources, localisez la section Pools. Cliquez sur ACTIONS > Edit à côté d'un pool de ressources sélectionné. Si INVENTORY est coché, |morpheus| intégrera automatiquement les machines virtuelles de ce pool de ressources."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:6
 msgid ""
 "To create a new ARM Blueprint, navigate to |LibBluApp|. Click "
 ":guilabel:`+ ADD`."
-msgstr ""
+msgstr "Par défaut, ces machines virtuelles sont considérées comme « non gérées » et n'apparaissent pas dans la zone :menuselection:`Provisioning --> Instances` mais plutôt dans ``Infrastructure > Compute > Virtual Machines``. Cependant, quelques fonctionnalités sont fournies concernant les instances non gérées. Elles peuvent être affectées à divers comptes si vous utilisez un compte maître multilocataire ; il peut cependant être préférable d'affecter le « Resource Pool » à un compte et éventuellement déplacer tous les serveurs de ce pool (plus de détails ultérieurement)."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:8
 msgid ""
 "On the Name tab of the New Blueprint modal, enter a name for your new "
 "Blueprint. In the Type dropdown menu, select ARM. :guilabel:`NEXT`"
-msgstr ""
+msgstr "Un serveur peut également être transformé en serveur géré. Durant ce processus, un accès distant est demandé et une installation d'agent est effectuée sur le système d'exploitation invité. Cela permet des opérations invité concernant l'acquisition de journaux et les statistiques. Si l'installation de l'agent échoue, un serveur sera quand même marqué comme géré et une Instance sera créée dans `Provisioning`, cependant certaines fonctionnalités ne fonctionneront pas. Cela inclut la collecte de statistiques et les journaux."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:10
 msgid "In the Blueprint Summary section, complete the following fields as needed:"
-msgstr ""
+msgstr "Note"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:12
 msgid ""
 "**NAME:** Enter a name for this Blueprint as it will appear in the "
 "|morpheus| Blueprints list"
-msgstr ""
+msgstr "Toutes les données Cloud sont resynchronisées toutes les 5 minutes. Cela inclut les Datastores, Resource Pools, Networks, Blueprints et Virtual Machines."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:13
 msgid "**DESCRIPTION:** An optional description field for your Blueprint"
-msgstr ""
+msgstr "Plans de service"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:14
 msgid ""
 "**CATEGORY:** An optional category tag for your Blueprint, such as web, "
 "utility, or app"
-msgstr ""
+msgstr "Un ensemble de plans de service par défaut est créé dans |morpheus| pour le moteur de provisionnement VMware. Ces plans de service peuvent être considérés comme analogues aux Flavors AWS ou Openstack Flavors. Ils permettent de définir des niveaux prédéfinis de mémoire, stockage, cœurs et CPU. Des grilles tarifaires peuvent également leur être appliquées pour suivre le coût estimé par machine virtuelle ainsi que la tarification pour les clients. Par défaut, ces options sont de tailles fixes mais peuvent être configurées pour un dimensionnement dynamique. Un plan de service peut être configuré pour autoriser une saisie utilisateur personnalisée pour la mémoire, le stockage ou le CPU. Pour configurer cela, modifiez simplement un plan de service existant lié à VMware ou créez-en un nouveau. Tous peuvent être facilement gérés depuis la section ``Admin > Plans & Pricing``."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:15
 msgid ""
 "**IMAGE:** An optional image icon to more easily identify your Blueprint "
 "from a list. If no image is uploaded, a default image will be used"
-msgstr ""
+msgstr "Images virtuelles / Blueprints"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:17
 msgid ""
@@ -75,77 +75,77 @@ msgid ""
 "Using the Config Type dropdown menu, we can opt to write or paste JSON "
 "configuration directly into this modal, or we can choose to bring in a "
 "JSON which we're keeping under version control in a Git repository."
-msgstr ""
+msgstr "|morpheus| prendra automatiquement un inventaire de tous les blueprints configurés dans vCenter et les présentera comme options lors du provisionnement. Cependant, pour que |morpheus| provisionne correctement ces machines virtuelles et fournisse des statistiques et un état de santé précis, un agent doit être installé au démarrage de la machine virtuelle. Cela signifie qu'un accès distant doit être accordé au niveau du système d'exploitation invité à |morpheus|. Pour configurer correctement ces images virtuelles, trouvez les images pertinentes dans :menuselection:`Library --> Virtual Images` et modifiez l'entrée. Sur ce formulaire, quelques options sont présentées. La première est une case demandant si cloud-init est activé. Si cloud-init est activé, fournissez simplement le nom d'utilisateur OS par défaut configuré (pour Ubuntu, le nom d'utilisateur est `ubuntu` et pour CentOS, `centos`). Pour ceux qui souhaitent ajouter cloud-init à des blueprints existants, |morpheus| ne nécessite aucune configuration spéciale et peut utiliser les paramètres `cloud.cfg` par défaut."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:19
 msgid ""
 "Depending on whether we need the |morpheus| Agent installed and/or cloud-"
 "init enabled, mark the following boxes in the next section:"
-msgstr ""
+msgstr "Un nom d'utilisateur/mot de passe cloud-init global peut également être configuré par compte ainsi qu'une paire de clés via la section de paramètres ``Admin->Provisioning``. Le grand avantage de l'utilisation de cloud-init est que les blueprints par défaut n'ont pas besoin d'ensembles d'identifiants communs, augmentant ainsi la sécurité du provisionnement."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:21
 msgid "**INSTALL AGENT**"
-msgstr ""
+msgstr "Les systèmes Windows ne prennent généralement pas en charge cloud-init. Désactivez simplement cette case et fournissez les identifiants `Administrator`. Notez que ces identifiants sont chiffrés dans la base de données. Si vous utilisez WinRM pour le RPC Mode au lieu de VMware tools, un ensemble d'identifiants de compte local ou de domaine Administrator peut être fourni à la place."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:22
 msgid "**CLOUD INIT ENABLED**"
-msgstr ""
+msgstr "Instantanés"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:24
 msgid ""
 "If writing or pasting your configuration JSON directly into the modal, "
 "fill out the following fields:"
-msgstr ""
+msgstr "|morpheus| permet de créer un instantané d'une VM dans VMware vCenter. Depuis la page de détail de l'instance, sélectionnez simplement ``Actions > Create Snapshot`` pour commencer la création d'un nouvel instantané. Les instantanés existants peuvent être consultés dans l'onglet ``BACKUPS`` de la page de détail de l'instance. Les instantanés pris dans vCenter seront synchronisés dans |morpheus| toutes les cinq minutes. Pour revenir à un instantané précédent, cliquez sur l'icône de restauration située à droite de l'instantané. Les instantanés peuvent être supprimés en cliquant sur l'icône de corbeille."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:26
 #: ../../library/blueprints/appBlueprints/arm.rst:32
 msgid "**OS TYPE:** Identify the resources to be created as Linux or Windows"
-msgstr ""
+msgstr "L'accès aux instantanés peut être limité ou supprimé entièrement pour des rôles utilisateur spécifiques si nécessaire. Pour modifier les permissions Instantanés d'un rôle, accédez à |AdmRol| > (votre rôle sélectionné) > Snapshots. Les utilisateurs peuvent recevoir un accès Complet, Lecture seule ou Aucun accès."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:27
 msgid "**CONFIG TYPE:** ARM Template JSON (.json)"
-msgstr ""
+msgstr "Important"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:28
 msgid "**CONFIG:** Your JSON configuration template"
-msgstr ""
+msgstr "|morpheus| prend en charge l'utilisation d'adaptateurs réseau SR-IOV avec les Clouds VMware. Gardez à l'esprit que VMware ne prend pas en charge les instantanés pour ce type d'adaptateur réseau et que, pour cette raison, les fonctionnalités d'instantané et de sauvegarde échoueront également dans |morpheus| pour les VM utilisant des adaptateurs réseau SR-IOV."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:30
 msgid ""
 "If bringing in a template from a Git repository, fill out the following "
 "fields:"
-msgstr ""
+msgstr "Groupes d'affinité"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:33
 msgid "**CONFIG TYPE:** \"Git Repository\""
-msgstr ""
+msgstr "|morpheus| offre une synchronisation bidirectionnelle des groupes d'affinité avec les Clouds VMware vCenter intégrés. Un groupe d'affinité contient un type (Keep Together ou Keep Separate) et une liste de serveurs auxquels la règle doit être appliquée. Les groupes d'affinité créés depuis |morpheus| créent des règles « Should » (règles souples) plutôt que des règles « Must » (règles strictes) dans vCenter. Ainsi, dans la mesure du possible, les serveurs configurés pour « Keep Together » s'exécuteront sur le même hôte de cluster tandis que les serveurs configurés pour « Keep Separate » seront répartis sur les hôtes de cluster dans la mesure du possible. Ces règles peuvent être enfreintes si nécessaire pour équilibrer les ressources ou récupérer après des défaillances."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:34
 msgid ""
 "**SCM INTEGRATION:** If a pre-existing SCM integration is selected here, "
 "the available selections in the \"Repository\" dropdown menu will be "
 "filtered to show only those associated with the chosen SCM integration"
-msgstr ""
+msgstr "Conseil"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:35
 msgid "**REPOSITORY:** Select the repository in which your configuration resides"
-msgstr ""
+msgstr "Il est possible de créer un groupe d'affinité vide (c'est-à-dire sans serveurs sélectionnés) dans |morpheus| même si cela n'est pas possible dans vCenter. Si un tel groupe d'affinité est créé, |morpheus| le conservera sans synchronisation vers vCenter jusqu'à ce qu'au moins un serveur soit ajouté et que le groupe d'affinité devienne compatible avec l'API vCenter."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:36
 msgid "**BRANCH OR TAG:** The branch in which your configuration resides"
-msgstr ""
+msgstr "Affichage des groupes d'affinité"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:37
 msgid "**WORKING PATH:** The path to your configuration files"
-msgstr ""
+msgstr "Les groupes d'affinité sont listés dans l'onglet Resources de la page de détail du Cloud (|InfClo|, puis sélectionnez le Cloud VMware approprié). Depuis le menu ACTIONS pour chaque groupe d'affinité, ils peuvent être modifiés ou supprimés. En modifiant un groupe d'affinité, les utilisateurs peuvent consulter ou modifier son état activé (les groupes d'affinité non activés ne seront pas appliqués)."
 
 #: ../../library/blueprints/appBlueprints/arm.rst:38
 msgid "**CONFIG:** Your selected config file"
-msgstr ""
+msgstr "Ajout de groupes d'affinité"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:40
 msgid "Once finished, click :guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Les groupes d'affinité sont listés dans l'onglet Resources de la page de détail du Cloud VMware (|InfClo|, puis sélectionnez le Cloud VMware approprié). De là, pour créer un nouveau groupe d'affinité, cliquez sur :guilabel:`+ ADD`. Configurez les éléments suivants :"
 
 #: ../../library/blueprints/appBlueprints/arm.rst:42
 msgid ""
@@ -153,5 +153,5 @@ msgid ""
 "Blueprints. Blueprints are deployed in the |ProApp| section of "
 "|morpheus|. See the Apps section of |morpheus| docs for more information "
 "on that process."
-msgstr ""
+msgstr "**NAME:** Un nom pour le groupe d'affinité"
 

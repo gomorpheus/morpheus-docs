@@ -306,6 +306,9 @@ html_context = {
     "doc_locales": [
         {"code": "en", "title": "English"},
         {"code": "es", "title": "Español"},
+        {"code": "fr", "title": "Français"},
+        {"code": "de", "title": "Deutsch"},
+        {"code": "pt", "title": "Português"},
     ],
 }
 copyright = f"{year}, Morpheus Data"

@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/centos7template.rst:2
 msgid "Creating a CentOS 7 |morpheus| Image"
-msgstr ""
+msgstr "Erstellen eines CentOS-7-|morpheus|-Images"
 
 #: ../../integration_guides/Clouds/centos7template.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../integration_guides/Clouds/centos7template.rst:7
 msgid ""
@@ -38,15 +38,15 @@ msgid ""
 "However, in many on-premise deployments there are custom image "
 "requirements as well as networking requirements. This guide will go over "
 "how to create a base CentOS 7 Image for use within |morpheus|."
-msgstr ""
+msgstr "|morpheus| liefert standardmäßig einen Standardsatz von Blueprints für viele moderne Bereitstellungsszenarien. Diese bestehen größtenteils aus Basis-Betriebssystem-Images mit einigen zusätzlichen Anpassungen. Diese Anpassungen umfassen typischerweise die Hinzufügung von Cloud-Init (dessen Verwendung in den meisten Umgebungen dringend empfohlen, aber nicht zwingend ist). In vielen On-Premise-Bereitstellungen gibt es jedoch individuelle Image-Anforderungen sowie Netzwerkanforderungen. Dieser Leitfaden beschreibt, wie Sie ein Basis-CentOS-7-Image zur Verwendung in |morpheus| erstellen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:10
 msgid "Creating a CentOS 7 |morpheus| VMware Image"
-msgstr ""
+msgstr "Erstellen eines CentOS-7-|morpheus|-VMware-Images"
 
 #: ../../integration_guides/Clouds/centos7template.rst:13
 msgid "VMWare"
-msgstr ""
+msgstr "VMware"
 
 #: ../../integration_guides/Clouds/centos7template.rst:15
 msgid ""
@@ -54,17 +54,17 @@ msgid ""
 "installed. Without it, |morpheus| will have difficulty assessing the host"
 " ip address and performing some additional automation tasks for the "
 "operating system."
-msgstr ""
+msgstr "Bei der Ausführung unter VMware wird dringend empfohlen, VMware Tools zu installieren. Ohne diese hat |morpheus| Schwierigkeiten, die Host-IP-Adresse zu ermitteln und einige zusätzliche Automatisierungsaufgaben für das Betriebssystem auszuführen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:18
 msgid "Cloud-Init"
-msgstr ""
+msgstr "Cloud-Init"
 
 #: ../../integration_guides/Clouds/centos7template.rst:20
 msgid ""
 "To get started with a base CentOS image we first install cloud-init. This"
 " is a relatively simple process using yum:"
-msgstr ""
+msgstr "Um mit einem Basis-CentOS-Image zu beginnen, installieren wir zunächst Cloud-Init. Dies ist ein relativ einfacher Prozess mit yum:"
 
 #: ../../integration_guides/Clouds/centos7template.rst:22
 #, python-brace-format
@@ -84,7 +84,7 @@ msgid ""
 "growroot is responsible for resizing the root partition upon first boot "
 "to match the virtual disk size that was potentially adjusted during "
 "provisioning."
-msgstr ""
+msgstr "Diese yum-Installation besteht aus zwei Teilen. Zunächst stellen wir sicher, dass einige Kernabhängigkeiten für die Automatisierung sowie Cloud-Init installiert sind. Git beispielsweise wird für die spätere Ansible-Playbook-Automatisierung installiert und ist daher optional, wenn Ansible nicht verwendet wird. Die dracut-modules-growroot sind dafür verantwortlich, die Root-Partition beim ersten Booten an die während der Provisionierung möglicherweise angepasste virtuelle Festplattengröße anzupassen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:30
 msgid ""
@@ -93,11 +93,11 @@ msgid ""
 "configure the default cloud-init user that gets created when the vm boots"
 " automatically by cloud-init. This is located in the Cloud-Init Settings "
 "section at :menuselection:`Administration --> Settings --> Provisioning`."
-msgstr ""
+msgstr "Ein großer Vorteil von Cloud-Init ist, dass Anmeldedaten nicht im Blueprint festgeschrieben werden müssen. Es ist ratsam, in |morpheus| den Standard-Cloud-Init-Benutzer zu konfigurieren, der beim automatischen Booten der VM durch Cloud-Init erstellt wird. Dies befindet sich im Abschnitt Cloud-Init Settings unter :menuselection:`Administration --> Settings --> Provisioning`."
 
 #: ../../integration_guides/Clouds/centos7template.rst:33
 msgid "Network Interfaces"
-msgstr ""
+msgstr "Netzwerkschnittstellen"
 
 #: ../../integration_guides/Clouds/centos7template.rst:35
 msgid ""
@@ -108,13 +108,13 @@ msgid ""
 "we don't want this to fluctuate when provisioning the blueprint in "
 "various VMware environments. Fortunately, there is a way to turn this "
 "functionality off and restore the interface back to eth0."
-msgstr ""
+msgstr "Eine etwas lästige Änderung bei CentOS 7 ist, dass die Netzwerkschnittstellen die Namenskonvention geändert haben. Beim Ausführen von ifconfig stellen Sie möglicherweise fest, dass die primäre Netzwerkschnittstelle auf etwas wie ens2344 oder eine andere zufällige Nummer gesetzt ist. Diese Benennung erfolgt typischerweise dynamisch anhand der Hardware-ID, und wir möchten nicht, dass sie schwankt, wenn der Blueprint in verschiedenen VMware-Umgebungen provisioniert wird. Glücklicherweise gibt es eine Möglichkeit, diese Funktionalität zu deaktivieren und die Schnittstelle wieder auf eth0 zurückzusetzen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:37
 msgid ""
 "Firstly we need to adjust our bootloader to disable interface naming like"
 " this."
-msgstr ""
+msgstr "Zuerst müssen wir den Bootloader anpassen, um eine solche Schnittstellenbenennung zu deaktivieren."
 
 #: ../../integration_guides/Clouds/centos7template.rst:39
 msgid ""
@@ -127,20 +127,20 @@ msgid ""
 "The above command adds a few arguments to the kernel args list (namely "
 "``net.ifnames=0`` and ``biosdevname=0``. It may be useful to view the "
 "``/etc/default/grub`` file and ensure these settings were indeed applied."
-msgstr ""
+msgstr "Der obige Befehl fügt dem Kernel-Args-Liste einige Argumente hinzu (nämlich ``net.ifnames=0`` und ``biosdevname=0``. Es kann hilfreich sein, die Datei ``/etc/default/grub`` zu prüfen und sicherzustellen, dass diese Einstellungen tatsächlich angewendet wurden."
 
 #: ../../integration_guides/Clouds/centos7template.rst:47
 msgid ""
 "The next step is to adjust the network-scripts in centOS. we need to "
 "ensure we have a file called ``/etc/sysconfig/network-scripts/ifcfg-"
 "eth0``"
-msgstr ""
+msgstr "Der nächste Schritt ist die Anpassung der Network-Scripts in CentOS. Wir müssen sicherstellen, dass eine Datei namens ``/etc/sysconfig/network-scripts/ifcfg-eth0`` vorhanden ist"
 
 #: ../../integration_guides/Clouds/centos7template.rst:49
 msgid ""
 "Below is a script that we run on our packer builds to prepare the "
 "machines network configuration files."
-msgstr ""
+msgstr "Nachfolgend finden Sie ein Skript, das wir bei unseren Packer-Builds ausführen, um die Netzwerkkonfigurationsdateien der Maschinen vorzubereiten."
 
 #: ../../integration_guides/Clouds/centos7template.rst:51
 #, python-brace-format
@@ -164,7 +164,7 @@ msgid ""
 "replace the old ens config file. Please do verify this config exists "
 "after running. If it does not you will have to be sure to build one on "
 "your own."
-msgstr ""
+msgstr "Dieses Skript versucht sicherzustellen, dass eine neue ifcfg-eth0-Konfiguration erstellt wird, die die alte ens-Konfigurationsdatei ersetzt. Bitte prüfen Sie nach dem Ausführen, ob diese Konfiguration vorhanden ist. Falls nicht, müssen Sie selbst eine erstellen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:64
 msgid ""
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/centos7template.rst:76
 msgid "Gotchas"
-msgstr ""
+msgstr "Fallstricke"
 
 #: ../../integration_guides/Clouds/centos7template.rst:78
 msgid ""
@@ -187,7 +187,7 @@ msgid ""
 " advisable to set this to permissive unless it is mandatory within your "
 "organization to use an enforced SELinux configuration. If that is the "
 "case please see the documentation for the cloud_init_t security policies."
-msgstr ""
+msgstr "SELinux kann bei Cloud-Init im Enforced-Modus Probleme verursachen. Es kann ratsam sein, dies auf Permissive zu setzen, sofern in Ihrer Organisation keine erzwungene SELinux-Konfiguration vorgeschrieben ist. Ist dies der Fall, finden Sie in der Dokumentation zu den cloud_init_t-Sicherheitsrichtlinien weitere Informationen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:80
 msgid ""
@@ -195,11 +195,11 @@ msgid ""
 "Service when assigning static IP's. Disable Network Manager when possible"
 " or Static IP assignment may not work until the Network Service is "
 "restarted manually."
-msgstr ""
+msgstr "Network Manager verhindert auch den erforderlichen Neustart des Network Service beim Zuweisen statischer IPs. Deaktivieren Sie Network Manager nach Möglichkeit, andernfalls funktioniert die Zuweisung statischer IPs möglicherweise erst, nachdem der Network Service manuell neu gestartet wurde."
 
 #: ../../integration_guides/Clouds/centos7template.rst:83
 msgid "A Note on Proxies"
-msgstr ""
+msgstr "Hinweis zu Proxys"
 
 #: ../../integration_guides/Clouds/centos7template.rst:85
 msgid ""
@@ -208,7 +208,7 @@ msgid ""
 "configure proxies a few environment variables must be set in the "
 "`/etc/environment` file (This can be done automatically in a default "
 "user-data script for cloud-init as well in edit cloud)."
-msgstr ""
+msgstr "Proxy-Konfigurationen können in einigen Organisationen variieren und erschweren den Aufbau eines Basis-Blueprints etwas. Um Proxys vollständig zu konfigurieren, müssen einige Umgebungsvariablen in der Datei `/etc/environment` gesetzt werden (Dies kann auch automatisch in einem Standard-User-Data-Skript für Cloud-Init beim Bearbeiten der Cloud erfolgen)."
 
 #: ../../integration_guides/Clouds/centos7template.rst:87
 msgid ""
@@ -222,25 +222,25 @@ msgstr ""
 #: ../../integration_guides/Clouds/centos7template.rst:96
 #: ../../integration_guides/Clouds/centos7template.rst:100
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../integration_guides/Clouds/centos7template.rst:96
 msgid ""
 "It is very important to properly set the no_proxy list (applianceUrl) "
 "should be replaced with the actual appliance url. In future releases, "
 "morpheus plans to automatically take care of this."
-msgstr ""
+msgstr "Es ist sehr wichtig, die no_proxy-Liste korrekt festzulegen (applianceUrl) sollte durch die tatsächliche Appliance-URL ersetzt werden. In zukünftigen Versionen plant Morpheus, dies automatisch zu übernehmen."
 
 #: ../../integration_guides/Clouds/centos7template.rst:98
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../integration_guides/Clouds/centos7template.rst:98
 msgid ""
 "If using cloud-init agent install mode these settings need to be set in "
 "the custom Cloud-Init User data section of “Edit Cloud” or “Edit Virtual "
 "Image”"
-msgstr ""
+msgstr "Wenn der Cloud-Init-Agent-Installationsmodus verwendet wird, müssen diese Einstellungen im benutzerdefinierten Abschnitt Cloud-Init User Data unter „Edit Cloud“ oder „Edit Virtual Image“ gesetzt werden"
 
 #: ../../integration_guides/Clouds/centos7template.rst:100
 msgid ""
@@ -248,5 +248,5 @@ msgid ""
 "be configured in the docker config. See Docker guides for instructions on"
 " how to properly set this. If necessary this can be wrapped in a task "
 "automation workflow for your own use."
-msgstr ""
+msgstr "Wenn diese virtuelle Maschine als Docker-Host verwendet wird, müssen Proxy-Einstellungen auch in der Docker-Konfiguration konfiguriert werden. Anleitungen dazu finden Sie in den Docker-Guides. Bei Bedarf kann dies in einen Task-Automatisierungs-Workflow für Ihre eigene Nutzung verpackt werden."
 

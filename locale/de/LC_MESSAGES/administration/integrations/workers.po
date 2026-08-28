@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:2
 msgid "Distributed Workers"
-msgstr ""
+msgstr "Distributed Workers"
 
 #: ../../administration/integrations/workers.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Überblick"
 
 #: ../../administration/integrations/workers.rst:7
 msgid ""
@@ -35,43 +35,43 @@ msgid ""
 "quorum witness for supported HVM clusters. A single Worker runtime can "
 "provide more than one capability, but each capability uses a specific "
 "registration and key in |morpheus|."
-msgstr ""
+msgstr "Der |morpheus|-Worker ist ein separat bereitgestellter Service, der Cloud- und Agent-Datenverkehr proxyen, Konsolen- und VDI-Sitzungen weiterleiten und als Quorum-Witness für unterstützte HVM-Cluster fungieren kann. Eine einzelne Worker-Laufzeitumgebung kann mehr als eine Fähigkeit bereitstellen, aber jede Fähigkeit verwendet eine spezifische Registrierung und einen spezifischen Schlüssel in |morpheus|."
 
 #: ../../administration/integrations/workers.rst:9
 msgid ""
 "Distributed Workers, including Workers used as HVM quorum witnesses, are "
 "available in VM Essentials, Advanced, and Enterprise. The VDI Gateway use"
 " case requires an Advanced or Enterprise license."
-msgstr ""
+msgstr "Distributed Workers, einschließlich Workers, die als HVM-Quorum-Witnesses verwendet werden, sind in VM Essentials, Advanced und Enterprise verfügbar. Der VDI-Gateway-Anwendungsfall erfordert eine Advanced- oder Enterprise-Lizenz."
 
 #: ../../administration/integrations/workers.rst:11
 msgid "Worker capabilities and configuration"
-msgstr ""
+msgstr "Worker-Fähigkeiten und -Konfiguration"
 
 #: ../../administration/integrations/workers.rst:15
 msgid "Capability"
-msgstr ""
+msgstr "Fähigkeit"
 
 #: ../../administration/integrations/workers.rst:16
 msgid "Registration"
-msgstr ""
+msgstr "Registrierung"
 
 #: ../../administration/integrations/workers.rst:17
 msgid "Worker configuration"
-msgstr ""
+msgstr "Worker-Konfiguration"
 
 #: ../../administration/integrations/workers.rst:18
 msgid "Assignment and traffic path"
-msgstr ""
+msgstr "Zuweisung und Datenverkehrspfad"
 
 #: ../../administration/integrations/workers.rst:19
 msgid "Cloud API proxy and Agent relay"
-msgstr ""
+msgstr "Cloud-API-Proxy und Agent-Relay"
 
 #: ../../administration/integrations/workers.rst:20
 #: ../../administration/integrations/workers.rst:32
 msgid "Distributed Worker in |AdmIntDis|"
-msgstr ""
+msgstr "Distributed Worker in |AdmIntDis|"
 
 #: ../../administration/integrations/workers.rst:21
 msgid "``worker['worker_key']``"
@@ -82,16 +82,16 @@ msgid ""
 "Select the Worker on a supported Cloud. The Worker opens an outbound "
 "connection to the |morpheus| appliance and relays traffic to resources it"
 " can reach."
-msgstr ""
+msgstr "Wählen Sie den Worker in einer unterstützten Cloud aus. Der Worker öffnet eine ausgehende Verbindung zur |morpheus|-Appliance und leitet den Datenverkehr an erreichbare Ressourcen weiter."
 
 #: ../../administration/integrations/workers.rst:23
 msgid "Console gateway"
-msgstr ""
+msgstr "Konsolen-Gateway"
 
 #: ../../administration/integrations/workers.rst:24
 #: ../../administration/integrations/workers.rst:28
 msgid "VDI Gateway in |TooVDIGat|"
-msgstr ""
+msgstr "VDI Gateway in |TooVDIGat|"
 
 #: ../../administration/integrations/workers.rst:25
 #: ../../administration/integrations/workers.rst:29
@@ -102,31 +102,31 @@ msgstr ""
 msgid ""
 "Select the gateway on a Network, Cloud, or as Default Console Gateway in "
 "|AdmSetApp|. Browser console traffic is redirected to the gateway."
-msgstr ""
+msgstr "Wählen Sie das Gateway in einem Netzwerk, einer Cloud oder als Default Console Gateway in |AdmSetApp| aus. Browser-Konsolenverkehr wird an das Gateway umgeleitet."
 
 #: ../../administration/integrations/workers.rst:27
 msgid "VDI gateway"
-msgstr ""
+msgstr "VDI-Gateway"
 
 #: ../../administration/integrations/workers.rst:30
 msgid ""
 "Assign the gateway to a VDI Pool. User desktop sessions for that Pool are"
 " redirected to the gateway."
-msgstr ""
+msgstr "Weisen Sie das Gateway einem VDI-Pool zu. Benutzer-Desktop-Sitzungen für diesen Pool werden an das Gateway umgeleitet."
 
 #: ../../administration/integrations/workers.rst:31
 msgid "HVM quorum witness"
-msgstr ""
+msgstr "HVM-Quorum-Witness"
 
 #: ../../administration/integrations/workers.rst:33
 msgid "``worker['worker_key']`` and a reachable Worker URL"
-msgstr ""
+msgstr "``worker['worker_key']`` und eine erreichbare Worker-URL"
 
 #: ../../administration/integrations/workers.rst:34
 msgid ""
 "Select the Worker as the cluster witness. Cluster Hosts contact the "
 "Worker URL for quorum arbitration."
-msgstr ""
+msgstr "Wählen Sie den Worker als Cluster-Witness aus. Cluster-Hosts kontaktieren die Worker-URL zur Quorum-Schlichtung."
 
 #: ../../administration/integrations/workers.rst:36
 msgid ""
@@ -136,7 +136,7 @@ msgid ""
 "to enable combined roles on one runtime. A console gateway is not a "
 "separate runtime mode; it is a VDI Gateway registration selected for "
 "console routing."
-msgstr ""
+msgstr "Der Gateway-API-Schlüssel und der Distributed-Worker-Schlüssel sind unabhängig. Konfigurieren Sie nur ``worker['worker_key']`` für Distributed-Worker- und Witness-Nutzung, nur ``worker['apikey']`` für Konsolen- und VDI-Gateway-Nutzung, oder beide Schlüssel, um kombinierte Rollen in einer Laufzeitumgebung zu aktivieren. Ein Konsolen-Gateway ist kein separater Laufzeitmodus; es ist eine VDI-Gateway-Registrierung, die für die Konsolenweiterleitung ausgewählt wird."
 
 #: ../../administration/integrations/workers.rst:38
 msgid ""
@@ -145,17 +145,17 @@ msgid ""
 "independent maintenance windows, fault isolation, or capacity scaling. If"
 " roles are combined, the Worker URL, certificates, firewall rules, and "
 "availability design must satisfy every enabled role."
-msgstr ""
+msgstr "Verwenden Sie separate Worker-Bereitstellungen, wenn Gateway-Sitzungen, Cloud-Proxy-Datenverkehr und Quorum-Witness-Datenverkehr unterschiedliche Netzwerkzonen, unabhängige Wartungsfenster, Fehlerisolierung oder Kapazitätsskalierung erfordern. Wenn Rollen kombiniert werden, müssen die Worker-URL, Zertifikate, Firewall-Regeln und das Verfügbarkeitsdesign jede aktivierte Rolle erfüllen."
 
 #: ../../administration/integrations/workers.rst:40
 msgid "**Supported Cloud Types**"
-msgstr ""
+msgstr "**Unterstützte Cloud-Typen**"
 
 #: ../../administration/integrations/workers.rst:42
 msgid ""
 "The following Cloud/Zone types have established Distributed Worker Cloud "
 "API proxy and Agent relay support:"
-msgstr ""
+msgstr "Die folgenden Cloud-/Zonentypen verfügen über etablierte Unterstützung für Distributed-Worker-Cloud-API-Proxy und Agent-Relay:"
 
 #: ../../administration/integrations/workers.rst:44
 msgid "vmware"
@@ -187,7 +187,7 @@ msgid ""
 "because that capability is not established by the Worker implementation "
 "or package policy. Do not infer Cloud proxy support from another Worker "
 "role. In particular:"
-msgstr ""
+msgstr "HVM, SCVMM und Hyper-V sind nicht als unterstützte Cloud-Proxy-Typen aufgeführt, weil diese Fähigkeit durch die Worker-Implementierung oder die Paketrichtlinie nicht etabliert ist. Leiten Sie Cloud-Proxy-Unterstützung nicht aus einer anderen Worker-Rolle ab. Insbesondere:"
 
 #: ../../administration/integrations/workers.rst:53
 msgid ""
@@ -195,30 +195,30 @@ msgid ""
 "|morpheus| 8.0.6, but an image on which a Worker can run does not qualify"
 " HVM as a proxied Cloud type or Ubuntu 24.04 as a supported Worker "
 "package platform."
-msgstr ""
+msgstr "Ein HVM-Appliance-Image basierend auf Ubuntu 24.04 ist ab |morpheus| 8.0.6 verfügbar, aber ein Image, auf dem ein Worker ausgeführt werden kann, qualifiziert HVM weder als Proxied-Cloud-Typ noch Ubuntu 24.04 als unterstützte Worker-Paketplattform."
 
 #: ../../administration/integrations/workers.rst:54
 msgid ""
 "A Distributed Worker can serve as an HVM quorum witness beginning with "
 "|morpheus| 9.0. Witness traffic is a cluster quorum role, not HVM Cloud "
 "API proxy support."
-msgstr ""
+msgstr "Ein Distributed Worker kann ab |morpheus| 9.0 als HVM-Quorum-Witness dienen. Witness-Datenverkehr ist eine Cluster-Quorum-Rolle, keine HVM-Cloud-API-Proxy-Unterstützung."
 
 #: ../../administration/integrations/workers.rst:55
 msgid ""
 "SCVMM and Hyper-V integration compatibility does not establish "
 "Distributed Worker proxy support for those Cloud types."
-msgstr ""
+msgstr "Die Integrationskompatibilität von SCVMM und Hyper-V begründet keine Distributed-Worker-Proxy-Unterstützung für diese Cloud-Typen."
 
 #: ../../administration/integrations/workers.rst:58
 msgid "Installation"
-msgstr ""
+msgstr "Installation"
 
 #: ../../administration/integrations/workers.rst:60
 msgid ""
 "A distributed worker VM is installed and configured similarly to a "
 "|morpheus| appliance via ``rpm`` or ``deb`` package."
-msgstr ""
+msgstr "Eine Distributed-Worker-VM wird ähnlich wie eine |morpheus|-Appliance über ein ``rpm``- oder ``deb``-Paket installiert und konfiguriert."
 
 #: ../../administration/integrations/workers.rst:62
 #: ../../administration/integrations/workers.rst:64
@@ -226,13 +226,13 @@ msgstr ""
 #: ../../administration/integrations/workers.rst:178
 #: ../../administration/integrations/workers.rst:190
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../administration/integrations/workers.rst:62
 msgid ""
 "Package URLs for the distributed worker are available at "
 "https://app.morpheushub.com in the downloads section."
-msgstr ""
+msgstr "Paket-URLs für den Distributed Worker sind unter https://app.morpheushub.com im Downloads-Bereich verfügbar."
 
 #: ../../administration/integrations/workers.rst:64
 msgid ""
@@ -241,27 +241,27 @@ msgid ""
 "public trusted SSL certificate on the |morpheus| appliance (or load "
 "balancer) or ensure the certificate and chain are added to the Java "
 "Keystore of the Distributed Worker to trust the certificate."
-msgstr ""
+msgstr "Der Distributed Worker setzt voraus, dass die |morpheus|-Appliance über ein vertrauenswürdiges SSL-Zertifikat verfügt. Dies kann erreicht werden, indem ein öffentlich vertrauenswürdiges SSL-Zertifikat auf der |morpheus|-Appliance (oder dem Load Balancer) konfiguriert wird, oder indem Zertifikat und Kette dem Java Keystore des Distributed Workers hinzugefügt werden, um dem Zertifikat zu vertrauen."
 
 #: ../../administration/integrations/workers.rst:66
 msgid "**Requirements**"
-msgstr ""
+msgstr "**Anforderungen**"
 
 #: ../../administration/integrations/workers.rst:68
 msgid "**Supported Operating Systems**"
-msgstr ""
+msgstr "**Unterstützte Betriebssysteme**"
 
 #: ../../administration/integrations/workers.rst:72
 msgid "OS"
-msgstr ""
+msgstr "Betriebssystem"
 
 #: ../../administration/integrations/workers.rst:73
 msgid "Version(s)"
-msgstr ""
+msgstr "Version(en)"
 
 #: ../../administration/integrations/workers.rst:74
 msgid "Amazon Linux"
-msgstr ""
+msgstr "Amazon Linux"
 
 #: ../../administration/integrations/workers.rst:75
 msgid "2"
@@ -269,7 +269,7 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:76
 msgid "CentOS"
-msgstr ""
+msgstr "CentOS"
 
 #: ../../administration/integrations/workers.rst:77
 #: ../../administration/integrations/workers.rst:81
@@ -278,7 +278,7 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:78
 msgid "Debian"
-msgstr ""
+msgstr "Debian"
 
 #: ../../administration/integrations/workers.rst:79
 msgid "10, 11"
@@ -286,11 +286,11 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:80
 msgid "RHEL"
-msgstr ""
+msgstr "RHEL"
 
 #: ../../administration/integrations/workers.rst:82
 msgid "SUSE SLES"
-msgstr ""
+msgstr "SUSE SLES"
 
 #: ../../administration/integrations/workers.rst:83
 msgid "12"
@@ -298,7 +298,7 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:84
 msgid "Ubuntu"
-msgstr ""
+msgstr "Ubuntu"
 
 #: ../../administration/integrations/workers.rst:85
 msgid "18.04, 20.04, 22.04"
@@ -311,54 +311,54 @@ msgid ""
 "listed. The Worker container has its own Alpine-based runtime; this does "
 "not establish a supported Ubuntu 24.04 host combination. Use only a "
 "release-approved package or container deployment."
-msgstr ""
+msgstr "Die Paketunterstützung für Ubuntu 24.04 für einen direkt installierten Distributed Worker ist durch die verfügbare Paketrichtlinie nicht etabliert und daher nicht aufgeführt. Der Worker-Container hat seine eigene Alpine-basierte Laufzeitumgebung; dies begründet keine unterstützte Host-Kombination mit Ubuntu 24.04. Verwenden Sie nur eine freigabegeprüfte Paket- oder Container-Bereitstellung."
 
 #: ../../administration/integrations/workers.rst:89
 msgid "**Memory:** 4 GB RAM minimum recommended"
-msgstr ""
+msgstr "**Arbeitsspeicher:** Mindestens 4 GB RAM empfohlen"
 
 #: ../../administration/integrations/workers.rst:90
 msgid ""
 "**Storage:** 10 GB storage minimum recommended. Storage is required for "
 "installation packages and log files"
-msgstr ""
+msgstr "**Datenspeicher:** Mindestens 10 GB Speicher empfohlen. Speicher wird für Installationspakete und Protokolldateien benötigt"
 
 #: ../../administration/integrations/workers.rst:91
 msgid "**CPU:** 4-core minimum recommended"
-msgstr ""
+msgstr "**CPU:** Mindestens 4 Kerne empfohlen"
 
 #: ../../administration/integrations/workers.rst:92
 msgid "Network connectivity **to** the |morpheus| appliance over TCP 443 (HTTPS)"
-msgstr ""
+msgstr "Netzwerkkonnektivität **zur** |morpheus|-Appliance über TCP 443 (HTTPS)"
 
 #: ../../administration/integrations/workers.rst:93
 msgid ""
 "Inbound connectivity from browsers when the Worker is used as a console "
 "or VDI gateway"
-msgstr ""
+msgstr "Eingehende Konnektivität von Browsern, wenn der Worker als Konsolen- oder VDI-Gateway verwendet wird"
 
 #: ../../administration/integrations/workers.rst:94
 msgid ""
 "Inbound connectivity from every participating HVM Host when the Worker is"
 " used as a witness"
-msgstr ""
+msgstr "Eingehende Konnektivität von jedem teilnehmenden HVM-Host, wenn der Worker als Witness verwendet wird"
 
 #: ../../administration/integrations/workers.rst:95
 msgid ""
 "Superuser privileges via the ``sudo`` command for the user installing the"
 " |morpheus| worker package"
-msgstr ""
+msgstr "Superuser-Rechte über den Befehl ``sudo`` für den Benutzer, der das |morpheus|-Worker-Paket installiert"
 
 #: ../../administration/integrations/workers.rst:96
 msgid ""
 "Access to base ``yum`` or ``apt`` repos. Access to Optional RPM repos may"
 " be required for RPM distros"
-msgstr ""
+msgstr "Zugriff auf Basis-``yum``- oder ``apt``-Repos. Zugriff auf optionale RPM-Repos kann für RPM-Distributionen erforderlich sein"
 
 #: ../../administration/integrations/workers.rst:98
 #: ../../administration/integrations/workers.rst:138
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../administration/integrations/workers.rst:98
 msgid ""
@@ -369,14 +369,14 @@ msgid ""
 "will arise at provision time. This is not a |morpheus| limitation but is "
 "a limitation of the VMware SDK client which does not natively support "
 "proxies."
-msgstr ""
+msgstr "Um VMware-vCenter-Cloud-Datenverkehr über einen Distributed Worker zu proxyen, müssen Sie einen statischen öffentlichen DNS-Eintrag für die interne IP-Adresse der vCenter-Appliance haben. Wird dies nicht getan, scheint bei der Cloud-Konfiguration alles ordnungsgemäß zu funktionieren, aber Probleme treten zur Provisionierungszeit auf. Dies ist keine Einschränkung von |morpheus|, sondern eine Einschränkung des VMware-SDK-Clients, der Proxys nicht nativ unterstützt."
 
 #: ../../administration/integrations/workers.rst:100
 msgid ""
 "Download the appropriate package from |morpheus| Hub based on your target"
 " Linux distribution and version for installation in a directory of your "
 "choosing. The package can be removed after successful installation."
-msgstr ""
+msgstr "Laden Sie das passende Paket aus dem |morpheus|-Hub basierend auf Ihrer Ziel-Linux-Distribution und -Version zur Installation in ein Verzeichnis Ihrer Wahl herunter. Das Paket kann nach erfolgreicher Installation entfernt werden."
 
 #: ../../administration/integrations/workers.rst:102
 msgid ""
@@ -388,7 +388,7 @@ msgstr ""
 msgid ""
 "Validate the package checksum as compared with the values indicated on "
 "Hub. For example:"
-msgstr ""
+msgstr "Validieren Sie die Paketprüfsumme anhand der im Hub angegebenen Werte. Zum Beispiel:"
 
 #: ../../administration/integrations/workers.rst:108
 msgid "sha256sum morpheus-worker-$version.distro"
@@ -398,11 +398,11 @@ msgstr ""
 msgid ""
 "Next, install the package using your selected distribution's package "
 "installation command and your preferred options. Example, for RPM:"
-msgstr ""
+msgstr "Installieren Sie anschließend das Paket mit dem Paketinstallationsbefehl Ihrer gewählten Distribution und Ihren bevorzugten Optionen. Beispiel für RPM:"
 
 #: ../../administration/integrations/workers.rst:114
 msgid "**rpm**:"
-msgstr ""
+msgstr "**rpm**:"
 
 #: ../../administration/integrations/workers.rst:116
 msgid ""
@@ -421,22 +421,22 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:129
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguration"
 
 #: ../../administration/integrations/workers.rst:131
 msgid ""
 "With the package installed, we need to add a new distributed worker in "
 "|morpheus| UI. Distributed workers are added in |AdmIntDis|. To create "
 "one, populate the following fields:"
-msgstr ""
+msgstr "Nachdem das Paket installiert ist, müssen wir in der |morpheus|-UI einen neuen Distributed Worker hinzufügen. Distributed Workers werden in |AdmIntDis| hinzugefügt. Füllen Sie zum Erstellen die folgenden Felder aus:"
 
 #: ../../administration/integrations/workers.rst:133
 msgid "**NAME:** A name for the distributed worker in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Ein Name für den Distributed Worker in |morpheus|"
 
 #: ../../administration/integrations/workers.rst:134
 msgid "**DESCRIPTION:** An optional description for the distributed worker"
-msgstr ""
+msgstr "**DESCRIPTION:** Eine optionale Beschreibung für den Distributed Worker"
 
 #: ../../administration/integrations/workers.rst:135
 msgid ""
@@ -447,11 +447,11 @@ msgid ""
 " as well. Other Cloud types which are supported by the |morpheus| worker "
 "need only have the worker configured on the Edit Cloud modal (|InfClo| > "
 "Selected Cloud > Edit button)"
-msgstr ""
+msgstr "**PROXY HOSTS:** Eine kommagetrennte Liste globaler Proxy-Hosts; jeder hier aufgeführte Endpunkt wird über den |morpheus|-Worker geproxyt. Für VMware müssen Sie die Host-Adressen jedes vCenters auflisten, das Sie über den Worker proxyen möchten. Xen-Hosts und PowerVC-Hosts müssen hier ebenfalls aufgeführt werden. Andere Cloud-Typen, die vom |morpheus|-Worker unterstützt werden, müssen den Worker lediglich im Modal Edit Cloud konfigurieren (|InfClo| > Selected Cloud > Schaltfläche Edit)"
 
 #: ../../administration/integrations/workers.rst:136
 msgid "**ENABLED:** When marked, the selected worker is available for use"
-msgstr ""
+msgstr "**ENABLED:** Wenn markiert, steht der ausgewählte Worker zur Verwendung zur Verfügung"
 
 #: ../../administration/integrations/workers.rst:138
 msgid ""
@@ -463,14 +463,14 @@ msgid ""
 "There are also configuration considerations that must be made for "
 "proxying vCenter Cloud traffic through a Distributed Worker. See the "
 "\"IMPORTANT\" box in the \"Requirements\" section for additional details."
-msgstr ""
+msgstr "Die in der Worker-Konfiguration eingegebene Proxy-Host-URL muss mit der in der Cloud-Konfiguration festgelegten URL übereinstimmen. Das heißt, wenn Sie die URL in der Cloud-Konfiguration verwenden, müssen Sie sie auch in der Worker-Konfiguration verwenden. Das Umgekehrte gilt ebenfalls: Wenn in der Cloud-Konfiguration eine IP-Adresse verwendet wird, sollte diese auch in der Worker-Konfiguration verwendet werden. Es gibt auch Konfigurationsaspekte, die für das Proxyn von vCenter-Cloud-Datenverkehr über einen Distributed Worker berücksichtigt werden müssen. Weitere Details finden Sie im Kasten „IMPORTANT“ im Abschnitt „Requirements“."
 
 #: ../../administration/integrations/workers.rst:140
 msgid ""
 "After clicking :guilabel:`SAVE CHANGES`, an API key is generated and "
 "displayed. Make note of this as it will be needed in a later "
 "configuration step."
-msgstr ""
+msgstr "Nach dem Klicken auf :guilabel:`SAVE CHANGES` wird ein API-Schlüssel generiert und angezeigt. Notieren Sie ihn, da er in einem späteren Konfigurationsschritt benötigt wird."
 
 #: ../../administration/integrations/workers.rst:142
 msgid ".. image:: /images/worker/createWorker.png"
@@ -484,7 +484,7 @@ msgid ""
 ":guilabel:`EDIT` from the chosen Cloud's Detail Page. Within the "
 "Connection Options section, choose a configured worker from the WORKER "
 "dropdown menu. Click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Nachdem der Worker in |morpheus| konfiguriert wurde, besteht der nächste Schritt darin, unterstützte Cloud-Integrationen zu aktualisieren, die über den Worker geproxyt werden sollen. Wählen Sie die gewünschte Cloud auf der Clouds-Listenseite (|InfClo|) aus und klicken Sie auf der Detailseite der gewählten Cloud auf :guilabel:`EDIT`. Wählen Sie im Abschnitt Connection Options einen konfigurierten Worker aus dem Dropdown-Menü WORKER. Klicken Sie auf :guilabel:`SAVE CHANGES`."
 
 #: ../../administration/integrations/workers.rst:146
 msgid ".. image:: /images/worker/addWorkerToCloud.png"
@@ -495,11 +495,11 @@ msgid ""
 "With the API key in hand and configuration complete in |morpheus| UI, "
 "head back to the worker box. Configure the gateway by editing "
 "``/etc/morpheus/morpheus-worker.rb`` and updating the following:"
-msgstr ""
+msgstr "Mit dem API-Schlüssel und abgeschlossener Konfiguration in der |morpheus|-UI kehren Sie zur Worker-Box zurück. Konfigurieren Sie das Gateway, indem Sie ``/etc/morpheus/morpheus-worker.rb`` bearbeiten und Folgendes aktualisieren:"
 
 #: ../../administration/integrations/workers.rst:151
 msgid "**Distributed Worker or witness only:**"
-msgstr ""
+msgstr "**Nur Distributed Worker oder Witness:**"
 
 #: ../../administration/integrations/workers.rst:153
 msgid ""
@@ -510,7 +510,7 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:159
 msgid "**Console or VDI gateway only:**"
-msgstr ""
+msgstr "**Nur Konsolen- oder VDI-Gateway:**"
 
 #: ../../administration/integrations/workers.rst:161
 msgid ""
@@ -522,7 +522,7 @@ msgstr ""
 #: ../../administration/integrations/workers.rst:167
 #: ../../administration/integrations/workers.rst:263
 msgid "**Combined Distributed Worker and gateway roles:**"
-msgstr ""
+msgstr "**Kombinierte Distributed-Worker- und Gateway-Rollen:**"
 
 #: ../../administration/integrations/workers.rst:169
 msgid ""
@@ -550,14 +550,14 @@ msgid ""
 "default, ``worker_url`` uses the Worker's hostname. For gateway or "
 "witness use, set it to a stable URL that every required client can "
 "resolve, reach, and trust."
-msgstr ""
+msgstr "``worker_url`` identifiziert den Worker-Service. ``worker['appliance_url']`` identifiziert die |morpheus|-Appliance. Vertauschen Sie sie nicht. Standardmäßig verwendet ``worker_url`` den Hostnamen des Workers. Für Gateway- oder Witness-Nutzung setzen Sie ihn auf eine stabile URL, die jeder erforderliche Client auflösen, erreichen und der er vertrauen kann."
 
 #: ../../administration/integrations/workers.rst:180
 msgid ""
 "After all configuration options have been set, run ``sudo morpheus-"
 "worker-ctl reconfigure`` to install and configure the worker, nginx and "
 "guacd services:"
-msgstr ""
+msgstr "Nachdem alle Konfigurationsoptionen festgelegt wurden, führen Sie ``sudo morpheus-worker-ctl reconfigure`` aus, um den Worker sowie die nginx- und guacd-Dienste zu installieren und zu konfigurieren:"
 
 #: ../../administration/integrations/workers.rst:182
 msgid "sudo morpheus-worker-ctl reconfigure"
@@ -567,24 +567,24 @@ msgstr ""
 msgid ""
 "The worker reconfigure process will install and configure the worker, "
 "nginx and guacd services and dependencies."
-msgstr ""
+msgstr "Der Worker-Reconfigure-Prozess installiert und konfiguriert den Worker sowie die nginx- und guacd-Dienste und Abhängigkeiten."
 
 #: ../../administration/integrations/workers.rst:188
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../administration/integrations/workers.rst:188
 msgid ""
 "If the reconfigure process fails due to a missing dependency, add the "
 "repo that the missing dependency can be found in and run"
-msgstr ""
+msgstr "Wenn der Reconfigure-Prozess aufgrund einer fehlenden Abhängigkeit fehlschlägt, fügen Sie das Repo hinzu, in dem die fehlende Abhängigkeit gefunden werden kann, und führen Sie aus"
 
 #: ../../administration/integrations/workers.rst:190
 msgid ""
 "Configuration options can be updated after the initial reconfigure by "
 "editing ``/etc/morpheus/morpheus-worker.rb`` and running ``sudo morpheus-"
 "worker-ctl reconfigure`` again."
-msgstr ""
+msgstr "Konfigurationsoptionen können nach dem ersten Reconfigure aktualisiert werden, indem ``/etc/morpheus/morpheus-worker.rb`` bearbeitet und erneut ``sudo morpheus-worker-ctl reconfigure`` ausgeführt wird."
 
 #: ../../administration/integrations/workers.rst:192
 msgid ""
@@ -594,11 +594,11 @@ msgid ""
 "tail`` to tail the logs of the worker, nginx and guacd services. "
 "Individual services can be tailed by specifying the service, for example "
 "``morpheus-worker-ctl tail worker``"
-msgstr ""
+msgstr "Sobald die Installation abgeschlossen ist, startet der Morpheus-Worker-Service automatisch und öffnet einen WebSocket zur angegebenen |morpheus|-Appliance. Um den Startvorgang zu überwachen, führen Sie ``morpheus-worker-ctl tail`` aus, um die Protokolle der Worker-, nginx- und guacd-Dienste zu verfolgen. Einzelne Dienste können durch Angabe des Dienstes verfolgt werden, beispielsweise ``morpheus-worker-ctl tail worker``"
 
 #: ../../administration/integrations/workers.rst:194
 msgid "Verify package service health before assigning traffic:"
-msgstr ""
+msgstr "Überprüfen Sie den Betriebszustand der Paketdienste, bevor Sie Datenverkehr zuweisen:"
 
 #: ../../administration/integrations/workers.rst:196
 msgid ""
@@ -608,7 +608,7 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:202
 msgid "Container Installation"
-msgstr ""
+msgstr "Container-Installation"
 
 #: ../../administration/integrations/workers.rst:204
 msgid ""
@@ -620,29 +620,29 @@ msgid ""
 "replace it when deploying with another supported Manager release. During "
 "Docker Hub maintenance, a valid tag may temporarily be absent from the "
 "web or API tag listing."
-msgstr ""
+msgstr "Der Worker wird auch als Container-Image `morpheusdata/morpheus-worker <https://hub.docker.com/r/morpheusdata/morpheus-worker>`_ veröffentlicht. Verwenden Sie ein für die |morpheus|-Manager-Version freigegebenes Versions-Tag. Verwenden Sie ``latest`` nicht für die Produktion, da es auf eine andere Produktversion verweisen kann. Die folgenden Beispiele verwenden das bestätigte Tag ``9.0.2``; ersetzen Sie es bei der Bereitstellung mit einer anderen unterstützten Manager-Version. Während der Docker-Hub-Wartung kann ein gültiges Tag vorübergehend in der Web- oder API-Tag-Liste fehlen."
 
 #: ../../administration/integrations/workers.rst:206
 msgid ""
 "The image exposes HTTP on port 8080 and HTTPS on port 8443. The following"
 " variables configure its roles:"
-msgstr ""
+msgstr "Das Image stellt HTTP auf Port 8080 und HTTPS auf Port 8443 bereit. Die folgenden Variablen konfigurieren seine Rollen:"
 
 #: ../../administration/integrations/workers.rst:208
 msgid "Worker container environment variables"
-msgstr ""
+msgstr "Umgebungsvariablen des Worker-Containers"
 
 #: ../../administration/integrations/workers.rst:212
 msgid "Variable"
-msgstr ""
+msgstr "Variable"
 
 #: ../../administration/integrations/workers.rst:213
 msgid "Required"
-msgstr ""
+msgstr "Erforderlich"
 
 #: ../../administration/integrations/workers.rst:214
 msgid "Purpose"
-msgstr ""
+msgstr "Zweck"
 
 #: ../../administration/integrations/workers.rst:215
 msgid "``MORPHEUS_URL``"
@@ -650,11 +650,11 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:216
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: ../../administration/integrations/workers.rst:217
 msgid "URL of the |morpheus| appliance that the Worker connects to."
-msgstr ""
+msgstr "URL der |morpheus|-Appliance, mit der sich der Worker verbindet."
 
 #: ../../administration/integrations/workers.rst:218
 msgid "``MORPHEUS_WORKER_KEY``"
@@ -662,11 +662,11 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:219
 msgid "For Distributed Worker or witness roles"
-msgstr ""
+msgstr "Für Distributed-Worker- oder Witness-Rollen"
 
 #: ../../administration/integrations/workers.rst:220
 msgid "API key generated by the Distributed Worker record in |AdmIntDis|."
-msgstr ""
+msgstr "API-Schlüssel, der vom Distributed-Worker-Datensatz in |AdmIntDis| generiert wird."
 
 #: ../../administration/integrations/workers.rst:221
 msgid "``MORPHEUS_KEY``"
@@ -674,13 +674,13 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:222
 msgid "For console or VDI gateway roles"
-msgstr ""
+msgstr "Für Konsolen- oder VDI-Gateway-Rollen"
 
 #: ../../administration/integrations/workers.rst:223
 msgid ""
 "API key generated by the VDI Gateway record in |TooVDIGat|. Omit it for "
 "Worker-only deployments."
-msgstr ""
+msgstr "API-Schlüssel, der vom VDI-Gateway-Datensatz in |TooVDIGat| generiert wird. Lassen Sie ihn bei reinen Worker-Bereitstellungen weg."
 
 #: ../../administration/integrations/workers.rst:224
 msgid "``MORPHEUS_SELF_SIGNED``"
@@ -689,14 +689,14 @@ msgstr ""
 #: ../../administration/integrations/workers.rst:225
 #: ../../administration/integrations/workers.rst:231
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: ../../administration/integrations/workers.rst:226
 msgid ""
 "Set to ``true`` to generate a self-signed HTTPS listener for testing. Use"
 " a trusted certificate or terminate TLS at a trusted load balancer in "
 "production."
-msgstr ""
+msgstr "Auf ``true`` setzen, um einen selbstsignierten HTTPS-Listener zum Testen zu erzeugen. Verwenden Sie in der Produktion ein vertrauenswürdiges Zertifikat oder beenden Sie TLS an einem vertrauenswürdigen Load Balancer."
 
 #: ../../administration/integrations/workers.rst:227
 msgid "``MORPHEUS_SSL_ALIAS`` and ``MORPHEUS_SSL_PASSWORD``"
@@ -704,11 +704,11 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:228
 msgid "With PKCS#12 TLS"
-msgstr ""
+msgstr "Mit PKCS#12-TLS"
 
 #: ../../administration/integrations/workers.rst:229
 msgid "Alias and password for ``/etc/certs/cert.p12`` mounted into the container."
-msgstr ""
+msgstr "Alias und Kennwort für ``/etc/certs/cert.p12``, das in den Container gemountet wird."
 
 #: ../../administration/integrations/workers.rst:230
 msgid "``https_proxy``"
@@ -716,13 +716,13 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:232
 msgid "Outbound HTTPS proxy used by the Worker's HTTP client."
-msgstr ""
+msgstr "Ausgehender HTTPS-Proxy, der vom HTTP-Client des Workers verwendet wird."
 
 #: ../../administration/integrations/workers.rst:234
 msgid ""
 "Set ``WORKER_IMAGE_TAG`` to the approved tag before running these "
 "examples:"
-msgstr ""
+msgstr "Setzen Sie ``WORKER_IMAGE_TAG`` vor dem Ausführen dieser Beispiele auf das freigegebene Tag:"
 
 #: ../../administration/integrations/workers.rst:236
 msgid "export WORKER_IMAGE_TAG=9.0.2"
@@ -730,7 +730,7 @@ msgstr ""
 
 #: ../../administration/integrations/workers.rst:240
 msgid "**Distributed Worker only:**"
-msgstr ""
+msgstr "**Nur Distributed Worker:**"
 
 #: ../../administration/integrations/workers.rst:242
 #, python-brace-format
@@ -747,11 +747,11 @@ msgid ""
 "A witness also uses ``MORPHEUS_WORKER_KEY``, but it must publish a "
 "trusted endpoint reachable from every participating Host. Use the "
 "production HTTPS example below for a witness container."
-msgstr ""
+msgstr "Ein Witness verwendet ebenfalls ``MORPHEUS_WORKER_KEY``, muss jedoch einen vertrauenswürdigen Endpunkt veröffentlichen, der von jedem teilnehmenden Host erreichbar ist. Verwenden Sie das Produktions-HTTPS-Beispiel unten für einen Witness-Container."
 
 #: ../../administration/integrations/workers.rst:252
 msgid "**Console or VDI gateway only with a test self-signed listener:**"
-msgstr ""
+msgstr "**Nur Konsolen- oder VDI-Gateway mit einem selbstsignierten Test-Listener:**"
 
 #: ../../administration/integrations/workers.rst:254
 #, python-brace-format
@@ -780,7 +780,7 @@ msgstr ""
 msgid ""
 "For production HTTPS or witness use, mount a PKCS#12 certificate and omit"
 " ``MORPHEUS_SELF_SIGNED``:"
-msgstr ""
+msgstr "Für Produktions-HTTPS oder Witness-Nutzung mounten Sie ein PKCS#12-Zertifikat und lassen Sie ``MORPHEUS_SELF_SIGNED`` weg:"
 
 #: ../../administration/integrations/workers.rst:277
 #, python-brace-format
@@ -800,7 +800,7 @@ msgid ""
 "After startup, verify that the container is running and healthy, that the"
 " configured Worker or gateway appears active in |morpheus|, and that "
 "clients for each enabled role can reach the published URL:"
-msgstr ""
+msgstr "Überprüfen Sie nach dem Start, dass der Container ausgeführt wird und betriebsbereit ist, dass der konfigurierte Worker oder das Gateway in |morpheus| als aktiv erscheint und dass Clients für jede aktivierte Rolle die veröffentlichte URL erreichen können:"
 
 #: ../../administration/integrations/workers.rst:290
 msgid ""
@@ -816,11 +816,11 @@ msgid ""
 "each enabled role. Upgrade by validating a new release-compatible tag, "
 "recreating the container with the same registration keys and certificate "
 "configuration, and repeating the role-specific checks."
-msgstr ""
+msgstr "Der Image-Health-Check prüft den gebündelten Guacamole-Service. Validieren Sie außerdem die |morpheus|-Registrierung und den End-to-End-Datenverkehrspfad für jede aktivierte Rolle. Führen Sie Upgrades durch, indem Sie ein neues releasekompatibles Tag validieren, den Container mit denselben Registrierungsschlüsseln und derselben Zertifikatskonfiguration neu erstellen und die rollenspezifischen Prüfungen wiederholen."
 
 #: ../../administration/integrations/workers.rst:299
 msgid "Witness Configuration"
-msgstr ""
+msgstr "Witness-Konfiguration"
 
 #: ../../administration/integrations/workers.rst:301
 msgid ""
@@ -830,7 +830,7 @@ msgid ""
 "For the complete two-node topology, deployment order, validation, failure"
 " behavior, and limitations, see "
 ":doc:`/infrastructure/clusters/hvm/two_node_clusters`."
-msgstr ""
+msgstr "Ein Distributed Worker kann Quorum-Witness-Dienste für Cluster mit HVM 1.3 oder höher bereitstellen, die einen HPE Shared File System (GFS2)-Datenspeicher verwenden. Dies umfasst Zwei-Knoten-GFS2-Cluster und Stretch-Cluster mit Site-Gruppen. Zur vollständigen Zwei-Knoten-Topologie, Bereitstellungsreihenfolge, Validierung, Fehlerverhalten und Einschränkungen siehe :doc:`/infrastructure/clusters/hvm/two_node_clusters`."
 
 #: ../../administration/integrations/workers.rst:303
 msgid ""
@@ -840,50 +840,50 @@ msgid ""
 "resolve the URL, route to the Worker listener, and trust its TLS "
 "certificate. The Worker's outbound connection to the |morpheus| appliance"
 " does not prove that Hosts can reach the witness."
-msgstr ""
+msgstr "Die **Worker URL** im Distributed-Worker-Datensatz ist für die Witness-Nutzung verpflichtend. |morpheus| verwendet diesen Wert, um die an jeden Cluster-Host gesendete ``witnessUrl`` zu konstruieren. Jeder teilnehmende Host muss die URL auflösen, zum Worker-Listener weiterleiten und seinem TLS-Zertifikat vertrauen können. Die ausgehende Verbindung des Workers zur |morpheus|-Appliance beweist nicht, dass Hosts den Witness erreichen können."
 
 #: ../../administration/integrations/workers.rst:305
 msgid "Before assigning a witness:"
-msgstr ""
+msgstr "Bevor Sie einen Witness zuweisen:"
 
 #: ../../administration/integrations/workers.rst:307
 msgid ""
 "Create the Distributed Worker record in |AdmIntDis| and set **Worker "
 "URL** to the stable client-facing URL for the Worker."
-msgstr ""
+msgstr "Erstellen Sie den Distributed-Worker-Datensatz in |AdmIntDis| und setzen Sie **Worker URL** auf die stabile, clientseitige URL für den Worker."
 
 #: ../../administration/integrations/workers.rst:308
 msgid ""
 "Configure the runtime with the record's ``worker_key`` or "
 "``MORPHEUS_WORKER_KEY``."
-msgstr ""
+msgstr "Konfigurieren Sie die Laufzeitumgebung mit dem ``worker_key`` oder ``MORPHEUS_WORKER_KEY`` des Datensatzes."
 
 #: ../../administration/integrations/workers.rst:309
 msgid "Verify that the Worker shows as active in |morpheus|."
-msgstr ""
+msgstr "Überprüfen Sie, dass der Worker in |morpheus| als aktiv angezeigt wird."
 
 #: ../../administration/integrations/workers.rst:310
 msgid ""
 "From every cluster Host, resolve the Worker URL and make an HTTPS "
 "connection to it. A successful TLS connection or HTTP response confirms "
 "the path; do not disable certificate validation in production."
-msgstr ""
+msgstr "Lösen Sie von jedem Cluster-Host die Worker-URL auf und stellen Sie eine HTTPS-Verbindung dazu her. Eine erfolgreiche TLS-Verbindung oder HTTP-Antwort bestätigt den Pfad; deaktivieren Sie die Zertifikatsvalidierung in der Produktion nicht."
 
 #: ../../administration/integrations/workers.rst:311
 msgid ""
 "Ensure firewalls and load balancers preserve the witness path and do not "
 "require interactive authentication."
-msgstr ""
+msgstr "Stellen Sie sicher, dass Firewalls und Load Balancer den Witness-Pfad beibehalten und keine interaktive Authentifizierung erfordern."
 
 #: ../../administration/integrations/workers.rst:313
 msgid ""
 "For cluster assignment and quorum validation, see "
 ":doc:`/infrastructure/clusters/hvm/stretch_clusters`."
-msgstr ""
+msgstr "Zur Clusterzuweisung und Quorum-Validierung siehe :doc:`/infrastructure/clusters/hvm/stretch_clusters`."
 
 #: ../../administration/integrations/workers.rst:316
 msgid "Highly-Available (HA) Deployment"
-msgstr ""
+msgstr "Hochverfügbare (HA) Bereitstellung"
 
 #: ../../administration/integrations/workers.rst:318
 msgid ""
@@ -900,5 +900,5 @@ msgid ""
 "node when available, |morpheus| Agent communications can be balanced "
 "equally across worker nodes by placing a VIP in front of your distributed"
 " workers."
-msgstr ""
+msgstr "Bei Bedarf können mehrere Distributed-Worker-Knoten derselben |morpheus|-Appliance zugeordnet werden, um einen Single Point of Failure zu vermeiden, falls ein Distributed-Worker-Knoten ausfällt. Konfigurieren Sie jeden Distributed-Worker-Knoten mit demselben Worker-Schlüssel (wie im vorherigen Abschnitt beschrieben) und fügen Sie Redundanz mit so vielen zusätzlichen Worker-Knoten wie nötig hinzu. Wenn mehrere Worker-Knoten denselben Worker-Schlüssel verwenden, laufen Proxy-Aufrufe nach Möglichkeit immer über den primären Worker-Knoten. Der primäre Knoten ist der erste Worker-Knoten, der mit einem bestimmten Worker-Schlüssel konfiguriert wurde. Bei Bedarf findet ein automatisches Failover statt und ein anderer aktiver Worker-Knoten wird verwendet. Während Proxy-Aufrufe nach Möglichkeit immer den primären Knoten nutzen, können |morpheus|-Agent-Kommunikationen gleichmäßig über Worker-Knoten verteilt werden, indem ein VIP vor Ihren Distributed Workers platziert wird."
 

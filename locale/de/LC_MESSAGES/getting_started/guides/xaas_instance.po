@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:2
 msgid "Creating XaaS Instance Types with |morpheus|"
-msgstr ""
+msgstr "XaaS-Instanztypen mit |morpheus| erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "ability to utilize Provisioning Workflows to manage all phases of the "
 "Instance lifecycles consistently and automatically. XaaS Instance Types "
 "can also be tied into service plans to track costs or bill customers."
-msgstr ""
+msgstr "|morpheus| Version 5.4.2 und höher bietet die Möglichkeit, XaaS-Instanztypen zu erstellen und zu provisionieren. Dies sind nicht VM-gestützte Layouts, mit denen Benutzer alles als Instanz darstellen können. Dazu gehört die Nutzung von Provisionierungs-Workflows, um alle Phasen der Instanzlebenszyklen konsistent und automatisch zu verwalten. XaaS-Instanztypen können auch mit Service-Tarifen verknüpft werden, um Kosten zu verfolgen oder Kunden abzurechnen."
 
 #: ../../getting_started/guides/xaas_instance.rst:6
 msgid ""
@@ -44,47 +44,47 @@ msgid ""
 "users will be able to update the folder name by simply editing a custom "
 "value on the Instance. Finally, when the Instance is deleted, the folder "
 "is deleted from Dropbox as well."
-msgstr ""
+msgstr "In diesem konkreten Beispiel erstellen wir einen XaaS-Instanztyp zur Verwaltung des Lebenszyklus von Ordnern in einem Dropbox-Konto. Benutzer können den |morpheus|-Katalog besuchen und den Ordner erstellen, indem sie einen Namen für den Ordner eingeben und eine einzige Schaltfläche anklicken. Wir sehen, wie jeder Ordner anschließend als Instanz dargestellt wird. Während die Instanz besteht, können Benutzer den Ordnernamen aktualisieren, indem sie einfach einen benutzerdefinierten Wert an der Instanz bearbeiten. Wenn die Instanz schließlich gelöscht wird, wird der Ordner auch aus Dropbox gelöscht."
 
 #: ../../getting_started/guides/xaas_instance.rst:8
 msgid "In this guide, we'll use the following |morpheus| constructs:"
-msgstr ""
+msgstr "In diesem Leitfaden verwenden wir die folgenden |morpheus|-Konstrukte:"
 
 #: ../../getting_started/guides/xaas_instance.rst:10
 msgid "Clouds"
-msgstr ""
+msgstr "Clouds"
 
 #: ../../getting_started/guides/xaas_instance.rst:11
 msgid "Inputs"
-msgstr ""
+msgstr "Eingaben"
 
 #: ../../getting_started/guides/xaas_instance.rst:12
 msgid "Tasks"
-msgstr ""
+msgstr "Aufgaben"
 
 #: ../../getting_started/guides/xaas_instance.rst:13
 msgid "Workflows"
-msgstr ""
+msgstr "Workflows"
 
 #: ../../getting_started/guides/xaas_instance.rst:14
 msgid "Instance Types"
-msgstr ""
+msgstr "Instanztypen"
 
 #: ../../getting_started/guides/xaas_instance.rst:15
 msgid "Layouts"
-msgstr ""
+msgstr "Layouts"
 
 #: ../../getting_started/guides/xaas_instance.rst:16
 msgid "Catalog Items"
-msgstr ""
+msgstr "Katalogeinträge"
 
 #: ../../getting_started/guides/xaas_instance.rst:17
 msgid "Instances"
-msgstr ""
+msgstr "Instanzen"
 
 #: ../../getting_started/guides/xaas_instance.rst:19
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/guides/xaas_instance.rst:19
 msgid ""
@@ -93,11 +93,11 @@ msgid ""
 "managed servers, VMs, and (in this case) non-VM based resources. In this "
 "guide we will go through the process of creating a |morpheus|-type Cloud "
 "which can be used to hold your XaaS resources."
-msgstr ""
+msgstr "XaaS-Instanzen sind mit Clouds vom Typ |morpheus| verknüpft. |morpheus|-Clouds sind generische Cloud-Wrapper, die manuell verwaltete Server, VMs und (in diesem Fall) nicht VM-basierte Ressourcen enthalten können. In diesem Leitfaden durchlaufen wir den Prozess zum Erstellen einer Cloud vom Typ |morpheus|, die Ihre XaaS-Ressourcen aufnehmen kann."
 
 #: ../../getting_started/guides/xaas_instance.rst:22
 msgid "Create Cypher"
-msgstr ""
+msgstr "Cypher erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:24
 msgid ""
@@ -109,7 +109,7 @@ msgid ""
 "Dropbox developer tools are well-documented if you want to try this out "
 "for yourself. In the |morpheus| UI, go to |TooCyp| and click :guilabel:`+"
 " ADD`."
-msgstr ""
+msgstr "Cypher ist ein sicherer Schlüssel/Wert-Speicher in |morpheus|. Mit Cypher können wir Kennwörter und andere geheime Werte (wie API-Schlüssel) sicher speichern, die dann in Automatisierungsaufgaben und Vorlagen aufgerufen werden können. Hier speichern wir das Dropbox-API-Token als Cypher-Eintrag. Das Erstellen von Dropbox-Entwicklerkonten und das Abrufen von API-Schlüsseln geht über den Rahmen dieses Leitfadens hinaus, aber die Dropbox-Entwicklerwerkzeuge sind gut dokumentiert, falls Sie dies selbst ausprobieren möchten. Gehen Sie in der |morpheus|-UI zu |TooCyp| und klicken Sie auf :guilabel:`+ ADD`."
 
 #: ../../getting_started/guides/xaas_instance.rst:26
 msgid ""
@@ -117,27 +117,27 @@ msgid ""
 " different contexts. Here we'll use the \"secret\" type which allows us "
 "to enter some known value which can be securely accessed later. Enter the"
 " following:"
-msgstr ""
+msgstr "Es gibt eine Reihe verschiedener Typen von Cypher-Schlüsseln, die in unterschiedlichen Kontexten nützlich sind. Hier verwenden wir den Typ „secret“, mit dem wir einen bekannten Wert eingeben können, auf den später sicher zugegriffen werden kann. Geben Sie Folgendes ein:"
 
 #: ../../getting_started/guides/xaas_instance.rst:28
 msgid "**KEY:** secret/dropboxtoken"
-msgstr ""
+msgstr "**KEY:** secret/dropboxtoken"
 
 #: ../../getting_started/guides/xaas_instance.rst:29
 #: ../../getting_started/guides/xaas_instance.rst:39
 msgid "**VALUE:** Enter Dropbox API token here"
-msgstr ""
+msgstr "**VALUE:** Geben Sie hier das Dropbox-API-Token ein"
 
 #: ../../getting_started/guides/xaas_instance.rst:30
 #: ../../getting_started/guides/xaas_instance.rst:40
 msgid "**LEASE:** 0 (Lease time is given in seconds, with \"0\" being unlimited)"
-msgstr ""
+msgstr "**LEASE:** 0 (Die Lease-Zeit wird in Sekunden angegeben; „0“ bedeutet unbegrenzt)"
 
 #: ../../getting_started/guides/xaas_instance.rst:32
 #: ../../getting_started/guides/xaas_instance.rst:42
 #: ../../getting_started/guides/xaas_instance.rst:82
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/xaas_instance.rst:34
 msgid ".. image:: /images/xaas_instance/1cypher.png"
@@ -147,15 +147,15 @@ msgstr ""
 msgid ""
 "One of my Tasks will also send a request to the |morpheus| API so I'll "
 "create a second Cypher entry to store a |morpheus| API key:"
-msgstr ""
+msgstr "Eine meiner Aufgaben sendet auch eine Anfrage an die |morpheus|-API, daher erstelle ich einen zweiten Cypher-Eintrag, um einen |morpheus|-API-Schlüssel zu speichern:"
 
 #: ../../getting_started/guides/xaas_instance.rst:38
 msgid "**KEY:** secret/morphapitoken"
-msgstr ""
+msgstr "**KEY:** secret/morphapitoken"
 
 #: ../../getting_started/guides/xaas_instance.rst:45
 msgid "Create Cloud"
-msgstr ""
+msgstr "Cloud erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:47
 msgid ""
@@ -168,11 +168,11 @@ msgid ""
 "I've given mine a generic name but you could opt to be more targeted with"
 " your naming if you will use many |morpheus|-type Clouds to manage other "
 "types of resources."
-msgstr ""
+msgstr "XaaS-Instanzen sind mit Clouds vom Typ |morpheus| verknüpft. |morpheus|-Clouds sind generische Cloud-Wrapper, die manuell verwaltete Server, VMs und (in diesem Fall) nicht VM-basierte Ressourcen enthalten können. Für dieses Beispiel erstelle ich eine Cloud nur zur Organisation von Dropbox-Ordnern. Navigieren Sie zu |InfClo| und klicken Sie auf :guilabel:`+ ADD`. Die einzigen erforderlichen Schritte zum Erstellen der Cloud sind, ihr einen Namen zu geben und sie einer Gruppe zuzuordnen. Ich habe einen generischen Namen vergeben, Sie können jedoch gezielter benennen, wenn Sie viele Clouds vom Typ |morpheus| zur Verwaltung anderer Ressourcentypen verwenden."
 
 #: ../../getting_started/guides/xaas_instance.rst:49
 msgid "**NAME:** MorphCloud"
-msgstr ""
+msgstr "**NAME:** MorphCloud"
 
 #: ../../getting_started/guides/xaas_instance.rst:51
 msgid ".. image:: /images/xaas_instance/1cloud.png"
@@ -180,7 +180,7 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:55
 msgid "Create Inputs"
-msgstr ""
+msgstr "Eingaben erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:57
 msgid ""
@@ -190,55 +190,55 @@ msgid ""
 "case, one to allow the user to enter a name for their folder on "
 "provisioning and another which will be visible when editing the Instance "
 "to allow the user to rename their folder."
-msgstr ""
+msgstr "Eingaben sind benutzerdefinierte Eingabefelder, die Layouts, Instanztypen und anderen Konstrukten in |morpheus| hinzugefügt werden können. Die Eingabe kann als Variablen in Vorlagen und Skripts verbraucht werden. Wir erstellen in diesem Fall zwei Eingaben: eine, damit der Benutzer bei der Provisionierung einen Namen für seinen Ordner eingeben kann, und eine weitere, die beim Bearbeiten der Instanz sichtbar ist, damit der Benutzer seinen Ordner umbenennen kann."
 
 #: ../../getting_started/guides/xaas_instance.rst:59
 msgid ""
 "In |morpheus| UI, navigate to |LibOptInp|. Click :guilabel:`+ ADD`. "
 "Complete the following fields:"
-msgstr ""
+msgstr "Navigieren Sie in der |morpheus|-UI zu |LibOptInp|. Klicken Sie auf :guilabel:`+ ADD`. Füllen Sie die folgenden Felder aus:"
 
 #: ../../getting_started/guides/xaas_instance.rst:61
 msgid ""
 "**NAME:** DropBox Folder Name (The name for the Input object in "
 "|morpheus|)"
-msgstr ""
+msgstr "**NAME:** DropBox Folder Name (Der Name für das Eingabeobjekt in |morpheus|)"
 
 #: ../../getting_started/guides/xaas_instance.rst:62
 msgid ""
 "**FIELD NAME:** dbfoldername (The internal property which the input value"
 " is assigned to)"
-msgstr ""
+msgstr "**FIELD NAME:** dbfoldername (Die interne Eigenschaft, der der Eingabewert zugewiesen wird)"
 
 #: ../../getting_started/guides/xaas_instance.rst:63
 msgid ""
 "**TYPE:** Text (The input type, in this case an open text field for the "
 "user)"
-msgstr ""
+msgstr "**TYPE:** Text (Der Eingabetyp, in diesem Fall ein offenes Textfeld für den Benutzer)"
 
 #: ../../getting_started/guides/xaas_instance.rst:64
 msgid ""
 "**SHOW ON EDIT:** Checked (When checked, this Option is visible when "
 "editing an Instance)"
-msgstr ""
+msgstr "**SHOW ON EDIT:** Aktiviert (Wenn aktiviert, ist diese Option beim Bearbeiten einer Instanz sichtbar)"
 
 #: ../../getting_started/guides/xaas_instance.rst:65
 msgid ""
 "**EDITABLE:** Checked (When checked, this Option is editable in addition "
 "to being visible while editing the Instance)"
-msgstr ""
+msgstr "**EDITABLE:** Aktiviert (Wenn aktiviert, ist diese Option bearbeitbar und zusätzlich beim Bearbeiten der Instanz sichtbar)"
 
 #: ../../getting_started/guides/xaas_instance.rst:66
 msgid ""
 "**LABEL:** DropBox Folder Name (The label the user sees next to the input"
 " field)"
-msgstr ""
+msgstr "**LABEL:** DropBox Folder Name (Die Bezeichnung, die der Benutzer neben dem Eingabefeld sieht)"
 
 #: ../../getting_started/guides/xaas_instance.rst:68
 #: ../../getting_started/guides/xaas_instance.rst:103
 #: ../../getting_started/guides/xaas_instance.rst:138
 msgid "Once done, click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie anschließend auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/xaas_instance.rst:70
 msgid ".. image:: /images/xaas_instance/2input.png"
@@ -246,35 +246,35 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:73
 msgid "Next, configure a second Input with the following attributes:"
-msgstr ""
+msgstr "Konfigurieren Sie als Nächstes eine zweite Eingabe mit den folgenden Attributen:"
 
 #: ../../getting_started/guides/xaas_instance.rst:75
 msgid "**NAME:** DropBox Folder New Name"
-msgstr ""
+msgstr "**NAME:** DropBox Folder New Name"
 
 #: ../../getting_started/guides/xaas_instance.rst:76
 msgid "**FIELD NAME:** dbfoldernewname"
-msgstr ""
+msgstr "**FIELD NAME:** dbfoldernewname"
 
 #: ../../getting_started/guides/xaas_instance.rst:77
 msgid "**TYPE:** Text"
-msgstr ""
+msgstr "**TYPE:** Text"
 
 #: ../../getting_started/guides/xaas_instance.rst:78
 msgid "**SHOW ON EDIT:** Checked"
-msgstr ""
+msgstr "**SHOW ON EDIT:** Aktiviert"
 
 #: ../../getting_started/guides/xaas_instance.rst:79
 msgid "**EDITABLE:** Checked"
-msgstr ""
+msgstr "**EDITABLE:** Aktiviert"
 
 #: ../../getting_started/guides/xaas_instance.rst:80
 msgid "**LABEL:**"
-msgstr ""
+msgstr "**LABEL:**"
 
 #: ../../getting_started/guides/xaas_instance.rst:85
 msgid "Create Tasks"
-msgstr ""
+msgstr "Aufgaben erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:87
 msgid ""
@@ -288,7 +288,7 @@ msgid ""
 " be sourced directly from integrated version control repositories (like "
 "Github) so you never have to copy and paste code or make manual updates "
 "when your code changes."
-msgstr ""
+msgstr "Aufgaben sind in |morpheus| einzelne Automatisierungsskripte. Sie können zu Workflows zusammengesetzt werden (wie wir später sehen werden), um umfassendere Automatisierungspakete zu erstellen. Sie können in einer Reihe verschiedener Sprachen geschrieben werden (einschließlich Bash, PowerShell, Python, JavaScript und mehr) oder bestimmte Funktionen erfüllen, etwa einen Server neu zu starten oder eine E-Mail-Benachrichtigung zu senden. In diesem Fall schreibe ich die Aufgabenkonfiguration direkt in die |morpheus|-Aufgaben. Aufgaben können jedoch auch direkt aus integrierten Versionskontroll-Repositorys (wie GitHub) bezogen werden, sodass Sie nie Code kopieren und einfügen oder bei Codeänderungen manuelle Aktualisierungen vornehmen müssen."
 
 #: ../../getting_started/guides/xaas_instance.rst:89
 msgid ""
@@ -299,7 +299,7 @@ msgid ""
 "here but the Python SDK is well-documented if you want to try things out "
 "for yourself. The same functions could be carried out using other Task "
 "types as well."
-msgstr ""
+msgstr "Für dieses Beispiel müssen wir vier Aufgaben erstellen: eine zum Erstellen des Ordners, eine zum Umbenennen des Ordners, eine zum Umbenennen der |morpheus|-Instanz und eine zum Löschen des Ordners. Ich habe Python-Aufgaben verwendet, um mit dem Dropbox-Python-SDK zu interagieren. Ich gehe hier nicht darauf ein, wie die einzelnen Aufgaben geschrieben werden, aber das Python-SDK ist gut dokumentiert, falls Sie selbst experimentieren möchten. Dieselben Funktionen könnten auch mit anderen Aufgabentypen ausgeführt werden."
 
 #: ../../getting_started/guides/xaas_instance.rst:91
 msgid ".. image:: /images/xaas_instance/3tasks.png"
@@ -309,31 +309,31 @@ msgstr ""
 msgid ""
 "Navigate to |LibAutTas| and click :guilabel:`+ ADD`. Create a new Task "
 "with the following configuration:"
-msgstr ""
+msgstr "Navigieren Sie zu |LibAutTas| und klicken Sie auf :guilabel:`+ ADD`. Erstellen Sie eine neue Aufgabe mit der folgenden Konfiguration:"
 
 #: ../../getting_started/guides/xaas_instance.rst:95
 msgid "**NAME:** Dropbox - Create Folder"
-msgstr ""
+msgstr "**NAME:** Dropbox - Create Folder"
 
 #: ../../getting_started/guides/xaas_instance.rst:96
 msgid ""
 "**TYPE:** Python Script (Once Type is selected, available fields will be "
 "updated to those specific to the chosen type)"
-msgstr ""
+msgstr "**TYPE:** Python Script (Sobald der Typ ausgewählt ist, werden die verfügbaren Felder auf die für den gewählten Typ spezifischen aktualisiert)"
 
 #: ../../getting_started/guides/xaas_instance.rst:97
 msgid "**RESULT TYPE:** None"
-msgstr ""
+msgstr "**RESULT TYPE:** None"
 
 #: ../../getting_started/guides/xaas_instance.rst:98
 msgid ""
 "**SOURCE:** Local (Select Repository to source your code from an "
 "integrated version control repository)"
-msgstr ""
+msgstr "**SOURCE:** Local (Wählen Sie Repository, um Ihren Code aus einem integrierten Versionskontroll-Repository zu beziehen)"
 
 #: ../../getting_started/guides/xaas_instance.rst:99
 msgid "**CONTENT:** Enter Task content here"
-msgstr ""
+msgstr "**CONTENT:** Geben Sie hier den Aufgabeninhalt ein"
 
 #: ../../getting_started/guides/xaas_instance.rst:100
 msgid ""
@@ -345,13 +345,13 @@ msgid ""
 " as well, which are laid out in a `Knowledge Base article "
 "<https://support.morpheusdata.com/s/article/How-to-use-stored-cypher-"
 "secrets-in-python-task?language=en_US>`_"
-msgstr ""
+msgstr "**COMMAND ARGUMENTS:** Fakultative Befehlszeilenargumente für das Python-Skript. In meinem Fall übergebe ich das Dropbox-API-Token aus Cypher als Befehlszeilenargument (wie im Screenshot zu sehen) und verbrauche es in meinem Code mit dem Modul *sys*, das Teil der Python-Standardbibliothek ist. Es gibt auch andere Wege, Cypher-Secrets in Python-Skripts zu verbrauchen, die in einem `Knowledge Base article <https://support.morpheusdata.com/s/article/How-to-use-stored-cypher-secrets-in-python-task?language=en_US>`_ beschrieben sind"
 
 #: ../../getting_started/guides/xaas_instance.rst:101
 msgid ""
 "**ADDITIONAL PACKAGES:** List packages used which are not part of the "
 "standard Python library"
-msgstr ""
+msgstr "**ADDITIONAL PACKAGES:** Listen Sie Pakete auf, die nicht Teil der Python-Standardbibliothek sind"
 
 #: ../../getting_started/guides/xaas_instance.rst:105
 msgid ".. image:: /images/xaas_instance/5createtask.png"
@@ -362,7 +362,7 @@ msgid ""
 "The process for creating the remaining three Tasks is very similar, "
 "expand the sections below to see screenshots of the Task config, if "
 "desired:"
-msgstr ""
+msgstr "Der Prozess zum Erstellen der übrigen drei Aufgaben ist sehr ähnlich; erweitern Sie die Abschnitte unten, um bei Bedarf Screenshots der Aufgabenkonfiguration zu sehen:"
 
 #: ../../getting_started/guides/xaas_instance.rst:111
 msgid ".. image:: /images/xaas_instance/6deletetask.png"
@@ -378,7 +378,7 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:122
 msgid "Create Provisioning Workflow"
-msgstr ""
+msgstr "Provisionierungs-Workflow erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:124
 msgid ""
@@ -391,53 +391,53 @@ msgid ""
 "Instance reaches certain phases of its lifecycle, such as during "
 "provisioning, teardown, startup, or shutdown. In our case, we need the "
 "following to occurring during the Instance lifecycle:"
-msgstr ""
+msgstr "|morpheus|-Workflows fassen mehrere Aufgaben in einer logischen Gruppe zusammen. Es gibt zwei Arten von Workflows: Operational und Provisioning. Wir verwenden hier keine Operational Workflows, aber diese Workflows können bei Bedarf on-demand ausgeführt oder so eingestellt werden, dass sie nach einem wiederkehrenden Zeitplan laufen (wie ein Cronjob). Provisionierungs-Workflows werden einer Instanz zum Provisionierungszeitpunkt zugeordnet und führen automatisch die entsprechenden Aufgaben aus, wenn die Instanz bestimmte Phasen ihres Lebenszyklus erreicht, etwa bei der Provisionierung, dem Teardown, dem Start oder dem Herunterfahren. In unserem Fall muss Folgendes während des Instanzlebenszyklus geschehen:"
 
 #: ../../getting_started/guides/xaas_instance.rst:126
 msgid "At the provisioning phase, we want a folder to be created"
-msgstr ""
+msgstr "In der Provisionierungsphase soll ein Ordner erstellt werden"
 
 #: ../../getting_started/guides/xaas_instance.rst:127
 msgid ""
 "At the reconfigure phase (when the Instance is edited), we want the "
 "folder to be renamed and the Instance name to be updated"
-msgstr ""
+msgstr "In der Reconfigure-Phase (wenn die Instanz bearbeitet wird) soll der Ordner umbenannt und der Instanzname aktualisiert werden"
 
 #: ../../getting_started/guides/xaas_instance.rst:128
 msgid ""
 "At the teardown phase (when the Instance is deleted), we want the folder "
 "to be deleted"
-msgstr ""
+msgstr "In der Teardown-Phase (wenn die Instanz gelöscht wird) soll der Ordner gelöscht werden"
 
 #: ../../getting_started/guides/xaas_instance.rst:130
 msgid ""
 "Navigate to |LibAutWor| and click :guilabel:`+ ADD`. Set the following "
 "configurations:"
-msgstr ""
+msgstr "Navigieren Sie zu |LibAutWor| und klicken Sie auf :guilabel:`+ ADD`. Setzen Sie die folgenden Konfigurationen:"
 
 #: ../../getting_started/guides/xaas_instance.rst:132
 #: ../../getting_started/guides/xaas_instance.rst:150
 #: ../../getting_started/guides/xaas_instance.rst:166
 msgid "**NAME:** XaaS - Dropbox"
-msgstr ""
+msgstr "**NAME:** XaaS - Dropbox"
 
 #: ../../getting_started/guides/xaas_instance.rst:133
 msgid "**PLATFORM:** All"
-msgstr ""
+msgstr "**PLATFORM:** All"
 
 #: ../../getting_started/guides/xaas_instance.rst:134
 msgid "**TASKS - Provision:** Dropbox - Create Folder"
-msgstr ""
+msgstr "**TASKS - Provision:** Dropbox - Create Folder"
 
 #: ../../getting_started/guides/xaas_instance.rst:135
 msgid ""
 "**TASKS - Reconfigure:** Dropbox - Rename Folder; Dropbox - Reset "
 "Instance Name"
-msgstr ""
+msgstr "**TASKS - Reconfigure:** Dropbox - Rename Folder; Dropbox - Reset Instance Name"
 
 #: ../../getting_started/guides/xaas_instance.rst:136
 msgid "**TASKS - Teardown:** Dropbox - Delete Folder"
-msgstr ""
+msgstr "**TASKS - Teardown:** Dropbox - Delete Folder"
 
 #: ../../getting_started/guides/xaas_instance.rst:140
 msgid ".. image:: /images/xaas_instance/9workflow.png"
@@ -445,7 +445,7 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:144
 msgid "Create Instance Type"
-msgstr ""
+msgstr "Instanztyp erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:146
 msgid ""
@@ -453,32 +453,32 @@ msgid ""
 "together into a custom Instance Type for our |morpheus| Library. From "
 "this, we'll create a catalog item that our users can order in a later "
 "step."
-msgstr ""
+msgstr "Mit fertigem Workflow und Eingaben können wir sie zu einem benutzerdefinierten Instanztyp für unsere |morpheus|-Bibliothek zusammenführen. Daraus erstellen wir in einem späteren Schritt einen Katalogeintrag, den unsere Benutzer bestellen können."
 
 #: ../../getting_started/guides/xaas_instance.rst:148
 msgid ""
 "Navigate to |LibBluIns| and click :guilabel:`+ ADD`. Enter the following "
 "configurations:"
-msgstr ""
+msgstr "Navigieren Sie zu |LibBluIns| und klicken Sie auf :guilabel:`+ ADD`. Geben Sie die folgenden Konfigurationen ein:"
 
 #: ../../getting_started/guides/xaas_instance.rst:151
 msgid "**CODE:** xaas"
-msgstr ""
+msgstr "**CODE:** xaas"
 
 #: ../../getting_started/guides/xaas_instance.rst:152
 msgid "**CATEGORY:** Utility"
-msgstr ""
+msgstr "**CATEGORY:** Utility"
 
 #: ../../getting_started/guides/xaas_instance.rst:153
 msgid ""
 "**ICON:** If desired, search the file system on your local computer for a"
 " Dropbox logo icon for easier identification of this Instance Type at "
 "provision time"
-msgstr ""
+msgstr "**ICON:** Suchen Sie bei Bedarf im Dateisystem Ihres lokalen Computers nach einem Dropbox-Logo-Icon, um diesen Instanztyp bei der Provisionierung leichter zu erkennen"
 
 #: ../../getting_started/guides/xaas_instance.rst:154
 msgid "**ENVIRONMENT PREFIX:** XAAS"
-msgstr ""
+msgstr "**ENVIRONMENT PREFIX:** XAAS"
 
 #: ../../getting_started/guides/xaas_instance.rst:156
 msgid ".. image:: /images/xaas_instance/10instype.png"
@@ -486,11 +486,11 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:159
 msgid "Click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/xaas_instance.rst:162
 msgid "Create Layout"
-msgstr ""
+msgstr "Layout erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:164
 msgid ""
@@ -501,21 +501,21 @@ msgid ""
 "which can be selected depending on the chosen Cloud the user might be "
 "provisioning on (when dealing with VM-based Instance Types). Configure "
 "the Layout as follows:"
-msgstr ""
+msgstr "Nachdem Sie den Instanztyp erstellt haben, klicken Sie hinein und dann auf der Instanztyp-Detailseite auf :guilabel:`+ ADD LAYOUT`. Ein Layout legt die Technologie fest, auf der die Instanz läuft, in diesem Fall Workflow. Es ist möglich, mehrere Layouts einem Instanztyp zuzuordnen, die je nach gewählter Cloud, auf der der Benutzer provisioniert (bei VM-basierten Instanztypen), ausgewählt werden können. Konfigurieren Sie das Layout wie folgt:"
 
 #: ../../getting_started/guides/xaas_instance.rst:167
 msgid "**VERSION:** Latest"
-msgstr ""
+msgstr "**VERSION:** Latest"
 
 #: ../../getting_started/guides/xaas_instance.rst:168
 msgid ""
 "**CREATABLE:** Checked (If unchecked, this Layout won't be an available "
 "option at provision time)"
-msgstr ""
+msgstr "**CREATABLE:** Aktiviert (Wenn deaktiviert, ist dieses Layout bei der Provisionierung keine verfügbare Option)"
 
 #: ../../getting_started/guides/xaas_instance.rst:169
 msgid "**TECHNOLOGY:** Workflow"
-msgstr ""
+msgstr "**TECHNOLOGY:** Workflow"
 
 #: ../../getting_started/guides/xaas_instance.rst:170
 msgid ""
@@ -523,13 +523,13 @@ msgid ""
 " By selecting this, all Instances provisioned with this Layout will "
 "automatically have our chosen Tasks run during specific Instance "
 "lifecycle phases"
-msgstr ""
+msgstr "**WORKFLOW:** Wählen Sie den soeben erstellten Workflow „XaaS - Dropbox“. Durch diese Auswahl führen alle mit diesem Layout provisionierten Instanzen automatisch unsere gewählten Aufgaben in bestimmten Phasen des Instanzlebenszyklus aus"
 
 #: ../../getting_started/guides/xaas_instance.rst:171
 msgid ""
 "**INPUTS:** Search and find the two custom Inputs we created earlier, "
 "\"DropBox Folder Name\" and \"DropBox Folder New Name\""
-msgstr ""
+msgstr "**INPUTS:** Suchen und finden Sie die beiden zuvor erstellten benutzerdefinierten Eingaben „DropBox Folder Name“ und „DropBox Folder New Name“"
 
 #: ../../getting_started/guides/xaas_instance.rst:173
 msgid ".. image:: /images/xaas_instance/11layout.png"
@@ -537,7 +537,7 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:177
 msgid "Create Catalog Item"
-msgstr ""
+msgstr "Katalogeintrag erstellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:179
 msgid ""
@@ -548,23 +548,23 @@ msgid ""
 " what they need. In this case, we'll create one based on the Instance "
 "Type that was made in the previous sections. Navigate to |LibBluCat| and "
 "click :guilabel:`+ ADD`, then Instance. Configure the following:"
-msgstr ""
+msgstr "Katalogeinträge bieten einen vereinfachten Provisionierungsprozess. Administratoren können Katalogeinträge auf Basis vorhandener Instanztypen, App-Blueprints oder Workflows erstellen. Die meisten oder alle Provisionierungsoptionen können vorausgewählt werden, sodass dem Benutzer weniger Entscheidungen bleiben und er leicht erstellen kann, was er braucht. In diesem Fall erstellen wir einen auf dem in den vorherigen Abschnitten erstellten Instanztyp. Navigieren Sie zu |LibBluCat| und klicken Sie auf :guilabel:`+ ADD`, dann Instance. Konfigurieren Sie Folgendes:"
 
 #: ../../getting_started/guides/xaas_instance.rst:181
 msgid "**NAME:** XaaS - Dropbox Folder"
-msgstr ""
+msgstr "**NAME:** XaaS - Dropbox Folder"
 
 #: ../../getting_started/guides/xaas_instance.rst:182
 msgid ""
 "**ENABLED:** Checked (If unchecked, this Catalog Item will not be "
 "displayed in the provisioning catalog for users)"
-msgstr ""
+msgstr "**ENABLED:** Aktiviert (Wenn deaktiviert, wird dieser Katalogeintrag den Benutzern nicht im Provisionierungskatalog angezeigt)"
 
 #: ../../getting_started/guides/xaas_instance.rst:183
 msgid ""
 "**LOGO:** If desired, browse your local disk for a Dropbox logo to make "
 "this Catalog Item easily recognizable"
-msgstr ""
+msgstr "**LOGO:** Durchsuchen Sie bei Bedarf Ihre lokale Festplatte nach einem Dropbox-Logo, damit dieser Katalogeintrag leicht erkennbar ist"
 
 #: ../../getting_started/guides/xaas_instance.rst:185
 msgid ""
@@ -578,7 +578,7 @@ msgid ""
 "next step. Click through the final two tabs, there's no need to attach "
 "our Workflow on the \"AUTOMATION TAB\" since we already have it on our "
 "Layout. Finally, click :guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Klicken Sie dann auf :guilabel:`CONFIGURATION WIZARD`. Suchen Sie auf der Registerkarte „TYPE“ den von uns erstellten Instanztyp und klicken Sie auf :guilabel:`NEXT`. Wählen Sie auf der Registerkarte „Group“ die Cloud vom Typ |morpheus| und geben Sie einen beliebigen Namen ein (wir überschreiben diesen Namenswert später, damit er dynamisch auf Benutzereingaben basiert). Klicken Sie auf :guilabel:`NEXT`. Auf der Registerkarte „CONFIGURE“ sollten die Felder Layout und Plan auf akzeptable Werte voreingestellt sein. Geben Sie für „Dropbox Folder Name“ etwas Beliebiges ein; wir aktualisieren dies im nächsten Schritt ebenfalls dynamisch. Klicken Sie durch die letzten beiden Registerkarten; es ist nicht nötig, unseren Workflow auf der „AUTOMATION TAB“ anzuhängen, da er bereits auf unserem Layout liegt. Klicken Sie abschließend auf :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/xaas_instance.rst:187
 msgid ""
@@ -587,7 +587,7 @@ msgid ""
 " and the Instance name value to dynamically take on the user-entered "
 "value on the \"Dropbox Folder Name\" field as I've done in my screenshot "
 "below:"
-msgstr ""
+msgstr "Wenn Sie fertig sind, sehen Sie die JSON-Konfigurationszuordnung für die Instanz im Feld „CONFIG“. Aktualisieren Sie den Eingabewert „dbfoldername“ und den Instanznamenwert so, dass sie dynamisch den vom Benutzer eingegebenen Wert im Feld „Dropbox Folder Name“ annehmen, wie in meinem Screenshot unten:"
 
 #: ../../getting_started/guides/xaas_instance.rst:189
 msgid ".. image:: /images/xaas_instance/12catitem.png"
@@ -598,11 +598,11 @@ msgid ""
 "Near the bottom of the modal window, search for and attach the \"DropBox "
 "Folder Name\" Input. This will be the only input our users need to make "
 "to order their folder. Then, click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Suchen Sie nahe dem unteren Rand des ModalFensters nach der Eingabe „DropBox Folder Name“ und hängen Sie sie an. Dies ist die einzige Eingabe, die unsere Benutzer machen müssen, um ihren Ordner zu bestellen. Klicken Sie dann auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/xaas_instance.rst:194
 msgid "Ordering Catalog Item"
-msgstr ""
+msgstr "Katalogeintrag bestellen"
 
 #: ../../getting_started/guides/xaas_instance.rst:196
 msgid ""
@@ -610,7 +610,7 @@ msgid ""
 "order a folder from the provisioning Catalog. Navigate to |ProCat| and "
 "click \"Order\" on our \"XaaS - Dropbox Folder\" item. We need only "
 "provide a name for our folder and click \"Order Now\"."
-msgstr ""
+msgstr "An diesem Punkt sind die Konfigurationsschritte abgeschlossen. Als Test können wir einen Ordner aus dem Provisionierungskatalog bestellen. Navigieren Sie zu |ProCat| und klicken Sie bei unserem Element „XaaS - Dropbox Folder“ auf „Order“. Wir müssen nur einen Namen für unseren Ordner angeben und auf „Order Now“ klicken."
 
 #: ../../getting_started/guides/xaas_instance.rst:198
 msgid ".. image:: /images/xaas_instance/13orderitem.png"
@@ -622,7 +622,7 @@ msgid ""
 " a new Instance entry has been created for our Dropbox folder. Note that "
 "the Instance is named for our folder name exactly as we configured "
 "earlier."
-msgstr ""
+msgstr "Wenn wir nun zu :menuselection:`Provisioning --> Instances` gehen, sehen wir, dass ein neuer Instanzeneintrag für unseren Dropbox-Ordner erstellt wurde. Beachten Sie, dass die Instanz genau so nach unserem Ordnernamen benannt ist, wie wir es zuvor konfiguriert haben."
 
 #: ../../getting_started/guides/xaas_instance.rst:202
 msgid ".. image:: /images/xaas_instance/14inslist.png"
@@ -632,7 +632,7 @@ msgstr ""
 msgid ""
 "Taking a look in the Dropbox web console, we can also see a folder has "
 "been created just as we'd expect."
-msgstr ""
+msgstr "Wenn wir uns die Dropbox-Webkonsole ansehen, sehen wir auch, dass ein Ordner genau wie erwartet erstellt wurde."
 
 #: ../../getting_started/guides/xaas_instance.rst:206
 msgid ".. image:: /images/xaas_instance/15dbcreate.png"
@@ -640,7 +640,7 @@ msgstr ""
 
 #: ../../getting_started/guides/xaas_instance.rst:209
 msgid "Managing and Deleting Instances"
-msgstr ""
+msgstr "Instanzen verwalten und löschen"
 
 #: ../../getting_started/guides/xaas_instance.rst:211
 msgid ""
@@ -652,7 +652,7 @@ msgid ""
 "we've configured it to update the folder name in Dropbox and update the "
 "Instance name in |morpheus| for easier identification. As you can see in "
 "the screen shot, I'm providing a new folder name value:"
-msgstr ""
+msgstr "Zurück in |morpheus| können wir uns die Instanzdetailseite ansehen (:menuselection:`Provisioning --> Instances` > Spezifische Instanz) und einige Day-2-Aktionen ausführen. Durch Klicken auf :guilabel:`EDIT` können wir Instanzdetails aktualisieren. Wenn Eingabewerte aktualisiert werden, löst |morpheus| automatisch Reconfigure-Aktionen auf unserer Instanz aus. In unserem Fall haben wir konfiguriert, dass der Ordnername in Dropbox und der Instanzname in |morpheus| zur leichteren Identifikation aktualisiert werden. Wie Sie im Screenshot sehen, gebe ich einen neuen Ordnernamenwert an:"
 
 #: ../../getting_started/guides/xaas_instance.rst:213
 msgid ".. image:: /images/xaas_instance/16editins.png"
@@ -662,7 +662,7 @@ msgstr ""
 msgid ""
 "As expected, our Instance name is updated and the folder is renamed on "
 "the Dropbox side:"
-msgstr ""
+msgstr "Wie erwartet wird unser Instanzname aktualisiert und der Ordner auf der Dropbox-Seite umbenannt:"
 
 #: ../../getting_started/guides/xaas_instance.rst:217
 msgid ".. image:: /images/xaas_instance/17insdetail.png"
@@ -677,7 +677,7 @@ msgid ""
 "Finally, I'll delete the Instance. This has the effect of deleting the "
 "Instance object out of |morpheus| and triggering our Teardown-phase "
 "action which deletes the folder from Dropbox:"
-msgstr ""
+msgstr "Schließlich lösche ich die Instanz. Dadurch wird das Instanzobjekt aus |morpheus| gelöscht und unsere Teardown-Phasenaktion ausgelöst, die den Ordner aus Dropbox löscht:"
 
 #: ../../getting_started/guides/xaas_instance.rst:223
 msgid ".. image:: /images/xaas_instance/19dbdelete.png"

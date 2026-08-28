@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:2
 msgid "|morpheus| Blueprints"
-msgstr ""
+msgstr "Blueprints |morpheus|"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 " click provisioning. Blueprints can be built within the ``Builder`` "
 "section or by code in the ``Raw`` section. Blueprints can also be "
 "exported as YAML or JSON and created with the |morpheus| API and CLI."
-msgstr ""
+msgstr "App Blueprints do |morpheus| permitem implementações de aplicações multinível totalmente pré-configuradas para vários ambientes. Blueprints podem ser provisionados na seção |ProApp| e podem ser totalmente configurados para provisionamento com um clique. Blueprints podem ser construídos na seção ``Builder`` ou por código na seção ``Raw``. Blueprints também podem ser exportados como YAML ou JSON e criados com a API e CLI do |morpheus|."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:6
 msgid ""
@@ -49,11 +49,11 @@ msgid ""
 "For Example, ARM is locked into Azure, while CloudFormation is locked "
 "into AWS. Even Terraform does not allow a tf file to expand its bounds "
 "beyond a specific provider type."
-msgstr ""
+msgstr "Uma capacidade única da estrutura de blueprint Morpheus baseada em YAML/JSON é a capacidade de ter várias configurações por instância sendo provisionada dentro do app blueprint. Isso pode ser uma configuração com escopo que atua como substituições com base na nuvem, grupo e/ou ambiente selecionados para os quais a aplicação está sendo provisionada como destino. Por exemplo, talvez o ambiente \"development\" não precise de tantos nós escalados horizontalmente quanto o ambiente \"production\". Outro ótimo aspecto desta marcação de configuração é que um blueprint pode ser definido como um blueprint de nuvem híbrida. Isso torna a estrutura do app blueprint muito poderosa e, em alguns aspectos, melhor do que orquestradores alternativos de infrastructure as code. Por exemplo, ARM está preso ao Azure, enquanto CloudFormation está preso à AWS. Até o Terraform não permite que um arquivo tf ultrapasse os limites de um tipo de provedor específico."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:9
 msgid "Basic Blueprint Structure"
-msgstr ""
+msgstr "Estrutura Básica do Blueprint"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:11
 msgid ""
@@ -66,7 +66,7 @@ msgid ""
 "and a ``Database`` tier. These tiers can also be marked as connected such"
 " that network communication rules can appropriately be defined. A basic 2"
 " Tier blueprint skeleton might look something like this:"
-msgstr ""
+msgstr "Em um App Blueprint Morpheus, há alguns conceitos estruturais a ter em mente. Primeiro, há o conceito de um `tier`. Um `tier` é um agrupamento de instâncias dentro de um app blueprint. Tiers podem ser usados para várias coisas, incluindo a inicialização sequenciada de instâncias ou até a criação adequada de endpoint groups e contextos de security groups em ferramentas de segurança de rede como Cisco ACI. Um exemplo de estrutura de Tier pode ser um tier ``Web`` e um tier ``Database``. Esses tiers também podem ser marcados como conectados para que as regras de comunicação de rede possam ser definidas adequadamente. Um esqueleto básico de blueprint de 2 Tiers pode parecer algo assim:"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:13
 msgid ""
@@ -95,11 +95,11 @@ msgid ""
 " the connected tiers by tier name. A Boot Order can also optionally be "
 "defined under a nested ``{\"tier\": {\"bootOrder\": 1}}`` object "
 "structure."
-msgstr ""
+msgstr "Este exemplo definiu 2 tiers como propriedades yaml sob o objeto `tiers`. Eles são chamados `Web` e `Database`. Um Tier pode opcionalmente definir seus tiers conectados, que são bidirecionais mesmo que apenas um tier precise defini-los. Este é o array `linkedTiers` e simplesmente lista os tiers conectados pelo nome do tier. Uma Ordem de Boot também pode ser opcionalmente definida sob uma estrutura de objeto aninhada ``{\"tier\": {\"bootOrder\": 1}}``."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:33
 msgid "Configuration Scopes"
-msgstr ""
+msgstr "Escopos de Configuração"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:35
 msgid ""
@@ -107,11 +107,11 @@ msgid ""
 "configuration scoping. This allows properties to be overridden based on "
 "the apps target environment or even target group and cloud. For example. "
 "Maybe we want to use a larger plan size in production vs. development"
-msgstr ""
+msgstr "Outra capacidade da estrutura do App Blueprint Morpheus é seu escopo de configuração. Isso permite que propriedades sejam substituídas com base no ambiente de destino da aplicação ou até no grupo e nuvem de destino. Por exemplo, talvez queiramos usar um tamanho de plano maior em production vs. development"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:37
 msgid "An example of that can be done using \"environments\" overrides."
-msgstr ""
+msgstr "Um exemplo disso pode ser feito usando substituições de \"environments\"."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:39
 msgid ""
@@ -157,11 +157,11 @@ msgid ""
 "level of precedence. a cloud configuration in a group is the next level "
 "higher and finally an environment configuration in a group in a cloud is "
 "the highest level of scoped precedence."
-msgstr ""
+msgstr "Observe o novo objeto environments. O grafo de objetos da estrutura de blueprint morpheus é mesclado e achatado no momento do provisionamento com base no escopo das configurações fornecidas, bem como na seleção de nuvem, grupo e ambiente de destino do usuário. No exemplo acima, uma substituição seletiva foi feita para a nuvem `AWS Cali` ao usar um Ambiente Production e implementar no grupo `All Clouds Demo`. Este exemplo específico altera o plano para um tamanho maior. Configurações com escopo têm vários níveis de precedência. A nuvem é o nível mais baixo de precedência. Uma configuração de nuvem em um grupo é o próximo nível mais alto e, finalmente, uma configuração de ambiente em um grupo em uma nuvem é o nível mais alto de precedência com escopo."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:74
 msgid "Getting Started"
-msgstr ""
+msgstr "Primeiros Passos"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:76
 msgid ""
@@ -169,7 +169,7 @@ msgid ""
 "configuration. Docker templates are less complex than virtual machine "
 "based templates so lets look at a Blueprint that deploys a single Nginx "
 "container to a target cloud:"
-msgstr ""
+msgstr "Para começar, pode ser melhor olhar para uma configuração simples de App Blueprint. Templates Docker são menos complexos do que templates baseados em máquina virtual, então vamos olhar para um Blueprint que implementa um único container Nginx em uma nuvem de destino:"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:78
 msgid ""
@@ -216,7 +216,7 @@ msgid ""
 "morpheus api doc. That is a useful resource to look at while building "
 "morpheus blueprints or by using the `morpheus-cli` which provides prompts"
 " for helping build custom morpheus app blueprints."
-msgstr ""
+msgstr "Há algumas coisas úteis a observar no exemplo docker acima. Uma é que há objetos diferentes com base nas diferentes opções de configuração disponíveis para o tipo de provisionamento de destino. Essas opções são realmente orientadas por dados e podem ser extraídas da API de Entradas na documentação da API morpheus. Esse é um recurso útil a consultar ao construir blueprints morpheus ou ao usar o `morpheus-cli`, que fornece prompts para ajudar a construir app blueprints morpheus personalizados."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:117
 msgid ".. image:: /images/provisioning/templates_301_1.png"
@@ -224,94 +224,94 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:120
 msgid "Creating Morpheus App Blueprints"
-msgstr ""
+msgstr "Criando App Blueprints Morpheus"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:122
 msgid "Navigate to |LibBluApp|"
-msgstr ""
+msgstr "Navegue até |LibBluApp|"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:123
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:124
 msgid "Enter a NAME for the Blueprint and select :guilabel:`NEXT`"
-msgstr ""
+msgstr "Digite um NAME para o Blueprint e selecione :guilabel:`NEXT`"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:125
 msgid "Optionally add a Description, Category, and Image for the Blueprint."
-msgstr ""
+msgstr "Opcionalmente, adicione uma Descrição, Categoria e Imagem para o Blueprint."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:128
 msgid "Add Tiers"
-msgstr ""
+msgstr "Adicionar Tiers"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:130
 msgid "In the STRUCTURE section, select + to add a Tier"
-msgstr ""
+msgstr "Na seção STRUCTURE, selecione + para adicionar um Tier"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:131
 msgid "Select or enter a Tier Name."
-msgstr ""
+msgstr "Selecione ou digite um Nome de Tier."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:132
 msgid ""
 "Select the Tier to set Boot Order, rename, or once multiple Tiers are "
 "added, connect the Tier to other Tiers."
-msgstr ""
+msgstr "Selecione o Tier para definir a Ordem de Boot, renomear ou, quando vários Tiers forem adicionados, conectar o Tier a outros Tiers."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:135
 msgid "Add Instances to Tiers"
-msgstr ""
+msgstr "Adicionar Instâncias aos Tiers"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:137
 msgid "In the STRUCTURE section, select + in a Tier to add an Instance"
-msgstr ""
+msgstr "Na seção STRUCTURE, selecione + em um Tier para adicionar uma Instância"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:138
 msgid "Select an Instance Type"
-msgstr ""
+msgstr "Selecione um Tipo de Instância"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:139
 msgid ""
 "Optionally add a name for the Instance. Instances with blank names will "
 "automatically be named based off the App name."
-msgstr ""
+msgstr "Opcionalmente, adicione um nome para a Instância. Instâncias com nomes em branco serão automaticamente nomeadas com base no nome da Aplicação."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:141
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:141
 #, python-brace-format
 msgid ""
 "You can use the variable ``${app.name}`` in your instance naming "
 "convention to reference the name of the application you're deploying."
-msgstr ""
+msgstr "Você pode usar a variável ``${app.name}`` na sua convenção de nomenclatura de instância para referenciar o nome da aplicação que está implementando."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:145
 msgid "Add Configurations to Instances"
-msgstr ""
+msgstr "Adicionar Configurações às Instâncias"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:147
 msgid "In the STRUCTURE section, select + in an Instance to add a Configuration"
-msgstr ""
+msgstr "Na seção STRUCTURE, selecione + em uma Instância para adicionar uma Configuração"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:148
 msgid "Select at least one option from Group, Cloud or Environment."
-msgstr ""
+msgstr "Selecione pelo menos uma opção de Grupo, Nuvem ou Ambiente."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:149
 msgid "Select ``ADD CONFIG`` to create the configuration"
-msgstr ""
+msgstr "Selecione ``ADD CONFIG`` para criar a configuração"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:150
 msgid "Populate the Configuration"
-msgstr ""
+msgstr "Preencher a Configuração"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:152
 msgid "Configurations can be fully partially or populated"
-msgstr ""
+msgstr "As configurações podem ser total ou parcialmente preenchidas"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:153
 msgid ""
@@ -319,44 +319,44 @@ msgid ""
 "Field. Locking prevents the field from being editable when provisioning "
 "an App using the Blueprint while hidden fields are not revealed to the "
 "user at all"
-msgstr ""
+msgstr "Os campos podem ser bloqueados ou ocultados selecionando o ícone de Cadeado ao lado do Campo. O bloqueio impede que o campo seja editável ao provisionar uma Aplicação usando o Blueprint, enquanto campos ocultos não são revelados ao usuário de forma alguma"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:154
 msgid ""
 "ALLOW EXISTING INSTANCE will allow users to add existing Instances to the"
 " App when using the blueprint"
-msgstr ""
+msgstr "ALLOW EXISTING INSTANCE permitirá que os usuários adicionem Instâncias existentes à Aplicação ao usar o blueprint"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:157
 msgid "Save"
-msgstr ""
+msgstr "Salvar"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:159
 msgid ""
 "Once all desired Tiers, Instances and Configurations are added, select "
 "Save. The Blueprint will be created, can be edited after saving, and will"
 " available in the Apps section for provisioning."
-msgstr ""
+msgstr "Assim que todos os Tiers, Instâncias e Configurações desejados forem adicionados, selecione Save. O Blueprint será criado, poderá ser editado após salvar e estará disponível na seção Apps para provisionamento."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:161
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:161
 msgid ""
 "Blueprints are not provisioned when created. To provision a Blueprint, "
 "use |ProApp|."
-msgstr ""
+msgstr "Blueprints não são provisionados quando criados. Para provisionar um Blueprint, use |ProApp|."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:164
 msgid "RAW"
-msgstr ""
+msgstr "RAW"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:166
 msgid ""
 "Blueprints can be create, edited or Exported in the RAW section when "
 "creating or editing a blueprint."
-msgstr ""
+msgstr "Blueprints podem ser criados, editados ou Exportados na seção RAW ao criar ou editar um blueprint."
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:168
 msgid ".. image:: /images/provisioning/templates_301_2.png"
@@ -364,49 +364,49 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:170
 msgid "To Export a Blueprint as JSON or YAML:"
-msgstr ""
+msgstr "Para Exportar um Blueprint como JSON ou YAML:"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:172
 msgid "Navigate to  |LibBluApp|"
-msgstr ""
+msgstr "Navegue até  |LibBluApp|"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:173
 msgid "Edit an existing App by clicking on the pencil icon"
-msgstr ""
+msgstr "Edite uma Aplicação existente clicando no ícone de lápis"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:174
 msgid "On the Edit Blueprint modal, select the Raw tab"
-msgstr ""
+msgstr "No modal Edit Blueprint, selecione a aba Raw"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:175
 msgid "Select YAML or JSON from the dropdown in the top right"
-msgstr ""
+msgstr "Selecione YAML ou JSON no menu suspenso no canto superior direito"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:176
 msgid "Click the Export button"
-msgstr ""
+msgstr "Clique no botão Export"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:177
 msgid ""
 "Select the configurations to include in the export by selecting or "
 "deselecting configurations as needed. Selected configurations will be "
 "highlighted"
-msgstr ""
+msgstr "Selecione as configurações a incluir na exportação selecionando ou desmarcando configurações conforme necessário. As configurações selecionadas serão destacadas"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:178
 msgid "Click the DOWNLOAD CONFIGURATION button"
-msgstr ""
+msgstr "Clique no botão DOWNLOAD CONFIGURATION"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:179
 #, python-brace-format
 msgid ""
 "The Blueprint export file will be downloaded to your computer as "
 "``{app_name}-config.json or {app_name}-config.yaml``"
-msgstr ""
+msgstr "O arquivo de exportação do Blueprint será baixado para o seu computador como ``{app_name}-config.json ou {app_name}-config.yaml``"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:182
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionamento"
 
 #: ../../library/blueprints/appBlueprints/morpheus.rst:184
 msgid ""
@@ -414,5 +414,5 @@ msgid ""
 "when creating an App. See the `App section "
 "<https://docs.morpheusdata.com/en/latest/provisioning/apps/apps.html>`_ "
 "of |morpheus| docs for more on provisioning Apps."
-msgstr ""
+msgstr "Para provisionar um Blueprint, navegue até |ProApp| e selecione o Blueprint ao criar uma Aplicação. Consulte a `seção App <https://docs.morpheusdata.com/en/latest/provisioning/apps/apps.html>`_ da documentação do |morpheus| para mais informações sobre o provisionamento de Aplicações."
 

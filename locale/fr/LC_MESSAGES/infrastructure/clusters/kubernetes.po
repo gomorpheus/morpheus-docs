@@ -22,29 +22,29 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:4
 msgid "Kubernetes Clusters |advanced-plus|"
-msgstr ""
+msgstr "Clusters Kubernetes |advanced-plus|"
 
 #: ../../infrastructure/clusters/kubernetes.rst:9
 msgid ""
 "Morpheus Kubernetes (HKS) clusters are an Advanced+ feature, available in"
 " HPE Morpheus Enterprise and Advanced tiers."
-msgstr ""
+msgstr "Les clusters Morpheus Kubernetes (HKS) sont une fonctionnalité Advanced+, disponible dans les niveaux HPE Morpheus Enterprise et Advanced."
 
 #: ../../infrastructure/clusters/kubernetes.rst:12
 msgid "Requirements"
-msgstr ""
+msgstr "Exigences"
 
 #: ../../infrastructure/clusters/kubernetes.rst:14
 msgid ""
 "Agent installation is required for Master and Worker Nodes. Refer to "
 ":ref:`Morpheus Agent` section for additional information."
-msgstr ""
+msgstr "L'installation de l'agent est requise pour les nœuds maîtres et nœuds de calcul. Reportez-vous à la section :ref:`Morpheus Agent` pour des informations supplémentaires."
 
 #: ../../infrastructure/clusters/kubernetes.rst:15
 msgid ""
 "Access to Cloud Front, Image copy access and permissions for System and "
 "Uploaded Images used in Cluster Layouts"
-msgstr ""
+msgstr "Accès à Cloud Front, accès à la copie d'images et autorisations pour les images système et importées utilisées dans les dispositions de cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:16
 msgid ""
@@ -53,17 +53,17 @@ msgid ""
 "typically applicable for non-public clouds. For the initial provision, "
 "Morpheus System Images are streamed from Cloud Front through Morpheus to "
 "target destination. Subsequent provisions clone the local Image."
-msgstr ""
+msgstr "Les images utilisées dans les dispositions de cluster doivent soit exister dans le cloud/ressource de destination, soit pouvoir être copiées vers la destination par Morpheus, généralement applicable pour les clouds non publics. Pour le provisionnement initial, les images système Morpheus sont diffusées depuis Cloud Front via Morpheus vers la destination cible. Les provisionnements suivants clonent l'image locale."
 
 #: ../../infrastructure/clusters/kubernetes.rst:17
 msgid ""
 "System Kubernetes Layouts require Master and Worker nodes to access to "
 "the following over 443 during K8s install and configuration:"
-msgstr ""
+msgstr "Les dispositions Kubernetes système nécessitent que les nœuds maîtres et nœuds de calcul accèdent aux éléments suivants sur le port 443 pendant l'installation et la configuration K8s :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:19
 msgid "Morpheus Appliance url (443)"
-msgstr ""
+msgstr "URL de l'appliance Morpheus (443)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:20
 msgid "https://packages.cloud.google.com"
@@ -89,23 +89,23 @@ msgstr ""
 msgid ""
 "Morpheus Role permission ``Infrastructure: Clusters > Full`` required for"
 " Viewing, Creating, Editing and Deleting Clusters."
-msgstr ""
+msgstr "L'autorisation de rôle Morpheus ``Infrastructure: Clusters > Full`` est requise pour afficher, créer, modifier et supprimer des clusters."
 
 #: ../../infrastructure/clusters/kubernetes.rst:27
 msgid ""
 "Morpheus Role permission ``Infrastructure: Clusters > Read`` required for"
 " Viewing Cluster list and detail pages."
-msgstr ""
+msgstr "L'autorisation de rôle Morpheus ``Infrastructure: Clusters > Read`` est requise pour afficher la liste et les pages de détail des clusters."
 
 #: ../../infrastructure/clusters/kubernetes.rst:29
 msgid ""
 "For HKS networking and planned node service, see :doc:`hks_kube_vip` and "
 ":doc:`hks_node_maintenance`."
-msgstr ""
+msgstr "Pour le réseau HKS et la maintenance planifiée des nœuds, consultez :doc:`hks_kube_vip` et :doc:`hks_node_maintenance`."
 
 #: ../../infrastructure/clusters/kubernetes.rst:32
 msgid "CNCF Conformance Claim"
-msgstr ""
+msgstr "Déclaration de conformité CNCF"
 
 #: ../../infrastructure/clusters/kubernetes.rst:34
 msgid ""
@@ -114,7 +114,7 @@ msgid ""
 "status, and validity period. It therefore makes no claim that HKS "
 "generally, or every HKS-provisioned Kubernetes version, is CNCF Certified"
 " Kubernetes."
-msgstr ""
+msgstr "Cette documentation n'inclut pas d'enregistrement officiel de conformité CNCF identifiant un nom de produit HKS, une version Kubernetes, un statut de certification et une période de validité. Elle ne fait donc aucune affirmation selon laquelle HKS en général, ou chaque version Kubernetes provisionnée par HKS, est CNCF Certified Kubernetes."
 
 #: ../../infrastructure/clusters/kubernetes.rst:36
 msgid ""
@@ -125,17 +125,17 @@ msgid ""
 "not present, contact HPE before representing the deployment as certified."
 " Kubernetes API compatibility or a successful conformance test run is "
 "not, by itself, a published CNCF certification."
-msgstr ""
+msgstr "La certification est spécifique à la version. Confirmez une affirmation uniquement par rapport à la `liste des produits CNCF Certified Kubernetes <https://www.cncf.io/training/certification/software-conformance/>`_ et son enregistrement de conformité associé. Si l'offre HKS et la version exactes ne sont pas présentes, contactez HPE avant de représenter le déploiement comme certifié. La compatibilité de l'API Kubernetes ou une exécution de test de conformité réussie ne constitue pas, à elle seule, une certification CNCF publiée."
 
 #: ../../infrastructure/clusters/kubernetes.rst:39
 msgid "Creating Kubernetes Clusters"
-msgstr ""
+msgstr "Création de clusters Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:41
 msgid ""
 "Provisions a new Kubernetes Cluster in selected target Cloud using "
 "selected Layout."
-msgstr ""
+msgstr "Provisionne un nouveau cluster Kubernetes dans le cloud cible sélectionné en utilisant la disposition sélectionnée."
 
 #: ../../infrastructure/clusters/kubernetes.rst:43
 #: ../../infrastructure/clusters/kubernetes.rst:223
@@ -143,7 +143,7 @@ msgstr ""
 #: ../../infrastructure/clusters/kubernetes.rst:359
 #: ../../infrastructure/clusters/kubernetes.rst:380
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/kubernetes.rst:43
 msgid ""
@@ -158,7 +158,7 @@ msgid ""
 "the product that would allow the user to specify such a DNS name prior to"
 " kicking off cluster provisioning. Additionally, users can circumvent "
 "this issue by configuring and deploying their own custom Cluster Layouts."
-msgstr ""
+msgstr "Lors du déploiement d'un cluster Kubernetes hautement disponible, il est important de noter que |morpheus| ne déploie pas actuellement automatiquement un équilibreur de charge. De plus, lorsque |morpheus| exécute la commande ``kubeadm init`` en arrière-plan pendant le provisionnement du cluster, il définit également l'indicateur ``--control-plane-endpoint`` sur le premier nœud du plan de contrôle. Il s'agit d'un comportement codé en dur. Pour réaliser un cluster hautement disponible, les utilisateurs peuvent souhaiter mettre à jour le point de terminaison du plan de contrôle configuré, par exemple vers un nom DNS pointant vers un équilibreur de charge. Nous examinons actuellement des mises à jour du produit qui permettraient à l'utilisateur de spécifier un tel nom DNS avant de lancer le provisionnement du cluster. De plus, les utilisateurs peuvent contourner ce problème en configurant et déployant leurs propres dispositions de cluster personnalisées."
 
 #: ../../infrastructure/clusters/kubernetes.rst:45
 msgid ""
@@ -167,27 +167,27 @@ msgid ""
 "Kubernetes versions will dynamically update to the providers supported "
 "versions. |morpheus| also supports creation of custom Kubernetes Cluster "
 "Layouts, a process which is described in detail in a later section."
-msgstr ""
+msgstr "|morpheus| maintient un certain nombre de dispositions de cluster Kubernetes par défaut qui sont mises à jour fréquemment pour offrir la prise en charge des versions actuelles. Les versions Kubernetes AKS et GKE se mettront à jour dynamiquement vers les versions prises en charge par les fournisseurs. |morpheus| prend également en charge la création de dispositions de cluster Kubernetes personnalisées, un processus décrit en détail dans une section ultérieure."
 
 #: ../../infrastructure/clusters/kubernetes.rst:195
 msgid "To create a new Kubernetes Cluster:"
-msgstr ""
+msgstr "Pour créer un nouveau cluster Kubernetes :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:197
 msgid "Navigate to ``Infrastructure > Clusters``"
-msgstr ""
+msgstr "Accédez à ``Infrastructure > Clusters``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:198
 msgid "Select :guilabel:`+ ADD CLUSTER`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ ADD CLUSTER`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:199
 msgid "Select ``Kubernetes Cluster``"
-msgstr ""
+msgstr "Sélectionnez ``Kubernetes Cluster``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:200
 msgid "Select a Group for the Cluster"
-msgstr ""
+msgstr "Sélectionnez un groupe pour le cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:201
 #: ../../infrastructure/clusters/kubernetes.rst:220
@@ -197,262 +197,262 @@ msgstr ""
 #: ../../infrastructure/clusters/kubernetes.rst:375
 #: ../../infrastructure/clusters/kubernetes.rst:377
 msgid "Select :guilabel:`NEXT`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`NEXT`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:202
 #: ../../infrastructure/clusters/kubernetes.rst:221
 #: ../../infrastructure/clusters/kubernetes.rst:357
 msgid "Populate the following:"
-msgstr ""
+msgstr "Renseignez les éléments suivants :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:204
 #: ../../infrastructure/clusters/kubernetes.rst:353
 msgid "CLOUD"
-msgstr ""
+msgstr "CLOUD"
 
 #: ../../infrastructure/clusters/kubernetes.rst:205
 msgid "Select target Cloud"
-msgstr ""
+msgstr "Sélectionnez le cloud cible"
 
 #: ../../infrastructure/clusters/kubernetes.rst:206
 msgid "CLUSTER NAME"
-msgstr ""
+msgstr "CLUSTER NAME"
 
 #: ../../infrastructure/clusters/kubernetes.rst:207
 msgid "Name for the Kubernetes Cluster"
-msgstr ""
+msgstr "Nom du cluster Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:208
 msgid "RESOURCE NAME"
-msgstr ""
+msgstr "RESOURCE NAME"
 
 #: ../../infrastructure/clusters/kubernetes.rst:209
 msgid "Name for Kubernetes Cluster resources"
-msgstr ""
+msgstr "Nom des ressources du cluster Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:210
 #: ../../infrastructure/clusters/kubernetes.rst:351
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "DESCRIPTION"
 
 #: ../../infrastructure/clusters/kubernetes.rst:211
 msgid "Description of the Cluster"
-msgstr ""
+msgstr "Description du cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:212
 msgid "VISIBILITY"
-msgstr ""
+msgstr "VISIBILITY"
 
 #: ../../infrastructure/clusters/kubernetes.rst:213
 msgid "Public"
-msgstr ""
+msgstr "Publique"
 
 #: ../../infrastructure/clusters/kubernetes.rst:214
 msgid "Available to all Tenants"
-msgstr ""
+msgstr "Disponible pour tous les locataires"
 
 #: ../../infrastructure/clusters/kubernetes.rst:215
 msgid "Private"
-msgstr ""
+msgstr "Privé"
 
 #: ../../infrastructure/clusters/kubernetes.rst:216
 msgid "Available to Master Tenant"
-msgstr ""
+msgstr "Disponible pour le locataire maître"
 
 #: ../../infrastructure/clusters/kubernetes.rst:217
 msgid "LABELS"
-msgstr ""
+msgstr "LABELS"
 
 #: ../../infrastructure/clusters/kubernetes.rst:218
 msgid "Internal label(s)"
-msgstr ""
+msgstr "Libellé(s) interne(s)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:223
 #: ../../infrastructure/clusters/kubernetes.rst:359
 msgid "VMware sample fields provided. Actual options depend on Target Cloud"
-msgstr ""
+msgstr "Champs d'exemple VMware fournis. Les options réelles dépendent du cloud cible"
 
 #: ../../infrastructure/clusters/kubernetes.rst:225
 msgid "LAYOUT"
-msgstr ""
+msgstr "LAYOUT"
 
 #: ../../infrastructure/clusters/kubernetes.rst:226
 msgid ""
 "Select from available layouts. System provided layouts include Single "
 "Master and Cluster Layouts."
-msgstr ""
+msgstr "Sélectionnez parmi les dispositions disponibles. Les dispositions système fournies incluent les dispositions Single Master et Cluster."
 
 #: ../../infrastructure/clusters/kubernetes.rst:227
 msgid "PLAN"
-msgstr ""
+msgstr "PLAN"
 
 #: ../../infrastructure/clusters/kubernetes.rst:228
 msgid "Select plan for Kubernetes Master"
-msgstr ""
+msgstr "Sélectionnez le plan pour le maître Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:229
 msgid "VOLUMES"
-msgstr ""
+msgstr "VOLUMES"
 
 #: ../../infrastructure/clusters/kubernetes.rst:230
 msgid "Configure volumes for Kubernetes Master"
-msgstr ""
+msgstr "Configurez les volumes pour le maître Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:231
 msgid "NETWORKS"
-msgstr ""
+msgstr "NETWORKS"
 
 #: ../../infrastructure/clusters/kubernetes.rst:232
 msgid "Select the network for Kubernetes Master & Worker VM's"
-msgstr ""
+msgstr "Sélectionnez le réseau pour les VM maître et nœud de calcul Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:233
 msgid "CUSTOM CONFIG"
-msgstr ""
+msgstr "CUSTOM CONFIG"
 
 #: ../../infrastructure/clusters/kubernetes.rst:234
 msgid "Add custom Kubernetes annotations and config hash"
-msgstr ""
+msgstr "Ajoutez des annotations Kubernetes personnalisées et un hash de configuration"
 
 #: ../../infrastructure/clusters/kubernetes.rst:235
 msgid "CLUSTER HOSTNAME"
-msgstr ""
+msgstr "CLUSTER HOSTNAME"
 
 #: ../../infrastructure/clusters/kubernetes.rst:236
 msgid "Cluster address Hostname (cluster layouts only)"
-msgstr ""
+msgstr "Nom d'hôte de l'adresse du cluster (dispositions de cluster uniquement)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:237
 msgid "POD CIDR"
-msgstr ""
+msgstr "POD CIDR"
 
 #: ../../infrastructure/clusters/kubernetes.rst:238
 msgid "POD network range in CIDR format ie 192.168.0.0/24 (cluster layouts only)"
-msgstr ""
+msgstr "Plage réseau POD au format CIDR, par ex. 192.168.0.0/24 (dispositions de cluster uniquement)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:239
 msgid "WORKER PLAN"
-msgstr ""
+msgstr "WORKER PLAN"
 
 #: ../../infrastructure/clusters/kubernetes.rst:240
 msgid "Plan for Worker Nodes (cluster layouts only)"
-msgstr ""
+msgstr "Plan pour les nœuds de calcul (dispositions de cluster uniquement)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:241
 msgid "NUMBER OF WORKERS"
-msgstr ""
+msgstr "NUMBER OF WORKERS"
 
 #: ../../infrastructure/clusters/kubernetes.rst:242
 msgid "Specify the number of workers to provision"
-msgstr ""
+msgstr "Spécifiez le nombre de nœuds de calcul à provisionner"
 
 #: ../../infrastructure/clusters/kubernetes.rst:243
 msgid "LOAD BALANCER"
-msgstr ""
+msgstr "LOAD BALANCER"
 
 #: ../../infrastructure/clusters/kubernetes.rst:244
 msgid "Select an available Load Balancer (cluster layouts only) }"
-msgstr ""
+msgstr "Sélectionnez un équilibreur de charge disponible (dispositions de cluster uniquement) }"
 
 #: ../../infrastructure/clusters/kubernetes.rst:245
 msgid "User Config"
-msgstr ""
+msgstr "User Config"
 
 #: ../../infrastructure/clusters/kubernetes.rst:246
 msgid "CREATE YOUR USER"
-msgstr ""
+msgstr "CREATE YOUR USER"
 
 #: ../../infrastructure/clusters/kubernetes.rst:247
 msgid ""
 "Select to create your user on provisioned hosts (requires Linux user "
 "config in |morpheus| User Profile)"
-msgstr ""
+msgstr "Sélectionnez pour créer votre utilisateur sur les hôtes provisionnés (nécessite une configuration utilisateur Linux dans le profil utilisateur |morpheus|)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:248
 msgid "USER GROUP"
-msgstr ""
+msgstr "USER GROUP"
 
 #: ../../infrastructure/clusters/kubernetes.rst:249
 msgid ""
 "Select User group to create users for all User Group members on "
 "provisioned hosts (requires Linux user config in |morpheus| User Profile "
 "for all members of User Group)"
-msgstr ""
+msgstr "Sélectionnez un groupe d'utilisateurs pour créer des utilisateurs pour tous les membres du groupe sur les hôtes provisionnés (nécessite une configuration utilisateur Linux dans le profil utilisateur |morpheus| pour tous les membres du groupe)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:250
 #: ../../infrastructure/clusters/kubernetes.rst:369
 msgid "Advanced Options"
-msgstr ""
+msgstr "Advanced Options"
 
 #: ../../infrastructure/clusters/kubernetes.rst:251
 #: ../../infrastructure/clusters/kubernetes.rst:370
 msgid "DOMAIN"
-msgstr ""
+msgstr "DOMAIN"
 
 #: ../../infrastructure/clusters/kubernetes.rst:252
 #: ../../infrastructure/clusters/kubernetes.rst:371
 msgid "Specify Domain override for DNS records"
-msgstr ""
+msgstr "Spécifiez la substitution de domaine pour les enregistrements DNS"
 
 #: ../../infrastructure/clusters/kubernetes.rst:253
 #: ../../infrastructure/clusters/kubernetes.rst:372
 msgid "HOSTNAME"
-msgstr ""
+msgstr "HOSTNAME"
 
 #: ../../infrastructure/clusters/kubernetes.rst:254
 #: ../../infrastructure/clusters/kubernetes.rst:373
 msgid ""
 "Set hostname override (defaults to Instance name unless an Active "
 "Hostname Policy applies)"
-msgstr ""
+msgstr "Définissez la substitution de nom d'hôte (par défaut le nom de l'instance sauf si une règle de nom d'hôte active s'applique)"
 
 #: ../../infrastructure/clusters/kubernetes.rst:257
 #: ../../infrastructure/clusters/kubernetes.rst:376
 msgid "Select optional Workflow to execute"
-msgstr ""
+msgstr "Sélectionnez un workflow optionnel à exécuter"
 
 #: ../../infrastructure/clusters/kubernetes.rst:259
 #: ../../infrastructure/clusters/kubernetes.rst:378
 msgid "Review and select :guilabel:`COMPLETE`"
-msgstr ""
+msgstr "Examinez et sélectionnez :guilabel:`COMPLETE`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:261
 msgid "The Master Node(s) will provision first."
-msgstr ""
+msgstr "Les nœuds maîtres seront provisionnés en premier."
 
 #: ../../infrastructure/clusters/kubernetes.rst:262
 msgid ""
 "Upon successful completion of VM provision, Kubernetes scripts will be "
 "executed to install and configure Kubernetes on the Masters."
-msgstr ""
+msgstr "Une fois le provisionnement de la VM terminé avec succès, les scripts Kubernetes seront exécutés pour installer et configurer Kubernetes sur les maîtres."
 
 #: ../../infrastructure/clusters/kubernetes.rst:263
 msgid ""
 "Access to the sites listed in the :ref:`Requirements` section is required"
 " from Master and Worker nodes over 443"
-msgstr ""
+msgstr "L'accès aux sites listés dans la section :ref:`Requirements` est requis depuis les nœuds maîtres et nœuds de calcul sur le port 443"
 
 #: ../../infrastructure/clusters/kubernetes.rst:264
 msgid ""
 "After Master or Masters are successfully provisioned and Kubernetes is "
 "successfully installed and configured, the Worker Nodes will provision in"
 " parallel."
-msgstr ""
+msgstr "Après le provisionnement et la configuration réussis du ou des maîtres et l'installation réussie de Kubernetes, les nœuds de calcul seront provisionnés en parallèle."
 
 #: ../../infrastructure/clusters/kubernetes.rst:265
 msgid "Provision status can be viewed:"
-msgstr ""
+msgstr "L'état de provisionnement peut être consulté :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:266
 msgid "From the Status next to the Cluster in ``Infrastructure > Clusters``"
-msgstr ""
+msgstr "Depuis l'état à côté du cluster dans ``Infrastructure > Clusters``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:267
 msgid ""
 "Status bar with eta and current step available on Cluster detail page, "
 "accessible by selecting the Cluster name from ``Infrastructure > "
 "Clusters``"
-msgstr ""
+msgstr "Barre d'état avec ETA et étape actuelle disponible sur la page de détail du cluster, accessible en sélectionnant le nom du cluster depuis ``Infrastructure > Clusters``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:268
 msgid ""
@@ -461,19 +461,19 @@ msgid ""
 "``Infrastructure > Clusters`` and the History tab - From `Operations - "
 "Activity - History` - Individual process output available by clicking `i`"
 " on target process"
-msgstr ""
+msgstr "Tout l'état et l'historique des processus sont disponibles — Depuis l'onglet Historique de la page de détail du cluster, accessible en sélectionnant le nom du cluster depuis ``Infrastructure > Clusters`` et l'onglet Historique — Depuis `Operations - Activity - History` — Sortie de processus individuelle disponible en cliquant sur `i` sur le processus cible"
 
 #: ../../infrastructure/clusters/kubernetes.rst:273
 msgid ""
 "Once all Master and Worker Nodes are successfully provisioned and "
 "Kubernetes is installed and configured, the Cluster status will turn "
 "green."
-msgstr ""
+msgstr "Une fois tous les nœuds maîtres et nœuds de calcul provisionnés avec succès et Kubernetes installé et configuré, l'état du cluster passera au vert."
 
 #: ../../infrastructure/clusters/kubernetes.rst:275
 #: ../../infrastructure/clusters/kubernetes.rst:398
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../infrastructure/clusters/kubernetes.rst:275
 msgid ""
@@ -482,47 +482,47 @@ msgid ""
 "output from ````Infrastructure > Clusters - Details`` and morpheus-ui "
 "current logs at ``Administration - Health - Morpheus Logs`` for "
 "information on failed Clusters."
-msgstr ""
+msgstr "Le provisionnement de cluster nécessite la création réussie de VM, l'installation de l'agent et l'exécution des workflows Kubernetes. Consultez la sortie du processus depuis ````Infrastructure > Clusters - Details`` et les journaux actuels morpheus-ui dans ``Administration - Health - Morpheus Logs`` pour des informations sur les clusters en échec."
 
 #: ../../infrastructure/clusters/kubernetes.rst:278
 msgid "Intra-Kubernetes Cluster Port Requirements"
-msgstr ""
+msgstr "Exigences de ports intra-cluster Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:280
 msgid ""
 "The table below includes port requirements for the machines within the "
 "cluster (not for the |morpheus| appliance itself). Check that the "
 "following ports are open on Control-plane and Worker nodes:"
-msgstr ""
+msgstr "Le tableau ci-dessous inclut les exigences de ports pour les machines au sein du cluster (pas pour l'appliance |morpheus| elle-même). Vérifiez que les ports suivants sont ouverts sur les nœuds du plan de contrôle et les nœuds de calcul :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:282
 msgid "**Control-plane node(s)**"
-msgstr ""
+msgstr "**Nœud(s) du plan de contrôle**"
 
 #: ../../infrastructure/clusters/kubernetes.rst:286
 #: ../../infrastructure/clusters/kubernetes.rst:326
 msgid "Protocol"
-msgstr ""
+msgstr "Protocole"
 
 #: ../../infrastructure/clusters/kubernetes.rst:287
 #: ../../infrastructure/clusters/kubernetes.rst:327
 msgid "Direction"
-msgstr ""
+msgstr "Direction"
 
 #: ../../infrastructure/clusters/kubernetes.rst:288
 #: ../../infrastructure/clusters/kubernetes.rst:328
 msgid "Port Range"
-msgstr ""
+msgstr "Plage de ports"
 
 #: ../../infrastructure/clusters/kubernetes.rst:289
 #: ../../infrastructure/clusters/kubernetes.rst:329
 msgid "Purpose"
-msgstr ""
+msgstr "Objectif"
 
 #: ../../infrastructure/clusters/kubernetes.rst:290
 #: ../../infrastructure/clusters/kubernetes.rst:330
 msgid "Used By"
-msgstr ""
+msgstr "Utilisé par"
 
 #: ../../infrastructure/clusters/kubernetes.rst:291
 #: ../../infrastructure/clusters/kubernetes.rst:296
@@ -533,7 +533,7 @@ msgstr ""
 #: ../../infrastructure/clusters/kubernetes.rst:331
 #: ../../infrastructure/clusters/kubernetes.rst:336
 msgid "TCP"
-msgstr ""
+msgstr "TCP"
 
 #: ../../infrastructure/clusters/kubernetes.rst:292
 #: ../../infrastructure/clusters/kubernetes.rst:297
@@ -544,7 +544,7 @@ msgstr ""
 #: ../../infrastructure/clusters/kubernetes.rst:332
 #: ../../infrastructure/clusters/kubernetes.rst:337
 msgid "Inbound"
-msgstr ""
+msgstr "Entrant"
 
 #: ../../infrastructure/clusters/kubernetes.rst:293
 msgid "6443"
@@ -552,12 +552,12 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:294
 msgid "Kubernetes API Server"
-msgstr ""
+msgstr "Serveur API Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:295
 #: ../../infrastructure/clusters/kubernetes.rst:340
 msgid "All"
-msgstr ""
+msgstr "Tout"
 
 #: ../../infrastructure/clusters/kubernetes.rst:298
 msgid "6783"
@@ -565,7 +565,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:299
 msgid "Weaveworks"
-msgstr ""
+msgstr "Weaveworks"
 
 #: ../../infrastructure/clusters/kubernetes.rst:303
 msgid "2379-2380"
@@ -573,11 +573,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:304
 msgid "etcd server client API"
-msgstr ""
+msgstr "API client serveur etcd"
 
 #: ../../infrastructure/clusters/kubernetes.rst:305
 msgid "kube-apiserver, etcd"
-msgstr ""
+msgstr "kube-apiserver, etcd"
 
 #: ../../infrastructure/clusters/kubernetes.rst:308
 #: ../../infrastructure/clusters/kubernetes.rst:333
@@ -587,12 +587,12 @@ msgstr ""
 #: ../../infrastructure/clusters/kubernetes.rst:309
 #: ../../infrastructure/clusters/kubernetes.rst:334
 msgid "kubelet API"
-msgstr ""
+msgstr "API kubelet"
 
 #: ../../infrastructure/clusters/kubernetes.rst:310
 #: ../../infrastructure/clusters/kubernetes.rst:335
 msgid "Self, Control plane"
-msgstr ""
+msgstr "Self, Control plane"
 
 #: ../../infrastructure/clusters/kubernetes.rst:313
 msgid "10251"
@@ -600,12 +600,12 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:314
 msgid "kube-scheduler"
-msgstr ""
+msgstr "kube-scheduler"
 
 #: ../../infrastructure/clusters/kubernetes.rst:315
 #: ../../infrastructure/clusters/kubernetes.rst:320
 msgid "Self"
-msgstr ""
+msgstr "Self"
 
 #: ../../infrastructure/clusters/kubernetes.rst:318
 msgid "10252"
@@ -613,11 +613,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:319
 msgid "kube-controller-manager"
-msgstr ""
+msgstr "kube-controller-manager"
 
 #: ../../infrastructure/clusters/kubernetes.rst:322
 msgid "**Worker node(s)**"
-msgstr ""
+msgstr "**Nœud(s) de calcul**"
 
 #: ../../infrastructure/clusters/kubernetes.rst:338
 msgid "30000-32767"
@@ -625,78 +625,78 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:339
 msgid "NodePort Services"
-msgstr ""
+msgstr "Services NodePort"
 
 #: ../../infrastructure/clusters/kubernetes.rst:343
 msgid "Adding Worker Nodes"
-msgstr ""
+msgstr "Ajout de nœuds de calcul"
 
 #: ../../infrastructure/clusters/kubernetes.rst:345
 msgid "Navigate to ``Infrastructure - Clusters``"
-msgstr ""
+msgstr "Accédez à ``Infrastructure - Clusters``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:346
 msgid "Select ``v MORE`` for the target cluster"
-msgstr ""
+msgstr "Sélectionnez ``v MORE`` pour le cluster cible"
 
 #: ../../infrastructure/clusters/kubernetes.rst:347
 msgid "Select ``ADD (type) Kubernetes Worker``"
-msgstr ""
+msgstr "Sélectionnez ``ADD (type) Kubernetes Worker``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:349
 msgid "NAME"
-msgstr ""
+msgstr "NOM"
 
 #: ../../infrastructure/clusters/kubernetes.rst:350
 #, python-brace-format
 msgid ""
 "Name of the Worker Node. Auto=populated with "
 "``${cluster.resourceName}-worker-${seq}``"
-msgstr ""
+msgstr "Nom du nœud de calcul. Rempli automatiquement avec ``${cluster.resourceName}-worker-${seq}``"
 
 #: ../../infrastructure/clusters/kubernetes.rst:352
 msgid ""
 "Description of the Worker Node, displayed in Worker tab on Cluster Detail"
 " pages, and on Worker Host Detail page"
-msgstr ""
+msgstr "Description du nœud de calcul, affichée dans l'onglet Worker des pages de détail du cluster et sur la page de détail de l'hôte Worker"
 
 #: ../../infrastructure/clusters/kubernetes.rst:354
 msgid "Target Cloud for the Worker Node."
-msgstr ""
+msgstr "Cloud cible pour le nœud de calcul."
 
 #: ../../infrastructure/clusters/kubernetes.rst:361
 msgid "SERVICE PLAN"
-msgstr ""
+msgstr "PLAN DE SERVICE"
 
 #: ../../infrastructure/clusters/kubernetes.rst:362
 msgid "Service Plan for the new Worker Node"
-msgstr ""
+msgstr "Plan de service pour le nouveau nœud de calcul"
 
 #: ../../infrastructure/clusters/kubernetes.rst:363
 msgid "NETWORK"
-msgstr ""
+msgstr "RÉSEAU"
 
 #: ../../infrastructure/clusters/kubernetes.rst:364
 msgid "Configure network options for the Worker node."
-msgstr ""
+msgstr "Configurez les options réseau pour le nœud de calcul."
 
 #: ../../infrastructure/clusters/kubernetes.rst:365
 msgid "HOST"
-msgstr ""
+msgstr "HÔTE"
 
 #: ../../infrastructure/clusters/kubernetes.rst:366
 msgid ""
 "If Host selection is enabled, optionally specify target host for new "
 "Worker node"
-msgstr ""
+msgstr "Si la sélection d'hôte est activée, spécifiez éventuellement l'hôte cible pour le nouveau nœud de calcul"
 
 #: ../../infrastructure/clusters/kubernetes.rst:367
 msgid "FOLDER"
-msgstr ""
+msgstr "DOSSIER"
 
 #: ../../infrastructure/clusters/kubernetes.rst:368
 msgid "Optionally specify target folder for new Worker node"
-msgstr ""
+msgstr "Spécifiez éventuellement le dossier cible pour le nouveau nœud de calcul"
 
 #: ../../infrastructure/clusters/kubernetes.rst:380
 msgid ""
@@ -704,11 +704,11 @@ msgid ""
 "Kubernetes cluster with OpenEBS so that Kubernetes specs or HELM "
 "templates that use a default StorageClass for Persistent Volume Claims "
 "can be utilised."
-msgstr ""
+msgstr "Assurez-vous qu'une StorageClass par défaut est disponible lors de l'utilisation d'un cluster Kubernetes Morpheus avec OpenEBS, afin que les spécifications Kubernetes ou les modèles HELM utilisant une StorageClass par défaut pour les Persistent Volume Claims puissent être utilisés."
 
 #: ../../infrastructure/clusters/kubernetes.rst:383
 msgid "Kubernetes Cluster Detail Pages"
-msgstr ""
+msgstr "Pages de détail du cluster Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:385
 msgid ""
@@ -719,7 +719,7 @@ msgid ""
 "persistent regardless of the currently-selected tab) provides high level "
 "costing and monitoring information, including a current aggregate metric "
 "for the CPU, memory and storage use."
-msgstr ""
+msgstr "La page de détail du cluster Kubernetes offre un haut degré de surveillance et de contrôle sur les clusters Kubernetes. Cela inclut la surveillance de tous les nœuds du cluster, la ligne de commande ``kubectl``, le contrôle des comptes et des rôles, la gestion des charges de travail, et plus encore. La section supérieure de la page (persistante quel que soit l'onglet sélectionné) fournit des informations de haut niveau sur les coûts et la surveillance, y compris une métrique agrégée actuelle pour l'utilisation du processeur, de la mémoire et du stockage."
 
 #: ../../infrastructure/clusters/kubernetes.rst:387
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterDetail.png"
@@ -729,35 +729,35 @@ msgstr ""
 msgid ""
 "The upper section also includes the ACTIONS menu which includes the "
 "following functions:"
-msgstr ""
+msgstr "La section supérieure comprend également le menu ACTIONS qui inclut les fonctions suivantes :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:391
 msgid "**REFRESH:** Forces a routine sync of the cluster status"
-msgstr ""
+msgstr "**ACTUALISER :** Force une synchronisation de routine de l'état du cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:392
 msgid ""
 "**PERMISSIONS:** View and edit the Group, Service Plan, and Tenant access"
 " permissions for the cluster"
-msgstr ""
+msgstr "**PERMISSIONS :** Afficher et modifier les permissions d'accès du Groupe, du Plan de service et du Locataire pour le cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:393
 msgid "**VIEW API TOKEN:** Displays the API token for the cluster"
-msgstr ""
+msgstr "**AFFICHER LE JETON API :** Affiche le jeton API du cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:394
 msgid "**VIEW KUBE CONFIG:** Displays the cluster configuration"
-msgstr ""
+msgstr "**AFFICHER KUBE CONFIG :** Affiche la configuration du cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:395
 msgid ""
 "**RUN WORKLOAD:** Run deployments, stateful sets, daemon sets, or jobs "
 "and target them to a specific namespace"
-msgstr ""
+msgstr "**EXÉCUTER UNE CHARGE DE TRAVAIL :** Exécuter des déploiements, des ensembles avec état, des ensembles de démons ou des tâches et les cibler vers un espace de noms spécifique"
 
 #: ../../infrastructure/clusters/kubernetes.rst:396
 msgid "**UPGRADE CLUSTER:** Upgrade the cluster to a higher version of Kubernetes"
-msgstr ""
+msgstr "**METTRE À NIVEAU LE CLUSTER :** Mettre à niveau le cluster vers une version supérieure de Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:398
 msgid ""
@@ -770,29 +770,29 @@ msgid ""
 "records the requirement for those historical release lines on the current"
 " canonical HKS page because separate versioned source pages are not "
 "present in this documentation set."
-msgstr ""
+msgstr "Pour les clusters HKS 8.1.0, 8.1.1 et 8.1.2 passant à Kubernetes v1.35.x ou ultérieur, supprimez l'indicateur obsolète ``--pod-infra-container-image`` de ``/var/lib/kubelet/kubeadm-flags.env`` sur chaque nœud de plan de contrôle et de calcul. Si l'indicateur reste en place, la mise à niveau échoue. Les scripts de mise à niveau actuels suppriment cet indicateur dans le cadre de la mise à niveau du nœud ; vérifiez qu'il est absent si une mise à niveau est interrompue ou utilise des scripts plus anciens. Cette note consigne l'exigence pour ces lignes de version historiques sur la page HKS canonique actuelle, car des pages source versionnées distinctes ne sont pas présentes dans cet ensemble de documentation."
 
 #: ../../infrastructure/clusters/kubernetes.rst:399
 msgid ""
 "**ADD KUBERNETES WORKER:** Launches a wizard which allows users to "
 "configure a new worker for the cluster"
-msgstr ""
+msgstr "**AJOUTER UN WORKER KUBERNETES :** Lance un assistant qui permet aux utilisateurs de configurer un nouveau nœud de calcul pour le cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:401
 msgid ""
 "Additional monitoring and control panes are located within tabs, some of "
 "which contain subtabs."
-msgstr ""
+msgstr "Des volets de surveillance et de contrôle supplémentaires se trouvent dans des onglets, dont certains contiennent des sous-onglets."
 
 #: ../../infrastructure/clusters/kubernetes.rst:405
 msgid "Summary"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/clusters/kubernetes.rst:407
 msgid ""
 "The summary tab contains high-level details on health and makeup of the "
 "cluster."
-msgstr ""
+msgstr "L'onglet de synthèse contient des détails de haut niveau sur l'état et la composition du cluster."
 
 #: ../../infrastructure/clusters/kubernetes.rst:409
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterSummary.png"
@@ -800,14 +800,14 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:411
 msgid "Control"
-msgstr ""
+msgstr "Contrôle"
 
 #: ../../infrastructure/clusters/kubernetes.rst:413
 msgid ""
 "Contains the ``kubectl`` command line with ability to target commands to "
 "specific namespaces. The Control tab also contains the Packages subtab "
 "which displays the list of packages and their versions."
-msgstr ""
+msgstr "Contient la ligne de commande ``kubectl`` avec la possibilité de cibler les commandes vers des espaces de noms spécifiques. L'onglet Contrôle contient également le sous-onglet Packages qui affiche la liste des packages et leurs versions."
 
 #: ../../infrastructure/clusters/kubernetes.rst:415
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterControl.png"
@@ -815,13 +815,13 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:417
 msgid "Access"
-msgstr ""
+msgstr "Accès"
 
 #: ../../infrastructure/clusters/kubernetes.rst:419
 msgid ""
 "The Access Tab contains view and edit tools for Namespaces, accounts, "
 "roles, and role bindings."
-msgstr ""
+msgstr "L'onglet Accès contient des outils d'affichage et de modification pour les espaces de noms, les comptes, les rôles et les liaisons de rôles."
 
 #: ../../infrastructure/clusters/kubernetes.rst:421
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterAccess.png"
@@ -829,14 +829,14 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:423
 msgid "Nodes"
-msgstr ""
+msgstr "Nœuds"
 
 #: ../../infrastructure/clusters/kubernetes.rst:425
 msgid ""
 "The nodes tab includes a list of master and worker nodes in the cluster, "
 "their statuses, and the current compute, memory, and storage pressure on "
 "each node."
-msgstr ""
+msgstr "L'onglet Nœuds inclut une liste des nœuds maîtres et de calcul du cluster, leurs états et la pression actuelle sur le calcul, la mémoire et le stockage de chaque nœud."
 
 #: ../../infrastructure/clusters/kubernetes.rst:427
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterNodes.png"
@@ -844,7 +844,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:429
 msgid "Workloads"
-msgstr ""
+msgstr "Charges de travail"
 
 #: ../../infrastructure/clusters/kubernetes.rst:431
 msgid ""
@@ -852,7 +852,7 @@ msgid ""
 "Stateful Sets, and Jobs. Add new Deployments, Stateful Sets, Daemon Sets,"
 " and Jobs through the ACTIONS menu near the top of the Cluster Detail "
 "Page."
-msgstr ""
+msgstr "Affichez et modifiez les Pods, Déploiements, Replica Sets, Daemon Sets, Stateful Sets et Jobs existants. Ajoutez de nouveaux Déploiements, Stateful Sets, Daemon Sets et Jobs via le menu ACTIONS en haut de la page de détail du cluster."
 
 #: ../../infrastructure/clusters/kubernetes.rst:433
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterWorkloads.png"
@@ -860,11 +860,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:435
 msgid "Network"
-msgstr ""
+msgstr "Réseau"
 
 #: ../../infrastructure/clusters/kubernetes.rst:437
 msgid "View, add, and edit Services, Endpoints, Ingress and Network Policies"
-msgstr ""
+msgstr "Affichez, ajoutez et modifiez les Services, Endpoints, Ingress et règles réseau"
 
 #: ../../infrastructure/clusters/kubernetes.rst:439
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterNetwork.png"
@@ -872,13 +872,13 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:441
 msgid "Storage"
-msgstr ""
+msgstr "Stockage"
 
 #: ../../infrastructure/clusters/kubernetes.rst:443
 msgid ""
 "View, add, and edit Storage classes, Volume claims, Volumes, Config maps,"
 " and Secrets"
-msgstr ""
+msgstr "Affichez, ajoutez et modifiez les classes de stockage, les réclamations de volume, les volumes, les Config maps et les Secrets"
 
 #: ../../infrastructure/clusters/kubernetes.rst:445
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterStorage.png"
@@ -886,14 +886,14 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:447
 msgid "Containers"
-msgstr ""
+msgstr "Conteneurs"
 
 #: ../../infrastructure/clusters/kubernetes.rst:449
 msgid ""
 "View a list of containers running on the cluster and restart or delete "
 "them if needed. This list can be filtered by Namespace or a specific "
 "Worker if desired."
-msgstr ""
+msgstr "Affichez la liste des conteneurs exécutés sur le cluster et redémarrez-les ou supprimez-les si nécessaire. Cette liste peut être filtrée par espace de noms ou par un nœud de calcul spécifique."
 
 #: ../../infrastructure/clusters/kubernetes.rst:451
 msgid ""
@@ -903,13 +903,13 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:453
 msgid "Monitoring"
-msgstr ""
+msgstr "Surveillance"
 
 #: ../../infrastructure/clusters/kubernetes.rst:455
 msgid ""
 "View logs and events with filtering tools and search functionality "
 "available."
-msgstr ""
+msgstr "Consultez les journaux et les événements avec des outils de filtrage et une fonctionnalité de recherche disponibles."
 
 #: ../../infrastructure/clusters/kubernetes.rst:457
 msgid ""
@@ -919,14 +919,14 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:459
 msgid "History"
-msgstr ""
+msgstr "Historique"
 
 #: ../../infrastructure/clusters/kubernetes.rst:461
 msgid ""
 "View the Cluster lifecycle history. This includes lists of automation "
 "packages (Tasks and Workflows) run against the cluster or its nodes, the "
 "success of these scripts and the output."
-msgstr ""
+msgstr "Consultez l'historique du cycle de vie du cluster. Cela inclut des listes de packages d'automatisation (Tâches et Workflows) exécutés sur le cluster ou ses nœuds, le succès de ces scripts et leur sortie."
 
 #: ../../infrastructure/clusters/kubernetes.rst:463
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterHistory.png"
@@ -934,7 +934,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:465
 msgid "Wiki"
-msgstr ""
+msgstr "Wiki"
 
 #: ../../infrastructure/clusters/kubernetes.rst:467
 msgid ""
@@ -942,7 +942,7 @@ msgid ""
 "be viewed in the Wiki section (|OpeWik|). Edit the Wiki as desired, most "
 "standard Markdown syntax will be honored allowing the use of headings, "
 "links, embedded images, and more."
-msgstr ""
+msgstr "Consultez l'entrée Wiki |morpheus| pour ce cluster. Cette page Wiki peut également être consultée dans la section Wiki (|OpeWik|). Modifiez le Wiki selon vos besoins ; la plupart de la syntaxe Markdown standard sera respectée, permettant l'utilisation de titres, de liens, d'images intégrées, etc."
 
 #: ../../infrastructure/clusters/kubernetes.rst:469
 msgid ".. image:: /images/infrastructure/clusters/kubernetes/clusterWiki.png"
@@ -950,7 +950,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:472
 msgid "Adding External Kubernetes Clusters"
-msgstr ""
+msgstr "Ajout de clusters Kubernetes externes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:474
 msgid ""
@@ -963,11 +963,11 @@ msgid ""
 "some features may not work fully, such as listing all namespaces. The "
 "process for creating a service account and integrating the Cluster with "
 "|morpheus| is described here."
-msgstr ""
+msgstr "|morpheus| prend en charge la gestion et la consommation de clusters Kubernetes provisionnés en dehors de |morpheus|. Ceux-ci sont appelés clusters Kubernetes externes dans l'interface utilisateur |morpheus|. Cela peut par exemple servir à intégrer et gérer des clusters OpenShift. Pour intégrer pleinement le cluster Kubernetes à l'ensemble des fonctionnalités |morpheus|, vous devrez peut-être créer un compte de service pour |morpheus|. Sans cette étape préalable, certaines fonctionnalités peuvent ne pas fonctionner pleinement, comme l'énumération de tous les espaces de noms. Le processus de création d'un compte de service et d'intégration du cluster avec |morpheus| est décrit ici."
 
 #: ../../infrastructure/clusters/kubernetes.rst:476
 msgid "First, create the Service Account within the Kubernetes cluster:"
-msgstr ""
+msgstr "Commencez par créer le compte de service dans le cluster Kubernetes :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:478
 msgid "kubectl create serviceaccount morpheus"
@@ -975,7 +975,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:482
 msgid "Next, create the Role Binding:"
-msgstr ""
+msgstr "Ensuite, créez la liaison de rôle :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:484
 msgid ""
@@ -989,7 +989,7 @@ msgid ""
 "With those items created, we can gather the API URL and the API token "
 "which will be used to add the existing cluster to |morpheus| in the next "
 "step:"
-msgstr ""
+msgstr "Une fois ces éléments créés, nous pouvons recueillir l'URL API et le jeton API qui seront utilisés pour ajouter le cluster existant à |morpheus| à l'étape suivante :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:492
 msgid ""
@@ -1011,43 +1011,43 @@ msgid ""
 "Click :guilabel:`+ ADD CLUSTER` and then select \"External Kubernetes "
 "Cluster\". Set the following fields, you will have to advance through the"
 " pages of the wizard to see all fields indicated:"
-msgstr ""
+msgstr "Après avoir terminé ces étapes, nous pouvons maintenant créer le cluster externe dans |morpheus|. Accédez à :menuselection:`Infrastructure --> Clusters`. Cliquez sur :guilabel:`+ ADD CLUSTER`, puis sélectionnez « External Kubernetes Cluster ». Définissez les champs suivants ; vous devrez avancer dans les pages de l'assistant pour voir tous les champs indiqués :"
 
 #: ../../infrastructure/clusters/kubernetes.rst:503
 msgid "**GROUP:** A previously created |morpheus| Group"
-msgstr ""
+msgstr "**GROUPE :** Un Groupe |morpheus| créé précédemment"
 
 #: ../../infrastructure/clusters/kubernetes.rst:504
 msgid "**CLOUD:** A previously-integrated Cloud"
-msgstr ""
+msgstr "**CLOUD :** Un Cloud intégré précédemment"
 
 #: ../../infrastructure/clusters/kubernetes.rst:505
 msgid ""
 "**CLUSTER NAME:** A friendly name for the onboarded cluster in |morpheus|"
 " UI"
-msgstr ""
+msgstr "**NOM DU CLUSTER :** Un nom convivial pour le cluster intégré dans l'interface utilisateur |morpheus|"
 
 #: ../../infrastructure/clusters/kubernetes.rst:506
 msgid ""
 "**RESOURCE NAME:** The resource name will be pre-pended to Kubernetes "
 "hosts associated with this cluster when shown in |morpheus| UI"
-msgstr ""
+msgstr "**NOM DE RESSOURCE :** Le nom de ressource sera préfixé aux hôtes Kubernetes associés à ce cluster lorsqu'ils sont affichés dans l'interface utilisateur |morpheus|"
 
 #: ../../infrastructure/clusters/kubernetes.rst:507
 msgid "**LAYOUT:** Set an associated Layout"
-msgstr ""
+msgstr "**DISPOSITION :** Définir une disposition associée"
 
 #: ../../infrastructure/clusters/kubernetes.rst:508
 msgid "**API URL:** Enter the API URL gathered in the previous step"
-msgstr ""
+msgstr "**URL API :** Saisir l'URL API recueillie à l'étape précédente"
 
 #: ../../infrastructure/clusters/kubernetes.rst:509
 msgid "**API TOKEN:** Enter the API Token gathered in the previous step"
-msgstr ""
+msgstr "**JETON API :** Saisir le jeton API recueilli à l'étape précédente"
 
 #: ../../infrastructure/clusters/kubernetes.rst:510
 msgid "**KUBE CONFIG:** Enter Kubeconfig YAML to authenticate the cluster"
-msgstr ""
+msgstr "**KUBE CONFIG :** Saisir le YAML Kubeconfig pour authentifier le cluster"
 
 #: ../../infrastructure/clusters/kubernetes.rst:512
 msgid ""
@@ -1057,7 +1057,7 @@ msgid ""
 "|morpheus| UI. Once things are finalized and statuses are green, the "
 "cluster can be monitored and consumed as any other cluster provisioned "
 "from |morpheus|."
-msgstr ""
+msgstr "Les champs ci-dessus sont obligatoires ; d'autres peuvent être configurés en option selon la situation. Terminez l'assistant et |morpheus| commencera le processus d'intégration du cluster existant dans la gestion au sein de l'interface utilisateur |morpheus|. Une fois les opérations finalisées et les états au vert, le cluster peut être surveillé et consommé comme tout autre cluster provisionné depuis |morpheus|."
 
 #: ../../infrastructure/clusters/kubernetes.rst:514
 msgid ".. image:: /images/infrastructure/clusters/extKube.png"
@@ -1065,65 +1065,65 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes.rst:517
 msgid "Additional Kubernetes Topics"
-msgstr ""
+msgstr "Rubriques Kubernetes supplémentaires"
 
 #: ../../infrastructure/clusters/kubernetes.rst:519
 msgid "See also"
-msgstr ""
+msgstr "Voir aussi"
 
 #: ../../infrastructure/clusters/kubernetes.rst:521
 msgid ":ref:`k8s-storage`"
-msgstr ""
+msgstr ":ref:`k8s-storage`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:522
 msgid "Persistent Volume, PVC, and StorageClass management"
-msgstr ""
+msgstr "Gestion des Persistent Volume, PVC et StorageClass"
 
 #: ../../infrastructure/clusters/kubernetes.rst:524
 msgid ":ref:`k8s-registry`"
-msgstr ""
+msgstr ":ref:`k8s-registry`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:525
 msgid "Container registry integration within Kubernetes clusters"
-msgstr ""
+msgstr "Intégration du registre de conteneurs dans les clusters Kubernetes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:527
 msgid ":ref:`k8s-jobs`"
-msgstr ""
+msgstr ":ref:`k8s-jobs`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:528
 msgid "Job, CronJob, and Deploy Job management"
-msgstr ""
+msgstr "Gestion des Jobs, CronJob et Deploy Job"
 
 #: ../../infrastructure/clusters/kubernetes.rst:530
 msgid ":ref:`k8s-external`"
-msgstr ""
+msgstr ":ref:`k8s-external`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:531
 msgid "Detailed guide on importing external Kubernetes clusters"
-msgstr ""
+msgstr "Guide détaillé sur l'importation de clusters Kubernetes externes"
 
 #: ../../infrastructure/clusters/kubernetes.rst:533
 msgid ":ref:`helm-charts`"
-msgstr ""
+msgstr ":ref:`helm-charts`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:534
 msgid "Helm chart provisioning"
-msgstr ""
+msgstr "Provisionnement de charts Helm"
 
 #: ../../infrastructure/clusters/kubernetes.rst:536
 msgid ":ref:`helm-upgrades`"
-msgstr ""
+msgstr ":ref:`helm-upgrades`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:537
 msgid "Helm upgrade workflows"
-msgstr ""
+msgstr "Workflows de mise à niveau Helm"
 
 #: ../../infrastructure/clusters/kubernetes.rst:539
 msgid ":ref:`k8s-spec-blueprint`"
-msgstr ""
+msgstr ":ref:`k8s-spec-blueprint`"
 
 #: ../../infrastructure/clusters/kubernetes.rst:540
 msgid "Kubernetes Spec blueprint type"
-msgstr ""
+msgstr "Type de plan Kubernetes Spec"
 

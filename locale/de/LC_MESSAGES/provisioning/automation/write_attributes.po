@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:4
 msgid "Write Attributes Task"
-msgstr ""
+msgstr "Write Attributes Task"
 
 #: ../../provisioning/automation/write_attributes.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../provisioning/automation/write_attributes.rst:9
 msgid ""
@@ -35,77 +35,77 @@ msgid ""
 "container). This enables passing data between Tasks and Workflow phases, "
 "storing computed values for later reference, and building dynamic "
 "configuration state during provisioning."
-msgstr ""
+msgstr "Der Task-Typ Write Attributes schreibt eine JSON-Nutzlast aus Schlüssel-Wert-Paaren in die Attributes-Eigenschaft der Zielressource (Instanz, Server oder Container). Damit können Daten zwischen Aufgaben und Workflow-Phasen übergeben, berechnete Werte für spätere Referenz gespeichert und dynamischer Konfigurationszustand während der Provisionierung aufgebaut werden."
 
 #: ../../provisioning/automation/write_attributes.rst:11
 msgid "Write Attributes Tasks are particularly useful for:"
-msgstr ""
+msgstr "Write-Attributes-Aufgaben sind besonders nützlich für:"
 
 #: ../../provisioning/automation/write_attributes.rst:13
 msgid ""
 "Storing values from one Provisioning Workflow phase for use in another "
 "phase"
-msgstr ""
+msgstr "Speichern von Werten aus einer Provisionierungs-Workflow-Phase zur Verwendung in einer anderen Phase"
 
 #: ../../provisioning/automation/write_attributes.rst:14
 msgid "Passing computed configuration between Tasks"
-msgstr ""
+msgstr "Übergeben berechneter Konfiguration zwischen Aufgaben"
 
 #: ../../provisioning/automation/write_attributes.rst:15
 msgid "Building dynamic metadata that other Tasks or integrations can reference"
-msgstr ""
+msgstr "Aufbauen dynamischer Metadaten, die andere Aufgaben oder Integrationen referenzieren können"
 
 #: ../../provisioning/automation/write_attributes.rst:16
 msgid "Tagging resources with runtime-determined properties"
-msgstr ""
+msgstr "Taggen von Ressourcen mit zur Laufzeit bestimmten Eigenschaften"
 
 #: ../../provisioning/automation/write_attributes.rst:19
 msgid "Creating a Write Attributes Task"
-msgstr ""
+msgstr "Eine Write-Attributes-Aufgabe erstellen"
 
 #: ../../provisioning/automation/write_attributes.rst:21
 msgid "Navigate to :menuselection:`Library --> Automation` > Tasks"
-msgstr ""
+msgstr "Navigieren Sie zu :menuselection:`Library --> Automation` > Tasks"
 
 #: ../../provisioning/automation/write_attributes.rst:22
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`+ ADD`"
 
 #: ../../provisioning/automation/write_attributes.rst:23
 msgid "Select **Write Attributes** as the Task Type"
-msgstr ""
+msgstr "Wählen Sie **Write Attributes** als Task Type"
 
 #: ../../provisioning/automation/write_attributes.rst:24
 msgid "Configure:"
-msgstr ""
+msgstr "Konfigurieren Sie:"
 
 #: ../../provisioning/automation/write_attributes.rst:26
 msgid "**NAME:** Descriptive name for the task"
-msgstr ""
+msgstr "**NAME:** Beschreibender Name für die Aufgabe"
 
 #: ../../provisioning/automation/write_attributes.rst:27
 msgid "**CODE:** Unique code for API, CLI, and variable references"
-msgstr ""
+msgstr "**CODE:** Eindeutiger Code für API-, CLI- und Variablenreferenzen"
 
 #: ../../provisioning/automation/write_attributes.rst:28
 msgid "**ATTRIBUTES:** JSON payload to write (see formats below)"
-msgstr ""
+msgstr "**ATTRIBUTES:** Zu schreibende JSON-Nutzlast (siehe Formate unten)"
 
 #: ../../provisioning/automation/write_attributes.rst:30
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`"
 
 #: ../../provisioning/automation/write_attributes.rst:33
 msgid "JSON Payload Formats"
-msgstr ""
+msgstr "JSON-Nutzlastformate"
 
 #: ../../provisioning/automation/write_attributes.rst:36
 msgid "Static Key-Value Pairs"
-msgstr ""
+msgstr "Statische Schlüssel-Wert-Paare"
 
 #: ../../provisioning/automation/write_attributes.rst:38
 msgid "Write a fixed set of attributes:"
-msgstr ""
+msgstr "Eine feste Menge von Attributen schreiben:"
 
 #: ../../provisioning/automation/write_attributes.rst:40
 #, python-brace-format
@@ -120,14 +120,14 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:50
 msgid "Dynamic Values from Prior Task Results"
-msgstr ""
+msgstr "Dynamische Werte aus vorherigen Task-Ergebnissen"
 
 #: ../../provisioning/automation/write_attributes.rst:52
 msgid ""
 "Reference outputs from previous Tasks using ``<%= results.taskCode %>`` "
 "syntax. The referenced Task must have its **RESULT TYPE** set to \"Single"
 " Value\":"
-msgstr ""
+msgstr "Referenzieren Sie Ausgaben vorheriger Aufgaben mit der Syntax ``<%= results.taskCode %>``. Die referenzierte Aufgabe muss ihren **RESULT TYPE** auf „Single Value“ gesetzt haben:"
 
 #: ../../provisioning/automation/write_attributes.rst:54
 #, python-brace-format
@@ -141,23 +141,23 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:62
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../provisioning/automation/write_attributes.rst:62
 msgid ""
 "``taskCode`` refers to the **CODE** field value of the Task whose output "
 "you're referencing, not its name."
-msgstr ""
+msgstr "``taskCode`` bezieht sich auf den Wert des Feldes **CODE** der Aufgabe, deren Ausgabe Sie referenzieren, nicht auf ihren Namen."
 
 #: ../../provisioning/automation/write_attributes.rst:65
 msgid "Dynamic JSON Map from Prior Task"
-msgstr ""
+msgstr "Dynamische JSON-Map aus vorheriger Aufgabe"
 
 #: ../../provisioning/automation/write_attributes.rst:67
 msgid ""
 "When a prior Task returns a full JSON object (RESULT TYPE set to "
 "\"JSON\"), pass it through using ``encodeAsJSON()``:"
-msgstr ""
+msgstr "Wenn eine vorherige Aufgabe ein vollständiges JSON-Objekt zurückgibt (RESULT TYPE auf „JSON“ gesetzt), übergeben Sie es mit ``encodeAsJSON()``:"
 
 #: ../../provisioning/automation/write_attributes.rst:69
 #, python-brace-format
@@ -169,21 +169,21 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:75
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../provisioning/automation/write_attributes.rst:75
 msgid ""
 "The ``encodeAsJSON()`` method is required for proper JSON serialization. "
 "Without it, the JSON map may not be stored correctly."
-msgstr ""
+msgstr "Die Methode ``encodeAsJSON()`` ist für die korrekte JSON-Serialisierung erforderlich. Ohne sie wird die JSON-Map möglicherweise nicht korrekt gespeichert."
 
 #: ../../provisioning/automation/write_attributes.rst:78
 msgid "Mixed Static and Dynamic Values"
-msgstr ""
+msgstr "Gemischte statische und dynamische Werte"
 
 #: ../../provisioning/automation/write_attributes.rst:80
 msgid "Combine static values with dynamic references:"
-msgstr ""
+msgstr "Kombinieren Sie statische Werte mit dynamischen Referenzen:"
 
 #: ../../provisioning/automation/write_attributes.rst:82
 #, python-brace-format
@@ -198,11 +198,11 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:92
 msgid "Instance Variables"
-msgstr ""
+msgstr "Instanzvariablen"
 
 #: ../../provisioning/automation/write_attributes.rst:94
 msgid "|morpheus| instance variables can be referenced directly:"
-msgstr ""
+msgstr "|morpheus|-Instanzvariablen können direkt referenziert werden:"
 
 #: ../../provisioning/automation/write_attributes.rst:96
 #, python-brace-format
@@ -217,17 +217,17 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:106
 msgid "Reading Written Attributes"
-msgstr ""
+msgstr "Geschriebene Attribute lesen"
 
 #: ../../provisioning/automation/write_attributes.rst:108
 msgid ""
 "Attributes written by this Task can be accessed in subsequent Tasks and "
 "Workflow phases:"
-msgstr ""
+msgstr "Von dieser Aufgabe geschriebene Attribute können in nachfolgenden Aufgaben und Workflow-Phasen abgerufen werden:"
 
 #: ../../provisioning/automation/write_attributes.rst:111
 msgid "In Scripts (Groovy, Python, etc.)"
-msgstr ""
+msgstr "In Skripts (Groovy, Python usw.)"
 
 #: ../../provisioning/automation/write_attributes.rst:113
 msgid ""
@@ -237,7 +237,7 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:119
 msgid "In Variable References"
-msgstr ""
+msgstr "In Variablenreferenzen"
 
 #: ../../provisioning/automation/write_attributes.rst:121
 msgid "<%=instance.metadata.my_key1%>"
@@ -245,27 +245,27 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:126
 msgid "In Subsequent Write Attributes Tasks"
-msgstr ""
+msgstr "In nachfolgenden Write-Attributes-Aufgaben"
 
 #: ../../provisioning/automation/write_attributes.rst:128
 msgid ""
 "Written attributes accumulate — subsequent Write Attributes Tasks add to "
 "or overwrite existing keys without removing unmentioned keys."
-msgstr ""
+msgstr "Geschriebene Attribute akkumulieren sich — nachfolgende Write-Attributes-Aufgaben fügen vorhandene Schlüssel hinzu oder überschreiben sie, ohne nicht erwähnte Schlüssel zu entfernen."
 
 #: ../../provisioning/automation/write_attributes.rst:131
 msgid "Use Cases"
-msgstr ""
+msgstr "Anwendungsfälle"
 
 #: ../../provisioning/automation/write_attributes.rst:133
 msgid "**Passing data between Provisioning Workflow phases:**"
-msgstr ""
+msgstr "**Daten zwischen Provisionierungs-Workflow-Phasen übergeben:**"
 
 #: ../../provisioning/automation/write_attributes.rst:135
 msgid ""
 "The Pre-Provision phase discovers infrastructure details, writes them as "
 "attributes, and the Provision phase reads them for configuration:"
-msgstr ""
+msgstr "Die Pre-Provision-Phase ermittelt Infrastrukturdetails, schreibt sie als Attribute, und die Provision-Phase liest sie für die Konfiguration:"
 
 #: ../../provisioning/automation/write_attributes.rst:137
 #, python-brace-format
@@ -279,7 +279,7 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:145
 msgid "**Storing deployment metadata:**"
-msgstr ""
+msgstr "**Bereitstellungsmetadaten speichern:**"
 
 #: ../../provisioning/automation/write_attributes.rst:147
 #, python-brace-format
@@ -293,7 +293,7 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:155
 msgid "**Building configuration for downstream automation:**"
-msgstr ""
+msgstr "**Konfiguration für nachgelagerte Automatisierung aufbauen:**"
 
 #: ../../provisioning/automation/write_attributes.rst:157
 #, python-brace-format
@@ -308,31 +308,31 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:167
 msgid "Best Practices"
-msgstr ""
+msgstr "Best Practices"
 
 #: ../../provisioning/automation/write_attributes.rst:169
 msgid ""
 "**Use descriptive key names:** Keys should clearly indicate their purpose"
 " (e.g., ``database_connection_string`` not ``val1``)"
-msgstr ""
+msgstr "**Beschreibende Schlüsselnamen verwenden:** Schlüssel sollten ihren Zweck klar angeben (z. B. ``database_connection_string`` nicht ``val1``)"
 
 #: ../../provisioning/automation/write_attributes.rst:170
 msgid ""
 "**Keep payloads focused:** Write only the attributes needed; avoid "
 "dumping entire result sets"
-msgstr ""
+msgstr "**Nutzlasten fokussiert halten:** Schreiben Sie nur die benötigten Attribute; vermeiden Sie das Ablegen gesamter Ergebnismengen"
 
 #: ../../provisioning/automation/write_attributes.rst:171
 msgid ""
 "**Validate JSON syntax:** Malformed JSON will cause the Task to fail. Use"
 " a JSON validator for complex payloads"
-msgstr ""
+msgstr "**JSON-Syntax prüfen:** Fehlerhaftes JSON führt zum Fehlschlagen der Aufgabe. Verwenden Sie einen JSON-Validator für komplexe Nutzlasten"
 
 #: ../../provisioning/automation/write_attributes.rst:172
 msgid ""
 "**Handle null results:** When referencing prior Task results that may be "
 "null, use Groovy's safe navigation operator:"
-msgstr ""
+msgstr "**Null-Ergebnisse behandeln:** Beim Referenzieren vorheriger Task-Ergebnisse, die null sein können, den Safe-Navigation-Operator von Groovy verwenden:"
 
 #: ../../provisioning/automation/write_attributes.rst:174
 #, python-brace-format
@@ -346,5 +346,5 @@ msgstr ""
 msgid ""
 "**Document attribute contracts:** When multiple Workflow phases depend on"
 " written attributes, document which keys are expected and their formats"
-msgstr ""
+msgstr "**Attributverträge dokumentieren:** Wenn mehrere Workflow-Phasen von geschriebenen Attributen abhängen, dokumentieren Sie, welche Schlüssel erwartet werden und ihre Formate"
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/templates/scripts.rst:2
 msgid "Script Templates"
-msgstr ""
+msgstr "Modèles de scripts"
 
 #: ../../library/templates/scripts.rst:4
 msgid ""
@@ -30,102 +30,102 @@ msgid ""
 "Types to always execute at the selected phase when that Node Type is "
 "provisioned, added to Workflows as Library Script Tasks, and/or executed "
 "ad-hoc on Instances."
-msgstr ""
+msgstr "Les scripts sont des scripts Bash et PowerShell qui peuvent être associés aux types de nœuds pour s'exécuter systématiquement à la phase sélectionnée lorsque ce type de nœud est provisionné, ajoutés aux workflows en tant que tâches de script de bibliothèque et/ou exécutés de manière ad hoc sur les instances."
 
 #: ../../library/templates/scripts.rst:7
 msgid "Creating Scripts"
-msgstr ""
+msgstr "Création de scripts"
 
 #: ../../library/templates/scripts.rst:9
 msgid "Navigate to |LibTemScr|"
-msgstr ""
+msgstr "Accédez à |LibTemScr|"
 
 #: ../../library/templates/scripts.rst:10
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ ADD`"
 
 #: ../../library/templates/scripts.rst:11
 msgid "Enter the Following:"
-msgstr ""
+msgstr "Saisissez les éléments suivants :"
 
 #: ../../library/templates/scripts.rst:13
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../library/templates/scripts.rst:14
 msgid "Name of the Script in |morpheus|"
-msgstr ""
+msgstr "Nom du script dans |morpheus|"
 
 #: ../../library/templates/scripts.rst:15
 msgid "SCRIPT TYPE"
-msgstr ""
+msgstr "SCRIPT TYPE"
 
 #: ../../library/templates/scripts.rst:16
 msgid "Bash"
-msgstr ""
+msgstr "Bash"
 
 #: ../../library/templates/scripts.rst:17
 msgid "Powershell"
-msgstr ""
+msgstr "Powershell"
 
 #: ../../library/templates/scripts.rst:18
 msgid "PHASE"
-msgstr ""
+msgstr "PHASE"
 
 #: ../../library/templates/scripts.rst:19
 msgid ""
 "Select which phase the Script will execute when attached to a Node Type. "
 "When a script is attached to a Node Type, it will execute according to "
 "the selcted phase:"
-msgstr ""
+msgstr "Sélectionnez la phase à laquelle le script s'exécutera lorsqu'il est associé à un type de nœud. Lorsqu'un script est associé à un type de nœud, il s'exécutera selon la phase sélectionnée :"
 
 #: ../../library/templates/scripts.rst:21
 msgid "Start Service"
-msgstr ""
+msgstr "Start Service"
 
 #: ../../library/templates/scripts.rst:22
 msgid "Any time the Instance action ``Start Service`` is executed"
-msgstr ""
+msgstr "Chaque fois que l'action d'instance ``Start Service`` est exécutée"
 
 #: ../../library/templates/scripts.rst:23
 msgid "Stop Service"
-msgstr ""
+msgstr "Stop Service"
 
 #: ../../library/templates/scripts.rst:24
 msgid "Any time the Instance action ``Stop Service`` is executed"
-msgstr ""
+msgstr "Chaque fois que l'action d'instance ``Stop Service`` est exécutée"
 
 #: ../../library/templates/scripts.rst:25
 msgid "Pre-Provision"
-msgstr ""
+msgstr "Pre-Provision"
 
 #: ../../library/templates/scripts.rst:26
 msgid ""
 "Containers: Script will execute against the container host before the "
 "container is provisioned"
-msgstr ""
+msgstr "Conteneurs : le script s'exécutera sur l'hôte du conteneur avant que le conteneur ne soit provisionné"
 
 #: ../../library/templates/scripts.rst:27
 msgid ""
 "Virtual Machines: Script will execute before any provision phase Scripts "
 "or Tasks"
-msgstr ""
+msgstr "Machines virtuelles : le script s'exécutera avant tout script ou toute tâche de phase de provisionnement"
 
 #: ../../library/templates/scripts.rst:28
 msgid "Provision"
-msgstr ""
+msgstr "Provision"
 
 #: ../../library/templates/scripts.rst:29
 msgid ""
 "Script will execute once per new Instance node during the provision "
 "Phase. Provisioning will not be considered complete until all scripts and"
 " tasks in the provisioning phase are completed"
-msgstr ""
+msgstr "Le script s'exécutera une fois par nouveau nœud d'instance pendant la phase de provisionnement. Le provisionnement ne sera pas considéré comme terminé tant que tous les scripts et tâches de la phase de provisionnement ne sont pas terminés"
 
 #: ../../library/templates/scripts.rst:31
 #: ../../library/templates/scripts.rst:47
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../library/templates/scripts.rst:31
 msgid ""
@@ -134,11 +134,11 @@ msgid ""
 "messages. As an example, your VM could be up and running but if your "
 "Script is in the provision phase and fails, provisioning will be marked "
 "as a failure."
-msgstr ""
+msgstr "Tout script ou tâche défini sur la phase de provisionnement sera inclus dans le temps total de provisionnement et influencera les messages d'état de provisionnement réussie/avertissement/échec. Par exemple, votre VM peut être opérationnelle, mais si votre script est en phase de provisionnement et échoue, le provisionnement sera marqué comme un échec."
 
 #: ../../library/templates/scripts.rst:33
 msgid "Post-Provision"
-msgstr ""
+msgstr "Post-Provision"
 
 #: ../../library/templates/scripts.rst:34
 msgid ""
@@ -146,106 +146,106 @@ msgid ""
 "is completed. Scripts and Tasks in the Post-Provision phase will show "
 "execution status and history, but are not considered part of the "
 "provision and do not impact provisioning status."
-msgstr ""
+msgstr "Le script s'exécutera une fois par nouveau nœud d'instance après la fin de la phase de provisionnement. Les scripts et tâches de la phase Post-Provision afficheront l'état d'exécution et l'historique, mais ne sont pas considérés comme faisant partie du provisionnement et n'influencent pas l'état de provisionnement."
 
 #: ../../library/templates/scripts.rst:35
 msgid "Pre-Deploy"
-msgstr ""
+msgstr "Pre-Deploy"
 
 #: ../../library/templates/scripts.rst:36
 msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The Script will run prior to the deployment file(s)"
 " being written"
-msgstr ""
+msgstr "Le script s'exécutera sur l'instance cible chaque fois qu'un déploiement est exécuté sur l'instance. Le script s'exécutera avant l'écriture du ou des fichiers de déploiement"
 
 #: ../../library/templates/scripts.rst:37
 msgid "Deploy"
-msgstr ""
+msgstr "Deploy"
 
 #: ../../library/templates/scripts.rst:38
 msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The script will run after the deployment file(s) "
 "are written"
-msgstr ""
+msgstr "Le script s'exécutera sur l'instance cible chaque fois qu'un déploiement est exécuté sur l'instance. Le script s'exécutera après l'écriture du ou des fichiers de déploiement"
 
 #: ../../library/templates/scripts.rst:39
 msgid "Reconfigure"
-msgstr ""
+msgstr "Reconfigure"
 
 #: ../../library/templates/scripts.rst:40
 msgid ""
 "Script will execute on target Instance any time a reconfigure is executed"
 " against the Instance."
-msgstr ""
+msgstr "Le script s'exécutera sur l'instance cible chaque fois qu'une reconfiguration est exécutée sur l'instance."
 
 #: ../../library/templates/scripts.rst:41
 msgid "Teardown"
-msgstr ""
+msgstr "Teardown"
 
 #: ../../library/templates/scripts.rst:42
 msgid ""
 "Script will execute on target Instance upon Instance deletion. Script "
 "will execute against target Instance prior to the deletion/removal of "
 "resources."
-msgstr ""
+msgstr "Le script s'exécutera sur l'instance cible lors de la suppression de l'instance. Le script s'exécutera sur l'instance cible avant la suppression des ressources."
 
 #: ../../library/templates/scripts.rst:44
 msgid "SCRIPT"
-msgstr ""
+msgstr "SCRIPT"
 
 #: ../../library/templates/scripts.rst:45
 msgid "Enter Bash or Powershell script."
-msgstr ""
+msgstr "Saisissez un script Bash ou PowerShell."
 
 #: ../../library/templates/scripts.rst:47
 msgid ""
 "|morpheus| variables are supported in Library Scripts using ``<%= "
 "variable.var %>`` format"
-msgstr ""
+msgstr "Les variables |morpheus| sont prises en charge dans les scripts de bibliothèque au format ``<%= variable.var %>``"
 
 #: ../../library/templates/scripts.rst:49
 msgid "RUN AS USER"
-msgstr ""
+msgstr "RUN AS USER"
 
 #: ../../library/templates/scripts.rst:50
 msgid ""
 "By default Scripts are execute as ``morpheus-node``. To execute as "
 "another User, populate ``RUN AS USER`` and ensure proper user permissions"
 " & group access"
-msgstr ""
+msgstr "Par défaut, les scripts s'exécutent en tant que ``morpheus-node``. Pour exécuter en tant qu'autre utilisateur, renseignez ``RUN AS USER`` et assurez-vous que les autorisations utilisateur et l'accès au groupe sont corrects"
 
 #: ../../library/templates/scripts.rst:51
 msgid "SUDO"
-msgstr ""
+msgstr "SUDO"
 
 #: ../../library/templates/scripts.rst:52
 msgid "Flag ``SUDO`` if sudo is required to execute the Script"
-msgstr ""
+msgstr "Cochez ``SUDO`` si sudo est requis pour exécuter le script"
 
 #: ../../library/templates/scripts.rst:55
 msgid ""
 "To attach Scripts and templates that have been added to the Library to a "
 "Node Type, start typing the name and then select the script(s) and/or "
 "template(s)."
-msgstr ""
+msgstr "Pour associer des scripts et des modèles ajoutés à la bibliothèque à un type de nœud, commencez à saisir le nom, puis sélectionnez le ou les script(s) et/ou modèle(s)."
 
 #: ../../library/templates/scripts.rst:57
 msgid "Multiple scripts and templates can be added to a Node Type"
-msgstr ""
+msgstr "Plusieurs scripts et modèles peuvent être ajoutés à un type de nœud"
 
 #: ../../library/templates/scripts.rst:58
 msgid "Scripts and Templates can be added/shared among multiple Node Types"
-msgstr ""
+msgstr "Les scripts et modèles peuvent être ajoutés/partagés entre plusieurs types de nœuds"
 
 #: ../../library/templates/scripts.rst:59
 msgid "The execution phase can be set for Scripts in the Scripts section"
-msgstr ""
+msgstr "La phase d'exécution peut être définie pour les scripts dans la section Scripts"
 
 #: ../../library/templates/scripts.rst:60
 msgid ""
 "Search will populate Scripts or Templates containing the characters "
 "entered anywhere in their name, not just the first letter(s) of the name"
-msgstr ""
+msgstr "La recherche affichera les scripts ou modèles contenant les caractères saisis n'importe où dans leur nom, et pas seulement la ou les première(s) lettre(s) du nom"
 

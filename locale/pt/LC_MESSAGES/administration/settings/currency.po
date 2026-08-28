@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/settings/currency.rst:2
 msgid "Currency Settings"
-msgstr ""
+msgstr "Configurações de Moeda"
 
 #: ../../administration/settings/currency.rst:4
 msgid ""
@@ -34,35 +34,35 @@ msgid ""
 "with currency conversion services \"open exchange rates\" and "
 "\"fixer.io\". This article goes through the process of setting up the "
 "integration and how it works to determine pricing conversions."
-msgstr ""
+msgstr "Em |morpheus|, Tenants são ambientes separados que podem ser definidos como usando moedas exclusivas de um Tenant para o outro. Além disso, essas moedas podem ser diferentes da moeda em que Conjuntos de Preços foram definidos. Para apresentar preços a usuários de Subtenant em sua moeda designada, |morpheus| permite integração com serviços de conversão de moeda \"open exchange rates\" e \"fixer.io\". Este artigo descreve o processo de configuração da integração e como ela funciona para determinar conversões de preços."
 
 #: ../../administration/settings/currency.rst:7
 msgid "Integrating With a Currency Exchange Provider"
-msgstr ""
+msgstr "Integrando com um Provedor de Câmbio de Moeda"
 
 #: ../../administration/settings/currency.rst:9
 msgid "Navigate to |AdmSetApp|"
-msgstr ""
+msgstr "Navegue até |AdmSetApp|"
 
 #: ../../administration/settings/currency.rst:10
 msgid ""
 "Under the Currency Settings heading, make a \"Currency Provider\" "
 "selection"
-msgstr ""
+msgstr "Sob o cabeçalho Configurações de Moeda, faça uma seleção de \"Provedor de Moeda\""
 
 #: ../../administration/settings/currency.rst:11
 msgid "Enter your \"Provider API Key\""
-msgstr ""
+msgstr "Insira sua \"Chave de API do Provedor\""
 
 #: ../../administration/settings/currency.rst:13
 msgid ""
 "The service is now integrated and can be used as described in the next "
 "section."
-msgstr ""
+msgstr "O serviço agora está integrado e pode ser usado conforme descrito na próxima seção."
 
 #: ../../administration/settings/currency.rst:16
 msgid "Consuming Currency Exchange in |morpheus|"
-msgstr ""
+msgstr "Consumindo Câmbio de Moeda em |morpheus|"
 
 #: ../../administration/settings/currency.rst:18
 msgid ""
@@ -70,13 +70,13 @@ msgid ""
 "12 hours. When needed, Morpheus will use this cached data to present "
 "currency conversions rather than hitting the API directly each time. This"
 " limits the total number of API hits and reduces costs."
-msgstr ""
+msgstr "Os dados de câmbio de moeda são sincronizados do provedor integrado uma vez a cada 12 horas. Quando necessário, Morpheus usará esses dados em cache para apresentar conversões de moeda em vez de acessar a API diretamente a cada vez. Isso limita o número total de acessos à API e reduz custos."
 
 #: ../../administration/settings/currency.rst:20
 msgid ""
 "Exchanged currency values will be shown under conditions similar to the "
 "following scenario:"
-msgstr ""
+msgstr "Valores de moeda convertidos serão exibidos em condições semelhantes ao seguinte cenário:"
 
 #: ../../administration/settings/currency.rst:22
 msgid ""
@@ -85,5 +85,5 @@ msgid ""
 " defined in Currency A. Morpheus will convert the pricing data from "
 "currency A to Currency B for this user (and all users in this Subtenant) "
 "since price conversion has been enabled."
-msgstr ""
+msgstr "Um usuário está trabalhando em um Subtenant configurado para Moeda B. O usuário está tentando provisionar uma instância com conjuntos de preços que foram definidos apenas em Moeda A. Morpheus converterá os dados de preços da moeda A para Moeda B para este usuário (e todos os usuários neste Subtenant), pois a conversão de preços foi ativada."
 

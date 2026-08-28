@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/cluster_updates.rst:2
 msgid "Cluster Updates"
-msgstr ""
+msgstr "Mises à jour de cluster"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:7
 msgid ""
@@ -34,242 +34,242 @@ msgid ""
 "and configuration changes to cluster nodes in a controlled manner. The "
 "update workflow orchestrates rolling updates across cluster members to "
 "minimize downtime and ensure cluster stability throughout the process."
-msgstr ""
+msgstr "Les mises à jour de cluster permettent aux administrateurs d'appliquer des mises à jour logicielles, des correctifs et des modifications de configuration aux nœuds de cluster de manière contrôlée. Le workflow de mise à jour orchestre des mises à jour progressives sur les membres du cluster afin de minimiser les temps d'arrêt et d'assurer la stabilité du cluster tout au long du processus."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:9
 msgid ""
 "Cluster updates are supported for Kubernetes clusters, MVM clusters, and "
 "Docker clusters managed by |morpheus|."
-msgstr ""
+msgstr "Les mises à jour de cluster sont prises en charge pour les clusters Kubernetes, les clusters MVM et les clusters Docker gérés par |morpheus|."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:12
 msgid "Update Workflow"
-msgstr ""
+msgstr "Workflow de mise à jour"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:14
 msgid "The cluster update process follows a managed workflow:"
-msgstr ""
+msgstr "Le processus de mise à jour de cluster suit un workflow géré :"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:16
 msgid ""
 "**Preparation** — |morpheus| evaluates the cluster state and determines "
 "which nodes need updates."
-msgstr ""
+msgstr "**Préparation** — |morpheus| évalue l'état du cluster et détermine quels nœuds nécessitent des mises à jour."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:17
 msgid ""
 "**Cordon** — Worker nodes are cordoned (marked as unschedulable) to "
 "prevent new workloads from being placed on them."
-msgstr ""
+msgstr "**Cordon** — Les nœuds de calcul sont mis en cordon (marqués comme non planifiables) pour empêcher le placement de nouvelles charges de travail."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:18
 msgid ""
 "**Drain** — Existing workloads are gracefully evicted from the node being"
 " updated."
-msgstr ""
+msgstr "**Drain** — Les charges de travail existantes sont évincées de manière progressive du nœud en cours de mise à jour."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:19
 msgid ""
 "**Update** — The update is applied to the node (OS patches, Kubernetes "
 "version upgrade, package updates, etc.)."
-msgstr ""
+msgstr "**Mise à jour** — La mise à jour est appliquée au nœud (correctifs OS, mise à niveau de version Kubernetes, mises à jour de paquets, etc.)."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:20
 msgid "**Verify** — The node's health is verified after the update."
-msgstr ""
+msgstr "**Vérification** — L'état du nœud est vérifié après la mise à jour."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:21
 msgid ""
 "**Uncordon** — The node is uncordoned and made available for scheduling "
 "again."
-msgstr ""
+msgstr "**Uncordon** — Le nœud est remis en service et de nouveau disponible pour la planification."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:22
 msgid "**Next Node** — The process repeats for the next node in the cluster."
-msgstr ""
+msgstr "**Nœud suivant** — Le processus se répète pour le nœud suivant du cluster."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:24
 msgid ""
 "This rolling approach ensures that the cluster maintains availability "
 "throughout the update process."
-msgstr ""
+msgstr "Cette approche progressive garantit que le cluster reste disponible tout au long du processus de mise à jour."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:27
 msgid "Executing a Cluster Update"
-msgstr ""
+msgstr "Exécution d'une mise à jour de cluster"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:29
 msgid "Navigate to ``Infrastructure > Clusters``"
-msgstr ""
+msgstr "Accédez à ``Infrastructure > Clusters``"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:30
 msgid "Click the name of the Cluster to update"
-msgstr ""
+msgstr "Cliquez sur le nom du cluster à mettre à jour"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:31
 msgid "Click :guilabel:`ACTIONS`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`ACTIONS`"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:32
 msgid "Select **Update**"
-msgstr ""
+msgstr "Sélectionnez **Update**"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:33
 msgid "Review the update details:"
-msgstr ""
+msgstr "Examinez les détails de la mise à jour :"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:35
 msgid "UPDATE TYPE"
-msgstr ""
+msgstr "UPDATE TYPE"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:36
 msgid "The type of update to apply:"
-msgstr ""
+msgstr "Le type de mise à jour à appliquer :"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:38
 msgid "**Kubernetes Version** — Upgrade Kubernetes components to a new version"
-msgstr ""
+msgstr "**Version Kubernetes** — Mettre à niveau les composants Kubernetes vers une nouvelle version"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:39
 msgid "**OS Patches** — Apply operating system security patches and updates"
-msgstr ""
+msgstr "**Correctifs OS** — Appliquer les correctifs de sécurité et mises à jour du système d'exploitation"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:40
 msgid "**Package Update** — Update installed addon packages"
-msgstr ""
+msgstr "**Mise à jour de paquet** — Mettre à jour les paquets complémentaires installés"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:42
 msgid "TARGET VERSION"
-msgstr ""
+msgstr "TARGET VERSION"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:43
 msgid "The target version to update to (for version upgrades)."
-msgstr ""
+msgstr "La version cible vers laquelle mettre à jour (pour les mises à niveau de version)."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:44
 msgid "NODES"
-msgstr ""
+msgstr "NODES"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:45
 msgid "Select which nodes to include in the update. Options:"
-msgstr ""
+msgstr "Sélectionnez les nœuds à inclure dans la mise à jour. Options :"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:47
 msgid "**All Nodes** — Update all cluster members (rolling)"
-msgstr ""
+msgstr "**Tous les nœuds** — Mettre à jour tous les membres du cluster (progressif)"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:48
 msgid "**Workers Only** — Update only worker nodes"
-msgstr ""
+msgstr "**Nœuds de calcul uniquement** — Mettre à jour uniquement les nœuds de calcul"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:49
 msgid "**Specific Nodes** — Select individual nodes to update"
-msgstr ""
+msgstr "**Nœuds spécifiques** — Sélectionner des nœuds individuels à mettre à jour"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:51
 msgid "Click :guilabel:`EXECUTE`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`EXECUTE`"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:54
 msgid "Monitoring Update Progress"
-msgstr ""
+msgstr "Suivi de la progression de la mise à jour"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:56
 msgid "Update progress can be monitored from the cluster's **History** tab:"
-msgstr ""
+msgstr "La progression de la mise à jour peut être surveillée depuis l'onglet **History** du cluster :"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:58
 msgid "Each node update appears as a separate history entry"
-msgstr ""
+msgstr "Chaque mise à jour de nœud apparaît comme une entrée d'historique distincte"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:59
 msgid "Status indicators show: Queued, Running, Complete, or Failed"
-msgstr ""
+msgstr "Les indicateurs d'état affichent : Mis en file d'attente, En cours d'exécution, Terminé ou Échec"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:60
 msgid "Detailed logs are available by clicking on individual history entries"
-msgstr ""
+msgstr "Des journaux détaillés sont disponibles en cliquant sur les entrées d'historique individuelles"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:63
 msgid "Update Status Values"
-msgstr ""
+msgstr "Valeurs d'état de mise à jour"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:65
 msgid "**Queued** — Update is scheduled but not yet started"
-msgstr ""
+msgstr "**Mis en file d'attente** — La mise à jour est planifiée mais pas encore démarrée"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:66
 msgid "**Running** — Update is actively being applied to a node"
-msgstr ""
+msgstr "**En cours d'exécution** — La mise à jour est activement appliquée à un nœud"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:67
 msgid "**Complete** — Update finished successfully"
-msgstr ""
+msgstr "**Terminé** — La mise à jour s'est terminée avec succès"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:68
 msgid ""
 "**Failed** — Update encountered an error (manual intervention may be "
 "required)"
-msgstr ""
+msgstr "**Échec** — La mise à jour a rencontré une erreur (une intervention manuelle peut être nécessaire)"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:69
 msgid "**Cancelled** — Update was cancelled by an administrator"
-msgstr ""
+msgstr "**Annulé** — La mise à jour a été annulée par un administrateur"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:71
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:71
 msgid ""
 "If a node update fails, the rolling update process pauses to allow "
 "investigation. The remaining nodes are not updated until the failure is "
 "resolved or the update is manually resumed."
-msgstr ""
+msgstr "Si la mise à jour d'un nœud échoue, le processus de mise à jour progressive est mis en pause pour permettre une investigation. Les nœuds restants ne sont pas mis à jour tant que l'échec n'est pas résolu ou que la mise à jour n'est pas reprise manuellement."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:74
 msgid "Best Practices"
-msgstr ""
+msgstr "Bonnes pratiques"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:76
 msgid ""
 "**Test in non-production first** — Apply updates to development or "
 "staging clusters before production."
-msgstr ""
+msgstr "**Tester d'abord en non-production** — Appliquez les mises à jour aux clusters de développement ou de préproduction avant la production."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:77
 msgid ""
 "**Review release notes** — Check for breaking changes in the target "
 "version before upgrading."
-msgstr ""
+msgstr "**Consulter les notes de version** — Vérifiez les changements majeurs dans la version cible avant la mise à niveau."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:78
 msgid ""
 "**Ensure backup** — Take a cluster backup or snapshot before applying "
 "major updates."
-msgstr ""
+msgstr "**Assurer une sauvegarde** — Effectuez une sauvegarde ou un instantané du cluster avant d'appliquer des mises à jour majeures."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:79
 msgid ""
 "**Monitor capacity** — Ensure the cluster has sufficient capacity to "
 "handle workloads during the rolling update (when nodes are temporarily "
 "unavailable)."
-msgstr ""
+msgstr "**Surveiller la capacité** — Assurez-vous que le cluster dispose d'une capacité suffisante pour gérer les charges de travail pendant la mise à jour progressive (lorsque les nœuds sont temporairement indisponibles)."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:80
 msgid ""
 "**Schedule maintenance windows** — For production clusters, schedule "
 "updates during low-traffic periods."
-msgstr ""
+msgstr "**Planifier des fenêtres de maintenance** — Pour les clusters de production, planifiez les mises à jour pendant les périodes de faible trafic."
 
 #: ../../infrastructure/clusters/cluster_updates.rst:82
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../infrastructure/clusters/cluster_updates.rst:82
 msgid ""
 "Cluster updates cannot be easily rolled back. Ensure you have a recovery "
 "plan (such as cluster backups or the ability to rebuild nodes) before "
 "applying updates."
-msgstr ""
+msgstr "Les mises à jour de cluster ne peuvent pas être facilement annulées. Assurez-vous de disposer d'un plan de reprise (comme des sauvegardes de cluster ou la possibilité de reconstruire les nœuds) avant d'appliquer les mises à jour."
 

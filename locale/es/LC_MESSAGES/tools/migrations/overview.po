@@ -102,7 +102,7 @@ msgstr ""
 #: ../../tools/migrations/overview.rst:23
 #: ../../tools/migrations/overview.rst:110
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../tools/migrations/overview.rst:25
 msgid ""
@@ -190,7 +190,7 @@ msgstr ""
 
 #: ../../tools/migrations/overview.rst:42
 msgid "Linux Guest Preparation"
-msgstr ""
+msgstr "Preparación del invitado Linux"
 
 #: ../../tools/migrations/overview.rst:44
 msgid ""
@@ -198,34 +198,34 @@ msgid ""
 "ensures the necessary VirtIO kernel modules are available so the VM can "
 "boot successfully on the KVM-based HVM target. The steps performed depend"
 " on the Linux distribution family."
-msgstr ""
+msgstr "Durante la fase **Prepare**, |morpheus| instala las herramientas de invitado QEMU y garantiza que los módulos del kernel VirtIO necesarios estén disponibles para que la VM pueda iniciar correctamente en el destino HVM basado en KVM. Los pasos realizados dependen de la familia de distribución Linux."
 
 #: ../../tools/migrations/overview.rst:47
 msgid "Package Installation"
-msgstr ""
+msgstr "Instalación de paquetes"
 
 #: ../../tools/migrations/overview.rst:49
 msgid ""
 "|morpheus| uses the source VM's native package manager to install ``qemu-"
 "guest-agent``. The system detects the available package manager and runs "
 "the appropriate install command:"
-msgstr ""
+msgstr "|morpheus| usa el administrador de paquetes nativo de la VM de origen para instalar ``qemu-guest-agent``. El sistema detecta el administrador de paquetes disponible y ejecuta el comando de instalación correspondiente:"
 
 #: ../../tools/migrations/overview.rst:55
 msgid "Distro Family"
-msgstr ""
+msgstr "Familia de distribución"
 
 #: ../../tools/migrations/overview.rst:56
 msgid "Install Command"
-msgstr ""
+msgstr "Comando de instalación"
 
 #: ../../tools/migrations/overview.rst:57
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: ../../tools/migrations/overview.rst:58
 msgid "RHEL / CentOS / Rocky / AlmaLinux (yum)"
-msgstr ""
+msgstr "RHEL / CentOS / Rocky / AlmaLinux (yum)"
 
 #: ../../tools/migrations/overview.rst:59
 msgid "``dracut --force --no-hostonly && yum install -y qemu-guest-agent``"
@@ -233,11 +233,11 @@ msgstr ""
 
 #: ../../tools/migrations/overview.rst:60
 msgid "Rebuilds initramfs first to ensure VirtIO drivers are included"
-msgstr ""
+msgstr "Reconstruye el initramfs primero para garantizar que se incluyan los controladores VirtIO"
 
 #: ../../tools/migrations/overview.rst:61
 msgid "RHEL 8+ / Fedora (dnf)"
-msgstr ""
+msgstr "RHEL 8+ / Fedora (dnf)"
 
 #: ../../tools/migrations/overview.rst:62
 msgid "``dracut --force --no-hostonly && dnf install -y qemu-guest-agent``"
@@ -245,11 +245,11 @@ msgstr ""
 
 #: ../../tools/migrations/overview.rst:63
 msgid "Same as yum but uses dnf package manager"
-msgstr ""
+msgstr "Igual que yum, pero usa el administrador de paquetes dnf"
 
 #: ../../tools/migrations/overview.rst:64
 msgid "Ubuntu / Debian"
-msgstr ""
+msgstr "Ubuntu / Debian"
 
 #: ../../tools/migrations/overview.rst:65
 msgid "``apt-get install -y qemu-guest-agent``"
@@ -257,11 +257,11 @@ msgstr ""
 
 #: ../../tools/migrations/overview.rst:66
 msgid "VirtIO modules typically already in default initramfs"
-msgstr ""
+msgstr "Los módulos VirtIO suelen estar ya en el initramfs predeterminado"
 
 #: ../../tools/migrations/overview.rst:67
 msgid "SUSE / SLES"
-msgstr ""
+msgstr "SUSE / SLES"
 
 #: ../../tools/migrations/overview.rst:68
 msgid "``zypper install -y qemu-guest-tools``"
@@ -269,18 +269,18 @@ msgstr ""
 
 #: ../../tools/migrations/overview.rst:69
 msgid "Note: package name is ``qemu-guest-tools`` (not ``qemu-guest-agent``)"
-msgstr ""
+msgstr "Nota: el nombre del paquete es ``qemu-guest-tools`` (no ``qemu-guest-agent``)"
 
 #: ../../tools/migrations/overview.rst:71
 msgid ""
 "The installation is retried up to 3 times with a 30-second pause between "
 "attempts if the package manager command fails (e.g., due to transient "
 "network issues or locked package databases)."
-msgstr ""
+msgstr "La instalación se reintenta hasta 3 veces con una pausa de 30 segundos entre intentos si falla el comando del administrador de paquetes (p. ej., por problemas transitorios de red o bases de datos de paquetes bloqueadas)."
 
 #: ../../tools/migrations/overview.rst:73
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../tools/migrations/overview.rst:75
 msgid ""
@@ -290,7 +290,7 @@ msgid ""
 "source VM must be able to reach either the public internet or an internal"
 " yum/apt/zypper mirror during the Prepare phase. If no repository is "
 "reachable, the Prepare phase will fail."
-msgstr ""
+msgstr "A diferencia de las migraciones de Windows, donde los controladores VirtIO se instalan desde la URL del dispositivo |morpheus| o una ISO incluida (sin necesidad de internet), **la preparación del invitado Linux requiere acceso a un repositorio de paquetes**. La VM de origen debe poder alcanzar internet público o un mirror interno yum/apt/zypper durante la fase Prepare. Si no hay ningún repositorio accesible, la fase Prepare fallará."
 
 #: ../../tools/migrations/overview.rst:77
 msgid ""
@@ -298,41 +298,41 @@ msgid ""
 "package mirror is configured in the source VM's repository configuration "
 "(e.g., ``/etc/yum.repos.d/`` for RHEL-family, ``/etc/apt/sources.list`` "
 "for Debian-family) **before** initiating the migration."
-msgstr ""
+msgstr "Para entornos air-gapped o con red restringida, configure un mirror interno de paquetes en la configuración de repositorios de la VM de origen (p. ej., ``/etc/yum.repos.d/`` para familias RHEL, ``/etc/apt/sources.list`` para familias Debian) **antes** de iniciar la migración."
 
 #: ../../tools/migrations/overview.rst:80
 msgid "VirtIO Kernel Modules"
-msgstr ""
+msgstr "Módulos del kernel VirtIO"
 
 #: ../../tools/migrations/overview.rst:82
 msgid ""
 "After package installation, |morpheus| verifies that the following VirtIO"
 " kernel modules are available (loaded or loadable) on the source VM:"
-msgstr ""
+msgstr "Tras la instalación de paquetes, |morpheus| verifica que los siguientes módulos del kernel VirtIO estén disponibles (cargados o cargables) en la VM de origen:"
 
 #: ../../tools/migrations/overview.rst:84
 msgid ""
 "``virtio_blk`` — VirtIO block device driver (required for disk access on "
 "the target)"
-msgstr ""
+msgstr "``virtio_blk`` — Controlador de dispositivo de bloque VirtIO (requerido para acceso al disco en el destino)"
 
 #: ../../tools/migrations/overview.rst:85
 msgid ""
 "``virtio_net`` — VirtIO network driver (required for network connectivity"
 " on the target)"
-msgstr ""
+msgstr "``virtio_net`` — Controlador de red VirtIO (requerido para conectividad de red en el destino)"
 
 #: ../../tools/migrations/overview.rst:86
 msgid ""
 "``virtio_scsi`` — VirtIO SCSI controller driver (used when source disks "
 "map to VirtIO-SCSI)"
-msgstr ""
+msgstr "``virtio_scsi`` — Controlador SCSI VirtIO (usado cuando los discos de origen se asignan a VirtIO-SCSI)"
 
 #: ../../tools/migrations/overview.rst:87
 msgid ""
 "``virtio_pci`` — VirtIO PCI transport (bus-level driver for all VirtIO "
 "devices)"
-msgstr ""
+msgstr "``virtio_pci`` — Transporte PCI VirtIO (controlador a nivel de bus para todos los dispositivos VirtIO)"
 
 #: ../../tools/migrations/overview.rst:89
 msgid ""
@@ -340,11 +340,11 @@ msgid ""
 "supported distributions. If a module is missing, it must be present in "
 "the kernel's module tree so it can be included during the initramfs "
 "rebuild."
-msgstr ""
+msgstr "Estos módulos suelen incluirse en el kernel predeterminado de todas las distribuciones compatibles. Si falta un módulo, debe estar presente en el árbol de módulos del kernel para poder incluirse durante la reconstrucción del initramfs."
 
 #: ../../tools/migrations/overview.rst:92
 msgid "Initramfs Rebuild"
-msgstr ""
+msgstr "Reconstrucción del initramfs"
 
 #: ../../tools/migrations/overview.rst:94
 msgid ""
@@ -354,31 +354,31 @@ msgid ""
 "VirtIO drivers) are included in the initramfs regardless of the current "
 "running hardware. This is critical because the source VM is running on "
 "VMware hardware but must boot on KVM/VirtIO hardware after migration."
-msgstr ""
+msgstr "Para distribuciones de la familia RHEL, el initramfs se reconstruye **antes** de la instalación de paquetes usando ``dracut --force --no-hostonly``. La bandera ``--no-hostonly`` garantiza que todos los módulos del kernel disponibles (incluidos los controladores VirtIO) se incluyan en el initramfs independientemente del hardware en ejecución actual. Esto es crítico porque la VM de origen se ejecuta en hardware VMware pero debe iniciar en hardware KVM/VirtIO tras la migración."
 
 #: ../../tools/migrations/overview.rst:96
 msgid ""
 "For Debian/Ubuntu, VirtIO modules are typically already included in the "
 "default initramfs and no explicit rebuild is performed during migration."
-msgstr ""
+msgstr "Para Debian/Ubuntu, los módulos VirtIO suelen estar ya incluidos en el initramfs predeterminado y no se realiza una reconstrucción explícita durante la migración."
 
 #: ../../tools/migrations/overview.rst:98
 msgid ""
 "For SUSE/SLES, the ``qemu-guest-tools`` package installation handles "
 "driver availability through the distribution's standard module inclusion "
 "mechanisms."
-msgstr ""
+msgstr "Para SUSE/SLES, la instalación del paquete ``qemu-guest-tools`` gestiona la disponibilidad de controladores mediante los mecanismos estándar de inclusión de módulos de la distribución."
 
 #: ../../tools/migrations/overview.rst:101
 msgid "Network Interface Changes"
-msgstr ""
+msgstr "Cambios en interfaces de red"
 
 #: ../../tools/migrations/overview.rst:103
 msgid ""
 "When a VM moves from VMware (vmxnet3 or E1000 adapters) to HVM (VirtIO-"
 "net), network interface names may change. The behavior depends on the "
 "guest OS configuration:"
-msgstr ""
+msgstr "Cuando una VM pasa de VMware (adaptadores vmxnet3 o E1000) a HVM (VirtIO-net), los nombres de las interfaces de red pueden cambiar. El comportamiento depende de la configuración del SO invitado:"
 
 #: ../../tools/migrations/overview.rst:105
 msgid ""
@@ -386,14 +386,14 @@ msgid ""
 "are derived from PCI slot/topology (e.g., ``ens3``, ``enp1s0``). The name"
 " will change since the virtual hardware topology differs between VMware "
 "and KVM."
-msgstr ""
+msgstr "**Nomenclatura predecible (predeterminada en la mayoría de las distros modernas):** Los nombres de interfaz se derivan de la ranura/topología PCI (p. ej., ``ens3``, ``enp1s0``). El nombre cambiará porque la topología de hardware virtual difiere entre VMware y KVM."
 
 #: ../../tools/migrations/overview.rst:106
 msgid ""
 "**Legacy naming (``eth0``, ``eth1``):** If the guest uses legacy naming "
 "(via kernel parameter or udev rules), interfaces typically retain their "
 "ordinal names."
-msgstr ""
+msgstr "**Nomenclatura heredada (``eth0``, ``eth1``):** Si el invitado usa nomenclatura heredada (mediante parámetro del kernel o reglas udev), las interfaces suelen conservar sus nombres ordinales."
 
 #: ../../tools/migrations/overview.rst:108
 msgid ""
@@ -401,7 +401,7 @@ msgid ""
 "(IP addresses, routes, bonding) during migration. Post-migration, verify "
 "that network configuration files reference the correct interface names on"
 " the target VM."
-msgstr ""
+msgstr "|morpheus| no reconfigura automáticamente los enlaces de interfaces de red (direcciones IP, rutas, bonding) durante la migración. Tras la migración, verifique que los archivos de configuración de red hagan referencia a los nombres de interfaz correctos en la VM de destino."
 
 #: ../../tools/migrations/overview.rst:112
 msgid ""
@@ -409,11 +409,11 @@ msgid ""
 "connections are often bound by MAC address rather than interface name. "
 "Since |morpheus| preserves MAC addresses during migration, these "
 "connections typically reconnect automatically."
-msgstr ""
+msgstr "Para RHEL/CentOS 7+ y distribuciones similares que usan NetworkManager, las conexiones suelen vincularse por dirección MAC en lugar de por nombre de interfaz. Como |morpheus| preserva las direcciones MAC durante la migración, estas conexiones suelen reconectarse automáticamente."
 
 #: ../../tools/migrations/overview.rst:115
 msgid "Bootloader and fstab"
-msgstr ""
+msgstr "Bootloader y fstab"
 
 #: ../../tools/migrations/overview.rst:117
 msgid ""
@@ -422,7 +422,7 @@ msgid ""
 "access. If the source VM uses device-path references in GRUB (e.g., "
 "``/dev/sda``), these are mapped to the corresponding VirtIO device paths "
 "on the target."
-msgstr ""
+msgstr "**Configuración de GRUB** — Generalmente no requiere cambios. La reconstrucción del initramfs garantiza que los controladores VirtIO se carguen lo suficientemente pronto para acceder al dispositivo raíz. Si la VM de origen usa referencias de ruta de dispositivo en GRUB (p. ej., ``/dev/sda``), estas se asignan a las rutas de dispositivo VirtIO correspondientes en el destino."
 
 #: ../../tools/migrations/overview.rst:118
 msgid ""
@@ -430,18 +430,18 @@ msgid ""
 "modern distributions) require no changes. Entries using device paths "
 "(e.g., ``/dev/sda1``) may need to be updated post-migration if the device"
 " naming changes."
-msgstr ""
+msgstr "**fstab** — Las entradas que usan referencias UUID o LABEL (predeterminado en la mayoría de las distribuciones modernas) no requieren cambios. Las entradas que usan rutas de dispositivo (p. ej., ``/dev/sda1``) pueden necesitar actualizarse tras la migración si cambia la nomenclatura de dispositivos."
 
 #: ../../tools/migrations/overview.rst:120
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../tools/migrations/overview.rst:122
 msgid ""
 "Verify that ``/etc/fstab`` uses UUIDs or LABELs (``blkid`` to check) "
 "before migration. This avoids potential boot issues on the target related"
 " to device path changes."
-msgstr ""
+msgstr "Verifique que ``/etc/fstab`` use UUID o LABEL (``blkid`` para comprobarlo) antes de la migración. Esto evita posibles problemas de arranque en el destino relacionados con cambios en las rutas de dispositivo."
 
 #: ../../tools/migrations/overview.rst:125
 msgid "Supported Configurations"
@@ -513,62 +513,62 @@ msgstr "SCSI → VirtIO-SCSI, IDE/SATA → VirtIO Block (automatic mapping)"
 
 #: ../../tools/migrations/overview.rst:149
 msgid "Required Permissions"
-msgstr ""
+msgstr "Permisos requeridos"
 
 #: ../../tools/migrations/overview.rst:151
 msgid ""
 "Users performing migrations require specific RBAC permissions. The table "
 "below lists the minimum permissions needed for each type of migration "
 "operation."
-msgstr ""
+msgstr "Los usuarios que realizan migraciones requieren permisos RBAC específicos. La tabla siguiente enumera los permisos mínimos necesarios para cada tipo de operación de migración."
 
 #: ../../tools/migrations/overview.rst:154
 msgid "Bulk Migration (VMware to HVM)"
-msgstr ""
+msgstr "Migración masiva (VMware a HVM)"
 
 #: ../../tools/migrations/overview.rst:160
 #: ../../tools/migrations/overview.rst:183
 #: ../../tools/migrations/overview.rst:203
 #: ../../tools/migrations/overview.rst:223
 msgid "Permission"
-msgstr ""
+msgstr "Permiso"
 
 #: ../../tools/migrations/overview.rst:161
 #: ../../tools/migrations/overview.rst:184
 #: ../../tools/migrations/overview.rst:204
 #: ../../tools/migrations/overview.rst:224
 msgid "Access Level"
-msgstr ""
+msgstr "Nivel de acceso"
 
 #: ../../tools/migrations/overview.rst:162
 #: ../../tools/migrations/overview.rst:185
 #: ../../tools/migrations/overview.rst:205
 #: ../../tools/migrations/overview.rst:225
 msgid "Purpose"
-msgstr ""
+msgstr "Propósito"
 
 #: ../../tools/migrations/overview.rst:163
 msgid "Services: Migrations"
-msgstr ""
+msgstr "Services: Migrations"
 
 #: ../../tools/migrations/overview.rst:164
 #: ../../tools/migrations/overview.rst:187
 #: ../../tools/migrations/overview.rst:207
 #: ../../tools/migrations/overview.rst:227
 msgid "Full"
-msgstr ""
+msgstr "Completo"
 
 #: ../../tools/migrations/overview.rst:165
 msgid ""
 "Create, edit, execute, and manage Migration Plans. Read access allows "
 "viewing plans only."
-msgstr ""
+msgstr "Crear, editar, ejecutar y administrar Migration Plans. El acceso de lectura permite ver planes únicamente."
 
 #: ../../tools/migrations/overview.rst:166
 #: ../../tools/migrations/overview.rst:189
 #: ../../tools/migrations/overview.rst:212
 msgid "Infrastructure: Clusters"
-msgstr ""
+msgstr "Infrastructure: Clusters"
 
 #: ../../tools/migrations/overview.rst:167
 #: ../../tools/migrations/overview.rst:170
@@ -576,135 +576,135 @@ msgstr ""
 #: ../../tools/migrations/overview.rst:190
 #: ../../tools/migrations/overview.rst:213
 msgid "Full or Group"
-msgstr ""
+msgstr "Completo o Group"
 
 #: ../../tools/migrations/overview.rst:168
 msgid "Access to the target HVM Cluster for VM provisioning"
-msgstr ""
+msgstr "Acceso al clúster HVM de destino para aprovisionamiento de VMs"
 
 #: ../../tools/migrations/overview.rst:169
 #: ../../tools/migrations/overview.rst:192
 msgid "Infrastructure: Compute"
-msgstr ""
+msgstr "Infrastructure: Compute"
 
 #: ../../tools/migrations/overview.rst:171
 msgid "Create and manage server records on the target cluster"
-msgstr ""
+msgstr "Crear y administrar registros de servidores en el clúster de destino"
 
 #: ../../tools/migrations/overview.rst:172
 msgid "Provisioning: Instances"
-msgstr ""
+msgstr "Provisioning: Instances"
 
 #: ../../tools/migrations/overview.rst:174
 msgid "Create Instance records for migrated VMs"
-msgstr ""
+msgstr "Crear registros de instancias para VMs migradas"
 
 #: ../../tools/migrations/overview.rst:177
 msgid "Live Migration (Host-to-Host within a Cluster)"
-msgstr ""
+msgstr "Migración en vivo (host a host dentro de un clúster)"
 
 #: ../../tools/migrations/overview.rst:186
 #: ../../tools/migrations/overview.rst:206
 msgid "Infrastructure: Manage Placement"
-msgstr ""
+msgstr "Infrastructure: Manage Placement"
 
 #: ../../tools/migrations/overview.rst:188
 msgid "Move VMs between hosts, change placement strategy (Auto/Pinned)"
-msgstr ""
+msgstr "Mover VMs entre hosts, cambiar estrategia de ubicación (Auto/Pinned)"
 
 #: ../../tools/migrations/overview.rst:191
 msgid "View cluster hosts and VM assignments"
-msgstr ""
+msgstr "Ver hosts del clúster y asignaciones de VMs"
 
 #: ../../tools/migrations/overview.rst:193
 #: ../../tools/migrations/overview.rst:210
 msgid "Read or higher"
-msgstr ""
+msgstr "Lectura o superior"
 
 #: ../../tools/migrations/overview.rst:194
 msgid "View host details and available capacity"
-msgstr ""
+msgstr "Ver detalles del host y la capacidad disponible"
 
 #: ../../tools/migrations/overview.rst:197
 msgid "Storage Migration (Datastore-to-Datastore)"
-msgstr ""
+msgstr "Migración de almacenamiento (almacén de datos a almacén de datos)"
 
 #: ../../tools/migrations/overview.rst:208
 msgid "Initiate storage migration for VMs"
-msgstr ""
+msgstr "Iniciar migración de almacenamiento para VMs"
 
 #: ../../tools/migrations/overview.rst:209
 msgid "Infrastructure: Storage"
-msgstr ""
+msgstr "Infraestructura: Almacenamiento"
 
 #: ../../tools/migrations/overview.rst:211
 msgid "View available datastores and capacity"
-msgstr ""
+msgstr "Ver almacenes de datos y capacidad disponibles"
 
 #: ../../tools/migrations/overview.rst:214
 msgid "Access to the cluster containing the VM"
-msgstr ""
+msgstr "Acceso al clúster que contiene la VM"
 
 #: ../../tools/migrations/overview.rst:217
 msgid "Cross-Cloud Move (Record Migration)"
-msgstr ""
+msgstr "Traslado entre nubes (registro de migración)"
 
 #: ../../tools/migrations/overview.rst:226
 msgid "Infrastructure: Move Servers"
-msgstr ""
+msgstr "Infraestructura: Mover servidores"
 
 #: ../../tools/migrations/overview.rst:228
 msgid ""
 "Move server records between Clouds. This is an administrative record-"
 "keeping operation, not a data migration."
-msgstr ""
+msgstr "Mover registros de servidores entre Nubes. Esta es una operación administrativa de registro, no una migración de datos."
 
 #: ../../tools/migrations/overview.rst:231
 msgid "Permission Dependencies"
-msgstr ""
+msgstr "Dependencias de permisos"
 
 #: ../../tools/migrations/overview.rst:233
 msgid ""
 "**Services: Migrations** requires that the user also has access to both "
 "the source Cloud (VMware) and the target Cluster (HVM). Cloud and Group "
 "access are controlled via the role's Cloud and Group permission tabs."
-msgstr ""
+msgstr "**Services: Migrations** requiere que el usuario también tenga acceso tanto a la Nube de origen (VMware) como al Clúster de destino (HVM). El acceso a Nube y Grupo se controla mediante las pestañas de permisos de Nube y Grupo del rol."
 
 #: ../../tools/migrations/overview.rst:234
 msgid ""
 "**Infrastructure: Manage Placement** requires at minimum Read access to "
 "Infrastructure: Clusters and Infrastructure: Compute to view available "
 "hosts and capacity."
-msgstr ""
+msgstr "**Infrastructure: Manage Placement** requiere como mínimo acceso de lectura a Infrastructure: Clusters e Infrastructure: Compute para ver hosts y capacidad disponibles."
 
 #: ../../tools/migrations/overview.rst:235
 msgid ""
 "Permissions follow the standard |morpheus| RBAC hierarchy: Tenant Role "
 "sets maximum permissions, User Role cannot exceed Tenant Role limits."
-msgstr ""
+msgstr "Los permisos siguen la jerarquía RBAC estándar de |morpheus|: el Rol de inquilino establece los permisos máximos; el Rol de usuario no puede superar los límites del Rol de inquilino."
 
 #: ../../tools/migrations/overview.rst:238
 msgid "Recommended Role Examples"
-msgstr ""
+msgstr "Ejemplos de roles recomendados"
 
 #: ../../tools/migrations/overview.rst:244
 msgid "Role"
-msgstr ""
+msgstr "Rol"
 
 #: ../../tools/migrations/overview.rst:245
 msgid "Permissions"
-msgstr ""
+msgstr "Permisos"
 
 #: ../../tools/migrations/overview.rst:246
 msgid "VM Operator (limited migration)"
-msgstr ""
+msgstr "Operador de VM (migración limitada)"
 
 #: ../../tools/migrations/overview.rst:247
 msgid ""
 "Infrastructure: Manage Placement = Full, Infrastructure: Clusters = "
 "Group, Infrastructure: Compute = Group. Can live-migrate VMs within "
 "assigned clusters only."
-msgstr ""
+msgstr "Infrastructure: Manage Placement = Completo, Infrastructure: Clusters = Group, Infrastructure: Compute = Group. Puede migrar en vivo VMs únicamente dentro de los clústers asignados."
 
 #: ../../tools/migrations/overview.rst:248
 #, fuzzy
@@ -716,16 +716,16 @@ msgid ""
 "Services: Migrations = Full, Infrastructure: Clusters = Full, "
 "Infrastructure: Compute = Full, Provisioning: Instances = Full. Can "
 "execute bulk migrations across all clusters."
-msgstr ""
+msgstr "Services: Migrations = Completo, Infrastructure: Clusters = Completo, Infrastructure: Compute = Completo, Provisioning: Instances = Completo. Puede ejecutar migraciones masivas en todos los clústers."
 
 #: ../../tools/migrations/overview.rst:250
 msgid "Read-only Observer"
-msgstr ""
+msgstr "Observador de solo lectura"
 
 #: ../../tools/migrations/overview.rst:251
 msgid ""
 "Services: Migrations = Read, Infrastructure: Clusters = Read, "
 "Infrastructure: Compute = Read. Can view migration plans and status but "
 "cannot execute or modify."
-msgstr ""
+msgstr "Services: Migrations = Lectura, Infrastructure: Clusters = Lectura, Infrastructure: Compute = Lectura. Puede ver planes y estado de migración, pero no ejecutar ni modificar."
 

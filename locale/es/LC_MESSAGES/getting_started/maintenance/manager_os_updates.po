@@ -22,28 +22,28 @@ msgstr ""
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:4
 msgid "Morpheus Manager Base OS Updates"
-msgstr ""
+msgstr "Morpheus Manager Base OS Updates"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:6
 msgid ""
 "The HPE Morpheus Manager QCOW2 image includes an Ubuntu base operating "
 "system. Maintaining this operating system is separate from upgrading the "
 "|morpheus| application package:"
-msgstr ""
+msgstr "La imagen QCOW2 de HPE Morpheus Manager incluye un sistema operativo base Ubuntu. Mantener este sistema operativo es independiente de actualizar el paquete de aplicación |morpheus|:"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:8
 msgid ""
 "A **Morpheus application upgrade** installs a new HPE-provided "
 "``morpheus-appliance`` package and runs ``morpheus-ctl reconfigure``. "
 "Follow :doc:`upgrading`."
-msgstr ""
+msgstr "Una **actualización de aplicación Morpheus** instala un nuevo paquete ``morpheus-appliance`` proporcionado por HPE y ejecuta ``morpheus-ctl reconfigure``. Siga :doc:`upgrading`."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:9
 msgid ""
 "A **Manager base-OS update** installs Ubuntu packages from APT "
 "repositories. Follow this page and the update guidance published by HPE "
 "for the applicable Manager release."
-msgstr ""
+msgstr "Una **actualización del SO base del Manager** instala paquetes Ubuntu desde repositorios APT. Siga esta página y la guía de actualización publicada por HPE para la versión aplicable del Manager."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:10
 msgid ""
@@ -51,11 +51,11 @@ msgid ""
 "22.04 LTS to 24.04 LTS. Do not perform an Ubuntu release upgrade on a "
 "Manager appliance unless HPE provides a procedure for the exact source "
 "and target releases."
-msgstr ""
+msgstr "Una **actualización de versión de Ubuntu** cambia la versión de Ubuntu, como Ubuntu 22.04 LTS a 24.04 LTS. No realice una actualización de versión de Ubuntu en un dispositivo Manager a menos que HPE proporcione un procedimiento para las versiones origen y destino exactas."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:12
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:14
 msgid ""
@@ -66,21 +66,21 @@ msgid ""
 "series, repository pockets, components, architecture, and any required "
 "snapshot date, package holds, exclusions, or sequencing. If those inputs "
 "are not published, contact HPE Support."
-msgstr ""
+msgstr "No ejecute un ``apt upgrade``, ``apt full-upgrade`` o actualización desatendida sin restricciones en un Manager de producción basándose solo en la disponibilidad de paquetes de Canonical. Antes de actualizar, obtenga la guía de HPE para la versión del Manager instalada. Debe identificar la serie Ubuntu validada, pockets de repositorio, componentes, arquitectura, y cualquier fecha de snapshot, retenciones de paquetes, exclusiones o secuenciación requerida. Si esas entradas no están publicadas, contacte al Soporte de HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:17
 msgid "Update Models"
-msgstr ""
+msgstr "Modelos de actualización"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:19
 msgid ""
 "Choose the model that matches the Manager appliance's network access. All"
 " models must expose the same HPE-validated package set to the appliance."
-msgstr ""
+msgstr "Elija el modelo que coincida con el acceso de red del dispositivo Manager. Todos los modelos deben exponer el mismo conjunto de paquetes validado por HPE al dispositivo."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:22
 msgid "Connected"
-msgstr ""
+msgstr "Conectado"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:24
 msgid ""
@@ -88,11 +88,11 @@ msgid ""
 "through an HTTP proxy. Restrict outbound access according to "
 "organizational policy and the repository endpoints identified in the "
 "applicable HPE guidance."
-msgstr ""
+msgstr "El Manager alcanza los repositorios Canonical aprobados por HPE directamente o a través de un proxy HTTP. Restrinja el acceso saliente según la política organizacional y los endpoints de repositorio identificados en la guía aplicable de HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:27
 msgid "Restricted Network"
-msgstr ""
+msgstr "Red restringida"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:29
 msgid ""
@@ -101,7 +101,7 @@ msgid ""
 "hosted Landscape. The mirror synchronizes the HPE-approved Ubuntu series,"
 " pockets, components, and ``amd64`` architecture from the upstream "
 "archive and serves them inside the restricted network."
-msgstr ""
+msgstr "El Manager alcanza un repositorio APT interno, pero no los repositorios Canonical. Canonical recomienda un mirror de repositorio como Landscape autoalojado. El mirror sincroniza la serie Ubuntu, pockets, componentes y arquitectura ``amd64`` aprobados por HPE desde el archivo upstream y los sirve dentro de la red restringida."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:31
 msgid ""
@@ -111,47 +111,47 @@ msgid ""
 "signing key and use only the internal repository URL. If the internal "
 "publication is re-signed, distribute its public key through the site's "
 "approved trust process; do not bypass APT signature verification."
-msgstr ""
+msgstr "Para el flujo de trabajo Landscape, consulte `Canonical's repository mirroring documentation <https://documentation.ubuntu.com/landscape/how-to-guides/repository-mirrors/>`_. Configure el Manager para confiar en la clave de firma del repositorio y usar solo la URL del repositorio interno. Si la publicación interna se vuelve a firmar, distribuya su clave pública a través del proceso de confianza aprobado del sitio; no omita la verificación de firma APT."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:34
 msgid "Fully Disconnected"
-msgstr ""
+msgstr "Totalmente desconectado"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:36
 msgid ""
 "Canonical's fully disconnected Landscape model uses an online Landscape "
 "server outside the air gap and an offline Landscape server inside it:"
-msgstr ""
+msgstr "El modelo Landscape totalmente desconectado de Canonical utiliza un servidor Landscape en línea fuera del air gap y un servidor Landscape offline dentro:"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:38
 msgid ""
 "Create identical repository structures and profiles on both servers, "
 "including the same signing key."
-msgstr ""
+msgstr "Cree estructuras y perfiles de repositorio idénticos en ambos servidores, incluida la misma clave de firma."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:39
 msgid ""
 "On the online server, synchronize only the Ubuntu content identified by "
 "the HPE update guidance."
-msgstr ""
+msgstr "En el servidor en línea, sincronice solo el contenido Ubuntu identificado por la guía de actualización de HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:40
 msgid ""
 "Transfer the repository data through the site's approved removable-media "
 "process, including integrity and malware checks."
-msgstr ""
+msgstr "Transfiera los datos del repositorio a través del proceso de medios extraíbles aprobado del sitio, incluidas verificaciones de integridad y malware."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:41
 msgid ""
 "Place the data in the corresponding repository location on the offline "
 "Landscape server."
-msgstr ""
+msgstr "Coloque los datos en la ubicación de repositorio correspondiente en el servidor Landscape offline."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:42
 msgid ""
 "Publish the internal repository and verify its metadata and signatures "
 "before pointing the Manager at it."
-msgstr ""
+msgstr "Publique el repositorio interno y verifique sus metadatos y firmas antes de apuntar el Manager a él."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:44
 msgid ""
@@ -159,11 +159,11 @@ msgid ""
 "<https://documentation.ubuntu.com/landscape/how-to-guides/repository-"
 "mirrors/manage-repositories-in-an-air-gapped-or-offline-environment/>`_ "
 "for the version-specific Landscape steps and repository paths."
-msgstr ""
+msgstr "Consulte `Canonical's air-gapped repository procedure <https://documentation.ubuntu.com/landscape/how-to-guides/repository-mirrors/manage-repositories-in-an-air-gapped-or-offline-environment/>`_ para los pasos y rutas de repositorio específicos de la versión de Landscape."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:46
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:48
 msgid ""
@@ -174,15 +174,15 @@ msgid ""
 "size the mirror and transfer media before approving this design. Limit "
 "architectures, components, series, and pockets only as allowed by the HPE"
 " update guidance."
-msgstr ""
+msgstr "Canonical indica que su flujo de trabajo Landscape totalmente desconectado no puede producir un delta que contenga solo cambios desde la transferencia anterior. Actualizar el servidor offline puede requerir transferir el contenido completo del repositorio. Los repositorios Ubuntu pueden requerir cientos de GB, por lo que dimensione el mirror y los medios de transferencia antes de aprobar este diseño. Limite arquitecturas, componentes, series y pockets solo según lo permita la guía de actualización de HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:51
 msgid "Prepare the Update"
-msgstr ""
+msgstr "Preparar la actualización"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:53
 msgid "Record the Manager and Ubuntu versions:"
-msgstr ""
+msgstr "Registre las versiones del Manager y Ubuntu:"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:55
 #, python-format
@@ -197,13 +197,13 @@ msgstr ""
 msgid ""
 "Obtain the HPE update guidance for this Manager release and record its "
 "repository inputs and package restrictions in the change record."
-msgstr ""
+msgstr "Obtenga la guía de actualización de HPE para esta versión del Manager y registre sus entradas de repositorio y restricciones de paquetes en el registro de cambio."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:62
 msgid ""
 "Confirm the appliance resolves and reaches only the intended repository, "
 "whether direct, proxied, or internal."
-msgstr ""
+msgstr "Confirme que el dispositivo resuelve y alcanza solo el repositorio previsto, ya sea directo, con proxy o interno."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:63
 msgid ""
@@ -211,24 +211,24 @@ msgid ""
 "platform provides a supported VM snapshot workflow, take a snapshot in "
 "accordance with the site's recovery policy. A snapshot is not a "
 "substitute for an application and database backup."
-msgstr ""
+msgstr "Cree y verifique un backup recuperable del dispositivo. Si la plataforma de virtualización proporciona un flujo de trabajo de snapshot de VM compatible, tome un snapshot de acuerdo con la política de recuperación del sitio. Un snapshot no sustituye un backup de aplicación y base de datos."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:64
 msgid ""
 "Confirm adequate free space in ``/``, ``/boot``, and ``/var`` and resolve"
 " any interrupted package operation before the maintenance window."
-msgstr ""
+msgstr "Confirme espacio libre adecuado en ``/``, ``/boot`` y ``/var`` y resuelva cualquier operación de paquete interrumpida antes de la ventana de mantenimiento."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:65
 msgid ""
 "Test the exact repository state and update sequence on a representative "
 "non-production Manager before production rollout. Canonical recommends "
 "staged testing for production server updates."
-msgstr ""
+msgstr "Pruebe el estado exacto del repositorio y la secuencia de actualización en un Manager representativo no productivo antes del despliegue en producción. Canonical recomienda pruebas escalonadas para actualizaciones de servidores de producción."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:68
 msgid "Validate the Repository State"
-msgstr ""
+msgstr "Validar el estado del repositorio"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:70
 msgid ""
@@ -237,13 +237,13 @@ msgid ""
 "Earlier Ubuntu releases commonly use ``/etc/apt/sources.list``. Compare "
 "the configured URIs, suites, components, signing key, and optional "
 "snapshot with the HPE update guidance."
-msgstr ""
+msgstr "En Ubuntu 24.04 LTS y posteriores, las definiciones de repositorio Ubuntu normalmente usan el archivo ``/etc/apt/sources.list.d/ubuntu.sources`` con formato deb822. Las versiones anteriores de Ubuntu comúnmente usan ``/etc/apt/sources.list``. Compare las URIs, suites, componentes, clave de firma y snapshot opcional configurados con la guía de actualización de HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:72
 msgid ""
 "Refresh metadata and review the proposed change without installing "
 "packages:"
-msgstr ""
+msgstr "Actualice metadatos y revise el cambio propuesto sin instalar paquetes:"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:74
 msgid ""
@@ -258,7 +258,7 @@ msgid ""
 "source of a package. Stop if APT reports signature errors, unreachable "
 "sources, unexpected repositories, removals, held-package conflicts, or "
 "candidate versions outside the HPE-approved update set."
-msgstr ""
+msgstr "Use ``apt-cache policy <package>`` para verificar la versión candidata y la fuente de un paquete. Deténgase si APT informa errores de firma, fuentes inalcanzables, repositorios inesperados, eliminaciones, conflictos de paquetes retenidos o versiones candidatas fuera del conjunto de actualización aprobado por HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:82
 msgid ""
@@ -267,43 +267,43 @@ msgid ""
 "service/>`_ can reproduce a dated archive state. Use a snapshot "
 "identifier only when HPE publishes or approves it for the Manager "
 "release. A snapshot is not independently evidence of HPE compatibility."
-msgstr ""
+msgstr "El `Ubuntu snapshot service <https://documentation.ubuntu.com/server/how-to/software/snapshot-service/>`_ de Canonical puede reproducir un estado de archivo con fecha. Use un identificador de snapshot solo cuando HPE lo publique o apruebe para la versión del Manager. Un snapshot no es evidencia independiente de compatibilidad con HPE."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:85
 msgid "Apply the Update"
-msgstr ""
+msgstr "Aplicar la actualización"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:87
 msgid ""
 "Schedule a maintenance window. Base-OS updates can restart services, and "
 "kernel or low-level library updates can require an appliance reboot."
-msgstr ""
+msgstr "Programe una ventana de mantenimiento. Las actualizaciones del SO base pueden reiniciar servicios, y las actualizaciones del kernel o bibliotecas de bajo nivel pueden requerir un reinicio del dispositivo."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:88
 msgid ""
 "Stop or drain user activity according to the topology's maintenance "
 "procedure."
-msgstr ""
+msgstr "Detenga o drene la actividad de usuarios según el procedimiento de mantenimiento de la topología."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:89
 msgid ""
 "Run the exact APT command and package sequence from the applicable HPE "
 "update guidance. Do not substitute ``full-upgrade`` or add packages that "
 "were not included in the validated procedure."
-msgstr ""
+msgstr "Ejecute el comando APT exacto y la secuencia de paquetes de la guía de actualización aplicable de HPE. No sustituya ``full-upgrade`` ni agregue paquetes que no estuvieran incluidos en el procedimiento validado."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:90
 msgid ""
 "Review the command result and ``/var/log/apt/`` and ``/var/log/dpkg.log``"
 " for failures."
-msgstr ""
+msgstr "Revise el resultado del comando y ``/var/log/apt/`` y ``/var/log/dpkg.log`` en busca de fallos."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:91
 msgid ""
 "If ``/var/run/reboot-required`` exists, reboot within the maintenance "
 "window. Do not enable automatic reboot unless HPE explicitly supports it "
 "for this appliance and the deployment topology."
-msgstr ""
+msgstr "Si existe ``/var/run/reboot-required``, reinicie dentro de la ventana de mantenimiento. No habilite el reinicio automático a menos que HPE lo admita explícitamente para este dispositivo y la topología de implementación."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:93
 msgid ""
@@ -313,48 +313,48 @@ msgid ""
 "and release. An internal mirror alone does not ensure that ``unattended-"
 "upgrades`` selects the intended origins, and Ubuntu 24.04 can restart "
 "affected services through ``needrestart``."
-msgstr ""
+msgstr "Canonical habilita actualizaciones de seguridad automáticas en instalaciones estándar de Ubuntu Server a través de ``unattended-upgrades``. Antes de confiar en ese comportamiento para un dispositivo Manager, confirme la política de HPE para la imagen y versión. Un mirror interno por sí solo no garantiza que ``unattended-upgrades`` seleccione los orígenes previstos, y Ubuntu 24.04 puede reiniciar servicios afectados a través de ``needrestart``."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:96
 msgid "Validate the Manager"
-msgstr ""
+msgstr "Validar el Manager"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:98
 msgid "After package installation and any required reboot:"
-msgstr ""
+msgstr "Después de la instalación de paquetes y cualquier reinicio requerido:"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:100
 msgid ""
 "Confirm that APT and dpkg completed successfully and no reboot remains "
 "pending."
-msgstr ""
+msgstr "Confirme que APT y dpkg completaron exitosamente y no queda ningún reinicio pendiente."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:101
 msgid "Confirm ``morpheus-ctl status`` reports the expected services running."
-msgstr ""
+msgstr "Confirme que ``morpheus-ctl status`` informa los servicios esperados en ejecución."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:102
 msgid ""
 "Sign in to the Manager UI and verify the appliance version, system "
 "health, and expected integrations."
-msgstr ""
+msgstr "Inicie sesión en la UI del Manager y verifique la versión del dispositivo, salud del sistema e integraciones esperadas."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:103
 msgid ""
 "For an HVM deployment, confirm managed hosts and clusters reconnect and "
 "report their expected state. A Manager base-OS update does not update the"
 " HVM host OS."
-msgstr ""
+msgstr "Para una implementación HVM, confirme que los hosts y clústeres administrados se reconectan e informan su estado esperado. Una actualización del SO base del Manager no actualiza el SO del host HVM."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:104
 msgid ""
 "Record installed package versions, update logs, reboot time, and health-"
 "check results in the change record."
-msgstr ""
+msgstr "Registre versiones de paquetes instalados, registros de actualización, hora de reinicio y resultados de verificación de salud en el registro de cambio."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:107
 msgid "Recovery and Escalation"
-msgstr ""
+msgstr "Recuperación y escalamiento"
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:109
 msgid ""
@@ -362,7 +362,7 @@ msgid ""
 "after a failed update. Preserve ``/var/log/apt/``, ``/var/log/dpkg.log``,"
 " ``journalctl`` output for the affected boot, the repository "
 "configuration, and the simulated or actual package transaction."
-msgstr ""
+msgstr "No intente un downgrade de versión de Ubuntu o downgrade ad hoc de paquetes después de una actualización fallida. Preserve ``/var/log/apt/``, ``/var/log/dpkg.log``, salida de ``journalctl`` para el arranque afectado, la configuración del repositorio y la transacción de paquetes simulada o real."
 
 #: ../../getting_started/maintenance/manager_os_updates.rst:111
 msgid ""
@@ -372,5 +372,5 @@ msgid ""
 "preserved evidence. For an air-gapped environment, also preserve the "
 "transferred repository manifest, signing-key fingerprint, and integrity-"
 "verification results."
-msgstr ""
+msgstr "Si el Manager no se recupera después de las verificaciones estándar de reinicio de servicio o dispositivo, use el procedimiento de recuperación previamente validado para restaurar el dispositivo y la base de datos, luego contacte al Soporte de HPE con la evidencia preservada. Para un entorno air-gapped, también preserve el manifiesto del repositorio transferido, huella dactilar de la clave de firma y resultados de verificación de integridad."
 

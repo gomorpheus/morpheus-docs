@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/installation/database_configure_generic.rst:2
 msgid "Configure Morpheus Database and User"
-msgstr ""
+msgstr "Configurer la base de données et l'utilisateur Morpheus"
 
 #: ../../getting_started/installation/database_configure_generic.rst:4
 msgid ""
@@ -31,13 +31,13 @@ msgid ""
 "installed |morpheus| release, and review "
 ":doc:`/getting_started/external_services/mysql` before creating the "
 "schema. ``8.4 or greater`` is not an unconditional support statement."
-msgstr ""
+msgstr "La configuration MySQL externe est prise en charge, y compris la famille 8.4 LTS. Confirmez la version formellement certifiée et la variante de service pour la version |morpheus| installée, et consultez :doc:`/getting_started/external_services/mysql` avant de créer le schéma. « 8.4 ou supérieur » n'est pas une déclaration de prise en charge universelle."
 
 #: ../../getting_started/installation/database_configure_generic.rst:6
 msgid ""
 "Create the Database you will be using with |morpheus|. Login to mysql "
 "node:"
-msgstr ""
+msgstr "Créez la base de données que vous utiliserez avec |morpheus|. Connectez-vous au nœud mysql :"
 
 #: ../../getting_started/installation/database_configure_generic.rst:8
 msgid ""
@@ -48,21 +48,21 @@ msgid ""
 "utf8mb4_general_ci;\n"
 "\n"
 "mysql> show databases;"
-msgstr ""
+msgstr "[root@node: ~]  mysql -u root -p\\n  # password: `enter root password`\\n\\nmysql> CREATE DATABASE morpheus CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;\\n\\nmysql> show databases;"
 
 #: ../../getting_started/installation/database_configure_generic.rst:18
 msgid ""
 "Next create your |morpheus| database user. This is the user the "
 "|morpheus| app nodes will auth with mysql."
-msgstr ""
+msgstr "Créez ensuite votre utilisateur de base de données |morpheus|. C'est l'utilisateur avec lequel les nœuds d'application |morpheus| s'authentifieront auprès de mysql."
 
 #: ../../getting_started/installation/database_configure_generic.rst:20
 msgid "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
-msgstr ""
+msgstr "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
 
 #: ../../getting_started/installation/database_configure_generic.rst:24
 msgid "Next Grant your new |morpheus| user permissions."
-msgstr ""
+msgstr "Accordez ensuite les permissions à votre nouvel utilisateur |morpheus|."
 
 #: ../../getting_started/installation/database_configure_generic.rst:26
 msgid ""
@@ -75,5 +75,5 @@ msgid ""
 "mysql> FLUSH PRIVILEGES;\n"
 "\n"
 "mysql> exit"
-msgstr ""
+msgstr "mysql> GRANT ALL PRIVILEGES ON morpheus.* TO 'morpheus'@'%' with grant option;\\n\\nmysql> GRANT SELECT, PROCESS, SHOW DATABASES, RELOAD ON *.* TO 'morpheus'@'%';\\n\\nmysql> FLUSH PRIVILEGES;\\n\\nmysql> exit"
 

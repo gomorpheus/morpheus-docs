@@ -22,37 +22,37 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Erste Schritte"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:4
 msgid ""
 "To get started with VMware, simply start by adding a Cloud in the "
 "``Infrastructure > Clouds`` section."
-msgstr ""
+msgstr "Um mit VMware zu beginnen, fügen Sie einfach eine Cloud im Bereich ``Infrastructure > Clouds`` hinzu."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:6
 msgid "To start adding a VMware cloud there will be some things you will need:"
-msgstr ""
+msgstr "Um eine VMware-Cloud hinzuzufügen, benötigen Sie Folgendes:"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:8
 msgid "vCenter API Url"
-msgstr ""
+msgstr "vCenter API Url"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:9
 msgid ""
 "Typically this is the url to the vCenter web client with a ``/sdk`` in "
 "the path"
-msgstr ""
+msgstr "Typischerweise ist dies die URL zum vCenter-Webclient mit ``/sdk`` im Pfad"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:10
 msgid "Username/Password"
-msgstr ""
+msgstr "Benutzername/Kennwort"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:11
 msgid ""
 "A set of credentials with high level access to VMware (ensure the account"
 " has Datacenter level access)"
-msgstr ""
+msgstr "Ein Satz Anmeldedaten mit hohem Zugriff auf VMware (stellen Sie sicher, dass das Konto Zugriff auf Rechenzentrumsebene hat)"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:13
 msgid ""
@@ -62,7 +62,7 @@ msgid ""
 "pool. If the drop downs do not populate, please verify the api url is "
 "resolvable, morpheus has access to vCenter on 443, and the provided "
 "credentials are correct and the user has sufficient permissions."
-msgstr ""
+msgstr "Sobald diese Felder eingegeben sind, beginnen einige Auswahlen, sich vorab zu füllen. Eine Cloud-Integration ist auf ein bestimmtes Rechenzentrum beschränkt und kann optional auf einen einzelnen Cluster oder sogar einen einzelnen Resource Pool eingeschränkt werden. Wenn die Dropdown-Listen nicht gefüllt werden, prüfen Sie bitte, ob die API-URL auflösbar ist, Morpheus Zugriff auf vCenter über Port 443 hat und die angegebenen Anmeldedaten korrekt sind sowie der Benutzer ausreichende Berechtigungen hat."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:15
 msgid ""
@@ -71,14 +71,14 @@ msgid ""
 "into All Resource Pools or a singular Resource Pool. When choosing `All`,"
 " these Resource Pools can be managed from a sub-account and visibility "
 "perspective via the Cloud Detail page (multi-tenancy)."
-msgstr ""
+msgstr "Ein weiteres nützliches Feature der Cloud-Integration ist die optionale `Resource Pool`-Einschränkung. Man kann zulassen, dass die Cloud in All Resource Pools oder einen einzelnen Resource Pool provisioniert. Bei Auswahl von `All` können diese Resource Pools aus Sicht von Unterkonten und Sichtbarkeit über die Cloud-Detailseite verwaltet werden (Multimandantenfähigkeit)."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:17
 msgid ""
 "The VMware cloud integration provides a few additional options including "
 "allowing users to make host selections or keeping that aspect hidden such"
 " that the best host is automatically chosen for the requested provision."
-msgstr ""
+msgstr "Die VMware-Cloud-Integration bietet einige zusätzliche Optionen, darunter die Möglichkeit, Benutzer Host-Auswahlen treffen zu lassen oder diesen Aspekt auszublenden, sodass der beste Host automatisch für die angeforderte Provisionierung gewählt wird."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:19
 msgid ""
@@ -89,14 +89,14 @@ msgid ""
 "is not possible for the Appliance to have outbound access to all networks"
 " in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 "
 "respectively) then Guest Execution is the only option."
-msgstr ""
+msgstr "Das Feature *RPC Mode* kann so konfiguriert werden, dass |morpheus| seinen Agent auf dem Guest-Betriebssystem entweder über SSH/WinRM oder die VMware Tools Guest Process-Funktion installiert. Die VMware Tools Guest Execution API kann problematisch sein; daher wird empfohlen, nach Möglichkeit SSH/WinRM zu verwenden. Wenn die Appliance jedoch keinen ausgehenden Zugriff auf alle Netzwerke hat, in denen VMs provisioniert werden, auf die SSH-/WinRM-Ports (22 bzw. 5985), ist Guest Execution die einzige Option."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:21
 msgid ""
 "The `Use VNC` console option on the VMware cloud requires special "
 "configuration on each ESXI host but allowed hypervisor level remote "
 "console support. (See the Advanced Section for details)"
-msgstr ""
+msgstr "Die Konsolenoption `Use VNC` für die VMware-Cloud erfordert eine spezielle Konfiguration auf jedem ESXi-Host, ermöglicht aber Remote-Konsolenunterstützung auf Hypervisor-Ebene. (Details siehe Abschnitt Advanced)"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:23
 msgid ""
@@ -107,11 +107,11 @@ msgid ""
 "group unless the networks are setup such that internal routing is "
 "possible between the clouds. This is very useful for bursting, or hybrid "
 "cloud configurations."
-msgstr ""
+msgstr "Im Assistenten zum Hinzufügen einer Cloud wird die Option angezeigt, eine Gruppe zu erstellen oder einer vorhandenen Gruppe hinzuzufügen. Diesen Gruppen können Provisionierungsberechtigungen über rollenbasierte Zugriffskontrolle erteilt werden. Es wird normalerweise empfohlen, Gruppen so zu organisieren, dass eine Cloud in einer Gruppe existiert, sofern die Netzwerke nicht so eingerichtet sind, dass internes Routing zwischen den Clouds möglich ist. Das ist sehr nützlich für Bursting oder Hybrid-Cloud-Konfigurationen."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:26
 msgid "Windows Provisioning Tips"
-msgstr ""
+msgstr "Windows-Provisionierungstipps"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:28
 msgid ""
@@ -120,13 +120,13 @@ msgid ""
 "user and password. |morpheus| will set the Administrator password from "
 ":menuselection:`Administration --> Settings --> Provisioning` > Windows "
 "Settings > Password."
-msgstr ""
+msgstr "Standardmäßig führt |morpheus| bei der Provisionierung von Windows-Vorlagen Guest Customizations durch, die einen Sysprep starten. Dadurch werden der Administrator-Benutzer und das Kennwort zurückgesetzt. |morpheus| setzt das Administrator-Kennwort aus :menuselection:`Administration --> Settings --> Provisioning` > Windows Settings > Password."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:30
 msgid ""
 "Users can also set the username on an image as Administrator and enter a "
 "different password if unique passwords are required per image."
-msgstr ""
+msgstr "Benutzer können auch den Benutzernamen auf einem Image als Administrator festlegen und ein anderes Kennwort eingeben, wenn pro Image eindeutige Kennwörter erforderlich sind."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:32
 msgid ""
@@ -137,11 +137,11 @@ msgid ""
 "will not be changed from the source template. In addition, new VM's will "
 "not be able to join a domain that had already been joined by the source "
 "template or any other VM's with that SID."
-msgstr ""
+msgstr "Guest Customizations sind erforderlich, wenn statische IPs manuell oder über IP-Pools zugewiesen werden. Sie können pro Virtual Image in den erweiterten Einstellungen unter :menuselection:`Library --> Virtual Images` > Edit Image > Advanced > Uncheck \"Force Guest Customization\" deaktiviert werden, wenn DHCP verwendet wird. Die SID wird jedoch nicht von der Quellvorlage geändert. Außerdem können neue VMs keiner Domain beitreten, der die Quellvorlage oder andere VMs mit derselben SID bereits beigetreten sind."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:35
 msgid "Existing Instances"
-msgstr ""
+msgstr "Vorhandene Instanzen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:37
 msgid ""
@@ -157,7 +157,7 @@ msgid ""
 "locate the Pools section. Click ACTIONS > Edit next to a selected "
 "Resource Pool. If INVENTORY is checked, |morpheus| will automatically "
 "onboard virtual machines from that Resource Pool."
-msgstr ""
+msgstr "|morpheus| bietet mehrere Features zum Übernehmen vorhandener virtueller Maschinen und Server in einer Umgebung. Die meisten Cloud-Optionen enthalten ein Kontrollkästchen mit dem Titel '*Inventory Existing Instances*'. Wenn diese Option ausgewählt ist, werden alle VMs im angegebenen Bereich der Cloud-Integration regelmäßig gescannt und Virtual Machines in |morpheus| synchronisiert. Benutzer können auch wählen, nur virtuelle Maschinen zu übernehmen, die in bestimmten Resource Pools laufen. Nach Integration der vCenter Cloud navigieren Sie zur Detailseite der jeweiligen Cloud (Auswahl aus der Liste unter |InfClo|). Auf der Registerkarte Resources finden Sie den Abschnitt Pools. Klicken Sie neben einem ausgewählten Resource Pool auf ACTIONS > Edit. Wenn INVENTORY aktiviert ist, übernimmt |morpheus| automatisch virtuelle Maschinen aus diesem Resource Pool."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:39
 msgid ""
@@ -169,7 +169,7 @@ msgid ""
 " be best suited to instead assign the 'Resource Pool' to an account and "
 "optionally move all servers with regards to that pool (more on this "
 "later)."
-msgstr ""
+msgstr "Standardmäßig gelten diese virtuellen Maschinen als 'unmanaged' und erscheinen nicht unter :menuselection:`Provisioning --> Instances`, sondern unter ``Infrastructure > Compute > Virtual Machines``. Für nicht verwaltete Instanzen werden jedoch einige Features bereitgestellt. Sie können verschiedenen Konten zugewiesen werden, wenn ein multimandantenfähiges Master-Konto verwendet wird; besser geeignet kann es jedoch sein, den 'Resource Pool' einem Konto zuzuweisen und optional alle Server dieses Pools zu verschieben (mehr dazu später)."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:41
 msgid ""
@@ -180,23 +180,23 @@ msgid ""
 " marked as managed and an Instance will be created in `Provisioning`, "
 "however certain features will not function. This includes stats "
 "collection and logs."
-msgstr ""
+msgstr "Ein Server kann auch zu einem verwalteten Server gemacht werden. Während dieses Prozesses wird Remote-Zugriff angefordert und eine Agent-Installation auf dem Guest-Betriebssystem durchgeführt. Das ermöglicht Guest-Operationen zu Protokollerfassung und Statistiken. Wenn die Agent-Installation fehlschlägt, wird der Server dennoch als verwaltet markiert und eine Instanz in `Provisioning` erstellt; bestimmte Features funktionieren jedoch nicht. Dazu gehören Statistikenerfassung und Protokolle."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:43
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:64
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:103
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:43
 msgid ""
 "All Cloud data is resynchronized on a 5 minute interval. This includes "
 "Datastores, Resource Pools, Networks, Blueprints, and Virtual Machines."
-msgstr ""
+msgstr "Alle Cloud-Daten werden in einem Intervall von 5 Minuten erneut synchronisiert. Dazu gehören Datenspeicher, Resource Pools, Netzwerke, Blueprints und Virtual Machines."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:46
 msgid "Service Plans"
-msgstr ""
+msgstr "Service-Tarife"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:48
 msgid ""
@@ -211,11 +211,11 @@ msgid ""
 "configure this, simply edit an existing Service Plan tied to VMware or "
 "create a new one. These all can be easily managed from the ``Admin > "
 "Plans & Pricing`` section."
-msgstr ""
+msgstr "In |morpheus| wird für die VMware-Provisionierungs-Engine ein Standardsatz von Service-Tarifen erstellt. Diese Service-Tarife sind vergleichbar mit AWS Flavors oder OpenStack Flavors. Sie ermöglichen vordefinierte Schichten für Arbeitsspeicher, Speicher, Kerne und CPU. Preistabellen können ebenfalls angewendet werden, sodass geschätzte Kosten pro virtueller Maschine sowie Preise für Kunden nachverfolgt werden können. Standardmäßig sind diese Optionen feste Größen, können aber für dynamische Größen konfiguriert werden. Ein Service-Tarif kann so konfiguriert werden, dass eine benutzerdefinierte Eingabe für Arbeitsspeicher, Speicher oder CPU erlaubt ist. Bearbeiten Sie dazu einfach einen vorhandenen Service-Tarif für VMware oder erstellen Sie einen neuen. Alles lässt sich leicht unter ``Admin > Plans & Pricing`` verwalten."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:51
 msgid "Virtual Images / Blueprints"
-msgstr ""
+msgstr "Virtual Images / Blueprints"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:53
 msgid ""
@@ -234,7 +234,7 @@ msgid ""
 "those looking to add cloud-init to existing blueprints |morpheus| "
 "requires no special configuration and can use the default `cloud.cfg` "
 "settings."
-msgstr ""
+msgstr "|morpheus| inventarisiert automatisch alle in vCenter konfigurierten Blueprints und stellt sie während der Provisionierung als Optionen bereit. Damit |morpheus| diese virtuellen Maschinen ordnungsgemäß provisionieren und genaue Statistiken und den Betriebszustand liefern kann, muss während des Starts der virtuellen Maschine ein Agent installiert werden. Das bedeutet, dass |morpheus| Remote-Zugriff auf Gastbetriebssystemebene gewährt werden muss. Um diese Virtual Images korrekt zu konfigurieren, finden Sie die relevanten Images unter :menuselection:`Library --> Virtual Images` und bearbeiten Sie den Eintrag. Auf diesem Formular werden einige Optionen angezeigt. Die erste ist ein Kontrollkästchen, ob cloud-init aktiviert ist. Wenn cloud-init aktiviert ist, geben Sie einfach den konfigurierten Standard-OS-Benutzernamen an (für Ubuntu ist der Benutzername `ubuntu`, für CentOS `centos`). Wer cloud-init zu vorhandenen Blueprints hinzufügen möchte, benötigt in |morpheus| keine besondere Konfiguration und kann die Standard-`cloud.cfg`-Einstellungen verwenden."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:55
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "as well as a keypair via the ``Admin->Provisioning`` settings section. "
 "The great benefit of utilizing cloud-init is default blueprints do not "
 "need common credential sets thereby increasing provisioning security."
-msgstr ""
+msgstr "Ein globaler cloud-init-Benutzername/Kennwort sowie ein Schlüsselpaar können auch pro Konto über den Einstellungsbereich ``Admin->Provisioning`` konfiguriert werden. Der große Vorteil von cloud-init ist, dass Standard-Blueprints keine gemeinsamen Anmeldedatensätze benötigen und so die Provisionierungssicherheit erhöht wird."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:57
 msgid ""
@@ -251,11 +251,11 @@ msgid ""
 "noted that these credentials are encrypted in the database. If using "
 "WinRM for the RPC Mode instead of VMware tools, a Local or Domain "
 "Administrator account credential set can be provided instead."
-msgstr ""
+msgstr "Windows-Systeme unterstützen cloud-init typischerweise nicht. Deaktivieren Sie dieses Kontrollkästchen einfach und geben Sie die `Administrator`-Anmeldedaten an. Diese Anmeldedaten werden in der Datenbank verschlüsselt. Wenn für den RPC Mode WinRM statt VMware Tools verwendet wird, können auch Anmeldedaten eines lokalen oder Domain-Administratorkontos angegeben werden."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:60
 msgid "Snapshots"
-msgstr ""
+msgstr "Snapshots"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:62
 msgid ""
@@ -267,7 +267,7 @@ msgid ""
 " to a previous snapshot, click on the revert icon located on the right "
 "side of the Snapshot. Snapshots can be deleted by clicking on the trash "
 "can icon."
-msgstr ""
+msgstr "|morpheus| ermöglicht das Erstellen eines Snapshots einer VM in VMware vCenter. Auf der Instanz-Detailseite wählen Sie einfach ``Actions > Create Snapshot``, um einen neuen Snapshot zu erstellen. Vorhandene Snapshots können auf der Registerkarte ``BACKUPS`` der Instanz-Detailseite angezeigt werden. In vCenter erstellte Snapshots werden alle fünf Minuten in |morpheus| synchronisiert. Um zu einem früheren Snapshot zurückzukehren, klicken Sie auf das Zurücksetzen-Symbol rechts neben dem Snapshot. Snapshots können über das Papierkorb-Symbol gelöscht werden."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:64
 msgid ""
@@ -275,11 +275,11 @@ msgid ""
 "roles as needed. To edit a role's Snapshots permissions, go to |AdmRol| >"
 " (Your selected role) > Snapshots. Users can be given Full, Read-only, or"
 " No access."
-msgstr ""
+msgstr "Der Zugriff auf Snapshots kann für bestimmte Benutzerrollen nach Bedarf eingeschränkt oder vollständig entfernt werden. Um die Snapshot-Berechtigungen einer Rolle zu bearbeiten, gehen Sie zu |AdmRol| > (Ihre ausgewählte Rolle) > Snapshots. Benutzern kann Vollzugriff, Nur-Lesen oder Kein Zugriff gewährt werden."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:66
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:66
 msgid ""
@@ -288,11 +288,11 @@ msgid ""
 "network adapter type and for that reason Snapshot and backup-related "
 "features will also fail in |morpheus| for VMs using SR-IOV network "
 "adapters."
-msgstr ""
+msgstr "|morpheus| unterstützt die Verwendung von SR-IOV-Netzwerkadaptern mit VMware Clouds. Beachten Sie, dass VMware für diesen Netzwerkadaptertyp keine Snapshots unterstützt und aus diesem Grund Snapshot- und sicherungsbezogene Features in |morpheus| für VMs mit SR-IOV-Netzwerkadaptern ebenfalls fehlschlagen."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:69
 msgid "Affinity Groups"
-msgstr ""
+msgstr "Affinity Groups"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:71
 msgid ""
@@ -306,11 +306,11 @@ msgid ""
 "be balanced across cluster hosts to the maximum extent possible. These "
 "rules may be broken if necessary to balance resources or recover from "
 "failures."
-msgstr ""
+msgstr "|morpheus| bietet eine Zwei-Wege-Synchronisierung für Affinity Groups mit integrierten VMware-vCenter-Clouds. Eine Affinity Group enthält einen Typ (entweder Keep Together oder Keep Separate) und eine Liste von Servern, auf die die Regel angewendet werden soll. In |morpheus| erstellte Affinity Groups erzeugen in vCenter „Should“-Regeln (weiche Regeln) statt „Must“-Regeln (harte Regeln). Wann immer möglich, laufen Server mit „Keep Together“ daher auf demselben Cluster-Host, während Server mit „Keep Separate“ so weit wie möglich über Cluster-Hosts verteilt werden. Diese Regeln können bei Bedarf gebrochen werden, um Ressourcen auszugleichen oder nach Ausfällen wiederherzustellen."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:73
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:73
 msgid ""
@@ -319,11 +319,11 @@ msgid ""
 "vCenter. If such an affinity group is created, |morpheus| will hold it "
 "without syncing to vCenter until at least one server is added and the "
 "affinity group becomes compatible with the vCenter API."
-msgstr ""
+msgstr "Es ist möglich, in |morpheus| eine leere Affinity Group zu erstellen (also eine ohne ausgewählte Server), obwohl dies in vCenter nicht möglich ist. Wird eine solche Affinity Group erstellt, hält |morpheus| sie ohne Synchronisierung mit vCenter, bis mindestens ein Server hinzugefügt wird und die Affinity Group mit der vCenter-API kompatibel wird."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:76
 msgid "Viewing Affinity Groups"
-msgstr ""
+msgstr "Affinity Groups anzeigen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:78
 msgid ""
@@ -332,11 +332,11 @@ msgid ""
 "menu for each affinity group, they may be edited or deleted. By editing "
 "an affinity group, users may view or edit its enabled status (affinity "
 "groups which are not enabled will not be acted on)."
-msgstr ""
+msgstr "Affinity Groups sind auf der Registerkarte Resources der Cloud-Detailseite aufgeführt (|InfClo|, dann die entsprechende VMware Cloud auswählen). Über das Menü ACTIONS können sie für jede Affinity Group bearbeitet oder gelöscht werden. Durch Bearbeiten einer Affinity Group können Benutzer ihren aktivierten Status anzeigen oder bearbeiten (nicht aktivierte Affinity Groups werden nicht angewendet)."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:81
 msgid "Adding Affinity Groups"
-msgstr ""
+msgstr "Affinity Groups hinzufügen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:83
 msgid ""
@@ -344,43 +344,43 @@ msgid ""
 "detail page (|InfClo|, then select the appropriate VMware Cloud). From "
 "here, to create a new affinity group, click :guilabel:`+ ADD`. Configure "
 "the following:"
-msgstr ""
+msgstr "Affinity Groups sind auf der Registerkarte Resources der VMware-Cloud-Detailseite aufgeführt (|InfClo|, dann die entsprechende VMware Cloud auswählen). Klicken Sie hier auf :guilabel:`+ ADD`, um eine neue Affinity Group zu erstellen. Konfigurieren Sie Folgendes:"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:85
 msgid "**NAME:** A name for the affinity group"
-msgstr ""
+msgstr "**NAME:** Ein Name für die Affinity Group"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:86
 msgid ""
 "**TYPE:** Select either \"Keep Together\" or \"Keep Separate\" to "
 "indicate whether the selected servers should run on as few or as many "
 "servers as possible within the capabilities of the HVM Cluster"
-msgstr ""
+msgstr "**TYPE:** Wählen Sie entweder „Keep Together“ oder „Keep Separate“, um anzugeben, ob die ausgewählten Server innerhalb der Fähigkeiten des HVM Clusters auf möglichst wenigen oder möglichst vielen Servern laufen sollen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:87
 msgid "**CLUSTER:** Select the vCenter cluster"
-msgstr ""
+msgstr "**CLUSTER:** Den vCenter-Cluster auswählen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:88
 msgid ""
 "**ACTIVE:** When checked, the rules defined in the affinity group will be"
 " applied to the HVM Cluster"
-msgstr ""
+msgstr "**ACTIVE:** Wenn aktiviert, werden die in der Affinity Group definierten Regeln auf den HVM Cluster angewendet"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:89
 msgid "**SERVERS:** Select as many servers as desired from the typeahead list"
-msgstr ""
+msgstr "**SERVERS:** Beliebig viele Server aus der Typeahead-Liste auswählen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:91
 msgid ""
 "Once finished, click :guilabel:`SAVE CHANGES`. Following the next Cloud "
 "sync, the affinity rule will be applied and VMs will begin to migrate (if"
 " applicable)."
-msgstr ""
+msgstr "Klicken Sie abschließend auf :guilabel:`SAVE CHANGES`. Nach der nächsten Cloud-Synchronisierung wird die Affinity-Regel angewendet und VMs beginnen zu migrieren (falls zutreffend)."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:94
 msgid "Adding Servers to Affinity Groups at Provision Time"
-msgstr ""
+msgstr "Server beim Provisionieren zu Affinity Groups hinzufügen"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:96
 msgid ""
@@ -391,11 +391,11 @@ msgid ""
 "group must be pre-existing and this list will be filtered to show only "
 "affinity groups that apply depending on other configuration parameters "
 "set on the new Instance."
-msgstr ""
+msgstr "Neben dem Hinzufügen von Servern aus der Affinity Group können neu provisionierte Server beim Provisionieren einer Affinity Group hinzugefügt werden. Erweitern Sie auf der Registerkarte CONFIGURE des Provisionierungsassistenten den Abschnitt Advanced Options. Wählen Sie unter Advanced Options eine Affinity Group. Die Affinity Group muss bereits vorhanden sein; die Liste wird gefiltert, sodass nur Affinity Groups angezeigt werden, die je nach anderen Konfigurationsparametern der neuen Instanz gelten."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:99
 msgid "Tagging and Metadata"
-msgstr ""
+msgstr "Tagging und Metadaten"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:101
 msgid ""
@@ -403,7 +403,7 @@ msgid ""
 "addition to the other clouds that have already supported it in past "
 "versions. Tags will sync to vCenter from Morpheus and existing tags are "
 "also inventoried from vCenter into Morpheus."
-msgstr ""
+msgstr "Ab Morpheus Version 4.1.0 ist Tagging-Unterstützung für vCenter enthalten, zusätzlich zu den anderen Clouds, die dies bereits in früheren Versionen unterstützt haben. Tags werden von Morpheus nach vCenter synchronisiert und vorhandene Tags werden auch von vCenter in Morpheus inventarisiert."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:103
 msgid ""
@@ -411,7 +411,7 @@ msgid ""
 "version can be edited by navigating to 'Infrastructure > Clouds' and "
 "clicking the edit (pencil) button in the row for the relevant cloud. The "
 "field is labeled 'VERSION'."
-msgstr ""
+msgstr "Dieses Feature erfordert eine Mindest-API-Version von vCenter 6.5. Die API-Version kann bearbeitet werden, indem Sie zu 'Infrastructure > Clouds' navigieren und in der Zeile der betreffenden Cloud auf die Schaltfläche Bearbeiten (Bleistift) klicken. Das Feld heißt 'VERSION'."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:105
 msgid ""
@@ -420,7 +420,7 @@ msgid ""
 "Instances`). Within the 'Metadata' drawer, you will see sets of fields to"
 " enter key/value pairs. On creation of the instance, this metadata will "
 "be synced into vCenter."
-msgstr ""
+msgstr "Tags können bei der Provisionierung on-demand über die Registerkarte 'CONFIGURE' des Assistenten 'CREATE INSTANCE' erstellt werden (:menuselection:`Provisioning --> Instances`). Im Drawer 'Metadata' sehen Sie Feldsätze für Schlüssel/Wert-Paare. Bei Erstellung der Instanz werden diese Metadaten nach vCenter synchronisiert."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:107
 msgid ""
@@ -428,7 +428,7 @@ msgid ""
 "vCenter. When adding or editing a new Input (|LibOptInp|), simply mark "
 "the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag "
 "category in VMWare."
-msgstr ""
+msgstr "'Inputs' aus Ihrer Bibliothek können auch als Metadaten für vCenter exportiert werden. Beim Hinzufügen oder Bearbeiten einer neuen Eingabe (|LibOptInp|) markieren Sie einfach das Kästchen 'EXPORT AS METADATA'. Der 'FIELD NAME' wird zur Tag-Kategorie in VMware."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:109
 msgid ".. image:: /images/integration_guides/clouds/tagging_at_provisioning.png"

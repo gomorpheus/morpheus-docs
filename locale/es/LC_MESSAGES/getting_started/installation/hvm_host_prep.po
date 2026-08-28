@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:4
 msgid "Preparing HVM Hosts"
-msgstr ""
+msgstr "Preparación de Hosts HVM"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:6
 msgid ""
@@ -30,12 +30,12 @@ msgid ""
 "serve as the hypervisor layer managed by |morpheus|. Before deploying the"
 " |morpheus| appliance using the HPE Morpheus Manager Installer, you must "
 "prepare at least one HVM host."
-msgstr ""
+msgstr "Los hosts HVM son los servidores físicos (o anidados) que ejecutan HVM OS y sirven como capa de hipervisor administrada por |morpheus|. Antes de implementar el dispositivo |morpheus| utilizando el HPE Morpheus Manager Installer, debe preparar al menos un host HVM."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:8
 #: ../../getting_started/installation/hvm_host_prep.rst:264
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:10
 msgid ""
@@ -43,18 +43,18 @@ msgid ""
 "on each host. You only deploy **one** Morpheus Manager VM — after the "
 "manager is running, you add additional hosts to the cluster from within "
 "the |morpheus| UI (Infrastructure > Clusters)."
-msgstr ""
+msgstr "Si planea implementar un clúster HVM, repita los pasos de preparación del host en cada host. Solo implementa **una** VM de Morpheus Manager; después de que el manager esté en ejecución, agrega hosts adicionales al clúster desde la UI de |morpheus| (Infrastructure > Clusters)."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:13
 msgid "Obtaining HVM OS 24.04"
-msgstr ""
+msgstr "Obtención de HVM OS 24.04"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:15
 msgid ""
 "The HVM OS 24.04 ISO is available for download from `HPE My Software "
 "Center <https://myenterpriselicense.hpe.com/>`_. Contact your HPE account"
 " representative if you need access."
-msgstr ""
+msgstr "La ISO de HVM OS 24.04 está disponible para descarga desde `HPE My Software Center <https://myenterpriselicense.hpe.com/>`_. Contacte a su representante de cuenta HPE si necesita acceso."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:17
 msgid ""
@@ -65,54 +65,54 @@ msgid ""
 "depend on the management controller, source server, and network. Verify "
 "the downloaded ISO against the checksum published with the release before"
 " booting it."
-msgstr ""
+msgstr "Puede iniciar la ISO desde medios virtuales locales, medios extraíbles o una URL de medios virtuales HTTP/HTTPS accesible cuando el controlador de gestión del servidor admite ese método. Una URL puede eliminar la estación de trabajo y el navegador de la ruta de transferencia, pero la velocidad y confiabilidad de transferencia aún dependen del controlador de gestión, servidor origen y red. Verifique la ISO descargada contra la suma de comprobación publicada con la versión antes de iniciarla."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:20
 msgid "Hardware Requirements"
-msgstr ""
+msgstr "Requisitos de hardware"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:26
 msgid "Component"
-msgstr ""
+msgstr "Componente"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:27
 #: ../../getting_started/installation/hvm_host_prep.rst:156
 msgid "Requirement"
-msgstr ""
+msgstr "Requisito"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:28
 msgid "**CPU**"
-msgstr ""
+msgstr "**CPU**"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:29
 msgid ""
 "One or more 64-bit x86 processors, 1.5 GHz minimum. **Intel VT-x** or "
 "**AMD-V** must be enabled in BIOS/UEFI. **IOMMU** (Intel VT-d / AMD-Vi) "
 "is required for SR-IOV and hardware passthrough features."
-msgstr ""
+msgstr "Uno o más procesadores x86 de 64 bits, 1,5 GHz mínimo. **Intel VT-x** o **AMD-V** deben estar habilitados en BIOS/UEFI. **IOMMU** (Intel VT-d / AMD-Vi) es requerido para SR-IOV y funciones de passthrough de hardware."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:30
 msgid "**Memory**"
-msgstr ""
+msgstr "**Memory**"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:31
 msgid ""
 "4 GB minimum per host. For converged storage Layouts (Ceph), add 4 GB "
 "minimum per Ceph data disk. Production clusters typically require 64 GB+ "
 "per host."
-msgstr ""
+msgstr "4 GB mínimo por host. Para Layouts de almacenamiento convergente (Ceph), agregue 4 GB mínimo por disco de datos Ceph. Los clústeres productivos normalmente requieren 64 GB+ por host."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:32
 msgid "**OS Disk**"
-msgstr ""
+msgstr "**OS Disk**"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:33
 msgid "15 GB minimum for the operating system"
-msgstr ""
+msgstr "15 GB mínimo para el sistema operativo"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:34
 msgid "**Data Disk**"
-msgstr ""
+msgstr "**Data Disk**"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:35
 msgid ""
@@ -120,11 +120,11 @@ msgid ""
 "require significantly more. Do not RAID data disks — multiple disks can "
 "be specified during cluster setup and will be pooled by Ceph. Non-"
 "converged Layouts use external storage (NFS, iSCSI) instead."
-msgstr ""
+msgstr "500 GB mínimo para pruebas (almacenamiento convergente). Los clústeres productivos requerirán significativamente más. No configure RAID en discos de datos: se pueden especificar múltiples discos durante la configuración del clúster y serán agrupados por Ceph. Los Layouts no convergentes utilizan almacenamiento externo (NFS, iSCSI)."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:36
 msgid "**Network**"
-msgstr ""
+msgstr "**Network**"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:37
 msgid ""
@@ -132,66 +132,66 @@ msgid ""
 "traffic runs through the management interface. Static IP addresses are "
 "required on all HVM hosts. Enable jumbo frames only when the complete "
 "network path is configured for the same MTU."
-msgstr ""
+msgstr "Se requieren NIC de 10 Gbps para almacenamiento convergente y situaciones donde todo el tráfico pasa por la interfaz de administración. Se requieren direcciones IP estáticas en todos los hosts HVM. Habilite jumbo frames solo cuando la ruta de red completa esté configurada para el mismo MTU."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:39
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:41
 msgid ""
 "You must enable **Intel VT-x** (or AMD-V) and **IOMMU** (Intel VT-d or "
 "AMD-Vi) in your server's BIOS/UEFI settings before installing HVM OS. "
 "Without hardware virtualization extensions, KVM will not function."
-msgstr ""
+msgstr "Debe habilitar **Intel VT-x** (o AMD-V) e **IOMMU** (Intel VT-d o AMD-Vi) en la configuración BIOS/UEFI de su servidor antes de instalar HVM OS. Sin extensiones de virtualización por hardware, KVM no funcionará."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:44
 msgid "Installing HVM OS 24.04"
-msgstr ""
+msgstr "Instalación de HVM OS 24.04"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:46
 msgid ""
 "Boot the target server from the HVM OS 24.04 ISO (via USB, iLO virtual "
 "media, or PXE)"
-msgstr ""
+msgstr "Inicie el servidor objetivo desde la ISO de HVM OS 24.04 (mediante USB, medios virtuales iLO o PXE)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:47
 msgid ""
 "The **Subiquity** installer (same as standard Ubuntu Server) is displayed"
 " automatically on boot"
-msgstr ""
+msgstr "El instalador **Subiquity** (igual que Ubuntu Server estándar) se muestra automáticamente al iniciar"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:48
 msgid "Follow the guided installation:"
-msgstr ""
+msgstr "Siga la instalación guiada:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:50
 msgid "Select language and keyboard layout"
-msgstr ""
+msgstr "Seleccione idioma y distribución de teclado"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:51
 msgid ""
 "Configure network interface with a **static IP address**, netmask, "
 "gateway, and DNS"
-msgstr ""
+msgstr "Configure la interfaz de red con una **dirección IP estática**, máscara de red, gateway y DNS"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:52
 msgid "Select the OS disk for installation"
-msgstr ""
+msgstr "Seleccione el disco del SO para la instalación"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:53
 msgid ""
 "Create a user account with a password (this user will need ``sudo`` "
 "privileges)"
-msgstr ""
+msgstr "Cree una cuenta de usuario con contraseña (este usuario necesitará privilegios ``sudo``)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:54
 msgid "Complete the installation and reboot"
-msgstr ""
+msgstr "Complete la instalación y reinicie"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:56
 msgid "After reboot, remove the ISO media and verify the host boots into HVM OS"
-msgstr ""
+msgstr "Después del reinicio, retire el medio ISO y verifique que el host arranque en HVM OS"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:58
 msgid ""
@@ -202,21 +202,21 @@ msgid ""
 "failed. If the installer reports a checksum, storage, or unknown error, "
 "capture the exact message and installer logs before changing media, RAID,"
 " or disk state. See :doc:`/infrastructure/clusters/hvm/troubleshooting`."
-msgstr ""
+msgstr "En cada transición, confirme que el instalador sigue informando la configuración de disco y red prevista. La duración de la instalación varía según la entrega del medio, la inicialización del hardware, el rendimiento del disco y el acceso a la red; no considere el tiempo transcurrido por sí solo como prueba de que la instalación falló. Si el instalador informa un error de suma de comprobación, almacenamiento o desconocido, capture el mensaje exacto y los registros del instalador antes de cambiar el medio, RAID o el estado del disco. Consulte :doc:`/infrastructure/clusters/hvm/troubleshooting`."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:61
 msgid "Post-Install Network Configuration"
-msgstr ""
+msgstr "Configuración de red posterior a la instalación"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:63
 msgid ""
 "HVM OS 24.04 uses **netplan** for network configuration. If you need to "
 "adjust networking after installation:"
-msgstr ""
+msgstr "HVM OS 24.04 utiliza **netplan** para la configuración de red. Si necesita ajustar la red después de la instalación:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:65
 msgid "Warning"
-msgstr ""
+msgstr "Advertencia"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:65
 msgid ""
@@ -225,11 +225,11 @@ msgid ""
 "rely on the SSH session that the change can disconnect. Record the "
 "existing configuration, routes, DNS, interface MAC addresses, upstream "
 "switch configuration, and a tested rollback path first."
-msgstr ""
+msgstr "Realice cambios de red solo con una consola operativa o administración fuera de banda (por ejemplo, iLO) y durante una ventana de mantenimiento. No confíe en la sesión SSH que el cambio puede desconectar. Registre primero la configuración existente, rutas, DNS, direcciones MAC de interfaz, configuración del switch upstream y una ruta de reversión probada."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:67
 msgid "Navigate to the netplan configuration directory:"
-msgstr ""
+msgstr "Navegue al directorio de configuración de netplan:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:69
 msgid "cd /etc/netplan"
@@ -241,7 +241,7 @@ msgid ""
 "installation method). Modify the existing renderer-owned file unless your"
 " site standard explicitly uses a separate file; conflicting Netplan "
 "definitions for the same interface are unsafe."
-msgstr ""
+msgstr "Haga una copia de seguridad y edite el archivo de configuración existente (el nombre del archivo varía según el método de instalación). Modifique el archivo existente propiedad del renderer a menos que el estándar de su sitio utilice explícitamente un archivo separado; las definiciones de Netplan conflictivas para la misma interfaz no son seguras."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:75
 msgid ""
@@ -254,7 +254,7 @@ msgstr ""
 msgid ""
 "Before editing, identify the intended physical interface by name, MAC "
 "address, and link state:"
-msgstr ""
+msgstr "Antes de editar, identifique la interfaz física prevista por nombre, dirección MAC y estado del enlace:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:83
 msgid ""
@@ -268,11 +268,11 @@ msgid ""
 "inventory source used by current HVM host discovery. Do not configure an "
 "interface that is already an uplink, bond member, bridge member, or "
 "storage path without accounting for that dependency."
-msgstr ""
+msgstr "``hvmcli interfaces list`` es de solo lectura y es la misma fuente de inventario de interfaces utilizada por el descubrimiento actual de hosts HVM. No configure una interfaz que ya sea un uplink, miembro de bond, miembro de bridge o ruta de almacenamiento sin tener en cuenta esa dependencia."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:90
 msgid "Example static IP configuration:"
-msgstr ""
+msgstr "Ejemplo de configuración de IP estática:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:92
 msgid ""
@@ -293,7 +293,7 @@ msgstr ""
 msgid ""
 "Validate and apply the configuration from the console or out-of-band "
 "session:"
-msgstr ""
+msgstr "Valide y aplique la configuración desde la consola o sesión fuera de banda:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:108
 msgid "sudo netplan try"
@@ -308,11 +308,11 @@ msgid ""
 "attempts to roll back after its timeout; console access is still required"
 " because rollback cannot recover every external switch, bond, or routing "
 "error."
-msgstr ""
+msgstr "``netplan try`` aplica temporalmente la configuración y solicita confirmación. Confirme solo después de probar la conectividad de administración, rutas, DNS, alcance de VLAN previsto y cualquier ruta de almacenamiento afectada desde una segunda sesión. Si no se recibe confirmación, Netplan intenta revertir después de su tiempo de espera; el acceso a la consola sigue siendo necesario porque la reversión no puede recuperar todos los errores externos de switch, bond o enrutamiento."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:114
 msgid "Verify what HVM discovers:"
-msgstr ""
+msgstr "Verifique lo que HVM descubre:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:116
 msgid ""
@@ -328,7 +328,7 @@ msgid ""
 "After the refresh completes, open the host and compare its interface "
 "inventory with ``hvmcli interfaces list``. The new interface can then be "
 "selected as a per-host Virtual Switch uplink where supported."
-msgstr ""
+msgstr "En |morpheus|, navegue a :menuselection:`Infrastructure --> Clusters`, abra el clúster HVM y ejecute :guilabel:`Actions` > :guilabel:`Refresh`. Después de que se complete la actualización, abra el host y compare su inventario de interfaces con ``hvmcli interfaces list``. La nueva interfaz puede seleccionarse entonces como uplink de Virtual Switch por host donde sea compatible."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:124
 msgid ""
@@ -338,51 +338,51 @@ msgid ""
 " then contact HPE Support. If connectivity fails, do not confirm "
 "``netplan try``; use the console to allow rollback or restore the backed-"
 "up Netplan file and retry ``netplan try``."
-msgstr ""
+msgstr "Si el SO y ``hvmcli`` muestran la interfaz pero el inventario del host actualizado no, no edite registros de base de datos ni cree una interfaz placeholder. Guarde la salida de ``hvmcli`` y la salida del proceso de actualización del clúster, luego contacte al Soporte de HPE. Si falla la conectividad, no confirme ``netplan try``; use la consola para permitir la reversión o restaure el archivo Netplan respaldado y reintente ``netplan try``."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:126
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:128
 msgid ""
 "Back up your existing Netplan configuration before making changes: ``sudo"
 " cp -a /etc/netplan/<file>.yaml /etc/netplan/<file>.yaml.bak``"
-msgstr ""
+msgstr "Haga una copia de seguridad de su configuración Netplan existente antes de realizar cambios: ``sudo cp -a /etc/netplan/<file>.yaml /etc/netplan/<file>.yaml.bak``"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:131
 msgid "Verifying Host Readiness"
-msgstr ""
+msgstr "Verificación de la preparación del host"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:133
 msgid "Before running the HPE Morpheus Manager Installer, confirm:"
-msgstr ""
+msgstr "Antes de ejecutar el HPE Morpheus Manager Installer, confirme:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:135
 msgid ""
 "**SSH access** — You can connect to the host over SSH (port 22) from your"
 " workstation"
-msgstr ""
+msgstr "**Acceso SSH** — Puede conectarse al host por SSH (puerto 22) desde su estación de trabajo"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:136
 msgid ""
 "**Sudo privileges** — Your user can run ``sudo`` commands without "
 "restriction"
-msgstr ""
+msgstr "**Privilegios sudo** — Su usuario puede ejecutar comandos ``sudo`` sin restricción"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:137
 msgid "**Static IP** — The host has a static IP address that will not change"
-msgstr ""
+msgstr "**IP estática** — El host tiene una dirección IP estática que no cambiará"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:138
 msgid ""
 "**DNS resolution** — The host can resolve external hostnames (or at "
 "minimum, the Morpheus appliance hostname once deployed)"
-msgstr ""
+msgstr "**Resolución DNS** — El host puede resolver nombres de host externos (o como mínimo, el hostname del dispositivo Morpheus una vez implementado)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:141
 msgid "Host Firewall Ownership"
-msgstr ""
+msgstr "Propiedad del firewall del host"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:143
 msgid ""
@@ -391,7 +391,7 @@ msgid ""
 "UFW, iptables, or nftables ruleset for both vanilla Ubuntu and every HVM "
 "Custom ISO release. Do not assume that disabling UFW removes, preserves, "
 "or replaces rules created by another firewall backend."
-msgstr ""
+msgstr "El estado del firewall es responsabilidad de la imagen de host HVM instalada y la política de red del sitio. La implementación del manager no define un conjunto de reglas UFW, iptables o nftables universal para Ubuntu vanilla y cada versión de Custom ISO de HVM. No asuma que deshabilitar UFW elimina, preserva o reemplaza reglas creadas por otro backend de firewall."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:145
 msgid ""
@@ -404,11 +404,11 @@ msgid ""
 "quorum or shared-storage connectivity changes after a firewall "
 "modification, restore the approved policy and stop cluster changes until "
 "HPE Support or the installer owner reviews the effective rules."
-msgstr ""
+msgstr "Para cada host implementado y versión del instalador, registre el servicio de firewall activo y las reglas efectivas, luego valide la conectividad del manager, quorum del Agente, Corosync, almacenamiento, migración y red de VM requerida por el diseño del clúster. Aplique solo las reglas aprobadas para esa versión de host y entorno. El código fuente del producto no establece el resultado de split-brain reportado en Jira como resultado garantizado de cambiar el estado de UFW; si el quorum o la conectividad de almacenamiento compartido cambia después de una modificación del firewall, restaure la política aprobada y detenga los cambios del clúster hasta que el Soporte de HPE o el propietario del instalador revise las reglas efectivas."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:148
 msgid "Layout 2.0 Network Design Checklist"
-msgstr ""
+msgstr "Lista de verificación de diseño de red Layout 2.0"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:150
 msgid ""
@@ -416,84 +416,84 @@ msgid ""
 "physical NICs, switch ports, VLANs, IP ranges, and MTU for each host. Use"
 " :doc:`/infrastructure/clusters/hvm/virtual_switches` for the "
 "configuration procedure."
-msgstr ""
+msgstr "Antes de crear Virtual Switches layout 2.0, registre los tipos de tráfico, NICs físicas, puertos de switch, VLANs, rangos de IP y MTU para cada host. Use :doc:`/infrastructure/clusters/hvm/virtual_switches` para el procedimiento de configuración."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:152
 msgid "Common validated Virtual Switch choices"
-msgstr ""
+msgstr "Opciones comunes validadas de Virtual Switch"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:157
 msgid "Host uplink"
-msgstr ""
+msgstr "Uplink del host"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:158
 msgid "Upstream port"
-msgstr ""
+msgstr "Puerto upstream"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:159
 msgid "VLAN handling"
-msgstr ""
+msgstr "Manejo de VLAN"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:160
 msgid "Simple untagged segment"
-msgstr ""
+msgstr "Segmento simple sin etiquetar"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:161
 msgid "One NIC or Active Backup"
-msgstr ""
+msgstr "Una NIC o Active Backup"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:162
 msgid "Access/native network"
-msgstr ""
+msgstr "Red access/native"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:163
 msgid "Leave VLAN ID empty; traffic is untagged"
-msgstr ""
+msgstr "Deje el ID de VLAN vacío; el tráfico no está etiquetado"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:164
 msgid "Tagged traffic segments"
-msgstr ""
+msgstr "Segmentos de tráfico etiquetado"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:165
 msgid "One NIC, Active Backup, or LACP"
-msgstr ""
+msgstr "Una NIC, Active Backup o LACP"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:166
 msgid "Trunk allowing every selected VLAN"
-msgstr ""
+msgstr "Trunk que permite cada VLAN seleccionada"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:167
 msgid "Set the VLAN ID for each tagged traffic type"
-msgstr ""
+msgstr "Establezca el ID de VLAN para cada tipo de tráfico etiquetado"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:168
 msgid "Redundant links without switch aggregation"
-msgstr ""
+msgstr "Enlaces redundantes sin agregación de switch"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:169
 msgid "Active Backup"
-msgstr ""
+msgstr "Active Backup"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:170
 msgid "Access or trunk, consistently configured"
-msgstr ""
+msgstr "Access o trunk, configurado de forma consistente"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:171
 #: ../../getting_started/installation/hvm_host_prep.rst:175
 msgid "Tagged or untagged according to the segment"
-msgstr ""
+msgstr "Etiquetado o sin etiquetar según el segmento"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:172
 msgid "Aggregated links"
-msgstr ""
+msgstr "Enlaces agregados"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:173
 msgid "LACP (802.3ad)"
-msgstr ""
+msgstr "LACP (802.3ad)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:174
 msgid "Both ports in the same compatible LACP group"
-msgstr ""
+msgstr "Ambos puertos en el mismo grupo LACP compatible"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:177
 msgid ""
@@ -503,11 +503,11 @@ msgid ""
 "Conversely, leave VLAN ID empty only when that segment is intentionally "
 "untagged. Values in examples are illustrative; use the addresses and VLAN"
 " IDs approved for your environment."
-msgstr ""
+msgstr "El ID de VLAN y MTU son entradas opcionales del producto. Un diseño desacoplado por lo tanto no requiere una VLAN nativa: asigne IDs de VLAN explícitos a cada segmento de tráfico y configure el trunk upstream para permitirlos. Por el contrario, deje el ID de VLAN vacío solo cuando ese segmento esté intencionalmente sin etiquetar. Los valores en los ejemplos son ilustrativos; use las direcciones e IDs de VLAN aprobados para su entorno."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:180
 msgid "Canonical Deployment Networking Scenarios"
-msgstr ""
+msgstr "Escenarios canónicos de red de implementación"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:182
 msgid ""
@@ -515,7 +515,7 @@ msgid ""
 "replace positional references to figures in earlier deployment material; "
 "detailed configuration screens are in "
 ":doc:`/infrastructure/clusters/hvm/virtual_switches`."
-msgstr ""
+msgstr "Use estos escenarios numerados al discutir un diseño de implementación. Reemplazan referencias posicionales a figuras en material de implementación anterior; las pantallas de configuración detalladas están en :doc:`/infrastructure/clusters/hvm/virtual_switches`."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:184
 msgid ""
@@ -523,7 +523,7 @@ msgid ""
 " Active Backup bond. The upstream ports do not form an LACP group. "
 "Configure both ports consistently as access ports for one untagged "
 "segment or as trunks that allow the required tagged VLANs."
-msgstr ""
+msgstr "**Escenario 1 — Enlaces redundantes sin agregación de switch.** Configure un bond Active Backup. Los puertos upstream no forman un grupo LACP. Configure ambos puertos de forma consistente como puertos access para un segmento sin etiquetar o como trunks que permitan las VLANs etiquetadas requeridas."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:186
 msgid ""
@@ -534,7 +534,7 @@ msgid ""
 "explicitly with tooling supported by the installed HVM release. Do not "
 "assume values from another ISO, release note, or backend, and do not copy"
 " undocumented values into Netplan."
-msgstr ""
+msgstr "Los valores automáticos de sondeo MII, up-delay y down-delay para bonds Active Backup son específicos de la versión y del backend de red y no están garantizados. Desde acceso de consola o fuera de banda, inspeccione la configuración efectiva del bond después del aprovisionamiento y configure los valores requeridos explícitamente con herramientas compatibles con la versión HVM instalada. No asuma valores de otro ISO, nota de versión o backend, y no copie valores no documentados en Netplan."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:188
 msgid ""
@@ -543,7 +543,7 @@ msgid ""
 "upstream configuration and HVM bond must agree before traffic is moved to"
 " the bond. Access or trunk behavior and VLAN tagging still follow the "
 "selected segment design."
-msgstr ""
+msgstr "**Escenario 2 — Enlaces agregados.** Configure un bond LACP (802.3ad) solo después de que ambos puertos upstream estén en el mismo grupo LACP compatible. La configuración upstream y el bond HVM deben coincidir antes de mover el tráfico al bond. El comportamiento access o trunk y el etiquetado VLAN siguen el diseño de segmento seleccionado."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:190
 msgid ""
@@ -551,48 +551,48 @@ msgid ""
 "one NIC per dedicated Virtual Switch and provide redundancy with iSCSI "
 "multipath rather than a network bond. NFS and Live Migration can use a "
 "single NIC or a supported bond as described in the traffic-type matrix."
-msgstr ""
+msgstr "**Escenario 3 — Rutas de almacenamiento dedicadas.** Para iSCSI en layout 2.0, use una NIC por Virtual Switch dedicado y proporcione redundancia con multipath iSCSI en lugar de un bond de red. NFS y Live Migration pueden usar una sola NIC o un bond compatible según se describe en la matriz de tipos de tráfico."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:192
 msgid ""
 "For every scenario, record the selected physical ports, traffic roles, "
 "VLAN tagging location, MTU, and IP ranges before installation. Do not "
 "copy interface names, addresses, or VLAN IDs from an example."
-msgstr ""
+msgstr "Para cada escenario, registre los puertos físicos seleccionados, roles de tráfico, ubicación de etiquetado VLAN, MTU y rangos de IP antes de la instalación. No copie nombres de interfaz, direcciones o IDs de VLAN de un ejemplo."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:195
 msgid "Network Ports"
-msgstr ""
+msgstr "Puertos de red"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:197
 msgid ""
 "The following ports are required for communication between HVM hosts and "
 "the |morpheus| appliance:"
-msgstr ""
+msgstr "Los siguientes puertos son necesarios para la comunicación entre hosts HVM y el dispositivo |morpheus|:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:203
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:204
 msgid "Source"
-msgstr ""
+msgstr "Fuente"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:205
 msgid "Destination"
-msgstr ""
+msgstr "Destino"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:206
 msgid "Port"
-msgstr ""
+msgstr "Puerto"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:207
 msgid "Protocol"
-msgstr ""
+msgstr "Protocolo"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:208
 msgid "Agent communication with |morpheus| appliance"
-msgstr ""
+msgstr "Comunicación del Agente con el dispositivo |morpheus|"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:209
 #: ../../getting_started/installation/hvm_host_prep.rst:215
@@ -608,7 +608,7 @@ msgstr ""
 #: ../../getting_started/installation/hvm_host_prep.rst:259
 #: ../../getting_started/installation/hvm_host_prep.rst:260
 msgid "HVM Host"
-msgstr ""
+msgstr "HVM Host"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:210
 #: ../../getting_started/installation/hvm_host_prep.rst:214
@@ -617,7 +617,7 @@ msgstr ""
 #: ../../getting_started/installation/hvm_host_prep.rst:234
 #: ../../getting_started/installation/hvm_host_prep.rst:239
 msgid "|morpheus| appliance"
-msgstr ""
+msgstr "|morpheus| appliance"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:211
 msgid "443"
@@ -638,7 +638,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:213
 msgid "Hypervisor console access"
-msgstr ""
+msgstr "Acceso a la consola del hipervisor"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:216
 msgid "7443"
@@ -646,7 +646,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:218
 msgid "Host configuration and management (SSH)"
-msgstr ""
+msgstr "Configuración y administración del host (SSH)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:221
 #: ../../getting_started/installation/hvm_host_prep.rst:226
@@ -656,21 +656,21 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:223
 msgid "Inter-host communication (clustered deployments)"
-msgstr ""
+msgstr "Comunicación entre hosts (implementaciones en clúster)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:228
 msgid "SSH access for deployed VMs"
-msgstr ""
+msgstr "Acceso SSH para VMs implementadas"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:230
 #: ../../getting_started/installation/hvm_host_prep.rst:235
 #: ../../getting_started/installation/hvm_host_prep.rst:240
 msgid "HVM VMs"
-msgstr ""
+msgstr "HVM VMs"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:233
 msgid "WinRM HTTP for deployed VMs"
-msgstr ""
+msgstr "WinRM HTTP para VMs implementadas"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:236
 msgid "5985"
@@ -678,7 +678,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:238
 msgid "WinRM HTTPS for deployed VMs"
-msgstr ""
+msgstr "WinRM HTTPS para VMs implementadas"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:241
 msgid "5986"
@@ -686,7 +686,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:243
 msgid "Ceph Storage"
-msgstr ""
+msgstr "Ceph Storage"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:246
 msgid "3300"
@@ -694,7 +694,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:248
 msgid "Ceph Monitor"
-msgstr ""
+msgstr "Ceph Monitor"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:251
 msgid "6789"
@@ -702,7 +702,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:253
 msgid "Ceph MDS/OSD"
-msgstr ""
+msgstr "Ceph MDS/OSD"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:256
 msgid "6800-7300"
@@ -710,7 +710,7 @@ msgstr ""
 
 #: ../../getting_started/installation/hvm_host_prep.rst:258
 msgid "Corosync"
-msgstr ""
+msgstr "Corosync"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:261
 msgid "5404-5406"
@@ -725,51 +725,51 @@ msgid ""
 "Ceph and Corosync ports are only required for multi-node clusters using "
 "converged (HCI) storage. Single-host deployments or clusters using "
 "external storage do not require these ports."
-msgstr ""
+msgstr "Los puertos de Ceph y Corosync solo son necesarios para clústeres multinodo que utilizan almacenamiento convergente (HCI). Las implementaciones de un solo host o clústeres que utilizan almacenamiento externo no requieren estos puertos."
 
 #: ../../getting_started/installation/hvm_host_prep.rst:269
 msgid "Preparing Multiple Hosts"
-msgstr ""
+msgstr "Preparación de múltiples hosts"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:271
 msgid "If you plan to deploy an HVM cluster:"
-msgstr ""
+msgstr "Si planea implementar un clúster HVM:"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:273
 msgid ""
 "Repeat the HVM OS installation and configuration on **each host** that "
 "will be part of the cluster"
-msgstr ""
+msgstr "Repita la instalación y configuración de HVM OS en **cada host** que formará parte del clúster"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:274
 msgid ""
 "Ensure all hosts can communicate with each other over the ports listed "
 "above"
-msgstr ""
+msgstr "Asegúrese de que todos los hosts puedan comunicarse entre sí a través de los puertos listados arriba"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:275
 msgid ""
 "Use consistent network interface naming across hosts where possible "
 "(e.g., ``eth0`` for management, ``eth1`` for storage, ``eth2`` for "
 "compute)"
-msgstr ""
+msgstr "Use nomenclatura de interfaz de red consistente entre hosts cuando sea posible (por ejemplo, ``eth0`` para administración, ``eth1`` para almacenamiento, ``eth2`` para compute)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:276
 msgid ""
 "Deploy the Morpheus Manager VM onto **one** host using the HPE Morpheus "
 "Manager Installer"
-msgstr ""
+msgstr "Implemente la VM Morpheus Manager en **un** host usando el HPE Morpheus Manager Installer"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:277
 msgid ""
 "After the Morpheus appliance is running, add the remaining hosts to the "
 "cluster from within the |morpheus| UI (Infrastructure > Clusters > + ADD "
 "CLUSTER)"
-msgstr ""
+msgstr "Después de que el dispositivo Morpheus esté en ejecución, agregue los hosts restantes al clúster desde la UI de |morpheus| (Infrastructure > Clusters > + ADD CLUSTER)"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:280
 msgid "Next Steps"
-msgstr ""
+msgstr "Próximos pasos"
 
 #: ../../getting_started/installation/hvm_host_prep.rst:282
 msgid ""
@@ -777,5 +777,5 @@ msgid ""
 " :doc:`HPE Morpheus Manager Installer "
 "</getting_started/installation/singleNode/hpe_installer>` to deploy the "
 "|morpheus| appliance."
-msgstr ""
+msgstr "Una vez que su(s) host(s) HVM estén preparados y accesibles por SSH, continúe con el :doc:`HPE Morpheus Manager Installer </getting_started/installation/singleNode/hpe_installer>` para implementar el dispositivo |morpheus|."
 

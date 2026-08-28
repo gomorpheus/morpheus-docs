@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/guides/catalog_layout.rst:2
 msgid "Getting Started with Custom Catalog Layouts"
-msgstr ""
+msgstr "Erste Schritte mit benutzerdefinierten Katalog-Layouts"
 
 #: ../../getting_started/guides/catalog_layout.rst:4
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "the full API documentation and links to Github repositories containing "
 "complete code examples are available in the `Developer Portal "
 "<https://developer.morpheusdata.com/>`_."
-msgstr ""
+msgstr "Die |morpheus|-Plugin-Architektur ist eine Bibliothek, mit der Benutzer die Funktionalität in mehreren Kategorien erweitern können, darunter neue Cloud-Provider, Aufgabentypen, UI-Ansichten, benutzerdefinierte Berichte und mehr. In diesem Leitfaden entwickeln wir ein benutzerdefiniertes Provisionierungs-Katalog-Layout und fügen es der |morpheus|-UI hinzu. Dieses benutzerdefinierte Layout enthält einen zusätzlichen Link, der ein Modal mit beispielhaftem Automatisierungscode anzeigt. Das Beispiel zeigt die Verwendung externer JavaScript- und CSS-Dateien zur Anpassung des Katalogeintrags. Vollständige Entwicklerdokumentation einschließlich der gesamten API-Dokumentation und Links zu Github-Repositorys mit vollständigen Codebeispielen finden Sie im `Developer Portal <https://developer.morpheusdata.com/>`_."
 
 #: ../../getting_started/guides/catalog_layout.rst:6
 msgid ""
@@ -53,32 +53,32 @@ msgid ""
 "this guide is based on, is `here <https://github.com/martezr/morpheus-"
 "datadog-instance-tab-plugin>`_. You can read the example code and tweak "
 "it to suit your needs using the guidance in this document."
-msgstr ""
+msgstr "Die Entwicklung benutzerdefinierter Plugins erfordert Programmiererfahrung, aber dieser Leitfaden gliedert die erforderlichen Schritte in einen überschaubaren Prozess, den Benutzer schnell umsetzen können. |morpheus|-Plugins werden in Java oder Groovy geschrieben; unser Beispiel hier ist in Groovy verfasst. Unterstützung für weitere Sprachen ist geplant, zum Zeitpunkt dieser Veröffentlichung jedoch noch nicht verfügbar. Wenn Sie kein erfahrener Java- oder Groovy-Entwickler sind, kann es hilfreich sein, ein `example code repository <https://github.com/gomorpheus/morpheus-plugin-core/tree/master/samples/morpheus-reports-plugin>`_ zu klonen, auf das wir in unserem Entwicklerportal verlinken. Ein weiteres Beispiel, auf dem dieser Leitfaden basiert, finden Sie `here <https://github.com/martezr/morpheus-datadog-instance-tab-plugin>`_. Sie können den Beispielcode lesen und anhand der Hinweise in diesem Dokument an Ihre Anforderungen anpassen."
 
 #: ../../getting_started/guides/catalog_layout.rst:8
 msgid ""
 "Before you begin, ensure you have the following installed in your "
 "development environment:"
-msgstr ""
+msgstr "Stellen Sie vor dem Start sicher, dass Folgendes in Ihrer Entwicklungsumgebung installiert ist:"
 
 #: ../../getting_started/guides/catalog_layout.rst:10
 msgid "Gradle 6.5 or later"
-msgstr ""
+msgstr "Gradle 6.5 oder höher"
 
 #: ../../getting_started/guides/catalog_layout.rst:11
 msgid "Java 8 or 11"
-msgstr ""
+msgstr "Java 8 oder 11"
 
 #: ../../getting_started/guides/catalog_layout.rst:14
 msgid "Developing the Plugin"
-msgstr ""
+msgstr "Das Plugin entwickeln"
 
 #: ../../getting_started/guides/catalog_layout.rst:16
 msgid ""
 "The first thing we'll do is create a new directory to house the project. "
 "You’ll ultimately end up with a file structure typical of Java or Groovy "
 "projects, looking something like this:"
-msgstr ""
+msgstr "Als Erstes erstellen wir ein neues Verzeichnis für das Projekt. Am Ende erhalten Sie eine für Java- oder Groovy-Projekte typische Dateistruktur, die etwa so aussieht:"
 
 #: ../../getting_started/guides/catalog_layout.rst:18
 msgid ""
@@ -101,36 +101,36 @@ msgid ""
 "resources are stored in the src/main/resources subfolder and vary "
 "depending on the view renderer of choice. Static assets, like icons or "
 "custom javascript, live within the src/assets folder."
-msgstr ""
+msgstr "Konfigurieren Sie die .gitignore-Datei so, dass das Verzeichnis build/ ignoriert wird, das nach dem ersten Build erscheint. Projektpakete liegen unter src/main/groovy und enthalten Quelldateien mit der Endung .groovy. Ansichtsressourcen werden im Unterordner src/main/resources gespeichert und variieren je nach gewähltem View-Renderer. Statische Assets wie Icons oder benutzerdefiniertes JavaScript liegen im Ordner src/assets."
 
 #: ../../getting_started/guides/catalog_layout.rst:33
 msgid "Creating the build.gradle file"
-msgstr ""
+msgstr "Die Datei build.gradle erstellen"
 
 #: ../../getting_started/guides/catalog_layout.rst:35
 msgid ""
 "Gradle is the build tool used to compile |morpheus| plugins so "
 "build.gradle is required. An example build file is given below but some "
 "useful values to call out are as follows:"
-msgstr ""
+msgstr "Gradle ist das Build-Tool zum Kompilieren von |morpheus|-Plugins; daher ist build.gradle erforderlich. Nachfolgend finden Sie eine Beispieldatei; wichtige Werte sind:"
 
 #: ../../getting_started/guides/catalog_layout.rst:37
 msgid "Group: The package group in Java, typically your reverse DNS name"
-msgstr ""
+msgstr "Group: Die Paketgruppe in Java, typischerweise Ihr umgekehrter DNS-Name"
 
 #: ../../getting_started/guides/catalog_layout.rst:38
 msgid ""
 "Version: The version number for your plugin. This will be displayed in "
 "the Plugins section of |morpheus| UI for reference when later versions of"
 " your plugin are developed"
-msgstr ""
+msgstr "Version: Die Versionsnummer Ihres Plugins. Sie wird im Abschnitt Plugins der |morpheus|-UI angezeigt und dient als Referenz, wenn spätere Versionen Ihres Plugins entwickelt werden"
 
 #: ../../getting_started/guides/catalog_layout.rst:39
 msgid ""
 "Plugin-class: This will vary based on the plugin type being developed but"
 " for a custom layout, use "
 "``com.morpheusdata.cataloglayout.CatalogLayoutPlugin``"
-msgstr ""
+msgstr "Plugin-class: Dies variiert je nach entwickeltem Plugin-Typ; für ein benutzerdefiniertes Layout verwenden Sie ``com.morpheusdata.cataloglayout.CatalogLayoutPlugin``"
 
 #: ../../getting_started/guides/catalog_layout.rst:41
 msgid ""
@@ -179,14 +179,14 @@ msgstr ""
 
 #: ../../getting_started/guides/catalog_layout.rst:84
 msgid "Creating the Plugin Class"
-msgstr ""
+msgstr "Die Plugin-Klasse erstellen"
 
 #: ../../getting_started/guides/catalog_layout.rst:86
 msgid ""
 "Next, create a plugin class which handles registration of the new catalog"
 " layout, sets a name and description, and targets the appropriate catalog"
 " layout provider class which we’ll go over in the next section."
-msgstr ""
+msgstr "Erstellen Sie als Nächstes eine Plugin-Klasse, die die Registrierung des neuen Katalog-Layouts übernimmt, einen Namen und eine Beschreibung setzt und auf die passende Katalog-Layout-Provider-Klasse verweist, die wir im nächsten Abschnitt behandeln."
 
 #: ../../getting_started/guides/catalog_layout.rst:88
 msgid ""
@@ -231,7 +231,7 @@ msgstr ""
 
 #: ../../getting_started/guides/catalog_layout.rst:122
 msgid "Creating the Report Provider Class"
-msgstr ""
+msgstr "Die Report-Provider-Klasse erstellen"
 
 #: ../../getting_started/guides/catalog_layout.rst:124
 msgid ""
@@ -239,7 +239,7 @@ msgid ""
 "compile the targeted data so it can be rendered in the report view. An "
 "example report provider is reproduced below with comments to increase "
 "readability of the code."
-msgstr ""
+msgstr "Die Katalog-Layout-Provider-Klasse enthält den Code, der die Zieldaten abruft und kompiliert, damit sie in der Berichtsansicht gerendert werden können. Nachfolgend finden Sie einen Beispiel-Report-Provider mit Kommentaren zur besseren Lesbarkeit des Codes."
 
 #: ../../getting_started/guides/catalog_layout.rst:126
 msgid ""
@@ -302,7 +302,7 @@ msgstr ""
 
 #: ../../getting_started/guides/catalog_layout.rst:181
 msgid "Create the Custom Layout View"
-msgstr ""
+msgstr "Die benutzerdefinierte Layout-Ansicht erstellen"
 
 #: ../../getting_started/guides/catalog_layout.rst:183
 msgid ""
@@ -311,11 +311,11 @@ msgid ""
 "be overridden, we’ll use the default template provider for this example. "
 "There is more information on view rendering in the |morpheus| Developer "
 "Portal."
-msgstr ""
+msgstr "Standardmäßig werden benutzerdefinierte Plugin-Ansichten von einem Handlebars-Template-Provider verarbeitet, der HTML-Abschnitte mit Ihrem eigenen Inhalt füllt. Obwohl dies überschrieben werden kann, verwenden wir für dieses Beispiel den Standard-Template-Provider. Weitere Informationen zum Rendern von Ansichten finden Sie im |morpheus| Developer Portal."
 
 #: ../../getting_started/guides/catalog_layout.rst:186
 msgid "Build the JAR"
-msgstr ""
+msgstr "Das JAR erstellen"
 
 #: ../../getting_started/guides/catalog_layout.rst:188
 msgid ""
@@ -323,7 +323,7 @@ msgid ""
 " |morpheus| so the report can be viewed. To do so, change directory into "
 "the location of the directory created earlier to hold your custom catalog"
 " layout code."
-msgstr ""
+msgstr "Nachdem der Code geschrieben ist, erstellen Sie mit gradle das JAR, das wir in |morpheus| hochladen, damit der Bericht angezeigt werden kann. Wechseln Sie dazu in das früher angelegte Verzeichnis mit Ihrem benutzerdefinierten Katalog-Layout-Code."
 
 #: ../../getting_started/guides/catalog_layout.rst:190
 msgid "cd path/to/your/directory"
@@ -331,7 +331,7 @@ msgstr ""
 
 #: ../../getting_started/guides/catalog_layout.rst:194
 msgid "Run gradle to build a new version of the plugin."
-msgstr ""
+msgstr "Führen Sie gradle aus, um eine neue Version des Plugins zu erstellen."
 
 #: ../../getting_started/guides/catalog_layout.rst:196
 msgid "gradle shadowJar"
@@ -341,35 +341,35 @@ msgstr ""
 msgid ""
 "Once the build process has completed, locate the JAR in the build/libs "
 "directory."
-msgstr ""
+msgstr "Sobald der Build abgeschlossen ist, finden Sie das JAR im Verzeichnis build/libs."
 
 #: ../../getting_started/guides/catalog_layout.rst:203
 msgid "Install and Configure the UI Plugin"
-msgstr ""
+msgstr "Das UI-Plugin installieren und konfigurieren"
 
 #: ../../getting_started/guides/catalog_layout.rst:205
 msgid ""
 "Custom plugins are added to |morpheus| through the Plugins tab in the "
 "Integrations section of the Morpheus UI."
-msgstr ""
+msgstr "Benutzerdefinierte Plugins werden in |morpheus| über die Registerkarte Plugins im Abschnitt Integrationen der Morpheus-UI hinzugefügt."
 
 #: ../../getting_started/guides/catalog_layout.rst:207
 msgid "Navigate to |AdmIntPlu| and click CHOOSE FILE"
-msgstr ""
+msgstr "Navigieren Sie zu |AdmIntPlu| und klicken Sie auf CHOOSE FILE"
 
 #: ../../getting_started/guides/catalog_layout.rst:208
 msgid "Browse for the JAR file and upload it to |morpheus|"
-msgstr ""
+msgstr "Suchen Sie die JAR-Datei und laden Sie sie in |morpheus| hoch"
 
 #: ../../getting_started/guides/catalog_layout.rst:209
 msgid ""
 "The new plugin will be added next to any other custom plugins that may "
 "have been developed for your appliance"
-msgstr ""
+msgstr "Das neue Plugin wird neben allen anderen benutzerdefinierten Plugins Ihrer Appliance hinzugefügt"
 
 #: ../../getting_started/guides/catalog_layout.rst:211
 msgid ""
 "Now, when specific catalog items are selected, they will contain our "
 "custom link with example automation code."
-msgstr ""
+msgstr "Wenn bestimmte Katalogeinträge ausgewählt werden, enthalten sie nun unseren benutzerdefinierten Link mit beispielhaftem Automatisierungscode."
 

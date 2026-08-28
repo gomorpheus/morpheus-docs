@@ -22,37 +22,37 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:2
 msgid "Getting Started"
-msgstr ""
+msgstr "Mutualisation"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:4
 msgid ""
 "To get started with VMware, simply start by adding a Cloud in the "
 "``Infrastructure > Clouds`` section."
-msgstr ""
+msgstr "Un scénario très courant pour les fournisseurs de services managés est la nécessité de fournir un accès aux ressources VMware client par client. Avec VMware, plusieurs fonctionnalités administratives ont été ajoutées pour garantir que les ressources des clients sont correctement limitées et isolées. Pour VMware, il est possible d'attribuer des `Networks`, des `Datastores` et des `Resource Pools` spécifiques à des comptes clients, ou encore de définir la visibilité publique de certaines ressources, permettant ainsi à tous les sous-comptes d'y accéder."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:6
 msgid "To start adding a VMware cloud there will be some things you will need:"
-msgstr ""
+msgstr "Avancé"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:8
 msgid "vCenter API Url"
-msgstr ""
+msgstr "Plusieurs fonctionnalités avancées sont fournies dans |morpheus| et peuvent exploiter certains aspects de VMware. L'une de ces fonctionnalités est la prise en charge de la console distante directement vers l'hyperviseur. Pour activer cette fonctionnalité, quelques prérequis doivent être remplis. Tout d'abord, l'appliance |morpheus| doit disposer d'un accès réseau aux hôtes ESXi dans vCenter. Ensuite, les paramètres de pare-feu doivent être ajustés sur chaque hôte ESXi. Cela peut se faire dans vSphere, sous la configuration du pare-feu de l'hôte. Cochez simplement l'option `gdbserver`, qui ouvrira les ports nécessaires (à partir de la plage 5900)."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:9
 msgid ""
 "Typically this is the url to the vCenter web client with a ``/sdk`` in "
 "the path"
-msgstr ""
+msgstr "La console hyperviseur pour vCenter 6.5 nécessite |morpheus| v3.2.0+"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:10
 msgid "Username/Password"
-msgstr ""
+msgstr "Maintenant que les hôtes ESXi sont prêts à utiliser la console distante, modifiez simplement le cloud dans |morpheus| via ``Infrastructure > Clouds``. Cochez l'option `Enable Hypervisor Console`. Il est important de noter qu'actuellement cette fonctionnalité ne fonctionne que pour les VM nouvellement provisionnées directement via |morpheus|. Cela devrait toutefois changer prochainement."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:11
 msgid ""
 "A set of credentials with high level access to VMware (ensure the account"
 " has Datacenter level access)"
-msgstr ""
+msgstr "Il est également possible d'importer des instantanés de VM à des fins de sauvegarde ou de conversion depuis vCenter et depuis un hôte ESXi. Cela nécessite toutefois que la licence de l'hôte ESXi soit de niveau Enterprise, car l'appliance ne pourra pas télécharger une image virtuelle sans licence VMware payante."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:13
 msgid ""
@@ -62,7 +62,7 @@ msgid ""
 "pool. If the drop downs do not populate, please verify the api url is "
 "resolvable, morpheus has access to vCenter on 443, and the provided "
 "credentials are correct and the user has sufficient permissions."
-msgstr ""
+msgstr "Sélection du type de périphérique"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:15
 msgid ""
@@ -71,14 +71,14 @@ msgid ""
 "into All Resource Pools or a singular Resource Pool. When choosing `All`,"
 " these Resource Pools can be managed from a sub-account and visibility "
 "perspective via the Cloud Detail page (multi-tenancy)."
-msgstr ""
+msgstr "La configuration avancée du cloud VMware contient des paramètres distincts :guilabel:`Enable Storage Type Selection` et :guilabel:`Enable Network Type Selection`. Activez le paramètre applicable lorsque les utilisateurs doivent choisir parmi les types de stockage ou d'interface réseau exposés par le fournisseur de provisionnement VMware. Lorsqu'ils sont désactivés, le sélecteur correspondant n'est pas présenté et le type configuré/par défaut est utilisé. Ces paramètres sont vérifiés pour les clouds VMware uniquement ; n'en déduisez pas les mêmes contrôles pour HVM ou un autre type de cloud."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:17
 msgid ""
 "The VMware cloud integration provides a few additional options including "
 "allowing users to make host selections or keeping that aspect hidden such"
 " that the best host is automatically chosen for the requested provision."
-msgstr ""
+msgstr "MVM Cloud"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:19
 msgid ""
@@ -89,14 +89,14 @@ msgid ""
 "is not possible for the Appliance to have outbound access to all networks"
 " in which VMs are being provisioned to the SSH/WinRM ports (22, 5985 "
 "respectively) then Guest Execution is the only option."
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:21
 msgid ""
 "The `Use VNC` console option on the VMware cloud requires special "
 "configuration on each ESXI host but allowed hypervisor level remote "
 "console support. (See the Advanced Section for details)"
-msgstr ""
+msgstr "MVM (Morpheus Virtual Machine) Cloud, également connu sous le nom de HVM (HPE Virtual Machine), est la plate-forme hyperviseur native KVM de |morpheus|. Contrairement aux *Clusters* MVM gérés via ``Infrastructure > Clusters``, l'intégration MVM Cloud fournit une abstraction au niveau cloud pour le provisionnement et la gestion de machines virtuelles KVM sur des hôtes hyperviseurs distribués."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:23
 msgid ""
@@ -107,11 +107,11 @@ msgid ""
 "group unless the networks are setup such that internal routing is "
 "possible between the clouds. This is very useful for bursting, or hybrid "
 "cloud configurations."
-msgstr ""
+msgstr "L'intégration MVM Cloud utilise ``kvmContainerService`` pour le provisionnement et ``MvmHostService`` pour la gestion des hôtes."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:26
 msgid "Windows Provisioning Tips"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:28
 msgid ""
@@ -120,13 +120,13 @@ msgid ""
 "user and password. |morpheus| will set the Administrator password from "
 ":menuselection:`Administration --> Settings --> Provisioning` > Windows "
 "Settings > Password."
-msgstr ""
+msgstr "MVM Cloud et les clusters MVM servent des objectifs différents. MVM Cloud est une intégration cloud traditionnelle pour le provisionnement de VM. Les clusters MVM offrent une gestion d'hyperviseurs en cluster avec des fonctionnalités telles que la haute disponibilité, la migration à chaud et le stockage partagé. Les deux utilisent KVM en sous-jacent."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:30
 msgid ""
 "Users can also set the username on an image as Administrator and enter a "
 "different password if unique passwords are required per image."
-msgstr ""
+msgstr "Fonctionnalités"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:32
 msgid ""
@@ -137,11 +137,11 @@ msgid ""
 "will not be changed from the source template. In addition, new VM's will "
 "not be able to join a domain that had already been joined by the source "
 "template or any other VM's with that SID."
-msgstr ""
+msgstr "Provisionnement et gestion du cycle de vie des machines virtuelles KVM"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:35
 msgid "Existing Instances"
-msgstr ""
+msgstr "Gestion des images virtuelles avec provisionnement basé sur des modèles"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:37
 msgid ""
@@ -157,7 +157,7 @@ msgid ""
 "locate the Pools section. Click ACTIONS > Edit next to a selected "
 "Resource Pool. If INVENTORY is checked, |morpheus| will automatically "
 "onboard virtual machines from that Resource Pool."
-msgstr ""
+msgstr "Gestion des hyperviseurs hôtes"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:39
 msgid ""
@@ -169,7 +169,7 @@ msgid ""
 " be best suited to instead assign the 'Resource Pool' to an account and "
 "optionally move all servers with regards to that pool (more on this "
 "later)."
-msgstr ""
+msgstr "Configuration réseau (ponts, VLAN, OVS)"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:41
 msgid ""
@@ -180,23 +180,23 @@ msgid ""
 " marked as managed and an Instance will be created in `Provisioning`, "
 "however certain features will not function. This includes stats "
 "collection and logs."
-msgstr ""
+msgstr "Gestion des profils de stockage"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:43
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:64
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:103
 msgid "Note"
-msgstr ""
+msgstr "Prise en charge de la mise à l'échelle automatique"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:43
 msgid ""
 "All Cloud data is resynchronized on a 5 minute interval. This includes "
 "Datastores, Resource Pools, Networks, Blueprints, and Virtual Machines."
-msgstr ""
+msgstr "Importation de VM brownfield"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:46
 msgid "Service Plans"
-msgstr ""
+msgstr "Accès à la console"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:48
 msgid ""
@@ -211,11 +211,11 @@ msgid ""
 "configure this, simply edit an existing Service Plan tied to VMware or "
 "create a new one. These all can be easily managed from the ``Admin > "
 "Plans & Pricing`` section."
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:51
 msgid "Virtual Images / Blueprints"
-msgstr ""
+msgstr "Un ou plusieurs hôtes Linux avec KVM/QEMU installé et configuré"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:53
 msgid ""
@@ -234,7 +234,7 @@ msgid ""
 "those looking to add cloud-init to existing blueprints |morpheus| "
 "requires no special configuration and can use the default `cloud.cfg` "
 "settings."
-msgstr ""
+msgstr "Agent |morpheus| installé sur les hôtes hyperviseurs (ou possibilité de l'installer)"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:55
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "as well as a keypair via the ``Admin->Provisioning`` settings section. "
 "The great benefit of utilizing cloud-init is default blueprints do not "
 "need common credential sets thereby increasing provisioning security."
-msgstr ""
+msgstr "Connectivité réseau entre |morpheus| et les hôtes hyperviseurs"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:57
 msgid ""
@@ -251,11 +251,11 @@ msgid ""
 "noted that these credentials are encrypted in the database. If using "
 "WinRM for the RPC Mode instead of VMware tools, a Local or Domain "
 "Administrator account credential set can be provided instead."
-msgstr ""
+msgstr "Ressources CPU, mémoire et stockage suffisantes pour le provisionnement de VM"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:60
 msgid "Snapshots"
-msgstr ""
+msgstr "Service libvirt en cours d'exécution sur les hôtes cibles"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:62
 msgid ""
@@ -267,7 +267,7 @@ msgid ""
 " to a previous snapshot, click on the revert icon located on the right "
 "side of the Snapshot. Snapshots can be deleted by clicking on the trash "
 "can icon."
-msgstr ""
+msgstr "Ajout d'un cloud MVM"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:64
 msgid ""
@@ -275,11 +275,11 @@ msgid ""
 "roles as needed. To edit a role's Snapshots permissions, go to |AdmRol| >"
 " (Your selected role) > Snapshots. Users can be given Full, Read-only, or"
 " No access."
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:66
 msgid "Important"
-msgstr ""
+msgstr "Choisissez **MVM** (ou **HVM**) dans la liste des types de cloud"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:66
 msgid ""
@@ -288,11 +288,11 @@ msgid ""
 "network adapter type and for that reason Snapshot and backup-related "
 "features will also fail in |morpheus| for VMs using SR-IOV network "
 "adapters."
-msgstr ""
+msgstr "Configurez :"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:69
 msgid "Affinity Groups"
-msgstr ""
+msgstr "NAME"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:71
 msgid ""
@@ -306,11 +306,11 @@ msgid ""
 "be balanced across cluster hosts to the maximum extent possible. These "
 "rules may be broken if necessary to balance resources or recover from "
 "failures."
-msgstr ""
+msgstr "Nom convivial du cloud"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:73
 msgid "Tip"
-msgstr ""
+msgstr "CODE"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:73
 msgid ""
@@ -319,11 +319,11 @@ msgid ""
 "vCenter. If such an affinity group is created, |morpheus| will hold it "
 "without syncing to vCenter until at least one server is added and the "
 "affinity group becomes compatible with the vCenter API."
-msgstr ""
+msgstr "Identifiant de code unique"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:76
 msgid "Viewing Affinity Groups"
-msgstr ""
+msgstr "LOCATION"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:78
 msgid ""
@@ -332,11 +332,11 @@ msgid ""
 "menu for each affinity group, they may be edited or deleted. By editing "
 "an affinity group, users may view or edit its enabled status (affinity "
 "groups which are not enabled will not be acted on)."
-msgstr ""
+msgstr "Descripteur d'emplacement optionnel"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:81
 msgid "Adding Affinity Groups"
-msgstr ""
+msgstr "VISIBILITY"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:83
 msgid ""
@@ -344,43 +344,43 @@ msgid ""
 "detail page (|InfClo|, then select the appropriate VMware Cloud). From "
 "here, to create a new affinity group, click :guilabel:`+ ADD`. Configure "
 "the following:"
-msgstr ""
+msgstr "Public (tous les locataires) ou Private (locataire maître uniquement)"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:85
 msgid "**NAME:** A name for the affinity group"
-msgstr ""
+msgstr "TENANT"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:86
 msgid ""
 "**TYPE:** Select either \"Keep Together\" or \"Keep Separate\" to "
 "indicate whether the selected servers should run on as few or as many "
 "servers as possible within the capabilities of the HVM Cluster"
-msgstr ""
+msgstr "Locataire propriétaire du cloud"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:87
 msgid "**CLUSTER:** Select the vCenter cluster"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`NEXT` et configurez l'attribution de groupe"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:88
 msgid ""
 "**ACTIVE:** When checked, the rules defined in the affinity group will be"
 " applied to the HVM Cluster"
-msgstr ""
+msgstr "Terminez l'assistant"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:89
 msgid "**SERVERS:** Select as many servers as desired from the typeahead list"
-msgstr ""
+msgstr "Après l'ajout du cloud, des hôtes hyperviseurs doivent être ajoutés pour fournir la capacité de calcul."
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:91
 msgid ""
 "Once finished, click :guilabel:`SAVE CHANGES`. Following the next Cloud "
 "sync, the affinity rule will be applied and VMs will begin to migrate (if"
 " applicable)."
-msgstr ""
+msgstr "Ajout d'hôtes hyperviseurs"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:94
 msgid "Adding Servers to Affinity Groups at Provision Time"
-msgstr ""
+msgstr "Accédez à la page de détail du cloud MVM"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:96
 msgid ""
@@ -391,11 +391,11 @@ msgid ""
 "group must be pre-existing and this list will be filtered to show only "
 "affinity groups that apply depending on other configuration parameters "
 "set on the new Instance."
-msgstr ""
+msgstr "Sélectionnez l'onglet **Hosts**"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:99
 msgid "Tagging and Metadata"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ ADD`"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:101
 msgid ""
@@ -403,7 +403,7 @@ msgid ""
 "addition to the other clouds that have already supported it in past "
 "versions. Tags will sync to vCenter from Morpheus and existing tags are "
 "also inventoried from vCenter into Morpheus."
-msgstr ""
+msgstr "Configurez la connexion à l'hôte :"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:103
 msgid ""
@@ -411,7 +411,7 @@ msgid ""
 "version can be edited by navigating to 'Infrastructure > Clouds' and "
 "clicking the edit (pencil) button in the row for the relevant cloud. The "
 "field is labeled 'VERSION'."
-msgstr ""
+msgstr "SSH HOST"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:105
 msgid ""
@@ -420,7 +420,7 @@ msgid ""
 "Instances`). Within the 'Metadata' drawer, you will see sets of fields to"
 " enter key/value pairs. On creation of the instance, this metadata will "
 "be synced into vCenter."
-msgstr ""
+msgstr "Adresse IP ou nom d'hôte de l'hyperviseur KVM"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:107
 msgid ""
@@ -428,7 +428,7 @@ msgid ""
 "vCenter. When adding or editing a new Input (|LibOptInp|), simply mark "
 "the box labeled 'EXPORT AS METADATA'. The 'FIELD NAME' becomes the tag "
 "category in VMWare."
-msgstr ""
+msgstr "SSH USERNAME"
 
 #: ../../integration_guides/Clouds/vmware/getting_started.rst:109
 msgid ".. image:: /images/integration_guides/clouds/tagging_at_provisioning.png"

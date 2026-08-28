@@ -22,41 +22,41 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:2
 msgid "Known Limitations and Operational Considerations"
-msgstr ""
+msgstr "Bekannte Einschränkungen und betriebliche Überlegungen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:8
 msgid "S.No"
-msgstr ""
+msgstr "S.No"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:9
 msgid "Topic"
-msgstr ""
+msgstr "Thema"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:10
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:11
 msgid "Impact"
-msgstr ""
+msgstr "Auswirkung"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:12
 msgid "Applicability"
-msgstr ""
+msgstr "Anwendbarkeit"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:13
 msgid "Operational Guidance"
-msgstr ""
+msgstr "Betriebliche Guidance"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:14
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:15
 msgid ""
 "SATA Controller Initialization Delay During Importing HPE ProLiant Bare "
 "Metal Servers"
-msgstr ""
+msgstr "SATA-Controller-Initialisierungsverzögerung beim Importieren von HPE ProLiant Bare Metal Servern"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:16
 msgid ""
@@ -67,7 +67,7 @@ msgid ""
 "controller detected without attached disks.This behavior occurs during "
 "the initial hardware probing phase, before the server becomes available "
 "for provisioning in Morpheus."
-msgstr ""
+msgstr "Während des Bare-Metal-Server-Imports und der Hardware-Erkennung wartet das System, wenn ein Server einen oder mehrere SATA-Controller ohne angeschlossene SATA-Disks hat, mindestens 5 Minuten pro SATA-Controller, bevor fortgefahren wird. Die Wartezeit ist kumulativ und gilt für jeden erkannten SATA-Controller ohne angeschlossene Disks. Dieses Verhalten tritt während der anfänglichen Hardware-Prüfphase auf, bevor der Server in Morpheus für die Provisionierung verfügbar wird."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:17
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "provisioning.Delay proportional to the number of SATA controllers present"
 " without disks.No impact once the server import process has completed.No "
 "impact when SATA controllers have SATA disks attached."
-msgstr ""
+msgstr "Erhöhte Dauer für die Bare-Metal-Server-Erkennung, den Import und die Provisionierung. Verzögerung proportional zur Anzahl der SATA-Controller ohne Disks. Keine Auswirkung, sobald der Server-Import abgeschlossen ist. Keine Auswirkung, wenn SATA-Controller angeschlossene SATA-Disks haben."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:18
 msgid ""
@@ -83,7 +83,7 @@ msgid ""
 "where SATA controllers may be present but not populated with "
 "disks.Standard production deployments are not expected to include unused "
 "SATA controllers."
-msgstr ""
+msgstr "Dieser Zustand wird typischerweise in Lab- oder Evaluierungsumgebungen beobachtet, in denen SATA-Controller vorhanden, aber nicht mit Disks bestückt sein können. In Standard-Produktionsbereitstellungen werden ungenutzte SATA-Controller nicht erwartet."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:19
 msgid ""
@@ -94,5 +94,5 @@ msgid ""
 "the controller (for example, Embedded SATA Controller #1).Change theSATA "
 "Device DisablefromAutotoDisabled.Press F12 to save the changes and exit, "
 "followed by reboot."
-msgstr ""
+msgstr "Einen Embedded SATA Controller deaktivieren (HPE ProLiant): Server neu starten. F9 drücken, um System Utilities zu öffnen. Navigieren zu: System Configuration → BIOS/Platform Configuration (RBSU) → PCIe Device Configuration. Für jeden nicht genutzten Embedded SATA Controller: Controller auswählen (z. B. Embedded SATA Controller #1). SATA Device Disable von Auto auf Disabled ändern. F12 drücken, um die Änderungen zu speichern und zu beenden, anschließend neu starten."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../administration/settings/emailTemplates.rst:2
 msgid "Email Templates"
-msgstr ""
+msgstr "E-Mail-Vorlagen"
 
 #: ../../administration/settings/emailTemplates.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "more. |morpheus| includes system-default email templates for all of these"
 " emailed conditions but allows users to create their own email templates "
 "to override the default template."
-msgstr ""
+msgstr "|morpheus| sendet seinen Benutzern regelmäßig E-Mails, um auf verschiedene Bedingungen hinzuweisen, z. B. erfolgreiche Instanz-Provisionierung, Warnungen zu bevorstehendem Instanzablauf, Anfragen nach Links zum Zurücksetzen des Kennworts und mehr. |morpheus| enthält systemseitige Standard-E-Mail-Vorlagen für all diese E-Mail-Bedingungen, ermöglicht Benutzern aber, eigene E-Mail-Vorlagen zu erstellen, um die Standardvorlage zu überschreiben."
 
 #: ../../administration/settings/emailTemplates.rst:6
 msgid ""
@@ -46,19 +46,19 @@ msgid ""
 "Templates will apply in order of specificity: Tenant-specific templates "
 "apply first, then custom global templates, and finally system templates "
 "if no others exist for that email type."
-msgstr ""
+msgstr "Beim Aufrufen der Registerkarte E-Mail-Vorlagen sehen Benutzer eine Liste aller derzeit vorhandenen E-Mail-Vorlagen. Wir können auch den Inhaber sehen, der die Vorlage erstellt hat, sowie das zugehörige Konto (Mandant). Systemseitige Standardvorlagen werden als Eigentum von „System“ angezeigt und zeigen kein zugehöriges Konto (Mandant). Wenn ein |mastertenant|-Benutzer eine Vorlage erstellt, besteht die Möglichkeit, die Vorlage an ein Konto zu binden oder eine globale Vorlage zu erstellen. Die Spalte Accounts zeigt für globale Vorlagen „Global“. Vorlagen gelten in der Reihenfolge der Spezifität: mandantenspezifische Vorlagen gelten zuerst, dann benutzerdefinierte globale Vorlagen und schließlich Systemvorlagen, wenn für diesen E-Mail-Typ keine anderen existieren."
 
 #: ../../administration/settings/emailTemplates.rst:8
 #: ../../administration/settings/emailTemplates.rst:16
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../administration/settings/emailTemplates.rst:8
 msgid ""
 "Email templates apply in order of specificity. Tenant-specific templates "
 "apply over custom global templates which apply over system-default "
 "templates."
-msgstr ""
+msgstr "E-Mail-Vorlagen gelten in der Reihenfolge der Spezifität. Mandantenspezifische Vorlagen gelten vor benutzerdefinierten globalen Vorlagen, die vor den systemseitigen Standardvorlagen gelten."
 
 #: ../../administration/settings/emailTemplates.rst:10
 msgid ".. image:: /images/administration/settings/emailTemplateList.png"
@@ -66,7 +66,7 @@ msgstr ""
 
 #: ../../administration/settings/emailTemplates.rst:12
 msgid "**Creating Templates**"
-msgstr ""
+msgstr "**Vorlagen erstellen**"
 
 #: ../../administration/settings/emailTemplates.rst:14
 msgid ""
@@ -77,7 +77,7 @@ msgid ""
 " |morpheus| standard styling or your custom whitelabel styling depending "
 "on appliance configuration. The template itself should only include email"
 " body content which will be inserted within the styling wrapper."
-msgstr ""
+msgstr "Bevor Sie die erste Vorlage erstellen, ist es wichtig zu wissen, dass E-Mails aus benutzerdefinierten Vorlagen weiterhin in die standardmäßigen |morpheus|-E-Mail-Header und -Footer eingebettet werden. Sie enthalten auch Styling. Dieses Styling stammt direkt aus Ihrer Mandanten-Whitelabel-Konfiguration und umfasst je nach Appliance-Konfiguration das Standard-Styling von |morpheus| oder Ihr benutzerdefiniertes Whitelabel-Styling. Die Vorlage selbst sollte nur den E-Mail-Textinhalt enthalten, der in den Styling-Wrapper eingefügt wird."
 
 #: ../../administration/settings/emailTemplates.rst:16
 msgid ""
@@ -87,7 +87,7 @@ msgid ""
 "the template. Other functionality-breaking scenarios may also be "
 "possible. Review the system-default template of any email type to copy "
 "syntax examples for such vital components."
-msgstr ""
+msgstr "Es ist möglich, die Funktionalität bestimmter generierter E-Mail-Typen durch Erstellen einer benutzerdefinierten Vorlage zu beeinträchtigen. Beispielsweise müssen Sie in einer E-Mail zum Zurücksetzen des Kennworts sicherstellen, dass die Schaltfläche zum Zurücksetzen des Kennworts weiterhin in der Vorlage enthalten ist. Andere szenarien mit Funktionsverlust sind ebenfalls möglich. Prüfen Sie die systemseitige Standardvorlage jedes E-Mail-Typs, um Syntaxbeispiele für solche wichtigen Komponenten zu kopieren."
 
 #: ../../administration/settings/emailTemplates.rst:18
 msgid ""
@@ -97,7 +97,7 @@ msgid ""
 "template of the type you wish to create. You'll see the variables "
 "mentioned in a comment at the bottom of the template such as in this "
 "example Confirm Password Update Template:"
-msgstr ""
+msgstr "Einige Vorlagentypen haben zugängliche Variablen, z. B. den Namen des angemeldeten Benutzers (zur Ansprache in der E-Mail) oder einen Instanznamen. Um die verfügbaren Variablen zu sehen, klicken Sie auf die Info-Schaltfläche der systemseitigen Standardvorlage des Typs, den Sie erstellen möchten. Die Variablen werden in einem Kommentar am Ende der Vorlage erwähnt, wie in diesem Beispiel Confirm Password Update Template:"
 
 #: ../../administration/settings/emailTemplates.rst:20
 #, python-brace-format
@@ -118,28 +118,28 @@ msgid ""
 "To begin creating a new template, from the Email Templates tab of the "
 "global settings page (|AdmSet|), click :guilabel:`+ CREATE`. The "
 "following configurations must be set:"
-msgstr ""
+msgstr "Um eine neue Vorlage zu erstellen, klicken Sie auf der Registerkarte E-Mail-Vorlagen der globalen Einstellungsseite (|AdmSet|) auf :guilabel:`+ CREATE`. Die folgenden Konfigurationen müssen festgelegt werden:"
 
 #: ../../administration/settings/emailTemplates.rst:30
 msgid "**TYPE:** Select the email type for the new template"
-msgstr ""
+msgstr "**TYPE:** Wählen Sie den E-Mail-Typ für die neue Vorlage"
 
 #: ../../administration/settings/emailTemplates.rst:31
 msgid "**TEMPLATE:** The HTML markdown for the new custom email template"
-msgstr ""
+msgstr "**TEMPLATE:** Das HTML-Markdown für die neue benutzerdefinierte E-Mail-Vorlage"
 
 #: ../../administration/settings/emailTemplates.rst:32
 msgid ""
 "**TENANTS:** This option is only available in the |mastertenant|. Select "
 "a specific Tenant to tie the template to that Tenant or leave it empty to"
 " create a global template"
-msgstr ""
+msgstr "**TENANTS:** Diese Option ist nur im |mastertenant| verfügbar. Wählen Sie einen bestimmten Mandanten, um die Vorlage an diesen Mandanten zu binden, oder lassen Sie das Feld leer, um eine globale Vorlage zu erstellen"
 
 #: ../../administration/settings/emailTemplates.rst:34
 msgid ""
 "The following is an example of a Forgot Password Template. Note that it "
 "calls in the variable for the associated user display name and username."
-msgstr ""
+msgstr "Folgendes ist ein Beispiel für eine Forgot-Password-Vorlage. Beachten Sie, dass sie die Variable für den zugehörigen Benutzer-Anzeigenamen und -Benutzernamen einbindet."
 
 #: ../../administration/settings/emailTemplates.rst:36
 #, python-brace-format

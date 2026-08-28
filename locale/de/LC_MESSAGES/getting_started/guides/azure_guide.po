@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:2
 msgid "Getting started with |morpheus| and Azure"
-msgstr ""
+msgstr "Erste Schritte mit |morpheus| und Azure"
 
 #: ../../getting_started/guides/azure_guide.rst:5
 msgid "Introduction"
-msgstr ""
+msgstr "Einführung"
 
 #: ../../getting_started/guides/azure_guide.rst:7
 msgid ""
@@ -41,11 +41,11 @@ msgid ""
 "more to see and do in Morpheus that is beyond the scope of this guide. "
 "For more, consult the complete Morpheus documentation or take part in our"
 " `Reddit user community forum <https://www.reddit.com/r/morpheusdata/>`_."
-msgstr ""
+msgstr "Dieser Leitfaden hilft Ihnen, schnell mit Morpheus und der öffentlichen Microsoft-Azure-Cloud zu starten und das Beste daraus zu machen. Am Ende integrieren Sie Ihre erste Cloud mit |morpheus|, konfigurieren Netzwerke, bereiten Images vor und nutzen sie, provisionieren Instanzen und beginnen mit der Automatisierung. Wir gehen kurz auf Installation und Kontoeinstellung ein, stellen aber Links zu zusätzlichen Ressourcen für diese ersten Schritte bereit. Weitgehend setzt dieser Leitfaden voraus, dass Sie |morpheus| installieren können und bereit sind, von dort aus weiterzugehen. In Morpheus gibt es noch viel mehr zu entdecken, das über den Rahmen dieses Leitfadens hinausgeht. Weitere Informationen finden Sie in der vollständigen Morpheus-Dokumentation oder nehmen Sie an unserem `Reddit-User-Community-Forum <https://www.reddit.com/r/morpheusdata/>`_ teil."
 
 #: ../../getting_started/guides/azure_guide.rst:10
 msgid "Installation & Setup"
-msgstr ""
+msgstr "Installation und Einrichtung"
 
 #: ../../getting_started/guides/azure_guide.rst:12
 msgid ""
@@ -62,11 +62,11 @@ msgid ""
 "obtained, the license can be applied in |AdmSetLic|. For more, take a "
 "look at our community edition `welcome package "
 "<https://www.morpheusdata.com/community-welcome>`_."
-msgstr ""
+msgstr "In der einfachsten Konfiguration benötigt |morpheus| einen Appliance-Server, der alle Komponenten enthält, die zum Orchestrieren von virtuellen Maschinen und Containern erforderlich sind. Vollständige Anforderungen, einschließlich Überlegungen zu Datenspeicher und Netzwerk, finden Sie in der |morpheus|-Dokumentation `hier <https://docs.morpheusdata.com/en/latest/getting_started/requirements/requirements.html>`_. Um neue Instanzen, Hosts oder Anwendungen zu provisionieren (oder erkannte Ressourcen in verwaltete Ressourcen umzuwandeln), benötigen Sie eine gültige Lizenz. Wenn Sie keine haben, können Sie unter `Morpheus Hub <https://app.morpheushub.com>`_ kostenlos eine Community-Edition-Lizenz anfordern. Nach Erhalt kann die Lizenz in |AdmSetLic| angewendet werden. Weitere Informationen finden Sie in unserem Community-Edition-`Willkommenspaket <https://www.morpheusdata.com/community-welcome>`_."
 
 #: ../../getting_started/guides/azure_guide.rst:15
 msgid "Groups"
-msgstr ""
+msgstr "Gruppen"
 
 #: ../../getting_started/guides/azure_guide.rst:17
 msgid ""
@@ -79,7 +79,7 @@ msgid ""
 "often useful to create a Group that contains all Clouds for testing "
 "purposes. We will create that group now so that we can add our first "
 "Cloud into this Group in the next section."
-msgstr ""
+msgstr "Gruppen in |morpheus| legen fest, auf welche Ressourcen ein Benutzer Zugriff hat. Clouds werden zu Gruppen hinzugefügt, und ein Benutzer kann nur auf Clouds zugreifen, die sich in den Gruppen befinden, zu denen ihre Rollen ihnen Zugriff gewähren. Weitere Informationen zu |morpheus|-Gruppen finden Sie `hier <https://docs.morpheusdata.com/en/latest/infrastructure/groups/groups.html#groups>`_. Eine ausführliche Behandlung von Gruppen geht über den Rahmen dieses Leitfadens hinaus, aber es ist oft nützlich, eine Gruppe zu erstellen, die alle Clouds zu Testzwecken enthält. Wir erstellen diese Gruppe jetzt, damit wir im nächsten Abschnitt unsere erste Cloud in diese Gruppe aufnehmen können."
 
 #: ../../getting_started/guides/azure_guide.rst:19
 msgid ""
@@ -90,11 +90,11 @@ msgid ""
 "|morpheus| API or |morpheus| CLI. It's useful in most cases to have an "
 "\"All Clouds\" group for testing purposes so this will likely help you "
 "down the road."
-msgstr ""
+msgstr "Navigieren Sie zu `Infrastructure > Groups`. Hier sehen wir eine Liste aller konfigurierten Gruppen, die jedoch unmittelbar nach der Installation leer ist. Klicken Sie auf „+CREATE“. Geben Sie Ihrer Gruppe einen Namen, z. B. „All Clouds“. Das Feld „CODE“ wird verwendet, wenn |morpheus| über die |morpheus|-API oder die |morpheus|-CLI aufgerufen wird. In den meisten Fällen ist es nützlich, eine Gruppe „All Clouds“ zu Testzwecken zu haben, daher wird Ihnen das später helfen."
 
 #: ../../getting_started/guides/azure_guide.rst:21
 msgid "Click :guilabel:`SAVE CHANGES`. Your Group is now ready to accept Clouds."
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`. Ihre Gruppe ist jetzt bereit, Clouds aufzunehmen."
 
 #: ../../getting_started/guides/azure_guide.rst:23
 msgid ".. image:: /images/azureguideimages/1newGroup.png"
@@ -102,14 +102,14 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:26
 msgid "Integrating Your First Cloud"
-msgstr ""
+msgstr "Ihre erste Cloud integrieren"
 
 #: ../../getting_started/guides/azure_guide.rst:28
 msgid ""
 "Clouds in |morpheus| consist of any consumable endpoint whether that be "
 "on-prem, public clouds, or even bare metal. In this guide, we will focus "
 "on integrating and working with Microsoft Azure public cloud."
-msgstr ""
+msgstr "Clouds in |morpheus| bestehen aus jedem nutzbaren Endpunkt, sei es On-Prem, Public Clouds oder sogar Bare Metal. In diesem Leitfaden konzentrieren wir uns auf die Integration und Arbeit mit der öffentlichen Microsoft-Azure-Cloud."
 
 #: ../../getting_started/guides/azure_guide.rst:30
 msgid ""
@@ -117,13 +117,13 @@ msgid ""
 "the Cloud list page which lists all configured Clouds. It will be empty "
 "if you've just completed installation and setup of |morpheus| but soon we"
 " will see our integrated Azure cloud here."
-msgstr ""
+msgstr "Navigieren Sie zunächst zu `Infrastructure > Clouds`. Dies ist die Cloud-Listenseite, die alle konfigurierten Clouds auflistet. Sie ist leer, wenn Sie gerade die Installation und Einrichtung von |morpheus| abgeschlossen haben, aber bald werden wir hier unsere integrierte Azure Cloud sehen."
 
 #: ../../getting_started/guides/azure_guide.rst:32
 msgid ""
 "Click the \"+ADD\" button to pop the \"CREATE CLOUD\" wizard. Select "
 "\"AZURE (PUBLIC)\" and click the \"NEXT\" button."
-msgstr ""
+msgstr "Klicken Sie auf die Schaltfläche „+ADD“, um den Assistenten „CREATE CLOUD“ zu öffnen. Wählen Sie „AZURE (PUBLIC)“ und klicken Sie auf die Schaltfläche „NEXT“."
 
 #: ../../getting_started/guides/azure_guide.rst:34
 msgid ""
@@ -131,43 +131,43 @@ msgid ""
 "to connect to the cloud. |morpheus| Azure integration requires Owner or "
 "Contributor access to subscription via App Registration. Adding an Azure "
 "Cloud or Clouds to |morpheus| will require the following:"
-msgstr ""
+msgstr "Auf der Registerkarte „CONFIGURE“ werden wir aufgefordert, Azure-spezifische Details zur Verbindung mit der Cloud anzugeben. Die |morpheus|-Azure-Integration erfordert Owner- oder Contributor-Zugriff auf das Abonnement über eine App Registration. Das Hinzufügen einer Azure Cloud oder mehrerer Clouds zu |morpheus| erfordert Folgendes:"
 
 #: ../../getting_started/guides/azure_guide.rst:36
 msgid "Azure Subscription ID"
-msgstr ""
+msgstr "Azure Subscription ID"
 
 #: ../../getting_started/guides/azure_guide.rst:37
 msgid "Directory (tenant) ID"
-msgstr ""
+msgstr "Directory (tenant) ID"
 
 #: ../../getting_started/guides/azure_guide.rst:38
 msgid "Application (client) ID"
-msgstr ""
+msgstr "Application (client) ID"
 
 #: ../../getting_started/guides/azure_guide.rst:39
 msgid "Application (client) Secret"
-msgstr ""
+msgstr "Application (client) Secret"
 
 #: ../../getting_started/guides/azure_guide.rst:40
 msgid "Application (client) must be Owner or Contributor of Subscription"
-msgstr ""
+msgstr "Application (client) muss Owner oder Contributor des Abonnements sein"
 
 #: ../../getting_started/guides/azure_guide.rst:42
 msgid "CSP Accounts require the additional following input:"
-msgstr ""
+msgstr "CSP-Konten erfordern zusätzlich die folgenden Eingaben:"
 
 #: ../../getting_started/guides/azure_guide.rst:44
 msgid "CSP Directory (tenant) ID"
-msgstr ""
+msgstr "CSP Directory (tenant) ID"
 
 #: ../../getting_started/guides/azure_guide.rst:45
 msgid "CSP Application (client) ID"
-msgstr ""
+msgstr "CSP Application (client) ID"
 
 #: ../../getting_started/guides/azure_guide.rst:46
 msgid "CSP Application (client) SECRET"
-msgstr ""
+msgstr "CSP Application (client) SECRET"
 
 #: ../../getting_started/guides/azure_guide.rst:48
 msgid ".. image:: /images/azureguideimages/2createCloud.png"
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:51
 msgid "Create App Registration"
-msgstr ""
+msgstr "App Registration erstellen"
 
 #: ../../getting_started/guides/azure_guide.rst:53
 msgid ""
@@ -183,11 +183,11 @@ msgid ""
 " or Contributor Role on a Subscription. Use the steps below to create and"
 " collect the required credentials and assign the required permissions to "
 "integrate Azure with |morpheus|."
-msgstr ""
+msgstr "|morpheus| authentifiziert sich bei Azure über eine App Registration mit einer Owner- oder Contributor-Rolle in einem Abonnement. Verwenden Sie die folgenden Schritte, um die erforderlichen Anmeldedaten zu erstellen und zu erfassen und die erforderlichen Berechtigungen zuzuweisen, um Azure mit |morpheus| zu integrieren."
 
 #: ../../getting_started/guides/azure_guide.rst:55
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../getting_started/guides/azure_guide.rst:55
 msgid ""
@@ -196,7 +196,7 @@ msgid ""
 "not supported and will cause failures/issues. Please confirm the App "
 "Registration you use to integrate Azure with |morpheus| has Owner or "
 "Contributor permissions on the specified Subscription."
-msgstr ""
+msgstr "Die Verwendung einer App Registration (Service Principal), die selektive Ressourcenberechtigungen hat und kein Owner oder Contributor des Abonnements ist, wird nicht unterstützt und führt zu Fehlern/Problemen. Bitte bestätigen Sie, dass die App Registration, die Sie zur Integration von Azure mit |morpheus| verwenden, Owner- oder Contributor-Berechtigungen für das angegebene Abonnement hat."
 
 #: ../../getting_started/guides/azure_guide.rst:57
 msgid ""
@@ -204,23 +204,23 @@ msgid ""
 "or you wish to use an new one for |morpheus|, you will need to create one"
 " using the steps below. If you already have one you wish to use, continue"
 " to the next section."
-msgstr ""
+msgstr "Wenn Sie keine vorhandene Azure Active Directory App Registration haben oder für |morpheus| eine neue verwenden möchten, müssen Sie eine mit den folgenden Schritten erstellen. Wenn Sie bereits eine verwenden möchten, fahren Sie mit dem nächsten Abschnitt fort."
 
 #: ../../getting_started/guides/azure_guide.rst:59
 msgid "Log into the Azure portal"
-msgstr ""
+msgstr "Melden Sie sich beim Azure-Portal an"
 
 #: ../../getting_started/guides/azure_guide.rst:60
 msgid "Select \"Azure Active Directory\""
-msgstr ""
+msgstr "Wählen Sie „Azure Active Directory“"
 
 #: ../../getting_started/guides/azure_guide.rst:61
 msgid "Select \"App Registrations\""
-msgstr ""
+msgstr "Wählen Sie „App Registrations“"
 
 #: ../../getting_started/guides/azure_guide.rst:62
 msgid "Select \"New Registration\""
-msgstr ""
+msgstr "Wählen Sie „New Registration“"
 
 #: ../../getting_started/guides/azure_guide.rst:64
 msgid ""
@@ -232,11 +232,11 @@ msgstr ""
 msgid ""
 "Next, give the app a name, specify Web app / API for the type (default) "
 "and enter any URL for the Sign-on URL:"
-msgstr ""
+msgstr "Geben Sie der App als Nächstes einen Namen, legen Sie als Typ Web app / API fest (Standard) und geben Sie eine beliebige URL für die Sign-on-URL ein:"
 
 #: ../../getting_started/guides/azure_guide.rst:67
 msgid "Click Create and your new App Registration will be created."
-msgstr ""
+msgstr "Klicken Sie auf Create, und Ihre neue App Registration wird erstellt."
 
 #: ../../getting_started/guides/azure_guide.rst:69
 msgid ""
@@ -248,42 +248,42 @@ msgstr ""
 msgid ""
 "Now that we have our App Registration, we will gather the credentials "
 "required for the |morpheus| Azure integration in the next section."
-msgstr ""
+msgstr "Nachdem wir unsere App Registration haben, erfassen wir im nächsten Abschnitt die für die |morpheus|-Azure-Integration erforderlichen Anmeldedaten."
 
 #: ../../getting_started/guides/azure_guide.rst:74
 msgid "Copy Directory (tenant) and Application (client) IDs"
-msgstr ""
+msgstr "Directory-(tenant)- und Application-(client)-IDs kopieren"
 
 #: ../../getting_started/guides/azure_guide.rst:76
 msgid ""
 "The App Registration Directory (tenant) and Application (client) ID are "
 "required for the |morpheus| Azure integration. Both can be found in the "
 "overview section of the App Registration."
-msgstr ""
+msgstr "Die Directory-(tenant)- und Application-(client)-ID der App Registration sind für die |morpheus|-Azure-Integration erforderlich. Beide finden Sie im Overview-Abschnitt der App Registration."
 
 #: ../../getting_started/guides/azure_guide.rst:78
 msgid "Go to the Overview section of your App Registration"
-msgstr ""
+msgstr "Gehen Sie zum Overview-Abschnitt Ihrer App Registration"
 
 #: ../../getting_started/guides/azure_guide.rst:79
 msgid "Copy the Directory (tenant) ID"
-msgstr ""
+msgstr "Kopieren Sie die Directory (tenant) ID"
 
 #: ../../getting_started/guides/azure_guide.rst:80
 msgid ""
 "Store/Paste for use as the Tenant ID when adding your Azure cloud in "
 "|morpheus|"
-msgstr ""
+msgstr "Speichern/Einfügen zur Verwendung als Tenant ID beim Hinzufügen Ihrer Azure Cloud in |morpheus|"
 
 #: ../../getting_started/guides/azure_guide.rst:81
 msgid "Copy the Application (client) ID"
-msgstr ""
+msgstr "Kopieren Sie die Application (client) ID"
 
 #: ../../getting_started/guides/azure_guide.rst:82
 msgid ""
 "Store/Paste for use as the Client ID when adding your Azure cloud in "
 "|morpheus|"
-msgstr ""
+msgstr "Speichern/Einfügen zur Verwendung als Client ID beim Hinzufügen Ihrer Azure Cloud in |morpheus|"
 
 #: ../../getting_started/guides/azure_guide.rst:84
 msgid ".. image:: /images/clouds/azure/morpheusAppReg_Microsoft_Azure.png"
@@ -291,19 +291,19 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:87
 msgid "Generate a Client Secret"
-msgstr ""
+msgstr "Ein Client Secret generieren"
 
 #: ../../getting_started/guides/azure_guide.rst:89
 msgid "While still in your App Registration:"
-msgstr ""
+msgstr "Während Sie noch in Ihrer App Registration sind:"
 
 #: ../../getting_started/guides/azure_guide.rst:91
 msgid "Select \"Certificates & secrets\" in the Manage section"
-msgstr ""
+msgstr "Wählen Sie „Certificates & secrets“ im Abschnitt Manage"
 
 #: ../../getting_started/guides/azure_guide.rst:92
 msgid "Select ``+ New client secret``"
-msgstr ""
+msgstr "Wählen Sie ``+ New client secret``"
 
 #: ../../getting_started/guides/azure_guide.rst:94
 msgid ""
@@ -313,19 +313,19 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:96
 msgid "The \"Add a client secret\" modal will come up"
-msgstr ""
+msgstr "Das Modal „Add a client secret“ wird angezeigt"
 
 #: ../../getting_started/guides/azure_guide.rst:97
 msgid "Add a description to help identify the secret in the future"
-msgstr ""
+msgstr "Fügen Sie eine Beschreibung hinzu, um das Secret später leichter zu identifizieren"
 
 #: ../../getting_started/guides/azure_guide.rst:98
 msgid "Select an expiration duration"
-msgstr ""
+msgstr "Wählen Sie eine Ablaufdauer"
 
 #: ../../getting_started/guides/azure_guide.rst:99
 msgid "Click :guilabel:`Add`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`Add`"
 
 #: ../../getting_started/guides/azure_guide.rst:101
 msgid ""
@@ -335,17 +335,17 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:103
 msgid "Copy the newly-generated client secret value."
-msgstr ""
+msgstr "Kopieren Sie den neu generierten Client-Secret-Wert."
 
 #: ../../getting_started/guides/azure_guide.rst:105
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../getting_started/guides/azure_guide.rst:105
 msgid ""
 "Copy the client secret value before continuing as it will not be viewable"
 " again later."
-msgstr ""
+msgstr "Kopieren Sie den Client-Secret-Wert, bevor Sie fortfahren, da er später nicht mehr sichtbar ist."
 
 #: ../../getting_started/guides/azure_guide.rst:107
 msgid ""
@@ -357,29 +357,29 @@ msgstr ""
 msgid ""
 "Store/Paste client secret for use later when adding your Azure cloud in "
 "|morpheus|"
-msgstr ""
+msgstr "Speichern/Einfügen des Client Secrets zur späteren Verwendung beim Hinzufügen Ihrer Azure Cloud in |morpheus|"
 
 #: ../../getting_started/guides/azure_guide.rst:111
 msgid ""
 "You now have three of the four credentials required for |morpheus| Azure "
 "cloud integration. The last credential required is the Azure Subscription"
 " ID which we will gather in the next section."
-msgstr ""
+msgstr "Sie haben nun drei der vier für die |morpheus|-Azure-Cloud-Integration erforderlichen Anmeldedaten. Die letzte erforderliche Anmeldedatum ist die Azure Subscription ID, die wir im nächsten Abschnitt erfassen."
 
 #: ../../getting_started/guides/azure_guide.rst:114
 #: ../../getting_started/guides/azure_guide.rst:153
 msgid "Subscription ID"
-msgstr ""
+msgstr "Subscription ID"
 
 #: ../../getting_started/guides/azure_guide.rst:116
 msgid "To get the Azure Subscription ID:"
-msgstr ""
+msgstr "So erhalten Sie die Azure Subscription ID:"
 
 #: ../../getting_started/guides/azure_guide.rst:118
 msgid ""
 "Navigate to the Subscriptions section. The search function can help to "
 "locate these sections if they aren't immediately apparent in the UI menu"
-msgstr ""
+msgstr "Navigieren Sie zum Abschnitt Subscriptions. Die Suchfunktion kann helfen, diese Abschnitte zu finden, wenn sie im UI-Menü nicht sofort ersichtlich sind"
 
 #: ../../getting_started/guides/azure_guide.rst:120
 msgid ".. image:: /images/clouds/azure/azuresubscriptionssearch.png"
@@ -387,7 +387,7 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:122
 msgid "In the Subscriptions section, copy the Subscription ID"
-msgstr ""
+msgstr "Kopieren Sie im Abschnitt Subscriptions die Subscription ID"
 
 #: ../../getting_started/guides/azure_guide.rst:124
 msgid ".. image:: /images/clouds/azure/Subscriptions_Microsoft_Azure.png"
@@ -397,11 +397,11 @@ msgstr ""
 msgid ""
 "Store/Paste for use as the Subscription ID when adding your Azure cloud "
 "in |morpheus|"
-msgstr ""
+msgstr "Speichern/Einfügen zur Verwendung als Subscription ID beim Hinzufügen Ihrer Azure Cloud in |morpheus|"
 
 #: ../../getting_started/guides/azure_guide.rst:129
 msgid "Make App Registration owner or contributor of Subscription"
-msgstr ""
+msgstr "App Registration zum Owner oder Contributor des Abonnements machen"
 
 #: ../../getting_started/guides/azure_guide.rst:131
 msgid ""
@@ -410,21 +410,21 @@ msgid ""
 "given or permissions are assigned at individual resource levels, "
 "|morpheus| will not be able to properly inventory existing cloud "
 "resources, create resources or remove them."
-msgstr ""
+msgstr "Die verwendete App Registration muss Owner des Azure-Abonnements sein, das für die |morpheus|-Cloud-Integration verwendet wird. Wenn geringere Berechtigungen erteilt oder Berechtigungen auf einzelnen Ressourcenebenen zugewiesen werden, kann |morpheus| vorhandene Cloud-Ressourcen nicht ordnungsgemäß inventarisieren, Ressourcen erstellen oder entfernen."
 
 #: ../../getting_started/guides/azure_guide.rst:133
 msgid "In the Subscriptions section in Azure, select the Subscription"
-msgstr ""
+msgstr "Wählen Sie im Abschnitt Subscriptions in Azure das Abonnement aus"
 
 #: ../../getting_started/guides/azure_guide.rst:134
 msgid "In the Subscription pane, select \"Access Control (IAM)\""
-msgstr ""
+msgstr "Wählen Sie im Abonnementbereich „Access Control (IAM)“"
 
 #: ../../getting_started/guides/azure_guide.rst:135
 msgid ""
 "Either Click :guilabel`+ Add`, and then \"Add Role Assignment\" OR simply"
 " select \"Add a role assignment\""
-msgstr ""
+msgstr "Klicken Sie entweder auf :guilabel`+ Add` und dann auf „Add Role Assignment“ ODER wählen Sie einfach „Add a role assignment“"
 
 #: ../../getting_started/guides/azure_guide.rst:137
 msgid ""
@@ -434,21 +434,21 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:139
 msgid "In the right pane, select \"Owner\" or \"Contributor\" Role type"
-msgstr ""
+msgstr "Wählen Sie im rechten Bereich den Rollentyp „Owner“ oder „Contributor“"
 
 #: ../../getting_started/guides/azure_guide.rst:140
 msgid ""
 "Search for the name of the App Registration used for the |morpheus| "
 "integration"
-msgstr ""
+msgstr "Suchen Sie nach dem Namen der für die |morpheus|-Integration verwendeten App Registration"
 
 #: ../../getting_started/guides/azure_guide.rst:141
 msgid "Select the App Registration in the search results"
-msgstr ""
+msgstr "Wählen Sie die App Registration in den Suchergebnissen aus"
 
 #: ../../getting_started/guides/azure_guide.rst:142
 msgid "Select \"Save\""
-msgstr ""
+msgstr "Wählen Sie „Save“"
 
 #: ../../getting_started/guides/azure_guide.rst:144
 msgid ".. image:: /images/clouds/azure/Add_role_assignment_save.png"
@@ -459,11 +459,11 @@ msgid ""
 "You now have the required credentials and permissions to add an Azure "
 "Cloud integration into |morpheus|. Continue on with the next sections of "
 "this guide to complete the integration from the |morpheus| side."
-msgstr ""
+msgstr "Sie haben nun die erforderlichen Anmeldedaten und Berechtigungen, um eine Azure-Cloud-Integration in |morpheus| hinzuzufügen. Fahren Sie mit den nächsten Abschnitten dieses Leitfadens fort, um die Integration von der |morpheus|-Seite aus abzuschließen."
 
 #: ../../getting_started/guides/azure_guide.rst:149
 msgid "Complete the Add Cloud Process in |morpheus|"
-msgstr ""
+msgstr "Den Prozess „Cloud hinzufügen“ in |morpheus| abschließen"
 
 #: ../../getting_started/guides/azure_guide.rst:151
 msgid ""
@@ -472,39 +472,39 @@ msgid ""
 "that wizard, navigate to Infrastructure > Clouds > :guilabel:`+ ADD` > "
 "Azure (Public) and click :guilabel:`NEXT`. Fill in the following fields "
 "with the information gathered in the steps above:"
-msgstr ""
+msgstr "Wenn Sie diesem Leitfaden von Anfang an gefolgt sind, haben Sie bereits ein Cloud-Integrationsmodal in der |morpheus|-UI geöffnet. Wenn Sie diesen Assistenten noch öffnen müssen, navigieren Sie zu Infrastructure > Clouds > :guilabel:`+ ADD` > Azure (Public) und klicken Sie auf :guilabel:`NEXT`. Füllen Sie die folgenden Felder mit den in den obigen Schritten erfassten Informationen aus:"
 
 #: ../../getting_started/guides/azure_guide.rst:154
 msgid "Tenant ID"
-msgstr ""
+msgstr "Tenant ID"
 
 #: ../../getting_started/guides/azure_guide.rst:155
 msgid "Client ID"
-msgstr ""
+msgstr "Client ID"
 
 #: ../../getting_started/guides/azure_guide.rst:156
 msgid "Client Secret"
-msgstr ""
+msgstr "Client Secret"
 
 #: ../../getting_started/guides/azure_guide.rst:157
 msgid "Location"
-msgstr ""
+msgstr "Standort"
 
 #: ../../getting_started/guides/azure_guide.rst:158
 msgid "Resource Group"
-msgstr ""
+msgstr "Ressourcengruppe"
 
 #: ../../getting_started/guides/azure_guide.rst:159
 msgid "Inventory Existing Instances"
-msgstr ""
+msgstr "Vorhandene Instanzen inventarisieren"
 
 #: ../../getting_started/guides/azure_guide.rst:160
 msgid "Inventory Level"
-msgstr ""
+msgstr "Inventarebene"
 
 #: ../../getting_started/guides/azure_guide.rst:161
 msgid "Account Type"
-msgstr ""
+msgstr "Kontotyp"
 
 #: ../../getting_started/guides/azure_guide.rst:163
 msgid ""
@@ -515,7 +515,7 @@ msgid ""
 "resource groups in the region (All) or can select a specific resource "
 "group to limit |morpheus| resource inventorying and creation to just that"
 " resource group."
-msgstr ""
+msgstr "Sobald gültige Anmeldedaten in den entsprechenden Feldern eingetragen sind, wird das Dropdown-Menü LOCATION befüllt. Wählen Sie eine verfügbare Region; dies ist auch eine hilfreiche Prüfung, um sicherzustellen, dass Sie funktionierende Anmeldedaten korrekt angegeben haben. Zusätzlich können wir die Cloud-Integration auf alle Ressourcengruppen in der Region (All) beschränken oder eine bestimmte Ressourcengruppe auswählen, um die Ressourceninventarisierung und -erstellung von |morpheus| auf nur diese Ressourcengruppe zu begrenzen."
 
 #: ../../getting_started/guides/azure_guide.rst:165
 msgid ""
@@ -527,24 +527,24 @@ msgid ""
 "full (API heavy) inventorying which syncs resource utilization metrics "
 "(storage, CPU, and RAM) when available in addition to what we get with "
 "basic inventorying."
-msgstr ""
+msgstr "Durch Aktivieren von INVENTORY EXISTING INSTANCES erfasst |morpheus| automatisch vorhandene Cloud-Ressourcen, die auf die angegebene Region und Ressourcengruppe beschränkt sind. Wenn dieses Kontrollkästchen aktiviert ist, müssen wir auch entweder die grundlegende Inventarisierung wählen, die Name, IP-Adressen, Plattformtypen, Betriebszustand und Größeninformationen (Datenspeicher, CPU und RAM) synchronisiert, ODER die vollständige (API-intensive) Inventarisierung, die zusätzlich zu dem, was wir mit der grundlegenden Inventarisierung erhalten, bei Verfügbarkeit Messwerte zur Ressourcenauslastung (Datenspeicher, CPU und RAM) synchronisiert."
 
 #: ../../getting_started/guides/azure_guide.rst:167
 msgid "To move on, expand the \"Advanced Options\" section."
-msgstr ""
+msgstr "Um fortzufahren, erweitern Sie den Abschnitt „Advanced Options“."
 
 #: ../../getting_started/guides/azure_guide.rst:169
 #: ../../getting_started/guides/azure_guide.rst:392
 #: ../../getting_started/guides/azure_guide.rst:405
 #: ../../getting_started/guides/azure_guide.rst:478
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/guides/azure_guide.rst:169
 msgid ""
 "CSP accounts will also need to enter CSP TENANT ID, CSP CLIENT ID, and "
 "CSP CLIENT SECRET in the Advanced Options section."
-msgstr ""
+msgstr "CSP-Konten müssen im Abschnitt Advanced Options auch CSP TENANT ID, CSP CLIENT ID und CSP CLIENT SECRET eingeben."
 
 #: ../../getting_started/guides/azure_guide.rst:171
 msgid ""
@@ -555,18 +555,18 @@ msgid ""
 "|morpheus| URL for external systems), **GUIDANCE** (setting \"Manual\" "
 "will make recommendations for rightsizing), **COSTING**, **DNS "
 "INTEGRATION**, **CMDB**, and **AGENT INSTALL MODE**."
-msgstr ""
+msgstr "In der Schublade „Advanced Options“ gibt es zusätzliche Konfigurationen, die für Ihre erste Cloud zu berücksichtigen sind. Einige davon sind erst nutzbar, wenn sie auf weitere konfigurierte Integrationen verweisen. Häufig zu berücksichtigende Einstellungen sind **DOMAIN**, **STORAGE TYPE**, **APPLIANCE URL** (überschreibt die |morpheus|-URL für externe Systeme), **GUIDANCE** (die Einstellung „Manual“ gibt Empfehlungen zur Größenanpassung), **COSTING**, **DNS INTEGRATION**, **CMDB** und **AGENT INSTALL MODE**."
 
 #: ../../getting_started/guides/azure_guide.rst:173
 msgid "Once you're satisfied with your selections, click \"NEXT\""
-msgstr ""
+msgstr "Wenn Sie mit Ihren Auswahlen zufrieden sind, klicken Sie auf „NEXT“"
 
 #: ../../getting_started/guides/azure_guide.rst:175
 msgid ""
 "We have now arrived at the \"GROUP\" tab. In this case, we will mark the "
 "radio button to \"USE EXISTING\" Groups if you wish to use the Group we "
 "configured earlier. Alternatively, you can create a new one here."
-msgstr ""
+msgstr "Wir sind nun auf der Registerkarte „GROUP“ angekommen. In diesem Fall markieren wir die Option „USE EXISTING“ für Gruppen, wenn Sie die zuvor konfigurierte Gruppe verwenden möchten. Alternativ können Sie hier eine neue erstellen."
 
 #: ../../getting_started/guides/azure_guide.rst:177
 msgid ".. image:: /images/azureguideimages/3cloudGroup.png"
@@ -574,7 +574,7 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:179
 msgid "Once you've selected or created the Group, click \"NEXT\""
-msgstr ""
+msgstr "Nachdem Sie die Gruppe ausgewählt oder erstellt haben, klicken Sie auf „NEXT“"
 
 #: ../../getting_started/guides/azure_guide.rst:181
 msgid ""
@@ -583,11 +583,11 @@ msgid ""
 "Cloud list page. After a short time, |morpheus| will provide summary "
 "information and statistics on existing virtual machines, networks, and "
 "other resources available in the Cloud."
-msgstr ""
+msgstr "Auf der letzten Registerkarte des Assistenten „CREATE CLOUD“ bestätigen Sie Ihre Auswahlen und klicken auf „COMPLETE“. Die neue Cloud wird nun auf der Cloud-Listenseite aufgeführt. Nach kurzer Zeit liefert |morpheus| Zusammenfassungsinformationen und Statistiken zu vorhandenen virtuellen Maschinen, Netzwerken und anderen in der Cloud verfügbaren Ressourcen."
 
 #: ../../getting_started/guides/azure_guide.rst:184
 msgid "Viewing Cloud Inventory"
-msgstr ""
+msgstr "Cloud-Inventar anzeigen"
 
 #: ../../getting_started/guides/azure_guide.rst:186
 msgid ""
@@ -600,17 +600,17 @@ msgid ""
 "various categories by clicking on the category tabs. We can link to the "
 "detail page for any specific resource by clicking on it from its resource"
 " category list."
-msgstr ""
+msgstr "Nachdem wir unsere erste Azure Cloud integriert haben, können wir kurz innehalten und prüfen, was |morpheus| uns auf der Cloud-Detailseite bietet. Wir sehen, dass |morpheus| geschätzte Kosten und Kostenverläufe liefert, Messwerte zu genutzten Ressourcen bereitstellt und auch Ressourcenanzahlen in verschiedenen Kategorien auflistet, einschließlich Container-Hosts, Hypervisors und virtuellen Maschinen. Wir können in diese Kategorien eintauchen, um Listen von Ressourcen in den verschiedenen Kategorien zu sehen, indem wir auf die Kategorie-Registerkarten klicken. Wir können zur Detailseite einer bestimmten Ressource gelangen, indem wir sie in der Ressourcenkategorieliste anklicken."
 
 #: ../../getting_started/guides/azure_guide.rst:189
 msgid "Configuring Resource Pools"
-msgstr ""
+msgstr "Ressourcenpools konfigurieren"
 
 #: ../../getting_started/guides/azure_guide.rst:191
 msgid ""
 "With our Azure Cloud configured, |morpheus| will automatically sync in "
 "available resource pools and data stores."
-msgstr ""
+msgstr "Mit unserer konfigurierten Azure Cloud synchronisiert |morpheus| automatisch verfügbare Ressourcenpools und Datenspeicher."
 
 #: ../../getting_started/guides/azure_guide.rst:193
 msgid ""
@@ -625,7 +625,7 @@ msgid ""
 "grayed out in the list. The resources contained in that pool will not be "
 "accessible for provisioning within |morpheus| if it is not configured as "
 "active."
-msgstr ""
+msgstr "Ressourcenpools sind, sobald |morpheus| Zeit hatte, sie zu erfassen, auf der Cloud-Detailseite sichtbar. Navigieren Sie zu `Infrastructure > Clouds > (your Azure cloud) > Resources tab`. Hier können wir den Zugriff auf die verschiedenen in Azure konfigurierten Ressourcenpools sehen und steuern. Beispielsweise können wir den Zugriff auf einen bestimmten Ressourcenpool innerhalb von |morpheus| vollständig einschränken, indem wir auf die Schaltfläche „ACTIONS“ und dann auf „Edit“ klicken. Wenn wir die Option „ACTIVE“ deaktivieren und dann auf „SAVE CHANGES“ klicken, sehen wir, dass der Ressourcenpool in der Liste ausgegraut ist. Die in diesem Pool enthaltenen Ressourcen sind in |morpheus| nicht für die Provisionierung zugänglich, wenn er nicht als aktiv konfiguriert ist."
 
 #: ../../getting_started/guides/azure_guide.rst:195
 msgid ".. image:: /images/azureguideimages/4resourcePool.png"
@@ -641,7 +641,7 @@ msgid ""
 "choose to make some or all of our resource pools available to every "
 "Group. Specific resource pools can also be defined as the default for "
 "each Group when needed."
-msgstr ""
+msgstr "Oft möchten unsere Kunden bestimmte Ressourcenblöcke ihren eigenen Kunden zur Verfügung stellen. Dies lässt sich einfach und bequem über denselben Dialog „EDIT RESOURCE POOL“ steuern, in dem wir gerade gearbeitet haben. Wenn wir die Schublade „Group Access“ erweitern, können wir jeder gewünschten Gruppe Zugriff auf jeden Pool gewähren oder entziehen. Wir können auch wählen, einige oder alle unserer Ressourcenpools jeder Gruppe zur Verfügung zu stellen. Spezifische Ressourcenpools können bei Bedarf auch als Standard für jede Gruppe definiert werden."
 
 #: ../../getting_started/guides/azure_guide.rst:199
 msgid ".. image:: /images/azureguideimages/5resourcePoolGroup.png"
@@ -654,17 +654,17 @@ msgid ""
 "specific cluster is my SQL cluster and only specific services plans "
 "should be consumable within it. We can control that through this same "
 "dialog box."
-msgstr ""
+msgstr "Zusätzlich können wir zulassen, dass nur bestimmte Service-Tarife in einen bestimmten Ressourcenpool provisioniert werden. Beispielsweise ist ein bestimmter Cluster mein SQL-Cluster, und nur bestimmte Service-Tarife sollten darin nutzbar sein. Wir können das über denselben Dialog steuern."
 
 #: ../../getting_started/guides/azure_guide.rst:204
 msgid "Configuring Data Stores"
-msgstr ""
+msgstr "Datenspeicher konfigurieren"
 
 #: ../../getting_started/guides/azure_guide.rst:206
 msgid ""
 "To take a look at data stores, we'll move from the \"Resources\" tab to "
 "the \"Data Stores\" tab on our Cloud detail page."
-msgstr ""
+msgstr "Um Datenspeicher zu betrachten, wechseln wir auf unserer Cloud-Detailseite von der Registerkarte „Resources“ zur Registerkarte „Data Stores“."
 
 #: ../../getting_started/guides/azure_guide.rst:208
 msgid ""
@@ -673,7 +673,7 @@ msgid ""
 "disable access within |morpheus| completely by clicking on \"ACTIONS\" "
 "and then \"Edit\". If we unmark the \"ACTIVE\" checkbox and click \"SAVE "
 "CHANGES\", you will see that specific data store has been grayed out."
-msgstr ""
+msgstr "|morpheus| gibt dem Benutzer bei Datenspeichern eine ähnliche Steuerung, wie wir sie zuvor bei unseren Ressourcenpools gesehen haben. Genau wie bei Ressourcenpools können wir den Zugriff innerhalb von |morpheus| vollständig deaktivieren, indem wir auf „ACTIONS“ und dann auf „Edit“ klicken. Wenn wir das Kontrollkästchen „ACTIVE“ deaktivieren und auf „SAVE CHANGES“ klicken, sehen Sie, dass dieser spezifische Datenspeicher ausgegraut wurde."
 
 #: ../../getting_started/guides/azure_guide.rst:210
 msgid ".. image:: /images/azureguideimages/6dataStore.png"
@@ -684,11 +684,11 @@ msgid ""
 "Just like with resource pools, we are also able to scope data stores to "
 "specific Groups. This ensures that the members of each Group are only "
 "able to consume the data stores they should have access to."
-msgstr ""
+msgstr "Genau wie bei Ressourcenpools können wir Datenspeicher auch auf bestimmte Gruppen beschränken. Dadurch wird sichergestellt, dass die Mitglieder jeder Gruppe nur die Datenspeicher nutzen können, auf die sie Zugriff haben sollten."
 
 #: ../../getting_started/guides/azure_guide.rst:215
 msgid "Configuring Network for Provisioning"
-msgstr ""
+msgstr "Netzwerk für die Provisionierung konfigurieren"
 
 #: ../../getting_started/guides/azure_guide.rst:217
 msgid ""
@@ -699,7 +699,7 @@ msgid ""
 "and may also be paginated across a large number of pages. In such a case,"
 " it may be easier to view or configure networks from the specific Cloud "
 "detail page so that networks from other Clouds are not shown."
-msgstr ""
+msgstr "Bei der Netzwerkkonfiguration können wir globale Standardwerte festlegen, indem wir zu `Infrastructure > Network > NETWORKS tab` gehen. Hier können wir Netzwerke aus allen in |morpheus| integrierten Clouds hinzufügen oder konfigurieren. Je nach Anzahl der von |morpheus| erfassten Clouds kann diese Liste recht umfangreich sein und auch über viele Seiten paginiert werden. In einem solchen Fall kann es einfacher sein, Netzwerke von der spezifischen Cloud-Detailseite aus anzuzeigen oder zu konfigurieren, sodass Netzwerke anderer Clouds nicht angezeigt werden."
 
 #: ../../getting_started/guides/azure_guide.rst:219
 msgid ""
@@ -711,7 +711,7 @@ msgid ""
 "integration "
 "<https://docs.morpheusdata.com/en/latest/integration_guides/integration_guides.html#networking>`_"
 " section of |morpheus| Docs."
-msgstr ""
+msgstr "Bleiben Sie in `Infrastructure > Network` und beachten Sie die Registerkarte „INTEGRATIONS“. Hier können wir relevante Integrationen einrichten, z. B. IPAM-Integrationen. Im Allgemeinen müssen wir beim Hinzufügen von IPAM-Integrationen lediglich unsere neue Integration benennen, die API-URL angeben und Anmeldedaten bereitstellen. Weitere Informationen finden Sie im Abschnitt `IPAM-Integration <https://docs.morpheusdata.com/en/latest/integration_guides/integration_guides.html#networking>`_ der |morpheus|-Dokumentation."
 
 #: ../../getting_started/guides/azure_guide.rst:221
 msgid ""
@@ -726,7 +726,7 @@ msgid ""
 "pools. Edit an existing network by clicking the pencil icon on the "
 "Networks List Page (Infrastructure > Networks > Networks Tab) and fill in"
 " the \"Network Pool\" field to associate the IP Pool with the network."
-msgstr ""
+msgstr "Unter `Infrastructure > Networking` können wir auch IP-Adresspools über die Registerkarte IP Pools einrichten. Diese Pools können manuell definiert werden (als Morpheus-Typ-IP-Pool bekannt) oder aus beliebigen von Ihnen konfigurierten IPAM-Integrationen stammen. Wenn Instanzen provisioniert werden, weist Morpheus IP-Adressen aus dem während der Provisionierung gewählten Pool zu. Wenn die Instanz später aufgelöst wird, gibt Morpheus die IP-Adresse automatisch frei, damit sie bei Bedarf von einer anderen Instanz verwendet werden kann. Beim Hinzufügen oder Bearbeiten eines Netzwerks können wir das Netzwerk auf einen dieser konfigurierten IP-Adresspools beschränken. Bearbeiten Sie ein vorhandenes Netzwerk, indem Sie auf das Stiftsymbol auf der Netzwerkliste (Infrastructure > Networks > Networks Tab) klicken, und füllen Sie das Feld „Network Pool“ aus, um den IP-Pool dem Netzwerk zuzuordnen."
 
 #: ../../getting_started/guides/azure_guide.rst:223
 msgid ""
@@ -737,7 +737,7 @@ msgid ""
 "with resource pools and data stores, we have the ability to make certain "
 "networks inactive in |morpheus|, or scope them to be usable only for "
 "certain Groups or Tenants."
-msgstr ""
+msgstr "Da sich dieser Leitfaden auf die Arbeit innerhalb einer Azure Cloud konzentriert, die wir zu Beginn integriert haben, betrachten wir unsere Netzwerkkonfigurationen auch auf der Cloud-Detailseite. Navigieren Sie zu `Infrastructure > Clouds > (your Azure cloud) > NETWORKS tab`. Genau wie bei Ressourcenpools und Datenspeichern haben wir die Möglichkeit, bestimmte Netzwerke in |morpheus| inaktiv zu machen oder sie so einzuschränken, dass sie nur für bestimmte Gruppen oder Mandanten nutzbar sind."
 
 #: ../../getting_started/guides/azure_guide.rst:225
 msgid ".. image:: /images/azureguideimages/7cloudNetworks.png"
@@ -745,7 +745,7 @@ msgstr ""
 
 #: ../../getting_started/guides/azure_guide.rst:368
 msgid "Provisioning Your First Instance"
-msgstr ""
+msgstr "Ihre erste Instanz provisionieren"
 
 #: ../../getting_started/guides/azure_guide.rst:370
 msgid ""
@@ -756,7 +756,7 @@ msgid ""
 " items for this guide but you'll likely also need to prep your own custom"
 " images and Instance types to make available to your users. Much more on "
 "this can be found elsewhere in |morpheus| documentation."
-msgstr ""
+msgstr "An diesem Punkt ist die Grundlage gelegt, und wir sind bereit, unsere erste neue Provisionierung zu versuchen. Als erste Instanz provisionieren wir einen Apache-Webserver in unsere Azure Cloud. |morpheus| enthält einen sehr umfangreichen Katalog vorkonfigurierter Instanztypen. Für diesen Leitfaden verwenden wir eines dieser enthaltenen Katalogelemente, aber Sie müssen wahrscheinlich auch Ihre eigenen benutzerdefinierten Images und Instanztypen vorbereiten, um sie Ihren Benutzern zur Verfügung zu stellen. Viel mehr dazu finden Sie an anderer Stelle in der |morpheus|-Dokumentation."
 
 #: ../../getting_started/guides/azure_guide.rst:372
 msgid ""
@@ -765,7 +765,7 @@ msgid ""
 "start a new Instance we click :guilabel:`+ ADD` to open the \"CREATE "
 "INSTANCE\" wizard. We'll scroll down to and select the Apache instance "
 "type and click \"NEXT\"."
-msgstr ""
+msgstr "Navigieren Sie zu `:menuselection:`Provisioning --> Instances``. Wenn derzeit Instanzen provisioniert sind, sehen wir sie hier aufgelistet. Um eine neue Instanz zu starten, klicken wir auf :guilabel:`+ ADD`, um den Assistenten „CREATE INSTANCE“ zu öffnen. Wir scrollen nach unten, wählen den Apache-Instanztyp und klicken auf „NEXT“."
 
 #: ../../getting_started/guides/azure_guide.rst:374
 msgid ".. image:: /images/azureguideimages/8createInstance.png"
@@ -779,7 +779,7 @@ msgid ""
 "select here. This will allow us to select the Azure cloud from the "
 "\"CLOUD\" dropdown menu. Provide a unique name to this instance and then "
 "click \"NEXT\""
-msgstr ""
+msgstr "Zuerst geben wir die Gruppe an, in die provisioniert werden soll, wodurch die verfügbaren Clouds bestimmt werden. Wenn Sie diesem Leitfaden bis hierher gefolgt sind, sollten Sie zumindest eine Gruppe haben, die alle Ihre Clouds enthält und die Sie hier auswählen können. Dadurch können wir die Azure Cloud aus dem Dropdown-Menü „CLOUD“ auswählen. Geben Sie dieser Instanz einen eindeutigen Namen und klicken Sie dann auf „NEXT“"
 
 #: ../../getting_started/guides/azure_guide.rst:378
 msgid ""
@@ -788,36 +788,36 @@ msgid ""
 "creating Instances and available options is `here "
 "<https://docs.morpheusdata.com/en/latest/provisioning/instances/instances.html>`_."
 " For our purposes, we'll select the following options:"
-msgstr ""
+msgstr "Auf der Registerkarte „CONFIGURE“ werden uns eine Reihe von Optionen angezeigt. Die Optionen sind Cloud- und Layout-spezifisch; allgemeinere Informationen zum Erstellen von Instanzen und verfügbaren Optionen finden Sie `hier <https://docs.morpheusdata.com/en/latest/provisioning/instances/instances.html>`_. Für unsere Zwecke wählen wir die folgenden Optionen:"
 
 #: ../../getting_started/guides/azure_guide.rst:380
 msgid ""
 "**LAYOUT**: Includes options such as the base OS, custom layouts will "
 "also be here when available"
-msgstr ""
+msgstr "**LAYOUT**: Enthält Optionen wie das Basis-Betriebssystem; benutzerdefinierte Layouts sind hier ebenfalls verfügbar, wenn vorhanden"
 
 #: ../../getting_started/guides/azure_guide.rst:382
 msgid ""
 "**PLAN**: Select the resource plan for your instance. Some plans have "
 "minimum resource limits, |morpheus| will only show plans at or above "
 "these limits. User-defined plans can also be created in `|AdmPla|`."
-msgstr ""
+msgstr "**PLAN**: Wählen Sie den Ressourcentarif für Ihre Instanz. Einige Tarife haben Mindestressourcenlimits; |morpheus| zeigt nur Tarife auf oder über diesen Limits an. Benutzerdefinierte Tarife können auch in `|AdmPla|` erstellt werden."
 
 #: ../../getting_started/guides/azure_guide.rst:384
 msgid ""
 "**VOLUMES**: The minimum disk space is set by the plan, this value may be"
 " locked if you've selected a custom plan that defines the volume size"
-msgstr ""
+msgstr "**VOLUMES**: Der Mindestspeicherplatz wird durch den Tarif festgelegt; dieser Wert kann gesperrt sein, wenn Sie einen benutzerdefinierten Tarif ausgewählt haben, der die Datenträgergröße definiert"
 
 #: ../../getting_started/guides/azure_guide.rst:386
 msgid "**NETWORKS**: Select a network"
-msgstr ""
+msgstr "**NETWORKS**: Wählen Sie ein Netzwerk"
 
 #: ../../getting_started/guides/azure_guide.rst:388
 msgid ""
 "Under the \"User Config\" drawer, mark the box to \"CREATE YOUR USER\". "
 "Click :guilabel:`NEXT`."
-msgstr ""
+msgstr "Unter der Schublade „User Config“ aktivieren Sie das Kontrollkästchen „CREATE YOUR USER“. Klicken Sie auf :guilabel:`NEXT`."
 
 #: ../../getting_started/guides/azure_guide.rst:390
 msgid ".. image:: /images/azureguideimages/9configureInstance.png"
@@ -830,7 +830,7 @@ msgid ""
 "yet defined these credentials, you can do so by clicking on your username"
 " in the upper-right corner of the application window and selecting \"USER"
 " SETTINGS\"."
-msgstr ""
+msgstr "„CREATE YOUR USER“ legt ein Benutzerkonto in der VM mit den in Ihren |morpheus|-Benutzerkontoeinstellungen festgelegten Anmeldedaten an. Wenn Sie diese Anmeldedaten noch nicht definiert haben, können Sie dies tun, indem Sie in der oberen rechten Ecke des Anwendungsfensters auf Ihren Benutzernamen klicken und „USER SETTINGS“ auswählen."
 
 #: ../../getting_started/guides/azure_guide.rst:394
 msgid ""
@@ -838,13 +838,13 @@ msgid ""
 "\"AUTOMATION\" tab but feel free to stop and take a look at the available"
 " selections here. There is more information later in this guide on "
 "automation and even more beyond that in the rest of |morpheus| docs."
-msgstr ""
+msgstr "Vorerst klicken wir einfach auf :guilabel:`NEXT`, um durch die Registerkarte „AUTOMATION“ zu gelangen, aber Sie können gerne anhalten und die verfügbaren Auswahlen hier betrachten. Später in diesem Leitfaden gibt es weitere Informationen zur Automatisierung und darüber hinaus noch mehr in der übrigen |morpheus|-Dokumentation."
 
 #: ../../getting_started/guides/azure_guide.rst:396
 msgid ""
 "Review the settings for your first instance and click "
 ":guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Überprüfen Sie die Einstellungen für Ihre erste Instanz und klicken Sie auf :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/azure_guide.rst:398
 msgid ""
@@ -864,11 +864,11 @@ msgid ""
 "when the Instance is fully ready. Furthermore, we can click on the "
 "hyperlinked IP address in the \"VMS\" section of this page to view a "
 "default page in a web browser to confirm success."
-msgstr ""
+msgstr "Wir landen nun wieder auf der Instanzliste. Wir sehen an diesem Punkt einen neuen Eintrag in der Liste mit einem Statusindikator, dass die neue Maschine gestartet wird (Raketensymbol im Statusfeld). Wir können auf die Instanz in der Liste doppelklicken, um zur Instanzdetailseite zu gelangen. Vorerst sehen wir einen Fortschrittsbalken, der anzeigt, dass die Instanz erstellt wird und startet. Die genaue Dauer dieses Prozesses hängt von den bei der Provisionierung der Instanz getroffenen Auswahlen ab. Anfangs schätzt |morpheus|, wie lange dies dauern wird, und der Fortschrittsbalken ist möglicherweise nicht genau. Mit der Zeit lernt |morpheus|, wie lange diese Prozesse dauern, und die Genauigkeit des Fortschrittsbalkens verbessert sich. Für detailliertere Informationen zum Status verschiedener Provisionierungsprozesse können wir nach unten scrollen und die Registerkarte „HISTORY“ auswählen. Das „STATUS“-Symbol wechselt von der blauen Rakete zu einem grünen Wiedergabebutton, wenn die Instanz vollständig bereit ist. Darüber hinaus können wir auf die verlinkte IP-Adresse im Abschnitt „VMS“ dieser Seite klicken, um eine Standardseite in einem Webbrowser anzuzeigen und den Erfolg zu bestätigen."
 
 #: ../../getting_started/guides/azure_guide.rst:401
 msgid "Creating Your First Library Item"
-msgstr ""
+msgstr "Ihren ersten Bibliothekseintrag erstellen"
 
 #: ../../getting_started/guides/azure_guide.rst:403
 msgid ""
@@ -877,7 +877,7 @@ msgid ""
 " items to simplify and speed provisioning in the future. In this section,"
 " we'll build a catalog item and show how that can translate into quick "
 "Instance provisioning after configuration."
-msgstr ""
+msgstr "Im vorherigen Abschnitt haben wir unsere erste Instanz manuell provisioniert. |morpheus| ermöglicht es Ihnen jedoch, einen Katalog benutzerdefinierter provisionierbarer Elemente zu erstellen, um die Provisionierung in Zukunft zu vereinfachen und zu beschleunigen. In diesem Abschnitt erstellen wir einen Katalogeintrag und zeigen, wie das nach der Konfiguration in eine schnelle Instanzprovisionierung übersetzt werden kann."
 
 #: ../../getting_started/guides/azure_guide.rst:405
 msgid ""
@@ -890,7 +890,7 @@ msgid ""
 "section, navigate to :menuselection:`Library --> Virtual Images` and "
 "click :guilabel:`+ ADD`. A deeper dive into image prep and virtual image "
 "configuration goes beyond the scope of this guide."
-msgstr ""
+msgstr "Bevor Sie diesen Prozess starten, ist es wichtig zu entscheiden, welches virtuelle Image Sie verwenden möchten. Wenn Sie kein von |morpheus| bereitgestelltes Image verwenden, sollten Sie sicherstellen, dass es konfiguriert ist. Sie können diesen Abschnitt nicht abschließen, ohne ein verfügbares Image auszuwählen. In diesem Beispiel verwenden wir ein CentOS-Image, das zuvor in der |morpheus|-Bibliothek konfiguriert wurde. Wenn Sie vor Beginn dieses Abschnitts Ihre eigenen Images konfigurieren müssen, navigieren Sie zu :menuselection:`Library --> Virtual Images` und klicken Sie auf :guilabel:`+ ADD`. Eine ausführlichere Behandlung der Image-Vorbereitung und der Konfiguration virtueller Images geht über den Rahmen dieses Leitfadens hinaus."
 
 #: ../../getting_started/guides/azure_guide.rst:407
 msgid ""
@@ -903,45 +903,45 @@ msgid ""
 "scripts. While not strictly required, creating the Node Type, Instance "
 "Type, and then the Layout is often a good workflow for creating Library "
 "items. That is the order we will follow in this guide."
-msgstr ""
+msgstr "Provisionierbare Elemente in |morpheus| kombinieren einen oder mehrere Knotentypen, Layout(s) und einen Instanztyp. Der `Übersichtsabschnitt <https://docs.morpheusdata.com/en/latest/provisioning/library/library.html#overview>`_ der |morpheus|-Dokumentation behandelt diese Objekte und wie sie zusammenwirken ausführlicher. Unser erster Schritt hier ist, einen Knotentyp zu erstellen, der das Image selbst mit zusätzlicher Konfiguration, Vorlagen und Skripts umschließt. Obwohl nicht zwingend erforderlich, ist das Erstellen von Knotentyp, Instanztyp und dann Layout oft ein guter Workflow zum Erstellen von Bibliothekseinträgen. In dieser Reihenfolge gehen wir in diesem Leitfaden vor."
 
 #: ../../getting_started/guides/azure_guide.rst:409
 msgid "Navigate to |LibBluNod| and click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Navigieren Sie zu |LibBluNod| und klicken Sie auf :guilabel:`+ ADD`"
 
 #: ../../getting_started/guides/azure_guide.rst:411
 msgid ""
 "In this example, I am going to set the following options in the \"NEW "
 "NODE TYPE\" wizard:"
-msgstr ""
+msgstr "In diesem Beispiel lege ich die folgenden Optionen im Assistenten „NEW NODE TYPE“ fest:"
 
 #: ../../getting_started/guides/azure_guide.rst:413
 #: ../../getting_started/guides/azure_guide.rst:437
 msgid "**NAME**: *Example Azure CentOS 7*"
-msgstr ""
+msgstr "**NAME**: *Example Azure CentOS 7*"
 
 #: ../../getting_started/guides/azure_guide.rst:415
 msgid "**SHORT NAME**: eac7 (Identifies the Node Type in |morpheus| API/CLI)"
-msgstr ""
+msgstr "**SHORT NAME**: eac7 (Identifiziert den Knotentyp in der |morpheus|-API/CLI)"
 
 #: ../../getting_started/guides/azure_guide.rst:417
 msgid ""
 "**VERSION**: 7 (Ensures the correct Node Types are used when tying "
 "Layouts with multiple images to the same Instance Type)"
-msgstr ""
+msgstr "**VERSION**: 7 (Stellt sicher, dass die richtigen Knotentypen verwendet werden, wenn Layouts mit mehreren Images demselben Instanztyp zugeordnet werden)"
 
 #: ../../getting_started/guides/azure_guide.rst:419
 #: ../../getting_started/guides/azure_guide.rst:441
 msgid "**TECHNOLOGY**: Azure"
-msgstr ""
+msgstr "**TECHNOLOGY**: Azure"
 
 #: ../../getting_started/guides/azure_guide.rst:421
 msgid "**VM IMAGE**: Azure-Centos-7"
-msgstr ""
+msgstr "**VM IMAGE**: Azure-Centos-7"
 
 #: ../../getting_started/guides/azure_guide.rst:423
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`"
 
 #: ../../getting_started/guides/azure_guide.rst:425
 msgid ".. image:: /images/azureguideimages/10addNodeType.png"
@@ -953,7 +953,7 @@ msgid ""
 "will be accessible from the provisioning wizard once created. Move from "
 "the \"NODE TYPES\" tab to the \"INSTANCE TYPES\" tab and click "
 ":guilabel:`+ ADD`."
-msgstr ""
+msgstr "Nachdem der neue Knotentyp erstellt wurde, fügen wir nun einen neuen Instanztyp hinzu, der nach der Erstellung im Provisionierungsassistenten zugänglich ist. Wechseln Sie von der Registerkarte „NODE TYPES“ zur Registerkarte „INSTANCE TYPES“ und klicken Sie auf :guilabel:`+ ADD`."
 
 #: ../../getting_started/guides/azure_guide.rst:429
 msgid ""
@@ -961,7 +961,7 @@ msgid ""
 "**CODE** value. Click :guilabel:`SAVE CHANGES`. You could also provide a "
 "description, icon, and category for easier identification from the "
 "provisioning wizard later."
-msgstr ""
+msgstr "Im Assistenten „NEW INSTANCE TYPE“ gebe ich einfach einen **NAME**- und **CODE**-Wert ein. Klicken Sie auf :guilabel:`SAVE CHANGES`. Sie können auch eine Beschreibung, ein Icon und eine Kategorie zur einfacheren Identifizierung im Provisionierungsassistenten später angeben."
 
 #: ../../getting_started/guides/azure_guide.rst:431
 msgid ".. image:: /images/azureguideimages/11addInstanceType.png"
@@ -972,30 +972,30 @@ msgid ""
 "Now that we've created a new Instance type, access it by clicking on the "
 "name in the list of custom Instances you've created. In my case, I've "
 "given the name \"*Example Azure CentOS 7*\"."
-msgstr ""
+msgstr "Nachdem wir einen neuen Instanztyp erstellt haben, greifen Sie darauf zu, indem Sie auf den Namen in der Liste der von Ihnen erstellten benutzerdefinierten Instanzen klicken. In meinem Fall habe ich den Namen „*Example Azure CentOS 7*“ vergeben."
 
 #: ../../getting_started/guides/azure_guide.rst:435
 msgid ""
 "Once we've opened the new Instance type, by default, we should be on the "
 "\"LAYOUTS\" tab. Click :guilabel:`+ ADD LAYOUT`. I've set the following "
 "fields on my example layout:"
-msgstr ""
+msgstr "Sobald wir den neuen Instanztyp geöffnet haben, sollten wir standardmäßig auf der Registerkarte „LAYOUTS“ sein. Klicken Sie auf :guilabel:`+ ADD LAYOUT`. Ich habe die folgenden Felder in meinem Beispiel-Layout festgelegt:"
 
 #: ../../getting_started/guides/azure_guide.rst:439
 msgid ""
 "**VERSION**: 7 (This is the version number of the layout itself, which is"
 " labeled 7 in the example)"
-msgstr ""
+msgstr "**VERSION**: 7 (Dies ist die Versionsnummer des Layouts selbst, die im Beispiel mit 7 gekennzeichnet ist)"
 
 #: ../../getting_started/guides/azure_guide.rst:443
 msgid ""
 "**Nodes**: Select the Node Type we created earlier, if desired you can "
 "specify multiple nodes"
-msgstr ""
+msgstr "**Nodes**: Wählen Sie den zuvor erstellten Knotentyp; bei Bedarf können Sie mehrere Knoten angeben"
 
 #: ../../getting_started/guides/azure_guide.rst:445
 msgid "Click :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`."
 
 #: ../../getting_started/guides/azure_guide.rst:447
 msgid ".. image:: /images/azureguideimages/12addLayout.png"
@@ -1008,7 +1008,7 @@ msgid ""
 "`:menuselection:`Provisioning --> Instances`` and click :guilabel:`+ "
 "ADD`. From the search bar we can search for the new Instance type we've "
 "created."
-msgstr ""
+msgstr "An diesem Punkt haben wir die Einrichtungsarbeit abgeschlossen und können nun die nach unseren Vorgaben erstellte Instanz provisionieren. Navigieren Sie zu `:menuselection:`Provisioning --> Instances`` und klicken Sie auf :guilabel:`+ ADD`. Über die Suchleiste können wir nach dem neu erstellten Instanztyp suchen."
 
 #: ../../getting_started/guides/azure_guide.rst:451
 msgid ".. image:: /images/azureguideimages/13createCustomInstance.png"
@@ -1023,7 +1023,7 @@ msgid ""
 "and click :guilabel:`NEXT`. Once again we will also click "
 ":guilabel:`NEXT` through the \"AUTOMATION\" tab. Finally, click "
 ":guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Wie zuvor können wir eine Gruppe und Cloud auswählen, um diese neue Instanz zu provisionieren. Klicken Sie auf :guilabel:`NEXT`. Beachten Sie auf der Registerkarte „CONFIGURE“, dass Layout und Tarif bereits ausgewählt sind, da sie als Teil der Erstellung des neuen Instanztyps konfiguriert wurden. Wählen Sie ein Netzwerk und klicken Sie auf :guilabel:`NEXT`. Erneut klicken wir auch auf :guilabel:`NEXT` durch die Registerkarte „AUTOMATION“. Klicken Sie abschließend auf :guilabel:`COMPLETE`."
 
 #: ../../getting_started/guides/azure_guide.rst:455
 msgid ""
@@ -1034,7 +1034,7 @@ msgid ""
 "that on a progress bar. Over time, |morpheus| begins to learn how long "
 "these processes take and becomes more accurate in predicting spin-up "
 "time."
-msgstr ""
+msgstr "Wie zuvor bei der Provisionierung einer vorhandenen Instanz aus dem Standardkatalog beginnt |morpheus| nun, die neue VM zu starten. Wie lange dies dauert, hängt von der Konfiguration und Umgebungsfaktoren ab, aber |morpheus| prognostiziert, wie lange dieser Prozess dauern wird, und stellt das auf einem Fortschrittsbalken dar. Mit der Zeit lernt |morpheus|, wie lange diese Prozesse dauern, und wird bei der Vorhersage der Startzeit genauer."
 
 #: ../../getting_started/guides/azure_guide.rst:457
 msgid ""
@@ -1044,11 +1044,11 @@ msgid ""
 "and available, assuming the image and your custom catalog item were "
 "configured to seed user accounts and connect back to the |morpheus| "
 "appliance."
-msgstr ""
+msgstr "Sobald der Provisionierungsprozess abgeschlossen ist, öffnen Sie die Instanzdetailseite in |morpheus| und klicken Sie auf die Registerkarte „CONSOLE“. Sie werden mit Ihrem Benutzerkonto angemeldet und können dann bestätigen, dass die Maschine bereit und verfügbar ist, vorausgesetzt, das Image und Ihr benutzerdefinierter Katalogeintrag wurden so konfiguriert, dass Benutzerkonten angelegt werden und eine Verbindung zurück zur |morpheus|-Appliance hergestellt wird."
 
 #: ../../getting_started/guides/azure_guide.rst:460
 msgid "Automation and Configuration Management"
-msgstr ""
+msgstr "Automatisierung und Konfigurationsmanagement"
 
 #: ../../getting_started/guides/azure_guide.rst:462
 msgid ""
@@ -1061,7 +1061,7 @@ msgid ""
 "often combined into workflows. We can opt to run a workflow at provision "
 "time or they can be executed on existing instances through the Actions "
 "menu."
-msgstr ""
+msgstr "Die |morpheus|-Automatisierung besteht aus Aufgaben und Workflows. Eine Aufgabe könnte ein direkt hinzugefügtes Skript, aus der |morpheus|-Bibliothek abgerufene Skripte oder Blueprints, Playbooks, Recipes oder eine Reihe anderer Dinge sein. Die vollständige Liste der Aufgabentypen finden Sie im `Abschnitt Automatisierung <https://docs.morpheusdata.com/en/latest/provisioning/automation/automation.html#automation>`_ der |morpheus|-Dokumentation. Aufgaben können einzeln ausgeführt werden, werden aber oft zu Workflows kombiniert. Wir können wählen, einen Workflow zum Zeitpunkt der Provisionierung auszuführen, oder sie können über das Menü Actions auf vorhandenen Instanzen ausgeführt werden."
 
 #: ../../getting_started/guides/azure_guide.rst:464
 msgid ""
@@ -1071,7 +1071,7 @@ msgid ""
 "already have an Apache instance running. If you don't yet have that, "
 "provision one before continuing with this guide and ensure it's reachable"
 " on port 80."
-msgstr ""
+msgstr "In diesem Leitfaden richten wir eine Ansible-Integration ein, erstellen eine Aufgabe, fügen die Aufgabe einem Workflow hinzu und führen den Workflow gegen eine neue und eine vorhandene Instanz aus. Wenn Sie diesem Leitfaden bis hierher gefolgt sind, sollten Sie bereits eine Apache-Instanz laufen haben. Wenn Sie diese noch nicht haben, provisionieren Sie eine, bevor Sie mit diesem Leitfaden fortfahren, und stellen Sie sicher, dass sie auf Port 80 erreichbar ist."
 
 #: ../../getting_started/guides/azure_guide.rst:466
 msgid ""
@@ -1079,37 +1079,37 @@ msgid ""
 "sample repository referenced here or integrate with your own. Go to "
 "'|AdmInt|'. Click :guilabel:`+NEW INTEGRATION` and select Ansible from "
 "the dropdown menu. Fill in the following details:"
-msgstr ""
+msgstr "Zuerst richten wir die Ansible-Integration ein; Sie können mit dem hier referenzierten Beispiel-Repository integrieren oder mit Ihrem eigenen. Gehen Sie zu '|AdmInt|'. Klicken Sie auf :guilabel:`+NEW INTEGRATION` und wählen Sie Ansible aus dem Dropdown-Menü. Füllen Sie die folgenden Details aus:"
 
 #: ../../getting_started/guides/azure_guide.rst:468
 #: ../../getting_started/guides/azure_guide.rst:484
 msgid "**NAME**"
-msgstr ""
+msgstr "**NAME**"
 
 #: ../../getting_started/guides/azure_guide.rst:470
 msgid ""
 "**ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus/-ansible-"
 "example, or enter the URL for your own Ansible git repository"
-msgstr ""
+msgstr "**ANSIBLE GIT URL**: https://github.com/ncelebic/morpheus/-ansible-example, oder geben Sie die URL für Ihr eigenes Ansible-Git-Repository ein"
 
 #: ../../getting_started/guides/azure_guide.rst:472
 msgid "**PLAYBOOKS PATH**"
-msgstr ""
+msgstr "**PLAYBOOKS PATH**"
 
 #: ../../getting_started/guides/azure_guide.rst:474
 msgid "**ROLES PATH**"
-msgstr ""
+msgstr "**ROLES PATH**"
 
 #: ../../getting_started/guides/azure_guide.rst:476
 msgid "Mark the box to \"USE |morpheus| AGENT COMMAND BUS\""
-msgstr ""
+msgstr "Aktivieren Sie das Kontrollkästchen „USE |morpheus| AGENT COMMAND BUS“"
 
 #: ../../getting_started/guides/azure_guide.rst:478
 msgid ""
 "If your git repository requires authentication, you should create a "
 "keypair and use the following URL format: "
 "git@github.com:ncelebic/morpheus/-ansible-example.git."
-msgstr ""
+msgstr "Wenn Ihr Git-Repository Authentifizierung erfordert, sollten Sie ein Schlüsselpaar erstellen und das folgende URL-Format verwenden: git@github.com:ncelebic/morpheus/-ansible-example.git."
 
 #: ../../getting_started/guides/azure_guide.rst:480
 msgid ""
@@ -1117,7 +1117,7 @@ msgid ""
 "integration listed among any other configured integrations. If we click "
 "on this new integration to view detail, a green checkmark icon indicates "
 "the git repository has been fully synced."
-msgstr ""
+msgstr "Klicken Sie auf :guilabel:`SAVE CHANGES`. Sie sehen nun unsere neue Ansible-Integration unter allen anderen konfigurierten Integrationen aufgeführt. Wenn wir auf diese neue Integration klicken, um Details anzuzeigen, zeigt ein grünes Häkchen-Symbol an, dass das Git-Repository vollständig synchronisiert wurde."
 
 #: ../../getting_started/guides/azure_guide.rst:482
 msgid ""
@@ -1126,17 +1126,17 @@ msgid ""
 "click :guilabel:`+ ADD`. We'll first set our \"TYPE\" value to Ansible "
 "Playbook so that the correct set of fields appear in the \"NEW TASK\" "
 "wizard. Set the following options:"
-msgstr ""
+msgstr "Nachdem die Ansible-Integration eingerichtet ist, können wir eine Aufgabe erstellen, die unser Playbook enthält. Gehen Sie zu `:menuselection:`Library --> Automation``, klicken Sie auf :guilabel:`+ ADD`. Zuerst setzen wir unseren „TYPE“-Wert auf Ansible Playbook, damit die richtige Feldgruppe im Assistenten „NEW TASK“ erscheint. Legen Sie die folgenden Optionen fest:"
 
 #: ../../getting_started/guides/azure_guide.rst:486
 msgid ""
 "**ANSIBLE REPO**: Here we will choose the Ansible integration that we "
 "just created"
-msgstr ""
+msgstr "**ANSIBLE REPO**: Hier wählen wir die soeben erstellte Ansible-Integration"
 
 #: ../../getting_started/guides/azure_guide.rst:488
 msgid "**PLAYBOOK**: In our example case, enter 'playbook.yml'"
-msgstr ""
+msgstr "**PLAYBOOK**: Geben Sie in unserem Beispiel „playbook.yml“ ein"
 
 #: ../../getting_started/guides/azure_guide.rst:490
 msgid ""
@@ -1145,7 +1145,7 @@ msgid ""
 "Instances`` and clicking into our VM. From the \"ACTIONS\" menu select "
 "\"Run Task\". From the \"TASK\" dropdown menu, select the task we just "
 "added and click \"EXECUTE\"."
-msgstr ""
+msgstr "Klicken Sie auf „SAVE CHANGES“, um unsere neue Aufgabe zu speichern. Wir können die neue Aufgabe jetzt auf unserer Apache-VM testen, indem wir zu `:menuselection:`Provisioning --> Instances`` gehen und in unsere VM klicken. Wählen Sie im Menü „ACTIONS“ „Run Task“. Wählen Sie im Dropdown-Menü „TASK“ die soeben hinzugefügte Aufgabe und klicken Sie auf „EXECUTE“."
 
 #: ../../getting_started/guides/azure_guide.rst:492
 msgid ""
@@ -1153,7 +1153,7 @@ msgid ""
 "on the (i) button to the right of each entry in the list. In this case, "
 "we can also see the results of the task by clicking on the link in the "
 "\"LOCATION\" column of the \"VMS\" section."
-msgstr ""
+msgstr "Um den Fortschritt der Aufgabe zu sehen, klicken Sie auf die Registerkarte „HISTORY“ und auf die Schaltfläche (i) rechts neben jedem Eintrag in der Liste. In diesem Fall können wir die Ergebnisse der Aufgabe auch sehen, indem wir auf den Link in der Spalte „LOCATION“ des Abschnitts „VMS“ klicken."
 
 #: ../../getting_started/guides/azure_guide.rst:494
 msgid ""
@@ -1163,7 +1163,7 @@ msgid ""
 " give the new workflow a name and expand the Post Provision section. As "
 "we begin to type in the name of the task we've created, it should appear "
 "as a selection. Click \"SAVE CHANGES\"."
-msgstr ""
+msgstr "Nachdem unsere Aufgabe erstellt ist, können wir sie in einen Workflow aufnehmen. Zurück unter `:menuselection:`Library --> Automation`` klicken wir auf die Registerkarte „WORKFLOWS“. Klicken Sie auf „+ADD“ und wählen Sie Provisioning Workflow. Wir geben dem neuen Workflow einen Namen und erweitern den Abschnitt Post Provision. Wenn wir beginnen, den Namen der erstellten Aufgabe einzugeben, sollte er als Auswahl erscheinen. Klicken Sie auf „SAVE CHANGES“."
 
 #: ../../getting_started/guides/azure_guide.rst:496
 msgid ""
@@ -1174,13 +1174,13 @@ msgid ""
 "of the \"CREATE INSTANCE\" wizard, we have a workflow to select. From the"
 " \"WORKFLOW\" dropdown menu, select the workflow we just created and "
 "complete provisioning of the new instance."
-msgstr ""
+msgstr "Nachdem wir einen Workflow haben, kehren wir zu `:menuselection:`Provisioning --> Instances`` zurück und beginnen, eine weitere Apache-Instanz zu provisionieren. Detailliertere Anweisungen zur Provisionierung einer neuen Apache-Instanz finden Sie bei Bedarf früher in diesem Leitfaden. Wenn Sie nun den Abschnitt „AUTOMATION“ des Assistenten „CREATE INSTANCE“ erreichen, haben wir einen Workflow zur Auswahl. Wählen Sie im Dropdown-Menü „WORKFLOW“ den soeben erstellten Workflow und schließen Sie die Provisionierung der neuen Instanz ab."
 
 #: ../../getting_started/guides/azure_guide.rst:498
 msgid ""
 "As the instance is provisioning, we can go to the \"HISTORY\" tab and see"
 " |morpheus| executing the tasks that were contained in our workflow."
-msgstr ""
+msgstr "Während die Instanz provisioniert wird, können wir zur Registerkarte „HISTORY“ gehen und sehen, wie |morpheus| die in unserem Workflow enthaltenen Aufgaben ausführt."
 
 #: ../../getting_started/guides/azure_guide.rst:500
 msgid ""
@@ -1190,11 +1190,11 @@ msgid ""
 "further information, take a look at the `automation integrations "
 "<https://docs.morpheusdata.com/en/latest/integration_guides/integration_guides.html#automation>`_"
 " guide in |morpheus| docs."
-msgstr ""
+msgstr "Dies ist nur ein Beispiel für die Verwendung von |morpheus| zur Automatisierung der Konfiguration einer Instanz nach Ihren Anforderungen. Es gibt eine Reihe weiterer Automatisierungstypen, die ebenfalls in Ihre Workflows eingebaut werden können. Weitere Informationen finden Sie im Leitfaden `Automatisierungsintegrationen <https://docs.morpheusdata.com/en/latest/integration_guides/integration_guides.html#automation>`_ in der |morpheus|-Dokumentation."
 
 #: ../../getting_started/guides/azure_guide.rst:503
 msgid "Conclusion"
-msgstr ""
+msgstr "Fazit"
 
 #: ../../getting_started/guides/azure_guide.rst:505
 msgid ""
@@ -1203,5 +1203,5 @@ msgid ""
 "is a lot more to see and do in |morpheus|. Take a look at the rest of "
 "`Morpheus Docs <https://docs.morpheusdata.com/en/latest/index.html>`_ for"
 " more information on supported integrations and other things possible."
-msgstr ""
+msgstr "An diesem Punkt sollten Sie in |morpheus| betriebsbereit sein und die öffentliche Azure Cloud nutzen können. Dieser Leitfaden kratzt nur an der Oberfläche; in |morpheus| gibt es noch viel mehr zu sehen und zu tun. Werfen Sie einen Blick auf den Rest der `Morpheus Docs <https://docs.morpheusdata.com/en/latest/index.html>`_ für weitere Informationen zu unterstützten Integrationen und anderen Möglichkeiten."
 

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:2
 msgid "Option Lists"
-msgstr ""
+msgstr "Dans l'onglet Hosts, vous verrez tous les hôtes hyperviseurs Nutanix associés au cluster. Les métriques d'état des hôtes sont consultables et vous pouvez accéder aux pages de détail individuelles des hôtes pour obtenir encore plus d'informations."
 
 #: ../../library/options/option_lists.rst:4
 msgid ""
@@ -31,7 +31,7 @@ msgid ""
 "are pre-defined insofar as they are not free-form. They can be manually "
 "entered CSV or JSON, they can be dynamically compiled from REST calls via"
 " GET or POST requests, or populated by LDAP queries."
-msgstr ""
+msgstr "Les onglets VM et Containers affichent toutes les charges de travail VM et conteneur actuelles sur le cluster. Lors de l'intégration du cloud, si vous avez choisi d'inventorier les charges de travail existantes, les ressources découvertes apparaîtront ici. Sinon (ou s'il n'y en a simplement aucune), seules les charges de travail provisionnées par |morpheus| apparaîtront ici."
 
 #: ../../library/options/option_lists.rst:6
 msgid ".. image:: /images/provisioning/library/newOptionList.png"
@@ -39,169 +39,169 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:11
 msgid "Generic Option List Fields"
-msgstr ""
+msgstr "Provisionnement de nouvelles charges de travail"
 
 #: ../../library/options/option_lists.rst:13
 msgid ""
 "The displayed fields in the create/edit Option List modal depend on the "
 "TYPE value selected."
-msgstr ""
+msgstr "Une fois le cloud intégré, vous êtes prêt à provisionner de nouvelles charges de travail. |morpheus| est préinstallé avec un certain nombre d'éléments de bibliothèque par défaut conçus pour fonctionner avec chaque type d'intégration cloud pris en charge, y compris Nutanix. Bien que ce guide ne décrive pas le processus d'utilisation de l'assistant de provisionnement (consultez la page :menuselection:`Provisioning --> Instances` pour commencer), vous pouvez provisionner une charge de travail par défaut pour tester la fonctionnalité dès maintenant si vous le souhaitez. De plus, |morpheus| synchronisera les images virtuelles depuis les clouds Nutanix (:menuselection:`Library --> Virtual Images`) et des éléments de bibliothèque personnalisés peuvent être construits à partir de ces images. Consultez la section Bibliothèque de la documentation |morpheus| pour plus d'informations sur l'assemblage de types d'instance, d'images et de scripts d'automatisation en éléments de bibliothèque cohérents et faciles à consommer."
 
 #: ../../library/options/option_lists.rst:15
 msgid "NAME"
-msgstr ""
+msgstr "|morpheus| inclut un ensemble par défaut de plans de service. Ces plans de service peuvent être considérés comme analogues aux Flavors AWS ou OpenStack. Ils permettent de définir des niveaux prédéfinis de mémoire, de stockage et de cœurs CPU. Des grilles tarifaires peuvent également leur être appliquées afin de suivre le coût estimé par machine virtuelle ainsi que la tarification pour les clients. Par défaut, ces options ont des tailles fixes, mais peuvent être configurées pour un dimensionnement dynamique. Un plan de service peut être configuré pour autoriser une saisie utilisateur personnalisée pour la mémoire, le stockage ou le CPU. Pour configurer cela, modifiez simplement un plan de service existant lié à Nutanix ou créez-en un nouveau. Tous peuvent être facilement gérés depuis la section |AdmPla|."
 
 #: ../../library/options/option_lists.rst:16
 msgid "Name of the Option List"
-msgstr ""
+msgstr "Docker"
 
 #: ../../library/options/option_lists.rst:17
 msgid "DESCRIPTION"
-msgstr ""
+msgstr "Jusqu'à présent, ce document a décrit comment ajouter l'intégration cloud Nutanix et a permis aux utilisateurs de provisionner des instances basées sur des machines virtuelles. Une autre fonctionnalité fournie par |morpheus| est la possibilité d'utiliser des conteneurs Docker et même de prendre en charge plusieurs conteneurs par hôte Docker. Pour ce faire, un hôte Docker doit d'abord être provisionné dans Nutanix (plusieurs hôtes sont nécessaires dans les scénarios de mise à l'échelle horizontale). Comme mentionné précédemment, ceux-ci peuvent être consultés ou créés depuis l'onglet Clusters de la page de détail du cloud."
 
 #: ../../library/options/option_lists.rst:18
 msgid "Description of the Option List for reference in Option List list view"
-msgstr ""
+msgstr "Pour provisionner un hôte Docker, accédez simplement à la page de détail du cloud ou à la section :menuselection:`Infrastructure --> Clusters`. De là, cliquez sur :guilabel:`+ ADD CLUSTER` pour ajouter un hôte Docker Nutanix. |morpheus| considère un hôte Docker comme tout autre hyperviseur, à la différence qu'il est utilisé pour exécuter des images conteneurisées plutôt que virtualisées. Une fois l'hôte Docker provisionné avec succès, une coche verte apparaîtra à droite de l'hôte pour indiquer qu'il est disponible. En cas d'échec, cliquez sur l'hôte concerné ; une erreur expliquant l'échec s'affichera en rouge en haut de la page. Comme pour les VM, |morpheus| inclut des éléments conteneurisés par défaut, de sorte que le provisionnement vers des hôtes Docker peut être testé même avant d'avoir créé vos propres éléments de bibliothèque basés sur des conteneurs."
 
 #: ../../library/options/option_lists.rst:19
 msgid "TYPE"
-msgstr ""
+msgstr "Parmi les scénarios d'erreur courants figurent les problèmes de connectivité réseau. Pour qu'un hôte Docker fonctionne correctement, il doit pouvoir résoudre l'URL de l'appliance |morpheus|, configurable dans |AdmSet|. S'il ne parvient pas à résoudre et à négocier avec l'appliance, l'installation de l'agent échouera et les instructions de provisionnement ne pourront pas être transmises à l'hôte."
 
 #: ../../library/options/option_lists.rst:20
 msgid "**REST:** REST API call to populate Option List"
-msgstr ""
+msgstr "Instantanés"
 
 #: ../../library/options/option_lists.rst:21
 msgid "**Manual:** Manually entered dataset, CSV or JSON"
-msgstr ""
+msgstr "|morpheus| permet de créer un instantané d'une instance Nutanix. Depuis la page de détail de l'instance, sélectionnez simplement ``Actions > Create Snapshot`` pour lancer la création d'un nouvel instantané. Les instantanés existants peuvent être consultés dans l'onglet ``BACKUPS`` de la page de détail de l'instance. Les instantanés pris en dehors de |morpheus| seront synchronisés toutes les cinq minutes (par défaut). Pour revenir à un instantané précédent, cliquez sur l'icône de restauration située à droite de l'instantané. Les instantanés peuvent être supprimés en cliquant sur l'icône de corbeille."
 
 #: ../../library/options/option_lists.rst:22
 msgid ""
 "**Morpheus API:** Call to internal |morpheus| API to populate the Option "
 "List"
-msgstr ""
+msgstr "L'accès aux instantanés peut être limité ou supprimé entièrement pour des rôles utilisateur spécifiques si nécessaire. Pour modifier les autorisations Instantanés d'un rôle, accédez à |AdmRol| > (votre rôle sélectionné) > Snapshots. Les utilisateurs peuvent disposer d'un accès Complet, Lecture seule ou Aucun."
 
 #: ../../library/options/option_lists.rst:23
 msgid "**LDAP:** Searches and returns a list of Active Directory objects"
-msgstr ""
+msgstr "Oracle Linux Virtualization Manager"
 
 #: ../../library/options/option_lists.rst:24
 msgid ""
 "**Plugin:** Sourced by custom-coded ``DataSetProvider`` plugins. See "
 "`developer documentation <https://developer.morpheusdata.com/docs"
 "#dataset-providers>`_ for additional details"
-msgstr ""
+msgstr "Oracle Linux Virtualization Manager (OLVM) permet aux administrateurs de gérer et de prendre en charge un environnement Oracle Linux KVM multi-hôtes. |morpheus| a développé et prend en charge un plug-in qui permet d'intégrer un environnement OLVM et de le consommer comme tout autre type de cloud au sein de l'écosystème |morpheus|. Les clouds OLVM peuvent être limités à des datacenters OLVM individuels ou couvrir tous les datacenters selon la configuration au moment de l'intégration. Une fois intégré, |morpheus| peut automatiquement intégrer les ressources OLVM, y compris les hôtes existants, les VM (si souhaité), les images virtuelles, les réseaux et les datastores."
 
 #: ../../library/options/option_lists.rst:25
 msgid "VISIBILITY"
-msgstr ""
+msgstr "Fonctionnalités"
 
 #: ../../library/options/option_lists.rst:26
 msgid ""
 "If the account currently signed in is not in the master tenant, "
 "visibility will automatically change to private"
-msgstr ""
+msgstr "Provisionnement de machines virtuelles"
 
 #: ../../library/options/option_lists.rst:29
 msgid "Manual Option List Fields"
-msgstr ""
+msgstr "Sauvegardes / Instantanés"
 
 #: ../../library/options/option_lists.rst:31
 msgid "DATASET"
-msgstr ""
+msgstr "Synchronisation automatique du cloud"
 
 #: ../../library/options/option_lists.rst:32
 msgid ""
 "Appears only for manual Option Lists. Add your CSV or JSON list to this "
 "field"
-msgstr ""
+msgstr "Limitation au datacenter"
 
 #: ../../library/options/option_lists.rst:34
 #: ../../library/options/option_lists.rst:447
 msgid "Note"
-msgstr ""
+msgstr "Gestion de VM brownfield"
 
 #: ../../library/options/option_lists.rst:34
 #, python-brace-format
 msgid ""
 "JSON entries must be formatted like the following example: "
 "``[{\"name\":\"Test\",\"value\":1},{\"name\":\"Testing\",\"value\":2}]``"
-msgstr ""
+msgstr "Clonage de VM vers des images"
 
 #: ../../library/options/option_lists.rst:38
 msgid "Plugin Option List Fields"
-msgstr ""
+msgstr "Surveillance des hôtes"
 
 #: ../../library/options/option_lists.rst:40
 #: ../../library/options/option_lists.rst:125
 msgid "OPTION LIST"
-msgstr ""
+msgstr "Gestion des datastores"
 
 #: ../../library/options/option_lists.rst:41
 msgid "Select an Option List made available by a currently-integrated plugins"
-msgstr ""
+msgstr "Console distante de l'hyperviseur"
 
 #: ../../library/options/option_lists.rst:44
 msgid "REST Option List Fields"
-msgstr ""
+msgstr "Gestion du cycle de vie et redimensionnement"
 
 #: ../../library/options/option_lists.rst:46
 msgid "SOURCE URL"
-msgstr ""
+msgstr "Ajout d'un cloud OLVM"
 
 #: ../../library/options/option_lists.rst:47
 msgid ""
 "A REST URL used to fetch list data which is cached in the appliance "
 "database"
-msgstr ""
+msgstr "L'ajout de clouds OLVM à |morpheus| ne nécessite guère plus que l'URL de l'API et des identifiants nom d'utilisateur/mot de passe valides pour un utilisateur disposant d'un accès suffisant aux ressources que |morpheus| doit utiliser. Vous devez également vous assurer que |morpheus| peut joindre OLVM à son URL d'API."
 
 #: ../../library/options/option_lists.rst:48
 msgid "REAL TIME"
-msgstr ""
+msgstr "Accédez à |InfClo| et cliquez sur :guilabel:`+ ADD`. Tant que le plug-in OLVM a été ajouté à l'appliance et que ce type de cloud n'est pas désactivé dans les paramètres globaux (|AdmSet|), NUTANIX PRISM CENTRAL devrait être sélectionnable comme type de cloud à ajouter. Sélectionnez-le et cliquez sur :guilabel:`NEXT`."
 
 #: ../../library/options/option_lists.rst:49
 msgid ""
 "When checked, a REST call will be made to update the Option List at the "
 "time its presented to the User"
-msgstr ""
+msgstr "Au minimum, les éléments suivants doivent être configurés pour ajouter le nouveau cloud :"
 
 #: ../../library/options/option_lists.rst:50
 msgid "IGNORE SSL ERRORS"
-msgstr ""
+msgstr "**NAME :** Un nom convivial pour le nouveau cloud OLVM dans |morpheus|"
 
 #: ../../library/options/option_lists.rst:51
 msgid "Do not fail API query for self-signed or invalid certs on REST call target"
-msgstr ""
+msgstr "**API URL :** URL d'accès à l'API (ex. https://xx.xx.xx.xx/ovirt-engine/api)"
 
 #: ../../library/options/option_lists.rst:52
 msgid "SOURCE METHOD"
-msgstr ""
+msgstr "**USERNAME :** Nom d'utilisateur d'un compte de service OLVM ; l'utilisation d'un compte administrateur évitera les problèmes d'autorisations en aval qui pourraient empêcher certaines fonctionnalités de l'intégration de fonctionner correctement"
 
 #: ../../library/options/option_lists.rst:53
 msgid "GET or POST"
-msgstr ""
+msgstr "**PASSWORD :** Le mot de passe du compte de service"
 
 #: ../../library/options/option_lists.rst:54
 msgid "SOURCE HEADERS"
-msgstr ""
+msgstr "**DATACENTER :** Le cloud peut être limité à un datacenter spécifique ou à tous les datacenters"
 
 #: ../../library/options/option_lists.rst:55
 msgid "Custom HTTP Headers to include in the source request"
-msgstr ""
+msgstr "Vous saurez que l'URL de l'API et les identifiants ont été saisis correctement lorsque la liste déroulante DATACENTER se remplira. Cliquez sur :guilabel:`NEXT` et sélectionnez un groupe pour le cloud ou créez un nouveau groupe. Cliquez sur :guilabel:`NEXT` pour accéder à l'écran de révision, puis sur :guilabel:`COMPLETE`."
 
 #: ../../library/options/option_lists.rst:56
 msgid "CREDENTIALS"
-msgstr ""
+msgstr "Après avoir terminé l'assistant, |morpheus| commencera immédiatement à ajouter le nouveau cloud et à effectuer la première synchronisation. En peu de temps, les charges de travail existantes seront découvertes et intégrées dans l'interface |morpheus| (si vous avez choisi de découvrir les charges de travail existantes). Le cloud est maintenant prêt à être utilisé comme cible de provisionnement ou pour des opérations de jour 2."
 
 #: ../../library/options/option_lists.rst:57
 msgid ""
 "Use a stored credential set or manually enter credentials to access data "
 "requiring authentication. Currently, only basic auth is supported"
-msgstr ""
+msgstr "Surveillance du cloud OLVM"
 
 #: ../../library/options/option_lists.rst:58
 msgid "INITIAL DATASET"
-msgstr ""
+msgstr "Après l'intégration du cloud, cliquez sur la page de détail du cloud pour voir des informations de haut niveau sur l'environnement OLVM, notamment les coûts calculés, le nombre et l'état des hôtes, l'utilisation des ressources et le nombre de charges de travail en cours d'exécution."
 
 #: ../../library/options/option_lists.rst:59
 msgid ""
@@ -214,7 +214,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:127
 #: ../../library/options/option_lists.rst:444
 msgid "TRANSLATION SCRIPT"
-msgstr ""
+msgstr "Des onglets supplémentaires sur la page de détail permettent aux administrateurs de consulter une liste d'hôtes (et d'accéder à une page de détail d'hôte, si souhaité), de consulter une liste de VM en cours d'exécution (et d'accéder à une page de détail de VM, si souhaité), de consulter et gérer les réseaux et datastores, de consulter ou d'ajouter des clusters Docker et de consulter les conteneurs exécutés sur des hôtes Docker."
 
 #: ../../library/options/option_lists.rst:61
 #: ../../library/options/option_lists.rst:128
@@ -224,13 +224,13 @@ msgid ""
 "containing objects with properties 'name' and 'value'. The input data is "
 "provided as 'data' and the result should be put on the global variable "
 "'results'."
-msgstr ""
+msgstr "Provisionnement vers le cloud OLVM"
 
 #: ../../library/options/option_lists.rst:63
 #: ../../library/options/option_lists.rst:74
 #: ../../library/options/option_lists.rst:130
 msgid "**Example:**"
-msgstr ""
+msgstr "Il existe plusieurs façons de consommer le nouveau cloud OLVM comme cible de provisionnement. L'ajout d'un cloud OLVM à |morpheus| ajoute le type d'instance OLVM à l'assistant de provisionnement. Depuis la page de liste des instances (:menuselection:`Provisioning --> Instances`), cliquez sur :guilabel:`+ ADD` et sélectionnez « OLVM »."
 
 #: ../../library/options/option_lists.rst:65
 msgid ""
@@ -250,7 +250,7 @@ msgid ""
 "body for a POST request, and return an array containing properties 'name'"
 " and 'value' for a GET request. The input data is provided as 'data' and "
 "the result should be put on the global variable 'results'"
-msgstr ""
+msgstr "|morpheus| synchronise toutes les images virtuelles disponibles depuis OLVM et les présente avec les sélections Datacenter et Cluster. Sélectionnez la taille de ressource et le modèle d'image appropriés pour provisionner une nouvelle VM dans OLVM."
 
 #: ../../library/options/option_lists.rst:76
 #, python-brace-format
@@ -271,7 +271,7 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:86
 msgid "The request would be made to: ``https://<someURL>?name1=value1``."
-msgstr ""
+msgstr "En plus d'utiliser le type d'instance OLVM intégré, l'ajout du cloud OLVM permet aux administrateurs d'ajouter des dispositions de type OLVM à des types d'instance nouveaux ou existants. Ajoutez de nouvelles dispositions dans la bibliothèque |morpheus| (|LibBluLay|). Lors de l'ajout d'une nouvelle disposition, sélectionnez « OLVM » dans la liste déroulante Technology pour rendre cette disposition disponible lorsqu'un cloud OLVM a été sélectionné comme cible de provisionnement. Consultez la section Bibliothèque de la documentation de l'interface |morpheus| pour plus de détails sur la construction d'éléments de bibliothèque."
 
 #: ../../library/options/option_lists.rst:88
 msgid ""
@@ -290,7 +290,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:94
 #: ../../library/options/option_lists.rst:116
 msgid "The following JSON body would be posted to the target URL:"
-msgstr ""
+msgstr "Avancé"
 
 #: ../../library/options/option_lists.rst:96
 #, python-brace-format
@@ -306,20 +306,20 @@ msgid ""
 "variable.  We can access another Input by calling its **Field Name**, "
 "which can be configured when editing the Input in |LibOptInp|.  This "
 "allows using data from other Inputs to be used in this Input's request."
-msgstr ""
+msgstr "Il existe quelques fonctionnalités avancées pour le provisionnement sur OpenStack. La plupart d'entre elles apparaissent dans l'assistant de provisionnement. Cela inclut OS Volume Type (Local ou Volume), qui détermine si le disque OS principal est copié et exécuté depuis l'hyperviseur ou monté à distance comme volume via Glacier. Certaines configurations OpenStack n'équipent les hyperviseurs que de disques locaux minimaux, de sorte que le type volume est nécessaire."
 
 #: ../../library/options/option_lists.rst:104
 msgid ""
 "In the example below the Input Field Name we'll access is "
 "``myinputfieldname``, which we can get either the name (visible value for"
 " lists) or value from the item:"
-msgstr ""
+msgstr "Une autre option lors du provisionnement est « Assign Floating IP ». Cette option fait exactement ce qu'elle indique et est similaire à la fonctionnalité du tableau de bord d'instance OpenStack. Notez qu'elle tentera d'acquérir une IP flottante depuis le projet et, en cas de capacité insuffisante, tentera d'augmenter la capacité du projet si les identifiants cloud fournis disposent de privilèges administratifs suffisants."
 
 #: ../../library/options/option_lists.rst:106
 msgid ""
 "Name variable:  ``data.myinputfieldname`` Value variable:  "
 "``data.myinputfieldname_value``"
-msgstr ""
+msgstr "Docker"
 
 #: ../../library/options/option_lists.rst:109
 #, python-brace-format
@@ -337,11 +337,11 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:124
 msgid "Morpheus API Option List Fields"
-msgstr ""
+msgstr "Jusqu'à présent, ce document a décrit comment ajouter l'intégration cloud OpenStack et a expliqué comment provisionner des instances basées sur des machines virtuelles via le catalogue `Add Instance` dans `Provisioning`. Une autre fonctionnalité fournie par |morpheus| est la possibilité de travailler avec des conteneurs Docker et même de prendre en charge plusieurs conteneurs par hôte Docker. Pour ce faire, un hôte Docker doit d'abord être provisionné dans OpenStack (plusieurs hôtes sont nécessaires dans les scénarios de mise à l'échelle horizontale)."
 
 #: ../../library/options/option_lists.rst:126
 msgid "A list of available object types to return"
-msgstr ""
+msgstr "Pour provisionner un hôte Docker, accédez à Infrastructure > Clusters et cliquez sur :guilabel:`+ ADD CLUSTER`. Terminez l'assistant de provisionnement, y compris la sélection du groupe et du cloud appropriés. Vous pouvez également accéder à l'onglet Clusters d'un cloud spécifique (Infrastructure > Clouds > page de détail du cloud > onglet Clusters) et lancer le processus de provisionnement d'un hôte Docker vers ce cloud depuis cet emplacement. Une fois terminé, cet hôte apparaîtra dans les sections Hosts (Infrastructure > Hosts OU Infrastructure > Clouds > page de détail du cloud > onglet Hosts). |morpheus| considère un hôte Docker comme tout autre hyperviseur, à la différence qu'il est utilisé pour exécuter des images conteneurisées plutôt que virtualisées."
 
 #: ../../library/options/option_lists.rst:132
 msgid ""
@@ -354,12 +354,12 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:140
 msgid "Translation script inputs:"
-msgstr ""
+msgstr "La disposition Docker sélectionnée peut exposer un volume de données configurable. Un second disque dédié n'est pas requis pour chaque hôte Docker OpenStack ; configurez les volumes requis par la disposition sélectionnée et votre conception de stockage."
 
 #: ../../library/options/option_lists.rst:142
 #: ../../library/options/option_lists.rst:374
 msgid "**Clouds**"
-msgstr ""
+msgstr "Une fois l'hôte Docker provisionné avec succès, une coche verte apparaîtra à droite de l'hôte pour indiquer qu'il est disponible. En cas d'échec, cliquez sur l'hôte concerné ; une erreur expliquant l'échec s'affichera en rouge en haut de la page."
 
 #: ../../library/options/option_lists.rst:144
 #: ../../library/options/option_lists.rst:153
@@ -457,7 +457,7 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:158
 msgid "**Environments**"
-msgstr ""
+msgstr "Parmi les scénarios d'erreur courants figurent les problèmes de connectivité réseau. Pour qu'un hôte Docker fonctionne correctement, il doit pouvoir résoudre l'URL de l'appliance |morpheus|, configurable dans |AdmSet|. S'il ne parvient pas à résoudre et à négocier avec l'appliance, l'installation de l'agent |morpheus| échouera et les instructions de provisionnement ne pourront pas être transmises à l'hôte."
 
 #: ../../library/options/option_lists.rst:161
 #: ../../library/options/option_lists.rst:168
@@ -469,7 +469,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:165
 #: ../../library/options/option_lists.rst:402
 msgid "**Groups**"
-msgstr ""
+msgstr "Premiers pas"
 
 #: ../../library/options/option_lists.rst:171
 msgid "``uuid: <String>``"
@@ -482,7 +482,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:175
 #: ../../library/options/option_lists.rst:391
 msgid "**Instances**"
-msgstr ""
+msgstr "Les clouds OpenStack sont très faciles à intégrer avec |morpheus|. Commencez par accéder à la section ``Infrastructure > Clouds`` et cliquez sur :guilabel:`+ ADD`. Sélectionnez OpenStack pour démarrer le processus d'intégration ; la plupart des variantes OpenStack de marque fonctionneront également avec cette sélection de cloud."
 
 #: ../../library/options/option_lists.rst:180
 #: ../../library/options/option_lists.rst:286
@@ -530,7 +530,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:202
 #: ../../library/options/option_lists.rst:423
 msgid "**Instances Wiki**"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../library/options/option_lists.rst:207
 #: ../../library/options/option_lists.rst:318
@@ -569,7 +569,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:216
 #: ../../library/options/option_lists.rst:341
 msgid "**Networks**"
-msgstr ""
+msgstr "La prise en charge de l'API Identity OpenStack v2 a été supprimée dans v5.3.3"
 
 #: ../../library/options/option_lists.rst:224
 #: ../../library/options/option_lists.rst:277
@@ -609,7 +609,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:246
 #: ../../library/options/option_lists.rst:355
 msgid "**Plans**"
-msgstr ""
+msgstr "**Plans**"
 
 #: ../../library/options/option_lists.rst:252
 msgid "``storage: <Integer, bytes>``"
@@ -626,7 +626,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:256
 #: ../../library/options/option_lists.rst:362
 msgid "**Resource Pools**"
-msgstr ""
+msgstr "**Resource Pools**"
 
 #: ../../library/options/option_lists.rst:263
 msgid "``serverGroupId: <Number>``"
@@ -643,7 +643,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:269
 #: ../../library/options/option_lists.rst:369
 msgid "**Security Groups**"
-msgstr ""
+msgstr "**Security Groups**"
 
 #: ../../library/options/option_lists.rst:275
 msgid "``externalType: <String>``"
@@ -660,7 +660,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:281
 #: ../../library/options/option_lists.rst:410
 msgid "**Servers**"
-msgstr ""
+msgstr "**Servers**"
 
 #: ../../library/options/option_lists.rst:289
 msgid "``osType: <String>``"
@@ -721,7 +721,7 @@ msgstr ""
 #: ../../library/options/option_lists.rst:313
 #: ../../library/options/option_lists.rst:428
 msgid "**Servers Wiki**"
-msgstr ""
+msgstr "**Servers Wiki**"
 
 #: ../../library/options/option_lists.rst:320
 msgid "``serverId: <String>``"
@@ -736,15 +736,15 @@ msgid ""
 "generate query parameters or a JSON body. The results object will instead"
 " be used to contain a map of accepted key:value pairs that can be used to"
 " filter, sort and order the list of objects that get returned."
-msgstr ""
+msgstr "Le script de requête est utilisé différemment pour les types de listes d'options API Morpheus. Un type de liste d'options API Morpheus utilisera une API interne pour retourner une liste d'objets au lieu d'effectuer des requêtes HTTP(S) vers l'API Morpheus. En raison de cette approche, l'objet results ne sera pas utilisé pour générer des paramètres de requête ou un corps JSON. L'objet results sera plutôt utilisé pour contenir une carte de paires key:value acceptées pouvant être utilisées pour filtrer, trier et ordonner la liste d'objets retournée."
 
 #: ../../library/options/option_lists.rst:330
 msgid "Below is a list of accepted ``key:value`` pairs for each object type:"
-msgstr ""
+msgstr "Ci-dessous une liste de paires ``key:value`` acceptées pour chaque type d'objet :"
 
 #: ../../library/options/option_lists.rst:332
 msgid "**Generic options available for all object types**"
-msgstr ""
+msgstr "**Options génériques disponibles pour tous les types d'objets**"
 
 #: ../../library/options/option_lists.rst:334
 msgid "``max: <integer>`` // Maximum number of results to return. Default: 25"
@@ -805,13 +805,13 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:350
 msgid "**Instance Networks**"
-msgstr ""
+msgstr "**Instance Networks**"
 
 #: ../../library/options/option_lists.rst:352
 msgid ""
 "Contains same options for Networks Morpheus API but pre-filtered for "
 "Networks applicable to a selected Instance Type."
-msgstr ""
+msgstr "Contient les mêmes options que l'API Morpheus Networks mais pré-filtrées pour les réseaux applicables à un type d'instance sélectionné."
 
 #: ../../library/options/option_lists.rst:353
 #: ../../library/options/option_lists.rst:389
@@ -820,14 +820,14 @@ msgstr ""
 msgid ""
 "``phrase : <string>`` // Fuzzy matches phrase on wiki name, urlName and "
 "content"
-msgstr ""
+msgstr "``phrase : <string>`` // Correspondance floue de la phrase sur le nom wiki, urlName et le contenu"
 
 #: ../../library/options/option_lists.rst:357
 msgid ""
 "``zoneId`` // Required. In order for plans to be returned and properly "
 "filtered, you must provide a ``zoneId`` and ``siteId`` as well as either "
 "a ``layoutId`` or ``provisionTypeId``"
-msgstr ""
+msgstr "``zoneId`` // Requis. Pour que les plans soient retournés et correctement filtrés, vous devez fournir un ``zoneId`` et un ``siteId`` ainsi qu'un ``layoutId`` ou un ``provisionTypeId``"
 
 #: ../../library/options/option_lists.rst:359
 msgid "``layoutId``"
@@ -847,7 +847,7 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:371
 msgid "``zoneId`` // required"
-msgstr ""
+msgstr "``zoneId`` // requis"
 
 #: ../../library/options/option_lists.rst:372
 msgid "``poolId``"
@@ -855,44 +855,44 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:376
 msgid "``zoneId : <integer>``  // Database ID of cloud to return"
-msgstr ""
+msgstr "``zoneId : <integer>`` // ID de base de données du cloud à retourner"
 
 #: ../../library/options/option_lists.rst:377
 msgid ""
 "``tenantId : <integer>`` // Database ID of tenant where clouds are added."
 " Filters to only clouds added within the specified tenant. Only available"
 " in Master Tenant"
-msgstr ""
+msgstr "``tenantId : <integer>`` // ID de base de données du locataire où les clouds sont ajoutés. Filtre uniquement les clouds ajoutés dans le locataire spécifié. Disponible uniquement dans le locataire principal"
 
 #: ../../library/options/option_lists.rst:378
 msgid ""
 "``zoneTypeId : <integer>`` // Database ID of cloud type. Filters to only "
 "clouds with the specified cloud type"
-msgstr ""
+msgstr "``zoneTypeId : <integer>`` // ID de base de données du type de cloud. Filtre uniquement les clouds du type de cloud spécifié"
 
 #: ../../library/options/option_lists.rst:379
 msgid ""
 "``siteId : <integer>`` // Database ID of group. Filters to only clouds "
 "within the specified group"
-msgstr ""
+msgstr "``siteId : <integer>`` // ID de base de données du groupe. Filtre uniquement les clouds du groupe spécifié"
 
 #: ../../library/options/option_lists.rst:380
 msgid ""
 "``tagName : <string>`` // Filters to clouds with servers with tags "
 "containing the tagName"
-msgstr ""
+msgstr "``tagName : <string>`` // Filtre les clouds avec des serveurs ayant des tags contenant le tagName"
 
 #: ../../library/options/option_lists.rst:381
 msgid ""
 "``tagValue : <mixed>`` // Requires tagName. Filters to clouds with "
 "servers that have tags containing the tagName and specified tagValue"
-msgstr ""
+msgstr "IDENTITY API URL"
 
 #: ../../library/options/option_lists.rst:382
 msgid ""
 "``phrase : <string>`` // Fuzzy matches phrase on cloud name and "
 "description"
-msgstr ""
+msgstr "Point de terminaison Identity v3."
 
 #: ../../library/options/option_lists.rst:384
 #, python-brace-format
@@ -901,50 +901,50 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:386
 msgid "**Instance Types Clouds**"
-msgstr ""
+msgstr "DOMAIN ID"
 
 #: ../../library/options/option_lists.rst:388
 msgid ""
 "Contains same options for Clouds Morpheus API type but pre-filtered for "
 "Clouds applicable to a selected Instance Type."
-msgstr ""
+msgstr "Pour les domaines `Default`, Default peut être utilisé. Pour les autres domaines, l'ID de domaine doit être saisi, et non le nom de domaine."
 
 #: ../../library/options/option_lists.rst:393
 msgid ""
 "``appsId : <integer>`` // Database ID of app to filter by. Returns "
 "instances linked to the app"
-msgstr ""
+msgstr "PROJECT"
 
 #: ../../library/options/option_lists.rst:394
 msgid ""
 "``tenantId : <integer>`` // Database ID of tenant where instances are "
 "located. Filters to only instances within the specified tenant. Only "
 "available in Master Tenant"
-msgstr ""
+msgstr "Saisissez le projet cible ou laissez ce champ vide pour intégrer tous les projets"
 
 #: ../../library/options/option_lists.rst:395
 msgid ""
 "``serverId : <integer>`` // Database ID of server. Filters to the "
 "instance that contains the specified server"
-msgstr ""
+msgstr "``serverId : <integer>`` // ID de base de données du serveur. Filtre l'instance contenant le serveur spécifié"
 
 #: ../../library/options/option_lists.rst:396
 msgid ""
 "``tagName : <string>`` // Filters to instances with tags containing the "
 "tagName"
-msgstr ""
+msgstr "Nom d'utilisateur du service"
 
 #: ../../library/options/option_lists.rst:397
 msgid ""
 "``tagValue : <mixed>`` // Requires tagName. Filters to instances with "
 "tags containing the tagName and specified tagValue"
-msgstr ""
+msgstr "``tagValue : <mixed>`` // Requiert tagName. Filtre les instances avec des tags contenant le tagName et la tagValue spécifiée"
 
 #: ../../library/options/option_lists.rst:398
 msgid ""
 "``phrase : <string>`` // Fuzzy matches phrase on instance name and "
 "description"
-msgstr ""
+msgstr "Mot de passe de l'utilisateur de service"
 
 #: ../../library/options/option_lists.rst:400
 #, python-brace-format
@@ -956,7 +956,7 @@ msgid ""
 "``tenantId : <integer>`` // Database ID of tenant where groups are "
 "located. Filters to only groups added within the specified tenant. Only "
 "available in Master Tenant"
-msgstr ""
+msgstr "OS VERSION"
 
 #: ../../library/options/option_lists.rst:405
 msgid ""
@@ -968,64 +968,64 @@ msgstr ""
 msgid ""
 "``zoneId : <integer>``  // Database ID of cloud. Filters to only groups "
 "that contain the cloud with the specified ID"
-msgstr ""
+msgstr "Sélectionnez la version OpenStack. |morpheus| prend en charge les dernières versions d'OpenStack ; sélectionnez la version la plus récente disponible si votre version actuelle n'est pas affichée."
 
 #: ../../library/options/option_lists.rst:407
 msgid "``siteId : <integer>`` // Database ID of group to return"
-msgstr ""
+msgstr "IMAGE FORMAT"
 
 #: ../../library/options/option_lists.rst:408
 msgid "``phrase : <string>`` // Fuzzy matches phrase on group name and location."
-msgstr ""
+msgstr "Sélectionnez le type d'image QCOW2, RAW ou VMDK"
 
 #: ../../library/options/option_lists.rst:412
 msgid ""
 "``tenantId : <integer>`` // Database ID of tenant where servers are "
 "located. Filters to only servers within the specified tenant. Only "
 "available in Master Tenant"
-msgstr ""
+msgstr "LB TYPE"
 
 #: ../../library/options/option_lists.rst:413
 msgid ""
 "``serverId : <integer>`` // Database ID of server. Filters to the server "
 "specified by the ID"
-msgstr ""
+msgstr "Sélectionnez le type LB pour la synchronisation et la création de LB OpenStack"
 
 #: ../../library/options/option_lists.rst:414
 msgid ""
 "``siteZoneId : <integer>`` // Database ID of cloud. Filters to servers "
 "contained within the specified cloud"
-msgstr ""
+msgstr "Inventory Existing Instances"
 
 #: ../../library/options/option_lists.rst:415
 msgid ""
 "``serverType : <string>`` // Type of server. Accepted values: 'host', "
 "'baremetal', 'vm'"
-msgstr ""
+msgstr "Sélectionnez pour que |morpheus| découvre et synchronise les VM existantes"
 
 #: ../../library/options/option_lists.rst:416
 msgid ""
 "``siteId : <integer>`` // Database ID of group. Filters to only servers "
 "contained within clouds that are added in the specified group"
-msgstr ""
+msgstr "Enable Hypervisor Console"
 
 #: ../../library/options/option_lists.rst:417
 msgid ""
 "``tagName : <string>`` // Filters to servers with tags containing the "
 "tagName"
-msgstr ""
+msgstr "La prise en charge de la console hyperviseur pour OpenStack ne prend actuellement en charge que novnc. Assurez-vous que le proxy novnc est correctement configuré dans votre environnement OpenStack. Lorsqu'il est désactivé, |morpheus| utilisera ssh et rdp pour la connexion à la console (identifiants VM/hôte requis)"
 
 #: ../../library/options/option_lists.rst:418
 msgid ""
 "``tagValue : <mixed>`` // Requires tagName. Filters to servers with tags "
 "containing the tagName and specified tagValue"
-msgstr ""
+msgstr "``tagValue : <mixed>`` // Requiert tagName. Filtre les servers avec des tags contenant le tagName et la tagValue spécifiée"
 
 #: ../../library/options/option_lists.rst:419
 msgid ""
 "``phrase : <string>`` // Fuzzy matches phrase on server name and "
 "description."
-msgstr ""
+msgstr "``phrase : <string>`` // Correspondance floue de la phrase sur le nom et la description du serveur."
 
 #: ../../library/options/option_lists.rst:421
 #, python-brace-format
@@ -1034,51 +1034,51 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:425
 msgid "Contains same options for Instances Morpheus API type."
-msgstr ""
+msgstr "Contient les mêmes options que le type API Morpheus Instances."
 
 #: ../../library/options/option_lists.rst:430
 msgid "Contains same options for Servers Morpheus API type."
-msgstr ""
+msgstr "Contient les mêmes options que le type API Morpheus Servers."
 
 #: ../../library/options/option_lists.rst:434
 msgid "LDAP Option List Fields"
-msgstr ""
+msgstr "Champs de liste d'options LDAP"
 
 #: ../../library/options/option_lists.rst:436
 msgid "LDAP URL"
-msgstr ""
+msgstr "LDAP URL"
 
 #: ../../library/options/option_lists.rst:437
 msgid "The URL pointing to the LDAP server"
-msgstr ""
+msgstr "L'URL pointant vers le serveur LDAP"
 
 #: ../../library/options/option_lists.rst:438
 msgid "USERNAME"
-msgstr ""
+msgstr "USERNAME"
 
 #: ../../library/options/option_lists.rst:439
 msgid ""
 "The fully qualified username (with @ suffix syntax) for the binding "
 "account"
-msgstr ""
+msgstr "Le nom d'utilisateur entièrement qualifié (avec syntaxe de suffixe @) pour le compte de liaison"
 
 #: ../../library/options/option_lists.rst:440
 msgid "PASSWORD"
-msgstr ""
+msgstr "PASSWORD"
 
 #: ../../library/options/option_lists.rst:441
 msgid "The password for the above account"
-msgstr ""
+msgstr "Le mot de passe du compte ci-dessus"
 
 #: ../../library/options/option_lists.rst:442
 msgid "LDAP Query"
-msgstr ""
+msgstr "Requête LDAP"
 
 #: ../../library/options/option_lists.rst:443
 msgid ""
 "The LDAP query to pull the appropriate objects. See the next section for "
 "an example use case"
-msgstr ""
+msgstr "La requête LDAP pour extraire les objets appropriés. Consultez la section suivante pour un exemple de cas d'utilisation"
 
 #: ../../library/options/option_lists.rst:447
 msgid ""
@@ -1086,21 +1086,21 @@ msgid ""
 "Inputs. The Input is then set on an Instance Type, Layout, Cluster "
 "Layout, and/or Operational Workflow for input during provisioning or "
 "execution."
-msgstr ""
+msgstr "Les listes d'options sont définies sur une ou plusieurs entrées ``Select List`` ou ``Typeahead``. L'entrée est ensuite définie sur un type d'instance, une disposition, une disposition de cluster et/ou un workflow opérationnel pour la saisie lors du provisionnement ou de l'exécution."
 
 #: ../../library/options/option_lists.rst:451
 msgid "LDAP Query Variables"
-msgstr ""
+msgstr "Variables de requête LDAP"
 
 #: ../../library/options/option_lists.rst:453
 msgid ""
 "The current user and dependant parameters are loaded into the query using"
 " the <%=phrase%> syntax."
-msgstr ""
+msgstr "L'utilisateur actuel et les paramètres dépendants sont chargés dans la requête à l'aide de la syntaxe <%=phrase%>."
 
 #: ../../library/options/option_lists.rst:455
 msgid "LDAP Query Variables (Example <%=user.email%>)"
-msgstr ""
+msgstr "Variables de requête LDAP (exemple <%=user.email%>)"
 
 #: ../../library/options/option_lists.rst:455
 #, python-brace-format
@@ -1124,14 +1124,14 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:475
 msgid "Creating an Option List Based on an LDAP Query"
-msgstr ""
+msgstr "Création d'une liste d'options basée sur une requête LDAP"
 
 #: ../../library/options/option_lists.rst:477
 msgid ""
 "In Morpheus version 4.2.1 and higher, Option Lists can be populated from "
 "LDAP queries. This gives users the ability to search Active Directory, "
 "capture objects, and present them as custom options where needed."
-msgstr ""
+msgstr "Dans Morpheus version 4.2.1 et supérieure, les listes d'options peuvent être alimentées à partir de requêtes LDAP. Cela permet aux utilisateurs de rechercher dans Active Directory, de capturer des objets et de les présenter comme options personnalisées si nécessaire."
 
 #: ../../library/options/option_lists.rst:479
 msgid ""
@@ -1139,34 +1139,34 @@ msgid ""
 "type Inputs as the list of returned selections can be very large. This "
 "also allows you to select multiple options from the list, presuming "
 "you've allowed for that when creating the Input."
-msgstr ""
+msgstr "Il est recommandé de connecter les listes d'options de type LDAP à des entrées de type Typeahead car la liste des sélections retournées peut être très volumineuse. Cela permet également de sélectionner plusieurs options dans la liste, en supposant que vous l'ayez autorisé lors de la création de l'entrée."
 
 #: ../../library/options/option_lists.rst:481
 msgid ""
 "Populating LDAP-type Option Lists requires knowledge of LDAP query "
 "syntax. This guide provides one example and there are many publicly-"
 "available resources for help writing additional queries."
-msgstr ""
+msgstr "Le peuplement des listes d'options de type LDAP nécessite une connaissance de la syntaxe des requêtes LDAP. Ce guide fournit un exemple et de nombreuses ressources publiquement disponibles existent pour aider à rédiger des requêtes supplémentaires."
 
 #: ../../library/options/option_lists.rst:483
 msgid "Create a new Option List (|LibOptOpt| > ADD)"
-msgstr ""
+msgstr "Créez une nouvelle liste d'options (|LibOptOpt| > ADD)"
 
 #: ../../library/options/option_lists.rst:485
 msgid "Enter a name for the new LDAP Option List"
-msgstr ""
+msgstr "Saisissez un nom pour la nouvelle liste d'options LDAP"
 
 #: ../../library/options/option_lists.rst:487
 msgid ""
 "Change the Type value to LDAP and the relevant fields will appear as "
 "shown in the screenshot:"
-msgstr ""
+msgstr "Changez la valeur Type en LDAP et les champs pertinents apparaîtront comme indiqué dans la capture d'écran :"
 
 #: ../../library/options/option_lists.rst:489
 msgid ""
 "Enter the LDAP URL in the following format (an example is also shown as a"
 " placeholder in the UI form field):"
-msgstr ""
+msgstr "Saisissez l'URL LDAP au format suivant (un exemple est également affiché comme espace réservé dans le champ du formulaire UI) :"
 
 #: ../../library/options/option_lists.rst:491
 msgid "ldap[s]://<hostname>:<port>/<base_dn>"
@@ -1176,18 +1176,18 @@ msgstr ""
 msgid ""
 "Enter the fully qualified username with @ suffix syntax, such as: "
 "`user@ad.mycompany.com`"
-msgstr ""
+msgstr "Saisissez le nom d'utilisateur entièrement qualifié avec la syntaxe de suffixe @, par exemple : `user@ad.mycompany.com`"
 
 #: ../../library/options/option_lists.rst:497
 msgid "Enter the account password"
-msgstr ""
+msgstr "Saisissez le mot de passe du compte"
 
 #: ../../library/options/option_lists.rst:499
 msgid ""
 "Enter your LDAP query. You can even inject variables into your query "
 "structure to query based on the value the user has entered into the "
 "typeahead field as shown in the example below:"
-msgstr ""
+msgstr "Saisissez votre requête LDAP. Vous pouvez même injecter des variables dans la structure de votre requête pour interroger en fonction de la valeur que l'utilisateur a saisie dans le champ typeahead comme indiqué dans l'exemple ci-dessous :"
 
 #: ../../library/options/option_lists.rst:501
 msgid "(&(objectClass=user)(cn=<%=phrase%>*))"
@@ -1199,7 +1199,7 @@ msgid ""
 "object into a list of name:value pairs you can work with in Morpheus. The"
 " example script below shows the user DisplayName and sets the value to "
 "the SAMAccountName:"
-msgstr ""
+msgstr "Enfin, saisissez un script de traduction qui convertira l'objet LDAP retourné en une liste de paires name:value avec lesquelles vous pourrez travailler dans Morpheus. Le script d'exemple ci-dessous affiche le DisplayName de l'utilisateur et définit la valeur sur le SAMAccountName :"
 
 #: ../../library/options/option_lists.rst:507
 msgid ""
@@ -1225,7 +1225,7 @@ msgstr ""
 
 #: ../../library/options/option_lists.rst:528
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../library/options/option_lists.rst:530
 msgid ".. image:: /images/provisioning/library/ldap_option_list.png"

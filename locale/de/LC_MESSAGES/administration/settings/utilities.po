@@ -24,20 +24,20 @@ msgstr ""
 msgid ""
 "System administrators have access to a utilities panel with the following"
 " options:"
-msgstr ""
+msgstr "Systemadministratoren haben Zugriff auf ein Utility-Panel mit folgenden Optionen:"
 
 #: ../../administration/settings/utilities.rst:3
 msgid "**Reindex all searchable data:** Execute"
-msgstr ""
+msgstr "**Reindex all searchable data:** Execute"
 
 #: ../../administration/settings/utilities.rst:4
 msgid "**Toggle Maintenance Mode:** Enable"
-msgstr ""
+msgstr "**Toggle Maintenance Mode:** Enable"
 
 #: ../../administration/settings/utilities.rst:6
 #: ../../administration/settings/utilities.rst:8
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../administration/settings/utilities.rst:6
 msgid ""
@@ -46,7 +46,7 @@ msgid ""
 "queues so an auto-scaling group can scale down. It also drains active "
 "sessions across services. Restarting |morpheus| UI disables maintenance "
 "mode."
-msgstr ""
+msgstr "Der Wartungsmodus versetzt |morpheus| sauber in einen Zustand, in dem Wartung an der Appliance durchgeführt werden kann. Dabei werden aktive Sitzungen und Warteschlangen geleert, damit eine Auto-Scaling-Gruppe herunterskalieren kann. Außerdem werden aktive Sitzungen über Dienste hinweg geleert. Ein Neustart der |morpheus|-UI deaktiviert den Wartungsmodus."
 
 #: ../../administration/settings/utilities.rst:8
 msgid ""
@@ -59,7 +59,7 @@ msgid ""
 "<https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_"
 " to toggle a specific node into maintenance mode to avoid redirects back "
 "to the VIP address."
-msgstr ""
+msgstr "Bei Verwendung von |morpheus| in einer Highly Available-(HA)-Umgebung ist es wichtig, direkt zu einem Knoten zu navigieren und den Wartungsmodus zu aktivieren, anstatt die virtuelle IP (VIP) des Load Balancers zu verwenden. Ein lokaler Host-Eintrag zum spezifischen Knoten kann erforderlich sein, um sicherzustellen, dass der richtige Knoten in den Wartungsmodus wechselt. Tatsächlich wird empfohlen, den `analogous API endpoint <https://apidocs.morpheusdata.com/reference/setappliancesettingsmaintenancemode>`_ zu verwenden, um einen bestimmten Knoten in den Wartungsmodus zu schalten und Weiterleitungen zurück zur VIP-Adresse zu vermeiden."
 
 #: ../../administration/settings/utilities.rst:10
 msgid ""
@@ -69,5 +69,5 @@ msgid ""
 "removed/paused from the load balancer VIP or have VIP health checks "
 "implemented, if the node UI/API will become inaccessible due to "
 "maintenance."
-msgstr ""
+msgstr "Ein |morpheus|-Knoten im Wartungsmodus kann weiterhin über die Load-Balancer-VIP/Target-Group erreichbar sein und Anfragen in die Warteschlange stellen, verarbeitet jedoch im Wartungsmodus nichts aus der Warteschlange. Ein Knoten kann aus der Load-Balancer-VIP entfernt/pausiert werden oder VIP-Health-Checks können implementiert werden, wenn die Knoten-UI/API wegen Wartung unerreichbar wird."
 

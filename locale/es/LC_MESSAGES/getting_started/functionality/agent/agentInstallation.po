@@ -37,7 +37,7 @@ msgstr ""
 #: ../../getting_started/functionality/agent/agentInstallation.rst:6
 #: ../../getting_started/functionality/agent/agentInstallation.rst:8
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/functionality/agent/agentInstallation.rst:6
 msgid ""
@@ -68,7 +68,7 @@ msgid ""
 "exclusions. If a policy block is suspected, preserve the security-product"
 " event, Agent/install output, and appliance log entry and follow the "
 "**Endpoint Security Interference** guidance included below."
-msgstr ""
+msgstr "La detección y respuesta de endpoints (EDR), antivirus, control de aplicaciones o la política de firewall del host pueden bloquear el script de instalación, la instalación de paquetes, el inicio del proceso del Agente, la conectividad saliente, la comunicación websocket o una actualización posterior del Agente. Antes de la instalación, solicite al equipo de seguridad que permita el paquete publicado por HPE o el script proporcionado por el dispositivo y las rutas, procesos y destino del dispositivo específicos del Agente requeridos por la política. No cree exclusiones amplias de sistema de archivos, procesos o red. Si se sospecha un bloqueo de política, conserve el evento del producto de seguridad, la salida de instalación/Agente y la entrada de log del dispositivo y siga la guía **Interferencia de seguridad de endpoints** incluida a continuación."
 
 #: ../../getting_started/functionality/agent/agentInstallation.rst:11
 msgid "Basic Installation Steps"
@@ -118,7 +118,7 @@ msgstr ""
 #: ../../troubleshooting/Morpheus_Agent.rst:12
 #: ../../troubleshooting/Morpheus_Agent.rst:145
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../getting_started/functionality/agent/agentInstallation.rst:18
 #: ../../troubleshooting/Morpheus_Agent.rst:12
@@ -625,7 +625,7 @@ msgstr ""
 
 #: ../../troubleshooting/Morpheus_Agent.rst:46
 msgid "Endpoint Security Interference"
-msgstr ""
+msgstr "Interferencia de seguridad de endpoints"
 
 #: ../../troubleshooting/Morpheus_Agent.rst:48
 msgid ""
@@ -636,7 +636,7 @@ msgid ""
 "denied outbound HTTPS/WSS session affects registration and ongoing "
 "communication. An Agent upgrade can encounter the same controls again "
 "even when the previous version was permitted."
-msgstr ""
+msgstr "Los productos EDR, antivirus, control de aplicaciones y firewall del host pueden interrumpir diferentes etapas de la configuración del Agente. Una descarga o script bloqueado afecta la entrega; un administrador de paquetes o escritura de archivo denegados afectan la instalación; un proceso ``morphd`` en cuarentena afecta el inicio; y una sesión HTTPS/WSS saliente denegada afecta el registro y la comunicación continua. Una actualización del Agente puede encontrar los mismos controles nuevamente incluso cuando se permitió la versión anterior."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:50
 msgid ""
@@ -644,7 +644,7 @@ msgid ""
 " entry from ``/var/log/morpheus/morpheus-ui/current``. On the target, "
 "collect Agent logs from ``/var/log/morpheus-node`` and the security "
 "product's prevention or quarantine event."
-msgstr ""
+msgstr "Registre la etapa fallida, la marca de tiempo, la salida de instalación y la entrada relevante de ``/var/log/morpheus/morpheus-ui/current``. En el destino, recopile logs del Agente de ``/var/log/morpheus-node`` y el evento de prevención o cuarentena del producto de seguridad."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:51
 msgid ""
@@ -652,7 +652,7 @@ msgid ""
 "Appliance URL. If these checks succeed but the Agent cannot connect, have"
 " the security team inspect TLS/websocket filtering and process-specific "
 "network policy."
-msgstr ""
+msgstr "Confirme la resolución DNS y la conectividad TCP 443 con la URL del Dispositivo configurada. Si estas verificaciones tienen éxito pero el Agente no puede conectarse, solicite al equipo de seguridad que inspeccione el filtrado TLS/websocket y la política de red específica del proceso."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:52
 msgid ""
@@ -661,14 +661,14 @@ msgid ""
 "and ``/var/log/morpheus-node``. Permit only the exact package, process, "
 "path, action, or destination shown to be blocked, using the security "
 "vendor's approved allowlisting mechanism."
-msgstr ""
+msgstr "Correlacione el evento con ``morphd``, el servicio ``morpheus-node-runsvdir``, ``/opt/morpheus-node``, ``/etc/morpheus/morpheus-node.yaml`` y ``/var/log/morpheus-node``. Permita solo el paquete, proceso, ruta, acción o destino exacto que se demuestre bloqueado, utilizando el mecanismo de lista de permitidos aprobado del proveedor de seguridad."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:53
 msgid ""
 "Retry the failed installation or upgrade and verify that the Agent "
 "starts, reconnects, and reports in |morpheus|. Preserve the evidence if "
 "the targeted rule does not resolve the failure."
-msgstr ""
+msgstr "Reintente la instalación o actualización fallida y verifique que el Agente inicie, se reconecte e informe en |morpheus|. Conserve la evidencia si la regla específica no resuelve la falla."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:55
 msgid ""
@@ -679,7 +679,7 @@ msgid ""
 "practical interval, re-enable protection immediately, and verify both "
 "Agent health and security-control health. Escalate with the collected "
 "evidence rather than leaving protection disabled."
-msgstr ""
+msgstr "No prescriba una exclusión permanente para todo el directorio del Agente, todos los scripts, todos los procesos secundarios o todo el tráfico. Si la deshabilitación temporal del control de seguridad es el único diagnóstico disponible, obtenga aprobación de la política de seguridad, aísle la prueba al host afectado y al intervalo práctico más corto, vuelva a habilitar la protección inmediatamente y verifique tanto la salud del Agente como la del control de seguridad. Escale con la evidencia recopilada en lugar de dejar la protección deshabilitada."
 
 #: ../../troubleshooting/Morpheus_Agent.rst:62
 #, fuzzy

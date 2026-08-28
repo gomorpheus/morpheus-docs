@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:4
 msgid "Container Registry Integration"
-msgstr ""
+msgstr "Integração de Container Registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:9
 msgid ""
@@ -34,288 +34,288 @@ msgid ""
 "clusters through the ``KubernetesRegistryService``. This allows "
 "Kubernetes workloads to pull images from private container registries "
 "configured in |morpheus|."
-msgstr ""
+msgstr "O |morpheus| fornece integração de container registry em clusters Kubernetes por meio do ``KubernetesRegistryService``. Isso permite que cargas Kubernetes puxem imagens de container registries privados configurados no |morpheus|."
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:11
 msgid ""
 "Container registries are managed as Docker Registry integrations and can "
 "be associated with Kubernetes clusters to enable authenticated image "
 "pulls."
-msgstr ""
+msgstr "Container registries são gerenciados como integrações Docker Registry e podem ser associados a clusters Kubernetes para habilitar pulls autenticados de imagens."
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:14
 msgid "Configuring Registry Integrations"
-msgstr ""
+msgstr "Configurando Integrações de Registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:17
 msgid "Adding a Docker Registry"
-msgstr ""
+msgstr "Adicionando um Docker Registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:19
 msgid "Navigate to ``Infrastructure > Integrations``"
-msgstr ""
+msgstr "Navegue até ``Infrastructure > Integrations``"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:20
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:21
 msgid "Choose **Docker Registry**"
-msgstr ""
+msgstr "Escolha **Docker Registry**"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:22
 msgid "Configure:"
-msgstr ""
+msgstr "Configure:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:24
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:25
 msgid "Friendly name for the registry"
-msgstr ""
+msgstr "Nome amigável para o registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:26
 msgid "REGISTRY URL"
-msgstr ""
+msgstr "REGISTRY URL"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:27
 msgid ""
 "Full URL to the registry (e.g., ``https://registry.example.com``, "
 "``https://ghcr.io``)"
-msgstr ""
+msgstr "URL completa do registry (por exemplo, ``https://registry.example.com``, ``https://ghcr.io``)"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:28
 msgid "USERNAME"
-msgstr ""
+msgstr "USERNAME"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:29
 msgid "Registry authentication username"
-msgstr ""
+msgstr "Nome de usuário de autenticação do registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:30
 msgid "PASSWORD"
-msgstr ""
+msgstr "PASSWORD"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:31
 msgid "Registry authentication password/token"
-msgstr ""
+msgstr "Senha/token de autenticação do registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:33
 msgid "Select :guilabel:`SAVE`"
-msgstr ""
+msgstr "Selecione :guilabel:`SAVE`"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:35
 msgid "Supported registry types include:"
-msgstr ""
+msgstr "Os tipos de registry suportados incluem:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:37
 msgid "Docker Hub"
-msgstr ""
+msgstr "Docker Hub"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:38
 msgid "Harbor"
-msgstr ""
+msgstr "Harbor"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:39
 msgid "Amazon ECR"
-msgstr ""
+msgstr "Amazon ECR"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:40
 msgid "Azure Container Registry (ACR)"
-msgstr ""
+msgstr "Azure Container Registry (ACR)"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:41
 msgid "Google Container Registry (GCR) / Artifact Registry"
-msgstr ""
+msgstr "Google Container Registry (GCR) / Artifact Registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:42
 msgid "GitLab Container Registry"
-msgstr ""
+msgstr "GitLab Container Registry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:43
 msgid "GitHub Container Registry (ghcr.io)"
-msgstr ""
+msgstr "GitHub Container Registry (ghcr.io)"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:44
 msgid "Self-hosted Docker registries (v2 API)"
-msgstr ""
+msgstr "Registries Docker auto-hospedados (API v2)"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:47
 msgid "Associating Registries with Clusters"
-msgstr ""
+msgstr "Associando Registries a Clusters"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:49
 msgid ""
 "Once a registry integration is configured, it can be used by Kubernetes "
 "clusters in two ways:"
-msgstr ""
+msgstr "Depois que uma integração de registry é configurada, ela pode ser usada por clusters Kubernetes de duas formas:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:52
 msgid "Image Pull Secrets"
-msgstr ""
+msgstr "Image Pull Secrets"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:54
 msgid ""
 "|morpheus| can create Kubernetes ``imagePullSecrets`` in target "
 "namespaces to enable pods to authenticate with private registries:"
-msgstr ""
+msgstr "O |morpheus| pode criar ``imagePullSecrets`` do Kubernetes em namespaces de destino para permitir que pods se autentiquem em registries privados:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:56
 msgid ""
 "The registry credentials are stored as a Kubernetes Secret of type "
 "``kubernetes.io/dockerconfigjson``"
-msgstr ""
+msgstr "As credenciais do registry são armazenadas como um Secret do Kubernetes do tipo ``kubernetes.io/dockerconfigjson``"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:57
 msgid ""
 "The secret is referenced in pod specs or service accounts within the "
 "namespace"
-msgstr ""
+msgstr "O secret é referenciado nas especificações do pod ou nas service accounts dentro do namespace"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:58
 msgid "|morpheus| manages the lifecycle of these secrets when deploying workloads"
-msgstr ""
+msgstr "O |morpheus| gerencia o ciclo da vida desses secrets ao implementar cargas de trabalho"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:61
 msgid "Instance Provisioning"
-msgstr ""
+msgstr "Provisionamento de Instância"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:63
 msgid "When provisioning container-based Instance Types to a Kubernetes cluster:"
-msgstr ""
+msgstr "Ao provisionar Tipos de Instância baseados em container em um cluster Kubernetes:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:65
 msgid ""
 "|morpheus| injects the appropriate image pull secret into the pod "
 "specification"
-msgstr ""
+msgstr "O |morpheus| injeta o image pull secret apropriado na especificação do pod"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:66
 msgid ""
 "The container image reference in the Instance Type configuration "
 "determines which registry is used"
-msgstr ""
+msgstr "A referência da imagem de container na configuração do Tipo de Instância determina qual registry é usado"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:67
 msgid "Registry credentials are resolved automatically based on the image URL"
-msgstr ""
+msgstr "As credenciais do registry são resolvidas automaticamente com base na URL da imagem"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:70
 msgid "Service Entry Management"
-msgstr ""
+msgstr "Gerenciamento de Service Entry"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:72
 msgid ""
 "The registry service manages Kubernetes service entries that track "
 "deployed services within the cluster:"
-msgstr ""
+msgstr "O serviço de registry gerencia entradas de serviço do Kubernetes que rastreiam os serviços implementados no cluster:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:75
 msgid "Viewing Services"
-msgstr ""
+msgstr "Visualizando Serviços"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:77
 msgid ""
 "Navigate to the cluster detail page > Network tab > Services subtab to "
 "view all registered services, including:"
-msgstr ""
+msgstr "Navegue até a página de detalhes do cluster > guia Network > subguia Services para ver todos os serviços registrados, incluindo:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:79
 msgid "Service name"
-msgstr ""
+msgstr "Nome do serviço"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:80
 msgid "Namespace"
-msgstr ""
+msgstr "Namespace"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:81
 msgid "Service type (ClusterIP, NodePort, LoadBalancer)"
-msgstr ""
+msgstr "Tipo de serviço (ClusterIP, NodePort, LoadBalancer)"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:82
 msgid "Cluster IP and external IPs"
-msgstr ""
+msgstr "IP do cluster e IPs externos"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:83
 msgid "Port mappings"
-msgstr ""
+msgstr "Mapeamentos de porta"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:86
 msgid "Deleting Service Entries"
-msgstr ""
+msgstr "Excluindo Service Entries"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:88
 msgid ""
 "When removing workloads, |morpheus| automatically cleans up associated "
 "service entries from both the Kubernetes cluster and the |morpheus| "
 "registry."
-msgstr ""
+msgstr "Ao remover cargas de trabalho, o |morpheus| limpa automaticamente as entradas de serviço associadas tanto do cluster Kubernetes quanto do registry do |morpheus|."
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:91
 msgid "Working with Private Images"
-msgstr ""
+msgstr "Trabalhando com Imagens Privadas"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:93
 msgid "To deploy workloads using images from a private registry:"
-msgstr ""
+msgstr "Para implementar cargas de trabalho usando imagens de um registry privado:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:95
 msgid "Ensure the registry is added as an integration in |morpheus|"
-msgstr ""
+msgstr "Certifique-se de que o registry foi adicionado como uma integração no |morpheus|"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:96
 msgid ""
 "When creating Instance Types or Kubernetes workloads that reference "
 "private images, |morpheus| automatically:"
-msgstr ""
+msgstr "Ao criar Tipos de Instância ou cargas de trabalho Kubernetes que referenciam imagens privadas, o |morpheus| automaticamente:"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:98
 msgid "Creates the required ``imagePullSecret`` in the target namespace"
-msgstr ""
+msgstr "Cria o ``imagePullSecret`` necessário no namespace de destino"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:99
 msgid "Configures the pod spec to reference the secret"
-msgstr ""
+msgstr "Configura a especificação do pod para referenciar o secret"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:100
 msgid "Handles credential rotation when registry passwords change"
-msgstr ""
+msgstr "Trata a rotação de credenciais quando as senhas do registry mudam"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:102
 msgid ""
 "For Helm charts or raw Kubernetes specs, ensure your manifests reference "
 "the image pull secret name that |morpheus| creates, or configure the "
 "``imagePullSecrets`` field in your pod spec/service account"
-msgstr ""
+msgstr "Para charts Helm ou especificações Kubernetes brutas, certifique-se de que seus manifests referenciem o nome do image pull secret que o |morpheus| cria, ou configure o campo ``imagePullSecrets`` na especificação do pod/service account"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:105
 msgid "Best Practices"
-msgstr ""
+msgstr "Práticas recomendadas"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:107
 msgid ""
 "**Use dedicated service accounts:** Create service accounts with pre-"
 "configured image pull secrets rather than adding secrets to individual "
 "pods"
-msgstr ""
+msgstr "**Use service accounts dedicadas:** Crie service accounts com image pull secrets pré-configurados em vez de adicionar secrets a pods individuais"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:108
 msgid ""
 "**Scope registries to namespaces:** Limit registry access to specific "
 "namespaces where the images are needed"
-msgstr ""
+msgstr "**Limite registries a namespaces:** Restrinja o acesso ao registry a namespaces específicos onde as imagens são necessárias"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:109
 msgid ""
 "**Rotate credentials regularly:** When registry credentials are updated "
 "in |morpheus|, the corresponding Kubernetes secrets are updated on next "
 "sync"
-msgstr ""
+msgstr "**Rotacione as credenciais regularmente:** Quando as credenciais do registry são atualizadas no |morpheus|, os secrets correspondentes do Kubernetes são atualizados na próxima sincronização"
 
 #: ../../infrastructure/clusters/kubernetes/registry.rst:110
 msgid ""
 "**Use registry mirrors:** For air-gapped environments, configure a local "
 "registry mirror and add it as the integration endpoint"
-msgstr ""
+msgstr "**Use mirrors de registry:** Em ambientes air-gapped, configure um mirror de registry local e adicione-o como o endpoint da integração"
 

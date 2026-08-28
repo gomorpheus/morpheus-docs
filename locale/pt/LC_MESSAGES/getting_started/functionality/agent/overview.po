@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/functionality/agent/overview.rst:2
 msgid "Overview"
-msgstr ""
+msgstr "Visão Geral"
 
 #: ../../getting_started/functionality/agent/overview.rst:4
 msgid ""
@@ -34,11 +34,11 @@ msgid ""
 "also brings along with it monitoring and log aggregation capabilities.  "
 "After an initial brownfield discovery, Users can decide to convert "
 "unmanaged VMs to managed."
-msgstr ""
+msgstr "O Agente |morpheus| é um aspecto importante e poderoso do |morpheus| como ferramenta de orquestração. Embora não seja obrigatório, o que é uma capacidade exclusiva da nossa plataforma em relação a alguns concorrentes, ele é recomendado, pois traz muitos benefícios. Além de fornecer estatísticas do sistema operacional convidado e da utilização de recursos, também traz capacidades de monitoramento e agregação de logs. Após uma descoberta brownfield inicial, os Usuários podem decidir converter VMs não gerenciadas em gerenciadas."
 
 #: ../../getting_started/functionality/agent/overview.rst:6
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/functionality/agent/overview.rst:7
 msgid ""
@@ -46,7 +46,7 @@ msgid ""
 "don't have the Agent installed, we make every effort to aggregate stats. "
 "These will vary based on the Cloud and can be more limited or less "
 "accurate without utilizing |morpheus| Agent."
-msgstr ""
+msgstr "**A instalação do Agente não é obrigatória para gerenciar uma Instância.** Se você não tiver o Agente instalado, fazemos todos os esforços para agregar estatísticas. Elas variarão com base na Nuvem e podem ser mais limitadas ou menos precisas sem utilizar o Agente |morpheus|."
 
 #: ../../getting_started/functionality/agent/overview.rst:9
 msgid ""
@@ -57,11 +57,11 @@ msgid ""
 "requested actions back to the workload. This design removes the need for "
 "the Manager to initiate SSH or WinRM sessions after installation, but it "
 "is not a read-only telemetry channel."
-msgstr ""
+msgstr "O Agente |morpheus| não escuta em uma porta de gerenciamento de entrada. Ele inicia uma conexão HTTPS/WSS de saída para o appliance |morpheus| configurado na TCP 443. A conexão persistente transporta inventário, estatísticas, monitoramento e dados de log para o appliance e transporta ações solicitadas pelo Manager de volta à carga de trabalho. Este design elimina a necessidade de o Manager iniciar sessões SSH ou WinRM após a instalação, mas não é um canal de telemetria somente leitura."
 
 #: ../../getting_started/functionality/agent/overview.rst:12
 msgid "Agent Security Boundary"
-msgstr ""
+msgstr "Limite de Segurança do Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:14
 msgid ""
@@ -75,29 +75,29 @@ msgid ""
 "responsibilities. Apply least privilege to |morpheus| roles, protect "
 "Agent keys and Manager administrator access, and review activity/audit "
 "records for administrative actions."
-msgstr ""
+msgstr "Trate o controle do Manager |morpheus| e da chave de API de um Agente como um limite de confiança equivalente a um shell remoto. Uma ação autorizada do Manager pode pedir ao Agente para executar um comando, gravar ou transferir arquivos e realizar operações de gerenciamento de carga de trabalho. No Linux, o Agente é executado como a conta de serviço ``morpheus-node`` e usa permissões ``sudo`` configuradas para operações privilegiadas. Os Agentes de Host HVM têm responsabilidades adicionais privilegiadas de armazenamento, virtualização, fencing, montagem e reinicialização. Aplique o menor privilégio às funções |morpheus|, proteja as chaves do Agente e o acesso de administrador do Manager, e revise os registros de atividade/auditoria das ações administrativas."
 
 #: ../../getting_started/functionality/agent/overview.rst:16
 msgid ""
 "The principal Linux locations and processes to include in host monitoring"
 " are:"
-msgstr ""
+msgstr "Os principais locais e processos Linux a incluir no monitoramento do host são:"
 
 #: ../../getting_started/functionality/agent/overview.rst:18
 msgid "``/opt/morpheus-node`` for Agent binaries and runtime files"
-msgstr ""
+msgstr "``/opt/morpheus-node`` para binários e arquivos de runtime do Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:19
 msgid "``/etc/morpheus/morpheus-node.yaml`` for Agent configuration"
-msgstr ""
+msgstr "``/etc/morpheus/morpheus-node.yaml`` para configuração do Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:20
 msgid "``/var/log/morpheus-node`` for Agent logs"
-msgstr ""
+msgstr "``/var/log/morpheus-node`` para logs do Agente"
 
 #: ../../getting_started/functionality/agent/overview.rst:21
 msgid "``morphd``, supervised by the ``morpheus-node-runsvdir`` service"
-msgstr ""
+msgstr "``morphd``, supervisionado pelo serviço ``morpheus-node-runsvdir``"
 
 #: ../../getting_started/functionality/agent/overview.rst:23
 msgid ""
@@ -108,7 +108,7 @@ msgid ""
 "not validate the peer certificate chain. Use a trusted appliance "
 "certificate and enable peer verification where required by organizational"
 " policy; test certificate trust before enforcing the setting broadly."
-msgstr ""
+msgstr "A configuração ``verifyPeer`` do Agente controla a verificação da cadeia de certificados da conexão de saída. Quando ``verifyPeer`` é ``true``, o endpoint do appliance deve apresentar um certificado confiável pelo host do Agente. Quando estiver ausente ou ``false``, o runtime do Agente não valida a cadeia de certificados do peer. Use um certificado de appliance confiável e ative a verificação de peer quando exigido pela política organizacional; teste a confiança do certificado antes de aplicar a configuração de forma ampla."
 
 #: ../../getting_started/functionality/agent/overview.rst:25
 msgid ""
@@ -119,7 +119,7 @@ msgid ""
 "Upgrade Agents through the Manager's **Upgrade Agent** action or a newly "
 "downloaded, resource-specific Agent script, and verify that the Agent "
 "reconnects and reports the expected version."
-msgstr ""
+msgstr "Pacotes e scripts do Agente devem vir do appliance |morpheus| configurado ou de uma origem de pacote publicada pela HPE para a versão aplicável. A disponibilidade de pacotes é específica de versão, SO e arquitetura; a execução bem-sucedida em uma plataforma não listada não estabelece suporte. Atualize Agentes pela ação **Upgrade Agent** do Manager ou por um script de Agente baixado novamente e específico do recurso, e verifique se o Agente reconecta e reporta a versão esperada."
 
 #: ../../getting_started/functionality/agent/overview.rst:27
 msgid ""
@@ -128,5 +128,5 @@ msgid ""
 " Agent paths, restrict who can request Agent actions, protect backups "
 "containing Agent configuration, and investigate unexpected Agent command "
 "or file activity as privileged remote administration."
-msgstr ""
+msgstr "Os controles de segurança do cliente devem permitir apenas a administração Manager-para-Agente e o caminho Agente-para-Manager necessários. Monitore alterações nos caminhos do Agente, restrinja quem pode solicitar ações do Agente, proteja backups que contenham a configuração do Agente e investigue atividade inesperada de comando ou arquivo do Agente como administração remota privilegiada."
 

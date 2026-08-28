@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:2
 msgid "CloudFormation Blueprints"
-msgstr ""
+msgstr "**TYPE:** Sélectionnez « Keep Together » ou « Keep Separate » pour indiquer si les serveurs sélectionnés doivent s'exécuter sur aussi peu ou autant de serveurs que possible dans les capacités du cluster HVM"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "declare all relevant AWS resources needed for the provisioned "
 "application. They can be created directly in the New Blueprint modal or "
 "pulled in from existing Git repositories."
-msgstr ""
+msgstr "**CLUSTER:** Sélectionnez le cluster vCenter"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:6
 msgid ""
@@ -40,56 +40,56 @@ msgid ""
 " with CloudFormation. They can be found in the `AWS CloudFormation "
 "documentation "
 "<https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html>`_."
-msgstr ""
+msgstr "**ACTIVE:** Lorsqu'il est coché, les règles définies dans le groupe d'affinité seront appliquées au cluster HVM"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:8
 msgid ""
 "To create a new CloudFormation Blueprint, navigate to |LibBluApp|. Click "
 ":guilabel:`+ ADD`."
-msgstr ""
+msgstr "**SERVERS:** Sélectionnez autant de serveurs que souhaité dans la liste typeahead"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:10
 msgid ""
 "On the Name tab of the New Blueprint modal, enter a name for your new "
 "Blueprint. In the Type dropdown menu, select CloudFormation. Click "
 ":guilabel:`NEXT`"
-msgstr ""
+msgstr "Une fois terminé, cliquez sur :guilabel:`SAVE CHANGES`. Après la prochaine synchronisation du Cloud, la règle d'affinité sera appliquée et les VM commenceront à migrer (le cas échéant)."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:12
 msgid "In the Blueprint Summary section, complete the following fields as needed:"
-msgstr ""
+msgstr "Ajout de serveurs aux groupes d'affinité lors du provisionnement"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:14
 msgid ""
 "**NAME:** Enter a name for this Blueprint as it will appear in the "
 "|morpheus| Blueprints list"
-msgstr ""
+msgstr "En plus d'ajouter des serveurs depuis le groupe d'affinité, les serveurs nouvellement provisionnés peuvent être ajoutés à un groupe d'affinité lors du provisionnement. Depuis l'onglet CONFIGURE de l'assistant de provisionnement, développez la section Options avancées. Dans Options avancées, sélectionnez un groupe d'affinité. Le groupe d'affinité doit exister au préalable et cette liste sera filtrée pour n'afficher que les groupes d'affinité applicables en fonction des autres paramètres de configuration définis sur la nouvelle instance."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:15
 msgid "**DESCRIPTION:** An optional description field for your Blueprint"
-msgstr ""
+msgstr "Étiquetage et métadonnées"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:16
 msgid ""
 "**CATEGORY:** An optional category tag for your Blueprint, such as web, "
 "utility, or app"
-msgstr ""
+msgstr "À partir de la version 4.1.0 de Morpheus, la prise en charge de l'étiquetage est incluse pour vCenter, en plus des autres clouds qui la prenaient déjà en charge dans les versions antérieures. Les tags seront synchronisés vers vCenter depuis Morpheus et les tags existants sont également inventoriés depuis vCenter vers Morpheus."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:17
 msgid ""
 "**IMAGE:** An optional image icon to more easily identify your Blueprint "
 "from a list. If no image is uploaded, a default image will be used"
-msgstr ""
+msgstr "Cette fonctionnalité nécessite une version minimale de l'API vCenter 6.5. La version de l'API peut être modifiée en accédant à « Infrastructure > Clouds » et en cliquant sur le bouton de modification (crayon) dans la ligne du cloud concerné. Le champ est libellé « VERSION »."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:19
 msgid ""
 "Depending on whether we need the |morpheus| Agent installed and/or cloud-"
 "init enabled, mark the following boxes in the next section:"
-msgstr ""
+msgstr "Des tags peuvent être créés à la demande lors du provisionnement depuis l'onglet « CONFIGURE » de l'assistant « CREATE INSTANCE » (:menuselection:`Provisioning --> Instances`). Dans le tiroir « Metadata », vous verrez des ensembles de champs pour saisir des paires clé/valeur. Lors de la création de l'instance, ces métadonnées seront synchronisées dans vCenter."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:21
 msgid "**INSTALL AGENT**"
-msgstr ""
+msgstr "Les « Inputs » de votre bibliothèque peuvent également être exportés en tant que métadonnées pour une utilisation avec vCenter. Lors de l'ajout ou de la modification d'un Input (|LibOptInp|), cochez simplement la case libellée « EXPORT AS METADATA ». Le « FIELD NAME » devient la catégorie de tag dans VMWare."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:22
 msgid "**CLOUD INIT ENABLED**"
@@ -104,75 +104,75 @@ msgid ""
 "<https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateStack.html>`_."
 " If any of the following capabilities are contained in your application, "
 "acknowledge them by marking any of the following boxes that apply:"
-msgstr ""
+msgstr "Docker"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:26
 msgid "**CAPABILITY_IAM**"
-msgstr ""
+msgstr "Jusqu'à présent, ce document a décrit comment ajouter l'intégration cloud VMware et a permis aux utilisateurs de provisionner des instances basées sur des machines virtuelles via le catalogue `Add Instance` dans `Provisioning`. Une autre fonctionnalité fournie par |morpheus| est la possibilité d'utiliser des conteneurs Docker et même de prendre en charge plusieurs conteneurs par hôte Docker. Pour ce faire, un hôte Docker doit d'abord être provisionné dans VMware (plusieurs hôtes sont nécessaires dans les scénarios de mise à l'échelle horizontale)."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:27
 msgid "**CAPABILITY_NAMED_IAM**"
-msgstr ""
+msgstr "Pour provisionner un hôte Docker, accédez simplement à l'onglet Clusters de la page de détail du cloud ou à la section Infrastructure > Clusters. De là, cliquez sur :guilabel:`+ ADD CLUSTER` pour ajouter un hôte Docker VMware. Cet hôte apparaîtra dans l'onglet Hosts aux côté des autres serveurs ESXi inventoriés par l'intégration cloud VMware. |morpheus| considère un hôte Docker comme tout autre hyperviseur, à la différence qu'il est utilisé pour exécuter des images conteneurisées plutôt que virtualisées. Une fois l'hôte Docker provisionné avec succès, une coche verte apparaîtra à droite de l'hôte pour indiquer qu'il est disponible. En cas d'échec, cliquez sur l'hôte concerné ; une erreur expliquant l'échec s'affichera en rouge en haut de la page."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:28
 msgid "**CAPABILITY_AUTO_EXPAND**"
-msgstr ""
+msgstr "La disposition Docker sélectionnée peut exposer un volume de données configurable. Un second disque dédié n'est pas requis pour chaque hôte Docker VMware ; configurez les volumes requis par la disposition sélectionnée et votre conception de stockage."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:30
 msgid ""
 "Continuing on with the CloudFormation Configuration section, complete the"
 " following fields as needed when entering your configuration directly "
 "into the new Blueprint:"
-msgstr ""
+msgstr "Parmi les scénarios d'erreur courants figurent les problèmes de connectivité réseau. Pour qu'un hôte Docker fonctionne correctement, il doit pouvoir résoudre l'URL de l'appliance |morpheus|, configurable dans |AdmSet|. S'il ne parvient pas à résoudre et à négocier avec l'appliance, l'installation de l'agent échouera et les instructions de provisionnement ne pourront pas être transmises à l'hôte."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:32
 msgid "**CONFIG TYPE:** \"CloudFormation Template JSON (.json)\""
-msgstr ""
+msgstr "Mutualisation"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:33
 msgid "**CONFIG TYPE:** \"CloudFormation Template YAML (.yaml)\""
-msgstr ""
+msgstr "Un scénario très courant pour les fournisseurs de services managés est la nécessité de fournir un accès aux ressources VMware client par client. Avec VMware, plusieurs fonctionnalités administratives ont été ajoutées pour garantir que les ressources des clients sont correctement limitées et isolées. Pour VMware, il est possible d'attribuer des `Networks`, des `Datastores` et des `Resource Pools` spécifiques à des comptes clients, ou encore de définir la visibilité publique de certaines ressources, permettant ainsi à tous les sous-comptes d'y accéder."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:34
 msgid "**CONFIG:** Enter your configuration here"
-msgstr ""
+msgstr "Avancé"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:36
 msgid ""
 "In the CloudFormation Configuration section, complete the following "
 "fields as needed when syncing in configuration from a Git repository:"
-msgstr ""
+msgstr "Plusieurs fonctionnalités avancées sont fournies dans |morpheus| et peuvent exploiter certains aspects de VMware. L'une de ces fonctionnalités est la prise en charge de la console distante directement vers l'hyperviseur. Pour activer cette fonctionnalité, quelques prérequis doivent être remplis. Tout d'abord, l'appliance |morpheus| doit disposer d'un accès réseau aux hôtes ESXi dans vCenter. Ensuite, les paramètres de pare-feu doivent être ajustés sur chaque hôte ESXi. Cela peut se faire dans vSphere, sous la configuration du pare-feu de l'hôte. Cochez simplement l'option `gdbserver`, qui ouvrira les ports nécessaires (à partir de la plage 5900)."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:38
 msgid "**CONFIG TYPE:** \"Git Repository\""
-msgstr ""
+msgstr "La console hyperviseur pour vCenter 6.5 nécessite |morpheus| v3.2.0+"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:39
 msgid ""
 "**SCM INTEGRATION:** If a pre-existing SCM integration is selected here, "
 "the available selections in the \"Repository\" dropdown menu will be "
 "filtered to show only those associated with the chosen SCM integration"
-msgstr ""
+msgstr "Maintenant que les hôtes ESXi sont prêts à utiliser la console distante, modifiez simplement le cloud dans |morpheus| via ``Infrastructure > Clouds``. Cochez l'option `Enable Hypervisor Console`. Il est important de noter qu'actuellement cette fonctionnalité ne fonctionne que pour les VM nouvellement provisionnées directement via |morpheus|. Cela devrait toutefois changer prochainement."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:40
 msgid "**REPOSITORY:** Select the repository in which your configuration resides"
-msgstr ""
+msgstr "Il est également possible d'importer des instantanés de VM à des fins de sauvegarde ou de conversion depuis vCenter et depuis un hôte ESXi. Cela nécessite toutefois que la licence de l'hôte ESXi soit de niveau Enterprise, car l'appliance ne pourra pas télécharger une image virtuelle sans licence VMware payante."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:41
 msgid "**BRANCH OR TAG:** The branch in which your configuration resides"
-msgstr ""
+msgstr "Sélection du type de périphérique"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:42
 msgid "**WORKING PATH:** The path to your configuration files"
-msgstr ""
+msgstr "La configuration avancée du cloud VMware contient des paramètres distincts :guilabel:`Enable Storage Type Selection` et :guilabel:`Enable Network Type Selection`. Activez le paramètre applicable lorsque les utilisateurs doivent choisir parmi les types de stockage ou d'interface réseau exposés par le fournisseur de provisionnement VMware. Lorsqu'ils sont désactivés, le sélecteur correspondant n'est pas présenté et le type configuré/par défaut est utilisé. Ces paramètres sont vérifiés pour les clouds VMware uniquement ; n'en déduisez pas les mêmes contrôles pour HVM ou un autre type de cloud."
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:43
 msgid "**CONFIG:** Your selected config file"
-msgstr ""
+msgstr "MVM Cloud"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:45
 msgid "Once finished, click :guilabel:`COMPLETE`."
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../library/blueprints/appBlueprints/cloudFormation.rst:47
 msgid ""
@@ -180,5 +180,5 @@ msgid ""
 "the list of Blueprints. Blueprints are deployed in the |ProApp| section "
 "of |morpheus|. See the Apps section of |morpheus| docs for more "
 "information on that process."
-msgstr ""
+msgstr "MVM (Morpheus Virtual Machine) Cloud, également connu sous le nom de HVM (HPE Virtual Machine), est la plate-forme hyperviseur native KVM de |morpheus|. Contrairement aux *Clusters* MVM gérés via ``Infrastructure > Clusters``, l'intégration MVM Cloud fournit une abstraction au niveau cloud pour le provisionnement et la gestion de machines virtuelles KVM sur des hôtes hyperviseurs distribués."
 

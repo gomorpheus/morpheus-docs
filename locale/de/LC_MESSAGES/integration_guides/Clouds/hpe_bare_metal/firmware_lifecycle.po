@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:2
 msgid "Firmware and Driver Lifecycle Management"
-msgstr ""
+msgstr "Firmware- und Treiber-Lebenszyklus-Management"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:4
 msgid ""
@@ -32,7 +32,7 @@ msgid ""
 "centrally manage server firmware and driver compliance using HPE Service "
 "Pack for ProLiant (SPP) images, executed directly from the HPE Morpheus "
 "appliance."
-msgstr ""
+msgstr "Ab HPE BMaaS Version 1.0.0 unterstützt HPE |morpheus| Enterprise Firmware- und Treiber-Updates für HPE-ProLiant-Bare-Metal-Server mithilfe vorgeladener Aufgaben und Workflows. Diese Fähigkeit ermöglicht Administratoren, die Compliance von Server-Firmware und Treibern zentral mithilfe von HPE Service Pack for ProLiant (SPP)-Images zu verwalten, die direkt von der HPE-Morpheus-Appliance ausgeführt werden."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:6
 msgid ""
@@ -42,15 +42,15 @@ msgid ""
 "operational requirements. The update process supports multiple servers "
 "per job and provides detailed execution logs for auditing and "
 "troubleshooting."
-msgstr ""
+msgstr "Firmware- und Treiber-Updates werden über Jobs und Workflows in HPE Morpheus durchgeführt und können in den Modi Dry Run (Inventar) oder Deploy ausgeführt werden. Updates können je nach betrieblichen Anforderungen nur Firmware, nur Treiber oder beides betreffen. Der Update-Prozess unterstützt mehrere Server pro Job und liefert detaillierte Ausführungsprotokolle für Auditing und Fehlerbehebung."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:8
 msgid "Prerequisites"
-msgstr ""
+msgstr "Voraussetzungen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:9
 msgid "Before performing firmware and driver updates, ensure the following:"
-msgstr ""
+msgstr "Stellen Sie vor Firmware- und Treiber-Updates Folgendes sicher:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:12
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:17
@@ -59,70 +59,70 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:61
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:67
 msgid "HPE"
-msgstr ""
+msgstr "HPE"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:13
 msgid "BM Plugin version 1.0.0 or later is installed."
-msgstr ""
+msgstr "BM Plugin Version 1.0.0 oder höher ist installiert."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:16
 msgid "An appropriate"
-msgstr ""
+msgstr "Ein geeignetes"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:18
 msgid ""
 "SPP ISO is available for each server generation (for example, Gen10 and "
 "Gen11 require different SPP ISOs)."
-msgstr ""
+msgstr "SPP-ISO ist für jede Server-Generation verfügbar (beispielsweise erfordern Gen10 und Gen11 unterschiedliche SPP-ISOs)."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:21
 msgid "The"
-msgstr ""
+msgstr "Die"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:23
 msgid "Morpheus appliance has access to the SPP ISO, either through:"
-msgstr ""
+msgstr "Morpheus-Appliance hat Zugriff auf das SPP-ISO, entweder über:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:26
 msgid "A locally downloaded ISO file, or"
-msgstr ""
+msgstr "Eine lokal heruntergeladene ISO-Datei, oder"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:29
 msgid "A URL accessible without authentication."
-msgstr ""
+msgstr "Eine URL, die ohne Authentifizierung erreichbar ist."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:32
 msgid "For driver inventory and updates within a deployed operating system:"
-msgstr ""
+msgstr "Für Treiberinventar und -updates innerhalb eines bereitgestellten Betriebssystems:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:35
 msgid ""
 "iSUT (Integrated Smart Update Tools) and AMS (Agentless Management "
 "Service) must be installed and running on the target servers."
-msgstr ""
+msgstr "iSUT (Integrated Smart Update Tools) und AMS (Agentless Management Service) müssen auf den Zielservern installiert und ausgeführt werden."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:38
 msgid "ESXi hosts are expected to already have iSUT installed."
-msgstr ""
+msgstr "Bei ESXi-Hosts wird erwartet, dass iSUT bereits installiert ist."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:41
 msgid "Adding HPE SPP to Virtual Image Library"
-msgstr ""
+msgstr "HPE SPP zur Virtual-Image-Bibliothek hinzufügen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:43
 msgid ""
 "AddingHPE SPP to the Virtual Image Library This procedure describes how "
 "to add an HPE Service Pack for ProLiant (SPP) ISO to the Morpheus Virtual"
 " Images library for use in firmware and driver update workflows."
-msgstr ""
+msgstr "HPE SPP zur Virtual-Image-Bibliothek hinzufügen. Dieses Verfahren beschreibt, wie Sie ein HPE Service Pack for ProLiant (SPP)-ISO zur Morpheus-Bibliothek Virtual Images für Firmware- und Treiber-Update-Workflows hinzufügen."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:47
 msgid "Obtain the appropriate"
-msgstr ""
+msgstr "Beschaffen Sie das passende"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:49
 msgid "SPP ISO for the target ProLiant server generation."
-msgstr ""
+msgstr "SPP-ISO für die Ziel-ProLiant-Server-Generation."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:50
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:78
@@ -130,21 +130,21 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:117
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:138
 msgid "NOTE"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:51
 msgid ""
 "A separate ISO is required for each server generation (for example, Gen10"
 " and Gen11)."
-msgstr ""
+msgstr "Für jede Server-Generation ist ein separates ISO erforderlich (beispielsweise Gen10 und Gen11)."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:52
 msgid "In the Morpheus appliance, navigate to"
-msgstr ""
+msgstr "Navigieren Sie in der Morpheus-Appliance zu"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:53
 msgid "Library"
-msgstr ""
+msgstr "Bibliothek"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:54
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:58
@@ -156,7 +156,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:55
 msgid "Virtual Images."
-msgstr ""
+msgstr "Virtual Images."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:56
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:76
@@ -165,23 +165,23 @@ msgstr ""
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:135
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:218
 msgid "Click"
-msgstr ""
+msgstr "Klicken Sie auf"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:57
 msgid "Add"
-msgstr ""
+msgstr "Hinzufügen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:59
 msgid "SPP."
-msgstr ""
+msgstr "SPP."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:60
 msgid "Enter a name for the image (for example,"
-msgstr ""
+msgstr "Geben Sie einen Namen für das Image ein (beispielsweise"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:62
 msgid "Gen10 SPP 2025.09.00"
-msgstr ""
+msgstr "Gen10 SPP 2025.09.00"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:63
 msgid ")."
@@ -189,287 +189,287 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:64
 msgid "From the"
-msgstr ""
+msgstr "Aus der"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:65
 msgid "Operating System"
-msgstr ""
+msgstr "Operating System"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:66
 msgid "drop-down list, select the appropriate"
-msgstr ""
+msgstr "Dropdown-Liste wählen Sie den passenden Eintrag"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:68
 msgid "SPP for Gen…"
-msgstr ""
+msgstr "SPP for Gen…"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:69
 msgid "entry."
-msgstr ""
+msgstr "aus."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:70
 msgid "Add the SPP ISO using one of the following methods:"
-msgstr ""
+msgstr "Fügen Sie das SPP-ISO mit einer der folgenden Methoden hinzu:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:71
 msgid "Upload the locally downloaded ISO file, or"
-msgstr ""
+msgstr "Laden Sie die lokal heruntergeladene ISO-Datei hoch, oder"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:72
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:149
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:155
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:215
 msgid "Select"
-msgstr ""
+msgstr "Auswählen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:73
 msgid "URL / PATH"
-msgstr ""
+msgstr "URL / PATH"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:74
 msgid "and paste the full URL for the ISO."
-msgstr ""
+msgstr "und fügen Sie die vollständige URL für das ISO ein."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:75
 msgid "Leave all other properties at their default values."
-msgstr ""
+msgstr "Belassen Sie alle anderen Eigenschaften bei ihren Standardwerten."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:77
 msgid "Save Changes."
-msgstr ""
+msgstr "Save Changes."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:79
 msgid "When uploading a local file, wait for the upload to complete."
-msgstr ""
+msgstr "Warten Sie beim Hochladen einer lokalen Datei, bis der Upload abgeschlossen ist."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:80
 msgid "In the"
-msgstr ""
+msgstr "In der"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:81
 msgid "Virtual Images"
-msgstr ""
+msgstr "Virtual Images"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:82
 msgid "list, wait until:"
-msgstr ""
+msgstr "Liste warten Sie, bis:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:83
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:84
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:87
 msgid "shows"
-msgstr ""
+msgstr "zeigt"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:85
 msgid "Uploaded"
-msgstr ""
+msgstr "HOCHGELADEN"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:86
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:88
 msgid "Active"
-msgstr ""
+msgstr "Aktiv"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:89
 msgid "Record the"
-msgstr ""
+msgstr "Notieren Sie die"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:90
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:91
 msgid ""
 "of the Virtual Image entry. This ID is required when creating the update "
 "job."
-msgstr ""
+msgstr "des Virtual-Image-Eintrags. Diese ID ist beim Erstellen des Update-Jobs erforderlich."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:94
 msgid "Installing iSUT on Deployed Instances"
-msgstr ""
+msgstr "iSUT auf bereitgestellten Instanzen installieren"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:96
 msgid ""
 "(Optional) To enable driver inventory and updates within the operating "
 "system, iSUT and AMS must be installed on each deployed instance."
-msgstr ""
+msgstr "(Optional) Um Treiberinventar und -updates innerhalb des Betriebssystems zu ermöglichen, müssen iSUT und AMS auf jeder bereitgestellten Instanz installiert sein."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:100
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:131
 msgid "Navigate to"
-msgstr ""
+msgstr "Navigieren Sie zu"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:101
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:132
 msgid "Provisioning"
-msgstr ""
+msgstr "Provisionierung"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:103
 msgid "Instances."
-msgstr ""
+msgstr "Instanzen."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:104
 msgid "Select the target instance."
-msgstr ""
+msgstr "Wählen Sie die Zielinstanz aus."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:106
 msgid ""
 "Since the workflow requires iLO credentials, only one instance can be "
 "selected at a time. Multiple instances cannot be targeted for a single "
 "iSUT/AMS install."
-msgstr ""
+msgstr "Da der Workflow iLO-Anmeldedaten erfordert, kann jeweils nur eine Instanz ausgewählt werden. Mehrere Instanzen können nicht für eine einzelne iSUT/AMS-Installation anvisiert werden."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:108
 msgid "Actions"
-msgstr ""
+msgstr "Maßnahmen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:110
 msgid "Run Workflow."
-msgstr ""
+msgstr "Run Workflow."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:111
 msgid "Select the appropriate workflow:"
-msgstr ""
+msgstr "Wählen Sie den geeigneten Workflow aus:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:112
 msgid "Download and Install iSUT and AMS (Linux), or"
-msgstr ""
+msgstr "Download and Install iSUT and AMS (Linux), oder"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:113
 msgid "Download and Install iSUT and AMS (Windows)"
-msgstr ""
+msgstr "Download and Install iSUT and AMS (Windows)"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:114
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:159
 msgid "Enter the"
-msgstr ""
+msgstr "Geben Sie die"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:115
 msgid "iLO credentials"
-msgstr ""
+msgstr "iLO-Anmeldedaten"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:116
 msgid "for the targeted bare metal server."
-msgstr ""
+msgstr "für den anvisierten Bare-Metal-Server ein."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:118
 msgid "These are iLO credentials, not OS credentials."
-msgstr ""
+msgstr "Dies sind iLO-Anmeldedaten, keine Betriebssystem-Anmeldedaten."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:120
 msgid "Execute."
-msgstr ""
+msgstr "Execute."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:121
 msgid "Monitor progress from the"
-msgstr ""
+msgstr "Überwachen Sie den Fortschritt im Tab"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:122
 msgid "History"
-msgstr ""
+msgstr "Verlauf"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:123
 msgid "tab until the workflow completes."
-msgstr ""
+msgstr ", bis der Workflow abgeschlossen ist."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:126
 msgid "Creating and Running an SPP Update Job"
-msgstr ""
+msgstr "Einen SPP-Update-Job erstellen und ausführen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:128
 msgid ""
 "This procedure describes how to create and execute aHPE Morpheus Job to "
 "perform firmware and driver updates using an HPE SPP image."
-msgstr ""
+msgstr "Dieses Verfahren beschreibt, wie Sie einen HPE-Morpheus-Job erstellen und ausführen, um Firmware- und Treiber-Updates mithilfe eines HPE-SPP-Images durchzuführen."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:134
 msgid "Jobs."
-msgstr ""
+msgstr "Jobs."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:136
 msgid "Add."
-msgstr ""
+msgstr "Add."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:137
 msgid "Enter a name for the job."
-msgstr ""
+msgstr "Geben Sie einen Namen für den Job ein."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:139
 msgid ""
 "Separate jobs are required for different server generations (for example,"
 " Gen10 vs Gen11)."
-msgstr ""
+msgstr "Für unterschiedliche Server-Generationen sind separate Jobs erforderlich (beispielsweise Gen10 vs. Gen11)."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:142
 msgid "Create separate jobs for"
-msgstr ""
+msgstr "Erstellen Sie separate Jobs für"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:143
 msgid "Dry Run"
-msgstr ""
+msgstr "Dry Run"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:144
 msgid "and"
-msgstr ""
+msgstr "und"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:145
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:169
 msgid "Deploy"
-msgstr ""
+msgstr "Bereitstellen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:146
 msgid "executions."
-msgstr ""
+msgstr "Ausführungen."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:150
 msgid "Workflow Job"
-msgstr ""
+msgstr "Workflow Job"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:151
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:157
 msgid "as the"
-msgstr ""
+msgstr "als"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:152
 msgid "Job Type"
-msgstr ""
+msgstr "Job Type"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:153
 msgid "and click"
-msgstr ""
+msgstr "und klicken Sie auf"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:154
 msgid "Next."
-msgstr ""
+msgstr "Next."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:156
 msgid "Deploy SPP"
-msgstr ""
+msgstr "Deploy SPP"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:158
 msgid "workflow."
-msgstr ""
+msgstr "Workflow."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:160
 msgid "SPPVIRTUALIMAGE"
-msgstr ""
+msgstr "SPPVIRTUALIMAGE"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:161
 msgid "value using the ID of the Virtual Image created earlier."
-msgstr ""
+msgstr "Wert mithilfe der ID des zuvor erstellten Virtual Image."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:162
 msgid "Select a"
-msgstr ""
+msgstr "Wählen Sie einen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:163
 msgid "DEPLOYMODE"
-msgstr ""
+msgstr "DEPLOYMODE"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:164
 msgid ":"
@@ -477,39 +477,39 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:165
 msgid "DryRun"
-msgstr ""
+msgstr "DryRun"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:166
 msgid ": Performs inventory only"
-msgstr ""
+msgstr ": Führt nur Inventar durch"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:170
 msgid ": Applies firmware and/or driver updates"
-msgstr ""
+msgstr ": Wendet Firmware- und/oder Treiber-Updates an"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:173
 msgid "For"
-msgstr ""
+msgstr "Für"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:174
 msgid "SPP Deploy Content"
-msgstr ""
+msgstr "SPP Deploy Content"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:175
 msgid ", choose one of the following:"
-msgstr ""
+msgstr "wählen Sie eine der folgenden Optionen:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:176
 msgid "Firmware only"
-msgstr ""
+msgstr "Nur Firmware"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:179
 msgid "Drivers only"
-msgstr ""
+msgstr "Nur Treiber"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:182
 msgid "Firmware and Drivers"
-msgstr ""
+msgstr "Firmware und Treiber"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:184
 msgid ""
@@ -517,7 +517,7 @@ msgid ""
 "the target servers. #. In the #. Nodes #. field, enter the iLO details "
 "for each target server in JSON format (minimum 1 server, maximum 30 "
 "servers). For example: #. ["
-msgstr ""
+msgstr "Hinweis: Treiberinventar und -updates erfordern, dass iSUT und AMS auf den Zielservern ausgeführt werden. #. Geben Sie im Feld #. Nodes #. die iLO-Details für jeden Zielserver im JSON-Format ein (mindestens 1 Server, maximal 30 Server). Beispiel: #. ["
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:190
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:200
@@ -562,105 +562,105 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:212
 msgid "Optional:"
-msgstr ""
+msgstr "Fakultativ:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:213
 msgid "Create a schedule, or leave the job as"
-msgstr ""
+msgstr "Erstellen Sie einen Zeitplan, oder belassen Sie den Job als"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:214
 msgid "Manual."
-msgstr ""
+msgstr "Manuell."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:216
 msgid "Run Now"
-msgstr ""
+msgstr "Run Now"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:217
 msgid "if you want to execute the job immediately."
-msgstr ""
+msgstr "wenn Sie den Job sofort ausführen möchten."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:219
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:220
 msgid ", review the settings, and click"
-msgstr ""
+msgstr ", überprüfen Sie die Einstellungen und klicken Sie auf"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:221
 msgid "Complete."
-msgstr ""
+msgstr "Complete."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:222
 msgid "If the job was not run immediately, click the"
-msgstr ""
+msgstr "Wenn der Job nicht sofort ausgeführt wurde, klicken Sie auf das"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:223
 msgid "gear icon"
-msgstr ""
+msgstr "Zahnradsymbol"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:224
 msgid "next to the job and select"
-msgstr ""
+msgstr "neben dem Job und wählen Sie"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:225
 msgid "#. Execute. Monitoring and Completion -------------------------"
-msgstr ""
+msgstr "#. Execute. Monitoring and Completion -------------------------"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:230
 msgid "Monitor job progress from the"
-msgstr ""
+msgstr "Überwachen Sie den Job-Fortschritt im Tab"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:231
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:241
 msgid "Job Executions"
-msgstr ""
+msgstr "Job Executions"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:232
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:242
 msgid "tab."
-msgstr ""
+msgstr "."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:233
 msgid "Execution time may range from"
-msgstr ""
+msgstr "Die Ausführungszeit kann von"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:234
 msgid "15 minutes to over one hour"
-msgstr ""
+msgstr "15 Minuten bis über eine Stunde"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:235
 msgid ", depending on:"
-msgstr ""
+msgstr "reichen, abhängig von:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:236
 msgid "Number of servers"
-msgstr ""
+msgstr "Anzahl der Server"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:237
 msgid "Deploy mode"
-msgstr ""
+msgstr "Deploy-Modus"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:238
 msgid "Selected content"
-msgstr ""
+msgstr "Ausgewählter Inhalt"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:239
 msgid "Firmware and driver versions on the target servers"
-msgstr ""
+msgstr "Firmware- und Treiberversionen auf den Zielservern"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:240
 msgid "Upon completion, detailed logs are available in the"
-msgstr ""
+msgstr "Nach Abschluss sind detaillierte Protokolle verfügbar in"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:243
 msgid "Do not enter any values in"
-msgstr ""
+msgstr "Geben Sie keine Werte ein in"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:244
 msgid "Custom Config"
-msgstr ""
+msgstr "Custom Config"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:245
 msgid "."
@@ -671,11 +671,11 @@ msgid ""
 "Servers are not automatically rebooted as part of the update process. - "
 "If a reboot is required to complete updates, it must be performed "
 "manually at a time appropriate for the hosted services."
-msgstr ""
+msgstr "Server werden im Rahmen des Update-Prozesses nicht automatisch neu gestartet. - Wenn ein Neustart erforderlich ist, um Updates abzuschließen, muss er manuell zu einem für die gehosteten Dienste geeigneten Zeitpunkt durchgeführt werden."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:252
 msgid "Post-SPP Firmware Update Cold Power Cycle"
-msgstr ""
+msgstr "Kalter Power-Zyklus nach SPP-Firmware-Update"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:254
 msgid ""
@@ -683,111 +683,111 @@ msgid ""
 " HPE Service Pack for ProLiant (SPP) on Gen11 and Gen12 servers, a full "
 "cold power cycle is required to ensure proper initialization of updated "
 "firmware components."
-msgstr ""
+msgstr "Post-SPP-Firmware-Update – verpflichtender kalter Power-Zyklus. Nach dem Anwenden eines HPE Service Pack for ProLiant (SPP) auf Gen11- und Gen12-Servern ist ein vollständiger kalter Power-Zyklus erforderlich, um die ordnungsgemäße Initialisierung aktualisierter Firmware-Komponenten sicherzustellen."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:256
 msgid ""
 "An iLO reset or standard operating system reboot is not sufficient after "
 "an SPP update."
-msgstr ""
+msgstr "Ein iLO-Reset oder ein standardmäßiger Betriebssystem-Neustart reicht nach einem SPP-Update nicht aus."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:258
 msgid "Failure to perform a cold power cycle may result in:"
-msgstr ""
+msgstr "Das Auslassen eines kalten Power-Zyklus kann zu Folgendem führen:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:261
 msgid "Inconsistent Redfish storage inventory"
-msgstr ""
+msgstr "Inkonsistentes Redfish-Storage-Inventar"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:262
 msgid "Smart Array controller desynchronization"
-msgstr ""
+msgstr "Desynchronisation des Smart-Array-Controllers"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:263
 msgid "Missing or stale drive objects"
-msgstr ""
+msgstr "Fehlende oder veraltete Drive-Objekte"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:264
 msgid "Management platform initialization failures"
-msgstr ""
+msgstr "Initialisierungsfehler der Management-Plattform"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:265
 msgid ""
 "Incomplete firmware activation  Perform the following steps for cold "
 "power cycle:"
-msgstr ""
+msgstr "Unvollständige Firmware-Aktivierung. Führen Sie die folgenden Schritte für den kalten Power-Zyklus aus:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:268
 msgid "Power OFF the server"
-msgstr ""
+msgstr "Server ausschalten"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:269
 msgid ""
 ":Shut down gracefully through the operating system or iLO interface. "
 "Confirm the server is completely powered off."
-msgstr ""
+msgstr ": Fahren Sie das System ordnungsgemäß über das Betriebssystem oder die iLO-Schnittstelle herunter. Bestätigen Sie, dass der Server vollständig ausgeschaltet ist."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:270
 msgid "Disconnect AC Power"
-msgstr ""
+msgstr "Netzspannung trennen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:271
 msgid ": Physically remove all power cables from the server power supplies."
-msgstr ""
+msgstr ": Entfernen Sie physisch alle Netzkabel von den Netzteilen des Servers."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:272
 msgid "Wait for 60 Seconds"
-msgstr ""
+msgstr "60 Sekunden warten"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:273
 msgid ""
 ": Allow sufficient time for residual power to drain. This clears "
 "controller cache and resets hardware state."
-msgstr ""
+msgstr ": Lassen Sie Restenergie abfließen. Dadurch werden der Controller-Cache geleert und der Hardwarezustand zurückgesetzt."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:276
 msgid "Reconnect Power"
-msgstr ""
+msgstr "Strom wieder anschließen"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:277
 msgid ": Reattach all power cables securely."
-msgstr ""
+msgstr ": Schließen Sie alle Netzkabel fest wieder an."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:278
 msgid "Power ON the Server"
-msgstr ""
+msgstr "Server einschalten"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:279
 msgid ": Boot the system normally.  A full AC power removal forces:"
-msgstr ""
+msgstr ": Starten Sie das System normal. Eine vollständige Entfernung der Netzspannung erzwingt:"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:282
 msgid "Smart Array controller re-enumeration"
-msgstr ""
+msgstr "Neuaufzählung des Smart-Array-Controllers"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:283
 msgid "PCI bus reinitialization"
-msgstr ""
+msgstr "Reinitialisierung des PCI-Busses"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:284
 msgid "Storage firmware reload"
-msgstr ""
+msgstr "Neuladen der Storage-Firmware"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:285
 msgid "Redfish object tree regeneration"
-msgstr ""
+msgstr "Regenerierung des Redfish-Objektbaums"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:286
 msgid ""
 "Hardware state synchronization  This process resolves the majority of "
 "post-SPP Redfish storage inconsistencies observed on Gen11 and Gen12 "
 "platforms."
-msgstr ""
+msgstr "Synchronisierung des Hardwarezustands. Dieser Prozess behebt die meisten nach SPP beobachteten Inkonsistenzen im Redfish-Storage auf Gen11- und Gen12-Plattformen."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/firmware_lifecycle.rst:288
 msgid ""
 "HPEstrongly recommends performing a full cold power cycle after major "
 "firmware bundle updates to ensure all updated components are fully "
 "initialized."
-msgstr ""
+msgstr "HPE empfiehlt nachdrücklich, nach größeren Firmware-Bundle-Updates einen vollständigen kalten Power-Zyklus durchzuführen, damit alle aktualisierten Komponenten vollständig initialisiert werden."
 

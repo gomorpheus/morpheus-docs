@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Backups/zerto.rst:2
 msgid "Zerto"
-msgstr ""
+msgstr "Zerto"
 
 #: ../../integration_guides/Backups/zerto.rst
 msgid ".. image:: /images/integration_guides/backups/morpehus_zerto_chart.png"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: ../../integration_guides/Backups/zerto.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../integration_guides/Backups/zerto.rst:9
 msgid ""
@@ -45,11 +45,11 @@ msgid ""
 "provides summary details for the integration as well as listing out "
 "replications and replication sites which are available to use with "
 "replication groups."
-msgstr ""
+msgstr "En intégrant |morpheus| et Zerto, |morpheus| importera automatiquement vos groupes de réplication Zerto existants et vous permettra également de créer et de modifier des groupes de réplication depuis l'interface |morpheus|. De plus, l'intégration Zerto peut être définie comme fournisseur de réplication pour les Clouds compatibles existants (tels que les Clouds VMware vCenter) afin d'ajouter de nouvelles charges de travail aux groupes de réplication. Si nécessaire, de nouveaux groupes de réplication peuvent également être créés au moment du provisionnement avec les VM nouvellement provisionnées qui y sont ajoutées. La page de détail de l'intégration Zerto fournit également un résumé de l'intégration ainsi que la liste des réplications et des sites de réplication disponibles pour utilisation avec les groupes de réplication."
 
 #: ../../integration_guides/Backups/zerto.rst:12
 msgid "HVM Support Boundary"
-msgstr ""
+msgstr "Limite de prise en charge HVM"
 
 #: ../../integration_guides/Backups/zerto.rst:14
 msgid ""
@@ -59,7 +59,7 @@ msgid ""
 "compatibility, replication setup, failover, test failover, failback, or "
 "recovery limitations. The presence of HVM and Zerto as separate product "
 "capabilities is not an interoperability claim."
-msgstr ""
+msgstr "Les éléments de preuve d'intégration fournis avec cette documentation établissent le workflow pour les Clouds compatibles tels que VMware vCenter. Ils n'établissent pas la prise en charge de la reprise après sinistre Zerto pour HVM, y compris la compatibilité des versions HVM, la configuration de la réplication, le basculement, le test de basculement, le retour arrière ou les limitations de récupération. La présence de HVM et Zerto en tant que capacités produit distinctes ne constitue pas une affirmation d'interopérabilité."
 
 #: ../../integration_guides/Backups/zerto.rst:16
 msgid ""
@@ -70,107 +70,107 @@ msgid ""
 ":ref:`compatibility`. Zerto infrastructure configuration and recovery-"
 "plan operation remain governed by Zerto documentation; this page covers "
 "only the |morpheus| integration boundary."
-msgstr ""
+msgstr "Ne sélectionnez pas un Cloud HVM comme fournisseur de réplication Zerto sauf si HPE et Zerto fournissent une déclaration d'interopérabilité actuelle et une procédure spécifique à la version. Jusqu'à ce que cette preuve soit disponible, configurez uniquement un type de Cloud documenté comme compatible et utilisez la version Zerto qualifiée dans :ref:`compatibility`. La configuration de l'infrastructure Zerto et l'exploitation du plan de reprise restent régis par la documentation Zerto ; cette page couvre uniquement la limite d'intégration |morpheus|."
 
 #: ../../integration_guides/Backups/zerto.rst:19
 msgid "Adding a Zerto Integration"
-msgstr ""
+msgstr "Ajout d'une intégration Zerto"
 
 #: ../../integration_guides/Backups/zerto.rst:21
 msgid "Navigate to |BacInt|"
-msgstr ""
+msgstr "Accédez à |BacInt|"
 
 #: ../../integration_guides/Backups/zerto.rst:22
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "API URL"
 
 #: ../../integration_guides/Backups/zerto.rst:23
 msgid "Select Zerto"
-msgstr ""
+msgstr "Sélectionnez Zerto"
 
 #: ../../integration_guides/Backups/zerto.rst:24
 msgid "Fill in the following:"
-msgstr ""
+msgstr "Port"
 
 #: ../../integration_guides/Backups/zerto.rst:26
 msgid "Name"
-msgstr ""
+msgstr "Numéro de port configuré pour accéder au serveur Veeam ; doit être 9398 pour VEEAM 10"
 
 #: ../../integration_guides/Backups/zerto.rst:27
 msgid "A friendly name for the integration in |morpheus|"
-msgstr ""
+msgstr "Un nom convivial pour l'intégration dans |morpheus|"
 
 #: ../../integration_guides/Backups/zerto.rst:28
 msgid "Enabled"
-msgstr ""
+msgstr "Nom d'utilisateur d'un compte de service administrateur dans Veeam"
 
 #: ../../integration_guides/Backups/zerto.rst:29
 msgid ""
 "When marked, the integration is enabled and made available for "
 "consumption in |morpheus|"
-msgstr ""
+msgstr "Lorsque coché, l'intégration est activée et rendue disponible pour consommation dans |morpheus|"
 
 #: ../../integration_guides/Backups/zerto.rst:30
 msgid "API URL"
-msgstr ""
+msgstr "Mot de passe de l'utilisateur fourni (chiffré dans |morpheus|)"
 
 #: ../../integration_guides/Backups/zerto.rst:31
 msgid ""
 "API URL for the Zerto Virtual Manager (ex. ``API URL: "
 "https://xx.xx.xx.xx:9669``)"
-msgstr ""
+msgstr "URL API pour le Zerto Virtual Manager (ex. ``API URL: https://xx.xx.xx.xx:9669``)"
 
 #: ../../integration_guides/Backups/zerto.rst:32
 msgid "Username"
-msgstr ""
+msgstr "Disponible uniquement pour le locataire qui a ajouté l'intégration"
 
 #: ../../integration_guides/Backups/zerto.rst:33
 msgid "Username for an admin Zerto service account"
-msgstr ""
+msgstr "Nom d'utilisateur d'un compte de service administrateur Zerto"
 
 #: ../../integration_guides/Backups/zerto.rst:34
 msgid "Password"
-msgstr ""
+msgstr "Disponible pour les sous-locataires (option locataire principal uniquement)"
 
 #: ../../integration_guides/Backups/zerto.rst:35
 msgid "Password for the provided user (encrypted in |morpheus|)."
-msgstr ""
+msgstr "Mot de passe de l'utilisateur fourni (chiffré dans |morpheus|)."
 
 #: ../../integration_guides/Backups/zerto.rst:36
 msgid "Visibility"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/Backups/zerto.rst:37
 msgid "Sets Multi-Tenant Visibility"
-msgstr ""
+msgstr "Veeam Backup Enterprise Manager doit être installé pour intégrer avec succès |morpheus| avec Veeam."
 
 #: ../../integration_guides/Backups/zerto.rst:38
 msgid "Private"
-msgstr ""
+msgstr "Important"
 
 #: ../../integration_guides/Backups/zerto.rst:39
 msgid ""
 "Restricts integration access to users in the current Tenant (subject to "
 "additional RBAC settings)"
-msgstr ""
+msgstr "Restreint l'accès à l'intégration aux utilisateurs du locataire actuel (sous réserve de paramètres RBAC supplémentaires)"
 
 #: ../../integration_guides/Backups/zerto.rst:40
 msgid "Public"
-msgstr ""
+msgstr "Définir Veeam comme cible de sauvegarde Cloud"
 
 #: ../../integration_guides/Backups/zerto.rst:41
 msgid ""
 "The integration is accessible to all Tenants (option available to "
 "|mastertenant| users only)"
-msgstr ""
+msgstr "L'intégration est accessible à tous les locataires (option disponible uniquement pour les utilisateurs |mastertenant|)"
 
 #: ../../integration_guides/Backups/zerto.rst:43
 msgid "Once complete, click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Une fois terminé, cliquez sur :guilabel:`SAVE`"
 
 #: ../../integration_guides/Backups/zerto.rst:45
 msgid "Note"
-msgstr ""
+msgstr "Sélectionnez un Cloud VMware, Hyper-V, SCVMM ou vCD existant"
 
 #: ../../integration_guides/Backups/zerto.rst:45
 msgid ""
@@ -179,18 +179,18 @@ msgid ""
 "credential set, or manually enter credentials and have them stored for "
 "later use in the |morpheus| secure credential store. See the CREDENTIALS "
 "configuration in the add/edit integration modal for all of these options."
-msgstr ""
+msgstr "En plus de saisir manuellement les identifiants nom d'utilisateur/mot de passe dans cette fenêtre modale, les utilisateurs ont également l'option d'utiliser un ensemble d'identifiants nom d'utilisateur/mot de passe stocké, ou de saisir manuellement les identifiants et de les stocker pour une utilisation ultérieure dans le magasin d'identifiants sécurisé |morpheus|. Consultez la configuration CREDENTIALS dans la fenêtre modale d'ajout/modification d'intégration pour toutes ces options."
 
 #: ../../integration_guides/Backups/zerto.rst:47
 msgid ""
 "Once the integration is created, you can click into the integration "
 "detail page to see existing replication groups, summary data, and other "
 "information about replications and replication sites."
-msgstr ""
+msgstr "Une fois l'intégration créée, vous pouvez accéder à la page de détails de l'intégration pour voir les groupes de réplication existants, les données récapitulatives et d'autres informations sur les réplications et les sites de réplication."
 
 #: ../../integration_guides/Backups/zerto.rst:50
 msgid "Setting a Replication Provider"
-msgstr ""
+msgstr "Définition d'un fournisseur de réplication"
 
 #: ../../integration_guides/Backups/zerto.rst:52
 msgid ""
@@ -200,7 +200,7 @@ msgid ""
 "Advanced Options section. In the dropdown for Replication Provider, "
 "select the Zerto integration. Finally, save the Cloud to commit the "
 "changes."
-msgstr ""
+msgstr "Une fois l'intégration créée, Zerto peut être ajouté comme fournisseur de réplication pour les Clouds compatibles. Modifiez un Cloud existant (cliquez sur le bouton :guilabel:`EDIT` depuis la page de détails du Cloud) et développez la section Advanced Options. Dans la liste déroulante Replication Provider, sélectionnez l'intégration Zerto. Enfin, enregistrez le Cloud pour valider les modifications."
 
 #: ../../integration_guides/Backups/zerto.rst:54
 msgid ""
@@ -211,7 +211,7 @@ msgid ""
 "option of adding newly provisioned VMs to an existing replication group. "
 "Additionally, you may also create a brand new replication group from "
 "within the provisioning wizard itself if a new group is needed."
-msgstr ""
+msgstr "Avec le Cloud et l'intégration Zerto associés, vous verrez désormais des options de réplication supplémentaires au moment du provisionnement. Lors du provisionnement vers le Cloud associé à l'avenir, développez la section Replication dans l'onglet AUTOMATION de l'assistant de provisionnement. Vous avez ici l'option d'ajouter les VM nouvellement provisionnées à un groupe de réplication existant. De plus, vous pouvez également créer un tout nouveau groupe de réplication depuis l'assistant de provisionnement lui-même si un nouveau groupe est nécessaire."
 
 #: ../../integration_guides/Backups/zerto.rst:56
 msgid ".. image:: /images/integration_guides/backups/zertoProvisioning.png"

@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:4
 msgid "Write Attributes Task"
-msgstr ""
+msgstr "Tâche Write Attributes"
 
 #: ../../provisioning/automation/write_attributes.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../provisioning/automation/write_attributes.rst:9
 msgid ""
@@ -35,77 +35,77 @@ msgid ""
 "container). This enables passing data between Tasks and Workflow phases, "
 "storing computed values for later reference, and building dynamic "
 "configuration state during provisioning."
-msgstr ""
+msgstr "The Write Attributes Task type writes a JSON payload of key-value pairs to the attributes property of the target resource (Instance, server, or container). This enables passing data between Tasks and "
 
 #: ../../provisioning/automation/write_attributes.rst:11
 msgid "Write Attributes Tasks are particularly useful for:"
-msgstr ""
+msgstr "Write Attributes Tasks are particularly useful for:"
 
 #: ../../provisioning/automation/write_attributes.rst:13
 msgid ""
 "Storing values from one Provisioning Workflow phase for use in another "
 "phase"
-msgstr ""
+msgstr "Storing values from one Provisioning Workflow phase for use in another phase"
 
 #: ../../provisioning/automation/write_attributes.rst:14
 msgid "Passing computed configuration between Tasks"
-msgstr ""
+msgstr "Passing computed configuration between Tasks"
 
 #: ../../provisioning/automation/write_attributes.rst:15
 msgid "Building dynamic metadata that other Tasks or integrations can reference"
-msgstr ""
+msgstr "Building dynamic metadata that other Tasks or integrations can reference"
 
 #: ../../provisioning/automation/write_attributes.rst:16
 msgid "Tagging resources with runtime-determined properties"
-msgstr ""
+msgstr "Tagging resources with runtime-determined properties"
 
 #: ../../provisioning/automation/write_attributes.rst:19
 msgid "Creating a Write Attributes Task"
-msgstr ""
+msgstr "Creating a Write Attributes Task"
 
 #: ../../provisioning/automation/write_attributes.rst:21
 msgid "Navigate to :menuselection:`Library --> Automation` > Tasks"
-msgstr ""
+msgstr "Navigate to :menuselection:`Library --> Automation` > Tasks"
 
 #: ../../provisioning/automation/write_attributes.rst:22
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Click :guilabel:`+ ADD`"
 
 #: ../../provisioning/automation/write_attributes.rst:23
 msgid "Select **Write Attributes** as the Task Type"
-msgstr ""
+msgstr "Select **Write Attributes** as the Task Type"
 
 #: ../../provisioning/automation/write_attributes.rst:24
 msgid "Configure:"
-msgstr ""
+msgstr "Configure:"
 
 #: ../../provisioning/automation/write_attributes.rst:26
 msgid "**NAME:** Descriptive name for the task"
-msgstr ""
+msgstr "**NAME:** Descriptive name for the task"
 
 #: ../../provisioning/automation/write_attributes.rst:27
 msgid "**CODE:** Unique code for API, CLI, and variable references"
-msgstr ""
+msgstr "**CODE:** Unique code for API, CLI, and variable references"
 
 #: ../../provisioning/automation/write_attributes.rst:28
 msgid "**ATTRIBUTES:** JSON payload to write (see formats below)"
-msgstr ""
+msgstr "**ATTRIBUTES:** JSON payload to write (see formats below)"
 
 #: ../../provisioning/automation/write_attributes.rst:30
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../provisioning/automation/write_attributes.rst:33
 msgid "JSON Payload Formats"
-msgstr ""
+msgstr "JSON Payload Formats"
 
 #: ../../provisioning/automation/write_attributes.rst:36
 msgid "Static Key-Value Pairs"
-msgstr ""
+msgstr "Static Key-Value Pairs"
 
 #: ../../provisioning/automation/write_attributes.rst:38
 msgid "Write a fixed set of attributes:"
-msgstr ""
+msgstr "Write a fixed set of attributes:"
 
 #: ../../provisioning/automation/write_attributes.rst:40
 #, python-brace-format
@@ -120,14 +120,14 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:50
 msgid "Dynamic Values from Prior Task Results"
-msgstr ""
+msgstr "Dynamic Values from Prior Task Results"
 
 #: ../../provisioning/automation/write_attributes.rst:52
 msgid ""
 "Reference outputs from previous Tasks using ``<%= results.taskCode %>`` "
 "syntax. The referenced Task must have its **RESULT TYPE** set to \"Single"
 " Value\":"
-msgstr ""
+msgstr "Reference outputs from previous Tasks using ``<%= results.taskCode %>`` syntax. The referenced Task must have its **RESULT TYPE** set to \"Single Value\":"
 
 #: ../../provisioning/automation/write_attributes.rst:54
 #, python-brace-format
@@ -141,23 +141,23 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:62
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../provisioning/automation/write_attributes.rst:62
 msgid ""
 "``taskCode`` refers to the **CODE** field value of the Task whose output "
 "you're referencing, not its name."
-msgstr ""
+msgstr "``taskCode`` refers to the **CODE** field value of the Task whose output you're referencing, not its name."
 
 #: ../../provisioning/automation/write_attributes.rst:65
 msgid "Dynamic JSON Map from Prior Task"
-msgstr ""
+msgstr "Dynamic JSON Map from Prior Task"
 
 #: ../../provisioning/automation/write_attributes.rst:67
 msgid ""
 "When a prior Task returns a full JSON object (RESULT TYPE set to "
 "\"JSON\"), pass it through using ``encodeAsJSON()``:"
-msgstr ""
+msgstr "When a prior Task returns a full JSON object (RESULT TYPE set to \"JSON\"), pass it through using ``encodeAsJSON()``:"
 
 #: ../../provisioning/automation/write_attributes.rst:69
 #, python-brace-format
@@ -169,21 +169,21 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:75
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../provisioning/automation/write_attributes.rst:75
 msgid ""
 "The ``encodeAsJSON()`` method is required for proper JSON serialization. "
 "Without it, the JSON map may not be stored correctly."
-msgstr ""
+msgstr "The ``encodeAsJSON()`` method is required for proper JSON serialization. Without it, the JSON map may not be stored correctly."
 
 #: ../../provisioning/automation/write_attributes.rst:78
 msgid "Mixed Static and Dynamic Values"
-msgstr ""
+msgstr "Mixed Static and Dynamic Values"
 
 #: ../../provisioning/automation/write_attributes.rst:80
 msgid "Combine static values with dynamic references:"
-msgstr ""
+msgstr "Combine static values with dynamic references:"
 
 #: ../../provisioning/automation/write_attributes.rst:82
 #, python-brace-format
@@ -198,11 +198,11 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:92
 msgid "Instance Variables"
-msgstr ""
+msgstr "Instance Variables"
 
 #: ../../provisioning/automation/write_attributes.rst:94
 msgid "|morpheus| instance variables can be referenced directly:"
-msgstr ""
+msgstr "|morpheus| instance variables can be referenced directly:"
 
 #: ../../provisioning/automation/write_attributes.rst:96
 #, python-brace-format
@@ -217,17 +217,17 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:106
 msgid "Reading Written Attributes"
-msgstr ""
+msgstr "Reading Written Attributes"
 
 #: ../../provisioning/automation/write_attributes.rst:108
 msgid ""
 "Attributes written by this Task can be accessed in subsequent Tasks and "
 "Workflow phases:"
-msgstr ""
+msgstr "Attributes written by this Task can be accessed in subsequent Tasks and Workflow phases:"
 
 #: ../../provisioning/automation/write_attributes.rst:111
 msgid "In Scripts (Groovy, Python, etc.)"
-msgstr ""
+msgstr "In Scripts (Groovy, Python, etc.)"
 
 #: ../../provisioning/automation/write_attributes.rst:113
 msgid ""
@@ -237,35 +237,35 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:119
 msgid "In Variable References"
-msgstr ""
+msgstr "In Variable References"
 
 #: ../../provisioning/automation/write_attributes.rst:121
 msgid "<%=instance.metadata.my_key1%>"
-msgstr ""
+msgstr "<%=instance.metadata.my_key1%>"
 
 #: ../../provisioning/automation/write_attributes.rst:126
 msgid "In Subsequent Write Attributes Tasks"
-msgstr ""
+msgstr "In Subsequent Write Attributes Tasks"
 
 #: ../../provisioning/automation/write_attributes.rst:128
 msgid ""
 "Written attributes accumulate — subsequent Write Attributes Tasks add to "
 "or overwrite existing keys without removing unmentioned keys."
-msgstr ""
+msgstr "Written attributes accumulate — subsequent Write Attributes Tasks add to or overwrite existing keys without removing unmentioned keys."
 
 #: ../../provisioning/automation/write_attributes.rst:131
 msgid "Use Cases"
-msgstr ""
+msgstr "Use Cases"
 
 #: ../../provisioning/automation/write_attributes.rst:133
 msgid "**Passing data between Provisioning Workflow phases:**"
-msgstr ""
+msgstr "**Passing data between Provisioning Workflow phases:**"
 
 #: ../../provisioning/automation/write_attributes.rst:135
 msgid ""
 "The Pre-Provision phase discovers infrastructure details, writes them as "
 "attributes, and the Provision phase reads them for configuration:"
-msgstr ""
+msgstr "The Pre-Provision phase discovers infrastructure details, writes them as attributes, and the Provision phase reads them for configuration:"
 
 #: ../../provisioning/automation/write_attributes.rst:137
 #, python-brace-format
@@ -279,7 +279,7 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:145
 msgid "**Storing deployment metadata:**"
-msgstr ""
+msgstr "**Storing deployment metadata:**"
 
 #: ../../provisioning/automation/write_attributes.rst:147
 #, python-brace-format
@@ -293,7 +293,7 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:155
 msgid "**Building configuration for downstream automation:**"
-msgstr ""
+msgstr "**Building configuration for downstream automation:**"
 
 #: ../../provisioning/automation/write_attributes.rst:157
 #, python-brace-format
@@ -308,31 +308,31 @@ msgstr ""
 
 #: ../../provisioning/automation/write_attributes.rst:167
 msgid "Best Practices"
-msgstr ""
+msgstr "Best Practices"
 
 #: ../../provisioning/automation/write_attributes.rst:169
 msgid ""
 "**Use descriptive key names:** Keys should clearly indicate their purpose"
 " (e.g., ``database_connection_string`` not ``val1``)"
-msgstr ""
+msgstr "**Use descriptive key names:** Keys should clearly indicate their purpose (e.g., ``database_connection_string`` not ``val1``)"
 
 #: ../../provisioning/automation/write_attributes.rst:170
 msgid ""
 "**Keep payloads focused:** Write only the attributes needed; avoid "
 "dumping entire result sets"
-msgstr ""
+msgstr "**Keep payloads focused:** Write only the attributes needed; avoid dumping entire result sets"
 
 #: ../../provisioning/automation/write_attributes.rst:171
 msgid ""
 "**Validate JSON syntax:** Malformed JSON will cause the Task to fail. Use"
 " a JSON validator for complex payloads"
-msgstr ""
+msgstr "**Validate JSON syntax:** Malformed JSON will cause the Task to fail. Use a JSON validator for complex payloads"
 
 #: ../../provisioning/automation/write_attributes.rst:172
 msgid ""
 "**Handle null results:** When referencing prior Task results that may be "
 "null, use Groovy's safe navigation operator:"
-msgstr ""
+msgstr "**Handle null results:** When referencing prior Task results that may be null, use Groovy's safe navigation operator:"
 
 #: ../../provisioning/automation/write_attributes.rst:174
 #, python-brace-format
@@ -346,5 +346,5 @@ msgstr ""
 msgid ""
 "**Document attribute contracts:** When multiple Workflow phases depend on"
 " written attributes, document which keys are expected and their formats"
-msgstr ""
+msgstr "**Document attribute contracts:** When multiple Workflow phases depend on written attributes, document which keys are expected and their formats"
 

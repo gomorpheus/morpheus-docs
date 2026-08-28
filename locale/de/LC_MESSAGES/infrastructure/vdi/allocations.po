@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../infrastructure/vdi/allocations.rst:4
 msgid "VDI Allocations"
-msgstr ""
+msgstr "VDI-Zuweisungen"
 
 #: ../../infrastructure/vdi/allocations.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Übersicht"
 
 #: ../../infrastructure/vdi/allocations.rst:9
 msgid ""
@@ -35,445 +35,445 @@ msgid ""
 " creates an allocation that binds an available Instance from the pool to "
 "that user for the duration of their session (non-persistent pools) or "
 "indefinitely (persistent pools)."
-msgstr ""
+msgstr "VDI-Zuweisungen stellen die Zuordnung einer VDI-Pool-Instanz zu einem bestimmten Benutzer dar. Wenn ein Benutzer eine virtuelle Desktop-Sitzung anfordert, erstellt |morpheus| eine Zuweisung, die eine verfügbare Instanz aus dem Pool für die Dauer der Sitzung (nicht persistente Pools) oder dauerhaft (persistente Pools) an diesen Benutzer bindet."
 
 #: ../../infrastructure/vdi/allocations.rst:11
 msgid ""
 "Allocations are managed automatically by |morpheus| but can be monitored "
 "and manually managed by administrators."
-msgstr ""
+msgstr "Zuweisungen werden von |morpheus| automatisch verwaltet, können aber von Administratoren überwacht und manuell verwaltet werden."
 
 #: ../../infrastructure/vdi/allocations.rst:14
 msgid "Allocation Lifecycle"
-msgstr ""
+msgstr "Zuweisungslebenszyklus"
 
 #: ../../infrastructure/vdi/allocations.rst:16
 msgid "Each allocation progresses through the following statuses:"
-msgstr ""
+msgstr "Jede Zuweisung durchläuft die folgenden Statuswerte:"
 
 #: ../../infrastructure/vdi/allocations.rst:22
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: ../../infrastructure/vdi/allocations.rst:23
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../infrastructure/vdi/allocations.rst:24
 msgid "Next State"
-msgstr ""
+msgstr "Nächster Zustand"
 
 #: ../../infrastructure/vdi/allocations.rst:25
 msgid "preparing"
-msgstr ""
+msgstr "preparing"
 
 #: ../../infrastructure/vdi/allocations.rst:26
 msgid "Instance is being provisioned or started for the user"
-msgstr ""
+msgstr "Die Instanz wird für den Benutzer provisioniert oder gestartet"
 
 #: ../../infrastructure/vdi/allocations.rst:27
 msgid "available / failed"
-msgstr ""
+msgstr "available / failed"
 
 #: ../../infrastructure/vdi/allocations.rst:28
 msgid "available"
-msgstr ""
+msgstr "available"
 
 #: ../../infrastructure/vdi/allocations.rst:29
 msgid "Instance is ready and waiting for user connection"
-msgstr ""
+msgstr "Die Instanz ist bereit und wartet auf die Benutzerverbindung"
 
 #: ../../infrastructure/vdi/allocations.rst:30
 #: ../../infrastructure/vdi/allocations.rst:31
 #: ../../infrastructure/vdi/allocations.rst:36
 msgid "reserved"
-msgstr ""
+msgstr "reserved"
 
 #: ../../infrastructure/vdi/allocations.rst:32
 msgid "Instance is actively assigned to a user session"
-msgstr ""
+msgstr "Die Instanz ist aktiv einer Benutzersitzung zugewiesen"
 
 #: ../../infrastructure/vdi/allocations.rst:33
 msgid "releasing / shutdown"
-msgstr ""
+msgstr "releasing / shutdown"
 
 #: ../../infrastructure/vdi/allocations.rst:34
 msgid "starting"
-msgstr ""
+msgstr "starting"
 
 #: ../../infrastructure/vdi/allocations.rst:35
 msgid "Instance is being powered on (persistent pools, returning user)"
-msgstr ""
+msgstr "Die Instanz wird eingeschaltet (persistente Pools, zurückkehrender Benutzer)"
 
 #: ../../infrastructure/vdi/allocations.rst:37
 msgid "releasing"
-msgstr ""
+msgstr "releasing"
 
 #: ../../infrastructure/vdi/allocations.rst:38
 msgid "Session has ended; instance is being released back to the pool"
-msgstr ""
+msgstr "Die Sitzung ist beendet; die Instanz wird an den Pool zurückgegeben"
 
 #: ../../infrastructure/vdi/allocations.rst:39
 msgid "(destroyed for non-persistent)"
-msgstr ""
+msgstr "(für nicht persistente zerstört)"
 
 #: ../../infrastructure/vdi/allocations.rst:40
 msgid "shutdown"
-msgstr ""
+msgstr "shutdown"
 
 #: ../../infrastructure/vdi/allocations.rst:41
 msgid "Instance has been shut down (persistent pools after timeout)"
-msgstr ""
+msgstr "Die Instanz wurde heruntergefahren (persistente Pools nach Timeout)"
 
 #: ../../infrastructure/vdi/allocations.rst:42
 msgid "starting (on next request)"
-msgstr ""
+msgstr "starting (bei nächster Anforderung)"
 
 #: ../../infrastructure/vdi/allocations.rst:43
 msgid "repossess"
-msgstr ""
+msgstr "repossess"
 
 #: ../../infrastructure/vdi/allocations.rst:44
 msgid "Allocation is being forcibly reclaimed"
-msgstr ""
+msgstr "Die Zuweisung wird zwangsweise zurückgefordert"
 
 #: ../../infrastructure/vdi/allocations.rst:45
 msgid "(destroyed)"
-msgstr ""
+msgstr "(zerstört)"
 
 #: ../../infrastructure/vdi/allocations.rst:46
 msgid "failed"
-msgstr ""
+msgstr "failed"
 
 #: ../../infrastructure/vdi/allocations.rst:47
 msgid "Instance failed to provision or start"
-msgstr ""
+msgstr "Die Instanz konnte nicht provisioniert oder gestartet werden"
 
 #: ../../infrastructure/vdi/allocations.rst:48
 #: ../../infrastructure/vdi/allocations.rst:51
 msgid "(requires admin intervention)"
-msgstr ""
+msgstr "(erfordert Admin-Eingriff)"
 
 #: ../../infrastructure/vdi/allocations.rst:49
 msgid "unknown"
-msgstr ""
+msgstr "unknown"
 
 #: ../../infrastructure/vdi/allocations.rst:50
 msgid "State cannot be determined"
-msgstr ""
+msgstr "Zustand kann nicht ermittelt werden"
 
 #: ../../infrastructure/vdi/allocations.rst:54
 msgid "Allocation Behavior by Pool Type"
-msgstr ""
+msgstr "Zuweisungsverhalten nach Pooltyp"
 
 #: ../../infrastructure/vdi/allocations.rst:57
 msgid "Non-Persistent Pools"
-msgstr ""
+msgstr "Nicht persistente Pools"
 
 #: ../../infrastructure/vdi/allocations.rst:59
 msgid "When a user requests a desktop, an available allocation is assigned"
-msgstr ""
+msgstr "Wenn ein Benutzer einen Desktop anfordert, wird eine verfügbare Zuweisung zugewiesen"
 
 #: ../../infrastructure/vdi/allocations.rst:60
 msgid ""
 "When the lease timeout expires after disconnect, the Instance is "
 "**destroyed**"
-msgstr ""
+msgstr "Wenn das Lease-Timeout nach der Trennung abläuft, wird die Instanz **zerstört**"
 
 #: ../../infrastructure/vdi/allocations.rst:61
 msgid "A new Instance is provisioned to maintain the pool's minimum size"
-msgstr ""
+msgstr "Eine neue Instanz wird provisioniert, um die Mindestgröße des Pools beizubehalten"
 
 #: ../../infrastructure/vdi/allocations.rst:62
 msgid "User data is not preserved between sessions"
-msgstr ""
+msgstr "Benutzerdaten werden zwischen Sitzungen nicht gespeichert"
 
 #: ../../infrastructure/vdi/allocations.rst:65
 msgid "Persistent Pools"
-msgstr ""
+msgstr "Persistente Pools"
 
 #: ../../infrastructure/vdi/allocations.rst:67
 msgid ""
 "On first request, a new allocation is created and bound to the user "
 "permanently"
-msgstr ""
+msgstr "Bei der ersten Anforderung wird eine neue Zuweisung erstellt und dauerhaft an den Benutzer gebunden"
 
 #: ../../infrastructure/vdi/allocations.rst:68
 msgid ""
 "When the lease timeout expires, the Instance is **shut down** (not "
 "destroyed)"
-msgstr ""
+msgstr "Wenn das Lease-Timeout abläuft, wird die Instanz **heruntergefahren** (nicht zerstört)"
 
 #: ../../infrastructure/vdi/allocations.rst:69
 msgid "On next request, the same Instance is powered back on"
-msgstr ""
+msgstr "Bei der nächsten Anforderung wird dieselbe Instanz wieder eingeschaltet"
 
 #: ../../infrastructure/vdi/allocations.rst:70
 msgid "User data, installed applications, and customizations are preserved"
-msgstr ""
+msgstr "Benutzerdaten, installierte Anwendungen und Anpassungen bleiben erhalten"
 
 #: ../../infrastructure/vdi/allocations.rst:73
 msgid "Viewing Allocations"
-msgstr ""
+msgstr "Zuweisungen anzeigen"
 
 #: ../../infrastructure/vdi/allocations.rst:75
 msgid "Administrators can view allocations through:"
-msgstr ""
+msgstr "Administratoren können Zuweisungen einsehen über:"
 
 #: ../../infrastructure/vdi/allocations.rst:78
 msgid "Via VDI Pool Detail"
-msgstr ""
+msgstr "Über VDI-Pool-Details"
 
 #: ../../infrastructure/vdi/allocations.rst:80
 msgid "Navigate to ``Tools > VDI Pools``"
-msgstr ""
+msgstr "Navigieren Sie zu ``Tools > VDI Pools``"
 
 #: ../../infrastructure/vdi/allocations.rst:81
 msgid "Select a pool"
-msgstr ""
+msgstr "Wählen Sie einen Pool aus"
 
 #: ../../infrastructure/vdi/allocations.rst:82
 msgid "View the Allocations tab showing all current allocations for that pool"
-msgstr ""
+msgstr "Zeigen Sie den Allocations-Tab an, der alle aktuellen Zuweisungen für diesen Pool enthält"
 
 #: ../../infrastructure/vdi/allocations.rst:85
 msgid "Via API"
-msgstr ""
+msgstr "Über API"
 
 #: ../../infrastructure/vdi/allocations.rst:87
 msgid ""
 "``GET /api/vdi-allocations`` returns all allocations with filtering "
 "support:"
-msgstr ""
+msgstr "``GET /api/vdi-allocations`` gibt alle Zuweisungen mit Filterunterstützung zurück:"
 
 #: ../../infrastructure/vdi/allocations.rst:89
 msgid "Filter by pool: ``?vdiPoolId=<id>``"
-msgstr ""
+msgstr "Nach Pool filtern: ``?vdiPoolId=<id>``"
 
 #: ../../infrastructure/vdi/allocations.rst:90
 msgid "Filter by user: ``?userId=<id>``"
-msgstr ""
+msgstr "Nach Benutzer filtern: ``?userId=<id>``"
 
 #: ../../infrastructure/vdi/allocations.rst:91
 msgid "Filter by status: ``?status=reserved``"
-msgstr ""
+msgstr "Nach Status filtern: ``?status=reserved``"
 
 #: ../../infrastructure/vdi/allocations.rst:94
 msgid "Allocation Fields"
-msgstr ""
+msgstr "Zuweisungsfelder"
 
 #: ../../infrastructure/vdi/allocations.rst:96
 msgid "Each allocation record contains:"
-msgstr ""
+msgstr "Jeder Zuweisungsdatensatz enthält:"
 
 #: ../../infrastructure/vdi/allocations.rst:98
 msgid "**Pool** — The parent VDI Pool"
-msgstr ""
+msgstr "**Pool** — Der übergeordnete VDI-Pool"
 
 #: ../../infrastructure/vdi/allocations.rst:99
 msgid "**Instance** — The assigned |morpheus| Instance"
-msgstr ""
+msgstr "**Instance** — Die zugewiesene |morpheus|-Instanz"
 
 #: ../../infrastructure/vdi/allocations.rst:100
 msgid "**User** — The assigned user (null if unassigned/available)"
-msgstr ""
+msgstr "**User** — Der zugewiesene Benutzer (null, wenn nicht zugewiesen/verfügbar)"
 
 #: ../../infrastructure/vdi/allocations.rst:101
 msgid "**Status** — Current allocation status"
-msgstr ""
+msgstr "**Status** — Aktueller Zuweisungsstatus"
 
 #: ../../infrastructure/vdi/allocations.rst:102
 msgid "**Persistent** — Whether this is a persistent allocation"
-msgstr ""
+msgstr "**Persistent** — Ob es sich um eine persistente Zuweisung handelt"
 
 #: ../../infrastructure/vdi/allocations.rst:103
 msgid "**Recyclable** — Whether the allocation can be recycled (reused)"
-msgstr ""
+msgstr "**Recyclable** — Ob die Zuweisung wiederverwendet (recycled) werden kann"
 
 #: ../../infrastructure/vdi/allocations.rst:104
 msgid "**Release Date** — When the allocation will be released (after timeout)"
-msgstr ""
+msgstr "**Release Date** — Wann die Zuweisung freigegeben wird (nach Timeout)"
 
 #: ../../infrastructure/vdi/allocations.rst:105
 msgid "**Last Reserved** — Timestamp of last user assignment"
-msgstr ""
+msgstr "**Last Reserved** — Zeitstempel der letzten Benutzerzuweisung"
 
 #: ../../infrastructure/vdi/allocations.rst:106
 msgid "**Sessions** — Active VDI sessions on this allocation"
-msgstr ""
+msgstr "**Sessions** — Aktive VDI-Sitzungen für diese Zuweisung"
 
 #: ../../infrastructure/vdi/allocations.rst:109
 msgid "Lease Timeout Behavior"
-msgstr ""
+msgstr "Lease-Timeout-Verhalten"
 
 #: ../../infrastructure/vdi/allocations.rst:111
 msgid ""
 "The lease timeout controls when allocations are released after user "
 "disconnect:"
-msgstr ""
+msgstr "Das Lease-Timeout steuert, wann Zuweisungen nach Trennung des Benutzers freigegeben werden:"
 
 #: ../../infrastructure/vdi/allocations.rst:113
 msgid ""
 "**Non-persistent pools:** Recommended timeout of ~10 minutes. After "
 "expiry, the VM is destroyed."
-msgstr ""
+msgstr "**Nicht persistente Pools:** Empfohlenes Timeout von ca. 10 Minuten. Nach Ablauf wird die VM zerstört."
 
 #: ../../infrastructure/vdi/allocations.rst:114
 msgid ""
 "**Persistent pools:** Recommended timeout of ~1 hour. After expiry, the "
 "VM is shut down."
-msgstr ""
+msgstr "**Persistente Pools:** Empfohlenes Timeout von ca. 1 Stunde. Nach Ablauf wird die VM heruntergefahren."
 
 #: ../../infrastructure/vdi/allocations.rst:116
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../infrastructure/vdi/allocations.rst:116
 msgid ""
 "Lease timeouts auto-extend for as long as the user is logged into or "
 "browsing any area of the |morpheus| application. Once the user closes "
 "their browser or logs out, timeouts stop auto-extending."
-msgstr ""
+msgstr "Lease-Timeouts verlängern sich automatisch, solange der Benutzer in einem Bereich der |morpheus|-Anwendung angemeldet ist oder darin navigiert. Sobald der Benutzer den Browser schließt oder sich abmeldet, endet die automatische Verlängerung der Timeouts."
 
 #: ../../infrastructure/vdi/allocations.rst:119
 msgid "Pool Sizing and Allocations"
-msgstr ""
+msgstr "Poolgröße und Zuweisungen"
 
 #: ../../infrastructure/vdi/allocations.rst:121
 msgid "Allocations interact with pool sizing parameters:"
-msgstr ""
+msgstr "Zuweisungen interagieren mit den Parametern der Poolgröße:"
 
 #: ../../infrastructure/vdi/allocations.rst:123
 msgid ""
 "**Minimum Idle** — Minimum number of available (unassigned) allocations "
 "to maintain. |morpheus| proactively provisions instances to meet this "
 "threshold."
-msgstr ""
+msgstr "**Minimum Idle** — Mindestanzahl verfügbarer (nicht zugewiesener) Zuweisungen, die beibehalten werden sollen. |morpheus| provisioniert proaktiv Instanzen, um diesen Schwellenwert zu erreichen."
 
 #: ../../infrastructure/vdi/allocations.rst:124
 msgid ""
 "**Initial Pool Size** — Number of instances provisioned when the pool is "
 "created."
-msgstr ""
+msgstr "**Initial Pool Size** — Anzahl der Instanzen, die bei Erstellung des Pools provisioniert werden."
 
 #: ../../infrastructure/vdi/allocations.rst:125
 msgid ""
 "**Maximum Pool Size** — Hard cap on total allocations (reserved + "
 "available)."
-msgstr ""
+msgstr "**Maximum Pool Size** — Harte Obergrenze für die Gesamtzahl der Zuweisungen (reserved + available)."
 
 #: ../../infrastructure/vdi/allocations.rst:127
 msgid ""
 "When an allocation is released (non-persistent), the pool controller "
 "checks if the available count has dropped below the minimum idle "
 "threshold and provisions replacements."
-msgstr ""
+msgstr "Wenn eine Zuweisung freigegeben wird (nicht persistent), prüft der Pool-Controller, ob die Anzahl verfügbarer Zuweisungen unter den Minimum-Idle-Schwellenwert gefallen ist, und provisioniert Ersatzinstanzen."
 
 #: ../../infrastructure/vdi/allocations.rst:130
 msgid "Managing Allocations"
-msgstr ""
+msgstr "Zuweisungen verwalten"
 
 #: ../../infrastructure/vdi/allocations.rst:133
 msgid "Releasing an Allocation"
-msgstr ""
+msgstr "Eine Zuweisung freigeben"
 
 #: ../../infrastructure/vdi/allocations.rst:135
 msgid "Administrators can force-release an allocation:"
-msgstr ""
+msgstr "Administratoren können eine Zuweisung zwangsweise freigeben:"
 
 #: ../../infrastructure/vdi/allocations.rst:137
 msgid "This disconnects any active user session"
-msgstr ""
+msgstr "Dadurch wird jede aktive Benutzersitzung getrennt"
 
 #: ../../infrastructure/vdi/allocations.rst:138
 msgid "For non-persistent pools: triggers instance destruction"
-msgstr ""
+msgstr "Bei nicht persistenten Pools: löst die Zerstörung der Instanz aus"
 
 #: ../../infrastructure/vdi/allocations.rst:139
 msgid "For persistent pools: triggers instance shutdown"
-msgstr ""
+msgstr "Bei persistenten Pools: löst das Herunterfahren der Instanz aus"
 
 #: ../../infrastructure/vdi/allocations.rst:142
 msgid "Viewing Session Details"
-msgstr ""
+msgstr "Sitzungsdetails anzeigen"
 
 #: ../../infrastructure/vdi/allocations.rst:144
 msgid ""
 "Each allocation tracks its VDI sessions (``VdiSession`` records) which "
 "contain:"
-msgstr ""
+msgstr "Jede Zuweisung verfolgt ihre VDI-Sitzungen (``VdiSession``-Datensätze), die Folgendes enthalten:"
 
 #: ../../infrastructure/vdi/allocations.rst:146
 msgid "Session start/end times"
-msgstr ""
+msgstr "Sitzungsstart-/endzeiten"
 
 #: ../../infrastructure/vdi/allocations.rst:147
 msgid "Connection protocol (RDP, VNC)"
-msgstr ""
+msgstr "Verbindungsprotokoll (RDP, VNC)"
 
 #: ../../infrastructure/vdi/allocations.rst:148
 msgid "Client information"
-msgstr ""
+msgstr "Clientinformationen"
 
 #: ../../infrastructure/vdi/allocations.rst:149
 msgid "Session duration"
-msgstr ""
+msgstr "Sitzungsdauer"
 
 #: ../../infrastructure/vdi/allocations.rst:152
 msgid "Local User Creation"
-msgstr ""
+msgstr "Lokale Benutzererstellung"
 
 #: ../../infrastructure/vdi/allocations.rst:154
 msgid ""
 "The ``localUserCreated`` field tracks whether |morpheus| has created the "
 "user's local account on the VDI desktop. This ensures:"
-msgstr ""
+msgstr "Das Feld ``localUserCreated`` erfasst, ob |morpheus| das lokale Benutzerkonto des Benutzers auf dem VDI-Desktop erstellt hat. Dadurch wird sichergestellt:"
 
 #: ../../infrastructure/vdi/allocations.rst:156
 msgid "Windows domain credentials or local accounts are configured on first use"
-msgstr ""
+msgstr "Windows-Domain-Anmeldedaten oder lokale Konten werden bei der ersten Nutzung konfiguriert"
 
 #: ../../infrastructure/vdi/allocations.rst:157
 msgid "Subsequent sessions reuse the existing local account"
-msgstr ""
+msgstr "Nachfolgende Sitzungen verwenden das vorhandene lokale Konto erneut"
 
 #: ../../infrastructure/vdi/allocations.rst:158
 msgid "User profiles are available immediately on connection"
-msgstr ""
+msgstr "Benutzerprofile sind bei der Verbindung sofort verfügbar"
 
 #: ../../infrastructure/vdi/allocations.rst:161
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Fehlerbehebung"
 
 #: ../../infrastructure/vdi/allocations.rst:163
 msgid ""
 "**Allocation stuck in \"preparing\":** Check the Instance provisioning "
 "status in ``Provisioning > Instances``. The underlying VM may have failed"
 " to provision."
-msgstr ""
+msgstr "**Zuweisung hängt in „preparing“:** Prüfen Sie den Provisionierungsstatus der Instanz unter ``Provisioning > Instances``. Die zugrunde liegende VM konnte möglicherweise nicht provisioniert werden."
 
 #: ../../infrastructure/vdi/allocations.rst:164
 msgid ""
 "**Allocation stuck in \"releasing\":** The Instance destruction may be "
 "failing. Check cloud connectivity and VM power state."
-msgstr ""
+msgstr "**Zuweisung hängt in „releasing“:** Die Zerstörung der Instanz schlägt möglicherweise fehl. Prüfen Sie die Cloud-Konnektivität und den Stromzustand der VM."
 
 #: ../../infrastructure/vdi/allocations.rst:165
 msgid ""
 "**No available allocations:** Pool may be at maximum capacity or minimum "
 "idle threshold is set too low for demand."
-msgstr ""
+msgstr "**Keine verfügbaren Zuweisungen:** Der Pool hat möglicherweise die Maximalkapazität erreicht oder der Minimum-Idle-Schwellenwert ist für die Nachfrage zu niedrig eingestellt."
 
 #: ../../infrastructure/vdi/allocations.rst:166
 msgid ""
 "**User cannot connect:** Verify the allocation status is \"reserved\" and"
 " the Instance is powered on. Check Guacamole connectivity."
-msgstr ""
+msgstr "**Benutzer kann keine Verbindung herstellen:** Stellen Sie sicher, dass der Zuweisungsstatus „reserved“ ist und die Instanz eingeschaltet ist. Prüfen Sie die Guacamole-Konnektivität."
 
 #: ../../infrastructure/vdi/allocations.rst:167
 msgid ""
 "**Persistent allocation not preserving data:** Ensure the pool type is "
 "set to Persistent and the Instance is shutting down (not being "
 "destroyed)."
-msgstr ""
+msgstr "**Persistente Zuweisung speichert Daten nicht:** Stellen Sie sicher, dass der Pooltyp auf Persistent eingestellt ist und die Instanz heruntergefahren (nicht zerstört) wird."
 

@@ -22,17 +22,17 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:5
 msgid "|morphver| Compatibility & Breaking Changes"
-msgstr ""
+msgstr "Compatibilité et modifications importantes |morphver|"
 
 #: ../../release_notes/compatibility.rst:7
 msgid ""
 "When installing and upgrading to |morpheus| |morphver|, refer to the "
 "following to ensure compatibility."
-msgstr ""
+msgstr "Lors de l'installation et de la mise à niveau vers |morpheus| |morphver|, consultez les éléments suivants pour garantir la compatibilité."
 
 #: ../../release_notes/compatibility.rst:10
 msgid "Breaking Changes"
-msgstr ""
+msgstr "Modifications importantes"
 
 #: ../../release_notes/compatibility.rst:12
 msgid ""
@@ -41,13 +41,13 @@ msgid ""
 "/package-repos/*`` after |morphver| package installation and before "
 "reconfigure to clean old node and VM node packages from the package-repo "
 "when appliance free space is needed."
-msgstr ""
+msgstr "9.0.0 : |morphver| contient de nouveaux packages node et VM node nécessitant 3,5 Go de stockage. Il est sûr d'exécuter ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` après l'installation du package |morphver| et avant reconfigure pour nettoyer les anciens packages node et VM node du package-repo lorsque l'espace libre de l'appliance est nécessaire."
 
 #: ../../release_notes/compatibility.rst:13
 msgid ""
 "9.0.0: Plugin API updated to 1.4.1. Plugins built against older Plugin "
 "API versions may need to be recompiled for compatibility."
-msgstr ""
+msgstr "9.0.0 : API de plug-in mise à jour vers 1.4.1. Les plug-ins compilés contre d'anciennes versions de l'API de plug-in peuvent devoir être recompilés pour la compatibilité."
 
 #: ../../release_notes/compatibility.rst:14
 msgid ""
@@ -55,7 +55,7 @@ msgid ""
 "Agent as the HA control plane for HPE Clustered Datastores. Existing 1.2 "
 "clusters can be upgraded via a one-click process (Infrastructure > "
 "Clusters > host > Actions > Update > HVM Cluster 1.3 Upgrade)."
-msgstr ""
+msgstr "9.0.0 : La disposition de cluster HVM 1.3 remplace Pacemaker par l'agent |morpheus| comme plan de contrôle HA pour les HPE Clustered Datastores. Les clusters 1.2 existants peuvent être mis à niveau via un processus en un clic (Infrastructure > Clusters > host > Actions > Update > HVM Cluster 1.3 Upgrade)."
 
 #: ../../release_notes/compatibility.rst:15
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "normalize all IPv6 records within |morpheus|-type pools. There will be a "
 "warning in appliance logs warning how many records will be normalized. "
 "This takes between 5-15 minutes per 1m records"
-msgstr ""
+msgstr "7.0.8, 8.0.0 : Au premier démarrage de l'interface utilisateur après la mise à niveau, |morpheus| normalisera tous les enregistrements IPv6 dans les pools de type |morpheus|. Un avertissement dans les journaux de l'appliance indiquera combien d'enregistrements seront normalisés. Cela prend entre 5 et 15 minutes par million d'enregistrements"
 
 #: ../../release_notes/compatibility.rst:16
 msgid ""
@@ -71,7 +71,7 @@ msgid ""
 " accept LONGTEXT data type to prevent data from oversetting the table in "
 "specific scenarios. Note that this schema change will take time for "
 "databases with large numbers of account usage records"
-msgstr ""
+msgstr "7.0.8, 8.0.0 : Mise à jour de la table AccountUsage dans la base de données de l'appliance pour accepter le type de données LONGTEXT afin d'éviter le dépassement de la table dans des scénarios spécifiques. Notez que ce changement de schéma prendra du temps pour les bases de données avec un grand nombre d'enregistrements d'utilisation de compte"
 
 #: ../../release_notes/compatibility.rst:17
 msgid ""
@@ -81,14 +81,14 @@ msgid ""
 "article in our KnowledgeBase <https://support.morpheusdata.com/s/article"
 "/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ on the "
 "small changes that will need to be made to ensure plugin compatibility"
-msgstr ""
+msgstr "6.3.0 : La version 6.3.0 est la première version à exiger l'API de plug-in 1.0.0+. De petites modifications devront être apportées pour rendre les plug-ins créés pour les versions antérieures de |morpheus| compatibles avec 6.3.0+. Consultez l'`article associé dans notre KnowledgeBase <https://support.morpheusdata.com/s/article/Making-plugins-compatible-with-Morpheus-6-3-0?language=en_US>`_ sur les petites modifications à apporter pour garantir la compatibilité des plug-ins"
 
 #: ../../release_notes/compatibility.rst:18
 msgid ""
 "6.2.2, 6.0.7 |morphver| contains embedded MySQL v8 upgrade when upgrading"
 " from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1. BACKUP YOUR DATABASE PRIOR TO "
 "UPGRADE when using embedded MySQL (all-in-one appliances)"
-msgstr ""
+msgstr "6.2.2, 6.0.7 : |morphver| contient une mise à niveau MySQL v8 intégrée lors de la mise à niveau depuis v6.0.0 - v6.0.6 ou 6.1.0 - 6.2.1. SAUVEGARDEZ VOTRE BASE DE DONNÉES AVANT LA MISE À NIVEAU lors de l'utilisation de MySQL intégré (appliances tout-en-un)"
 
 #: ../../release_notes/compatibility.rst:19
 msgid ""
@@ -96,14 +96,14 @@ msgid ""
 "environments using embedded RabbitMQ. Environments running 5.5.x or "
 "earlier using embedded RabbitMQ must upgrade to v6.0.0 - v6.0.6, or 6.1.0"
 " - 6.2.1 prior to upgrading to |morphver|"
-msgstr ""
+msgstr "6.2.2, 6.0.7 : Minimum v6.x requis pour mettre à niveau vers |morphver| pour les environnements utilisant RabbitMQ intégré. Les environnements exécutant 5.5.x ou antérieur avec RabbitMQ intégré doivent mettre à niveau vers v6.0.0 - v6.0.6, ou 6.1.0 - 6.2.1 avant de mettre à niveau vers |morphver|"
 
 #: ../../release_notes/compatibility.rst:20
 msgid ""
 "6.2.2, 6.0.7 Rolling upgrades for HA environments using embedded RabbitMQ"
 " and/or embedded Elasticsearch services are not supported when upgrading "
 "from  v6.0.0 - v6.0.6 or 6.1.0 - 6.2.1"
-msgstr ""
+msgstr "6.2.2, 6.0.7 : Les mises à niveau rolling pour les environnements HA utilisant RabbitMQ intégré et/ou les services Elasticsearch intégrés ne sont pas prises en charge lors de la mise à niveau depuis v6.0.0 - v6.0.6 ou 6.1.0 - 6.2.1"
 
 #: ../../release_notes/compatibility.rst:21
 msgid ""
@@ -111,7 +111,7 @@ msgid ""
 "account_invoice_item that may cause long initial ui start up times while "
 "the modifications are ran in MySQL for environments with over 100k "
 "invoice records when upgrading from any version other than 6.0.3"
-msgstr ""
+msgstr "6.1.1 contient des modifications de type de données sur account_invoice et account_invoice_item qui peuvent entraîner de longs temps de démarrage initial de l'interface utilisateur pendant l'exécution des modifications dans MySQL pour les environnements avec plus de 100 000 enregistrements de facture lors de la mise à niveau depuis toute version autre que 6.0.3"
 
 #: ../../release_notes/compatibility.rst:22
 msgid ""
@@ -119,13 +119,13 @@ msgid ""
 "folder. For HA environments using shared storage, rolling upgrades from "
 "any version other than 6.0.3 are not advised as the embeeded plugins will"
 " not be found on non-upgraded nodes after one node is upgraded."
-msgstr ""
+msgstr "6.1.1 déplace le dossier de plug-ins intégré et supprime le dossier précédent. Pour les environnements HA utilisant un stockage partagé, les mises à niveau rolling depuis toute version autre que 6.0.3 ne sont pas conseillées car les plug-ins intégrés ne seront pas trouvés sur les nœuds non mis à niveau après la mise à niveau d'un nœud."
 
 #: ../../release_notes/compatibility.rst:23
 msgid ""
 "6.1.1: NSX-V networking integration support is removed and no longer "
 "supported as of |morpheus| 6.1.1"
-msgstr ""
+msgstr "6.1.1 : La prise en charge de l'intégration réseau NSX-V est supprimée et n'est plus prise en charge depuis |morpheus| 6.1.1"
 
 #: ../../release_notes/compatibility.rst:24
 msgid ""
@@ -133,7 +133,7 @@ msgid ""
 "account_invoice_item that may cause long initial ui start up times while "
 "the modifications are ran in MySQL for environments with over 100k "
 "invoice records."
-msgstr ""
+msgstr "6.0.3 contient des modifications de type de données sur account_invoice et account_invoice_item qui peuvent entraîner de longs temps de démarrage initial de l'interface utilisateur pendant l'exécution des modifications dans MySQL pour les environnements avec plus de 100 000 enregistrements de facture."
 
 #: ../../release_notes/compatibility.rst:25
 msgid ""
@@ -141,7 +141,7 @@ msgid ""
 "folder. For HA environments using shared storage, rolling upgrades are "
 "not advised as the embeeded plugins will not be found on non-upgraded "
 "nodes after one node is upgraded."
-msgstr ""
+msgstr "6.0.3 déplace le dossier de plug-ins intégré et supprime le dossier précédent. Pour les environnements HA utilisant un stockage partagé, les mises à niveau rolling ne sont pas conseillées car les plug-ins intégrés ne seront pas trouvés sur les nœuds non mis à niveau après la mise à niveau d'un nœud."
 
 #: ../../release_notes/compatibility.rst:26
 msgid ""
@@ -158,7 +158,7 @@ msgid ""
 "all |morpheus| plugins. Where this is not possible, users may instead "
 "apply the supplemental installer package which is also available at "
 "|morpheus| Hub alongside the main installer package."
-msgstr ""
+msgstr "6.0.0+ : Dans |morpheus| 6.0.0+, de nombreuses intégrations tierces ont été déplacées hors du package d'installation principal et converties en plug-ins |morpheus|. Par conséquent, pendant le processus de mise à niveau, votre appliance devra pouvoir accéder à share.morpheusdata.com, le dépôt en ligne de tous les plug-ins |morpheus|. Lorsque cela n'est pas possible, les utilisateurs peuvent appliquer le package d'installation supplémentaire également disponible sur |morpheus| Hub aux côtés du package d'installation principal."
 
 #: ../../release_notes/compatibility.rst:28
 msgid ""
@@ -175,14 +175,14 @@ msgid ""
 "5.5.2: VM Node Packages: Due to build java version requiremnets, the "
 "i386.deb and i386.rpm (32-bit) VM Node Packages can no longer be updated,"
 " and remain on v3.2.9."
-msgstr ""
+msgstr "5.5.2 : VM Node Packages : En raison des exigences de version Java de compilation, les packages VM Node i386.deb et i386.rpm (32 bits) ne peuvent plus être mis à jour et restent en v3.2.9."
 
 #: ../../release_notes/compatibility.rst:30
 msgid ""
 "5.4.12: Guacd: Guacd is now complied iwth libssh2-1.10.0 on all "
 "platforms. Appliances on SLES15 may need openssl-devel manually installed"
 " for guacd to succesfully compile."
-msgstr ""
+msgstr "5.4.12 : Guacd : Guacd est désormais compilé avec libssh2-1.10.0 sur toutes les plate-formes. Les appliances sur SLES15 peuvent nécessiter l'installation manuelle de openssl-devel pour que guacd compile correctement."
 
 #: ../../release_notes/compatibility.rst:31
 msgid ""
@@ -195,7 +195,7 @@ msgid ""
 "your session if sticky sessions are off as it distributes your session "
 "data across the morpheus nodes in an HA environment. Additionally, "
 "overall system load is reduced as a result of the new session manager."
-msgstr ""
+msgstr "5.4.12 : Session Manager : Morpheus dispose d'un nouveau gestionnaire de session nécessaire pour résoudre les connexions expirées des agents en raison d'une mise à jour du framework Spring. Ce nouveau gestionnaire de session ne nécessite plus les sessions persistantes et elles peuvent être désactivées au niveau de l'équilibreur de charge si souhaité. Cependant, les conserver est tout à fait raisonnable car cela réduit la charge globale du système. Les redémarrages rolling ne vous déconnectent plus si les sessions persistantes sont désactivées car il distribue les données de session sur les nœuds morpheus dans un environnement HA. De plus, la charge globale du système est réduite grâce au nouveau gestionnaire de session."
 
 #: ../../release_notes/compatibility.rst:32
 msgid ""
@@ -205,7 +205,7 @@ msgid ""
 "Admin users will be able to see the State tab for these Instances. For "
 "other users who should have this access, edit their Roles to include "
 "\"Provisioning: State\" permissions."
-msgstr ""
+msgstr "5.4.9 : |morpheus| 5.4.9 ajoute l'autorisation de rôle « Provisioning: State ». Cette autorisation détermine l'accès à l'onglet State pour les instances basées sur Terraform et est définie sur « None » par défaut. Lors de la mise à niveau, seuls les utilisateurs System Admin pourront voir l'onglet State pour ces instances. Pour les autres utilisateurs qui devraient avoir cet accès, modifiez leurs rôles pour inclure les autorisations « Provisioning: State »."
 
 #: ../../release_notes/compatibility.rst:33
 msgid ""
@@ -213,31 +213,31 @@ msgid ""
 " tables. Customers with very large account_usage and/or metadata_tag "
 "tables (10 million+) may experience slower initial morpheus-ui loading "
 "time after upgrading to 5.4.5, as well as additional database load."
-msgstr ""
+msgstr "5.4.5 : Avertissement : Index de base de données ajoutés pour les tables account_usage et metadata_tag. Les clients avec de très grandes tables account_usage et/ou metadata_tag (10 millions+) peuvent constater un temps de chargement initial plus long de morpheus-ui après la mise à niveau vers 5.4.5, ainsi qu'une charge supplémentaire sur la base de données."
 
 #: ../../release_notes/compatibility.rst:34
 msgid "5.4.5: 'AVI Load Balancer' renamed to 'NSX Advanced Load Balancer'"
-msgstr ""
+msgstr "5.4.5 : « AVI Load Balancer » renommé en « NSX Advanced Load Balancer »"
 
 #: ../../release_notes/compatibility.rst:35
 msgid ""
 "5.4.5: Cloud Types disabled by default: Dell, HPE (NOT HPE Oneview), "
 "Supermicro and Cloud Foundry. Users would still be able to re-enable this"
 " clouds in the appliance settings. Does not affect existing Clouds."
-msgstr ""
+msgstr "5.4.5 : Types de cloud désactivés par défaut : Dell, HPE (PAS HPE Oneview), Supermicro et Cloud Foundry. Les utilisateurs pourraient toujours réactiver ces clouds dans les paramètres de l'appliance. N'affecte pas les clouds existants."
 
 #: ../../release_notes/compatibility.rst:36
 msgid ""
 "5.4.5: A10 Load Balancer type has been disabled, and will no longer be an"
 " option when adding new Load Balancers. This does not affect existing "
 "Load Balancers."
-msgstr ""
+msgstr "5.4.5 : Le type d'équilibreur de charge A10 a été désactivé et ne sera plus une option lors de l'ajout de nouveaux équilibreurs de charge. Cela n'affecte pas les équilibreurs de charge existants."
 
 #: ../../release_notes/compatibility.rst:37
 msgid ""
 "5.4.5: |morpheus| Cluster type \"Combo Cluster\" renamed to \"KVM/Docker "
 "Cluster\""
-msgstr ""
+msgstr "5.4.5 : Le type de cluster |morpheus| « Combo Cluster » a été renommé en « KVM/Docker Cluster »"
 
 #: ../../release_notes/compatibility.rst:38
 msgid ""
@@ -245,14 +245,14 @@ msgid ""
 "longer be deleted in |morpheus| without removing the actual "
 "vm/infrastructure. Restriction does not apply to brownfield vm's that "
 "have been converted to managed."
-msgstr ""
+msgstr "5.4.5 : Les VM gérées greenfield (provisionnées avec |morpheus|) ne peuvent plus être supprimées dans |morpheus| sans supprimer la VM/l'infrastructure réelle. La restriction ne s'applique pas aux VM brownfield converties en gérées."
 
 #: ../../release_notes/compatibility.rst:39
 msgid ""
 "5.4.4: The Venafi and AppDynamics integrations are deprecated in v5.4.4 "
 "and will be removed in v5.4.5. AppDynamic will return as a plugin at a "
 "later date."
-msgstr ""
+msgstr "5.4.4 : Les intégrations Venafi et AppDynamics sont dépréciées en v5.4.4 et seront supprimées en v5.4.5. AppDynamics reviendra sous forme de plug-in ultérieurement."
 
 #: ../../release_notes/compatibility.rst:40
 msgid ""
@@ -261,22 +261,22 @@ msgid ""
 " The logback.groovy file from previous versions can be removed, and any "
 "updates to logback.groovy will not result in any logging configuration "
 "changes."
-msgstr ""
+msgstr "5.4.4 : Le fichier de configuration de journalisation morpheus-ui est passé de logback.groovy à logback.xml en v5.4.4 (/opt/morpheus/conf/logback.xml). Le fichier logback.groovy des versions précédentes peut être supprimé, et toute mise à jour de logback.groovy n'entraînera aucun changement de configuration de journalisation."
 
 #: ../../release_notes/compatibility.rst:41
 msgid "5.4.3: vCloud Director: Support for integrations with vCD 9 ended"
-msgstr ""
+msgstr "5.4.3 : vCloud Director : La prise en charge des intégrations avec vCD 9 est terminée"
 
 #: ../../release_notes/compatibility.rst:42
 msgid ""
 "5.4.3: |morpheus| Worker/Gateway v5.4.3 packages are now available. "
 "Existing Worker & Gateway nodes must be upgraded to v5.4.3 for "
 "compatibility with |morpheus| v5.4.3 Appliances."
-msgstr ""
+msgstr "5.4.3 : Les packages |morpheus| Worker/Gateway v5.4.3 sont désormais disponibles. Les nœuds Worker et Gateway existants doivent être mis à niveau vers v5.4.3 pour la compatibilité avec les appliances |morpheus| v5.4.3."
 
 #: ../../release_notes/compatibility.rst:43
 msgid "5.4.2: vCloud Director: vCD 9.x will no longer be supported by Morpheus"
-msgstr ""
+msgstr "5.4.2 : vCloud Director : vCD 9.x ne sera plus pris en charge par Morpheus"
 
 #: ../../release_notes/compatibility.rst:44
 msgid ""
@@ -284,7 +284,7 @@ msgid ""
 "removed from ServiceNow plugin support. More advanced configurations of "
 "Instances and Blueprints, in addition to Workflows, can be exposed "
 "utilizing Catalog Items"
-msgstr ""
+msgstr "5.4.2 : ServiceNow : Les expositions spécifiques aux instances et aux blueprints seront supprimées de la prise en charge du plug-in ServiceNow. Des configurations plus avancées d'instances et de blueprints, en plus des workflows, peuvent être exposées en utilisant les Catalog Items"
 
 #: ../../release_notes/compatibility.rst:45
 msgid ""
@@ -295,17 +295,17 @@ msgid ""
 "from the REFRESH dropdown menu. If this is not done, |morpheus| may not "
 "show Amazon Service Plans in the provisioning wizard until after Midnight"
 " UTC following the upgrade when the next automatic Daily sync would run."
-msgstr ""
+msgstr "5.4.2 : Après la mise à niveau, il est recommandé d'effectuer manuellement un rafraîchissement « Daily » des clouds Amazon pour garantir la disponibilité des plans de service Amazon pour chaque région. Pour rafraîchir manuellement un cloud, accédez à Infrastructure > Clouds > (Cloud Amazon sélectionné) et sélectionnez « Daily » dans le menu déroulant REFRESH. Si ce n'est pas fait, |morpheus| peut ne pas afficher les plans de service Amazon dans l'assistant de provisionnement jusqu'après minuit UTC suivant la mise à niveau, lorsque la prochaine synchronisation Daily automatique s'exécuterait."
 
 #: ../../release_notes/compatibility.rst:46
 msgid ""
 "5.3.4: Major UI navigation structure changes. Refer to the "
 ":ref:`Navigation Updates` reference table"
-msgstr ""
+msgstr "5.3.4 : Changements majeurs de la structure de navigation de l'interface utilisateur. Consultez le tableau de référence :ref:`Navigation Updates`"
 
 #: ../../release_notes/compatibility.rst:47
 msgid "5.3.3: Support for OpenStack v2 Identity API is removed"
-msgstr ""
+msgstr "5.3.3 : La prise en charge de l'API Identity OpenStack v2 est supprimée"
 
 #: ../../release_notes/compatibility.rst:48
 msgid ""
@@ -319,46 +319,46 @@ msgid ""
 "``/var/opt/morpheus/morpheus-ui/repo`` path will be automatically deleted"
 " in a future release but can be manually recursively deleted at any time "
 "for storage reclamation."
-msgstr ""
+msgstr "5.3.2+ : Le chemin du dépôt de code local est passé de ``/var/opt/morpheus/morpheus-ui/repo`` à ``/var/opt/morpheus/morpheus-local/repo`` pour réduire les problèmes potentiels de stockage partagé et les restrictions de performance. Le processus reconfigure crée les dossiers et définit les chemins dans application.yml ; aucune intervention manuelle n'est nécessaire sauf si des liens symboliques existent sur ``/var/opt/morpheus/morpheus-ui/repo/git`` qui devront être supprimés avant reconfigure - 5.3.2+ Le chemin déprécié ``/var/opt/morpheus/morpheus-ui/repo`` sera automatiquement supprimé dans une version future mais peut être supprimé récursivement manuellement à tout moment pour récupérer de l'espace."
 
 #: ../../release_notes/compatibility.rst:49
 msgid ""
 "5.3.2+: :menuselection:`Provisioning --> Deployments` has been moved to "
 ":menuselection:`Provisioning --> Code --> Deployments`"
-msgstr ""
+msgstr "5.3.2+ : :menuselection:`Provisioning --> Deployments` a été déplacé vers :menuselection:`Provisioning --> Code --> Deployments`"
 
 #: ../../release_notes/compatibility.rst:50
 msgid ""
 "5.2.9: OpenStack v2 Identity API is deprecated as of v5.2.9 (and is "
 "removed as of v5.3.3)"
-msgstr ""
+msgstr "5.2.9 : L'API Identity OpenStack v2 est dépréciée depuis v5.2.9 (et supprimée depuis v5.3.3)"
 
 #: ../../release_notes/compatibility.rst:51
 msgid ""
 "5.2.6, 5.3.1: Appliance & Agent java version updated to ``8u292-b10``. "
 "jdk8u292 disables TLS 1.0 and 1.1 by default"
-msgstr ""
+msgstr "5.2.6, 5.3.1 : Version Java de l'appliance et de l'agent mise à jour vers ``8u292-b10``. jdk8u292 désactive TLS 1.0 et 1.1 par défaut"
 
 #: ../../release_notes/compatibility.rst:52
 msgid ""
 "5.2.3+: ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) repo "
 "access required for RHEL 8+ Appliances, replacing the previous "
 "PowerTools/powertools requirement"
-msgstr ""
+msgstr "5.2.3+ : Accès au dépôt ``codeready`` (codeready-builder-for-rhel-8-x86_64-rpms) requis pour les appliances RHEL 8+, remplaçant l'exigence précédente PowerTools/powertools"
 
 #: ../../release_notes/compatibility.rst:53
 msgid ""
 "5.2.1 & 4.2.5: API: Metadata: Metadata tags now referred to as ``tags`` "
 "and labels now referred to as ``labels``. Previously metadata tags were "
 "referred to as ``metadata`` and labels were referred to as ``tags``"
-msgstr ""
+msgstr "5.2.1 et 4.2.5 : API : Métadonnées : Les tags de métadonnées sont désormais appelés ``tags`` et les labels sont désormais appelés ``labels``. Auparavant, les tags de métadonnées étaient appelés ``metadata`` et les labels étaient appelés ``tags``"
 
 #: ../../release_notes/compatibility.rst:54
 msgid ""
 "5.0.0+: When upgrading to 5.0.0+ from 4.x.x, any bearer tokens that have "
 "been generated are deleted which requires users to request new bearer "
 "tokens"
-msgstr ""
+msgstr "5.0.0+ : Lors de la mise à niveau vers 5.0.0+ depuis 4.x.x, tous les jetons bearer générés sont supprimés, ce qui oblige les utilisateurs à demander de nouveaux jetons bearer"
 
 #: ../../release_notes/compatibility.rst:55
 msgid ""
@@ -368,25 +368,25 @@ msgid ""
 "will receive errors referencing timezone and |morpheus| will not start. "
 "|morpheus| should handle this change automatically for all-in-one "
 "appliances."
-msgstr ""
+msgstr "4.2.4 : Pour les appliances avec des bases de données MySQL externalisées, en raison de la dépréciation du fuseau horaire « EDT » par MySQL, vous devrez peut-être mettre à jour le fuseau horaire de votre base de données vers UTC ou une autre valeur compatible. Si ce n'est pas fait, vous recevrez des erreurs faisant référence au fuseau horaire et |morpheus| ne démarrera pas. |morpheus| devrait gérer ce changement automatiquement pour les appliances tout-en-un."
 
 #: ../../release_notes/compatibility.rst:56
 msgid ""
 "4.2.1+: Tasks: Python: Virtual environment are now used for Python Tasks."
 " **Note:** ``virtualenv`` is required on all Appliance App nodes"
-msgstr ""
+msgstr "4.2.1+ : Tâches : Python : Les environnements virtuels sont désormais utilisés pour les tâches Python. **Note :** ``virtualenv`` est requis sur tous les nœuds d'application de l'appliance"
 
 #: ../../release_notes/compatibility.rst:57
 msgid ""
 "4.2.1+: Puppet: |morpheus| integration now supports version 6+. Puppet "
 "versions prior to 6 are no longer supported"
-msgstr ""
+msgstr "4.2.1+ : Puppet : L'intégration |morpheus| prend désormais en charge la version 6+. Les versions Puppet antérieures à 6 ne sont plus prises en charge"
 
 #: ../../release_notes/compatibility.rst:58
 msgid ""
 "4.2.1+: Clouds: VirtualBox, VirtuSteam, and MetaCloud Cloud Types are no "
 "longer supported or available"
-msgstr ""
+msgstr "4.2.1+ : Clouds : Les types de cloud VirtualBox, VirtuSteam et MetaCloud ne sont plus pris en charge ou disponibles"
 
 #: ../../release_notes/compatibility.rst:59
 msgid ""
@@ -395,40 +395,40 @@ msgid ""
 "Any |morpheus| Appliance running on 14.04 must be upgraded to 16.04, "
 "18.04, 20.04, 22.04 or 24.04 BEFORE upgrading to 4.2.1+. Upgrades on "
 "14.04 will not succeed"
-msgstr ""
+msgstr "4.2.1+ : Appliance : OS : Ubuntu 14.04 a atteint sa fin de vie (EOL) et n'est plus pris en charge comme système d'exploitation hôte de l'appliance Morpheus. Toute appliance |morpheus| exécutée sur 14.04 doit être mise à niveau vers 16.04, 18.04, 20.04, 22.04 ou 24.04 AVANT de mettre à niveau vers 4.2.1+. Les mises à niveau sur 14.04 ne réussiront pas"
 
 #: ../../release_notes/compatibility.rst:62
 msgid "|morpheus| Application OS"
-msgstr ""
+msgstr "OS d'application |morpheus|"
 
 #: ../../release_notes/compatibility.rst:64
 msgid ""
 "|morpheus| can be installed on the following platforms. Please note the "
 "table below is for |morpheus| Application OS support, not |morpheus| "
 "Agent OS Support."
-msgstr ""
+msgstr "|morpheus| peut être installé sur les plate-formes suivantes. Notez que le tableau ci-dessous concerne la prise en charge de l'OS d'application |morpheus|, et non la prise en charge de l'OS de l'agent |morpheus|."
 
 #: ../../getting_started/requirements/applianceOsTable.rst:1
 msgid "**Supported Appliance Operating Systems**"
-msgstr ""
+msgstr "**Systèmes d'exploitation d'appliance pris en charge**"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:5
 msgid "OS"
-msgstr ""
+msgstr "OS"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:6
 msgid "Version(s)"
-msgstr ""
+msgstr "Version(s)"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:7
 #: ../../release_notes/compatibility.rst:166
 #: ../../release_notes/compatibility_table.rst:7
 msgid "Notes"
-msgstr ""
+msgstr "Notes"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:8
 msgid "Amazon Linux"
-msgstr ""
+msgstr "Amazon Linux"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:9
 msgid "2"
@@ -436,53 +436,53 @@ msgstr ""
 
 #: ../../getting_started/requirements/applianceOsTable.rst:11
 msgid "Debian"
-msgstr ""
+msgstr "Debian"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:12
 msgid "|debianVersions|"
-msgstr ""
+msgstr "|debianVersions|"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:14
 msgid "RHEL"
-msgstr ""
+msgstr "RHEL"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:15
 msgid "|rhelVersions|"
-msgstr ""
+msgstr "|rhelVersions|"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:17
 msgid "Oracle Enterprise Linux (OEL)"
-msgstr ""
+msgstr "Oracle Enterprise Linux (OEL)"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:18
 msgid "|oelVersions|"
-msgstr ""
+msgstr "|oelVersions|"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:20
 msgid "SUSE SLES"
-msgstr ""
+msgstr "SUSE SLES"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:21
 msgid "|suseVersions|"
-msgstr ""
+msgstr "|suseVersions|"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:23
 msgid "Ubuntu"
-msgstr ""
+msgstr "Ubuntu"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:24
 msgid "|ubuntuVersions|"
-msgstr ""
+msgstr "|ubuntuVersions|"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:25
 msgid ""
 "14.04 is no longer supported for Appliance OS.  Note: 14.04 is still "
 "supported by the |morpheus| Agent."
-msgstr ""
+msgstr "14.04 n'est plus pris en charge pour l'OS d'appliance. Note : 14.04 est toujours pris en charge par l'agent |morpheus|."
 
 #: ../../getting_started/requirements/applianceOsTable.rst:26
 msgid "Rocky"
-msgstr ""
+msgstr "Rocky"
 
 #: ../../getting_started/requirements/applianceOsTable.rst:27
 msgid "8, 9"
@@ -490,39 +490,39 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:69
 msgid "Services"
-msgstr ""
+msgstr "Services"
 
 #: ../../release_notes/compatibility.rst:72
 #: ../../release_notes/compatibility.rst:74
 msgid "|morphver| Service Versions & Compatibility"
-msgstr ""
+msgstr "Versions de service et compatibilité |morphver|"
 
 #: ../../release_notes/compatibility.rst:78
 msgid "Service"
-msgstr ""
+msgstr "Service"
 
 #: ../../release_notes/compatibility.rst:79
 msgid "Compatible Branch"
-msgstr ""
+msgstr "Branche compatible"
 
 #: ../../release_notes/compatibility.rst:80
 msgid "Morpheus Installer Version"
-msgstr ""
+msgstr "Version de l'installateur Morpheus"
 
 #: ../../release_notes/compatibility.rst:81
 msgid "Updated in |morphver|"
-msgstr ""
+msgstr "Mis à jour dans |morphver|"
 
 #: ../../release_notes/compatibility.rst:82
 #: ../../release_notes/compatibility.rst:170
 msgid "Plugin API"
-msgstr ""
+msgstr "API de plug-in"
 
 #: ../../release_notes/compatibility.rst:83
 #: ../../release_notes/compatibility.rst:84
 #: ../../release_notes/compatibility.rst:171
 msgid "|pluginVer|"
-msgstr ""
+msgstr "|pluginVer|"
 
 #: ../../release_notes/compatibility.rst:85
 #: ../../release_notes/compatibility.rst:93
@@ -532,32 +532,32 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:86
 msgid "Morpheus Worker"
-msgstr ""
+msgstr "Morpheus Worker"
 
 #: ../../release_notes/compatibility.rst:87
 msgid "|workerVer|"
-msgstr ""
+msgstr "|workerVer|"
 
 #: ../../release_notes/compatibility.rst:90
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: ../../release_notes/compatibility.rst:91
 #: ../../release_notes/compatibility.rst:95
 msgid "|mysqlbranch|"
-msgstr ""
+msgstr "|mysqlbranch|"
 
 #: ../../release_notes/compatibility.rst:92
 msgid "|mysqlver|"
-msgstr ""
+msgstr "|mysqlver|"
 
 #: ../../release_notes/compatibility.rst:94
 msgid "MySQL (FIPS)"
-msgstr ""
+msgstr "MySQL (FIPS)"
 
 #: ../../release_notes/compatibility.rst:96
 msgid "|mysqlverfips|"
-msgstr ""
+msgstr "|mysqlverfips|"
 
 #: ../../release_notes/compatibility.rst:98
 msgid "OpenSearch"
@@ -569,11 +569,11 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:100
 msgid "|esver|"
-msgstr ""
+msgstr "|esver|"
 
 #: ../../release_notes/compatibility.rst:102
 msgid "RabbitMQ"
-msgstr ""
+msgstr "RabbitMQ"
 
 #: ../../release_notes/compatibility.rst:103
 msgid "|rmqbranch|"
@@ -581,55 +581,55 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:104
 msgid "|rmqver|"
-msgstr ""
+msgstr "|rmqver|"
 
 #: ../../release_notes/compatibility.rst:106
 msgid "Tomcat"
-msgstr ""
+msgstr "Tomcat"
 
 #: ../../release_notes/compatibility.rst:108
 msgid "|tcver|"
-msgstr ""
+msgstr "|tcver|"
 
 #: ../../release_notes/compatibility.rst:110
 msgid "Nginx"
-msgstr ""
+msgstr "Nginx"
 
 #: ../../release_notes/compatibility.rst:112
 msgid "|nginxver|"
-msgstr ""
+msgstr "|nginxver|"
 
 #: ../../release_notes/compatibility.rst:114
 msgid "OpenSSL"
-msgstr ""
+msgstr "OpenSSL"
 
 #: ../../release_notes/compatibility.rst:116
 msgid "|openssl|, |openssl_fips| (FIPS)"
-msgstr ""
+msgstr "|openssl|, |openssl_fips| (FIPS)"
 
 #: ../../release_notes/compatibility.rst:118
 msgid "Java"
-msgstr ""
+msgstr "Java"
 
 #: ../../release_notes/compatibility.rst:120
 msgid "|java|"
-msgstr ""
+msgstr "|java|"
 
 #: ../../release_notes/compatibility.rst:122
 msgid "Java (macOS agent)"
-msgstr ""
+msgstr "Java (agent macOS)"
 
 #: ../../release_notes/compatibility.rst:124
 msgid "|java-mac|"
-msgstr ""
+msgstr "|java-mac|"
 
 #: ../../release_notes/compatibility.rst:131
 msgid "|morpheus| Agent & Node Package Versions"
-msgstr ""
+msgstr "Versions des packages Agent et Node |morpheus|"
 
 #: ../../release_notes/compatibility.rst:133
 msgid "|morphver| Agent & Node Package Versions"
-msgstr ""
+msgstr "Versions des packages Agent et Node |morphver|"
 
 #: ../../release_notes/compatibility.rst:137
 msgid "Package"
@@ -638,24 +638,24 @@ msgstr ""
 #: ../../release_notes/compatibility.rst:138
 #: ../../release_notes/compatibility.rst:165
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 #: ../../release_notes/compatibility.rst:139
 msgid "|morphver| changes from |previousMorphVer|"
-msgstr ""
+msgstr "Changements |morphver| par rapport à |previousMorphVer|"
 
 #: ../../release_notes/compatibility.rst:140
 msgid "Morpheus Node and VM Node Packages"
-msgstr ""
+msgstr "Packages Morpheus Node and VM Node"
 
 #: ../../release_notes/compatibility.rst:141
 #: ../../release_notes/compatibility.rst:183
 msgid "|nodePackageVer|"
-msgstr ""
+msgstr "|nodePackageVer|"
 
 #: ../../release_notes/compatibility.rst:142
 msgid "Updated to |nodePackageVer|"
-msgstr ""
+msgstr "Mis à jour vers |nodePackageVer|"
 
 #: ../../release_notes/compatibility.rst:143
 msgid "Morpheus Linux Agent"
@@ -664,15 +664,15 @@ msgstr ""
 #: ../../release_notes/compatibility.rst:144
 #: ../../release_notes/compatibility.rst:174
 msgid "|linuxagentver|"
-msgstr ""
+msgstr "|linuxagentver|"
 
 #: ../../release_notes/compatibility.rst:145
 msgid "Updated to |linuxagentver|"
-msgstr ""
+msgstr "Mis à jour vers |linuxagentver|"
 
 #: ../../release_notes/compatibility.rst:146
 msgid "Morpheus Windows Agent"
-msgstr ""
+msgstr "Agent Windows Morpheus"
 
 #: ../../release_notes/compatibility.rst:147
 #: ../../release_notes/compatibility.rst:177
@@ -682,11 +682,11 @@ msgstr ""
 #: ../../release_notes/compatibility.rst:148
 #: ../../release_notes/compatibility.rst:151
 msgid "No changes"
-msgstr ""
+msgstr "Aucun changement"
 
 #: ../../release_notes/compatibility.rst:149
 msgid "Morpheus macOS Agent"
-msgstr ""
+msgstr "Agent macOS Morpheus"
 
 #: ../../release_notes/compatibility.rst:150
 #: ../../release_notes/compatibility.rst:180
@@ -695,93 +695,93 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:156
 msgid "Component Version Matrix"
-msgstr ""
+msgstr "Matrice des versions des composants"
 
 #: ../../release_notes/compatibility.rst:158
 msgid ""
 "The following table shows the supported component versions for |morpheus|"
 " |morphver|."
-msgstr ""
+msgstr "Le tableau suivant présente les versions de composants prises en charge pour |morpheus| |morphver|."
 
 #: ../../release_notes/compatibility.rst:164
 msgid "Component"
-msgstr ""
+msgstr "Composant"
 
 #: ../../release_notes/compatibility.rst:167
 msgid "|morpheus| Manager"
-msgstr ""
+msgstr "Gestionnaire |morpheus|"
 
 #: ../../release_notes/compatibility.rst:168
 msgid "|morphver|"
-msgstr ""
+msgstr "|morphver|"
 
 #: ../../release_notes/compatibility.rst:169
 msgid "Application server, API, and UI"
-msgstr ""
+msgstr "Serveur d'application, API et interface utilisateur"
 
 #: ../../release_notes/compatibility.rst:172
 msgid ""
 "Required for plugin compatibility. Plugins built against older API "
 "versions may need recompilation."
-msgstr ""
+msgstr "Requis pour la compatibilité des plug-ins. Les plug-ins compilés contre d'anciennes versions de l'API peuvent nécessiter une recompilation."
 
 #: ../../release_notes/compatibility.rst:173
 msgid "Linux Agent"
-msgstr ""
+msgstr "Agent Linux"
 
 #: ../../release_notes/compatibility.rst:175
 #: ../../release_notes/compatibility.rst:178
 #: ../../release_notes/compatibility.rst:181
 msgid "Backward compatible within Major version (9.x)"
-msgstr ""
+msgstr "Rétrocompatible au sein de la version majeure (9.x)"
 
 #: ../../release_notes/compatibility.rst:176
 msgid "Windows Agent"
-msgstr ""
+msgstr "Agent Windows"
 
 #: ../../release_notes/compatibility.rst:179
 msgid "macOS Agent"
-msgstr ""
+msgstr "Agent macOS"
 
 #: ../../release_notes/compatibility.rst:182
 msgid "Node Packages"
-msgstr ""
+msgstr "Packages de nœuds"
 
 #: ../../release_notes/compatibility.rst:184
 msgid "VM and host provisioning packages"
-msgstr ""
+msgstr "Packages de provisionnement VM et hôte"
 
 #: ../../release_notes/compatibility.rst:185
 #: ../../release_notes/compatibility.rst:212
 msgid "HVM OS 24.04"
-msgstr ""
+msgstr "HVM OS 24.04"
 
 #: ../../release_notes/compatibility.rst:186
 msgid "Ubuntu 24.04 LTS based"
-msgstr ""
+msgstr "Basé sur Ubuntu 24.04 LTS"
 
 #: ../../release_notes/compatibility.rst:187
 msgid "Standard HVM host OS for cluster layout 1.3"
-msgstr ""
+msgstr "OS hôte HVM standard pour la disposition de cluster 1.3"
 
 #: ../../release_notes/compatibility.rst:188
 #: ../../release_notes/compatibility.rst:213
 msgid "HVM OS 26.04"
-msgstr ""
+msgstr "HVM OS 26.04"
 
 #: ../../release_notes/compatibility.rst:189
 msgid "Ubuntu 26.04 LTS based"
-msgstr ""
+msgstr "Basé sur Ubuntu 26.04 LTS"
 
 #: ../../release_notes/compatibility.rst:190
 msgid ""
 "Standard HVM host OS for cluster layout 2.0. Required for confidential "
 "compute. Introduced in 9.1.0."
-msgstr ""
+msgstr "OS hôte HVM standard pour la disposition de cluster 2.0. Requis pour le calcul confidentiel. Introduit en 9.1.0."
 
 #: ../../release_notes/compatibility.rst:191
 msgid "HPE Alletra Block Storage Plugin"
-msgstr ""
+msgstr "Plug-in HPE Alletra Block Storage"
 
 #: ../../release_notes/compatibility.rst:192
 msgid "1.14.x"
@@ -789,23 +789,23 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:193
 msgid "Requires Plugin API 1.4.1+, minimum Manager version 9.0.2"
-msgstr ""
+msgstr "Requiert l'API de plug-in 1.4.1+, version minimale du gestionnaire 9.0.2"
 
 #: ../../release_notes/compatibility.rst:194
 msgid "Embedded MySQL"
-msgstr ""
+msgstr "MySQL intégré"
 
 #: ../../release_notes/compatibility.rst:195
 msgid "8.4.x LTS"
-msgstr ""
+msgstr "8.4.x LTS"
 
 #: ../../release_notes/compatibility.rst:196
 msgid "Embedded database (or external 8.4.x+)"
-msgstr ""
+msgstr "Base de données intégrée (ou externe 8.4.x+)"
 
 #: ../../release_notes/compatibility.rst:197
 msgid "Embedded OpenSearch"
-msgstr ""
+msgstr "OpenSearch intégré"
 
 #: ../../release_notes/compatibility.rst:198
 msgid "2.x"
@@ -813,11 +813,11 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:199
 msgid "Log indexing and search engine"
-msgstr ""
+msgstr "Moteur d'indexation et de recherche de journaux"
 
 #: ../../release_notes/compatibility.rst:200
 msgid "Embedded RabbitMQ"
-msgstr ""
+msgstr "RabbitMQ intégré"
 
 #: ../../release_notes/compatibility.rst:201
 msgid "3.12.x"
@@ -825,20 +825,20 @@ msgstr ""
 
 #: ../../release_notes/compatibility.rst:202
 msgid "Message queue for internal communication"
-msgstr ""
+msgstr "File d'attente de messages pour la communication interne"
 
 #: ../../release_notes/compatibility.rst:205
 msgid "Manager ↔ HVM OS Compatibility"
-msgstr ""
+msgstr "Compatibilité Gestionnaire ↔ HVM OS"
 
 #: ../../release_notes/compatibility.rst:211
 #: ../../release_notes/compatibility.rst:237
 msgid "Manager Version"
-msgstr ""
+msgstr "Version du gestionnaire"
 
 #: ../../release_notes/compatibility.rst:214
 msgid "Cluster Layout"
-msgstr ""
+msgstr "Disposition de cluster"
 
 #: ../../release_notes/compatibility.rst:215
 #: ../../release_notes/compatibility.rst:240
@@ -851,15 +851,15 @@ msgstr ""
 #: ../../release_notes/compatibility.rst:224
 #: ../../release_notes/compatibility.rst:225
 msgid "Supported"
-msgstr ""
+msgstr "Pris en charge"
 
 #: ../../release_notes/compatibility.rst:217
 msgid "Not available"
-msgstr ""
+msgstr "Non disponible"
 
 #: ../../release_notes/compatibility.rst:218
 msgid "1.2 and 1.3"
-msgstr ""
+msgstr "1.2 et 1.3"
 
 #: ../../release_notes/compatibility.rst:219
 #: ../../release_notes/compatibility.rst:243
@@ -869,30 +869,30 @@ msgstr ""
 #: ../../release_notes/compatibility.rst:222
 #: ../../release_notes/compatibility.rst:226
 msgid "1.3 on HVM OS 24.04; 2.0 on HVM OS 26.04"
-msgstr ""
+msgstr "1.3 sur HVM OS 24.04 ; 2.0 sur HVM OS 26.04"
 
 #: ../../release_notes/compatibility.rst:223
 msgid "9.2.x (projected)"
-msgstr ""
+msgstr "9.2.x (projeté)"
 
 #: ../../release_notes/compatibility.rst:229
 msgid "Manager ↔ Agent Compatibility"
-msgstr ""
+msgstr "Compatibilité Gestionnaire ↔ Agent"
 
 #: ../../release_notes/compatibility.rst:231
 msgid ""
 "The |morpheus| Agent is backward compatible within the same Major "
 "version. Agents from any 9.x release will function with any 9.x Manager. "
 "Upgrading agents is recommended but not required for patch releases."
-msgstr ""
+msgstr "L'agent |morpheus| est rétrocompatible au sein de la même version majeure. Les agents de toute version 9.x fonctionneront avec tout gestionnaire 9.x. La mise à niveau des agents est recommandée mais non requise pour les versions de correctif."
 
 #: ../../release_notes/compatibility.rst:238
 msgid "Minimum Agent Version"
-msgstr ""
+msgstr "Version minimale de l'agent"
 
 #: ../../release_notes/compatibility.rst:239
 msgid "Recommended Agent Version"
-msgstr ""
+msgstr "Version recommandée de l'agent"
 
 #: ../../release_notes/compatibility.rst:241
 #: ../../release_notes/compatibility.rst:244
@@ -911,26 +911,26 @@ msgstr ""
 msgid ""
 "For complete release lifecycle and support policy information, see "
 ":doc:`lifecycle`."
-msgstr ""
+msgstr "Pour des informations complètes sur le cycle de vie des versions et la politique de support, consultez :doc:`lifecycle`."
 
 #: ../../release_notes/compatibility.rst:252
 msgid "Upgrade Paths & Methods"
-msgstr ""
+msgstr "Chemins et méthodes de mise à niveau"
 
 #: ../../release_notes/compatibility.rst:254
 msgid "The following table shows supported version upgrade paths and methods."
-msgstr ""
+msgstr "Le tableau suivant présente les chemins et méthodes de mise à niveau de version pris en charge."
 
 #: ../../release_notes/upgrade_table2.rst:412
 msgid ""
 "\\* Some Features and Fixes in the ``From`` version may not be included "
 "in the ``To`` version due to ``From`` version being released after the "
 "``To`` version."
-msgstr ""
+msgstr "\\* Certaines fonctionnalités et correctifs de la version ``From`` peuvent ne pas être inclus dans la version ``To`` car la version ``From`` a été publiée après la version ``To``."
 
 #: ../../release_notes/compatibility.rst:261
 msgid "Integrations"
-msgstr ""
+msgstr "Intégrations"
 
 #: ../../release_notes/compatibility.rst:263
 msgid ""
@@ -940,7 +940,7 @@ msgid ""
 " version. A blank or broad product-family entry must not be used as a "
 "certification statement. Contact HPE Support when a planned integration "
 "version is not listed."
-msgstr ""
+msgstr "Le tableau ci-dessous est la matrice d'intégration-version canonique pour cette version de documentation. Il enregistre les versions avec une déclaration de support ou de test établie ; il n'implique pas le support d'une intégration ou version non répertoriée. Une entrée vide ou une entrée de famille de produits large ne doit pas être utilisée comme déclaration de certification. Contactez le support HPE lorsqu'une version d'intégration planifiée n'est pas répertoriée."
 
 #: ../../release_notes/compatibility.rst:265
 msgid ""
@@ -949,31 +949,31 @@ msgid ""
 "provisioning, networking, lifecycle, costing, and governance coverage by "
 "Cloud type, see "
 ":doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
-msgstr ""
+msgstr "Cette matrice répond à **quelles versions de produits externes sont qualifiées**. Elle ne décrit pas quelles opérations une intégration implémente. Pour la couverture de provisionnement, réseau, cycle de vie, coûts et gouvernance par type de cloud, consultez :doc:`/integration_guides/Clouds/cloudCoverage/cloudCoverage`."
 
 #: ../../release_notes/compatibility_table.rst:1
 msgid "Integration Compatibility"
-msgstr ""
+msgstr "Compatibilité des intégrations"
 
 #: ../../release_notes/compatibility_table.rst:5
 msgid "Integration"
-msgstr ""
+msgstr "Intégration"
 
 #: ../../release_notes/compatibility_table.rst:6
 msgid "Supported Version(s)"
-msgstr ""
+msgstr "Version(s) prise(s) en charge"
 
 #: ../../release_notes/compatibility_table.rst:8
 msgid "Ansible"
-msgstr ""
+msgstr "Ansible"
 
 #: ../../release_notes/compatibility_table.rst:9
 msgid "2.7.x or higher"
-msgstr ""
+msgstr "2.7.x ou supérieur"
 
 #: ../../release_notes/compatibility_table.rst:11
 msgid "Ansible Tower"
-msgstr ""
+msgstr "Ansible Tower"
 
 #: ../../release_notes/compatibility_table.rst:12
 msgid "3.8.x"
@@ -981,7 +981,7 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:14
 msgid "App Dynamics"
-msgstr ""
+msgstr "App Dynamics"
 
 #: ../../release_notes/compatibility_table.rst:15
 msgid "4.5.x"
@@ -989,15 +989,15 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:17
 msgid "ArubaCX"
-msgstr ""
+msgstr "ArubaCX"
 
 #: ../../release_notes/compatibility_table.rst:18
 msgid "8325 series - GL.10.10.x or higher"
-msgstr ""
+msgstr "Série 8325 - GL.10.10.x ou supérieur"
 
 #: ../../release_notes/compatibility_table.rst:20
 msgid "Avamar"
-msgstr ""
+msgstr "Avamar"
 
 #: ../../release_notes/compatibility_table.rst:21
 msgid "18"
@@ -1005,21 +1005,21 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:23
 msgid "Azure Stack"
-msgstr ""
+msgstr "Azure Stack"
 
 #: ../../release_notes/compatibility_table.rst:24
 msgid "2002 back to 1908"
-msgstr ""
+msgstr "2002 jusqu'à 1908"
 
 #: ../../release_notes/compatibility_table.rst:25
 msgid ""
 "``2019-03-01-hybrid`` api-profile version used which is supported in 1908"
 " and later Azure Stack versions"
-msgstr ""
+msgstr "Version du profil API ``2019-03-01-hybrid`` utilisée, prise en charge dans Azure Stack 1908 et versions ultérieures"
 
 #: ../../release_notes/compatibility_table.rst:26
 msgid "Cisco ACI"
-msgstr ""
+msgstr "Cisco ACI"
 
 #: ../../release_notes/compatibility_table.rst:27
 msgid "3.x,4.x,5.x"
@@ -1027,23 +1027,23 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:29
 msgid "Citrix Netscaler"
-msgstr ""
+msgstr "Citrix Netscaler"
 
 #: ../../release_notes/compatibility_table.rst:30
 msgid "v12.1"
-msgstr ""
+msgstr "v12.1"
 
 #: ../../release_notes/compatibility_table.rst:32
 msgid "Commvault"
-msgstr ""
+msgstr "Commvault"
 
 #: ../../release_notes/compatibility_table.rst:33
 msgid "v11 sp 19"
-msgstr ""
+msgstr "v11 sp 19"
 
 #: ../../release_notes/compatibility_table.rst:35
 msgid "F5 Big-IP"
-msgstr ""
+msgstr "F5 Big-IP"
 
 #: ../../release_notes/compatibility_table.rst:36
 msgid "11.4+"
@@ -1051,19 +1051,19 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:38
 msgid "HPE Alletra MP Storage"
-msgstr ""
+msgstr "HPE Alletra MP Storage"
 
 #: ../../release_notes/compatibility_table.rst:39
 msgid "10.4.2 or higher"
-msgstr ""
+msgstr "10.4.2 ou supérieur"
 
 #: ../../release_notes/compatibility_table.rst:41
 msgid "Infoblox"
-msgstr ""
+msgstr "Infoblox"
 
 #: ../../release_notes/compatibility_table.rst:42
 msgid "Per Infoblox plugin release"
-msgstr ""
+msgstr "Selon la version du plug-in Infoblox"
 
 #: ../../release_notes/compatibility_table.rst:43
 msgid ""
@@ -1071,11 +1071,11 @@ msgid ""
 "(Marketplace). See the version-specific release notes for historical "
 "plugin version statements; these do not imply broad compatibility across "
 "all Infoblox or |morpheus| versions."
-msgstr ""
+msgstr "Obtenez le plug-in développé officiellement dans le catalogue de plug-ins Morpheus (Marketplace). Consultez les notes de version spécifiques pour les déclarations historiques de version de plug-in ; celles-ci n'impliquent pas une compatibilité générale avec toutes les versions d'Infoblox ou de |morpheus|."
 
 #: ../../release_notes/compatibility_table.rst:44
 msgid "Kubernetes"
-msgstr ""
+msgstr "Kubernetes"
 
 #: ../../release_notes/compatibility_table.rst:45
 msgid "1.21+"
@@ -1083,19 +1083,19 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:47
 msgid "Microsoft Hyper-V"
-msgstr ""
+msgstr "Microsoft Hyper-V"
 
 #: ../../release_notes/compatibility_table.rst:48
 msgid "2012R2, 2016, 2019, 2022, 2025"
-msgstr ""
+msgstr "2012R2, 2016, 2019, 2022, 2025"
 
 #: ../../release_notes/compatibility_table.rst:50
 msgid "MySQL (external)"
-msgstr ""
+msgstr "MySQL (externe)"
 
 #: ../../release_notes/compatibility_table.rst:51
 msgid "See release-specific certification"
-msgstr ""
+msgstr "Voir la certification spécifique à la version"
 
 #: ../../release_notes/compatibility_table.rst:52
 msgid ""
@@ -1103,11 +1103,11 @@ msgid ""
 "configuration, including the 8.4 LTS family. This entry does not certify "
 "every external patch, managed-service variant, later major version, or "
 "innovation release."
-msgstr ""
+msgstr "|morpheus| 9.0.0 intègre MySQL 8.4.8 et prend en charge la configuration MySQL externe, y compris la famille 8.4 LTS. Cette entrée ne certifie pas chaque correctif externe, variante de service géré, version majeure ultérieure ou version innovation."
 
 #: ../../release_notes/compatibility_table.rst:53
 msgid "Nutanix AOS"
-msgstr ""
+msgstr "Nutanix AOS"
 
 #: ../../release_notes/compatibility_table.rst:54
 msgid ""
@@ -1117,46 +1117,46 @@ msgid ""
 "interoperability-"
 "matrix/software?partnerName=Morpheus%20Data&solutionType=all&componentVersion=all&hypervisor=all&validationType=all>`_"
 " for additional information"
-msgstr ""
+msgstr "Pour la version |morpheus| 6.3.4 et supérieure, la version Nutanix AOS 6.5.3.7+ est requise. Consultez le `tableau de compatibilité et d'interopérabilité Nutanix <https://portal.nutanix.com/page/documents/compatibility-interoperability-matrix/software?partnerName=Morpheus%20Data&solutionType=all&componentVersion=all&hypervisor=all&validationType=all>`_ pour plus d'informations"
 
 #: ../../release_notes/compatibility_table.rst:55
 msgid ""
 "In 5.5 - 5.7 if Prism Central is managing Prism Element, image creation "
 "will not function due to PC Image Management."
-msgstr ""
+msgstr "En 5.5 - 5.7, si Prism Central gère Prism Element, la création d'images ne fonctionnera pas en raison de PC Image Management."
 
 #: ../../release_notes/compatibility_table.rst:56
 msgid "Nutanix Prism Central"
-msgstr ""
+msgstr "Nutanix Prism Central"
 
 #: ../../release_notes/compatibility_table.rst:57
 msgid "Plugin QA tested against pc.2024.3.0.1"
-msgstr ""
+msgstr "QA du plug-in testée avec pc.2024.3.0.1"
 
 #: ../../release_notes/compatibility_table.rst:58
 msgid ""
 "Nutanix Prism Central Cloud integration is added through an officially-"
 "developed plugin. See share.morpheusdata.com and the Prism Central "
 "integration guide in this documentation for more details."
-msgstr ""
+msgstr "L'intégration Nutanix Prism Central Cloud est ajoutée via un plug-in développé officiellement. Consultez share.morpheusdata.com et le guide d'intégration Prism Central dans cette documentation pour plus de détails."
 
 #: ../../release_notes/compatibility_table.rst:59
 msgid "Openstack"
-msgstr ""
+msgstr "Openstack"
 
 #: ../../release_notes/compatibility_table.rst:60
 msgid "Latest Versions Supported"
-msgstr ""
+msgstr "Dernières versions prises en charge"
 
 #: ../../release_notes/compatibility_table.rst:61
 msgid ""
 "When creating an OpenStack integration, select the latest available from "
 "the OS Version dropdown menu when running a later version"
-msgstr ""
+msgstr "Lors de la création d'une intégration OpenStack, sélectionnez la dernière version disponible dans le menu déroulant OS Version lorsque vous exécutez une version ultérieure"
 
 #: ../../release_notes/compatibility_table.rst:62
 msgid "Puppet"
-msgstr ""
+msgstr "Puppet"
 
 #: ../../release_notes/compatibility_table.rst:63
 msgid "6+"
@@ -1166,19 +1166,19 @@ msgstr ""
 msgid ""
 "Puppet Agent version will be latest 6 version from yum.puppetlabs.com or "
 "apt.puppetlabs.com"
-msgstr ""
+msgstr "La version de Puppet Agent sera la dernière version 6 disponible sur yum.puppetlabs.com ou apt.puppetlabs.com"
 
 #: ../../release_notes/compatibility_table.rst:65
 msgid "Rubrik"
-msgstr ""
+msgstr "Rubrik"
 
 #: ../../release_notes/compatibility_table.rst:66
 msgid "Up to 7.x"
-msgstr ""
+msgstr "Jusqu'à 7.x"
 
 #: ../../release_notes/compatibility_table.rst:68
 msgid "SCVMM"
-msgstr ""
+msgstr "SCVMM"
 
 #: ../../release_notes/compatibility_table.rst:69
 msgid "2016, 2019, 2022"
@@ -1186,26 +1186,26 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:71
 msgid "ServiceNow"
-msgstr ""
+msgstr "ServiceNow"
 
 #: ../../release_notes/compatibility_table.rst:72
 msgid "Per servicenow plugin version"
-msgstr ""
+msgstr "Selon la version du plug-in servicenow"
 
 #: ../../release_notes/compatibility_table.rst:73
 msgid ""
 "Refer to the `servicenow store "
 "<https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_"
 "  for Morpheus Catalog compatibility"
-msgstr ""
+msgstr "Consultez le `servicenow store <https://store.servicenow.com/sn_appstore_store.do#!/store/application/8d8b6bbf0ff07e009c84306be1050e67>`_  pour la compatibilité avec le catalogue Morpheus"
 
 #: ../../release_notes/compatibility_table.rst:74
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../release_notes/compatibility_table.rst:75
 msgid "Latest"
-msgstr ""
+msgstr "Dernier"
 
 #: ../../release_notes/compatibility_table.rst:76
 msgid ""
@@ -1213,11 +1213,11 @@ msgid ""
 " be 1.5.5 for licensing reasons. If a later version is required, you will"
 " need to manually handle Terraform installation. See the “Terraform "
 "Installation” section of |morpheus| docs for more details."
-msgstr ""
+msgstr "Lorsque |morpheus| gère l'installation de Terraform, la version utilisée sera 1.5.5 pour des raisons de licence. Si une version ultérieure est requise, vous devrez gérer manuellement l'installation de Terraform. Consultez la section « Terraform Installation » de la documentation |morpheus| pour plus de détails."
 
 #: ../../release_notes/compatibility_table.rst:77
 msgid "vCloud Director"
-msgstr ""
+msgstr "vCloud Director"
 
 #: ../../release_notes/compatibility_table.rst:78
 msgid "10.0, 10.2, 10.3, 10.4"
@@ -1227,11 +1227,11 @@ msgstr ""
 msgid ""
 "When upgrading a vCD environment, you should update the API Version "
 "setting on the |morpheus| Cloud configuration first"
-msgstr ""
+msgstr "Lors de la mise à niveau d'un environnement vCD, vous devez d'abord mettre à jour le paramètre API Version dans la configuration Cloud de |morpheus|"
 
 #: ../../release_notes/compatibility_table.rst:80
 msgid "Veeam"
-msgstr ""
+msgstr "Veeam"
 
 #: ../../release_notes/compatibility_table.rst:81
 msgid "10, 11, 12"
@@ -1239,7 +1239,7 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:83
 msgid "VMware ESXi"
-msgstr ""
+msgstr "VMware ESXi"
 
 #: ../../release_notes/compatibility_table.rst:84
 msgid "6.5, 6.7, 7, 8, 9"
@@ -1247,7 +1247,7 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:86
 msgid "VMware Fusion"
-msgstr ""
+msgstr "VMware Fusion"
 
 #: ../../release_notes/compatibility_table.rst:87
 msgid "8, 9, 10+"
@@ -1255,23 +1255,23 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:89
 msgid "VMware NSX"
-msgstr ""
+msgstr "VMware NSX"
 
 #: ../../release_notes/compatibility_table.rst:90
 msgid "NSX (up to 4.1)"
-msgstr ""
+msgstr "NSX (up to 4.1)"
 
 #: ../../release_notes/compatibility_table.rst:92
 msgid "VMware vCenter"
-msgstr ""
+msgstr "VMware vCenter"
 
 #: ../../release_notes/compatibility_table.rst:93
 msgid "5.5, 6.0, 6.5, 6.7, 7.x, 8.x, 9.x"
-msgstr ""
+msgstr "5.5, 6.0, 6.5, 6.7, 7.x, 8.x, 9.x"
 
 #: ../../release_notes/compatibility_table.rst:95
 msgid "XenServer"
-msgstr ""
+msgstr "XenServer"
 
 #: ../../release_notes/compatibility_table.rst:96
 msgid "7.x"
@@ -1282,11 +1282,11 @@ msgid ""
 "This is the previously published qualified value. XCP-ng 8.2.x/8.2.1 has "
 "not been approved for this matrix; testing in progress is not a support "
 "certification."
-msgstr ""
+msgstr "Il s'agit de la valeur qualifiée précédemment publiée. XCP-ng 8.2.x/8.2.1 n'a pas été approuvé pour cette matrice ; les tests en cours ne constituent pas une certification de support."
 
 #: ../../release_notes/compatibility_table.rst:98
 msgid "Zerto"
-msgstr ""
+msgstr "Zerto"
 
 #: ../../release_notes/compatibility_table.rst:99
 msgid "10"
@@ -1294,9 +1294,9 @@ msgstr ""
 
 #: ../../release_notes/compatibility_table.rst:102
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../release_notes/compatibility_table.rst:102
 msgid "Non-listed versions may be compatible but are not verified."
-msgstr ""
+msgstr "Les versions non répertoriées peuvent être compatibles mais ne sont pas vérifiées."
 

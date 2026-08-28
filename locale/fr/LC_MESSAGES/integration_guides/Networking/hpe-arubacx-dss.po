@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:2
 msgid "HPE Aruba CX DSS"
-msgstr ""
+msgstr "HPE Aruba CX DSS"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:6
 msgid ""
@@ -35,7 +35,7 @@ msgid ""
 "both micro-segmentation and macro-segmentation, integrating seamlessly "
 "with HPE and Aruba technologies to improve user experience and "
 "operational efficiency."
-msgstr ""
+msgstr "Le plug-in HPE Aruba CX DSS apporte des fonctionnalités réseau avancées à |morphfirst| en s'appuyant sur les switches de la série Aruba CX 10000. Il prend en charge la micro-segmentation et la macro-segmentation, s'intégrant de manière transparente aux technologies HPE et Aruba pour améliorer l'expérience utilisateur et l'efficacité opérationnelle."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:8
 msgid ""
@@ -45,7 +45,7 @@ msgid ""
 "environments. It automates the creation and management of networks for "
 "HPE ANW DSS Port Groups, connecting servers to Aruba CX 10000 switches "
 "within a |cluster|."
-msgstr ""
+msgstr "Implémenté en tant que ``NetworkProvider`` |morpheus| en Groovy, le plug-in est conçu spécifiquement pour le type de réseau HPE Aruba Networking Distributed Services Switch (HPE ANW DSS Port Group) et optimisé pour les environnements |morpheus|. Il automatise la création et la gestion de réseaux pour les HPE ANW DSS Port Groups, connectant les serveurs aux switches Aruba CX 10000 au sein d'un |cluster|."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:10
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 "removing |hosts| in the |cluster| triggers the corresponding network "
 "changes in AFC, ensuring the network configurations are always up to "
 "date."
-msgstr ""
+msgstr "Sur chaque hôte, le plug-in crée des interfaces bridge Linux et les associe à des VLAN pour une gestion et une configuration réseau simplifiées. |morpheus| s'intègre directement à Aruba Fabric Composer (AFC) pour créer ou supprimer automatiquement des réseaux pour les HPE ANW DSS Port Groups lorsqu'ils sont ajoutés ou retirés d'un cluster configuré. L'ajout ou la suppression de |hosts| dans le |cluster| déclenche les modifications réseau correspondantes dans AFC, garantissant que les configurations réseau sont toujours à jour."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:12
 msgid ""
@@ -66,7 +66,7 @@ msgid ""
 "created, the plugin provisions the required VLANs on the Aruba CX 10000 "
 "switches, ensuring networks are ready for use by Instances within the "
 "|cluster|."
-msgstr ""
+msgstr "Le plug-in permet également la création de réseaux avec des ID VLAN spécifiques, prenant en charge une segmentation et une isolation flexibles. Lorsqu'un réseau est créé, le plug-in provisionne les VLAN requis sur les switches Aruba CX 10000, garantissant que les réseaux sont prêts à être utilisés par les instances au sein du |cluster|."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:14
 msgid ""
@@ -74,136 +74,136 @@ msgid ""
 "an Instance is created on the host and associated with this network, a "
 "macvtap interface is generated and mapped to the corresponding Linux "
 "Interface VLAN ID, ensuring seamless connectivity and isolation."
-msgstr ""
+msgstr "De plus, le plug-in crée un réseau Libvirt de type Private. Lorsqu'une instance est créée sur l'hôte et associée à ce réseau, une interface macvtap est générée et mappée à l'ID VLAN de l'interface Linux correspondante, garantissant une connectivité et une isolation transparentes."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:17
 msgid "Features"
-msgstr ""
+msgstr "Fonctionnalités"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:19
 msgid ""
 "Create and delete networks of type ``HPE ANW DSS Port Group`` directly "
 "from the integration"
-msgstr ""
+msgstr "Créer et supprimer des réseaux de type ``HPE ANW DSS Port Group`` directement depuis l'intégration"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:20
 msgid ""
 "Automatically create and delete networks in Aruba Fabric Composer (AFC) "
 "when |hosts| are added or removed from the |cluster|"
-msgstr ""
+msgstr "Créer et supprimer automatiquement des réseaux dans Aruba Fabric Composer (AFC) lorsque des |hosts| sont ajoutés ou retirés du |cluster|"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:21
 msgid "Manage network configurations through seamless integration with AFC"
-msgstr ""
+msgstr "Gérer les configurations réseau grâce à une intégration transparente avec AFC"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:22
 msgid ""
 "Enable both micro-segmentation and macro-segmentation for flexible "
 "network isolation"
-msgstr ""
+msgstr "Activer la micro-segmentation et la macro-segmentation pour une isolation réseau flexible"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:23
 msgid "View detailed summaries and status of Aruba CX 10000 switches"
-msgstr ""
+msgstr "Afficher des résumés détaillés et l'état des switches Aruba CX 10000"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:24
 msgid ""
 "Ensure automatic, realtime synchronization of network configurations with"
 " Aruba CX 10000 switches"
-msgstr ""
+msgstr "Garantir une synchronisation automatique en temps réel des configurations réseau avec les switches Aruba CX 10000"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:27
 msgid "Prerequisites"
-msgstr ""
+msgstr "Prérequis"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:29
 msgid ""
 "The following requirements must be met to deploy and configure the `HPE "
 "Aruba CX DSS` Network plugin in |morpheus|"
-msgstr ""
+msgstr "Les exigences suivantes doivent être remplies pour déployer et configurer le plug-in réseau `HPE Aruba CX DSS` dans |morpheus|"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:31
 msgid "Aruba CX 10000 series switches"
-msgstr ""
+msgstr "Switches de la série Aruba CX 10000"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:33
 msgid "At least two Aruba CX 10000 switches are configured"
-msgstr ""
+msgstr "Au moins deux switches Aruba CX 10000 sont configurés"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:34
 msgid "VSX and KeepAlive are configured"
-msgstr ""
+msgstr "VSX et KeepAlive sont configurés"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:35
 msgid "Switches are connected to the upstream network"
-msgstr ""
+msgstr "Les switches sont connectés au réseau amont"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:37
 msgid "Pre-existing |cluster|"
-msgstr ""
+msgstr "|cluster| préexistant"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:39
 msgid ""
 "Ensure all hosts within the |cluster| are physically connected to the CX "
 "10000 switches for optimal network integration and redundancy"
-msgstr ""
+msgstr "Assurez-vous que tous les hôtes du |cluster| sont physiquement connectés aux switches CX 10000 pour une intégration réseau et une redondance optimales"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:41
 msgid "|morpheus| appliance version 8.0.6 or higher"
-msgstr ""
+msgstr "Version de l'appliance |morpheus| 8.0.6 ou supérieure"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:43
 msgid "AFC and PSM are deployed and reachable from the |manager|"
-msgstr ""
+msgstr "AFC et PSM sont déployés et accessibles depuis le |manager|"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:45
 msgid "Aruba Fabric Composer (AFC) version 7.2 or higher, deployed as a VM"
-msgstr ""
+msgstr "Aruba Fabric Composer (AFC) version 7.2 ou supérieure, déployé en tant que VM"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:47
 msgid "AMD Pensando PSM (Policy and Services Manager), deployed as a VM"
-msgstr ""
+msgstr "AMD Pensando PSM (Policy and Services Manager), déployé en tant que VM"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:49
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:84
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:50
 msgid ""
 "Download AFC and PSM from the `HPE Networking Support portal "
 "<https://networkingsupport.hpe.com/downloads/software/RmlsZTo0YzQ2MzIyYS0xOTU2LTExZjAtYTMzNS0yZmRkN2QyMjdhOTY%3D>`_"
-msgstr ""
+msgstr "Téléchargez AFC et PSM depuis le `HPE Networking Support portal <https://networkingsupport.hpe.com/downloads/software/RmlsZTo0YzQ2MzIyYS0xOTU2LTExZjAtYTMzNS0yZmRkN2QyMjdhOTY%3D>`_"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:51
 msgid ""
 "For more information on deploying AFC and PSM, refer to the official "
 "documentation"
-msgstr ""
+msgstr "Pour plus d'informations sur le déploiement d'AFC et PSM, consultez la documentation officielle"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:52
 msgid "The AFC and PSM must have network connectivity to the CX 10000 switches"
-msgstr ""
+msgstr "AFC et PSM doivent disposer d'une connectivité réseau vers les switches CX 10000"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:53
 msgid ""
 "Making full use of the |morpheus| Aruba CX 10000 integration requires "
 "credentials for AFC with API access granted and read/write access to AFC "
 "configuration"
-msgstr ""
+msgstr "Pour tirer pleinement parti de l'intégration |morpheus| Aruba CX 10000, des identifiants AFC avec accès API accordé et accès lecture/écriture à la configuration AFC sont requis"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:56
 msgid "Adding `HPE Aruba CX DSS` Network Integration"
-msgstr ""
+msgstr "Ajout de l'intégration réseau `HPE Aruba CX DSS`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:58
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:125
 msgid "Navigate to :menuselection:`Infrastructure --> Network --> Integrations`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Network --> Integrations`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:59
 msgid "Select :guilabel:`+ Add` > Networking > HPE Aruba CX DSS"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add` > Networking > HPE Aruba CX DSS"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:61
 msgid ""
@@ -213,47 +213,47 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:64
 msgid "Enter the following details in the ADD NETWORK INTEGRATION form:"
-msgstr ""
+msgstr "Saisissez les détails suivants dans le formulaire ADD NETWORK INTEGRATION :"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:66
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:67
 msgid "Name of the integration in |morpheus|"
-msgstr ""
+msgstr "Nom de l'intégration dans |morpheus|"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:68
 msgid "AFC ADDRESS"
-msgstr ""
+msgstr "AFC ADDRESS"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:69
 msgid "Enter the network address of the AFC"
-msgstr ""
+msgstr "Saisissez l'adresse réseau de l'AFC"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:70
 msgid "AFC USERNAME"
-msgstr ""
+msgstr "AFC USERNAME"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:71
 msgid "Enter the username"
-msgstr ""
+msgstr "Saisissez le nom d'utilisateur"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:72
 msgid "AFC PASSWORD"
-msgstr ""
+msgstr "AFC PASSWORD"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:73
 msgid "Enter the password"
-msgstr ""
+msgstr "Saisissez le mot de passe"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:74
 msgid "FABRIC NAME"
-msgstr ""
+msgstr "FABRIC NAME"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:75
 msgid "Enter the fabric name from the AFC"
-msgstr ""
+msgstr "Saisissez le nom du fabric depuis l'AFC"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:77
 msgid ""
@@ -263,32 +263,32 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:80
 msgid "Click :guilabel:`Add Network Integration`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`Add Network Integration`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:82
 msgid "Upon add, the `HPE Aruba CX DSS Network integration` will be created."
-msgstr ""
+msgstr "Après l'ajout, l'intégration réseau `HPE Aruba CX DSS Network integration` sera créée."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:84
 msgid "All fields can be edited after saving."
-msgstr ""
+msgstr "Tous les champs peuvent être modifiés après l'enregistrement."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:87
 msgid "Create `HPE ANW DSS Port Group` Network"
-msgstr ""
+msgstr "Créer un réseau `HPE ANW DSS Port Group`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:88
 msgid "To create an `HPE ANW DSS Port Group` network, follow these steps:"
-msgstr ""
+msgstr "Pour créer un réseau `HPE ANW DSS Port Group`, suivez ces étapes :"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:90
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:115
 msgid "Navigate to :menuselection:`Infrastructure --> Network --> Networks`"
-msgstr ""
+msgstr "Accédez à :menuselection:`Infrastructure --> Network --> Networks`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:91
 msgid "Select :guilabel:`+ Add Network` > HPE ANW DSS Port Group"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ Add Network` > HPE ANW DSS Port Group"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:93
 msgid ""
@@ -298,7 +298,7 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:96
 msgid "Enter the following details in the CREATE NETWORK form:"
-msgstr ""
+msgstr "Saisissez les détails suivants dans le formulaire CREATE NETWORK :"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:98
 msgid ""
@@ -308,7 +308,7 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:101
 msgid "Save the network by clicking on :guilabel:`Save changes`."
-msgstr ""
+msgstr "Enregistrez le réseau en cliquant sur :guilabel:`Save changes`."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:103
 msgid ""
@@ -318,7 +318,7 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:106
 msgid "The network will be created and displayed in the list of networks."
-msgstr ""
+msgstr "Le réseau sera créé et affiché dans la liste des réseaux."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:108
 msgid ""
@@ -328,19 +328,19 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:112
 msgid "Delete `HPE ANW DSS Port Group` Network"
-msgstr ""
+msgstr "Supprimer un réseau `HPE ANW DSS Port Group`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:113
 msgid "To delete a `HPE ANW DSS Port Group` network, follow these steps:"
-msgstr ""
+msgstr "Pour supprimer un réseau `HPE ANW DSS Port Group`, suivez ces étapes :"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:116
 msgid "Select the network you want to delete from the list."
-msgstr ""
+msgstr "Sélectionnez le réseau à supprimer dans la liste."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:117
 msgid "Click on the delete icon (|trash|) next to the network name."
-msgstr ""
+msgstr "Cliquez sur l'icône de suppression (|trash|) à côté du nom du réseau."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:119
 msgid ""
@@ -350,15 +350,15 @@ msgstr ""
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:123
 msgid "View `HPE Aruba CX DSS` Network Integration"
-msgstr ""
+msgstr "Afficher l'intégration réseau `HPE Aruba CX DSS`"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:124
 msgid "To view the `HPE Aruba CX DSS` Network integration, follow these steps:"
-msgstr ""
+msgstr "Pour afficher l'intégration réseau `HPE Aruba CX DSS`, suivez ces étapes :"
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:126
 msgid "Select the `HPE Aruba CX DSS` integration from the list."
-msgstr ""
+msgstr "Sélectionnez l'intégration `HPE Aruba CX DSS` dans la liste."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:128
 msgid ""
@@ -370,7 +370,7 @@ msgstr ""
 msgid ""
 "``Summary`` - Click on the :guilabel:`Summary` tab to view the summary of"
 " the integration."
-msgstr ""
+msgstr "``Summary`` - Cliquez sur l'onglet :guilabel:`Summary` pour afficher le résumé de l'intégration."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:133
 msgid ""
@@ -382,7 +382,7 @@ msgstr ""
 msgid ""
 "``Switches`` - Click the :guilabel:`Switches` tab to view detailed "
 "information about all Aruba CX 10000 switches managed by the integration."
-msgstr ""
+msgstr "``Switches`` - Cliquez sur l'onglet :guilabel:`Switches` pour afficher des informations détaillées sur tous les switches Aruba CX 10000 gérés par l'intégration."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:138
 msgid ""
@@ -394,7 +394,7 @@ msgstr ""
 msgid ""
 "``Networks`` - Click on the :guilabel:`Networks` tab to view the networks"
 " associated with the integration."
-msgstr ""
+msgstr "``Networks`` - Cliquez sur l'onglet :guilabel:`Networks` pour afficher les réseaux associés à l'intégration."
 
 #: ../../integration_guides/Networking/hpe-arubacx-dss.rst:143
 msgid ""

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:2
 msgid "Hardware Passthrough"
-msgstr ""
+msgstr "Passthrough de Hardware"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:4
 msgid ""
@@ -36,7 +36,7 @@ msgid ""
 "ad-hoc basis by manually attaching hardware to existing VMs. Other "
 "supported hardware types must be past through to the VM after "
 "provisioning."
-msgstr ""
+msgstr "O |morpheus| inclui suporte a passthrough e pooling de hardware para VMs provisionadas em |clusters|. Este suporte se estende a dispositivos GPU, USB e NVME. Para serem utilizáveis, tais dispositivos devem estar anexados a um |host| ou a vários |hosts|. O |morpheus| inclui controles para desanexar dispositivos de hardware do SO subjacente no host do hypervisor e adicioná-los a um pool onde ficam disponíveis para consumo pelas VMs. Hardware GPU pode ser anexado a VMs no momento do provisionamento por meio de Planos de Serviço personalizados ou de forma ad hoc anexando hardware manualmente a VMs existentes. Outros tipos de hardware suportados devem ser passados para a VM após o provisionamento."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:6
 msgid ""
@@ -44,11 +44,11 @@ msgid ""
 "the GPU bound to the NVIDIA Host driver and assigns programmed SR-IOV "
 "virtual functions instead of the full physical card. For that workflow, "
 "see :doc:`hvm/nvidia_vgpu`."
-msgstr ""
+msgstr "Esta página descreve o passthrough de dispositivo completo. O fatiamento NVIDIA vGPU mantém a GPU vinculada ao driver NVIDIA Host e atribui funções virtuais SR-IOV programadas em vez da placa física completa. Para esse fluxo de trabalho, consulte :doc:`hvm/nvidia_vgpu`."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:9
 msgid "Creating Service Plans"
-msgstr ""
+msgstr "Criando Planos de Serviço"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:11
 msgid ""
@@ -63,7 +63,7 @@ msgid ""
 "you'll see in the next sections it is not strictly required. It is also "
 "possible to manually attach GPUs or other hardware types on any existing "
 "VM runnning on |clusters|."
-msgstr ""
+msgstr "Ao utilizar hardware GPU, pode ser mais conveniente usar um Plano de Serviço personalizado. Isso permite que os administradores pré-configurem o número de placas de hardware discretas a anexar à VM no momento do provisionamento. Uma vez provisionada, o número especificado de GPUs será anexado à VM. Para cargas de trabalho que são provisionadas e destruídas regularmente, isso economizará etapas adicionais de anexar manualmente GPUs disponíveis do pool. Na destruição, dispositivos anexados de todos os tipos são liberados de volta ao pool. Embora em alguns casos utilizar Planos de Serviço possa ser mais conveniente, como você verá nas próximas seções, não é estritamente necessário. Também é possível anexar manualmente GPUs ou outros tipos de hardware em qualquer VM existente em execução em |clusters|."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:13
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "Segment Types represent NVIDIA vGPU profiles and use the separate slicing"
 " workflow. See :doc:`/administration/plans_pricing/plans` for complete "
 "Service Plan guidance."
-msgstr ""
+msgstr "Para criar um novo Plano de Serviço, navegue até |AdmPla|. Clique em :guilabel:`+ Add` e depois em Service Plan. No modal New Service Plan, primeiro defina a configuração PROVISION TYPE como \"KVM.\" Isso atualizará os campos de configuração disponíveis e revelará :guilabel:`GPU Count` e :guilabel:`GPU Type`. Selecione um GPU Type físico para passthrough de placa completa. Tipos Segment indentados representam profiles NVIDIA vGPU e usam o fluxo de trabalho de fatiamento separado. Consulte :doc:`/administration/plans_pricing/plans` para orientação completa sobre Plano de Serviço."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:15
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/gpuPlan.png"
@@ -83,7 +83,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:19
 msgid "Viewing and Assigning Hardware Devices"
-msgstr ""
+msgstr "Visualizando e Atribuindo Dispositivos de Hardware"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:21
 msgid ""
@@ -96,7 +96,7 @@ msgid ""
 "the Devices tab on the Host detail page. Detach a piece of hardware from "
 "the host using the ACTIONS dropdown for that piece of hardware. As shown "
 "in the screenshot below, DETACH DEVICE is selected for a USB device."
-msgstr ""
+msgstr "Os Dispositivos de Hardware são exibidos no nível de detalhes do Host e no nível de detalhes da VM (servidor) por meio de uma aba Devices. Os detalhes do Host mostrarão todos os dispositivos de hardware anexados e seu status atual: Attached (ao host), detached (do host) ou assigned (a uma VM). Os detalhes da VM mostrarão apenas os dispositivos de hardware atualmente anexados a essa VM. Para começar a consumir dispositivos de hardware com VMs |cluster|, olhe novamente a lista na aba Devices na página de detalhes do Host. Desanexe uma peça de hardware do host usando o dropdown ACTIONS dessa peça de hardware. Conforme mostrado na captura de tela abaixo, DETACH DEVICE é selecionado para um dispositivo USB."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:23
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/detachDevice.png"
@@ -107,7 +107,7 @@ msgid ""
 "Once detached, the status of the device is changed to \"Detached\" (see "
 "screenshot below) and the device is available for consumption by VMs "
 "running on this host."
-msgstr ""
+msgstr "Uma vez desanexado, o status do dispositivo é alterado para \"Detached\" (veja a captura de tela abaixo) e o dispositivo fica disponível para consumo por VMs em execução neste host."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:27
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/deviceDetached.png"
@@ -117,7 +117,7 @@ msgstr ""
 msgid ""
 "To assign the hardware to a specific VM, click the ACTIONS dropdown once "
 "again for the now-detached hardware. Now, click ASSIGN DEVICE."
-msgstr ""
+msgstr "Para atribuir o hardware a uma VM específica, clique novamente no dropdown ACTIONS do hardware agora desanexado. Agora, clique em ASSIGN DEVICE."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:31
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/assignDevice.png"
@@ -127,7 +127,7 @@ msgstr ""
 msgid ""
 "Within the ASSIGN DEVICE modal that will appear, select the server for "
 "device assignment and click :guilabel:`EXECUTE`."
-msgstr ""
+msgstr "No modal ASSIGN DEVICE que aparecerá, selecione o servidor para atribuição do dispositivo e clique em :guilabel:`EXECUTE`."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:35
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/assignToServer.png"
@@ -139,7 +139,7 @@ msgid ""
 "to \"Assigned.\" If we then open a console session with this VM, we can "
 "see the USB device is assigned successfully and is usable by the guest "
 "OS."
-msgstr ""
+msgstr "O ícone e o status do dispositivo na lista de hardware agora mudaram para \"Assigned.\" Se então abrirmos uma sessão de console com esta VM, podemos ver que o dispositivo USB foi atribuído com sucesso e está utilizável pelo SO convidado."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:39
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/vmConsole.png"
@@ -147,11 +147,11 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:41
 msgid "The same process can be used to detach and assign GPU or NVME devices."
-msgstr ""
+msgstr "O mesmo processo pode ser usado para desanexar e atribuir dispositivos GPU ou NVME."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:44
 msgid "GPU Passthrough Example"
-msgstr ""
+msgstr "Exemplo de Passthrough de GPU"
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:46
 msgid ""
@@ -161,7 +161,7 @@ msgid ""
 "running on the VM. In this example, there is an Nvidia GeForce RTX 3050 "
 "connected to one of the |hosts|. By passing the GPU hardware through to a"
 " provisioned VM, hardware-accelerated AI workloads can be run on the VM."
-msgstr ""
+msgstr "Em uma seção anterior, um Plano de Serviço foi criado que consome uma GPU quando uma VM é provisionada usando esse Plano. Esta seção mostra um exemplo de provisionamento de uma carga de trabalho usando esse Plano e uma carga de trabalho acelerada por GPU em execução na VM. Neste exemplo, há uma Nvidia GeForce RTX 3050 conectada a um dos |hosts|. Ao passar o hardware GPU para uma VM provisionada, cargas de trabalho de IA aceleradas por hardware podem ser executadas na VM."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:48
 msgid ""
@@ -171,7 +171,7 @@ msgid ""
 ":guilabel:`+ ADD`. Choose type |mvm| and click :guilabel:`NEXT`. On the "
 "next pane, choose the Group and Cloud in which your desired |cluster| "
 "resides, name the Instance, and click :guilabel:`NEXT`."
-msgstr ""
+msgstr "Comece navegando até :menuselection:`Provisioning --> Instances`. A lista de todas as Instâncias atualmente gerenciadas está aqui, juntamente com informações de alto nível (estado de energia, etc). Para iniciar uma nova Instância, clique em :guilabel:`+ ADD`. Escolha o tipo |mvm| e clique em :guilabel:`NEXT`. No próximo painel, escolha o Grupo e a Nuvem em que o |cluster| desejado reside, nomeie a Instância e clique em :guilabel:`NEXT`."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:50
 msgid ""
@@ -182,7 +182,7 @@ msgid ""
 "includes user-created Plans, such as those you've created to consume GPU "
 "hardware. In the screenshot below, you can see the \"GPU Plan\" was "
 "selected."
-msgstr ""
+msgstr "Na aba CONFIGURE, o principal a observar neste exemplo é a configuração PLAN. Este dropdown contém alguns Planos padrão incluídos com o |morpheus| e compatíveis com a tecnologia de provisionamento |mvm| (nomeados \"1 CPU, 1GB Memory\", etc). Este dropdown também inclui Planos criados pelo usuário, como aqueles que você criou para consumir hardware GPU. Na captura de tela abaixo, você pode ver que o \"GPU Plan\" foi selecionado."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:52
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/showPlan.png"
@@ -193,7 +193,7 @@ msgid ""
 "From here, complete the Instance provisioning wizard selecting any "
 "automation or lifecycle configurations and wait for the Instance "
 "provisioning to complete."
-msgstr ""
+msgstr "A partir daqui, conclua o assistente de provisionamento de Instância selecionando quaisquer configurações de automação ou ciclo de vida e aguarde a conclusão do provisionamento da Instância."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:57
 msgid ""
@@ -203,7 +203,7 @@ msgid ""
 "on the name of the desired VM to access the VM detail page. Click on the "
 "Devices tab. As in the screenshot below, the attached GPU should be "
 "shown."
-msgstr ""
+msgstr "Com o provisionamento concluído, verifique o(s) dispositivo(s) anexado(s) na UI |morpheus|. Isso é feito no nível da VM em vez do nível da Instância. Na página de detalhes da Instância, clique na aba Resources. Clique no nome da VM desejada para acessar a página de detalhes da VM. Clique na aba Devices. Como na captura de tela abaixo, a GPU anexada deve ser exibida."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:59
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/attachedGpu.png"
@@ -215,7 +215,7 @@ msgid ""
 "|morpheus| UI or by connecting to the VM over SSH from a local terminal "
 "session. Use the ``lspci`` command to view all devices connected to PCI "
 "buses. The attached GPU should be shown here as it is in the UI."
-msgstr ""
+msgstr "Para ir além, abra uma sessão de console para a nova VM por meio da UI |morpheus| ou conectando-se à VM via SSH a partir de uma sessão de terminal local. Use o comando ``lspci`` para visualizar todos os dispositivos conectados aos barramentos PCI. A GPU anexada deve ser exibida aqui como está na UI."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:63
 msgid ""
@@ -224,7 +224,7 @@ msgid ""
 "make it easy to run large language models (LLMs) locally. In the "
 "screenshot below, see the AI chatbot response to an input. This result "
 "took only a few seconds thanks to GPU hardware acceleration."
-msgstr ""
+msgstr "Neste ponto, a VM está pronta para executar cargas de trabalho aceleradas por GPU normalmente. Para testar isso, executarei o Ollama, que é uma ferramenta open-source projetada para facilitar a execução local de large language models (LLMs). Na captura de tela abaixo, veja a resposta do chatbot de IA a uma entrada. Este resultado levou apenas alguns segundos graças à aceleração de hardware GPU."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:65
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/ollamaOutput.png"
@@ -234,7 +234,7 @@ msgstr ""
 msgid ""
 "With the request completed, we can run the ``ollama ps`` command which "
 "confirms the model was running under GPU acceleration."
-msgstr ""
+msgstr "Com a solicitação concluída, podemos executar o comando ``ollama ps``, que confirma que o modelo estava em execução sob aceleração GPU."
 
 #: ../../infrastructure/clusters/hardware-passthrough.rst:69
 msgid ".. image:: /images/infrastructure/clusters/mvm/hardware/gpuUsed.png"

@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../tools/boot_scripts.rst:4
 msgid "Boot Scripts"
-msgstr ""
+msgstr "Scripts de démarrage"
 
 #: ../../tools/boot_scripts.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../tools/boot_scripts.rst:9
 msgid ""
@@ -35,116 +35,116 @@ msgid ""
 "sequences that direct bare-metal servers through the PXE boot process, "
 "including downloading kernels, initrd images, and specifying installation"
 " parameters."
-msgstr ""
+msgstr "Les scripts de démarrage (|TooBot|) fournissent la gestion des scripts de démarrage iPXE pour les workflows de provisionnement bare metal. Les scripts de démarrage définissent les séquences de commandes iPXE qui guident les serveurs bare metal tout au long du processus de démarrage PXE, y compris le téléchargement des noyaux, des images initrd et la spécification des paramètres d'installation."
 
 #: ../../tools/boot_scripts.rst:11
 msgid ""
 "Boot scripts are served over HTTP by the |morpheus| appliance during the "
 "PXE boot process and can be customized for different hardware "
 "configurations, operating systems, and deployment scenarios."
-msgstr ""
+msgstr "Les scripts de démarrage sont servis via HTTP par l'appliance |morpheus| pendant le processus de démarrage PXE et peuvent être personnalisés pour différentes configurations matérielles, systèmes d'exploitation et scénarios de déploiement."
 
 #: ../../tools/boot_scripts.rst:14
 msgid "Role Permissions"
-msgstr ""
+msgstr "Permissions de rôle"
 
 #: ../../tools/boot_scripts.rst:16
 msgid "Access to Boot Scripts is controlled by the following role permission:"
-msgstr ""
+msgstr "L'accès aux scripts de démarrage est contrôlé par la permission de rôle suivante :"
 
 #: ../../tools/boot_scripts.rst:18
 msgid "**Tools: Image Builder** — ``None``, ``Read``, or ``Full``"
-msgstr ""
+msgstr "**Tools: Image Builder** — ``None``, ``Read`` ou ``Full``"
 
 #: ../../tools/boot_scripts.rst:20
 msgid "**None:** Cannot access Boot Scripts"
-msgstr ""
+msgstr "**None:** Impossible d'accéder aux scripts de démarrage"
 
 #: ../../tools/boot_scripts.rst:21
 msgid "**Read:** Can view boot scripts"
-msgstr ""
+msgstr "**Read:** Peut consulter les scripts de démarrage"
 
 #: ../../tools/boot_scripts.rst:22
 msgid "**Full:** Can create, edit, and delete boot scripts"
-msgstr ""
+msgstr "**Full:** Peut créer, modifier et supprimer des scripts de démarrage"
 
 #: ../../tools/boot_scripts.rst:25
 msgid "Viewing Boot Scripts"
-msgstr ""
+msgstr "Consultation des scripts de démarrage"
 
 #: ../../tools/boot_scripts.rst:27
 msgid "Navigate to |TooBot| (Tools > Boot Scripts)"
-msgstr ""
+msgstr "Accédez à |TooBot| (Tools > Boot Scripts)"
 
 #: ../../tools/boot_scripts.rst:28
 msgid "The list displays all available boot scripts including:"
-msgstr ""
+msgstr "La liste affiche tous les scripts de démarrage disponibles, notamment :"
 
 #: ../../tools/boot_scripts.rst:30
 msgid "**File Name:** The script file name (used in the boot URL)"
-msgstr ""
+msgstr "**File Name:** Le nom de fichier du script (utilisé dans l'URL de démarrage)"
 
 #: ../../tools/boot_scripts.rst:31
 msgid "**Description:** Script description"
-msgstr ""
+msgstr "**Description:** Description du script"
 
 #: ../../tools/boot_scripts.rst:32
 msgid "**Visibility:** Public (available to all tenants) or Private"
-msgstr ""
+msgstr "**Visibility:** Publique (disponible pour tous les locataires) ou Privée"
 
 #: ../../tools/boot_scripts.rst:34
 msgid ""
 "System-provided boot scripts (no account owner) with public visibility "
 "are available to all tenants but cannot be modified."
-msgstr ""
+msgstr "Les scripts de démarrage fournis par le système (sans propriétaire de compte) avec une visibilité publique sont disponibles pour tous les locataires mais ne peuvent pas être modifiés."
 
 #: ../../tools/boot_scripts.rst:37
 msgid "Creating a Boot Script"
-msgstr ""
+msgstr "Création d'un script de démarrage"
 
 #: ../../tools/boot_scripts.rst:39 ../../tools/boot_scripts.rst:102
 #: ../../tools/boot_scripts.rst:110
 msgid "Navigate to |TooBot|"
-msgstr ""
+msgstr "Accédez à |TooBot|"
 
 #: ../../tools/boot_scripts.rst:40
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`+ ADD`"
 
 #: ../../tools/boot_scripts.rst:41
 msgid "Complete the form:"
-msgstr ""
+msgstr "Remplissez le formulaire :"
 
 #: ../../tools/boot_scripts.rst:43
 msgid ""
 "**FILE NAME:** The filename for the boot script (must be unique). This "
 "determines the URL path where the script is served (e.g., "
 "``myboot.ipxe``)"
-msgstr ""
+msgstr "**FILE NAME:** Le nom de fichier du script de démarrage (doit être unique). Cela détermine le chemin URL où le script est servi (p. ex. ``myboot.ipxe``)"
 
 #: ../../tools/boot_scripts.rst:44
 msgid "**DESCRIPTION:** Optional description of the script's purpose"
-msgstr ""
+msgstr "**DESCRIPTION:** Description optionnelle de l'objectif du script"
 
 #: ../../tools/boot_scripts.rst:45
 msgid "**CONTENT:** The iPXE script content"
-msgstr ""
+msgstr "**CONTENT:** Le contenu du script iPXE"
 
 #: ../../tools/boot_scripts.rst:47 ../../tools/boot_scripts.rst:105
 msgid "Click :guilabel:`SAVE`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE`"
 
 #: ../../tools/boot_scripts.rst:50
 msgid "iPXE Script Format"
-msgstr ""
+msgstr "Format de script iPXE"
 
 #: ../../tools/boot_scripts.rst:52
 msgid "Boot scripts use iPXE scripting syntax. Example scripts:"
-msgstr ""
+msgstr "Les scripts de démarrage utilisent la syntaxe de script iPXE. Exemples de scripts :"
 
 #: ../../tools/boot_scripts.rst:54
 msgid "**Basic Linux Installation:**"
-msgstr ""
+msgstr "**Installation Linux de base :**"
 
 #: ../../tools/boot_scripts.rst:56
 #, python-brace-format
@@ -159,7 +159,7 @@ msgstr ""
 
 #: ../../tools/boot_scripts.rst:64
 msgid "**Ubuntu Cloud Image:**"
-msgstr ""
+msgstr "**Image cloud Ubuntu :**"
 
 #: ../../tools/boot_scripts.rst:66
 #, python-brace-format
@@ -175,7 +175,7 @@ msgstr ""
 
 #: ../../tools/boot_scripts.rst:75
 msgid "**Menu-Based Selection:**"
-msgstr ""
+msgstr "**Sélection basée sur un menu :**"
 
 #: ../../tools/boot_scripts.rst:77
 #, python-brace-format
@@ -203,88 +203,88 @@ msgstr ""
 
 #: ../../tools/boot_scripts.rst:100
 msgid "Editing a Boot Script"
-msgstr ""
+msgstr "Modification d'un script de démarrage"
 
 #: ../../tools/boot_scripts.rst:103
 msgid ""
 "Click the pencil icon on the script row or click the script name to view,"
 " then click :guilabel:`EDIT`"
-msgstr ""
+msgstr "Cliquez sur l'icône crayon sur la ligne du script ou cliquez sur le nom du script pour l'afficher, puis cliquez sur :guilabel:`EDIT`"
 
 #: ../../tools/boot_scripts.rst:104
 msgid "Modify the script content or metadata"
-msgstr ""
+msgstr "Modifiez le contenu ou les métadonnées du script"
 
 #: ../../tools/boot_scripts.rst:108
 msgid "Deleting a Boot Script"
-msgstr ""
+msgstr "Suppression d'un script de démarrage"
 
 #: ../../tools/boot_scripts.rst:111
 msgid "Click the trash icon on the script row"
-msgstr ""
+msgstr "Cliquez sur l'icône corbeille sur la ligne du script"
 
 #: ../../tools/boot_scripts.rst:112
 msgid "Confirm deletion"
-msgstr ""
+msgstr "Confirmez la suppression"
 
 #: ../../tools/boot_scripts.rst:114
 msgid "Warning"
-msgstr ""
+msgstr "Avertissement"
 
 #: ../../tools/boot_scripts.rst:114
 msgid ""
 "Do not delete boot scripts that are actively referenced by PXE "
 "configurations or Image Builds. Verify no active workflows depend on the "
 "script before removal."
-msgstr ""
+msgstr "Ne supprimez pas les scripts de démarrage activement référencés par des configurations PXE ou des compilations d'images. Vérifiez qu'aucun workflow actif ne dépend du script avant sa suppression."
 
 #: ../../tools/boot_scripts.rst:117
 msgid "Integration with PXE Boot"
-msgstr ""
+msgstr "Intégration avec le démarrage PXE"
 
 #: ../../tools/boot_scripts.rst:119
 msgid ""
 "Boot scripts work in conjunction with the |morpheus| PXE boot "
 "infrastructure:"
-msgstr ""
+msgstr "Les scripts de démarrage fonctionnent conjointement avec l'infrastructure de démarrage PXE |morpheus| :"
 
 #: ../../tools/boot_scripts.rst:121
 msgid "The DHCP server directs booting servers to the |morpheus| TFTP/HTTP server"
-msgstr ""
+msgstr "Le serveur DHCP dirige les serveurs en démarrage vers le serveur TFTP/HTTP |morpheus|"
 
 #: ../../tools/boot_scripts.rst:122
 msgid "The boot loader (iPXE) requests the configured boot script"
-msgstr ""
+msgstr "Le chargeur de démarrage (iPXE) demande le script de démarrage configuré"
 
 #: ../../tools/boot_scripts.rst:123
 msgid "|morpheus| serves the boot script content"
-msgstr ""
+msgstr "|morpheus| sert le contenu du script de démarrage"
 
 #: ../../tools/boot_scripts.rst:124
 msgid ""
 "The booting server executes the iPXE commands (download kernel, initrd, "
 "boot)"
-msgstr ""
+msgstr "Le serveur en démarrage exécute les commandes iPXE (téléchargement du noyau, initrd, démarrage)"
 
 #: ../../tools/boot_scripts.rst:125
 msgid ""
 "The server proceeds with OS installation using the specified "
 "preseed/kickstart configuration"
-msgstr ""
+msgstr "Le serveur poursuit l'installation du système d'exploitation à l'aide de la configuration preseed/kickstart spécifiée"
 
 #: ../../tools/boot_scripts.rst:127
 msgid ""
 "For PXE infrastructure setup, see the Boot section of the Infrastructure "
 "documentation."
-msgstr ""
+msgstr "Pour la configuration de l'infrastructure PXE, consultez la section Boot de la documentation Infrastructure."
 
 #: ../../tools/boot_scripts.rst:130
 msgid "API"
-msgstr ""
+msgstr "API"
 
 #: ../../tools/boot_scripts.rst:132
 msgid "Boot scripts can be managed via the |morpheus| API:"
-msgstr ""
+msgstr "Les scripts de démarrage peuvent être gérés via l'API |morpheus| :"
 
 #: ../../tools/boot_scripts.rst:134
 #, python-brace-format

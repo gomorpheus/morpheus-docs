@@ -57,7 +57,7 @@ msgstr ""
 
 #: ../../provisioning/instances/creating_instances.rst:8
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../provisioning/instances/creating_instances.rst:8
 msgid ""
@@ -72,7 +72,7 @@ msgstr ""
 #: ../../provisioning/instances/creating_instances.rst:10
 #: ../../provisioning/instances/creating_instances.rst:16
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../provisioning/instances/creating_instances.rst:10
 msgid ""
@@ -80,7 +80,7 @@ msgid ""
 "for your storage platform. For example, :doc:`/integration_guides/storage"
 "/hpe-alletra-mp` includes a walkthrough of creating Instances on HPE "
 "Alletra MP datastores."
-msgstr ""
+msgstr "Para flujos de trabajo de aprovisionamiento específicos de almacenamiento, consulte la guía de integración de su plataforma de almacenamiento. Por ejemplo, :doc:`/integration_guides/storage/hpe-alletra-mp` incluye un tutorial para crear Instancias en almacenes de datos HPE Alletra MP."
 
 #: ../../provisioning/instances/creating_instances.rst:12
 #, fuzzy
@@ -114,7 +114,7 @@ msgid ""
 "active state, provision type, and layout or image minimums also apply. "
 "**Default** permission behavior is not an explicit allow-list and does "
 "not mean the cluster is preselected. See :ref:`hvm-cluster-permissions`."
-msgstr ""
+msgstr "Para aprovisionamiento respaldado por clúster, los permisos de Grupo del clúster filtran los destinos disponibles después de seleccionar el Grupo. Los permisos de Cluster Service Plan filtran las opciones de plan para ese destino; también se aplican el acceso de rol, el estado activo del plan, el tipo de aprovisionamiento y los mínimos de layout o imagen. El comportamiento de permiso **Predeterminado** no es una lista de permitidos explícita y no significa que el clúster esté preseleccionado. Consulte :ref:`hvm-cluster-permissions`."
 
 #: ../../provisioning/instances/creating_instances.rst:16
 msgid ""
@@ -134,7 +134,7 @@ msgid ""
 "through Provisioning Settings, and naming policies can reference it as "
 "``${instance.instanceContext}``. The Environment record itself does not "
 "grant access; use Roles and resource permissions for access control."
-msgstr ""
+msgstr "El valor de Entorno se almacena como contexto de la Instancia y puede mostrarse y filtrarse como metadatos. Los administradores pueden exigir un valor mediante Configuraciones de aprovisionamiento, y las políticas de nomenclatura pueden referenciarlo como ``${instance.instanceContext}``. El registro de Entorno en sí no otorga acceso; use Roles y permisos de recursos para el control de acceso."
 
 #: ../../provisioning/instances/creating_instances.rst:20
 msgid ""
@@ -158,7 +158,7 @@ msgid ""
 ":doc:`/integration_guides/Clouds/vmware/advanced`. Selector availability "
 "is provider-specific and can differ between initial provisioning and "
 "reconfiguration."
-msgstr ""
+msgstr "Para Nubes VMware, los selectores de tipo de almacenamiento y tipo de interfaz de red se muestran solo cuando la configuración de Nube correspondiente está habilitada y el proveedor expone opciones. Consulte :doc:`/integration_guides/Clouds/vmware/advanced`. La disponibilidad de selectores es específica del proveedor y puede diferir entre el aprovisionamiento inicial y la reconfiguración."
 
 #: ../../provisioning/instances/creating_instances.rst:24
 msgid ""
@@ -172,7 +172,7 @@ msgid ""
 "and reconfiguration; its value is tokenized and passed to QEMU when the "
 "VM definition is generated, so invalid or conflicting arguments can "
 "prevent startup."
-msgstr ""
+msgstr "Para VMs HVM, expanda **Advanced Options** en el paso Configure para establecer firmware, arranque, seguridad, gráficos, memoria, identidad y controles de virtualización específicos del proveedor. Los campos mostrados dependen del layout seleccionado y de si la VM se está aprovisionando o reconfigurando. Consulte :doc:`/infrastructure/clusters/hvm/vm_advanced_options` para el inventario actual de campos, valores predeterminados, dependencias y matriz de disponibilidad. En particular, :guilabel:`QEMU Arguments` está disponible durante el aprovisionamiento y la reconfiguración; su valor se tokeniza y se pasa a QEMU cuando se genera la definición de la VM, por lo que argumentos inválidos o conflictivos pueden impedir el arranque."
 
 #: ../../provisioning/instances/creating_instances.rst:26
 msgid ""
@@ -186,7 +186,7 @@ msgid ""
 " firewall port or publishes an application endpoint. Confirm the selected"
 " layout and the field group before setting it; do not apply a port value "
 "from one Instance type to another."
-msgstr ""
+msgstr "No existe un campo universal :guilabel:`Port` de Instancia. Un campo con esa etiqueta lo proporciona un tipo de Instancia o flujo de conexión seleccionado y su significado depende de ese contexto. Por ejemplo, el layout MySQL **Existing** usa :guilabel:`Host` y :guilabel:`Port` para conectarse al servicio MySQL existente; el puerto predeterminado es ``3306``. Un formulario de conexión de servidor Windows también puede etiquetar su puerto de conexión WinRM como :guilabel:`Port` y establecer ``5985`` por defecto. Ninguno de los campos abre un puerto de firewall del invitado ni publica un endpoint de aplicación. Confirme el layout seleccionado y el grupo de campos antes de establecerlo; no aplique un valor de puerto de un tipo de Instancia a otro."
 
 #: ../../provisioning/instances/creating_instances.rst:28
 msgid ""

@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/templates/scripts.rst:2
 msgid "Script Templates"
-msgstr ""
+msgstr "Skriptvorlagen"
 
 #: ../../library/templates/scripts.rst:4
 msgid ""
@@ -30,102 +30,102 @@ msgid ""
 "Types to always execute at the selected phase when that Node Type is "
 "provisioned, added to Workflows as Library Script Tasks, and/or executed "
 "ad-hoc on Instances."
-msgstr ""
+msgstr "Skripts sind Bash- und Powershell-Skripts, die an Knotentypen angehängt werden können, um bei der ausgewählten Phase immer ausgeführt zu werden, wenn dieser Knotentyp provisioniert wird, Workflows als Library-Skript-Aufgaben hinzugefügt und/oder ad hoc auf Instanzen ausgeführt werden."
 
 #: ../../library/templates/scripts.rst:7
 msgid "Creating Scripts"
-msgstr ""
+msgstr "Skripts erstellen"
 
 #: ../../library/templates/scripts.rst:9
 msgid "Navigate to |LibTemScr|"
-msgstr ""
+msgstr "Navigieren Sie zu |LibTemScr|"
 
 #: ../../library/templates/scripts.rst:10
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Wählen Sie :guilabel:`+ ADD`"
 
 #: ../../library/templates/scripts.rst:11
 msgid "Enter the Following:"
-msgstr ""
+msgstr "Geben Sie Folgendes ein:"
 
 #: ../../library/templates/scripts.rst:13
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../library/templates/scripts.rst:14
 msgid "Name of the Script in |morpheus|"
-msgstr ""
+msgstr "Name des Skripts in |morpheus|"
 
 #: ../../library/templates/scripts.rst:15
 msgid "SCRIPT TYPE"
-msgstr ""
+msgstr "SCRIPT TYPE"
 
 #: ../../library/templates/scripts.rst:16
 msgid "Bash"
-msgstr ""
+msgstr "Bash"
 
 #: ../../library/templates/scripts.rst:17
 msgid "Powershell"
-msgstr ""
+msgstr "Powershell"
 
 #: ../../library/templates/scripts.rst:18
 msgid "PHASE"
-msgstr ""
+msgstr "PHASE"
 
 #: ../../library/templates/scripts.rst:19
 msgid ""
 "Select which phase the Script will execute when attached to a Node Type. "
 "When a script is attached to a Node Type, it will execute according to "
 "the selcted phase:"
-msgstr ""
+msgstr "Wählen Sie, in welcher Phase das Skript ausgeführt wird, wenn es an einen Knotentyp angehängt ist. Wenn ein Skript an einen Knotentyp angehängt ist, wird es gemäß der ausgewählten Phase ausgeführt:"
 
 #: ../../library/templates/scripts.rst:21
 msgid "Start Service"
-msgstr ""
+msgstr "Start Service"
 
 #: ../../library/templates/scripts.rst:22
 msgid "Any time the Instance action ``Start Service`` is executed"
-msgstr ""
+msgstr "Jederzeit, wenn die Instanz-Maßnahme ``Start Service`` ausgeführt wird"
 
 #: ../../library/templates/scripts.rst:23
 msgid "Stop Service"
-msgstr ""
+msgstr "Stop Service"
 
 #: ../../library/templates/scripts.rst:24
 msgid "Any time the Instance action ``Stop Service`` is executed"
-msgstr ""
+msgstr "Jederzeit, wenn die Instanz-Maßnahme ``Stop Service`` ausgeführt wird"
 
 #: ../../library/templates/scripts.rst:25
 msgid "Pre-Provision"
-msgstr ""
+msgstr "Pre-Provision"
 
 #: ../../library/templates/scripts.rst:26
 msgid ""
 "Containers: Script will execute against the container host before the "
 "container is provisioned"
-msgstr ""
+msgstr "Container: Das Skript wird gegen den Container-Host ausgeführt, bevor der Container provisioniert wird"
 
 #: ../../library/templates/scripts.rst:27
 msgid ""
 "Virtual Machines: Script will execute before any provision phase Scripts "
 "or Tasks"
-msgstr ""
+msgstr "Virtuelle Maschinen: Das Skript wird vor allen Skripts oder Aufgaben der Provisionierungsphase ausgeführt"
 
 #: ../../library/templates/scripts.rst:28
 msgid "Provision"
-msgstr ""
+msgstr "Provision"
 
 #: ../../library/templates/scripts.rst:29
 msgid ""
 "Script will execute once per new Instance node during the provision "
 "Phase. Provisioning will not be considered complete until all scripts and"
 " tasks in the provisioning phase are completed"
-msgstr ""
+msgstr "Das Skript wird einmal pro neuem Instanzknoten während der Provisionierungsphase ausgeführt. Die Provisionierung gilt erst als abgeschlossen, wenn alle Skripts und Aufgaben in der Provisionierungsphase abgeschlossen sind"
 
 #: ../../library/templates/scripts.rst:31
 #: ../../library/templates/scripts.rst:47
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../library/templates/scripts.rst:31
 msgid ""
@@ -134,11 +134,11 @@ msgid ""
 "messages. As an example, your VM could be up and running but if your "
 "Script is in the provision phase and fails, provisioning will be marked "
 "as a failure."
-msgstr ""
+msgstr "Jedes Skript oder jede Aufgabe, das bzw. die auf die Provisionierungsphase gesetzt ist, wird in die gesamte Provisionierungszeit einbezogen und beeinflusst die Erfolgs-/Warn-/Fehler-Statusmeldungen der Provisionierung. Als Beispiel: Ihre VM könnte bereits laufen, aber wenn Ihr Skript in der Provisionierungsphase ist und fehlschlägt, wird die Provisionierung als Fehlschlag markiert."
 
 #: ../../library/templates/scripts.rst:33
 msgid "Post-Provision"
-msgstr ""
+msgstr "Post-Provision"
 
 #: ../../library/templates/scripts.rst:34
 msgid ""
@@ -146,106 +146,106 @@ msgid ""
 "is completed. Scripts and Tasks in the Post-Provision phase will show "
 "execution status and history, but are not considered part of the "
 "provision and do not impact provisioning status."
-msgstr ""
+msgstr "Das Skript wird einmal pro neuem Instanzknoten ausgeführt, nachdem die Provisionierungsphase abgeschlossen ist. Skripts und Aufgaben in der Post-Provision-Phase zeigen Ausführungsstatus und Verlauf, gelten aber nicht als Teil der Provisionierung und beeinflussen den Provisionierungsstatus nicht."
 
 #: ../../library/templates/scripts.rst:35
 msgid "Pre-Deploy"
-msgstr ""
+msgstr "Pre-Deploy"
 
 #: ../../library/templates/scripts.rst:36
 msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The Script will run prior to the deployment file(s)"
 " being written"
-msgstr ""
+msgstr "Das Skript wird auf der Zielinstanz ausgeführt, wann immer eine Bereitstellung gegen die Instanz ausgeführt wird. Das Skript läuft, bevor die Bereitstellungsdatei(en) geschrieben werden"
 
 #: ../../library/templates/scripts.rst:37
 msgid "Deploy"
-msgstr ""
+msgstr "Deploy"
 
 #: ../../library/templates/scripts.rst:38
 msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The script will run after the deployment file(s) "
 "are written"
-msgstr ""
+msgstr "Das Skript wird auf der Zielinstanz ausgeführt, wann immer eine Bereitstellung gegen die Instanz ausgeführt wird. Das Skript läuft, nachdem die Bereitstellungsdatei(en) geschrieben wurden"
 
 #: ../../library/templates/scripts.rst:39
 msgid "Reconfigure"
-msgstr ""
+msgstr "Reconfigure"
 
 #: ../../library/templates/scripts.rst:40
 msgid ""
 "Script will execute on target Instance any time a reconfigure is executed"
 " against the Instance."
-msgstr ""
+msgstr "Das Skript wird auf der Zielinstanz ausgeführt, wann immer eine Rekonfiguration gegen die Instanz ausgeführt wird."
 
 #: ../../library/templates/scripts.rst:41
 msgid "Teardown"
-msgstr ""
+msgstr "Teardown"
 
 #: ../../library/templates/scripts.rst:42
 msgid ""
 "Script will execute on target Instance upon Instance deletion. Script "
 "will execute against target Instance prior to the deletion/removal of "
 "resources."
-msgstr ""
+msgstr "Das Skript wird auf der Zielinstanz bei Instanzlöschung ausgeführt. Das Skript wird gegen die Zielinstanz vor dem Löschen/Entfernen der Ressourcen ausgeführt."
 
 #: ../../library/templates/scripts.rst:44
 msgid "SCRIPT"
-msgstr ""
+msgstr "SCRIPT"
 
 #: ../../library/templates/scripts.rst:45
 msgid "Enter Bash or Powershell script."
-msgstr ""
+msgstr "Bash- oder Powershell-Skript eingeben."
 
 #: ../../library/templates/scripts.rst:47
 msgid ""
 "|morpheus| variables are supported in Library Scripts using ``<%= "
 "variable.var %>`` format"
-msgstr ""
+msgstr "|morpheus|-Variablen werden in Library-Skripts im Format ``<%= variable.var %>`` unterstützt"
 
 #: ../../library/templates/scripts.rst:49
 msgid "RUN AS USER"
-msgstr ""
+msgstr "RUN AS USER"
 
 #: ../../library/templates/scripts.rst:50
 msgid ""
 "By default Scripts are execute as ``morpheus-node``. To execute as "
 "another User, populate ``RUN AS USER`` and ensure proper user permissions"
 " & group access"
-msgstr ""
+msgstr "Standardmäßig werden Skripts als ``morpheus-node`` ausgeführt. Um als anderer Benutzer auszuführen, füllen Sie ``RUN AS USER`` aus und stellen Sie die richtigen Benutzerberechtigungen und den Gruppenzugriff sicher"
 
 #: ../../library/templates/scripts.rst:51
 msgid "SUDO"
-msgstr ""
+msgstr "SUDO"
 
 #: ../../library/templates/scripts.rst:52
 msgid "Flag ``SUDO`` if sudo is required to execute the Script"
-msgstr ""
+msgstr "Markieren Sie ``SUDO``, wenn sudo erforderlich ist, um das Skript auszuführen"
 
 #: ../../library/templates/scripts.rst:55
 msgid ""
 "To attach Scripts and templates that have been added to the Library to a "
 "Node Type, start typing the name and then select the script(s) and/or "
 "template(s)."
-msgstr ""
+msgstr "Um Skripts und Vorlagen, die der Bibliothek hinzugefügt wurden, an einen Knotentyp anzuhängen, beginnen Sie mit der Eingabe des Namens und wählen Sie dann das/die Skript(e) und/oder die Vorlage(n) aus."
 
 #: ../../library/templates/scripts.rst:57
 msgid "Multiple scripts and templates can be added to a Node Type"
-msgstr ""
+msgstr "Mehrere Skripts und Vorlagen können einem Knotentyp hinzugefügt werden"
 
 #: ../../library/templates/scripts.rst:58
 msgid "Scripts and Templates can be added/shared among multiple Node Types"
-msgstr ""
+msgstr "Skripts und Vorlagen können mehreren Knotentypen hinzugefügt/geteilt werden"
 
 #: ../../library/templates/scripts.rst:59
 msgid "The execution phase can be set for Scripts in the Scripts section"
-msgstr ""
+msgstr "Die Ausführungsphase kann für Skripts im Abschnitt Skripts festgelegt werden"
 
 #: ../../library/templates/scripts.rst:60
 msgid ""
 "Search will populate Scripts or Templates containing the characters "
 "entered anywhere in their name, not just the first letter(s) of the name"
-msgstr ""
+msgstr "Die Suche listet Skripts oder Vorlagen auf, die die eingegebenen Zeichen irgendwo im Namen enthalten, nicht nur am Anfang des Namens"
 

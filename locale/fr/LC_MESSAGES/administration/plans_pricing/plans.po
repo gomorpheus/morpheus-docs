@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../administration/plans_pricing/plans.rst:4
 msgid "Plans & Pricing"
-msgstr ""
+msgstr "Plans et tarification"
 
 #: ../../administration/plans_pricing/plans.rst:7
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../administration/plans_pricing/plans.rst:9
 msgid ""
@@ -40,7 +40,7 @@ msgid ""
 "currently configured. When Instances are reconfigured, a new plan may be "
 "selected which redefines the compute resources which should be available "
 "to the Instance."
-msgstr ""
+msgstr "Les Plans de service déterminent la quantité de ressources de calcul disponibles pour chaque Instance. Lors du provisionnement de nouvelles Instances à partir de |morpheus|, un plan est sélectionné, ce qui détermine le nombre de cœurs processeur, la quantité de mémoire, la quantité de stockage et, pour les types de provisionnement pris en charge, les ressources GPU disponibles pour les machines associées. De plus, lors de la conversion d'instances découvertes dans des Clouds intégrés en Instances gérées par |morpheus|, l'utilisateur sélectionne un plan qui correspond le mieux à l'instance telle qu'elle est actuellement configurée. Lorsque des Instances sont reconfigurées, un nouveau plan peut être sélectionné, ce qui redéfinit les ressources de calcul qui doivent être disponibles pour l'Instance."
 
 #: ../../administration/plans_pricing/plans.rst:11
 msgid ""
@@ -49,7 +49,7 @@ msgid ""
 " user to increase those amounts at provision time. Price sets are "
 "associated with plans, which is how |morpheus| can compute cost values "
 "even for Instances running in private, on-prem Clouds."
-msgstr ""
+msgstr "Les Plans peuvent être aussi spécifiques ou ouverts que l'utilisateur le souhaite, en restreignant l'utilisateur aux ressources définies dans le plan ou en lui permettant d'augmenter ces quantités au moment du provisionnement. Des ensembles de prix sont associés aux plans, ce qui permet à |morpheus| de calculer les valeurs de coût même pour les Instances exécutées dans des Clouds privés sur site."
 
 #: ../../administration/plans_pricing/plans.rst:13
 msgid ""
@@ -62,7 +62,7 @@ msgid ""
 "specific Resource Pool. Prices are configured per Price Type and can be "
 "added to Price Set configurations that support the Price Type. Master "
 "Tenant Prices can apply to all Tenants or be assigned to a single Tenant."
-msgstr ""
+msgstr "La section Plans et tarification est l'endroit où les Plans, les ensembles de prix et les Prix sont gérés. Ces concepts sont associés les uns aux autres de la manière suivante : les Prix sont ajoutés aux ensembles de prix, et les ensembles de prix sont ajoutés aux Plans. Les Plans incluent les Plans de service, les Plans tarifaires d'équilibreur de charge, les Plans tarifaires d'image virtuelle et les Plans tarifaires d'instantané. Les ensembles de prix peuvent être agnostiques et disponibles pour tout Plan, ou spécifiques à un code de région, un Cloud ou même un pool de ressources spécifique. Les Prix sont configurés par type de prix et peuvent être ajoutés aux configurations d'ensemble de prix qui prennent en charge le type de prix. Les Prix du locataire maître peuvent s'appliquer à tous les Locataires ou être assignés à un seul Locataire."
 
 #: ../../administration/plans_pricing/plans.rst:15
 #: ../../administration/plans_pricing/plans.rst:25
@@ -74,32 +74,32 @@ msgid ""
 "edit the system-seeded Service Plans for Private Cloud types. Service "
 "Plans configurations cannot be created or edited for Public Cloud "
 "provision types."
-msgstr ""
+msgstr "Un ensemble de Plans de service est initialisé par |morpheus| pour les types de provisionnement de cloud privé ainsi que certains clouds publics. Des Plans et Prix supplémentaires sont synchronisés pour d'autres clouds publics lorsque les types de cloud correspondants sont ajoutés à une appliance. Les utilisateurs peuvent créer de nouveaux Plans de service ou modifier les Plans de service initialisés par le système pour les types de Cloud privé. Les configurations de Plans de service ne peuvent pas être créées ou modifiées pour les types de provisionnement de Cloud public."
 
 #: ../../administration/plans_pricing/plans.rst:18
 msgid "Plans"
-msgstr ""
+msgstr "Plans"
 
 #: ../../administration/plans_pricing/plans.rst:20
 msgid ""
 "Plans types include Service Plans and Price Plans. Service Plans "
 "determine the memory, storage and cores configuration during provisioning"
 " and reconfigure."
-msgstr ""
+msgstr "Les types de Plans incluent les Plans de service et les Plans tarifaires. Les Plans de service déterminent la configuration mémoire, stockage et cœurs lors du provisionnement et de la reconfiguration."
 
 #: ../../administration/plans_pricing/plans.rst:23
 msgid "Service Plans"
-msgstr ""
+msgstr "Plans de service"
 
 #: ../../administration/plans_pricing/plans.rst:30
 msgid "Service Plan Configuration"
-msgstr ""
+msgstr "Configuration du plan de service"
 
 #: ../../administration/plans_pricing/plans.rst:32
 #: ../../administration/plans_pricing/prices.rst:21
 #: ../../administration/plans_pricing/prices.rst:26
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../administration/plans_pricing/plans.rst:32
 msgid ""
@@ -107,11 +107,11 @@ msgid ""
 " selecting the provision type, the correct fields for that type of "
 "Service Plan will be revealed. Not all fields are required to save a "
 "valid Service Plan"
-msgstr ""
+msgstr "Tous les champs listés ci-dessous ne sont pas disponibles pour chaque type de provisionnement. Après avoir sélectionné le type de provisionnement, les champs corrects pour ce type de Plan de service seront affichés. Tous les champs ne sont pas obligatoires pour enregistrer un Plan de service valide"
 
 #: ../../administration/plans_pricing/plans.rst:34
 msgid "**NAME:** The name of the Service Plan in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Le nom du Plan de service dans |morpheus|"
 
 #: ../../administration/plans_pricing/plans.rst:35
 msgid ""
@@ -120,14 +120,14 @@ msgid ""
 " with deactivated Plans when converting to managed resources. Any "
 "resources attached to a Plan will continue to be associated if the Plan "
 "is later deactivated"
-msgstr ""
+msgstr "**ACTIVE:** Les Plans de service inactifs ne sont pas disponibles pour la sélection lors du provisionnement ou de la reconfiguration. Les nouveaux enregistrements découverts ne peuvent pas être associés à des Plans désactivés lors de la conversion en ressources gérées. Toutes les ressources attachées à un Plan resteront associées si le Plan est ultérieurement désactivé"
 
 #: ../../administration/plans_pricing/plans.rst:36
 #: ../../administration/plans_pricing/plans.rst:114
 #: ../../administration/plans_pricing/plans.rst:127
 #: ../../administration/plans_pricing/plans.rst:138
 msgid "**CODE:** A unique identifier for use in |morpheus| API and CLI"
-msgstr ""
+msgstr "**CODE:** Un identifiant unique pour utilisation dans l'API et la CLI |morpheus|"
 
 #: ../../administration/plans_pricing/plans.rst:37
 msgid ""
@@ -136,65 +136,65 @@ msgid ""
 "that Plans will be displayed in low-to-high order based on the Display "
 "Order property. This is reversed from Layouts which are displayed in "
 "high-to-low order"
-msgstr ""
+msgstr "**DISPLAY ORDER:** Configure l'ordre d'affichage des plans par rapport aux autres plans associés au même type de provisionnement. Notez que les Plans seront affichés dans l'ordre croissant en fonction de la propriété Display Order. C'est l'inverse des Dispositions, qui sont affichées dans l'ordre décroissant"
 
 #: ../../administration/plans_pricing/plans.rst:38
 msgid ""
 "**PROVISION TYPE:** Determines the resource Provision Type this Service "
 "Plan is available for when provisioning, reconfiguring and converting "
 "discovered resources to managed"
-msgstr ""
+msgstr "**PROVISION TYPE:** Détermine le type de provisionnement de ressource pour lequel ce Plan de service est disponible lors du provisionnement, de la reconfiguration et de la conversion de ressources découvertes en ressources gérées"
 
 #: ../../administration/plans_pricing/plans.rst:39
 msgid ""
 "**REGION CODE:** (Optional) Limits availability of the Service Plan to "
 "Clouds with the specified Region Code"
-msgstr ""
+msgstr "**REGION CODE:** (Optionnel) Limite la disponibilité du Plan de service aux Clouds avec le code de région spécifié"
 
 #: ../../administration/plans_pricing/plans.rst:40
 msgid "**STORAGE:** The default storage size of the root volume (in MB or GB)"
-msgstr ""
+msgstr "**STORAGE:** La taille de stockage par défaut du volume racine (en Mo ou Go)"
 
 #: ../../administration/plans_pricing/plans.rst:41
 msgid ""
 "**CUSTOMIZE ROOT VOLUME:** Allows the root volume size to be customized "
 "during provisioning or reconfigure. Custom Range limits, if set, will "
 "apply"
-msgstr ""
+msgstr "**CUSTOMIZE ROOT VOLUME:** Permet de personnaliser la taille du volume racine lors du provisionnement ou de la reconfiguration. Les limites de plage personnalisée, si définies, s'appliquent"
 
 #: ../../administration/plans_pricing/plans.rst:42
 msgid ""
 "**CUSTOMIZE EXTRA VOLUMES:** Allows the extra volume sizes to be "
 "customized during provisioning or reconfigure. Custom Range limits, if "
 "set, will apply"
-msgstr ""
+msgstr "**CUSTOMIZE EXTRA VOLUMES:** Permet de personnaliser les tailles des volumes supplémentaires lors du provisionnement ou de la reconfiguration. Les limites de plage personnalisée, si définies, s'appliquent"
 
 #: ../../administration/plans_pricing/plans.rst:43
 msgid ""
 "**ADD VOLUMES:** Allows additional volumes to be added during "
 "provisioning or reconfigure"
-msgstr ""
+msgstr "**ADD VOLUMES:** Permet d'ajouter des volumes supplémentaires lors du provisionnement ou de la reconfiguration"
 
 #: ../../administration/plans_pricing/plans.rst:44
 msgid "**MEMORY:** The amount of memory included with the plan (in MB or GB)"
-msgstr ""
+msgstr "**MEMORY:** La quantité de mémoire incluse dans le plan (en Mo ou Go)"
 
 #: ../../administration/plans_pricing/plans.rst:45
 msgid ""
 "**CUSTOM MEMORY:** Allows the amount of memory to be customized during "
 "provisioning or reconfigure. Custom Range limits, if set, will apply"
-msgstr ""
+msgstr "**CUSTOM MEMORY:** Permet de personnaliser la quantité de mémoire lors du provisionnement ou de la reconfiguration. Les limites de plage personnalisée, si définies, s'appliquent"
 
 #: ../../administration/plans_pricing/plans.rst:46
 msgid "**CORE COUNT:** The number of virtual CPU cores included with the plan"
-msgstr ""
+msgstr "**CORE COUNT:** Le nombre de cœurs processeur virtuels inclus dans le plan"
 
 #: ../../administration/plans_pricing/plans.rst:47
 msgid ""
 "**CUSTOM CORES:** Allows the number of virtual CPU cores to be customized"
 " during provisioning or reconfigure. Custom Range limits, if set, will "
 "apply"
-msgstr ""
+msgstr "**CUSTOM CORES:** Permet de personnaliser le nombre de cœurs processeur virtuels lors du provisionnement ou de la reconfiguration. Les limites de plage personnalisée, si définies, s'appliquent"
 
 #: ../../administration/plans_pricing/plans.rst:48
 msgid ""
@@ -205,50 +205,50 @@ msgid ""
 "with one CORE PER SOCKET would have four sockets with one core each "
 "assigned, and four CORES with four CORES PER SOCKET would have one socket"
 " with four cores assigned"
-msgstr ""
+msgstr "**CORES PER SOCKET:** Détermine la répartition des cœurs entre les sockets. CORES PER SOCKET ne peut pas être supérieur à CORE COUNT, et CORE COUNT doit être divisible par CORES PER SOCKET. Par exemple, quatre CORES avec deux CORES PER SOCKET signifie que deux sockets auraient deux cœurs chacun. Quatre CORES avec un CORE PER SOCKET aurait quatre sockets avec un cœur chacun, et quatre CORES avec quatre CORES PER SOCKET aurait un socket avec quatre cœurs assignés"
 
 #: ../../administration/plans_pricing/plans.rst:49
 msgid ""
 "**TOTAL STORAGE:** When custom storage is enabled for the plan, this sets"
 " a minimum and maximum total storage allowed (all disks combined)"
-msgstr ""
+msgstr "**TOTAL STORAGE:** Lorsque le stockage personnalisé est activé pour le plan, cela définit un stockage total minimum et maximum autorisé (tous les disques combinés)"
 
 #: ../../administration/plans_pricing/plans.rst:50
 msgid ""
 "**PER DISK SIZE:** When custom storage is enabled for the plan, this sets"
 " the minimum and maximum storage for each disk"
-msgstr ""
+msgstr "**PER DISK SIZE:** Lorsque le stockage personnalisé est activé pour le plan, cela définit le stockage minimum et maximum pour chaque disque"
 
 #: ../../administration/plans_pricing/plans.rst:51
 msgid ""
 "**CUSTOM MEMORY RANGE:** The minimum and maximum allowed amount of memory"
 " for the Plan when CUSTOM MEMORY is enabled for the Plan"
-msgstr ""
+msgstr "**CUSTOM MEMORY RANGE:** La quantité minimum et maximum de mémoire autorisée pour le Plan lorsque CUSTOM MEMORY est activé pour le Plan"
 
 #: ../../administration/plans_pricing/plans.rst:52
 msgid ""
 "**CUSTOM CORES RANGE:** The minimum and maximum allowed amount of virtual"
 " CPU cores for the Plan when CUSTOM CORES is enabled for the Plan"
-msgstr ""
+msgstr "**CUSTOM CORES RANGE:** La quantité minimum et maximum de cœurs processeur virtuels autorisée pour le Plan lorsque CUSTOM CORES est activé pour le Plan"
 
 #: ../../administration/plans_pricing/plans.rst:53
 msgid ""
 "**SOCKETS:** The minimum and maximum allowed sockets range for the Plan "
 "when CUSTOM CORES is enabled for the Plan"
-msgstr ""
+msgstr "**SOCKETS:** La plage minimum et maximum de sockets autorisée pour le Plan lorsque CUSTOM CORES est activé pour le Plan"
 
 #: ../../administration/plans_pricing/plans.rst:54
 msgid ""
 "**CORES PER SOCKET:** The minimum and maximum allowed cores per socket "
 "for the Plan when CUSTOM CORES is enabled for the Plan"
-msgstr ""
+msgstr "**CORES PER SOCKET:** Le minimum et le maximum de cœurs par socket autorisés pour le Plan lorsque CUSTOM CORES est activé pour le Plan"
 
 #: ../../administration/plans_pricing/plans.rst:55
 msgid ""
 "**GPU COUNT:** For GPU-capable provision types, the number of GPU devices"
 " required by each VM. The selected GPU Type applies uniformly to every "
 "device in this count"
-msgstr ""
+msgstr "**GPU COUNT:** Pour les types de provisionnement compatibles GPU, le nombre de périphériques GPU requis par chaque VM. Le type GPU sélectionné s'applique uniformément à chaque périphérique de ce total"
 
 #: ../../administration/plans_pricing/plans.rst:56
 msgid ""
@@ -259,18 +259,18 @@ msgid ""
 "vGPU Segment Type for pre-created VF assignment (Segment Type scope). A "
 "Plan cannot combine a physical type and a Segment Type. See "
 ":doc:`/infrastructure/clusters/hvm/nvidia_vgpu` for details"
-msgstr ""
+msgstr "**GPU TYPE:** Un sélecteur typeahead groupé qui détermine la portée de sélection GPU. **Any GPU** accepte toute unité GPU assignable. Une ligne de niveau supérieur en gras sélectionne un type GPU physique pour le passthrough de périphérique complet (portée Device Type). Une ligne indentée sous un type GPU physique sélectionne un type de segment vGPU NVIDIA pour l'assignation VF pré-créée (portée Segment Type). Un Plan ne peut pas combiner un type physique et un Segment Type. Consultez :doc:`/infrastructure/clusters/hvm/nvidia_vgpu` pour plus de détails"
 
 #: ../../administration/plans_pricing/plans.rst:57
 msgid ""
 "**PRICE SETS:** In the Price Sets tab, associate Price Sets with the "
 "Plan. See :ref:`Adding Price Sets to Plans`"
-msgstr ""
+msgstr "**PRICE SETS:** Dans l'onglet Price Sets, associez des ensembles de prix au Plan. Consultez :ref:`Adding Price Sets to Plans`"
 
 #: ../../administration/plans_pricing/plans.rst:59
 #: ../../administration/plans_pricing/plans.rst:87
 msgid "Tip"
-msgstr ""
+msgstr "Astuce"
 
 #: ../../administration/plans_pricing/plans.rst:59
 msgid ""
@@ -278,11 +278,11 @@ msgid ""
 "the :STORAGE:: and :MEMORY:: GB/MB settings in the same Plan. For "
 "example, if :STORAGE: is configured for for 40 GB, a custom range for "
 "Storage would also be in GB."
-msgstr ""
+msgstr "Les unités de plage personnalisée pour le stockage et la mémoire (Go/Mo) sont héritées des paramètres :STORAGE:: et :MEMORY:: Go/Mo du même Plan. Par exemple, si :STORAGE: est configuré pour 40 Go, une plage personnalisée pour le stockage serait également en Go."
 
 #: ../../administration/plans_pricing/plans.rst:62
 msgid "Create Service Plan"
-msgstr ""
+msgstr "Créer un plan de service"
 
 #: ../../administration/plans_pricing/plans.rst:64
 msgid ""
@@ -290,7 +290,7 @@ msgid ""
 "different data fields to track and valid Price Set types which can be "
 "associated. For more on Service Plan configuration, see the preceding "
 "section."
-msgstr ""
+msgstr "|morpheus| propose quelques types distincts de plans de service, chacun avec différents champs de données à suivre et types d'ensembles de prix valides pouvant être associés. Pour en savoir plus sur la configuration des Plans de service, consultez la section précédente."
 
 #: ../../administration/plans_pricing/plans.rst:66
 msgid ""
@@ -299,15 +299,15 @@ msgid ""
 "creating the Plan. Additional instructions for creating Prices and Price "
 "Sets are in the next section. With the Price Sets ready, continue with "
 "the instructions below to create Price Plans of various types."
-msgstr ""
+msgstr "Les ensembles de prix peuvent être ajoutés au Plan lors de sa création ; il est donc souvent judicieux de créer les Prix et de les associer aux ensembles de prix avant de créer le Plan. Des instructions supplémentaires pour créer des Prix et des ensembles de prix se trouvent dans la section suivante. Une fois les ensembles de prix prêts, continuez avec les instructions ci-dessous pour créer des Plans tarifaires de divers types."
 
 #: ../../administration/plans_pricing/plans.rst:68
 msgid "Navigate to |AdmPla| (``/admin/service-plans``)"
-msgstr ""
+msgstr "Accédez à |AdmPla| (``/admin/service-plans``)"
 
 #: ../../administration/plans_pricing/plans.rst:69
 msgid "Click the :guilabel:`+ ADD` dropdown and select the appropriate Plan type"
-msgstr ""
+msgstr "Cliquez sur le menu déroulant :guilabel:`+ ADD` et sélectionnez le type de Plan approprié"
 
 #: ../../administration/plans_pricing/plans.rst:70
 msgid ""
@@ -315,18 +315,18 @@ msgid ""
 "options will depend on the Plan type. See the section above for a "
 "detailed description of each configuration option available for Service "
 "Plans"
-msgstr ""
+msgstr "Configurez les détails du Plan dans l'onglet Général ; les options de configuration dépendent du type de Plan. Consultez la section ci-dessus pour une description détaillée de chaque option de configuration disponible pour les Plans de service"
 
 #: ../../administration/plans_pricing/plans.rst:71
 msgid ""
 "On the Price Sets tab, associate all relevant Price Sets with the Plan. "
 "The desired Price Sets must already exist. If needed, you may save the "
 "Plan at this point and come back to associate Price Sets later"
-msgstr ""
+msgstr "Dans l'onglet Price Sets, associez tous les ensembles de prix pertinents au Plan. Les ensembles de prix souhaités doivent déjà exister. Si nécessaire, vous pouvez enregistrer le Plan à ce stade et revenir associer des ensembles de prix ultérieurement"
 
 #: ../../administration/plans_pricing/plans.rst:72
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Cliquez sur :guilabel:`SAVE CHANGES`"
 
 #: ../../administration/plans_pricing/plans.rst:74
 msgid ""
@@ -335,64 +335,64 @@ msgid ""
 "when capacity is unavailable, but provisioning fails if the Cluster "
 "cannot reserve the requested count of matching devices. See "
 ":doc:`/infrastructure/clusters/hvm/nvidia_vgpu`."
-msgstr ""
+msgstr "Pour les plans HVM NVIDIA vGPU, créez les VF et Segment Types requis sur les Hôtes éligibles avant d'exposer le Plan. Le Plan peut rester sélectionnable lorsque la capacité est indisponible, mais le provisionnement échoue si le Cluster ne peut pas réserver le nombre demandé de périphériques correspondants. Consultez :doc:`/infrastructure/clusters/hvm/nvidia_vgpu`."
 
 #: ../../administration/plans_pricing/plans.rst:79
 msgid "Add Price Set(s) to Plan"
-msgstr ""
+msgstr "Ajouter un ou plusieurs ensembles de prix au Plan"
 
 #: ../../administration/plans_pricing/plans.rst:81
 msgid ""
 "Select a Price Unit to list available Price Sets which have the selected "
 "Price Unit. Available Price Sets are filtered to show only those which "
 "are relevant for the Plan type you've selected"
-msgstr ""
+msgstr "Sélectionnez une unité de prix pour lister les ensembles de prix disponibles ayant l'unité de prix sélectionnée. Les ensembles de prix disponibles sont filtrés pour n'afficher que ceux pertinents pour le type de Plan que vous avez sélectionné"
 
 #: ../../administration/plans_pricing/plans.rst:82
 msgid "Select a Price Set from the list and click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Sélectionnez un ensemble de prix dans la liste et cliquez sur :guilabel:`+ ADD`"
 
 #: ../../administration/plans_pricing/plans.rst:83
 msgid ""
 "Add additional Price Sets if desired (multiple Price Sets can be "
 "associated with a Plan)"
-msgstr ""
+msgstr "Ajoutez des ensembles de prix supplémentaires si vous le souhaitez (plusieurs ensembles de prix peuvent être associés à un Plan)"
 
 #: ../../administration/plans_pricing/plans.rst:84
 msgid "Added Price sets can be removed from a Plan by clicking the |trash| icon"
-msgstr ""
+msgstr "Les ensembles de prix ajoutés peuvent être supprimés d'un Plan en cliquant sur l'icône |trash|"
 
 #: ../../administration/plans_pricing/plans.rst:85
 msgid "Once all Price Sets have been added, select :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Une fois tous les ensembles de prix ajoutés, sélectionnez :guilabel:`SAVE CHANGES`"
 
 #: ../../administration/plans_pricing/plans.rst:87
 msgid ""
 "The :guilabel:`+ADD` button must be clicked after selecting a Price Set "
 "or it will not be added to a Plan."
-msgstr ""
+msgstr "Le bouton :guilabel:`+ADD` doit être cliqué après la sélection d'un ensemble de prix, sinon il ne sera pas ajouté au Plan."
 
 #: ../../administration/plans_pricing/plans.rst:90
 msgid "Service Plan Permissions"
-msgstr ""
+msgstr "Permissions du plan de service"
 
 #: ../../administration/plans_pricing/plans.rst:92
 msgid ""
 "Group and Tenant Access permissions determine availability of a Service "
 "Plan."
-msgstr ""
+msgstr "Les permissions d'accès Groupe et Locataire déterminent la disponibilité d'un Plan de service."
 
 #: ../../administration/plans_pricing/plans.rst:94
 msgid ""
 "Group Access determines what Groups the Service Plan will be available in"
 " for Provisioning and Reconfigure."
-msgstr ""
+msgstr "L'accès Groupe détermine dans quels Groupes le Plan de service sera disponible pour le Provisionnement et la Reconfiguration."
 
 #: ../../administration/plans_pricing/plans.rst:95
 msgid ""
 "Group Access settings only apply to the Tenant they are configured in, as"
 " Groups are not multi-tenant."
-msgstr ""
+msgstr "Les paramètres d'accès Groupe s'appliquent uniquement au Locataire dans lequel ils sont configurés, car les Groupes ne sont pas multi-locataires."
 
 #: ../../administration/plans_pricing/plans.rst:96
 msgid ""
@@ -400,11 +400,11 @@ msgid ""
 "Permissions to determine if the Service Plan is available to all Tenants "
 "(public visibility) or assign the Service Plan to one or multiple "
 "Tenants."
-msgstr ""
+msgstr "Pour les environnements multi-locataires, le |master tenant| peut définir les Permissions Locataire pour déterminer si le Plan de service est disponible pour tous les Locataires (visibilité publique) ou assigner le Plan de service à un ou plusieurs Locataires."
 
 #: ../../administration/plans_pricing/plans.rst:99
 msgid "Removing Plans"
-msgstr ""
+msgstr "Suppression de Plans"
 
 #: ../../administration/plans_pricing/plans.rst:101
 msgid ""
@@ -414,25 +414,25 @@ msgid ""
 "not hard delete the Plan as the record must remain for any existing "
 "associations' usage and price tracking. Synced Plans should be "
 "deactivated rather than removed."
-msgstr ""
+msgstr "Les Plans peuvent être supprimés en accédant à la page de liste des Plans de service (|AdmPlaPla|), en ouvrant le menu ACTIONS pour un Plan, puis en sélectionnant \"Remove\". La suppression d'un Plan le rend invisible, cependant, cela ne supprime pas définitivement le Plan car l'enregistrement doit rester pour les associations existantes et le suivi des prix. Les Plans synchronisés doivent être désactivés plutôt que supprimés."
 
 #: ../../administration/plans_pricing/plans.rst:106
 msgid "Load Balancer Price Plans"
-msgstr ""
+msgstr "Plans tarifaires d'équilibreur de charge"
 
 #: ../../administration/plans_pricing/plans.rst:108
 msgid ""
 "Load Balancer Price Plans configure pricing for Load Balancers and Load "
 "Balancer Virtual Servers."
-msgstr ""
+msgstr "Les Plans tarifaires d'équilibreur de charge configurent la tarification des équilibreurs de charge et des serveurs virtuels d'équilibreur de charge."
 
 #: ../../administration/plans_pricing/plans.rst:110
 msgid "Load Balancer Price Plan Configuration:"
-msgstr ""
+msgstr "Configuration du plan tarifaire d'équilibreur de charge :"
 
 #: ../../administration/plans_pricing/plans.rst:112
 msgid "**NAME:** The name of the Load Balancer Price Plan in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Le nom du Plan tarifaire d'équilibreur de charge dans |morpheus|"
 
 #: ../../administration/plans_pricing/plans.rst:113
 #: ../../administration/plans_pricing/plans.rst:126
@@ -440,13 +440,13 @@ msgstr ""
 msgid ""
 "**ACTIVE:** When Active, Prices in Price Sets added to the Price Plan "
 "will apply to associated resources as configured"
-msgstr ""
+msgstr "**ACTIVE:** Lorsqu'il est actif, les Prix dans les ensembles de prix ajoutés au Plan tarifaire s'appliquent aux ressources associées selon la configuration"
 
 #: ../../administration/plans_pricing/plans.rst:115
 msgid ""
 "**LOAD BALANCER TYPE:** Select the load balancer type the Price Plan "
 "should be associated with"
-msgstr ""
+msgstr "**LOAD BALANCER TYPE:** Sélectionnez le type d'équilibreur de charge auquel le Plan tarifaire doit être associé"
 
 #: ../../administration/plans_pricing/plans.rst:116
 msgid ""
@@ -454,11 +454,11 @@ msgid ""
 "Plan. Load Balancer Price Sets may be associated with Load Balancer-type "
 "and Load Balancer Virtual Server-type Prices. Fore more, see :ref:`Adding"
 " Price Sets to Plans`"
-msgstr ""
+msgstr "**PRICE SETS:** Dans l'onglet Price Sets, associez des ensembles de prix au Plan. Les ensembles de prix d'équilibreur de charge peuvent être associés à des Prix de type équilibreur de charge et de serveur virtuel d'équilibreur de charge. Pour en savoir plus, consultez :ref:`Adding Price Sets to Plans`"
 
 #: ../../administration/plans_pricing/plans.rst:119
 msgid "Virtual Image Price Plans"
-msgstr ""
+msgstr "Plans tarifaires d'image virtuelle"
 
 #: ../../administration/plans_pricing/plans.rst:121
 msgid ""
@@ -470,46 +470,46 @@ msgid ""
 "Images associated with Virtual Image Price Plans. Virtual Image Price "
 "Plans do not apply to uploaded Virtual Images that have not been copied "
 "to a location in the specified Cloud type yet."
-msgstr ""
+msgstr "Les Plans tarifaires d'image virtuelle configurent la tarification des Images virtuelles. La tarification est associée par configuration de Prix et d'ensemble de prix, mais s'applique en général aux Images avec des enregistrements d'emplacement dans le type de Cloud spécifié du Plan tarifaire. Les Plans tarifaires d'image virtuelle servent à définir la tarification du stockage d'Images virtuelles, et non à ajouter une tarification aux ressources utilisant des Images virtuelles associées aux Plans tarifaires d'image virtuelle. Les Plans tarifaires d'image virtuelle ne s'appliquent pas aux Images virtuelles importées qui n'ont pas encore été copiées vers un emplacement dans le type de Cloud spécifié."
 
 #: ../../administration/plans_pricing/plans.rst:123
 msgid "Virtual Image Price Plan Configuration:"
-msgstr ""
+msgstr "Configuration du plan tarifaire d'image virtuelle :"
 
 #: ../../administration/plans_pricing/plans.rst:125
 msgid "**NAME:** The name of the Virtual Image Price Plan in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Le nom du Plan tarifaire d'image virtuelle dans |morpheus|"
 
 #: ../../administration/plans_pricing/plans.rst:128
 msgid ""
 "**CLOUD TYPE:** Virtual Image Pricing applies to Virtual Images with "
 "location records in the specified Cloud type"
-msgstr ""
+msgstr "**CLOUD TYPE:** La tarification d'image virtuelle s'applique aux Images virtuelles avec des enregistrements d'emplacement dans le type de Cloud spécifié"
 
 #: ../../administration/plans_pricing/plans.rst:129
 msgid ""
 "**PRICE SETS:** In the Price Sets tab, associate Price Sets with the "
 "Plan. Virtual Image Price Sets may be associated with Storage-type "
 "Prices. Fore more, see :ref:`Adding Price Sets to Plans`"
-msgstr ""
+msgstr "**PRICE SETS:** Dans l'onglet Price Sets, associez des ensembles de prix au Plan. Les ensembles de prix d'image virtuelle peuvent être associés à des Prix de type Stockage. Pour en savoir plus, consultez :ref:`Adding Price Sets to Plans`"
 
 #: ../../administration/plans_pricing/plans.rst:132
 msgid "Snapshot Price Plans"
-msgstr ""
+msgstr "Plans tarifaires d'instantané"
 
 #: ../../administration/plans_pricing/plans.rst:134
 msgid "Snapshot Price Plan Configuration:"
-msgstr ""
+msgstr "Configuration du plan tarifaire d'instantané :"
 
 #: ../../administration/plans_pricing/plans.rst:136
 msgid "**NAME:** The name of the Snapshot Price Plan in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Le nom du Plan tarifaire d'instantané dans |morpheus|"
 
 #: ../../administration/plans_pricing/plans.rst:139
 msgid ""
 "**CLOUD TYPE:** Snapshot Pricing applies to Snapshots with location "
 "records in the specified Cloud type"
-msgstr ""
+msgstr "**CLOUD TYPE:** La tarification d'instantané s'applique aux Instantanés avec des enregistrements d'emplacement dans le type de Cloud spécifié"
 
 #: ../../administration/plans_pricing/plans.rst:140
 msgid ""
@@ -517,115 +517,115 @@ msgid ""
 "Plan. Snapshot Price Sets must have at least one Storage-type Price but "
 "may also have Datastore-type Prices. Fore more, see :ref:`Adding Price "
 "Sets to Plans`"
-msgstr ""
+msgstr "**PRICE SETS:** Dans l'onglet Price Sets, associez des ensembles de prix au Plan. Les ensembles de prix d'instantané doivent avoir au moins un Prix de type Stockage, mais peuvent également avoir des Prix de type Datastore. Pour en savoir plus, consultez :ref:`Adding Price Sets to Plans`"
 
 #: ../../administration/plans_pricing/prices.rst:4
 msgid "Price Sets"
-msgstr ""
+msgstr "Ensembles de prix"
 
 #: ../../administration/plans_pricing/prices.rst:6
 msgid ""
 "Price Sets combine Prices and then attach to Plans. Prices must be "
 "created prior to creating Price Sets, but it is recommended to review the"
 " Price Set Type options prior to creating Prices."
-msgstr ""
+msgstr "Les ensembles de prix combinent des Prix, puis sont attachés aux Plans. Les Prix doivent être créés avant de créer des ensembles de prix, mais il est recommandé d'examiner les options de type d'ensemble de prix avant de créer des Prix."
 
 #: ../../administration/plans_pricing/prices.rst:8
 msgid "Price Unit"
-msgstr ""
+msgstr "Unité de prix"
 
 #: ../../administration/plans_pricing/prices.rst:9
 msgid "Select the Price Unit to use for the Price Set."
-msgstr ""
+msgstr "Sélectionnez l'unité de prix à utiliser pour l'ensemble de prix."
 
 #: ../../administration/plans_pricing/prices.rst:11
 #: ../../administration/plans_pricing/prices.rst:63
 msgid "Minute"
-msgstr ""
+msgstr "Minute"
 
 #: ../../administration/plans_pricing/prices.rst:12
 #: ../../administration/plans_pricing/prices.rst:64
 msgid "Hour"
-msgstr ""
+msgstr "Heure"
 
 #: ../../administration/plans_pricing/prices.rst:13
 #: ../../administration/plans_pricing/prices.rst:65
 msgid "Day"
-msgstr ""
+msgstr "Jour"
 
 #: ../../administration/plans_pricing/prices.rst:14
 #: ../../administration/plans_pricing/prices.rst:66
 msgid "Month"
-msgstr ""
+msgstr "Mois"
 
 #: ../../administration/plans_pricing/prices.rst:15
 #: ../../administration/plans_pricing/prices.rst:67
 msgid "Year"
-msgstr ""
+msgstr "Année"
 
 #: ../../administration/plans_pricing/prices.rst:16
 #: ../../administration/plans_pricing/prices.rst:68
 msgid "Two Year"
-msgstr ""
+msgstr "Deux ans"
 
 #: ../../administration/plans_pricing/prices.rst:17
 #: ../../administration/plans_pricing/prices.rst:69
 msgid "Three Year"
-msgstr ""
+msgstr "Trois ans"
 
 #: ../../administration/plans_pricing/prices.rst:18
 #: ../../administration/plans_pricing/prices.rst:70
 msgid "Four Year"
-msgstr ""
+msgstr "Quatre ans"
 
 #: ../../administration/plans_pricing/prices.rst:19
 #: ../../administration/plans_pricing/prices.rst:71
 msgid "Five Year"
-msgstr ""
+msgstr "Cinq ans"
 
 #: ../../administration/plans_pricing/prices.rst:21
 msgid ""
 "Only Prices configured with matching Price Units can be used in a Price "
 "Set. \"Month\" is equivalent to 30 days by default. For AWS, month is "
 "30.5 days. For Azure, month is 30.4 days."
-msgstr ""
+msgstr "Seuls les Prix configurés avec des unités de prix correspondantes peuvent être utilisés dans un ensemble de prix. « Month » équivaut par défaut à 30 jours. Pour AWS, un mois équivaut à 30,5 jours. Pour Azure, un mois équivaut à 30,4 jours."
 
 #: ../../administration/plans_pricing/prices.rst:23
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: ../../administration/plans_pricing/prices.rst:24
 msgid ""
 "Price Set types determine which Prices are available to make up the set. "
 "This selection will filter the values returned in the Prices field at the"
 " bottom of the modal."
-msgstr ""
+msgstr "Les types d'ensemble de prix déterminent quels Prix sont disponibles pour composer l'ensemble. Cette sélection filtrera les valeurs renvoyées dans le champ Prices en bas de la fenêtre modale."
 
 #: ../../administration/plans_pricing/prices.rst:26
 msgid ""
 "It's helpful to make note of the Prices options below before creating "
 "Price Sets."
-msgstr ""
+msgstr "Il est utile de noter les options de Prix ci-dessous avant de créer des ensembles de prix."
 
 #: ../../administration/plans_pricing/prices.rst:28
 msgid ""
 "**Everything:** 'Everything' price sets require one or more 'Everything' "
 "price types and may include 'Platform' or 'Software' price types"
-msgstr ""
+msgstr "**Everything:** Les ensembles de prix « Everything » nécessitent un ou plusieurs types de prix « Everything » et peuvent inclure des types de prix « Platform » ou « Software »"
 
 #: ../../administration/plans_pricing/prices.rst:29
 msgid ""
 "**Compute + Storage:** 'Compute + Storage' price sets require at least "
 "one of each 'Memory',  CPU', and 'Disk Only' price types and may include "
 "'Platform' or 'Software' price types"
-msgstr ""
+msgstr "**Compute + Storage:** Les ensembles de prix « Compute + Storage » nécessitent au moins un de chaque type de prix « Memory », « CPU » et « Disk Only » et peuvent inclure des types de prix « Platform » ou « Software »"
 
 #: ../../administration/plans_pricing/prices.rst:30
 msgid ""
 "**Component:** 'Component' price sets require at least one of each "
 "'Memory', 'Cores', 'CPU', and 'Storage' price types and may include "
 "'Platform' or 'Software' price types"
-msgstr ""
+msgstr "**Component:** Les ensembles de prix « Component » nécessitent au moins un de chaque type de prix « Memory », « Cores », « CPU » et « Storage » et peuvent inclure des types de prix « Platform » ou « Software »"
 
 #: ../../administration/plans_pricing/prices.rst:31
 msgid ""
@@ -633,32 +633,32 @@ msgid ""
 "Balancer' price type and may include 'Load Balancer Virtual Server' price"
 " types. Load Balancer price sets are the only type which can be "
 "associated with Load Balancer Price Plans"
-msgstr ""
+msgstr "**Load Balancer:** Les ensembles de prix « Load Balancer » nécessitent au moins un type de prix « Load Balancer » et peuvent inclure des types de prix « Load Balancer Virtual Server ». Les ensembles de prix d'équilibreur de charge sont le seul type pouvant être associé aux Plans tarifaires d'équilibreur de charge"
 
 #: ../../administration/plans_pricing/prices.rst:32
 msgid ""
 "**Virtual Image:** 'Virtual Image' price sets require at least one "
 "'Storage' price type. Virtual Image price sets are the only type which "
 "can be associated with Virtual Image Price plans"
-msgstr ""
+msgstr "**Virtual Image:** Les ensembles de prix « Virtual Image » nécessitent au moins un type de prix « Storage ». Les ensembles de prix d'image virtuelle sont le seul type pouvant être associé aux plans tarifaires d'image virtuelle"
 
 #: ../../administration/plans_pricing/prices.rst:33
 msgid ""
 "**Snapshot:** 'Snapshot' price sets require at least one 'Storage' price "
 "type and may also include 'Datastore' price types. Snapshot price sets "
 "are the only type which can be associated with Snapshot Price plans"
-msgstr ""
+msgstr "**Snapshot:** Les ensembles de prix « Snapshot » nécessitent au moins un type de prix « Storage » et peuvent également inclure des types de prix « Datastore ». Les ensembles de prix d'instantané sont le seul type pouvant être associé aux plans tarifaires d'instantané"
 
 #: ../../administration/plans_pricing/prices.rst:34
 msgid ""
 "**Software/Service:** 'Software/Service' Price Sets require at least one "
 "'Software/Service' Price type"
-msgstr ""
+msgstr "**Software/Service:** Les ensembles de prix « Software/Service » nécessitent au moins un type de prix « Software/Service »"
 
 #: ../../administration/plans_pricing/prices.rst:36
 #: ../../administration/plans_pricing/prices.rst:126
 msgid "Apply Price Changes to Usage"
-msgstr ""
+msgstr "Appliquer les modifications de prix à l'utilisation"
 
 #: ../../administration/plans_pricing/prices.rst:37
 #: ../../administration/plans_pricing/prices.rst:127
@@ -666,19 +666,19 @@ msgid ""
 "If marked, when saving a Price Set (new Price Set or saving changes to an"
 " existing one), usage records will be restarted for servers affected by "
 "the pricing change."
-msgstr ""
+msgstr "Si coché, lors de l'enregistrement d'un ensemble de prix (nouvel ensemble de prix ou enregistrement de modifications d'un ensemble existant), les enregistrements d'utilisation seront redémarrés pour les serveurs affectés par le changement de tarification."
 
 #: ../../administration/plans_pricing/prices.rst:39
 #: ../../administration/plans_pricing/prices.rst:46
 msgid "Prices"
-msgstr ""
+msgstr "Prix"
 
 #: ../../administration/plans_pricing/prices.rst:40
 msgid ""
 "Search for and select Prices to be added to the Price Set. One of each "
 "Price Type required for the Price Set Type selected must be added for the"
 " Price Set to save."
-msgstr ""
+msgstr "Recherchez et sélectionnez les Prix à ajouter à l'ensemble de prix. Un de chaque type de prix requis pour le type d'ensemble de prix sélectionné doit être ajouté pour que l'ensemble de prix puisse être enregistré."
 
 #: ../../administration/plans_pricing/prices.rst:48
 msgid ""
@@ -694,63 +694,63 @@ msgid ""
 "how a final cost total was computed. You should decide in advance for a "
 "given price type for a price set whether you wish to charge an \"Always\""
 " rate or charge separately for running/stopped states."
-msgstr ""
+msgstr "Des détails sur diverses configurations de prix sont fournis ici. Lors de la création de prix, il est également nécessaire de comprendre comment ils seront appliqués. Plus précisément, cela concerne la configuration **INCUR CHARGES**. Les frais peuvent être engagés « While Running », « While Stopped » ou « Always ». Il est généralement plus logique d'avoir des prix en cours d'exécution et arrêtés pour un type donné (Cores, par exemple) *OU* d'avoir un prix « Always » (mais pas les deux). En effet, les prix ne se cumulent pas et le plus élevé d'un prix « Always » concurrent ou d'un prix en cours d'exécution/arrêté prend le dessus. Cela peut entraîner une confusion sur le prix appliqué et la façon dont un coût total final a été calculé. Vous devez décider à l'avance pour un type de prix donné pour un ensemble de prix si vous souhaitez facturer un tarif « Always » ou facturer séparément pour les états en cours d'exécution/arrêtés."
 
 #: ../../administration/plans_pricing/prices.rst:50
 msgid "Price Types"
-msgstr ""
+msgstr "Types de prix"
 
 #: ../../administration/plans_pricing/prices.rst:51
 msgid "Everything: One price for all resources Storage, CPU, Memory, and Disks"
-msgstr ""
+msgstr "Everything : Un prix pour toutes les ressources Stockage, CPU, Mémoire et Disques"
 
 #: ../../administration/plans_pricing/prices.rst:52
 msgid "Memory + CPU"
-msgstr ""
+msgstr "Mémoire + CPU"
 
 #: ../../administration/plans_pricing/prices.rst:53
 msgid "Memory Only (per MB)"
-msgstr ""
+msgstr "Mémoire uniquement (par Mo)"
 
 #: ../../administration/plans_pricing/prices.rst:54
 msgid "Cores Only (per core)"
-msgstr ""
+msgstr "Cœurs uniquement (par cœur)"
 
 #: ../../administration/plans_pricing/prices.rst:55
 msgid "Disk Only (per GB)"
-msgstr ""
+msgstr "Disque uniquement (par Go)"
 
 #: ../../administration/plans_pricing/prices.rst:56
 msgid ""
 "Platform: Select from Windows, Linux (generic), or one of several "
 "specific Linux distributions"
-msgstr ""
+msgstr "Platform : Sélectionnez parmi Windows, Linux (générique) ou l'une des plusieurs distributions Linux spécifiques"
 
 #: ../../administration/plans_pricing/prices.rst:57
 msgid ""
 "Software/Service: Add prices for software licenses which may be included "
 "with your price sets"
-msgstr ""
+msgstr "Software/Service : Ajoutez des prix pour les licences logicielles pouvant être incluses dans vos ensembles de prix"
 
 #: ../../administration/plans_pricing/prices.rst:58
 msgid "Datastore (per GB)"
-msgstr ""
+msgstr "Datastore (par Go)"
 
 #: ../../administration/plans_pricing/prices.rst:59
 msgid "Load Balancer"
-msgstr ""
+msgstr "Équilibreur de charge"
 
 #: ../../administration/plans_pricing/prices.rst:60
 msgid "Load Balancer Virtual Server"
-msgstr ""
+msgstr "Serveur virtuel d'équilibreur de charge"
 
 #: ../../administration/plans_pricing/prices.rst:62
 msgid "Price Units"
-msgstr ""
+msgstr "Unités de prix"
 
 #: ../../administration/plans_pricing/prices.rst:73
 msgid "Currency"
-msgstr ""
+msgstr "Devise"
 
 #: ../../administration/plans_pricing/prices.rst:74
 msgid "AED"
@@ -906,51 +906,51 @@ msgstr ""
 
 #: ../../administration/plans_pricing/prices.rst:112
 msgid "ZAR (South African Rand)"
-msgstr ""
+msgstr "ZAR (rand sud-africain)"
 
 #: ../../administration/plans_pricing/prices.rst:114
 msgid "Cost"
-msgstr ""
+msgstr "Coût"
 
 #: ../../administration/plans_pricing/prices.rst:115
 msgid ""
 "The base cost of the resource(s). The Price will match the Cost unless a "
 "Price Adjustment is added."
-msgstr ""
+msgstr "Le coût de base de la ou des ressources. Le Prix correspondra au Coût sauf si un ajustement de prix est ajouté."
 
 #: ../../administration/plans_pricing/prices.rst:117
 msgid "Price Adjustment"
-msgstr ""
+msgstr "Ajustement de prix"
 
 #: ../../administration/plans_pricing/prices.rst:118
 msgid "**None:** Default, no markup added and Price will match Cost"
-msgstr ""
+msgstr "**None:** Par défaut, aucune majoration n'est ajoutée et le Prix correspond au Coût"
 
 #: ../../administration/plans_pricing/prices.rst:119
 msgid ""
 "**Fixed Markup:** A fixed amount added to the Cost. Price will equal Cost"
 " + Markup."
-msgstr ""
+msgstr "**Fixed Markup:** Un montant fixe ajouté au Coût. Prix = Coût + Majoration."
 
 #: ../../administration/plans_pricing/prices.rst:120
 msgid ""
 "**Percentage Markup:** Adds a percentage markup to Cost. Price equals "
 "`Cost + (Cost x Markup %)`"
-msgstr ""
+msgstr "**Percentage Markup:** Ajoute une majoration en pourcentage au Coût. Prix = `Cost + (Cost x Markup %)`"
 
 #: ../../administration/plans_pricing/prices.rst:121
 msgid ""
 "**Custom Price:** Sets a Price independent from the Cost. If the Cost "
 "changes, a Custom Price will not."
-msgstr ""
+msgstr "**Custom Price:** Définit un Prix indépendant du Coût. Si le Coût change, un Prix personnalisé ne changera pas."
 
 #: ../../administration/plans_pricing/prices.rst:123
 msgid "Price"
-msgstr ""
+msgstr "Prix"
 
 #: ../../administration/plans_pricing/prices.rst:124
 msgid ""
 "A computed value of the final price including the cost plus any "
 "applicable markup."
-msgstr ""
+msgstr "Une valeur calculée du prix final incluant le coût plus toute majoration applicable."
 

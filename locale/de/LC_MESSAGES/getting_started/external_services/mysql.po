@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/mysql.rst:4
 msgid "MySQL"
-msgstr ""
+msgstr "MySQL"
 
 #: ../../getting_started/external_services/mysql.rst:6
 msgid ""
@@ -30,11 +30,11 @@ msgid ""
 "operational data including Instances, users, tenants, policies, "
 "automation configurations, and billing records. This page covers "
 "preparing an external MySQL service for use with |morpheus|."
-msgstr ""
+msgstr "MySQL ist die transaktionale Datenbank für |morpheus| und speichert alle Betriebsdaten einschließlich Instanzen, Benutzern, Mandanten, Richtlinien, Automatisierungskonfigurationen und Abrechnungsdatensätzen. Diese Seite behandelt die Vorbereitung eines externen MySQL-Dienstes für die Verwendung mit |morpheus|."
 
 #: ../../getting_started/external_services/mysql.rst:8
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/external_services/mysql.rst:10
 msgid ""
@@ -42,19 +42,19 @@ msgid ""
 "requires no configuration. This page is only relevant when running MySQL "
 "externally for HA, managed database services, or organizational "
 "requirements."
-msgstr ""
+msgstr "Bei HVM-Deployments und All-in-One-Installationen ist MySQL eingebettet und erfordert keine Konfiguration. Diese Seite ist nur relevant, wenn MySQL für HA, verwaltete Datenbankdienste oder organisatorische Anforderungen extern betrieben wird."
 
 #: ../../getting_started/external_services/mysql.rst:13
 msgid "Supported Versions"
-msgstr ""
+msgstr "Unterstützte Versionen"
 
 #: ../../getting_started/external_services/mysql.rst:15
 msgid "**MySQL 8.4.8** (embedded in |morpheus| 9.0.0)"
-msgstr ""
+msgstr "**MySQL 8.4.8** (eingebettet in |morpheus| 9.0.0)"
 
 #: ../../getting_started/external_services/mysql.rst:16
 msgid "**MySQL 8.0.x FIPS** (|mysqlverfips|)"
-msgstr ""
+msgstr "**MySQL 8.0.x FIPS** (|mysqlverfips|)"
 
 #: ../../getting_started/external_services/mysql.rst:18
 msgid ""
@@ -65,69 +65,69 @@ msgid ""
 "compatibility information for the specific |morpheus| release before "
 "installation or upgrade; ``8.4 or greater`` is not an unconditional "
 "compatibility statement."
-msgstr ""
+msgstr "Die Appliance unterstützt die Konfiguration eines externen MySQL-Dienstes, einschließlich der 8.4-LTS-Familie. Die Konfigurationsunterstützung zertifiziert für sich allein nicht jeden MySQL-Patch, jede Managed-Service-Variante, spätere Hauptversion oder Innovation Release. Bestätigen Sie die zertifizierten externen Versionen in den Kompatibilitätsinformationen der jeweiligen |morpheus|-Version vor Installation oder Upgrade; ``8.4 or greater`` ist keine uneingeschränkte Kompatibilitätsaussage."
 
 #: ../../getting_started/external_services/mysql.rst:20
 #: ../../getting_started/external_services/mysql.rst:149
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../getting_started/external_services/mysql.rst:22
 msgid ""
 "|morpheus| requires the ``utf8mb4`` character set and "
 "``utf8mb4_general_ci`` collation. Ensure your external MySQL instance is "
 "configured accordingly."
-msgstr ""
+msgstr "|morpheus| erfordert den Zeichensatz ``utf8mb4`` und die Collation ``utf8mb4_general_ci``. Stellen Sie sicher, dass Ihre externe MySQL-Instanz entsprechend konfiguriert ist."
 
 #: ../../getting_started/external_services/mysql.rst:25
 msgid "When to Externalize"
-msgstr ""
+msgstr "Wann externalisieren"
 
 #: ../../getting_started/external_services/mysql.rst:27
 msgid "Consider running MySQL externally when:"
-msgstr ""
+msgstr "Erwägen Sie den externen Betrieb von MySQL, wenn:"
 
 #: ../../getting_started/external_services/mysql.rst:29
 msgid ""
 "You need **high availability** with multi-master replication or InnoDB "
 "Cluster"
-msgstr ""
+msgstr "Sie **Hochverfügbarkeit** mit Multi-Master-Replikation oder InnoDB Cluster benötigen"
 
 #: ../../getting_started/external_services/mysql.rst:30
 msgid ""
 "You want to use a **managed database service** (e.g., Amazon RDS, Azure "
 "Database for MySQL, Google Cloud SQL)"
-msgstr ""
+msgstr "Sie einen **verwalteten Datenbankdienst** nutzen möchten (z. B. Amazon RDS, Azure Database for MySQL, Google Cloud SQL)"
 
 #: ../../getting_started/external_services/mysql.rst:31
 msgid ""
 "Your organization requires databases to be **managed by a dedicated DBA "
 "team**"
-msgstr ""
+msgstr "Ihre Organisation verlangt, dass Datenbanken von einem **dedizierten DBA-Team verwaltet** werden"
 
 #: ../../getting_started/external_services/mysql.rst:32
 msgid "You need **cross-region replication** for disaster recovery"
-msgstr ""
+msgstr "Sie **regionsübergreifende Replikation** für Disaster Recovery benötigen"
 
 #: ../../getting_started/external_services/mysql.rst:33
 msgid ""
 "The appliance's all-in-one footprint is constrained and you want to "
 "offload database I/O"
-msgstr ""
+msgstr "Der All-in-One-Footprint der Appliance begrenzt ist und Sie Datenbank-I/O auslagern möchten"
 
 #: ../../getting_started/external_services/mysql.rst:36
 msgid "Preparing the External Database"
-msgstr ""
+msgstr "Externe Datenbank vorbereiten"
 
 #: ../../getting_started/external_services/mysql.rst:38
 msgid ""
 "Perform the following on your external MySQL host or cluster to prepare "
 "it for |morpheus|."
-msgstr ""
+msgstr "Führen Sie Folgendes auf Ihrem externen MySQL-Host oder -Cluster aus, um ihn für |morpheus| vorzubereiten."
 
 #: ../../getting_started/external_services/mysql.rst:40
 msgid "**Step 1 — Create the database**"
-msgstr ""
+msgstr "**Schritt 1 — Datenbank erstellen**"
 
 #: ../../getting_started/external_services/mysql.rst:42
 msgid "CREATE DATABASE morpheus CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;"
@@ -135,13 +135,13 @@ msgstr ""
 
 #: ../../getting_started/external_services/mysql.rst:46
 msgid "**Step 2 — Create the Morpheus database user**"
-msgstr ""
+msgstr "**Schritt 2 — Morpheus-Datenbankbenutzer erstellen**"
 
 #: ../../getting_started/external_services/mysql.rst:48
 msgid ""
 "This user will be used by |morpheus| application nodes to authenticate "
 "with MySQL:"
-msgstr ""
+msgstr "Dieser Benutzer wird von den |morpheus|-Anwendungsknoten zur Authentifizierung bei MySQL verwendet:"
 
 #: ../../getting_started/external_services/mysql.rst:50
 msgid "CREATE USER 'morpheus'@'%' IDENTIFIED BY '<secure-password>';"
@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/mysql.rst:54
 msgid "**Step 3 — Grant permissions**"
-msgstr ""
+msgstr "**Schritt 3 — Berechtigungen erteilen**"
 
 #: ../../getting_started/external_services/mysql.rst:56
 msgid ""
@@ -160,140 +160,140 @@ msgstr ""
 
 #: ../../getting_started/external_services/mysql.rst:62
 msgid "Tip"
-msgstr ""
+msgstr "Tipp"
 
 #: ../../getting_started/external_services/mysql.rst:64
 msgid ""
 "Replace ``'%'`` with specific appliance node IPs for tighter security "
 "(e.g., ``'morpheus'@'10.0.0.%'``)."
-msgstr ""
+msgstr "Ersetzen Sie ``'%'`` durch spezifische IPs der Appliance-Knoten für engere Sicherheit (z. B. ``'morpheus'@'10.0.0.%'``)."
 
 #: ../../getting_started/external_services/mysql.rst:67
 msgid "MySQL HA / InnoDB Cluster"
-msgstr ""
+msgstr "MySQL HA / InnoDB Cluster"
 
 #: ../../getting_started/external_services/mysql.rst:69
 msgid ""
 "For high availability, MySQL can be configured in a clustered topology. "
 "Common approaches:"
-msgstr ""
+msgstr "Für Hochverfügbarkeit kann MySQL in einer Cluster-Topologie konfiguriert werden. Gängige Ansätze:"
 
 #: ../../getting_started/external_services/mysql.rst:71
 msgid "**InnoDB Cluster (Recommended)**"
-msgstr ""
+msgstr "**InnoDB Cluster (empfohlen)**"
 
 #: ../../getting_started/external_services/mysql.rst:73
 msgid ""
 "InnoDB Cluster provides built-in high availability using Group "
 "Replication with automatic failover:"
-msgstr ""
+msgstr "InnoDB Cluster bietet integrierte Hochverfügbarkeit mit Group Replication und automatischem Failover:"
 
 #: ../../getting_started/external_services/mysql.rst:75
 msgid "Minimum 3 nodes for quorum-based failover"
-msgstr ""
+msgstr "Mindestens 3 Knoten für quorum-basiertes Failover"
 
 #: ../../getting_started/external_services/mysql.rst:76
 msgid ""
 "Supports single-primary (one writer) or multi-primary (multiple writers) "
 "mode"
-msgstr ""
+msgstr "Unterstützt Single-Primary- (ein Writer) oder Multi-Primary-Modus (mehrere Writer)"
 
 #: ../../getting_started/external_services/mysql.rst:77
 msgid "Single-primary mode is recommended for |morpheus| to avoid write conflicts"
-msgstr ""
+msgstr "Der Single-Primary-Modus wird für |morpheus| empfohlen, um Schreibkonflikte zu vermeiden"
 
 #: ../../getting_started/external_services/mysql.rst:78
 msgid ""
 "Use MySQL Router as a connection proxy between |morpheus| and the cluster"
 " for automatic failover routing"
-msgstr ""
+msgstr "Verwenden Sie MySQL Router als Verbindungsproxy zwischen |morpheus| und dem Cluster für automatisches Failover-Routing"
 
 #: ../../getting_started/external_services/mysql.rst:80
 msgid "**Multi-Master Replication**"
-msgstr ""
+msgstr "**Multi-Master-Replikation**"
 
 #: ../../getting_started/external_services/mysql.rst:82
 msgid "Traditional MySQL replication with multiple writable masters:"
-msgstr ""
+msgstr "Traditionelle MySQL-Replikation mit mehreren beschreibbaren Mastern:"
 
 #: ../../getting_started/external_services/mysql.rst:84
 msgid "Can be configured with no replication delay within the same region"
-msgstr ""
+msgstr "Kann ohne Replikationsverzögerung innerhalb derselben Region konfiguriert werden"
 
 #: ../../getting_started/external_services/mysql.rst:85
 msgid "Allow some replication delay for cross-region replicas"
-msgstr ""
+msgstr "Lassen Sie etwas Replikationsverzögerung für regionsübergreifende Replicas zu"
 
 #: ../../getting_started/external_services/mysql.rst:86
 msgid ""
 "Increases risk of job overlap between regions, though concurrent "
 "operations typically self-correct"
-msgstr ""
+msgstr "Erhöht das Risiko von Job-Überlappungen zwischen Regionen, obwohl gleichzeitige Operationen sich typischerweise selbst korrigieren"
 
 #: ../../getting_started/external_services/mysql.rst:88
 msgid "**Managed Services**"
-msgstr ""
+msgstr "**Managed Services**"
 
 #: ../../getting_started/external_services/mysql.rst:90
 msgid ""
 "Cloud-managed MySQL services (RDS, Azure Database, Cloud SQL) handle "
 "replication, failover, and backups automatically. Ensure:"
-msgstr ""
+msgstr "Cloudverwaltete MySQL-Dienste (RDS, Azure Database, Cloud SQL) übernehmen Replikation, Failover und Sicherungen automatisch. Stellen Sie sicher:"
 
 #: ../../getting_started/external_services/mysql.rst:92
 msgid ""
 "The exact service variant and MySQL 8.4.x patch are certified for the "
 "installed |morpheus| release"
-msgstr ""
+msgstr "Die genaue Service-Variante und der MySQL-8.4.x-Patch sind für die installierte |morpheus|-Version zertifiziert"
 
 #: ../../getting_started/external_services/mysql.rst:93
 msgid "``utf8mb4`` character set is available"
-msgstr ""
+msgstr "Der Zeichensatz ``utf8mb4`` ist verfügbar"
 
 #: ../../getting_started/external_services/mysql.rst:94
 msgid "The |morpheus| appliance nodes can reach the service endpoint on port 3306"
-msgstr ""
+msgstr "Die |morpheus|-Appliance-Knoten erreichen den Dienstendpunkt auf Port 3306"
 
 #: ../../getting_started/external_services/mysql.rst:95
 msgid "The service allows the ``GRANT`` permissions listed above"
-msgstr ""
+msgstr "Der Dienst erlaubt die oben aufgeführten ``GRANT``-Berechtigungen"
 
 #: ../../getting_started/external_services/mysql.rst:98
 msgid "Network Requirements"
-msgstr ""
+msgstr "Netzwerkanforderungen"
 
 #: ../../getting_started/external_services/mysql.rst:104
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: ../../getting_started/external_services/mysql.rst:105
 msgid "Source"
-msgstr ""
+msgstr "Quelle"
 
 #: ../../getting_started/external_services/mysql.rst:106
 msgid "Destination"
-msgstr ""
+msgstr "Ziel"
 
 #: ../../getting_started/external_services/mysql.rst:107
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: ../../getting_started/external_services/mysql.rst:108
 msgid "Protocol"
-msgstr ""
+msgstr "Protokoll"
 
 #: ../../getting_started/external_services/mysql.rst:109
 msgid "|morpheus| application connection"
-msgstr ""
+msgstr "|morpheus|-Anwendungsverbindung"
 
 #: ../../getting_started/external_services/mysql.rst:110
 #: ../../getting_started/external_services/mysql.rst:120
 msgid "|morpheus| appliance"
-msgstr ""
+msgstr "|morpheus|-Appliance"
 
 #: ../../getting_started/external_services/mysql.rst:111
 msgid "MySQL host(s)"
-msgstr ""
+msgstr "MySQL-Host(s)"
 
 #: ../../getting_started/external_services/mysql.rst:112
 msgid "3306"
@@ -303,16 +303,16 @@ msgstr ""
 #: ../../getting_started/external_services/mysql.rst:118
 #: ../../getting_started/external_services/mysql.rst:123
 msgid "TCP"
-msgstr ""
+msgstr "TCP"
 
 #: ../../getting_started/external_services/mysql.rst:114
 msgid "InnoDB Cluster Group Replication"
-msgstr ""
+msgstr "InnoDB Cluster Group Replication"
 
 #: ../../getting_started/external_services/mysql.rst:115
 #: ../../getting_started/external_services/mysql.rst:116
 msgid "MySQL node"
-msgstr ""
+msgstr "MySQL-Knoten"
 
 #: ../../getting_started/external_services/mysql.rst:117
 msgid "33061"
@@ -320,19 +320,19 @@ msgstr ""
 
 #: ../../getting_started/external_services/mysql.rst:119
 msgid "MySQL Router (if used)"
-msgstr ""
+msgstr "MySQL Router (falls verwendet)"
 
 #: ../../getting_started/external_services/mysql.rst:121
 msgid "MySQL Router"
-msgstr ""
+msgstr "MySQL Router"
 
 #: ../../getting_started/external_services/mysql.rst:122
 msgid "6446 (RW), 6447 (RO)"
-msgstr ""
+msgstr "6446 (RW), 6447 (RO)"
 
 #: ../../getting_started/external_services/mysql.rst:126
 msgid "TLS Connections"
-msgstr ""
+msgstr "TLS-Verbindungen"
 
 #: ../../getting_started/external_services/mysql.rst:128
 msgid ""
@@ -340,7 +340,7 @@ msgid ""
 "server with a valid certificate and enable TLS on the |morpheus| side via"
 " ``morpheus.rb``. Consult the MySQL documentation for server-side TLS "
 "setup."
-msgstr ""
+msgstr "Um eine Verbindung zu einer externen MySQL-Instanz über TLS herzustellen, konfigurieren Sie den MySQL-Server mit einem gültigen Zertifikat und aktivieren Sie TLS auf der |morpheus|-Seite über ``morpheus.rb``. Konsultieren Sie die MySQL-Dokumentation für die serverseitige TLS-Einrichtung."
 
 #: ../../getting_started/external_services/mysql.rst:130
 msgid ""
@@ -348,77 +348,77 @@ msgid ""
 "additional ``morpheus.rb`` settings are needed beyond the "
 "host/user/password configuration if the MySQL server enforces TLS for all"
 " connections."
-msgstr ""
+msgstr "|morpheus| verwendet TLS, wenn der externe MySQL-Server es verlangt — über die Host-/Benutzer-/Kennwort-Konfiguration hinaus sind keine zusätzlichen ``morpheus.rb``-Einstellungen erforderlich, wenn der MySQL-Server TLS für alle Verbindungen erzwingt."
 
 #: ../../getting_started/external_services/mysql.rst:133
 msgid "Database Sizing"
-msgstr ""
+msgstr "Datenbankdimensionierung"
 
 #: ../../getting_started/external_services/mysql.rst:135
 msgid "MySQL storage requirements grow with:"
-msgstr ""
+msgstr "Der MySQL-Speicherbedarf wächst mit:"
 
 #: ../../getting_started/external_services/mysql.rst:137
 msgid "Number of managed Instances and hosts"
-msgstr ""
+msgstr "Anzahl der verwalteten Instanzen und Hosts"
 
 #: ../../getting_started/external_services/mysql.rst:138
 msgid "Billing and usage record retention"
-msgstr ""
+msgstr "Aufbewahrung von Abrechnungs- und Nutzungsdatensätzen"
 
 #: ../../getting_started/external_services/mysql.rst:139
 msgid "Audit log history"
-msgstr ""
+msgstr "Audit-Protokollverlauf"
 
 #: ../../getting_started/external_services/mysql.rst:140
 msgid "Backup metadata"
-msgstr ""
+msgstr "Sicherungsmetadaten"
 
 #: ../../getting_started/external_services/mysql.rst:142
 msgid ""
 "For most environments, start with **50 GB** of database storage and "
 "monitor growth. Large environments (10,000+ managed resources) may "
 "require 200 GB+ and should consider dedicated I/O-optimized storage."
-msgstr ""
+msgstr "Für die meisten Umgebungen beginnen Sie mit **50 GB** Datenbankspeicher und überwachen das Wachstum. Große Umgebungen (10.000+ verwaltete Ressourcen) können 200 GB+ benötigen und sollten dedizierten I/O-optimierten Speicher in Betracht ziehen."
 
 #: ../../getting_started/external_services/mysql.rst:144
 msgid ""
 "Refer to :doc:`Capacity and Planning "
 "</getting_started/requirements/capacity_planning>` for general sizing "
 "guidance."
-msgstr ""
+msgstr "Allgemeine Dimensionierungshinweise finden Sie unter :doc:`Capacity and Planning </getting_started/requirements/capacity_planning>`."
 
 #: ../../getting_started/external_services/mysql.rst:147
 msgid "Backup Considerations"
-msgstr ""
+msgstr "Überlegungen zur Sicherung"
 
 #: ../../getting_started/external_services/mysql.rst:151
 msgid ""
 "Always backup the MySQL database before performing |morpheus| upgrades. "
 "The database can be restored if an upgrade needs to be rolled back."
-msgstr ""
+msgstr "Sichern Sie die MySQL-Datenbank immer vor |morpheus|-Upgrades. Die Datenbank kann wiederhergestellt werden, falls ein Upgrade zurückgerollt werden muss."
 
 #: ../../getting_started/external_services/mysql.rst:153
 msgid "For external databases:"
-msgstr ""
+msgstr "Für externe Datenbanken:"
 
 #: ../../getting_started/external_services/mysql.rst:155
 msgid ""
 "Configure automated backups through your MySQL HA solution or managed "
 "service"
-msgstr ""
+msgstr "Konfigurieren Sie automatisierte Sicherungen über Ihre MySQL-HA-Lösung oder den Managed Service"
 
 #: ../../getting_started/external_services/mysql.rst:156
 msgid "Test restore procedures regularly"
-msgstr ""
+msgstr "Testen Sie Wiederherstellungsverfahren regelmäßig"
 
 #: ../../getting_started/external_services/mysql.rst:157
 msgid ""
 "For ``mysqldump``-based backups, use ``--single-transaction`` to avoid "
 "locking tables"
-msgstr ""
+msgstr "Verwenden Sie bei ``mysqldump``-basierten Sicherungen ``--single-transaction``, um Tabellensperren zu vermeiden"
 
 #: ../../getting_started/external_services/mysql.rst:158
 msgid "Retain at least one backup from before each |morpheus| upgrade"
-msgstr ""
+msgstr "Bewahren Sie mindestens eine Sicherung von vor jedem |morpheus|-Upgrade auf"
 

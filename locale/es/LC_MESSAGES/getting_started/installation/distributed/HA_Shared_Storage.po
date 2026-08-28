@@ -66,7 +66,7 @@ msgstr "Morpheus backups"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
 msgid "Tip"
-msgstr ""
+msgstr "Consejo"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:15
 msgid ""
@@ -80,7 +80,7 @@ msgstr ""
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:18
 msgid "Moving existing appliance files to shared storage"
-msgstr ""
+msgstr "Mover archivos de dispositivo existentes a almacenamiento compartido"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:20
 msgid ""
@@ -88,7 +88,7 @@ msgid ""
 "migration. It does **not** move the appliance files under "
 "``/var/opt/morpheus/morpheus-ui`` to shared application storage. The "
 "procedure below concerns appliance files only."
-msgstr ""
+msgstr "Mover la VM Manager entre hosts HVM o datastores es una migración de VM de hipervisor. **No** mueve los archivos del dispositivo bajo ``/var/opt/morpheus/morpheus-ui`` al almacenamiento compartido de aplicación. El procedimiento a continuación se refiere solo a archivos del dispositivo."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:22
 msgid ""
@@ -99,7 +99,7 @@ msgid ""
 "shell sequence for an existing VM Essentials Manager because an "
 "incomplete copy or mounting an empty target over the source can make "
 "appliance assets unavailable."
-msgstr ""
+msgstr "Use una ventana de mantenimiento. La aplicación no está disponible mientras todos los nodos de aplicación estén detenidos. El tipo de almacenamiento compartido exacto, opciones de montaje, herramienta de copia, propiedad y secuencia de reversión dependen de la versión del dispositivo y la plataforma de almacenamiento. HPE no publica una secuencia shell genérica para un VM Essentials Manager existente porque una copia incompleta o montar un destino vacío sobre el origen puede hacer que los activos del dispositivo no estén disponibles."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:24
 msgid ""
@@ -107,7 +107,7 @@ msgid ""
 "application availability merely by moving this directory. If the goal is "
 "recovery from loss of the HVM host, first use the decision tree in :ref"
 ":`vme-manager-host-recovery`."
-msgstr ""
+msgstr "Confirme por qué se requiere el movimiento. Un Manager de un solo nodo no gana disponibilidad de aplicación simplemente moviendo este directorio. Si el objetivo es recuperación de la pérdida del host HVM, primero use el árbol de decisiones en :ref:`vme-manager-host-recovery`."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:25
 msgid ""
@@ -115,7 +115,7 @@ msgid ""
 "filesystem and usage, proposed storage type, mount endpoint and options, "
 "and maintenance window. Obtain a release-specific migration and rollback "
 "plan before changing the mount."
-msgstr ""
+msgstr "Abra un caso de Soporte de HPE con la versión del Manager, topología, sistema de archivos y uso actuales, tipo de almacenamiento propuesto, punto de montaje y opciones, y ventana de mantenimiento. Obtenga un plan de migración y reversión específico de la versión antes de cambiar el montaje."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:26
 msgid ""
@@ -124,7 +124,7 @@ msgid ""
 "backup, a filesystem-level backup of ``/var/opt/morpheus/morpheus-ui``, "
 "and protected copies of appliance configuration and secrets. Keep the "
 "backups outside the Manager VM and outside the target being changed."
-msgstr ""
+msgstr "Cree y verifique los tres artefactos de recuperación descritos en :doc:`/getting_started/guides/backup_restore`: un backup de base de datos del dispositivo, un backup a nivel de sistema de archivos de ``/var/opt/morpheus/morpheus-ui``, y copias protegidas de configuración y secretos del dispositivo. Mantenga los backups fuera de la VM Manager y fuera del destino que se está cambiando."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:27
 msgid ""
@@ -132,14 +132,14 @@ msgid ""
 "latency, name resolution, permissions, stable boot-time mounting, and the"
 " same numeric UID/GID for ``morpheus-app`` and ``morpheus-local``. For "
 "NFS, include the ``sync`` requirement below."
-msgstr ""
+msgstr "Valide el destino desde cada futuro nodo de aplicación: capacidad, latencia, resolución de nombres, permisos, montaje estable al arranque, y el mismo UID/GID numérico para ``morpheus-app`` y ``morpheus-local``. Para NFS, incluya el requisito ``sync`` a continuación."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:28
 msgid ""
 "Stop ``morpheus-ui`` on **every** application node as directed by the "
 "approved plan. Verify no node can write to the source before the final "
 "copy."
-msgstr ""
+msgstr "Detenga ``morpheus-ui`` en **cada** nodo de aplicación según lo indicado por el plan aprobado. Verifique que ningún nodo pueda escribir en el origen antes de la copia final."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:29
 msgid ""
@@ -147,14 +147,14 @@ msgid ""
 "permissions, links, timestamps, sparse files, and all hidden content. "
 "Mount the target at ``/var/opt/morpheus/morpheus-ui``; do not change "
 "application paths to point at an arbitrary staging directory."
-msgstr ""
+msgstr "Siga la secuencia de copia y montaje aprobada. Preserve propiedad, permisos, enlaces, marcas de tiempo, archivos dispersos y todo el contenido oculto. Monte el destino en ``/var/opt/morpheus/morpheus-ui``; no cambie las rutas de aplicación para apuntar a un directorio de staging arbitrario."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:30
 msgid ""
 "Before startup, have the coordinator compare source and target content "
 "and verify ownership from every application node. Do not delete or "
 "repurpose the source."
-msgstr ""
+msgstr "Antes del inicio, haga que el coordinador compare el contenido de origen y destino y verifique la propiedad desde cada nodo de aplicación. No elimine ni reutilice el origen."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:31
 msgid ""
@@ -162,13 +162,13 @@ msgid ""
 "images, deployment archives, Ansible content, Terraform content, white-"
 "label assets, and appliance backup destination. Then start and verify "
 "remaining nodes one at a time."
-msgstr ""
+msgstr "Inicie un nodo de aplicación según lo indicado. Verifique la UI, imágenes virtuales cargadas, archivos de implementación, contenido Ansible, contenido Terraform, activos white-label y destino de backup del dispositivo. Luego inicie y verifique los nodos restantes uno a la vez."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:32
 msgid ""
 "Retain the source and verified backups for the rollback period in the "
 "approved plan."
-msgstr ""
+msgstr "Conserve el origen y los backups verificados durante el período de reversión en el plan aprobado."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:34
 msgid ""
@@ -178,12 +178,12 @@ msgid ""
 "missing. Roll back by stopping all application nodes and restoring the "
 "original mount/source according to the approved plan; do not merge two "
 "independently modified copies."
-msgstr ""
+msgstr "Detenga y contacte al Soporte de HPE si el destino se monta de forma diferente entre nodos, los valores UID/GID difieren, la copia final no puede demostrarse en estado de reposo y completa, el inicio escribe en la ubicación antigua, o falta algún activo. Revierta deteniendo todos los nodos de aplicación y restaurando el montaje/origen original según el plan aprobado; no fusione dos copias modificadas independientemente."
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:38
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../getting_started/installation/distributed/HA_Shared_Storage.rst:36
 msgid ""

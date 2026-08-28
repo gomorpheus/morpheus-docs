@@ -22,13 +22,13 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:2
 msgid "Workflows |advanced-plus|"
-msgstr ""
+msgstr "Workflows |advanced-plus|"
 
 #: ../../library/automation/workflows.rst:7
 msgid ""
 "Workflows are an Advanced+ feature, available in HPE Morpheus Enterprise "
 "and Advanced tiers."
-msgstr ""
+msgstr "Workflows são um recurso Advanced+, disponível nos níveis HPE Morpheus Enterprise e Advanced."
 
 #: ../../library/automation/workflows.rst:9
 msgid ""
@@ -37,7 +37,7 @@ msgid ""
 "existing Instance or server from the Actions menu on the Instance or "
 "server detail page. Additionally, they can be scheduled to run on a "
 "recurring basis through Morpheus Jobs (|ProJob|)."
-msgstr ""
+msgstr "Workflows são grupos de Tarefas, descritas em detalhes na seção anterior. Workflows Operacionais podem ser executados sob demanda contra uma Instância ou servidor existente a partir do menu Actions na página de detalhes da Instância ou do servidor. Além disso, podem ser agendados para execução recorrente por meio de Morpheus Jobs (|ProJob|)."
 
 #: ../../library/automation/workflows.rst:11
 msgid ""
@@ -48,49 +48,49 @@ msgid ""
 "as Provision, Post Provision, and Teardown. When the Instance reaches a "
 "given stage, the appropriate Tasks are run. Task results and output can "
 "be viewed from the History tab of the Instance or server detail page."
-msgstr ""
+msgstr "Workflows de Provisionamento são associados a Instâncias no momento do provisionamento (na aba Automation do assistente Add Instance) ou após o provisionamento pelo menu Actions na página de detalhes da Instância. Workflows de Provisionamento atribuem Tarefas a vários estágios do ciclo de vida da Instância, como Provision, Post Provision e Teardown. Quando a Instância atinge um determinado estágio, as Tarefas apropriadas são executadas. Resultados e saída das Tarefas podem ser visualizados na aba History da página de detalhes da Instância ou do servidor."
 
 #: ../../library/automation/workflows.rst:14
 msgid "Provisioning Workflow Execution Phases"
-msgstr ""
+msgstr "Fases de Execução do Workflow de Provisionamento"
 
 #: ../../library/automation/workflows.rst:20
 msgid "Phase"
-msgstr ""
+msgstr "Fase"
 
 #: ../../library/automation/workflows.rst:21
 #: ../../library/automation/workflows.rst:178
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../library/automation/workflows.rst:22
 msgid "Usage Example"
-msgstr ""
+msgstr "Exemplo de Uso"
 
 #: ../../library/automation/workflows.rst:23
 msgid "Notes"
-msgstr ""
+msgstr "Notas"
 
 #: ../../library/automation/workflows.rst:24
 msgid "Configuration"
-msgstr ""
+msgstr "Configuração"
 
 #: ../../library/automation/workflows.rst:25
 msgid ""
 "Tasks are run prior to initial calls to the specified cloud API to "
 "initiate provisioning"
-msgstr ""
+msgstr "As Tarefas são executadas antes das chamadas iniciais à API da nuvem especificada para iniciar o provisionamento"
 
 #: ../../library/automation/workflows.rst:26
 msgid ""
 "Call to an external platform to dynamically generate a hostname prior to "
 "kicking off provisioning or dynamically altering configuration of a "
 "Catalog Item prior to provisioning"
-msgstr ""
+msgstr "Chamada a uma plataforma externa para gerar dinamicamente um hostname antes de iniciar o provisionamento ou alterar dinamicamente a configuração de um Catalog Item antes do provisionamento"
 
 #: ../../library/automation/workflows.rst:28
 msgid "Price"
-msgstr ""
+msgstr "Preço"
 
 #: ../../library/automation/workflows.rst:29
 msgid ""
@@ -102,34 +102,34 @@ msgid ""
 "in order to work properly. Any other pricing (such as on the Service "
 "Plan) is overridden. See the section below for a detailed example of this"
 " Phase being used."
-msgstr ""
+msgstr "Tarefas da Fase Price são invocadas apenas quando o Workflow está vinculado a um Layout. Como a Fase Configuration, essas Tarefas são executadas antes de quaisquer chamadas feitas à API da Nuvem de destino e permitem que dados de preço sejam substituídos para o Workload sendo provisionado. Uma variável \"spec\" contendo a configuração da Instância é passada para a Tarefa e um payload de retorno específico é esperado para funcionar corretamente. Qualquer outro preço (como no Service Plan) é substituído. Consulte a seção abaixo para um exemplo detalhado desta Fase em uso."
 
 #: ../../library/automation/workflows.rst:30
 msgid ""
 "An MSP customer calling out to a custom pricing API to deliver Instance "
 "pricing to their own customers."
-msgstr ""
+msgstr "Um cliente MSP chamando uma API de preços personalizada para entregar o preço da Instância aos seus próprios clientes."
 
 #: ../../library/automation/workflows.rst:31
 msgid ""
 "See the section below on Price Phase implementation for a detailed setup "
 "example."
-msgstr ""
+msgstr "Consulte a seção abaixo sobre a implementação da Fase Price para um exemplo detalhado de configuração."
 
 #: ../../library/automation/workflows.rst:32
 msgid "Pre Provision"
-msgstr ""
+msgstr "Pre Provision"
 
 #: ../../library/automation/workflows.rst:33
 msgid ""
 "For VMs, Tasks are run after the VM is running and prior to any Tasks in "
 "the Provision phase. For containers, Tasks in this phase are run on the "
 "Docker host and prior to ``docker run``"
-msgstr ""
+msgstr "Para VMs, as Tarefas são executadas após a VM estar em execução e antes de quaisquer Tarefas na fase Provision. Para containers, as Tarefas nesta fase são executadas no host Docker e antes do ``docker run``"
 
 #: ../../library/automation/workflows.rst:34
 msgid "Prepare a Docker host to run containers"
-msgstr ""
+msgstr "Preparar um host Docker para executar containers"
 
 #: ../../library/automation/workflows.rst:35
 msgid ""
@@ -137,22 +137,22 @@ msgid ""
 "which is set at the Provision phase executes. Pre Provision for scripts "
 "is mainly for Docker as you can execute on the host before the container "
 "is running."
-msgstr ""
+msgstr "Pre Provision pode ser usado para um Blueprint de modo que ele seja adicionado antes que um script definido na fase Provision seja executado. Pre Provision para scripts é principalmente para Docker, pois você pode executar no host antes que o container esteja em execução."
 
 #: ../../library/automation/workflows.rst:36
 msgid "Provision"
-msgstr ""
+msgstr "Provision"
 
 #: ../../library/automation/workflows.rst:37
 msgid ""
 "Like pre-provision, Tasks for VMs are run after the VM is running. For "
 "containers, these Tasks are run on the containers once they are running "
 "on the host. For many users, this is the most commonly-used phase."
-msgstr ""
+msgstr "Como o pre-provision, as Tarefas para VMs são executadas após a VM estar em execução. Para containers, essas Tarefas são executadas nos containers assim que estão em execução no host. Para muitos usuários, esta é a fase mais comumente usada."
 
 #: ../../library/automation/workflows.rst:38
 msgid "Join the server to a domain"
-msgstr ""
+msgstr "Associar o servidor a um domínio"
 
 #: ../../library/automation/workflows.rst:39
 msgid ""
@@ -162,19 +162,19 @@ msgid ""
 "not considered to be vital to the existence of the Instance should go in "
 "the Post Provision phase where their failure will not constitute failure "
 "of the Instance."
-msgstr ""
+msgstr "As Tarefas incluídas na fase Provision são consideradas vitais para a integridade da Instância. Se uma Tarefa na fase Provision falhar, o Workflow falhará e o provisionamento da Instância também falhará. Tarefas não consideradas vitais para a existência da Instância devem ir na fase Post Provision, onde sua falha não constituirá falha da Instância."
 
 #: ../../library/automation/workflows.rst:40
 msgid "Post Provision"
-msgstr ""
+msgstr "Post Provision"
 
 #: ../../library/automation/workflows.rst:41
 msgid "Tasks are run after the entire provisioning process has completed"
-msgstr ""
+msgstr "As Tarefas são executadas após todo o processo de provisionamento ter sido concluído"
 
 #: ../../library/automation/workflows.rst:42
 msgid "Disable UAC or Windows Firewall on a Windows box or join Active Directory"
-msgstr ""
+msgstr "Desabilitar UAC ou Windows Firewall em uma máquina Windows ou associar ao Active Directory"
 
 #: ../../library/automation/workflows.rst:43
 msgid ""
@@ -183,217 +183,217 @@ msgid ""
 " Post Provision operations may need to affect all nodes, such as when "
 "joining a new node to a cluster. Tasks in Pre Provision and Provision "
 "phases would only be run on the new node in this scenario."
-msgstr ""
+msgstr "Ao adicionar um nó a uma Instância, as Tarefas nesta fase serão executadas em todos os nós da Instância após o novo nó ser provisionado. Isso ocorre porque as operações Post Provision podem precisar afetar todos os nós, como ao associar um novo nó a um cluster. As Tarefas nas fases Pre Provision e Provision seriam executadas apenas no novo nó neste cenário."
 
 #: ../../library/automation/workflows.rst:44
 msgid "Start Service"
-msgstr ""
+msgstr "Start Service"
 
 #: ../../library/automation/workflows.rst:45
 msgid ""
 "Tasks in this phase are intended to start the service associated with the"
 " Instance type."
-msgstr ""
+msgstr "As Tarefas nesta fase destinam-se a iniciar o serviço associado ao tipo de Instância."
 
 #: ../../library/automation/workflows.rst:46
 msgid ""
 "Include a script to start the service associated with the Instance (such "
 "as MySQL) which will execute when the Start Service action is selected "
 "from the Instance detail page"
-msgstr ""
+msgstr "Inclua um script para iniciar o serviço associado à Instância (como MySQL) que será executado quando a ação Start Service for selecionada na página de detalhes da Instância"
 
 #: ../../library/automation/workflows.rst:47
 msgid ""
 "Start services is manually run from the Instance detail page and is "
 "designed to refer to the service the Instance provides."
-msgstr ""
+msgstr "Start services é executado manualmente a partir da página de detalhes da Instância e é projetado para se referir ao serviço que a Instância fornece."
 
 #: ../../library/automation/workflows.rst:48
 msgid "Stop Service"
-msgstr ""
+msgstr "Stop Service"
 
 #: ../../library/automation/workflows.rst:49
 msgid ""
 "Tasks in this phase intended to stop the service associated with the "
 "Instance type."
-msgstr ""
+msgstr "As Tarefas nesta fase destinam-se a parar o serviço associado ao tipo de Instância."
 
 #: ../../library/automation/workflows.rst:50
 msgid ""
 "Include a script to stop the service associated with the Instance (such "
 "as MySQL) which will execute when the Stop Service action is selected "
 "from the Instance detail page"
-msgstr ""
+msgstr "Inclua um script para parar o serviço associado à Instância (como MySQL) que será executado quando a ação Stop Service for selecionada na página de detalhes da Instância"
 
 #: ../../library/automation/workflows.rst:51
 msgid ""
 "Stop services is manually run from the Instance detail page and is "
 "designed to refer to the service the Instance provides."
-msgstr ""
+msgstr "Stop services é executado manualmente a partir da página de detalhes da Instância e é projetado para se referir ao serviço que a Instância fornece."
 
 #: ../../library/automation/workflows.rst:52
 msgid "Pre Deploy"
-msgstr ""
+msgstr "Pre Deploy"
 
 #: ../../library/automation/workflows.rst:53
 msgid ""
 "Tasks in this phase are run when a new deploy is triggered from the "
 "Deploy tab of the Instance detail page, prior to the deploy taking place."
-msgstr ""
+msgstr "As Tarefas nesta fase são executadas quando um novo deploy é acionado a partir da aba Deploy da página de detalhes da Instância, antes que o deploy ocorra."
 
 #: ../../library/automation/workflows.rst:54
 msgid ""
 "Extract files from a deploy folder and move them to their final positions"
 " prior to deploy"
-msgstr ""
+msgstr "Extrair arquivos de uma pasta de deploy e movê-los para suas posições finais antes do deploy"
 
 #: ../../library/automation/workflows.rst:55
 #: ../../library/automation/workflows.rst:59
 msgid ""
 "Deployments are manually triggered from the Instance detail page and are "
 "designed to refer to deployment of services, like a website or database."
-msgstr ""
+msgstr "Deployments são acionados manualmente a partir da página de detalhes da Instância e são projetados para se referir ao deployment de serviços, como um site ou banco de dados."
 
 #: ../../library/automation/workflows.rst:56
 msgid "Deploy"
-msgstr ""
+msgstr "Deploy"
 
 #: ../../library/automation/workflows.rst:57
 msgid ""
 "Tasks in this phase are run when a new deploy is triggered from the "
 "Deploy tab of the Instance detail page, after the deploy has completed"
-msgstr ""
+msgstr "As Tarefas nesta fase são executadas quando um novo deploy é acionado a partir da aba Deploy da página de detalhes da Instância, após o deploy ter sido concluído"
 
 #: ../../library/automation/workflows.rst:58
 msgid ""
 "Update configuration files or inject connection details from the "
 "environment at completion of the deploy process"
-msgstr ""
+msgstr "Atualizar arquivos de configuração ou injetar detalhes de conexão do ambiente na conclusão do processo de deploy"
 
 #: ../../library/automation/workflows.rst:60
 msgid "Reconfigure"
-msgstr ""
+msgstr "Reconfigure"
 
 #: ../../library/automation/workflows.rst:61
 msgid ""
 "Tasks in this phase are run when the reconfigure action is made against "
 "an Instance or host"
-msgstr ""
+msgstr "As Tarefas nesta fase são executadas quando a ação reconfigure é feita contra uma Instância ou host"
 
 #: ../../library/automation/workflows.rst:62
 msgid "Rescan or restart the Instance after a disk is added"
-msgstr ""
+msgstr "Rescanear ou reiniciar a Instância após um disco ser adicionado"
 
 #: ../../library/automation/workflows.rst:64
 msgid "Teardown"
-msgstr ""
+msgstr "Teardown"
 
 #: ../../library/automation/workflows.rst:65
 msgid "Tasks are run during VM or container destroy"
-msgstr ""
+msgstr "As Tarefas são executadas durante a destruição de VM ou container"
 
 #: ../../library/automation/workflows.rst:66
 msgid "Remove Active Directory objects prior to tearing down the Instance"
-msgstr ""
+msgstr "Remover objetos do Active Directory antes de destruir a Instância"
 
 #: ../../library/automation/workflows.rst:68
 msgid "Scale Down"
-msgstr ""
+msgstr "Scale Down"
 
 #: ../../library/automation/workflows.rst:69
 msgid ""
 "Tasks are run when a node is removed from an Instance. This does not "
 "apply to Clusters when a worker node is removed."
-msgstr ""
+msgstr "As Tarefas são executadas quando um nó é removido de uma Instância. Isso não se aplica a Clusters quando um nó worker é removido."
 
 #: ../../library/automation/workflows.rst:72
 msgid "Shutdown"
-msgstr ""
+msgstr "Shutdown"
 
 #: ../../library/automation/workflows.rst:73
 msgid "Tasks are run immediately before the target is shutdown"
-msgstr ""
+msgstr "As Tarefas são executadas imediatamente antes que o destino seja desligado"
 
 #: ../../library/automation/workflows.rst:74
 #: ../../library/automation/workflows.rst:78
 msgid "Send an update on Instance power state to a CMDB"
-msgstr ""
+msgstr "Enviar uma atualização sobre o estado de energia da Instância para um CMDB"
 
 #: ../../library/automation/workflows.rst:76
 msgid "Startup"
-msgstr ""
+msgstr "Startup"
 
 #: ../../library/automation/workflows.rst:77
 msgid "Tasks are run immediately before the target is started"
-msgstr ""
+msgstr "As Tarefas são executadas imediatamente antes que o destino seja iniciado"
 
 #: ../../library/automation/workflows.rst:82
 msgid "Add Workflow"
-msgstr ""
+msgstr "Adicionar Workflow"
 
 #: ../../library/automation/workflows.rst:84
 msgid "Select the Library link in the navigation bar"
-msgstr ""
+msgstr "Selecione o link Library na barra de navegação"
 
 #: ../../library/automation/workflows.rst:85
 msgid "Select Automation from the sub-navigation menu"
-msgstr ""
+msgstr "Selecione Automation no menu de subnavegação"
 
 #: ../../library/automation/workflows.rst:86
 msgid "Click the Workflows tab to show the Workflows tab panel"
-msgstr ""
+msgstr "Clique na aba Workflows para mostrar o painel da aba Workflows"
 
 #: ../../library/automation/workflows.rst:87
 msgid ""
 "Click the :guilabel:`+ Add` dropdown and select a Workflow type "
 "(Operational or Provisioning, see the section above for more on Workflow "
 "type differences)"
-msgstr ""
+msgstr "Clique no menu suspenso :guilabel:`+ Add` e selecione um tipo de Workflow (Operational ou Provisioning; consulte a seção acima para mais informações sobre as diferenças de tipo de Workflow)"
 
 #: ../../library/automation/workflows.rst:88
 msgid "From the New Workflow Wizard input a name for the workflow"
-msgstr ""
+msgstr "No assistente New Workflow, informe um nome para o workflow"
 
 #: ../../library/automation/workflows.rst:89
 msgid "Optionally input a description and a target platform"
-msgstr ""
+msgstr "Opcionalmente, informe uma descrição e uma plataforma de destino"
 
 #: ../../library/automation/workflows.rst:90
 msgid ""
 "Add Tasks and Inputs using the typeahead fields, Tasks must be added to "
 "the appropriate phases for Provisioning Workflows"
-msgstr ""
+msgstr "Adicione Tarefas e Entradas usando os campos typeahead; as Tarefas devem ser adicionadas às fases apropriadas para Workflows de Provisionamento"
 
 #: ../../library/automation/workflows.rst:91
 msgid ""
 "If multiple tasks are added to the same execution phase, their execution "
 "order can be changed by selecting the grip icon and dragging the task to "
 "the desired execution order"
-msgstr ""
+msgstr "Se várias tarefas forem adicionadas à mesma fase de execução, sua ordem de execução pode ser alterada selecionando o ícone de grip e arrastando a tarefa para a ordem de execução desejada"
 
 #: ../../library/automation/workflows.rst:92
 msgid ""
 "For multi-Tenant environments, select Public or Private visibility for "
 "the Workflow"
-msgstr ""
+msgstr "Para ambientes multi-Tenant, selecione visibilidade Public ou Private para o Workflow"
 
 #: ../../library/automation/workflows.rst:93
 msgid ""
 "For Operational Workflows, optionally mark \"Allow Custom Config\" from "
 "the Advanced Options section if needed. See the next section for more on "
 "this selection"
-msgstr ""
+msgstr "Para Workflows Operacionais, opcionalmente marque \"Allow Custom Config\" na seção Advanced Options se necessário. Consulte a próxima seção para mais informações sobre esta seleção"
 
 #: ../../library/automation/workflows.rst:94
 msgid "Click the :guilabel:`SAVE CHANGES` button to save"
-msgstr ""
+msgstr "Clique no botão :guilabel:`SAVE CHANGES` para salvar"
 
 #: ../../library/automation/workflows.rst:96
 #: ../../library/automation/workflows.rst:150
 #: ../../library/automation/workflows.rst:169
 #: ../../library/automation/workflows.rst:238
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../library/automation/workflows.rst:96
 msgid ""
@@ -401,11 +401,11 @@ msgid ""
 " Tenants will be able to see the Workflow and also execute it directly "
 "from the Workflows list (if it's an Operational Workflow). They will not "
 "be able to edit or delete the Workflow."
-msgstr ""
+msgstr "Ao definir a visibilidade do Workflow como Public em um ambiente multi-Tenant, os Tenants poderão ver o Workflow e também executá-lo diretamente da lista de Workflows (se for um Workflow Operacional). Eles não poderão editar ou excluir o Workflow."
 
 #: ../../library/automation/workflows.rst:99
 msgid "Allow Custom Config"
-msgstr ""
+msgstr "Allow Custom Config"
 
 #: ../../library/automation/workflows.rst:101
 msgid ""
@@ -416,11 +416,11 @@ msgid ""
 "JSON map of key-value pairs which can be resolved within your automation "
 "scripts. This could be used to pass extra variables that aren't always "
 "needed in the script or for specifying extra configuration."
-msgstr ""
+msgstr "Quando \"Allow Custom Config\" está marcado em Workflows Operacionais, o usuário vê uma área de texto para configuração personalizada no momento da execução. Esta área de texto está dentro da seção \"Advanced Options\", que deve ser expandida para revelar a área de texto. Dentro da área de texto, adicione um mapa JSON de pares chave-valor que podem ser resolvidos em seus scripts de automação. Isso pode ser usado para passar variáveis extras que nem sempre são necessárias no script ou para especificar configuração extra."
 
 #: ../../library/automation/workflows.rst:103
 msgid "**Example JSON Map:**"
-msgstr ""
+msgstr "**Exemplo de Mapa JSON:**"
 
 #: ../../library/automation/workflows.rst:105
 #, python-brace-format
@@ -436,7 +436,7 @@ msgid ""
 "When the Workflow is executed, these extra variables would be resolved "
 "where called into the script such as in the following simple BASH script "
 "example:"
-msgstr ""
+msgstr "Quando o Workflow é executado, essas variáveis extras seriam resolvidas onde chamadas no script, como no seguinte exemplo simples de script BASH:"
 
 #: ../../library/automation/workflows.rst:114
 msgid ""
@@ -446,7 +446,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:119
 msgid "The above example would result in the following output:"
-msgstr ""
+msgstr "O exemplo acima resultaria na seguinte saída:"
 
 #: ../../library/automation/workflows.rst:121
 msgid ""
@@ -456,7 +456,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:127
 msgid "Retrying Workflows"
-msgstr ""
+msgstr "Repetindo Workflows"
 
 #: ../../library/automation/workflows.rst:129
 msgid ""
@@ -475,7 +475,7 @@ msgid ""
 "Provisioning Workflow), the user can opt to resume the Tasks from the "
 "failure point after making a correction and restore the Instance to a "
 "successfully-provisioned state."
-msgstr ""
+msgstr "Quando um Workflow falha, o |morpheus| permite que os usuários tentem novamente a partir da Tarefa que falhou. Acesse a execução do Workflow na página de lista de execuções (|ProExe|), na aba Executions da página de detalhes do Workflow (|LibAutWor| > Selected Workflow) ou na aba History na página de detalhes da Instância (:menuselection:`Provisioning --> Instances` > Selected Instance). Na execução, selecione o botão Retry, que se parece com uma seta circular no sentido horário e está destacado na captura de tela abaixo. Isso pode ser muito útil, pois permite retomar o que poderia ser um Workflow de execução muito longa a partir de um ponto de falha sem precisar começar do início. Da mesma forma, se uma Instância provisionada estiver em estado de falha devido a uma falha em um Workflow anexado (como uma Tarefa falha na fase Provision de um Workflow de Provisionamento anexado), o usuário pode optar por retomar as Tarefas a partir do ponto de falha após fazer uma correção e restaurar a Instância a um estado provisionado com sucesso."
 
 #: ../../library/automation/workflows.rst:141
 msgid ".. image:: /images/automation/retryTask.png"
@@ -483,7 +483,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:144
 msgid "Cancelling Workflow Tasks"
-msgstr ""
+msgstr "Cancelando Tarefas de Workflow"
 
 #: ../../library/automation/workflows.rst:146
 msgid ""
@@ -493,7 +493,7 @@ msgid ""
 "in a cancelled state. This is useful if you have a very long-running Task"
 " that you know will fail and wish to cancel or if you want to prevent a "
 "\"retryable\" Task from running again."
-msgstr ""
+msgstr "Quando um Workflow está em execução, o |morpheus| oferece a capacidade de cancelar uma Tarefa e impedir que quaisquer Tarefas subsequentes sejam iniciadas. Quando visualizado posteriormente em History ou Executions, isso deixa a Tarefa e o Workflow em um estado cancelado. Isso é útil se você tiver uma Tarefa de execução muito longa que sabe que falhará e desejar cancelar, ou se quiser impedir que uma Tarefa \"retryable\" seja executada novamente."
 
 #: ../../library/automation/workflows.rst:148
 msgid ""
@@ -502,7 +502,7 @@ msgid ""
 "cancelled, see that the Workflow and Task are now considered to be in a "
 "cancelled state which is shown in the UI. At this point the cancel button"
 " becomes a retry button and the Task could be resumed if desired."
-msgstr ""
+msgstr "Para cancelar um Workflow, abra a execução. Dentro da Tarefa em execução haverá um botão cancel; clique no botão para interromper o Workflow. Uma vez cancelado, veja que o Workflow e a Tarefa agora são considerados em um estado cancelado, o que é mostrado na UI. Nesse ponto, o botão cancel se torna um botão retry e a Tarefa pode ser retomada se desejado."
 
 #: ../../library/automation/workflows.rst:150
 msgid ""
@@ -511,7 +511,7 @@ msgid ""
 "it from continuing. Behind the scenes, |morpheus| allows the running "
 "process to complete or time out rather than risk corrupting data with a "
 "non-graceful interrupt."
-msgstr ""
+msgstr "Cancelar uma Tarefa na verdade não interrompe o processo já em execução nas cargas de trabalho em si. Simplesmente interrompe o Workflow e impede que ele continue. Nos bastidores, o |morpheus| permite que o processo em execução seja concluído ou expire em vez de arriscar corromper dados com uma interrupção não graciosa."
 
 #: ../../library/automation/workflows.rst:152
 msgid ".. image:: /images/automation/cancelTask.png"
@@ -519,7 +519,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:155
 msgid "Price Phase Task Utilization"
-msgstr ""
+msgstr "Utilização de Tarefas da Fase Price"
 
 #: ../../library/automation/workflows.rst:167
 msgid ""
@@ -537,44 +537,44 @@ msgid ""
 "Workflows which invoke Price Phase Tasks are tied to the Layout, the user"
 " can see different pricing depending on which Instance Type Layout is "
 "selected."
-msgstr ""
+msgstr "As Tarefas da Fase Price permitem que o preço calculado para qualquer carga de trabalho em qualquer Nuvem (mesmo Nuvens públicas) seja substituído com base em lógica personalizada projetada pelo usuário. A variável \"spec\" é alimentada na Tarefa e representa a configuração da Instância. A Tarefa pode ser projetada para usar os dados de configuração da Instância e calcular um preço apropriado para a Instância. O |morpheus| espera um payload de retorno no formato abaixo para que a substituição de preço funcione corretamente. Se usada, a precificação calculada via Tarefa substitui quaisquer outros dados de custo que teriam sido aplicados à carga de trabalho (como precificação com base no Service Plan). O usuário verá estimativas de preço com base na Tarefa da Fase Price no assistente de provisionamento da Instância onde o preço do Service Plan seria mostrado de outra forma. Além disso, como Workflows que invocam Tarefas da Fase Price estão vinculados ao Layout, o usuário pode ver preços diferentes dependendo de qual Layout do Tipo de Instância está selecionado."
 
 #: ../../library/automation/workflows.rst:169
 msgid "Price Phase Tasks are only invoked if the Workflow is tied to a Layout."
-msgstr ""
+msgstr "As Tarefas da Fase Price são invocadas apenas se o Workflow estiver vinculado a um Layout."
 
 #: ../../library/automation/workflows.rst:171
 msgid ""
 "The return payload should be a JSON array of \"priceData\" objects. "
 "priceData objects should contain values for each of the keys in the table"
 " below:"
-msgstr ""
+msgstr "O payload de retorno deve ser um array JSON de objetos \"priceData\". Os objetos priceData devem conter valores para cada uma das chaves na tabela abaixo:"
 
 #: ../../library/automation/workflows.rst:177
 msgid "Key"
-msgstr ""
+msgstr "Chave"
 
 #: ../../library/automation/workflows.rst:179
 msgid "Data Type"
-msgstr ""
+msgstr "Tipo de Dados"
 
 #: ../../library/automation/workflows.rst:180
 msgid "Possible Values"
-msgstr ""
+msgstr "Valores Possíveis"
 
 #: ../../library/automation/workflows.rst:181
 msgid "incurCharges"
-msgstr ""
+msgstr "incurCharges"
 
 #: ../../library/automation/workflows.rst:182
 msgid "Indicates the Instance state when this charge should be applied"
-msgstr ""
+msgstr "Indica o estado da Instância quando esta cobrança deve ser aplicada"
 
 #: ../../library/automation/workflows.rst:183
 #: ../../library/automation/workflows.rst:187
 #: ../../library/automation/workflows.rst:191
 msgid "String"
-msgstr ""
+msgstr "String"
 
 #: ../../library/automation/workflows.rst:184
 msgid ""
@@ -583,65 +583,65 @@ msgid ""
 "shutdown state, **Always:** This charge is always applied. Some charges "
 "may apply simultaneously, for example, \"Always\" and \"Running\" states "
 "will apply while the workload is running."
-msgstr ""
+msgstr "**Running:** A cobrança é incorrida enquanto a carga de trabalho está em estado de execução, **Stopped:** A cobrança é incorrida enquanto a carga de trabalho está em estado parado ou desligado, **Always:** Esta cobrança é sempre aplicada. Algumas cobranças podem se aplicar simultaneamente; por exemplo, os estados \"Always\" e \"Running\" se aplicarão enquanto a carga de trabalho estiver em execução."
 
 #: ../../library/automation/workflows.rst:185
 msgid "currency"
-msgstr ""
+msgstr "currency"
 
 #: ../../library/automation/workflows.rst:186
 msgid "Indicates the currency in which the charge will be applied"
-msgstr ""
+msgstr "Indica a moeda em que a cobrança será aplicada"
 
 #: ../../library/automation/workflows.rst:188
 msgid ""
 "Enter any three-letter currency code which |morpheus| supports for its "
 "pricing, such as \"USD\", \"CAD\", or \"GBP\""
-msgstr ""
+msgstr "Informe qualquer código de moeda de três letras que o |morpheus| suporte para sua precificação, como \"USD\", \"CAD\" ou \"GBP\""
 
 #: ../../library/automation/workflows.rst:189
 msgid "unit"
-msgstr ""
+msgstr "unit"
 
 #: ../../library/automation/workflows.rst:190
 msgid "Indicates the time interval at which the charge is applied"
-msgstr ""
+msgstr "Indica o intervalo de tempo em que a cobrança é aplicada"
 
 #: ../../library/automation/workflows.rst:192
 msgid "Enter \"minute\", \"hour\", \"day\", \"month\", or \"year\""
-msgstr ""
+msgstr "Informe \"minute\", \"hour\", \"day\", \"month\" ou \"year\""
 
 #: ../../library/automation/workflows.rst:193
 msgid "cost"
-msgstr ""
+msgstr "cost"
 
 #: ../../library/automation/workflows.rst:194
 msgid ""
 "Indicates the amount applied as cost for each configured time unit "
 "interval that passes. This is the cost to you, not the price with markup "
 "which the customer would see."
-msgstr ""
+msgstr "Indica o valor aplicado como custo para cada intervalo de unidade de tempo configurado que passa. Este é o custo para você, não o preço com markup que o cliente veria."
 
 #: ../../library/automation/workflows.rst:195
 #: ../../library/automation/workflows.rst:199
 msgid "Number"
-msgstr ""
+msgstr "Número"
 
 #: ../../library/automation/workflows.rst:196
 #: ../../library/automation/workflows.rst:200
 msgid "A numerical amount such as \"3.00\" or \"34.23\""
-msgstr ""
+msgstr "Um valor numérico como \"3.00\" ou \"34.23\""
 
 #: ../../library/automation/workflows.rst:197
 msgid "price"
-msgstr ""
+msgstr "price"
 
 #: ../../library/automation/workflows.rst:198
 msgid ""
 "Indicates the amount applied as price for each configured time unit "
 "interval that passes. This is the price to the customer with any built-in"
 " markup you need to apply."
-msgstr ""
+msgstr "Indica o valor aplicado como preço para cada intervalo de unidade de tempo configurado que passa. Este é o preço para o cliente com qualquer markup integrado que você precise aplicar."
 
 #: ../../library/automation/workflows.rst:202
 msgid ""
@@ -651,7 +651,7 @@ msgid ""
 "outputting a static payload though in a real world scenario you'd likely "
 "use Task logic to output a dynamic array based on the Instance "
 "configuration."
-msgstr ""
+msgstr "Vários tipos de Tarefa diferentes poderiam ser usados nesta fase. Desde que a Tarefa esteja retornando o array JSON necessário, a Tarefa funcionará corretamente. Abaixo está um exemplo usando uma Tarefa Groovy. Isso simplesmente produz um payload estático, embora em um cenário do mundo real você provavelmente usaria lógica da Tarefa para produzir um array dinâmico com base na configuração da Instância."
 
 #: ../../library/automation/workflows.rst:204
 msgid ""
@@ -685,7 +685,7 @@ msgstr ""
 
 #: ../../library/automation/workflows.rst:234
 msgid "Nesting Workflows"
-msgstr ""
+msgstr "Aninhando Workflows"
 
 #: ../../library/automation/workflows.rst:236
 msgid ""
@@ -701,7 +701,7 @@ msgid ""
 "existing Workflows too). For more on creating Tasks, see |morpheus| `Task"
 " documentation "
 "<https://docs.morpheusdata.com/en/latest/library/automation/automation.html#tasks>`_."
-msgstr ""
+msgstr "O |morpheus| permite que Workflows sejam aninhados para facilitar a criação de Workflows quando muitos Workflows são usados em um ambiente que têm apenas pequenas diferenças ou que são compostos de peças comuns. Workflows aninháveis são criados como qualquer outro Workflow Operacional. Depois que o Workflow é salvo, ele pode ser incorporado em um tipo especial de Tarefa chamado \"Nested Workflow.\" Uma Tarefa do tipo Nested Workflow simplesmente referencia um Workflow Operacional que pode precisar ser usado dentro de outros Workflows. Depois que as Tarefas Nested Workflow são criadas, elas podem ser usadas como parte de quaisquer novos Workflows Operacionais ou de Provisionamento criados subsequentemente (ou também podem ser adicionadas a Workflows existentes). Para mais informações sobre a criação de Tarefas, consulte a `documentação de Tarefas <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#tasks>`_ do |morpheus|."
 
 #: ../../library/automation/workflows.rst:238
 msgid ""
@@ -711,44 +711,44 @@ msgid ""
 " See |morpheus| `Task documentation "
 "<https://docs.morpheusdata.com/en/latest/library/automation/automation.html"
 "#task-results>`_ for more on chaining Task results."
-msgstr ""
+msgstr "Resultados de Tarefas anteriores ainda são acessados usando a mesma sintaxe mesmo quando uma Tarefa anterior está incorporada em um Nested Workflow. Sintaxe adicional para referenciar a Tarefa Nested Workflow ou o próprio Workflow não é necessária. Consulte a `documentação de Tarefas <https://docs.morpheusdata.com/en/latest/library/automation/automation.html#task-results>`_ do |morpheus| para mais informações sobre o encadeamento de resultados de Tarefas."
 
 #: ../../library/automation/workflows.rst:251
 msgid "Edit Workflow"
-msgstr ""
+msgstr "Editar Workflow"
 
 #: ../../library/automation/workflows.rst:253
 #: ../../library/automation/workflows.rst:263
 msgid "Select the Library link in the navigation bar."
-msgstr ""
+msgstr "Selecione o link Library na barra de navegação."
 
 #: ../../library/automation/workflows.rst:254
 #: ../../library/automation/workflows.rst:264
 msgid "Select Automation from the sub-navigation menu."
-msgstr ""
+msgstr "Selecione Automation no menu de subnavegação."
 
 #: ../../library/automation/workflows.rst:255
 #: ../../library/automation/workflows.rst:265
 msgid "Click the Workflows tab to show the workflows tab panel."
-msgstr ""
+msgstr "Clique na aba Workflows para mostrar o painel da aba workflows."
 
 #: ../../library/automation/workflows.rst:256
 msgid "Click the Edit icon on the row of the workflow you wish to edit."
-msgstr ""
+msgstr "Clique no ícone Edit na linha do workflow que deseja editar."
 
 #: ../../library/automation/workflows.rst:257
 msgid "Modify information as needed."
-msgstr ""
+msgstr "Modifique as informações conforme necessário."
 
 #: ../../library/automation/workflows.rst:258
 msgid "Click the :guilabel:`Save Changes` button to save."
-msgstr ""
+msgstr "Clique no botão :guilabel:`Save Changes` para salvar."
 
 #: ../../library/automation/workflows.rst:261
 msgid "Delete Workflow"
-msgstr ""
+msgstr "Excluir Workflow"
 
 #: ../../library/automation/workflows.rst:266
 msgid "Click the Delete icon on the row of the workflow you wish to delete."
-msgstr ""
+msgstr "Clique no ícone Delete na linha do workflow que deseja excluir."
 

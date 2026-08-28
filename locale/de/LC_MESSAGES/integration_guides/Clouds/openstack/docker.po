@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/openstack/docker.rst:2
 msgid "Docker"
-msgstr ""
+msgstr "Docker"
 
 #: ../../integration_guides/Clouds/openstack/docker.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 "host. To do this, a Docker host must first be provisioned into Openstack "
 "(multiple hosts are needed when dealing with horizontal scaling "
 "scenarios)."
-msgstr ""
+msgstr "Bisher hat dieses Dokument das Hinzufügen der OpenStack-Cloud-Integration und die Provisionierung VM-basierter Instanzen über den Katalog `Add Instance` unter `Provisioning` behandelt. Eine weitere praktische Funktion von |morpheus| ist die Arbeit mit Docker-Containern und die Unterstützung mehrerer Container pro Docker-Host. Dazu muss zuerst ein Docker-Host in OpenStack provisioniert werden (bei horizontaler Skalierung werden mehrere Hosts benötigt)."
 
 #: ../../integration_guides/Clouds/openstack/docker.rst:6
 msgid ""
@@ -49,7 +49,7 @@ msgid ""
 "|morpheus| views a Docker host just like any other Hypervisor with the "
 "caveat being that it is used for running containerized images instead of "
 "virtualized ones."
-msgstr ""
+msgstr "Um einen Docker-Host zu provisionieren, navigieren Sie zu Infrastructure > Clusters und klicken Sie auf :guilabel:`+ ADD CLUSTER`. Schließen Sie den Provisionierungsassistenten ab einschließlich Auswahl der passenden Gruppe und Cloud. Alternativ navigieren Sie zum Tab Clusters einer bestimmten Cloud (Infrastructure > Clouds > Detailseite der Cloud > Tab Clusters) und starten von dort die Provisionierung eines Docker-Hosts. Danach erscheint dieser Host in den Hosts-Abschnitten (Infrastructure > Hosts ODER Infrastructure > Clouds > Detailseite der Cloud > Tab Hosts). |morpheus| betrachtet einen Docker-Host wie jeden anderen Hypervisor, mit dem Unterschied, dass er für containerisierte statt virtualisierte Images verwendet wird."
 
 #: ../../integration_guides/Clouds/openstack/docker.rst:8
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 "dedicated second disk is not required for every OpenStack Docker Host; "
 "configure the volumes required by the selected layout and your storage "
 "design."
-msgstr ""
+msgstr "Das ausgewählte Docker-Layout kann ein konfigurierbares Datenvolumen anbieten. Ein dediziertes zweites Laufwerk ist nicht für jeden OpenStack-Docker-Host erforderlich; konfigurieren Sie die vom Layout und Ihrem Speicherdesign benötigten Volumes."
 
 #: ../../integration_guides/Clouds/openstack/docker.rst:10
 msgid ""
@@ -65,7 +65,7 @@ msgid ""
 "appear to the right of the host marking it as available for use. In the "
 "event of a failure, click into the relevant host that failed and an error"
 " explaining the failure will be displayed in red at the top."
-msgstr ""
+msgstr "Nach erfolgreicher Provisionierung eines Docker-Hosts erscheint rechts neben dem Host ein grünes Häkchen und markiert ihn als verfügbar. Bei einem Fehler klicken Sie in den betreffenden Host; eine Fehlermeldung erscheint oben in Rot."
 
 #: ../../integration_guides/Clouds/openstack/docker.rst:12
 msgid ""
@@ -75,5 +75,5 @@ msgid ""
 "resolve and negotiate with the appliance, the |morpheus| Agent "
 "installation will fail and provisioning instructions will not be able to "
 "be issued to the host."
-msgstr ""
+msgstr "Häufige Fehlerfälle betreffen die Netzwerkverbindung. Damit ein Docker-Host korrekt funktioniert, muss er die |morpheus|-Appliance-URL auflösen können, die unter |AdmSet| konfiguriert wird. Kann er nicht mit der Appliance verhandeln, schlägt die Installation des |morpheus|-Agents fehl und Provisionierungsanweisungen können nicht an den Host gesendet werden."
 

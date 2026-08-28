@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../library/templates/templates.rst:2
 msgid "Templates"
-msgstr ""
+msgstr "Modelos"
 
 #: ../../library/templates/templates.rst:4
 msgid ""
@@ -33,11 +33,11 @@ msgid ""
 "provisioned Instances, configured as part of Tasks or Workflows, or run "
 "regularly as part of security scan Jobs. Each section below discusses "
 "template types in greater detail."
-msgstr ""
+msgstr "Templates podem ser criados diretamente no |morpheus| e/ou obtidos do controle de versão, dependendo do tipo. Eles podem ser usados para ajudar os usuários a consumir tecnologias IaC, gerar arquivos de configuração, utilizar scripts ou armazenar pacotes de security scan. Uma vez armazenados, podem ser usados com Instâncias provisionadas, configurados como parte de Tarefas ou Workflows, ou executados regularmente como parte de Jobs de security scan. Cada seção abaixo discute os tipos de template com mais detalhes."
 
 #: ../../library/templates/specTemplates.rst:2
 msgid "Spec Templates"
-msgstr ""
+msgstr "Spec Templates"
 
 #: ../../library/templates/specTemplates.rst:4
 msgid ""
@@ -47,50 +47,50 @@ msgid ""
 "types easier. |morpheus| allows users to create and/or manage a "
 "collection of these templates for different solutions and from different "
 "sources."
-msgstr ""
+msgstr "Spec Templates permitem que usuários do |morpheus| aproveitem várias soluções importantes de Infrastructure-as-Code. Estes são tipicamente arquivos de configuração baseados em JSON ou YAML que facilitam a criação e o gerenciamento de vários tipos de recursos. O |morpheus| permite que os usuários criem e/ou gerenciem uma coleção desses templates para diferentes soluções e de diferentes origens."
 
 #: ../../library/templates/specTemplates.rst:6
 msgid "|morpheus| currently supports Spec Templates of the following types:"
-msgstr ""
+msgstr "O |morpheus| atualmente oferece suporte a Spec Templates dos seguintes tipos:"
 
 #: ../../library/templates/specTemplates.rst:8
 msgid "Kubernetes Spec"
-msgstr ""
+msgstr "Kubernetes Spec"
 
 #: ../../library/templates/specTemplates.rst:9
 msgid "Helm Chart"
-msgstr ""
+msgstr "Helm Chart"
 
 #: ../../library/templates/specTemplates.rst:10
 msgid "Terraform"
-msgstr ""
+msgstr "Terraform"
 
 #: ../../library/templates/specTemplates.rst:11
 msgid "ARM Template"
-msgstr ""
+msgstr "ARM Template"
 
 #: ../../library/templates/specTemplates.rst:12
 msgid "CloudFormation Template"
-msgstr ""
+msgstr "CloudFormation Template"
 
 #: ../../library/templates/specTemplates.rst:13
 msgid "OneView Server Profile Template"
-msgstr ""
+msgstr "OneView Server Profile Template"
 
 #: ../../library/templates/specTemplates.rst:14
 msgid "UCS Service Profile Template"
-msgstr ""
+msgstr "UCS Service Profile Template"
 
 #: ../../library/templates/specTemplates.rst:16
 msgid ""
 "|morpheus| also allows users to leverage templates pulled from URL "
 "sources, online repositories (such as GitHub), or you can write a "
 "template locally inside the \"NEW SPEC TEMPLATE\" modal."
-msgstr ""
+msgstr "O |morpheus| também permite que os usuários aproveitem templates obtidos de fontes URL, repositórios online (como GitHub), ou você pode escrever um template localmente dentro do modal \"NEW SPEC TEMPLATE\"."
 
 #: ../../library/templates/specTemplates.rst:18
 msgid "Tip"
-msgstr ""
+msgstr "Dica"
 
 #: ../../library/templates/specTemplates.rst:18
 msgid ""
@@ -101,37 +101,37 @@ msgid ""
 "/How-to-use-Spec-Templates-to-create-a-custom-instance-"
 "type?language=en_US>`_ for another example where a CloudFormation Spec "
 "Template is used to create a provisionable custom Instance Type."
-msgstr ""
+msgstr "Para ver Spec Templates do |morpheus| em ação, veja nosso guia sobre `criação de Tipos de Instância personalizados usando Terraform <https://docs.morpheusdata.com/en/latest/getting_started/guides/terraform_instances.html>`_ ou consulte nossa `KnowledgeBase <https://support.morpheusdata.com/s/article/How-to-use-Spec-Templates-to-create-a-custom-instance-type?language=en_US>`_ para outro exemplo em que um Spec Template CloudFormation é usado para criar um Tipo de Instância personalizado provisionável."
 
 #: ../../library/templates/specTemplates.rst:21
 msgid "Creating a Spec Template"
-msgstr ""
+msgstr "Criando um Spec Template"
 
 #: ../../library/templates/specTemplates.rst:23
 msgid "Navigate to |LibTemSpe|"
-msgstr ""
+msgstr "Navegue até |LibTemSpe|"
 
 #: ../../library/templates/specTemplates.rst:24
 msgid "Click :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Clique em :guilabel:`+ ADD`"
 
 #: ../../library/templates/specTemplates.rst:25
 msgid "Complete the following fields, then click :guilabel:`SAVE CHANGES`:"
-msgstr ""
+msgstr "Preencha os seguintes campos e, em seguida, clique em :guilabel:`SAVE CHANGES`:"
 
 #: ../../library/templates/specTemplates.rst:27
 msgid "**NAME**"
-msgstr ""
+msgstr "**NAME**"
 
 #: ../../library/templates/specTemplates.rst:28
 msgid ""
 "**TYPE:** See the previous section for a complete list of Spec Template "
 "types"
-msgstr ""
+msgstr "**TYPE:** Consulte a seção anterior para uma lista completa de tipos de Spec Template"
 
 #: ../../library/templates/specTemplates.rst:29
 msgid "**SOURCE:** Local, Repository, or URL"
-msgstr ""
+msgstr "**SOURCE:** Local, Repository ou URL"
 
 #: ../../library/templates/specTemplates.rst:30
 msgid ""
@@ -139,7 +139,7 @@ msgid ""
 "this field. If the template is supplied through a URL or online "
 "repository, the CONTENT field will change to allow the user to point "
 "|morpheus| to that resource"
-msgstr ""
+msgstr "**CONTENT:** Se este for um Spec Template local, forneça o template neste campo. Se o template for fornecido por meio de uma URL ou repositório online, o campo CONTENT mudará para permitir que o usuário aponte o |morpheus| para aquele recurso"
 
 #: ../../library/templates/specTemplates.rst:31
 msgid ""
@@ -149,11 +149,11 @@ msgid ""
 "setting (:menuselection:`Administration --> Settings --> Provisioning` "
 "Tab) is \"auto\". If Terraform Runtime is set to \"manual\", |morpheus| "
 "will use the version of Terraform installed on the appliance box"
-msgstr ""
+msgstr "**VERSION:** (Exibido apenas em Spec Templates Terraform) Digite um número de versão do Terraform para forçar uma versão específica ao provisionar seu Tipo de Instância ou Aplicação Terraform, assumindo que sua configuração Terraform Runtime (:menuselection:`Administration --> Settings --> Provisioning` Tab) seja \"auto\". Se Terraform Runtime estiver definido como \"manual\", o |morpheus| usará a versão do Terraform instalada na máquina do appliance"
 
 #: ../../library/templates/file_templates.rst:2
 msgid "File Templates"
-msgstr ""
+msgstr "Templates de Arquivo"
 
 #: ../../library/templates/file_templates.rst:4
 msgid ""
@@ -161,60 +161,60 @@ msgid ""
 "elasticsearch.yml, morpheus.rb, or any text file. With full config map "
 "variable support, Template Files are dynamically generated during a "
 "Workflow phase or ad hoc via Instance actions."
-msgstr ""
+msgstr "Templates de Arquivo são para gerar arquivos de configuração, como my.cnf, elasticsearch.yml, morpheus.rb ou qualquer arquivo de texto. Com suporte completo a variáveis do config map, Arquivos Template são gerados dinamicamente durante uma fase de Workflow ou ad hoc via ações da Instância."
 
 #: ../../library/templates/file_templates.rst:6
 msgid ""
 "File Templates can also be exposed on Instances in the Settings Tab. "
 "Ensure the Instance Type supports settings, and Category is defined in "
 "Advance Options on the Library Template config."
-msgstr ""
+msgstr "Templates de Arquivo também podem ser expostos em Instâncias na aba Settings. Certifique-se de que o Tipo de Instância suporte settings e que Category esteja definido em Advance Options na configuração do Template da Biblioteca."
 
 #: ../../library/templates/file_templates.rst:8
 #: ../../library/templates/scripts.rst:31
 #: ../../library/templates/scripts.rst:47
 #: ../../library/templates/security_packages.rst:14
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../library/templates/file_templates.rst:8
 msgid ""
 "|morpheus| variables are supported in Library Templates using ``<%= "
 "variable.var %>`` format"
-msgstr ""
+msgstr "Variáveis do |morpheus| são suportadas em Templates da Biblioteca usando o formato ``<%= variable.var %>``"
 
 #: ../../library/templates/file_templates.rst:10
 msgid "Examples:"
-msgstr ""
+msgstr "Exemplos:"
 
 #: ../../library/templates/file_templates.rst:12
 msgid "HA Proxy Config (haproxy.cfg)"
-msgstr ""
+msgstr "HA Proxy Config (haproxy.cfg)"
 
 #: ../../library/templates/file_templates.rst:14
 msgid "FILE NAME: haproxy.cfg"
-msgstr ""
+msgstr "FILE NAME: haproxy.cfg"
 
 #: ../../library/templates/file_templates.rst:15
 msgid "FILE PATH: /config/haproxy.cfg"
-msgstr ""
+msgstr "FILE PATH: /config/haproxy.cfg"
 
 #: ../../library/templates/file_templates.rst:16
 #: ../../library/templates/file_templates.rst:49
 msgid "PHASE: Pre Provision"
-msgstr ""
+msgstr "PHASE: Pre Provision"
 
 #: ../../library/templates/file_templates.rst:17
 msgid "TEMPLATE:"
-msgstr ""
+msgstr "TEMPLATE:"
 
 #: ../../library/templates/file_templates.rst:18
 msgid "SETTING NAME: haproxyConfig"
-msgstr ""
+msgstr "SETTING NAME: haproxyConfig"
 
 #: ../../library/templates/file_templates.rst:19
 msgid "SETTING CATEGORY: haproxy"
-msgstr ""
+msgstr "SETTING CATEGORY: haproxy"
 
 #: ../../library/templates/file_templates.rst:21
 msgid ""
@@ -242,15 +242,15 @@ msgstr ""
 
 #: ../../library/templates/file_templates.rst:45
 msgid "mysql config (mysqld.cnf)"
-msgstr ""
+msgstr "mysql config (mysqld.cnf)"
 
 #: ../../library/templates/file_templates.rst:47
 msgid "FILE NAME: mysqld.cnf"
-msgstr ""
+msgstr "FILE NAME: mysqld.cnf"
 
 #: ../../library/templates/file_templates.rst:48
 msgid "FILE PATH: /config/mysqld.cnf"
-msgstr ""
+msgstr "FILE PATH: /config/mysqld.cnf"
 
 #: ../../library/templates/file_templates.rst:51
 msgid ""
@@ -268,7 +268,7 @@ msgstr ""
 
 #: ../../library/templates/scripts.rst:2
 msgid "Script Templates"
-msgstr ""
+msgstr "Templates de Script"
 
 #: ../../library/templates/scripts.rst:4
 msgid ""
@@ -276,97 +276,97 @@ msgid ""
 "Types to always execute at the selected phase when that Node Type is "
 "provisioned, added to Workflows as Library Script Tasks, and/or executed "
 "ad-hoc on Instances."
-msgstr ""
+msgstr "Scripts são scripts bash e Powershell que podem ser anexados a Tipos de Nó para sempre executar na fase selecionada quando aquele Tipo de Nó for provisionado, adicionados a Workflows como Tarefas Library Script e/ou executados ad hoc em Instâncias."
 
 #: ../../library/templates/scripts.rst:7
 msgid "Creating Scripts"
-msgstr ""
+msgstr "Criando Scripts"
 
 #: ../../library/templates/scripts.rst:9
 msgid "Navigate to |LibTemScr|"
-msgstr ""
+msgstr "Navegue até |LibTemScr|"
 
 #: ../../library/templates/scripts.rst:10
 msgid "Select :guilabel:`+ ADD`"
-msgstr ""
+msgstr "Selecione :guilabel:`+ ADD`"
 
 #: ../../library/templates/scripts.rst:11
 msgid "Enter the Following:"
-msgstr ""
+msgstr "Digite o Seguinte:"
 
 #: ../../library/templates/scripts.rst:13
 msgid "NAME"
-msgstr ""
+msgstr "NOME"
 
 #: ../../library/templates/scripts.rst:14
 msgid "Name of the Script in |morpheus|"
-msgstr ""
+msgstr "Nome do Script no |morpheus|"
 
 #: ../../library/templates/scripts.rst:15
 msgid "SCRIPT TYPE"
-msgstr ""
+msgstr "TIPO DE SCRIPT"
 
 #: ../../library/templates/scripts.rst:16
 msgid "Bash"
-msgstr ""
+msgstr "Bash"
 
 #: ../../library/templates/scripts.rst:17
 msgid "Powershell"
-msgstr ""
+msgstr "Powershell"
 
 #: ../../library/templates/scripts.rst:18
 msgid "PHASE"
-msgstr ""
+msgstr "FASE"
 
 #: ../../library/templates/scripts.rst:19
 msgid ""
 "Select which phase the Script will execute when attached to a Node Type. "
 "When a script is attached to a Node Type, it will execute according to "
 "the selcted phase:"
-msgstr ""
+msgstr "Selecione em qual fase o Script será executado quando anexado a um Tipo de Nó. Quando um script é anexado a um Tipo de Nó, ele será executado de acordo com a fase selecionada:"
 
 #: ../../library/templates/scripts.rst:21
 msgid "Start Service"
-msgstr ""
+msgstr "Iniciar Serviço"
 
 #: ../../library/templates/scripts.rst:22
 msgid "Any time the Instance action ``Start Service`` is executed"
-msgstr ""
+msgstr "Sempre que a ação da Instância ``Start Service`` for executada"
 
 #: ../../library/templates/scripts.rst:23
 msgid "Stop Service"
-msgstr ""
+msgstr "Parar Serviço"
 
 #: ../../library/templates/scripts.rst:24
 msgid "Any time the Instance action ``Stop Service`` is executed"
-msgstr ""
+msgstr "Sempre que a ação da Instância ``Stop Service`` for executada"
 
 #: ../../library/templates/scripts.rst:25
 msgid "Pre-Provision"
-msgstr ""
+msgstr "Pré-Provisionamento"
 
 #: ../../library/templates/scripts.rst:26
 msgid ""
 "Containers: Script will execute against the container host before the "
 "container is provisioned"
-msgstr ""
+msgstr "Containers: O Script será executado contra o host do container antes de o container ser provisionado"
 
 #: ../../library/templates/scripts.rst:27
 msgid ""
 "Virtual Machines: Script will execute before any provision phase Scripts "
 "or Tasks"
-msgstr ""
+msgstr "Máquinas Virtuais: O Script será executado antes de quaisquer Scripts ou Tarefas da fase de provisionamento"
 
 #: ../../library/templates/scripts.rst:28
 msgid "Provision"
-msgstr ""
+msgstr "Provisionamento"
 
 #: ../../library/templates/scripts.rst:29
 msgid ""
 "Script will execute once per new Instance node during the provision "
 "Phase. Provisioning will not be considered complete until all scripts and"
 " tasks in the provisioning phase are completed"
-msgstr ""
+msgstr "O Script será executado uma vez por novo nó de Instância durante a Fase de provisionamento. O provisionamento não será considerado concluído até que todos os scripts e tarefas na fase de provisionamento sejam concluídos"
 
 #: ../../library/templates/scripts.rst:31
 msgid ""
@@ -375,11 +375,11 @@ msgid ""
 "messages. As an example, your VM could be up and running but if your "
 "Script is in the provision phase and fails, provisioning will be marked "
 "as a failure."
-msgstr ""
+msgstr "Qualquer Script ou Tarefa definido para a fase de provisionamento será incluído no tempo total de provisionamento e impactará as mensagens de status de provisionamento success/warn/failure. Como exemplo, sua VM poderia estar ativa e em execução, mas se o seu Script estiver na fase de provisionamento e falhar, o provisionamento será marcado como falha."
 
 #: ../../library/templates/scripts.rst:33
 msgid "Post-Provision"
-msgstr ""
+msgstr "Pós-Provisionamento"
 
 #: ../../library/templates/scripts.rst:34
 msgid ""
@@ -387,142 +387,142 @@ msgid ""
 "is completed. Scripts and Tasks in the Post-Provision phase will show "
 "execution status and history, but are not considered part of the "
 "provision and do not impact provisioning status."
-msgstr ""
+msgstr "O Script será executado uma vez por novo nó de Instância após a fase de provisionamento ser concluída. Scripts e Tarefas na fase Pós-Provisionamento mostrarão o status e o histórico de execução, mas não são considerados parte do provisionamento e não impactam o status do provisionamento."
 
 #: ../../library/templates/scripts.rst:35
 msgid "Pre-Deploy"
-msgstr ""
+msgstr "Pré-Deploy"
 
 #: ../../library/templates/scripts.rst:36
 msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The Script will run prior to the deployment file(s)"
 " being written"
-msgstr ""
+msgstr "O Script será executado na Instância de destino sempre que um deployment for executado contra a Instância. O Script será executado antes de o(s) arquivo(s) de deployment serem gravados"
 
 #: ../../library/templates/scripts.rst:37
 msgid "Deploy"
-msgstr ""
+msgstr "Implementar"
 
 #: ../../library/templates/scripts.rst:38
 msgid ""
 "Script will execute on target Instance any time a deployment is run "
 "against the Instance. The script will run after the deployment file(s) "
 "are written"
-msgstr ""
+msgstr "O Script será executado na Instância de destino sempre que um deployment for executado contra a Instância. O script será executado após o(s) arquivo(s) de deployment serem gravados"
 
 #: ../../library/templates/scripts.rst:39
 msgid "Reconfigure"
-msgstr ""
+msgstr "Reconfigurar"
 
 #: ../../library/templates/scripts.rst:40
 msgid ""
 "Script will execute on target Instance any time a reconfigure is executed"
 " against the Instance."
-msgstr ""
+msgstr "O Script será executado na Instância de destino sempre que uma reconfiguração for executada contra a Instância."
 
 #: ../../library/templates/scripts.rst:41
 msgid "Teardown"
-msgstr ""
+msgstr "Teardown"
 
 #: ../../library/templates/scripts.rst:42
 msgid ""
 "Script will execute on target Instance upon Instance deletion. Script "
 "will execute against target Instance prior to the deletion/removal of "
 "resources."
-msgstr ""
+msgstr "O Script será executado na Instância de destino na exclusão da Instância. O Script será executado contra a Instância de destino antes da exclusão/remoção dos recursos."
 
 #: ../../library/templates/scripts.rst:44
 msgid "SCRIPT"
-msgstr ""
+msgstr "SCRIPT"
 
 #: ../../library/templates/scripts.rst:45
 msgid "Enter Bash or Powershell script."
-msgstr ""
+msgstr "Digite o script Bash ou Powershell."
 
 #: ../../library/templates/scripts.rst:47
 msgid ""
 "|morpheus| variables are supported in Library Scripts using ``<%= "
 "variable.var %>`` format"
-msgstr ""
+msgstr "Variáveis do |morpheus| são suportadas em Scripts da Biblioteca usando o formato ``<%= variable.var %>``"
 
 #: ../../library/templates/scripts.rst:49
 msgid "RUN AS USER"
-msgstr ""
+msgstr "EXECUTAR COMO USUÁRIO"
 
 #: ../../library/templates/scripts.rst:50
 msgid ""
 "By default Scripts are execute as ``morpheus-node``. To execute as "
 "another User, populate ``RUN AS USER`` and ensure proper user permissions"
 " & group access"
-msgstr ""
+msgstr "Por padrão, Scripts são executados como ``morpheus-node``. Para executar como outro Usuário, preencha ``RUN AS USER`` e garanta as permissões de usuário e acesso a grupos adequados"
 
 #: ../../library/templates/scripts.rst:51
 msgid "SUDO"
-msgstr ""
+msgstr "SUDO"
 
 #: ../../library/templates/scripts.rst:52
 msgid "Flag ``SUDO`` if sudo is required to execute the Script"
-msgstr ""
+msgstr "Marque ``SUDO`` se sudo for necessário para executar o Script"
 
 #: ../../library/templates/scripts.rst:55
 msgid ""
 "To attach Scripts and templates that have been added to the Library to a "
 "Node Type, start typing the name and then select the script(s) and/or "
 "template(s)."
-msgstr ""
+msgstr "Para anexar Scripts e templates que foram adicionados à Biblioteca a um Tipo de Nó, comece a digitar o nome e depois selecione o(s) script(s) e/ou template(s)."
 
 #: ../../library/templates/scripts.rst:57
 msgid "Multiple scripts and templates can be added to a Node Type"
-msgstr ""
+msgstr "Vários scripts e templates podem ser adicionados a um Tipo de Nó"
 
 #: ../../library/templates/scripts.rst:58
 msgid "Scripts and Templates can be added/shared among multiple Node Types"
-msgstr ""
+msgstr "Scripts e Templates podem ser adicionados/compartilhados entre vários Tipos de Nó"
 
 #: ../../library/templates/scripts.rst:59
 msgid "The execution phase can be set for Scripts in the Scripts section"
-msgstr ""
+msgstr "A fase de execução pode ser definida para Scripts na seção Scripts"
 
 #: ../../library/templates/scripts.rst:60
 msgid ""
 "Search will populate Scripts or Templates containing the characters "
 "entered anywhere in their name, not just the first letter(s) of the name"
-msgstr ""
+msgstr "A busca preencherá Scripts ou Templates contendo os caracteres digitados em qualquer lugar do nome, não apenas a(s) primeira(s) letra(s) do nome"
 
 #: ../../library/templates/security_packages.rst:2
 msgid "Security Packages"
-msgstr ""
+msgstr "Pacotes de Segurança"
 
 #: ../../library/templates/security_packages.rst:4
 msgid ""
 "The Security Packages Section is for uploading SCAP packages which can "
 "then be consumed in Security Scan Jobs (|ProJob|)."
-msgstr ""
+msgstr "A Seção Pacotes de Segurança é para o envio de pacotes SCAP que podem então ser consumidos em Jobs de Security Scan (|ProJob|)."
 
 #: ../../library/templates/security_packages.rst:7
 msgid "Add a new Security Package"
-msgstr ""
+msgstr "Adicionar um novo Pacote de Segurança"
 
 #: ../../library/templates/security_packages.rst:9
 msgid "Navigate to Library > Templates > Security Packages"
-msgstr ""
+msgstr "Navegue até Library > Templates > Security Packages"
 
 #: ../../library/templates/security_packages.rst:10
 msgid "Click :guilabel:`+ADD` > SCAP Package"
-msgstr ""
+msgstr "Clique em :guilabel:`+ADD` > SCAP Package"
 
 #: ../../library/templates/security_packages.rst:11
 msgid "Provide a name in addition to a URL to source the package"
-msgstr ""
+msgstr "Forneça um nome além de uma URL para obter o pacote"
 
 #: ../../library/templates/security_packages.rst:12
 msgid "Click :guilabel:`SAVE CHANGES`"
-msgstr ""
+msgstr "Clique em :guilabel:`SAVE CHANGES`"
 
 #: ../../library/templates/security_packages.rst:14
 msgid "Currently URL is the only source option for security packages"
-msgstr ""
+msgstr "Atualmente, URL é a única opção de origem para pacotes de segurança"
 
 #: ../../library/templates/security_packages.rst:16
 msgid ".. image:: /images/provisioning/jobs/security/1add_package.png"
@@ -530,7 +530,7 @@ msgstr ""
 
 #: ../../library/templates/cluster_packages.rst:2
 msgid "Cluster Packages"
-msgstr ""
+msgstr "Pacotes de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:4
 msgid ""
@@ -539,11 +539,11 @@ msgid ""
 " Spec Templates and Cluster Layouts sections of |morpheus| docs include "
 "more information on creating those constucts and show the steps to deploy"
 " sample builds."
-msgstr ""
+msgstr "Pacotes de Cluster são criados e podem então ser associados a Layouts de Cluster. Os próprios Pacotes de Cluster são criados a partir de Spec Templates. As seções Spec Templates e Layouts de Cluster da documentação do |morpheus| incluem mais informações sobre a criação dessas construções e mostram os passos para implementar builds de exemplo."
 
 #: ../../library/templates/cluster_packages.rst:7
 msgid "Creating a Cluster Package"
-msgstr ""
+msgstr "Criando um Pacote de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:9
 msgid ""
@@ -553,65 +553,65 @@ msgid ""
 "Cluster Layouts are also listed here and these may be edited. To begin "
 "creating a new Cluster Package, click :guilabel:`+ ADD` and configure the"
 " following:"
-msgstr ""
+msgstr "Navegue até a página de Lista de Pacotes de Cluster (|LibTemClu|). Pacotes de Cluster do sistema estão listados aqui. Estes estão incluídos como parte dos Layouts de Cluster pré-construídos do |morpheus| e não podem ser editados ou visualizados. Layouts de Cluster criados pelo usuário também estão listados aqui e estes podem ser editados. Para começar a criar um novo Pacote de Cluster, clique em :guilabel:`+ ADD` e configure o seguinte:"
 
 #: ../../library/templates/cluster_packages.rst:11
 msgid "**NAME:** A friendly name for the Cluster Package in |morpheus|"
-msgstr ""
+msgstr "**NAME:** Um nome amigável para o Pacote de Cluster no |morpheus|"
 
 #: ../../library/templates/cluster_packages.rst:12
 msgid ""
 "**CODE:** An identifying code for the Cluster Package for use with "
 "|morpheus| API and CLI"
-msgstr ""
+msgstr "**CODE:** Um código identificador para o Pacote de Cluster para uso com a API e CLI do |morpheus|"
 
 #: ../../library/templates/cluster_packages.rst:13
 msgid "**DESCRIPTION:** An optional description for the Cluster Package"
-msgstr ""
+msgstr "**DESCRIPTION:** Uma descrição opcional para o Pacote de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:14
 msgid "**PACKAGE VERSION:** A version designation for the Cluster Package"
-msgstr ""
+msgstr "**PACKAGE VERSION:** Uma designação de versão para o Pacote de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:15
 msgid ""
 "**ICON:** An identifying icon for the Cluster Package, this will appear "
 "in a list with other packages associated with a Cluster Layout"
-msgstr ""
+msgstr "**ICON:** Um ícone identificador para o Pacote de Cluster; este aparecerá em uma lista com outros pacotes associados a um Layout de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:16
 msgid ""
 "**DARK MODE IMAGE:** An alternate icon for the Cluster Package used when "
 "the dark theme is enabled on the |morpheus| appliance"
-msgstr ""
+msgstr "**DARK MODE IMAGE:** Um ícone alternativo para o Pacote de Cluster usado quando o tema escuro está ativado no appliance |morpheus|"
 
 #: ../../library/templates/cluster_packages.rst:17
 msgid "**TYPE:** A type selection for the package, see dropdown for options"
-msgstr ""
+msgstr "**TYPE:** Uma seleção de tipo para o pacote; consulte o menu suspenso para opções"
 
 #: ../../library/templates/cluster_packages.rst:18
 msgid ""
 "**PACKAGE TYPE:** A one-word descriptor for the package such as "
 "\"calico\", \"prometheus\", etc."
-msgstr ""
+msgstr "**PACKAGE TYPE:** Um descritor de uma palavra para o pacote, como \"calico\", \"prometheus\", etc."
 
 #: ../../library/templates/cluster_packages.rst:19
 msgid ""
 "**ENABLED:** When marked, this Cluster Package is available to be set on "
 "Cluster Layouts"
-msgstr ""
+msgstr "**ENABLED:** Quando marcado, este Pacote de Cluster fica disponível para ser definido em Layouts de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:20
 msgid ""
 "**REPEAT INSTALL:** When marked, if the package install initially fails, "
 "the installation will be attempted again"
-msgstr ""
+msgstr "**REPEAT INSTALL:** Quando marcado, se a instalação do pacote falhar inicialmente, a instalação será tentada novamente"
 
 #: ../../library/templates/cluster_packages.rst:21
 msgid ""
 "**SPEC TEMPLATES:** Use the Typeahead field to select relevant Spec "
 "Templates to build the Cluster Package"
-msgstr ""
+msgstr "**SPEC TEMPLATES:** Use o campo Typeahead para selecionar Spec Templates relevantes para construir o Pacote de Cluster"
 
 #: ../../library/templates/cluster_packages.rst:23
 msgid ".. image:: /images/templates/cluster-packages/cluster-packages.png"

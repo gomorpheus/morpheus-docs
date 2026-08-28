@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/vro.rst:2
 msgid "vRealize Orchestrator"
-msgstr ""
+msgstr "En général, l'URL API s'exécute sur le port 8283. Un exemple d'URL API peut ressembler à l'exemple suivant : ``https://vrahost.com:8283/``"
 
 #: ../../integration_guides/Automation/vro.rst:4
 msgid ""
@@ -31,109 +31,109 @@ msgid ""
 " in vRealize Orchestrator. Not only can the user trigger these workflows,"
 " but they can also be chained easily into non-vRO workflows and process "
 "both output and input parameters of a workflow."
-msgstr ""
+msgstr "AUTH TYPE"
 
 #: ../../integration_guides/Automation/vro.rst:7
 msgid "Adding the Integration"
-msgstr ""
+msgstr "Choisi en fonction du fournisseur d'authentification configuré sur vRO"
 
 #: ../../integration_guides/Automation/vro.rst:9
 msgid ""
 "Setting up the vRO integration involves some steps which vary depending "
 "on the authentication model being used."
-msgstr ""
+msgstr "CREDENTIALS"
 
 #: ../../integration_guides/Automation/vro.rst:11
 msgid "NAME"
-msgstr ""
+msgstr "NAME"
 
 #: ../../integration_guides/Automation/vro.rst:12
 msgid "Name of the integration"
-msgstr ""
+msgstr "USERNAME"
 
 #: ../../integration_guides/Automation/vro.rst:13
 msgid "API URL"
-msgstr ""
+msgstr "Mot de passe de l'utilisateur fourni (chiffré dans |morpheus|)"
 
 #: ../../integration_guides/Automation/vro.rst:14
 msgid ""
 "Typically, the API URL is run on port 8283. A sample API URL may look "
 "like the following example: ``https://vrahost.com:8283/``"
-msgstr ""
+msgstr "PASSWORD"
 
 #: ../../integration_guides/Automation/vro.rst:15
 msgid "AUTH TYPE"
-msgstr ""
+msgstr "Mot de passe qui sera configuré sur l'intégration pour le nom d'utilisateur pouvant s'authentifier auprès de vRO"
 
 #: ../../integration_guides/Automation/vro.rst:16
 msgid "Chosen based on the authentication provider configured on vRO"
-msgstr ""
+msgstr "Tenant Token"
 
 #: ../../integration_guides/Automation/vro.rst:17
 msgid "CREDENTIALS"
-msgstr ""
+msgstr "IDENTIFIANTS"
 
 #: ../../integration_guides/Automation/vro.rst:18
 msgid ""
 "Choose ``Local Credentials`` to enter credentials for this integration or"
 " choose to create/use an existing credentials"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/Automation/vro.rst:19
 msgid "USERNAME"
-msgstr ""
+msgstr "NOM D'UTILISATEUR"
 
 #: ../../integration_guides/Automation/vro.rst:20
 msgid ""
 "Username that will be configured on the integration that can authenticate"
 " with vRO"
-msgstr ""
+msgstr "CLIENT ID"
 
 #: ../../integration_guides/Automation/vro.rst:21
 msgid "PASSWORD"
-msgstr ""
+msgstr "MOT DE PASSE"
 
 #: ../../integration_guides/Automation/vro.rst:22
 msgid ""
 "Password that will be configured on the integration for the username that"
 " can authentication with vRO"
-msgstr ""
+msgstr "Type d'authentification Basic"
 
 #: ../../integration_guides/Automation/vro.rst:23
 msgid "Tenant Token"
-msgstr ""
+msgstr "Le type d'authentification ``Basic`` doit être utilisé lors de la configuration de l'intégration |morpheus| vers une instance vRO configurée avec le fournisseur d'authentification ``vSphere``. Lorsque vRO est configuré avec ce fournisseur, les utilisateurs se connectent à vRO avec leurs identifiants vSphere/vCenter, que |morpheus| utilisera également."
 
 #: ../../integration_guides/Automation/vro.rst:24
 msgid ""
 "The domain or tenant ID, for example: ``vsphere.local``, with a username "
 "of ``administrator@vsphere.local``"
-msgstr ""
+msgstr "Le champ ``CLIENT ID`` peut contenir n'importe quelle valeur. Il ne sera pas utilisé avec le type d'authentification ``Basic``"
 
 #: ../../integration_guides/Automation/vro.rst:26
 #: ../../integration_guides/Automation/vro.rst:37
 #: ../../integration_guides/Automation/vro.rst:78
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/Automation/vro.rst:27
 msgid ""
 "At times, this can vary depending on how authentication and role "
 "assignments for the user have been set up for vRO."
-msgstr ""
+msgstr "Parfois, cela peut varier selon la configuration de l'authentification et des attributions de rôles pour l'utilisateur sur vRO."
 
 #: ../../integration_guides/Automation/vro.rst:29
 msgid "CLIENT ID"
-msgstr ""
+msgstr "Exemple d'un type d'authentification ``Basic`` configuré dans l'intégration |morpheus| :"
 
 #: ../../integration_guides/Automation/vro.rst:30
 msgid ""
 "The ID used and obtained from the vRO server, typically used when using "
 "``OAuth 2.0`` Auth Type"
-msgstr ""
+msgstr "L'ID utilisé et obtenu depuis le serveur vRO, généralement utilisé avec le type d'authentification ``OAuth 2.0``"
 
 #: ../../integration_guides/Automation/vro.rst:33
 msgid "Basic Auth Type"
-msgstr ""
+msgstr "Type d'authentification OAuth 2.0"
 
 #: ../../integration_guides/Automation/vro.rst:35
 msgid ""
@@ -142,19 +142,19 @@ msgid ""
 "Authentication Provider.  When vRO is configured with this provider, "
 "users login to vRO using their vSphere/vCenter credentials, which "
 "|morpheus| will use the same."
-msgstr ""
+msgstr "Le type d'authentification ``OAuth 2.0`` doit être utilisé lors de la configuration de l'intégration |morpheus| vers une instance vRO configurée avec l'option ``VIDM`` ou un autre fournisseur OAuth."
 
 #: ../../integration_guides/Automation/vro.rst:38
 msgid ""
 "The ``CLIENT ID`` field can contain any value.  It will be unused with "
 "the ``Basic`` Auth Type"
-msgstr ""
+msgstr "Lors de l'utilisation de ``OAuth 2.0``, le Client ID doit d'abord être récupéré. Il peut être trouvé en parcourant un fichier sur le serveur VRA réel via SSH. Sur le serveur vRA, exécutez la commande suivante : ``grep -i cafe_cli= /etc/vcac/solution-users.properties | sed -e 's/cafe_cli=//'``"
 
 #: ../../integration_guides/Automation/vro.rst:40
 msgid ""
 "Example of a configured ``vSphere`` Authentication Provider from the vRO "
 "Control Center:"
-msgstr ""
+msgstr "Assurez-vous de renseigner le tenant token comme domaine ou ID de locataire, par exemple : ``vsphere.local``, avec un nom d'utilisateur ``administrator@vsphere.local``."
 
 #: ../../integration_guides/Automation/vro.rst:42
 msgid ""
@@ -164,7 +164,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/vro.rst:45
 msgid "Example of a configured ``Basic`` Auth Type in the |morpheus| integration:"
-msgstr ""
+msgstr "Exemple d'un type d'authentification ``Basic`` configuré dans l'intégration |morpheus| :"
 
 #: ../../integration_guides/Automation/vro.rst:47
 msgid ""
@@ -174,14 +174,14 @@ msgstr ""
 
 #: ../../integration_guides/Automation/vro.rst:51
 msgid "OAuth 2.0 Auth Type"
-msgstr ""
+msgstr "Le type d'authentification ``vRA`` doit être utilisé lorsque le fournisseur d'identité vRA est configuré pour votre vRO. Les exigences des champs des types d'authentification ``vRA`` et ``OAuth`` sont les mêmes, sauf qu'avec le type d'authentification ``vRA``, le ``Client ID`` n'est plus nécessaire."
 
 #: ../../integration_guides/Automation/vro.rst:53
 msgid ""
 "The ``OAuth 2.0`` Auth Type should be used when configuring the "
 "|morpheus| integration to a vRO instance configured with the ``VIDM`` "
 "option or other OAuth provider."
-msgstr ""
+msgstr "Utilisation de vRealize Orchestrator"
 
 #: ../../integration_guides/Automation/vro.rst:55
 msgid ""
@@ -189,20 +189,20 @@ msgid ""
 "be found by browsing a file on the actual VRA server using SSH. On the "
 "vRA server, run the following command: ``grep -i cafe_cli= /etc/vcac"
 "/solution-users.properties | sed -e 's/cafe_cli=//'``"
-msgstr ""
+msgstr "L'une des premières choses que |morpheus| fait lorsqu'il est lié à une intégration vRO est de synchroniser tous les workflows disponibles par catégorie. Ces workflows deviennent disponibles lors de la création d'une nouvelle tâche |morpheus| dans :menuselection:`Library --> Automation`. |morpheus| permet à un utilisateur de mapper ces workflows vRO dans le moteur de tâches. Le moteur de tâches permet aux utilisateurs de concevoir des workflows qui enchaînent des tâches dans l'ordre ou opèrent à différentes phases d'une demande de provisionnement. Pour plus d'informations sur les tâches, consultez la documentation Automatisation."
 
 #: ../../integration_guides/Automation/vro.rst:57
 msgid ""
 "Be sure to fill in the tenant token as the domain or tenant ID, for "
 "example: ``vsphere.local``, with a username of "
 "``administrator@vsphere.local``."
-msgstr ""
+msgstr "Créer une tâche pour vRO est simple."
 
 #: ../../integration_guides/Automation/vro.rst:59
 msgid ""
 "Example of a configured ``OAuth 2.0`` Auth Type in the |morpheus| "
 "integration:"
-msgstr ""
+msgstr "Tout d'abord, accédez à :menuselection:`Library --> Automation` et créez une nouvelle tâche. Saisissez un nom et un code ; le code peut être utilisé ultérieurement pour référencer les résultats des tâches. Choisissez un type de tâche ``vRealize Orchestrator Workflow``. Une liste déroulante apparaîtra vous permettant de sélectionner d'abord l'intégration vRO active que vous souhaitez utiliser. Une fois sélectionnée, une liste de workflows devient disponible."
 
 #: ../../integration_guides/Automation/vro.rst:61
 msgid ""
@@ -212,7 +212,7 @@ msgstr ""
 
 #: ../../integration_guides/Automation/vro.rst:65
 msgid "vRA Auth Type"
-msgstr ""
+msgstr "Un exemple de charge utile pour le workflow `SSH / Run SSH Command` ressemblerait à ceci :"
 
 #: ../../integration_guides/Automation/vro.rst:67
 msgid ""
@@ -220,11 +220,11 @@ msgid ""
 "configured for your vRO. The ``vRA`` Auth Type and ``OAuth`` Auth Type "
 "fields requirements are the same, execept when using ``vRA`` Auth Type "
 "the ``Client ID`` is no longer needed."
-msgstr ""
+msgstr "Le type d'authentification ``vRA`` doit être utilisé lorsque le fournisseur d'identité vRA est configuré pour votre vRO. Les exigences des champs des types d'authentification ``vRA`` et ``OAuth`` sont les mêmes, sauf qu'avec le type d'authentification ``vRA``, le ``Client ID`` n'est plus nécessaire."
 
 #: ../../integration_guides/Automation/vro.rst:70
 msgid "Using vRealize Orchestrator"
-msgstr ""
+msgstr "Notez que toutes les variables |morpheus| peuvent être injectées dans le corps des paramètres. Dans l'exemple ci-dessus, nous injectons le nom de l'instance dans la commande d'exemple avec ``<%=instance.name%>`` mais d'autres valeurs peuvent être utilisées, telles que ``<%= server.sshHost %>`` pour le nom d'hôte et ``<%= server.sshPort %>`` pour le port. Des exemples de variables supplémentaires sont disponibles ici : :ref:`Variables Examples`"
 
 #: ../../integration_guides/Automation/vro.rst:72
 msgid ""
@@ -236,11 +236,11 @@ msgid ""
 " design workflows that chain tasks in order or operate at different "
 "phases of a provisioning request. For more information on tasks, please "
 "read the Automation documentation."
-msgstr ""
+msgstr "L'ajout de cette tâche à un workflow permet de référencer les paramètres de résultat dans les tâches suivantes appelées tout au long du workflow. Par exemple, un type de tâche de script local pourrait référencer le texte de sortie de la commande ssh ci-dessus en injectant la carte de résultats suivante : ``echo \"results.vro: <%=results.vro.find{it.name == 'outputText'}?.value?.string?.value%>\"`` Dans cet exemple, ``vro`` fait référence au « Code » de la tâche vRO qui contiendrait la sortie que nous souhaitons référencer. Plus d'informations sur les résultats de tâches sont disponibles ici : :ref:`Task Results`"
 
 #: ../../integration_guides/Automation/vro.rst:74
 msgid "Creating a task for vRO is simple."
-msgstr ""
+msgstr "Exemples supplémentaires de sortie/carte référençant une tâche précédente avec le « Code » ``vrossh`` :"
 
 #: ../../integration_guides/Automation/vro.rst:76
 msgid ""
@@ -250,7 +250,7 @@ msgid ""
 "Workflow``. A dropdown will appear allowing one to first select the "
 "active vRO Integration you would like to use. Once that is selected, a "
 "list of workflows becomes available."
-msgstr ""
+msgstr "Afficher toute la sortie : ``echo '<%=results.vrossh.encodeAsJson().toString() %>'``"
 
 #: ../../integration_guides/Automation/vro.rst:78
 msgid ""
@@ -260,13 +260,13 @@ msgid ""
 " from the vRO HTML5 client and grabbing the parameter JSON. Another is to"
 " query the API yourself and look at the samples from historical run "
 "history."
-msgstr ""
+msgstr "Afficher la variable/sortie ``outputText`` : ``echo \"results.vrossh.outputText: <%=results.vrossh.find{it.name == 'outputText'}?.value?.string?.value%>\"``"
 
 #: ../../integration_guides/Automation/vro.rst:80
 msgid ""
 "An example payload for the `SSH / Run SSH Command` Workflow would look "
 "like this:"
-msgstr ""
+msgstr "Afficher la variable/sortie ``errorText`` : ``echo \"results.vrossh.errorText: <%=results.vrossh.find{it.name == 'errorText'}?.value?.string?.value%>\"``"
 
 #: ../../integration_guides/Automation/vro.rst:82
 #, python-brace-format
@@ -367,7 +367,7 @@ msgid ""
 " ``<%= server.sshHost %>`` for the hostname and ``<%= server.sshPort %>``"
 " for the port.  Additional variable examples can be found here:  "
 ":ref:`Variables Examples`"
-msgstr ""
+msgstr "Afficher la variable/sortie ``exitcode``, renvoyée comme nombre : ``echo \"results.vrossh.exitcode: <%=results.vrossh.find{it.name == 'exitcode'}?.value?.number?.value%>\"``"
 
 #: ../../integration_guides/Automation/vro.rst:172
 #, python-brace-format
@@ -381,19 +381,19 @@ msgid ""
 "refers back to the \"Code\" of the vRO task that would contain the ouput "
 "we wish to referece. More information on Task Results can be found here:"
 "  :ref:`Task Results`"
-msgstr ""
+msgstr "Des options très puissantes sont disponibles pour enchaîner les résultats et injecter des variables pertinentes à l'instance en cours de provisionnement ou même des entrées personnalisées depuis un workflow opérationnel. Veuillez consulter le reste de la documentation Automatisation pour des exemples."
 
 #: ../../integration_guides/Automation/vro.rst:175
 msgid ""
 "Additional output/map examples referencing a previous task with the "
 "\"Code\" of ``vrossh``:"
-msgstr ""
+msgstr "Avamar"
 
 #: ../../integration_guides/Automation/vro.rst:177
 msgid ""
 "Print all output: ``echo '<%=results.vrossh.encodeAsJson().toString() "
 "%>'``"
-msgstr ""
+msgstr "|morpheus| s'intègre à une appliance Avamar existante qui peut ensuite être définie comme solution de sauvegarde préférée pour tout Cloud compatible. De là, planifiez facilement des routines de sauvegarde lors du provisionnement d'instances et restaurez les instances si nécessaire. Cette section décrit le processus d'intégration d'Avamar avec Morpheus. Une fois l'intégration terminée, lors de la modification ou de l'ajout de Clouds compatibles, définissez l'intégration Avamar comme fournisseur de sauvegarde pour le Cloud. Au moment du provisionnement, configurez les sauvegardes Avamar pour la charge de travail. Lorsque nécessaire, restaurez les instances depuis une sauvegarde Avamar."
 
 #: ../../integration_guides/Automation/vro.rst:179
 #, python-brace-format
@@ -401,7 +401,7 @@ msgid ""
 "Print the ``outputText`` variable/output: ``echo "
 "\"results.vrossh.outputText: <%=results.vrossh.find{it.name == "
 "'outputText'}?.value?.string?.value%>\"``"
-msgstr ""
+msgstr "Important"
 
 #: ../../integration_guides/Automation/vro.rst:181
 #, python-brace-format
@@ -409,7 +409,7 @@ msgid ""
 "Print the ``errorText`` variable/output: ``echo "
 "\"results.vrossh.errorText: <%=results.vrossh.find{it.name == "
 "'errorText'}?.value?.string?.value%>\"``"
-msgstr ""
+msgstr "L'API Avamar doit être installée sur le serveur Avamar (non installée par défaut)"
 
 #: ../../integration_guides/Automation/vro.rst:183
 #, python-brace-format
@@ -417,7 +417,7 @@ msgid ""
 "Print the ``result`` variable/output, returned as a string: ``echo "
 "\"results.vrossh.result: <%=results.vrossh.find{it.name == "
 "'result'}?.value?.string?.value%>\"``"
-msgstr ""
+msgstr "Fonctionnalités"
 
 #: ../../integration_guides/Automation/vro.rst:185
 #, python-brace-format
@@ -425,7 +425,7 @@ msgid ""
 "Print the ``exitcode`` variable/output, returned as a number: ``echo "
 "\"results.vrossh.exitcode: <%=results.vrossh.find{it.name == "
 "'exitcode'}?.value?.number?.value%>\"``"
-msgstr ""
+msgstr "Partager un fournisseur de sauvegarde entre plusieurs locataires"
 
 #: ../../integration_guides/Automation/vro.rst:188
 msgid ""
@@ -433,5 +433,5 @@ msgid ""
 "injecting variables relevant to the instance being provisioned or even "
 "custom inputs from an operational workflow. Please reference the rest of "
 "the Automation documentation for examples."
-msgstr ""
+msgstr "Appliquer l'intégration Avamar comme cible de sauvegarde par défaut pour les Clouds compatibles"
 

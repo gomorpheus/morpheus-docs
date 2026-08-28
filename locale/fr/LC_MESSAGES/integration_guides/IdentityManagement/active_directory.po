@@ -22,11 +22,11 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:2
 msgid "Active Directory"
-msgstr ""
+msgstr "Active Directory"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:15
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:17
 msgid ""
@@ -42,13 +42,13 @@ msgid ""
 "automatically filtered down to |morpheus|. This section includes an "
 "example integration walkthrough as well as additional details on the "
 "integration feature set."
-msgstr ""
+msgstr "Active Directory est le principal service d'authentification de Microsoft. Il est largement utilisé dans les organisations d'entreprise et même dans les services cloud Microsoft. Bien qu'Active Directory prenne également en charge le protocole LDAP (avec lequel |morpheus| peut également s'intégrer), |morpheus| inclut un type d'intégration d'identité dédié spécifiquement à Active Directory. En intégrant Active Directory, les administrateurs |morpheus| peuvent entièrement externaliser la gestion du cycle de vie des utilisateurs vers Active Directory. La création de nouveaux utilisateurs, l'application de rôles, la mise à jour des données utilisateur de base, la désactivation des utilisateurs, etc. peuvent être gérées dans Active Directory et automatiquement propagées vers |morpheus|. Cette section inclut un exemple de procédure d'intégration ainsi que des détails supplémentaires sur l'ensemble des fonctionnalités d'intégration."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:19
 #: ../../integration_guides/IdentityManagement/active_directory.rst:72
 #: ../../integration_guides/IdentityManagement/active_directory.rst:114
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:19
 msgid ""
@@ -56,11 +56,11 @@ msgid ""
 "identity source with the same |morpheus| Tenant. You must ensure the "
 "users on each identity source are unique users or that the two domains "
 "use different naming conventions for users."
-msgstr ""
+msgstr "La prudence est de mise lors de l'intégration de plusieurs sources d'identité Active Directory avec le même Locataire |morpheus|. Vous devez vous assurer que les utilisateurs de chaque source d'identité sont des utilisateurs uniques ou que les deux domaines utilisent des conventions de nommage différentes pour les utilisateurs."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:22
 msgid "How It Works"
-msgstr ""
+msgstr "Fonctionnement"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:24
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "environment for a specific customer. The customer's own existing Active "
 "Directory server and groups can be leveraged to build |morpheus| user "
 "accounts with correct role mapping automatically."
-msgstr ""
+msgstr "Dans |morpheus|, les sources d'identité (si utilisées) sont configurées par Locataire. Pour consulter une intégration d'identité ou en créer une, accédez à la page de détail d'un Locataire (|AdmTen| > Locataire sélectionné) et cliquez sur :guilabel:`IDENTITY SOURCES`. Depuis cette page, vous pouvez ajouter une nouvelle source d'identité ou cliquer sur l'icône crayon (|pencil|) à côté d'une source d'identité existante pour la consulter ou la modifier. Toute source d'identité configurée s'applique à un seul Locataire et ne peut pas être partagée. Ce modèle est particulièrement utile dans une appliance MSP où chaque Locataire constitue un environnement isolé pour un client spécifique. Le serveur Active Directory existant du client et ses groupes peuvent être exploités pour créer automatiquement des comptes utilisateur |morpheus| avec le mappage de rôles correct."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:26
 msgid ""
@@ -87,23 +87,23 @@ msgid ""
 " role changes based on changes to the user's associated AD groups or "
 "updated passwords. Additionally, disabling a user in AD will prevent them"
 " from accessing |morpheus|."
-msgstr ""
+msgstr "Lors de la configuration d'une intégration Active Directory dans |morpheus|, les groupes AD sont mappés aux rôles |morpheus|. Lors de la première connexion de l'utilisateur, |morpheus| ajoute le nouveau compte utilisateur avec le nom et l'adresse e-mail corrects, et applique un ou plusieurs rôles selon la configuration. Par la suite, |morpheus| synchronisera toute modification de l'utilisateur, y compris les changements de rôle basés sur les modifications des groupes AD associés ou les mots de passe mis à jour. De plus, la désactivation d'un utilisateur dans AD l'empêchera d'accéder à |morpheus|."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:28
 #: ../../integration_guides/IdentityManagement/active_directory.rst:55
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:28
 msgid ""
 "|morpheus| will connect over port 389 for non-secure LDAP and port 636 "
 "for secure LDAP. Ensure that |morpheus| is able to talk to the AD server "
 "on the proper port."
-msgstr ""
+msgstr "|morpheus| se connectera via le port 389 pour LDAP non sécurisé et le port 636 pour LDAP sécurisé. Assurez-vous que |morpheus| peut communiquer avec le serveur AD sur le port approprié."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:31
 msgid "Example Integration"
-msgstr ""
+msgstr "Exemple d'intégration"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:33
 msgid ""
@@ -116,7 +116,7 @@ msgid ""
 "how |morpheus| roles can be mapped to AD groups. In the same AD server, I"
 " have two users. John Smith is in groups \"Morpheus Users\" and "
 "\"Morpheus Admins\". John Jones is only in the \"Morpheus Users\" group."
-msgstr ""
+msgstr "Dans un exemple simple, nous avons un serveur Active Directory avec deux groupes pertinents pour |morpheus|, « Morpheus Users » et « Morpheus Admins ». Nous configurerons |morpheus| de sorte que seuls les utilisateurs du groupe « Morpheus Users » puissent accéder à |morpheus| de quelque manière que ce soit. Les utilisateurs également membres du groupe « Morpheus Admins » recevront le rôle System Admin dans |morpheus|. Nous verrons plus tard, lors de la configuration de l'intégration, comment les rôles |morpheus| peuvent être mappés aux groupes AD. Sur le même serveur AD, j'ai deux utilisateurs. John Smith est dans les groupes « Morpheus Users » et « Morpheus Admins ». John Jones est uniquement dans le groupe « Morpheus Users »."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:35
 msgid ".. image:: /images/integration_guides/identity_sources/ad/ad.png"
@@ -130,15 +130,15 @@ msgid ""
 "page (|AdmTen| > Selected Tenant) and clicking :guilabel:`IDENTITY "
 "SOURCES`. On setting the type to \"Active Directory,\" the form will "
 "update with the needed fields. Note the following basic fields:"
-msgstr ""
+msgstr "Connaissant le schéma AD et les exigences pour les rôles utilisateur |morpheus|, nous pouvons commencer le processus de création de l'intégration. Les intégrations d'identité sont spécifiques à chaque Locataire ; commencez par accéder à la page de détail du Locataire (|AdmTen| > Locataire sélectionné) et cliquez sur :guilabel:`IDENTITY SOURCES`. En définissant le type sur « Active Directory », le formulaire se met à jour avec les champs requis. Notez les champs de base suivants :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:39
 msgid "**AD SERVER:** The IP address or hostname for the Active Directory Server"
-msgstr ""
+msgstr "**AD SERVER:** L'adresse IP ou le nom d'hôte du serveur Active Directory"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:40
 msgid "**DOMAIN:** The AD domain in which the relevant users and groups reside"
-msgstr ""
+msgstr "**DOMAIN:** Le domaine AD dans lequel résident les utilisateurs et groupes concernés"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:41
 msgid ""
@@ -148,11 +148,11 @@ msgid ""
 "your organization's IT security policies but the integration with "
 "|morpheus| will not work properly if the user does not have the needed "
 "access"
-msgstr ""
+msgstr "**BINDING USERNAME:** Un utilisateur serveur ayant accès aux objets pertinents sur le serveur AD. Dans mon exemple, j'ai utilisé l'utilisateur Administrator intégré, ce qui est l'option la plus simple. D'autres utilisateurs peuvent être utilisés selon les politiques de sécurité informatique de votre organisation, mais l'intégration avec |morpheus| ne fonctionnera pas correctement si l'utilisateur n'a pas les accès requis"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:42
 msgid "**BINDING PASSWORD:** The password for the user in the prior field"
-msgstr ""
+msgstr "**BINDING PASSWORD:** Le mot de passe de l'utilisateur du champ précédent"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:44
 msgid ""
@@ -172,7 +172,7 @@ msgid ""
 "DOMAIN, or binding user details). MANUAL ROLE ASSIGNMENT allows users to "
 "manually update |morpheus| roles outside of the automatic mappings "
 "created by the AD integration."
-msgstr ""
+msgstr "Une fois les configurations de base terminées, les configurations restantes affecteront la génération des utilisateurs et des rôles |morpheus|. Un REQUIRED GROUP est optionnel et correspond à un groupe dont l'utilisateur *doit* être membre pour avoir accès à |morpheus|. Ici, nous exigeons que les utilisateurs soient dans le groupe « Morpheus Users ». Un DEFAULT ROLE est obligatoire et sera attribué à tous les utilisateurs, indépendamment des rôles supplémentaires qu'ils peuvent recevoir en fonction de leur appartenance aux groupes AD. Au-delà, tous les autres rôles |morpheus| seront listés ici et un nom de groupe AD peut être associé à autant de rôles que nécessaire. Dans cet exemple, nous attribuons aux utilisateurs du groupe « Morpheus Admins » le rôle System Admin |morpheus|. Bien que nous ne les ayons pas utilisés, il convient de noter que ENABLE ROLE MAPPING PERMISSION donnera aux administrateurs du Locataire la possibilité de mettre à jour les mappages de rôles AD (sans accès aux champs principaux de l'intégration tels que AD SERVER, DOMAIN ou les détails de l'utilisateur de liaison). MANUAL ROLE ASSIGNMENT permet de mettre à jour manuellement les rôles |morpheus| en dehors des mappages automatiques créés par l'intégration AD."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:46
 msgid ".. image:: /images/integration_guides/identity_sources/ad/intConfig.png"
@@ -188,7 +188,7 @@ msgid ""
 "sync any changes to these users. For example, |morpheus| roles may be "
 "updated based on changing AD groups or user access may be completely "
 "revoked by disabling the user in AD."
-msgstr ""
+msgstr "Une fois les étapes d'intégration ci-dessus terminées, les utilisateurs peuvent se connecter à |morpheus| et un compte utilisateur avec les rôles corrects sera automatiquement créé. Dans notre exemple, John Smith s'est connecté et nous pouvons voir qu'il se voit attribuer le rôle par défaut ainsi que le rôle System Admin en fonction de ses associations de groupes AD. Par la suite, |morpheus| continuera à synchroniser toute modification de ces utilisateurs. Par exemple, les rôles |morpheus| peuvent être mis à jour en fonction de changements de groupes AD ou l'accès utilisateur peut être entièrement révoqué en désactivant l'utilisateur dans AD."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:50
 msgid ".. image:: /images/integration_guides/identity_sources/ad/user.png"
@@ -196,7 +196,7 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:53
 msgid "Restricting Access with Required Group"
-msgstr ""
+msgstr "Restriction de l'accès avec Required Group"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:55
 msgid ""
@@ -205,13 +205,13 @@ msgid ""
 "in**. A local |morpheus| user account is automatically created for each "
 "user upon first login. To restrict access to only authorized users, you "
 "must configure the REQUIRED GROUP field."
-msgstr ""
+msgstr "Important"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:57
 msgid ""
 "The REQUIRED GROUP field is the primary mechanism for controlling which "
 "AD users are permitted to access |morpheus|. It works as follows:"
-msgstr ""
+msgstr "Si le champ REQUIRED GROUP est laissé vide, **tout utilisateur pouvant s'authentifier sur le serveur Active Directory sera autorisé à se connecter**. Un compte utilisateur |morpheus| local est automatiquement créé pour chaque utilisateur lors de la première connexion. Pour restreindre l'accès aux seuls utilisateurs autorisés, vous devez configurer le champ REQUIRED GROUP."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:59
 msgid ""
@@ -219,57 +219,57 @@ msgid ""
 "group can log in. Users who authenticate successfully against AD but are "
 "not in the required group are denied access and no local user object is "
 "created."
-msgstr ""
+msgstr "Le champ REQUIRED GROUP est le principal mécanisme pour contrôler quels utilisateurs AD sont autorisés à accéder à |morpheus|. Il fonctionne comme suit :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:60
 msgid ""
 "**Required Group empty:** All users who can authenticate against the AD "
 "server are allowed to log in. This is the default behavior and is "
 "typically **not appropriate for enterprise environments**."
-msgstr ""
+msgstr "**Required Group défini :** Seuls les utilisateurs membres du groupe AD spécifié peuvent se connecter. Les utilisateurs qui s'authentifient avec succès sur AD mais ne sont pas dans le groupe requis se voient refuser l'accès et aucun objet utilisateur local n'est créé."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:61
 msgid ""
 "**Include Member Groups:** When checked, users in groups nested inside "
 "the required group are also granted access."
-msgstr ""
+msgstr "**Required Group vide :** Tous les utilisateurs pouvant s'authentifier sur le serveur AD sont autorisés à se connecter. Il s'agit du comportement par défaut et n'est généralement **pas approprié pour les environnements d'entreprise**."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:63
 msgid ""
 "The Required Group acts as a gatekeeper. Role mappings and the Default "
 "Role are only applied **after** the Required Group check passes. The "
 "interaction between these fields is:"
-msgstr ""
+msgstr "**Include Member Groups :** Lorsque cette option est cochée, les utilisateurs des groupes imbriqués dans le groupe requis obtiennent également l'accès."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:65
 msgid "User authenticates credentials against AD"
-msgstr ""
+msgstr "Le Required Group agit comme un contrôle d'accès. Les mappages de rôles et le rôle par défaut ne sont appliqués qu'**après** la validation du Required Group. L'interaction entre ces champs est la suivante :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:66
 msgid "|morpheus| checks if the user is in the Required Group (if configured)"
-msgstr ""
+msgstr "L'utilisateur authentifie ses identifiants sur AD"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:67
 msgid ""
 "If the user is not in the Required Group, login is denied (no user is "
 "created)"
-msgstr ""
+msgstr "|morpheus| vérifie si l'utilisateur est dans le Required Group (si configuré)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:68
 msgid ""
 "If the user passes the Required Group check, |morpheus| creates or syncs "
 "the user account"
-msgstr ""
+msgstr "Si l'utilisateur n'est pas dans le Required Group, la connexion est refusée (aucun utilisateur n'est créé)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:69
 msgid "The Default Role is applied to the user"
-msgstr ""
+msgstr "Si l'utilisateur passe la vérification du Required Group, |morpheus| crée ou synchronise le compte utilisateur"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:70
 msgid ""
 "Any additional role mappings are applied based on the user's AD group "
 "memberships"
-msgstr ""
+msgstr "Le rôle par défaut est appliqué à l'utilisateur"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:72
 msgid ""
@@ -277,91 +277,91 @@ msgid ""
 "Group check. It is additive—users receive the Default Role in addition to"
 " any roles assigned through role mappings. It is not a fallback that only"
 " applies when no other mapping matches."
-msgstr ""
+msgstr "Tous les mappages de rôles supplémentaires sont appliqués en fonction des appartenances aux groupes AD de l'utilisateur"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:74
 msgid "**Recommended Configuration for Enterprise Environments:**"
-msgstr ""
+msgstr "Note"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:76
 msgid ""
 "Always set a Required Group to prevent unauthorized directory users from "
 "accessing |morpheus|"
-msgstr ""
+msgstr "Le rôle par défaut est **toujours** appliqué aux utilisateurs qui passent la vérification du Required Group. Il est additif — les utilisateurs reçoivent le rôle par défaut en plus de tout rôle attribué via les mappages de rôles. Il ne s'agit pas d'un repli qui ne s'applique que lorsqu'aucun autre mappage ne correspond."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:77
 msgid ""
 "Create a dedicated AD group (e.g., \"Morpheus Users\") and add only "
 "authorized users"
-msgstr ""
+msgstr "**Configuration recommandée pour les environnements d'entreprise :**"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:78
 msgid ""
 "Set the Default Role to the most restrictive role appropriate for general"
 " users"
-msgstr ""
+msgstr "Définissez toujours un Required Group pour empêcher les utilisateurs d'annuaire non autorisés d'accéder à |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:79
 msgid ""
 "Use role mappings to assign elevated roles (e.g., System Admin) to users "
 "in specific AD groups"
-msgstr ""
+msgstr "Créez un groupe AD dédié (ex. : « Morpheus Users ») et n'y ajoutez que les utilisateurs autorisés"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:82
 msgid "Adding an Active Directory Integration"
-msgstr ""
+msgstr "Utilisez les mappages de rôles pour attribuer des rôles élevés (ex. : System Admin) aux utilisateurs de groupes AD spécifiques"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:84
 msgid "Navigate to |AdmTen|"
-msgstr ""
+msgstr "Ajouter une intégration Active Directory"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:85
 msgid "Select a Tenant"
-msgstr ""
+msgstr "Accédez à |AdmTen|"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:86
 msgid "Select :guilabel:`IDENTITY SOURCES`"
-msgstr ""
+msgstr "Sélectionnez un Locataire"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:87
 msgid "Select :guilabel:`+ ADD IDENTITY SOURCE`"
-msgstr ""
+msgstr "Sélectionnez :guilabel:`IDENTITY SOURCES`"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:88
 msgid "Set the TYPE to \"Active Directory\""
-msgstr ""
+msgstr "Sélectionnez :guilabel:`+ ADD IDENTITY SOURCE`"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:89
 msgid "Populate the following:"
-msgstr ""
+msgstr "Définissez le TYPE sur « Active Directory »"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:91
 msgid "Name"
-msgstr ""
+msgstr "Renseignez les éléments suivants :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:92
 msgid "A friendly name in |morpheus| for the AD integration"
-msgstr ""
+msgstr "Nom"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:93
 msgid "AD Server"
-msgstr ""
+msgstr "Un nom convivial dans |morpheus| pour l'intégration AD"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:94
 msgid "The Hostname or IP address of AD Server"
-msgstr ""
+msgstr "AD Server"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:95
 msgid "Domain"
-msgstr ""
+msgstr "Le nom d'hôte ou l'adresse IP du serveur AD"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:96
 msgid "The AD domain in which the relevant user and group objects reside"
-msgstr ""
+msgstr "Domain"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:97
 msgid "USE SSL"
-msgstr ""
+msgstr "Le domaine AD dans lequel résident les objets utilisateur et groupe concernés"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:98
 msgid ""
@@ -369,29 +369,29 @@ msgid ""
 "server. |morpheus| will connect over port 389 for non-secure LDAP and "
 "port 636 for secure LDAP, ensure |morpheus| can connect to the AD server "
 "over the correct port"
-msgstr ""
+msgstr "USE SSL"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:99
 msgid "Binding Username"
-msgstr ""
+msgstr "Indique si SSL doit être utilisé pour la communication avec le serveur AD. |morpheus| se connectera via le port 389 pour LDAP non sécurisé et le port 636 pour LDAP sécurisé ; assurez-vous que |morpheus| peut se connecter au serveur AD sur le port correct"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:100
 msgid ""
 "A username for a service account which has access to relevant objects "
 "(users, groups, etc.). For ease, the \"Administrator\" user may be used"
-msgstr ""
+msgstr "Binding Username"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:101
 msgid "Binding Password"
-msgstr ""
+msgstr "Un nom d'utilisateur pour un compte de service ayant accès aux objets pertinents (utilisateurs, groupes, etc.). Pour simplifier, l'utilisateur « Administrator » peut être utilisé"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:102
 msgid "The password for the above account"
-msgstr ""
+msgstr "Binding Password"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:103
 msgid "Required Group"
-msgstr ""
+msgstr "Le mot de passe du compte ci-dessus"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:104
 msgid ""
@@ -401,21 +401,21 @@ msgid ""
 "recommended to set this field in enterprise environments to restrict "
 "access to only authorized users (see the \"Restricting Access with "
 "Required Group\" section above)"
-msgstr ""
+msgstr "Required Group"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:105
 msgid "Include Member Groups"
-msgstr ""
+msgstr "Le groupe AD dont l'utilisateur doit être membre pour avoir accès. S'il est laissé vide, tous les utilisateurs pouvant s'authentifier sur le serveur AD seront autorisés à se connecter et un compte utilisateur local sera créé automatiquement. Il est fortement recommandé de définir ce champ dans les environnements d'entreprise pour restreindre l'accès aux seuls utilisateurs autorisés (voir la section « Restricting Access with Required Group » ci-dessus)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:106
 msgid ""
 "When checked, users in groups that are nested inside the required group "
 "will also be granted access"
-msgstr ""
+msgstr "Include Member Groups"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:107
 msgid "Default Role"
-msgstr ""
+msgstr "Lorsque cette option est cochée, les utilisateurs des groupes imbriqués dans le groupe requis obtiendront également l'accès"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:108
 msgid ""
@@ -423,11 +423,11 @@ msgid ""
 "This role is always assigned in addition to any roles granted through the"
 " role mappings below. Set this to the most restrictive role appropriate "
 "for general users"
-msgstr ""
+msgstr "Default Role"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:109
 msgid "ENABLE ROLE MAPPING PERMISSION"
-msgstr ""
+msgstr "Le rôle par défaut appliqué à tous les utilisateurs qui passent la vérification du Required Group. Ce rôle est toujours attribué en plus de tout rôle accordé via les mappages de rôles ci-dessous. Définissez-le sur le rôle le plus restrictif approprié pour les utilisateurs généraux"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:110
 msgid ""
@@ -436,18 +436,18 @@ msgid ""
 "integration. This allows the Tenant user to edit only the role mappings "
 "without viewing or potentially editing the basic Identity Source "
 "configuration (AD server, domain, binding user details, etc)"
-msgstr ""
+msgstr "ENABLE ROLE MAPPING PERMISSION"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:111
 msgid "MANUAL ROLE ASSIGNMENT"
-msgstr ""
+msgstr "Lorsque cette option est sélectionnée, les utilisateurs du Locataire disposant des droits appropriés pour consulter et modifier les rôles pourront définir le mappage de rôles pour l'intégration de source d'identité. Cela permet à l'utilisateur du Locataire de modifier uniquement les mappages de rôles sans consulter ni modifier la configuration de base de la source d'identité (serveur AD, domaine, détails de l'utilisateur de liaison, etc.)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:112
 msgid ""
 "When selected, administrators can manually edit Roles for users created "
 "through this identity source integration from the user detail page "
 "(|AdmUse| > Selected user)"
-msgstr ""
+msgstr "MANUAL ROLE ASSIGNMENT"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:114
 msgid ""
@@ -455,57 +455,57 @@ msgid ""
 " guide <https://support.morpheusdata.com/s/article/How-to-enable-"
 "Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ "
 "in our KnowledgeBase."
-msgstr ""
+msgstr "Lorsque cette option est sélectionnée, les administrateurs peuvent modifier manuellement les rôles des utilisateurs créés via cette intégration de source d'identité depuis la page de détail de l'utilisateur (|AdmUse| > Utilisateur sélectionné)"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:116
 msgid "Select :guilabel:`SAVE CHANGES`."
-msgstr ""
+msgstr "Pour en savoir plus sur les autorisations de mappage de rôles des sources d'identité, consultez le `guide associé <https://support.morpheusdata.com/s/article/How-to-enable-Subtenant-admins-to-edit-Identity-Source-role-mapping?language=en_US>`_ dans notre base de connaissances."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:118
 msgid ""
 "Now allowed AD users can login to |morpheus| via their Active Directory "
 "credentials and a User will be automatically generated to |morpheus| with"
 " matching metadata and mapped Role permissions."
-msgstr ""
+msgstr "Sélectionnez :guilabel:`SAVE CHANGES`."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:123
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Les utilisateurs AD autorisés peuvent désormais se connecter à |morpheus| avec leurs identifiants Active Directory et un utilisateur sera automatiquement généré dans |morpheus| avec les métadonnées correspondantes et les autorisations de rôle mappées."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:125
 msgid ""
 "If you're unable to get the Active Directory integration to work, the "
 "following troubleshooting steps may be useful to ensure your appliance "
 "can talk to the Active Directory server."
-msgstr ""
+msgstr "Dépannage"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:127
 msgid "Open firewall ports"
-msgstr ""
+msgstr "Si vous n'arrivez pas à faire fonctionner l'intégration Active Directory, les étapes de dépannage suivantes peuvent être utiles pour vérifier que votre appliance peut communiquer avec le serveur Active Directory."
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:129
 msgid "**Source:** |morpheus| appliance"
-msgstr ""
+msgstr "Ouvrir les ports du pare-feu"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:131
 msgid "**Destination:** AD server's FQDN or IP address"
-msgstr ""
+msgstr "**Source :** appliance |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:133
 msgid "**Non-SSL AD integration:** TCP-389"
-msgstr ""
+msgstr "**Destination :** nom de domaine complet ou adresse IP du serveur AD"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:135
 msgid "**SSL AD integration:** TCP-636"
-msgstr ""
+msgstr "**Intégration AD non SSL :** TCP-389"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:137
 msgid "Checking open LDAP connections from the |morpheus| appliance"
-msgstr ""
+msgstr "**Intégration AD SSL :** TCP-636"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:139
 msgid "Connect to a |morpheus| appliance box and run the following:"
-msgstr ""
+msgstr "Vérification des connexions LDAP ouvertes depuis l'appliance |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:141
 msgid "$ sudo lsof i- | grep :ldap"
@@ -513,14 +513,14 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:145
 msgid "Check LDAP connectivity from the |morpheus| appliance"
-msgstr ""
+msgstr "Connectez-vous à une appliance |morpheus| et exécutez les commandes suivantes :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:147
 msgid ""
 "Connect to a |morpheus| appliance box and run the following. Be sure to "
 "replace the placeholder values in the command with the correct values for"
 " your environment:"
-msgstr ""
+msgstr "Vérifier la connectivité LDAP depuis l'appliance |morpheus|"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:149
 msgid ""
@@ -532,14 +532,14 @@ msgstr ""
 msgid ""
 "Run tcpflow from the |morpheus| appliance for non-SSL enabled AD identity"
 " Integrations"
-msgstr ""
+msgstr "Connectez-vous à une appliance |morpheus| et exécutez les commandes suivantes. Assurez-vous de remplacer les valeurs d'espace réservé de la commande par les valeurs correctes pour votre environnement :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:155
 msgid ""
 "Use tcpflow from the |morpheus| appliance and then start the identity "
 "source configuration once again. Keep in mind this will only work for AD "
 "servers which are not SSL enabled:"
-msgstr ""
+msgstr "Exécuter tcpflow depuis l'appliance |morpheus| pour les intégrations d'identité AD non SSL"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:157
 msgid "$ sudo tcpflow -i any -c -v port 389"
@@ -547,11 +547,11 @@ msgstr ""
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:161
 msgid "Check the AD and domain controllers event logs"
-msgstr ""
+msgstr "Utilisez tcpflow depuis l'appliance |morpheus|, puis relancez la configuration de la source d'identité. Notez que cela ne fonctionne que pour les serveurs AD non SSL :"
 
 #: ../../integration_guides/IdentityManagement/active_directory.rst:163
 msgid ""
 "Check the event logs for LDAP queries from the |morpheus| appliance to "
 "ensure network connectivity."
-msgstr ""
+msgstr "Consulter les journaux d'événements AD et des contrôleurs de domaine"
 

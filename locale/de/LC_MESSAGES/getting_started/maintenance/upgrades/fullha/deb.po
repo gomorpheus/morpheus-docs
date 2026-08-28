@@ -22,41 +22,41 @@ msgstr ""
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:2
 msgid "Full HA Debian / Ubuntu Upgrade"
-msgstr ""
+msgstr "Full-HA-Upgrade für Debian / Ubuntu"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:4
 msgid ""
 "The following covers upgrading the |morpheus| App nodes in Full HA "
 "Architecture configurations to |morphver|."
-msgstr ""
+msgstr "Im Folgenden wird das Upgrade der |morpheus|-App-Knoten in Full-HA-Architekturkonfigurationen auf |morphver| beschrieben."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:6
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:15
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:67
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:118
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:6
 msgid ""
 "The following is only for Full HA Architecture configurations, where "
 "MySQL, Elasticsearch and RabbitMQ services are external to the App nodes."
 " The following steps assume 3 app nodes, adjust accordingly."
-msgstr ""
+msgstr "Das Folgende gilt nur für Full-HA-Architekturkonfigurationen, bei denen MySQL-, Elasticsearch- und RabbitMQ-Dienste außerhalb der App-Knoten liegen. Die folgenden Schritte gehen von 3 App-Knoten aus; passen Sie sie entsprechend an."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:9
 msgid "|morpheus| Packages"
-msgstr ""
+msgstr "|morpheus|-Pakete"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:10
 msgid ""
 "|morpheus| Release Package urls can be obtained from "
 "`https://app.morpheushub.com <https://app.morpheushub.com>`_"
-msgstr ""
+msgstr "URLs der |morpheus|-Release-Pakete erhalten Sie unter `https://app.morpheushub.com <https://app.morpheushub.com>`_"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:13
 msgid "|nonRollingUpgradeVer| or lower -> |morphver| Upgrade"
-msgstr ""
+msgstr "|nonRollingUpgradeVer| oder niedriger -> |morphver|-Upgrade"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:15
 msgid ""
@@ -64,12 +64,12 @@ msgid ""
 " upgrade. Failure to do so will result in a flood of log errors due to "
 "previous message serialization conflict. The messages will eventually "
 "expire and the logs will clear."
-msgstr ""
+msgstr "Es ist wichtig, den morpheus-ui-Dienst auf allen App-Knoten vor dem Upgrade zu stoppen. Andernfalls kommt es zu einer Flut von Protokollfehlern aufgrund eines Konflikts bei der Serialisierung früherer Nachrichten. Die Nachrichten laufen schließlich ab, und die Protokolle werden geleert."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:17
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:76
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:17
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:76
@@ -79,7 +79,7 @@ msgid ""
 "/package-repos/*`` after |morphver| package installation and before "
 "reconfigure to clean old node and vm node packages from the package-repo "
 "when room is needed."
-msgstr ""
+msgstr "|morpheus| |morphver| enthält neue Node- und VM-Node-Pakete, die 3,5 GB Speicherplatz benötigen. Es ist unbedenklich, nach der Installation des |morphver|-Pakets und vor dem Reconfigure ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` auszuführen, um alte Node- und VM-Node-Pakete aus dem package-repo zu entfernen, wenn Platz benötigt wird."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:19
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:78
@@ -87,7 +87,7 @@ msgid ""
 "Starting with App Node 3, on **All** App Nodes, stop the morpheus-ui "
 "services via ``morpheus-ctl stop morpheus-ui``. If you receive a timeout,"
 " run ``morpheus-ctl graceful-kill morpheus-ui``."
-msgstr ""
+msgstr "Beginnen Sie mit App-Knoten 3 und stoppen Sie auf **allen** App-Knoten die morpheus-ui-Dienste mit ``morpheus-ctl stop morpheus-ui``. Bei einem Timeout führen Sie ``morpheus-ctl graceful-kill morpheus-ui`` aus."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:21
 msgid "[root@app-server-3 ~]# morpheus-ctl stop morpheus-ui"
@@ -106,7 +106,7 @@ msgstr ""
 msgid ""
 "Upgrade the deb package on App Node 1, then run a Reconfigure on App Node"
 " 1"
-msgstr ""
+msgstr "Aktualisieren Sie das deb-Paket auf App-Knoten 1 und führen Sie anschließend ein Reconfigure auf App-Knoten 1 aus"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:35
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:82
@@ -123,14 +123,14 @@ msgstr ""
 msgid ""
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "Nach erfolgreichem Reconfigure verfolgen Sie die Startprotokolle des UI-Dienstes mit ``morpheus-ctl tail morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:45
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:92
 msgid ""
 "Once App Node 1 upgrade has completed and the ui is available, upgrade "
 "the deb package on App Node 2, then run a Reconfigure on App Node 2."
-msgstr ""
+msgstr "Sobald das Upgrade von App-Knoten 1 abgeschlossen und die UI verfügbar ist, aktualisieren Sie das deb-Paket auf App-Knoten 2 und führen Sie anschließend ein Reconfigure auf App-Knoten 2 aus."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:47
 msgid ""
@@ -143,14 +143,14 @@ msgid ""
 "\n"
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``."
-msgstr ""
+msgstr "[root@app-server-2 ~]# sudo wget https://packageUrl.morpheus-appliance_x.x.x-x_amd64.deb\n[root@app-server-2 ~]# sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb\n[root@app-server-1 ~]# sudo morpheus-ctl stop morpheus-ui\n[root@app-server-1 ~]# sudo morpheus-ctl reconfigure\n[root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui\n\nNach erfolgreichem Reconfigure verfolgen Sie die Startprotokolle des UI-Dienstes mit ``morpheus-ctl tail morpheus-ui``."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:57
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:104
 msgid ""
 "Once App Node 2 upgrade has completed and the ui is available, upgrade "
 "the deb package on App Node 3, and run a Reconfigure on App Node 3"
-msgstr ""
+msgstr "Sobald das Upgrade von App-Knoten 2 abgeschlossen und die UI verfügbar ist, aktualisieren Sie das deb-Paket auf App-Knoten 3 und führen Sie ein Reconfigure auf App-Knoten 3 aus"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:59
 msgid ""
@@ -165,7 +165,7 @@ msgstr ""
 msgid ""
 "The upgrade is complete and the |morpheus|-ui services should be running "
 "on the three allocated nodes."
-msgstr ""
+msgstr "Das Upgrade ist abgeschlossen, und die |morpheus|-ui-Dienste sollten auf den drei zugewiesenen Knoten laufen."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:67
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:118
@@ -176,21 +176,21 @@ msgid ""
 "resolve, run ``systemctl stop morpheus-runsvdir`` then ``systemctl start "
 "morpheus-runsvdir``, then run reconfigure again, ``morpheus-ctl "
 "reconfigure``."
-msgstr ""
+msgstr "Wenn das Reconfigure nach einem rpm-Paket-Upgrade beim Starten eines lokalen Dienstes hängt oder stockt, wurde der Dienst ``morpheus-runsvdir`` möglicherweise nicht gestartet oder ein von ihm verwalteter Prozess manuell heruntergefahren oder beendet. Zur Behebung führen Sie ``systemctl stop morpheus-runsvdir`` und anschließend ``systemctl start morpheus-runsvdir`` aus und starten Sie das Reconfigure erneut mit ``morpheus-ctl reconfigure``."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:72
 msgid "|minRollingUpgradeVer| -> |morphver| Upgrade"
-msgstr ""
+msgstr "|minRollingUpgradeVer| -> |morphver|-Upgrade"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:74
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:74
 msgid ""
 "Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| "
 "only."
-msgstr ""
+msgstr "Rolling Upgrades werden nur für |minRollingUpgradeVer| -> |morphver| unterstützt."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:90
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:102
@@ -199,7 +199,7 @@ msgid ""
 "After the reconfigure has succeeded, tail the ui service to watch ui "
 "startup logs with ``morpheus-ctl tail morpheus-ui``. Once morpheus-ui is "
 "started, proceed to the next node."
-msgstr ""
+msgstr "Nach erfolgreichem Reconfigure verfolgen Sie die Startprotokolle des UI-Dienstes mit ``morpheus-ctl tail morpheus-ui``. Sobald morpheus-ui gestartet ist, fahren Sie mit dem nächsten Knoten fort."
 
 #: ../../getting_started/maintenance/upgrades/fullha/deb.rst:94
 msgid ""

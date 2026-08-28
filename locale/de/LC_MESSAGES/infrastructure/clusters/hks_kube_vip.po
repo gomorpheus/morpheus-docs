@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:2
 msgid "HKS kube-vip"
-msgstr ""
+msgstr "HKS kube-vip"
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:4
 msgid ""
@@ -30,25 +30,25 @@ msgid ""
 "virtual IP address for a Kubernetes cluster. Kube VIP is available for "
 "Kubernetes Cluster layouts using VMware, vCloud Director, Xen, manual, "
 "KVM, and standard provision types."
-msgstr ""
+msgstr "HKS kann den produktverwalteten Load Balancer **Kube VIP** nutzen, um eine virtuelle IP-Adresse für einen Kubernetes-Cluster bereitzustellen. Kube VIP ist für Kubernetes-Cluster-Layouts mit den Provisionierungstypen VMware, vCloud Director, Xen, manual, KVM und standard verfügbar."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:7
 msgid "Prerequisites and Configuration"
-msgstr ""
+msgstr "Voraussetzungen und Konfiguration"
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:9
 msgid "Select Kube VIP as the cluster load balancer and provide either:"
-msgstr ""
+msgstr "Wählen Sie Kube VIP als Cluster-Load-Balancer und geben Sie entweder Folgendes an:"
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:11
 msgid ""
 "A **VIP Pool** from which |morpheus| acquires an address. The address "
 "must be accessible from every cluster node."
-msgstr ""
+msgstr "Einen **VIP Pool**, aus dem |morpheus| eine Adresse bezieht. Die Adresse muss von jedem Clusterknoten aus erreichbar sein."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:12
 msgid "A **VIP Address** that is unused and routable on the node network."
-msgstr ""
+msgstr "Eine **VIP Address**, die ungenutzt und im Knotennetzwerk routingfähig ist."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:14
 msgid ""
@@ -58,35 +58,35 @@ msgid ""
 " leader election. Do not edit the generated ``/etc/kubernetes/manifests"
 "/kube-vip.yaml`` file; later |morpheus| operations can replace local "
 "changes."
-msgstr ""
+msgstr "|morpheus| besitzt die kube-vip-Konfiguration. Während der Knotenkonfiguration wählt es das passende Master- oder Worker-Skript und schreibt die generierte Konfiguration auf den Knoten. Master-Knoten führen kube-vip als statischen Pod mit Leader Election aus. Bearbeiten Sie die generierte Datei ``/etc/kubernetes/manifests/kube-vip.yaml`` nicht; spätere |morpheus|-Operationen können lokale Änderungen überschreiben."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:17
 msgid "Verification and Troubleshooting"
-msgstr ""
+msgstr "Überprüfung und Fehlerbehebung"
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:19
 msgid ""
 "Confirm the cluster load balancer shows Kube VIP and the expected virtual"
 " IP."
-msgstr ""
+msgstr "Bestätigen Sie, dass der Cluster-Load-Balancer Kube VIP und die erwartete virtuelle IP anzeigt."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:20
 msgid ""
 "From a system on the node network, verify that the virtual IP is "
 "reachable."
-msgstr ""
+msgstr "Prüfen Sie von einem System im Knotennetzwerk aus, dass die virtuelle IP erreichbar ist."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:21
 msgid ""
 "On each control-plane node, inspect the ``kube-system`` namespace and "
 "confirm its ``kube-vip-<node>`` Pod is running."
-msgstr ""
+msgstr "Prüfen Sie auf jedem Control-Plane-Knoten den Namensraum ``kube-system`` und bestätigen Sie, dass der Pod ``kube-vip-<node>`` ausgeführt wird."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:22
 msgid ""
 "Verify the generated static Pod manifest references the expected image "
 "and virtual IP without modifying it."
-msgstr ""
+msgstr "Prüfen Sie, dass das generierte Static-Pod-Manifest auf das erwartete Image und die virtuelle IP verweist, ohne es zu ändern."
 
 #: ../../infrastructure/clusters/hks_kube_vip.rst:24
 msgid ""
@@ -97,5 +97,5 @@ msgid ""
 "cluster, loss of the leader should cause another kube-vip Pod to acquire "
 "leadership; verify the virtual IP remains reachable before returning the "
 "cluster to service."
-msgstr ""
+msgstr "Wenn die virtuelle IP nicht verfügbar ist, prüfen Sie, dass sie ungenutzt ist, zu einem von allen Knoten erreichbaren Netzwerk gehört und nicht durch Netzwerkrichtlinien oder Switch-Konfiguration blockiert wird. Prüfen Sie die Ausgabe des Cluster-Provisionierungsprozesses für den Kube-VIP-Knotenkonfigurationsschritt. In einem Multi-Control-Plane-Cluster sollte der Verlust des Leaders dazu führen, dass ein anderer kube-vip-Pod die Leadership übernimmt; prüfen Sie, dass die virtuelle IP erreichbar bleibt, bevor Sie den Cluster wieder in Betrieb nehmen."
 

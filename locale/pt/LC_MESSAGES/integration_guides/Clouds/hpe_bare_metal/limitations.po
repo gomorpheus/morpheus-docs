@@ -22,41 +22,41 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:2
 msgid "Known Limitations and Operational Considerations"
-msgstr ""
+msgstr "Limitações Conhecidas e Considerações Operacionais"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:8
 msgid "S.No"
-msgstr ""
+msgstr "N.º"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:9
 msgid "Topic"
-msgstr ""
+msgstr "Tópico"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:10
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:11
 msgid "Impact"
-msgstr ""
+msgstr "Impacto"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:12
 msgid "Applicability"
-msgstr ""
+msgstr "Aplicabilidade"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:13
 msgid "Operational Guidance"
-msgstr ""
+msgstr "Orientação Operacional"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:14
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:15
 msgid ""
 "SATA Controller Initialization Delay During Importing HPE ProLiant Bare "
 "Metal Servers"
-msgstr ""
+msgstr "Atraso na Inicialização do Controlador SATA Durante a Importação de Servidores Bare Metal HPE ProLiant"
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:16
 msgid ""
@@ -67,7 +67,7 @@ msgid ""
 "controller detected without attached disks.This behavior occurs during "
 "the initial hardware probing phase, before the server becomes available "
 "for provisioning in Morpheus."
-msgstr ""
+msgstr "Durante o processo de importação de servidor bare-metal e descoberta de hardware, se um servidor tiver um ou mais controladores SATA sem discos SATA anexados, o sistema aguarda um mínimo de 5 minutos por controlador SATA antes de continuar. O tempo de espera é cumulativo e se aplica a cada controlador SATA detectado sem discos anexados. Esse comportamento ocorre durante a fase inicial de sondagem de hardware, antes de o servidor ficar disponível para provisionamento no Morpheus."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:17
 msgid ""
@@ -75,7 +75,7 @@ msgid ""
 "provisioning.Delay proportional to the number of SATA controllers present"
 " without disks.No impact once the server import process has completed.No "
 "impact when SATA controllers have SATA disks attached."
-msgstr ""
+msgstr "Aumento do tempo para concluir a descoberta, importação e provisionamento do servidor bare-metal. Atraso proporcional ao número de controladores SATA presentes sem discos. Sem impacto após a conclusão do processo de importação do servidor. Sem impacto quando os controladores SATA têm discos SATA anexados."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:18
 msgid ""
@@ -83,7 +83,7 @@ msgid ""
 "where SATA controllers may be present but not populated with "
 "disks.Standard production deployments are not expected to include unused "
 "SATA controllers."
-msgstr ""
+msgstr "Essa condição é tipicamente observada em ambientes de laboratório ou avaliação onde controladores SATA podem estar presentes, mas não populados com discos. Não se espera que implementações padrão de produção incluam controladores SATA não utilizados."
 
 #: ../../integration_guides/Clouds/hpe_bare_metal/limitations.rst:19
 msgid ""
@@ -94,5 +94,5 @@ msgid ""
 "the controller (for example, Embedded SATA Controller #1).Change theSATA "
 "Device DisablefromAutotoDisabled.Press F12 to save the changes and exit, "
 "followed by reboot."
-msgstr ""
+msgstr "Desativação de um Controlador SATA Incorporado (HPE ProLiant)Reinicie o servidor.Pressione F9 para entrar em System Utilities.Navegue até:System Configuration→BIOS/Platform Configuration (RBSU)→PCIe Device Configuration.Para cada controlador SATA incorporado que não esteja em uso:Selecione o controlador (por exemplo, Embedded SATA Controller #1).Altere SATA Device Disable de Auto para Disabled.Pressione F12 para salvar as alterações e sair, seguido de reinicialização."
 

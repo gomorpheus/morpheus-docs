@@ -22,18 +22,18 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha.rst:2
 msgid "3 Node HA Install Example"
-msgstr ""
+msgstr "Exemple d'installation HA à 3 nœuds"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha.rst:4
 msgid "Distributed App Nodes with Externalized MySQL Database"
-msgstr ""
+msgstr "Nœuds d'application distribués avec base de données MySQL externalisée"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha.rst:6
 msgid ""
 "A common and recommended HA Morpheus deployment consists of three app "
 "nodes using embedded services and an external MySQL DB cluster (minimum "
 "of 3 nodes)."
-msgstr ""
+msgstr "Un déploiement HA Morpheus courant et recommandé consiste en trois nœuds d'application utilisant des services intégrés et un cluster MySQL externe (minimum de 3 nœuds)."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha.rst:8
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:98
@@ -41,7 +41,7 @@ msgstr ""
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:6
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
 msgid "Important"
-msgstr ""
+msgstr "Important"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha.rst:8
 msgid ""
@@ -49,25 +49,25 @@ msgid ""
 "eligible for support. The provided configuration serves as a sample only "
 "and requirements may vary. Please reach out to your account manager to "
 "discuss deploying a HA environment to meet the requirements for support."
-msgstr ""
+msgstr "Les environnements HA installés sans l'intervention de Morpheus ne sont pas éligibles à l'assistance. La configuration fournie sert uniquement d'exemple et les exigences peuvent varier. Veuillez contacter votre gestionnaire de compte pour discuter du déploiement d'un environnement HA répondant aux exigences d'assistance."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:2
 msgid "Assumptions"
-msgstr ""
+msgstr "Hypothèses"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:4
 msgid "This guide assumes the following:"
-msgstr ""
+msgstr "Ce guide repose sur les hypothèses suivantes :"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:6
 msgid "App nodes can resolve each others short names"
-msgstr ""
+msgstr "Les nœuds d'application peuvent résoudre les noms courts les uns des autres"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:7
 msgid ""
 "All app nodes have access to shared storage mounted at "
 "``/var/opt/morpheus/morpheus-ui``."
-msgstr ""
+msgstr "Tous les nœuds d'application ont accès au stockage partagé monté sur ``/var/opt/morpheus/morpheus-ui``."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:8
 #, python-format
@@ -76,7 +76,7 @@ msgid ""
 "single node but not more. Specifically, the Elasticsearch tier requires "
 "MORE than 50% of the nodes to be up and clustered at all times. However, "
 "you can always add more nodes to increase resilience."
-msgstr ""
+msgstr "Cette configuration est conçue pour tolérer la défaillance complète d'un seul nœud, mais pas davantage. Plus précisément, le niveau Elasticsearch exige que PLUS de 50 % des nœuds soient actifs et en cluster en permanence. Vous pouvez toutefois toujours ajouter des nœuds pour accroître la résilience."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:9
 msgid ""
@@ -84,11 +84,11 @@ msgid ""
 "between the app nodes. `Load Balancer Configuration "
 "<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
 "#load-balancer-configuration>`_"
-msgstr ""
+msgstr "Vous disposez d'un équilibreur de charge disponible et configuré pour distribuer le trafic entre les nœuds d'application. `Load Balancer Configuration <https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html#load-balancer-configuration>`_"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:2
 msgid "Morpheus 3-Node HA Architecture"
-msgstr ""
+msgstr "Architecture HA Morpheus à 3 nœuds"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_assumptions.rst:2
 msgid ".. image:: /images/arch/morpheus-3node-arch-2.png"
@@ -96,92 +96,92 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:2
 msgid "Default Paths"
-msgstr ""
+msgstr "Chemins par défaut"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:4
 msgid ""
 "|morpheus| follows several install location conventions. Below is a list "
 "of the system paths."
-msgstr ""
+msgstr "|morpheus| suit plusieurs conventions d'emplacement d'installation. Vous trouverez ci-dessous la liste des chemins système."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:6
 msgid ""
 "Altering the default system paths is not supported and may break "
 "functionality."
-msgstr ""
+msgstr "La modification des chemins système par défaut n'est pas prise en charge et peut entraîner des dysfonctionnements."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:8
 msgid "Installation Location: ``/opt/morpheus``"
-msgstr ""
+msgstr "Emplacement d'installation : ``/opt/morpheus``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:9
 msgid "Log Location: ``/var/log/morpheus``"
-msgstr ""
+msgstr "Emplacement des journaux : ``/var/log/morpheus``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:11
 msgid "Morpheus-UI: ``/var/log/morpheus/morpheus-ui``"
-msgstr ""
+msgstr "Morpheus-UI : ``/var/log/morpheus/morpheus-ui``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:12
 msgid "NginX: ``/var/log/morpheus/nginx``"
-msgstr ""
+msgstr "NginX : ``/var/log/morpheus/nginx``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:13
 msgid "Check Server: ``/var/log/morpheus/check-server``"
-msgstr ""
+msgstr "Check Server : ``/var/log/morpheus/check-server``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:14
 msgid "Elastic Search: ``/var/log/morpheus/elasticsearch``"
-msgstr ""
+msgstr "Elastic Search : ``/var/log/morpheus/elasticsearch``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:15
 msgid "RabbitMQ: ``/var/log/morpheus/rabbitmq``"
-msgstr ""
+msgstr "RabbitMQ : ``/var/log/morpheus/rabbitmq``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_paths.rst:17
 msgid "User-defined install/config: ``/etc/morpheus/morpheus.rb``"
-msgstr ""
+msgstr "Installation/configuration définie par l'utilisateur : ``/etc/morpheus/morpheus.rb``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:2
 msgid "MySQL requirements for Morpheus HA"
-msgstr ""
+msgstr "Exigences MySQL pour Morpheus HA"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:3
 msgid "The requirements are as follows:"
-msgstr ""
+msgstr "Les exigences sont les suivantes :"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:5
 msgid ""
 "An external MySQL service. The 8.4 LTS family can be configured; confirm "
 "the formally certified version and service variant for the installed "
 "|morpheus| release."
-msgstr ""
+msgstr "Un service MySQL externe. La famille 8.4 LTS peut être configurée ; confirmez la version certifiée officiellement et la variante de service pour la version |morpheus| installée."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:6
 msgid "MySQL cluster with at least 3 nodes for redundancy."
-msgstr ""
+msgstr "Cluster MySQL d'au moins 3 nœuds pour la redondance."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:7
 msgid "Morpheus application nodes have connectivity to MySQL cluster."
-msgstr ""
+msgstr "Les nœuds d'application Morpheus ont une connectivité vers le cluster MySQL."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:9
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:1
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:96
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:169
 msgid "Note"
-msgstr ""
+msgstr "Note"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_database_requirements.rst:9
 msgid ""
 "Morpheus does not create primary keys on all tables. If you use a "
 "clustering technology that requires primary keys, you will need to "
 "leverage the invisible primary key option in MySQL 8"
-msgstr ""
+msgstr "Morpheus ne crée pas de clés primaires sur toutes les tables. Si vous utilisez une technologie de clustering qui exige des clés primaires, vous devrez exploiter l'option de clé primaire invisible dans MySQL 8"
 
 #: ../../getting_started/installation/database_configure_generic.rst:2
 msgid "Configure Morpheus Database and User"
-msgstr ""
+msgstr "Configurer la base de données et l'utilisateur Morpheus"
 
 #: ../../getting_started/installation/database_configure_generic.rst:4
 msgid ""
@@ -190,13 +190,13 @@ msgid ""
 "installed |morpheus| release, and review "
 ":doc:`/getting_started/external_services/mysql` before creating the "
 "schema. ``8.4 or greater`` is not an unconditional support statement."
-msgstr ""
+msgstr "La configuration MySQL externe est prise en charge, y compris la famille 8.4 LTS. Confirmez la version certifiée officiellement et la variante de service pour la version |morpheus| installée, et consultez :doc:`/getting_started/external_services/mysql` avant de créer le schéma. ``8.4 or greater`` n'est pas une déclaration de prise en charge inconditionnelle."
 
 #: ../../getting_started/installation/database_configure_generic.rst:6
 msgid ""
 "Create the Database you will be using with |morpheus|. Login to mysql "
 "node:"
-msgstr ""
+msgstr "Créez la base de données que vous utiliserez avec |morpheus|. Connectez-vous au nœud mysql :"
 
 #: ../../getting_started/installation/database_configure_generic.rst:8
 msgid ""
@@ -213,7 +213,7 @@ msgstr ""
 msgid ""
 "Next create your |morpheus| database user. This is the user the "
 "|morpheus| app nodes will auth with mysql."
-msgstr ""
+msgstr "Créez ensuite votre utilisateur de base de données |morpheus|. C'est l'utilisateur avec lequel les nœuds d'application |morpheus| s'authentifieront auprès de mysql."
 
 #: ../../getting_started/installation/database_configure_generic.rst:20
 msgid "mysql> CREATE USER 'morpheus'@'%' IDENTIFIED BY 'morpheusDbUserPassword';"
@@ -221,7 +221,7 @@ msgstr ""
 
 #: ../../getting_started/installation/database_configure_generic.rst:24
 msgid "Next Grant your new |morpheus| user permissions."
-msgstr ""
+msgstr "Accordez ensuite les autorisations à votre nouvel utilisateur |morpheus|."
 
 #: ../../getting_started/installation/database_configure_generic.rst:26
 msgid ""
@@ -238,21 +238,21 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:2
 msgid "App Node Installation"
-msgstr ""
+msgstr "Installation du nœud d'application"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:5
 msgid "Requirements"
-msgstr ""
+msgstr "Exigences"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:7
 msgid ""
 "Ensure the firewall (or security group) allows |morpheus| ``outbound`` "
 "access to the various backend services:"
-msgstr ""
+msgstr "Assurez-vous que le pare-feu (ou le groupe de sécurité) autorise |morpheus| l'accès ``outbound`` aux divers services backend :"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:9
 msgid "mySQL Port to External DB"
-msgstr ""
+msgstr "Port mySQL vers la BD externe"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:11
 msgid "3306/tcp"
@@ -262,11 +262,11 @@ msgstr ""
 msgid ""
 "Ensure the firewall (or security group) allows |morpheus| ``inbound`` "
 "from agents and users:"
-msgstr ""
+msgstr "Assurez-vous que le pare-feu (ou le groupe de sécurité) autorise |morpheus| l'accès ``inbound`` depuis les agents et les utilisateurs :"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:15
 msgid "HTTPS Port"
-msgstr ""
+msgstr "Port HTTPS"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:17
 msgid "443/tcp"
@@ -274,67 +274,67 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:19
 msgid "RabbitMQ Ports"
-msgstr ""
+msgstr "Ports RabbitMQ"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:21
 msgid "4369 (epmd - inter node cluster discovery)"
-msgstr ""
+msgstr "4369 (epmd - découverte de cluster inter-nœuds)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:23
 msgid "5671 (TLS from nodes to RabbitMQ)"
-msgstr ""
+msgstr "5671 (TLS des nœuds vers RabbitMQ)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:25
 msgid "5672 (non-TLS from nodes to RabbitMQ)"
-msgstr ""
+msgstr "5672 (non-TLS des nœuds vers RabbitMQ)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:27
 msgid "15671 (HTTPS API)"
-msgstr ""
+msgstr "15671 (API HTTPS)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:29
 msgid "15672 (HTTP API)"
-msgstr ""
+msgstr "15672 (API HTTP)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:31
 msgid "25672 (inter node cluster communication)"
-msgstr ""
+msgstr "25672 (communication de cluster inter-nœuds)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:33
 msgid "61613 (STOMP - non-TLS)"
-msgstr ""
+msgstr "61613 (STOMP - non-TLS)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:35
 msgid "61614 (STOMP - TLS)"
-msgstr ""
+msgstr "61614 (STOMP - TLS)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:37
 msgid "Elasticsearch Ports"
-msgstr ""
+msgstr "Ports Elasticsearch"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:39
 msgid "9200 (API access)"
-msgstr ""
+msgstr "9200 (accès API)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:41
 msgid "9300 (inter node cluster communication)"
-msgstr ""
+msgstr "9300 (communication de cluster inter-nœuds)"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:44
 msgid "Installation"
-msgstr ""
+msgstr "Installation"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:46
 msgid ""
 "First begin by downloading and installing the requisite |morpheus| "
 "packages to ALL |morpheus| app nodes."
-msgstr ""
+msgstr "Commencez par télécharger et installer les packages |morpheus| requis sur TOUS les nœuds d'application |morpheus|."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:48
 msgid ""
 "|morpheus| packages can be found in the Downloads section of the "
 "`Morpheus Hub <https://morpheushub.com/download>`_"
-msgstr ""
+msgstr "Les packages |morpheus| se trouvent dans la section Téléchargements du `Morpheus Hub <https://morpheushub.com/download>`_"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:55
 msgid ""
@@ -354,13 +354,13 @@ msgstr ""
 msgid ""
 "Do NOT run reconfigure yet. The |morpheus| configuration file must be "
 "edited prior to the initial reconfigure."
-msgstr ""
+msgstr "Ne lancez PAS encore reconfigure. Le fichier de configuration |morpheus| doit être modifié avant le reconfigure initial."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:70
 msgid ""
 "Next you will need to edit the |morpheus| configuration file "
 "``/etc/morpheus/morpheus.rb`` on each node."
-msgstr ""
+msgstr "Vous devrez ensuite modifier le fichier de configuration |morpheus| ``/etc/morpheus/morpheus.rb`` sur chaque nœud."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:2
 msgid ""
@@ -372,14 +372,14 @@ msgid ""
 " UIDs/GIDs starting at 999 and work down. Availability of UIDs and GIDs "
 "can be seen by inspecting ``/etc/passwd`` and ``/etc/group`` "
 "respectively.  Change the UIDs and GIDs below based on what is available."
-msgstr ""
+msgstr "Dans la configuration ci-dessous, l'UID et le GID des utilisateurs et groupes sont définis pour les services qui seront intégrés. Cela garantit leur cohérence sur tous les nœuds. S'ils ne sont pas cohérents, les autorisations du stockage partagé peuvent se désynchroniser et des erreurs apparaîtront pour les plug-ins, les images, etc. S'ils ne sont pas spécifiés, Morpheus trouvera automatiquement des UID/GID disponibles à partir de 999 et descendra. La disponibilité des UID et GID peut être vérifiée en inspectant ``/etc/passwd`` et ``/etc/group`` respectivement. Modifiez les UID et GID ci-dessous en fonction de ce qui est disponible."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:8
 msgid ""
 "You can find additional configuration settings `here "
 "<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
 "#advanced-morpheus-rb-settings>`_"
-msgstr ""
+msgstr "Vous trouverez des paramètres de configuration supplémentaires `here <https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html#advanced-morpheus-rb-settings>`_"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:15
 #, python-brace-format
@@ -475,7 +475,7 @@ msgid ""
 "configuration, ``mysql['host']`` can be a single entry, if the database "
 "has a single endpoint:  ``mysql['host'] = 'myDbEndpoint.example.com`` or "
 "``mysql['host'] = '10.100.10.111'``"
-msgstr ""
+msgstr "Les configurations ci-dessus pour ```mysql['host']`` montrent une liste d'hôtes si la base de données possède plusieurs points de terminaison. Comme pour les autres options de configuration, ``mysql['host']`` peut être une entrée unique si la base de données n'a qu'un seul point de terminaison : ``mysql['host'] = 'myDbEndpoint.example.com`` ou ``mysql['host'] = '10.100.10.111'``"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:98
 msgid ""
@@ -485,7 +485,7 @@ msgid ""
 "``cluster.initial_master_nodes`` in the generated elasticsearch.yml "
 "config. Node names that do not match entries in "
 "cluster.initial_master_nodes will cause clustering issues."
-msgstr ""
+msgstr "Les noms de nœuds elasticsearch définis dans ``elasticsearch['node_name']`` doivent correspondre aux entrées d'hôte dans elasticsearch['es_hosts']. ``node_name`` est utilisé pour ``node.name`` et ``es_hosts`` est utilisé pour ``cluster.initial_master_nodes`` dans la configuration elasticsearch.yml générée. Des noms de nœuds qui ne correspondent pas aux entrées de cluster.initial_master_nodes provoqueront des problèmes de clustering."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_morpheus_rb.rst:100
 msgid ""
@@ -493,7 +493,7 @@ msgid ""
 "**rabbit@node01**.  The shortname for the server of node01 must be "
 "resolvable by DNS or /etc/hosts of all other hosts, same for node02 and "
 "node03.  FQDNs cannot be used here"
-msgstr ""
+msgstr "Le rabbitmq['node_name'] dans l'exemple Node 1 ci-dessus est **rabbit@node01**. Le nom court du serveur node01 doit être résolvable par DNS ou /etc/hosts par tous les autres hôtes, de même pour node02 et node03. Les FQDN ne peuvent pas être utilisés ici"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:74
 msgid ""
@@ -503,11 +503,11 @@ msgid ""
 " not mount an empty target over the source; follow "
 ":doc:`/getting_started/installation/distributed/HA_Shared_Storage` and "
 "obtain the release-specific migration sequence from HPE Support."
-msgstr ""
+msgstr "Montez le stockage partagé sur ``/var/opt/morpheus/morpheus-ui`` sur chaque nœud d'application si ce n'est pas déjà fait. Créez le répertoire s'il n'existe pas déjà. Pour une appliance existante avec des fichiers sur le stockage local, ne montez pas une cible vide par-dessus la source ; suivez :doc:`/getting_started/installation/distributed/HA_Shared_Storage` et obtenez la séquence de migration propre à la version auprès de l'assistance HPE."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:76
 msgid "Reconfigure on all nodes"
-msgstr ""
+msgstr "Reconfigure sur tous les nœuds"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_app_node.rst:83
 msgid "[root@node: ~] morpheus-ctl reconfigure"
@@ -518,18 +518,18 @@ msgid ""
 "|morpheus| will come up on all nodes and Elasticsearch will auto-cluster."
 " RabbitMQ will need to be clustered manually after reconfigure completes "
 "on all nodes."
-msgstr ""
+msgstr "|morpheus| démarrera sur tous les nœuds et Elasticsearch se mettra en cluster automatiquement. RabbitMQ devra être mis en cluster manuellement une fois le reconfigure terminé sur tous les nœuds."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:2
 msgid "Clustering Embedded RabbitMQ"
-msgstr ""
+msgstr "Clustering RabbitMQ intégré"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:4
 msgid ""
 "Select one of the nodes to be your Source Of Truth (SOT) for RabbitMQ "
 "clustering (Node 1 for this example). On the nodes that are **NOT** the "
 "SOT (Nodes 2 & 3 in this example), begin by stopping the UI and RabbitMQ."
-msgstr ""
+msgstr "Sélectionnez l'un des nœuds comme source de vérité (SOT) pour le clustering RabbitMQ (nœud 1 pour cet exemple). Sur les nœuds qui ne sont **PAS** la SOT (nœuds 2 et 3 dans cet exemple), commencez par arrêter l'interface utilisateur et RabbitMQ."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:11
 msgid ""
@@ -549,11 +549,11 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:29
 msgid "Then on the SOT node, we need to copy the secrets for RabbitMQ."
-msgstr ""
+msgstr "Ensuite, sur le nœud SOT, nous devons copier les secrets pour RabbitMQ."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:31
 msgid "Begin by copying secrets from the SOT node to the other nodes."
-msgstr ""
+msgstr "Commencez par copier les secrets du nœud SOT vers les autres nœuds."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:38
 #, python-brace-format
@@ -593,7 +593,7 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:74
 msgid "Then copy the erlang.cookie from the SOT node to the other nodes"
-msgstr ""
+msgstr "Copiez ensuite le erlang.cookie du nœud SOT vers les autres nœuds"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:81
 msgid ""
@@ -620,7 +620,7 @@ msgstr ""
 msgid ""
 "Once the secrets and cookie are copied from node01 to nodes 2 & 3, run a "
 "reconfigure on nodes 2 & 3."
-msgstr ""
+msgstr "Une fois les secrets et le cookie copiés de node01 vers les nœuds 2 et 3, exécutez un reconfigure sur les nœuds 2 et 3."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:112
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:178
@@ -634,11 +634,11 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:123
 msgid "Next we will join nodes 2 & 3 to the cluster."
-msgstr ""
+msgstr "Nous allons ensuite joindre les nœuds 2 et 3 au cluster."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:125
 msgid "The commands below must be run at root"
-msgstr ""
+msgstr "Les commandes ci-dessous doivent être exécutées en root"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:132
 msgid ""
@@ -682,17 +682,17 @@ msgid ""
 "node01: nxdomain (non-existing domain)`` make sure to add all IPs and "
 "short (non-fqdn) hostnames to the ``/etc/hosts`` file to ensure each node"
 " can resolve the other hostnames."
-msgstr ""
+msgstr "Si vous recevez une erreur ``unable to connect to epmd (port 4369) on node01: nxdomain (non-existing domain)``, assurez-vous d'ajouter toutes les adresses IP et les noms d'hôte courts (non FQDN) au fichier ``/etc/hosts`` pour que chaque nœud puisse résoudre les autres noms d'hôte."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:171
 msgid "Next reconfigure Nodes 2 & 3"
-msgstr ""
+msgstr "Reconfigurez ensuite les nœuds 2 et 3"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:189
 msgid ""
 "The last thing to do is start the |morpheus| UI on the two nodes that are"
 " NOT the SOT node."
-msgstr ""
+msgstr "La dernière étape consiste à démarrer l'interface utilisateur |morpheus| sur les deux nœuds qui ne sont PAS le nœud SOT."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:196
 msgid "[root@node2 ~] morpheus-ctl start morpheus-ui"
@@ -707,7 +707,7 @@ msgid ""
 "You will be able to verify that the UI services have restarted properly "
 "by inspecting the logfiles. A standard practice after running a restart "
 "is to tail the UI log file."
-msgstr ""
+msgstr "Vous pourrez vérifier que les services UI ont redémarré correctement en inspectant les fichiers journaux. Une pratique courante après un redémarrage consiste à suivre le fichier journal UI."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:215
 msgid "[root@node2 ~] morpheus-ctl tail morpheus-ui"
@@ -722,7 +722,7 @@ msgid ""
 "The UI should be available once the Morpheus logo is displayed in the "
 "logs. Look for the ascii logo accompanied by the install version and "
 "start time:"
-msgstr ""
+msgstr "L'interface utilisateur devrait être disponible une fois le logo Morpheus affiché dans les journaux. Recherchez le logo ASCII accompagné de la version d'installation et de l'heure de démarrage :"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_rabbit.rst:229
 msgid ""
@@ -738,24 +738,24 @@ msgstr ""
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_elastic.rst:2
 msgid "Embedded Elasticsearch"
-msgstr ""
+msgstr "Elasticsearch intégré"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_elastic.rst:3
 msgid "Morpheus clusters Elasticsearch automatically."
-msgstr ""
+msgstr "Morpheus met Elasticsearch en cluster automatiquement."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_lb.rst:2
 msgid "Load Balancer"
-msgstr ""
+msgstr "Équilibreur de charge"
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_lb.rst:4
 msgid "Configure your load balancer to distribute traffic between the app nodes."
-msgstr ""
+msgstr "Configurez votre équilibreur de charge pour distribuer le trafic entre les nœuds d'application."
 
 #: ../../getting_started/installation/3_node_ha/3_node_ha_lb.rst:6
 msgid ""
 "You can see some examples here: `Load Balancer Configuration "
 "<https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html"
 "#load-balancer-configuration>`_"
-msgstr ""
+msgstr "Vous trouverez des exemples ici : `Load Balancer Configuration <https://docs.morpheusdata.com/en/latest/getting_started/additional/additional_configuration.html#load-balancer-configuration>`_"
 

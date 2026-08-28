@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/trust/conjur.rst:2
 msgid "CyberArk Conjur"
-msgstr ""
+msgstr "CyberArk Conjur"
 
 #: ../../integration_guides/trust/conjur.rst:4
 msgid ""
@@ -34,7 +34,7 @@ msgid ""
 " itself. In some cases, this may help to consolidate secret management "
 "into one central place or it even may be a requirement to satisfy "
 "internal security policies at some organizations."
-msgstr ""
+msgstr "O |morpheus| oferece suporte à integração com o CyberArk Conjur para conjuntos de credenciais armazenados, bem como a utilização de valores secretos armazenados no Conjur por meio do serviço Cypher do |morpheus|. Isso funciona de forma idêntica ao armazenamento interno de credenciais e à funcionalidade Cypher integrada, com a exceção de que seu servidor Conjur é o backend de armazenamento em vez do próprio appliance |morpheus|. Em alguns casos, isso pode ajudar a consolidar o gerenciamento de segredos em um local central ou até mesmo ser um requisito para atender às políticas internas de segurança de algumas organizações."
 
 #: ../../integration_guides/trust/conjur.rst:6
 msgid ""
@@ -42,11 +42,11 @@ msgid ""
 "box. It is developed as an official plugin and may be applied to any "
 "|morpheus| appliance that needs it. See the |morpheus| plugin repository "
 "website for access to the latest version of the plugin."
-msgstr ""
+msgstr "A integração CyberArk Conjur não está incluída no |morpheus| por padrão. Ela é desenvolvida como um plugin oficial e pode ser aplicada a qualquer appliance |morpheus| que precise dela. Consulte o site do repositório de plugins do |morpheus| para acessar a versão mais recente do plugin."
 
 #: ../../integration_guides/trust/conjur.rst:9
 msgid "Applying the Plugin"
-msgstr ""
+msgstr "Aplicando o Plugin"
 
 #: ../../integration_guides/trust/conjur.rst:11
 msgid ""
@@ -55,7 +55,7 @@ msgid ""
 " the pane for the correct plugin and click the :guilabel:`DOWNLOAD` "
 "button. The plugin JAR file will be downloaded to the local computer "
 "you're working on."
-msgstr ""
+msgstr "A versão mais recente do plugin CyberArk Conjur está disponível no `site de compartilhamento de plugins <https://share.morpheusdata.com/>`_ do |morpheus|. Selecione o painel do plugin correto e clique no botão :guilabel:`DOWNLOAD`. O arquivo JAR do plugin será baixado para o computador local em que você está trabalhando."
 
 #: ../../integration_guides/trust/conjur.rst:13
 msgid ".. image:: /images/integration_guides/conjur/share.png"
@@ -69,7 +69,7 @@ msgid ""
 "click :guilabel:`UPLOAD`. It may take a few moments for the plugin to be "
 "applied successfully and for the modal to be dismissed after clicking the"
 " upload button."
-msgstr ""
+msgstr "Com o plugin baixado, volte ao |morpheus| para aplicá-lo ao seu appliance. Os plugins são adicionados navegando até |AdmIntPlu| e clicando em :guilabel:`ADD`. Solte o arquivo JAR do plugin no destino e clique em :guilabel:`UPLOAD`. Pode levar alguns momentos para que o plugin seja aplicado com sucesso e o modal seja fechado após clicar no botão de upload."
 
 #: ../../integration_guides/trust/conjur.rst:17
 msgid ".. image:: /images/integration_guides/conjur/addPlugin.png"
@@ -80,52 +80,52 @@ msgid ""
 "Once the plugin is added, we configure the connection details here. Edit "
 "the new Conjur plugin by clicking the pencil (|pencil|) icon from its row"
 " in the list. Configure the following fields:"
-msgstr ""
+msgstr "Depois que o plugin for adicionado, configuramos os detalhes da conexão aqui. Edite o novo plugin Conjur clicando no ícone de lápis (|pencil|) em sua linha na lista. Configure os seguintes campos:"
 
 #: ../../integration_guides/trust/conjur.rst:21
 msgid ""
 "**NAME:** A friendly name for the new integration to identify it within "
 "|morpheus|"
-msgstr ""
+msgstr "**NAME:** Um nome amigável para a nova integração a fim de identificá-la no |morpheus|"
 
 #: ../../integration_guides/trust/conjur.rst:22
 msgid "**ENABLED:** Mark the box to make this integration active and available"
-msgstr ""
+msgstr "**ENABLED:** Marque a caixa para tornar esta integração ativa e disponível"
 
 #: ../../integration_guides/trust/conjur.rst:23
 msgid ""
 "**CONJUR API URL:** The full URL for the Conjur server, usually listening"
 " on port 8443"
-msgstr ""
+msgstr "**CONJUR API URL:** A URL completa do servidor Conjur, geralmente escutando na porta 8443"
 
 #: ../../integration_guides/trust/conjur.rst:24
 msgid ""
 "**CONJUR USERNAME:** The Conjur user account you wish to authenticate "
 "with. This user should have read, write, and execute access to the "
 "variables configured within the Conjur policy"
-msgstr ""
+msgstr "**CONJUR USERNAME:** A conta de usuário Conjur com a qual deseja autenticar. Este usuário deve ter acesso de leitura, escrita e execução às variáveis configuradas na política do Conjur"
 
 #: ../../integration_guides/trust/conjur.rst:25
 msgid ""
 "**CONJUR USERNAME API KEY:** The API key for user entered in the prior "
 "field"
-msgstr ""
+msgstr "**CONJUR USERNAME API KEY:** A chave de API do usuário informado no campo anterior"
 
 #: ../../integration_guides/trust/conjur.rst:26
 msgid ""
 "**CONJUR ORGANIZATION:** The Conjur account in which the user and "
 "variables reside"
-msgstr ""
+msgstr "**CONJUR ORGANIZATION:** A conta Conjur na qual o usuário e as variáveis residem"
 
 #: ../../integration_guides/trust/conjur.rst:27
 msgid ""
 "**CLEAR SECRET ON DELETION:** When marked, secret values will be cleared "
 "when deleted from |morpheus|"
-msgstr ""
+msgstr "**CLEAR SECRET ON DELETION:** Quando marcado, os valores secretos serão limpos ao serem excluídos do |morpheus|"
 
 #: ../../integration_guides/trust/conjur.rst:29
 msgid "Important"
-msgstr ""
+msgstr "Importante"
 
 #: ../../integration_guides/trust/conjur.rst:29
 msgid ""
@@ -137,7 +137,7 @@ msgid ""
 " If the plugin is configured not to clear secrets on deletion, the secret"
 " object is deleted from |morpheus| without altering it on the Conjur "
 "backend."
-msgstr ""
+msgstr "As variáveis são predefinidas pelas políticas do Conjur. Esta integração não permite que os usuários criem variáveis, mas permite ler e atualizar seus valores. Se o plugin estiver configurado para limpar segredos excluídos do |morpheus|, o valor da variável é atualizado com um valor vazio, pois não há conceito de exclusão completa de segredos na API do Conjur. Se o plugin estiver configurado para não limpar segredos na exclusão, o objeto de segredo é excluído do |morpheus| sem alterá-lo no backend do Conjur."
 
 #: ../../integration_guides/trust/conjur.rst:31
 msgid ""
@@ -147,11 +147,11 @@ msgid ""
 "feature demonstration further ahead in this guide. If you do intend to "
 "use the credential store integration as well, there's one additional "
 "configuration step to take in the next section."
-msgstr ""
+msgstr "Ao aplicar e configurar o plugin, o appliance passa a ter a integração Conjur/Cypher disponível. Se você não pretende usar a integração de armazenamento de credenciais, pode parar aqui e olhar adiante para a demonstração do recurso mais adiante neste guia. Se pretende usar a integração de armazenamento de credenciais também, há uma etapa adicional de configuração a ser feita na próxima seção."
 
 #: ../../integration_guides/trust/conjur.rst:34
 msgid "Adding A Conjur Trust Integration"
-msgstr ""
+msgstr "Adicionando uma Integração Trust Conjur"
 
 #: ../../integration_guides/trust/conjur.rst:36
 msgid ""
@@ -167,17 +167,17 @@ msgid ""
 " is unnecessary. Simply give the new Trust integration a friendly name "
 "for reference in |morpheus| and indicate the desired mount point for "
 "secrets you wish to consume as done in the screenshot below."
-msgstr ""
+msgstr "Para usar o Conjur com as credenciais do |morpheus|, também devemos adicionar uma integração do tipo Conjur em |InfTruInt|. Ao aplicar o plugin na etapa anterior, agora temos a capacidade de adicionar este tipo de integração. Na página de lista de integrações Trust, clique em :guilabel:`+ ADD` e selecione \"Conjur.\" É importante observar que você **não** precisa configurar novamente a URL da API e as credenciais de login do Conjur como acabamos de fazer na etapa anterior. Você pode configurá-las aqui se desejar, por exemplo se estiver criando várias integrações com vários appliances Conjur, mas se estiver simplesmente integrando com o mesmo appliance e conta de usuário, isso é desnecessário. Basta dar à nova integração Trust um nome amigável para referência no |morpheus| e indicar o ponto de montagem desejado para os segredos que deseja consumir, como feito na captura de tela abaixo."
 
 #: ../../integration_guides/trust/conjur.rst:38
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../integration_guides/trust/conjur.rst:38
 msgid ""
 "In many cases, you don't have to configure the connection details when "
 "adding a Conjur Trust integration. See the paragraph above."
-msgstr ""
+msgstr "Em muitos casos, você não precisa configurar os detalhes da conexão ao adicionar uma integração Trust Conjur. Consulte o parágrafo acima."
 
 #: ../../integration_guides/trust/conjur.rst:40
 msgid ".. image:: /images/integration_guides/conjur/addTrustInt.png"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../../integration_guides/trust/conjur.rst:43
 msgid "Conjur and Credential Stores"
-msgstr ""
+msgstr "Conjur e Armazenamentos de Credenciais"
 
 #: ../../integration_guides/trust/conjur.rst:45
 msgid ""
@@ -194,7 +194,7 @@ msgid ""
 "beginning of this guide, variables are created by Conjur policies and not"
 " by |morpheus|. We can reference existing variables and update the secret"
 " values stored within."
-msgstr ""
+msgstr "Com as configurações concluídas, podemos ver como o |morpheus| é capaz de interagir com o Conjur como um armazenamento de credenciais. Como mencionado no início deste guia, as variáveis são criadas por políticas do Conjur e não pelo |morpheus|. Podemos referenciar variáveis existentes e atualizar os valores secretos armazenados nelas."
 
 #: ../../integration_guides/trust/conjur.rst:47
 msgid ""
@@ -208,7 +208,7 @@ msgid ""
 "``BotApp/secretVar`` path as shown in the screenshot below. Be sure to "
 "also select Conjur as the CREDENTIAL STORE value rather than the default "
 "\"Internal.\""
-msgstr ""
+msgstr "Como exemplo, há uma variável chamada ``BotApp/secretVar`` no appliance Conjur de destino. Ao configurar a integração Trust (na seção anterior), o ponto de montagem ``BotApp/`` foi referenciado (veja a captura de tela na última seção). Ao criar conjuntos de credenciais armazenados no |morpheus| contra este armazenamento de credenciais Conjur, referencie o restante do caminho da variável como o valor NAME no conjunto de credenciais. Neste caso, o conjunto de credenciais será nomeado ``secretVar`` para completar o caminho ``BotApp/secretVar``, como mostrado na captura de tela abaixo. Certifique-se também de selecionar Conjur como o valor CREDENTIAL STORE em vez do padrão \"Internal.\""
 
 #: ../../integration_guides/trust/conjur.rst:49
 msgid ".. image:: /images/integration_guides/conjur/credentials.png"
@@ -221,11 +221,11 @@ msgid ""
 "available for use anywhere |morpheus| allows users to utilize them, such "
 "as when integrating new Clouds, authenticating REST calls to populate "
 "Option Lists, and many other places."
-msgstr ""
+msgstr "Após salvar e voltar ao appliance Conjur, o valor armazenado na variável referenciada foi atualizado. Este conjunto de credenciais também está disponível para uso em qualquer lugar em que o |morpheus| permita que os usuários os utilizem, como ao integrar novas Nuvens, autenticar chamadas REST para popular Option Lists e em muitos outros lugares."
 
 #: ../../integration_guides/trust/conjur.rst:54
 msgid "Conjur and Cypher"
-msgstr ""
+msgstr "Conjur e Cypher"
 
 #: ../../integration_guides/trust/conjur.rst:56
 msgid ""
@@ -233,7 +233,7 @@ msgid ""
 "enables integration with |morpheus| Cypher. Just as calls can be made to "
 "internally-stored secret values with Cypher, Conjur variable endpoints "
 "may be referenced to onboard secret strings into automation Tasks."
-msgstr ""
+msgstr "Além dos conjuntos de credenciais armazenados, o plugin CyberArk Conjur também habilita a integração com o Cypher do |morpheus|. Assim como chamadas podem ser feitas a valores secretos armazenados internamente com o Cypher, endpoints de variáveis do Conjur podem ser referenciados para incorporar strings secretas em Tarefas de automação."
 
 #: ../../integration_guides/trust/conjur.rst:58
 msgid ""
@@ -242,7 +242,7 @@ msgid ""
 "point is referenced along with the rest of the path to the variable which"
 " should be accessed. After executing the Task, we can check the execution"
 " history and see that the Conjur-stored value is indeed echoed back out."
-msgstr ""
+msgstr "Na captura de tela abaixo, veja uma Tarefa de script shell simples que ecoa um valor secreto armazenado no Conjur. Como você pode ver, o ponto de montagem ``conjur/`` é referenciado junto com o restante do caminho até a variável que deve ser acessada. Após executar a Tarefa, podemos verificar o histórico de execução e ver que o valor armazenado no Conjur é de fato ecoado."
 
 #: ../../integration_guides/trust/conjur.rst:60
 msgid ".. image:: /images/integration_guides/conjur/cypherTask.png"
@@ -261,7 +261,7 @@ msgid ""
 "in |morpheus|. For our example case, we could update the value in Conjur "
 "by creating a Cypher entry at the mount point "
 "``conjur/BotApp/secretVar``."
-msgstr ""
+msgstr "Se desejado, o valor armazenado no Conjur também pode ser atualizado pela UI Cypher do |morpheus|. Navegue até |TooCyp| e clique em :guilabel:`+ ADD`. Observe que o ponto de montagem ``conjur`` está incluído na lista de exemplo de pontos de montagem disponíveis mostrados no modal. Ao criar uma nova entrada Cypher no ponto de montagem ``conjur`` que referencia um caminho de variável Conjur existente, o valor no Conjur pode ser sobrescrito. Se você configurou o plugin para limpar segredos na exclusão, também pode atualizar o valor armazenado com uma string vazia ao excluir o objeto Cypher no |morpheus|. No nosso exemplo, poderíamos atualizar o valor no Conjur criando uma entrada Cypher no ponto de montagem ``conjur/BotApp/secretVar``."
 
 #: ../../integration_guides/trust/conjur.rst:64
 msgid ".. image:: /images/integration_guides/conjur/cypher.png"

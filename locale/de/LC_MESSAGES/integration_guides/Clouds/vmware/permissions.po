@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:2
 msgid "VMware Permissions"
-msgstr ""
+msgstr "VMware-Berechtigungen"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:4
 msgid ""
@@ -36,11 +36,11 @@ msgid ""
 "in this section to configure a user with minimal permissions and "
 "associate it with the appropriate usage levels before using it to create "
 "a |morpheus| Cloud integration."
-msgstr ""
+msgstr "Bei der Integration von VMware vCenter mit |morpheus| müssen Benutzer Anmeldedaten für ein vCenter-Konto angeben, und |morpheus| hat nur die Zugriffsrechte des integrierten Kontos. Viele Benutzer wählen ein vCenter-Administratorkonto, damit |morpheus| in vCenter frei jede Funktion ausführen kann, ohne an Zugriffslimits zu stoßen. Andere möchten aus Sicherheitsgründen |morpheus| nur auf die Mindestberechtigungen beschränken, die für seine Funktionen nötig sind. Folgen Sie der Anleitung in diesem Abschnitt, um einen Benutzer mit minimalen Berechtigungen zu konfigurieren und ihn den entsprechenden Nutzungsebenen zuzuordnen, bevor Sie ihn für eine |morpheus|-Cloud-Integration verwenden."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:7
 msgid "Create vCenter Users and Roles"
-msgstr ""
+msgstr "vCenter-Benutzer und -Rollen erstellen"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:9
 msgid ""
@@ -48,7 +48,7 @@ msgid ""
 "integration user (Menu > |AdmUse| and Groups) but any existing user, "
 "whether locally-created or sourced from an identity integration (like "
 "Active Directory), works fine."
-msgstr ""
+msgstr "In diesem Beispiel habe ich einen neuen lokalen Benutzer als meinen |morpheus|-Integrationsbenutzer hinzugefügt (Menu > |AdmUse| and Groups), aber jeder vorhandene Benutzer – lokal erstellt oder aus einer Identitätsintegration (wie Active Directory) – funktioniert ebenfalls."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:11
 msgid ".. image:: /images/integration_guides/clouds/vmware/addUsers.png"
@@ -62,7 +62,7 @@ msgid ""
 "screenshot, take note of the complete set of required privileges. Once "
 "all privileges are set, name the Role (if it's a new one) and click "
 "Finish."
-msgstr ""
+msgstr "Der nächste Schritt ist das Erstellen einer Rolle (Menu > |AdmRol|). Sie können eine vorhandene Rolle bearbeiten, um sicherzustellen, dass sie die richtigen Privilegien hat; ich habe eine neue Rolle erstellt und die korrekten Privilegien zugewiesen. Unter dem Screenshot beachten Sie den vollständigen Satz der erforderlichen Privilegien. Sobald alle Privilegien gesetzt sind, benennen Sie die Rolle (falls neu) und klicken Sie auf Finish."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:15
 msgid ".. image:: /images/integration_guides/clouds/vmware/addRoles.png"
@@ -70,11 +70,11 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:18
 msgid "Privileges"
-msgstr ""
+msgstr "Privilegien"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:20
 msgid "Important"
-msgstr ""
+msgstr "Wichtig"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:20
 msgid ""
@@ -83,32 +83,32 @@ msgid ""
 "not grant Administrator to troubleshoot a single VM. vTPM and encrypted-"
 "VM operations can require privileges that an unencrypted-VM test never "
 "exercises."
-msgstr ""
+msgstr "Erstellen Sie die Rolle für die in Ihrer Umgebung aktivierten Operationen und weisen Sie sie nur den Inventarobjekten zu, an denen diese Operationen erforderlich sind. Gewähren Sie nicht Administrator, um eine einzelne VM zu diagnostizieren. vTPM- und verschlüsselte-VM-Operationen können Privilegien erfordern, die ein Test mit unverschlüsselter VM nie ausübt."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:22
 msgid "Content Library"
-msgstr ""
+msgstr "Content Library"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:23
 msgid "All Content Library privileges"
-msgstr ""
+msgstr "All Content Library privileges"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:25
 msgid "Cryptographic operations for encrypted or vTPM VMs"
-msgstr ""
+msgstr "Cryptographic operations for encrypted or vTPM VMs"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:26
 #: ../../integration_guides/Clouds/vmware/permissions.rst:84
 msgid "Clone"
-msgstr ""
+msgstr "Clone"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:27
 msgid "Direct Access"
-msgstr ""
+msgstr "Direct Access"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:28
 msgid "Migrate"
-msgstr ""
+msgstr "Migrate"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:30
 msgid ""
@@ -120,7 +120,7 @@ msgid ""
 "the set as a reported requirement for workflows that include console "
 "access, clone, or migration of encrypted/vTPM VMs, not as a requirement "
 "for every unencrypted VM."
-msgstr ""
+msgstr "Die obigen Namen entsprechen den vCenter-Privilegien **Cryptographic operations**, die in MORPH-6016 als ``Clone``, ``Direct`` und ``AccessMigrate`` berichtet wurden. Der Bericht stellte fest, dass das Hinzufügen des Satzes den Hypervisor-Konsolenzugriff für eine erkannte Windows-11-vTPM-VM wiederhergestellt hat; er isolierte nicht, welches einzelne Privileg die Konsolensitzung verbrauchte. Behandeln Sie den Satz als berichtete Anforderung für Workflows mit Konsolenzugriff, Clone oder Migration verschlüsselter/vTPM-VMs, nicht als Anforderung für jede unverschlüsselte VM."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:32
 msgid ""
@@ -132,228 +132,228 @@ msgid ""
 "complete set, use vCenter task/event and |morpheus| logs to identify the "
 "denied operation and have the VMware/security owner approve the minimum "
 "privilege; do not broaden the role to Administrator."
-msgstr ""
+msgstr "Wenden Sie diese Privilegien der dedizierten |morpheus|-Integrationsrolle am kleinsten vCenter-Inventarbereich zu, der die betroffenen verschlüsselten/vTPM-VMs enthält, mit Propagation nur dort, wo Kindobjekte sie erfordern. Prüfen Sie die von der betroffenen VM geerbte Rollenzuweisung und testen Sie Konsole, Clone und Migration getrennt. Wenn die Richtlinie den vollständigen Satz nicht zulassen kann, nutzen Sie vCenter-Task/Event- und |morpheus|-Protokolle, um die verweigerte Operation zu identifizieren, und lassen Sie den VMware-/Sicherheitsverantwortlichen das Mindestprivileg genehmigen; erweitern Sie die Rolle nicht auf Administrator."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:34
 #: ../../integration_guides/Clouds/vmware/permissions.rst:123
 msgid "Datastore/Datastore Cluster"
-msgstr ""
+msgstr "Datastore/Datastore Cluster"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:35
 msgid "Allocate Space"
-msgstr ""
+msgstr "Allocate Space"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:36
 msgid "Browse Datastore"
-msgstr ""
+msgstr "Browse Datastore"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:37
 msgid "Low Level file Operations"
-msgstr ""
+msgstr "Low Level file Operations"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:38
 msgid "Remove File"
-msgstr ""
+msgstr "Remove File"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:39
 msgid "Update virtual machine files"
-msgstr ""
+msgstr "Update virtual machine files"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:40
 msgid "Update virtual machine metadata"
-msgstr ""
+msgstr "Update virtual machine metadata"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:42
 msgid "Distributed Switch"
-msgstr ""
+msgstr "Distributed Switch"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:43
 msgid "Port configuration operation"
-msgstr ""
+msgstr "Port configuration operation"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:44
 msgid "Port setting operation"
-msgstr ""
+msgstr "Port setting operation"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:46
 msgid "Global"
-msgstr ""
+msgstr "Global"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:47
 msgid "Log Event"
-msgstr ""
+msgstr "Log Event"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:48
 msgid "Manage custom attributes"
-msgstr ""
+msgstr "Manage custom attributes"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:49
 msgid "Set custom attribute"
-msgstr ""
+msgstr "Set custom attribute"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:51
 msgid "Network"
-msgstr ""
+msgstr "Netzwerk"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:52
 msgid "Assign Network"
-msgstr ""
+msgstr "Assign Network"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:53
 msgid "Configure"
-msgstr ""
+msgstr "Configure"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:54
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:56
 msgid "Resource"
-msgstr ""
+msgstr "Ressource"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:57
 msgid "Apply recommendation"
-msgstr ""
+msgstr "Apply recommendation"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:58
 msgid "Assign vApp to resource pool"
-msgstr ""
+msgstr "Assign vApp to resource pool"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:59
 msgid "Assign virtual machine to resource pool"
-msgstr ""
+msgstr "Assign virtual machine to resource pool"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:60
 msgid "Migrate powered off virtual machine"
-msgstr ""
+msgstr "Migrate powered off virtual machine"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:61
 msgid "Migrate powered on virtual machine"
-msgstr ""
+msgstr "Migrate powered on virtual machine"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:63
 msgid "Scheduled task"
-msgstr ""
+msgstr "Scheduled task"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:64
 msgid "Create tasks"
-msgstr ""
+msgstr "Create tasks"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:65
 msgid "Modify task"
-msgstr ""
+msgstr "Modify task"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:66
 msgid "Remove task"
-msgstr ""
+msgstr "Remove task"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:67
 msgid "Run task"
-msgstr ""
+msgstr "Run task"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:69
 msgid "Tasks"
-msgstr ""
+msgstr "Aufgaben"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:70
 msgid "Create task"
-msgstr ""
+msgstr "Create task"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:71
 msgid "Update task"
-msgstr ""
+msgstr "Update task"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:73
 msgid "Virtual Machine"
-msgstr ""
+msgstr "Virtual Machine"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:74
 msgid "Configuration (all)"
-msgstr ""
+msgstr "Configuration (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:75
 msgid "Guest Operations (all)"
-msgstr ""
+msgstr "Guest Operations (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:76
 msgid "Interaction (all)"
-msgstr ""
+msgstr "Interaction (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:77
 msgid "Inventory (all)"
-msgstr ""
+msgstr "Inventory (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:78
 msgid "Provisioning (all)"
-msgstr ""
+msgstr "Provisioning (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:79
 msgid "Service configuration (all)"
-msgstr ""
+msgstr "Service configuration (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:80
 msgid "Snapshot management (all)"
-msgstr ""
+msgstr "Snapshot management (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:81
 msgid "vSphere Replication (all)"
-msgstr ""
+msgstr "vSphere Replication (all)"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:83
 msgid "vApp"
-msgstr ""
+msgstr "vApp"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:85
 msgid "Export"
-msgstr ""
+msgstr "Export"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:86
 msgid "Import"
-msgstr ""
+msgstr "Import"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:88
 msgid "vSphere Tagging"
-msgstr ""
+msgstr "vSphere Tagging"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:89
 msgid "Assign or Unassign vSphere Tag"
-msgstr ""
+msgstr "Assign or Unassign vSphere Tag"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:90
 msgid "Assign or Unassign vSphere Tag on Object"
-msgstr ""
+msgstr "Assign or Unassign vSphere Tag on Object"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:91
 msgid "Create vSphere Tag"
-msgstr ""
+msgstr "Create vSphere Tag"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:92
 msgid "Create vSphere Tag Category"
-msgstr ""
+msgstr "Create vSphere Tag Category"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:93
 msgid "Delete vSphere Tag"
-msgstr ""
+msgstr "Delete vSphere Tag"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:94
 msgid "Delete vSphere Tag Category"
-msgstr ""
+msgstr "Delete vSphere Tag Category"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:95
 msgid "Edit vSphere Tag"
-msgstr ""
+msgstr "Edit vSphere Tag"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:96
 msgid "Edit vSphere Tag Category"
-msgstr ""
+msgstr "Edit vSphere Tag Category"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:97
 msgid "Modify UsedBy Field For Category"
-msgstr ""
+msgstr "Modify UsedBy Field For Category"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:98
 msgid "Modify UsedBy Field For Tag"
-msgstr ""
+msgstr "Modify UsedBy Field For Tag"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:99
 msgid "privilege.InventoryService.Tagging.CreateScope.label"
@@ -371,11 +371,11 @@ msgid ""
 "the plus (+) button. In the screenshot below, I'm adding the permission "
 "for the vCenter usage construct. The complete list of usages and whether "
 "or not to mark the propagation box is below the image."
-msgstr ""
+msgstr "Nachdem Benutzer und Rolle erstellt sind, fügen Sie Berechtigungen hinzu, um Benutzer und Rolle den entsprechenden Nutzungsebenen zuzuordnen. Navigieren Sie zum gewünschten Nutzungskonstrukt, zur Registerkarte Permissions, und klicken Sie auf die Plus-Schaltfläche (+). Im Screenshot unten füge ich die Berechtigung für das vCenter-Nutzungskonstrukt hinzu. Die vollständige Liste der Nutzungsebenen und ob das Propagierungs-Kontrollkästchen markiert werden soll, steht unter dem Bild."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:104
 msgid "Note"
-msgstr ""
+msgstr "Hinweis"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:104
 msgid ""
@@ -389,7 +389,7 @@ msgid ""
 " this folder is pre-selected when provisioning new Instances into the "
 "Cloud. When a folder is set as the Image Target, |morpheus| will look "
 "into this folder to onboard VMware images into |morpheus|."
-msgstr ""
+msgstr "Aus Organisations- und Sicherheitsgründen können Berechtigungen auch Ordnern hinzugefügt werden. So kann |morpheus| die Ordner sehen und ggf. Ressourcen darin übernehmen. Nach Erstellung der vCenter-Cloud-Integration in |morpheus| können Sie Ordner auf der Cloud-Detailseite anzeigen (Infrastructure > Clouds > Selected Cloud > Resources Tab). Durch Bearbeiten des Ordners hier (Actions > Edit) können Ordner als „Default“ und/oder „Image Target“ gesetzt werden. Ist ein Ordner als Default gesetzt, wird er beim Provisionieren neuer Instanzen in die Cloud vorausgewählt. Ist ein Ordner als Image Target gesetzt, sucht |morpheus| in diesem Ordner nach VMware-Images zur Übernahme in |morpheus|."
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:106
 msgid ".. image:: /images/integration_guides/clouds/vmware/addPerms.png"
@@ -397,38 +397,38 @@ msgstr ""
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:109
 msgid "Usage"
-msgstr ""
+msgstr "Nutzung"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:111
 msgid "vCenter"
-msgstr ""
+msgstr "vCenter"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:112
 #: ../../integration_guides/Clouds/vmware/permissions.rst:115
 #: ../../integration_guides/Clouds/vmware/permissions.rst:118
 #: ../../integration_guides/Clouds/vmware/permissions.rst:121
 msgid "Non-Propagating"
-msgstr ""
+msgstr "Non-Propagating"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:114
 msgid "Datacenter"
-msgstr ""
+msgstr "Rechenzentrum"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:117
 msgid "Cluster"
-msgstr ""
+msgstr "Cluster"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:120
 msgid "Host"
-msgstr ""
+msgstr "Host"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:124
 msgid "Propagating"
-msgstr ""
+msgstr "Propagating"
 
 #: ../../integration_guides/Clouds/vmware/permissions.rst:126
 msgid ""
 "After completing the above steps, all VMware Cloud functionality should "
 "be available in |morpheus| without running into permissions errors."
-msgstr ""
+msgstr "Nach Abschluss der obigen Schritte sollte die gesamte VMware-Cloud-Funktionalität in |morpheus| verfügbar sein, ohne dass Berechtigungsfehler auftreten."
 

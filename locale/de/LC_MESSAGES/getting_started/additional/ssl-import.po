@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:2
 msgid "Import Trusted Certificates"
-msgstr ""
+msgstr "Vertrauenswürdige Zertifikate importieren"
 
 #: ../../getting_started/additional/ssl-import.rst:4
 msgid ""
@@ -32,29 +32,29 @@ msgid ""
 "into both the appliance OpenSSL trust path and the embedded JRE "
 "truststore. Reconfigure does not restart a running ``morpheus-ui`` JVM, "
 "so the UI must be restarted to load the updated JRE truststore."
-msgstr ""
+msgstr "Verwenden Sie dieses Verfahren, um eine Zertifizierungsstelle hinzuzufügen, der die |morpheus|-Anwendung vertrauen muss, z. B. die CA für einen ServiceNow-Endpunkt. Reconfigure importiert Zertifikate aus dem Verzeichnis trusted-certificate sowohl in den OpenSSL-Trust-Pfad der Appliance als auch in den eingebetteten JRE-Truststore. Reconfigure startet eine laufende ``morpheus-ui``-JVM nicht neu; die UI muss neu gestartet werden, damit der aktualisierte JRE-Truststore geladen wird."
 
 #: ../../getting_started/additional/ssl-import.rst:6
 msgid "Obtain the full SSL certificate chain in PEM format."
-msgstr ""
+msgstr "Beschaffen Sie die vollständige SSL-Zertifikatskette im PEM-Format."
 
 #: ../../getting_started/additional/ssl-import.rst:8
 msgid ""
 "Copy them to each appliance and place them in the "
 "``/etc/morpheus/ssl/trusted_certs`` directory."
-msgstr ""
+msgstr "Kopieren Sie sie auf jede Appliance und legen Sie sie im Verzeichnis ``/etc/morpheus/ssl/trusted_certs`` ab."
 
 #: ../../getting_started/additional/ssl-import.rst:10
 msgid ""
 "Run ``morpheus-ctl reconfigure`` on the appliance. Reconfigure can run "
 "while the UI is active."
-msgstr ""
+msgstr "Führen Sie ``morpheus-ctl reconfigure`` auf der Appliance aus. Reconfigure kann bei aktiver UI ausgeführt werden."
 
 #: ../../getting_started/additional/ssl-import.rst:12
 msgid ""
 "Verify that each certificate is present in the embedded JRE truststore. "
 "Reconfigure uses the certificate filename as its alias:"
-msgstr ""
+msgstr "Prüfen Sie, dass jedes Zertifikat im eingebetteten JRE-Truststore vorhanden ist. Reconfigure verwendet den Zertifikatsdateinamen als Alias:"
 
 #: ../../getting_started/additional/ssl-import.rst:14
 msgid ""
@@ -66,7 +66,7 @@ msgstr ""
 msgid ""
 "Verify the remote endpoint and chain with the appliance OpenSSL client, "
 "replacing the host and port:"
-msgstr ""
+msgstr "Prüfen Sie den Remote-Endpunkt und die Kette mit dem OpenSSL-Client der Appliance und ersetzen Sie Host und Port:"
 
 #: ../../getting_started/additional/ssl-import.rst:20
 msgid "openssl s_client -connect host:port -showcerts -tls1_2"
@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../../getting_started/additional/ssl-import.rst:24
 msgid "You should get an output similar to:"
-msgstr ""
+msgstr "Sie sollten eine Ausgabe ähnlich der folgenden erhalten:"
 
 #: ../../getting_started/additional/ssl-import.rst:26
 msgid ""
@@ -106,11 +106,11 @@ msgid ""
 "return code: 0 (ok)``.  If they were not installed correctly then you "
 "will see a return similar to: ``Verify return code: 21 (unable to verify "
 "the first certificate)``"
-msgstr ""
+msgstr "Wenn die Zertifikate korrekt installiert sind, sollten Sie ``Verify return code: 0 (ok)`` sehen. Bei fehlerhafter Installation sehen Sie eine Rückgabe ähnlich: ``Verify return code: 21 (unable to verify the first certificate)``"
 
 #: ../../getting_started/additional/ssl-import.rst:48
 msgid "Restart the UI so its JVM loads the updated truststore:"
-msgstr ""
+msgstr "Starten Sie die UI neu, damit ihre JVM den aktualisierten Truststore lädt:"
 
 #: ../../getting_started/additional/ssl-import.rst:50
 msgid "morpheus-ctl restart morpheus-ui"
@@ -121,7 +121,7 @@ msgid ""
 "Repeat the copy, reconfigure, truststore verification, and UI restart on "
 "every application node. In an HA deployment, process one application node"
 " at a time and confirm it is healthy before proceeding to the next node."
-msgstr ""
+msgstr "Wiederholen Sie Kopieren, Reconfigure, Truststore-Prüfung und UI-Neustart auf jedem Anwendungsknoten. In einem HA-Deployment bearbeiten Sie jeweils einen Anwendungsknoten und bestätigen Sie dessen Betriebszustand, bevor Sie mit dem nächsten fortfahren."
 
 #: ../../getting_started/additional/ssl-import.rst:56
 msgid ""
@@ -129,5 +129,5 @@ msgid ""
 "successful connection confirms that the application JVM trusts the "
 "endpoint; ``openssl`` success alone does not verify the trust state of "
 "the already-running JVM."
-msgstr ""
+msgstr "Wiederholen Sie die Integration, ohne die Zertifikatsprüfung zu deaktivieren. Eine erfolgreiche Verbindung bestätigt, dass die Anwendungs-JVM dem Endpunkt vertraut; allein der Erfolg von ``openssl`` verifiziert nicht den Trust-Status der bereits laufenden JVM."
 

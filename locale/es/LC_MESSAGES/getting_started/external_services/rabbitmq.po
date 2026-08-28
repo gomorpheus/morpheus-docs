@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:4
 msgid "RabbitMQ"
-msgstr ""
+msgstr "RabbitMQ"
 
 #: ../../getting_started/external_services/rabbitmq.rst:6
 msgid ""
@@ -30,34 +30,34 @@ msgid ""
 "communication (STOMP protocol), task orchestration, event processing, and"
 " inter-service communication (AMQP protocol). This page covers preparing "
 "an external RabbitMQ service for use with |morpheus|."
-msgstr ""
+msgstr "RabbitMQ es el broker de mensajes de |morpheus|, que gestiona la comunicación de agentes (protocolo STOMP), orquestación de tareas, procesamiento de eventos y comunicación entre servicios (protocolo AMQP). Esta página cubre la preparación de un servicio RabbitMQ externo para su uso con |morpheus|."
 
 #: ../../getting_started/external_services/rabbitmq.rst:8
 msgid "Note"
-msgstr ""
+msgstr "Nota"
 
 #: ../../getting_started/external_services/rabbitmq.rst:10
 msgid ""
 "For HVM deployments and all-in-one installations, RabbitMQ is embedded "
 "and requires no configuration. This page is only relevant when running "
 "RabbitMQ externally for HA or organizational requirements."
-msgstr ""
+msgstr "Para implementaciones HVM e instalaciones all-in-one, RabbitMQ está incorporado y no requiere configuración. Esta página solo es relevante cuando se ejecuta RabbitMQ externamente por HA o requisitos organizacionales."
 
 #: ../../getting_started/external_services/rabbitmq.rst:13
 msgid "Supported Versions"
-msgstr ""
+msgstr "Versiones compatibles"
 
 #: ../../getting_started/external_services/rabbitmq.rst:15
 msgid "**RabbitMQ |rmqbranch|** (embedded default: |rmqver|)"
-msgstr ""
+msgstr "**RabbitMQ |rmqbranch|** (predeterminado incorporado: |rmqver|)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:16
 msgid "**Erlang |erlang|** (must be compatible with your RabbitMQ version)"
-msgstr ""
+msgstr "**Erlang |erlang|** (debe ser compatible con su versión de RabbitMQ)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:19
 msgid "Password changes for appliance-managed RabbitMQ"
-msgstr ""
+msgstr "Cambios de contraseña de RabbitMQ administrado por el dispositivo"
 
 #: ../../getting_started/external_services/rabbitmq.rst:21
 msgid ""
@@ -68,7 +68,7 @@ msgid ""
 "password when that user already exists. Updating only the broker or only "
 "the application configuration creates a credential mismatch and can "
 "interrupt application and agent messaging."
-msgstr ""
+msgstr "Cambiar ``rabbitmq['queue_user_password']`` o el valor correspondiente en ``morpheus-secrets.json`` y ejecutar ``morpheus-ctl reconfigure`` **no** rota la contraseña de un usuario RabbitMQ existente. La receta del dispositivo crea un usuario faltante, pero no cambia la contraseña cuando ese usuario ya existe. Actualizar solo el broker o solo la configuración de la aplicación crea una discrepancia de credenciales y puede interrumpir la mensajería de la aplicación y los agentes."
 
 #: ../../getting_started/external_services/rabbitmq.rst:23
 msgid ""
@@ -79,7 +79,7 @@ msgid ""
 "procedure for the exact topology and release. Contact HPE Support to "
 "coordinate the broker and application credential change, validation, "
 "recovery plan, and the ordering of every application node."
-msgstr ""
+msgstr "Actualmente no existe un procedimiento de autoservicio admitido para rotación de contraseñas del ``queue_user`` de RabbitMQ administrado por el dispositivo. No utilice una secuencia que combine ``rabbitmqctl change_password``, ediciones directas de ``morpheus-secrets.json`` y reconfigure a menos que HPE Support proporcione un procedimiento para la topología y versión exactas. Contacte a HPE Support para coordinar el cambio de credenciales del broker y la aplicación, la validación, el plan de recuperación y el orden de cada nodo de aplicación."
 
 #: ../../getting_started/external_services/rabbitmq.rst:25
 msgid ""
@@ -87,112 +87,112 @@ msgid ""
 "owner's process and coordinate the matching |morpheus| connection change "
 "with HPE Support. Never place a real password in documentation, command "
 "transcripts, or support artifacts."
-msgstr ""
+msgstr "Para RabbitMQ externo, rote credenciales utilizando el proceso del propietario del servicio externo y coordine el cambio de conexión correspondiente de |morpheus| con HPE Support. Nunca coloque una contraseña real en documentación, transcripciones de comandos o artefactos de soporte."
 
 #: ../../getting_started/external_services/rabbitmq.rst:28
 msgid "When to Externalize"
-msgstr ""
+msgstr "Cuándo externalizar"
 
 #: ../../getting_started/external_services/rabbitmq.rst:30
 msgid "Consider running RabbitMQ externally when:"
-msgstr ""
+msgstr "Considere ejecutar RabbitMQ externamente cuando:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:32
 msgid ""
 "You need **high availability** with clustered queues and automatic "
 "failover"
-msgstr ""
+msgstr "Necesite **alta disponibilidad** con colas en clúster y conmutación por error automática"
 
 #: ../../getting_started/external_services/rabbitmq.rst:33
 msgid ""
 "Your organization requires messaging infrastructure to be **managed by a "
 "dedicated team**"
-msgstr ""
+msgstr "Su organización requiera que la infraestructura de mensajería sea **administrada por un equipo dedicado**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:34
 msgid ""
 "You are running a **multi-node |morpheus| application tier** (Full HA) "
 "and need a shared message bus"
-msgstr ""
+msgstr "Ejecute un **nivel de aplicación |morpheus| multi-nodo** (Full HA) y necesite un bus de mensajes compartido"
 
 #: ../../getting_started/external_services/rabbitmq.rst:35
 msgid "You need to **scale messaging independently** from the application tier"
-msgstr ""
+msgstr "Necesite **escalar la mensajería de forma independiente** del nivel de aplicación"
 
 #: ../../getting_started/external_services/rabbitmq.rst:38
 msgid "Cluster Architecture"
-msgstr ""
+msgstr "Arquitectura del clúster"
 
 #: ../../getting_started/external_services/rabbitmq.rst:40
 msgid ""
 "RabbitMQ uses a quorum-based election system for failover, which requires"
 " an **odd number of nodes** (minimum 3) for HA configurations."
-msgstr ""
+msgstr "RabbitMQ utiliza un sistema de elección basado en quórum para conmutación por error, que requiere un **número impar de nodos** (mínimo 3) para configuraciones HA."
 
 #: ../../getting_started/external_services/rabbitmq.rst:42
 msgid "**Recommended topology:**"
-msgstr ""
+msgstr "**Topología recomendada:**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:44
 msgid "**3 nodes minimum** per region for HA"
-msgstr ""
+msgstr "**Mínimo 3 nodos** por región para HA"
 
 #: ../../getting_started/external_services/rabbitmq.rst:45
 msgid "All nodes are peers (no designated master)"
-msgstr ""
+msgstr "Todos los nodos son pares (sin maestro designado)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:46
 msgid ""
 "Place a **load balancer** between the |morpheus| application nodes and "
 "the RabbitMQ cluster to handle connection routing and failover"
-msgstr ""
+msgstr "Coloque un **balanceador de carga** entre los nodos de aplicación de |morpheus| y el clúster RabbitMQ para gestionar el enrutamiento de conexiones y la conmutación por error"
 
 #: ../../getting_started/external_services/rabbitmq.rst:47
 msgid "Forward both AMQP (5672) and STOMP (61613) ports through the load balancer"
-msgstr ""
+msgstr "Reenvíe los puertos AMQP (5672) y STOMP (61613) a través del balanceador de carga"
 
 #: ../../getting_started/external_services/rabbitmq.rst:49
 msgid "**Cross-region considerations:**"
-msgstr ""
+msgstr "**Consideraciones entre regiones:**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:51
 msgid "For multi-region HA, deploy at least 3 RabbitMQ nodes per region"
-msgstr ""
+msgstr "Para HA multi-región, implemente al menos 3 nodos RabbitMQ por región"
 
 #: ../../getting_started/external_services/rabbitmq.rst:52
 msgid ""
 "Cross-region clustering is possible but adds latency — evaluate whether "
 "federation or shovel plugins are more appropriate for your use case"
-msgstr ""
+msgstr "El clustering entre regiones es posible pero añade latencia — evalúe si los plugins federation o shovel son más apropiados para su caso de uso"
 
 #: ../../getting_started/external_services/rabbitmq.rst:53
 msgid ""
 "Agent STOMP connections are persistent; ensure connection timeouts and "
 "keepalives are configured appropriately for cross-region links"
-msgstr ""
+msgstr "Las conexiones STOMP de agentes son persistentes; asegúrese de que los tiempos de espera de conexión y los keepalives estén configurados apropiadamente para enlaces entre regiones"
 
 #: ../../getting_started/external_services/rabbitmq.rst:56
 msgid "Preparing the External RabbitMQ Cluster"
-msgstr ""
+msgstr "Preparación del clúster RabbitMQ externo"
 
 #: ../../getting_started/external_services/rabbitmq.rst:58
 msgid "**Step 1 — Install RabbitMQ**"
-msgstr ""
+msgstr "**Paso 1 — Instalar RabbitMQ**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:60
 msgid ""
 "Install RabbitMQ on each cluster node following the `official RabbitMQ "
 "installation guide <https://www.rabbitmq.com/install-debian.html>`_. "
 "Ensure all nodes run the same RabbitMQ and Erlang versions."
-msgstr ""
+msgstr "Instale RabbitMQ en cada nodo del clúster siguiendo la `guía oficial de instalación de RabbitMQ <https://www.rabbitmq.com/install-debian.html>`_. Asegúrese de que todos los nodos ejecuten las mismas versiones de RabbitMQ y Erlang."
 
 #: ../../getting_started/external_services/rabbitmq.rst:62
 msgid "**Step 2 — Form the cluster**"
-msgstr ""
+msgstr "**Paso 2 — Formar el clúster**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:64
 msgid "On nodes 2 and 3, join them to node 1:"
-msgstr ""
+msgstr "En los nodos 2 y 3, únalos al nodo 1:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:66
 msgid ""
@@ -203,7 +203,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:72
 msgid "Verify cluster status:"
-msgstr ""
+msgstr "Verifique el estado del clúster:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:74
 msgid "rabbitmqctl cluster_status"
@@ -211,11 +211,11 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:78
 msgid "**Step 3 — Enable required plugins**"
-msgstr ""
+msgstr "**Paso 3 — Habilitar plugins necesarios**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:80
 msgid "|morpheus| requires the STOMP plugin for agent communication:"
-msgstr ""
+msgstr "|morpheus| requiere el plugin STOMP para comunicación de agentes:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:82
 msgid "rabbitmq-plugins enable rabbitmq_stomp"
@@ -223,11 +223,11 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:86
 msgid "Enable on all cluster nodes."
-msgstr ""
+msgstr "Habilítelo en todos los nodos del clúster."
 
 #: ../../getting_started/external_services/rabbitmq.rst:88
 msgid "**Step 4 — Create the Morpheus vhost and user**"
-msgstr ""
+msgstr "**Paso 4 — Crear el vhost y usuario de Morpheus**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:90
 msgid ""
@@ -239,11 +239,11 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:97
 msgid "**Step 5 — Configure HA policy**"
-msgstr ""
+msgstr "**Paso 5 — Configurar política HA**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:99
 msgid "For queue mirroring across cluster nodes:"
-msgstr ""
+msgstr "Para replicación de colas en los nodos del clúster:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:101
 #, python-brace-format
@@ -254,44 +254,44 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:105
 msgid "This ensures all queues are mirrored across all nodes for failover."
-msgstr ""
+msgstr "Esto garantiza que todas las colas estén replicadas en todos los nodos para conmutación por error."
 
 #: ../../getting_started/external_services/rabbitmq.rst:108
 msgid "Network Requirements"
-msgstr ""
+msgstr "Requisitos de red"
 
 #: ../../getting_started/external_services/rabbitmq.rst:114
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: ../../getting_started/external_services/rabbitmq.rst:115
 msgid "Source"
-msgstr ""
+msgstr "Fuente"
 
 #: ../../getting_started/external_services/rabbitmq.rst:116
 msgid "Destination"
-msgstr ""
+msgstr "Destino"
 
 #: ../../getting_started/external_services/rabbitmq.rst:117
 msgid "Port"
-msgstr ""
+msgstr "Puerto"
 
 #: ../../getting_started/external_services/rabbitmq.rst:118
 msgid "Protocol"
-msgstr ""
+msgstr "Protocolo"
 
 #: ../../getting_started/external_services/rabbitmq.rst:119
 msgid "AMQP (application messaging)"
-msgstr ""
+msgstr "AMQP (mensajería de aplicación)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:120
 msgid "|morpheus| appliance"
-msgstr ""
+msgstr "Dispositivo |morpheus|"
 
 #: ../../getting_started/external_services/rabbitmq.rst:121
 #: ../../getting_started/external_services/rabbitmq.rst:126
 msgid "RabbitMQ node(s)"
-msgstr ""
+msgstr "Nodo(s) RabbitMQ"
 
 #: ../../getting_started/external_services/rabbitmq.rst:122
 msgid "5672"
@@ -307,11 +307,11 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:124
 msgid "STOMP (agent communication)"
-msgstr ""
+msgstr "STOMP (comunicación de agentes)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:125
 msgid "|morpheus| appliance / Agents"
-msgstr ""
+msgstr "Dispositivo |morpheus| / Agentes"
 
 #: ../../getting_started/external_services/rabbitmq.rst:127
 msgid "61613"
@@ -319,7 +319,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:129
 msgid "Erlang distribution (inter-node)"
-msgstr ""
+msgstr "Distribución Erlang (entre nodos)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:130
 #: ../../getting_started/external_services/rabbitmq.rst:131
@@ -327,7 +327,7 @@ msgstr ""
 #: ../../getting_started/external_services/rabbitmq.rst:136
 #: ../../getting_started/external_services/rabbitmq.rst:141
 msgid "RabbitMQ node"
-msgstr ""
+msgstr "Nodo RabbitMQ"
 
 #: ../../getting_started/external_services/rabbitmq.rst:132
 msgid "25672"
@@ -335,7 +335,7 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:134
 msgid "Erlang Port Mapper (epmd)"
-msgstr ""
+msgstr "Erlang Port Mapper (epmd)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:137
 msgid "4369"
@@ -343,11 +343,11 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:139
 msgid "Management UI (optional)"
-msgstr ""
+msgstr "UI de administración (opcional)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:140
 msgid "Admin workstation"
-msgstr ""
+msgstr "Estación de trabajo de administración"
 
 #: ../../getting_started/external_services/rabbitmq.rst:142
 msgid "15672"
@@ -355,102 +355,102 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:146
 msgid "Load Balancer Configuration"
-msgstr ""
+msgstr "Configuración del balanceador de carga"
 
 #: ../../getting_started/external_services/rabbitmq.rst:148
 msgid "When placing a load balancer in front of the RabbitMQ cluster:"
-msgstr ""
+msgstr "Al colocar un balanceador de carga delante del clúster RabbitMQ:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:150
 msgid "Forward **port 5672** (AMQP) with TCP mode (not HTTP)"
-msgstr ""
+msgstr "Reenvíe el **puerto 5672** (AMQP) en modo TCP (no HTTP)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:151
 msgid "Forward **port 61613** (STOMP) with TCP mode"
-msgstr ""
+msgstr "Reenvíe el **puerto 61613** (STOMP) en modo TCP"
 
 #: ../../getting_started/external_services/rabbitmq.rst:152
 msgid "Use **round-robin** or **least-connections** balancing"
-msgstr ""
+msgstr "Utilice balanceo **round-robin** o **least-connections**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:153
 msgid ""
 "Configure health checks against the RabbitMQ management API (port 15672, "
 "path ``/api/health/checks/alarms``) or a simple TCP check on port 5672"
-msgstr ""
+msgstr "Configure comprobaciones de salud contra la API de administración de RabbitMQ (puerto 15672, ruta ``/api/health/checks/alarms``) o una comprobación TCP simple en el puerto 5672"
 
 #: ../../getting_started/external_services/rabbitmq.rst:154
 msgid ""
 "Ensure the load balancer supports **long-lived connections** — STOMP "
 "agent connections are persistent"
-msgstr ""
+msgstr "Asegúrese de que el balanceador de carga admita **conexiones de larga duración** — las conexiones STOMP de agentes son persistentes"
 
 #: ../../getting_started/external_services/rabbitmq.rst:157
 msgid "TLS Configuration"
-msgstr ""
+msgstr "Configuración TLS"
 
 #: ../../getting_started/external_services/rabbitmq.rst:159
 msgid "To secure RabbitMQ communications with TLS:"
-msgstr ""
+msgstr "Para proteger las comunicaciones de RabbitMQ con TLS:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:161
 msgid ""
 "Configure RabbitMQ with TLS certificates (see `RabbitMQ TLS documentation"
 " <https://www.rabbitmq.com/ssl.html>`_)"
-msgstr ""
+msgstr "Configure RabbitMQ con certificados TLS (consulte la `documentación TLS de RabbitMQ <https://www.rabbitmq.com/ssl.html>`_)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:162
 msgid "Use TLS-enabled ports (typically 5671 for AMQPS, 61614 for STOMP over TLS)"
-msgstr ""
+msgstr "Utilice puertos con TLS habilitado (típicamente 5671 para AMQPS, 61614 para STOMP sobre TLS)"
 
 #: ../../getting_started/external_services/rabbitmq.rst:163
 msgid ""
 "Update the |morpheus| ``morpheus.rb`` configuration to point at the TLS "
 "ports and enable SSL for the connection"
-msgstr ""
+msgstr "Actualice la configuración de ``morpheus.rb`` de |morpheus| para apuntar a los puertos TLS y habilitar SSL para la conexión"
 
 #: ../../getting_started/external_services/rabbitmq.rst:166
 msgid "Memory and Resource Sizing"
-msgstr ""
+msgstr "Dimensionamiento de memoria y recursos"
 
 #: ../../getting_started/external_services/rabbitmq.rst:168
 msgid "RabbitMQ resource requirements depend on message throughput:"
-msgstr ""
+msgstr "Los requisitos de recursos de RabbitMQ dependen del rendimiento de mensajes:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:170
 msgid "**Small environments** (< 100 agents): 2 GB RAM per node"
-msgstr ""
+msgstr "**Entornos pequeños** (< 100 agentes): 2 GB de RAM por nodo"
 
 #: ../../getting_started/external_services/rabbitmq.rst:171
 msgid "**Medium environments** (100–1000 agents): 4 GB RAM per node"
-msgstr ""
+msgstr "**Entornos medianos** (100–1000 agentes): 4 GB de RAM por nodo"
 
 #: ../../getting_started/external_services/rabbitmq.rst:172
 msgid ""
 "**Large environments** (1000+ agents): 8 GB RAM per node, consider "
 "dedicated I/O-optimized storage for message persistence"
-msgstr ""
+msgstr "**Entornos grandes** (más de 1000 agentes): 8 GB de RAM por nodo; considere almacenamiento optimizado para E/S dedicado para persistencia de mensajes"
 
 #: ../../getting_started/external_services/rabbitmq.rst:174
 msgid ""
 "Monitor queue depths and memory usage via the RabbitMQ Management UI "
 "(port 15672, enable with ``rabbitmq-plugins enable "
 "rabbitmq_management``)."
-msgstr ""
+msgstr "Supervise la profundidad de colas y el uso de memoria mediante la UI de administración de RabbitMQ (puerto 15672, habilite con ``rabbitmq-plugins enable rabbitmq_management``)."
 
 #: ../../getting_started/external_services/rabbitmq.rst:177
 msgid "Troubleshooting"
-msgstr ""
+msgstr "Solución de problemas"
 
 #: ../../getting_started/external_services/rabbitmq.rst:179
 msgid "**Cluster partition (split-brain)**"
-msgstr ""
+msgstr "**Partición del clúster (split-brain)**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:181
 msgid ""
 "If network issues cause a cluster partition, RabbitMQ nodes may disagree "
 "on cluster state. Resolution:"
-msgstr ""
+msgstr "Si problemas de red causan una partición del clúster, los nodos RabbitMQ pueden discreparse sobre el estado del clúster. Resolución:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:183
 msgid ""
@@ -463,35 +463,35 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:191
 msgid "**Agent connection failures**"
-msgstr ""
+msgstr "**Fallos de conexión de agentes**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:193
 msgid "If agents cannot connect to |morpheus| after externalizing RabbitMQ:"
-msgstr ""
+msgstr "Si los agentes no pueden conectarse a |morpheus| después de externalizar RabbitMQ:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:195
 msgid ""
 "Verify port 61613 (STOMP) is open from agent hosts to the RabbitMQ "
 "cluster/load balancer"
-msgstr ""
+msgstr "Verifique que el puerto 61613 (STOMP) esté abierto desde los hosts de agentes hacia el clúster/balanceador de carga RabbitMQ"
 
 #: ../../getting_started/external_services/rabbitmq.rst:196
 msgid ""
 "Check the appliance URL is correctly configured in |AdmSet| — agents use "
 "this to determine the STOMP connection endpoint"
-msgstr ""
+msgstr "Compruebe que la URL del dispositivo esté configurada correctamente en |AdmSet| — los agentes la utilizan para determinar el endpoint de conexión STOMP"
 
 #: ../../getting_started/external_services/rabbitmq.rst:197
 msgid "Verify the ``morpheus`` user has permissions on the ``morpheus`` vhost"
-msgstr ""
+msgstr "Verifique que el usuario ``morpheus`` tenga permisos en el vhost ``morpheus``"
 
 #: ../../getting_started/external_services/rabbitmq.rst:199
 msgid "**High memory watermark**"
-msgstr ""
+msgstr "**Umbral alto de memoria**"
 
 #: ../../getting_started/external_services/rabbitmq.rst:201
 msgid "If RabbitMQ triggers its high memory watermark and blocks publishers:"
-msgstr ""
+msgstr "Si RabbitMQ activa su umbral alto de memoria y bloquea publicadores:"
 
 #: ../../getting_started/external_services/rabbitmq.rst:203
 msgid ""
@@ -501,11 +501,11 @@ msgstr ""
 
 #: ../../getting_started/external_services/rabbitmq.rst:204
 msgid "Add more RAM to the nodes"
-msgstr ""
+msgstr "Agregue más RAM a los nodos"
 
 #: ../../getting_started/external_services/rabbitmq.rst:205
 msgid ""
 "Investigate consumers that may be offline or slow (check queue depths in "
 "the Management UI)"
-msgstr ""
+msgstr "Investigue consumidores que puedan estar offline o lentos (compruebe la profundidad de colas en la UI de administración)"
 

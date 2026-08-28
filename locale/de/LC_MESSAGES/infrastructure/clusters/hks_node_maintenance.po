@@ -22,7 +22,7 @@ msgstr ""
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:2
 msgid "HKS Node Maintenance"
-msgstr ""
+msgstr "HKS Node Maintenance"
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:4
 msgid ""
@@ -31,76 +31,76 @@ msgid ""
 "automates the Kubernetes cordon and drain operations when **Enter "
 "Maintenance Mode** is selected and automates uncordon when maintenance "
 "mode is exited."
-msgstr ""
+msgstr "Der HKS-Wartungsmodus verhindert, dass neue Pods auf einem Knoten geplant werden, und versucht, geeignete Arbeitslasten vor der Wartung zu evakuieren. |morpheus| automatisiert die Kubernetes-Operationen Cordon und Drain, wenn **Enter Maintenance Mode** gewählt wird, und automatisiert Uncordon, wenn der Wartungsmodus beendet wird."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:7
 msgid "Before Maintenance"
-msgstr ""
+msgstr "Vor der Wartung"
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:9
 msgid ""
 "Confirm all cluster nodes report Ready and that no other node is already "
 "in maintenance."
-msgstr ""
+msgstr "Bestätigen Sie, dass alle Clusterknoten Ready melden und dass kein anderer Knoten bereits in Wartung ist."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:10
 msgid ""
 "Review PodDisruptionBudgets and ensure workloads have enough healthy "
 "replicas and capacity on other worker nodes."
-msgstr ""
+msgstr "Prüfen Sie PodDisruptionBudgets und stellen Sie sicher, dass Arbeitslasten genug gesunde Replicas und Kapazität auf anderen Worker-Knoten haben."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:11
 msgid ""
 "Identify workloads that use ``emptyDir`` storage; draining with deletion "
 "enabled removes that node-local data."
-msgstr ""
+msgstr "Identifizieren Sie Arbeitslasten, die ``emptyDir``-Speicher nutzen; Drain mit aktivierter Löschung entfernt diese knotenlokalen Daten."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:12
 msgid ""
 "Confirm DaemonSet Pods do not need evacuation. The automated drain "
 "ignores DaemonSets."
-msgstr ""
+msgstr "Bestätigen Sie, dass DaemonSet-Pods nicht evakuiert werden müssen. Der automatisierte Drain ignoriert DaemonSets."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:15
 msgid "Worker Nodes"
-msgstr ""
+msgstr "Worker Nodes"
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:17
 msgid ""
 "Open the HKS worker node and select :menuselection:`ACTIONS --> Enter "
 "Maintenance Mode`."
-msgstr ""
+msgstr "Öffnen Sie den HKS-Worker-Knoten und wählen Sie :menuselection:`ACTIONS --> Enter Maintenance Mode`."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:18
 msgid ""
 "Review the maintenance options before confirming. |morpheus| cordons the "
 "node and runs a drain operation; options can allow ignoring DaemonSets, "
 "forcing eviction, or deleting ``emptyDir`` data."
-msgstr ""
+msgstr "Prüfen Sie die Wartungsoptionen vor der Bestätigung. |morpheus| cordoned den Knoten und führt eine Drain-Operation aus; Optionen können Ignorieren von DaemonSets, erzwungenes Evict oder Löschen von ``emptyDir``-Daten zulassen."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:19
 msgid ""
 "Follow the process output. If drain fails because of a disruption budget "
 "or non-evictable workload, stop and correct that condition rather than "
 "powering off the node."
-msgstr ""
+msgstr "Verfolgen Sie die Prozessausgabe. Wenn Drain wegen eines Disruption Budgets oder einer nicht evictbaren Arbeitslast fehlschlägt, stoppen Sie und beheben Sie diesen Zustand, statt den Knoten auszuschalten."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:20
 msgid ""
 "Verify the node reports ``SchedulingDisabled`` and that application Pods "
 "have moved to healthy nodes. DaemonSet Pods can remain."
-msgstr ""
+msgstr "Prüfen Sie, dass der Knoten ``SchedulingDisabled`` meldet und dass Anwendungs-Pods auf gesunde Knoten verschoben wurden. DaemonSet-Pods können verbleiben."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:21
 msgid ""
 "Complete maintenance, power the node on if necessary, and select **Exit "
 "Maintenance Mode**. |morpheus| uncordons the node. Confirm it reports "
 "Ready and accepts a test workload."
-msgstr ""
+msgstr "Schließen Sie die Wartung ab, schalten Sie den Knoten bei Bedarf ein und wählen Sie **Exit Maintenance Mode**. |morpheus| uncordoned den Knoten. Bestätigen Sie, dass er Ready meldet und eine Testarbeitslast annimmt."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:24
 msgid "Control-plane Nodes"
-msgstr ""
+msgstr "Control-plane Nodes"
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:26
 msgid ""
@@ -109,37 +109,37 @@ msgid ""
 "cluster operations and that removing the target node will preserve etcd "
 "quorum and Kubernetes API availability. Stop if quorum is already "
 "degraded or the remaining control-plane nodes are not healthy."
-msgstr ""
+msgstr "Warten Sie jeweils nur einen Control-Plane-Knoten. Bestätigen Sie vor dem Eintritt in die Wartung, dass ein anderer eingeschalteter Control-Plane-Knoten verfügbar ist, um Clusteroperationen auszuführen, und dass das Entfernen des Zielknotens Quorum von etcd und die Verfügbarkeit der Kubernetes API erhält. Stoppen Sie, wenn das Quorum bereits beeinträchtigt ist oder die übrigen Control-Plane-Knoten nicht gesund sind."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:28
 msgid "Enter maintenance mode from the control-plane node's Actions menu."
-msgstr ""
+msgstr "Wechseln Sie über das Actions-Menü des Control-Plane-Knotens in den Wartungsmodus."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:29
 msgid ""
 "Monitor the cordon-and-drain process and verify the Kubernetes API "
 "remains available through another control-plane node."
-msgstr ""
+msgstr "Überwachen Sie den Cordon-and-Drain-Prozess und prüfen Sie, dass die Kubernetes API über einen anderen Control-Plane-Knoten verfügbar bleibt."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:30
 msgid ""
 "Perform the planned maintenance without changing additional control-plane"
 " nodes."
-msgstr ""
+msgstr "Führen Sie die geplante Wartung durch, ohne weitere Control-Plane-Knoten zu ändern."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:31
 msgid ""
 "Exit maintenance mode, then confirm the node is Ready, uncordoned, and "
 "participating normally before proceeding to another node."
-msgstr ""
+msgstr "Beenden Sie den Wartungsmodus und bestätigen Sie dann, dass der Knoten Ready, uncordoned und normal beteiligt ist, bevor Sie mit einem weiteren Knoten fortfahren."
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:33
 msgid "Warning"
-msgstr ""
+msgstr "Warnung"
 
 #: ../../infrastructure/clusters/hks_node_maintenance.rst:33
 msgid ""
 "Do not force a control-plane drain to bypass a quorum or API-availability"
 " problem. Resolve cluster health first."
-msgstr ""
+msgstr "Erzwingen Sie keinen Control-Plane-Drain, um ein Quorum- oder API-Verfügbarkeitsproblem zu umgehen. Beheben Sie zuerst den Cluster-Betriebszustand."
 
