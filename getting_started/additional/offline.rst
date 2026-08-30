@@ -53,7 +53,7 @@ Ubuntu/Debian
 
 The Chef run should complete successfully. There is a small pause when Chef runs the resource remote_file[package_name] action create while Chef verifies the checksum. After the reconfigure is complete, the morpheus-ui will start and be up in a few minutes.
 
-.. NOTE:: Tail the morpheus log file located at /var/log/morpheus/morpheus-ui/current with the command ``morpheus-ctl tail morpheus-ui`` and look for the Morpheus ascii logo to know when the morpheus-ui is up.
+.. NOTE:: Refresh your browser and wait for the UI loading screen to finish. Only if the UI does not become available or the loading screen stalls, run ``morpheus-ctl tail morpheus-ui`` (or inspect ``/var/log/morpheus/morpheus-ui/current``).
 
 
 CentOS/RHEL
@@ -89,4 +89,4 @@ CentOS/RHEL
 
 The Chef run should complete successfully. There is a small pause when Chef runs the resource remote_file[package_name] action create while Chef verifies the checksum. After the reconfigure is complete, the morpheus-ui will start and be up in a few minutes.
 
-.. NOTE:: Tail the morpheus-ui log file with ``morpheus-ctl tail morpheus-ui`` and look for the Morpheus ascii logo to know when the morpheus-ui is up.
+.. NOTE:: Refresh your browser and wait for the UI loading screen to finish. Only if the UI does not become available or the loading screen stalls, run ``morpheus-ctl tail morpheus-ui``.

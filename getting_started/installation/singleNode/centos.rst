@@ -47,18 +47,13 @@ Step-by-step Install Instructions
 
    .. note:: Configuration options can be updated after the initial reconfigure by editing ``/etc/morpheus/morpheus.rb`` and running ``sudo morpheus-ctl reconfigure`` again. Appliance and other services may need to be restarted depending on configuration changes.
 
-#. Once the installation is complete the morpheus-ui service will automatically start up and be available shortly. To monitor the UI startup process, run ``morpheus-ctl tail morpheus-ui`` and look for the ascii logo accompanied by the install version and start time: 
+#. Once the installation is complete the ``morpheus-ui`` service starts automatically. Open the appliance URL in your browser, refresh if needed, and wait for the UI loading screen to finish. When the first-time setup wizard (or login page) appears, the UI is ready.
 
-   .. code-block:: console
+   Only if the UI does not become available or the loading screen stalls, inspect the application log::
 
-      timestamp:    __  ___              __
-      timestamp:   /  |/  /__  _______  / /  ___ __ _____
-      timestamp:  / /|_/ / _ \/ __/ _ \/ _ \/ -_) // (_-<
-      timestamp: /_/  /_/\___/_/ / .__/_//_/\__/\_,_/___/
-      timestamp: ****************************************
-      timestamp:   Version: |morphver|
-      timestamp:   Start Time: xxx xxx xxx 00:00:00 UTC 2021
-      timestamp: ****************************************
+      morpheus-ctl tail morpheus-ui
+
+   or open ``/var/log/morpheus/morpheus-ui/current``. Successful startup typically shows the |morpheus| ascii logo with the install version and start time.
 
 There are additional install settings that can be viewed in the :ref:`additional_options` section.
 

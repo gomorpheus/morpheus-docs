@@ -5,8 +5,12 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 .. important:: The following is only for Full HA Architecture configurations, where MySQL, Elasticsearch and RabbitMQ services are external to the App nodes.
 
-|nonRollingUpgradeVer| or lower -> |morphver| Upgrade
-.....................................................
+Below |minRollingUpgradeVer| -> |morphver| (non-rolling)
+.......................................................
+
+.. important::
+
+   From any release **below** |minRollingUpgradeVer|, use this non-rolling procedure. Stop ``morpheus-ui`` on all app nodes first; the upgrade requires downtime. Rolling upgrades apply only when every app node is already on |minRollingUpgradeVer| or higher.
 
 .. important:: It is important to stop the morpheus-ui service on all app nodes prior to upgrade. Failure to do so will result in a flood of log errors due to previous message serialization conflict. The messages will eventually expire and the logs will clear.
 
@@ -34,7 +38,7 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
     [root@app-server-1 ~]# sudo rpm -Uhv morpheus-appliance-x.x.x-x.x86_64.rpm
     [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
 
-   .. note::	All services will automatically be stopped and started during the reconfigure process. After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+   .. note::	All services will automatically be stopped and started during the reconfigure process. After the reconfigure has succeeded, refresh your browser and wait for the UI loading screen to complete. Only if the UI does not become available or the loading screen stalls, tail the logs with ``morpheus-ctl tail morpheus-ui``.
 
 #. Once App Node 1 upgrade has completed and the ui is available, upgrade the RPM package on App Node 2, then run a Reconfigure on App Node 2.
 
@@ -58,10 +62,10 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
 
 |
 
-|minRollingUpgradeVer| -> |morphver| Upgrade
-............................................
+|minRollingUpgradeVer| or higher -> |morphver| (rolling)
+.......................................................
 
-.. NOTE:: Rolling upgrades are supported for |minRollingUpgradeVer| -> |morphver| only.
+.. NOTE:: Rolling upgrades (no full UI outage) are supported only when every app node is already on |minRollingUpgradeVer| or higher before upgrading to |morphver|. From any earlier version, use the non-rolling procedure above — that path requires downtime.
 
 .. warning:: |morpheus| |morphver| contains new node and VM node packages that require 3.5GB of storage. It is safe to run ``sudo rm -Rf /var/opt/morpheus/package-repos/*`` after |morphver| package installation and before reconfigure to clean old node and vm node packages from the package-repo when room is needed.
 
@@ -75,7 +79,7 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
     [root@app-server-1 ~]# sudo morpheus-ctl reconfigure
     [root@app-server-1 ~]# sudo morpheus-ctl start morpheus-ui
 
-   After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+   After the reconfigure has succeeded, refresh your browser and wait for the UI loading screen to complete. Only if the UI does not become available or the loading screen stalls, tail the logs with ``morpheus-ctl tail morpheus-ui``.
 
 #. Once App Node 1 upgrade has completed and the ui is available, upgrade the RPM package on App Node 2, then run a Reconfigure on App Node 2.
 
@@ -87,7 +91,7 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
     [root@app-server-2 ~]# sudo morpheus-ctl reconfigure
     [root@app-server-2 ~]# sudo morpheus-ctl start morpheus-ui
 
-   After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+   After the reconfigure has succeeded, refresh your browser and wait for the UI loading screen to complete. Only if the UI does not become available or the loading screen stalls, tail the logs with ``morpheus-ctl tail morpheus-ui``.
 
 #. Once App Node 2 upgrade has completed and the u is available, upgrade the RPM package on App Node 3, then run a Reconfigure on App Node 3
 
@@ -99,7 +103,7 @@ The following covers upgrading the |morpheus| App nodes in Full HA Architecture 
     [root@app-server-3 ~]# sudo morpheus-ctl reconfigure
     [root@app-server-3 ~]# sudo morpheus-ctl start morpheus-ui
 
-   After the reconfigure has succeeded, tail the ui service to watch ui startup logs with ``morpheus-ctl tail morpheus-ui``.
+   After the reconfigure has succeeded, refresh your browser and wait for the UI loading screen to complete. Only if the UI does not become available or the loading screen stalls, tail the logs with ``morpheus-ctl tail morpheus-ui``.
 
 #. The upgrade is complete and the |morpheus|-ui services should be running with clustered Elasticsearch and RabbitMQ services across the 3 nodes.
 

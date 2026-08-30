@@ -205,34 +205,9 @@ Clustering Embedded RabbitMQ
             [root@node3 ~] morpheus-ctl start morpheus-ui
 
 
-#. You will be able to verify that the UI services have restarted properly by inspecting the logfiles. A standard practice after running a restart is to tail the UI log file.
+#. Confirm the UI is available by refreshing your browser and waiting for the loading screen to finish. Only if the UI does not become available or the loading screen stalls, inspect the logs on the node you just started::
 
-   .. content-tabs::
+      morpheus-ctl tail morpheus-ui
 
-      .. tab-container:: tab1
-         :title: Node 2
+   Successful startup typically shows the |morpheus| ascii logo with the install version and start time in ``/var/log/morpheus/morpheus-ui/current``.
 
-         .. code-block:: bash
-
-            [root@node2 ~] morpheus-ctl tail morpheus-ui
-
-      .. tab-container:: tab2
-         :title: Node 3
-
-         .. code-block:: bash
-
-            [root@node3 ~] morpheus-ctl tail morpheus-ui
-
-   The UI should be available once the Morpheus logo is displayed in the logs. 
-   Look for the ascii logo accompanied by the install version and start time:
-   
-   .. code-block:: console
-
-      timestamp:    __  ___              __
-      timestamp:   /  |/  /__  _______  / /  ___ __ _____
-      timestamp:  / /|_/ / _ \/ __/ _ \/ _ \/ -_) // (_-<
-      timestamp: /_/  /_/\___/_/ / .__/_//_/\__/\_,_/___/
-      timestamp: ****************************************
-      timestamp:   Version: |morphver|
-      timestamp:   Start Time: xxx xxx xxx 00:00:00 UTC 2024
-      timestamp: ****************************************

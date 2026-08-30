@@ -1,11 +1,74 @@
 Upgrading Clusters
 ==================
 
-This section covers upgrade procedures for HVM clusters, including layout upgrades, appliance version upgrades, and agent package updates.
+This section is the detailed HVM cluster upgrade reference (layout transitions, rolling Host updates, Agent behavior on the Host, and verification). For the overall |morpheus| upgrade entry point—including Manager VM, HA app nodes, and when to return here for HVM—start at :doc:`/getting_started/maintenance/upgrading`.
+
+Upgrade sequence
+^^^^^^^^^^^^^^^^
+
+Complete these steps in order. Layout and rolling cluster updates depend on a Manager that already includes the target release's update definitions.
+
+#. **Upgrade the** |morpheus| **appliance (Manager)** — Required before you can offer or run layout updates. See :ref:`hvm-appliance-upgrade` below.
+#. **Run the cluster layout or rolling update** — After the Manager is on the target version, perform the layout transition (for example 1.2 → 1.3) or a rolling host update from the cluster actions in the UI. See the sections that follow.
+#. **Confirm agent and quorum health** — Host Agent upgrades that a layout update requires are handled automatically during the cluster update when needed; verify connectivity and Quorum afterward.
 
 .. important:: A layout upgrade and an HVM OS update are separate operations. Layout 1.3 uses HVM OS/Ubuntu 24.04; layout 2.0 uses HVM OS 26.04. The supported layouts run in parallel. Do not change a cluster's layout or HVM OS outside a documented product workflow.
 
 .. warning:: The rolling update described here is an orchestrated cluster operation that runs the update and rollback scripts supplied by the selected HVM layout. It is not approval to perform an arbitrary Ubuntu release upgrade, replace package sources, or run general-purpose base-OS upgrade commands on an HVM host. No supported in-place base-OS transition outside a released cluster update is documented. If the required target OS is not offered by a product workflow, stop and contact Support for an approved migration or host-replacement plan; do not derive one from generic Ubuntu guidance.
+
+.. _hvm-appliance-upgrade:
+
+Step 1: Morpheus Appliance Upgrade
+----------------------------------
+
+Upgrade the |morpheus| appliance **before** starting any HVM layout or rolling cluster update. The Manager release publishes the cluster update definitions and minimum Agent versions that the later steps consume. Do not attempt a layout update against an older Manager that does not yet offer that update.
+
+How to upgrade the appliance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Follow the Getting Started upgrade hub for your topology — that is the canonical package procedure:
+
+:doc:`/getting_started/maintenance/upgrading`
+
+**Primary path — HPE Morpheus Manager VM (Debian package):** Most HVM deployments use the HPE Morpheus Manager QCOW2 (or equivalent) on Ubuntu/Debian. Use the Debian / Ubuntu section of :ref:`singleUpgrade`:
+
+.. code-block:: bash
+
+   sudo morpheus-ctl stop morpheus-ui
+   sudo dpkg -i morpheus-appliance_x.x.x-1_amd64.deb
+   sudo morpheus-ctl reconfigure
+
+**Other topologies:**
+
+- **Single-node on your own guest OS** (``.deb`` or ``.rpm``): :ref:`singleUpgrade`
+- **3-Node HA:** :doc:`/getting_started/maintenance/upgrades/3node/overview`
+- **Full HA:** :doc:`/getting_started/maintenance/upgrades/fullha/overview`
+
+A Getting Started summary of Manager-then-HVM order is also in :doc:`/getting_started/maintenance/upgrades/hvm_clusters`.
+
+HVM behavior during the appliance upgrade
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+While the Manager is offline for the package install and reconfigure:
+
+- Active HVM clusters continue to operate (agents are self-sustaining)
+- Quorum decisions are made by agents independently of the appliance
+- Heartbeat writes continue regardless of appliance connectivity
+- VM failover still works during appliance downtime
+
+.. NOTE:: The |morpheus| agent's QuorumCheckService operates autonomously. Cluster quorum, heartbeat monitoring, and failover continue even if the |morpheus| appliance is offline for maintenance.
+
+Post-upgrade verification (before layout updates)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+After the appliance upgrade completes and the UI is available:
+
+#. Navigate to :menuselection:`Infrastructure --> Clusters`
+#. Verify all clusters show their expected state
+#. Check the Quorum panel for each cluster — confirm ACHIEVED status
+#. Verify agent connectivity (all hosts show recent ``lastAgentUpdate``)
+
+Only after this verification, proceed to a layout upgrade or rolling cluster update.
 
 Layout 1.2 → 1.3 Upgrade
 --------------------------
@@ -52,7 +115,7 @@ What Is Preserved
 Upgrade Process
 ^^^^^^^^^^^^^^^^
 
-The layout upgrade is performed as part of a cluster update operation. During the upgrade:
+The layout upgrade is performed as part of a cluster update operation after the Manager is on a release that publishes the 1.2-to-1.3 update. During the upgrade:
 
 .. IMPORTANT:: The released HVM 1.2-to-1.3 update definitions require |morpheus| Agent 3.2.7 or later on each Host. This minimum applies to this layout transition only; it is not a general Agent requirement for every VME Manager upgrade or every HVM update. The cluster update upgrades an older Host Agent before running the transition scripts and stops if the Agent cannot reconnect at the required version.
 
@@ -120,35 +183,10 @@ If the cluster layout defines rollback scripts, they are executed in reverse ord
 
 This restores the cluster to its pre-update state.
 
-Morpheus Appliance Upgrades
------------------------------
-
-When upgrading the |morpheus| appliance itself:
-
-Pre-Upgrade Considerations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-- Active HVM clusters will continue to operate during the appliance upgrade (agents are self-sustaining)
-- Quorum decisions are made by agents independently of the appliance
-- Heartbeat writes continue regardless of appliance connectivity
-- VM failover will still work during appliance downtime
-
-.. NOTE:: The |morpheus| agent's QuorumCheckService operates autonomously. Cluster quorum, heartbeat monitoring, and failover continue even if the |morpheus| appliance is offline for maintenance.
-
-Post-Upgrade Verification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-After upgrading the |morpheus| appliance:
-
-#. Navigate to ``Infrastructure > Clusters``
-#. Verify all clusters show their expected state
-#. Check the Quorum panel for each cluster — confirm ACHIEVED status
-#. Verify agent connectivity (all hosts show recent ``lastAgentUpdate``)
-
 Agent Package Updates
 -----------------------
 
-The |morpheus| agent on each cluster host can be updated independently of cluster layout updates.
+The |morpheus| agent on each cluster host can be updated independently of cluster layout updates. Automatic upgrades run when a layout or rolling cluster update requires a minimum Agent version. Manual upgrades are the supported path after Manager patch (and many minor) releases that do not ship an HVM layout update, so Hosts receive Agent improvements such as quorum and health-check logic and telemetry.
 
 Automatic Agent Upgrades
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,17 +203,31 @@ The automatic agent upgrade:
 Manual Agent Upgrades
 ^^^^^^^^^^^^^^^^^^^^^^
 
-.. NOTE:: Manual agent upgrades are typically not required. The rolling cluster update process handles agent upgrades automatically when needed.
+Manual Host Agent upgrades **are** recommended when a Manager patch or minor release does not include an HVM layout or rolling cluster update. Layout-driven updates upgrade the Agent automatically only when ``minAgentVersion`` requires it. Patch releases often still ship Host Agent improvements—for example quorum and health-check logic, fencing behavior, and telemetry—that do not ride a layout change. After those Manager upgrades, trigger Agent upgrades on each HVM Host so the cluster picks up the new Agent package.
+
+To upgrade from the UI:
+
+#. Open the Host detail page (:menuselection:`Infrastructure --> Clusters --> [Cluster] --> Hosts`, or the Hosts list)
+#. Expand :guilabel:`ACTIONS` and select :guilabel:`Upgrade Agent`
+#. Wait for the Agent to disconnect and reconnect, then confirm the reported Agent version
+
+Repeat for **every** HVM Host in the cluster. Alternatively, select :guilabel:`Download Agent Script`, connect to that Host over SSH, and run the downloaded script. Scripts are Host-specific; download and run the correct script on each Host.
+
+.. NOTE:: When a rolling cluster or layout update is in progress and defines a ``minAgentVersion``, prefer letting that update upgrade the Agent automatically. Use manual :guilabel:`Upgrade Agent` for Manager releases that do not run a layout update, or when release notes call out a Host Agent upgrade.
+
+After a Manager upgrade that does not include a layout update, check for available Host Agent upgrades before treating the environment as fully current. See also the Agent guidance in :doc:`/release_notes/lifecycle` and the release notes for the Manager version you installed.
 
 Pre-Upgrade Checklist
 ----------------------
 
-Before performing any cluster upgrade:
+Before performing a cluster layout or rolling update:
 
 .. list-table::
    :widths: 5 95
    :header-rows: 0
 
+   * - ☐
+     - Upgrade the |morpheus| appliance to the target Manager release and confirm the UI is healthy (see :ref:`hvm-appliance-upgrade`)
    * - ☐
      - Verify cluster health: Quorum ACHIEVED, all nodes ONLINE, no fenced nodes
    * - ☐

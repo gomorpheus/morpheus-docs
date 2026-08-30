@@ -27,7 +27,7 @@ To get started installing |morpheus| on Ubuntu or Debian a few preparatory items
      sudo morpheus-ctl stop morpheus-ui
      sudo morpheus-ctl start morpheus-ui
 
-   .. NOTE:: The `morpheus-ui` can take 2-3 minutes to startup before it becomes available.
+   Open (or refresh) the appliance URL in your browser and wait for the UI loading screen to finish. The ``morpheus-ui`` service can take a few minutes to become available. Only if the UI does not load or the loading screen stalls, run ``morpheus-ctl tail morpheus-ui`` or inspect ``/var/log/morpheus/morpheus-ui/current``.
 
 There are additional install settings that can be viewed in the :ref:`additional_options` section.
 
