@@ -59,12 +59,14 @@ Before enabling segmentation, verify all of the following on every GPU Host:
 - The corresponding NVIDIA vGPU guest driver package is available for each supported Windows or Linux guest image.
 - DNS, time synchronization, routing, proxy, and firewall configuration permit guest VMs to reach the selected NVIDIA License System service instance.
 
-See the NVIDIA `Virtual GPU Software User Guide <https://docs.nvidia.com/vgpu/latest/grid-vgpu-user-guide/index.html>`_, `Ubuntu support matrix <https://docs.nvidia.com/vgpu/latest/product-support-matrix/ubuntu.html>`_, and release notes for the selected NVIDIA vGPU software branch. Do not install a newer generic NVIDIA driver solely because it is available; host kernel and guest driver compatibility must be maintained as a set.
+See the NVIDIA `Virtual GPU Software User Guide <https://docs.nvidia.com/vgpu/latest/grid-vgpu-user-guide/index.html>`_, `Linux with KVM support matrix <https://docs.nvidia.com/vgpu/latest/product-support-matrix/generic-linux-kvm.html>`_, `Ubuntu support matrix <https://docs.nvidia.com/vgpu/latest/product-support-matrix/ubuntu.html>`_, and release notes for the selected NVIDIA vGPU software branch. Do not install a newer generic NVIDIA driver solely because it is available; host kernel and guest driver compatibility must be maintained as a set.
 
 Install the NVIDIA Host Software
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-NVIDIA vGPU software is entitlement-controlled. Download the Linux KVM/Ubuntu vGPU software package authorized for the environment. The package includes the NVIDIA vGPU Manager for the Host and matching guest drivers.
+NVIDIA vGPU software is entitlement-controlled. Download the Linux KVM Host package and matching guest drivers from the NVIDIA Licensing Portal. Sign in to the `NVIDIA Application Hub <https://nvid.nvidia.com/dashboard/>`_ with an NVIDIA Enterprise Account, open the NVIDIA Licensing Portal, and select **Software Downloads**. NVIDIA's `Getting NVIDIA vGPU Software <https://docs.nvidia.com/vgpu/latest/grid-software-quick-start-guide/getting-your-nvidia-grid-software.html>`_ guide describes the account and download process.
+
+Download the NVIDIA vGPU software release for Linux KVM that is authorized for the environment. Confirm GPU, Host OS, and guest OS support in NVIDIA's `Linux with KVM support matrix <https://docs.nvidia.com/vgpu/latest/product-support-matrix/generic-linux-kvm.html>`_ and the `Ubuntu support matrix <https://docs.nvidia.com/vgpu/latest/product-support-matrix/ubuntu.html>`_ for the HVM Host OS. The package includes the NVIDIA vGPU Manager for the Host and matching guest drivers.
 
 #. Place the HVM Host into maintenance and evacuate or stop workloads according to :doc:`host_maintenance`.
 #. Confirm the exact HVM OS, kernel, GPU, firmware, and Secure Boot state.
@@ -133,7 +135,7 @@ GPU devices are not hot-pluggable in this workflow. Assigning or removing a devi
 Install and License the Guest Driver
 ------------------------------------
 
-Install the NVIDIA vGPU guest driver from the same compatible NVIDIA vGPU software release used for the Host. Follow NVIDIA's Windows or Linux guest instructions and verify the vGPU with ``nvidia-smi`` inside the VM.
+Install the NVIDIA vGPU guest driver from the same NVIDIA vGPU software release downloaded for the Host. Guest drivers are included with the Linux KVM package on the NVIDIA Licensing Portal. Follow NVIDIA's Windows or Linux guest instructions and verify the vGPU with ``nvidia-smi`` inside the VM.
 
 NVIDIA vGPU licensing is separate from the Morpheus appliance license. NVIDIA vGPU software automatically selects the license edition from the profile series:
 
