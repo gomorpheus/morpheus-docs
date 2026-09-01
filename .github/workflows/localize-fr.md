@@ -25,6 +25,9 @@ on:
 
 engine: copilot
 
+checkout:
+  fetch-depth: 2
+
 permissions:
   contents: read
   copilot-requests: write
