@@ -10,7 +10,7 @@ Requirements
 ^^^^^^^^^^^^
 
 - The VM must be running (powered on)
-- The VM's storage must reside on a shared datastore (HPE Clustered Datastore or NFS). VMs with local storage cannot be live-migrated
+- The VM's storage must reside on a shared datastore (HPE Clustered Datastore or NFS), or every local volume must be mapped to a target datastore. Unmapped local storage cannot be live-migrated
 - No host devices (GPU/USB passthrough) are attached to the VM
 - The target host must have sufficient available memory
 - Network connectivity between source and target hosts
@@ -27,11 +27,21 @@ Do not assume that |morpheus| automatically selects the lowest processor generat
 Initiating a Live Migration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Navigate to ``Infrastructure > Clusters > [Cluster] > Virtual Machines``
-#. Select the VM to migrate
-#. Click :guilabel:`Actions` > :guilabel:`Move`
-#. Select the target host from the available hosts list
-#. Confirm the migration
+Start a move from any of these locations:
+
+- Instance detail: |ProIns| > select the Instance > :guilabel:`Actions` > :guilabel:`Move`
+- Virtual machine detail: |InfComVir| > select the VM > :guilabel:`Actions` > :guilabel:`Move`
+- Cluster inventory: |InfClu| > select the cluster > :guilabel:`Virtual Machines` > select the VM > :guilabel:`Actions` > :guilabel:`Move`
+
+The user must have **Infrastructure: Manage Placement** at User or Full.
+
+In the Move dialog:
+
+#. Select the **Target Cluster**. Leave the current cluster selected to move within the same cluster. Choose a different HVM cluster in the same Cloud for a cross-cluster move.
+#. Optionally select a **Target Host**. Leave blank to auto-select a host in the target cluster.
+#. For a different cluster, map datastores and networks as described in `Moving VMs Between HVM Clusters`_.
+#. Optionally enable **CPU Throttling** and set a **Migration Timeout** in seconds (default 6000; range 30–7200).
+#. Click :guilabel:`Move`.
 
 .. NOTE:: |morpheus| automatically determines whether to perform a live or cold migration based on the VM's current power state and storage configuration.
 
@@ -58,6 +68,64 @@ Migration Options
      - Maximum time allowed for the migration to complete before it is cancelled
    * - CPU Throttling
      - When enabled, throttles the VM's CPU during migration to help convergence for memory-intensive workloads
+
+Moving VMs Between HVM Clusters
+-------------------------------
+
+Use :guilabel:`Actions` > :guilabel:`Move` to relocate a running HVM/KVM VM to another HVM cluster in the same Cloud. Select the destination cluster, optionally a host, then map each disk and NIC to a datastore and network on the target. A powered-on VM is transferred with no guest downtime (live migration). A powered-off VM is relocated cold.
+
+This is not a VMware-to-HVM conversion. For converting VMs from vCenter into HVM, see :doc:`/tools/migrations/overview`.
+
+Move between HVM clusters stays in one |morpheus| Cloud. It does not move VMs between Clouds or between |morpheus| Managers.
+
+Requirements
+^^^^^^^^^^^^
+
+In addition to the live-migration requirements above:
+
+- Source and target are HVM clusters in the same Cloud
+- The target host is enabled and has enough available memory
+- Each mapped target datastore is online and has capacity for the volume
+- Each mapped target network has a bridge that exists on the destination host
+- Source and target hosts can reach each other so |morpheus| can propagate an SSH key for ``qemu+ssh`` transport
+- The VM CPU definition is supported on the destination hosts
+
+When a volume is mapped to a different datastore, |morpheus| copies storage as part of the move. Unmapped volumes are treated as already reachable on the destination (shared storage with the same path). Unmapped networks keep the same bridge name on the target host.
+
+Initiating a Cross-Cluster Move
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. Open the Instance or VM detail page and click :guilabel:`Actions` > :guilabel:`Move`.
+#. Set **Target Cluster** to the destination HVM cluster.
+#. Optionally set **Target Host**. Leave blank to auto-select within that cluster.
+#. Under **Datastore Mapping**, map each source volume to a datastore on the destination cluster. The dialog shows the volume size and current datastore.
+#. Under **Network Mapping**, map each source NIC to a network or bridge on the destination cluster.
+#. Optionally enable **CPU Throttling** and set **Migration Timeout**.
+#. Click :guilabel:`Move`.
+
+If the Instance has more than one VM, the dialog states that all VMs in the Instance are migrated to the target.
+
+What Happens During a Cross-Cluster Move
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+#. |morpheus| validates the target host, storage mappings, and network mappings
+#. An SSH key is propagated from the source host to the target host
+#. Target storage pools are prepared and refreshed; target bridges are verified
+#. Domain XML is rewritten with the mapped disk paths and bridge names
+#. The VM is live-migrated if it is powered on, or relocated cold if it is powered off
+#. After success, the VM, Instance, and container records are updated to the destination cluster, Cloud resource pool, datastores, and networks
+
+Limitations
+^^^^^^^^^^^
+
+- Same-cluster network remapping is not supported. Change networks with Reconfigure, not Move, when the VM stays in the current cluster.
+- Linked-clone VMs cannot be storage-migrated. Linked clones on local storage also cannot change hosts.
+- VMs with snapshots cannot be storage-migrated. Remove snapshots first.
+- VMs with assigned host devices (GPU/USB passthrough) cannot be live-migrated or storage-migrated.
+- Multi-attached, read-only, and ISO volumes cannot be included in a storage mapping.
+- Local storage without a datastore mapping requires the VM to be powered off.
+- VMs that use SR-IOV networks or vGPU assignments are not eligible for live migration. See :doc:`hvm_networks` and :doc:`nvidia_vgpu`.
+- The target host must differ from the current host.
 
 Cold Migration
 --------------

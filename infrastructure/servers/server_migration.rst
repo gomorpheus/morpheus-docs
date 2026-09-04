@@ -51,6 +51,8 @@ Cold Migration
 Storage Migration
   Only the VM's storage is relocated to a different datastore. The VM remains on the same host.
 
+For HVM/KVM clusters, use :guilabel:`Actions` > :guilabel:`Move` on the Instance or VM detail page to relocate a VM to another host or HVM cluster. Cross-cluster moves map datastores and networks on the destination cluster. This is not a VMware-to-HVM conversion. See :doc:`/infrastructure/clusters/hvm/vm_migration`.
+
 .. NOTE:: Migration availability and options depend on the underlying cloud type and hypervisor capabilities. Not all cloud types support all migration modes.
 
 Monitoring Migration Status

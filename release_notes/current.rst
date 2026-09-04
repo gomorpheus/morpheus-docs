@@ -27,6 +27,7 @@ New Features
                       - Host Configuration Backup & Restore: back up HVM host identity and configuration for faster hardware replacement
                       - Bulk operations: trigger actions on multiple VMs or hosts simultaneously (migrate, snapshot, power operations, tag, and more)
                       - Increased live migration concurrency during Maintenance Mode to reduce maintenance windows for dense environments
+                      - Cross-cluster Move: relocate running HVM/KVM VMs between HVM clusters in the same Cloud, mapping datastores and networks from Instance or VM :guilabel:`Actions` > :guilabel:`Move`
                       - Connect and disconnect virtual network interfaces on running VMs without requiring a full reconfigure, supporting backup recovery and security isolation workflows
                       - Expose advanced VM deployment settings (TPM, Secure Boot, UEFI, Nested Virtualization) in Reconfigure for Day 2 modifications without rebuilding
                       - Centralized Affinity Placement management: view and manage VM affinity rules and pinning overrides from a single cluster-level interface

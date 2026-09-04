@@ -31,6 +31,8 @@ Lock/Unlock Instance
   A locked instance cannot be deleted until it is unlocked.
 Reconfigure
   The Reconfigure action allows service plan, disk, cpu, ram, networks and storage controller changes. Available options depend on the instance type and service plan configuration. Some resize actions require an instance restart.
+Move
+  Relocates HVM/KVM VMs to another host or HVM cluster in the same Cloud. Cross-cluster moves map datastores and networks on the destination cluster. This is not a VMware-to-HVM conversion. See :doc:`../../infrastructure/clusters/hvm/vm_migration`.
 Clone
   Creates a new Instance from the Instance at its current state.
 Backup

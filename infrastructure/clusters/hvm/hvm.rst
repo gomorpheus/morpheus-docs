@@ -78,4 +78,5 @@ Unless a section contains a layout notice, it applies to layouts 1.3 and 2.0. Le
 - For NVIDIA SR-IOV vGPU profiles, Host preparation, Service Plans, and guest licensing, see :doc:`nvidia_vgpu`.
 - For datastore creation, Datastore Groups, file browsing, maintenance, and capacity operations, see :doc:`storage_operations`.
 - For VM snapshots and creating linked clone Virtual Images, see :doc:`snapshots`.
+- For moving VMs between hosts or HVM clusters (Actions > Move), see :doc:`vm_migration`.
 - For layout and HVM OS upgrades, start at :doc:`/getting_started/maintenance/upgrades/hvm_clusters`, then use :doc:`upgrading` for detailed cluster procedures.
