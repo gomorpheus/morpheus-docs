@@ -4,7 +4,7 @@ Troubleshooting & Diagnostics
 Quick Health Check (UI)
 -----------------------
 
-Navigate to ``Infrastructure > Clusters > [Cluster] > Summary > Quorum`` panel.
+Navigate to |InfClu|, open the cluster, and expand the **Summary** Quorum panel.
 
 The Quorum panel displays:
 
@@ -16,7 +16,7 @@ The Quorum panel displays:
 - Lockspaces status
 - Configured datastores
 - Witness status
-- Site information
+- Site information (stretch only; present when Site Groups exist)
 
 Diagnostic Commands
 -------------------
@@ -26,7 +26,7 @@ Diagnostic Commands
 Corosync
 ^^^^^^^^
 
-In layouts 1.3 and 2.0, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for stretch clusters and two-node GFS2 configurations. Corosync's ``Quorate`` state has no impact on cluster operation.
+In layouts 1.3 and 2.0, Corosync provides the node membership list to DLM but is **not** used for quorum decisions. The |morpheus| Agent runs its own quorum system (via the ``morphd`` QuorumCheckService), which is how split quorum is achieved for two-node GFS2 clusters (:doc:`two_node_clusters`) and stretch clusters (:doc:`stretch_clusters`). Corosync's ``Quorate`` state has no impact on cluster operation.
 
 List cluster members:
 

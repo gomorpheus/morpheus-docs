@@ -71,7 +71,7 @@ Distributed Workers are the foundation of edge site management. Each Worker is a
 - A single Worker can serve multiple roles (cloud proxy, console gateway, witness)
 - Separate Workers per role may be preferred for fault isolation or independent scaling
 
-For installation, configuration, and HA deployment details, see :doc:`/administration/integrations/workers`.
+For installation, configuration, and HA deployment details, see :doc:`/administration/integrations/workers`. For two-Host GFS2 witness operations, see :doc:`/infrastructure/clusters/hvm/two_node_clusters`. For stretch-cluster witness operations, see :doc:`/infrastructure/clusters/hvm/stretch_clusters`.
 
 Tier 2: Regional Morpheus Managers
 -----------------------------------

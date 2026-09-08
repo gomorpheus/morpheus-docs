@@ -28,7 +28,8 @@ Peer Communication
 - Each host exposes a ``/quorum`` endpoint on port 7443
 - Hosts ping each other every 20 seconds
 - A node is considered unreachable after 60 seconds with no response
-- Cross-verification: reachability is confirmed by a majority of same-site peers
+- On a two-node GFS2 cluster, both Hosts ping each other on TCP 7443 and must also reach the Distributed Worker URL. Do not apply same-site peer cross-verification to this topology.
+- On a stretch cluster, reachability is confirmed by a majority of same-site peers. Site-level arbitration is documented in :doc:`stretch_clusters`.
 
 Majority Calculation
 ^^^^^^^^^^^^^^^^^^^^
@@ -38,6 +39,46 @@ The quorum algorithm uses a simple majority formula:
 .. code-block:: text
 
    neededForQuorum = (totalNodes / 2) + 1
+
+``totalNodes`` counts every Agent quorum member. On a two-node GFS2 cluster that includes a Distributed Worker witness, there are three members and majority is 2 of 3.
+
+Agent quorum is the operational authority for layouts 1.3 and 2.0. Corosync ``Quorate`` does not decide Agent quorum and may report ``No`` on a healthy two-node or stretch cluster. See :doc:`building_clusters` and :doc:`troubleshooting`.
+
+Witness Topologies
+^^^^^^^^^^^^^^^^^^
+
+A Distributed Worker can provide a quorum-only vote for two supported GFS2 topologies. |morpheus| classifies the witness from Site Group presence, not from Host count. Agent quorum is sent only for layout 1.3 or later clusters that have at least one HPE Shared File System (GFS2) datastore.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 22 39 39
+
+   * - 
+     - Two-node GFS2
+     - Stretch
+   * - Compute Hosts
+     - Two Hosts
+     - Minimum 6 Hosts (3 per site); see :doc:`stretch_clusters`
+   * - Site Groups
+     - None
+     - One Site Group per physical site
+   * - Witness
+     - One Distributed Worker, quorum-only
+     - One Distributed Worker in a third location, quorum-only
+   * - How |morpheus| classifies the witness
+     - No Site Groups present
+     - Site Groups present; the worker is assigned as ``siteWitness``
+   * - Votes
+     - 3 members; majority is 2
+     - Site-level arbitration described in :doc:`stretch_clusters`
+   * - Quorum panel
+     - Witness row; no Sites row; flat Host table
+     - Witness row; Sites row; Hosts grouped by site
+   * - Activation
+     - Layout 1.3 or later and at least one GFS2 datastore
+     - Same GFS2 activation; add Site Groups after cluster create
+
+.. warning:: Creating Site Groups on a two-node GFS2 cluster switches the witness classification to stretch ``siteWitness``. Do not add Site Groups to a two-node cluster. Use :doc:`two_node_clusters` for two Hosts with no Site Groups, and :doc:`stretch_clusters` only when Site Groups exist.
 
 Quorum States
 ^^^^^^^^^^^^^

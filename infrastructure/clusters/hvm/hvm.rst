@@ -80,3 +80,6 @@ Unless a section contains a layout notice, it applies to layouts 1.3 and 2.0. Le
 - For VM snapshots and creating linked clone Virtual Images, see :doc:`snapshots`.
 - For moving VMs between hosts or HVM clusters (Actions > Move), see :doc:`vm_migration`.
 - For layout and HVM OS upgrades, start at :doc:`/getting_started/maintenance/upgrades/hvm_clusters`, then use :doc:`upgrading` for detailed cluster procedures.
+- For two-Host GFS2 clusters that use a Distributed Worker witness and no Site Groups, see :doc:`two_node_clusters`.
+- For multi-site stretch clusters that use Site Groups and a ``siteWitness``, see :doc:`stretch_clusters`.
+- For the quorum vote model and Quorum panel differences between those topologies, see :doc:`architecture`.

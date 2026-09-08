@@ -6,7 +6,7 @@ Overview
 
 A stretch cluster extends a layout 1.3 or 2.0 HVM cluster across two physical sites with a witness node in a third location for tie-breaking arbitration. This provides site-level fault tolerance while maintaining a single cluster management domain.
 
-This page covers multi-site stretch clusters with site groups. For a two-Host, single-site GFS2 cluster using a quorum-only witness, see :doc:`two_node_clusters`.
+This page covers multi-site stretch clusters with site groups. Stretch classification begins when Site Groups exist; |morpheus| then assigns the Distributed Worker as ``siteWitness``. For a two-Host, single-site GFS2 cluster using a quorum-only witness and no Site Groups, see :doc:`two_node_clusters`. For the topology comparison, see :doc:`architecture`.
 
 Requirements
 ------------

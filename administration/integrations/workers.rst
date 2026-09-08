@@ -31,7 +31,7 @@ Distributed Workers, including Workers used as HVM quorum witnesses, are availab
    * - HVM quorum witness
      - Distributed Worker in |AdmIntDis|
      - ``worker['worker_key']`` and a reachable Worker URL
-     - Select the Worker as the cluster witness. Cluster Hosts contact the Worker URL for quorum arbitration.
+     - Select the Worker as the cluster witness. Cluster Hosts contact the Worker URL for quorum arbitration. For two-Host GFS2 with no Site Groups, see :doc:`/infrastructure/clusters/hvm/two_node_clusters`. For stretch clusters with Site Groups, see :doc:`/infrastructure/clusters/hvm/stretch_clusters`.
 
 The gateway API key and Distributed Worker key are independent. Configure only ``worker['worker_key']`` for Distributed Worker and witness use, only ``worker['apikey']`` for console and VDI gateway use, or both keys to enable combined roles on one runtime. A console gateway is not a separate runtime mode; it is a VDI Gateway registration selected for console routing.
 
@@ -313,7 +313,10 @@ Before assigning a witness:
 #. From every cluster Host, resolve the Worker URL and make an HTTPS connection to it. A successful TLS connection or HTTP response confirms the path; do not disable certificate validation in production.
 #. Ensure firewalls and load balancers preserve the witness path and do not require interactive authentication.
 
-For cluster assignment and quorum validation, see :doc:`/infrastructure/clusters/hvm/stretch_clusters`.
+For cluster assignment and quorum validation:
+
+- Two-Host GFS2 with no Site Groups: :doc:`/infrastructure/clusters/hvm/two_node_clusters`
+- Site Groups / multi-site stretch: :doc:`/infrastructure/clusters/hvm/stretch_clusters`
 
 Highly-Available (HA) Deployment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

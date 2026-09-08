@@ -67,7 +67,7 @@ Cluster Creation
       * - CPU Architecture/Model
         - Processor architecture selection
       * - Witness
-        - Distributed Worker witness for a two-node GFS2 cluster or stretch cluster. Configure it after cluster creation using the applicable witness procedure
+        - Distributed Worker witness for a two-node GFS2 cluster or stretch cluster. Configure it after cluster creation. For two-Host GFS2 with no Site Groups, see :doc:`two_node_clusters`. For stretch clusters with Site Groups, see :doc:`stretch_clusters`.
 
 #. Click :guilabel:`Complete` to begin automated provisioning
 

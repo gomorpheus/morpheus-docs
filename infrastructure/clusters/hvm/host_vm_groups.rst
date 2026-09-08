@@ -50,7 +50,7 @@ Creating a Host-VM Group
 
      - **Affinity** — VMs in this group should run on the specified hosts. Use for workloads that need to be co-located.
      - **Anti-Affinity** — VMs in this group should NOT run on the same host. Use for high-availability configurations.
-     - **Site Group** — (Cluster-level only) Groups hosts and VMs by site/location.
+     - **Site Group** — (Cluster-level only) Groups hosts and VMs by physical site for stretch clusters. Do not create Site Groups on a two-node GFS2 cluster; adding them switches the Distributed Worker witness to ``siteWitness``. See :doc:`two_node_clusters` and :doc:`stretch_clusters`.
 
    RESOURCE POOL
      (Cloud-level groups) Select the resource pool that this group applies to.

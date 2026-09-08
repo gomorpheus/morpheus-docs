@@ -1,6 +1,6 @@
 ---
 user: davydotcom
-updated: 2026-06-04T16:14:42Z
+updated: 2026-09-08T10:49:52Z
 repo: HewlettPackard/morpheus-docs
 ---
 
@@ -8,15 +8,11 @@ repo: HewlettPackard/morpheus-docs
 
 ## Last user ask
 
-_(none recorded — `hero next ask "..."` to set)_
+> deliver the HVM two-node GFS2 witness/quorum docs
 
 ## Suggested next prompt
 
-> let's tackle "Catch-Up: Administration"
-
-_Rationale: highest-priority open feature: "Catch-Up: Administration" (`catchup-administration`)_
-
-_Source: auto-derived from open feature — `hero next suggest "..."` to override._
+> review the two-node GFS2 witness docs then commit if they look right
 
 ## Recent reflections
 

@@ -3,7 +3,15 @@ VM Advanced Options
 
 When provisioning or reconfiguring HVM virtual machines, the **Advanced Options** section provides controls for firmware, boot behavior, security, graphics, and virtualization settings. These options are found on the CONFIGURE tab during provisioning or through the :guilabel:`Actions` > :guilabel:`Reconfigure` menu on an existing VM.
 
-.. NOTE:: Some options are only available at initial provisioning, and some are only available during reconfigure. See the availability notes for each option below. Changing firmware or boot options on an existing VM typically requires the VM to be powered off and its configuration regenerated.
+.. NOTE:: Most Advanced Options are available at both provisioning and :guilabel:`Actions` > :guilabel:`Reconfigure`. A few remain provision-only or reconfigure-only; see the availability table. Changing chipset, firmware, boot, TPM, nested virtualization, graphics, QEMU arguments, or identity options on an existing VM is a cold reconfigure. You do not need to power the VM off first; |morpheus| powers it off if the change requires a restart, regenerates the configuration, and starts it again.
+
+Changing Advanced Options on an existing VM
+-------------------------------------------
+
+#. Navigate to |ProIns| (or the HVM cluster VM detail page).
+#. Open :guilabel:`Actions` > :guilabel:`Reconfigure`.
+#. Expand **Advanced Options** and change Hardware Compatibility, UEFI, Secure Boot, BIOS Host Mode, Network Boot, TPM, QEMU Arguments, Nested Virtualization, Disable Emulated Graphics, Asset Tag, or the other reconfigure-capable fields in the table below.
+#. Apply the reconfigure. If the change cannot be applied while the VM is running, |morpheus| powers the VM off, regenerates the definition, and starts it.
 
 Hardware / Chipset
 ------------------
@@ -17,7 +25,7 @@ Hardware / Chipset
      - Description
    * - Hardware Compatibility
      - Modern
-     - Selects the emulated machine chipset type. **Modern** uses the q35 chipset, which supports PCIe and is recommended for most workloads. **Legacy** uses the i440fx chipset for guest operating systems that do not support VirtIO drivers (e.g., Windows XP, older Linux distributions). *Provision only.*
+      - Selects the emulated machine chipset type. **Modern** uses the q35 chipset, which supports PCIe and is recommended for most workloads. **Legacy** uses the i440fx chipset for guest operating systems that do not support VirtIO drivers (e.g., Windows XP, older Linux distributions). Changing this on an existing VM is a cold reconfigure (the VM is powered off if it is running) and can change disk and NIC device models (VirtIO on q35; IDE/e1000 on i440fx).
 
 Firmware & Boot
 ---------------
@@ -31,10 +39,10 @@ Firmware & Boot
      - Description
    * - UEFI
      - Off
-     - Enables UEFI firmware instead of legacy BIOS. Required for Secure Boot and recommended for modern operating systems.
+      - Enables UEFI firmware instead of legacy BIOS. Required for Secure Boot and recommended for modern operating systems. Toggling UEFI on an existing VM is a cold reconfigure; confirm the guest disk can boot the new firmware before applying. The VM is powered off automatically if it is running.
    * - Secure Boot
      - Off
-     - Enables UEFI Secure Boot, which verifies the integrity of the boot chain. Requires UEFI to be enabled.
+     - Enables UEFI Secure Boot, which verifies the integrity of the boot chain. Requires UEFI. Enabling Secure Boot without UEFI is rejected. You can enable both in the same reconfigure.
    * - BIOS Host Mode
      - Off
      - Passes the physical host's SMBIOS/DMI data directly into the guest VM instead of using emulated values. When disabled (default), the guest sees the virtualized identity (manufacturer "Morpheus", product "MVM", and a generated serial number). When enabled, the guest sees the actual physical server's SMBIOS data (manufacturer, product name, serial number, BIOS version, etc.) as if it were running directly on the hardware. This is required for software that validates hardware identity through SMBIOS, such as certain enterprise licenses tied to physical serial numbers or hardware-aware monitoring agents.
@@ -77,7 +85,7 @@ QEMU & Virtualization
      - Custom QEMU command-line arguments stored on the HVM VM and tokenized into individual arguments when the libvirt/QEMU definition is generated. Available during provisioning and reconfiguration. Use only arguments validated for the QEMU version on the HVM hosts.
    * - Enable Nested Virtualization
      - Off
-     - Exposes VMX/SVM CPU flags to the guest, allowing it to run its own hypervisor inside the VM. Required for use cases such as running Docker with hardware virtualization, nested KVM, or Hyper-V inside a VM. *Provision only.*
+      - Exposes VMX/SVM CPU flags to the guest, allowing it to run its own hypervisor inside the VM. Required for use cases such as running Docker with hardware virtualization, nested KVM, or Hyper-V inside a VM. Changing this on an existing VM is a cold reconfigure; the VM is powered off if it is running. Host Passthrough with nested virtualization enabled marks the VM non-migratable; see CPU Compatibility and Migration.
 
 .. WARNING:: Use QEMU Arguments with caution. Invalid arguments can prevent the VM from starting. Consult KVM/QEMU documentation for valid options.
 
@@ -181,7 +189,7 @@ Option Availability Summary
      - Reconfigure
    * - Hardware Compatibility
      - Yes
-     - No
+     - Yes
    * - UEFI
      - Yes
      - Yes
@@ -208,7 +216,7 @@ Option Availability Summary
      - Yes
    * - Nested Virtualization
      - Yes
-     - No
+     - Yes
    * - Attach VirtIO Drivers
      - Yes
      - No

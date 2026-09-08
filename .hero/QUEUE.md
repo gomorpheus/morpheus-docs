@@ -6,7 +6,7 @@
 
 # Hero Ready Queue
 
-_Generated: 2026-09-04T16:02:52Z · 128 ready specs_
+_Generated: 2026-09-08T10:49:53Z · 130 ready specs_
 
 ## docs-910-system-updates — "9.1.0 Docs: Morpheus Core System Update Capabilities"
 _initiative · delivering · horizon: now_
@@ -98,6 +98,22 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 _feature · delivering · horizon: now_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/specs/docs-cluster-ha-dynamic-placement/spec.md)_
+
+---
+
+## docs-hvm-witness-gfs2-quorum — "HVM Witness and Quorum Docs for Two-Node GFS2"
+_initiative · in-review · horizon: now_
+
+Rebalance HVM witness/quorum docs so two-node GFS2 is a first-class topology, not a stretch-cluster footnote.
+
+**Status:** delivering — docs are in; HVM review remains.
+
+**Pick up at:** HVM engineering review, then commit if requested.
+
+→ `.hero/planning/initiatives/docs-hvm-witness-gfs2-quorum/spec.md`
+
+**Files:** `infrastructure/clusters/hvm/architecture.rst`, `infrastructure/clusters/hvm/two_node_clusters.rst`, `administration/integrations/workers.rst`
+**Skip:** do not redo Worker package/container install; do not copy stretch site arbitration onto two-node GFS2.
 
 ---
 
@@ -906,6 +922,13 @@ _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/d
 _feature · planning · horizon: someday_
 
 _(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/specs/docs-boot-from-san/spec.md)_
+
+---
+
+## hvm-witness-site-group-discriminator — HVM Witness Topology Is Site Groups, Not Host Count
+_context · active · horizon: now_
+
+_(no `## Kickoff` section — run `/design` or hand-edit /Users/davidestes/hpe/dev/morpheus-docs/.hero/knowledge/context/hvm-witness-site-group-discriminator/spec.md)_
 
 ---
 

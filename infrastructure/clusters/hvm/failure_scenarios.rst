@@ -116,7 +116,79 @@ Timeline
 Two-Node Cluster Failures
 -------------------------
 
-A two-Host GFS2 cluster uses a Distributed Worker witness as its third quorum vote. One Host can remain operational after the other Host fails only while the witness remains reachable. If the witness fails while both Hosts are healthy, the cluster retains two of three votes but loses Host-failure tolerance until the witness returns. See :doc:`two_node_clusters` for the complete failure and maintenance matrix.
+A two-Host GFS2 cluster uses a Distributed Worker witness as its third quorum vote. Majority is 2 of 3. Do not apply stretch alphabetical site-winner logic to these failures. See :doc:`two_node_clusters` for the complete matrix, assignment order, and Worker URL checks.
+
+One Host Down, Witness Reachable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Time
+     - Event
+   * - T+0s
+     - One Host becomes unreachable
+   * - T+60s
+     - Surviving Host marks the peer unreachable and retains 2 of 3 votes with the witness
+   * - T+140s
+     - Heartbeat failure threshold; eligible VMs can recover on the surviving Host
+
+**Recovery:** Restore the failed Host. It rejoins Agent quorum when reachable again.
+
+Witness Down, Both Hosts Reachable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Time
+     - Event
+   * - T+0s
+     - Witness becomes unreachable
+   * - T+60s
+     - Both Hosts retain 2 of 3 votes
+   * - Until restored
+     - The cluster has no Host-failure tolerance; do not take a Host offline
+
+**Recovery:** Restore witness service before any Host maintenance.
+
+One Host and Witness Down
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Time
+     - Event
+   * - T+0s
+     - One Host and the witness become unreachable
+   * - T+60s
+     - Remaining Host has 1 of 3 votes and cannot retain quorum
+   * - T+60s
+     - Remaining Host fences to protect GFS2
+
+**Recovery:** Restore either the witness or the failed Host so the surviving Host can form 2 of 3 votes. Do not issue manual fence acknowledgements until the unreachable Host is isolated from shared storage.
+
+Host-to-Host Partition
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Time
+     - Event
+   * - T+0s
+     - Hosts cannot reach each other
+   * - T+60s
+     - The Host that can reach the witness forms 2 of 3 votes
+   * - T+60s
+     - The isolated Host cannot retain quorum and fences
+
+**Recovery:** Restore Host-to-Host connectivity. The isolated Host rejoins after fencing recovery. This is not stretch site arbitration.
 
 Scenario 5: Single Node Reboot
 -------------------------------
