@@ -1,16 +1,20 @@
 .. _Release Notes 9.1.0:
 
-**************************
-v9.1.0 Feature Release Notes
-**************************
+****************************************
+v9.1.0 Release Candidate Notes
+****************************************
+
+.. release-notes-910-body
 
 - Compatible Plugin API version: |pluginVer|
 - Compatible |morpheus| Worker version: |workerVer|
-- Minimum upgrade versions: Non-rolling: |minUpgradeVer|, Rolling: |minRollingUpgradeVer|
+- Minimum upgrade version: v9.0.0. Upgrading to v9.1.0 requires a non-rolling upgrade.
 
 Release Dates
 
 - |morphver| |releasedate|
+
+.. note:: These release-candidate notes reflect **Morpheus 9.1.0** as reviewed on September 10, 2026. Features and fixes undergoing final implementation or validation remain in scope. Inclusion is not a statement that final validation has completed. Outstanding fixes are listed under **Fixes Being Finalized**; final release content may change.
 
 .. important:: After upgrading to |morphver|, it is recommended to check for HVM Host agent upgrades as well. To upgrade HVM Host agents, navigate to the detail page for each HVM Host, expand the ACTIONS menu, and click "Upgrade Agent." This process must be undertaken on all HVM Hosts. Alternatively, you may select "Download Agent Script" to download a shell script to handle the upgrade. Connect to the HVM Host over a terminal session and run the downloaded script. The scripts are unique to each HVM Host so you must download all required scripts and run the correct script against the correct HVM Host. Though many do, it is possible that some version upgrade hops will not contain an HVM Host agent upgrade.
 
@@ -19,52 +23,98 @@ Release Dates
 New Features
 ============
 
-:Licensing: - Introduced the **Advanced** license tier, expanding the platform to three tiers: VM Essentials, Advanced, and Enterprise. Advanced includes Ansible, Kubernetes (HKS), Workflows, Service Catalog, Personas, and additional automation and integration capabilities. See :doc:`feature_matrix` for the complete tier comparison.
+:Licensing: - Introduced the **Advanced** license tier, expanding the platform to three tiers: VM Essentials, Advanced, and Enterprise. Advanced includes Ansible, Kubernetes (HKS), Workflows, Service Catalog, Personas, and additional automation and integration capabilities. See :doc:`/release_notes/feature_matrix` for the complete tier comparison.
 
 :HVM & VM Essentials: - Virtual Switch management: add, edit, and remove virtual switches with advanced port group management and network reconfiguration directly from the UI
+                      - Linux-bridge/virtSwitch integration for Standard, Private, and Data Networks, with virtual switch discovery, per-host uplink mapping, and multiple iSCSI VLAN segments on one switch
+                      - Add Host wizard improvements: probe NICs, validate compatibility, and map the new host's interfaces to cluster virtual switches
                       - NVIDIA vGPU slicing: create SR-IOV vGPU profiles on supported HVM Hosts and bind physical GPU types or vGPU Segment Types to Service Plans
                       - Host Profiles: define and apply standardized host configurations across cluster hosts, similar to VMware vCenter Host Profiles
                       - Host Configuration Backup & Restore: back up HVM host identity and configuration for faster hardware replacement
                       - Bulk operations: trigger actions on multiple VMs or hosts simultaneously (migrate, snapshot, power operations, tag, and more)
                       - Increased live migration concurrency during Maintenance Mode to reduce maintenance windows for dense environments
-                      - Cross-cluster Move: relocate running HVM/KVM VMs between HVM clusters in the same Cloud, mapping datastores and networks from Instance or VM :guilabel:`Actions` > :guilabel:`Move`
+                      - Combined compute and storage migration: select a target host and datastore in one Move operation, including hosts without shared storage, within a cluster or between HVM clusters in the same Cloud. Cross-cluster moves also map destination networks. Running VMs use live migration; powered-off VMs move cold. See :doc:`/infrastructure/clusters/hvm/vm_migration`
+                      - Live migration uses the dedicated live-migration network segment when available
                       - Connect and disconnect virtual network interfaces on running VMs without requiring a full reconfigure, supporting backup recovery and security isolation workflows
-                      - Expose advanced VM deployment settings (TPM, Secure Boot, UEFI, Nested Virtualization) in Reconfigure for Day 2 modifications without rebuilding
+                      - Extended advanced VM settings in Reconfigure, including nested virtualization editing, restart warnings, and validation that Secure Boot requires UEFI
                       - Centralized Affinity Placement management: view and manage VM affinity rules and pinning overrides from a single cluster-level interface
+                      - Affinity rules support required (MUST) and preferred (SHOULD) strength, Host Groups, VM Groups, and combined VM-to-Host rules for HVM and VMware vCenter clusters
                       - Linked clones: create space-efficient clones that share a base disk image with the parent VM
                       - Datastore Evacuation / Maintenance Mode: automatically migrate VMs off a datastore being retired or replaced
                       - Raw Device Block Mapping (RDBM): attach raw host block devices directly to VMs for performance-sensitive workloads
                       - Virtual machine console access directly from HVM hosts
+                      - Graceful shutdown and forced power-off choices for VMs, defaulting to graceful shutdown
+                      - Legacy OS option using i440fx virtual hardware, with machine-type selection in provisioning and Virtual Images
+                      - Boot menu enabled by default and configurable boot delay for HVM VMs
+                      - Primary CD-ROM removal is included in the release scope and remains under validation; see the limitation under **Fixes Being Finalized**
                       - CPU Ready-equivalent metric for monitoring vCPU scheduling contention
                       - Leverage QEMU Guest Agent to gather guest OS information (IP addresses, OS version, hostname) without network-based access
                       - VSS-aware application-consistent snapshots: when the QEMU Guest Agent is connected, snapshots trigger Windows Volume Shadow Copy Service for database and application consistency
                       - vNUMA provisioning: automatic or manual virtual NUMA topology for wide VMs spanning multiple CPU sockets, with Off/Auto/Manual modes
                       - vCPU Placement: cluster-level CPU affinity management with Unmanaged, Region, and Pinned modes for NUMA-aware workload performance
                       - Improved audit logging: administrative actions (datastore changes, cluster settings, VM promotions) now recorded in object History for full traceability
-                      - HVM Cluster OS Layout Ubuntu/HVM 26.04 support for confidential compute functions
+                      - HVM OS 26.04 and QEMU 10.2 machine-type support with cluster layout 2.0
+                      - Host NTP configuration and improved guest timekeeping with RTC catchup and kvmclock for Linux guests
 
-:Monitoring & Administration: - Monitoring tab time ranges for instance and server details, allowing analysis over configurable periods
-                              - Log rotation and retention period configuration from the GUI
+:Monitoring & Administration: - Monitoring tab time ranges for instance, server, and cluster details, allowing analysis over configurable periods
+                              - Native threshold alarms for host and VM CPU/memory usage, host reachability and memory overcommit, and datastore capacity/offline state, with configurable thresholds and cluster overrides. See :doc:`/infrastructure/clusters/hvm/alarms`
+                              - GPU monitoring for HKS clusters and worker nodes, and KVM/HVM hosts and instances. Agent-collected device metrics expose utilization, memory, temperature, and power where supported, including NVIDIA MIG slices
+                              - Storage-volume performance charts for IOPS, throughput, and latency
+                              - Log rotation and retention controls from the GUI, with workload logging settings available to VM Essentials. Logging Settings help distinguishes workload/host controls from appliance logging
+                              - Optional agent log throttling with Off, Monitor, and Enforce modes, per-server policy overrides, cooldown-based re-enablement, and duplicate-message suppression. Throttling defaults to Off
                               - Read-only access level for Appliance Settings permission, allowing auditors and operators to view configuration without modification rights
+                              - Key-value metadata tags and tag-based filtering/search for Instances, VMs, Hosts, Networks, Datastores, and Clusters
+                              - Global Search results grouped by object type, with richer identifying context, filtering, sorting, selectable columns, and CSV export
+                              - Enhanced data tables with sorting, column visibility and reordering, and persistent preferences
+                              - Role Details limits Instance Types to those available under the appliance license
 
-:Storage & Backup: - Unified File Support Phase 2: Morpheus File Shares (create, grow, inventory, security toggles)
+:Storage & Backup: - Datastore Groups: group shared HVM file-based datastores as a provisioning target with automatic member selection. Storage DRS supports capacity-based rebalancing or recommendations-only operation. See :doc:`/infrastructure/clusters/hvm/storage_operations`
+                   - HPE Alletra MP synchronous and asynchronous periodic replication volume types for VM and volume provisioning
+                   - Integrated HPE Alletra MP volume and GFS2 datastore provisioning workflow
+                   - Unified File Support Phase 2: create, grow, and inventory Morpheus File Shares, with per-filesystem ransomware settings
+                   - Datastore Explorer shows VM inventory and volume usage, with browsing, upload, download, and deletion for supported file-based datastores
+                   - Snapshot size displayed in Instance and Server snapshot tabs
+                   - Storage-migration guards for VMs with snapshots to protect snapshot data
+                   - Host Storage Interfaces view for Fibre Channel and iSCSI discovery, asynchronous storage rescans, and datastore multipath status
+                   - Backup-job visibility and Tenant permissions can be managed through the REST API
 
 :BMaaS / Bare Metal: - PXE/Network Boot support: boot Bare Metal hosts via customer PXE infrastructure instead of virtual media, with optional Config ISO for post-deployment automation
                      - Brownfield import in Boot From SAN (BFS): discover and manage existing BFS-provisioned servers
                      - Support for multiple networks (VLANs) with Unmanaged Networking on a single physical or bond interface
+                     - Bare Metal support bundles include server diagnostics and Active Health System (AHS) log retrieval
+                     - Convert to Managed supports Linux servers using active-backup bonding and discovers boot-volume information
 
-:HKS / Kubernetes: - NGINX Replacement with Kubernetes Gateway API (Phase 1): Gateway API CRDs (GatewayClass, Gateway, HTTPRoute) replace NGINX Ingress Controller on HVM, VMware, and Bare Metal layouts
+:HKS / Kubernetes: - Kubernetes Gateway API support replaces NGINX Ingress Controller in updated layouts, with an optional Envoy Gateway controller package and offline installation support
                    - HKS cluster packages updated to latest Kubernetes versions (1.33, 1.34, 1.35) with CVE evaluation
-                   - HKS enhancements for 9.1.0
+                   - Updated containerd 2.x LTS support and cluster runtime upgrades
+                   - Hybrid layouts support VM control-plane nodes and Bare Metal workers, including a single-worker topology for PCO Lite
+                   - Optimized cluster refresh
+
+:Networking & SDN: - Change the primary network role for vCenter Instances in the UI
+                   - Tenant-aware Networks API responses for Zerto integrations, including the includeTenants option
+                   - SDN onboarding prechecks, controller/dataplane upgrade workflows, configurable host VTEP gateway at creation, and BGP attribute viewing and editing
+                   - RFC 8365 Route Type 2 interoperability and DPDK NIC validation for supported HPE QLogic and Mellanox adapters
+                   - Aruba CX LACP-fallback support and virtual switch integration for Aruba CX DSS Networks
+                   - Optional embedded DNS resolver for small PCAI internal zones, with local A and CNAME records. The resolver requires restricted network exposure because answers are not Tenant-scoped
 
 :Platform & Orchestration: - PCO Support for Host addition and removal within existing VMware/VME clusters
                            - Unified & Contextual Approval Framework for consistent approval workflows across provisioning operations
                            - Import existing systems into |morpheus| for management without reprovisioning
+                           - Provider-driven update actions for supported clusters, compute, storage, and network servers
+                           - Simplified HVM installation and a unified Windows/macOS installer for VM Essentials Manager and Morpheus deployments
+                           - Distributed Worker support for iLO consoles and HVM console connections
+                           - Optional preservation of Windows static IP configuration during VMware-to-KVM migration, using the QEMU Guest Agent on the destination VM
+
+:Security: - Phase 2 STIG hardening and FIPS enablement for HVM OS and Morpheus Manager QCOW2/OVA images; validation and hardening guidance are being finalized
+           - SDN dependency and security-hardening updates
 
 :CLI & Tooling: - hvmcli: unified CLI tool for HVM host management including log viewing, VM/node/storage/cluster status, network configuration, and health validation
+                - hvmcli host software update commands for online and offline updates, status, and history
+                - Generate and manage support bundles through the UI and MCP tools, including NVIDIA diagnostic collection for HVM
                 - Aruba CX Support Bundle: collect diagnostic logs from Aruba CX switches as part of the |morpheus| support bundle
-                - Password Management for iLO, ESXi, and Switch credentials via Cypher-backed credential store with multi-device linking and rotation support
+                - Search plugins in the Marketplace
                 - Plugin ReadMe Standardization
+                - Exclude optional bundled plugins from installation during reconfigure using ``ui['excluded_plugins']`` in ``morpheus.rb``. Current-version installed plugins are retained; excluded older versions are removed during upgrade. Protected plugins cannot be excluded. A removed plugin may remain greyed out until its record is deleted from the UI
 
 Fixes
 =====
@@ -73,22 +123,77 @@ Fixes
       - Fixed allocated memory displaying incorrect values after cluster syncs
       - Fixed network statistic information not displaying in the cluster view
       - Fixed failure to attach a volume to a VM in certain configurations
+      - Addressed combined migration destination-datastore handling, cross-cluster host preparation, and premature storage-copy timeouts
+      - Improved affinity enforcement during provisioning, maintenance, and HA failover, including required Host Group constraints, pinned placement, and violation reporting
+      - Fixed host addition and network initialization issues on layout 2.0 clusters, and upgrade finalization issues in mixed VMware/HVM systems
+      - Fixed legacy machine-type preservation during backup restore, vNUMA memory-resize handling, and CD-ROM validation blocking Reconfigure
+      - Fixed vTPM snapshot metadata preservation during datastore migration and QEMU Guest Agent OS-information refresh
 
 :Monitoring: - Fixed old open incidents not being automatically closed when all health checks return 100% healthy
+              - Fixed health-log date filtering, performance-chart time windows, CPU Ready value/severity inconsistencies, and alarm acknowledgement from detail views
 
 :HKS / Kubernetes: - Fixed HKS cluster provisioning failures in proxy environments
+                   - Addressed Calico proxy timeouts, upgrade version inconsistencies, worker lifecycle issues, Hybrid HA joins, and Helm App Blueprint upgrades
+                   - Fixed license-related cluster creation failures and preservation of Hybrid layout during upgrades
 
-:BMaaS / Bare Metal: - Fixed Bare Metal instance status remaining in "Provisioning" state in multi-node scenarios
+:BMaaS / Bare Metal: - Fixed physical-interface discovery during Convert to Managed, brownfield switch cleanup, and attaching existing shared volumes
+                     - Fixed Bare Metal datastore creation and boot-volume discovery failures
 
-:Networking: - Fixed Huawei Private Network option being unavailable when adding networks in a subtenant
+:Storage & Backup: - Addressed HPE Alletra MP clustered-datastore snapshot revert, cloning, and backup restore failures
+                   - Fixed replicated-volume cloning, replication status after switchover, and unsafe resizing while replication links are down
+                   - Fixed file-share capacity growth and ransomware-state synchronization, as well as datastore selection of snapshot paths instead of base shares
+                   - Fixed Datastore Group threshold validation, inventory visibility, and recommendations in the VM Essentials tier
+                   - Fixed backup creation fields, provider filtering, and Veeam subtenant backup execution
+                   - Fixed missing provisioning-time backups for ESXi and Rubrik RSC integrations
 
-.. note:: Additional bug fixes and regressions are being addressed throughout the 9.1.0 development cycle. See MORPH-13190 and MORPH-13191 for ongoing tracking.
+:Networking: - Fixed VLAN-0 and hybrid-network connectivity, private-network cleanup, and Aruba CX VLAN provisioning/cleanup
+              - Fixed Aruba CX DSS network selection and port-group resource-pool validation
+              - Fixed SDN overlay connectivity after VM migration, duplicate PowerDNS records, and IP pool deletion after partial EfficientIP sync failures
+
+:Clouds & Provisioning: - Fixed Azure disk-name/size handling and Marketplace synchronization, concurrent SCVMM cloud sync, and OLVM guest/worker provisioning
+                        - Fixed VMware affinity synchronization and validation, and API Proxy selection during cloud creation
+                        - Fixed Windows rename/domain-join regressions, ISO filenames containing spaces, and expired multi-disk image download tokens
+                        - Fixed Terraform resource-key length errors and Scribe imports duplicating form inputs
+                        - Fixed migration detail pages returning HTTP 403 when the source VM still exists
+
+:Administration & API: - Fixed inherited cloud/group grants on locked subtenant roles, subtenant cloud access, and remembered-login API authorization
+                       - Fixed ServiceNow approval links and saved flow/workflow selection, plus Ansible Tower inventory Tenant permissions
+                       - Improved cluster, compute inventory, and dashboard load performance; fixed pagination resets and custom whitelabel rendering
+                       - Fixed SCVMM overbilling, workflow-layout invoicing, pricing precision, and saved service-plan memory ranges
+
+:CLI & Appliance: - Fixed hvmcli help handling that could execute an action, invalid-argument handling, large-log viewing, and cluster membership reporting
+                   - Fixed software-update history/status and rollback selection, FIPS package handling, and Host Profile NTP remediation
+                   - Fixed installer image-size and management-bridge selection issues, fresh-install seed failures, and Distributed Worker connection initialization
+
+:Security: - Hardened MCP destination validation and category gating, command allowlist enforcement, read-only permissions, and credential redaction in hvmcli audit logs
+
+Fixes Being Finalized
+=====================
+
+The following items remain in the release scope but were still in implementation or had outstanding QA findings at the review date. They are not confirmed fixes for every release-candidate build.
+
+:HVM & Storage: - Cluster layout upgrades remaining In Progress and cluster finalization blocked by agent installation
+                 - Incorrect host status after reboot from Maintenance Mode
+                 - Thin/thick volume creation on Alletra datastores and datastore migration of replication-enabled volumes
+                 - Primary CD-ROM removal remains blocked in reported Reconfigure testing
+                 - Bulk compute-and-storage migration and datastore evacuation still have QA follow-up
+
+:Provisioning & Integrations: - Post-provision workflows not running on KVM, Xen, OpenStack, and Nutanix Prism; VCD provisioning wizard stalls; and Stop Instance not stopping its container
+                              - SDN Mellanox SR-IOV onboarding/offboarding after VTEP communication failures
+
+:Administration & Tooling: - Slow Load Balancer dialogs, repeated HKS refresh history, and billing API timeouts
+                           - hvmcli audit-log access for non-root users, saved password-field display, and the missing Balancing activity filter
+
+.. note:: Additional bug fixes and regressions are undergoing implementation and testing. Outstanding issues require validation before they can be described as resolved.
 
 Appliance & Agent Updates
 =========================
 
 :Node Packages: - |morpheus| Node and VM Node packages updated to |nodePackageVer|
 :Linux Agent: - Updated to |linuxagentver|
+              - Agent runtime updated to bundled Java 25 for native GPU-library integration
 :Windows Agent: - |winagentver|
 :macOS Agent: - |macagentver|
 :Plugin API: - Updated to |pluginVer|
+
+.. note:: Final RC package versions are subject to confirmation. Dependency updates include jackson-databind, currently in validation, and Tomcat, currently being finalized.
